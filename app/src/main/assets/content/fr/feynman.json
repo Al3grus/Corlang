@@ -103,6 +103,32 @@
         { "point": "Specific expressions trigger it (il faut que, vouloir que, bien que...).", "reTeach": "Learn the triggers; they're what tell you to switch into the subjunctive." },
         { "point": "Form: 'ils' present stem + -e/-es/-e/-ions/-iez/-ent.", "reTeach": "ils prennent → que je prenne. Irregulars (être, avoir, aller, faire) must be memorised." }
       ]
+    },
+    {
+      "id": "fr-si-clauses",
+      "levelId": "B2",
+      "title": "The three si-clause patterns",
+      "simpleExplanation": "French conditional ('if') sentences come in three fixed tense pairings, depending on how real the situation is. Type 1 (real/likely): si + present → future ('Si j'ai le temps, je viendrai' = If I have time, I'll come). Type 2 (unreal present/hypothetical): si + imparfait → conditional ('Si j'avais le temps, je viendrais' = If I had time, I would come). Type 3 (unreal past/regret): si + plus-que-parfait → conditionnel passé ('Si j'avais eu le temps, je serais venu' = If I had had time, I would have come). Crucially, you NEVER put the conditional or future directly after 'si' — the tense lives in the other clause.",
+      "analogy": "Think of three rungs of unreality: 'maybe it happens' (present→future), 'it isn't so now' (imparfait→conditional), 'it didn't happen' (pluperfect→past conditional). Each rung locks the two tenses together.",
+      "rubricPoints": [
+        { "point": "Type 1 real: si + present → future.", "reTeach": "'Si j'ai le temps, je viendrai.' — a likely condition." },
+        { "point": "Type 2 unreal-present: si + imparfait → conditional.", "reTeach": "'Si j'avais le temps, je viendrais.' — hypothetical now." },
+        { "point": "Type 3 unreal-past: si + plus-que-parfait → conditionnel passé.", "reTeach": "'Si j'avais eu le temps, je serais venu.' — a past regret." },
+        { "point": "Never put future/conditional directly after 'si'.", "reTeach": "The future/conditional goes in the RESULT clause, never right after si." }
+      ]
+    },
+    {
+      "id": "fr-passe-simple",
+      "levelId": "C1",
+      "title": "The literary past you only need to read",
+      "simpleExplanation": "French has a past tense, the passé simple, that has almost vanished from speech but is everywhere in literature, journalism and formal narration. It does the same job as the passé composé (single completed past actions) but belongs to the written, narrative register. At C1 the goal is asymmetric: you must comfortably RECOGNISE it when reading — endings like -a/-èrent for -ER verbs ('il parla', 'ils parlèrent'), and irregular stems ('il fut' = he was, 'il eut' = he had, 'il fit' = he did) — but you almost never need to PRODUCE it. In conversation you keep using the passé composé.",
+      "analogy": "It's like 'whom' in English or a fancy serif font: you read it constantly and must understand it, but you rarely write it yourself in everyday life.",
+      "rubricPoints": [
+        { "point": "It's the literary/narrative equivalent of the passé composé.", "reTeach": "Same meaning (completed past) but written, formal register." },
+        { "point": "You need to recognise it, not usually produce it.", "reTeach": "Reading comprehension is the goal; speech keeps the passé composé." },
+        { "point": "Watch for -ER endings -a / -èrent.", "reTeach": "'il parla', 'ils parlèrent' — telltale narrative forms." },
+        { "point": "Learn key irregular stems (fut, eut, fit, vint).", "reTeach": "être→fut, avoir→eut, faire→fit, venir→vint." }
+      ]
     }
   ]
 }
