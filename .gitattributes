@@ -1,0 +1,18 @@
+# Normalize line endings: store text as LF in the repo, check out native on Windows.
+* text=auto eol=lf
+
+# Source and resources are always text.
+*.kt        text
+*.kts       text
+*.json      text
+*.xml       text
+*.md        text
+*.pro       text
+*.properties text
+
+# Treat these as binary (never normalize).
+*.png       binary
+*.jpg       binary
+*.jar       binary
+*.keystore  binary
+*.jks       binary

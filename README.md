@@ -23,8 +23,11 @@ Pick a language from the top bar (🇫🇷 / 🇭🇷) and everything below adap
 | **Progress** | The **CEFR ladder A0 → C1** with a milestone and can-do statements per level, your streak/level/day stats, the **top-5 resources** for the language, and your quiz history. |
 
 CEFR levels covered: **A0, A1, A2, B1, B2, C1**. (C2 is intentionally excluded — effectively
-unreachable for most non-native learners.) v1 ships **deep A0 + A1** content for both languages
-(full cheatsheet, 60-day plan, quizzes, Feynman concepts) with A2–C1 milestones in place to grow into.
+unreachable for most non-native learners.) Both languages ship with a **graded quiz at every level
+A0→C1** (6 quizzes × 10 progressive questions) and **Feynman teach-back concepts across all levels**,
+plus a full one-page cheatsheet, the CEFR ladder with milestones, and the top-5 resources. The
+**60-day daily plan** is a focused A0→A1 sprint (the "two-month" core); the quiz/Feynman/level
+ladders extend the reference content up through C1.
 
 ## Architecture (and why it scales)
 
@@ -66,7 +69,7 @@ for step-by-step instructions and an end-to-end smoke-test checklist.
 
 ## Roadmap
 
-- Fill in A2–C1 content (the schema and screens already support it).
+- Extend the daily plan beyond the A0→A1 sprint into A2+ tracks (the level/quiz/Feynman ladders already reach C1).
 - Audio (text-to-speech / native recordings) for pronunciation.
 - A spaced-repetition scheduler reusing quiz history.
 - Optional cloud sync + accounts for cross-device progress.
