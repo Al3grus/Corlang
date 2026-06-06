@@ -113,6 +113,44 @@
           "options": ["irons", "allons", "irions", "allions"], "answer": "irons",
           "explanation": "aller has an irregular future stem 'ir-': j'irai, tu iras, il ira, nous irons... 'allons' is present, 'irions' is conditional." }
       ]
+    },
+    {
+      "id": "fr-b1",
+      "levelId": "B1",
+      "title": "B1 — Opinions, hypotheticals & nuance",
+      "questions": [
+        { "type": "MCQ", "difficulty": 1, "prompt": "Futur simple of 'finir' for 'je': 'Je ___ demain.'",
+          "options": ["finirai", "finis", "finissais", "finirais"], "answer": "finirai",
+          "explanation": "Futur simple of regular verbs = infinitive + ai/as/a/ons/ez/ont. 'je finirai'. 'finirais' (with -s) is the conditional." },
+        { "type": "MCQ", "difficulty": 2, "prompt": "Conditional for politeness: 'Tu ___ m'aider ?' (Could you help me?)",
+          "options": ["pourrais", "peux", "pourras", "pouvais"], "answer": "pourrais",
+          "explanation": "The conditional (pourrais) softens a request. 'peux' is direct present, 'pourras' is future, 'pouvais' is imperfect." },
+        { "type": "FILL", "difficulty": 3, "prompt": "Subjunctive after 'il faut que': 'Il faut que tu ___ là.' (être → subjunctive)",
+          "answer": "sois", "accepted": [],
+          "explanation": "'il faut que' triggers the subjunctive. être → que je sois, que tu sois, qu'il soit. 'Il faut que tu sois là.'" },
+        { "type": "MCQ", "difficulty": 4, "prompt": "Choose the relative pronoun: 'C'est le film ___ je t'ai parlé.' (about which I told you)",
+          "options": ["dont", "qui", "que", "où"], "answer": "dont",
+          "explanation": "'dont' replaces 'de + noun' (parler DE quelque chose). 'le film dont je t'ai parlé' = the film I told you about." },
+        { "type": "FILL", "difficulty": 5, "prompt": "Replace with the pronoun 'y': 'Je vais à Paris.' → 'J'___ vais.'",
+          "answer": "y", "accepted": [],
+          "explanation": "'y' replaces 'à + place'. 'J'y vais' = I'm going (there). 'en' would replace 'de + noun'." },
+        { "type": "MCQ", "difficulty": 6, "prompt": "Replace with 'en': 'Je veux du café.' → 'J'___ veux.'",
+          "options": ["en", "y", "le", "la"], "answer": "en",
+          "explanation": "'en' replaces 'de/du/des + noun' (a quantity/partitive). 'J'en veux' = I want some (of it)." },
+        { "type": "MCQ", "difficulty": 7, "prompt": "Si-clause (hypothetical): 'Si j'avais le temps, je ___ plus.' (voyager)",
+          "options": ["voyagerais", "voyagerai", "voyage", "voyageais"], "answer": "voyagerais",
+          "explanation": "si + imparfait in the condition → conditional in the result. 'Si j'avais (imparfait)..., je voyagerais (conditionnel)' = If I had time, I would travel more." },
+        { "type": "FILL", "difficulty": 8, "prompt": "Plus-que-parfait: 'Quand je suis arrivé, ils ___ déjà ___.' (partir → had already left)",
+          "answer": "étaient déjà partis", "accepted": ["etaient deja partis"],
+          "explanation": "The plus-que-parfait (imparfait of avoir/être + participle) marks an action before another past action: 'ils étaient déjà partis' = they had already left." },
+        { "type": "MATCH", "difficulty": 9, "prompt": "Match each connector to its function.",
+          "pairs": [{ "left": "bien que", "right": "although (+ subjunctive)" }, { "left": "parce que", "right": "because" }, { "left": "afin que", "right": "so that (+ subjunctive)" }, { "left": "tandis que", "right": "whereas" }],
+          "explanation": "Some connectors trigger the subjunctive (bien que, afin que). Others take the indicative (parce que, tandis que). Knowing which is a key B1 distinction." },
+        { "type": "REORDER", "difficulty": 10, "prompt": "Order the words: 'I would like you to come with me.' (subjunctive after vouloir que)",
+          "options": ["Je", "voudrais", "que", "tu", "viennes", "avec", "moi"],
+          "ordered": ["Je", "voudrais", "que", "tu", "viennes", "avec", "moi"], "answer": "Je voudrais que tu viennes avec moi",
+          "explanation": "'vouloir que' triggers the subjunctive: venir → que tu viennes. The conditional 'voudrais' adds politeness." }
+      ]
     }
   ]
 }

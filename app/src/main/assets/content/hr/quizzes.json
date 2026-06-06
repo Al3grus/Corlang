@@ -113,6 +113,44 @@
           "ordered": ["Jučer", "sam", "pio", "kavu", "u", "kafiću"], "answer": "Jučer sam pio kavu u kafiću",
           "explanation": "Past = 'sam pio' (male). 'kavu' is accusative (object), 'kafiću' is locative (location after 'u'). Three systems working together." }
       ]
+    },
+    {
+      "id": "hr-b1",
+      "levelId": "B1",
+      "title": "B1 — Full cases, conditional & nuance",
+      "questions": [
+        { "type": "MCQ", "difficulty": 1, "prompt": "Conditional ('would'): 'I would like a coffee.' Choose: 'Ja ___ kavu.'",
+          "options": ["bih htio", "ću htjeti", "sam htio", "hoću"], "answer": "bih htio",
+          "explanation": "The conditional = aorist of biti (bih, bi, bi, bismo, biste, bi) + participle. 'Htio bih kavu' = I would like a coffee (polite)." },
+        { "type": "FILL", "difficulty": 2, "prompt": "Vocative (addressing): call out to Marko. 'Hej, ___!'",
+          "answer": "Marko", "accepted": [],
+          "explanation": "Many masculine names like Marko keep the same form in the vocative, but most masculine nouns change: prijatelj → prijatelju! The vocative is only for addressing someone." },
+        { "type": "MCQ", "difficulty": 3, "prompt": "Which case after the preposition 'iz' (out of)? 'Dolazim iz ___.' (grad)",
+          "options": ["grada (genitive)", "grad (nominative)", "gradu (locative)", "gradom (instrumental)"], "answer": "grada (genitive)",
+          "explanation": "'iz' (from/out of) always takes the genitive: iz grada = out of the city. Many prepositions govern a fixed case." },
+        { "type": "FILL", "difficulty": 4, "prompt": "Plural accusative: 'I see the children.' 'Vidim ___.' (djeca → accusative)",
+          "answer": "djecu", "accepted": [],
+          "explanation": "'djeca' (children) is a collective noun behaving like a feminine singular: accusative djecu. 'Vidim djecu' = I see the children." },
+        { "type": "MCQ", "difficulty": 5, "prompt": "Aspect choice: 'I read (and finished) the book yesterday.' Pick the verb.",
+          "options": ["pročitao sam", "čitao sam", "čitam", "čitat ću"], "answer": "pročitao sam",
+          "explanation": "A completed, whole action takes the perfective: pročitati → pročitao sam. 'čitao sam' (imperfective) means 'I was reading / used to read'." },
+        { "type": "MATCH", "difficulty": 6, "prompt": "Match each preposition to the case it governs.",
+          "pairs": [{ "left": "iz (from)", "right": "genitive" }, { "left": "u (into, motion)", "right": "accusative" }, { "left": "u (in, location)", "right": "locative" }, { "left": "s (with)", "right": "instrumental" }],
+          "explanation": "Prepositions govern specific cases — and some (like 'u') take different cases for motion (accusative) vs location (locative). This is central to B1 accuracy." },
+        { "type": "FILL", "difficulty": 7, "prompt": "Dative plural: 'I'm helping my friends.' 'Pomažem ___.' (prijatelji → dative)",
+          "answer": "prijateljima", "accepted": [],
+          "explanation": "The dative plural ending is -ima for masculine/feminine: prijatelji → prijateljima. The verb 'pomagati' takes the dative." },
+        { "type": "MCQ", "difficulty": 8, "prompt": "Conditional 'if' sentence: 'If I had money, I would travel.' The 'would travel' part is...",
+          "options": ["putovao bih", "putujem", "putovat ću", "putovao sam"], "answer": "putovao bih",
+          "explanation": "Hypothetical result uses the conditional: 'Da imam novca, putovao bih.' (bih + participle)." },
+        { "type": "FILL", "difficulty": 9, "prompt": "Comparative + 'than': 'Zagreb is bigger than Split.' 'Zagreb je veći ___ Split.'",
+          "answer": "od", "accepted": ["nego"],
+          "explanation": "After a comparative, 'than' = 'od' (+ genitive) or 'nego'. 'veći od Splita' / 'veći nego Split'." },
+        { "type": "REORDER", "difficulty": 10, "prompt": "Order the words: 'I told my friend that I would come.' (dative + conditional)",
+          "options": ["Rekao", "sam", "prijatelju", "da", "ću", "doći"],
+          "ordered": ["Rekao", "sam", "prijatelju", "da", "ću", "doći"], "answer": "Rekao sam prijatelju da ću doći",
+          "explanation": "'prijatelju' is dative (told TO my friend); 'da ću doći' = that I will come. Croatian often uses the future where English uses 'would' in reported speech." }
+      ]
     }
   ]
 }
