@@ -75,6 +75,44 @@
           "ordered": ["Žena", "pije", "kavu"], "answer": "Žena pije kavu",
           "explanation": "'Žena' stays nominative (the subject), 'kavu' is accusative (the object), 'pije' = drinks. Word order is flexible, but this is the neutral order." }
       ]
+    },
+    {
+      "id": "hr-a2",
+      "levelId": "A2",
+      "title": "A2 — Cases, aspect & tenses",
+      "questions": [
+        { "type": "MCQ", "difficulty": 1, "prompt": "Genitive of possession: 'This is the friend ___.' (of my brother — brat → genitive)",
+          "options": ["brata", "brat", "bratu", "bratom"], "answer": "brata",
+          "explanation": "Masculine nouns add -a in the genitive: brat → brata. The genitive expresses 'of' / possession: 'prijatelj moga brata'." },
+        { "type": "FILL", "difficulty": 2, "prompt": "Locative (location): 'I live in the city.' Complete: 'Živim u ___.' (grad → locative)",
+          "answer": "gradu", "accepted": [],
+          "explanation": "After 'u/na' meaning a static location, use the locative: grad → gradu. 'Živim u gradu' = I live in the city." },
+        { "type": "MCQ", "difficulty": 3, "prompt": "Which verb is PERFECTIVE (a single completed action)?",
+          "options": ["pisati", "napisati", "pišem", "pisanje"], "answer": "napisati",
+          "explanation": "napisati (with prefix na-) is perfective = to write and finish. pisati is imperfective = to be writing / write habitually." },
+        { "type": "FILL", "difficulty": 4, "prompt": "Past tense, female speaker: 'Jučer sam ___ u školi.' (was — biti participle, feminine)",
+          "answer": "bila", "accepted": [],
+          "explanation": "The past participle agrees with gender: bio (m), bila (f), bilo (n). A woman says 'bila sam' = I was." },
+        { "type": "MCQ", "difficulty": 5, "prompt": "Dative (to whom): 'I'm giving the book to my friend.' 'Dajem knjigu ___.' (prijatelj → dative)",
+          "options": ["prijatelju", "prijatelja", "prijatelj", "prijateljem"], "answer": "prijatelju",
+          "explanation": "The dative marks the recipient ('to/for'): prijatelj → prijatelju. 'Dajem knjigu prijatelju' = I give the book to my friend." },
+        { "type": "MATCH", "difficulty": 6, "prompt": "Match each case to what it marks.",
+          "pairs": [{ "left": "nominative", "right": "the subject" }, { "left": "accusative", "right": "the direct object" }, { "left": "genitive", "right": "possession / 'of'" }, { "left": "dative", "right": "the recipient / 'to'" }],
+          "explanation": "Each case marks a role: nominative = subject, accusative = direct object, genitive = of/possession, dative = recipient. Endings change to show the role." },
+        { "type": "MCQ", "difficulty": 7, "prompt": "Future tense: 'Tomorrow I will study.' Choose: 'Sutra ___ učiti.'",
+          "options": ["ću", "sam", "bih", "imam"], "answer": "ću",
+          "explanation": "Future = short htjeti (ću, ćeš, će...) + infinitive: 'Ja ću učiti' / 'Učit ću'." },
+        { "type": "FILL", "difficulty": 8, "prompt": "Instrumental ('with'): 'I travel with a friend.' 'Putujem s ___.' (prijatelj → instrumental)",
+          "answer": "prijateljem", "accepted": [],
+          "explanation": "The instrumental marks 'with' / means: prijatelj → prijateljem (masculine -em after a soft consonant). 's prijateljem' = with a friend." },
+        { "type": "MCQ", "difficulty": 9, "prompt": "Comparative: 'Croatia is ___ than Slovenia.' (bigger — velik)",
+          "options": ["veći", "velik", "najveći", "više"], "answer": "veći",
+          "explanation": "Comparative of velik is irregular: veći (bigger). najveći is the superlative (biggest). Use 'nego/od' for 'than'." },
+        { "type": "REORDER", "difficulty": 10, "prompt": "Order the words: 'Yesterday I drank coffee in a café.' (past + accusative + locative)",
+          "options": ["Jučer", "sam", "pio", "kavu", "u", "kafiću"],
+          "ordered": ["Jučer", "sam", "pio", "kavu", "u", "kafiću"], "answer": "Jučer sam pio kavu u kafiću",
+          "explanation": "Past = 'sam pio' (male). 'kavu' is accusative (object), 'kafiću' is locative (location after 'u'). Three systems working together." }
+      ]
     }
   ]
 }
