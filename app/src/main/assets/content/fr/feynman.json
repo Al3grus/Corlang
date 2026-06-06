@@ -1,0 +1,82 @@
+{
+  "concepts": [
+    {
+      "id": "fr-gender",
+      "levelId": "A0",
+      "title": "Why French nouns have gender",
+      "simpleExplanation": "In French every noun is either masculine or feminine — not because objects have a sex, but because the language sorts all nouns into two grammatical groups. The group decides which 'the' (le/la) and 'a' (un/une) you use, and it makes adjectives change to match. Gender is mostly arbitrary, so the trick is to never learn a noun alone: always learn it glued to its article, 'la table', 'le livre'.",
+      "analogy": "Think of nouns as arriving in one of two coloured boxes — blue (masculine) or pink (feminine). You can't always tell the colour by looking, so you memorise the box when you first meet the word.",
+      "rubricPoints": [
+        { "point": "Every noun is masculine or feminine.", "reTeach": "There's no 'neuter' in French — each noun falls into one of exactly two groups." },
+        { "point": "Gender decides the article: le/un (m) vs la/une (f).", "reTeach": "The article you choose (le/la, un/une) is determined by the noun's gender, not by meaning." },
+        { "point": "Gender is mostly arbitrary, so learn the article with the noun.", "reTeach": "Don't store 'table' — store 'la table'. Learning the article later is much harder." },
+        { "point": "Gender also affects adjectives (they agree).", "reTeach": "Adjectives change form to match the noun's gender, e.g. petit → petite." }
+      ]
+    },
+    {
+      "id": "fr-er-verbs",
+      "levelId": "A0",
+      "title": "How regular -ER verbs work",
+      "simpleExplanation": "About 90% of French verbs end in -ER, and they all follow one identical pattern. You take the infinitive (like 'parler'), drop the -er to get the stem ('parl'), then add a fixed set of endings depending on who is doing the action: -e, -es, -e, -ons, -ez, -ent. Because three of those endings (-e, -es, -ent) are silent, je/tu/il/ils all SOUND the same — only the context or pronoun tells them apart.",
+      "analogy": "It's like a verb factory: feed in any -ER verb and the same machine stamps out all six forms with the same set of endings.",
+      "rubricPoints": [
+        { "point": "Most French verbs end in -ER and share one pattern.", "reTeach": "Learn the pattern once and you can conjugate thousands of verbs." },
+        { "point": "Drop -er to get the stem, then add endings.", "reTeach": "parler → parl- → add the ending for each subject." },
+        { "point": "Endings are -e, -es, -e, -ons, -ez, -ent.", "reTeach": "je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent." },
+        { "point": "-e, -es and -ent are silent, so they sound identical.", "reTeach": "parle / parles / parlent are spelled differently but pronounced the same." }
+      ]
+    },
+    {
+      "id": "fr-negation",
+      "levelId": "A0",
+      "title": "How negation (ne…pas) works",
+      "simpleExplanation": "To make a French sentence negative you wrap the verb in two little words: 'ne' goes before the verb and 'pas' goes after it. So 'Je sais' (I know) becomes 'Je ne sais pas' (I don't know). Before a vowel, 'ne' shortens to 'n'' — 'Je n'aime pas'. In casual speech people often drop the 'ne' and just say 'Je sais pas', but in writing you keep both.",
+      "analogy": "Think of 'ne … pas' as a pair of brackets you place around the verb to switch its meaning off.",
+      "rubricPoints": [
+        { "point": "Negation uses two words around the verb: ne … pas.", "reTeach": "'ne' before the verb, 'pas' after it — they work as a pair." },
+        { "point": "ne becomes n' before a vowel.", "reTeach": "Je n'aime pas, not 'Je ne aime pas'." },
+        { "point": "In speech the 'ne' is often dropped.", "reTeach": "Casually you'll hear 'Je sais pas', but write the full 'ne…pas'." },
+        { "point": "Other pairs replace 'pas': jamais, rien, plus.", "reTeach": "ne…jamais (never), ne…rien (nothing), ne…plus (no longer)." }
+      ]
+    },
+    {
+      "id": "fr-passe-compose",
+      "levelId": "A1",
+      "title": "How the passé composé works",
+      "simpleExplanation": "The passé composé is the everyday past tense for completed actions. You build it in two pieces: a helper verb in the present (usually 'avoir', sometimes 'être') plus the past participle of the main verb. 'J'ai mangé' = I ate. Most verbs use avoir. A small set of movement/change verbs use être, and when they do, the participle agrees with the subject like an adjective: 'Elle est allée'.",
+      "analogy": "It's like English 'have + done': you grab a helper ('have' = avoir) and snap on the participle ('done' = mangé) to talk about the past.",
+      "rubricPoints": [
+        { "point": "It's a completed past action.", "reTeach": "Use it for things that happened and finished: 'I ate', 'she left'." },
+        { "point": "Formed with avoir/être (present) + past participle.", "reTeach": "Two pieces: helper verb + participle, e.g. 'ai' + 'mangé'." },
+        { "point": "Most verbs use avoir.", "reTeach": "J'ai parlé, j'ai fini, j'ai vendu — avoir is the default helper." },
+        { "point": "A set of verbs uses être and the participle agrees.", "reTeach": "aller, venir, partir... take être: 'Elle est allée' (extra -e for feminine)." }
+      ]
+    },
+    {
+      "id": "fr-futur-proche",
+      "levelId": "A1",
+      "title": "How the near future (aller + infinitive) works",
+      "simpleExplanation": "French has an easy way to talk about the future that needs no new tense at all. You take the verb 'aller' (to go), conjugate it in the present, and follow it with any verb in its infinitive form. 'Je vais manger' = I'm going to eat. It works exactly like English 'going to', and because you already know aller, you get the whole future for free.",
+      "analogy": "Just like English: 'I am going to ___'. French swaps in 'Je vais ___' and drops in any infinitive.",
+      "rubricPoints": [
+        { "point": "It expresses near/planned future.", "reTeach": "Use it for things you're about to or going to do." },
+        { "point": "Structure: present of aller + infinitive.", "reTeach": "Conjugate aller (vais, vas, va...) then add an unconjugated verb." },
+        { "point": "No new conjugation is required.", "reTeach": "You reuse aller, which you already know — that's the whole trick." },
+        { "point": "It mirrors English 'going to'.", "reTeach": "'Je vais apprendre' = 'I'm going to learn'." }
+      ]
+    },
+    {
+      "id": "fr-pronunciation",
+      "levelId": "A0",
+      "title": "Why French has so many silent letters",
+      "simpleExplanation": "French spelling preserves letters that stopped being pronounced centuries ago. The big rule: final consonants are usually silent ('Paris' = pa-REE), with a common exception for the letters in 'CaReFuL' (c, r, f, l), which often are pronounced. French also has nasal vowels (an, on, in, un) where air goes through the nose and you don't fully say the n. And 'liaison' links a normally-silent final consonant to a following vowel: 'les amis' becomes 'lay-zah-MEE'.",
+      "analogy": "French writing is like an old photograph of how the language used to sound — many letters are historical leftovers you see but don't say.",
+      "rubricPoints": [
+        { "point": "Final consonants are usually silent.", "reTeach": "'petit' = puh-TEE; you don't say the final t." },
+        { "point": "CaReFuL letters (c, r, f, l) are often pronounced finally.", "reTeach": "sac, bonjour, neuf, mal — these final consonants are sounded." },
+        { "point": "Nasal vowels send air through the nose (an/on/in/un).", "reTeach": "Don't fully pronounce the n — 'bon' is 'bohn', nasalised." },
+        { "point": "Liaison links a silent final consonant to a following vowel.", "reTeach": "'les amis' → 'lay-zah-MEE'; the silent s links over." }
+      ]
+    }
+  ]
+}
