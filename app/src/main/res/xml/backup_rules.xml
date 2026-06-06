@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Auto Backup (Android 11 and below). Backs up the Room DB and DataStore prefs so
+     progress survives reinstalls / device changes. -->
+<full-backup-content>
+    <include domain="database" path="frenchai.db" />
+    <include domain="file" path="datastore/" />
+</full-backup-content>
