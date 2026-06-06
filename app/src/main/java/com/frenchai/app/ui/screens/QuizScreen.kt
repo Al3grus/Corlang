@@ -26,6 +26,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
@@ -127,11 +128,13 @@ private fun QuizRunner(
     var selectedOption by remember(quiz.id) { mutableStateOf<String?>(null) }
     var fillText by remember(quiz.id) { mutableStateOf("") }
     val reorderAssembled = remember(quiz.id) { mutableStateListOf<String>() }
+    val matchMapping = remember(quiz.id) { mutableStateMapOf<String, String>() }
 
     fun resetResponse() {
         selectedOption = null
         fillText = ""
         reorderAssembled.clear()
+        matchMapping.clear()
         checked = false
         lastCorrect = false
     }
@@ -245,7 +248,38 @@ private fun QuizRunner(
             }
 
             QuestionType.MATCH -> {
-                Text("Matching questions are reviewed on the cheatsheet.", modifier = Modifier.padding(8.dp))
+                // Shuffle the right-hand options once per question so the answer order isn't given away.
+                val rights = remember(q.prompt) { q.pairs.map { it.right }.distinct().shuffled() }
+                Text(
+                    "Tap to match each item with its pair:",
+                    style = MaterialTheme.typography.bodySmall,
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+                q.pairs.forEach { pair ->
+                    Column(modifier = Modifier.padding(vertical = 4.dp)) {
+                        Text(pair.left, fontWeight = FontWeight.SemiBold)
+                        FlowRow(modifier = Modifier.fillMaxWidth()) {
+                            rights.forEach { right ->
+                                val selected = matchMapping[pair.left] == right
+                                val isThisPairCorrect = pair.right == right
+                                val color = when {
+                                    checked && selected && isThisPairCorrect -> Color(0xFFC8E6C9)
+                                    checked && selected && !isThisPairCorrect -> Color(0xFFFFCDD2)
+                                    checked && isThisPairCorrect -> Color(0xFFC8E6C9)
+                                    selected -> MaterialTheme.colorScheme.secondaryContainer
+                                    else -> MaterialTheme.colorScheme.surfaceVariant
+                                }
+                                Surface(
+                                    shape = RoundedCornerShape(8.dp),
+                                    color = color,
+                                    modifier = Modifier
+                                        .padding(4.dp)
+                                        .clickable(enabled = !checked) { matchMapping[pair.left] = right }
+                                ) { Text(right, modifier = Modifier.padding(10.dp)) }
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -265,6 +299,7 @@ private fun QuizRunner(
                     if (!lastCorrect) {
                         val correct = when (q.type) {
                             QuestionType.REORDER -> q.ordered.joinToString(" ")
+                            QuestionType.MATCH -> q.pairs.joinToString("; ") { "${it.left} → ${it.right}" }
                             else -> q.answer
                         }
                         Text("Answer: $correct", fontWeight = FontWeight.SemiBold,
@@ -283,7 +318,7 @@ private fun QuizRunner(
                         QuestionType.MCQ -> selectedOption?.let { Grading.gradeMcq(q, it) } ?: false
                         QuestionType.FILL -> Grading.gradeFill(q, fillText)
                         QuestionType.REORDER -> Grading.gradeReorder(q, reorderAssembled.toList())
-                        QuestionType.MATCH -> false
+                        QuestionType.MATCH -> Grading.gradeMatch(q, matchMapping.toMap())
                     }
                     lastCorrect = correct
                     if (correct) score++
@@ -304,7 +339,7 @@ private fun QuizRunner(
                 QuestionType.MCQ -> selectedOption != null
                 QuestionType.FILL -> fillText.isNotBlank()
                 QuestionType.REORDER -> reorderAssembled.isNotEmpty()
-                QuestionType.MATCH -> true
+                QuestionType.MATCH -> matchMapping.size == q.pairs.size
             },
             modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp)
         ) {
