@@ -75,6 +75,44 @@
           "options": ["du", "de la", "de l'", "des"], "answer": "de l'",
           "explanation": "Partitive 'some': du (m), de la (f), de l' (before a vowel), des (plural). 'Eau' starts with a vowel, so 'de l'eau'." }
       ]
+    },
+    {
+      "id": "fr-a2",
+      "levelId": "A2",
+      "title": "A2 — Past, plans & description",
+      "questions": [
+        { "type": "MCQ", "difficulty": 1, "prompt": "Which tense describes an ongoing/background past state: 'Quand j'étais petit, je ___ au foot.' (to play habitually)",
+          "options": ["jouais", "ai joué", "joue", "jouerai"], "answer": "jouais",
+          "explanation": "The imparfait (jouais) describes habits and background in the past ('used to play'). 'ai joué' (passé composé) is for single completed events." },
+        { "type": "FILL", "difficulty": 2, "prompt": "Imparfait of être for 'il': 'Il ___ tard.' (It was late.)",
+          "answer": "était", "accepted": ["etait"],
+          "explanation": "être is irregular in the imparfait but uses the normal endings on the stem 'ét-': j'étais, tu étais, il était..." },
+        { "type": "MCQ", "difficulty": 3, "prompt": "Choose the right past tense: 'Je regardais la télé quand le téléphone ___.' (rang — a single event)",
+          "options": ["sonnait", "a sonné", "sonne", "sonnera"], "answer": "a sonné",
+          "explanation": "Background action (regardais = imparfait) is interrupted by a single completed event (a sonné = passé composé). This contrast is the core A2 skill." },
+        { "type": "MCQ", "difficulty": 4, "prompt": "Replace the object with a pronoun: 'Je vois Marie.' → 'Je ___ vois.'",
+          "options": ["la", "le", "lui", "elle"], "answer": "la",
+          "explanation": "Marie is a feminine direct object, replaced by 'la' before the verb: 'Je la vois.' 'lui' is an indirect object (to her)." },
+        { "type": "FILL", "difficulty": 5, "prompt": "Use the right relative pronoun (subject): 'C'est le livre ___ est sur la table.'",
+          "answer": "qui", "accepted": [],
+          "explanation": "'qui' replaces the SUBJECT of the relative clause (the book IS on the table). 'que' replaces the object." },
+        { "type": "MATCH", "difficulty": 6, "prompt": "Match each infinitive to its past participle.",
+          "pairs": [{ "left": "faire", "right": "fait" }, { "left": "prendre", "right": "pris" }, { "left": "voir", "right": "vu" }, { "left": "être", "right": "été" }],
+          "explanation": "Irregular participles must be memorised: faire→fait, prendre→pris, voir→vu, être→été. They appear constantly in the passé composé." },
+        { "type": "MCQ", "difficulty": 7, "prompt": "Comparative: 'Ce livre est ___ intéressant que l'autre.' (more interesting than)",
+          "options": ["plus … que", "aussi", "moins", "le plus"], "answer": "plus … que",
+          "explanation": "Comparative of superiority = plus + adjective + que. 'plus intéressant que' = more interesting than." },
+        { "type": "FILL", "difficulty": 8, "prompt": "Express duration: 'J'apprends le français ___ deux ans.' (for two years, still ongoing)",
+          "answer": "depuis", "accepted": [],
+          "explanation": "'depuis' + present expresses an action that started in the past and continues now: 'depuis deux ans' = for (the last) two years." },
+        { "type": "REORDER", "difficulty": 9, "prompt": "Order the words: 'I got up early and I had breakfast.' (reflexive + passé composé)",
+          "options": ["Je", "me", "suis", "levé", "tôt", "et", "j'ai", "pris", "le petit-déjeuner"],
+          "ordered": ["Je", "me", "suis", "levé", "tôt", "et", "j'ai", "pris", "le petit-déjeuner"], "answer": "Je me suis levé tôt et j'ai pris le petit-déjeuner",
+          "explanation": "Reflexive verbs take être in the passé composé ('je me suis levé'), while 'prendre' takes avoir ('j'ai pris')." },
+        { "type": "MCQ", "difficulty": 10, "prompt": "Futur simple of 'aller' for 'nous': 'Demain, nous ___ à la plage.'",
+          "options": ["irons", "allons", "irions", "allions"], "answer": "irons",
+          "explanation": "aller has an irregular future stem 'ir-': j'irai, tu iras, il ira, nous irons... 'allons' is present, 'irions' is conditional." }
+      ]
     }
   ]
 }
