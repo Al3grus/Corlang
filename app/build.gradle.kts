@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.frenchai.app"
+    namespace = "com.corlang.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.frenchai.app"
+        applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

@@ -10,7 +10,7 @@ This is a native Android app. It builds with **Android Studio**, which bundles e
 
 ## 2. Open the project
 
-1. **File ▸ Open** → select this `Frenchai` folder.
+1. **File ▸ Open** → select this `Corlang` folder.
 2. Android Studio will run a **Gradle sync** and download dependencies (Compose, Room, etc.) the first
    time — give it a few minutes. The Gradle wrapper is configured for Gradle 8.9.
    - If it asks about the Gradle JDK, choose the bundled JDK 17.
@@ -22,7 +22,7 @@ This is a native Android app. It builds with **Android Studio**, which bundles e
 ## 3. Run
 
 1. Pick a device: start an emulator from **Device Manager**, or plug in a phone with **USB debugging** on.
-2. Press **Run ▶** (or `Shift+F10`). The app installs and launches as **Frenchai**.
+2. Press **Run ▶** (or `Shift+F10`). The app installs and launches as **Corlang**.
 
 ## 4. End-to-end smoke test
 
@@ -51,7 +51,7 @@ cheatsheet, just edit the JSON — no code changes needed. To add a **new langua
 1. Create `app/src/main/assets/content/<code>/` with the seven files
    (`meta, cheatsheet, levels, plan, quizzes, feynman, resources`.json) — copy `fr/` as a template.
 2. Add the `<code>` to `availableLanguages` in
-   `app/src/main/java/com/frenchai/app/data/ContentRepository.kt`.
+   `app/src/main/java/com/corlang/app/data/ContentRepository.kt`.
 
 Validate your JSON before building (from the repo root, with Node installed):
 

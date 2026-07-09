@@ -23,5 +23,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Frenchai"
+rootProject.name = "Corlang"
 include(":app")
