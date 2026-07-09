@@ -1,13 +1,13 @@
-# Frenchai 🇫🇷🇭🇷
+# Corlang 🇫🇷🇭🇷
 
 **Learn French and Croatian fast — the 20% that drives 80% of the results.**
 
-Frenchai is a native Android app (Kotlin + Jetpack Compose) that teaches **French** and **Croatian**
+Corlang is a native Android app (Kotlin + Jetpack Compose) that teaches **French** and **Croatian**
 to **English** speakers through a focused, two-month daily plan. It's fully offline, free to run, and
 tracks your progress independently for each language.
 
 > The philosophy: most of everyday fluency comes from a small core — high-frequency words, a handful
-> of verbs and tenses, and a few grammar patterns. Frenchai teaches that core deliberately, in order,
+> of verbs and tenses, and a few grammar patterns. Corlang teaches that core deliberately, in order,
 > and makes you *use* it every day.
 
 ## What's inside
@@ -51,7 +51,7 @@ learners and grow well beyond two languages.
   (accent/case-insensitive matching); the Feynman loop uses rubric self-assessment.
 
 ```
-app/src/main/java/com/frenchai/app/
+app/src/main/java/com/corlang/app/
 ├─ data/        model (serialization) · ContentRepository · db (Room) · prefs (DataStore)
 ├─ ui/
 │  ├─ navigation/   bottom-nav destinations
