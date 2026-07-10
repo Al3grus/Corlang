@@ -1,0 +1,1655 @@
+{
+  "121": [
+    {
+      "type": "LEARN",
+      "title": "Čaša hladne vode — genitive of quantity and description",
+      "intro": "The genitive's third act. After quantities (a glass of, a kilo of, a lot of) and inside descriptions (a man of good will), Croatian reaches for the genitive — adjective and noun together. Learn these phrases as chunks and the endings will start placing themselves. At the end, all three genitive uses line up for a recap.",
+      "items": [
+        {
+          "hr": "čaša hladne vode",
+          "en": "a glass of cold water",
+          "note": "Quantity noun + genitive. Feminine genitive singular: hladna voda → hladne vode."
+        },
+        {
+          "hr": "šalica jake kave",
+          "en": "a cup of strong coffee",
+          "note": "Same template: šalica čega? — jake kave."
+        },
+        {
+          "hr": "kilogram svježeg sira",
+          "en": "a kilo of fresh cheese",
+          "note": "Masculine genitive: sir → sira. Soft ž pulls the adjective to -eg: svježeg, not 'svježog'."
+        },
+        {
+          "hr": "boca crnog vina",
+          "en": "a bottle of red wine",
+          "note": "Neuter genitive: vino → vina, crno → crnog. (Croatian red wine is 'black' wine.)"
+        },
+        {
+          "hr": "komad domaćeg kruha",
+          "en": "a piece of homemade bread",
+          "note": "Soft ć → -eg again: domaćeg."
+        },
+        {
+          "hr": "malo slobodnog vremena",
+          "en": "a little free time",
+          "note": "vrijeme → vremena — this noun grows a syllable in the genitive. Full pattern on day 127."
+        },
+        {
+          "hr": "puno posla",
+          "en": "a lot of work",
+          "note": "posao → posla: the -ao collapses outside the nominative, like in the past participle."
+        },
+        {
+          "hr": "nekoliko dobrih prijatelja",
+          "en": "a few good friends",
+          "note": "puno, malo, nekoliko + countable nouns → genitive PLURAL: dobrih prijatelja."
+        },
+        {
+          "hr": "čovjek dobre volje",
+          "en": "a man of good will",
+          "note": "The explanatory (objasnidbeni) genitive — the genitive phrase describes what kind of person."
+        },
+        {
+          "hr": "žena vedrog duha",
+          "en": "a woman of cheerful spirit",
+          "note": "vedar → vedrog: the fleeting a disappears before the ending."
+        },
+        {
+          "hr": "osjećaj sreće, miris mora, zvuk valova",
+          "en": "a feeling of happiness, the smell of the sea, the sound of the waves",
+          "note": "The explanatory genitive also names what something consists of or refers to."
+        },
+        {
+          "hr": "Prošle godine — auto moga brata — čaša hladne vode",
+          "en": "Last year — my brother's car — a glass of cold water",
+          "note": "The three genitive uses in one line: time, possession, description/quantity. Say all three aloud."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Genitive workout: quantities and descriptions",
+      "intro": "From a bare glass of water to full descriptive phrases — every question is a genitive with a different disguise.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'A glass of water' is: čaša ___",
+          "difficulty": 1,
+          "options": ["vode", "voda", "vodu", "vodi"],
+          "answer": "vode",
+          "explanation": "Quantity nouns take the genitive: voda → vode. Čaša vode, šalica kave, boca vina — always the same move."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "šalica ___ kave (strong)",
+          "difficulty": 2,
+          "options": ["jake", "jaka", "jaku", "jakoj"],
+          "answer": "jake",
+          "explanation": "The adjective declines with its noun: jaka kava → jake kave. Feminine genitive singular ends in -e for both."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'kilogram ___ sira' (fresh)",
+          "difficulty": 3,
+          "answer": "svježeg",
+          "accepted": ["svježega", "Svježeg"],
+          "explanation": "Masculine genitive of svjež is svježeg(a) — after soft consonants (ž, č, ć, š, j, nj, lj) the ending is -eg, not -og.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Imam puno ___. (a lot of work)",
+          "difficulty": 4,
+          "options": ["posla", "posao", "poslu", "poslom"],
+          "answer": "posla",
+          "explanation": "puno + genitive. posao loses its -ao outside the nominative: posao → posla, just like the participle išao → išla."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Imam malo slobodnog ___.' (time)",
+          "difficulty": 5,
+          "answer": "vremena",
+          "accepted": ["Vremena"],
+          "explanation": "vrijeme grows a stem in the genitive: vrijeme → vremena. Note the ije shrinks to e in the longer form.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "nekoliko ___ (a few good friends)",
+          "difficulty": 6,
+          "options": ["dobrih prijatelja", "dobri prijatelji", "dobre prijatelje", "dobrim prijateljima"],
+          "answer": "dobrih prijatelja",
+          "explanation": "With countable nouns, nekoliko/puno/malo demand the genitive PLURAL: adjective -ih, noun -a."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Describe her with two explanatory genitives: 'She is a woman of cheerful spirit and good will.'",
+          "difficulty": 7,
+          "options": ["vedrog", "žena", "volje.", "Ona", "dobre", "duha", "je", "i"],
+          "ordered": ["Ona", "je", "žena", "vedrog", "duha", "i", "dobre", "volje."],
+          "answer": "Ona je žena vedrog duha i dobre volje.",
+          "explanation": "Two explanatory genitives chained with i: vedrog duha (m.) + dobre volje (f.). The genitive phrase follows the noun it describes."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which phrase is the TEMPORAL genitive?",
+          "difficulty": 8,
+          "options": ["prošle godine", "čaša hladne vode", "auto moga brata", "osjećaj sreće"],
+          "answer": "prošle godine",
+          "explanation": "The three uses: prošle godine = time (no preposition!), auto moga brata = possession, čaša vode / osjećaj sreće = quantity and description. Name all three aloud, one example each."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "122": [
+    {
+      "type": "LEARN",
+      "title": "Javljam se na natječaj — the job application",
+      "intro": "Formal Croatian with immediate real-world value. These are the fixed phrases of every application letter — openers, body lines, closers — plus the mini-CV vocabulary. Notice how the letter quietly audits everything: genitives of quantity (pet godina iskustva), temporal genitives (prošle godine), svoj, and the capital-V Vi of written courtesy.",
+      "items": [
+        {
+          "hr": "Poštovani, / Poštovana gospođo,",
+          "en": "Dear Sir/Madam, (to a man or unknown / to a woman)",
+          "note": "The only correct opener for a formal letter. Never 'Dragi' in an application."
+        },
+        {
+          "hr": "Javljam se na natječaj za radno mjesto konobara.",
+          "en": "I am applying for the advertised position of waiter.",
+          "note": "The key sentence: javiti se na natječaj + za radno mjesto + genitive of the job."
+        },
+        {
+          "hr": "natječaj, oglas",
+          "en": "job competition/opening, advertisement",
+          "note": "Vidio sam Vaš oglas… = I saw your ad… — capital V for written politeness."
+        },
+        {
+          "hr": "Imam tri godine radnog iskustva.",
+          "en": "I have three years of work experience.",
+          "note": "Genitive of description: iskustvo čega? — radnog iskustva."
+        },
+        {
+          "hr": "Prošle godine završio sam tečaj hrvatskog jezika.",
+          "en": "Last year I completed a Croatian language course.",
+          "note": "Temporal genitive opens the CV line; tečaj čega? — another genitive."
+        },
+        {
+          "hr": "Radio sam kao prodavač u velikoj trgovini.",
+          "en": "I worked as a salesman in a large shop.",
+          "note": "raditi kao + nominative of the job."
+        },
+        {
+          "hr": "Moje su prednosti odgovornost i strpljivost.",
+          "en": "My strengths are responsibility and patience.",
+          "note": "prednost = advantage/strength; abstract nouns in -ost are feminine (i-declension)."
+        },
+        {
+          "hr": "Tečno govorim engleski, a hrvatski učim već dvije godine.",
+          "en": "I speak English fluently, and I have been learning Croatian for two years.",
+          "note": "već + present = 'have been …ing' — Croatian uses the present for ongoing duration."
+        },
+        {
+          "hr": "Dostupan sam od prvog rujna.",
+          "en": "I am available from the first of September.",
+          "note": "od + genitive; the ordinal declines too: prvi rujna → od prvog rujna."
+        },
+        {
+          "hr": "U prilogu šaljem svoj životopis.",
+          "en": "I am sending my CV attached.",
+          "note": "svoj, not moj — the subject (ja) is the owner. u prilogu = attached, enclosed."
+        },
+        {
+          "hr": "Stojim Vam na raspolaganju za razgovor.",
+          "en": "I am at your disposal for an interview.",
+          "note": "The classic pre-closing line. razgovor (za posao) = job interview."
+        },
+        {
+          "hr": "S poštovanjem,",
+          "en": "Yours faithfully / Respectfully,",
+          "note": "The only closer you need. s + instrumental: poštovanje → s poštovanjem."
+        },
+        {
+          "hr": "životopis: obrazovanje, radno iskustvo, vještine",
+          "en": "CV: education, work experience, skills",
+          "note": "The three section headings of your six-line CV."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "The application audit",
+      "intro": "Register, prepositions, genitives, svoj — everything an employer's eye would catch, one trap at a time.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "You are writing to an unknown woman at a company. The letter starts:",
+          "difficulty": 1,
+          "options": ["Poštovana gospođo,", "Bok!", "Draga Ana,", "Hej, kako ste?"],
+          "answer": "Poštovana gospođo,",
+          "explanation": "Formal letters open with Poštovani / Poštovana gospođo. Everything else on that list would end your application in the bin."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Javljam se ___ natječaj za radno mjesto konobara.",
+          "difficulty": 2,
+          "options": ["na", "za", "u", "o"],
+          "answer": "na",
+          "explanation": "The fixed rection: javiti se NA natječaj. The za comes later — za radno mjesto."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Imam pet godina radnog ___.' (experience)",
+          "difficulty": 3,
+          "answer": "iskustva",
+          "accepted": ["Iskustva"],
+          "explanation": "Genitive of description: radno iskustvo → radnog iskustva. Yesterday's pattern earning its salary.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'I am available from the first of September':",
+          "difficulty": 4,
+          "options": ["Dostupan sam od prvog rujna.", "Dostupan sam od prvi rujan.", "Dostupan sam na prvog rujna.", "Dostupan sam u prvom rujnu."],
+          "answer": "Dostupan sam od prvog rujna.",
+          "explanation": "od + genitive, and the ordinal declines with the month: od prvog rujna."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'U prilogu šaljem ___ životopis.' (my — the subject owns it)",
+          "difficulty": 5,
+          "answer": "svoj",
+          "accepted": ["Svoj"],
+          "explanation": "When the subject is the possessor, Croatian requires svoj: šaljem svoj životopis. 'Moj' is understandable but marked — the standard wants svoj.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which closing line keeps the formal Vi-register correctly?",
+          "difficulty": 6,
+          "options": ["Stojim Vam na raspolaganju za razgovor.", "Stojim ti na raspolaganju za razgovor.", "Stojim Vas na raspolaganju za razgovor.", "Stojiš mi na raspolaganju za razgovor."],
+          "answer": "Stojim Vam na raspolaganju za razgovor.",
+          "explanation": "stajati komu na raspolaganju — dative Vam, with the courtesy capital V that written Croatian expects in letters."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the CV line: 'Last year I completed a Croatian language course.'",
+          "difficulty": 7,
+          "options": ["tečaj", "Prošle", "sam", "jezika.", "hrvatskog", "godine", "završio"],
+          "ordered": ["Prošle", "godine", "završio", "sam", "tečaj", "hrvatskog", "jezika."],
+          "answer": "Prošle godine završio sam tečaj hrvatskog jezika.",
+          "explanation": "Temporal genitive first (Prošle godine), then the clitic sam in second position after the participle: završio sam."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which line is TOO informal for an application letter?",
+          "difficulty": 8,
+          "options": ["Čujemo se!", "S poštovanjem,", "Stojim Vam na raspolaganju.", "Javljam se na natječaj za radno mjesto prodavača."],
+          "answer": "Čujemo se!",
+          "explanation": "Čujemo se ('talk soon!') is for friends and texts. A letter closes with S poštovanjem — register is part of the grammar here."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "123": [
+    {
+      "type": "LEARN",
+      "title": "Talking shop — your work in ten lines",
+      "intro": "Today's conversation fuel: ten lines about your job, your boss and your ambitions. Each one smuggles in a pattern from the last two weeks — temporal genitives, comparatives, a conditional, futur II. Rehearse them aloud now; in the conversation you'll need them without looking.",
+      "items": [
+        {
+          "hr": "Radim kao programer u maloj tvrtki.",
+          "en": "I work as a programmer in a small company.",
+          "note": "raditi kao + nominative; u maloj tvrtki = locative."
+        },
+        {
+          "hr": "Na poslu najviše volim raditi s ljudima.",
+          "en": "At work I most enjoy working with people.",
+          "note": "s + instrumental plural: ljudi → s ljudima."
+        },
+        {
+          "hr": "Moj idealan posao bio bi bliže moru.",
+          "en": "My ideal job would be closer to the sea.",
+          "note": "Conditional bio bi + comparative bliže + dative moru."
+        },
+        {
+          "hr": "Prije dvije godine promijenio sam posao.",
+          "en": "Two years ago I changed jobs.",
+          "note": "prije + genitive for 'ago'; promijeniti = perfective, one completed change."
+        },
+        {
+          "hr": "Prošlog mjeseca imao sam previše sastanaka.",
+          "en": "Last month I had too many meetings.",
+          "note": "Temporal genitive prošlog mjeseca + quantity genitive previše sastanaka — two genitives, one complaint."
+        },
+        {
+          "hr": "Kolege su mi drage, ali šef zna biti strog.",
+          "en": "I like my colleagues, but the boss can be strict.",
+          "note": "znati + infinitive = 'tends to / can be' — a very native turn of phrase."
+        },
+        {
+          "hr": "Jednog dana želim voditi svoj tim.",
+          "en": "One day I want to lead my own team.",
+          "note": "Temporal genitive jednog dana; svoj because the subject will own the team."
+        },
+        {
+          "hr": "Posao mi je zanimljiviji nego prije.",
+          "en": "My job is more interesting than before.",
+          "note": "Comparative in -iji + nego. mi je = 'my … is' with the dative of the experiencer."
+        },
+        {
+          "hr": "Radim od devet do pet, ponekad i duže.",
+          "en": "I work nine to five, sometimes even longer.",
+          "note": "od/do + genitive; duže = comparative adverb of dugo."
+        },
+        {
+          "hr": "Ako sve bude u redu, sljedeće godine tražit ću povišicu.",
+          "en": "If all goes well, next year I'll ask for a raise.",
+          "note": "Futur II (bude) in the ako-clause, futur I in the result — plus one more temporal genitive."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Warm-up before the conversation",
+      "intro": "Quick reps before the 15-minute talk: two listening checks, the patterns you must work in live (three temporal genitives, two comparatives), and the lines you'll actually say.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'Radim kao konobar u restoranu' means:",
+          "difficulty": 1,
+          "options": ["I work as a waiter in a restaurant.", "I want to be a waiter in a restaurant.", "I worked as a cook in a restaurant.", "I am looking for a waiter for my restaurant."],
+          "answer": "I work as a waiter in a restaurant.",
+          "explanation": "raditi kao + job in the nominative = to work as. Present tense radim = I work."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen: what happened last month?",
+          "difficulty": 2,
+          "options": ["He had too many meetings.", "He had too few meetings.", "He will have many meetings.", "He missed a meeting."],
+          "answer": "He had too many meetings.",
+          "explanation": "Prošlog mjeseca = last month (temporal genitive), previše sastanaka = too many meetings (quantity genitive).",
+          "audioText": "Prošlog mjeseca imao sam previše sastanaka."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Radim od devet ___ pet.' (from nine TO five)",
+          "difficulty": 3,
+          "answer": "do",
+          "accepted": ["Do"],
+          "explanation": "The pair od … do … + genitive frames any span: od devet do pet, od ponedjeljka do petka.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen: what would his ideal job be like?",
+          "difficulty": 4,
+          "options": ["Closer to the sea.", "Better paid.", "In a bigger city.", "With fewer meetings."],
+          "answer": "Closer to the sea.",
+          "explanation": "bliže moru = closer to the sea — comparative adverb bliže + dative. bio bi marks it as a daydream, not a plan.",
+          "audioText": "Moj idealan posao bio bi bliže moru."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Work in a temporal genitive: '___ godine promijenio sam posao.' (last)",
+          "difficulty": 5,
+          "answer": "Prošle",
+          "accepted": ["prošle"],
+          "explanation": "prošla godina → prošle godine, no preposition. That's one of the three temporal genitives you owe the conversation.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say your ambition: 'One day I want to lead my own team.'",
+          "difficulty": 6,
+          "options": ["voditi", "tim.", "Jednog", "svoj", "dana", "želim"],
+          "ordered": ["Jednog", "dana", "želim", "voditi", "svoj", "tim."],
+          "answer": "Jednog dana želim voditi svoj tim.",
+          "explanation": "Temporal genitive up front (jednog dana), and svoj tim because the subject is the future owner."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "One of your two required comparatives: 'Posao mi je ___ nego prije.'",
+          "difficulty": 8,
+          "options": ["zanimljiviji", "zanimljiv", "najzanimljiviji", "zanimljivo"],
+          "answer": "zanimljiviji",
+          "explanation": "nego prije demands a comparative: zanimljiv → zanimljiviji. The superlative najzanimljiviji would need 'of all', not 'than before'."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Razgovor o poslu — the interview at home",
+      "intro": "Your speaking day script — a model for the real 15-minute conversation. She interviews you about work and ambitions; your job is to land three temporal genitives and two comparatives without her noticing the effort. (She notices.)",
+      "lines": [
+        {
+          "speaker": "Me",
+          "hr": "Danas vježbamo razgovor o poslu. Pitaj me nešto!",
+          "en": "Today we're practising a conversation about work. Ask me something!"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Dobro. Što najviše voliš na svom poslu?",
+          "en": "Okay. What do you like most about your job?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Najviše volim raditi s ljudima. Prošle godine dobio sam novi projekt i sad je posao zanimljiviji nego prije.",
+          "en": "I most enjoy working with people. Last year I got a new project and now the job is more interesting than before."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "'Zanimljiviji nego prije' — odličan komparativ! A kakav bi bio tvoj idealan posao?",
+          "en": "'More interesting than before' — excellent comparative! And what would your ideal job be like?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Moj idealan posao bio bi bliže moru. Radio bih manje, a plivao bih više.",
+          "en": "My ideal job would be closer to the sea. I would work less and swim more."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Ha! A šef? Kakav je tvoj šef?",
+          "en": "Ha! And the boss? What's your boss like?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Šef mi je dobar, ali zna biti strog. Prošlog mjeseca imao sam previše sastanaka.",
+          "en": "My boss is good, but he can be strict. Last month I had too many meetings."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "'Prošlog mjeseca' — vremenski genitiv, bravo. Imaš li kakvu ambiciju?",
+          "en": "'Last month' — temporal genitive, bravo. Do you have any ambition?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Jednog dana želim voditi svoj tim. Zato svakog jutra učim nešto novo.",
+          "en": "One day I want to lead my own team. That's why I learn something new every morning."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Tri vremenska genitiva u jednom razgovoru! Napredniji si nego prošlog tjedna.",
+          "en": "Three temporal genitives in one conversation! You're more advanced than last week."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Hvala! Ako sve bude u redu, sljedeće godine tražit ću povišicu.",
+          "en": "Thanks! If all goes well, next year I'll ask for a raise."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Samo hrabro. Tvoj hrvatski već zvuči profesionalno.",
+          "en": "Go for it. Your Croatian already sounds professional."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "124": [
+    {
+      "type": "LEARN",
+      "title": "Sjećanja — the childhood word kit",
+      "intro": "The memories theme opens here. Twelve-plus words for talking about childhood — and one crucial rection hiding among them: sjećati se takes the GENITIVE. Čega se sjećaš? What do you remember? Every answer this week will start from that question.",
+      "items": [
+        {
+          "hr": "djetinjstvo",
+          "en": "childhood",
+          "note": "sretno djetinjstvo = a happy childhood; iz djetinjstva = from childhood (iz + G)."
+        },
+        {
+          "hr": "uspomena",
+          "en": "memory, keepsake",
+          "note": "najljepša uspomena = the loveliest memory. Also a physical memento."
+        },
+        {
+          "hr": "sjećati se + genitiv",
+          "en": "to remember",
+          "note": "The key rection: Sjećam se svog prvog bicikla — genitive, not accusative!"
+        },
+        {
+          "hr": "sjećanje",
+          "en": "memory (the mental act, a recollection)",
+          "note": "uspomena is the treasured thing; sjećanje is the act or trace of remembering."
+        },
+        {
+          "hr": "odrastati / odrasti",
+          "en": "to grow up (imperfective / perfective)",
+          "note": "Odrastao sam u malom gradu. = I grew up in a small town."
+        },
+        {
+          "hr": "igračka",
+          "en": "toy",
+          "note": "Plural igračke. moja najdraža igračka = my favourite toy."
+        },
+        {
+          "hr": "susjedstvo",
+          "en": "neighbourhood",
+          "note": "djeca iz susjedstva = the neighbourhood kids."
+        },
+        {
+          "hr": "djed i baka",
+          "en": "grandpa and grandma",
+          "note": "Ljeta kod djeda i bake — kod + genitive, the classic Croatian childhood."
+        },
+        {
+          "hr": "unuk / unuka",
+          "en": "grandson / granddaughter",
+          "note": "Bio sam njihov najstariji unuk."
+        },
+        {
+          "hr": "igrati se skrivača",
+          "en": "to play hide-and-seek",
+          "note": "igrati se + genitive of the game: igrali smo se skrivača."
+        },
+        {
+          "hr": "ljuljačka",
+          "en": "swing",
+          "note": "ljuljati se = to swing, to rock — hear the lj twice."
+        },
+        {
+          "hr": "penjati se na drvo",
+          "en": "to climb a tree",
+          "note": "Present: penjem se. na + accusative for the direction of the climb."
+        },
+        {
+          "hr": "Čega se najradije sjećaš iz djetinjstva?",
+          "en": "What do you remember most fondly from childhood?",
+          "note": "čega = genitive of što — the question matches the verb's case."
+        },
+        {
+          "hr": "Najradije se sjećam bakina vrta.",
+          "en": "I most fondly remember grandma's garden.",
+          "note": "bakin vrt → bakina vrta: the possessive adjective declines through the genitive too."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Remembering in the genitive",
+      "intro": "Vocabulary first, then the rection that rules the week: sjećati se + genitive, igrati se + genitive, and a first taste of habitual past for tomorrow.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'Childhood' is:",
+          "difficulty": 1,
+          "options": ["djetinjstvo", "susjedstvo", "sjećanje", "uspomena"],
+          "answer": "djetinjstvo",
+          "explanation": "djetinjstvo = childhood — built on dijete (child). susjedstvo = neighbourhood, uspomena = keepsake/memory."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The verb sjećati se takes which case?",
+          "difficulty": 2,
+          "options": ["genitiv", "akuzativ", "dativ", "instrumental"],
+          "answer": "genitiv",
+          "explanation": "sjećati se + genitive: Sjećam se mora, sjećam se bake. Never the accusative — this rection defines the whole memories theme."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Sjećam se svog prvog ___.' (bicycle)",
+          "difficulty": 3,
+          "answer": "bicikla",
+          "accepted": ["Bicikla"],
+          "explanation": "Genitive after sjećati se: bicikl → bicikla, and the whole phrase declines: svog prvog bicikla.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which question word asks 'WHAT do you remember?'",
+          "difficulty": 4,
+          "options": ["Čega", "Što", "Čemu", "Čime"],
+          "answer": "Čega",
+          "explanation": "što declines: čega (G), čemu (D), čime (I). Because sjećati se takes the genitive, the question must too: Čega se sjećaš?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Ljeta sam provodio kod ___ i bake.' (grandpa)",
+          "difficulty": 5,
+          "answer": "djeda",
+          "accepted": ["Djeda"],
+          "explanation": "kod + genitive: djed → djeda. Kod djeda i bake — where half of Croatia spent every summer.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Every summer we went (used to go) to the seaside':",
+          "difficulty": 6,
+          "options": ["Svakog ljeta išli smo na more.", "Svakog ljeta otišli smo na more.", "Svakog ljeta idemo na more.", "Svakog ljeta otišao sam na more."],
+          "answer": "Svakog ljeta išli smo na more.",
+          "explanation": "A repeated habit needs the imperfective: išli smo. Otišli (perfective) would mean one single departure — the full contrast arrives on day 126."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask the theme question: 'What do you remember most fondly from childhood?'",
+          "difficulty": 7,
+          "options": ["iz", "sjećaš", "Čega", "djetinjstva?", "najradije", "se"],
+          "ordered": ["Čega", "se", "najradije", "sjećaš", "iz", "djetinjstva?"],
+          "answer": "Čega se najradije sjećaš iz djetinjstva?",
+          "explanation": "Čega leads (genitive of što), the clitic se sits in second position, and iz + genitive closes: iz djetinjstva."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'We played hide-and-seek': Igrali smo se ___",
+          "difficulty": 8,
+          "options": ["skrivača.", "skrivač.", "skrivaču.", "skrivačem."],
+          "answer": "skrivača.",
+          "explanation": "igrati se + genitive of the game: skrivač → skrivača. Same logic as sjećati se — the se-verb reaches for the genitive."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "125": [
+    {
+      "type": "LEARN",
+      "title": "Najprije, zatim, na kraju — the story skeleton",
+      "intro": "Five sequencers turn loose sentences into a story: najprije → zatim → potom → kasnije → na kraju. Add timestamps in the temporal genitive (jednog ljeta, svakog jutra) and you have the full narrative skeleton. The last four items walk through a model story — the same shape your 8-sentence memory should take today.",
+      "items": [
+        {
+          "hr": "najprije",
+          "en": "first (of all)",
+          "note": "Najprije smo se probudili rano. — opens the chain of events."
+        },
+        {
+          "hr": "zatim",
+          "en": "then, next",
+          "note": "The workhorse connector: zatim smo doručkovali."
+        },
+        {
+          "hr": "potom",
+          "en": "after that",
+          "note": "A slightly more formal twin of zatim — good for written stories."
+        },
+        {
+          "hr": "kasnije",
+          "en": "later",
+          "note": "Comparative of kasno — literally 'more late'."
+        },
+        {
+          "hr": "na kraju",
+          "en": "in the end, finally",
+          "note": "Also 'at the end of' + genitive: na kraju dana, na kraju ljeta."
+        },
+        {
+          "hr": "prije toga / nakon toga",
+          "en": "before that / after that",
+          "note": "prije and nakon take the genitive: toga. Handy for jumping around the timeline."
+        },
+        {
+          "hr": "jednog ljeta, svakog jutra, prošle godine",
+          "en": "one summer, every morning, last year",
+          "note": "The temporal genitive timestamps — no preposition, straight into the story."
+        },
+        {
+          "hr": "Jednog ljeta otišli smo kod bake na otok.",
+          "en": "One summer we went to grandma's on the island.",
+          "note": "Model story, sentence 1: timestamp + perfective otići = the story's opening event."
+        },
+        {
+          "hr": "Najprije smo se kupali, zatim smo ručali kod bake.",
+          "en": "First we swam, then we had lunch at grandma's.",
+          "note": "Two sequencers, one sentence — the clitics (smo se, smo) stay in second position of each clause."
+        },
+        {
+          "hr": "Kasnije smo lovili ribu s djedom.",
+          "en": "Later we fished with grandpa.",
+          "note": "loviti ribu = to fish; s djedom = instrumental of company."
+        },
+        {
+          "hr": "Na kraju ljeta nisam htio ići kući.",
+          "en": "At the end of the summer I didn't want to go home.",
+          "note": "na kraju + genitive (ljeta); kući = homeward, the special adverbial form."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Chain the events",
+      "intro": "Sequencers in order, timestamps in the genitive, and two full story sentences to rebuild — the exact moves your 8-sentence story needs.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which sequencer opens a story?",
+          "difficulty": 1,
+          "options": ["najprije", "zatim", "kasnije", "na kraju"],
+          "answer": "najprije",
+          "explanation": "The canonical chain: najprije → zatim/potom → kasnije → na kraju. Start at the start."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sequencer closes the story?",
+          "difficulty": 2,
+          "options": ["na kraju", "najprije", "potom", "zatim"],
+          "answer": "na kraju",
+          "explanation": "na kraju = in the end / finally. Bonus: with a genitive it means 'at the end of' — na kraju ljeta."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Timestamp the opening: '___ ljeta otišli smo na otok.' (one)",
+          "difficulty": 3,
+          "answer": "Jednog",
+          "accepted": ["jednog", "Jednoga", "jednoga"],
+          "explanation": "Temporal genitive, no preposition: jedno ljeto → jednog ljeta = one summer.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "nakon + which form? 'after lunch' =",
+          "difficulty": 4,
+          "options": ["nakon ručka", "nakon ručak", "nakon ručku", "nakon ručkom"],
+          "answer": "nakon ručka",
+          "explanation": "nakon takes the genitive: ručak → ručka (fleeting a). Same for prije: prije ručka."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Svakog ___ smo plivali prije doručka.' (morning)",
+          "difficulty": 5,
+          "answer": "jutra",
+          "accepted": ["Jutra"],
+          "explanation": "svako jutro → svakog jutra — the habitual timestamp. And prije doručka: genitive after prije.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Rebuild: 'First we swam, then we had lunch.'",
+          "difficulty": 6,
+          "options": ["zatim", "kupali,", "smo", "Najprije", "ručali.", "se", "smo"],
+          "ordered": ["Najprije", "smo", "se", "kupali,", "zatim", "smo", "ručali."],
+          "answer": "Najprije smo se kupali, zatim smo ručali.",
+          "explanation": "Each clause carries its own second-position clitics: Najprije SMO SE kupali, zatim SMO ručali."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Narrative aspect check: 'Zatim sam ___ pismo i poslao ga.'",
+          "difficulty": 7,
+          "options": ["napisao", "pisao", "pišem", "napišem"],
+          "answer": "napisao",
+          "explanation": "In a sequenced chain each event is completed before the next — perfective napisao. Pisao sam would leave the letter unfinished forever."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Close the story: 'At the end of the summer I didn't want to go home.'",
+          "difficulty": 8,
+          "options": ["htio", "Na", "ići", "ljeta", "kući.", "kraju", "nisam"],
+          "ordered": ["Na", "kraju", "ljeta", "nisam", "htio", "ići", "kući."],
+          "answer": "Na kraju ljeta nisam htio ići kući.",
+          "explanation": "na kraju + genitive ljeta; nisam htio = negated perfekt of htjeti; kući = the adverb 'homeward', no preposition."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "126": [
+    {
+      "type": "LEARN",
+      "title": "Kad sam bio dijete… — habitual vs one-time",
+      "intro": "Aspect's finest distinction, staged as memories. Habits and repeated summers take the imperfective (išli smo, budio sam se, pekla je); single events that happened once take the perfective (naučio sam, probudio sam se, ispekla je). Learn the pairs, then the signal words that give the choice away.",
+      "items": [
+        {
+          "hr": "Kad sam bio dijete, svakog ljeta smo išli na more.",
+          "en": "When I was a child, we went to the seaside every summer.",
+          "note": "Habit → imperfective ići. This is THE model sentence of the day."
+        },
+        {
+          "hr": "Jedne godine naučio sam plivati.",
+          "en": "One year I learned to swim.",
+          "note": "One completed breakthrough → perfective naučiti."
+        },
+        {
+          "hr": "Svakog jutra budio sam se rano.",
+          "en": "Every morning I woke up early.",
+          "note": "buditi se (imperfective) — the daily routine."
+        },
+        {
+          "hr": "Jednog jutra probudio sam se prije svih.",
+          "en": "One morning I woke up before everyone.",
+          "note": "probuditi se (perfective) — that one particular morning."
+        },
+        {
+          "hr": "Baka je svake nedjelje pekla kolače.",
+          "en": "Grandma baked cakes every Sunday.",
+          "note": "peći (imperfective) for the weekly ritual; svake nedjelje = temporal genitive."
+        },
+        {
+          "hr": "Jednom je ispekla tortu za pedeset ljudi.",
+          "en": "Once she baked a cake for fifty people.",
+          "note": "ispeći (perfective): one legendary cake, finished and eaten."
+        },
+        {
+          "hr": "Često sam padao s bicikla.",
+          "en": "I often fell off my bike.",
+          "note": "padati (imperfective) — falling as a recurring childhood condition."
+        },
+        {
+          "hr": "Jednom sam pao i slomio ruku.",
+          "en": "Once I fell and broke my arm.",
+          "note": "pasti + slomiti (both perfective): one fall, one broken arm, one story."
+        },
+        {
+          "hr": "Gledali smo crtiće svaki dan.",
+          "en": "We watched cartoons every day.",
+          "note": "gledati (imperfective); crtić = cartoon."
+        },
+        {
+          "hr": "Jedne večeri pogledali smo cijeli film do kraja.",
+          "en": "One evening we watched a whole film to the end.",
+          "note": "pogledati (perfective): do kraja = to the end — completion made explicit."
+        },
+        {
+          "hr": "svaki dan, često, obično, uvijek → nesvršeni",
+          "en": "every day, often, usually, always → imperfective",
+          "note": "These signal words announce a habit — reach for the imperfective."
+        },
+        {
+          "hr": "jednom, jedne godine, odjednom → svršeni",
+          "en": "once, one year, suddenly → perfective",
+          "note": "These pin one moment to the timeline — reach for the perfective."
+        },
+        {
+          "hr": "dijete → djeteta",
+          "en": "child → of the child",
+          "note": "A teaser: dijete grows a -t- in the genitive. The full shape-shifter pattern comes tomorrow."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Habit or event?",
+      "intro": "Every question is the same decision in a new costume: is this a repeated summer or a single moment? Signal words are your compass.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'Svakog ljeta' (every summer) signals which aspect?",
+          "difficulty": 1,
+          "options": ["imperfective (nesvršeni)", "perfective (svršeni)", "either one", "neither — it blocks the past tense"],
+          "answer": "imperfective (nesvršeni)",
+          "explanation": "svaki/svaka/svako + time = repetition = imperfective. jedne godine / jednom point the other way."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Kad sam bio dijete, svakog ljeta smo ___ na more.",
+          "difficulty": 2,
+          "options": ["išli", "otišli", "idemo", "otišao"],
+          "answer": "išli",
+          "explanation": "Habit → imperfective ići → išli smo. Otišli would report one single departure."
+        },
+        {
+          "type": "FILL",
+          "prompt": "One-time breakthrough: 'Jedne godine ___ sam plivati.' (learned)",
+          "difficulty": 3,
+          "answer": "naučio",
+          "accepted": ["Naučio"],
+          "explanation": "jedne godine = one specific year → perfective naučiti → naučio sam. Učio sam would mean you were still practising.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Svakog jutra ___ sam se rano.",
+          "difficulty": 4,
+          "options": ["budio", "probudio", "budim", "probudim"],
+          "answer": "budio",
+          "explanation": "Daily routine → imperfective buditi se → budio sam se. Probudio sam se belongs to ONE morning."
+        },
+        {
+          "type": "FILL",
+          "prompt": "The accident: 'Jednom sam ___ s bicikla i slomio ruku.' (fell)",
+          "difficulty": 5,
+          "answer": "pao",
+          "accepted": ["Pao"],
+          "explanation": "jednom = once → perfective pasti → pao. The habitual padao sam pairs with često, not jednom.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Baka je svake nedjelje ___ kolače.",
+          "difficulty": 6,
+          "options": ["pekla", "ispekla", "ispeći", "peče"],
+          "answer": "pekla",
+          "explanation": "svake nedjelje = weekly ritual → imperfective peći → pekla je. Ispekla je is for that one heroic fifty-person cake."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "One particular morning: 'One morning I woke up before everyone.'",
+          "difficulty": 7,
+          "options": ["prije", "sam", "Jednog", "svih.", "probudio", "jutra", "se"],
+          "ordered": ["Jednog", "jutra", "probudio", "sam", "se", "prije", "svih."],
+          "answer": "Jednog jutra probudio sam se prije svih.",
+          "explanation": "jednog jutra pins one morning → perfective probuditi se. Clitic order: sam before se. prije + genitive: svih."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which pair contrasts habit and event CORRECTLY?",
+          "difficulty": 8,
+          "options": [
+            "Često sam padao s bicikla, a jednom sam slomio ruku.",
+            "Često sam pao s bicikla, a jednom sam lomio ruku.",
+            "Često sam padao s bicikla, a jednom sam lomio ruku.",
+            "Često sam pao s bicikla, a jednom sam slomio ruku."
+          ],
+          "answer": "Često sam padao s bicikla, a jednom sam slomio ruku.",
+          "explanation": "često → imperfective padao; jednom → perfective slomio. The wrong versions break exactly one half each — that's how subtle this gets."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "127": [
+    {
+      "type": "LEARN",
+      "title": "Shape-shifters: ime, vrijeme, dijete",
+      "intro": "A tiny class of very frequent neuter nouns grows a syllable the moment it leaves the nominative: ime → imena, vrijeme → vremena, dijete → djeteta. Learn the singular of all three, the trick plural of dijete (djeca!), and the everyday sentences these nouns live in. Module 6 closes today — 60 units down.",
+      "items": [
+        {
+          "hr": "ime → imena, imenu, imenom",
+          "en": "name → of the name, to the name, with the name",
+          "note": "The stem grows -(e)n-: imen-. G imena, D/L imenu, I imenom."
+        },
+        {
+          "hr": "Kako se piše vaše ime i prezime?",
+          "en": "How do you spell your first and last name?",
+          "note": "The form-filling question you will hear at every counter in Croatia."
+        },
+        {
+          "hr": "Na popisu nema mojeg imena.",
+          "en": "My name isn't on the list.",
+          "note": "nema + genitive: imena. The extension appears the moment the case changes."
+        },
+        {
+          "hr": "vrijeme → vremena, vremenu, vremenom",
+          "en": "time/weather → of time, to time, with time",
+          "note": "Watch the ije shrink to e in every extended form: vrEmena, not 'vrijemena'."
+        },
+        {
+          "hr": "Nemam vremena.",
+          "en": "I don't have time.",
+          "note": "Probably the most frequent shape-shifted form in the language."
+        },
+        {
+          "hr": "Koliko vremena imamo?",
+          "en": "How much time do we have?",
+          "note": "koliko + genitive — quantity genitive meets the stem extension."
+        },
+        {
+          "hr": "dijete → djeteta, djetetu, djetetom",
+          "en": "child → of the child, to the child, with the child",
+          "note": "The -(e)t- extension: djetet-. Same ije → je shortening: dIJEte → dJEteta."
+        },
+        {
+          "hr": "Kako je ime tvog djeteta?",
+          "en": "What is your child's name?",
+          "note": "Yesterday's teaser resolved: tvog djeteta, genitive with the -t- stem."
+        },
+        {
+          "hr": "Plural: imena, vremena — ali djeca!",
+          "en": "Plural: names, times — but 'children'!",
+          "note": "dijete has no regular plural: djeca (a collective) does the job instead."
+        },
+        {
+          "hr": "Djeca se igraju u parku.",
+          "en": "The children are playing in the park.",
+          "note": "djeca looks singular but takes a plural verb: djeca SE IGRAJU."
+        },
+        {
+          "hr": "rame → ramena; tele → teleta",
+          "en": "shoulder → shoulders; calf → of the calf",
+          "note": "The rest of the little family: rame goes the -(e)n- way, tele the -(e)t- way like dijete."
+        },
+        {
+          "hr": "S vremenom sve postaje lakše.",
+          "en": "With time, everything gets easier.",
+          "note": "Instrumental vremenom — a proverb-grade sentence and today's motto."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Grow the stem",
+      "intro": "Three nouns, one habit: add the syllable before the ending. If you can clear these eight, the whole shape-shifter class is yours.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "The genitive of ime is:",
+          "difficulty": 1,
+          "options": ["imena", "ima", "imea", "imenu"],
+          "answer": "imena",
+          "explanation": "The stem grows -(e)n-: ime → imen- + a = imena. 'Ima' would be the verb 'has'!"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Nemam ___! (I don't have time)",
+          "difficulty": 2,
+          "options": ["vremena", "vrijeme", "vremenu", "vrijemena"],
+          "answer": "vremena",
+          "explanation": "nemati + genitive → vremena. Note the ije shortens to e in the extended stem — 'vrijemena' does not exist."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Kako je ime tvog ___?' (child)",
+          "difficulty": 3,
+          "answer": "djeteta",
+          "accepted": ["Djeteta"],
+          "explanation": "dijete takes the -(e)t- extension: djetet- + a = djeteta. And dIJEte → dJEteta — the ije shortens too.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The plural of dijete is:",
+          "difficulty": 4,
+          "options": ["djeca", "dijeta", "djeteti", "djetetima"],
+          "answer": "djeca",
+          "explanation": "dijete has no regular plural — the collective djeca steps in. (dijeta means 'diet', a different word entirely.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the proverb: 'S ___ sve postaje lakše.' (with time)",
+          "difficulty": 5,
+          "answer": "vremenom",
+          "accepted": ["Vremenom"],
+          "explanation": "Instrumental of vrijeme: vremen- + om = vremenom. Stem extension plus the regular neuter -om.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which noun declines like ime (rame → ?)",
+          "difficulty": 6,
+          "options": ["rame → ramena", "more → morena", "selo → selena", "pismo → pismena"],
+          "answer": "rame → ramena",
+          "explanation": "rame belongs to the same -(e)n- family: rame → ramena. more, selo and pismo are ordinary neuters: mora, sela, pisma."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask the counter question: 'How do you spell your first and last name?'",
+          "difficulty": 7,
+          "options": ["ime", "piše", "Kako", "prezime?", "vaše", "se", "i"],
+          "ordered": ["Kako", "se", "piše", "vaše", "ime", "i", "prezime?"],
+          "answer": "Kako se piše vaše ime i prezime?",
+          "explanation": "The se sits in second position after kako. In the nominative, ime keeps its short shape — the extension only appears in other cases."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Djeca ___ u parku.",
+          "difficulty": 8,
+          "options": ["se igraju", "se igra", "igra se", "se igrati"],
+          "answer": "se igraju",
+          "explanation": "djeca is a collective that ends like a feminine singular but takes a PLURAL verb: djeca se igraju, djeca su bila…"
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "128": [
+    {
+      "type": "LEARN",
+      "title": "Sa svojom najboljom prijateljicom — the full instrumental phrase",
+      "intro": "The last case gets the full-phrase treatment. Masculine and neuter modifiers take -im (ovim brzim vlakom), feminine takes -om (s mojom starom prijateljicom). One boundary to guard: company takes s/sa, means of transport takes nothing. After today the entire declension table — every case, every word in the phrase — is yours.",
+      "items": [
+        {
+          "hr": "s mojom starom prijateljicom",
+          "en": "with my old friend (f.)",
+          "note": "Feminine instrumental all the way down: -om, -om, -om."
+        },
+        {
+          "hr": "sa svojom najboljom prijateljicom",
+          "en": "with my (own) best friend",
+          "note": "svoj because the subject is the friend's 'owner'; sa (not s) before another s-."
+        },
+        {
+          "hr": "ovim brzim vlakom",
+          "en": "by this fast train",
+          "note": "Masculine: demonstrative and adjective in -im, noun in -om. NO preposition — it's a means."
+        },
+        {
+          "hr": "s tim simpatičnim susjedom",
+          "en": "with that nice neighbour",
+          "note": "Company → s. taj → tim, simpatičan → simpatičnim (fleeting a out, -im in)."
+        },
+        {
+          "hr": "svojim novim autom",
+          "en": "by one's own new car",
+          "note": "The foreign noun auto declines as masculine: auto → autom. Means → no preposition."
+        },
+        {
+          "hr": "s našom dragom bakom",
+          "en": "with our dear grandma",
+          "note": "naša → našom, draga → dragom, baka → bakom — a clean feminine row."
+        },
+        {
+          "hr": "Putujem vlakom. / Putujem s bratom.",
+          "en": "I travel by train. / I travel with my brother.",
+          "note": "The rule of the day: means → bare instrumental; company → s + instrumental."
+        },
+        {
+          "hr": "Prošlog tjedna išao sam u kino sa svojim mlađim bratom.",
+          "en": "Last week I went to the cinema with my younger brother.",
+          "note": "Temporal genitive + full instrumental phrase: sa svojim mlađim bratom."
+        },
+        {
+          "hr": "Pišem crnom kemijskom.",
+          "en": "I write with a black pen.",
+          "note": "Instrument → no preposition. kemijska (olovka) = ballpoint pen."
+        },
+        {
+          "hr": "Vozim se na posao gradskim autobusom.",
+          "en": "I ride to work on the city bus.",
+          "note": "gradski → gradskim; relational -ski adjectives decline like definites."
+        },
+        {
+          "hr": "Razgovarao sam s njezinom majkom.",
+          "en": "I talked with her mother.",
+          "note": "njezina → njezinom — possessives take the same -om as adjectives here."
+        },
+        {
+          "hr": "sa mnom, s tobom, s njom",
+          "en": "with me, with you, with her",
+          "note": "The pronoun instrumentals — and the fixed exception sa mnom (never 's mnom')."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Full-phrase instrumental drill",
+      "intro": "Agreement across the whole phrase, the company-vs-means boundary, and the s/sa spelling rule — the instrumental's final exam.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'By train' is:",
+          "difficulty": 1,
+          "options": ["vlakom", "s vlakom", "u vlaku", "na vlak"],
+          "answer": "vlakom",
+          "explanation": "Means of transport = bare instrumental, no preposition. S vlakom would mean the train is your travel companion."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Idem u kino s ___ prijateljicom.",
+          "difficulty": 2,
+          "options": ["mojom", "moja", "moju", "mojoj"],
+          "answer": "mojom",
+          "explanation": "Feminine instrumental singular: moja → mojom, matching prijateljicom. -oj would be dative/locative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Putujem ovim brzim ___.' (train)",
+          "difficulty": 3,
+          "answer": "vlakom",
+          "accepted": ["Vlakom"],
+          "explanation": "The noun closes the agreement chain: ovim (dem.) + brzim (adj.) + vlakom (noun) — im, -im, -om.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which one needs the preposition s?",
+          "difficulty": 4,
+          "options": ["___ bratom (with my brother)", "___ vlakom (by train)", "___ autom (by car)", "___ biciklom (by bike)"],
+          "answer": "___ bratom (with my brother)",
+          "explanation": "Company gets s: s bratom. Means of transport travel bare: vlakom, autom, biciklom."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Išao sam u kino sa ___ mlađim bratom.' (my own)",
+          "difficulty": 5,
+          "answer": "svojim",
+          "accepted": ["Svojim"],
+          "explanation": "Subject = possessor → svoj; masculine instrumental → svojim. And sa before the s- of svojim.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'With my best friend (f.)', full agreement:",
+          "difficulty": 6,
+          "options": ["sa svojom najboljom prijateljicom", "sa svojoj najboljoj prijateljici", "sa svoju najbolju prijateljicu", "sa svojim najboljim prijateljicom"],
+          "answer": "sa svojom najboljom prijateljicom",
+          "explanation": "Every word wears feminine instrumental -om: svojom najboljom prijateljicom. The -oj row is dative/locative, not instrumental."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'I ride to work on the city bus.'",
+          "difficulty": 7,
+          "options": ["gradskim", "na", "Vozim", "autobusom.", "posao", "se"],
+          "ordered": ["Vozim", "se", "na", "posao", "gradskim", "autobusom."],
+          "answer": "Vozim se na posao gradskim autobusom.",
+          "explanation": "voziti se + bare instrumental of means: gradskim autobusom. The se clings to second position after Vozim."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'With me' is:",
+          "difficulty": 8,
+          "options": ["sa mnom", "s mnom", "s menom", "sa mene"],
+          "answer": "sa mnom",
+          "explanation": "The fixed form: sa mnom — sa is obligatory before the consonant cluster mn. Elsewhere the rule is sa before s, š, z, ž."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "129": [
+    {
+      "type": "LEARN",
+      "title": "The memory text — building blocks",
+      "intro": "Today you write ~120 words about one childhood summer. Here is a model text, sentence by sentence, with its requirements ticked off as you go: two temporal genitives, two instrumental phrases, both aspects. Borrow the skeleton, replace the details with your own memory.",
+      "items": [
+        {
+          "hr": "Jednog ljeta, kad mi je bilo osam godina, otišli smo kod bake na otok.",
+          "en": "One summer, when I was eight, we went to grandma's on the island.",
+          "note": "Temporal genitive #1 (jednog ljeta) + the age formula: kad mi je bilo osam godina."
+        },
+        {
+          "hr": "Svakog jutra budio sam se uz miris kave i mora.",
+          "en": "Every morning I woke up to the smell of coffee and the sea.",
+          "note": "Temporal genitive #2 + habitual imperfective (budio sam se) + explanatory genitive (miris kave)."
+        },
+        {
+          "hr": "S djedom sam svakog popodneva lovio ribu.",
+          "en": "Every afternoon I fished with grandpa.",
+          "note": "Instrumental phrase #1: s djedom (company). Still the habitual imperfective: lovio sam."
+        },
+        {
+          "hr": "Najprije smo plivali, zatim smo jeli sladoled na rivi.",
+          "en": "First we swam, then we ate ice cream on the seafront.",
+          "note": "Yesterday's sequencers stitching the routine together."
+        },
+        {
+          "hr": "Jedne večeri djed me je naučio voziti barku.",
+          "en": "One evening grandpa taught me to drive the boat.",
+          "note": "The perfective turn: jedne večeri + naučio — one event, completed. Aspect contrast achieved."
+        },
+        {
+          "hr": "Nikad neću zaboraviti miris bakina kruha.",
+          "en": "I will never forget the smell of grandma's bread.",
+          "note": "zaboraviti + accusative; bakin kruh → bakina kruha, the possessive adjective declining."
+        },
+        {
+          "hr": "Na kraju ljeta uvijek mi je bilo teško otići.",
+          "en": "At the end of the summer it was always hard for me to leave.",
+          "note": "na kraju + genitive; uvijek + imperfective bilo — the recurring goodbye."
+        },
+        {
+          "hr": "Danas se tog ljeta sjećam sa smiješkom.",
+          "en": "Today I remember that summer with a smile.",
+          "note": "sjećati se + genitive (tog ljeta) and instrumental phrase #2: sa smiješkom."
+        },
+        {
+          "hr": "Sa svojom sestrom još uvijek razgovaram o tim ljetima.",
+          "en": "I still talk about those summers with my sister.",
+          "note": "A closing option: full instrumental phrase + o + locative plural (o tim ljetima)."
+        },
+        {
+          "hr": "Checklist: 2× vremenski genitiv, 2× instrumental, oba vida",
+          "en": "Checklist: 2 temporal genitives, 2 instrumental phrases, both aspects",
+          "note": "Before reading to your partner, tick each requirement in your own text."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Audit the memory",
+      "intro": "The same audit your partner will run on your text — requirement by requirement. If you can grade the model, you can grade your own.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which phrase is a temporal genitive?",
+          "difficulty": 1,
+          "options": ["jednog ljeta", "s djedom", "na rivi", "sa smiješkom"],
+          "answer": "jednog ljeta",
+          "explanation": "jednog ljeta = one summer, no preposition — pure temporal genitive. s djedom and sa smiješkom are instrumentals, na rivi is locative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "The age formula: 'Kad mi je ___ osam godina…' (when I was eight)",
+          "difficulty": 2,
+          "answer": "bilo",
+          "accepted": ["Bilo"],
+          "explanation": "Age is impersonal in the past: kad mi je BILO osam godina — neuter bilo, with the dative mi.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Instrumental of company: 'S ___ sam lovio ribu.'",
+          "difficulty": 3,
+          "options": ["djedom", "djeda", "djedu", "djed"],
+          "answer": "djedom",
+          "explanation": "s + instrumental: djed → djedom. That's instrumental requirement #1 of your text."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Danas se tog ljeta ___ sa smiješkom.' (remember)",
+          "difficulty": 4,
+          "answer": "sjećam",
+          "accepted": ["Sjećam"],
+          "explanation": "sjećati se + genitive: sjećam se tog ljeta. The se already sits in second position, so only the verb is missing.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Aspect check: 'Jedne večeri djed me je ___ voziti barku.'",
+          "difficulty": 5,
+          "options": ["naučio", "učio", "uči", "naučiti"],
+          "answer": "naučio",
+          "explanation": "jedne večeri = one completed event → perfective naučiti → naučio. Učio would mean the lesson never quite ended."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "The recurring goodbye: 'At the end of the summer it was hard for me to leave.'",
+          "difficulty": 7,
+          "options": ["teško", "bilo", "Na", "otići.", "mi", "kraju", "je", "ljeta"],
+          "ordered": ["Na", "kraju", "ljeta", "bilo", "mi", "je", "teško", "otići."],
+          "answer": "Na kraju ljeta bilo mi je teško otići.",
+          "explanation": "Impersonal bilo + dative mi; the clitic chain mi je follows the participle. na kraju + genitive ljeta."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence fulfils the 'instrumental phrase with full agreement' requirement?",
+          "difficulty": 8,
+          "options": [
+            "Sa svojom sestrom razgovaram o tim ljetima.",
+            "Sa svoja sestra razgovaram o tim ljetima.",
+            "Sa svojoj sestri razgovaram o tim ljetima.",
+            "Sa svoju sestru razgovaram o tim ljetima."
+          ],
+          "answer": "Sa svojom sestrom razgovaram o tim ljetima.",
+          "explanation": "sa + instrumental: svojom sestrom, both words in -om. The -oj/-i row is dative/locative, -u is accusative — close, but the audit catches them."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Čitanje uspomene — reading it to her",
+      "intro": "The final drill of the day, staged: you read your memory text aloud, she ticks off the requirements — and catches the one slip you didn't see. Read your lines with feeling; the text deserves it.",
+      "lines": [
+        {
+          "speaker": "Me",
+          "hr": "Napisao sam tekst o jednom ljetu iz djetinjstva. Mogu li ti ga pročitati?",
+          "en": "I wrote a text about one summer from my childhood. Can I read it to you?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Naravno. Čitaj polako, slušam.",
+          "en": "Of course. Read slowly, I'm listening."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Jednog ljeta otišli smo kod bake na otok. Svakog jutra budio sam se uz miris kave i mora.",
+          "en": "One summer we went to grandma's on the island. Every morning I woke up to the smell of coffee and the sea."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Lijepo! Dva vremenska genitiva odmah na početku.",
+          "en": "Lovely! Two temporal genitives right at the start."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Sa djedom sam svakog popodneva lovio ribu. Jedne večeri me je naučio voziti barku.",
+          "en": "With grandpa I fished every afternoon. One evening he taught me to drive the boat."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "'Naučio' — svršeni glagol za jedan događaj, točno. Ali čekaj, nešto sam čula…",
+          "en": "'Naučio' — perfective for a single event, correct. But wait, I heard something…"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Na kraju ljeta uvijek mi je bilo teško otići. Danas se tog ljeta sjećam sa smiješkom.",
+          "en": "At the end of the summer it was always hard for me to leave. Today I remember that summer with a smile."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "'Sjećam se tog ljeta' — genitiv poslije sjećati se, odlično. Sad ispravka: rekao si 'sa djedom', a treba 's djedom'.",
+          "en": "'I remember that summer' — genitive after sjećati se, excellent. Now the correction: you said 'sa djedom', but it should be 's djedom'."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Ah, da — 'sa' ide samo ispred s, š, z, ž… i ispred 'mnom'. Ispravit ću u tekstu.",
+          "en": "Ah, right — 'sa' only goes before s, š, z, ž… and before 'mnom'. I'll fix it in the text."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Točno tako. Sve ostalo je bilo izvrsno — sutra mi ga ispričaj bez papira!",
+          "en": "Exactly. Everything else was excellent — tomorrow, tell it to me without the paper!"
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "130": [
+    {
+      "type": "LEARN",
+      "title": "Week 18 in ten lines",
+      "intro": "The whole week compressed into ten sentences — one per pattern. Read each aloud and name the grammar it carries before peeking at the note. If all ten come back instantly, you're ready for the three-minute story.",
+      "items": [
+        {
+          "hr": "Prošle godine — auto moga brata — čaša hladne vode.",
+          "en": "Last year — my brother's car — a glass of cold water.",
+          "note": "The three genitive uses: time, possession, quantity/description. Say them as a mantra."
+        },
+        {
+          "hr": "Popio sam šalicu jake kave i pojeo komad domaćeg kruha.",
+          "en": "I drank a cup of strong coffee and ate a piece of homemade bread.",
+          "note": "Quantity genitives in the wild — plus two perfective verbs for two finished snacks."
+        },
+        {
+          "hr": "najprije → zatim → potom → kasnije → na kraju",
+          "en": "first → then → after that → later → in the end",
+          "note": "The five sequencers, cold. This is your story skeleton."
+        },
+        {
+          "hr": "Kad sam bio dijete, svakog ljeta smo išli na more.",
+          "en": "When I was a child, we went to the seaside every summer.",
+          "note": "Habitual past: imperfective išli + temporal genitive svakog ljeta."
+        },
+        {
+          "hr": "Jedne godine naučio sam plivati.",
+          "en": "One year I learned to swim.",
+          "note": "One-time event: perfective naučio + temporal genitive jedne godine."
+        },
+        {
+          "hr": "ime → imena, vrijeme → vremena, dijete → djeteta",
+          "en": "name, time, child — and their genitives",
+          "note": "The shape-shifters. If these three come out clean, the pattern is banked."
+        },
+        {
+          "hr": "Djeca se igraju u parku, a ja nemam vremena.",
+          "en": "The children are playing in the park, and I have no time.",
+          "note": "Collective djeca + plural verb; nemati + genitive vremena."
+        },
+        {
+          "hr": "Sa svojom najboljom prijateljicom idem na kavu.",
+          "en": "I'm going for coffee with my best friend.",
+          "note": "Full feminine instrumental phrase: svojom najboljom prijateljicom."
+        },
+        {
+          "hr": "Vozim se ovim brzim vlakom, a ne svojim starim autom.",
+          "en": "I'm taking this fast train, not my old car.",
+          "note": "Means → bare instrumental, full agreement in -im/-om across both phrases."
+        },
+        {
+          "hr": "Čega se najradije sjećaš? — Sjećam se mirisa bakina kruha.",
+          "en": "What do you remember most fondly? — I remember the smell of grandma's bread.",
+          "note": "sjećati se + genitive, twice over: mirisa (čega?) bakina kruha (čijeg?)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "The week 18 gauntlet",
+      "intro": "Mixed review across days 121-129, with two listening checks. Whatever you miss here is the 'weakest exercise' to re-do from Units 57-62.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "puno ___ (a lot of work)",
+          "difficulty": 1,
+          "options": ["posla", "posao", "poslovi", "poslom"],
+          "answer": "posla",
+          "explanation": "Quantity + genitive: posao → posla, the -ao collapsing as always."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The genitive of vrijeme is:",
+          "difficulty": 2,
+          "options": ["vremena", "vrijemena", "vremenu", "vrijema"],
+          "answer": "vremena",
+          "explanation": "Stem extension plus ije → e: vrijeme → vremena. Nemam vremena!"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen: which two things happened?",
+          "difficulty": 3,
+          "options": [
+            "Every summer they went to the seaside; one year he learned to swim.",
+            "One summer they went to the seaside; every year he swam.",
+            "Every summer he swam; last year he stopped.",
+            "One year they moved to the seaside; he taught swimming."
+          ],
+          "answer": "Every summer they went to the seaside; one year he learned to swim.",
+          "explanation": "svakog ljeta + imperfective išli = the habit; jedne godine + perfective naučio = the single breakthrough.",
+          "audioText": "Svakog ljeta išli smo na more, a jedne godine naučio sam plivati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Kako je ime tvog ___?' (child)",
+          "difficulty": 4,
+          "answer": "djeteta",
+          "accepted": ["Djeteta"],
+          "explanation": "The -(e)t- extension one more time: dijete → djeteta. If this came out instantly, day 127 is banked.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen: how does she remember, and what does she remember?",
+          "difficulty": 5,
+          "options": [
+            "With a smile — the smell of grandma's bread.",
+            "With sadness — grandma's garden.",
+            "With a smile — the sound of the sea.",
+            "With laughter — grandpa's boat."
+          ],
+          "answer": "With a smile — the smell of grandma's bread.",
+          "explanation": "sa smiješkom = with a smile (instrumental); sjećam se mirisa bakina kruha = genitive after sjećati se.",
+          "audioText": "Sa smiješkom se sjećam mirisa bakina kruha."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Habit vs event: 'Često sam ___ s bicikla, a jednom sam slomio ruku.' (fell, repeatedly)",
+          "difficulty": 6,
+          "answer": "padao",
+          "accepted": ["Padao"],
+          "explanation": "često → imperfective padati → padao sam. The perfective pao belongs with jednom, in the second half.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Full instrumental phrase: 'I'm going for coffee with my best friend.'",
+          "difficulty": 7,
+          "options": ["najboljom", "idem", "Sa", "kavu.", "na", "svojom", "prijateljicom"],
+          "ordered": ["Sa", "svojom", "najboljom", "prijateljicom", "idem", "na", "kavu."],
+          "answer": "Sa svojom najboljom prijateljicom idem na kavu.",
+          "explanation": "Every word in feminine instrumental -om, sa before the s- of svojom, and na kavu (accusative) for the destination."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The final boss — which sentence is flawless?",
+          "difficulty": 8,
+          "options": [
+            "Jednog ljeta naučio sam voziti barku sa svojim djedom.",
+            "Jedno ljeto naučio sam voziti barku sa svojim djedom.",
+            "Jednog ljeta učio sam voziti barku s svojim djedom.",
+            "Jednog ljeta naučio sam voziti barku sa svojem djedom."
+          ],
+          "answer": "Jednog ljeta naučio sam voziti barku sa svojim djedom.",
+          "explanation": "Temporal genitive jednog ljeta, perfective naučio for the one-time event, and sa svojim djedom — sa before s-, svojim in -im. The others each break exactly one of this week's rules."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Tri minute uspomena — the memory swap",
+      "intro": "The week's finale: you tell your three-minute memory, then ask for hers and follow up. This model shows the shape — your story, her corrections, her memory, your questions. Compare with week 11's recordings afterwards and hear how far you've come.",
+      "lines": [
+        {
+          "speaker": "Me",
+          "hr": "Spreman sam. Tri minute, moja najljepša uspomena. Slušaš?",
+          "en": "I'm ready. Three minutes, my loveliest memory. Are you listening?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Slušam. Kreni!",
+          "en": "I'm listening. Go!"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Kad sam bio dijete, svakog ljeta smo išli na more. Najprije vlakom do obale, zatim trajektom na otok.",
+          "en": "When I was a child, we went to the seaside every summer. First by train to the coast, then by ferry to the island."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "'Vlakom, trajektom' — instrumental bez prijedloga. Nastavi!",
+          "en": "'By train, by ferry' — instrumental without a preposition. Continue!"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Jedne godine naučio sam plivati. Sjećam se tog dana kao da je bio jučer.",
+          "en": "One year I learned to swim. I remember that day as if it were yesterday."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "'Sjećam se tog dana' — genitiv! Bravo. Što još?",
+          "en": "'I remember that day' — genitive! Bravo. What else?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Svakog jutra igrao sam se skrivača s djecom iz susjedstva. Jednom sam pao s drveta i slomio ruku.",
+          "en": "Every morning I played hide-and-seek with the neighbourhood kids. Once I fell from a tree and broke my arm."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Joj! A ja sam kao dijete svakog ljeta bila kod svoje bake u Slavoniji.",
+          "en": "Ouch! And as a child I spent every summer at my grandma's in Slavonia."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Čega se najradije sjećaš iz tog vremena?",
+          "en": "What do you remember most fondly from that time?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Najradije se sjećam mirisa bakina kruha. S vremenom takve uspomene postaju samo ljepše.",
+          "en": "I most fondly remember the smell of grandma's bread. With time, memories like that only get more beautiful."
+        },
+        {
+          "speaker": "Me",
+          "hr": "'Iz tog vremena', 's vremenom'… vrijeme, vremena — te me riječi više ne mogu iznenaditi.",
+          "en": "'From that time', 'with time'… vrijeme, vremena — those words can't surprise me any more."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Točno! Ime, vrijeme, dijete — sve si savladao. Prije godinu dana znao si reći samo 'bok'.",
+          "en": "Exactly! Ime, vrijeme, dijete — you've mastered them all. A year ago you only knew how to say 'hi'."
+        },
+        {
+          "speaker": "Me",
+          "hr": "A sada ti pričam svoje uspomene na hrvatskom. Nije loše, ha?",
+          "en": "And now I'm telling you my memories in Croatian. Not bad, huh?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Nije loše — izvrsno je! Bravo, ljubavi.",
+          "en": "Not bad — it's excellent! Bravo, my love."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}
