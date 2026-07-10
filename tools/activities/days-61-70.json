@@ -1,0 +1,1161 @@
+{
+  "61": [
+    {
+      "type": "LEARN",
+      "title": "Zemlje i jezici — 12 country-language pairs",
+      "intro": "Welcome to A2! First rule of the new level: country names are capitalized (Njemačka), but language names are ALWAYS lowercase (njemački). The language is really an adjective — the same -ski family you'll dissect tomorrow. Say each pair aloud: country, then language.",
+      "items": [
+        { "hr": "Hrvatska — hrvatski", "en": "Croatia — Croatian", "note": "Country capitalized, language lowercase. Always." },
+        { "hr": "Engleska — engleski", "en": "England — English", "note": "You say 'govorim engleski' even if you're American — the language is engleski." },
+        { "hr": "Njemačka — njemački", "en": "Germany — German" },
+        { "hr": "Francuska — francuski", "en": "France — French" },
+        { "hr": "Španjolska — španjolski", "en": "Spain — Spanish" },
+        { "hr": "Italija — talijanski", "en": "Italy — Italian", "note": "Watch out: the language is talijanski, not 'italijanski'." },
+        { "hr": "Portugal — portugalski", "en": "Portugal — Portuguese" },
+        { "hr": "Rusija — ruski", "en": "Russia — Russian" },
+        { "hr": "Poljska — poljski", "en": "Poland — Polish" },
+        { "hr": "Grčka — grčki", "en": "Greece — Greek" },
+        { "hr": "Kina — kineski", "en": "China — Chinese" },
+        { "hr": "Japan — japanski", "en": "Japan — Japanese" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Talking about your languages",
+      "intro": "Three verbs run this whole topic: govoriti (speak), razumjeti (understand), učiti (learn/study). The language goes straight after the verb, lowercase, no preposition: govorim hrvatski. These ten sentences are your template for every 'which languages do you speak?' conversation.",
+      "items": [
+        { "hr": "Govorim engleski i hrvatski.", "en": "I speak English and Croatian." },
+        { "hr": "Razumijem hrvatski, ali još ne govorim tečno.", "en": "I understand Croatian, but I don't speak fluently yet.", "note": "tečno = fluently; još = still/yet." },
+        { "hr": "Učim hrvatski dvije godine.", "en": "I have been learning Croatian for two years.", "note": "Croatian uses the present tense + a time span: literally 'I learn Croatian two years'." },
+        { "hr": "Moj materinski jezik je engleski.", "en": "My mother tongue is English.", "note": "materinski jezik = native language." },
+        { "hr": "Koje jezike govoriš?", "en": "Which languages do you speak?", "note": "jezike = accusative plural of jezik." },
+        { "hr": "Govorim malo njemački.", "en": "I speak a little German." },
+        { "hr": "Moja žena govori hrvatski, engleski i talijanski.", "en": "My wife speaks Croatian, English and Italian." },
+        { "hr": "Učim hrvatski jer je moja žena Hrvatica.", "en": "I'm learning Croatian because my wife is Croatian.", "note": "jer = because; the little word je jumps to right after jer (second position)." },
+        { "hr": "On govori pet jezika.", "en": "He speaks five languages.", "note": "After 5 and up: genitive plural — pet jezika, not 'pet jezici'." },
+        { "hr": "strani jezik — strani jezici", "en": "foreign language — foreign languages" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Countries and languages workout",
+      "intro": "Match countries to languages, then produce the sentences yourself. Remember: languages are lowercase, and watch talijanski.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which language do they speak in Njemačka (Germany)?",
+          "difficulty": 1,
+          "options": ["njemački", "Njemačka", "njemačka", "Nijemac"],
+          "answer": "njemački",
+          "explanation": "njemački is the language — lowercase, ending in -ki. Njemačka is the country, Nijemac is a German man."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How are language names written in Croatian?",
+          "difficulty": 2,
+          "options": ["Always lowercase: govorim hrvatski", "Always capitalized: govorim Hrvatski", "Capitalized only at the start of a sentence", "It varies by language"],
+          "answer": "Always lowercase: govorim hrvatski",
+          "explanation": "Languages are lowercase in Croatian: hrvatski, engleski, njemački. Only the country (Hrvatska) and the person (Hrvat/Hrvatica) are capitalized."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ona je iz Francuske. Govori ___.",
+          "difficulty": 3,
+          "options": ["francuski", "Francuska", "francuska", "Francuskinja"],
+          "answer": "francuski",
+          "explanation": "The language francuski — lowercase, -ski form. Francuska is the country; Francuskinja is a French woman."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Write the language they speak in Italija.",
+          "difficulty": 4,
+          "answer": "talijanski",
+          "explanation": "talijanski — this is the trap pair: the country is Italija but the language is talijanski, never 'italijanski'.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Write the language they speak in Grčka (Greece).",
+          "difficulty": 5,
+          "answer": "grčki",
+          "explanation": "grčki — note the č. Grčka → grčki, one of the -čki languages like njemački.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Translate: 'I speak English and I am learning Croatian.'",
+          "difficulty": 6,
+          "answer": "Govorim engleski i učim hrvatski.",
+          "accepted": ["Govorim engleski i učim hrvatski", "govorim engleski i učim hrvatski."],
+          "explanation": "Govorim engleski i učim hrvatski. — verb + lowercase language, no preposition needed.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'I'm learning Croatian because my wife is Croatian.'",
+          "difficulty": 7,
+          "options": ["Učim", "hrvatski", "jer", "je", "moja", "žena", "Hrvatica."],
+          "ordered": ["Učim", "hrvatski", "jer", "je", "moja", "žena", "Hrvatica."],
+          "answer": "Učim hrvatski jer je moja žena Hrvatica.",
+          "explanation": "After jer, the clitic je goes immediately into second position of its clause: jer JE moja žena Hrvatica."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "On govori pet ___.",
+          "difficulty": 8,
+          "options": ["jezika", "jezici", "jezike", "jezik"],
+          "answer": "jezika",
+          "explanation": "Numbers 5 and above take the genitive plural: pet jezika. (Compare: dva jezika, tri jezika — but that's a different, dual form; with pet it's true genitive plural.)"
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "62": [
+    {
+      "type": "LEARN",
+      "title": "The place-to-adjective factory: -ski, -ški, -čki",
+      "intro": "One suffix family turns any place into an adjective. Base rule: stem + -ski (Split → splitski). But the final consonant reacts: k, c or č + ski fuses into -čki (Amerika → američki), and g or h + ski fuses into -ški (Prag → praški). These adjectives are always lowercase and never form comparatives.",
+      "items": [
+        { "hr": "Hrvatska → hrvatski", "en": "Croatia → Croatian", "note": "Drop -ska, add -ski to the stem hrvat-." },
+        { "hr": "Engleska → engleski", "en": "England → English" },
+        { "hr": "Francuska → francuski", "en": "France → French" },
+        { "hr": "Split → splitski", "en": "Split → of Split", "note": "Plain consonant + -ski: no change." },
+        { "hr": "Zagreb → zagrebački", "en": "Zagreb → of Zagreb", "note": "Some places take -ački: zagrebački kolodvor (Zagreb station)." },
+        { "hr": "Amerika → američki", "en": "America → American", "note": "k + ski → čki. Same in: Njemačka → njemački." },
+        { "hr": "Rijeka → riječki", "en": "Rijeka → of Rijeka", "note": "k → č again, plus the vowel shifts: rijeČki." },
+        { "hr": "Grčka → grčki", "en": "Greece → Greek" },
+        { "hr": "Prag → praški", "en": "Prague → of Prague", "note": "g + ski → ški: praŠki." },
+        { "hr": "grad → gradski", "en": "city → urban / city-", "note": "The suffix works on common nouns too: gradski trg = city square." },
+        { "hr": "more → morski", "en": "sea → maritime / sea-", "note": "morski pas = shark (literally 'sea dog')." },
+        { "hr": "turist → turistička agencija", "en": "tourist → travel agency", "note": "t + ski can become -čki/-čka via c: turistički." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Describe things by origin",
+      "intro": "These adjectives agree with their noun like any other: -ski (masculine), -ska (feminine), -sko (neuter). Instant vocabulary: every country you learned yesterday now describes coffee, films, wine and food.",
+      "items": [
+        { "hr": "talijanska kava", "en": "Italian coffee", "note": "kava is feminine → -ska." },
+        { "hr": "francuski film", "en": "a French film", "note": "film is masculine → -ski." },
+        { "hr": "španjolsko vino", "en": "Spanish wine", "note": "vino is neuter → -sko." },
+        { "hr": "njemački auto", "en": "a German car" },
+        { "hr": "hrvatska kuhinja", "en": "Croatian cuisine" },
+        { "hr": "dalmatinski pršut", "en": "Dalmatian prosciutto", "note": "Dalmacija → dalmatinski." },
+        { "hr": "kineski restoran", "en": "a Chinese restaurant" },
+        { "hr": "engleski čaj", "en": "English tea" },
+        { "hr": "zagrebački kolodvor", "en": "Zagreb (train) station" },
+        { "hr": "Volim talijansku kavu.", "en": "I love Italian coffee.", "note": "In the accusative the adjective declines too: talijanskA kava → talijanskU kavu." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Adjective factory practice",
+      "intro": "Form the adjectives, watch the consonant fusions (k→čki, g→ški), and make them agree with their noun.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Engleska → the adjective is:",
+          "difficulty": 1,
+          "options": ["engleski", "Engleski", "engleska jezik", "englesski"],
+          "answer": "engleski",
+          "explanation": "engleski — lowercase, stem + -ski. Capitalized Engleski would be wrong: these adjectives are always lowercase."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is written correctly?",
+          "difficulty": 2,
+          "options": ["Volim njemačko pivo.", "Volim Njemačko pivo.", "Volim njemačka pivo.", "Volim njemački pivo."],
+          "answer": "Volim njemačko pivo.",
+          "explanation": "pivo is neuter → njemačko, and the adjective is lowercase even though Njemačka (the country) is capitalized."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Zagreb → the adjective is:",
+          "difficulty": 3,
+          "options": ["zagrebački", "zagrebski", "zagrepski", "zagrebki"],
+          "answer": "zagrebački",
+          "explanation": "Zagreb takes -ački: zagrebački kolodvor, zagrebačka katedrala. Not every place is plain -ski — learn city adjectives as words."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the adjective from Split.",
+          "difficulty": 4,
+          "answer": "splitski",
+          "explanation": "splitski — a plain consonant before -ski stays unchanged: splitska riva, splitski aerodrom.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the adjective from Prag (Prague). Careful: g reacts with -ski.",
+          "difficulty": 5,
+          "answer": "praški",
+          "explanation": "g + ski → ški: praški. Same rule for h: Čeh → češki (Czech).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Translate: 'Italian coffee' (watch the gender agreement).",
+          "difficulty": 6,
+          "answer": "talijanska kava",
+          "accepted": ["Talijanska kava"],
+          "explanation": "kava is feminine, so the adjective takes -ska: talijanska kava.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Translate: 'Spanish wine' (vino is neuter).",
+          "difficulty": 7,
+          "answer": "španjolsko vino",
+          "accepted": ["Španjolsko vino"],
+          "explanation": "Neuter agreement: -sko. španjolsko vino, but španjolska glazba (f.) and španjolski jezik (m.).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Rijeka → the adjective is:",
+          "difficulty": 8,
+          "options": ["riječki", "rijekski", "riječski", "rijecki"],
+          "answer": "riječki",
+          "explanation": "k + ski → čki, so Rijeka → riječki (riječka luka = the port of Rijeka)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'I drink Italian coffee every morning.'",
+          "difficulty": 8,
+          "options": ["Pijem", "talijansku", "kavu", "svako", "jutro."],
+          "ordered": ["Pijem", "talijansku", "kavu", "svako", "jutro."],
+          "answer": "Pijem talijansku kavu svako jutro.",
+          "explanation": "In the accusative both adjective and noun take -u: talijanskU kavU. svako jutro = every morning."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "63": [
+    {
+      "type": "LEARN",
+      "title": "Possessive adjectives: -ov, -ev, -in",
+      "intro": "Croatian turns a person into an adjective to show possession: brat → bratov (brother's). Three endings cover everything: masculine owner + hard consonant → -ov; masculine owner + soft consonant (č, ć, š, ž, j, lj, nj) → -ev; any owner whose name ends in -a → -in. Croatian strongly prefers 'bratov auto' over 'auto od brata'.",
+      "items": [
+        { "hr": "brat → bratov", "en": "brother → brother's", "note": "Hard consonant → -ov: bratov auto." },
+        { "hr": "Marko → Markov", "en": "Marko → Marko's", "note": "Drop the final -o, add -ov." },
+        { "hr": "Ivan → Ivanov", "en": "Ivan → Ivan's" },
+        { "hr": "muž → mužev", "en": "husband → husband's", "note": "ž is a soft consonant → -ev, not -ov." },
+        { "hr": "prijatelj → prijateljev", "en": "friend → friend's", "note": "lj is soft → -ev." },
+        { "hr": "otac → očev", "en": "father → father's", "note": "Double change: the fleeting a drops (otac → otc-) and c softens to č → očev." },
+        { "hr": "sestra → sestrin", "en": "sister → sister's", "note": "Owner in -a → -in." },
+        { "hr": "Ana → Anin", "en": "Ana → Ana's" },
+        { "hr": "žena → ženin", "en": "wife → wife's", "note": "ženina knjiga = my wife's book." },
+        { "hr": "majka → majčin", "en": "mother → mother's", "note": "k softens to č before -in: majčin, never 'majkin'." },
+        { "hr": "baka → bakin", "en": "grandma → grandma's", "note": "But baka stays bakin — the k→č change is word-by-word; learn majčin as the exception you'll hear most." },
+        { "hr": "tata → tatin", "en": "dad → dad's", "note": "tata is masculine but ends in -a, so it takes -in: tatin auto." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Whose is it? Agreement in action",
+      "intro": "A possessive adjective agrees with the THING owned, not the owner: bratov auto (m.), bratova kuća (f.), bratovo pismo (n.). The owner only decides -ov/-ev vs -in; the ending after that follows the noun.",
+      "items": [
+        { "hr": "Ovo je ženina knjiga.", "en": "This is my wife's book.", "note": "knjiga is feminine → ženinA." },
+        { "hr": "Bratov auto je star.", "en": "My brother's car is old." },
+        { "hr": "Sestrino dijete spava.", "en": "My sister's child is sleeping.", "note": "dijete is neuter → sestrinO." },
+        { "hr": "Anin muž kuha večeru.", "en": "Ana's husband is cooking dinner." },
+        { "hr": "Markova sestra živi u Splitu.", "en": "Marko's sister lives in Split." },
+        { "hr": "Čitam ženinu knjigu.", "en": "I'm reading my wife's book.", "note": "In the accusative the possessive declines like an adjective: ženinA → ženinU." },
+        { "hr": "Vidim bratov auto.", "en": "I see my brother's car.", "note": "Inanimate masculine accusative = nominative, so bratov doesn't change here." },
+        { "hr": "bratov auto — NE 'auto od brata'", "en": "brother's car — NOT 'car of brother'", "note": "The od-construction sounds clumsy; natives reach for the possessive adjective." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Possessive adjective drill",
+      "intro": "Form the possessives, pick -ov/-ev/-in correctly, and watch the two consonant tricks: otac → očev, majka → majčin.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "brat → the possessive adjective is:",
+          "difficulty": 1,
+          "options": ["bratov", "bratin", "bratev", "bratski"],
+          "answer": "bratov",
+          "explanation": "Masculine owner, hard final consonant → -ov: bratov auto, bratova kuća."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "sestra → the possessive adjective is:",
+          "difficulty": 2,
+          "options": ["sestrin", "sestrov", "sestrev", "sestrina"],
+          "answer": "sestrin",
+          "explanation": "Owner ending in -a → -in: sestrin. (sestrina is the feminine agreement form — the base adjective is sestrin.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Why is it mužev and not 'mužov'?",
+          "difficulty": 3,
+          "options": ["ž is a soft consonant, and soft consonants take -ev", "muž is feminine", "It's an irregular exception", "Both forms are correct"],
+          "answer": "ž is a soft consonant, and soft consonants take -ev",
+          "explanation": "After soft consonants (č, ć, š, ž, j, lj, nj) the ending is -ev: mužev, prijateljev. After hard consonants: -ov."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Ovo je ___ muž.' (Ana's husband)",
+          "difficulty": 4,
+          "answer": "Anin",
+          "explanation": "Ana → Anin. Owner in -a takes -in; muž is masculine so no extra ending is needed.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Čitam ___ knjigu.' (my wife's — from žena)",
+          "difficulty": 5,
+          "answer": "ženinu",
+          "explanation": "žena → ženin, then agreement with knjigu in the accusative feminine: ženinU knjigU.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the possessive from otac (father). Two changes happen!",
+          "difficulty": 6,
+          "answer": "očev",
+          "explanation": "otac loses its fleeting a (otc-) and c softens to č before -ev: očev. očev auto = father's car.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the possessive from majka (mother). Careful with the k.",
+          "difficulty": 7,
+          "answer": "majčin",
+          "explanation": "k softens to č before -in: majčin. 'majkin' is a classic learner error.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'Ana's husband and Marko's sister work together.'",
+          "difficulty": 8,
+          "options": ["Anin", "muž", "i", "Markova", "sestra", "rade", "zajedno."],
+          "ordered": ["Anin", "muž", "i", "Markova", "sestra", "rade", "zajedno."],
+          "answer": "Anin muž i Markova sestra rade zajedno.",
+          "explanation": "Anin (owner in -a → -in) agrees with muž (m.); Markova (owner Marko → -ov) agrees with sestra (f.) → MarkovA."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "64": [
+    {
+      "type": "LEARN",
+      "title": "Accusative across the whole phrase",
+      "intro": "A1 taught you noun endings; A2 makes everything in the phrase agree. In the accusative singular: feminine — every word takes -u (tu lijepu ženu); masculine animate — demonstrative and adjective take -og (or -eg after a soft consonant) and the noun takes -a (tog dobrog čovjeka); masculine inanimate and neuter — nothing changes. Watch each transformation.",
+      "items": [
+        { "hr": "taj dobar čovjek → tog dobrog čovjeka", "en": "that good man → (I see) that good man", "note": "Animate masculine: -og + -og + -a. Note dobar → dobrog: the fleeting a drops." },
+        { "hr": "ovaj novi kolega → ovog novog kolegu", "en": "this new colleague → (I see) this new colleague", "note": "kolega is masculine but declines like an a-noun: adjectives masculine (-og), noun takes -u!" },
+        { "hr": "moj stari auto → moj stari auto", "en": "my old car → (I see) my old car", "note": "Inanimate masculine: accusative = nominative. Nothing changes." },
+        { "hr": "naš novi učitelj → našeg novog učitelja", "en": "our new teacher → (I see) our new teacher", "note": "After a soft consonant (š) the ending is -eg: našEg, but novOg." },
+        { "hr": "ta lijepa žena → tu lijepu ženu", "en": "that beautiful woman → (I see) that beautiful woman", "note": "Feminine: -u across the board." },
+        { "hr": "ova nova knjiga → ovu novu knjigu", "en": "this new book → (I read) this new book" },
+        { "hr": "moja dobra prijateljica → moju dobru prijateljicu", "en": "my good friend (f.) → (I see) my good friend" },
+        { "hr": "to malo dijete → to malo dijete", "en": "that small child → (I see) that small child", "note": "Neuter: accusative = nominative, even for living beings." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "See it, know it, love it — full phrases in sentences",
+      "intro": "The verbs vidjeti, znati, voljeti, čekati, gledati and imati all take a direct object in the accusative. Read each sentence aloud and feel the whole phrase click into place.",
+      "items": [
+        { "hr": "Vidim ovog novog kolegu svaki dan.", "en": "I see this new colleague every day." },
+        { "hr": "Znaš li tog dobrog čovjeka?", "en": "Do you know that good man?" },
+        { "hr": "Volim ovu staru pjesmu.", "en": "I love this old song." },
+        { "hr": "Čekam našeg novog učitelja.", "en": "I'm waiting for our new teacher." },
+        { "hr": "Gledam ovaj stari film.", "en": "I'm watching this old film.", "note": "film = inanimate, so the whole phrase stays in nominative form." },
+        { "hr": "Imam jednu dobru ideju.", "en": "I have one good idea.", "note": "jedan declines like an adjective too: jednU dobrU idejU." },
+        { "hr": "Poznajem njegovu dobru prijateljicu.", "en": "I know his good friend (f.)." },
+        { "hr": "Tražim taj crni kaput.", "en": "I'm looking for that black coat." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Whole-phrase accusative drill",
+      "intro": "Decline the full phrase, not just the noun. The two questions everything hinges on: is it feminine (→ all -u)? Is the masculine noun alive (→ -og/-eg + -a)?",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Vidim ___ (taj dobar čovjek).",
+          "difficulty": 1,
+          "options": ["tog dobrog čovjeka", "taj dobar čovjek", "tog dobar čovjeka", "taj dobrog čovjek"],
+          "answer": "tog dobrog čovjeka",
+          "explanation": "Animate masculine: every word changes — tog dobrog čovjeka. Mixing changed and unchanged words is the classic error."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Vidim ___ (moj stari auto).",
+          "difficulty": 2,
+          "options": ["moj stari auto", "mog starog auta", "moj starog auto", "mog stari auto"],
+          "answer": "moj stari auto",
+          "explanation": "auto is inanimate masculine → accusative = nominative. Nothing changes: Vidim moj stari auto."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Vidim ___ (ta lijepa žena).",
+          "difficulty": 3,
+          "options": ["tu lijepu ženu", "ta lijepa žena", "tu lijepa ženu", "toj lijepoj ženi"],
+          "answer": "tu lijepu ženu",
+          "explanation": "Feminine accusative: -u on every word — tU lijepU ženU. (toj lijepoj ženi is dative/locative.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Put 'ova nova knjiga' into the sentence: Čitam ___.",
+          "difficulty": 4,
+          "answer": "ovu novu knjigu",
+          "accepted": ["Ovu novu knjigu"],
+          "explanation": "Feminine phrase → all three words take -u: ovu novu knjigu.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Put 'naš novi učitelj' into the sentence: Čekam ___.",
+          "difficulty": 5,
+          "answer": "našeg novog učitelja",
+          "accepted": ["Našeg novog učitelja", "našega novoga učitelja"],
+          "explanation": "Animate masculine: našEg (soft š → -eg), novOg (hard v → -og), učitelja (-a).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Put 'ovaj novi kolega' into the sentence: Vidim ___.",
+          "difficulty": 6,
+          "answer": "ovog novog kolegu",
+          "accepted": ["Ovog novog kolegu", "ovoga novoga kolegu"],
+          "explanation": "kolega is masculine, so the adjectives take -og — but the noun itself declines like an a-noun: kolegU.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Vidim ___ (to malo dijete).",
+          "difficulty": 7,
+          "options": ["to malo dijete", "tog malog dijete", "tu malu dijete", "tog malog djeteta"],
+          "answer": "to malo dijete",
+          "explanation": "Neuter accusative always equals the nominative — even though a child is alive. The animacy rule applies only to masculine nouns."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Why is it našEg (not 'našog') novog učitelja?",
+          "difficulty": 8,
+          "options": ["After a soft consonant like š the ending is -eg", "naš is irregular", "Because učitelj is soft", "Both našeg and našog are standard"],
+          "answer": "After a soft consonant like š the ending is -eg",
+          "explanation": "Soft-stem words (naš, vaš, moj...) take -eg where hard stems take -og: našeg, ali novog. The following noun doesn't decide this — the stem of each word does."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'I see this new colleague every day.'",
+          "difficulty": 8,
+          "options": ["Vidim", "ovog", "novog", "kolegu", "svaki", "dan."],
+          "ordered": ["Vidim", "ovog", "novog", "kolegu", "svaki", "dan."],
+          "answer": "Vidim ovog novog kolegu svaki dan.",
+          "explanation": "ovog novog kolegu — masculine agreement on the modifiers, a-noun ending on kolega. svaki dan (every day) stays accusative but inanimate, so unchanged."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "65": [
+    {
+      "type": "LEARN",
+      "title": "svoj — one's own",
+      "intro": "svoj points back to the subject of the sentence. If the owner IS the subject, Croatian demands svoj — no exceptions, in any person: Čitam svoju knjigu, On vozi svoj auto. Using moj/njegov instead either sounds foreign or changes the meaning completely. svoj declines exactly like moj.",
+      "items": [
+        { "hr": "Čitam svoju knjigu.", "en": "I'm reading my (own) book.", "note": "Subject ja = owner → svoju, not moju." },
+        { "hr": "Čitam njezinu knjigu.", "en": "I'm reading her book.", "note": "Owner (she) is NOT the subject (I) → njezinu is correct here." },
+        { "hr": "On vozi svoj auto.", "en": "He drives his own car." },
+        { "hr": "On vozi njegov auto.", "en": "He drives his (ANOTHER man's) car.", "note": "This is the famous trap: njegov here can only mean someone else's car." },
+        { "hr": "Ana voli svog muža.", "en": "Ana loves her (own) husband.", "note": "Masculine animate accusative of svoj: svog(a) — just like mog(a)." },
+        { "hr": "Mi volimo svoj grad.", "en": "We love our (own) city.", "note": "svoj works for every person: ja, ti, on, mi, vi, oni." },
+        { "hr": "Vidim svog brata.", "en": "I see my brother." },
+        { "hr": "Volim svoj posao.", "en": "I love my job.", "note": "'Volim njegov posao' would mean you love someone else's job." },
+        { "hr": "Moja žena je Hrvatica.", "en": "My wife is Croatian.", "note": "svoj never describes the subject itself — in the nominative you keep moja." },
+        { "hr": "Uzmi svoje stvari!", "en": "Take your (own) things!", "note": "In commands the hidden subject is ti, so svoj is still required." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "svoj or not svoj?",
+      "intro": "One question decides everything: is the owner the subject of the verb? Yes → svoj. No → moj/tvoj/njegov/njezin.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'On vozi svoj auto.' Whose car is he driving?",
+          "difficulty": 1,
+          "options": ["His own", "Another man's", "It's ambiguous", "His wife's"],
+          "answer": "His own",
+          "explanation": "svoj always points back to the subject: on = the owner. His own car."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'On vozi njegov auto.' Whose car is he driving?",
+          "difficulty": 2,
+          "options": ["Another man's", "His own", "It's ambiguous", "Nobody's"],
+          "answer": "Another man's",
+          "explanation": "Since svoj is obligatory for the subject's own things, njegov here can only mean some OTHER man's car. The meaning flips entirely."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: 'Čitam ___ knjigu.' (my own book)",
+          "difficulty": 3,
+          "options": ["svoju", "moju", "svoja", "njezinu"],
+          "answer": "svoju",
+          "explanation": "Subject ja = owner → svoju. 'Čitam moju knjigu' is understood but marked — natives say svoju."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Fix the possessive: 'Volim moj posao.' Which word should replace moj?",
+          "difficulty": 4,
+          "answer": "svoj",
+          "explanation": "The subject (ja) owns the job → svoj is obligatory: Volim svoj posao.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Ana voli ___ muža.' (her OWN husband)",
+          "difficulty": 5,
+          "answer": "svog",
+          "accepted": ["svoga"],
+          "explanation": "Owner = subject (Ana) → svoj, in the masculine animate accusative: svog(a) muža.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Mi volimo ___ grad.' (our own city)",
+          "difficulty": 6,
+          "answer": "svoj",
+          "explanation": "svoj works in every person, including mi. grad is inanimate masculine, so the accusative form is just svoj.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is WRONG?",
+          "difficulty": 7,
+          "options": ["Svoja žena je Hrvatica.", "Moja žena je Hrvatica.", "Čitam svoju knjigu.", "On vozi svoj auto."],
+          "answer": "Svoja žena je Hrvatica.",
+          "explanation": "svoj can never sit in the nominative describing the subject itself — the subject can't 'own itself'. Correct: Moja žena je Hrvatica."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'He is reading his own book, not hers.'",
+          "difficulty": 8,
+          "options": ["On", "čita", "svoju", "knjigu,", "a", "ne", "njezinu."],
+          "ordered": ["On", "čita", "svoju", "knjigu,", "a", "ne", "njezinu."],
+          "answer": "On čita svoju knjigu, a ne njezinu.",
+          "explanation": "svoju = his own (owner = subject on); njezinu = hers (owner ≠ subject). The contrast in one sentence."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "66": [
+    {
+      "type": "LEARN",
+      "title": "Model talk: Moji jezici",
+      "intro": "Today you produce. Here is a model 90-second talk built entirely from this week's grammar — a -ski adjective, a possessive, a svoj, and the language phrases from day 61. Read it aloud twice, then rebuild it with YOUR facts.",
+      "items": [
+        { "hr": "Moj materinski jezik je engleski.", "en": "My mother tongue is English." },
+        { "hr": "Govorim i malo španjolski.", "en": "I also speak a little Spanish." },
+        { "hr": "Hrvatski učim dvije godine.", "en": "I've been learning Croatian for two years.", "note": "Fronting hrvatski gives it emphasis — very natural in speech." },
+        { "hr": "Učim hrvatski jer je moja žena Hrvatica.", "en": "I'm learning Croatian because my wife is Croatian." },
+        { "hr": "Njezina obitelj govori samo hrvatski.", "en": "Her family speaks only Croatian.", "note": "njezina, not svoja — the owner (she) is not the subject (her family)." },
+        { "hr": "Želim razumjeti njezinu obitelj — i nju.", "en": "I want to understand her family — and her." },
+        { "hr": "Svaki dan učim nove riječi i slušam hrvatsku glazbu.", "en": "Every day I learn new words and listen to Croatian music.", "note": "hrvatskU glazbU — yesterday's -ska adjective in the accusative." },
+        { "hr": "Volim svoj mali ritual: kava i deset novih riječi.", "en": "I love my little ritual: coffee and ten new words.", "note": "svoj — because I am the subject and the owner." },
+        { "hr": "Još uvijek govorim sporo, ali razumijem puno.", "en": "I still speak slowly, but I understand a lot." },
+        { "hr": "Jednog dana želim govoriti tečno.", "en": "One day I want to speak fluently.", "note": "jednog dana = one day / someday, a fixed genitive time phrase." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Build your talk",
+      "intro": "Assemble the pieces of the talk. Every question is a sentence you'll actually say out loud afterwards.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What does 'materinski jezik' mean?",
+          "difficulty": 1,
+          "options": ["mother tongue / native language", "foreign language", "official language", "spoken language"],
+          "answer": "mother tongue / native language",
+          "explanation": "materinski jezik = native language, from mati/majka (mother). Moj materinski jezik je engleski."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Učim hrvatski ___ je moja žena Hrvatica.' (because)",
+          "difficulty": 2,
+          "answer": "jer",
+          "explanation": "jer = because. The clitic je follows it immediately: jer JE moja žena Hrvatica.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the opening line: 'My mother tongue is English.'",
+          "difficulty": 3,
+          "options": ["Moj", "materinski", "jezik", "je", "engleski."],
+          "ordered": ["Moj", "materinski", "jezik", "je", "engleski."],
+          "answer": "Moj materinski jezik je engleski.",
+          "explanation": "Subject phrase first, je in second position, language lowercase: engleski."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Slušam ___ glazbu.' (Croatian — watch the accusative)",
+          "difficulty": 4,
+          "answer": "hrvatsku",
+          "explanation": "glazba is feminine and this is the accusative: hrvatskU glazbU. The -ska adjective declines like any adjective.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: 'Želim razumjeti ___ obitelj.' (her family — my wife's)",
+          "difficulty": 5,
+          "options": ["njezinu", "svoju", "njezina", "svoja"],
+          "answer": "njezinu",
+          "explanation": "The subject is ja, but the owner is she — owner ≠ subject, so njezinu, not svoju. Yesterday's rule, live."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Hrvatski učim dvije ___.' (for two years)",
+          "difficulty": 6,
+          "answer": "godine",
+          "explanation": "dvije godine — after dva/dvije the noun takes the -e form: dvije godine, tri godine, but pet godina.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the closing line: 'One day I want to speak fluently.'",
+          "difficulty": 7,
+          "options": ["Jednog", "dana", "želim", "govoriti", "tečno."],
+          "ordered": ["Jednog", "dana", "želim", "govoriti", "tečno."],
+          "answer": "Jednog dana želim govoriti tečno.",
+          "explanation": "jednog dana (fixed time phrase) + željeti + infinitive. A perfect final sentence for your talk."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Volim ___ mali ritual.' (my own) — which word, and why?",
+          "difficulty": 8,
+          "options": ["svoj — the subject ja is the owner", "moj — svoj is only for on/ona", "svoga — animate accusative", "njegov — third person"],
+          "answer": "svoj — the subject ja is the owner",
+          "explanation": "svoj applies in EVERY person whenever subject = owner. ritual is inanimate masculine, so the accusative is plain svoj."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Deliver the talk to your wife",
+      "intro": "Read your lines aloud as a connected talk — this is your 90-second performance with a live audience of one. Then do it again without looking at the English.",
+      "lines": [
+        { "speaker": "Me", "hr": "Mogu li ti ispričati svoj mali govor o jezicima?", "en": "Can I tell you my little talk about languages?" },
+        { "speaker": "Partner", "hr": "Naravno, slušam te!", "en": "Of course, I'm listening!" },
+        { "speaker": "Me", "hr": "Moj materinski jezik je engleski. Govorim i malo španjolski.", "en": "My mother tongue is English. I also speak a little Spanish." },
+        { "speaker": "Partner", "hr": "A zašto baš hrvatski?", "en": "And why Croatian, of all languages?" },
+        { "speaker": "Me", "hr": "Učim hrvatski jer je moja žena Hrvatica. Želim razumjeti tvoju obitelj — i tebe.", "en": "I'm learning Croatian because my wife is Croatian. I want to understand your family — and you." },
+        { "speaker": "Partner", "hr": "Bravo! A kako učiš?", "en": "Bravo! And how do you study?" },
+        { "speaker": "Me", "hr": "Svaki dan učim nove riječi i slušam hrvatsku glazbu.", "en": "Every day I learn new words and listen to Croatian music." },
+        { "speaker": "Partner", "hr": "Kada si počeo?", "en": "When did you start?" },
+        { "speaker": "Me", "hr": "Počeo sam prije dvije godine, ali ozbiljno učim od siječnja.", "en": "I started two years ago, but I've been studying seriously since January." },
+        { "speaker": "Partner", "hr": "Govoriš jako dobro!", "en": "You speak very well!" },
+        { "speaker": "Me", "hr": "Hvala! Još uvijek govorim sporo, ali jednog dana želim govoriti tečno.", "en": "Thanks! I still speak slowly, but one day I want to speak fluently." },
+        { "speaker": "Partner", "hr": "Ponosna sam na tebe!", "en": "I'm proud of you!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "67": [
+    {
+      "type": "LEARN",
+      "title": "Week 9 in ten lines",
+      "intro": "Everything this week taught, one example each. If any line makes you hesitate, that's your weakest unit — redo its exercises today. Say each Croatian line aloud before reading the note.",
+      "items": [
+        { "hr": "Govorim engleski, a učim hrvatski.", "en": "I speak English, and I'm learning Croatian.", "note": "Day 61: languages lowercase, straight after the verb." },
+        { "hr": "Njemačka — njemački; Francuska — francuski", "en": "Germany — German; France — French", "note": "Day 61: country capitalized, language not." },
+        { "hr": "Volim talijansku kavu.", "en": "I love Italian coffee.", "note": "Day 62: -ski family agrees with its noun — talijanskU kavU." },
+        { "hr": "Zagreb → zagrebački, Rijeka → riječki, Prag → praški", "en": "the city adjectives", "note": "Day 62: k → čki, g → ški." },
+        { "hr": "Ovo je ženina knjiga.", "en": "This is my wife's book.", "note": "Day 63: owner in -a → -in, agreement with the thing owned." },
+        { "hr": "Bratov auto je star.", "en": "My brother's car is old.", "note": "Day 63: prefer bratov auto to 'auto od brata'." },
+        { "hr": "Vidim tog dobrog čovjeka.", "en": "I see that good man.", "note": "Day 64: animate masculine — the WHOLE phrase declines." },
+        { "hr": "Vidim ovog novog kolegu.", "en": "I see this new colleague.", "note": "Day 64: kolega — masculine adjectives, a-noun ending." },
+        { "hr": "Čitam svoju knjigu. / On vozi njegov auto.", "en": "I read my own book. / He drives another man's car.", "note": "Day 65: subject = owner → svoj; njegov then means someone else's." },
+        { "hr": "Kako se kaže 'weekend' na hrvatskom?", "en": "How do you say 'weekend' in Croatian?", "note": "Your conversation lifeline for today's chat. (Answer: vikend!)" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Week 9 mixed review",
+      "intro": "All five topics shuffled together — exactly how real speech serves them. No topic labels: you decide which rule each question needs.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Španjolska → the language is:",
+          "difficulty": 1,
+          "options": ["španjolski", "Španjolski", "španjolska", "Španjolac"],
+          "answer": "španjolski",
+          "explanation": "Language = lowercase -ski form: španjolski. Španjolac is a Spanish man."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is the correct adjective from Zagreb?",
+          "difficulty": 2,
+          "options": ["zagrebački", "zagrebski", "zagrepčki", "Zagrebački"],
+          "answer": "zagrebački",
+          "explanation": "Zagreb → zagrebački (with -ački), always lowercase."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do natives prefer to say 'my brother's car'?",
+          "difficulty": 3,
+          "options": ["bratov auto", "auto od brata", "auto od bratov", "bratski auto"],
+          "answer": "bratov auto",
+          "explanation": "The possessive adjective wins: bratov auto. 'auto od brata' is understood but clumsy; bratski means 'brotherly'."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Put 'taj dobar čovjek' into: Vidim ___.",
+          "difficulty": 4,
+          "answer": "tog dobrog čovjeka",
+          "accepted": ["Tog dobrog čovjeka", "toga dobroga čovjeka"],
+          "explanation": "Animate masculine accusative: tog dobrog čovjeka — every word declines.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Čitam ___ knjigu.' (my own)",
+          "difficulty": 5,
+          "answer": "svoju",
+          "explanation": "Subject = owner → svoj, feminine accusative: svoju.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'On vozi njegov auto.' Whose car?",
+          "difficulty": 6,
+          "options": ["Another man's", "His own", "Ambiguous", "The speaker's"],
+          "answer": "Another man's",
+          "explanation": "Because svoj is obligatory for one's own things, njegov here necessarily points to a different man."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Ovo je ___ auto.' (my sister's — from sestra)",
+          "difficulty": 7,
+          "answer": "sestrin",
+          "explanation": "sestra → sestrin (owner in -a → -in); auto is masculine so no further ending.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'I love Italian coffee and Croatian music.'",
+          "difficulty": 8,
+          "options": ["Volim", "talijansku", "kavu", "i", "hrvatsku", "glazbu."],
+          "ordered": ["Volim", "talijansku", "kavu", "i", "hrvatsku", "glazbu."],
+          "answer": "Volim talijansku kavu i hrvatsku glazbu.",
+          "explanation": "Both -ska adjectives agree with their feminine nouns in the accusative: talijanskU kavU, hrvatskU glazbU."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Ana čita njezinu knjigu.' Whose book is Ana reading?",
+          "difficulty": 8,
+          "options": ["Another woman's", "Her own", "Ana's", "It must be Ana's mother's"],
+          "answer": "Another woman's",
+          "explanation": "If it were Ana's own book, Croatian would force svoju. njezinu signals a different female owner — the svoj rule working in reverse."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Week 9 conversation: languages and learning",
+      "intro": "Your 15-minute conversation starter. Act it out, then keep going off-script — the questions your partner asks here are exactly the ones to keep asking each other. Notice the built-in self-correction on line 6: correcting yourself out loud is a skill, not a failure.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Dobro jutro! Danas razgovaramo samo na hrvatskom, može?", "en": "Good morning! Today we talk only in Croatian, okay?" },
+        { "speaker": "Me", "hr": "Može! Jučer sam učio nove riječi cijelo jutro.", "en": "Deal! Yesterday I studied new words all morning." },
+        { "speaker": "Partner", "hr": "Super. Koje jezike sada govoriš?", "en": "Great. Which languages do you speak now?" },
+        { "speaker": "Me", "hr": "Govorim engleski, malo španjolski, a hrvatski još učim.", "en": "I speak English, a little Spanish, and Croatian I'm still learning." },
+        { "speaker": "Partner", "hr": "A što si radio jučer poslijepodne?", "en": "And what did you do yesterday afternoon?" },
+        { "speaker": "Me", "hr": "Čitao sam moju knjigu... ne, čekaj — svoju knjigu!", "en": "I was reading my book... no, wait — my OWN book (svoju)!" },
+        { "speaker": "Partner", "hr": "Bravo! Svoju, jer si ti subjekt. A čija je ona plava knjiga na stolu?", "en": "Bravo! Svoju, because you're the subject. And whose is that blue book on the table?" },
+        { "speaker": "Me", "hr": "To je ženina knjiga. Tvoja!", "en": "That's my wife's book. Yours!" },
+        { "speaker": "Partner", "hr": "Točno! A što voliš više: talijansku kavu ili hrvatsku?", "en": "Correct! And what do you like more: Italian coffee or Croatian?" },
+        { "speaker": "Me", "hr": "Volim talijansku kavu, ali hrvatsku glazbu.", "en": "I like Italian coffee, but Croatian music." },
+        { "speaker": "Partner", "hr": "Odlična kombinacija! Vidim jednog vrlo dobrog studenta.", "en": "An excellent combination! I see one very good student." },
+        { "speaker": "Me", "hr": "A ja vidim jednu odličnu učiteljicu.", "en": "And I see one excellent teacher." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "68": [
+    {
+      "type": "LEARN",
+      "title": "Weekend plan vocabulary",
+      "intro": "The small talk you'll actually have every Friday: what's happening this weekend? Ten words carry the whole theme. Note the pattern for days: u + accusative — u subotu, u nedjelju.",
+      "items": [
+        { "hr": "vikend", "en": "weekend", "note": "Yes, it's a loanword: ovaj vikend = this weekend." },
+        { "hr": "izlazak", "en": "going out, a night out", "note": "Fleeting a: izlazak → plural izlasci." },
+        { "hr": "roštilj", "en": "barbecue", "note": "Croatia's national weekend institution." },
+        { "hr": "izlet", "en": "day trip, excursion", "note": "ići na izlet = go on a day trip." },
+        { "hr": "odmor", "en": "rest, break, vacation" },
+        { "hr": "druženje", "en": "get-together, hanging out with people" },
+        { "hr": "kino", "en": "cinema", "note": "ići u kino = go to the movies." },
+        { "hr": "plan — planovi", "en": "plan — plans", "note": "Imaš li planove za vikend? = Do you have plans for the weekend?" },
+        { "hr": "u subotu", "en": "on Saturday", "note": "u + accusative for days: u subotu, u petak." },
+        { "hr": "u nedjelju", "en": "on Sunday" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Futur I in plan sentences",
+      "intro": "Futur I refresher, loaded with weekend content. Short forms: ću, ćeš, će, ćemo, ćete, će. Two spelling rules: infinitives in -ti drop the i before ću (gledat ću), infinitives in -ći keep everything (ići ću). And the clitic ću can never stand first in the sentence.",
+      "items": [
+        { "hr": "Ići ću na izlet u subotu.", "en": "I'll go on a day trip on Saturday.", "note": "-ći infinitive stays whole: ići ću." },
+        { "hr": "Što ćeš raditi u subotu?", "en": "What will you do on Saturday?" },
+        { "hr": "Naći ćemo se u centru u sedam.", "en": "We'll meet in the centre at seven.", "note": "naći se = to meet up; ćemo + se cluster together after the verb." },
+        { "hr": "Gledat ćemo film navečer.", "en": "We'll watch a film in the evening.", "note": "gledati drops its final i in writing: gledat ću, gledat ćemo." },
+        { "hr": "U nedjelju ćemo imati roštilj.", "en": "On Sunday we'll have a barbecue.", "note": "When something else starts the sentence, ćemo slides into second position." },
+        { "hr": "Doći će nam prijatelji.", "en": "Friends will come to our place.", "note": "nam = to us (dative clitic) — right after će." },
+        { "hr": "Javit ću ti se sutra.", "en": "I'll get in touch with you tomorrow.", "note": "Watch the clitic train: ću + ti + se. Tomorrow's whole lesson hides in this line." },
+        { "hr": "Nećemo ništa raditi — odmarat ćemo se.", "en": "We won't do anything — we'll rest.", "note": "Negative future: neću, nećeš, neće... written as one word." },
+        { "hr": "Ja ću ići. = Ići ću.", "en": "I will go. (both correct)", "note": "But never 'Ću ići' — the clitic can't open a sentence." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Weekend futur workout",
+      "intro": "Vocabulary plus futur I mechanics: short forms, spelling, and where ću is allowed to sit.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What is 'roštilj'?",
+          "difficulty": 1,
+          "options": ["a barbecue", "a day trip", "a rest", "a night out"],
+          "answer": "a barbecue",
+          "explanation": "roštilj = barbecue. izlet = day trip, odmor = rest, izlazak = night out."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The short future form for 'ja' is:",
+          "difficulty": 2,
+          "options": ["ću", "ćeš", "će", "ćemo"],
+          "answer": "ću",
+          "explanation": "ja ću, ti ćeš, on/ona će, mi ćemo, vi ćete, oni će."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which spelling is correct?",
+          "difficulty": 3,
+          "options": ["Gledat ću film.", "Gledati ću film.", "Gledaću film.", "Ću gledati film."],
+          "answer": "Gledat ću film.",
+          "explanation": "-ti infinitives drop the final i before ću in Croatian: gledat ću. (Gledaću is Serbian spelling; ću can never come first.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: '___ ćemo se u centru u sedam.' (We'll MEET...)",
+          "difficulty": 4,
+          "answer": "Naći",
+          "accepted": ["naći"],
+          "explanation": "naći se = to meet up. -ći infinitives keep their full form: Naći ćemo se.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'U subotu ___ ići na izlet.' (I will)",
+          "difficulty": 5,
+          "answer": "ću",
+          "explanation": "Something else (U subotu) opens the sentence, so the clitic ću takes second position: U subotu ću ići na izlet.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'I'll go on a day trip on Saturday.'",
+          "difficulty": 6,
+          "options": ["Ići", "ću", "na", "izlet", "u", "subotu."],
+          "ordered": ["Ići", "ću", "na", "izlet", "u", "subotu."],
+          "answer": "Ići ću na izlet u subotu.",
+          "explanation": "Verb-first future: Ići ću... The clitic ću lands in second position, right after the infinitive."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the negative: 'On ___ raditi u nedjelju.' (won't)",
+          "difficulty": 7,
+          "answer": "neće",
+          "explanation": "Negative futur I is one word: neću, nećeš, neće, nećemo, nećete, neće. It CAN start a sentence because it's stressed.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'On Sunday we'll have a barbecue.'",
+          "difficulty": 8,
+          "options": ["U", "nedjelju", "ćemo", "imati", "roštilj."],
+          "ordered": ["U", "nedjelju", "ćemo", "imati", "roštilj."],
+          "answer": "U nedjelju ćemo imati roštilj.",
+          "explanation": "U nedjelju fills first position, so ćemo must come immediately after it — before the infinitive."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Plan the real weekend",
+      "intro": "Plan your actual upcoming weekend with your wife — start from the script, then swap in your real plans. Every 'Me' line uses futur I; keep that going when you improvise.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Što ćemo raditi ovaj vikend?", "en": "What will we do this weekend?" },
+        { "speaker": "Me", "hr": "U subotu ujutro radit ću u vrtu, a poslije sam slobodan.", "en": "On Saturday morning I'll work in the garden, and after that I'm free." },
+        { "speaker": "Partner", "hr": "Super! Hoćemo li ići na izlet?", "en": "Great! Shall we go on a day trip?" },
+        { "speaker": "Me", "hr": "Može! Ići ćemo u planine ako bude sunca.", "en": "Sure! We'll go to the mountains if it's sunny." },
+        { "speaker": "Partner", "hr": "A navečer? Marko i Ana nas zovu na roštilj.", "en": "And in the evening? Marko and Ana are inviting us to a barbecue." },
+        { "speaker": "Me", "hr": "Odlično! Doći ćemo u sedam. Što ćemo donijeti?", "en": "Excellent! We'll come at seven. What will we bring?" },
+        { "speaker": "Partner", "hr": "Donijet ćemo vino i salatu. A u nedjelju?", "en": "We'll bring wine and a salad. And on Sunday?" },
+        { "speaker": "Me", "hr": "U nedjelju nećemo ništa raditi — odmarat ćemo se cijeli dan.", "en": "On Sunday we won't do anything — we'll rest all day." },
+        { "speaker": "Partner", "hr": "Savršen plan! Hoćemo li gledati film navečer?", "en": "A perfect plan! Shall we watch a film in the evening?" },
+        { "speaker": "Me", "hr": "Da, gledat ćemo jedan dobar hrvatski film.", "en": "Yes, we'll watch a good Croatian film." },
+        { "speaker": "Partner", "hr": "Dogovoreno! Javit ću Ani da dolazimo.", "en": "Agreed! I'll let Ana know we're coming." },
+        { "speaker": "Me", "hr": "Super. Veselim se vikendu!", "en": "Great. I'm looking forward to the weekend!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "69": [
+    {
+      "type": "LEARN",
+      "title": "me, te, ga, je — the object pronoun pairs",
+      "intro": "Every accusative pronoun has two forms: a stressed one (mene, tebe, njega) and a short clitic (me, te, ga). The clitic is the default — natives use it 95% of the time — and it always sits in second position. The stressed form appears after prepositions, for contrast, and as a stand-alone answer.",
+      "items": [
+        { "hr": "ja → mene / me", "en": "me (stressed / clitic)" },
+        { "hr": "ti → tebe / te", "en": "you (stressed / clitic)" },
+        { "hr": "on, ono → njega / ga", "en": "him, it (stressed / clitic)" },
+        { "hr": "ona → nju / ju (je)", "en": "her (stressed / clitic)", "note": "The everyday clitic is je; use ju when it would bump into the auxiliary je: Vidio JU JE jučer." },
+        { "hr": "mi → nas", "en": "us", "note": "Same letters stressed and clitic — only the stress differs in speech." },
+        { "hr": "vi → vas", "en": "you (plural/formal)" },
+        { "hr": "oni, one → njih / ih", "en": "them (stressed / clitic)" },
+        { "hr": "za mene, kod njega", "en": "for me, at his place", "note": "After a preposition: ALWAYS the stressed form. 'za me' is impossible in standard speech." },
+        { "hr": "Koga čekaš? — Njega.", "en": "Who are you waiting for? — Him.", "note": "A one-word answer must be stressed: Njega, not 'Ga'." },
+        { "hr": "Vidim te.", "en": "I see you.", "note": "The clitic hugs second position: Vidim te. Sutra te vidim." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Question and answer: replace the noun",
+      "intro": "The core move of natural Croatian: once a person or thing is named, it becomes a clitic. Read each mini-exchange aloud — question with the noun, answer with the pronoun.",
+      "items": [
+        { "hr": "Vidiš li Marka? — Vidim ga.", "en": "Do you see Marko? — I see him." },
+        { "hr": "Poznaješ li Anu? — Poznajem je.", "en": "Do you know Ana? — I know her." },
+        { "hr": "Čekaš li me? — Čekam te!", "en": "Are you waiting for me? — I'm waiting for you!", "note": "The pronouns swap perspective: your me is my te." },
+        { "hr": "Vidiš li nas? — Vidim vas.", "en": "Do you see us? — I see you." },
+        { "hr": "Gledaš li taj film? — Gledam ga.", "en": "Are you watching that film? — I'm watching it.", "note": "ga also means 'it' for masculine things like film." },
+        { "hr": "Voliš li ove pjesme? — Volim ih.", "en": "Do you like these songs? — I like them." },
+        { "hr": "Ovo je za tebe.", "en": "This is for you.", "note": "Preposition za → stressed tebe." },
+        { "hr": "Vidio ju je jučer.", "en": "He saw her yesterday.", "note": "ju instead of je, because the auxiliary je follows immediately." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Pronoun replacement drill",
+      "intro": "Answer with clitics, reach for stressed forms after prepositions and in one-word answers. Speed is the goal — these must become reflexes.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which is the CLITIC (short) form for 'him'?",
+          "difficulty": 1,
+          "options": ["ga", "njega", "mu", "on"],
+          "answer": "ga",
+          "explanation": "njega/ga — ga is the short everyday form. (mu is dative 'to him' — different case.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Vidiš li Marka? — The natural answer is:",
+          "difficulty": 2,
+          "options": ["Vidim ga.", "Vidim njega.", "Vidim Marka ga.", "Ga vidim."],
+          "answer": "Vidim ga.",
+          "explanation": "Clitic by default: Vidim ga. 'Vidim njega' adds heavy emphasis (HIM, not someone else), and a clitic can never start the sentence."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'This is for ___.' (me) — Ovo je za ___.",
+          "difficulty": 3,
+          "options": ["mene", "me", "mi", "ja"],
+          "answer": "mene",
+          "explanation": "After a preposition the stressed form is obligatory: za mene, kod mene, bez mene."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Answer with a pronoun: 'Poznaješ li Anu?' — 'Poznajem ___.'",
+          "difficulty": 4,
+          "answer": "je",
+          "accepted": ["ju"],
+          "explanation": "Ana → je (the standard feminine accusative clitic). ju is reserved for when the auxiliary je follows.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Answer with a pronoun: 'Vidiš li nas?' — 'Vidim ___.'",
+          "difficulty": 5,
+          "answer": "vas",
+          "explanation": "They asked about 'us', you answer about 'you (plural)': Vidim vas. Perspective flips with pronouns.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Answer with a pronoun: 'Voliš li ove pjesme?' — 'Volim ___.'",
+          "difficulty": 6,
+          "answer": "ih",
+          "explanation": "Plural things → ih (them): Volim ih. Stressed version: njih.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Koga čekaš?' You answer with ONE word:",
+          "difficulty": 7,
+          "options": ["Njega.", "Ga.", "Mu.", "On."],
+          "answer": "Njega.",
+          "explanation": "A clitic can't stand alone — a one-word answer needs the stressed form: Njega. (On is nominative — wrong case.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Vidio ___ je jučer.' (her)",
+          "difficulty": 8,
+          "answer": "ju",
+          "explanation": "Right next to the auxiliary je, the feminine clitic switches to ju: Vidio ju je jučer — avoiding the awkward 'je je'.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the sentence: 'I see him every day on the tram.'",
+          "difficulty": 8,
+          "options": ["Vidim", "ga", "svaki", "dan", "u", "tramvaju."],
+          "ordered": ["Vidim", "ga", "svaki", "dan", "u", "tramvaju."],
+          "answer": "Vidim ga svaki dan u tramvaju.",
+          "explanation": "The clitic ga takes second position, straight after the verb: Vidim ga..."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "70": [
+    {
+      "type": "LEARN",
+      "title": "The clitic chain: li → aux → DAT → ACC → se → je",
+      "intro": "All the little unstressed words gather in SECOND position of the clause, in one fixed internal order: the question particle li, then the auxiliary (sam, ću, bih...), then the dative clitic, then the accusative one, then se — and the auxiliary je, uniquely, goes last of all. Memorize the chain as a template; every example below is the chain in action.",
+      "items": [
+        { "hr": "li → sam/ću/bih → mi/ti/mu/joj → me/te/ga/je → se → je", "en": "the fixed chain — question word, auxiliary, dative, accusative, se, and je dead last", "note": "This order NEVER varies. One rule, hundreds of correct sentences." },
+        { "hr": "Jučer sam mu ga dao.", "en": "Yesterday I gave it to him.", "note": "aux (sam) → dative (mu) → accusative (ga)." },
+        { "hr": "Dao sam mu ga jučer.", "en": "I gave it to him yesterday.", "note": "Different first word, same rule: the cluster sits right after whatever comes first." },
+        { "hr": "Dala mi je knjigu.", "en": "She gave me the book.", "note": "je jumps BEHIND the dative: mi je, never 'je mi'." },
+        { "hr": "Dala mi ga je.", "en": "She gave it to me.", "note": "The full chain: dative (mi) → accusative (ga) → je last." },
+        { "hr": "Jesi li mu ga dao?", "en": "Did you give it to him?", "note": "In questions with jesi, li comes first in the cluster: li → mu → ga." },
+        { "hr": "Možeš li mi ga poslati?", "en": "Can you send it to me?", "note": "li right after the verb, then dative, then accusative." },
+        { "hr": "Javit ću ti se sutra.", "en": "I'll get in touch with you tomorrow.", "note": "aux (ću) → dative (ti) → se." },
+        { "hr": "Ona mu se nasmijala.", "en": "She smiled at him.", "note": "When se is present, the auxiliary je DROPS in the 3rd person: not 'mu se je nasmijala'." },
+        { "hr": "Vidio ju je jučer.", "en": "He saw her yesterday.", "note": "Feminine ju before je — yesterday's rule feeding into today's chain." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Clitic order under the microscope",
+      "intro": "Six scrambles and the logic behind them. Say each solved sentence aloud twice — rhythm is how natives store this rule.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "In the clitic chain, what comes immediately after li?",
+          "difficulty": 1,
+          "options": ["the auxiliary (sam, ću, bih...)", "the accusative clitic", "se", "je"],
+          "answer": "the auxiliary (sam, ću, bih...)",
+          "explanation": "The chain: li → aux → dative → accusative → se → je. li opens, je closes."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is correct for 'She gave it to me'?",
+          "difficulty": 2,
+          "options": ["Dala mi ga je.", "Dala je mi ga.", "Dala ga mi je.", "Je mi ga dala."],
+          "answer": "Dala mi ga je.",
+          "explanation": "dative (mi) before accusative (ga), and je always last. je can also never start the sentence."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which order is correct inside the cluster: dative or accusative first?",
+          "difficulty": 3,
+          "options": ["Dative first: mi ga, ti je, mu ga", "Accusative first: ga mi, je ti", "Either order works", "It depends on the verb"],
+          "answer": "Dative first: mi ga, ti je, mu ga",
+          "explanation": "Always dative → accusative: Daj MI GA (give me it), Poslao TI JE pismo... the receiver comes before the thing."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Unscramble: 'Yesterday I gave it to him.'",
+          "difficulty": 4,
+          "options": ["Jučer", "sam", "mu", "ga", "dao."],
+          "ordered": ["Jučer", "sam", "mu", "ga", "dao."],
+          "answer": "Jučer sam mu ga dao.",
+          "explanation": "Jučer takes first position; then the whole cluster in chain order: sam (aux) → mu (dat) → ga (acc)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Unscramble: 'She gave me the book.'",
+          "difficulty": 5,
+          "options": ["Dala", "mi", "je", "knjigu."],
+          "ordered": ["Dala", "mi", "je", "knjigu."],
+          "answer": "Dala mi je knjigu.",
+          "explanation": "The participle opens, then mi (dative) BEFORE je — because je always goes last in the cluster."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Unscramble the question: 'Did you give it to him?'",
+          "difficulty": 6,
+          "options": ["Jesi", "li", "mu", "ga", "dao?"],
+          "ordered": ["Jesi", "li", "mu", "ga", "dao?"],
+          "answer": "Jesi li mu ga dao?",
+          "explanation": "Jesi carries the stress, then the chain: li → mu (dat) → ga (acc). The participle dao closes."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with TWO clitics in the right order: 'Možeš li ___ ___ poslati?' (to me + it)",
+          "difficulty": 7,
+          "answer": "mi ga",
+          "explanation": "Dative before accusative: mi ga. Full sentence: Možeš li mi ga poslati? — Can you send it to me?",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Unscramble: 'I'll get in touch with you tomorrow.'",
+          "difficulty": 7,
+          "options": ["Javit", "ću", "ti", "se", "sutra."],
+          "ordered": ["Javit", "ću", "ti", "se", "sutra."],
+          "answer": "Javit ću ti se sutra.",
+          "explanation": "aux (ću) → dative (ti) → se, exactly as the chain predicts. se comes after all the pronoun clitics."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Unscramble the polite question: 'Can you send it to me?'",
+          "difficulty": 8,
+          "options": ["Možeš", "li", "mi", "ga", "poslati?"],
+          "ordered": ["Možeš", "li", "mi", "ga", "poslati?"],
+          "answer": "Možeš li mi ga poslati?",
+          "explanation": "li → mi → ga: the question particle leads the cluster, then dative, then accusative. This exact sentence is day 99's speed drill — bank it now."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Ona mu se nasmijala.' Why is there no 'je'?",
+          "difficulty": 8,
+          "options": ["With se, the 3rd-person auxiliary je is dropped", "nasmijala is not past tense", "mu replaces je", "It's a mistake — je is required"],
+          "answer": "With se, the 3rd-person auxiliary je is dropped",
+          "explanation": "se + je collapses to just se in the 3rd person singular: Ona mu se nasmijala, Ona se vratila. Everywhere else the auxiliary stays: Nasmijala sam mu se."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}
