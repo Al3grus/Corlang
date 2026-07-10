@@ -1,0 +1,1072 @@
+{
+  "101": [
+    {
+      "type": "LEARN",
+      "title": "Formal message toolkit: the polite complaint",
+      "intro": "Today you write real formal Croatian: a complaint or inquiry about a late bus, a lost package or a wrong charge. The register is built from a small set of fixed blocks — a formal opener, obraćam Vam se, precise facts in the past tense, one polite conditional, and the standard sign-off. Note that in formal writing Vi, Vam and Vaš are capitalized throughout.",
+      "items": [
+        { "hr": "Poštovani gospodine, / Poštovana gospođo,", "en": "Dear Sir, / Dear Madam,", "note": "The formal opener. If you don't know the person, plain 'Poštovani,' works for any addressee." },
+        { "hr": "Obraćam Vam se u vezi s kašnjenjem autobusa.", "en": "I am writing to you regarding the bus delay.", "note": "obraćati se + dative (Vam); u vezi s + instrumental. The standard first sentence of any formal message." },
+        { "hr": "Dana 3. srpnja putovao sam autobusom iz Zagreba u Split.", "en": "On 3 July I travelled by bus from Zagreb to Split.", "note": "Dana + date sets the facts. Instrumental of means: autobusom." },
+        { "hr": "Autobus je kasnio više od sat vremena.", "en": "The bus was more than an hour late.", "note": "kasniti = to be late (imperfective — it describes the whole delay). više od = more than." },
+        { "hr": "Nitko nam nije dao nikakvu informaciju.", "en": "Nobody gave us any information.", "note": "Croatian stacks negatives: nitko… nije… nikakvu — all three are obligatory." },
+        { "hr": "Moja pošiljka još nije stigla.", "en": "My package still has not arrived.", "note": "pošiljka = package, shipment. još nije = still hasn't." },
+        { "hr": "Naplatili ste mi pogrešan iznos.", "en": "You charged me the wrong amount.", "note": "naplatiti + dative of the person (mi); iznos = amount." },
+        { "hr": "Molim Vas povrat novca.", "en": "I request a refund.", "note": "povrat novca = refund (literally 'return of money'). Molim Vas + the thing you want." },
+        { "hr": "Biste li mi mogli poslati potvrdu e-poštom?", "en": "Could you send me the confirmation by e-mail?", "note": "The polite conditional question: Biste li + mogli + infinitive. Your best formal request tool." },
+        { "hr": "Molim Vas da mi odgovorite u roku od sedam dana.", "en": "Please reply to me within seven days.", "note": "u roku od + genitive = within (a deadline)." },
+        { "hr": "Račun Vam šaljem u privitku.", "en": "I am sending you the receipt in the attachment.", "note": "u privitku = attached (in an e-mail). Fronting Račun pushes the clitic Vam into second position." },
+        { "hr": "Unaprijed zahvaljujem na odgovoru.", "en": "Thank you in advance for your reply.", "note": "zahvaljivati na + locative (na odgovoru). A near-obligatory closing line." },
+        { "hr": "S poštovanjem,", "en": "Yours sincerely,", "note": "The only formal sign-off you need. Then your full name underneath." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Complain politely, in writing",
+      "intro": "Assemble a formal complaint block by block: opener, facts, request, sign-off — with the register and the conditional under control.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which is the correct opener for a formal complaint?",
+          "difficulty": 2,
+          "options": ["Poštovani,", "Bok!", "Ej, slušaj,", "Draga moja,"],
+          "answer": "Poštovani,",
+          "explanation": "Poštovani, (or Poštovani gospodine / Poštovana gospođo) is the standard formal opener. The others are for friends and family."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the formal first sentence: Obraćam ______ se u vezi s kašnjenjem vlaka.",
+          "difficulty": 3,
+          "answer": "Vam",
+          "accepted": ["Vam", "vam"],
+          "strictDiacritics": true,
+          "explanation": "obraćati se + dative: Obraćam Vam se… In formal writing the pronoun Vi/Vam is capitalized."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which request is polite enough for a formal message?",
+          "difficulty": 3,
+          "options": ["Biste li mi mogli vratiti novac?", "Vratite mi novac odmah!", "Hoću svoj novac!", "Daj mi novac natrag."],
+          "answer": "Biste li mi mogli vratiti novac?",
+          "explanation": "The conditional question Biste li mogli…? is the formal, polite request. The imperatives sound like demands."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'The bus was more than an hour late.'",
+          "difficulty": 4,
+          "options": ["od", "kasnio", "Autobus", "vremena", "je", "više", "sat"],
+          "ordered": ["Autobus", "je", "kasnio", "više", "od", "sat", "vremena"],
+          "answer": "Autobus je kasnio više od sat vremena",
+          "explanation": "kasniti = to be late; više od sat vremena = more than an hour. The auxiliary je sits in second position."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask for your money back: Molim Vas ______ novca.",
+          "difficulty": 3,
+          "answer": "povrat",
+          "accepted": ["povrat"],
+          "strictDiacritics": true,
+          "explanation": "povrat novca = a refund, literally 'return of money': Molim Vas povrat novca."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete the double negation: Nitko mi ______ odgovorio na poruku.",
+          "difficulty": 3,
+          "options": ["nije", "je", "ne", "nisam"],
+          "answer": "nije",
+          "explanation": "With nitko the verb must also be negative: Nitko mi nije odgovorio. (Nobody answered me.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the closing line: Unaprijed ______ na odgovoru.",
+          "difficulty": 4,
+          "answer": "zahvaljujem",
+          "accepted": ["zahvaljujem"],
+          "strictDiacritics": true,
+          "explanation": "Unaprijed zahvaljujem na odgovoru = Thank you in advance for your reply — zahvaljivati na + locative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you sign off a formal complaint?",
+          "difficulty": 2,
+          "options": ["S poštovanjem,", "Pusa!", "Vidimo se!", "Čujemo se!"],
+          "answer": "S poštovanjem,",
+          "explanation": "S poštovanjem (with respect) is the formal sign-off. The others are casual goodbyes between friends."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "102": [
+    {
+      "type": "LEARN",
+      "title": "Travel talk: stories, gripes and plans",
+      "intro": "Speaking day. Today's phrases carry a whole travel conversation: asking how a trip went, complaining about the journey, telling what happened, and planning the next one. Every line recycles this module's motion verbs and past-tense aspect — say each one aloud before your conversation.",
+      "items": [
+        { "hr": "Kako je prošlo putovanje?", "en": "How did the trip go?", "note": "proći = to go/pass (of events). Putovanje is neuter, so: je prošlo." },
+        { "hr": "Prošlo je odlično, bez ikakvih problema.", "en": "It went great, without any problems.", "note": "bez + genitive; ikakvih = any at all." },
+        { "hr": "Gužva je bila strašna.", "en": "The crowds/traffic were terrible.", "note": "gužva covers both traffic jams and crowds — a national conversation topic." },
+        { "hr": "Morali smo presjedati u Karlovcu.", "en": "We had to change (buses) in Karlovac.", "note": "presjedati = to transfer/change vehicles. morati + infinitive." },
+        { "hr": "Krenuli smo rano, a stigli smo tek navečer.", "en": "We set off early, but arrived only in the evening.", "note": "tek = only, not until — a tiny word that carries the complaint." },
+        { "hr": "Autobus mi je pobjegao za pet minuta.", "en": "I missed the bus by five minutes.", "note": "Colloquial and very common: the bus 'ran away from me' (dative mi)." },
+        { "hr": "Vožnja je trajala tri sata.", "en": "The ride took three hours.", "note": "trajati = to last. Vožnja je trajala… — your duration phrase." },
+        { "hr": "Imali smo sreće s vremenom.", "en": "We were lucky with the weather.", "note": "imati sreće — sreća goes into the genitive in this fixed phrase." },
+        { "hr": "Dogodilo nam se nešto smiješno.", "en": "Something funny happened to us.", "note": "dogoditi se + dative — the story-opener that makes people listen." },
+        { "hr": "Sljedeći put idemo vlakom.", "en": "Next time we're going by train.", "note": "Instrumental of means: vlakom, autobusom, autom." },
+        { "hr": "Planiramo put na more u kolovozu.", "en": "We're planning a trip to the seaside in August.", "note": "put na more = trip to the coast; u + locative for months (u kolovozu)." },
+        { "hr": "Volim putovati vlakom jer mogu čitati.", "en": "I like travelling by train because I can read.", "note": "A ready-made opinion line for the conversation." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Warm-up before the conversation",
+      "intro": "Prime the phrases you'll need live: trip questions, travel gripes and past-tense aspect choices.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Ask how the trip went: Kako ______ putovanje?",
+          "difficulty": 2,
+          "options": ["je prošlo", "je prošla", "su prošli", "je prošao"],
+          "answer": "je prošlo",
+          "explanation": "putovanje is neuter, so the participle is prošlo: Kako je prošlo putovanje?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the gripe: Krenuli smo rano, a ______ smo tek navečer.",
+          "difficulty": 3,
+          "answer": "stigli",
+          "accepted": ["stigli"],
+          "strictDiacritics": true,
+          "explanation": "stići → stigli (m. pl. participle): we set off early but arrived only in the evening."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'We had to change in Karlovac.'",
+          "difficulty": 3,
+          "options": ["presjedati", "Morali", "u", "smo", "Karlovcu"],
+          "ordered": ["Morali", "smo", "presjedati", "u", "Karlovcu"],
+          "answer": "Morali smo presjedati u Karlovcu",
+          "explanation": "morati + infinitive; the auxiliary smo takes second position: Morali smo presjedati…"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Next time we're going by train.' — Sljedeći put idemo ______.",
+          "difficulty": 3,
+          "options": ["vlakom", "vlak", "u vlak", "na vlaku"],
+          "answer": "vlakom",
+          "explanation": "Means of transport takes the bare instrumental: idemo vlakom, autobusom, autom."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Vožnja je ______ tri sata. (to last, past)",
+          "difficulty": 3,
+          "answer": "trajala",
+          "accepted": ["trajala"],
+          "strictDiacritics": true,
+          "explanation": "trajati = to last; vožnja is feminine, so: Vožnja je trajala tri sata."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Open a funny story: Dogodilo ______ se nešto smiješno.",
+          "difficulty": 4,
+          "options": ["nam", "nas", "mi smo", "ni"],
+          "answer": "nam",
+          "explanation": "dogoditi se + dative: Dogodilo nam se nešto smiješno. (Something funny happened to us.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I missed the bus by five minutes.'",
+          "difficulty": 4,
+          "options": ["za", "mi", "pobjegao", "Autobus", "pet", "je", "minuta"],
+          "ordered": ["Autobus", "mi", "je", "pobjegao", "za", "pet", "minuta"],
+          "answer": "Autobus mi je pobjegao za pet minuta",
+          "explanation": "The clitics mi je sit in second position, dative before the auxiliary je: Autobus mi je pobjegao…"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Pick the right aspect: Dok smo ______ na autobus, počela je kiša.",
+          "difficulty": 5,
+          "options": ["čekali", "pričekali", "dočekali", "počeli"],
+          "answer": "čekali",
+          "explanation": "Dok (while) introduces background, so the imperfective čekali is needed; the event (počela je kiša) is perfective."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Uz kavu: priče s putovanja",
+      "intro": "Over coffee, you and your wife relive a chaotic trip to Dubrovnik. Read your lines ('Me') aloud — the whole conversation runs on today's travel phrases and clean past-tense aspect.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Ajme, sjećaš se našeg puta u Dubrovnik? Kakva avantura!", "en": "Oh my, do you remember our trip to Dubrovnik? What an adventure!" },
+        { "speaker": "Me", "hr": "Sjećam se! Krenuli smo rano ujutro, a stigli smo tek navečer.", "en": "I remember! We set off early in the morning and arrived only in the evening." },
+        { "speaker": "Partner", "hr": "Autobus je kasnio, a onda smo morali presjedati u Splitu.", "en": "The bus was late, and then we had to change in Split." },
+        { "speaker": "Me", "hr": "Da, i autobus mi je pobjegao za pet minuta. Bio sam jako ljut.", "en": "Yes, and I missed the bus by five minutes. I was really angry." },
+        { "speaker": "Partner", "hr": "A onda je počela kiša. Čekali smo na stanici bez kišobrana!", "en": "And then the rain started. We waited at the station without an umbrella!" },
+        { "speaker": "Me", "hr": "Ali imali smo sreće — jedan vozač nas je povezao do centra.", "en": "But we were lucky — a driver gave us a ride to the centre." },
+        { "speaker": "Partner", "hr": "Točno! I dogodilo nam se nešto smiješno: mislio je da smo turisti iz Njemačke.", "en": "Right! And something funny happened to us: he thought we were tourists from Germany." },
+        { "speaker": "Me", "hr": "Ja jesam stranac, ali ti si mu odgovorila na čistom hrvatskom!", "en": "I really am a foreigner, but you answered him in flawless Croatian!" },
+        { "speaker": "Partner", "hr": "Ha! A kako ćemo putovati sljedeći put? Opet autobusom?", "en": "Ha! And how will we travel next time? By bus again?" },
+        { "speaker": "Me", "hr": "Ne, hvala. Sljedeći put idemo vlakom ili autom.", "en": "No, thanks. Next time we're going by train or by car." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "103": [
+    {
+      "type": "LEARN",
+      "title": "Signposts for a story: najprije, zatim, potom",
+      "intro": "Narration is the A2 speaking task, and it runs on two rails: sequencing words that mark each event, and the aspect rule — perfective verbs for the events, imperfective for the background. Learn the signposts, then watch them steer a real journey story.",
+      "items": [
+        { "hr": "najprije", "en": "first (of all)", "note": "Opens the narration: Najprije smo… (First we…)" },
+        { "hr": "zatim / potom", "en": "then / after that", "note": "Interchangeable sequencers — vary them so the story doesn't sound mechanical." },
+        { "hr": "nakon toga", "en": "after that", "note": "nakon + genitive: nakon toga, nakon ručka, nakon puta." },
+        { "hr": "u međuvremenu", "en": "in the meantime", "note": "Introduces background — typically with an imperfective verb." },
+        { "hr": "odjednom", "en": "suddenly", "note": "The plot-twist word. What follows is almost always perfective." },
+        { "hr": "na kraju", "en": "in the end / finally", "note": "Closes the story: Na kraju smo ipak stigli. (ipak = after all.)" },
+        { "hr": "Najprije smo se odvezli na kolodvor.", "en": "First we drove to the station.", "note": "odvesti se = to drive (somewhere). Event = perfective." },
+        { "hr": "Zatim smo kupili karte i našli svoja mjesta.", "en": "Then we bought the tickets and found our seats.", "note": "A chain of perfective events: kupili, našli. svoja mjesta — svoj for one's own." },
+        { "hr": "Dok smo putovali, gledao sam krajolik.", "en": "While we were travelling, I watched the landscape.", "note": "dok + imperfective = background. krajolik = landscape." },
+        { "hr": "Odjednom je vlak stao usred polja.", "en": "Suddenly the train stopped in the middle of a field.", "note": "stati → stao (perfective). usred + genitive = in the middle of." },
+        { "hr": "Potom smo čekali pola sata bez informacija.", "en": "Then we waited half an hour without any information.", "note": "čekati stays imperfective — the waiting is a stretch of time, not a point." },
+        { "hr": "Na kraju smo ipak stigli na vrijeme.", "en": "In the end we arrived on time after all.", "note": "na vrijeme = on time. The perfective stigli closes the story." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Sequence and aspect",
+      "intro": "Build the journey story yourself: signpost each step and pick perfective for events, imperfective for background.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Start the story: ______ smo kupili karte, zatim smo ušli u vlak.",
+          "difficulty": 2,
+          "options": ["Najprije", "Na kraju", "Odjednom", "Nikad"],
+          "answer": "Najprije",
+          "explanation": "najprije = first (of all) — the standard opener of a narration, paired with zatim/potom."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Pick the right aspect for the background: Dok smo ______, gledao sam krajolik.",
+          "difficulty": 4,
+          "options": ["putovali", "otputovali", "doputovali", "putujemo"],
+          "answer": "putovali",
+          "explanation": "dok (while) frames background, which takes the imperfective: Dok smo putovali… The prefixed forms are perfective."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Close the story with the perfective: Na kraju smo ipak ______ na vrijeme. (stići)",
+          "difficulty": 3,
+          "answer": "stigli",
+          "accepted": ["stigli"],
+          "strictDiacritics": true,
+          "explanation": "stići → stigli (m. pl.): Na kraju smo ipak stigli na vrijeme. (In the end we arrived on time after all.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Then we waited half an hour without any information.'",
+          "difficulty": 4,
+          "options": ["pola", "smo", "informacija", "Zatim", "čekali", "bez", "sata"],
+          "ordered": ["Zatim", "smo", "čekali", "pola", "sata", "bez", "informacija"],
+          "answer": "Zatim smo čekali pola sata bez informacija",
+          "explanation": "Signpost first, auxiliary smo in second position, then the imperfective čekali for the stretch of waiting."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "A completed one-time event: Jučer sam ______ kartu online.",
+          "difficulty": 3,
+          "options": ["kupio", "kupovao", "kupujem", "kupovati"],
+          "answer": "kupio",
+          "explanation": "One finished purchase = perfective kupiti → kupio. kupovao would suggest repeated or ongoing buying."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Add background with the imperfective: Dok sam čekao vlak, ______ sam kavu. (piti)",
+          "difficulty": 3,
+          "answer": "pio",
+          "accepted": ["pio"],
+          "strictDiacritics": true,
+          "explanation": "Background drinking alongside background waiting: Dok sam čekao vlak, pio sam kavu."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'u međuvremenu' mean?",
+          "difficulty": 2,
+          "options": ["in the meantime", "suddenly", "in the end", "immediately"],
+          "answer": "in the meantime",
+          "explanation": "u međuvremenu = in the meantime — it introduces what was going on in the background."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Suddenly the train stopped in the middle of a field.'",
+          "difficulty": 4,
+          "options": ["vlak", "usred", "je", "Odjednom", "polja", "stao"],
+          "ordered": ["Odjednom", "je", "vlak", "stao", "usred", "polja"],
+          "answer": "Odjednom je vlak stao usred polja",
+          "explanation": "odjednom + perfective (stao) marks the sudden event; usred + genitive = in the middle of (polja)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Ispričaj mi cijelo putovanje",
+      "intro": "Your wife plays coach: she asks you to narrate your journey out loud from start to finish. Read your lines ('Me') with the signposts in place — she checks your aspect as you go.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Hajde, ispričaj mi svoje putovanje od početka. Vježbaj naglas!", "en": "Come on, tell me your journey from the beginning. Practise out loud!" },
+        { "speaker": "Me", "hr": "Može. Najprije smo se rano ujutro odvezli na kolodvor.", "en": "Okay. First, early in the morning, we drove to the station." },
+        { "speaker": "Partner", "hr": "Dobro. Što je bilo zatim?", "en": "Good. What happened then?" },
+        { "speaker": "Me", "hr": "Zatim smo kupili karte i našli svoja mjesta u vlaku.", "en": "Then we bought the tickets and found our seats on the train." },
+        { "speaker": "Partner", "hr": "A dok ste putovali? Dodaj malo pozadine.", "en": "And while you were travelling? Add some background." },
+        { "speaker": "Me", "hr": "Dok smo putovali, gledao sam krajolik i pio kavu.", "en": "While we were travelling, I watched the landscape and drank coffee." },
+        { "speaker": "Partner", "hr": "Odlično — tu ide nesvršeni glagol. Nastavi!", "en": "Excellent — that's where the imperfective verb goes. Continue!" },
+        { "speaker": "Me", "hr": "Odjednom je vlak stao usred polja. Potom smo čekali pola sata.", "en": "Suddenly the train stopped in the middle of a field. Then we waited half an hour." },
+        { "speaker": "Partner", "hr": "I kako je sve završilo?", "en": "And how did it all end?" },
+        { "speaker": "Me", "hr": "Na kraju smo ipak stigli na vrijeme. Nitko nije vjerovao!", "en": "In the end we arrived on time after all. Nobody could believe it!" },
+        { "speaker": "Partner", "hr": "Bravo! Sad ispričaj sve još jednom, bez pauza i bez bilježaka.", "en": "Bravo! Now tell the whole thing once more, without pauses and without notes." },
+        { "speaker": "Me", "hr": "Ajme… dobro. Najprije smo se odvezli na kolodvor…", "en": "Oh boy… okay. First we drove to the station…" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "104": [
+    {
+      "type": "LEARN",
+      "title": "Voicemail & announcement decoder",
+      "intro": "Short recorded messages are a named A2 can-do: a voicemail from the dentist, a station announcement, a shop's opening hours. The trick is not understanding every word — it's catching the four essentials: tko, što, kada, gdje. These are the fixed phrases those recordings are built from.",
+      "items": [
+        { "hr": "govorna poruka", "en": "voicemail (voice message)", "note": "Ostaviti govornu poruku = to leave a voicemail." },
+        { "hr": "Ostavite poruku nakon zvučnog signala.", "en": "Leave a message after the beep.", "note": "zvučni signal = the beep. You'll hear this on every Croatian answering machine." },
+        { "hr": "Zovem u vezi s vašim terminom.", "en": "I'm calling about your appointment.", "note": "termin = appointment slot. u vezi s + instrumental again — it opens phone messages too." },
+        { "hr": "Termin je pomaknut na četvrtak u deset.", "en": "The appointment has been moved to Thursday at ten.", "note": "pomaknut = moved — learn it as a fixed word from real messages; pomaknut na + accusative (the new time)." },
+        { "hr": "Molim vas, nazovite nas danas do 16 sati.", "en": "Please call us back today by 4 p.m.", "note": "do + genitive = by (a deadline). nazvati = to call (perfective)." },
+        { "hr": "Ako je hitno, javite se na broj 091…", "en": "If it's urgent, call the number 091…", "note": "hitno = urgent; javiti se na broj = to call a number." },
+        { "hr": "Vlak iz Osijeka kasni dvadeset minuta.", "en": "The train from Osijek is running twenty minutes late.", "note": "The classic announcement pattern: vehicle + iz/za + delay." },
+        { "hr": "Polazak je s perona broj dva.", "en": "The departure is from platform two.", "note": "polazak = departure; peron = platform. s + genitive (s perona)." },
+        { "hr": "Let je otkazan zbog vremena.", "en": "The flight is cancelled due to the weather.", "note": "otkazan = cancelled — another fixed announcement word; zbog + genitive = because of." },
+        { "hr": "Trgovina danas radi do dvadeset sati.", "en": "The shop is open today until 8 p.m.", "note": "raditi do = to be open until. Recorded on every store's phone line." },
+        { "hr": "Nazvat ću vas sutra ujutro.", "en": "I will call you tomorrow morning.", "note": "How messages often end — futur I with the clitics ću vas in second position." },
+        { "hr": "tko, što, kada, gdje", "en": "who, what, when, where", "note": "Your listening checklist. One pass of the audio, four facts on paper — that's the whole drill." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "One pass, four facts",
+      "intro": "Real listening practice: play each recording once only and catch who, what, when, where — then lock in the message vocabulary.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the voicemail once: what is the message?",
+          "difficulty": 5,
+          "options": ["The appointment is moved to Thursday at ten", "The appointment is cancelled completely", "The appointment is moved to Tuesday at four", "The dentist is calling to say hello"],
+          "answer": "The appointment is moved to Thursday at ten",
+          "explanation": "Vaš termin je pomaknut s utorka na četvrtak u deset sati. = Your appointment has been moved from Tuesday to Thursday at ten. The call-back deadline is today by four.",
+          "audioText": "Dobar dan, zovem iz zubne ordinacije. Vaš termin je pomaknut s utorka na četvrtak u deset sati. Molim vas, nazovite nas danas do šesnaest sati."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the station announcement: what do you learn?",
+          "difficulty": 5,
+          "options": ["Platform two, fifteen minutes late", "Platform two, on time", "Platform three, fifteen minutes late", "The train is cancelled"],
+          "answer": "Platform two, fifteen minutes late",
+          "explanation": "Vlak za Rijeku polazi s perona broj dva… kasni petnaest minuta. = The train to Rijeka departs from platform two and is running fifteen minutes late because of track works.",
+          "audioText": "Vlak za Rijeku polazi s perona broj dva. Zbog radova na pruzi vlak kasni petnaest minuta."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Listen and type the missing word: Trgovina danas radi do ______ sati.",
+          "difficulty": 4,
+          "answer": "dvadeset",
+          "accepted": ["dvadeset", "20"],
+          "strictDiacritics": true,
+          "explanation": "Trgovina danas radi do dvadeset sati. = The shop is open today until 8 p.m. Numbers are a classic listening weak spot — write them down immediately.",
+          "audioText": "Dobar dan. Trgovina danas radi do dvadeset sati. Nedjeljom ne radimo."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Ostavite poruku nakon zvučnog signala.' mean?",
+          "difficulty": 2,
+          "options": ["Leave a message after the beep.", "Call back after the weekend.", "Do not leave a message.", "Press two for English."],
+          "answer": "Leave a message after the beep.",
+          "explanation": "zvučni signal = the beep; ostaviti poruku = to leave a message. The standard answering-machine line."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the announcement: Vlak iz Osijeka ______ dvadeset minuta.",
+          "difficulty": 3,
+          "answer": "kasni",
+          "accepted": ["kasni"],
+          "strictDiacritics": true,
+          "explanation": "kasniti = to run late: Vlak iz Osijeka kasni dvadeset minuta. (The train from Osijek is twenty minutes late.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete the airport announcement: Let je ______ zbog vremena.",
+          "difficulty": 3,
+          "options": ["otkazan", "otkazao", "otkazati", "otkaz"],
+          "answer": "otkazan",
+          "explanation": "otkazan = cancelled — the fixed announcement form: Let je otkazan zbog vremena. (The flight is cancelled due to the weather.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I will call you tomorrow morning.'",
+          "difficulty": 4,
+          "options": ["vas", "ujutro", "Nazvat", "sutra", "ću"],
+          "ordered": ["Nazvat", "ću", "vas", "sutra", "ujutro"],
+          "answer": "Nazvat ću vas sutra ujutro",
+          "explanation": "Futur I with the clitic chain in second position: ću (auxiliary) → vas (accusative)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which four essentials should you catch from any short recorded message?",
+          "difficulty": 2,
+          "options": ["tko, što, kada, gdje", "boja, broj, cijena, ime", "jučer, danas, sutra, sada", "lijevo, desno, ravno, natrag"],
+          "answer": "tko, što, kada, gdje",
+          "explanation": "Who, what, when, where — one pass of the audio, four facts. That's the entire listening strategy at A2."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "105": [
+    {
+      "type": "LEARN",
+      "title": "Halfway there: weeks 9-15 in ten sentences",
+      "intro": "Unit 40 done — the exact midpoint of the e-course. Before the mini-mock below, run through the whole phase in ten model sentences: one per big topic, from language adjectives to directions. If you can produce each one cold, the second half starts from solid ground.",
+      "items": [
+        { "hr": "Govorim engleski, a učim hrvatski jezik.", "en": "I speak English, and I'm learning Croatian.", "note": "Week 9: language adjectives in -ski, lowercase in Croatian (hrvatski, engleski)." },
+        { "hr": "Volim svoju ženu i svoj posao.", "en": "I love my wife and my job.", "note": "Week 9: svoj — always for the subject's own things, in every gender and case." },
+        { "hr": "Čitam zanimljivu knjigu o hrvatskoj povijesti.", "en": "I'm reading an interesting book about Croatian history.", "note": "Week 9: accusative across the whole phrase (zanimljivu knjigu) + o + locative." },
+        { "hr": "Sutra ću ti ga donijeti.", "en": "I'll bring it to you tomorrow.", "note": "Week 10: the clitic chain — ću (aux) → ti (dative) → ga (accusative), all in second position." },
+        { "hr": "Nađemo se u pet ispred kina?", "en": "Shall we meet at five in front of the cinema?", "note": "Week 10: arrangements with naći se; ispred + genitive." },
+        { "hr": "Živimo u malom stanu u mirnom kvartu.", "en": "We live in a small flat in a quiet neighbourhood.", "note": "Week 11: locative agreement across the whole phrase — u malom stanu." },
+        { "hr": "Pisao sam poruku pola sata i na kraju sam je napisao.", "en": "I was writing the message for half an hour and finally finished it.", "note": "Weeks 11-12: aspect — pisao (process) vs napisao (completion)." },
+        { "hr": "Biste li mi mogli pomoći?", "en": "Could you help me? (polite)", "note": "Week 12: the conditional — bih, bi, bi, bismo, biste, bi — as the politeness engine." },
+        { "hr": "Poklonit ću svojoj ženi cvijeće za rođendan.", "en": "I'll give my wife flowers for her birthday.", "note": "Week 13: dative across the phrase (svojoj ženi) + futur I." },
+        { "hr": "Skrenite desno kod pekare i idite ravno do trga.", "en": "Turn right at the bakery and go straight to the square.", "note": "Week 14: directions with formal imperatives; kod + genitive, do + genitive." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Mid-phase mini-mock: weeks 9-15",
+      "intro": "Ten questions, one sweep of everything since the phase began: -ski adjectives, svoj, case agreement, clitics, aspect, the conditional and directions. Score yourself honestly — what you miss here gets priority in the coming weeks.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Ona govori francuski, a njezin muž uči ______ jezik. ('Croatian')",
+          "difficulty": 3,
+          "options": ["hrvatski", "hrvatska", "Hrvatska", "hrvatskom"],
+          "answer": "hrvatski",
+          "explanation": "Language adjectives in -ski are lowercase and agree with jezik (m.): hrvatski jezik. Hrvatska (capitalized) is the country."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the right possessive: Marko voli ______ posao. (his own)",
+          "difficulty": 3,
+          "answer": "svoj",
+          "accepted": ["svoj"],
+          "strictDiacritics": true,
+          "explanation": "The subject's own things take svoj: Marko voli svoj posao. (njegov would point to someone else's job.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I'll bring it to you tomorrow.'",
+          "difficulty": 5,
+          "options": ["ga", "Sutra", "donijeti", "ću", "ti"],
+          "ordered": ["Sutra", "ću", "ti", "ga", "donijeti"],
+          "answer": "Sutra ću ti ga donijeti",
+          "explanation": "The clitic chain in second position: ću (auxiliary) → ti (dative) → ga (accusative), then the infinitive."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Poznaješ li Ivana? — Da, poznajem ______.",
+          "difficulty": 3,
+          "options": ["ga", "mu", "njemu", "on"],
+          "answer": "ga",
+          "explanation": "The accusative clitic ga replaces Ivana: Poznajem ga. (I know him.) mu is dative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Živimo ______ stanu. ('in a small flat')",
+          "difficulty": 4,
+          "options": ["u malom", "u mali", "u malog", "u malu"],
+          "answer": "u malom",
+          "explanation": "The locative runs through the whole phrase: u malom stanu — adjective and noun both in the locative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Pick the right aspect: Cijelo poslijepodne sam ______ pisma, ali nisam sve napisao.",
+          "difficulty": 5,
+          "options": ["pisao", "napisao", "pišem", "napisati"],
+          "answer": "pisao",
+          "explanation": "A whole afternoon of ongoing activity = imperfective pisao; the (failed) completion is expressed by napisao."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Make it polite (Vi): ______ li mi mogli pomoći?",
+          "difficulty": 4,
+          "answer": "Biste",
+          "accepted": ["Biste", "biste"],
+          "strictDiacritics": true,
+          "explanation": "The conditional auxiliary for vi is biste: Biste li mi mogli pomoći? (Could you help me?)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the dative phrase: Kupio sam poklon ______ ženi. (svoj)",
+          "difficulty": 4,
+          "answer": "svojoj",
+          "accepted": ["svojoj"],
+          "strictDiacritics": true,
+          "explanation": "Dative feminine of svoj: svojoj ženi — Kupio sam poklon svojoj ženi. (I bought a present for my wife.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Give a stranger directions politely: '______ desno kod pekare.'",
+          "difficulty": 3,
+          "options": ["Skrenite", "Skreni", "Skrenuti", "Skrenem"],
+          "answer": "Skrenite",
+          "explanation": "The vi-imperative for strangers: Skrenite desno kod pekare. (Turn right at the bakery.) Skreni is the ti-form."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'First we bought the tickets and boarded the train.'",
+          "difficulty": 4,
+          "options": ["karte", "u", "Najprije", "ušli", "kupili", "vlak", "smo", "i"],
+          "ordered": ["Najprije", "smo", "kupili", "karte", "i", "ušli", "u", "vlak"],
+          "answer": "Najprije smo kupili karte i ušli u vlak",
+          "explanation": "Week 15 narration: the signpost najprije opens, the auxiliary smo takes second position, and both events are perfective."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "106": [
+    {
+      "type": "LEARN",
+      "title": "Izgled i karakter: describing people",
+      "intro": "Appearance and character vocabulary is the raw material of every story that involves a person — which is most stories. Learn the adjectives in pairs of opposites, and mind the agreement: every adjective matches its noun in gender, number and case.",
+      "items": [
+        { "hr": "visok / nizak", "en": "tall / short", "note": "Moja žena je visoka; njezin djed je nizak. Feminine adds -a: visoka, niska." },
+        { "hr": "vitak / punašan", "en": "slim / plump", "note": "The polite pair for build. Feminine: vitka, punašna." },
+        { "hr": "plavokos / tamnokos", "en": "blond / dark-haired", "note": "kosa = hair, built into the adjective: plavokosa djevojka = a blonde girl." },
+        { "hr": "Ima kratku smeđu kosu i zelene oči.", "en": "He/She has short brown hair and green eyes.", "note": "imati + accusative: kratku smeđu kosu (f.), zelene oči (pl.)." },
+        { "hr": "Nosi naočale i uvijek se smiješi.", "en": "He/She wears glasses and is always smiling.", "note": "nositi naočale = to wear glasses; smiješiti se = to smile." },
+        { "hr": "duhovit", "en": "witty, funny", "note": "The compliment Croatians value most. Ona je jako duhovita." },
+        { "hr": "strpljiv / nestrpljiv", "en": "patient / impatient", "note": "ne- flips many character adjectives: strpljiv → nestrpljiv." },
+        { "hr": "ljubazan", "en": "kind, friendly", "note": "Fleeting a: ljubazan → ljubazna (f.). Also what you call helpful staff: Bili su jako ljubazni." },
+        { "hr": "tvrdoglav", "en": "stubborn", "note": "Literally 'hard-headed'. Malo je tvrdoglav, ali dobar. (A bit stubborn, but good.)" },
+        { "hr": "vrijedan / lijen", "en": "hard-working / lazy", "note": "vrijedan also means 'valuable' — context decides. Feminine: vrijedna, lijena." },
+        { "hr": "sramežljiv", "en": "shy", "note": "Kao dijete bio sam jako sramežljiv. (As a child I was very shy.)" },
+        { "hr": "otvoren i društven", "en": "open and sociable", "note": "The classic pair for describing extroverts." },
+        { "hr": "Moja žena je vesela i puna energije.", "en": "My wife is cheerful and full of energy.", "note": "pun + genitive: puna energije = full of energy." },
+        { "hr": "Na prvi pogled djeluje ozbiljno, ali je zapravo jako duhovit.", "en": "At first glance he seems serious, but he's actually very funny.", "note": "djelovati + adverb = to come across as; zapravo = actually. A ready-made two-part description." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Describe them correctly",
+      "intro": "Looks and character with full adjective agreement — gender, number and case, every time.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Moja sestra je ______. ('tall')",
+          "difficulty": 2,
+          "options": ["visoka", "visok", "visoko", "visoki"],
+          "answer": "visoka",
+          "explanation": "sestra is feminine, so the adjective takes -a: Moja sestra je visoka."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the accusative: Ima ______ smeđu kosu. (kratak)",
+          "difficulty": 4,
+          "answer": "kratku",
+          "accepted": ["kratku"],
+          "strictDiacritics": true,
+          "explanation": "kosa is feminine and the object of imati, so the whole phrase goes accusative: kratku smeđu kosu."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Marko nas uvijek nasmijava. On je jako ______.",
+          "difficulty": 3,
+          "options": ["duhovit", "sramežljiv", "lijen", "nestrpljiv"],
+          "answer": "duhovit",
+          "explanation": "Someone who always makes you laugh (nasmijava) is duhovit — witty, funny."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the character description: On je jako ______ — nikad se ne ljuti i mirno čeka. ('patient')",
+          "difficulty": 4,
+          "answer": "strpljiv",
+          "accepted": ["strpljiv"],
+          "strictDiacritics": true,
+          "explanation": "strpljiv = patient. Someone who never gets angry and waits calmly is strpljiv."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'She has long blond hair and blue eyes.'",
+          "difficulty": 4,
+          "options": ["kosu", "plave", "Ima", "i", "dugu", "oči", "plavu"],
+          "ordered": ["Ima", "dugu", "plavu", "kosu", "i", "plave", "oči"],
+          "answer": "Ima dugu plavu kosu i plave oči",
+          "explanation": "Accusative agreement twice over: dugu plavu kosu (f. sg.) and plave oči (pl.)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the opposite of 'vrijedan' (hard-working)?",
+          "difficulty": 2,
+          "options": ["lijen", "visok", "ljubazan", "vitak"],
+          "answer": "lijen",
+          "explanation": "vrijedan (hard-working) ↔ lijen (lazy). Learn character adjectives in opposite pairs."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Moj susjed je ______ — nikad ne želi promijeniti mišljenje. ('stubborn')",
+          "difficulty": 4,
+          "answer": "tvrdoglav",
+          "accepted": ["tvrdoglav"],
+          "strictDiacritics": true,
+          "explanation": "tvrdoglav (hard-headed) = stubborn — someone who never wants to change their mind."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Na prvi pogled djeluje ozbiljno, ali je zapravo jako duhovit.' What does this mean?",
+          "difficulty": 4,
+          "options": ["He seems serious at first, but is actually very funny.", "He is serious and never jokes.", "He looked at me seriously for the first time.", "He acts funny but is actually serious."],
+          "answer": "He seems serious at first, but is actually very funny.",
+          "explanation": "na prvi pogled = at first glance; djelovati = to come across as; zapravo = actually."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "107": [
+    {
+      "type": "LEARN",
+      "title": "Stariji, mlađi, ljepši — the comparative",
+      "intro": "Three suffixes cover every Croatian comparative. The default is -iji (stariji); short adjectives take -ji, which fuses with the final consonant (mlad → mlađi); and exactly three adjectives take -ši. Add four irregulars and you can compare anything. 'Than' is od + genitive or nego.",
+      "items": [
+        { "hr": "star → stariji", "en": "old → older", "note": "-iji is the default suffix and your safest guess: stariji, noviji, jeftiniji." },
+        { "hr": "pametan → pametniji", "en": "smart → smarter", "note": "The fleeting a drops before -iji: pametan → pametn-iji." },
+        { "hr": "mlad → mlađi", "en": "young → younger", "note": "-ji fuses with the consonant (iotation): d + j → đ." },
+        { "hr": "jak → jači", "en": "strong → stronger", "note": "k + j → č. Likewise: drag → draži (g + j → ž)." },
+        { "hr": "skup → skuplji", "en": "expensive → more expensive", "note": "p + j → plj. Same with b, m, v: grub → grublji." },
+        { "hr": "tih → tiši", "en": "quiet → quieter", "note": "h + j → š: tiši, suši." },
+        { "hr": "lijep → ljepši", "en": "beautiful → more beautiful", "note": "One of only THREE adjectives in -ši. Watch the spelling: ije shortens to je." },
+        { "hr": "lak → lakši, mek → mekši", "en": "easy → easier, soft → softer", "note": "The other two -ši adjectives. That's the complete list: ljepši, lakši, mekši." },
+        { "hr": "dobar → bolji", "en": "good → better", "note": "Irregular no. 1 — memorize all four as a set." },
+        { "hr": "loš → gori", "en": "bad → worse", "note": "Irregular no. 2. Not 'lošiji' in standard Croatian." },
+        { "hr": "velik → veći, malen → manji", "en": "big → bigger, small → smaller", "note": "Irregulars no. 3 and 4. The full set: bolji, gori, veći, manji." },
+        { "hr": "Ivan je stariji od Marka.", "en": "Ivan is older than Marko.", "note": "od + genitive is the most common 'than'." },
+        { "hr": "Ivan je stariji nego Marko.", "en": "Ivan is older than Marko.", "note": "nego + nominative — same meaning, needed before clauses: stariji nego što misliš." },
+        { "hr": "Moj stan je manji od tvoga, ali jeftiniji.", "en": "My flat is smaller than yours, but cheaper.", "note": "Two comparatives in one natural sentence — your model for today's speaking drill." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Three suffixes and four irregulars",
+      "intro": "Form comparatives across -iji, -ji and -ši, catch the irregulars, and choose between od and nego.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What is the comparative of 'star' (old)?",
+          "difficulty": 2,
+          "options": ["stariji", "starši", "najstariji", "starji"],
+          "answer": "stariji",
+          "explanation": "The default suffix -iji: star → stariji. najstariji is the superlative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the comparative: mlad → ______",
+          "difficulty": 3,
+          "answer": "mlađi",
+          "accepted": ["mlađi"],
+          "strictDiacritics": true,
+          "explanation": "-ji fuses with the final consonant: d + j → đ, so mlad → mlađi."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the comparative of 'dobar' (good)?",
+          "difficulty": 3,
+          "options": ["bolji", "dobriji", "veći", "najbolji"],
+          "answer": "bolji",
+          "explanation": "dobar → bolji is irregular (suppletive) — one of the four you must memorize: bolji, gori, veći, manji."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the comparative: lijep → ______",
+          "difficulty": 4,
+          "answer": "ljepši",
+          "accepted": ["ljepši"],
+          "strictDiacritics": true,
+          "explanation": "lijep is one of only three -ši adjectives, and ije shortens to je: ljepši."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the comparative: loš → ______",
+          "difficulty": 4,
+          "answer": "gori",
+          "accepted": ["gori"],
+          "strictDiacritics": true,
+          "explanation": "loš → gori is irregular. In standard Croatian it is gori, not 'lošiji'."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the comparative of 'velik' (big)?",
+          "difficulty": 3,
+          "options": ["veći", "velikiji", "višlji", "najveći"],
+          "answer": "veći",
+          "explanation": "velik → veći, another of the four irregulars. najveći is the superlative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the right 'than': Moj brat je stariji ______ mene.",
+          "difficulty": 3,
+          "answer": "od",
+          "accepted": ["od"],
+          "strictDiacritics": true,
+          "explanation": "od + genitive (mene): stariji od mene = older than me. With nego you'd say: stariji nego ja."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete with 'nego': Ova kava je skuplja ______ ona.",
+          "difficulty": 4,
+          "options": ["nego", "od", "kao", "za"],
+          "answer": "nego",
+          "explanation": "Before a nominative (ona), use nego: skuplja nego ona. With od it would be genitive: skuplja od one."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Zagreb is bigger than Split.'",
+          "difficulty": 3,
+          "options": ["od", "veći", "Zagreb", "Splita", "je"],
+          "ordered": ["Zagreb", "je", "veći", "od", "Splita"],
+          "answer": "Zagreb je veći od Splita",
+          "explanation": "Comparative + od + genitive: veći od Splita. (Split → Splita in the genitive.)"
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "108": [
+    {
+      "type": "LEARN",
+      "title": "Naj- and the declining comparative",
+      "intro": "The superlative is mechanical: naj- + comparative, always (najstariji, najljepši, najbolji). The real news today is that comparatives and superlatives decline like definite adjectives — so it's sa starijim bratom and vidio sam najboljeg prijatelja. Your case system stays on even when opinions get superlative.",
+      "items": [
+        { "hr": "naj- + comparative = superlative", "en": "the naj- rule", "note": "No exceptions: stariji → najstariji, ljepši → najljepši, bolji → najbolji." },
+        { "hr": "najbolji prijatelj", "en": "best friend", "note": "The phrase you'll use most. Feminine: najbolja prijateljica." },
+        { "hr": "najgori dan u tjednu", "en": "the worst day of the week", "note": "loš → gori → najgori. u tjednu = in the week." },
+        { "hr": "Ovo je najljepši grad na svijetu.", "en": "This is the most beautiful city in the world.", "note": "na svijetu = in the world — the classic superlative frame." },
+        { "hr": "stariji, starijeg, starijem, starijim", "en": "older: N, G/A, D/L, I", "note": "Comparatives decline like definite adjectives — the case endings you already know." },
+        { "hr": "sa starijim bratom", "en": "with (my) older brother", "note": "Instrumental after s/sa: sa starijim bratom. The comparative carries the case." },
+        { "hr": "Vidio sam svog najboljeg prijatelja.", "en": "I saw my best friend.", "note": "Animate accusative = genitive form: najboljeg prijatelja." },
+        { "hr": "Pišem poruku najboljem prijatelju.", "en": "I'm writing a message to my best friend.", "note": "Dative: najboljem prijatelju." },
+        { "hr": "Razgovarali smo o mlađoj sestri.", "en": "We talked about the younger sister.", "note": "Locative feminine: o mlađoj sestri — comparatives take the same -oj as other adjectives." },
+        { "hr": "jedan od najboljih restorana u gradu", "en": "one of the best restaurants in town", "note": "jedan od + genitive plural: najboljih restorana. A high-frequency review-speak pattern." },
+        { "hr": "Tko je najduhovitija osoba koju znaš?", "en": "Who is the funniest person you know?", "note": "Superlative + relative koju (f. acc.). Today's speaking prompt — answer it aloud." },
+        { "hr": "Najveća promjena u mom životu…", "en": "The biggest change in my life…", "note": "velik → veći → najveći; feminine najveća. A frame you'll need tomorrow." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Superlatives through the cases",
+      "intro": "Form naj- superlatives, then push comparatives and superlatives through the accusative, dative, instrumental and genitive.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What is the superlative of 'dobar' (good)?",
+          "difficulty": 2,
+          "options": ["najbolji", "najdobriji", "bolji", "najveći"],
+          "answer": "najbolji",
+          "explanation": "naj- + the comparative bolji = najbolji. The superlative is always built on the comparative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Ovo je ______ grad na svijetu. (lijep, superlative)",
+          "difficulty": 4,
+          "answer": "najljepši",
+          "accepted": ["najljepši"],
+          "strictDiacritics": true,
+          "explanation": "lijep → ljepši → najljepši: Ovo je najljepši grad na svijetu. (This is the most beautiful city in the world.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'with my older brother'?",
+          "difficulty": 5,
+          "options": ["sa starijim bratom", "sa stariji brat", "sa starijeg brata", "sa starijom bratom"],
+          "answer": "sa starijim bratom",
+          "explanation": "Comparatives decline: instrumental masculine is starijim, matching bratom — sa starijim bratom."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the animate accusative: Vidio sam svog ______ prijatelja. (najbolji)",
+          "difficulty": 5,
+          "answer": "najboljeg",
+          "accepted": ["najboljeg", "najboljega"],
+          "strictDiacritics": true,
+          "explanation": "Animate masculine accusative = genitive form: najboljeg (najboljega) prijatelja."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Who is the funniest person you know?'",
+          "difficulty": 4,
+          "options": ["osoba", "najduhovitija", "znaš", "je", "Tko", "koju"],
+          "ordered": ["Tko", "je", "najduhovitija", "osoba", "koju", "znaš"],
+          "answer": "Tko je najduhovitija osoba koju znaš",
+          "explanation": "Superlative agreeing with osoba (f.): najduhovitija; the relative pronoun koju is feminine accusative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the superlative of 'loš' (bad)?",
+          "difficulty": 3,
+          "options": ["najgori", "najlošiji", "gori", "najgoriji"],
+          "answer": "najgori",
+          "explanation": "loš → gori → najgori. The irregular comparative carries into the superlative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the dative: Pišem poruku ______ prijatelju. (najbolji)",
+          "difficulty": 5,
+          "answer": "najboljem",
+          "accepted": ["najboljem", "najboljemu"],
+          "strictDiacritics": true,
+          "explanation": "Dative masculine: najboljem prijatelju — the superlative takes the same case ending as any adjective."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ovo je jedan od ______ restorana u gradu. ('one of the best')",
+          "difficulty": 5,
+          "options": ["najboljih", "najbolji", "najboljem", "najboljim"],
+          "answer": "najboljih",
+          "explanation": "jedan od + genitive plural: jedan od najboljih restorana u gradu."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "109": [
+    {
+      "type": "LEARN",
+      "title": "Then vs now: frames for comparing your life",
+      "intro": "Today you talk about your life now versus five years ago — a conversation that forces comparatives, past-tense aspect and future plans into one workout. These frames give you the skeleton; your real life fills it in. Aim for six comparatives and two superlatives, declined correctly.",
+      "items": [
+        { "hr": "prije pet godina", "en": "five years ago", "note": "prije + genitive: prije pet godina, prije mjesec dana." },
+        { "hr": "Tada sam živio u Americi, a sada živim u Hrvatskoj.", "en": "Back then I lived in America, and now I live in Croatia.", "note": "tada vs sada — the axis of the whole conversation." },
+        { "hr": "Prije nisam govorio ni riječ hrvatskoga.", "en": "Before, I didn't speak a word of Croatian.", "note": "ni riječ + genitive = not a (single) word of." },
+        { "hr": "Moj hrvatski je sada puno bolji nego prije.", "en": "My Croatian is now much better than before.", "note": "puno + comparative = much better; nego prije = than before." },
+        { "hr": "Život mi je mirniji nego prije.", "en": "My life is calmer than before.", "note": "Dative mi = 'my' with states: Život mi je… (miran → mirniji)." },
+        { "hr": "Posao mi je zanimljiviji, ali su dani kraći.", "en": "My job is more interesting, but the days are shorter.", "note": "kratak → kraći (t + j → ć). Balance a plus with a minus — it sounds natural." },
+        { "hr": "Tada sam bio mlađi, ali sam sada sretniji.", "en": "I was younger then, but I'm happier now.", "note": "sretan → sretniji; the fleeting a drops. Masculine participles: bio." },
+        { "hr": "Najveća promjena je to što sam se oženio.", "en": "The biggest change is that I got married.", "note": "to što = the fact that; oženiti se = to get married (said of a man)." },
+        { "hr": "Nekad sam izlazio svaki vikend, a sada ostajem doma.", "en": "I used to go out every weekend, and now I stay at home.", "note": "nekad + imperfective (izlazio) for old habits." },
+        { "hr": "S vremenom je sve postalo lakše.", "en": "With time, everything became easier.", "note": "postati + comparative (neuter lakše): things 'became easier'." },
+        { "hr": "Sljedeće godine planiramo kupiti veći stan.", "en": "Next year we're planning to buy a bigger flat.", "note": "Temporal genitive sljedeće godine + a declined comparative: veći stan." },
+        { "hr": "U budućnosti želim tečno govoriti hrvatski.", "en": "In the future I want to speak Croatian fluently.", "note": "u budućnosti = in the future; tečno = fluently. End the conversation looking forward." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Then, now, and the grammar between",
+      "intro": "The week 15 sweep: comparatives and superlatives from Units 41-43, past habits vs events, and the frames for tonight's conversation.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Complete (male speaker): Prije pet godina ______ sam u Americi. (živjeti)",
+          "difficulty": 3,
+          "answer": "živio",
+          "accepted": ["živio"],
+          "strictDiacritics": true,
+          "explanation": "Masculine singular participle of živjeti: živio — Prije pet godina živio sam u Americi."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Moj hrvatski je sada puno ______ nego prije.",
+          "difficulty": 3,
+          "options": ["bolji", "dobar", "najbolji", "boljeg"],
+          "answer": "bolji",
+          "explanation": "Comparing with nego prije needs the comparative in the nominative: hrvatski je bolji."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Tada sam bio ______, ali sam sada sretniji. (mlad, comparative)",
+          "difficulty": 4,
+          "answer": "mlađi",
+          "accepted": ["mlađi"],
+          "strictDiacritics": true,
+          "explanation": "mlad → mlađi (d + j → đ): I was younger then, but I'm happier now."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'My life is calmer than before.'",
+          "difficulty": 4,
+          "options": ["nego", "mirniji", "Život", "prije", "je", "mi"],
+          "ordered": ["Život", "mi", "je", "mirniji", "nego", "prije"],
+          "answer": "Život mi je mirniji nego prije",
+          "explanation": "The dative clitic mi ('my') and je sit in second position: Život mi je mirniji nego prije."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete (male speaker): Najveća promjena je to što sam se ______.",
+          "difficulty": 3,
+          "options": ["oženio", "oženila", "oženiti", "žena"],
+          "answer": "oženio",
+          "explanation": "oženiti se = to get married (of a man); the masculine participle is oženio: … što sam se oženio."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Pick the right aspect for an old habit: Nekad sam ______ svaki vikend.",
+          "difficulty": 4,
+          "options": ["izlazio", "izašao", "izaći", "izađem"],
+          "answer": "izlazio",
+          "explanation": "A repeated past habit (svaki vikend) takes the imperfective izlazio; izašao is a single completed exit."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the temporal genitive: Sljedeće ______ planiramo kupiti veći stan.",
+          "difficulty": 3,
+          "answer": "godine",
+          "accepted": ["godine"],
+          "strictDiacritics": true,
+          "explanation": "Time expressions go straight into the genitive: sljedeće godine = next year."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ovo su ______ godine mog života. ('the most beautiful')",
+          "difficulty": 5,
+          "options": ["najljepše", "najljepši", "ljepši", "lijepe"],
+          "answer": "najljepše",
+          "explanation": "godine is feminine plural, so the superlative agrees: najljepše godine — the most beautiful years."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Prije pet godina i danas",
+      "intro": "The real thing: you and your wife compare your life now with five years ago. Read your lines ('Me') aloud and count your comparatives — you need six, plus two superlatives, all declined correctly.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Zamisli — prije pet godina nismo se ni poznavali. Kakav ti je tada bio život?", "en": "Imagine — five years ago we didn't even know each other. What was your life like then?" },
+        { "speaker": "Me", "hr": "Tada sam živio u Americi i nisam govorio ni riječ hrvatskoga.", "en": "Back then I lived in America and didn't speak a word of Croatian." },
+        { "speaker": "Partner", "hr": "A sada? Reci mi tri stvari koje su danas drukčije.", "en": "And now? Tell me three things that are different today." },
+        { "speaker": "Me", "hr": "Moj hrvatski je puno bolji, život mi je mirniji, a naš stan je manji nego moj stari.", "en": "My Croatian is much better, my life is calmer, and our flat is smaller than my old one." },
+        { "speaker": "Partner", "hr": "Ha! Ali je ljepši, priznaj.", "en": "Ha! But it's nicer, admit it." },
+        { "speaker": "Me", "hr": "Istina, ljepši je i topliji. I kvart je tiši nego moj stari kvart.", "en": "True, it's nicer and warmer. And the neighbourhood is quieter than my old one." },
+        { "speaker": "Partner", "hr": "Jesi li sada sretniji nego tada?", "en": "Are you happier now than you were then?" },
+        { "speaker": "Me", "hr": "Puno sretniji. Tada sam bio mlađi, ali najveća promjena je to što sam se oženio.", "en": "Much happier. I was younger then, but the biggest change is that I got married." },
+        { "speaker": "Partner", "hr": "Dobar odgovor! A što planiramo za budućnost?", "en": "Good answer! And what are we planning for the future?" },
+        { "speaker": "Me", "hr": "Sljedeće godine želimo kupiti veći stan. I želim tečno govoriti hrvatski.", "en": "Next year we want to buy a bigger flat. And I want to speak Croatian fluently." },
+        { "speaker": "Partner", "hr": "Govorit ćeš. Pa već sada razgovaramo samo na hrvatskom!", "en": "You will. We're already talking only in Croatian right now!" },
+        { "speaker": "Me", "hr": "Da — i to je najbolji dokaz da se trud isplati.", "en": "Yes — and that's the best proof that the effort pays off." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "110": [
+    {
+      "type": "LEARN",
+      "title": "Brže, bolje, najviše — comparing how",
+      "intro": "Adverbs compare with the neuter comparative form: brzo → brže, dobro → bolje. The irregulars mirror the adjectives you learned this week (bolje, gore, više, manje), and naj- again makes the superlative. Add što + comparative for 'as … as possible' and your comparing toolkit is complete.",
+      "items": [
+        { "hr": "brzo → brže → najbrže", "en": "fast → faster → fastest", "note": "The adverb comparative is the neuter comparative form: brže." },
+        { "hr": "sporo → sporije → najsporije", "en": "slowly → more slowly → most slowly", "note": "Regular -ije, like the adjective sporiji." },
+        { "hr": "dobro → bolje → najbolje", "en": "well → better → best", "note": "Mirrors dobar → bolji. Govorim bolje = I speak better." },
+        { "hr": "loše → gore → najgore", "en": "badly → worse → worst", "note": "Mirrors loš → gori. Danas se osjećam gore. (I feel worse today.)" },
+        { "hr": "mnogo → više → najviše", "en": "much → more → most", "note": "više also builds quantity: više posla = more work (+ genitive)." },
+        { "hr": "malo → manje → najmanje", "en": "little → less → least", "note": "manje kave = less coffee. The pair to više." },
+        { "hr": "često → češće → najčešće", "en": "often → more often → most often", "note": "st + j → šć in disguise: često → češće." },
+        { "hr": "rano → ranije; kasno → kasnije", "en": "early → earlier; late → later", "note": "Everyday planning words: Dođi ranije! Krenimo kasnije!" },
+        { "hr": "Ona govori hrvatski bolje od mene.", "en": "She speaks Croatian better than me.", "note": "Same 'than' rules as adjectives: od + genitive, or nego ja." },
+        { "hr": "Molim vas, govorite sporije.", "en": "Please speak more slowly.", "note": "The learner's most useful sentence — deploy it freely." },
+        { "hr": "što prije / što više", "en": "as soon as possible / as much as possible", "note": "što + comparative = as … as possible: Nazovi me što prije!" },
+        { "hr": "Najviše volim putovati ljeti.", "en": "Most of all, I like travelling in summer.", "note": "najviše + voljeti = the standard 'favourite' frame." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Who does it better, faster, most?",
+      "intro": "Compare how things are done: form the adverb comparatives, catch the irregulars, and use što + comparative like a native.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What is the comparative of 'dobro' (well)?",
+          "difficulty": 2,
+          "options": ["bolje", "bolji", "najbolje", "dobrije"],
+          "answer": "bolje",
+          "explanation": "dobro → bolje, mirroring dobar → bolji. bolji is the adjective; the adverb is bolje."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the comparative adverb: brzo → ______",
+          "difficulty": 3,
+          "answer": "brže",
+          "accepted": ["brže"],
+          "strictDiacritics": true,
+          "explanation": "brzo → brže (z + j → ž): Vlak ide brže od autobusa."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Moja žena vozi ______ od mene.",
+          "difficulty": 3,
+          "options": ["bolje", "bolja", "dobro", "najbolja"],
+          "answer": "bolje",
+          "explanation": "Comparing how she drives needs the adverb: vozi bolje od mene. (bolja would describe her, not the driving.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Form the comparative: mnogo → ______",
+          "difficulty": 3,
+          "answer": "više",
+          "accepted": ["više"],
+          "strictDiacritics": true,
+          "explanation": "mnogo → više → najviše. Radim više nego prije. (I work more than before.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the comparative of 'loše' (badly)?",
+          "difficulty": 3,
+          "options": ["gore", "lošije", "gorje", "najgore"],
+          "answer": "gore",
+          "explanation": "loše → gore, mirroring loš → gori: Danas igram gore nego jučer."
+        },
+        {
+          "type": "REORDER",
+          "prompter": null,
+          "prompt": "Put the words in order: 'She speaks Croatian better than me.'",
+          "difficulty": 4,
+          "options": ["bolje", "hrvatski", "mene", "Ona", "od", "govori"],
+          "ordered": ["Ona", "govori", "hrvatski", "bolje", "od", "mene"],
+          "answer": "Ona govori hrvatski bolje od mene",
+          "explanation": "Adverb after the object: govori hrvatski bolje, then od + genitive (mene) for 'than me'."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete 'as soon as possible': Nazovi me što ______!",
+          "difficulty": 3,
+          "answer": "prije",
+          "accepted": ["prije"],
+          "strictDiacritics": true,
+          "explanation": "što + comparative = as … as possible: što prije = as soon as possible."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Most of all, I like travelling in summer.' — ______ volim putovati ljeti.",
+          "difficulty": 3,
+          "options": ["Najviše", "Više", "Najbolje", "Mnogo"],
+          "answer": "Najviše",
+          "explanation": "najviše + voljeti = to like most of all: Najviše volim putovati ljeti."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}
