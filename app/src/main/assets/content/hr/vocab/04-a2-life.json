@@ -1,0 +1,2186 @@
+{
+  "packs": [
+    {
+      "id": "work-career",
+      "title": "Work & career",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "zaposlenje",
+          "hr": "zaposlenje",
+          "en": "employment / job",
+          "pos": "n. n.",
+          "note": "stalno zaposlenje = permanent job",
+          "example": {
+            "target": "Traži novo zaposlenje u Zagrebu.",
+            "gloss": "She is looking for a new job in Zagreb."
+          }
+        },
+        {
+          "id": "radno mjesto",
+          "hr": "radno mjesto",
+          "en": "workplace / job position",
+          "pos": "phrase",
+          "note": "mjesto is n. n.",
+          "example": {
+            "target": "Moje radno mjesto je blizu kolodvora.",
+            "gloss": "My workplace is near the station."
+          }
+        },
+        {
+          "id": "životopis",
+          "hr": "životopis",
+          "en": "CV / résumé",
+          "pos": "n. m.",
+          "example": {
+            "target": "Poslala sam životopis na deset adresa.",
+            "gloss": "I sent my CV to ten addresses."
+          }
+        },
+        {
+          "id": "molba",
+          "hr": "molba",
+          "en": "application / formal request",
+          "pos": "n. f.",
+          "note": "molba za posao = job application; gen. pl. molbi",
+          "example": {
+            "target": "Napisao je molbu za posao.",
+            "gloss": "He wrote a job application."
+          }
+        },
+        {
+          "id": "razgovor za posao",
+          "hr": "razgovor za posao",
+          "en": "job interview",
+          "pos": "phrase",
+          "example": {
+            "target": "Sutra ujutro imam razgovor za posao.",
+            "gloss": "Tomorrow morning I have a job interview."
+          }
+        },
+        {
+          "id": "ugovor",
+          "hr": "ugovor",
+          "en": "contract",
+          "pos": "n. m.",
+          "note": "ugovor o radu = employment contract",
+          "example": {
+            "target": "Potpisali smo ugovor o radu.",
+            "gloss": "We signed an employment contract."
+          }
+        },
+        {
+          "id": "radno vrijeme",
+          "hr": "radno vrijeme",
+          "en": "working hours",
+          "pos": "phrase",
+          "note": "vrijeme is n. n., gen. vremena",
+          "example": {
+            "target": "Naše radno vrijeme je od osam do četiri.",
+            "gloss": "Our working hours are from eight to four."
+          }
+        },
+        {
+          "id": "smjena",
+          "hr": "smjena",
+          "en": "shift (at work)",
+          "pos": "n. f.",
+          "note": "noćna smjena = night shift",
+          "example": {
+            "target": "Ovaj tjedan radim noćnu smjenu.",
+            "gloss": "This week I am working the night shift."
+          }
+        },
+        {
+          "id": "prekovremeni",
+          "hr": "prekovremeni",
+          "en": "overtime",
+          "pos": "adj.",
+          "note": "usually plural: prekovremeni sati = overtime hours",
+          "example": {
+            "target": "Često radim prekovremene sate.",
+            "gloss": "I often work overtime hours."
+          }
+        },
+        {
+          "id": "mirovina",
+          "hr": "mirovina",
+          "en": "pension / retirement",
+          "pos": "n. f.",
+          "note": "biti u mirovini = to be retired",
+          "example": {
+            "target": "Moj djed je već pet godina u mirovini.",
+            "gloss": "My grandfather has been retired for five years."
+          }
+        },
+        {
+          "id": "otkaz",
+          "hr": "otkaz",
+          "en": "dismissal / notice",
+          "pos": "n. m.",
+          "note": "dati otkaz = to quit; dobiti otkaz = to be fired",
+          "example": {
+            "target": "Dala je otkaz i otišla u Njemačku.",
+            "gloss": "She quit her job and went to Germany."
+          }
+        },
+        {
+          "id": "dobiti otkaz",
+          "hr": "dobiti otkaz",
+          "en": "to get fired",
+          "pos": "phrase",
+          "example": {
+            "target": "Ivan je jučer dobio otkaz.",
+            "gloss": "Ivan got fired yesterday."
+          }
+        },
+        {
+          "id": "zapošljavati",
+          "hr": "zapošljavati",
+          "en": "to employ / to hire",
+          "pos": "v. impf.",
+          "note": "pf. zaposliti",
+          "example": {
+            "target": "Tvrtka zapošljava dvjesto radnika.",
+            "gloss": "The company employs two hundred workers."
+          }
+        },
+        {
+          "id": "zaposliti",
+          "hr": "zaposliti",
+          "en": "to hire",
+          "pos": "v. pf.",
+          "note": "impf. zapošljavati; zaposliti se = to get a job",
+          "example": {
+            "target": "Zaposlili su me u banci.",
+            "gloss": "They hired me at a bank."
+          }
+        },
+        {
+          "id": "napredovati",
+          "hr": "napredovati",
+          "en": "to advance / to be promoted",
+          "pos": "v. impf.",
+          "note": "napredujem; no common pf. partner",
+          "example": {
+            "target": "Želim napredovati u svojoj karijeri.",
+            "gloss": "I want to advance in my career."
+          }
+        },
+        {
+          "id": "iskustvo",
+          "hr": "iskustvo",
+          "en": "experience",
+          "pos": "n. n.",
+          "example": {
+            "target": "Imam pet godina radnog iskustva.",
+            "gloss": "I have five years of work experience."
+          }
+        },
+        {
+          "id": "vještina",
+          "hr": "vještina",
+          "en": "skill",
+          "pos": "n. f.",
+          "example": {
+            "target": "Komunikacijske vještine su danas jako važne.",
+            "gloss": "Communication skills are very important today."
+          }
+        },
+        {
+          "id": "uspjeh",
+          "hr": "uspjeh",
+          "en": "success",
+          "pos": "n. m.",
+          "note": "pl. uspjesi",
+          "example": {
+            "target": "Projekt je bio velik uspjeh.",
+            "gloss": "The project was a big success."
+          }
+        },
+        {
+          "id": "karijera",
+          "hr": "karijera",
+          "en": "career",
+          "pos": "n. f.",
+          "example": {
+            "target": "Počela je karijeru kao novinarka.",
+            "gloss": "She started her career as a journalist."
+          }
+        },
+        {
+          "id": "sindikat",
+          "hr": "sindikat",
+          "en": "trade union",
+          "pos": "n. m.",
+          "example": {
+            "target": "Sindikat štiti prava radnika.",
+            "gloss": "The union protects workers' rights."
+          }
+        },
+        {
+          "id": "obrt",
+          "hr": "obrt",
+          "en": "trade / small craft business",
+          "pos": "n. m.",
+          "note": "otvoriti obrt = to open a small business",
+          "example": {
+            "target": "Moj susjed ima frizerski obrt.",
+            "gloss": "My neighbour has a hairdressing business."
+          }
+        },
+        {
+          "id": "honorar",
+          "hr": "honorar",
+          "en": "fee (for freelance work)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Za članak je dobio dobar honorar.",
+            "gloss": "He got a good fee for the article."
+          }
+        },
+        {
+          "id": "plaćen",
+          "hr": "plaćen",
+          "en": "paid",
+          "pos": "adj.",
+          "note": "from platiti; dobro plaćen = well paid",
+          "example": {
+            "target": "Taj posao je dobro plaćen.",
+            "gloss": "That job is well paid."
+          }
+        },
+        {
+          "id": "volontirati",
+          "hr": "volontirati",
+          "en": "to volunteer",
+          "pos": "v. impf.",
+          "note": "volontiram; used in both aspects",
+          "example": {
+            "target": "Volontira u knjižnici svake subote.",
+            "gloss": "She volunteers at the library every Saturday."
+          }
+        },
+        {
+          "id": "poslodavac",
+          "hr": "poslodavac",
+          "en": "employer",
+          "pos": "n. m.",
+          "note": "gen. poslodavca (fleeting a)",
+          "example": {
+            "target": "Moj poslodavac je jako korektan.",
+            "gloss": "My employer is very fair."
+          }
+        },
+        {
+          "id": "zaposlenik",
+          "hr": "zaposlenik",
+          "en": "employee",
+          "pos": "n. m.",
+          "note": "f. zaposlenica",
+          "example": {
+            "target": "Tvrtka ima sto zaposlenika.",
+            "gloss": "The company has a hundred employees."
+          }
+        },
+        {
+          "id": "suradnik",
+          "hr": "suradnik",
+          "en": "colleague / associate",
+          "pos": "n. m.",
+          "note": "f. suradnica",
+          "example": {
+            "target": "On je moj najbolji suradnik.",
+            "gloss": "He is my best associate."
+          }
+        },
+        {
+          "id": "suradnja",
+          "hr": "suradnja",
+          "en": "cooperation / collaboration",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hvala vam na dobroj suradnji.",
+            "gloss": "Thank you for the good cooperation."
+          }
+        },
+        {
+          "id": "natječaj",
+          "hr": "natječaj",
+          "en": "competition / vacancy announcement",
+          "pos": "n. m.",
+          "note": "prijaviti se na natječaj = to apply for a vacancy",
+          "example": {
+            "target": "Prijavila se na natječaj za posao.",
+            "gloss": "She applied for the job vacancy."
+          }
+        },
+        {
+          "id": "prijava",
+          "hr": "prijava",
+          "en": "application / registration",
+          "pos": "n. f.",
+          "example": {
+            "target": "Poslao sam prijavu prošli tjedan.",
+            "gloss": "I sent the application last week."
+          }
+        },
+        {
+          "id": "uvjet",
+          "hr": "uvjet",
+          "en": "condition / requirement",
+          "pos": "n. m.",
+          "note": "standard Croatian (not 'uslov')",
+          "example": {
+            "target": "Znanje engleskog je glavni uvjet.",
+            "gloss": "Knowledge of English is the main requirement."
+          }
+        },
+        {
+          "id": "obveza",
+          "hr": "obveza",
+          "en": "obligation / commitment",
+          "pos": "n. f.",
+          "note": "standard Croatian (not 'obaveza'); gen. pl. obveza",
+          "example": {
+            "target": "Imam previše obveza na poslu.",
+            "gloss": "I have too many obligations at work."
+          }
+        },
+        {
+          "id": "odgovornost",
+          "hr": "odgovornost",
+          "en": "responsibility",
+          "pos": "n. f.",
+          "note": "gen. odgovornosti (i-declension)",
+          "example": {
+            "target": "Novi posao nosi veliku odgovornost.",
+            "gloss": "The new job carries great responsibility."
+          }
+        },
+        {
+          "id": "dužnost",
+          "hr": "dužnost",
+          "en": "duty",
+          "pos": "n. f.",
+          "note": "gen. dužnosti (i-declension)",
+          "example": {
+            "target": "Moja dužnost je pomoći kolegama.",
+            "gloss": "My duty is to help my colleagues."
+          }
+        },
+        {
+          "id": "stručan",
+          "hr": "stručan",
+          "en": "professional / expert",
+          "pos": "adj.",
+          "note": "f. stručna; struka = profession, field",
+          "example": {
+            "target": "Trebamo stručan savjet odvjetnika.",
+            "gloss": "We need a lawyer's expert advice."
+          }
+        },
+        {
+          "id": "sposoban",
+          "hr": "sposoban",
+          "en": "capable / able",
+          "pos": "adj.",
+          "note": "f. sposobna",
+          "example": {
+            "target": "Ona je vrlo sposobna radnica.",
+            "gloss": "She is a very capable worker."
+          }
+        },
+        {
+          "id": "uspješan",
+          "hr": "uspješan",
+          "en": "successful",
+          "pos": "adj.",
+          "note": "f. uspješna",
+          "example": {
+            "target": "Njezin brat je uspješan poduzetnik.",
+            "gloss": "Her brother is a successful entrepreneur."
+          }
+        },
+        {
+          "id": "zarada",
+          "hr": "zarada",
+          "en": "earnings / profit",
+          "pos": "n. f.",
+          "example": {
+            "target": "Zarada ovisi o broju sati.",
+            "gloss": "Earnings depend on the number of hours."
+          }
+        },
+        {
+          "id": "zarađivati",
+          "hr": "zarađivati",
+          "en": "to earn",
+          "pos": "v. impf.",
+          "note": "pf. zaraditi",
+          "example": {
+            "target": "Koliko novca zarađuješ svaki mjesec?",
+            "gloss": "How much money do you earn every month?"
+          }
+        },
+        {
+          "id": "zaraditi",
+          "hr": "zaraditi",
+          "en": "to earn",
+          "pos": "v. pf.",
+          "note": "impf. zarađivati",
+          "example": {
+            "target": "Ovaj mjesec je zaradio tisuću eura.",
+            "gloss": "He earned a thousand euros this month."
+          }
+        },
+        {
+          "id": "otpustiti",
+          "hr": "otpustiti",
+          "en": "to lay off / to dismiss",
+          "pos": "v. pf.",
+          "note": "impf. otpuštati",
+          "example": {
+            "target": "Tvrtka je otpustila deset radnika.",
+            "gloss": "The company laid off ten workers."
+          }
+        },
+        {
+          "id": "stanka",
+          "hr": "stanka",
+          "en": "break / pause",
+          "pos": "n. f.",
+          "note": "stanka za ručak = lunch break",
+          "example": {
+            "target": "Imamo stanku za ručak u podne.",
+            "gloss": "We have a lunch break at noon."
+          }
+        },
+        {
+          "id": "ravnatelj",
+          "hr": "ravnatelj",
+          "en": "director / head (of an institution)",
+          "pos": "n. m.",
+          "note": "f. ravnateljica; of schools, hospitals, museums",
+          "example": {
+            "target": "Ravnatelj škole je vrlo strog.",
+            "gloss": "The school principal is very strict."
+          }
+        },
+        {
+          "id": "voditelj",
+          "hr": "voditelj",
+          "en": "manager / leader / host",
+          "pos": "n. m.",
+          "note": "f. voditeljica",
+          "example": {
+            "target": "Naš voditelj vodi tjedne sastanke.",
+            "gloss": "Our manager leads the weekly meetings."
+          }
+        },
+        {
+          "id": "tim",
+          "hr": "tim",
+          "en": "team",
+          "pos": "n. m.",
+          "note": "at work; a sports team is momčad",
+          "example": {
+            "target": "Radim u malom, ali dobrom timu.",
+            "gloss": "I work in a small but good team."
+          }
+        },
+        {
+          "id": "godišnji odmor",
+          "hr": "godišnji odmor",
+          "en": "annual leave / vacation",
+          "pos": "phrase",
+          "note": "often shortened to godišnji",
+          "example": {
+            "target": "U kolovozu idem na godišnji odmor.",
+            "gloss": "In August I am going on annual leave."
+          }
+        },
+        {
+          "id": "bolovanje",
+          "hr": "bolovanje",
+          "en": "sick leave",
+          "pos": "n. n.",
+          "note": "biti na bolovanju = to be on sick leave",
+          "example": {
+            "target": "Kolegica je tjedan dana na bolovanju.",
+            "gloss": "My colleague has been on sick leave for a week."
+          }
+        },
+        {
+          "id": "staž",
+          "hr": "staž",
+          "en": "years of service / work record",
+          "pos": "n. m.",
+          "note": "radni staž = length of employment",
+          "example": {
+            "target": "Ima trideset godina radnog staža.",
+            "gloss": "He has thirty years of service."
+          }
+        },
+        {
+          "id": "kandidat",
+          "hr": "kandidat",
+          "en": "candidate",
+          "pos": "n. m.",
+          "note": "f. kandidatkinja",
+          "example": {
+            "target": "Na razgovor je došlo pet kandidata.",
+            "gloss": "Five candidates came to the interview."
+          }
+        },
+        {
+          "id": "potpisati",
+          "hr": "potpisati",
+          "en": "to sign",
+          "pos": "v. pf.",
+          "note": "impf. potpisivati",
+          "example": {
+            "target": "Molim vas, potpišite ovaj ugovor.",
+            "gloss": "Please sign this contract."
+          }
+        }
+      ]
+    },
+    {
+      "id": "health-medicine",
+      "title": "Health & medicine",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "zdravlje",
+          "hr": "zdravlje",
+          "en": "health",
+          "pos": "n. n.",
+          "example": {
+            "target": "Zdravlje je najvažnije u životu.",
+            "gloss": "Health is the most important thing in life."
+          }
+        },
+        {
+          "id": "bolest",
+          "hr": "bolest",
+          "en": "illness / disease",
+          "pos": "n. f.",
+          "note": "gen. bolesti (i-declension)",
+          "example": {
+            "target": "Gripa je česta bolest zimi.",
+            "gloss": "The flu is a common illness in winter."
+          }
+        },
+        {
+          "id": "bolestan",
+          "hr": "bolestan",
+          "en": "ill / sick",
+          "pos": "adj.",
+          "note": "f. bolesna",
+          "example": {
+            "target": "Danas sam bolestan i ostajem doma.",
+            "gloss": "I am sick today and staying at home."
+          }
+        },
+        {
+          "id": "gripa",
+          "hr": "gripa",
+          "en": "flu",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cijela obitelj ima gripu ovaj tjedan.",
+            "gloss": "The whole family has the flu this week."
+          }
+        },
+        {
+          "id": "prehlada",
+          "hr": "prehlada",
+          "en": "(common) cold",
+          "pos": "n. f.",
+          "example": {
+            "target": "Imam jaku prehladu i kašljem.",
+            "gloss": "I have a bad cold and I am coughing."
+          }
+        },
+        {
+          "id": "temperatura",
+          "hr": "temperatura",
+          "en": "temperature / fever",
+          "pos": "n. f.",
+          "note": "imati temperaturu = to have a fever",
+          "example": {
+            "target": "Dijete ima visoku temperaturu od jučer.",
+            "gloss": "The child has had a high fever since yesterday."
+          }
+        },
+        {
+          "id": "kašalj",
+          "hr": "kašalj",
+          "en": "cough",
+          "pos": "n. m.",
+          "note": "gen. kašlja (fleeting a)",
+          "example": {
+            "target": "Kašalj me muči već tjedan dana.",
+            "gloss": "The cough has been bothering me for a week."
+          }
+        },
+        {
+          "id": "kašljati",
+          "hr": "kašljati",
+          "en": "to cough",
+          "pos": "v. impf.",
+          "note": "kašljem; pf. zakašljati se",
+          "example": {
+            "target": "Noću jako kašljem i ne spavam.",
+            "gloss": "At night I cough a lot and do not sleep."
+          }
+        },
+        {
+          "id": "kihati",
+          "hr": "kihati",
+          "en": "to sneeze",
+          "pos": "v. impf.",
+          "note": "kišem; pf. kihnuti",
+          "example": {
+            "target": "Zbog alergije stalno kišem.",
+            "gloss": "Because of my allergy I sneeze all the time."
+          }
+        },
+        {
+          "id": "alergija",
+          "hr": "alergija",
+          "en": "allergy",
+          "pos": "n. f.",
+          "note": "alergija na + acc.",
+          "example": {
+            "target": "Imam alergiju na pelud i prašinu.",
+            "gloss": "I am allergic to pollen and dust."
+          }
+        },
+        {
+          "id": "ozljeda",
+          "hr": "ozljeda",
+          "en": "injury",
+          "pos": "n. f.",
+          "note": "standard Croatian (not 'povreda')",
+          "example": {
+            "target": "Igrač ima tešku ozljedu koljena.",
+            "gloss": "The player has a serious knee injury."
+          }
+        },
+        {
+          "id": "rana",
+          "hr": "rana",
+          "en": "wound",
+          "pos": "n. f.",
+          "example": {
+            "target": "Liječnik je očistio ranu na ruci.",
+            "gloss": "The doctor cleaned the wound on the arm."
+          }
+        },
+        {
+          "id": "krv",
+          "hr": "krv",
+          "en": "blood",
+          "pos": "n. f.",
+          "note": "gen. krvi (i-declension)",
+          "example": {
+            "target": "Sutra ujutro idem vaditi krv.",
+            "gloss": "Tomorrow morning I am going to have blood drawn."
+          }
+        },
+        {
+          "id": "tlak",
+          "hr": "tlak",
+          "en": "(blood) pressure",
+          "pos": "n. m.",
+          "note": "krvni tlak = blood pressure",
+          "example": {
+            "target": "Baka ima visok krvni tlak.",
+            "gloss": "Grandma has high blood pressure."
+          }
+        },
+        {
+          "id": "pregled",
+          "hr": "pregled",
+          "en": "(medical) examination / check-up",
+          "pos": "n. m.",
+          "example": {
+            "target": "Idem na pregled kod liječnika u osam.",
+            "gloss": "I am going to a doctor's check-up at eight."
+          }
+        },
+        {
+          "id": "recept-liječnički",
+          "hr": "recept",
+          "en": "prescription",
+          "pos": "n. m.",
+          "note": "medical sense; the cooking 'recipe' is a separate entry",
+          "example": {
+            "target": "Ovaj lijek ide samo na recept.",
+            "gloss": "This medicine is available only on prescription."
+          }
+        },
+        {
+          "id": "uputnica",
+          "hr": "uputnica",
+          "en": "referral (to a specialist)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Trebam uputnicu za pregled kod specijalista.",
+            "gloss": "I need a referral for an examination by a specialist."
+          }
+        },
+        {
+          "id": "čekaonica",
+          "hr": "čekaonica",
+          "en": "waiting room",
+          "pos": "n. f.",
+          "example": {
+            "target": "U čekaonici je bilo puno ljudi.",
+            "gloss": "There were a lot of people in the waiting room."
+          }
+        },
+        {
+          "id": "hitna pomoć",
+          "hr": "hitna pomoć",
+          "en": "emergency service / ambulance",
+          "pos": "phrase",
+          "note": "pomoć is n. f., gen. pomoći",
+          "example": {
+            "target": "Odmah smo nazvali hitnu pomoć.",
+            "gloss": "We called an ambulance right away."
+          }
+        },
+        {
+          "id": "ljekarnik",
+          "hr": "ljekarnik",
+          "en": "pharmacist",
+          "pos": "n. m.",
+          "note": "f. ljekarnica; works in a ljekarna",
+          "example": {
+            "target": "Ljekarnik mi je preporučio ovaj sirup.",
+            "gloss": "The pharmacist recommended this syrup to me."
+          }
+        },
+        {
+          "id": "tableta",
+          "hr": "tableta",
+          "en": "pill / tablet",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uzimam tablete dva puta dnevno.",
+            "gloss": "I take the pills twice a day."
+          }
+        },
+        {
+          "id": "sirup",
+          "hr": "sirup",
+          "en": "syrup",
+          "pos": "n. m.",
+          "note": "sirup protiv kašlja = cough syrup",
+          "example": {
+            "target": "Kupila sam sirup protiv kašlja.",
+            "gloss": "I bought some cough syrup."
+          }
+        },
+        {
+          "id": "mast",
+          "hr": "mast",
+          "en": "ointment",
+          "pos": "n. f.",
+          "note": "gen. masti (i-declension); also means 'fat, lard'",
+          "example": {
+            "target": "Namažite ranu ovom mašću.",
+            "gloss": "Apply this ointment to the wound."
+          }
+        },
+        {
+          "id": "zavoj",
+          "hr": "zavoj",
+          "en": "bandage",
+          "pos": "n. m.",
+          "note": "also 'bend, curve' on a road",
+          "example": {
+            "target": "Sestra mi je stavila zavoj na ruku.",
+            "gloss": "The nurse put a bandage on my arm."
+          }
+        },
+        {
+          "id": "injekcija",
+          "hr": "injekcija",
+          "en": "injection",
+          "pos": "n. f.",
+          "example": {
+            "target": "Moje se dijete jako boji injekcija.",
+            "gloss": "My child is very afraid of injections."
+          }
+        },
+        {
+          "id": "cijepiti se",
+          "hr": "cijepiti se",
+          "en": "to get vaccinated",
+          "pos": "v. impf.",
+          "note": "used in both aspects; cijepiti koga = to vaccinate sb",
+          "example": {
+            "target": "Svake se jeseni cijepim protiv gripe.",
+            "gloss": "Every autumn I get vaccinated against the flu."
+          }
+        },
+        {
+          "id": "prehladiti se",
+          "hr": "prehladiti se",
+          "en": "to catch a cold",
+          "pos": "v. pf.",
+          "note": "impf. prehlađivati se",
+          "example": {
+            "target": "Prehladio sam se na moru.",
+            "gloss": "I caught a cold at the seaside."
+          }
+        },
+        {
+          "id": "razboljeti se",
+          "hr": "razboljeti se",
+          "en": "to fall ill",
+          "pos": "v. pf.",
+          "note": "impf. razbolijevati se; razbolim se",
+          "example": {
+            "target": "Razboljela se dan prije puta.",
+            "gloss": "She fell ill the day before the trip."
+          }
+        },
+        {
+          "id": "oporaviti se",
+          "hr": "oporaviti se",
+          "en": "to recover",
+          "pos": "v. pf.",
+          "note": "impf. oporavljati se",
+          "example": {
+            "target": "Brzo se oporavio nakon operacije.",
+            "gloss": "He recovered quickly after the operation."
+          }
+        },
+        {
+          "id": "ozdraviti",
+          "hr": "ozdraviti",
+          "en": "to get well / to recover",
+          "pos": "v. pf.",
+          "note": "impf. ozdravljati",
+          "example": {
+            "target": "Pij čaj i brzo ćeš ozdraviti.",
+            "gloss": "Drink tea and you will get well quickly."
+          }
+        },
+        {
+          "id": "osjećati se",
+          "hr": "osjećati se",
+          "en": "to feel",
+          "pos": "v. impf.",
+          "note": "pf. osjetiti se; Kako se osjećaš?",
+          "example": {
+            "target": "Danas se osjećam puno bolje.",
+            "gloss": "Today I feel much better."
+          }
+        },
+        {
+          "id": "vrtoglavica",
+          "hr": "vrtoglavica",
+          "en": "dizziness",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ujutro često imam vrtoglavicu.",
+            "gloss": "In the morning I often feel dizzy."
+          }
+        },
+        {
+          "id": "mučnina",
+          "hr": "mučnina",
+          "en": "nausea",
+          "pos": "n. f.",
+          "example": {
+            "target": "Poslije ručka osjećam mučninu.",
+            "gloss": "After lunch I feel nauseous."
+          }
+        },
+        {
+          "id": "slomiti",
+          "hr": "slomiti",
+          "en": "to break",
+          "pos": "v. pf.",
+          "note": "impf. lomiti; slomiti nogu = to break a leg",
+          "example": {
+            "target": "Slomila je nogu na skijanju.",
+            "gloss": "She broke her leg while skiing."
+          }
+        },
+        {
+          "id": "bol",
+          "hr": "bol",
+          "en": "pain",
+          "pos": "n. f.",
+          "note": "gen. boli (i-declension) for physical pain",
+          "example": {
+            "target": "Osjećam jaku bol u leđima.",
+            "gloss": "I feel a strong pain in my back."
+          }
+        },
+        {
+          "id": "glavobolja",
+          "hr": "glavobolja",
+          "en": "headache",
+          "pos": "n. f.",
+          "example": {
+            "target": "Od jutra imam strašnu glavobolju.",
+            "gloss": "I have had a terrible headache since morning."
+          }
+        },
+        {
+          "id": "pacijent",
+          "hr": "pacijent",
+          "en": "patient",
+          "pos": "n. m.",
+          "note": "f. pacijentica",
+          "example": {
+            "target": "Liječnik dugo razgovara s pacijentom.",
+            "gloss": "The doctor talks with the patient for a long time."
+          }
+        },
+        {
+          "id": "simptom",
+          "hr": "simptom",
+          "en": "symptom",
+          "pos": "n. m.",
+          "example": {
+            "target": "Visoka temperatura je simptom gripe.",
+            "gloss": "A high fever is a symptom of the flu."
+          }
+        },
+        {
+          "id": "dijagnoza",
+          "hr": "dijagnoza",
+          "en": "diagnosis",
+          "pos": "n. f.",
+          "example": {
+            "target": "Liječnica mi je rekla dijagnozu.",
+            "gloss": "The doctor told me the diagnosis."
+          }
+        },
+        {
+          "id": "terapija",
+          "hr": "terapija",
+          "en": "therapy / treatment",
+          "pos": "n. f.",
+          "example": {
+            "target": "Moja terapija traje točno dva tjedna.",
+            "gloss": "My treatment lasts exactly two weeks."
+          }
+        },
+        {
+          "id": "operacija",
+          "hr": "operacija",
+          "en": "operation / surgery",
+          "pos": "n. f.",
+          "example": {
+            "target": "Operacija koljena je dobro prošla.",
+            "gloss": "The knee operation went well."
+          }
+        },
+        {
+          "id": "naručiti se",
+          "hr": "naručiti se",
+          "en": "to make an appointment",
+          "pos": "v. pf.",
+          "note": "impf. naručivati se; naručiti se kod liječnika",
+          "example": {
+            "target": "Naručio sam se kod zubara za petak.",
+            "gloss": "I made an appointment with the dentist for Friday."
+          }
+        },
+        {
+          "id": "ordinacija",
+          "hr": "ordinacija",
+          "en": "doctor's office / practice",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ordinacija radi od osam do dva.",
+            "gloss": "The doctor's office is open from eight to two."
+          }
+        },
+        {
+          "id": "znojiti se",
+          "hr": "znojiti se",
+          "en": "to sweat",
+          "pos": "v. impf.",
+          "note": "pf. oznojiti se",
+          "example": {
+            "target": "Noću se jako znojim zbog temperature.",
+            "gloss": "At night I sweat a lot because of the fever."
+          }
+        },
+        {
+          "id": "disati",
+          "hr": "disati",
+          "en": "to breathe",
+          "pos": "v. impf.",
+          "note": "dišem; pf. udahnuti = to inhale",
+          "example": {
+            "target": "Teško dišem kad brzo hodam.",
+            "gloss": "I breathe with difficulty when I walk fast."
+          }
+        },
+        {
+          "id": "upala",
+          "hr": "upala",
+          "en": "inflammation / infection",
+          "pos": "n. f.",
+          "note": "upala grla = throat infection",
+          "example": {
+            "target": "Imam upalu grla i uha.",
+            "gloss": "I have a throat and ear infection."
+          }
+        },
+        {
+          "id": "grlo",
+          "hr": "grlo",
+          "en": "throat",
+          "pos": "n. n.",
+          "example": {
+            "target": "Boli me grlo već tri dana.",
+            "gloss": "My throat has been hurting for three days."
+          }
+        },
+        {
+          "id": "koža",
+          "hr": "koža",
+          "en": "skin",
+          "pos": "n. f.",
+          "note": "also 'leather'",
+          "example": {
+            "target": "Zimi mi je koža jako suha.",
+            "gloss": "In winter my skin is very dry."
+          }
+        },
+        {
+          "id": "mišić",
+          "hr": "mišić",
+          "en": "muscle",
+          "pos": "n. m.",
+          "example": {
+            "target": "Poslije treninga me bole mišići.",
+            "gloss": "After training my muscles hurt."
+          }
+        },
+        {
+          "id": "kost",
+          "hr": "kost",
+          "en": "bone",
+          "pos": "n. f.",
+          "note": "gen. kosti (i-declension), pl. kosti",
+          "example": {
+            "target": "Rendgen je pokazao da kost nije slomljena.",
+            "gloss": "The X-ray showed that the bone is not broken."
+          }
+        }
+      ]
+    },
+    {
+      "id": "services-admin",
+      "title": "Services & administration",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "banka",
+          "hr": "banka",
+          "en": "bank",
+          "pos": "n. f.",
+          "note": "gen. pl. banaka",
+          "example": {
+            "target": "Banka se nalazi na glavnom trgu.",
+            "gloss": "The bank is located on the main square."
+          }
+        },
+        {
+          "id": "račun",
+          "hr": "račun",
+          "en": "bill / account / receipt",
+          "pos": "n. m.",
+          "note": "bank account, restaurant bill and shop receipt",
+          "example": {
+            "target": "Molim vas račun, plaćam karticom.",
+            "gloss": "The bill please, I am paying by card."
+          }
+        },
+        {
+          "id": "kartica",
+          "hr": "kartica",
+          "en": "card (bank card)",
+          "pos": "n. f.",
+          "note": "bankovna kartica = bank card",
+          "example": {
+            "target": "Jučer sam izgubila svoju bankovnu karticu.",
+            "gloss": "Yesterday I lost my bank card."
+          }
+        },
+        {
+          "id": "gotovina",
+          "hr": "gotovina",
+          "en": "cash",
+          "pos": "n. f.",
+          "example": {
+            "target": "Plaćate li gotovinom ili karticom?",
+            "gloss": "Are you paying in cash or by card?"
+          }
+        },
+        {
+          "id": "bankomat",
+          "hr": "bankomat",
+          "en": "ATM / cash machine",
+          "pos": "n. m.",
+          "example": {
+            "target": "Bankomat je odmah iza ugla.",
+            "gloss": "The ATM is just around the corner."
+          }
+        },
+        {
+          "id": "mjenjačnica",
+          "hr": "mjenjačnica",
+          "en": "currency exchange office",
+          "pos": "n. f.",
+          "example": {
+            "target": "U mjenjačnici sam promijenio sto dolara.",
+            "gloss": "I exchanged a hundred dollars at the exchange office."
+          }
+        },
+        {
+          "id": "tečaj-valute",
+          "hr": "tečaj",
+          "en": "exchange rate",
+          "pos": "n. m.",
+          "note": "here = exchange rate; the 'course, class' sense is a separate entry",
+          "example": {
+            "target": "Kakav je danas tečaj dolara?",
+            "gloss": "What is the dollar exchange rate today?"
+          }
+        },
+        {
+          "id": "podizati",
+          "hr": "podizati",
+          "en": "to withdraw (money) / to lift",
+          "pos": "v. impf.",
+          "note": "pf. podignuti",
+          "example": {
+            "target": "Novac obično podižem na bankomatu.",
+            "gloss": "I usually withdraw money at the ATM."
+          }
+        },
+        {
+          "id": "podignuti",
+          "hr": "podignuti",
+          "en": "to withdraw (money) / to lift",
+          "pos": "v. pf.",
+          "note": "impf. podizati; also podići",
+          "example": {
+            "target": "Podigla je novac sa svog računa.",
+            "gloss": "She withdrew money from her account."
+          }
+        },
+        {
+          "id": "uplata",
+          "hr": "uplata",
+          "en": "payment (in) / deposit",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uplata stiže na račun za dva dana.",
+            "gloss": "The payment arrives in the account in two days."
+          }
+        },
+        {
+          "id": "isplata",
+          "hr": "isplata",
+          "en": "payout / payment (out)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Isplata plaće je svakog petog u mjesecu.",
+            "gloss": "Salaries are paid out on the fifth of every month."
+          }
+        },
+        {
+          "id": "kredit",
+          "hr": "kredit",
+          "en": "loan / credit",
+          "pos": "n. m.",
+          "example": {
+            "target": "Uzeli su kredit za novi stan.",
+            "gloss": "They took out a loan for a new flat."
+          }
+        },
+        {
+          "id": "kamata",
+          "hr": "kamata",
+          "en": "interest (on money)",
+          "pos": "n. f.",
+          "note": "often plural: kamate",
+          "example": {
+            "target": "Kamate na kredit su ove godine visoke.",
+            "gloss": "Interest rates on loans are high this year."
+          }
+        },
+        {
+          "id": "štednja",
+          "hr": "štednja",
+          "en": "savings / saving",
+          "pos": "n. f.",
+          "example": {
+            "target": "Svu štednju držim u banci.",
+            "gloss": "I keep all my savings in the bank."
+          }
+        },
+        {
+          "id": "šalter",
+          "hr": "šalter",
+          "en": "counter / service window",
+          "pos": "n. m.",
+          "example": {
+            "target": "Čekali smo na šalteru pola sata.",
+            "gloss": "We waited at the counter for half an hour."
+          }
+        },
+        {
+          "id": "red",
+          "hr": "red",
+          "en": "queue / order",
+          "pos": "n. m.",
+          "note": "stajati u redu = to stand in line; also 'order, tidiness'",
+          "example": {
+            "target": "Pred šalterom je bio dug red.",
+            "gloss": "There was a long queue in front of the counter."
+          }
+        },
+        {
+          "id": "pečat",
+          "hr": "pečat",
+          "en": "stamp / seal (official)",
+          "pos": "n. m.",
+          "note": "rubber stamp; a postage stamp is marka",
+          "example": {
+            "target": "Dokument treba potpis i pečat.",
+            "gloss": "The document needs a signature and a stamp."
+          }
+        },
+        {
+          "id": "osobni podaci",
+          "hr": "osobni podaci",
+          "en": "personal data",
+          "pos": "phrase",
+          "note": "plural; sg. podatak, gen. podatka",
+          "example": {
+            "target": "Upišite svoje osobne podatke u obrazac.",
+            "gloss": "Enter your personal data in the form."
+          }
+        },
+        {
+          "id": "prijaviti se",
+          "hr": "prijaviti se",
+          "en": "to register / to apply / to log in",
+          "pos": "v. pf.",
+          "note": "impf. prijavljivati se",
+          "example": {
+            "target": "Prijavio sam se za tečaj hrvatskoga.",
+            "gloss": "I signed up for a Croatian course."
+          }
+        },
+        {
+          "id": "odjaviti se",
+          "hr": "odjaviti se",
+          "en": "to deregister / to log out",
+          "pos": "v. pf.",
+          "note": "impf. odjavljivati se",
+          "example": {
+            "target": "Prije selidbe se moraš odjaviti s adrese.",
+            "gloss": "Before moving you have to deregister from the address."
+          }
+        },
+        {
+          "id": "matični ured",
+          "hr": "matični ured",
+          "en": "registry office",
+          "pos": "phrase",
+          "note": "for births, marriages and deaths",
+          "example": {
+            "target": "Vjenčali su se u matičnom uredu.",
+            "gloss": "They got married at the registry office."
+          }
+        },
+        {
+          "id": "dozvola",
+          "hr": "dozvola",
+          "en": "permit / licence",
+          "pos": "n. f.",
+          "note": "vozačka dozvola = driving licence; radna dozvola = work permit",
+          "example": {
+            "target": "Čekam radnu dozvolu već dva mjeseca.",
+            "gloss": "I have been waiting for a work permit for two months."
+          }
+        },
+        {
+          "id": "privremeni boravak",
+          "hr": "privremeni boravak",
+          "en": "temporary residence",
+          "pos": "phrase",
+          "note": "boravak = stay, residence; gen. boravka (fleeting a)",
+          "example": {
+            "target": "Prijavio je privremeni boravak u Splitu.",
+            "gloss": "He registered temporary residence in Split."
+          }
+        },
+        {
+          "id": "uprava",
+          "hr": "uprava",
+          "en": "administration / management",
+          "pos": "n. f.",
+          "note": "gradska uprava = city administration",
+          "example": {
+            "target": "Gradska uprava radi do tri sata.",
+            "gloss": "The city administration is open until three o'clock."
+          }
+        },
+        {
+          "id": "porez",
+          "hr": "porez",
+          "en": "tax",
+          "pos": "n. m.",
+          "example": {
+            "target": "Svaki mjesec plaćamo porez državi.",
+            "gloss": "Every month we pay tax to the state."
+          }
+        },
+        {
+          "id": "osiguranje",
+          "hr": "osiguranje",
+          "en": "insurance",
+          "pos": "n. n.",
+          "note": "zdravstveno osiguranje = health insurance",
+          "example": {
+            "target": "Bez zdravstvenog osiguranja pregled je skup.",
+            "gloss": "Without health insurance an examination is expensive."
+          }
+        },
+        {
+          "id": "potvrda",
+          "hr": "potvrda",
+          "en": "certificate / confirmation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Za banku trebam potvrdu o zaposlenju.",
+            "gloss": "For the bank I need a certificate of employment."
+          }
+        },
+        {
+          "id": "zahtjev",
+          "hr": "zahtjev",
+          "en": "request / application",
+          "pos": "n. m.",
+          "note": "predati zahtjev = to submit an application",
+          "example": {
+            "target": "Predao je zahtjev za novu putovnicu.",
+            "gloss": "He submitted an application for a new passport."
+          }
+        },
+        {
+          "id": "pristojba",
+          "hr": "pristojba",
+          "en": "(administrative) fee",
+          "pos": "n. f.",
+          "example": {
+            "target": "Pristojba za putovnicu iznosi četrdeset eura.",
+            "gloss": "The passport fee is forty euros."
+          }
+        },
+        {
+          "id": "naknada",
+          "hr": "naknada",
+          "en": "fee / compensation / allowance",
+          "pos": "n. f.",
+          "example": {
+            "target": "Banka naplaćuje malu mjesečnu naknadu.",
+            "gloss": "The bank charges a small monthly fee."
+          }
+        },
+        {
+          "id": "ispuniti",
+          "hr": "ispuniti",
+          "en": "to fill in / to fulfil",
+          "pos": "v. pf.",
+          "note": "impf. ispunjavati",
+          "example": {
+            "target": "Ispunite ovaj obrazac velikim slovima.",
+            "gloss": "Fill in this form in capital letters."
+          }
+        },
+        {
+          "id": "predati",
+          "hr": "predati",
+          "en": "to hand in / to submit",
+          "pos": "v. pf.",
+          "note": "impf. predavati",
+          "example": {
+            "target": "Zahtjev sam predala na šalteru.",
+            "gloss": "I handed in the application at the counter."
+          }
+        },
+        {
+          "id": "valuta",
+          "hr": "valuta",
+          "en": "currency",
+          "pos": "n. f.",
+          "example": {
+            "target": "Euro je službena valuta u Hrvatskoj.",
+            "gloss": "The euro is the official currency in Croatia."
+          }
+        },
+        {
+          "id": "euro",
+          "hr": "euro",
+          "en": "euro",
+          "pos": "n. m.",
+          "note": "gen. pl. eura",
+          "example": {
+            "target": "Ovaj kaput košta osamdeset eura.",
+            "gloss": "This coat costs eighty euros."
+          }
+        },
+        {
+          "id": "usluga",
+          "hr": "usluga",
+          "en": "service / favour",
+          "pos": "n. f.",
+          "example": {
+            "target": "Banka nudi nove usluge preko interneta.",
+            "gloss": "The bank offers new services over the internet."
+          }
+        },
+        {
+          "id": "stranka",
+          "hr": "stranka",
+          "en": "client / party (at an office)",
+          "pos": "n. f.",
+          "note": "also 'political party'; a foreigner is stranac",
+          "example": {
+            "target": "Službenica prima stranke do podneva.",
+            "gloss": "The clerk sees clients until noon."
+          }
+        },
+        {
+          "id": "službenik",
+          "hr": "službenik",
+          "en": "clerk / official",
+          "pos": "n. m.",
+          "note": "f. službenica",
+          "example": {
+            "target": "Službenik mi je pomogao s obrascem.",
+            "gloss": "The clerk helped me with the form."
+          }
+        },
+        {
+          "id": "pošiljka",
+          "hr": "pošiljka",
+          "en": "parcel / shipment",
+          "pos": "n. f.",
+          "note": "gen. pl. pošiljaka",
+          "example": {
+            "target": "Pošiljka iz Njemačke stigla je danas.",
+            "gloss": "The parcel from Germany arrived today."
+          }
+        },
+        {
+          "id": "dostava",
+          "hr": "dostava",
+          "en": "delivery",
+          "pos": "n. f.",
+          "example": {
+            "target": "Dostava je besplatna iznad pedeset eura.",
+            "gloss": "Delivery is free above fifty euros."
+          }
+        },
+        {
+          "id": "dostaviti",
+          "hr": "dostaviti",
+          "en": "to deliver",
+          "pos": "v. pf.",
+          "note": "impf. dostavljati",
+          "example": {
+            "target": "Paket će dostaviti u petak ujutro.",
+            "gloss": "They will deliver the package on Friday morning."
+          }
+        },
+        {
+          "id": "posuditi",
+          "hr": "posuditi",
+          "en": "to lend / to borrow",
+          "pos": "v. pf.",
+          "note": "impf. posuđivati; means both lend and borrow",
+          "example": {
+            "target": "Možeš li mi posuditi deset eura?",
+            "gloss": "Can you lend me ten euros?"
+          }
+        },
+        {
+          "id": "dugovati",
+          "hr": "dugovati",
+          "en": "to owe",
+          "pos": "v. impf.",
+          "note": "dugujem; no pf. partner",
+          "example": {
+            "target": "Dugujem ti novac za ručak.",
+            "gloss": "I owe you money for lunch."
+          }
+        },
+        {
+          "id": "plaćanje",
+          "hr": "plaćanje",
+          "en": "payment (act of paying)",
+          "pos": "n. n.",
+          "example": {
+            "target": "Plaćanje karticom je vrlo jednostavno.",
+            "gloss": "Paying by card is very simple."
+          }
+        },
+        {
+          "id": "obavijest",
+          "hr": "obavijest",
+          "en": "notice / notification",
+          "pos": "n. f.",
+          "note": "gen. obavijesti (i-declension)",
+          "example": {
+            "target": "Na vratima je bila važna obavijest.",
+            "gloss": "There was an important notice on the door."
+          }
+        },
+        {
+          "id": "termin",
+          "hr": "termin",
+          "en": "appointment / time slot",
+          "pos": "n. m.",
+          "example": {
+            "target": "Dobio sam termin za sljedeći utorak.",
+            "gloss": "I got an appointment for next Tuesday."
+          }
+        },
+        {
+          "id": "produljiti",
+          "hr": "produljiti",
+          "en": "to extend / to renew",
+          "pos": "v. pf.",
+          "note": "impf. produljivati; also produžiti",
+          "example": {
+            "target": "Ovaj tjedan moram produljiti vozačku dozvolu.",
+            "gloss": "This week I have to renew my driving licence."
+          }
+        },
+        {
+          "id": "vrijediti",
+          "hr": "vrijediti",
+          "en": "to be valid / to be worth",
+          "pos": "v. impf.",
+          "note": "vrijedim; no pf. partner",
+          "example": {
+            "target": "Moja putovnica vrijedi još deset godina.",
+            "gloss": "My passport is valid for ten more years."
+          }
+        },
+        {
+          "id": "isteći",
+          "hr": "isteći",
+          "en": "to expire",
+          "pos": "v. pf.",
+          "note": "impf. istjecati; istekne, istekao",
+          "example": {
+            "target": "Osobna iskaznica mi je istekla u svibnju.",
+            "gloss": "My ID card expired in May."
+          }
+        },
+        {
+          "id": "obnoviti",
+          "hr": "obnoviti",
+          "en": "to renew / to restore",
+          "pos": "v. pf.",
+          "note": "impf. obnavljati",
+          "example": {
+            "target": "Moram obnoviti ugovor s bankom.",
+            "gloss": "I have to renew my contract with the bank."
+          }
+        },
+        {
+          "id": "kopija",
+          "hr": "kopija",
+          "en": "copy",
+          "pos": "n. f.",
+          "note": "in official usage also preslika",
+          "example": {
+            "target": "Donesite kopiju osobne iskaznice.",
+            "gloss": "Bring a copy of your ID card."
+          }
+        }
+      ]
+    },
+    {
+      "id": "shopping-consumption",
+      "title": "Shopping & consumption",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "kupovina",
+          "hr": "kupovina",
+          "en": "shopping / purchase",
+          "pos": "n. f.",
+          "note": "ići u kupovinu = to go shopping",
+          "example": {
+            "target": "Subotom idemo u veliku kupovinu.",
+            "gloss": "On Saturdays we do a big shopping trip."
+          }
+        },
+        {
+          "id": "kupac",
+          "hr": "kupac",
+          "en": "buyer / customer",
+          "pos": "n. m.",
+          "note": "gen. kupca (fleeting a)",
+          "example": {
+            "target": "Prodavačica ljubazno razgovara s kupcem.",
+            "gloss": "The shop assistant talks politely with the customer."
+          }
+        },
+        {
+          "id": "potrošač",
+          "hr": "potrošač",
+          "en": "consumer",
+          "pos": "n. m.",
+          "note": "f. potrošačica",
+          "example": {
+            "target": "Zakon štiti prava potrošača.",
+            "gloss": "The law protects consumers' rights."
+          }
+        },
+        {
+          "id": "cijena",
+          "hr": "cijena",
+          "en": "price",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cijene su porasle ovog ljeta.",
+            "gloss": "Prices have risen this summer."
+          }
+        },
+        {
+          "id": "popust",
+          "hr": "popust",
+          "en": "discount",
+          "pos": "n. m.",
+          "example": {
+            "target": "Studenti imaju popust od deset posto.",
+            "gloss": "Students get a ten percent discount."
+          }
+        },
+        {
+          "id": "sniženje",
+          "hr": "sniženje",
+          "en": "price reduction / sale",
+          "pos": "n. n.",
+          "note": "na sniženju = on sale",
+          "example": {
+            "target": "Kupila sam kaput na sniženju.",
+            "gloss": "I bought a coat on sale."
+          }
+        },
+        {
+          "id": "rasprodaja",
+          "hr": "rasprodaja",
+          "en": "clearance sale",
+          "pos": "n. f.",
+          "example": {
+            "target": "U siječnju počinje velika rasprodaja.",
+            "gloss": "The big clearance sale starts in January."
+          }
+        },
+        {
+          "id": "blagajna",
+          "hr": "blagajna",
+          "en": "cash register / checkout",
+          "pos": "n. f.",
+          "note": "gen. pl. blagajni",
+          "example": {
+            "target": "Na blagajni je bio velik red.",
+            "gloss": "There was a big queue at the checkout."
+          }
+        },
+        {
+          "id": "blagajnik",
+          "hr": "blagajnik",
+          "en": "cashier",
+          "pos": "n. m.",
+          "note": "f. blagajnica",
+          "example": {
+            "target": "Blagajnik mi je vratio ostatak novca.",
+            "gloss": "The cashier gave me back my change."
+          }
+        },
+        {
+          "id": "košarica",
+          "hr": "košarica",
+          "en": "(shopping) basket / cart",
+          "pos": "n. f.",
+          "note": "diminutive of košara; also the online cart",
+          "example": {
+            "target": "Stavila je mlijeko u košaricu.",
+            "gloss": "She put the milk in the basket."
+          }
+        },
+        {
+          "id": "robna marka",
+          "hr": "robna marka",
+          "en": "brand",
+          "pos": "phrase",
+          "note": "a postage stamp is just marka",
+          "example": {
+            "target": "Ova robna marka je vrlo poznata.",
+            "gloss": "This brand is very well known."
+          }
+        },
+        {
+          "id": "proizvod",
+          "hr": "proizvod",
+          "en": "product",
+          "pos": "n. m.",
+          "example": {
+            "target": "Domaći proizvodi su često skuplji.",
+            "gloss": "Local products are often more expensive."
+          }
+        },
+        {
+          "id": "roba",
+          "hr": "roba",
+          "en": "goods / merchandise",
+          "pos": "n. f.",
+          "note": "usually singular",
+          "example": {
+            "target": "Nova roba stiže svakog ponedjeljka.",
+            "gloss": "New goods arrive every Monday."
+          }
+        },
+        {
+          "id": "kvaliteta",
+          "hr": "kvaliteta",
+          "en": "quality",
+          "pos": "n. f.",
+          "note": "standard Croatian (not 'kvalitet')",
+          "example": {
+            "target": "Cijena ovisi o kvaliteti proizvoda.",
+            "gloss": "The price depends on the quality of the product."
+          }
+        },
+        {
+          "id": "količina",
+          "hr": "količina",
+          "en": "quantity / amount",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ljeti kupujemo velike količine vode.",
+            "gloss": "In summer we buy large quantities of water."
+          }
+        },
+        {
+          "id": "jamstvo",
+          "hr": "jamstvo",
+          "en": "warranty / guarantee",
+          "pos": "n. n.",
+          "note": "standard Croatian (vs. colloquial garancija)",
+          "example": {
+            "target": "Televizor ima jamstvo od dvije godine.",
+            "gloss": "The TV has a two-year warranty."
+          }
+        },
+        {
+          "id": "zamijeniti",
+          "hr": "zamijeniti",
+          "en": "to exchange / to replace",
+          "pos": "v. pf.",
+          "note": "impf. zamjenjivati",
+          "example": {
+            "target": "Mogu li zamijeniti ovu majicu za veću?",
+            "gloss": "Can I exchange this T-shirt for a bigger one?"
+          }
+        },
+        {
+          "id": "vratiti robu",
+          "hr": "vratiti robu",
+          "en": "to return goods",
+          "pos": "phrase",
+          "note": "vratiti (pf.) / vraćati (impf.) = to give back; vratiti se = to come back",
+          "example": {
+            "target": "Želim vratiti ove cipele jer su male.",
+            "gloss": "I want to return these shoes because they are small."
+          }
+        },
+        {
+          "id": "reklamacija",
+          "hr": "reklamacija",
+          "en": "complaint (about goods)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Napisala je reklamaciju zbog pokvarenog mobitela.",
+            "gloss": "She wrote a complaint about the broken mobile phone."
+          }
+        },
+        {
+          "id": "potrošiti",
+          "hr": "potrošiti",
+          "en": "to spend / to use up",
+          "pos": "v. pf.",
+          "note": "impf. trošiti",
+          "example": {
+            "target": "Potrošili smo previše novca na odmoru.",
+            "gloss": "We spent too much money on holiday."
+          }
+        },
+        {
+          "id": "trošiti",
+          "hr": "trošiti",
+          "en": "to spend / to consume",
+          "pos": "v. impf.",
+          "note": "pf. potrošiti",
+          "example": {
+            "target": "Trošimo puno novca na hranu.",
+            "gloss": "We spend a lot of money on food."
+          }
+        },
+        {
+          "id": "štedjeti",
+          "hr": "štedjeti",
+          "en": "to save (money)",
+          "pos": "v. impf.",
+          "note": "štedim; pf. uštedjeti",
+          "example": {
+            "target": "Cijelu godinu štedimo za novi automobil.",
+            "gloss": "We have been saving all year for a new car."
+          }
+        },
+        {
+          "id": "uštedjeti",
+          "hr": "uštedjeti",
+          "en": "to save (up)",
+          "pos": "v. pf.",
+          "note": "impf. štedjeti",
+          "example": {
+            "target": "Uštedjela je tisuću eura za putovanje.",
+            "gloss": "She saved a thousand euros for the trip."
+          }
+        },
+        {
+          "id": "povoljan",
+          "hr": "povoljan",
+          "en": "affordable / favourable",
+          "pos": "adj.",
+          "note": "f. povoljna; povoljna cijena = good price",
+          "example": {
+            "target": "Našli smo stan po povoljnoj cijeni.",
+            "gloss": "We found a flat at an affordable price."
+          }
+        },
+        {
+          "id": "besplatan",
+          "hr": "besplatan",
+          "en": "free (of charge)",
+          "pos": "adj.",
+          "note": "f. besplatna; adv. besplatno",
+          "example": {
+            "target": "Ulaz u muzej je danas besplatan.",
+            "gloss": "Entry to the museum is free today."
+          }
+        },
+        {
+          "id": "isprobati",
+          "hr": "isprobati",
+          "en": "to try on / to try out",
+          "pos": "v. pf.",
+          "note": "impf. isprobavati",
+          "example": {
+            "target": "Mogu li isprobati ovu haljinu?",
+            "gloss": "Can I try on this dress?"
+          }
+        },
+        {
+          "id": "izlog",
+          "hr": "izlog",
+          "en": "shop window",
+          "pos": "n. m.",
+          "example": {
+            "target": "U izlogu sam vidjela lijepu torbu.",
+            "gloss": "I saw a nice bag in the shop window."
+          }
+        },
+        {
+          "id": "odjel",
+          "hr": "odjel",
+          "en": "department / section",
+          "pos": "n. m.",
+          "example": {
+            "target": "Dječji odjel je na drugom katu.",
+            "gloss": "The children's department is on the second floor."
+          }
+        },
+        {
+          "id": "trgovački centar",
+          "hr": "trgovački centar",
+          "en": "shopping mall",
+          "pos": "phrase",
+          "example": {
+            "target": "Vikendom je trgovački centar pun ljudi.",
+            "gloss": "On weekends the shopping mall is full of people."
+          }
+        },
+        {
+          "id": "supermarket",
+          "hr": "supermarket",
+          "en": "supermarket",
+          "pos": "n. m.",
+          "example": {
+            "target": "Idem u supermarket po kruh i mlijeko.",
+            "gloss": "I am going to the supermarket for bread and milk."
+          }
+        },
+        {
+          "id": "kiosk",
+          "hr": "kiosk",
+          "en": "kiosk / newsstand",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na kiosku kupujem novine i karte.",
+            "gloss": "I buy newspapers and tickets at the kiosk."
+          }
+        },
+        {
+          "id": "ponuda",
+          "hr": "ponuda",
+          "en": "offer / range on offer",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ponuda voća na tržnici je odlična.",
+            "gloss": "The range of fruit at the market is excellent."
+          }
+        },
+        {
+          "id": "izbor",
+          "hr": "izbor",
+          "en": "choice / selection",
+          "pos": "n. m.",
+          "note": "pl. izbori also = elections",
+          "example": {
+            "target": "U ovoj trgovini je velik izbor sireva.",
+            "gloss": "There is a large selection of cheeses in this shop."
+          }
+        },
+        {
+          "id": "birati",
+          "hr": "birati",
+          "en": "to choose",
+          "pos": "v. impf.",
+          "note": "pf. izabrati",
+          "example": {
+            "target": "Dugo je birala poklon za mamu.",
+            "gloss": "She spent a long time choosing a present for her mum."
+          }
+        },
+        {
+          "id": "izabrati",
+          "hr": "izabrati",
+          "en": "to choose / to pick",
+          "pos": "v. pf.",
+          "note": "izaberem; impf. birati",
+          "example": {
+            "target": "Na kraju je izabrala plavu haljinu.",
+            "gloss": "In the end she chose the blue dress."
+          }
+        },
+        {
+          "id": "preporučiti",
+          "hr": "preporučiti",
+          "en": "to recommend",
+          "pos": "v. pf.",
+          "note": "impf. preporučivati",
+          "example": {
+            "target": "Možete li mi preporučiti dobro vino?",
+            "gloss": "Can you recommend a good wine to me?"
+          }
+        },
+        {
+          "id": "usporediti",
+          "hr": "usporediti",
+          "en": "to compare",
+          "pos": "v. pf.",
+          "note": "impf. uspoređivati",
+          "example": {
+            "target": "Uvijek usporedim cijene u dvije trgovine.",
+            "gloss": "I always compare prices in two shops."
+          }
+        },
+        {
+          "id": "naplatiti",
+          "hr": "naplatiti",
+          "en": "to charge (money)",
+          "pos": "v. pf.",
+          "note": "impf. naplaćivati",
+          "example": {
+            "target": "Konobar nam je naplatio dvije kave.",
+            "gloss": "The waiter charged us for two coffees."
+          }
+        },
+        {
+          "id": "akcija",
+          "hr": "akcija",
+          "en": "special offer / promotion",
+          "pos": "n. f.",
+          "note": "na akciji = on special offer; also 'action'",
+          "example": {
+            "target": "Ovaj sir je danas na akciji.",
+            "gloss": "This cheese is on special offer today."
+          }
+        },
+        {
+          "id": "narudžba",
+          "hr": "narudžba",
+          "en": "order (purchase)",
+          "pos": "n. f.",
+          "note": "gen. pl. narudžbi",
+          "example": {
+            "target": "Moja narudžba stiže za tri dana.",
+            "gloss": "My order arrives in three days."
+          }
+        },
+        {
+          "id": "internetska trgovina",
+          "hr": "internetska trgovina",
+          "en": "online shop",
+          "pos": "phrase",
+          "example": {
+            "target": "Često kupujem preko internetske trgovine.",
+            "gloss": "I often buy through an online shop."
+          }
+        },
+        {
+          "id": "prodavaonica",
+          "hr": "prodavaonica",
+          "en": "shop / store",
+          "pos": "n. f.",
+          "note": "standard Croatian; colloquially dućan",
+          "example": {
+            "target": "Ova prodavaonica radi i nedjeljom.",
+            "gloss": "This shop is open on Sundays too."
+          }
+        },
+        {
+          "id": "prodaja",
+          "hr": "prodaja",
+          "en": "sale / selling",
+          "pos": "n. f.",
+          "note": "u prodaji = on sale (available)",
+          "example": {
+            "target": "Stan je u prodaji od ožujka.",
+            "gloss": "The flat has been on the market since March."
+          }
+        },
+        {
+          "id": "prodavati",
+          "hr": "prodavati",
+          "en": "to sell",
+          "pos": "v. impf.",
+          "note": "prodajem; pf. prodati",
+          "example": {
+            "target": "Na tržnici prodaju svježe povrće.",
+            "gloss": "They sell fresh vegetables at the market."
+          }
+        },
+        {
+          "id": "prodati",
+          "hr": "prodati",
+          "en": "to sell",
+          "pos": "v. pf.",
+          "note": "impf. prodavati",
+          "example": {
+            "target": "Prodali su staru kuću na moru.",
+            "gloss": "They sold the old house by the sea."
+          }
+        },
+        {
+          "id": "cjenik",
+          "hr": "cjenik",
+          "en": "price list",
+          "pos": "n. m.",
+          "example": {
+            "target": "Cjenik pića visi pokraj blagajne.",
+            "gloss": "The drinks price list hangs next to the till."
+          }
+        },
+        {
+          "id": "zatvoren",
+          "hr": "zatvoren",
+          "en": "closed",
+          "pos": "adj.",
+          "note": "f. zatvorena; opposite of otvoren",
+          "example": {
+            "target": "Nedjeljom je trgovina zatvorena.",
+            "gloss": "The shop is closed on Sundays."
+          }
+        },
+        {
+          "id": "kupon",
+          "hr": "kupon",
+          "en": "coupon / voucher",
+          "pos": "n. m.",
+          "example": {
+            "target": "S kuponom imaš deset posto popusta.",
+            "gloss": "With the coupon you get a ten percent discount."
+          }
+        },
+        {
+          "id": "vrijednost",
+          "hr": "vrijednost",
+          "en": "value",
+          "pos": "n. f.",
+          "note": "gen. vrijednosti (i-declension)",
+          "example": {
+            "target": "Vrijednost stana raste svake godine.",
+            "gloss": "The value of the flat grows every year."
+          }
+        },
+        {
+          "id": "kvalitetan",
+          "hr": "kvalitetan",
+          "en": "high-quality",
+          "pos": "adj.",
+          "note": "f. kvalitetna",
+          "example": {
+            "target": "Kupili smo kvalitetan i povoljan namještaj.",
+            "gloss": "We bought high-quality and affordable furniture."
+          }
+        }
+      ]
+    }
+  ]
+}

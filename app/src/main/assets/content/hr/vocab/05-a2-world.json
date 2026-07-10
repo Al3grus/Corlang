@@ -1,0 +1,2127 @@
+{
+  "packs": [
+    {
+      "id": "travel-deep",
+      "title": "Travel & tourism",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "rezervacija",
+          "hr": "rezervacija",
+          "en": "reservation / booking",
+          "pos": "n. f.",
+          "example": {
+            "target": "Imam rezervaciju na ime Horvat.",
+            "gloss": "I have a reservation under the name Horvat."
+          }
+        },
+        {
+          "id": "rezervirati",
+          "hr": "rezervirati",
+          "en": "to reserve / to book",
+          "pos": "v. impf./pf.",
+          "note": "biaspectual — same form for both aspects",
+          "example": {
+            "target": "Rezervirali smo sobu za dvije noći.",
+            "gloss": "We booked a room for two nights."
+          }
+        },
+        {
+          "id": "smještaj",
+          "hr": "smještaj",
+          "en": "accommodation / lodging",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tražimo jeftin smještaj blizu plaže.",
+            "gloss": "We are looking for cheap accommodation near the beach."
+          }
+        },
+        {
+          "id": "apartman",
+          "hr": "apartman",
+          "en": "apartment (holiday rental)",
+          "pos": "n. m.",
+          "note": "holiday rental unit; a regular flat is 'stan'",
+          "example": {
+            "target": "Ljeti iznajmljujemo apartman u Splitu.",
+            "gloss": "In summer we rent an apartment in Split."
+          }
+        },
+        {
+          "id": "soba s pogledom",
+          "hr": "soba s pogledom",
+          "en": "room with a view",
+          "pos": "n. f.",
+          "note": "pogled na more = sea view",
+          "example": {
+            "target": "Želim sobu s pogledom na more.",
+            "gloss": "I want a room with a sea view."
+          }
+        },
+        {
+          "id": "recepcija",
+          "hr": "recepcija",
+          "en": "reception (desk)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ključ ostavite na recepciji.",
+            "gloss": "Leave the key at the reception."
+          }
+        },
+        {
+          "id": "prtljaga",
+          "hr": "prtljaga",
+          "en": "luggage / baggage",
+          "pos": "n. f.",
+          "note": "collective singular, like English 'luggage'",
+          "example": {
+            "target": "Moja prtljaga je preteška.",
+            "gloss": "My luggage is too heavy."
+          }
+        },
+        {
+          "id": "ruksak",
+          "hr": "ruksak",
+          "en": "backpack / rucksack",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nosim samo mali ruksak.",
+            "gloss": "I am carrying only a small backpack."
+          }
+        },
+        {
+          "id": "vozni red",
+          "hr": "vozni red",
+          "en": "timetable (transport)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pogledaj vozni red na internetu.",
+            "gloss": "Check the timetable on the internet."
+          }
+        },
+        {
+          "id": "polazak",
+          "hr": "polazak",
+          "en": "departure",
+          "pos": "n. m.",
+          "note": "opposite: dolazak",
+          "example": {
+            "target": "Polazak vlaka je u osam sati.",
+            "gloss": "The train's departure is at eight o'clock."
+          }
+        },
+        {
+          "id": "dolazak",
+          "hr": "dolazak",
+          "en": "arrival",
+          "pos": "n. m.",
+          "note": "opposite: polazak / odlazak",
+          "example": {
+            "target": "Čekamo dolazak autobusa iz Zadra.",
+            "gloss": "We are waiting for the arrival of the bus from Zadar."
+          }
+        },
+        {
+          "id": "presjedati",
+          "hr": "presjedati",
+          "en": "to change (trains, buses)",
+          "pos": "v. impf.",
+          "note": "pf. presjesti",
+          "example": {
+            "target": "U Zagrebu presjedamo na drugi vlak.",
+            "gloss": "In Zagreb we change to another train."
+          }
+        },
+        {
+          "id": "kašnjenje",
+          "hr": "kašnjenje",
+          "en": "delay",
+          "pos": "n. n.",
+          "note": "from kasniti (to be late)",
+          "example": {
+            "target": "Vlak ima kašnjenje od dvadeset minuta.",
+            "gloss": "The train has a delay of twenty minutes."
+          }
+        },
+        {
+          "id": "stajalište",
+          "hr": "stajalište",
+          "en": "stop (bus/tram stop)",
+          "pos": "n. n.",
+          "note": "also 'stanica' colloquially",
+          "example": {
+            "target": "Čekam te na autobusnom stajalištu.",
+            "gloss": "I am waiting for you at the bus stop."
+          }
+        },
+        {
+          "id": "peron",
+          "hr": "peron",
+          "en": "platform (train station)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vlak za Rijeku polazi s drugog perona.",
+            "gloss": "The train for Rijeka departs from platform two."
+          }
+        },
+        {
+          "id": "vozačka dozvola",
+          "hr": "vozačka dozvola",
+          "en": "driving licence",
+          "pos": "n. f.",
+          "note": "colloquially just 'vozačka'",
+          "example": {
+            "target": "Zaboravio sam vozačku dozvolu kod kuće.",
+            "gloss": "I forgot my driving licence at home."
+          }
+        },
+        {
+          "id": "registracija",
+          "hr": "registracija",
+          "en": "registration (of a vehicle)",
+          "pos": "n. f.",
+          "note": "also: licence plates, sign-up",
+          "example": {
+            "target": "Moram produžiti registraciju auta.",
+            "gloss": "I have to renew the car's registration."
+          }
+        },
+        {
+          "id": "benzinska postaja",
+          "hr": "benzinska postaja",
+          "en": "petrol station",
+          "pos": "n. f.",
+          "note": "colloquially just 'benzinska'",
+          "example": {
+            "target": "Stat ćemo na prvoj benzinskoj postaji.",
+            "gloss": "We will stop at the first petrol station."
+          }
+        },
+        {
+          "id": "gorivo",
+          "hr": "gorivo",
+          "en": "fuel",
+          "pos": "n. n.",
+          "example": {
+            "target": "Nemamo dovoljno goriva za put.",
+            "gloss": "We don't have enough fuel for the trip."
+          }
+        },
+        {
+          "id": "guma",
+          "hr": "guma",
+          "en": "tyre",
+          "pos": "n. f.",
+          "note": "also: rubber, eraser",
+          "example": {
+            "target": "Pukla nam je guma na autocesti.",
+            "gloss": "Our tyre burst on the motorway."
+          }
+        },
+        {
+          "id": "kvar",
+          "hr": "kvar",
+          "en": "breakdown / malfunction",
+          "pos": "n. m.",
+          "example": {
+            "target": "Auto je stao zbog kvara na motoru.",
+            "gloss": "The car stopped because of an engine breakdown."
+          }
+        },
+        {
+          "id": "pokvariti se",
+          "hr": "pokvariti se",
+          "en": "to break down",
+          "pos": "v. pf.",
+          "note": "impf. kvariti se; also of food going bad",
+          "example": {
+            "target": "Auto nam se pokvario na putu.",
+            "gloss": "Our car broke down on the way."
+          }
+        },
+        {
+          "id": "autocesta",
+          "hr": "autocesta",
+          "en": "motorway / highway",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vozimo se autocestom prema Splitu.",
+            "gloss": "We are driving along the motorway towards Split."
+          }
+        },
+        {
+          "id": "cesta",
+          "hr": "cesta",
+          "en": "road",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ova cesta vodi do malog sela.",
+            "gloss": "This road leads to a small village."
+          }
+        },
+        {
+          "id": "cestarina",
+          "hr": "cestarina",
+          "en": "road toll",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cestarinu možete platiti karticom.",
+            "gloss": "You can pay the toll by card."
+          }
+        },
+        {
+          "id": "trajekt",
+          "hr": "trajekt",
+          "en": "ferry",
+          "pos": "n. m.",
+          "note": "key transport to Croatian islands",
+          "example": {
+            "target": "Trajekt za Hvar polazi u podne.",
+            "gloss": "The ferry for Hvar departs at noon."
+          }
+        },
+        {
+          "id": "luka-port",
+          "hr": "luka",
+          "en": "port / harbour",
+          "pos": "n. f.",
+          "note": "zračna luka = airport",
+          "example": {
+            "target": "Veliki brodovi ulaze u luku.",
+            "gloss": "Big ships are entering the port."
+          }
+        },
+        {
+          "id": "letjeti",
+          "hr": "letjeti",
+          "en": "to fly",
+          "pos": "v. impf.",
+          "note": "pf. odletjeti (fly off) / doletjeti (arrive by flying)",
+          "example": {
+            "target": "Sutra letimo za London.",
+            "gloss": "Tomorrow we are flying to London."
+          }
+        },
+        {
+          "id": "let",
+          "hr": "let",
+          "en": "flight",
+          "pos": "n. m.",
+          "example": {
+            "target": "Naš let kasni sat vremena.",
+            "gloss": "Our flight is an hour late."
+          }
+        },
+        {
+          "id": "polijetati",
+          "hr": "polijetati",
+          "en": "to take off (plane)",
+          "pos": "v. impf.",
+          "note": "pf. poletjeti",
+          "example": {
+            "target": "Avion polijeće za deset minuta.",
+            "gloss": "The plane takes off in ten minutes."
+          }
+        },
+        {
+          "id": "slijetati",
+          "hr": "slijetati",
+          "en": "to land (plane)",
+          "pos": "v. impf.",
+          "note": "pf. sletjeti",
+          "example": {
+            "target": "Avion slijeće za pola sata.",
+            "gloss": "The plane lands in half an hour."
+          }
+        },
+        {
+          "id": "carina",
+          "hr": "carina",
+          "en": "customs",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na carini smo čekali pola sata.",
+            "gloss": "We waited at customs for half an hour."
+          }
+        },
+        {
+          "id": "putno osiguranje",
+          "hr": "putno osiguranje",
+          "en": "travel insurance",
+          "pos": "n. n.",
+          "example": {
+            "target": "Kupili smo putno osiguranje prije puta.",
+            "gloss": "We bought travel insurance before the trip."
+          }
+        },
+        {
+          "id": "znamenitost",
+          "hr": "znamenitost",
+          "en": "sight / landmark",
+          "pos": "n. f.",
+          "example": {
+            "target": "Dubrovnik ima mnogo znamenitosti.",
+            "gloss": "Dubrovnik has many sights."
+          }
+        },
+        {
+          "id": "vodič",
+          "hr": "vodič",
+          "en": "guide",
+          "pos": "n. m.",
+          "note": "person or guidebook; f. vodičkinja",
+          "example": {
+            "target": "Vodič nam je pokazao stari grad.",
+            "gloss": "The guide showed us the old town."
+          }
+        },
+        {
+          "id": "izlet",
+          "hr": "izlet",
+          "en": "trip / excursion",
+          "pos": "n. m.",
+          "example": {
+            "target": "U nedjelju idemo na izlet.",
+            "gloss": "On Sunday we are going on a trip."
+          }
+        },
+        {
+          "id": "razgledavati",
+          "hr": "razgledavati",
+          "en": "to sightsee / to look around",
+          "pos": "v. impf.",
+          "note": "pf. razgledati",
+          "example": {
+            "target": "Danas razgledavamo grad i muzeje.",
+            "gloss": "Today we are sightseeing the city and the museums."
+          }
+        },
+        {
+          "id": "turist",
+          "hr": "turist",
+          "en": "tourist",
+          "pos": "n. m.",
+          "note": "f. turistica",
+          "example": {
+            "target": "Ljeti u gradu ima puno turista.",
+            "gloss": "In summer there are a lot of tourists in the city."
+          }
+        },
+        {
+          "id": "turizam",
+          "hr": "turizam",
+          "en": "tourism",
+          "pos": "n. m.",
+          "note": "gen. turizma (fleeting a)",
+          "example": {
+            "target": "Turizam je vrlo važan za Hrvatsku.",
+            "gloss": "Tourism is very important for Croatia."
+          }
+        },
+        {
+          "id": "sezona",
+          "hr": "sezona",
+          "en": "season (tourist)",
+          "pos": "n. f.",
+          "note": "for the four seasons see godišnje doba",
+          "example": {
+            "target": "Cijene su više u ljetnoj sezoni.",
+            "gloss": "Prices are higher in the summer season."
+          }
+        },
+        {
+          "id": "noćenje",
+          "hr": "noćenje",
+          "en": "overnight stay",
+          "pos": "n. n.",
+          "note": "noćenje s doručkom = bed and breakfast",
+          "example": {
+            "target": "Koliko košta noćenje s doručkom?",
+            "gloss": "How much does a night with breakfast cost?"
+          }
+        },
+        {
+          "id": "kamp",
+          "hr": "kamp",
+          "en": "campsite / camp",
+          "pos": "n. m.",
+          "example": {
+            "target": "Spavamo u kampu pokraj mora.",
+            "gloss": "We are sleeping in a campsite by the sea."
+          }
+        },
+        {
+          "id": "šator",
+          "hr": "šator",
+          "en": "tent",
+          "pos": "n. m.",
+          "example": {
+            "target": "Postavili smo šator u kampu.",
+            "gloss": "We pitched the tent at the campsite."
+          }
+        },
+        {
+          "id": "ulaznica",
+          "hr": "ulaznica",
+          "en": "entrance ticket",
+          "pos": "n. f.",
+          "note": "for transport tickets use 'karta'",
+          "example": {
+            "target": "Ulaznica za muzej košta pet eura.",
+            "gloss": "A ticket for the museum costs five euros."
+          }
+        },
+        {
+          "id": "povratna karta",
+          "hr": "povratna karta",
+          "en": "return ticket",
+          "pos": "n. f.",
+          "note": "one-way: karta u jednom smjeru",
+          "example": {
+            "target": "Molim jednu povratnu kartu do Rijeke.",
+            "gloss": "One return ticket to Rijeka, please."
+          }
+        },
+        {
+          "id": "smjer",
+          "hr": "smjer",
+          "en": "direction",
+          "pos": "n. m.",
+          "example": {
+            "target": "Idete u krivom smjeru.",
+            "gloss": "You are going in the wrong direction."
+          }
+        },
+        {
+          "id": "odjava",
+          "hr": "odjava",
+          "en": "check-out",
+          "pos": "n. f.",
+          "example": {
+            "target": "Odjava iz sobe je do deset sati.",
+            "gloss": "Check-out from the room is by ten o'clock."
+          }
+        },
+        {
+          "id": "putnik",
+          "hr": "putnik",
+          "en": "passenger / traveller",
+          "pos": "n. m.",
+          "note": "f. putnica",
+          "example": {
+            "target": "Putnici čekaju vlak na peronu.",
+            "gloss": "The passengers are waiting for the train on the platform."
+          }
+        },
+        {
+          "id": "odredište",
+          "hr": "odredište",
+          "en": "destination",
+          "pos": "n. n.",
+          "example": {
+            "target": "Kasno navečer stigli smo na odredište.",
+            "gloss": "Late in the evening we arrived at the destination."
+          }
+        }
+      ]
+    },
+    {
+      "id": "city-country",
+      "title": "City & country life",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "središte",
+          "hr": "središte",
+          "en": "centre",
+          "pos": "n. n.",
+          "note": "synonym: centar",
+          "example": {
+            "target": "Stanujemo u samom središtu grada.",
+            "gloss": "We live in the very centre of the city."
+          }
+        },
+        {
+          "id": "predgrađe",
+          "hr": "predgrađe",
+          "en": "suburb",
+          "pos": "n. n.",
+          "example": {
+            "target": "Kupili su kuću u predgrađu Zagreba.",
+            "gloss": "They bought a house in a suburb of Zagreb."
+          }
+        },
+        {
+          "id": "naselje",
+          "hr": "naselje",
+          "en": "settlement / residential area",
+          "pos": "n. n.",
+          "example": {
+            "target": "Naše naselje je mirno i zeleno.",
+            "gloss": "Our neighbourhood is quiet and green."
+          }
+        },
+        {
+          "id": "četvrt",
+          "hr": "četvrt",
+          "en": "quarter / district",
+          "pos": "n. f.",
+          "example": {
+            "target": "U ovoj četvrti ima puno kafića.",
+            "gloss": "In this district there are a lot of cafés."
+          }
+        },
+        {
+          "id": "kvart",
+          "hr": "kvart",
+          "en": "neighbourhood (colloquial)",
+          "pos": "n. m.",
+          "note": "colloquial, very common in Zagreb speech",
+          "example": {
+            "target": "Odrastao sam u ovom kvartu.",
+            "gloss": "I grew up in this neighbourhood."
+          }
+        },
+        {
+          "id": "promet",
+          "hr": "promet",
+          "en": "traffic",
+          "pos": "n. m.",
+          "example": {
+            "target": "Promet je jutros bio jako gust.",
+            "gloss": "The traffic was very heavy this morning."
+          }
+        },
+        {
+          "id": "gužva",
+          "hr": "gužva",
+          "en": "crowd / traffic jam",
+          "pos": "n. f.",
+          "note": "crowds of people or congested traffic",
+          "example": {
+            "target": "U centru je uvijek velika gužva.",
+            "gloss": "There is always a big crowd in the centre."
+          }
+        },
+        {
+          "id": "semafor",
+          "hr": "semafor",
+          "en": "traffic light",
+          "pos": "n. m.",
+          "example": {
+            "target": "Skrenite lijevo kod semafora.",
+            "gloss": "Turn left at the traffic light."
+          }
+        },
+        {
+          "id": "raskrižje",
+          "hr": "raskrižje",
+          "en": "crossroads / intersection",
+          "pos": "n. n.",
+          "example": {
+            "target": "Na raskrižju vozite polako.",
+            "gloss": "Drive slowly at the intersection."
+          }
+        },
+        {
+          "id": "kružni tok",
+          "hr": "kružni tok",
+          "en": "roundabout",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na kružnom toku izađite na drugi izlaz.",
+            "gloss": "At the roundabout take the second exit."
+          }
+        },
+        {
+          "id": "pješak",
+          "hr": "pješak",
+          "en": "pedestrian",
+          "pos": "n. m.",
+          "note": "f. pješakinja",
+          "example": {
+            "target": "Pješaci čekaju zeleno svjetlo.",
+            "gloss": "The pedestrians are waiting for the green light."
+          }
+        },
+        {
+          "id": "pješački prijelaz",
+          "hr": "pješački prijelaz",
+          "en": "pedestrian crossing",
+          "pos": "n. m.",
+          "note": "colloquially: zebra",
+          "example": {
+            "target": "Auto je stao pred pješačkim prijelazom.",
+            "gloss": "The car stopped in front of the pedestrian crossing."
+          }
+        },
+        {
+          "id": "pločnik",
+          "hr": "pločnik",
+          "en": "pavement / sidewalk",
+          "pos": "n. m.",
+          "note": "also: nogostup",
+          "example": {
+            "target": "Ne vozite bicikl po pločniku.",
+            "gloss": "Do not ride a bicycle on the pavement."
+          }
+        },
+        {
+          "id": "parkiralište",
+          "hr": "parkiralište",
+          "en": "car park / parking lot",
+          "pos": "n. n.",
+          "note": "colloquially: parking",
+          "example": {
+            "target": "Parkiralište iza zgrade je besplatno.",
+            "gloss": "The car park behind the building is free."
+          }
+        },
+        {
+          "id": "parkirati",
+          "hr": "parkirati",
+          "en": "to park",
+          "pos": "v. impf./pf.",
+          "note": "biaspectual; also parkirati se colloquially",
+          "example": {
+            "target": "Ovdje ne smijete parkirati.",
+            "gloss": "You are not allowed to park here."
+          }
+        },
+        {
+          "id": "most",
+          "hr": "most",
+          "en": "bridge",
+          "pos": "n. m.",
+          "example": {
+            "target": "Prešli smo stari most preko rijeke.",
+            "gloss": "We crossed the old bridge over the river."
+          }
+        },
+        {
+          "id": "spomenik",
+          "hr": "spomenik",
+          "en": "monument",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na trgu je spomenik banu Jelačiću.",
+            "gloss": "On the square there is a monument to Ban Jelačić."
+          }
+        },
+        {
+          "id": "fontana",
+          "hr": "fontana",
+          "en": "fountain",
+          "pos": "n. f.",
+          "example": {
+            "target": "Turisti se fotografiraju kraj fontane.",
+            "gloss": "Tourists take photos by the fountain."
+          }
+        },
+        {
+          "id": "kula",
+          "hr": "kula",
+          "en": "tower",
+          "pos": "n. f.",
+          "note": "also: toranj",
+          "example": {
+            "target": "S kule se vidi cijeli grad.",
+            "gloss": "From the tower you can see the whole city."
+          }
+        },
+        {
+          "id": "dvorac",
+          "hr": "dvorac",
+          "en": "castle / manor",
+          "pos": "n. m.",
+          "note": "gen. dvorca (fleeting a)",
+          "example": {
+            "target": "Posjetili smo dvorac Trakošćan.",
+            "gloss": "We visited Trakošćan Castle."
+          }
+        },
+        {
+          "id": "tvrđava",
+          "hr": "tvrđava",
+          "en": "fortress",
+          "pos": "n. f.",
+          "example": {
+            "target": "Stara tvrđava je iznad grada.",
+            "gloss": "The old fortress is above the town."
+          }
+        },
+        {
+          "id": "katedrala",
+          "hr": "katedrala",
+          "en": "cathedral",
+          "pos": "n. f.",
+          "example": {
+            "target": "Katedrala ima dva visoka tornja.",
+            "gloss": "The cathedral has two tall towers."
+          }
+        },
+        {
+          "id": "samostan",
+          "hr": "samostan",
+          "en": "monastery / convent",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ovaj samostan je star petsto godina.",
+            "gloss": "This monastery is five hundred years old."
+          }
+        },
+        {
+          "id": "groblje",
+          "hr": "groblje",
+          "en": "cemetery",
+          "pos": "n. n.",
+          "example": {
+            "target": "Mirogoj je poznato zagrebačko groblje.",
+            "gloss": "Mirogoj is a famous Zagreb cemetery."
+          }
+        },
+        {
+          "id": "muzej",
+          "hr": "muzej",
+          "en": "museum",
+          "pos": "n. m.",
+          "example": {
+            "target": "U muzeju smo proveli dva sata.",
+            "gloss": "We spent two hours in the museum."
+          }
+        },
+        {
+          "id": "galerija",
+          "hr": "galerija",
+          "en": "gallery",
+          "pos": "n. f.",
+          "example": {
+            "target": "U galeriji je otvorena nova izložba.",
+            "gloss": "A new exhibition has opened in the gallery."
+          }
+        },
+        {
+          "id": "knjižara",
+          "hr": "knjižara",
+          "en": "bookshop",
+          "pos": "n. f.",
+          "note": "don't confuse with knjižnica (library)",
+          "example": {
+            "target": "Kupila sam rječnik u knjižari.",
+            "gloss": "I bought a dictionary in the bookshop."
+          }
+        },
+        {
+          "id": "kafić",
+          "hr": "kafić",
+          "en": "café / coffee bar",
+          "pos": "n. m.",
+          "note": "centre of Croatian social life",
+          "example": {
+            "target": "Nađimo se u kafiću na trgu.",
+            "gloss": "Let's meet in the café on the square."
+          }
+        },
+        {
+          "id": "pekarnica",
+          "hr": "pekarnica",
+          "en": "bakery",
+          "pos": "n. f.",
+          "note": "also: pekara",
+          "example": {
+            "target": "Ujutro idem u pekarnicu po kruh.",
+            "gloss": "In the morning I go to the bakery for bread."
+          }
+        },
+        {
+          "id": "neboder",
+          "hr": "neboder",
+          "en": "skyscraper / high-rise",
+          "pos": "n. m.",
+          "example": {
+            "target": "U kvartu grade novi neboder.",
+            "gloss": "They are building a new high-rise in the neighbourhood."
+          }
+        },
+        {
+          "id": "šetalište",
+          "hr": "šetalište",
+          "en": "promenade",
+          "pos": "n. n.",
+          "note": "seaside promenade is often called 'riva'",
+          "example": {
+            "target": "Navečer šetamo šetalištem uz more.",
+            "gloss": "In the evening we walk along the seaside promenade."
+          }
+        },
+        {
+          "id": "klupa",
+          "hr": "klupa",
+          "en": "bench",
+          "pos": "n. f.",
+          "note": "also: school desk",
+          "example": {
+            "target": "Sjedili smo na klupi u parku.",
+            "gloss": "We were sitting on a bench in the park."
+          }
+        },
+        {
+          "id": "buka",
+          "hr": "buka",
+          "en": "noise",
+          "pos": "n. f.",
+          "example": {
+            "target": "Noću mi smeta buka s ulice.",
+            "gloss": "At night the noise from the street bothers me."
+          }
+        },
+        {
+          "id": "gradonačelnik",
+          "hr": "gradonačelnik",
+          "en": "mayor",
+          "pos": "n. m.",
+          "note": "f. gradonačelnica",
+          "example": {
+            "target": "Gradonačelnik je otvorio novi most.",
+            "gloss": "The mayor opened the new bridge."
+          }
+        },
+        {
+          "id": "stanovništvo",
+          "hr": "stanovništvo",
+          "en": "population",
+          "pos": "n. n.",
+          "example": {
+            "target": "Stanovništvo našeg sela je sve starije.",
+            "gloss": "The population of our village is getting older."
+          }
+        },
+        {
+          "id": "okolica",
+          "hr": "okolica",
+          "en": "surroundings / surrounding area",
+          "pos": "n. f.",
+          "example": {
+            "target": "U okolici grada ima lijepih sela.",
+            "gloss": "In the area around the city there are pretty villages."
+          }
+        },
+        {
+          "id": "imanje",
+          "hr": "imanje",
+          "en": "estate / farm property",
+          "pos": "n. n.",
+          "example": {
+            "target": "Djed ima veliko imanje na selu.",
+            "gloss": "Grandpa has a big property in the countryside."
+          }
+        },
+        {
+          "id": "vinograd",
+          "hr": "vinograd",
+          "en": "vineyard",
+          "pos": "n. m.",
+          "example": {
+            "target": "U rujnu radimo u vinogradu.",
+            "gloss": "In September we work in the vineyard."
+          }
+        },
+        {
+          "id": "maslinik",
+          "hr": "maslinik",
+          "en": "olive grove",
+          "pos": "n. m.",
+          "example": {
+            "target": "Obitelj ima maslinik na otoku.",
+            "gloss": "The family has an olive grove on the island."
+          }
+        },
+        {
+          "id": "maslina",
+          "hr": "maslina",
+          "en": "olive / olive tree",
+          "pos": "n. f.",
+          "note": "maslinovo ulje = olive oil",
+          "example": {
+            "target": "Masline beremo krajem jeseni.",
+            "gloss": "We pick olives at the end of autumn."
+          }
+        },
+        {
+          "id": "voćnjak",
+          "hr": "voćnjak",
+          "en": "orchard",
+          "pos": "n. m.",
+          "example": {
+            "target": "U voćnjaku rastu jabuke i kruške.",
+            "gloss": "Apples and pears grow in the orchard."
+          }
+        },
+        {
+          "id": "berba",
+          "hr": "berba",
+          "en": "harvest (grapes, olives, fruit)",
+          "pos": "n. f.",
+          "note": "grain harvest is 'žetva'",
+          "example": {
+            "target": "Berba grožđa počinje u rujnu.",
+            "gloss": "The grape harvest begins in September."
+          }
+        },
+        {
+          "id": "seljak",
+          "hr": "seljak",
+          "en": "farmer / villager",
+          "pos": "n. m.",
+          "note": "f. seljanka; can sound pejorative — neutral: poljoprivrednik",
+          "example": {
+            "target": "Seljaci prodaju povrće na tržnici.",
+            "gloss": "Farmers sell vegetables at the market."
+          }
+        },
+        {
+          "id": "poljoprivreda",
+          "hr": "poljoprivreda",
+          "en": "agriculture",
+          "pos": "n. f.",
+          "example": {
+            "target": "Poljoprivreda je važna za ovaj kraj.",
+            "gloss": "Agriculture is important for this region."
+          }
+        },
+        {
+          "id": "traktor",
+          "hr": "traktor",
+          "en": "tractor",
+          "pos": "n. m.",
+          "example": {
+            "target": "Susjed vozi traktor kroz polje.",
+            "gloss": "The neighbour is driving a tractor through the field."
+          }
+        },
+        {
+          "id": "staja",
+          "hr": "staja",
+          "en": "stable / barn",
+          "pos": "n. f.",
+          "note": "also: štala (colloquial)",
+          "example": {
+            "target": "Krave su preko zime u staji.",
+            "gloss": "The cows are in the barn over the winter."
+          }
+        },
+        {
+          "id": "domaći",
+          "hr": "domaći",
+          "en": "home-made / local / domestic",
+          "pos": "adj.",
+          "note": "domaća zadaća = homework; domaći = locals",
+          "example": {
+            "target": "Kupujemo domaći sir i med.",
+            "gloss": "We buy home-made cheese and honey."
+          }
+        },
+        {
+          "id": "gradski",
+          "hr": "gradski",
+          "en": "city / urban (adj.)",
+          "pos": "adj.",
+          "example": {
+            "target": "Gradski autobus vozi svakih deset minuta.",
+            "gloss": "The city bus runs every ten minutes."
+          }
+        },
+        {
+          "id": "seoski",
+          "hr": "seoski",
+          "en": "village / rural (adj.)",
+          "pos": "adj.",
+          "note": "seoski turizam = rural tourism",
+          "example": {
+            "target": "Volim miran seoski život.",
+            "gloss": "I love the quiet country life."
+          }
+        }
+      ]
+    },
+    {
+      "id": "environment-weather",
+      "title": "Weather & environment",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "zagađenje",
+          "hr": "zagađenje",
+          "en": "pollution",
+          "pos": "n. n.",
+          "note": "also: onečišćenje",
+          "example": {
+            "target": "Zagađenje zraka je velik problem.",
+            "gloss": "Air pollution is a big problem."
+          }
+        },
+        {
+          "id": "otpad",
+          "hr": "otpad",
+          "en": "waste",
+          "pos": "n. m.",
+          "example": {
+            "target": "Otpad razvrstavamo u različite kante.",
+            "gloss": "We sort waste into different bins."
+          }
+        },
+        {
+          "id": "smeće",
+          "hr": "smeće",
+          "en": "rubbish / garbage",
+          "pos": "n. n.",
+          "example": {
+            "target": "Iznesi smeće prije večere, molim te.",
+            "gloss": "Take out the rubbish before dinner, please."
+          }
+        },
+        {
+          "id": "reciklirati",
+          "hr": "reciklirati",
+          "en": "to recycle",
+          "pos": "v. impf./pf.",
+          "note": "biaspectual",
+          "example": {
+            "target": "Recikliramo papir, plastiku i staklo.",
+            "gloss": "We recycle paper, plastic and glass."
+          }
+        },
+        {
+          "id": "plastika",
+          "hr": "plastika",
+          "en": "plastic",
+          "pos": "n. f.",
+          "example": {
+            "target": "U moru ima previše plastike.",
+            "gloss": "There is too much plastic in the sea."
+          }
+        },
+        {
+          "id": "staklo",
+          "hr": "staklo",
+          "en": "glass (material)",
+          "pos": "n. n.",
+          "note": "a drinking glass is 'čaša'",
+          "example": {
+            "target": "Staklo bacamo u zeleni kontejner.",
+            "gloss": "We throw glass into the green container."
+          }
+        },
+        {
+          "id": "bacati",
+          "hr": "bacati",
+          "en": "to throw / to throw away",
+          "pos": "v. impf.",
+          "note": "pf. baciti",
+          "example": {
+            "target": "Ne bacajte smeće u prirodu.",
+            "gloss": "Do not throw rubbish into nature."
+          }
+        },
+        {
+          "id": "zaštita",
+          "hr": "zaštita",
+          "en": "protection",
+          "pos": "n. f.",
+          "note": "verb: štititi / zaštititi",
+          "example": {
+            "target": "Zaštita okoliša važna je svima.",
+            "gloss": "Protection of the environment is important to everyone."
+          }
+        },
+        {
+          "id": "čist",
+          "hr": "čist",
+          "en": "clean",
+          "pos": "adj.",
+          "example": {
+            "target": "Zrak na planini je čist.",
+            "gloss": "The air in the mountains is clean."
+          }
+        },
+        {
+          "id": "prljav",
+          "hr": "prljav",
+          "en": "dirty",
+          "pos": "adj.",
+          "example": {
+            "target": "Rijeka je prljava zbog stare tvornice.",
+            "gloss": "The river is dirty because of the old factory."
+          }
+        },
+        {
+          "id": "klima",
+          "hr": "klima",
+          "en": "climate",
+          "pos": "n. f.",
+          "note": "colloquially also: air conditioning",
+          "example": {
+            "target": "Klima na obali je blaga.",
+            "gloss": "The climate on the coast is mild."
+          }
+        },
+        {
+          "id": "klimatske promjene",
+          "hr": "klimatske promjene",
+          "en": "climate change",
+          "pos": "n. f. pl.",
+          "example": {
+            "target": "Svi danas govore o klimatskim promjenama.",
+            "gloss": "Everyone talks about climate change today."
+          }
+        },
+        {
+          "id": "vremenska prognoza",
+          "hr": "vremenska prognoza",
+          "en": "weather forecast",
+          "pos": "n. f.",
+          "note": "colloquially just 'prognoza'",
+          "example": {
+            "target": "Vremenska prognoza za sutra je loša.",
+            "gloss": "The weather forecast for tomorrow is bad."
+          }
+        },
+        {
+          "id": "magla",
+          "hr": "magla",
+          "en": "fog",
+          "pos": "n. f.",
+          "example": {
+            "target": "Jutros je na cesti gusta magla.",
+            "gloss": "This morning there is thick fog on the road."
+          }
+        },
+        {
+          "id": "mraz",
+          "hr": "mraz",
+          "en": "frost",
+          "pos": "n. m.",
+          "example": {
+            "target": "Noćas je mraz uništio cvijeće.",
+            "gloss": "Last night the frost destroyed the flowers."
+          }
+        },
+        {
+          "id": "poledica",
+          "hr": "poledica",
+          "en": "black ice / icy roads",
+          "pos": "n. f.",
+          "example": {
+            "target": "Zbog poledice vozite vrlo oprezno.",
+            "gloss": "Because of the ice, drive very carefully."
+          }
+        },
+        {
+          "id": "oluja",
+          "hr": "oluja",
+          "en": "storm",
+          "pos": "n. f.",
+          "note": "storm at sea: nevera (Dalmatian)",
+          "example": {
+            "target": "Sinoć nas je probudila jaka oluja.",
+            "gloss": "Last night a strong storm woke us up."
+          }
+        },
+        {
+          "id": "pljusak",
+          "hr": "pljusak",
+          "en": "downpour / shower",
+          "pos": "n. m.",
+          "note": "gen. pljuska (fleeting a)",
+          "example": {
+            "target": "Poslijepodne stiže kratki pljusak.",
+            "gloss": "A short downpour is coming in the afternoon."
+          }
+        },
+        {
+          "id": "grmljavina",
+          "hr": "grmljavina",
+          "en": "thunder",
+          "pos": "n. f.",
+          "note": "verb: grmjeti (grmi = it thunders)",
+          "example": {
+            "target": "Naš pas se boji grmljavine.",
+            "gloss": "Our dog is afraid of thunder."
+          }
+        },
+        {
+          "id": "munja",
+          "hr": "munja",
+          "en": "lightning",
+          "pos": "n. f.",
+          "example": {
+            "target": "Munja je udarila u staro drvo.",
+            "gloss": "Lightning struck the old tree."
+          }
+        },
+        {
+          "id": "tuča",
+          "hr": "tuča",
+          "en": "hail",
+          "pos": "n. f.",
+          "note": "also means: a fight (brawl)",
+          "example": {
+            "target": "Tuča je uništila cijeli vinograd.",
+            "gloss": "Hail destroyed the whole vineyard."
+          }
+        },
+        {
+          "id": "poplava",
+          "hr": "poplava",
+          "en": "flood",
+          "pos": "n. f.",
+          "example": {
+            "target": "Poplava je zatvorila cestu uz rijeku.",
+            "gloss": "The flood closed the road along the river."
+          }
+        },
+        {
+          "id": "potres",
+          "hr": "potres",
+          "en": "earthquake",
+          "pos": "n. m.",
+          "example": {
+            "target": "Prošle godine pogodio nas je jak potres.",
+            "gloss": "Last year a strong earthquake hit us."
+          }
+        },
+        {
+          "id": "suša",
+          "hr": "suša",
+          "en": "drought",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ovog ljeta suša je trajala tjednima.",
+            "gloss": "This summer the drought lasted for weeks."
+          }
+        },
+        {
+          "id": "požar",
+          "hr": "požar",
+          "en": "fire (blaze)",
+          "pos": "n. m.",
+          "note": "a large destructive fire; flame itself is vatra",
+          "example": {
+            "target": "Vatrogasci gase veliki požar u šumi.",
+            "gloss": "Firefighters are putting out a big fire in the forest."
+          }
+        },
+        {
+          "id": "vatra",
+          "hr": "vatra",
+          "en": "fire",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ne palite vatru u šumi ljeti.",
+            "gloss": "Do not light a fire in the forest in summer."
+          }
+        },
+        {
+          "id": "vlažan",
+          "hr": "vlažan",
+          "en": "humid / damp",
+          "pos": "adj.",
+          "note": "vlažno je = it is humid",
+          "example": {
+            "target": "Zrak je danas topao i vlažan.",
+            "gloss": "The air is warm and humid today."
+          }
+        },
+        {
+          "id": "suh",
+          "hr": "suh",
+          "en": "dry",
+          "pos": "adj.",
+          "note": "also spelled 'suv' in other standards — Croatian is suh",
+          "example": {
+            "target": "Ljeto je bilo dugo i suho.",
+            "gloss": "The summer was long and dry."
+          }
+        },
+        {
+          "id": "oblačan",
+          "hr": "oblačan",
+          "en": "cloudy",
+          "pos": "adj.",
+          "note": "oblačno je = it is cloudy",
+          "example": {
+            "target": "Nebo je danas sivo i oblačno.",
+            "gloss": "The sky is grey and cloudy today."
+          }
+        },
+        {
+          "id": "vedar",
+          "hr": "vedar",
+          "en": "clear (sky) / cheerful",
+          "pos": "adj.",
+          "note": "vedro je = the sky is clear",
+          "example": {
+            "target": "Nebo je vedro, bez ijednog oblaka.",
+            "gloss": "The sky is clear, without a single cloud."
+          }
+        },
+        {
+          "id": "svjež",
+          "hr": "svjež",
+          "en": "fresh / cool",
+          "pos": "adj.",
+          "note": "of air, weather and food",
+          "example": {
+            "target": "Večeri su već svježe, ponesi jaknu.",
+            "gloss": "The evenings are already cool, take a jacket."
+          }
+        },
+        {
+          "id": "sparan",
+          "hr": "sparan",
+          "en": "muggy / sultry",
+          "pos": "adj.",
+          "note": "sparno je = it is muggy",
+          "example": {
+            "target": "Kolovoz je bio vruć i sparan.",
+            "gloss": "August was hot and muggy."
+          }
+        },
+        {
+          "id": "sunčan",
+          "hr": "sunčan",
+          "en": "sunny",
+          "pos": "adj.",
+          "example": {
+            "target": "Sutra će biti sunčan i topao dan.",
+            "gloss": "Tomorrow will be a sunny and warm day."
+          }
+        },
+        {
+          "id": "vjetrovit",
+          "hr": "vjetrovit",
+          "en": "windy",
+          "pos": "adj.",
+          "example": {
+            "target": "Ožujak je često vjetrovit mjesec.",
+            "gloss": "March is often a windy month."
+          }
+        },
+        {
+          "id": "stupanj",
+          "hr": "stupanj",
+          "en": "degree",
+          "pos": "n. m.",
+          "note": "gen. pl. stupnjeva",
+          "example": {
+            "target": "Danas je dvadeset pet stupnjeva.",
+            "gloss": "Today it is twenty-five degrees."
+          }
+        },
+        {
+          "id": "minus",
+          "hr": "minus",
+          "en": "minus / below zero",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ujutro je bilo minus pet stupnjeva.",
+            "gloss": "In the morning it was minus five degrees."
+          }
+        },
+        {
+          "id": "vrućina",
+          "hr": "vrućina",
+          "en": "heat",
+          "pos": "n. f.",
+          "example": {
+            "target": "Po ovoj vrućini ne izlazim iz kuće.",
+            "gloss": "In this heat I am not leaving the house."
+          }
+        },
+        {
+          "id": "hladnoća",
+          "hr": "hladnoća",
+          "en": "cold (noun)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hladnoća je stigla iznenada u studenom.",
+            "gloss": "The cold arrived suddenly in November."
+          }
+        },
+        {
+          "id": "led",
+          "hr": "led",
+          "en": "ice",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pazi, na cesti je jutros led.",
+            "gloss": "Careful, there is ice on the road this morning."
+          }
+        },
+        {
+          "id": "duga",
+          "hr": "duga",
+          "en": "rainbow",
+          "pos": "n. f.",
+          "note": "don't confuse with dug (long)",
+          "example": {
+            "target": "Poslije kiše pojavila se duga.",
+            "gloss": "After the rain a rainbow appeared."
+          }
+        },
+        {
+          "id": "puhati",
+          "hr": "puhati",
+          "en": "to blow",
+          "pos": "v. impf.",
+          "note": "pf. puhnuti; famous Croatian winds: bura, jugo",
+          "example": {
+            "target": "Danas puše jaka bura.",
+            "gloss": "A strong bora wind is blowing today."
+          }
+        },
+        {
+          "id": "padati",
+          "hr": "padati",
+          "en": "to fall",
+          "pos": "v. impf.",
+          "note": "pf. pasti; pada kiša/snijeg = it rains/snows",
+          "example": {
+            "target": "Kiša pada već tri dana.",
+            "gloss": "It has been raining for three days already."
+          }
+        },
+        {
+          "id": "sniježiti",
+          "hr": "sniježiti",
+          "en": "to snow",
+          "pos": "v. impf.",
+          "note": "impersonal: sniježi = it is snowing; also: pada snijeg",
+          "example": {
+            "target": "Na planinama već sniježi.",
+            "gloss": "It is already snowing in the mountains."
+          }
+        },
+        {
+          "id": "smrzavati se",
+          "hr": "smrzavati se",
+          "en": "to freeze / to be freezing",
+          "pos": "v. impf.",
+          "note": "pf. smrznuti se",
+          "example": {
+            "target": "Smrzavam se, gdje su mi rukavice?",
+            "gloss": "I am freezing, where are my gloves?"
+          }
+        },
+        {
+          "id": "otopiti se",
+          "hr": "otopiti se",
+          "en": "to melt / to thaw",
+          "pos": "v. pf.",
+          "note": "impf. topiti se",
+          "example": {
+            "target": "Snijeg se otopio za jedan dan.",
+            "gloss": "The snow melted in one day."
+          }
+        },
+        {
+          "id": "zalazak sunca",
+          "hr": "zalazak sunca",
+          "en": "sunset",
+          "pos": "n. m.",
+          "example": {
+            "target": "Gledali smo zalazak sunca na plaži.",
+            "gloss": "We watched the sunset on the beach."
+          }
+        },
+        {
+          "id": "izlazak sunca",
+          "hr": "izlazak sunca",
+          "en": "sunrise",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ustali smo prije izlaska sunca.",
+            "gloss": "We got up before sunrise."
+          }
+        },
+        {
+          "id": "val",
+          "hr": "val",
+          "en": "wave",
+          "pos": "n. m.",
+          "note": "toplinski val = heat wave",
+          "example": {
+            "target": "Valovi su danas preveliki za plivanje.",
+            "gloss": "The waves are too big for swimming today."
+          }
+        },
+        {
+          "id": "plima i oseka",
+          "hr": "plima i oseka",
+          "en": "high tide and low tide",
+          "pos": "phrase",
+          "note": "plima = high tide, oseka = low tide",
+          "example": {
+            "target": "Plima i oseka na Jadranu nisu velike.",
+            "gloss": "The tides in the Adriatic are not big."
+          }
+        }
+      ]
+    },
+    {
+      "id": "celebrations-customs",
+      "title": "Celebrations & customs",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "blagdan",
+          "hr": "blagdan",
+          "en": "holiday (religious/public)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Božić je moj najdraži blagdan.",
+            "gloss": "Christmas is my favourite holiday."
+          }
+        },
+        {
+          "id": "praznik",
+          "hr": "praznik",
+          "en": "holiday (secular) / school break",
+          "pos": "n. m.",
+          "note": "pl. praznici = school holidays",
+          "example": {
+            "target": "Za praznike idemo baki na selo.",
+            "gloss": "For the holidays we go to grandma's in the countryside."
+          }
+        },
+        {
+          "id": "božić",
+          "hr": "Božić",
+          "en": "Christmas",
+          "pos": "n. m.",
+          "note": "Sretan Božić! = Merry Christmas!",
+          "example": {
+            "target": "Za Božić se cijela obitelj okuplja.",
+            "gloss": "The whole family gathers for Christmas."
+          }
+        },
+        {
+          "id": "badnjak",
+          "hr": "Badnjak",
+          "en": "Christmas Eve",
+          "pos": "n. m.",
+          "note": "also: badnja večer",
+          "example": {
+            "target": "Na Badnjak kitimo božićno drvce.",
+            "gloss": "On Christmas Eve we decorate the Christmas tree."
+          }
+        },
+        {
+          "id": "uskrs",
+          "hr": "Uskrs",
+          "en": "Easter",
+          "pos": "n. m.",
+          "note": "decorated Easter eggs: pisanice",
+          "example": {
+            "target": "Za Uskrs bojimo jaja.",
+            "gloss": "For Easter we dye eggs."
+          }
+        },
+        {
+          "id": "nova godina",
+          "hr": "Nova godina",
+          "en": "New Year",
+          "pos": "n. f.",
+          "note": "Sretna Nova godina! = Happy New Year!",
+          "example": {
+            "target": "Novu godinu slavimo s prijateljima.",
+            "gloss": "We celebrate New Year with friends."
+          }
+        },
+        {
+          "id": "sveti nikola",
+          "hr": "Sveti Nikola",
+          "en": "St Nicholas (6 December)",
+          "pos": "n. m.",
+          "note": "children get gifts in polished boots on 6 December",
+          "example": {
+            "target": "Sveti Nikola donosi darove u čizmicama.",
+            "gloss": "St Nicholas brings gifts in little boots."
+          }
+        },
+        {
+          "id": "advent",
+          "hr": "advent",
+          "en": "Advent",
+          "pos": "n. m.",
+          "note": "Advent u Zagrebu is a famous Christmas market",
+          "example": {
+            "target": "Zagrebački advent poznat je u cijeloj Europi.",
+            "gloss": "The Zagreb Advent market is famous all over Europe."
+          }
+        },
+        {
+          "id": "rođendan",
+          "hr": "rođendan",
+          "en": "birthday",
+          "pos": "n. m.",
+          "example": {
+            "target": "U subotu slavim trideseti rođendan.",
+            "gloss": "On Saturday I am celebrating my thirtieth birthday."
+          }
+        },
+        {
+          "id": "imendan",
+          "hr": "imendan",
+          "en": "name day",
+          "pos": "n. m.",
+          "note": "the feast day of the saint you are named after",
+          "example": {
+            "target": "Djed slavi imendan, a ne rođendan.",
+            "gloss": "Grandpa celebrates his name day, not his birthday."
+          }
+        },
+        {
+          "id": "godišnjica",
+          "hr": "godišnjica",
+          "en": "anniversary",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sutra je deseta godišnjica našeg vjenčanja.",
+            "gloss": "Tomorrow is the tenth anniversary of our wedding."
+          }
+        },
+        {
+          "id": "vjenčanje",
+          "hr": "vjenčanje",
+          "en": "wedding (ceremony)",
+          "pos": "n. n.",
+          "example": {
+            "target": "Pozvani smo na vjenčanje u lipnju.",
+            "gloss": "We are invited to a wedding in June."
+          }
+        },
+        {
+          "id": "svadba",
+          "hr": "svadba",
+          "en": "wedding party / feast",
+          "pos": "n. f.",
+          "note": "the celebration; the ceremony is vjenčanje",
+          "example": {
+            "target": "Svadba je trajala do ranog jutra.",
+            "gloss": "The wedding party lasted until early morning."
+          }
+        },
+        {
+          "id": "mladenci",
+          "hr": "mladenci",
+          "en": "newlyweds / bride and groom",
+          "pos": "n. m. pl.",
+          "note": "mladenka = bride, mladoženja = groom",
+          "example": {
+            "target": "Mladenci su otplesali prvi ples.",
+            "gloss": "The newlyweds danced the first dance."
+          }
+        },
+        {
+          "id": "kum",
+          "hr": "kum",
+          "en": "best man / godfather",
+          "pos": "n. m.",
+          "note": "f. kuma; a very close family bond in Croatia",
+          "example": {
+            "target": "Brat mi je bio kum na vjenčanju.",
+            "gloss": "My brother was my best man at the wedding."
+          }
+        },
+        {
+          "id": "krštenje",
+          "hr": "krštenje",
+          "en": "baptism / christening",
+          "pos": "n. n.",
+          "example": {
+            "target": "U nedjelju je krštenje naše kćeri.",
+            "gloss": "On Sunday is our daughter's christening."
+          }
+        },
+        {
+          "id": "sprovod",
+          "hr": "sprovod",
+          "en": "funeral",
+          "pos": "n. m.",
+          "note": "also: pogreb",
+          "example": {
+            "target": "Na sprovod je došlo cijelo selo.",
+            "gloss": "The whole village came to the funeral."
+          }
+        },
+        {
+          "id": "misa",
+          "hr": "misa",
+          "en": "mass (church service)",
+          "pos": "n. f.",
+          "note": "polnoćka = midnight Christmas mass",
+          "example": {
+            "target": "Baka svake nedjelje ide na misu.",
+            "gloss": "Grandma goes to mass every Sunday."
+          }
+        },
+        {
+          "id": "običaj",
+          "hr": "običaj",
+          "en": "custom",
+          "pos": "n. m.",
+          "example": {
+            "target": "Svaki kraj ima svoje stare običaje.",
+            "gloss": "Every region has its old customs."
+          }
+        },
+        {
+          "id": "tradicija",
+          "hr": "tradicija",
+          "en": "tradition",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ta tradicija je stara sto godina.",
+            "gloss": "That tradition is a hundred years old."
+          }
+        },
+        {
+          "id": "dar",
+          "hr": "dar",
+          "en": "gift / present",
+          "pos": "n. m.",
+          "note": "synonym: poklon",
+          "example": {
+            "target": "Hvala ti na prekrasnom daru!",
+            "gloss": "Thank you for the wonderful gift!"
+          }
+        },
+        {
+          "id": "poklanjati",
+          "hr": "poklanjati",
+          "en": "to give (as a gift)",
+          "pos": "v. impf.",
+          "note": "pf. pokloniti; + dat. of the receiver",
+          "example": {
+            "target": "Prijateljima uvijek poklanjam knjige.",
+            "gloss": "I always give my friends books as gifts."
+          }
+        },
+        {
+          "id": "čestitati",
+          "hr": "čestitati",
+          "en": "to congratulate",
+          "pos": "v. impf./pf.",
+          "note": "biaspectual; čestitati komu na čemu (dat. + na + loc.)",
+          "example": {
+            "target": "Čestitali smo sestri na diplomi.",
+            "gloss": "We congratulated my sister on her degree."
+          }
+        },
+        {
+          "id": "čestitka",
+          "hr": "čestitka",
+          "en": "greeting card / congratulations",
+          "pos": "n. f.",
+          "example": {
+            "target": "Poslali smo baki božićnu čestitku.",
+            "gloss": "We sent grandma a Christmas card."
+          }
+        },
+        {
+          "id": "sretan rođendan",
+          "hr": "Sretan rođendan!",
+          "en": "Happy birthday!",
+          "pos": "phrase",
+          "example": {
+            "target": "Sretan rođendan i sve najbolje!",
+            "gloss": "Happy birthday and all the best!"
+          }
+        },
+        {
+          "id": "slaviti",
+          "hr": "slaviti",
+          "en": "to celebrate",
+          "pos": "v. impf.",
+          "note": "pf. proslaviti",
+          "example": {
+            "target": "Večeras slavimo mamin rođendan.",
+            "gloss": "Tonight we are celebrating mum's birthday."
+          }
+        },
+        {
+          "id": "proslava",
+          "hr": "proslava",
+          "en": "celebration / party",
+          "pos": "n. f.",
+          "example": {
+            "target": "Proslava je bila u restoranu kraj mora.",
+            "gloss": "The celebration was in a restaurant by the sea."
+          }
+        },
+        {
+          "id": "nazdraviti",
+          "hr": "nazdraviti",
+          "en": "to toast / to raise a glass",
+          "pos": "v. pf.",
+          "note": "impf. nazdravljati; the toast itself: Živjeli!",
+          "example": {
+            "target": "Nazdravili smo mladencima šampanjcem.",
+            "gloss": "We toasted the newlyweds with champagne."
+          }
+        },
+        {
+          "id": "gost",
+          "hr": "gost",
+          "en": "guest",
+          "pos": "n. m.",
+          "note": "f. gošća; pl. gosti, gen. pl. gostiju",
+          "example": {
+            "target": "Gosti dolaze oko sedam sati.",
+            "gloss": "The guests are coming around seven o'clock."
+          }
+        },
+        {
+          "id": "domaćin",
+          "hr": "domaćin",
+          "en": "host",
+          "pos": "n. m.",
+          "note": "f. domaćica (also means housewife)",
+          "example": {
+            "target": "Domaćin je dočekao goste na vratima.",
+            "gloss": "The host welcomed the guests at the door."
+          }
+        },
+        {
+          "id": "rodbina",
+          "hr": "rodbina",
+          "en": "relatives (collective)",
+          "pos": "n. f.",
+          "note": "collective singular; one relative: rođak / rođakinja",
+          "example": {
+            "target": "Na svadbi je bila sva rodbina.",
+            "gloss": "All the relatives were at the wedding."
+          }
+        },
+        {
+          "id": "pozivnica",
+          "hr": "pozivnica",
+          "en": "invitation (card)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Pozivnice šaljemo mjesec dana ranije.",
+            "gloss": "We send the invitations a month in advance."
+          }
+        },
+        {
+          "id": "pozvati",
+          "hr": "pozvati",
+          "en": "to invite / to call",
+          "pos": "v. pf.",
+          "note": "impf. pozivati",
+          "example": {
+            "target": "Pozvali smo trideset gostiju.",
+            "gloss": "We invited thirty guests."
+          }
+        },
+        {
+          "id": "posjet",
+          "hr": "posjet",
+          "en": "visit",
+          "pos": "n. m.",
+          "note": "ići u posjet komu = to go visit somebody",
+          "example": {
+            "target": "Idemo u posjet djedu i baki.",
+            "gloss": "We are going to visit grandpa and grandma."
+          }
+        },
+        {
+          "id": "posjetiti",
+          "hr": "posjetiti",
+          "en": "to visit",
+          "pos": "v. pf.",
+          "note": "impf. posjećivati",
+          "example": {
+            "target": "Za blagdane ćemo posjetiti rodbinu.",
+            "gloss": "For the holidays we will visit our relatives."
+          }
+        },
+        {
+          "id": "okupiti se",
+          "hr": "okupiti se",
+          "en": "to gather / to get together",
+          "pos": "v. pf.",
+          "note": "impf. okupljati se",
+          "example": {
+            "target": "Cijela obitelj okupila se oko stola.",
+            "gloss": "The whole family gathered around the table."
+          }
+        },
+        {
+          "id": "torta",
+          "hr": "torta",
+          "en": "cake (layer cake)",
+          "pos": "n. f.",
+          "note": "smaller pastries: kolač",
+          "example": {
+            "target": "Mama je ispekla čokoladnu tortu.",
+            "gloss": "Mum baked a chocolate cake."
+          }
+        },
+        {
+          "id": "svijeća",
+          "hr": "svijeća",
+          "en": "candle",
+          "pos": "n. f.",
+          "example": {
+            "target": "Puhni svijeće i zaželi želju!",
+            "gloss": "Blow out the candles and make a wish!"
+          }
+        },
+        {
+          "id": "ukras",
+          "hr": "ukras",
+          "en": "decoration / ornament",
+          "pos": "n. m.",
+          "example": {
+            "target": "Kupili smo nove ukrase za bor.",
+            "gloss": "We bought new ornaments for the Christmas tree."
+          }
+        },
+        {
+          "id": "okititi",
+          "hr": "okititi",
+          "en": "to decorate (a tree, a room)",
+          "pos": "v. pf.",
+          "note": "impf. kititi",
+          "example": {
+            "target": "Okitili smo bor prije Badnjaka.",
+            "gloss": "We decorated the Christmas tree before Christmas Eve."
+          }
+        },
+        {
+          "id": "vatromet",
+          "hr": "vatromet",
+          "en": "fireworks",
+          "pos": "n. m.",
+          "example": {
+            "target": "U ponoć počinje veliki vatromet.",
+            "gloss": "At midnight the big fireworks begin."
+          }
+        },
+        {
+          "id": "maškare",
+          "hr": "maškare",
+          "en": "carnival / carnival masks",
+          "pos": "n. f. pl.",
+          "note": "the Rijeka carnival is the most famous in Croatia",
+          "example": {
+            "target": "Djeca se vesele maškarama u veljači.",
+            "gloss": "The children look forward to the carnival in February."
+          }
+        },
+        {
+          "id": "veselje",
+          "hr": "veselje",
+          "en": "joy / merriment",
+          "pos": "n. n.",
+          "example": {
+            "target": "U kući je vladalo veliko veselje.",
+            "gloss": "Great joy reigned in the house."
+          }
+        },
+        {
+          "id": "iznenađenje",
+          "hr": "iznenađenje",
+          "en": "surprise",
+          "pos": "n. n.",
+          "example": {
+            "target": "Priredili smo mu iznenađenje za rođendan.",
+            "gloss": "We prepared a surprise for his birthday."
+          }
+        },
+        {
+          "id": "balon",
+          "hr": "balon",
+          "en": "balloon",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ukrasili smo sobu šarenim balonima.",
+            "gloss": "We decorated the room with colourful balloons."
+          }
+        },
+        {
+          "id": "šampanjac",
+          "hr": "šampanjac",
+          "en": "champagne / sparkling wine",
+          "pos": "n. m.",
+          "note": "gen. šampanjca (fleeting a)",
+          "example": {
+            "target": "U ponoć otvaramo šampanjac.",
+            "gloss": "At midnight we open the champagne."
+          }
+        },
+        {
+          "id": "pjevati",
+          "hr": "pjevati",
+          "en": "to sing",
+          "pos": "v. impf.",
+          "note": "pf. otpjevati / zapjevati (start singing)",
+          "example": {
+            "target": "Na svadbi smo pjevali stare pjesme.",
+            "gloss": "At the wedding we sang old songs."
+          }
+        },
+        {
+          "id": "želja",
+          "hr": "želja",
+          "en": "wish",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ispunila mi se najveća želja.",
+            "gloss": "My biggest wish came true."
+          }
+        },
+        {
+          "id": "zaželjeti",
+          "hr": "zaželjeti",
+          "en": "to make a wish / to wish",
+          "pos": "v. pf.",
+          "note": "impf. željeti; zaželjeti želju = to make a wish",
+          "example": {
+            "target": "Zaželjela je želju i puhnula svijeće.",
+            "gloss": "She made a wish and blew out the candles."
+          }
+        },
+        {
+          "id": "slavljenik",
+          "hr": "slavljenik",
+          "en": "person celebrating (birthday boy/girl)",
+          "pos": "n. m.",
+          "note": "f. slavljenica",
+          "example": {
+            "target": "Slavljenik je dobio puno darova.",
+            "gloss": "The birthday boy got a lot of presents."
+          }
+        }
+      ]
+    }
+  ]
+}

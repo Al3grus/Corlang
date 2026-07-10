@@ -1,0 +1,2534 @@
+{
+  "packs": [
+    {
+      "id": "society-modern-life",
+      "title": "Society & modern life",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "društvo",
+          "hr": "društvo",
+          "en": "society; company (of people)",
+          "pos": "n. nt.",
+          "note": "also 'company/companionship': biti u društvu",
+          "example": {
+            "target": "Naše društvo se brzo mijenja.",
+            "gloss": "Our society is changing quickly."
+          }
+        },
+        {
+          "id": "zajednica",
+          "hr": "zajednica",
+          "en": "community",
+          "pos": "n. f.",
+          "example": {
+            "target": "Lokalna zajednica organizira pomoć starijim osobama.",
+            "gloss": "The local community organizes help for elderly people."
+          }
+        },
+        {
+          "id": "građanin",
+          "hr": "građanin",
+          "en": "citizen (male)",
+          "pos": "n. m.",
+          "note": "pl. građani (irregular: -anin > -ani)",
+          "example": {
+            "target": "Svaki građanin ima pravo na obrazovanje.",
+            "gloss": "Every citizen has the right to education."
+          }
+        },
+        {
+          "id": "građanka",
+          "hr": "građanka",
+          "en": "citizen (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ona je građanka Europske unije.",
+            "gloss": "She is a citizen of the European Union."
+          }
+        },
+        {
+          "id": "generacija",
+          "hr": "generacija",
+          "en": "generation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Mlađa generacija drukčije gleda na svijet.",
+            "gloss": "The younger generation sees the world differently."
+          }
+        },
+        {
+          "id": "mladi",
+          "hr": "mladi",
+          "en": "young people, the youth",
+          "pos": "n. pl.",
+          "note": "adjective used as a plural noun (m. pl.)",
+          "example": {
+            "target": "Mladi danas teško nalaze posao.",
+            "gloss": "Young people today have a hard time finding a job."
+          }
+        },
+        {
+          "id": "starije osobe",
+          "hr": "starije osobe",
+          "en": "elderly people, seniors",
+          "pos": "phrase",
+          "note": "polite term; also 'stariji ljudi'",
+          "example": {
+            "target": "Starije osobe često žive same.",
+            "gloss": "Elderly people often live alone."
+          }
+        },
+        {
+          "id": "susjedstvo",
+          "hr": "susjedstvo",
+          "en": "neighborhood",
+          "pos": "n. nt.",
+          "example": {
+            "target": "U našem susjedstvu svi se poznaju.",
+            "gloss": "In our neighborhood everyone knows each other."
+          }
+        },
+        {
+          "id": "odnos",
+          "hr": "odnos",
+          "en": "relationship, relation",
+          "pos": "n. m.",
+          "note": "pl. odnosi: međuljudski odnosi",
+          "example": {
+            "target": "Imam dobar odnos sa susjedima.",
+            "gloss": "I have a good relationship with my neighbors."
+          }
+        },
+        {
+          "id": "ravnopravnost",
+          "hr": "ravnopravnost",
+          "en": "equality (of rights)",
+          "pos": "n. f.",
+          "note": "ASOO theme 'Ravnopravni ili ne?'",
+          "example": {
+            "target": "Ravnopravnost žena i muškaraca još nije potpuna.",
+            "gloss": "Equality between women and men is still not complete."
+          }
+        },
+        {
+          "id": "nejednakost",
+          "hr": "nejednakost",
+          "en": "inequality",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nejednakost u društvu postaje sve veća.",
+            "gloss": "Inequality in society is becoming greater and greater."
+          }
+        },
+        {
+          "id": "jednak",
+          "hr": "jednak",
+          "en": "equal, the same",
+          "pos": "adj.",
+          "example": {
+            "target": "Svi ljudi trebaju imati jednake mogućnosti.",
+            "gloss": "All people should have equal opportunities."
+          }
+        },
+        {
+          "id": "različit",
+          "hr": "različit",
+          "en": "different, various",
+          "pos": "adj.",
+          "example": {
+            "target": "Ljudi imaju različita mišljenja o tome.",
+            "gloss": "People have different opinions about that."
+          }
+        },
+        {
+          "id": "pravo",
+          "hr": "pravo",
+          "en": "right (legal); law (as a field)",
+          "pos": "n. nt.",
+          "note": "pravo na + acc.: pravo na rad",
+          "example": {
+            "target": "Svi imaju pravo na slobodu govora.",
+            "gloss": "Everyone has the right to freedom of speech."
+          }
+        },
+        {
+          "id": "zakon",
+          "hr": "zakon",
+          "en": "law (statute)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Novi zakon vrijedi od prvog siječnja.",
+            "gloss": "The new law is valid from the first of January."
+          }
+        },
+        {
+          "id": "pravilo",
+          "hr": "pravilo",
+          "en": "rule",
+          "pos": "n. nt.",
+          "example": {
+            "target": "Svaka igra ima svoja pravila.",
+            "gloss": "Every game has its own rules."
+          }
+        },
+        {
+          "id": "pravda",
+          "hr": "pravda",
+          "en": "justice",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ljudi na prosvjedu traže pravdu.",
+            "gloss": "People at the protest are demanding justice."
+          }
+        },
+        {
+          "id": "vlada",
+          "hr": "vlada",
+          "en": "government",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vlada je najavila nove mjere.",
+            "gloss": "The government announced new measures."
+          }
+        },
+        {
+          "id": "izbori",
+          "hr": "izbori",
+          "en": "elections",
+          "pos": "n. pl.",
+          "note": "m. pl.; sg. izbor = choice",
+          "example": {
+            "target": "Izbori se održavaju svake četiri godine.",
+            "gloss": "Elections are held every four years."
+          }
+        },
+        {
+          "id": "glasovati",
+          "hr": "glasovati",
+          "en": "to vote",
+          "pos": "v. impf.",
+          "note": "biaspectual; also 'glasati'; glasovati za/protiv + gen.",
+          "example": {
+            "target": "Na izborima ću glasovati za promjene.",
+            "gloss": "In the elections I will vote for changes."
+          }
+        },
+        {
+          "id": "glas",
+          "hr": "glas",
+          "en": "voice; vote",
+          "pos": "n. m.",
+          "example": {
+            "target": "Kandidat je dobio najviše glasova.",
+            "gloss": "The candidate got the most votes."
+          }
+        },
+        {
+          "id": "birač",
+          "hr": "birač",
+          "en": "voter",
+          "pos": "n. m.",
+          "note": "f. biračica",
+          "example": {
+            "target": "Birači su jučer izašli na izbore u velikom broju.",
+            "gloss": "Voters turned out for the elections in large numbers yesterday."
+          }
+        },
+        {
+          "id": "politička stranka",
+          "hr": "politička stranka",
+          "en": "political party",
+          "pos": "phrase",
+          "note": "in context often just 'stranka'",
+          "example": {
+            "target": "Koja je politička stranka pobijedila na izborima?",
+            "gloss": "Which political party won the elections?"
+          }
+        },
+        {
+          "id": "političar",
+          "hr": "političar",
+          "en": "politician",
+          "pos": "n. m.",
+          "note": "f. političarka",
+          "example": {
+            "target": "Političari obećavaju puno prije izbora.",
+            "gloss": "Politicians promise a lot before elections."
+          }
+        },
+        {
+          "id": "politika",
+          "hr": "politika",
+          "en": "politics; policy",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ne volim razgovarati o politici.",
+            "gloss": "I don't like talking about politics."
+          }
+        },
+        {
+          "id": "predsjednik",
+          "hr": "predsjednik",
+          "en": "president",
+          "pos": "n. m.",
+          "note": "f. predsjednica",
+          "example": {
+            "target": "Predsjednik je održao govor o krizi.",
+            "gloss": "The president gave a speech about the crisis."
+          }
+        },
+        {
+          "id": "ministar",
+          "hr": "ministar",
+          "en": "minister (government)",
+          "pos": "n. m.",
+          "note": "f. ministrica; fleeting a: gen. ministra",
+          "example": {
+            "target": "Ministar zdravstva govorio je na televiziji.",
+            "gloss": "The minister of health spoke on television."
+          }
+        },
+        {
+          "id": "demokracija",
+          "hr": "demokracija",
+          "en": "democracy",
+          "pos": "n. f.",
+          "example": {
+            "target": "U demokraciji svatko ima pravo na svoje mišljenje.",
+            "gloss": "In a democracy everyone has the right to their own opinion."
+          }
+        },
+        {
+          "id": "proračun",
+          "hr": "proračun",
+          "en": "budget",
+          "pos": "n. m.",
+          "note": "gradski/državni proračun",
+          "example": {
+            "target": "Grad je povećao proračun za kulturu.",
+            "gloss": "The city increased the budget for culture."
+          }
+        },
+        {
+          "id": "kampanja",
+          "hr": "kampanja",
+          "en": "campaign",
+          "pos": "n. f.",
+          "example": {
+            "target": "Izborna kampanja počinje sljedeći mjesec.",
+            "gloss": "The election campaign starts next month."
+          }
+        },
+        {
+          "id": "kriza",
+          "hr": "kriza",
+          "en": "crisis",
+          "pos": "n. f.",
+          "example": {
+            "target": "Za vrijeme krize mnogi su izgubili posao.",
+            "gloss": "During the crisis many people lost their jobs."
+          }
+        },
+        {
+          "id": "prosvjed",
+          "hr": "prosvjed",
+          "en": "protest, demonstration",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'protest')",
+          "example": {
+            "target": "Tisuće ljudi izašle su na prosvjed.",
+            "gloss": "Thousands of people went out to the protest."
+          }
+        },
+        {
+          "id": "štrajk",
+          "hr": "štrajk",
+          "en": "strike (labor)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Učitelji su u štrajku već tjedan dana.",
+            "gloss": "The teachers have been on strike for a week already."
+          }
+        },
+        {
+          "id": "siromaštvo",
+          "hr": "siromaštvo",
+          "en": "poverty",
+          "pos": "n. nt.",
+          "note": "adj. siromašan = poor",
+          "example": {
+            "target": "Siromaštvo je velik problem u mnogim zemljama.",
+            "gloss": "Poverty is a big problem in many countries."
+          }
+        },
+        {
+          "id": "bogatstvo",
+          "hr": "bogatstvo",
+          "en": "wealth, richness",
+          "pos": "n. nt.",
+          "note": "adj. bogat = rich",
+          "example": {
+            "target": "Bogatstvo nije najvažnija stvar u životu.",
+            "gloss": "Wealth is not the most important thing in life."
+          }
+        },
+        {
+          "id": "ovisnost",
+          "hr": "ovisnost",
+          "en": "addiction, dependence",
+          "pos": "n. f.",
+          "note": "ASOO theme 'standard, ovisnosti'; ovisnost o + loc.",
+          "example": {
+            "target": "Ovisnost o mobitelu čest je problem kod mladih.",
+            "gloss": "Addiction to mobile phones is a common problem among young people."
+          }
+        },
+        {
+          "id": "navika",
+          "hr": "navika",
+          "en": "habit",
+          "pos": "n. f.",
+          "example": {
+            "target": "Teško je promijeniti loše navike.",
+            "gloss": "It is hard to change bad habits."
+          }
+        },
+        {
+          "id": "standard",
+          "hr": "standard",
+          "en": "standard (of living)",
+          "pos": "n. m.",
+          "note": "životni standard = standard of living",
+          "example": {
+            "target": "Životni standard u gradu je viši nego na selu.",
+            "gloss": "The standard of living in the city is higher than in the countryside."
+          }
+        },
+        {
+          "id": "potreba",
+          "hr": "potreba",
+          "en": "need",
+          "pos": "n. f.",
+          "example": {
+            "target": "Svatko ima potrebu za sigurnošću.",
+            "gloss": "Everyone has a need for security."
+          }
+        },
+        {
+          "id": "mogućnost",
+          "hr": "mogućnost",
+          "en": "possibility, opportunity",
+          "pos": "n. f.",
+          "example": {
+            "target": "U velikom gradu ima više mogućnosti za posao.",
+            "gloss": "In a big city there are more opportunities for work."
+          }
+        },
+        {
+          "id": "promjena",
+          "hr": "promjena",
+          "en": "change",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ljudi se često boje velikih promjena.",
+            "gloss": "People are often afraid of big changes."
+          }
+        },
+        {
+          "id": "poboljšavati",
+          "hr": "poboljšavati",
+          "en": "to improve (something, gradually)",
+          "pos": "v. impf.",
+          "note": "pf. poboljšati",
+          "example": {
+            "target": "Nove tehnologije poboljšavaju kvalitetu života.",
+            "gloss": "New technologies improve the quality of life."
+          }
+        },
+        {
+          "id": "poboljšati",
+          "hr": "poboljšati",
+          "en": "to improve (something, once)",
+          "pos": "v. pf.",
+          "note": "impf. poboljšavati; poboljšati se = to get better",
+          "example": {
+            "target": "Vlada obećava da će poboljšati zdravstveni sustav.",
+            "gloss": "The government promises to improve the healthcare system."
+          }
+        },
+        {
+          "id": "razvoj",
+          "hr": "razvoj",
+          "en": "development",
+          "pos": "n. m.",
+          "example": {
+            "target": "Turizam je važan za razvoj naše regije.",
+            "gloss": "Tourism is important for the development of our region."
+          }
+        },
+        {
+          "id": "problem",
+          "hr": "problem",
+          "en": "problem",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nezaposlenost je ozbiljan problem u ovoj regiji.",
+            "gloss": "Unemployment is a serious problem in this region."
+          }
+        },
+        {
+          "id": "rješavati",
+          "hr": "rješavati",
+          "en": "to solve, to deal with",
+          "pos": "v. impf.",
+          "note": "pf. riješiti",
+          "example": {
+            "target": "Probleme treba rješavati razgovorom.",
+            "gloss": "Problems should be solved through conversation."
+          }
+        },
+        {
+          "id": "riješiti",
+          "hr": "riješiti",
+          "en": "to solve (once)",
+          "pos": "v. pf.",
+          "note": "impf. rješavati",
+          "example": {
+            "target": "Grad je konačno riješio problem parkiranja.",
+            "gloss": "The city finally solved the parking problem."
+          }
+        },
+        {
+          "id": "sudjelovati",
+          "hr": "sudjelovati",
+          "en": "to participate",
+          "pos": "v. impf.",
+          "note": "impf. only; sudjelovati u + loc.",
+          "example": {
+            "target": "Sudjelovala sam u humanitarnoj akciji.",
+            "gloss": "I participated in a humanitarian campaign."
+          }
+        },
+        {
+          "id": "udruga",
+          "hr": "udruga",
+          "en": "association, NGO",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'udruženje')",
+          "example": {
+            "target": "Radim kao volonter u udruzi za zaštitu životinja.",
+            "gloss": "I work as a volunteer in an animal protection association."
+          }
+        },
+        {
+          "id": "volonter",
+          "hr": "volonter",
+          "en": "volunteer",
+          "pos": "n. m.",
+          "note": "f. volonterka; verb: volontirati",
+          "example": {
+            "target": "Volonteri pomažu starijim osobama u kvartu.",
+            "gloss": "Volunteers help elderly people in the neighborhood."
+          }
+        },
+        {
+          "id": "sloboda",
+          "hr": "sloboda",
+          "en": "freedom",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sloboda govora temelj je demokracije.",
+            "gloss": "Freedom of speech is the foundation of democracy."
+          }
+        },
+        {
+          "id": "mir",
+          "hr": "mir",
+          "en": "peace",
+          "pos": "n. m.",
+          "example": {
+            "target": "Svi želimo živjeti u miru.",
+            "gloss": "We all want to live in peace."
+          }
+        },
+        {
+          "id": "rat",
+          "hr": "rat",
+          "en": "war",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mnogi su zbog rata napustili svoju zemlju.",
+            "gloss": "Many people left their country because of the war."
+          }
+        },
+        {
+          "id": "nasilje",
+          "hr": "nasilje",
+          "en": "violence",
+          "pos": "n. nt.",
+          "note": "nasilje nad + instr.",
+          "example": {
+            "target": "Nasilje u školama ozbiljna je tema.",
+            "gloss": "Violence in schools is a serious topic."
+          }
+        },
+        {
+          "id": "izbjeglica",
+          "hr": "izbjeglica",
+          "en": "refugee",
+          "pos": "n. f.",
+          "note": "f. declension but can refer to men and women",
+          "example": {
+            "target": "Izbjeglice su dobile smještaj u našem gradu.",
+            "gloss": "The refugees were given accommodation in our town."
+          }
+        },
+        {
+          "id": "manjina",
+          "hr": "manjina",
+          "en": "minority",
+          "pos": "n. f.",
+          "example": {
+            "target": "U Hrvatskoj žive brojne nacionalne manjine.",
+            "gloss": "Numerous national minorities live in Croatia."
+          }
+        },
+        {
+          "id": "većina",
+          "hr": "većina",
+          "en": "majority",
+          "pos": "n. f.",
+          "note": "većina + gen.: većina ljudi",
+          "example": {
+            "target": "Većina ljudi podupire tu ideju.",
+            "gloss": "The majority of people support that idea."
+          }
+        },
+        {
+          "id": "spol",
+          "hr": "spol",
+          "en": "sex, gender",
+          "pos": "n. m.",
+          "example": {
+            "target": "Plaća ne smije ovisiti o spolu.",
+            "gloss": "Salary must not depend on gender."
+          }
+        },
+        {
+          "id": "diskriminacija",
+          "hr": "diskriminacija",
+          "en": "discrimination",
+          "pos": "n. f.",
+          "example": {
+            "target": "Diskriminacija na poslu zabranjena je zakonom.",
+            "gloss": "Discrimination at work is forbidden by law."
+          }
+        },
+        {
+          "id": "svakodnevica",
+          "hr": "svakodnevica",
+          "en": "everyday life",
+          "pos": "n. f.",
+          "example": {
+            "target": "Internet je postao dio naše svakodnevice.",
+            "gloss": "The internet has become part of our everyday life."
+          }
+        }
+      ]
+    },
+    {
+      "id": "media-communication",
+      "title": "Media & communication",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "mediji",
+          "hr": "mediji",
+          "en": "the media",
+          "pos": "n. pl.",
+          "note": "m. pl.; sg. medij",
+          "example": {
+            "target": "Mediji imaju velik utjecaj na javnost.",
+            "gloss": "The media have a big influence on the public."
+          }
+        },
+        {
+          "id": "javnost",
+          "hr": "javnost",
+          "en": "the public",
+          "pos": "n. f.",
+          "example": {
+            "target": "Javnost još ne zna sve detalje.",
+            "gloss": "The public does not yet know all the details."
+          }
+        },
+        {
+          "id": "novinarka",
+          "hr": "novinarka",
+          "en": "journalist (female)",
+          "pos": "n. f.",
+          "note": "m. novinar",
+          "example": {
+            "target": "Novinarka je postavila teško pitanje ministru.",
+            "gloss": "The journalist asked the minister a difficult question."
+          }
+        },
+        {
+          "id": "izvještaj",
+          "hr": "izvještaj",
+          "en": "report",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pročitao sam izvještaj o stanju na cestama.",
+            "gloss": "I read the report on the state of the roads."
+          }
+        },
+        {
+          "id": "naslov",
+          "hr": "naslov",
+          "en": "title, headline",
+          "pos": "n. m.",
+          "example": {
+            "target": "Naslov članka privukao mi je pažnju.",
+            "gloss": "The headline of the article caught my attention."
+          }
+        },
+        {
+          "id": "naslovnica",
+          "hr": "naslovnica",
+          "en": "front page, cover",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ta je vijest na naslovnici svih novina.",
+            "gloss": "That news is on the front page of all the newspapers."
+          }
+        },
+        {
+          "id": "članak",
+          "hr": "članak",
+          "en": "article",
+          "pos": "n. m.",
+          "note": "fleeting a: gen. članka",
+          "example": {
+            "target": "Jučer sam pročitala zanimljiv članak o zdravlju.",
+            "gloss": "Yesterday I read an interesting article about health."
+          }
+        },
+        {
+          "id": "rubrika",
+          "hr": "rubrika",
+          "en": "section, column (in a paper)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uvijek prvo čitam sportsku rubriku.",
+            "gloss": "I always read the sports section first."
+          }
+        },
+        {
+          "id": "oglašavanje",
+          "hr": "oglašavanje",
+          "en": "advertising",
+          "pos": "n. nt.",
+          "example": {
+            "target": "Oglašavanje na internetu jeftinije je od televizijskog.",
+            "gloss": "Advertising on the internet is cheaper than on television."
+          }
+        },
+        {
+          "id": "reklama",
+          "hr": "reklama",
+          "en": "advertisement, commercial",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na televiziji ima previše reklama.",
+            "gloss": "There are too many commercials on television."
+          }
+        },
+        {
+          "id": "publika",
+          "hr": "publika",
+          "en": "audience",
+          "pos": "n. f.",
+          "example": {
+            "target": "Publika je dugo pljeskala nakon emisije.",
+            "gloss": "The audience applauded for a long time after the show."
+          }
+        },
+        {
+          "id": "gledatelj",
+          "hr": "gledatelj",
+          "en": "viewer",
+          "pos": "n. m.",
+          "note": "f. gledateljica",
+          "example": {
+            "target": "Milijuni gledatelja pratili su utakmicu.",
+            "gloss": "Millions of viewers followed the match."
+          }
+        },
+        {
+          "id": "slušatelj",
+          "hr": "slušatelj",
+          "en": "listener",
+          "pos": "n. m.",
+          "note": "f. slušateljica",
+          "example": {
+            "target": "Slušatelji mogu nazvati radio i postaviti pitanje.",
+            "gloss": "Listeners can call the radio station and ask a question."
+          }
+        },
+        {
+          "id": "čitatelj",
+          "hr": "čitatelj",
+          "en": "reader",
+          "pos": "n. m.",
+          "note": "f. čitateljica",
+          "example": {
+            "target": "Časopis ima vjerne čitatelje.",
+            "gloss": "The magazine has loyal readers."
+          }
+        },
+        {
+          "id": "emisija",
+          "hr": "emisija",
+          "en": "(TV/radio) show, program",
+          "pos": "n. f.",
+          "example": {
+            "target": "Svako jutro slušam emisiju o kulturi.",
+            "gloss": "Every morning I listen to a program about culture."
+          }
+        },
+        {
+          "id": "serija",
+          "hr": "serija",
+          "en": "TV series",
+          "pos": "n. f.",
+          "example": {
+            "target": "Gledamo novu seriju svaki petak navečer.",
+            "gloss": "We watch the new series every Friday evening."
+          }
+        },
+        {
+          "id": "epizoda",
+          "hr": "epizoda",
+          "en": "episode",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nisam vidjela zadnju epizodu, nemoj mi ništa reći!",
+            "gloss": "I haven't seen the last episode, don't tell me anything!"
+          }
+        },
+        {
+          "id": "intervju",
+          "hr": "intervju",
+          "en": "interview (media)",
+          "pos": "n. m.",
+          "note": "for a job interview use 'razgovor za posao'",
+          "example": {
+            "target": "Glumica je dala intervju za naš časopis.",
+            "gloss": "The actress gave an interview for our magazine."
+          }
+        },
+        {
+          "id": "izjava",
+          "hr": "izjava",
+          "en": "statement",
+          "pos": "n. f.",
+          "example": {
+            "target": "Njegova izjava izazvala je burne reakcije.",
+            "gloss": "His statement caused heated reactions."
+          }
+        },
+        {
+          "id": "komentar",
+          "hr": "komentar",
+          "en": "comment",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ispod članka ima stotinu komentara.",
+            "gloss": "There are a hundred comments below the article."
+          }
+        },
+        {
+          "id": "komentirati",
+          "hr": "komentirati",
+          "en": "to comment",
+          "pos": "v. impf.",
+          "note": "biaspectual (-irati verb)",
+          "example": {
+            "target": "Ministar nije htio komentirati odluku.",
+            "gloss": "The minister did not want to comment on the decision."
+          }
+        },
+        {
+          "id": "objava",
+          "hr": "objava",
+          "en": "post, announcement",
+          "pos": "n. f.",
+          "example": {
+            "target": "Njezina objava dobila je tisuću lajkova.",
+            "gloss": "Her post got a thousand likes."
+          }
+        },
+        {
+          "id": "društvene mreže",
+          "hr": "društvene mreže",
+          "en": "social networks, social media",
+          "pos": "phrase",
+          "note": "sg. društvena mreža",
+          "example": {
+            "target": "Mladi provode puno vremena na društvenim mrežama.",
+            "gloss": "Young people spend a lot of time on social networks."
+          }
+        },
+        {
+          "id": "profil",
+          "hr": "profil",
+          "en": "profile (online)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Obrisao je svoj profil na svim mrežama.",
+            "gloss": "He deleted his profile on all networks."
+          }
+        },
+        {
+          "id": "pratitelj",
+          "hr": "pratitelj",
+          "en": "follower (online)",
+          "pos": "n. m.",
+          "note": "f. pratiteljica",
+          "example": {
+            "target": "Ona ima više od sto tisuća pratitelja.",
+            "gloss": "She has more than a hundred thousand followers."
+          }
+        },
+        {
+          "id": "pratiti",
+          "hr": "pratiti",
+          "en": "to follow (news, a person online)",
+          "pos": "v. impf.",
+          "note": "impf. only in this sense; pf. popratiti = to accompany with",
+          "example": {
+            "target": "Pratim vijesti svaki dan na mobitelu.",
+            "gloss": "I follow the news every day on my phone."
+          }
+        },
+        {
+          "id": "dijeliti",
+          "hr": "dijeliti",
+          "en": "to share; to divide",
+          "pos": "v. impf.",
+          "note": "pf. podijeliti",
+          "example": {
+            "target": "Ne volim dijeliti privatne fotografije na internetu.",
+            "gloss": "I don't like sharing private photos on the internet."
+          }
+        },
+        {
+          "id": "podijeliti",
+          "hr": "podijeliti",
+          "en": "to share (once); to divide up",
+          "pos": "v. pf.",
+          "note": "impf. dijeliti",
+          "example": {
+            "target": "Podijelila je članak sa svojim prijateljima.",
+            "gloss": "She shared the article with her friends."
+          }
+        },
+        {
+          "id": "objavljivati",
+          "hr": "objavljivati",
+          "en": "to publish, to post (repeatedly)",
+          "pos": "v. impf.",
+          "note": "pf. objaviti",
+          "example": {
+            "target": "Portal objavljuje vijesti svakih pet minuta.",
+            "gloss": "The portal publishes news every five minutes."
+          }
+        },
+        {
+          "id": "objaviti",
+          "hr": "objaviti",
+          "en": "to publish, to post (once)",
+          "pos": "v. pf.",
+          "note": "impf. objavljivati",
+          "example": {
+            "target": "Novine su objavile rezultate istraživanja.",
+            "gloss": "The newspaper published the results of the survey."
+          }
+        },
+        {
+          "id": "lažne vijesti",
+          "hr": "lažne vijesti",
+          "en": "fake news",
+          "pos": "phrase",
+          "note": "sg. lažna vijest",
+          "example": {
+            "target": "Lažne vijesti šire se brže od istinitih.",
+            "gloss": "Fake news spreads faster than true news."
+          }
+        },
+        {
+          "id": "izvor",
+          "hr": "izvor",
+          "en": "source",
+          "pos": "n. m.",
+          "note": "also 'spring (of water)'",
+          "example": {
+            "target": "Dobar novinar uvijek provjerava svoje izvore.",
+            "gloss": "A good journalist always checks their sources."
+          }
+        },
+        {
+          "id": "povjerenje",
+          "hr": "povjerenje",
+          "en": "trust, confidence",
+          "pos": "n. nt.",
+          "note": "povjerenje u + acc.",
+          "example": {
+            "target": "Povjerenje u medije zadnjih godina pada.",
+            "gloss": "Trust in the media has been falling in recent years."
+          }
+        },
+        {
+          "id": "vjerovati",
+          "hr": "vjerovati",
+          "en": "to believe",
+          "pos": "v. impf.",
+          "note": "pf. povjerovati; vjerovati + dat.",
+          "example": {
+            "target": "Ne vjerujem svemu što pročitam na internetu.",
+            "gloss": "I don't believe everything I read on the internet."
+          }
+        },
+        {
+          "id": "povjerovati",
+          "hr": "povjerovati",
+          "en": "to believe (come to believe)",
+          "pos": "v. pf.",
+          "note": "impf. vjerovati",
+          "example": {
+            "target": "Mnogi su povjerovali toj lažnoj vijesti.",
+            "gloss": "Many people believed that fake news."
+          }
+        },
+        {
+          "id": "utjecaj",
+          "hr": "utjecaj",
+          "en": "influence, impact",
+          "pos": "n. m.",
+          "note": "utjecaj na + acc.",
+          "example": {
+            "target": "Reklame imaju velik utjecaj na djecu.",
+            "gloss": "Advertisements have a big influence on children."
+          }
+        },
+        {
+          "id": "utjecati",
+          "hr": "utjecati",
+          "en": "to influence",
+          "pos": "v. impf.",
+          "note": "impf. only; utjecati na + acc.",
+          "example": {
+            "target": "Mediji utječu na mišljenje ljudi.",
+            "gloss": "The media influence people's opinions."
+          }
+        },
+        {
+          "id": "informacija",
+          "hr": "informacija",
+          "en": "(piece of) information",
+          "pos": "n. f.",
+          "note": "countable in Croatian: jedna informacija, dvije informacije",
+          "example": {
+            "target": "Gdje mogu dobiti više informacija o tečaju?",
+            "gloss": "Where can I get more information about the course?"
+          }
+        },
+        {
+          "id": "obavijestiti",
+          "hr": "obavijestiti",
+          "en": "to inform, to notify (once)",
+          "pos": "v. pf.",
+          "note": "impf. obavještavati; obavijestiti koga o čemu",
+          "example": {
+            "target": "Obavijestili su nas o promjeni termina.",
+            "gloss": "They informed us about the change of date."
+          }
+        },
+        {
+          "id": "obavještavati",
+          "hr": "obavještavati",
+          "en": "to inform, to notify (regularly)",
+          "pos": "v. impf.",
+          "note": "pf. obavijestiti",
+          "example": {
+            "target": "Radio nas obavještava o stanju u prometu.",
+            "gloss": "The radio keeps us informed about the traffic situation."
+          }
+        },
+        {
+          "id": "provjeriti",
+          "hr": "provjeriti",
+          "en": "to check, to verify (once)",
+          "pos": "v. pf.",
+          "note": "impf. provjeravati",
+          "example": {
+            "target": "Prije dijeljenja vijesti provjeri izvor.",
+            "gloss": "Before sharing news, check the source."
+          }
+        },
+        {
+          "id": "provjeravati",
+          "hr": "provjeravati",
+          "en": "to check, to verify (regularly)",
+          "pos": "v. impf.",
+          "note": "pf. provjeriti",
+          "example": {
+            "target": "Provjeravam e-poštu nekoliko puta dnevno.",
+            "gloss": "I check my email several times a day."
+          }
+        },
+        {
+          "id": "tisak",
+          "hr": "tisak",
+          "en": "the press; print",
+          "pos": "n. m.",
+          "note": "fleeting a: gen. tiska; distinctly Croatian (vs 'štampa')",
+          "example": {
+            "target": "Ta priča je već tjednima u tisku.",
+            "gloss": "That story has been in the press for weeks."
+          }
+        },
+        {
+          "id": "reportaža",
+          "hr": "reportaža",
+          "en": "(news) report, feature story",
+          "pos": "n. f.",
+          "example": {
+            "target": "Gledali smo reportažu o životu na otocima.",
+            "gloss": "We watched a feature story about life on the islands."
+          }
+        },
+        {
+          "id": "urednik",
+          "hr": "urednik",
+          "en": "editor",
+          "pos": "n. m.",
+          "note": "f. urednica",
+          "example": {
+            "target": "Urednik odlučuje što ide na naslovnicu.",
+            "gloss": "The editor decides what goes on the front page."
+          }
+        },
+        {
+          "id": "portal",
+          "hr": "portal",
+          "en": "(news) portal, website",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vijesti čitam na nekoliko portala.",
+            "gloss": "I read the news on several portals."
+          }
+        },
+        {
+          "id": "kanal",
+          "hr": "kanal",
+          "en": "channel",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na kojem kanalu je utakmica večeras?",
+            "gloss": "On which channel is the match tonight?"
+          }
+        },
+        {
+          "id": "prijenos",
+          "hr": "prijenos",
+          "en": "broadcast, transmission",
+          "pos": "n. m.",
+          "note": "izravni prijenos = live broadcast",
+          "example": {
+            "target": "Gledali smo izravni prijenos koncerta.",
+            "gloss": "We watched the live broadcast of the concert."
+          }
+        },
+        {
+          "id": "uživo",
+          "hr": "uživo",
+          "en": "live (broadcast)",
+          "pos": "adv.",
+          "example": {
+            "target": "Emisija se prenosi uživo iz Zagreba.",
+            "gloss": "The show is broadcast live from Zagreb."
+          }
+        },
+        {
+          "id": "snimati",
+          "hr": "snimati",
+          "en": "to record, to film",
+          "pos": "v. impf.",
+          "note": "pf. snimiti",
+          "example": {
+            "target": "Ovdje snimaju novu seriju.",
+            "gloss": "They are filming a new series here."
+          }
+        },
+        {
+          "id": "snimiti",
+          "hr": "snimiti",
+          "en": "to record, to film (once)",
+          "pos": "v. pf.",
+          "note": "impf. snimati",
+          "example": {
+            "target": "Snimila sam kratki video za društvene mreže.",
+            "gloss": "I recorded a short video for social media."
+          }
+        },
+        {
+          "id": "snimka",
+          "hr": "snimka",
+          "en": "recording, video clip",
+          "pos": "n. f.",
+          "example": {
+            "target": "Snimka razgovora pojavila se na internetu.",
+            "gloss": "A recording of the conversation appeared on the internet."
+          }
+        },
+        {
+          "id": "kamera",
+          "hr": "kamera",
+          "en": "camera (video)",
+          "pos": "n. f.",
+          "note": "photo camera = fotoaparat",
+          "example": {
+            "target": "Ispred zgrade su postavili kamere.",
+            "gloss": "They installed cameras in front of the building."
+          }
+        },
+        {
+          "id": "pretplata",
+          "hr": "pretplata",
+          "en": "subscription",
+          "pos": "n. f.",
+          "note": "pretplata na + acc.",
+          "example": {
+            "target": "Otkazao sam pretplatu na taj časopis.",
+            "gloss": "I cancelled my subscription to that magazine."
+          }
+        },
+        {
+          "id": "cenzura",
+          "hr": "cenzura",
+          "en": "censorship",
+          "pos": "n. f.",
+          "example": {
+            "target": "U slobodnim medijima nema mjesta za cenzuru.",
+            "gloss": "In free media there is no place for censorship."
+          }
+        },
+        {
+          "id": "poznat",
+          "hr": "poznat",
+          "en": "well-known, famous",
+          "pos": "adj.",
+          "note": "poznat po + loc.: poznat po dobrim intervjuima",
+          "example": {
+            "target": "Ona je poznata voditeljica na nacionalnoj televiziji.",
+            "gloss": "She is a well-known presenter on national television."
+          }
+        },
+        {
+          "id": "slavan",
+          "hr": "slavan",
+          "en": "famous, celebrated",
+          "pos": "adj.",
+          "note": "fleeting a: f. slavna",
+          "example": {
+            "target": "Nakon te serije glumac je postao slavan.",
+            "gloss": "After that series the actor became famous."
+          }
+        }
+      ]
+    },
+    {
+      "id": "work-market-cv",
+      "title": "Work, job market & CV",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "tržište",
+          "hr": "tržište",
+          "en": "market (economic)",
+          "pos": "n. nt.",
+          "note": "tržište rada = labor market; marketplace = tržnica",
+          "example": {
+            "target": "Na tržištu rada traže se programeri.",
+            "gloss": "Programmers are in demand on the labor market."
+          }
+        },
+        {
+          "id": "prijavljivati se",
+          "hr": "prijavljivati se",
+          "en": "to apply, to register (repeatedly)",
+          "pos": "v. impf.",
+          "note": "pf. prijaviti se; prijavljivati se na natječaj / za posao",
+          "example": {
+            "target": "Već mjesecima se prijavljujem na razne natječaje.",
+            "gloss": "I have been applying to various postings for months."
+          }
+        },
+        {
+          "id": "zamolba",
+          "hr": "zamolba",
+          "en": "cover letter, formal request",
+          "pos": "n. f.",
+          "note": "the usual word in Croatian job applications; cf. molba",
+          "example": {
+            "target": "U zamolbi objasnite zašto želite raditi kod nas.",
+            "gloss": "In the cover letter, explain why you want to work with us."
+          }
+        },
+        {
+          "id": "preporuka",
+          "hr": "preporuka",
+          "en": "recommendation, reference",
+          "pos": "n. f.",
+          "example": {
+            "target": "Bivši šef napisao mi je odličnu preporuku.",
+            "gloss": "My former boss wrote me an excellent recommendation."
+          }
+        },
+        {
+          "id": "kvalifikacija",
+          "hr": "kvalifikacija",
+          "en": "qualification",
+          "pos": "n. f.",
+          "example": {
+            "target": "Za ovaj posao nemam sve potrebne kvalifikacije.",
+            "gloss": "I don't have all the necessary qualifications for this job."
+          }
+        },
+        {
+          "id": "stručna sprema",
+          "hr": "stručna sprema",
+          "en": "level of professional education",
+          "pos": "phrase",
+          "note": "SSS = srednja, VSS = visoka stručna sprema; standard on Croatian job ads",
+          "example": {
+            "target": "Traži se kandidat s visokom stručnom spremom.",
+            "gloss": "A candidate with a university degree is sought."
+          }
+        },
+        {
+          "id": "usavršavanje",
+          "hr": "usavršavanje",
+          "en": "professional development, further training",
+          "pos": "n. nt.",
+          "example": {
+            "target": "Tvrtka nudi stalno usavršavanje zaposlenika.",
+            "gloss": "The company offers continuous professional development for employees."
+          }
+        },
+        {
+          "id": "pripravnik",
+          "hr": "pripravnik",
+          "en": "trainee, intern",
+          "pos": "n. m.",
+          "note": "f. pripravnica",
+          "example": {
+            "target": "Radi kao pripravnik u odvjetničkom uredu.",
+            "gloss": "He works as a trainee in a law office."
+          }
+        },
+        {
+          "id": "probni rok",
+          "hr": "probni rok",
+          "en": "probation period",
+          "pos": "phrase",
+          "example": {
+            "target": "Probni rok traje tri mjeseca.",
+            "gloss": "The probation period lasts three months."
+          }
+        },
+        {
+          "id": "potpisivati",
+          "hr": "potpisivati",
+          "en": "to sign (repeatedly)",
+          "pos": "v. impf.",
+          "note": "pf. potpisati",
+          "example": {
+            "target": "Ne potpisuj ništa dok ne pročitaš uvjete.",
+            "gloss": "Don't sign anything until you read the conditions."
+          }
+        },
+        {
+          "id": "dodatak",
+          "hr": "dodatak",
+          "en": "bonus, allowance, supplement",
+          "pos": "n. m.",
+          "note": "fleeting a: gen. dodatka",
+          "example": {
+            "target": "Za rad nedjeljom dobivamo dodatak na plaću.",
+            "gloss": "For working on Sundays we get a salary supplement."
+          }
+        },
+        {
+          "id": "božićnica",
+          "hr": "božićnica",
+          "en": "Christmas bonus",
+          "pos": "n. f.",
+          "note": "very common in Croatian work culture; cf. regres (holiday bonus)",
+          "example": {
+            "target": "Ove godine svi radnici dobivaju božićnicu.",
+            "gloss": "This year all workers are getting a Christmas bonus."
+          }
+        },
+        {
+          "id": "satnica",
+          "hr": "satnica",
+          "en": "hourly rate; timetable",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kolika je satnica za ovaj posao?",
+            "gloss": "What is the hourly rate for this job?"
+          }
+        },
+        {
+          "id": "neto",
+          "hr": "neto",
+          "en": "net (salary)",
+          "pos": "adj.",
+          "note": "indeclinable; opp. bruto",
+          "example": {
+            "target": "Neto plaća je iznos koji dobiješ na račun.",
+            "gloss": "Net salary is the amount you receive in your account."
+          }
+        },
+        {
+          "id": "bruto",
+          "hr": "bruto",
+          "en": "gross (salary)",
+          "pos": "adj.",
+          "note": "indeclinable; opp. neto",
+          "example": {
+            "target": "U oglasu je navedena bruto plaća.",
+            "gloss": "The gross salary is stated in the ad."
+          }
+        },
+        {
+          "id": "primanja",
+          "hr": "primanja",
+          "en": "income, earnings",
+          "pos": "n. pl.",
+          "note": "nt. pl.: mjesečna primanja",
+          "example": {
+            "target": "Mjesečna primanja nisu mi dovoljna za život u Zagrebu.",
+            "gloss": "My monthly income is not enough for living in Zagreb."
+          }
+        },
+        {
+          "id": "timski rad",
+          "hr": "timski rad",
+          "en": "teamwork",
+          "pos": "phrase",
+          "example": {
+            "target": "Za ovaj posao važan je timski rad.",
+            "gloss": "Teamwork is important for this job."
+          }
+        },
+        {
+          "id": "prezentacija",
+          "hr": "prezentacija",
+          "en": "presentation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sutra držim prezentaciju pred cijelim timom.",
+            "gloss": "Tomorrow I'm giving a presentation in front of the whole team."
+          }
+        },
+        {
+          "id": "pregovori",
+          "hr": "pregovori",
+          "en": "negotiations",
+          "pos": "n. pl.",
+          "note": "m. pl.; usually plural",
+          "example": {
+            "target": "Pregovori o plaći trajali su dva sata.",
+            "gloss": "The salary negotiations lasted two hours."
+          }
+        },
+        {
+          "id": "pregovarati",
+          "hr": "pregovarati",
+          "en": "to negotiate",
+          "pos": "v. impf.",
+          "note": "impf. only; pregovarati o + loc.",
+          "example": {
+            "target": "Sindikat pregovara s vladom o plaćama.",
+            "gloss": "The union is negotiating with the government about salaries."
+          }
+        },
+        {
+          "id": "povišica",
+          "hr": "povišica",
+          "en": "(pay) raise",
+          "pos": "n. f.",
+          "note": "tražiti povišicu = to ask for a raise",
+          "example": {
+            "target": "Nakon godinu dana zatražio sam povišicu.",
+            "gloss": "After a year I asked for a raise."
+          }
+        },
+        {
+          "id": "napredak",
+          "hr": "napredak",
+          "en": "progress",
+          "pos": "n. m.",
+          "note": "fleeting a: gen. napretka",
+          "example": {
+            "target": "U zadnjih godinu dana vidim velik napredak.",
+            "gloss": "In the last year I see great progress."
+          }
+        },
+        {
+          "id": "struka",
+          "hr": "struka",
+          "en": "profession, field of expertise",
+          "pos": "n. f.",
+          "note": "raditi u struci = to work in one's field",
+          "example": {
+            "target": "Teško je naći posao u struci.",
+            "gloss": "It is hard to find a job in one's own field."
+          }
+        },
+        {
+          "id": "poduzeće",
+          "hr": "poduzeće",
+          "en": "company, enterprise",
+          "pos": "n. nt.",
+          "note": "synonym of tvrtka",
+          "example": {
+            "target": "Radi u malom obiteljskom poduzeću.",
+            "gloss": "He works in a small family business."
+          }
+        },
+        {
+          "id": "kolegica",
+          "hr": "kolegica",
+          "en": "colleague (female)",
+          "pos": "n. f.",
+          "note": "m. kolega",
+          "example": {
+            "target": "Moja kolegica radi ovdje već deset godina.",
+            "gloss": "My colleague has been working here for ten years already."
+          }
+        },
+        {
+          "id": "mentor",
+          "hr": "mentor",
+          "en": "mentor",
+          "pos": "n. m.",
+          "note": "f. mentorica",
+          "example": {
+            "target": "Svaki pripravnik dobiva svog mentora.",
+            "gloss": "Every trainee gets their own mentor."
+          }
+        },
+        {
+          "id": "radionica",
+          "hr": "radionica",
+          "en": "workshop",
+          "pos": "n. f.",
+          "note": "both a training session and a repair shop",
+          "example": {
+            "target": "Prijavila sam se na radionicu o pisanju životopisa.",
+            "gloss": "I signed up for a workshop on CV writing."
+          }
+        },
+        {
+          "id": "poslovni",
+          "hr": "poslovni",
+          "en": "business (adj.)",
+          "pos": "adj.",
+          "note": "poslovni put = business trip; poslovni sastanak = business meeting",
+          "example": {
+            "target": "Sljedeći tjedan idem na poslovni put u Njemačku.",
+            "gloss": "Next week I'm going on a business trip to Germany."
+          }
+        },
+        {
+          "id": "strani jezik",
+          "hr": "strani jezik",
+          "en": "foreign language",
+          "pos": "phrase",
+          "example": {
+            "target": "Znanje stranih jezika velika je prednost.",
+            "gloss": "Knowledge of foreign languages is a big advantage."
+          }
+        },
+        {
+          "id": "rad od kuće",
+          "hr": "rad od kuće",
+          "en": "working from home",
+          "pos": "phrase",
+          "note": "also 'rad na daljinu' (remote work)",
+          "example": {
+            "target": "Rad od kuće ima prednosti i nedostatke.",
+            "gloss": "Working from home has advantages and disadvantages."
+          }
+        },
+        {
+          "id": "sezonski posao",
+          "hr": "sezonski posao",
+          "en": "seasonal job",
+          "pos": "phrase",
+          "note": "very common in Croatian tourism",
+          "example": {
+            "target": "Ljeti mnogi studenti rade sezonske poslove na moru.",
+            "gloss": "In the summer many students work seasonal jobs at the seaside."
+          }
+        },
+        {
+          "id": "prilika",
+          "hr": "prilika",
+          "en": "opportunity, chance",
+          "pos": "n. f.",
+          "note": "prilika za + acc.",
+          "example": {
+            "target": "Ovo je odlična prilika za razvoj karijere.",
+            "gloss": "This is an excellent opportunity for career development."
+          }
+        },
+        {
+          "id": "neuspjeh",
+          "hr": "neuspjeh",
+          "en": "failure",
+          "pos": "n. m.",
+          "note": "opp. uspjeh",
+          "example": {
+            "target": "Ne boj se neuspjeha, iz njega se najviše uči.",
+            "gloss": "Don't be afraid of failure, one learns the most from it."
+          }
+        },
+        {
+          "id": "trud",
+          "hr": "trud",
+          "en": "effort",
+          "pos": "n. m.",
+          "note": "isplatiti se = to pay off; uložiti trud = to put in effort",
+          "example": {
+            "target": "Njezin trud se na kraju isplatio.",
+            "gloss": "Her effort paid off in the end."
+          }
+        },
+        {
+          "id": "rezultat",
+          "hr": "rezultat",
+          "en": "result",
+          "pos": "n. m.",
+          "example": {
+            "target": "Zadovoljni smo rezultatima ovog projekta.",
+            "gloss": "We are satisfied with the results of this project."
+          }
+        },
+        {
+          "id": "projekt",
+          "hr": "projekt",
+          "en": "project",
+          "pos": "n. m.",
+          "note": "distinctly Croatian form (vs 'projekat')",
+          "example": {
+            "target": "Radimo na novom projektu s partnerima iz Austrije.",
+            "gloss": "We are working on a new project with partners from Austria."
+          }
+        },
+        {
+          "id": "stalan",
+          "hr": "stalan",
+          "en": "permanent, constant",
+          "pos": "adj.",
+          "note": "fleeting a: f. stalna; stalan posao = permanent job",
+          "example": {
+            "target": "Nakon dvije godine dobila je stalan posao.",
+            "gloss": "After two years she got a permanent job."
+          }
+        },
+        {
+          "id": "privremen",
+          "hr": "privremen",
+          "en": "temporary",
+          "pos": "adj.",
+          "example": {
+            "target": "Ovo je samo privremeno rješenje.",
+            "gloss": "This is only a temporary solution."
+          }
+        },
+        {
+          "id": "odgovoran",
+          "hr": "odgovoran",
+          "en": "responsible",
+          "pos": "adj.",
+          "note": "fleeting a: f. odgovorna; odgovoran za + acc.",
+          "example": {
+            "target": "Tražimo odgovornu osobu za rad s djecom.",
+            "gloss": "We are looking for a responsible person to work with children."
+          }
+        },
+        {
+          "id": "pouzdan",
+          "hr": "pouzdan",
+          "en": "reliable",
+          "pos": "adj.",
+          "example": {
+            "target": "On je pouzdan kolega, uvijek završi posao na vrijeme.",
+            "gloss": "He is a reliable colleague, he always finishes work on time."
+          }
+        },
+        {
+          "id": "samostalan",
+          "hr": "samostalan",
+          "en": "independent (in work)",
+          "pos": "adj.",
+          "note": "fleeting a: f. samostalna; common in job ads",
+          "example": {
+            "target": "Kandidat mora biti samostalan u radu.",
+            "gloss": "The candidate must be independent in their work."
+          }
+        },
+        {
+          "id": "komunikativan",
+          "hr": "komunikativan",
+          "en": "communicative, sociable",
+          "pos": "adj.",
+          "note": "fleeting a: f. komunikativna",
+          "example": {
+            "target": "Za rad s klijentima morate biti komunikativni.",
+            "gloss": "For working with clients you must be communicative."
+          }
+        },
+        {
+          "id": "motiviran",
+          "hr": "motiviran",
+          "en": "motivated",
+          "pos": "adj.",
+          "example": {
+            "target": "Tražimo motivirane ljude koji žele učiti.",
+            "gloss": "We are looking for motivated people who want to learn."
+          }
+        },
+        {
+          "id": "ambiciozan",
+          "hr": "ambiciozan",
+          "en": "ambitious",
+          "pos": "adj.",
+          "note": "fleeting a: f. ambiciozna",
+          "example": {
+            "target": "Ambiciozni radnici brzo napreduju.",
+            "gloss": "Ambitious workers advance quickly."
+          }
+        },
+        {
+          "id": "fleksibilan",
+          "hr": "fleksibilan",
+          "en": "flexible",
+          "pos": "adj.",
+          "note": "fleeting a: f. fleksibilna",
+          "example": {
+            "target": "Poslodavac nudi fleksibilno radno vrijeme.",
+            "gloss": "The employer offers flexible working hours."
+          }
+        },
+        {
+          "id": "iskusan",
+          "hr": "iskusan",
+          "en": "experienced",
+          "pos": "adj.",
+          "note": "fleeting a: f. iskusna",
+          "example": {
+            "target": "Iskusni radnici pomažu novim kolegama.",
+            "gloss": "Experienced workers help new colleagues."
+          }
+        },
+        {
+          "id": "vješt",
+          "hr": "vješt",
+          "en": "skilled, skillful",
+          "pos": "adj.",
+          "note": "vješt u + loc.: vješt u pregovorima",
+          "example": {
+            "target": "On je vrlo vješt u pregovorima.",
+            "gloss": "He is very skilled in negotiations."
+          }
+        },
+        {
+          "id": "marljiv",
+          "hr": "marljiv",
+          "en": "hard-working, diligent",
+          "pos": "adj.",
+          "note": "synonym of vrijedan",
+          "example": {
+            "target": "Marljivi studenti brzo nauče jezik.",
+            "gloss": "Diligent students learn the language quickly."
+          }
+        },
+        {
+          "id": "organiziran",
+          "hr": "organiziran",
+          "en": "organized",
+          "pos": "adj.",
+          "example": {
+            "target": "Dobra tajnica mora biti organizirana.",
+            "gloss": "A good secretary must be organized."
+          }
+        },
+        {
+          "id": "kreativan",
+          "hr": "kreativan",
+          "en": "creative",
+          "pos": "adj.",
+          "note": "fleeting a: f. kreativna",
+          "example": {
+            "target": "Tražimo kreativnu osobu za rad u marketingu.",
+            "gloss": "We are looking for a creative person to work in marketing."
+          }
+        },
+        {
+          "id": "profesionalan",
+          "hr": "profesionalan",
+          "en": "professional",
+          "pos": "adj.",
+          "note": "fleeting a: f. profesionalna",
+          "example": {
+            "target": "Njihova usluga bila je brza i profesionalna.",
+            "gloss": "Their service was fast and professional."
+          }
+        },
+        {
+          "id": "stresan",
+          "hr": "stresan",
+          "en": "stressful",
+          "pos": "adj.",
+          "note": "fleeting a: f. stresna",
+          "example": {
+            "target": "Posao liječnika vrlo je stresan.",
+            "gloss": "A doctor's job is very stressful."
+          }
+        }
+      ]
+    },
+    {
+      "id": "opinions-argument",
+      "title": "Opinions & argumentation",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "po mom mišljenju",
+          "hr": "po mom mišljenju",
+          "en": "in my opinion",
+          "pos": "phrase",
+          "note": "also 'po mome mišljenju'",
+          "example": {
+            "target": "Po mom mišljenju, mediji pretjeruju.",
+            "gloss": "In my opinion, the media are exaggerating."
+          }
+        },
+        {
+          "id": "smatram da",
+          "hr": "smatram da",
+          "en": "I consider that, I believe that",
+          "pos": "phrase",
+          "note": "more formal than 'mislim da'",
+          "example": {
+            "target": "Smatram da svi trebaju imati jednaka prava.",
+            "gloss": "I believe that everyone should have equal rights."
+          }
+        },
+        {
+          "id": "čini mi se da",
+          "hr": "čini mi se da",
+          "en": "it seems to me that",
+          "pos": "phrase",
+          "note": "from činiti se + dat.",
+          "example": {
+            "target": "Čini mi se da ova vijest nije točna.",
+            "gloss": "It seems to me that this news is not accurate."
+          }
+        },
+        {
+          "id": "uvjeren sam da",
+          "hr": "uvjeren sam da",
+          "en": "I am convinced that",
+          "pos": "phrase",
+          "note": "f. uvjerena sam da",
+          "example": {
+            "target": "Uvjeren sam da će se situacija poboljšati.",
+            "gloss": "I am convinced that the situation will improve."
+          }
+        },
+        {
+          "id": "slažem se",
+          "hr": "slažem se",
+          "en": "I agree",
+          "pos": "phrase",
+          "note": "slagati se s + instr.: slažem se s tobom",
+          "example": {
+            "target": "Slažem se s tvojim prijedlogom.",
+            "gloss": "I agree with your proposal."
+          }
+        },
+        {
+          "id": "ne slažem se",
+          "hr": "ne slažem se",
+          "en": "I disagree",
+          "pos": "phrase",
+          "example": {
+            "target": "Ne slažem se s tom odlukom vlade.",
+            "gloss": "I disagree with that government decision."
+          }
+        },
+        {
+          "id": "u pravu si",
+          "hr": "u pravu si",
+          "en": "you are right",
+          "pos": "phrase",
+          "note": "biti u pravu; formal: u pravu ste",
+          "example": {
+            "target": "U pravu si, trebali smo ranije krenuti.",
+            "gloss": "You're right, we should have left earlier."
+          }
+        },
+        {
+          "id": "nemaš pravo",
+          "hr": "nemaš pravo",
+          "en": "you are wrong",
+          "pos": "phrase",
+          "note": "also 'nisi u pravu'",
+          "example": {
+            "target": "Nemaš pravo, to se dogodilo prošle godine.",
+            "gloss": "You're wrong, that happened last year."
+          }
+        },
+        {
+          "id": "točka gledišta",
+          "hr": "točka gledišta",
+          "en": "point of view",
+          "pos": "phrase",
+          "note": "s moje točke gledišta = from my point of view",
+          "example": {
+            "target": "Pokušaj vidjeti problem s moje točke gledišta.",
+            "gloss": "Try to see the problem from my point of view."
+          }
+        },
+        {
+          "id": "mišljenje",
+          "hr": "mišljenje",
+          "en": "opinion",
+          "pos": "n. nt.",
+          "example": {
+            "target": "Svatko ima pravo na svoje mišljenje.",
+            "gloss": "Everyone has the right to their own opinion."
+          }
+        },
+        {
+          "id": "smatrati",
+          "hr": "smatrati",
+          "en": "to consider, to be of the opinion",
+          "pos": "v. impf.",
+          "note": "impf. only; smatrati da / smatrati koga čime",
+          "example": {
+            "target": "Mnogi smatraju da je zakon nepravedan.",
+            "gloss": "Many consider the law to be unjust."
+          }
+        },
+        {
+          "id": "tvrditi",
+          "hr": "tvrditi",
+          "en": "to claim, to assert",
+          "pos": "v. impf.",
+          "note": "pf. ustvrditi",
+          "example": {
+            "target": "Svjedok tvrdi da je sve vidio.",
+            "gloss": "The witness claims that he saw everything."
+          }
+        },
+        {
+          "id": "tvrdnja",
+          "hr": "tvrdnja",
+          "en": "claim, assertion",
+          "pos": "n. f.",
+          "example": {
+            "target": "Njegova tvrdnja nije potkrijepljena dokazima.",
+            "gloss": "His claim is not supported by evidence."
+          }
+        },
+        {
+          "id": "dokaz",
+          "hr": "dokaz",
+          "en": "proof, evidence",
+          "pos": "n. m.",
+          "example": {
+            "target": "Imate li dokaz za tu tvrdnju?",
+            "gloss": "Do you have proof for that claim?"
+          }
+        },
+        {
+          "id": "dokazati",
+          "hr": "dokazati",
+          "en": "to prove (once)",
+          "pos": "v. pf.",
+          "note": "impf. dokazivati",
+          "example": {
+            "target": "Znanstvenici su dokazali da je teorija točna.",
+            "gloss": "Scientists proved that the theory is correct."
+          }
+        },
+        {
+          "id": "dokazivati",
+          "hr": "dokazivati",
+          "en": "to prove, to argue (repeatedly)",
+          "pos": "v. impf.",
+          "note": "pf. dokazati",
+          "example": {
+            "target": "Ne moraš mi ništa dokazivati, vjerujem ti.",
+            "gloss": "You don't have to prove anything to me, I believe you."
+          }
+        },
+        {
+          "id": "argument",
+          "hr": "argument",
+          "en": "argument (point)",
+          "pos": "n. m.",
+          "note": "a reasoned point, not a quarrel (= svađa)",
+          "example": {
+            "target": "Njezini argumenti bili su vrlo uvjerljivi.",
+            "gloss": "Her arguments were very convincing."
+          }
+        },
+        {
+          "id": "razlog",
+          "hr": "razlog",
+          "en": "reason",
+          "pos": "n. m.",
+          "note": "razlog za + acc.",
+          "example": {
+            "target": "Koji je razlog tvoje odluke?",
+            "gloss": "What is the reason for your decision?"
+          }
+        },
+        {
+          "id": "prednost",
+          "hr": "prednost",
+          "en": "advantage",
+          "pos": "n. f.",
+          "example": {
+            "target": "Najveća prednost života na selu je mir.",
+            "gloss": "The biggest advantage of living in the countryside is the peace."
+          }
+        },
+        {
+          "id": "nedostatak",
+          "hr": "nedostatak",
+          "en": "disadvantage, flaw",
+          "pos": "n. m.",
+          "note": "fleeting a: gen. nedostatka",
+          "example": {
+            "target": "Svaki plan ima prednosti i nedostatke.",
+            "gloss": "Every plan has advantages and disadvantages."
+          }
+        },
+        {
+          "id": "uspoređivati",
+          "hr": "uspoređivati",
+          "en": "to compare (repeatedly)",
+          "pos": "v. impf.",
+          "note": "pf. usporediti; uspoređivati s + instr.",
+          "example": {
+            "target": "Nemoj se stalno uspoređivati s drugima.",
+            "gloss": "Don't constantly compare yourself with others."
+          }
+        },
+        {
+          "id": "usporedba",
+          "hr": "usporedba",
+          "en": "comparison",
+          "pos": "n. f.",
+          "note": "u usporedbi s + instr.",
+          "example": {
+            "target": "U usporedbi s prošlom godinom, cijene su više.",
+            "gloss": "In comparison with last year, prices are higher."
+          }
+        },
+        {
+          "id": "zaključiti",
+          "hr": "zaključiti",
+          "en": "to conclude (once)",
+          "pos": "v. pf.",
+          "note": "impf. zaključivati",
+          "example": {
+            "target": "Iz razgovora sam zaključila da nije zainteresiran.",
+            "gloss": "From the conversation I concluded that he is not interested."
+          }
+        },
+        {
+          "id": "zaključivati",
+          "hr": "zaključivati",
+          "en": "to conclude, to draw conclusions",
+          "pos": "v. impf.",
+          "note": "pf. zaključiti",
+          "example": {
+            "target": "Ne treba zaključivati na temelju jednog primjera.",
+            "gloss": "One shouldn't draw conclusions based on a single example."
+          }
+        },
+        {
+          "id": "zaključak",
+          "hr": "zaključak",
+          "en": "conclusion",
+          "pos": "n. m.",
+          "note": "fleeting a: gen. zaključka",
+          "example": {
+            "target": "Došli smo do istog zaključka.",
+            "gloss": "We came to the same conclusion."
+          }
+        },
+        {
+          "id": "predložiti",
+          "hr": "predložiti",
+          "en": "to suggest, to propose (once)",
+          "pos": "v. pf.",
+          "note": "impf. predlagati; predložiti + dat. + acc.",
+          "example": {
+            "target": "Predložila sam kolegama novo rješenje.",
+            "gloss": "I proposed a new solution to my colleagues."
+          }
+        },
+        {
+          "id": "predlagati",
+          "hr": "predlagati",
+          "en": "to suggest, to propose (repeatedly)",
+          "pos": "v. impf.",
+          "note": "pf. predložiti",
+          "example": {
+            "target": "Stranke predlažu različita rješenja za krizu.",
+            "gloss": "The parties are proposing different solutions for the crisis."
+          }
+        },
+        {
+          "id": "prijedlog",
+          "hr": "prijedlog",
+          "en": "proposal, suggestion",
+          "pos": "n. m.",
+          "note": "also 'preposition' in grammar",
+          "example": {
+            "target": "Imam prijedlog: idemo vlakom umjesto autom.",
+            "gloss": "I have a suggestion: let's go by train instead of by car."
+          }
+        },
+        {
+          "id": "rasprava",
+          "hr": "rasprava",
+          "en": "discussion, debate",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nakon predavanja slijedi rasprava.",
+            "gloss": "After the lecture there follows a discussion."
+          }
+        },
+        {
+          "id": "raspravljati",
+          "hr": "raspravljati",
+          "en": "to discuss, to debate",
+          "pos": "v. impf.",
+          "note": "pf. raspraviti; raspravljati o + loc.",
+          "example": {
+            "target": "Cijelu večer raspravljali smo o politici.",
+            "gloss": "We discussed politics the whole evening."
+          }
+        },
+        {
+          "id": "uvjeriti",
+          "hr": "uvjeriti",
+          "en": "to convince (once)",
+          "pos": "v. pf.",
+          "note": "impf. uvjeravati; uvjeriti koga u + acc.",
+          "example": {
+            "target": "Uvjerila me da je to dobra ideja.",
+            "gloss": "She convinced me that it is a good idea."
+          }
+        },
+        {
+          "id": "uvjeravati",
+          "hr": "uvjeravati",
+          "en": "to try to convince, to assure",
+          "pos": "v. impf.",
+          "note": "pf. uvjeriti",
+          "example": {
+            "target": "Prodavač me uvjeravao da je auto u odličnom stanju.",
+            "gloss": "The salesman kept assuring me that the car was in excellent condition."
+          }
+        },
+        {
+          "id": "sumnjati",
+          "hr": "sumnjati",
+          "en": "to doubt",
+          "pos": "v. impf.",
+          "note": "pf. posumnjati; sumnjati u + acc.",
+          "example": {
+            "target": "Sumnjam da će doći na vrijeme.",
+            "gloss": "I doubt that he will come on time."
+          }
+        },
+        {
+          "id": "sumnja",
+          "hr": "sumnja",
+          "en": "doubt, suspicion",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nemam nikakve sumnje u njezino poštenje.",
+            "gloss": "I have no doubt about her honesty."
+          }
+        },
+        {
+          "id": "bez sumnje",
+          "hr": "bez sumnje",
+          "en": "without a doubt",
+          "pos": "phrase",
+          "example": {
+            "target": "Ovo je, bez sumnje, najbolji film godine.",
+            "gloss": "This is, without a doubt, the best film of the year."
+          }
+        },
+        {
+          "id": "istina",
+          "hr": "istina",
+          "en": "truth",
+          "pos": "n. f.",
+          "example": {
+            "target": "Reci mi istinu, što se dogodilo?",
+            "gloss": "Tell me the truth, what happened?"
+          }
+        },
+        {
+          "id": "laž",
+          "hr": "laž",
+          "en": "lie",
+          "pos": "n. f.",
+          "note": "f. gender: jedna laž, gen. laži",
+          "example": {
+            "target": "To je obična laž, ne vjeruj mu.",
+            "gloss": "That is a plain lie, don't believe him."
+          }
+        },
+        {
+          "id": "lagati",
+          "hr": "lagati",
+          "en": "to lie (tell untruths)",
+          "pos": "v. impf.",
+          "note": "pf. slagati; prezent: lažem",
+          "example": {
+            "target": "Nemoj mi lagati, vidjela sam te tamo.",
+            "gloss": "Don't lie to me, I saw you there."
+          }
+        },
+        {
+          "id": "griješiti",
+          "hr": "griješiti",
+          "en": "to make mistakes, to be wrong",
+          "pos": "v. impf.",
+          "note": "pf. pogriješiti",
+          "example": {
+            "target": "Svi ponekad griješimo.",
+            "gloss": "We all make mistakes sometimes."
+          }
+        },
+        {
+          "id": "pogriješiti",
+          "hr": "pogriješiti",
+          "en": "to make a mistake (once)",
+          "pos": "v. pf.",
+          "note": "impf. griješiti",
+          "example": {
+            "target": "Pogriješila sam, oprosti mi.",
+            "gloss": "I made a mistake, forgive me."
+          }
+        },
+        {
+          "id": "pogrešan",
+          "hr": "pogrešan",
+          "en": "wrong, incorrect",
+          "pos": "adj.",
+          "note": "fleeting a: f. pogrešna",
+          "example": {
+            "target": "Nazvao sam pogrešan broj.",
+            "gloss": "I called the wrong number."
+          }
+        },
+        {
+          "id": "izraziti",
+          "hr": "izraziti",
+          "en": "to express (once)",
+          "pos": "v. pf.",
+          "note": "impf. izražavati; izraziti mišljenje",
+          "example": {
+            "target": "Želim izraziti svoje neslaganje s tim planom.",
+            "gloss": "I want to express my disagreement with that plan."
+          }
+        },
+        {
+          "id": "izražavati",
+          "hr": "izražavati",
+          "en": "to express (regularly)",
+          "pos": "v. impf.",
+          "note": "pf. izraziti",
+          "example": {
+            "target": "Djeca teško izražavaju svoje osjećaje riječima.",
+            "gloss": "Children have difficulty expressing their feelings in words."
+          }
+        },
+        {
+          "id": "naglasiti",
+          "hr": "naglasiti",
+          "en": "to emphasize (once)",
+          "pos": "v. pf.",
+          "note": "impf. naglašavati",
+          "example": {
+            "target": "Ministar je naglasio važnost obrazovanja.",
+            "gloss": "The minister emphasized the importance of education."
+          }
+        },
+        {
+          "id": "naglašavati",
+          "hr": "naglašavati",
+          "en": "to emphasize (repeatedly)",
+          "pos": "v. impf.",
+          "note": "pf. naglasiti",
+          "example": {
+            "target": "Profesorica stalno naglašava da treba vježbati padeže.",
+            "gloss": "The professor constantly emphasizes that one should practice the cases."
+          }
+        },
+        {
+          "id": "primjer",
+          "hr": "primjer",
+          "en": "example",
+          "pos": "n. m.",
+          "note": "na primjer = for example (abbr. npr.)",
+          "example": {
+            "target": "Možete li mi dati konkretan primjer?",
+            "gloss": "Can you give me a concrete example?"
+          }
+        },
+        {
+          "id": "činjenica",
+          "hr": "činjenica",
+          "en": "fact",
+          "pos": "n. f.",
+          "example": {
+            "target": "Činjenica je da mladi sve manje čitaju knjige.",
+            "gloss": "It is a fact that young people read books less and less."
+          }
+        },
+        {
+          "id": "točan",
+          "hr": "točan",
+          "en": "correct, accurate; punctual",
+          "pos": "adj.",
+          "note": "fleeting a: f. točna; distinctly Croatian (vs 'tačan')",
+          "example": {
+            "target": "Vaš odgovor je točan, čestitam!",
+            "gloss": "Your answer is correct, congratulations!"
+          }
+        },
+        {
+          "id": "siguran",
+          "hr": "siguran",
+          "en": "sure, certain; safe",
+          "pos": "adj.",
+          "note": "fleeting a: f. sigurna; siguran u + acc.",
+          "example": {
+            "target": "Jesi li siguran da je to istina?",
+            "gloss": "Are you sure that it is true?"
+          }
+        },
+        {
+          "id": "očito",
+          "hr": "očito",
+          "en": "obviously, evidently",
+          "pos": "adv.",
+          "example": {
+            "target": "Očito je da se nešto promijenilo.",
+            "gloss": "It is obvious that something has changed."
+          }
+        },
+        {
+          "id": "protiv",
+          "hr": "protiv",
+          "en": "against",
+          "pos": "prep.",
+          "note": "with genitive: protiv rata; biti za ili protiv",
+          "example": {
+            "target": "Jesi li za novi zakon ili protiv njega?",
+            "gloss": "Are you for the new law or against it?"
+          }
+        },
+        {
+          "id": "kritika",
+          "hr": "kritika",
+          "en": "criticism; review",
+          "pos": "n. f.",
+          "example": {
+            "target": "Film je dobio odlične kritike.",
+            "gloss": "The film received excellent reviews."
+          }
+        },
+        {
+          "id": "kritizirati",
+          "hr": "kritizirati",
+          "en": "to criticize",
+          "pos": "v. impf.",
+          "note": "impf. only; kritizirati + acc.",
+          "example": {
+            "target": "Lako je kritizirati, teže je nešto napraviti.",
+            "gloss": "It is easy to criticize, it is harder to actually do something."
+          }
+        },
+        {
+          "id": "hvaliti",
+          "hr": "hvaliti",
+          "en": "to praise",
+          "pos": "v. impf.",
+          "note": "pf. pohvaliti; hvaliti se = to boast",
+          "example": {
+            "target": "Svi hvale novi restoran u centru.",
+            "gloss": "Everyone is praising the new restaurant in the center."
+          }
+        },
+        {
+          "id": "pohvaliti",
+          "hr": "pohvaliti",
+          "en": "to praise (once)",
+          "pos": "v. pf.",
+          "note": "impf. hvaliti",
+          "example": {
+            "target": "Šefica me pohvalila pred cijelim timom.",
+            "gloss": "The boss praised me in front of the whole team."
+          }
+        },
+        {
+          "id": "savjet",
+          "hr": "savjet",
+          "en": "advice",
+          "pos": "n. m.",
+          "note": "countable: jedan savjet, dva savjeta",
+          "example": {
+            "target": "Trebam tvoj savjet oko posla.",
+            "gloss": "I need your advice about a job."
+          }
+        },
+        {
+          "id": "odluka",
+          "hr": "odluka",
+          "en": "decision",
+          "pos": "n. f.",
+          "note": "donijeti odluku = to make a decision",
+          "example": {
+            "target": "To je bila najteža odluka u mom životu.",
+            "gloss": "That was the hardest decision of my life."
+          }
+        },
+        {
+          "id": "odlučiti",
+          "hr": "odlučiti",
+          "en": "to decide (once)",
+          "pos": "v. pf.",
+          "note": "impf. odlučivati; odlučiti se za + acc.",
+          "example": {
+            "target": "Odlučili smo se preseliti u Rijeku.",
+            "gloss": "We decided to move to Rijeka."
+          }
+        },
+        {
+          "id": "odlučivati",
+          "hr": "odlučivati",
+          "en": "to decide, to make decisions",
+          "pos": "v. impf.",
+          "note": "pf. odlučiti",
+          "example": {
+            "target": "O tome odlučuje gradsko vijeće.",
+            "gloss": "The city council decides about that."
+          }
+        },
+        {
+          "id": "stav",
+          "hr": "stav",
+          "en": "attitude, standpoint",
+          "pos": "n. m.",
+          "note": "stav o + loc. / prema + dat.",
+          "example": {
+            "target": "Kakav je tvoj stav o radu od kuće?",
+            "gloss": "What is your attitude towards working from home?"
+          }
+        },
+        {
+          "id": "životne vrijednosti",
+          "hr": "životne vrijednosti",
+          "en": "life values",
+          "pos": "phrase",
+          "note": "ASOO theme 'Vrijednosti, sposobnosti, interesi'; sg. vrijednost",
+          "example": {
+            "target": "Zdravlje i obitelj moje su najvažnije životne vrijednosti.",
+            "gloss": "Health and family are my most important life values."
+          }
+        },
+        {
+          "id": "cilj",
+          "hr": "cilj",
+          "en": "goal, aim",
+          "pos": "n. m.",
+          "example": {
+            "target": "Moj cilj je naučiti hrvatski do ljeta.",
+            "gloss": "My goal is to learn Croatian by summer."
+          }
+        },
+        {
+          "id": "svrha",
+          "hr": "svrha",
+          "en": "purpose",
+          "pos": "n. f.",
+          "note": "koja je svrha…? = what is the point of…?",
+          "example": {
+            "target": "Koja je svrha ovog sastanka?",
+            "gloss": "What is the purpose of this meeting?"
+          }
+        },
+        {
+          "id": "smisao",
+          "hr": "smisao",
+          "en": "sense, meaning",
+          "pos": "n. m.",
+          "note": "gen. smisla; imati smisla = to make sense",
+          "example": {
+            "target": "To nema nikakvog smisla.",
+            "gloss": "That doesn't make any sense."
+          }
+        }
+      ]
+    }
+  ]
+}

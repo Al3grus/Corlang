@@ -1,0 +1,1143 @@
+{
+  "41": [
+    {
+      "type": "LEARN",
+      "title": "Buying a ticket — key phrases",
+      "intro": "Today you learn to buy a ticket and navigate a Croatian bus or train station. The pattern 'karta za + accusative' (a ticket to...) plus a handful of station words (polazak, dolazak, peron, kolodvor) covers almost every ticket-window conversation.",
+      "items": [
+        {"hr": "karta za Split", "en": "a ticket to Split", "note": "karta za + city in the accusative"},
+        {"hr": "jednosmjerna karta", "en": "a one-way ticket"},
+        {"hr": "povratna karta", "en": "a return ticket"},
+        {"hr": "polazak", "en": "departure"},
+        {"hr": "dolazak", "en": "arrival"},
+        {"hr": "peron", "en": "platform"},
+        {"hr": "autobusni kolodvor", "en": "bus station"},
+        {"hr": "željeznički kolodvor", "en": "train station"},
+        {"hr": "Kada polazi autobus za Split?", "en": "When does the bus to Split leave?"},
+        {"hr": "S kojeg perona polazi?", "en": "From which platform does it leave?"},
+        {"hr": "Koliko košta karta?", "en": "How much does a ticket cost?"},
+        {"hr": "Koliko traje vožnja?", "en": "How long does the ride take?"},
+        {"hr": "Moram li presjedati?", "en": "Do I have to change (transfer)?"},
+        {"hr": "Sretan put!", "en": "Have a good trip!"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "At the ticket window",
+      "intro": "Practise the ticket-buying phrases: asking about departures, platforms and prices.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "How do you ask when the bus to Split leaves?",
+          "difficulty": 2,
+          "options": ["Kada polazi autobus za Split?", "Gdje je autobus za Split?", "Koliko košta autobus za Split?"],
+          "answer": "Kada polazi autobus za Split?",
+          "explanation": "'Kada polazi...?' asks about departure time; 'gdje' asks where, 'koliko košta' asks about price."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Jednu ___ za Zagreb, molim. (a ticket)",
+          "difficulty": 2,
+          "answer": "kartu",
+          "accepted": ["kartu"],
+          "explanation": "'karta' is the object of the request, so it takes the accusative: kartu.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'povratna karta' mean?",
+          "difficulty": 1,
+          "options": ["a return ticket", "a one-way ticket", "a monthly pass"],
+          "answer": "a return ticket",
+          "explanation": "povratna karta = return ticket; jednosmjerna karta = one-way ticket."
+        },
+        {
+          "type": "FILL",
+          "prompt": "S kojeg ___ polazi vlak? (platform)",
+          "difficulty": 3,
+          "answer": "perona",
+          "accepted": ["perona"],
+          "explanation": "After 's kojeg' (from which) the noun takes the genitive: peron → perona.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'When does the next bus to Split leave?'",
+          "difficulty": 3,
+          "options": ["autobus", "Kada", "za", "sljedeći", "Split?", "polazi"],
+          "ordered": ["Kada", "polazi", "sljedeći", "autobus", "za", "Split?"],
+          "answer": "Kada polazi sljedeći autobus za Split?",
+          "explanation": "Question word first, then the verb: Kada polazi sljedeći autobus za Split?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Where do you buy a train ticket?",
+          "difficulty": 2,
+          "options": ["na željezničkom kolodvoru", "u ljekarni", "u pekari"],
+          "answer": "na željezničkom kolodvoru",
+          "explanation": "željeznički kolodvor = train station; ljekarna = pharmacy, pekara = bakery."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Autobus polazi u osam, a ___ u Split je u podne. (arrival)",
+          "difficulty": 4,
+          "answer": "dolazak",
+          "accepted": ["dolazak"],
+          "explanation": "polazak = departure, dolazak = arrival.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The clerk says: 'Peron broj dva.' What did you learn?",
+          "difficulty": 2,
+          "options": ["The bus leaves from platform two.", "The ticket costs two euros.", "The bus leaves at two o'clock."],
+          "answer": "The bus leaves from platform two.",
+          "explanation": "peron = platform, broj dva = number two."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'How much does a return ticket to Rijeka cost?'",
+          "difficulty": 4,
+          "options": ["povratna", "Koliko", "za", "karta", "Rijeku?", "košta"],
+          "ordered": ["Koliko", "košta", "povratna", "karta", "za", "Rijeku?"],
+          "answer": "Koliko košta povratna karta za Rijeku?",
+          "explanation": "Koliko košta + subject: Koliko košta povratna karta za Rijeku?"
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Buying a bus ticket to Split",
+      "intro": "You are at the bus station in Zagreb and want a return ticket to Split. Read your lines aloud, then cover the Croatian and reconstruct them from the English.",
+      "lines": [
+        {"speaker": "Vi", "hr": "Dobar dan. Jednu kartu za Split, molim.", "en": "Good day. One ticket to Split, please."},
+        {"speaker": "Partner", "hr": "Dobar dan. Jednosmjernu ili povratnu?", "en": "Good day. One-way or return?"},
+        {"speaker": "Vi", "hr": "Povratnu, molim. Koliko košta?", "en": "Return, please. How much does it cost?"},
+        {"speaker": "Partner", "hr": "Povratna karta košta trideset eura.", "en": "A return ticket costs thirty euros."},
+        {"speaker": "Vi", "hr": "U redu. Kada polazi sljedeći autobus?", "en": "All right. When does the next bus leave?"},
+        {"speaker": "Partner", "hr": "Polazi u devet i trideset, s perona broj četiri.", "en": "It leaves at nine thirty, from platform number four."},
+        {"speaker": "Vi", "hr": "A kada stiže u Split?", "en": "And when does it arrive in Split?"},
+        {"speaker": "Partner", "hr": "Stiže u četrnaest sati. Vožnja traje oko četiri i pol sata.", "en": "It arrives at 2 p.m. The ride takes about four and a half hours."},
+        {"speaker": "Vi", "hr": "Izvrsno. Izvolite karticu.", "en": "Excellent. Here is my card."},
+        {"speaker": "Partner", "hr": "Hvala. Izvolite kartu i račun. Sretan put!", "en": "Thank you. Here is your ticket and receipt. Have a good trip!"},
+        {"speaker": "Vi", "hr": "Hvala lijepa. Doviđenja!", "en": "Thank you very much. Goodbye!"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "42": [
+    {
+      "type": "LEARN",
+      "title": "The instrumental — how and with whom",
+      "intro": "The instrumental case answers 'with whom?' and 'by what means?'. Endings: masculine and neuter take -om (vlak → vlakom), or -em after a soft consonant (č, ć, đ, ž, š, j, lj, nj: tramvaj → tramvajem, prijatelj → prijateljem); feminine -a becomes -om (sestra → sestrom). Use s/sa ONLY for company ('with a friend' = s prijateljem); for means of transport there is NO preposition: putujem vlakom, never 's vlakom'. Before s, š, z, ž (and in 'sa mnom'), s becomes sa.",
+      "items": [
+        {"hr": "vlak → vlakom", "en": "train → by train", "note": "no preposition for means of transport!"},
+        {"hr": "autobus → autobusom", "en": "bus → by bus"},
+        {"hr": "auto → autom", "en": "car → by car"},
+        {"hr": "avion → avionom", "en": "plane → by plane"},
+        {"hr": "tramvaj → tramvajem", "en": "tram → by tram", "note": "-em after the soft consonant j"},
+        {"hr": "bicikl → biciklom", "en": "bicycle → by bike"},
+        {"hr": "pješice", "en": "on foot", "note": "an adverb — no case ending needed"},
+        {"hr": "prijatelj → s prijateljem", "en": "friend → with a friend", "note": "-em after lj; s = with (company)"},
+        {"hr": "prijateljica → s prijateljicom", "en": "(female) friend → with a friend"},
+        {"hr": "sestra → sa sestrom", "en": "sister → with a/my sister", "note": "s → sa before s, š, z, ž"},
+        {"hr": "sa mnom / s tobom", "en": "with me / with you"},
+        {"hr": "kava s mlijekom", "en": "coffee with milk"},
+        {"hr": "Putujem vlakom u Split.", "en": "I travel to Split by train."},
+        {"hr": "Idem u kino s prijateljem.", "en": "I am going to the cinema with a friend."}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Instrumental transformations",
+      "intro": "Turn nouns into the instrumental and choose when to use s/sa — and when to leave it out.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Putujem ___ u Rijeku. (vlak)",
+          "difficulty": 2,
+          "answer": "vlakom",
+          "accepted": ["vlakom"],
+          "explanation": "Means of transport: instrumental with no preposition — vlak → vlakom.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Idem na posao ___. (autobus)",
+          "difficulty": 2,
+          "answer": "autobusom",
+          "accepted": ["autobusom"],
+          "explanation": "autobus + -om = autobusom (by bus).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'by tram'?",
+          "difficulty": 4,
+          "options": ["tramvajem", "tramvajom", "s tramvajem"],
+          "answer": "tramvajem",
+          "explanation": "After the soft consonant j the ending is -em, and means of transport takes no preposition."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Idem u kino s ___. (prijatelj)",
+          "difficulty": 3,
+          "answer": "prijateljem",
+          "accepted": ["prijateljem"],
+          "explanation": "lj is a soft consonant, so prijatelj takes -em: s prijateljem.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'with my sister'?",
+          "difficulty": 3,
+          "options": ["sa sestrom", "s sestrom", "sa sestra"],
+          "answer": "sa sestrom",
+          "explanation": "s becomes sa before s, š, z, ž; sestra → sestrom in the instrumental."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence correctly says 'I travel by car'?",
+          "difficulty": 4,
+          "options": ["Putujem autom.", "Putujem s autom.", "Putujem u autom."],
+          "answer": "Putujem autom.",
+          "explanation": "Means of transport = bare instrumental. 's autom' would mean the car is your travel companion!"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Pijem kavu s ___. (mlijeko)",
+          "difficulty": 3,
+          "answer": "mlijekom",
+          "accepted": ["mlijekom"],
+          "explanation": "Neuter mlijeko takes -om: kava s mlijekom = coffee with milk.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Tomorrow I am travelling to Zagreb by bus.'",
+          "difficulty": 3,
+          "options": ["u", "putujem", "Zagreb.", "Sutra", "autobusom"],
+          "ordered": ["Sutra", "putujem", "autobusom", "u", "Zagreb."],
+          "answer": "Sutra putujem autobusom u Zagreb.",
+          "explanation": "Time word first, then verb, means (autobusom) and destination (u Zagreb)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ideš li ___ u grad? (with me)",
+          "difficulty": 5,
+          "answer": "sa mnom",
+          "accepted": ["sa mnom"],
+          "explanation": "'With me' is always 'sa mnom' — s becomes sa before the pronoun form mnom.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I am going to the seaside with a (female) friend.'",
+          "difficulty": 4,
+          "options": ["s", "na", "Idem", "prijateljicom.", "more"],
+          "ordered": ["Idem", "na", "more", "s", "prijateljicom."],
+          "answer": "Idem na more s prijateljicom.",
+          "explanation": "na more = to the seaside; s prijateljicom = with a friend (instrumental)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "43": [
+    {
+      "type": "LEARN",
+      "title": "Reading: Moje putovanje u Split",
+      "intro": "Read this short A1 text twice — first for the gist, then slowly. — MOJE PUTOVANJE U SPLIT: Zovem se Petra i živim u Zagrebu. Prošlog vikenda putovala sam u Split. Išla sam autobusom jer je karta jeftina. Autobus je polazio u sedam sati ujutro s glavnog kolodvora. Putovanje je trajalo pet sati. U Splitu sam šetala uz more i pila kavu s prijateljicom. Vrijeme je bilo sunčano i toplo. Navečer smo jele ribu u malom restoranu. Vratila sam se kući u nedjelju navečer. Bilo je predivno! — Now mine it: the phrases below are the ones worth stealing for your own stories.",
+      "items": [
+        {"hr": "prošlog vikenda", "en": "last weekend", "note": "genitive of time — a set phrase"},
+        {"hr": "putovala sam u Split", "en": "I travelled to Split", "note": "female speaker: putovala; male: putovao"},
+        {"hr": "jer je karta jeftina", "en": "because the ticket is cheap"},
+        {"hr": "polazio je u sedam sati ujutro", "en": "it departed at seven in the morning"},
+        {"hr": "putovanje je trajalo pet sati", "en": "the journey lasted five hours"},
+        {"hr": "šetala sam uz more", "en": "I walked along the sea"},
+        {"hr": "pila sam kavu s prijateljicom", "en": "I drank coffee with a friend", "note": "s + instrumental"},
+        {"hr": "vrijeme je bilo sunčano i toplo", "en": "the weather was sunny and warm"},
+        {"hr": "vratila sam se kući", "en": "I returned home", "note": "kući = home(wards), no preposition"},
+        {"hr": "Bilo je predivno!", "en": "It was wonderful!"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Did you understand the text?",
+      "intro": "Comprehension questions about Petra's trip, plus the best phrases from the text.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Kamo je Petra putovala prošlog vikenda?",
+          "difficulty": 2,
+          "options": ["u Split", "u Rijeku", "u Zadar"],
+          "answer": "u Split",
+          "explanation": "The text says: 'Prošlog vikenda putovala sam u Split.'"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Kako je Petra putovala?",
+          "difficulty": 2,
+          "options": ["autobusom", "vlakom", "avionom"],
+          "answer": "autobusom",
+          "explanation": "'Išla sam autobusom' — she went by bus (instrumental of means)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Zašto je išla autobusom?",
+          "difficulty": 3,
+          "options": ["jer je karta jeftina", "jer nema vlaka", "jer voli avione"],
+          "answer": "jer je karta jeftina",
+          "explanation": "'...jer je karta jeftina' — because the ticket is cheap."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Putovanje je ___ pet sati. (lasted)",
+          "difficulty": 3,
+          "answer": "trajalo",
+          "accepted": ["trajalo"],
+          "explanation": "trajati = to last; neuter past form because 'putovanje' is neuter: trajalo.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Što je Petra radila u Splitu?",
+          "difficulty": 2,
+          "options": ["Šetala je uz more i pila kavu.", "Radila je u uredu.", "Učila je engleski."],
+          "answer": "Šetala je uz more i pila kavu.",
+          "explanation": "'U Splitu sam šetala uz more i pila kavu s prijateljicom.'"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Vratila sam se ___ u nedjelju navečer. (home)",
+          "difficulty": 4,
+          "answer": "kući",
+          "accepted": ["kući"],
+          "explanation": "'kući' = home(wards) — a set adverbial form, no preposition needed.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'The weather was sunny and warm.'",
+          "difficulty": 3,
+          "options": ["bilo", "i", "Vrijeme", "toplo.", "sunčano", "je"],
+          "ordered": ["Vrijeme", "je", "bilo", "sunčano", "i", "toplo."],
+          "answer": "Vrijeme je bilo sunčano i toplo.",
+          "explanation": "Subject + je + bilo (neuter, agreeing with vrijeme) + adjectives."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'predivno' mean?",
+          "difficulty": 2,
+          "options": ["wonderful", "terrible", "boring"],
+          "answer": "wonderful",
+          "explanation": "'Bilo je predivno!' = It was wonderful!"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Pila sam kavu s ___. (prijateljica)",
+          "difficulty": 4,
+          "answer": "prijateljicom",
+          "accepted": ["prijateljicom"],
+          "explanation": "s + instrumental: prijateljica → prijateljicom.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "44": [
+    {
+      "type": "LEARN",
+      "title": "Week-review conversation starters",
+      "intro": "Real conversations mix topics — travel, weather, health — without warning. These frames let you carry a ten-minute chat about your week using everything from days 36-43.",
+      "items": [
+        {"hr": "Kakav ti je bio tjedan?", "en": "How was your week?"},
+        {"hr": "Jesi li putovao negdje?", "en": "Did you travel anywhere?", "note": "to a woman: Jesi li putovala negdje?"},
+        {"hr": "Kakvo je bilo vrijeme?", "en": "What was the weather like?"},
+        {"hr": "Padala je kiša.", "en": "It was raining."},
+        {"hr": "Bilo je sunčano.", "en": "It was sunny."},
+        {"hr": "Kako se osjećaš?", "en": "How do you feel?"},
+        {"hr": "Boljelo me grlo.", "en": "I had a sore throat."},
+        {"hr": "Osjećam se puno bolje.", "en": "I feel much better."},
+        {"hr": "Što planiraš za sljedeći tjedan?", "en": "What are you planning for next week?"},
+        {"hr": "Drago mi je!", "en": "I'm glad!"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Week 6 mixed review",
+      "intro": "Travel, instrumental, health and weather — all in one exercise, the way real life serves them.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "U subotu sam išao ___ u Rijeku. (vlak)",
+          "difficulty": 3,
+          "answer": "vlakom",
+          "accepted": ["vlakom"],
+          "explanation": "Means of transport: instrumental without a preposition — vlakom.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you ask a friend what the weather was like?",
+          "difficulty": 2,
+          "options": ["Kakvo je bilo vrijeme?", "Koliko je sati?", "Gdje je vrijeme?"],
+          "answer": "Kakvo je bilo vrijeme?",
+          "explanation": "kakvo = what kind of; 'Kakvo je bilo vrijeme?' = What was the weather like?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ujutro je ___ kiša, ali poslije je bilo sunčano. (padati, past)",
+          "difficulty": 4,
+          "answer": "padala",
+          "accepted": ["padala"],
+          "explanation": "kiša is feminine, so the past participle is padala: Padala je kiša.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Boljelo me grlo' mean?",
+          "difficulty": 3,
+          "options": ["I had a sore throat.", "I broke my leg.", "I have a headache."],
+          "answer": "I had a sore throat.",
+          "explanation": "boljeti = to hurt; grlo = throat. Literally: 'The throat hurt me.'"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Now I feel much better.'",
+          "difficulty": 4,
+          "options": ["osjećam", "bolje.", "Sada", "puno", "se"],
+          "ordered": ["Sada", "se", "osjećam", "puno", "bolje."],
+          "answer": "Sada se osjećam puno bolje.",
+          "explanation": "The clitic 'se' goes in second position: Sada se osjećam..."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kupio sam povratnu ___ za Split. (ticket)",
+          "difficulty": 2,
+          "answer": "kartu",
+          "accepted": ["kartu"],
+          "explanation": "Direct object in the accusative: karta → kartu.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is correct?",
+          "difficulty": 5,
+          "options": ["Putovao sam autobusom s prijateljem.", "Putovao sam s autobusom s prijateljem.", "Putovao sam autobusom s prijatelj."],
+          "answer": "Putovao sam autobusom s prijateljem.",
+          "explanation": "Means = bare instrumental (autobusom); company = s + instrumental (s prijateljem)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'What are you planning for next week?'",
+          "difficulty": 3,
+          "options": ["za", "tjedan?", "planiraš", "Što", "sljedeći"],
+          "ordered": ["Što", "planiraš", "za", "sljedeći", "tjedan?"],
+          "answer": "Što planiraš za sljedeći tjedan?",
+          "explanation": "Question word + verb + za + accusative time phrase."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Catching up on the week",
+      "intro": "A friendly conversation that hops between the week's themes: travel, weather, health and plans. Play your side aloud, then swap roles.",
+      "lines": [
+        {"speaker": "Partner", "hr": "Bok! Kako si? Kakav ti je bio tjedan?", "en": "Hi! How are you? How was your week?"},
+        {"speaker": "Vi", "hr": "Bok! Dobro sam, hvala. Tjedan je bio zanimljiv — puno sam učio.", "en": "Hi! I'm fine, thanks. The week was interesting — I studied a lot."},
+        {"speaker": "Partner", "hr": "Jesi li putovao negdje?", "en": "Did you travel anywhere?"},
+        {"speaker": "Vi", "hr": "Da, u subotu sam išao vlakom u Rijeku s prijateljem.", "en": "Yes, on Saturday I went to Rijeka by train with a friend."},
+        {"speaker": "Partner", "hr": "Super! Kakvo je bilo vrijeme?", "en": "Great! What was the weather like?"},
+        {"speaker": "Vi", "hr": "Ujutro je padala kiša, ali poslije je bilo sunčano.", "en": "In the morning it was raining, but later it was sunny."},
+        {"speaker": "Partner", "hr": "A kako se osjećaš? Prošli tjedan si bio bolestan.", "en": "And how are you feeling? Last week you were ill."},
+        {"speaker": "Vi", "hr": "Sada se osjećam puno bolje. Boljelo me grlo, ali više me ne boli.", "en": "Now I feel much better. I had a sore throat, but it doesn't hurt any more."},
+        {"speaker": "Partner", "hr": "Drago mi je! Što planiraš za sljedeći tjedan?", "en": "I'm glad! What are you planning for next week?"},
+        {"speaker": "Vi", "hr": "Želim više razgovarati na hrvatskom i naučiti nove riječi.", "en": "I want to speak more Croatian and learn new words."}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "45": [
+    {
+      "type": "LEARN",
+      "title": "Expressing opinions",
+      "intro": "Opinion frames let you say something about anything. Model sentence: 'Mislim da je Zagreb lijep grad jer ima puno parkova.' (I think Zagreb is a beautiful city because it has many parks.) Learn the frame, then swap in your own topic and reason.",
+      "items": [
+        {"hr": "Mislim da...", "en": "I think that...", "note": "the workhorse — always followed by a full clause"},
+        {"hr": "Po meni...", "en": "In my opinion... (informal)"},
+        {"hr": "Po mom mišljenju...", "en": "In my opinion... (more formal)"},
+        {"hr": "Meni se čini da...", "en": "It seems to me that..."},
+        {"hr": "Slažem se.", "en": "I agree."},
+        {"hr": "Slažem se s tobom.", "en": "I agree with you.", "note": "s + instrumental again!"},
+        {"hr": "Ne slažem se.", "en": "I don't agree."},
+        {"hr": "Imaš pravo. / U pravu si.", "en": "You're right."},
+        {"hr": "Možda, ali...", "en": "Maybe, but..."},
+        {"hr": "Zašto tako misliš?", "en": "Why do you think so?"},
+        {"hr": "Jer...", "en": "Because...", "note": "give a reason after every opinion"},
+        {"hr": "Na primjer...", "en": "For example..."}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Opinions, agreement and polite disagreement",
+      "intro": "Practise stating opinions, agreeing and disagreeing without starting a fight.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'I think that...'?",
+          "difficulty": 1,
+          "options": ["Mislim da...", "Molim da...", "Moram da..."],
+          "answer": "Mislim da...",
+          "explanation": "misliti = to think; 'Mislim da...' introduces an opinion."
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ se s tobom. (I agree)",
+          "difficulty": 3,
+          "answer": "Slažem",
+          "accepted": ["Slažem", "slažem"],
+          "explanation": "slagati se = to agree; Slažem se s tobom = I agree with you.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'po meni' mean?",
+          "difficulty": 2,
+          "options": ["in my opinion", "next to me", "after me"],
+          "answer": "in my opinion",
+          "explanation": "'Po meni' literally 'by me' = in my opinion (informal)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I think that coffee in Croatia is very good.'",
+          "difficulty": 4,
+          "options": ["kava", "Mislim", "jako", "u", "da", "dobra.", "Hrvatskoj", "je"],
+          "ordered": ["Mislim", "da", "je", "kava", "u", "Hrvatskoj", "jako", "dobra."],
+          "answer": "Mislim da je kava u Hrvatskoj jako dobra.",
+          "explanation": "After 'da' the clitic 'je' comes immediately: Mislim da je kava..."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ne ___ se — po meni je vlak bolji od autobusa. (agree)",
+          "difficulty": 3,
+          "answer": "slažem",
+          "accepted": ["slažem"],
+          "explanation": "Ne slažem se = I don't agree.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is a POLITE way to disagree?",
+          "difficulty": 3,
+          "options": ["Možda, ali ja mislim drugačije.", "Ne! Ti ništa ne znaš!", "To je glupo."],
+          "answer": "Možda, ali ja mislim drugačije.",
+          "explanation": "'Maybe, but I think differently' softens the disagreement; the other options are rude."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Zašto tako ___? (misliti, ti)",
+          "difficulty": 3,
+          "answer": "misliš",
+          "accepted": ["misliš"],
+          "explanation": "misliti in the ti-form: misliš. 'Zašto tako misliš?' = Why do you think so?",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'In my opinion, Split is the most beautiful city.'",
+          "difficulty": 5,
+          "options": ["najljepši", "mišljenju,", "Po", "grad.", "Split", "mom", "je"],
+          "ordered": ["Po", "mom", "mišljenju,", "Split", "je", "najljepši", "grad."],
+          "answer": "Po mom mišljenju, Split je najljepši grad.",
+          "explanation": "Po mom mišljenju + subject + je + superlative adjective + noun."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Your friend says 'Imaš pravo.' What did they just do?",
+          "difficulty": 2,
+          "options": ["They agreed that you are right.", "They asked you to turn right.", "They said you have the law."],
+          "answer": "They agreed that you are right.",
+          "explanation": "Imaš pravo / U pravu si = You're right."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "46": [
+    {
+      "type": "LEARN",
+      "title": "The vocative — calling and addressing",
+      "intro": "The vocative is the case for calling or addressing someone directly: 'Ivane, dođi!' Rules of thumb: masculine nouns in a hard consonant add -e (gospodin → gospodine!), soft-consonant nouns add -u (prijatelj → prijatelju!), feminine common nouns in -a switch to -o (gospođa → gospođo!), while most personal names like Marko, Ana or Ivana stay unchanged (Ivan → Ivane! is the classic exception). It is used ONLY for addressing — never as a subject or object.",
+      "items": [
+        {"hr": "Marko → Marko!", "en": "Marko → Marko!", "note": "names ending in -o don't change"},
+        {"hr": "Ivan → Ivane!", "en": "Ivan → Ivane!", "note": "hard consonant + -e"},
+        {"hr": "Ana → Ana!", "en": "Ana → Ana!", "note": "most female names stay the same"},
+        {"hr": "gospodin → gospodine!", "en": "gentleman → sir!"},
+        {"hr": "gospođa → gospođo!", "en": "lady → madam!", "note": "-a → -o for common nouns"},
+        {"hr": "gospođica → gospođice!", "en": "young lady → miss!", "note": "-ica → -ice"},
+        {"hr": "doktor → doktore!", "en": "doctor → doctor!"},
+        {"hr": "profesor → profesore!", "en": "professor → professor!"},
+        {"hr": "prijatelj → prijatelju!", "en": "friend → (my) friend!", "note": "-u after the soft consonant lj"},
+        {"hr": "sestra → sestro!", "en": "sister → sister!"},
+        {"hr": "kolega → kolega!", "en": "colleague → colleague!", "note": "masculine nouns in -a stay unchanged"},
+        {"hr": "Bog → Bože!", "en": "God → God!", "note": "k, g, h soften to č, ž, š — hence 'Bože moj!' (my God!)"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Address people correctly",
+      "intro": "Call friends, strangers and professionals with the right vocative form.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "You want to call your friend Ivan across the street. You shout:",
+          "difficulty": 2,
+          "options": ["Ivane!", "Ivana!", "Ivanu!"],
+          "answer": "Ivane!",
+          "explanation": "Masculine names in a hard consonant take -e in the vocative: Ivan → Ivane!"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Dobar dan, ___! (gospodin)",
+          "difficulty": 3,
+          "answer": "gospodine",
+          "accepted": ["gospodine"],
+          "explanation": "gospodin → gospodine! (sir) — the standard polite address to a man.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Oprostite, ___! (gospođa)",
+          "difficulty": 3,
+          "answer": "gospođo",
+          "accepted": ["gospođo"],
+          "explanation": "Feminine common nouns in -a take -o: gospođa → gospođo!",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the vocative of 'Marko'?",
+          "difficulty": 3,
+          "options": ["Marko!", "Marke!", "Marku!"],
+          "answer": "Marko!",
+          "explanation": "Names ending in -o stay unchanged in the vocative: Marko → Marko!"
+        },
+        {
+          "type": "FILL",
+          "prompt": "___, dođi ovamo! (prijatelj)",
+          "difficulty": 4,
+          "answer": "Prijatelju",
+          "accepted": ["Prijatelju", "prijatelju"],
+          "explanation": "After a soft consonant (lj) the vocative ending is -u: prijatelju!",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "When do you use the vocative?",
+          "difficulty": 2,
+          "options": ["Only when addressing or calling someone directly.", "For the subject of a sentence.", "After the preposition 's'."],
+          "answer": "Only when addressing or calling someone directly.",
+          "explanation": "The vocative has one job: direct address. It never marks subjects or objects."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Hvala vam, ___! (doktor)",
+          "difficulty": 3,
+          "answer": "doktore",
+          "accepted": ["doktore"],
+          "explanation": "doktor → doktore! Hard consonant + -e.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Mr Horvat, your ticket is here.'",
+          "difficulty": 4,
+          "options": ["je", "karta", "Gospodine", "ovdje.", "vaša", "Horvat,"],
+          "ordered": ["Gospodine", "Horvat,", "vaša", "karta", "je", "ovdje."],
+          "answer": "Gospodine Horvat, vaša karta je ovdje.",
+          "explanation": "The title takes the vocative (gospodine), the surname stays unchanged."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Bože moj!' mean?",
+          "difficulty": 2,
+          "options": ["My God!", "My boat!", "Good morning!"],
+          "answer": "My God!",
+          "explanation": "Bog → Bože! — g softens to ž in the vocative. A very common exclamation."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "47": [
+    {
+      "type": "LEARN",
+      "title": "Storytelling with aspect",
+      "intro": "A Croatian story runs on two engines: the imperfective paints the background (what was going on), the perfective drives the plot (what happened next). Model story: 'Dok sam jučer čekao tramvaj, čitao sam novine. Odjednom sam vidio staru prijateljicu. Popili smo kavu i dugo razgovarali. Na kraju smo se dogovorili za večeru.' Background = čekao, čitao; events = vidio, popili, dogovorili se.",
+      "items": [
+        {"hr": "čitati / pročitati", "en": "to read / to read through (finish)", "note": "imperfective / perfective"},
+        {"hr": "pisati / napisati", "en": "to write / to write (and finish)"},
+        {"hr": "kupovati / kupiti", "en": "to be buying / to buy"},
+        {"hr": "dolaziti / doći", "en": "to come (repeatedly) / to arrive"},
+        {"hr": "gledati / pogledati", "en": "to watch / to take a look"},
+        {"hr": "piti / popiti", "en": "to drink / to drink up"},
+        {"hr": "jesti / pojesti", "en": "to eat / to eat up"},
+        {"hr": "Dok sam čekao autobus...", "en": "While I was waiting for the bus...", "note": "imperfective = background"},
+        {"hr": "Odjednom je došao moj prijatelj.", "en": "Suddenly my friend arrived.", "note": "perfective = event"},
+        {"hr": "prvo... zatim... na kraju...", "en": "first... then... in the end...", "note": "connectors that hold a story together"},
+        {"hr": "jučer, prošli tjedan, prošle godine", "en": "yesterday, last week, last year"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Background or event?",
+      "intro": "Choose the right aspect: imperfective for the scenery, perfective for the plot.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'Dok sam ___ autobus, čitao sam novine.' (While I was waiting for the bus, I was reading the paper.)",
+          "difficulty": 5,
+          "options": ["čekao", "pričekao", "dočekao"],
+          "answer": "čekao",
+          "explanation": "Ongoing background action after 'dok' → imperfective čekati: čekao."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Jučer sam ___ cijelu knjigu.' (Yesterday I read the whole book — and finished it.)",
+          "difficulty": 4,
+          "options": ["pročitao", "čitao", "čitam"],
+          "answer": "pročitao",
+          "explanation": "A completed result (the WHOLE book) → perfective pročitati: pročitao."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Prvo sam ___ kavu, zatim sam otišao na posao. (popiti, past, m.)",
+          "difficulty": 4,
+          "answer": "popio",
+          "accepted": ["popio"],
+          "explanation": "A finished event in a sequence → perfective popiti: popio sam kavu.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which verb is PERFECTIVE?",
+          "difficulty": 3,
+          "options": ["kupiti", "kupovati", "gledati"],
+          "answer": "kupiti",
+          "explanation": "kupiti = to buy (one completed act); kupovati and gledati are imperfective."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Svaki dan ___ novine, ali jučer nisam imao vremena. (čitati, ja, present)",
+          "difficulty": 4,
+          "answer": "čitam",
+          "accepted": ["čitam"],
+          "explanation": "Habitual action (every day) → imperfective present: čitam.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'While I was waiting for the tram, I saw a friend.'",
+          "difficulty": 5,
+          "options": ["sam", "vidio", "tramvaj,", "Dok", "prijatelja.", "sam", "čekao"],
+          "ordered": ["Dok", "sam", "čekao", "tramvaj,", "vidio", "sam", "prijatelja."],
+          "answer": "Dok sam čekao tramvaj, vidio sam prijatelja.",
+          "explanation": "dok + imperfective background (čekao), then the perfective-style event (vidio sam)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence means you FINISHED the letter?",
+          "difficulty": 5,
+          "options": ["Napisao sam pismo.", "Pisao sam pismo cijelo jutro.", "Pišem pismo."],
+          "answer": "Napisao sam pismo.",
+          "explanation": "Perfective napisati = the letter got written; pisao sam = I was writing (maybe never finished)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Odjednom je ___ moj brat. (doći, past, m.)",
+          "difficulty": 4,
+          "answer": "došao",
+          "accepted": ["došao"],
+          "explanation": "A sudden plot event → perfective doći: došao je.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'In the end we went home.'",
+          "difficulty": 3,
+          "options": ["kući.", "Na", "otišli", "kraju", "smo"],
+          "ordered": ["Na", "kraju", "smo", "otišli", "kući."],
+          "answer": "Na kraju smo otišli kući.",
+          "explanation": "Na kraju (in the end) + smo (clitic in second position) + otišli kući."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "48": [
+    {
+      "type": "LEARN",
+      "title": "Phone openers and closers",
+      "intro": "Phone Croatian is wonderfully formulaic: a fixed opener, a fixed closer, and a few set moves in between. Learn these as whole chunks — on the phone there is no body language to help you.",
+      "items": [
+        {"hr": "Halo? / Molim?", "en": "Hello? (answering the phone)"},
+        {"hr": "Ovdje Ana.", "en": "This is Ana. / Ana speaking.", "note": "ovdje = 'here' — the standard way to identify yourself"},
+        {"hr": "Dobar dan, ovdje Marko Horvat.", "en": "Good day, this is Marko Horvat. (formal opener)"},
+        {"hr": "Mogu li razgovarati s gospođom Kovač?", "en": "May I speak with Mrs Kovač?", "note": "razgovarati s + instrumental"},
+        {"hr": "Trenutak, molim.", "en": "One moment, please."},
+        {"hr": "Nije tu trenutačno.", "en": "He/She is not here at the moment."},
+        {"hr": "Mogu li ostaviti poruku?", "en": "Can I leave a message?"},
+        {"hr": "Nazvat ću kasnije.", "en": "I'll call back later."},
+        {"hr": "Oprostite, krivi broj.", "en": "Sorry, wrong number."},
+        {"hr": "Čujemo se!", "en": "Talk to you soon! (lit. 'we'll hear each other')"},
+        {"hr": "Javit ću se.", "en": "I'll be in touch."},
+        {"hr": "Pošalji mi poruku.", "en": "Send me a message/text."}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "On the phone",
+      "intro": "Openers, closers and the moves in between — plus writing a short message.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Your phone rings. How do you answer?",
+          "difficulty": 1,
+          "options": ["Halo?", "Doviđenja!", "Sretan put!"],
+          "answer": "Halo?",
+          "explanation": "Halo? (or Molim?) is the standard way to answer the phone."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Dobar dan, ___ Ana Kovač. (this is / '...speaking')",
+          "difficulty": 2,
+          "answer": "ovdje",
+          "accepted": ["ovdje"],
+          "explanation": "On the phone you identify yourself with 'ovdje + name': Ovdje Ana Kovač.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Mogu li razgovarati s gospodinom Horvatom?' mean?",
+          "difficulty": 3,
+          "options": ["May I speak with Mr Horvat?", "Can Mr Horvat call me back?", "Is Mr Horvat at home?"],
+          "answer": "May I speak with Mr Horvat?",
+          "explanation": "Mogu li + infinitive = May I...; razgovarati s + instrumental = speak with."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Mogu li ostaviti ___? (a message)",
+          "difficulty": 3,
+          "answer": "poruku",
+          "accepted": ["poruku"],
+          "explanation": "poruka in the accusative: Mogu li ostaviti poruku?",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Someone calls asking for a person you've never heard of. You say:",
+          "difficulty": 3,
+          "options": ["Oprostite, krivi broj.", "Trenutak, molim.", "Čujemo se!"],
+          "answer": "Oprostite, krivi broj.",
+          "explanation": "krivi broj = wrong number."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Nije tu trenutačno? U redu, nazvat ću ___. (later)",
+          "difficulty": 2,
+          "answer": "kasnije",
+          "accepted": ["kasnije"],
+          "explanation": "Nazvat ću kasnije = I'll call back later.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'May I speak with Mrs Kovač?'",
+          "difficulty": 4,
+          "options": ["razgovarati", "li", "Kovač?", "Mogu", "gospođom", "s"],
+          "ordered": ["Mogu", "li", "razgovarati", "s", "gospođom", "Kovač?"],
+          "answer": "Mogu li razgovarati s gospođom Kovač?",
+          "explanation": "Mogu li + infinitive + s + instrumental (gospođom); the surname stays unchanged."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say goodbye to a friend on the phone?",
+          "difficulty": 3,
+          "options": ["Čujemo se!", "Dobar tek!", "Nema na čemu!"],
+          "answer": "Čujemo se!",
+          "explanation": "Čujemo se! = 'we'll hear each other' — the standard friendly phone sign-off."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I want to reserve a table for two people.'",
+          "difficulty": 4,
+          "options": ["stol", "rezervirati", "dvije", "Želim", "osobe.", "za"],
+          "ordered": ["Želim", "rezervirati", "stol", "za", "dvije", "osobe."],
+          "answer": "Želim rezervirati stol za dvije osobe.",
+          "explanation": "želim + infinitive; za + accusative (dvije osobe)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Booking a table by phone",
+      "intro": "You call a restaurant in Split to book a table for tonight. Practise until you can do your side without reading — on a real call you won't have subtitles.",
+      "lines": [
+        {"speaker": "Partner", "hr": "Restoran Marjan, izvolite?", "en": "Restaurant Marjan, how can I help you?"},
+        {"speaker": "Vi", "hr": "Dobar dan. Želim rezervirati stol za večeras, molim.", "en": "Good day. I'd like to reserve a table for tonight, please."},
+        {"speaker": "Partner", "hr": "Naravno. Za koliko osoba?", "en": "Of course. For how many people?"},
+        {"speaker": "Vi", "hr": "Za dvije osobe, molim.", "en": "For two people, please."},
+        {"speaker": "Partner", "hr": "U koliko sati?", "en": "At what time?"},
+        {"speaker": "Vi", "hr": "U osam sati, ako je moguće.", "en": "At eight o'clock, if possible."},
+        {"speaker": "Partner", "hr": "Može. Na koje ime?", "en": "That works. Under what name?"},
+        {"speaker": "Vi", "hr": "Na ime Horvat. H-O-R-V-A-T.", "en": "Under the name Horvat. H-O-R-V-A-T."},
+        {"speaker": "Partner", "hr": "U redu. Stol za dvoje večeras u dvadeset sati, na ime Horvat.", "en": "All right. A table for two tonight at 8 p.m., under the name Horvat."},
+        {"speaker": "Vi", "hr": "Hvala lijepa. Doviđenja!", "en": "Thank you very much. Goodbye!"},
+        {"speaker": "Partner", "hr": "Hvala Vama. Doviđenja i vidimo se večeras!", "en": "Thank you. Goodbye, and see you tonight!"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "49": [
+    {
+      "type": "LEARN",
+      "title": "Listening sprint — radio bulletin",
+      "intro": "Today's routine: (1) listen (or read aloud fast) WITHOUT looking at the text, (2) re-listen while reading, (3) shadow one minute closely. Practice transcript — a short radio bulletin: 'Dobro jutro! Ovdje Radio Zagreb. Danas je četvrtak, deveti srpnja. Vrijeme je sunčano, temperatura je dvadeset osam stupnjeva. Autobusi i tramvaji voze normalno, ali vlak za Split kasni dvadeset minuta. Želimo vam ugodan dan!' The phrases below are your survival kit when real-speed Croatian outruns you.",
+      "items": [
+        {"hr": "Možete li ponoviti?", "en": "Can you repeat that?"},
+        {"hr": "Možete li govoriti sporije?", "en": "Can you speak more slowly?"},
+        {"hr": "Nisam razumio. / Nisam razumjela.", "en": "I didn't understand. (m. / f.)"},
+        {"hr": "Što znači \"kasni\"?", "en": "What does \"kasni\" mean?", "note": "ask about any word this way"},
+        {"hr": "Razumijem.", "en": "I understand."},
+        {"hr": "vlak kasni dvadeset minuta", "en": "the train is twenty minutes late"},
+        {"hr": "voze normalno", "en": "(they) are running normally"},
+        {"hr": "temperatura je dvadeset osam stupnjeva", "en": "the temperature is twenty-eight degrees"},
+        {"hr": "Želimo vam ugodan dan!", "en": "We wish you a pleasant day!"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "What did the radio say?",
+      "intro": "Comprehension check on the bulletin, plus your listening survival phrases.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Koji je dan u radijskim vijestima?",
+          "difficulty": 2,
+          "options": ["četvrtak", "utorak", "subota"],
+          "answer": "četvrtak",
+          "explanation": "'Danas je četvrtak, deveti srpnja.' — Today is Thursday, July 9th."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Kakvo je vrijeme danas prema vijestima?",
+          "difficulty": 2,
+          "options": ["sunčano", "oblačno", "pada snijeg"],
+          "answer": "sunčano",
+          "explanation": "'Vrijeme je sunčano' — the weather is sunny."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Vlak za Split ___ dvadeset minuta. (is late)",
+          "difficulty": 3,
+          "answer": "kasni",
+          "accepted": ["kasni"],
+          "explanation": "kasniti = to be late; vlak kasni dvadeset minuta.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Možete li govoriti sporije?' mean?",
+          "difficulty": 2,
+          "options": ["Can you speak more slowly?", "Can you speak louder?", "Can you call me later?"],
+          "answer": "Can you speak more slowly?",
+          "explanation": "sporije = more slowly — your best friend during a listening sprint."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Oprostite, možete li ___? (repeat)",
+          "difficulty": 3,
+          "answer": "ponoviti",
+          "accepted": ["ponoviti"],
+          "explanation": "ponoviti = to repeat; Možete li ponoviti?",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Kolika je temperatura prema vijestima?",
+          "difficulty": 3,
+          "options": ["dvadeset osam stupnjeva", "osamnaest stupnjeva", "dvadeset stupnjeva"],
+          "answer": "dvadeset osam stupnjeva",
+          "explanation": "'temperatura je dvadeset osam stupnjeva' = 28 degrees."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I didn't understand — can you repeat that?'",
+          "difficulty": 4,
+          "options": ["li", "razumio,", "ponoviti?", "Nisam", "možete"],
+          "ordered": ["Nisam", "razumio,", "možete", "li", "ponoviti?"],
+          "answer": "Nisam razumio, možete li ponoviti?",
+          "explanation": "Nisam razumio (f.: razumjela) + možete li + infinitive."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Autobusi i tramvaji voze ___. (normally)",
+          "difficulty": 2,
+          "answer": "normalno",
+          "accepted": ["normalno"],
+          "explanation": "voze normalno = are running normally.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "50": [
+    {
+      "type": "LEARN",
+      "title": "Ten questions about you — answer templates",
+      "intro": "These are the questions every Croatian conversation partner asks in the first five minutes. Build a personal answer for each template now, say it aloud, and time yourself — the goal is an automatic answer within two seconds.",
+      "items": [
+        {"hr": "Kako se zovete? → Zovem se...", "en": "What is your name? → My name is..."},
+        {"hr": "Odakle ste? → Ja sam iz...", "en": "Where are you from? → I am from..."},
+        {"hr": "Gdje živite? → Živim u Zagrebu, blizu centra.", "en": "Where do you live? → I live in Zagreb, near the centre."},
+        {"hr": "Čime se bavite? → Radim kao... / Ja sam student.", "en": "What do you do? → I work as... / I am a student.", "note": "čime = instrumental of što!"},
+        {"hr": "Koliko dugo učite hrvatski? → Učim hrvatski već sedam tjedana.", "en": "How long have you been learning Croatian? → I've been learning Croatian for seven weeks now."},
+        {"hr": "Zašto učite hrvatski? → Jer volim Hrvatsku i želim razgovarati s ljudima.", "en": "Why are you learning Croatian? → Because I love Croatia and want to talk with people."},
+        {"hr": "Što volite raditi u slobodno vrijeme? → Volim čitati, kuhati i šetati.", "en": "What do you like doing in your free time? → I like reading, cooking and walking."},
+        {"hr": "Što ste radili jučer? → Jučer sam radio, a navečer sam učio hrvatski.", "en": "What did you do yesterday? → Yesterday I worked, and in the evening I studied Croatian.", "note": "female speaker: radila, učila"},
+        {"hr": "Kakvi su vaši planovi za vikend? → Za vikend planiram putovati u Split.", "en": "What are your plans for the weekend? → For the weekend I plan to travel to Split."},
+        {"hr": "Recite mi nešto o svojoj obitelji. → Imam brata i sestru.", "en": "Tell me something about your family. → I have a brother and a sister."}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Interview warm-up",
+      "intro": "Sharpen the building blocks of your answers before the mock interview below.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'Čime se bavite?' asks about your:",
+          "difficulty": 3,
+          "options": ["job / occupation", "hobbies", "family"],
+          "answer": "job / occupation",
+          "explanation": "Čime se bavite? (lit. 'with what do you occupy yourself?') = What do you do for a living?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kako se zovete? — \"___ se Ana.\" (I am called)",
+          "difficulty": 1,
+          "answer": "Zovem",
+          "accepted": ["Zovem", "zovem"],
+          "explanation": "zvati se: Zovem se Ana = My name is Ana.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Učim hrvatski ___ sedam tjedana. (already / for ... now)",
+          "difficulty": 3,
+          "answer": "već",
+          "accepted": ["već"],
+          "explanation": "već + present tense = 'have been ...ing for': Učim već sedam tjedana.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I live in Zagreb, near the centre.'",
+          "difficulty": 3,
+          "options": ["centra.", "u", "Živim", "blizu", "Zagrebu,"],
+          "ordered": ["Živim", "u", "Zagrebu,", "blizu", "centra."],
+          "answer": "Živim u Zagrebu, blizu centra.",
+          "explanation": "u + locative (Zagrebu); blizu + genitive (centra)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Best answer to 'Zašto učite hrvatski?':",
+          "difficulty": 3,
+          "options": ["Jer želim razgovarati s ljudima.", "U osam sati.", "Na peronu broj dva."],
+          "answer": "Jer želim razgovarati s ljudima.",
+          "explanation": "zašto → jer: Why → Because I want to talk with people."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Za vikend ___ putovati u Split. (planirati, ja)",
+          "difficulty": 3,
+          "answer": "planiram",
+          "accepted": ["planiram"],
+          "explanation": "planirati + infinitive: planiram putovati = I plan to travel.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'What do you like doing in your free time?'",
+          "difficulty": 4,
+          "options": ["raditi", "vrijeme?", "volite", "u", "Što", "slobodno"],
+          "ordered": ["Što", "volite", "raditi", "u", "slobodno", "vrijeme?"],
+          "answer": "Što volite raditi u slobodno vrijeme?",
+          "explanation": "Što + volite + infinitive + u slobodno vrijeme (accusative)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Odakle ste?' — which is a correct answer?",
+          "difficulty": 2,
+          "options": ["Ja sam iz Amerike.", "Ja sam u Ameriku.", "Ja sam na Americi."],
+          "answer": "Ja sam iz Amerike.",
+          "explanation": "odakle → iz + genitive: iz Amerike = from America."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Želim razgovarati s ___. (ljudi — people, instrumental)",
+          "difficulty": 6,
+          "answer": "ljudima",
+          "accepted": ["ljudima"],
+          "explanation": "ljudi → ljudima in the instrumental plural: razgovarati s ljudima.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Mock interview — ten questions about your life",
+      "intro": "The final rehearsal of Phase 1: a partner interviews you with the highest-frequency personal questions. The Vi lines are templates — replace the details with YOUR facts and answer each question aloud within two seconds, without reading.",
+      "lines": [
+        {"speaker": "Partner", "hr": "Dobar dan! Kako se zovete?", "en": "Good day! What is your name?"},
+        {"speaker": "Vi", "hr": "Dobar dan! Zovem se Ana Smith.", "en": "Good day! My name is Ana Smith."},
+        {"speaker": "Partner", "hr": "Odakle ste?", "en": "Where are you from?"},
+        {"speaker": "Vi", "hr": "Ja sam iz Amerike, iz Chicaga.", "en": "I am from America, from Chicago."},
+        {"speaker": "Partner", "hr": "Gdje sada živite?", "en": "Where do you live now?"},
+        {"speaker": "Vi", "hr": "Živim u Zagrebu, u malom stanu blizu centra.", "en": "I live in Zagreb, in a small flat near the centre."},
+        {"speaker": "Partner", "hr": "Čime se bavite?", "en": "What do you do for a living?"},
+        {"speaker": "Vi", "hr": "Radim kao programerka. Posao mi je zanimljiv.", "en": "I work as a programmer. My job is interesting."},
+        {"speaker": "Partner", "hr": "Koliko dugo učite hrvatski?", "en": "How long have you been learning Croatian?"},
+        {"speaker": "Vi", "hr": "Učim hrvatski već sedam tjedana, svaki dan po sat vremena.", "en": "I've been learning Croatian for seven weeks now, an hour every day."},
+        {"speaker": "Partner", "hr": "Zašto učite hrvatski?", "en": "Why are you learning Croatian?"},
+        {"speaker": "Vi", "hr": "Jer volim Hrvatsku i želim razgovarati s ljudima na hrvatskom.", "en": "Because I love Croatia and want to talk with people in Croatian."},
+        {"speaker": "Partner", "hr": "Što volite raditi u slobodno vrijeme?", "en": "What do you like doing in your free time?"},
+        {"speaker": "Vi", "hr": "Volim čitati, kuhati i šetati uz more.", "en": "I like reading, cooking and walking along the sea."},
+        {"speaker": "Partner", "hr": "Što ste radili jučer?", "en": "What did you do yesterday?"},
+        {"speaker": "Vi", "hr": "Jučer sam radila, a navečer sam gledala film i učila hrvatski.", "en": "Yesterday I worked, and in the evening I watched a film and studied Croatian."},
+        {"speaker": "Partner", "hr": "Kakvi su vaši planovi za vikend?", "en": "What are your plans for the weekend?"},
+        {"speaker": "Vi", "hr": "Za vikend planiram putovati vlakom u Split s prijateljima.", "en": "For the weekend I plan to travel to Split by train with friends."},
+        {"speaker": "Partner", "hr": "Odlično govorite hrvatski! Hvala vam na razgovoru.", "en": "You speak Croatian excellently! Thank you for the conversation."},
+        {"speaker": "Vi", "hr": "Hvala lijepa! Bilo mi je drago. Doviđenja!", "en": "Thank you very much! It was my pleasure. Goodbye!"}
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}

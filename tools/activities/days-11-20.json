@@ -1,0 +1,1091 @@
+{
+  "11": [
+    {
+      "type": "LEARN",
+      "title": "The accusative: nominative → object form",
+      "intro": "The accusative marks the direct object — the thing receiving the action ('I drink COFFEE'). The rules are tiny: feminine -a becomes -u, masculine inanimate and neuter nouns don't change at all, and masculine ANIMATE nouns (people, animals) add -a. Learn these real transformation pairs.",
+      "items": [
+        { "hr": "kava → kavu", "en": "coffee → coffee (object)", "note": "Feminine -a → -u: Pijem kavu. (I drink coffee.)" },
+        { "hr": "voda → vodu", "en": "water → water (object)", "note": "Pijem vodu. (I drink water.)" },
+        { "hr": "knjiga → knjigu", "en": "book → book (object)", "note": "Čitam knjigu. (I am reading a book.)" },
+        { "hr": "riba → ribu", "en": "fish → fish (object)", "note": "Jedem ribu. (I am eating fish.)" },
+        { "hr": "Hrvatska → Hrvatsku", "en": "Croatia → Croatia (object)", "note": "Volim Hrvatsku. (I love Croatia.) Country names in -a follow the same rule." },
+        { "hr": "grad → grad", "en": "city → city (object)", "note": "Masculine INANIMATE stays the same: Vidim grad. (I see the city.)" },
+        { "hr": "kruh → kruh", "en": "bread → bread (object)", "note": "Jedem kruh. (I am eating bread.) No change." },
+        { "hr": "sok → sok", "en": "juice → juice (object)", "note": "Pijem sok. (I drink juice.) No change." },
+        { "hr": "pivo → pivo", "en": "beer → beer (object)", "note": "Neuter (-o/-e) never changes: Pijem pivo." },
+        { "hr": "prijatelj → prijatelja", "en": "friend → friend (object)", "note": "Masculine ANIMATE adds -a: Vidim prijatelja. (I see a friend.)" },
+        { "hr": "brat → brata", "en": "brother → brother (object)", "note": "Animate: Imam brata. (I have a brother.)" },
+        { "hr": "pas → psa", "en": "dog → dog (object)", "note": "Animate + 'fleeting a': the a of pas drops → Imam psa. (I have a dog.)" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Accusative practice: I + verb + object",
+      "intro": "Turn nouns into their object form and build real 'I + verb + object' sentences.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'I drink coffee'?",
+          "difficulty": 2,
+          "options": ["Pijem kava", "Pijem kavu", "Pijem kave", "Pijem kavo"],
+          "answer": "Pijem kavu",
+          "explanation": "kava is feminine, so as the direct object -a changes to -u: Pijem kavu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the accusative of 'knjiga': Čitam ___ .",
+          "difficulty": 2,
+          "answer": "knjigu",
+          "accepted": ["knjigu"],
+          "strictDiacritics": true,
+          "explanation": "Feminine -a → -u: knjiga → knjigu. Čitam knjigu = I am reading a book."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which noun does NOT change in the accusative?",
+          "difficulty": 3,
+          "options": ["kava", "knjiga", "grad", "žena"],
+          "answer": "grad",
+          "explanation": "grad is masculine inanimate, so the accusative looks exactly like the nominative: Vidim grad."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the accusative of 'voda': Pijem ___ .",
+          "difficulty": 3,
+          "answer": "vodu",
+          "accepted": ["vodu"],
+          "strictDiacritics": true,
+          "explanation": "voda → vodu (feminine -a → -u)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: Vidim ___ . ('I see my brother')",
+          "difficulty": 4,
+          "options": ["brat", "brata", "bratu", "brate"],
+          "answer": "brata",
+          "explanation": "brat is masculine ANIMATE, so the accusative adds -a: Vidim brata."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'The woman drinks coffee.'",
+          "difficulty": 3,
+          "options": ["kavu", "Žena", "pije"],
+          "ordered": ["Žena", "pije", "kavu"],
+          "answer": "Žena pije kavu",
+          "explanation": "Žena (subject, nominative) pije kavu (object, accusative)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Volim ___ . ('I love Croatia' — Hrvatska)",
+          "difficulty": 4,
+          "answer": "Hrvatsku",
+          "accepted": ["Hrvatsku"],
+          "strictDiacritics": true,
+          "explanation": "Hrvatska ends in -a, so the object form is Hrvatsku: Volim Hrvatsku."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'I am eating a sandwich'?",
+          "difficulty": 4,
+          "options": ["Jedem sendvič", "Jedem sendviča", "Jedem sendviču", "Jedem sendvičem"],
+          "answer": "Jedem sendvič",
+          "explanation": "sendvič is masculine inanimate — it stays the same in the accusative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Imam ___ . ('I have a dog' — pas)",
+          "difficulty": 6,
+          "answer": "psa",
+          "accepted": ["psa"],
+          "strictDiacritics": true,
+          "explanation": "pas is animate (add -a) AND has a fleeting a that drops: pas → psa. Imam psa."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "12": [
+    {
+      "type": "LEARN",
+      "title": "Saying no and asking yes/no questions",
+      "intro": "Negation is beautifully simple: put 'ne' directly before the verb. Only imati fuses into one word (nemam). For yes/no questions, put 'li' right after the verb: Govoriš li engleski? Master these patterns and your range doubles.",
+      "items": [
+        { "hr": "Ne govorim.", "en": "I don't speak.", "note": "ne + verb, always directly before the verb." },
+        { "hr": "Ne razumijem.", "en": "I don't understand.", "note": "Your most useful survival sentence." },
+        { "hr": "Ne radim danas.", "en": "I'm not working today.", "note": "" },
+        { "hr": "Ne pijem pivo.", "en": "I don't drink beer.", "note": "ne + verb + accusative object." },
+        { "hr": "Nemam auto.", "en": "I don't have a car.", "note": "Only imati fuses with ne: nemam, NEVER 'ne imam'." },
+        { "hr": "Nisam umoran.", "en": "I am not tired. (male speaker)", "note": "biti also has fused negatives: nisam, nisi, nije… (day 6 review)" },
+        { "hr": "Govoriš li engleski?", "en": "Do you speak English?", "note": "Yes/no question: verb + li + rest." },
+        { "hr": "Radiš li danas?", "en": "Are you working today?", "note": "" },
+        { "hr": "Pijete li kavu?", "en": "Do you (formal) drink coffee?", "note": "vi-form for strangers and groups." },
+        { "hr": "Razumiješ li?", "en": "Do you understand?", "note": "" },
+        { "hr": "Da li govoriš hrvatski?", "en": "Do you speak Croatian? (alternative form)", "note": "'Da li…?' exists too, but 'Govoriš li…?' is the preferred standard form in Croatia." },
+        { "hr": "Ne, ne govorim.", "en": "No, I don't speak.", "note": "Answering negatively doubles the ne: 'Ne,' (no) + 'ne govorim' (I don't speak)." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Negate it, question it",
+      "intro": "Practise 'ne' + verb, the fused 'nemam', and building li-questions.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Make it negative: 'Govorim engleski.'",
+          "difficulty": 2,
+          "options": ["Ne govorim engleski.", "Negovorim engleski.", "Govorim ne engleski.", "Ni govorim engleski."],
+          "answer": "Ne govorim engleski.",
+          "explanation": "ne stands directly before the verb, as a separate word."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Say 'I don't understand.'",
+          "difficulty": 2,
+          "answer": "Ne razumijem",
+          "accepted": ["Ne razumijem", "Ne razumijem.", "ne razumijem"],
+          "strictDiacritics": true,
+          "explanation": "ne + razumijem. The single most useful phrase for a learner."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the negative of 'imam' (I have)?",
+          "difficulty": 3,
+          "options": ["ne imam", "nemam", "nisam", "neimam"],
+          "answer": "nemam",
+          "explanation": "imati is the only verb that fuses with ne: nemam, nemaš, nema… 'ne imam' is wrong."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the question: 'Do you speak English?'",
+          "difficulty": 3,
+          "options": ["li", "engleski", "Govoriš"],
+          "ordered": ["Govoriš", "li", "engleski"],
+          "answer": "Govoriš li engleski",
+          "explanation": "Yes/no question = verb first, then li, then the rest."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Where does 'li' go in a yes/no question?",
+          "difficulty": 3,
+          "options": ["Li govoriš hrvatski?", "Govoriš li hrvatski?", "Govoriš hrvatski li?"],
+          "answer": "Govoriš li hrvatski?",
+          "explanation": "li always comes immediately after the verb — never first, never last."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask a friend 'Do you drink coffee?' (piti, informal)",
+          "difficulty": 4,
+          "answer": "Piješ li kavu?",
+          "accepted": ["Piješ li kavu?", "Piješ li kavu", "piješ li kavu"],
+          "strictDiacritics": true,
+          "explanation": "piješ (you drink) + li + kavu (accusative object)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which question means the same as 'Govoriš li engleski?'",
+          "difficulty": 4,
+          "options": ["Da li govoriš engleski?", "Ne govoriš engleski.", "Gdje govoriš engleski?", "Govoriš engleski ne?"],
+          "answer": "Da li govoriš engleski?",
+          "explanation": "'Da li + verb' is an alternative yes/no question form; in Croatia 'verb + li' is preferred in the standard language."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Answer 'Radiš li danas?' with NO:",
+          "difficulty": 4,
+          "options": ["Ne, ne radim.", "Ne, radim.", "Da, ne radim.", "Ne radim, da."],
+          "answer": "Ne, ne radim.",
+          "explanation": "First 'Ne,' answers the question; then 'ne radim' negates the verb. Croatian happily doubles the ne."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "13": [
+    {
+      "type": "LEARN",
+      "title": "The seven question words (+ two bonus ones)",
+      "intro": "Seven little words open every information question in Croatian: tko, što, gdje, kada, zašto, kako, koliko. Learn each one inside a real question you will actually ask.",
+      "items": [
+        { "hr": "tko", "en": "who", "note": "Tko je to? — Who is that?" },
+        { "hr": "što", "en": "what", "note": "Što radiš? — What are you doing?" },
+        { "hr": "gdje", "en": "where", "note": "Gdje je kolodvor? — Where is the station?" },
+        { "hr": "kada", "en": "when", "note": "Kada radiš? — When do you work? (also shortened: kad)" },
+        { "hr": "zašto", "en": "why", "note": "Zašto učiš hrvatski? — Why are you learning Croatian?" },
+        { "hr": "kako", "en": "how", "note": "Kako si? — How are you?" },
+        { "hr": "koliko", "en": "how much / how many", "note": "Koliko košta? — How much does it cost?" },
+        { "hr": "odakle", "en": "from where", "note": "Bonus: Odakle si? — Where are you from?" },
+        { "hr": "Kako se zoveš?", "en": "What is your name? (literally: how do you call yourself)", "note": "Croatian asks 'how', not 'what', for names." },
+        { "hr": "Gdje je WC, molim vas?", "en": "Where is the toilet, please?", "note": "Survival question number one when travelling." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Ask the right question",
+      "intro": "Match each situation to the right question word and build full questions.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which word means 'where'?",
+          "difficulty": 1,
+          "options": ["gdje", "kada", "zašto", "tko"],
+          "answer": "gdje",
+          "explanation": "gdje = where. Gdje je kolodvor? — Where is the station?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: ___ košta kava? (How much does the coffee cost?)",
+          "difficulty": 2,
+          "options": ["Koliko", "Kako", "Kada", "Gdje"],
+          "answer": "Koliko",
+          "explanation": "koliko = how much/how many. Don't mix it up with kako (how)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: ___ se zoveš? (What's your name?)",
+          "difficulty": 2,
+          "answer": "Kako",
+          "accepted": ["Kako", "kako"],
+          "strictDiacritics": true,
+          "explanation": "Croatian literally asks 'HOW do you call yourself': Kako se zoveš?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: ___ je to? — To je Marko. (…is that? — That's Marko.)",
+          "difficulty": 3,
+          "options": ["Tko", "Što", "Gdje", "Koliko"],
+          "answer": "Tko",
+          "explanation": "The answer is a person, so the question word is tko (who). For things you would use što (what)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask 'Where is the station?': ___ je kolodvor?",
+          "difficulty": 3,
+          "answer": "Gdje",
+          "accepted": ["Gdje", "gdje"],
+          "strictDiacritics": true,
+          "explanation": "gdje = where. Gdje je kolodvor?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which word means 'why'?",
+          "difficulty": 2,
+          "options": ["zašto", "zato", "kako", "kada"],
+          "answer": "zašto",
+          "explanation": "zašto = why. Careful: zato = 'that's why / because of that' — the answer, not the question!"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the question: 'How much does the beer cost?'",
+          "difficulty": 3,
+          "options": ["pivo", "Koliko", "košta"],
+          "ordered": ["Koliko", "košta", "pivo"],
+          "answer": "Koliko košta pivo",
+          "explanation": "Question word first: Koliko košta pivo?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Što radiš?' mean?",
+          "difficulty": 3,
+          "options": ["What are you doing?", "Where are you working?", "Why are you working?", "Who are you?"],
+          "answer": "What are you doing?",
+          "explanation": "što = what, radiš = you do/are doing. A very common conversation opener."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "14": [
+    {
+      "type": "LEARN",
+      "title": "Your A0 toolkit — everything in one place",
+      "intro": "Milestone day! These ten lines pack together everything from days 1-13: greetings, introducing yourself, biti, verbs, the accusative, negation and questions. If you can produce all ten from memory, you have reached A0.",
+      "items": [
+        { "hr": "Dobar dan! Ja sam Alex.", "en": "Good day! I am Alex.", "note": "Greeting + biti (day 2 + 6)." },
+        { "hr": "Zovem se Alex. Drago mi je.", "en": "My name is Alex. Nice to meet you.", "note": "The polite full introduction (day 3)." },
+        { "hr": "Odakle si? — Ja sam iz Amerike.", "en": "Where are you from? — I am from America.", "note": "'iz + place' = from. Fixed phrase for now." },
+        { "hr": "Govorim malo hrvatski.", "en": "I speak a little Croatian.", "note": "Present tense endings (day 8)." },
+        { "hr": "Oprostite, ne razumijem.", "en": "Sorry, I don't understand.", "note": "Politeness + negation (day 12)." },
+        { "hr": "Molim?", "en": "Pardon? / Sorry, say that again?", "note": "One magic word when you miss something." },
+        { "hr": "Koliko košta? — Deset eura.", "en": "How much does it cost? — Ten euros.", "note": "Question word + numbers (days 7 + 13)." },
+        { "hr": "Pijem kavu, a on pije pivo.", "en": "I drink coffee, and he drinks beer.", "note": "Nominative subject + accusative object in action (days 10-11)." },
+        { "hr": "Govoriš li engleski?", "en": "Do you speak English?", "note": "li-question (day 12)." },
+        { "hr": "Hvala i doviđenja!", "en": "Thanks and goodbye!", "note": "Closing any interaction politely (day 2)." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "A0 milestone quiz",
+      "intro": "A mixed check across everything so far: greetings, biti, genders, verbs, accusative, negation and questions. Aim for at least 8 out of 10.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'thank you'?",
+          "difficulty": 1,
+          "options": ["hvala", "molim", "oprostite", "izvolite"],
+          "answer": "hvala",
+          "explanation": "hvala = thanks; molim = please / you're welcome."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Ja ___ student. (I am a student.)",
+          "difficulty": 2,
+          "answer": "sam",
+          "accepted": ["sam"],
+          "strictDiacritics": true,
+          "explanation": "Short form of biti: ja sam, ti si, on je…"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What gender is 'kava'?",
+          "difficulty": 2,
+          "options": ["feminine", "masculine", "neuter"],
+          "answer": "feminine",
+          "explanation": "Nouns in -a are (almost always) feminine: kava, žena, škola."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Conjugate: Mi ___ hrvatski. (govoriti — we speak)",
+          "difficulty": 3,
+          "answer": "govorimo",
+          "accepted": ["govorimo"],
+          "strictDiacritics": true,
+          "explanation": "mi-form ends in -mo: govorimo."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'She is not here'?",
+          "difficulty": 3,
+          "options": ["Ona nije ovdje.", "Ona ne je ovdje.", "Ona nisam ovdje.", "Ona je ne ovdje."],
+          "answer": "Ona nije ovdje.",
+          "explanation": "biti has fused negatives: nije = is not. 'ne je' does not exist."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the object form: Pijem ___ . (kava)",
+          "difficulty": 3,
+          "answer": "kavu",
+          "accepted": ["kavu"],
+          "strictDiacritics": true,
+          "explanation": "Accusative of kava is kavu — feminine -a → -u."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which number is 'petnaest'?",
+          "difficulty": 3,
+          "options": ["5", "15", "50", "25"],
+          "answer": "15",
+          "explanation": "pet = 5, petnaest = 15, pedeset = 50. The -naest numbers are the teens."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the question: 'What is your name?'",
+          "difficulty": 4,
+          "options": ["se", "Kako", "zoveš"],
+          "ordered": ["Kako", "se", "zoveš"],
+          "answer": "Kako se zoveš",
+          "explanation": "Kako se zoveš? — literally 'How do you call yourself?'"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ask 'Do you speak English?'",
+          "difficulty": 4,
+          "options": ["Govoriš li engleski?", "Li govoriš engleski?", "Govoriš engleski?", "Zašto govoriš engleski?"],
+          "answer": "Govoriš li engleski?",
+          "explanation": "Yes/no question: verb + li. (Without li it can work in speech, but the li-form is the one to master.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Say 'I don't understand.'",
+          "difficulty": 4,
+          "answer": "Ne razumijem",
+          "accepted": ["Ne razumijem", "Ne razumijem.", "ne razumijem"],
+          "strictDiacritics": true,
+          "explanation": "ne + razumijem — negation goes directly before the verb."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Milestone conversation: meeting Ivana",
+      "intro": "Your first full conversation in Croatian — a real exchange using only what you've learned in the first two weeks. Read your lines ('Vi') aloud; better yet, cover the English and check yourself.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Dobar dan! Ja sam Ivana. Kako se zovete?", "en": "Good day! I am Ivana. What is your name? (formal)" },
+        { "speaker": "Vi", "hr": "Dobar dan! Zovem se Alex. Drago mi je.", "en": "Good day! My name is Alex. Nice to meet you." },
+        { "speaker": "Partner", "hr": "Drago mi je. Odakle ste?", "en": "Nice to meet you. Where are you from?" },
+        { "speaker": "Vi", "hr": "Ja sam iz Amerike. Sada živim u Zagrebu.", "en": "I am from America. Now I live in Zagreb." },
+        { "speaker": "Partner", "hr": "Govorite li hrvatski?", "en": "Do you speak Croatian?" },
+        { "speaker": "Vi", "hr": "Govorim malo hrvatski. Učim svaki dan.", "en": "I speak a little Croatian. I study every day." },
+        { "speaker": "Partner", "hr": "Odlično! Pijete li kavu?", "en": "Excellent! Do you drink coffee?" },
+        { "speaker": "Vi", "hr": "Da, volim kavu. Pijem kavu svaki dan.", "en": "Yes, I love coffee. I drink coffee every day." },
+        { "speaker": "Partner", "hr": "Super! Doviđenja, Alex!", "en": "Great! Goodbye, Alex!" },
+        { "speaker": "Vi", "hr": "Doviđenja, Ivana! Hvala!", "en": "Goodbye, Ivana! Thanks!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "15": [
+    {
+      "type": "LEARN",
+      "title": "imati — to have (and its special negative)",
+      "intro": "imati is a perfectly regular -am verb, and it pairs beautifully with the accusative you learned on day 11: Imam brata, Imam psa. Its negative is special — it fuses into one word: nemam, never 'ne imam'.",
+      "items": [
+        { "hr": "imam", "en": "I have", "note": "Imam auto. — I have a car." },
+        { "hr": "imaš", "en": "you have (informal)", "note": "Imaš li vremena? — Do you have time? (fixed phrase)" },
+        { "hr": "ima", "en": "he/she/it has", "note": "Ona ima sestru. — She has a sister." },
+        { "hr": "imamo", "en": "we have", "note": "Imamo kuću i vrt. — We have a house and a garden." },
+        { "hr": "imate", "en": "you have (formal / plural)", "note": "Imate li djecu? — Do you have children?" },
+        { "hr": "imaju", "en": "they have", "note": "Oni imaju psa. — They have a dog." },
+        { "hr": "nemam", "en": "I don't have", "note": "The ONLY verb that fuses with ne: nemam, nemaš, nema, nemamo, nemate, nemaju." },
+        { "hr": "Imam brata i sestru.", "en": "I have a brother and a sister.", "note": "Accusative in action: brat → brata (animate), sestra → sestru (fem. -a → -u)." },
+        { "hr": "Imaš li auto?", "en": "Do you have a car?", "note": "imati + li question. auto is masculine inanimate — no change." },
+        { "hr": "On ima psa.", "en": "He has a dog.", "note": "pas → psa: animate -a plus the fleeting a drops." },
+        { "hr": "Nemam auto, ali imam bicikl.", "en": "I don't have a car, but I have a bicycle.", "note": "ali = but. Contrast two possessions in one sentence." },
+        { "hr": "Nema problema!", "en": "No problem!", "note": "Everyday set phrase — you'll hear it constantly. (Literally 'there is no problem.')" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "What do you have?",
+      "intro": "Conjugate imati, use its fused negative, and combine it with accusative objects.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Complete: Ja ___ brata. (I have a brother.)",
+          "difficulty": 2,
+          "answer": "imam",
+          "accepted": ["imam", "Imam"],
+          "strictDiacritics": true,
+          "explanation": "imati is a regular -am verb: imam, imaš, ima…"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the negative of 'imam'?",
+          "difficulty": 2,
+          "options": ["nemam", "ne imam", "nisam", "neimam"],
+          "answer": "nemam",
+          "explanation": "imati fuses with ne into nemati: nemam, nemaš, nema…"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask a friend: ___ li auto? (Do you have a car?)",
+          "difficulty": 3,
+          "answer": "Imaš",
+          "accepted": ["Imaš", "imaš"],
+          "strictDiacritics": true,
+          "explanation": "ti-form imaš + li: Imaš li auto?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: On ___ psa. (He has a dog.)",
+          "difficulty": 3,
+          "options": ["ima", "imaš", "imam", "imaju"],
+          "answer": "ima",
+          "explanation": "on/ona/ono → ima (no ending). psa is the accusative of pas."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Mi ___ kuću. (We have a house.)",
+          "difficulty": 3,
+          "answer": "imamo",
+          "accepted": ["imamo"],
+          "strictDiacritics": true,
+          "explanation": "mi-form ends in -mo: imamo. kuća → kuću (accusative)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'I have a sister'?",
+          "difficulty": 4,
+          "options": ["Imam sestru.", "Imam sestra.", "Imam sestre.", "Imam sestri."],
+          "answer": "Imam sestru.",
+          "explanation": "sestra is the object → accusative sestru (feminine -a → -u)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the polite question: 'Do you have children?'",
+          "difficulty": 4,
+          "options": ["li", "Imate", "djecu"],
+          "ordered": ["Imate", "li", "djecu"],
+          "answer": "Imate li djecu",
+          "explanation": "Formal imate + li + djecu (accusative of djeca, children)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'We don't have a dog'?",
+          "difficulty": 5,
+          "options": ["Nemamo psa.", "Ne imamo psa.", "Nemamo pas.", "Nismo psa."],
+          "answer": "Nemamo psa.",
+          "explanation": "Fused negative nemamo + accusative psa. 'Ne imamo' is wrong, and pas must change to psa."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "16": [
+    {
+      "type": "LEARN",
+      "title": "Ten verbs that carry your day",
+      "intro": "These ten high-frequency verbs cover most of what you do daily. For each one, learn the ja-form — the rest follows the regular endings you know (-m, -š, –, -mo, -te, -ju/-e). Watch out: a few have a present stem different from the infinitive.",
+      "items": [
+        { "hr": "ići — idem", "en": "to go — I go", "note": "idem, ideš, ide, idemo, idete, idu. Idem u grad. (u + accusative = motion 'into')" },
+        { "hr": "znati — znam", "en": "to know — I know", "note": "znam, znaš, zna, znamo, znate, znaju. Znam malo hrvatski." },
+        { "hr": "vidjeti — vidim", "en": "to see — I see", "note": "vidim, vidiš, vidi, vidimo, vidite, vide. Vidim more. (I see the sea.)" },
+        { "hr": "jesti — jedem", "en": "to eat — I eat", "note": "Irregular stem: jedem, jedeš, jede, jedemo, jedete, jedu. Jedem sendvič." },
+        { "hr": "piti — pijem", "en": "to drink — I drink", "note": "pijem, piješ, pije, pijemo, pijete, piju. Pijem vodu." },
+        { "hr": "gledati — gledam", "en": "to watch — I watch", "note": "Regular -am verb. Gledam televiziju." },
+        { "hr": "slušati — slušam", "en": "to listen — I listen", "note": "Slušam glazbu. (I listen to music. glazba → glazbu, accusative)" },
+        { "hr": "učiti — učim", "en": "to study/learn — I study", "note": "učim, učiš, uči… Učim hrvatski svaki dan." },
+        { "hr": "raditi — radim", "en": "to work/do — I work", "note": "Your day-8 model verb: radim, radiš, radi, radimo, radite, rade." },
+        { "hr": "kupovati — kupujem", "en": "to buy — I buy", "note": "-ovati verbs switch to -ujem: kupujem, kupuješ… Kupujem kruh." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Conjugation workout",
+      "intro": "Put the right ending on the right stem — including the tricky irregular stems.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Complete: Ja ___ u grad. (ići — I am going to town.)",
+          "difficulty": 2,
+          "answer": "idem",
+          "accepted": ["idem", "Idem"],
+          "strictDiacritics": true,
+          "explanation": "ići has the present stem id-: idem, ideš, ide…"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: Oni ___ hrvatski. (znati — they know)",
+          "difficulty": 2,
+          "options": ["znaju", "znam", "znate", "zna"],
+          "answer": "znaju",
+          "explanation": "-am verbs take -aju in the oni-form: znaju."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Mi ___ more. (vidjeti — we see the sea.)",
+          "difficulty": 3,
+          "answer": "vidimo",
+          "accepted": ["vidimo"],
+          "strictDiacritics": true,
+          "explanation": "vidjeti conjugates like an -im verb: vidim, vidiš… vidimo."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'I eat bread'?",
+          "difficulty": 3,
+          "options": ["Jedem kruh.", "Jestim kruh.", "Jedam kruh.", "Jedem kruha."],
+          "answer": "Jedem kruh.",
+          "explanation": "jesti has the irregular stem jed-: jedem. kruh is masculine inanimate — unchanged in the accusative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Ti ___ kavu. (piti — you drink coffee.)",
+          "difficulty": 4,
+          "answer": "piješ",
+          "accepted": ["piješ"],
+          "strictDiacritics": true,
+          "explanation": "piti → pijem, piješ (with j and the š ending for ti)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the ja-form of 'kupovati' (to buy)?",
+          "difficulty": 5,
+          "options": ["kupujem", "kupovam", "kupim", "kupavam"],
+          "answer": "kupujem",
+          "explanation": "Verbs in -ovati switch to -ujem in the present: kupovati → kupujem."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I am going to town.'",
+          "difficulty": 3,
+          "options": ["u", "Idem", "grad"],
+          "ordered": ["Idem", "u", "grad"],
+          "answer": "Idem u grad",
+          "explanation": "u + accusative expresses motion into a place; grad doesn't change (masc. inanimate)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Oni ___ televiziju. (gledati — they watch TV.)",
+          "difficulty": 3,
+          "answer": "gledaju",
+          "accepted": ["gledaju"],
+          "strictDiacritics": true,
+          "explanation": "gledati is a regular -am verb: oni gledaju. televizija → televiziju (accusative)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "17": [
+    {
+      "type": "LEARN",
+      "title": "htjeti & moći — wanting and being able",
+      "intro": "These two irregular verbs plus an infinitive unlock an enormous range: wanting, asking, requesting, refusing. Note the odd endings: hoću/mogu end in -u, and 'Mogu li…?' is your polite-request machine.",
+      "items": [
+        { "hr": "htjeti — hoću", "en": "to want — I want", "note": "hoću, hoćeš, hoće, hoćemo, hoćete, hoće. Irregular!" },
+        { "hr": "neću", "en": "I don't want / I won't", "note": "Fused negative: neću, nećeš, neće, nećemo, nećete, neće." },
+        { "hr": "moći — mogu", "en": "to be able (can) — I can", "note": "mogu, možeš, može, možemo, možete, mogu. The ja- and oni-forms end in -u!" },
+        { "hr": "Hoćeš li ići u kino?", "en": "Do you want to go to the cinema?", "note": "htjeti + li + infinitive. Infinitives end in -ti or -ći and never change." },
+        { "hr": "Hoću!", "en": "I do! / Yes, I want to!", "note": "A one-word enthusiastic yes." },
+        { "hr": "Mogu li dobiti kavu?", "en": "Can I get a coffee?", "note": "THE polite request pattern: Mogu li dobiti + accusative." },
+        { "hr": "Možeš li ponoviti?", "en": "Can you repeat that? (informal)", "note": "Survival phrase for every conversation." },
+        { "hr": "Možete li govoriti sporije?", "en": "Can you speak more slowly? (formal)", "note": "Learn it as a fixed phrase — sporije = more slowly." },
+        { "hr": "Ne mogu doći.", "en": "I can't come.", "note": "ne + mogu + infinitive. doći = to come." },
+        { "hr": "Želim učiti hrvatski.", "en": "I want to study Croatian.", "note": "željeti (želim) is a softer, politer 'want' than hoću — perfect for ordering too." },
+        { "hr": "Hoćemo li ići na more?", "en": "Shall we go to the seaside?", "note": "hoćemo li = shall we. na + accusative = motion 'onto/to'." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Want it, request it",
+      "intro": "Drill the irregular forms of htjeti and moći and build polite requests with an infinitive.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What is the ja-form of 'htjeti' (to want)?",
+          "difficulty": 2,
+          "options": ["hoću", "htjem", "hoćem", "hoće"],
+          "answer": "hoću",
+          "explanation": "htjeti is irregular: hoću, hoćeš, hoće, hoćemo, hoćete, hoće."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the ja-form of 'moći' (can)?",
+          "difficulty": 3,
+          "options": ["mogu", "možem", "možu", "mogem"],
+          "answer": "mogu",
+          "explanation": "mogu ends in -u — a rare ending shared only with hoću. 'možem' is a common learner error."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask a friend: ___ li ponoviti? (Can you repeat?)",
+          "difficulty": 3,
+          "answer": "Možeš",
+          "accepted": ["Možeš", "možeš"],
+          "strictDiacritics": true,
+          "explanation": "ti-form of moći is možeš: Možeš li ponoviti?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Ne ___ doći. (I can't come.)",
+          "difficulty": 3,
+          "answer": "mogu",
+          "accepted": ["mogu"],
+          "strictDiacritics": true,
+          "explanation": "ne + mogu + infinitive: Ne mogu doći."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the fused negative of 'hoću'?",
+          "difficulty": 3,
+          "options": ["neću", "ne hoću", "nehoću", "nemam"],
+          "answer": "neću",
+          "explanation": "htjeti fuses with ne: neću, nećeš, neće… ('ne hoću' is wrong.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the polite request: 'Can I get a coffee?'",
+          "difficulty": 4,
+          "options": ["li", "dobiti", "Mogu", "kavu"],
+          "ordered": ["Mogu", "li", "dobiti", "kavu"],
+          "answer": "Mogu li dobiti kavu",
+          "explanation": "Mogu + li + infinitive + accusative object — your all-purpose request pattern."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Hoćeš li ići u kino?' — pick the enthusiastic YES:",
+          "difficulty": 3,
+          "options": ["Hoću!", "Neću!", "Nemam!", "Nisam!"],
+          "answer": "Hoću!",
+          "explanation": "Answer a htjeti-question with the same verb: Hoću! (I want to!) / Neću. (I don't want to.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Ja ___ učiti hrvatski. (željeti — I want to study Croatian.)",
+          "difficulty": 4,
+          "answer": "želim",
+          "accepted": ["želim", "Želim"],
+          "strictDiacritics": true,
+          "explanation": "željeti → želim; a softer 'want' than hoću, and the verb you'll use to order food tomorrow."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "18": [
+    {
+      "type": "LEARN",
+      "title": "The menu: what you'll eat and drink",
+      "intro": "Real café and konoba vocabulary. Every noun comes with its accusative — the form you actually say when ordering, because what you order is always a direct object.",
+      "items": [
+        { "hr": "kava", "en": "coffee", "note": "Order: jednu kavu (one coffee). Croatia runs on coffee." },
+        { "hr": "čaj", "en": "tea", "note": "Masculine — unchanged: Želim čaj." },
+        { "hr": "sok", "en": "juice", "note": "sok od naranče = orange juice. Unchanged: Pijem sok." },
+        { "hr": "voda", "en": "water", "note": "Order: vodu. Mineralna voda = mineral water." },
+        { "hr": "pivo", "en": "beer", "note": "Neuter — unchanged: jedno pivo, molim." },
+        { "hr": "vino", "en": "wine", "note": "bijelo vino (white), crno vino (red — literally 'black')." },
+        { "hr": "kruh", "en": "bread", "note": "Unchanged: Jedem kruh." },
+        { "hr": "sir", "en": "cheese", "note": "Unchanged: Želim sir." },
+        { "hr": "juha", "en": "soup", "note": "Order: juhu (feminine -a → -u)." },
+        { "hr": "salata", "en": "salad", "note": "Order: salatu." },
+        { "hr": "riba", "en": "fish", "note": "Order: ribu. Essential on the coast!" },
+        { "hr": "sladoled", "en": "ice cream", "note": "Unchanged: Želim sladoled." },
+        { "hr": "palačinke", "en": "pancakes (crêpes)", "note": "Usually plural: Želim palačinke. A Croatian dessert classic." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Ordering like a local",
+      "intro": "Ten phrases carry the entire café interaction — ordering, asking the price, paying and toasting. Combine them with the menu words and the accusative from day 11 and you can survive any café in Croatia.",
+      "items": [
+        { "hr": "Molim vas, jednu kavu.", "en": "One coffee, please.", "note": "Molim vas + accusative = the simplest polite order." },
+        { "hr": "Želim pizzu, molim.", "en": "I would like a pizza, please.", "note": "želim + accusative — politer than hoću when ordering." },
+        { "hr": "Za mene juhu, molim.", "en": "The soup for me, please.", "note": "za mene = for me. Handy when ordering in a group." },
+        { "hr": "Mogu li dobiti jelovnik?", "en": "Can I get the menu?", "note": "jelovnik = menu. Yesterday's request pattern in action." },
+        { "hr": "Koliko košta?", "en": "How much does it cost?", "note": "Koliko košta kava? — How much is the coffee?" },
+        { "hr": "Račun, molim.", "en": "The bill, please.", "note": "Short and universal. Also: Mogu li dobiti račun?" },
+        { "hr": "Izvolite.", "en": "Here you are. / What would you like?", "note": "The waiter's word — both when serving you and when inviting your order." },
+        { "hr": "Još nešto?", "en": "Anything else?", "note": "Answer: Ne, hvala. (No, thanks.) or Da, još jednu kavu. (Yes, one more coffee.)" },
+        { "hr": "Dobar tek!", "en": "Enjoy your meal!", "note": "Said before eating — the Croatian 'bon appétit'." },
+        { "hr": "Živjeli!", "en": "Cheers!", "note": "The toast — literally 'may you live long'." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Order a three-course interaction",
+      "intro": "From 'Izvolite?' to the bill — practise every step of ordering.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Order one coffee politely:",
+          "difficulty": 2,
+          "options": ["Molim vas, jednu kavu.", "Daj kava!", "Jedna kava ti.", "Hoću kava."],
+          "answer": "Molim vas, jednu kavu.",
+          "explanation": "Molim vas + jednu kavu (accusative). The others are rude or ungrammatical."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete your order: Želim ___ , molim. (pizza)",
+          "difficulty": 3,
+          "answer": "pizzu",
+          "accepted": ["pizzu"],
+          "strictDiacritics": true,
+          "explanation": "pizza is feminine → accusative pizzu: Želim pizzu, molim."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you ask 'How much does it cost?'",
+          "difficulty": 2,
+          "options": ["Koliko košta?", "Kako košta?", "Koliko je sati?", "Gdje košta?"],
+          "answer": "Koliko košta?",
+          "explanation": "koliko = how much. (Koliko je sati? asks the TIME, not the price.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask for the bill: ___ , molim.",
+          "difficulty": 3,
+          "answer": "Račun",
+          "accepted": ["Račun", "račun"],
+          "strictDiacritics": true,
+          "explanation": "Račun, molim. — The bill, please. Short and always understood."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The waiter says 'Izvolite.' What does it mean?",
+          "difficulty": 3,
+          "options": ["Here you are. / What would you like?", "Get out.", "It's expensive.", "Enjoy your meal."],
+          "answer": "Here you are. / What would you like?",
+          "explanation": "Izvolite is the all-purpose service word — inviting your order or handing you something."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the request: 'Can I get the menu?'",
+          "difficulty": 4,
+          "options": ["li", "jelovnik", "Mogu", "dobiti"],
+          "ordered": ["Mogu", "li", "dobiti", "jelovnik"],
+          "answer": "Mogu li dobiti jelovnik",
+          "explanation": "Mogu li dobiti + object. jelovnik is masculine inanimate — unchanged."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What do you say before people start eating?",
+          "difficulty": 3,
+          "options": ["Dobar tek!", "Živjeli!", "Doviđenja!", "Izvolite!"],
+          "answer": "Dobar tek!",
+          "explanation": "Dobar tek! = enjoy your meal. Živjeli! is the toast for drinks."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "You raise your glass. What do you say?",
+          "difficulty": 2,
+          "options": ["Živjeli!", "Dobar tek!", "Molim!", "Račun!"],
+          "answer": "Živjeli!",
+          "explanation": "Živjeli! = Cheers! (literally 'may you live long')."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "At the café: a full order, start to finish",
+      "intro": "A complete café scene in Zagreb — greeting, ordering food and drink, asking for the bill, paying. This is the exact interaction you'll have on your first day in Croatia. Play your side ('Vi') aloud.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Dobar dan! Izvolite?", "en": "Good day! What would you like?" },
+        { "speaker": "Vi", "hr": "Dobar dan! Molim vas, jednu kavu i vodu.", "en": "Good day! One coffee and a water, please." },
+        { "speaker": "Partner", "hr": "Naravno. Želite li i nešto jesti?", "en": "Of course. Would you like something to eat as well?" },
+        { "speaker": "Vi", "hr": "Da, želim juhu i kruh, molim.", "en": "Yes, I'd like the soup and bread, please." },
+        { "speaker": "Partner", "hr": "Izvolite — juha, kruh, kava i voda. Dobar tek!", "en": "Here you are — soup, bread, coffee and water. Enjoy your meal!" },
+        { "speaker": "Vi", "hr": "Hvala lijepa!", "en": "Thank you very much!" },
+        { "speaker": "Vi", "hr": "Oprostite, mogu li dobiti račun?", "en": "Excuse me, can I get the bill?" },
+        { "speaker": "Partner", "hr": "Naravno. Sve zajedno osam eura.", "en": "Of course. Eight euros altogether." },
+        { "speaker": "Vi", "hr": "Izvolite. Hvala i doviđenja!", "en": "Here you are. Thanks and goodbye!" },
+        { "speaker": "Partner", "hr": "Hvala vama! Doviđenja!", "en": "Thank YOU! Goodbye!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "19": [
+    {
+      "type": "LEARN",
+      "title": "Numbers 20-100: one simple pattern",
+      "intro": "The tens are all built the same way: number + -deset. Then compounds just stack: dvadeset pet = 25. Learn the nine tens and you can say any price, age or phone number up to 100.",
+      "items": [
+        { "hr": "dvadeset", "en": "twenty (20)", "note": "dva + deset. Careful: dvanaest = 12!" },
+        { "hr": "trideset", "en": "thirty (30)", "note": "tri + deset." },
+        { "hr": "četrdeset", "en": "forty (40)", "note": "Slightly shortened: četrdeset, not 'četirideset'." },
+        { "hr": "pedeset", "en": "fifty (50)", "note": "Shortened from pet: PEdeset, not 'petdeset'." },
+        { "hr": "šezdeset", "en": "sixty (60)", "note": "Shortened from šest: šeZdeset." },
+        { "hr": "sedamdeset", "en": "seventy (70)", "note": "sedam + deset — fully regular." },
+        { "hr": "osamdeset", "en": "eighty (80)", "note": "osam + deset." },
+        { "hr": "devedeset", "en": "ninety (90)", "note": "devet loses its t: deveDEset." },
+        { "hr": "sto", "en": "one hundred (100)", "note": "Just sto — no 'jedan' needed." },
+        { "hr": "dvadeset pet", "en": "twenty-five (25)", "note": "Compounds simply stack: trideset dva (32), pedeset sedam (57), devedeset devet (99)." }
+      ],
+      "sources": ["asoo"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Telling the time & saying prices",
+      "intro": "Time and prices use one micro-rule: after 1 say sat, after 2-4 say sata, after 5+ say sati (and euro behaves the same: dva eura, pet eura). Plus the famous trap: 'pola osam' means HALF TO eight = 7:30.",
+      "items": [
+        { "hr": "Koliko je sati?", "en": "What time is it?", "note": "Literally 'how many of hours is it?'" },
+        { "hr": "Jedan je sat.", "en": "It's one o'clock.", "note": "After 1 → sat." },
+        { "hr": "Tri su sata.", "en": "It's three o'clock.", "note": "After 2, 3, 4 → sata: dva sata, tri sata, četiri sata." },
+        { "hr": "Pet je sati.", "en": "It's five o'clock.", "note": "After 5 and up → sati: pet sati, deset sati, jedanaest sati." },
+        { "hr": "Deset i petnaest.", "en": "Quarter past ten (10:15).", "note": "hour + i + minutes: osam i dvadeset = 8:20." },
+        { "hr": "Pola osam.", "en": "Half past SEVEN (7:30).", "note": "The trap! pola + the NEXT hour: pola osam = 7:30, pola devet = 8:30." },
+        { "hr": "U koliko sati?", "en": "At what time?", "note": "U koliko sati radiš? — At what time do you work?" },
+        { "hr": "U osam sati.", "en": "At eight o'clock.", "note": "u + time = at: U osam sati sam u školi." },
+        { "hr": "Kava košta dva eura.", "en": "The coffee costs two euros.", "note": "After 2-4 → eura: dva eura, tri eura." },
+        { "hr": "Račun je dvadeset pet eura.", "en": "The bill is twenty-five euros.", "note": "After 5+ (and compound numbers ending in 5+) → eura as well: pet eura, dvadeset pet eura." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Prices, times, phone numbers",
+      "intro": "Read numbers, tell the time and handle prices — the numbers you'll actually meet every day.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which is 40?",
+          "difficulty": 2,
+          "options": ["četrdeset", "četrnaest", "četirideset", "četristo"],
+          "answer": "četrdeset",
+          "explanation": "40 = četrdeset (shortened). četrnaest = 14."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Write 60 in Croatian:",
+          "difficulty": 3,
+          "answer": "šezdeset",
+          "accepted": ["šezdeset"],
+          "strictDiacritics": true,
+          "explanation": "šest shortens and the s voices to z before d: šezdeset (not 'šestdeset')."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is 75?",
+          "difficulty": 3,
+          "options": ["sedamdeset pet", "sedamnaest pet", "pedeset sedam", "sedamdeset petnaest"],
+          "answer": "sedamdeset pet",
+          "explanation": "70 = sedamdeset, then stack the 5: sedamdeset pet. (pedeset sedam = 57!)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Write 100 in Croatian:",
+          "difficulty": 2,
+          "answer": "sto",
+          "accepted": ["sto"],
+          "strictDiacritics": true,
+          "explanation": "100 = sto, with no 'jedan' in front."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you ask 'What time is it?'",
+          "difficulty": 2,
+          "options": ["Koliko je sati?", "Koliko košta?", "Kada je sat?", "Gdje je sat?"],
+          "answer": "Koliko je sati?",
+          "explanation": "Koliko je sati? = What time is it? (Koliko košta? asks the price.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "It's 7:30. What do you say?",
+          "difficulty": 5,
+          "options": ["Pola osam.", "Pola sedam.", "Pola devet.", "Sedam sati."],
+          "answer": "Pola osam.",
+          "explanation": "pola + the NEXT hour: pola osam = half of the eighth hour = 7:30."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Tri su ___ . (It's three o'clock.)",
+          "difficulty": 4,
+          "answer": "sata",
+          "accepted": ["sata"],
+          "strictDiacritics": true,
+          "explanation": "After 2, 3 and 4 the word for hour is sata: tri sata."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'at eight o'clock'?",
+          "difficulty": 3,
+          "options": ["u osam sati", "na osam sata", "za osam sat", "od osam sati"],
+          "answer": "u osam sati",
+          "explanation": "u + time = at: u osam sati. After 5+ the form is sati."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete the price: Kava košta dva ___ .",
+          "difficulty": 5,
+          "options": ["eura", "euro", "euri", "eure"],
+          "answer": "eura",
+          "explanation": "After 2, 3, 4 the noun takes the -a form: dva eura, tri eura. (jedan euro, pet eura.)"
+        }
+      ],
+      "sources": ["asoo"]
+    }
+  ],
+  "20": [
+    {
+      "type": "LEARN",
+      "title": "Ten adjectives in three genders",
+      "intro": "Adjectives copy the gender of their noun: masculine ends in a consonant (or -i), feminine in -a, neuter in -o. Learn each adjective as a trio — velik grad, velika kuća, veliko selo — and agreement becomes automatic.",
+      "items": [
+        { "hr": "dobar / dobra / dobro", "en": "good", "note": "Fleeting a: dobAr but dobra, dobro. dobar dan, dobra kava, dobro pivo." },
+        { "hr": "velik / velika / veliko", "en": "big", "note": "velik grad, velika kuća, veliko selo." },
+        { "hr": "mali / mala / malo", "en": "small", "note": "mali stan, mala kuća, malo selo." },
+        { "hr": "lijep / lijepa / lijepo", "en": "beautiful, nice", "note": "lijep grad, lijepa žena, lijepo more." },
+        { "hr": "nov / nova / novo", "en": "new", "note": "nov auto? Careful: auto is MASCULINE despite the -o: nov auto, nova knjiga, novo selo." },
+        { "hr": "star / stara / staro", "en": "old", "note": "star grad, stara škola, staro vino." },
+        { "hr": "mlad / mlada / mlado", "en": "young", "note": "mlad čovjek, mlada žena." },
+        { "hr": "brz / brza / brzo", "en": "fast", "note": "brz auto, brza žena, brzo pitanje. (brzo alone also = 'quickly')" },
+        { "hr": "skup / skupa / skupo", "en": "expensive", "note": "skup restoran, skupa kava, skupo vino." },
+        { "hr": "jeftin / jeftina / jeftino", "en": "cheap", "note": "jeftin stan, jeftina pizza, jeftino pivo." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Make it agree",
+      "intro": "Pick or produce the adjective ending that matches the noun's gender.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Complete: ___ kuća (a big house)",
+          "difficulty": 2,
+          "options": ["velika", "velik", "veliko", "veliku"],
+          "answer": "velika",
+          "explanation": "kuća is feminine → the adjective takes -a: velika kuća."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: ___ grad (a small city)",
+          "difficulty": 2,
+          "answer": "mali",
+          "accepted": ["mali", "Mali"],
+          "strictDiacritics": true,
+          "explanation": "grad is masculine → mali grad."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: ___ pivo (a good beer)",
+          "difficulty": 3,
+          "options": ["dobro", "dobar", "dobra", "dobru"],
+          "answer": "dobro",
+          "explanation": "pivo is neuter (-o) → dobro pivo. Note dobar loses its a: dobar → dobro."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Kava je ___ . (The coffee is expensive.)",
+          "difficulty": 3,
+          "answer": "skupa",
+          "accepted": ["skupa"],
+          "strictDiacritics": true,
+          "explanation": "kava is feminine → skupa: Kava je skupa."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: ___ more (a beautiful sea)",
+          "difficulty": 3,
+          "options": ["lijepo", "lijep", "lijepa", "lijepi"],
+          "answer": "lijepo",
+          "explanation": "more is neuter (-e) → lijepo more."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Auto je ___ . (The car is new.)",
+          "difficulty": 5,
+          "answer": "nov",
+          "accepted": ["nov"],
+          "strictDiacritics": true,
+          "explanation": "Trap! auto ends in -o but is MASCULINE, so: Auto je nov."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'My city is big.'",
+          "difficulty": 4,
+          "options": ["je", "Moj", "grad", "velik"],
+          "ordered": ["Moj", "grad", "je", "velik"],
+          "answer": "Moj grad je velik",
+          "explanation": "Possessive + noun + je + adjective — everything masculine to match grad."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which phrase is correct?",
+          "difficulty": 4,
+          "options": ["stara žena", "star žena", "staro žena", "stari žena"],
+          "answer": "stara žena",
+          "explanation": "žena is feminine → the adjective must end in -a: stara žena (an old woman)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Describing your city and home",
+      "intro": "A natural chat that puts today's adjectives to work — describing your city, your home and agreeing adjectives on the fly.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Kakav je tvoj grad?", "en": "What is your city like?" },
+        { "speaker": "Vi", "hr": "Moj grad je velik i lijep.", "en": "My city is big and beautiful." },
+        { "speaker": "Partner", "hr": "Imaš li veliku kuću?", "en": "Do you have a big house?" },
+        { "speaker": "Vi", "hr": "Ne, imam mali stan. Ali stan je nov.", "en": "No, I have a small flat. But the flat is new." },
+        { "speaker": "Partner", "hr": "Je li stan skup?", "en": "Is the flat expensive?" },
+        { "speaker": "Vi", "hr": "Nije, stan je jeftin. A tvoj stan?", "en": "It isn't, the flat is cheap. And your flat?" },
+        { "speaker": "Partner", "hr": "Moj stan je star, ali je velik.", "en": "My flat is old, but it's big." },
+        { "speaker": "Vi", "hr": "Super! Stari stanovi su lijepi.", "en": "Great! Old flats are beautiful." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}

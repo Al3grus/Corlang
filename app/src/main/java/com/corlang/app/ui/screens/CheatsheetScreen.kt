@@ -59,7 +59,7 @@ fun CheatsheetScreen(container: AppContainer, lang: String) {
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(top = 8.dp, bottom = 2.dp)
                     )
-                    section.examples.forEach { ExampleLine(it.target, it.gloss) }
+                    section.examples.forEach { ExampleLine(it.target, it.gloss, container.tts) }
                 }
             }
         }

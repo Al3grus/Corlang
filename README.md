@@ -1,33 +1,47 @@
-# Corlang 🇫🇷🇭🇷
+# Corlang 🇭🇷
 
-**Learn French and Croatian fast — the 20% that drives 80% of the results.**
+**Learn Croatian daily, pass the official B1 exam, keep going to near-native.**
 
-Corlang is a native Android app (Kotlin + Jetpack Compose) that teaches **French** and **Croatian**
-to **English** speakers through a focused, two-month daily plan. It's fully offline, free to run, and
-tracks your progress independently for each language.
+Corlang is a native Android app (Kotlin + Jetpack Compose) built for one job: making daily
+Croatian practice so easy that consistency takes care of itself — and anchored to the official
+standards so what you learn is exam-valid. Fully offline, free to run, local progress.
 
-> The philosophy: most of everyday fluency comes from a small core — high-frequency words, a handful
-> of verbs and tenses, and a few grammar patterns. Corlang teaches that core deliberately, in order,
-> and makes you *use* it every day.
+> **Validation**: every piece of curriculum cites published official sources — the ASOO state
+> curriculum for Croatian as a foreign language, the NN 100/2021 exam regulation, Croaticum's
+> syllabus and sample exam, and the CEFR grid. Digests live in `docs/sources/`; the provenance
+> rule is enforced by `ContentValidationTest` on every build.
 
-## What's inside
+## The daily loop (gym-proof)
 
-Pick a language from the top bar (🇫🇷 / 🇭🇷) and everything below adapts to it. Five tabs:
+1. **Words** — the habit anchor: spaced-repetition flashcards in **sets of 7 cards** that fit a
+   rest between exercise sets. Swipe to grade (← again · → good · ↑ easy), haptic feedback,
+   TTS pronunciation, and exact resume if you pocket the phone mid-set. Established words flip
+   to **English → Croatian production** (recall, which is what speaking needs).
+2. **Today** — hero "Continue" button always knows the next best action; then the day's plan.
+3. **Streak with freezes** — any finished set/session/quiz counts; every 7 consecutive days
+   banks a streak freeze (max 2) that auto-covers one missed day. A **19:00 reminder** (rotating
+   copy) pings only on days you haven't studied.
+
+## Tabs
 
 | Tab | What it does |
 |-----|--------------|
-| **Today** | Your daily session from a 60-day plan: objective, the high-leverage focus, drills, linked resources, and a built-in **15-minute spaced review**. "Mark complete" advances the plan and grows your streak. |
-| **Cheatsheet** | The whole language on one page — bullets, diagrams and examples — designed for a **5-minute review**. |
-| **Quiz** | Per level, **10 questions ordered easy → hard**. Each answer is graded instantly with an explanation of what you missed. Best scores are saved. |
-| **Teach** | The **Feynman loop**: read a concept in plain English, re-explain it in your own words, then self-check against a rubric. Missed points reveal a re-teach snippet so you loop until you can explain it cleanly. |
-| **Progress** | The **CEFR ladder A0 → C1** with a milestone and can-do statements per level, your streak/level/day stats, the **top-5 resources** for the language, and your quiz history. |
+| **Today** | Goal-oriented hero (due words → today's plan day), streak + freezes, 60-day plan, reminder toggle. |
+| **Words** | SRS flashcards in gym sets; ~800 validated words so far (target ~2,500 through B1); daily goal ring; 10/15/20 new-words pace setting. |
+| **Quiz** | Level quizzes A0→C1 **and the full B1 mock exam** in the official 5-section format, scored by the real pass rule (≥60% ×3 + pass writing/speaking). |
+| **Learn** | Cheatsheet · **Grammar** (the full ASOO syllabus per level with reference declension/conjugation/clitic tables) · Feynman teach-back. |
+| **Progress** | Streak/level stats, CEFR ladder with official can-do descriptors, **exam-readiness view** (section results + can-do self-checklist), resources, quiz history. |
 
-CEFR levels covered: **A0, A1, A2, B1, B2, C1**. (C2 is intentionally excluded — effectively
-unreachable for most non-native learners.) Both languages ship with a **graded quiz at every level
-A0→C1** (6 quizzes × 10 progressive questions) and **Feynman teach-back concepts across all levels**,
-plus a full one-page cheatsheet, the CEFR ladder with milestones, and the top-5 resources. The
-**60-day daily plan** is a focused A0→A1 sprint (the "two-month" core); the quiz/Feynman/level
-ladders extend the reference content up through C1.
+## Resources it's built around
+
+The plan and resource list lean on the **free University of Zagreb (Croaticum) e-courses**:
+
+- [E-tečaj A1.hr](https://a1.ffzg.unizg.hr/) — 80 units of ~45 min with listening, pronunciation,
+  writing and comprehension. The plan's main structured course.
+- [E-tečaj A2.hr](https://a2.ffzg.unizg.hr/) — the ready-made next stage after the 60-day sprint.
+
+plus [easy-croatian.com](https://www.easy-croatian.com) (the definitive free grammar course),
+an italki tutor for speaking, and r/croatian for questions.
 
 ## Architecture (and why it scales)
 
@@ -35,45 +49,39 @@ ladders extend the reference content up through C1.
 `app/src/main/assets/content/<lang>/`:
 
 ```
-content/fr/   meta · cheatsheet · levels · plan · quizzes · feynman · resources  (.json)
-content/hr/   meta · cheatsheet · levels · plan · quizzes · feynman · resources  (.json)
+content/hr/   meta · cheatsheet · levels · plan · quizzes · feynman · resources · vocab  (.json)
+content/fr/   (complete French course, currently hidden — see below)
 ```
 
-The same Compose screens render whichever language is selected. **Adding content — or an entire new
-language — means adding JSON, with no UI changes.** That's the lever that lets this help thousands of
-learners and grow well beyond two languages.
+The same Compose screens render whichever language is selected. Adding content — or an entire new
+language — means adding JSON, with no UI changes.
 
-- **UI:** Jetpack Compose + Material 3, single-activity, Compose Navigation.
+- **UI:** Jetpack Compose + Material 3 (custom "Adriatic" light/dark palette), single-activity,
+  Compose Navigation.
 - **Content:** `kotlinx.serialization`, loaded by `ContentRepository` and cached in memory.
-- **Progress:** Room database (`LanguageProgress`, `DayCompletion`, `QuizAttempt`, `FeynmanAttempt`),
-  fully **independent per language**. Selected language persisted via DataStore.
-- **Offline & free:** no backend, no API keys, no network required. Grading is deterministic
-  (accent/case-insensitive matching); the Feynman loop uses rubric self-assessment.
+- **Progress:** Room (`LanguageProgress`, `DayCompletion`, `QuizAttempt`, `FeynmanAttempt`,
+  `WordReview`), independent per language. Settings via DataStore.
+- **SRS:** pure Leitner scheduler (`data/Srs.kt`, unit-tested) — boxes 0–6, intervals 1→45 days.
+- **Reminder:** WorkManager daily worker; skips the notification if you already studied that day.
+- **Offline & free:** no backend, no API keys. Grading is deterministic (accent/case-insensitive).
 
-```
-app/src/main/java/com/corlang/app/
-├─ data/        model (serialization) · ContentRepository · db (Room) · prefs (DataStore)
-├─ ui/
-│  ├─ navigation/   bottom-nav destinations
-│  ├─ screens/      today · cheatsheet · quiz · teach · progress (+ Grading)
-│  ├─ components/    shared UI + language top bar
-│  └─ theme/
-├─ AppContainer.kt  (manual DI + Application)
-└─ MainActivity.kt
-```
+### Re-enabling French
+
+The full French course still ships in `assets/content/fr/`. To show it again, add `"fr"` back to
+`availableLanguages` in `ContentRepository` — the language picker reappears automatically.
 
 ## Build & run
 
 You need **Android Studio** (it bundles the JDK, Android SDK and Gradle). See **[SETUP.md](SETUP.md)**
 for step-by-step instructions and an end-to-end smoke-test checklist.
 
-## Roadmap
+## Roadmap (tracked in docs/sources/vocab-coverage.md)
 
-- Extend the daily plan beyond the A0→A1 sprint into A2+ tracks (the level/quiz/Feynman ladders already reach C1).
-- Audio (text-to-speech / native recordings) for pronunciation.
-- A spaced-repetition scheduler reusing quiz history.
-- Optional cloud sync + accounts for cross-device progress.
-- Play Store release.
+- Vocabulary batches 04–09: A2 (+~600) and B1 (+~700 incl. the ASOO verb families) toward the
+  ~2,500-word exam-ready deck. Batches 00–03 (806 words) are shipped and id-frozen.
+- Plan Phases 2–3: A2 track (~90 days vs a2.ffzg.unizg.hr) and B1 track with exam-prep weeks.
+- Typed-recall mode for production cards; hands-free audio set mode.
+- Optional cloud sync + accounts for cross-device progress; Play Store release.
 
 ## License
 

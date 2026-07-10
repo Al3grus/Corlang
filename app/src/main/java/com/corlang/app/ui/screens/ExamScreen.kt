@@ -1,0 +1,542 @@
+package com.corlang.app.ui.screens
+
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.corlang.app.AppContainer
+import com.corlang.app.data.db.ExamSectionAttempt
+import com.corlang.app.data.model.ExamSection
+import com.corlang.app.data.model.ExamSectionKind
+import com.corlang.app.data.model.ExamSpec
+import com.corlang.app.data.model.OpenPrompt
+import com.corlang.app.data.model.Question
+import com.corlang.app.data.model.QuestionType
+import com.corlang.app.ui.Haptics
+import com.corlang.app.ui.components.InfoCard
+import com.corlang.app.ui.components.SpeakerButton
+import com.corlang.app.ui.theme.CorlangColors
+import kotlinx.coroutines.launch
+
+/** The official pass rule (NN 100/2021), pure and unit-testable. */
+object ExamRules {
+
+    /** A scored section passes at >= passPercent; pass/fail sections carry their own verdict. */
+    fun sectionPassed(score: Int, total: Int, passPercent: Int?): Boolean =
+        if (passPercent == null) true
+        else total > 0 && score * 100 >= passPercent * total
+
+    /**
+     * The whole exam passes only if EVERY section has a recorded, passing latest attempt.
+     * [latest] maps sectionId -> passed for the most recent attempt of each section.
+     */
+    fun examPassed(sectionIds: List<String>, latest: Map<String, Boolean>): Boolean =
+        sectionIds.isNotEmpty() && sectionIds.all { latest[it] == true }
+}
+
+/**
+ * Mock-exam hub + section runners, mirroring the official B1 exam format
+ * (see docs/sources/croaticum-b1-sample.md and nn-exam-regulations.md).
+ */
+@Composable
+fun ExamScreen(container: AppContainer, lang: String) {
+    val exams = remember(lang) { container.content.exams(lang) }
+    if (exams.isEmpty()) {
+        Column(Modifier.padding(16.dp)) { Text("No exam content for this language yet.") }
+        return
+    }
+    // Ids only, so an in-progress exam/section survives rotation/recreation.
+    var activeExamId by rememberSaveable(lang) { mutableStateOf<String?>(null) }
+    val exam = exams.firstOrNull { it.id == activeExamId }
+
+    if (exam == null) {
+        // Pick the mock for YOUR level — practice the official format from A1 up.
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+                .padding(16.dp)
+        ) {
+            Text("Mock exams", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+            Text(
+                "All levels use the official 5-section exam format. Practise at your current level; " +
+                    "B1 is the real certificate exam.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(vertical = 6.dp)
+            )
+            exams.forEach { e ->
+                InfoCard {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.fillMaxWidth().clickable { activeExamId = e.id }
+                    ) {
+                        Column(Modifier.weight(1f)) {
+                            Text("${e.levelId} · ${e.title}",
+                                style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                            Text(e.description,
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        }
+                        Text("▶", style = MaterialTheme.typography.titleLarge)
+                    }
+                }
+            }
+            Spacer(Modifier.height(24.dp))
+        }
+        return
+    }
+
+    var activeSectionId by rememberSaveable(lang, exam.id) { mutableStateOf<String?>(null) }
+
+    val section = exam.sections.firstOrNull { it.id == activeSectionId }
+    if (section == null) {
+        ExamOverview(
+            container, lang, exam,
+            onBack = { activeExamId = null }
+        ) { activeSectionId = it.id }
+    } else if (section.kind == ExamSectionKind.WRITING || section.kind == ExamSectionKind.SPEAKING) {
+        OpenSectionRunner(container, lang, exam, section) { activeSectionId = null }
+    } else {
+        ScoredSectionRunner(container, lang, exam, section) { activeSectionId = null }
+    }
+}
+
+@Composable
+private fun ExamOverview(
+    container: AppContainer,
+    lang: String,
+    exam: ExamSpec,
+    onBack: () -> Unit = {},
+    onStart: (ExamSection) -> Unit
+) {
+    val latest by container.progress.latestExamAttempts(lang, exam.id)
+        .collectAsState(initial = emptyList())
+    val latestBySection = remember(latest) { latest.associateBy { it.sectionId } }
+    val verdict = ExamRules.examPassed(
+        exam.sections.map { it.id },
+        latestBySection.mapValues { it.value.passed }
+    )
+    val feedback = CorlangColors.feedback
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .padding(16.dp)
+    ) {
+        Text(exam.title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+        Text(
+            exam.description,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(vertical = 6.dp)
+        )
+        Surface(
+            color = if (verdict) feedback.correctContainer else MaterialTheme.colorScheme.surfaceVariant,
+            contentColor = if (verdict) feedback.onCorrectContainer else MaterialTheme.colorScheme.onSurfaceVariant,
+            shape = RoundedCornerShape(12.dp),
+            modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp)
+        ) {
+            Text(
+                if (verdict) "🎓 All five sections passed on your latest attempts — by the official rule, you'd PASS. Time to book the real exam."
+                else "Official rule: ${exam.passRule}",
+                modifier = Modifier.padding(12.dp),
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.SemiBold
+            )
+        }
+
+        exam.sections.forEach { s ->
+            val a = latestBySection[s.id]
+            InfoCard {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth().clickable { onStart(s) }
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(s.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                        Text(
+                            when {
+                                a == null -> "Not attempted yet"
+                                s.passPercent != null ->
+                                    "Latest: ${a.score}/${a.total} (${if (a.total > 0) a.score * 100 / a.total else 0}%) — " +
+                                        (if (a.passed) "PASSED (≥${s.passPercent}%)" else "below ${s.passPercent}%")
+                                else -> if (a.passed) "Latest: PASSED (self-check)" else "Latest: not yet passed"
+                            },
+                            style = MaterialTheme.typography.bodySmall,
+                            color = if (a?.passed == true) feedback.correct
+                                    else MaterialTheme.colorScheme.primary
+                        )
+                    }
+                    Text(if (a?.passed == true) "✅" else "▶", style = MaterialTheme.typography.titleLarge)
+                }
+            }
+        }
+        OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
+            Text("Choose another level")
+        }
+        Spacer(Modifier.height(24.dp))
+    }
+}
+
+/** Runner for the three scored sections (listening/reading/grammar): MCQ + FILL questions. */
+@Composable
+private fun ScoredSectionRunner(
+    container: AppContainer,
+    lang: String,
+    exam: ExamSpec,
+    section: ExamSection,
+    onExit: () -> Unit
+) {
+    val scope = rememberCoroutineScope()
+    val context = LocalContext.current
+    val questions = section.questions
+    var index by rememberSaveable(section.id) { mutableIntStateOf(0) }
+    var score by rememberSaveable(section.id) { mutableIntStateOf(0) }
+    var checked by rememberSaveable(section.id) { mutableStateOf(false) }
+    var lastCorrect by rememberSaveable(section.id) { mutableStateOf(false) }
+    var finished by rememberSaveable(section.id) { mutableStateOf(false) }
+    var selectedOption by rememberSaveable(section.id) { mutableStateOf<String?>(null) }
+    var fillText by rememberSaveable(section.id) { mutableStateOf("") }
+    var confirmAbandon by rememberSaveable(section.id) { mutableStateOf(false) }
+    val feedback = CorlangColors.feedback
+
+    if (finished) {
+        val passed = ExamRules.sectionPassed(score, questions.size, section.passPercent)
+        Column(Modifier.fillMaxSize().padding(24.dp), verticalArrangement = Arrangement.Center) {
+            Text(section.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text(
+                "$score / ${questions.size}  (${if (questions.isNotEmpty()) score * 100 / questions.size else 0}%)",
+                style = MaterialTheme.typography.displaySmall,
+                color = if (passed) feedback.correct else feedback.wrong,
+                modifier = Modifier.padding(vertical = 10.dp)
+            )
+            Text(
+                if (passed) "PASSED — the official bar is ${section.passPercent}%."
+                else "Below the official ${section.passPercent}% bar — review and retake.",
+                style = MaterialTheme.typography.bodyLarge
+            )
+            Button(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 20.dp)) {
+                Text("Back to exam overview")
+            }
+        }
+        return
+    }
+
+    val q = questions[index]
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .imePadding()
+            .padding(16.dp)
+    ) {
+        Text(section.title, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        LinearProgressIndicator(
+            progress = { (index + 1f) / questions.size },
+            modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
+        )
+        if (section.instructions.isNotBlank() && index == 0) {
+            Text(section.instructions, style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = 6.dp))
+        }
+
+        // Reading passages shown before the questions; listening passages stay audio-only.
+        section.passages.forEach { p ->
+            InfoCard {
+                if (p.title.isNotBlank()) Text(p.title, fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.titleSmall)
+                if (p.audioOnly) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        SpeakerButton(tts = container.tts, text = p.text, rate = 0.9f)
+                        Text("Listen — the transcript stays hidden.",
+                            style = MaterialTheme.typography.bodySmall)
+                    }
+                } else {
+                    Text(p.text, style = MaterialTheme.typography.bodyMedium)
+                }
+            }
+        }
+
+        InfoCard {
+            // Listening item: play button instead of transcript.
+            q.audioText?.let { audio ->
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    SpeakerButton(tts = container.tts, text = audio, rate = 0.9f)
+                    Text("🎧 Play the recording (twice max, like the real exam)",
+                        style = MaterialTheme.typography.bodySmall)
+                }
+            }
+            Text(q.prompt, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+        }
+
+        when (q.type) {
+            QuestionType.MCQ -> q.options.forEach { option ->
+                val isChosen = selectedOption == option
+                val border = when {
+                    !checked && isChosen -> MaterialTheme.colorScheme.primary
+                    checked && option == q.answer -> feedback.correct
+                    checked && isChosen -> feedback.wrong
+                    else -> MaterialTheme.colorScheme.outline
+                }
+                Surface(
+                    shape = RoundedCornerShape(10.dp),
+                    color = MaterialTheme.colorScheme.surface,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp)
+                        .border(2.dp, border, RoundedCornerShape(10.dp))
+                        .clickable(enabled = !checked) { selectedOption = option }
+                ) { Text(option, modifier = Modifier.padding(14.dp)) }
+            }
+            else -> OutlinedTextField(
+                value = fillText,
+                onValueChange = { if (!checked) fillText = it },
+                label = { Text("Your answer (diacritics count!)") },
+                enabled = !checked,
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+
+        if (checked) {
+            Surface(
+                shape = RoundedCornerShape(10.dp),
+                color = if (lastCorrect) feedback.correctContainer else feedback.wrongContainer,
+                contentColor = if (lastCorrect) feedback.onCorrectContainer else feedback.onWrongContainer,
+                modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
+            ) {
+                Column(Modifier.padding(14.dp)) {
+                    Text(if (lastCorrect) "✅ Correct" else "❌ Not quite — answer: ${q.answer}",
+                        fontWeight = FontWeight.Bold)
+                    Text(q.explanation, modifier = Modifier.padding(top = 6.dp))
+                }
+            }
+        }
+
+        Button(
+            onClick = {
+                if (!checked) {
+                    val correct = when (q.type) {
+                        QuestionType.MCQ -> selectedOption?.let { Grading.gradeMcq(q, it) } ?: false
+                        else -> Grading.gradeFill(q, fillText)
+                    }
+                    lastCorrect = correct
+                    if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
+                    checked = true
+                } else if (index + 1 >= questions.size) {
+                    val passed = ExamRules.sectionPassed(score, questions.size, section.passPercent)
+                    scope.launch {
+                        container.progress.recordExamSection(
+                            lang, exam.id, section.id, score, questions.size, passed
+                        )
+                    }
+                    finished = true
+                } else {
+                    index++
+                    selectedOption = null; fillText = ""; checked = false; lastCorrect = false
+                }
+            },
+            enabled = checked || selectedOption != null || fillText.isNotBlank(),
+            modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp)
+        ) {
+            Text(
+                when {
+                    !checked -> "Check answer"
+                    index + 1 >= questions.size -> "Finish section"
+                    else -> "Next"
+                }
+            )
+        }
+        OutlinedButton(
+            onClick = { confirmAbandon = true },
+            modifier = Modifier.fillMaxWidth().padding(top = 16.dp)
+        ) { Text("Abandon section") }
+        if (confirmAbandon) {
+            AlertDialog(
+                onDismissRequest = { confirmAbandon = false },
+                title = { Text("Abandon this section?") },
+                text = { Text("Answers so far will not be recorded.") },
+                confirmButton = {
+                    Button(onClick = { confirmAbandon = false; onExit() }) { Text("Abandon") }
+                },
+                dismissButton = {
+                    OutlinedButton(onClick = { confirmAbandon = false }) { Text("Keep going") }
+                }
+            )
+        }
+    }
+}
+
+/** Runner for writing/speaking: prompt → produce → model answer + rubric → self pass/fail. */
+@Composable
+private fun OpenSectionRunner(
+    container: AppContainer,
+    lang: String,
+    exam: ExamSpec,
+    section: ExamSection,
+    onExit: () -> Unit
+) {
+    val scope = rememberCoroutineScope()
+    var promptIndex by rememberSaveable(section.id) { mutableIntStateOf(0) }
+    var passCount by rememberSaveable(section.id) { mutableIntStateOf(0) }
+    var finished by rememberSaveable(section.id) { mutableStateOf(false) }
+    val feedback = CorlangColors.feedback
+
+    if (finished) {
+        val passed = passCount == section.prompts.size
+        Column(Modifier.fillMaxSize().padding(24.dp), verticalArrangement = Arrangement.Center) {
+            Text(section.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text(
+                if (passed) "ZADOVOLJIO — section passed (self-check)."
+                else "Not yet — $passCount/${section.prompts.size} tasks passed. Practise and retake.",
+                style = MaterialTheme.typography.headlineSmall,
+                color = if (passed) feedback.correct else feedback.wrong,
+                modifier = Modifier.padding(vertical = 12.dp)
+            )
+            Button(
+                onClick = {
+                    scope.launch {
+                        container.progress.recordExamSection(
+                            lang, exam.id, section.id, 0, 0, passed
+                        )
+                    }
+                    onExit()
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) { Text("Save & back to overview") }
+        }
+        return
+    }
+
+    OpenPromptTask(
+        container = container,
+        section = section,
+        prompt = section.prompts[promptIndex],
+        index = promptIndex,
+        total = section.prompts.size,
+        onDone = { passed ->
+            if (passed) passCount++
+            if (promptIndex + 1 >= section.prompts.size) finished = true else promptIndex++
+        },
+        onExit = onExit
+    )
+}
+
+@Composable
+private fun OpenPromptTask(
+    container: AppContainer,
+    section: ExamSection,
+    prompt: OpenPrompt,
+    index: Int,
+    total: Int,
+    onDone: (Boolean) -> Unit,
+    onExit: () -> Unit
+) {
+    var text by rememberSaveable(prompt.prompt) { mutableStateOf("") }
+    var revealed by rememberSaveable(prompt.prompt) { mutableStateOf(false) }
+    val ticks = remember(prompt.prompt) { mutableStateMapOf<Int, Boolean>() }
+    val isWriting = section.kind == ExamSectionKind.WRITING
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .imePadding()
+            .padding(16.dp)
+    ) {
+        Text("${section.title} · ${index + 1}/$total",
+            style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        InfoCard { Text(prompt.prompt, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold) }
+
+        if (isWriting) {
+            OutlinedTextField(
+                value = text,
+                onValueChange = { text = it },
+                label = { Text("Write your text here (7-8 sentences)") },
+                minLines = 6,
+                modifier = Modifier.fillMaxWidth()
+            )
+        } else {
+            Text(
+                "🎙 Speak your answer ALOUD for 1-2 minutes (record yourself if possible), then reveal the model.",
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+        }
+
+        if (!revealed) {
+            Button(
+                onClick = { revealed = true },
+                enabled = !isWriting || text.isNotBlank(),
+                modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
+            ) { Text("Show model answer & rubric") }
+        } else {
+            InfoCard {
+                Text("Model answer", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
+                Text(prompt.modelAnswer, style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(top = 4.dp))
+                SpeakerButton(tts = container.tts, text = prompt.modelAnswer, rate = 0.95f)
+            }
+            Text("Check what your answer actually did:", style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold, modifier = Modifier.padding(top = 6.dp))
+            prompt.rubric.forEachIndexed { i, point ->
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(checked = ticks[i] ?: false, onCheckedChange = { ticks[i] = it })
+                    Text(point, style = MaterialTheme.typography.bodyMedium)
+                }
+            }
+            val allTicked = prompt.rubric.indices.all { ticks[it] == true }
+            Button(
+                onClick = { onDone(allTicked) },
+                modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
+            ) {
+                Text(
+                    if (allTicked) "All rubric points met → task passed"
+                    else "Save (task not passed — ${prompt.rubric.indices.count { ticks[it] == true }}/${prompt.rubric.size} points)"
+                )
+            }
+        }
+
+        OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
+            Text("Abandon section")
+        }
+        Spacer(Modifier.height(24.dp))
+    }
+}

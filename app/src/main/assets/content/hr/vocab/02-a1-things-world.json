@@ -1,0 +1,1862 @@
+{
+  "packs": [
+    {
+      "id": "clothing-colors",
+      "title": "Clothing & colors",
+      "level": "A1",
+      "words": [
+        {
+          "id": "majica",
+          "hr": "majica",
+          "en": "T-shirt",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nosim bijelu majicu.",
+            "gloss": "I'm wearing a white T-shirt."
+          }
+        },
+        {
+          "id": "košulja",
+          "hr": "košulja",
+          "en": "shirt",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ova košulja je prevelika.",
+            "gloss": "This shirt is too big."
+          }
+        },
+        {
+          "id": "hlače",
+          "hr": "hlače",
+          "en": "trousers / pants",
+          "pos": "n. f. pl.",
+          "note": "pluralia tantum — always plural, like English 'pants'",
+          "example": {
+            "target": "Gdje su moje hlače?",
+            "gloss": "Where are my trousers?"
+          }
+        },
+        {
+          "id": "traperice",
+          "hr": "traperice",
+          "en": "jeans",
+          "pos": "n. f. pl.",
+          "note": "pluralia tantum; distinctly Croatian (vs 'farmerke')",
+          "example": {
+            "target": "Danas nosim traperice.",
+            "gloss": "Today I'm wearing jeans."
+          }
+        },
+        {
+          "id": "haljina",
+          "hr": "haljina",
+          "en": "dress",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kupila je novu haljinu.",
+            "gloss": "She bought a new dress."
+          }
+        },
+        {
+          "id": "suknja",
+          "hr": "suknja",
+          "en": "skirt",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ta suknja je jako lijepa.",
+            "gloss": "That skirt is very pretty."
+          }
+        },
+        {
+          "id": "kaput",
+          "hr": "kaput",
+          "en": "coat",
+          "pos": "n. m.",
+          "example": {
+            "target": "Zimi nosim topao kaput.",
+            "gloss": "In winter I wear a warm coat."
+          }
+        },
+        {
+          "id": "jakna",
+          "hr": "jakna",
+          "en": "jacket",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uzmi jaknu, vani je hladno.",
+            "gloss": "Take a jacket, it's cold outside."
+          }
+        },
+        {
+          "id": "džemper",
+          "hr": "džemper",
+          "en": "sweater / jumper",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ovaj džemper je od vune.",
+            "gloss": "This sweater is made of wool."
+          }
+        },
+        {
+          "id": "čarape",
+          "hr": "čarape",
+          "en": "socks",
+          "pos": "n. f. pl.",
+          "note": "singular: čarapa",
+          "example": {
+            "target": "Ne mogu naći drugu čarapu.",
+            "gloss": "I can't find the other sock."
+          }
+        },
+        {
+          "id": "cipele",
+          "hr": "cipele",
+          "en": "shoes",
+          "pos": "n. f. pl.",
+          "note": "singular: cipela",
+          "example": {
+            "target": "Ove cipele su mi male.",
+            "gloss": "These shoes are too small for me."
+          }
+        },
+        {
+          "id": "tenisice",
+          "hr": "tenisice",
+          "en": "sneakers / trainers",
+          "pos": "n. f. pl.",
+          "note": "singular: tenisica; distinctly Croatian (vs 'patike')",
+          "example": {
+            "target": "Za trčanje trebam nove tenisice.",
+            "gloss": "I need new sneakers for running."
+          }
+        },
+        {
+          "id": "čizme",
+          "hr": "čizme",
+          "en": "boots",
+          "pos": "n. f. pl.",
+          "note": "singular: čizma",
+          "example": {
+            "target": "Zimi nosim čizme.",
+            "gloss": "In winter I wear boots."
+          }
+        },
+        {
+          "id": "papuče",
+          "hr": "papuče",
+          "en": "slippers",
+          "pos": "n. f. pl.",
+          "note": "singular: papuča",
+          "example": {
+            "target": "Kod kuće nosim papuče.",
+            "gloss": "At home I wear slippers."
+          }
+        },
+        {
+          "id": "šešir",
+          "hr": "šešir",
+          "en": "hat",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ljeti nosim šešir.",
+            "gloss": "In summer I wear a hat."
+          }
+        },
+        {
+          "id": "kapa",
+          "hr": "kapa",
+          "en": "cap / beanie",
+          "pos": "n. f.",
+          "example": {
+            "target": "Stavi kapu, hladno je!",
+            "gloss": "Put on a cap, it's cold!"
+          }
+        },
+        {
+          "id": "šal",
+          "hr": "šal",
+          "en": "scarf",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nosim šal oko vrata.",
+            "gloss": "I wear a scarf around my neck."
+          }
+        },
+        {
+          "id": "rukavice",
+          "hr": "rukavice",
+          "en": "gloves",
+          "pos": "n. f. pl.",
+          "note": "singular: rukavica",
+          "example": {
+            "target": "Izgubio sam jednu rukavicu.",
+            "gloss": "I lost one glove."
+          }
+        },
+        {
+          "id": "remen",
+          "hr": "remen",
+          "en": "belt",
+          "pos": "n. m.",
+          "example": {
+            "target": "Trebam novi remen za hlače.",
+            "gloss": "I need a new belt for my trousers."
+          }
+        },
+        {
+          "id": "kravata",
+          "hr": "kravata",
+          "en": "tie",
+          "pos": "n. f.",
+          "note": "the word comes from 'Hrvat' — the necktie is a Croatian invention",
+          "example": {
+            "target": "Na poslu nosi košulju i kravatu.",
+            "gloss": "At work he wears a shirt and a tie."
+          }
+        },
+        {
+          "id": "naočale",
+          "hr": "naočale",
+          "en": "glasses",
+          "pos": "n. f. pl.",
+          "note": "pluralia tantum; sunčane naočale = sunglasses",
+          "example": {
+            "target": "Ne vidim dobro bez naočala.",
+            "gloss": "I can't see well without glasses."
+          }
+        },
+        {
+          "id": "nakit",
+          "hr": "nakit",
+          "en": "jewelry",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ona rijetko nosi nakit.",
+            "gloss": "She rarely wears jewelry."
+          }
+        },
+        {
+          "id": "prsten",
+          "hr": "prsten",
+          "en": "ring",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ovaj prsten je od zlata.",
+            "gloss": "This ring is made of gold."
+          }
+        },
+        {
+          "id": "ogrlica",
+          "hr": "ogrlica",
+          "en": "necklace",
+          "pos": "n. f.",
+          "example": {
+            "target": "Dobila je ogrlicu na poklon.",
+            "gloss": "She got a necklace as a gift."
+          }
+        },
+        {
+          "id": "torbica",
+          "hr": "torbica",
+          "en": "handbag / purse",
+          "pos": "n. f.",
+          "example": {
+            "target": "Novčanik mi je u torbici.",
+            "gloss": "My wallet is in my handbag."
+          }
+        },
+        {
+          "id": "kišobran",
+          "hr": "kišobran",
+          "en": "umbrella",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pada kiša, uzmi kišobran!",
+            "gloss": "It's raining, take an umbrella!"
+          }
+        },
+        {
+          "id": "veličina",
+          "hr": "veličina",
+          "en": "size",
+          "pos": "n. f.",
+          "example": {
+            "target": "Imate li ovo u većoj veličini?",
+            "gloss": "Do you have this in a bigger size?"
+          }
+        },
+        {
+          "id": "boja",
+          "hr": "boja",
+          "en": "color",
+          "pos": "n. f.",
+          "example": {
+            "target": "Koja je tvoja najdraža boja?",
+            "gloss": "What is your favorite color?"
+          }
+        },
+        {
+          "id": "bijel",
+          "hr": "bijel",
+          "en": "white",
+          "pos": "adj.",
+          "note": "bijela (f), bijelo (n)",
+          "example": {
+            "target": "Snijeg je bijel.",
+            "gloss": "Snow is white."
+          }
+        },
+        {
+          "id": "crn",
+          "hr": "crn",
+          "en": "black",
+          "pos": "adj.",
+          "example": {
+            "target": "Imam crnu mačku.",
+            "gloss": "I have a black cat."
+          }
+        },
+        {
+          "id": "crven",
+          "hr": "crven",
+          "en": "red",
+          "pos": "adj.",
+          "example": {
+            "target": "Rajčica je crvena.",
+            "gloss": "The tomato is red."
+          }
+        },
+        {
+          "id": "plav",
+          "hr": "plav",
+          "en": "blue",
+          "pos": "adj.",
+          "note": "for hair it means blond: plava kosa",
+          "example": {
+            "target": "Nebo je danas plavo.",
+            "gloss": "The sky is blue today."
+          }
+        },
+        {
+          "id": "zelen",
+          "hr": "zelen",
+          "en": "green",
+          "pos": "adj.",
+          "example": {
+            "target": "Trava je zelena.",
+            "gloss": "Grass is green."
+          }
+        },
+        {
+          "id": "žut",
+          "hr": "žut",
+          "en": "yellow",
+          "pos": "adj.",
+          "example": {
+            "target": "Limun je žut.",
+            "gloss": "The lemon is yellow."
+          }
+        },
+        {
+          "id": "smeđ",
+          "hr": "smeđ",
+          "en": "brown",
+          "pos": "adj.",
+          "note": "soft stem: smeđi, smeđa, smeđe",
+          "example": {
+            "target": "Ona ima smeđe oči.",
+            "gloss": "She has brown eyes."
+          }
+        },
+        {
+          "id": "siv",
+          "hr": "siv",
+          "en": "gray",
+          "pos": "adj.",
+          "example": {
+            "target": "Nebo je sivo kad pada kiša.",
+            "gloss": "The sky is gray when it rains."
+          }
+        },
+        {
+          "id": "ružičast",
+          "hr": "ružičast",
+          "en": "pink",
+          "pos": "adj.",
+          "note": "colloquially also: roza",
+          "example": {
+            "target": "Kupila je ružičastu haljinu.",
+            "gloss": "She bought a pink dress."
+          }
+        },
+        {
+          "id": "ljubičast",
+          "hr": "ljubičast",
+          "en": "purple",
+          "pos": "adj.",
+          "note": "from ljubica = violet (the flower)",
+          "example": {
+            "target": "Cvijet je ljubičast.",
+            "gloss": "The flower is purple."
+          }
+        },
+        {
+          "id": "narančast",
+          "hr": "narančast",
+          "en": "orange (color)",
+          "pos": "adj.",
+          "example": {
+            "target": "Naranča je narančasta.",
+            "gloss": "The orange is orange."
+          }
+        },
+        {
+          "id": "šaren",
+          "hr": "šaren",
+          "en": "colorful / multicolored",
+          "pos": "adj.",
+          "example": {
+            "target": "Nosi šarenu majicu.",
+            "gloss": "He's wearing a colorful T-shirt."
+          }
+        },
+        {
+          "id": "svijetao",
+          "hr": "svijetao",
+          "en": "light / bright (of color)",
+          "pos": "adj.",
+          "note": "fleeting a: svijetla (f), svijetlo (n)",
+          "example": {
+            "target": "Volim svijetle boje.",
+            "gloss": "I like light colors."
+          }
+        },
+        {
+          "id": "taman",
+          "hr": "taman",
+          "en": "dark (of color)",
+          "pos": "adj.",
+          "note": "fleeting a: tamna (f), tamno (n)",
+          "example": {
+            "target": "Ona nosi tamnu jaknu.",
+            "gloss": "She's wearing a dark jacket."
+          }
+        },
+        {
+          "id": "nositi",
+          "hr": "nositi",
+          "en": "to wear / to carry",
+          "pos": "v. impf.",
+          "note": "one verb for both meanings — context decides",
+          "example": {
+            "target": "Što nosiš danas?",
+            "gloss": "What are you wearing today?"
+          }
+        },
+        {
+          "id": "odijevati se",
+          "hr": "odijevati se",
+          "en": "to get dressed",
+          "pos": "v. impf.",
+          "note": "pf. odjenuti se; everyday synonym: oblačiti se",
+          "example": {
+            "target": "Odijevam se brzo ujutro.",
+            "gloss": "I get dressed quickly in the morning."
+          }
+        },
+        {
+          "id": "obući",
+          "hr": "obući",
+          "en": "to put on (clothes) (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. oblačiti; obučem, imperative: obuci",
+          "example": {
+            "target": "Obuci toplu jaknu!",
+            "gloss": "Put on a warm jacket!"
+          }
+        },
+        {
+          "id": "probati",
+          "hr": "probati",
+          "en": "to try / to try on",
+          "pos": "v. impf.",
+          "note": "pf. isprobati; also 'to taste' food",
+          "example": {
+            "target": "Mogu li probati ovu haljinu?",
+            "gloss": "Can I try on this dress?"
+          }
+        },
+        {
+          "id": "pristajati",
+          "hr": "pristajati",
+          "en": "to suit / to fit (someone)",
+          "pos": "v. impf.",
+          "note": "takes the dative; pf. pristati",
+          "example": {
+            "target": "Ta ti haljina dobro pristaje.",
+            "gloss": "That dress suits you well."
+          }
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "id": "house-furniture",
+      "title": "House & furniture",
+      "level": "A1",
+      "words": [
+        {
+          "id": "zgrada",
+          "hr": "zgrada",
+          "en": "building",
+          "pos": "n. f.",
+          "example": {
+            "target": "Naša zgrada ima pet katova.",
+            "gloss": "Our building has five floors."
+          }
+        },
+        {
+          "id": "kat",
+          "hr": "kat",
+          "en": "floor / storey",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'sprat')",
+          "example": {
+            "target": "Stanujem na trećem katu.",
+            "gloss": "I live on the third floor."
+          }
+        },
+        {
+          "id": "dizalo",
+          "hr": "dizalo",
+          "en": "elevator / lift",
+          "pos": "n. n.",
+          "note": "distinctly Croatian; colloquially: lift",
+          "example": {
+            "target": "Dizalo ne radi, idemo pješice.",
+            "gloss": "The elevator isn't working, we're going on foot."
+          }
+        },
+        {
+          "id": "stepenice",
+          "hr": "stepenice",
+          "en": "stairs",
+          "pos": "n. f. pl.",
+          "note": "standard also: stube",
+          "example": {
+            "target": "Idem stepenicama na drugi kat.",
+            "gloss": "I take the stairs to the second floor."
+          }
+        },
+        {
+          "id": "dnevni boravak",
+          "hr": "dnevni boravak",
+          "en": "living room",
+          "pos": "n. m.",
+          "note": "often just 'dnevni' in speech",
+          "example": {
+            "target": "Televizor je u dnevnom boravku.",
+            "gloss": "The TV is in the living room."
+          }
+        },
+        {
+          "id": "spavaća soba",
+          "hr": "spavaća soba",
+          "en": "bedroom",
+          "pos": "n. f.",
+          "example": {
+            "target": "Spavaća soba je mala, ali svijetla.",
+            "gloss": "The bedroom is small but bright."
+          }
+        },
+        {
+          "id": "blagovaonica",
+          "hr": "blagovaonica",
+          "en": "dining room",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ručamo u blagovaonici.",
+            "gloss": "We have lunch in the dining room."
+          }
+        },
+        {
+          "id": "hodnik",
+          "hr": "hodnik",
+          "en": "hallway / corridor",
+          "pos": "n. m.",
+          "example": {
+            "target": "Cipele ostavljamo u hodniku.",
+            "gloss": "We leave our shoes in the hallway."
+          }
+        },
+        {
+          "id": "balkon",
+          "hr": "balkon",
+          "en": "balcony",
+          "pos": "n. m.",
+          "example": {
+            "target": "S balkona se vidi more.",
+            "gloss": "You can see the sea from the balcony."
+          }
+        },
+        {
+          "id": "dvorište",
+          "hr": "dvorište",
+          "en": "yard / courtyard",
+          "pos": "n. n.",
+          "example": {
+            "target": "Djeca se igraju u dvorištu.",
+            "gloss": "The children are playing in the yard."
+          }
+        },
+        {
+          "id": "vrt",
+          "hr": "vrt",
+          "en": "garden",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'bašta')",
+          "example": {
+            "target": "Baka ima lijep vrt iza kuće.",
+            "gloss": "Grandma has a nice garden behind the house."
+          }
+        },
+        {
+          "id": "garaža",
+          "hr": "garaža",
+          "en": "garage",
+          "pos": "n. f.",
+          "example": {
+            "target": "Auto je u garaži.",
+            "gloss": "The car is in the garage."
+          }
+        },
+        {
+          "id": "podrum",
+          "hr": "podrum",
+          "en": "basement / cellar",
+          "pos": "n. m.",
+          "example": {
+            "target": "Stare stvari držimo u podrumu.",
+            "gloss": "We keep old things in the basement."
+          }
+        },
+        {
+          "id": "krov",
+          "hr": "krov",
+          "en": "roof",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mačka je na krovu.",
+            "gloss": "The cat is on the roof."
+          }
+        },
+        {
+          "id": "zid",
+          "hr": "zid",
+          "en": "wall",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na zidu visi slika.",
+            "gloss": "A picture hangs on the wall."
+          }
+        },
+        {
+          "id": "pod",
+          "hr": "pod",
+          "en": "floor (surface)",
+          "pos": "n. m.",
+          "note": "also a preposition: pod stolom = under the table",
+          "example": {
+            "target": "Pod je od drva.",
+            "gloss": "The floor is made of wood."
+          }
+        },
+        {
+          "id": "strop",
+          "hr": "strop",
+          "en": "ceiling",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'plafon')",
+          "example": {
+            "target": "Lampa visi sa stropa.",
+            "gloss": "The lamp hangs from the ceiling."
+          }
+        },
+        {
+          "id": "namještaj",
+          "hr": "namještaj",
+          "en": "furniture",
+          "pos": "n. m.",
+          "note": "singular collective, like English 'furniture'",
+          "example": {
+            "target": "Kupili smo novi namještaj za stan.",
+            "gloss": "We bought new furniture for the apartment."
+          }
+        },
+        {
+          "id": "kauč",
+          "hr": "kauč",
+          "en": "couch / sofa",
+          "pos": "n. m.",
+          "example": {
+            "target": "Sjedimo na kauču i gledamo film.",
+            "gloss": "We're sitting on the couch watching a movie."
+          }
+        },
+        {
+          "id": "fotelja",
+          "hr": "fotelja",
+          "en": "armchair",
+          "pos": "n. f.",
+          "example": {
+            "target": "Djed čita novine u fotelji.",
+            "gloss": "Grandpa reads the newspaper in the armchair."
+          }
+        },
+        {
+          "id": "ormar",
+          "hr": "ormar",
+          "en": "wardrobe / closet",
+          "pos": "n. m.",
+          "example": {
+            "target": "Odjeća je u ormaru.",
+            "gloss": "The clothes are in the wardrobe."
+          }
+        },
+        {
+          "id": "polica",
+          "hr": "polica",
+          "en": "shelf",
+          "pos": "n. f.",
+          "example": {
+            "target": "Knjige su na polici.",
+            "gloss": "The books are on the shelf."
+          }
+        },
+        {
+          "id": "tepih",
+          "hr": "tepih",
+          "en": "carpet / rug",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na podu je velik tepih.",
+            "gloss": "There's a big rug on the floor."
+          }
+        },
+        {
+          "id": "zavjesa",
+          "hr": "zavjesa",
+          "en": "curtain",
+          "pos": "n. f.",
+          "example": {
+            "target": "Zavjese su bijele.",
+            "gloss": "The curtains are white."
+          }
+        },
+        {
+          "id": "lampa",
+          "hr": "lampa",
+          "en": "lamp",
+          "pos": "n. f.",
+          "note": "standard also: svjetiljka",
+          "example": {
+            "target": "Upali lampu, mrak je.",
+            "gloss": "Turn on the lamp, it's dark."
+          }
+        },
+        {
+          "id": "ogledalo",
+          "hr": "ogledalo",
+          "en": "mirror",
+          "pos": "n. n.",
+          "note": "standard also: zrcalo",
+          "example": {
+            "target": "Gledam se u ogledalu.",
+            "gloss": "I'm looking at myself in the mirror."
+          }
+        },
+        {
+          "id": "slika",
+          "hr": "slika",
+          "en": "picture / painting",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ova slika je jako stara.",
+            "gloss": "This picture is very old."
+          }
+        },
+        {
+          "id": "hladnjak",
+          "hr": "hladnjak",
+          "en": "refrigerator",
+          "pos": "n. m.",
+          "note": "colloquially: frižider",
+          "example": {
+            "target": "Mlijeko je u hladnjaku.",
+            "gloss": "The milk is in the fridge."
+          }
+        },
+        {
+          "id": "štednjak",
+          "hr": "štednjak",
+          "en": "stove / cooker",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'šporet')",
+          "example": {
+            "target": "Juha je na štednjaku.",
+            "gloss": "The soup is on the stove."
+          }
+        },
+        {
+          "id": "pećnica",
+          "hr": "pećnica",
+          "en": "oven",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kolač je u pećnici.",
+            "gloss": "The cake is in the oven."
+          }
+        },
+        {
+          "id": "perilica",
+          "hr": "perilica",
+          "en": "washing machine",
+          "pos": "n. f.",
+          "note": "perilica rublja = washing machine; perilica posuđa = dishwasher; colloquially: veš-mašina",
+          "example": {
+            "target": "Perilica rublja je u kupaonici.",
+            "gloss": "The washing machine is in the bathroom."
+          }
+        },
+        {
+          "id": "sudoper",
+          "hr": "sudoper",
+          "en": "kitchen sink",
+          "pos": "n. m.",
+          "example": {
+            "target": "Posuđe je u sudoperu.",
+            "gloss": "The dishes are in the sink."
+          }
+        },
+        {
+          "id": "ručnik",
+          "hr": "ručnik",
+          "en": "towel",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'peškir')",
+          "example": {
+            "target": "Uzmi čisti ručnik iz ormara.",
+            "gloss": "Take a clean towel from the wardrobe."
+          }
+        },
+        {
+          "id": "jastuk",
+          "hr": "jastuk",
+          "en": "pillow",
+          "pos": "n. m.",
+          "example": {
+            "target": "Spavam na dva jastuka.",
+            "gloss": "I sleep on two pillows."
+          }
+        },
+        {
+          "id": "deka",
+          "hr": "deka",
+          "en": "blanket",
+          "pos": "n. f.",
+          "note": "standard also: pokrivač",
+          "example": {
+            "target": "Zimi trebam toplu deku.",
+            "gloss": "In winter I need a warm blanket."
+          }
+        },
+        {
+          "id": "posteljina",
+          "hr": "posteljina",
+          "en": "bed linen / bedding",
+          "pos": "n. f.",
+          "example": {
+            "target": "Mijenjam posteljinu svaki tjedan.",
+            "gloss": "I change the bed linen every week."
+          }
+        },
+        {
+          "id": "sapun",
+          "hr": "sapun",
+          "en": "soap",
+          "pos": "n. m.",
+          "example": {
+            "target": "Operi ruke sapunom.",
+            "gloss": "Wash your hands with soap."
+          }
+        },
+        {
+          "id": "stanarina",
+          "hr": "stanarina",
+          "en": "rent (for an apartment)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Plaćam stanarinu svaki mjesec.",
+            "gloss": "I pay rent every month."
+          }
+        },
+        {
+          "id": "susjed",
+          "hr": "susjed",
+          "en": "neighbor",
+          "pos": "n. m.",
+          "note": "feminine: susjeda; distinctly Croatian (vs 'komšija')",
+          "example": {
+            "target": "Naš susjed je jako ljubazan.",
+            "gloss": "Our neighbor is very kind."
+          }
+        },
+        {
+          "id": "adresa",
+          "hr": "adresa",
+          "en": "address",
+          "pos": "n. f.",
+          "example": {
+            "target": "Koja je tvoja adresa?",
+            "gloss": "What is your address?"
+          }
+        },
+        {
+          "id": "stanovati",
+          "hr": "stanovati",
+          "en": "to reside / to live (somewhere)",
+          "pos": "v. impf.",
+          "note": "stanujem; where you live, vs živjeti = to live in general",
+          "example": {
+            "target": "Stanujem u malom stanu u centru.",
+            "gloss": "I live in a small apartment in the center."
+          }
+        },
+        {
+          "id": "iznajmiti",
+          "hr": "iznajmiti",
+          "en": "to rent / to rent out (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. iznajmljivati; used for both renting and renting out",
+          "example": {
+            "target": "Želimo iznajmiti stan u Zagrebu.",
+            "gloss": "We want to rent an apartment in Zagreb."
+          }
+        },
+        {
+          "id": "preseliti se",
+          "hr": "preseliti se",
+          "en": "to move (house) (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. seliti se",
+          "example": {
+            "target": "Preselili smo se u novu kuću.",
+            "gloss": "We moved into a new house."
+          }
+        },
+        {
+          "id": "pospremiti",
+          "hr": "pospremiti",
+          "en": "to tidy up (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. pospremati",
+          "example": {
+            "target": "Moram pospremiti sobu.",
+            "gloss": "I have to tidy my room."
+          }
+        },
+        {
+          "id": "čistiti",
+          "hr": "čistiti",
+          "en": "to clean",
+          "pos": "v. impf.",
+          "note": "pf. očistiti",
+          "example": {
+            "target": "Subotom čistim kuću.",
+            "gloss": "On Saturdays I clean the house."
+          }
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "id": "food-kitchen",
+      "title": "Food & kitchen",
+      "level": "A1",
+      "words": [
+        {
+          "id": "tanjur",
+          "hr": "tanjur",
+          "en": "plate",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'tanjir')",
+          "example": {
+            "target": "Stavi tanjure na stol.",
+            "gloss": "Put the plates on the table."
+          }
+        },
+        {
+          "id": "čaša",
+          "hr": "čaša",
+          "en": "glass (for drinking)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Molim čašu vode.",
+            "gloss": "A glass of water, please."
+          }
+        },
+        {
+          "id": "šalica",
+          "hr": "šalica",
+          "en": "cup / mug",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'šolja')",
+          "example": {
+            "target": "Pijem šalicu kave svako jutro.",
+            "gloss": "I drink a cup of coffee every morning."
+          }
+        },
+        {
+          "id": "žlica",
+          "hr": "žlica",
+          "en": "spoon",
+          "pos": "n. f.",
+          "note": "žličica = teaspoon; distinctly Croatian (vs 'kašika')",
+          "example": {
+            "target": "Jedem juhu žlicom.",
+            "gloss": "I eat soup with a spoon."
+          }
+        },
+        {
+          "id": "vilica",
+          "hr": "vilica",
+          "en": "fork",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'viljuška')",
+          "example": {
+            "target": "Trebam vilicu i nož.",
+            "gloss": "I need a fork and a knife."
+          }
+        },
+        {
+          "id": "nož",
+          "hr": "nož",
+          "en": "knife",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ovaj nož dobro reže.",
+            "gloss": "This knife cuts well."
+          }
+        },
+        {
+          "id": "zdjela",
+          "hr": "zdjela",
+          "en": "bowl",
+          "pos": "n. f.",
+          "example": {
+            "target": "Salata je u velikoj zdjeli.",
+            "gloss": "The salad is in a big bowl."
+          }
+        },
+        {
+          "id": "lonac",
+          "hr": "lonac",
+          "en": "pot (for cooking)",
+          "pos": "n. m.",
+          "note": "fleeting a: genitive lonca",
+          "example": {
+            "target": "Juha se kuha u loncu.",
+            "gloss": "The soup is cooking in the pot."
+          }
+        },
+        {
+          "id": "tava",
+          "hr": "tava",
+          "en": "frying pan",
+          "pos": "n. f.",
+          "example": {
+            "target": "Pečem jaja na tavi.",
+            "gloss": "I'm frying eggs in the pan."
+          }
+        },
+        {
+          "id": "recept",
+          "hr": "recept",
+          "en": "recipe",
+          "pos": "n. m.",
+          "note": "also: prescription (at the pharmacy)",
+          "example": {
+            "target": "Imaš li recept za ovaj kolač?",
+            "gloss": "Do you have the recipe for this cake?"
+          }
+        },
+        {
+          "id": "sastojak",
+          "hr": "sastojak",
+          "en": "ingredient",
+          "pos": "n. m.",
+          "note": "fleeting a: plural sastojci",
+          "example": {
+            "target": "Koji su sastojci ove juhe?",
+            "gloss": "What are the ingredients of this soup?"
+          }
+        },
+        {
+          "id": "ulje",
+          "hr": "ulje",
+          "en": "oil",
+          "pos": "n. n.",
+          "note": "maslinovo ulje = olive oil",
+          "example": {
+            "target": "Dodaj malo ulja u tavu.",
+            "gloss": "Add a little oil to the pan."
+          }
+        },
+        {
+          "id": "sol",
+          "hr": "sol",
+          "en": "salt",
+          "pos": "n. f.",
+          "note": "feminine i-declension: genitive soli; distinctly Croatian (vs 'so')",
+          "example": {
+            "target": "Dodaj malo soli u juhu.",
+            "gloss": "Add a little salt to the soup."
+          }
+        },
+        {
+          "id": "papar",
+          "hr": "papar",
+          "en": "pepper (spice)",
+          "pos": "n. m.",
+          "note": "fleeting a: genitive papra; the vegetable is paprika",
+          "example": {
+            "target": "Trebamo sol i papar.",
+            "gloss": "We need salt and pepper."
+          }
+        },
+        {
+          "id": "šećer",
+          "hr": "šećer",
+          "en": "sugar",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pijete li kavu sa šećerom?",
+            "gloss": "Do you take your coffee with sugar?"
+          }
+        },
+        {
+          "id": "brašno",
+          "hr": "brašno",
+          "en": "flour",
+          "pos": "n. n.",
+          "example": {
+            "target": "Za kolač trebamo brašno i jaja.",
+            "gloss": "For the cake we need flour and eggs."
+          }
+        },
+        {
+          "id": "riža",
+          "hr": "riža",
+          "en": "rice",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'pirinač')",
+          "example": {
+            "target": "Uz meso jedemo rižu.",
+            "gloss": "We eat rice with the meat."
+          }
+        },
+        {
+          "id": "tjestenina",
+          "hr": "tjestenina",
+          "en": "pasta",
+          "pos": "n. f.",
+          "example": {
+            "target": "Za večeru kuham tjesteninu.",
+            "gloss": "For dinner I'm cooking pasta."
+          }
+        },
+        {
+          "id": "krumpir",
+          "hr": "krumpir",
+          "en": "potato",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'krompir')",
+          "example": {
+            "target": "Trebamo kilogram krumpira.",
+            "gloss": "We need a kilo of potatoes."
+          }
+        },
+        {
+          "id": "luk",
+          "hr": "luk",
+          "en": "onion",
+          "pos": "n. m.",
+          "example": {
+            "target": "Režem luk i plačem.",
+            "gloss": "I'm cutting onions and crying."
+          }
+        },
+        {
+          "id": "češnjak",
+          "hr": "češnjak",
+          "en": "garlic",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'beli luk')",
+          "example": {
+            "target": "Ne volim češnjak.",
+            "gloss": "I don't like garlic."
+          }
+        },
+        {
+          "id": "mrkva",
+          "hr": "mrkva",
+          "en": "carrot",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'šargarepa')",
+          "example": {
+            "target": "Zec jede mrkvu.",
+            "gloss": "The rabbit is eating a carrot."
+          }
+        },
+        {
+          "id": "rajčica",
+          "hr": "rajčica",
+          "en": "tomato",
+          "pos": "n. f.",
+          "note": "colloquially: paradajz",
+          "example": {
+            "target": "Salata je od rajčice i luka.",
+            "gloss": "The salad is made of tomato and onion."
+          }
+        },
+        {
+          "id": "paprika",
+          "hr": "paprika",
+          "en": "pepper (vegetable) / paprika",
+          "pos": "n. f.",
+          "example": {
+            "target": "Paprika može biti crvena, žuta ili zelena.",
+            "gloss": "Peppers can be red, yellow, or green."
+          }
+        },
+        {
+          "id": "salata",
+          "hr": "salata",
+          "en": "salad / lettuce",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uz ručak jedemo zelenu salatu.",
+            "gloss": "With lunch we eat green salad."
+          }
+        },
+        {
+          "id": "kupus",
+          "hr": "kupus",
+          "en": "cabbage",
+          "pos": "n. m.",
+          "example": {
+            "target": "Sarma se radi od kupusa.",
+            "gloss": "Sarma is made from cabbage."
+          }
+        },
+        {
+          "id": "banana",
+          "hr": "banana",
+          "en": "banana",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ujutro jedem bananu.",
+            "gloss": "In the morning I eat a banana."
+          }
+        },
+        {
+          "id": "naranča",
+          "hr": "naranča",
+          "en": "orange (fruit)",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'pomorandža')",
+          "example": {
+            "target": "Sok od naranče je zdrav.",
+            "gloss": "Orange juice is healthy."
+          }
+        },
+        {
+          "id": "limun",
+          "hr": "limun",
+          "en": "lemon",
+          "pos": "n. m.",
+          "example": {
+            "target": "Stavljam limun u čaj.",
+            "gloss": "I put lemon in my tea."
+          }
+        },
+        {
+          "id": "grožđe",
+          "hr": "grožđe",
+          "en": "grapes",
+          "pos": "n. n.",
+          "note": "collective noun, always singular",
+          "example": {
+            "target": "Grožđe raste u Dalmaciji.",
+            "gloss": "Grapes grow in Dalmatia."
+          }
+        },
+        {
+          "id": "jagoda",
+          "hr": "jagoda",
+          "en": "strawberry",
+          "pos": "n. f.",
+          "example": {
+            "target": "Jagode su slatke.",
+            "gloss": "Strawberries are sweet."
+          }
+        },
+        {
+          "id": "kolač",
+          "hr": "kolač",
+          "en": "cake / pastry",
+          "pos": "n. m.",
+          "example": {
+            "target": "Baka peče kolač za rođendan.",
+            "gloss": "Grandma is baking a cake for the birthday."
+          }
+        },
+        {
+          "id": "čokolada",
+          "hr": "čokolada",
+          "en": "chocolate",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kupio sam ti čokoladu.",
+            "gloss": "I bought you a chocolate bar."
+          }
+        },
+        {
+          "id": "sladoled",
+          "hr": "sladoled",
+          "en": "ice cream",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ljeti jedemo sladoled na plaži.",
+            "gloss": "In summer we eat ice cream on the beach."
+          }
+        },
+        {
+          "id": "med",
+          "hr": "med",
+          "en": "honey",
+          "pos": "n. m.",
+          "example": {
+            "target": "Stavljam med u čaj kad sam bolestan.",
+            "gloss": "I put honey in my tea when I'm sick."
+          }
+        },
+        {
+          "id": "maslac",
+          "hr": "maslac",
+          "en": "butter",
+          "pos": "n. m.",
+          "note": "fleeting a: genitive maslaca; distinctly Croatian (vs 'puter')",
+          "example": {
+            "target": "Mažem maslac na kruh.",
+            "gloss": "I spread butter on bread."
+          }
+        },
+        {
+          "id": "šunka",
+          "hr": "šunka",
+          "en": "ham",
+          "pos": "n. f.",
+          "note": "pršut = Dalmatian dry-cured ham",
+          "example": {
+            "target": "Sendvič sa šunkom i sirom, molim.",
+            "gloss": "A ham and cheese sandwich, please."
+          }
+        },
+        {
+          "id": "kobasica",
+          "hr": "kobasica",
+          "en": "sausage",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kobasice pečemo na roštilju.",
+            "gloss": "We grill sausages on the barbecue."
+          }
+        },
+        {
+          "id": "piletina",
+          "hr": "piletina",
+          "en": "chicken (meat)",
+          "pos": "n. f.",
+          "note": "the animal is kokoš / pile",
+          "example": {
+            "target": "Piletina s rižom je moj najdraži ručak.",
+            "gloss": "Chicken with rice is my favorite lunch."
+          }
+        },
+        {
+          "id": "govedina",
+          "hr": "govedina",
+          "en": "beef",
+          "pos": "n. f.",
+          "example": {
+            "target": "Juha od govedine je jako dobra.",
+            "gloss": "Beef soup is very good."
+          }
+        },
+        {
+          "id": "svinjetina",
+          "hr": "svinjetina",
+          "en": "pork",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ne jedem svinjetinu.",
+            "gloss": "I don't eat pork."
+          }
+        },
+        {
+          "id": "kuhati",
+          "hr": "kuhati",
+          "en": "to cook",
+          "pos": "v. impf.",
+          "note": "pf. skuhati",
+          "example": {
+            "target": "Tata danas kuha ručak.",
+            "gloss": "Dad is cooking lunch today."
+          }
+        },
+        {
+          "id": "peći",
+          "hr": "peći",
+          "en": "to bake / to roast / to fry",
+          "pos": "v. impf.",
+          "note": "pečem, pečeš…; pf. ispeći",
+          "example": {
+            "target": "Pečem kruh u pećnici.",
+            "gloss": "I'm baking bread in the oven."
+          }
+        },
+        {
+          "id": "rezati",
+          "hr": "rezati",
+          "en": "to cut",
+          "pos": "v. impf.",
+          "note": "režem, režeš…; pf. narezati (slice up)",
+          "example": {
+            "target": "Režem kruh nožem.",
+            "gloss": "I'm cutting bread with a knife."
+          }
+        },
+        {
+          "id": "miješati",
+          "hr": "miješati",
+          "en": "to stir / to mix",
+          "pos": "v. impf.",
+          "note": "pf. promiješati",
+          "example": {
+            "target": "Polako miješaj juhu.",
+            "gloss": "Stir the soup slowly."
+          }
+        },
+        {
+          "id": "naručiti",
+          "hr": "naručiti",
+          "en": "to order (food, goods) (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. naručivati",
+          "example": {
+            "target": "Želim naručiti pizzu.",
+            "gloss": "I want to order a pizza."
+          }
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "id": "nature-animals",
+      "title": "Nature & animals",
+      "level": "A1",
+      "words": [
+        {
+          "id": "životinja",
+          "hr": "životinja",
+          "en": "animal",
+          "pos": "n. f.",
+          "example": {
+            "target": "Koja je tvoja najdraža životinja?",
+            "gloss": "What is your favorite animal?"
+          }
+        },
+        {
+          "id": "pas",
+          "hr": "pas",
+          "en": "dog",
+          "pos": "n. m.",
+          "note": "fleeting a: genitive psa",
+          "example": {
+            "target": "Naš pas se zove Rex.",
+            "gloss": "Our dog is called Rex."
+          }
+        },
+        {
+          "id": "mačka",
+          "hr": "mačka",
+          "en": "cat",
+          "pos": "n. f.",
+          "note": "male cat: mačak",
+          "example": {
+            "target": "Mačka spava na kauču.",
+            "gloss": "The cat is sleeping on the couch."
+          }
+        },
+        {
+          "id": "ptica",
+          "hr": "ptica",
+          "en": "bird",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ptice pjevaju u parku.",
+            "gloss": "Birds are singing in the park."
+          }
+        },
+        {
+          "id": "konj",
+          "hr": "konj",
+          "en": "horse",
+          "pos": "n. m.",
+          "example": {
+            "target": "Konj je velika i jaka životinja.",
+            "gloss": "The horse is a big and strong animal."
+          }
+        },
+        {
+          "id": "krava",
+          "hr": "krava",
+          "en": "cow",
+          "pos": "n. f.",
+          "example": {
+            "target": "Krava nam daje mlijeko.",
+            "gloss": "The cow gives us milk."
+          }
+        },
+        {
+          "id": "svinja",
+          "hr": "svinja",
+          "en": "pig",
+          "pos": "n. f.",
+          "example": {
+            "target": "Svinje žive na selu.",
+            "gloss": "Pigs live in the countryside."
+          }
+        },
+        {
+          "id": "kokoš",
+          "hr": "kokoš",
+          "en": "hen / chicken",
+          "pos": "n. f.",
+          "note": "feminine i-declension: genitive kokoši",
+          "example": {
+            "target": "Kokoš nese jaja.",
+            "gloss": "The hen lays eggs."
+          }
+        },
+        {
+          "id": "ovca",
+          "hr": "ovca",
+          "en": "sheep",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ovce jedu travu na livadi.",
+            "gloss": "Sheep eat grass in the meadow."
+          }
+        },
+        {
+          "id": "koza",
+          "hr": "koza",
+          "en": "goat",
+          "pos": "n. f.",
+          "example": {
+            "target": "Baka ima dvije koze.",
+            "gloss": "Grandma has two goats."
+          }
+        },
+        {
+          "id": "medvjed",
+          "hr": "medvjed",
+          "en": "bear",
+          "pos": "n. m.",
+          "example": {
+            "target": "U šumi živi medvjed.",
+            "gloss": "A bear lives in the forest."
+          }
+        },
+        {
+          "id": "vuk",
+          "hr": "vuk",
+          "en": "wolf",
+          "pos": "n. m.",
+          "note": "plural: vukovi",
+          "example": {
+            "target": "Vuk je opasna životinja.",
+            "gloss": "The wolf is a dangerous animal."
+          }
+        },
+        {
+          "id": "lisica",
+          "hr": "lisica",
+          "en": "fox",
+          "pos": "n. f.",
+          "example": {
+            "target": "Lisica je lukava.",
+            "gloss": "The fox is cunning."
+          }
+        },
+        {
+          "id": "zec",
+          "hr": "zec",
+          "en": "rabbit / hare",
+          "pos": "n. m.",
+          "note": "genitive: zeca",
+          "example": {
+            "target": "Zec brzo trči.",
+            "gloss": "The rabbit runs fast."
+          }
+        },
+        {
+          "id": "miš",
+          "hr": "miš",
+          "en": "mouse",
+          "pos": "n. m.",
+          "note": "also the computer mouse",
+          "example": {
+            "target": "Mačka lovi miša.",
+            "gloss": "The cat is chasing the mouse."
+          }
+        },
+        {
+          "id": "zmija",
+          "hr": "zmija",
+          "en": "snake",
+          "pos": "n. f.",
+          "example": {
+            "target": "Bojim se zmija.",
+            "gloss": "I'm afraid of snakes."
+          }
+        },
+        {
+          "id": "kukac",
+          "hr": "kukac",
+          "en": "insect / bug",
+          "pos": "n. m.",
+          "note": "fleeting a: genitive kukca; distinctly Croatian (vs 'buba/insekt')",
+          "example": {
+            "target": "Ljeti je u vrtu puno kukaca.",
+            "gloss": "In summer there are lots of insects in the garden."
+          }
+        },
+        {
+          "id": "pčela",
+          "hr": "pčela",
+          "en": "bee",
+          "pos": "n. f.",
+          "example": {
+            "target": "Pčele nam daju med.",
+            "gloss": "Bees give us honey."
+          }
+        },
+        {
+          "id": "leptir",
+          "hr": "leptir",
+          "en": "butterfly",
+          "pos": "n. m.",
+          "example": {
+            "target": "Leptir leti s cvijeta na cvijet.",
+            "gloss": "The butterfly flies from flower to flower."
+          }
+        },
+        {
+          "id": "šuma",
+          "hr": "šuma",
+          "en": "forest / woods",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vikendom šetamo po šumi.",
+            "gloss": "On weekends we walk in the forest."
+          }
+        },
+        {
+          "id": "polje",
+          "hr": "polje",
+          "en": "field",
+          "pos": "n. n.",
+          "example": {
+            "target": "Iza kuće je veliko polje.",
+            "gloss": "Behind the house is a big field."
+          }
+        },
+        {
+          "id": "livada",
+          "hr": "livada",
+          "en": "meadow",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na livadi raste cvijeće.",
+            "gloss": "Flowers grow in the meadow."
+          }
+        },
+        {
+          "id": "trava",
+          "hr": "trava",
+          "en": "grass",
+          "pos": "n. f.",
+          "example": {
+            "target": "Trava je mokra od kiše.",
+            "gloss": "The grass is wet from the rain."
+          }
+        },
+        {
+          "id": "list",
+          "hr": "list",
+          "en": "leaf",
+          "pos": "n. m.",
+          "note": "plural: listovi; lišće = foliage (collective); also a sheet of paper",
+          "example": {
+            "target": "U jesen listovi padaju s drveća.",
+            "gloss": "In autumn the leaves fall from the trees."
+          }
+        },
+        {
+          "id": "grana",
+          "hr": "grana",
+          "en": "branch",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ptica sjedi na grani.",
+            "gloss": "A bird is sitting on a branch."
+          }
+        },
+        {
+          "id": "kamen",
+          "hr": "kamen",
+          "en": "stone / rock",
+          "pos": "n. m.",
+          "note": "collective: kamenje = stones",
+          "example": {
+            "target": "Dijete baca kamen u vodu.",
+            "gloss": "The child throws a stone into the water."
+          }
+        },
+        {
+          "id": "pijesak",
+          "hr": "pijesak",
+          "en": "sand",
+          "pos": "n. m.",
+          "note": "fleeting a: genitive pijeska",
+          "example": {
+            "target": "Djeca se igraju u pijesku.",
+            "gloss": "The children are playing in the sand."
+          }
+        },
+        {
+          "id": "zrak",
+          "hr": "zrak",
+          "en": "air",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'vazduh')",
+          "example": {
+            "target": "Na planini je zrak čist.",
+            "gloss": "In the mountains the air is clean."
+          }
+        },
+        {
+          "id": "zemlja",
+          "hr": "zemlja",
+          "en": "earth / soil / land",
+          "pos": "n. f.",
+          "note": "also 'country'; capitalized Zemlja = planet Earth",
+          "example": {
+            "target": "Zemlja u vrtu je mokra.",
+            "gloss": "The soil in the garden is wet."
+          }
+        },
+        {
+          "id": "priroda",
+          "hr": "priroda",
+          "en": "nature",
+          "pos": "n. f.",
+          "example": {
+            "target": "Volim provoditi vrijeme u prirodi.",
+            "gloss": "I love spending time in nature."
+          }
+        },
+        {
+          "id": "okoliš",
+          "hr": "okoliš",
+          "en": "environment",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'životna sredina')",
+          "example": {
+            "target": "Moramo čuvati okoliš.",
+            "gloss": "We must protect the environment."
+          }
+        },
+        {
+          "id": "brdo",
+          "hr": "brdo",
+          "en": "hill",
+          "pos": "n. n.",
+          "note": "smaller than planina (mountain)",
+          "example": {
+            "target": "Popeli smo se na brdo.",
+            "gloss": "We climbed the hill."
+          }
+        },
+        {
+          "id": "zvijezda",
+          "hr": "zvijezda",
+          "en": "star",
+          "pos": "n. f.",
+          "example": {
+            "target": "Noću gledamo zvijezde.",
+            "gloss": "At night we look at the stars."
+          }
+        },
+        {
+          "id": "šetati",
+          "hr": "šetati",
+          "en": "to stroll / to take a walk",
+          "pos": "v. impf.",
+          "note": "šetam or šećem; pf. prošetati",
+          "example": {
+            "target": "Nedjeljom šetamo uz rijeku.",
+            "gloss": "On Sundays we walk along the river."
+          }
+        },
+        {
+          "id": "hraniti",
+          "hr": "hraniti",
+          "en": "to feed",
+          "pos": "v. impf.",
+          "note": "pf. nahraniti; hrana = food",
+          "example": {
+            "target": "Ujutro hranim mačku.",
+            "gloss": "In the morning I feed the cat."
+          }
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ]
+}

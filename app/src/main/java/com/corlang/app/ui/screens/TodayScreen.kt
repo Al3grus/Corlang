@@ -10,14 +10,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Timer
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -25,33 +21,43 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
-import com.corlang.app.ui.components.Bullet
+import com.corlang.app.data.WordsRepository
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
+import com.corlang.app.ui.navigation.Dest
 import kotlinx.coroutines.launch
 
 /**
- * Today's study session, drawn from the language's day-by-day plan. The learner can browse
- * days, and "Mark complete" records the completion, advances the plan, and updates the streak.
+ * Today = one button. The hero shows the streak and the next best action; "Start today's
+ * session" hands over to the guided SessionPlayer, which walks through every task of the
+ * day step by step. No loose checklists — the app leads.
  */
 @Composable
-fun TodayScreen(container: AppContainer, lang: String) {
+fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> Unit = {}) {
     val plan = remember(lang) { container.content.plan(lang) }
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val completed by container.progress.completedDays(lang).collectAsState(initial = emptyList())
-    val scope = rememberCoroutineScope()
 
     val currentDay = progress?.currentDay ?: 1
+    val streak = progress?.streak ?: 0
+    val freezes = progress?.streakFreezes ?: 0
+
+    // Live due count for the hero ('today' computed fresh — no stale midnight state).
+    val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
+    val today = WordsRepository.todayEpochDay()
+    val dueNow = reviews.count { it.dueEpochDay <= today }
+    val studiedToday = (progress?.lastStudiedEpochDay ?: 0L) == today
+
     // Which day is being viewed (defaults to current; user can browse).
     var viewedDay by remember(lang) { mutableStateOf(currentDay) }
     var userBrowsed by remember(lang) { mutableStateOf(false) }
-    // Snap to the current day when progress first loads, unless the user has browsed away.
     LaunchedEffect(currentDay) {
         if (!userBrowsed) viewedDay = currentDay
     }
@@ -59,13 +65,73 @@ fun TodayScreen(container: AppContainer, lang: String) {
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
     val isDone = completed.contains(day.day)
 
+    // Guided session mode.
+    var inPlayer by rememberSaveable(lang) { mutableStateOf(false) }
+    if (inPlayer) {
+        SessionPlayer(
+            container = container,
+            lang = lang,
+            day = day,
+            totalDays = plan.days.size,
+            onNavigate = onNavigate,
+            onExit = { inPlayer = false }
+        )
+        return
+    }
+
+    // Session progress for the viewed day (steps ticked in the player).
+    val resourceUrls = remember(lang) {
+        container.content.resources(lang).resources.associate { it.name to it.url }
+    }
+    val steps = remember(day.day) { buildSessionSteps(day, resourceUrls) }
+    val checks by container.progress.dayTaskChecks(lang, day.day)
+        .collectAsState(initial = emptyList())
+    val doneIds = checks.map { it.itemId }.toSet()
+    val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
+    val stepsDone = actionSteps.count {
+        it.id in doneIds || (it.kind == StepKind.WORDS && dueNow == 0)
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
             .padding(horizontal = 16.dp, vertical = 12.dp)
     ) {
-        // Day navigator
+        // Hero: streak + the single next action.
+        Surface(
+            color = MaterialTheme.colorScheme.tertiaryContainer,
+            contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
+            shape = RoundedCornerShape(16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 12.dp)
+        ) {
+            Column(modifier = Modifier.padding(14.dp)) {
+                Text(
+                    buildString {
+                        append(
+                            if (streak > 0) "🔥 $streak-day streak"
+                            else "🔥 Start your streak today"
+                        )
+                        if (freezes > 0) append("  ·  ❄️ $freezes freeze${if (freezes > 1) "s" else ""}")
+                    },
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(
+                    when {
+                        !studiedToday && dueNow > 0 -> "$dueNow words due — the session starts with them."
+                        studiedToday -> "Today is banked ✓ — keep going below for depth."
+                        else -> "One guided session keeps the streak alive."
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    modifier = Modifier.padding(top = 2.dp)
+                )
+            }
+        }
+
+        // Day navigator (browse the plan).
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -74,20 +140,20 @@ fun TodayScreen(container: AppContainer, lang: String) {
             OutlinedButton(
                 onClick = { if (viewedDay > 1) { viewedDay--; userBrowsed = true } },
                 enabled = viewedDay > 1
-            ) { Text("‹ Prev") }
+            ) { Text("‹") }
             Text(
-                "Day ${day.day} / ${plan.days.size}",
+                "Day ${day.day} / ${plan.days.size}" + if (isDone) "  ✓" else "",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold
             )
             OutlinedButton(
                 onClick = { if (viewedDay < plan.days.size) { viewedDay++; userBrowsed = true } },
                 enabled = viewedDay < plan.days.size
-            ) { Text("Next ›") }
+            ) { Text("›") }
         }
 
         Text(
-            "${day.phase} · Week ${day.week} · Level ${day.level}",
+            "${day.phase} · Week ${day.week} · ${day.level}",
             style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.padding(top = 8.dp)
@@ -99,70 +165,34 @@ fun TodayScreen(container: AppContainer, lang: String) {
         )
 
         InfoCard {
-            SectionTitle("🎯 Objective")
+            SectionTitle("🎯 Today you will")
             Text(day.objective, style = MaterialTheme.typography.bodyMedium)
-            SectionTitle("⚡ Why this is high-leverage (the 20%)")
-            Text(day.paretoFocus, style = MaterialTheme.typography.bodyMedium)
         }
 
-        if (day.drills.isNotEmpty()) {
-            InfoCard {
-                SectionTitle("✍️ Drills")
-                day.drills.forEach { Bullet(it) }
-            }
-        }
-
-        if (day.resources.isNotEmpty()) {
-            InfoCard {
-                SectionTitle("📚 Use these resources")
-                day.resources.forEach { Bullet(it) }
-            }
-        }
-
-        // The 15-minute review block, visually highlighted.
-        Surface(
-            color = MaterialTheme.colorScheme.tertiaryContainer,
-            shape = RoundedCornerShape(12.dp),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 8.dp)
-        ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.Filled.Timer, contentDescription = null)
-                    Text(
-                        "  ${day.reviewBlock.minutes}-minute review",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-                Text(
-                    "Close every session with this spaced review.",
-                    style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.padding(bottom = 4.dp)
-                )
-                day.reviewBlock.items.forEach { Bullet(it) }
-            }
-        }
-
+        // THE button.
         Button(
-            onClick = {
-                scope.launch {
-                    container.progress.completeDay(
-                        lang = lang,
-                        day = day.day,
-                        totalDays = plan.days.size,
-                        currentLevel = day.level
-                    )
-                }
-            },
-            enabled = !isDone,
+            onClick = { inPlayer = true },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 12.dp, bottom = 24.dp)
+                .padding(top = 8.dp)
         ) {
-            Icon(Icons.Filled.CheckCircle, contentDescription = null)
-            Text(if (isDone) "  Completed ✓" else "  Mark day complete")
+            Text(
+                when {
+                    isDone -> "Day done ✓ — revisit the session"
+                    stepsDone > 0 -> "Continue session ($stepsDone/${actionSteps.size} steps done)"
+                    else -> "Start today's session →"
+                },
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(vertical = 6.dp)
+            )
         }
+        Text(
+            "${actionSteps.size} guided steps · the app walks you through each one",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 4.dp)
+        )
+
+        androidx.compose.foundation.layout.Spacer(Modifier.padding(bottom = 24.dp))
     }
 }

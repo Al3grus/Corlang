@@ -1,0 +1,1224 @@
+{
+  "51": [
+    {
+      "type": "LEARN",
+      "title": "Core 600 in action",
+      "intro": "Today you lock in the words that do 80% of the work. Each sentence recycles several high-frequency words and one core grammar point. Read each aloud, cover the English, translate back — and star anything you hesitate on.",
+      "items": [
+        { "hr": "Svaki dan ujutro pijem kavu i jedem kruh sa sirom.", "en": "Every morning I drink coffee and eat bread with cheese.", "note": "pijem/jedem + accusative (kava → kavu); sa + instrumental (sir → sirom)." },
+        { "hr": "Radim u gradu, a moja žena radi kod kuće.", "en": "I work in the city, and my wife works at home.", "note": "u gradu = locative for location; kod kuće = fixed phrase 'at home'." },
+        { "hr": "Imam brata i sestru, ali nemam djece.", "en": "I have a brother and a sister, but I don't have children.", "note": "imati + accusative; after nemam the noun goes to the genitive (djece)." },
+        { "hr": "Idem u trgovinu jer trebam mlijeko, jaja i vodu.", "en": "I'm going to the store because I need milk, eggs and water.", "note": "ići u + accusative shows direction; jer = because, the workhorse connector." },
+        { "hr": "Želim učiti hrvatski svaki dan po trideset minuta.", "en": "I want to study Croatian for thirty minutes every day.", "note": "željeti/htjeti + infinitive — one pattern, endless sentences." },
+        { "hr": "Mogu govoriti malo hrvatski, ali još ne razumijem sve.", "en": "I can speak a little Croatian, but I don't understand everything yet.", "note": "moći + infinitive; još ne = not yet. Your most honest and most useful sentence." },
+        { "hr": "Jučer sam bio umoran, pa sam spavao cijeli dan.", "en": "Yesterday I was tired, so I slept all day.", "note": "Perfekt: sam + participle. A woman says: bila sam umorna, pa sam spavala." },
+        { "hr": "Sutra ću kupiti kartu za autobus i putovati na more.", "en": "Tomorrow I'll buy a bus ticket and travel to the seaside.", "note": "Futur: ću + infinitive; karta za + accusative = a ticket to." },
+        { "hr": "Koliko košta ova knjiga? Nije skupa, samo deset eura.", "en": "How much does this book cost? It's not expensive, only ten euros.", "note": "Koliko košta? unlocks every shop; skup/skupa agrees with the noun's gender." },
+        { "hr": "Volim ljeto jer je toplo i sunčano, a zimu ne volim.", "en": "I love summer because it's warm and sunny, but winter I don't love.", "note": "voljeti + accusative: zima → zimu. Fronting 'zimu' works because the ending shows its role." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Core vocabulary workout",
+      "intro": "Ten questions over the words and patterns you have been building since day 1. Aim for zero hesitation.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which word means 'bread'?",
+          "difficulty": 1,
+          "options": ["kruh", "mlijeko", "sir", "voda"],
+          "answer": "kruh",
+          "explanation": "kruh = bread, mlijeko = milk, sir = cheese, voda = water — all core shopping words.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Pijem ___ svako jutro. (I drink coffee every morning)",
+          "difficulty": 2,
+          "options": ["kavu", "kava", "kavi", "kavom"],
+          "answer": "kavu",
+          "explanation": "kava is the direct object, so it takes the accusative: feminine -a → -u.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: 'Ne ___ sve. Govorite sporije, molim Vas.' (I don't understand everything.)",
+          "difficulty": 3,
+          "options": [],
+          "answer": "razumijem",
+          "accepted": [],
+          "explanation": "razumjeti → razumijem. 'Ne razumijem' is your emergency brake in any conversation.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the opposite of 'skup' (expensive)?",
+          "difficulty": 3,
+          "options": ["jeftin", "velik", "star", "topao"],
+          "answer": "jeftin",
+          "explanation": "skup ↔ jeftin (cheap). velik = big, star = old, topao = warm.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask the price: '___ košta karta za Split?'",
+          "difficulty": 4,
+          "options": [],
+          "answer": "Koliko",
+          "accepted": ["koliko"],
+          "explanation": "Koliko košta...? = How much does ... cost? One of the seven question words.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the sentence in order: 'Tomorrow I will buy a bus ticket.'",
+          "difficulty": 5,
+          "options": ["kartu", "Sutra", "za", "ću", "autobus", "kupiti"],
+          "answer": "",
+          "ordered": ["Sutra", "ću", "kupiti", "kartu", "za", "autobus"],
+          "explanation": "Futur: ću sits in second position after 'Sutra', then the infinitive kupiti + object.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Nemam ___. (I have no time)",
+          "difficulty": 5,
+          "options": ["vremena", "vrijeme", "vremenu", "vremenom"],
+          "answer": "vremena",
+          "explanation": "After the negative nemam, the noun takes the genitive: vrijeme → vremena.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Say 'I want to study Croatian': '___ učiti hrvatski.'",
+          "difficulty": 6,
+          "options": [],
+          "answer": "Želim",
+          "accepted": ["želim", "Hoću", "hoću"],
+          "explanation": "Želim (or hoću) + infinitive expresses a wish. Both are correct here.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which set contains ONLY food words?",
+          "difficulty": 7,
+          "options": ["kruh, sir, jaje", "stol, more, grad", "brat, sestra, majka", "plav, star, mlad"],
+          "answer": "kruh, sir, jaje",
+          "explanation": "kruh/sir/jaje = bread/cheese/egg. The others are furniture-places, family, and adjectives.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Order the sentence: 'Yesterday I drank coffee with a friend.' (male speaker)",
+          "difficulty": 7,
+          "options": ["pio", "s", "Jučer", "kavu", "prijateljem", "sam"],
+          "answer": "",
+          "ordered": ["Jučer", "sam", "pio", "kavu", "s", "prijateljem"],
+          "explanation": "sam is a clitic: it goes in second position. kavu = accusative object, s prijateljem = instrumental.",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "52": [
+    {
+      "type": "LEARN",
+      "title": "Ti or Vi? The register rules",
+      "intro": "Croatian, like French or German, has two ways of saying 'you'. Using the wrong one is the most visible cultural mistake a learner can make — and the rules are learnable in one sitting.",
+      "items": [
+        { "hr": "ti — prijatelji, obitelj, djeca, kolege vršnjaci", "en": "ti — friends, family, children, colleagues your own age", "note": "With ti the verb is 2nd person singular: Kako si? Što radiš?" },
+        { "hr": "Vi — nepoznate osobe, starije osobe, službenici, šef", "en": "Vi — strangers, older people, officials, your boss", "note": "With Vi the verb is 2nd person PLURAL even for one person: Kako ste? Što radite?" },
+        { "hr": "U kafiću i trgovini: konobaru i prodavačici kažete Vi.", "en": "In a café or a shop: use Vi with the waiter and the shop assistant.", "note": "'Oprostite, koliko košta...?' is the safe opener everywhere in public." },
+        { "hr": "Kod liječnika, u banci, na šalteru: uvijek Vi.", "en": "At the doctor's, in the bank, at any counter: always Vi.", "note": "Institutions mean formal register — add gospodine (sir) / gospođo (madam)." },
+        { "hr": "Možemo li prijeći na ti?", "en": "Shall we switch to 'ti'?", "note": "The older or senior person normally offers the switch. Accept with: Može, naravno!" },
+        { "hr": "Kad niste sigurni — koristite Vi.", "en": "When in doubt — use Vi.", "note": "Too formal is merely polite; too informal can offend. Croatians will quickly invite you to 'ti'." },
+        { "hr": "Gospodine Horvat, izvolite! / Gospođo Kovač, izvolite!", "en": "Mr Horvat, here you are! / Mrs Kovač, here you are!", "note": "Polite address uses the vocative: gospodin → gospodine, gospođa → gospođo." },
+        { "hr": "U e-mailu: Poštovani gospodine... / Poštovana gospođo...", "en": "In an email: Dear Sir... / Dear Madam... (literally 'respected')", "note": "Poštovani (to a man) / Poštovana (to a woman) is THE formal written opener." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Formal ↔ informal pairs",
+      "intro": "Every everyday phrase comes in two flavours. Learn them as pairs so you can switch register instantly — left is for friends (ti), right is for strangers and officials (Vi).",
+      "items": [
+        { "hr": "Bok! ↔ Dobar dan!", "en": "Hi! ↔ Good day!", "note": "Bok also works for informal goodbye. Dobro jutro (morning) and dobra večer (evening) are also formal-friendly." },
+        { "hr": "Kako si? ↔ Kako ste?", "en": "How are you? (informal ↔ formal)", "note": "Same question, different verb form: si (sg.) vs ste (pl./formal)." },
+        { "hr": "Oprosti. ↔ Oprostite.", "en": "Sorry / excuse me. (informal ↔ formal)", "note": "The imperative gains -te in the formal/plural: oprosti → oprostite." },
+        { "hr": "Hvala ti. ↔ Hvala Vam.", "en": "Thank you. (informal ↔ formal)", "note": "ti/Vam are dative forms: 'thanks TO you'. Capital V is polite in writing." },
+        { "hr": "Molim te. ↔ Molim Vas.", "en": "Please. (informal ↔ formal)", "note": "Literally 'I beg you' — te/Vas are accusative forms of ti/Vi." },
+        { "hr": "Izvoli. ↔ Izvolite.", "en": "Here you go / go ahead. (informal ↔ formal)", "note": "Heard constantly in shops and cafés — the waiter's 'Izvolite?' means 'What can I get you?'" },
+        { "hr": "Vidimo se! ↔ Doviđenja!", "en": "See you! ↔ Goodbye!", "note": "Vidimo se is friendly and casual; doviđenja is neutral-formal and always safe." },
+        { "hr": "Dođi! ↔ Dođite!", "en": "Come! (informal ↔ formal)", "note": "The -te rule works for every command: sjedni/sjednite, uđi/uđite, pričekaj/pričekajte." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Register check: ti or Vi?",
+      "intro": "Pick the right level of formality for each situation. In Croatia this is the difference between charming and rude.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "You walk into a bank. How do you greet the clerk?",
+          "difficulty": 1,
+          "options": ["Dobar dan!", "Bok!", "Ej!", "Vidimo se!"],
+          "answer": "Dobar dan!",
+          "explanation": "Institutions = formal register. Bok/Ej are for friends; Vidimo se is a goodbye.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you ask a good friend how they are?",
+          "difficulty": 2,
+          "options": ["Kako si?", "Kako ste?", "Kako je?", "Kako smo?"],
+          "answer": "Kako si?",
+          "explanation": "A friend gets ti, so 2nd person singular: si. Kako ste? is for strangers or groups.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "The formal goodbye you can use anywhere: '___!'",
+          "difficulty": 3,
+          "options": [],
+          "answer": "Doviđenja",
+          "accepted": ["doviđenja", "Doviđenja"],
+          "explanation": "Doviđenja (literally 'until seeing') is the safe, neutral-formal goodbye.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "To your boss: 'Kako ___?' (How are you?)",
+          "difficulty": 4,
+          "options": [],
+          "answer": "ste",
+          "accepted": [],
+          "explanation": "Your boss gets Vi, and Vi takes the plural verb form: ste.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "A waiter comes to your table and says 'Izvolite?'. What does it mean here?",
+          "difficulty": 5,
+          "options": ["What can I get you?", "Get out!", "You're welcome.", "See you soon."],
+          "answer": "What can I get you?",
+          "explanation": "Izvolite is the formal 'go ahead / here you are' — from a waiter it invites your order.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Order the polite offer to switch to informal address: 'Shall we switch to ti?'",
+          "difficulty": 5,
+          "options": ["na", "Možemo", "prijeći", "li", "ti"],
+          "answer": "",
+          "ordered": ["Možemo", "li", "prijeći", "na", "ti"],
+          "explanation": "Možemo li...? = Can we...? The set phrase is 'prijeći na ti' — to cross over to ti.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Thank an official politely: 'Hvala ___, gospodine!'",
+          "difficulty": 6,
+          "options": [],
+          "answer": "Vam",
+          "accepted": ["vam"],
+          "explanation": "Hvala + dative: ti (informal) → Vam (formal). Written with capital V out of politeness.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "With whom can you safely use 'ti' from the first moment?",
+          "difficulty": 7,
+          "options": ["a child", "a police officer", "an elderly neighbour you just met", "a bank clerk"],
+          "answer": "a child",
+          "explanation": "Children are always addressed with ti. Officials, elders and staff get Vi until they offer otherwise.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "You are writing a formal email to Mrs Kovač. How do you open it?",
+          "difficulty": 8,
+          "options": ["Poštovana gospođo Kovač,", "Draga Kovač,", "Bok, gospođa!", "Ej, Kovač!"],
+          "answer": "Poštovana gospođo Kovač,",
+          "explanation": "Formal written opener: Poštovana (to a woman) + gospođo (vocative of gospođa) + surname.",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "53": [
+    {
+      "type": "LEARN",
+      "title": "The top 10 classic mistakes — and their fixes",
+      "intro": "Every English-speaking learner of Croatian makes these ten mistakes. Fixing them now, before they fossilise, is worth more than a week of new material. Read the correct version aloud twice; the wrong version is shown so your ear learns to reject it.",
+      "items": [
+        { "hr": "✓ Ja sam iz Amerike. — ✗ od Amerike", "en": "I am from America.", "note": "Origin = iz + genitive (iz Hrvatske, iz Amerike). 'od' means from a person or since a time: od majke, od ponedjeljka." },
+        { "hr": "✓ Pijem kavu. — ✗ Pijem kava", "en": "I drink coffee.", "note": "The direct object is NEVER nominative. Feminine -a → -u in the accusative: kava → kavu, voda → vodu." },
+        { "hr": "✓ Živim u Zagrebu. — ✗ Živim u Zagreb", "en": "I live in Zagreb.", "note": "Static location = locative (u Zagrebu). 'u Zagreb' (accusative) means direction: Idem u Zagreb = I'm going TO Zagreb." },
+        { "hr": "✓ Jučer sam radio. — ✗ Jučer radio sam", "en": "Yesterday I worked.", "note": "sam/si/je/smo/ste/su are clitics — they must sit in SECOND position in the sentence, right after the first word or phrase." },
+        { "hr": "✓ Radila sam. (žena) — ✗ Radio sam", "en": "I worked. (female speaker)", "note": "The past participle agrees with the speaker: -o for men (radio), -la for women (radila), -li/-le in the plural." },
+        { "hr": "✓ Imam trideset godina. — ✗ Ja sam trideset", "en": "I am thirty years old.", "note": "Age uses imati, not biti: literally 'I HAVE thirty years'. godina is genitive plural after numbers 5+." },
+        { "hr": "✓ Nemam ništa. / Ne znam ništa. — ✗ Imam ništa", "en": "I have nothing. / I know nothing.", "note": "Croatian requires DOUBLE negation: a ni-word (ništa, nitko, nikad) always travels with a negated verb." },
+        { "hr": "✓ Nemam vremena. — ✗ Ne imam vremena", "en": "I don't have time.", "note": "ne + imam fuses into one word: nemam, nemaš, nema, nemamo, nemate, nemaju. (Same trick: nisam, neću.)" },
+        { "hr": "✓ Radim na poslu. / Studiram na fakultetu. — ✗ u poslu", "en": "I'm at work. / I study at university.", "note": "Some places take na instead of u: na poslu, na fakultetu, na moru, na trgu. Learn them as fixed pairs." },
+        { "hr": "✓ Učim hrvatski i radim. — ✗ Ja učim hrvatski i ja radim", "en": "I study Croatian and I work.", "note": "The verb ending already shows the subject, so repeating ja sounds foreign. Use pronouns only for emphasis or contrast." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Mistake clinic: fix it fast",
+      "intro": "Each question hides one of the top-10 mistakes. Catch it, fix it, and explain it to yourself in one sentence.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is correct?",
+          "difficulty": 2,
+          "options": ["Ja sam iz Amerike.", "Ja sam od Amerike.", "Ja sam na Amerike.", "Ja sam za Amerike."],
+          "answer": "Ja sam iz Amerike.",
+          "explanation": "Origin takes iz + genitive. 'od' is for people and starting times, not countries.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Fix the object: 'Pijem ___.' (kava)",
+          "difficulty": 3,
+          "options": [],
+          "answer": "kavu",
+          "accepted": [],
+          "explanation": "Direct object → accusative: kava → kavu. Feminine -a becomes -u.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'I live in Split' is:",
+          "difficulty": 4,
+          "options": ["Živim u Splitu.", "Živim u Split.", "Živim na Splitu.", "Živim od Splita."],
+          "answer": "Živim u Splitu.",
+          "explanation": "Living somewhere = static location = locative: u Splitu. 'u Split' would mean motion towards Split.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the clitic where it belongs: 'Yesterday I watched a film.' (male speaker)",
+          "difficulty": 5,
+          "options": ["gledao", "Jučer", "film", "sam"],
+          "answer": "",
+          "ordered": ["Jučer", "sam", "gledao", "film"],
+          "explanation": "sam is a clitic and must stand in second position: Jučer | sam | gledao film.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "A woman says 'I worked': '___ sam.'",
+          "difficulty": 5,
+          "options": [],
+          "answer": "Radila",
+          "accepted": ["radila"],
+          "explanation": "The participle agrees with the speaker's gender: radio (m) → radila (f).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'I am 30 years old'?",
+          "difficulty": 6,
+          "options": ["Imam trideset godina.", "Ja sam trideset godina.", "Imam trideset godine.", "Ja sam trideset."],
+          "answer": "Imam trideset godina.",
+          "explanation": "Age uses imati + genitive plural: imam trideset godina — literally 'I have thirty of years'.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Say 'I know nothing': 'Ne ___ ništa.'",
+          "difficulty": 6,
+          "options": [],
+          "answer": "znam",
+          "accepted": [],
+          "explanation": "Double negation is obligatory: ništa demands a negated verb — ne znam ništa.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The correct negative of 'imam' is:",
+          "difficulty": 7,
+          "options": ["nemam", "ne imam", "nisam imam", "neću imam"],
+          "answer": "nemam",
+          "explanation": "ne + imam fuses into nemam. Only three verbs fuse like this: nemam, nisam, neću.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which location phrase is WRONG?",
+          "difficulty": 8,
+          "options": ["u poslu", "na poslu", "na fakultetu", "u školi"],
+          "answer": "u poslu",
+          "explanation": "posao takes na: na poslu = at work. na fakultetu, na moru, na trgu also take na; škola takes u.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it like a native — no unnecessary pronouns: 'I study Croatian and work in the city.'",
+          "difficulty": 8,
+          "options": ["radim", "hrvatski", "Učim", "u", "i", "gradu"],
+          "answer": "",
+          "ordered": ["Učim", "hrvatski", "i", "radim", "u", "gradu"],
+          "explanation": "No 'ja' needed — the -m endings already say 'I'. Repeating ja before every verb sounds foreign.",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "54": [
+    {
+      "type": "LEARN",
+      "title": "Conversation lifelines",
+      "intro": "Free conversation is today's mission. These ten phrases keep you IN the conversation when you get stuck — asking, stalling, reacting and passing the ball back. Fluent use of lifelines beats a bigger vocabulary.",
+      "items": [
+        { "hr": "Kako se kaže 'weekend' na hrvatskom?", "en": "How do you say 'weekend' in Croatian?", "note": "Your #1 lifeline — it turns every gap into a mini-lesson. (Answer: vikend!)" },
+        { "hr": "Možeš li ponoviti? / Možete li ponoviti, molim Vas?", "en": "Can you repeat that? (informal / formal)", "note": "Yesterday's register rules apply mid-conversation too." },
+        { "hr": "Govorite sporije, molim Vas.", "en": "Speak more slowly, please.", "note": "sporije = comparative of sporo (slowly). Nobody minds being asked." },
+        { "hr": "Samo malo, razmišljam...", "en": "Just a moment, I'm thinking...", "note": "A stall phrase buys you 5 seconds without breaking the flow." },
+        { "hr": "Nisam siguran. / Nisam sigurna.", "en": "I'm not sure. (male / female speaker)", "note": "Adjective agrees with the speaker — like the past participle." },
+        { "hr": "Što znači 'režije'?", "en": "What does 'režije' mean?", "note": "Što znači...? asks for meaning; kako se kaže...? asks for the word. Different directions!" },
+        { "hr": "A ti? / A Vi?", "en": "And you?", "note": "The smallest sentence in Croatian — and the one that keeps every conversation alive." },
+        { "hr": "Stvarno? Super! / Ma nemoj!", "en": "Really? Great! / No way!", "note": "Reactions make you a partner, not an interviewee. Ma nemoj! is friendly disbelief." },
+        { "hr": "Mislim da je to dobra ideja.", "en": "I think that's a good idea.", "note": "Mislim da... upgrades any statement into an opinion." },
+        { "hr": "Nemam pojma!", "en": "No idea!", "note": "Colloquial and very Croatian — literally 'I don't have a concept'. Note the genitive: pojma." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Free conversation: no script, just talk",
+      "intro": "This is a model of an unscripted chat — notice how 'Vi' (you) uses lifelines, mixes past, present and future, and keeps the ball moving. Read it aloud, then have YOUR version with a partner or tutor for 15 minutes.",
+      "items": [],
+      "questions": [],
+      "lines": [
+        { "speaker": "Partner", "hr": "Bok! Danas nema plana — samo razgovaramo. Kako si?", "en": "Hi! No plan today — we're just talking. How are you?" },
+        { "speaker": "Vi", "hr": "Super, hvala! Malo sam umoran, ali sretan. A ti?", "en": "Great, thanks! I'm a bit tired but happy. And you?" },
+        { "speaker": "Partner", "hr": "I ja sam dobro. Što si radio jučer?", "en": "I'm well too. What did you do yesterday?" },
+        { "speaker": "Vi", "hr": "Jučer sam radio, a navečer sam gledao film i učio hrvatski.", "en": "Yesterday I worked, and in the evening I watched a film and studied Croatian." },
+        { "speaker": "Partner", "hr": "Odlično! Kakav film si gledao?", "en": "Excellent! What kind of film did you watch?" },
+        { "speaker": "Vi", "hr": "Hm... samo malo. Kako se kaže 'comedy' na hrvatskom?", "en": "Hm... just a moment. How do you say 'comedy' in Croatian?" },
+        { "speaker": "Partner", "hr": "Komedija!", "en": "Comedy!" },
+        { "speaker": "Vi", "hr": "Da, gledao sam komediju. Bila je jako smiješna.", "en": "Yes, I watched a comedy. It was very funny." },
+        { "speaker": "Partner", "hr": "A što radiš danas poslije našeg razgovora?", "en": "And what are you doing today after our chat?" },
+        { "speaker": "Vi", "hr": "Danas idem u trgovinu, a onda ću kuhati večeru.", "en": "Today I'm going to the store, and then I'll cook dinner." },
+        { "speaker": "Partner", "hr": "Što ćeš kuhati?", "en": "What will you cook?" },
+        { "speaker": "Vi", "hr": "Nisam siguran... možda rižoto. Volim kuhati, ali nisam odličan kuhar.", "en": "I'm not sure... maybe risotto. I like cooking, but I'm not an excellent cook." },
+        { "speaker": "Partner", "hr": "Ha! A koji su ti planovi za vikend?", "en": "Ha! And what are your plans for the weekend?" },
+        { "speaker": "Vi", "hr": "Za vikend ću ići na izlet s prijateljima. Ako bude sunčano, idemo na jezero.", "en": "At the weekend I'll go on a trip with friends. If it's sunny, we're going to the lake." },
+        { "speaker": "Partner", "hr": "Zvuči super. Vidiš — pravi razgovor, sve na hrvatskom!", "en": "Sounds great. See — a real conversation, all in Croatian!" },
+        { "speaker": "Vi", "hr": "Stvarno? Super! Hvala ti na razgovoru.", "en": "Really? Great! Thanks for the conversation." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Lifeline drill",
+      "intro": "Seven quick questions on the phrases that keep a conversation alive.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "You didn't hear what a stranger said. What do you say?",
+          "difficulty": 2,
+          "options": ["Možete li ponoviti, molim Vas?", "Možeš li ponoviti?", "Nemam pojma!", "Ma nemoj!"],
+          "answer": "Možete li ponoviti, molim Vas?",
+          "explanation": "A stranger gets Vi: možete + molim Vas. 'Možeš li ponoviti?' is the friend version.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ask for a word you don't know: 'Kako se ___ \"beach\" na hrvatskom?'",
+          "difficulty": 3,
+          "options": [],
+          "answer": "kaže",
+          "accepted": [],
+          "explanation": "Kako se kaže...? = How does one say...? (Answer, by the way: plaža.)",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Što znači ta riječ?' ask for?",
+          "difficulty": 4,
+          "options": ["the meaning of a word", "the spelling of a word", "a repetition", "the time"],
+          "answer": "the meaning of a word",
+          "explanation": "Što znači...? = What does ... mean? Use kako se kaže...? when you need the Croatian word.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "A female speaker says 'I'm not sure': 'Nisam ___.'",
+          "difficulty": 5,
+          "options": [],
+          "answer": "sigurna",
+          "accepted": [],
+          "explanation": "The adjective agrees with the speaker: siguran (m) → sigurna (f).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask them to slow down (politely): 'Speak more slowly, please.'",
+          "difficulty": 6,
+          "options": ["molim", "sporije", "Govorite", "Vas"],
+          "answer": "",
+          "ordered": ["Govorite", "sporije", "molim", "Vas"],
+          "explanation": "Govorite (formal imperative) + sporije (comparative) + molim Vas.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Your partner tells you surprising good news. The most natural reaction:",
+          "difficulty": 6,
+          "options": ["Stvarno? Super!", "Doviđenja!", "Nemam vremena.", "Ne razumijem ništa."],
+          "answer": "Stvarno? Super!",
+          "explanation": "Stvarno? Super! = Really? Great! Reactions keep you an active partner in the chat.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Turn the question back to a friend in two words: '___ ___?' (And you?)",
+          "difficulty": 7,
+          "options": [],
+          "answer": "A ti",
+          "accepted": ["a ti"],
+          "explanation": "A ti? — the tiniest, hardest-working sentence in Croatian conversation. Formal: A Vi?",
+          "strictDiacritics": true
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "55": [
+    {
+      "type": "LEARN",
+      "title": "A real text: reading a rental ad",
+      "intro": "Today you read authentic-style Croatian — a rental ad, the kind you'd see on Njuškalo or a noticeboard. Don't translate word by word: first scan for what, where, how much, when. Then study each line below.",
+      "items": [
+        { "hr": "OGLAS: Iznajmljuje se mali stan u centru Zagreba.", "en": "AD: A small apartment in the centre of Zagreb is for rent.", "note": "iznajmljuje se = 'is being rented out'. The se-construction is everywhere in ads: prodaje se (for sale), traži se (wanted)." },
+        { "hr": "Stan ima jednu sobu, kuhinju i kupaonicu.", "en": "The apartment has one room, a kitchen and a bathroom.", "note": "imati + accusative list: soba → sobu, kuhinja → kuhinju, kupaonica → kupaonicu." },
+        { "hr": "Blizu su tramvaj, trgovina i park.", "en": "A tram, a shop and a park are nearby.", "note": "blizu = near/nearby. Plural subject → su. Word order is flexible: 'Blizu su...' fronts the key selling point." },
+        { "hr": "Cijena je 450 eura mjesečno, plus režije.", "en": "The price is 450 euros per month, plus utilities.", "note": "režije = utility bills — THE word to know in any Croatian rental. mjesečno = monthly." },
+        { "hr": "Stan je slobodan od 1. rujna.", "en": "The apartment is available from 1 September.", "note": "slobodan = free/available; od + genitive for dates. rujan = September (Croatian months are Slavic, not Latin!)." },
+        { "hr": "Nazovite poslije 17 sati: 091 555 222.", "en": "Call after 5 p.m.: 091 555 222.", "note": "nazovite = formal imperative of nazvati (to call); poslije + genitive (sati). Croatia uses the 24-hour clock." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Sign language: key phrases from real-world texts",
+      "intro": "These words appear on shop doors, ads, posters and websites all over Croatia. Recognising them instantly is what makes 'authentic' texts readable.",
+      "items": [
+        { "hr": "iznajmljuje se / prodaje se", "en": "for rent / for sale", "note": "The se-forms of iznajmiti (rent out) and prodati (sell) — headline words of every ad." },
+        { "hr": "cijena / popust / akcija", "en": "price / discount / special offer", "note": "AKCIJA! on a shop window = sale. na akciji = on sale." },
+        { "hr": "radno vrijeme: pon – pet 8 – 20 h", "en": "opening hours: Mon–Fri 8 a.m.–8 p.m.", "note": "Days abbreviate: pon, uto, sri, čet, pet, sub, ned. h = sati." },
+        { "hr": "otvoreno / zatvoreno", "en": "open / closed", "note": "The pair on every shop door. Zatvoreno nedjeljom = closed on Sundays." },
+        { "hr": "besplatno", "en": "free of charge", "note": "Not to be confused with slobodno (free = available/unoccupied)." },
+        { "hr": "obavijest", "en": "notice / announcement", "note": "Header of official notes on doors and noticeboards — worth reading when you see it." },
+        { "hr": "hitno!", "en": "urgent!", "note": "In ads: hitno prodajem = urgent sale. From hitan = urgent." },
+        { "hr": "ulaz / izlaz", "en": "entrance / exit", "note": "Also: ulaz slobodan = free entry. On motorways izlaz = motorway exit." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Did you really read it?",
+      "intro": "Comprehension check on the rental ad plus the real-world phrases. Scan back to the text if needed — that's what real readers do.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What is being offered in the ad?",
+          "difficulty": 2,
+          "options": ["a small apartment for rent", "a house for sale", "a car for rent", "a job in Zagreb"],
+          "answer": "a small apartment for rent",
+          "explanation": "Iznajmljuje se mali stan = a small apartment is for rent.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Koliko soba ima stan?",
+          "difficulty": 3,
+          "options": ["jednu sobu", "dvije sobe", "tri sobe", "nema sobe"],
+          "answer": "jednu sobu",
+          "explanation": "Stan ima jednu sobu, kuhinju i kupaonicu — one room plus kitchen and bathroom.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "What must you pay on top of the 450 euros? 'plus ___' (utilities)",
+          "difficulty": 4,
+          "options": [],
+          "answer": "režije",
+          "accepted": [],
+          "explanation": "režije = utility bills (electricity, water, heating). Always ask about them when renting in Croatia!",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "From when is the apartment available?",
+          "difficulty": 5,
+          "options": ["from 1 September", "from 1 June", "from 17 September", "immediately"],
+          "answer": "from 1 September",
+          "explanation": "od 1. rujna = from 1 September. rujan is September — Croatian month names are Slavic.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "When should you call the number in the ad?",
+          "difficulty": 6,
+          "options": ["after 5 p.m.", "before 5 p.m.", "at 7 a.m.", "only at the weekend"],
+          "answer": "after 5 p.m.",
+          "explanation": "poslije 17 sati = after 17:00, i.e. after 5 p.m. Croatia uses the 24-hour clock.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "A shop window shouts 'sale / special offer' in one word: '___!'",
+          "difficulty": 6,
+          "options": [],
+          "answer": "Akcija",
+          "accepted": ["akcija", "AKCIJA"],
+          "explanation": "AKCIJA! = special offer/sale. na akciji = on sale.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Radno vrijeme: pon – pet 8 – 20 h' means the shop is...",
+          "difficulty": 7,
+          "options": ["open Monday to Friday, 8:00–20:00", "open every day, 8:00–20:00", "open only at the weekend", "closed for holidays"],
+          "answer": "open Monday to Friday, 8:00–20:00",
+          "explanation": "pon–pet = ponedjeljak to petak (Mon–Fri); radno vrijeme = opening hours.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the difference between 'besplatno' and 'slobodno'?",
+          "difficulty": 8,
+          "options": ["besplatno = free of charge; slobodno = free/available", "they mean exactly the same", "besplatno = available; slobodno = costs nothing", "both mean 'closed'"],
+          "answer": "besplatno = free of charge; slobodno = free/available",
+          "explanation": "besplatan = costing nothing; slobodan = unoccupied/available (like the apartment: slobodan od 1. rujna).",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "56": [
+    {
+      "type": "LEARN",
+      "title": "Building a personal text: opening, body, closing",
+      "intro": "Today you write 150 words about your life and plans. Good A1 texts are built, not improvised: a greeting, a body that mixes tenses and connectors, and a proper sign-off. Steal these building blocks.",
+      "items": [
+        { "hr": "Draga Ana, / Dragi Marko,", "en": "Dear Ana, / Dear Marko, (informal opening)", "note": "draga for a woman, dragi for a man — adjective agreement even in greetings." },
+        { "hr": "Poštovani gospodine Horvat, / Poštovana gospođo Kovač,", "en": "Dear Mr Horvat, / Dear Mrs Kovač, (formal opening)", "note": "Yesterday's register rules apply on paper too: formal reader → Poštovani/Poštovana." },
+        { "hr": "Zovem se Ana i živim u Zagrebu već dvije godine.", "en": "My name is Ana and I've been living in Zagreb for two years.", "note": "Classic first body sentence: name + where you live. već + time = 'already/for' with the present tense." },
+        { "hr": "Trenutno radim kao učitelj i učim hrvatski.", "en": "Currently I work as a teacher and I'm learning Croatian.", "note": "trenutno = currently; raditi kao + nominative = to work as." },
+        { "hr": "Prvo..., onda..., zatim..., na kraju...", "en": "First..., then..., after that..., finally...", "note": "Sequencers give your paragraph a spine — examiners and readers love them." },
+        { "hr": "Prošle godine sam bio u Splitu, a sljedeće godine ću putovati u Dubrovnik.", "en": "Last year I was in Split, and next year I'll travel to Dubrovnik.", "note": "One sentence, two tenses — mixing perfekt and futur is exactly what a strong A1 text does. (Woman: bila.)" },
+        { "hr": "Volim more i sunce, ali ne volim gužvu.", "en": "I love the sea and the sun, but I don't like crowds.", "note": "Opinions give the text personality; gužva (crowd/traffic jam) is a very Croatian complaint." },
+        { "hr": "Osim toga, ... / Također, ...", "en": "Besides that, ... / Also, ...", "note": "Linkers that upgrade a list of sentences into a real paragraph." },
+        { "hr": "Vidimo se uskoro! Piši mi!", "en": "See you soon! Write to me! (informal closing)", "note": "piši = informal imperative of pisati; mi = dative 'to me'." },
+        { "hr": "Srdačan pozdrav, / Lijep pozdrav,", "en": "Kind regards, / Best regards, (closing)", "note": "Lijep pozdrav is the everyday sign-off — often shortened to LP in messages." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Assemble the text",
+      "intro": "Before you write your own 150 words, prove you can assemble the skeleton: openers, connectors, tense mixing and sign-offs.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "You are writing to your friend Ivana. The right opening is:",
+          "difficulty": 2,
+          "options": ["Draga Ivana,", "Dragi Ivana,", "Poštovani Ivana,", "Gospođo!"],
+          "answer": "Draga Ivana,",
+          "explanation": "A female friend gets draga (feminine) — informal register for a friend.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Say what you do now: '___ radim kao konobar.' (Currently)",
+          "difficulty": 3,
+          "options": [],
+          "answer": "Trenutno",
+          "accepted": ["trenutno"],
+          "explanation": "trenutno = currently/at the moment — the classic opener for the 'now' part of your text.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which set are the sequencers, in the right order?",
+          "difficulty": 4,
+          "options": ["prvo, onda, zatim, na kraju", "na kraju, prvo, zatim, onda", "i, ali, jer, pa", "jučer, danas, sutra, sada"],
+          "answer": "prvo, onda, zatim, na kraju",
+          "explanation": "prvo (first) → onda (then) → zatim (after that) → na kraju (finally). The third option are connectors, not sequencers.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the two-tense sentence: 'Last year I was in Split.' (male speaker)",
+          "difficulty": 5,
+          "options": ["u", "godine", "bio", "Prošle", "Splitu", "sam"],
+          "answer": "",
+          "ordered": ["Prošle", "godine", "sam", "bio", "u", "Splitu"],
+          "explanation": "Prošle godine = time phrase first, then clitic sam in second position, then bio u Splitu (locative).",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Link two ideas: 'Volim more, ___ ne volim gužvu.' (but)",
+          "difficulty": 5,
+          "options": [],
+          "answer": "ali",
+          "accepted": [],
+          "explanation": "ali = but. i/ali/jer/pa are the four connectors that carry an A1 text.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The plan for next year — which sentence is correct?",
+          "difficulty": 6,
+          "options": ["Sljedeće godine ću putovati u Dubrovnik.", "Sljedeće godine putovao u Dubrovnik.", "Sljedeće godine ću putovao u Dubrovnik.", "Sljedeće godine sam putovati u Dubrovnik."],
+          "answer": "Sljedeće godine ću putovati u Dubrovnik.",
+          "explanation": "Future = ću + INFINITIVE (putovati). ću + participle or sam + infinitive are impossible combinations.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Sign off a friendly message: 'Lijep ___!' (Best regards)",
+          "difficulty": 7,
+          "options": [],
+          "answer": "pozdrav",
+          "accepted": [],
+          "explanation": "Lijep pozdrav — the everyday closing, shortened to LP in texting.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Order the closing line: 'Write to me soon!'",
+          "difficulty": 8,
+          "options": ["mi", "Piši", "uskoro"],
+          "answer": "",
+          "ordered": ["Piši", "mi", "uskoro"],
+          "explanation": "Piši (imperative) + mi (dative clitic 'to me', second position) + uskoro (soon).",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "57": [
+    {
+      "type": "LEARN",
+      "title": "The whole cheatsheet in 10 lines",
+      "intro": "Your task today: rebuild the one-page summary from memory. Here is the entire A1 core compressed to ten lines. Read each, close your eyes, and re-derive the full rule before checking the note.",
+      "items": [
+        { "hr": "30 slova, 30 glasova — čitaj kako piše!", "en": "30 letters, 30 sounds — read exactly as written!", "note": "Perfectly phonetic. Specials: č/ć = ch, š = sh, ž = zh, đ/dž = j, lj = ly, nj = ny, c = ts, j = y." },
+        { "hr": "grad (m) · žena (f) · mlijeko (n)", "en": "city (m) · woman (f) · milk (n)", "note": "Gender shows in the ending: consonant = masculine, -a = feminine, -o/-e = neuter. And there are NO articles." },
+        { "hr": "sam, si, je, smo, ste, su — nisam, nisi, nije...", "en": "am, are, is, are, are, are — am not, aren't, isn't...", "note": "biti short forms carry every sentence; the negative fuses into one word." },
+        { "hr": "radim, radiš, radi, radimo, radite, rade", "en": "I work, you work, he works, we work, you work, they work", "note": "Present endings -m, -š, –, -mo, -te, -e/-ju. The ending shows the subject, so pronouns are optional." },
+        { "hr": "Žena (N) pije kavu (A).", "en": "The woman (subject) drinks coffee (object).", "note": "Nominative does the action, accusative receives it. Feminine -a → -u; masculine inanimate doesn't change." },
+        { "hr": "piti (proces) ↔ popiti (gotovo)", "en": "to drink (process) ↔ to drink up (done)", "note": "Aspect: imperfective = the movie, perfective = the snapshot of it finished. Prefixes often make perfectives." },
+        { "hr": "Radio sam. / Radila sam. / Radili smo.", "en": "I worked (m). / I worked (f). / We worked.", "note": "Perfekt = biti + participle; the participle agrees in gender and number: -o/-la/-lo/-li/-le." },
+        { "hr": "Sutra ću raditi. Neću raditi.", "en": "Tomorrow I will work. I won't work.", "note": "Futur = ću/ćeš/će/ćemo/ćete/će + infinitive; negative fuses to neću." },
+        { "hr": "tko, što, gdje, kada, zašto, kako, koliko + li", "en": "who, what, where, when, why, how, how much + yes/no 'li'", "note": "Seven question words open every question; 'li' after the verb makes yes/no questions: Govoriš li engleski?" },
+        { "hr": "i, ali, jer, pa, onda — malo ljepila, velike rečenice", "en": "and, but, because, so, then — a little glue, big sentences", "note": "Connectors turn phrases into discourse. Add molim/hvala/oprostite and you're never impolite." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Cheatsheet sweep: all 10 sections",
+      "intro": "One question per cheatsheet section, roughly in rising difficulty. Any miss = re-read that section tonight.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which letter makes the 'sh' sound in Croatian?",
+          "difficulty": 1,
+          "options": ["š", "č", "ž", "c"],
+          "answer": "š",
+          "explanation": "š = sh (škola), č = ch (čaj), ž = zh (žena), c = ts (cipela).",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What gender is 'more' (sea)?",
+          "difficulty": 2,
+          "options": ["neuter", "masculine", "feminine", "it has no gender"],
+          "answer": "neuter",
+          "explanation": "-o/-e endings signal neuter: more, mlijeko, selo.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Negative of 'je': 'Ona ___ ovdje.' (She is not here.)",
+          "difficulty": 3,
+          "options": [],
+          "answer": "nije",
+          "accepted": [],
+          "explanation": "biti negatives are one word: nisam, nisi, nije, nismo, niste, nisu.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Conjugate: 'Mi ___ svaki dan.' (raditi — we work)",
+          "difficulty": 4,
+          "options": [],
+          "answer": "radimo",
+          "accepted": [],
+          "explanation": "mi → -mo: radimo. The ending alone tells you the subject is 'we'.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "In 'Marko čita knjigu', which word is in the accusative?",
+          "difficulty": 5,
+          "options": ["knjigu", "Marko", "čita", "none of them"],
+          "answer": "knjigu",
+          "explanation": "knjiga → knjigu: the object of čita. Marko is nominative (the subject).",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Popio sam kavu.' The verb popiti tells you the action was...",
+          "difficulty": 6,
+          "options": ["completed", "ongoing", "habitual", "in the future"],
+          "answer": "completed",
+          "explanation": "popiti is perfective — the snapshot of a finished action. piti would be the ongoing process.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "A woman says 'I was at home': '___ sam kod kuće.'",
+          "difficulty": 7,
+          "options": [],
+          "answer": "Bila",
+          "accepted": ["bila"],
+          "explanation": "Participle of biti agrees with gender: bio (m) → bila (f).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Make it future: 'I will study Croatian.'",
+          "difficulty": 7,
+          "options": ["učiti", "Ja", "hrvatski", "ću"],
+          "answer": "",
+          "ordered": ["Ja", "ću", "učiti", "hrvatski"],
+          "explanation": "Futur = ću + infinitive. Also possible without the pronoun: Učit ću hrvatski.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask the yes/no question: 'Do you speak English?'",
+          "difficulty": 8,
+          "options": ["engleski", "li", "Govoriš"],
+          "answer": "",
+          "ordered": ["Govoriš", "li", "engleski"],
+          "explanation": "Yes/no questions: verb first, then li — Govoriš li engleski?",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Give the reason: 'Učim hrvatski ___ volim Hrvatsku.' (because)",
+          "difficulty": 8,
+          "options": [],
+          "answer": "jer",
+          "accepted": [],
+          "explanation": "jer = because — the connector that turns statements into explanations.",
+          "strictDiacritics": true
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "58": [
+    {
+      "type": "LEARN",
+      "title": "Teach it back: one-line explanations",
+      "intro": "Feynman day. If you can explain a rule to a friend in one plain sentence, you own it. Each item asks the 'why' question a beginner would ask — say your answer OUT LOUD before reading the note, then compare.",
+      "items": [
+        { "hr": "Zašto 'kavu', a ne 'kava'? — Jer je kava objekt.", "en": "Why 'kavu' and not 'kava'? — Because the coffee is the object.", "note": "Teach it: cases are name tags showing each word's JOB. That's why Croatian word order can be free — the tag travels with the word." },
+        { "hr": "Zašto 'Radila sam'? — Jer govori žena.", "en": "Why 'Radila sam'? — Because a woman is speaking.", "note": "Teach it: the past participle is half-adjective — it agrees with the subject: radio/radila/radili." },
+        { "hr": "Zašto nema 'the'? — Hrvatski nema članove.", "en": "Why is there no 'the'? — Croatian has no articles.", "note": "Teach it: 'žena' covers woman / a woman / the woman; context does the work articles do in English." },
+        { "hr": "Zašto 'Govorim' bez 'ja'? — Nastavak -m već znači 'ja'.", "en": "Why 'Govorim' without 'ja'? — The ending -m already means 'I'.", "note": "Teach it: every present-tense ending is a built-in pronoun (-m = I, -š = you...). Saying ja twice is saying 'I I speak'." },
+        { "hr": "Zašto 'popiti', a ne 'piti'? — Jer je radnja završena.", "en": "Why 'popiti' and not 'piti'? — Because the action is finished.", "note": "Teach it: imperfective is the movie, perfective is the photo of the finish line. One meaning, two verbs." },
+        { "hr": "Zašto 'u Zagrebu', ali 'u Zagreb'? — Lokacija ili smjer.", "en": "Why 'u Zagrebu' but 'u Zagreb'? — Location versus direction.", "note": "Teach it: same preposition, different case. Locative = where you ARE; accusative = where you're GOING." },
+        { "hr": "Zašto 'sam' uvijek na drugom mjestu? — Klitike vole drugo mjesto.", "en": "Why is 'sam' always in second position? — Clitics love second position.", "note": "Teach it: sam/si/je are unstressed little words that lean on the first word of the sentence: Jučer SAM radio." },
+        { "hr": "Zašto 'Nemam ništa'? — Hrvatski traži dvostruku negaciju.", "en": "Why 'Nemam ništa'? — Croatian requires double negation.", "note": "Teach it: unlike English, ni-words (ništa, nitko, nikad) MUST pair with a negated verb. Two negatives = one strong no." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "The 'why' test",
+      "intro": "Not 'what is correct' but 'WHY is it correct'. If you can answer these, you can teach Croatian's core — which means you've learned it.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Why can Croatian move words around ('Kavu pijem' = 'Pijem kavu') without losing the meaning?",
+          "difficulty": 3,
+          "options": ["case endings show each word's role", "Croatian has strict word order", "the listener guesses from tone", "only short sentences allow it"],
+          "answer": "case endings show each word's role",
+          "explanation": "The -u on kavu marks it as object wherever it stands. Cases are name tags for jobs.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Why does a woman say 'bila sam' while a man says 'bio sam'?",
+          "difficulty": 4,
+          "options": ["the past participle agrees with the subject's gender", "women use a different tense", "bila is more polite", "it's a regional difference"],
+          "answer": "the past participle agrees with the subject's gender",
+          "explanation": "The participle behaves like an adjective: -o (m), -la (f), -li/-le (pl).",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Why is 'Ja govorim hrvatski' usually shortened to 'Govorim hrvatski'?",
+          "difficulty": 5,
+          "options": ["the -m ending already identifies the subject as 'I'", "ja is impolite", "verbs can't follow pronouns", "it's slang"],
+          "answer": "the -m ending already identifies the subject as 'I'",
+          "explanation": "Verb endings are built-in pronouns. Ja is kept only for emphasis or contrast.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the Feynman answer: 'Idem u Zagreb' uses the accusative because it expresses ___ (direction/smjer), not location.",
+          "difficulty": 6,
+          "options": [],
+          "answer": "direction",
+          "accepted": ["smjer", "Direction"],
+          "explanation": "u + accusative = motion towards (u Zagreb); u + locative = static location (u Zagrebu).",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Why does Croatian have BOTH 'pisati' and 'napisati' for 'to write'?",
+          "difficulty": 7,
+          "options": ["one shows the process, the other a completed action", "napisati is the formal version", "pisati is only for letters", "they belong to different dialects"],
+          "answer": "one shows the process, the other a completed action",
+          "explanation": "Aspect pairs: imperfective pisati = the movie; perfective napisati = the finished snapshot.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Jučer sam gledao film.' Why can't the sentence start 'Sam jučer...'?",
+          "difficulty": 8,
+          "options": ["sam is a clitic and must stand in second position", "sam must always be last", "sentences can't start with verbs", "jučer must follow the verb"],
+          "answer": "sam is a clitic and must stand in second position",
+          "explanation": "Clitics (sam, si, je, mi, te...) are unstressed and lean on the first element — they can never open a sentence.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Explain 'Ne znam ništa': Croatian requires ___ negation (one word, English).",
+          "difficulty": 8,
+          "options": [],
+          "answer": "double",
+          "accepted": ["Double"],
+          "explanation": "Ni-words must co-occur with a negated verb: ne znam ništa, nikad ne radim, nitko nije došao.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "A friend asks: 'Is Croatian spelling hard?' The correct one-line answer:",
+          "difficulty": 6,
+          "options": ["No — every letter is always pronounced the same way, so spelling equals sound", "Yes — many letters are silent like in French", "Yes — the same letter changes sound depending on the word", "No — because there are only 20 letters"],
+          "answer": "No — every letter is always pronounced the same way, so spelling equals sound",
+          "explanation": "30 letters, 30 sounds, zero silent letters. If you can say it, you can spell it.",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "59": [
+    {
+      "type": "LEARN",
+      "title": "Exam Croatian: the instructions you'll meet",
+      "intro": "Before the mock, learn the meta-language: real Croatian tests are written IN Croatian. These are the instruction lines you will see on any A1 exam paper — never lose points for not understanding the question itself.",
+      "items": [
+        { "hr": "Pročitajte tekst.", "en": "Read the text.", "note": "pročitati = perfective of čitati — read it through to the end. Formal imperative in -te." },
+        { "hr": "Odgovorite na pitanja.", "en": "Answer the questions.", "note": "odgovoriti NA + accusative — answering happens 'onto' the question in Croatian." },
+        { "hr": "Dopunite rečenice.", "en": "Complete the sentences.", "note": "dopuniti = to fill in / complete. Your FILL exercises, in exam language." },
+        { "hr": "Zaokružite točan odgovor.", "en": "Circle the correct answer.", "note": "točan = correct; netočan = incorrect. Multiple choice, Croatian style." },
+        { "hr": "Točno ili netočno?", "en": "True or false?", "note": "The classic reading-comprehension format on A1/A2 papers." },
+        { "hr": "Poslušajte i ponovite.", "en": "Listen and repeat.", "note": "poslušati = perfective of slušati. The listening-section opener." },
+        { "hr": "Napišite kratki tekst (50 riječi).", "en": "Write a short text (50 words).", "note": "riječi = genitive plural of riječ (word) after a number — the writing task." },
+        { "hr": "Povežite riječi sa slikama.", "en": "Match the words with the pictures.", "note": "povezati = to connect; sa slikama = instrumental plural. Common in vocabulary sections." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Mini mock A1: everything, mixed",
+      "intro": "Ten questions sweeping the whole 60 days — alphabet to futur, café to clinic — in rising difficulty. Treat it like the real thing: no notes, no cheatsheet. Score yourself honestly and review every miss.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "How is 'č' pronounced?",
+          "difficulty": 1,
+          "options": ["like 'ch' in church", "like 's' in pleasure", "like 'ts' in cats", "like 'y' in yes"],
+          "answer": "like 'ch' in church",
+          "explanation": "č = hard ch. ž = s in pleasure, c = ts, j = y. Day 1 knowledge — forever useful.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "A stranger greets you at noon. You reply:",
+          "difficulty": 2,
+          "options": ["Dobar dan!", "Laku noć!", "Bok, stari!", "Dobro jutro!"],
+          "answer": "Dobar dan!",
+          "explanation": "Midday + stranger = Dobar dan. Dobro jutro is for the morning; Bok, stari! is very informal.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Introduce yourself: 'Ja ___ studentica iz Kanade.' (biti)",
+          "difficulty": 3,
+          "options": [],
+          "answer": "sam",
+          "accepted": [],
+          "explanation": "ja → sam. And note the correct 'iz Kanade' — origin with iz + genitive.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'On ___ u restoranu.' (raditi — he works)",
+          "difficulty": 4,
+          "options": ["radi", "radim", "rade", "radite"],
+          "answer": "radi",
+          "explanation": "3rd person singular has no ending: on radi. -m = ja, -e = oni, -te = vi.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Order at the café: 'Molim Vas jednu ___ i čašu vode.' (kava)",
+          "difficulty": 5,
+          "options": [],
+          "answer": "kavu",
+          "accepted": [],
+          "explanation": "Object → accusative: kava → kavu. Bonus: čašu vode = glass OF water, genitive.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask where the station is:",
+          "difficulty": 5,
+          "options": ["kolodvor", "Gdje", "je"],
+          "answer": "",
+          "ordered": ["Gdje", "je", "kolodvor"],
+          "explanation": "Question word + verb + subject: Gdje je kolodvor? Survival Croatian in three words.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "A woman says 'I didn't work yesterday':",
+          "difficulty": 6,
+          "options": ["Jučer nisam radila.", "Jučer nisam radio.", "Jučer ne radila sam.", "Jučer sam ne radila."],
+          "answer": "Jučer nisam radila.",
+          "explanation": "Negative perfekt = nisam + participle, agreeing with gender: radila. nisam replaces sam directly.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Make a plan: 'Sutra ___ ići na more.' (I will)",
+          "difficulty": 7,
+          "options": [],
+          "answer": "ću",
+          "accepted": [],
+          "explanation": "Futur: ću + infinitive (ići). Negative would be: Sutra neću ići.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Full A1 sentence: 'Yesterday I bought a ticket and travelled to Split.' (male speaker)",
+          "difficulty": 8,
+          "options": ["putovao", "sam", "i", "Jučer", "u", "kartu", "kupio", "Split"],
+          "answer": "",
+          "ordered": ["Jučer", "sam", "kupio", "kartu", "i", "putovao", "u", "Split"],
+          "explanation": "Clitic sam second, two participles share it (kupio... putovao), u + accusative for direction.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is completely correct?",
+          "difficulty": 9,
+          "options": ["Živim u Zagrebu, nemam auta i svaki dan idem na posao tramvajem.", "Živim u Zagreb, ne imam auto i svaki dan idem u posao s tramvaj.", "Živim na Zagrebu, nemam auto i svaki dan idem na posao na tramvaju.", "Živim u Zagrebu, ne imam auta i svaki dan idem u posao tramvajem."],
+          "answer": "Živim u Zagrebu, nemam auta i svaki dan idem na posao tramvajem.",
+          "explanation": "u Zagrebu (locative), nemam + genitive (auta), na posao (na-word), tramvajem (instrumental of transport). Every trap from day 53, dodged.",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "60": [
+    {
+      "type": "LEARN",
+      "title": "Your A1 can-do list and the road to A2",
+      "intro": "Sixty days ago you couldn't read 'čaj'. Read each can-do statement aloud — in Croatian, naturally — and honestly tick it off. Then look at the roadmap: A2 is not a new mountain, just the next stretch of the same path.",
+      "items": [
+        { "hr": "Mogu se predstaviti i reći odakle sam.", "en": "I can introduce myself and say where I'm from.", "note": "Day 3 material — now automatic. Ja sam... iz... Drago mi je!" },
+        { "hr": "Mogu naručiti hranu i piće i pitati koliko što košta.", "en": "I can order food and drink and ask how much things cost.", "note": "Days 18-19: Molim Vas jednu kavu... Koliko košta? Accusative in the wild." },
+        { "hr": "Mogu govoriti o sadašnjosti, prošlosti i budućnosti.", "en": "I can talk about the present, the past and the future.", "note": "Prezent + perfekt + futur = the complete A1 tense toolkit. Radim, radio sam, radit ću." },
+        { "hr": "Mogu pitati za smjer, kupiti kartu i snaći se na putu.", "en": "I can ask for directions, buy a ticket and get by while travelling.", "note": "Gdje je...? Kartu za Split, molim. snaći se = to manage/find one's way — a very Croatian skill." },
+        { "hr": "Mogu pročitati oglas, jelovnik i kratku poruku.", "en": "I can read an ad, a menu and a short message.", "note": "Day 55 proved it: authentic texts are yours now, with se-forms, režije and radno vrijeme." },
+        { "hr": "Mogu napisati kratki tekst o sebi i svojim planovima.", "en": "I can write a short text about myself and my plans.", "note": "Day 56: opening, body with connectors and mixed tenses, closing. Lijep pozdrav!" },
+        { "hr": "Sljedeći korak: A2 — svi padeži u praksi i glagolski vid.", "en": "Next step: A2 — all the cases in practice, plus verb aspect.", "note": "You've MET genitive, dative, locative, instrumental and vocative. A2 makes them automatic and adds aspect pairs in bulk." },
+        { "hr": "Plan za A2: završite A1.hr, zatim a2.ffzg.unizg.hr — 1-2 lekcije dnevno.", "en": "A2 plan: finish A1.hr, then a2.ffzg.unizg.hr — 1-2 units a day.", "note": "Same free University of Zagreb e-course, next level. Your routine already exists; only the content changes." },
+        { "hr": "Navika pobjeđuje motivaciju: 15 minuta ponavljanja svaki dan.", "en": "Habit beats motivation: 15 minutes of review every day.", "note": "Daily Words-tab reviews + one weekly conversation keep everything you built from fading." }
+      ],
+      "questions": [],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Day 60: the celebration conversation",
+      "intro": "The final script — a celebratory chat looking back on the whole journey. Read it aloud with feeling, then live it: have your real 15-minute celebration conversation with a partner or tutor. Živjeli!",
+      "items": [],
+      "questions": [],
+      "lines": [
+        { "speaker": "Partner", "hr": "Dobar dan! Ili... bok! Danas slavimo — šezdeset dana hrvatskog!", "en": "Good day! Or... hi! Today we celebrate — sixty days of Croatian!" },
+        { "speaker": "Vi", "hr": "Bok! Ne mogu vjerovati. Prije šezdeset dana nisam znao ni jednu riječ.", "en": "Hi! I can't believe it. Sixty days ago I didn't know a single word." },
+        { "speaker": "Partner", "hr": "A sada? Što sve možeš?", "en": "And now? What can you do?" },
+        { "speaker": "Vi", "hr": "Mogu se predstaviti, naručiti kavu, kupiti kartu i pričati o svom danu.", "en": "I can introduce myself, order a coffee, buy a ticket and talk about my day." },
+        { "speaker": "Partner", "hr": "Sjećaš se prvog dana? Abeceda: č, ć, š, ž...", "en": "Remember day one? The alphabet: č, ć, š, ž..." },
+        { "speaker": "Vi", "hr": "Da! Prvi tjedan je bio težak, ali sada čitam sve — kako piše, tako čitam.", "en": "Yes! The first week was hard, but now I read everything — as it's written, so I read it." },
+        { "speaker": "Partner", "hr": "Što je bilo najteže?", "en": "What was the hardest part?" },
+        { "speaker": "Vi", "hr": "Padeži, naravno! Ali sada znam: pijem kavu, ne 'pijem kava'.", "en": "The cases, of course! But now I know: 'pijem kavu', not 'pijem kava'." },
+        { "speaker": "Partner", "hr": "Bravo! A što ti je bilo najdraže?", "en": "Bravo! And what did you enjoy most?" },
+        { "speaker": "Vi", "hr": "Razgovori kao ovaj. Prije dva mjeseca sam samo slušao — danas govorim!", "en": "Conversations like this one. Two months ago I only listened — today I speak!" },
+        { "speaker": "Partner", "hr": "I što ćeš raditi sljedeće?", "en": "And what will you do next?" },
+        { "speaker": "Vi", "hr": "Nastavit ću učiti. Prvo ću završiti A1 lekcije, a onda počinjem A2.", "en": "I'll keep learning. First I'll finish the A1 units, and then I'm starting A2." },
+        { "speaker": "Partner", "hr": "Odličan plan. Kako se osjećaš danas?", "en": "An excellent plan. How do you feel today?" },
+        { "speaker": "Vi", "hr": "Osjećam se ponosno. Hvala ti na svemu — učio sam svaki dan i isplatilo se.", "en": "I feel proud. Thank you for everything — I studied every day and it paid off." },
+        { "speaker": "Partner", "hr": "Nema na čemu. Živjeli — i vidimo se na putu prema A2!", "en": "You're welcome. Cheers — and see you on the road to A2!" },
+        { "speaker": "Vi", "hr": "Živjeli! Doviđenja... to jest — vidimo se!", "en": "Cheers! Goodbye... that is — see you!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Victory lap",
+      "intro": "Seven final questions — one from each corner of your 60 days. Not a test any more; just proof of how far you've come.",
+      "items": [],
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Day 1 flashback: how many letters does the Croatian alphabet have?",
+          "difficulty": 2,
+          "options": ["30", "26", "33", "28"],
+          "answer": "30",
+          "explanation": "30 letters, 30 sounds, zero exceptions — the foundation everything else stood on.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "The first phrase of your journey — 'thank you': '___'",
+          "difficulty": 2,
+          "options": [],
+          "answer": "hvala",
+          "accepted": ["Hvala"],
+          "explanation": "hvala — you've now said it roughly six hundred times. It never stops being useful.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which toast will you use to celebrate today?",
+          "difficulty": 3,
+          "options": ["Živjeli!", "Doviđenja!", "Oprostite!", "Izvolite!"],
+          "answer": "Živjeli!",
+          "explanation": "Živjeli! = Cheers! (literally 'may we live long'). The others are goodbye, sorry, and here-you-go.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Your proudest correction: 'Pijem ___, ne \"pijem kava\".'",
+          "difficulty": 4,
+          "options": [],
+          "answer": "kavu",
+          "accepted": [],
+          "explanation": "The accusative -u: the single ending that unlocked real Croatian sentences.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Your journey in one past-tense sentence: 'I studied Croatian every day.' (male speaker)",
+          "difficulty": 5,
+          "options": ["hrvatski", "dan", "Učio", "svaki", "sam"],
+          "answer": "",
+          "ordered": ["Učio", "sam", "hrvatski", "svaki", "dan"],
+          "explanation": "Perfekt with the clitic sam in second position — a woman would say: Učila sam hrvatski svaki dan.",
+          "strictDiacritics": false
+        },
+        {
+          "type": "FILL",
+          "prompt": "Your promise in one future sentence: 'Nastavit ___ učiti.' (I will continue)",
+          "difficulty": 5,
+          "options": [],
+          "answer": "ću",
+          "accepted": [],
+          "explanation": "Nastavit ću učiti — the futur carries you to A2. When ću follows the infinitive, the infinitive drops its final -i.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The A2 roadmap says your next daily resource is:",
+          "difficulty": 6,
+          "options": ["a2.ffzg.unizg.hr, 1-2 units a day", "starting a new language from zero", "only flashcards, no conversation", "waiting for motivation to return"],
+          "answer": "a2.ffzg.unizg.hr, 1-2 units a day",
+          "explanation": "The free University of Zagreb A2 e-course continues exactly where A1.hr ends. Habit beats motivation — vidimo se na A2!",
+          "strictDiacritics": false
+        }
+      ],
+      "lines": [],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}

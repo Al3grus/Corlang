@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,7 +18,11 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.SegmentedButton
+import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,31 +33,63 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.model.Question
 import com.corlang.app.data.model.QuestionType
 import com.corlang.app.data.model.Quiz
+import com.corlang.app.ui.Haptics
 import com.corlang.app.ui.components.InfoCard
+import com.corlang.app.ui.theme.CorlangColors
 import kotlinx.coroutines.launch
 
 /**
- * Quiz flow: pick a quiz -> answer 10 questions ordered easy->hard -> each answer is graded
- * instantly with an explanation of what was missed -> final score is recorded per language.
+ * Practice hub: level quizzes and the official-format mock exam, switched with a
+ * segmented control (same pattern as the Learn tab).
  */
 @Composable
 fun QuizScreen(container: AppContainer, lang: String) {
+    var tab by rememberSaveable(lang) { mutableStateOf(0) }
+    Column(modifier = Modifier.fillMaxSize()) {
+        SingleChoiceSegmentedButtonRow(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 8.dp)
+        ) {
+            SegmentedButton(
+                selected = tab == 0,
+                onClick = { tab = 0 },
+                shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2)
+            ) { Text("Quizzes") }
+            SegmentedButton(
+                selected = tab == 1,
+                onClick = { tab = 1 },
+                shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2)
+            ) { Text("Mock exam") }
+        }
+        when (tab) {
+            0 -> QuizzesTab(container, lang)
+            else -> ExamScreen(container, lang)
+        }
+    }
+}
+
+@Composable
+private fun QuizzesTab(container: AppContainer, lang: String) {
     val quizzes = remember(lang) { container.content.quizzes(lang).quizzes }
-    var active by remember(lang) { mutableStateOf<Quiz?>(null) }
+    // Store only the id so an in-progress quiz survives rotation/process recreation.
+    var activeId by rememberSaveable(lang) { mutableStateOf<String?>(null) }
+    val active = quizzes.firstOrNull { it.id == activeId }
 
     if (active == null) {
-        QuizList(container, lang, quizzes) { active = it }
+        QuizList(container, lang, quizzes) { activeId = it.id }
     } else {
-        QuizRunner(container, lang, active!!) { active = null }
+        QuizRunner(container, lang, active) { activeId = null }
     }
 }
 
@@ -116,16 +153,17 @@ private fun QuizRunner(
 ) {
     val questions = remember(quiz.id) { quiz.questions.sortedBy { it.difficulty } }
     val scope = rememberCoroutineScope()
+    val context = LocalContext.current
 
-    var index by remember(quiz.id) { mutableStateOf(0) }
-    var score by remember(quiz.id) { mutableStateOf(0) }
-    var checked by remember(quiz.id) { mutableStateOf(false) }
-    var lastCorrect by remember(quiz.id) { mutableStateOf(false) }
-    var finished by remember(quiz.id) { mutableStateOf(false) }
+    var index by rememberSaveable(quiz.id) { mutableStateOf(0) }
+    var score by rememberSaveable(quiz.id) { mutableStateOf(0) }
+    var checked by rememberSaveable(quiz.id) { mutableStateOf(false) }
+    var lastCorrect by rememberSaveable(quiz.id) { mutableStateOf(false) }
+    var finished by rememberSaveable(quiz.id) { mutableStateOf(false) }
 
     // Per-question response state.
-    var selectedOption by remember(quiz.id) { mutableStateOf<String?>(null) }
-    var fillText by remember(quiz.id) { mutableStateOf("") }
+    var selectedOption by rememberSaveable(quiz.id) { mutableStateOf<String?>(null) }
+    var fillText by rememberSaveable(quiz.id) { mutableStateOf("") }
     val reorderAssembled = remember(quiz.id) { mutableStateListOf<String>() }
     val matchMapping = remember(quiz.id) { mutableStateMapOf<String, String>() }
 
@@ -149,6 +187,7 @@ private fun QuizRunner(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
+            .imePadding()
             .padding(16.dp)
     ) {
         Text(
@@ -174,12 +213,13 @@ private fun QuizRunner(
 
         when (q.type) {
             QuestionType.MCQ -> {
+                val feedback = CorlangColors.feedback
                 q.options.forEach { option ->
                     val isChosen = selectedOption == option
                     val border = when {
                         !checked && isChosen -> MaterialTheme.colorScheme.primary
-                        checked && option == q.answer -> Color(0xFF2E7D32)
-                        checked && isChosen -> Color(0xFFC62828)
+                        checked && option == q.answer -> feedback.correct
+                        checked && isChosen -> feedback.wrong
                         else -> MaterialTheme.colorScheme.outline
                     }
                     Surface(
@@ -207,13 +247,23 @@ private fun QuizRunner(
             }
 
             QuestionType.REORDER -> {
+                // Scramble the tokens for display — content lists them in the correct order,
+                // and an already-solved puzzle is no exercise.
+                val scrambled = remember(q.prompt) {
+                    var s = q.options.shuffled()
+                    var tries = 0
+                    while (s == q.ordered && q.options.distinct().size > 1 && tries < 10) {
+                        s = q.options.shuffled(); tries++
+                    }
+                    s
+                }
                 Text(
                     "Tap the words in the correct order:",
                     style = MaterialTheme.typography.bodySmall,
                     modifier = Modifier.padding(top = 4.dp)
                 )
                 FlowRow(modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp)) {
-                    q.options.forEach { token ->
+                    scrambled.forEach { token ->
                         val used = reorderAssembled.count { it == token } >=
                             q.options.count { it == token }
                         Surface(
@@ -247,6 +297,7 @@ private fun QuizRunner(
             }
 
             QuestionType.MATCH -> {
+                val feedback = CorlangColors.feedback
                 // Shuffle the right-hand options once per question so the answer order isn't given away.
                 val rights = remember(q.prompt) { q.pairs.map { it.right }.distinct().shuffled() }
                 Text(
@@ -262,15 +313,22 @@ private fun QuizRunner(
                                 val selected = matchMapping[pair.left] == right
                                 val isThisPairCorrect = pair.right == right
                                 val color = when {
-                                    checked && selected && isThisPairCorrect -> Color(0xFFC8E6C9)
-                                    checked && selected && !isThisPairCorrect -> Color(0xFFFFCDD2)
-                                    checked && isThisPairCorrect -> Color(0xFFC8E6C9)
+                                    checked && selected && isThisPairCorrect -> feedback.correctContainer
+                                    checked && selected && !isThisPairCorrect -> feedback.wrongContainer
+                                    checked && isThisPairCorrect -> feedback.correctContainer
                                     selected -> MaterialTheme.colorScheme.secondaryContainer
                                     else -> MaterialTheme.colorScheme.surfaceVariant
+                                }
+                                val onColor = when {
+                                    checked && isThisPairCorrect -> feedback.onCorrectContainer
+                                    checked && selected -> feedback.onWrongContainer
+                                    selected -> MaterialTheme.colorScheme.onSecondaryContainer
+                                    else -> MaterialTheme.colorScheme.onSurfaceVariant
                                 }
                                 Surface(
                                     shape = RoundedCornerShape(8.dp),
                                     color = color,
+                                    contentColor = onColor,
                                     modifier = Modifier
                                         .padding(4.dp)
                                         .clickable(enabled = !checked) { matchMapping[pair.left] = right }
@@ -284,16 +342,17 @@ private fun QuizRunner(
 
         // Feedback after checking.
         if (checked) {
+            val feedback = CorlangColors.feedback
             Surface(
                 shape = RoundedCornerShape(10.dp),
-                color = if (lastCorrect) Color(0xFFE8F5E9) else Color(0xFFFFEBEE),
+                color = if (lastCorrect) feedback.correctContainer else feedback.wrongContainer,
+                contentColor = if (lastCorrect) feedback.onCorrectContainer else feedback.onWrongContainer,
                 modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
             ) {
                 Column(modifier = Modifier.padding(14.dp)) {
                     Text(
                         if (lastCorrect) "✅ Correct" else "❌ Not quite",
-                        fontWeight = FontWeight.Bold,
-                        color = if (lastCorrect) Color(0xFF2E7D32) else Color(0xFFC62828)
+                        fontWeight = FontWeight.Bold
                     )
                     if (!lastCorrect) {
                         val correct = when (q.type) {
@@ -320,7 +379,7 @@ private fun QuizRunner(
                         QuestionType.MATCH -> Grading.gradeMatch(q, matchMapping.toMap())
                     }
                     lastCorrect = correct
-                    if (correct) score++
+                    if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
                     checked = true
                 } else {
                     if (index + 1 >= questions.size) {
@@ -349,6 +408,9 @@ private fun QuizRunner(
                     else -> "Next question"
                 }
             )
+        }
+        OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth()) {
+            Text("Exit quiz")
         }
     }
 }

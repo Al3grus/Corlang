@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,6 +25,7 @@ import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,11 +46,13 @@ import kotlinx.coroutines.launch
 @Composable
 fun TeachScreen(container: AppContainer, lang: String) {
     val concepts = remember(lang) { container.content.feynman(lang).concepts }
-    var active by remember(lang) { mutableStateOf<FeynmanConcept?>(null) }
+    // Id-based + saveable: an in-progress teach-back survives rotation/tab switches.
+    var activeId by rememberSaveable(lang) { mutableStateOf<String?>(null) }
+    val active = concepts.firstOrNull { it.id == activeId }
 
     if (active == null) {
         Column(
-            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
+            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).imePadding().padding(16.dp)
         ) {
             Text("Teach it back", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
             Text(
@@ -61,7 +65,7 @@ fun TeachScreen(container: AppContainer, lang: String) {
             if (concepts.isEmpty()) Text("No concepts for this language yet — coming soon.")
             concepts.forEach { c ->
                 Card(
-                    modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp).clickable { active = c }
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp).clickable { activeId = c.id }
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text("${c.levelId} · ${c.title}", fontWeight = FontWeight.Bold,
@@ -71,7 +75,7 @@ fun TeachScreen(container: AppContainer, lang: String) {
             }
         }
     } else {
-        FeynmanRunner(container, lang, active!!) { active = null }
+        FeynmanRunner(container, lang, active) { activeId = null }
     }
 }
 
@@ -83,13 +87,14 @@ private fun FeynmanRunner(
     onExit: () -> Unit
 ) {
     val scope = rememberCoroutineScope()
-    var myExplanation by remember(concept.id) { mutableStateOf("") }
-    var revealed by remember(concept.id) { mutableStateOf(false) }
+    // Saveable: a half-typed explanation survives rotation and accidental tab switches.
+    var myExplanation by rememberSaveable(concept.id) { mutableStateOf("") }
+    var revealed by rememberSaveable(concept.id) { mutableStateOf(false) }
     // Which rubric points the learner says they covered.
     val covered = remember(concept.id) { mutableStateMapOf<Int, Boolean>() }
 
     Column(
-        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
+        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).imePadding().padding(16.dp)
     ) {
         Text("${concept.levelId} · ${concept.title}",
             style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)

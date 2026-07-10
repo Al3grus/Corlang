@@ -37,9 +37,68 @@ interface ProgressDao {
     @Query("SELECT MAX(score) FROM quiz_attempt WHERE langCode = :lang AND quizId = :quizId")
     fun bestQuizScore(lang: String, quizId: String): Flow<Int?>
 
+    // ----- Word reviews (SRS) -----
+
+    @Query("SELECT * FROM word_review WHERE langCode = :lang")
+    fun wordReviews(lang: String): Flow<List<WordReview>>
+
+    @Query("SELECT * FROM word_review WHERE langCode = :lang")
+    suspend fun wordReviewsOnce(lang: String): List<WordReview>
+
+    @Query("SELECT * FROM word_review WHERE langCode = :lang AND wordId = :wordId LIMIT 1")
+    suspend fun wordReviewOnce(lang: String, wordId: String): WordReview?
+
+    @Query("SELECT * FROM word_review WHERE langCode = :lang AND dueEpochDay <= :today")
+    suspend fun dueWordReviews(lang: String, today: Long): List<WordReview>
+
+    @Query("SELECT COUNT(*) FROM word_review WHERE langCode = :lang AND introducedEpochDay = :today")
+    suspend fun introducedTodayCount(lang: String, today: Long): Int
+
+    @Upsert
+    suspend fun upsertWordReview(r: WordReview)
+
     @Insert
     suspend fun insertFeynmanAttempt(a: FeynmanAttempt)
 
     @Query("SELECT * FROM feynman_attempt WHERE langCode = :lang ORDER BY doneAtEpoch DESC")
     fun feynmanAttempts(lang: String): Flow<List<FeynmanAttempt>>
+
+    // ----- Mock exam attempts -----
+
+    @Insert
+    suspend fun insertExamSectionAttempt(a: ExamSectionAttempt)
+
+    @Query("SELECT * FROM exam_section_attempt WHERE langCode = :lang AND examId = :examId ORDER BY takenAtEpoch DESC")
+    fun examAttempts(lang: String, examId: String): Flow<List<ExamSectionAttempt>>
+
+    @Query(
+        // Aliases matter: without them the correlated sectionId comparison resolves to the
+        // inner table (a tautology) and only the single globally-latest attempt is returned.
+        "SELECT * FROM exam_section_attempt AS a WHERE a.langCode = :lang AND a.examId = :examId " +
+        "AND a.takenAtEpoch = (SELECT MAX(b.takenAtEpoch) FROM exam_section_attempt AS b " +
+        "WHERE b.langCode = :lang AND b.examId = :examId AND b.sectionId = a.sectionId)"
+    )
+    fun latestExamAttempts(lang: String, examId: String): Flow<List<ExamSectionAttempt>>
+
+    // ----- Plan-day task checklist -----
+
+    @Query("SELECT * FROM day_task_check WHERE langCode = :lang AND day = :day")
+    fun dayTaskChecks(lang: String, day: Int): Flow<List<DayTaskCheck>>
+
+    @Upsert
+    suspend fun upsertDayTask(c: DayTaskCheck)
+
+    @Query("DELETE FROM day_task_check WHERE langCode = :lang AND day = :day AND itemId = :itemId")
+    suspend fun deleteDayTask(lang: String, day: Int, itemId: String)
+
+    // ----- Can-do self-checklist -----
+
+    @Query("SELECT * FROM can_do_check WHERE langCode = :lang AND levelId = :levelId")
+    fun canDoChecks(lang: String, levelId: String): Flow<List<CanDoCheck>>
+
+    @Upsert
+    suspend fun upsertCanDo(c: CanDoCheck)
+
+    @Query("DELETE FROM can_do_check WHERE langCode = :lang AND levelId = :levelId AND itemId = :itemId")
+    suspend fun deleteCanDo(lang: String, levelId: String, itemId: String)
 }

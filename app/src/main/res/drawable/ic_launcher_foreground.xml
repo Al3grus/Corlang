@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Adaptive-icon foreground: a white speech bubble (language/conversation motif)
-     with an amber accent dot. Drawn within the 72dp safe zone of the 108dp canvas. -->
+<!-- Corlang logo foreground: Cor(e) + Lang(uage) — a speech bubble (language) holding a
+     core: a solid dot wrapped in an open ring that doubles as the letter "C".
+     Language-neutral by design (per-language identity lives in the UI, not the brand).
+     Geometry sits inside the Ø66dp safe zone of the 108dp adaptive-icon canvas. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Speech bubble body -->
+    <!-- Speech bubble body with a bottom-left tail -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M34,32 h40 a8,8 0 0 1 8,8 v22 a8,8 0 0 1 -8,8 h-22 l-12,11 v-11 h-6 a8,8 0 0 1 -8,-8 v-22 a8,8 0 0 1 8,-8 z" />
+        android:pathData="M39,33 h30 a9,9 0 0 1 9,9 v21 a9,9 0 0 1 -9,9 H50 L36,80 V72 h3 a9,9 0 0 1 -9,-9 V42 a9,9 0 0 1 9,-9 z" />
 
-    <!-- Three dots: speech / 'learning to speak' -->
+    <!-- The "C" ring: Adriatic blue, open to the right (letter C = Corlang) -->
     <path
-        android:fillColor="#3F51B5"
-        android:pathData="M46,51 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+        android:strokeColor="#135E8C"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M61.5,62.7 A13,13 0 1 1 61.5,41.3" />
+
+    <!-- The core: the essential 20% at the center of the language -->
     <path
-        android:fillColor="#3F51B5"
-        android:pathData="M57,51 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
-    <path
-        android:fillColor="#FFB300"
-        android:pathData="M68,51 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" />
+        android:fillColor="#C8102E"
+        android:pathData="M54,52 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 z" />
 </vector>
