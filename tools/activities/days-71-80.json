@@ -1,0 +1,1089 @@
+{
+  "71": [
+    {
+      "type": "LEARN",
+      "title": "New present class: krenem, dođem",
+      "intro": "A new family of verbs joins your present tense today, and they all take the regular -em endings. Verbs in -nuti conjugate with -nem (krenuti → krenem), and doći with its whole family gives -đem (dođem, nađem, uđem). These are the key motion and event verbs of everyday plans — learn the 1st person singular and the rest of the paradigm follows automatically.",
+      "items": [
+        { "hr": "krenuti → krenem", "en": "to set off → I set off", "note": "Full paradigm: krenem, kreneš, krene, krenemo, krenete, krenu. Kad krenemo ranije, ne žurimo. (When we set off earlier, we don't hurry.)" },
+        { "hr": "doći → dođem", "en": "to come, to arrive → I come", "note": "dođem, dođeš, dođe, dođemo, dođete, dođu. Dođem po tebe u osam. (I'll come pick you up at eight.)" },
+        { "hr": "stići (stignuti) → stignem", "en": "to arrive, to make it → I arrive", "note": "stignem, stigneš… stignu. Javi mi se kad stigneš. (Let me know when you arrive.)" },
+        { "hr": "poći → pođem", "en": "to set out → I set out", "note": "pođem, pođeš… pođu. Ako pođemo sada, stižemo na vrijeme. (If we set out now, we arrive on time.)" },
+        { "hr": "otići → odem", "en": "to leave, to go away → I leave", "note": "Irregular stem: odem, odeš, ode, odemo, odete, odu. Moram otići prije šest. (I have to leave before six.)" },
+        { "hr": "izaći → izađem", "en": "to go out → I go out", "note": "izađem… izađu. Kad izađem s posla, nazvat ću te. (When I get out of work, I'll call you.)" },
+        { "hr": "ući → uđem", "en": "to enter → I enter", "note": "uđem… uđu. Imperative: Uđi, vrata su otvorena! (Come in, the door is open!)" },
+        { "hr": "naći → nađem", "en": "to find → I find", "note": "nađem… nađu. With se it means to meet up: Nađemo se u pet? (Shall we meet at five?) — the perfective present is normal in arrangements." },
+        { "hr": "skrenuti → skrenem", "en": "to turn (left/right) → I turn", "note": "skrenem… skrenu. Skreni desno kod pekare. (Turn right at the bakery.)" },
+        { "hr": "skinuti → skinem", "en": "to take off; to download → I take off", "note": "skinem… skinu. Skinem jaknu čim uđem u stan. (I take my jacket off as soon as I enter the flat.)" },
+        { "hr": "dignuti (dići) → dignem", "en": "to lift, to raise → I lift", "note": "dignem… dignu. With se, colloquially 'get up': Ujutro se teško dignem iz kreveta." },
+        { "hr": "početi → počnem", "en": "to begin → I begin", "note": "Not a -nuti verb, but the same -nem pattern: počnem, počneš… počnu. Čim počne kiša, idemo unutra. (As soon as the rain starts, we go inside.)" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "krenem, dođem, stignem in action",
+      "intro": "Conjugate the new class and keep your clitic order intact while you do it.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What is the present form of 'doći' for 'oni' (they)?",
+          "difficulty": 3,
+          "options": ["dođu", "dođeju", "dođaju", "dođemo"],
+          "answer": "dođu",
+          "explanation": "doći follows the -em class: dođem, dođeš, dođe, dođemo, dođete, dođu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the correct form of 'stići' (ti): Javi mi se kad ______ kući.",
+          "difficulty": 3,
+          "answer": "stigneš",
+          "accepted": ["stigneš"],
+          "strictDiacritics": true,
+          "explanation": "stići → stignem, stigneš… Javi mi se kad stigneš kući. (Let me know when you get home.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Choose the correct present form of 'krenuti' for 'mi' (we):",
+          "difficulty": 3,
+          "options": ["krenemo", "krenimo", "krenamo", "krenu"],
+          "answer": "krenemo",
+          "explanation": "krenuti → krenem, so 'mi' is krenemo. (krenimo is the imperative 'let's set off'.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the correct form of 'otići' (ona): Ona uvijek ______ prva s posla.",
+          "difficulty": 4,
+          "answer": "ode",
+          "accepted": ["ode"],
+          "strictDiacritics": true,
+          "explanation": "otići has an irregular present stem: odem, odeš, ode… Ona uvijek ode prva. (She always leaves first.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Shall we meet in front of the cinema at eight?'",
+          "difficulty": 4,
+          "options": ["u", "Nađemo", "kina", "se", "osam", "ispred"],
+          "ordered": ["Nađemo", "se", "ispred", "kina", "u", "osam"],
+          "answer": "Nađemo se ispred kina u osam",
+          "explanation": "Nađemo se… is the standard way to propose meeting up; the clitic se sits in second position."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence has correct clitic order? (I'll bring it to him tomorrow.)",
+          "difficulty": 5,
+          "options": ["Sutra ću mu ga donijeti.", "Sutra ću ga mu donijeti.", "Sutra mu ću ga donijeti.", "Ću mu ga sutra donijeti."],
+          "answer": "Sutra ću mu ga donijeti.",
+          "explanation": "The clitic chain in second position: auxiliary (ću) → dative (mu) → accusative (ga)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the correct form of 'doći' (vi): Kad ______ k nama?",
+          "difficulty": 3,
+          "answer": "dođete",
+          "accepted": ["dođete"],
+          "strictDiacritics": true,
+          "explanation": "doći → dođem, and for 'vi' it is dođete: Kad dođete k nama? (When are you coming to our place?)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Čim uđem u stan, ______ jaknu.",
+          "difficulty": 3,
+          "options": ["skinem", "skinam", "skinujem", "skinemo"],
+          "answer": "skinem",
+          "explanation": "skinuti → skinem (ja). As soon as I enter the flat, I take off my jacket."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "72": [
+    {
+      "type": "LEARN",
+      "title": "Invitations & arrangements: Dođi k nama!",
+      "intro": "Arranging to meet is a core A2 skill, and a handful of fixed patterns covers the whole social ritual: inviting, proposing a time, accepting, and declining politely with a reason. Notice how pronoun clitics live inside almost every phrase (Javi mi se! Odgovara li ti…?).",
+      "items": [
+        { "hr": "Dođi k nama u subotu!", "en": "Come to our place on Saturday!", "note": "k + dative = to someone's place. Formal/plural: Dođite k nama!" },
+        { "hr": "Hoćemo li se naći u petak navečer?", "en": "Shall we meet on Friday evening?", "note": "li right after the verb, then the clitic se — the standard question for arranging." },
+        { "hr": "Odgovara li ti nedjelja?", "en": "Does Sunday work for you?", "note": "odgovarati + dative: the day 'answers to' you. Formal: Odgovara li Vam…?" },
+        { "hr": "Kad ti odgovara?", "en": "When suits you?", "note": "The open version of the same question." },
+        { "hr": "Može!", "en": "Sure! / That works!", "note": "The universal casual yes to any proposal." },
+        { "hr": "Vrijedi!", "en": "Deal! / Agreed!", "note": "Seals an arrangement: Vidimo se u pet. — Vrijedi!" },
+        { "hr": "Rado ću doći.", "en": "I'll gladly come.", "note": "rado = gladly; a warm way to accept." },
+        { "hr": "Žao mi je, ne mogu.", "en": "I'm sorry, I can't.", "note": "The polite refusal opener — always soften with žao mi je." },
+        { "hr": "Ne mogu jer imam već dogovor.", "en": "I can't because I already have an arrangement.", "note": "Decline + jer + reason. dogovor = an arrangement/appointment." },
+        { "hr": "Možda drugi put.", "en": "Maybe another time.", "note": "Keeps the door open after declining." },
+        { "hr": "Javi mi se!", "en": "Get in touch with me!", "note": "javiti se + dative. The clitics mi se follow the imperative directly." },
+        { "hr": "Vidimo se!", "en": "See you!", "note": "Literally 'we see each other' — the default goodbye between friends." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Invite, accept, decline",
+      "intro": "Run the whole invitation ritual: propose, check the time, say yes, say no politely — with every clitic in its place.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Your friend asks: 'Hoćemo li se naći u petak?' How do you casually accept?",
+          "difficulty": 2,
+          "options": ["Može!", "Mora!", "Moram!", "Možda ne."],
+          "answer": "Može!",
+          "explanation": "Može! (literally 'it can') is the universal casual yes. Vrijedi! works too."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the invitation: Dođi ___ nama u subotu!",
+          "difficulty": 3,
+          "answer": "k",
+          "accepted": ["k"],
+          "strictDiacritics": true,
+          "explanation": "k + dative = to someone's place: Dođi k nama! (Come to our place!)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is the polite way to decline an invitation?",
+          "difficulty": 3,
+          "options": ["Žao mi je, ne mogu, imam već dogovor.", "Ne.", "Ne želim doći k vama.", "Nemam vremena za tebe."],
+          "answer": "Žao mi je, ne mogu, imam već dogovor.",
+          "explanation": "Soften with žao mi je (I'm sorry), then give a reason — the standard polite refusal."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Shall we meet on Friday?'",
+          "difficulty": 4,
+          "options": ["naći", "li", "u", "Hoćemo", "petak", "se"],
+          "ordered": ["Hoćemo", "li", "se", "naći", "u", "petak"],
+          "answer": "Hoćemo li se naći u petak",
+          "explanation": "Verb first, then the clitics in fixed order: li before se — Hoćemo li se naći…?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the missing clitic: Javi ___ se sutra!",
+          "difficulty": 3,
+          "answer": "mi",
+          "accepted": ["mi"],
+          "strictDiacritics": true,
+          "explanation": "javiti se + dative: Javi mi se! = Get in touch with me! Dative clitic (mi) comes before se."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Asking a friend if Saturday works: Odgovara li ___ subota?",
+          "difficulty": 3,
+          "options": ["ti", "te", "tebe", "toga"],
+          "answer": "ti",
+          "explanation": "odgovarati takes the dative: Odgovara li ti subota? (Does Saturday suit you?)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Decline with a reason: Ne mogu doći ______ imam previše posla.",
+          "difficulty": 3,
+          "answer": "jer",
+          "accepted": ["jer"],
+          "strictDiacritics": true,
+          "explanation": "jer = because. Ne mogu doći jer imam previše posla. (I can't come because I have too much work.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Let's meet in front of the café at five.'",
+          "difficulty": 4,
+          "options": ["ispred", "u", "Nađimo", "pet", "kafića", "se"],
+          "ordered": ["Nađimo", "se", "ispred", "kafića", "u", "pet"],
+          "answer": "Nađimo se ispred kafića u pet",
+          "explanation": "Nađimo se = let's meet (imperative of naći se); ispred + genitive (kafića)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Roštilj u subotu — sending the invitations",
+      "intro": "You and your wife are planning a Saturday barbecue and inviting friends. Read your lines ('Me') aloud — one friend accepts, one declines, and every phrase is from today's lesson.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Dušo, hoćemo li pozvati Anu i Marka na roštilj u subotu?", "en": "Honey, shall we invite Ana and Marko to a barbecue on Saturday?" },
+        { "speaker": "Me", "hr": "Može! Ja ću im poslati poruku. U koliko sati?", "en": "Sure! I'll send them a message. At what time?" },
+        { "speaker": "Partner", "hr": "Oko pet. Odgovara li ti to?", "en": "Around five. Does that work for you?" },
+        { "speaker": "Me", "hr": "Odgovara. Napisao sam im: 'Dođite k nama u subotu oko pet!'", "en": "It works. I wrote to them: 'Come to our place on Saturday around five!'" },
+        { "speaker": "Partner", "hr": "Super. Što je Ana odgovorila?", "en": "Great. What did Ana reply?" },
+        { "speaker": "Me", "hr": "Ana je napisala: 'Rado ću doći! Vidimo se u subotu!'", "en": "Ana wrote: 'I'll gladly come! See you on Saturday!'" },
+        { "speaker": "Partner", "hr": "Odlično! A Marko? Može li on?", "en": "Excellent! And Marko? Can he make it?" },
+        { "speaker": "Me", "hr": "Marko ne može. Žao mu je, ali već ima dogovor.", "en": "Marko can't. He's sorry, but he already has an arrangement." },
+        { "speaker": "Partner", "hr": "Šteta. Onda ćemo ga pozvati drugi put.", "en": "A pity. Then we'll invite him another time." },
+        { "speaker": "Me", "hr": "Vrijedi. Javit ću mu se sljedeći tjedan.", "en": "Deal. I'll get in touch with him next week." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "73": [
+    {
+      "type": "LEARN",
+      "title": "Building a weekend-plan message",
+      "intro": "Today you write a real message arranging the weekend. These are the building blocks natives use — greeting, plan, time, practical details, and sign-off. Watch the enclitics: in writing, every ću/mi/se must sit in second position, and a message is the perfect place to check each one deliberately.",
+      "items": [
+        { "hr": "Bok! Što radiš u subotu?", "en": "Hi! What are you doing on Saturday?", "note": "The standard casual opener for making plans." },
+        { "hr": "Planiramo roštilj kod nas u dvorištu.", "en": "We're planning a barbecue at our place in the yard.", "note": "kod nas = at our place." },
+        { "hr": "Počinjemo oko pet poslijepodne.", "en": "We start around five in the afternoon.", "note": "oko + genitive for approximate time: oko pet(a sata)." },
+        { "hr": "Bit će i Ana i njezin muž.", "en": "Ana and her husband will be there too.", "note": "Bit će = futur I of biti; i… i… = both… and…" },
+        { "hr": "Ponesi nešto za piće ako želiš.", "en": "Bring something to drink if you like.", "note": "ponijeti → imperative ponesi." },
+        { "hr": "Ako pada kiša, ostajemo unutra.", "en": "If it rains, we stay inside.", "note": "A simple real condition with ako + present." },
+        { "hr": "Javi mi možeš li doći.", "en": "Let me know whether you can come.", "note": "Indirect question with li: možeš li = whether you can." },
+        { "hr": "Možemo se naći i ranije ako ti odgovara.", "en": "We can also meet earlier if that suits you.", "note": "se in second position of its clause: Možemo se naći…" },
+        { "hr": "Veselim se!", "en": "I'm looking forward to it!", "note": "veseliti se — the reflexive se is obligatory." },
+        { "hr": "Pozdravi Ivanu!", "en": "Say hi to Ivana!", "note": "pozdraviti + accusative — a warm closing touch." },
+        { "hr": "Vidimo se u subotu!", "en": "See you on Saturday!", "note": "The classic sign-off for a plan message." },
+        { "hr": "P. S. Adresu ću ti poslati sutra.", "en": "P.S. I'll send you the address tomorrow.", "note": "Fronting Adresu pushes the clitics ću ti into second position — classic Croatian word order." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Every clitic in second position",
+      "intro": "A written message is a clitic exam. Place ću, ti, se and li exactly where they belong.",
+      "questions": [
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I'll get in touch with you tomorrow.'",
+          "difficulty": 4,
+          "options": ["ti", "sutra", "Javit", "se", "ću"],
+          "ordered": ["Javit", "ću", "ti", "se", "sutra"],
+          "answer": "Javit ću ti se sutra",
+          "explanation": "Second position chain: auxiliary (ću) → dative (ti) → se. Javit ću ti se sutra."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence has correct clitic order?",
+          "difficulty": 5,
+          "options": ["Adresu ću ti poslati večeras.", "Adresu ti ću poslati večeras.", "Ću ti adresu poslati večeras.", "Adresu poslat ću ti večeras."],
+          "answer": "Adresu ću ti poslati večeras.",
+          "explanation": "After the first stressed word (Adresu), the clitics follow in order: ću (aux) → ti (dative)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete the indirect question: Javi mi možeš ___ doći.",
+          "difficulty": 4,
+          "answer": "li",
+          "accepted": ["li"],
+          "strictDiacritics": true,
+          "explanation": "možeš li = whether you can. li always attaches right after the verb."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'Will you send me the address?'",
+          "difficulty": 4,
+          "options": ["adresu", "mi", "li", "Hoćeš", "poslati"],
+          "ordered": ["Hoćeš", "li", "mi", "poslati", "adresu"],
+          "answer": "Hoćeš li mi poslati adresu",
+          "explanation": "Question chain: verb + li + dative clitic (mi), then the infinitive and object."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'I'm looking forward to it!' = Veselim ___!",
+          "difficulty": 2,
+          "options": ["se", "si", "me", "sam"],
+          "answer": "se",
+          "explanation": "veseliti se is reflexive — the se can never be dropped: Veselim se!"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the missing clitic: Naći ćemo ___ ispred ulaza.",
+          "difficulty": 3,
+          "answer": "se",
+          "accepted": ["se"],
+          "strictDiacritics": true,
+          "explanation": "naći se = to meet up. The chain is ćemo (aux) → se: Naći ćemo se ispred ulaza."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is correct?",
+          "difficulty": 4,
+          "options": ["Sutra ćemo se naći u parku.", "Sutra se ćemo naći u parku.", "Ćemo se sutra naći u parku.", "Sutra ćemo naći se u parku."],
+          "answer": "Sutra ćemo se naći u parku.",
+          "explanation": "Clitics in second position, auxiliary before se: Sutra ćemo se naći…"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order (talking about 'broj' — the number): 'I'll send it to you tomorrow.'",
+          "difficulty": 5,
+          "options": ["ga", "Poslat", "sutra", "ću", "ti"],
+          "ordered": ["Poslat", "ću", "ti", "ga", "sutra"],
+          "answer": "Poslat ću ti ga sutra",
+          "explanation": "Full chain in action: ću (aux) → ti (dative) → ga (accusative). Poslat ću ti ga sutra."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "74": [
+    {
+      "type": "LEARN",
+      "title": "Week 10 in ten lines",
+      "intro": "Everything from this week compressed into ten model sentences: weekend plans in futur I, object pronouns in both forms, and the clitic chain that holds Croatian sentences together. If you can produce all ten cold, week 10 is yours.",
+      "items": [
+        { "hr": "Ići ću na izlet u subotu.", "en": "I'll go on a trip on Saturday.", "note": "Futur I: infinitive + ću. Fronted verb form: Ići ću…" },
+        { "hr": "Naći ćemo se u pet.", "en": "We'll meet at five.", "note": "ćemo → se: auxiliary before the reflexive clitic." },
+        { "hr": "mene/me, tebe/te, njega/ga, nju/je", "en": "me, you, him, her — stressed/clitic accusative pairs", "note": "The short (clitic) forms are what natives use 95% of the time; also: nas, vas, njih/ih." },
+        { "hr": "Vidiš li me? — Vidim te.", "en": "Do you see me? — I see you.", "note": "Clitic pronouns in the most common exchange there is." },
+        { "hr": "Poznaješ li Marka? — Da, poznajem ga.", "en": "Do you know Marko? — Yes, I know him.", "note": "Replace the noun with the clitic pronoun in the answer." },
+        { "hr": "Ovo je za tebe.", "en": "This is for you.", "note": "After prepositions you must use the stressed form: za tebe, never za te." },
+        { "hr": "Jučer sam mu ga dao.", "en": "I gave it to him yesterday.", "note": "The full chain: sam (aux) → mu (dative) → ga (accusative)." },
+        { "hr": "Dala mi je knjigu.", "en": "She gave me the book.", "note": "je (the 3rd person auxiliary) always goes last in the chain: mi → je." },
+        { "hr": "Krenut ćemo rano, a stići ćemo oko podneva.", "en": "We'll set off early and arrive around noon.", "note": "This week's new verbs (krenuti, stići) in futur I." },
+        { "hr": "Javit ću ti se kad stignem.", "en": "I'll get in touch with you when I arrive.", "note": "ću → ti → se, then the perfective present (stignem) in the kad-clause." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Week 10 checkpoint — with listening",
+      "intro": "A mixed review of futur I, object pronouns and clitic order — including three listening tasks. Play each audio and catch the essentials, just like you would in a real voice message.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Listen: what is the plan?",
+          "difficulty": 4,
+          "options": ["A trip to Samobor on Saturday at nine", "Dinner in Zagreb on Sunday", "A barbecue on Saturday evening", "A movie on Friday at nine"],
+          "answer": "A trip to Samobor on Saturday at nine",
+          "explanation": "U subotu idemo na izlet u Samobor. Krećemo u devet ujutro. = On Saturday we're going on a trip to Samobor. We set off at nine in the morning.",
+          "audioText": "U subotu idemo na izlet u Samobor. Krećemo u devet ujutro."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen: what does the speaker propose?",
+          "difficulty": 4,
+          "options": ["Meeting on Sunday instead of Friday", "Cancelling the plan completely", "Meeting on Friday as agreed", "Meeting twice, Friday and Sunday"],
+          "answer": "Meeting on Sunday instead of Friday",
+          "explanation": "Žao mi je, ne mogu doći u petak. Imam već dogovor. Može li u nedjelju? = Sorry, I can't come on Friday — I already have an arrangement. How about Sunday?",
+          "audioText": "Žao mi je, ne mogu doći u petak. Imam već dogovor. Može li u nedjelju?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Listen and type the missing clitic: Javit ću ___ se kad stignem.",
+          "difficulty": 4,
+          "answer": "ti",
+          "accepted": ["ti"],
+          "strictDiacritics": true,
+          "explanation": "Javit ću ti se kad stignem. — the dative clitic ti comes between ću and se.",
+          "audioText": "Javit ću ti se kad stignem."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Vidiš li Anu? — Da, vidim ___.",
+          "difficulty": 3,
+          "options": ["je", "joj", "njoj", "ona"],
+          "answer": "je",
+          "explanation": "The accusative clitic for 'her' is je: Vidim je. (Next to the auxiliary je it switches to ju: Vidio ju je.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Replace the noun with a pronoun: Poznaješ li Marka? — Da, poznajem ___.",
+          "difficulty": 3,
+          "answer": "ga",
+          "accepted": ["ga"],
+          "strictDiacritics": true,
+          "explanation": "njega/ga — the clitic ga stands for Marka: Poznajem ga. (I know him.)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I gave it to him yesterday.'",
+          "difficulty": 5,
+          "options": ["mu", "Jučer", "dao", "ga", "sam"],
+          "ordered": ["Jučer", "sam", "mu", "ga", "dao"],
+          "answer": "Jučer sam mu ga dao",
+          "explanation": "Second position after Jučer: sam (aux) → mu (dative) → ga (accusative), then the participle."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Što ćeš raditi u subotu? — ______ na roštilj kod prijatelja.",
+          "difficulty": 3,
+          "options": ["Ići ću", "Ću ići", "Ići ćem", "Idem ću"],
+          "answer": "Ići ću",
+          "explanation": "ću can't stand first, so the infinitive fronts it: Ići ću na roštilj. (I'll go to a barbecue.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you say 'Can you send it to me?' (it = paket)",
+          "difficulty": 5,
+          "options": ["Možeš li mi ga poslati?", "Možeš li ga mi poslati?", "Li možeš mi ga poslati?", "Možeš mi li ga poslati?"],
+          "answer": "Možeš li mi ga poslati?",
+          "explanation": "The chain: li → dative (mi) → accusative (ga). Možeš li mi ga poslati?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the missing preposition: Ovo je ___ tebe.",
+          "difficulty": 2,
+          "answer": "za",
+          "accepted": ["za"],
+          "strictDiacritics": true,
+          "explanation": "za tebe = for you. After a preposition the stressed form (tebe) is obligatory."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Planning the real weekend",
+      "intro": "Saturday is coming and this plan is actually happening. Negotiate the whole weekend with your wife — market, barbecue at Ana's, and a quiet Sunday — using this week's futur I, pronouns and clitics.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Dušo, kakav nam je plan za vikend?", "en": "Honey, what's our plan for the weekend?" },
+        { "speaker": "Me", "hr": "U subotu ujutro idemo na plac, a poslije možemo na kavu.", "en": "On Saturday morning we're going to the market, and afterwards we can go for coffee." },
+        { "speaker": "Partner", "hr": "Može. A poslijepodne? Ana nas je pozvala na roštilj.", "en": "Sure. And in the afternoon? Ana invited us to a barbecue." },
+        { "speaker": "Me", "hr": "Znam, odgovorio sam joj jučer. Rekao sam da dolazimo oko pet.", "en": "I know, I replied to her yesterday. I said we're coming around five." },
+        { "speaker": "Partner", "hr": "Odlično. Hoćemo li joj nešto ponijeti?", "en": "Excellent. Shall we bring her something?" },
+        { "speaker": "Me", "hr": "Ponijet ćemo vino. Kupit ću ga u subotu ujutro na placu.", "en": "We'll bring wine. I'll buy it on Saturday morning at the market." },
+        { "speaker": "Partner", "hr": "Savršeno. A u nedjelju? Ja se želim odmoriti.", "en": "Perfect. And on Sunday? I want to rest." },
+        { "speaker": "Me", "hr": "Naravno. Ujutro ćemo dugo spavati, a onda idemo u šetnju uz rijeku.", "en": "Of course. In the morning we'll sleep in, and then we're going for a walk along the river." },
+        { "speaker": "Partner", "hr": "Baš lijepo. Kad krećemo u subotu?", "en": "How nice. When do we set off on Saturday?" },
+        { "speaker": "Me", "hr": "Krenut ćemo u devet. Javit ću ti se s placa ako nešto trebamo.", "en": "We'll set off at nine. I'll get in touch with you from the market if we need anything." },
+        { "speaker": "Partner", "hr": "Dogovoreno. Veselim se vikendu!", "en": "Agreed. I'm looking forward to the weekend!" },
+        { "speaker": "Me", "hr": "I ja. Napokon slobodni dani!", "en": "Me too. Free days at last!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "75": [
+    {
+      "type": "LEARN",
+      "title": "Kvaliteta života — home, neighbourhood, habits",
+      "intro": "Quality-of-life vocabulary powers the conversations natives most like to have: how people live, what their neighbourhood is like, which habits they love. These fourteen words are the core kit — each comes with a sentence you can reuse about your own life.",
+      "items": [
+        { "hr": "stan", "en": "flat, apartment", "note": "Živim u stanu u centru. (I live in a flat in the centre.)" },
+        { "hr": "kvart", "en": "neighbourhood", "note": "Naš kvart je miran i zelen. (Our neighbourhood is quiet and green.)" },
+        { "hr": "susjed / susjeda", "en": "neighbour (m/f)", "note": "Naši susjedi su jako ljubazni. (Our neighbours are very kind.)" },
+        { "hr": "zgrada", "en": "building", "note": "Stanujemo u staroj zgradi bez lifta. (We live in an old building without a lift.)" },
+        { "hr": "dvorište", "en": "yard, courtyard", "note": "Djeca se igraju u dvorištu. (The children play in the yard.)" },
+        { "hr": "navika", "en": "habit", "note": "Jutarnja kava je moja najdraža navika. (Morning coffee is my favourite habit.)" },
+        { "hr": "odmor", "en": "rest; vacation", "note": "Trebam odmor od posla. (I need a rest from work.)" },
+        { "hr": "buka", "en": "noise", "note": "Ne mogu spavati od buke. (I can't sleep because of the noise.)" },
+        { "hr": "mir", "en": "peace, quiet", "note": "Navečer je u kvartu potpuni mir. (In the evening the neighbourhood is completely quiet.)" },
+        { "hr": "priroda", "en": "nature", "note": "Vikendom volimo biti u prirodi. (On weekends we love being in nature.)" },
+        { "hr": "šetnja", "en": "a walk", "note": "Idemo u šetnju poslije večere. (We go for a walk after dinner.)" },
+        { "hr": "slobodno vrijeme", "en": "free time", "note": "U slobodno vrijeme čitam i kuham. (In my free time I read and cook.)" },
+        { "hr": "troškovi", "en": "costs, expenses", "note": "Troškovi života u centru su visoki. (The cost of living in the centre is high.)" },
+        { "hr": "blizina", "en": "closeness, vicinity", "note": "U blizini je park i tržnica. (There's a park and a market nearby.)" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "How you live: vocabulary in context",
+      "intro": "Use the new lifestyle words in real sentences about homes, habits and neighbourhoods.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Naš ______ je jako tih — nema puno prometa.",
+          "difficulty": 2,
+          "options": ["kvart", "odmor", "trošak", "mir"],
+          "answer": "kvart",
+          "explanation": "kvart = neighbourhood. Naš kvart je jako tih. (Our neighbourhood is very quiet.)"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete (buka, after 'od'): Ne mogu spavati od ______ .",
+          "difficulty": 4,
+          "answer": "buke",
+          "accepted": ["buke"],
+          "strictDiacritics": true,
+          "explanation": "od + genitive: buka → buke. Ne mogu spavati od buke. (I can't sleep because of the noise.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'susjed' mean?",
+          "difficulty": 1,
+          "options": ["neighbour", "building", "courtyard", "habit"],
+          "answer": "neighbour",
+          "explanation": "susjed = neighbour (male); susjeda = female neighbour."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete: Svako jutro pijem kavu na balkonu — to je moja ______ .",
+          "difficulty": 3,
+          "answer": "navika",
+          "accepted": ["navika"],
+          "strictDiacritics": true,
+          "explanation": "navika = habit. A daily routine you repeat is your navika."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "U slobodno vrijeme volim ______ u prirodi.",
+          "difficulty": 3,
+          "options": ["šetati", "šetnja", "šetnju", "šetnji"],
+          "answer": "šetati",
+          "explanation": "After voljeti you need the infinitive: volim šetati (I love walking). šetnja is the noun 'a walk'."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I live in a quiet neighbourhood near the park.'",
+          "difficulty": 4,
+          "options": ["kvartu", "parka", "Živim", "mirnom", "blizu", "u"],
+          "ordered": ["Živim", "u", "mirnom", "kvartu", "blizu", "parka"],
+          "answer": "Živim u mirnom kvartu blizu parka",
+          "explanation": "u + locative (mirnom kvartu), blizu + genitive (parka)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "U centru je uvijek buka, a u našem kvartu je ______ .",
+          "difficulty": 2,
+          "options": ["mir", "buka", "trošak", "navika"],
+          "answer": "mir",
+          "explanation": "The classic contrast: buka (noise) vs mir (peace and quiet)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete (blizina, after 'u'): Volim svoj stan jer je sve u ______ .",
+          "difficulty": 4,
+          "answer": "blizini",
+          "accepted": ["blizini"],
+          "strictDiacritics": true,
+          "explanation": "u blizini = nearby (locative of blizina). Sve je u blizini. (Everything is close by.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Želim promijeniti jednu ______ : previše gledam mobitel.",
+          "difficulty": 3,
+          "options": ["naviku", "navika", "navike", "navici"],
+          "answer": "naviku",
+          "explanation": "Direct object of promijeniti → accusative: navika → naviku."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "76": [
+    {
+      "type": "LEARN",
+      "title": "Locative across the whole phrase",
+      "intro": "You already put nouns in the locative; now the whole phrase agrees. Masculine and neuter modifiers take -om(e) (u tom velikom gradu), soft stems take -em (na trećem katu, u našem dvorištu), and feminine takes -oj (u našoj novoj kući). Bonus: these adjective endings are identical in the dative, so you're learning two cases at once.",
+      "items": [
+        { "hr": "taj veliki grad → u tom velikom gradu", "en": "that big city → in that big city", "note": "Masculine locative: both modifiers take -om." },
+        { "hr": "moj mali stan → u mom malom stanu", "en": "my small flat → in my small flat", "note": "moj → mom (also mome/mojem). Živim u mom malom stanu." },
+        { "hr": "naša nova kuća → u našoj novoj kući", "en": "our new house → in our new house", "note": "Feminine: modifiers take -oj, the noun takes -i." },
+        { "hr": "svoja soba → u svojoj sobi", "en": "one's own room → in one's own room", "note": "svoj declines like moj: Radim u svojoj sobi. (I work in my own room.)" },
+        { "hr": "ovaj tihi kvart → u ovom tihom kvartu", "en": "this quiet neighbourhood → in this quiet neighbourhood", "note": "ovaj → ovom, tihi → tihom." },
+        { "hr": "to lijepo selo → u tom lijepom selu", "en": "that pretty village → in that pretty village", "note": "Neuter takes the same -om endings as masculine." },
+        { "hr": "treći kat → na trećem katu", "en": "third floor → on the third floor", "note": "Soft stem ć → -em: trećem, not trećom. Stan je na trećem katu." },
+        { "hr": "naše veliko dvorište → u našem velikom dvorištu", "en": "our big yard → in our big yard", "note": "naš is a soft stem too: našem." },
+        { "hr": "jedna mala kuhinja → u jednoj maloj kuhinji", "en": "one small kitchen → in one small kitchen", "note": "Feminine chain: jednoj maloj kuhinji." },
+        { "hr": "tvoj stari kvart → u tvom starom kvartu", "en": "your old neighbourhood → in your old neighbourhood", "note": "tvoj → tvom, stari → starom." },
+        { "hr": "glavni trg → na glavnom trgu", "en": "the main square → on the main square", "note": "Squares and open spaces take na: na glavnom trgu." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "u tom velikom gradu — full phrase practice",
+      "intro": "Decline whole phrases in the locative and keep the accusative-vs-locative contrast (motion vs location) sharp.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Complete with the locative of 'moj': Živim u ______ malom stanu.",
+          "difficulty": 3,
+          "answer": "mom",
+          "accepted": ["mom", "mome", "mojem"],
+          "strictDiacritics": true,
+          "explanation": "moj → mom (mome/mojem) in the locative: u mom malom stanu."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Radim u ______ velikom gradu. (taj)",
+          "difficulty": 3,
+          "options": ["tom", "taj", "tog", "tim"],
+          "answer": "tom",
+          "explanation": "taj → tom in the locative: u tom velikom gradu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the locative of 'svoj': Radim u ______ sobi.",
+          "difficulty": 4,
+          "answer": "svojoj",
+          "accepted": ["svojoj"],
+          "strictDiacritics": true,
+          "explanation": "Feminine locative -oj: u svojoj sobi = in my own room (the owner is the subject, so svoj)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Stan je na ______ katu.",
+          "difficulty": 4,
+          "options": ["trećem", "treći", "trećom", "trećeg"],
+          "answer": "trećem",
+          "explanation": "treći has a soft stem (ć), so the locative is trećem: na trećem katu."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I live in this quiet neighbourhood.'",
+          "difficulty": 3,
+          "options": ["tihom", "u", "Živim", "kvartu", "ovom"],
+          "ordered": ["Živim", "u", "ovom", "tihom", "kvartu"],
+          "answer": "Živim u ovom tihom kvartu",
+          "explanation": "The whole phrase agrees in the locative: ovom tihom kvartu."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Motion or location? Svaki dan idem ______ .",
+          "difficulty": 5,
+          "options": ["u veliki grad", "u velikom gradu", "u velikoga grad", "u veliki gradu"],
+          "answer": "u veliki grad",
+          "explanation": "ići expresses motion → accusative: idem u veliki grad. Location (living there) would be locative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Motion or location? Cijeli život živim ______ .",
+          "difficulty": 5,
+          "options": ["u velikom gradu", "u veliki grad", "u velikom grad", "u veliki gradu"],
+          "answer": "u velikom gradu",
+          "explanation": "živjeti expresses location → locative: živim u velikom gradu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the locative of 'naš': Odmaramo se u ______ novoj kući.",
+          "difficulty": 4,
+          "answer": "našoj",
+          "accepted": ["našoj"],
+          "strictDiacritics": true,
+          "explanation": "Feminine locative -oj: u našoj novoj kući."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Baka živi ______ .",
+          "difficulty": 4,
+          "options": ["u tom lijepom selu", "u to lijepo selo", "u tom lijepom selom", "u toj lijepoj selu"],
+          "answer": "u tom lijepom selu",
+          "explanation": "selo is neuter and takes the same locative endings as masculine: u tom lijepom selu."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "77": [
+    {
+      "type": "LEARN",
+      "title": "Talking about where you live",
+      "intro": "Time to describe your home like a native: which flat, which floor, what you love and what bothers you. Notice two key constructions — sviđati se and smetati both put YOU in the dative (sviđa mi se, smeta mi) while the thing itself is the subject.",
+      "items": [
+        { "hr": "Živim u dvosobnom stanu.", "en": "I live in a two-room flat.", "note": "dvosoban = two-room; jednosoban, trosoban follow the same pattern." },
+        { "hr": "Stan je na trećem katu, u mirnoj zgradi.", "en": "The flat is on the third floor, in a quiet building.", "note": "Yesterday's locative phrases doing real work." },
+        { "hr": "Imamo velik balkon s pogledom na park.", "en": "We have a big balcony with a view of the park.", "note": "s pogledom na + accusative = with a view of." },
+        { "hr": "U mom kvartu ima puno kafića i mala tržnica.", "en": "In my neighbourhood there are lots of cafés and a small market.", "note": "ima = there is/are." },
+        { "hr": "Najviše volim svoju radnu sobu.", "en": "I love my own study most of all.", "note": "svoju because the owner (I) is the subject; radna soba = study/workroom." },
+        { "hr": "Sviđa mi se što je sve blizu.", "en": "I like that everything is close.", "note": "sviđati se + dative: the liker is mi, the liked thing is the subject." },
+        { "hr": "Smeta mi buka s ulice.", "en": "The noise from the street bothers me.", "note": "smetati works the same way: smeta mi = it bothers me." },
+        { "hr": "Odrastao sam u maloj kući s dvorištem.", "en": "I grew up in a small house with a yard.", "note": "odrasti → odrastao sam (masculine participle); s + instrumental: s dvorištem." },
+        { "hr": "Prije sam živio u kući, a sada živim u stanu.", "en": "Before, I lived in a house, and now I live in a flat.", "note": "The then-vs-now frame you'll reuse constantly." },
+        { "hr": "U kakvom stanu živiš?", "en": "What kind of flat do you live in?", "note": "kakav declines too: u kakvom stanu (locative)." },
+        { "hr": "Što ti se sviđa u svom kvartu?", "en": "What do you like about your neighbourhood?", "note": "The question that starts every good conversation about how people live." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Describe your home",
+      "intro": "Practise the home-description toolkit: dative constructions with sviđati se and smetati, plus locative phrases about rooms and floors.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Sviđa ___ se tvoj stan. (I like your flat.)",
+          "difficulty": 3,
+          "options": ["mi", "me", "ja", "mene"],
+          "answer": "mi",
+          "explanation": "sviđati se puts the liker in the dative: Sviđa mi se tvoj stan."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the locative of 'kakav': U ______ stanu živiš?",
+          "difficulty": 4,
+          "answer": "kakvom",
+          "accepted": ["kakvom", "kakvome"],
+          "strictDiacritics": true,
+          "explanation": "kakav → kakvom in the locative: U kakvom stanu živiš? (What kind of flat do you live in?)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Smeta mi ______ s ulice.",
+          "difficulty": 4,
+          "options": ["buka", "buku", "buci", "bukom"],
+          "answer": "buka",
+          "explanation": "With smetati, the annoying thing is the SUBJECT (nominative buka); the person is dative (mi)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I love my own study most of all.'",
+          "difficulty": 4,
+          "options": ["radnu", "volim", "svoju", "Najviše", "sobu"],
+          "ordered": ["Najviše", "volim", "svoju", "radnu", "sobu"],
+          "answer": "Najviše volim svoju radnu sobu",
+          "explanation": "svoju (not moju) because the owner is the subject; the whole phrase agrees in the accusative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the locative of 'kuća': Odrastao sam u maloj ______ .",
+          "difficulty": 3,
+          "answer": "kući",
+          "accepted": ["kući"],
+          "strictDiacritics": true,
+          "explanation": "Feminine locative: kuća → kući. Odrastao sam u maloj kući. (I grew up in a small house.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Što ti se sviđa u ______ kvartu?",
+          "difficulty": 4,
+          "options": ["svom", "svoj", "svoju", "svoga"],
+          "answer": "svom",
+          "explanation": "svoj → svom in the locative: u svom kvartu (in your own neighbourhood — the owner is the subject 'you')."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Imamo velik balkon s ______ na park.",
+          "difficulty": 4,
+          "options": ["pogledom", "pogled", "pogledu", "poglede"],
+          "answer": "pogledom",
+          "explanation": "s + instrumental: s pogledom na park = with a view of the park."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the locative of 'dvosoban': Živim u ______ stanu.",
+          "difficulty": 4,
+          "answer": "dvosobnom",
+          "accepted": ["dvosobnom", "dvosobnome"],
+          "strictDiacritics": true,
+          "explanation": "dvosoban → dvosobnom (locative, with fleeting a dropped): u dvosobnom stanu."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Naš stan, naš kvart — a home conversation",
+      "intro": "An evening chat with your wife about your flat, your neighbourhood, and where each of you grew up. Her lines use feminine past forms (odrasla, živjela) — a perfect model of participle agreement.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Znaš, jako volim naš stan. A ti?", "en": "You know, I really love our flat. And you?" },
+        { "speaker": "Me", "hr": "I ja. Najviše volim našu dnevnu sobu jer je svijetla.", "en": "Me too. I love our living room most because it's bright." },
+        { "speaker": "Partner", "hr": "Meni se najviše sviđa kuhinja. U njoj pijemo jutarnju kavu.", "en": "I like the kitchen most. We drink our morning coffee in it." },
+        { "speaker": "Me", "hr": "Istina. A sviđa mi se i kvart — sve je u blizini.", "en": "True. And I like the neighbourhood too — everything is close by." },
+        { "speaker": "Partner", "hr": "Da, ali ponekad mi smeta buka s ulice.", "en": "Yes, but sometimes the noise from the street bothers me." },
+        { "speaker": "Me", "hr": "Meni ne smeta. Odrastao sam u velikom gradu, navikao sam.", "en": "It doesn't bother me. I grew up in a big city, I'm used to it." },
+        { "speaker": "Partner", "hr": "Ja sam odrasla u malom selu, kod bake. Tamo je bio potpuni mir.", "en": "I grew up in a small village, at my grandma's. It was completely peaceful there." },
+        { "speaker": "Me", "hr": "U kakvoj kući si živjela?", "en": "What kind of house did you live in?" },
+        { "speaker": "Partner", "hr": "U staroj kamenoj kući s velikim dvorištem. A ti?", "en": "In an old stone house with a big yard. And you?" },
+        { "speaker": "Me", "hr": "Ja sam živio u stanu na desetom katu. Pogled je bio super, ali dvorište nismo imali.", "en": "I lived in a flat on the tenth floor. The view was great, but we didn't have a yard." },
+        { "speaker": "Partner", "hr": "Hoćemo li jednog dana kupiti kuću s dvorištem?", "en": "Shall we buy a house with a yard one day?" },
+        { "speaker": "Me", "hr": "Rado! Ali samo ako je blizu dobrog kafića.", "en": "Gladly! But only if it's near a good café." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "78": [
+    {
+      "type": "LEARN",
+      "title": "Verb aspect — one idea, two verbs",
+      "intro": "Almost every Croatian verb comes in a pair: an IMPERFECTIVE verb for ongoing, repeated or unfinished actions, and a PERFECTIVE verb for one completed event. English hides this in tenses ('was writing' vs 'wrote'); Croatian builds it into the verb itself. One key rule: perfective verbs can't describe what's happening right now — for 'I am writing' you must say Pišem, never Napišem. Learn these twelve pairs as single vocabulary items.",
+      "items": [
+        { "hr": "pisati / napisati", "en": "to write (process / completed)", "note": "Pišem mail. (I'm writing an email.) → Napisao sam mail. (I wrote it — it's done.)" },
+        { "hr": "čitati / pročitati", "en": "to read (process / read through)", "note": "Čitam knjigu. → Pročitao sam knjigu. (I finished the book.)" },
+        { "hr": "kupovati / kupiti", "en": "to buy (habitually / once)", "note": "Kupujem namirnice svaki dan. → Jučer sam kupio vino." },
+        { "hr": "piti / popiti", "en": "to drink (process / drink up)", "note": "Pijem kavu. → Popio sam kavu i krenuo na posao." },
+        { "hr": "jesti / pojesti", "en": "to eat (process / eat up)", "note": "Jedem ručak. → Pojeo sam sve. (I ate everything.)" },
+        { "hr": "gledati / pogledati", "en": "to watch (process / take a look)", "note": "Gledam film. → Pogledaj ovo! (Take a look at this!)" },
+        { "hr": "učiti / naučiti", "en": "to study / to learn (master)", "note": "Učim hrvatski. → Naučio sam padeže. (I've learned the cases.)" },
+        { "hr": "dolaziti / doći", "en": "to come (repeatedly) / to arrive (once)", "note": "Dolazi svaki dan. → Došao je u pet. (He arrived at five.)" },
+        { "hr": "davati / dati", "en": "to give (repeatedly) / to give (once)", "note": "Baka nam daje kolače. → Dala mi je knjigu." },
+        { "hr": "počinjati / početi", "en": "to begin (be starting) / to begin (once)", "note": "Film počinje u osam. → Film je počeo prije pet minuta." },
+        { "hr": "plaćati / platiti", "en": "to pay (regularly) / to pay (once)", "note": "Plaćam račune svaki mjesec. → Platio sam račun i izašao." },
+        { "hr": "zvati / nazvati", "en": "to call (be calling) / to call up (once)", "note": "Zvao me cijelo jutro. → Nazvao me jučer navečer." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Process or completed result?",
+      "intro": "For every action decide: is it a process, habit or duration (imperfective), or one whole completed event (perfective)?",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which of these verbs is PERFECTIVE?",
+          "difficulty": 3,
+          "options": ["napisati", "pisati", "čitati", "kupovati"],
+          "answer": "napisati",
+          "explanation": "napisati = to write and finish (one completed act). pisati, čitati and kupovati are all imperfective."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Right now: 'I am writing an email.' = ?",
+          "difficulty": 4,
+          "options": ["Pišem mail.", "Napišem mail.", "Napisao mail.", "Napisat mail."],
+          "answer": "Pišem mail.",
+          "explanation": "A perfective verb can't describe an action in progress — for right now you need the imperfective: Pišem."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Choose the right verb and form (piti/popiti, ja): Svaki dan ______ kavu poslije ručka.",
+          "difficulty": 4,
+          "answer": "pijem",
+          "accepted": ["pijem"],
+          "strictDiacritics": true,
+          "explanation": "svaki dan = a habit → imperfective: pijem. (popijem would stress finishing the whole cup each time — pijem is the neutral habit choice.)"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Jučer sam ______ cijelu knjigu. (I read the whole book.)",
+          "difficulty": 4,
+          "options": ["pročitao", "čitao", "pročitam", "čitam"],
+          "answer": "pročitao",
+          "explanation": "cijelu knjigu = the whole book, completed → perfective: pročitao sam."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Choose the right infinitive (učiti/naučiti): Učim hrvatski već godinu dana i želim ga dobro ______ .",
+          "difficulty": 4,
+          "answer": "naučiti",
+          "accepted": ["naučiti"],
+          "strictDiacritics": true,
+          "explanation": "The goal is the completed result (to master it) → perfective: naučiti."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The verb 'kupovati' is…",
+          "difficulty": 2,
+          "options": ["imperfective (process, habit)", "perfective (one completed act)", "both at once", "not a verb"],
+          "answer": "imperfective (process, habit)",
+          "explanation": "kupovati = to be buying / buy habitually. Its perfective partner is kupiti."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ona ______ namirnice svaki dan.",
+          "difficulty": 3,
+          "options": ["kupuje", "kupi", "kupila", "kupit"],
+          "answer": "kupuje",
+          "explanation": "svaki dan = habit → imperfective present: kupuje (from kupovati)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I wrote the email and sent it.'",
+          "difficulty": 4,
+          "options": ["ga", "sam", "i", "Napisao", "poslao", "mail"],
+          "ordered": ["Napisao", "sam", "mail", "i", "poslao", "ga"],
+          "answer": "Napisao sam mail i poslao ga",
+          "explanation": "Two completed events in sequence → both perfective: napisao… i poslao."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What is the perfective partner of 'davati'?",
+          "difficulty": 3,
+          "options": ["dati", "dodati", "davati se", "dajati"],
+          "answer": "dati",
+          "explanation": "davati (give repeatedly) / dati (give once) — one of the highest-frequency pairs."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "79": [
+    {
+      "type": "LEARN",
+      "title": "Aspect in the past: background vs event",
+      "intro": "In a story, the imperfective paints the scene (what was going on) and the perfective moves the plot (what happened). 'Dok sam pisao pismo, nazvala me je sestra' — the writing is the background, the call is the event. This is the rule behind every anecdote you'll ever tell in Croatian.",
+      "items": [
+        { "hr": "Pisao sam pismo. / Napisao sam pismo.", "en": "I was writing the letter. / I wrote (finished) the letter.", "note": "Same verb pair, completely different claim: in progress vs done." },
+        { "hr": "Dok sam pisao pismo, nazvala me je sestra.", "en": "While I was writing the letter, my sister called me.", "note": "dok + imperfective (background), perfective for the event that interrupts." },
+        { "hr": "Dok smo večerali, netko je pozvonio na vrata.", "en": "While we were having dinner, someone rang the doorbell.", "note": "večerati sets the scene; pozvoniti is the single event." },
+        { "hr": "Kuhao sam ručak cijelo jutro.", "en": "I was cooking lunch all morning.", "note": "Duration (cijelo jutro) → imperfective kuhati." },
+        { "hr": "Skuhao sam ručak i pozvao ženu za stol.", "en": "I cooked lunch (it's ready) and called my wife to the table.", "note": "kuhati/skuhati — a sequence of completed events is perfective + perfective." },
+        { "hr": "Svake subote smo išli na plac.", "en": "Every Saturday we went (used to go) to the market.", "note": "Repeated habit in the past → imperfective ići." },
+        { "hr": "Jedne subote smo otišli na izlet u Samobor.", "en": "One Saturday we went on a trip to Samobor.", "note": "One specific event → perfective otići." },
+        { "hr": "Gledao sam film kad je stigla tvoja poruka.", "en": "I was watching a film when your message arrived.", "note": "Background gledati, event stići." },
+        { "hr": "Pogledao sam film i otišao spavati.", "en": "I watched the film (to the end) and went to bed.", "note": "Both completed, one after the other → both perfective." },
+        { "hr": "Dugo sam učio hrvatski i napokon sam naučio padeže.", "en": "I studied Croatian for a long time and finally learned the cases.", "note": "The pair in one sentence: process (učio) then achieved result (naučio)." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Tell it right: aspect in past narration",
+      "intro": "Choose the aspect that matches the story: imperfective for the scene, perfective for the events.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Dok sam ______ pismo, nazvala me je sestra.",
+          "difficulty": 4,
+          "options": ["pisao", "napisao", "pišem", "napišem"],
+          "answer": "pisao",
+          "explanation": "dok = while → background action in progress → imperfective: Dok sam pisao pismo…"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "______ sam pismo i poslao ga.",
+          "difficulty": 4,
+          "options": ["Napisao", "Pisao", "Pišem", "Pisati"],
+          "answer": "Napisao",
+          "explanation": "A completed event followed by another → perfective: Napisao sam pismo i poslao ga."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Choose the right participle (ići/otići, mi): Svake subote smo ______ na plac.",
+          "difficulty": 4,
+          "answer": "išli",
+          "accepted": ["išli"],
+          "strictDiacritics": true,
+          "explanation": "svake subote = repeated habit → imperfective: išli smo."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Choose the right participle (ići/otići, mi): Jučer smo ______ na izlet.",
+          "difficulty": 4,
+          "answer": "otišli",
+          "accepted": ["otišli"],
+          "strictDiacritics": true,
+          "explanation": "One specific completed trip → perfective: otišli smo na izlet."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence means 'I cooked lunch (and it's done)'?",
+          "difficulty": 4,
+          "options": ["Skuhao sam ručak.", "Kuhao sam ručak.", "Kuham ručak.", "Kuhat ću ručak."],
+          "answer": "Skuhao sam ručak.",
+          "explanation": "Perfective skuhati claims the result exists: lunch is ready. Kuhao sam only says I was cooking."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I was watching a film when the message arrived.'",
+          "difficulty": 5,
+          "options": ["stigla", "sam", "kad", "film", "Gledao", "poruka", "je"],
+          "ordered": ["Gledao", "sam", "film", "kad", "je", "stigla", "poruka"],
+          "answer": "Gledao sam film kad je stigla poruka",
+          "explanation": "Imperfective background (gledao sam) + perfective event (je stigla) — the classic narrative frame."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ona je ______ knjigu cijelo popodne.",
+          "difficulty": 4,
+          "options": ["čitala", "pročitala", "pročita", "čita"],
+          "answer": "čitala",
+          "explanation": "cijelo popodne = duration → imperfective: čitala je knjigu cijelo popodne."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Na kraju je ______ zadnju stranicu i zatvorila knjigu.",
+          "difficulty": 4,
+          "options": ["pročitala", "čitala", "čita", "pročita"],
+          "answer": "pročitala",
+          "explanation": "The final completed event → perfective: pročitala je zadnju stranicu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete (naučiti, ja m.): Učio sam hrvatski dvije godine i napokon sam ______ padeže.",
+          "difficulty": 4,
+          "answer": "naučio",
+          "accepted": ["naučio"],
+          "strictDiacritics": true,
+          "explanation": "napokon = finally, the achieved result → perfective: naučio sam padeže."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "80": [
+    {
+      "type": "LEARN",
+      "title": "Scaffolding your talk: Moja kvaliteta života",
+      "intro": "Today you record a two-minute talk about how you live. Here is a complete skeleton — opener, home, habits, likes, complaints, plans, closer — that weaves together this week's locative phrases, dative constructions and aspect. Swap in your own details and the talk writes itself.",
+      "items": [
+        { "hr": "Ispričat ću vam kako živim.", "en": "I'll tell you how I live.", "note": "A clean opener; ispričati = to tell (a story), perfective." },
+        { "hr": "Živim sa ženom u dvosobnom stanu u mirnom kvartu.", "en": "I live with my wife in a two-room flat in a quiet neighbourhood.", "note": "Two locative phrases in a row — yesterday's grammar at work." },
+        { "hr": "Prije sam živio u velikom gradu, a sada uživam u miru.", "en": "Before, I lived in a big city, and now I enjoy the peace.", "note": "uživati u + locative = to enjoy something." },
+        { "hr": "Svako jutro prošetam do pekare i popijem kavu na balkonu.", "en": "Every morning I take a walk to the bakery and drink my coffee on the balcony.", "note": "Perfective present for a complete little routine — very natural for habits seen as whole acts." },
+        { "hr": "Najviše mi se sviđa što je sve u blizini.", "en": "What I like most is that everything is close by.", "note": "sviđa mi se što… = I like (the fact) that…" },
+        { "hr": "Smeta mi samo buka vikendom.", "en": "Only the weekend noise bothers me.", "note": "vikendom = on weekends (instrumental of time)." },
+        { "hr": "Imam jednu lošu naviku: predugo gledam mobitel.", "en": "I have one bad habit: I look at my phone too long.", "note": "predugo = for too long; honest confessions make great talks." },
+        { "hr": "Želim promijeniti tu naviku i svaki dan šetati u prirodi.", "en": "I want to change that habit and walk in nature every day.", "note": "promijeniti (perfective — one change) + šetati (imperfective — the new routine)." },
+        { "hr": "Prošle godine sam počeo trčati i to je postala moja nova navika.", "en": "Last year I started running and it became my new habit.", "note": "početi + imperfective infinitive: počeo sam trčati." },
+        { "hr": "Ukratko, moj život je dobar i miran.", "en": "In short, my life is good and peaceful.", "note": "Ukratko = in short — the perfect closer for any talk." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Kvaliteta života — the integrated check",
+      "intro": "One exercise, the whole week: listen to people describing their lives, then produce the locative phrases, dative constructions and aspect choices yourself.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Listen: what bothers the speaker?",
+          "difficulty": 4,
+          "options": ["The noise", "The neighbours", "High costs", "The small kitchen"],
+          "answer": "The noise",
+          "explanation": "Smeta mi samo buka. = Only the noise bothers me. (He loves his neighbourhood because everything is close.)",
+          "audioText": "Živim u malom stanu u centru grada. Najviše mi se sviđa moj kvart jer je sve blizu. Smeta mi samo buka."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen: why did she move to Zagreb?",
+          "difficulty": 5,
+          "options": ["Because of work", "Because of the peace and quiet", "Because of her parents", "Because of the noise"],
+          "answer": "Because of work",
+          "explanation": "Tamo je bio mir, ali nije bilo posla. Sada živim u Zagrebu i imam dobar posao. = There was peace there, but no work. Now she lives in Zagreb and has a good job.",
+          "audioText": "Prije sam živjela u selu kod roditelja. Tamo je bio mir, ali nije bilo posla. Sada živim u Zagrebu i imam dobar posao."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Listen and complete: Svako jutro ______ kavu na balkonu.",
+          "difficulty": 4,
+          "answer": "popijem",
+          "accepted": ["popijem"],
+          "strictDiacritics": true,
+          "explanation": "Svako jutro popijem kavu na balkonu. — perfective present for a small complete routine.",
+          "audioText": "Svako jutro popijem kavu na balkonu."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Živim u ______ . (miran kvart)",
+          "difficulty": 3,
+          "options": ["mirnom kvartu", "miran kvart", "mirnom kvart", "mirnoj kvartu"],
+          "answer": "mirnom kvartu",
+          "explanation": "Location → locative, whole phrase agrees: u mirnom kvartu."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Prošle godine sam ______ trčati.",
+          "difficulty": 4,
+          "options": ["počeo", "počinjao", "počne", "počinje"],
+          "answer": "počeo",
+          "explanation": "One event that happened once (last year) → perfective: počeo sam trčati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete with the missing clitic: Najviše ___ se sviđa što je sve u blizini.",
+          "difficulty": 3,
+          "answer": "mi",
+          "accepted": ["mi"],
+          "strictDiacritics": true,
+          "explanation": "sviđati se + dative: Najviše mi se sviđa… (What I like most…)"
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Put the words in order: 'I want to change one bad habit.'",
+          "difficulty": 4,
+          "options": ["lošu", "promijeniti", "Želim", "naviku", "jednu"],
+          "ordered": ["Želim", "promijeniti", "jednu", "lošu", "naviku"],
+          "answer": "Želim promijeniti jednu lošu naviku",
+          "explanation": "promijeniti (perfective — one change) + the whole phrase in the accusative: jednu lošu naviku."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Dok sam ______ u velikom gradu, nisam imao mira.",
+          "difficulty": 5,
+          "options": ["živio", "poživio", "živim", "življen"],
+          "answer": "živio",
+          "explanation": "dok + ongoing background state → imperfective past: Dok sam živio u velikom gradu…"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Complete (buka): Smeta mi ______ vikendom.",
+          "difficulty": 3,
+          "answer": "buka",
+          "accepted": ["buka"],
+          "strictDiacritics": true,
+          "explanation": "With smetati the annoying thing is the subject → nominative: Smeta mi buka vikendom."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}

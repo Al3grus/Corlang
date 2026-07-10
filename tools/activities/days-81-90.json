@@ -1,0 +1,1721 @@
+{
+  "81": [
+    {
+      "type": "LEARN",
+      "title": "Week 11 in one place — locative phrases and aspect",
+      "intro": "Today you talk, so load the week's two weapons first: full locative phrases (u ovom malom stanu) and the aspect switch (kuhao vs skuhao). Read every line aloud — they are the exact sentences you'll need in the conversation.",
+      "items": [
+        {
+          "hr": "Živim u ovom malom stanu na drugom katu.",
+          "en": "I live in this small flat on the second floor.",
+          "note": "The whole phrase declines in the locative: ovaj mali stan → u ovom malom stanu."
+        },
+        {
+          "hr": "U svojoj sobi imam veliki radni stol.",
+          "en": "In my own room I have a big desk.",
+          "note": "svoj because the owner is the subject: svoja soba → u svojoj sobi."
+        },
+        {
+          "hr": "Radim u velikom uredu, a odmaram se u mirnom kvartu.",
+          "en": "I work in a big office and I relax in a quiet neighbourhood.",
+          "note": "Masculine/neuter locative adjectives end in -om: velikom, mirnom."
+        },
+        {
+          "hr": "Pisao sam mail cijelo jutro.",
+          "en": "I was writing the email all morning.",
+          "note": "Imperfective pisati = the process, no claim that it got finished."
+        },
+        {
+          "hr": "Napisao sam mail i poslao ga.",
+          "en": "I wrote the email and sent it.",
+          "note": "Perfective napisati = done, complete. One event, result achieved."
+        },
+        {
+          "hr": "Dok sam kuhao večeru, nazvala me sestra.",
+          "en": "While I was cooking dinner, my sister called me.",
+          "note": "The storytelling formula: imperfective background (kuhao) + perfective event (nazvala)."
+        },
+        {
+          "hr": "Svaki dan kupujem kruh, a jučer sam kupio i vino.",
+          "en": "Every day I buy bread, and yesterday I also bought wine.",
+          "note": "Habit → imperfective kupovati; single completed purchase → perfective kupiti."
+        },
+        {
+          "hr": "Idemo u novi restoran. — Već smo u novom restoranu!",
+          "en": "We're going to the new restaurant. — We're already in the new restaurant!",
+          "note": "Motion = u + accusative (novi restoran); location = u + locative (novom restoranu)."
+        },
+        {
+          "hr": "Što ti se sviđa u svom kvartu?",
+          "en": "What do you like about your neighbourhood?",
+          "note": "The question your partner will ask today — prepare two answers."
+        },
+        {
+          "hr": "Pio sam kavu i čitao novine — tipično jutro.",
+          "en": "I was drinking coffee and reading the paper — a typical morning.",
+          "note": "Describing how a morning looked = all imperfective."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Week 11 mixed drill",
+      "intro": "A cold re-test before you speak: locative agreement across the whole phrase, motion vs location, and aspect choices in the past.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Živim u ___ stanu. (this small — full agreement)",
+          "difficulty": 4,
+          "options": ["ovom malom", "ovaj mali", "ovog malog", "ovom mala"],
+          "answer": "ovom malom",
+          "explanation": "Locative masculine singular: ovaj → ovom, mali → malom. The whole phrase agrees with stanu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Odmaram se u svojoj ___. (soba — put it in the locative)",
+          "difficulty": 3,
+          "answer": "sobi",
+          "accepted": ["sobi"],
+          "explanation": "Feminine -a nouns take -i in the locative: soba → sobi. And svojoj already shows you the case.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Jučer sam ___ pismo i poslao ga. (I finished writing it)",
+          "difficulty": 4,
+          "options": ["napisao", "pisao", "pišem", "napišem"],
+          "answer": "napisao",
+          "explanation": "The letter got written and sent — a completed event needs the perfective napisati."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Dok sam ___ večeru, nazvala me sestra.",
+          "difficulty": 5,
+          "options": ["kuhao", "skuhao", "kuham", "skuham"],
+          "answer": "kuhao",
+          "explanation": "After dok the background action is imperfective: I was in the middle of cooking when the call (perfective event) arrived."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Svaki dan ___ kruh u pekari. (buy — a daily habit, ja)",
+          "difficulty": 4,
+          "answer": "kupujem",
+          "accepted": ["kupujem"],
+          "explanation": "Habits take the imperfective: kupovati → kupujem. Kupiti would be one single purchase.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say: I live in a quiet neighbourhood.",
+          "difficulty": 3,
+          "options": ["kvartu", "Živim", "mirnom", "u"],
+          "answer": "Živim u mirnom kvartu",
+          "ordered": ["Živim", "u", "mirnom", "kvartu"],
+          "explanation": "Location with u + locative: mirni kvart → u mirnom kvartu, adjective and noun both in the locative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Idemo u ___ restoran. (motion!)",
+          "difficulty": 4,
+          "options": ["novi", "novom", "novog", "novome"],
+          "answer": "novi",
+          "explanation": "Motion takes u + accusative. Restoran is inanimate, so the accusative looks like the nominative: novi restoran."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kupovala je namirnice svaki dan, a jučer je ___ i vino. (kupiti — perfekt, feminine)",
+          "difficulty": 5,
+          "answer": "kupila",
+          "accepted": ["kupila"],
+          "explanation": "Yesterday's single completed purchase: perfective kupiti → kupila (feminine participle).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Pio sam kavu cijelo jutro.' mean?",
+          "difficulty": 3,
+          "options": [
+            "I was drinking coffee all morning.",
+            "I drank one coffee this morning.",
+            "I will drink coffee in the morning.",
+            "I never drink coffee in the morning."
+          ],
+          "answer": "I was drinking coffee all morning.",
+          "explanation": "Imperfective piti + cijelo jutro = an ongoing process. One finished coffee would be popio sam kavu."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Speaking day: our flat and our habits",
+      "intro": "Your weekly conversation, at the kitchen table. Act it out with your wife, then improvise with your real flat and habits — and let her flag every aspect slip, just like in the script.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Danas pričamo o našem stanu i o navikama. Spreman?",
+          "en": "Today we're talking about our flat and our habits. Ready?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Spreman! Volim naš stan — u ovom mirnom kvartu imamo sve.",
+          "en": "Ready! I love our flat — in this quiet neighbourhood we have everything."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Što ti se najviše sviđa u svom kvartu?",
+          "en": "What do you like most about your neighbourhood?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Sviđa mi se mala pekara iza ugla. Svaki dan kupujem kruh tamo.",
+          "en": "I like the little bakery around the corner. I buy bread there every day."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "A jučer? Što si radio poslije posla?",
+          "en": "And yesterday? What did you do after work?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Jučer sam kuhao večeru. Dok sam kuhao, ti si me zvala!",
+          "en": "Yesterday I was cooking dinner. While I was cooking, you called me!"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Točno! I jesi li na kraju skuhao nešto fino?",
+          "en": "Right! And did you cook something nice in the end?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Jesam, skuhao sam rižoto. Kuhao sam ga skoro sat vremena.",
+          "en": "I did, I cooked a risotto. I was cooking it for almost an hour."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Bravo! Vidiš — kuhao za proces, skuhao za rezultat.",
+          "en": "Well done! See — kuhao for the process, skuhao for the result."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Polako razumijem. A ti? Što si radila jutros?",
+          "en": "I'm slowly getting it. And you? What did you do this morning?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Čitala sam knjigu na balkonu i popila dvije kave.",
+          "en": "I was reading a book on the balcony and drank two coffees."
+        },
+        {
+          "speaker": "Me",
+          "hr": "U našem malom stanu balkon je najbolje mjesto.",
+          "en": "In our little flat the balcony is the best spot."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "82": [
+    {
+      "type": "LEARN",
+      "title": "Aspect after ću, moram, volim",
+      "intro": "Futur I and modal verbs don't remove the aspect decision — they sharpen it. Perfective infinitive = you'll get it done; imperfective = you'll spend time on it or do it habitually. Ten patterns cover almost everything.",
+      "items": [
+        {
+          "hr": "Sutra ću napisati izvještaj.",
+          "en": "Tomorrow I'll write the report (and finish it).",
+          "note": "Perfective napisati after ću = the result is promised."
+        },
+        {
+          "hr": "Sutra ću pisati izvještaj cijelo poslijepodne.",
+          "en": "Tomorrow I'll be writing the report all afternoon.",
+          "note": "Imperfective pisati = you're announcing time spent, not completion."
+        },
+        {
+          "hr": "Moram kupiti kruh prije večere.",
+          "en": "I have to buy bread before dinner.",
+          "note": "One concrete purchase → perfective kupiti after morati."
+        },
+        {
+          "hr": "Volim kuhati nedjeljom.",
+          "en": "I love cooking on Sundays.",
+          "note": "voljeti describes a habit, so its infinitive is almost always imperfective."
+        },
+        {
+          "hr": "Želim naučiti hrvatski do ljeta.",
+          "en": "I want to learn Croatian by summer.",
+          "note": "naučiti (perfective) = master it. Učiti would just mean spending time studying."
+        },
+        {
+          "hr": "Počinjem raditi u osam.",
+          "en": "I start working at eight.",
+          "note": "Golden rule: after početi/počinjati and prestati only the IMPERFECTIVE infinitive is possible."
+        },
+        {
+          "hr": "Prestat ću piti kavu navečer.",
+          "en": "I'll stop drinking coffee in the evening.",
+          "note": "prestati + imperfective piti. Also note the futur spelling: prestati → prestat ću."
+        },
+        {
+          "hr": "Ne mogu doći večeras, ali mogu dolaziti svaki petak.",
+          "en": "I can't come tonight, but I can come every Friday.",
+          "note": "One occasion → doći; a repeated arrangement → dolaziti."
+        },
+        {
+          "hr": "Hoćeš li pročitati ovu knjigu do petka?",
+          "en": "Will you read this book (to the end) by Friday?",
+          "note": "A deadline (do petka) pulls the perfective: pročitati."
+        },
+        {
+          "hr": "Idući tjedan učit ću svaki dan i naučit ću sve padeže.",
+          "en": "Next week I'll study every day and I'll learn all the cases.",
+          "note": "Both aspects in one plan: učiti = the daily work, naučiti = the promised result. Infinitives drop -i before ću: učit ću."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Future and modals: pick the aspect",
+      "intro": "Every question is one decision: process or result? Say the full sentence aloud after each answer.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Sutra ću ___ izvještaj i poslati ga šefu. (finish it)",
+          "difficulty": 4,
+          "options": ["napisati", "pisati", "pišem", "napisao"],
+          "answer": "napisati",
+          "explanation": "You're promising a finished report — perfective napisati. After ću the verb stays in the infinitive."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Cijelo poslijepodne ću ___ izvještaj. (spend the afternoon on it)",
+          "difficulty": 4,
+          "options": ["pisati", "napisati", "napišem", "pisao"],
+          "answer": "pisati",
+          "explanation": "cijelo poslijepodne measures duration — that's the imperfective's job: pisati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Moram ___ kruh prije večere. (kupiti or kupovati? — one completed purchase)",
+          "difficulty": 4,
+          "answer": "kupiti",
+          "accepted": ["kupiti"],
+          "explanation": "One errand with a result: perfective kupiti. Kupovati would suggest a shopping habit or process.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Volim ___ nedjeljom.",
+          "difficulty": 4,
+          "options": ["kuhati", "skuhati", "kuham", "skuham"],
+          "answer": "kuhati",
+          "explanation": "voljeti + a habitual activity takes the imperfective infinitive: volim kuhati."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Počinjem ___ u osam.",
+          "difficulty": 5,
+          "options": ["raditi", "odraditi", "uraditi", "napraviti"],
+          "answer": "raditi",
+          "explanation": "After počinjati/početi (and prestati) only an imperfective infinitive can follow: počinjem raditi."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Želim ___ hrvatski do ljeta. (learn = master it, perfective)",
+          "difficulty": 4,
+          "answer": "naučiti",
+          "accepted": ["naučiti"],
+          "explanation": "The deadline do ljeta asks for a result: naučiti. Učiti is only the ongoing studying.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say: Tomorrow I'll write (and finish) the email.",
+          "difficulty": 4,
+          "options": ["napisati", "Sutra", "mail", "ću"],
+          "answer": "Sutra ću napisati mail",
+          "ordered": ["Sutra", "ću", "napisati", "mail"],
+          "explanation": "ću is a clitic and stands in second position: Sutra ću napisati mail. Perfective napisati = it will get done."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Prestat ću ___ kavu navečer.",
+          "difficulty": 5,
+          "options": ["piti", "popiti", "pijem", "popijem"],
+          "answer": "piti",
+          "explanation": "prestati = stop doing an activity, so it takes the imperfective: prestat ću piti."
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ ću ti se sutra. (javiti se — I'll get in touch; mind the futur spelling)",
+          "difficulty": 6,
+          "answer": "Javit",
+          "accepted": ["Javit", "javit"],
+          "explanation": "When the infinitive comes before ću, -ti verbs drop the final -i: javiti → Javit ću ti se sutra.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "83": [
+    {
+      "type": "LEARN",
+      "title": "Aspect pairs I: daily actions",
+      "intro": "Module 2 closes today. From now on, learn every verb as a pair — one meaning, two viewpoints. First eight: the verbs of an ordinary day. Read each pair aloud: imperfective, then perfective.",
+      "items": [
+        {
+          "hr": "pisati / napisati",
+          "en": "to write (be writing / finish writing)",
+          "note": "Pišem poruku. → Napisao sam poruku."
+        },
+        {
+          "hr": "čitati / pročitati",
+          "en": "to read (be reading / read through)",
+          "note": "Čitam roman. → Pročitao sam ga za tri dana."
+        },
+        {
+          "hr": "piti / popiti",
+          "en": "to drink (be drinking / drink up)",
+          "note": "Pijem kavu. → Popio sam kavu i krenuo."
+        },
+        {
+          "hr": "jesti / pojesti",
+          "en": "to eat (be eating / eat up)",
+          "note": "Jedem polako. → Pojeo sam sve."
+        },
+        {
+          "hr": "kupovati / kupiti",
+          "en": "to buy (be buying, buy regularly / buy once)",
+          "note": "Kupujem kruh svaki dan. → Jučer sam kupio i vino."
+        },
+        {
+          "hr": "gledati / pogledati",
+          "en": "to watch (be watching / take a look, watch to the end)",
+          "note": "Gledam film. → Pogledaj ovo!"
+        },
+        {
+          "hr": "učiti / naučiti",
+          "en": "to study / to learn (master)",
+          "note": "Učim hrvatski. → Naučio sam padeže."
+        },
+        {
+          "hr": "plaćati / platiti",
+          "en": "to pay (be paying, pay regularly / pay once)",
+          "note": "Račune plaćam online. → Platio sam večeru."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Aspect pairs II: giving, starting, coming and going",
+      "intro": "Eight more pairs — the ones that glue plans and stories together. Several change their stem completely (davati/dati, dolaziti/doći), so drill them as single vocabulary items.",
+      "items": [
+        {
+          "hr": "davati / dati",
+          "en": "to give (be giving, give regularly / give once)",
+          "note": "Baka nam je uvijek davala kolače. → Dala mi je ključ."
+        },
+        {
+          "hr": "uzimati / uzeti",
+          "en": "to take (be taking, take regularly / take once)",
+          "note": "Uzimam tramvaj svaki dan. → Uzeo sam taksi."
+        },
+        {
+          "hr": "počinjati / početi",
+          "en": "to begin (be beginning / begin)",
+          "note": "Film počinje u osam. → Film je već počeo!"
+        },
+        {
+          "hr": "završavati / završiti",
+          "en": "to finish (be finishing / finish)",
+          "note": "Obično završavam posao u pet. → Danas sam završio ranije."
+        },
+        {
+          "hr": "viđati / vidjeti",
+          "en": "to see (see regularly / see, catch sight of)",
+          "note": "Viđamo se svaki tjedan. → Jučer sam ga vidio u gradu."
+        },
+        {
+          "hr": "dolaziti / doći",
+          "en": "to come (be coming, come regularly / arrive once)",
+          "note": "Dolazim! → Doći ću za pet minuta."
+        },
+        {
+          "hr": "slati / poslati",
+          "en": "to send (be sending, send regularly / send once)",
+          "note": "Šaljem ti fotografije. → Poslao sam ti je jučer."
+        },
+        {
+          "hr": "vraćati se / vratiti se",
+          "en": "to return (be returning, return regularly / return once)",
+          "note": "Vraćam se kući oko šest. → Vratio sam se kasno sinoć."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Your sixteen pairs under fire",
+      "intro": "Both directions: from one member of the pair to the other, and from English straight to the right verb in the right form.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "The perfective partner of davati is:",
+          "difficulty": 3,
+          "options": ["dati", "davati se", "dodati", "davati"],
+          "answer": "dati",
+          "explanation": "davati/dati — one of the pairs where the perfective is the shorter verb."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The imperfective partner of početi is:",
+          "difficulty": 4,
+          "options": ["počinjati", "počivati", "počešljati", "počet"],
+          "answer": "počinjati",
+          "explanation": "počinjati/početi = to begin. Film počinje u osam (schedule) vs Film je počeo (it has started)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Baka mi je često ___ kolače. (davati — perfekt, a repeated habit, feminine)",
+          "difficulty": 5,
+          "answer": "davala",
+          "accepted": ["davala"],
+          "explanation": "A habit in the past stays imperfective: davati → davala. Dala would be one single occasion.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Film ___ u osam, požuri!",
+          "difficulty": 5,
+          "options": ["počinje", "počne", "počinjao", "počeo"],
+          "answer": "počinje",
+          "explanation": "Timetables and scheduled starts use the imperfective present: film počinje u osam."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Jučer sam ___ starog prijatelja u gradu. (vidjeti — perfekt, masculine)",
+          "difficulty": 4,
+          "answer": "vidio",
+          "accepted": ["vidio"],
+          "explanation": "One concrete sighting: perfective vidjeti → vidio sam. Viđao sam would mean I used to see him regularly.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Rijetko se ___ otkad je odselio. (we rarely see each other)",
+          "difficulty": 6,
+          "options": ["viđamo", "vidimo", "vidjeli", "vidjet"],
+          "answer": "viđamo",
+          "explanation": "Regular (here: rare but repeated) contact uses viđati se: rijetko se viđamo."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say: I read the book (to the end) and returned it to Ana.",
+          "difficulty": 6,
+          "options": ["vratio", "sam", "Pročitao", "Ani", "i", "je", "knjigu"],
+          "answer": "Pročitao sam knjigu i vratio je Ani",
+          "ordered": ["Pročitao", "sam", "knjigu", "i", "vratio", "je", "Ani"],
+          "explanation": "Two completed events, both perfective: pročitati and vratiti. In the second clause je is the accusative clitic (= the book)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Svaki dan ___ vodu, a danas sam popio i sok.",
+          "difficulty": 4,
+          "options": ["pijem", "popijem", "popio", "pit"],
+          "answer": "pijem",
+          "explanation": "The daily habit takes the imperfective present pijem; the one finished juice takes perfective popio."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Obično ___ posao u pet. (završavati or završiti? — present, a routine, ja)",
+          "difficulty": 5,
+          "answer": "završavam",
+          "accepted": ["završavam"],
+          "explanation": "obično = routine → imperfective završavati: obično završavam posao u pet.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "84": [
+    {
+      "type": "LEARN",
+      "title": "Planovi, želje, mogućnosti — verb + infinitive",
+      "intro": "One small pattern, huge range: planirati, namjeravati, željeti, uspjeti, pokušavati + infinitive covers everything you intend, hope or manage to do. Watch the aspect of every infinitive you attach.",
+      "items": [
+        {
+          "hr": "Planiram ove godine naučiti hrvatski.",
+          "en": "I plan to learn Croatian this year.",
+          "note": "planirati + infinitive; the goal is a result, so perfective naučiti."
+        },
+        {
+          "hr": "Namjeravam se prijaviti na tečaj.",
+          "en": "I intend to sign up for a course.",
+          "note": "namjeravati = to intend. The clitic se sits in second position: Namjeravam se prijaviti."
+        },
+        {
+          "hr": "Želim posjetiti Dubrovnik u rujnu.",
+          "en": "I want to visit Dubrovnik in September.",
+          "note": "željeti + infinitive — the polite cousin of htjeti."
+        },
+        {
+          "hr": "Nadam se da ćemo ljetovati na moru.",
+          "en": "I hope we'll spend the summer at the seaside.",
+          "note": "nadati se takes da + a clause, not an infinitive: nadam se da ću/ćemo…"
+        },
+        {
+          "hr": "Uspio sam rezervirati stol za subotu.",
+          "en": "I managed to reserve a table for Saturday.",
+          "note": "uspjeti + infinitive = to manage to; the achieved result invites a perfective."
+        },
+        {
+          "hr": "Pokušavam manje raditi vikendom.",
+          "en": "I'm trying to work less at the weekend.",
+          "note": "pokušavati (impf.) = ongoing effort; pokušati (pf.) = one attempt."
+        },
+        {
+          "hr": "Mogu ti pomoći sutra poslije posla.",
+          "en": "I can help you tomorrow after work.",
+          "note": "moći + infinitive = possibility; ti is a dative clitic in second position."
+        },
+        {
+          "hr": "Moramo isplanirati put unaprijed.",
+          "en": "We have to plan the trip in advance.",
+          "note": "isplanirati = perfective of planirati: plan it fully, once."
+        },
+        {
+          "hr": "Jednog dana želimo kupiti kuću uz more.",
+          "en": "One day we want to buy a house by the sea.",
+          "note": "jednog dana = temporal genitive; the dream purchase is perfective kupiti."
+        },
+        {
+          "hr": "Ne planiram ništa mijenjati.",
+          "en": "I don't plan to change anything.",
+          "note": "Double negation is obligatory: ne + ništa. Open-ended changing → imperfective mijenjati."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Plans and wishes drill",
+      "intro": "Conjugate the plan verbs, pick the right infinitive aspect, and keep se and da where they belong.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "___ ove godine naučiti hrvatski. (I plan)",
+          "difficulty": 3,
+          "options": ["Planiram", "Planirati", "Planira", "Planiraju"],
+          "answer": "Planiram",
+          "explanation": "planirati is a regular -am verb: planiram, planiraš, planira…"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Nadam se ___ ćemo ljetovati na moru. (the little connecting word)",
+          "difficulty": 4,
+          "answer": "da",
+          "accepted": ["da"],
+          "explanation": "nadati se takes a da-clause: Nadam se da ćemo… — not an infinitive.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Uspio sam ___ karte za koncert. (managed to buy them)",
+          "difficulty": 4,
+          "options": ["kupiti", "kupovati", "kupim", "kupio"],
+          "answer": "kupiti",
+          "explanation": "uspjeti reports an achieved result, so the perfective infinitive follows: uspio sam kupiti."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say: I intend to sign up for the course. (mind where se goes)",
+          "difficulty": 6,
+          "options": ["prijaviti", "Namjeravam", "tečaj", "se", "na"],
+          "answer": "Namjeravam se prijaviti na tečaj",
+          "ordered": ["Namjeravam", "se", "prijaviti", "na", "tečaj"],
+          "explanation": "The clitic se takes second position in the clause, right after Namjeravam — not after the infinitive."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Pokušavam ___ manje. (work — an ongoing effort)",
+          "difficulty": 4,
+          "options": ["raditi", "odraditi", "radim", "radio"],
+          "answer": "raditi",
+          "explanation": "After a modal-like verb the infinitive follows, and an ongoing activity is imperfective: pokušavam raditi manje."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Jednog dana želimo ___ kuću uz more. (buy — perfective)",
+          "difficulty": 4,
+          "answer": "kupiti",
+          "accepted": ["kupiti"],
+          "explanation": "One dream purchase, complete: kupiti. Kupovati kuću would mean being in the process of buying it.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Namjeravam' mean?",
+          "difficulty": 3,
+          "options": ["I intend", "I hope", "I manage", "I avoid"],
+          "answer": "I intend",
+          "explanation": "namjeravati = to intend; nadati se = to hope; uspjeti = to manage."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Nadamo se da ___ sve biti u redu.",
+          "difficulty": 5,
+          "options": ["će", "ćemo", "bi", "je"],
+          "answer": "će",
+          "explanation": "The subject of the da-clause is sve (it all), 3rd person singular: da će sve biti u redu."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "85": [
+    {
+      "type": "LEARN",
+      "title": "Kondicional I: bih, bi, bi, bismo, biste, bi",
+      "intro": "Six little words plus the participle you already know from the perfekt — and suddenly you can wish, suggest and speculate. In careful standard Croatian mi = bismo and vi = biste; colloquial speech levels everything to bi, but you should learn the full paradigm.",
+      "items": [
+        {
+          "hr": "Rado bih putovao.",
+          "en": "I would gladly travel.",
+          "note": "The formula: bih/bi/bismo… + past participle. bih is a clitic in second position."
+        },
+        {
+          "hr": "Ja bih došao, ali ne mogu.",
+          "en": "I would come, but I can't.",
+          "note": "With the pronoun: Ja bih došao. Without it: Došao bih."
+        },
+        {
+          "hr": "Ti bi to sigurno znala.",
+          "en": "You would surely know that. (to a woman)",
+          "note": "2nd person singular: bi. The participle agrees with the person spoken to: znala."
+        },
+        {
+          "hr": "On bi došao ranije, ali radi do pet.",
+          "en": "He would come earlier, but he works until five.",
+          "note": "3rd person singular: bi."
+        },
+        {
+          "hr": "Mi bismo išli na more.",
+          "en": "We would go to the seaside.",
+          "note": "1st person plural: bismo — the form learners forget first. Drill it."
+        },
+        {
+          "hr": "Vi biste voljeli ovaj film.",
+          "en": "You would love this film.",
+          "note": "2nd person plural (and polite Vi): biste."
+        },
+        {
+          "hr": "Oni bi ostali dulje.",
+          "en": "They would stay longer.",
+          "note": "3rd person plural: bi again — three persons share the form bi."
+        },
+        {
+          "hr": "Htio bih čašu vode.",
+          "en": "I would like a glass of water.",
+          "note": "Htio bih… = the polite way to want something. Compare blunt Hoću…"
+        },
+        {
+          "hr": "Kupio bih taj stan da imam novca.",
+          "en": "I would buy that flat if I had the money.",
+          "note": "The conditional also builds hypotheticals — tomorrow's topic in full."
+        },
+        {
+          "hr": "Sutra bih rado spavao dulje.",
+          "en": "Tomorrow I would gladly sleep longer.",
+          "note": "Second position rule: Sutra counts as first, so bih comes right after it."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Conditional forms drill",
+      "intro": "The paradigm, cold: bih, bi, bi, bismo, biste, bi — and the clitic in second position every single time.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Mi ___ išli na more. (conditional auxiliary)",
+          "difficulty": 5,
+          "answer": "bismo",
+          "accepted": ["bismo"],
+          "explanation": "1st person plural: bismo. Colloquial speech says mi bi, but the standard form is bismo.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Vi ___ voljeli ovaj film. (conditional auxiliary)",
+          "difficulty": 5,
+          "answer": "biste",
+          "accepted": ["biste"],
+          "explanation": "2nd person plural and polite Vi: biste.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ja ___ došao, ali ne mogu.",
+          "difficulty": 3,
+          "options": ["bih", "bi", "bismo", "biste"],
+          "answer": "bih",
+          "explanation": "1st person singular: bih — ja bih došao."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say: I would gladly travel.",
+          "difficulty": 4,
+          "options": ["putovao", "Rado", "bih"],
+          "answer": "Rado bih putovao",
+          "ordered": ["Rado", "bih", "putovao"],
+          "explanation": "bih is a clitic: Rado takes first position, bih must come second, the participle follows."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Oni ___ ostali dulje.",
+          "difficulty": 4,
+          "options": ["bi", "bih", "biste", "bismo"],
+          "answer": "bi",
+          "explanation": "3rd person plural is bi — the same form as ti, on and ona."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Htio ___ čašu vode, molim. (I would like)",
+          "difficulty": 4,
+          "answer": "bih",
+          "accepted": ["bih"],
+          "explanation": "Htio bih… = I would like… — your new default for polite wanting.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence has the clitic in the right place?",
+          "difficulty": 6,
+          "options": [
+            "Sutra bih rado spavao dulje.",
+            "Bih sutra rado spavao dulje.",
+            "Sutra rado spavao bih dulje.",
+            "Sutra rado bih spavao dulje bih."
+          ],
+          "answer": "Sutra bih rado spavao dulje.",
+          "explanation": "bih can never start a sentence and must sit in second position: Sutra | bih | rado spavao dulje."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kupio ___ taj stan da imam novca. (ja)",
+          "difficulty": 4,
+          "answer": "bih",
+          "accepted": ["bih"],
+          "explanation": "Kupio bih = I would buy. The participle can take first position, with bih right behind it.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "In careful standard Croatian, 'we would' is:",
+          "difficulty": 5,
+          "options": ["mi bismo", "mi bi", "mi bih", "mi biste"],
+          "answer": "mi bismo",
+          "explanation": "Standard: mi bismo, vi biste. You'll hear mi bi everywhere in speech, but write and learn bismo."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "86": [
+    {
+      "type": "LEARN",
+      "title": "Polite Croatian: Biste li…? Ne bih…",
+      "intro": "The question and negative forms of the conditional are the politeness engine of adult Croatian. Ten formulas that instantly upgrade how you sound at the counter, on the phone and in email.",
+      "items": [
+        {
+          "hr": "Biste li mi mogli pomoći?",
+          "en": "Could you help me? (formal)",
+          "note": "The politest possible request: Biste li + mogli + infinitive."
+        },
+        {
+          "hr": "Biste li htjeli kavu ili čaj?",
+          "en": "Would you like coffee or tea? (formal)",
+          "note": "Inversion with li: auxiliary first, then li."
+        },
+        {
+          "hr": "Bi li došla s nama u kino?",
+          "en": "Would you come to the cinema with us? (to a woman, informal)",
+          "note": "Informal singular: Bi li + participle agreeing with the person asked."
+        },
+        {
+          "hr": "Ne bih rekao.",
+          "en": "I wouldn't say so.",
+          "note": "Soft disagreement — much gentler than Ne! or Nije točno."
+        },
+        {
+          "hr": "Ne bismo mogli doći u subotu.",
+          "en": "We wouldn't be able to come on Saturday.",
+          "note": "Negative: ne directly before the auxiliary — ne bih, ne bi, ne bismo."
+        },
+        {
+          "hr": "Ne bih htio smetati.",
+          "en": "I wouldn't want to disturb you.",
+          "note": "The classic polite opener before asking for something."
+        },
+        {
+          "hr": "Oprostite, biste li ponovili?",
+          "en": "Excuse me, would you repeat that?",
+          "note": "Your conversation-repair phrase, upgraded to conditional politeness."
+        },
+        {
+          "hr": "Htio bih poslati ovaj paket u Njemačku.",
+          "en": "I would like to send this parcel to Germany.",
+          "note": "State your business politely: Htio bih + perfective infinitive."
+        },
+        {
+          "hr": "Biste li mi rekli gdje je šalter tri?",
+          "en": "Would you tell me where counter three is?",
+          "note": "The dative clitic mi slips in right after li: Biste li mi…"
+        },
+        {
+          "hr": "Možete li mi pomoći? — Biste li mi mogli pomoći?",
+          "en": "Can you help me? — Could you (possibly) help me?",
+          "note": "Both are fine; the conditional version is a degree warmer and more formal."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Politeness drill",
+      "intro": "Build questions with Biste li, negatives with ne bih, and keep the clitics in line: li first, then bih/biste, then mi/ti.",
+      "questions": [
+        {
+          "type": "REORDER",
+          "prompt": "Ask politely: Could you help me?",
+          "difficulty": 6,
+          "options": ["mogli", "li", "Biste", "pomoći", "mi"],
+          "answer": "Biste li mi mogli pomoći",
+          "ordered": ["Biste", "li", "mi", "mogli", "pomoći"],
+          "explanation": "Clitic chain: auxiliary biste + li, then the dative clitic mi, then the participle and infinitive."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ne ___ htio smetati. (I wouldn't want to disturb)",
+          "difficulty": 4,
+          "answer": "bih",
+          "accepted": ["bih"],
+          "explanation": "The negative conditional: ne + bih + participle — ne bih htio.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "___ li došla s nama u kino? (asking your friend Ana)",
+          "difficulty": 5,
+          "options": ["Bi", "Biste", "Bih", "Bismo"],
+          "answer": "Bi",
+          "explanation": "Informal singular takes bi: Bi li došla? Biste is for vi — plural or polite."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which request is the most polite?",
+          "difficulty": 3,
+          "options": [
+            "Biste li mi mogli pomoći?",
+            "Pomozi mi!",
+            "Možeš mi pomoći?",
+            "Hoću pomoć."
+          ],
+          "answer": "Biste li mi mogli pomoći?",
+          "explanation": "Conditional + vi-form + moći = maximum politeness. The imperative Pomozi mi! is for family and emergencies."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ne ___ mogli doći u subotu. (we)",
+          "difficulty": 5,
+          "answer": "bismo",
+          "accepted": ["bismo"],
+          "explanation": "Negative 1st person plural: ne bismo mogli — a polite way to decline.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Htio ___ poslati ovaj paket u Njemačku.",
+          "difficulty": 3,
+          "options": ["bih", "bi", "biste", "bismo"],
+          "answer": "bih",
+          "explanation": "You're speaking about yourself: htio bih = I would like."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Ne bih rekao.' mean?",
+          "difficulty": 4,
+          "options": [
+            "I wouldn't say so.",
+            "I didn't say anything.",
+            "I won't tell you.",
+            "Don't say that."
+          ],
+          "answer": "I wouldn't say so.",
+          "explanation": "Conditional ne bih rekao = polite, softened disagreement — very common in conversation."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Biste li ___ rekli gdje je šalter tri? (to me — dative clitic)",
+          "difficulty": 5,
+          "answer": "mi",
+          "accepted": ["mi"],
+          "explanation": "The dative clitic mi follows li in the clitic chain: Biste li mi rekli…",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Role-play: at the post office",
+      "intro": "Your wife plays the post-office clerk — a favourite living-room game. Every request goes through the conditional. Act it out, then swap: you play the clerk.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Idemo vježbati! Ja sam službenica na pošti. Dobar dan, izvolite?",
+          "en": "Let's practise! I'm the clerk at the post office. Good afternoon, how can I help you?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Dobar dan. Htio bih poslati ovaj paket u Ameriku.",
+          "en": "Good afternoon. I would like to send this parcel to America."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Naravno. Biste li ga stavili na vagu, molim Vas?",
+          "en": "Of course. Would you put it on the scale, please?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Evo, izvolite. Biste li mi rekli koliko košta slanje?",
+          "en": "Here you are. Would you tell me how much shipping costs?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Obično slanje košta dvanaest eura, a brzo dvadeset pet.",
+          "en": "Regular shipping costs twelve euros, and express twenty-five."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Ne bih htio platiti toliko. Može obično, molim.",
+          "en": "I wouldn't want to pay that much. Regular is fine, please."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "U redu. Biste li ispunili ovaj obrazac?",
+          "en": "All right. Would you fill in this form?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Naravno. Oprostite, biste li mi posudili kemijsku?",
+          "en": "Of course. Excuse me, would you lend me a pen?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Izvolite. Trebate li još nešto?",
+          "en": "Here you are. Do you need anything else?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Ne, hvala Vam lijepa. Doviđenja!",
+          "en": "No, thank you very much. Goodbye!"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Doviđenja! … I bravo — zvučao si vrlo pristojno!",
+          "en": "Goodbye! … And bravo — you sounded very polite!"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Hvala! Kondicional stvarno pomaže.",
+          "en": "Thanks! The conditional really helps."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "87": [
+    {
+      "type": "LEARN",
+      "title": "The four jobs of the conditional",
+      "intro": "One paradigm, four meanings: wish (želja), possibility (mogućnost), condition (uvjet) and impossible condition (nemogući uvjet). Together they cover most of what English 'would' does.",
+      "items": [
+        {
+          "hr": "Htio bih više slobodnog vremena.",
+          "en": "I would like more free time.",
+          "note": "Job 1 — wish (želja). Htio bih / htjela bih + what you want."
+        },
+        {
+          "hr": "Rado bih otputovao na neko toplo mjesto.",
+          "en": "I would gladly go off somewhere warm.",
+          "note": "rado + conditional = a warm, dreamy wish."
+        },
+        {
+          "hr": "To bi moglo biti točno.",
+          "en": "That could be true.",
+          "note": "Job 2 — possibility (mogućnost). moglo bi biti = it might be."
+        },
+        {
+          "hr": "Ana bi mogla stići oko osam.",
+          "en": "Ana could arrive around eight.",
+          "note": "bi + mogla + infinitive: speculating about what's possible."
+        },
+        {
+          "hr": "Kad bih imao više vremena, putovao bih.",
+          "en": "If I had more time, I would travel.",
+          "note": "Job 3 — condition (uvjet): kad + conditional in BOTH halves."
+        },
+        {
+          "hr": "Kad bismo živjeli uz more, plivali bismo svaki dan.",
+          "en": "If we lived by the sea, we would swim every day.",
+          "note": "Same pattern in the plural: kad bismo…, … bismo."
+        },
+        {
+          "hr": "Kad ne bih morao raditi, spavao bih do deset.",
+          "en": "If I didn't have to work, I would sleep until ten.",
+          "note": "Negative condition: kad ne bih + participle."
+        },
+        {
+          "hr": "Što bi radio da ne moraš raditi?",
+          "en": "What would you do if you didn't have to work?",
+          "note": "da + present is the everyday alternative to kad + conditional in the if-half."
+        },
+        {
+          "hr": "Kad bih dobio slobodnu godinu, proputovao bih Europu.",
+          "en": "If I got a year off, I would travel all over Europe.",
+          "note": "Job 4 — an unlikely or impossible condition uses exactly the same form. Context decides."
+        },
+        {
+          "hr": "Bi li mi pomogla oko ovoga?",
+          "en": "Would you help me with this? (to a woman)",
+          "note": "And the bonus job you already know: politeness."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "What would you do? — hypotheticals drill",
+      "intro": "Build kad bih sentences, spot the four meanings, and translate English 'would' without flinching.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Kad ___ imao više vremena, putovao bih. (ja)",
+          "difficulty": 5,
+          "answer": "bih",
+          "accepted": ["bih"],
+          "explanation": "The conditional appears in both halves: Kad bih imao…, putovao bih.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask: What would you do if you didn't have to work? (to a man)",
+          "difficulty": 6,
+          "options": ["radio", "ne", "Što", "da", "bi", "raditi", "moraš"],
+          "answer": "Što bi radio da ne moraš raditi",
+          "ordered": ["Što", "bi", "radio", "da", "ne", "moraš", "raditi"],
+          "explanation": "Main clause in the conditional (Što bi radio), the if-half with da + present (da ne moraš raditi)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Kad bismo živjeli uz more, ___ bismo svaki dan.",
+          "difficulty": 5,
+          "options": ["plivali", "plivamo", "plivati", "plivat"],
+          "answer": "plivali",
+          "explanation": "The conditional needs the past participle: plivali bismo = we would swim."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'To bi moglo biti točno.' mean?",
+          "difficulty": 4,
+          "options": [
+            "That could be true.",
+            "That must be true.",
+            "That was true.",
+            "That will be true."
+          ],
+          "answer": "That could be true.",
+          "explanation": "bi moglo biti = could be / might be — the possibility job of the conditional."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kad ___ mogli birati, živjeli bismo uz more. (we)",
+          "difficulty": 6,
+          "answer": "bismo",
+          "accepted": ["bismo"],
+          "explanation": "1st person plural bismo in the kad-clause too: kad bismo mogli birati.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence expresses a WISH (želja)?",
+          "difficulty": 5,
+          "options": [
+            "Htjela bih više slobodnog vremena.",
+            "To bi moglo biti točno.",
+            "Kad bih imao vremena, putovao bih.",
+            "Biste li ponovili?"
+          ],
+          "answer": "Htjela bih više slobodnog vremena.",
+          "explanation": "Htjela bih… states a wish. The others are possibility, condition and politeness — the other three jobs."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Rado ___ otputovao na neko toplo mjesto. (ja)",
+          "difficulty": 4,
+          "answer": "bih",
+          "accepted": ["bih"],
+          "explanation": "Rado bih otputovao — rado takes first position, the clitic bih second.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Translate: 'I would sleep until ten.'",
+          "difficulty": 4,
+          "options": [
+            "Spavao bih do deset.",
+            "Spavam do deset.",
+            "Spavat ću do deset.",
+            "Spavao sam do deset."
+          ],
+          "answer": "Spavao bih do deset.",
+          "explanation": "English 'would' for a hypothetical = the Croatian conditional: spavao bih."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Ana ___ mogla stići oko osam.",
+          "difficulty": 4,
+          "options": ["bi", "bih", "bismo", "biste"],
+          "answer": "bi",
+          "explanation": "3rd person singular bi: Ana bi mogla stići — speculating about a possibility."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "88": [
+    {
+      "type": "LEARN",
+      "title": "Week 12 in one place — your dreams-and-plans toolkit",
+      "intro": "Before today's conversation, one pass through the whole week: aspect after ću and modals, the plan verbs, and every job of the conditional. These are the exact lines you'll want mid-conversation.",
+      "items": [
+        {
+          "hr": "Sutra ću napisati cijeli izvještaj.",
+          "en": "Tomorrow I'll write the whole report (and finish it).",
+          "note": "Perfective after ću = promised result."
+        },
+        {
+          "hr": "Volim kuhati, ali danas moram skuhati večeru za goste.",
+          "en": "I love cooking, but today I have to cook dinner for guests.",
+          "note": "Habit imperfective, tonight's concrete task perfective — both in one breath."
+        },
+        {
+          "hr": "Planiram završiti tečaj do ljeta.",
+          "en": "I plan to finish the course by summer.",
+          "note": "Plan verb + perfective infinitive with a deadline."
+        },
+        {
+          "hr": "Nadam se da ćemo ljetos ići u Hrvatsku.",
+          "en": "I hope we'll go to Croatia this summer.",
+          "note": "nadati se + da-clause; ljetos = this summer."
+        },
+        {
+          "hr": "Kad ne bih morao raditi, putovao bih po cijelom svijetu.",
+          "en": "If I didn't have to work, I would travel all over the world.",
+          "note": "The kad bih…, … bih frame — today's conversation lives here."
+        },
+        {
+          "hr": "Kad bismo imali više novca, kupili bismo kuću uz more.",
+          "en": "If we had more money, we would buy a house by the sea.",
+          "note": "Plural hypothetical: bismo in both halves."
+        },
+        {
+          "hr": "Što bi radio da ne moraš raditi?",
+          "en": "What would you do if you didn't have to work?",
+          "note": "The question to ask your partner today — and to answer yourself."
+        },
+        {
+          "hr": "Kome bi prvo javio dobre vijesti?",
+          "en": "Who would you tell the good news first?",
+          "note": "javiti komu što — the dative asks 'to whom'. Full dative phrases arrive tomorrow."
+        },
+        {
+          "hr": "To bi bilo divno!",
+          "en": "That would be wonderful!",
+          "note": "The all-purpose enthusiastic reply to any dream or plan."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Week 12 mixed drill",
+      "intro": "Aspect, plan verbs and conditionals in one cold re-test. Aim for a clean sweep before you start dreaming out loud.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Sutra ću ___ cijeli izvještaj. (finish it)",
+          "difficulty": 4,
+          "options": ["napisati", "pisati", "pišem", "napisao"],
+          "answer": "napisati",
+          "explanation": "A promised finished report takes the perfective infinitive after ću: napisati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Mi ___ rado došli. (conditional — we would gladly come)",
+          "difficulty": 5,
+          "answer": "bismo",
+          "accepted": ["bismo"],
+          "explanation": "Standard 1st person plural: bismo — mi bismo rado došli.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The perfective partner of počinjati is:",
+          "difficulty": 4,
+          "options": ["početi", "počinjati se", "počistiti", "počešljati"],
+          "answer": "početi",
+          "explanation": "počinjati/početi — Module 2's pair for beginning. Don't confuse it with počistiti (to clean up)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask: Who would you tell the good news first? (to a man)",
+          "difficulty": 7,
+          "options": ["prvo", "vijesti", "Kome", "javio", "bi", "dobre"],
+          "answer": "Kome bi prvo javio dobre vijesti",
+          "ordered": ["Kome", "bi", "prvo", "javio", "dobre", "vijesti"],
+          "explanation": "Kome takes first position, the clitic bi second, then the participle: Kome bi prvo javio…"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Uspio sam ___ stol za subotu. (reserve)",
+          "difficulty": 4,
+          "answer": "rezervirati",
+          "accepted": ["rezervirati"],
+          "explanation": "uspjeti + infinitive: uspio sam rezervirati = I managed to reserve.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Kad bih dobio slobodnu godinu, ___ bih Europu.",
+          "difficulty": 5,
+          "options": ["proputovao", "proputujem", "putujem", "proputovati"],
+          "answer": "proputovao",
+          "explanation": "The conditional needs the participle: proputovao bih = I would travel all over."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Volim ___, ali danas moram skuhati večeru za goste.",
+          "difficulty": 5,
+          "options": ["kuhati", "skuhati", "kuham", "skuhao"],
+          "answer": "kuhati",
+          "explanation": "voljeti + habit = imperfective kuhati; the one concrete dinner tonight is skuhati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Vi ___ voljeli ovaj plan. (careful standard form)",
+          "difficulty": 5,
+          "answer": "biste",
+          "accepted": ["biste"],
+          "explanation": "vi = biste in standard Croatian: Vi biste voljeli ovaj plan.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Dreams and what-ifs",
+      "intro": "The week's grammar becomes a real conversation: what you would do, where you would go, what you actually plan. Act it out, then continue past the script with your own dreams.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Danas pričamo o snovima. Što bi radio kad ne bi morao raditi?",
+          "en": "Today we're talking about dreams. What would you do if you didn't have to work?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Kad ne bih morao raditi, putovao bih po cijelom svijetu.",
+          "en": "If I didn't have to work, I would travel all over the world."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Kamo bi prvo otputovao?",
+          "en": "Where would you go first?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Prvo bih otputovao u Japan. Uvijek sam želio vidjeti Tokio.",
+          "en": "First I would go to Japan. I've always wanted to see Tokyo."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "A što bismo napravili kad bismo imali više novca?",
+          "en": "And what would we do if we had more money?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Kad bismo imali više novca, kupili bismo kuću uz more.",
+          "en": "If we had more money, we would buy a house by the sea."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "To bi bilo divno! Ja bih plivala svaki dan.",
+          "en": "That would be wonderful! I would swim every day."
+        },
+        {
+          "speaker": "Me",
+          "hr": "A ja bih naučio roniti. I lovio bih ribu!",
+          "en": "And I would learn to dive. And I would go fishing!"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Dobro, a sada ozbiljno — što planiraš sljedeće godine?",
+          "en": "OK, and now seriously — what are you planning next year?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Planiram završiti tečaj i želim položiti ispit A2.",
+          "en": "I plan to finish the course and I want to pass the A2 exam."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Uspjet ćeš! A ja se nadam da ćemo ljetos ići u Hrvatsku.",
+          "en": "You'll manage it! And I hope we'll go to Croatia this summer."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Kad bismo išli u rujnu, bilo bi jeftinije.",
+          "en": "If we went in September, it would be cheaper."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Vidiš? Kondicional ti već ide odlično.",
+          "en": "See? Your conditional is already excellent."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Hvala! Sad bih rado popio kavu — zaslužio sam je.",
+          "en": "Thanks! Now I would gladly drink a coffee — I've earned it."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "89": [
+    {
+      "type": "LEARN",
+      "title": "Dative across the whole phrase",
+      "intro": "The recipient side of your sentences gets its full endings: masculine/neuter adjectives take -om(u/e), feminine -oj — exactly the endings you already know from the locative. Same forms, new job.",
+      "items": [
+        {
+          "hr": "moja dobra prijateljica → Pišem mojoj dobroj prijateljici.",
+          "en": "my good friend (f.) → I'm writing to my good friend.",
+          "note": "Feminine dative: -oj on adjective and possessive, -i on the noun."
+        },
+        {
+          "hr": "taj stari čovjek → Dajem tom starom čovjeku novine.",
+          "en": "that old man → I give that old man the newspaper.",
+          "note": "Masculine dative: taj → tom, stari → starom, čovjek → čovjeku."
+        },
+        {
+          "hr": "Pomažem svojoj mlađoj sestri.",
+          "en": "I'm helping my (own) younger sister.",
+          "note": "svoj declines too: svojoj mlađoj sestri. Comparatives take normal adjective endings."
+        },
+        {
+          "hr": "Pišem svom mlađem bratu svaki mjesec.",
+          "en": "I write to my younger brother every month.",
+          "note": "Soft-stem comparative mlađi takes -em, not -om: mlađem bratu."
+        },
+        {
+          "hr": "Dajem tom malom djetetu jabuku.",
+          "en": "I'm giving that small child an apple.",
+          "note": "Neuter dijete extends its stem: dijete → djetetu."
+        },
+        {
+          "hr": "Šaljem poruku našoj dragoj baki.",
+          "en": "I'm sending a message to our dear grandma.",
+          "note": "baka keeps its k in the dative: baki (kinship words resist the k→c change)."
+        },
+        {
+          "hr": "Kupio sam poklon njezinoj majci.",
+          "en": "I bought a present for her mother.",
+          "note": "But majka DOES change: majka → majci (k → c before -i)."
+        },
+        {
+          "hr": "Vjerujem svom najboljem prijatelju.",
+          "en": "I trust my best friend.",
+          "note": "Superlatives decline like any adjective: najbolji → najboljem (soft stem, -em)."
+        },
+        {
+          "hr": "u tom velikom gradu — tom velikom gradu",
+          "en": "in that big city (locative) — to that big city (dative)",
+          "note": "For adjectives, demonstratives and possessives, dative and locative endings are identical."
+        },
+        {
+          "hr": "Čestitao sam svojoj dragoj ženi na novom poslu.",
+          "en": "I congratulated my dear wife on her new job.",
+          "note": "čestitati komu na čemu — dative person + na + locative thing."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Full dative phrases drill",
+      "intro": "Decline whole phrases, not just nouns: -om/-em for masculine and neuter, -oj for feminine, and watch the consonant changes in majci.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "Pomažem ___ mlađoj sestri. (one's own — the owner is the subject)",
+          "difficulty": 5,
+          "answer": "svojoj",
+          "accepted": ["svojoj"],
+          "explanation": "Subject = owner → svoj, in the feminine dative: svojoj mlađoj sestri.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "moja dobra prijateljica → Pišem mojoj dobroj ___.",
+          "difficulty": 4,
+          "answer": "prijateljici",
+          "accepted": ["prijateljici"],
+          "explanation": "Feminine -a nouns take -i in the dative: prijateljica → prijateljici.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Dajem ___ starom čovjeku novine. (that)",
+          "difficulty": 4,
+          "options": ["tom", "tog", "tim", "taj"],
+          "answer": "tom",
+          "explanation": "Masculine dative singular of taj is tom(u): tom starom čovjeku."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Pišem ___ bratu. (to my own younger brother — soft stem!)",
+          "difficulty": 6,
+          "options": ["svom mlađem", "svom mlađom", "svojem mlađim", "svom mlađi"],
+          "answer": "svom mlađem",
+          "explanation": "After soft consonants like đ the dative takes -em: mlađem. So: svom mlađem bratu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Šaljem poruku našoj dragoj ___. (baka)",
+          "difficulty": 5,
+          "answer": "baki",
+          "accepted": ["baki"],
+          "explanation": "baka → baki: kinship and pet-name nouns keep their k in the dative.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kupio sam poklon njezinoj ___. (majka — watch the consonant!)",
+          "difficulty": 6,
+          "answer": "majci",
+          "accepted": ["majci"],
+          "explanation": "majka → majci: k changes to c before the dative -i. Compare baka → baki, which resists the change.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'To my good friend (a woman)' is:",
+          "difficulty": 5,
+          "options": [
+            "mojoj dobroj prijateljici",
+            "moju dobru prijateljicu",
+            "moje dobre prijateljice",
+            "mojom dobrom prijateljicom"
+          ],
+          "answer": "mojoj dobroj prijateljici",
+          "explanation": "The dative of the whole phrase: mojoj (-oj) dobroj (-oj) prijateljici (-i)."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say: I trust my best friend.",
+          "difficulty": 5,
+          "options": ["prijatelju", "svom", "Vjerujem", "najboljem"],
+          "answer": "Vjerujem svom najboljem prijatelju",
+          "ordered": ["Vjerujem", "svom", "najboljem", "prijatelju"],
+          "explanation": "vjerovati takes the dative; the whole phrase declines: svom najboljem prijatelju."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Dajem ___ malom djetetu jabuku.",
+          "difficulty": 4,
+          "options": ["tom", "ta", "tu", "tog"],
+          "answer": "tom",
+          "explanation": "dijete is neuter; neuter dative matches the masculine: tom malom djetetu."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "90": [
+    {
+      "type": "LEARN",
+      "title": "Verbs that demand the dative",
+      "intro": "A short list of verbs triggers the dative every time — know the list and you never guess the case again. The stars are sviđati se (Croatian 'like') and nedostajati ('miss'), which flip the English sentence around.",
+      "items": [
+        {
+          "hr": "Pomažem svojoj sestri oko selidbe.",
+          "en": "I'm helping my sister with the move.",
+          "note": "pomagati/pomoći + dative: pomažem komu."
+        },
+        {
+          "hr": "Javio sam se svojoj obitelji čim sam stigao.",
+          "en": "I got in touch with my family as soon as I arrived.",
+          "note": "javiti se + dative — and svoj because the family is the subject's own."
+        },
+        {
+          "hr": "Vjerujem ti.",
+          "en": "I trust you.",
+          "note": "vjerovati + dative: vjerujem ti, ne vjerujem mu."
+        },
+        {
+          "hr": "Sviđa mi se tvoj stan.",
+          "en": "I like your flat.",
+          "note": "The Croatian 'like': the liked thing is the SUBJECT, the liker is in the dative — literally 'your flat pleases me'."
+        },
+        {
+          "hr": "Sviđaju mi se ove fotografije.",
+          "en": "I like these photos.",
+          "note": "Plural subject → plural verb: sviđaju. The dative clitic mi doesn't change."
+        },
+        {
+          "hr": "Čestitao sam bratu na novom poslu.",
+          "en": "I congratulated my brother on his new job.",
+          "note": "čestitati komu na čemu."
+        },
+        {
+          "hr": "Zahvalio sam susjedu na pomoći.",
+          "en": "I thanked my neighbour for his help.",
+          "note": "zahvaliti komu na čemu — same skeleton as čestitati."
+        },
+        {
+          "hr": "Smeta li ti glazba?",
+          "en": "Does the music bother you?",
+          "note": "smetati + dative: smeta mi, smeta li ti…"
+        },
+        {
+          "hr": "Nedostaješ mi.",
+          "en": "I miss you.",
+          "note": "Flipped like sviđati se: the missed person is the subject — 'you are lacking to me'."
+        },
+        {
+          "hr": "Odgovara li ti termin u pet?",
+          "en": "Does five o'clock suit you?",
+          "note": "odgovarati + dative = to suit. Your invitation vocabulary from week 10, now explained."
+        },
+        {
+          "hr": "Ovaj kaput pripada mojoj ženi.",
+          "en": "This coat belongs to my wife.",
+          "note": "pripadati + dative — full phrase: mojoj ženi."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Dative verbs drill",
+      "intro": "The flipped verbs get most of the attention: sviđati se agreement, nedostajati direction, and the dative clitics mi, ti, mu, joj in second position.",
+      "questions": [
+        {
+          "type": "REORDER",
+          "prompt": "Say it the Croatian way: I like your flat.",
+          "difficulty": 6,
+          "options": ["se", "stan", "Sviđa", "tvoj", "mi"],
+          "answer": "Sviđa mi se tvoj stan",
+          "ordered": ["Sviđa", "mi", "se", "tvoj", "stan"],
+          "explanation": "The flat is the subject, you are in the dative. Clitic order: dative mi before se."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "___ mi se ove fotografije. (plural agreement!)",
+          "difficulty": 5,
+          "options": ["Sviđaju", "Sviđa", "Sviđam", "Sviđate"],
+          "answer": "Sviđaju",
+          "explanation": "The subject is fotografije (plural), so the verb is plural: sviđaju mi se."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Javio sam se ___ obitelji. (one's own)",
+          "difficulty": 5,
+          "answer": "svojoj",
+          "accepted": ["svojoj"],
+          "explanation": "javiti se + dative, and the subject owns the family: svojoj obitelji.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Čestitao sam ___ na novom poslu.",
+          "difficulty": 4,
+          "options": ["bratu", "brata", "brat", "bratom"],
+          "answer": "bratu",
+          "explanation": "čestitati komu: the congratulated person goes in the dative — bratu."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Nedostaješ ___. (I miss you — the dative clitic)",
+          "difficulty": 5,
+          "answer": "mi",
+          "accepted": ["mi"],
+          "explanation": "Flipped construction: YOU are the subject (nedostaješ), I am the dative — nedostaješ mi.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Nedostaješ mi.' mean?",
+          "difficulty": 6,
+          "options": [
+            "I miss you.",
+            "You miss me.",
+            "I need something.",
+            "You are late."
+          ],
+          "answer": "I miss you.",
+          "explanation": "The classic trap: the missed person is the subject. Nedostaješ mi = literally 'you are lacking to me' = I miss you."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Vjerujem ___. (I trust you — informal singular clitic)",
+          "difficulty": 3,
+          "answer": "ti",
+          "accepted": ["ti"],
+          "explanation": "vjerovati + dative: vjerujem ti. For 'him': vjerujem mu.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Smeta li ___ glazba? (you — formal)",
+          "difficulty": 5,
+          "options": ["vam", "vas", "vi", "vama bi"],
+          "answer": "vam",
+          "explanation": "smetati + dative; the clitic vam follows li: Smeta li vam glazba?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "What does 'Odgovara li ti termin u pet?' mean?",
+          "difficulty": 4,
+          "options": [
+            "Does five o'clock suit you?",
+            "Are you answering at five?",
+            "Do you have an appointment at five?",
+            "Will you reply by five?"
+          ],
+          "answer": "Does five o'clock suit you?",
+          "explanation": "odgovarati + dative = to suit someone. Odgovarati na pitanje = to answer — same verb, different construction."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}
