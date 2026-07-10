@@ -7,6 +7,7 @@ import com.corlang.app.AppContainer
 import com.corlang.app.data.model.LanguageMeta
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -19,7 +20,10 @@ class AppState(private val container: AppContainer) : ViewModel() {
     val languages: List<LanguageMeta> = container.content.allMeta()
 
     val selected: StateFlow<String> = container.languagePrefs.selectedLanguage
-        .stateIn(viewModelScope, SharingStarted.Eagerly, "fr")
+        // A previously-persisted language may since have been hidden (e.g. "fr") —
+        // fall back to the first shipped language instead of showing hidden content.
+        .map { if (it in container.content.availableLanguages) it else container.content.availableLanguages.first() }
+        .stateIn(viewModelScope, SharingStarted.Eagerly, "hr")
 
     init {
         // Ensure a progress row exists for every shipped language.

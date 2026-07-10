@@ -7,24 +7,36 @@ import java.text.Normalizer
 /** Offline answer-grading. Deterministic, accent- and case-insensitive where appropriate. */
 object Grading {
 
-    /** Lowercase, trim, collapse spaces, strip accents and most punctuation. */
-    fun normalize(s: String): String {
-        val stripped = Normalizer.normalize(s.trim().lowercase(), Normalizer.Form.NFD)
-            .replace("\\p{Mn}+".toRegex(), "")          // remove diacritics
+    /**
+     * Lowercase, trim, collapse spaces, strip punctuation. By default also strips diacritics
+     * (lenient legacy behaviour); with [strict] = true diacritics are preserved so that
+     * exam-grade answers require correct Croatian spelling (želim ≠ zelim).
+     */
+    fun normalize(s: String, strict: Boolean = false): String {
+        val base = s.trim().lowercase()
+        val deAccented = if (strict) {
+            Normalizer.normalize(base, Normalizer.Form.NFC)
+        } else {
+            Normalizer.normalize(base, Normalizer.Form.NFD)
+                .replace("\\p{Mn}+".toRegex(), "")      // remove diacritics
+                // đ does not decompose under NFD — map it explicitly so leniency is consistent.
+                .replace('đ', 'd')
+        }
+        return deAccented
             .replace("[.,!?;:\"'’]".toRegex(), "")       // remove common punctuation
             .replace("\\s+".toRegex(), " ")
-        return stripped
     }
 
     /** True if the learner's free-text [input] matches the FILL answer or any accepted variant. */
     fun gradeFill(q: Question, input: String): Boolean {
-        val target = (listOf(q.answer) + q.accepted).map { normalize(it) }
-        return normalize(input) in target
+        val strict = q.strictDiacritics
+        val target = (listOf(q.answer) + q.accepted).map { normalize(it, strict) }
+        return normalize(input, strict) in target
     }
 
     /** True if [chosen] is the correct MCQ option. */
     fun gradeMcq(q: Question, chosen: String): Boolean =
-        normalize(chosen) == normalize(q.answer)
+        normalize(chosen, q.strictDiacritics) == normalize(q.answer, q.strictDiacritics)
 
     /** True if the assembled token sequence equals the correct order. */
     fun gradeReorder(q: Question, assembled: List<String>): Boolean =

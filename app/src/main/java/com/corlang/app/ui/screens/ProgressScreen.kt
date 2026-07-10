@@ -1,5 +1,6 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -16,13 +18,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.ui.components.Bullet
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
+import kotlinx.coroutines.launch
 
 /**
  * Progress hub: streak + completion stats, the CEFR ladder A0→C1 with the milestone for each
@@ -37,7 +44,7 @@ fun ProgressScreen(container: AppContainer, lang: String) {
 
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val daysDone by container.progress.completedDayCount(lang).collectAsState(initial = 0)
-    val quizAttempts by container.progress.quizAttempts(lang).collectAsState(initial = emptyList())
+    val scope = rememberCoroutineScope()
 
     val currentLevel = progress?.currentLevel ?: "A0"
     val streak = progress?.streak ?: 0
@@ -103,28 +110,103 @@ fun ProgressScreen(container: AppContainer, lang: String) {
             }
         }
 
-        // Resources
-        SectionTitle("⭐ Top 5 resources to learn ${meta.name} fast")
-        resources.forEach { r ->
+        // Exam readiness: the B1 milestone with official sections + can-do self-checklist.
+        val examLevel = levels.firstOrNull { it.exam != null }
+        val examSpec = remember(lang, examLevel?.id) {
+            container.content.exams(lang).firstOrNull { it.levelId == examLevel?.id }
+        }
+        if (examLevel?.exam != null) {
+            val exam = examLevel.exam!!
+            SectionTitle("🎓 Exam readiness — ${examLevel.id}")
             InfoCard {
-                Text("${r.rank}. ${r.name}",
-                    style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                Text(r.type.replaceFirstChar { it.uppercase() } +
-                    (r.url?.let { " · $it" } ?: ""),
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.primary)
-                Text(r.why, style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 4.dp))
+                Text(exam.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                Text(exam.passRule, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 2.dp, bottom = 6.dp))
+                if (examSpec != null) {
+                    val latest by container.progress.latestExamAttempts(lang, examSpec.id)
+                        .collectAsState(initial = emptyList())
+                    val bySection = latest.associateBy { it.sectionId }
+                    examSpec.sections.forEach { s ->
+                        val a = bySection[s.id]
+                        Bullet(
+                            s.title + " — " + when {
+                                a == null -> "not attempted"
+                                a.passed -> "passed ✓"
+                                s.passPercent != null && a.total > 0 ->
+                                    "${a.score * 100 / a.total}% (need ${s.passPercent}%)"
+                                else -> "not passed yet"
+                            }
+                        )
+                    }
+                    Text("Take the mock exam in the Quiz tab.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(top = 4.dp))
+                }
+            }
+            if (examLevel.skills.isNotEmpty()) {
+                InfoCard {
+                    Text("Can-do self-check (official CEFR descriptors)",
+                        style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+                    val checks by container.progress.canDoChecks(lang, examLevel.id)
+                        .collectAsState(initial = emptyList())
+                    val checkedIds = checks.map { it.itemId }.toSet()
+                    examLevel.skills.forEachIndexed { si, skill ->
+                        Text(skill.skill, style = MaterialTheme.typography.labelMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.secondary,
+                            modifier = Modifier.padding(top = 6.dp))
+                        skill.descriptors.forEachIndexed { di, d ->
+                            val itemId = "$si-$di"
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Checkbox(
+                                    checked = itemId in checkedIds,
+                                    onCheckedChange = { on ->
+                                        scope.launch {
+                                            container.progress.setCanDo(lang, examLevel.id, itemId, on)
+                                        }
+                                    }
+                                )
+                                Text(d, style = MaterialTheme.typography.bodySmall,
+                                    modifier = Modifier.padding(vertical = 4.dp))
+                            }
+                        }
+                    }
+                }
             }
         }
 
-        // Recent quiz history
-        if (quizAttempts.isNotEmpty()) {
-            SectionTitle("📝 Recent quiz attempts")
-            quizAttempts.take(8).forEach { a ->
-                Text("• ${a.quizId}: ${a.score}/${a.total}",
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(vertical = 2.dp))
+        // Resources
+        SectionTitle("⭐ The best resources to learn ${meta.name} fast")
+        val uriHandler = LocalUriHandler.current
+        resources.forEach { r ->
+            // Whole card is the tap target (48dp+); show the domain, not a wrapping raw URL.
+            Surface(
+                shape = RoundedCornerShape(12.dp),
+                color = MaterialTheme.colorScheme.surface,
+                tonalElevation = 1.dp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 6.dp)
+                    .clickable(enabled = r.url != null) { r.url?.let { uriHandler.openUri(it) } }
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text("${r.rank}. ${r.name}",
+                        style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                    Text(
+                        r.type.replaceFirstChar { it.uppercase() } +
+                            (r.url?.let { url ->
+                                val domain = url.removePrefix("https://").removePrefix("http://")
+                                    .substringBefore('/')
+                                " · $domain ↗"
+                            } ?: ""),
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    Text(r.why, style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.padding(top = 4.dp))
+                }
             }
         }
 
@@ -140,7 +222,14 @@ private fun StatTile(value: String, label: String, modifier: Modifier = Modifier
         modifier = modifier
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Text(value, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+            // Single line: "🔥 365" must not wrap and make the 3 tiles uneven on narrow screens.
+            Text(
+                value,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
             Text(label, style = MaterialTheme.typography.labelSmall)
         }
     }

@@ -1,0 +1,596 @@
+[
+  {
+    "id": "hr-a1-mock",
+    "levelId": "A1",
+    "title": "A1 mock exam (vježba u službenom formatu)",
+    "description": "Practice mock at A1 in the same five-section format as the official B1 exam — get used to the exam's shape from day one. Scored by the same rule.",
+    "passRule": "≥60% in listening, reading and grammar + pass in writing and speaking.",
+    "sources": ["croaticum-b1-sample", "asoo"],
+    "sections": [
+      {
+        "id": "slusanje",
+        "kind": "LISTENING",
+        "title": "I. Razumijevanje slušanoga teksta",
+        "instructions": "Listen (you may replay twice) and answer. The text stays hidden.",
+        "passPercent": 60,
+        "questions": [
+          { "type": "MCQ", "difficulty": 2, "prompt": "U koliko sati polazi vlak za Split?",
+            "audioText": "Vlak za Split polazi u devet sati s drugog perona.",
+            "options": ["u devet sati", "u dva sata", "u pet sati", "u deset sati"], "answer": "u devet sati",
+            "explanation": "'u devet sati' = at nine o'clock." },
+          { "type": "MCQ", "difficulty": 2, "prompt": "Kakvo će vrijeme biti sutra?",
+            "audioText": "Danas je sunčano i toplo, ali sutra će padati kiša.",
+            "options": ["padat će kiša", "bit će sunčano", "past će snijeg", "bit će vjetrovito"], "answer": "padat će kiša",
+            "explanation": "'sutra će padati kiša' = tomorrow it will rain." },
+          { "type": "MCQ", "difficulty": 3, "prompt": "Što gost naručuje?",
+            "audioText": "Molim vas jednu kavu s mlijekom i čašu vode.",
+            "options": ["kavu s mlijekom i vodu", "čaj i sok", "pivo i vodu", "kavu bez mlijeka"], "answer": "kavu s mlijekom i vodu",
+            "explanation": "'jednu kavu s mlijekom i čašu vode' = a coffee with milk and a glass of water." },
+          { "type": "FILL", "difficulty": 3, "prompt": "Od koliko sati radi trgovina? (upišite broj)",
+            "audioText": "Trgovina radi svaki dan od osam do dvadeset sati.",
+            "answer": "8", "accepted": ["osam", "od 8", "od osam"],
+            "explanation": "'od osam' = from eight o'clock." },
+          { "type": "MCQ", "difficulty": 4, "prompt": "TOČNO ili NETOČNO: Marko živi u Splitu.",
+            "audioText": "Marko ima dvadeset pet godina i živi u Zagrebu sa svojom ženom.",
+            "options": ["NETOČNO", "TOČNO"], "answer": "NETOČNO",
+            "explanation": "He lives 'u Zagrebu' — in Zagreb, not Split." },
+          { "type": "MCQ", "difficulty": 4, "prompt": "TOČNO ili NETOČNO: Marko ima 25 godina.",
+            "audioText": "Marko ima dvadeset pet godina i živi u Zagrebu sa svojom ženom.",
+            "options": ["TOČNO", "NETOČNO"], "answer": "TOČNO",
+            "explanation": "'dvadeset pet godina' = 25 years old." }
+        ]
+      },
+      {
+        "id": "citanje",
+        "kind": "READING",
+        "title": "II. Razumijevanje čitanoga teksta",
+        "instructions": "Read the text, then answer from the text.",
+        "passPercent": 60,
+        "passages": [
+          { "id": "ana", "title": "MOJA PRIJATELJICA ANA",
+            "text": "Moja prijateljica Ana ima trideset godina. Ona je iz Osijeka, ali sada živi i radi u Zagrebu. Ana je medicinska sestra i radi u bolnici. Njezin muž Ivan je kuhar u restoranu u centru grada. Ana i Ivan imaju jedno dijete, kćer Luciju, koja ima pet godina i ide u vrtić. Vikendom obitelj voli ići u park ili posjetiti baku i djeda u Osijeku. Ana uči engleski jer želi putovati u Ameriku.",
+            "audioOnly": false }
+        ],
+        "questions": [
+          { "type": "MCQ", "difficulty": 2, "prompt": "Odakle je Ana?",
+            "options": ["iz Osijeka", "iz Zagreba", "iz Splita", "iz Amerike"], "answer": "iz Osijeka",
+            "explanation": "'Ona je iz Osijeka' — she is FROM Osijek (she lives in Zagreb now)." },
+          { "type": "MCQ", "difficulty": 3, "prompt": "Što Ana radi?",
+            "options": ["medicinska je sestra", "kuharica je", "učiteljica je", "prodavačica je"], "answer": "medicinska je sestra",
+            "explanation": "'Ana je medicinska sestra i radi u bolnici.'" },
+          { "type": "MCQ", "difficulty": 3, "prompt": "Gdje radi njezin muž?",
+            "options": ["u restoranu", "u bolnici", "u vrtiću", "u školi"], "answer": "u restoranu",
+            "explanation": "'Ivan je kuhar u restoranu u centru grada.'" },
+          { "type": "FILL", "difficulty": 4, "prompt": "Koliko godina ima Lucija? (upišite broj)",
+            "answer": "5", "accepted": ["pet"],
+            "explanation": "'kćer Luciju, koja ima pet godina'." },
+          { "type": "MCQ", "difficulty": 4, "prompt": "Što obitelj voli raditi vikendom?",
+            "options": ["ići u park ili posjetiti baku i djeda", "raditi u bolnici", "učiti engleski", "kuhati u restoranu"], "answer": "ići u park ili posjetiti baku i djeda",
+            "explanation": "'Vikendom obitelj voli ići u park ili posjetiti baku i djeda.'" },
+          { "type": "MCQ", "difficulty": 5, "prompt": "Zašto Ana uči engleski?",
+            "options": ["jer želi putovati u Ameriku", "jer radi u Americi", "jer je iz Amerike", "jer njezin muž govori engleski"], "answer": "jer želi putovati u Ameriku",
+            "explanation": "'uči engleski jer želi putovati u Ameriku.'" }
+        ]
+      },
+      {
+        "id": "gramatika",
+        "kind": "GRAMMAR",
+        "title": "III. Poznavanje gramatičkih struktura",
+        "instructions": "Choose the correct form. Diacritics count.",
+        "passPercent": 60,
+        "questions": [
+          { "type": "MCQ", "difficulty": 2, "prompt": "Mi ______ studenti.",
+            "options": ["smo", "sam", "su", "ste"], "answer": "smo", "strictDiacritics": true,
+            "explanation": "biti: ja sam, ti si, on je, mi SMO, vi ste, oni su." },
+          { "type": "MCQ", "difficulty": 3, "prompt": "Svako jutro pijem ______.",
+            "options": ["kavu", "kava", "kavi", "kavom"], "answer": "kavu", "strictDiacritics": true,
+            "explanation": "Direct object → accusative: kava → kavu." },
+          { "type": "MCQ", "difficulty": 3, "prompt": "______ li engleski?",
+            "options": ["Govoriš", "Govorim", "Govoriti", "Govore"], "answer": "Govoriš", "strictDiacritics": true,
+            "explanation": "Yes/no question: verb + li — 'Govoriš li engleski?' (Do you speak English?)." },
+          { "type": "MCQ", "difficulty": 4, "prompt": "Ja ______ auto.",
+            "options": ["nemam", "ne imam", "nisam", "nemaš"], "answer": "nemam", "strictDiacritics": true,
+            "explanation": "imati negates as one word: nemam, nemaš, nema…" },
+          { "type": "FILL", "difficulty": 4, "prompt": "Jučer sam ______ u kinu. (biti, ženski rod)",
+            "answer": "bila", "strictDiacritics": true,
+            "explanation": "Perfekt participle agrees with gender: bio (m) / BILA (f)." },
+          { "type": "MCQ", "difficulty": 5, "prompt": "Sutra ______ učiti hrvatski.",
+            "options": ["ću", "sam", "bih", "je"], "answer": "ću", "strictDiacritics": true,
+            "explanation": "Futur I = ću/ćeš/će + infinitive: 'Sutra ću učiti.'" },
+          { "type": "MCQ", "difficulty": 5, "prompt": "Ovo je ______ sestra.",
+            "options": ["moja", "moj", "moje", "moji"], "answer": "moja", "strictDiacritics": true,
+            "explanation": "Possessive agrees with the noun: sestra is feminine → moja." },
+          { "type": "FILL", "difficulty": 6, "prompt": "Živim u ______. (Zagreb)",
+            "answer": "Zagrebu", "strictDiacritics": true,
+            "explanation": "Location after 'u' → locative: Zagreb → Zagrebu." }
+        ]
+      },
+      {
+        "id": "pisanje",
+        "kind": "WRITING",
+        "title": "IV. Pisano sporazumijevanje",
+        "instructions": "Write 4-5 sentences per task, then honestly check the rubric.",
+        "prompts": [
+          { "prompt": "Predstavite se: ime, odakle ste, gdje živite, što radite, što volite. (4-5 rečenica)",
+            "modelAnswer": "Zovem se Ana i imam trideset godina. Dolazim iz Amerike, ali sada živim u Zagrebu. Radim kao učiteljica engleskog jezika. Volim čitati knjige i šetati uz rijeku. Učim hrvatski svaki dan.",
+            "rubric": ["4-5 complete sentences", "biti and one more present-tense verb used correctly", "Correct case after iz/u (iz Amerike, u Zagrebu)", "Correct spelling incl. diacritics"] },
+          { "prompt": "Napišite kratku razglednicu s odmora prijatelju. (4-5 rečenica)",
+            "modelAnswer": "Dragi Marko! Pozdrav s mora. Vrijeme je sunčano i toplo. Svaki dan plivamo i jedemo ribu. More je prekrasno. Vidimo se sljedeći tjedan!",
+            "rubric": ["Greeting + sign-off present", "4-5 short sentences about the holiday", "Present tense forms correct", "Correct spelling incl. diacritics"] }
+        ]
+      },
+      {
+        "id": "govorenje",
+        "kind": "SPEAKING",
+        "title": "V. Usmeno sporazumijevanje",
+        "instructions": "Speak ALOUD ~1 minute per prompt, then check the rubric.",
+        "prompts": [
+          { "prompt": "Predstavite se i ispričajte o svojoj obitelji. (oko 1 minute)",
+            "modelAnswer": "Dobar dan! Zovem se…, imam … godina i dolazim iz… Moja žena je Hrvatica. Imamo psa. Moji roditelji žive u… Imam brata i sestru. Volim sport i glazbu.",
+            "rubric": ["Spoke ~1 minute without stopping", "Used ja sam / imam correctly", "Family words correct (žena, brat, sestra, roditelji)", "Understandable pronunciation of č/ć/š/ž"] },
+          { "prompt": "Opišite svoj dan: jutro, posao/škola, večer. (oko 1 minute)",
+            "modelAnswer": "Ustajem u sedam sati. Doručkujem i pijem kavu. Radim od devet do pet. Poslije posla idem u teretanu. Navečer večeram i gledam televiziju. Spavam od jedanaest sati.",
+            "rubric": ["Morning, day and evening all covered", "Time expressions used (u sedam sati…)", "Verbs in correct 1st person", "Connected sentences, not single words"] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hr-a2-mock",
+    "levelId": "A2",
+    "title": "A2 mock exam (vježba u službenom formatu)",
+    "description": "Practice mock at A2 in the official five-section format — the bridge between the basics and the real B1 certificate exam.",
+    "passRule": "≥60% in listening, reading and grammar + pass in writing and speaking.",
+    "sources": ["croaticum-b1-sample", "asoo"],
+    "sections": [
+      {
+        "id": "slusanje",
+        "kind": "LISTENING",
+        "title": "I. Razumijevanje slušanoga teksta",
+        "instructions": "Listen (you may replay twice) and answer. The text stays hidden.",
+        "passPercent": 60,
+        "questions": [
+          { "type": "MCQ", "difficulty": 3, "prompt": "Zašto trajekt danas ne vozi?",
+            "audioText": "Zbog jakog vjetra trajekt za Hvar danas ne vozi. Sljedeći polazak je sutra ujutro u sedam sati.",
+            "options": ["zbog jakog vjetra", "zbog kiše", "zbog kvara", "zbog gužve"], "answer": "zbog jakog vjetra",
+            "explanation": "'Zbog jakog vjetra' = because of strong wind." },
+          { "type": "FILL", "difficulty": 4, "prompt": "Kada je sljedeći polazak trajekta? (npr. 'sutra u 7')",
+            "audioText": "Zbog jakog vjetra trajekt za Hvar danas ne vozi. Sljedeći polazak je sutra ujutro u sedam sati.",
+            "answer": "sutra u 7", "accepted": ["sutra ujutro u sedam", "sutra u sedam", "sutra ujutro u 7", "u 7", "u sedam"],
+            "explanation": "'sutra ujutro u sedam sati' = tomorrow morning at seven." },
+          { "type": "MCQ", "difficulty": 4, "prompt": "Što je danas na akciji?",
+            "audioText": "Poštovani kupci, danas su na akciji svježe jagode iz Neretve po cijeni od tri eura za kilogram.",
+            "options": ["jagode", "jabuke", "banane", "rajčice"], "answer": "jagode",
+            "explanation": "'na akciji svježe jagode' = fresh strawberries on sale." },
+          { "type": "MCQ", "difficulty": 5, "prompt": "TOČNO ili NETOČNO: Ordinacija radi poslijepodne.",
+            "audioText": "Dobar dan, dobili ste ordinaciju doktorice Kovač. Radimo svaki radni dan od osam do četrnaest sati. Za hitne slučajeve nazovite sto devedeset četiri.",
+            "options": ["NETOČNO", "TOČNO"], "answer": "NETOČNO",
+            "explanation": "Open 'od osam do četrnaest' (8:00-14:00) — mornings only." },
+          { "type": "FILL", "difficulty": 5, "prompt": "Koji broj zovete za hitne slučajeve? (upišite broj)",
+            "audioText": "Dobar dan, dobili ste ordinaciju doktorice Kovač. Radimo svaki radni dan od osam do četrnaest sati. Za hitne slučajeve nazovite sto devedeset četiri.",
+            "answer": "194", "accepted": ["sto devedeset četiri"],
+            "explanation": "194 is the Croatian emergency medical number." },
+          { "type": "MCQ", "difficulty": 6, "prompt": "TOČNO ili NETOČNO: Koncert je preseljen u dvoranu zbog kiše.",
+            "audioText": "Večerašnji koncert klape neće se održati na trgu zbog najavljene kiše, nego u gradskoj dvorani, s početkom u dvadeset sati.",
+            "options": ["TOČNO", "NETOČNO"], "answer": "TOČNO",
+            "explanation": "Moved from the square to the city hall because of announced rain." }
+        ]
+      },
+      {
+        "id": "citanje",
+        "kind": "READING",
+        "title": "II. Razumijevanje čitanoga teksta",
+        "instructions": "Read the text, then answer. The last two items are gap-fills — pick the word in its correct form.",
+        "passPercent": 60,
+        "passages": [
+          { "id": "oglas", "title": "OGLAS: STAN ZA NAJAM",
+            "text": "Iznajmljujem dvosoban stan u centru Rijeke, na trećem katu zgrade s dizalom. Stan ima šezdeset kvadrata, veliku dnevnu sobu, spavaću sobu, kuhinju i kupaonicu. Balkon gleda na more. Stan je namješten i ima perilicu rublja. Najam je petsto eura mjesečno plus režije. Parkiralište je iza zgrade i besplatno je za stanare. Kućni ljubimci nisu dopušteni. Stan je slobodan od prvog rujna. Za razgled nazovite broj 091 555 333 radnim danom poslije šesnaest sati.",
+            "audioOnly": false }
+        ],
+        "questions": [
+          { "type": "MCQ", "difficulty": 3, "prompt": "Na kojem je katu stan?",
+            "options": ["na trećem", "na prvom", "na šestom", "u prizemlju"], "answer": "na trećem",
+            "explanation": "'na trećem katu zgrade s dizalom'." },
+          { "type": "FILL", "difficulty": 4, "prompt": "Koliko košta najam mjesečno? (upišite broj u eurima)",
+            "answer": "500", "accepted": ["petsto", "500 eura", "petsto eura"],
+            "explanation": "'Najam je petsto eura mjesečno plus režije.'" },
+          { "type": "MCQ", "difficulty": 4, "prompt": "Što se vidi s balkona?",
+            "options": ["more", "park", "trg", "parkiralište"], "answer": "more",
+            "explanation": "'Balkon gleda na more.'" },
+          { "type": "MCQ", "difficulty": 5, "prompt": "TOČNO ili NETOČNO: U stan smijete dovesti psa.",
+            "options": ["NETOČNO", "TOČNO"], "answer": "NETOČNO",
+            "explanation": "'Kućni ljubimci nisu dopušteni' — pets not allowed." },
+          { "type": "MCQ", "difficulty": 5, "prompt": "Od kada je stan slobodan?",
+            "options": ["od 1. rujna", "od 1. srpnja", "od 3. rujna", "odmah"], "answer": "od 1. rujna",
+            "explanation": "'slobodan od prvog rujna' = from September 1st." },
+          { "type": "MCQ", "difficulty": 5, "prompt": "Kada možete nazvati za razgled?",
+            "options": ["radnim danom poslije 16 sati", "vikendom ujutro", "svaki dan", "samo nedjeljom"], "answer": "radnim danom poslije 16 sati",
+            "explanation": "'radnim danom poslije šesnaest sati'." },
+          { "type": "MCQ", "difficulty": 6, "prompt": "Upišite riječ: 'Tražim stan s ______ pogledom na more.' (lijep)",
+            "options": ["lijepim", "lijep", "lijepog", "lijepom"], "answer": "lijepim", "strictDiacritics": true,
+            "explanation": "s + instrumental → adjective takes -im: s lijepim pogledom." },
+          { "type": "MCQ", "difficulty": 6, "prompt": "Upišite riječ: 'Stanujem ovdje već pet ______.' (godina)",
+            "options": ["godina", "godine", "godinu", "godinama"], "answer": "godina", "strictDiacritics": true,
+            "explanation": "5+ takes the genitive plural: pet godina." }
+        ]
+      },
+      {
+        "id": "gramatika",
+        "kind": "GRAMMAR",
+        "title": "III. Poznavanje gramatičkih struktura",
+        "instructions": "Choose the correct form. Diacritics count.",
+        "passPercent": 60,
+        "questions": [
+          { "type": "MCQ", "difficulty": 4, "prompt": "Idem u kino sa ______. (sestra)",
+            "options": ["sestrom", "sestru", "sestri", "sestre"], "answer": "sestrom", "strictDiacritics": true,
+            "explanation": "s/sa + instrumental: sestra → sestrom." },
+          { "type": "MCQ", "difficulty": 4, "prompt": "Nema ______ u hladnjaku. (mlijeko)",
+            "options": ["mlijeka", "mlijeko", "mlijeku", "mlijekom"], "answer": "mlijeka", "strictDiacritics": true,
+            "explanation": "nema + genitive: mlijeko → mlijeka." },
+          { "type": "MCQ", "difficulty": 5, "prompt": "Zagreb je ______ od Splita.",
+            "options": ["veći", "velik", "najveći", "više"], "answer": "veći", "strictDiacritics": true,
+            "explanation": "Comparative of velik is irregular: veći; 'od' + genitive = than." },
+          { "type": "MCQ", "difficulty": 5, "prompt": "______ li mi pomoći, molim vas?",
+            "options": ["Biste", "Bi", "Bih", "Bismo"], "answer": "Biste", "strictDiacritics": true,
+            "explanation": "Polite request, vi-form conditional: 'Biste li mi pomogli…' — biste for vi." },
+          { "type": "MCQ", "difficulty": 5, "prompt": "Jučer sam ______ cijelu knjigu.",
+            "options": ["pročitao", "čitao", "čitam", "pročitam"], "answer": "pročitao", "strictDiacritics": true,
+            "explanation": "Completed whole action → perfective: pročitati. 'čitao sam' = was reading." },
+          { "type": "FILL", "difficulty": 6, "prompt": "Dajem knjigu ______. (prijatelj)",
+            "answer": "prijatelju", "strictDiacritics": true,
+            "explanation": "Recipient → dative: prijatelj → prijatelju." },
+          { "type": "MCQ", "difficulty": 6, "prompt": "Kad ______ vremena, nazvat ću te.",
+            "options": ["budem imao", "imam", "ću imati", "bih imao"], "answer": "budem imao", "strictDiacritics": true,
+            "explanation": "Future time clause after 'kad' → futur II (budem + participle), not futur I." },
+          { "type": "MCQ", "difficulty": 6, "prompt": "Ona ______ jučer poslala poruku.",
+            "options": ["mi je", "je mi", "mi", "je"], "answer": "mi je", "strictDiacritics": true,
+            "explanation": "Clitic order: dative 'mi' before 'je' — 'je' always goes last in the cluster." },
+          { "type": "MCQ", "difficulty": 7, "prompt": "______ je hladno. (ja)",
+            "options": ["Meni", "Ja", "Mene", "Mnom"], "answer": "Meni", "strictDiacritics": true,
+            "explanation": "Dative experiencer: 'Meni je hladno' = I am cold." },
+          { "type": "FILL", "difficulty": 7, "prompt": "Vidimo se u ______! (subota)",
+            "answer": "subotu", "strictDiacritics": true,
+            "explanation": "u + accusative for days: u subotu = on Saturday." }
+        ]
+      },
+      {
+        "id": "pisanje",
+        "kind": "WRITING",
+        "title": "IV. Pisano sporazumijevanje",
+        "instructions": "Write 5-6 sentences per task, then honestly check the rubric.",
+        "prompts": [
+          { "prompt": "Opišite svoj stan ili kuću: sobe, namještaj, što volite kod svog doma. (5-6 rečenica)",
+            "modelAnswer": "Živim u dvosobnom stanu na drugom katu. Stan ima veliku dnevnu sobu, spavaću sobu, kuhinju i kupaonicu. U dnevnoj sobi imamo kauč, stol i policu punu knjiga. S balkona se vidi park. Najviše volim svoju kuhinju jer volim kuhati. Stan je blizu tramvajske stanice, pa mi je lako ići na posao.",
+            "rubric": ["5-6 complete sentences", "Rooms and furniture vocabulary correct", "Locative used correctly (u stanu, na katu, u sobi)", "At least one reason with jer/zato što", "Correct spelling incl. diacritics"] },
+          { "prompt": "Napišite poruku prijatelju: dogovorite kada i gdje ćete se naći za vikend. (5-6 rečenica)",
+            "modelAnswer": "Bok Ivane! Jesi li slobodan u subotu poslijepodne? Mislio sam da odemo na kavu u centar. Možemo se naći ispred kazališta u pet sati. Ako ti ne odgovara subota, može i nedjelja ujutro. Javi mi što misliš!",
+            "rubric": ["Greeting + closing present", "A concrete time and place proposed", "A question asked (Jesi li…? / Može li…?)", "Futur I or dogovor phrases used", "Correct spelling incl. diacritics"] }
+        ]
+      },
+      {
+        "id": "govorenje",
+        "kind": "SPEAKING",
+        "title": "V. Usmeno sporazumijevanje",
+        "instructions": "Speak ALOUD 1-1.5 minutes per prompt, then check the rubric.",
+        "prompts": [
+          { "prompt": "Ispričajte što ste radili prošli vikend. (1-1.5 min)",
+            "modelAnswer": "Prošli vikend bio je jako lijep. U subotu ujutro išao sam na tržnicu i kupio sam voće. Poslijepodne smo žena i ja šetali po gradu i pili kavu. Navečer smo gledali film kod kuće. U nedjelju sam se odmarao i čitao knjigu. Navečer smo večerali kod njezinih roditelja.",
+            "rubric": ["Perfekt used throughout with correct gender agreement", "At least 5 different verbs", "Time expressions (u subotu, poslijepodne, navečer)", "Connected story, not isolated sentences"] },
+          { "prompt": "Usporedite život u gradu i na selu: što je bolje i zašto? (1-1.5 min)",
+            "modelAnswer": "U gradu je život brži i ima više posla, trgovina i restorana. Na selu je mirnije i zrak je čišći. Mislim da je grad bolji za mlade ljude jer ima više mogućnosti. S druge strane, selo je ljepše za obitelj s djecom. Ja bih volio živjeti blizu grada, ali u mirnom kvartu.",
+            "rubric": ["At least 3 comparatives used correctly (brži, mirnije, čišći…)", "An opinion with mislim da / po meni", "A reason with jer", "kondicional attempted (volio bih…)"] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hr-b1-mock",
+    "levelId": "B1",
+    "title": "B1 mock exam (službeni format)",
+    "description": "A full mock of the official Croatian B1 exam (Ispit iz poznavanja hrvatskoga jezika i latiničnog pisma). Five sections in the official order and format; scored by the official rule: at least 60% in listening, reading and grammar, and a pass in writing and speaking.",
+    "passRule": "≥60% in each of the three scored sections (listening, reading, grammar) + pass in writing and speaking. Every section must be passed.",
+    "sources": ["nn-100-2021", "croaticum-b1-sample", "asoo"],
+    "sections": [
+      {
+        "id": "slusanje",
+        "kind": "LISTENING",
+        "title": "I. Razumijevanje slušanoga teksta",
+        "instructions": "Listen to each item (you may play it twice, like in the real exam) and answer. The text stays hidden — this is a listening test.",
+        "passPercent": 60,
+        "questions": [
+          {
+            "type": "MCQ", "difficulty": 3,
+            "prompt": "Koliko dugo se čeka na graničnom prijelazu?",
+            "audioText": "Na graničnom prijelazu Bajakovo vozila na izlazu iz zemlje čekaju oko četrdeset i pet minuta.",
+            "options": ["oko 45 minuta", "oko 15 minuta", "oko sat i pol", "ne čeka se"],
+            "answer": "oko 45 minuta",
+            "explanation": "The recording says vehicles wait 'oko četrdeset i pet minuta' (about 45 minutes) at the Bajakovo crossing."
+          },
+          {
+            "type": "MCQ", "difficulty": 3,
+            "prompt": "Zašto je zatvorena cesta prema Samoboru?",
+            "audioText": "Zbog radova na cesti zatvorena je državna cesta prema Samoboru do kraja mjeseca.",
+            "options": ["zbog radova", "zbog nesreće", "zbog magle", "zbog snijega"],
+            "answer": "zbog radova",
+            "explanation": "'Zbog radova na cesti' = because of roadworks."
+          },
+          {
+            "type": "FILL", "difficulty": 4,
+            "prompt": "Koji broj zovete ako trebate pomoć na cesti? (upišite broj)",
+            "audioText": "Ako vam zatreba pomoć na cesti, nazovite broj tisuću devetsto osamdeset sedam.",
+            "answer": "1987", "accepted": ["tisuću devetsto osamdeset sedam"],
+            "explanation": "Croatian roadside assistance: 1987 (HAK)."
+          },
+          {
+            "type": "MCQ", "difficulty": 4,
+            "prompt": "Kada počinje koncert?",
+            "audioText": "Večerašnji koncert na glavnom trgu počinje u dvadeset sati, a ulaz je slobodan za sve posjetitelje.",
+            "options": ["u 20 sati", "u 12 sati", "u 18 sati", "u 22 sata"],
+            "answer": "u 20 sati",
+            "explanation": "'u dvadeset sati' = at 8 p.m. (20:00)."
+          },
+          {
+            "type": "MCQ", "difficulty": 5,
+            "prompt": "TOČNO ili NETOČNO: Festival se održava u Varaždinu.",
+            "audioText": "Poznati festival ulične umjetnosti ove se godine ponovno održava u Varaždinu, od dvadeset drugog do trideset prvog kolovoza. Očekuje se više od tisuću izvođača iz cijele Europe: glumaca, glazbenika, plesača i žonglera. Program je namijenjen i djeci i odraslima, a većina događanja je besplatna.",
+            "options": ["TOČNO", "NETOČNO"],
+            "answer": "TOČNO",
+            "explanation": "The recording says the festival 'održava se u Varaždinu'."
+          },
+          {
+            "type": "MCQ", "difficulty": 5,
+            "prompt": "TOČNO ili NETOČNO: Program je samo za odrasle.",
+            "audioText": "Poznati festival ulične umjetnosti ove se godine ponovno održava u Varaždinu, od dvadeset drugog do trideset prvog kolovoza. Očekuje se više od tisuću izvođača iz cijele Europe: glumaca, glazbenika, plesača i žonglera. Program je namijenjen i djeci i odraslima, a većina događanja je besplatna.",
+            "options": ["NETOČNO", "TOČNO"],
+            "answer": "NETOČNO",
+            "explanation": "'Program je namijenjen i djeci i odraslima' — for children AND adults."
+          },
+          {
+            "type": "MCQ", "difficulty": 6,
+            "prompt": "TOČNO ili NETOČNO: Većinu događanja treba platiti.",
+            "audioText": "Poznati festival ulične umjetnosti ove se godine ponovno održava u Varaždinu, od dvadeset drugog do trideset prvog kolovoza. Očekuje se više od tisuću izvođača iz cijele Europe: glumaca, glazbenika, plesača i žonglera. Program je namijenjen i djeci i odraslima, a većina događanja je besplatna.",
+            "options": ["NETOČNO", "TOČNO"],
+            "answer": "NETOČNO",
+            "explanation": "'većina događanja je besplatna' — most events are free."
+          },
+          {
+            "type": "FILL", "difficulty": 6,
+            "prompt": "Od kojeg do kojeg datuma traje festival? (npr. 'od 1. do 5. svibnja')",
+            "audioText": "Poznati festival ulične umjetnosti ove se godine ponovno održava u Varaždinu, od dvadeset drugog do trideset prvog kolovoza.",
+            "answer": "od 22. do 31. kolovoza",
+            "accepted": ["od 22 do 31 kolovoza", "22. do 31. kolovoza", "22-31 kolovoza", "od 22. do 31. 8."],
+            "explanation": "'od dvadeset drugog do trideset prvog kolovoza' = from 22 to 31 August."
+          }
+        ]
+      },
+      {
+        "id": "citanje",
+        "kind": "READING",
+        "title": "II. Razumijevanje čitanoga teksta",
+        "instructions": "Read the text carefully, then answer the questions from the text.",
+        "passPercent": 60,
+        "passages": [
+          {
+            "id": "biografija",
+            "title": "NIKOLA TESLA",
+            "text": "Jedan od najpoznatijih izumitelja svijeta, Nikola Tesla, rodio se 1856. godine u Smiljanu, malome selu u Lici. Školu je polazio u Gospiću i Karlovcu, a studirao je u Grazu i Pragu. Kao mladi inženjer radio je u Budimpešti i Parizu, a 1884. godine otputovao je u Ameriku, gdje je proveo ostatak života. Tesla je najpoznatiji po svojim izumima na području izmjenične struje, radija i daljinskog upravljanja. Prijavio je više od tri stotine patenata. Iako je postao slavan, nikada nije postao bogat jer ga je novac zanimao manje od znanosti. Umro je u New Yorku 1943. godine, sam u hotelskoj sobi. Danas njegovo ime nosi mjerna jedinica, poznata tvrtka električnih automobila i mnoge ulice diljem svijeta.",
+            "audioOnly": false
+          }
+        ],
+        "questions": [
+          {
+            "type": "MCQ", "difficulty": 3,
+            "prompt": "Gdje se rodio Nikola Tesla?",
+            "options": ["u Smiljanu u Lici", "u Gospiću", "u Grazu", "u New Yorku"],
+            "answer": "u Smiljanu u Lici",
+            "explanation": "'rodio se … u Smiljanu, malome selu u Lici.'"
+          },
+          {
+            "type": "MCQ", "difficulty": 4,
+            "prompt": "Gdje je Tesla studirao?",
+            "options": ["u Grazu i Pragu", "u Gospiću i Karlovcu", "u Budimpešti i Parizu", "u Americi"],
+            "answer": "u Grazu i Pragu",
+            "explanation": "School in Gospić and Karlovac, but he STUDIED in Graz and Prague."
+          },
+          {
+            "type": "FILL", "difficulty": 5,
+            "prompt": "Koje je godine otputovao u Ameriku?",
+            "answer": "1884", "accepted": ["1884."],
+            "explanation": "'1884. godine otputovao je u Ameriku.'"
+          },
+          {
+            "type": "MCQ", "difficulty": 5,
+            "prompt": "Po čemu je Tesla najpoznatiji?",
+            "options": ["po izumima na području izmjenične struje", "po električnim automobilima", "po hotelima u New Yorku", "po studiju u Pragu"],
+            "answer": "po izumima na području izmjenične struje",
+            "explanation": "'najpoznatiji po svojim izumima na području izmjenične struje, radija i daljinskog upravljanja.'"
+          },
+          {
+            "type": "MCQ", "difficulty": 6,
+            "prompt": "Zašto Tesla nikada nije postao bogat?",
+            "options": ["jer ga je novac zanimao manje od znanosti", "jer nije imao patente", "jer nije bio slavan", "jer je živio u hotelu"],
+            "answer": "jer ga je novac zanimao manje od znanosti",
+            "explanation": "'nikada nije postao bogat jer ga je novac zanimao manje od znanosti.'"
+          },
+          {
+            "type": "MCQ", "difficulty": 6,
+            "prompt": "Upišite riječ koja nedostaje: 'Alergija na ambroziju ___ muči mnoge ljude u Hrvatskoj.'",
+            "options": ["najčešće", "najmanja", "najveća", "najbolje"],
+            "answer": "najčešće",
+            "explanation": "Adverb needed before the verb: 'najčešće muči' = most often troubles. (Word-bank gap-fill format from the official sample.)",
+            "strictDiacritics": true
+          },
+          {
+            "type": "MCQ", "difficulty": 7,
+            "prompt": "Upišite riječ koja nedostaje: 'Alergičnim osobama ne preporučuje se boravak na ___ ujutro.'",
+            "options": ["otvorenom", "otvoreno", "otvorenim", "otvorenoga"],
+            "answer": "otvorenom",
+            "explanation": "'na otvorenom' (in the open air) — locative after 'na' for location.",
+            "strictDiacritics": true
+          },
+          {
+            "type": "MCQ", "difficulty": 7,
+            "prompt": "Upišite riječ koja nedostaje: 'Biljka počinje cvjetati sredinom ___.' (srpanj)",
+            "options": ["srpnja", "srpanj", "srpnju", "srpnjem"],
+            "answer": "srpnja",
+            "explanation": "'sredinom' (in the middle of) takes the genitive: srpanj → srpnja (fleeting a).",
+            "strictDiacritics": true
+          }
+        ]
+      },
+      {
+        "id": "gramatika",
+        "kind": "GRAMMAR",
+        "title": "III. Poznavanje gramatičkih struktura",
+        "instructions": "Choose the correct form — exactly like the official exam. Diacritics matter.",
+        "passPercent": 60,
+        "questions": [
+          {
+            "type": "MCQ", "difficulty": 4,
+            "prompt": "Hrvatska ima oko četiri milijuna ______.",
+            "options": ["stanovnika", "stanovnik", "stanovnici", "stanovnicima"],
+            "answer": "stanovnika", "strictDiacritics": true,
+            "explanation": "Numbers above 4 (and milijun) take the genitive plural: stanovnika."
+          },
+          {
+            "type": "MCQ", "difficulty": 4,
+            "prompt": "______ uvijek igram tenis.",
+            "options": ["Četvrtkom", "Četvrtak", "U četvrtku", "Četvrtka"],
+            "answer": "Četvrtkom", "strictDiacritics": true,
+            "explanation": "The instrumental of time expresses a regular pattern: četvrtkom = on Thursdays."
+          },
+          {
+            "type": "MCQ", "difficulty": 5,
+            "prompt": "______ zajedno na posao.",
+            "options": ["Ići ćemo", "Ić ćemo", "Ićićemo", "Ićemo"],
+            "answer": "Ići ćemo", "strictDiacritics": true,
+            "explanation": "Verbs in -ći keep the full infinitive before the auxiliary: ići ćemo (only -ti verbs drop the -i: radit ću)."
+          },
+          {
+            "type": "MCQ", "difficulty": 6,
+            "prompt": "I mi ______ rado išli na utakmicu!",
+            "options": ["bismo", "bi", "bimo", "bih"],
+            "answer": "bismo", "strictDiacritics": true,
+            "explanation": "Conditional 1st person plural is bismo — colloquial 'bi' for all persons is not standard."
+          },
+          {
+            "type": "MCQ", "difficulty": 6,
+            "prompt": "Naočale su ______ stvarima na polici.",
+            "options": ["među", "između", "pokraj", "kraj"],
+            "answer": "među", "strictDiacritics": true,
+            "explanation": "'među' + instrumental = among (more than two things); 'između' + genitive = between two."
+          },
+          {
+            "type": "MCQ", "difficulty": 6,
+            "prompt": "Zakasnila je ______ se tramvaj pokvario.",
+            "options": ["jer", "zbog", "da", "što"],
+            "answer": "jer", "strictDiacritics": true,
+            "explanation": "'jer' introduces a causal clause with a verb; 'zbog' takes a noun in the genitive."
+          },
+          {
+            "type": "MCQ", "difficulty": 7,
+            "prompt": "Čuli smo samo lijepo o ______.",
+            "options": ["njemu", "mu", "njega", "on"],
+            "answer": "njemu", "strictDiacritics": true,
+            "explanation": "After a preposition the STRESSED pronoun form is required: o njemu (never the clitic 'mu')."
+          },
+          {
+            "type": "MCQ", "difficulty": 7,
+            "prompt": "______ je živjeti na moru nego u unutrašnjosti.",
+            "options": ["Ljepše", "Lijepo", "Ljepši", "Najljepše"],
+            "answer": "Ljepše", "strictDiacritics": true,
+            "explanation": "Comparative ADVERB: ljepše (nicer). 'Ljepši' is the adjective form; 'nego' signals the comparison."
+          },
+          {
+            "type": "MCQ", "difficulty": 8,
+            "prompt": "Marija je ______ mnogo romana. (pisati family)",
+            "options": ["napisala", "zapisala", "prepisala", "opisala"],
+            "answer": "napisala", "strictDiacritics": true,
+            "explanation": "napisati = write (works); zapisati = note down; prepisati = copy; opisati = describe. Verb families are core B1 material."
+          },
+          {
+            "type": "MCQ", "difficulty": 8,
+            "prompt": "Film koji smo jučer ______ uopće nam se nije svidio.",
+            "options": ["pogledali", "ugledali", "zagledali", "nagledali"],
+            "answer": "pogledali", "strictDiacritics": true,
+            "explanation": "pogledati = watch (a film, completed); ugledati = catch sight of; zagledati se = stare/fall for."
+          },
+          {
+            "type": "FILL", "difficulty": 9,
+            "prompt": "Putujem s ______ na more. (prijatelj → instrumental)",
+            "answer": "prijateljem", "strictDiacritics": true,
+            "explanation": "s + instrumental for company; soft-consonant masculine takes -em: s prijateljem."
+          },
+          {
+            "type": "FILL", "difficulty": 9,
+            "prompt": "Živim u ______ već pet godina. (Zagreb → locative)",
+            "answer": "Zagrebu", "strictDiacritics": true,
+            "explanation": "Static location after 'u' takes the locative: u Zagrebu."
+          }
+        ]
+      },
+      {
+        "id": "pisanje",
+        "kind": "WRITING",
+        "title": "IV. Pisano sporazumijevanje",
+        "instructions": "Write 7-8 sentences per task, like in the official exam. Then compare with the model answer and honestly check every rubric point before marking yourself.",
+        "prompts": [
+          {
+            "prompt": "Opišite svoj uobičajeni dan: kada ustajete, što radite ujutro, gdje radite ili učite, što radite poslijepodne i navečer. (7-8 rečenica)",
+            "modelAnswer": "Obično ustajem u sedam sati. Prvo se istuširam i doručkujem, a onda idem na posao autobusom. Radim u uredu u centru grada od devet do pet. Poslijepodne idem u teretanu ili trčim u parku. Navečer kuham večeru sa ženom i razgovaramo o danu. Poslije večere obično gledamo film ili čitam knjigu. Učim hrvatski svaki dan po pola sata. Spavati idem oko jedanaest sati.",
+            "rubric": [
+              "7-8 complete sentences on the topic",
+              "Correct present-tense endings for all persons used",
+              "Reflexive verbs handled correctly (tuširam se, 'se' in second position)",
+              "At least one time expression per sentence part (u sedam sati, poslijepodne, navečer…)",
+              "Cases correct after prepositions (na posao — acc., u uredu — loc., autobusom — ins.)",
+              "Correct spelling including č/ć/š/ž/đ"
+            ]
+          },
+          {
+            "prompt": "Napišite svoj životopis (CV) u 7-8 rečenica: tko ste, odakle ste, obrazovanje, radno iskustvo, znanje jezika, što volite raditi.",
+            "modelAnswer": "Zovem se Ana Barić i rođena sam 1990. godine u Splitu. Završila sam osnovnu i srednju školu u Splitu, a ekonomiju sam studirala u Zagrebu. Nakon studija radila sam tri godine u banci kao analitičarka. Sada radim u maloj tvrtki koja se bavi turizmom. Govorim engleski i njemački, a učim hrvatski. Volim putovati, čitati i baviti se sportom. U slobodno vrijeme volontiram u udruzi za zaštitu životinja. Tražim posao u kojem mogu raditi s ljudima.",
+            "rubric": [
+              "7-8 complete sentences covering identity, origin, education, work, languages, interests",
+              "Perfekt used correctly with gender agreement (završila sam / završio sam)",
+              "Years and places in correct cases (u Splitu, u Zagrebu — locative)",
+              "Profession vocabulary correct",
+              "At least one relative clause or connector (koji/koja, a, nakon)",
+              "Correct spelling including č/ć/š/ž/đ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "govorenje",
+        "kind": "SPEAKING",
+        "title": "V. Usmeno sporazumijevanje",
+        "instructions": "Speak ALOUD for 1-2 minutes per prompt (record yourself if you can). Then check the rubric honestly. In the real exam this section is a conversation with the examiner.",
+        "prompts": [
+          {
+            "prompt": "Predstavite se i ispričajte o svojoj obitelji, poslu i tome zašto učite hrvatski. (1-2 minute govora)",
+            "modelAnswer": "Dobar dan! Zovem se…, dolazim iz… Oženjen sam / Udana sam i moja žena / moj muž je iz Hrvatske. Radim kao… Hrvatski učim jer želim razgovarati s obitelji svoje žene / svog muža na hrvatskom i jer ćemo našu djecu odgajati dvojezično. Učim svaki dan: ponavljam riječi, slušam hrvatski i vježbam gramatiku. Najteže su mi padeži, ali svaki dan idu sve bolje.",
+            "rubric": [
+              "Spoke for at least a minute without long breaks",
+              "Used present, past AND future at least once each",
+              "Cases correct in the set phrases (iz Hrvatske, s obitelji, na hrvatskom)",
+              "Clear pronunciation of č/ć/š/ž/lj/nj",
+              "Self-corrected errors when noticed instead of stopping"
+            ]
+          },
+          {
+            "prompt": "Ispričajte što ste radili prošli vikend i što planirate sljedeći vikend. (1-2 minute govora)",
+            "modelAnswer": "Prošli vikend bio je odličan. U subotu ujutro išao sam na tržnicu i kupio sam voće i povrće. Poslijepodne smo žena i ja šetali uz more, a navečer smo večerali kod njezinih roditelja. U nedjelju sam se odmarao, čitao sam i gledao utakmicu. Sljedeći vikend planiramo putovati u Zagreb. Posjetit ćemo muzej i naći ćemo se s prijateljima. Ako bude lijepo vrijeme, ići ćemo i na Sljeme.",
+            "rubric": [
+              "Past events in perfekt with correct gender agreement",
+              "Aspect chosen correctly (šetali smo — process; kupio sam — completed)",
+              "Future plans with futur I (posjetit ćemo, naći ćemo se)",
+              "A conditional or future clause attempted (ako bude…)",
+              "Connected speech with onda/poslije/zatim, not isolated sentences"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

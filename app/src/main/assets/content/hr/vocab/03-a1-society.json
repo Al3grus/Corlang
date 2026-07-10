@@ -1,0 +1,1699 @@
+{
+  "packs": [
+    {
+      "id": "hobbies-sport",
+      "title": "Hobbies & sport",
+      "level": "A1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "sport",
+          "hr": "sport",
+          "en": "sport",
+          "pos": "n. m.",
+          "note": "also spelled šport in older usage",
+          "example": {
+            "target": "Koji sport voliš?",
+            "gloss": "Which sport do you like?"
+          }
+        },
+        {
+          "id": "nogomet",
+          "hr": "nogomet",
+          "en": "football / soccer",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'fudbal')",
+          "example": {
+            "target": "Igramo nogomet u parku.",
+            "gloss": "We play football in the park."
+          }
+        },
+        {
+          "id": "košarka",
+          "hr": "košarka",
+          "en": "basketball",
+          "pos": "n. f.",
+          "example": {
+            "target": "Moj brat igra košarku.",
+            "gloss": "My brother plays basketball."
+          }
+        },
+        {
+          "id": "rukomet",
+          "hr": "rukomet",
+          "en": "handball",
+          "pos": "n. m.",
+          "note": "Croatia is a world handball power",
+          "example": {
+            "target": "Rukomet je popularan u Hrvatskoj.",
+            "gloss": "Handball is popular in Croatia."
+          }
+        },
+        {
+          "id": "tenis",
+          "hr": "tenis",
+          "en": "tennis",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ljeti igram tenis.",
+            "gloss": "In summer I play tennis."
+          }
+        },
+        {
+          "id": "plivanje",
+          "hr": "plivanje",
+          "en": "swimming",
+          "pos": "n. n.",
+          "note": "verbal noun from plivati",
+          "example": {
+            "target": "Plivanje je zdravo.",
+            "gloss": "Swimming is healthy."
+          }
+        },
+        {
+          "id": "trčanje",
+          "hr": "trčanje",
+          "en": "running",
+          "pos": "n. n.",
+          "note": "verbal noun from trčati",
+          "example": {
+            "target": "Trčanje je dobro za srce.",
+            "gloss": "Running is good for the heart."
+          }
+        },
+        {
+          "id": "planinarenje",
+          "hr": "planinarenje",
+          "en": "hiking / mountaineering",
+          "pos": "n. n.",
+          "note": "planinar = hiker",
+          "example": {
+            "target": "Planinarenje je moj hobi.",
+            "gloss": "Hiking is my hobby."
+          }
+        },
+        {
+          "id": "šetnja",
+          "hr": "šetnja",
+          "en": "walk / stroll",
+          "pos": "n. f.",
+          "note": "ići u šetnju = to go for a walk",
+          "example": {
+            "target": "Idemo u šetnju poslije ručka.",
+            "gloss": "We're going for a walk after lunch."
+          }
+        },
+        {
+          "id": "bicikl",
+          "hr": "bicikl",
+          "en": "bicycle",
+          "pos": "n. m.",
+          "note": "voziti bicikl = to ride a bike",
+          "example": {
+            "target": "Vozim bicikl svaki dan.",
+            "gloss": "I ride my bike every day."
+          }
+        },
+        {
+          "id": "lopta",
+          "hr": "lopta",
+          "en": "ball",
+          "pos": "n. f.",
+          "example": {
+            "target": "Djeca se igraju loptom.",
+            "gloss": "The children are playing with a ball."
+          }
+        },
+        {
+          "id": "utakmica",
+          "hr": "utakmica",
+          "en": "match / game",
+          "pos": "n. f.",
+          "example": {
+            "target": "Večeras gledamo utakmicu.",
+            "gloss": "Tonight we're watching the match."
+          }
+        },
+        {
+          "id": "igralište",
+          "hr": "igralište",
+          "en": "playground / pitch",
+          "pos": "n. n.",
+          "example": {
+            "target": "Djeca su na igralištu.",
+            "gloss": "The children are at the playground."
+          }
+        },
+        {
+          "id": "teretana",
+          "hr": "teretana",
+          "en": "gym",
+          "pos": "n. f.",
+          "example": {
+            "target": "Idem u teretanu dva puta tjedno.",
+            "gloss": "I go to the gym twice a week."
+          }
+        },
+        {
+          "id": "trening",
+          "hr": "trening",
+          "en": "training / practice session",
+          "pos": "n. m.",
+          "example": {
+            "target": "Trening počinje u šest sati.",
+            "gloss": "Training starts at six o'clock."
+          }
+        },
+        {
+          "id": "trener",
+          "hr": "trener",
+          "en": "coach / trainer",
+          "pos": "n. m.",
+          "note": "female: trenerica",
+          "example": {
+            "target": "Naš trener je jako dobar.",
+            "gloss": "Our coach is very good."
+          }
+        },
+        {
+          "id": "igrač",
+          "hr": "igrač",
+          "en": "player",
+          "pos": "n. m.",
+          "note": "female: igračica",
+          "example": {
+            "target": "On je najbolji igrač u momčadi.",
+            "gloss": "He is the best player on the team."
+          }
+        },
+        {
+          "id": "momčad",
+          "hr": "momčad",
+          "en": "team",
+          "pos": "n. f.",
+          "note": "feminine despite the consonant ending; distinctly Croatian (vs 'tim' — also used)",
+          "example": {
+            "target": "Naša momčad dobro igra.",
+            "gloss": "Our team is playing well."
+          }
+        },
+        {
+          "id": "pobjeda",
+          "hr": "pobjeda",
+          "en": "victory / win",
+          "pos": "n. f.",
+          "example": {
+            "target": "Slavimo veliku pobjedu!",
+            "gloss": "We're celebrating a big victory!"
+          }
+        },
+        {
+          "id": "poraz",
+          "hr": "poraz",
+          "en": "defeat / loss",
+          "pos": "n. m.",
+          "example": {
+            "target": "Poraz nije kraj svijeta.",
+            "gloss": "A defeat isn't the end of the world."
+          }
+        },
+        {
+          "id": "navijati",
+          "hr": "navijati",
+          "en": "to cheer / support (a team)",
+          "pos": "v. impf.",
+          "note": "navijati za + accusative: navijam za Hrvatsku",
+          "example": {
+            "target": "Navijam za Hajduk.",
+            "gloss": "I support Hajduk."
+          }
+        },
+        {
+          "id": "baviti se",
+          "hr": "baviti se",
+          "en": "to do / be engaged in (a sport, hobby)",
+          "pos": "v. impf.",
+          "note": "takes the instrumental: bavim se sportom",
+          "example": {
+            "target": "Bavim se sportom.",
+            "gloss": "I do sports."
+          }
+        },
+        {
+          "id": "pobijediti",
+          "hr": "pobijediti",
+          "en": "to win (pf.)",
+          "pos": "v. pf.",
+          "note": "imperfective: pobjeđivati",
+          "example": {
+            "target": "Tko je pobijedio?",
+            "gloss": "Who won?"
+          }
+        },
+        {
+          "id": "hobi",
+          "hr": "hobi",
+          "en": "hobby",
+          "pos": "n. m.",
+          "note": "genitive: hobija",
+          "example": {
+            "target": "Moj hobi je glazba.",
+            "gloss": "My hobby is music."
+          }
+        },
+        {
+          "id": "glazba",
+          "hr": "glazba",
+          "en": "music",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'muzika' — also heard)",
+          "example": {
+            "target": "Slušam glazbu svaki dan.",
+            "gloss": "I listen to music every day."
+          }
+        },
+        {
+          "id": "pjesma",
+          "hr": "pjesma",
+          "en": "song",
+          "pos": "n. f.",
+          "note": "also means 'poem'",
+          "example": {
+            "target": "Ova pjesma je jako lijepa.",
+            "gloss": "This song is very beautiful."
+          }
+        },
+        {
+          "id": "ples",
+          "hr": "ples",
+          "en": "dance / dancing",
+          "pos": "n. m.",
+          "example": {
+            "target": "Volim ples i glazbu.",
+            "gloss": "I love dancing and music."
+          }
+        },
+        {
+          "id": "plesati",
+          "hr": "plesati",
+          "en": "to dance",
+          "pos": "v. impf.",
+          "note": "plešem, plešeš…",
+          "example": {
+            "target": "Plešemo cijelu noć.",
+            "gloss": "We dance all night."
+          }
+        },
+        {
+          "id": "film",
+          "hr": "film",
+          "en": "film / movie",
+          "pos": "n. m.",
+          "example": {
+            "target": "Gledamo film kod kuće.",
+            "gloss": "We're watching a film at home."
+          }
+        },
+        {
+          "id": "kino",
+          "hr": "kino",
+          "en": "cinema",
+          "pos": "n. n.",
+          "note": "neuter: idem u kino, ja sam u kinu",
+          "example": {
+            "target": "Idemo u kino večeras.",
+            "gloss": "We're going to the cinema tonight."
+          }
+        },
+        {
+          "id": "kazalište",
+          "hr": "kazalište",
+          "en": "theatre",
+          "pos": "n. n.",
+          "note": "distinctly Croatian (vs 'pozorište')",
+          "example": {
+            "target": "Kazalište je u centru grada.",
+            "gloss": "The theatre is in the city centre."
+          }
+        },
+        {
+          "id": "izložba",
+          "hr": "izložba",
+          "en": "exhibition",
+          "pos": "n. f.",
+          "example": {
+            "target": "U muzeju je nova izložba.",
+            "gloss": "There is a new exhibition at the museum."
+          }
+        },
+        {
+          "id": "koncert",
+          "hr": "koncert",
+          "en": "concert",
+          "pos": "n. m.",
+          "note": "ići na koncert = to go to a concert",
+          "example": {
+            "target": "Idemo na koncert u subotu.",
+            "gloss": "We're going to a concert on Saturday."
+          }
+        },
+        {
+          "id": "crtanje",
+          "hr": "crtanje",
+          "en": "drawing",
+          "pos": "n. n.",
+          "note": "verb: crtati",
+          "example": {
+            "target": "Crtanje je dobar hobi za djecu.",
+            "gloss": "Drawing is a good hobby for children."
+          }
+        },
+        {
+          "id": "pecanje",
+          "hr": "pecanje",
+          "en": "fishing (as a hobby)",
+          "pos": "n. n.",
+          "note": "standard also: ribolov",
+          "example": {
+            "target": "Djed voli pecanje na rijeci.",
+            "gloss": "Grandpa loves fishing on the river."
+          }
+        }
+      ]
+    },
+    {
+      "id": "croatia-world",
+      "title": "Croatia & the world",
+      "level": "A1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "hrvatska",
+          "hr": "Hrvatska",
+          "en": "Croatia",
+          "pos": "n. f.",
+          "note": "declines like an adjective: u Hrvatskoj, iz Hrvatske",
+          "example": {
+            "target": "Živim u Hrvatskoj.",
+            "gloss": "I live in Croatia."
+          }
+        },
+        {
+          "id": "hrvat",
+          "hr": "Hrvat",
+          "en": "Croat / Croatian (man)",
+          "pos": "n. m.",
+          "note": "female: Hrvatica; nationality nouns are capitalized",
+          "example": {
+            "target": "Marko je Hrvat.",
+            "gloss": "Marko is a Croat."
+          }
+        },
+        {
+          "id": "hrvatica",
+          "hr": "Hrvatica",
+          "en": "Croatian woman",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ana je Hrvatica.",
+            "gloss": "Ana is a Croatian woman."
+          }
+        },
+        {
+          "id": "hrvatski",
+          "hr": "hrvatski",
+          "en": "Croatian (adjective; the Croatian language)",
+          "pos": "adj.",
+          "note": "language names are lowercase: govorim hrvatski",
+          "example": {
+            "target": "Učim hrvatski jezik.",
+            "gloss": "I am learning the Croatian language."
+          }
+        },
+        {
+          "id": "domovina",
+          "hr": "domovina",
+          "en": "homeland",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hrvatska je moja domovina.",
+            "gloss": "Croatia is my homeland."
+          }
+        },
+        {
+          "id": "glavni grad",
+          "hr": "glavni grad",
+          "en": "capital city",
+          "pos": "n. m.",
+          "example": {
+            "target": "Zagreb je glavni grad Hrvatske.",
+            "gloss": "Zagreb is the capital of Croatia."
+          }
+        },
+        {
+          "id": "zagreb",
+          "hr": "Zagreb",
+          "en": "Zagreb (the Croatian capital)",
+          "pos": "n. m.",
+          "note": "u Zagrebu = in Zagreb",
+          "example": {
+            "target": "Radim u Zagrebu.",
+            "gloss": "I work in Zagreb."
+          }
+        },
+        {
+          "id": "jadran",
+          "hr": "Jadran",
+          "en": "the Adriatic (Sea)",
+          "pos": "n. m.",
+          "note": "full name: Jadransko more; ići na Jadran = to go to the Adriatic",
+          "example": {
+            "target": "Ljeti idemo na Jadran.",
+            "gloss": "In summer we go to the Adriatic."
+          }
+        },
+        {
+          "id": "obala",
+          "hr": "obala",
+          "en": "coast / shore",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hrvatska obala je jako lijepa.",
+            "gloss": "The Croatian coast is very beautiful."
+          }
+        },
+        {
+          "id": "zastava",
+          "hr": "zastava",
+          "en": "flag",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hrvatska zastava je crvena, bijela i plava.",
+            "gloss": "The Croatian flag is red, white and blue."
+          }
+        },
+        {
+          "id": "himna",
+          "hr": "himna",
+          "en": "anthem",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hrvatska himna zove se Lijepa naša.",
+            "gloss": "The Croatian anthem is called Lijepa naša."
+          }
+        },
+        {
+          "id": "granica",
+          "hr": "granica",
+          "en": "border",
+          "pos": "n. f.",
+          "example": {
+            "target": "Granica je blizu grada.",
+            "gloss": "The border is near the town."
+          }
+        },
+        {
+          "id": "narod",
+          "hr": "narod",
+          "en": "people / nation",
+          "pos": "n. m.",
+          "example": {
+            "target": "Hrvatski narod ima dugu povijest.",
+            "gloss": "The Croatian people have a long history."
+          }
+        },
+        {
+          "id": "stanovnik",
+          "hr": "stanovnik",
+          "en": "inhabitant / resident",
+          "pos": "n. m.",
+          "note": "female: stanovnica",
+          "example": {
+            "target": "Koliko stanovnika ima Zagreb?",
+            "gloss": "How many inhabitants does Zagreb have?"
+          }
+        },
+        {
+          "id": "stranac",
+          "hr": "stranac",
+          "en": "foreigner (man)",
+          "pos": "n. m.",
+          "note": "genitive: stranca (fleeting a); female: strankinja",
+          "example": {
+            "target": "Ja sam stranac i učim hrvatski.",
+            "gloss": "I am a foreigner and I am learning Croatian."
+          }
+        },
+        {
+          "id": "strankinja",
+          "hr": "strankinja",
+          "en": "foreigner (woman)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ona je strankinja, ali dobro govori hrvatski.",
+            "gloss": "She is a foreigner, but she speaks Croatian well."
+          }
+        },
+        {
+          "id": "državljanstvo",
+          "hr": "državljanstvo",
+          "en": "citizenship",
+          "pos": "n. n.",
+          "example": {
+            "target": "Imam hrvatsko državljanstvo.",
+            "gloss": "I have Croatian citizenship."
+          }
+        },
+        {
+          "id": "putovnica",
+          "hr": "putovnica",
+          "en": "passport",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'pasoš')",
+          "example": {
+            "target": "Trebam novu putovnicu.",
+            "gloss": "I need a new passport."
+          }
+        },
+        {
+          "id": "osobna iskaznica",
+          "hr": "osobna iskaznica",
+          "en": "identity card",
+          "pos": "n. f.",
+          "note": "colloquially just: osobna",
+          "example": {
+            "target": "Ovo je moja osobna iskaznica.",
+            "gloss": "This is my identity card."
+          }
+        },
+        {
+          "id": "viza",
+          "hr": "viza",
+          "en": "visa",
+          "pos": "n. f.",
+          "example": {
+            "target": "Trebam li vizu za Hrvatsku?",
+            "gloss": "Do I need a visa for Croatia?"
+          }
+        },
+        {
+          "id": "veleposlanstvo",
+          "hr": "veleposlanstvo",
+          "en": "embassy",
+          "pos": "n. n.",
+          "note": "distinctly Croatian (vs 'ambasada')",
+          "example": {
+            "target": "Veleposlanstvo je u Zagrebu.",
+            "gloss": "The embassy is in Zagreb."
+          }
+        },
+        {
+          "id": "europa",
+          "hr": "Europa",
+          "en": "Europe",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hrvatska je u Europi.",
+            "gloss": "Croatia is in Europe."
+          }
+        },
+        {
+          "id": "europska unija",
+          "hr": "Europska unija",
+          "en": "the European Union",
+          "pos": "n. f.",
+          "note": "abbreviated: EU",
+          "example": {
+            "target": "Hrvatska je članica Europske unije.",
+            "gloss": "Croatia is a member of the European Union."
+          }
+        },
+        {
+          "id": "inozemstvo",
+          "hr": "inozemstvo",
+          "en": "abroad / foreign countries",
+          "pos": "n. n.",
+          "note": "u inozemstvu = abroad (location); u inozemstvo = abroad (direction)",
+          "example": {
+            "target": "Moja sestra živi u inozemstvu.",
+            "gloss": "My sister lives abroad."
+          }
+        },
+        {
+          "id": "nijemac",
+          "hr": "Nijemac",
+          "en": "German (man)",
+          "pos": "n. m.",
+          "note": "female: Njemica; country: Njemačka; genitive: Nijemca",
+          "example": {
+            "target": "On je Nijemac iz Berlina.",
+            "gloss": "He is a German from Berlin."
+          }
+        },
+        {
+          "id": "talijan",
+          "hr": "Talijan",
+          "en": "Italian (man)",
+          "pos": "n. m.",
+          "note": "female: Talijanka; country: Italija",
+          "example": {
+            "target": "Naš konobar je Talijan.",
+            "gloss": "Our waiter is an Italian."
+          }
+        },
+        {
+          "id": "englez",
+          "hr": "Englez",
+          "en": "Englishman",
+          "pos": "n. m.",
+          "note": "female: Engleskinja; country: Engleska",
+          "example": {
+            "target": "John je Englez iz Londona.",
+            "gloss": "John is an Englishman from London."
+          }
+        },
+        {
+          "id": "amerikanac",
+          "hr": "Amerikanac",
+          "en": "American (man)",
+          "pos": "n. m.",
+          "note": "female: Amerikanka; genitive: Amerikanca",
+          "example": {
+            "target": "Moj kolega je Amerikanac.",
+            "gloss": "My colleague is an American."
+          }
+        }
+      ]
+    },
+    {
+      "id": "time-frequency",
+      "title": "Time & frequency",
+      "level": "A1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "trenutak",
+          "hr": "trenutak",
+          "en": "moment",
+          "pos": "n. m.",
+          "note": "genitive: trenutka (fleeting a)",
+          "example": {
+            "target": "Samo trenutak, molim.",
+            "gloss": "Just a moment, please."
+          }
+        },
+        {
+          "id": "sekunda",
+          "hr": "sekunda",
+          "en": "second (of time)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Minuta ima šezdeset sekundi.",
+            "gloss": "A minute has sixty seconds."
+          }
+        },
+        {
+          "id": "stoljeće",
+          "hr": "stoljeće",
+          "en": "century",
+          "pos": "n. n.",
+          "note": "distinctly Croatian (vs 'vek/vijek' — vijek also exists)",
+          "example": {
+            "target": "Ova crkva je iz petnaestog stoljeća.",
+            "gloss": "This church is from the fifteenth century."
+          }
+        },
+        {
+          "id": "desetljeće",
+          "hr": "desetljeće",
+          "en": "decade",
+          "pos": "n. n.",
+          "example": {
+            "target": "Deset godina je jedno desetljeće.",
+            "gloss": "Ten years is one decade."
+          }
+        },
+        {
+          "id": "razdoblje",
+          "hr": "razdoblje",
+          "en": "period (of time)",
+          "pos": "n. n.",
+          "example": {
+            "target": "Zima je hladno razdoblje godine.",
+            "gloss": "Winter is a cold period of the year."
+          }
+        },
+        {
+          "id": "rok",
+          "hr": "rok",
+          "en": "deadline / time limit",
+          "pos": "n. m.",
+          "example": {
+            "target": "Rok je u petak.",
+            "gloss": "The deadline is on Friday."
+          }
+        },
+        {
+          "id": "početak",
+          "hr": "početak",
+          "en": "beginning / start",
+          "pos": "n. m.",
+          "note": "genitive: početka; verb: početi (počnem)",
+          "example": {
+            "target": "Početak filma je u osam sati.",
+            "gloss": "The film starts at eight o'clock."
+          }
+        },
+        {
+          "id": "kraj",
+          "hr": "kraj",
+          "en": "end",
+          "pos": "n. m.",
+          "note": "na kraju = in the end, at the end",
+          "example": {
+            "target": "Kraj filma je tužan.",
+            "gloss": "The end of the film is sad."
+          }
+        },
+        {
+          "id": "sredina",
+          "hr": "sredina",
+          "en": "middle",
+          "pos": "n. f.",
+          "example": {
+            "target": "Stol je na sredini sobe.",
+            "gloss": "The table is in the middle of the room."
+          }
+        },
+        {
+          "id": "podne",
+          "hr": "podne",
+          "en": "noon / midday",
+          "pos": "n. n.",
+          "note": "u podne = at noon",
+          "example": {
+            "target": "U podne jedemo ručak.",
+            "gloss": "At noon we eat lunch."
+          }
+        },
+        {
+          "id": "ponoć",
+          "hr": "ponoć",
+          "en": "midnight",
+          "pos": "n. f.",
+          "note": "feminine despite the consonant ending; u ponoć = at midnight",
+          "example": {
+            "target": "Vlak dolazi u ponoć.",
+            "gloss": "The train arrives at midnight."
+          }
+        },
+        {
+          "id": "radnim danom",
+          "hr": "radnim danom",
+          "en": "on weekdays / on workdays",
+          "pos": "adv.",
+          "note": "instrumental of time (radni dan = workday)",
+          "example": {
+            "target": "Radnim danom radim od osam do četiri.",
+            "gloss": "On weekdays I work from eight to four."
+          }
+        },
+        {
+          "id": "vikendom",
+          "hr": "vikendom",
+          "en": "on weekends / at the weekend",
+          "pos": "adv.",
+          "note": "instrumental of vikend used for repeated time",
+          "example": {
+            "target": "Vikendom dugo spavam.",
+            "gloss": "On weekends I sleep in."
+          }
+        },
+        {
+          "id": "često",
+          "hr": "često",
+          "en": "often",
+          "pos": "adv.",
+          "example": {
+            "target": "Često pijem kavu s prijateljima.",
+            "gloss": "I often drink coffee with friends."
+          }
+        },
+        {
+          "id": "rijetko",
+          "hr": "rijetko",
+          "en": "rarely / seldom",
+          "pos": "adv.",
+          "example": {
+            "target": "Rijetko gledam televiziju.",
+            "gloss": "I rarely watch television."
+          }
+        },
+        {
+          "id": "obično",
+          "hr": "obično",
+          "en": "usually",
+          "pos": "adv.",
+          "example": {
+            "target": "Obično ustajem u sedam.",
+            "gloss": "I usually get up at seven."
+          }
+        },
+        {
+          "id": "redovito",
+          "hr": "redovito",
+          "en": "regularly",
+          "pos": "adv.",
+          "note": "distinctly Croatian (vs 'redovno')",
+          "example": {
+            "target": "Redovito vježbam.",
+            "gloss": "I exercise regularly."
+          }
+        },
+        {
+          "id": "odmah",
+          "hr": "odmah",
+          "en": "immediately / right away",
+          "pos": "adv.",
+          "example": {
+            "target": "Dolazim odmah!",
+            "gloss": "I'm coming right away!"
+          }
+        },
+        {
+          "id": "uskoro",
+          "hr": "uskoro",
+          "en": "soon",
+          "pos": "adv.",
+          "example": {
+            "target": "Uskoro počinje ljeto.",
+            "gloss": "Summer is starting soon."
+          }
+        },
+        {
+          "id": "kasno",
+          "hr": "kasno",
+          "en": "late",
+          "pos": "adv.",
+          "note": "adjective: kasan",
+          "example": {
+            "target": "Već je kasno, idem kući.",
+            "gloss": "It's already late, I'm going home."
+          }
+        },
+        {
+          "id": "rano",
+          "hr": "rano",
+          "en": "early",
+          "pos": "adv.",
+          "example": {
+            "target": "Ujutro ustajem rano.",
+            "gloss": "In the morning I get up early."
+          }
+        },
+        {
+          "id": "tada",
+          "hr": "tada",
+          "en": "then / at that time",
+          "pos": "adv.",
+          "example": {
+            "target": "Tada sam živio u Splitu.",
+            "gloss": "At that time I lived in Split."
+          }
+        },
+        {
+          "id": "nedavno",
+          "hr": "nedavno",
+          "en": "recently",
+          "pos": "adv.",
+          "example": {
+            "target": "Nedavno smo bili na moru.",
+            "gloss": "We were at the seaside recently."
+          }
+        },
+        {
+          "id": "davno",
+          "hr": "davno",
+          "en": "long ago",
+          "pos": "adv.",
+          "example": {
+            "target": "To je bilo davno.",
+            "gloss": "That was a long time ago."
+          }
+        },
+        {
+          "id": "sljedeći",
+          "hr": "sljedeći",
+          "en": "next",
+          "pos": "adj.",
+          "note": "also: idući; sljedeći tjedan = next week (accusative of time)",
+          "example": {
+            "target": "Vidimo se sljedeći tjedan.",
+            "gloss": "See you next week."
+          }
+        },
+        {
+          "id": "prošli",
+          "hr": "prošli",
+          "en": "last / previous",
+          "pos": "adj.",
+          "note": "prošle godine = last year (genitive of time)",
+          "example": {
+            "target": "Prošle godine bili smo u Dubrovniku.",
+            "gloss": "Last year we were in Dubrovnik."
+          }
+        },
+        {
+          "id": "svaki",
+          "hr": "svaki",
+          "en": "every / each",
+          "pos": "adj.",
+          "note": "svaka (f), svako (n)",
+          "example": {
+            "target": "Svaki dan učim hrvatski.",
+            "gloss": "Every day I study Croatian."
+          }
+        },
+        {
+          "id": "ujutro",
+          "hr": "ujutro",
+          "en": "in the morning",
+          "pos": "adv.",
+          "example": {
+            "target": "Ujutro pijem kavu.",
+            "gloss": "In the morning I drink coffee."
+          }
+        },
+        {
+          "id": "navečer",
+          "hr": "navečer",
+          "en": "in the evening",
+          "pos": "adv.",
+          "note": "distinctly Croatian (vs 'uveče')",
+          "example": {
+            "target": "Navečer gledamo film.",
+            "gloss": "In the evening we watch a film."
+          }
+        },
+        {
+          "id": "datum",
+          "hr": "datum",
+          "en": "date (calendar)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Koji je danas datum?",
+            "gloss": "What is the date today?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "quantities-measures",
+      "title": "Quantities & measures",
+      "level": "A1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "kilogram",
+          "hr": "kilogram",
+          "en": "kilogram",
+          "pos": "n. m.",
+          "note": "colloquially: kila; measure words take the genitive: kilogram jabuka",
+          "example": {
+            "target": "Molim kilogram jabuka.",
+            "gloss": "A kilogram of apples, please."
+          }
+        },
+        {
+          "id": "gram",
+          "hr": "gram",
+          "en": "gram",
+          "pos": "n. m.",
+          "example": {
+            "target": "Trebam sto grama sira.",
+            "gloss": "I need a hundred grams of cheese."
+          }
+        },
+        {
+          "id": "litra",
+          "hr": "litra",
+          "en": "litre",
+          "pos": "n. f.",
+          "note": "feminine in Croatian: jedna litra",
+          "example": {
+            "target": "Kupujem litru mlijeka.",
+            "gloss": "I'm buying a litre of milk."
+          }
+        },
+        {
+          "id": "metar",
+          "hr": "metar",
+          "en": "metre",
+          "pos": "n. m.",
+          "note": "genitive: metra (fleeting a)",
+          "example": {
+            "target": "Stol je dug jedan metar.",
+            "gloss": "The table is one metre long."
+          }
+        },
+        {
+          "id": "kilometar",
+          "hr": "kilometar",
+          "en": "kilometre",
+          "pos": "n. m.",
+          "note": "genitive: kilometra",
+          "example": {
+            "target": "Plaža je udaljena dva kilometra.",
+            "gloss": "The beach is two kilometres away."
+          }
+        },
+        {
+          "id": "centimetar",
+          "hr": "centimetar",
+          "en": "centimetre",
+          "pos": "n. m.",
+          "example": {
+            "target": "Visok sam sto osamdeset centimetara.",
+            "gloss": "I am one hundred and eighty centimetres tall."
+          }
+        },
+        {
+          "id": "komad",
+          "hr": "komad",
+          "en": "piece",
+          "pos": "n. m.",
+          "note": "komad + genitive: komad kruha",
+          "example": {
+            "target": "Molim jedan komad torte.",
+            "gloss": "One piece of cake, please."
+          }
+        },
+        {
+          "id": "kutija",
+          "hr": "kutija",
+          "en": "box",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kutija je puna knjiga.",
+            "gloss": "The box is full of books."
+          }
+        },
+        {
+          "id": "boca",
+          "hr": "boca",
+          "en": "bottle",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'flaša')",
+          "example": {
+            "target": "Molim bocu vode.",
+            "gloss": "A bottle of water, please."
+          }
+        },
+        {
+          "id": "vrećica",
+          "hr": "vrećica",
+          "en": "(small) bag / plastic bag",
+          "pos": "n. f.",
+          "note": "diminutive of vreća (sack)",
+          "example": {
+            "target": "Trebate li vrećicu?",
+            "gloss": "Do you need a bag?"
+          }
+        },
+        {
+          "id": "paket",
+          "hr": "paket",
+          "en": "package / parcel",
+          "pos": "n. m.",
+          "example": {
+            "target": "Paket dolazi sutra.",
+            "gloss": "The parcel arrives tomorrow."
+          }
+        },
+        {
+          "id": "par",
+          "hr": "par",
+          "en": "pair / a couple of",
+          "pos": "n. m.",
+          "note": "par + genitive: par cipela; also 'a few': par minuta",
+          "example": {
+            "target": "Kupujem par cipela.",
+            "gloss": "I'm buying a pair of shoes."
+          }
+        },
+        {
+          "id": "pola",
+          "hr": "pola",
+          "en": "half",
+          "pos": "adv.",
+          "note": "pola + genitive: pola sata = half an hour; the noun 'half' is polovica",
+          "example": {
+            "target": "Čekam već pola sata.",
+            "gloss": "I've already been waiting for half an hour."
+          }
+        },
+        {
+          "id": "četvrtina",
+          "hr": "četvrtina",
+          "en": "quarter",
+          "pos": "n. f.",
+          "example": {
+            "target": "Četvrtina sata je petnaest minuta.",
+            "gloss": "A quarter of an hour is fifteen minutes."
+          }
+        },
+        {
+          "id": "dio",
+          "hr": "dio",
+          "en": "part",
+          "pos": "n. m.",
+          "note": "genitive: dijela; plural: dijelovi",
+          "example": {
+            "target": "Ovaj dio grada je star.",
+            "gloss": "This part of the city is old."
+          }
+        },
+        {
+          "id": "cijeli",
+          "hr": "cijeli",
+          "en": "whole / entire",
+          "pos": "adj.",
+          "note": "cijela (f), cijelo (n); cijeli dan = all day",
+          "example": {
+            "target": "Radim cijeli dan.",
+            "gloss": "I work all day."
+          }
+        },
+        {
+          "id": "prazan",
+          "hr": "prazan",
+          "en": "empty",
+          "pos": "adj.",
+          "note": "prazna (f), prazno (n) — fleeting a",
+          "example": {
+            "target": "Boca je prazna.",
+            "gloss": "The bottle is empty."
+          }
+        },
+        {
+          "id": "pun",
+          "hr": "pun",
+          "en": "full",
+          "pos": "adj.",
+          "note": "pun + genitive: pun ljudi = full of people",
+          "example": {
+            "target": "Autobus je pun ljudi.",
+            "gloss": "The bus is full of people."
+          }
+        },
+        {
+          "id": "težak",
+          "hr": "težak",
+          "en": "heavy / difficult",
+          "pos": "adj.",
+          "note": "teška (f), teško (n); comparative: teži",
+          "example": {
+            "target": "Kovčeg je jako težak.",
+            "gloss": "The suitcase is very heavy."
+          }
+        },
+        {
+          "id": "lagan",
+          "hr": "lagan",
+          "en": "light / easy",
+          "pos": "adj.",
+          "note": "also: lak",
+          "example": {
+            "target": "Torba je lagana.",
+            "gloss": "The bag is light."
+          }
+        },
+        {
+          "id": "dubok",
+          "hr": "dubok",
+          "en": "deep",
+          "pos": "adj.",
+          "note": "comparative: dublji",
+          "example": {
+            "target": "More je ovdje duboko.",
+            "gloss": "The sea is deep here."
+          }
+        },
+        {
+          "id": "plitak",
+          "hr": "plitak",
+          "en": "shallow",
+          "pos": "adj.",
+          "note": "plitka (f), plitko (n)",
+          "example": {
+            "target": "Voda je plitka blizu plaže.",
+            "gloss": "The water is shallow near the beach."
+          }
+        },
+        {
+          "id": "širok",
+          "hr": "širok",
+          "en": "wide",
+          "pos": "adj.",
+          "note": "comparative: širi",
+          "example": {
+            "target": "Ulica je široka.",
+            "gloss": "The street is wide."
+          }
+        },
+        {
+          "id": "uzak",
+          "hr": "uzak",
+          "en": "narrow",
+          "pos": "adj.",
+          "note": "uska (f), usko (n); comparative: uži",
+          "example": {
+            "target": "Put do kuće je uzak.",
+            "gloss": "The road to the house is narrow."
+          }
+        },
+        {
+          "id": "dug",
+          "hr": "dug",
+          "en": "long",
+          "pos": "adj.",
+          "note": "comparative: dulji / duži; as a noun dug = debt",
+          "example": {
+            "target": "Dan je ljeti dug.",
+            "gloss": "In summer the day is long."
+          }
+        },
+        {
+          "id": "kratak",
+          "hr": "kratak",
+          "en": "short",
+          "pos": "adj.",
+          "note": "kratka (f), kratko (n); comparative: kraći",
+          "example": {
+            "target": "Film je kratak.",
+            "gloss": "The film is short."
+          }
+        },
+        {
+          "id": "brzina",
+          "hr": "brzina",
+          "en": "speed",
+          "pos": "n. f.",
+          "note": "velikom brzinom = at high speed (instrumental)",
+          "example": {
+            "target": "Vlak vozi velikom brzinom.",
+            "gloss": "The train travels at high speed."
+          }
+        },
+        {
+          "id": "težina",
+          "hr": "težina",
+          "en": "weight",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kolika je težina paketa?",
+            "gloss": "What is the weight of the parcel?"
+          }
+        },
+        {
+          "id": "visina",
+          "hr": "visina",
+          "en": "height",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kolika je tvoja visina?",
+            "gloss": "What is your height?"
+          }
+        },
+        {
+          "id": "duljina",
+          "hr": "duljina",
+          "en": "length",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'dužina' — also used)",
+          "example": {
+            "target": "Duljina stola je dva metra.",
+            "gloss": "The length of the table is two metres."
+          }
+        },
+        {
+          "id": "puno",
+          "hr": "puno",
+          "en": "a lot / much, many",
+          "pos": "adv.",
+          "note": "puno + genitive: puno posla; also: mnogo",
+          "example": {
+            "target": "Imam puno posla.",
+            "gloss": "I have a lot of work."
+          }
+        },
+        {
+          "id": "malo",
+          "hr": "malo",
+          "en": "a little / few",
+          "pos": "adv.",
+          "note": "malo + genitive: malo vremena",
+          "example": {
+            "target": "Imam malo vremena.",
+            "gloss": "I have little time."
+          }
+        },
+        {
+          "id": "dosta",
+          "hr": "dosta",
+          "en": "enough / quite a lot",
+          "pos": "adv.",
+          "note": "dosta + genitive: dosta kruha; Dosta! = Enough!",
+          "example": {
+            "target": "Imamo dosta kruha.",
+            "gloss": "We have enough bread."
+          }
+        }
+      ]
+    },
+    {
+      "id": "communication-tech",
+      "title": "Communication & tech basics",
+      "level": "A1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "mobitel",
+          "hr": "mobitel",
+          "en": "mobile phone",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'mobilni telefon')",
+          "example": {
+            "target": "Gdje je moj mobitel?",
+            "gloss": "Where is my mobile phone?"
+          }
+        },
+        {
+          "id": "poruka",
+          "hr": "poruka",
+          "en": "message / text message",
+          "pos": "n. f.",
+          "example": {
+            "target": "Šaljem ti poruku.",
+            "gloss": "I'm sending you a message."
+          }
+        },
+        {
+          "id": "e-pošta",
+          "hr": "e-pošta",
+          "en": "email",
+          "pos": "n. f.",
+          "note": "colloquially: mail / mejl",
+          "example": {
+            "target": "Šaljem dokument e-poštom.",
+            "gloss": "I'm sending the document by email."
+          }
+        },
+        {
+          "id": "broj telefona",
+          "hr": "broj telefona",
+          "en": "phone number",
+          "pos": "n. m.",
+          "note": "broj = number",
+          "example": {
+            "target": "Koji je tvoj broj telefona?",
+            "gloss": "What is your phone number?"
+          }
+        },
+        {
+          "id": "poziv",
+          "hr": "poziv",
+          "en": "(phone) call",
+          "pos": "n. m.",
+          "note": "also means 'invitation'",
+          "example": {
+            "target": "Imam poziv iz Hrvatske.",
+            "gloss": "I have a call from Croatia."
+          }
+        },
+        {
+          "id": "nazvati",
+          "hr": "nazvati",
+          "en": "to call (on the phone) (pf.)",
+          "pos": "v. pf.",
+          "note": "nazovem; imperfective: zvati",
+          "example": {
+            "target": "Nazvat ću te sutra.",
+            "gloss": "I'll call you tomorrow."
+          }
+        },
+        {
+          "id": "internet",
+          "hr": "internet",
+          "en": "internet",
+          "pos": "n. m.",
+          "note": "na internetu = on the internet",
+          "example": {
+            "target": "Tražim informacije na internetu.",
+            "gloss": "I'm looking for information on the internet."
+          }
+        },
+        {
+          "id": "mreža",
+          "hr": "mreža",
+          "en": "network / the web",
+          "pos": "n. f.",
+          "note": "also: net (fishing)",
+          "example": {
+            "target": "Nema mreže u planinama.",
+            "gloss": "There is no network signal in the mountains."
+          }
+        },
+        {
+          "id": "lozinka",
+          "hr": "lozinka",
+          "en": "password",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ne znam lozinku za internet.",
+            "gloss": "I don't know the password for the internet."
+          }
+        },
+        {
+          "id": "zaslon",
+          "hr": "zaslon",
+          "en": "screen",
+          "pos": "n. m.",
+          "note": "distinctly Croatian (vs 'ekran' — also common)",
+          "example": {
+            "target": "Zaslon mobitela je velik.",
+            "gloss": "The phone's screen is big."
+          }
+        },
+        {
+          "id": "tipkovnica",
+          "hr": "tipkovnica",
+          "en": "keyboard",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'tastatura'); tipka = key (button)",
+          "example": {
+            "target": "Ova tipkovnica je nova.",
+            "gloss": "This keyboard is new."
+          }
+        },
+        {
+          "id": "aplikacija",
+          "hr": "aplikacija",
+          "en": "app / application",
+          "pos": "n. f.",
+          "example": {
+            "target": "Učim hrvatski preko aplikacije.",
+            "gloss": "I'm learning Croatian through an app."
+          }
+        },
+        {
+          "id": "fotografija",
+          "hr": "fotografija",
+          "en": "photograph",
+          "pos": "n. f.",
+          "note": "colloquially: slika, fotka",
+          "example": {
+            "target": "Ovo je fotografija moje obitelji.",
+            "gloss": "This is a photograph of my family."
+          }
+        },
+        {
+          "id": "televizija",
+          "hr": "televizija",
+          "en": "television",
+          "pos": "n. f.",
+          "note": "TV set: televizor",
+          "example": {
+            "target": "Navečer gledamo televiziju.",
+            "gloss": "In the evening we watch television."
+          }
+        },
+        {
+          "id": "radio",
+          "hr": "radio",
+          "en": "radio",
+          "pos": "n. m.",
+          "note": "genitive: radija",
+          "example": {
+            "target": "Slušam radio u autu.",
+            "gloss": "I listen to the radio in the car."
+          }
+        },
+        {
+          "id": "novine",
+          "hr": "novine",
+          "en": "newspaper",
+          "pos": "n. f. pl.",
+          "note": "grammatically plural (pluralia tantum): novine su nove",
+          "example": {
+            "target": "Djed čita novine svako jutro.",
+            "gloss": "Grandpa reads the newspaper every morning."
+          }
+        },
+        {
+          "id": "časopis",
+          "hr": "časopis",
+          "en": "magazine",
+          "pos": "n. m.",
+          "example": {
+            "target": "Kupujem časopis o sportu.",
+            "gloss": "I'm buying a magazine about sport."
+          }
+        },
+        {
+          "id": "vijest",
+          "hr": "vijest",
+          "en": "news item / piece of news",
+          "pos": "n. f.",
+          "note": "feminine; plural vijesti = the news",
+          "example": {
+            "target": "Imam dobru vijest!",
+            "gloss": "I have good news!"
+          }
+        },
+        {
+          "id": "oglas",
+          "hr": "oglas",
+          "en": "advertisement / ad",
+          "pos": "n. m.",
+          "example": {
+            "target": "Čitam oglase za posao.",
+            "gloss": "I'm reading job ads."
+          }
+        },
+        {
+          "id": "pošta",
+          "hr": "pošta",
+          "en": "post office / mail",
+          "pos": "n. f.",
+          "note": "ići na poštu = to go to the post office",
+          "example": {
+            "target": "Idem na poštu po marke.",
+            "gloss": "I'm going to the post office to get stamps."
+          }
+        },
+        {
+          "id": "marka",
+          "hr": "marka",
+          "en": "(postage) stamp",
+          "pos": "n. f.",
+          "note": "also means 'brand'",
+          "example": {
+            "target": "Trebam marku za razglednicu.",
+            "gloss": "I need a stamp for the postcard."
+          }
+        },
+        {
+          "id": "omotnica",
+          "hr": "omotnica",
+          "en": "envelope",
+          "pos": "n. f.",
+          "note": "distinctly Croatian (vs 'koverta' — also heard)",
+          "example": {
+            "target": "Pismo je u omotnici.",
+            "gloss": "The letter is in the envelope."
+          }
+        },
+        {
+          "id": "razglednica",
+          "hr": "razglednica",
+          "en": "postcard",
+          "pos": "n. f.",
+          "example": {
+            "target": "Šaljem razglednicu iz Dubrovnika.",
+            "gloss": "I'm sending a postcard from Dubrovnik."
+          }
+        },
+        {
+          "id": "potpis",
+          "hr": "potpis",
+          "en": "signature",
+          "pos": "n. m.",
+          "note": "verb: potpisati (to sign)",
+          "example": {
+            "target": "Trebam vaš potpis ovdje.",
+            "gloss": "I need your signature here."
+          }
+        },
+        {
+          "id": "obrazac",
+          "hr": "obrazac",
+          "en": "form (to fill in)",
+          "pos": "n. m.",
+          "note": "genitive: obrasca; ispuniti obrazac = to fill in a form",
+          "example": {
+            "target": "Molim vas, ispunite ovaj obrazac.",
+            "gloss": "Please fill in this form."
+          }
+        },
+        {
+          "id": "dokument",
+          "hr": "dokument",
+          "en": "document",
+          "pos": "n. m.",
+          "example": {
+            "target": "Imate li sve dokumente?",
+            "gloss": "Do you have all the documents?"
+          }
+        },
+        {
+          "id": "razgovor",
+          "hr": "razgovor",
+          "en": "conversation / talk",
+          "pos": "n. m.",
+          "note": "razgovor za posao = job interview",
+          "example": {
+            "target": "Hvala na razgovoru.",
+            "gloss": "Thank you for the conversation."
+          }
+        },
+        {
+          "id": "javiti se",
+          "hr": "javiti se",
+          "en": "to get in touch / call back (pf.)",
+          "pos": "v. pf.",
+          "note": "takes the dative: javi mi se = get in touch with me; imperfective: javljati se",
+          "example": {
+            "target": "Javi mi se sutra!",
+            "gloss": "Get in touch with me tomorrow!"
+          }
+        }
+      ]
+    }
+  ]
+}

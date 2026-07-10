@@ -1,0 +1,254 @@
+package com.corlang.app.ui.screens
+
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import com.corlang.app.AppContainer
+import com.corlang.app.data.DrillGen
+import com.corlang.app.data.WordsRepository
+import com.corlang.app.data.model.VocabWord
+import com.corlang.app.ui.Haptics
+import com.corlang.app.ui.components.SpeakerButton
+import com.corlang.app.ui.theme.CorlangColors
+
+/**
+ * Auto-generated in-app drills, built from the validated deck (see data/DrillGen.kt).
+ * Both mirror the official exam's grammar-section format: correct form IN CONTEXT.
+ */
+
+/** Picks drill source words: due first, then already-seen, then deck order. */
+@Composable
+private fun drillWords(container: AppContainer, lang: String): List<VocabWord> {
+    val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
+    return remember(reviews.size > 0) {
+        val all = container.words.allWords(lang)
+        val today = WordsRepository.todayEpochDay()
+        val due = reviews.filter { it.dueEpochDay <= today }.map { it.wordId }.toSet()
+        val seen = reviews.map { it.wordId }.toSet()
+        (all.filter { it.id in due }.shuffled() +
+            all.filter { it.id in seen && it.id !in due }.shuffled() +
+            all.filter { it.id !in seen })
+    }
+}
+
+/**
+ * Case-in-context drill (exam section III format): the example sentence with the target
+ * form blanked; pick the correct ending. Answers come verbatim from QA'd examples —
+ * the app never invents a Croatian form.
+ */
+@Composable
+fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
+    val context = LocalContext.current
+    val source = drillWords(container, lang)
+    val items = remember(source.size) { DrillGen.buildClozeItems(source, 8) }
+
+    var qIndex by remember { mutableIntStateOf(0) }
+    var score by remember { mutableIntStateOf(0) }
+    var chosen by remember { mutableStateOf<String?>(null) }
+    var finished by remember { mutableStateOf(false) }
+    val feedback = CorlangColors.feedback
+
+    if (items.isEmpty()) {
+        Button(onClick = onFinished, modifier = Modifier.fillMaxWidth()) { Text("Next →") }
+        return
+    }
+    if (finished) {
+        DrillResult(score, items.size,
+            "The exam's grammar section is exactly this: the right form in the sentence.", onFinished)
+        return
+    }
+
+    val item = items[qIndex]
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                item.sentence,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier.weight(1f)
+            )
+            Text("${qIndex + 1}/${items.size}", style = MaterialTheme.typography.bodySmall)
+        }
+        Text(
+            item.gloss,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 2.dp, bottom = 6.dp)
+        )
+        item.options.forEach { option ->
+            val isChosen = chosen == option
+            val border = when {
+                chosen == null -> MaterialTheme.colorScheme.outline
+                option == item.answer -> feedback.correct
+                isChosen -> feedback.wrong
+                else -> MaterialTheme.colorScheme.outline
+            }
+            Surface(
+                shape = RoundedCornerShape(10.dp),
+                color = MaterialTheme.colorScheme.surface,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 3.dp)
+                    .border(2.dp, border, RoundedCornerShape(10.dp))
+                    .clickable(enabled = chosen == null) {
+                        chosen = option
+                        if (option == item.answer) { score++; Haptics.confirm(context) }
+                        else Haptics.reject(context)
+                    }
+            ) { Text(option, modifier = Modifier.padding(12.dp)) }
+        }
+        if (chosen != null) {
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(top = 4.dp)) {
+                Text(
+                    item.sentence.replace("___", item.answer),
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.weight(1f)
+                )
+                SpeakerButton(tts = container.tts, text = item.sentence.replace("___", item.answer))
+            }
+            Button(
+                onClick = {
+                    if (qIndex + 1 >= items.size) finished = true else { qIndex++; chosen = null }
+                },
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+            ) { Text(if (qIndex + 1 >= items.size) "See result" else "Next →") }
+        }
+    }
+}
+
+/**
+ * Typed EN→HR recall (production practice): type the Croatian word for the gloss.
+ * Graded with STRICT diacritics — exactly as the exam expects you to write.
+ */
+@Composable
+fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
+    val context = LocalContext.current
+    val source = drillWords(container, lang)
+    val items = remember(source.size) { DrillGen.buildRecallItems(source, 8) }
+
+    var qIndex by remember { mutableIntStateOf(0) }
+    var score by remember { mutableIntStateOf(0) }
+    var input by remember { mutableStateOf("") }
+    var checked by remember { mutableStateOf(false) }
+    var correct by remember { mutableStateOf(false) }
+    var finished by remember { mutableStateOf(false) }
+    val feedback = CorlangColors.feedback
+
+    if (items.isEmpty()) {
+        Button(onClick = onFinished, modifier = Modifier.fillMaxWidth()) { Text("Next →") }
+        return
+    }
+    if (finished) {
+        DrillResult(score, items.size,
+            "Producing the Croatian yourself — with the right diacritics — is what speaking needs.", onFinished)
+        return
+    }
+
+    val item = items[qIndex]
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                item.en,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier.weight(1f)
+            )
+            Text("${qIndex + 1}/${items.size}", style = MaterialTheme.typography.bodySmall)
+        }
+        item.posHint?.let {
+            Text(it, style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        OutlinedTextField(
+            value = input,
+            onValueChange = { if (!checked) input = it },
+            label = { Text("Croatian (diacritics count!)") },
+            enabled = !checked,
+            modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
+        )
+        if (checked) {
+            Surface(
+                shape = RoundedCornerShape(10.dp),
+                color = if (correct) feedback.correctContainer else feedback.wrongContainer,
+                contentColor = if (correct) feedback.onCorrectContainer else feedback.onWrongContainer,
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(10.dp)) {
+                    Text(
+                        if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.weight(1f)
+                    )
+                    SpeakerButton(tts = container.tts, text = item.answerHr)
+                }
+            }
+        }
+        Button(
+            onClick = {
+                if (!checked) {
+                    correct = Grading.normalize(input, strict = true) ==
+                        Grading.normalize(item.answerHr, strict = true)
+                    if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
+                    checked = true
+                } else if (qIndex + 1 >= items.size) {
+                    finished = true
+                } else {
+                    qIndex++; input = ""; checked = false; correct = false
+                }
+            },
+            enabled = checked || input.isNotBlank(),
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+        ) {
+            Text(
+                when {
+                    !checked -> "Check"
+                    qIndex + 1 >= items.size -> "See result"
+                    else -> "Next →"
+                }
+            )
+        }
+    }
+}
+
+@Composable
+private fun DrillResult(score: Int, total: Int, line: String, onFinished: () -> Unit) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
+        Text(
+            "🎯 $score / $total",
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(vertical = 8.dp)
+        )
+        Text(line, style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center)
+        Button(onClick = onFinished, modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
+            Text("Done — next step →")
+        }
+        Spacer(Modifier.height(8.dp))
+    }
+}

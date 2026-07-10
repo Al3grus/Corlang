@@ -1,0 +1,4690 @@
+{
+  "packs": [
+    {
+      "id": "family-extended",
+      "title": "Extended family & marriage",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "punica",
+          "hr": "punica",
+          "en": "mother-in-law (wife's mother)",
+          "pos": "n. f.",
+          "note": "your wife's mother; husband's mother is svekrva",
+          "example": {
+            "target": "Moja punica odlično kuha.",
+            "gloss": "My mother-in-law cooks wonderfully."
+          }
+        },
+        {
+          "id": "punac",
+          "hr": "punac",
+          "en": "father-in-law (wife's father)",
+          "pos": "n. m.",
+          "note": "your wife's father; G punca",
+          "example": {
+            "target": "Punac mi je pokazao svoj vinograd.",
+            "gloss": "My father-in-law showed me his vineyard."
+          }
+        },
+        {
+          "id": "svekrva",
+          "hr": "svekrva",
+          "en": "mother-in-law (husband's mother)",
+          "pos": "n. f.",
+          "note": "your husband's mother; wife's mother is punica",
+          "example": {
+            "target": "Ana se dobro slaže sa svekrvom.",
+            "gloss": "Ana gets along well with her mother-in-law."
+          }
+        },
+        {
+          "id": "svekar",
+          "hr": "svekar",
+          "en": "father-in-law (husband's father)",
+          "pos": "n. m.",
+          "note": "your husband's father; G svekra",
+          "example": {
+            "target": "Njezin svekar živi na selu.",
+            "gloss": "Her father-in-law lives in the countryside."
+          }
+        },
+        {
+          "id": "šogor",
+          "hr": "šogor",
+          "en": "brother-in-law",
+          "pos": "n. m.",
+          "note": "everyday word for any brother-in-law; from German Schwager",
+          "example": {
+            "target": "Šogor mi je pomogao oko selidbe.",
+            "gloss": "My brother-in-law helped me with the move."
+          }
+        },
+        {
+          "id": "šogorica",
+          "hr": "šogorica",
+          "en": "sister-in-law",
+          "pos": "n. f.",
+          "note": "everyday word for any sister-in-law",
+          "example": {
+            "target": "Šogorica dolazi sutra na večeru.",
+            "gloss": "My sister-in-law is coming to dinner tomorrow."
+          }
+        },
+        {
+          "id": "zet",
+          "hr": "zet",
+          "en": "son-in-law",
+          "pos": "n. m.",
+          "note": "also: sister's husband",
+          "example": {
+            "target": "Punica jako voli svog zeta.",
+            "gloss": "The mother-in-law loves her son-in-law very much."
+          }
+        },
+        {
+          "id": "snaha",
+          "hr": "snaha",
+          "en": "daughter-in-law",
+          "pos": "n. f.",
+          "note": "also: brother's wife",
+          "example": {
+            "target": "Snaha im često čuva unuke.",
+            "gloss": "Their daughter-in-law often looks after the grandchildren."
+          }
+        },
+        {
+          "id": "nećak",
+          "hr": "nećak",
+          "en": "nephew",
+          "pos": "n. m.",
+          "note": "brother's or sister's son",
+          "example": {
+            "target": "Moj nećak ima pet godina.",
+            "gloss": "My nephew is five years old."
+          }
+        },
+        {
+          "id": "nećakinja",
+          "hr": "nećakinja",
+          "en": "niece",
+          "pos": "n. f.",
+          "note": "brother's or sister's daughter",
+          "example": {
+            "target": "Nećakinja mi je poslala razglednicu.",
+            "gloss": "My niece sent me a postcard."
+          }
+        },
+        {
+          "id": "bratić",
+          "hr": "bratić",
+          "en": "cousin (male)",
+          "pos": "n. m.",
+          "note": "child of your aunt or uncle",
+          "example": {
+            "target": "S bratićem igram nogomet svaki vikend.",
+            "gloss": "I play football with my cousin every weekend."
+          }
+        },
+        {
+          "id": "sestrična",
+          "hr": "sestrična",
+          "en": "cousin (female)",
+          "pos": "n. f.",
+          "note": "child of your aunt or uncle",
+          "example": {
+            "target": "Moja sestrična studira u Splitu.",
+            "gloss": "My cousin studies in Split."
+          }
+        },
+        {
+          "id": "rodica",
+          "hr": "rodica",
+          "en": "cousin (female), kinswoman",
+          "pos": "n. f.",
+          "note": "colloquial synonym of sestrična, common in many regions",
+          "example": {
+            "target": "Rodica nam je došla u posjet.",
+            "gloss": "Our cousin came to visit us."
+          }
+        },
+        {
+          "id": "ujak",
+          "hr": "ujak",
+          "en": "uncle (mother's brother)",
+          "pos": "n. m.",
+          "note": "specifically your mother's brother",
+          "example": {
+            "target": "Ujak Ivan je mamin brat.",
+            "gloss": "Uncle Ivan is mum's brother."
+          }
+        },
+        {
+          "id": "ujna",
+          "hr": "ujna",
+          "en": "aunt (wife of ujak)",
+          "pos": "n. f.",
+          "note": "wife of your mother's brother",
+          "example": {
+            "target": "Ujna peče najbolje kolače.",
+            "gloss": "My aunt bakes the best cakes."
+          }
+        },
+        {
+          "id": "stric",
+          "hr": "stric",
+          "en": "uncle (father's brother)",
+          "pos": "n. m.",
+          "note": "specifically your father's brother; V striče",
+          "example": {
+            "target": "Stric Marko je tatin stariji brat.",
+            "gloss": "Uncle Marko is dad's older brother."
+          }
+        },
+        {
+          "id": "strina",
+          "hr": "strina",
+          "en": "aunt (wife of stric)",
+          "pos": "n. f.",
+          "note": "wife of your father's brother",
+          "example": {
+            "target": "Strina i stric imaju troje djece.",
+            "gloss": "My aunt and uncle have three children."
+          }
+        },
+        {
+          "id": "teta",
+          "hr": "teta",
+          "en": "aunt (parent's sister)",
+          "pos": "n. f.",
+          "note": "your mother's or father's sister; also a friendly word for any adult woman (kids' speech)",
+          "example": {
+            "target": "Teta Marija nam uvijek donosi darove.",
+            "gloss": "Aunt Marija always brings us presents."
+          }
+        },
+        {
+          "id": "tetak",
+          "hr": "tetak",
+          "en": "uncle (husband of teta)",
+          "pos": "n. m.",
+          "note": "husband of your aunt; G tetka",
+          "example": {
+            "target": "Tetak nas vozi na more svako ljeto.",
+            "gloss": "Our uncle drives us to the seaside every summer."
+          }
+        },
+        {
+          "id": "rođak",
+          "hr": "rođak",
+          "en": "relative, cousin",
+          "pos": "n. m.",
+          "note": "general word for a relative; f. rođakinja",
+          "example": {
+            "target": "Imam puno rođaka u Slavoniji.",
+            "gloss": "I have a lot of relatives in Slavonia."
+          }
+        },
+        {
+          "id": "daljnji rođak",
+          "hr": "daljnji rođak",
+          "en": "distant relative",
+          "pos": "phrase",
+          "note": "opposite: bliski rođak (close relative)",
+          "example": {
+            "target": "On mi je daljnji rođak s mamine strane.",
+            "gloss": "He is a distant relative of mine on my mother's side."
+          }
+        },
+        {
+          "id": "unuk",
+          "hr": "unuk",
+          "en": "grandson",
+          "pos": "n. m.",
+          "note": "pl. unuci often = grandchildren",
+          "example": {
+            "target": "Djed i baka čuvaju unuka.",
+            "gloss": "Grandpa and grandma are looking after their grandson."
+          }
+        },
+        {
+          "id": "unuka",
+          "hr": "unuka",
+          "en": "granddaughter",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Unuka sliči baki.",
+            "gloss": "The granddaughter looks like her grandmother."
+          }
+        },
+        {
+          "id": "praunuk",
+          "hr": "praunuk",
+          "en": "great-grandson",
+          "pos": "n. m.",
+          "note": "f. praunuka; prefix pra- = great- (a generation further)",
+          "example": {
+            "target": "Prabaka već ima tri praunuka.",
+            "gloss": "Great-grandma already has three great-grandchildren."
+          }
+        },
+        {
+          "id": "prabaka",
+          "hr": "prabaka",
+          "en": "great-grandmother",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Moja prabaka ima devedeset godina.",
+            "gloss": "My great-grandmother is ninety years old."
+          }
+        },
+        {
+          "id": "pradjed",
+          "hr": "pradjed",
+          "en": "great-grandfather",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Pradjed je rođen u Dalmaciji.",
+            "gloss": "My great-grandfather was born in Dalmatia."
+          }
+        },
+        {
+          "id": "kumče",
+          "hr": "kumče",
+          "en": "godchild",
+          "pos": "n. n.",
+          "note": "neuter; G kumčeta",
+          "example": {
+            "target": "Kumčetu sam za rođendan kupio slikovnicu.",
+            "gloss": "I bought my godchild a picture book for their birthday."
+          }
+        },
+        {
+          "id": "kuma",
+          "hr": "kuma",
+          "en": "godmother; maid of honour",
+          "pos": "n. f.",
+          "note": "female counterpart of kum; a very close family friend",
+          "example": {
+            "target": "Anina sestra bila je kuma na vjenčanju.",
+            "gloss": "Ana's sister was the maid of honour at the wedding."
+          }
+        },
+        {
+          "id": "polubrat",
+          "hr": "polubrat",
+          "en": "half-brother",
+          "pos": "n. m.",
+          "note": "shares one parent with you",
+          "example": {
+            "target": "Imam polubrata iz očeva prvog braka.",
+            "gloss": "I have a half-brother from my father's first marriage."
+          }
+        },
+        {
+          "id": "polusestra",
+          "hr": "polusestra",
+          "en": "half-sister",
+          "pos": "n. f.",
+          "note": "shares one parent with you",
+          "example": {
+            "target": "Moja polusestra živi kod mame.",
+            "gloss": "My half-sister lives with mum."
+          }
+        },
+        {
+          "id": "maćeha",
+          "hr": "maćeha",
+          "en": "stepmother",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Maćeha ga je odgojila kao svoje dijete.",
+            "gloss": "His stepmother raised him as her own child."
+          }
+        },
+        {
+          "id": "očuh",
+          "hr": "očuh",
+          "en": "stepfather",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Očuh mu je kao pravi otac.",
+            "gloss": "His stepfather is like a real father to him."
+          }
+        },
+        {
+          "id": "posvojiti",
+          "hr": "posvojiti",
+          "en": "to adopt (a child)",
+          "pos": "v. pf.",
+          "note": "impf. posvajati; for pets use udomiti",
+          "example": {
+            "target": "Odlučili su posvojiti dijete.",
+            "gloss": "They decided to adopt a child."
+          }
+        },
+        {
+          "id": "posvojenje",
+          "hr": "posvojenje",
+          "en": "adoption",
+          "pos": "n. n.",
+          "note": "from posvojiti",
+          "example": {
+            "target": "Posvojenje je trajalo gotovo dvije godine.",
+            "gloss": "The adoption took almost two years."
+          }
+        },
+        {
+          "id": "brak",
+          "hr": "brak",
+          "en": "marriage",
+          "pos": "n. m.",
+          "note": "u braku = married",
+          "example": {
+            "target": "Njihov brak traje već dvadeset godina.",
+            "gloss": "Their marriage has lasted twenty years already."
+          }
+        },
+        {
+          "id": "bračni par",
+          "hr": "bračni par",
+          "en": "married couple",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Susjedi su simpatičan bračni par.",
+            "gloss": "The neighbours are a likeable married couple."
+          }
+        },
+        {
+          "id": "supružnik",
+          "hr": "supružnik",
+          "en": "spouse",
+          "pos": "n. m.",
+          "note": "formal (forms, documents); f. supružnica",
+          "example": {
+            "target": "Na večeru možete dovesti supružnika.",
+            "gloss": "You may bring your spouse to the dinner."
+          }
+        },
+        {
+          "id": "suprug",
+          "hr": "suprug",
+          "en": "husband",
+          "pos": "n. m.",
+          "note": "neutral-polite; colloquially muž",
+          "example": {
+            "target": "Moj suprug radi u bolnici.",
+            "gloss": "My husband works at the hospital."
+          }
+        },
+        {
+          "id": "supruga",
+          "hr": "supruga",
+          "en": "wife",
+          "pos": "n. f.",
+          "note": "neutral-polite; colloquially žena",
+          "example": {
+            "target": "Njegova supruga je Hrvatica.",
+            "gloss": "His wife is Croatian."
+          }
+        },
+        {
+          "id": "oženjen",
+          "hr": "oženjen",
+          "en": "married (of a man)",
+          "pos": "adj.",
+          "note": "from oženiti se; for a woman: udana",
+          "example": {
+            "target": "Marko je oženjen već pet godina.",
+            "gloss": "Marko has been married for five years."
+          }
+        },
+        {
+          "id": "udana",
+          "hr": "udana",
+          "en": "married (of a woman)",
+          "pos": "adj.",
+          "note": "also udata; for a man: oženjen",
+          "example": {
+            "target": "Moja sestra je udana i ima sina.",
+            "gloss": "My sister is married and has a son."
+          }
+        },
+        {
+          "id": "mladenka",
+          "hr": "mladenka",
+          "en": "bride",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Mladenka je plesala cijelu noć.",
+            "gloss": "The bride danced all night."
+          }
+        },
+        {
+          "id": "mladoženja",
+          "hr": "mladoženja",
+          "en": "groom",
+          "pos": "n. m.",
+          "note": "masculine despite the -a ending",
+          "example": {
+            "target": "Mladoženja je nervozno čekao pred crkvom.",
+            "gloss": "The groom waited nervously in front of the church."
+          }
+        },
+        {
+          "id": "zaruke",
+          "hr": "zaruke",
+          "en": "engagement",
+          "pos": "n. f. pl.",
+          "note": "plural only",
+          "example": {
+            "target": "Zaruke smo proslavili u krugu obitelji.",
+            "gloss": "We celebrated the engagement with the family."
+          }
+        },
+        {
+          "id": "zaručnik",
+          "hr": "zaručnik",
+          "en": "fiancé",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Njezin zaručnik dolazi iz Osijeka.",
+            "gloss": "Her fiancé comes from Osijek."
+          }
+        },
+        {
+          "id": "zaručnica",
+          "hr": "zaručnica",
+          "en": "fiancée",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Doveo je zaručnicu da upozna baku.",
+            "gloss": "He brought his fiancée to meet grandma."
+          }
+        },
+        {
+          "id": "prosidba",
+          "hr": "prosidba",
+          "en": "marriage proposal",
+          "pos": "n. f.",
+          "note": "from zaprositi",
+          "example": {
+            "target": "Prosidba je bila veliko iznenađenje.",
+            "gloss": "The proposal was a big surprise."
+          }
+        },
+        {
+          "id": "zaprositi",
+          "hr": "zaprositi",
+          "en": "to propose (marriage)",
+          "pos": "v. pf.",
+          "note": "impf. prositi (which also means: to beg)",
+          "example": {
+            "target": "Zaprosio ju je na plaži u Dubrovniku.",
+            "gloss": "He proposed to her on a beach in Dubrovnik."
+          }
+        },
+        {
+          "id": "vjenčati se",
+          "hr": "vjenčati se",
+          "en": "to get married",
+          "pos": "v. pf.",
+          "note": "impf. vjenčavati se; also oženiti se (man) / udati se (woman)",
+          "example": {
+            "target": "Vjenčali smo se prošlog ljeta u Zagrebu.",
+            "gloss": "We got married last summer in Zagreb."
+          }
+        },
+        {
+          "id": "vjenčanica",
+          "hr": "vjenčanica",
+          "en": "wedding dress",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Vjenčanica je pripadala njezinoj baki.",
+            "gloss": "The wedding dress belonged to her grandmother."
+          }
+        },
+        {
+          "id": "vjenčani prsten",
+          "hr": "vjenčani prsten",
+          "en": "wedding ring",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Izgubio je vjenčani prsten na plaži.",
+            "gloss": "He lost his wedding ring on the beach."
+          }
+        },
+        {
+          "id": "vjenčani list",
+          "hr": "vjenčani list",
+          "en": "marriage certificate",
+          "pos": "phrase",
+          "note": "issued by the matični ured (registry office)",
+          "example": {
+            "target": "Za vizu trebamo vjenčani list.",
+            "gloss": "We need the marriage certificate for the visa."
+          }
+        },
+        {
+          "id": "matičar",
+          "hr": "matičar",
+          "en": "registrar",
+          "pos": "n. m.",
+          "note": "performs civil weddings; f. matičarka",
+          "example": {
+            "target": "Matičar nas je vjenčao u gradskoj vijećnici.",
+            "gloss": "The registrar married us in the town hall."
+          }
+        },
+        {
+          "id": "svatovi",
+          "hr": "svatovi",
+          "en": "wedding party, wedding guests",
+          "pos": "n. m. pl.",
+          "note": "plural only; the whole wedding procession",
+          "example": {
+            "target": "Svatovi su slavili do jutra.",
+            "gloss": "The wedding guests celebrated until morning."
+          }
+        },
+        {
+          "id": "medeni mjesec",
+          "hr": "medeni mjesec",
+          "en": "honeymoon",
+          "pos": "phrase",
+          "note": "literally: honey month",
+          "example": {
+            "target": "Medeni mjesec proveli smo na Hvaru.",
+            "gloss": "We spent our honeymoon on Hvar."
+          }
+        },
+        {
+          "id": "obljetnica",
+          "hr": "obljetnica",
+          "en": "anniversary",
+          "pos": "n. f.",
+          "note": "obljetnica braka = wedding anniversary",
+          "example": {
+            "target": "Sutra slavimo desetu obljetnicu braka.",
+            "gloss": "Tomorrow we celebrate our tenth wedding anniversary."
+          }
+        },
+        {
+          "id": "obiteljsko okupljanje",
+          "hr": "obiteljsko okupljanje",
+          "en": "family gathering",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Za Božić imamo veliko obiteljsko okupljanje.",
+            "gloss": "At Christmas we have a big family gathering."
+          }
+        },
+        {
+          "id": "obiteljski ručak",
+          "hr": "obiteljski ručak",
+          "en": "family lunch",
+          "pos": "phrase",
+          "note": "Sunday lunch at the in-laws' is an institution in Croatia",
+          "example": {
+            "target": "Nedjeljom idemo punici na obiteljski ručak.",
+            "gloss": "On Sundays we go to my mother-in-law's for family lunch."
+          }
+        },
+        {
+          "id": "upoznati roditelje",
+          "hr": "upoznati roditelje",
+          "en": "to meet the parents",
+          "pos": "phrase",
+          "note": "upoznati (pf.) = to meet for the first time",
+          "example": {
+            "target": "Sutra ću upoznati njezine roditelje.",
+            "gloss": "Tomorrow I am going to meet her parents."
+          }
+        },
+        {
+          "id": "biti u vezi",
+          "hr": "biti u vezi",
+          "en": "to be in a relationship",
+          "pos": "phrase",
+          "note": "veza = relationship, connection",
+          "example": {
+            "target": "Oni su u vezi već tri godine.",
+            "gloss": "They have been in a relationship for three years."
+          }
+        },
+        {
+          "id": "prekinuti vezu",
+          "hr": "prekinuti vezu",
+          "en": "to break up",
+          "pos": "phrase",
+          "note": "prekinuti (pf., impf. prekidati) = to break off",
+          "example": {
+            "target": "Ana i Marko prekinuli su vezu.",
+            "gloss": "Ana and Marko broke up."
+          }
+        },
+        {
+          "id": "pomirenje",
+          "hr": "pomirenje",
+          "en": "reconciliation",
+          "pos": "n. n.",
+          "note": "from pomiriti se (to make up)",
+          "example": {
+            "target": "Nakon svađe slijedi pomirenje.",
+            "gloss": "After a quarrel comes reconciliation."
+          }
+        },
+        {
+          "id": "svađa",
+          "hr": "svađa",
+          "en": "quarrel, argument",
+          "pos": "n. f.",
+          "note": "from svađati se (to argue)",
+          "example": {
+            "target": "Bila je to samo mala obiteljska svađa.",
+            "gloss": "It was just a small family quarrel."
+          }
+        },
+        {
+          "id": "sličiti",
+          "hr": "sličiti",
+          "en": "to resemble, look like",
+          "pos": "v. impf.",
+          "note": "no pf.; takes dative: sličiti ocu = to look like one's father",
+          "example": {
+            "target": "Naš sin sliči djedu.",
+            "gloss": "Our son looks like his grandfather."
+          }
+        },
+        {
+          "id": "naslijediti",
+          "hr": "naslijediti",
+          "en": "to inherit",
+          "pos": "v. pf.",
+          "note": "impf. nasljeđivati",
+          "example": {
+            "target": "Kuću je naslijedila od bake.",
+            "gloss": "She inherited the house from her grandmother."
+          }
+        },
+        {
+          "id": "razvod",
+          "hr": "razvod",
+          "en": "divorce",
+          "pos": "n. m.",
+          "note": "razvod braka on documents",
+          "example": {
+            "target": "Razvod je bio težak za cijelu obitelj.",
+            "gloss": "The divorce was hard on the whole family."
+          }
+        },
+        {
+          "id": "razvesti se",
+          "hr": "razvesti se",
+          "en": "to get divorced",
+          "pos": "v. pf.",
+          "note": "impf. razvoditi se",
+          "example": {
+            "target": "Razveli su se nakon deset godina braka.",
+            "gloss": "They divorced after ten years of marriage."
+          }
+        },
+        {
+          "id": "udovica",
+          "hr": "udovica",
+          "en": "widow",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Baka je udovica već pet godina.",
+            "gloss": "Grandma has been a widow for five years."
+          }
+        },
+        {
+          "id": "udovac",
+          "hr": "udovac",
+          "en": "widower",
+          "pos": "n. m.",
+          "note": "G udovca",
+          "example": {
+            "target": "Djed je ostao udovac prošle godine.",
+            "gloss": "Grandpa became a widower last year."
+          }
+        },
+        {
+          "id": "samohrani roditelj",
+          "hr": "samohrani roditelj",
+          "en": "single parent",
+          "pos": "phrase",
+          "note": "samohrana majka = single mother",
+          "example": {
+            "target": "Kao samohrani roditelj odgaja dvoje djece.",
+            "gloss": "As a single parent she is raising two children."
+          }
+        },
+        {
+          "id": "šira obitelj",
+          "hr": "šira obitelj",
+          "en": "extended family",
+          "pos": "phrase",
+          "note": "opposite: uža obitelj (immediate family)",
+          "example": {
+            "target": "Na krštenje dolazi cijela šira obitelj.",
+            "gloss": "The whole extended family is coming to the christening."
+          }
+        },
+        {
+          "id": "obiteljsko stablo",
+          "hr": "obiteljsko stablo",
+          "en": "family tree",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Djeca u školi crtaju obiteljsko stablo.",
+            "gloss": "The children are drawing a family tree at school."
+          }
+        },
+        {
+          "id": "djevojačko prezime",
+          "hr": "djevojačko prezime",
+          "en": "maiden name",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Zadržala je djevojačko prezime.",
+            "gloss": "She kept her maiden name."
+          }
+        },
+        {
+          "id": "predak",
+          "hr": "predak",
+          "en": "ancestor",
+          "pos": "n. m.",
+          "note": "G pretka; pl. preci",
+          "example": {
+            "target": "Naši preci došli su iz Hercegovine.",
+            "gloss": "Our ancestors came from Herzegovina."
+          }
+        },
+        {
+          "id": "potomak",
+          "hr": "potomak",
+          "en": "descendant",
+          "pos": "n. m.",
+          "note": "G potomka; pl. potomci",
+          "example": {
+            "target": "On je potomak stare dubrovačke obitelji.",
+            "gloss": "He is a descendant of an old Dubrovnik family."
+          }
+        },
+        {
+          "id": "blizanac",
+          "hr": "blizanac",
+          "en": "twin",
+          "pos": "n. m.",
+          "note": "G blizanca; f. blizanka; pl. blizanci",
+          "example": {
+            "target": "Ivan i Luka su blizanci.",
+            "gloss": "Ivan and Luka are twins."
+          }
+        },
+        {
+          "id": "jedinac",
+          "hr": "jedinac",
+          "en": "only child (male)",
+          "pos": "n. m.",
+          "note": "G jedinca; f. jedinica",
+          "example": {
+            "target": "Ivan je jedinac, nema braće ni sestara.",
+            "gloss": "Ivan is an only child, he has no brothers or sisters."
+          }
+        },
+        {
+          "id": "kućanstvo",
+          "hr": "kućanstvo",
+          "en": "household",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "U našem kućanstvu žive četiri osobe.",
+            "gloss": "Four people live in our household."
+          }
+        },
+        {
+          "id": "uzdržavati",
+          "hr": "uzdržavati",
+          "en": "to support (financially)",
+          "pos": "v. impf.",
+          "note": "pf. uzdržati; uzdržavati obitelj = to provide for a family",
+          "example": {
+            "target": "Roditelji ga još uvijek uzdržavaju.",
+            "gloss": "His parents still support him financially."
+          }
+        },
+        {
+          "id": "roditeljstvo",
+          "hr": "roditeljstvo",
+          "en": "parenthood",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Roditeljstvo je najljepši posao na svijetu.",
+            "gloss": "Parenthood is the most beautiful job in the world."
+          }
+        },
+        {
+          "id": "punoljetan",
+          "hr": "punoljetan",
+          "en": "of legal age, adult",
+          "pos": "adj.",
+          "note": "opposite: maloljetan (underage)",
+          "example": {
+            "target": "Njihova kći postala je punoljetna.",
+            "gloss": "Their daughter came of age."
+          }
+        },
+        {
+          "id": "krstiti",
+          "hr": "krstiti",
+          "en": "to baptize",
+          "pos": "v. impf.",
+          "note": "often biaspectual; pf. also pokrstiti; krštenje = christening",
+          "example": {
+            "target": "Bebu ćemo krstiti u lipnju.",
+            "gloss": "We will have the baby baptized in June."
+          }
+        },
+        {
+          "id": "zaova",
+          "hr": "zaova",
+          "en": "sister-in-law (husband's sister)",
+          "pos": "n. f.",
+          "note": "precise traditional term; colloquially šogorica",
+          "example": {
+            "target": "Zaova mi je posudila vjenčanicu.",
+            "gloss": "My sister-in-law lent me her wedding dress."
+          }
+        },
+        {
+          "id": "šurjak",
+          "hr": "šurjak",
+          "en": "brother-in-law (wife's brother)",
+          "pos": "n. m.",
+          "note": "precise traditional term; colloquially šogor",
+          "example": {
+            "target": "Šurjak me pozvao na pecanje.",
+            "gloss": "My brother-in-law invited me to go fishing."
+          }
+        },
+        {
+          "id": "djever",
+          "hr": "djever",
+          "en": "brother-in-law (husband's brother)",
+          "pos": "n. m.",
+          "note": "precise traditional term; colloquially šogor",
+          "example": {
+            "target": "Djever je održao zdravicu na svadbi.",
+            "gloss": "My brother-in-law gave a toast at the wedding."
+          }
+        }
+      ]
+    },
+    {
+      "id": "children-parenting",
+      "title": "Babies, children & parenting",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "beba",
+          "hr": "beba",
+          "en": "baby",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Beba spava u kolicima.",
+            "gloss": "The baby is sleeping in the stroller."
+          }
+        },
+        {
+          "id": "novorođenče",
+          "hr": "novorođenče",
+          "en": "newborn",
+          "pos": "n. n.",
+          "note": "neuter; G novorođenčeta",
+          "example": {
+            "target": "Novorođenče spava gotovo cijeli dan.",
+            "gloss": "A newborn sleeps almost the whole day."
+          }
+        },
+        {
+          "id": "dojenče",
+          "hr": "dojenče",
+          "en": "infant (under one year)",
+          "pos": "n. n.",
+          "note": "neuter; G dojenčeta; from dojiti",
+          "example": {
+            "target": "Dojenče jede svaka tri sata.",
+            "gloss": "An infant eats every three hours."
+          }
+        },
+        {
+          "id": "trudnoća",
+          "hr": "trudnoća",
+          "en": "pregnancy",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Trudnoća je prošla bez problema.",
+            "gloss": "The pregnancy went without problems."
+          }
+        },
+        {
+          "id": "trudna",
+          "hr": "trudna",
+          "en": "pregnant",
+          "pos": "adj.",
+          "note": "used only in the feminine",
+          "example": {
+            "target": "Moja žena je trudna pet mjeseci.",
+            "gloss": "My wife is five months pregnant."
+          }
+        },
+        {
+          "id": "trudnica",
+          "hr": "trudnica",
+          "en": "pregnant woman",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Trudnica treba puno odmora.",
+            "gloss": "A pregnant woman needs a lot of rest."
+          }
+        },
+        {
+          "id": "roditi",
+          "hr": "roditi",
+          "en": "to give birth",
+          "pos": "v. pf.",
+          "note": "impf. rađati",
+          "example": {
+            "target": "Rodila je zdravog dječaka.",
+            "gloss": "She gave birth to a healthy boy."
+          }
+        },
+        {
+          "id": "roditi se",
+          "hr": "roditi se",
+          "en": "to be born",
+          "pos": "v. pf.",
+          "note": "impf. rađati se",
+          "example": {
+            "target": "Naša kći rodila se u Zagrebu.",
+            "gloss": "Our daughter was born in Zagreb."
+          }
+        },
+        {
+          "id": "porod",
+          "hr": "porod",
+          "en": "childbirth, delivery",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Porod je trajao šest sati.",
+            "gloss": "The delivery lasted six hours."
+          }
+        },
+        {
+          "id": "rodilište",
+          "hr": "rodilište",
+          "en": "maternity ward",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "U rodilištu smo proveli tri dana.",
+            "gloss": "We spent three days in the maternity ward."
+          }
+        },
+        {
+          "id": "rodiljni dopust",
+          "hr": "rodiljni dopust",
+          "en": "maternity leave",
+          "pos": "phrase",
+          "note": "roditeljski dopust = parental leave (either parent)",
+          "example": {
+            "target": "Ana je godinu dana na rodiljnom dopustu.",
+            "gloss": "Ana is on maternity leave for a year."
+          }
+        },
+        {
+          "id": "pelena",
+          "hr": "pelena",
+          "en": "diaper, nappy",
+          "pos": "n. f.",
+          "note": "usually plural: pelene",
+          "example": {
+            "target": "Moramo kupiti nove pelene.",
+            "gloss": "We have to buy new diapers."
+          }
+        },
+        {
+          "id": "previti",
+          "hr": "previti",
+          "en": "to change (a diaper)",
+          "pos": "v. pf.",
+          "note": "impf. previjati; previti bebu = change the baby",
+          "example": {
+            "target": "Možeš li previti bebu?",
+            "gloss": "Can you change the baby?"
+          }
+        },
+        {
+          "id": "vlažne maramice",
+          "hr": "vlažne maramice",
+          "en": "wet wipes",
+          "pos": "phrase",
+          "note": "plural; sg. vlažna maramica",
+          "example": {
+            "target": "U torbi uvijek imamo vlažne maramice.",
+            "gloss": "We always have wet wipes in the bag."
+          }
+        },
+        {
+          "id": "duda",
+          "hr": "duda",
+          "en": "pacifier, dummy",
+          "pos": "n. f.",
+          "note": "also duda varalica",
+          "example": {
+            "target": "Beba ne može zaspati bez dude.",
+            "gloss": "The baby cannot fall asleep without the pacifier."
+          }
+        },
+        {
+          "id": "bočica",
+          "hr": "bočica",
+          "en": "baby bottle",
+          "pos": "n. f.",
+          "note": "diminutive of boca",
+          "example": {
+            "target": "Ugrij mlijeko u bočici.",
+            "gloss": "Warm up the milk in the bottle."
+          }
+        },
+        {
+          "id": "adaptirano mlijeko",
+          "hr": "adaptirano mlijeko",
+          "en": "baby formula",
+          "pos": "phrase",
+          "note": "the standard term on packaging and at the pharmacy",
+          "example": {
+            "target": "Kupili smo adaptirano mlijeko u ljekarni.",
+            "gloss": "We bought baby formula at the pharmacy."
+          }
+        },
+        {
+          "id": "kašica",
+          "hr": "kašica",
+          "en": "baby food, puree",
+          "pos": "n. f.",
+          "note": "diminutive of kaša (porridge)",
+          "example": {
+            "target": "Beba jede kašicu od mrkve.",
+            "gloss": "The baby is eating carrot puree."
+          }
+        },
+        {
+          "id": "dojiti",
+          "hr": "dojiti",
+          "en": "to breastfeed",
+          "pos": "v. impf.",
+          "note": "pf. podojiti",
+          "example": {
+            "target": "Majka doji bebu svaka tri sata.",
+            "gloss": "The mother breastfeeds the baby every three hours."
+          }
+        },
+        {
+          "id": "nahraniti",
+          "hr": "nahraniti",
+          "en": "to feed",
+          "pos": "v. pf.",
+          "note": "impf. hraniti",
+          "example": {
+            "target": "Moram nahraniti djecu prije škole.",
+            "gloss": "I have to feed the kids before school."
+          }
+        },
+        {
+          "id": "kolica",
+          "hr": "kolica",
+          "en": "stroller, pram",
+          "pos": "n. n. pl.",
+          "note": "plural only; dječja kolica",
+          "example": {
+            "target": "Ostavili smo kolica ispred trgovine.",
+            "gloss": "We left the stroller in front of the shop."
+          }
+        },
+        {
+          "id": "autosjedalica",
+          "hr": "autosjedalica",
+          "en": "car seat (for a child)",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Dijete uvijek vozimo u autosjedalici.",
+            "gloss": "We always drive the child in a car seat."
+          }
+        },
+        {
+          "id": "nosiljka",
+          "hr": "nosiljka",
+          "en": "baby carrier",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Tata nosi bebu u nosiljci.",
+            "gloss": "Dad is carrying the baby in the carrier."
+          }
+        },
+        {
+          "id": "hodalica",
+          "hr": "hodalica",
+          "en": "baby walker",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Beba u hodalici juri po kuhinji.",
+            "gloss": "The baby in the walker races around the kitchen."
+          }
+        },
+        {
+          "id": "krevetić",
+          "hr": "krevetić",
+          "en": "crib, cot",
+          "pos": "n. m.",
+          "note": "diminutive of krevet",
+          "example": {
+            "target": "Beba spava u svom krevetiću.",
+            "gloss": "The baby sleeps in its crib."
+          }
+        },
+        {
+          "id": "benkica",
+          "hr": "benkica",
+          "en": "onesie, baby bodysuit",
+          "pos": "n. f.",
+          "note": "everyday parents' word",
+          "example": {
+            "target": "Obuci bebi čistu benkicu.",
+            "gloss": "Put a clean onesie on the baby."
+          }
+        },
+        {
+          "id": "zubić",
+          "hr": "zubić",
+          "en": "baby tooth, little tooth",
+          "pos": "n. m.",
+          "note": "diminutive of zub",
+          "example": {
+            "target": "Bebi raste prvi zubić.",
+            "gloss": "The baby's first tooth is coming in."
+          }
+        },
+        {
+          "id": "igračka",
+          "hr": "igračka",
+          "en": "toy",
+          "pos": "n. f.",
+          "note": "G pl. igračaka",
+          "example": {
+            "target": "Pospremi igračke u kutiju!",
+            "gloss": "Put the toys away in the box!"
+          }
+        },
+        {
+          "id": "plišani medvjedić",
+          "hr": "plišani medvjedić",
+          "en": "teddy bear",
+          "pos": "phrase",
+          "note": "plišan = plush",
+          "example": {
+            "target": "Spava samo sa svojim plišanim medvjedićem.",
+            "gloss": "He only sleeps with his teddy bear."
+          }
+        },
+        {
+          "id": "lutka",
+          "hr": "lutka",
+          "en": "doll",
+          "pos": "n. f.",
+          "note": "G pl. lutaka",
+          "example": {
+            "target": "Djevojčica se igra s lutkom.",
+            "gloss": "The little girl is playing with a doll."
+          }
+        },
+        {
+          "id": "slagalica",
+          "hr": "slagalica",
+          "en": "jigsaw puzzle",
+          "pos": "n. f.",
+          "note": "from slagati (to arrange)",
+          "example": {
+            "target": "Slažemo slagalicu od sto dijelova.",
+            "gloss": "We are doing a hundred-piece puzzle."
+          }
+        },
+        {
+          "id": "kocke",
+          "hr": "kocke",
+          "en": "building blocks",
+          "pos": "n. f. pl.",
+          "note": "sg. kocka = cube, block; G pl. kocaka",
+          "example": {
+            "target": "Sin gradi toranj od kocaka.",
+            "gloss": "Our son is building a tower out of blocks."
+          }
+        },
+        {
+          "id": "slikovnica",
+          "hr": "slikovnica",
+          "en": "picture book",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Svaku večer čitamo slikovnicu.",
+            "gloss": "We read a picture book every evening."
+          }
+        },
+        {
+          "id": "bojanka",
+          "hr": "bojanka",
+          "en": "colouring book",
+          "pos": "n. f.",
+          "note": "from bojati (to colour)",
+          "example": {
+            "target": "Kupila sam joj bojanku i bojice.",
+            "gloss": "I bought her a colouring book and crayons."
+          }
+        },
+        {
+          "id": "pjesmica",
+          "hr": "pjesmica",
+          "en": "nursery rhyme, little song",
+          "pos": "n. f.",
+          "note": "diminutive of pjesma",
+          "example": {
+            "target": "Djeca u vrtiću uče novu pjesmicu.",
+            "gloss": "The kids at kindergarten are learning a new song."
+          }
+        },
+        {
+          "id": "uspavanka",
+          "hr": "uspavanka",
+          "en": "lullaby",
+          "pos": "n. f.",
+          "note": "from uspavati",
+          "example": {
+            "target": "Baka joj pjeva staru hrvatsku uspavanku.",
+            "gloss": "Grandma sings her an old Croatian lullaby."
+          }
+        },
+        {
+          "id": "priča za laku noć",
+          "hr": "priča za laku noć",
+          "en": "bedtime story",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Tata svaku večer čita priču za laku noć.",
+            "gloss": "Dad reads a bedtime story every evening."
+          }
+        },
+        {
+          "id": "bajka",
+          "hr": "bajka",
+          "en": "fairy tale",
+          "pos": "n. f.",
+          "note": "G pl. bajki/bajaka",
+          "example": {
+            "target": "Njezina najdraža bajka je Pepeljuga.",
+            "gloss": "Her favourite fairy tale is Cinderella."
+          }
+        },
+        {
+          "id": "crtić",
+          "hr": "crtić",
+          "en": "cartoon",
+          "pos": "n. m.",
+          "note": "colloquial, from crtani film",
+          "example": {
+            "target": "Smiju gledati jedan crtić dnevno.",
+            "gloss": "They are allowed to watch one cartoon a day."
+          }
+        },
+        {
+          "id": "igraonica",
+          "hr": "igraonica",
+          "en": "playroom, play centre",
+          "pos": "n. f.",
+          "note": "common venue for kids' birthday parties",
+          "example": {
+            "target": "Rođendan slavimo u dječjoj igraonici.",
+            "gloss": "We are celebrating the birthday at a kids' play centre."
+          }
+        },
+        {
+          "id": "tobogan",
+          "hr": "tobogan",
+          "en": "slide",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Djeca se spuštaju niz tobogan.",
+            "gloss": "The children are going down the slide."
+          }
+        },
+        {
+          "id": "ljuljačka",
+          "hr": "ljuljačka",
+          "en": "swing",
+          "pos": "n. f.",
+          "note": "from ljuljati se (to swing)",
+          "example": {
+            "target": "Gurni me na ljuljački!",
+            "gloss": "Push me on the swing!"
+          }
+        },
+        {
+          "id": "pješčanik",
+          "hr": "pješčanik",
+          "en": "sandbox",
+          "pos": "n. m.",
+          "note": "from pijesak (sand)",
+          "example": {
+            "target": "Djeca kopaju u pješčaniku.",
+            "gloss": "The children are digging in the sandbox."
+          }
+        },
+        {
+          "id": "vrtuljak",
+          "hr": "vrtuljak",
+          "en": "carousel, merry-go-round",
+          "pos": "n. m.",
+          "note": "G vrtuljka",
+          "example": {
+            "target": "Vozili smo se na vrtuljku.",
+            "gloss": "We rode the merry-go-round."
+          }
+        },
+        {
+          "id": "vrtić",
+          "hr": "vrtić",
+          "en": "kindergarten",
+          "pos": "n. m.",
+          "note": "short for dječji vrtić",
+          "example": {
+            "target": "Sin ide u vrtić od treće godine.",
+            "gloss": "Our son has been going to kindergarten since he was three."
+          }
+        },
+        {
+          "id": "jaslice",
+          "hr": "jaslice",
+          "en": "nursery, creche",
+          "pos": "n. f. pl.",
+          "note": "plural only; daycare for children under three",
+          "example": {
+            "target": "Beba kreće u jaslice na jesen.",
+            "gloss": "The baby starts nursery in the autumn."
+          }
+        },
+        {
+          "id": "odgojiteljica",
+          "hr": "odgojiteljica",
+          "en": "preschool teacher",
+          "pos": "n. f.",
+          "note": "m. odgojitelj; in schools: učiteljica",
+          "example": {
+            "target": "Odgojiteljica kaže da je danas bio dobar.",
+            "gloss": "The preschool teacher says he was good today."
+          }
+        },
+        {
+          "id": "upisati",
+          "hr": "upisati",
+          "en": "to enrol",
+          "pos": "v. pf.",
+          "note": "impf. upisivati; upisati dijete u vrtić",
+          "example": {
+            "target": "Upisali smo kćer u vrtić.",
+            "gloss": "We enrolled our daughter in kindergarten."
+          }
+        },
+        {
+          "id": "roditeljski sastanak",
+          "hr": "roditeljski sastanak",
+          "en": "parent-teacher meeting",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Večeras idem na roditeljski sastanak.",
+            "gloss": "I am going to a parent-teacher meeting tonight."
+          }
+        },
+        {
+          "id": "školska torba",
+          "hr": "školska torba",
+          "en": "school bag",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Školska torba mu je preteška.",
+            "gloss": "His school bag is too heavy."
+          }
+        },
+        {
+          "id": "odgajati",
+          "hr": "odgajati",
+          "en": "to raise, bring up",
+          "pos": "v. impf.",
+          "note": "pf. odgojiti",
+          "example": {
+            "target": "Odgajamo djecu dvojezično.",
+            "gloss": "We are raising the children bilingually."
+          }
+        },
+        {
+          "id": "odgoj",
+          "hr": "odgoj",
+          "en": "upbringing",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Odgoj djece nije lak posao.",
+            "gloss": "Raising children is not an easy job."
+          }
+        },
+        {
+          "id": "kupati",
+          "hr": "kupati",
+          "en": "to bathe (someone)",
+          "pos": "v. impf.",
+          "note": "pf. okupati; kupati se = to bathe, swim",
+          "example": {
+            "target": "Svaku večer kupamo bebu.",
+            "gloss": "We bathe the baby every evening."
+          }
+        },
+        {
+          "id": "presvući",
+          "hr": "presvući",
+          "en": "to change (someone's clothes)",
+          "pos": "v. pf.",
+          "note": "impf. presvlačiti; presvući se = change one's own clothes",
+          "example": {
+            "target": "Presvuci bebu, sva je mokra.",
+            "gloss": "Change the baby, she is all wet."
+          }
+        },
+        {
+          "id": "uspavati",
+          "hr": "uspavati",
+          "en": "to lull to sleep",
+          "pos": "v. pf.",
+          "note": "impf. uspavljivati",
+          "example": {
+            "target": "Teško je uspavati ovo dijete.",
+            "gloss": "It is hard to get this child to sleep."
+          }
+        },
+        {
+          "id": "smiriti",
+          "hr": "smiriti",
+          "en": "to calm (someone) down",
+          "pos": "v. pf.",
+          "note": "impf. smirivati; smiriti se = to calm down (oneself)",
+          "example": {
+            "target": "Samo mama može smiriti bebu.",
+            "gloss": "Only mum can calm the baby down."
+          }
+        },
+        {
+          "id": "drijemati",
+          "hr": "drijemati",
+          "en": "to nap, doze",
+          "pos": "v. impf.",
+          "note": "pf. odrijemati",
+          "example": {
+            "target": "Beba drijema poslije ručka.",
+            "gloss": "The baby naps after lunch."
+          }
+        },
+        {
+          "id": "maziti",
+          "hr": "maziti",
+          "en": "to cuddle, caress",
+          "pos": "v. impf.",
+          "note": "pf. pomaziti; maziti se = to snuggle",
+          "example": {
+            "target": "Tata mazi bebu dok ne zaspi.",
+            "gloss": "Dad cuddles the baby until she falls asleep."
+          }
+        },
+        {
+          "id": "ljubiti",
+          "hr": "ljubiti",
+          "en": "to kiss",
+          "pos": "v. impf.",
+          "note": "pf. poljubiti",
+          "example": {
+            "target": "Baka ljubi unuke u obraze.",
+            "gloss": "Grandma kisses the grandchildren on the cheeks."
+          }
+        },
+        {
+          "id": "poljubac",
+          "hr": "poljubac",
+          "en": "kiss",
+          "pos": "n. m.",
+          "note": "G poljupca",
+          "example": {
+            "target": "Pošalji baki poljubac!",
+            "gloss": "Blow grandma a kiss!"
+          }
+        },
+        {
+          "id": "pričuvati",
+          "hr": "pričuvati",
+          "en": "to babysit, look after for a while",
+          "pos": "v. pf.",
+          "note": "impf. čuvati; pričuvati djecu",
+          "example": {
+            "target": "Možeš li večeras pričuvati djecu?",
+            "gloss": "Can you babysit the kids tonight?"
+          }
+        },
+        {
+          "id": "dadilja",
+          "hr": "dadilja",
+          "en": "nanny, babysitter",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Tražimo dadilju za dvije večeri tjedno.",
+            "gloss": "We are looking for a babysitter for two evenings a week."
+          }
+        },
+        {
+          "id": "puzati",
+          "hr": "puzati",
+          "en": "to crawl",
+          "pos": "v. impf.",
+          "note": "pf. propuzati (to start crawling)",
+          "example": {
+            "target": "Beba je počela puzati u sedmom mjesecu.",
+            "gloss": "The baby started crawling in her seventh month."
+          }
+        },
+        {
+          "id": "prohodati",
+          "hr": "prohodati",
+          "en": "to start walking (first steps)",
+          "pos": "v. pf.",
+          "note": "pf. only; a classic milestone verb",
+          "example": {
+            "target": "Naša kći prohodala je s godinu dana.",
+            "gloss": "Our daughter started walking at one year old."
+          }
+        },
+        {
+          "id": "dječji",
+          "hr": "dječji",
+          "en": "children's",
+          "pos": "adj.",
+          "note": "dječji vrtić, dječja soba, dječje igralište",
+          "example": {
+            "target": "U parku je novo dječje igralište.",
+            "gloss": "There is a new children's playground in the park."
+          }
+        },
+        {
+          "id": "djetinjstvo",
+          "hr": "djetinjstvo",
+          "en": "childhood",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Djetinjstvo je proveo na otoku.",
+            "gloss": "He spent his childhood on an island."
+          }
+        },
+        {
+          "id": "odrasti",
+          "hr": "odrasti",
+          "en": "to grow up",
+          "pos": "v. pf.",
+          "note": "impf. odrastati; odrastao = adult, grown-up",
+          "example": {
+            "target": "Odrastao je u velikoj obitelji.",
+            "gloss": "He grew up in a big family."
+          }
+        },
+        {
+          "id": "dvojezičan",
+          "hr": "dvojezičan",
+          "en": "bilingual",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Naša djeca su dvojezična.",
+            "gloss": "Our children are bilingual."
+          }
+        },
+        {
+          "id": "dvojezičnost",
+          "hr": "dvojezičnost",
+          "en": "bilingualism",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Dvojezičnost je velika prednost za dijete.",
+            "gloss": "Bilingualism is a big advantage for a child."
+          }
+        },
+        {
+          "id": "materinski jezik",
+          "hr": "materinski jezik",
+          "en": "mother tongue",
+          "pos": "phrase",
+          "note": "also materinji jezik",
+          "example": {
+            "target": "Hrvatski joj je materinski jezik.",
+            "gloss": "Croatian is her mother tongue."
+          }
+        },
+        {
+          "id": "poslušan",
+          "hr": "poslušan",
+          "en": "obedient",
+          "pos": "adj.",
+          "note": "opposite: neposlušan",
+          "example": {
+            "target": "Njihov sin je miran i poslušan.",
+            "gloss": "Their son is quiet and obedient."
+          }
+        },
+        {
+          "id": "poslušati",
+          "hr": "poslušati",
+          "en": "to obey; to listen to",
+          "pos": "v. pf.",
+          "note": "impf. slušati; poslušati mamu = do as mum says",
+          "example": {
+            "target": "Poslušaj mamu i obuci jaknu!",
+            "gloss": "Listen to mum and put on your jacket!"
+          }
+        },
+        {
+          "id": "nestašan",
+          "hr": "nestašan",
+          "en": "naughty, mischievous",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Mlađi brat je jako nestašan.",
+            "gloss": "The younger brother is very naughty."
+          }
+        },
+        {
+          "id": "razmaziti",
+          "hr": "razmaziti",
+          "en": "to spoil (a child)",
+          "pos": "v. pf.",
+          "note": "impf. razmazivati; razmažen = spoilt",
+          "example": {
+            "target": "Baka i djed razmazili su unuke.",
+            "gloss": "Grandma and grandpa have spoilt the grandchildren."
+          }
+        },
+        {
+          "id": "kazna",
+          "hr": "kazna",
+          "en": "punishment; fine",
+          "pos": "n. f.",
+          "note": "G pl. kazni/kazna",
+          "example": {
+            "target": "Za kaznu ne smije gledati crtiće.",
+            "gloss": "As punishment he is not allowed to watch cartoons."
+          }
+        },
+        {
+          "id": "kazniti",
+          "hr": "kazniti",
+          "en": "to punish",
+          "pos": "v. pf.",
+          "note": "impf. kažnjavati",
+          "example": {
+            "target": "Nemoj ga kazniti, nije kriv.",
+            "gloss": "Don't punish him, it's not his fault."
+          }
+        },
+        {
+          "id": "nagraditi",
+          "hr": "nagraditi",
+          "en": "to reward",
+          "pos": "v. pf.",
+          "note": "impf. nagrađivati; nagrada = reward",
+          "example": {
+            "target": "Nagradili smo je sladoledom za dobru ocjenu.",
+            "gloss": "We rewarded her with ice cream for a good grade."
+          }
+        },
+        {
+          "id": "pohvala",
+          "hr": "pohvala",
+          "en": "praise, commendation",
+          "pos": "n. f.",
+          "note": "from pohvaliti",
+          "example": {
+            "target": "Dobio je pohvalu od učiteljice.",
+            "gloss": "He received praise from the teacher."
+          }
+        },
+        {
+          "id": "rasplakati se",
+          "hr": "rasplakati se",
+          "en": "to burst into tears",
+          "pos": "v. pf.",
+          "note": "impf. plakati (to cry)",
+          "example": {
+            "target": "Dijete se rasplakalo zbog izgubljene igračke.",
+            "gloss": "The child burst into tears over a lost toy."
+          }
+        },
+        {
+          "id": "vrištati",
+          "hr": "vrištati",
+          "en": "to scream",
+          "pos": "v. impf.",
+          "note": "pf. vrisnuti",
+          "example": {
+            "target": "Beba vrišti kad je gladna.",
+            "gloss": "The baby screams when she is hungry."
+          }
+        },
+        {
+          "id": "plač",
+          "hr": "plač",
+          "en": "crying",
+          "pos": "n. m.",
+          "note": "from plakati",
+          "example": {
+            "target": "Probudio nas je dječji plač.",
+            "gloss": "A child's crying woke us up."
+          }
+        },
+        {
+          "id": "vrućica",
+          "hr": "vrućica",
+          "en": "fever",
+          "pos": "n. f.",
+          "note": "everyday synonym: temperatura",
+          "example": {
+            "target": "Dijete ima vrućicu i mora ležati.",
+            "gloss": "The child has a fever and has to stay in bed."
+          }
+        },
+        {
+          "id": "pedijatar",
+          "hr": "pedijatar",
+          "en": "pediatrician",
+          "pos": "n. m.",
+          "note": "G pedijatra; f. pedijatrica",
+          "example": {
+            "target": "Sutra idemo pedijatru na pregled.",
+            "gloss": "Tomorrow we are going to the pediatrician for a check-up."
+          }
+        },
+        {
+          "id": "cijepiti",
+          "hr": "cijepiti",
+          "en": "to vaccinate",
+          "pos": "v. impf.",
+          "note": "often biaspectual; docijepiti = give a booster; cjepivo = vaccine",
+          "example": {
+            "target": "Dijete smo cijepili protiv gripe.",
+            "gloss": "We had the child vaccinated against the flu."
+          }
+        },
+        {
+          "id": "prvi rođendan",
+          "hr": "prvi rođendan",
+          "en": "first birthday",
+          "pos": "phrase",
+          "note": "a big family event in Croatia",
+          "example": {
+            "target": "Slavimo kćerin prvi rođendan u subotu.",
+            "gloss": "We are celebrating our daughter's first birthday on Saturday."
+          }
+        }
+      ]
+    },
+    {
+      "id": "character-emotions-deep",
+      "title": "Character & deeper emotions",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "brižan",
+          "hr": "brižan",
+          "en": "caring, attentive",
+          "pos": "adj.",
+          "note": "from briga (care, worry)",
+          "example": {
+            "target": "Marko je brižan otac dvoje djece.",
+            "gloss": "Marko is a caring father of two."
+          }
+        },
+        {
+          "id": "nježan",
+          "hr": "nježan",
+          "en": "gentle, tender",
+          "pos": "adj.",
+          "note": "nježnost = tenderness",
+          "example": {
+            "target": "Prema bebi treba biti nježan.",
+            "gloss": "One has to be gentle with a baby."
+          }
+        },
+        {
+          "id": "odan",
+          "hr": "odan",
+          "en": "loyal, devoted",
+          "pos": "adj.",
+          "note": "odan prijatelju = devoted to a friend (+ dat.)",
+          "example": {
+            "target": "Ona je odana prijateljica.",
+            "gloss": "She is a loyal friend."
+          }
+        },
+        {
+          "id": "neiskren",
+          "hr": "neiskren",
+          "en": "insincere",
+          "pos": "adj.",
+          "note": "opposite: iskren (sincere)",
+          "example": {
+            "target": "Ne vjerujem mu, čini mi se neiskren.",
+            "gloss": "I don't trust him, he seems insincere to me."
+          }
+        },
+        {
+          "id": "iskrenost",
+          "hr": "iskrenost",
+          "en": "honesty, sincerity",
+          "pos": "n. f.",
+          "note": "from iskren",
+          "example": {
+            "target": "Cijenim tvoju iskrenost, hvala ti.",
+            "gloss": "I appreciate your honesty, thank you."
+          }
+        },
+        {
+          "id": "ohol",
+          "hr": "ohol",
+          "en": "arrogant, haughty",
+          "pos": "adj.",
+          "note": "oholost = arrogance",
+          "example": {
+            "target": "Uspjeh ga je učinio oholim.",
+            "gloss": "Success made him arrogant."
+          }
+        },
+        {
+          "id": "skroman",
+          "hr": "skroman",
+          "en": "modest",
+          "pos": "adj.",
+          "note": "G skromnog; also = modest in size (skromna plaća)",
+          "example": {
+            "target": "Iako je bogat, ostao je skroman.",
+            "gloss": "Although he is rich, he has stayed modest."
+          }
+        },
+        {
+          "id": "tvrdoglav",
+          "hr": "tvrdoglav",
+          "en": "stubborn",
+          "pos": "adj.",
+          "note": "literally: hard-headed",
+          "example": {
+            "target": "Tvrdoglav je kao i njegov djed.",
+            "gloss": "He is as stubborn as his grandfather."
+          }
+        },
+        {
+          "id": "uporan",
+          "hr": "uporan",
+          "en": "persistent",
+          "pos": "adj.",
+          "note": "upornost = persistence",
+          "example": {
+            "target": "Budi uporan i uspjet ćeš.",
+            "gloss": "Be persistent and you will succeed."
+          }
+        },
+        {
+          "id": "znatiželjan",
+          "hr": "znatiželjan",
+          "en": "curious",
+          "pos": "adj.",
+          "note": "znatiželja = curiosity",
+          "example": {
+            "target": "Djeca su prirodno znatiželjna.",
+            "gloss": "Children are naturally curious."
+          }
+        },
+        {
+          "id": "velikodušan",
+          "hr": "velikodušan",
+          "en": "generous",
+          "pos": "adj.",
+          "note": "literally: big-souled",
+          "example": {
+            "target": "Naš susjed je velikodušan čovjek.",
+            "gloss": "Our neighbour is a generous man."
+          }
+        },
+        {
+          "id": "sebičan",
+          "hr": "sebičan",
+          "en": "selfish",
+          "pos": "adj.",
+          "note": "sebičnost = selfishness",
+          "example": {
+            "target": "Ne budi sebičan, podijeli s bratom!",
+            "gloss": "Don't be selfish, share with your brother!"
+          }
+        },
+        {
+          "id": "ljubomoran",
+          "hr": "ljubomoran",
+          "en": "jealous",
+          "pos": "adj.",
+          "note": "ljubomoran na koga = jealous of someone",
+          "example": {
+            "target": "Ljubomoran je na bratov uspjeh.",
+            "gloss": "He is jealous of his brother's success."
+          }
+        },
+        {
+          "id": "ljubomora",
+          "hr": "ljubomora",
+          "en": "jealousy",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Ljubomora može uništiti vezu.",
+            "gloss": "Jealousy can destroy a relationship."
+          }
+        },
+        {
+          "id": "zavidan",
+          "hr": "zavidan",
+          "en": "envious",
+          "pos": "adj.",
+          "note": "also = enviable (zavidna razina = an enviable level)",
+          "example": {
+            "target": "Zavidni kolege širili su glasine.",
+            "gloss": "Envious colleagues were spreading rumours."
+          }
+        },
+        {
+          "id": "zavist",
+          "hr": "zavist",
+          "en": "envy",
+          "pos": "n. f.",
+          "note": "zavidjeti (+ dat.) = to envy",
+          "example": {
+            "target": "Njezin uspjeh izazvao je zavist u uredu.",
+            "gloss": "Her success provoked envy in the office."
+          }
+        },
+        {
+          "id": "susretljiv",
+          "hr": "susretljiv",
+          "en": "helpful, accommodating",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Osoblje hotela bilo je vrlo susretljivo.",
+            "gloss": "The hotel staff were very accommodating."
+          }
+        },
+        {
+          "id": "drzak",
+          "hr": "drzak",
+          "en": "insolent, brazen",
+          "pos": "adj.",
+          "note": "G drskog; drskost = insolence",
+          "example": {
+            "target": "Konobar je bio drzak prema gostima.",
+            "gloss": "The waiter was insolent towards the guests."
+          }
+        },
+        {
+          "id": "bezobrazan",
+          "hr": "bezobrazan",
+          "en": "rude, impertinent",
+          "pos": "adj.",
+          "note": "very common in everyday speech",
+          "example": {
+            "target": "Taj dječak je stvarno bezobrazan.",
+            "gloss": "That boy is really rude."
+          }
+        },
+        {
+          "id": "pristojan",
+          "hr": "pristojan",
+          "en": "polite, decent",
+          "pos": "adj.",
+          "note": "also = decent (pristojna plaća)",
+          "example": {
+            "target": "Budi pristojan prema starijima.",
+            "gloss": "Be polite to your elders."
+          }
+        },
+        {
+          "id": "nepristojan",
+          "hr": "nepristojan",
+          "en": "impolite, rude",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Njegovo ponašanje bilo je nepristojno.",
+            "gloss": "His behaviour was impolite."
+          }
+        },
+        {
+          "id": "smiren",
+          "hr": "smiren",
+          "en": "calm, composed",
+          "pos": "adj.",
+          "note": "from smiriti se",
+          "example": {
+            "target": "Ostao je smiren unatoč problemima.",
+            "gloss": "He stayed calm despite the problems."
+          }
+        },
+        {
+          "id": "smirenost",
+          "hr": "smirenost",
+          "en": "calmness, composure",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "U krizi je pokazala nevjerojatnu smirenost.",
+            "gloss": "In the crisis she showed incredible composure."
+          }
+        },
+        {
+          "id": "osjetljiv",
+          "hr": "osjetljiv",
+          "en": "sensitive",
+          "pos": "adj.",
+          "note": "osjetljiv na kritiku = sensitive to criticism",
+          "example": {
+            "target": "Vrlo je osjetljiv na kritiku.",
+            "gloss": "He is very sensitive to criticism."
+          }
+        },
+        {
+          "id": "ranjiv",
+          "hr": "ranjiv",
+          "en": "vulnerable",
+          "pos": "adj.",
+          "note": "from rana (wound)",
+          "example": {
+            "target": "Nakon razvoda osjećao se ranjivo.",
+            "gloss": "After the divorce he felt vulnerable."
+          }
+        },
+        {
+          "id": "samouvjeren",
+          "hr": "samouvjeren",
+          "en": "self-confident",
+          "pos": "adj.",
+          "note": "samopouzdanje = self-confidence",
+          "example": {
+            "target": "Na razgovoru za posao bio je samouvjeren.",
+            "gloss": "He was self-confident at the job interview."
+          }
+        },
+        {
+          "id": "plah",
+          "hr": "plah",
+          "en": "timid, meek",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Kao dijete bila je plaha i tiha.",
+            "gloss": "As a child she was timid and quiet."
+          }
+        },
+        {
+          "id": "stidljiv",
+          "hr": "stidljiv",
+          "en": "shy, bashful",
+          "pos": "adj.",
+          "note": "synonym: sramežljiv; stid = shame, shyness",
+          "example": {
+            "target": "Stidljiv je pred nepoznatim ljudima.",
+            "gloss": "He is shy around people he doesn't know."
+          }
+        },
+        {
+          "id": "povučen",
+          "hr": "povučen",
+          "en": "withdrawn, reserved",
+          "pos": "adj.",
+          "note": "from povući se (to withdraw)",
+          "example": {
+            "target": "On je povučen, ali drag čovjek.",
+            "gloss": "He is reserved but a dear man."
+          }
+        },
+        {
+          "id": "društven",
+          "hr": "društven",
+          "en": "sociable",
+          "pos": "adj.",
+          "note": "also = social (društvene mreže = social networks)",
+          "example": {
+            "target": "Ana je društvena i puna energije.",
+            "gloss": "Ana is sociable and full of energy."
+          }
+        },
+        {
+          "id": "strog",
+          "hr": "strog",
+          "en": "strict",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Otac im je bio strog, ali pravedan.",
+            "gloss": "Their father was strict but fair."
+          }
+        },
+        {
+          "id": "blag",
+          "hr": "blag",
+          "en": "mild, gentle",
+          "pos": "adj.",
+          "note": "also of weather and taste: blaga zima, blagi okus",
+          "example": {
+            "target": "Ima blagu narav, nikad se ne ljuti.",
+            "gloss": "He has a gentle temperament, he never gets angry."
+          }
+        },
+        {
+          "id": "grub",
+          "hr": "grub",
+          "en": "rough, harsh",
+          "pos": "adj.",
+          "note": "also of surfaces: gruba tkanina",
+          "example": {
+            "target": "Bio je grub prema mlađem bratu.",
+            "gloss": "He was rough with his younger brother."
+          }
+        },
+        {
+          "id": "srdačan",
+          "hr": "srdačan",
+          "en": "warm, cordial",
+          "pos": "adj.",
+          "note": "srdačan pozdrav = kind regards (letters)",
+          "example": {
+            "target": "Domaćini su bili srdačni i gostoljubivi.",
+            "gloss": "The hosts were warm and hospitable."
+          }
+        },
+        {
+          "id": "mudar",
+          "hr": "mudar",
+          "en": "wise",
+          "pos": "adj.",
+          "note": "mudrost = wisdom",
+          "example": {
+            "target": "Djed mi je dao mudar savjet.",
+            "gloss": "My grandfather gave me a wise piece of advice."
+          }
+        },
+        {
+          "id": "maštovit",
+          "hr": "maštovit",
+          "en": "imaginative",
+          "pos": "adj.",
+          "note": "from mašta (imagination)",
+          "example": {
+            "target": "Naša kći je vrlo maštovita.",
+            "gloss": "Our daughter is very imaginative."
+          }
+        },
+        {
+          "id": "oprezan",
+          "hr": "oprezan",
+          "en": "cautious, careful",
+          "pos": "adj.",
+          "note": "oprez = caution",
+          "example": {
+            "target": "Oprezan je kad troši novac.",
+            "gloss": "He is careful when spending money."
+          }
+        },
+        {
+          "id": "bezbrižan",
+          "hr": "bezbrižan",
+          "en": "carefree",
+          "pos": "adj.",
+          "note": "literally: without worry",
+          "example": {
+            "target": "Djetinjstvo mu je bilo sretno i bezbrižno.",
+            "gloss": "His childhood was happy and carefree."
+          }
+        },
+        {
+          "id": "razuman",
+          "hr": "razuman",
+          "en": "reasonable, sensible",
+          "pos": "adj.",
+          "note": "razum = reason",
+          "example": {
+            "target": "Budi razuman, ne troši sve odjednom.",
+            "gloss": "Be sensible, don't spend everything at once."
+          }
+        },
+        {
+          "id": "okrutan",
+          "hr": "okrutan",
+          "en": "cruel",
+          "pos": "adj.",
+          "note": "okrutnost = cruelty",
+          "example": {
+            "target": "Bio je okrutan prema životinjama.",
+            "gloss": "He was cruel to animals."
+          }
+        },
+        {
+          "id": "kukavica",
+          "hr": "kukavica",
+          "en": "coward",
+          "pos": "n. f.",
+          "note": "feminine noun used for both sexes; also = cuckoo",
+          "example": {
+            "target": "Nisam kukavica, samo sam oprezan.",
+            "gloss": "I'm not a coward, I'm just cautious."
+          }
+        },
+        {
+          "id": "optimističan",
+          "hr": "optimističan",
+          "en": "optimistic",
+          "pos": "adj.",
+          "note": "optimist = an optimist",
+          "example": {
+            "target": "Unatoč svemu ostala je optimistična.",
+            "gloss": "Despite everything she remained optimistic."
+          }
+        },
+        {
+          "id": "pesimističan",
+          "hr": "pesimističan",
+          "en": "pessimistic",
+          "pos": "adj.",
+          "note": "pesimist = a pessimist",
+          "example": {
+            "target": "Ne budi tako pesimističan!",
+            "gloss": "Don't be so pessimistic!"
+          }
+        },
+        {
+          "id": "zadovoljan",
+          "hr": "zadovoljan",
+          "en": "satisfied, content",
+          "pos": "adj.",
+          "note": "zadovoljan čime (+ instr.)",
+          "example": {
+            "target": "Zadovoljan sam svojim novim poslom.",
+            "gloss": "I am satisfied with my new job."
+          }
+        },
+        {
+          "id": "nezadovoljan",
+          "hr": "nezadovoljan",
+          "en": "dissatisfied",
+          "pos": "adj.",
+          "note": "+ instr.",
+          "example": {
+            "target": "Nezadovoljna je plaćom i uvjetima.",
+            "gloss": "She is dissatisfied with the pay and the conditions."
+          }
+        },
+        {
+          "id": "zahvalan",
+          "hr": "zahvalan",
+          "en": "grateful",
+          "pos": "adj.",
+          "note": "zahvalan komu na čemu",
+          "example": {
+            "target": "Zahvalan sam ti na pomoći.",
+            "gloss": "I am grateful to you for the help."
+          }
+        },
+        {
+          "id": "zahvalnost",
+          "hr": "zahvalnost",
+          "en": "gratitude",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Osjećam duboku zahvalnost prema roditeljima.",
+            "gloss": "I feel deep gratitude towards my parents."
+          }
+        },
+        {
+          "id": "usamljen",
+          "hr": "usamljen",
+          "en": "lonely",
+          "pos": "adj.",
+          "note": "sam = alone; usamljen = feeling lonely",
+          "example": {
+            "target": "U novom gradu osjećala se usamljeno.",
+            "gloss": "In the new city she felt lonely."
+          }
+        },
+        {
+          "id": "usamljenost",
+          "hr": "usamljenost",
+          "en": "loneliness",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Usamljenost je velik problem starijih ljudi.",
+            "gloss": "Loneliness is a big problem for elderly people."
+          }
+        },
+        {
+          "id": "napet",
+          "hr": "napet",
+          "en": "tense; gripping",
+          "pos": "adj.",
+          "note": "napetost = tension; napet film = a gripping film",
+          "example": {
+            "target": "Bio je napet prije ispita.",
+            "gloss": "He was tense before the exam."
+          }
+        },
+        {
+          "id": "opušten",
+          "hr": "opušten",
+          "en": "relaxed",
+          "pos": "adj.",
+          "note": "from opustiti se",
+          "example": {
+            "target": "Na godišnjem smo potpuno opušteni.",
+            "gloss": "On holiday we are completely relaxed."
+          }
+        },
+        {
+          "id": "uzrujan",
+          "hr": "uzrujan",
+          "en": "upset, agitated",
+          "pos": "adj.",
+          "note": "from uzrujati se",
+          "example": {
+            "target": "Zašto si tako uzrujan? Smiri se.",
+            "gloss": "Why are you so upset? Calm down."
+          }
+        },
+        {
+          "id": "uznemiren",
+          "hr": "uznemiren",
+          "en": "distressed, disturbed",
+          "pos": "adj.",
+          "note": "from uznemiriti (pf., impf. uznemirivati)",
+          "example": {
+            "target": "Uznemirena je zbog loših vijesti.",
+            "gloss": "She is distressed because of the bad news."
+          }
+        },
+        {
+          "id": "potišten",
+          "hr": "potišten",
+          "en": "dejected, down",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Nakon poraza svi su bili potišteni.",
+            "gloss": "After the defeat everyone was dejected."
+          }
+        },
+        {
+          "id": "dirljiv",
+          "hr": "dirljiv",
+          "en": "touching, moving",
+          "pos": "adj.",
+          "note": "dirnut = touched, moved",
+          "example": {
+            "target": "Održao je dirljiv govor na svadbi.",
+            "gloss": "He gave a touching speech at the wedding."
+          }
+        },
+        {
+          "id": "bijes",
+          "hr": "bijes",
+          "en": "rage, fury",
+          "pos": "n. m.",
+          "note": "bijesan = furious",
+          "example": {
+            "target": "Nije mogao sakriti svoj bijes.",
+            "gloss": "He could not hide his rage."
+          }
+        },
+        {
+          "id": "žalost",
+          "hr": "žalost",
+          "en": "sorrow, sadness",
+          "pos": "n. f.",
+          "note": "nažalost = unfortunately; I žalošću",
+          "example": {
+            "target": "Vijest je primila s dubokom žalošću.",
+            "gloss": "She received the news with deep sorrow."
+          }
+        },
+        {
+          "id": "sram",
+          "hr": "sram",
+          "en": "shame",
+          "pos": "n. m.",
+          "note": "Sram me je. = I am ashamed.",
+          "example": {
+            "target": "Sram me je zbog moje pogreške.",
+            "gloss": "I am ashamed of my mistake."
+          }
+        },
+        {
+          "id": "krivnja",
+          "hr": "krivnja",
+          "en": "guilt",
+          "pos": "n. f.",
+          "note": "osjećaj krivnje = a feeling of guilt",
+          "example": {
+            "target": "Osjećao je krivnju zbog laži.",
+            "gloss": "He felt guilt over the lie."
+          }
+        },
+        {
+          "id": "olakšanje",
+          "hr": "olakšanje",
+          "en": "relief",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Kakvo olakšanje, svi su dobro!",
+            "gloss": "What a relief, everyone is fine!"
+          }
+        },
+        {
+          "id": "oduševljenje",
+          "hr": "oduševljenje",
+          "en": "enthusiasm, delight",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Publika nije skrivala oduševljenje.",
+            "gloss": "The audience did not hide its delight."
+          }
+        },
+        {
+          "id": "razočaranje",
+          "hr": "razočaranje",
+          "en": "disappointment",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Rezultat je bio veliko razočaranje.",
+            "gloss": "The result was a big disappointment."
+          }
+        },
+        {
+          "id": "čežnja",
+          "hr": "čežnja",
+          "en": "longing, yearning",
+          "pos": "n. f.",
+          "note": "čeznuti za čim = to long for something",
+          "example": {
+            "target": "Osjeća čežnju za domovinom.",
+            "gloss": "She feels a longing for her homeland."
+          }
+        },
+        {
+          "id": "zabrinutost",
+          "hr": "zabrinutost",
+          "en": "worry, concern",
+          "pos": "n. f.",
+          "note": "zabrinut = worried",
+          "example": {
+            "target": "Liječnici su izrazili zabrinutost zbog gripe.",
+            "gloss": "Doctors expressed concern about the flu."
+          }
+        },
+        {
+          "id": "ponos",
+          "hr": "ponos",
+          "en": "pride",
+          "pos": "n. m.",
+          "note": "ponosan = proud",
+          "example": {
+            "target": "S ponosom je gledao svoju djecu.",
+            "gloss": "He watched his children with pride."
+          }
+        },
+        {
+          "id": "mržnja",
+          "hr": "mržnja",
+          "en": "hatred",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Mržnja nikada ništa ne rješava.",
+            "gloss": "Hatred never solves anything."
+          }
+        },
+        {
+          "id": "tjeskoba",
+          "hr": "tjeskoba",
+          "en": "anxiety",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Prije ispita osjeća tjeskobu.",
+            "gloss": "Before exams she feels anxiety."
+          }
+        },
+        {
+          "id": "suza",
+          "hr": "suza",
+          "en": "tear",
+          "pos": "n. f.",
+          "note": "G pl. suza",
+          "example": {
+            "target": "Niz obraz joj je kliznula suza.",
+            "gloss": "A tear slid down her cheek."
+          }
+        },
+        {
+          "id": "očaj",
+          "hr": "očaj",
+          "en": "despair",
+          "pos": "n. m.",
+          "note": "očajan = desperate",
+          "example": {
+            "target": "U očaju je nazvao staru prijateljicu.",
+            "gloss": "In despair he called an old friend."
+          }
+        },
+        {
+          "id": "suosjećanje",
+          "hr": "suosjećanje",
+          "en": "compassion, sympathy",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Pokazali su veliko suosjećanje prema obitelji.",
+            "gloss": "They showed great compassion towards the family."
+          }
+        },
+        {
+          "id": "oduševiti se",
+          "hr": "oduševiti se",
+          "en": "to be thrilled, delighted",
+          "pos": "v. pf.",
+          "note": "impf. oduševljavati se; + instr.",
+          "example": {
+            "target": "Oduševila se poklonom za rođendan.",
+            "gloss": "She was thrilled with her birthday present."
+          }
+        },
+        {
+          "id": "razočarati se",
+          "hr": "razočarati se",
+          "en": "to be disappointed",
+          "pos": "v. pf.",
+          "note": "impf. razočaravati se; razočarati se u koga",
+          "example": {
+            "target": "Razočarao sam se u njega.",
+            "gloss": "I was disappointed in him."
+          }
+        },
+        {
+          "id": "uzbuditi se",
+          "hr": "uzbuditi se",
+          "en": "to get excited",
+          "pos": "v. pf.",
+          "note": "impf. uzbuđivati se; uzbuđen = excited",
+          "example": {
+            "target": "Djeca su se uzbudila zbog putovanja.",
+            "gloss": "The children got excited about the trip."
+          }
+        },
+        {
+          "id": "ganuti",
+          "hr": "ganuti",
+          "en": "to move (emotionally)",
+          "pos": "v. pf.",
+          "note": "pf. only in everyday use; ganut = moved, touched",
+          "example": {
+            "target": "Njezine riječi ganule su sve prisutne.",
+            "gloss": "Her words moved everyone present."
+          }
+        },
+        {
+          "id": "tješiti",
+          "hr": "tješiti",
+          "en": "to comfort, console",
+          "pos": "v. impf.",
+          "note": "pf. utješiti; utjeha = consolation",
+          "example": {
+            "target": "Tješila je prijateljicu nakon prekida.",
+            "gloss": "She comforted her friend after the break-up."
+          }
+        },
+        {
+          "id": "žaliti",
+          "hr": "žaliti",
+          "en": "to regret; to mourn",
+          "pos": "v. impf.",
+          "note": "pf. požaliti; žaliti za čim (+ instr.)",
+          "example": {
+            "target": "Ne žalim ni za čim.",
+            "gloss": "I regret nothing."
+          }
+        },
+        {
+          "id": "kajati se",
+          "hr": "kajati se",
+          "en": "to repent, feel remorse",
+          "pos": "v. impf.",
+          "note": "pf. pokajati se",
+          "example": {
+            "target": "Kaje se zbog svojih riječi.",
+            "gloss": "He regrets his words."
+          }
+        },
+        {
+          "id": "oprostiti",
+          "hr": "oprostiti",
+          "en": "to forgive",
+          "pos": "v. pf.",
+          "note": "impf. opraštati; oprostiti komu (+ dat.)",
+          "example": {
+            "target": "Oprostila mu je nakon iskrene isprike.",
+            "gloss": "She forgave him after a sincere apology."
+          }
+        },
+        {
+          "id": "mrziti",
+          "hr": "mrziti",
+          "en": "to hate",
+          "pos": "v. impf.",
+          "note": "pf. zamrziti (to come to hate)",
+          "example": {
+            "target": "Mrzim ustajati rano ponedjeljkom.",
+            "gloss": "I hate getting up early on Mondays."
+          }
+        },
+        {
+          "id": "diviti se",
+          "hr": "diviti se",
+          "en": "to admire",
+          "pos": "v. impf.",
+          "note": "no pf.; + dat.; divljenje = admiration",
+          "example": {
+            "target": "Divim se njezinoj upornosti.",
+            "gloss": "I admire her persistence."
+          }
+        },
+        {
+          "id": "poštovati",
+          "hr": "poštovati",
+          "en": "to respect",
+          "pos": "v. impf.",
+          "note": "no pf.; poštovanje = respect",
+          "example": {
+            "target": "Djeca trebaju poštovati starije.",
+            "gloss": "Children should respect their elders."
+          }
+        },
+        {
+          "id": "suosjećati",
+          "hr": "suosjećati",
+          "en": "to sympathize, feel for",
+          "pos": "v. impf.",
+          "note": "no pf.; suosjećati s kim (+ instr.)",
+          "example": {
+            "target": "Suosjećam s tobom, znam kako ti je.",
+            "gloss": "I feel for you, I know how you feel."
+          }
+        },
+        {
+          "id": "smetati",
+          "hr": "smetati",
+          "en": "to bother, disturb",
+          "pos": "v. impf.",
+          "note": "pf. zasmetati; + dat.: smeta mi buka",
+          "example": {
+            "target": "Smeta li vam glasna glazba?",
+            "gloss": "Does the loud music bother you?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-life-gaps",
+      "title": "Everyday life: appointments, household & errands",
+      "level": "A2",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "dogovoriti termin",
+          "hr": "dogovoriti termin",
+          "en": "to make an appointment",
+          "pos": "phrase",
+          "note": "dogovoriti (pf., impf. dogovarati) = to arrange",
+          "example": {
+            "target": "Dogovorila sam termin kod zubara za utorak.",
+            "gloss": "I made a dentist appointment for Tuesday."
+          }
+        },
+        {
+          "id": "otkazati",
+          "hr": "otkazati",
+          "en": "to cancel",
+          "pos": "v. pf.",
+          "note": "impf. otkazivati",
+          "example": {
+            "target": "Morao sam otkazati sastanak zbog gripe.",
+            "gloss": "I had to cancel the meeting because of the flu."
+          }
+        },
+        {
+          "id": "odgoditi",
+          "hr": "odgoditi",
+          "en": "to postpone",
+          "pos": "v. pf.",
+          "note": "impf. odgađati",
+          "example": {
+            "target": "Odgodili smo put za sljedeći tjedan.",
+            "gloss": "We postponed the trip to next week."
+          }
+        },
+        {
+          "id": "potvrditi",
+          "hr": "potvrditi",
+          "en": "to confirm",
+          "pos": "v. pf.",
+          "note": "impf. potvrđivati; potvrda = certificate, receipt",
+          "example": {
+            "target": "Molim vas, potvrdite dolazak do petka.",
+            "gloss": "Please confirm your attendance by Friday."
+          }
+        },
+        {
+          "id": "podsjetiti",
+          "hr": "podsjetiti",
+          "en": "to remind",
+          "pos": "v. pf.",
+          "note": "impf. podsjećati; podsjetiti koga na što",
+          "example": {
+            "target": "Podsjeti me da kupim mlijeko.",
+            "gloss": "Remind me to buy milk."
+          }
+        },
+        {
+          "id": "zakazati",
+          "hr": "zakazati",
+          "en": "to schedule, book",
+          "pos": "v. pf.",
+          "note": "impf. zakazivati; zakazati pregled = book a check-up",
+          "example": {
+            "target": "Zakazali smo pregled za ponedjeljak ujutro.",
+            "gloss": "We scheduled the check-up for Monday morning."
+          }
+        },
+        {
+          "id": "ostaviti poruku",
+          "hr": "ostaviti poruku",
+          "en": "to leave a message",
+          "pos": "phrase",
+          "note": "ostaviti (pf., impf. ostavljati)",
+          "example": {
+            "target": "Nije se javio, ostavila sam poruku.",
+            "gloss": "He didn't answer, so I left a message."
+          }
+        },
+        {
+          "id": "usisavati",
+          "hr": "usisavati",
+          "en": "to vacuum",
+          "pos": "v. impf.",
+          "note": "pf. usisati",
+          "example": {
+            "target": "Subotom usisavam cijeli stan.",
+            "gloss": "On Saturdays I vacuum the whole flat."
+          }
+        },
+        {
+          "id": "usisavač",
+          "hr": "usisavač",
+          "en": "vacuum cleaner",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Usisavač je opet u kvaru.",
+            "gloss": "The vacuum cleaner is broken again."
+          }
+        },
+        {
+          "id": "brisati",
+          "hr": "brisati",
+          "en": "to wipe; to erase",
+          "pos": "v. impf.",
+          "note": "pf. obrisati; brisati prašinu = to dust",
+          "example": {
+            "target": "Brišem prašinu s polica.",
+            "gloss": "I am dusting the shelves."
+          }
+        },
+        {
+          "id": "metla",
+          "hr": "metla",
+          "en": "broom",
+          "pos": "n. f.",
+          "note": "G pl. metli/metala; pomesti = to sweep up",
+          "example": {
+            "target": "Uzmi metlu i pometi kuhinju.",
+            "gloss": "Take the broom and sweep the kitchen."
+          }
+        },
+        {
+          "id": "krpa",
+          "hr": "krpa",
+          "en": "cloth, rag",
+          "pos": "n. f.",
+          "note": "krpa za suđe = dishcloth",
+          "example": {
+            "target": "Obriši stol mokrom krpom.",
+            "gloss": "Wipe the table with a wet cloth."
+          }
+        },
+        {
+          "id": "deterdžent",
+          "hr": "deterdžent",
+          "en": "detergent",
+          "pos": "n. m.",
+          "note": "deterdžent za rublje / za suđe",
+          "example": {
+            "target": "Nestalo nam je deterdženta za rublje.",
+            "gloss": "We have run out of laundry detergent."
+          }
+        },
+        {
+          "id": "glačalo",
+          "hr": "glačalo",
+          "en": "iron (for clothes)",
+          "pos": "n. n.",
+          "note": "glačati = to iron; colloquially pegla, peglati",
+          "example": {
+            "target": "Isključi glačalo prije izlaska!",
+            "gloss": "Unplug the iron before going out!"
+          }
+        },
+        {
+          "id": "vješalica",
+          "hr": "vješalica",
+          "en": "hanger",
+          "pos": "n. f.",
+          "note": "from vješati (to hang)",
+          "example": {
+            "target": "Objesi kaput na vješalicu.",
+            "gloss": "Hang the coat on the hanger."
+          }
+        },
+        {
+          "id": "perilica posuđa",
+          "hr": "perilica posuđa",
+          "en": "dishwasher",
+          "pos": "phrase",
+          "note": "perilica rublja = washing machine",
+          "example": {
+            "target": "Stavi tanjure u perilicu posuđa.",
+            "gloss": "Put the plates in the dishwasher."
+          }
+        },
+        {
+          "id": "utičnica",
+          "hr": "utičnica",
+          "en": "power socket",
+          "pos": "n. f.",
+          "note": "utikač = plug",
+          "example": {
+            "target": "Utičnica u kupaonici ne radi.",
+            "gloss": "The socket in the bathroom doesn't work."
+          }
+        },
+        {
+          "id": "prekidač",
+          "hr": "prekidač",
+          "en": "switch",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Prekidač za svjetlo je pokraj vrata.",
+            "gloss": "The light switch is next to the door."
+          }
+        },
+        {
+          "id": "punjač",
+          "hr": "punjač",
+          "en": "charger",
+          "pos": "n. m.",
+          "note": "puniti = to charge",
+          "example": {
+            "target": "Zaboravio sam punjač za mobitel.",
+            "gloss": "I forgot my phone charger."
+          }
+        },
+        {
+          "id": "produžni kabel",
+          "hr": "produžni kabel",
+          "en": "extension cord",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Trebam produžni kabel za lampu.",
+            "gloss": "I need an extension cord for the lamp."
+          }
+        },
+        {
+          "id": "alat",
+          "hr": "alat",
+          "en": "tools",
+          "pos": "n. m.",
+          "note": "usually collective singular",
+          "example": {
+            "target": "Sav alat držim u garaži.",
+            "gloss": "I keep all my tools in the garage."
+          }
+        },
+        {
+          "id": "čekić",
+          "hr": "čekić",
+          "en": "hammer",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Dodaj mi čekić i čavle.",
+            "gloss": "Hand me the hammer and the nails."
+          }
+        },
+        {
+          "id": "odvijač",
+          "hr": "odvijač",
+          "en": "screwdriver",
+          "pos": "n. m.",
+          "note": "križni odvijač = Phillips screwdriver",
+          "example": {
+            "target": "Za ovaj vijak trebaš križni odvijač.",
+            "gloss": "For this screw you need a Phillips screwdriver."
+          }
+        },
+        {
+          "id": "vijak",
+          "hr": "vijak",
+          "en": "screw",
+          "pos": "n. m.",
+          "note": "G vijka; pl. vijci",
+          "example": {
+            "target": "Trebamo četiri vijka za policu.",
+            "gloss": "We need four screws for the shelf."
+          }
+        },
+        {
+          "id": "čavao",
+          "hr": "čavao",
+          "en": "nail (metal)",
+          "pos": "n. m.",
+          "note": "G čavla; pl. čavli",
+          "example": {
+            "target": "Zabij čavao u zid za sliku.",
+            "gloss": "Drive a nail into the wall for the picture."
+          }
+        },
+        {
+          "id": "ljestve",
+          "hr": "ljestve",
+          "en": "ladder",
+          "pos": "n. f. pl.",
+          "note": "plural only; G ljestava",
+          "example": {
+            "target": "Posudio sam ljestve od susjeda.",
+            "gloss": "I borrowed a ladder from the neighbour."
+          }
+        },
+        {
+          "id": "popravak",
+          "hr": "popravak",
+          "en": "repair",
+          "pos": "n. m.",
+          "note": "G popravka; pl. popravci",
+          "example": {
+            "target": "Popravak perilice koštao je sto eura.",
+            "gloss": "The washing machine repair cost a hundred euros."
+          }
+        },
+        {
+          "id": "majstor",
+          "hr": "majstor",
+          "en": "repairman, handyman",
+          "pos": "n. m.",
+          "note": "also = master of a craft",
+          "example": {
+            "target": "Majstor dolazi sutra popraviti bojler.",
+            "gloss": "The repairman is coming tomorrow to fix the boiler."
+          }
+        },
+        {
+          "id": "vodoinstalater",
+          "hr": "vodoinstalater",
+          "en": "plumber",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Vodoinstalater je zamijenio staru cijev.",
+            "gloss": "The plumber replaced the old pipe."
+          }
+        },
+        {
+          "id": "električar",
+          "hr": "električar",
+          "en": "electrician",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Zovemo električara zbog utičnice.",
+            "gloss": "We are calling an electrician about the socket."
+          }
+        },
+        {
+          "id": "bojler",
+          "hr": "bojler",
+          "en": "water heater, boiler",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Bojler grije vodu pola sata.",
+            "gloss": "The water heater takes half an hour to heat the water."
+          }
+        },
+        {
+          "id": "radijator",
+          "hr": "radijator",
+          "en": "radiator",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Radijator u spavaćoj sobi je hladan.",
+            "gloss": "The radiator in the bedroom is cold."
+          }
+        },
+        {
+          "id": "grijanje",
+          "hr": "grijanje",
+          "en": "heating",
+          "pos": "n. n.",
+          "note": "centralno grijanje = central heating",
+          "example": {
+            "target": "Uključili smo grijanje jer je zahladilo.",
+            "gloss": "We turned on the heating because it got cold."
+          }
+        },
+        {
+          "id": "slavina",
+          "hr": "slavina",
+          "en": "tap, faucet",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Zatvori slavinu dok pereš zube.",
+            "gloss": "Turn off the tap while you brush your teeth."
+          }
+        },
+        {
+          "id": "curiti",
+          "hr": "curiti",
+          "en": "to leak, drip",
+          "pos": "v. impf.",
+          "note": "pf. procuriti",
+          "example": {
+            "target": "Voda curi ispod perilice.",
+            "gloss": "Water is leaking from under the washing machine."
+          }
+        },
+        {
+          "id": "brava",
+          "hr": "brava",
+          "en": "lock",
+          "pos": "n. f.",
+          "note": "bravar = locksmith",
+          "example": {
+            "target": "Ključ se zaglavio u bravi.",
+            "gloss": "The key got stuck in the lock."
+          }
+        },
+        {
+          "id": "ljepilo",
+          "hr": "ljepilo",
+          "en": "glue",
+          "pos": "n. n.",
+          "note": "lijepiti = to glue",
+          "example": {
+            "target": "Popravila sam šalicu ljepilom.",
+            "gloss": "I fixed the cup with glue."
+          }
+        },
+        {
+          "id": "škare",
+          "hr": "škare",
+          "en": "scissors",
+          "pos": "n. f. pl.",
+          "note": "plural only; G škara",
+          "example": {
+            "target": "Gdje su škare za papir?",
+            "gloss": "Where are the paper scissors?"
+          }
+        },
+        {
+          "id": "šivati",
+          "hr": "šivati",
+          "en": "to sew",
+          "pos": "v. impf.",
+          "note": "pf. sašiti",
+          "example": {
+            "target": "Baka me naučila šivati.",
+            "gloss": "Grandma taught me to sew."
+          }
+        },
+        {
+          "id": "igla",
+          "hr": "igla",
+          "en": "needle",
+          "pos": "n. f.",
+          "note": "igla i konac = needle and thread",
+          "example": {
+            "target": "Trebam iglu i konac za gumb.",
+            "gloss": "I need a needle and thread for the button."
+          }
+        },
+        {
+          "id": "zalijevati",
+          "hr": "zalijevati",
+          "en": "to water (plants)",
+          "pos": "v. impf.",
+          "note": "pf. zaliti",
+          "example": {
+            "target": "Zalijevam cvijeće svako jutro.",
+            "gloss": "I water the flowers every morning."
+          }
+        },
+        {
+          "id": "mrlja",
+          "hr": "mrlja",
+          "en": "stain",
+          "pos": "n. f.",
+          "note": "G pl. mrlja",
+          "example": {
+            "target": "Na košulji je mrlja od kave.",
+            "gloss": "There is a coffee stain on the shirt."
+          }
+        },
+        {
+          "id": "proliti",
+          "hr": "proliti",
+          "en": "to spill (a liquid)",
+          "pos": "v. pf.",
+          "note": "impf. prolijevati",
+          "example": {
+            "target": "Pazi da ne proliješ sok po tepihu.",
+            "gloss": "Careful not to spill the juice on the carpet."
+          }
+        },
+        {
+          "id": "razbiti",
+          "hr": "razbiti",
+          "en": "to break, smash",
+          "pos": "v. pf.",
+          "note": "impf. razbijati",
+          "example": {
+            "target": "Razbio sam čašu dok sam prao suđe.",
+            "gloss": "I broke a glass while washing the dishes."
+          }
+        },
+        {
+          "id": "uprljati",
+          "hr": "uprljati",
+          "en": "to get (something) dirty",
+          "pos": "v. pf.",
+          "note": "impf. prljati; uprljati se = to get oneself dirty",
+          "example": {
+            "target": "Dijete je uprljalo majicu blatom.",
+            "gloss": "The child got mud on his T-shirt."
+          }
+        },
+        {
+          "id": "najam",
+          "hr": "najam",
+          "en": "rent, lease",
+          "pos": "n. m.",
+          "note": "G najma; stan u najmu = rented flat; stanarina = the rent (money)",
+          "example": {
+            "target": "Stan je u najmu, nije naš.",
+            "gloss": "The flat is rented, it isn't ours."
+          }
+        },
+        {
+          "id": "stanodavac",
+          "hr": "stanodavac",
+          "en": "landlord",
+          "pos": "n. m.",
+          "note": "G stanodavca",
+          "example": {
+            "target": "Stanodavac je povisio stanarinu.",
+            "gloss": "The landlord raised the rent."
+          }
+        },
+        {
+          "id": "podstanar",
+          "hr": "podstanar",
+          "en": "tenant, lodger",
+          "pos": "n. m.",
+          "note": "f. podstanarka",
+          "example": {
+            "target": "Godinama smo bili podstanari u Zagrebu.",
+            "gloss": "For years we were tenants in Zagreb."
+          }
+        },
+        {
+          "id": "režije",
+          "hr": "režije",
+          "en": "utilities, utility bills",
+          "pos": "n. f. pl.",
+          "note": "plural only",
+          "example": {
+            "target": "Režije zimi iznose dvjesto eura.",
+            "gloss": "In winter the utilities come to two hundred euros."
+          }
+        },
+        {
+          "id": "račun za struju",
+          "hr": "račun za struju",
+          "en": "electricity bill",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Stigao je račun za struju.",
+            "gloss": "The electricity bill has arrived."
+          }
+        },
+        {
+          "id": "uplatnica",
+          "hr": "uplatnica",
+          "en": "payment slip",
+          "pos": "n. f.",
+          "note": "paid at the post office or bank",
+          "example": {
+            "target": "Uplatnicu sam platila na pošti.",
+            "gloss": "I paid the payment slip at the post office."
+          }
+        },
+        {
+          "id": "selidba",
+          "hr": "selidba",
+          "en": "move, moving house",
+          "pos": "n. f.",
+          "note": "seliti se = to move house",
+          "example": {
+            "target": "Selidba u novi stan je u subotu.",
+            "gloss": "The move to the new flat is on Saturday."
+          }
+        },
+        {
+          "id": "šišanje",
+          "hr": "šišanje",
+          "en": "haircut",
+          "pos": "n. n.",
+          "note": "at the frizer (hairdresser's)",
+          "example": {
+            "target": "Koliko košta šišanje kod vas?",
+            "gloss": "How much does a haircut cost at your place?"
+          }
+        },
+        {
+          "id": "ošišati se",
+          "hr": "ošišati se",
+          "en": "to get a haircut",
+          "pos": "v. pf.",
+          "note": "impf. šišati se",
+          "example": {
+            "target": "Moram se ošišati prije vjenčanja.",
+            "gloss": "I have to get a haircut before the wedding."
+          }
+        },
+        {
+          "id": "kemijska čistionica",
+          "hr": "kemijska čistionica",
+          "en": "dry cleaner's",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Odijelo je u kemijskoj čistionici.",
+            "gloss": "The suit is at the dry cleaner's."
+          }
+        },
+        {
+          "id": "postolar",
+          "hr": "postolar",
+          "en": "shoemaker, cobbler",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Postolar mi je popravio čizme.",
+            "gloss": "The cobbler repaired my boots."
+          }
+        },
+        {
+          "id": "krojač",
+          "hr": "krojač",
+          "en": "tailor",
+          "pos": "n. m.",
+          "note": "f. krojačica",
+          "example": {
+            "target": "Odnijela sam haljinu krojaču.",
+            "gloss": "I took the dress to the tailor."
+          }
+        },
+        {
+          "id": "servis",
+          "hr": "servis",
+          "en": "repair shop, service",
+          "pos": "n. m.",
+          "note": "auto na servisu = car in for servicing",
+          "example": {
+            "target": "Auto je na servisu do petka.",
+            "gloss": "The car is in for servicing until Friday."
+          }
+        },
+        {
+          "id": "tehnički pregled",
+          "hr": "tehnički pregled",
+          "en": "vehicle inspection (MOT)",
+          "pos": "phrase",
+          "note": "yearly requirement for cars",
+          "example": {
+            "target": "Auto mora proći tehnički pregled.",
+            "gloss": "The car has to pass the technical inspection."
+          }
+        },
+        {
+          "id": "zimske gume",
+          "hr": "zimske gume",
+          "en": "winter tyres",
+          "pos": "phrase",
+          "note": "sg. guma = tyre",
+          "example": {
+            "target": "Od studenog vozimo na zimskim gumama.",
+            "gloss": "From November we drive on winter tyres."
+          }
+        },
+        {
+          "id": "cvjećarnica",
+          "hr": "cvjećarnica",
+          "en": "flower shop, florist's",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Kupio sam buket u cvjećarnici.",
+            "gloss": "I bought a bouquet at the florist's."
+          }
+        },
+        {
+          "id": "mesnica",
+          "hr": "mesnica",
+          "en": "butcher's shop",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "U mesnici uzimam svježu piletinu.",
+            "gloss": "I get fresh chicken at the butcher's."
+          }
+        },
+        {
+          "id": "tijesto",
+          "hr": "tijesto",
+          "en": "dough; pasta",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Tijesto za pizzu mora odstajati sat vremena.",
+            "gloss": "Pizza dough has to rest for an hour."
+          }
+        },
+        {
+          "id": "žitarice",
+          "hr": "žitarice",
+          "en": "cereals, grains",
+          "pos": "n. f. pl.",
+          "note": "sg. žitarica",
+          "example": {
+            "target": "Djeca doručkuju žitarice s mlijekom.",
+            "gloss": "The kids have cereal with milk for breakfast."
+          }
+        },
+        {
+          "id": "mahunarke",
+          "hr": "mahunarke",
+          "en": "legumes",
+          "pos": "n. f. pl.",
+          "note": "sg. mahunarka",
+          "example": {
+            "target": "Grah i leća su mahunarke.",
+            "gloss": "Beans and lentils are legumes."
+          }
+        },
+        {
+          "id": "umak",
+          "hr": "umak",
+          "en": "sauce",
+          "pos": "n. m.",
+          "note": "G umaka",
+          "example": {
+            "target": "Tjestenina je najbolja s umakom od rajčice.",
+            "gloss": "Pasta is best with tomato sauce."
+          }
+        },
+        {
+          "id": "varivo",
+          "hr": "varivo",
+          "en": "thick vegetable stew",
+          "pos": "n. n.",
+          "note": "everyday Croatian home cooking",
+          "example": {
+            "target": "Zimi često kuhamo varivo.",
+            "gloss": "In winter we often cook vegetable stew."
+          }
+        },
+        {
+          "id": "prilog",
+          "hr": "prilog",
+          "en": "side dish",
+          "pos": "n. m.",
+          "note": "also = attachment (e-mail); adverb (grammar)",
+          "example": {
+            "target": "Uz meso možete birati prilog.",
+            "gloss": "With the meat you can choose a side dish."
+          }
+        },
+        {
+          "id": "predjelo",
+          "hr": "predjelo",
+          "en": "starter, appetizer",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Za predjelo smo uzeli pršut i sir.",
+            "gloss": "For the starter we had prosciutto and cheese."
+          }
+        },
+        {
+          "id": "glavno jelo",
+          "hr": "glavno jelo",
+          "en": "main course",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Glavno jelo bila je pečena janjetina.",
+            "gloss": "The main course was roast lamb."
+          }
+        },
+        {
+          "id": "desert",
+          "hr": "desert",
+          "en": "dessert",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Za desert preporučujem palačinke.",
+            "gloss": "For dessert I recommend the crepes."
+          }
+        },
+        {
+          "id": "marenda",
+          "hr": "marenda",
+          "en": "mid-morning snack, elevenses",
+          "pos": "n. f.",
+          "note": "coastal word; in Zagreb and the north: gablec",
+          "example": {
+            "target": "U deset sati idemo na marendu.",
+            "gloss": "At ten o'clock we go for a mid-morning snack."
+          }
+        },
+        {
+          "id": "napojnica",
+          "hr": "napojnica",
+          "en": "tip",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Ostavili smo konobaru napojnicu.",
+            "gloss": "We left the waiter a tip."
+          }
+        },
+        {
+          "id": "zamrzivač",
+          "hr": "zamrzivač",
+          "en": "freezer",
+          "pos": "n. m.",
+          "note": "zamrznuti = to freeze",
+          "example": {
+            "target": "Meso je u zamrzivaču.",
+            "gloss": "The meat is in the freezer."
+          }
+        },
+        {
+          "id": "sušilica",
+          "hr": "sušilica",
+          "en": "dryer",
+          "pos": "n. f.",
+          "note": "sušilica rublja = tumble dryer",
+          "example": {
+            "target": "Ručnici su još u sušilici.",
+            "gloss": "The towels are still in the dryer."
+          }
+        },
+        {
+          "id": "mikrovalna pećnica",
+          "hr": "mikrovalna pećnica",
+          "en": "microwave oven",
+          "pos": "phrase",
+          "note": "colloquially just mikrovalna",
+          "example": {
+            "target": "Ugrij juhu u mikrovalnoj pećnici.",
+            "gloss": "Heat up the soup in the microwave."
+          }
+        },
+        {
+          "id": "poklopac",
+          "hr": "poklopac",
+          "en": "lid",
+          "pos": "n. m.",
+          "note": "G poklopca",
+          "example": {
+            "target": "Stavi poklopac na lonac.",
+            "gloss": "Put the lid on the pot."
+          }
+        },
+        {
+          "id": "kućni ljubimac",
+          "hr": "kućni ljubimac",
+          "en": "pet",
+          "pos": "phrase",
+          "note": "pl. kućni ljubimci",
+          "example": {
+            "target": "Imate li kućne ljubimce?",
+            "gloss": "Do you have any pets?"
+          }
+        },
+        {
+          "id": "povodac",
+          "hr": "povodac",
+          "en": "leash",
+          "pos": "n. m.",
+          "note": "G povoca",
+          "example": {
+            "target": "U parku pas mora biti na povocu.",
+            "gloss": "In the park the dog has to be on a leash."
+          }
+        },
+        {
+          "id": "veterinar",
+          "hr": "veterinar",
+          "en": "veterinarian",
+          "pos": "n. m.",
+          "note": "f. veterinarka",
+          "example": {
+            "target": "Mačku vodimo veterinaru na cijepljenje.",
+            "gloss": "We are taking the cat to the vet for vaccination."
+          }
+        },
+        {
+          "id": "udomiti",
+          "hr": "udomiti",
+          "en": "to adopt (a pet), give a home",
+          "pos": "v. pf.",
+          "note": "impf. udomljavati; for children use posvojiti",
+          "example": {
+            "target": "Udomili smo psa iz azila.",
+            "gloss": "We adopted a dog from the shelter."
+          }
+        },
+        {
+          "id": "kavez",
+          "hr": "kavez",
+          "en": "cage",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Hrčak spava u svom kavezu.",
+            "gloss": "The hamster is sleeping in its cage."
+          }
+        },
+        {
+          "id": "šetati psa",
+          "hr": "šetati psa",
+          "en": "to walk the dog",
+          "pos": "phrase",
+          "note": "šetati (impf., pf. prošetati)",
+          "example": {
+            "target": "Šetam psa dvaput dnevno.",
+            "gloss": "I walk the dog twice a day."
+          }
+        },
+        {
+          "id": "pijesak za mačke",
+          "hr": "pijesak za mačke",
+          "en": "cat litter",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Kupi pijesak za mačke u dućanu.",
+            "gloss": "Buy cat litter at the shop."
+          }
+        }
+      ]
+    },
+    {
+      "id": "exam-text-lemmas",
+      "title": "Exam & media Croatian",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "vidljivost",
+          "hr": "vidljivost",
+          "en": "visibility",
+          "pos": "n. f.",
+          "note": "standard in traffic and weather reports",
+          "example": {
+            "target": "Zbog magle je vidljivost na cesti smanjena.",
+            "gloss": "Because of fog, visibility on the road is reduced."
+          }
+        },
+        {
+          "id": "gust",
+          "hr": "gust",
+          "en": "dense, thick",
+          "pos": "adj.",
+          "note": "gusta magla = thick fog; gust promet = heavy traffic",
+          "example": {
+            "target": "Gusta magla prekrila je autocestu.",
+            "gloss": "Thick fog covered the motorway."
+          }
+        },
+        {
+          "id": "kolona",
+          "hr": "kolona",
+          "en": "column; queue of cars",
+          "pos": "n. f.",
+          "note": "kolona vozila = a line of vehicles",
+          "example": {
+            "target": "Na granici je kolona duga pet kilometara.",
+            "gloss": "At the border there is a five-kilometre queue."
+          }
+        },
+        {
+          "id": "tunel",
+          "hr": "tunel",
+          "en": "tunnel",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Promet kroz tunel odvija se usporeno.",
+            "gloss": "Traffic through the tunnel is moving slowly."
+          }
+        },
+        {
+          "id": "naplata",
+          "hr": "naplata",
+          "en": "toll collection; charging",
+          "pos": "n. f.",
+          "note": "naplata cestarine = toll collection; naplatne kućice = toll booths",
+          "example": {
+            "target": "Kod naplate cestarine stvaraju se kolone.",
+            "gloss": "Queues are forming at the toll station."
+          }
+        },
+        {
+          "id": "granični prijelaz",
+          "hr": "granični prijelaz",
+          "en": "border crossing",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Na graničnom prijelazu čeka se sat vremena.",
+            "gloss": "There is an hour's wait at the border crossing."
+          }
+        },
+        {
+          "id": "zastoj",
+          "hr": "zastoj",
+          "en": "hold-up, traffic jam",
+          "pos": "n. m.",
+          "note": "zastoj u prometu",
+          "example": {
+            "target": "Zbog nesreće nastao je dug zastoj.",
+            "gloss": "Because of an accident, a long hold-up formed."
+          }
+        },
+        {
+          "id": "radovi na cesti",
+          "hr": "radovi na cesti",
+          "en": "roadworks",
+          "pos": "phrase",
+          "note": "radovi (pl.) = works",
+          "example": {
+            "target": "Radovi na cesti traju do kraja mjeseca.",
+            "gloss": "The roadworks last until the end of the month."
+          }
+        },
+        {
+          "id": "vozilo",
+          "hr": "vozilo",
+          "en": "vehicle",
+          "pos": "n. n.",
+          "note": "formal register (news, police reports)",
+          "example": {
+            "target": "U nesreći su sudjelovala tri vozila.",
+            "gloss": "Three vehicles were involved in the accident."
+          }
+        },
+        {
+          "id": "ozlijediti",
+          "hr": "ozlijediti",
+          "en": "to injure",
+          "pos": "v. pf.",
+          "note": "impf. ozljeđivati; ozlijeđen = injured",
+          "example": {
+            "target": "U sudaru nitko nije ozlijeđen.",
+            "gloss": "No one was injured in the collision."
+          }
+        },
+        {
+          "id": "upozoriti",
+          "hr": "upozoriti",
+          "en": "to warn",
+          "pos": "v. pf.",
+          "note": "impf. upozoravati; upozoriti koga na što",
+          "example": {
+            "target": "Vozače su upozorili na jak vjetar.",
+            "gloss": "Drivers were warned about strong wind."
+          }
+        },
+        {
+          "id": "upozorenje",
+          "hr": "upozorenje",
+          "en": "warning",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Izdano je upozorenje zbog jakog vjetra.",
+            "gloss": "A warning was issued because of strong wind."
+          }
+        },
+        {
+          "id": "nesreća",
+          "hr": "nesreća",
+          "en": "accident; misfortune",
+          "pos": "n. f.",
+          "note": "prometna nesreća = traffic accident",
+          "example": {
+            "target": "Prometna nesreća dogodila se kod Zadra.",
+            "gloss": "A traffic accident happened near Zadar."
+          }
+        },
+        {
+          "id": "izvođač",
+          "hr": "izvođač",
+          "en": "performer; contractor",
+          "pos": "n. m.",
+          "note": "izvođač radova = contractor",
+          "example": {
+            "target": "Na festivalu nastupa dvadeset izvođača.",
+            "gloss": "Twenty performers are appearing at the festival."
+          }
+        },
+        {
+          "id": "nastup",
+          "hr": "nastup",
+          "en": "performance, appearance",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Njezin nastup oduševio je publiku.",
+            "gloss": "Her performance delighted the audience."
+          }
+        },
+        {
+          "id": "nastupati",
+          "hr": "nastupati",
+          "en": "to perform, appear",
+          "pos": "v. impf.",
+          "note": "pf. nastupiti",
+          "example": {
+            "target": "Večeras nastupa poznata klapa.",
+            "gloss": "A famous klapa group is performing tonight."
+          }
+        },
+        {
+          "id": "događanje",
+          "hr": "događanje",
+          "en": "event, happening",
+          "pos": "n. n.",
+          "note": "often plural: kulturna događanja",
+          "example": {
+            "target": "U gradu je ljeti mnogo događanja.",
+            "gloss": "In summer there are many events in the city."
+          }
+        },
+        {
+          "id": "manifestacija",
+          "hr": "manifestacija",
+          "en": "(public) event, festival",
+          "pos": "n. f.",
+          "note": "common in official announcements",
+          "example": {
+            "target": "Manifestacija se održava svake godine u lipnju.",
+            "gloss": "The event is held every year in June."
+          }
+        },
+        {
+          "id": "posjetitelj",
+          "hr": "posjetitelj",
+          "en": "visitor",
+          "pos": "n. m.",
+          "note": "f. posjetiteljica",
+          "example": {
+            "target": "Muzej je lani primio milijun posjetitelja.",
+            "gloss": "The museum received a million visitors last year."
+          }
+        },
+        {
+          "id": "organizator",
+          "hr": "organizator",
+          "en": "organizer",
+          "pos": "n. m.",
+          "note": "f. organizatorica",
+          "example": {
+            "target": "Organizatori očekuju velik broj gostiju.",
+            "gloss": "The organizers expect a large number of guests."
+          }
+        },
+        {
+          "id": "prirediti",
+          "hr": "prirediti",
+          "en": "to organize, put on",
+          "pos": "v. pf.",
+          "note": "impf. priređivati",
+          "example": {
+            "target": "Grad je priredio doček za sportaše.",
+            "gloss": "The city put on a welcome for the athletes."
+          }
+        },
+        {
+          "id": "ugostiti",
+          "hr": "ugostiti",
+          "en": "to host",
+          "pos": "v. pf.",
+          "note": "impf. ugošćivati",
+          "example": {
+            "target": "Zagreb će ugostiti europsko prvenstvo.",
+            "gloss": "Zagreb will host the European championship."
+          }
+        },
+        {
+          "id": "održavati se",
+          "hr": "održavati se",
+          "en": "to take place, be held",
+          "pos": "v. impf.",
+          "note": "pf. održati se; reflexive sense of održati",
+          "example": {
+            "target": "Sajam se održava svake subote na trgu.",
+            "gloss": "The fair is held every Saturday on the square."
+          }
+        },
+        {
+          "id": "namijeniti",
+          "hr": "namijeniti",
+          "en": "to intend (for), designate",
+          "pos": "v. pf.",
+          "note": "impf. namjenjivati; namijenjen komu = intended for",
+          "example": {
+            "target": "Radionica je namijenjena djeci od pet godina.",
+            "gloss": "The workshop is intended for children aged five."
+          }
+        },
+        {
+          "id": "povodom",
+          "hr": "povodom",
+          "en": "on the occasion of",
+          "pos": "prep.",
+          "note": "+ genitive",
+          "example": {
+            "target": "Povodom blagdana ulaz je besplatan.",
+            "gloss": "On the occasion of the holiday, entry is free."
+          }
+        },
+        {
+          "id": "povod",
+          "hr": "povod",
+          "en": "occasion, cause",
+          "pos": "n. m.",
+          "note": "povod za slavlje = cause for celebration",
+          "example": {
+            "target": "Obljetnica je bila povod za slavlje.",
+            "gloss": "The anniversary was a cause for celebration."
+          }
+        },
+        {
+          "id": "prigoda",
+          "hr": "prigoda",
+          "en": "occasion, opportunity",
+          "pos": "n. f.",
+          "note": "prigodan = fitting, occasional",
+          "example": {
+            "target": "Ovo vino čuvamo za posebne prigode.",
+            "gloss": "We keep this wine for special occasions."
+          }
+        },
+        {
+          "id": "svečan",
+          "hr": "svečan",
+          "en": "festive, ceremonial",
+          "pos": "adj.",
+          "note": "svečana večera = gala dinner",
+          "example": {
+            "target": "Na svečanoj večeri bilo je sto gostiju.",
+            "gloss": "There were a hundred guests at the gala dinner."
+          }
+        },
+        {
+          "id": "svečanost",
+          "hr": "svečanost",
+          "en": "ceremony, festivity",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Svečanost počinje u podne na glavnom trgu.",
+            "gloss": "The ceremony begins at noon on the main square."
+          }
+        },
+        {
+          "id": "obilježiti",
+          "hr": "obilježiti",
+          "en": "to mark, commemorate",
+          "pos": "v. pf.",
+          "note": "impf. obilježavati",
+          "example": {
+            "target": "Grad je obilježio stotu obljetnicu muzeja.",
+            "gloss": "The city marked the museum's hundredth anniversary."
+          }
+        },
+        {
+          "id": "proslaviti",
+          "hr": "proslaviti",
+          "en": "to celebrate",
+          "pos": "v. pf.",
+          "note": "impf. slaviti; proslaviti se = to become famous",
+          "example": {
+            "target": "Klub je proslavio osvajanje naslova.",
+            "gloss": "The club celebrated winning the title."
+          }
+        },
+        {
+          "id": "uoči",
+          "hr": "uoči",
+          "en": "on the eve of, just before",
+          "pos": "prep.",
+          "note": "+ genitive: uoči blagdana",
+          "example": {
+            "target": "Uoči blagdana trgovine rade dulje.",
+            "gloss": "Just before the holidays, shops stay open longer."
+          }
+        },
+        {
+          "id": "tijekom",
+          "hr": "tijekom",
+          "en": "during, in the course of",
+          "pos": "prep.",
+          "note": "+ genitive; formal register",
+          "example": {
+            "target": "Tijekom ljeta očekuje se pojačan promet.",
+            "gloss": "Heavier traffic is expected during the summer."
+          }
+        },
+        {
+          "id": "diljem",
+          "hr": "diljem",
+          "en": "throughout, across",
+          "pos": "prep.",
+          "note": "+ genitive: diljem svijeta = all over the world",
+          "example": {
+            "target": "Koncerti se održavaju diljem Hrvatske.",
+            "gloss": "Concerts are being held throughout Croatia."
+          }
+        },
+        {
+          "id": "inozemni",
+          "hr": "inozemni",
+          "en": "foreign, from abroad",
+          "pos": "adj.",
+          "note": "inozemstvo = abroad",
+          "example": {
+            "target": "Raste broj inozemnih gostiju na Jadranu.",
+            "gloss": "The number of foreign guests on the Adriatic is growing."
+          }
+        },
+        {
+          "id": "sudionik",
+          "hr": "sudionik",
+          "en": "participant",
+          "pos": "n. m.",
+          "note": "f. sudionica; from sudjelovati",
+          "example": {
+            "target": "U utrci je bilo tisuću sudionika.",
+            "gloss": "There were a thousand participants in the race."
+          }
+        },
+        {
+          "id": "natjecanje",
+          "hr": "natjecanje",
+          "en": "competition",
+          "pos": "n. n.",
+          "note": "",
+          "example": {
+            "target": "Naša škola organizira natjecanje iz matematike.",
+            "gloss": "Our school is organizing a mathematics competition."
+          }
+        },
+        {
+          "id": "natjecati se",
+          "hr": "natjecati se",
+          "en": "to compete",
+          "pos": "v. impf.",
+          "note": "no pf.; present: natječem se",
+          "example": {
+            "target": "Natječe se u plivanju od djetinjstva.",
+            "gloss": "She has competed in swimming since childhood."
+          }
+        },
+        {
+          "id": "pobjednik",
+          "hr": "pobjednik",
+          "en": "winner",
+          "pos": "n. m.",
+          "note": "f. pobjednica",
+          "example": {
+            "target": "Pobjednik natjecanja dobiva novčanu nagradu.",
+            "gloss": "The winner of the competition receives a cash prize."
+          }
+        },
+        {
+          "id": "procijeniti",
+          "hr": "procijeniti",
+          "en": "to estimate, assess",
+          "pos": "v. pf.",
+          "note": "impf. procjenjivati",
+          "example": {
+            "target": "Štetu su procijenili na milijun eura.",
+            "gloss": "They estimated the damage at a million euros."
+          }
+        },
+        {
+          "id": "procjena",
+          "hr": "procjena",
+          "en": "estimate, assessment",
+          "pos": "n. f.",
+          "note": "prema procjenama = according to estimates",
+          "example": {
+            "target": "Prema procjenama, došlo je deset tisuća ljudi.",
+            "gloss": "According to estimates, ten thousand people came."
+          }
+        },
+        {
+          "id": "prosjek",
+          "hr": "prosjek",
+          "en": "average",
+          "pos": "n. m.",
+          "note": "u prosjeku = on average",
+          "example": {
+            "target": "Plaća mu je iznad državnog prosjeka.",
+            "gloss": "His salary is above the national average."
+          }
+        },
+        {
+          "id": "prosječan",
+          "hr": "prosječan",
+          "en": "average (adj.)",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Prosječna temperatura porasla je za dva stupnja.",
+            "gloss": "The average temperature rose by two degrees."
+          }
+        },
+        {
+          "id": "približno",
+          "hr": "približno",
+          "en": "approximately",
+          "pos": "adv.",
+          "note": "synonym: otprilike",
+          "example": {
+            "target": "Ulaznica stoji približno dvadeset eura.",
+            "gloss": "A ticket costs approximately twenty euros."
+          }
+        },
+        {
+          "id": "navodno",
+          "hr": "navodno",
+          "en": "allegedly, reportedly",
+          "pos": "adv.",
+          "note": "very common in news Croatian",
+          "example": {
+            "target": "Navodno će cijene ponovno rasti.",
+            "gloss": "Prices will allegedly rise again."
+          }
+        },
+        {
+          "id": "postotak",
+          "hr": "postotak",
+          "en": "percentage",
+          "pos": "n. m.",
+          "note": "G postotka; posto = percent",
+          "example": {
+            "target": "Velik postotak mladih živi s roditeljima.",
+            "gloss": "A large percentage of young people live with their parents."
+          }
+        },
+        {
+          "id": "porast",
+          "hr": "porast",
+          "en": "increase, growth",
+          "pos": "n. m.",
+          "note": "u porastu = on the rise",
+          "example": {
+            "target": "Zabilježen je porast broja turista.",
+            "gloss": "An increase in the number of tourists was recorded."
+          }
+        },
+        {
+          "id": "pad",
+          "hr": "pad",
+          "en": "fall, drop",
+          "pos": "n. m.",
+          "note": "pad cijena = a drop in prices",
+          "example": {
+            "target": "Pad cijena očekuje se najesen.",
+            "gloss": "A drop in prices is expected in the autumn."
+          }
+        },
+        {
+          "id": "povećanje",
+          "hr": "povećanje",
+          "en": "increase",
+          "pos": "n. n.",
+          "note": "from povećati",
+          "example": {
+            "target": "Sindikati traže povećanje plaća.",
+            "gloss": "The unions are demanding a pay increase."
+          }
+        },
+        {
+          "id": "smanjenje",
+          "hr": "smanjenje",
+          "en": "decrease, reduction",
+          "pos": "n. n.",
+          "note": "from smanjiti",
+          "example": {
+            "target": "Najavljeno je smanjenje cijena struje.",
+            "gloss": "A reduction in electricity prices has been announced."
+          }
+        },
+        {
+          "id": "udio",
+          "hr": "udio",
+          "en": "share, proportion",
+          "pos": "n. m.",
+          "note": "G udjela",
+          "example": {
+            "target": "Udio žena u politici i dalje raste.",
+            "gloss": "The share of women in politics keeps growing."
+          }
+        },
+        {
+          "id": "stopa",
+          "hr": "stopa",
+          "en": "rate",
+          "pos": "n. f.",
+          "note": "stopa nezaposlenosti = unemployment rate",
+          "example": {
+            "target": "Stopa nezaposlenosti pala je na pet posto.",
+            "gloss": "The unemployment rate fell to five percent."
+          }
+        },
+        {
+          "id": "anketa",
+          "hr": "anketa",
+          "en": "survey, poll",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Prema anketi, većina podržava novi zakon.",
+            "gloss": "According to the survey, the majority supports the new law."
+          }
+        },
+        {
+          "id": "ispitanik",
+          "hr": "ispitanik",
+          "en": "respondent (in a survey)",
+          "pos": "n. m.",
+          "note": "f. ispitanica",
+          "example": {
+            "target": "Trećina ispitanika ne vjeruje medijima.",
+            "gloss": "A third of respondents do not trust the media."
+          }
+        },
+        {
+          "id": "istaknuti",
+          "hr": "istaknuti",
+          "en": "to point out, emphasize",
+          "pos": "v. pf.",
+          "note": "impf. isticati; istaknut = prominent",
+          "example": {
+            "target": "Ministar je istaknuo važnost obrazovanja.",
+            "gloss": "The minister emphasized the importance of education."
+          }
+        },
+        {
+          "id": "značajan",
+          "hr": "značajan",
+          "en": "significant",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Postignut je značajan napredak u pregovorima.",
+            "gloss": "Significant progress was made in the negotiations."
+          }
+        },
+        {
+          "id": "iznositi",
+          "hr": "iznositi",
+          "en": "to amount to; to state",
+          "pos": "v. impf.",
+          "note": "pf. iznijeti; cijena iznosi... = the price is...",
+          "example": {
+            "target": "Kazna iznosi tristo eura.",
+            "gloss": "The fine amounts to three hundred euros."
+          }
+        },
+        {
+          "id": "izjaviti",
+          "hr": "izjaviti",
+          "en": "to state, declare",
+          "pos": "v. pf.",
+          "note": "impf. izjavljivati; izjava = statement",
+          "example": {
+            "target": "Trener je izjavio da je zadovoljan rezultatom.",
+            "gloss": "The coach stated that he was satisfied with the result."
+          }
+        },
+        {
+          "id": "najaviti",
+          "hr": "najaviti",
+          "en": "to announce (in advance)",
+          "pos": "v. pf.",
+          "note": "impf. najavljivati; najava = announcement",
+          "example": {
+            "target": "Vlada je najavila nove mjere štednje.",
+            "gloss": "The government announced new austerity measures."
+          }
+        },
+        {
+          "id": "izvijestiti",
+          "hr": "izvijestiti",
+          "en": "to report",
+          "pos": "v. pf.",
+          "note": "impf. izvještavati; izvještaj = report",
+          "example": {
+            "target": "Mediji su izvijestili o velikom požaru.",
+            "gloss": "The media reported on a large fire."
+          }
+        },
+        {
+          "id": "priopćenje",
+          "hr": "priopćenje",
+          "en": "press release, official statement",
+          "pos": "n. n.",
+          "note": "priopćenje za javnost",
+          "example": {
+            "target": "Klub je objavio službeno priopćenje.",
+            "gloss": "The club published an official statement."
+          }
+        },
+        {
+          "id": "riječ je o",
+          "hr": "riječ je o",
+          "en": "it is about, it concerns",
+          "pos": "phrase",
+          "note": "+ locative; very common in media Croatian",
+          "example": {
+            "target": "Riječ je o vrlo staroj tradiciji.",
+            "gloss": "It concerns a very old tradition."
+          }
+        },
+        {
+          "id": "svrbjeti",
+          "hr": "svrbjeti",
+          "en": "to itch",
+          "pos": "v. impf.",
+          "note": "no pf.; svrbi me = it itches (me)",
+          "example": {
+            "target": "Ruka me svrbi od uboda komarca.",
+            "gloss": "My arm itches from a mosquito bite."
+          }
+        },
+        {
+          "id": "osip",
+          "hr": "osip",
+          "en": "rash",
+          "pos": "n. m.",
+          "note": "",
+          "example": {
+            "target": "Nakon jagoda dijete je dobilo osip.",
+            "gloss": "After the strawberries the child got a rash."
+          }
+        },
+        {
+          "id": "preporučivati",
+          "hr": "preporučivati",
+          "en": "to recommend",
+          "pos": "v. impf.",
+          "note": "pf. preporučiti",
+          "example": {
+            "target": "Liječnici preporučuju više kretanja.",
+            "gloss": "Doctors recommend more exercise."
+          }
+        },
+        {
+          "id": "savjetovati",
+          "hr": "savjetovati",
+          "en": "to advise",
+          "pos": "v. impf.",
+          "note": "pf. posavjetovati; savjetovati se = to consult",
+          "example": {
+            "target": "Stručnjaci savjetuju redovito vježbanje.",
+            "gloss": "Experts advise regular exercise."
+          }
+        },
+        {
+          "id": "koncentracija",
+          "hr": "koncentracija",
+          "en": "concentration",
+          "pos": "n. f.",
+          "note": "",
+          "example": {
+            "target": "Nedostatak sna smanjuje koncentraciju.",
+            "gloss": "Lack of sleep reduces concentration."
+          }
+        },
+        {
+          "id": "rasprostranjen",
+          "hr": "rasprostranjen",
+          "en": "widespread",
+          "pos": "adj.",
+          "note": "",
+          "example": {
+            "target": "Maslina je rasprostranjena duž cijele obale.",
+            "gloss": "The olive tree is widespread along the whole coast."
+          }
+        },
+        {
+          "id": "ukloniti",
+          "hr": "ukloniti",
+          "en": "to remove",
+          "pos": "v. pf.",
+          "note": "impf. uklanjati",
+          "example": {
+            "target": "Radnici su uklonili srušeno stablo.",
+            "gloss": "Workers removed the fallen tree."
+          }
+        },
+        {
+          "id": "pokrenuti",
+          "hr": "pokrenuti",
+          "en": "to launch, set in motion",
+          "pos": "v. pf.",
+          "note": "impf. pokretati",
+          "example": {
+            "target": "Grad je pokrenuo novi projekt za mlade.",
+            "gloss": "The city launched a new project for young people."
+          }
+        },
+        {
+          "id": "urediti",
+          "hr": "urediti",
+          "en": "to arrange, do up; to edit",
+          "pos": "v. pf.",
+          "note": "impf. uređivati",
+          "example": {
+            "target": "Uredili su park u središtu grada.",
+            "gloss": "They did up the park in the city centre."
+          }
+        },
+        {
+          "id": "boriti se",
+          "hr": "boriti se",
+          "en": "to fight, struggle",
+          "pos": "v. impf.",
+          "note": "no pf.; boriti se protiv čega / za što",
+          "example": {
+            "target": "Godinama se bori protiv nepravde.",
+            "gloss": "She has been fighting injustice for years."
+          }
+        },
+        {
+          "id": "borba",
+          "hr": "borba",
+          "en": "fight, struggle",
+          "pos": "n. f.",
+          "note": "G pl. borbi/boraba",
+          "example": {
+            "target": "Borba protiv požara trajala je cijelu noć.",
+            "gloss": "The fight against the fire lasted all night."
+          }
+        },
+        {
+          "id": "cijeniti",
+          "hr": "cijeniti",
+          "en": "to value, appreciate",
+          "pos": "v. impf.",
+          "note": "no pf.; cijena = price",
+          "example": {
+            "target": "Cijenim sve što ste učinili za nas.",
+            "gloss": "I appreciate everything you have done for us."
+          }
+        },
+        {
+          "id": "stvaralaštvo",
+          "hr": "stvaralaštvo",
+          "en": "creative work, oeuvre",
+          "pos": "n. n.",
+          "note": "from stvarati (to create)",
+          "example": {
+            "target": "Izložba prikazuje stvaralaštvo mladih umjetnika.",
+            "gloss": "The exhibition shows the work of young artists."
+          }
+        },
+        {
+          "id": "mjerna jedinica",
+          "hr": "mjerna jedinica",
+          "en": "unit of measurement",
+          "pos": "phrase",
+          "note": "",
+          "example": {
+            "target": "Metar je mjerna jedinica za duljinu.",
+            "gloss": "The metre is a unit of measurement for length."
+          }
+        },
+        {
+          "id": "ostatak",
+          "hr": "ostatak",
+          "en": "rest, remainder",
+          "pos": "n. m.",
+          "note": "G ostatka; pl. ostaci = remains",
+          "example": {
+            "target": "Ostatak dana proveli smo na plaži.",
+            "gloss": "We spent the rest of the day on the beach."
+          }
+        },
+        {
+          "id": "provoditi",
+          "hr": "provoditi",
+          "en": "to spend (time); to carry out",
+          "pos": "v. impf.",
+          "note": "pf. provesti; provoditi vrijeme = to spend time",
+          "example": {
+            "target": "Vikende provodimo kod punice na selu.",
+            "gloss": "We spend weekends at my mother-in-law's in the countryside."
+          }
+        },
+        {
+          "id": "prijaviti",
+          "hr": "prijaviti",
+          "en": "to report; to register",
+          "pos": "v. pf.",
+          "note": "impf. prijavljivati; prijaviti se = to sign up",
+          "example": {
+            "target": "Kvar možete prijaviti putem interneta.",
+            "gloss": "You can report the fault online."
+          }
+        },
+        {
+          "id": "omogućiti",
+          "hr": "omogućiti",
+          "en": "to enable, make possible",
+          "pos": "v. pf.",
+          "note": "impf. omogućavati",
+          "example": {
+            "target": "Stipendija joj je omogućila studij u inozemstvu.",
+            "gloss": "The scholarship enabled her to study abroad."
+          }
+        },
+        {
+          "id": "potaknuti",
+          "hr": "potaknuti",
+          "en": "to encourage, prompt",
+          "pos": "v. pf.",
+          "note": "impf. poticati",
+          "example": {
+            "target": "Film ga je potaknuo na razmišljanje.",
+            "gloss": "The film prompted him to think."
+          }
+        },
+        {
+          "id": "privući",
+          "hr": "privući",
+          "en": "to attract",
+          "pos": "v. pf.",
+          "note": "impf. privlačiti; privlačan = attractive",
+          "example": {
+            "target": "Festival je privukao brojne posjetitelje.",
+            "gloss": "The festival attracted numerous visitors."
+          }
+        },
+        {
+          "id": "korisnik",
+          "hr": "korisnik",
+          "en": "user",
+          "pos": "n. m.",
+          "note": "f. korisnica",
+          "example": {
+            "target": "Broj korisnika aplikacije stalno raste.",
+            "gloss": "The number of users of the app keeps growing."
+          }
+        },
+        {
+          "id": "ustanova",
+          "hr": "ustanova",
+          "en": "institution",
+          "pos": "n. f.",
+          "note": "javna ustanova = public institution",
+          "example": {
+            "target": "Knjižnica je javna kulturna ustanova.",
+            "gloss": "The library is a public cultural institution."
+          }
+        }
+      ]
+    }
+  ]
+}

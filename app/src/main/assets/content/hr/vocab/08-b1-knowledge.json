@@ -1,0 +1,2424 @@
+{
+  "packs": [
+    {
+      "id": "science-inventions",
+      "title": "Science & inventions",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "znanost",
+          "hr": "znanost",
+          "en": "science",
+          "pos": "n. f.",
+          "note": "feminine i-declension (G. znanosti)",
+          "example": {
+            "target": "Znanost mijenja naš svakodnevni život.",
+            "gloss": "Science changes our everyday life."
+          }
+        },
+        {
+          "id": "znanstvenica",
+          "hr": "znanstvenica",
+          "en": "scientist (female)",
+          "pos": "n. f.",
+          "note": "masc. znanstvenik (already in deck)",
+          "example": {
+            "target": "Poznata znanstvenica drži predavanje na fakultetu.",
+            "gloss": "A famous scientist is giving a lecture at the university."
+          }
+        },
+        {
+          "id": "istraživanje",
+          "hr": "istraživanje",
+          "en": "research; investigation",
+          "pos": "n. n.",
+          "example": {
+            "target": "Njihovo istraživanje trajalo je pet godina.",
+            "gloss": "Their research lasted five years."
+          }
+        },
+        {
+          "id": "istraživač",
+          "hr": "istraživač",
+          "en": "researcher; explorer",
+          "pos": "n. m.",
+          "note": "f. istraživačica",
+          "example": {
+            "target": "Istraživač radi na novom projektu.",
+            "gloss": "The researcher is working on a new project."
+          }
+        },
+        {
+          "id": "istraživati",
+          "hr": "istraživati",
+          "en": "to research, to explore",
+          "pos": "v. impf.",
+          "note": "pf. istražiti",
+          "example": {
+            "target": "Znanstvenici istražuju uzroke bolesti.",
+            "gloss": "Scientists are researching the causes of the disease."
+          }
+        },
+        {
+          "id": "istražiti",
+          "hr": "istražiti",
+          "en": "to investigate, to research (to completion)",
+          "pos": "v. pf.",
+          "note": "impf. istraživati",
+          "example": {
+            "target": "Moramo istražiti taj problem do kraja.",
+            "gloss": "We have to investigate that problem thoroughly."
+          }
+        },
+        {
+          "id": "otkriće",
+          "hr": "otkriće",
+          "en": "discovery",
+          "pos": "n. n.",
+          "example": {
+            "target": "To je bilo najveće otkriće dvadesetog stoljeća.",
+            "gloss": "That was the greatest discovery of the twentieth century."
+          }
+        },
+        {
+          "id": "otkrivati",
+          "hr": "otkrivati",
+          "en": "to discover, to reveal",
+          "pos": "v. impf.",
+          "note": "pf. otkriti",
+          "example": {
+            "target": "Astronomi stalno otkrivaju nove planete.",
+            "gloss": "Astronomers are constantly discovering new planets."
+          }
+        },
+        {
+          "id": "otkriti",
+          "hr": "otkriti",
+          "en": "to discover",
+          "pos": "v. pf.",
+          "note": "impf. otkrivati",
+          "example": {
+            "target": "Tko je otkrio penicilin?",
+            "gloss": "Who discovered penicillin?"
+          }
+        },
+        {
+          "id": "izum",
+          "hr": "izum",
+          "en": "invention",
+          "pos": "n. m.",
+          "example": {
+            "target": "Internet je važan izum dvadesetog stoljeća.",
+            "gloss": "The internet is an important invention of the twentieth century."
+          }
+        },
+        {
+          "id": "pronalazak",
+          "hr": "pronalazak",
+          "en": "invention, discovery",
+          "pos": "n. m.",
+          "note": "nepostojano a: G. pronalaska; synonym of izum",
+          "example": {
+            "target": "Taj pronalazak promijenio je povijest.",
+            "gloss": "That invention changed history."
+          }
+        },
+        {
+          "id": "izumitelj",
+          "hr": "izumitelj",
+          "en": "inventor",
+          "pos": "n. m.",
+          "note": "f. izumiteljica",
+          "example": {
+            "target": "Nikola Tesla bio je veliki izumitelj.",
+            "gloss": "Nikola Tesla was a great inventor."
+          }
+        },
+        {
+          "id": "izumiteljica",
+          "hr": "izumiteljica",
+          "en": "inventor (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Mlada izumiteljica predstavila je svoj novi uređaj.",
+            "gloss": "The young inventor presented her new device."
+          }
+        },
+        {
+          "id": "izumiti",
+          "hr": "izumiti",
+          "en": "to invent",
+          "pos": "v. pf.",
+          "note": "impf. izumljivati (rare); not to be confused with izumrijeti (to go extinct)",
+          "example": {
+            "target": "Tko je izumio telefon?",
+            "gloss": "Who invented the telephone?"
+          }
+        },
+        {
+          "id": "patent",
+          "hr": "patent",
+          "en": "patent",
+          "pos": "n. m.",
+          "example": {
+            "target": "Izumitelj je prijavio patent za svoj uređaj.",
+            "gloss": "The inventor filed a patent for his device."
+          }
+        },
+        {
+          "id": "žarulja",
+          "hr": "žarulja",
+          "en": "light bulb",
+          "pos": "n. f.",
+          "example": {
+            "target": "Tko je izumio žarulju?",
+            "gloss": "Who invented the light bulb?"
+          }
+        },
+        {
+          "id": "kotač",
+          "hr": "kotač",
+          "en": "wheel",
+          "pos": "n. m.",
+          "example": {
+            "target": "Kotač je jedan od najstarijih izuma.",
+            "gloss": "The wheel is one of the oldest inventions."
+          }
+        },
+        {
+          "id": "baterija",
+          "hr": "baterija",
+          "en": "battery",
+          "pos": "n. f.",
+          "example": {
+            "target": "Mobitelu se brzo prazni baterija.",
+            "gloss": "The phone's battery drains quickly."
+          }
+        },
+        {
+          "id": "genij",
+          "hr": "genij",
+          "en": "genius",
+          "pos": "n. m.",
+          "example": {
+            "target": "Einstein je bio pravi genij.",
+            "gloss": "Einstein was a true genius."
+          }
+        },
+        {
+          "id": "pokus",
+          "hr": "pokus",
+          "en": "experiment",
+          "pos": "n. m.",
+          "example": {
+            "target": "U školi smo radili pokus iz kemije.",
+            "gloss": "At school we did a chemistry experiment."
+          }
+        },
+        {
+          "id": "eksperiment",
+          "hr": "eksperiment",
+          "en": "experiment",
+          "pos": "n. m.",
+          "note": "synonym of pokus",
+          "example": {
+            "target": "Eksperiment je uspio iz prvog pokušaja.",
+            "gloss": "The experiment succeeded on the first try."
+          }
+        },
+        {
+          "id": "laboratorij",
+          "hr": "laboratorij",
+          "en": "laboratory",
+          "pos": "n. m.",
+          "example": {
+            "target": "Uzorci se analiziraju u laboratoriju.",
+            "gloss": "The samples are analysed in the laboratory."
+          }
+        },
+        {
+          "id": "teorija",
+          "hr": "teorija",
+          "en": "theory",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ta teorija još nije dokazana.",
+            "gloss": "That theory has not been proven yet."
+          }
+        },
+        {
+          "id": "mjerenje",
+          "hr": "mjerenje",
+          "en": "measurement",
+          "pos": "n. n.",
+          "example": {
+            "target": "Rezultati mjerenja bili su točni.",
+            "gloss": "The measurement results were accurate."
+          }
+        },
+        {
+          "id": "mjeriti",
+          "hr": "mjeriti",
+          "en": "to measure",
+          "pos": "v. impf.",
+          "note": "pf. izmjeriti",
+          "example": {
+            "target": "Uređaj mjeri temperaturu zraka.",
+            "gloss": "The device measures the air temperature."
+          }
+        },
+        {
+          "id": "izmjeriti",
+          "hr": "izmjeriti",
+          "en": "to measure (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. mjeriti",
+          "example": {
+            "target": "Izmjerili smo duljinu sobe.",
+            "gloss": "We measured the length of the room."
+          }
+        },
+        {
+          "id": "uređaj",
+          "hr": "uređaj",
+          "en": "device, appliance",
+          "pos": "n. m.",
+          "example": {
+            "target": "Kupio sam pametni uređaj za dom.",
+            "gloss": "I bought a smart device for the home."
+          }
+        },
+        {
+          "id": "stroj",
+          "hr": "stroj",
+          "en": "machine",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ovaj stroj može raditi cijeli dan bez prestanka.",
+            "gloss": "This machine can run all day without stopping."
+          }
+        },
+        {
+          "id": "tehnologija",
+          "hr": "tehnologija",
+          "en": "technology",
+          "pos": "n. f.",
+          "example": {
+            "target": "Moderna tehnologija brzo se razvija.",
+            "gloss": "Modern technology is developing quickly."
+          }
+        },
+        {
+          "id": "umjetna inteligencija",
+          "hr": "umjetna inteligencija",
+          "en": "artificial intelligence",
+          "pos": "n. f.",
+          "example": {
+            "target": "Umjetna inteligencija već piše tekstove.",
+            "gloss": "Artificial intelligence is already writing texts."
+          }
+        },
+        {
+          "id": "umjetan",
+          "hr": "umjetan",
+          "en": "artificial",
+          "pos": "adj.",
+          "note": "nepostojano a: umjetna (f.); definite umjetni",
+          "example": {
+            "target": "Ne volim umjetne materijale.",
+            "gloss": "I don't like artificial materials."
+          }
+        },
+        {
+          "id": "podatak",
+          "hr": "podatak",
+          "en": "piece of data, piece of information",
+          "pos": "n. m.",
+          "note": "pl. podaci; usually used in plural",
+          "example": {
+            "target": "Ti podaci nisu točni.",
+            "gloss": "That data is not accurate."
+          }
+        },
+        {
+          "id": "razvijati",
+          "hr": "razvijati",
+          "en": "to develop",
+          "pos": "v. impf.",
+          "note": "pf. razviti; also razvijati se (to develop, intr.)",
+          "example": {
+            "target": "Tvrtka razvija novu aplikaciju.",
+            "gloss": "The company is developing a new application."
+          }
+        },
+        {
+          "id": "razviti",
+          "hr": "razviti",
+          "en": "to develop (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. razvijati",
+          "example": {
+            "target": "Znanstvenici su razvili novo cjepivo.",
+            "gloss": "Scientists have developed a new vaccine."
+          }
+        },
+        {
+          "id": "računati",
+          "hr": "računati",
+          "en": "to calculate; to count on",
+          "pos": "v. impf.",
+          "note": "pf. izračunati; računati na + acc. = to count on",
+          "example": {
+            "target": "Računalo računa brže od čovjeka.",
+            "gloss": "A computer calculates faster than a human."
+          }
+        },
+        {
+          "id": "izračunati",
+          "hr": "izračunati",
+          "en": "to calculate (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. računati",
+          "example": {
+            "target": "Možeš li izračunati koliko to košta?",
+            "gloss": "Can you calculate how much that costs?"
+          }
+        },
+        {
+          "id": "formula",
+          "hr": "formula",
+          "en": "formula",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ne mogu zapamtiti tu formulu.",
+            "gloss": "I can't memorize that formula."
+          }
+        },
+        {
+          "id": "struja",
+          "hr": "struja",
+          "en": "electricity; current",
+          "pos": "n. f.",
+          "note": "also 'current' (of water, air)",
+          "example": {
+            "target": "Nestalo je struje u cijeloj zgradi.",
+            "gloss": "The electricity went out in the whole building."
+          }
+        },
+        {
+          "id": "energija",
+          "hr": "energija",
+          "en": "energy",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sunce nam daje energiju.",
+            "gloss": "The sun gives us energy."
+          }
+        },
+        {
+          "id": "svemir",
+          "hr": "svemir",
+          "en": "space, universe",
+          "pos": "n. m.",
+          "example": {
+            "target": "Astronauti putuju u svemir.",
+            "gloss": "Astronauts travel into space."
+          }
+        },
+        {
+          "id": "planet",
+          "hr": "planet",
+          "en": "planet",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mars je crveni planet.",
+            "gloss": "Mars is the red planet."
+          }
+        },
+        {
+          "id": "raketa",
+          "hr": "raketa",
+          "en": "rocket",
+          "pos": "n. f.",
+          "example": {
+            "target": "Raketa je poletjela prema Mjesecu.",
+            "gloss": "The rocket took off towards the Moon."
+          }
+        },
+        {
+          "id": "satelit",
+          "hr": "satelit",
+          "en": "satellite",
+          "pos": "n. m.",
+          "example": {
+            "target": "Sateliti kruže oko Zemlje.",
+            "gloss": "Satellites orbit the Earth."
+          }
+        },
+        {
+          "id": "astronaut",
+          "hr": "astronaut",
+          "en": "astronaut",
+          "pos": "n. m.",
+          "note": "f. astronautkinja",
+          "example": {
+            "target": "Astronaut je proveo šest mjeseci u svemiru.",
+            "gloss": "The astronaut spent six months in space."
+          }
+        },
+        {
+          "id": "kemija",
+          "hr": "kemija",
+          "en": "chemistry",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kemija mi je bila najdraži predmet u školi.",
+            "gloss": "Chemistry was my favourite subject at school."
+          }
+        },
+        {
+          "id": "fizika",
+          "hr": "fizika",
+          "en": "physics",
+          "pos": "n. f.",
+          "example": {
+            "target": "Profesor fizike objasnio nam je zakon gravitacije.",
+            "gloss": "The physics teacher explained the law of gravity to us."
+          }
+        },
+        {
+          "id": "biologija",
+          "hr": "biologija",
+          "en": "biology",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na biologiji učimo o ljudskom tijelu.",
+            "gloss": "In biology we learn about the human body."
+          }
+        },
+        {
+          "id": "mikroskop",
+          "hr": "mikroskop",
+          "en": "microscope",
+          "pos": "n. m.",
+          "example": {
+            "target": "Bakterije se vide samo pod mikroskopom.",
+            "gloss": "Bacteria can only be seen under a microscope."
+          }
+        },
+        {
+          "id": "cjepivo",
+          "hr": "cjepivo",
+          "en": "vaccine",
+          "pos": "n. n.",
+          "example": {
+            "target": "Cjepivo protiv gripe prima se svake jeseni.",
+            "gloss": "The flu vaccine is given every autumn."
+          }
+        },
+        {
+          "id": "uzorak",
+          "hr": "uzorak",
+          "en": "sample; pattern",
+          "pos": "n. m.",
+          "note": "nepostojano a: G. uzorka",
+          "example": {
+            "target": "Liječnik je poslao uzorak krvi u laboratorij.",
+            "gloss": "The doctor sent a blood sample to the laboratory."
+          }
+        },
+        {
+          "id": "znanstveni",
+          "hr": "znanstveni",
+          "en": "scientific",
+          "pos": "adj.",
+          "example": {
+            "target": "Pročitala sam zanimljiv znanstveni članak.",
+            "gloss": "I read an interesting scientific article."
+          }
+        },
+        {
+          "id": "moderan",
+          "hr": "moderan",
+          "en": "modern",
+          "pos": "adj.",
+          "note": "nepostojano a: moderna (f.)",
+          "example": {
+            "target": "Živimo u modernom svijetu.",
+            "gloss": "We live in a modern world."
+          }
+        },
+        {
+          "id": "digitalan",
+          "hr": "digitalan",
+          "en": "digital",
+          "pos": "adj.",
+          "note": "definite form digitalni",
+          "example": {
+            "target": "Djeca odrastaju uz digitalne tehnologije.",
+            "gloss": "Children grow up with digital technologies."
+          }
+        },
+        {
+          "id": "robot",
+          "hr": "robot",
+          "en": "robot",
+          "pos": "n. m.",
+          "example": {
+            "target": "Roboti u tvornici rade dvadeset četiri sata dnevno.",
+            "gloss": "The robots in the factory work twenty-four hours a day."
+          }
+        }
+      ]
+    },
+    {
+      "id": "art-culture",
+      "title": "Art & culture",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "umjetnost",
+          "hr": "umjetnost",
+          "en": "art",
+          "pos": "n. f.",
+          "note": "feminine i-declension (G. umjetnosti)",
+          "example": {
+            "target": "Zanima me suvremena umjetnost.",
+            "gloss": "I'm interested in contemporary art."
+          }
+        },
+        {
+          "id": "umjetnik",
+          "hr": "umjetnik",
+          "en": "artist",
+          "pos": "n. m.",
+          "note": "f. umjetnica",
+          "example": {
+            "target": "Mladi umjetnik izlaže u gradskoj galeriji.",
+            "gloss": "The young artist is exhibiting in the city gallery."
+          }
+        },
+        {
+          "id": "umjetnica",
+          "hr": "umjetnica",
+          "en": "artist (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ta umjetnica slika portrete.",
+            "gloss": "That artist paints portraits."
+          }
+        },
+        {
+          "id": "djelo",
+          "hr": "djelo",
+          "en": "work (of art); deed",
+          "pos": "n. n.",
+          "example": {
+            "target": "Ovo djelo nastalo je prije sto godina.",
+            "gloss": "This work was created a hundred years ago."
+          }
+        },
+        {
+          "id": "remek-djelo",
+          "hr": "remek-djelo",
+          "en": "masterpiece",
+          "pos": "n. n.",
+          "example": {
+            "target": "Ta opera pravo je remek-djelo.",
+            "gloss": "That opera is a true masterpiece."
+          }
+        },
+        {
+          "id": "slikar",
+          "hr": "slikar",
+          "en": "painter",
+          "pos": "n. m.",
+          "note": "f. slikarica",
+          "example": {
+            "target": "Slikar priprema novu izložbu.",
+            "gloss": "The painter is preparing a new exhibition."
+          }
+        },
+        {
+          "id": "slikarica",
+          "hr": "slikarica",
+          "en": "painter (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Slikarica prodaje svoje slike na trgu.",
+            "gloss": "The painter sells her paintings on the square."
+          }
+        },
+        {
+          "id": "slikarstvo",
+          "hr": "slikarstvo",
+          "en": "painting (the art form)",
+          "pos": "n. n.",
+          "example": {
+            "target": "Studira slikarstvo na akademiji.",
+            "gloss": "She studies painting at the academy."
+          }
+        },
+        {
+          "id": "slikati",
+          "hr": "slikati",
+          "en": "to paint; to take photos (colloq.)",
+          "pos": "v. impf.",
+          "note": "pf. naslikati",
+          "example": {
+            "target": "Vikendom slika pejzaže.",
+            "gloss": "On weekends he paints landscapes."
+          }
+        },
+        {
+          "id": "naslikati",
+          "hr": "naslikati",
+          "en": "to paint (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. slikati",
+          "example": {
+            "target": "Naslikala je portret svoje bake.",
+            "gloss": "She painted a portrait of her grandmother."
+          }
+        },
+        {
+          "id": "kist",
+          "hr": "kist",
+          "en": "paintbrush",
+          "pos": "n. m.",
+          "example": {
+            "target": "Slikar je oprao kistove nakon rada.",
+            "gloss": "The painter washed his brushes after working."
+          }
+        },
+        {
+          "id": "platno",
+          "hr": "platno",
+          "en": "canvas; cloth",
+          "pos": "n. n.",
+          "example": {
+            "target": "Umjetnica slika na velikom platnu.",
+            "gloss": "The artist paints on a large canvas."
+          }
+        },
+        {
+          "id": "kip",
+          "hr": "kip",
+          "en": "statue",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na trgu stoji kip bana Jelačića.",
+            "gloss": "The statue of Ban Jelačić stands on the square."
+          }
+        },
+        {
+          "id": "kipar",
+          "hr": "kipar",
+          "en": "sculptor",
+          "pos": "n. m.",
+          "note": "f. kiparica",
+          "example": {
+            "target": "Ivan Meštrović najpoznatiji je hrvatski kipar.",
+            "gloss": "Ivan Meštrović is the most famous Croatian sculptor."
+          }
+        },
+        {
+          "id": "zbirka",
+          "hr": "zbirka",
+          "en": "collection",
+          "pos": "n. f.",
+          "note": "G. pl. zbirki / zbirkā",
+          "example": {
+            "target": "Muzej ima bogatu zbirku starih slika.",
+            "gloss": "The museum has a rich collection of old paintings."
+          }
+        },
+        {
+          "id": "predstava",
+          "hr": "predstava",
+          "en": "performance, (theatre) play",
+          "pos": "n. f.",
+          "note": "kazališna predstava = theatre play",
+          "example": {
+            "target": "Kazališna predstava počinje u osam.",
+            "gloss": "The theatre play starts at eight."
+          }
+        },
+        {
+          "id": "glumica",
+          "hr": "glumica",
+          "en": "actress",
+          "pos": "n. f.",
+          "note": "masc. glumac (already in deck)",
+          "example": {
+            "target": "Glumica je dobila nagradu za najbolju ulogu.",
+            "gloss": "The actress received the award for best role."
+          }
+        },
+        {
+          "id": "glumiti",
+          "hr": "glumiti",
+          "en": "to act (in theatre/film); to pretend",
+          "pos": "v. impf.",
+          "note": "pf. odglumiti",
+          "example": {
+            "target": "Glumi u kazalištu već deset godina.",
+            "gloss": "He has been acting in the theatre for ten years."
+          }
+        },
+        {
+          "id": "uloga",
+          "hr": "uloga",
+          "en": "role",
+          "pos": "n. f.",
+          "example": {
+            "target": "Dobio je glavnu ulogu u novom filmu.",
+            "gloss": "He got the lead role in a new film."
+          }
+        },
+        {
+          "id": "redatelj",
+          "hr": "redatelj",
+          "en": "director (film/theatre)",
+          "pos": "n. m.",
+          "note": "f. redateljica",
+          "example": {
+            "target": "Redatelj je zadovoljan glumcima.",
+            "gloss": "The director is happy with the actors."
+          }
+        },
+        {
+          "id": "redateljica",
+          "hr": "redateljica",
+          "en": "director (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Redateljica priprema svoju prvu predstavu.",
+            "gloss": "The director is preparing her first play."
+          }
+        },
+        {
+          "id": "pozornica",
+          "hr": "pozornica",
+          "en": "stage",
+          "pos": "n. f.",
+          "example": {
+            "target": "Glumci su izašli na pozornicu.",
+            "gloss": "The actors came out onto the stage."
+          }
+        },
+        {
+          "id": "proba",
+          "hr": "proba",
+          "en": "rehearsal",
+          "pos": "n. f.",
+          "example": {
+            "target": "Zbor ima probu svake srijede.",
+            "gloss": "The choir has a rehearsal every Wednesday."
+          }
+        },
+        {
+          "id": "pljesak",
+          "hr": "pljesak",
+          "en": "applause",
+          "pos": "n. m.",
+          "note": "nepostojano a: G. pljeska",
+          "example": {
+            "target": "Predstava je završila dugim pljeskom.",
+            "gloss": "The play ended with long applause."
+          }
+        },
+        {
+          "id": "pjesnik",
+          "hr": "pjesnik",
+          "en": "poet",
+          "pos": "n. m.",
+          "note": "f. pjesnikinja",
+          "example": {
+            "target": "Tin Ujević poznati je hrvatski pjesnik.",
+            "gloss": "Tin Ujević is a famous Croatian poet."
+          }
+        },
+        {
+          "id": "pjesnikinja",
+          "hr": "pjesnikinja",
+          "en": "poet (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vesna Parun bila je velika pjesnikinja.",
+            "gloss": "Vesna Parun was a great poet."
+          }
+        },
+        {
+          "id": "pjesništvo",
+          "hr": "pjesništvo",
+          "en": "poetry",
+          "pos": "n. n.",
+          "example": {
+            "target": "Njegovo pjesništvo prevedeno je na mnoge jezike.",
+            "gloss": "His poetry has been translated into many languages."
+          }
+        },
+        {
+          "id": "stih",
+          "hr": "stih",
+          "en": "verse, line of poetry",
+          "pos": "n. m.",
+          "example": {
+            "target": "Naučili smo nekoliko stihova napamet.",
+            "gloss": "We learned a few verses by heart."
+          }
+        },
+        {
+          "id": "roman",
+          "hr": "roman",
+          "en": "novel",
+          "pos": "n. m.",
+          "example": {
+            "target": "Čitam roman poznatog hrvatskog pisca.",
+            "gloss": "I'm reading a novel by a famous Croatian writer."
+          }
+        },
+        {
+          "id": "pripovijetka",
+          "hr": "pripovijetka",
+          "en": "short story",
+          "pos": "n. f.",
+          "note": "G. pl. pripovijedaka",
+          "example": {
+            "target": "Napisala je zbirku pripovijedaka.",
+            "gloss": "She wrote a collection of short stories."
+          }
+        },
+        {
+          "id": "priča",
+          "hr": "priča",
+          "en": "story",
+          "pos": "n. f.",
+          "example": {
+            "target": "Baka nam je pričala stare priče.",
+            "gloss": "Grandma told us old stories."
+          }
+        },
+        {
+          "id": "radnja-plot",
+          "hr": "radnja",
+          "en": "plot (of a book/film)",
+          "pos": "n. f.",
+          "note": "also means 'shop' and 'action'",
+          "example": {
+            "target": "Radnja romana događa se u Zagrebu.",
+            "gloss": "The plot of the novel takes place in Zagreb."
+          }
+        },
+        {
+          "id": "lik",
+          "hr": "lik",
+          "en": "character (in a story)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Glavni lik romana je mladi liječnik.",
+            "gloss": "The main character of the novel is a young doctor."
+          }
+        },
+        {
+          "id": "književnik",
+          "hr": "književnik",
+          "en": "writer, author",
+          "pos": "n. m.",
+          "note": "f. književnica; synonym: pisac",
+          "example": {
+            "target": "Miroslav Krleža najveći je hrvatski književnik.",
+            "gloss": "Miroslav Krleža is the greatest Croatian writer."
+          }
+        },
+        {
+          "id": "književnica",
+          "hr": "književnica",
+          "en": "writer, author (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ta književnica piše romane za mlade.",
+            "gloss": "That writer writes novels for young people."
+          }
+        },
+        {
+          "id": "književnost",
+          "hr": "književnost",
+          "en": "literature",
+          "pos": "n. f.",
+          "note": "feminine i-declension",
+          "example": {
+            "target": "Na fakultetu studira hrvatsku književnost.",
+            "gloss": "She studies Croatian literature at university."
+          }
+        },
+        {
+          "id": "nagrada",
+          "hr": "nagrada",
+          "en": "award, prize",
+          "pos": "n. f.",
+          "example": {
+            "target": "Film je osvojio nagradu na festivalu.",
+            "gloss": "The film won an award at the festival."
+          }
+        },
+        {
+          "id": "festival",
+          "hr": "festival",
+          "en": "festival",
+          "pos": "n. m.",
+          "example": {
+            "target": "Svakog ljeta idemo na filmski festival u Pulu.",
+            "gloss": "Every summer we go to the film festival in Pula."
+          }
+        },
+        {
+          "id": "orkestar",
+          "hr": "orkestar",
+          "en": "orchestra",
+          "pos": "n. m.",
+          "note": "nepostojano a: G. orkestra",
+          "example": {
+            "target": "Orkestar večeras svira Beethovena.",
+            "gloss": "The orchestra is playing Beethoven tonight."
+          }
+        },
+        {
+          "id": "skladatelj",
+          "hr": "skladatelj",
+          "en": "composer",
+          "pos": "n. m.",
+          "note": "f. skladateljica",
+          "example": {
+            "target": "Skladatelj je napisao glazbu za film.",
+            "gloss": "The composer wrote the music for the film."
+          }
+        },
+        {
+          "id": "skladba",
+          "hr": "skladba",
+          "en": "composition, piece of music",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ova skladba traje deset minuta.",
+            "gloss": "This piece of music lasts ten minutes."
+          }
+        },
+        {
+          "id": "zbor",
+          "hr": "zbor",
+          "en": "choir",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pjevam u crkvenom zboru.",
+            "gloss": "I sing in the church choir."
+          }
+        },
+        {
+          "id": "instrument",
+          "hr": "instrument",
+          "en": "instrument",
+          "pos": "n. m.",
+          "note": "glazbeni instrument = musical instrument",
+          "example": {
+            "target": "Sviraš li neki instrument?",
+            "gloss": "Do you play an instrument?"
+          }
+        },
+        {
+          "id": "svirati",
+          "hr": "svirati",
+          "en": "to play (an instrument)",
+          "pos": "v. impf.",
+          "note": "pf. odsvirati; svirati + acc. (svirati gitaru)",
+          "example": {
+            "target": "Brat mi svira gitaru.",
+            "gloss": "My brother plays the guitar."
+          }
+        },
+        {
+          "id": "baština",
+          "hr": "baština",
+          "en": "heritage",
+          "pos": "n. f.",
+          "note": "kulturna baština = cultural heritage",
+          "example": {
+            "target": "Dubrovnik je dio svjetske kulturne baštine.",
+            "gloss": "Dubrovnik is part of world cultural heritage."
+          }
+        },
+        {
+          "id": "naslijeđe",
+          "hr": "naslijeđe",
+          "en": "legacy, inheritance",
+          "pos": "n. n.",
+          "example": {
+            "target": "Čuvamo naslijeđe naših predaka.",
+            "gloss": "We preserve the legacy of our ancestors."
+          }
+        },
+        {
+          "id": "kultura",
+          "hr": "kultura",
+          "en": "culture",
+          "pos": "n. f.",
+          "example": {
+            "target": "Zanima me kultura drugih naroda.",
+            "gloss": "I'm interested in the culture of other peoples."
+          }
+        },
+        {
+          "id": "kulturan",
+          "hr": "kulturan",
+          "en": "cultural; cultured, polite",
+          "pos": "adj.",
+          "note": "nepostojano a: kulturna (f.)",
+          "example": {
+            "target": "U gradu se održavaju mnoga kulturna događanja.",
+            "gloss": "Many cultural events take place in the city."
+          }
+        },
+        {
+          "id": "arhitektura",
+          "hr": "arhitektura",
+          "en": "architecture",
+          "pos": "n. f.",
+          "example": {
+            "target": "Divim se staroj arhitekturi Splita.",
+            "gloss": "I admire the old architecture of Split."
+          }
+        },
+        {
+          "id": "crtati",
+          "hr": "crtati",
+          "en": "to draw",
+          "pos": "v. impf.",
+          "note": "pf. nacrtati",
+          "example": {
+            "target": "Dijete crta kuću i drvo.",
+            "gloss": "The child is drawing a house and a tree."
+          }
+        },
+        {
+          "id": "nacrtati",
+          "hr": "nacrtati",
+          "en": "to draw (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. crtati",
+          "example": {
+            "target": "Nacrtaj mi plan grada, molim te.",
+            "gloss": "Draw me a map of the city, please."
+          }
+        },
+        {
+          "id": "portret",
+          "hr": "portret",
+          "en": "portrait",
+          "pos": "n. m.",
+          "example": {
+            "target": "Slikarica je naslikala moj portret.",
+            "gloss": "The painter painted my portrait."
+          }
+        },
+        {
+          "id": "izvedba",
+          "hr": "izvedba",
+          "en": "performance, rendition",
+          "pos": "n. f.",
+          "example": {
+            "target": "Publika je nagradila izvedbu velikim pljeskom.",
+            "gloss": "The audience rewarded the performance with loud applause."
+          }
+        },
+        {
+          "id": "balet",
+          "hr": "balet",
+          "en": "ballet",
+          "pos": "n. m.",
+          "example": {
+            "target": "Sinoć smo gledali balet u kazalištu.",
+            "gloss": "Last night we watched a ballet at the theatre."
+          }
+        },
+        {
+          "id": "opera",
+          "hr": "opera",
+          "en": "opera",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nikad nisam bio u operi.",
+            "gloss": "I have never been to the opera."
+          }
+        },
+        {
+          "id": "stvarati",
+          "hr": "stvarati",
+          "en": "to create",
+          "pos": "v. impf.",
+          "note": "pf. stvoriti",
+          "example": {
+            "target": "Umjetnik stvara nova djela svake godine.",
+            "gloss": "The artist creates new works every year."
+          }
+        },
+        {
+          "id": "stvoriti",
+          "hr": "stvoriti",
+          "en": "to create (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. stvarati",
+          "example": {
+            "target": "Stvorili su nešto potpuno novo.",
+            "gloss": "They created something completely new."
+          }
+        },
+        {
+          "id": "mašta",
+          "hr": "mašta",
+          "en": "imagination",
+          "pos": "n. f.",
+          "example": {
+            "target": "Djeca imaju bogatu maštu.",
+            "gloss": "Children have a rich imagination."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ecology",
+      "title": "Ecology & environment",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "ekologija",
+          "hr": "ekologija",
+          "en": "ecology",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na satu biologije učimo o ekologiji.",
+            "gloss": "In biology class we learn about ecology."
+          }
+        },
+        {
+          "id": "zaštita okoliša",
+          "hr": "zaštita okoliša",
+          "en": "environmental protection",
+          "pos": "n. f.",
+          "example": {
+            "target": "Zaštita okoliša važna je za budućnost.",
+            "gloss": "Environmental protection is important for the future."
+          }
+        },
+        {
+          "id": "štititi",
+          "hr": "štititi",
+          "en": "to protect",
+          "pos": "v. impf.",
+          "note": "pf. zaštititi",
+          "example": {
+            "target": "Zakon štiti ugrožene vrste.",
+            "gloss": "The law protects endangered species."
+          }
+        },
+        {
+          "id": "zaštititi",
+          "hr": "zaštititi",
+          "en": "to protect (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. štititi",
+          "example": {
+            "target": "Moramo zaštititi šume od požara.",
+            "gloss": "We must protect the forests from fires."
+          }
+        },
+        {
+          "id": "zaštićen",
+          "hr": "zaštićen",
+          "en": "protected",
+          "pos": "adj.",
+          "note": "passive participle of zaštititi",
+          "example": {
+            "target": "Plitvička jezera su zaštićeno područje.",
+            "gloss": "The Plitvice Lakes are a protected area."
+          }
+        },
+        {
+          "id": "ugrožen",
+          "hr": "ugrožen",
+          "en": "endangered, threatened",
+          "pos": "adj.",
+          "note": "ugrožena vrsta = endangered species",
+          "example": {
+            "target": "Ris je ugrožena vrsta u Hrvatskoj.",
+            "gloss": "The lynx is an endangered species in Croatia."
+          }
+        },
+        {
+          "id": "održiv",
+          "hr": "održiv",
+          "en": "sustainable",
+          "pos": "adj.",
+          "note": "održivi razvoj = sustainable development",
+          "example": {
+            "target": "Grad planira održivi razvoj turizma.",
+            "gloss": "The city is planning sustainable development of tourism."
+          }
+        },
+        {
+          "id": "obnovljiv",
+          "hr": "obnovljiv",
+          "en": "renewable",
+          "pos": "adj.",
+          "note": "obnovljiva energija = renewable energy",
+          "example": {
+            "target": "Sunce i vjetar obnovljivi su izvori energije.",
+            "gloss": "The sun and wind are renewable sources of energy."
+          }
+        },
+        {
+          "id": "sunčeva energija",
+          "hr": "sunčeva energija",
+          "en": "solar energy",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kuća se grije na sunčevu energiju.",
+            "gloss": "The house is heated with solar energy."
+          }
+        },
+        {
+          "id": "vjetroelektrana",
+          "hr": "vjetroelektrana",
+          "en": "wind power plant, wind turbine",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na brdu iznad grada rade vjetroelektrane.",
+            "gloss": "Wind turbines operate on the hill above the town."
+          }
+        },
+        {
+          "id": "elektrana",
+          "hr": "elektrana",
+          "en": "power plant",
+          "pos": "n. f.",
+          "example": {
+            "target": "Stara elektrana zagađuje zrak.",
+            "gloss": "The old power plant pollutes the air."
+          }
+        },
+        {
+          "id": "fosilna goriva",
+          "hr": "fosilna goriva",
+          "en": "fossil fuels",
+          "pos": "n. n. pl.",
+          "note": "sg. fosilno gorivo",
+          "example": {
+            "target": "Moramo manje koristiti fosilna goriva.",
+            "gloss": "We must use fewer fossil fuels."
+          }
+        },
+        {
+          "id": "ušteda",
+          "hr": "ušteda",
+          "en": "saving (of money, energy)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nova rasvjeta donosi veliku uštedu energije.",
+            "gloss": "The new lighting brings big energy savings."
+          }
+        },
+        {
+          "id": "potrošnja",
+          "hr": "potrošnja",
+          "en": "consumption",
+          "pos": "n. f.",
+          "example": {
+            "target": "Potrošnja struje raste zimi.",
+            "gloss": "Electricity consumption rises in winter."
+          }
+        },
+        {
+          "id": "zagađivati",
+          "hr": "zagađivati",
+          "en": "to pollute",
+          "pos": "v. impf.",
+          "note": "pf. zagaditi",
+          "example": {
+            "target": "Tvornice zagađuju rijeku.",
+            "gloss": "The factories pollute the river."
+          }
+        },
+        {
+          "id": "zagaditi",
+          "hr": "zagaditi",
+          "en": "to pollute (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. zagađivati",
+          "example": {
+            "target": "Kemikalije su zagadile jezero.",
+            "gloss": "Chemicals polluted the lake."
+          }
+        },
+        {
+          "id": "zagađivač",
+          "hr": "zagađivač",
+          "en": "polluter",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tvornica je najveći zagađivač u regiji.",
+            "gloss": "The factory is the biggest polluter in the region."
+          }
+        },
+        {
+          "id": "onečišćenje",
+          "hr": "onečišćenje",
+          "en": "pollution, contamination",
+          "pos": "n. n.",
+          "note": "standard term; synonym: zagađenje",
+          "example": {
+            "target": "Onečišćenje mora veliki je problem ljeti.",
+            "gloss": "Sea pollution is a big problem in summer."
+          }
+        },
+        {
+          "id": "ispušni plinovi",
+          "hr": "ispušni plinovi",
+          "en": "exhaust fumes",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Ispušni plinovi automobila zagađuju zrak u gradu.",
+            "gloss": "Car exhaust fumes pollute the air in the city."
+          }
+        },
+        {
+          "id": "ugljični dioksid",
+          "hr": "ugljični dioksid",
+          "en": "carbon dioxide",
+          "pos": "n. m.",
+          "example": {
+            "target": "Automobili ispuštaju ugljični dioksid.",
+            "gloss": "Cars emit carbon dioxide."
+          }
+        },
+        {
+          "id": "staklenički učinak",
+          "hr": "staklenički učinak",
+          "en": "greenhouse effect",
+          "pos": "n. m.",
+          "note": "staklenički plinovi = greenhouse gases",
+          "example": {
+            "target": "Staklenički učinak zagrijava planet.",
+            "gloss": "The greenhouse effect is warming the planet."
+          }
+        },
+        {
+          "id": "globalno zatopljenje",
+          "hr": "globalno zatopljenje",
+          "en": "global warming",
+          "pos": "n. n.",
+          "example": {
+            "target": "Globalno zatopljenje topi led na polovima.",
+            "gloss": "Global warming is melting the ice at the poles."
+          }
+        },
+        {
+          "id": "ozonski omotač",
+          "hr": "ozonski omotač",
+          "en": "ozone layer",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ozonski omotač štiti Zemlju od štetnog zračenja.",
+            "gloss": "The ozone layer protects the Earth from harmful radiation."
+          }
+        },
+        {
+          "id": "razina",
+          "hr": "razina",
+          "en": "level",
+          "pos": "n. f.",
+          "note": "razina mora = sea level",
+          "example": {
+            "target": "Razina mora polako raste.",
+            "gloss": "The sea level is slowly rising."
+          }
+        },
+        {
+          "id": "izumiranje",
+          "hr": "izumiranje",
+          "en": "extinction",
+          "pos": "n. n.",
+          "example": {
+            "target": "Mnogim vrstama prijeti izumiranje.",
+            "gloss": "Many species are threatened with extinction."
+          }
+        },
+        {
+          "id": "izumirati",
+          "hr": "izumirati",
+          "en": "to be dying out, to be going extinct",
+          "pos": "v. impf.",
+          "note": "pf. izumrijeti",
+          "example": {
+            "target": "Mnoge životinjske vrste izumiru zbog čovjeka.",
+            "gloss": "Many animal species are dying out because of humans."
+          }
+        },
+        {
+          "id": "izumrijeti",
+          "hr": "izumrijeti",
+          "en": "to go extinct (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. izumirati; not to be confused with izumiti (to invent)",
+          "example": {
+            "target": "Dinosauri su izumrli prije 66 milijuna godina.",
+            "gloss": "Dinosaurs went extinct 66 million years ago."
+          }
+        },
+        {
+          "id": "nestajati",
+          "hr": "nestajati",
+          "en": "to disappear, to vanish",
+          "pos": "v. impf.",
+          "note": "pf. nestati",
+          "example": {
+            "target": "Mnoge vrste polako nestaju.",
+            "gloss": "Many species are slowly disappearing."
+          }
+        },
+        {
+          "id": "nestati",
+          "hr": "nestati",
+          "en": "to disappear (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. nestajati; prezent: nestanem",
+          "example": {
+            "target": "Pola šume nestalo je u požaru.",
+            "gloss": "Half the forest disappeared in the fire."
+          }
+        },
+        {
+          "id": "vrsta",
+          "hr": "vrsta",
+          "en": "species; kind, sort",
+          "pos": "n. f.",
+          "example": {
+            "target": "U parku živi dvjesto vrsta ptica.",
+            "gloss": "Two hundred species of birds live in the park."
+          }
+        },
+        {
+          "id": "rijedak",
+          "hr": "rijedak",
+          "en": "rare",
+          "pos": "adj.",
+          "note": "nepostojano a: rijetka (f.); comparative rjeđi",
+          "example": {
+            "target": "U parku žive rijetke ptice.",
+            "gloss": "Rare birds live in the park."
+          }
+        },
+        {
+          "id": "divlji",
+          "hr": "divlji",
+          "en": "wild",
+          "pos": "adj.",
+          "note": "divlje životinje = wild animals",
+          "example": {
+            "target": "U šumi žive divlje životinje.",
+            "gloss": "Wild animals live in the forest."
+          }
+        },
+        {
+          "id": "stanište",
+          "hr": "stanište",
+          "en": "habitat",
+          "pos": "n. n.",
+          "example": {
+            "target": "Močvara je stanište mnogih ptica.",
+            "gloss": "The marsh is a habitat for many birds."
+          }
+        },
+        {
+          "id": "biljka",
+          "hr": "biljka",
+          "en": "plant",
+          "pos": "n. f.",
+          "note": "G. pl. biljaka",
+          "example": {
+            "target": "U vrtu raste dvadesetak različitih biljaka.",
+            "gloss": "About twenty different plants grow in the garden."
+          }
+        },
+        {
+          "id": "tlo",
+          "hr": "tlo",
+          "en": "soil, ground",
+          "pos": "n. n.",
+          "example": {
+            "target": "Plodno tlo važno je za poljoprivredu.",
+            "gloss": "Fertile soil is important for agriculture."
+          }
+        },
+        {
+          "id": "prirodan",
+          "hr": "prirodan",
+          "en": "natural",
+          "pos": "adj.",
+          "note": "nepostojano a: prirodna (f.)",
+          "example": {
+            "target": "Nacionalni parkovi čuvaju prirodna bogatstva.",
+            "gloss": "National parks preserve natural riches."
+          }
+        },
+        {
+          "id": "nacionalni park",
+          "hr": "nacionalni park",
+          "en": "national park",
+          "pos": "n. m.",
+          "note": "cf. park prirode = nature park",
+          "example": {
+            "target": "Plitvice su najstariji hrvatski nacionalni park.",
+            "gloss": "Plitvice is the oldest Croatian national park."
+          }
+        },
+        {
+          "id": "čuvati",
+          "hr": "čuvati",
+          "en": "to keep, to guard, to preserve",
+          "pos": "v. impf.",
+          "note": "pf. očuvati / sačuvati",
+          "example": {
+            "target": "Čuvajmo prirodu za buduće generacije.",
+            "gloss": "Let's preserve nature for future generations."
+          }
+        },
+        {
+          "id": "očuvati",
+          "hr": "očuvati",
+          "en": "to preserve (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. čuvati",
+          "example": {
+            "target": "Želimo očuvati čisto more.",
+            "gloss": "We want to preserve a clean sea."
+          }
+        },
+        {
+          "id": "spašavati",
+          "hr": "spašavati",
+          "en": "to save, to rescue",
+          "pos": "v. impf.",
+          "note": "pf. spasiti",
+          "example": {
+            "target": "Volonteri spašavaju ozlijeđene ptice.",
+            "gloss": "Volunteers rescue injured birds."
+          }
+        },
+        {
+          "id": "spasiti",
+          "hr": "spasiti",
+          "en": "to save, to rescue (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. spašavati",
+          "example": {
+            "target": "Možemo li još spasiti planet?",
+            "gloss": "Can we still save the planet?"
+          }
+        },
+        {
+          "id": "saditi",
+          "hr": "saditi",
+          "en": "to plant",
+          "pos": "v. impf.",
+          "note": "pf. posaditi",
+          "example": {
+            "target": "U proljeće sadimo cvijeće i povrće.",
+            "gloss": "In spring we plant flowers and vegetables."
+          }
+        },
+        {
+          "id": "posaditi",
+          "hr": "posaditi",
+          "en": "to plant (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. saditi",
+          "example": {
+            "target": "Učenici su posadili sto stabala.",
+            "gloss": "The pupils planted a hundred trees."
+          }
+        },
+        {
+          "id": "uzgajati",
+          "hr": "uzgajati",
+          "en": "to grow, to cultivate, to breed",
+          "pos": "v. impf.",
+          "note": "pf. uzgojiti",
+          "example": {
+            "target": "Djed uzgaja rajčice u vrtu.",
+            "gloss": "Grandpa grows tomatoes in the garden."
+          }
+        },
+        {
+          "id": "uzgojiti",
+          "hr": "uzgojiti",
+          "en": "to grow, to raise (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. uzgajati",
+          "example": {
+            "target": "Uzgojili smo vlastitu salatu.",
+            "gloss": "We grew our own lettuce."
+          }
+        },
+        {
+          "id": "organski",
+          "hr": "organski",
+          "en": "organic",
+          "pos": "adj.",
+          "example": {
+            "target": "Kupujemo organsko povrće na tržnici.",
+            "gloss": "We buy organic vegetables at the market."
+          }
+        },
+        {
+          "id": "ekološki",
+          "hr": "ekološki",
+          "en": "ecological, eco-friendly",
+          "pos": "adj.",
+          "note": "also used as adverb (ekološki prihvatljiv)",
+          "example": {
+            "target": "Koristimo ekološke vrećice umjesto plastičnih.",
+            "gloss": "We use eco-friendly bags instead of plastic ones."
+          }
+        },
+        {
+          "id": "otrovan",
+          "hr": "otrovan",
+          "en": "poisonous, toxic",
+          "pos": "adj.",
+          "note": "nepostojano a: otrovna (f.)",
+          "example": {
+            "target": "Otrovne tvari ne smiju završiti u rijeci.",
+            "gloss": "Toxic substances must not end up in the river."
+          }
+        },
+        {
+          "id": "recikliranje",
+          "hr": "recikliranje",
+          "en": "recycling",
+          "pos": "n. n.",
+          "example": {
+            "target": "Recikliranjem papira čuvamo šume.",
+            "gloss": "By recycling paper we preserve forests."
+          }
+        },
+        {
+          "id": "odvajati",
+          "hr": "odvajati",
+          "en": "to separate (e.g. waste)",
+          "pos": "v. impf.",
+          "note": "pf. odvojiti",
+          "example": {
+            "target": "Odvajamo papir od plastike.",
+            "gloss": "We separate paper from plastic."
+          }
+        },
+        {
+          "id": "odvojiti",
+          "hr": "odvojiti",
+          "en": "to separate, to set aside (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. odvajati",
+          "example": {
+            "target": "Odvoji stare baterije u posebnu kutiju.",
+            "gloss": "Set old batteries aside in a separate box."
+          }
+        },
+        {
+          "id": "spremnik",
+          "hr": "spremnik",
+          "en": "container, tank",
+          "pos": "n. m.",
+          "example": {
+            "target": "Plastika ide u žuti spremnik.",
+            "gloss": "Plastic goes into the yellow container."
+          }
+        },
+        {
+          "id": "kanta za smeće",
+          "hr": "kanta za smeće",
+          "en": "rubbish bin",
+          "pos": "n. f.",
+          "example": {
+            "target": "Baci papir u kantu za smeće.",
+            "gloss": "Throw the paper into the rubbish bin."
+          }
+        },
+        {
+          "id": "odlagalište",
+          "hr": "odlagalište",
+          "en": "landfill, dump",
+          "pos": "n. n.",
+          "note": "odlagalište otpada = waste landfill",
+          "example": {
+            "target": "Grad zatvara staro odlagalište otpada.",
+            "gloss": "The city is closing the old waste landfill."
+          }
+        },
+        {
+          "id": "zaliha",
+          "hr": "zaliha",
+          "en": "supply, reserve",
+          "pos": "n. f.",
+          "note": "usually plural: zalihe",
+          "example": {
+            "target": "Zalihe pitke vode sve su manje.",
+            "gloss": "Drinking water supplies are getting smaller and smaller."
+          }
+        },
+        {
+          "id": "smanjivati",
+          "hr": "smanjivati",
+          "en": "to reduce, to decrease",
+          "pos": "v. impf.",
+          "note": "pf. smanjiti",
+          "example": {
+            "target": "Grad smanjuje potrošnju energije.",
+            "gloss": "The city is reducing its energy consumption."
+          }
+        },
+        {
+          "id": "smanjiti",
+          "hr": "smanjiti",
+          "en": "to reduce (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. smanjivati",
+          "example": {
+            "target": "Moramo smanjiti količinu otpada.",
+            "gloss": "We must reduce the amount of waste."
+          }
+        }
+      ]
+    },
+    {
+      "id": "food-health-discourse",
+      "title": "Food, health & laughter",
+      "level": "B1",
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ],
+      "words": [
+        {
+          "id": "prehrana",
+          "hr": "prehrana",
+          "en": "diet, nutrition",
+          "pos": "n. f.",
+          "example": {
+            "target": "Zdrava prehrana počinje doručkom.",
+            "gloss": "A healthy diet starts with breakfast."
+          }
+        },
+        {
+          "id": "hrana",
+          "hr": "hrana",
+          "en": "food",
+          "pos": "n. f.",
+          "example": {
+            "target": "Svježa hrana zdravija je od brze hrane.",
+            "gloss": "Fresh food is healthier than fast food."
+          }
+        },
+        {
+          "id": "namirnica",
+          "hr": "namirnica",
+          "en": "foodstuff, grocery item",
+          "pos": "n. f.",
+          "note": "usually plural: namirnice",
+          "example": {
+            "target": "Kupujemo namirnice na tržnici.",
+            "gloss": "We buy groceries at the market."
+          }
+        },
+        {
+          "id": "obrok",
+          "hr": "obrok",
+          "en": "meal",
+          "pos": "n. m.",
+          "example": {
+            "target": "Jedem tri obroka dnevno.",
+            "gloss": "I eat three meals a day."
+          }
+        },
+        {
+          "id": "piće",
+          "hr": "piće",
+          "en": "drink, beverage",
+          "pos": "n. n.",
+          "example": {
+            "target": "Naručili smo jelo i piće.",
+            "gloss": "We ordered food and drinks."
+          }
+        },
+        {
+          "id": "jelovnik",
+          "hr": "jelovnik",
+          "en": "menu",
+          "pos": "n. m.",
+          "example": {
+            "target": "Konobar nam je donio jelovnik.",
+            "gloss": "The waiter brought us the menu."
+          }
+        },
+        {
+          "id": "porcija",
+          "hr": "porcija",
+          "en": "portion, serving",
+          "pos": "n. f.",
+          "example": {
+            "target": "Porcije u ovom restoranu su ogromne.",
+            "gloss": "The portions in this restaurant are huge."
+          }
+        },
+        {
+          "id": "hranjiv",
+          "hr": "hranjiv",
+          "en": "nutritious",
+          "pos": "adj.",
+          "example": {
+            "target": "Orasi su vrlo hranjivi.",
+            "gloss": "Walnuts are very nutritious."
+          }
+        },
+        {
+          "id": "kalorija",
+          "hr": "kalorija",
+          "en": "calorie",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kolač ima previše kalorija.",
+            "gloss": "The cake has too many calories."
+          }
+        },
+        {
+          "id": "bjelančevine",
+          "hr": "bjelančevine",
+          "en": "proteins",
+          "pos": "n. f. pl.",
+          "note": "sg. bjelančevina; synonym: proteini",
+          "example": {
+            "target": "Meso, jaja i riba bogati su bjelančevinama.",
+            "gloss": "Meat, eggs and fish are rich in proteins."
+          }
+        },
+        {
+          "id": "ugljikohidrati",
+          "hr": "ugljikohidrati",
+          "en": "carbohydrates",
+          "pos": "n. m. pl.",
+          "note": "sg. ugljikohidrat",
+          "example": {
+            "target": "Kruh i tjestenina puni su ugljikohidrata.",
+            "gloss": "Bread and pasta are full of carbohydrates."
+          }
+        },
+        {
+          "id": "masnoća",
+          "hr": "masnoća",
+          "en": "fat (content)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Kupujem mlijeko s manje masnoće.",
+            "gloss": "I buy milk with less fat."
+          }
+        },
+        {
+          "id": "vitamin",
+          "hr": "vitamin",
+          "en": "vitamin",
+          "pos": "n. m.",
+          "example": {
+            "target": "Naranče su pune vitamina C.",
+            "gloss": "Oranges are full of vitamin C."
+          }
+        },
+        {
+          "id": "vlakna",
+          "hr": "vlakna",
+          "en": "fibre (dietary)",
+          "pos": "n. n. pl.",
+          "note": "sg. vlakno",
+          "example": {
+            "target": "Povrće sadrži mnogo vlakana.",
+            "gloss": "Vegetables contain a lot of fibre."
+          }
+        },
+        {
+          "id": "pretilost",
+          "hr": "pretilost",
+          "en": "obesity",
+          "pos": "n. f.",
+          "note": "feminine i-declension",
+          "example": {
+            "target": "Pretilost je sve veći problem kod djece.",
+            "gloss": "Obesity is a growing problem among children."
+          }
+        },
+        {
+          "id": "dijeta",
+          "hr": "dijeta",
+          "en": "diet (weight-loss)",
+          "pos": "n. f.",
+          "note": "biti na dijeti = to be on a diet",
+          "example": {
+            "target": "Od ponedjeljka sam na dijeti.",
+            "gloss": "I've been on a diet since Monday."
+          }
+        },
+        {
+          "id": "mršavjeti",
+          "hr": "mršavjeti",
+          "en": "to lose weight",
+          "pos": "v. impf.",
+          "note": "pf. smršavjeti",
+          "example": {
+            "target": "Mršavi jer vježba svaki dan.",
+            "gloss": "He's losing weight because he exercises every day."
+          }
+        },
+        {
+          "id": "smršavjeti",
+          "hr": "smršavjeti",
+          "en": "to lose weight (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. mršavjeti",
+          "example": {
+            "target": "Smršavio je pet kilograma.",
+            "gloss": "He lost five kilograms."
+          }
+        },
+        {
+          "id": "debljati se",
+          "hr": "debljati se",
+          "en": "to gain weight",
+          "pos": "v. impf.",
+          "note": "pf. udebljati se",
+          "example": {
+            "target": "Zimi se ljudi lako debljaju.",
+            "gloss": "In winter people easily gain weight."
+          }
+        },
+        {
+          "id": "udebljati se",
+          "hr": "udebljati se",
+          "en": "to gain weight (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. debljati se",
+          "example": {
+            "target": "Udebljala sam se preko blagdana.",
+            "gloss": "I gained weight over the holidays."
+          }
+        },
+        {
+          "id": "izbjegavati",
+          "hr": "izbjegavati",
+          "en": "to avoid",
+          "pos": "v. impf.",
+          "note": "pf. izbjeći",
+          "example": {
+            "target": "Izbjegavam slatkiše i gazirana pića.",
+            "gloss": "I avoid sweets and fizzy drinks."
+          }
+        },
+        {
+          "id": "izbjeći",
+          "hr": "izbjeći",
+          "en": "to avoid (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. izbjegavati",
+          "example": {
+            "target": "Kako izbjeći stres na poslu?",
+            "gloss": "How to avoid stress at work?"
+          }
+        },
+        {
+          "id": "pretjerivati",
+          "hr": "pretjerivati",
+          "en": "to overdo, to exaggerate",
+          "pos": "v. impf.",
+          "note": "pf. pretjerati; pretjerivati s + instr.",
+          "example": {
+            "target": "Ne pretjeruj sa solju!",
+            "gloss": "Don't overdo it with the salt!"
+          }
+        },
+        {
+          "id": "pretjerati",
+          "hr": "pretjerati",
+          "en": "to overdo (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. pretjerivati",
+          "example": {
+            "target": "Pretjerao sam s kavom danas.",
+            "gloss": "I overdid it with coffee today."
+          }
+        },
+        {
+          "id": "umjerenost",
+          "hr": "umjerenost",
+          "en": "moderation",
+          "pos": "n. f.",
+          "note": "feminine i-declension",
+          "example": {
+            "target": "U svemu je važna umjerenost.",
+            "gloss": "Moderation is important in everything."
+          }
+        },
+        {
+          "id": "apetit",
+          "hr": "apetit",
+          "en": "appetite",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nakon treninga imam velik apetit.",
+            "gloss": "After training I have a big appetite."
+          }
+        },
+        {
+          "id": "brza hrana",
+          "hr": "brza hrana",
+          "en": "fast food",
+          "pos": "n. f.",
+          "example": {
+            "target": "Brza hrana šteti zdravlju.",
+            "gloss": "Fast food is bad for your health."
+          }
+        },
+        {
+          "id": "smrznut",
+          "hr": "smrznut",
+          "en": "frozen",
+          "pos": "adj.",
+          "example": {
+            "target": "Smrznuto povrće brzo se priprema.",
+            "gloss": "Frozen vegetables are quick to prepare."
+          }
+        },
+        {
+          "id": "konzerviran",
+          "hr": "konzerviran",
+          "en": "canned, preserved",
+          "pos": "adj.",
+          "example": {
+            "target": "Konzervirana riba dugo traje.",
+            "gloss": "Canned fish lasts a long time."
+          }
+        },
+        {
+          "id": "prerađen",
+          "hr": "prerađen",
+          "en": "processed",
+          "pos": "adj.",
+          "note": "prerađena hrana = processed food",
+          "example": {
+            "target": "Prerađena hrana sadrži puno soli i šećera.",
+            "gloss": "Processed food contains a lot of salt and sugar."
+          }
+        },
+        {
+          "id": "uzgoj",
+          "hr": "uzgoj",
+          "en": "cultivation, farming",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ekološki uzgoj povrća sve je popularniji.",
+            "gloss": "Organic vegetable farming is increasingly popular."
+          }
+        },
+        {
+          "id": "proizvodnja",
+          "hr": "proizvodnja",
+          "en": "production",
+          "pos": "n. f.",
+          "example": {
+            "target": "Domaća proizvodnja hrane vrlo je važna.",
+            "gloss": "Domestic food production is very important."
+          }
+        },
+        {
+          "id": "proizvoditi",
+          "hr": "proizvoditi",
+          "en": "to produce",
+          "pos": "v. impf.",
+          "note": "pf. proizvesti",
+          "example": {
+            "target": "Ova tvornica proizvodi sokove.",
+            "gloss": "This factory produces juices."
+          }
+        },
+        {
+          "id": "proizvesti",
+          "hr": "proizvesti",
+          "en": "to produce (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. proizvoditi",
+          "example": {
+            "target": "Lani su proizveli tisuću litara maslinova ulja.",
+            "gloss": "Last year they produced a thousand litres of olive oil."
+          }
+        },
+        {
+          "id": "okus",
+          "hr": "okus",
+          "en": "taste, flavour",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ova juha ima čudan okus.",
+            "gloss": "This soup has a strange taste."
+          }
+        },
+        {
+          "id": "ukusan",
+          "hr": "ukusan",
+          "en": "tasty",
+          "pos": "adj.",
+          "note": "nepostojano a: ukusna (f.)",
+          "example": {
+            "target": "Večera je bila vrlo ukusna.",
+            "gloss": "The dinner was very tasty."
+          }
+        },
+        {
+          "id": "sladak",
+          "hr": "sladak",
+          "en": "sweet",
+          "pos": "adj.",
+          "note": "nepostojano a: slatka (f.); comparative slađi",
+          "example": {
+            "target": "Ova jabuka je jako slatka.",
+            "gloss": "This apple is very sweet."
+          }
+        },
+        {
+          "id": "slan",
+          "hr": "slan",
+          "en": "salty",
+          "pos": "adj.",
+          "example": {
+            "target": "Sir je previše slan.",
+            "gloss": "The cheese is too salty."
+          }
+        },
+        {
+          "id": "gorak",
+          "hr": "gorak",
+          "en": "bitter",
+          "pos": "adj.",
+          "note": "nepostojano a: gorka (f.)",
+          "example": {
+            "target": "Crna kava je gorka.",
+            "gloss": "Black coffee is bitter."
+          }
+        },
+        {
+          "id": "kiseo",
+          "hr": "kiseo",
+          "en": "sour",
+          "pos": "adj.",
+          "note": "f. kisela; kiselo mlijeko = soured milk",
+          "example": {
+            "target": "Limun je jako kiseo.",
+            "gloss": "Lemon is very sour."
+          }
+        },
+        {
+          "id": "miris",
+          "hr": "miris",
+          "en": "smell, scent",
+          "pos": "n. m.",
+          "example": {
+            "target": "Volim miris svježeg kruha.",
+            "gloss": "I love the smell of fresh bread."
+          }
+        },
+        {
+          "id": "začin",
+          "hr": "začin",
+          "en": "spice, seasoning",
+          "pos": "n. m.",
+          "example": {
+            "target": "Dodaj začine na kraju kuhanja.",
+            "gloss": "Add the spices at the end of cooking."
+          }
+        },
+        {
+          "id": "slastica",
+          "hr": "slastica",
+          "en": "dessert, sweet treat",
+          "pos": "n. f.",
+          "example": {
+            "target": "Poslije ručka jedemo slasticu.",
+            "gloss": "After lunch we eat a dessert."
+          }
+        },
+        {
+          "id": "kušati",
+          "hr": "kušati",
+          "en": "to taste, to sample",
+          "pos": "v. impf.",
+          "note": "used biaspectually; cf. probati (already in deck)",
+          "example": {
+            "target": "Želite li kušati domaći pršut?",
+            "gloss": "Would you like to taste homemade prosciutto?"
+          }
+        },
+        {
+          "id": "vegetarijanac",
+          "hr": "vegetarijanac",
+          "en": "vegetarian",
+          "pos": "n. m.",
+          "note": "nepostojano a: G. vegetarijanca; f. vegetarijanka",
+          "example": {
+            "target": "Moj brat je vegetarijanac i ne jede meso.",
+            "gloss": "My brother is a vegetarian and doesn't eat meat."
+          }
+        },
+        {
+          "id": "tjelovježba",
+          "hr": "tjelovježba",
+          "en": "physical exercise",
+          "pos": "n. f.",
+          "example": {
+            "target": "Redovita tjelovježba jača srce.",
+            "gloss": "Regular exercise strengthens the heart."
+          }
+        },
+        {
+          "id": "imunitet",
+          "hr": "imunitet",
+          "en": "immunity",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vitamini jačaju imunitet.",
+            "gloss": "Vitamins strengthen immunity."
+          }
+        },
+        {
+          "id": "probava",
+          "hr": "probava",
+          "en": "digestion",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vlakna pomažu probavi.",
+            "gloss": "Fibre helps digestion."
+          }
+        },
+        {
+          "id": "smijeh",
+          "hr": "smijeh",
+          "en": "laughter",
+          "pos": "n. m.",
+          "note": "Smijeh je lijek. = Laughter is medicine.",
+          "example": {
+            "target": "Kažu da je smijeh najbolji lijek.",
+            "gloss": "They say laughter is the best medicine."
+          }
+        },
+        {
+          "id": "humor",
+          "hr": "humor",
+          "en": "humour",
+          "pos": "n. m.",
+          "note": "smisao za humor = sense of humour",
+          "example": {
+            "target": "Moj djed ima odličan smisao za humor.",
+            "gloss": "My grandpa has a great sense of humour."
+          }
+        },
+        {
+          "id": "šala",
+          "hr": "šala",
+          "en": "joke",
+          "pos": "n. f.",
+          "example": {
+            "target": "To je bila samo šala.",
+            "gloss": "That was just a joke."
+          }
+        },
+        {
+          "id": "vic",
+          "hr": "vic",
+          "en": "joke (a told joke)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ispričao nam je smiješan vic.",
+            "gloss": "He told us a funny joke."
+          }
+        },
+        {
+          "id": "osmijeh",
+          "hr": "osmijeh",
+          "en": "smile",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pozdravila me toplim osmijehom.",
+            "gloss": "She greeted me with a warm smile."
+          }
+        },
+        {
+          "id": "smiješiti se",
+          "hr": "smiješiti se",
+          "en": "to smile",
+          "pos": "v. impf.",
+          "note": "pf. nasmiješiti se",
+          "example": {
+            "target": "Beba se smiješi cijeli dan.",
+            "gloss": "The baby smiles all day long."
+          }
+        },
+        {
+          "id": "nasmiješiti se",
+          "hr": "nasmiješiti se",
+          "en": "to smile (pf.)",
+          "pos": "v. pf.",
+          "note": "impf. smiješiti se",
+          "example": {
+            "target": "Nasmiješila se kad me vidjela.",
+            "gloss": "She smiled when she saw me."
+          }
+        },
+        {
+          "id": "raspoloženje",
+          "hr": "raspoloženje",
+          "en": "mood",
+          "pos": "n. n.",
+          "example": {
+            "target": "Smijeh popravlja raspoloženje.",
+            "gloss": "Laughter improves the mood."
+          }
+        },
+        {
+          "id": "stres",
+          "hr": "stres",
+          "en": "stress",
+          "pos": "n. m.",
+          "example": {
+            "target": "Stres loše utječe na zdravlje.",
+            "gloss": "Stress has a bad effect on health."
+          }
+        }
+      ]
+    }
+  ]
+}

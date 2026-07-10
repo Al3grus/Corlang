@@ -1,0 +1,568 @@
+{
+  "levels": [
+    {
+      "levelId": "A1",
+      "intro": "A1 grammar unlocks the survival core of Croatian: introducing yourself, describing people and things in the nominative, using the accusative for what you eat, buy and see, and talking about the past (perfekt) and future (futur I) with the most common verb classes.",
+      "sources": ["asoo", "croaticum-syllabus"],
+      "topics": [
+        {
+          "id": "a1-alphabet-sounds",
+          "title": "The alphabet and sounds (abeceda i glasovi)",
+          "summary": "Croatian uses a 30-letter Latin alphabet where every letter is always pronounced the same way, so once you learn the sounds you can read anything aloud. Five letters carry diacritics: č (hard 'ch' as in 'church'), ć (soft 'ch', tongue closer to the palate), š ('sh'), ž ('s' in 'pleasure') and đ (soft 'j' as in 'jeans'). Three sounds are written with two letters but count as one: dž (hard 'j'), lj ('lli' in 'million') and nj ('ny' in 'canyon'). Stress never falls on the last syllable of a word; in most words it is on the first syllable. The letter r can act as a vowel between consonants (trg, prst, Hrvatska).",
+          "tables": [
+            "Letter  Sound (approx.)        Example\n------  ---------------------  ----------------\nc       ts in 'cats'           cesta (road)\nč       hard ch in 'church'    čaj (tea)\nć       soft ch (palatal)      kuća (house)\ndž      hard j in 'jam'        džep (pocket)\nđ       soft j in 'jeans'      đak (pupil)\nh       kh, as in 'loch'       hvala (thanks)\nj       y in 'yes'             jutro (morning)\nlj      lli in 'million'       ljeto (summer)\nnj      ny in 'canyon'         knjiga (book)\nš       sh in 'shoe'           škola (school)\nž       s in 'pleasure'        žena (woman)\nr       can be a vowel         trg, prst, Hrvatska"
+          ],
+          "examples": [
+            { "target": "Kako se to piše?", "gloss": "How is that spelled?" },
+            { "target": "Čitam knjigu u kući.", "gloss": "I am reading a book in the house." },
+            { "target": "Hrvatski jezik ima trideset glasova.", "gloss": "The Croatian language has thirty sounds." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-noun-gender-nominative",
+          "title": "Noun gender and the nominative (rod imenica i nominativ)",
+          "summary": "Every Croatian noun is masculine, feminine or neuter, and you can usually tell from the nominative singular ending: masculine nouns end in a consonant (grad, stol), feminine nouns end in -a (žena, kuća), and neuter nouns end in -o or -e (selo, more). A smaller group of feminine nouns ends in a consonant (noć, ljubav) — these follow the i-declension covered later. Two sound rules affect many forms: the 'fleeting a' (nepostojano a) drops from the last syllable when an ending is added (momak → momci, pas → psi), and sibilarization changes k, g, h to c, z, s before the ending -i (momak → momci, bubreg → bubrezi). Most one-syllable masculine nouns take a long plural in -ovi/-evi (grad → gradovi, muž → muževi; -evi appears after soft consonants like č, ž, š, đ, ć, j, lj, nj).",
+          "tables": [
+            "Gender             Nom. sg.        Nom. pl.         Examples\n-----------------  --------------  ---------------  -----------------------\nmasculine          -ø (consonant)  -i               student -> studenti\nmasc. (1 syllable) -ø              -ovi / -evi      grad -> gradovi\n                                                    muž  -> muževi\nfeminine (-a)      -a              -e               žena -> žene\nfeminine (i-decl.) -ø (consonant)  -i               noć  -> noći\nneuter             -o / -e         -a               selo -> sela\n                                                    more -> mora",
+            "Sound changes in the plural\n---------------------------------------------\nsibilarization  k -> c   momak  -> momci\n(before -i)     g -> z   bubreg -> bubrezi\n                h -> s   orah   -> orasi\nfleeting a      momak -> momka -> momci\n(drops before   pas   -> psa   -> psi\nan ending)      vrabac -> vrapca -> vrapci"
+          ],
+          "examples": [
+            { "target": "Grad je velik, a sela su mala.", "gloss": "The city is big, and the villages are small." },
+            { "target": "Momci i djevojke plešu.", "gloss": "The young men and girls are dancing." },
+            { "target": "Muževi mojih sestara su liječnici.", "gloss": "My sisters' husbands are doctors." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-personal-pronouns-biti",
+          "title": "Personal pronouns and 'to be' (lične zamjenice i glagol biti)",
+          "summary": "The verb biti (to be) has three sets of present forms: long (stressed) forms used in short answers and for emphasis (Jesam!), short (clitic) forms used in normal sentences (Ja sam student), and negative forms (nisam). The short forms are enclitics — they can never stand first in a sentence; they lean on the first stressed word (Student sam). Because verb endings show the person, subject pronouns (ja, ti, on...) are normally dropped unless you want contrast or emphasis. The reflexive verb zvati se (to be called) is how you give your name: Zovem se Ana; the clitic se follows the same second-position rule.",
+          "tables": [
+            "Person        Long     Short   Negative\n------------  -------  ------  --------\nja            jesam    sam     nisam\nti            jesi     si      nisi\non/ona/ono    jest     je      nije\nmi            jesmo    smo     nismo\nvi            jeste    ste     niste\noni/one/ona   jesu     su      nisu",
+            "zvati se (present)\n------------------\nja      zovem se     mi   zovemo se\nti      zoveš se     vi   zovete se\non/ona  zove se      oni  zovu se\nWord order: Zovem se Ana. / Kako se zoveš?"
+          ],
+          "examples": [
+            { "target": "Ja sam Ivan. Drago mi je.", "gloss": "I am Ivan. Nice to meet you." },
+            { "target": "Jesi li ti student? — Jesam.", "gloss": "Are you a student? — I am." },
+            { "target": "Ona nije umorna.", "gloss": "She is not tired." },
+            { "target": "Zovem se Marija, a kako se vi zovete?", "gloss": "My name is Marija, and what is your name?" }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-present-tense",
+          "title": "The present tense: -am, -im, -em classes (prezent)",
+          "summary": "Croatian has one present tense, and every verb belongs to one of three ending classes: -am (most verbs in -ati: gledati → gledam), -im (verbs in -iti and -jeti: govoriti → govorim, živjeti → živim) and -em (verbs whose present stem differs from the infinitive: pisati → pišem, ići → idem). The endings themselves are completely regular — only the stem must be learned. Verbs in -ovati/-evati/-ivati switch to -ujem (putovati → putujem, kupovati → kupujem), while verbs in -irati stay in the -am class (studirati → studiram). A few everyday verbs are irregular and must be memorized: jesti → jedem, piti → pijem, ići → idem, slati → šaljem, pisati → pišem. Negation puts ne directly before the verb (ne radim); only imati has a fused negative, nemati (nemam).",
+          "tables": [
+            "          -am class      -im class      -em class\n          gledati        govoriti       pisati\n          (to watch)     (to speak)     (to write)\n--------  -------------  -------------  ----------\nja        gledam         govorim        pišem\nti        gledaš         govoriš        pišeš\non/ona    gleda          govori         piše\nmi        gledamo        govorimo       pišemo\nvi        gledate        govorite       pišete\noni       gledaju        govore         pišu",
+            "Infinitive pattern      Present        Example\n----------------------  -------------  --------------------\n-ati                    -am            gledati -> gledam\n-irati                  -iram          studirati -> studiram\n-iti / -jeti            -im            govoriti -> govorim\n                                       živjeti  -> živim\n-ovati / -evati / -ivati  -ujem        putovati -> putujem\n                                       kazivati -> kazujem\nirregular stems         -em            jesti -> jedem\n                                       piti  -> pijem\n                                       ići   -> idem\n                                       slati -> šaljem"
+          ],
+          "examples": [
+            { "target": "Svaki dan gledam televiziju.", "gloss": "I watch television every day." },
+            { "target": "Govorimo hrvatski i engleski.", "gloss": "We speak Croatian and English." },
+            { "target": "Ana pije kavu i jede sendvič.", "gloss": "Ana is drinking coffee and eating a sandwich." },
+            { "target": "Nemam vremena, putujem sutra.", "gloss": "I have no time, I am travelling tomorrow." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-numbers",
+          "title": "Numbers up to a trillion (brojevi do bilijun)",
+          "summary": "Croatian numbers are built regularly: 11-19 add -naest (jedanaest, dvanaest), tens add -deset (dvadeset, trideset), and larger units are sto (100), tisuća (1,000), milijun and bilijun. The number jedan agrees like an adjective (jedan grad, jedna žena, jedno selo), and dva has a feminine form dvije. After dva/dvije, tri and četiri, the noun takes a special paucal form identical to the genitive singular (dva grada, tri žene); after pet and higher, it takes the genitive plural (pet gradova, šest žena). This agreement rule applies to the last word of a compound number: dvadeset jedan student, dvadeset dva studenta, dvadeset pet studenata.",
+          "tables": [
+            "1 jedan/jedna/jedno   11 jedanaest    10  deset\n2 dva/dvije           12 dvanaest     20  dvadeset\n3 tri                 13 trinaest     30  trideset\n4 četiri              14 četrnaest    40  četrdeset\n5 pet                 15 petnaest     50  pedeset\n6 šest                16 šesnaest     60  šezdeset\n7 sedam               17 sedamnaest   70  sedamdeset\n8 osam                18 osamnaest    80  osamdeset\n9 devet               19 devetnaest   90  devedeset\n100 sto    200 dvjesto    1 000 tisuća\n1 000 000 milijun          1 000 000 000 000 bilijun\n\nAfter 1          nom. sg.   jedan grad, jedna žena\nAfter 2, 3, 4    gen. sg.   dva grada, dvije žene\nAfter 5+         gen. pl.   pet gradova, šest žena"
+          ],
+          "examples": [
+            { "target": "Imam trideset dvije godine.", "gloss": "I am thirty-two years old." },
+            { "target": "Kava košta dva eura, a sok tri eura.", "gloss": "Coffee costs two euros, and juice three euros." },
+            { "target": "U Zagrebu živi gotovo milijun ljudi.", "gloss": "Almost a million people live in Zagreb." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a1-accusative",
+          "title": "The accusative case (akuzativ)",
+          "summary": "The accusative marks the direct object — the thing directly affected by the verb (Čitam knjigu) — and is also used after the prepositions u and na for motion toward a place (Idem u školu, Idemo na more) and after po ('to fetch') and za ('for'). Feminine nouns in -a change -a to -u (žena → ženu); neuter nouns and inanimate masculine nouns look exactly like the nominative (Vidim grad); but animate masculine nouns (people and animals) take -a, borrowing the genitive form (Vidim prijatelja). In the plural, masculine nouns take -e, feminine nouns -e, i-declension nouns -i, and neuter nouns -a.",
+          "tables": [
+            "Accusative singular\nGender             Ending      Example\n-----------------  ----------  ----------------------\nm. inanimate       = nom.      grad  -> Vidim grad\nm. animate         -a          prijatelj -> Vidim prijatelja\nf. (-a)            -u          žena  -> Vidim ženu\nf. (i-declension)  = nom.      noć   -> Čekam noć\nneuter             = nom.      selo  -> Vidim selo\n\nAccusative plural\nm. -e   gradove, prijatelje\nf. -e   žene\nf. -i   noći\nn. -a   sela",
+            "Prepositions with the accusative (motion / purpose)\n---------------------------------------------------\nu  + A   into        Idem u grad.\nna + A   onto, to    Idemo na more.\npo + A   to fetch    Idem po kruh.\nza + A   for         Ovo je poklon za tebe."
+          ],
+          "examples": [
+            { "target": "Svako jutro pijem kavu i čitam novine.", "gloss": "Every morning I drink coffee and read the newspaper." },
+            { "target": "Vidim brata i sestru.", "gloss": "I see my brother and sister." },
+            { "target": "Idemo u kino, a poslije na večeru.", "gloss": "We are going to the cinema, and afterwards to dinner." },
+            { "target": "Kupujem poklon za majku.", "gloss": "I am buying a present for my mother." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-possessives-demonstratives",
+          "title": "Possessives, demonstratives and descriptive adjectives (posvojne i pokazne zamjenice, opisni pridjevi)",
+          "summary": "Possessive pronouns (moj, tvoj, njegov, njezin, naš, vaš, njihov) and descriptive adjectives agree with the noun they describe in gender and number: moj brat, moja sestra, moje selo; velik grad, velika kuća, veliko more. Croatian has a three-way demonstrative system based on distance: ovaj (near me), taj (near you), onaj (over there); their plurals are irregular — ovaj → ovi, taj → ti, onaj → oni. To say that something belongs to a person, Croatian prefers a possessive adjective made from the name or noun: -ov/-ev for masculine possessors (Markov auto, Hrvojev brat), -in for feminine (Anin stan, sestrin muž); this pattern is used for living possessors, while for inanimate things you use the genitive or a relational adjective instead (vrata kuće, gradski trg).",
+          "tables": [
+            "Possessive     m.        f.        n.\n-------------  --------  --------  --------\nmy             moj       moja      moje\nyour (sg.)     tvoj      tvoja     tvoje\nhis            njegov    njegova   njegovo\nher            njezin    njezina   njezino\nour            naš       naša      naše\nyour (pl./V)   vaš       vaša      vaše\ntheir          njihov    njihova   njihovo",
+            "Demonstrative   m. sg.  f. sg.  n. sg.  m. pl.  f. pl.  n. pl.\n--------------  ------  ------  ------  ------  ------  ------\nthis (near me)  ovaj    ova     ovo     ovi     ove     ova\nthat (near you) taj     ta      to      ti      te      ta\nthat (yonder)   onaj    ona     ono     oni     one     ona",
+            "Possessive adjectives from persons\n----------------------------------\nmasc. possessor  -ov / -ev   Marko -> Markov stan\n                             Hrvoje -> Hrvojev auto\nfem. possessor   -in         Ana -> Anin brat\n                             sestra -> sestrin muž"
+          ],
+          "examples": [
+            { "target": "Ovo je moja sestra, a ono je njezin muž.", "gloss": "This is my sister, and that over there is her husband." },
+            { "target": "Ovi studenti uče hrvatski, a ti studenti uče njemački.", "gloss": "These students are learning Croatian, and those students are learning German." },
+            { "target": "Markov auto je nov i brz.", "gloss": "Marko's car is new and fast." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-modal-verbs",
+          "title": "Modal verbs (modalni glagoli: morati, smjeti, trebati, htjeti, moći)",
+          "summary": "Modal verbs combine with an infinitive to express obligation (morati — must), permission (smjeti — may), need (trebati — need to), wish (htjeti — want) and ability (moći — can): Moram raditi, Smijem li ući? Morati, smjeti and trebati conjugate regularly (moram, smijem, trebam), but htjeti and moći are irregular: hoću, hoćeš... hoće with the fused negative neću, and mogu, možeš... mogu (note 1st sg. and 3rd pl. in -u). Infinitives end in -ti or -ći (raditi, ići, doći, reći); after a modal the infinitive never changes.",
+          "tables": [
+            "         htjeti    negative   moći\n-------  --------  ---------  -------\nja       hoću      neću       mogu\nti       hoćeš     nećeš      možeš\non/ona   hoće      neće       može\nmi       hoćemo    nećemo     možemo\nvi       hoćete    nećete     možete\noni      hoće      neće       mogu\n\nmorati -> moram (must)     smjeti -> smijem (may)\ntrebati -> trebam (need)   + infinitive (-ti / -ći)"
+          ],
+          "examples": [
+            { "target": "Moram učiti, ne mogu doći na kavu.", "gloss": "I have to study, I can't come for coffee." },
+            { "target": "Smijem li ovdje parkirati?", "gloss": "May I park here?" },
+            { "target": "Hoćeš li ići s nama u kino?", "gloss": "Do you want to go to the cinema with us?" },
+            { "target": "Trebam kupiti kruh i mlijeko.", "gloss": "I need to buy bread and milk." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-perfekt",
+          "title": "The past tense (perfekt)",
+          "summary": "The perfekt is the all-purpose past tense in spoken Croatian. It is formed from the present of biti (short forms: sam, si, je...) plus the active past participle, which agrees with the subject in gender and number: radio sam (a man speaking), radila sam (a woman), radili smo (we). The participle is made by replacing the infinitive -ti with -o/-la/-lo (sg.) and -li/-le/-la (pl.): raditi → radio/radila. Verbs in -ći and a few others have irregular participles that must be learned: ići → išao/išla, reći → rekao/rekla, moći → mogao/mogla. Because sam/si/je are clitics, they stand in second position (Jučer sam radio); in the negative they merge with ne and can stand first (Nisam radio). With reflexive verbs, the 3rd person singular je is dropped: On se smijao (not 'se je').",
+          "tables": [
+            "Past participle (glagolski pridjev radni)\n            m.        f.        n.\n----------  --------  --------  --------\nsingular    radio     radila    radilo\nplural      radili    radile    radila\n\nFormation: infinitive minus -ti + -o/-la/-lo/-li/-le/-la\ngledati -> gledao      govoriti -> govorio\nživjeti -> živio       učiti    -> učio\n\nIrregular participles\nbiti  -> bio,   bila,  bilo   | bili,  bile,  bila\nići   -> išao,  išla,  išlo   | išli,  išle,  išla\nreći  -> rekao, rekla, reklo  | rekli, rekle, rekla\nmoći  -> mogao, mogla, moglo  | mogli, mogle, mogla",
+            "perfekt = biti (short) + participle\nJa sam radio/radila.        Nisam radio/radila.\nTi si radio/radila.         Jesi li radio/radila?\nOn je radio. Ona je radila. On se smijao. (no 'je' with se)\nMi smo radili/radile.       Radili smo cijeli dan."
+          ],
+          "examples": [
+            { "target": "Jučer sam bila u Zagrebu.", "gloss": "Yesterday I was in Zagreb. (female speaker)" },
+            { "target": "Gdje ste bili za vikend?", "gloss": "Where were you at the weekend?" },
+            { "target": "Išli smo na more i kupali smo se.", "gloss": "We went to the seaside and swam." },
+            { "target": "Rekao je da ne može doći.", "gloss": "He said that he can't come." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-futur-i",
+          "title": "The future tense (futur prvi)",
+          "summary": "Futur I is formed with the clitic present of htjeti (ću, ćeš, će, ćemo, ćete, će) plus the infinitive. Word order determines spelling: if the infinitive comes first, verbs in -ti drop the final i and the clitic follows (Radit ću, Gledat ćemo — pronounced as one word), while verbs in -ći keep their full form (Doći ću). If anything else starts the sentence, the clitic comes second and the infinitive keeps -ti (Sutra ću raditi, Ja ću doći). The negative uses the stressed forms neću, nećeš... which can stand first (Neću raditi), and questions use Hoćeš li...? or the colloquial Hoćeš li doći? With reflexive verbs, se joins the clitic cluster: Vidjet ćemo se sutra.",
+          "tables": [
+            "Person   Clitic   Infinitive-first     Other-first\n-------  -------  -------------------  ------------------\nja       ću       Radit ću.            Sutra ću raditi.\nti       ćeš      Radit ćeš.           Ti ćeš raditi.\non/ona   će       Radit će.            On će raditi.\nmi       ćemo     Radit ćemo.          Mi ćemo raditi.\nvi       ćete     Radit ćete.          Vi ćete raditi.\noni      će       Radit će.            Oni će raditi.\n\n-ći verbs keep the full infinitive: Doći ću. Ići ćemo.\nnegative: neću, nećeš, neće, nećemo, nećete, neće + inf.\nquestion: Hoćeš li doći? / Hoćete li raditi?"
+          ],
+          "examples": [
+            { "target": "Sutra ću kupiti kartu za vlak.", "gloss": "Tomorrow I will buy a train ticket." },
+            { "target": "Doći ćemo u osam sati.", "gloss": "We will come at eight o'clock." },
+            { "target": "Neću raditi u nedjelju.", "gloss": "I will not work on Sunday." },
+            { "target": "Vidjet ćemo se sljedeći tjedan.", "gloss": "We will see each other next week." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a1-dative-indirect-object",
+          "title": "The dative and indirect objects (dativ i neizravni objekt)",
+          "summary": "The dative marks the indirect object — the person to whom something is given, said or sent: Dajem prijatelju knjigu (I give my friend a book). Singular endings: masculine and neuter -u (prijatelju, djetetu), feminine -i (ženi, sestri; with sibilarization: ruka → ruci); plural -ima/-ama for all genders. Some common verbs govern the dative directly (glagoli s dativnom rekcijom): pomagati komu (to help), vjerovati komu (to believe), telefonirati komu (to phone), čestitati komu (to congratulate), zahvaliti komu (to thank). The verb boljeti works differently — the body part is the subject and the person in pain is in the accusative: Boli me glava (my head hurts), Bole me leđa. When a sentence has both objects, the direct object is accusative and the recipient dative: Pišem baki pismo.",
+          "tables": [
+            "Dative endings\n                sg.        pl.\n--------------  ---------  -----------\nm.              -u         -ima\n                prijatelju prijateljima\nn.              -u         -ima\n                djetetu    djeci*\nf. (-a)         -i         -ama\n                ženi       ženama\nf. (i-decl.)    -i         -ima\n                noći       noćima\nsibilarization in f. sg.: ruka -> ruci, noga -> nozi, knjiga -> knjizi\n\nDative-rection verbs\npomagati komu     Pomažem majci.\nvjerovati komu    Vjerujem ti.\ntelefonirati komu Telefoniram bratu.\nčestitati komu    Čestitam ti rođendan.\nzahvaliti komu    Zahvaljujem vam.\n\nboljeti: body part = subject, person = accusative\nBoli me glava.  Bole me leđa.  Boli ga zub."
+          ],
+          "examples": [
+            { "target": "Dajem prijatelju knjigu.", "gloss": "I am giving my friend a book." },
+            { "target": "Svaki dan pomažem majci.", "gloss": "I help my mother every day." },
+            { "target": "Boli me glava, a njega bole leđa.", "gloss": "My head hurts, and his back hurts." },
+            { "target": "Čestitali smo joj rođendan.", "gloss": "We wished her a happy birthday." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a1-i-declension-pluralia",
+          "title": "I-declension nouns and pluralia tantum (imenice i-deklinacije, pluralia tantum)",
+          "summary": "A group of feminine nouns ends in a consonant and follows the i-declension: noć, stvar, ljubav, riječ, and all abstract nouns in -ost (radost, mladost, mogućnost). Their pattern is very simple — genitive, dative and locative singular and nominative plural all end in -i (noći). Some nouns exist only in the plural (pluralia tantum) and always take plural agreement even for one object: neuter vrata (door), kola (car/cart), leđa (back), usta (mouth), and feminine hlače (trousers), naočale (glasses), novine (newspaper), škare (scissors). The noun posao (job) has an irregular stem: the -ao becomes -l- before endings (posao, posla, poslu; plural poslovi).",
+          "tables": [
+            "i-declension: noć (f.)          -ost nouns: radost (f.)\n      sg.     pl.                     sg.       pl.\nN     noć     noći               N    radost    radosti\nG     noći    noći               G    radosti   radosti\nD     noći    noćima             D    radosti   radostima\nA     noć     noći               A    radost    radosti\nL     noći    noćima             L    radosti   radostima\nI     noći/noću  noćima          I    radošću   radostima",
+            "posao (m.): posao, posla, poslu, posao, poslu, poslom\nplural:      poslovi, poslova, poslovima, poslove, ...\n\nPluralia tantum (always plural)\nneuter:   vrata (door), kola (car), leđa (back), usta (mouth)\nfeminine: hlače (trousers), naočale (glasses),\n          novine (newspaper), škare (scissors)\nVrata su otvorena.  Hlače su nove."
+          ],
+          "examples": [
+            { "target": "Noći su ljeti kratke.", "gloss": "In summer the nights are short." },
+            { "target": "Imam puno posla ove noći.", "gloss": "I have a lot of work tonight." },
+            { "target": "Vrata su zatvorena, a novine su na stolu.", "gloss": "The door is closed, and the newspaper is on the table." },
+            { "target": "Mladost brzo prolazi.", "gloss": "Youth passes quickly." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a1-imperative-basics",
+          "title": "Imperative basics (imperativ glagola na -iti, -ati)",
+          "summary": "The imperative gives commands and instructions and has forms for ti, mi and vi. It is built from the 3rd person plural present: if that form ends in -aju, the imperative ending is -aj (gledaju → gledaj!, gledajte!); if it ends in -e or -u after a consonant, the ending is -i (govore → govori!, govorite!; uče → uči!). The vi-form doubles as the polite form for one person (Izvolite, uđite!). The negative imperative uses nemoj/nemojte + infinitive for polite prohibition (Nemoj kasniti!) or ne + imperative (Ne kasni!).",
+          "tables": [
+            "         gledati (-ati)   govoriti (-iti)\n-------  ---------------  ----------------\n(ti)     gledaj!          govori!\n(mi)     gledajmo!        govorimo!\n(vi)     gledajte!        govorite!\n\nRule: from 3rd pl. present\n-aju -> -aj(te)    gledaju -> gledaj!\n-e/-u -> -i(te)    govore  -> govori!  pišu -> piši!\n\nnegative: nemoj + inf. / ne + imperative\nNemoj kasniti! = Ne kasni!"
+          ],
+          "examples": [
+            { "target": "Govori sporije, molim te!", "gloss": "Speak more slowly, please!" },
+            { "target": "Gledajte ovu fotografiju.", "gloss": "Look at this photograph. (polite/plural)" },
+            { "target": "Nemojte zaboraviti putovnicu.", "gloss": "Don't forget your passport. (polite/plural)" }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        }
+      ]
+    },
+    {
+      "levelId": "A2",
+      "intro": "A2 grammar completes the case system — full declension of nouns, adjectives and pronouns in all seven cases — and adds comparison, the conditional, verbal aspect and the clitic-order rules you need for natural, correctly built sentences.",
+      "sources": ["asoo", "croaticum-syllabus"],
+      "topics": [
+        {
+          "id": "a2-noun-declension-full",
+          "title": "Full noun declension: the three classes (sklonidba imenica)",
+          "summary": "Croatian nouns decline through seven cases (nominative, genitive, dative, accusative, vocative, locative, instrumental) in singular and plural, and every noun follows one of three patterns: the a-declension (masculine and neuter: grad, prijatelj, selo), the e-declension (nouns in -a, mostly feminine: žena) and the i-declension (feminine nouns in a consonant: noć). Dative and locative are always identical, and in the plural dative, locative and instrumental share one form (-ima/-ama). Masculine instrumental singular is -om after hard consonants and -em after soft ones (č, ć, đ, ž, š, j, lj, nj: prijateljem, mužem). Animate masculine nouns take the genitive form in the accusative singular (Vidim prijatelja), while inanimate ones match the nominative.",
+          "tables": [
+            "a-declension, masculine\n     grad (inanimate)         prijatelj (animate, soft)\n     sg.       pl.            sg.          pl.\nN    grad      gradovi        prijatelj    prijatelji\nG    grada     gradova        prijatelja   prijatelja\nD    gradu     gradovima      prijatelju   prijateljima\nA    grad      gradove        prijatelja   prijatelje\nV    grade     gradovi        prijatelju   prijatelji\nL    gradu     gradovima      prijatelju   prijateljima\nI    gradom    gradovima      prijateljem  prijateljima",
+            "e-declension: žena (f.)      a-declension, neuter: selo\n     sg.      pl.                sg.      pl.\nN    žena     žene           N   selo     sela\nG    žene     žena           G   sela     sela\nD    ženi     ženama         D   selu     selima\nA    ženu     žene           A   selo     sela\nV    ženo     žene           V   selo     sela\nL    ženi     ženama         L   selu     selima\nI    ženom    ženama         I   selom    selima",
+            "i-declension: noć (f.)\n     sg.        pl.\nN    noć        noći\nG    noći       noći\nD    noći       noćima\nA    noć        noći\nV    noći       noći\nL    noći       noćima\nI    noći/noću  noćima"
+          ],
+          "examples": [
+            { "target": "Vraćam se iz grada u selo.", "gloss": "I am returning from the city to the village." },
+            { "target": "Razgovarao sam s prijateljem o ženama i poslu.", "gloss": "I talked with a friend about women and work." },
+            { "target": "U velikim gradovima ima puno automobila.", "gloss": "In big cities there are lots of cars." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a2-special-nouns",
+          "title": "Special noun patterns: stem extensions, foreign nouns, dio (posebne sklonidbe)",
+          "summary": "Some neuter nouns extend their stem outside the nominative/accusative singular with -(e)n- or -(e)t-: ime → imena (G sg.), rame → ramena; dijete → djeteta, tele → teleta (and the plural of dijete is the collective djeca). Foreign nouns ending in -y, -i, -u, -o, -e decline like masculine nouns by inserting -j- or adding endings to the full form: taksi → taksija, intervju → intervjua, auto → auta, finale → finala; nouns in -io insert -j-: radio → radija, studio → studija. The noun dio (part) changes its stem to dijel-: dio, dijela, dijelu, plural dijelovi — the same -io → -jel- alternation as posao → posla.",
+          "tables": [
+            "Stem extension -(e)n- / -(e)t- (neuter)\n      ime (name)        dijete (child)\nN sg  ime               dijete\nG sg  imena             djeteta\nD sg  imenu             djetetu\nI sg  imenom            djetetom\nN pl  imena             djeca (collective!)\n\nForeign nouns (decline as masculine)\ntaksi    -> taksija, taksiju, taksijem\nintervju -> intervjua, intervjuu\nauto     -> auta, autu, autom\nradio    -> radija, radiju, radijem\nfinale   -> finala, finalu\n\ndio (part): dio, dijela, dijelu, dio, dijelu, dijelom\nplural: dijelovi, dijelova, dijelovima"
+          ],
+          "examples": [
+            { "target": "Kako se piše vaše ime i prezime?", "gloss": "How do you spell your first and last name?" },
+            { "target": "Zvao sam taksi jer je auto na servisu.", "gloss": "I called a taxi because the car is being serviced." },
+            { "target": "Pročitao sam samo dio intervjua.", "gloss": "I read only part of the interview." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a2-adjective-declension",
+          "title": "Adjective declension (sklonidba pridjeva)",
+          "summary": "Adjectives agree with their noun in gender, number and case, so they decline too. Masculine and neuter share most endings (-og(a) in genitive, -om(u/e) in dative and locative, -im in instrumental), while feminine follows the e-declension pattern (-e, -oj, -u, -om). In the masculine accusative singular the animacy rule applies: inanimate matches the nominative (Vidim velik grad), animate matches the genitive (Vidim dobrog prijatelja). Adjectives like dobar show the fleeting a (dobar → dobrog). Croatian also distinguishes indefinite (dobar čovjek) and definite (dobri čovjek) masculine nominative forms — the definite form in -i is used with known referents and always after demonstratives (taj dobri čovjek). Relational adjectives in -ski, -ški, -čki, -ćki (gradski, zagrebački) describe type or origin, only have the definite form, and never form comparatives.",
+          "tables": [
+            "dobar (good), singular\nCase  m.                      n.          f.\n----  ----------------------  ----------  --------\nN     dobar / dobri           dobro       dobra\nA     = N (inanim.)           dobro       dobru\n      dobrog(a) (anim.)\nG     dobrog(a)               dobrog(a)   dobre\nD     dobrom(u)               dobrom(u)   dobroj\nL     dobrom(e)               dobrom(e)   dobroj\nI     dobrim                  dobrim      dobrom\n\nplural (all cases follow the same logic)\nN  dobri (m.) dobra (n.) dobre (f.)\nG  dobrih     D/L/I dobrim(a)   A dobre/dobra/dobre",
+            "Relational adjectives -ski/-ški/-čki/-ćki\ngrad    -> gradski trg       (city square)\nZagreb  -> zagrebački kolodvor\nturist  -> turistička agencija\nmladić  -> mladićki? no -> mladenački; učenik -> učenički\nAlways definite; no comparative."
+          ],
+          "examples": [
+            { "target": "Vidim dobrog prijatelja u novom autu.", "gloss": "I see a good friend in a new car." },
+            { "target": "Živim u malom stanu blizu glavnoga trga.", "gloss": "I live in a small flat near the main square." },
+            { "target": "Zagrebačke ulice su pune turista.", "gloss": "Zagreb's streets are full of tourists." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a2-pronoun-declension-svoj",
+          "title": "Demonstratives, possessives and reflexive svoj in all cases (sklonidba zamjenica; povratno-posvojna zamjenica)",
+          "summary": "Demonstrative (ovaj, taj, onaj) and possessive (moj, tvoj, naš...) pronouns decline like definite adjectives: taj → tog(a), tom(u), tim; moj → mog(a)/mojeg(a), mom(u)/mojem(u), mojim. The reflexive-possessive pronoun svoj means 'one's own' and must be used whenever the possessor is the subject of the clause, regardless of person: Čitam svoju knjigu (my own), On čita svoju knjigu (his own). Using moj or njegov instead changes or blurs the meaning — Njegov auto is someone else's car, svoj auto is the subject's own. Svoj declines exactly like moj and is never used in the nominative describing the subject itself.",
+          "tables": [
+            "taj (that), singular            moj / svoj, masculine sg.\nCase  m.        n.     f.        Case  form\n----  --------  -----  ----      ----  -----------------\nN     taj       to     ta        N     moj / svoj\nG     tog(a)    tog(a) te        G     mog(a) / svog(a)\nD     tom(u)    tom(u) toj       D     mom(u) / svom(u)\nA     =N/G      to     tu        A     = N (inanim.) / G (anim.)\nL     tom(e)    tom(e) toj       L     mom(e) / svom(e)\nI     tim       tim    tom       I     mojim / svojim\n(f.: svoja -> svoje, svojoj, svoju, svojoj, svojom)",
+            "svoj vs. moj/njegov\nsubject = possessor  -> svoj\nJa čitam svoju knjigu.   (my own book)\nOn vozi svoj auto.       (his own car)\nsubject != possessor -> moj/tvoj/njegov...\nOn vozi njegov auto.     (someone else's car)"
+          ],
+          "examples": [
+            { "target": "Uzmi svoje stvari i dođi u taj kafić.", "gloss": "Take your things and come to that café." },
+            { "target": "Ana je izgubila svoj mobitel, a našla je njegov.", "gloss": "Ana lost her own mobile phone, and found his." },
+            { "target": "Razgovarali smo o tom problemu sa svojim profesorom.", "gloss": "We talked about that problem with our professor." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a2-personal-pronouns-clitics",
+          "title": "Personal pronouns in all cases and clitic order (lične zamjenice; redoslijed enklitika)",
+          "summary": "Personal pronouns have stressed (naglašeni) and clitic (nenaglašeni) forms in the genitive, dative and accusative: mene/me, meni/mi, njega/ga, njoj/joj. Clitics are the default; stressed forms are used after prepositions, for contrast, and at the start of an answer (Koga vidiš? — Njega.). All clitics gather in second position in the clause, in a fixed internal order: the question particle li, then verbal auxiliaries (sam, si, smo, ste, su; ću, ćeš...; bih, bi...), then the dative clitic, then the accusative/genitive clitic, then se — and the auxiliary je always comes last of all. Example: Dala mi ga je (She gave it to me). This order never varies, so it is worth memorizing as a template.",
+          "tables": [
+            "Personal pronouns: stressed / clitic\n        G            D            A\nja      mene/me      meni/mi      mene/me\nti      tebe/te      tebi/ti      tebe/te\non/ono  njega/ga     njemu/mu     njega/ga\nona     nje/je       njoj/joj     nju/ju (je)\nmi      nas/nas      nama/nam     nas/nas\nvi      vas/vas      vama/vam     vas/vas\noni     njih/ih      njima/im     njih/ih\n(after prepositions: stressed form  -> kod mene, za njega)",
+            "Clitic order template (2nd position in clause)\n li -> aux -> DAT -> ACC/GEN -> se -> je\n(1)   (2)    (3)      (4)     (5)   (6)\n\nJesi li mu ga dao?        li + DAT + ACC\nDala mi ga je.            DAT + ACC + je last\nSjećam ga se.             GEN + se\nPredstavit ću ti je.      aux + DAT + ACC\nOna mu se nasmijala.      DAT + se ('je' dropped with se)"
+          ],
+          "examples": [
+            { "target": "Dala mi ga je jučer.", "gloss": "She gave it to me yesterday." },
+            { "target": "Jesi li ih vidio u gradu?", "gloss": "Did you see them in town?" },
+            { "target": "Čekam te ispred kina — mene nemoj čekati.", "gloss": "I'm waiting for you in front of the cinema — don't wait for me." },
+            { "target": "Sjećam je se vrlo dobro.", "gloss": "I remember her very well." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a2-present-classes",
+          "title": "More present-tense classes (prezentske vrste)",
+          "summary": "A2 adds the remaining common present-stem patterns, all still using the regular -em endings. Verbs in -nuti conjugate with -nem (krenuti → krenem); doći and its family give dođem, dođeš. Many verbs in -ati soften their final consonant before -jem endings (iotation): pisati → pišem, kazati → kažem, plakati → plačem. Short vowel-stem verbs like čuti simply insert j (čujem, pijem), and verbs in -vati switch to -jem (davati → dajem, poznavati → poznajem). Consonant-stem verbs include the peći type (pečem, but 3rd pl. peku) and the -sti → -dem type (jesti → jedem, krasti → kradem). The stem must be learned with each verb, but once you know the 1st person singular, the whole paradigm follows automatically.",
+          "tables": [
+            "Pattern            Model        Present (ja, ti, ... oni)\n-----------------  -----------  --------------------------------\n-(n)uti -> -nem    krenuti      krenem, kreneš, krene,\n                                krenemo, krenete, krenu\ndoći    -> dođem   doći         dođem, dođeš ... dođu\n-ati -> -jem       pisati       pišem, pišeš ... pišu\n(iotation)         kazati       kažem ... kažu\n                   plakati      plačem ... plaču\nčuti type          čuti         čujem, čuješ ... čuju\n-vati -> -jem      davati       dajem, daješ ... daju\n                   poznavati    poznajem ... poznaju\npeći type          peći         pečem, pečeš ... peku (3. pl!)\n-sti -> -dem       jesti        jedem, jedeš ... jedu\n                   krasti       kradem ... kradu"
+          ],
+          "examples": [
+            { "target": "Krećem na posao u sedam, a dođem kući u pet.", "gloss": "I leave for work at seven, and I get home at five." },
+            { "target": "Baka peče kolače i daje ih djeci.", "gloss": "Grandma bakes cakes and gives them to the children." },
+            { "target": "Čujem da dobro poznaješ Split.", "gloss": "I hear that you know Split well." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a2-verbal-aspect-intro",
+          "title": "Verbal aspect: perfective and imperfective (glagolski vid)",
+          "summary": "Almost every Croatian verb comes in a pair: an imperfective verb (nesvršeni) for ongoing, repeated or unfinished actions, and a perfective verb (svršeni) for single completed actions — pisati/napisati, kupovati/kupiti, dolaziti/doći. English hides this distinction in tenses ('was writing' vs 'wrote'); Croatian builds it into the verb itself, so choosing the right member of the pair matters in every tense. Perfective verbs cannot form a true present with present meaning — Napišem pismo only works in dependent clauses or with future reference; for 'I am writing' you must say Pišem. In the perfekt, aspect distinguishes Pisao sam pismo (I was writing / used to write) from Napisao sam pismo (I finished writing it). Dictionaries list verbs as pairs, and it is best to learn them together from the start.",
+          "tables": [
+            "Imperfective (process)     Perfective (completed)\n-------------------------  ----------------------\npisati    (be writing)     napisati  (write, finish)\nčitati    (be reading)     pročitati (read through)\nkupovati  (be buying)      kupiti    (buy)\ndolaziti  (be coming)      doći      (come, arrive)\ngledati   (be watching)    pogledati (take a look)\nučiti     (study)          naučiti   (learn, master)\n\nUse imperfective for:  process, habit, duration\n  Svaki dan pišem mailove.  Pisao sam cijelo jutro.\nUse perfective for:    one whole completed event\n  Napisao sam mail i poslao ga."
+          ],
+          "examples": [
+            { "target": "Dugo sam učio hrvatski i napokon sam naučio padeže.", "gloss": "I studied Croatian for a long time and finally learned the cases." },
+            { "target": "Kupovala je namirnice svaki dan, a jučer je kupila i vino.", "gloss": "She used to buy groceries every day, and yesterday she also bought wine." },
+            { "target": "Dolazim! Doći ću za pet minuta.", "gloss": "I'm coming! I'll arrive in five minutes." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a2-comparative-superlative",
+          "title": "Comparative and superlative (komparativ i superlativ)",
+          "summary": "Most adjectives form the comparative with -iji (star → stariji, pametan → pametniji). Shorter adjectives take -ji, which fuses with the final consonant (iotation): mlad → mlađi, jak → jači, skup → skuplji, tih → tiši. Exactly three adjectives take -ši: lijep → ljepši, lak → lakši, mek → mekši. Four key adjectives are suppletive and must be memorized: dobar → bolji, loš → gori, velik → veći, malen/mali → manji. The superlative is always naj- + comparative (najbolji, najstariji). Comparatives and superlatives decline like definite adjectives (boljeg, boljem, s boljim). Comparison uses od + genitive or nego: Ivan je stariji od Marka / stariji nego Marko. Adverbs compare with the neuter form: dobro → bolje → najbolje, mnogo → više, malo → manje, loše → gore.",
+          "tables": [
+            "Pattern       Positive   Comparative   Superlative\n------------  ---------  ------------  ------------\n-iji          star       stariji       najstariji\n              pametan    pametniji     najpametniji\n-ji (iotation) mlad      mlađi         najmlađi\n              jak        jači          najjači\n              skup       skuplji       najskuplji\n              tih        tiši          najtiši\n-ši (only 3)  lijep      ljepši        najljepši\n              lak        lakši         najlakši\n              mek        mekši         najmekši\nirregular     dobar      bolji         najbolji\n              loš        gori          najgori\n              velik      veći          najveći\n              mali       manji         najmanji\n\nAdverbs: dobro->bolje  loše->gore  mnogo->više  malo->manje\nThan: od + G (stariji od brata) / nego (stariji nego brat)"
+          ],
+          "examples": [
+            { "target": "Moj stan je manji od tvoga, ali je jeftiniji.", "gloss": "My flat is smaller than yours, but it is cheaper." },
+            { "target": "Ovo je najljepši grad na svijetu.", "gloss": "This is the most beautiful city in the world." },
+            { "target": "Danas se osjećam bolje nego jučer.", "gloss": "Today I feel better than yesterday." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a2-conditional",
+          "title": "The conditional (kondicional prvi)",
+          "summary": "Kondicional I is formed with the aorist of biti (bih, bi, bi, bismo, biste, bi) plus the past participle: Rado bih došao (I would gladly come). These auxiliary forms are clitics and stand in second position; in careful standard Croatian the persons are distinguished (bismo, biste), even though colloquial speech levels them all to bi. The negative puts ne before the auxiliary (ne bih rekao) and the question uses inversion with li (Biste li htjeli kavu?). The conditional expresses wishes (Htio bih...), polite requests (Biste li mi pomogli?), possibility, and conditions — both realizable and unrealizable — often introduced by kad or da: Kad bih imao vremena, putovao bih.",
+          "tables": [
+            "Person   Aux.    Example\n-------  ------  ---------------------------\nja       bih     Ja bih došao. / Došao bih.\nti       bi      Ti bi došao.\non/ona   bi      On bi došao.\nmi       bismo   Mi bismo došli.\nvi       biste   Vi biste došli.\noni      bi      Oni bi došli.\n\nnegative:  Ne bih to rekao.\nquestion:  Bi li došao?  Biste li htjeli kavu?\nmeanings:  wish        Htjela bih sladoled.\n           politeness  Biste li mi pomogli?\n           possibility To bi moglo biti točno.\n           condition   Kad bih imao novca, kupio bih stan."
+          ],
+          "examples": [
+            { "target": "Htio bih rezervirati stol za dvoje.", "gloss": "I would like to reserve a table for two." },
+            { "target": "Biste li mi mogli pomoći?", "gloss": "Could you help me? (polite)" },
+            { "target": "Kad bih imao više vremena, učio bih hrvatski svaki dan.", "gloss": "If I had more time, I would study Croatian every day." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "a2-futur-ii-clauses",
+          "title": "Futur II and time/condition clauses (futur drugi; zavisne rečenice s kad, ako, dok)",
+          "summary": "Futur II is formed with budem, budeš, bude, budemo, budete, budu plus the past participle (budem radio). It never stands alone: it appears in dependent clauses after kad (when), ako (if) and dok (while/until) to mark a future action that precedes or accompanies the main future action: Kad budem imao vremena, nazvat ću te. With perfective verbs, the bare present usually replaces futur II in these clauses (Kad dođem, javit ću ti se) — that is the normal, most frequent pattern; futur II is chiefly needed with imperfective verbs. The main clause keeps futur I. Note the meaning of dok ne + perfective: 'until' (Čekat ću dok ne dođeš).",
+          "tables": [
+            "futur II = budem + participle\nja  budem radio/radila    mi  budemo radili/radile\nti  budeš radio/radila    vi  budete radili/radile\non  bude radio            oni budu radili\n\nDependent clause (kad/ako/dok)     Main clause (futur I)\n--------------------------------   ---------------------\nKad budem imao vremena,            nazvat ću te.\nAko budeš učio,                    položit ćeš ispit.\nDok budeš spavao,                  ja ću raditi.\nperfective verb -> present instead of futur II:\nKad dođem kući,                    javit ću ti se.\nAko vidiš Anu,                     pozdravi je."
+          ],
+          "examples": [
+            { "target": "Ako budeš imao problema, nazovi me.", "gloss": "If you have problems, call me." },
+            { "target": "Kad budem govorio hrvatski bolje, tražit ću posao u Zagrebu.", "gloss": "When I speak Croatian better, I will look for a job in Zagreb." },
+            { "target": "Čekat ću ovdje dok ne dođeš.", "gloss": "I will wait here until you come." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a2-genitive-uses",
+          "title": "Uses of the genitive (vremenski, posvojni i objasnidbeni genitiv)",
+          "summary": "Beyond 'of' and quantities, A2 focuses on three genitive functions. The temporal genitive puts time expressions directly into the genitive with no preposition: prošle godine (last year), svakog dana (every day), jednog jutra (one morning). The possessive genitive expresses belonging when a possessive adjective is impossible — typically when the possessor carries a modifier: auto moga brata (my brother's car), kuća stare gospođe. The explanatory (objasnidbeni) genitive specifies what something consists of or refers to: osjećaj sreće (a feeling of happiness), problem nezaposlenosti, miris mora. The genitive is also required after quantity words (puno, malo, nekoliko + G pl.) and many prepositions (iz, od, do, kod, bez, blizu, pored).",
+          "tables": [
+            "Temporal G     prošle godine      last year\n(no prep.)     svakog dana        every day\n               ovog tjedna        this week\n               jednog jutra       one morning\nPossessive G   auto moga brata    my brother's car\n(modified      stan naših susjeda our neighbours' flat\n possessor)\nExplanatory G  osjećaj sreće      feeling of happiness\n               miris mora         smell of the sea\n               problem nezaposlenosti\nQuantity + G   puno posla, malo vremena, nekoliko knjiga\nPrepositions   iz, od, do, kod, bez, blizu, pored, ispred + G"
+          ],
+          "examples": [
+            { "target": "Prošle godine bili smo kod mojih roditelja.", "gloss": "Last year we were at my parents' place." },
+            { "target": "To je bicikl moga mlađeg brata.", "gloss": "That is my younger brother's bicycle." },
+            { "target": "Volim miris mora i zvuk valova.", "gloss": "I love the smell of the sea and the sound of the waves." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a2-impersonal-sentences",
+          "title": "Impersonal sentences (impersonalne rečenice)",
+          "summary": "Croatian often builds sentences without a nominative subject. With states and feelings, the verb or adjective stands in the neuter 3rd person singular and the person appears in the dative: Hladno mi je (I am cold), Dosadno joj je (she is bored). Necessity and possibility use treba and može with an infinitive or a se-construction: Treba učiti (one must study), Može se ući (one may enter), Ovdje se ne puši (no smoking here). Past tense of all these takes the neuter singular: Bilo je hladno, Trebalo je raditi. These patterns are extremely common in everyday speech and signs, and English 'it/one/you' subjects all map onto them.",
+          "tables": [
+            "Pattern                 Example              English\n----------------------  -------------------  -------------------\nadj. (n.) + je + DAT    Hladno mi je.        I am cold.\n                        Dosadno joj je.      She is bored.\ntreba + inf.            Treba puno raditi.   One must work a lot.\nmože se + inf./verb-se  Može se ući.         One may enter.\n                        Ovdje se ne puši.    No smoking here.\npast: neuter sg.        Bilo je hladno.      It was cold.\n                        Trebalo je učiti.    One had to study."
+          ],
+          "examples": [
+            { "target": "Hladno mi je, zatvori prozor, molim te.", "gloss": "I'm cold, close the window, please." },
+            { "target": "U knjižnici se ne smije glasno govoriti.", "gloss": "One must not speak loudly in the library." },
+            { "target": "Jučer je bilo vruće, a danas je ugodno.", "gloss": "Yesterday it was hot, and today it is pleasant." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "a2-adverbs-comparison",
+          "title": "Comparing adverbs (komparativ i superlativ priloga)",
+          "summary": "Adverbs of manner look like the neuter singular of the adjective (brzo, dobro, loše) and compare using the neuter comparative form: brzo → brže, često → češće, dobro → bolje, loše → gore, mnogo → više, malo → manje. The superlative again adds naj- (najbrže, najbolje). These comparative adverbs are everywhere in everyday speech — govori sporije (speak more slowly), dođi ranije (come earlier) — and also combine with što to mean 'as ... as possible': što prije (as soon as possible), što više (as much as possible).",
+          "tables": [
+            "Adverb     Comparative   Superlative\n---------  ------------  -----------\nbrzo       brže          najbrže\nsporo      sporije       najsporije\ndobro      bolje         najbolje\nloše       gore          najgore\nmnogo      više          najviše\nmalo       manje         najmanje\nčesto      češće         najčešće\nrano       ranije        najranije\nkasno      kasnije       najkasnije\nšto + comparative = as ... as possible\nšto prije (asap), što više (as much as possible)"
+          ],
+          "examples": [
+            { "target": "Molim vas, govorite sporije.", "gloss": "Please speak more slowly." },
+            { "target": "Dođi što ranije, imamo puno posla.", "gloss": "Come as early as possible, we have a lot of work." },
+            { "target": "Najviše volim putovati ljeti.", "gloss": "I like travelling most in summer." }
+          ],
+          "sources": ["asoo"]
+        }
+      ]
+    },
+    {
+      "levelId": "B1",
+      "intro": "B1 grammar turns correct sentences into fluent Croatian: mastering aspect pairs and prefixed verb families, the passive participle, verbal nouns and adverbs, and the full range of conditional sentences lets you narrate, argue and write connected texts.",
+      "sources": ["asoo", "croaticum-syllabus"],
+      "topics": [
+        {
+          "id": "b1-aspect-pairs",
+          "title": "Aspect pairs in depth (vidski parovi)",
+          "summary": "At B1 you systematize how aspect pairs are formed. Three patterns cover nearly all verbs: (1) a prefix turns an imperfective into a perfective (pisati → napisati, gledati → pogledati); (2) a suffix — usually -avati, -ivati or -ati — derives a new imperfective from a perfective (kupiti → kupovati, dati → davati, dogovoriti se → dogovarati se); (3) a few pairs use different stems altogether (suppletive: dolaziti/doći, govoriti/reći, uzimati/uzeti). Crucially, when a prefix adds a new meaning (pisati → opisati 'describe'), that new perfective verb gets its own derived imperfective (opisivati), creating a secondary pair. Learning verbs in these families — rather than one by one — is the fastest route to B1 vocabulary.",
+          "tables": [
+            "Pattern                    impf.           pf.\n-------------------------  --------------  --------------\n1. prefix (impf. -> pf.)   pisati          napisati\n   (same meaning,          čitati          pročitati\n    completed)             gledati         pogledati\n                           raditi          uraditi\n2. suffix (pf. -> impf.)   kupiti          kupovati\n   -avati/-ivati/-ati      dati            davati\n                           dogovoriti se   dogovarati se\n                           ostaviti        ostavljati\n3. suppletive /            dolaziti        doći\n   stem change             govoriti        reći\n                           uzimati         uzeti\n\nNew meaning -> secondary pair:\npisati -> opisati (describe) -> opisivati (impf.)\n       -> zapisati (note down) -> zapisivati (impf.)"
+          ],
+          "examples": [
+            { "target": "Pisao sam izvještaj cijeli dan i napokon sam ga napisao.", "gloss": "I was writing the report all day and finally finished writing it." },
+            { "target": "Uzimam lijekove svaki dan; danas sam ih već uzeo.", "gloss": "I take medicine every day; today I have already taken it." },
+            { "target": "Dogovarali smo se tjednima i na kraju smo se dogovorili.", "gloss": "We negotiated for weeks and in the end we reached an agreement." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "b1-prefix-families",
+          "title": "Verb families with prefixes (glagoli u kontekstu: pisati, gledati, staviti...)",
+          "summary": "Croatian prefixes work like English phrasal-verb particles: each prefix adds a predictable shade of meaning to a base verb. From pisati: opisati (describe), zapisati (note down), potpisati (sign), prepisati (copy); from gledati: pogledati (take a look), pregledati (examine), razgledati (sightsee); from staviti: dostaviti (deliver), predstaviti (introduce), nastaviti (continue), ostaviti (leave behind), sastaviti (assemble), postaviti (set up); from stati: postati (become), ostati (stay), prestati (stop), ustati (get up). Common prefix meanings: po- (a little / begin), pre- (across, over, re-), raz- (apart, around), za- (start / fix in place), do- (reach, arrive), iz- (out), na- (onto / completion), pri- (near, join), od- (away). Learning the prefix meanings lets you decode hundreds of new verbs from context.",
+          "tables": [
+            "Base       + prefix     Meaning\n---------  -----------  -----------------------\npisati     opisati      describe\n(write)    zapisati     note down\n           potpisati    sign\n           prepisati    copy / prescribe\ngledati    pogledati    take a look\n(watch)    pregledati   examine, review\n           razgledati   look around, sightsee\nmisliti    pomisliti    think of (suddenly)\n(think)    izmisliti    invent, make up\n           razmisliti   think over\nstaviti    dostaviti    deliver\n(put)      predstaviti  introduce, present\n           nastaviti    continue\n           ostaviti     leave behind\n           sastaviti    assemble, compose\n           postaviti    set up, install\nstati      postati      become\n(stop/     ostati       stay, remain\n stand)    prestati     stop (doing)\n           ustati       get up\nzvati      nazvati      call (phone)\n(call)     pozvati      invite\n           izazvati     provoke, cause\ndržati     zadržati     keep, retain\n(hold)     održati      hold (an event), maintain\n           podržati     support\nživjeti    doživjeti    experience\n(live)     preživjeti   survive\npustiti    dopustiti    allow\n(let)      otpustiti    dismiss, release"
+          ],
+          "examples": [
+            { "target": "Molim vas, potpišite ugovor i zapišite datum.", "gloss": "Please sign the contract and note down the date." },
+            { "target": "Liječnik me pregledao i sve mi je objasnio.", "gloss": "The doctor examined me and explained everything to me." },
+            { "target": "Prestao je pušiti i postao je puno zdraviji.", "gloss": "He stopped smoking and became much healthier." },
+            { "target": "Dopustite da vam predstavim svoju kolegicu.", "gloss": "Allow me to introduce my colleague to you." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-present-classes-advanced",
+          "title": "Advanced present-stem classes (prezent glagola tipa stanem, sjednem, donesem)",
+          "summary": "B1 completes the present-stem system with the last consonant-stem patterns, all with regular -em endings. Verbs like ostati and postati form -anem (ostanem, postanem); uzeti and početi have suppletive stems uzmem and počnem. Verbs in -sti split into three types: -dnem (sjesti → sjednem, pasti → padnem), -tnem (sresti → sretnem) and -zem (gristi → grizem, vesti → vezem). Verbs in -ći of the stići type give -gnem (stignem, legnem, pobjegnem), and the -nijeti family gives -nesem (donijeti → donesem, odnijeti → odnesem). These are all perfective or mixed-aspect everyday verbs, so their present forms mostly appear in dependent clauses and futures (Kad stignem, sjednem i počnem raditi).",
+          "tables": [
+            "Pattern            Infinitive   Present (ja)\n-----------------  -----------  ------------\n-ati  -> -anem     ostati       ostanem\n                   postati      postanem\nsuppletive         uzeti        uzmem\n                   početi       počnem\n-sti  -> -dnem     sjesti       sjednem\n                   pasti        padnem\n-sti  -> -tnem     sresti       sretnem\n-sti  -> -zem      gristi       grizem\n                   vesti        vezem\n-ći   -> -gnem     stići        stignem\n                   leći         legnem\n                   pobjeći      pobjegnem\n-ijeti -> -esem    donijeti     donesem\n                   odnijeti     odnesem\n                   ponijeti     ponesem"
+          ],
+          "examples": [
+            { "target": "Kad stignem kući, sjednem i počnem kuhati.", "gloss": "When I get home, I sit down and start cooking." },
+            { "target": "Uzmi kišobran da ne pokisneš.", "gloss": "Take an umbrella so you don't get soaked." },
+            { "target": "Donijet ću ti knjigu čim je pročitam.", "gloss": "I'll bring you the book as soon as I read it." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-dative-experiencer",
+          "title": "The dative of the experiencer (nositelj stanja u dativu)",
+          "summary": "Croatian systematically puts the person who experiences a state in the dative while the grammatical subject is the thing or the state itself: Sviđa mi se ovaj film (literally 'this film pleases to-me'), Hladno mi je, Dosadno nam je, Žao mi je (I'm sorry), Drago mi je (pleased to meet you). The verb agrees with the nominative subject, not with the experiencer: Sviđaju mi se ove pjesme (plural verb, plural subject). This pattern also covers physical states (Zlo mi je — I feel sick, Vrti mi se — I'm dizzy) and needs (Treba mi pomoć — I need help, Nedostaje mi obitelj — I miss my family). Getting these right is a hallmark of natural Croatian, because English speakers instinctively make the experiencer the subject.",
+          "tables": [
+            "Croatian (DAT experiencer)   Literal            English\n---------------------------  -----------------  -----------------\nSviđa mi se film.            pleases to-me      I like the film.\nSviđaju mi se filmovi.       (verb agrees       I like the films.\n                              with subject!)\nŽao mi je.                   sorry to-me        I am sorry.\nDrago mi je.                 dear to-me         Pleased to meet you.\nZlo mi je.                   ill to-me          I feel sick.\nVrti mi se.                  spins to-me        I am dizzy.\nTreba mi pomoć.              is-needed to-me    I need help.\nNedostaje mi obitelj.        lacks to-me        I miss my family.\nUspjelo nam je.              succeeded to-us    We succeeded."
+          ],
+          "examples": [
+            { "target": "Sviđaju mi se ove pjesme, a njemu se ne sviđaju.", "gloss": "I like these songs, but he doesn't like them." },
+            { "target": "Nedostaju mi more i sunce.", "gloss": "I miss the sea and the sun." },
+            { "target": "Žao nam je što ne možete doći.", "gloss": "We are sorry that you can't come." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-i-declension-instrumental",
+          "title": "Instrumental of consonant-final feminine nouns; dob and doba (instrumental i-deklinacije; imenice dob i doba)",
+          "summary": "Feminine i-declension nouns have two instrumental singular options: the ending -i (identical to the genitive/dative) or the fused ending -ju, which triggers sound changes at the stem boundary: sol → solju, ljubav → ljubavlju, misao → mišlju, radost → radošću, noć → noći/noću. The -ju forms are preferred when the noun stands alone without an adjective (Piše kredom i ljubavlju); with a modifier, -i is common (s velikom radosti/radošću). Two look-alike nouns must be kept apart: dob (age) is feminine i-declension (u mojoj dobi — at my age), while doba (period, season) is neuter and keeps the same form in all singular cases (u to doba — at that time, godišnje doba — season).",
+          "tables": [
+            "Instrumental sg. of i-declension (f.)\nNoun      I sg. (-ju)      Sound change\n--------  ---------------  -------------\nsol       solju            l + j\nljubav    ljubavlju        v -> vlj\nkrv       krvlju           v -> vlj\nmisao     mišlju           sao -> šlj\nradost    radošću          st -> šć\nnoć       noću / noći      —\nstvar     stvarju / stvari —\n\ndob (f., i-decl.)          doba (n., unchanged in sg.)\nN dob    u mojoj dobi (L)  N/G/D/A/L doba\nG dobi                     godišnje doba (season)\n                           u to doba (at that time)"
+          ],
+          "examples": [
+            { "target": "Pismo je napisano ljubavlju.", "gloss": "The letter was written with love." },
+            { "target": "Radim noću, a spavam danju.", "gloss": "I work at night and sleep during the day." },
+            { "target": "U mojoj dobi ljudi obično već imaju obitelj.", "gloss": "At my age people usually already have a family." },
+            { "target": "Zima je moje omiljeno godišnje doba.", "gloss": "Winter is my favourite season." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-collective-nouns",
+          "title": "Collective nouns (zbirne imenice)",
+          "summary": "Collective nouns name a group as a single mass: djeca (children), braća (brothers), gospoda (gentlemen), lišće (leaves), cvijeće (flowers), granje (branches), telad (calves), unučad (grandchildren). Grammatically they behave in a mixed way that must be learned: djeca, braća and gospoda decline like singular feminine nouns in -a (s djecom, o braći) but take a plural verb, with the participle in -la: Djeca su se igrala, Braća su došla. The -je collectives (lišće, cvijeće) are neuter singular in every respect: Lišće je palo. The -ad collectives (telad, unučad) are feminine i-declension singular: S teladi. Collectives replace the plural of some nouns entirely — dijete has no plural *dijeteta; its plural is djeca; brat's everyday plural is braća.",
+          "tables": [
+            "Collective   Meaning        Declension       Verb agreement\n-----------  -------------  ---------------  -----------------\ndjeca        children       like žena (sg.)  plural: Djeca su\n                            s djecom, djeci  se igrala.\nbraća        brothers       like žena (sg.)  plural: Braća su\n                            s braćom, braći  došla.\ngospoda      gentlemen      like žena (sg.)  plural\nlišće        leaves         neuter sg.       singular: Lišće\ncvijeće      flowers        neuter sg.       je palo.\ngranje       branches       neuter sg.       singular\ntelad        calves         f. i-decl. sg.   singular\nunučad       grandchildren  f. i-decl. sg.   singular\n\ndijete (sg.) -> djeca (pl.)   brat (sg.) -> braća (pl.)"
+          ],
+          "examples": [
+            { "target": "Djeca su se cijeli dan igrala u parku.", "gloss": "The children played in the park all day." },
+            { "target": "Moja braća žive u Splitu; često razgovaram s braćom.", "gloss": "My brothers live in Split; I often talk with my brothers." },
+            { "target": "U jesen lišće mijenja boju i pada.", "gloss": "In autumn the leaves change colour and fall." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-passive-participle",
+          "title": "The passive participle (glagolski pridjev trpni)",
+          "summary": "The passive participle turns a verb into an adjective meaning 'having been X-ed' and is the key to passive sentences and countless everyday expressions (zatvoreno, rezervirano, zabranjeno). Formation follows the infinitive class: verbs in -ati take -an (napisati → napisan, pročitati → pročitan); verbs in -iti and -jeti take -en with iotation of the stem consonant (učiniti → učinjen, vidjeti → viđen, baciti → bačen); consonant-stem verbs also take -en (peći → pečen, donijeti → donesen); and a small group takes -t (uzeti → uzet, početi → počet, čuti → čut, otvoriti → otvoren but zauzeti → zauzet). The participle agrees like an adjective (pečen, pečena, pečeno) and combines with biti for the passive: Ručak je skuhan (lunch is cooked), Knjiga je napisana prije sto godina.",
+          "tables": [
+            "Ending  Class            Examples\n------  ---------------  ---------------------------\n-an     -ati             napisati -> napisan\n                         pročitati -> pročitan\n                         prodati  -> prodan\n-en     -iti (iotation)  učiniti  -> učinjen\n                         baciti   -> bačen\n                         zatvoriti-> zatvoren\n        -jeti            vidjeti  -> viđen\n        consonant stems  peći     -> pečen\n                         donijeti -> donesen\n                         jesti    -> jeden (pojeden)\n-t      -eti/-uti/short  uzeti    -> uzet\n                         početi   -> počet\n                         zauzeti  -> zauzet\n                         čuti     -> čut\n\nAgreement: pečen kruh, pečena riba, pečeno meso\nPassive:   Večera je skuhana. Stol je rezerviran."
+          ],
+          "examples": [
+            { "target": "Trgovina je zatvorena, a sve je već prodano.", "gloss": "The shop is closed, and everything is already sold." },
+            { "target": "Stol je rezerviran na moje ime.", "gloss": "The table is reserved in my name." },
+            { "target": "Ova knjiga je napisana prije sto godina.", "gloss": "This book was written a hundred years ago." },
+            { "target": "Mjesto je, nažalost, zauzeto.", "gloss": "The seat is, unfortunately, taken." }
+          ],
+          "sources": ["asoo", "croaticum-syllabus"]
+        },
+        {
+          "id": "b1-verbal-adverb-present",
+          "title": "The present verbal adverb (glagolski prilog sadašnji)",
+          "summary": "The present verbal adverb expresses an action happening at the same time as the main verb — English '-ing' clauses: Slušajući glazbu, učim (Listening to music, I study). It is formed only from imperfective verbs by adding -ći to the 3rd person plural present: čitaju → čitajući, rade → radeći, pišu → pišući, budu → budući (which also became the adjective 'future' and the conjunction budući da — 'since'). The form never changes — it does not agree with anything. In standard usage its unexpressed subject must be the same as the subject of the main clause; it belongs mostly to written and careful spoken language, where it replaces a dok-clause: Dok putujem, čitam = Putujući čitam.",
+          "tables": [
+            "3rd pl. present + -ći  ->  verbal adverb\n---------------------------------------\nčitaju   -> čitajući    (while) reading\nrade     -> radeći      (while) working\npišu     -> pišući      (while) writing\nslušaju  -> slušajući   (while) listening\nputuju   -> putujući    (while) travelling\nbudu     -> budući      being (budući da = since)\n\nOnly from imperfective verbs; form never changes.\nSame subject rule:\nPutujući vlakom, čitala je novine. (she travels, she reads)"
+          ],
+          "examples": [
+            { "target": "Slušajući radio, saznao sam novosti.", "gloss": "Listening to the radio, I learned the news." },
+            { "target": "Radeći svaki dan, brzo je napredovala.", "gloss": "Working every day, she progressed quickly." },
+            { "target": "Budući da nemam auto, putujem vlakom.", "gloss": "Since I don't have a car, I travel by train." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-verbal-nouns",
+          "title": "Verbal nouns (glagolske imenice)",
+          "summary": "Verbal nouns name the action itself — 'reading', 'swimming' — and are formed from the passive-participle stem plus -je: čitati → čitanje, pisati → pisanje, učiti → učenje, putovati → putovanje, kupiti → kupnja/kupovanje. Most are built from imperfective verbs and are neuter nouns of the more type, declining regularly (bez čitanja, u pisanju). They are extremely productive in notices, schedules and formal style (parkiranje zabranjeno, radno vrijeme, znanje jezika), and often correspond to an English gerund or noun in '-ing'/'-tion'. Where a shorter noun exists (odluka 'decision' from odlučiti), the verbal noun in -nje still names the process rather than the result (odlučivanje 'decision-making').",
+          "tables": [
+            "Verb          Verbal noun    Meaning\n------------  -------------  ------------------\nčitati        čitanje        reading\npisati        pisanje        writing\nučiti         učenje         learning, studying\nplivati       plivanje       swimming\nputovati      putovanje      travelling, trip\nparkirati     parkiranje     parking\nznati         znanje         knowledge\npiti          piće           drink\n(process vs result)\nodlučiti -> odluka (result) / odlučivanje (process)\nDeclines as neuter: bez učenja, u putovanju, znanjem"
+          ],
+          "examples": [
+            { "target": "Učenje jezika zahtijeva strpljenje.", "gloss": "Learning a language requires patience." },
+            { "target": "Parkiranje je ovdje zabranjeno.", "gloss": "Parking is forbidden here." },
+            { "target": "Bez znanja hrvatskoga teško je naći posao u struci.", "gloss": "Without knowledge of Croatian it is hard to find a job in one's profession." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-subjectless-sentences",
+          "title": "Subjectless sentences (besubjektne rečenice)",
+          "summary": "Some Croatian sentences have no subject at all, not even an implied one; the verb stands in the 3rd person singular neuter. They describe natural phenomena (Grmi — it's thundering, Sviće — dawn is breaking, Smrkava se — it's getting dark), existence and absence with nema/nije bilo/neće biti + genitive (Nema kruha — there is no bread, Nije bilo struje — there was no electricity), and states with adverbs (Kasno je, Bilo je lijepo). In the past these verbs take the neuter participle: Grmjelo je cijelu noć. The nema + genitive pattern is essential: it is how Croatian says 'there isn't/aren't', and its past and future are nije bilo and neće biti, all with the genitive.",
+          "tables": [
+            "Type              Present         Past\n----------------  --------------  ------------------\nweather           Grmi.           Grmjelo je.\n                  Sviće.          Svanulo je.\n                  Smrkava se.     Smrkavalo se.\nexistence (+ G!)  Ima kruha.      Bilo je kruha.\nabsence (+ G!)    Nema kruha.     Nije bilo kruha.\n                  Nema ga.        Nije ga bilo.\n     future:      Neće biti problema.\nstate + adverb    Kasno je.       Bilo je kasno.\n                  Vruće je.       Bilo je vruće."
+          ],
+          "examples": [
+            { "target": "Cijelu noć je grmjelo i padala je kiša.", "gloss": "It thundered all night and it rained." },
+            { "target": "U trgovini nema svježeg kruha.", "gloss": "There is no fresh bread in the shop." },
+            { "target": "Jučer ga nije bilo na poslu.", "gloss": "He wasn't at work yesterday." }
+          ],
+          "sources": ["asoo"]
+        },
+        {
+          "id": "b1-conditional-sentences",
+          "title": "Conditional sentences (pogodbene rečenice s ako, kad i da)",
+          "summary": "Croatian has three types of conditional sentence, each with its own conjunction pattern. Real conditions (likely, future) use ako with the present or futur II in the if-clause and futur I or an imperative in the main clause: Ako budeš učio, položit ćeš. Potential conditions (imaginable but hypothetical) use kad or ako with kondicional I in both clauses: Kad bih imao novca, kupio bih stan. Unreal conditions (contrary to fact) use da with the present or perfekt in the if-clause and kondicional I in the main clause: Da sam znao, došao bih (If I had known, I would have come — but I didn't). The choice of conjunction is itself meaningful: da + indicative always signals that the condition is not fulfilled.",
+          "tables": [
+            "Type        If-clause               Main clause\n----------  ----------------------  -----------------\n1. real     ako + present/futur II  futur I / imper.\n            Ako budeš učio,         položit ćeš ispit.\n            Ako imaš vremena,       dođi!\n2. potential kad/ako + kondicional  kondicional I\n            Kad bih imao novca,     kupio bih stan.\n            Ako bi htio,            mogao bi doći.\n3. unreal   da + present/perfekt    kondicional I\n            Da sam znao,            došao bih.\n            Da imam vremena,        pomogao bih ti.\n\nda + indicative = condition NOT fulfilled"
+          ],
+          "examples": [
+            { "target": "Ako sutra bude sunčano, ići ćemo na izlet.", "gloss": "If it is sunny tomorrow, we will go on a trip." },
+            { "target": "Kad bih govorio hrvatski savršeno, radio bih kao prevoditelj.", "gloss": "If I spoke Croatian perfectly, I would work as a translator." },
+            { "target": "Da si me nazvao, došao bih po tebe.", "gloss": "If you had called me, I would have come to pick you up." }
+          ],
+          "sources": ["asoo"]
+        }
+      ]
+    }
+  ]
+}
