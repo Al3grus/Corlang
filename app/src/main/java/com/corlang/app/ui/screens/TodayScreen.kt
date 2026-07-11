@@ -1,5 +1,6 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -35,9 +36,9 @@ import com.corlang.app.ui.navigation.Dest
 import kotlinx.coroutines.launch
 
 /**
- * Today = one button. The hero shows the streak and the next best action; "Start today's
- * session" hands over to the guided SessionPlayer, which walks through every task of the
- * day step by step. No loose checklists — the app leads.
+ * The Lesson tab = one button. It lands on the day after your last completed one, shows the
+ * streak and the next action, and "Start lesson" hands over to the guided SessionPlayer,
+ * which walks through every task of the day step by step. No loose checklists — the app leads.
  */
 @Composable
 fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> Unit = {}) {
@@ -55,11 +56,16 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
     val dueNow = reviews.count { it.dueEpochDay <= today }
     val studiedToday = (progress?.lastStudiedEpochDay ?: 0L) == today
 
-    // Which day is being viewed (defaults to current; user can browse).
-    var viewedDay by remember(lang) { mutableStateOf(currentDay) }
+    // The lesson to land on = the day AFTER your last completed one (also covers doing several
+    // days at once). Robust even if the stored currentDay lags behind completions.
+    val lastCompleted = completed.maxOrNull() ?: 0
+    val targetDay = maxOf(currentDay, lastCompleted + 1).coerceIn(1, plan.days.size)
+
+    // Which day is being viewed (defaults to the target; user can browse away with ‹ ›).
+    var viewedDay by remember(lang) { mutableStateOf(targetDay) }
     var userBrowsed by remember(lang) { mutableStateOf(false) }
-    LaunchedEffect(currentDay) {
-        if (!userBrowsed) viewedDay = currentDay
+    LaunchedEffect(targetDay) {
+        if (!userBrowsed) viewedDay = targetDay
     }
 
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
@@ -121,9 +127,9 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
                 )
                 Text(
                     when {
-                        !studiedToday && dueNow > 0 -> "$dueNow words due — the session starts with them."
-                        studiedToday -> "Today is banked ✓ — keep going below for depth."
-                        else -> "One guided session keeps the streak alive."
+                        !studiedToday && dueNow > 0 -> "$dueNow words due — the lesson starts with them."
+                        studiedToday -> "Today is banked ✓ — keep going for depth."
+                        else -> "One guided lesson keeps the streak alive."
                     },
                     style = MaterialTheme.typography.bodySmall,
                     modifier = Modifier.padding(top = 2.dp)
@@ -131,7 +137,7 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
             }
         }
 
-        // Day navigator (browse the plan).
+        // Day navigator (browse the plan). Lands on your current lesson; ‹ › to look around.
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -151,6 +157,19 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
                 enabled = viewedDay < plan.days.size
             ) { Text("›") }
         }
+        // If the learner browsed away, one tap returns to the day they're actually up to.
+        if (viewedDay != targetDay) {
+            Text(
+                "↩ Back to your current lesson (Day $targetDay)",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.primary,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 6.dp)
+                    .clickable { viewedDay = targetDay; userBrowsed = false }
+            )
+        }
 
         Text(
             "${day.phase} · Week ${day.week} · ${day.level}",
@@ -165,7 +184,7 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
         )
 
         InfoCard {
-            SectionTitle("🎯 Today you will")
+            SectionTitle("🎯 In this lesson you will")
             Text(day.objective, style = MaterialTheme.typography.bodyMedium)
         }
 
@@ -178,9 +197,9 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
         ) {
             Text(
                 when {
-                    isDone -> "Day done ✓ — revisit the session"
-                    stepsDone > 0 -> "Continue session ($stepsDone/${actionSteps.size} steps done)"
-                    else -> "Start today's session →"
+                    isDone -> "Day done ✓ — revisit the lesson"
+                    stepsDone > 0 -> "Continue lesson ($stepsDone/${actionSteps.size} steps done)"
+                    else -> "Start lesson →"
                 },
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(vertical = 6.dp)
