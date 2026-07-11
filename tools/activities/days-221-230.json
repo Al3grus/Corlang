@@ -1,0 +1,1482 @@
+{
+  "221": [
+    {
+      "type": "LEARN",
+      "title": "Gramatika B — glagol u kontekstu: prefiksi i vid",
+      "intro": "Exam Grammar B is a single skill: put the right verb from a family into a sentence and get its aspect right. This is the ASOO 'glagoli u kontekstu' task you trained across eleven families — napisati vs zapisati vs opisati, čitao sam vs pročitao sam. Read each pair aloud and name the prefix's job (finish, note down, describe, look at) before tonight's drill.",
+      "items": [
+        {
+          "hr": "Cijeli sam izvještaj napisao za jedan sat.",
+          "en": "I wrote the whole report in one hour.",
+          "note": "na- + pisati = napisati (perfective): to write to the finish. A completed, whole action — hence za jedan sat (in one hour)."
+        },
+        {
+          "hr": "Zapisao sam njezin broj da ga ne zaboravim.",
+          "en": "I wrote down her number so I wouldn't forget it.",
+          "note": "za- + pisati = zapisati = to note/jot down. za- here means 'fix it in place'. Contrast with napisati (compose a whole text)."
+        },
+        {
+          "hr": "Molim vas, opišite osobu koju ste vidjeli.",
+          "en": "Please describe the person you saw.",
+          "note": "o- + pisati = opisati = to describe (write 'around' a thing). Imperative opišite (polite vi). koju = accusative relative pronoun."
+        },
+        {
+          "hr": "Učenik je prepisao zadaću od prijatelja.",
+          "en": "The pupil copied the homework from a friend.",
+          "note": "pre- + pisati = prepisati = to copy (write across from a source). prepisati od koga = to copy from someone."
+        },
+        {
+          "hr": "Potpišite ugovor na dnu stranice.",
+          "en": "Sign the contract at the bottom of the page.",
+          "note": "pot- + pisati = potpisati = to sign (write under). na dnu + genitive = at the bottom of. A pure 'position' prefix."
+        },
+        {
+          "hr": "Sinoć sam čitao knjigu, ali je nisam pročitao.",
+          "en": "Last night I was reading a book, but I didn't finish it.",
+          "note": "Aspect in one sentence: čitao sam (imperfective — the process) vs pročitao (perfective — completed). The prefix pro- adds 'through to the end'."
+        },
+        {
+          "hr": "Pogledali smo film do samoga kraja.",
+          "en": "We watched the film right to the very end.",
+          "note": "po- + gledati = pogledati (perfective) = to watch (a whole thing). do samoga kraja = to the very end — a completed viewing."
+        },
+        {
+          "hr": "Odjednom sam ugledao poznato lice u gomili.",
+          "en": "Suddenly I caught sight of a familiar face in the crowd.",
+          "note": "u- + gledati = ugledati = to catch sight of (a sudden, momentary perception). odjednom = suddenly signals the perfective."
+        },
+        {
+          "hr": "Liječnik će pregledati pacijenta u devet sati.",
+          "en": "The doctor will examine the patient at nine o'clock.",
+          "note": "pre- + gledati = pregledati = to examine, look something over thoroughly. A very common medical/official collocation."
+        },
+        {
+          "hr": "Svako jutro kupujem kruh, a jučer sam kupio i mlijeko.",
+          "en": "Every morning I buy bread, and yesterday I also bought milk.",
+          "note": "Aspect pair kupovati (imperfective, habitual — svako jutro) vs kupiti (perfective, one completed purchase — jučer)."
+        },
+        {
+          "hr": "Dolazim na posao u sedam, a danas sam stigao tek u osam.",
+          "en": "I arrive at work at seven, but today I only got in at eight.",
+          "note": "dolaziti (imperfective, routine) vs stići (perfective, a single completed arrival). tek = only, not until."
+        },
+        {
+          "hr": "Vid ti kaže kad, prefiks ti kaže što.",
+          "en": "Aspect tells you when, the prefix tells you what.",
+          "note": "The rule to memorise for Grammar B: imperfective = process/habit; perfective = one completed whole; the prefix then narrows the exact meaning."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Odaberi glagol iz obitelji",
+      "intro": "Nine exam-style Grammar B items: pick the verb whose prefix and aspect fit the sentence. Read the time words first — svako jutro pulls the imperfective, jučer/za sat vremena pulls the perfective; the prefix decides the exact meaning.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which verb means 'to note/jot down'?",
+          "difficulty": 1,
+          "options": ["napisati", "zapisati", "opisati", "prepisati"],
+          "answer": "zapisati",
+          "explanation": "za- + pisati = zapisati = to note down. napisati = write a whole text, opisati = describe, prepisati = copy."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Opisati' means:",
+          "difficulty": 2,
+          "options": ["to sign", "to copy", "to describe", "to write down a number"],
+          "answer": "to describe",
+          "explanation": "o- + pisati = opisati = to describe. to sign = potpisati, to copy = prepisati, to note a number = zapisati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ sam njezin broj u bilježnicu. (zapisati — perfekt, ja, m. r.)",
+          "difficulty": 3,
+          "answer": "Zapisao",
+          "accepted": ["Zapisao", "zapisao"],
+          "explanation": "zapisati = to note down; masculine perfekt participle zapisao. za- fixes the number in place.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Jučer sam ___ cijelu knjigu.' Which verb fits (a completed whole)?",
+          "difficulty": 4,
+          "options": ["čitao", "pročitao", "čitam", "pročitam"],
+          "answer": "pročitao",
+          "explanation": "cijelu knjigu + jučer = one completed action → perfective pročitao. čitao sam = 'was reading' (process)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Liječnik će ___ pacijenta u devet sati. (pregledati — infinitiv)",
+          "difficulty": 5,
+          "answer": "pregledati",
+          "accepted": ["pregledati"],
+          "explanation": "Futur I = će + infinitive: pregledati = to examine, look over. pre- = thoroughly, all over.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Odjednom sam ___ poznato lice u gomili.' Which verb fits?",
+          "difficulty": 6,
+          "options": ["pogledao", "ugledao", "pregledao", "prepisao"],
+          "answer": "ugledao",
+          "explanation": "odjednom (suddenly) → ugledati = to catch sight of momentarily. pogledati = watch, pregledati = examine."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Dok sam ___ ručak, zazvonio je telefon.' Which aspect fits?",
+          "difficulty": 7,
+          "options": ["skuhao", "kuhao", "skuham", "kuham"],
+          "answer": "kuhao",
+          "explanation": "dok (while) marks an ongoing background process → imperfective kuhao. skuhao (perfective) would mean the cooking was finished."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: The pupil copied the homework from a friend.",
+          "difficulty": 8,
+          "options": ["zadaću", "je", "prijatelja", "Učenik", "prepisao", "od"],
+          "answer": "Učenik je prepisao zadaću od prijatelja",
+          "ordered": ["Učenik", "je", "prepisao", "zadaću", "od", "prijatelja"],
+          "explanation": "The clitic je takes second position; prepisati od + genitive (od prijatelja) = to copy from someone."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence pairs prefix and meaning correctly?",
+          "difficulty": 9,
+          "options": ["Molim vas, potpišite osobu koju ste vidjeli.", "Molim vas, opišite osobu koju ste vidjeli.", "Molim vas, prepišite osobu koju ste vidjeli.", "Molim vas, zapišite osobu koju ste vidjeli."],
+          "answer": "Molim vas, opišite osobu koju ste vidjeli.",
+          "explanation": "You DESCRIBE a person: opisati. potpisati = sign, prepisati = copy, zapisati = note down — none takes 'a person' as object here."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "222": [
+    {
+      "type": "LEARN",
+      "title": "Pisanje pod satom — opis slike (model + rubrika)",
+      "intro": "Writing task 1 of the exam is an opis slike: describe a picture in 7-8 sentences within 20 minutes. Learn one reliable structure — open with Na slici vidim…, place people (u prvom planu / u pozadini), describe appearance and actions (a to contrast two people), then guess mood and topic with čini mi se / vjerojatno. The first eight items are a full model answer; the last four are the rubric to check yourself against.",
+      "items": [
+        {
+          "hr": "Na slici vidim mladu obitelj u parku.",
+          "en": "In the picture I see a young family in a park.",
+          "note": "The safe opener: Na slici vidim + accusative. Name the scene and the people in one sentence."
+        },
+        {
+          "hr": "U prvom planu otac, majka i dvoje djece sjede na dekici.",
+          "en": "In the foreground a father, mother and two children are sitting on a blanket.",
+          "note": "u prvom planu = in the foreground (u pozadini = in the background). dvoje djece = two children (collective numeral + genitive)."
+        },
+        {
+          "hr": "Vrijeme je sunčano jer svi nose laganu ljetnu odjeću.",
+          "en": "The weather is sunny because everyone is wearing light summer clothes.",
+          "note": "A causal guess with jer earns you a connector and shows reasoning: describe, then justify from the picture."
+        },
+        {
+          "hr": "U pozadini se vide visoka stabla i malo jezero.",
+          "en": "In the background you can see tall trees and a small lake.",
+          "note": "vide se = a se-construction, 'can be seen'. The verb is plural to agree with stabla i jezero."
+        },
+        {
+          "hr": "Djeca se igraju loptom, a roditelji mirno razgovaraju.",
+          "en": "The children are playing with a ball, while the parents talk calmly.",
+          "note": "The connector a contrasts two subjects (children vs parents). igrati se + instrumental: igraju se loptom."
+        },
+        {
+          "hr": "Majka drži čašu soka, dok otac čita novine.",
+          "en": "The mother is holding a glass of juice, while the father reads a newspaper.",
+          "note": "dok = while, another way to run two simultaneous actions. Use present tense throughout an opis slike."
+        },
+        {
+          "hr": "Čini mi se da su svi sretni i opušteni.",
+          "en": "It seems to me that everyone is happy and relaxed.",
+          "note": "čini mi se da = it seems to me that — the phrase for guessing mood. Adjectives in the plural: sretni, opušteni."
+        },
+        {
+          "hr": "Vjerojatno razgovaraju o planovima za vikend.",
+          "en": "They are probably talking about their plans for the weekend.",
+          "note": "vjerojatno = probably softens a guess about what they discuss. razgovarati o + locative: o planovima."
+        },
+        {
+          "hr": "Provjeri: sedam do osam potpunih rečenica.",
+          "en": "Check: seven to eight complete sentences.",
+          "note": "Rubric point 1. Count them — not five, not twelve. The exam rewards the right length exactly."
+        },
+        {
+          "hr": "Provjeri: opisani su ljudi, izgled, radnja i okolina.",
+          "en": "Check: people, appearance, action and setting are all described.",
+          "note": "Rubric point 2. Miss one category and you lose content marks; run the checklist mentally before you stop."
+        },
+        {
+          "hr": "Provjeri: barem jedan veznik (jer, a, dok) i jedna pretpostavka.",
+          "en": "Check: at least one connector (jer, a, dok) and one guess.",
+          "note": "Rubric point 3. Connectors turn a list into a text; čini mi se / vjerojatno show interpretation, not just labelling."
+        },
+        {
+          "hr": "Provjeri: pravopis i dijakritički znakovi (č, ć, š, ž, đ).",
+          "en": "Check: spelling and diacritics (č, ć, š, ž, đ).",
+          "note": "Rubric point 4. Reread once only for diacritics — the single cheapest way to save marks under time."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Sastavi opis slike — rečenicu po rečenicu",
+      "intro": "Build the picture description one brick at a time: choose the opener, drop in the right connector, and reorder the scrambled sentences into fluent Croatian. If each piece is automatic, you'll write the whole text in well under twenty minutes.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which opening is best for a picture description?",
+          "difficulty": 1,
+          "options": ["Mislim da je dobra ideja.", "Na slici vidim mladu obitelj u parku.", "Volim ovu sliku jako.", "Bilo je jednom davno."],
+          "answer": "Na slici vidim mladu obitelj u parku.",
+          "explanation": "Na slici vidim… names the scene and people at once — the standard, safe opener for an opis slike."
+        },
+        {
+          "type": "FILL",
+          "prompt": "U ___ se vide visoka stabla i malo jezero. (in the background)",
+          "difficulty": 2,
+          "answer": "pozadini",
+          "accepted": ["pozadini"],
+          "explanation": "u pozadini = in the background (locative). Its opposite is u prvom planu = in the foreground.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Djeca se igraju loptom, ___ roditelji razgovaraju.' Which connector contrasts the two subjects?",
+          "difficulty": 3,
+          "options": ["jer", "a", "ili", "zato"],
+          "answer": "a",
+          "explanation": "a contrasts two subjects doing different things (children vs parents). jer = because, ili = or, zato = therefore."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Vrijeme je sunčano ___ svi nose ljetnu odjeću. (because)",
+          "difficulty": 4,
+          "answer": "jer",
+          "accepted": ["jer"],
+          "explanation": "jer = because, introduces a reason clause with a verb. It justifies the guess from the picture.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: In the foreground a father, mother and two children are sitting on a blanket.",
+          "difficulty": 5,
+          "options": ["planu", "dvoje", "U", "otac", "sjede", "prvom", "majka", "djece", "dekici", "i", "na"],
+          "answer": "U prvom planu otac majka i dvoje djece sjede na dekici",
+          "ordered": ["U", "prvom", "planu", "otac", "majka", "i", "dvoje", "djece", "sjede", "na", "dekici"],
+          "explanation": "u prvom planu (setting) opens; dvoje djece = two children (collective + genitive); na dekici = locative after na (position)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete the mood guess: 'Čini mi se da su svi ___.'",
+          "difficulty": 6,
+          "options": ["sretan", "sretna", "sretni", "sretno"],
+          "answer": "sretni",
+          "explanation": "svi (everyone, masculine plural) needs the masculine plural adjective sretni. The other forms are singular or wrong gender."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which word best introduces a guess about what the people discuss?",
+          "difficulty": 7,
+          "options": ["Vjerojatno", "Nikada", "Uvijek", "Naravno"],
+          "answer": "Vjerojatno",
+          "explanation": "Vjerojatno = probably softens a guess: 'Vjerojatno razgovaraju o…'. The others state certainty or frequency, not a guess."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: The mother is holding a glass of juice, while the father reads a newspaper.",
+          "difficulty": 8,
+          "options": ["čašu", "Majka", "otac", "soka", "novine", "dok", "drži", "čita"],
+          "answer": "Majka drži čašu soka dok otac čita novine",
+          "ordered": ["Majka", "drži", "čašu", "soka", "dok", "otac", "čita", "novine"],
+          "explanation": "dok = while joins two simultaneous present-tense actions; čašu soka = a glass of juice (accusative object + partitive genitive)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is fully correct as a closing line?",
+          "difficulty": 9,
+          "options": ["Vjerojatno razgovaraju o planovima za vikend.", "Vjerojatno razgovaraju o planova za vikend.", "Vjerojatno razgovaraju na planovima za vikend.", "Vjerojatno razgovaraju o planove za vikend."],
+          "answer": "Vjerojatno razgovaraju o planovima za vikend.",
+          "explanation": "razgovarati o + locative plural: o planovima. o planova/planove (genitive/accusative) and na planovima are wrong here."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "223": [
+    {
+      "type": "LEARN",
+      "title": "Pisanje pod satom — životopis (model + rubrika)",
+      "intro": "Writing task 2 is your own životopis (CV) in 7-8 sentences, in 20 minutes, error-free. You wrote this on day 175; now it must flow out perfectly. The engine is the perfekt with correct masculine agreement (rođen sam, završio sam, radio sam) and years and places in the right case. The first eight items are a model answer for a male candidate; the last four are the rubric.",
+      "items": [
+        {
+          "hr": "Zovem se Ivan i rođen sam 1988. godine u Francuskoj.",
+          "en": "My name is Ivan and I was born in 1988 in France.",
+          "note": "rođen sam = I was born (masculine passive participle). 1988. godine = in 1988 (genitive of the year). u Francuskoj = locative."
+        },
+        {
+          "hr": "Završio sam osnovnu i srednju školu u Lyonu.",
+          "en": "I finished primary and secondary school in Lyon.",
+          "note": "završiti in the perfekt, masculine: završio sam. Line up the schools, then the studies, in chronological order."
+        },
+        {
+          "hr": "Studirao sam informatiku i diplomirao prije osam godina.",
+          "en": "I studied computing and graduated eight years ago.",
+          "note": "studirati + accusative (informatiku). prije + genitive for 'ago': prije osam godina = eight years ago."
+        },
+        {
+          "hr": "Nakon studija radio sam pet godina kao programer.",
+          "en": "After my studies I worked for five years as a programmer.",
+          "note": "nakon + genitive (nakon studija). raditi kao + nominative profession: kao programer. radio sam = masculine perfekt."
+        },
+        {
+          "hr": "Prije dvije godine preselio sam se u Zagreb zbog obitelji.",
+          "en": "Two years ago I moved to Zagreb because of family.",
+          "note": "preseliti se (reflexive) = to move house; the clitic se follows the participle here. zbog + genitive = because of."
+        },
+        {
+          "hr": "Moja žena je Hrvatica, pa učim hrvatski svaki dan.",
+          "en": "My wife is Croatian, so I study Croatian every day.",
+          "note": "pa = so, links cause and consequence. A CV can end with your motivation and current effort — it reads as forward-looking."
+        },
+        {
+          "hr": "Govorim francuski, engleski i njemački, a sada i hrvatski.",
+          "en": "I speak French, English and German, and now Croatian too.",
+          "note": "Languages go in the accusative as objects of govoriti. a sada i… = and now also… — a neat way to add the newest one."
+        },
+        {
+          "hr": "Tražim posao u kojem mogu koristiti svoje tehničko znanje.",
+          "en": "I am looking for a job in which I can use my technical knowledge.",
+          "note": "A relative clause with u kojem (locative of koji) lifts the register. A strong closing sentence for a CV."
+        },
+        {
+          "hr": "Provjeri: sedam do osam rečenica koje pokrivaju sve točke.",
+          "en": "Check: seven to eight sentences covering all the points.",
+          "note": "Rubric point 1: identity, origin, education, work, languages, plan. One or two sentences each, no gaps."
+        },
+        {
+          "hr": "Provjeri: perfekt s ispravnim rodom (završio sam, radio sam).",
+          "en": "Check: perfekt with correct gender (završio sam, radio sam).",
+          "note": "Rubric point 2. As a male candidate use masculine participles throughout — the single commonest slip under time."
+        },
+        {
+          "hr": "Provjeri: godine i mjesta u ispravnom padežu (u Lyonu, u Zagrebu).",
+          "en": "Check: years and places in the correct case (u Lyonu, u Zagrebu).",
+          "note": "Rubric point 3. u + locative for where you live/studied; genitive for the year: 1988. godine."
+        },
+        {
+          "hr": "Provjeri: pravopis i dijakritički znakovi te barem jedan veznik.",
+          "en": "Check: spelling and diacritics, plus at least one connector.",
+          "note": "Rubric point 4. Connectors nakon, a, pa, koji hold the CV together; then reread once for č/ć/š/ž/đ."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Sastavi životopis — bez gledanja u staru verziju",
+      "intro": "Assemble the CV from memory: get the perfekt gender right, fix the case after each preposition, and reorder the scrambled biography lines. These are the exact points the rubric scores — make them reflex so the text pours out in 20 minutes.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "A male candidate states his birth. Which is correct?",
+          "difficulty": 1,
+          "options": ["Rodila sam se 1988.", "Rođen sam 1988. godine.", "Rođena sam 1988. godine.", "Rođen si 1988. godine."],
+          "answer": "Rođen sam 1988. godine.",
+          "explanation": "Male candidate → masculine participle rođen + sam. rođena/rodila sam are feminine; si is 'you'."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Završio sam srednju školu ___ Lyonu. (preposition + place)",
+          "difficulty": 2,
+          "answer": "u",
+          "accepted": ["u"],
+          "explanation": "Static place after a location verb: u + locative → u Lyonu. The preposition is u.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Govorim francuski, ___ sada i hrvatski.' Which connector adds the newest item?",
+          "difficulty": 3,
+          "options": ["jer", "ali", "a", "da"],
+          "answer": "a",
+          "explanation": "a sada i… = and now also… — mild addition/contrast. jer = because, ali = but, da = that."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Nakon studija ___ sam pet godina kao programer. (raditi — perfekt, ja, m. r.)",
+          "difficulty": 4,
+          "answer": "radio",
+          "accepted": ["radio"],
+          "explanation": "raditi → masculine perfekt participle radio. radio sam = I worked.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: I studied computing and graduated eight years ago.",
+          "difficulty": 5,
+          "options": ["informatiku", "osam", "Studirao", "diplomirao", "sam", "i", "prije", "godina"],
+          "answer": "Studirao sam informatiku i diplomirao prije osam godina",
+          "ordered": ["Studirao", "sam", "informatiku", "i", "diplomirao", "prije", "osam", "godina"],
+          "explanation": "The clitic sam sits after the first word; prije + genitive (prije osam godina) = eight years ago."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Prije dvije godine ___ u Zagreb.' Which reflexive form is correct?",
+          "difficulty": 6,
+          "options": ["preselio sam se", "preselio se sam", "sam se preselio", "preselila sam se"],
+          "answer": "preselio sam se",
+          "explanation": "Sentence-initial participle: preselio sam se (clitics sam se after it, in order aux-then-se). preselila is feminine."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Učim hrvatski ___ bih lakše razgovarao s obitelji. (in order to)",
+          "difficulty": 7,
+          "answer": "da",
+          "accepted": ["da"],
+          "explanation": "Purpose clause 'in order to' = da + conditional: da bih razgovarao = so that I could talk.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: After my studies I worked for five years as a programmer.",
+          "difficulty": 8,
+          "options": ["studija", "programer", "Nakon", "radio", "godina", "sam", "pet", "kao"],
+          "answer": "Nakon studija radio sam pet godina kao programer",
+          "ordered": ["Nakon", "studija", "radio", "sam", "pet", "godina", "kao", "programer"],
+          "explanation": "nakon + genitive (studija); the clitic sam follows radio; kao + nominative profession: kao programer."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which closing sentence is fully correct?",
+          "difficulty": 9,
+          "options": ["Tražim posao u koji mogu koristiti svoje znanje.", "Tražim posao u kojem mogu koristiti svoje znanje.", "Tražim posao u kojemu mogu koristim svoje znanje.", "Tražim posao u kojega mogu koristiti svoje znanje."],
+          "answer": "Tražim posao u kojem mogu koristiti svoje znanje.",
+          "explanation": "u + locative of koji → u kojem; then mogu + infinitive koristiti. u koji (acc.) / u kojega and koristim break the pattern."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "224": [
+    {
+      "type": "LEARN",
+      "title": "Usmeni ispit — fraze za tečan govor",
+      "intro": "The oral exam is a live conversation: you introduce yourself, answer biography and opinion questions, and describe a picture aloud. The examiner marks fluency, so learn phrases that keep you talking — buy a second (Samo trenutak, da razmislim…), self-correct without stopping (Htio sam reći…), and structure your answer (Prvo… zatim… na kraju…). These ten phrases are your safety net for tomorrow's simulation.",
+      "items": [
+        {
+          "hr": "Dobar dan, drago mi je. Ja sam Ivan.",
+          "en": "Good afternoon, pleased to meet you. I'm Ivan.",
+          "note": "The opening line. drago mi je = pleased to meet you (dative experiencer). Start every oral exam with a confident greeting."
+        },
+        {
+          "hr": "Samo trenutak, da malo razmislim.",
+          "en": "Just a moment, let me think for a bit.",
+          "note": "The legitimate way to buy a second of silence. Far better than an English 'uhm' — it sounds fluent and controlled."
+        },
+        {
+          "hr": "Kako da to najbolje kažem…",
+          "en": "How best to put this…",
+          "note": "A filler that keeps you in Croatian while you search for a word. da + present here = 'how should I…'."
+        },
+        {
+          "hr": "Oprostite, htio sam reći nešto drugo.",
+          "en": "Sorry, I meant to say something else.",
+          "note": "Self-correction without freezing: htio sam reći = I meant to say (masculine). The rubric rewards fixing errors over stopping."
+        },
+        {
+          "hr": "Da rezimiram, moj je dan prilično jednostavan.",
+          "en": "To sum up, my day is quite simple.",
+          "note": "da rezimiram = to sum up — a structuring signal that makes even a short answer sound organised."
+        },
+        {
+          "hr": "Prvo ustanem, zatim doručkujem, a na kraju idem na posao.",
+          "en": "First I get up, then I have breakfast, and finally I go to work.",
+          "note": "prvo… zatim… na kraju… = a three-step frame that turns a list into connected speech — exactly what fluency marks reward."
+        },
+        {
+          "hr": "Po mome mišljenju, život u gradu ima prednosti i mane.",
+          "en": "In my opinion, city life has advantages and drawbacks.",
+          "note": "po mome mišljenju = in my opinion — the opener for any opinion question. prednosti i mane = pros and cons."
+        },
+        {
+          "hr": "S jedne strane… s druge strane…",
+          "en": "On the one hand… on the other hand…",
+          "note": "The balanced-argument frame. It lets you fill a full minute on any 'compare X and Y' question without hesitating."
+        },
+        {
+          "hr": "Nisam siguran kako se to točno kaže na hrvatskom.",
+          "en": "I'm not sure exactly how to say that in Croatian.",
+          "note": "An honest repair phrase that keeps the conversation going. Say it in Croatian and the examiner sees you coping, not collapsing."
+        },
+        {
+          "hr": "Možete li ponoviti pitanje, molim vas?",
+          "en": "Could you repeat the question, please?",
+          "note": "Perfectly acceptable in the exam. Better to ask than to answer the wrong question. Polite Vi + molim vas."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Fraze i vrijeme — pripremi usmeni",
+      "intro": "Eight checks before the simulation: match each fluency phrase to its job, and lock down the tenses the speaking prompts demand — perfekt for last weekend, futur I for next. If the phrases are automatic, silence never becomes panic.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which phrase buys you a moment to think, in Croatian?",
+          "difficulty": 1,
+          "options": ["Samo trenutak, da razmislim.", "Baš me briga.", "Nema veze.", "Gotovo je."],
+          "answer": "Samo trenutak, da razmislim.",
+          "explanation": "Samo trenutak, da razmislim = just a moment, let me think — a fluent way to pause. The others don't buy thinking time."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "How do you politely ask the examiner to repeat the question?",
+          "difficulty": 2,
+          "options": ["Što?", "Ne razumijem ništa.", "Možete li ponoviti pitanje, molim vas?", "Govorite sporije."],
+          "answer": "Možete li ponoviti pitanje, molim vas?",
+          "explanation": "Možete li ponoviti…, molim vas? uses polite Vi + molim vas — the appropriate exam register."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Prošli vikend ___ sam na tržnicu. (ići — perfekt, ja, m. r.)",
+          "difficulty": 3,
+          "answer": "išao",
+          "accepted": ["išao"],
+          "explanation": "Past events use the perfekt; ići → masculine participle išao: išao sam = I went.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which frame structures a three-step answer?",
+          "difficulty": 4,
+          "options": ["Prvo… zatim… na kraju…", "Jučer… danas… jučer…", "Ako… ali… ako…", "Zato… jer… zato…"],
+          "answer": "Prvo… zatim… na kraju…",
+          "explanation": "Prvo… zatim… na kraju… = first… then… finally… — a clean sequence for describing a routine aloud."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Sljedeći vikend ___ posjetiti muzej. (planirati — prezent, ja)",
+          "difficulty": 5,
+          "answer": "planiram",
+          "accepted": ["planiram"],
+          "explanation": "planirati → 1st person present planiram; planiram + infinitive = I plan to. Future plans can use planiram or futur I.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is the correct futur I for a weekend plan?",
+          "difficulty": 6,
+          "options": ["Posjetit ćemo muzej u subotu.", "Posjetiti ćemo muzej u subotu.", "Posjećujemo ćemo muzej u subotu.", "Posjetit ćemo muzej u subotu."],
+          "answer": "Posjetit ćemo muzej u subotu.",
+          "explanation": "-ti verbs drop the final -i before the auxiliary: posjetit ćemo. Full infinitive posjetiti before će is wrong; there is only one correct spelling."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Open an opinion answer: In my opinion, city life has advantages and drawbacks.",
+          "difficulty": 7,
+          "options": ["mišljenju", "prednosti", "Po", "u", "ima", "mome", "mane", "gradu", "i", "život"],
+          "answer": "Po mome mišljenju život u gradu ima prednosti i mane",
+          "ordered": ["Po", "mome", "mišljenju", "život", "u", "gradu", "ima", "prednosti", "i", "mane"],
+          "explanation": "Po mome mišljenju opens the opinion; u gradu = locative (in the city); prednosti i mane = advantages and drawbacks."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence correctly self-corrects mid-answer?",
+          "difficulty": 8,
+          "options": ["Oprostite, htio sam reći nešto drugo.", "Oprostite, htjela sam reći nešto drugo.", "Oprostite, htio si reći nešto drugo.", "Oprostite, htio sam rekao nešto drugo."],
+          "answer": "Oprostite, htio sam reći nešto drugo.",
+          "explanation": "Male speaker: htio sam (not feminine htjela, not 2nd-person si) + infinitive reći (not the participle rekao)."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Simulacija usmenog ispita — ispitivačica pita",
+      "intro": "A full oral-exam simulation. Your wife plays the examiner (ispitivačica) and asks the official B1 speaking prompts: introduce yourself, talk about family, work and why you learn Croatian, then last weekend and next weekend's plans. Say your answers ALOUD, use the fluency phrases from today, and keep going past the last line on your own for a full minute.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Dobar dan. Molim vas, predstavite se i recite nešto o sebi.",
+          "en": "Good afternoon. Please introduce yourself and tell me something about yourself."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Dobar dan, drago mi je. Zovem se Ivan, imam trideset šest godina i dolazim iz Francuske.",
+          "en": "Good afternoon, pleased to meet you. My name is Ivan, I'm thirty-six years old and I come from France."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Recite mi nešto o svojoj obitelji i o svom poslu.",
+          "en": "Tell me something about your family and your job."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Oženjen sam, a moja je žena Hrvatica. Radim kao programer u jednoj tvrtki u Zagrebu.",
+          "en": "I'm married, and my wife is Croatian. I work as a programmer at a company in Zagreb."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "A zašto učite hrvatski? Objasnite mi svoje razloge.",
+          "en": "And why are you learning Croatian? Explain your reasons to me."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Samo trenutak, da razmislim. Učim hrvatski jer želim razgovarati s obitelji svoje žene i jer ovdje živim.",
+          "en": "Just a moment, let me think. I'm learning Croatian because I want to talk with my wife's family and because I live here."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Vrlo dobro. Ispričajte mi sada što ste radili prošli vikend.",
+          "en": "Very good. Now tell me what you did last weekend."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Prošli vikend bio je lijep. U subotu sam išao na tržnicu, a navečer smo žena i ja gledali film kod kuće.",
+          "en": "Last weekend was nice. On Saturday I went to the market, and in the evening my wife and I watched a film at home."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "A što planirate sljedeći vikend?",
+          "en": "And what are you planning for next weekend?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Sljedeći vikend posjetit ćemo muzej, a ako bude lijepo vrijeme, ići ćemo i na Sljeme.",
+          "en": "Next weekend we'll visit a museum, and if the weather is nice, we'll also go to Sljeme."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Odlično. Za kraj, opišite mi ukratko sliku ispred sebe.",
+          "en": "Excellent. Finally, briefly describe the picture in front of you."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Na slici vidim mladu obitelj u parku. Čini mi se da su sretni i da uživaju u sunčanom danu.",
+          "en": "In the picture I see a young family in a park. It seems to me they are happy and enjoying the sunny day."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "225": [
+    {
+      "type": "LEARN",
+      "title": "Dan ispita — strategija za mock #1",
+      "intro": "Today you sit the complete mock in the Quiz tab: all five sections, one sitting, timed, no aids. This LEARN is your exam-day playbook — how to survive the twice-only audio, how to split writing time, and how not to lose cheap marks. Read it once, then open the full B1 mock in the Quiz tab and don't stop until all five sections are done. Target: at least 60% in listening, reading and grammar, and a pass in writing and speaking.",
+      "items": [
+        {
+          "hr": "Slušanje: na prvo slušanje hvataj bilješke, na drugo provjeravaj.",
+          "en": "Listening: take notes on the first play, verify on the second.",
+          "note": "The audio plays twice only. First pass = catch numbers, names, the gist; second pass = confirm the exact answer. Never leave a listening item blank — guess."
+        },
+        {
+          "hr": "Čitanje: prvo pročitaj pitanja, pa onda tekst.",
+          "en": "Reading: read the questions first, then the text.",
+          "note": "Knowing what you're hunting for makes the text faster. Reading is the biggest scored section — spend your time here, not agonising over one word."
+        },
+        {
+          "hr": "Gramatika: ako ne znaš, eliminiraj pa pogodi — ne ostavljaj prazno.",
+          "en": "Grammar: if you don't know, eliminate then guess — never leave a blank.",
+          "note": "There is no penalty for a wrong guess. Cross out two impossible options and the odds jump. Watch diacritics — they count."
+        },
+        {
+          "hr": "Pisanje: podijeli vrijeme — 20 minuta po zadatku, 2 minute za provjeru.",
+          "en": "Writing: split the time — 20 minutes per task, 2 minutes to check.",
+          "note": "Two tasks, roughly 40 minutes. Write 7-8 sentences, then reread once only for gender agreement and č/ć/š/ž/đ. Don't overrun task 1 and starve task 2."
+        },
+        {
+          "hr": "Govorenje: govori u cijelim rečenicama, ne pojedinačnim riječima.",
+          "en": "Speaking: talk in full sentences, not single words.",
+          "note": "Connected speech scores; isolated words don't. Use prvo… zatim…, po mome mišljenju…, and self-correct instead of freezing."
+        },
+        {
+          "hr": "Prije predaje provjeri: rod u perfektu i svaki dijakritički znak.",
+          "en": "Before submitting, check: gender in the perfekt and every diacritic.",
+          "note": "The two cheapest sources of lost marks. As a male candidate keep the masculine (-o) participles; a missing hook on č or š is a spelling error."
+        },
+        {
+          "hr": "Ne paničari zbog jedne teške čestice — nastavi dalje.",
+          "en": "Don't panic over one hard item — move on.",
+          "note": "One unknown word won't fail you; wasted minutes might. Mark it, move on, come back if time allows."
+        },
+        {
+          "hr": "Cilj: ≥60 % na slušanju, čitanju i gramatici te prolaz na pisanju i govorenju.",
+          "en": "Goal: ≥60% in listening, reading and grammar, plus a pass in writing and speaking.",
+          "note": "Every section must be passed on its own — you cannot trade a strong grammar score for a weak writing one. Know the bar before you start."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Mini-mock — 10 čestica, svih pet vještina, na sat",
+      "intro": "A timed, exam-shaped warm-up before you open the real thing: ten mixed items across all five section types — two by ear, one reading passage, several grammar traps — rising from difficulty 1 to 9. Treat it like the exam: audio 'plays twice', no dictionary, guess if unsure. Then go do the FULL five-section mock in the Quiz tab, one sitting, timed.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "SLUŠANJE — U koliko sati kreće autobus za Rijeku?",
+          "difficulty": 1,
+          "options": ["u 8 sati", "u 10 sati", "u 12 sati", "u 6 sati"],
+          "answer": "u 8 sati",
+          "explanation": "The announcement says 'polazi u osam sati' — at eight o'clock.",
+          "audioText": "Poštovani putnici, autobus za Rijeku polazi u osam sati s perona broj tri."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "GRAMATIKA — Mi ___ studenti.",
+          "difficulty": 2,
+          "options": ["sam", "smo", "su", "ste"],
+          "answer": "smo",
+          "explanation": "biti: ja sam, ti si, on je, mi SMO, vi ste, oni su.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "ČITANJE — Pročitajte: 'Marko ima trideset godina. Rodio se u Splitu, ali sada živi i radi u Zagrebu, gdje je kuhar u restoranu.' — Gdje Marko sada radi?",
+          "difficulty": 3,
+          "options": ["u Splitu", "u Zagrebu", "u Rijeci", "u Osijeku"],
+          "answer": "u Zagrebu",
+          "explanation": "He was born in Split but 'sada živi i radi u Zagrebu' — he now works in Zagreb."
+        },
+        {
+          "type": "FILL",
+          "prompt": "GRAMATIKA — Svako jutro pijem ___. (kava → akuzativ)",
+          "difficulty": 3,
+          "answer": "kavu",
+          "accepted": ["kavu"],
+          "explanation": "Direct object of pijem → accusative: kava → kavu.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "GRAMATIKA — Idem u kino sa ___. (sestra → instrumental)",
+          "difficulty": 4,
+          "options": ["sestru", "sestri", "sestrom", "sestre"],
+          "answer": "sestrom",
+          "explanation": "s/sa + instrumental for company: sestra → sestrom.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "SLUŠANJE — Koji broj zovete za hitnu pomoć? (upišite broj)",
+          "difficulty": 5,
+          "answer": "194",
+          "accepted": ["sto devedeset četiri"],
+          "explanation": "'nazovite sto devedeset četiri' — 194 is the Croatian emergency medical number.",
+          "audioText": "Za hitne slučajeve i hitnu medicinsku pomoć nazovite broj sto devedeset četiri."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "GRAMATIKA — Zagreb je ___ od Splita.",
+          "difficulty": 6,
+          "options": ["velik", "veći", "najveći", "više"],
+          "answer": "veći",
+          "explanation": "Comparative of velik is irregular veći; od + genitive = than.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "GRAMATIKA — Marija je ___ mnogo romana. (the pisati family: write)",
+          "difficulty": 7,
+          "options": ["zapisala", "prepisala", "napisala", "opisala"],
+          "answer": "napisala",
+          "explanation": "napisati = to write (works). zapisati = note down, prepisati = copy, opisati = describe.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "GRAMATIKA — Say it: If the weather is nice, we'll go on a trip.",
+          "difficulty": 8,
+          "options": ["vrijeme", "ćemo", "Ako", "na", "lijepo", "bude", "izlet", "ići"],
+          "answer": "Ako bude lijepo vrijeme ići ćemo na izlet",
+          "ordered": ["Ako", "bude", "lijepo", "vrijeme", "ići", "ćemo", "na", "izlet"],
+          "explanation": "Real future condition: ako + futur II (bude) + futur I (ići ćemo); na + accusative for direction (na izlet)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "GRAMATIKA — Putujem s ___ na more. (prijatelj → instrumental)",
+          "difficulty": 9,
+          "answer": "prijateljem",
+          "accepted": ["prijateljem"],
+          "explanation": "s + instrumental for company; soft-consonant masculine takes -em: s prijateljem.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "226": [
+    {
+      "type": "LEARN",
+      "title": "Analiza pogrešaka — kategoriziraj svaki promašaj",
+      "intro": "Yesterday's mock is a goldmine only if you dissect it. Every miss gets a category, a rule and a re-test date. These are the six error families that leak the most B1 points — case after a preposition, aspect, clitic order, gender agreement, diacritics, and the ako/da condition. Learn to name the category on sight; then you'll fix the leak, not the whole ocean.",
+      "items": [
+        {
+          "hr": "Padež: 'Idem u kino.' (akuzativ smjera), 'Bio sam u kinu.' (lokativ mjesta).",
+          "en": "Case: 'I'm going to the cinema' (accusative of direction), 'I was at the cinema' (locative of place).",
+          "note": "Category 1, the top point-leaker: u/na + accusative = motion to; u/na + locative = static place. Always ask: motion or position?"
+        },
+        {
+          "hr": "Vid: 'Čitao sam knjigu.' (proces) vs 'Pročitao sam knjigu.' (dovršeno).",
+          "en": "Aspect: 'I was reading a book' (process) vs 'I read the book' (completed).",
+          "note": "Category 2. Imperfective for ongoing/habitual, perfective for one completed whole. Time words (dok, cijeli dan / za sat) reveal which."
+        },
+        {
+          "hr": "Red enklitika: 'Ona mi je poslala poruku.' — dativ 'mi' pa 'je'.",
+          "en": "Clitic order: 'She sent me a message' — dative 'mi' then 'je'.",
+          "note": "Category 3. The cluster order is li–aux(sam/je)–se–dative–accusative, EXCEPT je goes last: mi je, ti je, mu je."
+        },
+        {
+          "hr": "Slaganje roda: 'Završio sam' (muškarac) vs 'Završila sam' (žena).",
+          "en": "Gender agreement: 'I finished' (man) vs 'I finished' (woman).",
+          "note": "Category 4. As a male candidate every perfekt participle ends in -o (radio, išao, bio). A stray -la is an easy, costly slip."
+        },
+        {
+          "hr": "Dijakritika: 'čaša' nije 'casa', 'žena' nije 'zena'.",
+          "en": "Diacritics: 'čaša' is not 'casa', 'žena' is not 'zena'.",
+          "note": "Category 5. A missing hook on č/ć/š/ž/đ is a spelling error and loses writing marks. One dedicated reread catches most."
+        },
+        {
+          "hr": "Uvjet: 'ako' ostavlja otvoreno, 'da' znači da se nije dogodilo.",
+          "en": "Condition: 'ako' leaves it open, 'da' means it didn't happen.",
+          "note": "Category 6. ako + present/futur II = real; kad + conditional = hypothetical; da + indicative = counterfactual (didn't happen)."
+        },
+        {
+          "hr": "Uz svaku pogrešku zapiši: kategorija, pravilo, datum ponovne provjere.",
+          "en": "For each error write: category, rule, re-test date.",
+          "note": "The method itself. An error you can name and schedule is an error you'll fix; an unlabelled one repeats on the real exam."
+        },
+        {
+          "hr": "Izaberi dvije najslabije vještine — sljedeći dani ih ciljaju.",
+          "en": "Pick your two weakest skills — the coming days target them.",
+          "note": "Don't spread thin. Two focused targets between mock #1 and mock #2 is where the exam is actually won."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Nađi pogrešku — popravi rečenicu",
+      "intro": "Eight error-spotting items in the six leak categories. Pick the correct sentence, name what's wrong in the others, and fix the gender, case or clitic. This is the exact skill of reviewing your own mock: seeing the mistake before it costs you.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is correct? (case of direction vs place)",
+          "difficulty": 1,
+          "options": ["Idem u kinu.", "Idem u kino.", "Idem na kinu.", "Idem u kina."],
+          "answer": "Idem u kino.",
+          "explanation": "Motion to → u + accusative: u kino. u kinu is locative (static place, e.g. 'Bio sam u kinu')."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "A male candidate. Which perfekt is correct?",
+          "difficulty": 2,
+          "options": ["Završila sam fakultet.", "Završilo sam fakultet.", "Završio sam fakultet.", "Završili sam fakultet."],
+          "answer": "Završio sam fakultet.",
+          "explanation": "Male speaker → masculine participle završio. -la is feminine, -lo neuter, -li plural."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Fix the diacritics — write correctly: 'zena pije casu vode.' (the first two words, corrected)",
+          "difficulty": 3,
+          "answer": "žena pije čašu",
+          "accepted": ["žena pije čašu"],
+          "explanation": "žena (not zena) and čašu (not casu) — the hooks on ž, č and š are obligatory letters, not decoration.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence has the correct clitic order?",
+          "difficulty": 4,
+          "options": ["Ona je mi poslala poruku.", "Ona mi je poslala poruku.", "Ona mi poslala je poruku.", "Ona je poslala mi poruku."],
+          "answer": "Ona mi je poslala poruku.",
+          "explanation": "In the cluster the dative mi precedes je (je always comes last): Ona mi je poslala…"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which aspect is right? 'Dok sam ___ na tržnicu, sreo sam susjeda.'",
+          "difficulty": 5,
+          "options": ["otišao", "išao", "odem", "idem"],
+          "answer": "išao",
+          "explanation": "dok marks an ongoing background action → imperfective išao. otišao (perfective) would end the motion before the meeting."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is correct? (locative of static place)",
+          "difficulty": 6,
+          "options": ["Živim već pet godina u Zagreb.", "Živim već pet godina u Zagrebu.", "Živim već pet godina na Zagrebu.", "Živim već pet godina u Zagrebom."],
+          "answer": "Živim već pet godina u Zagrebu.",
+          "explanation": "Static residence → u + locative: u Zagrebu. u Zagreb (acc.) is direction; u Zagrebom (ins.) is wrong."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Correct the condition: 'Da imam vremena, ___ na more.' (putovati — kondicional, ja, m. r.)",
+          "difficulty": 7,
+          "answer": "putovao bih",
+          "accepted": ["putovao bih"],
+          "explanation": "da + present = unreal condition, so the main clause is conditional: putovao bih = I would travel.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is fully correct?",
+          "difficulty": 8,
+          "options": ["Jučer sam pročitao cijelu knjigu i svidjela mi se.", "Jučer sam čitao cijelu knjigu i svidjela mi se.", "Jučer sam pročitao cijelu knjigu i svidjela me se.", "Jučer sam pročitala cijelu knjigu i svidjela mi se."],
+          "answer": "Jučer sam pročitao cijelu knjigu i svidjela mi se.",
+          "explanation": "Completed whole → pročitao (perfective, masculine); sviđati se + dative → svidjela mi se (not accusative 'me se')."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "227": [
+    {
+      "type": "LEARN",
+      "title": "Slušanje — brojevi, vrijeme i bilješke",
+      "intro": "The listening section is fast and formulaic, and it plays twice — a gift if you use the first pass for notes and the second for verification. Today's target is the material that always trips learners by ear: spoken numbers, times, prices and dates, plus the DA/NE (TOČNO/NETOČNO) reflex. Learn to write the digit the instant you hear the word, and half the section is won.",
+      "items": [
+        {
+          "hr": "'u dvadeset sati' = u 20 h; 'u pola devet' = u 8.30.",
+          "en": "'at twenty hundred' = at 20:00; 'at half nine' = at 8:30.",
+          "note": "Croatian uses the 24-hour clock in announcements. Watch pola devet = 'half to nine' = 8:30, NOT 9:30 — it counts down to the next hour."
+        },
+        {
+          "hr": "'tristo pedeset eura' = 350 €; 'tisuću devetsto osamdeset sedam' = 1987.",
+          "en": "'three hundred and fifty euros' = 350; 'one thousand nine hundred eighty-seven' = 1987.",
+          "note": "Big numbers come in blocks: (tisuću)(devetsto)(osamdeset)(sedam). Note the whole chunk first, digits after."
+        },
+        {
+          "hr": "'dvadeset drugog kolovoza' = 22. 8.; 'prvog rujna' = 1. 9.",
+          "en": "'on the twenty-second of August' = 22 Aug; 'on the first of September' = 1 Sep.",
+          "note": "Dates use ordinal + month in the genitive: drugog, prvog + kolovoza, rujna. Learn the month names cold — they don't sound like English."
+        },
+        {
+          "hr": "'Radimo od osam do četrnaest sati.' = open 8:00-14:00.",
+          "en": "'We work from eight to fourteen hundred.' = open 8:00-14:00.",
+          "note": "od … do … + genitive brackets an opening span. A classic TOČNO/NETOČNO trap: 'Ordinacija radi poslijepodne?' → NETOČNO."
+        },
+        {
+          "hr": "'zbog jakog vjetra' = because of strong wind; 'zbog radova' = because of roadworks.",
+          "en": "'because of strong wind'; 'because of roadworks'.",
+          "note": "Announcements state a reason with zbog + genitive. The exam loves asking 'Zašto…?' — listen for the zbog phrase."
+        },
+        {
+          "hr": "Prvo slušanje: zapiši brojeve i imena. Drugo: potvrdi odgovor.",
+          "en": "First play: write the numbers and names. Second: confirm the answer.",
+          "note": "The two-pass method. Notes on pass one free your ears on pass two to check the exact detail the question asks for."
+        },
+        {
+          "hr": "TOČNO/NETOČNO: usporedi tvrdnju s onim što si čuo, ne s onim što misliš.",
+          "en": "TRUE/FALSE: compare the statement with what you heard, not with what you assume.",
+          "note": "The DA/NE reflex. If the audio said 'u Varaždinu' and the claim says 'u Zagrebu', it's NETOČNO — decide only from the recording."
+        },
+        {
+          "hr": "Nikad ne ostavljaj prazno: ako nisi siguran, pogodi razumno.",
+          "en": "Never leave a blank: if unsure, make a reasonable guess.",
+          "note": "A blank scores zero; a guess might score. On a two-option TOČNO/NETOČNO you already have even odds."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Slušaj i uhvati detalj",
+      "intro": "A listening-heavy set: five audio items plus the DA/NE reflex and a number trap, rising 1 to 9. Play each 'twice' in your head — notes first, answer second. Catch the time, the price, the date and the reason exactly as spoken.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "SLUŠANJE — U koliko sati polazi vlak za Osijek?",
+          "difficulty": 1,
+          "options": ["u 15 sati", "u 5 sati", "u 10 sati", "u 20 sati"],
+          "answer": "u 15 sati",
+          "explanation": "'polazi u petnaest sati' = departs at 15:00.",
+          "audioText": "Vlak za Osijek polazi u petnaest sati s prvog perona. Molimo putnike da provjere svoje karte."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "SLUŠANJE — Koliko košta ulaznica za muzej?",
+          "difficulty": 2,
+          "options": ["5 eura", "15 eura", "50 eura", "10 eura"],
+          "answer": "5 eura",
+          "explanation": "'ulaznica stoji pet eura' = the ticket costs five euros.",
+          "audioText": "Dobro došli u Arheološki muzej. Ulaznica za odrasle stoji pet eura, a za djecu je ulaz besplatan."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "SLUŠANJE — Zašto trajekt danas ne vozi?",
+          "difficulty": 3,
+          "options": ["zbog kvara", "zbog jakog vjetra", "zbog gužve", "zbog blagdana"],
+          "answer": "zbog jakog vjetra",
+          "explanation": "'Zbog jakog vjetra trajekt danas ne vozi' = because of strong wind the ferry isn't running today.",
+          "audioText": "Obavještavamo putnike da zbog jakog vjetra trajekt za Hvar danas ne vozi. Sljedeći polazak je sutra ujutro."
+        },
+        {
+          "type": "FILL",
+          "prompt": "SLUŠANJE — Do koliko sati radi ljekarna? (upišite broj sati, 24-satni format)",
+          "difficulty": 4,
+          "answer": "20",
+          "accepted": ["dvadeset", "do 20", "20 sati"],
+          "explanation": "'radi od sedam do dvadeset sati' = open from 7:00 to 20:00; it closes at 20.",
+          "audioText": "Ljekarna u centru radi svaki radni dan od sedam do dvadeset sati, a subotom do četrnaest sati."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "SLUŠANJE — TOČNO ili NETOČNO: Koncert se održava na trgu.",
+          "difficulty": 5,
+          "options": ["TOČNO", "NETOČNO"],
+          "answer": "NETOČNO",
+          "explanation": "The concert was moved 'u gradsku dvoranu' because of rain — not on the square. So the claim is false.",
+          "audioText": "Zbog najavljene kiše večerašnji koncert neće se održati na trgu, nego u gradskoj dvorani, s početkom u dvadeset sati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "SLUŠANJE — Kojeg datuma počinje festival? (npr. '22. kolovoza')",
+          "difficulty": 6,
+          "answer": "22. kolovoza",
+          "accepted": ["22 kolovoza", "dvadeset drugog kolovoza", "22.8.", "22. 8."],
+          "explanation": "'počinje dvadeset drugog kolovoza' = starts on the 22nd of August (ordinal + genitive month).",
+          "audioText": "Festival ulične umjetnosti ove godine počinje dvadeset drugog kolovoza i traje deset dana."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "SLUŠANJE — TOČNO ili NETOČNO: Ordinacija radi i poslijepodne.",
+          "difficulty": 7,
+          "options": ["NETOČNO", "TOČNO"],
+          "answer": "NETOČNO",
+          "explanation": "Open 'od osam do četrnaest sati' (8:00-14:00) — mornings only, so 'radi poslijepodne' is false.",
+          "audioText": "Dobili ste ordinaciju doktorice Kovač. Radimo svaki radni dan od osam do četrnaest sati. Za hitne slučajeve nazovite sto devedeset četiri."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "SLUŠANJE — Koliko dugo se čeka na graničnom prijelazu?",
+          "difficulty": 8,
+          "options": ["oko 15 minuta", "oko sat vremena", "oko 45 minuta", "ne čeka se"],
+          "answer": "oko 45 minuta",
+          "explanation": "'čekaju oko četrdeset i pet minuta' = they wait about 45 minutes.",
+          "audioText": "Na graničnom prijelazu Bajakovo vozila na izlazu iz zemlje čekaju oko četrdeset i pet minuta. Vozačima savjetujemo strpljenje."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Write the fact you heard: The pharmacy works every working day from seven to eight in the evening.",
+          "difficulty": 9,
+          "options": ["radni", "od", "do", "svaki", "dvadeset", "radi", "sedam", "Ljekarna", "dan", "sati"],
+          "answer": "Ljekarna radi svaki radni dan od sedam do dvadeset sati",
+          "ordered": ["Ljekarna", "radi", "svaki", "radni", "dan", "od", "sedam", "do", "dvadeset", "sati"],
+          "explanation": "svaki radni dan = every working day (accusative of time); od … do … + genitive brackets the opening hours."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "228": [
+    {
+      "type": "LEARN",
+      "title": "Čitanje — dva žanra, jedna strategija",
+      "intro": "Reading is the biggest scored section, and the exam gives you two genres: a longer text with open questions (a biography or article) and a word-bank gap-fill where you choose the correct form. The strategy is the same — read the questions first, then hunt. For the gap-fill, the trap is never meaning but case: 'sredinom ___' pulls a genitive, 'na ___' a locative. Learn the frame words that signal each case.",
+      "items": [
+        {
+          "hr": "Prvo pitanja, pa tekst: znaš što tražiš prije nego počneš čitati.",
+          "en": "Questions first, then the text: know what you're hunting before you read.",
+          "note": "The core reading habit. Skim the questions, then read once with purpose. Faster and more accurate than reading blind."
+        },
+        {
+          "hr": "Otvorena pitanja: odgovor je u tekstu, ne u tvojoj glavi.",
+          "en": "Open questions: the answer is in the text, not in your head.",
+          "note": "For 'Zašto…?' or 'Gdje…?', quote the text. The examiner rewards what the passage says, not your general knowledge."
+        },
+        {
+          "hr": "Popunjavanje: 'sredinom ___' traži genitiv → sredinom srpnja.",
+          "en": "Gap-fill: 'in the middle of ___' takes the genitive → sredinom srpnja.",
+          "note": "sredinom / početkom / krajem + genitive. The frame word before the gap decides the case — read it, don't guess by meaning."
+        },
+        {
+          "hr": "Popunjavanje: 'na ___' za mjesto traži lokativ → na otvorenom.",
+          "en": "Gap-fill: 'na ___' for place takes the locative → na otvorenom.",
+          "note": "na + locative = static place (na otvorenom = in the open air). na + accusative would be motion — check whether it's position or direction."
+        },
+        {
+          "hr": "Popunjavanje: broj 5+ traži genitiv množine → pet godina, tisuću izvođača.",
+          "en": "Gap-fill: numbers 5+ take the genitive plural → pet godina, a thousand performers.",
+          "note": "After 5 and up (and pola, mnogo, tisuću) → genitive plural: godina, izvođača. A guaranteed gap-fill trap."
+        },
+        {
+          "hr": "Popunjavanje: prijedlog 's/sa' traži instrumental → s lijepim pogledom.",
+          "en": "Gap-fill: the preposition 's/sa' takes the instrumental → with a nice view.",
+          "note": "s + instrumental; the adjective agrees: s lijepim pogledom. Match the case of the frame, then decline the adjective to it."
+        },
+        {
+          "hr": "Ne zapinji na jednoj nepoznatoj riječi — nastavi, smisao se često vidi iz konteksta.",
+          "en": "Don't get stuck on one unknown word — read on; the sense is often clear from context.",
+          "note": "Speed matters in the biggest section. One unknown word rarely blocks the answer; the surrounding sentence usually gives it away."
+        },
+        {
+          "hr": "Provjeri padež u odgovoru: prepiši oblik, ne osnovni oblik riječi.",
+          "en": "Check the case in your answer: copy the form, not the dictionary form.",
+          "note": "In the gap-fill you write the inflected word (srpnja, godina), never the base (srpanj, godina-nominative). The form is the mark."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Čitaj tekst i popuni prazninu",
+      "intro": "Both reading genres, timed: first answer open questions on a short biography, then work a word-bank gap-fill where every gap is a case trap. Read the frame word before each gap — it, not the meaning, tells you the ending. Difficulty rises 1 to 9.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "ČITANJE — Pročitajte: 'Ivana Brlić-Mažuranić rođena je 1874. u Ogulinu. Bila je hrvatska književnica, poznata po pričama za djecu. Napisala je Priče iz davnine, a mnogi je zovu hrvatskim Andersenom.' — Gdje je rođena Ivana Brlić-Mažuranić?",
+          "difficulty": 1,
+          "options": ["u Ogulinu", "u Zagrebu", "u Splitu", "u Rijeci"],
+          "answer": "u Ogulinu",
+          "explanation": "'rođena je 1874. u Ogulinu' — she was born in Ogulin."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "ČITANJE — (isti tekst) Po čemu je bila poznata?",
+          "difficulty": 2,
+          "options": ["po romanima za odrasle", "po pričama za djecu", "po pjesmama o moru", "po slikama"],
+          "answer": "po pričama za djecu",
+          "explanation": "'poznata po pričama za djecu' — famous for children's stories."
+        },
+        {
+          "type": "FILL",
+          "prompt": "ČITANJE — (isti tekst) Koje je godine rođena Ivana Brlić-Mažuranić? (upišite godinu)",
+          "difficulty": 3,
+          "answer": "1874",
+          "accepted": ["1874."],
+          "explanation": "'rođena je 1874.' — the year is 1874."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "ČITANJE — (isti tekst) Kako je mnogi zovu?",
+          "difficulty": 4,
+          "options": ["hrvatskim Andersenom", "hrvatskim Teslom", "hrvatskom kraljicom", "prvom učiteljicom"],
+          "answer": "hrvatskim Andersenom",
+          "explanation": "'mnogi je zovu hrvatskim Andersenom' — many call her the Croatian Andersen (instrumental after zvati)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "POPUNJAVANJE — 'Biljka počinje cvjetati sredinom ___.' (srpanj)",
+          "difficulty": 5,
+          "options": ["srpanj", "srpnju", "srpnja", "srpnjem"],
+          "answer": "srpnja",
+          "explanation": "sredinom + genitive → srpanj → srpnja (with the fleeting a dropping).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "POPUNJAVANJE — 'Ne preporučuje se boravak na ___ rano ujutro.' (otvoreno)",
+          "difficulty": 6,
+          "options": ["otvoreno", "otvorenim", "otvorenoga", "otvorenom"],
+          "answer": "otvorenom",
+          "explanation": "na + locative for place: na otvorenom = in the open air.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "POPUNJAVANJE — 'Stanujem ovdje već pet ___.' (godina)",
+          "difficulty": 7,
+          "options": ["godine", "godinu", "godina", "godinama"],
+          "answer": "godina",
+          "explanation": "Numbers 5 and up take the genitive plural: pet godina.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "POPUNJAVANJE — 'Tražim stan s ___ pogledom na more.' (lijep)",
+          "difficulty": 8,
+          "options": ["lijep", "lijepog", "lijepom", "lijepim"],
+          "answer": "lijepim",
+          "explanation": "s + instrumental; the adjective agrees in the instrumental: s lijepim pogledom.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "POPUNJAVANJE — 'Koncert počinje početkom ___.' (rujan → genitiv)",
+          "difficulty": 9,
+          "answer": "rujna",
+          "accepted": ["rujna"],
+          "explanation": "početkom + genitive → rujan → rujna (fleeting a drops). The frame word početkom forces the genitive.",
+          "strictDiacritics": true
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "229": [
+    {
+      "type": "LEARN",
+      "title": "Gramatika — ponovi strukture koje cure bodove",
+      "intro": "Grammar is a scored section and it rewards precision, not breadth. These eight structures are the ones B1 candidates most often miss: numbers + genitive plural, the instrumental of habit, futur II after kad, the standard bismo/biste, među vs između, jer vs zbog, stressed vs clitic pronouns after prepositions, and the comparative adverb. Re-drill exactly these — your error log tells you which leak most.",
+      "items": [
+        {
+          "hr": "Hrvatska ima oko četiri milijuna stanovnika.",
+          "en": "Croatia has about four million inhabitants.",
+          "note": "Numbers above 4 and milijun take the genitive plural: stanovnika. This is a near-guaranteed grammar item."
+        },
+        {
+          "hr": "Četvrtkom uvijek igram tenis.",
+          "en": "On Thursdays I always play tennis.",
+          "note": "The instrumental of time = a regular pattern: četvrtkom = on Thursdays, subotom = on Saturdays. Not 'u četvrtak' (one specific day)."
+        },
+        {
+          "hr": "Kad budem imao vremena, nazvat ću te.",
+          "en": "When I have time, I'll call you.",
+          "note": "Future time clause after kad → futur II (budem + participle), NOT futur I. The main clause stays futur I: nazvat ću."
+        },
+        {
+          "hr": "I mi bismo rado išli na utakmicu!",
+          "en": "We'd gladly go to the match too!",
+          "note": "1st person plural conditional is bismo, not colloquial bi. The exam tests exactly this: bismo (we), biste (you pl.)."
+        },
+        {
+          "hr": "Naočale su među knjigama na polici.",
+          "en": "The glasses are among the books on the shelf.",
+          "note": "među + instrumental = among (more than two); između + genitive = between (two). Choose by how many things there are."
+        },
+        {
+          "hr": "Zakasnila je jer se tramvaj pokvario.",
+          "en": "She was late because the tram broke down.",
+          "note": "jer introduces a clause with a verb; zbog takes a noun in the genitive (zbog kvara). Match the connector to what follows."
+        },
+        {
+          "hr": "Čuli smo samo lijepo o njemu.",
+          "en": "We heard only good things about him.",
+          "note": "After a preposition use the STRESSED pronoun: o njemu, s njim, za nju — never the clitic (mu, mi, ga)."
+        },
+        {
+          "hr": "Ljepše je živjeti na moru nego u gradu.",
+          "en": "It's nicer to live by the sea than in the city.",
+          "note": "Comparative ADVERB ljepše (nicer, how it is), not the adjective ljepši. nego signals the comparison."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Ponovni pogon — gramatika 1 do 9",
+      "intro": "Nine grammar items straight from the exam's favourite traps: genitive plural after numbers, the instrumental of habit, futur II, the standard bismo, među/između, and the stressed pronoun after a preposition. Diacritics count. Fix the leaks your log flagged.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Hrvatska ima oko četiri milijuna ___.",
+          "difficulty": 1,
+          "options": ["stanovnik", "stanovnika", "stanovnici", "stanovnicima"],
+          "answer": "stanovnika",
+          "explanation": "milijun and numbers above 4 take the genitive plural: stanovnika.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "___ uvijek igram tenis. (on Thursdays — a regular pattern)",
+          "difficulty": 2,
+          "options": ["Četvrtak", "U četvrtku", "Četvrtkom", "Četvrtka"],
+          "answer": "Četvrtkom",
+          "explanation": "The instrumental of time expresses habit: četvrtkom = on Thursdays.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Nema više ___ u hladnjaku. (mlijeko → genitiv)",
+          "difficulty": 3,
+          "answer": "mlijeka",
+          "accepted": ["mlijeka"],
+          "explanation": "nema + genitive: mlijeko → mlijeka.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Naočale su ___ knjigama na polici. (among several books)",
+          "difficulty": 4,
+          "options": ["između", "među", "pokraj", "iznad"],
+          "answer": "među",
+          "explanation": "među + instrumental = among (more than two things); između + genitive = between two."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kad ___ vremena, nazvat ću te. (imati → futur II, ja, m. r.)",
+          "difficulty": 5,
+          "answer": "budem imao",
+          "accepted": ["budem imao"],
+          "explanation": "Future time clause after kad → futur II: budem + participle → budem imao.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "I mi ___ rado išli na utakmicu! (standard conditional)",
+          "difficulty": 6,
+          "options": ["bi", "bih", "bismo", "biste"],
+          "answer": "bismo",
+          "explanation": "1st person plural conditional is bismo, not colloquial bi; biste is for Vi."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Zakasnila je ___ se tramvaj pokvario. (because + clause)",
+          "difficulty": 7,
+          "options": ["zbog", "jer", "da", "iako"],
+          "answer": "jer",
+          "explanation": "jer introduces a causal clause with a verb; zbog takes a noun in the genitive."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Čuli smo samo lijepo o ___. (about him — after a preposition)",
+          "difficulty": 8,
+          "options": ["mu", "njega", "njemu", "on"],
+          "answer": "njemu",
+          "explanation": "After a preposition use the stressed form: o njemu. The clitic mu cannot follow a preposition."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: It's nicer to live by the sea than in the city.",
+          "difficulty": 9,
+          "options": ["moru", "je", "gradu", "na", "živjeti", "nego", "Ljepše", "u"],
+          "answer": "Ljepše je živjeti na moru nego u gradu",
+          "ordered": ["Ljepše", "je", "živjeti", "na", "moru", "nego", "u", "gradu"],
+          "explanation": "Comparative adverb Ljepše + je + infinitive; na moru / u gradu = locative; nego marks the comparison."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ],
+  "230": [
+    {
+      "type": "LEARN",
+      "title": "Oba pisanja zaredom — izdržljivost i prebacivanje žanra",
+      "intro": "On exam day you write both texts — opis slike and životopis — in one 40-minute session. Today trains the stamina and the switch between genres: present tense and scene words for the picture, perfekt and life-facts for the CV. Keep two mental checklists and split the time cleanly: 20 minutes each, 2 minutes to reread for gender and diacritics. The items below are the switch-points and the shared rubric.",
+      "items": [
+        {
+          "hr": "Opis slike: sadašnje vrijeme. 'Na slici vidim… Djeca se igraju…'",
+          "en": "Picture description: present tense. 'In the picture I see… The children are playing…'",
+          "note": "Genre 1 lives in the present: vidim, sjede, razgovaraju. Describe what is happening now in the frame."
+        },
+        {
+          "hr": "Životopis: perfekt i činjenice. 'Rođen sam… Završio sam… Radio sam…'",
+          "en": "CV: perfekt and facts. 'I was born… I finished… I worked…'",
+          "note": "Genre 2 lives in the past: rođen sam, završio sam, radio sam — all masculine. Switching tense is the whole trick today."
+        },
+        {
+          "hr": "Prebacivanje: kad završiš sliku, svjesno prijeđi na 'ja' i prošlost.",
+          "en": "Switching: when you finish the picture, consciously shift to 'I' and the past.",
+          "note": "The commonest stamina error is dragging present tense into the CV. Pause two seconds and reset the tense before task 2."
+        },
+        {
+          "hr": "Vrijeme: 20 min slika + 20 min životopis + 2 min provjera svakog.",
+          "en": "Time: 20 min picture + 20 min CV + 2 min to check each.",
+          "note": "Don't let task 1 eat task 2's minutes. If the picture runs long, cut it at eight sentences and move on — both must be finished."
+        },
+        {
+          "hr": "Veznici drže tekst: jer, a, dok (slika); nakon, a, pa, koji (životopis).",
+          "en": "Connectors hold the text together: jer, a, dok (picture); nakon, a, pa, koji (CV).",
+          "note": "A few connectors turn a list into a text in both genres. One relative koji/koja in the CV lifts the register."
+        },
+        {
+          "hr": "Provjeri: 7-8 rečenica u svakom tekstu — prebroji ih.",
+          "en": "Check: 7-8 sentences in each text — count them.",
+          "note": "Shared rubric point. Length is scored in both tasks; count before you stop, don't estimate."
+        },
+        {
+          "hr": "Provjeri: rod u perfektu (životopis) i sadašnje vrijeme (slika).",
+          "en": "Check: gender in the perfekt (CV) and present tense (picture).",
+          "note": "The genre-specific traps: masculine -o participles in the CV, consistent present in the picture. Reread each for its own trap."
+        },
+        {
+          "hr": "Provjeri zadnje: svaki č, ć, š, ž, đ — jedno čitanje samo za dijakritiku.",
+          "en": "Check last: every č, ć, š, ž, đ — one reading just for diacritics.",
+          "note": "The cheapest marks on the paper. One final pass in both texts, looking only at the hooks, catches most spelling losses."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Prebaci žanr — sastavi oba teksta",
+      "intro": "Switch cleanly between the two writing genres: pick the right tense for each, drop in the connector, and reorder lines from both a picture description and a CV. Get the present/perfekt switch and the masculine agreement automatic, and 40 minutes will be plenty. Difficulty rises 1 to 9.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which tense belongs in a picture description?",
+          "difficulty": 1,
+          "options": ["perfekt (prošlo)", "sadašnje vrijeme", "futur I", "kondicional"],
+          "answer": "sadašnje vrijeme",
+          "explanation": "An opis slike describes what is happening now → present tense: vidim, sjede, razgovaraju."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which opening belongs to a CV, not a picture description?",
+          "difficulty": 2,
+          "options": ["Na slici vidim obitelj.", "Rođen sam 1988. godine.", "U pozadini se vide stabla.", "Djeca se igraju loptom."],
+          "answer": "Rođen sam 1988. godine.",
+          "explanation": "Rođen sam… is a CV fact in the perfekt. The others are present-tense picture sentences."
+        },
+        {
+          "type": "FILL",
+          "prompt": "SLIKA — Majka drži čašu soka, ___ otac čita novine. (while — two simultaneous actions)",
+          "difficulty": 3,
+          "answer": "dok",
+          "accepted": ["dok"],
+          "explanation": "dok = while, joins two simultaneous present-tense actions in the picture.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "ŽIVOTOPIS — Nakon studija ___ sam pet godina u Zagrebu. (raditi — perfekt, ja, m. r.)",
+          "difficulty": 4,
+          "answer": "radio",
+          "accepted": ["radio"],
+          "explanation": "CV switches to the perfekt: raditi → masculine participle radio.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "You just finished the picture and start the CV. Which sentence shows the correct tense switch?",
+          "difficulty": 5,
+          "options": ["Zovem se Ivan i rodim se 1988.", "Zovem se Ivan i rođen sam 1988.", "Zovem se Ivan i rađam se 1988.", "Zovem se Ivan i rodio se 1988."],
+          "answer": "Zovem se Ivan i rođen sam 1988.",
+          "explanation": "The CV needs the perfekt fact rođen sam (1st person, masculine). The present-tense forms and 3rd-person rodio se are wrong."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "SLIKA — Say it: In the picture I see a young family in a park.",
+          "difficulty": 6,
+          "options": ["obitelj", "Na", "vidim", "mladu", "slici", "parku", "u"],
+          "answer": "Na slici vidim mladu obitelj u parku",
+          "ordered": ["Na", "slici", "vidim", "mladu", "obitelj", "u", "parku"],
+          "explanation": "Na slici vidim + accusative (mladu obitelj); u parku = locative of place. Present tense for the picture."
+        },
+        {
+          "type": "FILL",
+          "prompt": "ŽIVOTOPIS — Tražim posao u ___ mogu koristiti svoje znanje. (koji → lokativ, m. r.)",
+          "difficulty": 7,
+          "answer": "kojem",
+          "accepted": ["kojem"],
+          "explanation": "u + locative of koji → u kojem — a relative clause that lifts the CV's register.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "ŽIVOTOPIS — Say it: After my studies I moved to Zagreb because of family.",
+          "difficulty": 8,
+          "options": ["studija", "obitelji", "Nakon", "se", "u", "preselio", "zbog", "Zagreb", "sam"],
+          "answer": "Nakon studija preselio sam se u Zagreb zbog obitelji",
+          "ordered": ["Nakon", "studija", "preselio", "sam", "se", "u", "Zagreb", "zbog", "obitelji"],
+          "explanation": "nakon + genitive (studija); preselio sam se (reflexive perfekt, masculine); u Zagreb = direction (accusative); zbog + genitive."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is fully correct? (male candidate, CV)",
+          "difficulty": 9,
+          "options": ["Studirao sam informatiku i diplomirala prije osam godina.", "Studirao sam informatiku i diplomirao prije osam godina.", "Studirala sam informatiku i diplomirao prije osam godina.", "Studirao sam informatiku i diplomirao prije osam godine."],
+          "answer": "Studirao sam informatiku i diplomirao prije osam godina.",
+          "explanation": "Both participles masculine (studirao, diplomirao) for a male candidate; prije osam godina = genitive plural after the number."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample", "nn-100-2021"]
+    }
+  ]
+}
