@@ -34,6 +34,7 @@ import com.corlang.app.data.model.DayActivity
 import com.corlang.app.data.model.Question
 import com.corlang.app.data.model.QuestionType
 import com.corlang.app.ui.Haptics
+import com.corlang.app.ui.components.SpeakCheck
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.theme.CorlangColors
 
@@ -348,23 +349,26 @@ fun DialogueActivity(container: AppContainer, activity: DayActivity, onDone: () 
                     .padding(vertical = 3.dp)
                     .padding(start = if (you) 24.dp else 0.dp, end = if (you) 0.dp else 24.dp)
             ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
-                ) {
-                    Column(Modifier.weight(1f)) {
-                        Text(
-                            "${line.speaker}:",
-                            style = MaterialTheme.typography.labelSmall,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(line.hr, style = MaterialTheme.typography.bodyLarge,
-                            fontWeight = FontWeight.SemiBold)
-                        if (revealed) {
-                            Text(line.en, style = MaterialTheme.typography.bodySmall)
+                Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Column(Modifier.weight(1f)) {
+                            Text(
+                                "${line.speaker}:",
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(line.hr, style = MaterialTheme.typography.bodyLarge,
+                                fontWeight = FontWeight.SemiBold)
+                            if (revealed) {
+                                Text(line.en, style = MaterialTheme.typography.bodySmall)
+                            }
                         }
+                        SpeakerButton(tts = container.tts, text = line.hr)
                     }
-                    SpeakerButton(tts = container.tts, text = line.hr)
+                    // The learner's own lines can be practised aloud with pronunciation feedback.
+                    if (you) {
+                        SpeakCheck(container = container, target = line.hr)
+                    }
                 }
             }
         }
