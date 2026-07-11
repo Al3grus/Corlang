@@ -5,13 +5,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.collectAsState
@@ -26,7 +32,9 @@ import androidx.navigation.compose.rememberNavController
 import com.corlang.app.reminder.ReminderScheduler
 import com.corlang.app.ui.AppState
 import com.corlang.app.ui.components.LanguageTopBar
+import com.corlang.app.update.ReleaseInfo
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.screens.LearnScreen
 import com.corlang.app.ui.screens.ProgressScreen
@@ -70,6 +78,21 @@ private fun CorlangApp(container: AppContainer) {
             val (h, m) = container.languagePrefs.reminderTime.first()
             ReminderScheduler.schedule(context, h, m)
         }
+    }
+
+    // Silent update check on launch; shows a dialog only if a newer build exists.
+    var pendingUpdate by remember { mutableStateOf<ReleaseInfo?>(null) }
+    LaunchedEffect(Unit) {
+        container.updater.fetchLatest()?.let { info ->
+            if (container.updater.isNewer(info)) pendingUpdate = info
+        }
+    }
+    pendingUpdate?.let { info ->
+        UpdateDialog(
+            container = container,
+            info = info,
+            onDismiss = { pendingUpdate = null }
+        )
     }
 
     Scaffold(
@@ -130,4 +153,50 @@ private fun CorlangApp(container: AppContainer) {
             composable(Dest.PROGRESS.route) { ProgressScreen(container, lang) }
         }
     }
+}
+
+/** Prompts to install a newer build: one tap downloads the APK and opens the installer. */
+@Composable
+private fun UpdateDialog(container: AppContainer, info: ReleaseInfo, onDismiss: () -> Unit) {
+    val scope = rememberCoroutineScope()
+    var downloading by remember { mutableStateOf(false) }
+    var percent by remember { mutableStateOf(0) }
+    var error by remember { mutableStateOf<String?>(null) }
+
+    AlertDialog(
+        onDismissRequest = { if (!downloading) onDismiss() },
+        title = { Text("Update available") },
+        text = {
+            Text(
+                buildString {
+                    append("Version ${info.versionName} is ready.")
+                    if (info.notes.isNotBlank()) append("\n\n${info.notes}")
+                    if (downloading) append("\n\nDownloading… $percent%")
+                    error?.let { append("\n\n$it") }
+                }
+            )
+        },
+        confirmButton = {
+            Button(
+                enabled = !downloading,
+                onClick = {
+                    downloading = true; error = null
+                    scope.launch {
+                        val apk = container.updater.downloadApk(info) { percent = it }
+                        if (apk != null) {
+                            container.updater.installApk(apk)
+                            downloading = false
+                            onDismiss()
+                        } else {
+                            downloading = false
+                            error = "Download failed — check your connection and try again."
+                        }
+                    }
+                }
+            ) { Text(if (downloading) "Downloading…" else "Update now") }
+        },
+        dismissButton = {
+            OutlinedButton(enabled = !downloading, onClick = onDismiss) { Text("Later") }
+        }
+    )
 }
