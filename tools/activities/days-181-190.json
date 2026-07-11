@@ -1,0 +1,2333 @@
+{
+  "181": [
+    {
+      "type": "LEARN",
+      "title": "Od pogreške do pravila — tipične B1 greške",
+      "intro": "A mock exam is only worth what you do with the misses. Every wrong answer belongs to a category — vocabulary, case form, aspect, a fixed pattern, or diacritics — and every category has a cure. Read each contrast: the shape that fails, the shape that works, and the rule that separates them.",
+      "items": [
+        {
+          "hr": "Sviđa mi se ovaj grad. (NE: Sviđam ovaj grad.)",
+          "en": "I like this city.",
+          "note": "Category: fixed pattern. sviđati se puts the liked thing in the nominative and you in the dative: the city 'pleases to-me'. Never translate 'I like' word for word."
+        },
+        {
+          "hr": "U travnju idem u Split. (NE: u travanj)",
+          "en": "In April I'm going to Split.",
+          "note": "Category: case form. Months answering 'when' take the locative: u travnju, u srpnju, u prosincu. The bare form travanj is only the nominative."
+        },
+        {
+          "hr": "Jučer sam pročitao cijelu knjigu. (NE: Jučer sam čitao cijelu knjigu.)",
+          "en": "Yesterday I read the whole book.",
+          "note": "Category: aspect. cijelu = a finished whole → perfective pročitati. The imperfective čitao would describe only the process, with no guarantee it ended."
+        },
+        {
+          "hr": "Nemam vremena. (NE: Nemam vrijeme.)",
+          "en": "I don't have time.",
+          "note": "Category: case form. A negated direct object goes to the genitive: nemam vremena, nemam novca, nema kruha."
+        },
+        {
+          "hr": "Bio sam kod liječnika. (NE: kod liječnik)",
+          "en": "I was at the doctor's.",
+          "note": "Category: case form. kod + genitive: kod liječnika, kod prijatelja, kod bake. It always answers 'at whose place'."
+        },
+        {
+          "hr": "Idem na posao autobusom. (NE: sa autobusom)",
+          "en": "I go to work by bus.",
+          "note": "Category: case form. Means of transport is the bare instrumental, with no s/sa: autobusom, vlakom, avionom, biciklom."
+        },
+        {
+          "hr": "Ovo je žena koju poznaješ. (NE: koji poznaješ)",
+          "en": "This is the woman (whom) you know.",
+          "note": "Category: agreement. The relative koji matches its antecedent in gender and number but takes the case of its own clause — here accusative feminine: koju."
+        },
+        {
+          "hr": "Došao sam da ti pomognem. (NE: da pomoći)",
+          "en": "I came to help you.",
+          "note": "Category: fixed pattern. Purpose is expressed with da + present tense, never with the infinitive: da ti pomognem, da vidim, da kupim."
+        },
+        {
+          "hr": "Dvije žene, dva muškarca, dvoje djece.",
+          "en": "Two women, two men, two children.",
+          "note": "Category: numbers. dva (m./n.) vs dvije (f.); a mixed group or children take the collective numeral dvoje + genitive."
+        },
+        {
+          "hr": "Žao mi je što kasnim. (NE: Ja sam žao.)",
+          "en": "I'm sorry I'm late.",
+          "note": "Category: fixed pattern. Žao takes a dative experiencer (mi) and a što-clause. The same family: drago mi je, muka mi je."
+        },
+        {
+          "hr": "Kad sam ušao, svi su ustali. (NE: Kad sam ulazio, svi su ustajali.)",
+          "en": "When I came in, everyone stood up.",
+          "note": "Category: aspect. One event triggering another → both perfective. kad + perfective marks a single completed moment."
+        },
+        {
+          "hr": "čaša, žlica, đak, ćevapi, kruška",
+          "en": "glass, spoon, pupil, ćevapi, pear",
+          "note": "Category: diacritics. A missing č, ć, š, ž or đ is a spelling mistake that costs points. Proofread every single word before you hand it in."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus",
+        "croaticum-b1-sample"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Ispravi grešku",
+      "intro": "Each item reproduces a classic B1 slip. Fix it by category — pattern, case, aspect, agreement, number, or diacritic. The difficulty climbs from an easy pattern to the trickiest number form.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'I like this song.' Which is correct Croatian?",
+          "difficulty": 1,
+          "options": [
+            "Sviđam ovu pjesmu.",
+            "Sviđa mi se ova pjesma.",
+            "Ja se sviđam pjesmu.",
+            "Sviđa me ova pjesma."
+          ],
+          "answer": "Sviđa mi se ova pjesma.",
+          "explanation": "sviđati se: the song is the nominative subject, you are the dative experiencer (mi se). 'I like' can never be translated word for word."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Month as 'when': Idem na more u ______. (travanj → correct case)",
+          "difficulty": 2,
+          "answer": "travnju",
+          "accepted": [
+            "travnju"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Months answering 'when' take the locative: u travnju. The 'a' in travanj drops out in the oblique cases."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Negated object: 'I don't have time.' — Nemam ______.",
+          "difficulty": 3,
+          "options": [
+            "vrijeme",
+            "vremena",
+            "vremenom",
+            "vremenu"
+          ],
+          "answer": "vremena",
+          "explanation": "A negated direct object goes to the genitive: nemam vremena, nemam novca. The nominative vrijeme would be wrong here."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Aspect — a finished whole: Jučer sam ______ cijelu knjigu.",
+          "difficulty": 4,
+          "options": [
+            "čitao",
+            "pročitao",
+            "pisao",
+            "pročitavao"
+          ],
+          "answer": "pročitao",
+          "explanation": "cijelu knjigu = a completed whole → perfective pročitati → pročitao. The imperfective čitao would name only the process."
+        },
+        {
+          "type": "FILL",
+          "prompt": "kod + genitive: Bio sam kod ______ jučer. (liječnik)",
+          "difficulty": 5,
+          "answer": "liječnika",
+          "accepted": [
+            "liječnika"
+          ],
+          "strictDiacritics": true,
+          "explanation": "kod always takes the genitive: kod liječnika = at the doctor's. The bare liječnik is only the nominative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Relative pronoun: Ovo je žena ______ poznaješ.",
+          "difficulty": 6,
+          "options": [
+            "koji",
+            "koja",
+            "koju",
+            "kome"
+          ],
+          "answer": "koju",
+          "explanation": "koji agrees in gender/number with žena (feminine) but takes the case of its own clause — a direct object → accusative koju."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'I came to help you.'",
+          "difficulty": 7,
+          "options": [
+            "ti",
+            "Došao",
+            "pomognem",
+            "sam",
+            "da"
+          ],
+          "ordered": [
+            "Došao",
+            "sam",
+            "da",
+            "ti",
+            "pomognem"
+          ],
+          "answer": "Došao sam da ti pomognem",
+          "explanation": "Purpose is da + present (pomognem), never the infinitive. The clitic sam stands second; ti sits inside the da-clause."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Means of transport: 'I travel to work by train.' — Putujem na posao ______.",
+          "difficulty": 8,
+          "options": [
+            "s vlakom",
+            "sa vlakom",
+            "vlakom",
+            "na vlak"
+          ],
+          "answer": "vlakom",
+          "explanation": "Transport is the bare instrumental with no preposition: vlakom, autobusom, avionom. Adding s/sa is a common English-driven error."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Counting a mixed group: 'two children' —",
+          "difficulty": 9,
+          "options": [
+            "dva djeteta",
+            "dvije djece",
+            "dvoje djece",
+            "dva djece"
+          ],
+          "answer": "dvoje djece",
+          "explanation": "Children and mixed-gender groups take the collective numeral dvoje + genitive: dvoje djece. dva/dvije are for uniform masculine/feminine sets."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus",
+        "croaticum-b1-sample"
+      ]
+    }
+  ],
+  "182": [
+    {
+      "type": "LEARN",
+      "title": "Okoliš i priroda — ekološki rječnik",
+      "intro": "Environment is one of ASOO's big B1 theme blocks and it turns up in exam reading and listening constantly. Learn these words inside real phrases — the collocations matter as much as the nouns.",
+      "items": [
+        {
+          "hr": "okoliš",
+          "en": "the environment",
+          "note": "zaštita okoliša = environmental protection; u okolišu (L). Not to be confused with okolica = surroundings of a place."
+        },
+        {
+          "hr": "priroda",
+          "en": "nature",
+          "note": "u prirodi = out in nature; prirodan, prirodna = natural. čuvati prirodu = to protect nature."
+        },
+        {
+          "hr": "otpad",
+          "en": "waste, rubbish",
+          "note": "odvajanje otpada = waste separation; biootpad = organic waste; G otpada."
+        },
+        {
+          "hr": "recikliranje / reciklirati",
+          "en": "recycling / to recycle",
+          "note": "reciklirati papir, staklo i plastiku. reciklaža is the everyday noun too."
+        },
+        {
+          "hr": "zagađenje / onečišćenje",
+          "en": "pollution",
+          "note": "zagađenje zraka = air pollution; onečišćenje mora = sea pollution. Verb: zagaditi / onečistiti."
+        },
+        {
+          "hr": "zaštita / zaštititi",
+          "en": "protection / to protect",
+          "note": "zaštita prirode; zaštićeno područje = protected area (passive participle zaštićen)."
+        },
+        {
+          "hr": "klimatske promjene",
+          "en": "climate change",
+          "note": "Almost always plural in Croatian. borba protiv klimatskih promjena = the fight against climate change."
+        },
+        {
+          "hr": "obnovljivi izvori energije",
+          "en": "renewable energy sources",
+          "note": "sunce, vjetar i voda. Opposite: fosilna goriva = fossil fuels."
+        },
+        {
+          "hr": "smeće",
+          "en": "rubbish, trash",
+          "note": "baciti smeće = to throw out rubbish; kanta / kontejner za smeće = bin / container. Neuter singular collective."
+        },
+        {
+          "hr": "odvajati otpad",
+          "en": "to separate waste",
+          "note": "papir, plastika, staklo i biootpad idu u različite spremnike. A daily eco-habit sentence."
+        },
+        {
+          "hr": "održivi razvoj",
+          "en": "sustainable development",
+          "note": "održiv, održiva = sustainable; održivost = sustainability."
+        },
+        {
+          "hr": "zaštićeno područje",
+          "en": "protected area",
+          "note": "Nacionalni park je zaštićeno područje. Also park prirode = nature park (a lower category)."
+        },
+        {
+          "hr": "divlje životinje i biljke",
+          "en": "wild animals and plants",
+          "note": "fauna i flora; ugrožene vrste = endangered species."
+        },
+        {
+          "hr": "zagađivač",
+          "en": "polluter",
+          "note": "Tvornice su veliki zagađivači. From zagaditi + -ač 'the one who does it'."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "LEARN",
+      "title": "Hrvatski nacionalni parkovi",
+      "intro": "Croatia has eight national parks, and the exam loves them as reading and speaking topics. Learn one solid fact about each so you always have something to say.",
+      "items": [
+        {
+          "hr": "Plitvička jezera",
+          "en": "Plitvice Lakes",
+          "note": "Šesnaest povezanih jezera i brojni slapovi; najstariji i najveći hrvatski nacionalni park, pod zaštitom UNESCO-a."
+        },
+        {
+          "hr": "Krka",
+          "en": "Krka",
+          "note": "Slapovi na rijeci Krki; najpoznatiji je Skradinski buk. Blizu Šibenika."
+        },
+        {
+          "hr": "Mljet",
+          "en": "Mljet",
+          "note": "Otok s dva slana jezera — Velikim i Malim jezerom — te benediktinskim samostanom na otočiću."
+        },
+        {
+          "hr": "Kornati",
+          "en": "Kornati",
+          "note": "Arhipelag od gotovo devedeset otoka i otočića; poznat kao nautički raj."
+        },
+        {
+          "hr": "Paklenica",
+          "en": "Paklenica",
+          "note": "U Velebitu, poznata po penjanju i klancima Velika i Mala Paklenica."
+        },
+        {
+          "hr": "Risnjak",
+          "en": "Risnjak",
+          "note": "Planinski park u Gorskom kotaru; ime nosi po risu (lynx)."
+        },
+        {
+          "hr": "Sjeverni Velebit",
+          "en": "Northern Velebit",
+          "note": "Najmlađi hrvatski nacionalni park, proglašen 1999. godine."
+        },
+        {
+          "hr": "Brijuni",
+          "en": "Brijuni",
+          "note": "Skupina otoka u Istri; poznati po prirodi, safari-parku i bogatoj povijesti."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Ekologija i parkovi",
+      "intro": "Use the eco vocabulary in real case forms and check your national-park facts. Difficulty rises from a single word to a park detail and an opinion opener.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which word means 'waste, rubbish'?",
+          "difficulty": 2,
+          "options": [
+            "priroda",
+            "otpad",
+            "zaštita",
+            "izvor"
+          ],
+          "answer": "otpad",
+          "explanation": "otpad = waste; odvajanje otpada = waste separation. priroda = nature, zaštita = protection, izvor = source/spring."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'environmental protection' — zaštita ______. (okoliš → G)",
+          "difficulty": 2,
+          "answer": "okoliša",
+          "accepted": [
+            "okoliša"
+          ],
+          "strictDiacritics": true,
+          "explanation": "zaštita governs the genitive: zaštita okoliša. okoliš → okoliša."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Koji je park poznat po šesnaest jezera i slapovima?",
+          "difficulty": 3,
+          "options": [
+            "Mljet",
+            "Kornati",
+            "Plitvička jezera",
+            "Paklenica"
+          ],
+          "answer": "Plitvička jezera",
+          "explanation": "Plitvice's sixteen linked lakes and waterfalls are its signature; it is the oldest and largest Croatian national park."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Object of reciklirati: 'We need to recycle paper.' — Trebamo reciklirati ______.",
+          "difficulty": 4,
+          "options": [
+            "papir",
+            "papira",
+            "papiru",
+            "papirom"
+          ],
+          "answer": "papir",
+          "explanation": "reciklirati takes a direct object in the accusative; papir is an inanimate masculine noun, so accusative = nominative: papir."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'air pollution' — zagađenje ______. (zrak → G)",
+          "difficulty": 5,
+          "answer": "zraka",
+          "accepted": [
+            "zraka"
+          ],
+          "strictDiacritics": true,
+          "explanation": "zagađenje + genitive of what is polluted: zagađenje zraka. zrak → zraka."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'The sun and wind are renewable energy sources.' — Sunce i vjetar su ______ izvori energije.",
+          "difficulty": 6,
+          "options": [
+            "obnovljivi",
+            "obnovljive",
+            "obnovljiva",
+            "obnovljivih"
+          ],
+          "answer": "obnovljivi",
+          "explanation": "The adjective modifies izvori (masculine nominative plural): obnovljivi izvori. The other endings are wrong number/case."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'At home we separate waste.'",
+          "difficulty": 7,
+          "options": [
+            "otpad",
+            "Kod",
+            "odvajamo",
+            "kuće"
+          ],
+          "ordered": [
+            "Kod",
+            "kuće",
+            "odvajamo",
+            "otpad"
+          ],
+          "answer": "Kod kuće odvajamo otpad",
+          "explanation": "kod kuće = at home (kod + genitive); odvajati takes the accusative object otpad."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Nacionalni park Mljet poznat je po...",
+          "difficulty": 8,
+          "options": [
+            "penjanju u kanjonu",
+            "dvama slanim jezerima",
+            "najvišem hrvatskom vrhu",
+            "termalnim izvorima"
+          ],
+          "answer": "dvama slanim jezerima",
+          "explanation": "Mljet's landmark is its two saltwater lakes (Veliko i Malo jezero). Canyon climbing points to Paklenica."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Opinion opener: '______ da moramo bolje čuvati prirodu.' (I think…)",
+          "difficulty": 9,
+          "answer": "Mislim",
+          "accepted": [
+            "Mislim",
+            "Smatram"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Mislim da… / Smatram da… = I think / consider that… — the standard B1 opinion opener."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ],
+  "183": [
+    {
+      "type": "LEARN",
+      "title": "Bez subjekta — Zabranjeno je, Treba, Ovdje se…",
+      "intro": "Signs, rules and general truths in Croatian almost never name a subject. Instead they use a neuter participle (Zabranjeno je…), an infinitive of necessity (Treba…), or the reflexive se with a 3rd-person verb (Ovdje se ne puši). Learn the three patterns and you can read every wall in Croatia.",
+      "items": [
+        {
+          "hr": "Zabranjeno je pušiti.",
+          "en": "Smoking is forbidden.",
+          "note": "Zabranjeno je + infinitive. zabranjeno is a passive participle in the neuter — no subject at all."
+        },
+        {
+          "hr": "Ovdje se ne puši.",
+          "en": "No smoking here.",
+          "note": "se + 3rd sg = the general 'one'. Same meaning as above, but the sign-and-speech version."
+        },
+        {
+          "hr": "Treba čuvati prirodu.",
+          "en": "One must protect nature.",
+          "note": "treba + infinitive = necessity with no subject. Past: Trebalo je čuvati…"
+        },
+        {
+          "hr": "Ne smije se bacati smeće u more.",
+          "en": "Rubbish must not be thrown into the sea.",
+          "note": "ne smije se + infinitive = prohibition. smjeti = to be allowed."
+        },
+        {
+          "hr": "Otpad se odvaja.",
+          "en": "Waste is separated.",
+          "note": "Reflexive-passive: the subject otpad is 3rd sg, the verb agrees with it (odvaja se)."
+        },
+        {
+          "hr": "Boce se vraćaju u trgovinu.",
+          "en": "Bottles are returned to the shop.",
+          "note": "Plural subject boce → plural verb vraćaju se. The se-passive agrees in number."
+        },
+        {
+          "hr": "Ovdje se ne smije parkirati.",
+          "en": "No parking here.",
+          "note": "A very common street sign. ne smije se + infinitive parkirati."
+        },
+        {
+          "hr": "U parku se ne pali vatra.",
+          "en": "No lighting fires in the park.",
+          "note": "paliti vatru → reflexive-passive: vatra se ne pali (subject vatra, 3rd sg)."
+        },
+        {
+          "hr": "Kako se to kaže na hrvatskom?",
+          "en": "How do you say that in Croatian?",
+          "note": "se = the general 'you/one'. A subjectless question you will use daily."
+        },
+        {
+          "hr": "Zabranjen je ulaz.",
+          "en": "Entry is forbidden.",
+          "note": "The participle agrees with the noun: zabranjen ulaz (m.), zabranjena vožnja (f.), zabranjeno pušenje (n.)."
+        },
+        {
+          "hr": "Molimo da ne gazite travu.",
+          "en": "Please do not walk on the grass.",
+          "note": "The polite sign variant: molimo da + present. gaziti = to tread on."
+        },
+        {
+          "hr": "U prirodi se ne ostavlja smeće.",
+          "en": "One does not leave rubbish in nature.",
+          "note": "An eco-rule in se-form: ostavljati → ostavlja se. Impersonal, general truth."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Znakovi i pravila",
+      "intro": "Turn each rule into correct Croatian. Watch the three engines: the neuter participle, treba/smjeti + infinitive, and the reflexive-passive that agrees with its subject.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'No smoking here.' — Ovdje se ne ______.",
+          "difficulty": 2,
+          "options": [
+            "puši",
+            "pušiti",
+            "puška",
+            "pušim"
+          ],
+          "answer": "puši",
+          "explanation": "se + 3rd sg present: Ovdje se ne puši. The infinitive pušiti would need Zabranjeno je pušiti."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'Smoking is forbidden.' — ______ je pušiti. (zabranjen → neuter)",
+          "difficulty": 3,
+          "answer": "Zabranjeno",
+          "accepted": [
+            "Zabranjeno",
+            "zabranjeno"
+          ],
+          "strictDiacritics": true,
+          "explanation": "With an infinitive the participle stands in the neuter: Zabranjeno je pušiti. No subject is present."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Reflexive-passive, singular subject: 'Paper is recycled.' — Papir se ______.",
+          "difficulty": 3,
+          "options": [
+            "recikliraju",
+            "reciklira",
+            "reciklirati",
+            "recikliram"
+          ],
+          "answer": "reciklira",
+          "explanation": "The verb agrees with the subject papir (3rd sg): papir se reciklira. Plural boce would give recikliraju se."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Plural subject: 'Bottles are returned to the shop.' — Boce se ______ u trgovinu.",
+          "difficulty": 4,
+          "options": [
+            "vraća",
+            "vraćaju",
+            "vraćati",
+            "vratim"
+          ],
+          "answer": "vraćaju",
+          "explanation": "The se-passive agrees in number: plural subject boce → vraćaju se."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Necessity, one word: '______ čuvati prirodu.' (One must protect nature.)",
+          "difficulty": 5,
+          "answer": "Treba",
+          "accepted": [
+            "Treba"
+          ],
+          "strictDiacritics": true,
+          "explanation": "treba + infinitive = impersonal necessity: Treba čuvati prirodu. No subject, 3rd sg."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Prohibition: 'Rubbish must not be thrown into the sea.' — Ne ______ se bacati smeće u more.",
+          "difficulty": 6,
+          "options": [
+            "smije",
+            "smiju",
+            "smjeti",
+            "smio"
+          ],
+          "answer": "smije",
+          "explanation": "Impersonal ne smije se + infinitive = must not. The 3rd sg smije carries the whole subjectless clause."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the rule: 'Waste is separated at home.'",
+          "difficulty": 7,
+          "options": [
+            "se",
+            "kuće",
+            "Otpad",
+            "kod",
+            "odvaja"
+          ],
+          "ordered": [
+            "Otpad",
+            "se",
+            "odvaja",
+            "kod",
+            "kuće"
+          ],
+          "answer": "Otpad se odvaja kod kuće",
+          "explanation": "Reflexive-passive: subject Otpad, clitic se second, verb odvaja agreeing in the 3rd sg; kod kuće = at home."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'How do you say that in Croatian?' — Kako se to ______ na hrvatskom? (kazati/reći → say)",
+          "difficulty": 8,
+          "answer": "kaže",
+          "accepted": [
+            "kaže"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Impersonal se + 3rd sg: Kako se to kaže? = How is that said / how do you say that?"
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Participle agreement: 'Entry is forbidden.' — ______ je ulaz.",
+          "difficulty": 9,
+          "options": [
+            "Zabranjeno",
+            "Zabranjena",
+            "Zabranjen",
+            "Zabranjeni"
+          ],
+          "answer": "Zabranjen",
+          "explanation": "Here the participle agrees with a real noun, masculine ulaz: Zabranjen je ulaz. The neuter Zabranjeno is only for the infinitive pattern."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ],
+  "184": [
+    {
+      "type": "LEARN",
+      "title": "Kako je složen dnevnik — jezik vijesti",
+      "intro": "Before your listening endurance can grow, you need the shape of a news bulletin in your head: how it is announced, how items are ordered, and the reporting phrases that glue it together. Learn these and half a bulletin stops being a wall of sound.",
+      "items": [
+        {
+          "hr": "informativna emisija / vijesti",
+          "en": "news programme / the news",
+          "note": "Središnji dnevnik = the main evening bulletin on HRT. Slušaš vijesti = you listen to the news."
+        },
+        {
+          "hr": "voditelj / voditeljica",
+          "en": "anchor, host",
+          "note": "Voditelj najavljuje priloge = the anchor introduces the reports."
+        },
+        {
+          "hr": "prilog",
+          "en": "a news item / report",
+          "note": "Svaki prilog obrađuje jednu temu. Beware: prilog also means 'side dish' and 'attachment' — context decides."
+        },
+        {
+          "hr": "izvještaj / izvještavati",
+          "en": "report / to report",
+          "note": "Dopisnik izvještava s terena = the correspondent reports from the field."
+        },
+        {
+          "hr": "najava",
+          "en": "the opening headlines",
+          "note": "U najavi voditelj kaže o čemu će biti riječi = in the intro the anchor previews what's coming."
+        },
+        {
+          "hr": "Prema riječima…",
+          "en": "According to…",
+          "note": "Prema riječima ministra… = according to the minister. A core reporting frame + genitive."
+        },
+        {
+          "hr": "kako doznajemo / kako javljaju",
+          "en": "as we learn / as they report",
+          "note": "Connectors that introduce a fact from a source: Kako doznajemo, istraga je u tijeku."
+        },
+        {
+          "hr": "u tijeku je",
+          "en": "is under way",
+          "note": "U tijeku je istraga = an investigation is under way. u tijeku (L) = in progress."
+        },
+        {
+          "hr": "očekuje se",
+          "en": "it is expected",
+          "note": "Reflexive-passive: Očekuje se poboljšanje vremena = an improvement in the weather is expected."
+        },
+        {
+          "hr": "gospodarstvo, politika, sport, vrijeme",
+          "en": "economy, politics, sport, weather",
+          "note": "The usual running order of sections; the weather (vrijeme) closes the bulletin."
+        },
+        {
+          "hr": "vremenska prognoza",
+          "en": "the weather forecast",
+          "note": "Sutra se očekuje kiša / sunčano vrijeme. prognoza = forecast."
+        },
+        {
+          "hr": "Za kraj… / I na kraju…",
+          "en": "And finally…",
+          "note": "Introduces the closing, usually lighter item of the bulletin."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Slušanje: pola dnevnika",
+      "intro": "Three items are read aloud with the text hidden — catch the fact the way you must on the exam. The rest check the reporting vocabulary you just learned.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Poslušaj vijest. Što je Vlada danas učinila?",
+          "difficulty": 3,
+          "options": [
+            "Podigla cijene odvoza smeća.",
+            "Usvojila novi zakon o zaštiti okoliša.",
+            "Zatvorila jednu tvornicu.",
+            "Zabranila reciklažu."
+          ],
+          "answer": "Usvojila novi zakon o zaštiti okoliša.",
+          "explanation": "The item says the government adopted a new environmental-protection law ('usvojila novi zakon o zaštiti okoliša').",
+          "audioText": "Dobra večer. Vlada je danas usvojila novi zakon o zaštiti okoliša kojim se građanima olakšava odvajanje otpada. Zakon stupa na snagu prvog siječnja."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Poslušaj prognozu. Kakvo se vrijeme sutra očekuje na Jadranu?",
+          "difficulty": 4,
+          "options": [
+            "sunčano",
+            "kišovito",
+            "snijeg",
+            "gusta magla"
+          ],
+          "answer": "sunčano",
+          "explanation": "The forecast promises sunny weather on the Adriatic, with clouds and possible rain only inland.",
+          "audioText": "A sada vremenska prognoza. Sutra se na Jadranu očekuje sunčano i toplo vrijeme, dok će u unutrašnjosti biti oblačno uz mogućnost kiše u poslijepodnevnim satima."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Reporting frame: Prema ______ ministra, gradnja počinje na proljeće. (riječ → D pl.)",
+          "difficulty": 5,
+          "answer": "riječima",
+          "accepted": [
+            "riječima"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Prema takes the dative: prema riječima ministra = according to the minister's words. riječ → riječima."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Poslušaj vijest. Koliko je radnih mjesta ponuđeno na sajmu?",
+          "difficulty": 5,
+          "options": [
+            "Više od tisuću i petsto.",
+            "Točno petsto.",
+            "Oko sto.",
+            "Više od deset tisuća."
+          ],
+          "answer": "Više od tisuću i petsto.",
+          "explanation": "The report states employers offered more than fifteen hundred jobs ('više od tisuću i petsto radnih mjesta'). Listening for numbers is a core exam skill.",
+          "audioText": "Na jučerašnjem sajmu poslova u Zagrebu poslodavci su ponudili više od tisuću i petsto radnih mjesta. Najviše se tražilo radnika u turizmu i graditeljstvu."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "U informativnoj emisiji, što znači 'prilog'?",
+          "difficulty": 6,
+          "options": [
+            "jelo uz glavno",
+            "pojedinačna vijest u emisiji",
+            "dodatak plaći",
+            "vrsta riječi"
+          ],
+          "answer": "pojedinačna vijest u emisiji",
+          "explanation": "In a news context prilog = a single report/item. It also means a side dish or an attachment elsewhere — context decides."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'A weather improvement is expected tomorrow.'",
+          "difficulty": 7,
+          "options": [
+            "poboljšanje",
+            "Sutra",
+            "vremena",
+            "se",
+            "očekuje"
+          ],
+          "ordered": [
+            "Sutra",
+            "se",
+            "očekuje",
+            "poboljšanje",
+            "vremena"
+          ],
+          "answer": "Sutra se očekuje poboljšanje vremena",
+          "explanation": "Reflexive-passive očekuje se; the clitic se is second; poboljšanje vremena = an improvement in the weather (genitive vremena)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Što uvodi izraz 'Kako doznajemo…'?",
+          "difficulty": 8,
+          "options": [
+            "osobno mišljenje voditelja",
+            "informaciju iz izvora",
+            "vremensku prognozu",
+            "reklamu"
+          ],
+          "answer": "informaciju iz izvora",
+          "explanation": "Kako doznajemo / kako javljaju flags a piece of information coming from a source, not the anchor's opinion."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'An investigation is under way.' — U ______ je istraga. (tijek → L)",
+          "difficulty": 8,
+          "answer": "tijeku",
+          "accepted": [
+            "tijeku"
+          ],
+          "strictDiacritics": true,
+          "explanation": "u tijeku (locative) = under way / in progress: U tijeku je istraga. tijek → tijeku."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ],
+  "185": [
+    {
+      "type": "LEARN",
+      "title": "Pregled 26. tjedna — okoliš, se-konstrukcije, ispravci",
+      "intro": "Week 26 on one page. Reread these consolidated sentences aloud: the eco vocabulary, the subjectless and se-constructions, and the error fixes from your mock exam — everything you'll reach for in today's long conversation.",
+      "items": [
+        {
+          "hr": "U nacionalnom parku se ne smije bacati smeće.",
+          "en": "In the national park you must not throw rubbish.",
+          "note": "Subjectless ne smije se + infinitive, joined to the eco theme."
+        },
+        {
+          "hr": "Otpad se odvaja: papir, plastika i staklo.",
+          "en": "Waste is separated: paper, plastic and glass.",
+          "note": "Reflexive-passive odvaja se, subject otpad."
+        },
+        {
+          "hr": "Sviđa mi se hrvatska obala jer je čista i divlja.",
+          "en": "I like the Croatian coast because it's clean and wild.",
+          "note": "Dative experiencer sviđa mi se + an eco opinion."
+        },
+        {
+          "hr": "Trebamo čuvati prirodu za buduće naraštaje.",
+          "en": "We need to protect nature for future generations.",
+          "note": "trebati + infinitive; naraštaj = generation."
+        },
+        {
+          "hr": "Plitvička jezera zaštićena su i pod zaštitom UNESCO-a.",
+          "en": "The Plitvice Lakes are protected and under UNESCO protection.",
+          "note": "Passive participle agreeing with neuter plural jezera: zaštićena su."
+        },
+        {
+          "hr": "Da imam više vremena, češće bih išao u planine.",
+          "en": "If I had more time, I'd go to the mountains more often.",
+          "note": "Unreal conditional: da + present in the if-clause, kondicional bih išao in the main clause."
+        },
+        {
+          "hr": "Nemam vremena za sve, ali reciklirati stignem.",
+          "en": "I don't have time for everything, but I manage to recycle.",
+          "note": "Negated object in the genitive: nemam vremena."
+        },
+        {
+          "hr": "U travnju smo posjetili Krku i vidjeli slapove.",
+          "en": "In April we visited Krka and saw the waterfalls.",
+          "note": "Locative month u travnju; perfective posjetili / vidjeli for completed events."
+        },
+        {
+          "hr": "Zabranjeno je paliti vatru u šumi.",
+          "en": "It is forbidden to light a fire in the forest.",
+          "note": "Neuter participle Zabranjeno je + infinitive."
+        },
+        {
+          "hr": "Klimatske promjene sve su vidljivije svake godine.",
+          "en": "Climate change is more and more visible every year.",
+          "note": "sve + comparative = more and more; vidljiv → vidljiviji."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Miješani test 26. tjedna",
+      "intro": "One pass across the whole week: dative experiencer, months, se-constructions, negated genitive, conditionals and passive participles. Read each sentence fully before you answer.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'I like the Croatian coast.' — ______ mi se hrvatska obala.",
+          "difficulty": 2,
+          "options": [
+            "Sviđam",
+            "Sviđa",
+            "Sviđaju",
+            "Sviđala"
+          ],
+          "answer": "Sviđa",
+          "explanation": "The subject obala is singular, so the verb is 3rd sg: Sviđa mi se hrvatska obala."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'In April we visited Krka.' — U ______ smo posjetili Krku. (travanj)",
+          "difficulty": 3,
+          "answer": "travnju",
+          "accepted": [
+            "travnju"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Month as 'when' → locative u travnju."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Reflexive-passive: 'Waste is separated at home.' — Otpad se ______ kod kuće.",
+          "difficulty": 4,
+          "options": [
+            "odvaja",
+            "odvajaju",
+            "odvajati",
+            "odvajam"
+          ],
+          "answer": "odvaja",
+          "explanation": "The verb agrees with the singular subject otpad: odvaja se."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'It's forbidden to light a fire in the forest.' — ______ je paliti vatru u šumi. (zabranjen → n.)",
+          "difficulty": 5,
+          "answer": "Zabranjeno",
+          "accepted": [
+            "Zabranjeno",
+            "zabranjeno"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Neuter participle with an infinitive: Zabranjeno je paliti."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Negated object: 'I don't have time.' — Nemam ______.",
+          "difficulty": 6,
+          "options": [
+            "vrijeme",
+            "vremena",
+            "vremenom",
+            "vremenu"
+          ],
+          "answer": "vremena",
+          "explanation": "A negated direct object takes the genitive: nemam vremena."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'We need to protect nature for future generations.'",
+          "difficulty": 7,
+          "options": [
+            "prirodu",
+            "Trebamo",
+            "naraštaje",
+            "čuvati",
+            "buduće",
+            "za"
+          ],
+          "ordered": [
+            "Trebamo",
+            "čuvati",
+            "prirodu",
+            "za",
+            "buduće",
+            "naraštaje"
+          ],
+          "answer": "Trebamo čuvati prirodu za buduće naraštaje",
+          "explanation": "trebati + infinitive čuvati + accusative prirodu; za + accusative buduće naraštaje."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Participle agreement: 'The Plitvice Lakes are protected.' — Plitvička jezera su ______.",
+          "difficulty": 8,
+          "options": [
+            "zaštićen",
+            "zaštićena",
+            "zaštićeni",
+            "zaštićene"
+          ],
+          "answer": "zaštićena",
+          "explanation": "jezera is neuter plural, so the passive participle is zaštićena: Plitvička jezera su zaštićena."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Necessity, one word: '______ čuvati more.' (One must protect the sea.)",
+          "difficulty": 8,
+          "answer": "Treba",
+          "accepted": [
+            "Treba"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Impersonal treba + infinitive: Treba čuvati more."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Duži razgovor: priroda, obala i parkovi",
+      "intro": "Your speaking session for the week: you and your wife plan a weekend in nature and range over the coast, the parks and ecology. She's a native, so she praises a good form and confirms your case. Read your lines ('Me') aloud.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Za vikend bih negdje otputovala. Kamo bi ti najradije?",
+          "en": "I'd like to travel somewhere this weekend. Where would you most like to go?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Sviđa mi se ideja da odemo u nacionalni park. Dugo nismo bili u prirodi.",
+          "en": "I like the idea of going to a national park. We haven't been out in nature for a long time."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Slažem se. Plitvice ili Krka? Oboje je prekrasno u ovo doba godine.",
+          "en": "I agree. Plitvice or Krka? Both are gorgeous at this time of year."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Ja bih Krku — želim opet vidjeti slapove i prošetati uz rijeku.",
+          "en": "I'd go for Krka — I want to see the waterfalls again and take a walk along the river."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Može. Spakirat ću ruksak. Imaš li ti danas vremena za pripremu?",
+          "en": "Works for me. I'll pack the backpack. Do you have time today to get ready?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Nemam puno vremena, ali stignem. Samo da ne zaboravimo vrećice za smeće.",
+          "en": "I don't have much time, but I'll manage. Let's just not forget the rubbish bags."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Bravo — 'nemam vremena', genitiv nakon niječnog glagola. Baš točno!",
+          "en": "Well done — 'nemam vremena', genitive after the negated verb. Spot on!"
+        },
+        {
+          "speaker": "Me",
+          "hr": "U parku se moramo lijepo ponašati — ne smije se bacati smeće ni paliti vatra.",
+          "en": "In the park we have to behave well — you mustn't throw rubbish or light fires."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Tako je. Priroda je zaštićena, a mi smo ondje samo gosti.",
+          "en": "That's right. Nature is protected, and we're only guests there."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Da imam više slobodnog vremena, svaki bih vikend išao u planine.",
+          "en": "If I had more free time, I'd go to the mountains every weekend."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "I ja. Klimatske promjene su tu, ali barem je kod nas more još čisto.",
+          "en": "Me too. Climate change is here, but at least our sea is still clean."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Zato ga i trebamo čuvati. Idem po kartu i krećemo u avanturu.",
+          "en": "That's exactly why we need to protect it. I'll grab the map and off we go on an adventure."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Znaš što? O ekologiji govoriš bolje nego neki naši političari!",
+          "en": "You know what? You talk about ecology better than some of our politicians!"
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ],
+  "186": [
+    {
+      "type": "LEARN",
+      "title": "Obitelj glagola: stati",
+      "intro": "One tiny root, stati, and a fistful of prefixes give you five essential everyday verbs — plus a few more. Each prefix carries a predictable meaning: po- (become), o- (stay), pre- (stop), pri- (agree), u- (get up). Learn the family and note the present forms, which all follow the -stanem pattern.",
+      "items": [
+        {
+          "hr": "stati",
+          "en": "to stop; to stand; to fit",
+          "note": "Present: stanem. Autobus je stao na stanici. / Sve stane u torbu (it all fits)."
+        },
+        {
+          "hr": "postati",
+          "en": "to become — po-",
+          "note": "Postala je liječnica. Present: postanem. Takes a nominative complement: postati liječnik."
+        },
+        {
+          "hr": "ostati",
+          "en": "to stay, remain — o-",
+          "note": "Ostao sam kod kuće cijeli dan. Present: ostanem. Impf ostajati/ostajem."
+        },
+        {
+          "hr": "prestati",
+          "en": "to stop (doing) — pre-",
+          "note": "Prestao sam pušiti. Takes an imperfective infinitive: prestati + inf. Present: prestanem."
+        },
+        {
+          "hr": "pristati",
+          "en": "to agree, consent; (of a ship) to dock — pri-",
+          "note": "Pristao je na dogovor (pristati na + A). Brod je pristao u luku. Present: pristanem."
+        },
+        {
+          "hr": "ustati",
+          "en": "to get up, stand up — u-",
+          "note": "Ustao sam u sedam. Present: ustanem. Habitual impf ustajati/ustajem: Ustajem u sedam."
+        },
+        {
+          "hr": "nastati",
+          "en": "to arise, come into being — na-",
+          "note": "Nastao je problem. Nastala je tišina. Present: nastanem (rare); mostly 3rd person."
+        },
+        {
+          "hr": "sastati se",
+          "en": "to meet up — s(a)-",
+          "note": "Sastajemo se u petak. pf sastati se, present sastanem se; impf sastajati se."
+        },
+        {
+          "hr": "rastati se",
+          "en": "to part, split up — raz-",
+          "note": "Rastali su se nakon deset godina braka. rastati se s + instrumental."
+        },
+        {
+          "hr": "zastati",
+          "en": "to pause, halt briefly — za-",
+          "note": "Zastao je na trenutak i onda nastavio. za- adds a short, momentary stop."
+        },
+        {
+          "hr": "postajati / ostajati / prestajati",
+          "en": "the secondary imperfectives",
+          "note": "For habits and processes: postajem sve bolji, ostajem doma petkom, kiša prestaje."
+        },
+        {
+          "hr": "stajati (stojim)",
+          "en": "to stand; to cost — a different verb!",
+          "note": "Careful: stajati/stojim = to be standing, and Koliko stoji? = How much does it cost? Not the same as stati/stanem."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Prefiksi obitelji stati",
+      "intro": "Drop the right member of the stati family into each sentence, and mind the present forms of the -stanem class. The final questions test the trap between stati and stajati.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'She became a doctor.' — ______ je liječnica.",
+          "difficulty": 2,
+          "options": [
+            "Ostala",
+            "Postala",
+            "Prestala",
+            "Ustala"
+          ],
+          "answer": "Postala",
+          "explanation": "po- marks a change of state: postati = to become → Postala je liječnica."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'I stopped smoking.' — ______ sam pušiti. (prestati → male)",
+          "difficulty": 2,
+          "answer": "Prestao",
+          "accepted": [
+            "Prestao"
+          ],
+          "strictDiacritics": true,
+          "explanation": "pre- = cease; prestati + imperfective infinitive: Prestao sam pušiti."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'I stayed home.' — ______ sam kod kuće.",
+          "difficulty": 3,
+          "options": [
+            "Postao",
+            "Ustao",
+            "Ostao",
+            "Nastao"
+          ],
+          "answer": "Ostao",
+          "explanation": "o- = remain: ostati → Ostao sam kod kuće. Postao = became, Ustao = got up, Nastao = arose."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which member is followed by an infinitive (e.g. '…pušiti')?",
+          "difficulty": 4,
+          "options": [
+            "postati",
+            "ostati",
+            "prestati",
+            "nastati"
+          ],
+          "answer": "prestati",
+          "explanation": "prestati takes an imperfective infinitive: prestati pušiti, prestati raditi. The others don't pattern that way."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Habit: 'I get up at seven.' — ______ u sedam. (ustajati → 1st sg.)",
+          "difficulty": 5,
+          "answer": "Ustajem",
+          "accepted": [
+            "Ustajem"
+          ],
+          "strictDiacritics": true,
+          "explanation": "A daily habit → imperfective ustajati → Ustajem. The perfective ustanem would need a single occasion."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'He agreed to the deal.' — Pristao je ______ dogovor.",
+          "difficulty": 6,
+          "options": [
+            "na",
+            "o",
+            "za",
+            "u"
+          ],
+          "answer": "na",
+          "explanation": "pristati na + accusative: pristati na dogovor / na prijedlog = to agree to something."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'A problem arose and silence fell.'",
+          "difficulty": 7,
+          "options": [
+            "problem",
+            "je",
+            "Nastao",
+            "tišina",
+            "je",
+            "nastala",
+            "i"
+          ],
+          "ordered": [
+            "Nastao",
+            "je",
+            "problem",
+            "i",
+            "nastala",
+            "je",
+            "tišina"
+          ],
+          "answer": "Nastao je problem i nastala je tišina",
+          "explanation": "nastati = to arise/come into being; the participle agrees: nastao problem (m.), nastala tišina (f.). The clitic je stands second in each clause."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "The look-alike verb: 'How much does it cost?' — Koliko ______?",
+          "difficulty": 8,
+          "options": [
+            "stane",
+            "staje",
+            "stoji",
+            "ustaje"
+          ],
+          "answer": "stoji",
+          "explanation": "'to cost' is stajati/stojim, not stati/stanem: Koliko stoji? = How much does it cost / stand at?"
+        },
+        {
+          "type": "FILL",
+          "prompt": "Perfective present in a čim-clause: 'As soon as you get up, let me know.' — Čim ______, javi mi se. (ustati → 2nd sg.)",
+          "difficulty": 9,
+          "answer": "ustaneš",
+          "accepted": [
+            "ustaneš"
+          ],
+          "strictDiacritics": true,
+          "explanation": "The perfective present of ustati follows the -stanem class: ustanem, ustaneš… Čim ustaneš = as soon as you get up."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ],
+  "187": [
+    {
+      "type": "LEARN",
+      "title": "Nositelj stanja u dativu — kako se osjećaš",
+      "intro": "Croatian puts the person who feels something in the dative, while the state or the thing is the grammatical subject. Master this one pattern and dozens of everyday feelings-sentences fall into place. Watch the verb agreement: it follows the nominative subject, not you.",
+      "items": [
+        {
+          "hr": "Hladno mi je.",
+          "en": "I'm cold.",
+          "note": "adverb (n.) + dative: literally 'cold is to-me'. Never 'Ja sam hladan' for feeling cold."
+        },
+        {
+          "hr": "Vruće mi je. / Toplo mi je.",
+          "en": "I'm hot. / I'm warm.",
+          "note": "Same frame. Past: Bilo mi je vruće = I was hot."
+        },
+        {
+          "hr": "Dosadno mi je.",
+          "en": "I'm bored.",
+          "note": "Dosadno joj je = she's bored; Dosadno nam je = we're bored."
+        },
+        {
+          "hr": "Muka mi je. / Zlo mi je.",
+          "en": "I feel sick.",
+          "note": "Muka mi je od masne hrane = greasy food makes me sick (od + genitive = from)."
+        },
+        {
+          "hr": "Žao mi je.",
+          "en": "I'm sorry.",
+          "note": "Žao mi je što kasnim = I'm sorry I'm late. Takes a što-clause."
+        },
+        {
+          "hr": "Drago mi je.",
+          "en": "Pleased to meet you / I'm glad.",
+          "note": "Drago mi je što si došao = I'm glad you came."
+        },
+        {
+          "hr": "Sviđa mi se…",
+          "en": "I like…",
+          "note": "The verb agrees with the subject: Sviđa mi se film (sg.), Sviđaju mi se filmovi (pl.)."
+        },
+        {
+          "hr": "Nedostaje mi…",
+          "en": "I miss…",
+          "note": "Nedostaje mi more (sg.); Nedostaju mi prijatelji (pl. verb). It agrees with what is missed."
+        },
+        {
+          "hr": "Treba mi…",
+          "en": "I need…",
+          "note": "Treba mi pomoć (sg.); Trebaju mi cipele (pl.). The needed thing is the nominative subject."
+        },
+        {
+          "hr": "Prija mi…",
+          "en": "… does me good / agrees with me",
+          "note": "Prija mi topli čaj. Teška hrana mi ne prija = heavy food doesn't sit well with me."
+        },
+        {
+          "hr": "Ne da mi se…",
+          "en": "I don't feel like…",
+          "note": "Ne da mi se učiti = I don't feel like studying. Very common in speech; + infinitive."
+        },
+        {
+          "hr": "Vrti mi se (u glavi).",
+          "en": "I'm dizzy.",
+          "note": "A physical state in the same dative frame: literally 'it spins to-me'."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Osjećaji u dativu",
+      "intro": "Build feelings the Croatian way. The trickiest questions test verb agreement: sviđati se, nedostajati and trebati all agree with the nominative subject, not with you.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'I'm cold.' — ______ mi je.",
+          "difficulty": 2,
+          "options": [
+            "Hladan",
+            "Hladno",
+            "Hladna",
+            "Hladni"
+          ],
+          "answer": "Hladno",
+          "explanation": "The frame uses the neuter adverb + dative: Hladno mi je. 'Ja sam hladan' would describe you as cold to the touch."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'I like this song.' — ______ mi se ova pjesma. (sviđati → 3rd sg.)",
+          "difficulty": 3,
+          "answer": "Sviđa",
+          "accepted": [
+            "Sviđa"
+          ],
+          "strictDiacritics": true,
+          "explanation": "The subject pjesma is singular → Sviđa mi se ova pjesma."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Agreement: 'I like these songs.' — ______ mi se ove pjesme.",
+          "difficulty": 4,
+          "options": [
+            "Sviđa",
+            "Sviđaju",
+            "Sviđam",
+            "Sviđala"
+          ],
+          "answer": "Sviđaju",
+          "explanation": "The verb agrees with the plural subject pjesme: Sviđaju mi se ove pjesme."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'I miss the sea.' — ______ mi more.",
+          "difficulty": 5,
+          "options": [
+            "Nedostajem",
+            "Nedostaje",
+            "Nedostaju",
+            "Nedostajala"
+          ],
+          "answer": "Nedostaje",
+          "explanation": "more is singular → Nedostaje mi more. Plural (prijatelji) would give Nedostaju mi."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'I need help.' — ______ mi pomoć. (trebati → 3rd sg.)",
+          "difficulty": 6,
+          "answer": "Treba",
+          "accepted": [
+            "Treba"
+          ],
+          "strictDiacritics": true,
+          "explanation": "The needed thing pomoć is the singular subject: Treba mi pomoć. Plural cipele → Trebaju mi."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'I feel sick from the greasy food.' — Muka mi je ______ masne hrane.",
+          "difficulty": 6,
+          "options": [
+            "od",
+            "na",
+            "za",
+            "s"
+          ],
+          "answer": "od",
+          "explanation": "od + genitive marks the cause: Muka mi je od masne hrane = the greasy food makes me sick."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'I'm sorry I'm late.'",
+          "difficulty": 7,
+          "options": [
+            "je",
+            "kasnim",
+            "Žao",
+            "što",
+            "mi"
+          ],
+          "ordered": [
+            "Žao",
+            "mi",
+            "je",
+            "što",
+            "kasnim"
+          ],
+          "answer": "Žao mi je što kasnim",
+          "explanation": "Žao + dative (mi) + je, then a što-clause: Žao mi je što kasnim."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Agreement: 'I need new shoes.' — ______ mi nove cipele.",
+          "difficulty": 8,
+          "options": [
+            "Treba",
+            "Trebaju",
+            "Trebam",
+            "Trebala"
+          ],
+          "answer": "Trebaju",
+          "explanation": "cipele is plural, so the verb is plural: Trebaju mi nove cipele."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'The warm tea does me good.' — Topli čaj mi ______. (prijati → 3rd sg.)",
+          "difficulty": 8,
+          "answer": "prija",
+          "accepted": [
+            "prija"
+          ],
+          "strictDiacritics": true,
+          "explanation": "prijati agrees with the subject čaj: Topli čaj mi prija = the warm tea agrees with me."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Kako se danas osjećamo?",
+      "intro": "A morning check-in at home. Your wife asks how everyone feels and you answer with the dative frame all the way through. She corrects one agreement slip and praises the rest. Read your lines ('Me') aloud.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Dobro jutro! Kako si spavao? Izgledaš pomalo umorno.",
+          "en": "Good morning! How did you sleep? You look a bit tired."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Iskreno, malo mi je hladno i uopće mi se nije dalo ustati.",
+          "en": "Honestly, I'm a little cold and I didn't feel like getting up at all."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Skuhat ću ti čaj — topli čaj ti uvijek prija. A kako je mala?",
+          "en": "I'll make you tea — warm tea always does you good. And how's the little one?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Njoj je super. Nije joj hladno i nikad joj nije dosadno.",
+          "en": "She's great. She's not cold and she's never bored."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Haha, djeca su takva. A tebi? Nedostaju li ti tvoji iz Amerike?",
+          "en": "Haha, kids are like that. And you? Do you miss your family in America?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Da, nedostaju mi roditelji. I nedostaje mi ono naše sunce.",
+          "en": "Yes, I miss my parents. And I miss that sun of ours."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Lijepo rečeno — 'nedostaju mi roditelji', množina. A i 'nedostaje mi sunce'. Bravo!",
+          "en": "Nicely put — 'nedostaju mi roditelji', plural. And 'nedostaje mi sunce' too. Well done!"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Trudim se. Sviđa mi se ovi mali izrazi u dativu, iako mi je isprva bilo teško.",
+          "en": "I'm trying. I like these little dative expressions, even though it was hard for me at first."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Samo sitnica: 'sviđaju mi se ovi izrazi', množina. Glagol se slaže s onim što ti se sviđa.",
+          "en": "Just a small thing: 'sviđaju mi se ovi izrazi', plural. The verb agrees with what you like."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Točno, izrazi su u množini pa i glagol mora biti. Sviđaju mi se!",
+          "en": "Right, the expressions are plural, so the verb must be too. I like them!"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Eto, sad savršeno. Treba li ti još što? Aspirin, malo vode?",
+          "en": "There, perfect now. Do you need anything else? An aspirin, some water?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Samo mi treba tvoja kava i bit ću novi čovjek.",
+          "en": "I just need your coffee and I'll be a new man."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Vidiš, kad ti nije dobro, dativ ti savršeno sjeda!",
+          "en": "See, when you're not feeling well, the dative fits you perfectly!"
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ],
+  "188": [
+    {
+      "type": "LEARN",
+      "title": "Prehrana i zdravlje — rječnik",
+      "intro": "Exam Reading B is a short health-and-nutrition article with a word bank, so this genre's vocabulary is worth its weight in points. Learn each word inside a natural collocation — that's how it will appear in the text.",
+      "items": [
+        {
+          "hr": "prehrana",
+          "en": "diet, nutrition",
+          "note": "zdrava prehrana = healthy diet; prehrambene navike = eating habits."
+        },
+        {
+          "hr": "namirnice",
+          "en": "groceries, foodstuffs",
+          "note": "svježe namirnice; kupiti namirnice. Plural noun."
+        },
+        {
+          "hr": "zdravlje",
+          "en": "health",
+          "note": "brinuti o zdravlju (o + L); na zdravlje! = cheers / bless you."
+        },
+        {
+          "hr": "pretilost",
+          "en": "obesity",
+          "note": "problem pretilosti; pretio, pretila = obese. Feminine i-declension noun."
+        },
+        {
+          "hr": "vitamini i minerali",
+          "en": "vitamins and minerals",
+          "note": "Voće je bogato vitaminima (bogat + instrumental)."
+        },
+        {
+          "hr": "masnoća / mast",
+          "en": "fat",
+          "note": "zasićene masnoće = saturated fats; previše masti šteti zdravlju."
+        },
+        {
+          "hr": "šećer",
+          "en": "sugar",
+          "note": "Previše šećera šteti zdravlju. G šećera."
+        },
+        {
+          "hr": "vlakna",
+          "en": "fibre",
+          "note": "Cjelovite žitarice sadrže vlakna = wholegrains contain fibre. Neuter plural."
+        },
+        {
+          "hr": "probava",
+          "en": "digestion",
+          "note": "dobra probava; probavni sustav = the digestive system."
+        },
+        {
+          "hr": "uravnotežena prehrana",
+          "en": "a balanced diet",
+          "note": "ravnoteža = balance; uravnotežen = balanced (a passive participle)."
+        },
+        {
+          "hr": "obrok / porcija",
+          "en": "meal / portion",
+          "note": "pet obroka dnevno; umjerena porcija = a moderate portion."
+        },
+        {
+          "hr": "štetiti / koristiti (+ D)",
+          "en": "to harm / to benefit",
+          "note": "Pušenje šteti zdravlju; voće koristi zdravlju. Both take the dative."
+        },
+        {
+          "hr": "unos",
+          "en": "intake",
+          "note": "dnevni unos kalorija / soli = daily intake of calories / salt."
+        },
+        {
+          "hr": "umjerenost",
+          "en": "moderation",
+          "note": "Ključ je u umjerenosti = the key is in moderation. umjeren = moderate."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "LEARN",
+      "title": "Članak: 'Ono smo što jedemo'",
+      "intro": "A short nutrition article in the exact register of the exam text. Read it line by line; the notes gloss only the harder words and constructions. Try to guess before you look.",
+      "items": [
+        {
+          "hr": "Sve više stručnjaka upozorava da su naše prehrambene navike sve lošije.",
+          "en": "More and more experts warn that our eating habits are getting worse.",
+          "note": "upozoravati = to warn; sve lošije = worse and worse (sve + comparative)."
+        },
+        {
+          "hr": "Brza hrana bogata je mastima i šećerom, a siromašna vlaknima.",
+          "en": "Fast food is rich in fats and sugar, but poor in fibre.",
+          "note": "bogat + instrumental / siromašan + instrumental. mastima, šećerom, vlaknima."
+        },
+        {
+          "hr": "Zbog toga raste broj ljudi koji imaju problema s pretilošću.",
+          "en": "Because of that, the number of people with obesity problems is rising.",
+          "note": "imati problema (G) s + instrumental (pretilošću, i-declension)."
+        },
+        {
+          "hr": "Liječnici savjetuju da jedemo više voća i povrća.",
+          "en": "Doctors advise that we eat more fruit and vegetables.",
+          "note": "savjetovati da + present; više + genitive (voća, povrća)."
+        },
+        {
+          "hr": "Uravnotežena prehrana znači ravnotežu bjelančevina, ugljikohidrata i masti.",
+          "en": "A balanced diet means a balance of proteins, carbohydrates and fats.",
+          "note": "bjelančevine = proteins; ugljikohidrati = carbohydrates."
+        },
+        {
+          "hr": "Važno je i piti dovoljno vode tijekom dana.",
+          "en": "It's also important to drink enough water during the day.",
+          "note": "Subjectless Važno je + infinitive; dovoljno + genitive (vode)."
+        },
+        {
+          "hr": "Nije se potrebno potpuno odreći slatkoga; dovoljna je umjerenost.",
+          "en": "It's not necessary to give up sweets entirely; moderation is enough.",
+          "note": "odreći se + genitive (slatkoga); umjerenost = moderation."
+        },
+        {
+          "hr": "Male promjene, poput manje soli, s vremenom donose velike rezultate.",
+          "en": "Small changes, like less salt, bring big results over time.",
+          "note": "poput + genitive = like; s vremenom = over time."
+        },
+        {
+          "hr": "Zdravlje se ne kupuje u ljekarni, nego se gradi za stolom.",
+          "en": "Health isn't bought at the pharmacy, but built at the table.",
+          "note": "Reflexive-passive (kupuje se, gradi se); nije… nego = not… but rather."
+        },
+        {
+          "hr": "Ono smo što jedemo — stara izreka koja i danas vrijedi.",
+          "en": "We are what we eat — an old saying that still holds today.",
+          "note": "izreka = saying; vrijediti = to hold true, be valid."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Razumijevanje i rječnik prehrane",
+      "intro": "Show you understood the article and can handle the collocations that carry the vocabulary — bogat + instrumental, odreći se + genitive, subjectless Važno je. Difficulty rises to the article's overall message.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What does 'namirnice' mean?",
+          "difficulty": 2,
+          "options": [
+            "recipes",
+            "groceries, foodstuffs",
+            "restaurants",
+            "vitamins"
+          ],
+          "answer": "groceries, foodstuffs",
+          "explanation": "namirnice = groceries / foodstuffs: kupiti namirnice = to buy groceries."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'a healthy diet' — zdrava ______. (prehrana)",
+          "difficulty": 3,
+          "answer": "prehrana",
+          "accepted": [
+            "prehrana"
+          ],
+          "strictDiacritics": true,
+          "explanation": "prehrana = diet/nutrition; zdrava prehrana = a healthy diet."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Prema članku, brza hrana bogata je...",
+          "difficulty": 4,
+          "options": [
+            "vlaknima",
+            "mastima i šećerom",
+            "vitaminima",
+            "vodom"
+          ],
+          "answer": "mastima i šećerom",
+          "explanation": "The text says fast food is 'bogata mastima i šećerom, a siromašna vlaknima' — rich in fats and sugar, poor in fibre."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Što liječnici savjetuju?",
+          "difficulty": 5,
+          "options": [
+            "Da se potpuno odreknemo slatkoga.",
+            "Da jedemo više voća i povrća.",
+            "Da preskačemo obroke.",
+            "Da pijemo manje vode."
+          ],
+          "answer": "Da jedemo više voća i povrća.",
+          "explanation": "'Liječnici savjetuju da jedemo više voća i povrća.' The article never demands giving up sweets entirely."
+        },
+        {
+          "type": "FILL",
+          "prompt": "bogat + instrumental: 'Fruit is rich in vitamins.' — Voće je bogato ______. (vitamin → instr. pl.)",
+          "difficulty": 5,
+          "answer": "vitaminima",
+          "accepted": [
+            "vitaminima"
+          ],
+          "strictDiacritics": true,
+          "explanation": "bogat governs the instrumental: bogato vitaminima. vitamin → vitaminima."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "odreći se + case: 'It's not easy to give up sweets.' — Nije se lako odreći ______.",
+          "difficulty": 6,
+          "options": [
+            "slatko",
+            "slatkoga",
+            "slatkom",
+            "slatkim"
+          ],
+          "answer": "slatkoga",
+          "explanation": "odreći se takes the genitive: odreći se slatkoga = to give up sweet things."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'It's important to drink enough water.'",
+          "difficulty": 7,
+          "options": [
+            "piti",
+            "Važno",
+            "vode",
+            "je",
+            "dovoljno"
+          ],
+          "ordered": [
+            "Važno",
+            "je",
+            "piti",
+            "dovoljno",
+            "vode"
+          ],
+          "answer": "Važno je piti dovoljno vode",
+          "explanation": "Subjectless Važno je + infinitive piti; dovoljno + genitive vode = enough water."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Koja je glavna poruka članka?",
+          "difficulty": 8,
+          "options": [
+            "Zdravlje ovisi o skupim dodacima prehrani.",
+            "Zdravlje se gradi svakodnevnom, uravnoteženom prehranom.",
+            "Treba potpuno izbjegavati sve masti.",
+            "Brza hrana je posve bezopasna."
+          ],
+          "answer": "Zdravlje se gradi svakodnevnom, uravnoteženom prehranom.",
+          "explanation": "'Zdravlje se… gradi za stolom.' The message is that health comes from everyday, balanced eating and moderation."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ],
+  "189": [
+    {
+      "type": "LEARN",
+      "title": "Popuni prazninu iz banke riječi — padeži u tekstu",
+      "intro": "The word-bank gap-fill tests vocabulary and case at the same time: you get twelve scrambled words and must slot each into the text in the right form. Study these worked examples — each shows the base word from the bank and the exact inflected form the sentence demands, plus the reason. Watch the classic traps: locative months, irregular genitive plurals, superlatives.",
+      "items": [
+        {
+          "hr": "(travanj) → U travnju počinje proljetna sezona.",
+          "en": "(April) → The spring season begins in April.",
+          "note": "Trap: a month answering 'when' → locative u travnju, not the nominative travanj."
+        },
+        {
+          "hr": "(oko) → Boja njezinih očiju je zelena.",
+          "en": "(eye) → The colour of her eyes is green.",
+          "note": "Trap: irregular genitive plural oko → očiju (not *oka)."
+        },
+        {
+          "hr": "(dijete) → Igralište je bilo puno djece.",
+          "en": "(child) → The playground was full of children.",
+          "note": "puno + genitive; the plural of dijete is the collective djeca → genitive djece."
+        },
+        {
+          "hr": "(dobar) → Ovo je najbolji restoran u gradu.",
+          "en": "(good) → This is the best restaurant in the city.",
+          "note": "Trap: irregular superlative dobar → najbolji (not *najdobriji)."
+        },
+        {
+          "hr": "(godina) → Prije mnogo godina živjeli smo u Splitu.",
+          "en": "(year) → Many years ago we lived in Split.",
+          "note": "mnogo + genitive plural; godina has a zero ending in the G pl.: godina."
+        },
+        {
+          "hr": "(prijatelj) → Došao sam s dvojicom prijatelja.",
+          "en": "(friend) → I came with two friends.",
+          "note": "G pl. prijatelja after the numeral dvojica; s + instrumental dvojicom."
+        },
+        {
+          "hr": "(velik) → Zagreb je veći od Splita.",
+          "en": "(big) → Zagreb is bigger than Split.",
+          "note": "Comparative velik → veći; the standard of comparison takes od + genitive."
+        },
+        {
+          "hr": "(put) → Bio sam ondje nekoliko puta.",
+          "en": "(time/occasion) → I was there a few times.",
+          "note": "nekoliko + genitive plural; put → puta (times)."
+        },
+        {
+          "hr": "(sunce) → Ljeti volimo ležati na suncu.",
+          "en": "(sun) → In summer we like to lie in the sun.",
+          "note": "na + locative for a static position: na suncu."
+        },
+        {
+          "hr": "(čovjek) → Na trgu je bilo mnogo ljudi.",
+          "en": "(person) → There were many people in the square.",
+          "note": "Trap: suppletive plural čovjek → ljudi; genitive plural ljudi after mnogo."
+        },
+        {
+          "hr": "(noga) → Cijeli dan me boli lijeva noga.",
+          "en": "(leg) → My left leg has hurt all day.",
+          "note": "The hurting part is the nominative subject (noga); boljeti takes the accusative experiencer me."
+        },
+        {
+          "hr": "(brz) → Vlak je najbrži način putovanja.",
+          "en": "(fast) → The train is the fastest way of travelling.",
+          "note": "Superlative brz → najbrži; način putovanja = way of travelling (G)."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus",
+        "croaticum-b1-sample"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Trening praznina",
+      "intro": "Insert the bank word in the exact form the sentence needs, and be ready to name why. The traps are the exam's favourites: locative months, irregular genitive plurals, superlatives and counted nouns.",
+      "questions": [
+        {
+          "type": "FILL",
+          "prompt": "U ______ obično pada mnogo kiše. (travanj → when)",
+          "difficulty": 2,
+          "answer": "travnju",
+          "accepted": [
+            "travnju"
+          ],
+          "strictDiacritics": true,
+          "explanation": "A month answering 'when' → locative u travnju."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ima najljepše zelene ______. (oko → G pl.)",
+          "difficulty": 3,
+          "answer": "očiju",
+          "accepted": [
+            "očiju"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Irregular genitive plural: oko → očiju. A classic gap-fill trap."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Park je bio pun ______.",
+          "difficulty": 4,
+          "options": [
+            "djeca",
+            "djece",
+            "djecu",
+            "djecom"
+          ],
+          "answer": "djece",
+          "explanation": "pun + genitive; the collective djeca has genitive djece: pun djece = full of children."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ovo je ______ restoran u gradu. (dobar → superlative, m.)",
+          "difficulty": 5,
+          "answer": "najbolji",
+          "accepted": [
+            "najbolji"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Irregular superlative of dobar: najbolji. Never *najdobriji."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Prije mnogo ______ živjeli smo ovdje. (godina → G pl.)",
+          "difficulty": 5,
+          "answer": "godina",
+          "accepted": [
+            "godina"
+          ],
+          "strictDiacritics": true,
+          "explanation": "mnogo + genitive plural; godina has a zero ending in the G pl.: mnogo godina."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Zagreb je ______ od Splita.",
+          "difficulty": 6,
+          "options": [
+            "velik",
+            "veći",
+            "najveći",
+            "velikom"
+          ],
+          "answer": "veći",
+          "explanation": "A comparison of two → comparative veći + od + genitive: veći od Splita."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Na trgu je bilo mnogo ______. (čovjek → G pl.)",
+          "difficulty": 7,
+          "answer": "ljudi",
+          "accepted": [
+            "ljudi"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Suppletive plural: čovjek → ljudi; genitive plural ljudi after mnogo."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Došao sam onamo s ______ prijatelja.",
+          "difficulty": 8,
+          "options": [
+            "dvoje",
+            "dvojica",
+            "dvojicom",
+            "dva"
+          ],
+          "answer": "dvojicom",
+          "explanation": "The numeral dvojica (two men) declines like a feminine noun; after s it is instrumental: s dvojicom prijatelja."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Bio sam ondje samo nekoliko ______. (put → G pl.)",
+          "difficulty": 9,
+          "answer": "puta",
+          "accepted": [
+            "puta"
+          ],
+          "strictDiacritics": true,
+          "explanation": "nekoliko + genitive plural: nekoliko puta = a few times. put → puta in this counting use."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus",
+        "croaticum-b1-sample"
+      ]
+    }
+  ],
+  "190": [
+    {
+      "type": "LEARN",
+      "title": "Prehrambene navike i hrvatska kultura jela",
+      "intro": "Comparing your eating habits with Croatian ones generates exactly the B1 speech the exam wants: opinions, frequencies, likes and dislikes with the dative. Learn the food-culture words and the dative constructions you'll lean on in today's speaking session.",
+      "items": [
+        {
+          "hr": "marenda",
+          "en": "mid-morning meal/snack (Dalmatia)",
+          "note": "Dalmatinski obrok oko deset sati. In the north the same thing is gablec."
+        },
+        {
+          "hr": "gablec",
+          "en": "mid-morning meal (Zagreb / the north)",
+          "note": "The continental word for marenda; typical of Zagreb and Zagorje."
+        },
+        {
+          "hr": "ručak",
+          "en": "lunch (the main meal)",
+          "note": "Ručak je glavni obrok dana, obično popodne. In Croatia lunch, not dinner, is the big meal."
+        },
+        {
+          "hr": "doručak / večera",
+          "en": "breakfast / dinner",
+          "note": "obilan doručak = a hearty breakfast; lagana večera = a light dinner."
+        },
+        {
+          "hr": "sviđa mi se",
+          "en": "I like…",
+          "note": "Sviđa mi se domaća kuhinja = I like home cooking. Dative experiencer."
+        },
+        {
+          "hr": "prija mi",
+          "en": "… agrees with me / does me good",
+          "note": "Ne prija mi teška hrana navečer = heavy food in the evening doesn't sit well with me."
+        },
+        {
+          "hr": "ne odgovara mi",
+          "en": "… doesn't suit me",
+          "note": "Ljuta hrana mi ne odgovara = spicy food doesn't agree with me. odgovarati + dative."
+        },
+        {
+          "hr": "paziti na (prehranu / liniju)",
+          "en": "to watch (one's diet / figure)",
+          "note": "paziti na + accusative: Pazim na prehranu = I watch what I eat."
+        },
+        {
+          "hr": "domaća kuhinja",
+          "en": "home cooking / local cuisine",
+          "note": "sarma, pašticada, štrukli — classic Croatian dishes."
+        },
+        {
+          "hr": "preskočiti obrok",
+          "en": "to skip a meal",
+          "note": "Nikad ne preskačem doručak (impf preskakati → preskačem)."
+        },
+        {
+          "hr": "naviknuti se na",
+          "en": "to get used to",
+          "note": "Naviknuo sam se na hrvatsku kavu (na + accusative)."
+        },
+        {
+          "hr": "jesti umjereno / zdravo",
+          "en": "to eat moderately / healthily",
+          "note": "Jedem umjereno, ali si dopustim slatko vikendom."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Prehrana i navike",
+      "intro": "Pin down the food-culture words and the dative constructions of liking and suiting, then compare habits the way you will in conversation. Difficulty climbs to a culture comparison.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Što je 'marenda'?",
+          "difficulty": 2,
+          "options": [
+            "večernji obrok",
+            "kasni doručak ili međuobrok",
+            "desert nakon ručka",
+            "vrsta pića"
+          ],
+          "answer": "kasni doručak ili međuobrok",
+          "explanation": "marenda is a mid-morning meal/snack, roughly a late breakfast; in the north it's called gablec."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'I like home cooking.' — ______ mi se domaća kuhinja. (sviđati)",
+          "difficulty": 3,
+          "answer": "Sviđa",
+          "accepted": [
+            "Sviđa"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Dative experiencer, singular subject kuhinja: Sviđa mi se domaća kuhinja."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Heavy food in the evening doesn't agree with me.' — Teška hrana navečer mi ne ______.",
+          "difficulty": 4,
+          "options": [
+            "prija",
+            "prijaju",
+            "prijati",
+            "prijam"
+          ],
+          "answer": "prija",
+          "explanation": "prijati agrees with the singular subject hrana: hrana mi ne prija."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "paziti na + case: 'I watch my diet.' — Pazim ______ prehranu.",
+          "difficulty": 5,
+          "options": [
+            "na",
+            "o",
+            "za",
+            "u"
+          ],
+          "answer": "na",
+          "explanation": "paziti na + accusative: paziti na prehranu / na liniju = to watch one's diet / figure."
+        },
+        {
+          "type": "FILL",
+          "prompt": "'I never skip breakfast.' — Nikad ne ______ doručak. (preskakati → 1st sg.)",
+          "difficulty": 6,
+          "answer": "preskačem",
+          "accepted": [
+            "preskačem"
+          ],
+          "strictDiacritics": true,
+          "explanation": "Imperfective preskakati → preskačem (iotation k → č). A habit → imperfective."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "naviknuti se na + case: 'I got used to Croatian coffee.' — Naviknuo sam se ______ hrvatsku kavu.",
+          "difficulty": 6,
+          "options": [
+            "na",
+            "o",
+            "za",
+            "uz"
+          ],
+          "answer": "na",
+          "explanation": "naviknuti se na + accusative: naviknuti se na kavu = to get used to coffee."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build: 'Lunch is the main meal of the day.'",
+          "difficulty": 7,
+          "options": [
+            "glavni",
+            "Ručak",
+            "dana",
+            "je",
+            "obrok"
+          ],
+          "ordered": [
+            "Ručak",
+            "je",
+            "glavni",
+            "obrok",
+            "dana"
+          ],
+          "answer": "Ručak je glavni obrok dana",
+          "explanation": "je stands second; glavni obrok = the main meal; dana is the genitive of description (of the day)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "U Hrvatskoj je glavni obrok obično...",
+          "difficulty": 8,
+          "options": [
+            "doručak",
+            "marenda",
+            "ručak",
+            "večera"
+          ],
+          "answer": "ručak",
+          "explanation": "In Croatia lunch (ručak) is traditionally the main meal, eaten in the afternoon — unlike the big evening dinner common elsewhere."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Naše navike u jelu",
+      "intro": "Your speaking session: you describe your eating day and compare it with the Croatian rhythm, using the dative constructions throughout. Your wife nudges one preposition and rewards you at the end. Read your lines ('Me') aloud.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Što si danas jeo? Cijeli te dan nisam vidjela za stolom.",
+          "en": "What did you eat today? I haven't seen you at the table all day."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Ujutro samo kava, oko podne sam pojeo sendvič, a sad umirem od gladi.",
+          "en": "Just coffee in the morning, around noon I ate a sandwich, and now I'm starving."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Vidiš, to ti je greška. Preskočiš doručak pa se poslije prejedeš.",
+          "en": "See, that's your mistake. You skip breakfast and then you overeat later."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Znam. U Americi sam navikao jesti kasno. Ovdje mi se sviđa vaš ritam — ručak kao glavni obrok.",
+          "en": "I know. In America I got used to eating late. Here I like your rhythm — lunch as the main meal."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Kod nas se nekad jela i marenda oko deset. Baka bi rekla: 'Doručkuj kao kralj!'",
+          "en": "We used to have marenda around ten, too. Grandma would say: 'Have breakfast like a king!'"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Sviđa mi se ta izreka. Ali meni teška hrana ujutro baš ne prija.",
+          "en": "I like that saying. But heavy food in the morning really doesn't agree with me."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Ne mora biti teška. Voće, jogurt, malo kruha — dovoljno da izdržiš do ručka.",
+          "en": "It doesn't have to be heavy. Fruit, yoghurt, a bit of bread — enough to last you until lunch."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Imaš pravo. Od danas pazim na prehranu — jedem umjerenije i ne preskačem doručak.",
+          "en": "You're right. From today I'm watching my diet — eating more moderately and not skipping breakfast."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Bravo! Samo pazi: kaže se 'pazim na prehranu', s prijedlogom 'na'.",
+          "en": "Well done! Just mind it: it's 'pazim na prehranu', with the preposition 'na'."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Točno, paziti na nešto. Zapisat ću to da ne zaboravim.",
+          "en": "Right, paziti na nešto. I'll write that down so I don't forget."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "A za nagradu, večeras kuham sarmu — tvoju najdražu.",
+          "en": "And as a reward, tonight I'm making sarma — your favourite."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Sad mi je već bolje! Vidiš da mi hrvatska kuhinja itekako prija.",
+          "en": "I feel better already! You see that Croatian cooking really does agree with me."
+        }
+      ],
+      "sources": [
+        "asoo",
+        "croaticum-syllabus"
+      ]
+    }
+  ]
+}
