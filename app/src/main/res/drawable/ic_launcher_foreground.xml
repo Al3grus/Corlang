@@ -1,29 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Corlang logo foreground: Cor(e) + Lang(uage) — a speech bubble (language) holding a
-     core: a solid dot wrapped in an open ring that doubles as the letter "C".
-     Language-neutral by design (per-language identity lives in the UI, not the brand).
-     Geometry sits inside the Ø66dp safe zone of the 108dp adaptive-icon canvas. -->
+<!-- Corlang launcher foreground: the "Orbit Core" mark (design_handoff_corlang_loader/
+     logo-orbit-core.svg) - two broken rings orbiting a molten-red core, the app's identity.
+     VectorDrawable has no stroke-dasharray, so each broken ring is a full circle clipped with
+     trimPathEnd (outer 132/2pi.33 = 0.6366, inner 80/2pi.21 = 0.6063) inside a rotated group,
+     which reproduces the dash + rotation exactly. Scaled to 0.9 and centered at (54,54) so the
+     whole mark sits inside the O66 safe zone of the 108 adaptive-icon canvas. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Speech bubble body with a bottom-left tail -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M39,33 h30 a9,9 0 0 1 9,9 v21 a9,9 0 0 1 -9,9 H50 L36,80 V72 h3 a9,9 0 0 1 -9,-9 V42 a9,9 0 0 1 9,-9 z" />
+    <!-- Outer broken ring (r=33 -> 29.7), rotated -52 like the source -->
+    <group
+        android:name="outerRing"
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="-52">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M83.7,54 A29.7,29.7 0 1 1 24.3,54 A29.7,29.7 0 1 1 83.7,54"
+            android:strokeColor="#2F7FAE"
+            android:strokeLineCap="round"
+            android:strokeWidth="5.4"
+            android:trimPathEnd="0.6366"
+            android:trimPathStart="0" />
+    </group>
 
-    <!-- The "C" ring: Adriatic blue, open to the right (letter C = Corlang) -->
-    <path
-        android:strokeColor="#135E8C"
-        android:strokeWidth="5"
-        android:strokeLineCap="round"
-        android:fillColor="#00000000"
-        android:pathData="M61.5,62.7 A13,13 0 1 1 61.5,41.3" />
+    <!-- Inner broken ring (r=21 -> 18.9), rotated 128 like the source -->
+    <group
+        android:name="innerRing"
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="128">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M72.9,54 A18.9,18.9 0 1 1 35.1,54 A18.9,18.9 0 1 1 72.9,54"
+            android:strokeColor="#2F7FAE"
+            android:strokeLineCap="round"
+            android:strokeWidth="5.4"
+            android:trimPathEnd="0.6063"
+            android:trimPathStart="0" />
+    </group>
 
-    <!-- The core: the essential 20% at the center of the language -->
+    <!-- Molten core (r=9 -> 8.1) -->
     <path
-        android:fillColor="#C8102E"
-        android:pathData="M54,52 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 z" />
+        android:fillColor="#C8402C"
+        android:pathData="M54,54 m-8.1,0 a8.1,8.1 0 1,0 16.2,0 a8.1,8.1 0 1,0 -16.2,0 z" />
 </vector>
