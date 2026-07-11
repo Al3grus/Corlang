@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Status-bar notification icon: the Corlang mark as a flat white silhouette (the system tints
+     it). Uses the denser solid-ring "O" form (ring + core) rather than the broken orbit rings,
+     which would go muddy at 24dp, per the logo usage sizing guidance. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Ring (r=30/100 of the mark), padded into the 24dp status-bar keyline -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M4.5,12 a7.5,7.5 0 1 0 15,0 a7.5,7.5 0 1 0 -15,0 z"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2" />
+
+    <!-- Core (r=12.5/100) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,12 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 z" />
+</vector>

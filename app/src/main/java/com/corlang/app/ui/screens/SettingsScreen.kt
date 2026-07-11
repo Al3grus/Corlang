@@ -429,7 +429,17 @@ fun SettingsScreen(
         // ----- About -----
         SectionTitle("ℹ️ About")
         InfoCard {
-            Text("Corlang, Core + Language", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+            com.corlang.app.ui.components.CorlangLogo(
+                variant = com.corlang.app.ui.components.LogoVariant.LOCKUP,
+                size = 28.dp,
+                modifier = Modifier.padding(bottom = 4.dp)
+            )
+            Text(
+                "Core + Language · v${container.updater.installedVersionName()}",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = 6.dp)
+            )
             Text(
                 "Learn the core of a language on an evidence-based daily method (retrieval practice + " +
                     "distributed practice), anchored to the official Croatian curriculum and the real " +

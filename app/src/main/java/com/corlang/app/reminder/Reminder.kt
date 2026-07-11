@@ -81,7 +81,7 @@ class ReminderWorker(
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
         val notification = NotificationCompat.Builder(ctx, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_dialog_info)
+            .setSmallIcon(com.corlang.app.R.drawable.ic_notification)
             .setContentTitle("Vrijeme je za hrvatski! 🇭🇷")
             .setContentText(text)
             .setStyle(NotificationCompat.BigTextStyle().bigText(text))

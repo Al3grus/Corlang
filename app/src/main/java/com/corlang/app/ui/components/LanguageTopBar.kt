@@ -45,7 +45,14 @@ fun LanguageTopBar(
     val onBar = if (dark) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onPrimary
 
     TopAppBar(
-        title = { Text("Corlang", fontWeight = FontWeight.Bold) },
+        title = {
+            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                // Brand mark in the header, per the logo usage checklist. Rings take the bar's
+                // text color so they read on the blue/surface bar; the core keeps its red pop.
+                CorlangLogo(variant = LogoVariant.ORBIT, size = 26.dp, brand = onBar)
+                Text("Corlang", fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 8.dp))
+            }
+        },
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = barColor,
             titleContentColor = onBar,
