@@ -58,28 +58,25 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-/** Cards per gym "set" — sized to finish inside one rest between exercise sets (~60-90 s). */
-private const val SET_SIZE = 7
-
 /** Words graduate to EN→HR production (recall, not recognition) from this SRS box up. */
 private const val PRODUCTION_BOX = 3
 
-/** Persisted mid-session state so a pocketed/killed phone resumes exactly where it left off. */
+/** Persisted mid-session state so a closed/killed phone resumes exactly where it left off. */
 @Serializable
 private data class SessionSnapshot(
     val epochDay: Long,
     val remainingIds: List<String>,
     val done: Int,
-    val total: Int,
-    val setDone: Int
+    val total: Int
 )
 
 private val snapshotJson = Json { ignoreUnknownKeys = true }
 
 /**
- * Daily vocabulary on a spaced-repetition schedule, built for micro-sessions:
- * sets of [SET_SIZE] cards, swipe grading (left = again, right = good, up = easy),
- * instant resume, and a daily goal ring. Established words flip to EN→HR production.
+ * Daily vocabulary on a spaced-repetition schedule: the day's due reviews plus new words up
+ * to your chosen goal (10/15/20 in Settings). Swipe grading (left = again, up = good,
+ * right = easy), instant resume, and a daily goal ring. Established words flip to EN→HR
+ * production. You can always learn more past the goal, and revisit any pack you've started.
  */
 @Composable
 fun WordsScreen(container: AppContainer, lang: String) {
@@ -92,26 +89,26 @@ fun WordsScreen(container: AppContainer, lang: String) {
     val queue = remember(lang) { mutableStateListOf<SessionCard>() }
     var sessionTotal by remember(lang) { mutableIntStateOf(0) }
     var doneCount by remember(lang) { mutableIntStateOf(0) }
-    var setDone by remember(lang) { mutableIntStateOf(0) }     // graded within the current set
     var served by remember(lang) { mutableIntStateOf(0) }
 
-    // UI mode: dashboard, in-session, or the between-sets breather.
     var inSession by remember(lang) { mutableStateOf(false) }
-    var setComplete by remember(lang) { mutableStateOf(false) }
+    // Pack-revisit mode: a review round of a chosen pack that must NOT touch the daily
+    // session's saved progress; when it ends we restore the daily session.
+    var reviewMode by remember(lang) { mutableStateOf(false) }
     var celebration by remember(lang) { mutableStateOf(false) }
 
-    /** Snapshot of the CURRENT queue state, encoded synchronously (null = nothing to resume). */
+    /** Snapshot of the CURRENT daily queue, encoded synchronously (null = nothing to resume). */
     fun snapshotNow(): String? =
         if (queue.isEmpty()) null else snapshotJson.encodeToString(
             SessionSnapshot(
                 epochDay = WordsRepository.todayEpochDay(),
                 remainingIds = queue.map { it.word.id },
-                done = doneCount, total = sessionTotal, setDone = setDone
+                done = doneCount, total = sessionTotal
             )
         )
 
     LaunchedEffect(lang, refreshKey, newPerDay) {
-        // Never clobber a live session (pace changes are only reachable from the dashboard).
+        // Never clobber a live session (pace changes / pack reviews are dashboard-only).
         if (inSession) return@LaunchedEffect
         val snapText = container.languagePrefs.wordsSessionSnapshot.first()
         val today = WordsRepository.todayEpochDay()
@@ -119,17 +116,15 @@ fun WordsScreen(container: AppContainer, lang: String) {
             runCatching { snapshotJson.decodeFromString<SessionSnapshot>(it) }.getOrNull()
         }
         queue.clear()
-        if (refreshKey == 0 && snap != null && snap.epochDay == today && snap.remainingIds.isNotEmpty()) {
-            // Resume the interrupted session exactly where it was left.
+        if (snap != null && snap.epochDay == today && snap.remainingIds.isNotEmpty()) {
+            // Resume the interrupted daily session exactly where it was left.
             queue.addAll(container.words.sessionFromIds(lang, snap.remainingIds))
             sessionTotal = snap.total
             doneCount = snap.done
-            setDone = snap.setDone
         } else {
             queue.addAll(container.words.buildSession(lang, today, newPerDay))
             sessionTotal = queue.size
             doneCount = 0
-            setDone = 0
             // Keep prefs in agreement with the freshly built queue — otherwise a stale
             // same-day snapshot could be restored later and re-serve already-graded cards.
             container.languagePrefs.setWordsSessionSnapshot(snapshotNow())
@@ -147,41 +142,39 @@ fun WordsScreen(container: AppContainer, lang: String) {
             queue.add(card)      // re-serve failed cards until they pass
         } else {
             doneCount++
-            setDone++
         }
         val sessionDone = queue.isEmpty()
-        val setJustDone = !sessionDone && setDone >= SET_SIZE
-        if (setJustDone) setDone = 0
-        // Encode the snapshot from the already-mutated queue, then write grade + snapshot in
-        // ONE coroutine in order — a force-kill can no longer desync Room from DataStore
-        // (which would re-serve or silently skip a card on resume).
-        val snap = if (sessionDone) null else snapshotNow()
+        // In review mode we never write the daily snapshot; in daily mode we write grade +
+        // snapshot in ONE ordered coroutine so a force-kill can't desync Room from DataStore.
+        val snap = if (sessionDone || reviewMode) null else snapshotNow()
+        val wasReview = reviewMode
         scope.launch {
             container.words.grade(lang, card.word.id, g)
-            container.languagePrefs.setWordsSessionSnapshot(snap)
-            if (sessionDone || setJustDone) container.progress.recordStudyActivity(lang)
-            // Rebuild only after the final grade is committed, so buildSession can't
-            // momentarily re-include the just-graded card.
+            if (!wasReview) container.languagePrefs.setWordsSessionSnapshot(snap)
+            if (sessionDone) container.progress.recordStudyActivity(lang)
+            // Rebuild only after the final grade is committed (restores the daily session
+            // after a review, or produces the post-completion state after the daily session).
             if (sessionDone) refreshKey++
         }
         if (sessionDone) {
             inSession = false
-            setComplete = false
-            celebration = true
-        } else if (setJustDone) {
-            setComplete = true   // breather between sets; any completed set = streak credit
+            reviewMode = false
+            celebration = !wasReview
         }
     }
 
-    if (inSession && setComplete && queue.isNotEmpty()) {
-        SetBreather(
-            remaining = queue.size,
-            done = doneCount,
-            total = sessionTotal,
-            onNextSet = { setComplete = false },
-            onPause = { setComplete = false; inSession = false }
-        )
-        return
+    /** Start a review round of a pack you've already begun (its started words, shuffled). */
+    fun startPackReview(wordIds: List<String>) {
+        scope.launch {
+            val cards = container.words.sessionFromIds(lang, wordIds.shuffled())
+            if (cards.isEmpty()) return@launch
+            queue.clear(); queue.addAll(cards)
+            sessionTotal = cards.size
+            doneCount = 0
+            reviewMode = true
+            celebration = false
+            inSession = true
+        }
     }
 
     if (inSession && queue.isNotEmpty()) {
@@ -189,10 +182,15 @@ fun WordsScreen(container: AppContainer, lang: String) {
             card = queue.first(),
             cardKey = served,
             tts = container.tts,
+            review = reviewMode,
             done = doneCount,
             total = sessionTotal,
             onGrade = ::grade,
-            onExit = { inSession = false }   // snapshot already persisted per grade
+            onExit = {
+                inSession = false
+                if (reviewMode) { reviewMode = false; refreshKey++ }  // restore daily session
+                // (daily snapshot already persisted per grade)
+            }
         )
         return
     }
@@ -215,7 +213,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             Column(Modifier.weight(1f)) {
                 Text("Words", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 Text(
-                    "${allWords.size} core words · sets of $SET_SIZE fit a gym rest",
+                    "${allWords.size} core words · $newPerDay new a day, plus reviews",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -282,15 +280,42 @@ fun WordsScreen(container: AppContainer, lang: String) {
         }
 
         SectionTitle("📦 Packs")
+        Text(
+            "Tap a pack you've started to review its words any time.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(bottom = 4.dp)
+        )
         vocab.packs.forEach { pack ->
-            val seen = pack.words.count { it.id in seenIds }
+            val startedIds = pack.words.map { it.id }.filter { it in seenIds }
+            val seen = startedIds.size
+            val canReview = seen > 0
             InfoCard {
-                Text(pack.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                Text(
-                    "${pack.level} · $seen / ${pack.words.size} started",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary
-                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .then(
+                            if (canReview) Modifier.clickable { startPackReview(startedIds) }
+                            else Modifier
+                        )
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(pack.title, style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold)
+                        Text(
+                            "${pack.level} · $seen / ${pack.words.size} started",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                    Text(
+                        if (canReview) "↻ review" else "",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
                 LinearProgressIndicator(
                     progress = { if (pack.words.isEmpty()) 0f else seen.toFloat() / pack.words.size },
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
@@ -316,49 +341,12 @@ private fun WordStat(value: String, label: String, modifier: Modifier = Modifier
     }
 }
 
-/** Between-sets breather: celebrate the set, offer the next one. Rest-timer friendly. */
-@Composable
-private fun SetBreather(
-    remaining: Int,
-    done: Int,
-    total: Int,
-    onNextSet: () -> Unit,
-    onPause: () -> Unit
-) {
-    Column(
-        modifier = Modifier.fillMaxSize().padding(24.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        GoalRing(
-            progress = if (total == 0) 1f else done.toFloat() / total,
-            label = "$done/$total",
-            size = 120.dp,
-            stroke = 12.dp
-        )
-        Spacer(Modifier.height(16.dp))
-        Text("💪 Set done!", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-        Text(
-            "Streak credited. $remaining words left today — next set whenever you're ready.",
-            style = MaterialTheme.typography.bodyMedium,
-            textAlign = TextAlign.Center,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(top = 6.dp)
-        )
-        Button(onClick = onNextSet, modifier = Modifier.fillMaxWidth().padding(top = 20.dp)) {
-            Text("Next set ($SET_SIZE cards)")
-        }
-        OutlinedButton(onClick = onPause, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
-            Text("Done for now")
-        }
-    }
-}
-
 @Composable
 private fun WordSession(
     card: SessionCard,
     cardKey: Int,
     tts: TtsManager,
+    review: Boolean,
     done: Int,
     total: Int,
     onGrade: (SrsGrade) -> Unit,
@@ -371,7 +359,7 @@ private fun WordSession(
     // Established words flip direction: recall the Croatian from English (production).
     val production = (card.review?.box ?: 0) >= PRODUCTION_BOX
 
-    // Swipe-to-grade offsets (one-handed gym grading).
+    // Swipe-to-grade offsets (one-handed grading).
     var dragX by remember(cardKey) { mutableStateOf(0f) }
     var dragY by remember(cardKey) { mutableStateOf(0f) }
     val threshold = with(LocalDensity.current) { 96.dp.toPx() }
@@ -384,13 +372,17 @@ private fun WordSession(
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                if (production) "Say it in Croatian" else "Word review",
+                when {
+                    review -> "Pack review"
+                    production -> "Say it in Croatian"
+                    else -> "Word review"
+                },
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.weight(1f)
             )
             Text(
-                "$done / $total" + if (isNew) " · ✨ new" else "",
+                "$done / $total" + if (isNew && !review) " · ✨ new" else "",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -542,7 +534,7 @@ private fun WordSession(
         }
 
         OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
-            Text("Pause — resumes exactly here")
+            Text(if (review) "End review" else "Pause — resumes exactly here")
         }
     }
 }
