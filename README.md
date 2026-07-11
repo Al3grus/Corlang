@@ -30,13 +30,6 @@ More languages are planned.
   "teach it back" exercise to check you really understand.
 - **Progress** — your streak, your level, your vocabulary, and a map of the whole journey.
 
-## Croatian
-
-The Croatian course is a step-by-step path from complete beginner to the official B1 certificate
-exam. It works alongside the free University of Zagreb online courses
-([A1.hr](https://a1.ffzg.unizg.hr/), [A2.hr](https://a2.ffzg.unizg.hr/)) and finishes with exam
-practice, timed mock exams, and how to book the real thing.
-
 ## Updates
 
 The app checks for a newer version when it opens and can update itself — no reinstalling by hand.
