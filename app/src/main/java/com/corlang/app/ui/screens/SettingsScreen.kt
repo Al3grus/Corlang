@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
@@ -43,7 +44,9 @@ import com.corlang.app.reminder.ReminderScheduler
 import com.corlang.app.speech.TtsState
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /** All app settings in one place: reminder, SRS pace, speech, about. */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -264,6 +267,77 @@ fun SettingsScreen(
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) { Text("Check for updates") }
+            }
+        }
+
+        // ----- Backup & restore -----
+        SectionTitle("💾 Backup & restore")
+        var backupMsg by remember { mutableStateOf("") }
+        val exportLauncher = rememberLauncherForActivityResult(
+            ActivityResultContracts.CreateDocument("application/json")
+        ) { uri ->
+            if (uri == null) return@rememberLauncherForActivityResult
+            scope.launch {
+                backupMsg = try {
+                    val text = container.backup.export(System.currentTimeMillis())
+                    withContext(Dispatchers.IO) {
+                        context.contentResolver.openOutputStream(uri)?.use {
+                            it.write(text.toByteArray(Charsets.UTF_8))
+                        } ?: error("Couldn't open the file.")
+                    }
+                    "Backup saved ✓"
+                } catch (e: Exception) {
+                    "Backup failed: ${e.message}"
+                }
+            }
+        }
+        val importLauncher = rememberLauncherForActivityResult(
+            ActivityResultContracts.OpenDocument()
+        ) { uri ->
+            if (uri == null) return@rememberLauncherForActivityResult
+            scope.launch {
+                val text = withContext(Dispatchers.IO) {
+                    runCatching {
+                        context.contentResolver.openInputStream(uri)?.use {
+                            it.readBytes().toString(Charsets.UTF_8)
+                        }
+                    }.getOrNull()
+                }
+                backupMsg = if (text == null) {
+                    "Couldn't read that file."
+                } else {
+                    container.backup.import(text).fold(
+                        onSuccess = { "Restored $it items ✓" },
+                        onFailure = { "Restore failed: ${it.message}" }
+                    )
+                }
+            }
+        }
+        InfoCard {
+            Text("Save your progress to a file", style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold)
+            Text(
+                "Export your streak, learned words, and lesson progress to a file you keep, then " +
+                    "restore it after reinstalling or on a new phone. Restoring replaces the current " +
+                    "progress on this device.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            if (backupMsg.isNotBlank()) {
+                Text(backupMsg, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(bottom = 6.dp))
+            }
+            Row(modifier = Modifier.fillMaxWidth()) {
+                Button(
+                    onClick = { exportLauncher.launch("corlang-backup.json") },
+                    modifier = Modifier.weight(1f)
+                ) { Text("Back up") }
+                Spacer(Modifier.width(8.dp))
+                OutlinedButton(
+                    onClick = { importLauncher.launch(arrayOf("application/json")) },
+                    modifier = Modifier.weight(1f)
+                ) { Text("Restore") }
             }
         }
 

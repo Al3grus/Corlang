@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 
@@ -101,4 +102,53 @@ interface ProgressDao {
 
     @Query("DELETE FROM can_do_check WHERE langCode = :lang AND levelId = :levelId AND itemId = :itemId")
     suspend fun deleteCanDo(lang: String, levelId: String, itemId: String)
+
+    // ----- Backup / restore (whole database, all languages) -----
+
+    @Query("SELECT * FROM language_progress") suspend fun allProgress(): List<LanguageProgress>
+    @Query("SELECT * FROM day_completion") suspend fun allCompletions(): List<DayCompletion>
+    @Query("SELECT * FROM quiz_attempt") suspend fun allQuizAttempts(): List<QuizAttempt>
+    @Query("SELECT * FROM word_review") suspend fun allWordReviews(): List<WordReview>
+    @Query("SELECT * FROM feynman_attempt") suspend fun allFeynmanAttempts(): List<FeynmanAttempt>
+    @Query("SELECT * FROM exam_section_attempt") suspend fun allExamAttempts(): List<ExamSectionAttempt>
+    @Query("SELECT * FROM can_do_check") suspend fun allCanDoChecks(): List<CanDoCheck>
+    @Query("SELECT * FROM day_task_check") suspend fun allDayTaskChecks(): List<DayTaskCheck>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllProgress(x: List<LanguageProgress>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllCompletions(x: List<DayCompletion>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllQuizAttempts(x: List<QuizAttempt>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllWordReviews(x: List<WordReview>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllFeynmanAttempts(x: List<FeynmanAttempt>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllExamAttempts(x: List<ExamSectionAttempt>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllCanDoChecks(x: List<CanDoCheck>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllDayTaskChecks(x: List<DayTaskCheck>)
+
+    @Query("DELETE FROM language_progress") suspend fun clearProgress()
+    @Query("DELETE FROM day_completion") suspend fun clearCompletions()
+    @Query("DELETE FROM quiz_attempt") suspend fun clearQuizAttempts()
+    @Query("DELETE FROM word_review") suspend fun clearWordReviews()
+    @Query("DELETE FROM feynman_attempt") suspend fun clearFeynmanAttempts()
+    @Query("DELETE FROM exam_section_attempt") suspend fun clearExamAttempts()
+    @Query("DELETE FROM can_do_check") suspend fun clearCanDoChecks()
+    @Query("DELETE FROM day_task_check") suspend fun clearDayTaskChecks()
+
+    /** Atomic restore: wipes every table and repopulates from a backup. All-or-nothing. */
+    @Transaction
+    suspend fun replaceAll(
+        progress: List<LanguageProgress>,
+        completions: List<DayCompletion>,
+        quizAttempts: List<QuizAttempt>,
+        wordReviews: List<WordReview>,
+        feynmanAttempts: List<FeynmanAttempt>,
+        examAttempts: List<ExamSectionAttempt>,
+        canDoChecks: List<CanDoCheck>,
+        dayTaskChecks: List<DayTaskCheck>
+    ) {
+        clearProgress(); clearCompletions(); clearQuizAttempts(); clearWordReviews()
+        clearFeynmanAttempts(); clearExamAttempts(); clearCanDoChecks(); clearDayTaskChecks()
+        insertAllProgress(progress); insertAllCompletions(completions)
+        insertAllQuizAttempts(quizAttempts); insertAllWordReviews(wordReviews)
+        insertAllFeynmanAttempts(feynmanAttempts); insertAllExamAttempts(examAttempts)
+        insertAllCanDoChecks(canDoChecks); insertAllDayTaskChecks(dayTaskChecks)
+    }
 }

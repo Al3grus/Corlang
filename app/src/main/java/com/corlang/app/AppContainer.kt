@@ -4,6 +4,7 @@ import android.content.Context
 import com.corlang.app.data.ContentRepository
 import com.corlang.app.data.ProgressRepository
 import com.corlang.app.data.WordsRepository
+import com.corlang.app.data.backup.BackupManager
 import com.corlang.app.data.db.AppDatabase
 import com.corlang.app.data.prefs.LanguagePrefs
 import com.corlang.app.speech.SpeechInput
@@ -21,6 +22,8 @@ class AppContainer(context: Context) {
         ProgressRepository(AppDatabase.get(context).progressDao())
     val words: WordsRepository =
         WordsRepository(AppDatabase.get(context).progressDao(), content)
+    val backup: BackupManager =
+        BackupManager(AppDatabase.get(context).progressDao(), languagePrefs)
     val tts: TtsManager = TtsManager(context)
     val speech: SpeechInput = SpeechInput(context)
     val updater: Updater = Updater(context)
