@@ -39,6 +39,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.ai.AiClient
+import com.corlang.app.ai.ChatMessage
 import com.corlang.app.data.db.ExamSectionAttempt
 import com.corlang.app.data.model.ExamSection
 import com.corlang.app.data.model.ExamSectionKind
@@ -448,6 +450,7 @@ private fun OpenSectionRunner(
 
     OpenPromptTask(
         container = container,
+        levelId = exam.levelId,
         section = section,
         prompt = section.prompts[promptIndex],
         index = promptIndex,
@@ -463,6 +466,7 @@ private fun OpenSectionRunner(
 @Composable
 private fun OpenPromptTask(
     container: AppContainer,
+    levelId: String,
     section: ExamSection,
     prompt: OpenPrompt,
     index: Int,
@@ -474,6 +478,13 @@ private fun OpenPromptTask(
     var revealed by rememberSaveable(prompt.prompt) { mutableStateOf(false) }
     val ticks = remember(prompt.prompt) { mutableStateMapOf<Int, Boolean>() }
     val isWriting = section.kind == ExamSectionKind.WRITING
+
+    // AI writing feedback (optional; needs the user's API key).
+    val scope = rememberCoroutineScope()
+    val apiKey by container.languagePrefs.anthropicApiKey.collectAsState(initial = "")
+    var feedback by rememberSaveable(prompt.prompt) { mutableStateOf<String?>(null) }
+    var feedbackLoading by remember(prompt.prompt) { mutableStateOf(false) }
+    var feedbackError by remember(prompt.prompt) { mutableStateOf<String?>(null) }
 
     Column(
         modifier = Modifier
@@ -494,6 +505,47 @@ private fun OpenPromptTask(
                 minLines = 6,
                 modifier = Modifier.fillMaxWidth()
             )
+
+            // Optional AI examiner: corrects the text and estimates its level before you self-check.
+            if (apiKey.isNotBlank()) {
+                OutlinedButton(
+                    onClick = {
+                        feedbackLoading = true; feedbackError = null; feedback = null
+                        scope.launch {
+                            val result = container.ai.complete(
+                                system = writingFeedbackSystemPrompt(levelId),
+                                messages = listOf(
+                                    ChatMessage(
+                                        "user",
+                                        "Task:\n${prompt.prompt}\n\nMy answer:\n${text.trim()}"
+                                    )
+                                ),
+                                model = AiClient.FEEDBACK_MODEL,
+                                maxTokens = 1200
+                            )
+                            feedbackLoading = false
+                            result.fold(
+                                onSuccess = { feedback = it },
+                                onFailure = { feedbackError = it.message ?: "Feedback failed." }
+                            )
+                        }
+                    },
+                    enabled = text.isNotBlank() && !feedbackLoading,
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                ) { Text(if (feedbackLoading) "Getting feedback…" else "🤖 Get AI feedback") }
+            }
+            feedbackError?.let {
+                Text(it, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(top = 4.dp))
+            }
+            feedback?.let {
+                InfoCard {
+                    Text("AI examiner feedback", style = MaterialTheme.typography.labelMedium,
+                        fontWeight = FontWeight.Bold)
+                    Text(it, style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.padding(top = 4.dp))
+                }
+            }
         } else {
             Text(
                 "🎙 Speak your answer ALOUD for 1-2 minutes (record yourself if possible), then reveal the model.",
@@ -541,3 +593,20 @@ private fun OpenPromptTask(
         Spacer(Modifier.height(24.dp))
     }
 }
+
+/** Instructions turning the model into a fair, specific examiner for the writing task. */
+private fun writingFeedbackSystemPrompt(levelId: String): String = """
+    You are an examiner for the official Croatian language exam at CEFR level $levelId. The user
+    will give you a writing task and their answer in Croatian. Give focused, encouraging feedback
+    in English, structured with these short sections:
+
+    1. Corrected version: rewrite their text in correct, natural Croatian, keeping their meaning.
+    2. Main issues: 3 to 6 bullets naming the actual error patterns (case endings, verb aspect,
+       agreement, spelling/diacritics, word order), each with the rule in one line and their word
+       vs the correction.
+    3. Task fit: does the answer cover what the task asked (length, register, all required points)?
+    4. Level estimate: an approximate CEFR level for this piece, and the one thing to fix first.
+
+    Be concise. Use correct Croatian diacritics (č, ć, š, ž, đ). Do not invent content the student
+    didn't write; if the answer is too short or off-topic, say so plainly.
+""".trimIndent()
