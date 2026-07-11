@@ -216,6 +216,25 @@ class ContentValidationTest {
         }
     }
 
+    // ---------- Placement test ----------
+
+    @Test
+    fun `placement questions are consistent and map to real plan days`() {
+        if (!exists("hr", "placement.json")) return
+        val test = strictJson.decodeFromString<com.corlang.app.data.model.PlacementTest>(
+            read("hr", "placement.json")
+        )
+        val planSize = loadPlan("hr").days.size
+        assertTrue("placement.json has no questions", test.questions.isNotEmpty())
+        test.questions.forEach { q ->
+            assertTrue("placement: answer not in options: '${q.answer}'", q.answer in q.options)
+            assertTrue("placement: needs 2+ options", q.options.size >= 2)
+            assertTrue("placement: startDay ${q.startDay} outside 1..$planSize",
+                q.startDay in 1..planSize)
+            assertTrue("placement: blank level", q.level.isNotBlank())
+        }
+    }
+
     // ---------- Provenance ----------
 
     @Test

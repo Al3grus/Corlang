@@ -319,6 +319,28 @@ data class OpenPrompt(
     val rubric: List<String>
 )
 
+// ---------- Placement test ----------
+
+@Serializable
+data class PlacementTest(
+    val title: String,
+    val intro: String = "",
+    val questions: List<PlacementQuestion>
+)
+
+@Serializable
+data class PlacementQuestion(
+    val level: String,          // CEFR level this question probes
+    val startDay: Int,          // plan day to place the learner at if this is their ceiling
+    val type: String = "MCQ",
+    val difficulty: Int,
+    val prompt: String,
+    val options: List<String>,
+    val answer: String,
+    val explanation: String = "",
+    val strictDiacritics: Boolean = false
+)
+
 // ---------- Resources ----------
 
 @Serializable

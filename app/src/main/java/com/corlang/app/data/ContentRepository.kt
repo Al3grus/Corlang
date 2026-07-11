@@ -15,6 +15,9 @@ import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.json.Json
 
+/** Cache sentinel meaning "the optional placement.json is absent for this language". */
+private val PlacementNone = Any()
+
 /**
  * Loads and caches the bundled JSON content for a language from `assets/content/<lang>/`.
  * Content is read-only and immutable at runtime, so simple in-memory caching is enough.
@@ -116,6 +119,16 @@ class ContentRepository(private val context: Context) {
                 json.decodeFromString<GrammarSyllabus>(readAsset("content/$lang/grammar.json"))
             else GrammarSyllabus(levels = emptyList())
         } as GrammarSyllabus
+    }
+
+    /** Placement test, optional file; null when a language hasn't shipped one. */
+    fun placement(lang: String): com.corlang.app.data.model.PlacementTest? {
+        val key = "content/$lang/placement(opt)"
+        return cache.getOrPut(key) {
+            if (assetExists("content/$lang/placement.json"))
+                json.decodeFromString<com.corlang.app.data.model.PlacementTest>(readAsset("content/$lang/placement.json"))
+            else PlacementNone
+        }.let { if (it === PlacementNone) null else it as com.corlang.app.data.model.PlacementTest }
     }
 
     /** Exam specs, optional file; empty list when a language hasn't shipped one. */
