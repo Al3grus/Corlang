@@ -51,6 +51,7 @@ import kotlinx.coroutines.launch
 fun SettingsScreen(
     container: AppContainer,
     onBack: () -> Unit = {},
+    onPlacement: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -142,6 +143,22 @@ fun SettingsScreen(
                     OutlinedButton(onClick = { showPicker = false }) { Text("Cancel") }
                 }
             )
+        }
+
+        // ----- Placement -----
+        SectionTitle("🎯 Starting level")
+        InfoCard {
+            Text("Find your level", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+            Text(
+                "A two-minute check across A0 to B1 places you at the right lesson, so you don't " +
+                    "start at day 1 if you already know some Croatian. Earlier days stay open to review.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            OutlinedButton(onClick = onPlacement, modifier = Modifier.fillMaxWidth()) {
+                Text("Take the placement test")
+            }
         }
 
         // ----- Learning pace -----

@@ -90,6 +90,12 @@ class ProgressRepository(private val dao: ProgressDao) {
         dao.upsertProgress(existing.copy(currentDay = nextDay, currentLevel = currentLevel))
     }
 
+    /** Moves the learner's start point (placement test result). Does not mark days complete. */
+    suspend fun setPlacement(lang: String, day: Int, level: String) {
+        val existing = dao.progressOnce(lang) ?: LanguageProgress(langCode = lang)
+        dao.upsertProgress(existing.copy(currentDay = day, currentLevel = level))
+    }
+
     suspend fun recordQuiz(lang: String, quizId: String, score: Int, total: Int) {
         dao.insertQuizAttempt(
             QuizAttempt(

@@ -37,6 +37,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.screens.LearnScreen
+import com.corlang.app.ui.screens.PlacementScreen
 import com.corlang.app.ui.screens.ProgressScreen
 import com.corlang.app.ui.screens.QuizScreen
 import com.corlang.app.ui.screens.SettingsScreen
@@ -69,6 +70,8 @@ private fun CorlangApp(container: AppContainer) {
     // Settings lives OUTSIDE the nav graph: pushing it onto a tab's back stack gets it
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
     var showSettings by rememberSaveable { mutableStateOf(false) }
+    // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
+    var showPlacement by rememberSaveable { mutableStateOf(false) }
 
     // Re-anchor the daily reminder to the next 19:00 on every app start, WorkManager's
     // periodic work drifts with Doze deferrals and would otherwise wander off schedule.
@@ -124,11 +127,21 @@ private fun CorlangApp(container: AppContainer) {
             }
         }
     ) { innerPadding ->
+        if (showPlacement) {
+            androidx.activity.compose.BackHandler { showPlacement = false }
+            Modifier.padding(innerPadding).let { pad ->
+                androidx.compose.foundation.layout.Box(pad) {
+                    PlacementScreen(container, lang, onDone = { showPlacement = false })
+                }
+            }
+            return@Scaffold
+        }
         if (showSettings) {
             androidx.activity.compose.BackHandler { showSettings = false }
             SettingsScreen(
                 container,
                 onBack = { showSettings = false },
+                onPlacement = { showSettings = false; showPlacement = true },
                 modifier = Modifier.padding(innerPadding)
             )
             return@Scaffold
@@ -145,7 +158,7 @@ private fun CorlangApp(container: AppContainer) {
                         launchSingleTop = true
                         restoreState = true
                     }
-                })
+                }, onPlacement = { showPlacement = true })
             }
             composable(Dest.WORDS.route) { WordsScreen(container, lang) }
             composable(Dest.QUIZ.route) { QuizScreen(container, lang) }
