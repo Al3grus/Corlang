@@ -36,6 +36,7 @@ import com.corlang.app.update.ReleaseInfo
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import com.corlang.app.ui.navigation.Dest
+import com.corlang.app.ui.screens.CorlangSplash
 import com.corlang.app.ui.screens.LearnScreen
 import com.corlang.app.ui.screens.PlacementScreen
 import com.corlang.app.ui.screens.ProgressScreen
@@ -52,7 +53,13 @@ class MainActivity : ComponentActivity() {
         val container = (application as CorlangApp).container
         setContent {
             CorlangTheme {
-                CorlangApp(container)
+                // Branded loader while content preloads; reveals the app when it hits 100%.
+                var ready by rememberSaveable { mutableStateOf(false) }
+                if (ready) {
+                    CorlangApp(container)
+                } else {
+                    CorlangSplash(container, onReady = { ready = true })
+                }
             }
         }
     }
