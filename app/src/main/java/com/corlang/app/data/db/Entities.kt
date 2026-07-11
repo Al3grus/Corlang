@@ -2,8 +2,10 @@ package com.corlang.app.data.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.serialization.Serializable
 
 /** One row per language: the learner's current position and streak. */
+@Serializable
 @Entity(tableName = "language_progress")
 data class LanguageProgress(
     @PrimaryKey val langCode: String,
@@ -15,6 +17,7 @@ data class LanguageProgress(
     val streakFreezes: Int = 0
 )
 
+@Serializable
 @Entity(tableName = "day_completion")
 data class DayCompletion(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -23,6 +26,7 @@ data class DayCompletion(
     val completedAtEpoch: Long
 )
 
+@Serializable
 @Entity(tableName = "quiz_attempt")
 data class QuizAttempt(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -38,6 +42,7 @@ data class QuizAttempt(
  * box 0 = brand new; each correct answer moves the word up a box and pushes
  * its due date further out. A row exists only once a word has been introduced.
  */
+@Serializable
 @Entity(tableName = "word_review", primaryKeys = ["langCode", "wordId"])
 data class WordReview(
     val langCode: String,
@@ -48,6 +53,7 @@ data class WordReview(
     val lapses: Int = 0
 )
 
+@Serializable
 @Entity(tableName = "feynman_attempt")
 data class FeynmanAttempt(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -63,6 +69,7 @@ data class FeynmanAttempt(
  * score/total and pass = score/total >= the section threshold; writing/speaking are
  * self-assessed pass/fail with score = total = 0.
  */
+@Serializable
 @Entity(tableName = "exam_section_attempt")
 data class ExamSectionAttempt(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -76,6 +83,7 @@ data class ExamSectionAttempt(
 )
 
 /** A ticked item on a plan day's checklist (drill / resource / review item). */
+@Serializable
 @Entity(tableName = "day_task_check", primaryKeys = ["langCode", "day", "itemId"])
 data class DayTaskCheck(
     val langCode: String,
@@ -85,6 +93,7 @@ data class DayTaskCheck(
 )
 
 /** A ticked CEFR can-do statement (exam-readiness self-checklist). */
+@Serializable
 @Entity(tableName = "can_do_check", primaryKeys = ["langCode", "levelId", "itemId"])
 data class CanDoCheck(
     val langCode: String,
