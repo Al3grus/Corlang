@@ -7,6 +7,7 @@ import com.corlang.app.data.WordsRepository
 import com.corlang.app.data.db.AppDatabase
 import com.corlang.app.data.prefs.LanguagePrefs
 import com.corlang.app.speech.TtsManager
+import com.corlang.app.update.Updater
 
 /**
  * Tiny manual dependency container. Keeps construction in one place without pulling in a DI
@@ -20,6 +21,7 @@ class AppContainer(context: Context) {
     val words: WordsRepository =
         WordsRepository(AppDatabase.get(context).progressDao(), content)
     val tts: TtsManager = TtsManager(context)
+    val updater: Updater = Updater(context)
 }
 
 class CorlangApp : android.app.Application() {

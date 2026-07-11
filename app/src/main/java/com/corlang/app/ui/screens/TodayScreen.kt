@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -172,6 +173,7 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
             )
         }
 
+        Spacer(Modifier.height(12.dp))
         Text(
             "${day.phase} · Week ${day.week} · ${day.level}",
             style = MaterialTheme.typography.labelLarge,
@@ -186,34 +188,53 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
 
         InfoCard {
             SectionTitle("🎯 In this lesson you will")
-            Text(day.objective, style = MaterialTheme.typography.bodyMedium)
+            Text(day.objective, style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(bottom = 4.dp))
         }
 
-        // THE button.
-        Button(
-            onClick = { inPlayer = true },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 8.dp)
-        ) {
+        Spacer(Modifier.height(8.dp))
+        // Days must be done in order — a future day is locked until you finish the current one.
+        val locked = day.day > targetDay
+        if (locked) {
+            Surface(
+                color = MaterialTheme.colorScheme.surfaceVariant,
+                contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                shape = RoundedCornerShape(12.dp),
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+            ) {
+                Text(
+                    "🔒 Locked — finish Day $targetDay first. No skipping ahead.",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
+        } else {
+            Button(
+                onClick = { inPlayer = true },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp)
+            ) {
+                Text(
+                    when {
+                        isDone -> "Day done ✓ — revisit the lesson"
+                        stepsDone > 0 -> "Continue lesson ($stepsDone/${actionSteps.size} steps done)"
+                        else -> "Start lesson →"
+                    },
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.padding(vertical = 6.dp)
+                )
+            }
             Text(
-                when {
-                    isDone -> "Day done ✓ — revisit the lesson"
-                    stepsDone > 0 -> "Continue lesson ($stepsDone/${actionSteps.size} steps done)"
-                    else -> "Start lesson →"
-                },
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(vertical = 6.dp)
+                "${actionSteps.size} guided steps · the app walks you through each one",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 4.dp)
             )
         }
-        Text(
-            "${actionSteps.size} guided steps · the app walks you through each one",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(top = 4.dp)
-        )
 
-        androidx.compose.foundation.layout.Spacer(Modifier.height(20.dp))
+        Spacer(Modifier.height(24.dp))
 
         // The stepping-stones map: scroll your level's lessons, jump to any you've reached,
         // switch between completed levels to review.
