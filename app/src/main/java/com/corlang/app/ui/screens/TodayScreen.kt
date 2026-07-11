@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -212,6 +213,18 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
             modifier = Modifier.padding(top = 4.dp)
         )
 
-        androidx.compose.foundation.layout.Spacer(Modifier.padding(bottom = 24.dp))
+        androidx.compose.foundation.layout.Spacer(Modifier.height(20.dp))
+
+        // The stepping-stones map: scroll your level's lessons, jump to any you've reached,
+        // switch between completed levels to review.
+        LevelJourney(
+            plan = plan,
+            completed = completed,
+            targetDay = targetDay,
+            viewedDay = viewedDay,
+            onPickDay = { d -> viewedDay = d; userBrowsed = true }
+        )
+
+        androidx.compose.foundation.layout.Spacer(Modifier.height(24.dp))
     }
 }
