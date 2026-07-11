@@ -1,4 +1,4 @@
-# CEFR self-assessment grid (Table 2) — official can-do descriptors
+# CEFR self-assessment grid (Table 2), official can-do descriptors
 
 - **Source:** Council of Europe, *Common European Framework of Reference for Languages*,
   self-assessment grid (CEFR 3.3, Table 2); as republished by Europass (European Union).

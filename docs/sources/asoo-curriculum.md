@@ -1,6 +1,6 @@
-# ASOO: Hrvatski jezik za strance — opći jezik, stupnjevi A1–C2
+# ASOO: Hrvatski jezik za strance, opći jezik, stupnjevi A1–C2
 
-- **Source:** Agencija za strukovno obrazovanje i obrazovanje odraslih (ASOO) — *Nastavni plan
+- **Source:** Agencija za strukovno obrazovanje i obrazovanje odraslih (ASOO), *Nastavni plan
   i program (kurikul) učenja stranog jezika za odrasle: Hrvatski jezik za strance, opći jezik
   (stupnjevi A1–C2)*. The official Croatian state curriculum used by licensed adult-education
   institutions (the same institutions authorized to run the official language exams).
@@ -12,10 +12,10 @@
 - **Hours:** A1 = 140, A2 = 140, B1 = 280, B2 = 140, C1 = 280, C2 = 124 teaching hours.
 
 Below are the **verbatim grammar inventories** ("Gramatičke strukture") and topic lists
-("Teme i vokabular") per level — the contract the app's grammar syllabus, vocab themes and
+("Teme i vokabular") per level, the contract the app's grammar syllabus, vocab themes and
 plan phases are validated against.
 
-## A1 — Pripremni stupanj
+## A1, Pripremni stupanj
 
 ### Grammar (verbatim)
 - abeceda
@@ -71,7 +71,7 @@ introductions, greetings; simple Q&A about immediate needs; simple purchases; nu
 personal information, describing where one lives. Writing: forms with personal data; greeting
 card; simple postcard; short note about location/meeting; simple sentences about self.
 
-## A2 — Temeljni stupanj
+## A2, Temeljni stupanj
 
 ### Grammar (verbatim)
 - posvojni pridjevi; odnosni pridjevi na -ski, -ški, -čki, -ćki
@@ -112,7 +112,7 @@ Writing: short notes/messages; simple event reports (what/when/where); everyday-
 descriptions; CV-style form data; short letters with greetings/thanks; linking with i/ali/jer
 and najprije/zatim/potom/kasnije.
 
-## B1 — Prelazni stupanj
+## B1, Prelazni stupanj
 
 ### Grammar (verbatim)
 - glagoli u kontekstu + vidski parovi (extensive series): pisati/napisati/opisati/zapisati/…;
@@ -153,7 +153,7 @@ experience descriptions with feelings; dreams/hopes/ambitions; explaining plans;
 book/film with reactions. Writing: connected texts on familiar topics with opinions; experience
 /event texts; personal letters with news and retellings; responding to ads; short CV.
 
-## B2 / C1 / C2 (continuation levels — summarized)
+## B2 / C1 / C2 (continuation levels, summarized)
 
 - **B2 (140 h):** noun-class particularities (a-, e-, i-vrsta), predicate nominative vs
   instrumental, agreement (sročnost) incl. tata/varalica/braća types, numeric nouns, se-passive,

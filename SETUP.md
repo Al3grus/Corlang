@@ -12,7 +12,7 @@ This is a native Android app. It builds with **Android Studio**, which bundles e
 
 1. **File ▸ Open** → select this `Corlang` folder.
 2. Android Studio will run a **Gradle sync** and download dependencies (Compose, Room, etc.) the first
-   time — give it a few minutes. The Gradle wrapper is configured for Gradle 8.9.
+   time, give it a few minutes. The Gradle wrapper is configured for Gradle 8.9.
    - If it asks about the Gradle JDK, choose the bundled JDK 17.
 
 > Note: the Gradle **wrapper JAR** is not committed (it's a binary). Android Studio regenerates it
@@ -33,7 +33,7 @@ Walk through this once to confirm everything works:
       **15-minute review** block. Tap **Next ›** / **‹ Prev** to browse days.
 - [ ] Tap **Mark day complete** → button shows *Completed ✓*.
 - [ ] **Cheatsheet** scrolls through 10 sections with bullets, mono diagrams, and examples.
-- [ ] **Quiz** → open *A0 — Survival French* → answer 10 questions; each shows ✅/❌ + an explanation;
+- [ ] **Quiz** → open *A0 - Survival French* → answer 10 questions; each shows ✅/❌ + an explanation;
       a final score screen appears and is saved.
 - [ ] **Teach** → open a concept → type an explanation → **Check what I missed** → tick rubric points;
       unticked ones reveal a *Re-teach* box. **Save & finish**.
@@ -46,10 +46,10 @@ Walk through this once to confirm everything works:
 ## Adding or editing content
 
 All curriculum is JSON under `app/src/main/assets/content/<lang>/`. To change a lesson, quiz, or
-cheatsheet, just edit the JSON — no code changes needed. To add a **new language**:
+cheatsheet, just edit the JSON, no code changes needed. To add a **new language**:
 
 1. Create `app/src/main/assets/content/<code>/` with the seven files
-   (`meta, cheatsheet, levels, plan, quizzes, feynman, resources`.json) — copy `fr/` as a template.
+   (`meta, cheatsheet, levels, plan, quizzes, feynman, resources`.json), copy `fr/` as a template.
 2. Add the `<code>` to `availableLanguages` in
    `app/src/main/java/com/corlang/app/data/ContentRepository.kt`.
 

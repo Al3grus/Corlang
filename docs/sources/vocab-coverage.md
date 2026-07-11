@@ -18,7 +18,7 @@ before it counts as done. **Word ids are frozen once shipped** (SRS keys on them
 | `08-b1-knowledge.json` | B1 | science & inventions (Znanost, otkrića, izumi), art & culture (Umjetnost), ecology (Eko-Hrvatska), food & health discourse (Ono smo što jedemo) | 226 | ✅ shipped (ids frozen) |
 | `09-b1-verbs-aspect.json` | B1 | the ASOO B1 "glagoli u kontekstu" series: pisati/gledati/misliti/raditi/zvati/stati/držati/igrati/živjeti/govoriti/pustiti/staviti families with aspect pairs; abstract nouns & word formation; opinion/argument phrases | 146 | ✅ shipped (ids frozen) |
 | `10-b1-topup.json` | A2/B1 | extended family & in-laws, children & parenting, character/emotions depth, daily-life gaps, official exam-text lemmas | 421 | ✅ shipped (ids frozen) |
-| **Total** | | | **2,412 shipped** — inside the research band for B1 (~2,400–3,000 lemmas) | |
+| **Total** | | | **2,412 shipped**, inside the research band for B1 (~2,400–3,000 lemmas) | |
 
 ## Batch rules
 
