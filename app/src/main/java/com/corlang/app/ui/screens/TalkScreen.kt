@@ -14,7 +14,6 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -54,12 +53,17 @@ fun TalkScreen(container: AppContainer, lang: String) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("🤖", style = MaterialTheme.typography.displayMedium)
+            com.corlang.app.ui.components.CorlangLogo(
+                variant = com.corlang.app.ui.components.LogoVariant.ORBIT,
+                size = 72.dp,
+                brand = MaterialTheme.colorScheme.onSurfaceVariant,
+                core = MaterialTheme.colorScheme.onSurfaceVariant
+            )
             Text(
                 "Meet your conversation partner",
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(top = 12.dp)
+                modifier = Modifier.padding(top = 14.dp)
             )
             Text(
                 "Practice real back-and-forth Croatian at your level, with gentle corrections. " +
@@ -138,11 +142,11 @@ fun TalkScreen(container: AppContainer, lang: String) {
             }
             if (sending) {
                 item {
-                    Row(Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.width(20.dp),
-                            strokeWidth = 2.dp
-                        )
+                    Row(
+                        Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        com.corlang.app.ui.components.CorlangRingSpinner(size = 20.dp)
                         Text("Tutor is typing…", style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(start = 10.dp))

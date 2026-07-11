@@ -40,9 +40,24 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
     val scope = rememberCoroutineScope()
     val test = remember(lang) { container.content.placement(lang) }
     if (test == null) {
-        Column(Modifier.padding(16.dp)) {
-            Text("No placement test for this language yet.")
-            Button(onClick = onDone, modifier = Modifier.padding(top = 8.dp)) { Text("Back") }
+        Column(
+            Modifier.fillMaxSize().padding(24.dp),
+            verticalArrangement = androidx.compose.foundation.layout.Arrangement.Center,
+            horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
+        ) {
+            com.corlang.app.ui.components.CorlangLogo(
+                variant = com.corlang.app.ui.components.LogoVariant.ORBIT,
+                size = 56.dp,
+                brand = MaterialTheme.colorScheme.onSurfaceVariant,
+                core = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Text(
+                "No placement test for this language yet.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 12.dp)
+            )
+            Button(onClick = onDone, modifier = Modifier.padding(top = 12.dp)) { Text("Back") }
         }
         return
     }

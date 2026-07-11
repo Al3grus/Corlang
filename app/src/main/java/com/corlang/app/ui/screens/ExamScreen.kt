@@ -78,7 +78,24 @@ object ExamRules {
 fun ExamScreen(container: AppContainer, lang: String) {
     val exams = remember(lang) { container.content.exams(lang) }
     if (exams.isEmpty()) {
-        Column(Modifier.padding(16.dp)) { Text("No exam content for this language yet.") }
+        Column(
+            Modifier.fillMaxSize().padding(24.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            com.corlang.app.ui.components.CorlangLogo(
+                variant = com.corlang.app.ui.components.LogoVariant.ORBIT,
+                size = 56.dp,
+                brand = MaterialTheme.colorScheme.onSurfaceVariant,
+                core = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Text(
+                "No exam content for this language yet.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 12.dp)
+            )
+        }
         return
     }
     // Ids only, so an in-progress exam/section survives rotation/recreation.
