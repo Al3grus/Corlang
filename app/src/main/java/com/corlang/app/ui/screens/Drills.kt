@@ -30,6 +30,9 @@ import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.DrillGen
 import com.corlang.app.data.WordsRepository
+import com.corlang.app.data.model.ActivityKind
+import com.corlang.app.data.model.LearnItem
+import com.corlang.app.data.model.StudyDay
 import com.corlang.app.data.model.VocabWord
 import com.corlang.app.ui.Haptics
 import com.corlang.app.ui.components.SpeakerButton
@@ -148,9 +151,60 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
  */
 @Composable
 fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
-    val context = LocalContext.current
     val source = drillWords(container, lang)
     val items = remember(source.size) { DrillGen.buildRecallItems(source, 8) }
+    RecallRunner(
+        container, items,
+        "Producing the Croatian yourself, with the right diacritics, is what speaking needs.",
+        onFinished
+    )
+}
+
+/**
+ * Wrap-up retrieval built from TODAY'S own lesson: produce the Croatian, from memory, for the
+ * exact phrases the day's LEARN activities taught. This is the day's real closing exercise, so
+ * "recall your intro / greetings / nationalities" tests the content just studied, not random words.
+ */
+@Composable
+fun WrapupRecall(container: AppContainer, day: StudyDay, onFinished: () -> Unit) {
+    val items = remember(day.day) {
+        wrapupRecallPhrases(day)
+            .map { DrillGen.Recall(en = it.en, answerHr = it.hr, posHint = it.note) }
+            .take(8)
+    }
+    RecallRunner(
+        container, items,
+        "Recalling today's phrases from memory is what makes them stick.",
+        onFinished
+    )
+}
+
+/**
+ * The clean, typable phrases from a day's LEARN activities, used to build the wrap-up recall.
+ * For "A / B" entries we keep just the first form (one clean answer to produce); we drop
+ * ellipsis stubs ("Zovem se…") and anything too long to reproduce letter-for-letter fairly.
+ * Shared with the session builder so it only inserts a recall wrap-up when there's enough to test.
+ */
+fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
+    day.activities
+        .filter { it.type == ActivityKind.LEARN }
+        .flatMap { it.items }
+        .asSequence()
+        .filter { it.en.isNotBlank() && "…" !in it.hr && "..." !in it.hr }
+        .map { it.copy(hr = it.hr.substringBefore(" / ").trim()) }   // keep the first alternative form
+        .filter { it.hr.length in 2..40 }
+        .distinctBy { it.hr.lowercase() }
+        .toList()
+
+/** Shared EN -> HR typed-recall runner used by both the deck recall drill and the day wrap-up. */
+@Composable
+private fun RecallRunner(
+    container: AppContainer,
+    items: List<DrillGen.Recall>,
+    resultLine: String,
+    onFinished: () -> Unit
+) {
+    val context = LocalContext.current
 
     var qIndex by remember { mutableIntStateOf(0) }
     var score by remember { mutableIntStateOf(0) }
@@ -165,8 +219,7 @@ fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
         return
     }
     if (finished) {
-        DrillResult(score, items.size,
-            "Producing the Croatian yourself, with the right diacritics, is what speaking needs.", onFinished)
+        DrillResult(score, items.size, resultLine, onFinished)
         return
     }
 
