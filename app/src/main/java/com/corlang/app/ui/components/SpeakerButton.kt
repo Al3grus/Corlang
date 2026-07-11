@@ -15,7 +15,7 @@ import com.corlang.app.speech.TtsState
 
 /**
  * Speaker icon that pronounces [text] in Croatian. When the Croatian voice is missing it
- * opens the system voice-data installer instead — the feature explains itself.
+ * opens the system voice-data installer instead, the feature explains itself.
  */
 @Composable
 fun SpeakerButton(

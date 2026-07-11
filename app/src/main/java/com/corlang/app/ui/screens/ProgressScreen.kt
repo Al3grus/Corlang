@@ -92,7 +92,7 @@ fun ProgressScreen(container: AppContainer, lang: String) {
         // CEFR ladder
         SectionTitle("🪜 CEFR ladder & milestones")
         Text(
-            "C2 is intentionally excluded — it's effectively unreachable for most non-native learners.",
+            "C2 is intentionally excluded, it's effectively unreachable for most non-native learners.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 4.dp)
@@ -131,7 +131,7 @@ fun ProgressScreen(container: AppContainer, lang: String) {
         }
         if (examLevel?.exam != null) {
             val exam = examLevel.exam!!
-            SectionTitle("🎓 Exam readiness — ${examLevel.id}")
+            SectionTitle("🎓 Exam readiness, ${examLevel.id}")
             InfoCard {
                 Text(exam.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                 Text(exam.passRule, style = MaterialTheme.typography.bodySmall,
@@ -144,7 +144,7 @@ fun ProgressScreen(container: AppContainer, lang: String) {
                     examSpec.sections.forEach { s ->
                         val a = bySection[s.id]
                         Bullet(
-                            s.title + " — " + when {
+                            s.title + ", " + when {
                                 a == null -> "not attempted"
                                 a.passed -> "passed ✓"
                                 s.passPercent != null && a.total > 0 ->

@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 
 /*
- * Corlang palette — "Adriatic": deep sea blue (primary), terracotta roof-tile
+ * Corlang palette, "Adriatic": deep sea blue (primary), terracotta roof-tile
  * (secondary), warm sand (tertiary). Every Material role is specified for BOTH
  * light and dark so no default (purple) role can leak into the UI.
  */

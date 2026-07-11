@@ -125,7 +125,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             queue.addAll(container.words.buildSession(lang, today, newPerDay))
             sessionTotal = queue.size
             doneCount = 0
-            // Keep prefs in agreement with the freshly built queue — otherwise a stale
+            // Keep prefs in agreement with the freshly built queue, otherwise a stale
             // same-day snapshot could be restored later and re-serve already-graded cards.
             container.languagePrefs.setWordsSessionSnapshot(snapshotNow())
         }
@@ -239,7 +239,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
                 modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
             ) {
                 Text(
-                    "🎉 Goal ring closed — today's words are done and your streak is safe.",
+                    "🎉 Goal ring closed, today's words are done and your streak is safe.",
                     modifier = Modifier.padding(14.dp),
                     fontWeight = FontWeight.SemiBold
                 )
@@ -260,7 +260,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             )
         }
 
-        // The daily count is a floor, not a ceiling — keep learning past it whenever you want.
+        // The daily count is a floor, not a ceiling, keep learning past it whenever you want.
         if (queue.isEmpty()) {
             OutlinedButton(
                 onClick = {
@@ -534,7 +534,7 @@ private fun WordSession(
         }
 
         OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
-            Text(if (review) "End review" else "Pause — resumes exactly here")
+            Text(if (review) "End review" else "Pause, resumes exactly here")
         }
     }
 }

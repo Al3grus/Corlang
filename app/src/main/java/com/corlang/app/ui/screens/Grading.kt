@@ -19,7 +19,7 @@ object Grading {
         } else {
             Normalizer.normalize(base, Normalizer.Form.NFD)
                 .replace("\\p{Mn}+".toRegex(), "")      // remove diacritics
-                // đ does not decompose under NFD — map it explicitly so leniency is consistent.
+                // đ does not decompose under NFD, map it explicitly so leniency is consistent.
                 .replace('đ', 'd')
         }
         return deAccented

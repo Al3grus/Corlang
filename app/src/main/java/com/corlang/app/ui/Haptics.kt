@@ -8,7 +8,7 @@ import android.os.VibratorManager
 
 /**
  * Explicit vibration for learning feedback. Compose's performHapticFeedback is gated by the
- * system "touch feedback" setting, which many users disable — these effects always fire.
+ * system "touch feedback" setting, which many users disable, these effects always fire.
  */
 object Haptics {
 
@@ -21,17 +21,17 @@ object Haptics {
             context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
         }
 
-    /** Light tick — card flip, selection. */
+    /** Light tick, card flip, selection. */
     fun tick(context: Context) {
         vibrator(context)?.vibrate(VibrationEffect.createOneShot(20, 120))
     }
 
-    /** Single firm buzz — correct answer / card graded. */
+    /** Single firm buzz, correct answer / card graded. */
     fun confirm(context: Context) {
         vibrator(context)?.vibrate(VibrationEffect.createOneShot(40, 200))
     }
 
-    /** Double buzz — wrong answer. */
+    /** Double buzz, wrong answer. */
     fun reject(context: Context) {
         vibrator(context)?.vibrate(
             VibrationEffect.createWaveform(longArrayOf(0, 45, 80, 45), intArrayOf(0, 220, 0, 220), -1)

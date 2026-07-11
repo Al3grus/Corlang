@@ -5,7 +5,7 @@ import com.corlang.app.data.model.VocabWord
 /**
  * Auto-generated drill items from the validated vocabulary deck. Pure and unit-tested.
  *
- * Safety principle: the app never *generates* Croatian forms as correct answers — the correct
+ * Safety principle: the app never *generates* Croatian forms as correct answers, the correct
  * answer is always lifted verbatim from a human-authored, QA'd example sentence. Distractors
  * are ending-mutations that are wrong IN THAT SENTENCE even if they exist as forms elsewhere.
  */
@@ -24,7 +24,7 @@ object DrillGen {
     /**
      * Builds a cloze from a word's example sentence by locating the inflected form of the
      * headword. Returns null when the form can't be located confidently (e.g. suppletive
-     * verb stems like pisati→pišem) — skipping is always safe.
+     * verb stems like pisati→pišem), skipping is always safe.
      */
     fun clozeFor(word: VocabWord, shuffle: Boolean = true): Cloze? {
         val ex = word.example ?: return null
@@ -34,7 +34,7 @@ object DrillGen {
         // Find the sentence token sharing the longest prefix with the headword.
         // Noun declension only changes the ending (kava→kavu, grad→gradovima), so all but
         // the last 2 chars of the headword must match; stem-mutating verbs (pisati→pišem)
-        // are rejected on purpose — never risk blanking the wrong word.
+        // are rejected on purpose, never risk blanking the wrong word.
         val tokens = letters.findAll(ex.target).map { it.value }.toList()
         val minShared = maxOf(3, head.length - 2)
         val match = tokens

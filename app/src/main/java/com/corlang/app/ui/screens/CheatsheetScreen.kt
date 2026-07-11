@@ -19,7 +19,7 @@ import com.corlang.app.ui.components.ExampleLine
 import com.corlang.app.ui.components.InfoCard
 
 /**
- * The single-page key-concepts cheatsheet — designed to be reviewed in ~5 minutes.
+ * The single-page key-concepts cheatsheet, designed to be reviewed in ~5 minutes.
  * Renders bullets, monospace diagrams, and worked examples per section.
  */
 @Composable

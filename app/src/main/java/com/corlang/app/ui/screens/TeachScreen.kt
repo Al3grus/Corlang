@@ -62,7 +62,7 @@ fun TeachScreen(container: AppContainer, lang: String) {
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(vertical = 8.dp)
             )
-            if (concepts.isEmpty()) Text("No concepts for this language yet — coming soon.")
+            if (concepts.isEmpty()) Text("No concepts for this language yet, coming soon.")
             concepts.forEach { c ->
                 Card(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp).clickable { activeId = c.id }
@@ -162,7 +162,7 @@ private fun FeynmanRunner(
             ) {
                 Text(
                     if (gotCount == total)
-                        "🎉 You covered all $total points — you can explain this on your own."
+                        "🎉 You covered all $total points, you can explain this on your own."
                     else
                         "You covered $gotCount / $total. Re-read the missed points above, then explain again.",
                     modifier = Modifier.padding(14.dp),

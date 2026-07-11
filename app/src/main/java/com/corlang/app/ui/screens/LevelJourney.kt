@@ -31,7 +31,7 @@ import com.corlang.app.ui.components.SectionTitle
 
 /**
  * A scrollable "stepping stones" map of the plan, grouped by CEFR level. Shows the days of a
- * chosen level as a path — completed days filled, the current day highlighted, future days
+ * chosen level as a path, completed days filled, the current day highlighted, future days
  * locked. Completed/current days are tappable to jump the Lesson view there. Reached levels
  * (and only those) are selectable, so finishing a level unlocks the next while past levels
  * stay open for review.

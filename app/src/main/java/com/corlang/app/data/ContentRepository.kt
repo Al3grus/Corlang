@@ -57,8 +57,8 @@ class ContentRepository(private val context: Context) {
     }
 
     /**
-     * Reads the explicit ordering manifest of a split content directory. The manifest — not
-     * filesystem order — defines concatenation order, because for vocab that order IS the
+     * Reads the explicit ordering manifest of a split content directory. The manifest, not
+     * filesystem order, defines concatenation order, because for vocab that order IS the
      * SRS introduction order.
      */
     private fun indexOf(lang: String, dir: String): List<String> =
@@ -107,7 +107,7 @@ class ContentRepository(private val context: Context) {
         } as VocabSet
     }
 
-    /** Grammar syllabus — optional file; empty when a language hasn't shipped one. */
+    /** Grammar syllabus, optional file; empty when a language hasn't shipped one. */
     fun grammar(lang: String): GrammarSyllabus {
         val key = "content/$lang/grammar(opt)"
         @Suppress("UNCHECKED_CAST")
@@ -118,7 +118,7 @@ class ContentRepository(private val context: Context) {
         } as GrammarSyllabus
     }
 
-    /** Exam specs — optional file; empty list when a language hasn't shipped one. */
+    /** Exam specs, optional file; empty list when a language hasn't shipped one. */
     fun exams(lang: String): List<ExamSpec> {
         val key = "content/$lang/exams(opt)"
         @Suppress("UNCHECKED_CAST")

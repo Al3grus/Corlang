@@ -114,7 +114,7 @@ private fun QuizList(
             modifier = Modifier.padding(bottom = 8.dp)
         )
         if (quizzes.isEmpty()) {
-            Text("No quizzes for this language yet — coming soon.")
+            Text("No quizzes for this language yet, coming soon.")
         }
         quizzes.forEach { quiz ->
             val best by container.progress.bestQuizScore(lang, quiz.id)
@@ -249,7 +249,7 @@ private fun QuizRunner(
             }
 
             QuestionType.REORDER -> {
-                // Scramble the tokens for display — content lists them in the correct order,
+                // Scramble the tokens for display, content lists them in the correct order,
                 // and an already-solved puzzle is no exercise.
                 val scrambled = remember(q.prompt) {
                     var s = q.options.shuffled()
@@ -291,7 +291,7 @@ private fun QuizRunner(
                         }
                 ) {
                     Text(
-                        if (reorderAssembled.isEmpty()) "(tap words above — tap here to undo)"
+                        if (reorderAssembled.isEmpty()) "(tap words above, tap here to undo)"
                         else reorderAssembled.joinToString(" "),
                         modifier = Modifier.padding(12.dp)
                     )
@@ -434,7 +434,7 @@ private fun QuizSummary(quiz: Quiz, score: Int, onExit: () -> Unit) {
         )
         Text(
             when {
-                pct >= 90 -> "Excellent — you've got this cold."
+                pct >= 90 -> "Excellent, you've got this cold."
                 pct >= 70 -> "Solid. Review the ones you missed and move on."
                 pct >= 50 -> "Getting there. Redo this quiz after the cheatsheet."
                 else -> "Worth re-studying this level before continuing."

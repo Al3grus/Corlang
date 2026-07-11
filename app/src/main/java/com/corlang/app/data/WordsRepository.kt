@@ -52,7 +52,7 @@ class WordsRepository(
     }
 
     /**
-     * The next [count] never-seen words REGARDLESS of the daily goal — the goal is a floor,
+     * The next [count] never-seen words REGARDLESS of the daily goal, the goal is a floor,
      * not a ceiling. Used by "Learn more words" after the day's session is cleared.
      */
     suspend fun extraNewWords(lang: String, count: Int = 10): List<SessionCard> {
