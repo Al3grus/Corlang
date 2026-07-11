@@ -1,0 +1,469 @@
+{
+  "171": [
+    {
+      "type": "LEARN",
+      "title": "Warm-up: art, films and the passive participle",
+      "intro": "Week 24 closes with the two things that must survive contact with real conversation: the passive participle and the language of art. These twelve lines let you say when a work was made, describe it, and react to it — exactly what tonight's long conversation about films and books needs.",
+      "items": [
+        { "hr": "umjetničko djelo", "en": "work of art", "note": "djelo declines like selo: G djela, pl. djela. Umjetničko djelo — a work of art." },
+        { "hr": "Slika je naslikana 1910. godine.", "en": "The painting was painted in 1910.", "note": "naslikati → naslikan; feminine subject slika → naslikana. Passive with biti." },
+        { "hr": "Roman je napisan na hrvatskom.", "en": "The novel was written in Croatian.", "note": "napisati → napisan; the pisati family meets the passive." },
+        { "hr": "Film je snimljen prošle godine.", "en": "The film was shot last year.", "note": "snimiti → snimljen: the -iti class takes -en with iotation m → mlj." },
+        { "hr": "Izložba je otvorena do kraja mjeseca.", "en": "The exhibition is open until the end of the month.", "note": "otvoriti → otvoren; do + genitive: do kraja mjeseca." },
+        { "hr": "Kip je izrađen od bronce.", "en": "The statue is made of bronze.", "note": "izraditi → izrađen (d → đ). od + genitive for material: od bronce, od kamena." },
+        { "hr": "Radnja je smještena u Dubrovniku.", "en": "The plot is set in Dubrovnik.", "note": "smjestiti → smješten (st → št); radnja = plot/action, u + locative." },
+        { "hr": "Glavni lik je jako dobro opisan.", "en": "The main character is very well described.", "note": "lik = character; opisati → opisan, another pisati-family participle." },
+        { "hr": "Moram razmisliti o toj predstavi.", "en": "I have to think over that play.", "note": "misliti family: razmisliti = think over; predstava = (theatre) play, o + locative." },
+        { "hr": "Tko je smislio ovakav kraj?", "en": "Who came up with an ending like this?", "note": "smisliti = to come up with; smislio (m. sg. participle). Contrast izmisliti = invent." },
+        { "hr": "Svidjelo mi se, ali razočarao me kraj.", "en": "I liked it, but the ending disappointed me.", "note": "sviđati se + dative; razočarati koga = to disappoint someone. Your two go-to reactions." },
+        { "hr": "Toplo ti preporučujem tu knjigu.", "en": "I warmly recommend that book to you.", "note": "preporučivati → preporučujem; dative ti = to you. The line that ends every good retelling." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Participles and reactions in context",
+      "intro": "Form the participle, make it agree, and react like a native: from easy vocabulary up to the tricky iotation in izrađen and viđen.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What is an 'izložba'?", "difficulty": 2, "options": ["an exhibition", "a novel", "a statue", "a play"], "answer": "an exhibition", "explanation": "izložba = exhibition (from izložiti, to display). Otvorena je izložba = the exhibition has opened." },
+        { "type": "FILL", "prompt": "Complete the passive: Knjiga je ______ na hrvatskom. (napisati)", "difficulty": 3, "answer": "napisana", "accepted": ["napisana"], "strictDiacritics": true, "explanation": "napisati → napisan; the subject knjiga is feminine, so the participle agrees: napisana." },
+        { "type": "MCQ", "prompt": "Complete: Film je ______ prošle godine.", "difficulty": 4, "options": ["snimljen", "snimen", "snimio", "snimljena"], "answer": "snimljen", "explanation": "snimiti → snimljen (-iti class, -en with iotation m → mlj). Subject film is masculine → snimljen." },
+        { "type": "FILL", "prompt": "Complete: Slika je ______ 1910. godine. (naslikati)", "difficulty": 4, "answer": "naslikana", "accepted": ["naslikana"], "strictDiacritics": true, "explanation": "naslikati → naslikan; feminine slika → naslikana." },
+        { "type": "MCQ", "prompt": "Listen to your wife's recommendation. What does she suggest you watch, and why?", "difficulty": 5, "options": ["a film set in Dubrovnik, because the scenery is beautiful", "a play about artists, because it is funny", "a documentary about Tesla, because it is educational", "a film shot in Zagreb, because it is short"], "answer": "a film set in Dubrovnik, because the scenery is beautiful", "explanation": "Radnja je smještena u Dubrovniku = the plot is set in Dubrovnik; krajolik je prekrasan = the scenery is beautiful.", "audioText": "Večeras ti predlažem jedan hrvatski film. Radnja je smještena u Dubrovniku, a krajolik je stvarno prekrasan. Snimljen je prošle godine i svima se svidio." },
+        { "type": "MCQ", "prompt": "Choose the misliti-family verb: Moram još ______ o tvojem prijedlogu.", "difficulty": 6, "options": ["razmisliti", "izmisliti", "pomisliti", "smisliti"], "answer": "razmisliti", "explanation": "razmisliti (o čemu) = to think something over. izmisliti = invent; smisliti = come up with; pomisliti = think of suddenly." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'The novel was written a hundred years ago.'", "difficulty": 6, "options": ["napisan", "Roman", "sto", "je", "prije", "godina"], "ordered": ["Roman", "je", "napisan", "prije", "sto", "godina"], "answer": "Roman je napisan prije sto godina", "explanation": "Passive biti + participle: Roman je napisan; prije + genitive of time: prije sto godina." },
+        { "type": "MCQ", "prompt": "Which participle is correct: Kip je ______ od bronce.", "difficulty": 7, "options": ["izrađen", "izradjen", "izraden", "izradio"], "answer": "izrađen", "explanation": "izraditi → izrađen: the -iti class shows iotation d → đ (never plain d, never the perfekt izradio here)." },
+        { "type": "FILL", "prompt": "Complete: Ta je predstava ______ već tri puta ove sezone. (izvesti → passive, feminine)", "difficulty": 8, "answer": "izvedena", "accepted": ["izvedena"], "strictDiacritics": true, "explanation": "izvesti → izveden (consonant stem, -en); feminine predstava → izvedena = has been performed." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Razgovor o filmu koji smo gledali",
+      "intro": "The long conversation that closes the week: you retell last night's film to your wife and give your reactions. Read your lines ('Me') aloud — every one uses a passive participle or a reaction phrase from today's list.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Jučer smo gledali onaj hrvatski film. Kako ti se svidio?", "en": "Yesterday we watched that Croatian film. How did you like it?" },
+        { "speaker": "Me", "hr": "Jako mi se svidio! Radnja je smještena u Dubrovniku, a sve je prekrasno snimljeno.", "en": "I liked it a lot! The plot is set in Dubrovnik, and everything is beautifully shot." },
+        { "speaker": "Partner", "hr": "Znaš li po čemu je film nastao? Snimljen je prema poznatom romanu.", "en": "Do you know what the film is based on? It was made from a famous novel." },
+        { "speaker": "Me", "hr": "Nisam znao. Roman je vjerojatno napisan davno, zar ne?", "en": "I didn't know that. The novel was probably written long ago, right?" },
+        { "speaker": "Partner", "hr": "Da, napisan je prije skoro sto godina. Glavni lik je jako dobro opisan i u knjizi.", "en": "Yes, it was written almost a hundred years ago. The main character is very well described in the book too." },
+        { "speaker": "Me", "hr": "To me ne čudi. Ali moram priznati — razočarao me kraj.", "en": "That doesn't surprise me. But I have to admit — the ending disappointed me." },
+        { "speaker": "Partner", "hr": "Zašto? Meni je kraj bio najljepši dio.", "en": "Why? For me the ending was the loveliest part." },
+        { "speaker": "Me", "hr": "Predvidiv je. Da sam ja pisao scenarij, smislio bih nešto drukčije.", "en": "It's predictable. If I had written the script, I would have come up with something different." },
+        { "speaker": "Partner", "hr": "Ha! Onda idemo na kazališnu predstavu — ista priča je i izvedena na pozornici.", "en": "Ha! Then let's go to the theatre — the same story has also been performed on stage." },
+        { "speaker": "Me", "hr": "Rado. A ti mi onda preporuči i roman da ga pročitam.", "en": "Gladly. And then you recommend the novel too, so I can read it." },
+        { "speaker": "Partner", "hr": "Dogovoreno. Toplo ti ga preporučujem — bolji je od filma.", "en": "Deal. I warmly recommend it — it's better than the film." },
+        { "speaker": "Me", "hr": "Onda ću ga pročitati pa ćemo razmisliti o kraju zajedno.", "en": "Then I'll read it and we'll think about the ending together." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "172": [
+    {
+      "type": "LEARN",
+      "title": "The raditi family: earn it, get it done, rework it",
+      "intro": "One tiny root, raditi (to work / do), plus a handful of prefixes gives you the whole vocabulary of the working week. za- earns, od- gets a shift done, pre- reworks, ob- processes a topic, iz- produces. Learn the prefix, decode the verb — and fuel the job-market theme that runs through this week.",
+      "items": [
+        { "hr": "raditi → radim, radiš, radi", "en": "to work / to do (impf.) → I work…", "note": "The imperfective base: the process. Radim u uredu. Što radiš?" },
+        { "hr": "uraditi", "en": "to get done, to do (pf.)", "note": "The completed counterpart of raditi: Jesi li uradio zadaću? = Have you done your homework?" },
+        { "hr": "zaraditi", "en": "to earn", "note": "za- = gain/acquire. Zaradio sam prvu plaću. = I earned my first salary." },
+        { "hr": "odraditi", "en": "to put in, to get through (a shift, a task)", "note": "od- = complete and be done with. Odradila je noćnu smjenu. = She worked a night shift." },
+        { "hr": "preraditi", "en": "to rework, to process", "note": "pre- = re- / over. Moram preraditi izvještaj. And of materials: Nafta se prerađuje. = Oil is processed." },
+        { "hr": "obraditi", "en": "to process, to cover (a topic), to till", "note": "Na sastanku smo obradili sve točke. = At the meeting we covered every point. Also: obraditi zemlju = to till the soil." },
+        { "hr": "izraditi", "en": "to make, to produce, to draw up", "note": "iz- = out into being. Stolar je izradio stol; izraditi plan = to draw up a plan." },
+        { "hr": "Koliko zarađuješ mjesečno?", "en": "How much do you earn a month?", "note": "zarađivati → zarađujem is the imperfective (habitual). mjesečno = per month." },
+        { "hr": "Odradio sam pripravnički staž u banci.", "en": "I did my internship at a bank.", "note": "pripravnički staž = internship / traineeship; u banci = locative." },
+        { "hr": "Ovaj se materijal reciklira i prerađuje.", "en": "This material is recycled and processed.", "note": "A se-construction: the material is the subject; 3rd person + se = passive-like meaning." },
+        { "hr": "Radim od devet do pet, a katkad radim i prekovremeno.", "en": "I work nine to five, and sometimes I work overtime too.", "note": "od… do… + genitive; prekovremeno = overtime (adverb)." },
+        { "hr": "raditi = process, uraditi = complete", "en": "raditi (impf.) vs uraditi (pf.)", "note": "Radim na projektu = I'm working on it (ongoing). Uradio sam projekt = I finished it (done)." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "raditi and its prefixes",
+      "intro": "Pick the right prefix for the meaning, agree the past participle, and separate the process (raditi) from the result (uraditi).",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'zaraditi' mean?", "difficulty": 2, "options": ["to earn", "to rework", "to work overtime", "to get up"], "answer": "to earn", "explanation": "za- adds the sense of gaining: zaraditi = to earn (money). Zaradio sam plaću." },
+        { "type": "MCQ", "prompt": "Which verb means 'to cover / deal with a topic'? Na sastanku smo ______ sve točke.", "difficulty": 3, "options": ["obradili", "zaradili", "izradili", "odradili"], "answer": "obradili", "explanation": "obraditi temu / točke = to cover a topic / points. iz- makes, za- earns, od- gets through." },
+        { "type": "FILL", "prompt": "Complete the past (male speaker): Ja sam sve ______ na vrijeme. (uraditi)", "difficulty": 3, "answer": "uradio", "accepted": ["uradio"], "strictDiacritics": true, "explanation": "uraditi → uradio (m. sg.): a completed action, so the perfective." },
+        { "type": "MCQ", "prompt": "'She worked a night shift.' — Odradila je ______ smjenu.", "difficulty": 4, "options": ["noćnu", "noć", "noćna", "noću"], "answer": "noćnu", "explanation": "Direct object → accusative; the adjective agrees with feminine smjenu: noćnu smjenu." },
+        { "type": "FILL", "prompt": "Complete: Ovaj se materijal reciklira i ______. (preraditi → impf., 3rd sg.)", "difficulty": 5, "answer": "prerađuje", "accepted": ["prerađuje"], "strictDiacritics": true, "explanation": "The imperfective of preraditi is prerađivati → prerađuje (d → đ). A se-construction: the material is processed." },
+        { "type": "MCQ", "prompt": "Pick the aspect: Trenutačno ______ na novom projektu.", "difficulty": 5, "options": ["radim", "uradim", "zaradim", "izradim"], "answer": "radim", "explanation": "'Currently … on' = an ongoing process → imperfective raditi: Radim na projektu. Uradim would mean a single completed act." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'I did my internship at a bank.'", "difficulty": 6, "options": ["staž", "Odradio", "u", "sam", "pripravnički", "banci"], "ordered": ["Odradio", "sam", "pripravnički", "staž", "u", "banci"], "answer": "Odradio sam pripravnički staž u banci", "explanation": "Perfekt Odradio sam, then object pripravnički staž, then u + locative: u banci." },
+        { "type": "MCQ", "prompt": "Which prefix means 're- / over-' (rework, redo)?", "difficulty": 7, "options": ["pre-", "za-", "ob-", "iz-"], "answer": "pre-", "explanation": "pre- carries the 'across / over / re-' sense: preraditi = rework, prepisati = copy over, prevesti = translate." },
+        { "type": "FILL", "prompt": "Habitual question: Koliko ______ mjesečno? (zarađivati, ti)", "difficulty": 8, "answer": "zarađuješ", "accepted": ["zarađuješ"], "strictDiacritics": true, "explanation": "The habitual sense needs the imperfective zarađivati → zarađuješ (d → đ), not the perfective zaradiš." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "173": [
+    {
+      "type": "LEARN",
+      "title": "Verbal nouns: how formal Croatian names an action",
+      "intro": "News, job ads and contracts run on -nje nouns: čitanje, pisanje, zapošljavanje. They name the action itself, they are always neuter, and they turn any verb into a noun. Recognize them and a whole written register opens up — including tomorrow's job ads.",
+      "items": [
+        { "hr": "čitati → čitanje", "en": "to read → reading", "note": "Formed from the participle stem + -nje. Neuter: deklinira se kao more (G čitanja, u čitanju)." },
+        { "hr": "pisati → pisanje", "en": "to write → writing", "note": "Pisanje ispita = sitting the exam. Same -nje pattern." },
+        { "hr": "učiti → učenje", "en": "to study → learning, studying", "note": "Učenje jezika traži strpljenje. = Learning a language requires patience." },
+        { "hr": "putovati → putovanje", "en": "to travel → travelling, a trip", "note": "Note the full -ova- stem is kept: putovanje, not *putanje." },
+        { "hr": "zapošljavati → zapošljavanje", "en": "to employ / hire → employment, hiring", "note": "The theme word of the week: zapošljavanje mladih = employment of young people (l → lj in the stem)." },
+        { "hr": "obrazovati → obrazovanje", "en": "to educate → education", "note": "Ima visoko obrazovanje. = He has higher education. A noun you will meet on every CV." },
+        { "hr": "natjecati se → natjecanje", "en": "to compete → competition, contest", "note": "The reflexive se drops in the noun: natjecanje, javno natjecanje = public competition (a job vacancy)." },
+        { "hr": "parkirati → parkiranje", "en": "to park → parking", "note": "Parkiranje je zabranjeno. — the classic sign, verbal noun + passive participle in one." },
+        { "hr": "znati → znanje", "en": "to know → knowledge", "note": "A short irregular one: znati → znanje. Znanje jezika = knowledge of the language + genitive." },
+        { "hr": "Verbal nouns are neuter and decline regularly.", "en": "bez učenja, u putovanju, sa znanjem", "note": "G -nja, L -nju, I -njem: bez znanja, u pisanju, putovanjem." },
+        { "hr": "Bez znanja hrvatskoga teško je naći posao.", "en": "Without knowledge of Croatian it is hard to find a job.", "note": "bez + genitive (bez znanja); genitive object znanja hrvatskoga (jezika)." },
+        { "hr": "odlučivati → odlučivanje vs odluka", "en": "decision-making (process) vs a decision (result)", "note": "The -nje noun names the process; a separate short noun (odluka) names the result." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Building and using -nje nouns",
+      "intro": "Turn verbs into verbal nouns, decline them after prepositions, and tell the process (-nje) apart from the result.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What gender are verbal nouns in -nje?", "difficulty": 2, "options": ["neuter", "masculine", "feminine", "they have no gender"], "answer": "neuter", "explanation": "All -nje verbal nouns are neuter and decline like more/polje: čitanje, G čitanja." },
+        { "type": "FILL", "prompt": "Form the verbal noun: putovati → ______", "difficulty": 3, "answer": "putovanje", "accepted": ["putovanje"], "strictDiacritics": true, "explanation": "putovati keeps its -ova- stem: putovanje = travelling / a trip." },
+        { "type": "FILL", "prompt": "Form the verbal noun: učiti → ______", "difficulty": 3, "answer": "učenje", "accepted": ["učenje"], "strictDiacritics": true, "explanation": "učiti → učenje (i → e in the stem): learning, studying." },
+        { "type": "MCQ", "prompt": "Complete after 'bez': Bez ______ jezika teško je naći posao.", "difficulty": 4, "options": ["znanja", "znanje", "znanju", "znanjem"], "answer": "znanja", "explanation": "bez + genitive; znanje → znanja = without knowledge (of the language)." },
+        { "type": "MCQ", "prompt": "Which is the verbal noun of 'zapošljavati'?", "difficulty": 5, "options": ["zapošljavanje", "zaposlenik", "zaposlen", "posao"], "answer": "zapošljavanje", "explanation": "zapošljavati → zapošljavanje = the process of hiring. zaposlenik = employee, zaposlen = employed (participle)." },
+        { "type": "FILL", "prompt": "Complete in the locative: Uživam u ______ po Hrvatskoj. (putovanje)", "difficulty": 6, "answer": "putovanju", "accepted": ["putovanju"], "strictDiacritics": true, "explanation": "uživati u + locative; putovanje → putovanju." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'Learning a language requires patience.'", "difficulty": 6, "options": ["strpljenje", "jezika", "traži", "Učenje"], "ordered": ["Učenje", "jezika", "traži", "strpljenje"], "answer": "Učenje jezika traži strpljenje", "explanation": "Subject Učenje + genitive object jezika, then verb traži + accusative strpljenje." },
+        { "type": "MCQ", "prompt": "Which names the PROCESS rather than the result?", "difficulty": 7, "options": ["odlučivanje", "odluka", "izbor", "rješenje"], "answer": "odlučivanje", "explanation": "The -nje noun odlučivanje = decision-making (the process); odluka = the decision reached (the result)." },
+        { "type": "FILL", "prompt": "Complete: Sudjelovao sam na ______ mladih pjevača. (natjecanje, locative)", "difficulty": 8, "answer": "natjecanju", "accepted": ["natjecanju"], "strictDiacritics": true, "explanation": "na + locative; natjecanje → natjecanju. The reflexive se disappears in the verbal noun." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "174": [
+    {
+      "type": "LEARN",
+      "title": "Tržište rada: the language of job ads",
+      "intro": "The Croatian job market has its own vocabulary, and the exam expects you to read an ad and answer it. These fourteen words and phrases cover a whole ad — from the natječaj at the top to S poštovanjem at the bottom of your reply.",
+      "items": [
+        { "hr": "natječaj", "en": "job vacancy, open competition", "note": "Raspisan je natječaj za novo radno mjesto. = A vacancy has been announced (raspisati → raspisan)." },
+        { "hr": "oglas za posao", "en": "job advertisement", "note": "Javljam se na Vaš oglas. = I'm responding to your ad. javiti se na + accusative." },
+        { "hr": "poslodavac", "en": "employer", "note": "Fleeting a in the oblique cases: G poslodavca, D poslodavcu." },
+        { "hr": "zaposlenik / posloprimac", "en": "employee", "note": "zaposlenik is the everyday word; posloprimac is the legal term, opposite of poslodavac." },
+        { "hr": "plaća", "en": "salary, wage", "note": "bruto plaća (gross) vs neto plaća (net). Kolika je plaća? = How much is the salary?" },
+        { "hr": "radno iskustvo", "en": "work experience", "note": "Traži se tri godine radnog iskustva. = Three years of experience required (genitive after the number)." },
+        { "hr": "uvjeti", "en": "conditions, requirements", "note": "Ispunjavam sve uvjete natječaja. = I meet all the requirements of the vacancy." },
+        { "hr": "prijaviti se na natječaj", "en": "to apply for a vacancy", "note": "Prijavio sam se na natječaj. prijaviti se na + accusative." },
+        { "hr": "životopis i zamolba", "en": "CV and cover letter", "note": "zamolba = letter of application (also motivacijsko pismo). You send both with a prijava." },
+        { "hr": "radno mjesto", "en": "position, post, workplace", "note": "slobodno radno mjesto = a job opening; na radnom mjestu = at the workplace." },
+        { "hr": "puno / nepuno radno vrijeme", "en": "full-time / part-time", "note": "raditi na puno radno vrijeme = to work full-time. radno vrijeme = working hours." },
+        { "hr": "ugovor na neodređeno / na određeno", "en": "permanent / fixed-term contract", "note": "na neodređeno (vrijeme) = open-ended; na određeno = for a fixed term." },
+        { "hr": "Poštovani, javljam se na Vaš oglas za posao.", "en": "Dear Sir/Madam, I am responding to your job advertisement.", "note": "The standard formal opener of a written reply. Poštovani + capital Vaš (polite)." },
+        { "hr": "Smatram da ispunjavam sve uvjete. S poštovanjem,", "en": "I believe I meet all the requirements. Yours sincerely,", "note": "smatrati da = to believe that; S poštovanjem = the formal sign-off." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Reading and answering an ad",
+      "intro": "Work through a real ad: the vocabulary, the genitive after numbers, the case behind prijaviti se, and the formal phrases that frame a written reply.",
+      "questions": [
+        { "type": "MCQ", "prompt": "Who is the 'poslodavac'?", "difficulty": 2, "options": ["the employer", "the employee", "the salary", "the interview"], "answer": "the employer", "explanation": "poslodavac (one who gives work) = employer; the employee is the zaposlenik / posloprimac." },
+        { "type": "MCQ", "prompt": "What is a 'zamolba'?", "difficulty": 3, "options": ["a cover letter", "a salary", "a contract", "a work permit"], "answer": "a cover letter", "explanation": "zamolba = letter of application / cover letter, sent together with the životopis (CV)." },
+        { "type": "FILL", "prompt": "Complete: Prijavio sam se ______ natječaj. ('for/to the vacancy')", "difficulty": 4, "answer": "na", "accepted": ["na"], "strictDiacritics": true, "explanation": "prijaviti se na + accusative: prijaviti se na natječaj = to apply for a vacancy." },
+        { "type": "MCQ", "prompt": "Complete: Traži se tri godine radnog ______.", "difficulty": 5, "options": ["iskustva", "iskustvo", "iskustvu", "iskustvom"], "answer": "iskustva", "explanation": "The number phrase 'tri godine' + noun takes the genitive: radnog iskustva = of work experience." },
+        { "type": "MCQ", "prompt": "A permanent contract is an ugovor ______.", "difficulty": 5, "options": ["na neodređeno", "na određeno", "na pola", "na kratko"], "answer": "na neodređeno", "explanation": "na neodređeno (vrijeme) = open-ended / permanent; na određeno = fixed-term." },
+        { "type": "FILL", "prompt": "Complete the passive: ______ je natječaj za dva radna mjesta. (raspisati)", "difficulty": 6, "answer": "Raspisan", "accepted": ["Raspisan", "raspisan"], "strictDiacritics": true, "explanation": "raspisati → raspisan; masculine subject natječaj → Raspisan je natječaj = a vacancy has been announced." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'I am responding to your job advertisement.'", "difficulty": 6, "options": ["oglas", "Javljam", "Vaš", "na", "se"], "ordered": ["Javljam", "se", "na", "Vaš", "oglas"], "answer": "Javljam se na Vaš oglas", "explanation": "javiti se na + accusative; the reflexive se sits in second position: Javljam se na Vaš oglas." },
+        { "type": "MCQ", "prompt": "Which is the correct formal sign-off for a reply to an ad?", "difficulty": 7, "options": ["S poštovanjem,", "Pusa,", "Bok,", "Vidimo se,"], "answer": "S poštovanjem,", "explanation": "S poštovanjem (Yours sincerely) is the formal close. The others are casual and wrong for a job application." },
+        { "type": "FILL", "prompt": "Complete: Smatram da ______ sve uvjete. (ispunjavati, ja)", "difficulty": 8, "answer": "ispunjavam", "accepted": ["ispunjavam"], "strictDiacritics": true, "explanation": "ispunjavati → ispunjavam = I meet / fulfil; Smatram da ispunjavam sve uvjete = I believe I meet all the requirements." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "175": [
+    {
+      "type": "LEARN",
+      "title": "Your životopis: ready-made frames",
+      "intro": "The exam literally asks for your životopis (CV) in 7-8 sentences. These twelve frames build it: who you are, where and when you were born, your education, your work, your languages and interests. Say each one aloud with your own details, then assemble the whole biography.",
+      "items": [
+        { "hr": "Rođen sam 1988. godine u Zagrebu.", "en": "I was born in 1988 in Zagreb.", "note": "Male speaker: rođen sam (a woman: rođena sam). Place → u + locative: u Zagrebu." },
+        { "hr": "Završio sam srednju školu i fakultet.", "en": "I finished secondary school and university.", "note": "završiti → završio (m. sg.). srednja škola = secondary school; fakultet = university faculty." },
+        { "hr": "Diplomirao sam ekonomiju na Sveučilištu u Zagrebu.", "en": "I graduated in economics at the University of Zagreb.", "note": "diplomirati + accusative of the field; na Sveučilištu = at the university (locative)." },
+        { "hr": "Nakon studija radio sam tri godine u banci.", "en": "After my studies I worked three years at a bank.", "note": "nakon + genitive (nakon studija); tri godine = accusative of duration." },
+        { "hr": "Trenutačno radim kao programer.", "en": "Currently I work as a programmer.", "note": "raditi kao + nominative of the profession: kao programer, kao učitelj, kao inženjer." },
+        { "hr": "Imam pet godina radnog iskustva.", "en": "I have five years of work experience.", "note": "pet godina + genitive (radnog iskustva) — the week's job vocabulary in your own CV." },
+        { "hr": "Govorim engleski i njemački, a učim hrvatski.", "en": "I speak English and German, and I'm learning Croatian.", "note": "a here = 'and (by contrast)'. Naming languages is a required CV point." },
+        { "hr": "Služim se programima za obradu podataka.", "en": "I am proficient with data-processing software.", "note": "služiti se + instrumental (programima); obrada podataka reuses the raditi/obraditi family." },
+        { "hr": "Oženjen sam i imam dvoje djece.", "en": "I am married and have two children.", "note": "Oženjen sam (a man); a woman says Udana sam. dvoje djece = two children (collective djeca, genitive)." },
+        { "hr": "U slobodno vrijeme bavim se sportom i čitam.", "en": "In my free time I do sports and read.", "note": "baviti se + instrumental (sportom); slobodno vrijeme = free time." },
+        { "hr": "Tražim posao u kojem mogu raditi s ljudima.", "en": "I am looking for a job in which I can work with people.", "note": "A relative clause: posao u kojem (locative) — impresses on any CV." },
+        { "hr": "U prilogu šaljem životopis i zamolbu.", "en": "I am attaching my CV and cover letter.", "note": "u prilogu = attached; slati → šaljem. The line that closes a written application." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Assemble your CV",
+      "intro": "Test the CV frames before you write: gender on rođen/rođena, the locative of places, nakon + genitive, and the instrumental after baviti se and služiti se.",
+      "questions": [
+        { "type": "MCQ", "prompt": "A male speaker says 'I was born in 1990'. Which is correct?", "difficulty": 2, "options": ["Rođen sam 1990.", "Rođena sam 1990.", "Rodio sam 1990.", "Rodim se 1990."], "answer": "Rođen sam 1990.", "explanation": "The passive participle agrees with the (male) speaker: Rođen sam. A woman would say Rođena sam." },
+        { "type": "FILL", "prompt": "Complete the place: Rođen sam u ______. (Split)", "difficulty": 3, "answer": "Splitu", "accepted": ["Splitu"], "strictDiacritics": true, "explanation": "Place of birth → u + locative: Split → u Splitu." },
+        { "type": "MCQ", "prompt": "Complete: Radim ______ programer.", "difficulty": 3, "options": ["kao", "kod", "za", "s"], "answer": "kao", "explanation": "raditi kao + profession in the nominative: raditi kao programer = to work as a programmer." },
+        { "type": "MCQ", "prompt": "Complete: ______ studija radio sam u banci.", "difficulty": 4, "options": ["Nakon", "Poslije toga", "Prije nego", "Za"], "answer": "Nakon", "explanation": "nakon + genitive (nakon studija) = after my studies; it needs a noun, unlike prije nego (+ clause)." },
+        { "type": "FILL", "prompt": "Complete the instrumental: U slobodno vrijeme bavim se ______. (sport)", "difficulty": 5, "answer": "sportom", "accepted": ["sportom"], "strictDiacritics": true, "explanation": "baviti se + instrumental: sport → sportom." },
+        { "type": "MCQ", "prompt": "'I have two children.' — Imam ______ djece.", "difficulty": 6, "options": ["dvoje", "dva", "dvije", "dvoja"], "answer": "dvoje", "explanation": "For a mixed/collective group of children Croatian uses the collective numeral dvoje + genitive djece: dvoje djece." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'I graduated in economics in Zagreb.'", "difficulty": 6, "options": ["ekonomiju", "Diplomirao", "u", "sam", "Zagrebu"], "ordered": ["Diplomirao", "sam", "ekonomiju", "u", "Zagrebu"], "answer": "Diplomirao sam ekonomiju u Zagrebu", "explanation": "Perfekt Diplomirao sam + accusative field ekonomiju + u + locative Zagrebu." },
+        { "type": "MCQ", "prompt": "Complete: Služim se ______ za obradu podataka.", "difficulty": 7, "options": ["programima", "programe", "programa", "programi"], "answer": "programima", "explanation": "služiti se + instrumental; plural programi → instrumental programima." },
+        { "type": "FILL", "prompt": "Complete: Tražim posao u ______ mogu raditi s ljudima. (koji, locative m.)", "difficulty": 8, "answer": "kojem", "accepted": ["kojem", "kojemu"], "strictDiacritics": true, "explanation": "The relative pronoun agrees with posao (m.) and takes the locative after u: u kojem (also u kojemu)." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "176": [
+    {
+      "type": "LEARN",
+      "title": "The job interview: questions and answers",
+      "intro": "An interview forces three exam skills at once: formal register, retelling your biography, and answering on the spot. These twelve lines give you both sides — the questions an examiner or employer asks, and confident, natural answers you can adapt.",
+      "items": [
+        { "hr": "Recite nam nešto o sebi.", "en": "Tell us something about yourself.", "note": "Formal imperative (vi): recite. o sebi = about yourself (reflexive, locative)." },
+        { "hr": "Koje su Vaše prednosti i mane?", "en": "What are your strengths and weaknesses?", "note": "prednost = advantage/strength; mana = flaw/weakness. Polite capital Vaše." },
+        { "hr": "Zašto želite raditi kod nas?", "en": "Why do you want to work for us?", "note": "raditi kod + genitive (kod nas) = to work at our place / for us." },
+        { "hr": "Kakvo radno iskustvo imate?", "en": "What work experience do you have?", "note": "kakav = what kind of; reuses the job vocabulary of day 174." },
+        { "hr": "Kako se nosite sa stresom?", "en": "How do you handle stress?", "note": "nositi se s + instrumental = to cope with; sa stresom (sa before s-)." },
+        { "hr": "Gdje se vidite za pet godina?", "en": "Where do you see yourself in five years?", "note": "za + accusative for future point in time: za pet godina = in five years." },
+        { "hr": "Spreman sam učiti i preuzeti odgovornost.", "en": "I am ready to learn and take on responsibility.", "note": "Male: spreman sam (a woman: spremna sam). preuzeti odgovornost = to take responsibility." },
+        { "hr": "Smatram da sam vrijedan i pouzdan.", "en": "I consider myself hardworking and reliable.", "note": "vrijedan = hardworking, pouzdan = reliable — the two adjectives every interviewer wants." },
+        { "hr": "Kolika bi bila plaća?", "en": "What would the salary be?", "note": "A polite conditional question: bi bila (kondicional of biti). kolika agrees with plaća (f.)." },
+        { "hr": "Kada bih mogao početi?", "en": "When could I start?", "note": "Male: bih mogao (a woman: bih mogla). The conditional softens the question." },
+        { "hr": "Imate li kakvih pitanja za mene?", "en": "Do you have any questions for me?", "note": "kakvih pitanja = genitive plural after the sense of 'any'; turn it around at the end." },
+        { "hr": "Javit ćemo Vam se do kraja tjedna.", "en": "We will get back to you by the end of the week.", "note": "javiti se + dative (Vam); the line that closes the interview." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Interview warm-up",
+      "intro": "Prime your ears and your answers: a listening pass, the formal vi-forms, the conditional in polite questions, and the cases behind nositi se s and raditi kod.",
+      "questions": [
+        { "type": "MCQ", "prompt": "Listen to the interviewer. What is the very first thing they ask you to do?", "difficulty": 3, "options": ["introduce yourself briefly", "state your salary expectation", "list your weaknesses", "explain why you left your last job"], "answer": "introduce yourself briefly", "explanation": "Recite nam ukratko nešto o sebi = tell us a bit about yourself — the classic opening request.", "audioText": "Dobar dan i dobro došli. Za početak, recite nam ukratko nešto o sebi i o svojem dosadašnjem radnom iskustvu." },
+        { "type": "MCQ", "prompt": "What does 'mana' mean in 'Koje su Vaše mane?'", "difficulty": 3, "options": ["weakness / flaw", "strength", "salary", "hobby"], "answer": "weakness / flaw", "explanation": "mana = flaw / weakness, the opposite of prednost (strength). A standard interview question." },
+        { "type": "FILL", "prompt": "Complete: Kako se nosite ______ stresom? ('with')", "difficulty": 4, "answer": "sa", "accepted": ["sa"], "strictDiacritics": true, "explanation": "nositi se s/sa + instrumental; sa is used before words starting with s/z/š/ž: sa stresom." },
+        { "type": "MCQ", "prompt": "'Why do you want to work for us?' — Zašto želite raditi ______ nas?", "difficulty": 4, "options": ["kod", "za", "s", "u"], "answer": "kod", "explanation": "raditi kod + genitive (kod nas) = to work at someone's place / for someone." },
+        { "type": "MCQ", "prompt": "A male candidate says he is ready. Which is correct?", "difficulty": 5, "options": ["Spreman sam učiti.", "Spremna sam učiti.", "Spremam sam učiti.", "Spreman jesam učiti."], "answer": "Spreman sam učiti.", "explanation": "The adjective agrees with the male speaker: spreman sam. A woman would say spremna sam." },
+        { "type": "FILL", "prompt": "Complete the conditional (male speaker): Kada ______ mogao početi? ('could I')", "difficulty": 6, "answer": "bih", "accepted": ["bih"], "strictDiacritics": true, "explanation": "1st person conditional is bih: Kada bih mogao početi? The participle mogao is masculine for a male speaker." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'Where do you see yourself in five years?'", "difficulty": 6, "options": ["se", "Gdje", "za", "godina", "vidite", "pet"], "ordered": ["Gdje", "se", "vidite", "za", "pet", "godina"], "answer": "Gdje se vidite za pet godina", "explanation": "The reflexive se sits second; za + accusative of future time: za pet godina (with genitive plural godina)." },
+        { "type": "MCQ", "prompt": "Turn the interview around: which line asks the employer a question?", "difficulty": 7, "options": ["Imate li kakvih pitanja za mene?", "Recite nam nešto o sebi.", "Koje su Vaše mane?", "Spreman sam preuzeti odgovornost."], "answer": "Imate li kakvih pitanja za mene?", "explanation": "Trick: three of these are things said TO the candidate or BY the candidate as a statement; only 'Imate li kakvih pitanja…' is a question the candidate can ask back. (In the real interview you invert it: Imam nekoliko pitanja za Vas.)" },
+        { "type": "FILL", "prompt": "Complete the polite reply: Javit ćemo ______ se do kraja tjedna. ('to you', polite)", "difficulty": 8, "answer": "Vam", "accepted": ["Vam", "vam"], "strictDiacritics": true, "explanation": "javiti se + dative; the polite 'to you' is Vam: Javit ćemo Vam se = we will get back to you." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Proba: razgovor za posao",
+      "intro": "Your wife role-plays the employer and puts you through a mock interview. Read your lines ('Me') aloud in a formal register — masculine participles, conditional questions, the answers from today's list deployed live.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Dobar dan, izvolite sjesti. Za početak, recite nam nešto o sebi.", "en": "Good afternoon, please have a seat. To begin, tell us something about yourself." },
+        { "speaker": "Me", "hr": "Dobar dan. Diplomirao sam ekonomiju i imam pet godina radnog iskustva u struci.", "en": "Good afternoon. I graduated in economics and I have five years of work experience in the field." },
+        { "speaker": "Partner", "hr": "Zašto želite raditi baš kod nas?", "en": "Why do you want to work specifically for us?" },
+        { "speaker": "Me", "hr": "Jer cijenim vašu tvrtku i spreman sam učiti i preuzeti odgovornost.", "en": "Because I value your company and I am ready to learn and take on responsibility." },
+        { "speaker": "Partner", "hr": "Koje su Vaše prednosti, a koje mane?", "en": "What are your strengths, and what are your weaknesses?" },
+        { "speaker": "Me", "hr": "Vrijedan sam i pouzdan. Mana mi je što sam ponekad previše kritičan prema sebi.", "en": "I am hardworking and reliable. My flaw is that I am sometimes too critical of myself." },
+        { "speaker": "Partner", "hr": "Kako se nosite sa stresom i rokovima?", "en": "How do you handle stress and deadlines?" },
+        { "speaker": "Me", "hr": "Dobro planiram i ostanem miran. Zato uvijek odradim posao na vrijeme.", "en": "I plan well and stay calm. That's why I always get the work done on time." },
+        { "speaker": "Partner", "hr": "Odlično. Imate li Vi kakvih pitanja za nas?", "en": "Excellent. Do you have any questions for us?" },
+        { "speaker": "Me", "hr": "Imam dva. Kolika bi bila plaća i kada bih mogao početi?", "en": "I have two. What would the salary be, and when could I start?" },
+        { "speaker": "Partner", "hr": "O plaći ćemo razgovarati poslije, a početak je moguć odmah. Javit ćemo Vam se do kraja tjedna.", "en": "We'll discuss the salary later, and you could start straight away. We'll get back to you by the end of the week." },
+        { "speaker": "Me", "hr": "Hvala Vam na razgovoru. Radujem se Vašem odgovoru.", "en": "Thank you for the interview. I look forward to your reply." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "177": [
+    {
+      "type": "LEARN",
+      "title": "Instrumental in -ju, and the dob / doba trap",
+      "intro": "Two small but exam-favourite items. Consonant-final feminine nouns fuse the instrumental into -ju, triggering sound changes (sol → solju, ljubav → ljubavlju, radost → radošću). And two look-alikes must never be confused: dob (age) is feminine, doba (period, season) is neuter and never changes in the singular.",
+      "items": [
+        { "hr": "riječ → riječju / riječi", "en": "word → with a word", "note": "i-declension feminine. The fused -ju form: reci to jednom riječju = say it in a single word." },
+        { "hr": "noć → noću / noći", "en": "night → at / by night", "note": "Radim noću, a spavam danju. noću works as an adverb: 'at night'." },
+        { "hr": "ljubav → ljubavlju", "en": "love → with love", "note": "Sound change v → vlj at the boundary: Kuha s ljubavlju = She cooks with love." },
+        { "hr": "sol → solju", "en": "salt → with salt", "note": "l + j: Posoli jelo solju = Season the dish with salt." },
+        { "hr": "krv → krvlju", "en": "blood → with blood", "note": "Same v → vlj: povezani krvlju = bound by blood." },
+        { "hr": "radost → radošću", "en": "joy → with joy", "note": "st → šć: Primili su nas s radošću = They welcomed us with joy." },
+        { "hr": "misao → mišlju", "en": "thought → with a thought", "note": "sao → šlj: Bori se s crnom mišlju. (mixed with an adjective, -i is also possible: s tom mišlju/misli.)" },
+        { "hr": "-ju vs -i: adjective decides", "en": "form depends on a modifier", "note": "Alone, -ju is preferred (s ljubavlju); with an adjective, -i is common (s velikom ljubavi)." },
+        { "hr": "dob (ž. r.)", "en": "age (feminine, i-declension)", "note": "u mojoj dobi = at my age (locative dobi); srednja dob = middle age. Do NOT confuse with doba." },
+        { "hr": "doba (sr. r., nepromjenjivo)", "en": "period, era, season (neuter, unchanged in sg.)", "note": "godišnje doba = season; u to doba = at that time. Same form in every singular case." },
+        { "hr": "Djeca te dobi vole crtiće.", "en": "Children of that age love cartoons.", "note": "dob genitive dobi (te dobi = of that age); the collective djeca takes a plural verb (vole)." },
+        { "hr": "Proljeće je moje najdraže godišnje doba.", "en": "Spring is my favourite season.", "note": "godišnje doba stays put; only the adjective najdraže changes to agree." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Fused instrumentals and dob / doba",
+      "intro": "Build the -ju instrumentals with their sound changes, then keep dob (age) and doba (season) firmly apart — a classic exam gap-fill trap.",
+      "questions": [
+        { "type": "MCQ", "prompt": "Which noun means 'age'?", "difficulty": 2, "options": ["dob", "doba", "godina", "vrijeme"], "answer": "dob", "explanation": "dob (f.) = age (u mojoj dobi). doba (n.) = a period/season (godišnje doba)." },
+        { "type": "FILL", "prompt": "Instrumental with sound change: Posoli jelo ______. (sol)", "difficulty": 3, "answer": "solju", "accepted": ["solju"], "strictDiacritics": true, "explanation": "sol → solju (l + j) = with salt. The fused -ju instrumental." },
+        { "type": "FILL", "prompt": "Instrumental: Kuha s ______. (ljubav)", "difficulty": 4, "answer": "ljubavlju", "accepted": ["ljubavlju"], "strictDiacritics": true, "explanation": "ljubav → ljubavlju (v → vlj) = with love." },
+        { "type": "MCQ", "prompt": "Complete: Primili su nas s ______.", "difficulty": 5, "options": ["radošću", "radosti", "radost", "radostju"], "answer": "radošću", "explanation": "radost → radošću (st → šć). Standing without an adjective, the fused -ju (→ šću) form is preferred." },
+        { "type": "MCQ", "prompt": "Which sentence uses 'doba' correctly?", "difficulty": 5, "options": ["Zima je najhladnije godišnje doba.", "U mojoj dobi ima puno posla.", "Zima je najhladnija godišnja doba.", "U mojem doba ljudi rade."], "answer": "Zima je najhladnije godišnje doba.", "explanation": "doba is neuter and invariable: godišnje doba (season). 'U mojoj dobi' would need dob (age), not doba." },
+        { "type": "FILL", "prompt": "Complete the locative: U mojoj ______ ljudi obično već rade. (dob)", "difficulty": 6, "answer": "dobi", "accepted": ["dobi"], "strictDiacritics": true, "explanation": "dob (f., i-declension) → locative dobi: u mojoj dobi = at my age." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'I work at night and sleep during the day.'", "difficulty": 6, "options": ["danju", "Radim", "spavam", "a", "noću"], "ordered": ["Radim", "noću", "a", "spavam", "danju"], "answer": "Radim noću, a spavam danju", "explanation": "noću (instrumental of noć) and danju work as adverbs 'at night' / 'by day'; a = 'and (by contrast)'." },
+        { "type": "MCQ", "prompt": "Complete: Bori se s crnom ______. (misao)", "difficulty": 7, "options": ["mišlju", "misli", "misao", "mislom"], "answer": "mišlju", "explanation": "misao → mišlju (sao → šlj). With the adjective 'crnom', the plain -i (crnom misli) is also acceptable, but mišlju is offered here." },
+        { "type": "FILL", "prompt": "Complete: Djeca te ______ vole crtiće. (dob, genitive)", "difficulty": 8, "answer": "dobi", "accepted": ["dobi"], "strictDiacritics": true, "explanation": "'children of that age' = djeca te dobi; dob → genitive dobi (i-declension, like the locative)." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "178": [
+    {
+      "type": "LEARN",
+      "title": "The world of work: week 25 consolidation",
+      "intro": "Everything from this week in one place, ready for tonight's long conversation: the raditi family, verbal nouns, job-ad vocabulary and CV frames, all worked into sentences you can actually say about careers and the Croatian job market.",
+      "items": [
+        { "hr": "Zapošljavanje mladih velik je problem.", "en": "Youth employment is a big problem.", "note": "The verbal noun zapošljavanje as the subject; mladih = genitive plural (of young people)." },
+        { "hr": "Zaradio sam dovoljno za godišnji odmor.", "en": "I earned enough for a holiday.", "note": "raditi family: zaraditi; za + accusative (za godišnji odmor)." },
+        { "hr": "Prijavio sam se na tri natječaja.", "en": "I applied to three vacancies.", "note": "prijaviti se na + accusative; tri natječaja = genitive singular after 'three'." },
+        { "hr": "Radim na neodređeno i zadovoljan sam.", "en": "I have a permanent contract and I'm satisfied.", "note": "raditi na neodređeno = to work on a permanent contract; zadovoljan (m.) = satisfied." },
+        { "hr": "Za to se radno mjesto traži znanje jezika.", "en": "That position requires knowledge of a language.", "note": "A se-construction (traži se); znanje = verbal noun + genitive jezika." },
+        { "hr": "Obrazovanje i iskustvo njegove su prednosti.", "en": "Education and experience are his strengths.", "note": "obrazovanje = verbal noun; prednost = strength (interview vocabulary of day 176)." },
+        { "hr": "Nakon diplome počeo sam raditi u struci.", "en": "After graduation I started working in my field.", "note": "nakon + genitive (nakon diplome); struka = one's profession/field." },
+        { "hr": "Šef mi je ponudio napredovanje.", "en": "The boss offered me a promotion.", "note": "dative mi; napredovanje = advancement/promotion (another -nje noun)." },
+        { "hr": "Razmišljam o promjeni posla.", "en": "I'm thinking about changing jobs.", "note": "razmišljati o + locative (o promjeni); promjena posla = a job change." },
+        { "hr": "Poslodavac nudi fleksibilno radno vrijeme.", "en": "The employer offers flexible working hours.", "note": "poslodavac (day 174); radno vrijeme = working hours." },
+        { "hr": "U slobodno se vrijeme bavim volontiranjem.", "en": "In my free time I do volunteering.", "note": "baviti se + instrumental; volontiranje = volunteering, one more verbal noun." },
+        { "hr": "Da imam bolju plaću, ostao bih na ovom poslu.", "en": "If I had a better salary, I'd stay in this job.", "note": "A conditional preview of week 28: da + present, then ostao bih." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Work theme: mixed review",
+      "intro": "Sweep the week: verbal nouns, the raditi family, job vocabulary and the cases that hold them together — with one listening pass from your wife.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'napredovanje' mean?", "difficulty": 2, "options": ["promotion / advancement", "a job ad", "a salary cut", "an interview"], "answer": "promotion / advancement", "explanation": "napredovati → napredovanje = advancement / promotion at work." },
+        { "type": "FILL", "prompt": "Form the verbal noun: zapošljavati → ______", "difficulty": 3, "answer": "zapošljavanje", "accepted": ["zapošljavanje"], "strictDiacritics": true, "explanation": "zapošljavati → zapošljavanje = the process of hiring / employment." },
+        { "type": "MCQ", "prompt": "Complete the raditi family: ______ sam dovoljno za odmor.", "difficulty": 3, "options": ["Zaradio", "Odradio", "Preradio", "Obradio"], "answer": "Zaradio", "explanation": "za- = earn: Zaradio sam = I earned. odraditi = get a shift done, preraditi = rework, obraditi = process." },
+        { "type": "MCQ", "prompt": "Listen to your wife. What news does she share about her work?", "difficulty": 5, "options": ["her boss offered her a promotion", "she was fired", "she is changing careers entirely", "she got a pay cut"], "answer": "her boss offered her a promotion", "explanation": "Šef mi je danas ponudio napredovanje = my boss offered me a promotion today.", "audioText": "Imam dobru vijest! Šef mi je danas ponudio napredovanje. Ako pristanem, radit ću na neodređeno i imat ću veću plaću." },
+        { "type": "FILL", "prompt": "Complete: Prijavio sam se ______ tri natječaja. ('to')", "difficulty": 5, "answer": "na", "accepted": ["na"], "strictDiacritics": true, "explanation": "prijaviti se na + accusative: na tri natječaja = to three vacancies." },
+        { "type": "MCQ", "prompt": "Complete the se-construction: Za to radno mjesto ______ znanje jezika.", "difficulty": 6, "options": ["traži se", "traži", "tražim se", "traže"], "answer": "traži se", "explanation": "Impersonal se-construction: traži se znanje = knowledge is required. The subject is znanje (3rd sg.)." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'After graduation I started working in my field.'", "difficulty": 6, "options": ["diplome", "Nakon", "raditi", "u", "sam", "počeo", "struci"], "ordered": ["Nakon", "diplome", "počeo", "sam", "raditi", "u", "struci"], "answer": "Nakon diplome počeo sam raditi u struci", "explanation": "nakon + genitive (Nakon diplome); počeo sam raditi; u + locative struci." },
+        { "type": "MCQ", "prompt": "Complete: Razmišljam ______ promjeni posla.", "difficulty": 7, "options": ["o", "na", "za", "u"], "answer": "o", "explanation": "razmišljati o + locative: o promjeni posla = about a job change." },
+        { "type": "FILL", "prompt": "Complete the conditional (male speaker): Da imam bolju plaću, ______ na ovom poslu. (ostati)", "difficulty": 8, "answer": "ostao bih", "accepted": ["ostao bih"], "strictDiacritics": true, "explanation": "Unreal condition: da + present, then kondicional ostao bih (m. sg.) = I would stay." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Večernji razgovor: posao i karijera",
+      "intro": "Tonight's long conversation is about work, careers and the Croatian job market. Read your lines ('Me') aloud — masculine participles, the week's vocabulary put to real use.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Kako je bilo danas na poslu? Izgledaš zamišljeno.", "en": "How was work today? You look pensive." },
+        { "speaker": "Me", "hr": "Dobro, ali razmišljam o promjeni posla. Prijavio sam se na dva natječaja.", "en": "Good, but I'm thinking about changing jobs. I applied to two vacancies." },
+        { "speaker": "Partner", "hr": "Stvarno? A što ti se ne sviđa na ovom poslu?", "en": "Really? And what don't you like about this job?" },
+        { "speaker": "Me", "hr": "Sve je u redu, ali nema napredovanja. Radim isto već tri godine.", "en": "Everything's fine, but there's no advancement. I've been doing the same thing for three years." },
+        { "speaker": "Partner", "hr": "Razumijem. Kakvi su uvjeti u tim novim oglasima?", "en": "I understand. What are the conditions in those new ads?" },
+        { "speaker": "Me", "hr": "Jedan nudi ugovor na neodređeno i veću plaću. Traži se znanje jezika, a to imam.", "en": "One offers a permanent contract and a higher salary. Knowledge of a language is required, and I have that." },
+        { "speaker": "Partner", "hr": "To zvuči odlično! A zapošljavanje je danas teško, pa dobro razmisli.", "en": "That sounds great! But hiring is hard these days, so think it over carefully." },
+        { "speaker": "Me", "hr": "Znam. Zato sam već napisao novi životopis i zamolbu.", "en": "I know. That's why I've already written a new CV and cover letter." },
+        { "speaker": "Partner", "hr": "Da imaš intervju, kako bi objasnio zašto odlaziš?", "en": "If you had an interview, how would you explain why you're leaving?" },
+        { "speaker": "Me", "hr": "Rekao bih da tražim posao u kojem mogu napredovati i učiti nešto novo.", "en": "I'd say I'm looking for a job in which I can advance and learn something new." },
+        { "speaker": "Partner", "hr": "Savršen odgovor. Podržavam te — javi im se sutra.", "en": "A perfect answer. I support you — get in touch with them tomorrow." },
+        { "speaker": "Me", "hr": "Hoću. A večeras slavimo tvoje napredovanje, ne moje brige!", "en": "I will. And tonight we celebrate your promotion, not my worries!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "179": [
+    {
+      "type": "LEARN",
+      "title": "The zvati family: call, invite, provoke",
+      "intro": "One last verb family before the mock. zvati (to call) takes na- to phone, po- to invite, iz- to provoke or cause, od- to respond. Learn the prefix, decode the verb — and never again mix up nazvati (phone) with pozvati (invite).",
+      "items": [
+        { "hr": "zvati → zovem, zoveš, zove", "en": "to call → I call…", "note": "The base, with the present stem zov-: Kako se zoveš? = What's your name?" },
+        { "hr": "nazvati → nazovem", "en": "to phone, to call up", "note": "na- = reach by phone. Nazvat ću te sutra. = I'll call you tomorrow." },
+        { "hr": "pozvati → pozovem", "en": "to invite", "note": "po- here = invite. Pozvali su nas na večeru. = They invited us to dinner." },
+        { "hr": "odazvati se → odazovem se", "en": "to respond (to a call / invitation)", "note": "od- = answer back; + dative: Odazvao sam se pozivu. = I responded to the invitation." },
+        { "hr": "izazvati → izazovem", "en": "to provoke, to cause", "note": "iz- = bring out. Oluja je izazvala veliku štetu. = The storm caused great damage." },
+        { "hr": "sazvati → sazovem", "en": "to convene, to call together", "note": "sa- = together. Sazvali su hitan sastanak. = They called an emergency meeting." },
+        { "hr": "poziv", "en": "call; invitation (noun)", "note": "The noun behind the family: propušten poziv = missed call; poslati poziv = to send an invitation." },
+        { "hr": "Nazvao sam ga, ali se nije javio.", "en": "I called him, but he didn't answer.", "note": "nazvati koga (accusative); javiti se = to answer / pick up. Two everyday verbs together." },
+        { "hr": "pozvati ≠ nazvati", "en": "invite vs phone", "note": "Pozvao sam prijatelje = I invited friends. Nazvao sam prijatelje = I phoned friends. Different prefix, different act." },
+        { "hr": "Izazov je velik, ali prihvaćam ga.", "en": "The challenge is big, but I accept it.", "note": "izazov = challenge (from izazvati) — the noun you'll want when you talk about the exam." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "LEARN",
+      "title": "Exam briefing: the five sections",
+      "intro": "Tomorrow you sit your first full mock. Knowing the shape of the exam is half the battle. These are the five sections in official order, the scoring rule, and the conditions you should simulate — straight from the format the app's B1 mock follows.",
+      "items": [
+        { "hr": "I. Razumijevanje slušanoga teksta", "en": "I. Listening comprehension", "note": "Each recording plays twice; the text stays hidden. Read the questions first, then listen." },
+        { "hr": "II. Razumijevanje čitanoga teksta", "en": "II. Reading comprehension", "note": "Genres: a biography, an ad, an interview, plus a word-bank gap-fill. The answer is always in the text." },
+        { "hr": "III. Poznavanje gramatičkih struktura", "en": "III. Grammar structures", "note": "Choose the correct form. Dijakritici se broje — č, ć, š, ž, đ count as errors if wrong." },
+        { "hr": "IV. Pisano sporazumijevanje", "en": "IV. Writing", "note": "Two tasks of 7-8 sentences, e.g. describe a picture and write your životopis (CV)." },
+        { "hr": "V. Usmeno sporazumijevanje", "en": "V. Speaking", "note": "A conversation with the examiner: introduce yourself, retell an event, give opinions." },
+        { "hr": "Prolazna granica: najmanje 60%", "en": "Pass mark: at least 60%", "note": "You need ≥60% in each of listening, reading and grammar." },
+        { "hr": "Pisanje i govorenje: prolaz ili pad", "en": "Writing and speaking: pass or fail", "note": "These two are judged pass/fail against a rubric; every section must be passed." },
+        { "hr": "Bez rječnika i bez pauziranja.", "en": "No dictionary and no pausing.", "note": "Simulate real conditions: audio plays twice, but you don't stop it or look words up." },
+        { "hr": "Svaki tekst čuješ dvaput.", "en": "You hear each text twice.", "note": "Use the first pass for the gist, the second to confirm details — a key listening tactic." },
+        { "hr": "izazov", "en": "challenge", "note": "Treat tomorrow as an izazov, not a verdict: it maps what stands between you and B1." }
+      ],
+      "sources": ["asoo", "nn-100-2021", "croaticum-b1-sample"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "zvati family + exam format",
+      "intro": "Separate the zvati prefixes, then lock down the facts of tomorrow's exam so nothing about the format can surprise you.",
+      "questions": [
+        { "type": "MCQ", "prompt": "Which verb means 'to phone someone'?", "difficulty": 2, "options": ["nazvati", "pozvati", "izazvati", "sazvati"], "answer": "nazvati", "explanation": "na- + zvati = to reach by phone: Nazvat ću te. pozvati = invite, izazvati = provoke, sazvati = convene." },
+        { "type": "MCQ", "prompt": "'They invited us to dinner.' — ______ su nas na večeru.", "difficulty": 3, "options": ["Pozvali", "Nazvali", "Izazvali", "Sazvali"], "answer": "Pozvali", "explanation": "pozvati = to invite: Pozvali su nas na večeru. Nazvali would mean 'they phoned us'." },
+        { "type": "FILL", "prompt": "Complete the present: Ja te ______ svaki dan. (zvati)", "difficulty": 3, "answer": "zovem", "accepted": ["zovem"], "strictDiacritics": true, "explanation": "zvati has the present stem zov-: ja zovem, ti zoveš, on zove." },
+        { "type": "MCQ", "prompt": "'The storm caused great damage.' — Oluja je ______ veliku štetu.", "difficulty": 4, "options": ["izazvala", "pozvala", "nazvala", "odazvala"], "answer": "izazvala", "explanation": "izazvati = to cause / provoke: izazvati štetu = to cause damage." },
+        { "type": "MCQ", "prompt": "How many of the five sections require at least 60% to pass?", "difficulty": 5, "options": ["three (listening, reading, grammar)", "all five equally", "only grammar", "two (reading and writing)"], "answer": "three (listening, reading, grammar)", "explanation": "≥60% is required in listening, reading and grammar; writing and speaking are pass/fail." },
+        { "type": "FILL", "prompt": "Complete: Odazvao sam se ______. (poziv, dative)", "difficulty": 6, "answer": "pozivu", "accepted": ["pozivu"], "strictDiacritics": true, "explanation": "odazvati se + dative: odazvati se pozivu = to respond to the invitation. poziv → pozivu." },
+        { "type": "MCQ", "prompt": "In the listening section, how many times do you hear each text?", "difficulty": 6, "options": ["twice", "once", "three times", "as many times as you like"], "answer": "twice", "explanation": "Each recording plays exactly twice, like in the real exam — first for the gist, then for details." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'I called him, but he didn't answer.'", "difficulty": 7, "options": ["ga", "javio", "Nazvao", "ali", "se", "nije", "sam"], "ordered": ["Nazvao", "sam", "ga", "ali", "se", "nije", "javio"], "answer": "Nazvao sam ga ali se nije javio", "explanation": "Nazvao sam ga (perfekt + clitic ga), then the negative javiti se: nije se javio → ali se nije javio." },
+        { "type": "MCQ", "prompt": "Which is a real exam condition to simulate tomorrow?", "difficulty": 8, "options": ["no dictionary and no pausing the audio", "unlimited replays of the audio", "you may use a dictionary for grammar", "you translate everything into English first"], "answer": "no dictionary and no pausing the audio", "explanation": "Simulate the real thing: bez rječnika, bez pauziranja; the audio plays twice and you don't stop it." }
+      ],
+      "sources": ["asoo", "nn-100-2021", "croaticum-b1-sample"]
+    }
+  ],
+  "180": [
+    {
+      "type": "LEARN",
+      "title": "Before the mock: strategy for all five sections",
+      "intro": "Milestone day. This is your half-way check — a precise map of what stands between you and B1, not a final verdict. Read these ten tactics, then take the ten-question mixed mock below, and finally sit the full five-section exam in the Quiz tab.",
+      "items": [
+        { "hr": "Pročitaj sva pitanja prije slušanja.", "en": "Read all the questions before listening.", "note": "You'll know what to listen for on the very first pass." },
+        { "hr": "Slušanje: prvi put uhvati smisao, drugi put provjeri detalje.", "en": "Listening: first pass for the gist, second for details.", "note": "Each text plays twice — use the two passes differently." },
+        { "hr": "Čitanje: prvo pitanja, pa tekst; odgovor je u tekstu.", "en": "Reading: questions first, then the text; the answer is in the text.", "note": "Don't guess from outside knowledge — locate the exact sentence." },
+        { "hr": "Gramatika: pazi na dijakritike — č, ć, š, ž, đ se broje.", "en": "Grammar: mind the diacritics — č, ć, š, ž, đ count.", "note": "A missing dijakritik is a wrong answer. Slow down on spelling." },
+        { "hr": "Pisanje: drži se zadatka, 7-8 rečenica, provjeri padeže.", "en": "Writing: stick to the task, 7-8 sentences, check the cases.", "note": "Cover every point asked; re-read once for case and diacritic errors." },
+        { "hr": "Govorenje: govori povezano, ne stani na pola.", "en": "Speaking: speak in connected sentences, don't stop mid-way.", "note": "Use connectors (najprije, zatim, zato); self-correct rather than freeze." },
+        { "hr": "Ne prevodi doslovno s engleskog.", "en": "Don't translate literally from English.", "note": "Trust Croatian patterns: sviđa mi se, not 'ja volim to' word-for-word." },
+        { "hr": "Ostani miran — ovo je polovišna provjera.", "en": "Stay calm — this is a half-way check.", "note": "You won't pass everything yet, and that is exactly the point." },
+        { "hr": "Puni ispit uzmi u kartici Kvizovi (B1 mock).", "en": "Take the full exam in the Quiz tab (B1 mock).", "note": "The complete five-section mock lives there — this LEARN + exercise only warms you up." },
+        { "hr": "Zabilježi postotak po svakom dijelu.", "en": "Note your percentage for each section.", "note": "Your weakest section gets extra attention this month; the ≥60% rule applies to each of the first three." }
+      ],
+      "sources": ["asoo", "nn-100-2021", "croaticum-b1-sample"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Half-way mock: 10 mixed B1 questions",
+      "intro": "A compact sweep of everything B1-core so far — aspect in context, verb families, the passive, cases and the conditional — across the official section types: two listening items, a reading text, grammar gap-fills and one longer reorder. Then sit the full mock in the Quiz tab.",
+      "questions": [
+        { "type": "MCQ", "prompt": "[Listening] Koje radno vrijeme ima knjižnica radnim danom?", "difficulty": 2, "options": ["od 8 do 20 sati", "od 9 do 17 sati", "od 10 do 22 sata", "od 7 do 15 sati"], "answer": "od 8 do 20 sati", "explanation": "The announcement says the library is open radnim danom od osam do dvadeset sati = weekdays 8:00-20:00.", "audioText": "Poštovani korisnici, gradska knjižnica radi radnim danom od osam do dvadeset sati, a subotom od osam do trinaest sati. Nedjeljom ne radimo." },
+        { "type": "MCQ", "prompt": "[Listening] TOČNO ili NETOČNO: Knjižnica radi nedjeljom.", "difficulty": 3, "options": ["NETOČNO", "TOČNO"], "answer": "NETOČNO", "explanation": "The recording ends with 'Nedjeljom ne radimo' = we are closed on Sundays. So the statement is false.", "audioText": "Poštovani korisnici, gradska knjižnica radi radnim danom od osam do dvadeset sati, a subotom od osam do trinaest sati. Nedjeljom ne radimo." },
+        { "type": "MCQ", "prompt": "Choose the verb-family verb: Liječnik me pažljivo ______ i objasnio mi je nalaze.", "difficulty": 4, "options": ["pregledao", "pogledao", "ugledao", "razgledao"], "answer": "pregledao", "explanation": "pregledati = to examine (a patient); pogledati = take a look, ugledati = catch sight of, razgledati = sightsee." },
+        { "type": "FILL", "prompt": "[Aspect] Jučer sam napokon ______ cijeli izvještaj. (napisati, male speaker)", "difficulty": 5, "answer": "napisao", "accepted": ["napisao"], "strictDiacritics": true, "explanation": "A completed whole → perfective napisati → napisao. 'pisao sam' would mean 'I was writing' (unfinished)." },
+        { "type": "MCQ", "prompt": "[Reading] Pročitaj: 'Ivana Brlić-Mažuranić rođena je 1874. u Ogulinu. Pisala je priče za djecu i danas je najpoznatija hrvatska dječja književnica. Njezino najpoznatije djelo je Priče iz davnine.' — Gdje je rođena Ivana Brlić-Mažuranić?", "difficulty": 5, "options": ["u Ogulinu", "u Zagrebu", "u Splitu", "u Osijeku"], "answer": "u Ogulinu", "explanation": "The text states 'rođena je 1874. u Ogulinu' — she was born in Ogulin. The answer is directly in the passage." },
+        { "type": "FILL", "prompt": "[Case] Živim u ______ već pet godina. (Zagreb → locative)", "difficulty": 5, "answer": "Zagrebu", "accepted": ["Zagrebu"], "strictDiacritics": true, "explanation": "Static location after u → locative: Zagreb → u Zagrebu." },
+        { "type": "MCQ", "prompt": "[Passive] Complete: Taj je most ______ 1926. godine.", "difficulty": 6, "options": ["sagrađen", "sagradio", "sagradjen", "sagraden"], "answer": "sagrađen", "explanation": "sagraditi → sagrađen (d → đ); masculine most → sagrađen je = was built. (Never plain 'sagraden' or the perfekt 'sagradio' here.)" },
+        { "type": "FILL", "prompt": "[Conditional] Da imam više vremena, ______ ti. (pomoći, male speaker)", "difficulty": 7, "answer": "pomogao bih", "accepted": ["pomogao bih"], "strictDiacritics": true, "explanation": "Unreal condition: da + present, then kondicional pomogao bih (m. sg.) = I would help you." },
+        { "type": "MCQ", "prompt": "[Grammar] I mi ______ rado došli na proslavu!", "difficulty": 8, "options": ["bismo", "bi", "bimo", "bih"], "answer": "bismo", "explanation": "1st person plural conditional is bismo (never colloquial 'bi' for all persons): I mi bismo rado došli." },
+        { "type": "REORDER", "prompt": "[Longer reorder] Put the words in order: 'If I had more time, I would read every day.'", "difficulty": 9, "options": ["bih", "Kad", "vremena", "čitao", "imao", "svaki", "više", "bih", "dan"], "ordered": ["Kad", "bih", "imao", "više", "vremena", "čitao", "bih", "svaki", "dan"], "answer": "Kad bih imao više vremena čitao bih svaki dan", "explanation": "Potential condition: kad + kondicional in both clauses — Kad bih imao … čitao bih …; više vremena = genitive; svaki dan = accusative of time." }
+      ],
+      "sources": ["nn-100-2021", "croaticum-b1-sample", "asoo"]
+    }
+  ]
+}
