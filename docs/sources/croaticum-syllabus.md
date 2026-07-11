@@ -1,6 +1,6 @@
 # Croaticum: course ladder, syllabi and tests
 
-- **Source:** Croaticum — Centar za hrvatski kao drugi i strani jezik, Odsjek za kroatistiku,
+- **Source:** Croaticum, Centar za hrvatski kao drugi i strani jezik, Odsjek za kroatistiku,
   FFZG, Sveučilište u Zagrebu. The leading institution for Croatian as a second/foreign
   language; administers CEFR-aligned proficiency tests and issues certificates.
 - **URLs:** https://croaticum.ffzg.unizg.hr/ · semester courses `?page_id=1106` · tests
@@ -39,22 +39,22 @@ Per-level focus (from the published course descriptions):
 ## Official tests
 
 Croaticum tests Croatian for various purposes (incl. citizenship/residence certificates) at
-CEFR levels, at FFZG Zagreb (and Macquarie University, Sydney). The test has five components —
-listening comprehension, reading comprehension, grammatical structures, writing, speaking —
+CEFR levels, at FFZG Zagreb (and Macquarie University, Sydney). The test has five components:
+listening comprehension, reading comprehension, grammatical structures, writing, and speaking,
 matching NN 100/2021 (see `nn-exam-regulations.md`). Sample tasks: see
 `croaticum-b1-sample.md`. Application ≥10 days ahead with ID.
 
 ## Textbooks (the de-facto standard series, used for vocab/theme cross-checking)
 
-- *Hrvatski za početnike 1* — udžbenik i rječnik (A1–A2)
+- *Hrvatski za početnike 1*, udžbenik i rječnik (A1–A2)
 - *Razgovarajte s nama!* series (A2–B1, B1–B2, B2–C1) + gramatika i pravopis volumes
-- *Dobro došli 1–2* (Barešić) — referenced in the ASOO curriculum bibliography
+- *Dobro došli 1–2* (Barešić), referenced in the ASOO curriculum bibliography
 
 ## Free e-courses (ffzg-ecourse)
 
-- **a1.ffzg.unizg.hr** — E-tečaj A1.hr: 80 units × ~45 min (listening text or words,
+- **a1.ffzg.unizg.hr**, E-tečaj A1.hr: 80 units × ~45 min (listening text or words,
   pronunciation, repetition, writing, comprehension), EN/ES interfaces, free (Google/Facebook
   login). Made by FFZG with the Central State Office for Croats Abroad.
-- **a2.ffzg.unizg.hr** — E-tečaj A2.hr: 80 units, same format, 8 modules of 10 lessons.
+- **a2.ffzg.unizg.hr**, E-tečaj A2.hr: 80 units, same format, 8 modules of 10 lessons.
 
 These pace the app's daily plan Phases 1–2.
