@@ -20,6 +20,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
@@ -211,6 +212,90 @@ fun SettingsScreen(
                     onClick = { container.tts.speak("Dobar dan! Ja sam Corlang.") },
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                 ) { Text("Test voice") }
+            }
+        }
+
+        // ----- AI tutor -----
+        SectionTitle("🤖 AI tutor")
+        val apiKey by container.languagePrefs.anthropicApiKey.collectAsState(initial = "")
+        var keyDraft by remember { mutableStateOf("") }
+        var editingKey by remember { mutableStateOf(false) }
+        var keyMsg by remember { mutableStateOf("") }
+        var testing by remember { mutableStateOf(false) }
+        InfoCard {
+            Text(
+                "Optional. Add your own Anthropic API key to unlock the conversation partner and " +
+                    "writing feedback. The key is stored only on this device and is left out of backups.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+            if (keyMsg.isNotBlank()) {
+                Text(keyMsg, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(bottom = 6.dp))
+            }
+            if (apiKey.isNotBlank() && !editingKey) {
+                Text("Connected ✓  (key ending …${apiKey.takeLast(4)})",
+                    style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+                Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
+                    OutlinedButton(
+                        enabled = !testing,
+                        onClick = {
+                            testing = true; keyMsg = "Testing…"
+                            scope.launch {
+                                val r = container.ai.complete(
+                                    system = null,
+                                    messages = listOf(com.corlang.app.ai.ChatMessage("user", "Reply with the single word: OK")),
+                                    maxTokens = 16
+                                )
+                                testing = false
+                                keyMsg = r.fold({ "Working ✓" }, { it.message ?: "Test failed." })
+                            }
+                        },
+                        modifier = Modifier.weight(1f)
+                    ) { Text(if (testing) "Testing…" else "Test") }
+                    Spacer(Modifier.width(8.dp))
+                    OutlinedButton(
+                        onClick = { keyDraft = ""; editingKey = true; keyMsg = "" },
+                        modifier = Modifier.weight(1f)
+                    ) { Text("Change") }
+                    Spacer(Modifier.width(8.dp))
+                    OutlinedButton(
+                        onClick = { scope.launch { container.languagePrefs.setAnthropicApiKey("") }; keyMsg = "Key removed." },
+                        modifier = Modifier.weight(1f)
+                    ) { Text("Remove") }
+                }
+            } else {
+                OutlinedTextField(
+                    value = keyDraft,
+                    onValueChange = { keyDraft = it },
+                    label = { Text("sk-ant-…") },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Text(
+                    "Create a key at console.anthropic.com. Usage is billed to your own account.",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 4.dp, bottom = 8.dp)
+                )
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    Button(
+                        enabled = keyDraft.isNotBlank(),
+                        onClick = {
+                            scope.launch { container.languagePrefs.setAnthropicApiKey(keyDraft) }
+                            editingKey = false; keyDraft = ""; keyMsg = "Key saved ✓"
+                        },
+                        modifier = Modifier.weight(1f)
+                    ) { Text("Save key") }
+                    if (apiKey.isNotBlank()) {
+                        Spacer(Modifier.width(8.dp))
+                        OutlinedButton(
+                            onClick = { editingKey = false; keyDraft = "" },
+                            modifier = Modifier.weight(1f)
+                        ) { Text("Cancel") }
+                    }
+                }
             }
         }
 

@@ -57,6 +57,23 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[newWordsKey] = count }
     }
 
+    // ----- AI tutor (optional; user supplies their own Anthropic API key) -----
+
+    private val apiKeyKey = stringPreferencesKey("anthropic_api_key")
+
+    /**
+     * The user's own Anthropic API key, enabling the AI tutor and writing feedback. Stored
+     * locally only and deliberately excluded from backups (it's a secret). Empty = AI off.
+     */
+    val anthropicApiKey: Flow<String> =
+        context.dataStore.data.map { it[apiKeyKey] ?: "" }
+
+    suspend fun setAnthropicApiKey(key: String) {
+        context.dataStore.edit {
+            if (key.isBlank()) it.remove(apiKeyKey) else it[apiKeyKey] = key.trim()
+        }
+    }
+
     // ----- Words session snapshot (gym-proof resume) -----
 
     private val sessionKey = stringPreferencesKey("words_session_snapshot")
