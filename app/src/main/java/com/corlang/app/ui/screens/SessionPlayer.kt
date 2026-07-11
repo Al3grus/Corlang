@@ -52,7 +52,7 @@ import kotlinx.coroutines.launch
  * persisted per day (day_task_check), so leaving and returning resumes exactly.
  */
 
-enum class StepKind { INFO, TASK, LINK, WORDS, GENDER, CLOZE, RECALL, LEARN, EXERCISE, DIALOGUE, COMPLETE }
+enum class StepKind { INFO, TASK, LINK, WORDS, GENDER, CLOZE, RECALL, LEARN, EXERCISE, DIALOGUE, WRAPUP, COMPLETE }
 
 data class SessionStep(
     val id: String,
@@ -196,7 +196,31 @@ fun buildSessionSteps(
                 detail = "", phase = phase, activityIndex = i
             )
         }
-        day.reviewBlock.items.forEachIndexed { i, r -> addItem("review", i, r, isReview = true) }
+        // Wrap-up: a real from-memory recall of TODAY'S taught phrases, replacing the old
+        // free-text review instructions that had no exercise behind them. Falls back to the
+        // text review only when the day has too little LEARN content to build a recall.
+        val exerciseIndex = day.activities.indexOfFirst {
+            it.type == com.corlang.app.data.model.ActivityKind.EXERCISE
+        }
+        when {
+            // Best: produce today's taught phrases from memory.
+            wrapupRecallPhrases(day).size >= 4 -> steps += SessionStep(
+                id = "wrapup", kind = StepKind.WRAPUP,
+                title = "Wrap-up: recall today's phrases from memory",
+                detail = "No peeking. Produce the Croatian for each phrase you learned today.",
+                phase = "5 · Wrap-up"
+            )
+            // Fallback for long-sentence days: a quick retest of today's exercise (still real content).
+            exerciseIndex >= 0 -> steps += SessionStep(
+                id = "wrapup", kind = StepKind.EXERCISE,
+                title = "Wrap-up: quick retest",
+                detail = "", phase = "5 · Wrap-up", activityIndex = exerciseIndex
+            )
+            // Last resort (bare days only): the plan's text review items.
+            else -> day.reviewBlock.items.forEachIndexed { i, r ->
+                addItem("review", i, r, isReview = true)
+            }
+        }
     } else {
         day.drills.forEachIndexed { i, d -> addItem("drill", i, d, isReview = false) }
         day.reviewBlock.items.forEachIndexed { i, r -> addItem("review", i, r, isReview = true) }
@@ -322,6 +346,7 @@ fun SessionPlayer(
                                 StepKind.GENDER -> "🎯 Drill"
                                 StepKind.CLOZE -> "🎯 Case drill"
                                 StepKind.RECALL -> "⌨️ Recall drill"
+                                StepKind.WRAPUP -> "🧠 Wrap-up recall"
                                 StepKind.LEARN -> "📚 Learn"
                                 StepKind.EXERCISE -> "✏️ Exercise"
                                 StepKind.DIALOGUE -> "🗣 Dialogue"
@@ -373,6 +398,7 @@ fun SessionPlayer(
             StepKind.LEARN -> activity?.let { LearnActivity(container, it, onDrillDone) }
             StepKind.EXERCISE -> activity?.let { ExerciseActivity(container, it, onDrillDone) }
             StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
+            StepKind.WRAPUP -> WrapupRecall(container, day, onDrillDone)
             else -> {}
         }
 
@@ -438,7 +464,7 @@ fun SessionPlayer(
                 ) { Text("Done, next step →") }
             }
 
-            StepKind.GENDER, StepKind.CLOZE, StepKind.RECALL,
+            StepKind.GENDER, StepKind.CLOZE, StepKind.RECALL, StepKind.WRAPUP,
             StepKind.LEARN, StepKind.EXERCISE, StepKind.DIALOGUE -> { /* content drives completion */ }
 
             StepKind.COMPLETE -> Button(
