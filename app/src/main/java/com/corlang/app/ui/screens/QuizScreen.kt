@@ -214,7 +214,9 @@ private fun QuizRunner(
         when (q.type) {
             QuestionType.MCQ -> {
                 val feedback = CorlangColors.feedback
-                q.options.forEach { option ->
+                // Shuffle per question so the correct option isn't positionally predictable.
+                val shownOptions = remember(q.prompt) { q.options.shuffled() }
+                shownOptions.forEach { option ->
                     val isChosen = selectedOption == option
                     val border = when {
                         !checked && isChosen -> MaterialTheme.colorScheme.primary

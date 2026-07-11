@@ -307,8 +307,9 @@ private fun ScoredSectionRunner(
             Text(q.prompt, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
         }
 
+        val shownOptions = remember(q.prompt) { q.options.shuffled() }
         when (q.type) {
-            QuestionType.MCQ -> q.options.forEach { option ->
+            QuestionType.MCQ -> shownOptions.forEach { option ->
                 val isChosen = selectedOption == option
                 val border = when {
                     !checked && isChosen -> MaterialTheme.colorScheme.primary

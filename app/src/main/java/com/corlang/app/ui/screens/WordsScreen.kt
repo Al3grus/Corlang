@@ -255,11 +255,30 @@ fun WordsScreen(container: AppContainer, lang: String) {
         ) {
             Text(
                 when {
-                    queue.isEmpty() -> "All done for today ✓"
+                    queue.isEmpty() -> "Daily goal reached ✓"
                     doneCount > 0 -> "Continue session (${queue.size} left)"
                     else -> "Start session (${queue.size} words)"
                 }
             )
+        }
+
+        // The daily count is a floor, not a ceiling — keep learning past it whenever you want.
+        if (queue.isEmpty()) {
+            OutlinedButton(
+                onClick = {
+                    scope.launch {
+                        val extra = container.words.extraNewWords(lang, 10)
+                        if (extra.isNotEmpty()) {
+                            celebration = false
+                            queue.addAll(extra)
+                            sessionTotal += extra.size
+                            container.languagePrefs.setWordsSessionSnapshot(snapshotNow())
+                            inSession = true
+                        }
+                    }
+                },
+                modifier = Modifier.fillMaxWidth().padding(bottom = 6.dp)
+            ) { Text("Learn 10 more words →") }
         }
 
         SectionTitle("📦 Packs")
