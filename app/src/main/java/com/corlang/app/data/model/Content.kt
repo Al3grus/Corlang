@@ -232,7 +232,7 @@ data class VocabPack(
 
 @Serializable
 data class VocabWord(
-    val id: String,              // stable key used by the SRS review table — NEVER rename
+    val id: String,              // stable key used by the SRS review table, NEVER rename
     val hr: String,              // target-language side (named for the primary language)
     val en: String,              // English gloss
     val note: String? = null,    // optional usage/grammar hint shown on the back
@@ -295,7 +295,7 @@ data class ExamSection(
     val kind: ExamSectionKind,
     val title: String,
     val instructions: String = "",
-    /** Scored sections (LISTENING/READING/GRAMMAR) need ≥ this % — null for pass/fail sections. */
+    /** Scored sections (LISTENING/READING/GRAMMAR) need ≥ this %, null for pass/fail sections. */
     val passPercent: Int? = null,
     val passages: List<Passage> = emptyList(),
     val questions: List<Question> = emptyList(),

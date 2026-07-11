@@ -88,14 +88,14 @@ fun LearnActivity(container: AppContainer, activity: DayActivity, onDone: () -> 
         Button(
             onClick = onDone,
             modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
-        ) { Text("Studied — practise it now →") }
+        ) { Text("Studied, practise it now →") }
     }
 }
 
 /** EXERCISE: sequential graded questions (MCQ / FILL / REORDER) with instant feedback.
  *
  * A missed question isn't a dead end: it's re-queued to the end and re-asked until answered
- * correctly, so you only ever repeat the ones you got wrong — not the whole set. MCQ options
+ * correctly, so you only ever repeat the ones you got wrong, not the whole set. MCQ options
  * are shuffled per showing so the correct answer isn't positionally predictable.
  */
 @OptIn(ExperimentalLayoutApi::class)
@@ -131,13 +131,13 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
                 modifier = Modifier.padding(vertical = 8.dp)
             )
             Text(
-                if (!missedAny) "Perfect — first try on every one."
-                else "All correct now — the ones you missed came back until you nailed them.",
+                if (!missedAny) "Perfect, first try on every one."
+                else "All correct now, the ones you missed came back until you nailed them.",
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center
             )
             Button(onClick = onDone, modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
-                Text("Done — next step →")
+                Text("Done, next step →")
             }
         }
         return
@@ -237,7 +237,7 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
                         }
                 ) {
                     Text(
-                        if (reorderAssembled.isEmpty()) "(tap words — tap here to undo)"
+                        if (reorderAssembled.isEmpty()) "(tap words, tap here to undo)"
                         else reorderAssembled.joinToString(" "),
                         modifier = Modifier.padding(10.dp)
                     )
@@ -314,14 +314,14 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
                     !checked -> "Check"
                     lastCorrect && queue.size <= 1 -> "Finish exercise"
                     lastCorrect -> "Next →"
-                    else -> "Got it — try this one again later"
+                    else -> "Got it, try this one again later"
                 }
             )
         }
     }
 }
 
-/** DIALOGUE: a real script to act out — read your lines aloud; partner (or TTS) reads theirs. */
+/** DIALOGUE: a real script to act out, read your lines aloud; partner (or TTS) reads theirs. */
 @Composable
 fun DialogueActivity(container: AppContainer, activity: DayActivity, onDone: () -> Unit) {
     var revealed by remember(activity.title) { mutableStateOf(false) }
@@ -381,7 +381,7 @@ fun DialogueActivity(container: AppContainer, activity: DayActivity, onDone: () 
             }
         }
         Text(
-            "Act it out aloud — with your partner if possible, or tap 🔊 for the other role.",
+            "Act it out aloud, with your partner if possible, or tap 🔊 for the other role.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 6.dp)

@@ -84,7 +84,7 @@ fun ExamScreen(container: AppContainer, lang: String) {
     val exam = exams.firstOrNull { it.id == activeExamId }
 
     if (exam == null) {
-        // Pick the mock for YOUR level — practice the official format from A1 up.
+        // Pick the mock for YOUR level, practice the official format from A1 up.
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -173,7 +173,7 @@ private fun ExamOverview(
             modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp)
         ) {
             Text(
-                if (verdict) "🎓 All five sections passed on your latest attempts — by the official rule, you'd PASS. Time to book the real exam."
+                if (verdict) "🎓 All five sections passed on your latest attempts, by the official rule, you'd PASS. Time to book the real exam."
                 else "Official rule: ${exam.passRule}",
                 modifier = Modifier.padding(12.dp),
                 style = MaterialTheme.typography.bodyMedium,
@@ -194,7 +194,7 @@ private fun ExamOverview(
                             when {
                                 a == null -> "Not attempted yet"
                                 s.passPercent != null ->
-                                    "Latest: ${a.score}/${a.total} (${if (a.total > 0) a.score * 100 / a.total else 0}%) — " +
+                                    "Latest: ${a.score}/${a.total} (${if (a.total > 0) a.score * 100 / a.total else 0}%), " +
                                         (if (a.passed) "PASSED (≥${s.passPercent}%)" else "below ${s.passPercent}%")
                                 else -> if (a.passed) "Latest: PASSED (self-check)" else "Latest: not yet passed"
                             },
@@ -247,8 +247,8 @@ private fun ScoredSectionRunner(
                 modifier = Modifier.padding(vertical = 10.dp)
             )
             Text(
-                if (passed) "PASSED — the official bar is ${section.passPercent}%."
-                else "Below the official ${section.passPercent}% bar — review and retake.",
+                if (passed) "PASSED, the official bar is ${section.passPercent}%."
+                else "Below the official ${section.passPercent}% bar, review and retake.",
                 style = MaterialTheme.typography.bodyLarge
             )
             Button(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 20.dp)) {
@@ -286,7 +286,7 @@ private fun ScoredSectionRunner(
                 if (p.audioOnly) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         SpeakerButton(tts = container.tts, text = p.text, rate = 0.9f)
-                        Text("Listen — the transcript stays hidden.",
+                        Text("Listen, the transcript stays hidden.",
                             style = MaterialTheme.typography.bodySmall)
                     }
                 } else {
@@ -344,7 +344,7 @@ private fun ScoredSectionRunner(
                 modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
             ) {
                 Column(Modifier.padding(14.dp)) {
-                    Text(if (lastCorrect) "✅ Correct" else "❌ Not quite — answer: ${q.answer}",
+                    Text(if (lastCorrect) "✅ Correct" else "❌ Not quite, answer: ${q.answer}",
                         fontWeight = FontWeight.Bold)
                     Text(q.explanation, modifier = Modifier.padding(top = 6.dp))
                 }
@@ -425,8 +425,8 @@ private fun OpenSectionRunner(
         Column(Modifier.fillMaxSize().padding(24.dp), verticalArrangement = Arrangement.Center) {
             Text(section.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             Text(
-                if (passed) "ZADOVOLJIO — section passed (self-check)."
-                else "Not yet — $passCount/${section.prompts.size} tasks passed. Practise and retake.",
+                if (passed) "ZADOVOLJIO, section passed (self-check)."
+                else "Not yet, $passCount/${section.prompts.size} tasks passed. Practise and retake.",
                 style = MaterialTheme.typography.headlineSmall,
                 color = if (passed) feedback.correct else feedback.wrong,
                 modifier = Modifier.padding(vertical = 12.dp)
@@ -530,7 +530,7 @@ private fun OpenPromptTask(
             ) {
                 Text(
                     if (allTicked) "All rubric points met → task passed"
-                    else "Save (task not passed — ${prompt.rubric.indices.count { ticks[it] == true }}/${prompt.rubric.size} points)"
+                    else "Save (task not passed, ${prompt.rubric.indices.count { ticks[it] == true }}/${prompt.rubric.size} points)"
                 )
             }
         }

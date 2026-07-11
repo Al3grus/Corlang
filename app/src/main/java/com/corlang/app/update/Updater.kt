@@ -33,7 +33,7 @@ sealed interface UpdateState {
 
 /**
  * Self-updater: checks a JSON manifest in the public GitHub repo, and if a newer build exists,
- * downloads its APK and hands it to the system installer — one tap, no browsing to GitHub.
+ * downloads its APK and hands it to the system installer, one tap, no browsing to GitHub.
  */
 class Updater(private val context: Context) {
 
@@ -100,7 +100,7 @@ class Updater(private val context: Context) {
     }
 
     companion object {
-        // Public raw URLs — anonymous access works once the repo is public.
+        // Public raw URLs, anonymous access works once the repo is public.
         private const val BASE = "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases"
         const val VERSION_URL = "$BASE/version.json"
     }

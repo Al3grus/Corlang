@@ -80,7 +80,7 @@ data class ExamSectionAttempt(
 data class DayTaskCheck(
     val langCode: String,
     val day: Int,
-    val itemId: String,      // "drill-0", "res-1", "review-2" — stable per plan JSON order
+    val itemId: String,      // "drill-0", "res-1", "review-2", stable per plan JSON order
     val checkedAtEpoch: Long
 )
 

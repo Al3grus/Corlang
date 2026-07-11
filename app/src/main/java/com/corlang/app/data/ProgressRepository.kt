@@ -35,7 +35,7 @@ class ProgressRepository(private val dao: ProgressDao) {
     /**
      * Credits today as a study day: bumps the streak if this is the first activity today
      * (consecutive-calendar-day logic) and stamps lastStudiedEpochDay. Any real practice —
-     * plan day, quiz, teach-back, or a words session — counts toward the daily streak.
+     * plan day, quiz, teach-back, or a words session, counts toward the daily streak.
      */
     suspend fun recordStudyActivity(lang: String) {
         val today = LocalDate.now().toEpochDay()

@@ -40,7 +40,7 @@ import kotlinx.coroutines.launch
 /**
  * The Lesson tab = one button. It lands on the day after your last completed one, shows the
  * streak and the next action, and "Start lesson" hands over to the guided SessionPlayer,
- * which walks through every task of the day step by step. No loose checklists — the app leads.
+ * which walks through every task of the day step by step. No loose checklists, the app leads.
  */
 @Composable
 fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> Unit = {}) {
@@ -52,7 +52,7 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
     val streak = progress?.streak ?: 0
     val freezes = progress?.streakFreezes ?: 0
 
-    // Live due count for the hero ('today' computed fresh — no stale midnight state).
+    // Live due count for the hero ('today' computed fresh, no stale midnight state).
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
     val today = WordsRepository.todayEpochDay()
     val dueNow = reviews.count { it.dueEpochDay <= today }
@@ -100,22 +100,22 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
         it.id in doneIds || (it.kind == StepKind.WORDS && dueNow == 0)
     }
 
+    // One even rhythm between the page's blocks so nothing clusters at the top.
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 16.dp, vertical = 12.dp)
+            .padding(horizontal = 16.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
         // Hero: streak + the single next action.
         Surface(
             color = MaterialTheme.colorScheme.tertiaryContainer,
             contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
             shape = RoundedCornerShape(16.dp),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 12.dp)
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Column(modifier = Modifier.padding(14.dp)) {
+            Column(modifier = Modifier.padding(16.dp)) {
                 Text(
                     buildString {
                         append(
@@ -129,8 +129,8 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
                 )
                 Text(
                     when {
-                        !studiedToday && dueNow > 0 -> "$dueNow words due — the lesson starts with them."
-                        studiedToday -> "Today is banked ✓ — keep going for depth."
+                        !studiedToday && dueNow > 0 -> "$dueNow words due. The lesson starts with them."
+                        studiedToday -> "Today is banked ✓. Keep going for depth."
                         else -> "One guided lesson keeps the streak alive."
                     },
                     style = MaterialTheme.typography.bodySmall,
@@ -140,70 +140,70 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
         }
 
         // Day navigator (browse the plan). Lands on your current lesson; ‹ › to look around.
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            OutlinedButton(
-                onClick = { if (viewedDay > 1) { viewedDay--; userBrowsed = true } },
-                enabled = viewedDay > 1
-            ) { Text("‹") }
+        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                OutlinedButton(
+                    onClick = { if (viewedDay > 1) { viewedDay--; userBrowsed = true } },
+                    enabled = viewedDay > 1
+                ) { Text("‹") }
+                Text(
+                    "Day ${day.day} / ${plan.days.size}" + if (isDone) "  ✓" else "",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+                OutlinedButton(
+                    onClick = { if (viewedDay < plan.days.size) { viewedDay++; userBrowsed = true } },
+                    enabled = viewedDay < plan.days.size
+                ) { Text("›") }
+            }
+            // If the learner browsed away, one tap returns to the day they're up to.
+            if (viewedDay != targetDay) {
+                Text(
+                    "↩ Back to your current lesson (Day $targetDay)",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { viewedDay = targetDay; userBrowsed = false }
+                )
+            }
+        }
+
+        // Lesson header + objective.
+        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text(
-                "Day ${day.day} / ${plan.days.size}" + if (isDone) "  ✓" else "",
-                style = MaterialTheme.typography.titleMedium,
+                "${day.phase} · Week ${day.week} · ${day.level}",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.primary
+            )
+            Text(
+                day.title,
+                style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold
             )
-            OutlinedButton(
-                onClick = { if (viewedDay < plan.days.size) { viewedDay++; userBrowsed = true } },
-                enabled = viewedDay < plan.days.size
-            ) { Text("›") }
-        }
-        // If the learner browsed away, one tap returns to the day they're actually up to.
-        if (viewedDay != targetDay) {
-            Text(
-                "↩ Back to your current lesson (Day $targetDay)",
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.primary,
-                fontWeight = FontWeight.SemiBold,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 6.dp)
-                    .clickable { viewedDay = targetDay; userBrowsed = false }
-            )
+            InfoCard {
+                SectionTitle("🎯 In this lesson you will")
+                Text(day.objective, style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(bottom = 4.dp))
+            }
         }
 
-        Spacer(Modifier.height(12.dp))
-        Text(
-            "${day.phase} · Week ${day.week} · ${day.level}",
-            style = MaterialTheme.typography.labelLarge,
-            color = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.padding(top = 8.dp)
-        )
-        Text(
-            day.title,
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold
-        )
-
-        InfoCard {
-            SectionTitle("🎯 In this lesson you will")
-            Text(day.objective, style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(bottom = 4.dp))
-        }
-
-        Spacer(Modifier.height(8.dp))
-        // Days must be done in order — a future day is locked until you finish the current one.
+        // Days must be done in order: a future day is locked until you finish the current one.
         val locked = day.day > targetDay
         if (locked) {
             Surface(
                 color = MaterialTheme.colorScheme.surfaceVariant,
                 contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
                 shape = RoundedCornerShape(12.dp),
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    "🔒 Locked — finish Day $targetDay first. No skipping ahead.",
+                    "🔒 Locked. Finish Day $targetDay first, no skipping ahead.",
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.padding(16.dp)
@@ -212,13 +212,11 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
         } else {
             Button(
                 onClick = { inPlayer = true },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 8.dp)
+                modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
                     when {
-                        isDone -> "Day done ✓ — revisit the lesson"
+                        isDone -> "Day done ✓, revisit the lesson"
                         stepsDone > 0 -> "Continue lesson ($stepsDone/${actionSteps.size} steps done)"
                         else -> "Start lesson →"
                     },
@@ -226,15 +224,7 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
                     modifier = Modifier.padding(vertical = 6.dp)
                 )
             }
-            Text(
-                "${actionSteps.size} guided steps · the app walks you through each one",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 4.dp)
-            )
         }
-
-        Spacer(Modifier.height(24.dp))
 
         // The stepping-stones map: scroll your level's lessons, jump to any you've reached,
         // switch between completed levels to review.
@@ -246,6 +236,6 @@ fun TodayScreen(container: AppContainer, lang: String, onNavigate: (String) -> U
             onPickDay = { d -> viewedDay = d; userBrowsed = true }
         )
 
-        androidx.compose.foundation.layout.Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(8.dp))
     }
 }

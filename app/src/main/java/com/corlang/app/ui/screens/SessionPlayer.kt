@@ -143,7 +143,7 @@ fun buildSessionSteps(
         if (nav != Dest.WORDS.route && url == null && caseRegex.containsMatchIn(text)) {
             steps += SessionStep(
                 id = "$prefix-$index", kind = StepKind.CLOZE,
-                title = "Case drill — the right form in context",
+                title = "Case drill, the right form in context",
                 detail = text,
                 phase = if (isReview) "5 · Wrap-up" else "3 · Practice"
             )
@@ -152,7 +152,7 @@ fun buildSessionSteps(
         if (nav == null && url == null && recallRegex.containsMatchIn(text)) {
             steps += SessionStep(
                 id = "$prefix-$index", kind = StepKind.RECALL,
-                title = "Recall drill — type the Croatian",
+                title = "Recall drill, type the Croatian",
                 detail = text,
                 phase = if (isReview) "5 · Wrap-up" else "3 · Practice"
             )
@@ -212,7 +212,7 @@ fun buildSessionSteps(
     steps += SessionStep(
         id = "complete", kind = StepKind.COMPLETE,
         title = "Day ${day.day} done",
-        detail = "Mark the day complete — streak credited, plan advances."
+        detail = "Mark the day complete, streak credited, plan advances."
     )
     return steps
 }
@@ -350,7 +350,7 @@ fun SessionPlayer(
                 }
                 if (step.kind == StepKind.WORDS) {
                     Text(
-                        if (dueNow == 0) "✅ Nothing due — this step is done."
+                        if (dueNow == 0) "✅ Nothing due, this step is done."
                         else "$dueNow words waiting.",
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.SemiBold,
@@ -390,7 +390,7 @@ fun SessionPlayer(
                         modifier = Modifier.fillMaxWidth()
                     ) { Text("Review $dueNow words now") }
                     Text(
-                        "Come back to Today when you're done — your place here is saved.",
+                        "Come back to Today when you're done, your place here is saved.",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(top = 6.dp)
@@ -414,7 +414,7 @@ fun SessionPlayer(
                 Button(
                     onClick = ::markAndNext,
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Done — next step →") }
+                ) { Text("Done, next step →") }
             }
 
             StepKind.TASK -> {
@@ -435,7 +435,7 @@ fun SessionPlayer(
                 Button(
                     onClick = ::markAndNext,
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Done — next step →") }
+                ) { Text("Done, next step →") }
             }
 
             StepKind.GENDER, StepKind.CLOZE, StepKind.RECALL,
@@ -518,13 +518,13 @@ private fun GenderDrill(container: AppContainer, lang: String, onFinished: () ->
                 modifier = Modifier.padding(vertical = 8.dp)
             )
             Text(
-                if (score == items.size) "Perfect — genders locked in."
+                if (score == items.size) "Perfect, genders locked in."
                 else "Remember: consonant → m, -a → f, -o/-e → n (with exceptions the app flags).",
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center
             )
             Button(onClick = onFinished, modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
-                Text("Done — next step →")
+                Text("Done, next step →")
             }
         }
         return

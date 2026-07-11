@@ -70,7 +70,7 @@ private fun CorlangApp(container: AppContainer) {
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
     var showSettings by rememberSaveable { mutableStateOf(false) }
 
-    // Re-anchor the daily reminder to the next 19:00 on every app start — WorkManager's
+    // Re-anchor the daily reminder to the next 19:00 on every app start, WorkManager's
     // periodic work drifts with Doze deferrals and would otherwise wander off schedule.
     val context = LocalContext.current
     LaunchedEffect(Unit) {
@@ -189,7 +189,7 @@ private fun UpdateDialog(container: AppContainer, info: ReleaseInfo, onDismiss: 
                             onDismiss()
                         } else {
                             downloading = false
-                            error = "Download failed — check your connection and try again."
+                            error = "Download failed, check your connection and try again."
                         }
                     }
                 }

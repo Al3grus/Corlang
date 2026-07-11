@@ -144,7 +144,7 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
 
 /**
  * Typed EN→HR recall (production practice): type the Croatian word for the gloss.
- * Graded with STRICT diacritics — exactly as the exam expects you to write.
+ * Graded with STRICT diacritics, exactly as the exam expects you to write.
  */
 @Composable
 fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
@@ -166,7 +166,7 @@ fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
     }
     if (finished) {
         DrillResult(score, items.size,
-            "Producing the Croatian yourself — with the right diacritics — is what speaking needs.", onFinished)
+            "Producing the Croatian yourself, with the right diacritics, is what speaking needs.", onFinished)
         return
     }
 
@@ -247,7 +247,7 @@ private fun DrillResult(score: Int, total: Int, line: String, onFinished: () -> 
         )
         Text(line, style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center)
         Button(onClick = onFinished, modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
-            Text("Done — next step →")
+            Text("Done, next step →")
         }
         Spacer(Modifier.height(8.dp))
     }

@@ -11,7 +11,7 @@ enum class TtsState { INITIALIZING, READY, LANGUAGE_MISSING, UNAVAILABLE }
 
 /**
  * Croatian text-to-speech via the system engine. Lazy: the engine is created on first use.
- * Never blocks features — callers observe [state] and degrade gracefully (e.g. LISTEN
+ * Never blocks features, callers observe [state] and degrade gracefully (e.g. LISTEN
  * questions offer a "reveal transcript" fallback when Croatian isn't available).
  */
 class TtsManager(private val context: Context) {

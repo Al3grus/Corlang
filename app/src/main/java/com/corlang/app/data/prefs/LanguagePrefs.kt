@@ -34,7 +34,7 @@ class LanguagePrefs(private val context: Context) {
     private val reminderHourKey = intPreferencesKey("reminder_hour")
     private val reminderMinuteKey = intPreferencesKey("reminder_minute")
 
-    /** User-chosen reminder time (default 19:00) — "when I plan to study", not a nag time. */
+    /** User-chosen reminder time (default 19:00), "when I plan to study", not a nag time. */
     val reminderTime: Flow<Pair<Int, Int>> =
         context.dataStore.data.map { (it[reminderHourKey] ?: 19) to (it[reminderMinuteKey] ?: 0) }
 

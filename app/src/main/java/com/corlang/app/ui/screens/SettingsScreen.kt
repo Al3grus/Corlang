@@ -150,7 +150,7 @@ fun SettingsScreen(
         InfoCard {
             Text("Daily word goal", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
             Text(
-                "Your daily target of new words. 10 is the sustainable default — but it's a goal, " +
+                "Your daily target of new words. 10 is the sustainable default, but it's a goal, " +
                     "not a cap: you can always keep learning past it with \"Learn 10 more\" in the Words tab.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -207,7 +207,7 @@ fun SettingsScreen(
                 fontWeight = FontWeight.SemiBold
             )
             Text(
-                "Updates download and install from within the app — no browsing needed.",
+                "Updates download and install from within the app, no browsing needed.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
@@ -226,7 +226,7 @@ fun SettingsScreen(
                             val apk = container.updater.downloadApk(info) { pct = it }
                             dl = false
                             if (apk != null) container.updater.installApk(apk)
-                            else checkState = "Download failed — try again."
+                            else checkState = "Download failed, try again."
                         }
                     },
                     modifier = Modifier.fillMaxWidth()
@@ -253,7 +253,7 @@ fun SettingsScreen(
         // ----- About -----
         SectionTitle("ℹ️ About")
         InfoCard {
-            Text("Corlang — Core + Language", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+            Text("Corlang, Core + Language", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
             Text(
                 "Learn the core of a language on an evidence-based daily method (retrieval practice + " +
                     "distributed practice), anchored to the official Croatian curriculum and the real " +

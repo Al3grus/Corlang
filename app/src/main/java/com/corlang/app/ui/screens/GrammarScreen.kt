@@ -50,7 +50,7 @@ fun GrammarScreen(container: AppContainer, lang: String) {
         Text("Grammar", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
         Text(
             "The complete syllabus per CEFR level, from the official Croatian curriculum. " +
-                "Tables are reference-grade — no shortcuts.",
+                "Tables are reference-grade, no shortcuts.",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 2.dp, bottom = 6.dp)
@@ -60,7 +60,7 @@ fun GrammarScreen(container: AppContainer, lang: String) {
         }
         syllabus.levels.forEach { level ->
             Text(
-                "${level.levelId} — ${level.topics.size} topics",
+                "${level.levelId}, ${level.topics.size} topics",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
