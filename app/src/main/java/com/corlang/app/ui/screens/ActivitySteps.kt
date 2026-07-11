@@ -31,6 +31,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.model.DayActivity
+import com.corlang.app.data.model.Question
 import com.corlang.app.data.model.QuestionType
 import com.corlang.app.ui.Haptics
 import com.corlang.app.ui.components.SpeakerButton
@@ -91,14 +92,24 @@ fun LearnActivity(container: AppContainer, activity: DayActivity, onDone: () -> 
     }
 }
 
-/** EXERCISE: sequential graded questions (MCQ / FILL / REORDER) with instant feedback. */
+/** EXERCISE: sequential graded questions (MCQ / FILL / REORDER) with instant feedback.
+ *
+ * A missed question isn't a dead end: it's re-queued to the end and re-asked until answered
+ * correctly, so you only ever repeat the ones you got wrong — not the whole set. MCQ options
+ * are shuffled per showing so the correct answer isn't positionally predictable.
+ */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () -> Unit) {
     val context = LocalContext.current
-    val questions = activity.questions
-    var index by remember(activity.title) { mutableIntStateOf(0) }
-    var score by remember(activity.title) { mutableIntStateOf(0) }
+    val total = activity.questions.size
+
+    // Live queue of remaining questions; missed ones get re-appended. `served` bumps each
+    // time we advance so option-shuffle / response state re-init cleanly.
+    val queue = remember(activity.title) { mutableStateListOf<Question>().apply { addAll(activity.questions) } }
+    var served by remember(activity.title) { mutableIntStateOf(0) }
+    var solved by remember(activity.title) { mutableIntStateOf(0) }   // distinct questions cleared
+    var missedAny by remember(activity.title) { mutableStateOf(false) }
     var checked by remember(activity.title) { mutableStateOf(false) }
     var lastCorrect by remember(activity.title) { mutableStateOf(false) }
     var finished by remember(activity.title) { mutableStateOf(false) }
@@ -107,21 +118,21 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
     val reorderAssembled = remember(activity.title) { mutableStateListOf<String>() }
     val feedback = CorlangColors.feedback
 
-    if (questions.isEmpty()) {
+    if (total == 0) {
         Button(onClick = onDone, modifier = Modifier.fillMaxWidth()) { Text("Next →") }
         return
     }
-    if (finished) {
+    if (finished || queue.isEmpty()) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             Text(
-                "🎯 $score / ${questions.size}",
+                "🎯 $total / $total",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(vertical = 8.dp)
             )
             Text(
-                if (score == questions.size) "Perfect. On to the next step."
-                else "Review the ones you missed above — they'll come back in future drills.",
+                if (!missedAny) "Perfect — first try on every one."
+                else "All correct now — the ones you missed came back until you nailed them.",
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.Center
             )
@@ -132,10 +143,14 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
         return
     }
 
-    val q = questions[index]
+    val q = queue.first()
+    // Shuffle MCQ options once per showing so position never gives away the answer.
+    val displayOptions = remember(activity.title, served) {
+        if (q.type == QuestionType.MCQ) q.options.shuffled() else q.options
+    }
     Column(modifier = Modifier.fillMaxWidth()) {
         LinearProgressIndicator(
-            progress = { (index + 1f) / questions.size },
+            progress = { solved.toFloat() / total },
             modifier = Modifier.fillMaxWidth().padding(bottom = 6.dp)
         )
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -145,7 +160,10 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.weight(1f)
             )
-            Text("${index + 1}/${questions.size}", style = MaterialTheme.typography.bodySmall)
+            Text(
+                "$solved/$total" + if (queue.size > 1) "  ·  ${queue.size} left" else "",
+                style = MaterialTheme.typography.bodySmall
+            )
         }
         q.audioText?.let { audio ->
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -155,7 +173,7 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
         }
 
         when (q.type) {
-            QuestionType.MCQ -> q.options.forEach { option ->
+            QuestionType.MCQ -> displayOptions.forEach { option ->
                 val isChosen = selectedOption == option
                 val border = when {
                     !checked && isChosen -> MaterialTheme.colorScheme.primary
@@ -265,14 +283,22 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
                         else -> false
                     }
                     lastCorrect = correct
-                    if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
+                    if (correct) Haptics.confirm(context) else { Haptics.reject(context); missedAny = true }
                     checked = true
-                } else if (index + 1 >= questions.size) {
-                    finished = true
                 } else {
-                    index++
-                    selectedOption = null; fillText = ""; reorderAssembled.clear()
-                    checked = false; lastCorrect = false
+                    val cur = queue.removeAt(0)
+                    if (lastCorrect) {
+                        solved++            // a distinct question cleared
+                    } else {
+                        queue.add(cur)      // re-ask this one later, until it's right
+                    }
+                    if (queue.isEmpty()) {
+                        finished = true
+                    } else {
+                        served++
+                        selectedOption = null; fillText = ""; reorderAssembled.clear()
+                        checked = false; lastCorrect = false
+                    }
                 }
             },
             enabled = checked || when (q.type) {
@@ -286,8 +312,9 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
             Text(
                 when {
                     !checked -> "Check"
-                    index + 1 >= questions.size -> "Finish exercise"
-                    else -> "Next →"
+                    lastCorrect && queue.size <= 1 -> "Finish exercise"
+                    lastCorrect -> "Next →"
+                    else -> "Got it — try this one again later"
                 }
             )
         }

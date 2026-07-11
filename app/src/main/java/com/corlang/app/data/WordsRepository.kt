@@ -51,6 +51,18 @@ class WordsRepository(
         return due + fresh
     }
 
+    /**
+     * The next [count] never-seen words REGARDLESS of the daily goal — the goal is a floor,
+     * not a ceiling. Used by "Learn more words" after the day's session is cleared.
+     */
+    suspend fun extraNewWords(lang: String, count: Int = 10): List<SessionCard> {
+        val seenIds = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()
+        return allWords(lang)
+            .filter { it.id !in seenIds }
+            .take(count)
+            .map { SessionCard(it, null) }
+    }
+
     /** Rebuilds session cards from a persisted list of word ids (gym-proof resume). */
     suspend fun sessionFromIds(lang: String, ids: List<String>): List<SessionCard> {
         val wordsById = allWords(lang).associateBy { it.id }

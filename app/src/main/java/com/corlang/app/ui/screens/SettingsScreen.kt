@@ -148,9 +148,10 @@ fun SettingsScreen(
         SectionTitle("🃏 Learning pace")
         val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
         InfoCard {
-            Text("New words per day", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+            Text("Daily word goal", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
             Text(
-                "10 is the sustainable default; raise it only if your daily reviews stay comfortable.",
+                "Your daily target of new words. 10 is the sustainable default — but it's a goal, " +
+                    "not a cap: you can always keep learning past it with \"Learn 10 more\" in the Words tab.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(bottom = 8.dp)
