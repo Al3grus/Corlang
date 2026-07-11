@@ -44,11 +44,17 @@ fun ProgressScreen(container: AppContainer, lang: String) {
 
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val daysDone by container.progress.completedDayCount(lang).collectAsState(initial = 0)
+    val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
     val scope = rememberCoroutineScope()
 
     val currentLevel = progress?.currentLevel ?: "A0"
     val streak = progress?.streak ?: 0
     val currentDay = progress?.currentDay ?: 1
+    // "Started" = introduced at all; "learned" = answered right enough to be internalised
+    // (box 3, roughly three correct recalls); "mastered" = box 5+ (long intervals).
+    val wordsStarted = reviews.size
+    val wordsLearned = reviews.count { it.box >= 3 }
+    val wordsMastered = reviews.count { it.box >= 5 }
 
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
@@ -68,6 +74,14 @@ fun ProgressScreen(container: AppContainer, lang: String) {
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
+
+        // Vocabulary stats
+        Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            StatTile("🌱 $wordsStarted", "words started", Modifier.weight(1f))
+            StatTile("📖 $wordsLearned", "words learned", Modifier.weight(1f))
+            StatTile("🏆 $wordsMastered", "words mastered", Modifier.weight(1f))
+        }
 
         // Pareto summary
         InfoCard {
