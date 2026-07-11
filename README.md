@@ -2,59 +2,45 @@
 
 **A study-based language-learning app for serious learners preparing for official exams.**
 
-Corlang is a native Android app (Kotlin + Jetpack Compose) built to teach a language properly —
-not with points, leagues, or streaks-as-games, but with an evidence-based study method and a
-day-by-day course that takes you from zero to a real, official language exam.
+Corlang teaches a language properly — not with points, leagues, or games, but with a proven study
+method and a day-by-day course that takes you from zero to a real, official language exam.
 
-It is built as a **multi-language platform**. The first (and currently only) language is
-**Croatian**, with a complete A1 → B1 course aligned to the official exam. More languages are
-planned — the app's content is data, so adding a language means adding content, not rewriting the
-app.
+The first language is **Croatian**, with a complete course from beginner to the official B1 exam.
+More languages are planned.
 
-## Philosophy
+## What makes it different
 
-- **Study, not gamification.** The daily flow follows what learning research actually supports —
-  retrieval practice and spaced (distributed) practice — rather than game mechanics.
-- **Exam-focused.** Everything builds toward passing the official language exam for the target
-  language (for Croatian, the B1 certificate exam).
-- **Validated content.** The curriculum is anchored to official sources — the state curriculum,
-  the exam regulations, and the CEFR framework — with the provenance recorded in `docs/sources/`.
-- **Offline & free.** No backend, no accounts, no ads. Progress is stored on the device.
+- **Study, not games.** The daily flow is built on how people actually learn and remember —
+  regular practice, spaced out over time — instead of streaks-for-the-sake-of-streaks and rewards.
+- **Aimed at the real exam.** Everything builds toward passing the official language exam, in its
+  real format.
+- **Trustworthy content.** The lessons follow the official curriculum and exam standards for the
+  language you're learning.
+- **Yours, offline.** No accounts, no ads. Your progress stays on your phone.
 
 ## What's inside
 
-- **Lesson** — a guided, day-by-day course. Each day is a self-contained lesson: material to
-  read and listen to, interactive exercises, and conversation scripts to practise aloud. Days
-  must be done in order, so nothing is skipped.
-- **Words** — spaced-repetition flashcards for the core vocabulary, with audio and a daily goal.
-- **Quiz** — level quizzes and full mock exams in the official exam format.
-- **Learn** — a reference library: cheatsheet, full grammar syllabus with tables, and teach-back.
-- **Progress** — your streak, level, vocabulary and course progress, plus a level-by-level map.
+- **Lesson** — your guided course, one day at a time. Each day is a complete lesson: things to
+  read and listen to, exercises to practise, and short conversations to say out loud. You move
+  through the days in order, so nothing gets skipped.
+- **Words** — flashcards for the core vocabulary, on a smart schedule that brings words back just
+  before you'd forget them. With audio.
+- **Quiz** — practice quizzes and full mock exams in the real exam format.
+- **Learn** — a reference you can dip into any time: a cheatsheet, the full grammar, and a
+  "teach it back" exercise to check you really understand.
+- **Progress** — your streak, your level, your vocabulary, and a map of the whole journey.
 
 ## Croatian
 
-The Croatian course is a 240-day path from A1 to B1, aligned to the official ASOO curriculum and
-the Croaticum / University of Zagreb exam format. It pairs with the free University of Zagreb
-e-courses ([A1.hr](https://a1.ffzg.unizg.hr/), [A2.hr](https://a2.ffzg.unizg.hr/)) and ends with
-guided exam preparation, timed mock exams, and instructions for booking the real exam.
-
-## Adding a language
-
-Content lives as JSON under `app/src/main/assets/content/<lang>/` (meta, plan, vocab, grammar,
-quizzes, exams, …). The same screens render whichever language is selected, so a new language is a
-new folder of content — no UI changes. A content-validation test enforces that every piece is
-well-formed and cites an official source.
-
-## Build & run
-
-You need **Android Studio** (it bundles the JDK, Android SDK and Gradle). See
-**[SETUP.md](SETUP.md)** for step-by-step instructions.
+The Croatian course is a step-by-step path from complete beginner to the official B1 certificate
+exam. It works alongside the free University of Zagreb online courses
+([A1.hr](https://a1.ffzg.unizg.hr/), [A2.hr](https://a2.ffzg.unizg.hr/)) and finishes with exam
+practice, timed mock exams, and how to book the real thing.
 
 ## Updates
 
-Installed builds check for a newer version on launch and can download and install it from within
-the app — no manual reinstalling.
+The app checks for a newer version when it opens and can update itself — no reinstalling by hand.
 
 ## License
 
-Personal learning project. Content authored for educational use.
+Personal learning project. Content made for educational use.
