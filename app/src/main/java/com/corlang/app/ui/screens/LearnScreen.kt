@@ -24,7 +24,7 @@ import com.corlang.app.AppContainer
 @Composable
 fun LearnScreen(container: AppContainer, lang: String) {
     var tab by rememberSaveable(lang) { mutableIntStateOf(0) }
-    val labels = listOf("Cheatsheet", "Grammar", "Teach")
+    val labels = listOf("Cheatsheet", "Grammar", "Teach", "Talk")
 
     Column(modifier = Modifier.fillMaxSize()) {
         SingleChoiceSegmentedButtonRow(
@@ -43,7 +43,8 @@ fun LearnScreen(container: AppContainer, lang: String) {
         when (tab) {
             0 -> CheatsheetScreen(container, lang)
             1 -> GrammarScreen(container, lang)
-            else -> TeachScreen(container, lang)
+            2 -> TeachScreen(container, lang)
+            else -> TalkScreen(container, lang)
         }
     }
 }
