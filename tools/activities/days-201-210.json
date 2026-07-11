@@ -1,0 +1,451 @@
+{
+  "201": [
+    {
+      "type": "LEARN",
+      "title": "Zbirne imenice — kad je 'djeca' i jednina i množina",
+      "intro": "Collective nouns name a group as a single mass, and Croatian handles them in a way you simply have to learn. Djeca, braća and gospoda decline like the feminine noun žena (s djecom, o braći) but demand a plural verb with the participle in -la (Djeca su se igrala). The -je collectives (lišće, cvijeće) are neuter singular in every case. Master the agreement here and you clear one of the classic B1 exam traps.",
+      "items": [
+        { "hr": "dijete → djeca", "en": "child → children", "note": "dijete has no ordinary plural; its plural IS the collective djeca. Declines like žena in the singular (djeci, djecom), but takes a plural verb." },
+        { "hr": "Djeca su se igrala u parku.", "en": "The children were playing in the park.", "note": "The trap: plural verb su + participle in -la (igrala), even though djeca looks like a singular feminine noun." },
+        { "hr": "brat → braća", "en": "brother → brothers", "note": "braća is the everyday plural of brat. Declines like žena (s braćom, o braći) but takes a plural verb: Braća su došla." },
+        { "hr": "gospoda", "en": "gentlemen", "note": "Collective of gospodin. Plural verb: Gospoda su stigla. Vocative Poštovana gospodo! opens a formal speech." },
+        { "hr": "list → lišće", "en": "leaf → leaves, foliage", "note": "The -je collective. Neuter SINGULAR in every respect: Lišće je požutjelo i palo. = The leaves turned yellow and fell." },
+        { "hr": "cvijet → cvijeće", "en": "flower → flowers", "note": "Neuter singular: Cvijeće lijepo miriše. Kupio sam ženi cvijeće. = I bought my wife flowers." },
+        { "hr": "grana → granje", "en": "branch → branches", "note": "Another -je collective, neuter singular: Granje je popadalo nakon oluje. = The branches fell after the storm." },
+        { "hr": "unuče → unučad", "en": "grandchild → grandchildren", "note": "An -ad collective: feminine i-declension singular. S unučadi = with the grandchildren. Same pattern as telad (calves)." },
+        { "hr": "s djecom / s braćom", "en": "with the children / with the brothers", "note": "Instrumental like žena → -om: djeca → djecom, braća → braćom. Idem u park s djecom." },
+        { "hr": "Imam dvoje djece.", "en": "I have two children.", "note": "For a group of children Croatian uses the collective numeral dvoje (troje, četvero…) + genitive djece, never dva." },
+        { "hr": "Lišće pada, a djeca ga skupljaju.", "en": "The leaves are falling, and the children are gathering them.", "note": "Both collectives in one line: lišće = neuter singular (pada), djeca = plural (skupljaju). Feel the contrast." },
+        { "hr": "Braća su mi visoka, a sestre niske.", "en": "My brothers are tall, and my sisters short.", "note": "Braća su … visoka: plural verb, neuter plural adjective visoka agreeing with the collective. Compare the normal plural sestre su niske." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Agreement with collectives",
+      "intro": "From the meaning of each collective up to the tricky agreement: djeca and braća take a plural verb, lišće stays neuter singular, and children are counted with dvoje.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'djeca' mean?", "difficulty": 1, "options": ["brothers", "children", "flowers", "leaves"], "answer": "children", "explanation": "djeca = children, the collective plural of dijete. It declines like žena but takes a plural verb." },
+        { "type": "MCQ", "prompt": "What does 'lišće' mean?", "difficulty": 2, "options": ["gentlemen", "grandchildren", "leaves (foliage)", "branches"], "answer": "leaves (foliage)", "explanation": "lišće = leaves / foliage, the -je collective of list. It is neuter singular: Lišće je palo." },
+        { "type": "FILL", "prompt": "Complete the agreement: Djeca ______ se igrala. (biti)", "difficulty": 3, "answer": "su", "accepted": ["su"], "strictDiacritics": true, "explanation": "djeca takes a PLURAL verb: Djeca su se igrala, with the participle in -la despite the singular-looking noun." },
+        { "type": "MCQ", "prompt": "Complete: Braća ______ visoka.", "difficulty": 4, "options": ["je", "su", "jest", "bilo"], "answer": "su", "explanation": "braća, like djeca, takes a plural verb: Braća su visoka. The neuter plural adjective visoka agrees with the collective." },
+        { "type": "FILL", "prompt": "Complete the instrumental: Idem u park s ______. (djeca)", "difficulty": 5, "answer": "djecom", "accepted": ["djecom"], "strictDiacritics": true, "explanation": "djeca declines like žena, so the instrumental is djecom: s djecom = with the children." },
+        { "type": "MCQ", "prompt": "Which sentence is correct?", "difficulty": 6, "options": ["Lišće su pala.", "Lišće je palo.", "Lišće su pale.", "Lišća je palo."], "answer": "Lišće je palo.", "explanation": "lišće is neuter SINGULAR in everything: Lišće je palo. Unlike djeca/braća, it never takes a plural verb." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'The children were playing outside.'", "difficulty": 7, "options": ["se", "Djeca", "igrala", "vani", "su"], "ordered": ["Djeca", "su", "se", "igrala", "vani"], "answer": "Djeca su se igrala vani", "explanation": "Plural verb su in second position, then the reflexive se, the participle igrala (-la), and vani = outside." },
+        { "type": "MCQ", "prompt": "'I have two children.' — Imam ______ djece.", "difficulty": 8, "options": ["dva", "dvije", "dvoje", "dvojica"], "answer": "dvoje", "explanation": "Children are counted with the collective numeral dvoje + genitive djece: dvoje djece. dva/dvije are for ordinary count nouns." },
+        { "type": "FILL", "prompt": "Complete the instrumental: Šetali smo šumom, među ______. (granje)", "difficulty": 9, "answer": "granjem", "accepted": ["granjem"], "strictDiacritics": true, "explanation": "granje is a neuter -je collective (like more): instrumental granjem. među granjem = among the branches." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "202": [
+    {
+      "type": "LEARN",
+      "title": "Obitelj govoriti: converse, agree, answer, pronounce, persuade",
+      "intro": "One root, govoriti (to speak), plus a handful of prefixes gives you the machinery of every dialogue: razgovarati (converse), dogovoriti se (agree on), odgovoriti (answer), izgovoriti (pronounce), nagovoriti (persuade). Learn the prefix, decode the verb — and notice that your own textbook is named after this family: Razgovarajte s nama!",
+      "items": [
+        { "hr": "govoriti → govorim, govoriš", "en": "to speak, talk (impf.)", "note": "The base: the process of speaking. Govorim hrvatski. O čemu govoriš? Perfective counterpart: reći (suppletive)." },
+        { "hr": "razgovarati (s kim, o čemu)", "en": "to converse, have a conversation", "note": "raz- = back and forth. Razgovaram sa ženom o poslu. The noun is razgovor — and Razgovarajte s nama! is your textbook." },
+        { "hr": "dogovoriti se (s kim)", "en": "to agree, arrange, settle on", "note": "Dogovorili smo se za sutra. Impf dogovarati se (do- → dogovarati). The noun is dogovor = an agreement, a deal." },
+        { "hr": "odgovoriti (na što)", "en": "to answer, reply", "note": "odgovoriti na pitanje = to answer a question (na + accusative). Impf odgovarati. The noun is odgovor = an answer." },
+        { "hr": "izgovoriti", "en": "to pronounce, utter", "note": "Teško mi je izgovoriti tu riječ. Impf izgovarati. The noun izgovor means both pronunciation AND excuse." },
+        { "hr": "nagovoriti (koga na što / da)", "en": "to persuade, talk into", "note": "Nagovorila me na kupnju. Nagovorio sam je da dođe. na- adds the sense of pushing someone toward something." },
+        { "hr": "progovoriti", "en": "to start speaking, to utter", "note": "Dijete je napokon progovorilo. = The child finally started talking. pro- = break into speech." },
+        { "hr": "odgovarati (komu)", "en": "to suit, to be convenient", "note": "A second meaning of the impf.: Odgovara li ti ovaj termin? = Does this time suit you? (+ dative)." },
+        { "hr": "Dogovorili smo se da se nađemo u šest.", "en": "We agreed to meet at six.", "note": "dogovoriti se da + present. Note the two clitics: se (reflexive of dogovoriti) and se (reflexive of naći se)." },
+        { "hr": "Kako se to izgovara?", "en": "How is that pronounced?", "note": "A se-construction with the impf. izgovarati: Kako se piše i kako se izgovara? = How is it written and pronounced?" },
+        { "hr": "Nagovorio sam ženu da idemo na more.", "en": "I talked my wife into going to the seaside.", "note": "nagovoriti koga da + present. Male speaker: Nagovorio sam (a woman: Nagovorila sam)." },
+        { "hr": "razgovor · dogovor · odgovor · izgovor", "en": "conversation · agreement · answer · excuse/pronunciation", "note": "The whole family also gives you four everyday -or nouns. Watch izgovor: 'To je samo izgovor!' = That's just an excuse!" }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "The govoriti family in context",
+      "intro": "Pick the right prefix for the meaning, put the reflexive se and the case behind each verb in place, and tell odgovoriti (answer) apart from dogovoriti se (agree).",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'razgovarati' mean?", "difficulty": 1, "options": ["to converse", "to answer", "to pronounce", "to persuade"], "answer": "to converse", "explanation": "razgovarati (s kim, o čemu) = to converse, have a conversation. The noun is razgovor." },
+        { "type": "MCQ", "prompt": "What does 'odgovoriti' mean?", "difficulty": 2, "options": ["to arrange", "to persuade", "to answer / reply", "to talk"], "answer": "to answer / reply", "explanation": "odgovoriti (na pitanje) = to answer / reply. The noun is odgovor." },
+        { "type": "FILL", "prompt": "Complete: Odgovori mi ______ pitanje. ('to / on')", "difficulty": 3, "answer": "na", "accepted": ["na"], "strictDiacritics": true, "explanation": "odgovoriti na + accusative: odgovoriti na pitanje = to answer a question." },
+        { "type": "MCQ", "prompt": "Which member of the family means 'to persuade'?", "difficulty": 4, "options": ["dogovoriti se", "izgovoriti", "odgovoriti", "nagovoriti"], "answer": "nagovoriti", "explanation": "nagovoriti (koga na što / da) = to persuade, talk into. Nagovorila me na to." },
+        { "type": "FILL", "prompt": "Complete the reflexive: Dogovorili smo ______ za sutra. ('we agreed')", "difficulty": 5, "answer": "se", "accepted": ["se"], "strictDiacritics": true, "explanation": "dogovoriti SE is reflexive: Dogovorili smo se = we agreed / arranged it." },
+        { "type": "MCQ", "prompt": "Complete: Teško mi je ______ ovu dugačku riječ.", "difficulty": 6, "options": ["dogovoriti", "izgovoriti", "odgovoriti", "nagovoriti"], "answer": "izgovoriti", "explanation": "izgovoriti = to pronounce / utter. Teško mi je izgovoriti tu riječ = that word is hard for me to pronounce." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'We agreed to meet at six.'", "difficulty": 7, "options": ["se", "Dogovorili", "da", "nađemo", "smo", "u", "se", "šest"], "ordered": ["Dogovorili", "smo", "se", "da", "se", "nađemo", "u", "šest"], "answer": "Dogovorili smo se da se nađemo u šest", "explanation": "Dogovorili smo se (reflexive) + da-clause; naći se is also reflexive, so a second se appears: da se nađemo u šest." },
+        { "type": "MCQ", "prompt": "'These conditions don't suit me.' — Ovi mi uvjeti ne ______.", "difficulty": 8, "options": ["odgovaraju", "razgovaraju", "nagovaraju", "izgovaraju"], "answer": "odgovaraju", "explanation": "Here odgovarati (komu) means 'to suit' (+ dative): Ne odgovaraju mi = they don't suit me. Third person plural agrees with uvjeti." },
+        { "type": "FILL", "prompt": "Complete (izgovor = excuse): Nemoj tražiti ______, samo se ispričaj.", "difficulty": 9, "answer": "izgovor", "accepted": ["izgovor"], "strictDiacritics": true, "explanation": "izgovor has two senses: pronunciation AND excuse. Tražiti izgovor = to look for an excuse." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "203": [
+    {
+      "type": "LEARN",
+      "title": "Obitelj i generacije: reading an interview",
+      "intro": "The exam loves the interview genre, and the topic of family and generations comes with its own vocabulary. These twelve words and stances let you read an interview about generational differences and, tomorrow, talk about your own family across the generations.",
+      "items": [
+        { "hr": "generacija", "en": "generation", "note": "generacijski jaz = the generation gap. Svaka generacija ima svoje vrijednosti." },
+        { "hr": "razdoblje", "en": "period, era", "note": "A neuter -je noun: u tom razdoblju života = in that period of life. Synonym of doba in this sense." },
+        { "hr": "odgoj", "en": "upbringing", "note": "The verb is odgojiti / odgajati (to raise). strog odgoj = a strict upbringing." },
+        { "hr": "mladost", "en": "youth", "note": "Feminine i-declension: u mladosti = in one's youth. Opposite: starost." },
+        { "hr": "starost", "en": "old age", "note": "Feminine i-declension: mirna starost = a peaceful old age. u starosti = in old age." },
+        { "hr": "razlika (između / među)", "en": "difference", "note": "razlika između generacija = the difference between generations (+ genitive). The verb: razlikovati se = to differ." },
+        { "hr": "vršnjaci", "en": "peers, people of the same age", "note": "Djeca uče od svojih vršnjaka. = Children learn from their peers. Singular vršnjak." },
+        { "hr": "odrasti (odrastao sam)", "en": "to grow up", "note": "Odrastao sam na selu. Impf odrastati. Male: odrastao; female: odrasla." },
+        { "hr": "vrijednosti", "en": "values", "note": "Feminine i-declension plural: obiteljske vrijednosti = family values. Singular vrijednost = value/worth." },
+        { "hr": "poštovati (koga / što)", "en": "to respect", "note": "Mladi trebaju poštovati starije. The noun poštovanje = respect; S poštovanjem = the formal sign-off." },
+        { "hr": "jaz", "en": "gap, gulf", "note": "generacijski jaz = the generation gap; premostiti jaz = to bridge the gap." },
+        { "hr": "Smatram da se mladi danas prerano osamostale.", "en": "I think young people become independent too early today.", "note": "A stance you might extract from an interview: smatram da = I believe that; osamostaliti se = to become independent." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Generations vocabulary and stances",
+      "intro": "From the meaning of each word up to the cases that hold an interview sentence together: između + genitive, na + locative for where you grew up, and the i-declension locative of mladost.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'generacija' mean?", "difficulty": 1, "options": ["generation", "difference", "upbringing", "peer"], "answer": "generation", "explanation": "generacija = generation. generacijski jaz = the generation gap." },
+        { "type": "MCQ", "prompt": "What does 'mladost' mean?", "difficulty": 2, "options": ["old age", "difference", "youth", "value"], "answer": "youth", "explanation": "mladost (f.) = youth; its opposite is starost (old age). U mladosti = in one's youth." },
+        { "type": "MCQ", "prompt": "What does 'odgoj' mean?", "difficulty": 3, "options": ["a peer", "upbringing", "a generation", "a difference"], "answer": "upbringing", "explanation": "odgoj = upbringing; the verb is odgojiti / odgajati (to raise a child)." },
+        { "type": "FILL", "prompt": "Complete: Postoji velika razlika ______ generacija. ('between')", "difficulty": 4, "answer": "između", "accepted": ["između"], "strictDiacritics": true, "explanation": "između + genitive: razlika između generacija = the difference between generations." },
+        { "type": "MCQ", "prompt": "Who are your 'vršnjaci'?", "difficulty": 5, "options": ["your parents", "your children", "people of your own age", "your teachers"], "answer": "people of your own age", "explanation": "vršnjaci = peers, people of the same age. Djeca uče od svojih vršnjaka." },
+        { "type": "FILL", "prompt": "Complete (male speaker): Odrastao sam ______ selu. ('in the countryside')", "difficulty": 6, "answer": "na", "accepted": ["na"], "strictDiacritics": true, "explanation": "na + locative: Odrastao sam na selu = I grew up in the countryside (na selu is the fixed phrase, not u selu)." },
+        { "type": "MCQ", "prompt": "In 'generacijski jaz', what does 'jaz' mean?", "difficulty": 7, "options": ["respect", "gap / gulf", "value", "period"], "answer": "gap / gulf", "explanation": "jaz = gap, gulf. generacijski jaz = the generation gap; premostiti jaz = to bridge the gap." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'Every generation has its own values.'", "difficulty": 7, "options": ["ima", "generacija", "Svaka", "vrijednosti", "svoje"], "ordered": ["Svaka", "generacija", "ima", "svoje", "vrijednosti"], "answer": "Svaka generacija ima svoje vrijednosti", "explanation": "Subject Svaka generacija + verb ima + object svoje vrijednosti (feminine i-declension plural)." },
+        { "type": "FILL", "prompt": "Complete the locative: U ______ sam puno putovao. (mladost)", "difficulty": 8, "answer": "mladosti", "accepted": ["mladosti"], "strictDiacritics": true, "explanation": "mladost is feminine i-declension: locative mladosti. U mladosti = in my youth." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Intervju o generacijama",
+      "intro": "The interview genre in action: your wife plays the interviewer and asks about generational differences. Read your lines ('Me') aloud — every answer uses today's vocabulary and a masculine participle where you narrate your own past.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Danas razgovaramo o razlikama među generacijama. Kako biste opisali svoju generaciju?", "en": "Today we're talking about differences between generations. How would you describe your generation?" },
+        { "speaker": "Me", "hr": "Odrastao sam u vrijeme velikih promjena, pa smatram da je moja generacija vrlo prilagodljiva.", "en": "I grew up in a time of great changes, so I think my generation is very adaptable." },
+        { "speaker": "Partner", "hr": "Postoji li, po vama, jaz između vas i vaših roditelja?", "en": "In your view, is there a gap between you and your parents?" },
+        { "speaker": "Me", "hr": "Postoji, naravno. Moji roditelji imaju strože vrijednosti, ali ih poštujem.", "en": "There is, of course. My parents have stricter values, but I respect them." },
+        { "speaker": "Partner", "hr": "U čemu je najveća razlika?", "en": "What is the biggest difference in?" },
+        { "speaker": "Me", "hr": "U odgoju. Nas su odgajali strože, a mi svoju djecu odgajamo opuštenije.", "en": "In upbringing. We were raised more strictly, and we raise our children more relaxedly." },
+        { "speaker": "Partner", "hr": "A tehnologija? Mislite li da produbljuje jaz?", "en": "And technology? Do you think it deepens the gap?" },
+        { "speaker": "Me", "hr": "Djelomično da. Moja djeca odrastaju s mobitelima, što ja u mladosti nisam imao.", "en": "Partly yes. My children are growing up with mobile phones, which I didn't have in my youth." },
+        { "speaker": "Partner", "hr": "Kako onda premostiti taj jaz?", "en": "So how do you bridge that gap?" },
+        { "speaker": "Me", "hr": "Razgovorom. Ako se generacije slušaju, razlike postaju bogatstvo, a ne problem.", "en": "Through conversation. If the generations listen to each other, differences become a richness, not a problem." },
+        { "speaker": "Partner", "hr": "Lijepo rečeno. Hvala vam na razgovoru.", "en": "Nicely put. Thank you for the conversation." },
+        { "speaker": "Me", "hr": "Hvala i vama. Bilo mi je zadovoljstvo.", "en": "Thank you too. It was my pleasure." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "204": [
+    {
+      "type": "LEARN",
+      "title": "Slušanje: a full HRT news bulletin",
+      "intro": "Graduating to a full news bulletin means recognizing the frame of the broadcast: how it opens, how each story is introduced, and how it closes with the forecast. These twelve words and phrases are the signposts that let you follow a whole Dnevnik and pull out one fact per story.",
+      "items": [
+        { "hr": "vijesti", "en": "the news", "note": "Feminine i-declension plural: Slušam vijesti svako jutro. najnovije vijesti = the latest news." },
+        { "hr": "dnevnik", "en": "the (main) news programme; a diary", "note": "Središnji Dnevnik = the main evening bulletin (HRT, 19:30). Also 'diary' in other contexts." },
+        { "hr": "vremenska prognoza", "en": "weather forecast", "note": "Na kraju emisije slijedi vremenska prognoza. = At the end of the show comes the weather forecast." },
+        { "hr": "izvještaj", "en": "report", "note": "izvještaj s terena = a report from the field. The verb is izvijestiti / izvještavati (to report)." },
+        { "hr": "prema navodima", "en": "according to reports / sources", "note": "prema + dative: Prema navodima policije… A hedge the news uses constantly. Also prema riječima ministra." },
+        { "hr": "glavna vijest", "en": "the top story, the headline", "note": "Glavna vijest dana je… naslovnica = the front page / headline." },
+        { "hr": "sugovornik", "en": "the interviewee, interlocutor", "note": "Naš sugovornik u studiju je… = Our guest in the studio is… The person the reporter is talking to." },
+        { "hr": "izjava", "en": "statement", "note": "dati izjavu = to give a statement. U svojoj izjavi rekao je da…" },
+        { "hr": "u nastavku", "en": "coming up, in what follows", "note": "U nastavku donosimo… = Coming up we bring you… (from nastaviti — the family you meet on day 209)." },
+        { "hr": "donositi vijesti", "en": "to bring / report the news", "note": "Donosimo vam najnovije vijesti. donositi (impf.) = to bring, report, deliver news." },
+        { "hr": "Prema riječima ministra, situacija je stabilna.", "en": "According to the minister, the situation is stable.", "note": "prema riječima + genitive = according to the words of… A staple reporting frame." },
+        { "hr": "Za kraj, pogledajmo prognozu za sutra.", "en": "To finish, let's look at tomorrow's forecast.", "note": "za kraj = to finish / lastly; the standard hand-off to the weather at the end of a bulletin." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Following the bulletin",
+      "intro": "Three short listening passes plus the vocabulary that frames them: catch where the forecast comes, what fact each story carries, and when the main news is on. Then lock in prema + dative and the reporting nouns.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'vremenska prognoza' mean?", "difficulty": 2, "options": ["the top story", "the weather forecast", "a statement", "a diary"], "answer": "the weather forecast", "explanation": "vremenska prognoza = weather forecast, usually the closing segment of a bulletin." },
+        { "type": "MCQ", "prompt": "Listen to the opening of the bulletin. What comes at the very end of the show?", "difficulty": 3, "options": ["an interview in the studio", "the sports results", "the weather forecast", "a report from the field"], "answer": "the weather forecast", "explanation": "The anchor says na kraju emisije slijedi vremenska prognoza = at the end of the show comes the weather forecast.", "audioText": "Dobra večer i dobro došli u središnji Dnevnik. Donosimo vam najvažnije vijesti dana, a na kraju emisije slijedi vremenska prognoza." },
+        { "type": "MCQ", "prompt": "What is a 'sugovornik'?", "difficulty": 4, "options": ["the person being interviewed", "the weather forecaster", "the news anchor", "the top story"], "answer": "the person being interviewed", "explanation": "sugovornik = interlocutor, the guest/interviewee the reporter is speaking with." },
+        { "type": "FILL", "prompt": "Complete: Prema ______ policije, nitko nije ozlijeđen. (navod, dative plural)", "difficulty": 4, "answer": "navodima", "accepted": ["navodima"], "strictDiacritics": true, "explanation": "prema + dative; navod → navodima. Prema navodima policije = according to police reports." },
+        { "type": "MCQ", "prompt": "Listen to this news item. What is the main fact?", "difficulty": 5, "options": ["a football match was cancelled", "a strike is planned in Zagreb", "a storm is expected on the Adriatic tomorrow", "the weather will be sunny and warm"], "answer": "a storm is expected on the Adriatic tomorrow", "explanation": "Prema navodima meteorologa, sutra se očekuje jako nevrijeme na Jadranu = according to meteorologists, a strong storm is expected on the Adriatic tomorrow.", "audioText": "Prema navodima meteorologa, sutra se na Jadranu očekuje jako nevrijeme, s obilnom kišom i olujnim vjetrom. Građanima se savjetuje oprez na cestama." },
+        { "type": "MCQ", "prompt": "Listen to the reminder. At what time is the main news programme on?", "difficulty": 6, "options": ["at 7:30 p.m.", "at 8:00 p.m.", "at noon", "at 9:00 p.m."], "answer": "at 7:30 p.m.", "explanation": "u pola osam navečer = at half past seven in the evening, i.e. 7:30 p.m.", "audioText": "Podsjećamo, središnji Dnevnik možete pratiti svaki dan u pola osam navečer na Prvom programu." },
+        { "type": "FILL", "prompt": "Complete the noun (izvijestiti → report): Novinar šalje ______ s terena. (izvještaj)", "difficulty": 6, "answer": "izvještaj", "accepted": ["izvještaj"], "strictDiacritics": true, "explanation": "izvještaj = report; izvještaj s terena = a report from the field. The verb behind it is izvijestiti / izvještavati." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'We bring you the latest news.'", "difficulty": 7, "options": ["vam", "najnovije", "Donosimo", "vijesti"], "ordered": ["Donosimo", "vam", "najnovije", "vijesti"], "answer": "Donosimo vam najnovije vijesti", "explanation": "Verb Donosimo + dative clitic vam + object najnovije vijesti (feminine i-declension plural)." },
+        { "type": "FILL", "prompt": "Complete the accusative: Ministar je za medije dao ______. (izjava)", "difficulty": 8, "answer": "izjavu", "accepted": ["izjavu"], "strictDiacritics": true, "explanation": "dati izjavu = to give a statement; izjava → accusative izjavu." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Intervju: djetinjstvo moje žene",
+      "intro": "Turn the microphone around: today you interview your Croatian wife about her childhood. Read your lines ('Me') aloud and push with follow-ups (A zašto? Kako je to izgledalo?). Her answers reuse this week's collectives — listen for djeca and braća.",
+      "lines": [
+        { "speaker": "Me", "hr": "Danas te ja intervjuiram o djetinjstvu. Gdje si odrasla?", "en": "Today I'm interviewing you about your childhood. Where did you grow up?" },
+        { "speaker": "Partner", "hr": "Odrasla sam u malom mjestu blizu Zadra, kod bake i djeda.", "en": "I grew up in a small place near Zadar, at my grandparents'." },
+        { "speaker": "Me", "hr": "A zašto baš kod bake i djeda?", "en": "And why exactly at your grandparents'?" },
+        { "speaker": "Partner", "hr": "Roditelji su radili u gradu, pa su me oni odgajali.", "en": "My parents worked in the city, so they raised me." },
+        { "speaker": "Me", "hr": "Kako je to izgledalo? Kakvo je bilo tvoje djetinjstvo?", "en": "What was that like? What was your childhood like?" },
+        { "speaker": "Partner", "hr": "Bezbrižno. Cijeli dan smo se mi djeca igrala vani, sve do mraka.", "en": "Carefree. All day long we children played outside, right until dark." },
+        { "speaker": "Me", "hr": "Imaš li braću ili sestre?", "en": "Do you have brothers or sisters?" },
+        { "speaker": "Partner", "hr": "Imam dva brata. Braća su bila starija od mene, pa su me čuvala.", "en": "I have two brothers. My brothers were older than me, so they looked after me." },
+        { "speaker": "Me", "hr": "Čega se najviše sjećaš?", "en": "What do you remember most?" },
+        { "speaker": "Partner", "hr": "Ljeta. Brali smo smokve i kupali se u moru svaki dan.", "en": "The summers. We picked figs and swam in the sea every day." },
+        { "speaker": "Me", "hr": "A škola? Je li ti bilo teško?", "en": "And school? Was it hard for you?" },
+        { "speaker": "Partner", "hr": "Nije. Voljela sam učiti, iako smo do škole hodali pola sata.", "en": "No. I loved studying, even though we walked half an hour to school." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "205": [
+    {
+      "type": "LEARN",
+      "title": "Frame za tekst: moja generacija i generacija mojih roditelja",
+      "intro": "The exam asks you to write a connected opinion text, and this week's theme is generations. These twelve ready-made frames give you the scaffolding: how to state an opinion, contrast two generations, weave in a conditional and a dative experiencer, and reuse collectives correctly. Say each with your own content, then assemble the whole text.",
+      "items": [
+        { "hr": "Po mojem mišljenju…", "en": "In my opinion…", "note": "The standard opinion opener. Also: Smatram da… / Čini mi se da… Follow it with a full clause." },
+        { "hr": "Za razliku od mojih roditelja, ja…", "en": "Unlike my parents, I…", "note": "za razliku od + genitive = unlike / in contrast to. The workhorse contrast frame for this text." },
+        { "hr": "S jedne strane…, s druge strane…", "en": "On the one hand…, on the other hand…", "note": "The two-sided frame that structures any balanced paragraph. Each side takes a full clause." },
+        { "hr": "Dok su prijašnje generacije živjele skromnije, današnja ima više.", "en": "While earlier generations lived more modestly, today's has more.", "note": "dok = while (contrast); prijašnji = former, earlier. A ready comparison sentence." },
+        { "hr": "Moji su roditelji odrasli u drukčije vrijeme.", "en": "My parents grew up in a different time.", "note": "odrasti → odrasli (plural). u drukčije vrijeme = in a different time (accusative of time-when here)." },
+        { "hr": "Djeca danas imaju više mogućnosti nego prije.", "en": "Children today have more opportunities than before.", "note": "Collective djeca + PLURAL verb imaju; comparison više … nego prije = more … than before." },
+        { "hr": "Kad bih mogao birati, odabrao bih mirniji život.", "en": "If I could choose, I would choose a quieter life.", "note": "The required conditional: kad bih + participle, then odabrao bih (male speaker). A woman: kad bih mogla … odabrala bih." },
+        { "hr": "Nedostaje mi mir prošlih vremena.", "en": "I miss the calm of times past.", "note": "The required dative experiencer: nedostajati (komu) + subject. Nedostaje mi X = I miss X (lit. X is lacking to me)." },
+        { "hr": "Iako se vremena mijenjaju, vrijednosti ostaju.", "en": "Although times change, values remain.", "note": "iako = although; a neat concessive sentence to raise the register of your conclusion." },
+        { "hr": "Braća i sestre nekada su živjeli pod istim krovom.", "en": "Brothers and sisters used to live under the same roof.", "note": "Collective braća + PLURAL verb živjeli; the second use of a collective the drill asks for." },
+        { "hr": "Zaključno, svaka generacija ima svoje prednosti i mane.", "en": "In conclusion, every generation has its strengths and weaknesses.", "note": "Zaključno / Na kraju = in conclusion; the closing frame of the text." },
+        { "hr": "Smatram da svaka generacija uči od prethodne.", "en": "I believe every generation learns from the previous one.", "note": "smatram da + clause; prethodni = previous. A confident thesis sentence to open or close with." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Building the generations text",
+      "intro": "Test the frames before you write: the connectors, za razliku od + genitive, the collective agreement in djeca imaju and braća su živjeli, plus the conditional and the dative experiencer the drill requires.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'Po mojem mišljenju' mean?", "difficulty": 2, "options": ["In conclusion", "In my opinion", "On the other hand", "Unlike me"], "answer": "In my opinion", "explanation": "Po mojem mišljenju = in my opinion, the standard opener for stating a view." },
+        { "type": "MCQ", "prompt": "What does 'za razliku od' mean?", "difficulty": 3, "options": ["unlike / in contrast to", "in addition to", "because of", "instead of"], "answer": "unlike / in contrast to", "explanation": "za razliku od + genitive = unlike / in contrast to: Za razliku od mojih roditelja…" },
+        { "type": "FILL", "prompt": "Complete: Za razliku ______ mojih roditelja, ja radim od kuće. ('from')", "difficulty": 4, "answer": "od", "accepted": ["od"], "strictDiacritics": true, "explanation": "za razliku OD + genitive: za razliku od mojih roditelja = unlike my parents." },
+        { "type": "MCQ", "prompt": "Complete the collective agreement: Djeca danas ______ više mogućnosti.", "difficulty": 4, "options": ["ima", "imaju", "imati", "imalo"], "answer": "imaju", "explanation": "djeca takes a PLURAL verb: Djeca imaju više mogućnosti = children have more opportunities." },
+        { "type": "FILL", "prompt": "Complete the dative experiencer: ______ mi mir prošlih vremena. (nedostajati, 3rd sg.)", "difficulty": 5, "answer": "Nedostaje", "accepted": ["Nedostaje", "nedostaje"], "strictDiacritics": true, "explanation": "nedostajati (komu): Nedostaje mi X = I miss X. The thing missed (mir) is the grammatical subject, agreeing 3rd sg." },
+        { "type": "MCQ", "prompt": "Complete the conditional (male speaker): Kad bih mogao birati, ______ mirniji život.", "difficulty": 6, "options": ["odaberem", "biram", "odabrao bih", "odabrala bih"], "answer": "odabrao bih", "explanation": "Conditional: kad bih + participle in the if-clause, then odabrao bih (male) in the main clause. A woman would say odabrala bih." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'My parents grew up in a different time.'", "difficulty": 6, "options": ["roditelji", "su", "odrasli", "Moji", "vrijeme", "u", "drukčije"], "ordered": ["Moji", "su", "roditelji", "odrasli", "u", "drukčije", "vrijeme"], "answer": "Moji su roditelji odrasli u drukčije vrijeme", "explanation": "Clitic su in second position (Moji su roditelji…), participle odrasli, then u drukčije vrijeme." },
+        { "type": "MCQ", "prompt": "Which frame means 'on the one hand… on the other hand…'?", "difficulty": 7, "options": ["Za razliku od…", "S jedne strane…, s druge strane…", "Po mojem mišljenju…", "Zaključno…"], "answer": "S jedne strane…, s druge strane…", "explanation": "S jedne strane…, s druge strane… is the two-sided frame. The others state an opinion, contrast, or conclude." },
+        { "type": "FILL", "prompt": "Complete the collective agreement: Braća su nekada ______ zajedno. (živjeti, plural)", "difficulty": 8, "answer": "živjeli", "accepted": ["živjeli"], "strictDiacritics": true, "explanation": "braća takes a PLURAL verb: Braća su živjeli zajedno. The participle is masculine plural živjeli." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "206": [
+    {
+      "type": "LEARN",
+      "title": "Week 29 review: collectives, the govoriti family, generations",
+      "intro": "Everything from week 29 in one place, ready for tonight's long conversation: the collective nouns and their agreement, the speech-verbs family (razgovarati, dogovoriti se, nagovoriti), and the vocabulary of family and generations, all worked into sentences you can actually say.",
+      "items": [
+        { "hr": "Braća su mi došla u posjet.", "en": "My brothers came to visit me.", "note": "Collective braća + PLURAL verb (su došla); dative clitic mi = to me." },
+        { "hr": "Djeca su odrasla i osamostalila se.", "en": "The children grew up and became independent.", "note": "djeca + plural verb; odrasti → odrasla, osamostaliti se → osamostalila se (participles in -la)." },
+        { "hr": "Dogovorili smo se da nedjeljom ručamo svi zajedno.", "en": "We agreed to have lunch together on Sundays.", "note": "dogovoriti se da + present; nedjeljom = on Sundays (instrumental of habitual time)." },
+        { "hr": "Baka voli razgovarati o starim vremenima.", "en": "Grandma loves to talk about the old days.", "note": "razgovarati o + locative (o starim vremenima). The impf. names the ongoing chat." },
+        { "hr": "Svaka generacija drukčije odgaja djecu.", "en": "Every generation raises children differently.", "note": "odgajati (impf. of odgojiti); djecu = accusative of djeca (like ženu)." },
+        { "hr": "Nagovorio sam brata da dođe na obiteljski ručak.", "en": "I persuaded my brother to come to the family lunch.", "note": "nagovoriti koga da; male speaker: Nagovorio sam. Contrast dogovoriti se (mutual) vs nagovoriti (one persuades another)." },
+        { "hr": "Među generacijama postoji jaz, ali i ljubav.", "en": "Between the generations there is a gap, but also love.", "note": "među + instrumental (među generacijama); jaz = gap. i = 'also' here." },
+        { "hr": "Lišće pada, a mi se prisjećamo ljeta.", "en": "The leaves are falling, and we reminisce about summer.", "note": "lišće = neuter singular (pada); prisjećati se + genitive (ljeta)." },
+        { "hr": "Odgovori mi iskreno: jesi li sretan?", "en": "Answer me honestly: are you happy?", "note": "odgovoriti (imperative odgovori) + dative mi; a live use of the govoriti family." },
+        { "hr": "Poštujem starije, ali imam svoje mišljenje.", "en": "I respect my elders, but I have my own opinion.", "note": "poštovati → poštujem; starije = the elders (comparative used as a noun, accusative plural)." },
+        { "hr": "Gospoda za susjednim stolom glasno su razgovarala.", "en": "The gentlemen at the next table were talking loudly.", "note": "Collective gospoda + PLURAL verb (su razgovarala); za + instrumental (za stolom = at the table)." },
+        { "hr": "Razlika u odgoju vidi se već kod male djece.", "en": "The difference in upbringing already shows in small children.", "note": "A se-construction (vidi se); kod + genitive (kod male djece); u odgoju = locative." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Week 29 mixed review",
+      "intro": "One pass over the whole week: the meanings, the collective agreement in braća su and gospoda su, the case behind nagovoriti koga da, and the instrumental s djecom.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'dogovoriti se' mean?", "difficulty": 2, "options": ["to answer", "to agree / arrange", "to pronounce", "to persuade"], "answer": "to agree / arrange", "explanation": "dogovoriti se (s kim) = to agree, arrange, settle on something. The noun is dogovor." },
+        { "type": "FILL", "prompt": "Complete the participle: Braća su mi ______. (doći, plural)", "difficulty": 3, "answer": "došla", "accepted": ["došla"], "strictDiacritics": true, "explanation": "braća + plural verb: Braća su došla, participle in -la (došla)." },
+        { "type": "MCQ", "prompt": "Complete: Gospoda ______ glasno razgovarala.", "difficulty": 4, "options": ["je", "su", "jesu", "bilo"], "answer": "su", "explanation": "gospoda, like djeca and braća, takes a PLURAL verb: Gospoda su razgovarala." },
+        { "type": "FILL", "prompt": "Complete the conjunction: Nagovorio sam brata ______ dođe. ('to')", "difficulty": 4, "answer": "da", "accepted": ["da"], "strictDiacritics": true, "explanation": "nagovoriti koga DA + present: Nagovorio sam ga da dođe = I persuaded him to come." },
+        { "type": "MCQ", "prompt": "What does 'poštovati' mean?", "difficulty": 5, "options": ["to respect", "to remember", "to raise", "to differ"], "answer": "to respect", "explanation": "poštovati (koga / što) = to respect; poštujem starije = I respect my elders. The noun is poštovanje." },
+        { "type": "FILL", "prompt": "Complete the instrumental: Volim razgovarati s ______. (djeca)", "difficulty": 6, "answer": "djecom", "accepted": ["djecom"], "strictDiacritics": true, "explanation": "djeca declines like žena: instrumental djecom. s djecom = with the children." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'Every generation raises children differently.'", "difficulty": 7, "options": ["odgaja", "generacija", "djecu", "Svaka", "drukčije"], "ordered": ["Svaka", "generacija", "drukčije", "odgaja", "djecu"], "answer": "Svaka generacija drukčije odgaja djecu", "explanation": "Subject Svaka generacija, adverb drukčije, verb odgaja, object djecu (accusative of djeca)." },
+        { "type": "MCQ", "prompt": "Which sentence is correct?", "difficulty": 8, "options": ["Braća je visoka.", "Braća su visoka.", "Braće su visoka.", "Braća su visok."], "answer": "Braća su visoka.", "explanation": "braća takes a plural verb (su) and a neuter plural adjective (visoka): Braća su visoka." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Duži razgovor: obiteljske priče kroz generacije",
+      "intro": "The long conversation that closes the week: you and your wife swap family stories across the generations. Read your lines ('Me') aloud — they naturally surface this week's govoriti family and the collectives braća and djeca.",
+      "lines": [
+        { "speaker": "Partner", "hr": "Baš mi je lijepo što smo večeras svi zajedno. Djeca su se napokon smirila.", "en": "It's so nice that we're all together tonight. The children have finally calmed down." },
+        { "speaker": "Me", "hr": "Da, cijeli dan su se igrala vani. To me podsjeća na priče o tvom djetinjstvu.", "en": "Yes, they played outside all day. That reminds me of the stories about your childhood." },
+        { "speaker": "Partner", "hr": "A tvoje? Nikad mi nisi ispričao kako su odrasli tvoji roditelji.", "en": "And yours? You never told me how your parents grew up." },
+        { "speaker": "Me", "hr": "Moj otac je odrastao na selu. Imao je petero braće i sestara.", "en": "My father grew up in the countryside. He had five brothers and sisters." },
+        { "speaker": "Partner", "hr": "Petero?! Kod nas su obitelji bile manje. Kako su se svi slagali?", "en": "Five?! In our family, households were smaller. How did they all get along?" },
+        { "speaker": "Me", "hr": "Dogovorili bi se oko svega. Djed je bio strog, ali pravedan.", "en": "They would agree on everything. Grandpa was strict, but fair." },
+        { "speaker": "Partner", "hr": "Vidiš, to je ta razlika među generacijama. Danas se više razgovara, a manje zapovijeda.", "en": "See, that's the difference between generations. Today people talk more and command less." },
+        { "speaker": "Me", "hr": "Slažem se. Ja svoju djecu radije nagovaram nego prisiljavam.", "en": "I agree. I'd rather persuade my children than force them." },
+        { "speaker": "Partner", "hr": "I dobro je tako. Iako… ponekad mi nedostaje malo starog reda.", "en": "And that's a good thing. Although… sometimes I miss a bit of the old order." },
+        { "speaker": "Me", "hr": "Ha! Zvučiš kao moja baka. Ona je uvijek govorila da mladi previše pričaju.", "en": "Ha! You sound like my grandma. She always said that young people talk too much." },
+        { "speaker": "Partner", "hr": "Možda je imala pravo. Hajdemo pozvati i tvoje roditelje sljedeći tjedan.", "en": "Maybe she was right. Let's invite your parents over next week too." },
+        { "speaker": "Me", "hr": "Odlična ideja. Nazvat ću ih sutra i dogovoriti se za termin.", "en": "Great idea. I'll call them tomorrow and arrange a time." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "207": [
+    {
+      "type": "LEARN",
+      "title": "Obitelj pustiti: allow, fire, miss, abandon, relax",
+      "intro": "One root, pustiti (to let / release), plus prefixes gives you six everyday life situations: do- allows, ot- fires, pro- misses out, na- abandons, o-…se relaxes. Learn the prefix, decode the verb — and keep otpustiti (to fire someone) firmly apart from napustiti (to leave / quit).",
+      "items": [
+        { "hr": "pustiti", "en": "to let (go), release; to play (music)", "note": "Pusti me na miru! = Leave me alone! Pustiti glazbu = to put music on. Impf puštati." },
+        { "hr": "dopustiti (komu što / da)", "en": "to allow, permit", "note": "do- = grant. Dopustili su mi da ostanem. = They allowed me to stay. Impf dopuštati (št)." },
+        { "hr": "otpustiti (koga)", "en": "to fire, dismiss; to release", "note": "ot- = release / away. Otpustili su ga s posla. = They fired him. Impf otpuštati." },
+        { "hr": "propustiti (što)", "en": "to miss (out on)", "note": "pro- = pass by. Propustio sam autobus. = I missed the bus. Ne želim propustiti priliku. Impf propuštati." },
+        { "hr": "napustiti (koga / što)", "en": "to abandon, leave, quit", "note": "na- = walk away from. Napustio je posao = he quit the job. Impf napuštati. NOT the same as otpustiti (to fire)." },
+        { "hr": "opustiti se", "en": "to relax", "note": "o-…se = ease off. Opusti se, sve je u redu! Impf opuštati se. Also opušteno = relaxedly, casually." },
+        { "hr": "spustiti", "en": "to lower, put down", "note": "s- = down. Spusti glas! = Lower your voice. Spustiti cijenu = to lower the price. Impf spuštati." },
+        { "hr": "ispustiti", "en": "to drop, let slip; to omit", "note": "iz- = out. Ispustio sam čašu = I dropped the glass. Ispustiti riječ = to let a word slip / to leave a word out." },
+        { "hr": "Dopusti da ti pomognem.", "en": "Let me help you.", "note": "dopustiti da + present: a soft, polite offer. Literally 'allow that I help you'." },
+        { "hr": "Ne želim propustiti tu priliku.", "en": "I don't want to miss that opportunity.", "note": "propustiti priliku = to miss an opportunity — a very common collocation." },
+        { "hr": "Šef je otpustio radnika, a radnik je već napustio grad.", "en": "The boss fired the worker, and the worker has already left town.", "note": "The key contrast in one line: otpustiti (dismiss someone) vs napustiti (leave a place/job)." },
+        { "hr": "Nakon napornog dana volim se opustiti uz knjigu.", "en": "After a hard day I like to relax with a book.", "note": "opustiti se + uz + accusative (uz knjigu = with / over a book). Reflexive se sits in second position." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "The pustiti family in context",
+      "intro": "Pick the prefix that fits the situation, agree the participle, and above all keep otpustiti (fire) apart from napustiti (leave) — the classic mix-up in this family.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'opustiti se' mean?", "difficulty": 1, "options": ["to relax", "to allow", "to miss", "to fire"], "answer": "to relax", "explanation": "opustiti se (o-…se) = to relax. Opusti se! = Relax! Impf opuštati se." },
+        { "type": "MCQ", "prompt": "What does 'propustiti' mean?", "difficulty": 2, "options": ["to abandon", "to permit", "to miss (out on)", "to lower"], "answer": "to miss (out on)", "explanation": "propustiti (pro- = pass by) = to miss: propustiti autobus / priliku = to miss the bus / an opportunity." },
+        { "type": "FILL", "prompt": "Complete the accusative: Propustio sam ______. (autobus)", "difficulty": 3, "answer": "autobus", "accepted": ["autobus"], "strictDiacritics": true, "explanation": "autobus is inanimate masculine, so accusative = nominative: Propustio sam autobus = I missed the bus." },
+        { "type": "FILL", "prompt": "Complete: Dopustili su mi ______ ostanem. ('to / that')", "difficulty": 4, "answer": "da", "accepted": ["da"], "strictDiacritics": true, "explanation": "dopustiti DA + present: Dopustili su mi da ostanem = they allowed me to stay." },
+        { "type": "MCQ", "prompt": "'The boss fired the worker.' — Šef je ______ radnika.", "difficulty": 5, "options": ["napustio", "propustio", "opustio", "otpustio"], "answer": "otpustio", "explanation": "otpustiti koga = to fire / dismiss someone: Šef je otpustio radnika. napustiti would mean the worker LEFT, not was fired." },
+        { "type": "FILL", "prompt": "Complete (male speaker): Radnik je bio nezadovoljan i ______ je posao. (napustiti)", "difficulty": 5, "answer": "napustio", "accepted": ["napustio"], "strictDiacritics": true, "explanation": "napustiti posao = to quit / leave a job. Male participle: napustio. Contrast with otpustiti (to fire)." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'They allowed me to stay.'", "difficulty": 6, "options": ["mi", "Dopustili", "da", "su", "ostanem"], "ordered": ["Dopustili", "su", "mi", "da", "ostanem"], "answer": "Dopustili su mi da ostanem", "explanation": "Participle + su in second position (Dopustili su), dative clitic mi, then the da-clause: da ostanem." },
+        { "type": "MCQ", "prompt": "'Relax, everything is fine!' — ______, sve je u redu!", "difficulty": 7, "options": ["Otpusti se", "Spusti se", "Opusti se", "Propusti se"], "answer": "Opusti se", "explanation": "opustiti se = to relax → imperative Opusti se! The others (ot-, s-, pro-) carry quite different meanings." },
+        { "type": "FILL", "prompt": "Complete the impf.: Roditelji mi ne ______ da izlazim navečer. (dopuštati)", "difficulty": 8, "answer": "dopuštaju", "accepted": ["dopuštaju"], "strictDiacritics": true, "explanation": "The habitual sense needs the imperfective dopuštati → dopuštaju (t → št), not the perfective dopuste." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "208": [
+    {
+      "type": "LEARN",
+      "title": "Se-konstrukcije: how Croatian says 'one does X'",
+      "intro": "The se-construction is everywhere in news, rules and recipes — it is how Croatian says 'one does X / X is done' without naming who. Two things to master: recognize it, and get the agreement right. When there is a real subject, the verb agrees with it (Knjiga se čita → Karte se prodaju); when there is none, the verb stays 3rd singular (Ovdje se puno radi).",
+      "items": [
+        { "hr": "Ovdje se govori hrvatski.", "en": "Croatian is spoken here.", "note": "3rd person + se; the subject is hrvatski (sg.), so the verb is singular (govori)." },
+        { "hr": "Kako se to kaže na hrvatskom?", "en": "How do you say that in Croatian?", "note": "Impersonal se = 'one / you' in general. kazati → kaže. The everyday way to ask for a word." },
+        { "hr": "U Hrvatskoj se ruča oko podneva.", "en": "In Croatia people have lunch around noon.", "note": "No subject at all → verb stays 3rd singular (ruča). This is the truly impersonal se." },
+        { "hr": "Ova se knjiga lako čita.", "en": "This book reads easily.", "note": "Real subject knjiga (sg.) → singular verb čita. Note se in second position: Ova se knjiga…" },
+        { "hr": "Kruh se peče u pekari.", "en": "Bread is baked at the bakery.", "note": "Subject kruh (sg.) → peče. The se-passive is the natural way to say 'is baked' without an agent." },
+        { "hr": "Karte se prodaju na ulazu.", "en": "Tickets are sold at the entrance.", "note": "PLURAL subject karte → PLURAL verb prodaju. The agreement follows the subject, unlike English 'is sold'." },
+        { "hr": "Dodaje se sol i malo papra.", "en": "You add salt and a little pepper.", "note": "Recipe register: the se-construction gives instructions impersonally. dodaje se = one adds." },
+        { "hr": "Sastojci se dobro izmiješaju.", "en": "The ingredients are mixed well.", "note": "PLURAL subject sastojci → izmiješaju. Another recipe line, plural agreement." },
+        { "hr": "Ovdje se ne puši.", "en": "No smoking here.", "note": "Impersonal negative — the classic sign. Verb stays 3rd singular (puši)." },
+        { "hr": "Vrata se otvaraju automatski.", "en": "The doors open automatically.", "note": "vrata is a plural-only noun → plural verb otvaraju. A middle/reflexive sense: the doors open (by themselves)." },
+        { "hr": "Tako se to radi.", "en": "That's how it's done.", "note": "Word order: the clitic se sits in second position. A handy fixed phrase." },
+        { "hr": "U novinama se često piše o tome.", "en": "It's often written about in the papers.", "note": "Impersonal se (piše, 3rd sg.); pisati o + locative (o tome). The written-register workhorse." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Building se-constructions",
+      "intro": "Turn statements general with se, and — the key skill — make the verb agree: singular with a singular subject (knjiga se čita), plural with a plural one (karte se prodaju), 3rd singular when there is no subject at all.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'Ovdje se govori hrvatski' mean?", "difficulty": 2, "options": ["Speak Croatian here!", "Croatian is spoken here.", "I speak Croatian here.", "Croatian is hard here."], "answer": "Croatian is spoken here.", "explanation": "The se-construction: 'Croatian is spoken here / one speaks Croatian here'. The subject hrvatski takes a singular verb." },
+        { "type": "FILL", "prompt": "Complete: Kako se to ______ na hrvatskom? (kazati, 3rd sg.)", "difficulty": 3, "answer": "kaže", "accepted": ["kaže"], "strictDiacritics": true, "explanation": "Impersonal se + kazati → kaže: Kako se to kaže? = How do you say that?" },
+        { "type": "MCQ", "prompt": "Which is the correct 'No smoking here' sign?", "difficulty": 4, "options": ["Ovdje se ne puši.", "Ovdje ne pušim.", "Ovdje se ne puše.", "Ovdje se ne pušiti."], "answer": "Ovdje se ne puši.", "explanation": "Impersonal se with no subject → 3rd singular: Ovdje se ne puši = No smoking here." },
+        { "type": "FILL", "prompt": "Agree with the subject: Ova se knjiga lako ______. (čitati, 3rd sg.)", "difficulty": 4, "answer": "čita", "accepted": ["čita"], "strictDiacritics": true, "explanation": "The subject knjiga is singular, so the verb is singular: Ova se knjiga lako čita = this book reads easily." },
+        { "type": "MCQ", "prompt": "Complete with correct agreement: Karte se ______ na ulazu.", "difficulty": 5, "options": ["prodaje", "prodaju", "proda", "prodati"], "answer": "prodaju", "explanation": "The subject karte is PLURAL, so the verb is plural: Karte se prodaju = tickets are sold." },
+        { "type": "FILL", "prompt": "Complete the recipe: Sastojci se dobro ______. (izmiješati, 3rd pl.)", "difficulty": 6, "answer": "izmiješaju", "accepted": ["izmiješaju"], "strictDiacritics": true, "explanation": "Plural subject sastojci → plural verb: Sastojci se izmiješaju = the ingredients are mixed." },
+        { "type": "MCQ", "prompt": "Make it general: 'Ljudi ovdje jedu kasno' becomes…", "difficulty": 6, "options": ["Ovdje se jedu kasno.", "Ovdje se jede kasno.", "Ovdje jede se kasno.", "Ovdje se jesti kasno."], "answer": "Ovdje se jede kasno.", "explanation": "With no subject the impersonal se stays 3rd singular: Ovdje se jede kasno = people eat late here." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'Bread is baked at the bakery.'", "difficulty": 7, "options": ["peče", "Kruh", "pekari", "se", "u"], "ordered": ["Kruh", "se", "peče", "u", "pekari"], "answer": "Kruh se peče u pekari", "explanation": "Subject Kruh, clitic se in second position, verb peče, then u + locative pekari." },
+        { "type": "FILL", "prompt": "Agree with the plural-only subject: Vrata se ______ automatski. (otvarati)", "difficulty": 8, "answer": "otvaraju", "accepted": ["otvaraju"], "strictDiacritics": true, "explanation": "vrata is plural-only, so the verb is plural: Vrata se otvaraju automatski = the doors open automatically." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "209": [
+    {
+      "type": "LEARN",
+      "title": "Obitelj staviti — the final verb family",
+      "intro": "The biggest family, and the last one: from staviti (to put) come dostaviti (deliver), predstaviti (introduce), nastaviti (continue), ostaviti (leave behind), sastaviti (assemble) and postaviti (set up / pose a question). Learn the prefix, decode the verb — and with this, all eleven verb families are complete.",
+      "items": [
+        { "hr": "staviti", "en": "to put, place", "note": "Stavi torbu na stol. Impf stavljati (l → lj). The bare root the whole family grows from." },
+        { "hr": "dostaviti", "en": "to deliver", "note": "do- = reach. Paket će biti dostavljen sutra. The noun dostava = delivery. Impf dostavljati." },
+        { "hr": "predstaviti (koga / što)", "en": "to introduce, present", "note": "Predstavljam vam svoju ženu. predstaviti se = to introduce oneself. (Careful: predstava = a play/show.)" },
+        { "hr": "nastaviti (što / s čim)", "en": "to continue", "note": "na- = go on. Nastavili smo razgovor. The noun nastavak = a sequel / continuation. Impf nastavljati." },
+        { "hr": "ostaviti (koga / što)", "en": "to leave (behind)", "note": "o- = leave. Ostavio sam ključeve u autu. Also 'to leave someone': ostavila ga je = she left him. Impf ostavljati." },
+        { "hr": "sastaviti (što)", "en": "to put together, assemble, compose", "note": "sa- = together. Sastavili smo plan. sastav = composition / (sports) line-up. Impf sastavljati." },
+        { "hr": "postaviti (što)", "en": "to set up, put up; to pose (a question)", "note": "Postavili su novu rasvjetu. postaviti pitanje = to pose a question. Impf postavljati." },
+        { "hr": "rastaviti se", "en": "to divorce; to take apart", "note": "ras- = apart. Rastavili su se prošle godine = they divorced last year. rastaviti (nešto) = to dismantle." },
+        { "hr": "Predstavljam vam svoju ženu.", "en": "Let me introduce my wife to you.", "note": "The line that opens any introduction. predstaviti komu koga; dative vam = to you (polite/plural)." },
+        { "hr": "Ostavio sam ključeve u autu.", "en": "I left the keys in the car.", "note": "ostaviti + u + locative (u autu). Male speaker: Ostavio sam (a woman: Ostavila sam)." },
+        { "hr": "Molim vas, postavite pitanje.", "en": "Please, ask a question.", "note": "postaviti pitanje = to pose a question; formal imperative postavite (vi). A phrase for any meeting or lecture." },
+        { "hr": "Nakon pauze nastavljamo s programom.", "en": "After the break we continue with the programme.", "note": "nastaviti s + instrumental (s programom); here the impf. nastavljamo announces the resumption." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "The staviti family in context",
+      "intro": "Pick the prefix that fits the meaning, and keep the near-neighbours apart: ostaviti (leave behind), nastaviti (continue), postaviti (set up / ask) and rastaviti se (divorce) all share one root but part ways in sense.",
+      "questions": [
+        { "type": "MCQ", "prompt": "What does 'nastaviti' mean?", "difficulty": 1, "options": ["to continue", "to deliver", "to leave behind", "to introduce"], "answer": "to continue", "explanation": "nastaviti (na- = go on) = to continue. The noun is nastavak = a sequel / continuation." },
+        { "type": "MCQ", "prompt": "What does 'dostaviti' mean?", "difficulty": 2, "options": ["to assemble", "to deliver", "to divorce", "to continue"], "answer": "to deliver", "explanation": "dostaviti (do- = reach) = to deliver. The noun dostava = delivery." },
+        { "type": "FILL", "prompt": "Complete: Ostavio sam ključeve ______ autu. ('in')", "difficulty": 3, "answer": "u", "accepted": ["u"], "strictDiacritics": true, "explanation": "ostaviti + u + locative: Ostavio sam ključeve u autu = I left the keys in the car." },
+        { "type": "MCQ", "prompt": "Complete: Želim vam ______ svoju ženu.", "difficulty": 4, "options": ["postaviti", "predstaviti", "sastaviti", "rastaviti"], "answer": "predstaviti", "explanation": "predstaviti (koga) = to introduce / present someone: Želim vam predstaviti svoju ženu." },
+        { "type": "MCQ", "prompt": "'They divorced last year.' — Prošle godine su se ______.", "difficulty": 5, "options": ["sastavili", "rastavili", "nastavili", "postavili"], "answer": "rastavili", "explanation": "rastaviti se (ras- = apart) = to divorce: Rastavili su se = they got divorced." },
+        { "type": "FILL", "prompt": "Complete the imperative (vi): Molim vas, ______ pitanje. (postaviti)", "difficulty": 5, "answer": "postavite", "accepted": ["postavite"], "strictDiacritics": true, "explanation": "postaviti pitanje = to pose a question; formal imperative postavite: Molim vas, postavite pitanje." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'I left the keys in the car.'", "difficulty": 6, "options": ["ključeve", "sam", "u", "Ostavio", "autu"], "ordered": ["Ostavio", "sam", "ključeve", "u", "autu"], "answer": "Ostavio sam ključeve u autu", "explanation": "Perfekt Ostavio sam + object ključeve + u + locative autu." },
+        { "type": "MCQ", "prompt": "'We continued the conversation.' — ______ smo razgovor.", "difficulty": 7, "options": ["Ostavili", "Postavili", "Sastavili", "Nastavili"], "answer": "Nastavili", "explanation": "nastaviti (razgovor) = to continue: Nastavili smo razgovor. ostaviti = leave, postaviti = set up, sastaviti = assemble." },
+        { "type": "FILL", "prompt": "Complete (plural, male-led group): Zajedno smo ______ plan za vikend. (sastaviti)", "difficulty": 8, "answer": "sastavili", "accepted": ["sastavili"], "strictDiacritics": true, "explanation": "sastaviti (sa- = together) = to put together: sastavili smo plan = we put together a plan." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "210": [
+    {
+      "type": "LEARN",
+      "title": "Glagolski prilog sadašnji — the present verbal adverb",
+      "intro": "The present verbal adverb is the Croatian '-ing' clause: Čitajući novine, pio sam kavu (Reading the paper, I drank coffee). You form it only from imperfective verbs by adding -ći to the 3rd person plural present, and the form never changes. You mostly need to READ it — news style loves it — but forming it is easy once you see the pattern.",
+      "items": [
+        { "hr": "čitati → čitaju → čitajući", "en": "to read → (while) reading", "note": "The rule: 3rd person plural present + -ći. čitaju → čitajući." },
+        { "hr": "govoriti → govore → govoreći", "en": "to speak → (while) speaking", "note": "News style: Govoreći o krizi, premijer je najavio mjere. = Speaking about the crisis, the PM announced measures." },
+        { "hr": "pisati → pišu → pišući", "en": "to write → (while) writing", "note": "The stem is taken from the present (pišu), not the infinitive: pišući, not *pisajući." },
+        { "hr": "slušati → slušaju → slušajući", "en": "to listen → (while) listening", "note": "Slušajući glazbu, kuham. = Listening to music, I cook." },
+        { "hr": "raditi → rade → radeći", "en": "to work → (while) working", "note": "Radeći svaki dan, brzo je napredovao. -e verbs give -eći." },
+        { "hr": "putovati → putuju → putujući", "en": "to travel → (while) travelling", "note": "The present stem putuj- is kept: putujući, not *putovajući." },
+        { "hr": "Only from imperfective verbs.", "en": "no perfective present verbal adverb", "note": "Perfective verbs (pročitati, napisati) have NO present verbal adverb — only imperfectives (čitati, pisati) do." },
+        { "hr": "The form never changes.", "en": "invariable — no agreement", "note": "One frozen form for every gender, number and person: čitajući stays čitajući whether the subject is he, she, or they." },
+        { "hr": "Same-subject rule", "en": "its subject = the main clause's subject", "note": "The doer of the -ući action must be the subject of the main verb: Putujući vlakom, čitao sam = while I travelled, I read." },
+        { "hr": "Čitajući novine, pio sam kavu.", "en": "Reading the newspaper, I drank coffee.", "note": "Equivalent to Dok sam čitao novine, pio sam kavu — the verbal adverb replaces the whole dok-clause." },
+        { "hr": "Govoreći o gospodarstvu, ministar je najavio reforme.", "en": "Speaking about the economy, the minister announced reforms.", "note": "The news register par excellence — you will meet this pattern in every serious article." },
+        { "hr": "budući da", "en": "since, because", "note": "budući is the frozen verbal adverb of biti; budući da = since / because (a conjunction). Budući da nemam auto, putujem vlakom." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Forming and reading the verbal adverb",
+      "intro": "Build the -ući / -eći forms from the 3rd person plural present, remember it comes only from imperfectives, and turn a dok-clause into a verbal adverb the way the news does.",
+      "questions": [
+        { "type": "MCQ", "prompt": "How is the present verbal adverb formed?", "difficulty": 2, "options": ["infinitive + -ći", "3rd person plural present + -ći", "1st person singular + -ći", "past participle + -ći"], "answer": "3rd person plural present + -ći", "explanation": "Take the 3rd plural present and add -ći: čitaju → čitajući, rade → radeći." },
+        { "type": "FILL", "prompt": "Form the verbal adverb: čitati (čitaju) → ______", "difficulty": 3, "answer": "čitajući", "accepted": ["čitajući"], "strictDiacritics": true, "explanation": "čitaju + -ći → čitajući = (while) reading." },
+        { "type": "FILL", "prompt": "Form the verbal adverb: raditi (rade) → ______", "difficulty": 4, "answer": "radeći", "accepted": ["radeći"], "strictDiacritics": true, "explanation": "rade + -ći → radeći = (while) working. The -e verbs give -eći." },
+        { "type": "MCQ", "prompt": "What is the verbal adverb of 'pisati'?", "difficulty": 4, "options": ["pisajući", "pisući", "pišajući", "pišući"], "answer": "pišući", "explanation": "The stem comes from the present pišu, not the infinitive: pišu + -ći → pišući." },
+        { "type": "MCQ", "prompt": "From which aspect is the present verbal adverb formed?", "difficulty": 5, "options": ["only perfective verbs", "only imperfective verbs", "both aspects", "neither aspect"], "answer": "only imperfective verbs", "explanation": "Only imperfective verbs form the present verbal adverb (čitati → čitajući). Perfectives like pročitati have none." },
+        { "type": "FILL", "prompt": "Form the verbal adverb: govoriti (govore) → ______", "difficulty": 5, "answer": "govoreći", "accepted": ["govoreći"], "strictDiacritics": true, "explanation": "govore + -ći → govoreći = (while) speaking. News style: Govoreći o krizi…" },
+        { "type": "MCQ", "prompt": "Rewrite with a verbal adverb: 'Dok sam čitao, pio sam kavu.'", "difficulty": 6, "options": ["Pročitavši, pio sam kavu.", "Čitajući, pio sam kavu.", "Čitati, pio sam kavu.", "Čitao, pio sam kavu."], "answer": "Čitajući, pio sam kavu.", "explanation": "The dok-clause becomes the present verbal adverb of the imperfective čitati: Čitajući, pio sam kavu." },
+        { "type": "REORDER", "prompt": "Put the words in order: 'Listening to the radio, I learned the news.'", "difficulty": 7, "options": ["radio", "saznao", "Slušajući", "vijesti", "sam"], "ordered": ["Slušajući", "radio", "saznao", "sam", "vijesti"], "answer": "Slušajući radio, saznao sam vijesti", "explanation": "Verbal adverb Slušajući + object radio, then the main clause saznao sam vijesti." },
+        { "type": "FILL", "prompt": "Complete: ______ da nemam auto, putujem vlakom. ('Since')", "difficulty": 8, "answer": "Budući", "accepted": ["Budući", "budući"], "strictDiacritics": true, "explanation": "budući da = since / because. budući is the frozen verbal adverb of biti, now a conjunction." }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}

@@ -1,0 +1,1720 @@
+{
+  "191": [
+    {
+      "type": "LEARN",
+      "title": "Struktura mišljenja — an opinion text about food",
+      "intro": "Your second opinion text needs more than 'I think'. Learn the connective scaffolding that turns loose sentences into an argument: prije svega opens, osim toga adds, međutim and ipak turn, stoga concludes. Along the way you meet a passive participle (pripremljena), three se-constructions and two dative experiencers — exactly the ingredients the brief asks for. Read each aloud before you write tonight.",
+      "items": [
+        {
+          "hr": "Mislim da smo ono što jedemo.",
+          "en": "I think we are what we eat.",
+          "note": "mislim da + present — the standard way to open an opinion. ono što = 'that which', a neat relative phrase."
+        },
+        {
+          "hr": "Prije svega, prehrana snažno utječe na naše zdravlje.",
+          "en": "First of all, diet strongly affects our health.",
+          "note": "prije svega = first of all — an opener stronger than najprije. utjecati na + accusative = to affect."
+        },
+        {
+          "hr": "Osim toga, zdrava se hrana danas lako nabavlja.",
+          "en": "Besides, healthy food is easily obtained nowadays.",
+          "note": "osim toga = besides, adds an argument. nabavlja se is a se-construction (impersonal passive): 'is obtained', no named agent."
+        },
+        {
+          "hr": "Međutim, brza je hrana često jeftinija i brža.",
+          "en": "However, fast food is often cheaper and faster.",
+          "note": "međutim = however — the main contrast connector, usually first in its clause. Note the clitic je in second position: brza je hrana."
+        },
+        {
+          "hr": "Stoga mnogi ljudi biraju upravo nju.",
+          "en": "Therefore many people choose precisely it.",
+          "note": "stoga = therefore, draws a consequence. upravo nju = 'precisely it' (accusative of ona, i.e. brza hrana), an emphatic touch."
+        },
+        {
+          "hr": "Ipak, mislim da se isplati kuhati kod kuće.",
+          "en": "Still, I think it pays off to cook at home.",
+          "note": "ipak = still, nevertheless — a softer turn than međutim. isplati se + infinitive = 'it's worth (doing)', another se-construction."
+        },
+        {
+          "hr": "Meni je domaća hrana draža od restoranske.",
+          "en": "To me home food is dearer than restaurant food.",
+          "note": "Dative experiencer: meni je draža = 'is dearer to me' (= I prefer). drag comparative draži + od + genitive = dearer than."
+        },
+        {
+          "hr": "Kad jedem povrće, osjećam se mnogo bolje.",
+          "en": "When I eat vegetables, I feel much better.",
+          "note": "osjećati se = to feel (reflexive se-construction). povrće (neuter collective) = vegetables, takes a singular verb."
+        },
+        {
+          "hr": "Hrana koja je pripremljena s ljubavlju uvijek je bolja.",
+          "en": "Food that is prepared with love is always better.",
+          "note": "pripremljena = passive participle of pripremiti (feminine, agreeing with hrana). je pripremljena = the passive: 'is prepared'."
+        },
+        {
+          "hr": "Voće i povrće trebalo bi jesti svaki dan.",
+          "en": "One should eat fruit and vegetables every day.",
+          "note": "trebalo bi + infinitive = impersonal 'one should', a conditional of gentle advice — very useful in opinion texts."
+        },
+        {
+          "hr": "Zaključno, važno nam je što stavljamo na tanjur.",
+          "en": "In conclusion, what we put on our plate matters to us.",
+          "note": "zaključno = in conclusion, signals the closing. važno nam je = dative experiencer: 'it is important to us'."
+        },
+        {
+          "hr": "Ukratko, zdrava prehrana traži vremena, ali se isplati.",
+          "en": "In short, a healthy diet takes time, but it is worth it.",
+          "note": "ukratko = in short — a second closer. tražiti vremena (partitive genitive) = to take time; se isplati rounds the text off."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Connectors, passives and se — build the argument",
+      "intro": "Nine checks on the machinery of an opinion text: pick the right connector, form the passive participle, and keep the clitic se in its place. If these are automatic, your ten sentences will read like an argument, not a list.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which connector means 'however' (introducing a contrast)?",
+          "difficulty": 1,
+          "options": ["osim toga", "međutim", "prije svega", "stoga"],
+          "answer": "međutim",
+          "explanation": "međutim = however. osim toga = besides (adds), prije svega = first of all (opens), stoga = therefore (concludes)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which connector draws a consequence — 'therefore'?",
+          "difficulty": 2,
+          "options": ["ipak", "osim toga", "stoga", "prije svega"],
+          "answer": "stoga",
+          "explanation": "stoga = therefore, marks a conclusion. ipak = still/nevertheless, osim toga = besides, prije svega = first of all."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Meni ___ domaća hrana draža od restoranske. (biti — 3. lice jednine)",
+          "difficulty": 3,
+          "answer": "je",
+          "accepted": ["je"],
+          "explanation": "Dative experiencer: Meni je ... draža. The clitic je sits in second position after Meni.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Hrana koja je ___ s ljubavlju uvijek je bolja. (pripremiti — glagolski pridjev trpni, ž. r.)",
+          "difficulty": 4,
+          "answer": "pripremljena",
+          "accepted": ["pripremljena"],
+          "explanation": "pripremiti → pripremljen, with -iti verbs iotating: -ml-. Feminine to agree with hrana: pripremljena.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Add an argument: Healthy food is easily obtained nowadays. (with the se-construction)",
+          "difficulty": 5,
+          "options": ["lako", "hrana", "se", "danas", "Zdrava", "nabavlja"],
+          "answer": "Zdrava se hrana danas lako nabavlja",
+          "ordered": ["Zdrava", "se", "hrana", "danas", "lako", "nabavlja"],
+          "explanation": "The clitic se takes second position, right after the first stressed word Zdrava; the impersonal nabavlja se = 'is obtained'."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kad jedem povrće, ___ se mnogo bolje. (osjećati — prezent, ja)",
+          "difficulty": 6,
+          "answer": "osjećam",
+          "accepted": ["osjećam"],
+          "explanation": "osjećati se = to feel. First person singular osjećam; the reflexive se follows.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence uses the passive participle correctly?",
+          "difficulty": 7,
+          "options": ["Ručak je skuhala prije sat vremena.", "Ručak je skuhan i čeka na stolu.", "Ručak je skuhati brzo.", "Ručak je skuha svaki dan."],
+          "answer": "Ručak je skuhan i čeka na stolu.",
+          "explanation": "je skuhan = passive: 'lunch is cooked' (masculine participle agreeing with ručak). The others misuse the verb (finite, infinitive, or 3sg present)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete the turn: 'Brza je hrana jeftinija. ___, kuhanje kod kuće je zdravije.'",
+          "difficulty": 8,
+          "options": ["Osim toga", "Stoga", "Ipak", "Prije svega"],
+          "answer": "Ipak",
+          "explanation": "The second sentence turns against the first, so a contrast connector fits: Ipak = still/nevertheless. Osim toga would add, stoga would conclude."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is a fully correct concluding sentence for the text?",
+          "difficulty": 9,
+          "options": ["Zaključno, važno nam je što jedemo jer smo ono što jedemo.", "Zaključno, važno nas je što jedemo jer smo ono što jedemo.", "Zaključno, važno nam biti što jedemo jer smo ono što jedemo.", "Zaključno, važan nam je što jedemo jer smo ono što jedemo."],
+          "answer": "Zaključno, važno nam je što jedemo jer smo ono što jedemo.",
+          "explanation": "važno (neuter, impersonal) + nam (dative) + je is the correct experiencer frame. nas (accusative), biti (infinitive) and važan (masculine) are all wrong here."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "192": [
+    {
+      "type": "LEARN",
+      "title": "Dativ osjećaja — the experiencer, consolidated",
+      "intro": "Week 27 lived on the dative experiencer: the thing you feel is the grammatical subject, and you appear in the dative. Sviđa mi se, nedostaje mi, čini mi se, žao mi je — twelve patterns to fire automatically today. Watch the one impostor: boljeti takes the accusative, not the dative. If these come out without thinking, the week worked.",
+      "items": [
+        {
+          "hr": "Sviđa mi se ova juha od povrća.",
+          "en": "I like this vegetable soup.",
+          "note": "sviđati se + dative. The subject is juha (singular), so the verb is singular: sviđa."
+        },
+        {
+          "hr": "Sviđaju mi se domaći kolači tvoje bake.",
+          "en": "I like your grandma's homemade cakes.",
+          "note": "Now the subject is plural (kolači), so the verb agrees in the plural: sviđaju mi se. The verb tracks the thing liked, not the liker."
+        },
+        {
+          "hr": "Jako mi nedostaje bakina kuhinja.",
+          "en": "I really miss grandma's cooking.",
+          "note": "nedostajati + dative = to be missing to someone. What you miss (kuhinja) is the subject."
+        },
+        {
+          "hr": "Dosadno mi je kad nemam što raditi.",
+          "en": "I'm bored when I have nothing to do.",
+          "note": "Impersonal adjective + dative: dosadno mi je = 'it is boring to me'. nemam što raditi = 'I have nothing to do'."
+        },
+        {
+          "hr": "Hladno mi je, možeš li zatvoriti prozor?",
+          "en": "I'm cold, can you close the window?",
+          "note": "hladno mi je = 'it is cold to me'. Never toplo/hladno sam — physical states use the dative here."
+        },
+        {
+          "hr": "Čini mi se da je juha malo preslana.",
+          "en": "It seems to me the soup is a bit too salty.",
+          "note": "činiti se + dative = to seem. The prefix pre- = 'too': preslan = too salty, pre­kuhan = overcooked."
+        },
+        {
+          "hr": "Žao mi je što nisam probao tvoj kolač.",
+          "en": "I'm sorry I didn't try your cake.",
+          "note": "žao mi je (+ što clause) = I'm sorry / I regret. A fixed dative phrase you will use constantly."
+        },
+        {
+          "hr": "Drago mi je što ti se sviđa moja večera.",
+          "en": "I'm glad you like my dinner.",
+          "note": "drago mi je = I'm glad. Note two datives at work: mi (I'm glad) and ti (you like it)."
+        },
+        {
+          "hr": "Večeras mi se uopće ne da kuhati.",
+          "en": "Tonight I don't feel like cooking at all.",
+          "note": "ne da mi se + infinitive = I don't feel like (doing). A very common colloquial dative construction."
+        },
+        {
+          "hr": "Boli me želudac od previše slatkoga.",
+          "en": "My stomach hurts from too many sweets.",
+          "note": "The impostor: boljeti takes the ACCUSATIVE (boli me), not the dative. previše + genitive: previše slatkoga."
+        },
+        {
+          "hr": "Kako ti se čini ovaj novi recept?",
+          "en": "How does this new recipe seem to you?",
+          "note": "The question form of činiti se + dative. Answer: Čini mi se odličan / Čini mi se da je odličan."
+        },
+        {
+          "hr": "Meni je najvažnije da je hrana svježa i domaća.",
+          "en": "For me the most important thing is that the food is fresh and homemade.",
+          "note": "meni je najvažnije = experiencer with a superlative. Fronted meni adds emphasis: 'for me (personally)'."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Who feels what — dative vs accusative",
+      "intro": "Eight questions on the experiencer. Make the verb agree with the thing felt, keep the person in the dative — except boljeti, which springs the accusative trap. Difficulty climbs from a one-word gap to a full-sentence choice.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'I like this soup.' Which is correct?",
+          "difficulty": 1,
+          "options": ["Sviđa mi se ova juha.", "Sviđam ovu juhu.", "Volim se ova juha.", "Sviđa me ova juha."],
+          "answer": "Sviđa mi se ova juha.",
+          "explanation": "sviđati se + dative: Sviđa mi se juha. The liker is in the dative (mi), the soup is the subject."
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ mi se domaći kolači. (sviđati — prezent; subject: kolači)",
+          "difficulty": 2,
+          "answer": "Sviđaju",
+          "accepted": ["Sviđaju", "sviđaju"],
+          "explanation": "The subject kolači is plural, so the verb is plural: Sviđaju mi se. The verb agrees with the thing liked.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Jako mi ___ bakina kuhinja. (nedostajati — prezent, 3. lice jednine)",
+          "difficulty": 3,
+          "answer": "nedostaje",
+          "accepted": ["nedostaje"],
+          "explanation": "nedostajati + dative. The subject kuhinja is singular: nedostaje mi.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'My stomach hurts.' Which pronoun form is correct?",
+          "difficulty": 4,
+          "options": ["Boli mi želudac.", "Boli me želudac.", "Boli mnom želudac.", "Bolim želudac."],
+          "answer": "Boli me želudac.",
+          "explanation": "boljeti takes the ACCUSATIVE: boli me. This is the exception among the feeling verbs, which otherwise use the dative."
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ mi se da je juha malo preslana. (činiti — prezent, 3. lice)",
+          "difficulty": 5,
+          "answer": "Čini",
+          "accepted": ["Čini", "čini"],
+          "explanation": "činiti se + dative = to seem. Čini mi se da... = it seems to me that...",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: Tonight I don't feel like cooking at all.",
+          "difficulty": 6,
+          "options": ["se", "kuhati", "mi", "ne", "Večeras", "uopće", "da"],
+          "answer": "Večeras mi se uopće ne da kuhati",
+          "ordered": ["Večeras", "mi", "se", "uopće", "ne", "da", "kuhati"],
+          "explanation": "The clitics mi se follow the first word; uopće ne intensifies the negation; ne da (mi se) + infinitive = don't feel like."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is grammatically correct?",
+          "difficulty": 7,
+          "options": ["Drago mi je što ti se sviđa večera.", "Drago sam što ti se sviđa večera.", "Drago mi je što te sviđa večera.", "Drago mene je što ti se sviđa večera."],
+          "answer": "Drago mi je što ti se sviđa večera.",
+          "explanation": "drago mi je (dative mi, not sam or mene) and ti se sviđa (dative ti, not accusative te). Two experiencers, both dative."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: 'Meni je ___ da je hrana svježa.' (the most important thing to me)",
+          "difficulty": 8,
+          "options": ["najvažnija", "najvažniji", "najvažnije", "najvažno"],
+          "answer": "najvažnije",
+          "explanation": "The impersonal experiencer uses the neuter: Meni je najvažnije da... The other forms are wrong gender or non-existent."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Speaking night: food, health and habits",
+      "intro": "A long, relaxed conversation with your wife over Sunday coffee. She asks about your week's eating, your health, your habits — and Croatia's. Let the dative experiencers flow: sviđa mi se, nedostaje mi, čini mi se. Act it out, then keep going past the last line on your own.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Kako ti se čini ovaj tjedan — jesi li dobro jeo?",
+          "en": "How does this week seem to you — did you eat well?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Čini mi se da jesam. Kuhao sam gotovo svaki dan, uglavnom povrće i ribu.",
+          "en": "It seems to me I did. I cooked almost every day, mostly vegetables and fish."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Bravo! A nedostaje li ti nešto? Vidim da rjeđe naručuješ pizzu.",
+          "en": "Well done! And do you miss anything? I see you order pizza less often."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Iskreno, ponekad mi nedostaje brza hrana, ali osjećam se puno bolje bez nje.",
+          "en": "Honestly, sometimes I miss fast food, but I feel much better without it."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Meni je najvažnije da imaš energije. Prošli mjesec bio si stalno umoran.",
+          "en": "For me the most important thing is that you have energy. Last month you were constantly tired."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Znam. Sad rjeđe pijem kavu i više spavam, pa mi više nije dosadno navečer.",
+          "en": "I know. Now I drink coffee less often and sleep more, so I'm no longer bored in the evenings."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "A kako ti se čini hrana ovdje u usporedbi s onom kod tvojih?",
+          "en": "And how does the food here seem to you compared with your family's?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Sviđa mi se što je ovdje sve svježe s tržnice. Domaća rajčica je nešto posebno.",
+          "en": "I like that everything here is fresh from the market. A homemade tomato is something special."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Onda ćemo u nedjelju skuhati nešto zajedno. Što bi najradije?",
+          "en": "Then on Sunday we'll cook something together. What would you like most?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Bilo bi mi drago da napravimo sarmu. Da mogu birati, jeo bih je svaki tjedan.",
+          "en": "I'd be glad if we made sarma. If I could choose, I'd eat it every week."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Dogovoreno. Ali onda ti režeš luk — meni od njega uvijek suze oči.",
+          "en": "Deal. But then you cut the onion — it always makes my eyes water."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Nema problema, izdržat ću. Za dobru sarmu vrijedi zaplakati.",
+          "en": "No problem, I'll endure it. For good sarma it's worth shedding a tear."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "193": [
+    {
+      "type": "LEARN",
+      "title": "Obitelj glagola: držati",
+      "intro": "One root, held four ways. držati means 'to hold, keep'; its prefixes are verbs of persistence made for sport and debate: iz- endure, za- retain, o- hold an event / maintain, pod- support. Learn one clear sentence for each, plus a couple of relatives (pridržavati se, održavati se), and you own a whole corner of the news. Two HRT items today.",
+      "items": [
+        {
+          "hr": "Držim te za riječ — obećao si.",
+          "en": "I'll hold you to your word — you promised.",
+          "note": "držati (držim, i-verb) = to hold. držati koga za riječ = to hold someone to their word."
+        },
+        {
+          "hr": "Ne mogu više izdržati ovu vrućinu.",
+          "en": "I can't endure this heat any longer.",
+          "note": "iz- + držati = izdržati = to endure, withstand, hold out. The prefix iz- often adds 'through to the end'."
+        },
+        {
+          "hr": "Zadrži sitniš, hvala.",
+          "en": "Keep the change, thanks.",
+          "note": "za- + držati = zadržati = to keep, retain. Imperative zadrži. Also 'to detain/hold back'."
+        },
+        {
+          "hr": "Sutra se održava velika utakmica na Maksimiru.",
+          "en": "A big match is being held tomorrow at Maksimir.",
+          "note": "o- + držati = održati; održavati se = 'to take place, be held' (of events). održava se is a se-construction."
+        },
+        {
+          "hr": "Potpuno te podržavam u toj odluci.",
+          "en": "I fully support you in that decision.",
+          "note": "pod- + držati = podržati / podržavati = to support (back someone up). Note the imperfective podržavam for ongoing support."
+        },
+        {
+          "hr": "Moramo se pridržavati pravila igre.",
+          "en": "We must adhere to the rules of the game.",
+          "note": "pridržavati se + genitive = to adhere to, abide by. pravila (genitive singular here) = of the rule / rules."
+        },
+        {
+          "hr": "Održali su hitan sastanak u ponedjeljak.",
+          "en": "They held an urgent meeting on Monday.",
+          "note": "održati (perfective) = to hold (an event). održati sastanak / govor / koncert — a very productive collocation."
+        },
+        {
+          "hr": "Trkač je izdržao do samoga kraja utrke.",
+          "en": "The runner held out until the very end of the race.",
+          "note": "izdržati in the past: izdržao (m). do samoga kraja = until the very end (emphatic sam in the genitive)."
+        },
+        {
+          "hr": "Zadržali smo stari obiteljski običaj.",
+          "en": "We kept the old family custom.",
+          "note": "zadržati (past zadržali) = kept, retained. Contrast with podržati (support) — different prefix, different meaning."
+        },
+        {
+          "hr": "Podržavaš li ti hrvatsku reprezentaciju?",
+          "en": "Do you support the Croatian national team?",
+          "note": "Question with the clitic li. podržavati (imperfective) for a standing allegiance."
+        },
+        {
+          "hr": "Teško je održati ravnotežu na skliskom ledu.",
+          "en": "It's hard to keep balance on slippery ice.",
+          "note": "održati ravnotežu = to keep/maintain balance. Here o- means 'maintain' rather than 'hold an event'."
+        },
+        {
+          "hr": "držati: držim, držiš, drži, držimo, držite, drže",
+          "en": "to hold: I hold, you hold, he holds, we hold, you (pl.) hold, they hold",
+          "note": "The base paradigm — an i-verb (-im/-iš). Every prefixed member conjugates the same way: izdržim, zadržim, održim, podržim."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Pick the prefix — držati in the news",
+      "intro": "Match the meaning to its prefix, then decode two real-sounding HRT items where a držati verb does the work. Endure, keep, hold, support — the prefix is the whole message.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which verb means 'to support (back someone up)'?",
+          "difficulty": 1,
+          "options": ["izdržati", "podržati", "zadržati", "održati"],
+          "answer": "podržati",
+          "explanation": "pod- (under, behind) + držati = podržati = to support. izdržati = endure, zadržati = keep, održati = hold/maintain."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which verb means 'to endure, hold out'?",
+          "difficulty": 2,
+          "options": ["zadržati", "održati", "izdržati", "podržati"],
+          "answer": "izdržati",
+          "explanation": "iz- (through to the end) + držati = izdržati = to endure, withstand."
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ sitniš, hvala. (zadržati — imperativ, ti)",
+          "difficulty": 3,
+          "answer": "Zadrži",
+          "accepted": ["Zadrži", "zadrži"],
+          "explanation": "zadržati = to keep. Imperative (ti): Zadrži. za- = retain, hold back.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Sutra se ___ velika utakmica. (održavati — prezent, 3. lice)",
+          "difficulty": 4,
+          "answer": "održava",
+          "accepted": ["održava"],
+          "explanation": "održavati se = to be held / take place. Third person singular održava se, agreeing with utakmica.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the news item. What happened in Zagreb?",
+          "difficulty": 5,
+          "options": ["A meeting was cancelled", "A ministers' meeting was held", "A stadium was closed", "A new law was rejected"],
+          "answer": "A ministers' meeting was held",
+          "explanation": "U Zagrebu je jučer održan sastanak ministara = a ministers' meeting was held. održan = passive participle of održati.",
+          "audioText": "Dobar dan, poštovani gledatelji. U Zagrebu je jučer održan sastanak ministara na kojem se raspravljalo o novim mjerama. Sastanak je trajao gotovo tri sata."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Moramo se ___ pravila. (pridržavati — prezent, mi)",
+          "difficulty": 6,
+          "answer": "pridržavati",
+          "accepted": ["pridržavati"],
+          "explanation": "moramo se + infinitive: pridržavati se + genitive = to adhere to the rules.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the sports item. What did the athlete do?",
+          "difficulty": 7,
+          "options": ["He gave up in the second half", "He held out until the end and won", "He was disqualified", "He kept the trophy from last year"],
+          "answer": "He held out until the end and won",
+          "explanation": "izdržao je do kraja i pobijedio = he held out until the end and won. izdržati = to endure/hold out.",
+          "audioText": "U sportu: naš maratonac izdržao je do samoga kraja i pobijedio na utrci u Rijeci. Unatoč velikoj vrućini, održao je tempo i stigao prvi na cilj."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: I fully support you in that decision.",
+          "difficulty": 8,
+          "options": ["te", "odluci", "Potpuno", "toj", "podržavam", "u"],
+          "answer": "Potpuno te podržavam u toj odluci",
+          "ordered": ["Potpuno", "te", "podržavam", "u", "toj", "odluci"],
+          "explanation": "The clitic te sits in second position; podržavati koga = to support someone; u + locative: u toj odluci."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence pairs prefix and meaning correctly?",
+          "difficulty": 9,
+          "options": ["Zadržali smo sastanak u ponedjeljak.", "Održali smo sastanak u ponedjeljak.", "Izdržali smo sastanak u ponedjeljak.", "Podržali smo sastanak u ponedjeljak."],
+          "answer": "Održali smo sastanak u ponedjeljak.",
+          "explanation": "You HOLD a meeting: održati sastanak. zadržati (keep), izdržati (endure) and podržati (support) don't collocate with 'a meeting' here."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "194": [
+    {
+      "type": "LEARN",
+      "title": "Pogodbene rečenice I — ako, kad, da",
+      "intro": "Croatian conditions come in three flavours, and the conjunction itself tells you which. ako = a real, likely condition (present/futur II + future). kad + conditional = a hypothetical you can picture. da + indicative = an unreal one that did NOT happen. Twelve model sentences; feel the difference between 'if it's nice' and 'if I had known'.",
+      "items": [
+        {
+          "hr": "Ako bude lijepo vrijeme, ići ćemo na izlet.",
+          "en": "If the weather is nice, we'll go on a trip.",
+          "note": "Real condition: ako + futur II (bude) in the if-clause, futur I (ići ćemo) in the main clause. Likely and future-oriented."
+        },
+        {
+          "hr": "Ako imaš vremena, dođi na kavu.",
+          "en": "If you have time, come for a coffee.",
+          "note": "Real condition with an imperative result: ako + present, then dođi. Everyday and direct."
+        },
+        {
+          "hr": "Ako budeš učio, sigurno ćeš položiti ispit.",
+          "en": "If you study, you'll surely pass the exam.",
+          "note": "futur II (budeš učio) marks a completed condition before a future result: položit ćeš. The classic exam pattern."
+        },
+        {
+          "hr": "Kad bih imao vremena, gledao bih utakmicu.",
+          "en": "If I had time, I would watch the match.",
+          "note": "Potential condition: kad + kondicional (bih imao) in both clauses. Imaginable but not the case right now."
+        },
+        {
+          "hr": "Kad bismo živjeli na moru, svaki bismo dan plivali.",
+          "en": "If we lived by the sea, we'd swim every day.",
+          "note": "1st person plural conditional: bismo (not bi) in careful Croatian. Note it repeats in the main clause: svaki bismo dan."
+        },
+        {
+          "hr": "Da sam znao, došao bih ranije.",
+          "en": "Had I known, I would have come earlier.",
+          "note": "Unreal condition: da + perfekt (sam znao) = it did NOT happen. Main clause in the conditional: došao bih. English uses 'had known'."
+        },
+        {
+          "hr": "Da imam više novca, više bih putovao.",
+          "en": "If I had more money, I would travel more.",
+          "note": "da + present = a present unreal condition (but I don't have the money). Contrast with ako, which leaves it open."
+        },
+        {
+          "hr": "Da si bio na utakmici, vidio bi nevjerojatan gol.",
+          "en": "If you had been at the match, you would have seen an incredible goal.",
+          "note": "Past unreal: da + perfekt (si bio), conditional result vidio bi. You weren't there — that's the point of da."
+        },
+        {
+          "hr": "Ako pada kiša, ostajemo kod kuće.",
+          "en": "If it's raining, we stay at home.",
+          "note": "A general/real condition with present + present — a habitual rule, always true when the condition holds."
+        },
+        {
+          "hr": "Ako želiš, možemo skuhati zajedno.",
+          "en": "If you want, we can cook together.",
+          "note": "Real and open: ako + present, modal result možemo. Offers and suggestions love this pattern."
+        },
+        {
+          "hr": "Da mi se javiš na vrijeme, sve bih sredio.",
+          "en": "If you had let me know in time, I would have sorted everything.",
+          "note": "da + present with unreal meaning: you didn't let me know. javiti se = to get in touch."
+        },
+        {
+          "hr": "Razlika je jasna: da + indikativ znači da uvjet nije ispunjen.",
+          "en": "The difference is clear: da + indicative means the condition is not fulfilled.",
+          "note": "The rule to memorise. ako leaves the outcome open; da signals a counterfactual — 'if only', but it didn't happen."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Ako, kad or da — choose the condition",
+      "intro": "Nine questions to lock in the three patterns. Read the meaning first: is it likely (ako), imaginable (kad + conditional), or plainly untrue (da)? The conjunction and the verb form must agree with the reality you mean.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which conjunction opens a REAL, likely condition?",
+          "difficulty": 1,
+          "options": ["da", "ako", "kad bih", "iako"],
+          "answer": "ako",
+          "explanation": "ako = if (real/likely). da + indicative = unreal; kad bih = potential; iako = although (not a condition)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Ako ___ lijepo vrijeme, ići ćemo na izlet.' Which fits?",
+          "difficulty": 2,
+          "options": ["bude", "bi bilo", "je bilo", "bi"],
+          "answer": "bude",
+          "explanation": "A real future condition uses futur II: ako bude (lijepo vrijeme). The main clause is futur I: ići ćemo."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kad ___ imao vremena, gledao bih utakmicu. (biti — kondicional, ja)",
+          "difficulty": 3,
+          "answer": "bih",
+          "accepted": ["bih"],
+          "explanation": "Potential condition: kad + kondicional. First person singular auxiliary is bih: Kad bih imao...",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'___ sam znao, došao bih ranije.' (I didn't know — it's unreal.)",
+          "difficulty": 4,
+          "options": ["Ako", "Kad", "Da", "Dok"],
+          "answer": "Da",
+          "explanation": "An unreal past condition uses da + perfekt: Da sam znao... = 'Had I known...' (but I didn't)."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ako ___ učio, položit ćeš ispit. (futur II — budeš + participle)",
+          "difficulty": 5,
+          "answer": "budeš učio",
+          "accepted": ["budeš učio"],
+          "explanation": "futur II = budem/budeš + past participle: ako budeš učio. It marks the condition completed before the future result.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence means the condition did NOT happen?",
+          "difficulty": 6,
+          "options": ["Ako imaš vremena, dođi.", "Da imam vremena, došao bih.", "Ako budeš imao vremena, doći ćeš.", "Kad imaš vremena, dođi."],
+          "answer": "Da imam vremena, došao bih.",
+          "explanation": "da + present = unreal: 'If I had time (but I don't), I would come.' The ako/kad versions leave it open or habitual."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: If we lived by the sea, we'd swim every day.",
+          "difficulty": 7,
+          "options": ["bismo", "Kad", "na", "živjeli", "moru", "dan", "svaki", "bismo", "plivali"],
+          "answer": "Kad bismo živjeli na moru svaki bismo dan plivali",
+          "ordered": ["Kad", "bismo", "živjeli", "na", "moru", "svaki", "bismo", "dan", "plivali"],
+          "explanation": "1st plural conditional bismo appears in both clauses; in the main clause it takes second position: svaki bismo dan plivali."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Complete: 'Da si bio na utakmici, ___ nevjerojatan gol.'",
+          "difficulty": 8,
+          "options": ["vidio bi", "vidjet ćeš", "vidiš", "da vidiš"],
+          "answer": "vidio bi",
+          "explanation": "An unreal past condition (da si bio) takes a conditional result: vidio bi = 'you would have seen'."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is fully correct and coherent?",
+          "difficulty": 9,
+          "options": ["Da imam više novca, više bih putovao.", "Da imam više novca, više ću putovati.", "Ako imam više novca, više bih putovao.", "Kad imam više novca, više bih putovao."],
+          "answer": "Da imam više novca, više bih putovao.",
+          "explanation": "Unreal condition da + present pairs with a conditional main clause (bih putovao). Mixing da/ako/kad with a future or bare present breaks the pattern."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "croaticum-b1-sample"]
+    }
+  ],
+  "195": [
+    {
+      "type": "LEARN",
+      "title": "Kondicional u pogodbenim rečenicama — bih, bi, bismo",
+      "intro": "The conditional auxiliary is the aorist of biti: bih, bi, bi, bismo, biste, bi. The exam loves bismo and biste — most natives write them as plain bi, but you won't. Learn the full ladder on putovati, then chain conditions where the auxiliary shows up twice. Two HRT items today.",
+      "items": [
+        {
+          "hr": "putovati: putovao bih, putovao bi, putovao bi, putovali bismo, putovali biste, putovali bi",
+          "en": "to travel (conditional): I would, you would, he would, we would, you (pl.) would, they would travel",
+          "note": "The aorist-of-biti ladder: bih / bi / bi / bismo / biste / bi. The participle agrees in gender and number (putovao, putovali)."
+        },
+        {
+          "hr": "Rado bih ti pomogao oko selidbe.",
+          "en": "I'd gladly help you with the move.",
+          "note": "1st singular bih. rado bih = 'I'd gladly' — a polite, common opener. The clitic bih takes second position."
+        },
+        {
+          "hr": "Bismo li mogli krenuti malo ranije?",
+          "en": "Could we set off a little earlier?",
+          "note": "1st plural question: Bismo li...? Note bismo, NOT bi — this is exactly where careful Croatian is tested."
+        },
+        {
+          "hr": "Vi biste to sigurno bolje znali od mene.",
+          "en": "You would surely know that better than me.",
+          "note": "2nd plural biste (polite Vi). znati od mene: 'better than me' = bolje od mene, comparison with od + genitive."
+        },
+        {
+          "hr": "Kad bismo imali vremena, češće bismo se vidjeli.",
+          "en": "If we had time, we'd see each other more often.",
+          "note": "A chained condition: bismo appears in both clauses. In the main clause the clitics stack: češće bismo se vidjeli."
+        },
+        {
+          "hr": "Što bi ti napravio na mojem mjestu?",
+          "en": "What would you do in my place?",
+          "note": "2nd singular bi. na mojem mjestu = in my place — a great phrase for asking for advice."
+        },
+        {
+          "hr": "Ne bih to nikad rekao naglas.",
+          "en": "I would never say that out loud.",
+          "note": "Negative conditional: ne bih. The ne attaches to the auxiliary, which then heads the clitic cluster."
+        },
+        {
+          "hr": "Oni bi rado došli, ali jednostavno ne mogu.",
+          "en": "They would gladly come, but they simply can't.",
+          "note": "3rd plural bi (same form as 3rd singular). Context and the participle (došli) show it's plural."
+        },
+        {
+          "hr": "Volio bih jednom naučiti hrvatski gotovo savršeno.",
+          "en": "I'd like to learn Croatian almost perfectly one day.",
+          "note": "The conditional of wishes: volio bih = 'I'd like'. Softer and more polite than želim."
+        },
+        {
+          "hr": "Mi bismo, da možemo, otputovali već danas.",
+          "en": "We would, if we could, set off already today.",
+          "note": "bismo again — with an inserted da-clause. The full form survives even when split: Mi bismo ... otputovali."
+        },
+        {
+          "hr": "U razgovoru mnogi kažu 'mi bi', no standard traži 'mi bismo'.",
+          "en": "In speech many say 'mi bi', but the standard requires 'mi bismo'.",
+          "note": "The reality check: colloquial Croatian levels everything to bi, yet writing and the exam keep bismo/biste distinct."
+        },
+        {
+          "hr": "Biste li htjeli još kave ili je dovoljno?",
+          "en": "Would you like more coffee, or is that enough?",
+          "note": "Polite offer with Biste li...? — 2nd plural. A phrase you'll hear from every host in Croatia."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "nn-100-2021"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Fix the bi-forms",
+      "intro": "Nine questions where the auxiliary is the whole point. Get the person right — especially bismo (we) and biste (you plural) — and place the clitic in second position. Two listening items round it off.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'____ ti pomogao.' — I would gladly help you. Which auxiliary?",
+          "difficulty": 1,
+          "options": ["bi", "bih", "bismo", "biste"],
+          "answer": "bih",
+          "explanation": "1st person singular of the conditional is bih: Rado bih ti pomogao."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Mi ____ imali vremena, češće bismo se vidjeli.' Which form is standard?",
+          "difficulty": 2,
+          "options": ["bi", "bih", "biste", "bismo"],
+          "answer": "bismo",
+          "explanation": "1st person plural is bismo, not colloquial bi: Kad bismo imali vremena..."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Vi ___ to sigurno bolje znali. (kondicional, 2. lice množine)",
+          "difficulty": 3,
+          "answer": "biste",
+          "accepted": ["biste"],
+          "explanation": "2nd person plural (polite Vi) is biste: Vi biste to znali.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ li mogli krenuti ranije? (kondicional, mi — pitanje)",
+          "difficulty": 4,
+          "answer": "Bismo",
+          "accepted": ["Bismo", "bismo"],
+          "explanation": "A 1st plural question fronts the auxiliary before li: Bismo li mogli...?",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the news item. What would the mayor do if the budget allowed?",
+          "difficulty": 5,
+          "options": ["Build a new bridge", "Renovate all the schools", "Lower the taxes", "Open a new hospital"],
+          "answer": "Renovate all the schools",
+          "explanation": "Kad bismo imali dovoljno sredstava, obnovili bismo sve škole = 'if we had enough funds, we would renovate all the schools'. Note bismo twice.",
+          "audioText": "Gradonačelnik je izjavio: Kad bismo imali dovoljno sredstava u proračunu, obnovili bismo sve gradske škole već ove godine. Nažalost, novca za sve projekte zasad nema."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence has the auxiliary in the WRONG person?",
+          "difficulty": 6,
+          "options": ["Mi bismo rado došli.", "Vi biste to znali.", "Mi biste rado došli.", "Oni bi rado došli."],
+          "answer": "Mi biste rado došli.",
+          "explanation": "Mi (we) needs bismo, not biste. biste belongs to Vi. Correct: Mi bismo rado došli."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Ne ___ to nikad rekao naglas. (kondicional, ja — negacija)",
+          "difficulty": 7,
+          "answer": "bih",
+          "accepted": ["bih"],
+          "explanation": "Negative conditional: ne bih. The ne precedes the auxiliary bih.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the second item. What would the athlete like to do one day?",
+          "difficulty": 8,
+          "options": ["Retire early", "Coach young players", "Play at a World Cup", "Move abroad"],
+          "answer": "Play at a World Cup",
+          "explanation": "Volio bih jednom zaigrati na Svjetskom prvenstvu = 'I'd like to play at a World Cup one day'. volio bih = the conditional of wishes.",
+          "audioText": "Mladi nogometaš u intervjuu je rekao: Volio bih jednom zaigrati na Svjetskom prvenstvu za reprezentaciju. Kad bih imao tu priliku, bio bih najsretniji čovjek na svijetu."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask for advice: What would you do in my place?",
+          "difficulty": 9,
+          "options": ["mjestu", "mojem", "ti", "Što", "napravio", "na", "bi"],
+          "answer": "Što bi ti napravio na mojem mjestu",
+          "ordered": ["Što", "bi", "ti", "napravio", "na", "mojem", "mjestu"],
+          "explanation": "The clitic bi takes second position after Što; na + locative gives na mojem mjestu = 'in my place'."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus", "nn-100-2021"]
+    }
+  ],
+  "196": [
+    {
+      "type": "LEARN",
+      "title": "Sport i mediji — the vocabulary of the news",
+      "intro": "Sport is Croatia's small-talk currency, and sports news is fast, formulaic listening. Fourteen words and phrases that recur in every bulletin: utakmica, prijenos, rezultat, sudac, reprezentacija. Notice how often the passive participle shows up — odgođena, proglašen, zaslužena. Read one real sports article after this; you'll recognise half of it.",
+      "items": [
+        {
+          "hr": "Sinoć smo gledali utakmicu Dinama i Hajduka.",
+          "en": "Last night we watched the Dinamo–Hajduk match.",
+          "note": "utakmica = match, game. The two teams stand in the genitive: utakmica Dinama i Hajduka."
+        },
+        {
+          "hr": "Prijenos počinje u osam sati na Prvom programu.",
+          "en": "The broadcast starts at eight o'clock on Channel One.",
+          "note": "prijenos = (live) broadcast, transmission. na Prvom programu = on Channel One (HRT 1)."
+        },
+        {
+          "hr": "Novinar je postavio zanimljivo pitanje treneru.",
+          "en": "The journalist asked the coach an interesting question.",
+          "note": "novinar = journalist; trener = coach. postaviti pitanje + dative = to ask (put a question to) someone."
+        },
+        {
+          "hr": "Milijuni gledatelja pratili su prijenos natjecanja.",
+          "en": "Millions of viewers followed the broadcast of the competition.",
+          "note": "gledatelj = viewer (genitive plural gledatelja); natjecanje = competition; pratiti = to follow."
+        },
+        {
+          "hr": "Naši navijači stvaraju sjajnu atmosferu na stadionu.",
+          "en": "Our fans create a great atmosphere at the stadium.",
+          "note": "navijač = fan, supporter; navijati za = to root for. stadion = stadium (na stadionu, locative)."
+        },
+        {
+          "hr": "Konačan rezultat bio je dva prema jedan.",
+          "en": "The final score was two to one.",
+          "note": "rezultat = result, score. X prema Y = 'X to Y' (score): dva prema jedan. konačan = final."
+        },
+        {
+          "hr": "Sudac je dosudio jedanaesterac u zadnjoj minuti.",
+          "en": "The referee awarded a penalty in the last minute.",
+          "note": "sudac = referee; jedanaesterac = penalty (kick), literally 'the eleven(-metre) one'. dosuditi = to award."
+        },
+        {
+          "hr": "Hrvatska reprezentacija igra u srijedu navečer.",
+          "en": "The Croatian national team plays on Wednesday evening.",
+          "note": "reprezentacija = national team. u srijedu = on Wednesday (accusative of time)."
+        },
+        {
+          "hr": "Vijest o pobjedi bila je na naslovnici svih novina.",
+          "en": "The news of the victory was on the front page of all the papers.",
+          "note": "vijest = (a piece of) news; vijesti (pl.) = the news bulletin. naslovnica = front page; pobjeda = victory."
+        },
+        {
+          "hr": "Ova sportska emisija traje pola sata.",
+          "en": "This sports programme lasts half an hour.",
+          "note": "emisija = programme, broadcast show. Do not confuse with prijenos (a live relay) — emisija is any TV/radio show."
+        },
+        {
+          "hr": "Pobjeda je bila potpuno zaslužena, a poraz bolan.",
+          "en": "The victory was completely deserved, and the defeat painful.",
+          "note": "poraz = defeat (opposite of pobjeda). zaslužena = passive participle of zaslužiti (deserved), agreeing with pobjeda."
+        },
+        {
+          "hr": "Utakmica je odgođena zbog jake kiše.",
+          "en": "The match was postponed because of heavy rain.",
+          "note": "odgođena = passive participle of odgoditi (to postpone). je odgođena = the passive: 'was postponed'."
+        },
+        {
+          "hr": "Luka Modrić proglašen je najboljim igračem utakmice.",
+          "en": "Luka Modrić was named the best player of the match.",
+          "note": "proglašen = passive participle of proglasiti (to declare/name). najboljim igračem = instrumental after proglasiti."
+        },
+        {
+          "hr": "Sandra Perković osvojila je još jednu zlatnu medalju.",
+          "en": "Sandra Perković won yet another gold medal.",
+          "note": "osvojiti = to win (a medal, title). zlatna medalja = gold medal; osvojiti medalju is the standard collocation."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Read and hear the sports desk",
+      "intro": "Eight questions on the language of the back pages: know the words, spot the passive participles, and decode three quick sports bulletins by ear. Score, penalty, postponed — the vocabulary is small and it repeats.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "What does 'prijenos' mean?",
+          "difficulty": 1,
+          "options": ["referee", "defeat", "fan", "broadcast"],
+          "answer": "broadcast",
+          "explanation": "prijenos = (live) broadcast/transmission. referee = sudac, defeat = poraz, fan = navijač."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which word means 'the final score'?",
+          "difficulty": 2,
+          "options": ["konačan rezultat", "konačna emisija", "konačna vijest", "konačan sudac"],
+          "answer": "konačan rezultat",
+          "explanation": "rezultat = result/score, konačan = final. emisija = programme, vijest = news, sudac = referee."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Sudac je dosudio ___ u zadnjoj minuti. (a penalty)",
+          "difficulty": 3,
+          "answer": "jedanaesterac",
+          "accepted": ["jedanaesterac"],
+          "explanation": "jedanaesterac = penalty kick (from jedanaest, 'eleven' — the 11-metre spot). Object of dosuditi.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the first item. What was the final score?",
+          "difficulty": 4,
+          "options": ["1 to 0", "2 to 1", "3 to 2", "0 to 0"],
+          "answer": "2 to 1",
+          "explanation": "Konačan rezultat bio je dva prema jedan = the final score was two to one, decided by a penalty in the last minute.",
+          "audioText": "U nogometu: sinoć je odigrana utakmica između Dinama i Hajduka. Konačan rezultat bio je dva prema jedan, a pobjednički gol pao je iz jedanaesterca u zadnjoj minuti."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Utakmica je ___ zbog jake kiše. (odgoditi — glagolski pridjev trpni, ž. r.)",
+          "difficulty": 5,
+          "answer": "odgođena",
+          "accepted": ["odgođena"],
+          "explanation": "odgoditi → odgođen (with iotation d → đ); feminine odgođena to agree with utakmica.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the second item. Why was the match postponed?",
+          "difficulty": 6,
+          "options": ["Because of snow", "Because of heavy rain", "Because of an injury", "Because of the fans"],
+          "answer": "Because of heavy rain",
+          "explanation": "Utakmica je odgođena zbog jake kiše = the match was postponed because of heavy rain. odgođena = passive participle.",
+          "audioText": "Još jedna vijest iz sporta: današnja utakmica u Splitu odgođena je zbog jake kiše i poplavljenog terena. Novi termin bit će objavljen sutra ujutro."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the third item. What did Sandra Perković win?",
+          "difficulty": 7,
+          "options": ["A silver medal", "A gold medal", "Best-player award", "The national title only"],
+          "answer": "A gold medal",
+          "explanation": "osvojila je zlatnu medalju = she won a gold medal, and was named the best athlete of the meeting.",
+          "audioText": "A sada dobre vijesti: naša atletičarka Sandra Perković osvojila je zlatnu medalju u bacanju diska. Proglašena je najboljom sportašicom natjecanja."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: Luka Modrić was named the best player of the match.",
+          "difficulty": 8,
+          "options": ["najboljim", "je", "igračem", "Luka", "proglašen", "Modrić", "utakmice"],
+          "answer": "Luka Modrić proglašen je najboljim igračem utakmice",
+          "ordered": ["Luka", "Modrić", "proglašen", "je", "najboljim", "igračem", "utakmice"],
+          "explanation": "Passive proglašen je + instrumental najboljim igračem (proglasiti takes the instrumental); utakmice is the genitive 'of the match'."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "197": [
+    {
+      "type": "LEARN",
+      "title": "Slaganje i neslaganje — agreeing politely",
+      "intro": "A named B1 exam skill: agree and disagree without giving offence. The trick is to soften — imate pravo, ali... / ne bih se složio... / s jedne strane... The conditional (ne bih se složio) is your politeness engine here. Twelve phrases to deploy in tonight's TV-vs-internet debate.",
+      "items": [
+        {
+          "hr": "Potpuno se slažem s tobom.",
+          "en": "I completely agree with you.",
+          "note": "slagati se s + instrumental = to agree with. s tobom = with you (sg.). The strongest agreement."
+        },
+        {
+          "hr": "Slažem se, ali imam jednu malu primjedbu.",
+          "en": "I agree, but I have one small objection.",
+          "note": "Agree-then-qualify: slažem se, ali... A polite way to add a caveat. primjedba = objection, remark."
+        },
+        {
+          "hr": "Imate pravo, međutim postoji i druga strana.",
+          "en": "You're right, however there's another side too.",
+          "note": "imati pravo = to be right. imate pravo (polite Vi) + međutim softens the coming disagreement."
+        },
+        {
+          "hr": "Ne bih se složio s tom tvrdnjom.",
+          "en": "I wouldn't agree with that claim.",
+          "note": "The conditional makes disagreement polite: ne bih se složio = 'I wouldn't agree' (softer than ne slažem se). tvrdnja = claim."
+        },
+        {
+          "hr": "Nisam baš siguran u to.",
+          "en": "I'm not quite sure about that.",
+          "note": "A gentle hedge instead of flat rejection. baš softens: 'not quite'. siguran u + accusative = sure about."
+        },
+        {
+          "hr": "S jedne strane da, ali s druge strane ne baš.",
+          "en": "On one hand yes, but on the other not really.",
+          "note": "s jedne strane... s druge strane... = on one hand... on the other. The classic balanced answer."
+        },
+        {
+          "hr": "Djelomično se slažem s vama.",
+          "en": "I partly agree with you.",
+          "note": "djelomično = partly. A middle position: neither full agreement nor rejection. s vama = with you (polite)."
+        },
+        {
+          "hr": "To je dobra točka, ali nisam potpuno uvjeren.",
+          "en": "That's a good point, but I'm not entirely convinced.",
+          "note": "Concede first (dobra točka), then push back. uvjeren = convinced; nisam uvjeren = I'm not convinced."
+        },
+        {
+          "hr": "Bojim se da se ne mogu složiti s time.",
+          "en": "I'm afraid I can't agree with that.",
+          "note": "bojim se da... = 'I'm afraid that...' — a courteous frame for disagreement. s time = with that (instrumental of to)."
+        },
+        {
+          "hr": "Po mojem mišljenju, internet je promijenio sve.",
+          "en": "In my opinion, the internet has changed everything.",
+          "note": "po mojem mišljenju = in my opinion. Alternatives: smatram da..., mislim da..., čini mi se da..."
+        },
+        {
+          "hr": "Kako to misliš? Možeš li pojasniti?",
+          "en": "What do you mean? Can you clarify?",
+          "note": "Kako to misliš? = what do you mean? A way to buy time and keep the debate going. pojasniti = to clarify."
+        },
+        {
+          "hr": "Razumijem tvoje stajalište, no ipak se ne slažem.",
+          "en": "I understand your viewpoint, but I still disagree.",
+          "note": "stajalište = viewpoint, standpoint. no = but (a slightly formal alternative to ali); ipak = still."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Agree, hedge, disagree",
+      "intro": "Eight questions on the register of debate. When do you concede, when do you soften, and how does the conditional make 'no' sound polite? Pick the phrase that fits the social move.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which phrase expresses the STRONGEST agreement?",
+          "difficulty": 1,
+          "options": ["Djelomično se slažem.", "Nisam baš siguran.", "Ne bih se složio.", "Potpuno se slažem."],
+          "answer": "Potpuno se slažem.",
+          "explanation": "potpuno = completely. djelomično = partly, the other two are hedging/disagreement."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is a POLITE way to disagree?",
+          "difficulty": 2,
+          "options": ["Griješiš.", "Ne bih se složio s tim.", "To nije istina.", "Nemaš pojma."],
+          "answer": "Ne bih se složio s tim.",
+          "explanation": "The conditional ne bih se složio softens 'I disagree'. The others are blunt or rude."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Potpuno se ___ s tobom. (slagati se — prezent, ja)",
+          "difficulty": 3,
+          "answer": "slažem",
+          "accepted": ["slažem"],
+          "explanation": "slagati se → slažem se (g → ž). slagati se s + instrumental = to agree with.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Imate ___, međutim postoji i druga strana. (you're right)",
+          "difficulty": 4,
+          "answer": "pravo",
+          "accepted": ["pravo"],
+          "explanation": "imati pravo = to be right. Imate pravo = 'you're right' (polite Vi).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which phrase means 'on one hand... on the other hand...'?",
+          "difficulty": 5,
+          "options": ["s jedne strane... s druge strane...", "prije svega... na kraju...", "s vremena na vrijeme...", "u svakom slučaju..."],
+          "answer": "s jedne strane... s druge strane...",
+          "explanation": "s jedne strane... s druge strane... = on one hand... on the other. The others mean 'first... finally', 'from time to time', 'in any case'."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Bojim se da se ne mogu složiti.' What social move is this?",
+          "difficulty": 6,
+          "options": ["Strong agreement", "Polite disagreement", "Asking for clarification", "Changing the subject"],
+          "answer": "Polite disagreement",
+          "explanation": "bojim se da... ('I'm afraid that...') is a courteous frame for saying you can't agree."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it politely: I understand your viewpoint, but I still disagree.",
+          "difficulty": 7,
+          "options": ["stajalište", "se", "ne", "Razumijem", "tvoje", "no", "ipak", "slažem"],
+          "answer": "Razumijem tvoje stajalište no ipak se ne slažem",
+          "ordered": ["Razumijem", "tvoje", "stajalište", "no", "ipak", "se", "ne", "slažem"],
+          "explanation": "Concede first (Razumijem tvoje stajalište), then turn with no ipak; the clitic se precedes ne slažem."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which reply best keeps a debate going by seeking clarification?",
+          "difficulty": 8,
+          "options": ["Potpuno se slažem.", "Kako to misliš? Možeš li pojasniti?", "Bojim se da moram ići.", "Po mojem mišljenju, nema smisla."],
+          "answer": "Kako to misliš? Možeš li pojasniti?",
+          "explanation": "Kako to misliš? + Možeš li pojasniti? asks the other person to clarify, keeping the conversation open."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Debate night: TV or the internet?",
+      "intro": "You and your wife take opposite sides on purpose — she defends television, you defend the internet, and then you swap. Lace in the agreement and disagreement phrases: imate pravo, ali... / s jedne strane... / ne bih se složio. Keep it warm; a good debate is a game.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Ja mislim da je televizija još uvijek najbolji izvor vijesti. Ozbiljnija je od interneta.",
+          "en": "I think television is still the best source of news. It's more serious than the internet."
+        },
+        {
+          "speaker": "Me",
+          "hr": "S jedne strane imaš pravo, ali s druge strane na internetu vijest dobiješ odmah.",
+          "en": "On one hand you're right, but on the other you get the news instantly online."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Da, no na internetu ima puno lažnih vijesti. Kome onda vjerovati?",
+          "en": "Yes, but there's a lot of fake news online. Who do you trust then?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Tu se slažem s tobom. Ipak, i ozbiljni portali objavljuju provjerene vijesti.",
+          "en": "There I agree with you. Still, serious news sites also publish verified news."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Možda, ali televizija okuplja cijelu obitelj. Zajedno gledamo Dnevnik u sedam.",
+          "en": "Maybe, but television brings the whole family together. We watch the evening news together at seven."
+        },
+        {
+          "speaker": "Me",
+          "hr": "To je dobra točka. Ne bih se složio da je internet zamijenio taj osjećaj zajedništva.",
+          "en": "That's a good point. I wouldn't agree that the internet has replaced that sense of togetherness."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Vidiš! A kako to da onda više gledaš mobitel nego televiziju?",
+          "en": "See! So how come you look at your phone more than the television?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Priznajem, imaš pravo. Kad bih bio dosljedan, ostavio bih mobitel u drugoj sobi.",
+          "en": "I admit, you're right. If I were consistent, I'd leave my phone in the other room."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Sad zamijenimo strane. Brani televiziju — reci mi zašto je bolja od interneta.",
+          "en": "Now let's switch sides. Defend television — tell me why it's better than the internet."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Dobro. Po mojem mišljenju, televizija bira što je važno, a internet nas zatrpava svime.",
+          "en": "Okay. In my opinion, television selects what's important, while the internet buries us in everything."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Odlično! Vidim da bi mogao braniti i stajalište s kojim se ne slažeš.",
+          "en": "Excellent! I see you could defend even a viewpoint you don't agree with."
+        },
+        {
+          "speaker": "Me",
+          "hr": "To je i bit dobre rasprave — razumjeti drugu stranu, čak i kad se ne slažeš s njom.",
+          "en": "That's the essence of a good debate — understanding the other side, even when you don't agree with it."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "198": [
+    {
+      "type": "LEARN",
+      "title": "Pismo o događaju — a letter retelling an event",
+      "intro": "Exam letters combine three things: news, a retelling, and feelings. That means past tense with the right aspect (dok smo čekali — počela je svirati), dative experiencers (bilo mi je lijepo), and at least one conditional (da si bila tamo...). Learn the frame — greeting, body, close — with twelve ready building blocks for a letter about a concert.",
+      "items": [
+        {
+          "hr": "Draga Ana, kako si? Nadam se da si dobro.",
+          "en": "Dear Ana, how are you? I hope you're well.",
+          "note": "The opening frame of an informal letter: Draga (f.) / Dragi (m.) + name, then a greeting question and a warm line."
+        },
+        {
+          "hr": "Moram ti ispričati što mi se dogodilo prošlog vikenda.",
+          "en": "I must tell you what happened to me last weekend.",
+          "note": "ispričati = to tell (a story, perfective). dogoditi se + dative = to happen to someone. prošlog vikenda = last weekend (genitive)."
+        },
+        {
+          "hr": "U subotu smo bili na koncertu u zagrebačkoj Areni.",
+          "en": "On Saturday we were at a concert in Zagreb's Arena.",
+          "note": "Setting the scene with the perfekt (bili smo). u subotu = on Saturday (accusative of time)."
+        },
+        {
+          "hr": "Dok smo čekali, iznenada je počela svirati glazba.",
+          "en": "While we were waiting, the music suddenly started to play.",
+          "note": "Aspect contrast: dok smo čekali (imperfective, background) + počela je svirati (perfective, the event that breaks in)."
+        },
+        {
+          "hr": "Bilo mi je nevjerojatno lijepo cijelu večer.",
+          "en": "I felt incredibly good the whole evening.",
+          "note": "Dative experiencer in the past: bilo mi je lijepo = 'it was lovely for me'. The emotional core of a retelling."
+        },
+        {
+          "hr": "Kad je pjevač zapjevao našu pjesmu, svi smo ustali.",
+          "en": "When the singer sang our song, everyone stood up.",
+          "note": "Two perfectives in sequence: zapjevao (started singing) → ustali (stood up). za- marks the onset of the singing."
+        },
+        {
+          "hr": "Bio sam toliko oduševljen da sam zaboravio snimati.",
+          "en": "I was so thrilled that I forgot to film it.",
+          "note": "oduševljen = thrilled (passive participle used adjectivally). toliko... da... = so... that... (result clause)."
+        },
+        {
+          "hr": "Da si bila tamo, sigurno bi se oduševila.",
+          "en": "If you had been there, you'd surely have been thrilled.",
+          "note": "The required conditional: unreal da + perfekt (si bila) → conditional result (bi se oduševila). Addressed to Ana (f.)."
+        },
+        {
+          "hr": "Nažalost, koncert je prebrzo završio.",
+          "en": "Unfortunately, the concert ended too quickly.",
+          "note": "nažalost = unfortunately — a feelings marker. pre- = too: prebrzo = too quickly."
+        },
+        {
+          "hr": "Jedva čekam da ti sve ispričam uživo.",
+          "en": "I can't wait to tell you everything in person.",
+          "note": "jedva čekam da... = I can't wait to... uživo = live, in person. A natural way to build toward the close."
+        },
+        {
+          "hr": "Pozdravi sve od mene i javi se uskoro.",
+          "en": "Say hi to everyone from me and get in touch soon.",
+          "note": "Closing requests: pozdravi (imperative) = say hi; javi se = get in touch. Standard letter-ending moves."
+        },
+        {
+          "hr": "Puno pozdrava, tvoj Ivan.",
+          "en": "Lots of greetings, your Ivan.",
+          "note": "The sign-off. Puno pozdrava / Srdačan pozdrav / Grlim te, then tvoj (m.) / tvoja (f.) + name."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Build the letter — tense, aspect, feeling",
+      "intro": "Nine questions on the machinery of a retelling letter: past-tense aspect, dative feelings, one conditional, and the fixed openers and closers. If these fall into place, your ten sentences will read like a real letter.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "How does an informal letter to a woman named Ana begin?",
+          "difficulty": 1,
+          "options": ["Dragi Ana,", "Draga Ana,", "Poštovana Ana,", "Drago Ana,"],
+          "answer": "Draga Ana,",
+          "explanation": "Draga (feminine) + name for an informal letter. Dragi is masculine; Poštovana is formal; Drago is wrong gender."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Dok smo čekali, ___ svirati glazba.' Which fits the aspect?",
+          "difficulty": 2,
+          "options": ["počela je", "počinjala je", "počne", "počinje"],
+          "answer": "počela je",
+          "explanation": "The background is imperfective (dok smo čekali); the event that breaks in is perfective past: počela je svirati."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Bilo ___ je nevjerojatno lijepo cijelu večer. (dative: to me)",
+          "difficulty": 3,
+          "answer": "mi",
+          "accepted": ["mi"],
+          "explanation": "Dative experiencer in the past: Bilo mi je lijepo = 'it was lovely for me'.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Moram ti ispričati što mi se ___ prošlog vikenda. (dogoditi se — perfekt, 3. lice)",
+          "difficulty": 4,
+          "answer": "dogodilo",
+          "accepted": ["dogodilo"],
+          "explanation": "dogoditi se + dative; neuter participle dogodilo agrees with the neuter što ('what'): što mi se dogodilo.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence is the required UNREAL conditional (to Ana)?",
+          "difficulty": 5,
+          "options": ["Ako si bila tamo, oduševila si se.", "Da si bila tamo, oduševila bi se.", "Kad si bila tamo, oduševila si se.", "Da si bila tamo, oduševit ćeš se."],
+          "answer": "Da si bila tamo, oduševila bi se.",
+          "explanation": "Unreal past: da + perfekt (si bila) → conditional result (bi se oduševila). She wasn't there — that's the point of da."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Nažalost, koncert je ___ završio. (too quickly — with the prefix pre-)",
+          "difficulty": 6,
+          "answer": "prebrzo",
+          "accepted": ["prebrzo"],
+          "explanation": "The prefix pre- = 'too': brzo → prebrzo = too quickly.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Close the letter: I can't wait to tell you everything in person.",
+          "difficulty": 7,
+          "options": ["ti", "ispričam", "uživo", "Jedva", "sve", "čekam", "da"],
+          "answer": "Jedva čekam da ti sve ispričam uživo",
+          "ordered": ["Jedva", "čekam", "da", "ti", "sve", "ispričam", "uživo"],
+          "explanation": "jedva čekam da + present (ispričam); the dative ti and object sve precede the verb; uživo closes it."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which is an appropriate SIGN-OFF for an informal letter from Ivan?",
+          "difficulty": 8,
+          "options": ["S poštovanjem, Ivan", "Puno pozdrava, tvoj Ivan", "U prilogu, Ivan", "Unaprijed hvala, Ivan"],
+          "answer": "Puno pozdrava, tvoj Ivan",
+          "explanation": "Puno pozdrava, tvoj Ivan is warm and informal. S poštovanjem is formal; the others are business-letter phrases."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence correctly combines feeling + result?",
+          "difficulty": 9,
+          "options": ["Bio sam toliko oduševljen da sam zaboravio snimati.", "Bio sam toliko oduševljen da zaboravim snimati.", "Bio sam toliko oduševljen da bih zaboravio snimati.", "Bio sam toliko oduševljen da sam zaboraviti snimati."],
+          "answer": "Bio sam toliko oduševljen da sam zaboravio snimati.",
+          "explanation": "toliko... da + perfekt (da sam zaboravio) states the actual result. The present, conditional and infinitive versions don't fit a completed past event."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "199": [
+    {
+      "type": "LEARN",
+      "title": "Ponavljanje — conditionals meet sport and media",
+      "intro": "Week 28 in one place: the three conditional types firing on the sport-and-media theme, plus the polite (dis)agreement moves. Today speculation must come out live — što bi radio da...? Twelve mixed models to warm up before a long conversation and the 'što biste radili da...' game.",
+      "items": [
+        {
+          "hr": "Da naša reprezentacija igra bolje, sigurno bi pobijedila.",
+          "en": "If our national team played better, it would surely win.",
+          "note": "Unreal present: da + present (igra) → conditional (bi pobijedila). The team isn't playing well — that's implied."
+        },
+        {
+          "hr": "Ako pobijede u polufinalu, slavit će cijela zemlja.",
+          "en": "If they win the semi-final, the whole country will celebrate.",
+          "note": "Real condition: ako + present (pobijede, perfective) → futur I (slavit će). Open and likely."
+        },
+        {
+          "hr": "Što bi radio da si profesionalni sportaš?",
+          "en": "What would you do if you were a professional athlete?",
+          "note": "The speculation question: kondicional (bi radio) + da + present (da si). Answer in the conditional too."
+        },
+        {
+          "hr": "Kad bih imao karte, išao bih na svaku utakmicu.",
+          "en": "If I had tickets, I'd go to every match.",
+          "note": "Potential condition: kad + kondicional in both clauses (bih imao... išao bih)."
+        },
+        {
+          "hr": "Da sam znao za prijenos, ostao bih doma i gledao ga.",
+          "en": "Had I known about the broadcast, I'd have stayed home and watched it.",
+          "note": "Unreal past: da + perfekt (sam znao) → conditional (ostao bih... gledao). prijenos = broadcast."
+        },
+        {
+          "hr": "Slažem se da je Modrić najbolji, ali ne bih zaboravio ni druge.",
+          "en": "I agree that Modrić is the best, but I wouldn't forget the others either.",
+          "note": "Agreement + polite reservation: slažem se da..., ali ne bih... Combines Week 28's two threads."
+        },
+        {
+          "hr": "Kad bismo imali više vremena, gledali bismo sve prijenose.",
+          "en": "If we had more time, we'd watch all the broadcasts.",
+          "note": "1st plural conditional bismo in both clauses — the exam's favourite form. Note the repetition."
+        },
+        {
+          "hr": "Volio bih jednom uživo vidjeti finale Svjetskog prvenstva.",
+          "en": "I'd like to see a World Cup final live one day.",
+          "note": "Wish in the conditional: volio bih. uživo = live; finale = final; Svjetsko prvenstvo = World Cup."
+        },
+        {
+          "hr": "Da mogu promijeniti jednu stvar u svijetu, smanjio bih nepravdu.",
+          "en": "If I could change one thing in the world, I'd reduce injustice.",
+          "note": "The recording prompt turned into a model. Unreal present da + present (mogu) → conditional (smanjio bih)."
+        },
+        {
+          "hr": "Ako budeš pratio vijesti, uvijek ćeš znati rezultate.",
+          "en": "If you follow the news, you'll always know the scores.",
+          "note": "Real condition with futur II (budeš pratio) → futur I (znat ćeš). pratiti vijesti = to follow the news."
+        },
+        {
+          "hr": "S jedne strane volim sport, ali s druge me previše obveza umara.",
+          "en": "On one hand I love sport, but on the other too many commitments tire me.",
+          "note": "Balanced opinion: s jedne strane... s druge... plus the accusative experiencer umara me (like boljeti)."
+        },
+        {
+          "hr": "Kad bi svi navijači bili ovako pristojni, stadioni bi bili mirniji.",
+          "en": "If all fans were this decent, the stadiums would be calmer.",
+          "note": "Potential condition, 3rd person: kad + bi (bili) → conditional (bi bili). navijač = fan; pristojan = decent."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Speculate on cue",
+      "intro": "Eight mixed questions bringing Week 28 together: choose the conditional type, fix the auxiliary, and blend in a polite opinion move. These should fire without hesitation before the live conversation.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "'Ako pobijede u polufinalu, ___ cijela zemlja.' Which fits a real condition?",
+          "difficulty": 1,
+          "options": ["slavila bi", "slavit će", "bi slavila", "da slavi"],
+          "answer": "slavit će",
+          "explanation": "A real condition (ako + present) takes futur I in the main clause: slavit će cijela zemlja."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Kad ___ imao karte, išao bih na utakmicu.' Which auxiliary?",
+          "difficulty": 2,
+          "options": ["bi", "bih", "bismo", "budem"],
+          "answer": "bih",
+          "explanation": "Potential condition, 1st singular: Kad bih imao... The main clause echoes it: išao bih."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Da naša reprezentacija igra bolje, sigurno bi ___. (pobijediti — kondicional, ona/reprezentacija)",
+          "difficulty": 3,
+          "answer": "pobijedila",
+          "accepted": ["pobijedila"],
+          "explanation": "The subject reprezentacija is feminine, so the participle is pobijedila: bi pobijedila.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "Kad ___ imali više vremena, gledali bismo sve prijenose. (biti — kondicional, mi)",
+          "difficulty": 4,
+          "answer": "bismo",
+          "accepted": ["bismo"],
+          "explanation": "1st plural conditional is bismo: Kad bismo imali... gledali bismo.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'___ sam znao za prijenos, ostao bih doma.' (I didn't know.)",
+          "difficulty": 5,
+          "options": ["Ako", "Kad", "Da", "Dok"],
+          "answer": "Da",
+          "explanation": "An unreal past condition uses da + perfekt: Da sam znao... = 'Had I known...' (but I didn't)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which reply both agrees and adds a polite reservation?",
+          "difficulty": 6,
+          "options": ["Potpuno se slažem i nemam što dodati.", "Slažem se da je najbolji, ali ne bih zaboravio ni druge.", "Ne slažem se uopće.", "Nemaš pravo."],
+          "answer": "Slažem se da je najbolji, ali ne bih zaboravio ni druge.",
+          "explanation": "It concedes (slažem se) and then softens with a conditional reservation (ne bih zaboravio) — the Week 28 combination."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Ask the speculation question: What would you do if you were a professional athlete?",
+          "difficulty": 7,
+          "options": ["da", "sportaš", "radio", "bi", "Što", "si", "profesionalni"],
+          "answer": "Što bi radio da si profesionalni sportaš",
+          "ordered": ["Što", "bi", "radio", "da", "si", "profesionalni", "sportaš"],
+          "explanation": "The conditional main clause (Što bi radio) precedes the da-condition (da si profesionalni sportaš)."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which sentence keeps one consistent conditional pattern?",
+          "difficulty": 8,
+          "options": ["Da mogu promijeniti jednu stvar, smanjio bih nepravdu.", "Da mogu promijeniti jednu stvar, smanjit ću nepravdu.", "Ako mogu promijeniti jednu stvar, smanjio bih nepravdu.", "Kad mogu promijeniti jednu stvar, smanjio bih nepravdu."],
+          "answer": "Da mogu promijeniti jednu stvar, smanjio bih nepravdu.",
+          "explanation": "Unreal present: da + present (mogu) pairs with a conditional result (smanjio bih). The other conjunctions or a future break the pattern."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "DIALOGUE",
+      "title": "Speaking night: the 'what would you do if...' game",
+      "intro": "A long, playful conversation with your wife. You cover the weekend's sport and news, then play the speculation game — što biste radili da...? Let the conditionals run and slip in your agreement phrases. Act it out and keep inventing hypotheticals past the last line.",
+      "lines": [
+        {
+          "speaker": "Partner",
+          "hr": "Jesi li sinoć gledao utakmicu? Propustila sam kraj.",
+          "en": "Did you watch the match last night? I missed the end."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Jesam, pobijedili smo dva prema jedan. Da si ostala budna, oduševila bi se.",
+          "en": "I did, we won two to one. If you'd stayed up, you'd have loved it."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Šteta. A da igraš u reprezentaciji, što bi radio drukčije od njih?",
+          "en": "Shame. And if you played for the national team, what would you do differently from them?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Kad bih bio na terenu, više bih dodavao, a manje trčao bez veze.",
+          "en": "If I were on the pitch, I'd pass more and run around aimlessly less."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Ha! A što bi radio da si novinar koji ih intervjuira poslije utakmice?",
+          "en": "Ha! And what would you do if you were a journalist interviewing them after the match?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Pitao bih ih o pritisku, a ne samo o rezultatu. To bi bilo zanimljivije.",
+          "en": "I'd ask them about the pressure, not just about the score. That would be more interesting."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Slažem se s tobom. Sad ozbiljnije pitanje: da mogu promijeniti jednu stvar u svijetu?",
+          "en": "I agree with you. Now a more serious question: if you could change one thing in the world?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Smanjio bih nepravdu. A ti? Što bi ti promijenila da imaš tu moć?",
+          "en": "I'd reduce injustice. And you? What would you change if you had that power?"
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Da mogu, dala bih svakom djetetu jednake prilike. Ostalo bi došlo samo.",
+          "en": "If I could, I'd give every child equal opportunities. The rest would follow on its own."
+        },
+        {
+          "speaker": "Me",
+          "hr": "Lijepa misao. Kad bismo svi tako razmišljali, svijet bi bio bolji.",
+          "en": "A lovely thought. If we all thought like that, the world would be better."
+        },
+        {
+          "speaker": "Partner",
+          "hr": "Dobro rečeno. Vidiš kako ti sada pogodbene rečenice izlaze same od sebe?",
+          "en": "Well said. See how conditional sentences now come out of you all by themselves?"
+        },
+        {
+          "speaker": "Me",
+          "hr": "Da si mi to rekla prije pola godine, ne bih ti vjerovao. A sada — evo ga.",
+          "en": "If you'd told me that six months ago, I wouldn't have believed you. And now — here it is."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ],
+  "200": [
+    {
+      "type": "LEARN",
+      "title": "Obitelj glagola: živjeti — dan 200!",
+      "intro": "Two hundred days in, and the perfect family to mark it: živjeti (to live) and its prefixes of experience. do- gives doživjeti (to experience), pre- gives preživjeti (to survive), pro- gives proživjeti (to live through), o- gives oživjeti (to come alive), za- gives zaživjeti (to take off). Learn one sentence for each — they describe exactly this journey.",
+      "items": [
+        {
+          "hr": "Živim u Hrvatskoj već gotovo pet godina.",
+          "en": "I've been living in Croatia for almost five years now.",
+          "note": "živjeti (živim) = to live. već + present for an ongoing state = 'have been ...-ing' in English."
+        },
+        {
+          "hr": "Na putovanju sam doživio nešto nevjerojatno.",
+          "en": "On the trip I experienced something incredible.",
+          "note": "do- + živjeti = doživjeti = to experience, go through. Past participle doživio (m). One of the most useful verbs in the family."
+        },
+        {
+          "hr": "Preživjeli smo dugu i hladnu zimu bez grijanja.",
+          "en": "We survived a long, cold winter without heating.",
+          "note": "pre- + živjeti = preživjeti = to survive, get through. Past preživjeli. pre- here = 'through / across'."
+        },
+        {
+          "hr": "Dao bih sve da još jednom proživim to ljeto.",
+          "en": "I'd give anything to live through that summer once more.",
+          "note": "pro- + živjeti = proživjeti = to live through, spend (a period). Contrast with preživjeti (bare survival) — proživjeti is fuller."
+        },
+        {
+          "hr": "Poslije jutarnje kave grad kao da oživi.",
+          "en": "After the morning coffee the city seems to come alive.",
+          "note": "o- + živjeti = oživjeti = to come alive, revive. kao da + present = 'as if / seems to'."
+        },
+        {
+          "hr": "Nadam se da ću poživjeti sto godina.",
+          "en": "I hope I'll live to a hundred.",
+          "note": "po- + živjeti = poživjeti = to live (on) for a while / to a certain age. po- adds a sense of 'for some time'."
+        },
+        {
+          "hr": "Projekt je nakon mnogo truda konačno zaživio.",
+          "en": "After much effort the project finally took off.",
+          "note": "za- + živjeti = zaživjeti = to come to life, take off (of an idea, project, custom). A common figurative use."
+        },
+        {
+          "hr": "Što si sve doživio dok si učio hrvatski?",
+          "en": "What (all) have you experienced while learning Croatian?",
+          "note": "doživjeti again — the question form. sve intensifies: 'what all', everything you've been through."
+        },
+        {
+          "hr": "Proživjeli su teške, ali lijepe godine zajedno.",
+          "en": "They lived through hard but beautiful years together.",
+          "note": "proživjeti + accusative of duration: proživjeti godine = to live through / spend years."
+        },
+        {
+          "hr": "Tko preživi, pričat će — kaže stara poslovica.",
+          "en": "He who survives will tell the tale — an old proverb says.",
+          "note": "A real Croatian saying: Tko preživi, pričat će. preživi = perfective present (in a relative/general clause)."
+        },
+        {
+          "hr": "živjeti: živim, živiš, živi, živimo, živite, žive",
+          "en": "to live: I live, you live, he lives, we live, you (pl.) live, they live",
+          "note": "The base i-verb paradigm. Every prefixed member follows it: doživim, preživim, proživim, oživim."
+        },
+        {
+          "hr": "doživjeti: doživio, doživjela, doživjelo | doživjeli, doživjele, doživjela",
+          "en": "to experience (past participle): he/she/it experienced | they experienced",
+          "note": "The -jeti verbs keep -je- in the feminine/neuter/plural but shorten to -io in the masculine: doživio, doživjela."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    },
+    {
+      "type": "EXERCISE",
+      "title": "Live it, survive it, experience it",
+      "intro": "Eight questions to close the family and the day: match the prefix to its shade of 'living', form the past participle, and catch two celebratory HRT items by ear. Doživjeti and preživjeti are exactly the words for two hundred days of Croatian.",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Which verb means 'to experience, go through'?",
+          "difficulty": 1,
+          "options": ["preživjeti", "oživjeti", "poživjeti", "doživjeti"],
+          "answer": "doživjeti",
+          "explanation": "do- + živjeti = doživjeti = to experience. preživjeti = survive, oživjeti = come alive, poživjeti = live for a while."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Which verb means 'to survive, get through'?",
+          "difficulty": 2,
+          "options": ["proživjeti", "zaživjeti", "preživjeti", "oživjeti"],
+          "answer": "preživjeti",
+          "explanation": "pre- + živjeti = preživjeti = to survive. proživjeti = live through, zaživjeti = take off, oživjeti = revive."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Na putovanju sam ___ nešto nevjerojatno. (doživjeti — perfekt, ja/muški rod)",
+          "difficulty": 3,
+          "answer": "doživio",
+          "accepted": ["doživio"],
+          "explanation": "The masculine past participle of doživjeti is doživio (-jeti shortens to -io in the masculine).",
+          "strictDiacritics": true
+        },
+        {
+          "type": "FILL",
+          "prompt": "___ smo dugu i hladnu zimu. (preživjeti — perfekt, mi)",
+          "difficulty": 4,
+          "answer": "Preživjeli",
+          "accepted": ["Preživjeli", "preživjeli"],
+          "explanation": "1st plural past participle: Preživjeli smo = we survived. The plural keeps -je-: preživjeli.",
+          "strictDiacritics": true
+        },
+        {
+          "type": "MCQ",
+          "prompt": "'Projekt je konačno ___.' — the project finally took off. Which verb?",
+          "difficulty": 5,
+          "options": ["oživio", "zaživio", "poživio", "preživio"],
+          "answer": "zaživio",
+          "explanation": "zaživjeti = to come to life / take off (of a project or idea): projekt je zaživio."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the news item. What is the exhibition about?",
+          "difficulty": 6,
+          "options": ["Croatian sport", "How people lived a hundred years ago", "Modern technology", "Croatian cuisine"],
+          "answer": "How people lived a hundred years ago",
+          "explanation": "izložba o tome kako se živjelo prije sto godina = an exhibition about how people lived a hundred years ago. se živjelo = impersonal.",
+          "audioText": "Dobra večer, poštovani gledatelji. U Zagrebu je otvorena izložba o tome kako se živjelo u Hrvatskoj prije sto godina. Posjetitelji mogu vidjeti stare fotografije, odjeću i predmete iz svakodnevnog života."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Listen to the second item. What did the 102-year-old woman say?",
+          "difficulty": 7,
+          "options": ["That she wants to travel", "That she has survived a lot and lived a beautiful life", "That she misses her village", "That she never left Croatia"],
+          "answer": "That she has survived a lot and lived a beautiful life",
+          "explanation": "preživjela sam mnogo toga, ali proživjela sam lijep život = I have survived much, but I have lived a beautiful life. Both prefixes in one line.",
+          "audioText": "A za kraj, lijepa priča: gospođa Marija iz Dalmacije danas slavi sto dva rođendana. Kaže: Preživjela sam mnogo toga, ali proživjela sam lijep i pun život, okružena obitelji."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Say it: What (all) have you experienced while learning Croatian?",
+          "difficulty": 8,
+          "options": ["učio", "doživio", "Što", "hrvatski", "dok", "sve", "si", "si"],
+          "answer": "Što si sve doživio dok si učio hrvatski",
+          "ordered": ["Što", "si", "sve", "doživio", "dok", "si", "učio", "hrvatski"],
+          "explanation": "The clitic si sits second (Što si sve doživio); the dok-clause has its own si: dok si učio hrvatski."
+        }
+      ],
+      "sources": ["asoo", "croaticum-syllabus"]
+    }
+  ]
+}
