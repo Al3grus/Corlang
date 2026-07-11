@@ -10,6 +10,8 @@ The files in this bundle are **design references created in HTML/JS** — a work
 **High-fidelity.** Final colors, typography, geometry, timing, and easing are all specified below and are authoritative.
 
 ## Files in this bundle
+- `CorlangLogo.jsx` — **shared logo component** (variants: `orbit`, `o`, `lockup`, `wordmark`; color + size props). Use this everywhere the brand appears.
+- `LOGO_USAGE.md` — where/how to place the logo across the app, with a wiring checklist and sizing rules.
 - `CorlangLoader.jsx` — self-contained React component (props for colors/tagline/duration; `onDone` callback fires when a cycle first hits 100%). Uses `requestAnimationFrame`, no dependencies.
 - `corlang-loader-vanilla.html` — the same loader as framework-free HTML/CSS/JS. Open it in a browser to see the motion; copy the `#corlang-loader` markup + script into any page.
 - `logo-orbit-core.svg` — the app-icon mark ("Orbit Core": two broken rings + core). Use for launcher/favicon.
