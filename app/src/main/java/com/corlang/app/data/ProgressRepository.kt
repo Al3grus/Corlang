@@ -20,6 +20,8 @@ class ProgressRepository(private val dao: ProgressDao) {
 
     fun progress(lang: String): Flow<LanguageProgress?> = dao.progress(lang)
     fun completedDays(lang: String): Flow<List<Int>> = dao.completedDays(lang)
+    fun completionsSince(lang: String, sinceEpochMs: Long): Flow<Int> =
+        dao.completionsSince(lang, sinceEpochMs)
     fun completedDayCount(lang: String): Flow<Int> = dao.completedDayCount(lang)
     fun quizAttempts(lang: String): Flow<List<QuizAttempt>> = dao.quizAttempts(lang)
     fun bestQuizScore(lang: String, quizId: String): Flow<Int?> = dao.bestQuizScore(lang, quizId)

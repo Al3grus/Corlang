@@ -29,6 +29,10 @@ interface ProgressDao {
     @Query("SELECT COUNT(DISTINCT day) FROM day_completion WHERE langCode = :lang")
     fun completedDayCount(lang: String): Flow<Int>
 
+    /** Days completed at/after a moment (epoch ms) — powers the "goal done today" ring state. */
+    @Query("SELECT COUNT(*) FROM day_completion WHERE langCode = :lang AND completedAtEpoch >= :sinceEpochMs")
+    fun completionsSince(lang: String, sinceEpochMs: Long): Flow<Int>
+
     @Insert
     suspend fun insertQuizAttempt(a: QuizAttempt)
 
