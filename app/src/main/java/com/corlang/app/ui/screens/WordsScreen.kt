@@ -1,6 +1,8 @@
 package com.corlang.app.ui.screens
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.VectorConverter
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -34,8 +36,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
@@ -52,6 +56,8 @@ import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.theme.CorlangColors
+import com.corlang.app.ui.theme.Motion
+import com.corlang.app.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
@@ -363,10 +369,17 @@ private fun WordSession(
     // Established words flip direction: recall the Croatian from English (production).
     val production = (card.review?.box ?: 0) >= PRODUCTION_BOX
 
-    // Swipe-to-grade offsets (one-handed grading).
-    var dragX by remember(cardKey) { mutableStateOf(0f) }
-    var dragY by remember(cardKey) { mutableStateOf(0f) }
-    val threshold = with(LocalDensity.current) { 96.dp.toPx() }
+    // Swipe-to-grade with real physics: the card follows the finger, then either springs back
+    // (under threshold) or flings off-screen in the swipe direction before the grade commits.
+    val scope = rememberCoroutineScope()
+    val reducedMotion = rememberReducedMotion()
+    val offset = remember(cardKey) { Animatable(Offset.Zero, Offset.VectorConverter) }
+    var graded by remember(cardKey) { mutableStateOf(false) }
+    val density = LocalDensity.current
+    val config = LocalConfiguration.current
+    val threshold = with(density) { 96.dp.toPx() }
+    val flyX = with(density) { config.screenWidthDp.dp.toPx() } * 1.3f
+    val flyY = with(density) { config.screenHeightDp.dp.toPx() } * 1.3f
 
     Column(
         modifier = Modifier
@@ -409,9 +422,9 @@ private fun WordSession(
                     .padding(vertical = 12.dp)
                     .heightIn(min = 240.dp)
                     .graphicsLayer {
-                        translationX = dragX
-                        translationY = dragY.coerceAtMost(0f)
-                        rotationZ = dragX / 60f
+                        translationX = offset.value.x
+                        translationY = offset.value.y.coerceAtMost(0f)
+                        rotationZ = offset.value.x / 60f
                     }
                     .pointerInput(cardKey, isRevealed) {
                         if (isRevealed) {
@@ -421,23 +434,51 @@ private fun WordSession(
                             detectDragGestures(
                                 onDrag = { change, amount ->
                                     change.consume()
-                                    dragX += amount.x
-                                    dragY += amount.y
-                                    val over = dragY < -threshold ||
-                                        dragX > threshold || dragX < -threshold
+                                    val projected = offset.value + amount
+                                    scope.launch { offset.snapTo(projected) }
+                                    val over = projected.y < -threshold ||
+                                        projected.x > threshold || projected.x < -threshold
                                     if (over && !armed) Haptics.tick(context)
                                     armed = over
                                 },
                                 onDragEnd = {
                                     armed = false
-                                    when {
-                                        dragY < -threshold -> onGrade(SrsGrade.GOOD)
-                                        dragX > threshold -> onGrade(SrsGrade.EASY)
-                                        dragX < -threshold -> onGrade(SrsGrade.AGAIN)
+                                    val o = offset.value
+                                    val grade = when {
+                                        o.y < -threshold -> SrsGrade.GOOD
+                                        o.x > threshold -> SrsGrade.EASY
+                                        o.x < -threshold -> SrsGrade.AGAIN
+                                        else -> null
                                     }
-                                    dragX = 0f; dragY = 0f
+                                    if (grade != null && !graded) {
+                                        // Fling the card off-screen in its direction, THEN commit
+                                        // the grade (which swaps in the next card at center).
+                                        graded = true
+                                        val target = when (grade) {
+                                            SrsGrade.GOOD -> Offset(o.x, -flyY)
+                                            SrsGrade.EASY -> Offset(flyX, o.y)
+                                            else -> Offset(-flyX, o.y)
+                                        }
+                                        scope.launch {
+                                            if (reducedMotion) offset.snapTo(target)
+                                            else offset.animateTo(target, Motion.settle())
+                                            onGrade(grade)
+                                        }
+                                    } else {
+                                        // Under threshold: settle back to center.
+                                        scope.launch {
+                                            if (reducedMotion) offset.snapTo(Offset.Zero)
+                                            else offset.animateTo(Offset.Zero, Motion.settle())
+                                        }
+                                    }
                                 },
-                                onDragCancel = { armed = false; dragX = 0f; dragY = 0f }
+                                onDragCancel = {
+                                    armed = false
+                                    scope.launch {
+                                        if (reducedMotion) offset.snapTo(Offset.Zero)
+                                        else offset.animateTo(Offset.Zero, Motion.settle())
+                                    }
+                                }
                             )
                         }
                     }
