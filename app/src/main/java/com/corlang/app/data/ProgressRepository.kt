@@ -35,11 +35,13 @@ class ProgressRepository(private val dao: ProgressDao) {
     }
 
     /**
-     * Credits today as a study day: bumps the streak if this is the first activity today
-     * (consecutive-calendar-day logic) and stamps lastStudiedEpochDay. Any real practice —
-     * plan day, quiz, teach-back, or a words session, counts toward the daily streak.
+     * Credits today as a streak day: bumps the streak if this is the first credit today
+     * (consecutive-calendar-day logic) and stamps lastStudiedEpochDay. The streak counts
+     * COMPLETED LESSON DAYS only, partial practice (words, quizzes, teach-back) is real
+     * work but doesn't bank the day; only completeDay calls this. That keeps the streak,
+     * the goal ring, and the reminder telling the same story: done = today's lesson done.
      */
-    suspend fun recordStudyActivity(lang: String) {
+    private suspend fun recordStudyActivity(lang: String) {
         val today = LocalDate.now().toEpochDay()
         val existing = dao.progressOnce(lang) ?: LanguageProgress(langCode = lang)
         val (newStreak, newFreezes) = advanceStreak(
@@ -105,7 +107,6 @@ class ProgressRepository(private val dao: ProgressDao) {
                 total = total, takenAtEpoch = System.currentTimeMillis()
             )
         )
-        recordStudyActivity(lang)
     }
 
     // ----- Mock exam -----
@@ -127,7 +128,6 @@ class ProgressRepository(private val dao: ProgressDao) {
                 takenAtEpoch = System.currentTimeMillis()
             )
         )
-        recordStudyActivity(lang)
     }
 
     // ----- Plan-day task checklist -----
@@ -173,6 +173,5 @@ class ProgressRepository(private val dao: ProgressDao) {
                 total = total, doneAtEpoch = System.currentTimeMillis()
             )
         )
-        recordStudyActivity(lang)
     }
 }

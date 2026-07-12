@@ -12,7 +12,7 @@ data class LanguageProgress(
     val currentLevel: String = "A0",
     val currentDay: Int = 1,
     val streak: Int = 0,
-    val lastStudiedEpochDay: Long = 0L, // epoch-day of last completed session, for streak math
+    val lastStudiedEpochDay: Long = 0L, // epoch-day a lesson day was last COMPLETED, for streak math
     /** Banked streak freezes (earned every 7 consecutive days, max 2, auto-spent on a missed day). */
     val streakFreezes: Int = 0
 )

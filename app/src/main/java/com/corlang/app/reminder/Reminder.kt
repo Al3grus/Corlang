@@ -41,19 +41,19 @@ class ReminderWorker(
         val progress = AppDatabase.get(ctx).progressDao().progressOnce(lang)
         val today = LocalDate.now().toEpochDay()
 
-        // Already studied today, no nag needed.
+        // Today's lesson already completed (the only thing that banks the streak), no nag needed.
         if (progress?.lastStudiedEpochDay == today) return Result.success()
 
         val streak = progress?.streak ?: 0
         // Rotate copy so the reminder doesn't become invisible through repetition.
         val variants = if (streak > 0) listOf(
-            "Your $streak-day streak is on the line, a 5-minute word review keeps it alive.",
-            "One set of 7 words = streak safe. $streak days and counting.",
+            "Your $streak-day streak is on the line, today's lesson banks it.",
+            "One guided lesson = streak safe. $streak days and counting.",
             "$streak days of Croatian so far. Don't let today be the gap.",
-            "Two minutes now beats starting over. Streak: $streak days."
+            "Finishing today's lesson beats starting over. Streak: $streak days."
         ) else listOf(
-            "A few minutes of Croatian today beats an hour next week. Start with the Words tab.",
-            "Day 1 of a streak starts with one 7-word set.",
+            "A few minutes of Croatian today beats an hour next week. Start today's lesson.",
+            "Day 1 of a streak starts with one guided lesson.",
             "Malo po malo, a little today is all it takes."
         )
         val text = variants[(LocalDate.now().dayOfYear % variants.size)]
