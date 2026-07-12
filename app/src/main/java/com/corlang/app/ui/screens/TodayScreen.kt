@@ -109,8 +109,10 @@ fun TodayScreen(
         .collectAsState(initial = emptyList())
     val doneIds = checks.map { it.itemId }.toSet()
     val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
-    val stepsDone = actionSteps.count {
-        it.id in doneIds || (it.kind == StepKind.WORDS && wordsPending == 0)
+    val stepsDone = actionSteps.count { s ->
+        // The words step counts only when the words are actually cleared — never from opening or
+        // skipping it. Every other step counts once it's ticked complete.
+        if (s.kind == StepKind.WORDS) wordsPending == 0 else s.id in doneIds
     }
 
     // Daily goal ring: today's guided session, measured on the day you're up to (not the one
@@ -127,8 +129,8 @@ fun TodayScreen(
         .collectAsState(initial = emptyList())
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
     val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
-    val targetStepsDone = targetAction.count {
-        it.id in targetDoneIds || (it.kind == StepKind.WORDS && wordsPending == 0)
+    val targetStepsDone = targetAction.count { s ->
+        if (s.kind == StepKind.WORDS) wordsPending == 0 else s.id in targetDoneIds
     }
     val ringProgress = when {
         completedToday > 0 -> 1f

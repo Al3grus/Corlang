@@ -5,6 +5,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -104,6 +105,21 @@ class LanguagePrefs(private val context: Context) {
 
     suspend fun setOnboardingDone(done: Boolean) {
         context.dataStore.edit { it[onboardedKey] = done }
+    }
+
+    // ----- Per-language placement handling -----
+    // Which languages the learner has already been offered placement for (took it, or chose to
+    // start at Day 1). Selecting a language NOT in this set — and with no progress yet — triggers
+    // the one-time "new language" placement prompt, so profile setup is never repeated.
+    private val placementHandledKey = stringSetPreferencesKey("placement_handled_languages")
+
+    val placementHandledLanguages: Flow<Set<String>> =
+        context.dataStore.data.map { it[placementHandledKey] ?: emptySet() }
+
+    suspend fun markPlacementHandled(lang: String) {
+        context.dataStore.edit {
+            it[placementHandledKey] = (it[placementHandledKey] ?: emptySet()) + lang
+        }
     }
 
     /**
