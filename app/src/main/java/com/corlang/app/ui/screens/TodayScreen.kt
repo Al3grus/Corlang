@@ -158,29 +158,32 @@ fun TodayScreen(
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.SemiBold
                     )
-                    Text(
-                        when {
-                            completedToday > 0 -> "Today's goal is done ✓. Anything more is bonus depth."
-                            dueNow > 0 -> "$dueNow words due, then Day $targetDay."
-                            else -> "One guided lesson closes the ring and keeps the streak."
+                    // Only speak up when there's something worth saying; no filler line.
+                    val heroSubtitle = when {
+                        completedToday > 0 -> "Today's goal is done ✓. Anything more is bonus depth."
+                        dueNow > 0 -> "Starts with your $dueNow due words."
+                        else -> ""
+                    }
+                    if (heroSubtitle.isNotBlank()) {
+                        Text(
+                            heroSubtitle,
+                            style = MaterialTheme.typography.bodySmall,
+                            modifier = Modifier.padding(top = 2.dp)
+                        )
+                    }
+                    // The single next best action. The lesson itself opens with the due words,
+                    // so before it's done we always just start the lesson, no words-first detour.
+                    Button(
+                        onClick = {
+                            if (completedToday > 0) onNavigate(Dest.WORDS.route)
+                            else { viewedDay = targetDay; userBrowsed = false; inPlayer = true }
                         },
-                        style = MaterialTheme.typography.bodySmall,
-                        modifier = Modifier.padding(top = 2.dp, bottom = 10.dp)
-                    )
-                    // The single next best action, no navigation needed.
-                    Button(onClick = {
-                        when {
-                            completedToday > 0 && dueNow == 0 -> onNavigate(Dest.WORDS.route)
-                            dueNow > 0 -> onNavigate(Dest.WORDS.route)
-                            else -> {
-                                viewedDay = targetDay; userBrowsed = false; inPlayer = true
-                            }
-                        }
-                    }) {
+                        modifier = Modifier.padding(top = 10.dp)
+                    ) {
                         Text(
                             when {
-                                completedToday > 0 && dueNow == 0 -> "Learn extra words →"
-                                dueNow > 0 -> "Review $dueNow words →"
+                                completedToday > 0 && dueNow > 0 -> "Review $dueNow words →"
+                                completedToday > 0 -> "Learn extra words →"
                                 targetStepsDone > 0 -> "Continue Day $targetDay →"
                                 else -> "Start Day $targetDay →"
                             }
