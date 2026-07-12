@@ -1,8 +1,16 @@
 # Corlang French: Exam-Validated Content Plan (A1 → B2, job-proficiency target)
 
-## STATUS (2026-07): CONTENT-COMPLETE (F0–FG done)
+## STATUS (2026-07): LIVE — reviewed, unhidden, and shipped (v0.9.0 / code 22)
 
-The French content build is finished and gate-green:
+French is now available in the app. After the F0–FG content build, an adversarial LLM
+review pass checked every dimension — noun genders (1,688 nouns → 1 fix: `soldes` → n. m. pl.),
+all 46 assessment MCQ answers (0 errors), DELF mock exam answers vs their passages (0 errors),
+and example-sentence naturalness across sampled packs (0 errors). `"fr"` was added to
+`ContentRepository.availableLanguages`; gate green; released as v0.9.0. This is a thorough
+automated review, not a certified native proofread — a native pass (e.g. by a fluent speaker)
+remains the ideal final polish, but French is shippable and live.
+
+The French content build (F0–FG) is finished and gate-green:
 - **F0** official source digests + gate extension · **FA** per-language TTS/speech + `delfPassed` + French tutor
 - **FC** levels (CECRL + DELF B1/B2 milestones) + 37 grammar topics
 - **FD** vocabulary: **2,886 words** A1–B2 (A1 818, A2 831, B1 639, B2 598), gender-checked, frozen
