@@ -522,7 +522,7 @@ private fun WordSession(
                     modifier = Modifier.weight(1f)
                 ) { Text("← Again") }
                 Button(onClick = { onGrade(SrsGrade.GOOD) }, modifier = Modifier.weight(1f)) {
-                    Text("↑ Good")
+                    Text("↑ Good ↑")
                 }
                 Button(
                     onClick = { onGrade(SrsGrade.EASY) },
