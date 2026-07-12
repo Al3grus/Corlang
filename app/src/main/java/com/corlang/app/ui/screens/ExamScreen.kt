@@ -65,9 +65,21 @@ object ExamRules {
     /**
      * The whole exam passes only if EVERY section has a recorded, passing latest attempt.
      * [latest] maps sectionId -> passed for the most recent attempt of each section.
+     * Used by the Croatian NN exam (per-section pass/fail).
      */
     fun examPassed(sectionIds: List<String>, latest: Map<String, Boolean>): Boolean =
         sectionIds.isNotEmpty() && sectionIds.all { latest[it] == true }
+
+    /**
+     * DELF whole-exam rule (France Éducation international): normalize each of the 4 sections to
+     * /25, require the total ≥ 50/100 AND ≥ 5/25 in every section (a score below 5 anywhere is
+     * disqualifying). [sections] = (score, total) for each section, in any per-section scale.
+     */
+    fun delfPassed(sections: List<Pair<Int, Int>>): Boolean {
+        if (sections.size < 4) return false
+        val per25 = sections.map { (score, total) -> if (total <= 0) 0.0 else score * 25.0 / total }
+        return per25.sum() >= 50.0 && per25.all { it >= 5.0 }
+    }
 }
 
 /**
@@ -444,7 +456,7 @@ private fun OpenSectionRunner(
         Column(Modifier.fillMaxSize().padding(24.dp), verticalArrangement = Arrangement.Center) {
             Text(section.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             Text(
-                if (passed) "ZADOVOLJIO, section passed (self-check)."
+                if (passed) "Section passed (self-check)."
                 else "Not yet, $passCount/${section.prompts.size} tasks passed. Practise and retake.",
                 style = MaterialTheme.typography.headlineSmall,
                 color = if (passed) feedback.correct else feedback.wrong,
@@ -467,6 +479,7 @@ private fun OpenSectionRunner(
 
     OpenPromptTask(
         container = container,
+        languageName = remember(lang) { container.content.meta(lang).name },
         levelId = exam.levelId,
         section = section,
         prompt = section.prompts[promptIndex],
@@ -483,6 +496,7 @@ private fun OpenSectionRunner(
 @Composable
 private fun OpenPromptTask(
     container: AppContainer,
+    languageName: String,
     levelId: String,
     section: ExamSection,
     prompt: OpenPrompt,
@@ -530,7 +544,7 @@ private fun OpenPromptTask(
                         feedbackLoading = true; feedbackError = null; feedback = null
                         scope.launch {
                             val result = container.ai.complete(
-                                system = writingFeedbackSystemPrompt(levelId),
+                                system = writingFeedbackSystemPrompt(languageName, levelId),
                                 messages = listOf(
                                     ChatMessage(
                                         "user",
@@ -612,18 +626,18 @@ private fun OpenPromptTask(
 }
 
 /** Instructions turning the model into a fair, specific examiner for the writing task. */
-private fun writingFeedbackSystemPrompt(levelId: String): String = """
-    You are an examiner for the official Croatian language exam at CEFR level $levelId. The user
-    will give you a writing task and their answer in Croatian. Give focused, encouraging feedback
+private fun writingFeedbackSystemPrompt(languageName: String, levelId: String): String = """
+    You are an examiner for the official $languageName language exam at CEFR level $levelId. The user
+    will give you a writing task and their answer in $languageName. Give focused, encouraging feedback
     in English, structured with these short sections:
 
-    1. Corrected version: rewrite their text in correct, natural Croatian, keeping their meaning.
-    2. Main issues: 3 to 6 bullets naming the actual error patterns (case endings, verb aspect,
-       agreement, spelling/diacritics, word order), each with the rule in one line and their word
+    1. Corrected version: rewrite their text in correct, natural $languageName, keeping their meaning.
+    2. Main issues: 3 to 6 bullets naming the actual error patterns (grammar, agreement, verb
+       tense/mood, spelling/accents, word order), each with the rule in one line and their word
        vs the correction.
     3. Task fit: does the answer cover what the task asked (length, register, all required points)?
     4. Level estimate: an approximate CEFR level for this piece, and the one thing to fix first.
 
-    Be concise. Use correct Croatian diacritics (č, ć, š, ž, đ). Do not invent content the student
+    Be concise. Use correct $languageName spelling and accents. Do not invent content the student
     didn't write; if the answer is too short or off-topic, say so plainly.
 """.trimIndent()

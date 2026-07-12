@@ -81,6 +81,12 @@ private fun CorlangApp(container: AppContainer) {
     // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
     var showPlacement by rememberSaveable { mutableStateOf(false) }
 
+    // Point the voice and speech recognizer at the active language (hr/fr).
+    LaunchedEffect(lang) {
+        container.tts.setLanguage(lang)
+        container.speech.setLanguage(lang)
+    }
+
     // Keep the process-wide haptic strength in sync with the setting (runs pre-onboarding too).
     LaunchedEffect(Unit) {
         container.languagePrefs.hapticsStrength.collect { v ->
