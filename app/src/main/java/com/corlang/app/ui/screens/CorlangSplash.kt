@@ -230,7 +230,10 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
             Text(
                 text = "Jezik u srži",
                 color = SplashInk.copy(alpha = 0.62f),
-                style = TextStyle(fontSize = 15.sp),
+                style = TextStyle(
+                    fontFamily = com.corlang.app.ui.components.CorlangWordmarkFont,
+                    fontSize = 15.sp
+                ),
                 modifier = Modifier
                     .align(Alignment.TopCenter)
                     .graphicsLayer {
@@ -249,6 +252,7 @@ private fun SplashLetter(ch: String, index: Int, resolve: Animatable<Float, *>, 
         text = ch,
         color = SplashInk,
         style = TextStyle(
+            fontFamily = com.corlang.app.ui.components.CorlangWordmarkFont,
             fontWeight = FontWeight.Bold,
             fontSize = 56.sp,
             letterSpacing = (-1.1).sp
@@ -262,6 +266,8 @@ private fun SplashLetter(ch: String, index: Int, resolve: Animatable<Float, *>, 
         }
     )
 }
+
+/* Letter/tagline styles use the bundled wordmark font (see CorlangWordmarkFont). */
 
 /** Round-capped arc of the mark, in mark-local pixels. */
 private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawMarkArc(
