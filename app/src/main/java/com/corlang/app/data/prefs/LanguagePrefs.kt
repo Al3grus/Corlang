@@ -66,6 +66,17 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[newWordsKey] = count }
     }
 
+    // ----- Launch counter (rotates the splash tagline across languages) -----
+
+    private val launchCountKey = intPreferencesKey("launch_count")
+
+    val launchCount: Flow<Int> =
+        context.dataStore.data.map { it[launchCountKey] ?: 0 }
+
+    suspend fun bumpLaunchCount() {
+        context.dataStore.edit { it[launchCountKey] = (it[launchCountKey] ?: 0) + 1 }
+    }
+
     // ----- Haptic feedback -----
 
     private val hapticsKey = stringPreferencesKey("haptics_strength")

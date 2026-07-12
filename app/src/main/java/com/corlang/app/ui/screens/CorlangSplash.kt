@@ -102,6 +102,20 @@ private fun preloadSteps(container: AppContainer, lang: String): List<suspend ()
     { container.content.vocab(lang) },
 )
 
+/**
+ * The brand promise, "language at the core", rotating through the languages Corlang speaks
+ * (and intends to speak) - one per app launch, Croatian first and canonical. A quiet statement
+ * that this is a multi-language platform. Curated human phrasings, never generated.
+ */
+private val TAGLINES = listOf(
+    "Jezik u srži",            // Croatian (canonical)
+    "Language at the core",    // English
+    "Au cœur de la langue",    // French
+    "Sprache im Kern",         // German
+    "El idioma, en su esencia",// Spanish
+    "La lingua nel cuore",     // Italian
+)
+
 @Composable
 fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
     val progress = remember { Animatable(0f) }   // ring fill (follows real load, smoothed)
@@ -128,8 +142,15 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
         }
     }
 
+    // Tagline of the launch: Croatian on first open, then one language per launch.
+    var tagline by remember { mutableStateOf(TAGLINES.first()) }
+
     // Real preload -> 100% -> resolve the wordmark -> reveal the app.
     LaunchedEffect(Unit) {
+        val launches = container.languagePrefs.launchCount.first()
+        tagline = TAGLINES[launches % TAGLINES.size]
+        container.languagePrefs.bumpLaunchCount()
+
         val lang = container.languagePrefs.selectedLanguage.first()
         container.progress.ensure(lang)
         val steps = preloadSteps(container, lang)
@@ -231,7 +252,7 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
 
             // Tagline at ~59% height, fades in after the word assembles.
             Text(
-                text = "Jezik u srži",
+                text = tagline,
                 color = SplashInk.copy(alpha = 0.62f),
                 style = TextStyle(
                     fontFamily = com.corlang.app.ui.components.CorlangWordmarkFont,
