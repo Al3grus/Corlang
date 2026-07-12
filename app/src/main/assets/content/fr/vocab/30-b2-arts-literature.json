@@ -1,0 +1,736 @@
+{
+  "packs": [
+    {
+      "id": "30-b2-arts-literature",
+      "title": "B2 arts, literature & aesthetics",
+      "level": "B2",
+      "words": [
+        {
+          "id": "poésie",
+          "hr": "poésie",
+          "en": "poetry",
+          "pos": "n. f.",
+          "example": {
+            "target": "La poésie symboliste privilégie la suggestion à la description.",
+            "gloss": "Symbolist poetry favors suggestion over description."
+          }
+        },
+        {
+          "id": "essai",
+          "hr": "essai",
+          "en": "essay",
+          "pos": "n. m.",
+          "example": {
+            "target": "Dans cet essai, l'auteur défend une thèse audacieuse sur le langage.",
+            "gloss": "In this essay, the author defends a bold thesis about language."
+          }
+        },
+        {
+          "id": "biographie",
+          "hr": "biographie",
+          "en": "biography",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sa biographie éclaire les zones d'ombre de son œuvre.",
+            "gloss": "His biography sheds light on the obscure areas of his work."
+          }
+        },
+        {
+          "id": "héros",
+          "hr": "héros",
+          "en": "hero",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le héros du roman refuse le destin qu'on lui impose.",
+            "gloss": "The hero of the novel refuses the fate imposed on him."
+          }
+        },
+        {
+          "id": "narrateur",
+          "hr": "narrateur",
+          "en": "narrator",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le narrateur omniscient connaît les pensées de tous.",
+            "gloss": "The omniscient narrator knows everyone's thoughts."
+          }
+        },
+        {
+          "id": "style",
+          "hr": "style",
+          "en": "style",
+          "pos": "n. m.",
+          "example": {
+            "target": "Son style dépouillé tranche avec la prose ornementée de ses contemporains.",
+            "gloss": "His spare style contrasts with the ornate prose of his contemporaries."
+          }
+        },
+        {
+          "id": "genre",
+          "hr": "genre",
+          "en": "genre",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce livre brouille les frontières entre les genres.",
+            "gloss": "This book blurs the boundaries between genres."
+          }
+        },
+        {
+          "id": "métaphore",
+          "hr": "métaphore",
+          "en": "metaphor",
+          "pos": "n. f.",
+          "example": {
+            "target": "La mer est ici une métaphore de l'inconscient.",
+            "gloss": "The sea is here a metaphor for the unconscious."
+          }
+        },
+        {
+          "id": "symbole",
+          "hr": "symbole",
+          "en": "symbol",
+          "pos": "n. m.",
+          "example": {
+            "target": "La colombe est un symbole universel de paix.",
+            "gloss": "The dove is a universal symbol of peace."
+          }
+        },
+        {
+          "id": "citation",
+          "hr": "citation",
+          "en": "quotation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il émaille ses discours de citations classiques.",
+            "gloss": "He peppers his speeches with classical quotations."
+          }
+        },
+        {
+          "id": "extrait",
+          "hr": "extrait",
+          "en": "excerpt",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nous avons étudié un extrait du premier chapitre.",
+            "gloss": "We studied an excerpt from the first chapter."
+          }
+        },
+        {
+          "id": "manuscrit",
+          "hr": "manuscrit",
+          "en": "manuscript",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le manuscrit original est conservé à la bibliothèque nationale.",
+            "gloss": "The original manuscript is kept at the national library."
+          }
+        },
+        {
+          "id": "esthétique",
+          "hr": "esthétique",
+          "en": "aesthetics",
+          "pos": "n. f.",
+          "example": {
+            "target": "Son esthétique mêle la tradition et l'avant-garde.",
+            "gloss": "His aesthetic blends tradition and the avant-garde."
+          }
+        },
+        {
+          "id": "adaptation",
+          "hr": "adaptation",
+          "en": "adaptation",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'adaptation reste fidèle à l'esprit du roman.",
+            "gloss": "The adaptation stays faithful to the spirit of the novel."
+          }
+        },
+        {
+          "id": "rythme",
+          "hr": "rythme",
+          "en": "rhythm",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le rythme syncopé donne toute son énergie au morceau.",
+            "gloss": "The syncopated rhythm gives the piece all its energy."
+          }
+        },
+        {
+          "id": "harmonie",
+          "hr": "harmonie",
+          "en": "harmony",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'harmonie des voix crée une émotion saisissante.",
+            "gloss": "The harmony of the voices creates a striking emotion."
+          }
+        },
+        {
+          "id": "partition",
+          "hr": "partition",
+          "en": "score, sheet music",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le chef d'orchestre suit attentivement la partition.",
+            "gloss": "The conductor follows the score closely."
+          }
+        },
+        {
+          "id": "répertoire",
+          "hr": "répertoire",
+          "en": "repertoire",
+          "pos": "n. m.",
+          "example": {
+            "target": "Son répertoire va du baroque au contemporain.",
+            "gloss": "Her repertoire ranges from baroque to contemporary."
+          }
+        },
+        {
+          "id": "interprète",
+          "hr": "interprète",
+          "en": "performer",
+          "pos": "n. m.",
+          "example": {
+            "target": "Cette interprète a marqué toute une génération de mélomanes.",
+            "gloss": "This performer left her mark on a whole generation of music lovers."
+          }
+        },
+        {
+          "id": "composer",
+          "hr": "composer",
+          "en": "to compose",
+          "pos": "v.",
+          "example": {
+            "target": "Il a composé cette symphonie à l'âge de vingt ans.",
+            "gloss": "He composed this symphony at the age of twenty."
+          }
+        },
+        {
+          "id": "sculpter",
+          "hr": "sculpter",
+          "en": "to sculpt",
+          "pos": "v.",
+          "example": {
+            "target": "L'artiste sculpte le marbre avec une précision étonnante.",
+            "gloss": "The artist sculpts the marble with astonishing precision."
+          }
+        },
+        {
+          "id": "peindre",
+          "hr": "peindre",
+          "en": "to paint",
+          "pos": "v.",
+          "example": {
+            "target": "Elle aime peindre les ciels d'orage.",
+            "gloss": "She likes to paint stormy skies."
+          }
+        },
+        {
+          "id": "s'inspirer",
+          "hr": "s'inspirer",
+          "en": "to draw inspiration",
+          "pos": "v.",
+          "example": {
+            "target": "Le cinéaste s'inspire de faits réels.",
+            "gloss": "The filmmaker draws inspiration from real events."
+          }
+        },
+        {
+          "id": "littéraire",
+          "hr": "littéraire",
+          "en": "literary",
+          "pos": "adj.",
+          "example": {
+            "target": "Le prix littéraire a couronné un premier roman.",
+            "gloss": "The literary prize crowned a debut novel."
+          }
+        },
+        {
+          "id": "poétique",
+          "hr": "poétique",
+          "en": "poetic",
+          "pos": "adj.",
+          "example": {
+            "target": "Le film possède une dimension poétique rare.",
+            "gloss": "The film has a rare poetic dimension."
+          }
+        },
+        {
+          "id": "dramatique",
+          "hr": "dramatique",
+          "en": "dramatic",
+          "pos": "adj.",
+          "example": {
+            "target": "La tension dramatique culmine au dernier acte.",
+            "gloss": "The dramatic tension peaks in the final act."
+          }
+        },
+        {
+          "id": "comique",
+          "hr": "comique",
+          "en": "comic, funny",
+          "pos": "adj.",
+          "example": {
+            "target": "Le ressort comique repose sur le quiproquo.",
+            "gloss": "The comic device relies on misunderstanding."
+          }
+        },
+        {
+          "id": "tragique",
+          "hr": "tragique",
+          "en": "tragic",
+          "pos": "adj.",
+          "example": {
+            "target": "Le destin tragique du héros émeut le public.",
+            "gloss": "The hero's tragic fate moves the audience."
+          }
+        },
+        {
+          "id": "abstrait",
+          "hr": "abstrait",
+          "en": "abstract",
+          "pos": "adj.",
+          "example": {
+            "target": "La peinture abstraite renonce à toute figuration.",
+            "gloss": "Abstract painting renounces all figuration."
+          }
+        },
+        {
+          "id": "réaliste",
+          "hr": "réaliste",
+          "en": "realist",
+          "pos": "adj.",
+          "example": {
+            "target": "Le roman réaliste dépeint la société sans complaisance.",
+            "gloss": "The realist novel depicts society without indulgence."
+          }
+        },
+        {
+          "id": "expressif",
+          "hr": "expressif",
+          "en": "expressive",
+          "pos": "adj.",
+          "example": {
+            "target": "Son jeu expressif captive le spectateur.",
+            "gloss": "His expressive acting captivates the viewer."
+          }
+        },
+        {
+          "id": "émouvant",
+          "hr": "émouvant",
+          "en": "moving, touching",
+          "pos": "adj.",
+          "example": {
+            "target": "C'est un hommage émouvant à sa mère disparue.",
+            "gloss": "It is a moving tribute to his late mother."
+          }
+        },
+        {
+          "id": "œuvre",
+          "hr": "œuvre",
+          "en": "work (of art)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette œuvre marque un tournant dans sa carrière.",
+            "gloss": "This work marks a turning point in his career."
+          }
+        },
+        {
+          "id": "prose",
+          "hr": "prose",
+          "en": "prose",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sa prose limpide séduit un large public.",
+            "gloss": "His limpid prose appeals to a wide audience."
+          }
+        },
+        {
+          "id": "vers",
+          "hr": "vers",
+          "en": "verse, line",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce poème est écrit en vers libres.",
+            "gloss": "This poem is written in free verse."
+          }
+        },
+        {
+          "id": "strophe",
+          "hr": "strophe",
+          "en": "stanza",
+          "pos": "n. f.",
+          "example": {
+            "target": "La dernière strophe reprend le thème initial.",
+            "gloss": "The last stanza takes up the initial theme."
+          }
+        },
+        {
+          "id": "rime",
+          "hr": "rime",
+          "en": "rhyme",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les rimes riches donnent au poème sa musicalité.",
+            "gloss": "The rich rhymes give the poem its musicality."
+          }
+        },
+        {
+          "id": "ouvrage",
+          "hr": "ouvrage",
+          "en": "work, book",
+          "pos": "n. m.",
+          "example": {
+            "target": "Cet ouvrage fait autorité dans son domaine.",
+            "gloss": "This work is authoritative in its field."
+          }
+        },
+        {
+          "id": "préface",
+          "hr": "préface",
+          "en": "preface",
+          "pos": "n. f.",
+          "example": {
+            "target": "La préface éclaire les intentions de l'auteur.",
+            "gloss": "The preface clarifies the author's intentions."
+          }
+        },
+        {
+          "id": "dénouement",
+          "hr": "dénouement",
+          "en": "denouement, ending",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le dénouement surprend jusqu'au lecteur averti.",
+            "gloss": "The ending surprises even the seasoned reader."
+          }
+        },
+        {
+          "id": "péripétie",
+          "hr": "péripétie",
+          "en": "twist, turn of events",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le récit multiplie les péripéties inattendues.",
+            "gloss": "The story piles up unexpected twists."
+          }
+        },
+        {
+          "id": "procédé",
+          "hr": "procédé",
+          "en": "device, technique",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'ironie est un procédé récurrent dans son écriture.",
+            "gloss": "Irony is a recurring device in his writing."
+          }
+        },
+        {
+          "id": "allégorie",
+          "hr": "allégorie",
+          "en": "allegory",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le tableau est une allégorie de la vanité humaine.",
+            "gloss": "The painting is an allegory of human vanity."
+          }
+        },
+        {
+          "id": "esquisse",
+          "hr": "esquisse",
+          "en": "sketch",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ces esquisses révèlent le cheminement du peintre.",
+            "gloss": "These sketches reveal the painter's process."
+          }
+        },
+        {
+          "id": "fresque",
+          "hr": "fresque",
+          "en": "fresco, mural",
+          "pos": "n. f.",
+          "example": {
+            "target": "La fresque couvre tout le plafond de la chapelle.",
+            "gloss": "The fresco covers the entire ceiling of the chapel."
+          }
+        },
+        {
+          "id": "perspective",
+          "hr": "perspective",
+          "en": "perspective",
+          "pos": "n. f.",
+          "example": {
+            "target": "La perspective donne une illusion de profondeur.",
+            "gloss": "Perspective gives an illusion of depth."
+          }
+        },
+        {
+          "id": "relief",
+          "hr": "relief",
+          "en": "relief",
+          "pos": "n. m.",
+          "example": {
+            "target": "La lumière rasante accentue le relief de la sculpture.",
+            "gloss": "The grazing light accentuates the relief of the sculpture."
+          }
+        },
+        {
+          "id": "courant",
+          "hr": "courant",
+          "en": "movement, current",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce courant artistique est né dans l'entre-deux-guerres.",
+            "gloss": "This artistic movement was born between the two world wars."
+          }
+        },
+        {
+          "id": "avant-garde",
+          "hr": "avant-garde",
+          "en": "avant-garde",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ces artistes appartenaient à l'avant-garde de leur temps.",
+            "gloss": "These artists belonged to the avant-garde of their time."
+          }
+        },
+        {
+          "id": "chef-d'œuvre",
+          "hr": "chef-d'œuvre",
+          "en": "masterpiece",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce roman est considéré comme son chef-d'œuvre.",
+            "gloss": "This novel is regarded as his masterpiece."
+          }
+        },
+        {
+          "id": "rétrospective",
+          "hr": "rétrospective",
+          "en": "retrospective",
+          "pos": "n. f.",
+          "example": {
+            "target": "La rétrospective retrace quarante ans de création.",
+            "gloss": "The retrospective traces forty years of creation."
+          }
+        },
+        {
+          "id": "réplique",
+          "hr": "réplique",
+          "en": "line (of dialogue)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette réplique est devenue culte au théâtre.",
+            "gloss": "This line has become iconic in theatre."
+          }
+        },
+        {
+          "id": "acte",
+          "hr": "acte",
+          "en": "act",
+          "pos": "n. m.",
+          "example": {
+            "target": "La pièce se déroule en cinq actes.",
+            "gloss": "The play unfolds in five acts."
+          }
+        },
+        {
+          "id": "troupe",
+          "hr": "troupe",
+          "en": "troupe, company",
+          "pos": "n. f.",
+          "example": {
+            "target": "La troupe répète la pièce depuis deux mois.",
+            "gloss": "The company has been rehearsing the play for two months."
+          }
+        },
+        {
+          "id": "cinéaste",
+          "hr": "cinéaste",
+          "en": "filmmaker",
+          "pos": "n. m.",
+          "example": {
+            "target": "Cette cinéaste explore la mémoire et l'exil.",
+            "gloss": "This filmmaker explores memory and exile."
+          }
+        },
+        {
+          "id": "montage",
+          "hr": "montage",
+          "en": "editing",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le montage nerveux accentue le suspense.",
+            "gloss": "The tense editing heightens the suspense."
+          }
+        },
+        {
+          "id": "bande originale",
+          "hr": "bande originale",
+          "en": "soundtrack",
+          "pos": "n. f.",
+          "example": {
+            "target": "La bande originale contribue à l'émotion des scènes.",
+            "gloss": "The soundtrack contributes to the emotion of the scenes."
+          }
+        },
+        {
+          "id": "trame",
+          "hr": "trame",
+          "en": "framework, thread",
+          "pos": "n. f.",
+          "example": {
+            "target": "La trame narrative tisse plusieurs destinées.",
+            "gloss": "The narrative thread weaves together several destinies."
+          }
+        },
+        {
+          "id": "consécration",
+          "hr": "consécration",
+          "en": "recognition, crowning achievement",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ce prix marque la consécration de sa carrière.",
+            "gloss": "This prize marks the crowning of his career."
+          }
+        },
+        {
+          "id": "éloge",
+          "hr": "éloge",
+          "en": "praise",
+          "pos": "n. m.",
+          "example": {
+            "target": "La presse a fait l'éloge de cette mise en scène.",
+            "gloss": "The press praised this staging."
+          }
+        },
+        {
+          "id": "dépeindre",
+          "hr": "dépeindre",
+          "en": "to depict",
+          "pos": "v.",
+          "example": {
+            "target": "Le romancier dépeint une société en pleine mutation.",
+            "gloss": "The novelist depicts a society in full transformation."
+          }
+        },
+        {
+          "id": "mettre en scène",
+          "hr": "mettre en scène",
+          "en": "to stage, direct",
+          "pos": "v.",
+          "example": {
+            "target": "Elle met en scène une tragédie antique revisitée.",
+            "gloss": "She stages a reimagined ancient tragedy."
+          }
+        },
+        {
+          "id": "puiser",
+          "hr": "puiser",
+          "en": "to draw (from)",
+          "pos": "v.",
+          "example": {
+            "target": "L'artiste puise dans le folklore de sa région.",
+            "gloss": "The artist draws on the folklore of his region."
+          }
+        },
+        {
+          "id": "traduire",
+          "hr": "traduire",
+          "en": "to translate, convey",
+          "pos": "v.",
+          "example": {
+            "target": "Cette toile traduit une profonde inquiétude.",
+            "gloss": "This painting conveys a deep unease."
+          }
+        },
+        {
+          "id": "novateur",
+          "hr": "novateur",
+          "en": "innovative",
+          "pos": "adj.",
+          "example": {
+            "target": "Sa démarche novatrice a inspiré toute une génération.",
+            "gloss": "His innovative approach inspired an entire generation."
+          }
+        },
+        {
+          "id": "engagé",
+          "hr": "engagé",
+          "en": "committed, politically engaged",
+          "pos": "adj.",
+          "example": {
+            "target": "C'est un cinéma engagé qui dénonce les injustices.",
+            "gloss": "It is a committed cinema that denounces injustices."
+          }
+        },
+        {
+          "id": "intemporel",
+          "hr": "intemporel",
+          "en": "timeless",
+          "pos": "adj.",
+          "example": {
+            "target": "Ce chef-d'œuvre possède une beauté intemporelle.",
+            "gloss": "This masterpiece has a timeless beauty."
+          }
+        },
+        {
+          "id": "figuratif",
+          "hr": "figuratif",
+          "en": "figurative",
+          "pos": "adj.",
+          "example": {
+            "target": "Il est revenu à un art plus figuratif.",
+            "gloss": "He returned to a more figurative art."
+          }
+        },
+        {
+          "id": "saisissant",
+          "hr": "saisissant",
+          "en": "striking",
+          "pos": "adj.",
+          "example": {
+            "target": "Le contraste entre l'ombre et la lumière est saisissant.",
+            "gloss": "The contrast between shadow and light is striking."
+          }
+        },
+        {
+          "id": "baroque",
+          "hr": "baroque",
+          "en": "baroque",
+          "pos": "adj.",
+          "example": {
+            "target": "Cette architecture baroque déborde d'ornements.",
+            "gloss": "This baroque architecture overflows with ornaments."
+          }
+        },
+        {
+          "id": "lyrique",
+          "hr": "lyrique",
+          "en": "lyrical",
+          "pos": "adj.",
+          "example": {
+            "target": "Le passage lyrique célèbre la beauté du paysage.",
+            "gloss": "The lyrical passage celebrates the beauty of the landscape."
+          }
+        },
+        {
+          "id": "prolifique",
+          "hr": "prolifique",
+          "en": "prolific",
+          "pos": "adj.",
+          "example": {
+            "target": "Cet auteur prolifique publie presque chaque année.",
+            "gloss": "This prolific author publishes almost every year."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr",
+        "referentiel-fr"
+      ]
+    }
+  ]
+}
