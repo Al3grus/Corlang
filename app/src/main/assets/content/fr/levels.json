@@ -3,62 +3,280 @@
     {
       "id": "A0",
       "title": "Absolute Beginner",
-      "milestone": "Greet someone, introduce yourself, and survive a café order entirely in French.",
+      "milestone": "Read French aloud with correct sounds, and greet, introduce yourself and count.",
       "canDo": [
-        "Pronounce French sounds (nasal vowels, silent endings, liaison) recognisably.",
-        "Use bonjour / merci / s'il vous plaît / au revoir naturally.",
-        "Say your name, age, and nationality; count to 20."
+        "Pronounce the key sounds: nasal vowels (on/an/in), silent final consonants, e-accents, the French r.",
+        "Use bonjour / merci / s'il vous plait / au revoir naturally.",
+        "Say your name and nationality with 'Je suis...' / 'Je m'appelle...'; count to 20."
       ]
     },
     {
       "id": "A1",
-      "title": "Beginner",
-      "milestone": "Hold a simple back-and-forth about yourself, your day, and your needs using present tense.",
+      "title": "Beginner (Introductif)",
+      "milestone": "Handle simple daily exchanges using the present tense, articles and gender.",
       "canDo": [
-        "Conjugate être, avoir, aller, faire and regular -ER verbs in the present.",
-        "Form questions and negatives (est-ce que, ne…pas).",
-        "Talk about the immediate future with aller + infinitive.",
-        "Handle daily situations: shopping, directions, ordering, small talk."
+        "Conjugate etre, avoir, aller, faire and regular -ER verbs in the present.",
+        "Use articles and noun gender (le/la/un/une/du/de la) correctly.",
+        "Form questions (est-ce que, wh-words) and negatives (ne...pas).",
+        "Talk about the near future (futur proche) and the past (passe compose) simply."
+      ],
+      "skills": [
+        {
+          "skill": "Listening",
+          "descriptors": [
+            "I can recognise familiar words and very basic phrases concerning myself, my family and immediate concrete surroundings when people speak slowly and clearly."
+          ]
+        },
+        {
+          "skill": "Reading",
+          "descriptors": [
+            "I can understand familiar names, words and very simple sentences, for example on notices and posters or in catalogues."
+          ]
+        },
+        {
+          "skill": "Spoken interaction",
+          "descriptors": [
+            "I can interact in a simple way provided the other person is prepared to repeat or rephrase things at a slower rate of speech and help me formulate what I'm trying to say.",
+            "I can ask and answer simple questions in areas of immediate need or on very familiar topics."
+          ]
+        },
+        {
+          "skill": "Spoken production",
+          "descriptors": [
+            "I can use simple phrases and sentences to describe where I live and people I know."
+          ]
+        },
+        {
+          "skill": "Writing",
+          "descriptors": [
+            "I can write a short, simple postcard, for example sending holiday greetings.",
+            "I can fill in forms with personal details, for example entering my name, nationality and address on a hotel registration form."
+          ]
+        }
       ]
     },
     {
       "id": "A2",
-      "title": "Elementary",
-      "milestone": "Narrate past events and describe routines and plans in connected sentences.",
+      "title": "Elementary (Intermediaire / de survie)",
+      "milestone": "Describe routines, past events and plans; narrate with passe compose and imparfait.",
       "canDo": [
-        "Use the passé composé and imparfait to talk about the past.",
-        "Describe people, places and habits with adjectives that agree.",
-        "Manage most travel and everyday transactions confidently."
+        "Choose passe compose vs imparfait to tell events vs describe.",
+        "Use object pronouns, y and en, and the futur simple.",
+        "Compare with plus/moins/aussi... que and use everyday connectors.",
+        "Manage travel, shopping and everyday transactions."
+      ],
+      "skills": [
+        {
+          "skill": "Listening",
+          "descriptors": [
+            "I can understand phrases and the highest frequency vocabulary related to areas of most immediate personal relevance (e.g. very basic personal and family information, shopping, local area, employment).",
+            "I can catch the main point in short, clear, simple messages and announcements."
+          ]
+        },
+        {
+          "skill": "Reading",
+          "descriptors": [
+            "I can read very short, simple texts.",
+            "I can find specific, predictable information in simple everyday material such as advertisements, prospectuses, menus and timetables and I can understand short simple personal letters."
+          ]
+        },
+        {
+          "skill": "Spoken interaction",
+          "descriptors": [
+            "I can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar topics and activities.",
+            "I can handle very short social exchanges, even though I can't usually understand enough to keep the conversation going myself."
+          ]
+        },
+        {
+          "skill": "Spoken production",
+          "descriptors": [
+            "I can use a series of phrases and sentences to describe in simple terms my family and other people, living conditions, my educational background and my present or most recent job."
+          ]
+        },
+        {
+          "skill": "Writing",
+          "descriptors": [
+            "I can write short, simple notes and messages relating to matters in areas of immediate needs.",
+            "I can write a very simple personal letter, for example thanking someone for something."
+          ]
+        }
       ]
     },
     {
       "id": "B1",
-      "title": "Intermediate",
-      "milestone": "Hold a real conversation, give opinions, and handle unexpected situations while travelling.",
+      "title": "Intermediate (Niveau seuil)",
+      "milestone": "Pass the DELF B1: hold real conversations, narrate, and express and justify opinions.",
       "canDo": [
-        "Express opinions, hopes and plans; justify them simply.",
-        "Use the futur simple, conditional, and common subjunctive triggers.",
-        "Follow the main points of clear standard speech and TV."
-      ]
+        "Use the subjonctif present and the conditionnel (politeness, hypothesis with si).",
+        "Handle relative pronouns (qui/que/dont/ou) and report speech.",
+        "Tell a story, describe experiences, and give reasons for opinions and plans.",
+        "Write connected texts: personal letters, a forum post, a short account."
+      ],
+      "skills": [
+        {
+          "skill": "Listening",
+          "descriptors": [
+            "I can understand the main points of clear standard speech on familiar matters regularly encountered in work, school, leisure, etc.",
+            "I can understand the main point of many radio or TV programmes on current affairs or topics of personal or professional interest when the delivery is relatively slow and clear."
+          ]
+        },
+        {
+          "skill": "Reading",
+          "descriptors": [
+            "I can understand texts that consist mainly of high frequency everyday or job-related language.",
+            "I can understand the description of events, feelings and wishes in personal letters."
+          ]
+        },
+        {
+          "skill": "Spoken interaction",
+          "descriptors": [
+            "I can deal with most situations likely to arise whilst travelling in an area where the language is spoken.",
+            "I can enter unprepared into conversation on topics that are familiar, of personal interest or pertinent to everyday life (e.g. family, hobbies, work, travel and current events)."
+          ]
+        },
+        {
+          "skill": "Spoken production",
+          "descriptors": [
+            "I can connect phrases in a simple way in order to describe experiences and events, my dreams, hopes and ambitions.",
+            "I can briefly give reasons and explanations for opinions and plans.",
+            "I can narrate a story or relate the plot of a book or film and describe my reactions."
+          ]
+        },
+        {
+          "skill": "Writing",
+          "descriptors": [
+            "I can write simple connected text on topics which are familiar or of personal interest.",
+            "I can write personal letters describing experiences and impressions."
+          ]
+        }
+      ],
+      "exam": {
+        "name": "DELF B1 (Diplome d'etudes en langue francaise, niveau B1)",
+        "description": "The official independent-user diploma from France Education international. A real milestone toward professional proficiency and required or accepted for many residence/study purposes.",
+        "sections": [
+          "Comprehension de l'oral - listening comprehension",
+          "Comprehension des ecrits - reading comprehension",
+          "Production ecrite - written production (personal-viewpoint essay, min 160 words)",
+          "Production orale - speaking (guided interview, interaction, viewpoint monologue)"
+        ],
+        "passRule": "Each of the 4 sections is scored out of 25. Pass = total >= 50/100 AND >= 5/25 in every section (below 5 in any section is disqualifying).",
+        "sources": [
+          "delf-b1-sample",
+          "cecrl"
+        ]
+      }
     },
     {
       "id": "B2",
-      "title": "Upper Intermediate",
-      "milestone": "Discuss abstract topics fluently and follow native media without constant translation.",
+      "title": "Upper Intermediate (Avance / independant)",
+      "milestone": "Pass the DELF B2 - the job-proficiency standard: argue a viewpoint and follow native media.",
       "canDo": [
-        "Argue a point of view with nuance and appropriate register.",
-        "Understand films, news and podcasts aimed at native speakers.",
-        "Write clear, detailed texts and emails on a range of subjects."
-      ]
+        "Argue a position in formal register, with subjonctif nuance and full tense concordance.",
+        "Understand news, debates and films for native speakers.",
+        "Write clear, detailed, argued texts (forum post, formal letter, article, ~250 words).",
+        "Interact with fluency and spontaneity with native speakers."
+      ],
+      "skills": [
+        {
+          "skill": "Listening",
+          "descriptors": [
+            "I can understand extended speech and lectures and follow even complex lines of argument provided the topic is reasonably familiar.",
+            "I can understand most TV news and current affairs programmes.",
+            "I can understand the majority of films in standard dialect."
+          ]
+        },
+        {
+          "skill": "Reading",
+          "descriptors": [
+            "I can read articles and reports concerned with contemporary problems in which the writers adopt particular attitudes or viewpoints.",
+            "I can understand contemporary literary prose."
+          ]
+        },
+        {
+          "skill": "Spoken interaction",
+          "descriptors": [
+            "I can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible.",
+            "I can take an active part in discussion in familiar contexts, accounting for and sustaining my views."
+          ]
+        },
+        {
+          "skill": "Spoken production",
+          "descriptors": [
+            "I can present clear, detailed descriptions on a wide range of subjects related to my field of interest.",
+            "I can explain a viewpoint on a topical issue giving the advantages and disadvantages of various options."
+          ]
+        },
+        {
+          "skill": "Writing",
+          "descriptors": [
+            "I can write clear, detailed text on a wide range of subjects related to my interests.",
+            "I can write an essay or report, passing on information or giving reasons in support of or against a particular point of view.",
+            "I can write letters highlighting the personal significance of events and experiences."
+          ]
+        }
+      ],
+      "exam": {
+        "name": "DELF B2 (Diplome d'etudes en langue francaise, niveau B2)",
+        "description": "The official professional/working-proficiency diploma from France Education international - the common bar for employment and French universities. The finish line of this course.",
+        "sections": [
+          "Comprehension de l'oral - listening (two documents, one heard once, one twice)",
+          "Comprehension des ecrits - reading (informative + argumentative texts)",
+          "Production ecrite - written production (argued position, formal register, ~250 words)",
+          "Production orale - speaking (defend a viewpoint from a trigger document, then debate)"
+        ],
+        "passRule": "Each of the 4 sections is scored out of 25. Pass = total >= 50/100 AND >= 5/25 in every section (below 5 in any section is disqualifying).",
+        "sources": [
+          "delf-b2-sample",
+          "cecrl"
+        ]
+      }
     },
     {
       "id": "C1",
-      "title": "Advanced",
+      "title": "Advanced (Autonome)",
       "milestone": "Use French flexibly and effectively for social, academic and professional life.",
       "canDo": [
-        "Express yourself spontaneously with few obvious searches for words.",
-        "Understand demanding, long texts and implicit meaning.",
-        "Use idiom and register deliberately. (C2 native-level mastery is out of scope.)"
+        "Express yourself spontaneously and almost effortlessly.",
+        "Understand long, demanding texts and implicit meaning.",
+        "Use register and idiom deliberately. (C2 native mastery is out of scope.)"
+      ],
+      "skills": [
+        {
+          "skill": "Listening",
+          "descriptors": [
+            "I can understand extended speech even when it is not clearly structured and when relationships are only implied and not signalled explicitly.",
+            "I can understand television programmes and films without too much effort."
+          ]
+        },
+        {
+          "skill": "Reading",
+          "descriptors": [
+            "I can understand long and complex factual and literary texts, appreciating distinctions of style.",
+            "I can understand specialised articles and longer technical instructions, even when they do not relate to my field."
+          ]
+        },
+        {
+          "skill": "Spoken interaction",
+          "descriptors": [
+            "I can express myself fluently and spontaneously without much obvious searching for expressions.",
+            "I can use language flexibly and effectively for social and professional purposes.",
+            "I can formulate ideas and opinions with precision and relate my contribution skilfully to those of other speakers."
+          ]
+        },
+        {
+          "skill": "Spoken production",
+          "descriptors": [
+            "I can present clear, detailed descriptions of complex subjects integrating sub-themes, developing particular points and rounding off with an appropriate conclusion."
+          ]
+        },
+        {
+          "skill": "Writing",
+          "descriptors": [
+            "I can express myself in clear, well-structured text, expressing points of view at some length.",
+            "I can write about complex subjects in a letter, an essay or a report, underlining what I consider to be the salient issues.",
+            "I can select a style appropriate to the reader in mind."
+          ]
+        }
       ]
     }
   ]
