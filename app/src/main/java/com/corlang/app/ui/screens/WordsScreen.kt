@@ -537,7 +537,8 @@ private fun WordSession(
                 "Tap a button, or swipe the card in its arrow's direction.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 8.dp)
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
             )
         }
 

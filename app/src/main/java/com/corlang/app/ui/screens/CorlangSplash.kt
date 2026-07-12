@@ -143,7 +143,10 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
         // Linear driver: each sub-animation (settle/letters/tagline) applies its own easing,
         // mirroring the prototype's single time axis t 0.5 -> 1.0.
         resolve.animateTo(1f, tween(2200, easing = LinearEasing))
-        stageAlpha.animateTo(0f, tween(340))
+        // Let the finished wordmark + tagline hold for a beat before handing over,
+        // so "Corlang" registers instead of vanishing the instant it assembles.
+        delay(1000)
+        stageAlpha.animateTo(0f, tween(450))
         onReady()
     }
 
