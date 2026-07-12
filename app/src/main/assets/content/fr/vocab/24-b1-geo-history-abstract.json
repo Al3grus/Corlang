@@ -1,0 +1,676 @@
+{
+  "packs": [
+    {
+      "id": "24-b1-geo-history-abstract",
+      "title": "B1 geography, history & abstract",
+      "level": "B1",
+      "words": [
+        {
+          "id": "continent",
+          "hr": "continent",
+          "en": "continent",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'Afrique est un continent immense.",
+            "gloss": "Africa is a huge continent."
+          }
+        },
+        {
+          "id": "territoire",
+          "hr": "territoire",
+          "en": "territory",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce territoire appartenait autrefois à un autre État.",
+            "gloss": "This territory once belonged to another state."
+          }
+        },
+        {
+          "id": "province",
+          "hr": "province",
+          "en": "province",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il a grandi dans une petite province du sud.",
+            "gloss": "He grew up in a small province in the south."
+          }
+        },
+        {
+          "id": "désert",
+          "hr": "désert",
+          "en": "desert",
+          "pos": "n. m.",
+          "example": {
+            "target": "Traverser le désert demande beaucoup de préparation.",
+            "gloss": "Crossing the desert requires a lot of preparation."
+          }
+        },
+        {
+          "id": "sommet",
+          "hr": "sommet",
+          "en": "summit, peak",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ils ont atteint le sommet de la montagne au lever du soleil.",
+            "gloss": "They reached the summit of the mountain at sunrise."
+          }
+        },
+        {
+          "id": "destination",
+          "hr": "destination",
+          "en": "destination",
+          "pos": "n. f.",
+          "example": {
+            "target": "Quelle est votre destination finale ?",
+            "gloss": "What is your final destination?"
+          }
+        },
+        {
+          "id": "aventure",
+          "hr": "aventure",
+          "en": "adventure",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ce voyage a été une véritable aventure.",
+            "gloss": "This trip was a real adventure."
+          }
+        },
+        {
+          "id": "nationalité",
+          "hr": "nationalité",
+          "en": "nationality",
+          "pos": "n. f.",
+          "example": {
+            "target": "Elle possède la double nationalité.",
+            "gloss": "She holds dual nationality."
+          }
+        },
+        {
+          "id": "époque",
+          "hr": "époque",
+          "en": "era, period",
+          "pos": "n. f.",
+          "example": {
+            "target": "À cette époque, les gens voyageaient à cheval.",
+            "gloss": "At that time, people traveled on horseback."
+          }
+        },
+        {
+          "id": "siècle",
+          "hr": "siècle",
+          "en": "century",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce château a été construit au dix-septième siècle.",
+            "gloss": "This castle was built in the seventeenth century."
+          }
+        },
+        {
+          "id": "période",
+          "hr": "période",
+          "en": "period",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette période de l'histoire reste mal connue.",
+            "gloss": "This period of history remains little known."
+          }
+        },
+        {
+          "id": "révolution",
+          "hr": "révolution",
+          "en": "revolution",
+          "pos": "n. f.",
+          "example": {
+            "target": "La révolution a transformé la société.",
+            "gloss": "The revolution transformed society."
+          }
+        },
+        {
+          "id": "roi",
+          "hr": "roi",
+          "en": "king",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le roi régnait sur un vaste royaume.",
+            "gloss": "The king reigned over a vast kingdom."
+          }
+        },
+        {
+          "id": "reine",
+          "hr": "reine",
+          "en": "queen",
+          "pos": "n. f.",
+          "example": {
+            "target": "La reine a ouvert la cérémonie officielle.",
+            "gloss": "The queen opened the official ceremony."
+          }
+        },
+        {
+          "id": "empire",
+          "hr": "empire",
+          "en": "empire",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'empire s'étendait sur trois continents.",
+            "gloss": "The empire stretched across three continents."
+          }
+        },
+        {
+          "id": "civilisation",
+          "hr": "civilisation",
+          "en": "civilization",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette civilisation ancienne nous fascine encore.",
+            "gloss": "This ancient civilization still fascinates us."
+          }
+        },
+        {
+          "id": "origine",
+          "hr": "origine",
+          "en": "origin",
+          "pos": "n. f.",
+          "example": {
+            "target": "On ignore l'origine exacte de cette tradition.",
+            "gloss": "The exact origin of this tradition is unknown."
+          }
+        },
+        {
+          "id": "ancêtre",
+          "hr": "ancêtre",
+          "en": "ancestor",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ses ancêtres venaient d'Italie.",
+            "gloss": "His ancestors came from Italy."
+          }
+        },
+        {
+          "id": "empereur",
+          "hr": "empereur",
+          "en": "emperor",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'empereur a fait bâtir de nombreux palais.",
+            "gloss": "The emperor had many palaces built."
+          }
+        },
+        {
+          "id": "royaume",
+          "hr": "royaume",
+          "en": "kingdom",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le royaume était divisé en plusieurs provinces.",
+            "gloss": "The kingdom was divided into several provinces."
+          }
+        },
+        {
+          "id": "peuple",
+          "hr": "peuple",
+          "en": "people, nation",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le peuple s'est soulevé contre l'injustice.",
+            "gloss": "The people rose up against injustice."
+          }
+        },
+        {
+          "id": "colonie",
+          "hr": "colonie",
+          "en": "colony",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ce pays était autrefois une colonie européenne.",
+            "gloss": "This country was once a European colony."
+          }
+        },
+        {
+          "id": "fait",
+          "hr": "fait",
+          "en": "fact",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il faut distinguer les faits des opinions.",
+            "gloss": "One must distinguish facts from opinions."
+          }
+        },
+        {
+          "id": "réalité",
+          "hr": "réalité",
+          "en": "reality",
+          "pos": "n. f.",
+          "example": {
+            "target": "La réalité est parfois différente de nos attentes.",
+            "gloss": "Reality is sometimes different from our expectations."
+          }
+        },
+        {
+          "id": "vérité",
+          "hr": "vérité",
+          "en": "truth",
+          "pos": "n. f.",
+          "example": {
+            "target": "Elle a fini par dire la vérité.",
+            "gloss": "She finally told the truth."
+          }
+        },
+        {
+          "id": "mensonge",
+          "hr": "mensonge",
+          "en": "lie",
+          "pos": "n. m.",
+          "example": {
+            "target": "Un mensonge finit toujours par se découvrir.",
+            "gloss": "A lie always ends up being discovered."
+          }
+        },
+        {
+          "id": "sens",
+          "hr": "sens",
+          "en": "meaning, sense",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je ne comprends pas le sens de cette phrase.",
+            "gloss": "I don't understand the meaning of this sentence."
+          }
+        },
+        {
+          "id": "rapport",
+          "hr": "rapport",
+          "en": "relationship, connection",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il n'y a aucun rapport entre ces deux événements.",
+            "gloss": "There is no connection between these two events."
+          }
+        },
+        {
+          "id": "notion",
+          "hr": "notion",
+          "en": "notion",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cet exercice fait appel à la notion de temps.",
+            "gloss": "This exercise draws on the notion of time."
+          }
+        },
+        {
+          "id": "concept",
+          "hr": "concept",
+          "en": "concept",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce concept est difficile à expliquer simplement.",
+            "gloss": "This concept is hard to explain simply."
+          }
+        },
+        {
+          "id": "aspect",
+          "hr": "aspect",
+          "en": "aspect",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nous devons examiner chaque aspect du problème.",
+            "gloss": "We must examine every aspect of the problem."
+          }
+        },
+        {
+          "id": "élément",
+          "hr": "élément",
+          "en": "element",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il manque un élément essentiel à ce dossier.",
+            "gloss": "An essential element is missing from this file."
+          }
+        },
+        {
+          "id": "tendance",
+          "hr": "tendance",
+          "en": "trend, tendency",
+          "pos": "n. f.",
+          "example": {
+            "target": "On observe une tendance à voyager plus près de chez soi.",
+            "gloss": "There is a trend toward traveling closer to home."
+          }
+        },
+        {
+          "id": "phénomène",
+          "hr": "phénomène",
+          "en": "phenomenon",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce phénomène s'explique difficilement.",
+            "gloss": "This phenomenon is hard to explain."
+          }
+        },
+        {
+          "id": "conséquence",
+          "hr": "conséquence",
+          "en": "consequence",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette décision aura de graves conséquences.",
+            "gloss": "This decision will have serious consequences."
+          }
+        },
+        {
+          "id": "inconvénient",
+          "hr": "inconvénient",
+          "en": "drawback, disadvantage",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le principal inconvénient est le coût.",
+            "gloss": "The main drawback is the cost."
+          }
+        },
+        {
+          "id": "condition",
+          "hr": "condition",
+          "en": "condition",
+          "pos": "n. f.",
+          "example": {
+            "target": "Tu peux venir, à condition de prévenir avant.",
+            "gloss": "You can come, on condition that you let us know beforehand."
+          }
+        },
+        {
+          "id": "circonstance",
+          "hr": "circonstance",
+          "en": "circumstance",
+          "pos": "n. f.",
+          "example": {
+            "target": "Dans ces circonstances, il vaut mieux attendre.",
+            "gloss": "Under these circumstances, it is better to wait."
+          }
+        },
+        {
+          "id": "ensemble",
+          "hr": "ensemble",
+          "en": "whole, set",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il faut considérer le problème dans son ensemble.",
+            "gloss": "The problem must be considered as a whole."
+          }
+        },
+        {
+          "id": "influence",
+          "hr": "influence",
+          "en": "influence",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette culture a eu une grande influence sur l'art.",
+            "gloss": "This culture had a great influence on art."
+          }
+        },
+        {
+          "id": "concerner",
+          "hr": "concerner",
+          "en": "to concern",
+          "pos": "v.",
+          "example": {
+            "target": "Cette réforme concerne tous les habitants.",
+            "gloss": "This reform concerns all the inhabitants."
+          }
+        },
+        {
+          "id": "impliquer",
+          "hr": "impliquer",
+          "en": "to imply, to involve",
+          "pos": "v.",
+          "example": {
+            "target": "Ce choix implique de nombreux changements.",
+            "gloss": "This choice involves many changes."
+          }
+        },
+        {
+          "id": "entraîner",
+          "hr": "entraîner",
+          "en": "to lead to, to bring about",
+          "pos": "v.",
+          "example": {
+            "target": "La sécheresse peut entraîner de mauvaises récoltes.",
+            "gloss": "Drought can lead to poor harvests."
+          }
+        },
+        {
+          "id": "provoquer",
+          "hr": "provoquer",
+          "en": "to cause, to provoke",
+          "pos": "v.",
+          "example": {
+            "target": "Cette annonce a provoqué de vives réactions.",
+            "gloss": "This announcement provoked strong reactions."
+          }
+        },
+        {
+          "id": "empêcher",
+          "hr": "empêcher",
+          "en": "to prevent",
+          "pos": "v.",
+          "example": {
+            "target": "Rien ne peut l'empêcher de réaliser son rêve.",
+            "gloss": "Nothing can prevent him from achieving his dream."
+          }
+        },
+        {
+          "id": "favoriser",
+          "hr": "favoriser",
+          "en": "to favor, to promote",
+          "pos": "v.",
+          "example": {
+            "target": "Ces mesures favorisent le développement du tourisme.",
+            "gloss": "These measures promote the development of tourism."
+          }
+        },
+        {
+          "id": "dépendre",
+          "hr": "dépendre",
+          "en": "to depend",
+          "pos": "v.",
+          "example": {
+            "target": "Tout dépend des conditions météorologiques.",
+            "gloss": "Everything depends on the weather conditions."
+          }
+        },
+        {
+          "id": "correspondre",
+          "hr": "correspondre",
+          "en": "to correspond, to match",
+          "pos": "v.",
+          "example": {
+            "target": "Cette description correspond parfaitement à la réalité.",
+            "gloss": "This description matches reality perfectly."
+          }
+        },
+        {
+          "id": "distinguer",
+          "hr": "distinguer",
+          "en": "to distinguish",
+          "pos": "v.",
+          "example": {
+            "target": "Il est difficile de distinguer le vrai du faux.",
+            "gloss": "It is difficult to distinguish the true from the false."
+          }
+        },
+        {
+          "id": "définir",
+          "hr": "définir",
+          "en": "to define",
+          "pos": "v.",
+          "example": {
+            "target": "Nous devons d'abord définir nos objectifs.",
+            "gloss": "We must first define our objectives."
+          }
+        },
+        {
+          "id": "représenter",
+          "hr": "représenter",
+          "en": "to represent",
+          "pos": "v.",
+          "example": {
+            "target": "Ce tableau représente une scène historique.",
+            "gloss": "This painting represents a historical scene."
+          }
+        },
+        {
+          "id": "constituer",
+          "hr": "constituer",
+          "en": "to constitute, to make up",
+          "pos": "v.",
+          "example": {
+            "target": "Ces documents constituent une preuve importante.",
+            "gloss": "These documents constitute important evidence."
+          }
+        },
+        {
+          "id": "obtenir",
+          "hr": "obtenir",
+          "en": "to obtain, to get",
+          "pos": "v.",
+          "example": {
+            "target": "Elle a obtenu son visa après plusieurs semaines.",
+            "gloss": "She obtained her visa after several weeks."
+          }
+        },
+        {
+          "id": "atteindre",
+          "hr": "atteindre",
+          "en": "to reach, to attain",
+          "pos": "v.",
+          "example": {
+            "target": "Nous avons enfin atteint notre destination.",
+            "gloss": "We finally reached our destination."
+          }
+        },
+        {
+          "id": "maintenir",
+          "hr": "maintenir",
+          "en": "to maintain, to keep",
+          "pos": "v.",
+          "example": {
+            "target": "Il est essentiel de maintenir de bonnes relations.",
+            "gloss": "It is essential to maintain good relationships."
+          }
+        },
+        {
+          "id": "probablement",
+          "hr": "probablement",
+          "en": "probably",
+          "pos": "adv.",
+          "example": {
+            "target": "Il arrivera probablement en retard.",
+            "gloss": "He will probably arrive late."
+          }
+        },
+        {
+          "id": "certainement",
+          "hr": "certainement",
+          "en": "certainly",
+          "pos": "adv.",
+          "example": {
+            "target": "C'est certainement la meilleure solution.",
+            "gloss": "It is certainly the best solution."
+          }
+        },
+        {
+          "id": "apparemment",
+          "hr": "apparemment",
+          "en": "apparently",
+          "pos": "adv.",
+          "example": {
+            "target": "Apparemment, le musée est fermé le lundi.",
+            "gloss": "Apparently, the museum is closed on Mondays."
+          }
+        },
+        {
+          "id": "évidemment",
+          "hr": "évidemment",
+          "en": "obviously, of course",
+          "pos": "adv.",
+          "example": {
+            "target": "Évidemment, tout le monde n'est pas d'accord.",
+            "gloss": "Obviously, not everyone agrees."
+          }
+        },
+        {
+          "id": "généralement",
+          "hr": "généralement",
+          "en": "generally, usually",
+          "pos": "adv.",
+          "example": {
+            "target": "Généralement, les touristes viennent en été.",
+            "gloss": "Generally, tourists come in summer."
+          }
+        },
+        {
+          "id": "finalement",
+          "hr": "finalement",
+          "en": "finally, in the end",
+          "pos": "adv.",
+          "example": {
+            "target": "Finalement, nous avons choisi de rester.",
+            "gloss": "In the end, we chose to stay."
+          }
+        },
+        {
+          "id": "actuellement",
+          "hr": "actuellement",
+          "en": "currently, at present",
+          "pos": "adv.",
+          "example": {
+            "target": "Actuellement, elle vit à l'étranger.",
+            "gloss": "She is currently living abroad."
+          }
+        },
+        {
+          "id": "désormais",
+          "hr": "désormais",
+          "en": "from now on, henceforth",
+          "pos": "adv.",
+          "example": {
+            "target": "Désormais, le musée sera gratuit le dimanche.",
+            "gloss": "From now on, the museum will be free on Sundays."
+          }
+        },
+        {
+          "id": "autrement",
+          "hr": "autrement",
+          "en": "otherwise, differently",
+          "pos": "adv.",
+          "example": {
+            "target": "Nous aurions pu faire autrement.",
+            "gloss": "We could have done it differently."
+          }
+        },
+        {
+          "id": "plutôt",
+          "hr": "plutôt",
+          "en": "rather, instead",
+          "pos": "adv.",
+          "example": {
+            "target": "Je prendrais plutôt le train que l'avion.",
+            "gloss": "I would rather take the train than the plane."
+          }
+        },
+        {
+          "id": "davantage",
+          "hr": "davantage",
+          "en": "more",
+          "pos": "adv.",
+          "example": {
+            "target": "Il faudrait investir davantage dans l'éducation.",
+            "gloss": "We should invest more in education."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr",
+        "referentiel-fr"
+      ]
+    }
+  ]
+}
