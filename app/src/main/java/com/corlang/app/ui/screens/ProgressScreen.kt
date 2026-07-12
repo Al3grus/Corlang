@@ -23,12 +23,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.ui.components.Bullet
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
+import com.corlang.app.ui.components.StatTile
+import com.corlang.app.ui.theme.Radius
 import kotlinx.coroutines.launch
 
 /**
@@ -100,7 +101,7 @@ fun ProgressScreen(container: AppContainer, lang: String) {
         levels.forEach { level ->
             val isCurrent = level.id == currentLevel
             Surface(
-                shape = RoundedCornerShape(12.dp),
+                shape = RoundedCornerShape(Radius.md),
                 color = if (isCurrent) MaterialTheme.colorScheme.primaryContainer
                         else MaterialTheme.colorScheme.surface,
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
@@ -197,7 +198,7 @@ fun ProgressScreen(container: AppContainer, lang: String) {
         resources.forEach { r ->
             // Whole card is the tap target (48dp+); show the domain, not a wrapping raw URL.
             Surface(
-                shape = RoundedCornerShape(12.dp),
+                shape = RoundedCornerShape(Radius.md),
                 color = MaterialTheme.colorScheme.surface,
                 tonalElevation = 1.dp,
                 modifier = Modifier
@@ -228,23 +229,3 @@ fun ProgressScreen(container: AppContainer, lang: String) {
     }
 }
 
-@Composable
-private fun StatTile(value: String, label: String, modifier: Modifier = Modifier) {
-    Surface(
-        shape = RoundedCornerShape(12.dp),
-        color = MaterialTheme.colorScheme.secondaryContainer,
-        modifier = modifier
-    ) {
-        Column(modifier = Modifier.padding(12.dp)) {
-            // Single line: "🔥 365" must not wrap and make the 3 tiles uneven on narrow screens.
-            Text(
-                value,
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-            Text(label, style = MaterialTheme.typography.labelSmall)
-        }
-    }
-}

@@ -50,6 +50,8 @@ import com.corlang.app.data.model.Question
 import com.corlang.app.data.model.QuestionType
 import com.corlang.app.ui.Haptics
 import com.corlang.app.ui.components.InfoCard
+import com.corlang.app.ui.components.OptionRow
+import com.corlang.app.ui.components.OptionState
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.theme.CorlangColors
 import kotlinx.coroutines.launch
@@ -359,21 +361,18 @@ private fun ScoredSectionRunner(
         when (q.type) {
             QuestionType.MCQ -> shownOptions.forEach { option ->
                 val isChosen = selectedOption == option
-                val border = when {
-                    !checked && isChosen -> MaterialTheme.colorScheme.primary
-                    checked && option == q.answer -> feedback.correct
-                    checked && isChosen -> feedback.wrong
-                    else -> MaterialTheme.colorScheme.outline
+                val state = when {
+                    !checked && isChosen -> OptionState.SELECTED
+                    checked && option == q.answer -> OptionState.CORRECT
+                    checked && isChosen -> OptionState.WRONG
+                    else -> OptionState.DEFAULT
                 }
-                Surface(
-                    shape = RoundedCornerShape(10.dp),
-                    color = MaterialTheme.colorScheme.surface,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 4.dp)
-                        .border(2.dp, border, RoundedCornerShape(10.dp))
-                        .clickable(enabled = !checked) { selectedOption = option }
-                ) { Text(option, modifier = Modifier.padding(14.dp)) }
+                OptionRow(
+                    text = option,
+                    state = state,
+                    enabled = !checked,
+                    onClick = { selectedOption = option }
+                )
             }
             else -> OutlinedTextField(
                 value = fillText,
