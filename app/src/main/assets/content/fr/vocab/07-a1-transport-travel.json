@@ -1,0 +1,606 @@
+{
+  "packs": [
+    {
+      "id": "07-a1-transport-travel",
+      "title": "A1 transport & travel",
+      "level": "A1",
+      "words": [
+        {
+          "id": "transport",
+          "hr": "transport",
+          "en": "transport",
+          "pos": "n. m.",
+          "example": {
+            "target": "Les transports en commun sont pratiques.",
+            "gloss": "Public transport is convenient."
+          }
+        },
+        {
+          "id": "train",
+          "hr": "train",
+          "en": "train",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je prends le train pour Paris.",
+            "gloss": "I take the train to Paris."
+          }
+        },
+        {
+          "id": "avion",
+          "hr": "avion",
+          "en": "plane",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'avion part à midi.",
+            "gloss": "The plane leaves at noon."
+          }
+        },
+        {
+          "id": "tram",
+          "hr": "tram",
+          "en": "tram",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je monte dans le tram.",
+            "gloss": "I get on the tram."
+          }
+        },
+        {
+          "id": "taxi",
+          "hr": "taxi",
+          "en": "taxi",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nous appelons un taxi.",
+            "gloss": "We call a taxi."
+          }
+        },
+        {
+          "id": "bateau",
+          "hr": "bateau",
+          "en": "boat",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le bateau traverse la mer.",
+            "gloss": "The boat crosses the sea."
+          }
+        },
+        {
+          "id": "moto",
+          "hr": "moto",
+          "en": "motorbike",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il a une moto rouge.",
+            "gloss": "He has a red motorbike."
+          }
+        },
+        {
+          "id": "camion",
+          "hr": "camion",
+          "en": "truck",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le camion est très grand.",
+            "gloss": "The truck is very big."
+          }
+        },
+        {
+          "id": "vol",
+          "hr": "vol",
+          "en": "flight",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mon vol est à huit heures.",
+            "gloss": "My flight is at eight o'clock."
+          }
+        },
+        {
+          "id": "aller-retour",
+          "hr": "aller-retour",
+          "en": "round trip",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je voudrais un aller-retour pour Lyon.",
+            "gloss": "I would like a round trip to Lyon."
+          }
+        },
+        {
+          "id": "aller simple",
+          "hr": "aller simple",
+          "en": "one-way ticket",
+          "pos": "n. m.",
+          "example": {
+            "target": "Un aller simple coûte moins cher.",
+            "gloss": "A one-way ticket costs less."
+          }
+        },
+        {
+          "id": "quai",
+          "hr": "quai",
+          "en": "platform",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le train arrive au quai numéro trois.",
+            "gloss": "The train arrives at platform number three."
+          }
+        },
+        {
+          "id": "siège",
+          "hr": "siège",
+          "en": "seat",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mon siège est près de la fenêtre.",
+            "gloss": "My seat is near the window."
+          }
+        },
+        {
+          "id": "valise",
+          "hr": "valise",
+          "en": "suitcase",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ma valise est très lourde.",
+            "gloss": "My suitcase is very heavy."
+          }
+        },
+        {
+          "id": "bagage",
+          "hr": "bagage",
+          "en": "luggage",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai un seul bagage.",
+            "gloss": "I have only one piece of luggage."
+          }
+        },
+        {
+          "id": "passeport",
+          "hr": "passeport",
+          "en": "passport",
+          "pos": "n. m.",
+          "example": {
+            "target": "Voici mon passeport.",
+            "gloss": "Here is my passport."
+          }
+        },
+        {
+          "id": "douane",
+          "hr": "douane",
+          "en": "customs",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nous passons la douane.",
+            "gloss": "We go through customs."
+          }
+        },
+        {
+          "id": "départ",
+          "hr": "départ",
+          "en": "departure",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le départ est à neuf heures.",
+            "gloss": "The departure is at nine o'clock."
+          }
+        },
+        {
+          "id": "arrivée",
+          "hr": "arrivée",
+          "en": "arrival",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'arrivée est prévue à midi.",
+            "gloss": "The arrival is scheduled for noon."
+          }
+        },
+        {
+          "id": "retard",
+          "hr": "retard",
+          "en": "delay",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le train a du retard.",
+            "gloss": "The train is late."
+          }
+        },
+        {
+          "id": "horaire",
+          "hr": "horaire",
+          "en": "timetable",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je regarde l'horaire des trains.",
+            "gloss": "I look at the train timetable."
+          }
+        },
+        {
+          "id": "voyage",
+          "hr": "voyage",
+          "en": "trip/journey",
+          "pos": "n. m.",
+          "example": {
+            "target": "Bon voyage !",
+            "gloss": "Have a good trip!"
+          }
+        },
+        {
+          "id": "vacances",
+          "hr": "vacances",
+          "en": "holidays",
+          "pos": "n. f. pl.",
+          "example": {
+            "target": "Je pars en vacances demain.",
+            "gloss": "I leave on holiday tomorrow."
+          }
+        },
+        {
+          "id": "séjour",
+          "hr": "séjour",
+          "en": "stay",
+          "pos": "n. m.",
+          "example": {
+            "target": "Bon séjour à Paris !",
+            "gloss": "Have a good stay in Paris!"
+          }
+        },
+        {
+          "id": "port",
+          "hr": "port",
+          "en": "port/harbor",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le bateau est au port.",
+            "gloss": "The boat is at the port."
+          }
+        },
+        {
+          "id": "route",
+          "hr": "route",
+          "en": "road",
+          "pos": "n. f.",
+          "example": {
+            "target": "La route est longue.",
+            "gloss": "The road is long."
+          }
+        },
+        {
+          "id": "autoroute",
+          "hr": "autoroute",
+          "en": "highway",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nous roulons sur l'autoroute.",
+            "gloss": "We drive on the highway."
+          }
+        },
+        {
+          "id": "frontière",
+          "hr": "frontière",
+          "en": "border",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nous arrivons à la frontière.",
+            "gloss": "We arrive at the border."
+          }
+        },
+        {
+          "id": "pays",
+          "hr": "pays",
+          "en": "country",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je visite un nouveau pays.",
+            "gloss": "I visit a new country."
+          }
+        },
+        {
+          "id": "monde",
+          "hr": "monde",
+          "en": "world",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je veux voir le monde.",
+            "gloss": "I want to see the world."
+          }
+        },
+        {
+          "id": "touriste",
+          "hr": "touriste",
+          "en": "tourist",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il y a beaucoup de touristes ici.",
+            "gloss": "There are many tourists here."
+          }
+        },
+        {
+          "id": "passager",
+          "hr": "passager",
+          "en": "passenger",
+          "pos": "n. m.",
+          "example": {
+            "target": "Les passagers montent dans le bus.",
+            "gloss": "The passengers get on the bus."
+          }
+        },
+        {
+          "id": "conducteur",
+          "hr": "conducteur",
+          "en": "driver",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le conducteur du bus est gentil.",
+            "gloss": "The bus driver is kind."
+          }
+        },
+        {
+          "id": "chauffeur",
+          "hr": "chauffeur",
+          "en": "driver (chauffeur)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le chauffeur de taxi connaît la ville.",
+            "gloss": "The taxi driver knows the city."
+          }
+        },
+        {
+          "id": "pilote",
+          "hr": "pilote",
+          "en": "pilot",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le pilote parle aux passagers.",
+            "gloss": "The pilot speaks to the passengers."
+          }
+        },
+        {
+          "id": "vitesse",
+          "hr": "vitesse",
+          "en": "speed",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le train roule à grande vitesse.",
+            "gloss": "The train runs at high speed."
+          }
+        },
+        {
+          "id": "essence",
+          "hr": "essence",
+          "en": "gasoline",
+          "pos": "n. f.",
+          "example": {
+            "target": "Je mets de l'essence dans la voiture.",
+            "gloss": "I put gasoline in the car."
+          }
+        },
+        {
+          "id": "roue",
+          "hr": "roue",
+          "en": "wheel",
+          "pos": "n. f.",
+          "example": {
+            "target": "La voiture a quatre roues.",
+            "gloss": "The car has four wheels."
+          }
+        },
+        {
+          "id": "carte d'embarquement",
+          "hr": "carte d'embarquement",
+          "en": "boarding pass",
+          "pos": "n. f.",
+          "example": {
+            "target": "Montrez votre carte d'embarquement.",
+            "gloss": "Show your boarding pass."
+          }
+        },
+        {
+          "id": "guichet",
+          "hr": "guichet",
+          "en": "ticket window",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'achète mon billet au guichet.",
+            "gloss": "I buy my ticket at the ticket window."
+          }
+        },
+        {
+          "id": "réservation",
+          "hr": "réservation",
+          "en": "reservation",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai une réservation à ce nom.",
+            "gloss": "I have a reservation under this name."
+          }
+        },
+        {
+          "id": "voyager",
+          "hr": "voyager",
+          "en": "to travel",
+          "pos": "v.",
+          "example": {
+            "target": "J'aime voyager en Europe.",
+            "gloss": "I like to travel in Europe."
+          }
+        },
+        {
+          "id": "réserver",
+          "hr": "réserver",
+          "en": "to book",
+          "pos": "v.",
+          "example": {
+            "target": "Je vais réserver une chambre.",
+            "gloss": "I am going to book a room."
+          }
+        },
+        {
+          "id": "visiter",
+          "hr": "visiter",
+          "en": "to visit",
+          "pos": "v.",
+          "example": {
+            "target": "Nous allons visiter le musée.",
+            "gloss": "We are going to visit the museum."
+          }
+        },
+        {
+          "id": "conduire",
+          "hr": "conduire",
+          "en": "to drive",
+          "pos": "v.",
+          "example": {
+            "target": "Il sait conduire une voiture.",
+            "gloss": "He knows how to drive a car."
+          }
+        },
+        {
+          "id": "rouler",
+          "hr": "rouler",
+          "en": "to drive/roll",
+          "pos": "v.",
+          "example": {
+            "target": "Nous roulons vers le sud.",
+            "gloss": "We are driving toward the south."
+          }
+        },
+        {
+          "id": "revenir",
+          "hr": "revenir",
+          "en": "to come back",
+          "pos": "v.",
+          "example": {
+            "target": "Je vais revenir la semaine prochaine.",
+            "gloss": "I am going to come back next week."
+          }
+        },
+        {
+          "id": "prochain",
+          "hr": "prochain",
+          "en": "next",
+          "pos": "adj.",
+          "example": {
+            "target": "Je descends au prochain arrêt.",
+            "gloss": "I get off at the next stop."
+          }
+        },
+        {
+          "id": "dernier",
+          "hr": "dernier",
+          "en": "last",
+          "pos": "adj.",
+          "example": {
+            "target": "C'est le dernier train de la nuit.",
+            "gloss": "It's the last train of the night."
+          }
+        },
+        {
+          "id": "direct",
+          "hr": "direct",
+          "en": "direct",
+          "pos": "adj.",
+          "example": {
+            "target": "Il y a un train direct pour Nice.",
+            "gloss": "There is a direct train to Nice."
+          }
+        },
+        {
+          "id": "rapide",
+          "hr": "rapide",
+          "en": "fast",
+          "pos": "adj.",
+          "example": {
+            "target": "Le TGV est très rapide.",
+            "gloss": "The high-speed train is very fast."
+          }
+        },
+        {
+          "id": "lent",
+          "hr": "lent",
+          "en": "slow",
+          "pos": "adj.",
+          "example": {
+            "target": "Ce bus est trop lent.",
+            "gloss": "This bus is too slow."
+          }
+        },
+        {
+          "id": "à droite",
+          "hr": "à droite",
+          "en": "on the right",
+          "pos": "adv.",
+          "example": {
+            "target": "L'arrêt est à droite.",
+            "gloss": "The stop is on the right."
+          }
+        },
+        {
+          "id": "à gauche",
+          "hr": "à gauche",
+          "en": "on the left",
+          "pos": "adv.",
+          "example": {
+            "target": "Le guichet est à gauche.",
+            "gloss": "The ticket window is on the left."
+          }
+        },
+        {
+          "id": "là-bas",
+          "hr": "là-bas",
+          "en": "over there",
+          "pos": "adv.",
+          "example": {
+            "target": "La station est là-bas.",
+            "gloss": "The station is over there."
+          }
+        },
+        {
+          "id": "libre",
+          "hr": "libre",
+          "en": "free/available",
+          "pos": "adj.",
+          "example": {
+            "target": "Le taxi est libre.",
+            "gloss": "The taxi is available."
+          }
+        },
+        {
+          "id": "complet",
+          "hr": "complet",
+          "en": "full",
+          "pos": "adj.",
+          "example": {
+            "target": "Le train est complet.",
+            "gloss": "The train is full."
+          }
+        },
+        {
+          "id": "voyageur",
+          "hr": "voyageur",
+          "en": "traveler",
+          "pos": "n. m.",
+          "example": {
+            "target": "Les voyageurs attendent sur le quai.",
+            "gloss": "The travelers wait on the platform."
+          }
+        },
+        {
+          "id": "correspondance",
+          "hr": "correspondance",
+          "en": "connection",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai une correspondance à Lyon.",
+            "gloss": "I have a connection in Lyon."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr",
+        "referentiel-fr"
+      ]
+    }
+  ]
+}
