@@ -47,8 +47,7 @@ import kotlinx.coroutines.launch
 fun TodayScreen(
     container: AppContainer,
     lang: String,
-    onNavigate: (String) -> Unit = {},
-    onPlacement: () -> Unit = {}
+    onNavigate: (String) -> Unit = {}
 ) {
     val plan = remember(lang) { container.content.plan(lang) }
     val progress by container.progress.progress(lang).collectAsState(initial = null)
@@ -196,36 +195,6 @@ fun TodayScreen(
                     size = 64.dp,
                     modifier = Modifier.padding(start = 12.dp)
                 )
-            }
-        }
-
-        // First run: offer a placement test so someone who already knows Croatian doesn't
-        // start at day 1. Shown only when truly fresh (nothing completed, still on day 1).
-        val isFresh = completed.isEmpty() && currentDay <= 1
-        val hasPlacement = remember(lang) { container.content.placement(lang) != null }
-        if (isFresh && hasPlacement) {
-            Surface(
-                color = MaterialTheme.colorScheme.secondaryContainer,
-                contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                shape = RoundedCornerShape(16.dp),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        "New here? Find your level",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        "Already know some Croatian? Take a two-minute placement test and start at " +
-                            "the right lesson instead of day 1.",
-                        style = MaterialTheme.typography.bodySmall,
-                        modifier = Modifier.padding(top = 2.dp, bottom = 10.dp)
-                    )
-                    Button(onClick = onPlacement, modifier = Modifier.fillMaxWidth()) {
-                        Text("Take the placement test")
-                    }
-                }
             }
         }
 
