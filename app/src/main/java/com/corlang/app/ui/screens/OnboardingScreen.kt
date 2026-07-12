@@ -131,6 +131,13 @@ private fun String.demonymEn(): String = when (this) {
 fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean) -> Unit) {
     val scope = rememberCoroutineScope()
 
+    // Which language they're setting up. Profile below is language-neutral; this just picks the
+    // course. Defaults to (and prefills) the currently-selected language.
+    val allMeta = remember { container.content.allMeta() }
+    val multiLang = allMeta.size > 1
+    var learnLang by remember { mutableStateOf(container.content.availableLanguages.first()) }
+    val langName = allMeta.firstOrNull { it.code == learnLang }?.name ?: "the language"
+
     var step by remember { mutableIntStateOf(0) }
     var name by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("m") }
@@ -142,6 +149,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
     // Editing from Settings: prefill from the saved profile.
     LaunchedEffect(Unit) {
+        learnLang = container.languagePrefs.selectedLanguage.first()
         val p = container.languagePrefs.profile.first()
         if (p.name.isNotBlank()) name = p.name
         gender = p.gender
@@ -163,6 +171,10 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 )
             )
             container.languagePrefs.setNewWordsPerDay(goal)
+            container.languagePrefs.setLanguage(learnLang)
+            // Mark this course handled BEFORE onboarding-done flips, so MainActivity's
+            // new-language prompt never fires for the language just set up here.
+            container.languagePrefs.markPlacementHandled(learnLang)
             container.languagePrefs.setOnboardingDone(true)
             onFinish(thenPlacement)
         }
@@ -183,19 +195,38 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         )
 
         when (step) {
-            // ---- 0 · Welcome ----
+            // ---- 0 · Welcome + language choice ----
             0 -> Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
                 CorlangLogo(variant = LogoVariant.LOCKUP, size = 40.dp, modifier = Modifier.padding(top = 24.dp))
                 Text(
-                    "Jezik u srži",
+                    "Language at the core",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 6.dp, bottom = 20.dp)
                 )
+                if (multiLang) {
+                    Text(
+                        "Which language do you want to learn?",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    SingleChoiceSegmentedButtonRow(
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 16.dp)
+                    ) {
+                        allMeta.forEachIndexed { i, m ->
+                            SegmentedButton(
+                                selected = learnLang == m.code,
+                                onClick = { learnLang = m.code },
+                                shape = SegmentedButtonDefaults.itemShape(index = i, count = allMeta.size),
+                                icon = {}
+                            ) { Text("${m.flagEmoji}  ${m.name}") }
+                        }
+                    }
+                }
                 Text(
-                    "A study-based path to real Croatian, built on the official curriculum and " +
-                        "the actual B1 exam. Two minutes of setup makes it yours: your first " +
-                        "phrases will literally be about you.",
+                    "A study-based path to real $langName, built on official curricula and the real " +
+                        "exams. Two minutes of setup makes it yours.",
                     style = MaterialTheme.typography.bodyLarge
                 )
                 Button(onClick = { step = 1 }, modifier = Modifier.fillMaxWidth().padding(top = 24.dp)) {
@@ -221,9 +252,13 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             }
 
             // ---- 2 · Word forms (gender) ----
-            2 -> StepFrame("Which forms should Croatian use for you?",
-                "Croatian words change with the speaker: a man says \"Ja sam Amerikanac, radio sam\", " +
-                    "a woman says \"Ja sam Amerikanka, radila sam\".") {
+            2 -> StepFrame("Which forms should $langName use for you?",
+                if (learnLang == "hr")
+                    "Croatian words change with the speaker: a man says \"Ja sam Amerikanac, radio sam\", " +
+                        "a woman says \"Ja sam Amerikanka, radila sam\"."
+                else
+                    "Many words and endings change with the speaker's gender, so we'll use the right " +
+                        "forms for you.") {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
                     listOf("m" to "Male forms", "f" to "Female forms").forEachIndexed { i, (v, label) ->
                         SegmentedButton(
@@ -247,7 +282,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             }
 
             // ---- 4 · Reason ----
-            4 -> StepFrame("Why are you learning Croatian?",
+            4 -> StepFrame("Why are you learning $langName?",
                 "So the app knows what \"ready\" means for you.") {
                 REASONS.forEach { r ->
                     val chosen = reason == r
@@ -286,7 +321,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             }
 
             // ---- 6 · Level + payoff: your first phrases ----
-            6 -> StepFrame("Last one: do you already know some Croatian?", "") {
+            6 -> StepFrame("Last one: do you already know some $langName?", "") {
                 listOf(
                     false to "I'm new, start me at Day 1",
                     true to "I know some, take the 2-minute placement test"
@@ -307,9 +342,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     ) { Text(label, modifier = Modifier.padding(12.dp)) }
                 }
 
-                val phrases = profilePhrases(
+                // The personalized first-phrases payoff uses curated Croatian forms; only shown
+                // for Croatian. Other languages get placed by the test without a fake payoff.
+                val phrases = if (learnLang == "hr") profilePhrases(
                     LearnerProfile(name, gender, from.orEmpty(), livesIn.orEmpty(), reason.orEmpty())
-                )
+                ) else emptyList()
                 if (phrases.isNotEmpty()) {
                     Text(
                         "Your first phrases, tap to hear them:",

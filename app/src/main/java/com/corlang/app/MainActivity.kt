@@ -74,6 +74,7 @@ private fun CorlangApp(container: AppContainer) {
     val navController = rememberNavController()
     val backStack by navController.currentBackStackEntryAsState()
     val currentRoute = backStack?.destination?.route ?: Dest.TODAY.route
+    val scope = rememberCoroutineScope()
 
     // Settings lives OUTSIDE the nav graph: pushing it onto a tab's back stack gets it
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
@@ -131,6 +132,53 @@ private fun CorlangApp(container: AppContainer) {
             container = container,
             info = info,
             onDismiss = { pendingUpdate = null }
+        )
+    }
+
+    // One-time "new language" placement prompt: switching to a language the learner has never
+    // touched offers the placement test — profile is already known, so no full re-onboarding.
+    val handledLangs by container.languagePrefs.placementHandledLanguages
+        .collectAsState(initial = null as Set<String>?)
+    var newLangPrompt by remember { mutableStateOf<String?>(null) }
+    LaunchedEffect(lang, handledLangs) {
+        val handled = handledLangs ?: return@LaunchedEffect
+        if (lang in handled) { newLangPrompt = null; return@LaunchedEffect }
+        val completions = container.progress.completedDays(lang).first()
+        val revs = container.words.reviews(lang).first()
+        val prog = container.progress.progress(lang).first()
+        val touched = completions.isNotEmpty() || revs.isNotEmpty() || (prog?.currentDay ?: 1) > 1
+        if (touched) {
+            // Existing progress in this language → they've clearly used it; never nag.
+            container.languagePrefs.markPlacementHandled(lang)
+        } else {
+            newLangPrompt = lang
+        }
+    }
+    newLangPrompt?.let { pl ->
+        val meta = appState.languages.firstOrNull { it.code == pl }
+        val name = meta?.name ?: "this language"
+        AlertDialog(
+            onDismissRequest = { },
+            title = { Text("Start $name") },
+            text = {
+                Text(
+                    "Take a quick placement test so $name starts at the right level? It's about " +
+                        "two minutes. Your profile carries over — no need to set anything up again."
+                )
+            },
+            confirmButton = {
+                Button(onClick = {
+                    scope.launch { container.languagePrefs.markPlacementHandled(pl) }
+                    newLangPrompt = null
+                    showPlacement = true
+                }) { Text("Take placement test") }
+            },
+            dismissButton = {
+                OutlinedButton(onClick = {
+                    scope.launch { container.languagePrefs.markPlacementHandled(pl) }
+                    newLangPrompt = null
+                }) { Text("Start at Day 1") }
+            }
         )
     }
 

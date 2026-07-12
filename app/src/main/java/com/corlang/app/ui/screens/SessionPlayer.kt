@@ -287,7 +287,9 @@ fun SessionPlayer(
     val wordsPending = dueNow + freshWaiting
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
-        StepKind.WORDS -> wordsPending == 0 || s.id in doneIds
+        // Words are done only when actually cleared (due + today's new budget), never from a
+        // skip — so opening the lesson without doing flashcards leaves this step incomplete.
+        StepKind.WORDS -> wordsPending == 0
         else -> s.id in doneIds
     }
 
@@ -457,8 +459,10 @@ fun SessionPlayer(
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.padding(top = 6.dp)
                             )
+                            // Skip only moves past the step for now; it must NOT mark the words
+                            // done (that would inflate progress without any flashcards done).
                             OutlinedButton(
-                                onClick = markNext,
+                                onClick = { if (index < steps.lastIndex) index++ },
                                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                             ) { Text("Skip for now →") }
                         } else {
