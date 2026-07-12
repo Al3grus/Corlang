@@ -496,9 +496,9 @@ private fun OpenPromptTask(
     val ticks = remember(prompt.prompt) { mutableStateMapOf<Int, Boolean>() }
     val isWriting = section.kind == ExamSectionKind.WRITING
 
-    // AI writing feedback (optional; needs the user's API key).
+    // AI writing feedback (Premium).
     val scope = rememberCoroutineScope()
-    val apiKey by container.languagePrefs.anthropicApiKey.collectAsState(initial = "")
+    val entitled by container.premium.entitled.collectAsState(initial = false)
     var feedback by rememberSaveable(prompt.prompt) { mutableStateOf<String?>(null) }
     var feedbackLoading by remember(prompt.prompt) { mutableStateOf(false) }
     var feedbackError by remember(prompt.prompt) { mutableStateOf<String?>(null) }
@@ -523,8 +523,8 @@ private fun OpenPromptTask(
                 modifier = Modifier.fillMaxWidth()
             )
 
-            // Optional AI examiner: corrects the text and estimates its level before you self-check.
-            if (apiKey.isNotBlank()) {
+            // Optional AI examiner (Premium): corrects the text and estimates its level.
+            if (entitled) {
                 OutlinedButton(
                     onClick = {
                         feedbackLoading = true; feedbackError = null; feedback = null
