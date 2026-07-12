@@ -162,7 +162,6 @@ private fun CorlangApp(container: AppContainer) {
             SettingsScreen(
                 container,
                 onBack = { showSettings = false },
-                onPlacement = { showSettings = false; showPlacement = true },
                 onEditProfile = { showSettings = false; showOnboarding = true },
                 modifier = Modifier.padding(innerPadding)
             )
@@ -180,7 +179,7 @@ private fun CorlangApp(container: AppContainer) {
                         launchSingleTop = true
                         restoreState = true
                     }
-                }, onPlacement = { showPlacement = true })
+                })
             }
             composable(Dest.WORDS.route) { WordsScreen(container, lang) }
             composable(Dest.QUIZ.route) { QuizScreen(container, lang) }
