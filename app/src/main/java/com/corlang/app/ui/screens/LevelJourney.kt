@@ -122,7 +122,12 @@ fun LevelJourney(
         val pulse = if (reduced) 1f else pulseAnim
 
         Row(
-            modifier = Modifier.horizontalScroll(rememberScrollState()).padding(vertical = 2.dp),
+            // Inner padding (child of the scroll) gives the pulsing current-day node room to
+            // expand without being clipped by the scroll container's edges — otherwise day 1,
+            // flush against the left edge, gets its left side cut off as it breathes.
+            modifier = Modifier
+                .horizontalScroll(rememberScrollState())
+                .padding(horizontal = 8.dp, vertical = 6.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             stones.forEachIndexed { i, d ->
