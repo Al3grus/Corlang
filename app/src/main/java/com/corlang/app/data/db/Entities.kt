@@ -47,10 +47,16 @@ data class QuizAttempt(
 data class WordReview(
     val langCode: String,
     val wordId: String,
-    val box: Int = 0,
+    val box: Int = 0,                     // legacy Leitner box; kept for migration backfill, unused by FSRS
     val dueEpochDay: Long = 0L,
-    val introducedEpochDay: Long = 0L,  // for the "new words per day" cap
-    val lapses: Int = 0
+    val introducedEpochDay: Long = 0L,    // day first introduced (lesson gating)
+    val lapses: Int = 0,
+    // FSRS-6 memory state. stability = days for recall probability to fall to 90%;
+    // difficulty in 1..10; lastReviewEpochDay drives the retrievability decay.
+    val stability: Double = 0.0,
+    val difficulty: Double = 0.0,
+    val lastReviewEpochDay: Long = 0L,
+    val reps: Int = 0
 )
 
 @Serializable

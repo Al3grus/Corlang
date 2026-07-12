@@ -48,6 +48,8 @@ import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.SessionCard
 import com.corlang.app.data.SrsGrade
+import com.corlang.app.data.isLearned
+import com.corlang.app.data.isMastered
 import com.corlang.app.data.WordsRepository
 import com.corlang.app.speech.TtsManager
 import com.corlang.app.ui.Haptics
@@ -64,9 +66,6 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-
-/** Words graduate to EN→HR production (recall, not recognition) from this SRS box up. */
-private const val PRODUCTION_BOX = 3
 
 /** Persisted mid-session state so a closed/killed phone resumes exactly where it left off. */
 @Serializable
@@ -208,7 +207,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
     // ---------------- Dashboard ----------------
 
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
-    val mastered = remember(reviews) { reviews.count { it.box >= 5 } }
+    val mastered = remember(reviews) { reviews.count { it.isMastered } }
     val vocab = remember(lang) { container.content.vocab(lang) }
     val ringProgress =
         if (sessionTotal == 0) 1f else doneCount.toFloat() / sessionTotal
@@ -333,7 +332,7 @@ internal fun WordSession(
     val context = LocalContext.current
     val isNew = card.review == null
     // Established words flip direction: recall the Croatian from English (production).
-    val production = (card.review?.box ?: 0) >= PRODUCTION_BOX
+    val production = card.review?.isLearned == true
 
     // Swipe-to-grade with real physics: the card follows the finger, then either springs back
     // (under threshold) or flings off-screen in the swipe direction before the grade commits.

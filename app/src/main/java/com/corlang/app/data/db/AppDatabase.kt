@@ -18,7 +18,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         CanDoCheck::class,
         DayTaskCheck::class
     ],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -85,12 +85,36 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * v4 → v5: FSRS memory state on word_review. Adds stability/difficulty/lastReviewEpochDay/
+         * reps and back-fills them from the legacy Leitner box (box→interval as the initial
+         * stability) so existing learners keep their schedule — dueEpochDay is preserved untouched.
+         */
+        private val MIGRATION_4_5 = object : Migration(4, 5) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `word_review` ADD COLUMN `stability` REAL NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE `word_review` ADD COLUMN `difficulty` REAL NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE `word_review` ADD COLUMN `lastReviewEpochDay` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE `word_review` ADD COLUMN `reps` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL(
+                    "UPDATE `word_review` SET " +
+                        "stability = CASE box WHEN 1 THEN 1.0 WHEN 2 THEN 2.0 WHEN 3 THEN 5.0 " +
+                        "WHEN 4 THEN 10.0 WHEN 5 THEN 21.0 WHEN 6 THEN 45.0 ELSE 1.0 END, " +
+                        "difficulty = 5.0, " +
+                        "reps = box, " +
+                        "lastReviewEpochDay = MAX(0, dueEpochDay - (CASE box WHEN 1 THEN 1 WHEN 2 THEN 2 " +
+                        "WHEN 3 THEN 5 WHEN 4 THEN 10 WHEN 5 THEN 21 WHEN 6 THEN 45 ELSE 1 END))"
+                )
+            }
+        }
+
         fun get(context: Context): AppDatabase = instance ?: synchronized(this) {
             instance ?: Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
                 "corlang.db"
-            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4).build().also { instance = it }
+            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+                .build().also { instance = it }
         }
     }
 }

@@ -25,6 +25,8 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.data.isLearned
+import com.corlang.app.data.isMastered
 import com.corlang.app.ui.components.Bullet
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
@@ -51,11 +53,11 @@ fun ProgressScreen(container: AppContainer, lang: String) {
     val currentLevel = progress?.currentLevel ?: "A0"
     val streak = progress?.streak ?: 0
     val currentDay = progress?.currentDay ?: 1
-    // "Started" = introduced at all; "learned" = answered right enough to be internalised
-    // (box 3, roughly three correct recalls); "mastered" = box 5+ (long intervals).
+    // "Started" = introduced at all; "learned" = memory durable (stability ≥ 7d); "mastered" =
+    // long interval (stability ≥ 21d). Thresholds live in Fsrs.
     val wordsStarted = reviews.size
-    val wordsLearned = reviews.count { it.box >= 3 }
-    val wordsMastered = reviews.count { it.box >= 5 }
+    val wordsLearned = reviews.count { it.isLearned }
+    val wordsMastered = reviews.count { it.isMastered }
 
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)

@@ -14,8 +14,8 @@ data class SessionCard(
 
 /**
  * Builds word sessions and persists grading results. New words are gated by lesson progress
- * ([unlockedNewWords]) and introduced through lessons via [buildLessonWordsSession]; the Words tab
- * is review-only ([buildReviewSession]). Deck order is the SRS introduction order.
+ * ([unlockedNewWords]) and introduced through lessons; the Words tab is review-only
+ * ([buildReviewSession]). Deck order is the SRS introduction order.
  */
 class WordsRepository(
     private val dao: ProgressDao,
@@ -34,7 +34,8 @@ class WordsRepository(
     ): List<SessionCard> {
         val wordsById = allWords(lang).associateBy { it.id }
         return dao.dueWordReviews(lang, today)
-            .sortedWith(compareBy({ it.box }, { it.dueEpochDay }))
+            // Most-forgotten first: lowest recall probability leads, so a capped review is urgent.
+            .sortedBy { Fsrs.retrievabilityOf(it, today) }
             .mapNotNull { r -> wordsById[r.wordId]?.let { SessionCard(it, r) } }
     }
 
@@ -46,7 +47,7 @@ class WordsRepository(
     suspend fun unlockedNewWords(
         lang: String,
         uptoDay: Int,
-        perLesson: Int = Srs.NEW_WORDS_PER_DAY
+        perLesson: Int = Fsrs.NEW_WORDS_PER_DAY
     ): List<SessionCard> {
         val seenIds = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()
         return allWords(lang)
@@ -54,15 +55,6 @@ class WordsRepository(
             .filter { it.id !in seenIds }
             .map { SessionCard(it, null) }
     }
-
-    /** A lesson's word block: today's due reviews plus the new words that lesson unlocks. */
-    suspend fun buildLessonWordsSession(
-        lang: String,
-        uptoDay: Int,
-        perLesson: Int = Srs.NEW_WORDS_PER_DAY,
-        today: Long = todayEpochDay()
-    ): List<SessionCard> =
-        buildReviewSession(lang, today) + unlockedNewWords(lang, uptoDay, perLesson)
 
     /** Rebuilds session cards from a persisted list of word ids (gym-proof resume). */
     suspend fun sessionFromIds(lang: String, ids: List<String>): List<SessionCard> {
@@ -82,7 +74,7 @@ class WordsRepository(
     ): WordReview {
         val existing = dao.wordReviewOnce(lang, wordId)
             ?: WordReview(langCode = lang, wordId = wordId, introducedEpochDay = today)
-        val updated = Srs.grade(existing, grade, today)
+        val updated = Fsrs.review(existing, grade, today)
         dao.upsertWordReview(updated)
         return updated
     }

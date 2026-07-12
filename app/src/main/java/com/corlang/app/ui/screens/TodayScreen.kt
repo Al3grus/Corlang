@@ -31,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.data.Fsrs
 import com.corlang.app.data.WordsRepository
 import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
@@ -68,13 +69,14 @@ fun TodayScreen(
     val lastCompleted = completed.maxOrNull() ?: 0
     val targetDay = maxOf(currentDay, lastCompleted + 1).coerceIn(1, plan.days.size)
 
-    // The current lesson's word load = due reviews + the new words this lesson unlocks (deck order,
-    // first targetDay * perLesson) not yet introduced. Lesson-scoped, so doing an earlier day never
-    // marks a later day's words done, and a fresh lesson reads 0% until you actually do its words.
+    // The current lesson's word load, split like the lesson's two steps: NEW words this lesson
+    // unlocks (deck order, first targetDay * perLesson, not yet introduced), and the REVIEW load
+    // capped at REVIEW_CAP. Lesson-scoped, so an earlier day never marks a later day done, and a
+    // fresh lesson reads 0% until you actually do its words.
     val allWords = remember(lang) { container.words.allWords(lang) }
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
     val unlockedNew = allWords.take(targetDay * newPerDay).count { it.id !in seenIds }
-    val wordsPending = dueNow + unlockedNew
+    val reviewPending = minOf(dueNow, Fsrs.REVIEW_CAP)
 
     // Which day is being viewed (defaults to the target; user can browse away with ‹ ›).
     var viewedDay by remember(lang) { mutableStateOf(targetDay) }
@@ -110,9 +112,12 @@ fun TodayScreen(
     val doneIds = checks.map { it.itemId }.toSet()
     val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val stepsDone = actionSteps.count { s ->
-        // The words step counts only when the words are actually cleared — never from opening or
-        // skipping it. Every other step counts once it's ticked complete.
-        if (s.kind == StepKind.WORDS) wordsPending == 0 else s.id in doneIds
+        // Words/review count only when actually cleared — never from opening or skipping.
+        when (s.kind) {
+            StepKind.WORDS -> unlockedNew == 0
+            StepKind.REVIEW -> reviewPending == 0
+            else -> s.id in doneIds
+        }
     }
     // "Started" = you actually completed a step of THIS lesson (a persisted check), so opening the
     // lesson or a shared-word state never turns "Start" into "Continue".
@@ -133,7 +138,11 @@ fun TodayScreen(
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
     val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val targetStepsDone = targetAction.count { s ->
-        if (s.kind == StepKind.WORDS) wordsPending == 0 else s.id in targetDoneIds
+        when (s.kind) {
+            StepKind.WORDS -> unlockedNew == 0
+            StepKind.REVIEW -> reviewPending == 0
+            else -> s.id in targetDoneIds
+        }
     }
     val targetStarted = targetDoneIds.isNotEmpty()
     val ringProgress = when {
