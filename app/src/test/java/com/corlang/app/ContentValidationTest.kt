@@ -95,6 +95,12 @@ class ContentValidationTest {
             strictJson.decodeFromString<QuizSet>(read(lang, "quizzes.json"))
             strictJson.decodeFromString<FeynmanSet>(read(lang, "feynman.json"))
             strictJson.decodeFromString<ResourceList>(read(lang, "resources.json"))
+            // Optional files, but when present they must strict-parse too — a wrong question key
+            // in exams.json (e.g. "kind" vs "type") must fail the build, not crash at runtime.
+            if (exists(lang, "exams.json"))
+                strictJson.decodeFromString<List<com.corlang.app.data.model.ExamSpec>>(read(lang, "exams.json"))
+            if (exists(lang, "placement.json"))
+                strictJson.decodeFromString<com.corlang.app.data.model.PlacementTest>(read(lang, "placement.json"))
             loadVocabPacks(lang)
             loadPlan(lang)
         }

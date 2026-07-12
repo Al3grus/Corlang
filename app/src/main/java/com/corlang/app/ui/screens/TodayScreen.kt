@@ -114,6 +114,9 @@ fun TodayScreen(
         // skipping it. Every other step counts once it's ticked complete.
         if (s.kind == StepKind.WORDS) wordsPending == 0 else s.id in doneIds
     }
+    // "Started" = you actually completed a step of THIS lesson (a persisted check), so opening the
+    // lesson or a shared-word state never turns "Start" into "Continue".
+    val lessonStarted = doneIds.isNotEmpty()
 
     // Daily goal ring: today's guided session, measured on the day you're up to (not the one
     // being browsed). Closes fully once a lesson day has been completed today and stays closed.
@@ -132,6 +135,7 @@ fun TodayScreen(
     val targetStepsDone = targetAction.count { s ->
         if (s.kind == StepKind.WORDS) wordsPending == 0 else s.id in targetDoneIds
     }
+    val targetStarted = targetDoneIds.isNotEmpty()
     val ringProgress = when {
         completedToday > 0 -> 1f
         targetAction.isEmpty() -> 0f
@@ -195,7 +199,7 @@ fun TodayScreen(
                             when {
                                 completedToday > 0 && dueNow > 0 -> "Review $dueNow words →"
                                 completedToday > 0 -> "Learn extra words →"
-                                targetStepsDone > 0 -> "Continue Day $targetDay →"
+                                targetStarted -> "Continue Day $targetDay →"
                                 else -> "Start Day $targetDay →"
                             }
                         )
@@ -289,7 +293,7 @@ fun TodayScreen(
                 Text(
                     when {
                         isDone -> "Day done ✓, revisit the lesson"
-                        stepsDone > 0 -> "Continue lesson ($stepsDone/${actionSteps.size} steps done)"
+                        lessonStarted -> "Continue lesson ($stepsDone/${actionSteps.size} steps done)"
                         else -> "Start lesson →"
                     },
                     style = MaterialTheme.typography.titleMedium,

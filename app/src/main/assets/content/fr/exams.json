@@ -246,8 +246,7 @@
         ],
         "questions": [
           {
-            "id": "co1q1",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Quel est le thème central de ce débat ?",
             "options": [
               "L'interdiction du téléphone portable au collège",
@@ -260,8 +259,7 @@
             "explanation": "The host opens by stating the debate is about banning mobile phones in middle schools ('l'interdiction du téléphone portable dans les collèges'). The other options are not the topic."
           },
           {
-            "id": "co1q2",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Quelle est la position de Madame Lefèvre ?",
             "options": [
               "Elle est plutôt favorable à l'interdiction, mais la juge insuffisante",
@@ -274,8 +272,7 @@
             "explanation": "She says she is 'plutôt favorable' but nuances it: banning is not enough ('interdire ne suffit pas'), one must also educate. This captures her qualified stance."
           },
           {
-            "id": "co1q3",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Pourquoi Monsieur Ndiaye est-il réservé face à l'interdiction ?",
             "options": [
               "Il craint qu'elle soit contournée et prive les élèves d'un outil pédagogique",
@@ -288,8 +285,7 @@
             "explanation": "Ndiaye fears the ban would be circumvented ('contournée') and would deprive students of a valuable pedagogical tool. He wants to integrate phones, not ban them."
           },
           {
-            "id": "co1q4",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Sur quel point les deux invités finissent-ils par se rejoindre ?",
             "options": [
               "L'essentiel est l'accompagnement et l'éducation à un usage raisonné",
@@ -302,8 +298,7 @@
             "explanation": "Lefèvre insists on educating to a 'usage raisonné' and Ndiaye concludes the real issue is 'l'accompagnement'. Both converge on guidance rather than a mere ban."
           },
           {
-            "id": "co1q5",
-            "kind": "FILL",
+            "type": "FILL",
             "prompt": "Complétez : selon le présentateur, le véritable enjeu n'est pas l'interdiction, mais l'___.",
             "answer": "accompagnement",
             "difficulty": 7,
@@ -327,8 +322,7 @@
         ],
         "questions": [
           {
-            "id": "ce1q1",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Quelle est la thèse principale défendue par l'auteur ?",
             "options": [
               "Le télétravail doit rester un choix équilibré et encadré, non une généralisation systématique",
@@ -341,8 +335,7 @@
             "explanation": "The author explicitly 'plaide pour l'équilibre' and favours a hybrid organisation, opposing both all-remote and all-office. He does not reject remote work, so the other options misread his stance."
           },
           {
-            "id": "ce1q2",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Quelle nuance l'auteur apporte-t-il concernant les avantages du télétravail ?",
             "options": [
               "Il les reconnaît comme réels avant de les nuancer",
@@ -355,8 +348,7 @@
             "explanation": "He concedes 'des avantages indéniables' and says 'Nul ne saurait le nier', then introduces objections with 'Néanmoins'. This is a classic concession-refutation structure."
           },
           {
-            "id": "ce1q3",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Que veut dire l'auteur avec l'image de « la machine à café » ?",
             "options": [
               "Les échanges informels et spontanés sont irremplaçables",
@@ -369,8 +361,7 @@
             "explanation": "The coffee-machine image symbolises spontaneous informal exchange ('une discussion spontanée') that an email cannot replace. It is figurative, not literal."
           },
           {
-            "id": "ce1q4",
-            "kind": "MCQ",
+            "type": "MCQ",
             "prompt": "Selon l'auteur, en quoi le télétravail peut-il aggraver les inégalités ?",
             "options": [
               "Tous les salariés n'ont pas un logement adapté ni un environnement calme",
@@ -383,8 +374,7 @@
             "explanation": "The text states the arrangement 'creuse parfois les inégalités' because not everyone has 'un logement adapté ni un environnement calme'. Some gain autonomy while others sink into isolation."
           },
           {
-            "id": "ce1q5",
-            "kind": "FILL",
+            "type": "FILL",
             "prompt": "Complétez : pour l'auteur, l'avenir appartient à une organisation ___.",
             "answer": "hybride",
             "difficulty": 7,
