@@ -66,6 +66,18 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[newWordsKey] = count }
     }
 
+    // ----- Haptic feedback -----
+
+    private val hapticsKey = stringPreferencesKey("haptics_strength")
+
+    /** Vibration strength for learning feedback: OFF / LIGHT / MEDIUM / STRONG. */
+    val hapticsStrength: Flow<String> =
+        context.dataStore.data.map { it[hapticsKey] ?: "MEDIUM" }
+
+    suspend fun setHapticsStrength(value: String) {
+        context.dataStore.edit { it[hapticsKey] = value }
+    }
+
     // ----- Learner profile (onboarding) -----
 
     private val onboardedKey = booleanPreferencesKey("onboarding_done")

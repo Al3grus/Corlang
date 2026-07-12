@@ -81,6 +81,15 @@ private fun CorlangApp(container: AppContainer) {
     // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
     var showPlacement by rememberSaveable { mutableStateOf(false) }
 
+    // Keep the process-wide haptic strength in sync with the setting (runs pre-onboarding too).
+    LaunchedEffect(Unit) {
+        container.languagePrefs.hapticsStrength.collect { v ->
+            com.corlang.app.ui.Haptics.strength = runCatching {
+                com.corlang.app.ui.Haptics.Strength.valueOf(v)
+            }.getOrDefault(com.corlang.app.ui.Haptics.Strength.MEDIUM)
+        }
+    }
+
     // First-run onboarding: full-screen before the app, re-runnable from Settings.
     val onboarded by container.languagePrefs.onboardingDone
         .collectAsState(initial = null as Boolean?)

@@ -411,13 +411,21 @@ private fun WordSession(
                     }
                     .pointerInput(cardKey, isRevealed) {
                         if (isRevealed) {
+                            // Tick once when the drag crosses the grade threshold, so the swipe
+                            // confirms itself under the finger (a moving hand masks weak buzzes).
+                            var armed = false
                             detectDragGestures(
                                 onDrag = { change, amount ->
                                     change.consume()
                                     dragX += amount.x
                                     dragY += amount.y
+                                    val over = dragY < -threshold ||
+                                        dragX > threshold || dragX < -threshold
+                                    if (over && !armed) Haptics.tick(context)
+                                    armed = over
                                 },
                                 onDragEnd = {
+                                    armed = false
                                     when {
                                         dragY < -threshold -> onGrade(SrsGrade.GOOD)
                                         dragX > threshold -> onGrade(SrsGrade.EASY)
@@ -425,7 +433,7 @@ private fun WordSession(
                                     }
                                     dragX = 0f; dragY = 0f
                                 },
-                                onDragCancel = { dragX = 0f; dragY = 0f }
+                                onDragCancel = { armed = false; dragX = 0f; dragY = 0f }
                             )
                         }
                     }
@@ -512,9 +520,9 @@ private fun WordSession(
                         contentColor = feedback.onWrongContainer
                     ),
                     modifier = Modifier.weight(1f)
-                ) { Text("Again") }
+                ) { Text("← Again") }
                 Button(onClick = { onGrade(SrsGrade.GOOD) }, modifier = Modifier.weight(1f)) {
-                    Text("Good")
+                    Text("↑ Good")
                 }
                 Button(
                     onClick = { onGrade(SrsGrade.EASY) },
@@ -523,10 +531,10 @@ private fun WordSession(
                         contentColor = feedback.onCorrectContainer
                     ),
                     modifier = Modifier.weight(1f)
-                ) { Text("Easy") }
+                ) { Text("Easy →") }
             }
             Text(
-                "Swipe the card: ← again · ↑ good · → easy",
+                "Tap a button, or swipe the card in its arrow's direction.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 8.dp)

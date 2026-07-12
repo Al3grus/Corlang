@@ -210,6 +210,37 @@ fun SettingsScreen(
             }
         }
 
+        // ----- Haptic feedback -----
+        SectionTitle("📳 Haptic feedback")
+        val haptics by container.languagePrefs.hapticsStrength.collectAsState(initial = "MEDIUM")
+        InfoCard {
+            Text("Vibration on answers and card grades",
+                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+            Text(
+                "Stronger levels are easier to feel mid-swipe at the gym. Picking one plays a sample.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
+                val options = listOf("OFF" to "Off", "LIGHT" to "Light", "MEDIUM" to "Medium", "STRONG" to "Strong")
+                options.forEachIndexed { i, (value, label) ->
+                    SegmentedButton(
+                        selected = haptics == value,
+                        onClick = {
+                            scope.launch { container.languagePrefs.setHapticsStrength(value) }
+                            // Let them feel the choice immediately (collector updates the level,
+                            // set it here first so the sample uses the new strength).
+                            com.corlang.app.ui.Haptics.strength =
+                                com.corlang.app.ui.Haptics.Strength.valueOf(value)
+                            com.corlang.app.ui.Haptics.confirm(context)
+                        },
+                        shape = SegmentedButtonDefaults.itemShape(index = i, count = options.size)
+                    ) { Text(label) }
+                }
+            }
+        }
+
         // ----- Speech -----
         SectionTitle("🔊 Croatian voice (TTS)")
         val ttsState by container.tts.state.collectAsState()
