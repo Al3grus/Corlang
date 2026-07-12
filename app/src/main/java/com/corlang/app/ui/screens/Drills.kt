@@ -168,8 +168,10 @@ fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
 @Composable
 fun WrapupRecall(container: AppContainer, day: StudyDay, onFinished: () -> Unit) {
     val items = remember(day.day) {
+        // No hint: this is from-memory recall, and the LEARN note often contains the Croatian
+        // itself, which would hand you the answer right under the prompt.
         wrapupRecallPhrases(day)
-            .map { DrillGen.Recall(en = it.en, answerHr = it.hr, posHint = it.note) }
+            .map { DrillGen.Recall(en = it.en, answerHr = it.hr, posHint = null) }
             .take(8)
     }
     RecallRunner(
