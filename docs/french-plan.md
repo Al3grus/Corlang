@@ -1,5 +1,24 @@
 # Corlang French: Exam-Validated Content Plan (A1 → B2, job-proficiency target)
 
+## STATUS (2026-07): CONTENT-COMPLETE (F0–FG done)
+
+The French content build is finished and gate-green:
+- **F0** official source digests + gate extension · **FA** per-language TTS/speech + `delfPassed` + French tutor
+- **FC** levels (CECRL + DELF B1/B2 milestones) + 37 grammar topics
+- **FD** vocabulary: **2,886 words** A1–B2 (A1 818, A2 831, B1 639, B2 598), gender-checked, frozen
+- **FE** study plan: **108 days** A1→B2 (self-contained LEARN/EXERCISE/DIALOGUE lessons, ending in DELF mock days)
+- **FF** placement (14 Q), per-level quizzes (A1–B2), **DELF B1 + B2 mock exams** (delfPassed wired in)
+- **FG** phonetics cheatsheet + 9 teach-back concepts
+
+**Remaining before French goes live (NOT done, require a human):**
+1. **Native-speaker review** of the French content (like the Croatian deck was reviewed).
+2. Add `"fr"` to `ContentRepository.availableLanguages` — the single line that unhides French — only AFTER that review.
+
+All content is anchored to official exam resources (Français fondamental, Didier référentiels, DELF sample papers, CECRL). See docs/sources/ for provenance. Everything below is the original plan, kept for reference.
+
+---
+
+
 Mirrors the Croatian playbook (docs/sources/method.md, the hr content structure, and the
 Croatian plan) exactly — same architecture, same quality gate, same "official-anchors-only,
 no shortcuts" rule — retargeted to French and the DELF exams.
