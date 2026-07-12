@@ -20,5 +20,16 @@ source key, it doesn't ship.
 | `cefr-grid` | Council of Europe, CEFR self-assessment grid (Table 2), official can-do descriptors per skill per level | [cefr-grid.md](cefr-grid.md) |
 | `ffzg-ecourse` | University of Zagreb free e-courses a1.ffzg.unizg.hr and a2.ffzg.unizg.hr (80 units each) | referenced in plan content; overview in [croaticum-syllabus.md](croaticum-syllabus.md) |
 
-Keys may be added (e.g., a frequency-list source for vocabulary batches) by adding a row here
-and a digest file, and extending the known-keys set in `ContentValidationTest`.
+### French (fr) — target DELF B2, milestone DELF B1
+
+| Key | Source | Digest |
+|-----|--------|--------|
+| `cecrl` | Council of Europe, *Cadre européen commun de référence pour les langues*; official French can-do descriptors (FEI) | [cecrl-grid.md](cecrl-grid.md) |
+| `delf-b1-sample` | France Éducation international, DELF B1 *exemples de sujets* (4-section exam template + pass rule) | [delf-b1-sample.md](delf-b1-sample.md) |
+| `delf-b2-sample` | France Éducation international, DELF B2 *exemples de sujets* (the job-proficiency exam) | [delf-b2-sample.md](delf-b2-sample.md) |
+| `referentiel-fr` | Beacco et al., *Référentiels : Niveau A1/A2/B1/B2 pour le français* (Didier + Council of Europe), the per-level content inventory | [referentiel-fr.md](referentiel-fr.md) |
+| `francais-fondamental` | *Le Français fondamental* (Ministry of Education core-French inventory) | [francais-fondamental.md](francais-fondamental.md) |
+| `freq-fr` | *A Frequency Dictionary of French* (Lonsdale & Le Bras, Routledge), corpus frequency cross-check | [francais-fondamental.md](francais-fondamental.md) |
+
+Keys may be added by adding a row here and a digest file, and extending the known-keys set in
+`ContentValidationTest`.
