@@ -1,136 +1,127 @@
 {
-  "title": "French in One Page",
+  "title": "Le français en une page",
   "sections": [
     {
-      "title": "1 · Pronunciation (the silent-letter language)",
+      "title": "1 · Les voyelles nasales",
       "bullets": [
-        "Final consonants are usually SILENT: 'Paris' = pa-REE, 'petit' = puh-TEE.",
-        "But final consonants in the word CaReFuL (c, r, f, l) are often pronounced: 'sac', 'bonjour', 'neuf', 'mal'.",
-        "Nasal vowels: an/en = 'ahn', on = 'ohn', in/ain = 'an', un = 'uhn' — air goes through the nose, no hard N.",
-        "'r' is from the back of the throat (like a soft gargle). 'u' = round your lips for 'oo' but say 'ee'.",
-        "'ch' = sh, 'j'/'ge' = soft zh, 'gn' = ny (like canyon), 'qu' = k, final 'e' is usually silent.",
-        "Liaison: a silent final consonant links to the next vowel: 'les amis' = lay-zah-MEE."
+        "Three nasal vowels resonate through the nose — the #1 thing to master for a French accent.",
+        "on/om = nasal 'o'; an/en/am/em = nasal 'a'; in/im/ain/ein/un = nasal 'i'.",
+        "A nasal vowel + a following vowel or a doubled consonant usually becomes ORAL again (bon vs bonne)."
       ],
-      "diagram": "SOUND   SPELLING        EXAMPLE\nah-n    an, en          dans, enfant\noh-n    on              bon, non\nan      in, ain, ein    vin, pain, plein\noo-ee   ui              oui, huit\nwah     oi              moi, trois\nsh      ch              chat\nzh      j, ge           je, manger",
+      "diagram": "SPELLING          SOUND     EXAMPLE\non, om            [o~]      bonjour, nom\nan, en, am, em    [a~]      enfant, temps\nin, ain, ein, un  [e~]      pain, vin, un",
       "examples": [
-        { "target": "Comment allez-vous ?", "gloss": "How are you? (ko-mahn-tah-lay-VOO)" },
-        { "target": "Les enfants", "gloss": "The children (lay-zahn-FAHN — liaison)" }
+        {
+          "target": "Un bon vin blanc.",
+          "gloss": "A good white wine."
+        },
+        {
+          "target": "Mon oncle prend le train.",
+          "gloss": "My uncle takes the train."
+        }
       ]
     },
     {
-      "title": "2 · Nouns have gender (le / la)",
+      "title": "2 · Les consonnes finales muettes",
       "bullets": [
-        "Every noun is masculine or feminine. Learn the article WITH the noun: not 'table' but 'la table'.",
-        "Definite (the): le (m), la (f), l' (before vowel), les (plural).",
-        "Indefinite (a/an): un (m), une (f), des (plural / some).",
-        "Plural usually adds -s (silent). The article is what you actually hear: le→les, un→des.",
-        "Rough hints: -tion, -té, -e are often feminine; -age, -ment, -eau often masculine (many exceptions)."
+        "Most final consonants are SILENT: petit, grand, vous, trois, beaucoup.",
+        "But -c, -r, -f, -l are often pronounced (think 'CaReFuL'): sac, bonjour, chef, journal.",
+        "Final -e is silent but makes the preceding consonant sound (petit vs petite)."
       ],
-      "diagram": "          MASC      FEM       PLURAL\nthe       le        la        les\na/some    un        une       des\nexample   le chat   la table  les chats",
+      "diagram": "petit  -> [p-ti]     (t silent)\ngrand  -> [gra~]     (d silent)\nsac    -> [sak]      (c sounds)\npetite -> [p-tit]    (final -e reveals the t)"
+    },
+    {
+      "title": "3 · La liaison",
+      "bullets": [
+        "A silent final consonant is pronounced when the next word starts with a vowel: it links the words.",
+        "vous_avez [vu-za-ve], les_amis [le-za-mi], un_enfant [œ~-na~-fa~].",
+        "Liaison is obligatory after articles, pronouns, and short adjectives before their noun."
+      ],
+      "diagram": "les amis   -> [le-z-ami]\nvous êtes  -> [vu-z-êt]\nun enfant  -> [œ~-n-enfant]\ngrand homme-> [gra~-t-omm]"
+    },
+    {
+      "title": "4 · Les accents",
+      "bullets": [
+        "é (accent aigu) = closed 'e' as in 'clay'; è/ê (grave/circonflexe) = open 'e' as in 'bed'.",
+        "The accent can change meaning: ou (or) vs où (where); a (has) vs à (to).",
+        "ç (cédille) makes c sound like 's' before a/o/u: ça, français, garçon."
+      ],
+      "diagram": "é   été, parler, nez      [e] closed\nè ê mère, tête, être      [ɛ] open\nç   ça, français, leçon   [s] before a/o/u\nà   à, où                 distinguishes words",
       "examples": [
-        { "target": "un homme, une femme", "gloss": "a man, a woman" },
-        { "target": "J'ai des questions.", "gloss": "I have some questions." }
+        {
+          "target": "Ma mère préfère le thé.",
+          "gloss": "My mother prefers tea."
+        },
+        {
+          "target": "C'est très français.",
+          "gloss": "It's very French."
+        }
       ]
     },
     {
-      "title": "3 · Subject pronouns",
+      "title": "5 · Le « r » et d'autres sons",
       "bullets": [
-        "je = I, tu = you (informal), il/elle/on = he/she/we(casual), nous = we, vous = you (formal/plural), ils/elles = they.",
-        "'on' is used constantly in speech to mean 'we': 'On y va' = Let's go.",
-        "'vous' is both polite-singular AND plural — use it with strangers and elders."
+        "The French r is uvular — made at the back of the throat (like a soft gargle), not rolled or English.",
+        "u [y] (tu, rue) = say 'ee' with rounded lips; different from ou [u] (vous, nous).",
+        "gn = 'ny' (montagne); ch = 'sh' (chat); qu = 'k' (quatre); ill often = 'y' (fille)."
       ],
-      "diagram": "je      I\ntu      you (informal)\nil/elle he/she\non      we (casual) / one\nnous    we\nvous    you (formal/plural)\nils/elles  they (m/f)"
+      "diagram": "r    rue, Paris        uvular (throat)\nu    tu, rue           [y] 'ee' + round lips\nou   vous, nous        [u] as in 'moon'\ngn   montagne          [ny]\nch   chat, chien       [sh]"
     },
     {
-      "title": "4 · The 4 power verbs (present)",
+      "title": "6 · Orthographe → son (règles utiles)",
       "bullets": [
-        "être (to be), avoir (to have), aller (to go), faire (to do/make) appear in a huge share of all sentences.",
-        "avoir is used for AGE and hunger: 'J'ai 20 ans' (I'm 20), 'J'ai faim' (I'm hungry).",
-        "aller builds the easy future: aller + infinitive = 'going to ...'."
+        "au/eau = 'o' (au, beau, eau); ai/ei = 'è' (mais, neige); oi = 'wa' (moi, trois).",
+        "-tion = 'sion' (nation); -er/-ez at the end = 'é' (parler, parlez); h is always silent.",
+        "e without an accent is often muted or 'uh' (le, petit, demain)."
       ],
-      "diagram": "         ÊTRE    AVOIR   ALLER   FAIRE\nje       suis    ai      vais    fais\ntu       es      as      vas     fais\nil/elle  est     a       va      fait\nnous     sommes  avons   allons  faisons\nvous     êtes    avez    allez   faites\nils      sont    ont     vont    font",
+      "diagram": "au, eau  -> [o]    beau, eau\nai, ei   -> [ɛ]    mais, neige\noi       -> [wa]   moi, trois\n-tion    -> [sjɔ~] nation\n-er, -ez -> [e]    parler, chez"
+    },
+    {
+      "title": "7 · Les articles",
+      "bullets": [
+        "Every noun is masculine or feminine — learn each noun WITH its article.",
+        "Definite le/la/les (l' before a vowel); indefinite un/une/des; partitive du/de la/de l'/des ('some').",
+        "After a negation, un/une/du/de la → de: Je n'ai pas de café."
+      ],
+      "diagram": "          MASC     FÉM      PLURIEL\ndéfini    le / l'  la / l'  les\nindéfini  un       une      des\npartitif  du       de la    des",
       "examples": [
-        { "target": "Je suis étudiant.", "gloss": "I am a student." },
-        { "target": "Elle a deux frères.", "gloss": "She has two brothers." }
+        {
+          "target": "Je voudrais du pain et de la confiture.",
+          "gloss": "I'd like some bread and some jam."
+        }
       ]
     },
     {
-      "title": "5 · Regular -ER verbs (the biggest group)",
+      "title": "8 · Le présent : être, avoir, -ER",
       "bullets": [
-        "~90% of French verbs end in -ER and all conjugate the same way. Master one, master thousands.",
-        "Drop -er, add: -e, -es, -e, -ons, -ez, -ent. The -e, -es, -ent endings all sound identical (silent).",
-        "Examples: parler (speak), aimer (like/love), habiter (live), travailler (work), manger (eat)."
+        "être and avoir are the two essential verbs (states, possession, and later the past).",
+        "Regular -ER verbs (90% of verbs): drop -er, add -e/-es/-e/-ons/-ez/-ent.",
+        "avoir is used for age and feelings: j'ai 20 ans, j'ai faim, j'ai froid."
       ],
-      "diagram": "PARLER (to speak)\nje parle      nous parlons\ntu parles     vous parlez\nil parle      ils parlent\n(parle / parles / parlent all sound the same)",
+      "diagram": "être           avoir          parler (-ER)\nje suis        j'ai           je parle\ntu es          tu as          tu parles\nil est         il a           il parle\nnous sommes    nous avons     nous parlons\nvous êtes      vous avez      vous parlez\nils sont       ils ont        ils parlent"
+    },
+    {
+      "title": "9 · Le passé composé",
+      "bullets": [
+        "Completed past = avoir (or être) in the present + past participle.",
+        "Participles: -ER→-é (parlé), -IR→-i (fini), -RE→-u (attendu); irregulars: fait, vu, pris, mis, dit.",
+        "A set of movement/change verbs + all pronominal verbs use être and AGREE with the subject."
+      ],
+      "diagram": "avoir + participe:   j'ai mangé, il a fini\nêtre + participe:    elle est allée, ils sont partis\n(être verbs: aller, venir, arriver, partir,\n entrer, sortir, monter, descendre, rester,\n tomber, naître, mourir + les verbes pronominaux)",
       "examples": [
-        { "target": "Je parle un peu français.", "gloss": "I speak a little French." },
-        { "target": "Nous habitons à Paris.", "gloss": "We live in Paris." }
+        {
+          "target": "Hier, j'ai visité Paris et je suis rentré tard.",
+          "gloss": "Yesterday I visited Paris and came home late."
+        }
       ]
     },
     {
-      "title": "6 · Negation: ne … pas",
+      "title": "10 · Questions et négation",
       "bullets": [
-        "Wrap the verb: ne + VERB + pas. 'Je ne sais pas' = I don't know.",
-        "ne → n' before a vowel: 'Je n'aime pas' = I don't like.",
-        "In casual speech the 'ne' is often dropped: 'Je sais pas'.",
-        "Other pairs: ne…jamais (never), ne…rien (nothing), ne…plus (no more)."
+        "Negation wraps the verb: ne + verb + pas (n' before a vowel): je ne comprends pas.",
+        "Three ways to ask: intonation (Tu viens ?), est-ce que (Est-ce que tu viens ?), inversion (Viens-tu ?).",
+        "Question words: qui, que/quoi, où, quand, comment, pourquoi, combien."
       ],
-      "examples": [
-        { "target": "Je ne comprends pas.", "gloss": "I don't understand." },
-        { "target": "Il n'y a pas de problème.", "gloss": "There's no problem." }
-      ]
-    },
-    {
-      "title": "7 · Asking questions (3 ways)",
-      "bullets": [
-        "Easiest: raise your intonation. 'Tu parles anglais ?' = You speak English?",
-        "Add 'Est-ce que' to the front: 'Est-ce que tu parles anglais ?'",
-        "Question words: qui (who), que/quoi (what), où (where), quand (when), pourquoi (why), comment (how), combien (how much).",
-        "Formal: invert verb+subject: 'Parlez-vous anglais ?'"
-      ],
-      "examples": [
-        { "target": "Où est la gare ?", "gloss": "Where is the station?" },
-        { "target": "Combien ça coûte ?", "gloss": "How much does it cost?" }
-      ]
-    },
-    {
-      "title": "8 · The past: passé composé",
-      "bullets": [
-        "The everyday past tense = avoir (or être) in present + past participle.",
-        "Most verbs use avoir: 'J'ai mangé' (I ate / have eaten).",
-        "-ER verbs' participle ends in -é (mangé, parlé); -IR → -i (fini); -RE → -u (vendu).",
-        "A small set of movement/change verbs use être (aller, venir, partir, naître…): 'Je suis allé' — and the participle agrees: 'Elle est allée'."
-      ],
-      "diagram": "avoir + participle:   J'ai parlé   (I spoke)\nêtre  + participle:   Je suis allé(e) (I went)\nDR & MRS VANDERTRAMP verbs take être",
-      "examples": [
-        { "target": "Hier, j'ai visité le musée.", "gloss": "Yesterday I visited the museum." },
-        { "target": "Elle est arrivée à midi.", "gloss": "She arrived at noon." }
-      ]
-    },
-    {
-      "title": "9 · The easy future: aller + infinitive",
-      "bullets": [
-        "Futur proche = present of aller + a verb in the infinitive. Just like English 'going to'.",
-        "No new conjugation needed — you already know aller.",
-        "'Je vais manger' = I'm going to eat. 'On va voir' = We'll see."
-      ],
-      "examples": [
-        { "target": "Je vais apprendre le français.", "gloss": "I'm going to learn French." },
-        { "target": "Qu'est-ce que tu vas faire ?", "gloss": "What are you going to do?" }
-      ]
-    },
-    {
-      "title": "10 · Numbers, time & survival",
-      "bullets": [
-        "0-10: zéro, un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix.",
-        "Watch out: 70 = soixante-dix (60+10), 80 = quatre-vingts (4×20), 90 = quatre-vingt-dix.",
-        "Politeness is mandatory: bonjour, s'il vous plaît, merci, pardon, excusez-moi.",
-        "Useful glue words: et (and), mais (but), parce que (because), donc (so), avec (with), pour (for)."
-      ],
-      "examples": [
-        { "target": "Bonjour, je voudrais un café, s'il vous plaît.", "gloss": "Hello, I'd like a coffee, please." },
-        { "target": "Je ne parle pas bien, mais j'apprends.", "gloss": "I don't speak well, but I'm learning." }
-      ]
+      "diagram": "négation:  ne + verbe + pas     Je ne sais pas.\nquestion:  intonation           Tu viens ?\n           est-ce que           Est-ce que tu viens ?\n           inversion (soutenu)  Viens-tu ?"
     }
   ]
 }
