@@ -1,0 +1,885 @@
+{
+  "packs": [
+    {
+      "id": "02-a1-body-health",
+      "title": "A1 body & health",
+      "level": "A1",
+      "words": [
+        {
+          "id": "corps",
+          "hr": "corps",
+          "en": "body",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le sport est bon pour le corps.",
+            "gloss": "Sport is good for the body."
+          }
+        },
+        {
+          "id": "tête",
+          "hr": "tête",
+          "en": "head",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai mal à la tête.",
+            "gloss": "I have a headache."
+          }
+        },
+        {
+          "id": "visage",
+          "hr": "visage",
+          "en": "face",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle a un beau visage.",
+            "gloss": "She has a beautiful face."
+          }
+        },
+        {
+          "id": "cheveux",
+          "hr": "cheveux",
+          "en": "hair",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Il a les cheveux noirs.",
+            "gloss": "He has black hair."
+          }
+        },
+        {
+          "id": "œil",
+          "hr": "œil",
+          "en": "eye",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal à un œil.",
+            "gloss": "One of my eyes hurts."
+          }
+        },
+        {
+          "id": "yeux",
+          "hr": "yeux",
+          "en": "eyes",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Elle a les yeux bleus.",
+            "gloss": "She has blue eyes."
+          }
+        },
+        {
+          "id": "oreille",
+          "hr": "oreille",
+          "en": "ear",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai mal à l'oreille.",
+            "gloss": "My ear hurts."
+          }
+        },
+        {
+          "id": "nez",
+          "hr": "nez",
+          "en": "nose",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai le nez bouché.",
+            "gloss": "My nose is blocked."
+          }
+        },
+        {
+          "id": "bouche",
+          "hr": "bouche",
+          "en": "mouth",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ouvrez la bouche, s'il vous plaît.",
+            "gloss": "Open your mouth, please."
+          }
+        },
+        {
+          "id": "dent",
+          "hr": "dent",
+          "en": "tooth",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai mal aux dents.",
+            "gloss": "I have a toothache."
+          }
+        },
+        {
+          "id": "langue",
+          "hr": "langue",
+          "en": "tongue, language",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le médecin regarde ma langue.",
+            "gloss": "The doctor looks at my tongue."
+          }
+        },
+        {
+          "id": "lèvre",
+          "hr": "lèvre",
+          "en": "lip",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai les lèvres sèches.",
+            "gloss": "My lips are dry."
+          }
+        },
+        {
+          "id": "joue",
+          "hr": "joue",
+          "en": "cheek",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le bébé a les joues rouges.",
+            "gloss": "The baby has red cheeks."
+          }
+        },
+        {
+          "id": "front",
+          "hr": "front",
+          "en": "forehead",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il a le front chaud, il a de la fièvre.",
+            "gloss": "His forehead is hot, he has a fever."
+          }
+        },
+        {
+          "id": "menton",
+          "hr": "menton",
+          "en": "chin",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il a une barbe sur le menton.",
+            "gloss": "He has a beard on his chin."
+          }
+        },
+        {
+          "id": "sourcil",
+          "hr": "sourcil",
+          "en": "eyebrow",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle a les sourcils fins.",
+            "gloss": "She has thin eyebrows."
+          }
+        },
+        {
+          "id": "cou",
+          "hr": "cou",
+          "en": "neck",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal au cou ce matin.",
+            "gloss": "My neck hurts this morning."
+          }
+        },
+        {
+          "id": "gorge",
+          "hr": "gorge",
+          "en": "throat",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai mal à la gorge.",
+            "gloss": "I have a sore throat."
+          }
+        },
+        {
+          "id": "épaule",
+          "hr": "épaule",
+          "en": "shoulder",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il porte le sac sur l'épaule.",
+            "gloss": "He carries the bag on his shoulder."
+          }
+        },
+        {
+          "id": "bras",
+          "hr": "bras",
+          "en": "arm",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle a un bras cassé.",
+            "gloss": "She has a broken arm."
+          }
+        },
+        {
+          "id": "coude",
+          "hr": "coude",
+          "en": "elbow",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je me suis cogné le coude.",
+            "gloss": "I banged my elbow."
+          }
+        },
+        {
+          "id": "main",
+          "hr": "main",
+          "en": "hand",
+          "pos": "n. f.",
+          "example": {
+            "target": "Lave-toi les mains avant de manger.",
+            "gloss": "Wash your hands before eating."
+          }
+        },
+        {
+          "id": "doigt",
+          "hr": "doigt",
+          "en": "finger",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je me suis coupé le doigt.",
+            "gloss": "I cut my finger."
+          }
+        },
+        {
+          "id": "ongle",
+          "hr": "ongle",
+          "en": "nail",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle a les ongles courts.",
+            "gloss": "She has short nails."
+          }
+        },
+        {
+          "id": "poignet",
+          "hr": "poignet",
+          "en": "wrist",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal au poignet.",
+            "gloss": "My wrist hurts."
+          }
+        },
+        {
+          "id": "pouce",
+          "hr": "pouce",
+          "en": "thumb",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le bébé suce son pouce.",
+            "gloss": "The baby sucks its thumb."
+          }
+        },
+        {
+          "id": "dos",
+          "hr": "dos",
+          "en": "back",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal au dos.",
+            "gloss": "I have a backache."
+          }
+        },
+        {
+          "id": "ventre",
+          "hr": "ventre",
+          "en": "belly, stomach",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal au ventre.",
+            "gloss": "I have a stomachache."
+          }
+        },
+        {
+          "id": "poitrine",
+          "hr": "poitrine",
+          "en": "chest",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il a une douleur à la poitrine.",
+            "gloss": "He has a pain in his chest."
+          }
+        },
+        {
+          "id": "cœur",
+          "hr": "cœur",
+          "en": "heart",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mon cœur bat vite.",
+            "gloss": "My heart beats fast."
+          }
+        },
+        {
+          "id": "estomac",
+          "hr": "estomac",
+          "en": "stomach",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai l'estomac vide.",
+            "gloss": "My stomach is empty."
+          }
+        },
+        {
+          "id": "jambe",
+          "hr": "jambe",
+          "en": "leg",
+          "pos": "n. f.",
+          "example": {
+            "target": "Elle a mal à la jambe.",
+            "gloss": "Her leg hurts."
+          }
+        },
+        {
+          "id": "genou",
+          "hr": "genou",
+          "en": "knee",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je suis tombé sur le genou.",
+            "gloss": "I fell on my knee."
+          }
+        },
+        {
+          "id": "pied",
+          "hr": "pied",
+          "en": "foot",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal au pied.",
+            "gloss": "My foot hurts."
+          }
+        },
+        {
+          "id": "orteil",
+          "hr": "orteil",
+          "en": "toe",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je me suis cogné l'orteil.",
+            "gloss": "I stubbed my toe."
+          }
+        },
+        {
+          "id": "cheville",
+          "hr": "cheville",
+          "en": "ankle",
+          "pos": "n. f.",
+          "example": {
+            "target": "Je me suis tordu la cheville.",
+            "gloss": "I twisted my ankle."
+          }
+        },
+        {
+          "id": "talon",
+          "hr": "talon",
+          "en": "heel",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal au talon.",
+            "gloss": "My heel hurts."
+          }
+        },
+        {
+          "id": "peau",
+          "hr": "peau",
+          "en": "skin",
+          "pos": "n. f.",
+          "example": {
+            "target": "Elle a la peau douce.",
+            "gloss": "She has soft skin."
+          }
+        },
+        {
+          "id": "sang",
+          "hr": "sang",
+          "en": "blood",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il y a du sang sur sa main.",
+            "gloss": "There is blood on his hand."
+          }
+        },
+        {
+          "id": "os",
+          "hr": "os",
+          "en": "bone",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il s'est cassé un os.",
+            "gloss": "He broke a bone."
+          }
+        },
+        {
+          "id": "muscle",
+          "hr": "muscle",
+          "en": "muscle",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal aux muscles après le sport.",
+            "gloss": "My muscles hurt after sport."
+          }
+        },
+        {
+          "id": "cerveau",
+          "hr": "cerveau",
+          "en": "brain",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le cerveau contrôle le corps.",
+            "gloss": "The brain controls the body."
+          }
+        },
+        {
+          "id": "poumon",
+          "hr": "poumon",
+          "en": "lung",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le tabac est mauvais pour les poumons.",
+            "gloss": "Tobacco is bad for the lungs."
+          }
+        },
+        {
+          "id": "taille",
+          "hr": "taille",
+          "en": "waist, size",
+          "pos": "n. f.",
+          "example": {
+            "target": "Elle a une taille fine.",
+            "gloss": "She has a slim waist."
+          }
+        },
+        {
+          "id": "barbe",
+          "hr": "barbe",
+          "en": "beard",
+          "pos": "n. f.",
+          "example": {
+            "target": "Mon père a une barbe.",
+            "gloss": "My father has a beard."
+          }
+        },
+        {
+          "id": "santé",
+          "hr": "santé",
+          "en": "health",
+          "pos": "n. f.",
+          "example": {
+            "target": "La santé, c'est important.",
+            "gloss": "Health is important."
+          }
+        },
+        {
+          "id": "malade",
+          "hr": "malade",
+          "en": "sick, ill",
+          "pos": "adj.",
+          "example": {
+            "target": "Je suis malade aujourd'hui.",
+            "gloss": "I am sick today."
+          }
+        },
+        {
+          "id": "médecin",
+          "hr": "médecin",
+          "en": "doctor (physician)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je vais chez le médecin.",
+            "gloss": "I am going to the doctor."
+          }
+        },
+        {
+          "id": "docteur",
+          "hr": "docteur",
+          "en": "doctor",
+          "pos": "n. m.",
+          "example": {
+            "target": "Bonjour, docteur.",
+            "gloss": "Hello, doctor."
+          }
+        },
+        {
+          "id": "infirmier",
+          "hr": "infirmier",
+          "en": "nurse (male)",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'infirmier est très gentil.",
+            "gloss": "The nurse is very kind."
+          }
+        },
+        {
+          "id": "infirmière",
+          "hr": "infirmière",
+          "en": "nurse (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'infirmière donne le médicament.",
+            "gloss": "The nurse gives the medicine."
+          }
+        },
+        {
+          "id": "pharmacie",
+          "hr": "pharmacie",
+          "en": "pharmacy",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'achète mes médicaments à la pharmacie.",
+            "gloss": "I buy my medicine at the pharmacy."
+          }
+        },
+        {
+          "id": "pharmacien",
+          "hr": "pharmacien",
+          "en": "pharmacist",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le pharmacien lit l'ordonnance.",
+            "gloss": "The pharmacist reads the prescription."
+          }
+        },
+        {
+          "id": "médicament",
+          "hr": "médicament",
+          "en": "medicine, drug",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je prends un médicament deux fois par jour.",
+            "gloss": "I take a medicine twice a day."
+          }
+        },
+        {
+          "id": "ordonnance",
+          "hr": "ordonnance",
+          "en": "prescription",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le médecin écrit une ordonnance.",
+            "gloss": "The doctor writes a prescription."
+          }
+        },
+        {
+          "id": "fièvre",
+          "hr": "fièvre",
+          "en": "fever",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai de la fièvre.",
+            "gloss": "I have a fever."
+          }
+        },
+        {
+          "id": "rhume",
+          "hr": "rhume",
+          "en": "cold (illness)",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai un rhume.",
+            "gloss": "I have a cold."
+          }
+        },
+        {
+          "id": "toux",
+          "hr": "toux",
+          "en": "cough",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai une mauvaise toux.",
+            "gloss": "I have a bad cough."
+          }
+        },
+        {
+          "id": "grippe",
+          "hr": "grippe",
+          "en": "flu",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il a la grippe cette semaine.",
+            "gloss": "He has the flu this week."
+          }
+        },
+        {
+          "id": "douleur",
+          "hr": "douleur",
+          "en": "pain",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai une douleur au dos.",
+            "gloss": "I have a pain in my back."
+          }
+        },
+        {
+          "id": "mal",
+          "hr": "mal",
+          "en": "ache, pain (avoir mal)",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai mal partout.",
+            "gloss": "I ache all over."
+          }
+        },
+        {
+          "id": "blessé",
+          "hr": "blessé",
+          "en": "injured, hurt",
+          "pos": "adj.",
+          "example": {
+            "target": "Il est blessé au bras.",
+            "gloss": "He is injured in the arm."
+          }
+        },
+        {
+          "id": "blessure",
+          "hr": "blessure",
+          "en": "injury, wound",
+          "pos": "n. f.",
+          "example": {
+            "target": "La blessure n'est pas grave.",
+            "gloss": "The injury is not serious."
+          }
+        },
+        {
+          "id": "guérir",
+          "hr": "guérir",
+          "en": "to heal, to recover",
+          "pos": "v.",
+          "example": {
+            "target": "Je vais bientôt guérir.",
+            "gloss": "I will recover soon."
+          }
+        },
+        {
+          "id": "tomber malade",
+          "hr": "tomber malade",
+          "en": "to fall ill",
+          "pos": "v.",
+          "example": {
+            "target": "Il ne faut pas tomber malade avant le voyage.",
+            "gloss": "You mustn't fall ill before the trip."
+          }
+        },
+        {
+          "id": "se sentir",
+          "hr": "se sentir",
+          "en": "to feel",
+          "pos": "v.",
+          "example": {
+            "target": "Je ne me sens pas bien.",
+            "gloss": "I don't feel well."
+          }
+        },
+        {
+          "id": "soigner",
+          "hr": "soigner",
+          "en": "to treat, to care for",
+          "pos": "v.",
+          "example": {
+            "target": "Le médecin soigne les malades.",
+            "gloss": "The doctor treats the sick."
+          }
+        },
+        {
+          "id": "respirer",
+          "hr": "respirer",
+          "en": "to breathe",
+          "pos": "v.",
+          "example": {
+            "target": "Respirez lentement, s'il vous plaît.",
+            "gloss": "Breathe slowly, please."
+          }
+        },
+        {
+          "id": "tousser",
+          "hr": "tousser",
+          "en": "to cough",
+          "pos": "v.",
+          "example": {
+            "target": "L'enfant tousse toute la nuit.",
+            "gloss": "The child coughs all night."
+          }
+        },
+        {
+          "id": "éternuer",
+          "hr": "éternuer",
+          "en": "to sneeze",
+          "pos": "v.",
+          "example": {
+            "target": "Je n'arrête pas d'éternuer.",
+            "gloss": "I can't stop sneezing."
+          }
+        },
+        {
+          "id": "saigner",
+          "hr": "saigner",
+          "en": "to bleed",
+          "pos": "v.",
+          "example": {
+            "target": "Mon nez saigne.",
+            "gloss": "My nose is bleeding."
+          }
+        },
+        {
+          "id": "rendez-vous",
+          "hr": "rendez-vous",
+          "en": "appointment",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai un rendez-vous chez le médecin.",
+            "gloss": "I have a doctor's appointment."
+          }
+        },
+        {
+          "id": "examen",
+          "hr": "examen",
+          "en": "examination, exam",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le médecin fait un examen.",
+            "gloss": "The doctor does an examination."
+          }
+        },
+        {
+          "id": "allergie",
+          "hr": "allergie",
+          "en": "allergy",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai une allergie au pollen.",
+            "gloss": "I have a pollen allergy."
+          }
+        },
+        {
+          "id": "vaccin",
+          "hr": "vaccin",
+          "en": "vaccine",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai fait le vaccin contre la grippe.",
+            "gloss": "I got the flu vaccine."
+          }
+        },
+        {
+          "id": "piqûre",
+          "hr": "piqûre",
+          "en": "injection, sting",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'infirmière me fait une piqûre.",
+            "gloss": "The nurse gives me an injection."
+          }
+        },
+        {
+          "id": "comprimé",
+          "hr": "comprimé",
+          "en": "tablet, pill",
+          "pos": "n. m.",
+          "example": {
+            "target": "Prends un comprimé après le repas.",
+            "gloss": "Take a tablet after the meal."
+          }
+        },
+        {
+          "id": "pansement",
+          "hr": "pansement",
+          "en": "bandage, plaster",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je mets un pansement sur la blessure.",
+            "gloss": "I put a bandage on the wound."
+          }
+        },
+        {
+          "id": "température",
+          "hr": "température",
+          "en": "temperature",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'enfant a de la température.",
+            "gloss": "The child has a temperature."
+          }
+        },
+        {
+          "id": "urgence",
+          "hr": "urgence",
+          "en": "emergency",
+          "pos": "n. f.",
+          "example": {
+            "target": "C'est une urgence, appelez le médecin.",
+            "gloss": "It's an emergency, call the doctor."
+          }
+        },
+        {
+          "id": "ambulance",
+          "hr": "ambulance",
+          "en": "ambulance",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'ambulance arrive vite.",
+            "gloss": "The ambulance arrives quickly."
+          }
+        },
+        {
+          "id": "accident",
+          "hr": "accident",
+          "en": "accident",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il y a eu un accident dans la rue.",
+            "gloss": "There was an accident in the street."
+          }
+        },
+        {
+          "id": "sport",
+          "hr": "sport",
+          "en": "sport, exercise",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je fais du sport pour la santé.",
+            "gloss": "I do sport for my health."
+          }
+        },
+        {
+          "id": "grave",
+          "hr": "grave",
+          "en": "serious",
+          "pos": "adj.",
+          "example": {
+            "target": "Ce n'est pas grave.",
+            "gloss": "It's not serious."
+          }
+        },
+        {
+          "id": "fort",
+          "hr": "fort",
+          "en": "strong",
+          "pos": "adj.",
+          "example": {
+            "target": "Il est grand et fort.",
+            "gloss": "He is tall and strong."
+          }
+        },
+        {
+          "id": "faible",
+          "hr": "faible",
+          "en": "weak",
+          "pos": "adj.",
+          "example": {
+            "target": "Je me sens faible aujourd'hui.",
+            "gloss": "I feel weak today."
+          }
+        },
+        {
+          "id": "mieux",
+          "hr": "mieux",
+          "en": "better",
+          "pos": "adv.",
+          "example": {
+            "target": "Ça va mieux maintenant.",
+            "gloss": "I feel better now."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr"
+      ]
+    }
+  ]
+}
