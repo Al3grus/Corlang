@@ -22,7 +22,14 @@ data class BackupPrefs(
     val reminderHour: Int,
     val reminderMinute: Int,
     val newWordsPerDay: Int,
-    val selectedLanguage: String
+    val selectedLanguage: String,
+    // Learner profile (added in format 1 with defaults, so older backups still parse).
+    val onboardingDone: Boolean = false,
+    val profileName: String = "",
+    val profileGender: String = "m",
+    val profileFrom: String = "",
+    val profileLivesIn: String = "",
+    val profileReason: String = ""
 )
 
 /** A complete, portable snapshot of the learner's progress across every language. */
@@ -59,6 +66,7 @@ class BackupManager(
     /** Serializes everything to a pretty JSON string. [nowEpoch] stamps the export time. */
     suspend fun export(nowEpoch: Long): String {
         val (h, m) = prefs.reminderTime.first()
+        val profile = prefs.profile.first()
         val data = BackupData(
             exportedAtEpoch = nowEpoch,
             progress = dao.allProgress(),
@@ -74,7 +82,13 @@ class BackupManager(
                 reminderHour = h,
                 reminderMinute = m,
                 newWordsPerDay = prefs.newWordsPerDay.first(),
-                selectedLanguage = prefs.selectedLanguage.first()
+                selectedLanguage = prefs.selectedLanguage.first(),
+                onboardingDone = prefs.onboardingDone.first(),
+                profileName = profile.name,
+                profileGender = profile.gender,
+                profileFrom = profile.from,
+                profileLivesIn = profile.livesIn,
+                profileReason = profile.reason
             )
         )
         return json.encodeToString(data)
@@ -102,6 +116,16 @@ class BackupManager(
         prefs.setReminderTime(data.prefs.reminderHour, data.prefs.reminderMinute)
         prefs.setNewWordsPerDay(data.prefs.newWordsPerDay)
         prefs.setLanguage(data.prefs.selectedLanguage)
+        prefs.setOnboardingDone(data.prefs.onboardingDone)
+        prefs.setProfile(
+            com.corlang.app.data.prefs.LearnerProfile(
+                name = data.prefs.profileName,
+                gender = data.prefs.profileGender,
+                from = data.prefs.profileFrom,
+                livesIn = data.prefs.profileLivesIn,
+                reason = data.prefs.profileReason
+            )
+        )
         val rows = data.progress.size + data.completions.size + data.quizAttempts.size +
             data.wordReviews.size + data.feynmanAttempts.size + data.examAttempts.size +
             data.canDoChecks.size + data.dayTaskChecks.size

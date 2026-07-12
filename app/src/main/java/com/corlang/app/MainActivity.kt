@@ -38,6 +38,7 @@ import kotlinx.coroutines.launch
 import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.screens.CorlangSplash
 import com.corlang.app.ui.screens.LearnScreen
+import com.corlang.app.ui.screens.OnboardingScreen
 import com.corlang.app.ui.screens.PlacementScreen
 import com.corlang.app.ui.screens.ProgressScreen
 import com.corlang.app.ui.screens.QuizScreen
@@ -79,6 +80,19 @@ private fun CorlangApp(container: AppContainer) {
     var showSettings by rememberSaveable { mutableStateOf(false) }
     // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
     var showPlacement by rememberSaveable { mutableStateOf(false) }
+
+    // First-run onboarding: full-screen before the app, re-runnable from Settings.
+    val onboarded by container.languagePrefs.onboardingDone
+        .collectAsState(initial = null as Boolean?)
+    var showOnboarding by rememberSaveable { mutableStateOf(false) }
+    if (onboarded == null) return   // one-frame gap while the flag loads; splash just covered it
+    if (onboarded == false || showOnboarding) {
+        OnboardingScreen(container, onFinish = { wantsPlacement ->
+            showOnboarding = false
+            if (wantsPlacement) showPlacement = true
+        })
+        return
+    }
 
     // Re-anchor the daily reminder to the next 19:00 on every app start, WorkManager's
     // periodic work drifts with Doze deferrals and would otherwise wander off schedule.
@@ -149,6 +163,7 @@ private fun CorlangApp(container: AppContainer) {
                 container,
                 onBack = { showSettings = false },
                 onPlacement = { showSettings = false; showPlacement = true },
+                onEditProfile = { showSettings = false; showOnboarding = true },
                 modifier = Modifier.padding(innerPadding)
             )
             return@Scaffold
