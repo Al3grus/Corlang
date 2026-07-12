@@ -1,0 +1,786 @@
+{
+  "packs": [
+    {
+      "id": "26-b2-politics-law-economy",
+      "title": "B2 politics, law, institutions & economy",
+      "level": "B2",
+      "words": [
+        {
+          "id": "république",
+          "hr": "république",
+          "en": "republic",
+          "pos": "n. f.",
+          "example": {
+            "target": "La République garantit l'égalité de tous les citoyens.",
+            "gloss": "The Republic guarantees the equality of all citizens."
+          }
+        },
+        {
+          "id": "état",
+          "hr": "État",
+          "en": "state",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'État doit assurer la sécurité de ses ressortissants.",
+            "gloss": "The State must ensure the security of its nationals."
+          }
+        },
+        {
+          "id": "nation",
+          "hr": "nation",
+          "en": "nation",
+          "pos": "n. f.",
+          "example": {
+            "target": "La nation s'est rassemblée derrière son drapeau.",
+            "gloss": "The nation gathered behind its flag."
+          }
+        },
+        {
+          "id": "constitution",
+          "hr": "constitution",
+          "en": "constitution",
+          "pos": "n. f.",
+          "example": {
+            "target": "La constitution fixe les règles fondamentales du pays.",
+            "gloss": "The constitution sets the country's fundamental rules."
+          }
+        },
+        {
+          "id": "parlement",
+          "hr": "parlement",
+          "en": "parliament",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le parlement a voté la loi à une large majorité.",
+            "gloss": "Parliament passed the law by a wide majority."
+          }
+        },
+        {
+          "id": "assemblée",
+          "hr": "assemblée",
+          "en": "assembly",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'Assemblée nationale examine le projet de budget.",
+            "gloss": "The National Assembly is examining the budget bill."
+          }
+        },
+        {
+          "id": "sénat",
+          "hr": "sénat",
+          "en": "senate",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le sénat a amendé le texte avant de l'adopter.",
+            "gloss": "The senate amended the text before adopting it."
+          }
+        },
+        {
+          "id": "ministre",
+          "hr": "ministre",
+          "en": "minister",
+          "pos": "n. m.",
+          "example": {
+            "target": "La ministre de l'Économie a présenté sa réforme.",
+            "gloss": "The Minister of the Economy presented her reform."
+          }
+        },
+        {
+          "id": "ministère",
+          "hr": "ministère",
+          "en": "ministry",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le ministère de la Justice a publié un communiqué.",
+            "gloss": "The Ministry of Justice issued a statement."
+          }
+        },
+        {
+          "id": "député",
+          "hr": "député",
+          "en": "member of parliament",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le député a interpellé le gouvernement sur la crise.",
+            "gloss": "The MP challenged the government about the crisis."
+          }
+        },
+        {
+          "id": "mandat",
+          "hr": "mandat",
+          "en": "term of office; mandate",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le maire achève son second mandat cette année.",
+            "gloss": "The mayor is completing his second term this year."
+          }
+        },
+        {
+          "id": "autorité",
+          "hr": "autorité",
+          "en": "authority",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'autorité de l'État a été contestée dans la rue.",
+            "gloss": "The authority of the State was contested in the streets."
+          }
+        },
+        {
+          "id": "opposition",
+          "hr": "opposition",
+          "en": "opposition",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'opposition dénonce une dérive autoritaire du régime.",
+            "gloss": "The opposition denounces the regime's authoritarian drift."
+          }
+        },
+        {
+          "id": "scrutin",
+          "hr": "scrutin",
+          "en": "ballot; poll",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le scrutin proportionnel favorise les petits partis.",
+            "gloss": "The proportional ballot favours small parties."
+          }
+        },
+        {
+          "id": "souveraineté",
+          "hr": "souveraineté",
+          "en": "sovereignty",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le traité limite la souveraineté des États membres.",
+            "gloss": "The treaty limits the sovereignty of member states."
+          }
+        },
+        {
+          "id": "laïcité",
+          "hr": "laïcité",
+          "en": "secularism",
+          "pos": "n. f.",
+          "example": {
+            "target": "La laïcité garantit la neutralité de l'État en matière religieuse.",
+            "gloss": "Secularism guarantees the State's neutrality in religious matters."
+          }
+        },
+        {
+          "id": "électeur",
+          "hr": "électeur",
+          "en": "voter",
+          "pos": "n. m.",
+          "example": {
+            "target": "De nombreux électeurs se sont abstenus au second tour.",
+            "gloss": "Many voters abstained in the second round."
+          }
+        },
+        {
+          "id": "électorat",
+          "hr": "électorat",
+          "en": "electorate",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le parti peine à mobiliser son électorat traditionnel.",
+            "gloss": "The party is struggling to mobilise its traditional electorate."
+          }
+        },
+        {
+          "id": "coalition",
+          "hr": "coalition",
+          "en": "coalition",
+          "pos": "n. f.",
+          "example": {
+            "target": "Une fragile coalition soutient désormais le gouvernement.",
+            "gloss": "A fragile coalition now supports the government."
+          }
+        },
+        {
+          "id": "dictature",
+          "hr": "dictature",
+          "en": "dictatorship",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le pays a basculé dans la dictature après le coup d'État.",
+            "gloss": "The country slid into dictatorship after the coup."
+          }
+        },
+        {
+          "id": "référendum",
+          "hr": "référendum",
+          "en": "referendum",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le référendum a été rejeté par une courte majorité.",
+            "gloss": "The referendum was rejected by a narrow majority."
+          }
+        },
+        {
+          "id": "suffrage",
+          "hr": "suffrage",
+          "en": "suffrage; vote",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le président est élu au suffrage universel direct.",
+            "gloss": "The president is elected by direct universal suffrage."
+          }
+        },
+        {
+          "id": "abstention",
+          "hr": "abstention",
+          "en": "abstention",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'abstention a atteint un niveau record aux dernières élections.",
+            "gloss": "Abstention reached a record level in the last elections."
+          }
+        },
+        {
+          "id": "corruption",
+          "hr": "corruption",
+          "en": "corruption",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'élu est poursuivi pour corruption et trafic d'influence.",
+            "gloss": "The elected official is being prosecuted for corruption and influence peddling."
+          }
+        },
+        {
+          "id": "revendication",
+          "hr": "revendication",
+          "en": "demand; claim",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les revendications salariales restent au cœur du conflit.",
+            "gloss": "Wage demands remain at the heart of the dispute."
+          }
+        },
+        {
+          "id": "collectivité",
+          "hr": "collectivité",
+          "en": "local authority",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les collectivités territoriales gèrent une partie du budget public.",
+            "gloss": "Local authorities manage part of the public budget."
+          }
+        },
+        {
+          "id": "commune",
+          "hr": "commune",
+          "en": "municipality",
+          "pos": "n. f.",
+          "example": {
+            "target": "La commune a voté une hausse de la taxe foncière.",
+            "gloss": "The municipality voted a rise in the property tax."
+          }
+        },
+        {
+          "id": "préfet",
+          "hr": "préfet",
+          "en": "prefect",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le préfet a interdit le rassemblement pour raisons de sécurité.",
+            "gloss": "The prefect banned the gathering for security reasons."
+          }
+        },
+        {
+          "id": "administration",
+          "hr": "administration",
+          "en": "administration; public service",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'administration a rejeté sa demande de subvention.",
+            "gloss": "The administration rejected his subsidy application."
+          }
+        },
+        {
+          "id": "tribunal",
+          "hr": "tribunal",
+          "en": "court",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le tribunal a renvoyé l'affaire à une date ultérieure.",
+            "gloss": "The court adjourned the case to a later date."
+          }
+        },
+        {
+          "id": "juge",
+          "hr": "juge",
+          "en": "judge",
+          "pos": "n. m.",
+          "example": {
+            "target": "La juge a ordonné un complément d'enquête.",
+            "gloss": "The judge ordered further investigation."
+          }
+        },
+        {
+          "id": "procès",
+          "hr": "procès",
+          "en": "trial",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le procès s'est ouvert sous haute surveillance.",
+            "gloss": "The trial opened under tight security."
+          }
+        },
+        {
+          "id": "peine",
+          "hr": "peine",
+          "en": "sentence; penalty",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il a été condamné à une peine de dix ans de prison.",
+            "gloss": "He was sentenced to a ten-year prison term."
+          }
+        },
+        {
+          "id": "crime",
+          "hr": "crime",
+          "en": "serious crime",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le crime a été jugé devant la cour d'assises.",
+            "gloss": "The crime was tried before the assize court."
+          }
+        },
+        {
+          "id": "délit",
+          "hr": "délit",
+          "en": "offence; misdemeanour",
+          "pos": "n. m.",
+          "example": {
+            "target": "La fraude fiscale constitue un délit puni par la loi.",
+            "gloss": "Tax fraud constitutes an offence punishable by law."
+          }
+        },
+        {
+          "id": "victime",
+          "hr": "victime",
+          "en": "victim",
+          "pos": "n. f.",
+          "example": {
+            "target": "La victime s'est constituée partie civile au procès.",
+            "gloss": "The victim joined the trial as a civil party."
+          }
+        },
+        {
+          "id": "témoin",
+          "hr": "témoin",
+          "en": "witness",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le témoin a livré une déposition accablante.",
+            "gloss": "The witness gave a damning testimony."
+          }
+        },
+        {
+          "id": "accusé",
+          "hr": "accusé",
+          "en": "defendant; accused",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'accusé a nié toute implication dans les faits.",
+            "gloss": "The accused denied any involvement in the events."
+          }
+        },
+        {
+          "id": "règlement",
+          "hr": "règlement",
+          "en": "regulation",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le nouveau règlement encadre l'usage des données personnelles.",
+            "gloss": "The new regulation governs the use of personal data."
+          }
+        },
+        {
+          "id": "décret",
+          "hr": "décret",
+          "en": "decree",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le décret d'application entrera en vigueur le mois prochain.",
+            "gloss": "The implementing decree will take effect next month."
+          }
+        },
+        {
+          "id": "interdiction",
+          "hr": "interdiction",
+          "en": "ban; prohibition",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'interdiction de manifester a été levée par le tribunal.",
+            "gloss": "The ban on demonstrating was lifted by the court."
+          }
+        },
+        {
+          "id": "autorisation",
+          "hr": "autorisation",
+          "en": "authorization; permit",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les travaux ne peuvent commencer sans autorisation préalable.",
+            "gloss": "Work cannot begin without prior authorization."
+          }
+        },
+        {
+          "id": "législation",
+          "hr": "législation",
+          "en": "legislation",
+          "pos": "n. f.",
+          "example": {
+            "target": "La législation en vigueur interdit ces pratiques.",
+            "gloss": "The legislation in force prohibits these practices."
+          }
+        },
+        {
+          "id": "juridiction",
+          "hr": "juridiction",
+          "en": "jurisdiction; court",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'affaire relève d'une juridiction spécialisée.",
+            "gloss": "The case falls under a specialised jurisdiction."
+          }
+        },
+        {
+          "id": "verdict",
+          "hr": "verdict",
+          "en": "verdict",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le verdict a suscité l'indignation des proches.",
+            "gloss": "The verdict provoked the relatives' outrage."
+          }
+        },
+        {
+          "id": "sanction",
+          "hr": "sanction",
+          "en": "penalty; sanction",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'entreprise s'expose à de lourdes sanctions financières.",
+            "gloss": "The company faces heavy financial penalties."
+          }
+        },
+        {
+          "id": "amende",
+          "hr": "amende",
+          "en": "fine",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le tribunal lui a infligé une amende considérable.",
+            "gloss": "The court imposed a considerable fine on him."
+          }
+        },
+        {
+          "id": "plainte",
+          "hr": "plainte",
+          "en": "complaint (legal)",
+          "pos": "n. f.",
+          "example": {
+            "target": "La victime a déposé plainte contre son agresseur.",
+            "gloss": "The victim filed a complaint against her attacker."
+          }
+        },
+        {
+          "id": "procureur",
+          "hr": "procureur",
+          "en": "prosecutor",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le procureur a requis une peine exemplaire.",
+            "gloss": "The prosecutor called for an exemplary sentence."
+          }
+        },
+        {
+          "id": "magistrat",
+          "hr": "magistrat",
+          "en": "magistrate; judge",
+          "pos": "n. m.",
+          "example": {
+            "target": "Les magistrats dénoncent le manque de moyens de la justice.",
+            "gloss": "Magistrates decry the justice system's lack of resources."
+          }
+        },
+        {
+          "id": "amendement",
+          "hr": "amendement",
+          "en": "amendment",
+          "pos": "n. m.",
+          "example": {
+            "target": "Les députés ont déposé des centaines d'amendements.",
+            "gloss": "The MPs tabled hundreds of amendments."
+          }
+        },
+        {
+          "id": "infraction",
+          "hr": "infraction",
+          "en": "infringement; offence",
+          "pos": "n. f.",
+          "example": {
+            "target": "Toute infraction au code sera sévèrement sanctionnée.",
+            "gloss": "Any breach of the code will be severely penalised."
+          }
+        },
+        {
+          "id": "litige",
+          "hr": "litige",
+          "en": "dispute; litigation",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le litige commercial a été porté devant les tribunaux.",
+            "gloss": "The commercial dispute was brought before the courts."
+          }
+        },
+        {
+          "id": "jurisprudence",
+          "hr": "jurisprudence",
+          "en": "case law",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cet arrêt fera jurisprudence pour les cas similaires.",
+            "gloss": "This ruling will set a precedent for similar cases."
+          }
+        },
+        {
+          "id": "finance",
+          "hr": "finance",
+          "en": "finance",
+          "pos": "n. f.",
+          "example": {
+            "target": "La finance mondiale traverse une période d'incertitude.",
+            "gloss": "Global finance is going through a period of uncertainty."
+          }
+        },
+        {
+          "id": "action",
+          "hr": "action",
+          "en": "share; stock",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le cours de l'action a bondi de dix pour cent.",
+            "gloss": "The share price jumped by ten percent."
+          }
+        },
+        {
+          "id": "déficit",
+          "hr": "déficit",
+          "en": "deficit",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le déficit public dépasse les objectifs européens.",
+            "gloss": "The public deficit exceeds the European targets."
+          }
+        },
+        {
+          "id": "monopole",
+          "hr": "monopole",
+          "en": "monopoly",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'entreprise a été accusée d'abus de monopole.",
+            "gloss": "The company was accused of abusing its monopoly."
+          }
+        },
+        {
+          "id": "fiscalité",
+          "hr": "fiscalité",
+          "en": "taxation (system)",
+          "pos": "n. f.",
+          "example": {
+            "target": "La fiscalité des entreprises sera allégée l'an prochain.",
+            "gloss": "Corporate taxation will be eased next year."
+          }
+        },
+        {
+          "id": "relance",
+          "hr": "relance",
+          "en": "stimulus; recovery",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le plan de relance vise à soutenir l'emploi.",
+            "gloss": "The stimulus plan aims to support employment."
+          }
+        },
+        {
+          "id": "austérité",
+          "hr": "austérité",
+          "en": "austerity",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les mesures d'austérité ont plombé la croissance.",
+            "gloss": "The austerity measures weighed down growth."
+          }
+        },
+        {
+          "id": "actionnaire",
+          "hr": "actionnaire",
+          "en": "shareholder",
+          "pos": "n. m.",
+          "example": {
+            "target": "Les actionnaires ont approuvé la fusion des deux groupes.",
+            "gloss": "The shareholders approved the merger of the two groups."
+          }
+        },
+        {
+          "id": "dividende",
+          "hr": "dividende",
+          "en": "dividend",
+          "pos": "n. m.",
+          "example": {
+            "target": "La société a versé un dividende record à ses actionnaires.",
+            "gloss": "The company paid a record dividend to its shareholders."
+          }
+        },
+        {
+          "id": "endettement",
+          "hr": "endettement",
+          "en": "indebtedness; debt level",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'endettement de l'État atteint un niveau préoccupant.",
+            "gloss": "The State's debt level has reached a worrying point."
+          }
+        },
+        {
+          "id": "pénurie",
+          "hr": "pénurie",
+          "en": "shortage",
+          "pos": "n. f.",
+          "example": {
+            "target": "La pénurie de main-d'œuvre freine la reprise.",
+            "gloss": "The labour shortage is slowing the recovery."
+          }
+        },
+        {
+          "id": "gouverner",
+          "hr": "gouverner",
+          "en": "to govern",
+          "pos": "v.",
+          "example": {
+            "target": "Gouverner un pays exige des compromis constants.",
+            "gloss": "Governing a country requires constant compromise."
+          }
+        },
+        {
+          "id": "légiférer",
+          "hr": "légiférer",
+          "en": "to legislate",
+          "pos": "v.",
+          "example": {
+            "target": "Le parlement doit légiférer sur la protection des données.",
+            "gloss": "Parliament must legislate on data protection."
+          }
+        },
+        {
+          "id": "nommer",
+          "hr": "nommer",
+          "en": "to appoint",
+          "pos": "v.",
+          "example": {
+            "target": "Le président a nommé un nouveau Premier ministre.",
+            "gloss": "The president appointed a new Prime Minister."
+          }
+        },
+        {
+          "id": "condamner",
+          "hr": "condamner",
+          "en": "to convict; to sentence",
+          "pos": "v.",
+          "example": {
+            "target": "Le tribunal l'a condamné à verser des dommages et intérêts.",
+            "gloss": "The court ordered him to pay damages."
+          }
+        },
+        {
+          "id": "accuser",
+          "hr": "accuser",
+          "en": "to accuse; to charge",
+          "pos": "v.",
+          "example": {
+            "target": "On l'accuse d'avoir détourné des fonds publics.",
+            "gloss": "He is accused of having embezzled public funds."
+          }
+        },
+        {
+          "id": "taxer",
+          "hr": "taxer",
+          "en": "to tax",
+          "pos": "v.",
+          "example": {
+            "target": "Le gouvernement envisage de taxer les superprofits des entreprises.",
+            "gloss": "The government is considering taxing companies' windfall profits."
+          }
+        },
+        {
+          "id": "réguler",
+          "hr": "réguler",
+          "en": "to regulate",
+          "pos": "v.",
+          "example": {
+            "target": "Il faut mieux réguler les marchés financiers.",
+            "gloss": "Financial markets must be better regulated."
+          }
+        },
+        {
+          "id": "privatiser",
+          "hr": "privatiser",
+          "en": "to privatize",
+          "pos": "v.",
+          "example": {
+            "target": "Le gouvernement a décidé de privatiser l'aéroport.",
+            "gloss": "The government decided to privatize the airport."
+          }
+        },
+        {
+          "id": "juridique",
+          "hr": "juridique",
+          "en": "legal; juridical",
+          "pos": "adj.",
+          "example": {
+            "target": "Il a consulté un expert pour évaluer le risque juridique.",
+            "gloss": "He consulted an expert to assess the legal risk."
+          }
+        },
+        {
+          "id": "légal",
+          "hr": "légal",
+          "en": "lawful; legal",
+          "pos": "adj.",
+          "example": {
+            "target": "Cette pratique est parfaitement légale.",
+            "gloss": "This practice is perfectly lawful."
+          }
+        },
+        {
+          "id": "illégal",
+          "hr": "illégal",
+          "en": "illegal",
+          "pos": "adj.",
+          "example": {
+            "target": "Le licenciement a été jugé illégal par les prud'hommes.",
+            "gloss": "The dismissal was ruled illegal by the labour court."
+          }
+        },
+        {
+          "id": "constitutionnel",
+          "hr": "constitutionnel",
+          "en": "constitutional",
+          "pos": "adj.",
+          "example": {
+            "target": "Le Conseil a validé la conformité constitutionnelle de la loi.",
+            "gloss": "The Council upheld the law's constitutional conformity."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr",
+        "referentiel-fr"
+      ]
+    }
+  ]
+}

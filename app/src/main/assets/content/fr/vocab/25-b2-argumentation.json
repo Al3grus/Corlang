@@ -1,0 +1,806 @@
+{
+  "packs": [
+    {
+      "id": "25-b2-argumentation",
+      "title": "B2 argumentation, nuance & connectors",
+      "level": "B2",
+      "words": [
+        {
+          "id": "argumentation",
+          "hr": "argumentation",
+          "en": "argumentation, set of arguments",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'argumentation développée dans cet essai manque parfois de nuance.",
+            "gloss": "The argumentation developed in this essay sometimes lacks nuance."
+          }
+        },
+        {
+          "id": "plaidoyer",
+          "hr": "plaidoyer",
+          "en": "plea, impassioned defence",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce discours constitue un véritable plaidoyer en faveur de la liberté d'expression.",
+            "gloss": "This speech constitutes a genuine plea in favour of freedom of expression."
+          }
+        },
+        {
+          "id": "réserve",
+          "hr": "réserve",
+          "en": "reservation, qualification",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'adhère à cette thèse, non sans émettre quelques réserves.",
+            "gloss": "I subscribe to this thesis, though not without voicing a few reservations."
+          }
+        },
+        {
+          "id": "paradoxe",
+          "hr": "paradoxe",
+          "en": "paradox",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le paradoxe de cette politique est qu'elle aggrave ce qu'elle prétend résoudre.",
+            "gloss": "The paradox of this policy is that it worsens what it claims to solve."
+          }
+        },
+        {
+          "id": "ambiguïté",
+          "hr": "ambiguïté",
+          "en": "ambiguity",
+          "pos": "n. f.",
+          "example": {
+            "target": "La formulation du texte entretient une certaine ambiguïté.",
+            "gloss": "The wording of the text maintains a certain ambiguity."
+          }
+        },
+        {
+          "id": "subtilité",
+          "hr": "subtilité",
+          "en": "subtlety",
+          "pos": "n. f.",
+          "example": {
+            "target": "La subtilité de son analyse échappe à une lecture trop rapide.",
+            "gloss": "The subtlety of his analysis escapes an overly hasty reading."
+          }
+        },
+        {
+          "id": "portée",
+          "hr": "portée",
+          "en": "scope, significance, reach",
+          "pos": "n. f.",
+          "example": {
+            "target": "On mesure mal la portée de cette décision à court terme.",
+            "gloss": "The scope of this decision is hard to gauge in the short term."
+          }
+        },
+        {
+          "id": "controverse",
+          "hr": "controverse",
+          "en": "controversy",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette hypothèse a suscité une vive controverse au sein de la communauté scientifique.",
+            "gloss": "This hypothesis provoked a lively controversy within the scientific community."
+          }
+        },
+        {
+          "id": "consensus",
+          "hr": "consensus",
+          "en": "consensus",
+          "pos": "n. m.",
+          "example": {
+            "target": "Un consensus s'est peu à peu dégagé autour de cette réforme.",
+            "gloss": "A consensus gradually emerged around this reform."
+          }
+        },
+        {
+          "id": "compromis",
+          "hr": "compromis",
+          "en": "compromise",
+          "pos": "n. m.",
+          "example": {
+            "target": "Les deux camps sont finalement parvenus à un compromis acceptable.",
+            "gloss": "The two sides finally reached an acceptable compromise."
+          }
+        },
+        {
+          "id": "remise en question",
+          "hr": "remise en question",
+          "en": "calling into question, reappraisal",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette découverte impose une remise en question de nos certitudes.",
+            "gloss": "This discovery calls for a reappraisal of our certainties."
+          }
+        },
+        {
+          "id": "antithèse",
+          "hr": "antithèse",
+          "en": "antithesis, opposing claim",
+          "pos": "n. f.",
+          "example": {
+            "target": "À cette thèse, on opposera aisément une antithèse tout aussi plausible.",
+            "gloss": "To this thesis one may readily oppose an equally plausible antithesis."
+          }
+        },
+        {
+          "id": "postulat",
+          "hr": "postulat",
+          "en": "postulate, premise",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tout le raisonnement découle d'un postulat implicite.",
+            "gloss": "The entire reasoning stems from an implicit postulate."
+          }
+        },
+        {
+          "id": "présupposé",
+          "hr": "présupposé",
+          "en": "presupposition, underlying assumption",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il importe de mettre au jour les présupposés du discours.",
+            "gloss": "It is important to bring the discourse's presuppositions to light."
+          }
+        },
+        {
+          "id": "sophisme",
+          "hr": "sophisme",
+          "en": "sophism, fallacious argument",
+          "pos": "n. m.",
+          "example": {
+            "target": "Sous une apparence de rigueur, l'argument n'est qu'un sophisme.",
+            "gloss": "Under an appearance of rigour, the argument is but a sophism."
+          }
+        },
+        {
+          "id": "rhétorique",
+          "hr": "rhétorique",
+          "en": "rhetoric",
+          "pos": "n. f.",
+          "example": {
+            "target": "Une rhétorique brillante ne saurait tenir lieu de démonstration.",
+            "gloss": "Brilliant rhetoric cannot take the place of a demonstration."
+          }
+        },
+        {
+          "id": "réfutation",
+          "hr": "réfutation",
+          "en": "refutation, rebuttal",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sa réfutation, point par point, ne laisse subsister aucun doute.",
+            "gloss": "His refutation, point by point, leaves no doubt standing."
+          }
+        },
+        {
+          "id": "concession",
+          "hr": "concession",
+          "en": "concession",
+          "pos": "n. f.",
+          "example": {
+            "target": "Après une concession de pure forme, il maintient fermement sa position.",
+            "gloss": "After a purely formal concession, he firmly maintains his position."
+          }
+        },
+        {
+          "id": "démonstration",
+          "hr": "démonstration",
+          "en": "demonstration, proof",
+          "pos": "n. f.",
+          "example": {
+            "target": "La démonstration, quoique élégante, comporte une faille logique.",
+            "gloss": "The demonstration, though elegant, contains a logical flaw."
+          }
+        },
+        {
+          "id": "déduction",
+          "hr": "déduction",
+          "en": "deduction, inference",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cette conclusion procède d'une déduction hâtive.",
+            "gloss": "This conclusion proceeds from a hasty deduction."
+          }
+        },
+        {
+          "id": "prise de position",
+          "hr": "prise de position",
+          "en": "stance, taking a stand",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sa prise de position a surpris jusqu'à ses partisans.",
+            "gloss": "His stance surprised even his own supporters."
+          }
+        },
+        {
+          "id": "bien-fondé",
+          "hr": "bien-fondé",
+          "en": "validity, legitimacy (of a claim)",
+          "pos": "n. m.",
+          "example": {
+            "target": "On peut légitimement s'interroger sur le bien-fondé de cette mesure.",
+            "gloss": "One may legitimately question the validity of this measure."
+          }
+        },
+        {
+          "id": "contresens",
+          "hr": "contresens",
+          "en": "misinterpretation",
+          "pos": "n. m.",
+          "example": {
+            "target": "Interpréter ainsi ses propos relève du pur contresens.",
+            "gloss": "To interpret his words that way is sheer misinterpretation."
+          }
+        },
+        {
+          "id": "divergence",
+          "hr": "divergence",
+          "en": "divergence, difference of view",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les divergences de fond demeurent, malgré un accord de façade.",
+            "gloss": "Fundamental divergences remain, despite an outward agreement."
+          }
+        },
+        {
+          "id": "convergence",
+          "hr": "convergence",
+          "en": "convergence, agreement",
+          "pos": "n. f.",
+          "example": {
+            "target": "On observe une convergence de vues sur l'essentiel.",
+            "gloss": "One observes a convergence of views on the essentials."
+          }
+        },
+        {
+          "id": "dilemme",
+          "hr": "dilemme",
+          "en": "dilemma",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le décideur se trouve devant un dilemme moral insoluble.",
+            "gloss": "The decision-maker faces an insoluble moral dilemma."
+          }
+        },
+        {
+          "id": "réquisitoire",
+          "hr": "réquisitoire",
+          "en": "indictment, scathing critique",
+          "pos": "n. m.",
+          "example": {
+            "target": "Son article est un réquisitoire implacable contre l'inaction climatique.",
+            "gloss": "His article is a relentless indictment of climate inaction."
+          }
+        },
+        {
+          "id": "nuancer",
+          "hr": "nuancer",
+          "en": "to qualify, to add nuance to",
+          "pos": "v",
+          "example": {
+            "target": "Il faudrait nuancer une affirmation aussi catégorique.",
+            "gloss": "One should qualify so categorical an assertion."
+          }
+        },
+        {
+          "id": "relativiser",
+          "hr": "relativiser",
+          "en": "to put into perspective, to relativize",
+          "pos": "v",
+          "example": {
+            "target": "Sans nier le problème, on peut en relativiser l'ampleur.",
+            "gloss": "Without denying the problem, one can put its scale into perspective."
+          }
+        },
+        {
+          "id": "mettre en évidence",
+          "hr": "mettre en évidence",
+          "en": "to highlight, to bring out",
+          "pos": "v",
+          "example": {
+            "target": "L'étude met en évidence une corrélation jusque-là ignorée.",
+            "gloss": "The study brings out a hitherto overlooked correlation."
+          }
+        },
+        {
+          "id": "mettre en avant",
+          "hr": "mettre en avant",
+          "en": "to put forward, to foreground",
+          "pos": "v",
+          "example": {
+            "target": "Le rapport met en avant les bénéfices à long terme.",
+            "gloss": "The report puts forward the long-term benefits."
+          }
+        },
+        {
+          "id": "remettre en cause",
+          "hr": "remettre en cause",
+          "en": "to call into question, to challenge",
+          "pos": "v",
+          "example": {
+            "target": "Ces données remettent en cause le modèle dominant.",
+            "gloss": "These data call the dominant model into question."
+          }
+        },
+        {
+          "id": "concéder",
+          "hr": "concéder",
+          "en": "to concede, to grant",
+          "pos": "v",
+          "example": {
+            "target": "Je vous concède ce point, mais il ne change rien à ma conclusion.",
+            "gloss": "I grant you that point, but it changes nothing in my conclusion."
+          }
+        },
+        {
+          "id": "envisager",
+          "hr": "envisager",
+          "en": "to consider, to contemplate",
+          "pos": "v",
+          "example": {
+            "target": "Il convient d'envisager toutes les hypothèses avant de trancher.",
+            "gloss": "One ought to consider every hypothesis before deciding."
+          }
+        },
+        {
+          "id": "présumer",
+          "hr": "présumer",
+          "en": "to presume, to assume",
+          "pos": "v",
+          "example": {
+            "target": "On ne saurait présumer de ses intentions sans preuve.",
+            "gloss": "One cannot presume his intentions without evidence."
+          }
+        },
+        {
+          "id": "déduire",
+          "hr": "déduire",
+          "en": "to deduce, to infer",
+          "pos": "v",
+          "example": {
+            "target": "De ces prémisses, on peut légitimement déduire l'inverse.",
+            "gloss": "From these premises, one may legitimately infer the opposite."
+          }
+        },
+        {
+          "id": "conclure",
+          "hr": "conclure",
+          "en": "to conclude",
+          "pos": "v",
+          "example": {
+            "target": "Rien ne permet de conclure à une causalité directe.",
+            "gloss": "Nothing warrants concluding that there is direct causation."
+          }
+        },
+        {
+          "id": "résumer",
+          "hr": "résumer",
+          "en": "to summarize",
+          "pos": "v",
+          "example": {
+            "target": "On peut résumer son propos en une formule saisissante.",
+            "gloss": "One may summarize his point in a striking formula."
+          }
+        },
+        {
+          "id": "synthétiser",
+          "hr": "synthétiser",
+          "en": "to synthesize",
+          "pos": "v",
+          "example": {
+            "target": "L'introduction synthétise les principaux courants de pensée.",
+            "gloss": "The introduction synthesizes the main currents of thought."
+          }
+        },
+        {
+          "id": "argumenter",
+          "hr": "argumenter",
+          "en": "to argue, to make one's case",
+          "pos": "v",
+          "example": {
+            "target": "Il sait argumenter sans jamais céder à l'invective.",
+            "gloss": "He knows how to argue without ever resorting to invective."
+          }
+        },
+        {
+          "id": "étayer",
+          "hr": "étayer",
+          "en": "to support, to back up (a claim)",
+          "pos": "v",
+          "example": {
+            "target": "Chaque affirmation est étayée par des données précises.",
+            "gloss": "Each assertion is backed up by precise data."
+          }
+        },
+        {
+          "id": "corroborer",
+          "hr": "corroborer",
+          "en": "to corroborate",
+          "pos": "v",
+          "example": {
+            "target": "Plusieurs études indépendantes corroborent cette conclusion.",
+            "gloss": "Several independent studies corroborate this conclusion."
+          }
+        },
+        {
+          "id": "infirmer",
+          "hr": "infirmer",
+          "en": "to invalidate, to disprove",
+          "pos": "v",
+          "example": {
+            "target": "Les faits récents infirment cette prévision optimiste.",
+            "gloss": "Recent facts invalidate this optimistic forecast."
+          }
+        },
+        {
+          "id": "réitérer",
+          "hr": "réitérer",
+          "en": "to reiterate, to restate",
+          "pos": "v",
+          "example": {
+            "target": "L'auteur réitère sa position sans y apporter d'argument nouveau.",
+            "gloss": "The author reiterates his position without adding any new argument."
+          }
+        },
+        {
+          "id": "trancher",
+          "hr": "trancher",
+          "en": "to settle (a debate), to decide firmly",
+          "pos": "v",
+          "example": {
+            "target": "Sur une question aussi complexe, il est prématuré de trancher.",
+            "gloss": "On so complex a question, it is premature to settle the matter."
+          }
+        },
+        {
+          "id": "avancer",
+          "hr": "avancer",
+          "en": "to put forward (an argument)",
+          "pos": "v",
+          "example": {
+            "target": "L'argument qu'il avance mérite d'être examiné de près.",
+            "gloss": "The argument he puts forward deserves to be examined closely."
+          }
+        },
+        {
+          "id": "plaider",
+          "hr": "plaider",
+          "en": "to plead, to argue in favour of",
+          "pos": "v",
+          "example": {
+            "target": "Tout plaide en faveur d'une approche plus mesurée.",
+            "gloss": "Everything argues in favour of a more measured approach."
+          }
+        },
+        {
+          "id": "fonder",
+          "hr": "fonder",
+          "en": "to base, to ground (an argument)",
+          "pos": "v",
+          "example": {
+            "target": "Sur quoi fonde-t-il une affirmation aussi audacieuse ?",
+            "gloss": "On what does he base so bold an assertion?"
+          }
+        },
+        {
+          "id": "souscrire",
+          "hr": "souscrire",
+          "en": "to subscribe to, to endorse",
+          "pos": "v",
+          "example": {
+            "target": "Je ne saurais souscrire sans réserve à cette analyse.",
+            "gloss": "I could not subscribe unreservedly to this analysis."
+          }
+        },
+        {
+          "id": "or",
+          "hr": "or",
+          "en": "now, yet (marking a turn in argument)",
+          "pos": "conj",
+          "example": {
+            "target": "On la croyait résolue ; or, la question resurgit aujourd'hui.",
+            "gloss": "It was thought settled; yet the question resurfaces today."
+          }
+        },
+        {
+          "id": "dès lors",
+          "hr": "dès lors",
+          "en": "consequently, from then on",
+          "pos": "loc",
+          "example": {
+            "target": "La prémisse est fausse ; dès lors, toute la conclusion s'effondre.",
+            "gloss": "The premise is false; consequently, the whole conclusion collapses."
+          }
+        },
+        {
+          "id": "de ce fait",
+          "hr": "de ce fait",
+          "en": "as a result, thereby",
+          "pos": "loc",
+          "example": {
+            "target": "Le contexte a changé ; de ce fait, l'argument perd sa pertinence.",
+            "gloss": "The context has changed; as a result, the argument loses its relevance."
+          }
+        },
+        {
+          "id": "en somme",
+          "hr": "en somme",
+          "en": "in short, all in all",
+          "pos": "loc",
+          "example": {
+            "target": "En somme, les avantages l'emportent nettement sur les inconvénients.",
+            "gloss": "In short, the advantages clearly outweigh the drawbacks."
+          }
+        },
+        {
+          "id": "en définitive",
+          "hr": "en définitive",
+          "en": "ultimately, in the final analysis",
+          "pos": "loc",
+          "example": {
+            "target": "En définitive, aucune des deux thèses ne s'impose pleinement.",
+            "gloss": "In the final analysis, neither thesis fully prevails."
+          }
+        },
+        {
+          "id": "à savoir",
+          "hr": "à savoir",
+          "en": "namely, that is to say",
+          "pos": "loc",
+          "example": {
+            "target": "Un seul critère prévaut, à savoir l'intérêt général.",
+            "gloss": "A single criterion prevails, namely the common good."
+          }
+        },
+        {
+          "id": "reste",
+          "hr": "reste",
+          "en": "besides, moreover",
+          "pos": "loc",
+          "example": {
+            "target": "L'argument est faible ; du reste, personne ne le prend au sérieux.",
+            "gloss": "The argument is weak; besides, no one takes it seriously."
+          }
+        },
+        {
+          "id": "force est de constater",
+          "hr": "force est de constater",
+          "en": "one is bound to acknowledge",
+          "pos": "loc",
+          "example": {
+            "target": "Force est de constater que les résultats démentent les promesses.",
+            "gloss": "One is bound to acknowledge that the results belie the promises."
+          }
+        },
+        {
+          "id": "il n'en demeure pas moins",
+          "hr": "il n'en demeure pas moins",
+          "en": "the fact remains that",
+          "pos": "loc",
+          "example": {
+            "target": "Le contexte a évolué ; il n'en demeure pas moins que le principe reste valable.",
+            "gloss": "The context has evolved; the fact remains that the principle still holds."
+          }
+        },
+        {
+          "id": "dans la mesure où",
+          "hr": "dans la mesure où",
+          "en": "insofar as, to the extent that",
+          "pos": "loc",
+          "example": {
+            "target": "L'argument tient dans la mesure où l'on admet ses prémisses.",
+            "gloss": "The argument holds insofar as one accepts its premises."
+          }
+        },
+        {
+          "id": "à condition que",
+          "hr": "à condition que",
+          "en": "provided that, on condition that",
+          "pos": "loc",
+          "example": {
+            "target": "La réforme sera bénéfique à condition qu'elle soit appliquée avec discernement.",
+            "gloss": "The reform will be beneficial provided that it is applied with discernment."
+          }
+        },
+        {
+          "id": "pourvu que",
+          "hr": "pourvu que",
+          "en": "as long as, provided that",
+          "pos": "loc",
+          "example": {
+            "target": "Le compromis tiendra pourvu que chacun y trouve son compte.",
+            "gloss": "The compromise will hold as long as each party benefits from it."
+          }
+        },
+        {
+          "id": "de surcroît",
+          "hr": "de surcroît",
+          "en": "moreover, in addition",
+          "pos": "loc",
+          "example": {
+            "target": "L'argument est fragile et, de surcroît, contredit par les faits.",
+            "gloss": "The argument is fragile and, moreover, contradicted by the facts."
+          }
+        },
+        {
+          "id": "en outre",
+          "hr": "en outre",
+          "en": "furthermore, besides",
+          "pos": "loc",
+          "example": {
+            "target": "En outre, cette lecture néglige la dimension historique du problème.",
+            "gloss": "Furthermore, this reading neglects the historical dimension of the problem."
+          }
+        },
+        {
+          "id": "partant",
+          "hr": "partant",
+          "en": "hence, and therefore",
+          "pos": "adv",
+          "example": {
+            "target": "La cause disparaît, et partant, l'effet aussi.",
+            "gloss": "The cause disappears, and hence, so does the effect."
+          }
+        },
+        {
+          "id": "sous réserve de",
+          "hr": "sous réserve de",
+          "en": "subject to, barring",
+          "pos": "loc",
+          "example": {
+            "target": "La conclusion est valable, sous réserve de vérification empirique.",
+            "gloss": "The conclusion is valid, subject to empirical verification."
+          }
+        },
+        {
+          "id": "subtil",
+          "hr": "subtil",
+          "en": "subtle",
+          "pos": "adj",
+          "example": {
+            "target": "La distinction est subtile mais lourde de conséquences.",
+            "gloss": "The distinction is subtle yet fraught with consequences."
+          }
+        },
+        {
+          "id": "nuancé",
+          "hr": "nuancé",
+          "en": "nuanced, balanced",
+          "pos": "adj",
+          "example": {
+            "target": "Il adopte un jugement nuancé, loin de tout manichéisme.",
+            "gloss": "He adopts a nuanced judgement, far from any black-and-white thinking."
+          }
+        },
+        {
+          "id": "ambigu",
+          "hr": "ambigu",
+          "en": "ambiguous",
+          "pos": "adj",
+          "example": {
+            "target": "Sa réponse, volontairement ambiguë, n'engage à rien.",
+            "gloss": "His deliberately ambiguous answer commits him to nothing."
+          }
+        },
+        {
+          "id": "contradictoire",
+          "hr": "contradictoire",
+          "en": "contradictory",
+          "pos": "adj",
+          "example": {
+            "target": "Les témoignages recueillis sont manifestement contradictoires.",
+            "gloss": "The testimonies gathered are manifestly contradictory."
+          }
+        },
+        {
+          "id": "fondé",
+          "hr": "fondé",
+          "en": "well-founded, justified",
+          "pos": "adj",
+          "example": {
+            "target": "La critique, aussi vive soit-elle, paraît fondée.",
+            "gloss": "The criticism, however sharp, appears well-founded."
+          }
+        },
+        {
+          "id": "légitime",
+          "hr": "légitime",
+          "en": "legitimate",
+          "pos": "adj",
+          "example": {
+            "target": "Il est légitime de s'interroger sur les motivations réelles.",
+            "gloss": "It is legitimate to question the real motivations."
+          }
+        },
+        {
+          "id": "relatif",
+          "hr": "relatif",
+          "en": "relative, qualified",
+          "pos": "adj",
+          "example": {
+            "target": "Ce succès demeure très relatif au regard des ambitions affichées.",
+            "gloss": "This success remains very relative in light of the stated ambitions."
+          }
+        },
+        {
+          "id": "préalable",
+          "hr": "préalable",
+          "en": "prior, preliminary",
+          "pos": "adj",
+          "example": {
+            "target": "Un accord préalable sur les termes du débat s'impose.",
+            "gloss": "A prior agreement on the terms of the debate is essential."
+          }
+        },
+        {
+          "id": "implicite",
+          "hr": "implicite",
+          "en": "implicit",
+          "pos": "adj",
+          "example": {
+            "target": "Le texte repose sur un jugement de valeur implicite.",
+            "gloss": "The text rests on an implicit value judgement."
+          }
+        },
+        {
+          "id": "explicite",
+          "hr": "explicite",
+          "en": "explicit",
+          "pos": "adj",
+          "example": {
+            "target": "L'auteur se garde de toute prise de position explicite.",
+            "gloss": "The author refrains from any explicit stance."
+          }
+        },
+        {
+          "id": "tranché",
+          "hr": "tranché",
+          "en": "clear-cut, categorical",
+          "pos": "adj",
+          "example": {
+            "target": "Sur ce sujet, ses positions sont trop tranchées pour convaincre.",
+            "gloss": "On this subject, his positions are too categorical to persuade."
+          }
+        },
+        {
+          "id": "fallacieux",
+          "hr": "fallacieux",
+          "en": "fallacious, misleading",
+          "pos": "adj",
+          "example": {
+            "target": "Cet argument, séduisant en apparence, est fallacieux.",
+            "gloss": "This argument, appealing on the surface, is fallacious."
+          }
+        },
+        {
+          "id": "probant",
+          "hr": "probant",
+          "en": "conclusive, compelling",
+          "pos": "adj",
+          "example": {
+            "target": "Faute de preuves probantes, l'accusation ne tient pas.",
+            "gloss": "For lack of conclusive evidence, the accusation does not stand."
+          }
+        },
+        {
+          "id": "spécieux",
+          "hr": "spécieux",
+          "en": "specious, deceptively plausible",
+          "pos": "adj",
+          "example": {
+            "target": "Il faut se méfier des raisonnements spécieux qui flattent l'intuition.",
+            "gloss": "One must beware of specious reasoning that flatters intuition."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr",
+        "referentiel-fr"
+      ]
+    }
+  ]
+}
