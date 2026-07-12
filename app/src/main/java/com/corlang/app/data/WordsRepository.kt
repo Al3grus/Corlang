@@ -13,9 +13,9 @@ data class SessionCard(
 )
 
 /**
- * Builds daily review sessions and persists grading results.
- * Session = every word due today + up to [Srs.NEW_WORDS_PER_DAY] not-yet-seen words
- * (in deck order, so packs introduce themselves front to back).
+ * Builds word sessions and persists grading results. New words are gated by lesson progress
+ * ([unlockedNewWords]) and introduced through lessons via [buildLessonWordsSession]; the Words tab
+ * is review-only ([buildReviewSession]). Deck order is the SRS introduction order.
  */
 class WordsRepository(
     private val dao: ProgressDao,
@@ -27,41 +27,42 @@ class WordsRepository(
     fun allWords(lang: String): List<VocabWord> =
         content.vocab(lang).packs.flatMap { it.words }
 
-    suspend fun buildSession(
+    /** The due reviews for today (no new words), oldest box first — the Words tab is review-only. */
+    suspend fun buildReviewSession(
         lang: String,
-        today: Long = todayEpochDay(),
-        newPerDay: Int = Srs.NEW_WORDS_PER_DAY
+        today: Long = todayEpochDay()
     ): List<SessionCard> {
         val wordsById = allWords(lang).associateBy { it.id }
-
-        // Due first, oldest box first, so the shakiest words lead the session.
-        val due = dao.dueWordReviews(lang, today)
+        return dao.dueWordReviews(lang, today)
             .sortedWith(compareBy({ it.box }, { it.dueEpochDay }))
             .mapNotNull { r -> wordsById[r.wordId]?.let { SessionCard(it, r) } }
-
-        // Then fresh words, respecting the daily introduction cap.
-        val introducedToday = dao.introducedTodayCount(lang, today)
-        val seenIds = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()
-        val newBudget = (newPerDay - introducedToday).coerceAtLeast(0)
-        val fresh = allWords(lang)
-            .filter { it.id !in seenIds }
-            .take(newBudget)
-            .map { SessionCard(it, null) }
-
-        return due + fresh
     }
 
     /**
-     * The next [count] never-seen words REGARDLESS of the daily goal, the goal is a floor,
-     * not a ceiling. Used by "Learn more words" after the day's session is cleared.
+     * New words a learner is allowed to introduce, gated by lesson progress: the first
+     * [uptoDay] * [perLesson] words of the deck (deck order = introduction order) that haven't
+     * been introduced yet. You can never run ahead of the lessons you've reached.
      */
-    suspend fun extraNewWords(lang: String, count: Int = 10): List<SessionCard> {
+    suspend fun unlockedNewWords(
+        lang: String,
+        uptoDay: Int,
+        perLesson: Int = Srs.NEW_WORDS_PER_DAY
+    ): List<SessionCard> {
         val seenIds = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()
         return allWords(lang)
+            .take((uptoDay * perLesson).coerceAtLeast(0))
             .filter { it.id !in seenIds }
-            .take(count)
             .map { SessionCard(it, null) }
     }
+
+    /** A lesson's word block: today's due reviews plus the new words that lesson unlocks. */
+    suspend fun buildLessonWordsSession(
+        lang: String,
+        uptoDay: Int,
+        perLesson: Int = Srs.NEW_WORDS_PER_DAY,
+        today: Long = todayEpochDay()
+    ): List<SessionCard> =
+        buildReviewSession(lang, today) + unlockedNewWords(lang, uptoDay, perLesson)
 
     /** Rebuilds session cards from a persisted list of word ids (gym-proof resume). */
     suspend fun sessionFromIds(lang: String, ids: List<String>): List<SessionCard> {
