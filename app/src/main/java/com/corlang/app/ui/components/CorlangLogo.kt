@@ -24,6 +24,8 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -48,6 +50,16 @@ enum class LogoVariant {
 /** Brand ring blue and molten-core red, the two fixed brand colors. */
 val CorlangBrand = Color(0xFF2F7FAE)
 val CorlangCore = Color(0xFFC8402C)
+
+/**
+ * The wordmark typeface. The handoff specifies Helvetica, which is a commercial Monotype font;
+ * we bundle Arimo (OFL, docs/fonts/arimo-OFL.txt), the metrically-compatible open equivalent,
+ * subset to Latin + Croatian. Swap the res/font files for licensed Helvetica Neue to upgrade.
+ */
+val CorlangWordmarkFont = FontFamily(
+    Font(com.corlang.app.R.font.arimo_regular, FontWeight.Normal),
+    Font(com.corlang.app.R.font.arimo_bold, FontWeight.Bold),
+)
 
 @Composable
 fun CorlangLogo(
@@ -85,6 +97,7 @@ private fun wordmarkTextStyle(size: Dp, ink: Color): TextStyle {
     val fontSize = size.value * 1.22f
     return TextStyle(
         color = ink,
+        fontFamily = CorlangWordmarkFont,
         fontWeight = FontWeight.Bold,
         fontSize = fontSize.sp,
         letterSpacing = (fontSize * -0.02f).sp,
