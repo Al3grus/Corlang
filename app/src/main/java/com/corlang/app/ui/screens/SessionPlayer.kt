@@ -263,13 +263,22 @@ fun SessionPlayer(
         .collectAsState(initial = emptyList())
     val doneIds = checks.map { it.itemId }.toSet()
 
-    // Words step completes itself from live data.
+    // Words step completes itself from live data. "Pending" mirrors the daily session the Words
+    // tab builds: due reviews PLUS today's remaining new-word budget, so a fresh start (nothing
+    // due yet, but new words to introduce) does NOT read as already done.
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
+    val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
     val today = WordsRepository.todayEpochDay()
+    val allWordCount = remember(lang) { container.words.allWords(lang).size }
     val dueNow = reviews.count { it.dueEpochDay <= today }
+    val seenCount = reviews.size
+    val introducedToday = reviews.count { it.introducedEpochDay == today }
+    val newBudget = (newPerDay - introducedToday).coerceAtLeast(0)
+    val freshWaiting = (allWordCount - seenCount).coerceAtLeast(0).coerceAtMost(newBudget)
+    val wordsPending = dueNow + freshWaiting
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
-        StepKind.WORDS -> dueNow == 0 || s.id in doneIds
+        StepKind.WORDS -> wordsPending == 0 || s.id in doneIds
         else -> s.id in doneIds
     }
 
@@ -375,8 +384,8 @@ fun SessionPlayer(
                 }
                 if (step.kind == StepKind.WORDS) {
                     Text(
-                        if (dueNow == 0) "✅ Nothing due, this step is done."
-                        else "$dueNow words waiting.",
+                        if (wordsPending == 0) "✅ Nothing waiting, this step is done."
+                        else "$wordsPending words waiting.",
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.SemiBold,
                         modifier = Modifier.padding(top = 8.dp)
@@ -410,11 +419,11 @@ fun SessionPlayer(
             ) { Text("Let's go →") }
 
             StepKind.WORDS -> {
-                if (dueNow > 0) {
+                if (wordsPending > 0) {
                     Button(
                         onClick = { onNavigate(Dest.WORDS.route) },
                         modifier = Modifier.fillMaxWidth()
-                    ) { Text("Review $dueNow words now") }
+                    ) { Text("Study $wordsPending words now") }
                     Text(
                         "Come back to Today when you're done, your place here is saved.",
                         style = MaterialTheme.typography.bodySmall,
