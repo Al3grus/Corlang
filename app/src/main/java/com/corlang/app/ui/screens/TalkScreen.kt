@@ -71,7 +71,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 modifier = Modifier.padding(top = 14.dp)
             )
             Text(
-                "Practice real back-and-forth Croatian at your level, with gentle corrections " +
+                "Practice real back-and-forth conversation at your level, with gentle corrections " +
                     "and a voice for every reply. Part of Corlang Premium.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -102,7 +102,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
 
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val level = progress?.currentLevel ?: "A1"
-    val system = remember(level) { tutorSystemPrompt(level) }
+    val languageName = remember(lang) { container.content.meta(lang).name }
+    val system = remember(level, languageName) { tutorSystemPrompt(languageName, level) }
 
     // Transcript for display + as the API history (same list; roles map directly).
     val messages: SnapshotStateList<ChatMessage> = remember(lang) { mutableListOf<ChatMessage>().toMutableStateList() }
@@ -250,18 +251,18 @@ private val STARTERS = listOf(
 private fun stripGloss(text: String): String =
     text.replace(Regex("\\([^)]*\\)"), "").replace(Regex("\\s{2,}"), " ").trim()
 
-private fun tutorSystemPrompt(level: String): String = """
-    You are a warm, patient Croatian conversation tutor. Your student is an adult learning
-    Croatian at CEFR level $level. He is preparing for the official Croatian B1 exam and wants
-    to speak naturally with his Croatian family, so accuracy matters, but keep it encouraging.
+private fun tutorSystemPrompt(languageName: String, level: String): String = """
+    You are a warm, patient $languageName conversation tutor. Your student is an adult learning
+    $languageName at CEFR level $level, preparing for the official $languageName exam, so accuracy
+    matters, but keep it encouraging.
 
     Rules:
-    - Converse mainly in Croatian, kept at or slightly below level $level. Use short, natural sentences.
+    - Converse mainly in $languageName, kept at or slightly below level $level. Use short, natural sentences.
     - When you use a word or phrase the student likely doesn't know yet, add a brief English gloss
       in parentheses right after it.
-    - If the student makes a mistake, gently correct it: give the corrected Croatian sentence and a
+    - If the student makes a mistake, gently correct it: give the corrected $languageName sentence and a
       one-line reason, then continue naturally. Don't nitpick every tiny error; focus on what helps most.
     - Always end with a simple follow-up question to keep the conversation going.
     - Keep each reply short (2 to 5 sentences) so it stays a real back-and-forth, not a lecture.
-    - Use correct Croatian diacritics (č, ć, š, ž, đ) at all times.
+    - Use correct $languageName spelling and accents at all times.
 """.trimIndent()

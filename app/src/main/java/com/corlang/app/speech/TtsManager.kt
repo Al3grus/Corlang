@@ -10,9 +10,9 @@ import kotlinx.coroutines.flow.StateFlow
 enum class TtsState { INITIALIZING, READY, LANGUAGE_MISSING, UNAVAILABLE }
 
 /**
- * Croatian text-to-speech via the system engine. Lazy: the engine is created on first use.
- * Never blocks features, callers observe [state] and degrade gracefully (e.g. LISTEN
- * questions offer a "reveal transcript" fallback when Croatian isn't available).
+ * System text-to-speech for the active language (hr -> Croatian, fr -> French). Lazy: the engine
+ * is created on first use. Never blocks features, callers observe [state] and degrade gracefully
+ * (e.g. LISTEN questions offer a "reveal transcript" fallback when the voice isn't available).
  */
 class TtsManager(private val context: Context) {
 
@@ -22,7 +22,25 @@ class TtsManager(private val context: Context) {
     private var tts: TextToSpeech? = null
     private var initStarted = false
 
-    private val croatian = Locale("hr", "HR")
+    private var locale: Locale = Locale("hr", "HR")
+
+    /** Switch voice to the active language; re-applies live if the engine is already up. */
+    fun setLanguage(code: String) {
+        val next = SpeechLocales.localeFor(code)
+        if (next == locale) return
+        locale = next
+        val engine = tts
+        if (engine != null && initStarted) applyLanguage(engine)
+    }
+
+    private fun applyLanguage(engine: TextToSpeech) {
+        val result = engine.setLanguage(locale)
+        _state.value = when (result) {
+            TextToSpeech.LANG_MISSING_DATA, TextToSpeech.LANG_NOT_SUPPORTED ->
+                TtsState.LANGUAGE_MISSING
+            else -> TtsState.READY
+        }
+    }
 
     /** Idempotent; safe to call from any screen that might speak. */
     fun ensureInit() {
@@ -33,17 +51,12 @@ class TtsManager(private val context: Context) {
                 _state.value = TtsState.UNAVAILABLE
                 return@TextToSpeech
             }
-            val result = tts?.setLanguage(croatian)
-            _state.value = when (result) {
-                TextToSpeech.LANG_MISSING_DATA, TextToSpeech.LANG_NOT_SUPPORTED ->
-                    TtsState.LANGUAGE_MISSING
-                else -> TtsState.READY
-            }
+            tts?.let { applyLanguage(it) }
         }
     }
 
     /**
-     * Speaks Croatian text, replacing anything currently being spoken.
+     * Speaks text in the active language, replacing anything currently being spoken.
      * [rate] < 1 slows speech down (useful for listening drills).
      */
     fun speak(text: String, rate: Float = 1.0f) {
