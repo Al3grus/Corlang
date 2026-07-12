@@ -34,6 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.corlang.app.data.model.StudyPlan
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.theme.rememberReducedMotion
@@ -150,7 +151,9 @@ fun LevelJourney(
                     modifier = Modifier
                         .size(if (current) 46.dp else 40.dp)
                         .then(
-                            if (current) Modifier.graphicsLayer { scaleX = pulse; scaleY = pulse }
+                            // zIndex lifts the pulsing node above the connector lines so it
+                            // expands ON TOP of the path, not underneath it.
+                            if (current) Modifier.zIndex(1f).graphicsLayer { scaleX = pulse; scaleY = pulse }
                             else Modifier
                         )
                         .background(bg, CircleShape)
