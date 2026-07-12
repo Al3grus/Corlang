@@ -1,0 +1,2182 @@
+{
+  "title": "Le français en route vers le DELF",
+  "days": [
+    {
+      "day": 1,
+      "week": 1,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Les sons du français",
+      "objective": "Learn the French sounds that spelling hides, so you can read and hear French correctly.",
+      "paretoFocus": "French isn't phonetic like it looks: master the nasal vowels, silent endings and a few accents once, and pronunciation stops being a mystery.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 sound/pronunciation activity.",
+        "Repeat the nasal vowels on/an/in aloud.",
+        "Read 10 words aloud from the cheatsheet."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Say the three nasal vowels aloud.",
+          "Recall: is a final consonant usually pronounced?",
+          "Read 'bonjour, ça va ?' with correct sounds."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les sons clés",
+          "intro": "French letters combine into sounds. The big three to master are the nasal vowels (air through the nose) and the silent final consonants. Say each aloud.",
+          "items": [
+            {
+              "hr": "on / om — bonjour",
+              "en": "nasal 'o' (through the nose) — bonjour (hello)"
+            },
+            {
+              "hr": "an / en — enfant",
+              "en": "nasal 'a' — enfant (child)"
+            },
+            {
+              "hr": "in / ain — pain",
+              "en": "nasal 'i' — pain (bread)"
+            },
+            {
+              "hr": "é — été",
+              "en": "closed 'e' — été (summer); the accent aigu"
+            },
+            {
+              "hr": "è — mère",
+              "en": "open 'e' — mère (mother); the accent grave"
+            },
+            {
+              "hr": "silent endings — petit, vous",
+              "en": "final consonants are usually silent: peti(t), vou(s)"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Les sons",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which word contains a NASAL vowel?",
+              "difficulty": 2,
+              "options": [
+                "pain",
+                "papa",
+                "salade",
+                "café"
+              ],
+              "answer": "pain",
+              "explanation": "'ain' in pain is a nasal vowel; the others are oral."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "The accent in 'été' is called…",
+              "difficulty": 2,
+              "options": [
+                "accent aigu",
+                "accent grave",
+                "cédille",
+                "tréma"
+              ],
+              "answer": "accent aigu",
+              "explanation": "é = e + accent aigu (closed e)."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "In 'vous', the final 's' is…",
+              "difficulty": 2,
+              "options": [
+                "silent",
+                "pronounced 's'",
+                "pronounced 'z'",
+                "pronounced 'sh'"
+              ],
+              "answer": "silent",
+              "explanation": "Most final consonants in French are silent."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Add the missing accent: m__re (mother) → mère. Type the accented letter only.",
+              "difficulty": 2,
+              "answer": "è",
+              "explanation": "mère uses accent grave (open e).",
+              "accepted": [
+                "e"
+              ]
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Bonjour, ça va ?'",
+              "difficulty": 3,
+              "options": [
+                "Bonjour",
+                ",",
+                "ça",
+                "va",
+                "?"
+              ],
+              "ordered": [
+                "Bonjour",
+                ",",
+                "ça",
+                "va",
+                "?"
+              ],
+              "explanation": "A basic greeting question."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Se saluer",
+          "intro": "A first tiny exchange. Read both parts aloud, then just the 'Me' lines.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour !",
+              "en": "Hello!"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Bonjour !",
+              "en": "Hello!"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Ça va ?",
+              "en": "How's it going?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Ça va, merci. Et vous ?",
+              "en": "I'm fine, thanks. And you?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Très bien, merci.",
+              "en": "Very well, thank you."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "week": 1,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Bonjour et politesse",
+      "objective": "Greet, thank and say goodbye politely in both registers.",
+      "paretoFocus": "A handful of fixed politeness formulas cover most first contacts. Learn the tu/vous difference now.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'greetings' activity.",
+        "Practise tu vs vous with 5 example people.",
+        "Review today's words in the Words tab."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall bonjour / bonsoir / salut and when to use each.",
+          "Say 's'il vous plaît' and 's'il te plaît'.",
+          "Reply to 'Merci !'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Formules de politesse",
+          "intro": "French politeness is a fixed set of phrases. 'vous' is formal/plural; 'tu' is informal.",
+          "items": [
+            {
+              "hr": "bonjour",
+              "en": "hello / good day (any daytime)"
+            },
+            {
+              "hr": "bonsoir",
+              "en": "good evening"
+            },
+            {
+              "hr": "salut",
+              "en": "hi / bye (informal)"
+            },
+            {
+              "hr": "merci beaucoup",
+              "en": "thank you very much"
+            },
+            {
+              "hr": "s'il vous plaît",
+              "en": "please (formal); s'il te plaît (informal)"
+            },
+            {
+              "hr": "au revoir",
+              "en": "goodbye"
+            },
+            {
+              "hr": "excusez-moi",
+              "en": "excuse me (formal)"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Politesse",
+          "intro": "Pick the right phrase.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "You greet your boss in the morning:",
+              "difficulty": 2,
+              "options": [
+                "Bonjour",
+                "Salut",
+                "Bonne nuit",
+                "Au revoir"
+              ],
+              "answer": "Bonjour",
+              "explanation": "Bonjour is the standard, polite daytime greeting."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'s'il vous plaît' is the ___ form of 'please'.",
+              "difficulty": 3,
+              "options": [
+                "formal",
+                "informal",
+                "past",
+                "plural only"
+              ],
+              "answer": "formal",
+              "explanation": "Use s'il te plaît with people you address as 'tu'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "How do you thank someone strongly?",
+              "difficulty": 2,
+              "options": [
+                "Merci beaucoup",
+                "De rien",
+                "Pardon",
+                "Bonsoir"
+              ],
+              "answer": "Merci beaucoup",
+              "explanation": "beaucoup = a lot."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Reply to 'Merci !' with 'You're welcome': De ___.",
+              "difficulty": 3,
+              "answer": "rien",
+              "explanation": "De rien = you're welcome (lit. 'of nothing')."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Un café, s'il vous plaît.'",
+              "difficulty": 4,
+              "options": [
+                "Un",
+                "café",
+                ",",
+                "s'il",
+                "vous",
+                "plaît",
+                "."
+              ],
+              "ordered": [
+                "Un",
+                "café",
+                ",",
+                "s'il",
+                "vous",
+                "plaît",
+                "."
+              ],
+              "explanation": "Polite request."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Au café",
+          "intro": "Ordering politely. Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour ! Vous désirez ?",
+              "en": "Hello! What would you like?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Bonjour. Un café, s'il vous plaît.",
+              "en": "Hello. A coffee, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Voilà. Ce sera tout ?",
+              "en": "Here you are. Will that be all?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, merci beaucoup.",
+              "en": "Yes, thank you very much."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Au revoir !",
+              "en": "Goodbye!"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Au revoir, bonne journée !",
+              "en": "Goodbye, have a good day!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "week": 1,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Se présenter",
+      "objective": "Introduce yourself: name, nationality and where you're from.",
+      "paretoFocus": "Three patterns — Je m'appelle…, Je suis…, Je viens de… — carry every first introduction.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)",
+        "Conversation partner"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'se présenter' activity.",
+        "Say your own full introduction aloud 5 times.",
+        "Learn 10 new words in the Words tab."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Give your name, nationality and city from memory.",
+          "Recall Je m'appelle / Je suis / Je viens de.",
+          "Say 'Enchanté(e)'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Se présenter",
+          "intro": "The core self-introduction phrases. Nationalities change for men/women.",
+          "items": [
+            {
+              "hr": "Je m'appelle Marie.",
+              "en": "My name is Marie. (lit. I call myself)"
+            },
+            {
+              "hr": "Je suis étudiant.",
+              "en": "I am a student. (man); étudiante (woman)"
+            },
+            {
+              "hr": "Je viens de France.",
+              "en": "I come from France."
+            },
+            {
+              "hr": "J'habite à Paris.",
+              "en": "I live in Paris."
+            },
+            {
+              "hr": "Enchanté !",
+              "en": "Nice to meet you! (man); enchantée (woman)"
+            },
+            {
+              "hr": "Comment vous appelez-vous ?",
+              "en": "What is your name? (formal)"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Se présenter",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'Je m'appelle Paul' means:",
+              "difficulty": 2,
+              "options": [
+                "My name is Paul",
+                "I am from Paul",
+                "I like Paul",
+                "Paul is here"
+              ],
+              "answer": "My name is Paul",
+              "explanation": "s'appeler = to be called."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "A woman says 'I am a student':",
+              "difficulty": 3,
+              "options": [
+                "Je suis étudiante",
+                "Je suis étudiant",
+                "Je suis étudier",
+                "J'ai étudiant"
+              ],
+              "answer": "Je suis étudiante",
+              "explanation": "Feminine adds -e: étudiante."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "To say where you're from:",
+              "difficulty": 3,
+              "options": [
+                "Je viens de…",
+                "Je vais à…",
+                "J'ai de…",
+                "Je suis à…"
+              ],
+              "answer": "Je viens de…",
+              "explanation": "venir de = to come from."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: J'___ à Lyon. (I live in Lyon) → habite",
+              "difficulty": 3,
+              "answer": "habite",
+              "explanation": "habiter = to live (regular -ER): j'habite."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Je viens de Belgique.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "viens",
+                "de",
+                "Belgique",
+                "."
+              ],
+              "ordered": [
+                "Je",
+                "viens",
+                "de",
+                "Belgique",
+                "."
+              ],
+              "explanation": "Saying your origin."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Première rencontre",
+          "intro": "Meeting someone new. Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour ! Comment vous appelez-vous ?",
+              "en": "Hello! What's your name?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je m'appelle Alex. Et vous ?",
+              "en": "My name is Alex. And you?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Moi, c'est Camille. Vous venez d'où ?",
+              "en": "I'm Camille. Where are you from?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je viens des États-Unis. J'habite à Zagreb.",
+              "en": "I'm from the United States. I live in Zagreb."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Enchantée !",
+              "en": "Nice to meet you!"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Enchanté !",
+              "en": "Nice to meet you!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "week": 1,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Les nombres et l'âge",
+      "objective": "Count and give your age and phone number.",
+      "paretoFocus": "Numbers 0-20 plus the tens unlock prices, times, ages and phone numbers — daily survival.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'numbers' activity.",
+        "Count aloud 0-20, then the tens to 60.",
+        "Say your age and phone number in French."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Count to 20 from memory.",
+          "Recall: age uses which verb?",
+          "Say your age in a full sentence."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les nombres",
+          "intro": "Count aloud. Note the tricky teens and the tens.",
+          "items": [
+            {
+              "hr": "un, deux, trois",
+              "en": "one, two, three"
+            },
+            {
+              "hr": "quatre, cinq, six",
+              "en": "four, five, six"
+            },
+            {
+              "hr": "sept, huit, neuf, dix",
+              "en": "seven, eight, nine, ten"
+            },
+            {
+              "hr": "vingt, trente, quarante",
+              "en": "twenty, thirty, forty"
+            },
+            {
+              "hr": "J'ai trente ans.",
+              "en": "I am thirty. (lit. I have thirty years)"
+            },
+            {
+              "hr": "Quel âge avez-vous ?",
+              "en": "How old are you? (formal)"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Les nombres",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'sept' is:",
+              "difficulty": 2,
+              "options": [
+                "7",
+                "6",
+                "9",
+                "17"
+              ],
+              "answer": "7",
+              "explanation": "sept = 7."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "To say your age you use the verb…",
+              "difficulty": 3,
+              "options": [
+                "avoir",
+                "être",
+                "faire",
+                "aller"
+              ],
+              "answer": "avoir",
+              "explanation": "Age uses avoir: j'ai 30 ans, NOT je suis."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'quarante' =",
+              "difficulty": 2,
+              "options": [
+                "40",
+                "14",
+                "24",
+                "44"
+              ],
+              "answer": "40",
+              "explanation": "quarante = 40."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: J'ai vingt-cinq ___. (years) → ans",
+              "difficulty": 3,
+              "answer": "ans",
+              "explanation": "an = year; always plural after a number > 1: ans."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Quel âge avez-vous ?'",
+              "difficulty": 4,
+              "options": [
+                "Quel",
+                "âge",
+                "avez",
+                "-vous",
+                "?"
+              ],
+              "ordered": [
+                "Quel",
+                "âge",
+                "avez",
+                "-vous",
+                "?"
+              ],
+              "explanation": "Asking age formally."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "L'âge",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Vous avez quel âge ?",
+              "en": "How old are you?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "J'ai trente ans. Et vous ?",
+              "en": "I'm thirty. And you?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Moi, j'ai vingt-huit ans.",
+              "en": "I'm twenty-eight."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Vous avez des enfants ?",
+              "en": "Do you have children?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Oui, j'ai deux enfants.",
+              "en": "Yes, I have two children."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "week": 2,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Le genre et les articles",
+      "objective": "Use le/la/un/une correctly and learn nouns with their gender.",
+      "paretoFocus": "Every French noun has a gender shown by its article. Learn each noun WITH le/la — it's the single biggest habit for accuracy.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'articles/gender' activity.",
+        "Learn 10 nouns WITH their article in the Words tab.",
+        "Label 5 objects at home with le/la."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall: which article for a feminine noun?",
+          "Say 3 nouns with le and 3 with la.",
+          "When does le/la become l'?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les articles",
+          "intro": "Definite (le/la/les) = specific; indefinite (un/une/des) = a/some. Before a vowel, le/la → l'.",
+          "items": [
+            {
+              "hr": "le livre",
+              "en": "the book (masculine)"
+            },
+            {
+              "hr": "la table",
+              "en": "the table (feminine)"
+            },
+            {
+              "hr": "l'ami / l'amie",
+              "en": "the friend (before a vowel: l')"
+            },
+            {
+              "hr": "un café",
+              "en": "a coffee (masculine)"
+            },
+            {
+              "hr": "une maison",
+              "en": "a house (feminine)"
+            },
+            {
+              "hr": "les enfants",
+              "en": "the children (plural)"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Articles",
+          "intro": "Choose the right article.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "___ maison (house, feminine):",
+              "difficulty": 3,
+              "options": [
+                "la",
+                "le",
+                "les",
+                "un"
+              ],
+              "answer": "la",
+              "explanation": "maison is feminine → la maison / une maison."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "___ livre (book, masculine):",
+              "difficulty": 3,
+              "options": [
+                "le",
+                "la",
+                "une",
+                "des"
+              ],
+              "answer": "le",
+              "explanation": "livre is masculine → le livre."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Before 'ami', le becomes:",
+              "difficulty": 3,
+              "options": [
+                "l'",
+                "la",
+                "les",
+                "un"
+              ],
+              "answer": "l'",
+              "explanation": "Before a vowel, le/la elide to l'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Add the indefinite article (feminine): ___ table → une",
+              "difficulty": 3,
+              "answer": "une",
+              "explanation": "table is feminine → une table."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'C'est une maison.'",
+              "difficulty": 4,
+              "options": [
+                "C'est",
+                "une",
+                "maison",
+                "."
+              ],
+              "ordered": [
+                "C'est",
+                "une",
+                "maison",
+                "."
+              ],
+              "explanation": "Saying 'it's a house'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Dans l'appartement",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "C'est ta maison ?",
+              "en": "Is this your house?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, c'est un appartement.",
+              "en": "No, it's a flat."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Il y a combien de chambres ?",
+              "en": "How many bedrooms are there?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il y a deux chambres et une cuisine.",
+              "en": "There are two bedrooms and a kitchen."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et la salle de bain ?",
+              "en": "And the bathroom?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "La salle de bain est là.",
+              "en": "The bathroom is there."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "week": 2,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Être et avoir",
+      "objective": "Conjugate the two most important verbs in the present.",
+      "paretoFocus": "être (to be) and avoir (to have) describe states, possession and age, and later build the past tense. Memorise them cold.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'être/avoir' activity.",
+        "Recite both verbs aloud, all persons.",
+        "Write 4 sentences: 2 with être, 2 with avoir."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Conjugate être from memory.",
+          "Conjugate avoir from memory.",
+          "Say 'I'm hungry' and 'I'm tired'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Être et avoir",
+          "intro": "Irregular but essential. Say the full conjugations aloud.",
+          "items": [
+            {
+              "hr": "je suis / tu es / il est",
+              "en": "I am / you are / he is"
+            },
+            {
+              "hr": "nous sommes / vous êtes / ils sont",
+              "en": "we are / you are / they are"
+            },
+            {
+              "hr": "j'ai / tu as / il a",
+              "en": "I have / you have / he has"
+            },
+            {
+              "hr": "nous avons / vous avez / ils ont",
+              "en": "we have / you have / they have"
+            },
+            {
+              "hr": "Je suis fatigué.",
+              "en": "I am tired."
+            },
+            {
+              "hr": "J'ai faim.",
+              "en": "I am hungry. (lit. I have hunger)"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Être / avoir",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'Nous ___ français.' (we are)",
+              "difficulty": 3,
+              "options": [
+                "sommes",
+                "avons",
+                "êtes",
+                "sont"
+              ],
+              "answer": "sommes",
+              "explanation": "nous sommes = we are."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'J'___ deux enfants.' (I have)",
+              "difficulty": 3,
+              "options": [
+                "ai",
+                "suis",
+                "es",
+                "a"
+              ],
+              "answer": "ai",
+              "explanation": "j'ai = I have."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'I am hungry' in French uses:",
+              "difficulty": 4,
+              "options": [
+                "avoir",
+                "être",
+                "faire",
+                "aller"
+              ],
+              "answer": "avoir",
+              "explanation": "avoir faim = to be hungry (have hunger)."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: Vous ___ étudiant ? (are) → êtes",
+              "difficulty": 3,
+              "answer": "êtes",
+              "explanation": "vous êtes = you are."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Ils sont fatigués.'",
+              "difficulty": 4,
+              "options": [
+                "Ils",
+                "sont",
+                "fatigués",
+                "."
+              ],
+              "ordered": [
+                "Ils",
+                "sont",
+                "fatigués",
+                "."
+              ],
+              "explanation": "They are tired."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Comment ça va ?",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Tu es fatigué ?",
+              "en": "Are you tired?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je suis très fatigué.",
+              "en": "Yes, I'm very tired."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu as faim ?",
+              "en": "Are you hungry?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, mais j'ai soif.",
+              "en": "No, but I'm thirsty."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "On a de l'eau à la maison.",
+              "en": "We have water at home."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Parfait, merci !",
+              "en": "Perfect, thanks!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "week": 2,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Le présent : -ER, aller, faire",
+      "objective": "Conjugate regular -ER verbs and the key irregulars aller and faire.",
+      "paretoFocus": "Regular -ER verbs are ~90% of all French verbs and share ONE ending pattern. Add aller and faire and you can talk about daily life.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'present tense' activity.",
+        "Conjugate parler, aller, faire aloud.",
+        "Write 5 sentences about your day."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Conjugate a regular -ER verb from memory.",
+          "Recall je vais / nous allons.",
+          "Recall vous faites."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Le présent",
+          "intro": "Drop -er, add -e/-es/-e/-ons/-ez/-ent. aller and faire are irregular.",
+          "items": [
+            {
+              "hr": "je parle / tu parles / il parle",
+              "en": "parler (to speak): I/you/he speak"
+            },
+            {
+              "hr": "nous parlons / vous parlez / ils parlent",
+              "en": "we/you/they speak"
+            },
+            {
+              "hr": "je vais / tu vas / il va / nous allons / vous allez / ils vont",
+              "en": "aller (to go)"
+            },
+            {
+              "hr": "je fais / tu fais / il fait / nous faisons / vous faites / ils font",
+              "en": "faire (to do/make)"
+            },
+            {
+              "hr": "J'aime le café.",
+              "en": "I like coffee."
+            },
+            {
+              "hr": "Nous habitons à Paris.",
+              "en": "We live in Paris."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Le présent",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'Nous ___' (parler):",
+              "difficulty": 3,
+              "options": [
+                "parlons",
+                "parlez",
+                "parle",
+                "parlent"
+              ],
+              "answer": "parlons",
+              "explanation": "nous form of -ER verbs = -ons."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'Je ___ au marché.' (aller):",
+              "difficulty": 3,
+              "options": [
+                "vais",
+                "vas",
+                "va",
+                "allons"
+              ],
+              "answer": "vais",
+              "explanation": "je vais = I go."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'Vous ___ du sport ?' (faire):",
+              "difficulty": 4,
+              "options": [
+                "faites",
+                "faisons",
+                "fait",
+                "font"
+              ],
+              "answer": "faites",
+              "explanation": "vous faites (irregular)."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: Tu ___ français ? (parler) → parles",
+              "difficulty": 3,
+              "answer": "parles",
+              "explanation": "tu parles = you speak."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Je vais au travail.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "vais",
+                "au",
+                "travail",
+                "."
+              ],
+              "ordered": [
+                "Je",
+                "vais",
+                "au",
+                "travail",
+                "."
+              ],
+              "explanation": "I go to work."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Le week-end",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Qu'est-ce que tu fais le week-end ?",
+              "en": "What do you do on weekends?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je vais au marché et je cuisine.",
+              "en": "I go to the market and I cook."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu fais du sport ?",
+              "en": "Do you do sport?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je joue au football.",
+              "en": "Yes, I play football."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Moi aussi j'aime le sport.",
+              "en": "I like sport too."
+            },
+            {
+              "speaker": "Me",
+              "hr": "On joue ensemble dimanche ?",
+              "en": "Shall we play together on Sunday?"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "week": 2,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "La famille",
+      "objective": "Talk about your family with possessive adjectives.",
+      "paretoFocus": "Family vocabulary plus mon/ma/mes lets you describe the people in your life — a very common DELF topic.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'family' activity.",
+        "Learn family words in the Words tab.",
+        "Describe your family aloud in 5 sentences."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Name 6 family members from memory.",
+          "Recall mon / ma / mes.",
+          "Describe your family in 3 sentences."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "La famille",
+          "intro": "Possessives agree with the THING owned: mon/ma/mes.",
+          "items": [
+            {
+              "hr": "le père / la mère",
+              "en": "father / mother"
+            },
+            {
+              "hr": "le frère / la sœur",
+              "en": "brother / sister"
+            },
+            {
+              "hr": "le fils / la fille",
+              "en": "son / daughter"
+            },
+            {
+              "hr": "mon père, ma mère, mes parents",
+              "en": "my father, my mother, my parents"
+            },
+            {
+              "hr": "ton frère, ta sœur",
+              "en": "your brother, your sister (informal)"
+            },
+            {
+              "hr": "Nous sommes une grande famille.",
+              "en": "We are a big family."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "La famille",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "___ mère (my mother):",
+              "difficulty": 3,
+              "options": [
+                "ma",
+                "mon",
+                "mes",
+                "ta"
+              ],
+              "answer": "ma",
+              "explanation": "mère is feminine → ma mère."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "___ parents (my parents):",
+              "difficulty": 3,
+              "options": [
+                "mes",
+                "ma",
+                "mon",
+                "ton"
+              ],
+              "answer": "mes",
+              "explanation": "plural → mes parents."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'la sœur' means:",
+              "difficulty": 2,
+              "options": [
+                "sister",
+                "brother",
+                "daughter",
+                "mother"
+              ],
+              "answer": "sister",
+              "explanation": "la sœur = sister."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: ___ frère s'appelle Marc. (my) → Mon",
+              "difficulty": 3,
+              "answer": "Mon",
+              "explanation": "frère is masculine → mon frère."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'J'ai deux sœurs.'",
+              "difficulty": 4,
+              "options": [
+                "J'ai",
+                "deux",
+                "sœurs",
+                "."
+              ],
+              "ordered": [
+                "J'ai",
+                "deux",
+                "sœurs",
+                "."
+              ],
+              "explanation": "I have two sisters."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Ta famille",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Tu as des frères et sœurs ?",
+              "en": "Do you have siblings?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, j'ai un frère et une sœur.",
+              "en": "Yes, I have a brother and a sister."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tes parents habitent où ?",
+              "en": "Where do your parents live?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Mes parents habitent aux États-Unis.",
+              "en": "My parents live in the United States."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu es marié ?",
+              "en": "Are you married?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, ma femme est croate.",
+              "en": "Yes, my wife is Croatian."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Manger et boire",
+      "objective": "Order food and drink and use the partitive du/de la.",
+      "paretoFocus": "The partitive (du/de la/des = 'some') is essential at any café or table — the most practical A1 grammar point.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'food/restaurant' activity.",
+        "Learn food words in the Words tab.",
+        "Role-play ordering a meal aloud."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall du / de la / de l' / des.",
+          "Say 'I would like…' politely.",
+          "Ask for the bill."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Au restaurant",
+          "intro": "'some' of an uncountable = du (m.) / de la (f.) / de l' (vowel) / des (pl.).",
+          "items": [
+            {
+              "hr": "du pain, de la viande",
+              "en": "some bread, some meat"
+            },
+            {
+              "hr": "de l'eau, des légumes",
+              "en": "some water, some vegetables"
+            },
+            {
+              "hr": "Je voudrais un café.",
+              "en": "I would like a coffee. (polite)"
+            },
+            {
+              "hr": "l'addition, s'il vous plaît",
+              "en": "the bill, please"
+            },
+            {
+              "hr": "Je prends une salade.",
+              "en": "I'll have a salad."
+            },
+            {
+              "hr": "C'est délicieux !",
+              "en": "It's delicious!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "La nourriture",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'some bread' =",
+              "difficulty": 3,
+              "options": [
+                "du pain",
+                "de la pain",
+                "des pain",
+                "un pain"
+              ],
+              "answer": "du pain",
+              "explanation": "pain is masculine → du pain."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'some water' =",
+              "difficulty": 4,
+              "options": [
+                "de l'eau",
+                "du eau",
+                "de la eau",
+                "des eau"
+              ],
+              "answer": "de l'eau",
+              "explanation": "eau starts with a vowel → de l'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Polite 'I would like':",
+              "difficulty": 3,
+              "options": [
+                "Je voudrais",
+                "Je veux",
+                "J'ai",
+                "Je vais"
+              ],
+              "answer": "Je voudrais",
+              "explanation": "voudrais (conditional) is polite."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: Je voudrais ___ viande. (some, fem.) → de la",
+              "difficulty": 4,
+              "answer": "de la",
+              "explanation": "viande is feminine → de la viande."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'L'addition, s'il vous plaît.'",
+              "difficulty": 4,
+              "options": [
+                "L'addition",
+                ",",
+                "s'il",
+                "vous",
+                "plaît",
+                "."
+              ],
+              "ordered": [
+                "L'addition",
+                ",",
+                "s'il",
+                "vous",
+                "plaît",
+                "."
+              ],
+              "explanation": "Asking for the bill."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Au restaurant",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour, vous avez choisi ?",
+              "en": "Hello, have you chosen?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je voudrais une salade et de l'eau.",
+              "en": "Yes, I'd like a salad and some water."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et comme plat ?",
+              "en": "And for the main course?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Du poisson, s'il vous plaît.",
+              "en": "Some fish, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Très bien.",
+              "en": "Very good."
+            },
+            {
+              "speaker": "Me",
+              "hr": "L'addition, s'il vous plaît.",
+              "en": "The bill, please."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "La négation et les questions",
+      "objective": "Make negatives with ne…pas and ask questions three ways.",
+      "paretoFocus": "ne…pas and the three question forms let you say what ISN'T and ask about anything — the backbone of conversation.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'negation/questions' activity.",
+        "Turn 5 sentences negative aloud.",
+        "Ask 5 questions three different ways."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Make a sentence negative with ne…pas.",
+          "Ask the same question three ways.",
+          "Recall 4 question words."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Ne… pas et les questions",
+          "intro": "Negation wraps the verb: ne + verb + pas. Three ways to ask: intonation, est-ce que, inversion.",
+          "items": [
+            {
+              "hr": "Je ne comprends pas.",
+              "en": "I don't understand."
+            },
+            {
+              "hr": "Je n'ai pas faim.",
+              "en": "I'm not hungry. (ne → n' before a vowel)"
+            },
+            {
+              "hr": "Tu viens ? / Est-ce que tu viens ? / Viens-tu ?",
+              "en": "Are you coming? (three registers)"
+            },
+            {
+              "hr": "Où habites-tu ?",
+              "en": "Where do you live?"
+            },
+            {
+              "hr": "Qu'est-ce que c'est ?",
+              "en": "What is it?"
+            },
+            {
+              "hr": "Pourquoi ?",
+              "en": "Why?"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Négation / questions",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'I don't speak French' =",
+              "difficulty": 3,
+              "options": [
+                "Je ne parle pas français",
+                "Je parle pas non",
+                "Je non parle français",
+                "Je ne français parle"
+              ],
+              "answer": "Je ne parle pas français",
+              "explanation": "ne + verb + pas."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Before a vowel, 'ne' becomes:",
+              "difficulty": 3,
+              "options": [
+                "n'",
+                "na",
+                "ne'",
+                "no"
+              ],
+              "answer": "n'",
+              "explanation": "je n'ai pas."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "The most formal way to ask a question is:",
+              "difficulty": 4,
+              "options": [
+                "inversion (Viens-tu ?)",
+                "intonation (Tu viens ?)",
+                "just 'oui ?'",
+                "adding 'non'"
+              ],
+              "answer": "inversion (Viens-tu ?)",
+              "explanation": "Inversion is the formal register."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Make it negative: Je ___ comprends ___. → ne / pas (type: ne)",
+              "difficulty": 3,
+              "answer": "ne",
+              "explanation": "ne … pas wraps the verb.",
+              "accepted": [
+                "n'"
+              ]
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Où est-ce que tu habites ?'",
+              "difficulty": 5,
+              "options": [
+                "Où",
+                "est-ce",
+                "que",
+                "tu",
+                "habites",
+                "?"
+              ],
+              "ordered": [
+                "Où",
+                "est-ce",
+                "que",
+                "tu",
+                "habites",
+                "?"
+              ],
+              "explanation": "Asking where someone lives."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Je ne comprends pas",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Vous parlez français ?",
+              "en": "Do you speak French?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Un peu, mais je ne comprends pas tout.",
+              "en": "A little, but I don't understand everything."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Vous venez d'où ?",
+              "en": "Where are you from?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Pardon, pouvez-vous répéter ?",
+              "en": "Sorry, can you repeat?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Vous. Venez. D'où ?",
+              "en": "Where. Are. You from?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Ah ! Je viens des États-Unis.",
+              "en": "Ah! I'm from the United States."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Le futur proche",
+      "objective": "Talk about plans with aller + infinitive.",
+      "paretoFocus": "aller + infinitive is the everyday future ('going to do'). One easy pattern covers all your plans.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'futur proche' activity.",
+        "Say 5 plans for this week aloud.",
+        "Make 3 of them negative."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Form the near future with aller.",
+          "Say one plan for tomorrow.",
+          "Make a plan negative."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Le futur proche",
+          "intro": "Present of aller + an infinitive = near future.",
+          "items": [
+            {
+              "hr": "Je vais manger.",
+              "en": "I'm going to eat."
+            },
+            {
+              "hr": "Tu vas partir ?",
+              "en": "Are you going to leave?"
+            },
+            {
+              "hr": "Il va pleuvoir.",
+              "en": "It's going to rain."
+            },
+            {
+              "hr": "Nous allons visiter Paris.",
+              "en": "We're going to visit Paris."
+            },
+            {
+              "hr": "Je ne vais pas travailler demain.",
+              "en": "I'm not going to work tomorrow."
+            },
+            {
+              "hr": "Qu'est-ce que tu vas faire ?",
+              "en": "What are you going to do?"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Le futur proche",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'We're going to eat' =",
+              "difficulty": 3,
+              "options": [
+                "Nous allons manger",
+                "Nous mangeons",
+                "Nous avons mangé",
+                "Nous allons mangeons"
+              ],
+              "answer": "Nous allons manger",
+              "explanation": "aller (present) + infinitive."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'It's going to rain' =",
+              "difficulty": 3,
+              "options": [
+                "Il va pleuvoir",
+                "Il pleut",
+                "Il a plu",
+                "Il pleuvoir va"
+              ],
+              "answer": "Il va pleuvoir",
+              "explanation": "va + infinitive pleuvoir."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Negation of futur proche wraps:",
+              "difficulty": 4,
+              "options": [
+                "aller (ne vais pas manger)",
+                "the infinitive",
+                "both verbs",
+                "nothing"
+              ],
+              "answer": "aller (ne vais pas manger)",
+              "explanation": "ne + aller + pas + infinitive."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: Demain, je ___ visiter le musée. (aller) → vais",
+              "difficulty": 3,
+              "answer": "vais",
+              "explanation": "je vais + infinitive."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Tu vas partir demain ?'",
+              "difficulty": 4,
+              "options": [
+                "Tu",
+                "vas",
+                "partir",
+                "demain",
+                "?"
+              ],
+              "ordered": [
+                "Tu",
+                "vas",
+                "partir",
+                "demain",
+                "?"
+              ],
+              "explanation": "Asking about a plan."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Les projets",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Qu'est-ce que tu vas faire ce soir ?",
+              "en": "What are you going to do tonight?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je vais regarder un film.",
+              "en": "I'm going to watch a film."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et demain ?",
+              "en": "And tomorrow?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Demain, je vais visiter Paris.",
+              "en": "Tomorrow I'm going to visit Paris."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Super ! Tu vas prendre le train ?",
+              "en": "Great! Are you going to take the train?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je vais partir tôt le matin.",
+              "en": "Yes, I'm going to leave early in the morning."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "title": "Le passé composé (introduction)",
+      "objective": "Talk about the past with avoir + past participle.",
+      "paretoFocus": "The passé composé reports completed past actions. Most verbs use avoir + a past participle — the single most useful past tense.",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ],
+      "drills": [
+        "Do a TV5MONDE A1 'passé composé' activity.",
+        "Say 5 things you did yesterday aloud.",
+        "Make 2 of them negative."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Form the passé composé with avoir.",
+          "Recall the participle endings -é / -i / -u.",
+          "Say 3 things you did yesterday."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Le passé composé",
+          "intro": "avoir (present) + past participle. -ER → -é, -IR → -i, -RE → -u.",
+          "items": [
+            {
+              "hr": "J'ai mangé.",
+              "en": "I ate / I have eaten."
+            },
+            {
+              "hr": "Tu as fini ?",
+              "en": "Did you finish?"
+            },
+            {
+              "hr": "Il a attendu.",
+              "en": "He waited."
+            },
+            {
+              "hr": "Nous avons visité Paris.",
+              "en": "We visited Paris."
+            },
+            {
+              "hr": "J'ai fait / j'ai vu / j'ai pris",
+              "en": "I did / I saw / I took (irregular participles)"
+            },
+            {
+              "hr": "Je n'ai pas compris.",
+              "en": "I didn't understand."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Le passé composé",
+          "intro": "Choose or complete.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "'I ate' =",
+              "difficulty": 3,
+              "options": [
+                "J'ai mangé",
+                "Je mange",
+                "Je vais manger",
+                "J'ai manger"
+              ],
+              "answer": "J'ai mangé",
+              "explanation": "avoir + past participle mangé."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Past participle of 'finir':",
+              "difficulty": 3,
+              "options": [
+                "fini",
+                "finé",
+                "findu",
+                "finit"
+              ],
+              "answer": "fini",
+              "explanation": "-IR verbs → -i."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'We visited' =",
+              "difficulty": 3,
+              "options": [
+                "Nous avons visité",
+                "Nous visitons",
+                "Nous allons visiter",
+                "Nous avons visiter"
+              ],
+              "answer": "Nous avons visité",
+              "explanation": "avons + visité."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: Hier, j'ai ___ un film. (regarder) → regardé",
+              "difficulty": 3,
+              "answer": "regardé",
+              "explanation": "-ER → -é: regardé."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Order: 'Nous avons vu un film.'",
+              "difficulty": 4,
+              "options": [
+                "Nous",
+                "avons",
+                "vu",
+                "un",
+                "film",
+                "."
+              ],
+              "ordered": [
+                "Nous",
+                "avons",
+                "vu",
+                "un",
+                "film",
+                "."
+              ],
+              "explanation": "We saw a film."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Le week-end passé",
+          "intro": "Play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Qu'est-ce que tu as fait ce week-end ?",
+              "en": "What did you do this weekend?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "J'ai visité un musée et j'ai mangé au restaurant.",
+              "en": "I visited a museum and ate at a restaurant."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "C'était bien ?",
+              "en": "Was it good?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, mais je n'ai pas dormi beaucoup.",
+              "en": "Yes, but I didn't sleep much."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu as vu le nouveau film ?",
+              "en": "Did you see the new film?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, pas encore.",
+              "en": "No, not yet."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ]
+    }
+  ]
+}
