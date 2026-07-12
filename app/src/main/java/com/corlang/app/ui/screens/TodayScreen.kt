@@ -59,8 +59,17 @@ fun TodayScreen(
 
     // Live due count for the hero ('today' computed fresh, no stale midnight state).
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
+    val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
     val today = WordsRepository.todayEpochDay()
     val dueNow = reviews.count { it.dueEpochDay <= today }
+    // The full daily word load = due reviews PLUS today's remaining new-word budget. The WORDS
+    // step (and the goal ring) count it as done only when this is 0 — otherwise a fresh course
+    // (no reviews due, but new words to introduce) would look 1/5 done with nothing actually done.
+    val allWordCount = remember(lang) { container.words.allWords(lang).size }
+    val introducedToday = reviews.count { it.introducedEpochDay == today }
+    val newBudget = (newPerDay - introducedToday).coerceAtLeast(0)
+    val freshWaiting = (allWordCount - reviews.size).coerceAtLeast(0).coerceAtMost(newBudget)
+    val wordsPending = dueNow + freshWaiting
 
     // The lesson to land on = the day AFTER your last completed one (also covers doing several
     // days at once). Robust even if the stored currentDay lags behind completions.
@@ -101,7 +110,7 @@ fun TodayScreen(
     val doneIds = checks.map { it.itemId }.toSet()
     val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val stepsDone = actionSteps.count {
-        it.id in doneIds || (it.kind == StepKind.WORDS && dueNow == 0)
+        it.id in doneIds || (it.kind == StepKind.WORDS && wordsPending == 0)
     }
 
     // Daily goal ring: today's guided session, measured on the day you're up to (not the one
@@ -119,7 +128,7 @@ fun TodayScreen(
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
     val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val targetStepsDone = targetAction.count {
-        it.id in targetDoneIds || (it.kind == StepKind.WORDS && dueNow == 0)
+        it.id in targetDoneIds || (it.kind == StepKind.WORDS && wordsPending == 0)
     }
     val ringProgress = when {
         completedToday > 0 -> 1f
