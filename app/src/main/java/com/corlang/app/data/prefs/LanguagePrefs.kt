@@ -11,6 +11,15 @@ import kotlinx.coroutines.flow.map
 
 private val Context.dataStore by preferencesDataStore(name = "corlang_prefs")
 
+/** The learner's onboarding profile. gender is "m"/"f" (drives Croatian word forms). */
+data class LearnerProfile(
+    val name: String,
+    val gender: String,
+    val from: String,
+    val livesIn: String,
+    val reason: String,
+)
+
 /** Persists the user's selected language and small app settings across launches. */
 class LanguagePrefs(private val context: Context) {
 
@@ -55,6 +64,47 @@ class LanguagePrefs(private val context: Context) {
 
     suspend fun setNewWordsPerDay(count: Int) {
         context.dataStore.edit { it[newWordsKey] = count }
+    }
+
+    // ----- Learner profile (onboarding) -----
+
+    private val onboardedKey = booleanPreferencesKey("onboarding_done")
+    private val profileNameKey = stringPreferencesKey("profile_name")
+    private val profileGenderKey = stringPreferencesKey("profile_gender")       // "m" / "f"
+    private val profileFromKey = stringPreferencesKey("profile_from")           // English country name
+    private val profileLivesInKey = stringPreferencesKey("profile_lives_in")    // English country name
+    private val profileReasonKey = stringPreferencesKey("profile_reason")
+
+    /** True once the first-run intro (profile + goal + level) has been completed or skipped. */
+    val onboardingDone: Flow<Boolean> =
+        context.dataStore.data.map { it[onboardedKey] ?: false }
+
+    suspend fun setOnboardingDone(done: Boolean) {
+        context.dataStore.edit { it[onboardedKey] = done }
+    }
+
+    /**
+     * Who the learner is, captured at onboarding. Drives the personalized first phrases
+     * (Zovem se…, Ja sam iz…) and correct gendered Croatian forms; editable from Settings.
+     */
+    val profile: Flow<LearnerProfile> = context.dataStore.data.map {
+        LearnerProfile(
+            name = it[profileNameKey] ?: "",
+            gender = it[profileGenderKey] ?: "m",
+            from = it[profileFromKey] ?: "",
+            livesIn = it[profileLivesInKey] ?: "",
+            reason = it[profileReasonKey] ?: ""
+        )
+    }
+
+    suspend fun setProfile(p: LearnerProfile) {
+        context.dataStore.edit {
+            it[profileNameKey] = p.name
+            it[profileGenderKey] = p.gender
+            it[profileFromKey] = p.from
+            it[profileLivesInKey] = p.livesIn
+            it[profileReasonKey] = p.reason
+        }
     }
 
     // ----- AI tutor (optional; user supplies their own Anthropic API key) -----

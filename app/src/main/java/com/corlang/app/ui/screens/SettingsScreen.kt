@@ -56,6 +56,7 @@ fun SettingsScreen(
     container: AppContainer,
     onBack: () -> Unit = {},
     onPlacement: () -> Unit = {},
+    onEditProfile: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -147,6 +148,38 @@ fun SettingsScreen(
                     OutlinedButton(onClick = { showPicker = false }) { Text("Cancel") }
                 }
             )
+        }
+
+        // ----- Profile -----
+        SectionTitle("👤 Profile")
+        val prof by container.languagePrefs.profile.collectAsState(
+            initial = com.corlang.app.data.prefs.LearnerProfile("", "m", "", "", "")
+        )
+        InfoCard {
+            Text(
+                if (prof.name.isBlank()) "No profile yet" else prof.name,
+                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                buildString {
+                    if (prof.from.isNotBlank()) append("From ${prof.from}")
+                    if (prof.livesIn.isNotBlank()) {
+                        if (isNotEmpty()) append(" · ")
+                        append("lives in ${prof.livesIn}")
+                    }
+                    if (prof.reason.isNotBlank()) {
+                        if (isNotEmpty()) append(" · ")
+                        append(prof.reason)
+                    }
+                    if (isEmpty()) append("Set it up to unlock your personalized intro phrases.")
+                },
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            OutlinedButton(onClick = onEditProfile, modifier = Modifier.fillMaxWidth()) {
+                Text(if (prof.name.isBlank()) "Set up profile" else "Edit profile")
+            }
         }
 
         // ----- Placement -----
