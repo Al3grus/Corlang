@@ -65,11 +65,10 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
 
     var index by remember(lang) { mutableIntStateOf(0) }
     var chosen by remember(lang) { mutableStateOf<String?>(null) }
-    var checked by remember(lang) { mutableStateOf(false) }
-    // Placement so far: the last correct answer's day/level before the first miss.
+    // Placement so far: the last correct answer's day/level. Questions run easy → hard, so the
+    // first one you can't answer is your ceiling — no right/wrong is ever revealed.
     var placeDay by remember(lang) { mutableIntStateOf(1) }
     var placeLevel by remember(lang) { mutableStateOf("A0") }
-    var stopped by remember(lang) { mutableStateOf(false) }   // hit first miss
     var finished by remember(lang) { mutableStateOf(false) }
 
     if (finished) {
@@ -91,8 +90,13 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
             )
             Button(
                 onClick = {
-                    scope.launch { container.progress.setPlacement(lang, placeDay, placeLevel) }
-                    onDone()
+                    // Close only AFTER the write commits — calling onDone() first would remove
+                    // this screen and cancel the scope before setPlacement ever runs (leaving
+                    // you on Day 1).
+                    scope.launch {
+                        container.progress.setPlacement(lang, placeDay, placeLevel)
+                        onDone()
+                    }
                 },
                 modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
             ) { Text("Start at $placeLevel · Day $placeDay") }
@@ -125,53 +129,42 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
         val shown = remember(index) { q.options.shuffled() }
         shown.forEach { option ->
             val isChosen = chosen == option
-            val border = when {
-                !checked && isChosen -> MaterialTheme.colorScheme.primary
-                checked && option == q.answer -> MaterialTheme.colorScheme.primary
-                else -> MaterialTheme.colorScheme.outline
-            }
             Surface(
                 shape = RoundedCornerShape(10.dp),
                 color = MaterialTheme.colorScheme.surface,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 3.dp)
-                    .border(2.dp, border, RoundedCornerShape(10.dp))
-                    .clickable(enabled = !checked) { chosen = option }
+                    .border(
+                        2.dp,
+                        if (isChosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline,
+                        RoundedCornerShape(10.dp)
+                    )
+                    .clickable { chosen = option }
             ) { Text(option, modifier = Modifier.padding(12.dp)) }
         }
 
+        val lastQuestion = index + 1 >= questions.size
         Button(
             onClick = {
-                if (!checked) {
-                    val correct = chosen == q.answer
-                    if (correct && !stopped) { placeDay = q.startDay; placeLevel = q.level }
-                    if (!correct) stopped = true   // stop advancing placement at the first miss
-                    checked = true
-                } else if (index + 1 >= questions.size) {
-                    finished = true
+                if (chosen == q.answer) {
+                    // Cleared this level — advance the ceiling and move on.
+                    placeDay = q.startDay; placeLevel = q.level
+                    if (lastQuestion) finished = true else { index++; chosen = null }
                 } else {
-                    index++; chosen = null; checked = false
+                    // First question you can't do = your level. Place at the last one you cleared.
+                    finished = true
                 }
             },
-            enabled = checked || chosen != null,
+            enabled = chosen != null,
             modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
-        ) {
-            Text(
-                when {
-                    !checked -> "Check"
-                    index + 1 >= questions.size -> "See placement"
-                    else -> "Next"
-                }
-            )
-        }
-        // Let them bail out early once placed; remaining questions only confirm the ceiling.
-        if (checked && stopped) {
-            OutlinedButton(
-                onClick = { finished = true },
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-            ) { Text("Skip the rest, place me now") }
-        }
+        ) { Text(if (lastQuestion) "See my placement" else "Next →") }
+
+        // Honest exit when a question is too hard — this is the ceiling, so place them here.
+        OutlinedButton(
+            onClick = { finished = true },
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+        ) { Text("I don't know this one — place me here") }
         Spacer(Modifier.height(16.dp))
     }
 }
