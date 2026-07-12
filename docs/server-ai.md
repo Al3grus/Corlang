@@ -1,5 +1,8 @@
 # Server-side AI + Premium subscription: what's built, what remains
 
+> The full go-live sequence (repo private, updater removal, Play setup, in order of need)
+> lives in docs/launch-plan.md; this file is the AI/billing detail it references.
+
 Status (2026-07-12): the client and the server are BUILT. The only missing pieces are the two
 external accounts: hosting (Cloudflare, free) and Google Play Billing (needs the Play Console
 account used for publication).
