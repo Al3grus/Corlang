@@ -1,6 +1,6 @@
 {
-  "versionCode": 31,
-  "versionName": "0.13.0",
-  "notes": "Smarter flashcards. The app now uses FSRS, a modern spaced-repetition scheduler that adapts to each word — easy words come back much later, tricky ones sooner — for the same memory with fewer reviews. Lessons now split into a 'new words' step and an end-of-day 'review' step (capped so it never piles up; the rest waits in the Words tab). Your existing progress carries over.",
+  "versionCode": 32,
+  "versionName": "0.13.1",
+  "notes": "Fix: lessons no longer reveal the answer. The end-of-lesson recall no longer shows the study note (which often contained the Croatian) under the prompt, and a handful of fill-in exercises that had the answer visible in the sentence were reworded.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
