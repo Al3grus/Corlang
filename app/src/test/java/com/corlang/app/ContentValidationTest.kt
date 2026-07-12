@@ -37,8 +37,12 @@ class ContentValidationTest {
 
     /** Source keys registered in docs/sources/README.md. */
     private val knownSourceKeys = setOf(
+        // Croatian
         "asoo", "nn-6-2021", "nn-100-2021", "croaticum-syllabus",
-        "croaticum-b1-sample", "cefr-grid", "ffzg-ecourse"
+        "croaticum-b1-sample", "cefr-grid", "ffzg-ecourse",
+        // French (DELF B2 target)
+        "cecrl", "delf-b1-sample", "delf-b2-sample",
+        "referentiel-fr", "francais-fondamental", "freq-fr"
     )
 
     private fun read(lang: String, file: String): String =
@@ -213,6 +217,103 @@ class ContentValidationTest {
                 }
                 assertTrue("day ${d.day} activity $i: missing sources", a.sources.isNotEmpty())
             }
+        }
+    }
+
+    // ---------- French (fr), guarded so they no-op on the old seed and enforce as content lands ----------
+    //
+    // French is being rebuilt to the hr standard (docs/french-plan.md). Each check below activates
+    // only once the corresponding new-format file/dir exists, so the gate stays green today while
+    // guaranteeing every landed French piece meets the same bar as Croatian.
+
+    private fun frDir(name: String) = File(contentRoot, "fr/$name")
+
+    @Test
+    fun `french split vocab has unique NFC ids and frozen ids hold`() {
+        if (!frDir("vocab").isDirectory) return   // old-format seed: nothing to enforce yet
+        val ids = loadVocabPacks("fr").flatMap { it.words }.map { it.id }
+        assertEquals("duplicate fr word ids", ids.size, ids.toSet().size)
+        ids.forEach { id ->
+            assertEquals("fr word id not NFC-normalized: $id",
+                Normalizer.normalize(id, Normalizer.Form.NFC), id)
+        }
+        // Frozen ids only enforced once the snapshot file exists (created when A1 lands).
+        val frozenStream = javaClass.getResourceAsStream("/frozen-word-ids-fr.txt") ?: return
+        val frozen = frozenStream.bufferedReader(Charsets.UTF_8).readLines().filter { it.isNotBlank() }
+        val missing = frozen.filterNot { it in ids.toSet() }
+        assertTrue("frozen fr word ids missing (SRS progress would orphan): $missing", missing.isEmpty())
+    }
+
+    @Test
+    fun `french new-format plan is contiguous with complete embedded activities`() {
+        if (!frDir("plan").isDirectory) return   // still the single-file seed
+        val plan = loadPlan("fr")
+        assertEquals("fr plan days not contiguous 1..N",
+            (1..plan.days.size).toList(), plan.days.map { it.day })
+        plan.days.forEach { d ->
+            assertTrue("fr day ${d.day}: blank level/phase/title",
+                d.level.isNotBlank() && d.phase.isNotBlank() && d.title.isNotBlank())
+            d.activities.forEachIndexed { i, a ->
+                when (a.type) {
+                    com.corlang.app.data.model.ActivityKind.LEARN ->
+                        assertTrue("fr day ${d.day} act $i: LEARN needs >=3 items with content",
+                            a.items.size >= 3 && a.items.all { it.hr.isNotBlank() && it.en.isNotBlank() })
+                    com.corlang.app.data.model.ActivityKind.EXERCISE -> {
+                        assertTrue("fr day ${d.day} act $i: EXERCISE needs >=4 questions",
+                            a.questions.size >= 4)
+                        a.questions.forEach { q ->
+                            when (q.type) {
+                                QuestionType.MCQ -> assertTrue(
+                                    "fr day ${d.day}: MCQ answer not in options: '${q.answer}'",
+                                    q.answer in q.options && q.options.size >= 2)
+                                QuestionType.FILL -> assertTrue(
+                                    "fr day ${d.day}: FILL blank answer", q.answer.isNotBlank())
+                                QuestionType.REORDER -> assertEquals(
+                                    "fr day ${d.day}: REORDER not a permutation",
+                                    q.options.sorted(), q.ordered.sorted())
+                                else -> {}
+                            }
+                        }
+                    }
+                    com.corlang.app.data.model.ActivityKind.DIALOGUE ->
+                        assertTrue("fr day ${d.day} act $i: DIALOGUE needs >=4 lines",
+                            a.lines.size >= 4 && a.lines.all { it.hr.isNotBlank() })
+                }
+                assertTrue("fr day ${d.day} act $i: missing sources", a.sources.isNotEmpty())
+            }
+        }
+    }
+
+    @Test
+    fun `french split vocab carries provenance from known keys`() {
+        if (!frDir("vocab").isDirectory) return
+        loadVocabPacks("fr").forEach { pack ->
+            assertTrue("fr pack ${pack.id} missing sources (provenance rule)", pack.sources.isNotEmpty())
+            pack.sources.forEach {
+                assertTrue("fr pack ${pack.id}: unknown source key '$it'", it in knownSourceKeys)
+            }
+        }
+    }
+
+    @Test
+    fun `french placement and exams are consistent when present`() {
+        if (exists("fr", "placement.json")) {
+            val test = strictJson.decodeFromString<com.corlang.app.data.model.PlacementTest>(
+                read("fr", "placement.json")
+            )
+            val planSize = loadPlan("fr").days.size
+            assertTrue("fr placement has no questions", test.questions.isNotEmpty())
+            test.questions.forEach { q ->
+                assertTrue("fr placement: answer not in options: '${q.answer}'", q.answer in q.options)
+                assertTrue("fr placement: startDay ${q.startDay} outside 1..$planSize",
+                    q.startDay in 1..planSize)
+            }
+        }
+        if (exists("fr", "exams.json")) {
+            assertTrue("fr exams.json must cite sources", read("fr", "exams.json").contains("\"sources\""))
+        }
+        if (exists("fr", "grammar.json")) {
+            assertTrue("fr grammar.json must cite sources", read("fr", "grammar.json").contains("\"sources\""))
         }
     }
 
