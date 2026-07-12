@@ -1,5 +1,8 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,6 +19,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.ui.theme.rememberReducedMotion
 
 /**
  * Learn = the reference half of the app: the one-page Cheatsheet, the full source-anchored
@@ -41,11 +45,19 @@ fun LearnScreen(container: AppContainer, lang: String) {
                 ) { Text(label) }
             }
         }
-        when (tab) {
-            0 -> CheatsheetScreen(container, lang)
-            1 -> GrammarScreen(container, lang)
-            2 -> TeachScreen(container, lang)
-            else -> TalkScreen(container, lang)
+        // Peers, not a sequence → a fade (no directional slide) as you switch reference views.
+        val reduced = rememberReducedMotion()
+        Crossfade(
+            targetState = tab,
+            animationSpec = if (reduced) snap() else tween(durationMillis = 220),
+            label = "learn-tab"
+        ) { t ->
+            when (t) {
+                0 -> CheatsheetScreen(container, lang)
+                1 -> GrammarScreen(container, lang)
+                2 -> TeachScreen(container, lang)
+                else -> TalkScreen(container, lang)
+            }
         }
     }
 }
