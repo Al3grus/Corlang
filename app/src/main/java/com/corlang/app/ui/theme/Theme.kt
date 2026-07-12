@@ -1,7 +1,9 @@
 package com.corlang.app.ui.theme
 
 import android.app.Activity
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
@@ -13,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 
@@ -122,6 +125,12 @@ fun CorlangTheme(content: @Composable () -> Unit) {
         MaterialTheme(
             colorScheme = colors,
             typography = corlangTypography(),
+            // Same radius scale as Radius.sm/md/lg so Cards and Material surfaces inherit it.
+            shapes = Shapes(
+                small = RoundedCornerShape(8.dp),
+                medium = RoundedCornerShape(12.dp),
+                large = RoundedCornerShape(16.dp)
+            ),
             content = content
         )
     }

@@ -55,6 +55,7 @@ import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.SpeakerButton
+import com.corlang.app.ui.components.StatTile
 import com.corlang.app.ui.theme.CorlangColors
 import com.corlang.app.ui.theme.Motion
 import com.corlang.app.ui.theme.rememberReducedMotion
@@ -236,9 +237,9 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
         Spacer(Modifier.height(10.dp))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            WordStat("${queue.size}", "to review", Modifier.weight(1f))
-            WordStat("${seenIds.size}", "started", Modifier.weight(1f))
-            WordStat("$mastered", "mastered", Modifier.weight(1f))
+            StatTile("${queue.size}", "to review", Modifier.weight(1f))
+            StatTile("${seenIds.size}", "started", Modifier.weight(1f))
+            StatTile("$mastered", "mastered", Modifier.weight(1f))
         }
 
         if (celebration && queue.isEmpty()) {
@@ -333,21 +334,6 @@ fun WordsScreen(container: AppContainer, lang: String) {
             }
         }
         Spacer(Modifier.height(24.dp))
-    }
-}
-
-@Composable
-private fun WordStat(value: String, label: String, modifier: Modifier = Modifier) {
-    Surface(
-        shape = RoundedCornerShape(12.dp),
-        color = MaterialTheme.colorScheme.secondaryContainer,
-        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-        modifier = modifier
-    ) {
-        Column(modifier = Modifier.padding(12.dp)) {
-            Text(value, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-            Text(label, style = MaterialTheme.typography.labelSmall)
-        }
     }
 }
 
