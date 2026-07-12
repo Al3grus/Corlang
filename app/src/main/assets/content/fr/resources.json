@@ -2,38 +2,45 @@
   "resources": [
     {
       "rank": 1,
-      "name": "Assimil — \"French With Ease\"",
-      "type": "book",
-      "url": "https://www.assimil.com",
-      "why": "The gold standard for self-study. Its method front-loads natural, high-frequency dialogue and a daily 20-30 min rhythm that matches a 2-month sprint perfectly. You absorb grammar through repeated exposure instead of memorising rules — exactly the Pareto approach."
+      "name": "TV5MONDE — Apprendre le français",
+      "type": "course",
+      "url": "https://apprendre.tv5monde.com/fr",
+      "why": "The largest free official French-learning platform, from the Francophone public broadcaster. Thousands of exercises by CEFR level (A1-B2) built on real video and audio, with listening, reading, grammar and vocabulary. Your main input source: the app schedules it level by level so there's never a question of what to do next."
     },
     {
       "rank": 2,
-      "name": "Coffee Break French (podcast)",
-      "type": "podcast",
-      "url": "https://coffeebreaklanguages.com/coffeebreakfrench/",
-      "why": "Bite-sized lessons taught in English by a patient Scottish teacher and a learner who asks the questions you'd ask. Perfect for the listening half of each session and for commute-time review. Free, structured from absolute zero upward."
+      "name": "RFI Savoirs — Le français facile",
+      "type": "course",
+      "url": "https://francaisfacile.rfi.fr/fr/",
+      "why": "Radio France Internationale's free service for learners: the daily news read slowly (journal en français facile) plus graded listening exercises. The best official source for DELF-style listening comprehension (compréhension de l'oral) from A2 up."
     },
     {
       "rank": 3,
-      "name": "Anki + a frequency deck (e.g. \"5000 French words\")",
-      "type": "app",
-      "url": "https://apps.ankiweb.net",
-      "why": "Spaced repetition is the single highest-leverage habit for vocabulary. A frequency-ordered deck means every card you learn is one you'll actually hear. 15 minutes a day here compounds faster than any app's gamified vocabulary."
+      "name": "France Éducation international — DELF/DALF",
+      "type": "course",
+      "url": "https://www.france-education-international.fr/diplome/delf-tout-public",
+      "why": "The state body that designs and awards the DELF. Publishes the official sample papers (exemples de sujets) the app's mock exams mirror, explains the exam format and pass rule, and is where you book the real B1/B2 exam. The finish line."
     },
     {
       "rank": 4,
-      "name": "InnerFrench (podcast & YouTube)",
-      "type": "video",
-      "url": "https://innerfrench.com",
-      "why": "Once you reach A2/B1, Hugo speaks slow, clear French about interesting ideas — comprehensible input that pulls you to fluency. The best bridge from 'studying French' to 'thinking in French'."
+      "name": "Référentiels — Niveau A1 à B2 pour le français (Didier)",
+      "type": "book",
+      "url": "https://didierfle.com",
+      "why": "The official CEFR reference-level descriptions for French (Council of Europe / Didier): the per-level inventory of grammar, notions and functions the app's curriculum is anchored to. The 'no shortcuts' correctness layer."
     },
     {
       "rank": 5,
-      "name": "italki — a native tutor",
+      "name": "Conversation partner",
       "type": "person",
-      "url": "https://www.italki.com",
-      "why": "Nothing replaces speaking with a human. Two 30-minute conversation lessons a week forces output, fixes fossilised errors, and builds the confidence apps can't. Cheap, flexible, and the fastest route to actually talking."
+      "url": null,
+      "why": "Speaking is one of the four DELF sections. Nothing replaces real conversation: a tutor, a language exchange, or a French-speaking friend. The app's dialogues give you scripts to practise; a real partner turns them into fluency."
+    },
+    {
+      "rank": 6,
+      "name": "Words tab (built-in daily flashcards)",
+      "type": "app",
+      "url": null,
+      "why": "The app's own spaced-repetition deck: the ~2,900 highest-leverage French words through B2, introduced in frequency order with example sentences and the French voice. Your daily vocabulary engine, scheduled every session."
     }
   ]
 }
