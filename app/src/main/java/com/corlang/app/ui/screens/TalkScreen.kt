@@ -46,8 +46,10 @@ import kotlinx.coroutines.launch
  */
 @Composable
 fun TalkScreen(container: AppContainer, lang: String) {
-    val apiKey by container.languagePrefs.anthropicApiKey.collectAsState(initial = "")
-    if (apiKey.isBlank()) {
+    // Premium-gated. Null while the entitlement loads, render nothing for that frame.
+    val entitled by container.premium.entitled.collectAsState(initial = null as Boolean?)
+    if (entitled == null) return
+    if (entitled == false) {
         Column(
             modifier = Modifier.fillMaxSize().padding(24.dp),
             verticalArrangement = Arrangement.Center,
@@ -66,8 +68,9 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 modifier = Modifier.padding(top = 14.dp)
             )
             Text(
-                "Practice real back-and-forth Croatian at your level, with gentle corrections. " +
-                    "To turn it on, add your Anthropic API key in Settings (top-right).",
+                "Practice real back-and-forth Croatian at your level, with gentle corrections " +
+                    "and a voice for every reply. Part of Corlang Premium, coming with the " +
+                    "Google Play release.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 8.dp)

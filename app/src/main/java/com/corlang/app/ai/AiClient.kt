@@ -48,9 +48,31 @@ class AiClient(private val prefs: LanguagePrefs) {
         model: String = DEFAULT_MODEL,
         maxTokens: Int = 1024
     ): Result<String> = withContext(Dispatchers.IO) {
+        // Server-side mode: the proxy holds the real key (server/ai-proxy); the app sends the
+        // entitlement token. Active as soon as AiConfig.proxyBaseUrl is set at build time.
+        val proxy = AiConfig.proxyBaseUrl
         val key = prefs.anthropicApiKey.first().trim()
-        if (key.isBlank()) {
-            return@withContext Result.failure(IllegalStateException("Add your Anthropic API key in Settings first."))
+        val endpoint: String
+        val headers: Map<String, String>
+        if (proxy != null) {
+            endpoint = "${proxy.trimEnd('/')}/v1/messages"
+            headers = mapOf(
+                "content-type" to "application/json",
+                "x-corlang-auth" to AiConfig.PROXY_AUTH_TOKEN
+            )
+        } else {
+            // Developer fallback while no server is deployed: direct Anthropic with the local key.
+            if (key.isBlank()) {
+                return@withContext Result.failure(
+                    IllegalStateException("The AI tutor isn't available yet, it arrives with Corlang Premium.")
+                )
+            }
+            endpoint = ENDPOINT
+            headers = mapOf(
+                "content-type" to "application/json",
+                "x-api-key" to key,
+                "anthropic-version" to ANTHROPIC_VERSION
+            )
         }
 
         val body = buildJsonObject {
@@ -69,14 +91,12 @@ class AiClient(private val prefs: LanguagePrefs) {
 
         var conn: HttpURLConnection? = null
         try {
-            conn = (URL(ENDPOINT).openConnection() as HttpURLConnection).apply {
+            conn = (URL(endpoint).openConnection() as HttpURLConnection).apply {
                 requestMethod = "POST"
                 connectTimeout = 15_000
                 readTimeout = 60_000
                 doOutput = true
-                setRequestProperty("content-type", "application/json")
-                setRequestProperty("x-api-key", key)
-                setRequestProperty("anthropic-version", ANTHROPIC_VERSION)
+                headers.forEach { (k, v) -> setRequestProperty(k, v) }
             }
             conn.outputStream.use { it.write(body.toByteArray(Charsets.UTF_8)) }
 
@@ -105,7 +125,7 @@ class AiClient(private val prefs: LanguagePrefs) {
     }
 
     private fun friendlyError(code: Int, message: String?): String = when (code) {
-        401 -> "Your API key was rejected. Check it in Settings."
+        401, 403 -> "AI access was refused. Check your Premium status and try again."
         429 -> "Rate limit reached. Wait a moment and try again."
         in 500..599 -> "The AI service is temporarily unavailable. Try again shortly."
         else -> message ?: "Request failed (HTTP $code)."
