@@ -62,19 +62,19 @@ fun TodayScreen(
     val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
     val today = WordsRepository.todayEpochDay()
     val dueNow = reviews.count { it.dueEpochDay <= today }
-    // The full daily word load = due reviews PLUS today's remaining new-word budget. The WORDS
-    // step (and the goal ring) count it as done only when this is 0 — otherwise a fresh course
-    // (no reviews due, but new words to introduce) would look 1/5 done with nothing actually done.
-    val allWordCount = remember(lang) { container.words.allWords(lang).size }
-    val introducedToday = reviews.count { it.introducedEpochDay == today }
-    val newBudget = (newPerDay - introducedToday).coerceAtLeast(0)
-    val freshWaiting = (allWordCount - reviews.size).coerceAtLeast(0).coerceAtMost(newBudget)
-    val wordsPending = dueNow + freshWaiting
 
     // The lesson to land on = the day AFTER your last completed one (also covers doing several
     // days at once). Robust even if the stored currentDay lags behind completions.
     val lastCompleted = completed.maxOrNull() ?: 0
     val targetDay = maxOf(currentDay, lastCompleted + 1).coerceIn(1, plan.days.size)
+
+    // The current lesson's word load = due reviews + the new words this lesson unlocks (deck order,
+    // first targetDay * perLesson) not yet introduced. Lesson-scoped, so doing an earlier day never
+    // marks a later day's words done, and a fresh lesson reads 0% until you actually do its words.
+    val allWords = remember(lang) { container.words.allWords(lang) }
+    val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
+    val unlockedNew = allWords.take(targetDay * newPerDay).count { it.id !in seenIds }
+    val wordsPending = dueNow + unlockedNew
 
     // Which day is being viewed (defaults to the target; user can browse away with ‹ ›).
     var viewedDay by remember(lang) { mutableStateOf(targetDay) }

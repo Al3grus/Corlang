@@ -31,6 +31,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -44,6 +45,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.data.SessionCard
+import com.corlang.app.data.SrsGrade
 import com.corlang.app.data.WordsRepository
 import com.corlang.app.data.model.StudyDay
 import com.corlang.app.ui.Haptics
@@ -92,8 +95,8 @@ fun buildSessionSteps(
     // The habit anchor always comes first: clear the due words.
     steps += SessionStep(
         id = "words", kind = StepKind.WORDS,
-        title = "Word review",
-        detail = "Clear your due flashcards. This step completes itself when nothing is due.",
+        title = "Today's words",
+        detail = "Learn this lesson's new words and clear any reviews that are due.",
         navRoute = Dest.WORDS.route,
         phase = "1 · Recall"
     )
@@ -272,23 +275,21 @@ fun SessionPlayer(
         .collectAsState(initial = emptyList())
     val doneIds = checks.map { it.itemId }.toSet()
 
-    // Words step completes itself from live data. "Pending" mirrors the daily session the Words
-    // tab builds: due reviews PLUS today's remaining new-word budget, so a fresh start (nothing
-    // due yet, but new words to introduce) does NOT read as already done.
+    // The words step reflects THIS lesson's word block: due reviews + the new words this lesson
+    // unlocks (deck order, first day.day * perLesson words) that aren't introduced yet. So a fresh
+    // lesson always has its own new words, and doing an earlier lesson never marks this one done.
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
-    val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
+    val perLesson by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
     val today = WordsRepository.todayEpochDay()
-    val allWordCount = remember(lang) { container.words.allWords(lang).size }
+    val allWords = remember(lang) { container.words.allWords(lang) }
     val dueNow = reviews.count { it.dueEpochDay <= today }
-    val seenCount = reviews.size
-    val introducedToday = reviews.count { it.introducedEpochDay == today }
-    val newBudget = (newPerDay - introducedToday).coerceAtLeast(0)
-    val freshWaiting = (allWordCount - seenCount).coerceAtLeast(0).coerceAtMost(newBudget)
-    val wordsPending = dueNow + freshWaiting
+    val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
+    val unlockedNew = allWords.take(day.day * perLesson).count { it.id !in seenIds }
+    val wordsPending = dueNow + unlockedNew
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
-        // Words are done only when actually cleared (due + today's new budget), never from a
-        // skip — so opening the lesson without doing flashcards leaves this step incomplete.
+        // Words are done only when this lesson's block is cleared, never from a skip — so opening
+        // the lesson without doing the flashcards leaves the step incomplete.
         StepKind.WORDS -> wordsPending == 0
         else -> s.id in doneIds
     }
@@ -308,6 +309,55 @@ fun SessionPlayer(
     val doneCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE && stepDone(it) }
     val actionCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val reducedMotion = rememberReducedMotion()
+
+    // In-lesson word block: the new words this lesson unlocks + due reviews are done right here,
+    // so new vocabulary only ever enters through lessons (the Words tab is review-only).
+    val wordQueue = remember(day.day) { mutableStateListOf<SessionCard>() }
+    var inWords by remember(day.day) { mutableStateOf(false) }
+    var wordServed by remember(day.day) { mutableIntStateOf(0) }
+    var wordDone by remember(day.day) { mutableIntStateOf(0) }
+    var wordTotal by remember(day.day) { mutableIntStateOf(0) }
+
+    fun markWordsDoneAndAdvance() {
+        scope.launch { container.progress.setDayTask(lang, day.day, "words", true) }
+        if (index < steps.lastIndex) index++
+    }
+
+    fun startLessonWords() {
+        scope.launch {
+            val cards = container.words.buildLessonWordsSession(lang, day.day, perLesson, today)
+            if (cards.isEmpty()) { markWordsDoneAndAdvance(); return@launch }
+            wordQueue.clear(); wordQueue.addAll(cards)
+            wordTotal = cards.size; wordDone = 0; wordServed = 0
+            inWords = true
+        }
+    }
+
+    fun gradeLessonWord(g: SrsGrade) {
+        val card = wordQueue.removeAt(0)
+        wordServed++
+        if (g == SrsGrade.AGAIN) { Haptics.reject(context); wordQueue.add(card) }
+        else { Haptics.confirm(context); wordDone++ }
+        scope.launch { container.words.grade(lang, card.word.id, g) }
+        if (wordQueue.isEmpty()) {
+            inWords = false
+            markWordsDoneAndAdvance()
+        }
+    }
+
+    if (inWords && wordQueue.isNotEmpty()) {
+        WordSession(
+            card = wordQueue.first(),
+            cardKey = wordServed,
+            tts = container.tts,
+            review = false,
+            done = wordDone,
+            total = wordTotal,
+            onGrade = ::gradeLessonWord,
+            onExit = { inWords = false }
+        )
+        return
+    }
 
     Column(
         modifier = Modifier
@@ -450,15 +500,9 @@ fun SessionPlayer(
                     StepKind.WORDS -> {
                         if (wordsPending > 0) {
                             Button(
-                                onClick = { onNavigate(Dest.WORDS.route) },
+                                onClick = { startLessonWords() },
                                 modifier = Modifier.fillMaxWidth()
-                            ) { Text("Study $wordsPending words now") }
-                            Text(
-                                "Come back to Today when you're done, your place here is saved.",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                modifier = Modifier.padding(top = 6.dp)
-                            )
+                            ) { Text("Do this lesson's words ($wordsPending)") }
                             // Skip only moves past the step for now; it must NOT mark the words
                             // done (that would inflate progress without any flashcards done).
                             OutlinedButton(

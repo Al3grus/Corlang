@@ -304,9 +304,9 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             }
 
             // ---- 5 · Daily goal ----
-            5 -> StepFrame("Your daily word goal",
-                "New words per day for the flashcard deck. 10 is the sustainable default; you can " +
-                    "always learn past the goal, and change this in Settings.") {
+            5 -> StepFrame("New words per lesson",
+                "How many new words each lesson introduces. 10 is the sustainable default; you can " +
+                    "change this anytime in Settings.") {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
                     listOf(10, 15, 20).forEachIndexed { i, v ->
                         SegmentedButton(

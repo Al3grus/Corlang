@@ -83,17 +83,16 @@ private data class SessionSnapshot(
 private val snapshotJson = Json { ignoreUnknownKeys = true }
 
 /**
- * Daily vocabulary on a spaced-repetition schedule: the day's due reviews plus new words up
- * to your chosen goal (10/15/20 in Settings). Swipe grading (left = again, up = good,
- * right = easy), instant resume, and a daily goal ring. Established words flip to EN→HR
- * production. You can always learn more past the goal, and revisit any pack you've started.
+ * Vocabulary REVIEW: the day's due spaced-repetition cards. New words are introduced through
+ * lessons (each lesson unlocks its batch), not here — so this tab never runs ahead. Swipe grading
+ * (left = again, up = good, right = easy), instant resume, a progress ring, and per-pack review of
+ * words you've already started. Established words flip to EN→HR production.
  */
 @Composable
 fun WordsScreen(container: AppContainer, lang: String) {
     val scope = rememberCoroutineScope()
     val allWords = remember(lang) { container.words.allWords(lang) }
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
-    val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
 
     var refreshKey by remember(lang) { mutableIntStateOf(0) }
     val queue = remember(lang) { mutableStateListOf<SessionCard>() }
@@ -118,8 +117,8 @@ fun WordsScreen(container: AppContainer, lang: String) {
             )
         )
 
-    LaunchedEffect(lang, refreshKey, newPerDay) {
-        // Never clobber a live session (pace changes / pack reviews are dashboard-only).
+    LaunchedEffect(lang, refreshKey) {
+        // Never clobber a live session (pack reviews are dashboard-only).
         if (inSession) return@LaunchedEffect
         val snapText = container.languagePrefs.wordsSessionSnapshot(lang).first()
         val today = WordsRepository.todayEpochDay()
@@ -134,7 +133,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             sessionTotal = snap.total
             doneCount = snap.done
         } else {
-            queue.addAll(container.words.buildSession(lang, today, newPerDay))
+            queue.addAll(container.words.buildReviewSession(lang, today))
             sessionTotal = queue.size
             doneCount = 0
             // Keep prefs in agreement with the freshly built queue, otherwise a stale
@@ -224,7 +223,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             Column(Modifier.weight(1f)) {
                 Text("Words", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 Text(
-                    "${allWords.size} core words · $newPerDay new a day, plus reviews",
+                    "${allWords.size} core words · review what's due. New words come from your lessons.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -250,7 +249,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
                 modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
             ) {
                 Text(
-                    "🎉 Today's words are done. Finish today's lesson to bank the streak.",
+                    "🎉 All caught up on reviews. New words unlock as you do your lessons.",
                     modifier = Modifier.padding(14.dp),
                     fontWeight = FontWeight.SemiBold
                 )
@@ -264,30 +263,11 @@ fun WordsScreen(container: AppContainer, lang: String) {
         ) {
             Text(
                 when {
-                    queue.isEmpty() -> "Daily goal reached ✓"
-                    doneCount > 0 -> "Continue session (${queue.size} left)"
-                    else -> "Start session (${queue.size} words)"
+                    queue.isEmpty() -> "No reviews due ✓"
+                    doneCount > 0 -> "Continue review (${queue.size} left)"
+                    else -> "Review ${queue.size} words"
                 }
             )
-        }
-
-        // The daily count is a floor, not a ceiling, keep learning past it whenever you want.
-        if (queue.isEmpty()) {
-            OutlinedButton(
-                onClick = {
-                    scope.launch {
-                        val extra = container.words.extraNewWords(lang, 10)
-                        if (extra.isNotEmpty()) {
-                            celebration = false
-                            queue.addAll(extra)
-                            sessionTotal += extra.size
-                            container.languagePrefs.setWordsSessionSnapshot(lang, snapshotNow())
-                            inSession = true
-                        }
-                    }
-                },
-                modifier = Modifier.fillMaxWidth().padding(bottom = 6.dp)
-            ) { Text("Learn 10 more words →") }
         }
 
         SectionTitle("📦 Packs")
@@ -338,7 +318,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
 }
 
 @Composable
-private fun WordSession(
+internal fun WordSession(
     card: SessionCard,
     cardKey: Int,
     tts: TtsManager,
