@@ -165,15 +165,17 @@ class LanguagePrefs(private val context: Context) {
 
     // ----- Words session snapshot (gym-proof resume) -----
 
-    private val sessionKey = stringPreferencesKey("words_session_snapshot")
+    // Per-language so a Croatian session never bleeds into French (or vice-versa); the snapshot
+    // is transient session state and each language keeps its own slot.
+    private fun sessionKey(lang: String) = stringPreferencesKey("words_session_snapshot_$lang")
 
     /** JSON snapshot of the in-progress words session, so a force-kill mid-set resumes exactly. */
-    val wordsSessionSnapshot: Flow<String?> =
-        context.dataStore.data.map { it[sessionKey] }
+    fun wordsSessionSnapshot(lang: String): Flow<String?> =
+        context.dataStore.data.map { it[sessionKey(lang)] }
 
-    suspend fun setWordsSessionSnapshot(json: String?) {
+    suspend fun setWordsSessionSnapshot(lang: String, json: String?) {
         context.dataStore.edit {
-            if (json == null) it.remove(sessionKey) else it[sessionKey] = json
+            if (json == null) it.remove(sessionKey(lang)) else it[sessionKey(lang)] = json
         }
     }
 }

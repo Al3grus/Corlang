@@ -67,7 +67,10 @@ private data class SessionSnapshot(
     val epochDay: Long,
     val remainingIds: List<String>,
     val done: Int,
-    val total: Int
+    val total: Int,
+    // Stamped so a snapshot can never be resumed under the wrong language (defense in depth on
+    // top of the per-language DataStore key). Defaults empty for snapshots written by old builds.
+    val langCode: String = ""
 )
 
 private val snapshotJson = Json { ignoreUnknownKeys = true }
@@ -103,20 +106,22 @@ fun WordsScreen(container: AppContainer, lang: String) {
             SessionSnapshot(
                 epochDay = WordsRepository.todayEpochDay(),
                 remainingIds = queue.map { it.word.id },
-                done = doneCount, total = sessionTotal
+                done = doneCount, total = sessionTotal,
+                langCode = lang
             )
         )
 
     LaunchedEffect(lang, refreshKey, newPerDay) {
         // Never clobber a live session (pace changes / pack reviews are dashboard-only).
         if (inSession) return@LaunchedEffect
-        val snapText = container.languagePrefs.wordsSessionSnapshot.first()
+        val snapText = container.languagePrefs.wordsSessionSnapshot(lang).first()
         val today = WordsRepository.todayEpochDay()
         val snap = snapText?.let {
             runCatching { snapshotJson.decodeFromString<SessionSnapshot>(it) }.getOrNull()
         }
         queue.clear()
-        if (snap != null && snap.epochDay == today && snap.remainingIds.isNotEmpty()) {
+        if (snap != null && snap.epochDay == today && snap.remainingIds.isNotEmpty() &&
+            (snap.langCode.isEmpty() || snap.langCode == lang)) {
             // Resume the interrupted daily session exactly where it was left.
             queue.addAll(container.words.sessionFromIds(lang, snap.remainingIds))
             sessionTotal = snap.total
@@ -127,7 +132,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             doneCount = 0
             // Keep prefs in agreement with the freshly built queue, otherwise a stale
             // same-day snapshot could be restored later and re-serve already-graded cards.
-            container.languagePrefs.setWordsSessionSnapshot(snapshotNow())
+            container.languagePrefs.setWordsSessionSnapshot(lang, snapshotNow())
         }
         container.tts.ensureInit()   // warm TTS so the first speaker tap isn't swallowed
     }
@@ -150,7 +155,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
         val wasReview = reviewMode
         scope.launch {
             container.words.grade(lang, card.word.id, g)
-            if (!wasReview) container.languagePrefs.setWordsSessionSnapshot(snap)
+            if (!wasReview) container.languagePrefs.setWordsSessionSnapshot(lang, snap)
             // Rebuild only after the final grade is committed (restores the daily session
             // after a review, or produces the post-completion state after the daily session).
             if (sessionDone) refreshKey++
@@ -269,7 +274,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
                             celebration = false
                             queue.addAll(extra)
                             sessionTotal += extra.size
-                            container.languagePrefs.setWordsSessionSnapshot(snapshotNow())
+                            container.languagePrefs.setWordsSessionSnapshot(lang, snapshotNow())
                             inSession = true
                         }
                     }
