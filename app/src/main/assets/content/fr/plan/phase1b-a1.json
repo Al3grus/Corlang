@@ -1,0 +1,4273 @@
+{
+  "title": "Le français en route vers le DELF",
+  "days": [
+    {
+      "title": "La routine quotidienne",
+      "objective": "Learn the key reflexive and everyday verbs used to describe your daily routine.",
+      "paretoFocus": "A handful of routine verbs (se lever, se laver, manger, travailler) cover most A1 self-description tasks in the DELF oral.",
+      "drills": [
+        "Say your morning routine aloud with three verbs",
+        "Conjugate se lever in je/tu/il",
+        "Write one sentence with 'd'abord' and 'ensuite'"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall five daily-routine verbs from memory",
+          "Say 'I get up at 7' in French",
+          "Order the actions of a typical morning"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les verbes de la routine / Daily routine verbs",
+          "intro": "These verbs let you describe what you do every day. Several are reflexive (with 'se'), so watch the pronoun.",
+          "items": [
+            {
+              "hr": "Je me lève à sept heures.",
+              "en": "I get up at seven.",
+              "note": "se lever is reflexive: je me lève"
+            },
+            {
+              "hr": "Je me lave et je m'habille.",
+              "en": "I wash and I get dressed.",
+              "note": "m' before a vowel sound"
+            },
+            {
+              "hr": "Je prends le petit-déjeuner.",
+              "en": "I have breakfast.",
+              "note": "prendre le petit-déjeuner = to have breakfast"
+            },
+            {
+              "hr": "Je travaille toute la journée.",
+              "en": "I work all day.",
+              "note": null
+            },
+            {
+              "hr": "Le soir, je me couche tôt.",
+              "en": "In the evening, I go to bed early.",
+              "note": "se coucher = to go to bed"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: routine verbs",
+          "intro": "Choose or type the correct form. Pay attention to reflexive pronouns.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'I get up'?",
+              "difficulty": 3,
+              "options": [
+                "je me lève",
+                "je lève",
+                "je me couche",
+                "je m'appelle"
+              ],
+              "answer": "je me lève",
+              "explanation": "se lever = to get up; the reflexive form is 'je me lève'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which verb means 'to go to bed'?",
+              "difficulty": 3,
+              "options": [
+                "se coucher",
+                "se laver",
+                "manger",
+                "travailler"
+              ],
+              "answer": "se coucher",
+              "explanation": "se coucher = to go to bed."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I get dressed' (use je).",
+              "difficulty": 3,
+              "answer": "je m'habille",
+              "explanation": "s'habiller becomes 'je m'habille' with elision before the h."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I have breakfast'.",
+              "difficulty": 3,
+              "answer": "je prends le petit-déjeuner",
+              "explanation": "prendre le petit-déjeuner = to have breakfast."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je me lève à sept heures.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "me",
+                "lève",
+                "à",
+                "sept",
+                "heures"
+              ],
+              "ordered": [
+                "Je",
+                "me",
+                "lève",
+                "à",
+                "sept",
+                "heures"
+              ],
+              "explanation": "Subject + reflexive pronoun + verb + time expression."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Ta routine du matin / Your morning routine",
+          "intro": "Play the role of 'Me' and answer about your morning routine.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour ! Tu te lèves à quelle heure ?",
+              "en": "Hello! What time do you get up?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je me lève à sept heures.",
+              "en": "I get up at seven."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et après, qu'est-ce que tu fais ?",
+              "en": "And after, what do you do?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je me lave et je prends le petit-déjeuner.",
+              "en": "I wash and I have breakfast."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu travailles le matin ?",
+              "en": "Do you work in the morning?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je travaille toute la journée.",
+              "en": "Yes, I work all day."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et tu te couches tôt ?",
+              "en": "And do you go to bed early?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je me couche à onze heures.",
+              "en": "Yes, I go to bed at eleven."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 13,
+      "week": 2,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Dire l'heure",
+      "objective": "Learn to ask for and tell the time in French.",
+      "paretoFocus": "Telling the time is tested directly in the DELF A1 and unlocks scheduling, appointments, and daily-routine talk.",
+      "drills": [
+        "Read five clock times aloud in French",
+        "Ask 'What time is it?' two ways",
+        "Say a half past and a quarter past time"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 'et demie', 'et quart', 'moins le quart'",
+          "Say 3:30 and 8:45 in French",
+          "Ask the time politely"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Quelle heure est-il ? / What time is it?",
+          "intro": "Use 'il est ... heure(s)' to tell the time. Learn the words for half, quarter, and 'to'.",
+          "items": [
+            {
+              "hr": "Il est huit heures.",
+              "en": "It's eight o'clock.",
+              "note": "heures is plural after 2+"
+            },
+            {
+              "hr": "Il est huit heures et quart.",
+              "en": "It's a quarter past eight.",
+              "note": "et quart = quarter past"
+            },
+            {
+              "hr": "Il est huit heures et demie.",
+              "en": "It's half past eight.",
+              "note": "et demie = half past"
+            },
+            {
+              "hr": "Il est neuf heures moins le quart.",
+              "en": "It's a quarter to nine.",
+              "note": "moins le quart = quarter to"
+            },
+            {
+              "hr": "Il est midi.",
+              "en": "It's noon.",
+              "note": "midi = noon, minuit = midnight"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: telling the time",
+          "intro": "Choose or type the correct time expression.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'It's half past eight'?",
+              "difficulty": 3,
+              "options": [
+                "Il est huit heures et demie.",
+                "Il est huit heures et quart.",
+                "Il est huit heures moins le quart.",
+                "Il est neuf heures."
+              ],
+              "answer": "Il est huit heures et demie.",
+              "explanation": "et demie = half past."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which means 'It's noon'?",
+              "difficulty": 3,
+              "options": [
+                "Il est midi.",
+                "Il est minuit.",
+                "Il est une heure.",
+                "Il est midi et demie."
+              ],
+              "answer": "Il est midi.",
+              "explanation": "midi = noon; minuit = midnight."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'It's a quarter to nine.'",
+              "difficulty": 4,
+              "answer": "Il est neuf heures moins le quart",
+              "explanation": "moins le quart = a quarter to, before the next hour."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French question 'What time is it?'",
+              "difficulty": 3,
+              "answer": "Quelle heure est-il",
+              "explanation": "Quelle heure est-il ? is the standard question."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Il est huit heures et quart.'",
+              "difficulty": 4,
+              "options": [
+                "Il",
+                "est",
+                "huit",
+                "heures",
+                "et",
+                "quart"
+              ],
+              "ordered": [
+                "Il",
+                "est",
+                "huit",
+                "heures",
+                "et",
+                "quart"
+              ],
+              "explanation": "Il est + hour + heures + et quart."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Quelle heure est-il ? / Asking the time",
+          "intro": "Play the role of 'Me' and tell the time when asked.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Excusez-moi, quelle heure est-il ?",
+              "en": "Excuse me, what time is it?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il est neuf heures et quart.",
+              "en": "It's a quarter past nine."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Merci ! Le train part à quelle heure ?",
+              "en": "Thanks! What time does the train leave?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il part à neuf heures et demie.",
+              "en": "It leaves at half past nine."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Nous avons le temps, alors.",
+              "en": "We have time, then."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, il est encore tôt.",
+              "en": "Yes, it's still early."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Parfait, merci beaucoup.",
+              "en": "Perfect, thank you very much."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 14,
+      "week": 2,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Ma journée",
+      "objective": "Combine routine verbs with times to describe a full day.",
+      "paretoFocus": "Linking actions to times ('à midi je mange') is exactly the sentence pattern the DELF A1 oral rewards.",
+      "drills": [
+        "Describe your day with three time markers",
+        "Use 'le matin', 'l'après-midi', 'le soir'",
+        "Say what you do at noon"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the parts of the day in French",
+          "Say 'At noon, I eat' in French",
+          "Chain two actions with 'puis'"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Décrire sa journée / Describing your day",
+          "intro": "Attach a time or a part of the day to each action to describe your whole day.",
+          "items": [
+            {
+              "hr": "Le matin, je vais au travail.",
+              "en": "In the morning, I go to work.",
+              "note": "le matin = in the morning"
+            },
+            {
+              "hr": "À midi, je déjeune.",
+              "en": "At noon, I have lunch.",
+              "note": "déjeuner = to have lunch"
+            },
+            {
+              "hr": "L'après-midi, j'étudie.",
+              "en": "In the afternoon, I study.",
+              "note": "l'après-midi = the afternoon"
+            },
+            {
+              "hr": "Le soir, je dîne à sept heures.",
+              "en": "In the evening, I have dinner at seven.",
+              "note": "dîner = to have dinner"
+            },
+            {
+              "hr": "La nuit, je dors.",
+              "en": "At night, I sleep.",
+              "note": "dormir = to sleep"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: my day",
+          "intro": "Choose or type the correct expression to describe the day.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'At noon, I have lunch'?",
+              "difficulty": 3,
+              "options": [
+                "À midi, je déjeune.",
+                "Le soir, je dîne.",
+                "Le matin, je me lève.",
+                "La nuit, je dors."
+              ],
+              "answer": "À midi, je déjeune.",
+              "explanation": "déjeuner = to have lunch; à midi = at noon."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which means 'in the afternoon'?",
+              "difficulty": 3,
+              "options": [
+                "l'après-midi",
+                "le matin",
+                "le soir",
+                "la nuit"
+              ],
+              "answer": "l'après-midi",
+              "explanation": "l'après-midi = the afternoon."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'In the evening, I have dinner.'",
+              "difficulty": 3,
+              "answer": "Le soir, je dîne",
+              "explanation": "dîner = to have dinner; le soir = in the evening."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I go to work' (use je).",
+              "difficulty": 3,
+              "answer": "je vais au travail",
+              "explanation": "aller au travail = to go to work; je vais is the je form of aller."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Le soir, je dîne à sept heures.'",
+              "difficulty": 4,
+              "options": [
+                "Le",
+                "soir",
+                "je",
+                "dîne",
+                "à",
+                "sept",
+                "heures"
+              ],
+              "ordered": [
+                "Le",
+                "soir",
+                "je",
+                "dîne",
+                "à",
+                "sept",
+                "heures"
+              ],
+              "explanation": "Time of day + subject + verb + time."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Raconte ta journée / Tell me about your day",
+          "intro": "Play the role of 'Me' and describe your day.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Qu'est-ce que tu fais le matin ?",
+              "en": "What do you do in the morning?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Le matin, je vais au travail.",
+              "en": "In the morning, I go to work."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et à midi ?",
+              "en": "And at noon?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "À midi, je déjeune avec mes collègues.",
+              "en": "At noon, I have lunch with my colleagues."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Que fais-tu le soir ?",
+              "en": "What do you do in the evening?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Le soir, je dîne et je me repose.",
+              "en": "In the evening, I have dinner and I rest."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu as une journée bien remplie !",
+              "en": "You have a full day!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 15,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Les jours et les mois",
+      "objective": "Learn the days of the week, months, and how to say dates.",
+      "paretoFocus": "Days, months, and dates are high-frequency and needed for appointments and forms in the DELF A1.",
+      "drills": [
+        "Recite the seven days in order",
+        "Recite the twelve months",
+        "Say today's date in French"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the days of the week",
+          "Say 'the 14th of July' in French",
+          "Ask 'What's the date today?'"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les jours et les mois / Days and months",
+          "intro": "Days and months are not capitalised in French. Dates use 'le + number + month'.",
+          "items": [
+            {
+              "hr": "lundi, mardi, mercredi, jeudi, vendredi",
+              "en": "Monday to Friday",
+              "note": "no capital letters in French"
+            },
+            {
+              "hr": "samedi et dimanche, c'est le week-end.",
+              "en": "Saturday and Sunday, that's the weekend.",
+              "note": null
+            },
+            {
+              "hr": "janvier, février, mars, avril, mai, juin",
+              "en": "January to June",
+              "note": "months are lowercase too"
+            },
+            {
+              "hr": "Aujourd'hui, nous sommes le 14 juillet.",
+              "en": "Today is the 14th of July.",
+              "note": "le + number + month, no 'of'"
+            },
+            {
+              "hr": "Mon anniversaire est le premier mai.",
+              "en": "My birthday is the first of May.",
+              "note": "use 'premier' only for the 1st"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: days, months, dates",
+          "intro": "Choose or type the correct answer.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which day comes after 'mercredi'?",
+              "difficulty": 3,
+              "options": [
+                "jeudi",
+                "mardi",
+                "lundi",
+                "samedi"
+              ],
+              "answer": "jeudi",
+              "explanation": "The order is lundi, mardi, mercredi, jeudi..."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'the 14th of July'?",
+              "difficulty": 3,
+              "options": [
+                "le 14 juillet",
+                "le 14 de juillet",
+                "juillet 14",
+                "le quatorze de juillet"
+              ],
+              "answer": "le 14 juillet",
+              "explanation": "French dates are 'le + number + month', with no 'of'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'the first of May'.",
+              "difficulty": 4,
+              "answer": "le premier mai",
+              "explanation": "The 1st uses 'premier'; other dates use plain numbers."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French question 'What's the date today?' (use 'nous sommes').",
+              "difficulty": 4,
+              "answer": "Quelle est la date aujourd'hui",
+              "explanation": "Quelle est la date aujourd'hui ? is a common way to ask."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Aujourd'hui, nous sommes le 14 juillet.'",
+              "difficulty": 4,
+              "options": [
+                "Aujourd'hui",
+                "nous",
+                "sommes",
+                "le",
+                "14",
+                "juillet"
+              ],
+              "ordered": [
+                "Aujourd'hui",
+                "nous",
+                "sommes",
+                "le",
+                "14",
+                "juillet"
+              ],
+              "explanation": "Nous sommes le + date is the standard structure."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "C'est quel jour ? / What day is it?",
+          "intro": "Play the role of 'Me' and answer about days and dates.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "On est quel jour aujourd'hui ?",
+              "en": "What day is it today?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Aujourd'hui, nous sommes mardi.",
+              "en": "Today is Tuesday."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et quelle est la date ?",
+              "en": "And what's the date?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Nous sommes le 9 juillet.",
+              "en": "It's the 9th of July."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "C'est quand, ton anniversaire ?",
+              "en": "When is your birthday?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Mon anniversaire est le premier mai.",
+              "en": "My birthday is the first of May."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Super, je vais le noter !",
+              "en": "Great, I'll note it down!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 16,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Les loisirs",
+      "objective": "Talk about hobbies and free time using jouer à/de and faire du/de la.",
+      "paretoFocus": "The jouer/faire contrast covers most sports and hobbies, a core DELF A1 speaking topic.",
+      "drills": [
+        "Say two sports with 'faire du/de la'",
+        "Say two games with 'jouer à'",
+        "Say one instrument with 'jouer de'"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall when to use jouer à vs jouer de",
+          "Say 'I play football' in French",
+          "Say 'I do swimming' in French"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les loisirs / Hobbies",
+          "intro": "Use 'jouer à' for games and sports, 'jouer de' for instruments, and 'faire du/de la' for many activities.",
+          "items": [
+            {
+              "hr": "Je joue au football.",
+              "en": "I play football.",
+              "note": "jouer à + le = au (games/sports)"
+            },
+            {
+              "hr": "Je joue de la guitare.",
+              "en": "I play the guitar.",
+              "note": "jouer de + instrument"
+            },
+            {
+              "hr": "Je fais du sport.",
+              "en": "I do sport.",
+              "note": "faire du + masculine activity"
+            },
+            {
+              "hr": "Je fais de la natation.",
+              "en": "I go swimming.",
+              "note": "faire de la + feminine activity"
+            },
+            {
+              "hr": "J'aime lire et regarder des films.",
+              "en": "I like reading and watching films.",
+              "note": "aimer + infinitive"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: hobbies",
+          "intro": "Choose or type the correct form for each activity.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'I play football'?",
+              "difficulty": 3,
+              "options": [
+                "Je joue au football.",
+                "Je joue du football.",
+                "Je fais au football.",
+                "Je joue de football."
+              ],
+              "answer": "Je joue au football.",
+              "explanation": "Sports with jouer use 'à': jouer à + le = au."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which is correct for 'I play the guitar'?",
+              "difficulty": 4,
+              "options": [
+                "Je joue de la guitare.",
+                "Je joue à la guitare.",
+                "Je fais de la guitare.",
+                "Je joue la guitare."
+              ],
+              "answer": "Je joue de la guitare.",
+              "explanation": "Instruments use 'jouer de': de + la = de la."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I go swimming' (faire de la natation).",
+              "difficulty": 3,
+              "answer": "Je fais de la natation",
+              "explanation": "faire de la + feminine activity; natation is feminine."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I do sport'.",
+              "difficulty": 3,
+              "answer": "Je fais du sport",
+              "explanation": "faire du + masculine noun: de + le = du."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je joue de la guitare.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "joue",
+                "de",
+                "la",
+                "guitare"
+              ],
+              "ordered": [
+                "Je",
+                "joue",
+                "de",
+                "la",
+                "guitare"
+              ],
+              "explanation": "jouer de la + instrument."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Tes loisirs / Your hobbies",
+          "intro": "Play the role of 'Me' and talk about your free time.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Qu'est-ce que tu fais le week-end ?",
+              "en": "What do you do on weekends?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je fais du sport et je joue au football.",
+              "en": "I do sport and I play football."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu joues d'un instrument ?",
+              "en": "Do you play an instrument?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je joue de la guitare.",
+              "en": "Yes, I play the guitar."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et tu aimes lire ?",
+              "en": "And do you like reading?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "J'aime lire et regarder des films.",
+              "en": "I like reading and watching films."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "On a les mêmes goûts !",
+              "en": "We have the same tastes!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 17,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Au téléphone",
+      "objective": "Learn to answer the phone and make plans to meet someone.",
+      "paretoFocus": "Phone phrases and inviting/accepting are common DELF A1 interaction tasks and reuse time and day vocabulary.",
+      "drills": [
+        "Answer the phone in French",
+        "Invite someone to do something",
+        "Accept and refuse an invitation politely"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 'Allô' and 'C'est de la part de qui ?'",
+          "Say 'Are you free on Saturday?'",
+          "Accept an invitation in French"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Au téléphone / On the phone",
+          "intro": "Use these set phrases to answer the phone, invite someone, and arrange a time.",
+          "items": [
+            {
+              "hr": "Allô, bonjour !",
+              "en": "Hello (on the phone)!",
+              "note": "Allô is only used on the phone"
+            },
+            {
+              "hr": "C'est de la part de qui ?",
+              "en": "Who's calling?",
+              "note": "polite way to ask who is calling"
+            },
+            {
+              "hr": "Tu es libre samedi ?",
+              "en": "Are you free on Saturday?",
+              "note": null
+            },
+            {
+              "hr": "On se retrouve à quinze heures ?",
+              "en": "Shall we meet at 3 p.m.?",
+              "note": "se retrouver = to meet up"
+            },
+            {
+              "hr": "D'accord, à samedi !",
+              "en": "OK, see you Saturday!",
+              "note": "à + day = see you on..."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: on the phone",
+          "intro": "Choose or type the correct phone phrase.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you answer the phone in French?",
+              "difficulty": 3,
+              "options": [
+                "Allô, bonjour !",
+                "Salut, à bientôt !",
+                "Au revoir !",
+                "Bonne nuit !"
+              ],
+              "answer": "Allô, bonjour !",
+              "explanation": "Allô is the standard phone greeting."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which asks 'Are you free on Saturday?'",
+              "difficulty": 3,
+              "options": [
+                "Tu es libre samedi ?",
+                "Tu es fatigué samedi ?",
+                "Quelle heure est-il ?",
+                "C'est combien ?"
+              ],
+              "answer": "Tu es libre samedi ?",
+              "explanation": "libre = free (available)."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'Who's calling?' (phone).",
+              "difficulty": 4,
+              "answer": "C'est de la part de qui",
+              "explanation": "C'est de la part de qui ? is the standard polite phrase."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'OK, see you Saturday!'",
+              "difficulty": 3,
+              "answer": "D'accord, à samedi",
+              "explanation": "à + day means 'see you on (that day)'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'On se retrouve à quinze heures ?'",
+              "difficulty": 4,
+              "options": [
+                "On",
+                "se",
+                "retrouve",
+                "à",
+                "quinze",
+                "heures"
+              ],
+              "ordered": [
+                "On",
+                "se",
+                "retrouve",
+                "à",
+                "quinze",
+                "heures"
+              ],
+              "explanation": "On + reflexive pronoun + verb + time."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "On se voit samedi ? / Meeting on Saturday",
+          "intro": "Play the role of 'Me' and arrange a meeting on the phone.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Allô, bonjour ! C'est Marie.",
+              "en": "Hello! It's Marie."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Bonjour Marie ! Ça va ?",
+              "en": "Hello Marie! How are you?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Oui ! Tu es libre samedi ?",
+              "en": "Yes! Are you free on Saturday?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je suis libre. On fait quoi ?",
+              "en": "Yes, I'm free. What shall we do?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "On va au cinéma ? On se retrouve à quinze heures ?",
+              "en": "Shall we go to the cinema? Meet at 3 p.m.?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "D'accord, à samedi !",
+              "en": "OK, see you Saturday!"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Super, à samedi !",
+              "en": "Great, see you Saturday!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 18,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Les vêtements",
+      "objective": "Learn clothing vocabulary and the verb 'porter' to describe what people wear.",
+      "paretoFocus": "Clothes plus 'porter' let you describe people and shopping situations, common in DELF A1.",
+      "drills": [
+        "Name five clothing items in French",
+        "Say what you are wearing today",
+        "Use 'porter' in a full sentence"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall five clothing words",
+          "Say 'I'm wearing a blue jumper'",
+          "Ask 'What are you wearing?'"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les vêtements / Clothes",
+          "intro": "Use 'porter' (to wear) with clothing nouns. Watch the articles un/une.",
+          "items": [
+            {
+              "hr": "Je porte un pantalon et une chemise.",
+              "en": "I'm wearing trousers and a shirt.",
+              "note": "porter = to wear"
+            },
+            {
+              "hr": "Elle porte une robe.",
+              "en": "She's wearing a dress.",
+              "note": "une robe (feminine)"
+            },
+            {
+              "hr": "Il porte un manteau et des chaussures.",
+              "en": "He's wearing a coat and shoes.",
+              "note": "des chaussures = shoes (plural)"
+            },
+            {
+              "hr": "Je mets un pull quand il fait froid.",
+              "en": "I put on a jumper when it's cold.",
+              "note": "mettre = to put on"
+            },
+            {
+              "hr": "J'aime cette veste.",
+              "en": "I like this jacket.",
+              "note": "une veste = a jacket"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: clothes",
+          "intro": "Choose or type the correct clothing word or form.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'She's wearing a dress'?",
+              "difficulty": 3,
+              "options": [
+                "Elle porte une robe.",
+                "Elle porte un pantalon.",
+                "Il porte une robe.",
+                "Elle mange une robe."
+              ],
+              "answer": "Elle porte une robe.",
+              "explanation": "porter = to wear; une robe = a dress (feminine)."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which word means 'shoes'?",
+              "difficulty": 3,
+              "options": [
+                "des chaussures",
+                "un manteau",
+                "une chemise",
+                "un pull"
+              ],
+              "answer": "des chaussures",
+              "explanation": "des chaussures = shoes (plural, feminine)."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I'm wearing a shirt' (une chemise).",
+              "difficulty": 3,
+              "answer": "Je porte une chemise",
+              "explanation": "porter + une chemise; chemise is feminine."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French verb meaning 'to wear' (infinitive).",
+              "difficulty": 3,
+              "answer": "porter",
+              "explanation": "porter is the verb 'to wear'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Il porte un manteau et des chaussures.'",
+              "difficulty": 4,
+              "options": [
+                "Il",
+                "porte",
+                "un",
+                "manteau",
+                "et",
+                "des",
+                "chaussures"
+              ],
+              "ordered": [
+                "Il",
+                "porte",
+                "un",
+                "manteau",
+                "et",
+                "des",
+                "chaussures"
+              ],
+              "explanation": "Subject + porter + item + et + item."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Qu'est-ce que tu portes ? / What are you wearing?",
+          "intro": "Play the role of 'Me' and talk about clothes.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Qu'est-ce que tu portes aujourd'hui ?",
+              "en": "What are you wearing today?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je porte un pantalon et une chemise.",
+              "en": "I'm wearing trousers and a shirt."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Il fait froid, non ?",
+              "en": "It's cold, isn't it?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, alors je mets aussi un pull.",
+              "en": "Yes, so I also put on a jumper."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et pour la fête, tu portes quoi ?",
+              "en": "And for the party, what are you wearing?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je vais porter une belle veste.",
+              "en": "I'm going to wear a nice jacket."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Ça va être élégant !",
+              "en": "That's going to be elegant!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 19,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Les couleurs et la description",
+      "objective": "Learn colours and how to describe objects with adjective agreement.",
+      "paretoFocus": "Colours and basic adjective agreement let you describe almost anything, a frequent DELF A1 need.",
+      "drills": [
+        "Name six colours in French",
+        "Describe an object with a colour",
+        "Make one colour agree in the feminine"
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall six colours",
+          "Say 'a red car' with agreement",
+          "Ask 'What colour is it?'"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les couleurs / Colours",
+          "intro": "Colours usually come after the noun and agree with it. Some are invariable.",
+          "items": [
+            {
+              "hr": "un pull rouge, une voiture rouge",
+              "en": "a red jumper, a red car",
+              "note": "rouge doesn't change form"
+            },
+            {
+              "hr": "un sac vert, une robe verte",
+              "en": "a green bag, a green dress",
+              "note": "vert → verte in the feminine"
+            },
+            {
+              "hr": "un stylo bleu, une chemise bleue",
+              "en": "a blue pen, a blue shirt",
+              "note": "bleu → bleue in the feminine"
+            },
+            {
+              "hr": "un chat noir et blanc",
+              "en": "a black and white cat",
+              "note": "noir/blanc = black/white"
+            },
+            {
+              "hr": "C'est de quelle couleur ?",
+              "en": "What colour is it?",
+              "note": "de quelle couleur = what colour"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Practice: colours and description",
+          "intro": "Choose or type the correct colour form.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'a green dress'?",
+              "difficulty": 4,
+              "options": [
+                "une robe verte",
+                "une robe vert",
+                "un robe verte",
+                "une verte robe"
+              ],
+              "answer": "une robe verte",
+              "explanation": "The colour follows the noun and agrees: robe (fem.) → verte."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which colour is invariable (same in masc./fem.)?",
+              "difficulty": 4,
+              "options": [
+                "rouge",
+                "vert",
+                "bleu",
+                "noir"
+              ],
+              "answer": "rouge",
+              "explanation": "rouge already ends in -e, so it doesn't change for the feminine."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'a blue shirt' (une chemise, feminine).",
+              "difficulty": 4,
+              "answer": "une chemise bleue",
+              "explanation": "bleu becomes bleue to agree with the feminine noun chemise."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French question 'What colour is it?'",
+              "difficulty": 4,
+              "answer": "C'est de quelle couleur",
+              "explanation": "C'est de quelle couleur ? asks about colour."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Le chat est noir et blanc.'",
+              "difficulty": 4,
+              "options": [
+                "Le",
+                "chat",
+                "est",
+                "noir",
+                "et",
+                "blanc"
+              ],
+              "ordered": [
+                "Le",
+                "chat",
+                "est",
+                "noir",
+                "et",
+                "blanc"
+              ],
+              "explanation": "Subject + être + colour + et + colour."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "De quelle couleur ? / What colour?",
+          "intro": "Play the role of 'Me' and describe objects and their colours.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "J'aime ton sac ! Il est de quelle couleur ?",
+              "en": "I like your bag! What colour is it?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il est vert.",
+              "en": "It's green."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et ta voiture, elle est rouge ?",
+              "en": "And your car, is it red?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, elle est bleue.",
+              "en": "No, it's blue."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu as un animal ?",
+              "en": "Do you have a pet?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, j'ai un chat noir et blanc.",
+              "en": "Yes, I have a black and white cat."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Il doit être très mignon !",
+              "en": "It must be very cute!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 20,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "La maison : décrire son logement et ses pièces",
+      "objective": "Describe your home and name the main rooms.",
+      "paretoFocus": "Master 'il y a' + the core rooms vocabulary, which unlocks most home descriptions.",
+      "drills": [
+        "Name every room in your home aloud in French.",
+        "Say three sentences using 'Dans ma maison, il y a...'.",
+        "Describe your bedroom in two sentences."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the words for 5 rooms without looking.",
+          "Say 'there is' and 'there are' in French.",
+          "List 3 pieces of furniture from memory."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les pièces de la maison",
+          "intro": "Learn the main rooms and how to say what a home contains.",
+          "items": [
+            {
+              "hr": "la cuisine",
+              "en": "the kitchen"
+            },
+            {
+              "hr": "la chambre",
+              "en": "the bedroom"
+            },
+            {
+              "hr": "le salon",
+              "en": "the living room"
+            },
+            {
+              "hr": "la salle de bains",
+              "en": "the bathroom"
+            },
+            {
+              "hr": "Il y a trois pièces.",
+              "en": "There are three rooms.",
+              "note": "'il y a' means both 'there is' and 'there are'."
+            },
+            {
+              "hr": "J'habite dans un appartement.",
+              "en": "I live in an apartment."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Ma maison",
+          "intro": "Practise rooms and 'il y a'.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which word means 'the kitchen'?",
+              "difficulty": 3,
+              "options": [
+                "la cuisine",
+                "la chambre",
+                "le salon",
+                "le jardin"
+              ],
+              "answer": "la cuisine",
+              "explanation": "'La cuisine' is the kitchen."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'there is a bathroom'?",
+              "difficulty": 3,
+              "options": [
+                "il y a une salle de bains",
+                "c'est une salle de bains",
+                "il est une salle de bains",
+                "voici la salle de bains"
+              ],
+              "answer": "il y a une salle de bains",
+              "explanation": "'Il y a' introduces what exists in a place."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'I live in a house' in French.",
+              "difficulty": 3,
+              "answer": "J'habite dans une maison.",
+              "explanation": "'habiter' = to live; 'dans une maison' = in a house."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'the bedroom'.",
+              "difficulty": 3,
+              "answer": "la chambre",
+              "explanation": "'La chambre' is the bedroom."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Il y a un grand salon.'",
+              "difficulty": 4,
+              "options": [
+                "Il",
+                "y",
+                "a",
+                "un",
+                "grand",
+                "salon."
+              ],
+              "ordered": [
+                "Il",
+                "y",
+                "a",
+                "un",
+                "grand",
+                "salon."
+              ],
+              "explanation": "The adjective 'grand' comes before the noun 'salon'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Tu habites où ?",
+          "intro": "Talk about your home. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Tu habites où ?",
+              "en": "Where do you live?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "J'habite dans un appartement en ville.",
+              "en": "I live in an apartment in town."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Il y a combien de pièces ?",
+              "en": "How many rooms are there?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il y a trois pièces : un salon, une chambre et une cuisine.",
+              "en": "There are three rooms: a living room, a bedroom and a kitchen."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et il y a un jardin ?",
+              "en": "And is there a garden?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, il n'y a pas de jardin, mais il y a un balcon.",
+              "en": "No, there's no garden, but there is a balcony."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 21,
+      "week": 3,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Dans la ville : les lieux et 'il y a'",
+      "objective": "Name places in town and say what a town has.",
+      "paretoFocus": "Reuse 'il y a' with place vocabulary to describe any town.",
+      "drills": [
+        "List five places in your town in French.",
+        "Say 'In my town there is/are...' three times.",
+        "Ask 'Is there a...?' about three places."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 5 places in town from memory.",
+          "Say the negative 'there isn't a...' form.",
+          "Name 2 places you go every week."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les lieux de la ville",
+          "intro": "Learn common places found in a town.",
+          "items": [
+            {
+              "hr": "la gare",
+              "en": "the train station"
+            },
+            {
+              "hr": "la pharmacie",
+              "en": "the pharmacy"
+            },
+            {
+              "hr": "le supermarché",
+              "en": "the supermarket"
+            },
+            {
+              "hr": "la banque",
+              "en": "the bank"
+            },
+            {
+              "hr": "le parc",
+              "en": "the park"
+            },
+            {
+              "hr": "Dans ma ville, il y a un cinéma.",
+              "en": "In my town, there is a cinema."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Ma ville",
+          "intro": "Practise places and 'il y a'.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which word means 'the train station'?",
+              "difficulty": 3,
+              "options": [
+                "la gare",
+                "la banque",
+                "le parc",
+                "la poste"
+              ],
+              "answer": "la gare",
+              "explanation": "'La gare' is the train station."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'there isn't a bank'?",
+              "difficulty": 3,
+              "options": [
+                "il n'y a pas de banque",
+                "il y a une banque",
+                "c'est une banque",
+                "il n'est pas la banque"
+              ],
+              "answer": "il n'y a pas de banque",
+              "explanation": "The negative of 'il y a une' is 'il n'y a pas de'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'the pharmacy' in French.",
+              "difficulty": 3,
+              "answer": "la pharmacie",
+              "explanation": "'La pharmacie' is the pharmacy."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'there is a supermarket' in French.",
+              "difficulty": 3,
+              "answer": "Il y a un supermarché.",
+              "explanation": "'supermarché' is masculine, so 'un'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Il y a une pharmacie ici.'",
+              "difficulty": 4,
+              "options": [
+                "Il",
+                "y",
+                "a",
+                "une",
+                "pharmacie",
+                "ici."
+              ],
+              "ordered": [
+                "Il",
+                "y",
+                "a",
+                "une",
+                "pharmacie",
+                "ici."
+              ],
+              "explanation": "'ici' (here) goes at the end of the sentence."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Il y a quoi dans ta ville ?",
+          "intro": "Describe your town. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Il y a quoi dans ta ville ?",
+              "en": "What is there in your town?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il y a une gare, un supermarché et un parc.",
+              "en": "There's a station, a supermarket and a park."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Il y a un cinéma ?",
+              "en": "Is there a cinema?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, il y a un cinéma dans le centre.",
+              "en": "Yes, there's a cinema in the centre."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et une piscine ?",
+              "en": "And a swimming pool?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, il n'y a pas de piscine.",
+              "en": "No, there isn't a swimming pool."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 22,
+      "week": 4,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Demander son chemin : demander et indiquer la direction",
+      "objective": "Ask for and give simple directions.",
+      "paretoFocus": "Learn 'où est...?' plus a few direction verbs to navigate any request.",
+      "drills": [
+        "Ask where three places are using 'Où est...?'.",
+        "Give directions using 'tournez' and 'tout droit'.",
+        "Practise 'à gauche' and 'à droite' with gestures."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 'left', 'right', 'straight ahead'.",
+          "Say 'Excuse me, where is the station?'.",
+          "Recall 'turn' and 'go' in the polite form."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Indiquer le chemin",
+          "intro": "Learn words to ask for and give directions.",
+          "items": [
+            {
+              "hr": "Où est la gare ?",
+              "en": "Where is the station?"
+            },
+            {
+              "hr": "tout droit",
+              "en": "straight ahead"
+            },
+            {
+              "hr": "à gauche",
+              "en": "to/on the left"
+            },
+            {
+              "hr": "à droite",
+              "en": "to/on the right"
+            },
+            {
+              "hr": "Tournez à droite.",
+              "en": "Turn right.",
+              "note": "'Tournez' is the polite (vous) command."
+            },
+            {
+              "hr": "C'est loin ?",
+              "en": "Is it far?"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Les directions",
+          "intro": "Practise asking and giving directions.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "What does 'tout droit' mean?",
+              "difficulty": 3,
+              "options": [
+                "straight ahead",
+                "to the right",
+                "to the left",
+                "behind"
+              ],
+              "answer": "straight ahead",
+              "explanation": "'Tout droit' means straight ahead; don't confuse it with 'à droite' (right)."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "How do you politely ask 'Where is the pharmacy?'",
+              "difficulty": 3,
+              "options": [
+                "Où est la pharmacie ?",
+                "Qui est la pharmacie ?",
+                "Quand est la pharmacie ?",
+                "Comment la pharmacie ?"
+              ],
+              "answer": "Où est la pharmacie ?",
+              "explanation": "'Où' means where."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'turn left' in French (polite form).",
+              "difficulty": 3,
+              "answer": "Tournez à gauche.",
+              "explanation": "'Tournez' + 'à gauche' = turn left."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'to the right' in French.",
+              "difficulty": 3,
+              "answer": "à droite",
+              "explanation": "'à droite' means to/on the right."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Tournez à droite ici.'",
+              "difficulty": 4,
+              "options": [
+                "Tournez",
+                "à",
+                "droite",
+                "ici."
+              ],
+              "ordered": [
+                "Tournez",
+                "à",
+                "droite",
+                "ici."
+              ],
+              "explanation": "Verb first (command), then direction, then place."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Pardon, où est la gare ?",
+          "intro": "You are lost and ask for directions. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour, je peux vous aider ?",
+              "en": "Hello, can I help you?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Pardon, où est la gare ?",
+              "en": "Excuse me, where is the station?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Allez tout droit, puis tournez à gauche.",
+              "en": "Go straight ahead, then turn left."
+            },
+            {
+              "speaker": "Me",
+              "hr": "C'est loin ?",
+              "en": "Is it far?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Non, c'est à cinq minutes.",
+              "en": "No, it's five minutes away."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Merci beaucoup !",
+              "en": "Thank you very much!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 23,
+      "week": 4,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Les transports : se déplacer en ville",
+      "objective": "Talk about how you get around using different transports.",
+      "paretoFocus": "Master 'prendre' and 'en/à' with transport words to describe any journey.",
+      "drills": [
+        "Say how you go to work or school in French.",
+        "Use 'Je prends le bus/le métro/le train' three times.",
+        "Practise 'à pied' and 'à vélo'."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 5 modes of transport from memory.",
+          "Conjugate 'prendre' in 'je' and 'tu'.",
+          "Say 'I go by bus' and 'I go on foot'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les moyens de transport",
+          "intro": "Learn transport words and how to say you take them.",
+          "items": [
+            {
+              "hr": "le bus",
+              "en": "the bus"
+            },
+            {
+              "hr": "le métro",
+              "en": "the metro/subway"
+            },
+            {
+              "hr": "le train",
+              "en": "the train"
+            },
+            {
+              "hr": "Je prends le bus.",
+              "en": "I take the bus.",
+              "note": "'prendre' = to take."
+            },
+            {
+              "hr": "Je vais à pied.",
+              "en": "I go on foot."
+            },
+            {
+              "hr": "Je vais à vélo.",
+              "en": "I go by bike."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Se déplacer",
+          "intro": "Practise transports and 'prendre'.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which sentence means 'I take the metro'?",
+              "difficulty": 3,
+              "options": [
+                "Je prends le métro.",
+                "Je vais le métro.",
+                "Je fais le métro.",
+                "J'ai le métro."
+              ],
+              "answer": "Je prends le métro.",
+              "explanation": "Use 'prendre' with means of transport."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'on foot'?",
+              "difficulty": 3,
+              "options": [
+                "à pied",
+                "à vélo",
+                "en bus",
+                "en voiture"
+              ],
+              "answer": "à pied",
+              "explanation": "'à pied' means on foot."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'I take the train' in French.",
+              "difficulty": 3,
+              "answer": "Je prends le train.",
+              "explanation": "'Je prends' + 'le train'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'by bike' in French.",
+              "difficulty": 3,
+              "answer": "à vélo",
+              "explanation": "'à vélo' means by bike."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je prends le bus le matin.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "prends",
+                "le",
+                "bus",
+                "le",
+                "matin."
+              ],
+              "ordered": [
+                "Je",
+                "prends",
+                "le",
+                "bus",
+                "le",
+                "matin."
+              ],
+              "explanation": "Subject + verb + object, then the time expression 'le matin'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Tu prends quoi pour aller au travail ?",
+          "intro": "Talk about your commute. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Tu prends quoi pour aller au travail ?",
+              "en": "What do you take to go to work?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je prends le métro tous les jours.",
+              "en": "I take the metro every day."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "C'est loin ?",
+              "en": "Is it far?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, c'est à vingt minutes.",
+              "en": "No, it's twenty minutes away."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et le week-end ?",
+              "en": "And at the weekend?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Le week-end, je vais à vélo ou à pied.",
+              "en": "At the weekend, I go by bike or on foot."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 24,
+      "week": 4,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Faire les courses : les quantités",
+      "objective": "Buy food and express quantities at the market.",
+      "paretoFocus": "Learn 'un kilo de / une bouteille de' patterns to express any quantity.",
+      "drills": [
+        "Ask for three foods using 'Je voudrais...'.",
+        "Say quantities: 'un kilo de', 'un litre de', 'une bouteille de'.",
+        "Practise 'C'est combien ?' with three items."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 5 foods from memory.",
+          "Say 'a kilo of apples' and 'a litre of milk'.",
+          "Ask 'How much is it?' in French."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les courses et les quantités",
+          "intro": "Learn food words and quantity expressions with 'de'.",
+          "items": [
+            {
+              "hr": "un kilo de pommes",
+              "en": "a kilo of apples"
+            },
+            {
+              "hr": "une bouteille d'eau",
+              "en": "a bottle of water",
+              "note": "'de' becomes 'd'' before a vowel."
+            },
+            {
+              "hr": "un litre de lait",
+              "en": "a litre of milk"
+            },
+            {
+              "hr": "Je voudrais du pain.",
+              "en": "I would like some bread."
+            },
+            {
+              "hr": "C'est combien ?",
+              "en": "How much is it?"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Au marché",
+          "intro": "Practise quantities and food shopping.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'a kilo of apples'?",
+              "difficulty": 3,
+              "options": [
+                "un kilo de pommes",
+                "un kilo des pommes",
+                "un kilo pommes",
+                "une kilo de pommes"
+              ],
+              "answer": "un kilo de pommes",
+              "explanation": "Quantities use 'de' + noun without an article."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which means 'a bottle of water'?",
+              "difficulty": 3,
+              "options": [
+                "une bouteille d'eau",
+                "une bouteille de eau",
+                "un bouteille d'eau",
+                "une bouteille l'eau"
+              ],
+              "answer": "une bouteille d'eau",
+              "explanation": "'de' + 'eau' becomes 'd'eau' before a vowel."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'I would like some bread' in French.",
+              "difficulty": 3,
+              "answer": "Je voudrais du pain.",
+              "explanation": "'du pain' = some bread (partitive)."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'How much is it?' in French.",
+              "difficulty": 3,
+              "answer": "C'est combien ?",
+              "explanation": "'C'est combien ?' asks the price."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je voudrais un litre de lait.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "voudrais",
+                "un",
+                "litre",
+                "de",
+                "lait."
+              ],
+              "ordered": [
+                "Je",
+                "voudrais",
+                "un",
+                "litre",
+                "de",
+                "lait."
+              ],
+              "explanation": "'un litre de lait' keeps 'de' before the noun."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Chez le marchand",
+          "intro": "You are buying fruit at the market. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour, vous désirez ?",
+              "en": "Hello, what would you like?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Bonjour, je voudrais un kilo de pommes.",
+              "en": "Hello, I'd like a kilo of apples."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et avec ça ?",
+              "en": "Anything else?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Une bouteille d'eau, s'il vous plaît.",
+              "en": "A bottle of water, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Ça fait quatre euros.",
+              "en": "That's four euros."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Voilà, merci !",
+              "en": "Here you go, thanks!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 25,
+      "week": 4,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Au magasin : les vêtements, les tailles et les prix",
+      "objective": "Shop for clothes and talk about sizes and prices.",
+      "paretoFocus": "Combine clothes vocabulary with 'Je cherche' and size/price questions.",
+      "drills": [
+        "Name five clothing items in French.",
+        "Say 'I'm looking for a...' with three items.",
+        "Ask for your size using 'Je fais du...'."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 5 clothing words from memory.",
+          "Ask 'Do you have this in my size?'.",
+          "Say a price like 'trente euros'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les vêtements",
+          "intro": "Learn clothing words plus size and price phrases.",
+          "items": [
+            {
+              "hr": "un pantalon",
+              "en": "trousers/pants"
+            },
+            {
+              "hr": "une robe",
+              "en": "a dress"
+            },
+            {
+              "hr": "des chaussures",
+              "en": "shoes"
+            },
+            {
+              "hr": "Je cherche un manteau.",
+              "en": "I'm looking for a coat."
+            },
+            {
+              "hr": "Je fais du 40.",
+              "en": "I'm a size 40.",
+              "note": "'faire du' is used for clothing/shoe sizes."
+            },
+            {
+              "hr": "Ça coûte combien ?",
+              "en": "How much does it cost?"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Faire du shopping",
+          "intro": "Practise clothes, sizes and prices.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which word means 'a dress'?",
+              "difficulty": 3,
+              "options": [
+                "une robe",
+                "un pantalon",
+                "une chemise",
+                "un chapeau"
+              ],
+              "answer": "une robe",
+              "explanation": "'Une robe' is a dress."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'I'm a size 38'?",
+              "difficulty": 3,
+              "options": [
+                "Je fais du 38.",
+                "Je suis du 38.",
+                "J'ai du 38.",
+                "Je porte le 38."
+              ],
+              "answer": "Je fais du 38.",
+              "explanation": "Use 'faire du' to state a clothing size."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'I'm looking for shoes' in French.",
+              "difficulty": 3,
+              "answer": "Je cherche des chaussures.",
+              "explanation": "'chercher' = to look for; 'des chaussures' = shoes."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'How much does it cost?' in French.",
+              "difficulty": 3,
+              "answer": "Ça coûte combien ?",
+              "explanation": "'coûter' = to cost."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je cherche un pantalon noir.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "cherche",
+                "un",
+                "pantalon",
+                "noir."
+              ],
+              "ordered": [
+                "Je",
+                "cherche",
+                "un",
+                "pantalon",
+                "noir."
+              ],
+              "explanation": "The colour adjective 'noir' comes after the noun."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Dans une boutique",
+          "intro": "You are shopping for clothes. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour, je peux vous aider ?",
+              "en": "Hello, can I help you?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je cherche une robe bleue.",
+              "en": "Yes, I'm looking for a blue dress."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Vous faites quelle taille ?",
+              "en": "What size are you?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je fais du 38.",
+              "en": "I'm a size 38."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Voilà. Elle coûte quarante euros.",
+              "en": "Here you are. It costs forty euros."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Parfait, je la prends.",
+              "en": "Perfect, I'll take it."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 26,
+      "week": 4,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "L'argent et payer : régler ses achats",
+      "objective": "Handle money and pay for purchases.",
+      "paretoFocus": "Learn payment phrases and price questions to complete any transaction.",
+      "drills": [
+        "Ask the total using 'Ça fait combien ?'.",
+        "Say 'I'll pay by card' and 'in cash'.",
+        "Practise saying prices in euros aloud."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 'card', 'cash', 'change' in French.",
+          "Say 'Can I pay by card?'.",
+          "Read three prices aloud in euros."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Payer et l'argent",
+          "intro": "Learn how to ask the price and pay.",
+          "items": [
+            {
+              "hr": "Ça fait combien ?",
+              "en": "How much is that (total)?"
+            },
+            {
+              "hr": "par carte",
+              "en": "by card"
+            },
+            {
+              "hr": "en espèces",
+              "en": "in cash"
+            },
+            {
+              "hr": "Je peux payer par carte ?",
+              "en": "Can I pay by card?"
+            },
+            {
+              "hr": "la monnaie",
+              "en": "the change",
+              "note": "'la monnaie' is change/coins, not 'money' in general."
+            },
+            {
+              "hr": "Voici votre reçu.",
+              "en": "Here is your receipt."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "À la caisse",
+          "intro": "Practise paying and money words.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you ask 'How much is that in total?'",
+              "difficulty": 3,
+              "options": [
+                "Ça fait combien ?",
+                "Ça va combien ?",
+                "C'est où ?",
+                "Ça coûte où ?"
+              ],
+              "answer": "Ça fait combien ?",
+              "explanation": "'Ça fait combien ?' asks for the total."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which means 'in cash'?",
+              "difficulty": 3,
+              "options": [
+                "en espèces",
+                "par carte",
+                "en monnaie",
+                "par chèque"
+              ],
+              "answer": "en espèces",
+              "explanation": "'en espèces' means in cash."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'Can I pay by card?' in French.",
+              "difficulty": 3,
+              "answer": "Je peux payer par carte ?",
+              "explanation": "'Je peux payer' + 'par carte'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French word for 'the change' (coins returned).",
+              "difficulty": 3,
+              "answer": "la monnaie",
+              "explanation": "'La monnaie' is the change you get back."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je peux payer en espèces ?'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "peux",
+                "payer",
+                "en",
+                "espèces",
+                "?"
+              ],
+              "ordered": [
+                "Je",
+                "peux",
+                "payer",
+                "en",
+                "espèces",
+                "?"
+              ],
+              "explanation": "Modal 'peux' + infinitive 'payer' + manner 'en espèces'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Payer à la caisse",
+          "intro": "You are paying at the checkout. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Ça fait vingt-cinq euros.",
+              "en": "That's twenty-five euros."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je peux payer par carte ?",
+              "en": "Can I pay by card?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Bien sûr. C'est par ici.",
+              "en": "Of course. It's over here."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Voilà. Merci !",
+              "en": "There you go. Thanks!"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Voici votre reçu. Bonne journée !",
+              "en": "Here's your receipt. Have a good day!"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Merci, au revoir !",
+              "en": "Thanks, goodbye!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 27,
+      "week": 4,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Réserver : un hôtel ou une table avec 'je voudrais'",
+      "objective": "Make a hotel or restaurant reservation politely.",
+      "paretoFocus": "Use 'Je voudrais' + details to make any polite booking.",
+      "drills": [
+        "Book a room using 'Je voudrais réserver une chambre'.",
+        "Book a table for two using 'Je voudrais une table pour deux'.",
+        "State dates with 'du ... au ...'."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 'Je voudrais réserver...'.",
+          "Say 'a table for two people'.",
+          "Ask 'Do you have a room available?'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Faire une réservation",
+          "intro": "Learn polite phrases to book a room or a table.",
+          "items": [
+            {
+              "hr": "Je voudrais réserver une chambre.",
+              "en": "I'd like to book a room.",
+              "note": "'Je voudrais' is the polite form of 'je veux'."
+            },
+            {
+              "hr": "une table pour deux personnes",
+              "en": "a table for two people"
+            },
+            {
+              "hr": "pour deux nuits",
+              "en": "for two nights"
+            },
+            {
+              "hr": "Vous avez une chambre libre ?",
+              "en": "Do you have a room available?"
+            },
+            {
+              "hr": "à quel nom ?",
+              "en": "under what name?"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Réserver",
+          "intro": "Practise booking a room or a table.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you politely say 'I'd like to book a room'?",
+              "difficulty": 3,
+              "options": [
+                "Je voudrais réserver une chambre.",
+                "Je veux une chambre maintenant.",
+                "Je réserve chambre.",
+                "Je voudrais chambre réserver."
+              ],
+              "answer": "Je voudrais réserver une chambre.",
+              "explanation": "'Je voudrais' + infinitive is the polite booking form."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which means 'a table for two people'?",
+              "difficulty": 3,
+              "options": [
+                "une table pour deux personnes",
+                "une table de deux personnes",
+                "une table à deux personnes",
+                "deux table personnes"
+              ],
+              "answer": "une table pour deux personnes",
+              "explanation": "Use 'pour' + number + 'personnes'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'Do you have a room available?' in French.",
+              "difficulty": 3,
+              "answer": "Vous avez une chambre libre ?",
+              "explanation": "'libre' means free/available here."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type 'for two nights' in French.",
+              "difficulty": 3,
+              "answer": "pour deux nuits",
+              "explanation": "'pour' + number + 'nuits'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je voudrais une table pour deux.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "voudrais",
+                "une",
+                "table",
+                "pour",
+                "deux."
+              ],
+              "ordered": [
+                "Je",
+                "voudrais",
+                "une",
+                "table",
+                "pour",
+                "deux."
+              ],
+              "explanation": "'Je voudrais' + noun phrase + 'pour deux'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "À la réception de l'hôtel",
+          "intro": "You are booking a hotel room by phone. You play 'Me'.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Hôtel du Parc, bonjour !",
+              "en": "Hôtel du Parc, hello!"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Bonjour, je voudrais réserver une chambre.",
+              "en": "Hello, I'd like to book a room."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Pour combien de nuits ?",
+              "en": "For how many nights?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Pour deux nuits, s'il vous plaît.",
+              "en": "For two nights, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Très bien. À quel nom ?",
+              "en": "Very well. Under what name?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Au nom de Martin. Merci !",
+              "en": "Under the name Martin. Thank you!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 28,
+      "week": 4,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Décrire une personne",
+      "objective": "Describe someone's physical appearance using adjectives with correct gender and number agreement.",
+      "paretoFocus": "Master 'il/elle est' + adjective and place common adjectives with proper agreement.",
+      "drills": [
+        "Describe three people around you using 'Il/Elle est...' with two adjectives each.",
+        "Turn five masculine adjectives into their feminine forms out loud.",
+        "Write two sentences using 'avoir les cheveux/yeux' + colour."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the feminine forms of grand, petit, beau, brun.",
+          "Say your own physical description in three sentences.",
+          "List five colours in French."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Adjectifs de description",
+          "intro": "Key adjectives to describe physical appearance, shown masculine then feminine.",
+          "items": [
+            {
+              "hr": "Il est grand, elle est grande.",
+              "en": "He is tall, she is tall.",
+              "note": "Feminine adds -e."
+            },
+            {
+              "hr": "Il est petit, elle est petite.",
+              "en": "He is short, she is short."
+            },
+            {
+              "hr": "Elle a les cheveux longs et bruns.",
+              "en": "She has long brown hair.",
+              "note": "'cheveux' is plural, adjective agrees."
+            },
+            {
+              "hr": "Il a les yeux bleus.",
+              "en": "He has blue eyes."
+            },
+            {
+              "hr": "Elle est belle, il est beau.",
+              "en": "She is beautiful, he is handsome.",
+              "note": "Irregular pair beau/belle."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Accord des adjectifs",
+          "intro": "Practice agreement and vocabulary of physical description.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Choose the correct sentence: 'Marie is tall.'",
+              "difficulty": 3,
+              "options": [
+                "Marie est grand.",
+                "Marie est grande.",
+                "Marie est grands.",
+                "Marie est grandes."
+              ],
+              "answer": "Marie est grande.",
+              "explanation": "Marie is feminine singular, so 'grand' becomes 'grande'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which is the feminine of 'beau'?",
+              "difficulty": 3,
+              "options": [
+                "beaue",
+                "belle",
+                "beaux",
+                "bel"
+              ],
+              "answer": "belle",
+              "explanation": "'Beau' has the irregular feminine 'belle'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: 'Elle a les cheveux ___ (long, feminine plural agreement).'",
+              "difficulty": 3,
+              "answer": "longs",
+              "explanation": "'Cheveux' is masculine plural, so the adjective is 'longs'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'He has blue eyes.'",
+              "difficulty": 3,
+              "answer": "Il a les yeux bleus.",
+              "explanation": "'yeux' is masculine plural, so 'bleu' becomes 'bleus'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Elle est petite et brune.'",
+              "difficulty": 4,
+              "options": [
+                "Elle",
+                "est",
+                "petite",
+                "et",
+                "brune."
+              ],
+              "ordered": [
+                "Elle",
+                "est",
+                "petite",
+                "et",
+                "brune."
+              ],
+              "explanation": "Subject + être + adjectives, all feminine to agree with 'elle'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Tu es comment ?",
+          "intro": "You play 'Me'. A friend asks you to describe a classmate.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Ton ami Paul, il est comment ?",
+              "en": "Your friend Paul, what does he look like?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il est grand et il a les cheveux bruns.",
+              "en": "He is tall and he has brown hair."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et ses yeux ?",
+              "en": "And his eyes?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il a les yeux verts.",
+              "en": "He has green eyes."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Il est beau ?",
+              "en": "Is he handsome?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, il est beau et sympa.",
+              "en": "Yes, he is handsome and nice."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 29,
+      "week": 5,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Le caractère",
+      "objective": "Describe someone's personality using common character adjectives with agreement.",
+      "paretoFocus": "Use 'être' + personality adjectives and connect them with 'mais' and 'et'.",
+      "drills": [
+        "Describe two family members' personalities with two adjectives each.",
+        "Make five sentences contrasting traits using 'mais'.",
+        "Convert five personality adjectives to the feminine."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the feminine of sérieux, gentil, timide, sportif.",
+          "Say three adjectives that describe you.",
+          "Give the opposite of 'sympa' and 'calme'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Adjectifs de caractère",
+          "intro": "Common personality adjectives with feminine forms.",
+          "items": [
+            {
+              "hr": "Il est gentil, elle est gentille.",
+              "en": "He is kind, she is kind.",
+              "note": "Feminine doubles the l."
+            },
+            {
+              "hr": "Il est sérieux, elle est sérieuse.",
+              "en": "He is serious, she is serious."
+            },
+            {
+              "hr": "Elle est timide.",
+              "en": "She is shy.",
+              "note": "Same form for both genders."
+            },
+            {
+              "hr": "Il est sympa mais un peu paresseux.",
+              "en": "He is nice but a bit lazy."
+            },
+            {
+              "hr": "Elle est intelligente et travailleuse.",
+              "en": "She is intelligent and hardworking."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Décrire le caractère",
+          "intro": "Practice personality adjectives and their agreement.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Choose the correct sentence: 'She is kind.'",
+              "difficulty": 3,
+              "options": [
+                "Elle est gentil.",
+                "Elle est gentille.",
+                "Elle est gentils.",
+                "Elle est gentiles."
+              ],
+              "answer": "Elle est gentille.",
+              "explanation": "Feminine of 'gentil' doubles the l: 'gentille'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which word means 'shy'?",
+              "difficulty": 3,
+              "options": [
+                "timide",
+                "sportif",
+                "drôle",
+                "calme"
+              ],
+              "answer": "timide",
+              "explanation": "'Timide' means shy."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: 'Marie est ___ (serious, feminine).'",
+              "difficulty": 3,
+              "answer": "sérieuse",
+              "explanation": "The feminine of 'sérieux' is 'sérieuse'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'He is nice but lazy.'",
+              "difficulty": 3,
+              "answer": "Il est sympa mais paresseux.",
+              "explanation": "'mais' links the two contrasting adjectives."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Elle est intelligente et gentille.'",
+              "difficulty": 4,
+              "options": [
+                "Elle",
+                "est",
+                "intelligente",
+                "et",
+                "gentille."
+              ],
+              "ordered": [
+                "Elle",
+                "est",
+                "intelligente",
+                "et",
+                "gentille."
+              ],
+              "explanation": "Both adjectives take the feminine form to agree with 'elle'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Comment est ta sœur ?",
+          "intro": "You play 'Me'. A friend asks about your sister's personality.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Comment est ta sœur ?",
+              "en": "What is your sister like?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Elle est gentille et drôle.",
+              "en": "She is kind and funny."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Elle est timide ?",
+              "en": "Is she shy?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, elle n'est pas timide, elle est sociable.",
+              "en": "No, she is not shy, she is sociable."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et elle est sérieuse ?",
+              "en": "And is she serious?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, elle est sérieuse et travailleuse.",
+              "en": "Yes, she is serious and hardworking."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 30,
+      "week": 5,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Le temps qu'il fait",
+      "objective": "Talk about the weather using impersonal expressions with 'il fait' and 'il y a'.",
+      "paretoFocus": "Use 'Il fait...', 'Il y a...', and 'Il pleut/neige' to describe weather.",
+      "drills": [
+        "Describe today's weather in three sentences.",
+        "Match five weather expressions to their English meaning.",
+        "Ask and answer 'Quel temps fait-il ?' for four cities."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the weather verbs pleuvoir and neiger in 'il' form.",
+          "Say four things using 'Il fait...'.",
+          "Give the question 'What's the weather like?' in French."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "La météo",
+          "intro": "Impersonal weather expressions used with 'il'.",
+          "items": [
+            {
+              "hr": "Il fait beau.",
+              "en": "The weather is nice.",
+              "note": "'faire' for general weather."
+            },
+            {
+              "hr": "Il fait froid.",
+              "en": "It is cold."
+            },
+            {
+              "hr": "Il pleut.",
+              "en": "It is raining.",
+              "note": "From the verb pleuvoir."
+            },
+            {
+              "hr": "Il neige.",
+              "en": "It is snowing.",
+              "note": "From the verb neiger."
+            },
+            {
+              "hr": "Il y a du vent.",
+              "en": "It is windy.",
+              "note": "'Il y a' + noun."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Quel temps fait-il ?",
+          "intro": "Practice weather expressions.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'It is raining'?",
+              "difficulty": 3,
+              "options": [
+                "Il pleut.",
+                "Il fait pluie.",
+                "Il y a pleut.",
+                "Il est pluie."
+              ],
+              "answer": "Il pleut.",
+              "explanation": "The verb 'pleuvoir' gives 'il pleut'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which expression means 'It is windy'?",
+              "difficulty": 3,
+              "options": [
+                "Il fait vent.",
+                "Il y a du vent.",
+                "Il est vent.",
+                "Il vente froid."
+              ],
+              "answer": "Il y a du vent.",
+              "explanation": "Wind uses 'il y a du vent'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: 'En hiver, il ___ froid.'",
+              "difficulty": 3,
+              "answer": "fait",
+              "explanation": "Temperature uses 'il fait': 'il fait froid'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'It is snowing.'",
+              "difficulty": 3,
+              "answer": "Il neige.",
+              "explanation": "The verb 'neiger' gives 'il neige'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Aujourd'hui il fait beau.'",
+              "difficulty": 4,
+              "options": [
+                "Aujourd'hui",
+                "il",
+                "fait",
+                "beau."
+              ],
+              "ordered": [
+                "Aujourd'hui",
+                "il",
+                "fait",
+                "beau."
+              ],
+              "explanation": "Time word + 'il fait' + weather adjective."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "La météo aujourd'hui",
+          "intro": "You play 'Me'. A friend asks about the weather where you are.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Quel temps fait-il chez toi ?",
+              "en": "What's the weather like where you are?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Il fait froid et il pleut.",
+              "en": "It is cold and it is raining."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Il y a du vent ?",
+              "en": "Is it windy?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, il y a beaucoup de vent.",
+              "en": "Yes, it is very windy."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et demain ?",
+              "en": "And tomorrow?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Demain, il va faire beau.",
+              "en": "Tomorrow, the weather is going to be nice."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 31,
+      "week": 5,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Les saisons",
+      "objective": "Name the four seasons and say what activities you do in each.",
+      "paretoFocus": "Use 'en été/automne/hiver' and 'au printemps' plus common seasonal activities.",
+      "drills": [
+        "Say one activity you do in each season.",
+        "Match each season to typical weather.",
+        "Write three sentences with 'en été je...' style."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the four seasons in order.",
+          "Remember which season uses 'au' (printemps).",
+          "Say two summer and two winter activities."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les quatre saisons",
+          "intro": "The seasons and how to say 'in' each one.",
+          "items": [
+            {
+              "hr": "au printemps",
+              "en": "in spring",
+              "note": "Only spring uses 'au'."
+            },
+            {
+              "hr": "en été",
+              "en": "in summer"
+            },
+            {
+              "hr": "en automne",
+              "en": "in autumn"
+            },
+            {
+              "hr": "en hiver",
+              "en": "in winter"
+            },
+            {
+              "hr": "En été, je vais à la plage.",
+              "en": "In summer, I go to the beach."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Saisons et activités",
+          "intro": "Practice seasons and seasonal activities.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which is correct for 'in spring'?",
+              "difficulty": 3,
+              "options": [
+                "en printemps",
+                "au printemps",
+                "à printemps",
+                "dans printemps"
+              ],
+              "answer": "au printemps",
+              "explanation": "Spring is the exception and uses 'au printemps'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which season is 'l'hiver'?",
+              "difficulty": 3,
+              "options": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+              ],
+              "answer": "winter",
+              "explanation": "'L'hiver' means winter."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: '___ été, il fait chaud.'",
+              "difficulty": 3,
+              "answer": "En",
+              "explanation": "Summer uses 'en été'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'In winter, I ski.'",
+              "difficulty": 3,
+              "answer": "En hiver, je fais du ski.",
+              "explanation": "'faire du ski' means to ski."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'En été je vais à la plage.'",
+              "difficulty": 4,
+              "options": [
+                "En",
+                "été",
+                "je",
+                "vais",
+                "à",
+                "la",
+                "plage."
+              ],
+              "ordered": [
+                "En",
+                "été",
+                "je",
+                "vais",
+                "à",
+                "la",
+                "plage."
+              ],
+              "explanation": "Season phrase + subject + verb 'aller' + destination."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Ta saison préférée",
+          "intro": "You play 'Me'. A friend asks about your favourite season.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Quelle est ta saison préférée ?",
+              "en": "What is your favourite season?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Ma saison préférée est l'été.",
+              "en": "My favourite season is summer."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Pourquoi ?",
+              "en": "Why?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "En été, il fait beau et je vais à la plage.",
+              "en": "In summer, the weather is nice and I go to the beach."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et en hiver ?",
+              "en": "And in winter?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "En hiver, je fais du ski avec ma famille.",
+              "en": "In winter, I ski with my family."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 32,
+      "week": 5,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Le corps",
+      "objective": "Name the main parts of the body with correct articles.",
+      "paretoFocus": "Learn body-part nouns with 'le/la/les' and the structure 'j'ai...'.",
+      "drills": [
+        "Point to five body parts and name them in French.",
+        "Sort ten body parts by gender (le/la).",
+        "Say 'J'ai deux...' for parts that come in pairs."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the articles for tête, main, bras, jambe.",
+          "Name the five senses' organs (eyes, ears, nose...).",
+          "List body parts from head to foot."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les parties du corps",
+          "intro": "Main body parts with their articles.",
+          "items": [
+            {
+              "hr": "la tête",
+              "en": "the head"
+            },
+            {
+              "hr": "le bras",
+              "en": "the arm",
+              "note": "Same spelling singular/plural."
+            },
+            {
+              "hr": "la main",
+              "en": "the hand"
+            },
+            {
+              "hr": "la jambe",
+              "en": "the leg"
+            },
+            {
+              "hr": "le pied",
+              "en": "the foot",
+              "note": "Plural: les pieds."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Nommer le corps",
+          "intro": "Practice body-part vocabulary and articles.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "What is 'the head' in French?",
+              "difficulty": 3,
+              "options": [
+                "le tête",
+                "la tête",
+                "les tête",
+                "l'tête"
+              ],
+              "answer": "la tête",
+              "explanation": "'Tête' is feminine: 'la tête'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which word means 'the hand'?",
+              "difficulty": 3,
+              "options": [
+                "le pied",
+                "la main",
+                "le bras",
+                "la jambe"
+              ],
+              "answer": "la main",
+              "explanation": "'La main' means the hand."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete with the article: '___ bras' (the arm).",
+              "difficulty": 3,
+              "answer": "le",
+              "explanation": "'Bras' is masculine: 'le bras'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'the feet' (plural).",
+              "difficulty": 3,
+              "answer": "les pieds",
+              "explanation": "Plural of 'le pied' is 'les pieds'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'J'ai mal à la tête.'",
+              "difficulty": 4,
+              "options": [
+                "J'ai",
+                "mal",
+                "à",
+                "la",
+                "tête."
+              ],
+              "ordered": [
+                "J'ai",
+                "mal",
+                "à",
+                "la",
+                "tête."
+              ],
+              "explanation": "'avoir mal à' + body part expresses pain."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Le corps en cours",
+          "intro": "You play 'Me'. A teacher does a body-parts warm-up with you.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Montre-moi ta tête.",
+              "en": "Show me your head."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Voilà, c'est la tête.",
+              "en": "Here it is, this is the head."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et tes mains ?",
+              "en": "And your hands?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "J'ai deux mains.",
+              "en": "I have two hands."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Combien de jambes as-tu ?",
+              "en": "How many legs do you have?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "J'ai deux jambes et deux pieds.",
+              "en": "I have two legs and two feet."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 33,
+      "week": 5,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Chez le médecin",
+      "objective": "Explain what hurts at the doctor's using 'avoir mal à'.",
+      "paretoFocus": "Use 'avoir mal à' with contractions (au, à la, à l', aux) plus basic doctor phrases.",
+      "drills": [
+        "Say five sentences with 'J'ai mal à/au/aux...'.",
+        "Practice the contractions of 'à + le/la/les' with body parts.",
+        "Role-play describing three symptoms."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall 'à + le = au' and 'à + les = aux'.",
+          "Say 'I have a headache' and 'I have a stomachache'.",
+          "Remember the phrase 'Où avez-vous mal ?'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Avoir mal à",
+          "intro": "Expressing pain with the correct contraction of 'à'.",
+          "items": [
+            {
+              "hr": "J'ai mal à la tête.",
+              "en": "I have a headache.",
+              "note": "à + la stays 'à la'."
+            },
+            {
+              "hr": "J'ai mal au ventre.",
+              "en": "I have a stomachache.",
+              "note": "à + le = au."
+            },
+            {
+              "hr": "J'ai mal aux dents.",
+              "en": "I have a toothache.",
+              "note": "à + les = aux."
+            },
+            {
+              "hr": "J'ai mal à la gorge.",
+              "en": "I have a sore throat."
+            },
+            {
+              "hr": "Je suis malade.",
+              "en": "I am sick."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Où avez-vous mal ?",
+          "intro": "Practice pain expressions and contractions.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Choose the correct form: 'I have a stomachache.'",
+              "difficulty": 3,
+              "options": [
+                "J'ai mal à le ventre.",
+                "J'ai mal au ventre.",
+                "J'ai mal aux ventre.",
+                "J'ai mal à ventre."
+              ],
+              "answer": "J'ai mal au ventre.",
+              "explanation": "'à + le' contracts to 'au': 'au ventre'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which is correct: 'I have a toothache'?",
+              "difficulty": 3,
+              "options": [
+                "J'ai mal à les dents.",
+                "J'ai mal aux dents.",
+                "J'ai mal au dents.",
+                "J'ai mal à la dents."
+              ],
+              "answer": "J'ai mal aux dents.",
+              "explanation": "'à + les' contracts to 'aux': 'aux dents'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: 'J'ai mal ___ gorge.' (throat)",
+              "difficulty": 3,
+              "answer": "à la",
+              "explanation": "'Gorge' is feminine, so 'à la gorge' with no contraction."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I am sick.'",
+              "difficulty": 3,
+              "answer": "Je suis malade.",
+              "explanation": "'être malade' means to be sick."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'J'ai mal au ventre.'",
+              "difficulty": 4,
+              "options": [
+                "J'ai",
+                "mal",
+                "au",
+                "ventre."
+              ],
+              "ordered": [
+                "J'ai",
+                "mal",
+                "au",
+                "ventre."
+              ],
+              "explanation": "'avoir mal' + 'au' (à + le) + body part."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Une visite chez le médecin",
+          "intro": "You play 'Me'. You visit the doctor because you feel unwell.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour, où avez-vous mal ?",
+              "en": "Hello, where does it hurt?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Bonjour docteur, j'ai mal à la tête.",
+              "en": "Hello doctor, I have a headache."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Avez-vous de la fièvre ?",
+              "en": "Do you have a fever?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, et j'ai mal à la gorge.",
+              "en": "Yes, and I have a sore throat."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Vous êtes malade. Reposez-vous.",
+              "en": "You are sick. Rest."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Merci beaucoup, docteur.",
+              "en": "Thank you very much, doctor."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 34,
+      "week": 5,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Les émotions",
+      "objective": "Express feelings and physical states using 'avoir' expressions.",
+      "paretoFocus": "Use 'avoir peur/faim/froid/chaud/soif' and 'être content/triste'.",
+      "drills": [
+        "Say five states with 'J'ai...' (faim, soif, froid...).",
+        "Contrast 'avoir' expressions with 'être content/triste'.",
+        "Describe how you feel in three situations."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall which feelings use 'avoir' vs 'être'.",
+          "Say 'I am hungry', 'I am cold', 'I am afraid'.",
+          "Give the feminine of 'content' and 'heureux'."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Avoir et les émotions",
+          "intro": "Feelings and states, many using 'avoir' where English uses 'to be'.",
+          "items": [
+            {
+              "hr": "J'ai faim.",
+              "en": "I am hungry.",
+              "note": "Literally 'I have hunger'."
+            },
+            {
+              "hr": "J'ai froid.",
+              "en": "I am cold."
+            },
+            {
+              "hr": "J'ai peur.",
+              "en": "I am afraid."
+            },
+            {
+              "hr": "Je suis content, je suis contente.",
+              "en": "I am happy (m/f).",
+              "note": "Uses 'être' and agrees."
+            },
+            {
+              "hr": "Je suis triste.",
+              "en": "I am sad."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Exprimer ses émotions",
+          "intro": "Practice avoir/être feeling expressions.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "How do you say 'I am hungry'?",
+              "difficulty": 3,
+              "options": [
+                "Je suis faim.",
+                "J'ai faim.",
+                "Je fais faim.",
+                "J'ai de faim."
+              ],
+              "answer": "J'ai faim.",
+              "explanation": "Hunger uses 'avoir': 'j'ai faim'."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which uses 'être' correctly?",
+              "difficulty": 3,
+              "options": [
+                "J'ai content.",
+                "Je suis content.",
+                "Je fais content.",
+                "J'ai de content."
+              ],
+              "answer": "Je suis content.",
+              "explanation": "'Content' is an adjective and uses 'être'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete: 'J'ai ___.' (I am afraid)",
+              "difficulty": 3,
+              "answer": "peur",
+              "explanation": "Fear uses 'avoir peur'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'She is happy.' (feminine)",
+              "difficulty": 3,
+              "answer": "Elle est contente.",
+              "explanation": "'Content' becomes 'contente' in the feminine."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'J'ai froid et faim.'",
+              "difficulty": 4,
+              "options": [
+                "J'ai",
+                "froid",
+                "et",
+                "faim."
+              ],
+              "ordered": [
+                "J'ai",
+                "froid",
+                "et",
+                "faim."
+              ],
+              "explanation": "Both states share one 'avoir', linked by 'et'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Comment tu te sens ?",
+          "intro": "You play 'Me'. A friend checks how you are feeling.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Ça va ? Tu as faim ?",
+              "en": "Are you okay? Are you hungry?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, j'ai faim et j'ai soif.",
+              "en": "Yes, I am hungry and thirsty."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu as froid aussi ?",
+              "en": "Are you cold too?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Non, mais je suis un peu fatigué.",
+              "en": "No, but I am a bit tired."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Tu es content aujourd'hui ?",
+              "en": "Are you happy today?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oui, je suis très content !",
+              "en": "Yes, I am very happy!"
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 35,
+      "week": 5,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    },
+    {
+      "title": "Bilan A1",
+      "objective": "Review core A1 skills: greetings, présent, passé composé, and futur proche.",
+      "paretoFocus": "Recognize when to use présent, passé composé, and futur proche in simple sentences.",
+      "drills": [
+        "Give one sentence each in présent, passé composé, and futur proche.",
+        "Greet and introduce yourself in four sentences.",
+        "Conjugate 'aller' and 'avoir' in the present out loud."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "Recall the passé composé formula (avoir/être + participe passé).",
+          "Recall the futur proche formula (aller + infinitif).",
+          "Say a full self-introduction from memory."
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Les trois temps de base",
+          "intro": "A quick recap of the three A1 tenses and greetings.",
+          "items": [
+            {
+              "hr": "Bonjour, je m'appelle Léa.",
+              "en": "Hello, my name is Léa.",
+              "note": "Greeting + introduction."
+            },
+            {
+              "hr": "Je mange une pomme.",
+              "en": "I eat an apple.",
+              "note": "Présent."
+            },
+            {
+              "hr": "J'ai mangé une pomme.",
+              "en": "I ate an apple.",
+              "note": "Passé composé: avoir + participe."
+            },
+            {
+              "hr": "Je suis allé au parc.",
+              "en": "I went to the park.",
+              "note": "Passé composé with être."
+            },
+            {
+              "hr": "Je vais manger une pomme.",
+              "en": "I am going to eat an apple.",
+              "note": "Futur proche: aller + infinitif."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Réviser les temps",
+          "intro": "Mixed review of the three tenses and greetings.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Which sentence is in the futur proche?",
+              "difficulty": 3,
+              "options": [
+                "Je mange une pomme.",
+                "J'ai mangé une pomme.",
+                "Je vais manger une pomme.",
+                "Je mangeais une pomme."
+              ],
+              "answer": "Je vais manger une pomme.",
+              "explanation": "Futur proche = 'aller' conjugated + infinitive."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which auxiliary does 'aller' use in the passé composé?",
+              "difficulty": 3,
+              "options": [
+                "avoir",
+                "être",
+                "faire",
+                "aller"
+              ],
+              "answer": "être",
+              "explanation": "'Aller' uses 'être': 'je suis allé'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Complete the passé composé: 'J'___ mangé.' (auxiliary)",
+              "difficulty": 3,
+              "answer": "ai",
+              "explanation": "'Manger' uses 'avoir': 'j'ai mangé'."
+            },
+            {
+              "type": "FILL",
+              "prompt": "Type the French for 'I am going to travel.' (futur proche)",
+              "difficulty": 3,
+              "answer": "Je vais voyager.",
+              "explanation": "Futur proche = 'vais' + infinitive 'voyager'."
+            },
+            {
+              "type": "REORDER",
+              "prompt": "Put in order: 'Je suis allé au cinéma.'",
+              "difficulty": 4,
+              "options": [
+                "Je",
+                "suis",
+                "allé",
+                "au",
+                "cinéma."
+              ],
+              "ordered": [
+                "Je",
+                "suis",
+                "allé",
+                "au",
+                "cinéma."
+              ],
+              "explanation": "Passé composé of 'aller' with 'être' + past participle 'allé'."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Bilan : parler de soi",
+          "intro": "You play 'Me'. You review greetings and the three tenses with a partner.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Bonjour ! Comment tu t'appelles ?",
+              "en": "Hello! What is your name?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Bonjour, je m'appelle Alex.",
+              "en": "Hello, my name is Alex."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Qu'est-ce que tu as fait hier ?",
+              "en": "What did you do yesterday?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Hier, j'ai visité un musée.",
+              "en": "Yesterday, I visited a museum."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Et demain ?",
+              "en": "And tomorrow?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Demain, je vais aller à la plage.",
+              "en": "Tomorrow, I am going to go to the beach."
+            }
+          ],
+          "sources": [
+            "referentiel-fr",
+            "cecrl"
+          ]
+        }
+      ],
+      "day": 36,
+      "week": 6,
+      "phase": "Phase 1 : A0 → A1",
+      "level": "A1",
+      "resources": [
+        "TV5MONDE — Apprendre le français",
+        "Words tab (built-in daily flashcards)"
+      ]
+    }
+  ]
+}
