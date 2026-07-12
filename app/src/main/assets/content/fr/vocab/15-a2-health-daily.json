@@ -1,0 +1,696 @@
+{
+  "packs": [
+    {
+      "id": "15-a2-health-daily",
+      "title": "A2 health, well-being & daily life",
+      "level": "A2",
+      "words": [
+        {
+          "id": "maladie",
+          "hr": "maladie",
+          "en": "illness, disease",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il a attrapé une maladie grave.",
+            "gloss": "He caught a serious illness."
+          }
+        },
+        {
+          "id": "symptôme",
+          "hr": "symptôme",
+          "en": "symptom",
+          "pos": "n. m.",
+          "example": {
+            "target": "La toux est un symptôme fréquent.",
+            "gloss": "Coughing is a common symptom."
+          }
+        },
+        {
+          "id": "patiente",
+          "hr": "patiente",
+          "en": "patient (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "La patiente parle avec le médecin.",
+            "gloss": "The patient is talking with the doctor."
+          }
+        },
+        {
+          "id": "cabinet",
+          "hr": "cabinet",
+          "en": "doctor's office, practice",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le cabinet du médecin est fermé le lundi.",
+            "gloss": "The doctor's office is closed on Mondays."
+          }
+        },
+        {
+          "id": "clinique",
+          "hr": "clinique",
+          "en": "clinic",
+          "pos": "n. f.",
+          "example": {
+            "target": "Elle travaille dans une clinique privée.",
+            "gloss": "She works in a private clinic."
+          }
+        },
+        {
+          "id": "spécialiste",
+          "hr": "spécialiste",
+          "en": "specialist",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le médecin m'a envoyé chez un spécialiste.",
+            "gloss": "The doctor sent me to a specialist."
+          }
+        },
+        {
+          "id": "opération",
+          "hr": "opération",
+          "en": "operation, surgery",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'opération a duré deux heures.",
+            "gloss": "The operation lasted two hours."
+          }
+        },
+        {
+          "id": "régime",
+          "hr": "régime",
+          "en": "diet",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle suit un régime depuis un mois.",
+            "gloss": "She has been on a diet for a month."
+          }
+        },
+        {
+          "id": "poids",
+          "hr": "poids",
+          "en": "weight",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il a perdu du poids cet été.",
+            "gloss": "He lost weight this summer."
+          }
+        },
+        {
+          "id": "fatigue",
+          "hr": "fatigue",
+          "en": "tiredness, fatigue",
+          "pos": "n. f.",
+          "example": {
+            "target": "Je ressens beaucoup de fatigue le soir.",
+            "gloss": "I feel a lot of tiredness in the evening."
+          }
+        },
+        {
+          "id": "stress",
+          "hr": "stress",
+          "en": "stress",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le stress au travail me fatigue.",
+            "gloss": "Stress at work tires me out."
+          }
+        },
+        {
+          "id": "sommeil",
+          "hr": "sommeil",
+          "en": "sleep",
+          "pos": "n. m.",
+          "example": {
+            "target": "J'ai besoin de plus de sommeil.",
+            "gloss": "I need more sleep."
+          }
+        },
+        {
+          "id": "repos",
+          "hr": "repos",
+          "en": "rest",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le médecin m'a conseillé du repos.",
+            "gloss": "The doctor advised me to rest."
+          }
+        },
+        {
+          "id": "soin",
+          "hr": "soin",
+          "en": "care, treatment",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle prend soin de sa peau chaque jour.",
+            "gloss": "She takes care of her skin every day."
+          }
+        },
+        {
+          "id": "hygiène",
+          "hr": "hygiène",
+          "en": "hygiene",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'hygiène des mains est importante.",
+            "gloss": "Hand hygiene is important."
+          }
+        },
+        {
+          "id": "propreté",
+          "hr": "propreté",
+          "en": "cleanliness",
+          "pos": "n. f.",
+          "example": {
+            "target": "La propreté de la cuisine est essentielle.",
+            "gloss": "The cleanliness of the kitchen is essential."
+          }
+        },
+        {
+          "id": "habitude",
+          "hr": "habitude",
+          "en": "habit",
+          "pos": "n. f.",
+          "example": {
+            "target": "Manger des légumes est une bonne habitude.",
+            "gloss": "Eating vegetables is a good habit."
+          }
+        },
+        {
+          "id": "détente",
+          "hr": "détente",
+          "en": "relaxation",
+          "pos": "n. f.",
+          "example": {
+            "target": "La lecture est un moment de détente.",
+            "gloss": "Reading is a moment of relaxation."
+          }
+        },
+        {
+          "id": "équilibre",
+          "hr": "équilibre",
+          "en": "balance",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il cherche un bon équilibre entre travail et repos.",
+            "gloss": "He is looking for a good balance between work and rest."
+          }
+        },
+        {
+          "id": "bien-être",
+          "hr": "bien-être",
+          "en": "well-being",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le yoga améliore mon bien-être.",
+            "gloss": "Yoga improves my well-being."
+          }
+        },
+        {
+          "id": "mode de vie",
+          "hr": "mode de vie",
+          "en": "lifestyle",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle a un mode de vie très sain.",
+            "gloss": "She has a very healthy lifestyle."
+          }
+        },
+        {
+          "id": "forme",
+          "hr": "forme",
+          "en": "fitness, shape",
+          "pos": "n. f.",
+          "example": {
+            "target": "Je suis en pleine forme aujourd'hui.",
+            "gloss": "I'm in great shape today."
+          }
+        },
+        {
+          "id": "énergie",
+          "hr": "énergie",
+          "en": "energy",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le petit-déjeuner me donne de l'énergie.",
+            "gloss": "Breakfast gives me energy."
+          }
+        },
+        {
+          "id": "relaxation",
+          "hr": "relaxation",
+          "en": "relaxation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Elle pratique la relaxation avant de dormir.",
+            "gloss": "She practices relaxation before sleeping."
+          }
+        },
+        {
+          "id": "respiration",
+          "hr": "respiration",
+          "en": "breathing",
+          "pos": "n. f.",
+          "example": {
+            "target": "Une bonne respiration calme le stress.",
+            "gloss": "Good breathing calms stress."
+          }
+        },
+        {
+          "id": "ménage",
+          "hr": "ménage",
+          "en": "housework, cleaning",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je fais le ménage le samedi.",
+            "gloss": "I do the housework on Saturdays."
+          }
+        },
+        {
+          "id": "vaisselle",
+          "hr": "vaisselle",
+          "en": "dishes, washing-up",
+          "pos": "n. f.",
+          "example": {
+            "target": "C'est ton tour de faire la vaisselle.",
+            "gloss": "It's your turn to do the dishes."
+          }
+        },
+        {
+          "id": "lessive",
+          "hr": "lessive",
+          "en": "laundry (washing)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Je fais la lessive deux fois par semaine.",
+            "gloss": "I do the laundry twice a week."
+          }
+        },
+        {
+          "id": "linge",
+          "hr": "linge",
+          "en": "linen, laundry (clothes)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le linge sèche sur le balcon.",
+            "gloss": "The laundry is drying on the balcony."
+          }
+        },
+        {
+          "id": "repassage",
+          "hr": "repassage",
+          "en": "ironing",
+          "pos": "n. m.",
+          "example": {
+            "target": "Je déteste le repassage.",
+            "gloss": "I hate ironing."
+          }
+        },
+        {
+          "id": "sieste",
+          "hr": "sieste",
+          "en": "nap",
+          "pos": "n. f.",
+          "example": {
+            "target": "Je fais une petite sieste après le déjeuner.",
+            "gloss": "I take a short nap after lunch."
+          }
+        },
+        {
+          "id": "pause",
+          "hr": "pause",
+          "en": "break",
+          "pos": "n. f.",
+          "example": {
+            "target": "On fait une pause de dix minutes.",
+            "gloss": "We take a ten-minute break."
+          }
+        },
+        {
+          "id": "moment",
+          "hr": "moment",
+          "en": "moment",
+          "pos": "n. m.",
+          "example": {
+            "target": "C'est un bon moment pour se reposer.",
+            "gloss": "It's a good moment to rest."
+          }
+        },
+        {
+          "id": "instant",
+          "hr": "instant",
+          "en": "instant, moment",
+          "pos": "n. m.",
+          "example": {
+            "target": "Attends un instant, s'il te plaît.",
+            "gloss": "Wait a moment, please."
+          }
+        },
+        {
+          "id": "routine",
+          "hr": "routine",
+          "en": "routine",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ma routine du matin est très simple.",
+            "gloss": "My morning routine is very simple."
+          }
+        },
+        {
+          "id": "nourriture",
+          "hr": "nourriture",
+          "en": "food",
+          "pos": "n. f.",
+          "example": {
+            "target": "La nourriture ici est délicieuse.",
+            "gloss": "The food here is delicious."
+          }
+        },
+        {
+          "id": "alimentation",
+          "hr": "alimentation",
+          "en": "diet, nutrition",
+          "pos": "n. f.",
+          "example": {
+            "target": "Une alimentation variée est importante.",
+            "gloss": "A varied diet is important."
+          }
+        },
+        {
+          "id": "calorie",
+          "hr": "calorie",
+          "en": "calorie",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ce gâteau contient beaucoup de calories.",
+            "gloss": "This cake contains a lot of calories."
+          }
+        },
+        {
+          "id": "vitamine",
+          "hr": "vitamine",
+          "en": "vitamin",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les oranges sont riches en vitamines.",
+            "gloss": "Oranges are rich in vitamins."
+          }
+        },
+        {
+          "id": "protéine",
+          "hr": "protéine",
+          "en": "protein",
+          "pos": "n. f.",
+          "example": {
+            "target": "La viande contient beaucoup de protéines.",
+            "gloss": "Meat contains a lot of protein."
+          }
+        },
+        {
+          "id": "ingrédient",
+          "hr": "ingrédient",
+          "en": "ingredient",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il manque un ingrédient pour la recette.",
+            "gloss": "One ingredient is missing for the recipe."
+          }
+        },
+        {
+          "id": "portion",
+          "hr": "portion",
+          "en": "portion, serving",
+          "pos": "n. f.",
+          "example": {
+            "target": "Une portion de légumes par repas.",
+            "gloss": "One serving of vegetables per meal."
+          }
+        },
+        {
+          "id": "matière grasse",
+          "hr": "matière grasse",
+          "en": "fat (in food)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ce yaourt contient peu de matière grasse.",
+            "gloss": "This yogurt contains little fat."
+          }
+        },
+        {
+          "id": "fibre",
+          "hr": "fibre",
+          "en": "fiber",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les céréales complètes sont riches en fibres.",
+            "gloss": "Whole grains are rich in fiber."
+          }
+        },
+        {
+          "id": "se soigner",
+          "hr": "se soigner",
+          "en": "to take care of oneself, get treatment",
+          "pos": "v.",
+          "example": {
+            "target": "Il faut bien se soigner quand on est malade.",
+            "gloss": "You must take good care of yourself when you're sick."
+          }
+        },
+        {
+          "id": "se détendre",
+          "hr": "se détendre",
+          "en": "to relax",
+          "pos": "v.",
+          "example": {
+            "target": "Le week-end, j'aime me détendre.",
+            "gloss": "On weekends, I like to relax."
+          }
+        },
+        {
+          "id": "grossir",
+          "hr": "grossir",
+          "en": "to gain weight",
+          "pos": "v.",
+          "example": {
+            "target": "J'ai grossi pendant les vacances.",
+            "gloss": "I gained weight during the holidays."
+          }
+        },
+        {
+          "id": "maigrir",
+          "hr": "maigrir",
+          "en": "to lose weight",
+          "pos": "v.",
+          "example": {
+            "target": "Elle veut maigrir avant l'été.",
+            "gloss": "She wants to lose weight before summer."
+          }
+        },
+        {
+          "id": "éviter",
+          "hr": "éviter",
+          "en": "to avoid",
+          "pos": "v.",
+          "example": {
+            "target": "Il faut éviter le sucre le soir.",
+            "gloss": "You should avoid sugar in the evening."
+          }
+        },
+        {
+          "id": "recommander",
+          "hr": "recommander",
+          "en": "to recommend",
+          "pos": "v.",
+          "example": {
+            "target": "Je te recommande ce restaurant.",
+            "gloss": "I recommend this restaurant to you."
+          }
+        },
+        {
+          "id": "faire attention",
+          "hr": "faire attention",
+          "en": "to be careful, pay attention",
+          "pos": "v.",
+          "example": {
+            "target": "Fais attention à ce que tu manges.",
+            "gloss": "Pay attention to what you eat."
+          }
+        },
+        {
+          "id": "protéger",
+          "hr": "protéger",
+          "en": "to protect",
+          "pos": "v.",
+          "example": {
+            "target": "La crème protège la peau du soleil.",
+            "gloss": "The cream protects the skin from the sun."
+          }
+        },
+        {
+          "id": "se blesser",
+          "hr": "se blesser",
+          "en": "to hurt oneself, get injured",
+          "pos": "v.",
+          "example": {
+            "target": "Elle s'est blessée en tombant.",
+            "gloss": "She hurt herself falling."
+          }
+        },
+        {
+          "id": "prendre soin",
+          "hr": "prendre soin",
+          "en": "to take care",
+          "pos": "v.",
+          "example": {
+            "target": "Prends soin de toi !",
+            "gloss": "Take care of yourself!"
+          }
+        },
+        {
+          "id": "sain",
+          "hr": "sain",
+          "en": "healthy (thing)",
+          "pos": "adj.",
+          "example": {
+            "target": "Un repas sain est bon pour le corps.",
+            "gloss": "A healthy meal is good for the body."
+          }
+        },
+        {
+          "id": "en forme",
+          "hr": "en forme",
+          "en": "fit, in good shape",
+          "pos": "adj.",
+          "example": {
+            "target": "Après le sport, je me sens en forme.",
+            "gloss": "After sports, I feel fit."
+          }
+        },
+        {
+          "id": "en bonne santé",
+          "hr": "en bonne santé",
+          "en": "in good health",
+          "pos": "adj.",
+          "example": {
+            "target": "Mes grands-parents sont en bonne santé.",
+            "gloss": "My grandparents are in good health."
+          }
+        },
+        {
+          "id": "fragile",
+          "hr": "fragile",
+          "en": "fragile, frail",
+          "pos": "adj.",
+          "example": {
+            "target": "Sa santé est encore fragile.",
+            "gloss": "His health is still fragile."
+          }
+        },
+        {
+          "id": "équilibré",
+          "hr": "équilibré",
+          "en": "balanced",
+          "pos": "adj.",
+          "example": {
+            "target": "Un repas équilibré contient des légumes.",
+            "gloss": "A balanced meal contains vegetables."
+          }
+        },
+        {
+          "id": "douloureux",
+          "hr": "douloureux",
+          "en": "painful",
+          "pos": "adj.",
+          "example": {
+            "target": "La piqûre n'est pas très douloureuse.",
+            "gloss": "The injection is not very painful."
+          }
+        },
+        {
+          "id": "reposé",
+          "hr": "reposé",
+          "en": "rested",
+          "pos": "adj.",
+          "example": {
+            "target": "Ce matin, je me sens reposé.",
+            "gloss": "This morning, I feel rested."
+          }
+        },
+        {
+          "id": "propre",
+          "hr": "propre",
+          "en": "clean",
+          "pos": "adj.",
+          "example": {
+            "target": "La cuisine est bien propre maintenant.",
+            "gloss": "The kitchen is nice and clean now."
+          }
+        },
+        {
+          "id": "quotidien",
+          "hr": "quotidien",
+          "en": "daily",
+          "pos": "adj.",
+          "example": {
+            "target": "La marche fait partie de ma vie quotidienne.",
+            "gloss": "Walking is part of my daily life."
+          }
+        },
+        {
+          "id": "régulier",
+          "hr": "régulier",
+          "en": "regular",
+          "pos": "adj.",
+          "example": {
+            "target": "Une activité régulière aide à rester en forme.",
+            "gloss": "Regular activity helps you stay fit."
+          }
+        },
+        {
+          "id": "musculation",
+          "hr": "musculation",
+          "en": "weight training",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il fait de la musculation trois fois par semaine.",
+            "gloss": "He does weight training three times a week."
+          }
+        },
+        {
+          "id": "marche",
+          "hr": "marche",
+          "en": "walking",
+          "pos": "n. f.",
+          "example": {
+            "target": "La marche est un bon exercice quotidien.",
+            "gloss": "Walking is a good daily exercise."
+          }
+        },
+        {
+          "id": "consultation",
+          "hr": "consultation",
+          "en": "consultation, medical visit",
+          "pos": "n. f.",
+          "example": {
+            "target": "La consultation coûte vingt-cinq euros.",
+            "gloss": "The consultation costs twenty-five euros."
+          }
+        },
+        {
+          "id": "guérison",
+          "hr": "guérison",
+          "en": "recovery, healing",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sa guérison a été rapide.",
+            "gloss": "His recovery was quick."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr",
+        "referentiel-fr"
+      ]
+    }
+  ]
+}
