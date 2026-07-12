@@ -1,0 +1,716 @@
+{
+  "packs": [
+    {
+      "id": "19-b1-work-economy",
+      "title": "B1 work, career & economy",
+      "level": "B1",
+      "words": [
+        {
+          "id": "fonction",
+          "hr": "fonction",
+          "en": "role, position, function",
+          "pos": "n. f.",
+          "example": {
+            "target": "Quelles sont exactement vos fonctions dans ce service ?",
+            "gloss": "What exactly are your duties in this department?"
+          }
+        },
+        {
+          "id": "responsabilité",
+          "hr": "responsabilité",
+          "en": "responsibility",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ce poste implique de lourdes responsabilités.",
+            "gloss": "This position involves heavy responsibilities."
+          }
+        },
+        {
+          "id": "performance",
+          "hr": "performance",
+          "en": "performance",
+          "pos": "n. f.",
+          "example": {
+            "target": "La performance de l'équipe s'est nettement améliorée.",
+            "gloss": "The team's performance has clearly improved."
+          }
+        },
+        {
+          "id": "réussite",
+          "hr": "réussite",
+          "en": "success",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le lancement du produit a été une véritable réussite.",
+            "gloss": "The product launch was a real success."
+          }
+        },
+        {
+          "id": "échec",
+          "hr": "échec",
+          "en": "failure",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il faut apprendre à accepter l'échec pour progresser.",
+            "gloss": "You have to learn to accept failure in order to progress."
+          }
+        },
+        {
+          "id": "augmentation",
+          "hr": "augmentation",
+          "en": "raise, increase",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai demandé une augmentation à mon supérieur.",
+            "gloss": "I asked my boss for a raise."
+          }
+        },
+        {
+          "id": "licenciement",
+          "hr": "licenciement",
+          "en": "dismissal, layoff",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le licenciement de plusieurs employés a choqué le personnel.",
+            "gloss": "The dismissal of several employees shocked the staff."
+          }
+        },
+        {
+          "id": "démission",
+          "hr": "démission",
+          "en": "resignation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sa démission a surpris toute la direction.",
+            "gloss": "His resignation surprised the entire management."
+          }
+        },
+        {
+          "id": "candidature",
+          "hr": "candidature",
+          "en": "application (job)",
+          "pos": "n. f.",
+          "example": {
+            "target": "J'ai envoyé ma candidature pour le poste de commercial.",
+            "gloss": "I sent my application for the sales position."
+          }
+        },
+        {
+          "id": "recruteur",
+          "hr": "recruteur",
+          "en": "recruiter",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le recruteur m'a rappelé après l'entretien.",
+            "gloss": "The recruiter called me back after the interview."
+          }
+        },
+        {
+          "id": "concurrence",
+          "hr": "concurrence",
+          "en": "competition",
+          "pos": "n. f.",
+          "example": {
+            "target": "La concurrence sur ce marché est de plus en plus forte.",
+            "gloss": "Competition in this market is getting tougher."
+          }
+        },
+        {
+          "id": "secteur",
+          "hr": "secteur",
+          "en": "sector",
+          "pos": "n. m.",
+          "example": {
+            "target": "Il travaille dans le secteur de l'énergie.",
+            "gloss": "He works in the energy sector."
+          }
+        },
+        {
+          "id": "domaine",
+          "hr": "domaine",
+          "en": "field, area",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle est experte dans le domaine du marketing.",
+            "gloss": "She is an expert in the field of marketing."
+          }
+        },
+        {
+          "id": "économie",
+          "hr": "économie",
+          "en": "economy",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'économie du pays connaît une reprise lente.",
+            "gloss": "The country's economy is experiencing a slow recovery."
+          }
+        },
+        {
+          "id": "budget",
+          "hr": "budget",
+          "en": "budget",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nous devons respecter le budget prévu pour le projet.",
+            "gloss": "We must stick to the budget set for the project."
+          }
+        },
+        {
+          "id": "revenu",
+          "hr": "revenu",
+          "en": "income",
+          "pos": "n. m.",
+          "example": {
+            "target": "Son revenu mensuel ne suffit pas à couvrir ses dépenses.",
+            "gloss": "His monthly income isn't enough to cover his expenses."
+          }
+        },
+        {
+          "id": "dépense",
+          "hr": "dépense",
+          "en": "expense, spending",
+          "pos": "n. f.",
+          "example": {
+            "target": "Il faut réduire les dépenses inutiles de l'entreprise.",
+            "gloss": "We need to cut the company's unnecessary spending."
+          }
+        },
+        {
+          "id": "bénéfice",
+          "hr": "bénéfice",
+          "en": "profit",
+          "pos": "n. m.",
+          "example": {
+            "target": "La société a réalisé un bénéfice record cette année.",
+            "gloss": "The company made a record profit this year."
+          }
+        },
+        {
+          "id": "perte",
+          "hr": "perte",
+          "en": "loss",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'usine a enregistré de lourdes pertes en début d'année.",
+            "gloss": "The factory recorded heavy losses at the start of the year."
+          }
+        },
+        {
+          "id": "investissement",
+          "hr": "investissement",
+          "en": "investment",
+          "pos": "n. m.",
+          "example": {
+            "target": "Cet investissement devrait rapporter dans deux ans.",
+            "gloss": "This investment should pay off in two years."
+          }
+        },
+        {
+          "id": "inflation",
+          "hr": "inflation",
+          "en": "inflation",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'inflation fait grimper le prix des produits de base.",
+            "gloss": "Inflation is pushing up the price of basic goods."
+          }
+        },
+        {
+          "id": "commerce",
+          "hr": "commerce",
+          "en": "trade, business",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le commerce en ligne se développe très rapidement.",
+            "gloss": "Online trade is growing very fast."
+          }
+        },
+        {
+          "id": "industrie",
+          "hr": "industrie",
+          "en": "industry",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'industrie automobile emploie des milliers de personnes.",
+            "gloss": "The automotive industry employs thousands of people."
+          }
+        },
+        {
+          "id": "production",
+          "hr": "production",
+          "en": "production, output",
+          "pos": "n. f.",
+          "example": {
+            "target": "La production a doublé grâce aux nouvelles machines.",
+            "gloss": "Output doubled thanks to the new machines."
+          }
+        },
+        {
+          "id": "croissance",
+          "hr": "croissance",
+          "en": "growth",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'entreprise vise une forte croissance à l'international.",
+            "gloss": "The company is aiming for strong growth internationally."
+          }
+        },
+        {
+          "id": "négocier",
+          "hr": "négocier",
+          "en": "to negotiate",
+          "pos": "v.",
+          "example": {
+            "target": "Nous allons négocier les conditions du contrat.",
+            "gloss": "We are going to negotiate the terms of the contract."
+          }
+        },
+        {
+          "id": "collaborer",
+          "hr": "collaborer",
+          "en": "to collaborate",
+          "pos": "v.",
+          "example": {
+            "target": "J'aime collaborer avec des équipes de différents pays.",
+            "gloss": "I like collaborating with teams from different countries."
+          }
+        },
+        {
+          "id": "démissionner",
+          "hr": "démissionner",
+          "en": "to resign",
+          "pos": "v.",
+          "example": {
+            "target": "Elle a décidé de démissionner pour créer sa propre société.",
+            "gloss": "She decided to resign to start her own company."
+          }
+        },
+        {
+          "id": "investir",
+          "hr": "investir",
+          "en": "to invest",
+          "pos": "v.",
+          "example": {
+            "target": "Ils ont choisi d'investir dans les énergies renouvelables.",
+            "gloss": "They chose to invest in renewable energy."
+          }
+        },
+        {
+          "id": "rentabiliser",
+          "hr": "rentabiliser",
+          "en": "to make profitable",
+          "pos": "v.",
+          "example": {
+            "target": "Il faut rentabiliser rapidement cet équipement coûteux.",
+            "gloss": "We need to make this expensive equipment pay off quickly."
+          }
+        },
+        {
+          "id": "se réunir",
+          "hr": "se réunir",
+          "en": "to meet, to gather",
+          "pos": "v.",
+          "example": {
+            "target": "L'équipe se réunit chaque lundi matin.",
+            "gloss": "The team meets every Monday morning."
+          }
+        },
+        {
+          "id": "planifier",
+          "hr": "planifier",
+          "en": "to plan",
+          "pos": "v.",
+          "example": {
+            "target": "Nous devons planifier les étapes du projet.",
+            "gloss": "We need to plan the stages of the project."
+          }
+        },
+        {
+          "id": "réaliser",
+          "hr": "réaliser",
+          "en": "to carry out, to achieve",
+          "pos": "v.",
+          "example": {
+            "target": "Elle a réussi à réaliser tous ses projets professionnels.",
+            "gloss": "She managed to achieve all her professional projects."
+          }
+        },
+        {
+          "id": "exiger",
+          "hr": "exiger",
+          "en": "to demand, to require",
+          "pos": "v.",
+          "example": {
+            "target": "Ce travail exige beaucoup de rigueur et de patience.",
+            "gloss": "This job requires a lot of rigor and patience."
+          }
+        },
+        {
+          "id": "motiver",
+          "hr": "motiver",
+          "en": "to motivate",
+          "pos": "v.",
+          "example": {
+            "target": "Un bon chef sait motiver ses collaborateurs.",
+            "gloss": "A good boss knows how to motivate his staff."
+          }
+        },
+        {
+          "id": "professionnel",
+          "hr": "professionnel",
+          "en": "professional",
+          "pos": "adj.",
+          "example": {
+            "target": "Il garde toujours une attitude très professionnelle.",
+            "gloss": "He always keeps a very professional attitude."
+          }
+        },
+        {
+          "id": "efficace",
+          "hr": "efficace",
+          "en": "efficient, effective",
+          "pos": "adj.",
+          "example": {
+            "target": "Cette méthode est plus efficace que l'ancienne.",
+            "gloss": "This method is more efficient than the old one."
+          }
+        },
+        {
+          "id": "compétent",
+          "hr": "compétent",
+          "en": "competent, skilled",
+          "pos": "adj.",
+          "example": {
+            "target": "Nous cherchons une personne compétente en gestion.",
+            "gloss": "We're looking for someone competent in management."
+          }
+        },
+        {
+          "id": "qualifié",
+          "hr": "qualifié",
+          "en": "qualified, skilled",
+          "pos": "adj.",
+          "example": {
+            "target": "L'entreprise manque de personnel qualifié.",
+            "gloss": "The company lacks qualified staff."
+          }
+        },
+        {
+          "id": "rentable",
+          "hr": "rentable",
+          "en": "profitable",
+          "pos": "adj.",
+          "example": {
+            "target": "Ce projet n'est pas encore rentable.",
+            "gloss": "This project isn't profitable yet."
+          }
+        },
+        {
+          "id": "financier",
+          "hr": "financier",
+          "en": "financial",
+          "pos": "adj.",
+          "example": {
+            "target": "L'entreprise traverse des difficultés financières.",
+            "gloss": "The company is going through financial difficulties."
+          }
+        },
+        {
+          "id": "commercial",
+          "hr": "commercial",
+          "en": "commercial, business",
+          "pos": "adj.",
+          "example": {
+            "target": "Ils ont signé un accord commercial important.",
+            "gloss": "They signed an important commercial agreement."
+          }
+        },
+        {
+          "id": "ambitieux",
+          "hr": "ambitieux",
+          "en": "ambitious",
+          "pos": "adj.",
+          "example": {
+            "target": "C'est un projet ambitieux mais réalisable.",
+            "gloss": "It's an ambitious but achievable project."
+          }
+        },
+        {
+          "id": "motivé",
+          "hr": "motivé",
+          "en": "motivated",
+          "pos": "adj.",
+          "example": {
+            "target": "Les candidats motivés seront reçus en priorité.",
+            "gloss": "Motivated candidates will be seen first."
+          }
+        },
+        {
+          "id": "disponible",
+          "hr": "disponible",
+          "en": "available",
+          "pos": "adj.",
+          "example": {
+            "target": "Je suis disponible pour un entretien la semaine prochaine.",
+            "gloss": "I'm available for an interview next week."
+          }
+        },
+        {
+          "id": "employeur",
+          "hr": "employeur",
+          "en": "employer",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mon employeur propose des horaires flexibles.",
+            "gloss": "My employer offers flexible hours."
+          }
+        },
+        {
+          "id": "gestion",
+          "hr": "gestion",
+          "en": "management",
+          "pos": "n. f.",
+          "example": {
+            "target": "La gestion des ressources humaines est complexe.",
+            "gloss": "Human resources management is complex."
+          }
+        },
+        {
+          "id": "délai",
+          "hr": "délai",
+          "en": "deadline, time limit",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nous devons livrer le projet dans les délais.",
+            "gloss": "We must deliver the project on time."
+          }
+        },
+        {
+          "id": "entrepreneur",
+          "hr": "entrepreneur",
+          "en": "entrepreneur",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ce jeune entrepreneur a créé trois sociétés.",
+            "gloss": "This young entrepreneur has started three companies."
+          }
+        },
+        {
+          "id": "cadre",
+          "hr": "cadre",
+          "en": "executive, manager",
+          "pos": "n. m.",
+          "example": {
+            "target": "Elle est cadre dans une grande banque.",
+            "gloss": "She is an executive at a big bank."
+          }
+        },
+        {
+          "id": "fournisseur",
+          "hr": "fournisseur",
+          "en": "supplier",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nous avons changé de fournisseur pour réduire les coûts.",
+            "gloss": "We changed suppliers to cut costs."
+          }
+        },
+        {
+          "id": "clientèle",
+          "hr": "clientèle",
+          "en": "clientele, customer base",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ce magasin a une clientèle fidèle.",
+            "gloss": "This shop has a loyal customer base."
+          }
+        },
+        {
+          "id": "bilan",
+          "hr": "bilan",
+          "en": "assessment, balance sheet",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le bilan annuel de l'entreprise est positif.",
+            "gloss": "The company's annual results are positive."
+          }
+        },
+        {
+          "id": "rendement",
+          "hr": "rendement",
+          "en": "yield, output",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le rendement de l'usine a augmenté de dix pour cent.",
+            "gloss": "The factory's output rose by ten percent."
+          }
+        },
+        {
+          "id": "productivité",
+          "hr": "productivité",
+          "en": "productivity",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le télétravail a amélioré la productivité de l'équipe.",
+            "gloss": "Remote work improved the team's productivity."
+          }
+        },
+        {
+          "id": "prime",
+          "hr": "prime",
+          "en": "bonus",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les employés ont reçu une prime en fin d'année.",
+            "gloss": "The employees received a bonus at the end of the year."
+          }
+        },
+        {
+          "id": "capital",
+          "hr": "capital",
+          "en": "capital",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ils cherchent des investisseurs pour augmenter leur capital.",
+            "gloss": "They're looking for investors to increase their capital."
+          }
+        },
+        {
+          "id": "taux",
+          "hr": "taux",
+          "en": "rate",
+          "pos": "n. m.",
+          "example": {
+            "target": "Le taux d'intérêt du prêt reste très bas.",
+            "gloss": "The interest rate on the loan remains very low."
+          }
+        },
+        {
+          "id": "pouvoir d'achat",
+          "hr": "pouvoir d'achat",
+          "en": "purchasing power",
+          "pos": "n. m.",
+          "example": {
+            "target": "L'inflation réduit le pouvoir d'achat des ménages.",
+            "gloss": "Inflation reduces households' purchasing power."
+          }
+        },
+        {
+          "id": "subvention",
+          "hr": "subvention",
+          "en": "subsidy, grant",
+          "pos": "n. f.",
+          "example": {
+            "target": "L'État accorde des subventions aux petites entreprises.",
+            "gloss": "The state grants subsidies to small businesses."
+          }
+        },
+        {
+          "id": "exportation",
+          "hr": "exportation",
+          "en": "export",
+          "pos": "n. f.",
+          "example": {
+            "target": "Les exportations de vin ont fortement augmenté.",
+            "gloss": "Wine exports have risen sharply."
+          }
+        },
+        {
+          "id": "importation",
+          "hr": "importation",
+          "en": "import",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le pays dépend des importations d'énergie.",
+            "gloss": "The country depends on energy imports."
+          }
+        },
+        {
+          "id": "demande",
+          "hr": "demande",
+          "en": "demand",
+          "pos": "n. f.",
+          "example": {
+            "target": "La demande de logements ne cesse d'augmenter.",
+            "gloss": "The demand for housing keeps rising."
+          }
+        },
+        {
+          "id": "récession",
+          "hr": "récession",
+          "en": "recession",
+          "pos": "n. f.",
+          "example": {
+            "target": "Le pays craint une nouvelle récession économique.",
+            "gloss": "The country fears another economic recession."
+          }
+        },
+        {
+          "id": "concurrent",
+          "hr": "concurrent",
+          "en": "competitor",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nos concurrents proposent des prix plus bas.",
+            "gloss": "Our competitors offer lower prices."
+          }
+        },
+        {
+          "id": "financer",
+          "hr": "financer",
+          "en": "to finance, to fund",
+          "pos": "v.",
+          "example": {
+            "target": "La région va financer une partie du projet.",
+            "gloss": "The region will fund part of the project."
+          }
+        },
+        {
+          "id": "épargner",
+          "hr": "épargner",
+          "en": "to save (money)",
+          "pos": "v.",
+          "example": {
+            "target": "Il essaie d'épargner un peu chaque mois.",
+            "gloss": "He tries to save a little every month."
+          }
+        },
+        {
+          "id": "recruter",
+          "hr": "recruter",
+          "en": "to recruit, to hire",
+          "pos": "v.",
+          "example": {
+            "target": "La société cherche à recruter dix nouveaux techniciens.",
+            "gloss": "The company is looking to hire ten new technicians."
+          }
+        },
+        {
+          "id": "déléguer",
+          "hr": "déléguer",
+          "en": "to delegate",
+          "pos": "v.",
+          "example": {
+            "target": "Un bon manager sait déléguer certaines tâches.",
+            "gloss": "A good manager knows how to delegate certain tasks."
+          }
+        },
+        {
+          "id": "salarié",
+          "hr": "salarié",
+          "en": "salaried, employee",
+          "pos": "adj.",
+          "example": {
+            "target": "Le personnel salarié bénéficie d'une assurance santé.",
+            "gloss": "Salaried staff benefit from health insurance."
+          }
+        }
+      ],
+      "sources": [
+        "francais-fondamental",
+        "freq-fr",
+        "referentiel-fr"
+      ]
+    }
+  ]
+}
