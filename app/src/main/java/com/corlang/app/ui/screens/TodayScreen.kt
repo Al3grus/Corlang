@@ -32,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.WordsRepository
+import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.navigation.Dest
@@ -105,6 +106,29 @@ fun TodayScreen(
         it.id in doneIds || (it.kind == StepKind.WORDS && dueNow == 0)
     }
 
+    // Daily goal ring: today's guided session, measured on the day you're up to (not the one
+    // being browsed). Closes fully once a lesson day has been completed today and stays closed.
+    val startOfToday = remember {
+        java.time.LocalDate.now().atStartOfDay(java.time.ZoneId.systemDefault())
+            .toInstant().toEpochMilli()
+    }
+    val completedToday by container.progress.completionsSince(lang, startOfToday)
+        .collectAsState(initial = 0)
+    val targetDayObj = plan.days.firstOrNull { it.day == targetDay } ?: day
+    val targetSteps = remember(targetDay) { buildSessionSteps(targetDayObj, resourceUrls) }
+    val targetChecks by container.progress.dayTaskChecks(lang, targetDay)
+        .collectAsState(initial = emptyList())
+    val targetDoneIds = targetChecks.map { it.itemId }.toSet()
+    val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
+    val targetStepsDone = targetAction.count {
+        it.id in targetDoneIds || (it.kind == StepKind.WORDS && dueNow == 0)
+    }
+    val ringProgress = when {
+        completedToday > 0 -> 1f
+        targetAction.isEmpty() -> 0f
+        else -> targetStepsDone.toFloat() / targetAction.size
+    }
+
     // One even rhythm between the page's blocks so nothing clusters at the top.
     Column(
         modifier = Modifier
@@ -113,33 +137,64 @@ fun TodayScreen(
             .padding(horizontal = 16.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        // Hero: streak + the single next action.
+        // Hero: streak + daily goal ring + ONE unmissable next action.
         Surface(
             color = MaterialTheme.colorScheme.tertiaryContainer,
             contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
             shape = RoundedCornerShape(16.dp),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text(
-                    buildString {
-                        append(
-                            if (streak > 0) "🔥 $streak-day streak"
-                            else "🔥 Start your streak today"
+            Row(
+                modifier = Modifier.padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(
+                        buildString {
+                            append(
+                                if (streak > 0) "🔥 $streak-day streak"
+                                else "🔥 Start your streak today"
+                            )
+                            if (freezes > 0) append("  ·  ❄️ $freezes freeze${if (freezes > 1) "s" else ""}")
+                        },
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Text(
+                        when {
+                            completedToday > 0 -> "Today's goal is done ✓. Anything more is bonus depth."
+                            dueNow > 0 -> "$dueNow words due, then Day $targetDay."
+                            else -> "One guided lesson closes the ring and keeps the streak."
+                        },
+                        style = MaterialTheme.typography.bodySmall,
+                        modifier = Modifier.padding(top = 2.dp, bottom = 10.dp)
+                    )
+                    // The single next best action, no navigation needed.
+                    Button(onClick = {
+                        when {
+                            completedToday > 0 && dueNow == 0 -> onNavigate(Dest.WORDS.route)
+                            dueNow > 0 -> onNavigate(Dest.WORDS.route)
+                            else -> {
+                                viewedDay = targetDay; userBrowsed = false; inPlayer = true
+                            }
+                        }
+                    }) {
+                        Text(
+                            when {
+                                completedToday > 0 && dueNow == 0 -> "Learn extra words →"
+                                dueNow > 0 -> "Review $dueNow words →"
+                                targetStepsDone > 0 -> "Continue Day $targetDay →"
+                                else -> "Start Day $targetDay →"
+                            }
                         )
-                        if (freezes > 0) append("  ·  ❄️ $freezes freeze${if (freezes > 1) "s" else ""}")
-                    },
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    when {
-                        !studiedToday && dueNow > 0 -> "$dueNow words due. The lesson starts with them."
-                        studiedToday -> "Today is banked ✓. Keep going for depth."
-                        else -> "One guided lesson keeps the streak alive."
-                    },
-                    style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.padding(top = 2.dp)
+                    }
+                }
+                GoalRing(
+                    progress = ringProgress,
+                    label = if (ringProgress >= 1f) "✓"
+                            else "${(ringProgress * 100).toInt()}%",
+                    size = 64.dp,
+                    modifier = Modifier.padding(start = 12.dp)
                 )
             }
         }
