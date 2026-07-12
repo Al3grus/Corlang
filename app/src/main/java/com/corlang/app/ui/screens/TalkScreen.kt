@@ -50,6 +50,9 @@ fun TalkScreen(container: AppContainer, lang: String) {
     val entitled by container.premium.entitled.collectAsState(initial = null as Boolean?)
     if (entitled == null) return
     if (entitled == false) {
+        // Coming-soon dialog until Play Billing ships; then this onClick becomes the
+        // purchase flow (docs/server-ai.md, step 4) and nothing else here changes.
+        var showComingSoon by remember { mutableStateOf(false) }
         Column(
             modifier = Modifier.fillMaxSize().padding(24.dp),
             verticalArrangement = Arrangement.Center,
@@ -69,11 +72,29 @@ fun TalkScreen(container: AppContainer, lang: String) {
             )
             Text(
                 "Practice real back-and-forth Croatian at your level, with gentle corrections " +
-                    "and a voice for every reply. Part of Corlang Premium, coming with the " +
-                    "Google Play release.",
+                    "and a voice for every reply. Part of Corlang Premium.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 8.dp)
+            )
+            Button(
+                onClick = { showComingSoon = true },
+                modifier = Modifier.fillMaxWidth().padding(top = 20.dp)
+            ) { Text("⭐ Subscribe to Premium") }
+        }
+        if (showComingSoon) {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { showComingSoon = false },
+                title = { Text("Almost there") },
+                text = {
+                    Text(
+                        "Premium subscriptions arrive with the Google Play release. " +
+                            "Everything else in Corlang stays free while you learn."
+                    )
+                },
+                confirmButton = {
+                    Button(onClick = { showComingSoon = false }) { Text("OK") }
+                }
             )
         }
         return
