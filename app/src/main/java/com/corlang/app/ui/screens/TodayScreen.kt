@@ -61,7 +61,6 @@ fun TodayScreen(
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
     val today = WordsRepository.todayEpochDay()
     val dueNow = reviews.count { it.dueEpochDay <= today }
-    val studiedToday = (progress?.lastStudiedEpochDay ?: 0L) == today
 
     // The lesson to land on = the day AFTER your last completed one (also covers doing several
     // days at once). Robust even if the stored currentDay lags behind completions.

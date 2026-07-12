@@ -151,7 +151,6 @@ fun WordsScreen(container: AppContainer, lang: String) {
         scope.launch {
             container.words.grade(lang, card.word.id, g)
             if (!wasReview) container.languagePrefs.setWordsSessionSnapshot(snap)
-            if (sessionDone) container.progress.recordStudyActivity(lang)
             // Rebuild only after the final grade is committed (restores the daily session
             // after a review, or produces the post-completion state after the daily session).
             if (sessionDone) refreshKey++
@@ -239,7 +238,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
                 modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
             ) {
                 Text(
-                    "🎉 Goal ring closed, today's words are done and your streak is safe.",
+                    "🎉 Today's words are done. Finish today's lesson to bank the streak.",
                     modifier = Modifier.padding(14.dp),
                     fontWeight = FontWeight.SemiBold
                 )
