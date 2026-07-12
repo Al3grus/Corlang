@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Corlang Loader — vanilla</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; height: 100%; }
-  /* --- Corlang loader (framework-free). Drop #corlang-loader anywhere it can fill its parent. --- */
+  /* --- Corlang loader (framework-free). #corlang-loader fills its parent. --- */
   #corlang-loader { position: fixed; inset: 0; background: #0f1620; overflow: hidden; z-index: 9999; }
   #corlang-loader .stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-  #corlang-loader .wordmark { display: inline-flex; align-items: center; font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 700; font-size: 56px; letter-spacing: -0.02em; color: #f4efe6; }
+  #corlang-loader .wordmark { display: inline-flex; align-items: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 56px; letter-spacing: -0.02em; color: #f4efe6; }
   #corlang-loader .letter { display: inline-block; opacity: 0; line-height: 1; }
   #corlang-loader .mark { display: inline-block; flex: 0 0 auto; width: 46px; height: 46px; transform-origin: 50% 50%; }
   #corlang-loader .mark svg { display: block; overflow: visible; }
-  #corlang-loader .ring { transform-box: fill-box; transform-origin: center; }
+  #corlang-loader .ringOuter { transform-box: fill-box; transform-origin: center; }
   #corlang-loader .pct { position: absolute; top: 59%; left: 0; right: 0; text-align: center; font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 3px; color: rgba(244,239,230,.5); }
-  #corlang-loader .tag { position: absolute; top: 59%; left: 0; right: 0; text-align: center; font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: rgba(244,239,230,.62); opacity: 0; }
+  #corlang-loader .tag { position: absolute; top: 59%; left: 0; right: 0; text-align: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: rgba(244,239,230,.62); opacity: 0; }
 </style>
 </head>
 <body>
@@ -26,10 +26,13 @@
         <span class="letter">C</span>
         <span class="mark">
           <svg viewBox="0 0 100 100" width="46" height="46">
-            <g class="ring">
-              <circle class="ringArc" cx="50" cy="50" r="30" fill="none" stroke="#2f7fae" stroke-width="8" stroke-linecap="round" transform="rotate(-90 50 50)" stroke-dasharray="188.5" stroke-dashoffset="188.5"></circle>
+            <g class="ringOuter">
+              <circle class="arcOuter" cx="50" cy="50" r="33" fill="none" stroke="#2f7fae" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 207.3"></circle>
             </g>
-            <circle cx="50" cy="50" r="12.5" fill="#c8402c"></circle>
+            <g class="ringInner">
+              <path class="arcInner" d="M70.37 44.92 A21 21 0 1 0 37.07 66.55" fill="none" stroke="#2f7fae" stroke-width="6" stroke-linecap="round" stroke-dasharray="80 80" stroke-dashoffset="80"></path>
+            </g>
+            <circle class="core" cx="50" cy="50" r="9" fill="#c8402c"></circle>
           </svg>
         </span>
         <span class="letter">r</span><span class="letter">l</span><span class="letter">a</span><span class="letter">n</span><span class="letter">g</span>
@@ -45,11 +48,12 @@
     var root = document.getElementById('corlang-loader');
     var stage = root.querySelector('.stage');
     var letters = [].slice.call(root.querySelectorAll('.letter'));
-    var C = 2 * Math.PI * 30;       // ring circumference
     var start = 0, markDX = 0, raf;
     var q = function (s) { return root.querySelector(s); };
     var cl = function (x) { return Math.max(0, Math.min(1, x)); };
-    var eo = function (x) { return 1 - Math.pow(1 - x, 3); };
+    var eo = function (x) { return 1 - Math.pow(1 - x, 3); };                          // easeOutCubic
+    var eio = function (x) { return x < 0.5 ? 4*x*x*x : 1 - Math.pow(-2*x+2,3)/2; };    // easeInOutCubic
+    var eob = function (x) { var c = 2.2; return x <= 0 ? 0 : 1 + (c+1)*Math.pow(x-1,3) + c*Math.pow(x-1,2); }; // easeOutBack
 
     function measure() {
       var wm = root.querySelector('.wordmark').getBoundingClientRect();
@@ -58,29 +62,42 @@
     }
 
     function frame(now) {
-      var t = ((now - start) % DUR) / DUR, loadEnd = 0.5;
+      var t = ((now - start) % DUR) / DUR, loadEnd = 0.5, prog = cl(t / loadEnd);
 
       var g = 1;
       if (t < 0.04) g = t / 0.04;
       else if (t > 0.93) g = cl(1 - (t - 0.93) / 0.07);
       stage.style.opacity = g;
 
-      var prog = cl(t / loadEnd);
-      q('.ringArc').style.strokeDashoffset = C * (1 - prog);
-      q('.ring').style.transform = 'rotate(' + (prog * 360) + 'deg)';
+      // outer ring: grow + sweep to -52deg
+      q('.arcOuter').style.strokeDasharray = (132 * prog) + ' 207.3';
+      var ep = eo(prog);
+      q('.ringOuter').style.transform = 'rotate(' + (-52 - (1 - ep) * 210) + 'deg)';
 
+      // inner arc: anchored right, reveal leftward
+      q('.arcInner').style.strokeDashoffset = 80 * (1 - prog);
+
+      // core: pop in near the end with overshoot
+      var cp = cl((prog - 0.8) / 0.2);
+      var ce = q('.core');
+      ce.style.transformBox = 'fill-box';
+      ce.style.transformOrigin = 'center';
+      ce.style.transform = 'scale(' + eob(cp) + ')';
+
+      // mark: scale down + translate LEFT into slot
       var dx = markDX || 0, s = 2.4, tx = dx;
-      if (t >= loadEnd) { var sp = eo(cl((t - loadEnd) / 0.3)); s = 2.4 - 1.4 * sp; tx = dx * (1 - sp); }
+      if (t >= loadEnd) { var sp = eio(cl((t - loadEnd) / 0.38)); s = 2.4 - 1.4 * sp; tx = dx * (1 - sp); }
       q('.mark').style.transform = 'translateX(' + tx + 'px) scale(' + Math.max(1, s) + ')';
 
+      // letters fade + rise in place
       letters.forEach(function (el, i) {
-        var st = 0.58 + i * 0.04, lp = eo(cl((t - st) / 0.16));
+        var st = 0.62 + i * 0.04, lp = eio(cl((t - st) / 0.18));
         el.style.opacity = lp;
         el.style.transform = 'translateY(' + ((1 - lp) * 8) + 'px)';
       });
 
       var pct = q('.pct');
-      if (t < loadEnd) { pct.style.opacity = 1; pct.textContent = Math.round((t / loadEnd) * 100) + '%'; }
+      if (t < loadEnd) { pct.style.opacity = 1; pct.textContent = Math.round(prog * 100) + '%'; }
       else pct.style.opacity = cl(1 - (t - loadEnd) / 0.08);
 
       q('.tag').style.opacity = cl((t - 0.82) / 0.08);

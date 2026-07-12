@@ -1,8 +1,8 @@
 package com.corlang.app.ui.screens
 
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.Easing
 import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -45,13 +45,16 @@ import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
 
 /*
- * Corlang loading screen. A determinate ring fills with REAL load progress and, at 100%, resolves
- * into the wordmark (the ring becomes the "o" in Corlang) before revealing the app.
+ * Corlang loading screen. The two-ring Orbit Core mark fills with REAL load progress and, at
+ * 100%, matches the app icon exactly, then resolves into the wordmark (the mark becomes the
+ * "o" in Corlang) before revealing the app.
  *
- * Ported from the design handoff (design_handoff_corlang_loader/CorlangLoader.jsx). The web
- * prototype loops on a timer; here the ring is driven by the actual content preload and the
- * settle -> letters -> tagline sequence plays once, then onReady() hands over to the app.
- * Timing/easing/geometry/colors follow the handoff spec (r=30 ring in a 100 viewBox, easeOutCubic).
+ * Ported from the design handoff rev 2 (design_handoff_corlang_loader/CorlangLoader.jsx):
+ * the outer ring's arc grows while sweeping into its final -52deg angle (easeOutCubic), the
+ * inner arc reveals leftward from its right anchor, and the core pops in near the end with an
+ * ease-out-back overshoot. The web prototype loops on a timer; here `prog` is driven by the
+ * actual content preload, and the settle -> letters -> tagline sequence (easeInOutCubic)
+ * plays once, then onReady() hands over to the app.
  */
 
 private val SplashBg = Color(0xFF0F1620)      // deep ink-navy
@@ -67,7 +70,19 @@ private fun eo(x: Float): Float {
     return 1f - v * v * v
 }
 
-private val EaseOutCubic = Easing { f -> val v = 1f - f; 1f - v * v * v }
+/** easeInOutCubic (the rev-2 settle/letter easing). */
+private fun eio(x: Float): Float {
+    val v = cl(x)
+    return if (v < 0.5f) 4f * v * v * v else 1f - ((-2f * v + 2f) * (-2f * v + 2f) * (-2f * v + 2f)) / 2f
+}
+
+/** easeOutBack with overshoot c=2.2 (the core's pop). */
+private fun eob(x: Float): Float {
+    if (x <= 0f) return 0f
+    val c = 2.2f
+    val v = cl(x) - 1f
+    return 1f + (c + 1f) * v * v * v + c * v * v
+}
 
 /**
  * The load work whose completion drives the ring. These warm the content caches the first screen
@@ -122,10 +137,12 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
             withContext(Dispatchers.Default) { runCatching { step() } }
             target.floatValue = (i + 1f) / steps.size
         }
-        // Let the ring visibly reach 100% before resolving (this IS the ready moment).
+        // Let the mark visibly reach 100% (= the app icon) before resolving.
         snapshotFlow { progress.value }.first { it >= 0.999f }
         delay(100)
-        resolve.animateTo(1f, tween(1980, easing = EaseOutCubic))
+        // Linear driver: each sub-animation (settle/letters/tagline) applies its own easing,
+        // mirroring the prototype's single time axis t 0.5 -> 1.0.
+        resolve.animateTo(1f, tween(2200, easing = LinearEasing))
         stageAlpha.animateTo(0f, tween(340))
         onReady()
     }
@@ -151,9 +168,10 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
                         .size(46.dp)
                         .onGloballyPositioned { markCx = it.boundsInRoot().center.x }
                         .graphicsLayer {
-                            // Settle: scale 2.4 -> 1.0 and slide left from center into the "o" slot.
-                            val tt = 0.5f + 0.45f * resolve.value
-                            val sp = eo(cl((tt - 0.5f) / 0.3f))
+                            // Settle (rev 2): ease-in-out over t 0.5 -> 0.88, scale 2.4 -> 1.0,
+                            // sliding left from screen-center into the "o" slot.
+                            val tt = 0.5f + 0.5f * resolve.value
+                            val sp = eio(cl((tt - 0.5f) / 0.38f))
                             val s = 2.4f - 1.4f * sp
                             scaleX = s
                             scaleY = s
@@ -163,23 +181,25 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
                     Canvas(Modifier.fillMaxSize()) {
                         val p = progress.value
                         val w = size.minDimension
-                        val radius = 30f / 100f * w
-                        val stroke = 8f / 100f * w
-                        val coreR = 12.5f / 100f * w
+                        val stroke = 6f / 100f * w
                         val c = Offset(size.width / 2f, size.height / 2f)
-                        drawCircle(color = SplashCore, radius = coreR, center = c)
-                        // Determinate arc from 12 o'clock; the whole ring turns once as it fills.
-                        rotate(degrees = p * 360f, pivot = c) {
-                            drawArc(
-                                color = SplashBrand,
-                                startAngle = -90f,
-                                sweepAngle = p * 360f,
-                                useCenter = false,
-                                topLeft = Offset(c.x - radius, c.y - radius),
-                                size = Size(radius * 2f, radius * 2f),
-                                style = Stroke(width = stroke, cap = StrokeCap.Round)
-                            )
+
+                        // Outer ring: visible arc grows to 229.2deg while the whole ring sweeps
+                        // (counter-rotates) into the icon's final -52deg angle.
+                        val sweepIn = -52f - (1f - eo(p)) * 210f
+                        rotate(degrees = sweepIn + 52f, pivot = c) {
+                            drawMarkArc(SplashBrand, c, radius = 33f / 100f * w, stroke = stroke,
+                                startDeg = -52f, sweepDeg = 229.2f * p)
                         }
+
+                        // Inner arc: anchored at its right end (-14deg), reveals leftward
+                        // (counter-clockwise) onto the icon's inner arc.
+                        drawMarkArc(SplashBrand, c, radius = 21f / 100f * w, stroke = stroke,
+                            startDeg = -14f, sweepDeg = -218.3f * p)
+
+                        // Core: hidden until ~80%, then pops in with an overshoot.
+                        val cp = eob(cl((p - 0.8f) / 0.2f))
+                        if (cp > 0f) drawCircle(SplashCore, radius = 9f / 100f * w * cp, center = c)
                     }
                 }
                 SplashLetter("r", 1, resolve, rise)
@@ -202,7 +222,7 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
                     .align(Alignment.TopCenter)
                     .graphicsLayer {
                         translationY = hPx * 0.59f
-                        alpha = cl(1f - (0.45f * resolve.value) / 0.08f)
+                        alpha = cl(1f - (0.5f * resolve.value) / 0.08f)
                     }
             )
 
@@ -215,7 +235,7 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
                     .align(Alignment.TopCenter)
                     .graphicsLayer {
                         translationY = hPx * 0.59f
-                        alpha = cl(((0.5f + 0.45f * resolve.value) - 0.82f) / 0.08f)
+                        alpha = cl(((0.5f + 0.5f * resolve.value) - 0.82f) / 0.08f)
                     }
             )
         }
@@ -234,10 +254,27 @@ private fun SplashLetter(ch: String, index: Int, resolve: Animatable<Float, *>, 
             letterSpacing = (-1.1).sp
         ),
         modifier = Modifier.graphicsLayer {
-            val tt = 0.5f + 0.45f * resolve.value
-            val lp = eo(cl((tt - (0.58f + index * 0.04f)) / 0.16f))
+            // Rev 2 stagger: letter i enters at t = 0.62 + i*0.04 over 0.18, ease-in-out.
+            val tt = 0.5f + 0.5f * resolve.value
+            val lp = eio(cl((tt - (0.62f + index * 0.04f)) / 0.18f))
             alpha = lp
             translationY = (1f - lp) * rise
         }
+    )
+}
+
+/** Round-capped arc of the mark, in mark-local pixels. */
+private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawMarkArc(
+    color: Color, center: Offset, radius: Float, stroke: Float, startDeg: Float, sweepDeg: Float
+) {
+    if (sweepDeg == 0f) return
+    drawArc(
+        color = color,
+        startAngle = startDeg,
+        sweepAngle = sweepDeg,
+        useCenter = false,
+        topLeft = Offset(center.x - radius, center.y - radius),
+        size = Size(radius * 2f, radius * 2f),
+        style = Stroke(width = stroke, cap = StrokeCap.Round)
     )
 }

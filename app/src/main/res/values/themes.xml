@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base theme; actual colors are driven by Compose Material3 in ui/theme. -->
-    <style name="Theme.Corlang" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Base theme; actual colors are driven by Compose Material3 in ui/theme.
+         Dark parent + ink-navy window background so the FIRST frame (before Compose draws)
+         is already the splash background: no white flash at launch. The app is dark-only. -->
+    <style name="Theme.Corlang" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:statusBarColor">@color/splash_background</item>
+        <item name="android:navigationBarColor">@color/splash_background</item>
+    </style>
 </resources>

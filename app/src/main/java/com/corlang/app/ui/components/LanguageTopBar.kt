@@ -1,6 +1,5 @@
 package com.corlang.app.ui.components
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DropdownMenu
@@ -39,10 +38,9 @@ fun LanguageTopBar(
     var expanded by remember { mutableStateOf(false) }
     val current = languages.firstOrNull { it.code == selected } ?: languages.firstOrNull()
 
-    // Deep blue bar in light theme; in dark theme stay on surface so the bar isn't loud.
-    val dark = isSystemInDarkTheme()
-    val barColor = if (dark) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.primary
-    val onBar = if (dark) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onPrimary
+    // Dark-only app: the bar sits on surface so it stays quiet against the ink background.
+    val barColor = MaterialTheme.colorScheme.surface
+    val onBar = MaterialTheme.colorScheme.onSurface
 
     TopAppBar(
         title = {

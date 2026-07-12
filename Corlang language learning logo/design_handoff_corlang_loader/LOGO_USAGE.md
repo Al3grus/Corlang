@@ -1,65 +1,58 @@
 # Using the Corlang logo across the app
 
 Treat the logo as ONE shared component, not copy-pasted SVG. Import `CorlangLogo.jsx`
-(or transliterate it to your platform) and use it in every location below. That way a
-future color/shape change happens in one file.
+(or transliterate it to your platform) and use it in every location below, so a future
+color/shape change happens in one file.
 
 ## Variants (prop `variant`)
-- `orbit`    — the two-broken-ring mark. **Default brand icon.** Use for app/launcher icon, favicon, nav, tab bars, small chrome.
-- `o`        — solid-ring "O" with core. Matches the loader's end state; use where a simpler, denser mark reads better at tiny sizes.
-- `lockup`   — icon + "Corlang" wordmark side by side. Use for headers, marketing, auth screens, splash-after-load.
-- `wordmark` — "Corlang" with the mark as the "o", no leading icon. Use where space is tight but you still want the name.
+- `orbit`    — the two-ring mark alone. **Default brand icon.** App/launcher icon, favicon, nav, tab bars, small chrome.
+- `lockup`   — icon + "Corlang" wordmark side by side. Headers, marketing, auth screens, splash-after-load.
+- `wordmark` — "Corlang" with the mark as the "o", no leading icon. Where space is tight but you still want the name.
+
+## Font
+Wordmark uses **Helvetica** (`'Helvetica Neue', Helvetica, Arial, sans-serif`). Match your app's brand font only if it differs intentionally.
 
 ## Colors
 - On light backgrounds: defaults (`brand="#2f7fae"`, `core="#c8402c"`, `ink="#2b3038"`).
 - On dark backgrounds: keep `brand`/`core`, set `ink="#f4efe6"`.
-- Monochrome (single ink, e.g. disabled states, watermarks, print): pass the SAME value to `brand` and `core` (e.g. both `#2b3038` on light, both `#f4efe6` on dark).
+- Monochrome (watermarks, disabled, print): pass the SAME value to `brand` and `core`.
 
 ## Placement checklist (wire these in one pass)
-- [ ] **App / launcher icon** — export `orbit` mark onto the app-icon squircle. Native: generate the required icon sizes (iOS AppIcon set, Android adaptive icon foreground); web: `favicon.svg` + PNG fallbacks + `apple-touch-icon`.
+- [ ] **App / launcher icon** — `orbit` mark on the app-icon squircle. iOS AppIcon set, Android adaptive icon foreground; web `favicon.svg` + PNG fallbacks + `apple-touch-icon`.
 - [ ] **Splash / launch screen** — the `CorlangLoader` (animated), or a static `lockup` if the platform disallows JS on splash.
-- [ ] **Top bar / header** — `orbit` at ~28–32px, or `wordmark` if the header is text-led.
+- [ ] **Top bar / header** — `orbit` ~28–32px, or `wordmark` if the header is text-led.
 - [ ] **Bottom tab bar / side nav brand slot** — `orbit`, small.
-- [ ] **Auth screens** (sign in / sign up / onboarding) — `lockup`, centered.
+- [ ] **Auth / onboarding screens** — `lockup`, centered.
 - [ ] **Empty states & placeholders** — `orbit` in a muted/monochrome tone.
-- [ ] **Loading spinners inside the app** — reuse the determinate ring (`o` mark filling) for a consistent motion language; see the loader spec in `README.md`.
+- [ ] **In-app loading spinners** — reuse the determinate ring fill for a consistent motion language (see loader spec in `README.md`).
 - [ ] **About / settings / legal footer** — `lockup` or `wordmark` + version string.
 - [ ] **Notifications / share cards / OG image** — `lockup` on brand background.
 - [ ] **Documents / exports / email templates** — `wordmark`.
 
 ## Sizing guidance
-- Never render the mark below ~18px — below that, prefer the `o` variant over `orbit` (the broken rings get muddy).
+- Keep the mark ≥ ~20px; below that the two broken rings get muddy.
 - Minimum tap target for a logo that acts as a button: 44×44px (pad around the mark).
-- In a lockup, the component scales the wordmark type to the mark height automatically; just set `size`.
+- In `lockup`/`wordmark` the component scales the wordmark type to the mark height automatically; just set `size`.
 
 ## Example usage
 ```jsx
 import CorlangLogo from "./CorlangLogo";
 
-// header
-<CorlangLogo variant="orbit" size={30} />
-
-// auth screen (centered lockup)
-<CorlangLogo variant="lockup" size={44} />
-
-// on a dark surface
-<CorlangLogo variant="wordmark" size={36} ink="#f4efe6" />
-
-// tiny monochrome watermark
-<CorlangLogo variant="o" size={20} brand="#9aa2ad" core="#9aa2ad" />
+<CorlangLogo variant="orbit" size={30} />                          // header
+<CorlangLogo variant="lockup" size={44} />                         // auth screen
+<CorlangLogo variant="wordmark" size={36} ink="#f4efe6" />         // on dark
+<CorlangLogo variant="orbit" size={22} brand="#9aa2ad" core="#9aa2ad" /> // muted watermark
 ```
 
 ## Vanilla (no framework)
-If you're not on React, the raw SVGs are in `logo-orbit-core.svg` and `logo-o-mark.svg`.
-Inline them (so `stroke`/`fill` can be themed via CSS `currentColor`) or reference via `<img>`.
-For a themeable inline version, replace the hardcoded colors with `currentColor` and set
-`color:` in CSS, or expose CSS variables:
+Raw mark is in `logo-orbit-core.svg`. Inline it (so `stroke`/`fill` theme via CSS) or reference via `<img>`.
+Themeable inline version:
 
 ```html
 <span class="corlang-mark" aria-label="Corlang">
   <svg viewBox="0 0 100 100" width="32" height="32">
     <circle cx="50" cy="50" r="33" fill="none" stroke="var(--brand,#2f7fae)" stroke-width="6" stroke-linecap="round" stroke-dasharray="132 76" transform="rotate(-52 50 50)"/>
-    <circle cx="50" cy="50" r="21" fill="none" stroke="var(--brand,#2f7fae)" stroke-width="6" stroke-linecap="round" stroke-dasharray="80 52" transform="rotate(128 50 50)"/>
+    <path d="M70.37 44.92 A21 21 0 1 0 37.07 66.55" fill="none" stroke="var(--brand,#2f7fae)" stroke-width="6" stroke-linecap="round"/>
     <circle cx="50" cy="50" r="9" fill="var(--core,#c8402c)"/>
   </svg>
 </span>

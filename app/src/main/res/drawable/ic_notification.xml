@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Status-bar notification icon: the Corlang mark as a flat white silhouette (the system tints
-     it). Uses the denser solid-ring "O" form (ring + core) rather than the broken orbit rings,
-     which would go muddy at 24dp, per the logo usage sizing guidance. -->
+<!-- Status-bar notification icon: the Orbit Core mark as a flat white silhouette (the system
+     tints it). Rev 2 of the brand has one mark only, the two broken rings + core; at 24dp the
+     mark box is ~20dp, above the >=20px legibility floor from LOGO_USAGE.md. Same trimPath
+     technique as the launcher foreground (no stroke-dasharray in VectorDrawable). -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
 
-    <!-- Ring (r=30/100 of the mark), padded into the 24dp status-bar keyline -->
-    <path
-        android:fillColor="#00000000"
-        android:pathData="M4.5,12 a7.5,7.5 0 1 0 15,0 a7.5,7.5 0 1 0 -15,0 z"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="2" />
+    <!-- Outer broken ring (r=33 -> 6.6), rotated -52, 63.66% visible -->
+    <group
+        android:name="outerRing"
+        android:pivotX="12"
+        android:pivotY="12"
+        android:rotation="-52">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M18.6,12 A6.6,6.6 0 1 1 5.4,12 A6.6,6.6 0 1 1 18.6,12"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.2"
+            android:trimPathEnd="0.6366"
+            android:trimPathStart="0" />
+    </group>
 
-    <!-- Core (r=12.5/100) -->
+    <!-- Inner broken arc (r=21 -> 4.2), rotated 128, 60.63% visible -->
+    <group
+        android:name="innerRing"
+        android:pivotX="12"
+        android:pivotY="12"
+        android:rotation="128">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M16.2,12 A4.2,4.2 0 1 1 7.8,12 A4.2,4.2 0 1 1 16.2,12"
+            android:strokeColor="#FFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.2"
+            android:trimPathEnd="0.6063"
+            android:trimPathStart="0" />
+    </group>
+
+    <!-- Core (r=9 -> 1.8) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M12,12 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 z" />
+        android:pathData="M12,12 m-1.8,0 a1.8,1.8 0 1,0 3.6,0 a1.8,1.8 0 1,0 -3.6,0 z" />
 </vector>
