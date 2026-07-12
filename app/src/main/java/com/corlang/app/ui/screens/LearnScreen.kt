@@ -36,7 +36,8 @@ fun LearnScreen(container: AppContainer, lang: String) {
                 SegmentedButton(
                     selected = tab == i,
                     onClick = { tab = i },
-                    shape = SegmentedButtonDefaults.itemShape(index = i, count = labels.size)
+                    shape = SegmentedButtonDefaults.itemShape(index = i, count = labels.size),
+                    icon = {}   // the fill color marks the selection; no checkmark
                 ) { Text(label) }
             }
         }

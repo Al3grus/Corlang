@@ -204,7 +204,8 @@ fun SettingsScreen(
                     SegmentedButton(
                         selected = newPerDay == v,
                         onClick = { scope.launch { container.languagePrefs.setNewWordsPerDay(v) } },
-                        shape = SegmentedButtonDefaults.itemShape(index = i, count = 3)
+                        shape = SegmentedButtonDefaults.itemShape(index = i, count = 3),
+                        icon = {}
                     ) { Text("$v") }
                 }
             }
@@ -235,7 +236,8 @@ fun SettingsScreen(
                                 com.corlang.app.ui.Haptics.Strength.valueOf(value)
                             com.corlang.app.ui.Haptics.confirm(context)
                         },
-                        shape = SegmentedButtonDefaults.itemShape(index = i, count = options.size)
+                        shape = SegmentedButtonDefaults.itemShape(index = i, count = options.size),
+                        icon = {}
                     ) { Text(label) }
                 }
             }

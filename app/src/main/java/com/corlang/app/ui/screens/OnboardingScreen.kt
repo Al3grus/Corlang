@@ -229,7 +229,8 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         SegmentedButton(
                             selected = gender == v,
                             onClick = { gender = v },
-                            shape = SegmentedButtonDefaults.itemShape(index = i, count = 2)
+                            shape = SegmentedButtonDefaults.itemShape(index = i, count = 2),
+                            icon = {}
                         ) { Text(label) }
                     }
                 }
@@ -276,7 +277,8 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         SegmentedButton(
                             selected = goal == v,
                             onClick = { goal = v },
-                            shape = SegmentedButtonDefaults.itemShape(index = i, count = 3)
+                            shape = SegmentedButtonDefaults.itemShape(index = i, count = 3),
+                            icon = {}
                         ) { Text("$v") }
                     }
                 }
