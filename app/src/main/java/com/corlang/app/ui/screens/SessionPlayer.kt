@@ -1,5 +1,12 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -43,6 +50,8 @@ import com.corlang.app.ui.Haptics
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.theme.CorlangColors
+import com.corlang.app.ui.theme.Motion
+import com.corlang.app.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.launch
 
 /**
@@ -294,17 +303,9 @@ fun SessionPlayer(
         resumed = true
     }
 
-    val step = steps[index.coerceIn(0, steps.lastIndex)]
     val doneCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE && stepDone(it) }
     val actionCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
-
-    fun markAndNext() {
-        if (step.kind != StepKind.INFO && step.kind != StepKind.COMPLETE) {
-            Haptics.confirm(context)
-            scope.launch { container.progress.setDayTask(lang, day.day, step.id, true) }
-        }
-        if (index < steps.lastIndex) index++
-    }
+    val reducedMotion = rememberReducedMotion()
 
     Column(
         modifier = Modifier
@@ -335,157 +336,185 @@ fun SessionPlayer(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        // The step card.
-        Surface(
-            shape = RoundedCornerShape(16.dp),
-            color = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 12.dp)
-                .heightIn(min = 180.dp)
-        ) {
-            Column(modifier = Modifier.padding(20.dp)) {
-                Text(
-                    buildString {
-                        append(
-                            when (step.kind) {
-                                StepKind.INFO -> "📖 Today"
-                                StepKind.WORDS -> "🃏 Flashcards"
-                                StepKind.GENDER -> "🎯 Drill"
-                                StepKind.CLOZE -> "🎯 Case drill"
-                                StepKind.RECALL -> "⌨️ Recall drill"
-                                StepKind.WRAPUP -> "🧠 Wrap-up recall"
-                                StepKind.LEARN -> "📚 Learn"
-                                StepKind.EXERCISE -> "✏️ Exercise"
-                                StepKind.DIALOGUE -> "🗣 Dialogue"
-                                StepKind.LINK -> "🔗 Course task"
-                                StepKind.COMPLETE -> "🏁 Finish"
-                                else -> "✍️ Task"
-                            }
-                        )
-                        if (step.phase.isNotBlank()) append("   ·   ${step.phase}")
-                    },
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
-                )
-                Text(
-                    step.title,
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(top = 4.dp)
-                )
-                if (step.detail.isNotBlank()) {
-                    Text(
-                        step.detail,
-                        style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                }
-                if (step.kind == StepKind.WORDS) {
-                    Text(
-                        if (wordsPending == 0) "✅ Nothing waiting, this step is done."
-                        else "$wordsPending words waiting.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                }
-            }
-        }
-
-        // Inline drills drive their own completion.
-        val onDrillDone: () -> Unit = {
-            scope.launch { container.progress.setDayTask(lang, day.day, step.id, true) }
-            if (index < steps.lastIndex) index++
-        }
-        val activity = day.activities.getOrNull(step.activityIndex)
-        when (step.kind) {
-            StepKind.GENDER -> GenderDrill(container, lang, onDrillDone)
-            StepKind.CLOZE -> ClozeDrill(container, lang, onDrillDone)
-            StepKind.RECALL -> RecallDrill(container, lang, onDrillDone)
-            StepKind.LEARN -> activity?.let { LearnActivity(container, it, onDrillDone) }
-            StepKind.EXERCISE -> activity?.let { ExerciseActivity(container, it, onDrillDone) }
-            StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
-            StepKind.WRAPUP -> WrapupRecall(container, day, onDrillDone)
-            else -> {}
-        }
-
-        // Step actions.
-        when (step.kind) {
-            StepKind.INFO -> Button(
-                onClick = { if (index < steps.lastIndex) index++ },
-                modifier = Modifier.fillMaxWidth()
-            ) { Text("Let's go →") }
-
-            StepKind.WORDS -> {
-                if (wordsPending > 0) {
-                    Button(
-                        onClick = { onNavigate(Dest.WORDS.route) },
-                        modifier = Modifier.fillMaxWidth()
-                    ) { Text("Study $wordsPending words now") }
-                    Text(
-                        "Come back to Today when you're done, your place here is saved.",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(top = 6.dp)
-                    )
-                    OutlinedButton(
-                        onClick = ::markAndNext,
-                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                    ) { Text("Skip for now →") }
+        // The step card + its inline drill + actions slide as a unit so moving to the next step
+        // reads as forward motion (back = reverse). Everything below derives from the animated
+        // index `i`, never the outer state, so the outgoing content stays correct mid-transition.
+        AnimatedContent(
+            targetState = index,
+            transitionSpec = {
+                if (reducedMotion) {
+                    fadeIn(snap()) togetherWith fadeOut(snap())
                 } else {
-                    Button(onClick = ::markAndNext, modifier = Modifier.fillMaxWidth()) {
-                        Text("Next →")
-                    }
+                    val dir = if (targetState >= initialState) 1 else -1
+                    (slideInHorizontally(Motion.snappy()) { w -> dir * w } + fadeIn(Motion.snappy())) togetherWith
+                        (slideOutHorizontally(Motion.snappy()) { w -> -dir * w } + fadeOut(Motion.snappy()))
                 }
+            },
+            label = "session-step"
+        ) { i ->
+            val s = steps[i.coerceIn(0, steps.lastIndex)]
+            val onDrillDone: () -> Unit = {
+                scope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
+                if (index < steps.lastIndex) index++
             }
-
-            StepKind.LINK -> {
-                Button(
-                    onClick = { step.url?.let { uriHandler.openUri(it) } },
-                    modifier = Modifier.fillMaxWidth()
-                ) { Text("Open ↗") }
-                Button(
-                    onClick = ::markAndNext,
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Done, next step →") }
-            }
-
-            StepKind.TASK -> {
-                step.navRoute?.let { route ->
-                    Button(
-                        onClick = { onNavigate(route) },
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text(
-                            when (route) {
-                                Dest.QUIZ.route -> "Open quizzes"
-                                Dest.LEARN.route -> "Open Learn tab"
-                                else -> "Open Words"
-                            }
-                        )
-                    }
-                }
-                Button(
-                    onClick = ::markAndNext,
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Done, next step →") }
-            }
-
-            StepKind.GENDER, StepKind.CLOZE, StepKind.RECALL, StepKind.WRAPUP,
-            StepKind.LEARN, StepKind.EXERCISE, StepKind.DIALOGUE -> { /* content drives completion */ }
-
-            StepKind.COMPLETE -> Button(
-                onClick = {
-                    scope.launch {
-                        container.progress.completeDay(lang, day.day, totalDays, day.level)
-                    }
+            val markNext: () -> Unit = {
+                if (s.kind != StepKind.INFO && s.kind != StepKind.COMPLETE) {
                     Haptics.confirm(context)
-                    onExit()
-                },
-                modifier = Modifier.fillMaxWidth()
-            ) { Text("Mark day ${day.day} complete ✓") }
+                    scope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
+                }
+                if (index < steps.lastIndex) index++
+            }
+            val activity = day.activities.getOrNull(s.activityIndex)
+
+            Column(modifier = Modifier.fillMaxWidth()) {
+                // The step card.
+                Surface(
+                    shape = RoundedCornerShape(16.dp),
+                    color = MaterialTheme.colorScheme.primaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 12.dp)
+                        .heightIn(min = 180.dp)
+                ) {
+                    Column(modifier = Modifier.padding(20.dp)) {
+                        Text(
+                            buildString {
+                                append(
+                                    when (s.kind) {
+                                        StepKind.INFO -> "📖 Today"
+                                        StepKind.WORDS -> "🃏 Flashcards"
+                                        StepKind.GENDER -> "🎯 Drill"
+                                        StepKind.CLOZE -> "🎯 Case drill"
+                                        StepKind.RECALL -> "⌨️ Recall drill"
+                                        StepKind.WRAPUP -> "🧠 Wrap-up recall"
+                                        StepKind.LEARN -> "📚 Learn"
+                                        StepKind.EXERCISE -> "✏️ Exercise"
+                                        StepKind.DIALOGUE -> "🗣 Dialogue"
+                                        StepKind.LINK -> "🔗 Course task"
+                                        StepKind.COMPLETE -> "🏁 Finish"
+                                        else -> "✍️ Task"
+                                    }
+                                )
+                                if (s.phase.isNotBlank()) append("   ·   ${s.phase}")
+                            },
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
+                        )
+                        Text(
+                            s.title,
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
+                        if (s.detail.isNotBlank()) {
+                            Text(
+                                s.detail,
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(top = 8.dp)
+                            )
+                        }
+                        if (s.kind == StepKind.WORDS) {
+                            Text(
+                                if (wordsPending == 0) "✅ Nothing waiting, this step is done."
+                                else "$wordsPending words waiting.",
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                modifier = Modifier.padding(top = 8.dp)
+                            )
+                        }
+                    }
+                }
+
+                // Inline drills drive their own completion.
+                when (s.kind) {
+                    StepKind.GENDER -> GenderDrill(container, lang, onDrillDone)
+                    StepKind.CLOZE -> ClozeDrill(container, lang, onDrillDone)
+                    StepKind.RECALL -> RecallDrill(container, lang, onDrillDone)
+                    StepKind.LEARN -> activity?.let { LearnActivity(container, it, onDrillDone) }
+                    StepKind.EXERCISE -> activity?.let { ExerciseActivity(container, it, onDrillDone) }
+                    StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
+                    StepKind.WRAPUP -> WrapupRecall(container, day, onDrillDone)
+                    else -> {}
+                }
+
+                // Step actions.
+                when (s.kind) {
+                    StepKind.INFO -> Button(
+                        onClick = { if (index < steps.lastIndex) index++ },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text("Let's go →") }
+
+                    StepKind.WORDS -> {
+                        if (wordsPending > 0) {
+                            Button(
+                                onClick = { onNavigate(Dest.WORDS.route) },
+                                modifier = Modifier.fillMaxWidth()
+                            ) { Text("Study $wordsPending words now") }
+                            Text(
+                                "Come back to Today when you're done, your place here is saved.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.padding(top = 6.dp)
+                            )
+                            OutlinedButton(
+                                onClick = markNext,
+                                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                            ) { Text("Skip for now →") }
+                        } else {
+                            Button(onClick = markNext, modifier = Modifier.fillMaxWidth()) {
+                                Text("Next →")
+                            }
+                        }
+                    }
+
+                    StepKind.LINK -> {
+                        Button(
+                            onClick = { s.url?.let { uriHandler.openUri(it) } },
+                            modifier = Modifier.fillMaxWidth()
+                        ) { Text("Open ↗") }
+                        Button(
+                            onClick = markNext,
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        ) { Text("Done, next step →") }
+                    }
+
+                    StepKind.TASK -> {
+                        s.navRoute?.let { route ->
+                            Button(
+                                onClick = { onNavigate(route) },
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(
+                                    when (route) {
+                                        Dest.QUIZ.route -> "Open quizzes"
+                                        Dest.LEARN.route -> "Open Learn tab"
+                                        else -> "Open Words"
+                                    }
+                                )
+                            }
+                        }
+                        Button(
+                            onClick = markNext,
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        ) { Text("Done, next step →") }
+                    }
+
+                    StepKind.GENDER, StepKind.CLOZE, StepKind.RECALL, StepKind.WRAPUP,
+                    StepKind.LEARN, StepKind.EXERCISE, StepKind.DIALOGUE -> { /* content drives completion */ }
+
+                    StepKind.COMPLETE -> Button(
+                        onClick = {
+                            scope.launch {
+                                container.progress.completeDay(lang, day.day, totalDays, day.level)
+                            }
+                            Haptics.confirm(context)
+                            onExit()
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text("Mark day ${day.day} complete ✓") }
+                }
+            }
         }
 
         Row(
