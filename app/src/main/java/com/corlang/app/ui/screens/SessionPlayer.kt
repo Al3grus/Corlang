@@ -45,6 +45,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.data.Fsrs
 import com.corlang.app.data.SessionCard
 import com.corlang.app.data.SrsGrade
 import com.corlang.app.data.WordsRepository
@@ -64,7 +65,7 @@ import kotlinx.coroutines.launch
  * persisted per day (day_task_check), so leaving and returning resumes exactly.
  */
 
-enum class StepKind { INFO, TASK, LINK, WORDS, GENDER, CLOZE, RECALL, LEARN, EXERCISE, DIALOGUE, WRAPUP, COMPLETE }
+enum class StepKind { INFO, TASK, LINK, WORDS, REVIEW, GENDER, CLOZE, RECALL, LEARN, EXERCISE, DIALOGUE, WRAPUP, COMPLETE }
 
 data class SessionStep(
     val id: String,
@@ -95,8 +96,8 @@ fun buildSessionSteps(
     // The habit anchor always comes first: clear the due words.
     steps += SessionStep(
         id = "words", kind = StepKind.WORDS,
-        title = "Today's words",
-        detail = "Learn this lesson's new words and clear any reviews that are due.",
+        title = "New words",
+        detail = "Learn the new words this lesson introduces.",
         navRoute = Dest.WORDS.route,
         phase = "1 · Recall"
     )
@@ -245,6 +246,15 @@ fun buildSessionSteps(
         .sortedBy { order.indexOf(it.phase).let { i -> if (i < 0) 99 else i } }
     steps.clear(); steps += head; steps += body
 
+    // Reviews run last, as end-of-session consolidation (retrieval practice). Capped in-session so
+    // they can't pile up — overflow stays in the Words tab. Empty when nothing is due yet.
+    steps += SessionStep(
+        id = "review", kind = StepKind.REVIEW,
+        title = "Review due words",
+        detail = "A quick spaced-repetition pass over words coming due — closes out the day.",
+        phase = "6 · Review"
+    )
+
     steps += SessionStep(
         id = "complete", kind = StepKind.COMPLETE,
         title = "Day ${day.day} done",
@@ -275,9 +285,9 @@ fun SessionPlayer(
         .collectAsState(initial = emptyList())
     val doneIds = checks.map { it.itemId }.toSet()
 
-    // The words step reflects THIS lesson's word block: due reviews + the new words this lesson
-    // unlocks (deck order, first day.day * perLesson words) that aren't introduced yet. So a fresh
-    // lesson always has its own new words, and doing an earlier lesson never marks this one done.
+    // The NEW-words step = this lesson's unlocked words (deck order, first day.day * perLesson) not
+    // yet introduced. The REVIEW step = due cards, capped so they can't pile up (overflow → Words
+    // tab). Both are lesson-scoped, so an earlier lesson never marks this one done.
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
     val perLesson by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
     val today = WordsRepository.todayEpochDay()
@@ -285,12 +295,13 @@ fun SessionPlayer(
     val dueNow = reviews.count { it.dueEpochDay <= today }
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
     val unlockedNew = allWords.take(day.day * perLesson).count { it.id !in seenIds }
-    val wordsPending = dueNow + unlockedNew
+    val reviewPending = minOf(dueNow, Fsrs.REVIEW_CAP)
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
-        // Words are done only when this lesson's block is cleared, never from a skip — so opening
-        // the lesson without doing the flashcards leaves the step incomplete.
-        StepKind.WORDS -> wordsPending == 0
+        // Words/review count as done only when actually cleared, never from a skip — so opening a
+        // step without doing the flashcards leaves it incomplete.
+        StepKind.WORDS -> unlockedNew == 0
+        StepKind.REVIEW -> reviewPending == 0
         else -> s.id in doneIds
     }
 
@@ -310,23 +321,26 @@ fun SessionPlayer(
     val actionCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val reducedMotion = rememberReducedMotion()
 
-    // In-lesson word block: the new words this lesson unlocks + due reviews are done right here,
-    // so new vocabulary only ever enters through lessons (the Words tab is review-only).
+    // In-lesson word block, shared by the new-words step and the review step. New vocabulary only
+    // ever enters through lessons; the review block is capped. Grading persists per card.
     val wordQueue = remember(day.day) { mutableStateListOf<SessionCard>() }
     var inWords by remember(day.day) { mutableStateOf(false) }
     var wordServed by remember(day.day) { mutableIntStateOf(0) }
     var wordDone by remember(day.day) { mutableIntStateOf(0) }
     var wordTotal by remember(day.day) { mutableIntStateOf(0) }
+    var wordStepId by remember(day.day) { mutableStateOf("words") }
+    var wordIsReview by remember(day.day) { mutableStateOf(false) }
 
-    fun markWordsDoneAndAdvance() {
-        scope.launch { container.progress.setDayTask(lang, day.day, "words", true) }
+    fun markStepDoneAndAdvance(stepId: String) {
+        scope.launch { container.progress.setDayTask(lang, day.day, stepId, true) }
         if (index < steps.lastIndex) index++
     }
 
-    fun startLessonWords() {
+    fun startWordBlock(stepId: String, isReview: Boolean, build: suspend () -> List<SessionCard>) {
         scope.launch {
-            val cards = container.words.buildLessonWordsSession(lang, day.day, perLesson, today)
-            if (cards.isEmpty()) { markWordsDoneAndAdvance(); return@launch }
+            val cards = build()
+            if (cards.isEmpty()) { markStepDoneAndAdvance(stepId); return@launch }
+            wordStepId = stepId; wordIsReview = isReview
             wordQueue.clear(); wordQueue.addAll(cards)
             wordTotal = cards.size; wordDone = 0; wordServed = 0
             inWords = true
@@ -341,7 +355,7 @@ fun SessionPlayer(
         scope.launch { container.words.grade(lang, card.word.id, g) }
         if (wordQueue.isEmpty()) {
             inWords = false
-            markWordsDoneAndAdvance()
+            markStepDoneAndAdvance(wordStepId)
         }
     }
 
@@ -350,7 +364,7 @@ fun SessionPlayer(
             card = wordQueue.first(),
             cardKey = wordServed,
             tts = container.tts,
-            review = false,
+            review = wordIsReview,
             done = wordDone,
             total = wordTotal,
             onGrade = ::gradeLessonWord,
@@ -435,7 +449,8 @@ fun SessionPlayer(
                                 append(
                                     when (s.kind) {
                                         StepKind.INFO -> "📖 Today"
-                                        StepKind.WORDS -> "🃏 Flashcards"
+                                        StepKind.WORDS -> "🃏 New words"
+                                        StepKind.REVIEW -> "🔁 Review"
                                         StepKind.GENDER -> "🎯 Drill"
                                         StepKind.CLOZE -> "🎯 Case drill"
                                         StepKind.RECALL -> "⌨️ Recall drill"
@@ -468,8 +483,18 @@ fun SessionPlayer(
                         }
                         if (s.kind == StepKind.WORDS) {
                             Text(
-                                if (wordsPending == 0) "✅ Nothing waiting, this step is done."
-                                else "$wordsPending words waiting.",
+                                if (unlockedNew == 0) "✅ New words done."
+                                else "$unlockedNew new word${if (unlockedNew == 1) "" else "s"} to learn.",
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                modifier = Modifier.padding(top = 8.dp)
+                            )
+                        }
+                        if (s.kind == StepKind.REVIEW) {
+                            Text(
+                                if (reviewPending == 0) "✅ Nothing due to review."
+                                else "$reviewPending card${if (reviewPending == 1) "" else "s"} to review" +
+                                    if (dueNow > reviewPending) " (${dueNow - reviewPending} more in the Words tab)." else ".",
                                 style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.SemiBold,
                                 modifier = Modifier.padding(top = 8.dp)
@@ -498,13 +523,37 @@ fun SessionPlayer(
                     ) { Text("Let's go →") }
 
                     StepKind.WORDS -> {
-                        if (wordsPending > 0) {
+                        if (unlockedNew > 0) {
                             Button(
-                                onClick = { startLessonWords() },
+                                onClick = {
+                                    startWordBlock("words", isReview = false) {
+                                        container.words.unlockedNewWords(lang, day.day, perLesson)
+                                    }
+                                },
                                 modifier = Modifier.fillMaxWidth()
-                            ) { Text("Do this lesson's words ($wordsPending)") }
-                            // Skip only moves past the step for now; it must NOT mark the words
-                            // done (that would inflate progress without any flashcards done).
+                            ) { Text("Learn $unlockedNew new word${if (unlockedNew == 1) "" else "s"}") }
+                            // Skip only moves past the step for now; it must NOT mark it done.
+                            OutlinedButton(
+                                onClick = { if (index < steps.lastIndex) index++ },
+                                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                            ) { Text("Skip for now →") }
+                        } else {
+                            Button(onClick = markNext, modifier = Modifier.fillMaxWidth()) {
+                                Text("Next →")
+                            }
+                        }
+                    }
+
+                    StepKind.REVIEW -> {
+                        if (reviewPending > 0) {
+                            Button(
+                                onClick = {
+                                    startWordBlock("review", isReview = true) {
+                                        container.words.buildReviewSession(lang, today).take(Fsrs.REVIEW_CAP)
+                                    }
+                                },
+                                modifier = Modifier.fillMaxWidth()
+                            ) { Text("Review $reviewPending card${if (reviewPending == 1) "" else "s"}") }
                             OutlinedButton(
                                 onClick = { if (index < steps.lastIndex) index++ },
                                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
