@@ -1,0 +1,443 @@
+[
+  {
+    "id": "fr-b1-delf-mock",
+    "levelId": "B1",
+    "title": "Examen blanc DELF B1",
+    "description": "A full DELF B1 mock across the four official sections.",
+    "passRule": "Chaque section est notée sur 25. Réussite = total >= 50/100 ET >= 5/25 à chaque section.",
+    "sources": [
+      "delf-b1-sample",
+      "cecrl"
+    ],
+    "sections": [
+      {
+        "id": "co",
+        "kind": "LISTENING",
+        "title": "Compréhension de l'oral",
+        "instructions": "Listen to the recording (played by the app's French voice), then answer.",
+        "passPercent": 20,
+        "passages": [
+          {
+            "id": "co1",
+            "title": "Message sur le répondeur",
+            "text": "Bonjour Camille, c'est Julien. Je t'appelle au sujet de notre voyage à Lyon le week-end prochain. Malheureusement, le train de vendredi soir est complet, donc j'ai réservé deux places pour le samedi matin, à huit heures. On arrivera vers dix heures et demie. J'ai aussi trouvé un petit hôtel dans le centre, pas très cher, à côté de la gare. Par contre, il faut confirmer avant mercredi soir. Peux-tu me rappeler ce soir après dix-neuf heures ? Il faut aussi que tu penses à prendre un manteau, parce qu'il va faire froid là-bas. À bientôt, bises !",
+            "audioOnly": true
+          }
+        ],
+        "questions": [
+          {
+            "type": "MCQ",
+            "prompt": "Pourquoi Julien appelle-t-il Camille ?",
+            "options": [
+              "Pour organiser un voyage à Lyon",
+              "Pour annuler leur voyage",
+              "Pour l'inviter à un anniversaire",
+              "Pour lui rendre de l'argent"
+            ],
+            "answer": "Pour organiser un voyage à Lyon",
+            "difficulty": 5,
+            "explanation": "Julien calls about their trip to Lyon next weekend, so the purpose is to organise the trip."
+          },
+          {
+            "type": "MCQ",
+            "prompt": "Quand partiront-ils finalement ?",
+            "options": [
+              "Samedi matin",
+              "Vendredi soir",
+              "Samedi soir",
+              "Dimanche matin"
+            ],
+            "answer": "Samedi matin",
+            "difficulty": 5,
+            "explanation": "The Friday evening train is full, so he booked two seats for Saturday morning at 8 a.m."
+          },
+          {
+            "type": "MCQ",
+            "prompt": "Où se trouve l'hôtel réservé par Julien ?",
+            "options": [
+              "À côté de la gare",
+              "À la campagne",
+              "Loin du centre",
+              "Près de l'aéroport"
+            ],
+            "answer": "À côté de la gare",
+            "difficulty": 6,
+            "explanation": "He found a small, inexpensive hotel in the centre, next to the train station."
+          },
+          {
+            "type": "FILL",
+            "prompt": "Complétez : « Il faut confirmer avant ________ soir. »",
+            "answer": "mercredi",
+            "difficulty": 6,
+            "explanation": "Julien says the booking must be confirmed before Wednesday evening ('avant mercredi soir')."
+          },
+          {
+            "type": "MCQ",
+            "prompt": "Que doit penser à prendre Camille ?",
+            "options": [
+              "Un manteau",
+              "Un parapluie",
+              "Des lunettes de soleil",
+              "Un maillot de bain"
+            ],
+            "answer": "Un manteau",
+            "difficulty": 5,
+            "explanation": "He reminds her to take a coat because it will be cold there.",
+            "audioText": "Il faut aussi que tu penses à prendre un manteau, parce qu'il va faire froid là-bas."
+          }
+        ]
+      },
+      {
+        "id": "ce",
+        "kind": "READING",
+        "title": "Compréhension des écrits",
+        "instructions": "Read the text and answer.",
+        "passPercent": 20,
+        "passages": [
+          {
+            "id": "ce1",
+            "title": "Le vélo en libre-service dans notre ville",
+            "text": "Depuis le mois de mars, notre ville propose un nouveau service de vélos en libre-service. Trois cents vélos sont désormais disponibles dans quarante stations réparties dans les différents quartiers. Le principe est simple : vous prenez un vélo dans une station et vous le rendez dans n'importe quelle autre station, quand vous le souhaitez. Pour l'utiliser, il suffit de télécharger l'application sur son téléphone et de créer un compte. La première demi-heure est gratuite, ce qui permet de faire la plupart des trajets courts sans payer. Ensuite, chaque heure supplémentaire coûte un euro. Les habitants qui prennent un abonnement annuel, à vingt euros, bénéficient d'une heure gratuite par trajet. Le service est ouvert tous les jours, de six heures du matin à minuit. La mairie espère ainsi réduire la circulation automobile et améliorer la qualité de l'air. Elle prévoit déjà d'ajouter cent vélos électriques dès l'année prochaine pour les trajets plus longs.",
+            "audioOnly": false
+          }
+        ],
+        "questions": [
+          {
+            "type": "MCQ",
+            "prompt": "Que faut-il faire pour utiliser un vélo ?",
+            "options": [
+              "Télécharger l'application et créer un compte",
+              "Aller à la mairie",
+              "Acheter un vélo",
+              "Réserver par téléphone une semaine avant"
+            ],
+            "answer": "Télécharger l'application et créer un compte",
+            "difficulty": 5,
+            "explanation": "The text says you simply download the app and create an account."
+          },
+          {
+            "type": "MCQ",
+            "prompt": "Combien coûte la première demi-heure ?",
+            "options": [
+              "Elle est gratuite",
+              "Un euro",
+              "Vingt euros",
+              "Deux euros"
+            ],
+            "answer": "Elle est gratuite",
+            "difficulty": 5,
+            "explanation": "The first half-hour is free ('La première demi-heure est gratuite')."
+          },
+          {
+            "type": "FILL",
+            "prompt": "Complétez : « Le service est ouvert tous les jours, de six heures du matin à ________. »",
+            "answer": "minuit",
+            "difficulty": 6,
+            "explanation": "The service runs every day from 6 a.m. to midnight ('minuit')."
+          },
+          {
+            "type": "MCQ",
+            "prompt": "Quel est l'un des objectifs de la mairie ?",
+            "options": [
+              "Réduire la circulation automobile",
+              "Augmenter le prix des transports",
+              "Fermer les rues du centre",
+              "Interdire les voitures électriques"
+            ],
+            "answer": "Réduire la circulation automobile",
+            "difficulty": 6,
+            "explanation": "The city hall hopes to reduce car traffic and improve air quality."
+          },
+          {
+            "type": "MCQ",
+            "prompt": "Qu'est-ce que la ville prévoit pour l'année prochaine ?",
+            "options": [
+              "Ajouter des vélos électriques",
+              "Supprimer le service",
+              "Construire un parking",
+              "Doubler le prix de l'abonnement"
+            ],
+            "answer": "Ajouter des vélos électriques",
+            "difficulty": 6,
+            "explanation": "It plans to add a hundred electric bikes next year for longer trips."
+          }
+        ]
+      },
+      {
+        "id": "pe",
+        "kind": "WRITING",
+        "title": "Production écrite",
+        "instructions": "Write about 160 words expressing your opinion.",
+        "prompts": [
+          {
+            "prompt": "Sur le forum d'un magazine, vous lisez la question suivante : « Faut-il interdire les téléphones portables au collège et au lycée ? » Donnez votre opinion dans une contribution d'environ 160 mots. Justifiez votre point de vue avec des exemples et des arguments.",
+            "modelAnswer": "À mon avis, la question des téléphones portables à l'école est très importante aujourd'hui. Personnellement, je pense qu'il faut les limiter, mais pas les interdire complètement. D'un côté, le téléphone peut déranger les élèves pendant les cours. Beaucoup de jeunes regardent leur écran au lieu d'écouter le professeur, et ils dorment moins parce qu'ils passent la nuit sur les réseaux sociaux. De plus, cela peut créer des problèmes entre les élèves, par exemple du harcèlement. D'un autre côté, le téléphone est parfois utile. On peut chercher une information, utiliser un dictionnaire ou prévenir ses parents en cas d'urgence. C'est pourquoi je propose une solution simple : les élèves devraient ranger leur téléphone pendant les cours, mais pouvoir l'utiliser pendant la pause. Ainsi, ils resteraient concentrés tout en gardant un moyen de communication. En conclusion, je crois qu'une interdiction totale serait exagérée : il vaut mieux apprendre aux jeunes à bien utiliser cet outil.",
+            "rubric": [
+              "Le texte fait environ 160 mots",
+              "L'opinion est clairement exprimée et justifiée",
+              "Les temps (présent/passé/futur) sont corrects",
+              "Les connecteurs logiques sont utilisés",
+              "Orthographe et accords corrects"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "po",
+        "kind": "SPEAKING",
+        "title": "Production orale",
+        "instructions": "Speak aloud for each task, then self-assess with the rubric.",
+        "prompts": [
+          {
+            "prompt": "Entretien dirigé : présentez-vous (études, travail, loisirs).",
+            "modelAnswer": "Bonjour, je m'appelle Marc et j'ai vingt-huit ans. J'habite à Zagreb, mais je suis né dans une petite ville au bord de la mer. J'ai étudié l'informatique à l'université et aujourd'hui je travaille comme développeur dans une entreprise internationale. J'aime beaucoup mon travail parce que j'apprends de nouvelles choses tous les jours. Pendant mon temps libre, je fais du sport, surtout de la natation et du vélo. J'aime aussi lire des romans et apprendre des langues étrangères. En ce moment, j'apprends le français depuis deux ans.",
+            "rubric": [
+              "Se présenter clairement",
+              "Parler ~2 minutes",
+              "Répondre aux questions"
+            ]
+          },
+          {
+            "prompt": "Exercice en interaction : Vous avez acheté un manteau dans un magasin, mais en rentrant chez vous, vous remarquez un défaut. Vous retournez au magasin pour l'échanger ou vous faire rembourser. Jouez la scène avec l'examinateur (le vendeur).",
+            "modelAnswer": "Bonjour, j'ai acheté ce manteau hier dans votre magasin, mais il y a un problème : un bouton est cassé et il y a une petite tache à l'intérieur. Je ne l'ai pas remarqué au moment de l'achat. Voici le ticket de caisse. Est-ce que je peux l'échanger contre un autre modèle de la même taille ? Si vous n'avez plus ma taille, je préférerais être remboursé. Pourriez-vous vérifier dans le stock, s'il vous plaît ? Merci beaucoup de votre compréhension.",
+            "rubric": [
+              "Gérer la situation",
+              "Poser et répondre à des questions",
+              "Rester poli"
+            ]
+          },
+          {
+            "prompt": "Expression d'un point de vue à partir d'un court document : « De plus en plus de gens font leurs achats sur Internet plutôt que dans les magasins. » Présentez le sujet et donnez votre opinion.",
+            "modelAnswer": "Ce document parle des achats sur Internet, qui sont de plus en plus fréquents. En effet, aujourd'hui, beaucoup de personnes préfèrent commander en ligne. À mon avis, cela présente des avantages et des inconvénients. D'abord, acheter sur Internet est pratique : on gagne du temps et on peut comparer les prix facilement. Cependant, on ne peut pas essayer les produits, et les petits commerces de quartier ferment à cause de cette concurrence. Personnellement, je pense qu'il faut trouver un équilibre. J'achète en ligne les objets techniques, mais je préfère aller dans les magasins pour les vêtements et la nourriture. En conclusion, Internet est utile, mais il ne doit pas remplacer complètement les magasins.",
+            "rubric": [
+              "Présenter le sujet",
+              "Donner et justifier son opinion",
+              "Utiliser des connecteurs"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fr-b2-delf-mock",
+    "levelId": "B2",
+    "title": "Examen blanc DELF B2",
+    "description": "A full DELF B2 mock across the four official sections.",
+    "passRule": "Chaque section est notée sur 25. Réussite = total >= 50/100 ET >= 5/25 à chaque section.",
+    "sources": [
+      "delf-b2-sample",
+      "cecrl"
+    ],
+    "sections": [
+      {
+        "id": "co",
+        "kind": "LISTENING",
+        "title": "Compréhension de l'oral",
+        "instructions": "Listen (played by the app's French voice), then answer.",
+        "passPercent": 20,
+        "passages": [
+          {
+            "id": "co1",
+            "title": "Débat : faut-il interdire les téléphones portables au collège ?",
+            "text": "Bonjour à toutes et à tous. Aujourd'hui, notre débat porte sur l'interdiction du téléphone portable dans les collèges. Madame Lefèvre, sociologue, vous êtes plutôt favorable à cette mesure. Effectivement, je considère que le portable nuit à la concentration des adolescents et appauvrit les échanges directs entre eux. Cependant, je nuancerais : interdire ne suffit pas, encore faut-il éduquer les jeunes à un usage raisonné du numérique. Monsieur Ndiaye, vous êtes enseignant, et vous n'êtes pas tout à fait du même avis. En effet, je crains qu'une interdiction stricte ne soit contournée et qu'elle prive les élèves d'un formidable outil pédagogique. Selon moi, plutôt que de bannir, nous devrions intégrer ces appareils dans nos cours, sous certaines conditions. Le véritable enjeu n'est donc pas l'interdiction, mais l'accompagnement.",
+            "audioOnly": true
+          }
+        ],
+        "questions": [
+          {
+            "id": "co1q1",
+            "kind": "MCQ",
+            "prompt": "Quel est le thème central de ce débat ?",
+            "options": [
+              "L'interdiction du téléphone portable au collège",
+              "L'achat de tablettes pour les élèves",
+              "La formation des enseignants au numérique",
+              "La réforme des programmes scolaires"
+            ],
+            "answer": "L'interdiction du téléphone portable au collège",
+            "difficulty": 7,
+            "explanation": "The host opens by stating the debate is about banning mobile phones in middle schools ('l'interdiction du téléphone portable dans les collèges'). The other options are not the topic."
+          },
+          {
+            "id": "co1q2",
+            "kind": "MCQ",
+            "prompt": "Quelle est la position de Madame Lefèvre ?",
+            "options": [
+              "Elle est plutôt favorable à l'interdiction, mais la juge insuffisante",
+              "Elle est totalement opposée à l'interdiction",
+              "Elle refuse de se prononcer sur la question",
+              "Elle souhaite distribuer des portables aux élèves"
+            ],
+            "answer": "Elle est plutôt favorable à l'interdiction, mais la juge insuffisante",
+            "difficulty": 8,
+            "explanation": "She says she is 'plutôt favorable' but nuances it: banning is not enough ('interdire ne suffit pas'), one must also educate. This captures her qualified stance."
+          },
+          {
+            "id": "co1q3",
+            "kind": "MCQ",
+            "prompt": "Pourquoi Monsieur Ndiaye est-il réservé face à l'interdiction ?",
+            "options": [
+              "Il craint qu'elle soit contournée et prive les élèves d'un outil pédagogique",
+              "Il pense que les portables coûtent trop cher aux familles",
+              "Il estime que les élèves n'ont pas besoin de numérique",
+              "Il souhaite renforcer les sanctions disciplinaires"
+            ],
+            "answer": "Il craint qu'elle soit contournée et prive les élèves d'un outil pédagogique",
+            "difficulty": 8,
+            "explanation": "Ndiaye fears the ban would be circumvented ('contournée') and would deprive students of a valuable pedagogical tool. He wants to integrate phones, not ban them."
+          },
+          {
+            "id": "co1q4",
+            "kind": "MCQ",
+            "prompt": "Sur quel point les deux invités finissent-ils par se rejoindre ?",
+            "options": [
+              "L'essentiel est l'accompagnement et l'éducation à un usage raisonné",
+              "L'interdiction totale est la seule solution efficace",
+              "Le numérique n'a aucune place à l'école",
+              "Il faut supprimer les cours d'informatique"
+            ],
+            "answer": "L'essentiel est l'accompagnement et l'éducation à un usage raisonné",
+            "difficulty": 7,
+            "explanation": "Lefèvre insists on educating to a 'usage raisonné' and Ndiaye concludes the real issue is 'l'accompagnement'. Both converge on guidance rather than a mere ban."
+          },
+          {
+            "id": "co1q5",
+            "kind": "FILL",
+            "prompt": "Complétez : selon le présentateur, le véritable enjeu n'est pas l'interdiction, mais l'___.",
+            "answer": "accompagnement",
+            "difficulty": 7,
+            "explanation": "The closing line states 'Le véritable enjeu n'est donc pas l'interdiction, mais l'accompagnement.' The missing word is 'accompagnement'."
+          }
+        ]
+      },
+      {
+        "id": "ce",
+        "kind": "READING",
+        "title": "Compréhension des écrits",
+        "instructions": "Read the argumentative text and answer.",
+        "passPercent": 20,
+        "passages": [
+          {
+            "id": "ce1",
+            "title": "Faut-il vraiment tout télétravailler ?",
+            "text": "Depuis quelques années, le télétravail s'est imposé comme une évidence, presque comme un progrès social incontestable. Pourtant, je reste convaincu que sa généralisation mérite un examen plus critique. Certes, travailler depuis chez soi présente des avantages indéniables : moins de temps perdu dans les transports, une meilleure conciliation entre vie professionnelle et vie privée, et parfois une productivité accrue. Nul ne saurait le nier. Néanmoins, à trop vouloir tout dématérialiser, ne risque-t-on pas d'appauvrir ce qui fait la richesse d'une entreprise : les échanges informels, la créativité collective, le sentiment d'appartenance ? Un courriel ne remplacera jamais une discussion spontanée devant la machine à café. Par ailleurs, le télétravail creuse parfois les inégalités : tous les salariés ne disposent pas d'un logement adapté ni d'un environnement calme. Certains y gagnent en autonomie ; d'autres y perdent en repères et sombrent dans l'isolement. Enfin, la frontière entre le travail et la vie personnelle tend à s'effacer, si bien que l'on finit par ne plus jamais vraiment déconnecter. Je ne prône donc nullement un retour en arrière, mais je plaide pour l'équilibre. Le télétravail ne devrait être ni une obligation ni une fuite, mais un choix éclairé, encadré et négocié. À mes yeux, l'avenir n'appartient ni au tout-présentiel ni au tout-distanciel, mais à une organisation hybride, pensée pour l'humain plutôt que pour la seule rentabilité.",
+            "audioOnly": false
+          }
+        ],
+        "questions": [
+          {
+            "id": "ce1q1",
+            "kind": "MCQ",
+            "prompt": "Quelle est la thèse principale défendue par l'auteur ?",
+            "options": [
+              "Le télétravail doit rester un choix équilibré et encadré, non une généralisation systématique",
+              "Le télétravail doit être totalement supprimé",
+              "Le télétravail doit devenir la norme pour tous les salariés",
+              "Le télétravail n'a aucun avantage réel"
+            ],
+            "answer": "Le télétravail doit rester un choix équilibré et encadré, non une généralisation systématique",
+            "difficulty": 8,
+            "explanation": "The author explicitly 'plaide pour l'équilibre' and favours a hybrid organisation, opposing both all-remote and all-office. He does not reject remote work, so the other options misread his stance."
+          },
+          {
+            "id": "ce1q2",
+            "kind": "MCQ",
+            "prompt": "Quelle nuance l'auteur apporte-t-il concernant les avantages du télétravail ?",
+            "options": [
+              "Il les reconnaît comme réels avant de les nuancer",
+              "Il les nie catégoriquement",
+              "Il les considère comme des illusions",
+              "Il refuse d'en parler"
+            ],
+            "answer": "Il les reconnaît comme réels avant de les nuancer",
+            "difficulty": 7,
+            "explanation": "He concedes 'des avantages indéniables' and says 'Nul ne saurait le nier', then introduces objections with 'Néanmoins'. This is a classic concession-refutation structure."
+          },
+          {
+            "id": "ce1q3",
+            "kind": "MCQ",
+            "prompt": "Que veut dire l'auteur avec l'image de « la machine à café » ?",
+            "options": [
+              "Les échanges informels et spontanés sont irremplaçables",
+              "Les employés boivent trop de café au bureau",
+              "Il faut installer des machines à café à domicile",
+              "Les pauses nuisent à la productivité"
+            ],
+            "answer": "Les échanges informels et spontanés sont irremplaçables",
+            "difficulty": 8,
+            "explanation": "The coffee-machine image symbolises spontaneous informal exchange ('une discussion spontanée') that an email cannot replace. It is figurative, not literal."
+          },
+          {
+            "id": "ce1q4",
+            "kind": "MCQ",
+            "prompt": "Selon l'auteur, en quoi le télétravail peut-il aggraver les inégalités ?",
+            "options": [
+              "Tous les salariés n'ont pas un logement adapté ni un environnement calme",
+              "Il augmente le prix des transports",
+              "Il oblige à acheter de nouveaux ordinateurs",
+              "Il réduit les salaires de tous les employés"
+            ],
+            "answer": "Tous les salariés n'ont pas un logement adapté ni un environnement calme",
+            "difficulty": 7,
+            "explanation": "The text states the arrangement 'creuse parfois les inégalités' because not everyone has 'un logement adapté ni un environnement calme'. Some gain autonomy while others sink into isolation."
+          },
+          {
+            "id": "ce1q5",
+            "kind": "FILL",
+            "prompt": "Complétez : pour l'auteur, l'avenir appartient à une organisation ___.",
+            "answer": "hybride",
+            "difficulty": 7,
+            "explanation": "The conclusion states the future belongs 'à une organisation hybride, pensée pour l'humain'. The expected word is 'hybride'."
+          }
+        ]
+      },
+      {
+        "id": "pe",
+        "kind": "WRITING",
+        "title": "Production écrite",
+        "instructions": "Write about 250 words arguing a position in a formal register.",
+        "prompts": [
+          {
+            "prompt": "Le maire de votre ville envisage d'interdire complètement la circulation des voitures dans le centre-ville. Sur le forum du site de la mairie, vous réagissez à ce projet. Dans une contribution argumentée d'environ 250 mots, vous exprimez votre position, vous la justifiez à l'aide d'exemples précis et vous répondez aux éventuelles objections, dans un registre formel.",
+            "modelAnswer": "Madame, Monsieur, membres du conseil municipal,\n\nJ'ai pris connaissance du projet visant à interdire la circulation automobile dans le centre-ville, et je souhaite, par cette contribution, exprimer un soutien nuancé à cette initiative.\n\nIl me paraît en effet difficile de nier les bénéfices d'une telle mesure. En premier lieu, la qualité de l'air s'en trouverait considérablement améliorée, ce qui profiterait à la santé de tous, et notamment des enfants et des personnes âgées. Par ailleurs, un centre apaisé, rendu aux piétons et aux cyclistes, redonnerait vie aux commerces de proximité et aux terrasses, comme l'ont démontré plusieurs villes européennes.\n\nNéanmoins, je conçois que certains habitants s'inquiètent légitimement. Les commerçants craignent une baisse de leur clientèle, et les personnes à mobilité réduite redoutent d'être pénalisées. Ces objections ne sauraient être balayées d'un revers de main. C'est pourquoi une interdiction brutale me semblerait contre-productive.\n\nJe plaide donc pour une mise en œuvre progressive et concertée. Il conviendrait, en effet, de développer au préalable des transports en commun performants, de créer des parkings-relais en périphérie et de prévoir des dérogations pour les livraisons et les riverains vulnérables.\n\nEn définitive, je suis convaincu qu'un centre-ville sans voitures constitue un projet d'avenir, à condition qu'il soit pensé pour l'ensemble des citoyens et non imposé sans dialogue. La transition écologique ne réussira que si elle demeure juste et inclusive.\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.",
+            "rubric": [
+              "Le texte fait environ 250 mots",
+              "La position est argumentée avec des exemples",
+              "Le registre est formel et cohérent",
+              "Les articulateurs logiques structurent le propos (en effet, néanmoins, par ailleurs...)",
+              "Grammaire riche et correcte (subjonctif, concordance)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "po",
+        "kind": "SPEAKING",
+        "title": "Production orale",
+        "instructions": "Prepare, then defend a viewpoint aloud; self-assess with the rubric.",
+        "prompts": [
+          {
+            "prompt": "Monologue suivi : dégagez le problème soulevé par ce court document et présentez votre opinion argumentée. Document : « De plus en plus de jeunes s'informent uniquement par les réseaux sociaux, délaissant la presse traditionnelle. Faut-il s'en réjouir ou s'en inquiéter ? Si ces plateformes démocratisent l'accès à l'information, elles favorisent aussi la diffusion rapide de fausses nouvelles et l'enfermement dans des bulles d'opinion. »",
+            "modelAnswer": "Ce document soulève la question de la manière dont les jeunes s'informent aujourd'hui, et plus précisément du rôle ambivalent des réseaux sociaux. La problématique pourrait se formuler ainsi : les réseaux sociaux constituent-ils une chance ou une menace pour une information de qualité ?\n\nPour ma part, j'adopterais une position nuancée. Certes, ces plateformes rendent l'information immédiate, gratuite et accessible à tous, ce qui représente un progrès démocratique indéniable. Toutefois, je m'inquiète des dérives qu'elles engendrent : la propagation des fausses nouvelles et l'enfermement dans des « bulles » où l'on ne rencontre plus que sa propre opinion. Un jeune qui ne s'informe que par un fil d'actualité risque ainsi de confondre popularité et véracité.\n\nJe considère donc qu'il ne faut ni diaboliser ces outils ni s'en remettre aveuglément à eux. La véritable solution réside, selon moi, dans l'éducation aux médias, afin que chacun apprenne à vérifier ses sources et à croiser les points de vue.",
+            "rubric": [
+              "Dégager la problématique",
+              "Présenter une opinion structurée et nuancée",
+              "Parler 5-7 minutes",
+              "Utiliser un registre soutenu"
+            ]
+          },
+          {
+            "prompt": "Débat avec l'examinateur : défendez votre point de vue face aux objections.",
+            "modelAnswer": "Je comprends votre objection : on pourrait en effet soutenir que les réseaux sociaux permettent à des voix marginalisées de se faire entendre, ce que la presse traditionnelle négligeait parfois. Je vous l'accorde volontiers. Néanmoins, cela ne remet pas en cause mon propos : l'accès n'a de valeur que si l'information demeure fiable. Vous m'objecterez que la presse traditionnelle commet elle aussi des erreurs ; c'est exact, mais elle est soumise à des règles déontologiques et à une responsabilité juridique, ce qui n'est pas le cas d'un anonyme sur une plateforme. Aussi maintiendrais-je qu'il ne s'agit pas d'opposer les deux, mais de former des citoyens capables d'esprit critique.",
+            "rubric": [
+              "Défendre son opinion",
+              "Répondre aux objections (concéder/réfuter)",
+              "Relancer et nuancer"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -178,10 +178,27 @@ private fun ExamOverview(
     val latest by container.progress.latestExamAttempts(lang, exam.id)
         .collectAsState(initial = emptyList())
     val latestBySection = remember(latest) { latest.associateBy { it.sectionId } }
-    val verdict = ExamRules.examPassed(
-        exam.sections.map { it.id },
-        latestBySection.mapValues { it.value.passed }
-    )
+    // DELF mocks (French) apply the FEI rule: each section /25, total >= 50/100 with a 5/25 floor.
+    // Scored sections use their score/total; self-assessed (writing/speaking) map pass->20/25,
+    // fail/unattempted->0/25. Other exams (Croatian NN) keep the all-sections-passed rule.
+    val isDelf = exam.id.contains("delf")
+    val verdict = if (isDelf) {
+        ExamRules.delfPassed(
+            exam.sections.map { s ->
+                val a = latestBySection[s.id]
+                when {
+                    a == null -> 0 to 25
+                    a.total > 0 -> a.score to a.total
+                    else -> (if (a.passed) 20 else 0) to 25
+                }
+            }
+        )
+    } else {
+        ExamRules.examPassed(
+            exam.sections.map { it.id },
+            latestBySection.mapValues { it.value.passed }
+        )
+    }
     val feedback = CorlangColors.feedback
 
     Column(
