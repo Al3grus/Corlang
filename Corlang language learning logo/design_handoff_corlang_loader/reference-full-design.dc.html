@@ -11,7 +11,7 @@
 <meta name="design_doc_mode" content="canvas">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Sora:wght@600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Jost:wght@500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   *{ box-sizing:border-box; }
   body{ margin:0; }
@@ -67,14 +67,17 @@
         <span style="letter-spacing:2px;">···</span>
       </div>
       <div ref="{{ stageRef }}" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
-        <div data-role="wordmark" style="display:inline-flex; align-items:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:56px; letter-spacing:-0.02em; color:#f4efe6;">
+        <div data-role="wordmark" style="display:inline-flex; align-items:center; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:700; font-size:56px; letter-spacing:-0.02em; color:#f4efe6;">
           <span data-role="letter" style="display:inline-block; opacity:0; line-height:1;">C</span>
           <span data-role="mark" style="display:inline-block; flex:0 0 auto; width:46px; height:46px; margin:0; transform-origin:50% 50%;">
             <svg viewBox="0 0 100 100" width="46" height="46" style="display:block; overflow:visible;">
-              <g data-role="ring" style="transform-box:fill-box; transform-origin:center;">
-                <circle data-role="ringArc" cx="50" cy="50" r="30" fill="none" style="stroke:var(--brand,#2f7fae)" stroke-width="8" stroke-linecap="round" transform="rotate(-90 50 50)" stroke-dasharray="188.5" stroke-dashoffset="188.5"></circle>
+              <g data-role="ringOuter" style="transform-box:fill-box; transform-origin:center;">
+                <circle data-role="arcOuter" cx="50" cy="50" r="33" fill="none" style="stroke:var(--brand,#2f7fae)" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 207.3"></circle>
               </g>
-              <circle cx="50" cy="50" r="12.5" style="fill:var(--core,#c8402c)"></circle>
+              <g data-role="ringInner">
+                <path data-role="arcInner" d="M70.37 44.92 A21 21 0 1 0 37.07 66.55" fill="none" style="stroke:var(--brand,#2f7fae)" stroke-width="6" stroke-linecap="round" stroke-dasharray="80 80" stroke-dashoffset="80"></path>
+              </g>
+              <circle data-role="core" cx="50" cy="50" r="9" style="fill:var(--core,#c8402c)"></circle>
             </svg>
           </span>
           <span data-role="letter" style="display:inline-block; opacity:0; line-height:1;">r</span>
@@ -92,8 +95,8 @@
     <div style="max-width:330px; display:flex; flex-direction:column; gap:18px;">
       <h3 style="margin:0; font-size:19px; font-weight:600; color:#2b3038;">The sequence</h3>
       <ol style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:10px; font-size:14px; line-height:1.5; color:#5b6069;">
-        <li>Rings spin around the core — the loading indicator, with a live % count.</li>
-        <li>At 100% the spin eases to a stop and the mark shrinks into letter size.</li>
+        <li>Both rings draw on around the core — the loading indicator, with a live % count.</li>
+        <li>At 100% the two-ring Orbit-Core mark locks in, eases to a stop and shrinks into letter size.</li>
         <li>C · r · l · a · n · g draw in around it, spelling Corlang.</li>
         <li>The tagline settles in, then the whole thing loops.</li>
       </ol>
@@ -108,7 +111,7 @@
   <header style="display:flex; flex-direction:column; gap:10px; max-width:620px;">
     <div style="display:flex; align-items:center; gap:14px;">
       <svg width="46" height="46" style="display:block"><use href="#ic-rings"></use></svg>
-      <h1 style="margin:0; font-size:40px; font-weight:700; letter-spacing:-0.02em; color:#2b3038;">Corlang</h1>
+      <h1 data-role="brandword" style="margin:0; font-size:40px; font-weight:700; letter-spacing:-0.02em; color:#2b3038; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Corlang</h1>
     </div>
     <p style="margin:0; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.04em; color:#7c7364; text-transform:uppercase;">core language · app icon · 3 geometric directions</p>
     <p style="margin:4px 0 0; font-size:15px; line-height:1.55; color:#5b6069; text-wrap:pretty;">Each mark grows from a single warm <strong>core</strong>. Shown as launcher icon, on dark, in monochrome, at favicon scale, and on-device.</p>
@@ -196,7 +199,7 @@
   </div>
 </section>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;brandColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2f7fae&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#2f7fae&quot;,&quot;#3f9e6b&quot;,&quot;#7a5cc0&quot;,&quot;#c0574a&quot;],&quot;section&quot;:&quot;Palette&quot;},&quot;coreColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#c8402c&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#c8402c&quot;,&quot;#e0763f&quot;,&quot;#e0b13f&quot;,&quot;#3fb0a0&quot;],&quot;section&quot;:&quot;Palette&quot;},&quot;showPhone&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;brandColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2f7fae&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#2f7fae&quot;,&quot;#3f9e6b&quot;,&quot;#7a5cc0&quot;,&quot;#c0574a&quot;],&quot;section&quot;:&quot;Palette&quot;},&quot;coreColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#c8402c&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#c8402c&quot;,&quot;#e0763f&quot;,&quot;#e0b13f&quot;,&quot;#3fb0a0&quot;],&quot;section&quot;:&quot;Palette&quot;},&quot;wordFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Helvetica&quot;,&quot;options&quot;:[&quot;Helvetica&quot;,&quot;Space Grotesk&quot;,&quot;Sora&quot;,&quot;Bricolage Grotesque&quot;,&quot;Futura&quot;,&quot;Gotham&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Type&quot;},&quot;showPhone&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
 class Component extends DCLogic {
   rootRef = React.createRef();
   stageRef = React.createRef();
@@ -213,6 +216,19 @@ class Component extends DCLogic {
     document.documentElement.style.setProperty('--core', c);
     const el = this.rootRef.current;
     if (el) { el.style.setProperty('--brand', b); el.style.setProperty('--core', c); }
+
+    const fontMap = {
+      'Space Grotesk': "'Space Grotesk', sans-serif",
+      'Sora': "'Sora', sans-serif",
+      'Bricolage Grotesque': "'Bricolage Grotesque', sans-serif",
+      'Helvetica': "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      'Futura': "'Futura', 'Jost', sans-serif",
+      'Gotham': "'Gotham', 'Montserrat', sans-serif"
+    };
+    const ff = fontMap[this.props.wordFont] || fontMap['Space Grotesk'];
+    const wm = this.stageRef.current && this.stageRef.current.querySelector('[data-role="wordmark"]');
+    if (wm) wm.style.fontFamily = ff;
+    document.querySelectorAll('[data-role="brandword"]').forEach(n => { n.style.fontFamily = ff; });
   }
 
   componentDidMount() {
@@ -251,25 +267,44 @@ class Component extends DCLogic {
     stage.style.opacity = g;
 
     const prog = cl(t / loadEnd);
-    const C = 188.5;
-    const arc = q('[data-role="ringArc"]');
-    if (arc) arc.style.strokeDashoffset = (C * (1 - prog));
-    const ring = q('[data-role="ring"]');
-    if (ring) ring.style.transform = `rotate(${prog * 360}deg)`;
+    const eio = (x) => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+    // Two rings fill (grow their visible arc) as progress climbs, then settle
+    // into the Orbit-Core configuration exactly like the app icon.
+    const outerVis = 132;
+    const arcO = q('[data-role="arcOuter"]');
+    const arcI = q('[data-role="arcInner"]');
+    if (arcO) arcO.style.strokeDasharray = (outerVis * prog) + ' 207.3';
+    // inner: anchored at the right end, reveals leftward via dashoffset,
+    // landing exactly on the original icon's inner arc.
+    if (arcI) arcI.style.strokeDashoffset = 80 * (1 - prog);
+    // outer: gentle counter-rotating sweep landing on the icon's final angle
+    const ep = eo(prog);
+    const ringO = q('[data-role="ringOuter"]');
+    if (ringO) ringO.style.transform = `rotate(${-52 - (1 - ep) * 210}deg)`;
+    const core = q('[data-role="core"]');
+    if (core) {
+      // red dot pops in near the very end, with a little overshoot
+      const cp = cl((prog - 0.8) / 0.2);
+      const back = 2.2;
+      const eb = cp === 0 ? 0 : 1 + (back + 1) * Math.pow(cp - 1, 3) + back * Math.pow(cp - 1, 2); // easeOutBack
+      core.style.transform = `scale(${eb})`;
+      core.style.transformBox = 'fill-box';
+      core.style.transformOrigin = 'center';
+    }
 
     const mark = q('[data-role="mark"]');
     const dx = this._markDX || 0;
     let s = 2.4, tx = dx;
     if (t >= loadEnd) {
-      const sp = eo(cl((t - loadEnd) / 0.3));
+      const sp = eio(cl((t - loadEnd) / 0.38));
       s = 2.4 - 1.4 * sp;
       tx = dx * (1 - sp);
     }
     if (mark) mark.style.transform = `translateX(${tx}px) scale(${Math.max(1, s)})`;
 
     this._letters.forEach((el, i) => {
-      const st = 0.58 + i * 0.04;
-      const lp = eo(cl((t - st) / 0.16));
+      const st = 0.62 + i * 0.04;
+      const lp = eio(cl((t - st) / 0.18));
       el.style.opacity = lp;
       el.style.transform = `translateY(${(1 - lp) * 8}px)`;
     });

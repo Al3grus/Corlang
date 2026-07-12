@@ -1,5 +1,6 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -171,6 +172,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .verticalScroll(rememberScrollState())
             .imePadding()
             .padding(24.dp)

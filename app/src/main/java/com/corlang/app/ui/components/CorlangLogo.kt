@@ -31,15 +31,14 @@ import androidx.compose.ui.unit.sp
 
 /**
  * The single source of truth for the Corlang mark, ported from the design handoff
- * (design_handoff_corlang_loader/CorlangLogo.jsx). Use this everywhere the brand appears so a
- * future color/shape change happens in one place. Geometry matches the reference SVGs exactly
- * (r=33/21 broken rings + r=9 core for orbit; r=30 ring + r=12.5 core for the solid "O").
+ * (design_handoff_corlang_loader/CorlangLogo.jsx, rev 2). Use this everywhere the brand
+ * appears so a future color/shape change happens in one place. The mark is always the
+ * two-ring "Orbit Core" (outer r=33 broken ring at -52deg, inner r=21 arc anchored right,
+ * r=9 core), the same mark the loader resolves into and the "o" in the wordmark.
  */
 enum class LogoVariant {
-    /** Two broken rings + core. Default brand icon: chrome, nav, small marks. */
+    /** The two-ring mark alone. Default brand icon: chrome, nav, small marks. */
     ORBIT,
-    /** Solid-ring "O" with core. Denser, reads better at tiny sizes. */
-    O,
     /** Icon + "Corlang" wordmark side by side. Headers, About, marketing. */
     LOCKUP,
     /** "Corlang" with the mark as the "o", no leading icon. Tight spaces. */
@@ -61,7 +60,6 @@ fun CorlangLogo(
 ) {
     when (variant) {
         LogoVariant.ORBIT -> Canvas(modifier.size(size)) { drawOrbit(brand, core) }
-        LogoVariant.O -> Canvas(modifier.size(size)) { drawOMark(brand, core) }
         LogoVariant.WORDMARK -> Wordmark(size, brand, core, ink, modifier)
         LogoVariant.LOCKUP -> Row(modifier, verticalAlignment = Alignment.CenterVertically) {
             Canvas(Modifier.size(size)) { drawOrbit(brand, core) }
@@ -71,14 +69,14 @@ fun CorlangLogo(
     }
 }
 
-/** "Corlang" with the solid "O" mark standing in for the "o". */
+/** "Corlang" with the Orbit Core mark standing in for the "o" (rev 2: no solid-O form). */
 @Composable
 private fun Wordmark(size: Dp, brand: Color, core: Color, ink: Color, modifier: Modifier) {
-    val oSize = size * 0.82f
+    val oSize = size * 0.9f
     val style = wordmarkTextStyle(size, ink)
     Row(modifier, verticalAlignment = Alignment.CenterVertically) {
         Text("C", style = style)
-        Canvas(Modifier.size(oSize)) { drawOMark(brand, core) }
+        Canvas(Modifier.size(oSize)) { drawOrbit(brand, core) }
         Text("rlang", style = style)
     }
 }
@@ -103,14 +101,6 @@ private fun DrawScope.drawOrbit(brand: Color, core: Color) {
     drawCircle(core, radius = 0.09f * s, center = c)
 }
 
-/** Solid ring (r=30, stroke 8) + core (r=12.5) in a 100 viewBox. */
-private fun DrawScope.drawOMark(brand: Color, core: Color) {
-    val s = size.minDimension
-    val c = center
-    drawCircle(brand, radius = 0.30f * s, center = c, style = Stroke(width = 0.08f * s))
-    drawCircle(core, radius = 0.125f * s, center = c)
-}
-
 private fun DrawScope.drawRingArc(
     color: Color, center: Offset, radius: Float, stroke: Float, startDeg: Float, sweepDeg: Float
 ) {
@@ -126,8 +116,8 @@ private fun DrawScope.drawRingArc(
 }
 
 /**
- * Branded in-app loading indicator: the "O" ring spinning around its core, so every loading
- * moment in the app speaks the loader's motion language. Determinate progress uses the loader
+ * Branded in-app loading indicator: the mark's outer broken ring orbiting its core, so every
+ * loading moment speaks the loader's motion language. Determinate progress uses the loader
  * (CorlangSplash); this is the indeterminate everyday spinner.
  */
 @Composable
@@ -147,9 +137,10 @@ fun CorlangRingSpinner(
     Canvas(modifier.size(size)) {
         val s = size.toPx()
         val c = center
-        drawCircle(core, radius = 0.125f * s, center = c)
+        drawCircle(core, radius = 0.09f * s, center = c)
         rotate(angle, c) {
-            drawRingArc(brand, c, radius = 0.30f * s, stroke = 0.08f * s, startDeg = -90f, sweepDeg = 270f)
+            // The mark's own outer arc (229.2deg of r=33) doing one clean orbit.
+            drawRingArc(brand, c, radius = 0.33f * s, stroke = 0.06f * s, startDeg = -52f, sweepDeg = 229.2f)
         }
     }
 }
