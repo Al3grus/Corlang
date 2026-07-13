@@ -1,0 +1,956 @@
+{
+  "packs": [
+    {
+      "id": "02-a1-food-cafe",
+      "title": "Food, café & restaurant",
+      "level": "A1",
+      "words": [
+        {
+          "id": "almoço",
+          "hr": "almoço",
+          "en": "lunch",
+          "pos": "n. m.",
+          "example": {
+            "target": "O almoço é ao meio-dia.",
+            "gloss": "Lunch is at noon."
+          }
+        },
+        {
+          "id": "jantar",
+          "hr": "jantar",
+          "en": "dinner",
+          "pos": "n. m.",
+          "example": {
+            "target": "O jantar está pronto.",
+            "gloss": "Dinner is ready."
+          }
+        },
+        {
+          "id": "lanche",
+          "hr": "lanche",
+          "en": "afternoon snack",
+          "pos": "n. m.",
+          "note": "light meal in the afternoon",
+          "example": {
+            "target": "Ao lanche como um pastel de nata.",
+            "gloss": "For my afternoon snack I eat a custard tart."
+          }
+        },
+        {
+          "id": "refeição",
+          "hr": "refeição",
+          "en": "meal",
+          "pos": "n. f.",
+          "example": {
+            "target": "A sopa é uma boa refeição.",
+            "gloss": "Soup is a good meal."
+          }
+        },
+        {
+          "id": "comida",
+          "hr": "comida",
+          "en": "food",
+          "pos": "n. f.",
+          "example": {
+            "target": "A comida portuguesa é muito boa.",
+            "gloss": "Portuguese food is very good."
+          }
+        },
+        {
+          "id": "pão",
+          "hr": "pão",
+          "en": "bread",
+          "pos": "n. m.",
+          "example": {
+            "target": "Como pão com manteiga.",
+            "gloss": "I eat bread with butter."
+          }
+        },
+        {
+          "id": "arroz",
+          "hr": "arroz",
+          "en": "rice",
+          "pos": "n. m.",
+          "example": {
+            "target": "Queria arroz com frango.",
+            "gloss": "I'd like rice with chicken."
+          }
+        },
+        {
+          "id": "massa",
+          "hr": "massa",
+          "en": "pasta",
+          "pos": "n. f.",
+          "example": {
+            "target": "Hoje há massa ao almoço.",
+            "gloss": "Today there's pasta for lunch."
+          }
+        },
+        {
+          "id": "batata",
+          "hr": "batata",
+          "en": "potato",
+          "pos": "n. f.",
+          "example": {
+            "target": "O peixe vem com batatas.",
+            "gloss": "The fish comes with potatoes."
+          }
+        },
+        {
+          "id": "carne",
+          "hr": "carne",
+          "en": "meat",
+          "pos": "n. f.",
+          "example": {
+            "target": "Não como carne à noite.",
+            "gloss": "I don't eat meat at night."
+          }
+        },
+        {
+          "id": "peixe",
+          "hr": "peixe",
+          "en": "fish",
+          "pos": "n. m.",
+          "example": {
+            "target": "Em Portugal o peixe é fresco.",
+            "gloss": "In Portugal the fish is fresh."
+          }
+        },
+        {
+          "id": "bacalhau",
+          "hr": "bacalhau",
+          "en": "salted cod",
+          "pos": "n. m.",
+          "note": "Portugal's most iconic dish",
+          "example": {
+            "target": "Ao domingo comemos bacalhau.",
+            "gloss": "On Sundays we eat cod."
+          }
+        },
+        {
+          "id": "frango",
+          "hr": "frango",
+          "en": "chicken",
+          "pos": "n. m.",
+          "example": {
+            "target": "O frango assado está saboroso.",
+            "gloss": "The roast chicken is tasty."
+          }
+        },
+        {
+          "id": "ovo",
+          "hr": "ovo",
+          "en": "egg",
+          "pos": "n. m.",
+          "example": {
+            "target": "Como um ovo ao pequeno-almoço.",
+            "gloss": "I eat an egg for breakfast."
+          }
+        },
+        {
+          "id": "queijo",
+          "hr": "queijo",
+          "en": "cheese",
+          "pos": "n. m.",
+          "example": {
+            "target": "Queria uma sandes de queijo.",
+            "gloss": "I'd like a cheese sandwich."
+          }
+        },
+        {
+          "id": "fiambre",
+          "hr": "fiambre",
+          "en": "ham (cooked)",
+          "pos": "n. m.",
+          "note": "pt-PT for sliced cooked ham; 'presunto' is cured ham",
+          "example": {
+            "target": "A tosta leva fiambre e queijo.",
+            "gloss": "The toastie has ham and cheese."
+          }
+        },
+        {
+          "id": "sopa",
+          "hr": "sopa",
+          "en": "soup",
+          "pos": "n. f.",
+          "example": {
+            "target": "Primeiro como a sopa.",
+            "gloss": "First I eat the soup."
+          }
+        },
+        {
+          "id": "salada",
+          "hr": "salada",
+          "en": "salad",
+          "pos": "n. f.",
+          "example": {
+            "target": "Queria uma salada de tomate.",
+            "gloss": "I'd like a tomato salad."
+          }
+        },
+        {
+          "id": "fruta",
+          "hr": "fruta",
+          "en": "fruit",
+          "pos": "n. f.",
+          "example": {
+            "target": "Como fruta todos os dias.",
+            "gloss": "I eat fruit every day."
+          }
+        },
+        {
+          "id": "legumes",
+          "hr": "legumes",
+          "en": "vegetables",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "A sopa tem muitos legumes.",
+            "gloss": "The soup has lots of vegetables."
+          }
+        },
+        {
+          "id": "manteiga",
+          "hr": "manteiga",
+          "en": "butter",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uma torrada com manteiga, se faz favor.",
+            "gloss": "A slice of toast with butter, please."
+          }
+        },
+        {
+          "id": "azeite",
+          "hr": "azeite",
+          "en": "olive oil",
+          "pos": "n. m.",
+          "example": {
+            "target": "O azeite português é famoso.",
+            "gloss": "Portuguese olive oil is famous."
+          }
+        },
+        {
+          "id": "sal",
+          "hr": "sal",
+          "en": "salt",
+          "pos": "n. m.",
+          "example": {
+            "target": "A sopa tem pouco sal.",
+            "gloss": "The soup has little salt."
+          }
+        },
+        {
+          "id": "açúcar",
+          "hr": "açúcar",
+          "en": "sugar",
+          "pos": "n. m.",
+          "example": {
+            "target": "Não quero açúcar no café.",
+            "gloss": "I don't want sugar in my coffee."
+          }
+        },
+        {
+          "id": "maçã",
+          "hr": "maçã",
+          "en": "apple",
+          "pos": "n. f.",
+          "example": {
+            "target": "Como uma maçã ao lanche.",
+            "gloss": "I eat an apple as a snack."
+          }
+        },
+        {
+          "id": "laranja",
+          "hr": "laranja",
+          "en": "orange",
+          "pos": "n. f.",
+          "example": {
+            "target": "Queria um sumo de laranja.",
+            "gloss": "I'd like an orange juice."
+          }
+        },
+        {
+          "id": "banana",
+          "hr": "banana",
+          "en": "banana",
+          "pos": "n. f.",
+          "example": {
+            "target": "As bananas da Madeira são doces.",
+            "gloss": "Madeira bananas are sweet."
+          }
+        },
+        {
+          "id": "pera",
+          "hr": "pera",
+          "en": "pear",
+          "pos": "n. f.",
+          "example": {
+            "target": "Esta pera está muito boa.",
+            "gloss": "This pear is very good."
+          }
+        },
+        {
+          "id": "uva",
+          "hr": "uva",
+          "en": "grape",
+          "pos": "n. f.",
+          "example": {
+            "target": "Compro uvas no mercado.",
+            "gloss": "I buy grapes at the market."
+          }
+        },
+        {
+          "id": "morango",
+          "hr": "morango",
+          "en": "strawberry",
+          "pos": "n. m.",
+          "example": {
+            "target": "Gosto de gelado de morango.",
+            "gloss": "I like strawberry ice cream."
+          }
+        },
+        {
+          "id": "limão",
+          "hr": "limão",
+          "en": "lemon",
+          "pos": "n. m.",
+          "example": {
+            "target": "Queria um chá com limão.",
+            "gloss": "I'd like a tea with lemon."
+          }
+        },
+        {
+          "id": "ananás",
+          "hr": "ananás",
+          "en": "pineapple",
+          "pos": "n. m.",
+          "note": "pt-PT; 'abacaxi' is Brazilian",
+          "example": {
+            "target": "O ananás dos Açores é doce.",
+            "gloss": "Azores pineapple is sweet."
+          }
+        },
+        {
+          "id": "melão",
+          "hr": "melão",
+          "en": "melon",
+          "pos": "n. m.",
+          "example": {
+            "target": "No verão como melão.",
+            "gloss": "In summer I eat melon."
+          }
+        },
+        {
+          "id": "tomate",
+          "hr": "tomate",
+          "en": "tomato",
+          "pos": "n. m.",
+          "example": {
+            "target": "A salada leva tomate e cebola.",
+            "gloss": "The salad has tomato and onion."
+          }
+        },
+        {
+          "id": "cebola",
+          "hr": "cebola",
+          "en": "onion",
+          "pos": "n. f.",
+          "example": {
+            "target": "Não gosto de cebola crua.",
+            "gloss": "I don't like raw onion."
+          }
+        },
+        {
+          "id": "alface",
+          "hr": "alface",
+          "en": "lettuce",
+          "pos": "n. f.",
+          "example": {
+            "target": "Queria a sandes com alface.",
+            "gloss": "I'd like the sandwich with lettuce."
+          }
+        },
+        {
+          "id": "cenoura",
+          "hr": "cenoura",
+          "en": "carrot",
+          "pos": "n. f.",
+          "example": {
+            "target": "A sopa de cenoura está quente.",
+            "gloss": "The carrot soup is hot."
+          }
+        },
+        {
+          "id": "couve",
+          "hr": "couve",
+          "en": "cabbage, kale",
+          "pos": "n. f.",
+          "note": "key ingredient of caldo verde",
+          "example": {
+            "target": "O caldo verde leva couve.",
+            "gloss": "Caldo verde has kale in it."
+          }
+        },
+        {
+          "id": "alho",
+          "hr": "alho",
+          "en": "garlic",
+          "pos": "n. m.",
+          "example": {
+            "target": "O bacalhau leva alho e azeite.",
+            "gloss": "The cod has garlic and olive oil."
+          }
+        },
+        {
+          "id": "água",
+          "hr": "água",
+          "en": "water",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uma água fresca, se faz favor.",
+            "gloss": "A cold water, please."
+          }
+        },
+        {
+          "id": "café",
+          "hr": "café",
+          "en": "coffee; café",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vou tomar um café depois do almoço.",
+            "gloss": "I'm going to have a coffee after lunch."
+          }
+        },
+        {
+          "id": "bica",
+          "hr": "bica",
+          "en": "espresso",
+          "pos": "n. f.",
+          "note": "Lisbon word for espresso; in Porto say 'cimbalino'",
+          "example": {
+            "target": "Uma bica, se faz favor.",
+            "gloss": "An espresso, please."
+          }
+        },
+        {
+          "id": "galão",
+          "hr": "galão",
+          "en": "latte (tall milky coffee)",
+          "pos": "n. m.",
+          "note": "served in a tall glass",
+          "example": {
+            "target": "Ao pequeno-almoço bebo um galão.",
+            "gloss": "At breakfast I drink a galão."
+          }
+        },
+        {
+          "id": "meia de leite",
+          "hr": "meia de leite",
+          "en": "coffee with milk (in a cup)",
+          "pos": "n. f.",
+          "note": "half coffee, half milk, in a cup",
+          "example": {
+            "target": "Queria uma meia de leite e uma torrada.",
+            "gloss": "I'd like a meia de leite and toast."
+          }
+        },
+        {
+          "id": "chá",
+          "hr": "chá",
+          "en": "tea",
+          "pos": "n. m.",
+          "example": {
+            "target": "À noite bebo chá.",
+            "gloss": "In the evening I drink tea."
+          }
+        },
+        {
+          "id": "vinho",
+          "hr": "vinho",
+          "en": "wine",
+          "pos": "n. m.",
+          "example": {
+            "target": "Um copo de vinho tinto, se faz favor.",
+            "gloss": "A glass of red wine, please."
+          }
+        },
+        {
+          "id": "cerveja",
+          "hr": "cerveja",
+          "en": "beer",
+          "pos": "n. f.",
+          "note": "ask for 'uma imperial' for a small draught beer",
+          "example": {
+            "target": "Uma cerveja bem fresca, se faz favor.",
+            "gloss": "A nice cold beer, please."
+          }
+        },
+        {
+          "id": "leite",
+          "hr": "leite",
+          "en": "milk",
+          "pos": "n. m.",
+          "example": {
+            "target": "O galão leva muito leite.",
+            "gloss": "A galão has a lot of milk."
+          }
+        },
+        {
+          "id": "garrafa",
+          "hr": "garrafa",
+          "en": "bottle",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uma garrafa de água, se faz favor.",
+            "gloss": "A bottle of water, please."
+          }
+        },
+        {
+          "id": "copo",
+          "hr": "copo",
+          "en": "glass (for drinking)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pode trazer-me um copo?",
+            "gloss": "Can you bring me a glass?"
+          }
+        },
+        {
+          "id": "prato",
+          "hr": "prato",
+          "en": "plate; dish",
+          "pos": "n. m.",
+          "example": {
+            "target": "O prato do dia é bacalhau.",
+            "gloss": "The dish of the day is cod."
+          }
+        },
+        {
+          "id": "garfo",
+          "hr": "garfo",
+          "en": "fork",
+          "pos": "n. m.",
+          "example": {
+            "target": "Falta um garfo na mesa.",
+            "gloss": "A fork is missing from the table."
+          }
+        },
+        {
+          "id": "faca",
+          "hr": "faca",
+          "en": "knife",
+          "pos": "n. f.",
+          "example": {
+            "target": "Pode trazer-me uma faca?",
+            "gloss": "Can you bring me a knife?"
+          }
+        },
+        {
+          "id": "colher",
+          "hr": "colher",
+          "en": "spoon",
+          "pos": "n. f.",
+          "example": {
+            "target": "Como a sopa com uma colher.",
+            "gloss": "I eat the soup with a spoon."
+          }
+        },
+        {
+          "id": "guardanapo",
+          "hr": "guardanapo",
+          "en": "napkin",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os guardanapos estão na mesa.",
+            "gloss": "The napkins are on the table."
+          }
+        },
+        {
+          "id": "mesa",
+          "hr": "mesa",
+          "en": "table",
+          "pos": "n. f.",
+          "example": {
+            "target": "Uma mesa para dois, se faz favor.",
+            "gloss": "A table for two, please."
+          }
+        },
+        {
+          "id": "conta",
+          "hr": "conta",
+          "en": "bill",
+          "pos": "n. f.",
+          "example": {
+            "target": "A conta está errada.",
+            "gloss": "The bill is wrong."
+          }
+        },
+        {
+          "id": "ementa",
+          "hr": "ementa",
+          "en": "menu",
+          "pos": "n. f.",
+          "note": "pt-PT; 'cardápio' is Brazilian",
+          "example": {
+            "target": "Pode trazer-me a ementa?",
+            "gloss": "Can you bring me the menu?"
+          }
+        },
+        {
+          "id": "empregado",
+          "hr": "empregado",
+          "en": "waiter",
+          "pos": "n. m.",
+          "note": "empregado/empregada de mesa; never 'garçom' (BR)",
+          "example": {
+            "target": "O empregado traz a ementa.",
+            "gloss": "The waiter brings the menu."
+          }
+        },
+        {
+          "id": "restaurante",
+          "hr": "restaurante",
+          "en": "restaurant",
+          "pos": "n. m.",
+          "example": {
+            "target": "Este restaurante é barato.",
+            "gloss": "This restaurant is cheap."
+          }
+        },
+        {
+          "id": "pastelaria",
+          "hr": "pastelaria",
+          "en": "pastry shop / café",
+          "pos": "n. f.",
+          "note": "where the Portuguese have coffee and cakes",
+          "example": {
+            "target": "Vemo-nos na pastelaria às dez.",
+            "gloss": "See you at the pastry shop at ten."
+          }
+        },
+        {
+          "id": "pastel de nata",
+          "hr": "pastel de nata",
+          "en": "custard tart",
+          "pos": "n. m.",
+          "note": "in Belém they are 'pastéis de Belém'",
+          "example": {
+            "target": "Queria um pastel de nata e uma bica.",
+            "gloss": "I'd like a custard tart and an espresso."
+          }
+        },
+        {
+          "id": "sandes",
+          "hr": "sandes",
+          "en": "sandwich",
+          "pos": "n. f.",
+          "note": "pt-PT, invariable; 'sanduíche' sounds Brazilian",
+          "example": {
+            "target": "Uma sandes de fiambre, se faz favor.",
+            "gloss": "A ham sandwich, please."
+          }
+        },
+        {
+          "id": "tosta mista",
+          "hr": "tosta mista",
+          "en": "ham and cheese toastie",
+          "pos": "n. f.",
+          "example": {
+            "target": "A tosta mista vem quente.",
+            "gloss": "The toastie comes hot."
+          }
+        },
+        {
+          "id": "prego",
+          "hr": "prego",
+          "en": "steak sandwich",
+          "pos": "n. m.",
+          "note": "beef steak in bread; classic café food",
+          "example": {
+            "target": "O prego no pão é muito bom.",
+            "gloss": "The steak sandwich is very good."
+          }
+        },
+        {
+          "id": "bifana",
+          "hr": "bifana",
+          "en": "pork sandwich",
+          "pos": "n. f.",
+          "note": "thin marinated pork in bread",
+          "example": {
+            "target": "Queria uma bifana e uma imperial.",
+            "gloss": "I'd like a bifana and a draught beer."
+          }
+        },
+        {
+          "id": "bolo",
+          "hr": "bolo",
+          "en": "cake",
+          "pos": "n. m.",
+          "example": {
+            "target": "Este bolo de laranja é caseiro.",
+            "gloss": "This orange cake is homemade."
+          }
+        },
+        {
+          "id": "sobremesa",
+          "hr": "sobremesa",
+          "en": "dessert",
+          "pos": "n. f.",
+          "example": {
+            "target": "De sobremesa quero fruta.",
+            "gloss": "For dessert I want fruit."
+          }
+        },
+        {
+          "id": "conta, se faz favor.",
+          "hr": "conta, se faz favor.",
+          "en": "The bill, please.",
+          "pos": "phrase",
+          "note": "'se faz favor' is the common pt-PT way to say please",
+          "example": {
+            "target": "Empregado, a conta, se faz favor.",
+            "gloss": "Waiter, the bill, please."
+          }
+        },
+        {
+          "id": "queria...",
+          "hr": "Queria...",
+          "en": "I'd like...",
+          "pos": "phrase",
+          "note": "polite way to order; softer than 'quero'",
+          "example": {
+            "target": "Queria uma sopa e um sumo.",
+            "gloss": "I'd like a soup and a juice."
+          }
+        },
+        {
+          "id": "bom apetite!",
+          "hr": "Bom apetite!",
+          "en": "Enjoy your meal!",
+          "pos": "phrase",
+          "example": {
+            "target": "Aqui está a sopa. Bom apetite!",
+            "gloss": "Here is the soup. Enjoy your meal!"
+          }
+        },
+        {
+          "id": "bom",
+          "hr": "bom",
+          "en": "good",
+          "pos": "adj.",
+          "note": "fem. boa",
+          "example": {
+            "target": "Este café é muito bom.",
+            "gloss": "This coffee is very good."
+          }
+        },
+        {
+          "id": "saboroso",
+          "hr": "saboroso",
+          "en": "tasty",
+          "pos": "adj.",
+          "example": {
+            "target": "O frango está saboroso.",
+            "gloss": "The chicken is tasty."
+          }
+        },
+        {
+          "id": "doce",
+          "hr": "doce",
+          "en": "sweet",
+          "pos": "adj.",
+          "example": {
+            "target": "O pastel de nata é doce.",
+            "gloss": "The custard tart is sweet."
+          }
+        },
+        {
+          "id": "salgado",
+          "hr": "salgado",
+          "en": "salty; savoury",
+          "pos": "adj.",
+          "example": {
+            "target": "O bacalhau está um pouco salgado.",
+            "gloss": "The cod is a bit salty."
+          }
+        },
+        {
+          "id": "fresco",
+          "hr": "fresco",
+          "en": "fresh; cool",
+          "pos": "adj.",
+          "example": {
+            "target": "O peixe do mercado é fresco.",
+            "gloss": "The fish from the market is fresh."
+          }
+        },
+        {
+          "id": "quente",
+          "hr": "quente",
+          "en": "hot",
+          "pos": "adj.",
+          "example": {
+            "target": "Cuidado, a sopa está quente!",
+            "gloss": "Careful, the soup is hot!"
+          }
+        },
+        {
+          "id": "frio",
+          "hr": "frio",
+          "en": "cold",
+          "pos": "adj.",
+          "example": {
+            "target": "O café já está frio.",
+            "gloss": "The coffee is already cold."
+          }
+        },
+        {
+          "id": "comer",
+          "hr": "comer",
+          "en": "to eat",
+          "pos": "v.",
+          "example": {
+            "target": "Estamos a comer na cozinha.",
+            "gloss": "We are eating in the kitchen."
+          }
+        },
+        {
+          "id": "beber",
+          "hr": "beber",
+          "en": "to drink",
+          "pos": "v.",
+          "example": {
+            "target": "Bebo água a todas as refeições.",
+            "gloss": "I drink water with every meal."
+          }
+        },
+        {
+          "id": "tomar",
+          "hr": "tomar",
+          "en": "to have (a drink, a meal)",
+          "pos": "v.",
+          "example": {
+            "target": "Vamos tomar um café?",
+            "gloss": "Shall we go for a coffee?"
+          }
+        },
+        {
+          "id": "pedir",
+          "hr": "pedir",
+          "en": "to order; to ask for",
+          "pos": "v.",
+          "example": {
+            "target": "Vou pedir o prato do dia.",
+            "gloss": "I'm going to order the dish of the day."
+          }
+        },
+        {
+          "id": "pagar",
+          "hr": "pagar",
+          "en": "to pay",
+          "pos": "v.",
+          "example": {
+            "target": "Posso pagar com cartão?",
+            "gloss": "Can I pay by card?"
+          }
+        },
+        {
+          "id": "provar",
+          "hr": "provar",
+          "en": "to taste, to try (food)",
+          "pos": "v.",
+          "example": {
+            "target": "Queres provar o meu gelado?",
+            "gloss": "Do you want to try my ice cream?"
+          }
+        },
+        {
+          "id": "cozinhar",
+          "hr": "cozinhar",
+          "en": "to cook",
+          "pos": "v.",
+          "example": {
+            "target": "A minha mãe está a cozinhar peixe.",
+            "gloss": "My mother is cooking fish."
+          }
+        },
+        {
+          "id": "almoçar",
+          "hr": "almoçar",
+          "en": "to have lunch",
+          "pos": "v.",
+          "example": {
+            "target": "Almoço sempre à uma hora.",
+            "gloss": "I always have lunch at one o'clock."
+          }
+        },
+        {
+          "id": "ter fome",
+          "hr": "ter fome",
+          "en": "to be hungry",
+          "pos": "phrase",
+          "note": "literally 'to have hunger'",
+          "example": {
+            "target": "Tenho fome. Vamos almoçar?",
+            "gloss": "I'm hungry. Shall we have lunch?"
+          }
+        },
+        {
+          "id": "ter sede",
+          "hr": "ter sede",
+          "en": "to be thirsty",
+          "pos": "phrase",
+          "note": "literally 'to have thirst'",
+          "example": {
+            "target": "Tenho sede. Queria uma água.",
+            "gloss": "I'm thirsty. I'd like a water."
+          }
+        },
+        {
+          "id": "pequeno-almoço",
+          "hr": "pequeno-almoço",
+          "en": "breakfast",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tomo o pequeno-almoço às oito.",
+            "gloss": "I have breakfast at eight."
+          }
+        },
+        {
+          "id": "sumo",
+          "hr": "sumo",
+          "en": "juice",
+          "pos": "n. m.",
+          "example": {
+            "target": "O sumo de laranja é natural.",
+            "gloss": "The orange juice is freshly squeezed."
+          }
+        },
+        {
+          "id": "chávena",
+          "hr": "chávena",
+          "en": "cup",
+          "pos": "n. f.",
+          "example": {
+            "target": "Bebo uma chávena de chá.",
+            "gloss": "I drink a cup of tea."
+          }
+        },
+        {
+          "id": "gelado",
+          "hr": "gelado",
+          "en": "ice cream",
+          "pos": "n. m.",
+          "example": {
+            "target": "No verão como gelado na praia.",
+            "gloss": "In summer I eat ice cream at the beach."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}

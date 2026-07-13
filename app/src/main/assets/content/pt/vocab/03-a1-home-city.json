@@ -1,0 +1,868 @@
+{
+  "packs": [
+    {
+      "id": "03-a1-home-city",
+      "title": "Home & around town",
+      "level": "A1",
+      "words": [
+        {
+          "id": "casa",
+          "hr": "casa",
+          "en": "house, home",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha casa é pequena.",
+            "gloss": "My house is small."
+          }
+        },
+        {
+          "id": "apartamento",
+          "hr": "apartamento",
+          "en": "flat, apartment",
+          "pos": "n. m.",
+          "example": {
+            "target": "Moro num apartamento no centro.",
+            "gloss": "I live in a flat in the centre."
+          }
+        },
+        {
+          "id": "sala",
+          "hr": "sala",
+          "en": "living room",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vemos televisão na sala.",
+            "gloss": "We watch TV in the living room."
+          }
+        },
+        {
+          "id": "cozinha",
+          "hr": "cozinha",
+          "en": "kitchen",
+          "pos": "n. f.",
+          "example": {
+            "target": "A cozinha é ao lado da sala.",
+            "gloss": "The kitchen is next to the living room."
+          }
+        },
+        {
+          "id": "janela",
+          "hr": "janela",
+          "en": "window",
+          "pos": "n. f.",
+          "example": {
+            "target": "Abre a janela, se faz favor.",
+            "gloss": "Open the window, please."
+          }
+        },
+        {
+          "id": "porta",
+          "hr": "porta",
+          "en": "door",
+          "pos": "n. f.",
+          "example": {
+            "target": "A porta está fechada.",
+            "gloss": "The door is closed."
+          }
+        },
+        {
+          "id": "cadeira",
+          "hr": "cadeira",
+          "en": "chair",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sente-se nesta cadeira.",
+            "gloss": "Sit on this chair."
+          }
+        },
+        {
+          "id": "cama",
+          "hr": "cama",
+          "en": "bed",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vou para a cama às onze.",
+            "gloss": "I go to bed at eleven."
+          }
+        },
+        {
+          "id": "sofá",
+          "hr": "sofá",
+          "en": "sofa",
+          "pos": "n. m.",
+          "example": {
+            "target": "O gato dorme no sofá.",
+            "gloss": "The cat sleeps on the sofa."
+          }
+        },
+        {
+          "id": "chave",
+          "hr": "chave",
+          "en": "key",
+          "pos": "n. f.",
+          "example": {
+            "target": "Não encontro as chaves de casa.",
+            "gloss": "I can't find my house keys."
+          }
+        },
+        {
+          "id": "andar",
+          "hr": "andar",
+          "en": "floor, storey",
+          "pos": "n. m.",
+          "example": {
+            "target": "Moro no terceiro andar.",
+            "gloss": "I live on the third floor."
+          }
+        },
+        {
+          "id": "elevador",
+          "hr": "elevador",
+          "en": "lift, elevator",
+          "pos": "n. m.",
+          "example": {
+            "target": "O elevador não funciona hoje.",
+            "gloss": "The lift isn't working today."
+          }
+        },
+        {
+          "id": "escadas",
+          "hr": "escadas",
+          "en": "stairs",
+          "pos": "n. f. pl.",
+          "example": {
+            "target": "Vou pelas escadas, é mais rápido.",
+            "gloss": "I'll take the stairs, it's quicker."
+          }
+        },
+        {
+          "id": "varanda",
+          "hr": "varanda",
+          "en": "balcony",
+          "pos": "n. f.",
+          "example": {
+            "target": "Tomo café na varanda.",
+            "gloss": "I have coffee on the balcony."
+          }
+        },
+        {
+          "id": "fogão",
+          "hr": "fogão",
+          "en": "stove, cooker",
+          "pos": "n. m.",
+          "example": {
+            "target": "A sopa está no fogão.",
+            "gloss": "The soup is on the stove."
+          }
+        },
+        {
+          "id": "duche",
+          "hr": "duche",
+          "en": "shower",
+          "pos": "n. m.",
+          "note": "tomar duche = to take a shower",
+          "example": {
+            "target": "Tomo duche de manhã.",
+            "gloss": "I take a shower in the morning."
+          }
+        },
+        {
+          "id": "espelho",
+          "hr": "espelho",
+          "en": "mirror",
+          "pos": "n. m.",
+          "example": {
+            "target": "Há um espelho na casa de banho.",
+            "gloss": "There is a mirror in the bathroom."
+          }
+        },
+        {
+          "id": "armário",
+          "hr": "armário",
+          "en": "wardrobe, cupboard",
+          "pos": "n. m.",
+          "example": {
+            "target": "A roupa está no armário.",
+            "gloss": "The clothes are in the wardrobe."
+          }
+        },
+        {
+          "id": "prédio",
+          "hr": "prédio",
+          "en": "building",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu prédio tem cinco andares.",
+            "gloss": "My building has five floors."
+          }
+        },
+        {
+          "id": "rua",
+          "hr": "rua",
+          "en": "street",
+          "pos": "n. f.",
+          "example": {
+            "target": "Moro numa rua muito calma.",
+            "gloss": "I live on a very quiet street."
+          }
+        },
+        {
+          "id": "morada",
+          "hr": "morada",
+          "en": "address",
+          "pos": "n. f.",
+          "note": "pt-PT; 'endereço' is more formal/BR",
+          "example": {
+            "target": "Qual é a sua morada?",
+            "gloss": "What is your address?"
+          }
+        },
+        {
+          "id": "centro",
+          "hr": "centro",
+          "en": "centre, downtown",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vou ao centro de autocarro.",
+            "gloss": "I go to the centre by bus."
+          }
+        },
+        {
+          "id": "praça",
+          "hr": "praça",
+          "en": "square",
+          "pos": "n. f.",
+          "example": {
+            "target": "Há um café na praça.",
+            "gloss": "There is a café in the square."
+          }
+        },
+        {
+          "id": "mercado",
+          "hr": "mercado",
+          "en": "market",
+          "pos": "n. m.",
+          "example": {
+            "target": "Compro fruta no mercado.",
+            "gloss": "I buy fruit at the market."
+          }
+        },
+        {
+          "id": "loja",
+          "hr": "loja",
+          "en": "shop",
+          "pos": "n. f.",
+          "example": {
+            "target": "A loja abre às nove.",
+            "gloss": "The shop opens at nine."
+          }
+        },
+        {
+          "id": "supermercado",
+          "hr": "supermercado",
+          "en": "supermarket",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vou ao supermercado à tarde.",
+            "gloss": "I'm going to the supermarket in the afternoon."
+          }
+        },
+        {
+          "id": "mercearia",
+          "hr": "mercearia",
+          "en": "grocery shop",
+          "pos": "n. f.",
+          "note": "small neighbourhood grocery",
+          "example": {
+            "target": "A mercearia da esquina vende pão.",
+            "gloss": "The corner grocery sells bread."
+          }
+        },
+        {
+          "id": "padaria",
+          "hr": "padaria",
+          "en": "bakery",
+          "pos": "n. f.",
+          "example": {
+            "target": "A padaria tem pão quente de manhã.",
+            "gloss": "The bakery has warm bread in the morning."
+          }
+        },
+        {
+          "id": "farmácia",
+          "hr": "farmácia",
+          "en": "pharmacy",
+          "pos": "n. f.",
+          "example": {
+            "target": "A farmácia fica perto daqui.",
+            "gloss": "The pharmacy is near here."
+          }
+        },
+        {
+          "id": "banco",
+          "hr": "banco",
+          "en": "bank",
+          "pos": "n. m.",
+          "example": {
+            "target": "O banco fecha às três.",
+            "gloss": "The bank closes at three."
+          }
+        },
+        {
+          "id": "correios",
+          "hr": "correios",
+          "en": "post office",
+          "pos": "n. m. pl.",
+          "note": "used in the plural: os correios",
+          "example": {
+            "target": "Onde ficam os correios?",
+            "gloss": "Where is the post office?"
+          }
+        },
+        {
+          "id": "escola",
+          "hr": "escola",
+          "en": "school",
+          "pos": "n. f.",
+          "example": {
+            "target": "A escola fica em frente da igreja.",
+            "gloss": "The school is opposite the church."
+          }
+        },
+        {
+          "id": "igreja",
+          "hr": "igreja",
+          "en": "church",
+          "pos": "n. f.",
+          "example": {
+            "target": "A igreja é muito antiga.",
+            "gloss": "The church is very old."
+          }
+        },
+        {
+          "id": "museu",
+          "hr": "museu",
+          "en": "museum",
+          "pos": "n. m.",
+          "example": {
+            "target": "O museu é grátis ao domingo.",
+            "gloss": "The museum is free on Sundays."
+          }
+        },
+        {
+          "id": "jardim",
+          "hr": "jardim",
+          "en": "garden, park",
+          "pos": "n. m.",
+          "example": {
+            "target": "As crianças brincam no jardim.",
+            "gloss": "The children play in the park."
+          }
+        },
+        {
+          "id": "praia",
+          "hr": "praia",
+          "en": "beach",
+          "pos": "n. f.",
+          "example": {
+            "target": "No sábado vamos à praia.",
+            "gloss": "On Saturday we're going to the beach."
+          }
+        },
+        {
+          "id": "câmara municipal",
+          "hr": "câmara municipal",
+          "en": "town hall",
+          "pos": "n. f.",
+          "example": {
+            "target": "A câmara municipal fica na praça.",
+            "gloss": "The town hall is in the square."
+          }
+        },
+        {
+          "id": "hospital",
+          "hr": "hospital",
+          "en": "hospital",
+          "pos": "n. m.",
+          "example": {
+            "target": "O hospital fica longe do centro.",
+            "gloss": "The hospital is far from the centre."
+          }
+        },
+        {
+          "id": "biblioteca",
+          "hr": "biblioteca",
+          "en": "library",
+          "pos": "n. f.",
+          "example": {
+            "target": "Estudo na biblioteca à tarde.",
+            "gloss": "I study at the library in the afternoon."
+          }
+        },
+        {
+          "id": "cinema",
+          "hr": "cinema",
+          "en": "cinema",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vamos ao cinema à noite?",
+            "gloss": "Shall we go to the cinema tonight?"
+          }
+        },
+        {
+          "id": "hotel",
+          "hr": "hotel",
+          "en": "hotel",
+          "pos": "n. m.",
+          "example": {
+            "target": "O hotel fica ao lado da estação.",
+            "gloss": "The hotel is next to the station."
+          }
+        },
+        {
+          "id": "aeroporto",
+          "hr": "aeroporto",
+          "en": "airport",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vou de metro para o aeroporto.",
+            "gloss": "I take the metro to the airport."
+          }
+        },
+        {
+          "id": "quiosque",
+          "hr": "quiosque",
+          "en": "kiosk",
+          "pos": "n. m.",
+          "note": "sells newspapers, drinks; common in Lisbon squares",
+          "example": {
+            "target": "Compro o jornal no quiosque.",
+            "gloss": "I buy the newspaper at the kiosk."
+          }
+        },
+        {
+          "id": "rio",
+          "hr": "rio",
+          "en": "river",
+          "pos": "n. m.",
+          "example": {
+            "target": "O rio Tejo passa por Lisboa.",
+            "gloss": "The Tagus river runs through Lisbon."
+          }
+        },
+        {
+          "id": "ponte",
+          "hr": "ponte",
+          "en": "bridge",
+          "pos": "n. f.",
+          "example": {
+            "target": "A ponte é muito comprida.",
+            "gloss": "The bridge is very long."
+          }
+        },
+        {
+          "id": "esquina",
+          "hr": "esquina",
+          "en": "corner (of a street)",
+          "pos": "n. f.",
+          "example": {
+            "target": "O café fica na esquina.",
+            "gloss": "The café is on the corner."
+          }
+        },
+        {
+          "id": "comboio",
+          "hr": "comboio",
+          "en": "train",
+          "pos": "n. m.",
+          "note": "pt-PT; never 'trem' (BR)",
+          "example": {
+            "target": "O comboio para o Porto sai às nove.",
+            "gloss": "The train to Porto leaves at nine."
+          }
+        },
+        {
+          "id": "metro",
+          "hr": "metro",
+          "en": "underground, metro",
+          "pos": "n. m.",
+          "example": {
+            "target": "O metro é rápido e barato.",
+            "gloss": "The metro is fast and cheap."
+          }
+        },
+        {
+          "id": "elétrico",
+          "hr": "elétrico",
+          "en": "tram",
+          "pos": "n. m.",
+          "note": "the famous yellow tram 28 in Lisbon",
+          "example": {
+            "target": "O elétrico 28 passa por Alfama.",
+            "gloss": "Tram 28 goes through Alfama."
+          }
+        },
+        {
+          "id": "táxi",
+          "hr": "táxi",
+          "en": "taxi",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vamos de táxi para o hotel.",
+            "gloss": "We're taking a taxi to the hotel."
+          }
+        },
+        {
+          "id": "bilhete",
+          "hr": "bilhete",
+          "en": "ticket",
+          "pos": "n. m.",
+          "example": {
+            "target": "Queria um bilhete para Sintra.",
+            "gloss": "I'd like a ticket to Sintra."
+          }
+        },
+        {
+          "id": "passadeira",
+          "hr": "passadeira",
+          "en": "pedestrian crossing",
+          "pos": "n. f.",
+          "note": "pt-PT; 'faixa de pedestres' is Brazilian",
+          "example": {
+            "target": "Atravessa a rua na passadeira.",
+            "gloss": "Cross the street at the crossing."
+          }
+        },
+        {
+          "id": "semáforo",
+          "hr": "semáforo",
+          "en": "traffic light",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vira à direita no semáforo.",
+            "gloss": "Turn right at the traffic light."
+          }
+        },
+        {
+          "id": "carro",
+          "hr": "carro",
+          "en": "car",
+          "pos": "n. m.",
+          "example": {
+            "target": "Não tenho carro, vou de metro.",
+            "gloss": "I don't have a car, I take the metro."
+          }
+        },
+        {
+          "id": "bicicleta",
+          "hr": "bicicleta",
+          "en": "bicycle",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vou de bicicleta para a escola.",
+            "gloss": "I go to school by bike."
+          }
+        },
+        {
+          "id": "avião",
+          "hr": "avião",
+          "en": "aeroplane",
+          "pos": "n. m.",
+          "example": {
+            "target": "O avião para o Porto é às dez.",
+            "gloss": "The plane to Porto is at ten."
+          }
+        },
+        {
+          "id": "viagem",
+          "hr": "viagem",
+          "en": "trip, journey",
+          "pos": "n. f.",
+          "example": {
+            "target": "Boa viagem!",
+            "gloss": "Have a good trip!"
+          }
+        },
+        {
+          "id": "pé",
+          "hr": "pé",
+          "en": "on foot",
+          "pos": "phrase",
+          "example": {
+            "target": "Vou a pé para o mercado.",
+            "gloss": "I walk to the market."
+          }
+        },
+        {
+          "id": "aqui",
+          "hr": "aqui",
+          "en": "here",
+          "pos": "adv.",
+          "example": {
+            "target": "A paragem é aqui.",
+            "gloss": "The bus stop is here."
+          }
+        },
+        {
+          "id": "ali",
+          "hr": "ali",
+          "en": "there (visible, nearby)",
+          "pos": "adv.",
+          "example": {
+            "target": "A farmácia é ali.",
+            "gloss": "The pharmacy is over there."
+          }
+        },
+        {
+          "id": "lá",
+          "hr": "lá",
+          "en": "there (far away)",
+          "pos": "adv.",
+          "example": {
+            "target": "O museu fica lá, ao fundo da rua.",
+            "gloss": "The museum is there, at the end of the street."
+          }
+        },
+        {
+          "id": "perto",
+          "hr": "perto",
+          "en": "near, close",
+          "pos": "adv.",
+          "note": "perto de = near to",
+          "example": {
+            "target": "Moro perto da praia.",
+            "gloss": "I live near the beach."
+          }
+        },
+        {
+          "id": "longe",
+          "hr": "longe",
+          "en": "far",
+          "pos": "adv.",
+          "note": "longe de = far from",
+          "example": {
+            "target": "O aeroporto fica longe daqui?",
+            "gloss": "Is the airport far from here?"
+          }
+        },
+        {
+          "id": "à direita",
+          "hr": "à direita",
+          "en": "on/to the right",
+          "pos": "phrase",
+          "example": {
+            "target": "O banco fica à direita.",
+            "gloss": "The bank is on the right."
+          }
+        },
+        {
+          "id": "à esquerda",
+          "hr": "à esquerda",
+          "en": "on/to the left",
+          "pos": "phrase",
+          "example": {
+            "target": "Vira à esquerda na praça.",
+            "gloss": "Turn left at the square."
+          }
+        },
+        {
+          "id": "em frente",
+          "hr": "em frente",
+          "en": "straight ahead; opposite",
+          "pos": "phrase",
+          "example": {
+            "target": "Siga sempre em frente.",
+            "gloss": "Go straight ahead."
+          }
+        },
+        {
+          "id": "ao lado de",
+          "hr": "ao lado de",
+          "en": "next to",
+          "pos": "phrase",
+          "example": {
+            "target": "O talho fica ao lado da mercearia.",
+            "gloss": "The butcher's is next to the grocery shop."
+          }
+        },
+        {
+          "id": "atrás de",
+          "hr": "atrás de",
+          "en": "behind",
+          "pos": "prep.",
+          "example": {
+            "target": "O jardim fica atrás da igreja.",
+            "gloss": "The park is behind the church."
+          }
+        },
+        {
+          "id": "entre",
+          "hr": "entre",
+          "en": "between",
+          "pos": "prep.",
+          "example": {
+            "target": "A loja fica entre o banco e a farmácia.",
+            "gloss": "The shop is between the bank and the pharmacy."
+          }
+        },
+        {
+          "id": "onde fica...?",
+          "hr": "Onde fica...?",
+          "en": "Where is...?",
+          "pos": "phrase",
+          "note": "'ficar' is used for the location of places",
+          "example": {
+            "target": "Desculpe, onde fica a estação?",
+            "gloss": "Excuse me, where is the station?"
+          }
+        },
+        {
+          "id": "virar",
+          "hr": "virar",
+          "en": "to turn",
+          "pos": "v.",
+          "example": {
+            "target": "Vire à direita na esquina.",
+            "gloss": "Turn right at the corner."
+          }
+        },
+        {
+          "id": "seguir",
+          "hr": "seguir",
+          "en": "to continue, to go on",
+          "pos": "v.",
+          "example": {
+            "target": "Siga em frente até ao semáforo.",
+            "gloss": "Continue straight until the traffic light."
+          }
+        },
+        {
+          "id": "ficar",
+          "hr": "ficar",
+          "en": "to be located; to stay",
+          "pos": "v.",
+          "example": {
+            "target": "A escola fica perto de casa.",
+            "gloss": "The school is near my house."
+          }
+        },
+        {
+          "id": "apanhar",
+          "hr": "apanhar",
+          "en": "to catch, to take (transport)",
+          "pos": "v.",
+          "note": "pt-PT: apanhar o autocarro; 'pegar' sounds Brazilian",
+          "example": {
+            "target": "Apanho o comboio das oito.",
+            "gloss": "I catch the eight o'clock train."
+          }
+        },
+        {
+          "id": "ir",
+          "hr": "ir",
+          "en": "to go",
+          "pos": "v.",
+          "note": "irregular: vou, vais, vai...",
+          "example": {
+            "target": "Vou ao mercado de manhã.",
+            "gloss": "I go to the market in the morning."
+          }
+        },
+        {
+          "id": "chegar",
+          "hr": "chegar",
+          "en": "to arrive",
+          "pos": "v.",
+          "example": {
+            "target": "O autocarro está a chegar.",
+            "gloss": "The bus is arriving."
+          }
+        },
+        {
+          "id": "sair",
+          "hr": "sair",
+          "en": "to leave, to go out",
+          "pos": "v.",
+          "example": {
+            "target": "Saio de casa às oito.",
+            "gloss": "I leave home at eight."
+          }
+        },
+        {
+          "id": "entrar",
+          "hr": "entrar",
+          "en": "to enter, to go in",
+          "pos": "v.",
+          "example": {
+            "target": "Entramos no museu às dez.",
+            "gloss": "We go into the museum at ten."
+          }
+        },
+        {
+          "id": "atravessar",
+          "hr": "atravessar",
+          "en": "to cross",
+          "pos": "v.",
+          "example": {
+            "target": "Atravesso a rua na passadeira.",
+            "gloss": "I cross the street at the crossing."
+          }
+        },
+        {
+          "id": "esperar",
+          "hr": "esperar",
+          "en": "to wait",
+          "pos": "v.",
+          "example": {
+            "target": "Espero por ti na paragem.",
+            "gloss": "I'll wait for you at the bus stop."
+          }
+        },
+        {
+          "id": "casa de banho",
+          "hr": "casa de banho",
+          "en": "bathroom, toilet",
+          "pos": "n. f.",
+          "example": {
+            "target": "Onde fica a casa de banho?",
+            "gloss": "Where is the bathroom?"
+          }
+        },
+        {
+          "id": "frigorífico",
+          "hr": "frigorífico",
+          "en": "fridge",
+          "pos": "n. m.",
+          "example": {
+            "target": "O leite está no frigorífico.",
+            "gloss": "The milk is in the fridge."
+          }
+        },
+        {
+          "id": "autocarro",
+          "hr": "autocarro",
+          "en": "bus",
+          "pos": "n. m.",
+          "example": {
+            "target": "Apanho o autocarro para o trabalho.",
+            "gloss": "I take the bus to work."
+          }
+        },
+        {
+          "id": "paragem",
+          "hr": "paragem",
+          "en": "bus stop",
+          "pos": "n. f.",
+          "example": {
+            "target": "Espero na paragem do autocarro.",
+            "gloss": "I wait at the bus stop."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}

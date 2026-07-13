@@ -1,0 +1,994 @@
+{
+  "packs": [
+    {
+      "id": "00-a1-core",
+      "title": "Greetings, people & essentials",
+      "level": "A1",
+      "words": [
+        {
+          "id": "olá",
+          "hr": "olá",
+          "en": "hello, hi",
+          "pos": "interj.",
+          "example": {
+            "target": "Olá, como estás?",
+            "gloss": "Hi, how are you?"
+          }
+        },
+        {
+          "id": "bom dia",
+          "hr": "bom dia",
+          "en": "good morning",
+          "pos": "phrase",
+          "note": "Used until around midday.",
+          "example": {
+            "target": "Bom dia, senhor Silva!",
+            "gloss": "Good morning, Mr. Silva!"
+          }
+        },
+        {
+          "id": "boa tarde",
+          "hr": "boa tarde",
+          "en": "good afternoon",
+          "pos": "phrase",
+          "example": {
+            "target": "Boa tarde, dona Maria.",
+            "gloss": "Good afternoon, Mrs. Maria."
+          }
+        },
+        {
+          "id": "boa noite",
+          "hr": "boa noite",
+          "en": "good evening, good night",
+          "pos": "phrase",
+          "example": {
+            "target": "Boa noite, até amanhã.",
+            "gloss": "Good night, see you tomorrow."
+          }
+        },
+        {
+          "id": "adeus",
+          "hr": "adeus",
+          "en": "goodbye",
+          "pos": "interj.",
+          "note": "More final than 'até logo'.",
+          "example": {
+            "target": "Adeus, boa viagem!",
+            "gloss": "Goodbye, have a good trip!"
+          }
+        },
+        {
+          "id": "até logo",
+          "hr": "até logo",
+          "en": "see you later",
+          "pos": "phrase",
+          "example": {
+            "target": "Vou às compras. Até logo!",
+            "gloss": "I'm going shopping. See you later!"
+          }
+        },
+        {
+          "id": "até amanhã",
+          "hr": "até amanhã",
+          "en": "see you tomorrow",
+          "pos": "phrase",
+          "example": {
+            "target": "Boa noite, até amanhã!",
+            "gloss": "Good night, see you tomorrow!"
+          }
+        },
+        {
+          "id": "até já",
+          "hr": "até já",
+          "en": "see you in a bit",
+          "pos": "phrase",
+          "note": "Very common in Portugal for a very short goodbye.",
+          "example": {
+            "target": "Volto num minuto. Até já!",
+            "gloss": "I'll be back in a minute. See you in a bit!"
+          }
+        },
+        {
+          "id": "tudo bem",
+          "hr": "tudo bem",
+          "en": "everything okay, all good",
+          "pos": "phrase",
+          "example": {
+            "target": "Olá, tudo bem contigo?",
+            "gloss": "Hi, is everything okay with you?"
+          }
+        },
+        {
+          "id": "como está?",
+          "hr": "como está?",
+          "en": "how are you? (formal)",
+          "pos": "phrase",
+          "example": {
+            "target": "Bom dia, como está?",
+            "gloss": "Good morning, how are you?"
+          }
+        },
+        {
+          "id": "como estás?",
+          "hr": "como estás?",
+          "en": "how are you? (informal)",
+          "pos": "phrase",
+          "example": {
+            "target": "Olá, Rui, como estás?",
+            "gloss": "Hi, Rui, how are you?"
+          }
+        },
+        {
+          "id": "viva",
+          "hr": "viva",
+          "en": "hi, hey (cheerful greeting)",
+          "pos": "interj.",
+          "note": "Casual greeting typical of Portugal.",
+          "example": {
+            "target": "Viva! Está tudo bem?",
+            "gloss": "Hey! Is everything all right?"
+          }
+        },
+        {
+          "id": "obrigado",
+          "hr": "obrigado",
+          "en": "thank you",
+          "pos": "interj.",
+          "note": "Said by male speakers; women say 'obrigada'.",
+          "example": {
+            "target": "Obrigado pela ajuda.",
+            "gloss": "Thank you for the help."
+          }
+        },
+        {
+          "id": "obrigada",
+          "hr": "obrigada",
+          "en": "thank you",
+          "pos": "interj.",
+          "note": "Said by female speakers.",
+          "example": {
+            "target": "Muito obrigada, senhor.",
+            "gloss": "Thank you very much, sir."
+          }
+        },
+        {
+          "id": "por favor",
+          "hr": "por favor",
+          "en": "please",
+          "pos": "phrase",
+          "example": {
+            "target": "Um café, por favor.",
+            "gloss": "A coffee, please."
+          }
+        },
+        {
+          "id": "se faz favor",
+          "hr": "se faz favor",
+          "en": "please",
+          "pos": "phrase",
+          "note": "Very common in Portugal; often shortened to 'faz favor'.",
+          "example": {
+            "target": "A conta, se faz favor.",
+            "gloss": "The bill, please."
+          }
+        },
+        {
+          "id": "desculpe",
+          "hr": "desculpe",
+          "en": "excuse me, sorry (formal)",
+          "pos": "interj.",
+          "example": {
+            "target": "Desculpe, onde é a estação?",
+            "gloss": "Excuse me, where is the station?"
+          }
+        },
+        {
+          "id": "desculpa",
+          "hr": "desculpa",
+          "en": "sorry (informal)",
+          "pos": "interj.",
+          "example": {
+            "target": "Desculpa, estou atrasado.",
+            "gloss": "Sorry, I'm late."
+          }
+        },
+        {
+          "id": "com licença",
+          "hr": "com licença",
+          "en": "excuse me (passing by, entering)",
+          "pos": "phrase",
+          "example": {
+            "target": "Com licença, posso passar?",
+            "gloss": "Excuse me, may I get past?"
+          }
+        },
+        {
+          "id": "de nada",
+          "hr": "de nada",
+          "en": "you're welcome",
+          "pos": "phrase",
+          "example": {
+            "target": "— Obrigado! — De nada.",
+            "gloss": "— Thank you! — You're welcome."
+          }
+        },
+        {
+          "id": "muito prazer",
+          "hr": "muito prazer",
+          "en": "nice to meet you",
+          "pos": "phrase",
+          "example": {
+            "target": "Muito prazer, chamo-me Ana.",
+            "gloss": "Nice to meet you, my name is Ana."
+          }
+        },
+        {
+          "id": "igualmente",
+          "hr": "igualmente",
+          "en": "likewise, same to you",
+          "pos": "adv.",
+          "example": {
+            "target": "— Bom fim de semana! — Igualmente.",
+            "gloss": "— Have a good weekend! — Same to you."
+          }
+        },
+        {
+          "id": "bem-vindo",
+          "hr": "bem-vindo",
+          "en": "welcome",
+          "pos": "adj.",
+          "note": "Agrees in gender: 'bem-vinda' for a woman.",
+          "example": {
+            "target": "Bem-vindo a Portugal!",
+            "gloss": "Welcome to Portugal!"
+          }
+        },
+        {
+          "id": "parabéns",
+          "hr": "parabéns",
+          "en": "congratulations, happy birthday",
+          "pos": "interj.",
+          "example": {
+            "target": "Parabéns! Feliz aniversário!",
+            "gloss": "Congratulations! Happy birthday!"
+          }
+        },
+        {
+          "id": "sim",
+          "hr": "sim",
+          "en": "yes",
+          "pos": "adv.",
+          "example": {
+            "target": "Sim, quero um galão.",
+            "gloss": "Yes, I want a galão (milky coffee)."
+          }
+        },
+        {
+          "id": "não",
+          "hr": "não",
+          "en": "no, not",
+          "pos": "adv.",
+          "example": {
+            "target": "Não, obrigado.",
+            "gloss": "No, thank you."
+          }
+        },
+        {
+          "id": "talvez",
+          "hr": "talvez",
+          "en": "maybe, perhaps",
+          "pos": "adv.",
+          "example": {
+            "target": "— Vens à festa? — Talvez.",
+            "gloss": "— Are you coming to the party? — Maybe."
+          }
+        },
+        {
+          "id": "claro",
+          "hr": "claro",
+          "en": "of course",
+          "pos": "adv.",
+          "note": "'Claro que sim' = of course.",
+          "example": {
+            "target": "— Podes ajudar? — Claro que sim!",
+            "gloss": "— Can you help? — Of course!"
+          }
+        },
+        {
+          "id": "está bem",
+          "hr": "está bem",
+          "en": "okay, all right",
+          "pos": "phrase",
+          "example": {
+            "target": "Está bem, até logo!",
+            "gloss": "Okay, see you later!"
+          }
+        },
+        {
+          "id": "também",
+          "hr": "também",
+          "en": "also, too",
+          "pos": "adv.",
+          "example": {
+            "target": "Eu também falo inglês.",
+            "gloss": "I also speak English."
+          }
+        },
+        {
+          "id": "pois",
+          "hr": "pois",
+          "en": "right, indeed",
+          "pos": "interj.",
+          "note": "Very common Portuguese filler; 'pois é' = that's right.",
+          "example": {
+            "target": "Pois é, tens razão.",
+            "gloss": "That's right, you're right."
+          }
+        },
+        {
+          "id": "com certeza",
+          "hr": "com certeza",
+          "en": "certainly, of course",
+          "pos": "phrase",
+          "example": {
+            "target": "Com certeza, senhor.",
+            "gloss": "Certainly, sir."
+          }
+        },
+        {
+          "id": "homem",
+          "hr": "homem",
+          "en": "man",
+          "pos": "n. m.",
+          "example": {
+            "target": "Aquele homem é o meu vizinho.",
+            "gloss": "That man is my neighbour."
+          }
+        },
+        {
+          "id": "mulher",
+          "hr": "mulher",
+          "en": "woman; wife",
+          "pos": "n. f.",
+          "example": {
+            "target": "A mulher compra pão na padaria.",
+            "gloss": "The woman buys bread at the bakery."
+          }
+        },
+        {
+          "id": "senhor",
+          "hr": "senhor",
+          "en": "sir, gentleman, Mr.",
+          "pos": "n. m.",
+          "note": "'O senhor' is also a polite 'you'.",
+          "example": {
+            "target": "O senhor fala inglês?",
+            "gloss": "Do you speak English, sir?"
+          }
+        },
+        {
+          "id": "senhora",
+          "hr": "senhora",
+          "en": "madam, lady, Mrs.",
+          "pos": "n. f.",
+          "example": {
+            "target": "A senhora mora aqui?",
+            "gloss": "Do you live here, madam?"
+          }
+        },
+        {
+          "id": "menino",
+          "hr": "menino",
+          "en": "boy, little boy",
+          "pos": "n. m.",
+          "example": {
+            "target": "O menino come um gelado.",
+            "gloss": "The boy is eating an ice cream."
+          }
+        },
+        {
+          "id": "menina",
+          "hr": "menina",
+          "en": "girl, little girl",
+          "pos": "n. f.",
+          "example": {
+            "target": "A menina chama-se Sofia.",
+            "gloss": "The girl's name is Sofia."
+          }
+        },
+        {
+          "id": "rapaz",
+          "hr": "rapaz",
+          "en": "boy, young man",
+          "pos": "n. m.",
+          "example": {
+            "target": "O rapaz anda de bicicleta.",
+            "gloss": "The boy rides a bicycle."
+          }
+        },
+        {
+          "id": "rapariga",
+          "hr": "rapariga",
+          "en": "girl, young woman",
+          "pos": "n. f.",
+          "note": "Normal word for 'girl' in Portugal.",
+          "example": {
+            "target": "A rapariga estuda em Coimbra.",
+            "gloss": "The girl studies in Coimbra."
+          }
+        },
+        {
+          "id": "criança",
+          "hr": "criança",
+          "en": "child",
+          "pos": "n. f.",
+          "example": {
+            "target": "A criança bebe leite.",
+            "gloss": "The child drinks milk."
+          }
+        },
+        {
+          "id": "pessoa",
+          "hr": "pessoa",
+          "en": "person",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ela é uma pessoa simpática.",
+            "gloss": "She is a nice person."
+          }
+        },
+        {
+          "id": "gente",
+          "hr": "gente",
+          "en": "people",
+          "pos": "n. f.",
+          "note": "'Toda a gente' = everyone.",
+          "example": {
+            "target": "Há muita gente no café.",
+            "gloss": "There are a lot of people in the café."
+          }
+        },
+        {
+          "id": "amigo",
+          "hr": "amigo",
+          "en": "friend (male)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu amigo mora em Lisboa.",
+            "gloss": "My friend lives in Lisbon."
+          }
+        },
+        {
+          "id": "amiga",
+          "hr": "amiga",
+          "en": "friend (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha amiga chama-se Rita.",
+            "gloss": "My friend's name is Rita."
+          }
+        },
+        {
+          "id": "colega",
+          "hr": "colega",
+          "en": "colleague, classmate",
+          "pos": "n. m.",
+          "note": "Same form for both genders: o/a colega.",
+          "example": {
+            "target": "O meu colega trabalha comigo.",
+            "gloss": "My colleague works with me."
+          }
+        },
+        {
+          "id": "vizinho",
+          "hr": "vizinho",
+          "en": "neighbour",
+          "pos": "n. m.",
+          "note": "Feminine: vizinha.",
+          "example": {
+            "target": "O vizinho é muito simpático.",
+            "gloss": "The neighbour is very nice."
+          }
+        },
+        {
+          "id": "nome",
+          "hr": "nome",
+          "en": "name",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu nome é Pedro.",
+            "gloss": "My name is Pedro."
+          }
+        },
+        {
+          "id": "apelido",
+          "hr": "apelido",
+          "en": "surname",
+          "pos": "n. m.",
+          "note": "In Portugal 'apelido' = surname (in Brazil it means nickname).",
+          "example": {
+            "target": "O apelido dela é Santos.",
+            "gloss": "Her surname is Santos."
+          }
+        },
+        {
+          "id": "família",
+          "hr": "família",
+          "en": "family",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha família é do Porto.",
+            "gloss": "My family is from Porto."
+          }
+        },
+        {
+          "id": "ser",
+          "hr": "ser",
+          "en": "to be (permanent)",
+          "pos": "v.",
+          "example": {
+            "target": "Eu sou português.",
+            "gloss": "I am Portuguese."
+          }
+        },
+        {
+          "id": "estar",
+          "hr": "estar",
+          "en": "to be (state, location)",
+          "pos": "v.",
+          "note": "'Estar a + infinitive' = to be doing something.",
+          "example": {
+            "target": "Estou a estudar português.",
+            "gloss": "I am studying Portuguese."
+          }
+        },
+        {
+          "id": "chamar-se",
+          "hr": "chamar-se",
+          "en": "to be called",
+          "pos": "v.",
+          "note": "Reflexive with ênclise: chamo-me, chamas-te.",
+          "example": {
+            "target": "Chamo-me Ana.",
+            "gloss": "My name is Ana."
+          }
+        },
+        {
+          "id": "morar",
+          "hr": "morar",
+          "en": "to live (reside)",
+          "pos": "v.",
+          "example": {
+            "target": "Moro em Lisboa.",
+            "gloss": "I live in Lisbon."
+          }
+        },
+        {
+          "id": "viver",
+          "hr": "viver",
+          "en": "to live",
+          "pos": "v.",
+          "example": {
+            "target": "Eles vivem no Algarve.",
+            "gloss": "They live in the Algarve."
+          }
+        },
+        {
+          "id": "falar",
+          "hr": "falar",
+          "en": "to speak",
+          "pos": "v.",
+          "example": {
+            "target": "Falo um pouco de português.",
+            "gloss": "I speak a little Portuguese."
+          }
+        },
+        {
+          "id": "ter",
+          "hr": "ter",
+          "en": "to have",
+          "pos": "v.",
+          "example": {
+            "target": "Tenho um telemóvel novo.",
+            "gloss": "I have a new mobile phone."
+          }
+        },
+        {
+          "id": "trabalhar",
+          "hr": "trabalhar",
+          "en": "to work",
+          "pos": "v.",
+          "example": {
+            "target": "Trabalho numa escola.",
+            "gloss": "I work at a school."
+          }
+        },
+        {
+          "id": "estudar",
+          "hr": "estudar",
+          "en": "to study",
+          "pos": "v.",
+          "example": {
+            "target": "Estudamos português à noite.",
+            "gloss": "We study Portuguese in the evening."
+          }
+        },
+        {
+          "id": "compreender",
+          "hr": "compreender",
+          "en": "to understand",
+          "pos": "v.",
+          "example": {
+            "target": "Compreendes a pergunta?",
+            "gloss": "Do you understand the question?"
+          }
+        },
+        {
+          "id": "perceber",
+          "hr": "perceber",
+          "en": "to understand",
+          "pos": "v.",
+          "note": "Very common in Portugal for 'to understand'.",
+          "example": {
+            "target": "Percebo bem o professor.",
+            "gloss": "I understand the teacher well."
+          }
+        },
+        {
+          "id": "repetir",
+          "hr": "repetir",
+          "en": "to repeat",
+          "pos": "v.",
+          "example": {
+            "target": "Pode repetir a frase?",
+            "gloss": "Can you repeat the sentence?"
+          }
+        },
+        {
+          "id": "dizer",
+          "hr": "dizer",
+          "en": "to say, to tell",
+          "pos": "v.",
+          "example": {
+            "target": "Ela diz sempre a verdade.",
+            "gloss": "She always tells the truth."
+          }
+        },
+        {
+          "id": "saber",
+          "hr": "saber",
+          "en": "to know (facts)",
+          "pos": "v.",
+          "example": {
+            "target": "Não sei a resposta.",
+            "gloss": "I don't know the answer."
+          }
+        },
+        {
+          "id": "conhecer",
+          "hr": "conhecer",
+          "en": "to know (people, places)",
+          "pos": "v.",
+          "example": {
+            "target": "Conheço bem o Porto.",
+            "gloss": "I know Porto well."
+          }
+        },
+        {
+          "id": "apresentar",
+          "hr": "apresentar",
+          "en": "to introduce",
+          "pos": "v.",
+          "example": {
+            "target": "Apresento-te a minha amiga.",
+            "gloss": "I introduce my friend to you."
+          }
+        },
+        {
+          "id": "gostar de",
+          "hr": "gostar de",
+          "en": "to like",
+          "pos": "v.",
+          "note": "Always with 'de': gosto de café.",
+          "example": {
+            "target": "Gosto de café.",
+            "gloss": "I like coffee."
+          }
+        },
+        {
+          "id": "chamo-me...",
+          "hr": "chamo-me...",
+          "en": "my name is...",
+          "pos": "phrase",
+          "example": {
+            "target": "Chamo-me João, e tu?",
+            "gloss": "My name is João, and you?"
+          }
+        },
+        {
+          "id": "como se chama?",
+          "hr": "como se chama?",
+          "en": "what is your name? (formal)",
+          "pos": "phrase",
+          "note": "Informal: como te chamas?",
+          "example": {
+            "target": "Como se chama, por favor?",
+            "gloss": "What is your name, please?"
+          }
+        },
+        {
+          "id": "de onde é?",
+          "hr": "de onde é?",
+          "en": "where are you from? (formal)",
+          "pos": "phrase",
+          "example": {
+            "target": "De onde é, senhora Costa?",
+            "gloss": "Where are you from, Mrs. Costa?"
+          }
+        },
+        {
+          "id": "sou de...",
+          "hr": "sou de...",
+          "en": "I am from...",
+          "pos": "phrase",
+          "example": {
+            "target": "Sou de Braga.",
+            "gloss": "I am from Braga."
+          }
+        },
+        {
+          "id": "meu nome é...",
+          "hr": "meu nome é...",
+          "en": "my name is...",
+          "pos": "phrase",
+          "example": {
+            "target": "O meu nome é Marta Silva.",
+            "gloss": "My name is Marta Silva."
+          }
+        },
+        {
+          "id": "português",
+          "hr": "português",
+          "en": "Portuguese (male, masc.)",
+          "pos": "adj.",
+          "note": "Also the language: o português.",
+          "example": {
+            "target": "O vinho português é bom.",
+            "gloss": "Portuguese wine is good."
+          }
+        },
+        {
+          "id": "portuguesa",
+          "hr": "portuguesa",
+          "en": "Portuguese (female, fem.)",
+          "pos": "adj.",
+          "example": {
+            "target": "Ela é portuguesa.",
+            "gloss": "She is Portuguese."
+          }
+        },
+        {
+          "id": "inglês",
+          "hr": "inglês",
+          "en": "English (language); English (masc.)",
+          "pos": "n. m.",
+          "note": "Also an adjective; feminine: inglesa.",
+          "example": {
+            "target": "Falas inglês?",
+            "gloss": "Do you speak English?"
+          }
+        },
+        {
+          "id": "inglesa",
+          "hr": "inglesa",
+          "en": "English (female, fem.)",
+          "pos": "adj.",
+          "example": {
+            "target": "A professora é inglesa.",
+            "gloss": "The teacher is English."
+          }
+        },
+        {
+          "id": "espanhol",
+          "hr": "espanhol",
+          "en": "Spanish",
+          "pos": "adj.",
+          "note": "Feminine: espanhola. Also the language: o espanhol.",
+          "example": {
+            "target": "O meu vizinho é espanhol.",
+            "gloss": "My neighbour is Spanish."
+          }
+        },
+        {
+          "id": "francês",
+          "hr": "francês",
+          "en": "French",
+          "pos": "adj.",
+          "note": "Feminine: francesa. Also the language: o francês.",
+          "example": {
+            "target": "O turista francês visita Belém.",
+            "gloss": "The French tourist visits Belém."
+          }
+        },
+        {
+          "id": "língua",
+          "hr": "língua",
+          "en": "language; tongue",
+          "pos": "n. f.",
+          "example": {
+            "target": "O português é uma língua bonita.",
+            "gloss": "Portuguese is a beautiful language."
+          }
+        },
+        {
+          "id": "país",
+          "hr": "país",
+          "en": "country",
+          "pos": "n. m.",
+          "example": {
+            "target": "Portugal é um país pequeno.",
+            "gloss": "Portugal is a small country."
+          }
+        },
+        {
+          "id": "portugal",
+          "hr": "Portugal",
+          "en": "Portugal",
+          "pos": "n. m.",
+          "note": "Used without an article: em Portugal.",
+          "example": {
+            "target": "Moro em Portugal.",
+            "gloss": "I live in Portugal."
+          }
+        },
+        {
+          "id": "cidade",
+          "hr": "cidade",
+          "en": "city, town",
+          "pos": "n. f.",
+          "example": {
+            "target": "Lisboa é uma cidade grande.",
+            "gloss": "Lisbon is a big city."
+          }
+        },
+        {
+          "id": "estrangeiro",
+          "hr": "estrangeiro",
+          "en": "foreigner",
+          "pos": "n. m.",
+          "note": "Also an adjective; 'no estrangeiro' = abroad.",
+          "example": {
+            "target": "Ele é estrangeiro, é inglês.",
+            "gloss": "He is a foreigner, he is English."
+          }
+        },
+        {
+          "id": "nacionalidade",
+          "hr": "nacionalidade",
+          "en": "nationality",
+          "pos": "n. f.",
+          "example": {
+            "target": "Qual é a sua nacionalidade?",
+            "gloss": "What is your nationality?"
+          }
+        },
+        {
+          "id": "palavra",
+          "hr": "palavra",
+          "en": "word",
+          "pos": "n. f.",
+          "example": {
+            "target": "Não conheço esta palavra.",
+            "gloss": "I don't know this word."
+          }
+        },
+        {
+          "id": "não compreendo",
+          "hr": "não compreendo",
+          "en": "I don't understand",
+          "pos": "phrase",
+          "example": {
+            "target": "Desculpe, não compreendo.",
+            "gloss": "Sorry, I don't understand."
+          }
+        },
+        {
+          "id": "não percebo",
+          "hr": "não percebo",
+          "en": "I don't understand",
+          "pos": "phrase",
+          "note": "The most natural option in Portugal.",
+          "example": {
+            "target": "Não percebo, pode repetir?",
+            "gloss": "I don't understand, can you repeat?"
+          }
+        },
+        {
+          "id": "pode repetir?",
+          "hr": "pode repetir?",
+          "en": "can you repeat?",
+          "pos": "phrase",
+          "example": {
+            "target": "Pode repetir, se faz favor?",
+            "gloss": "Can you repeat, please?"
+          }
+        },
+        {
+          "id": "fala inglês?",
+          "hr": "fala inglês?",
+          "en": "do you speak English?",
+          "pos": "phrase",
+          "example": {
+            "target": "Desculpe, fala inglês?",
+            "gloss": "Excuse me, do you speak English?"
+          }
+        },
+        {
+          "id": "como se diz...?",
+          "hr": "como se diz...?",
+          "en": "how do you say...?",
+          "pos": "phrase",
+          "example": {
+            "target": "Como se diz 'train' em português?",
+            "gloss": "How do you say 'train' in Portuguese?"
+          }
+        },
+        {
+          "id": "que significa...?",
+          "hr": "que significa...?",
+          "en": "what does... mean?",
+          "pos": "phrase",
+          "example": {
+            "target": "O que significa esta palavra?",
+            "gloss": "What does this word mean?"
+          }
+        },
+        {
+          "id": "mais devagar",
+          "hr": "mais devagar",
+          "en": "more slowly",
+          "pos": "phrase",
+          "example": {
+            "target": "Fale mais devagar, por favor.",
+            "gloss": "Speak more slowly, please."
+          }
+        },
+        {
+          "id": "não sei",
+          "hr": "não sei",
+          "en": "I don't know",
+          "pos": "phrase",
+          "example": {
+            "target": "Não sei, desculpe.",
+            "gloss": "I don't know, sorry."
+          }
+        },
+        {
+          "id": "pode ajudar-me?",
+          "hr": "pode ajudar-me?",
+          "en": "can you help me?",
+          "pos": "phrase",
+          "note": "Note the ênclise: ajudar-me.",
+          "example": {
+            "target": "Pode ajudar-me, por favor?",
+            "gloss": "Can you help me, please?"
+          }
+        },
+        {
+          "id": "não falo bem português",
+          "hr": "não falo bem português",
+          "en": "I don't speak Portuguese well",
+          "pos": "phrase",
+          "example": {
+            "target": "Ainda não falo bem português.",
+            "gloss": "I still don't speak Portuguese well."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}
