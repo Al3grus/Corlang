@@ -1,8 +1,14 @@
 package com.corlang.app.ui.screens
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.VectorConverter
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -27,6 +33,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.key
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -374,6 +381,31 @@ internal fun WordSession(
     val flyX = with(density) { config.screenWidthDp.dp.toPx() } * 1.3f
     val flyY = with(density) { config.screenHeightDp.dp.toPx() } * 1.3f
 
+    // The incoming card settles in with a quick fade/scale so it doesn't just pop at center.
+    val enter = remember(cardKey) { Animatable(if (reducedMotion) 1f else 0f) }
+    LaunchedEffect(cardKey) {
+        if (enter.value < 1f) enter.animateTo(1f, Motion.snappy())
+    }
+
+    // ONE fling-then-grade path shared by swipes and the grade buttons, so both feel identical:
+    // the old card flies off in the grade's direction (buttons fade meanwhile), and only then
+    // does the next card arrive. Also the single guard against double-grading a card.
+    fun flingAndGrade(g: SrsGrade) {
+        if (graded) return
+        graded = true
+        val o = offset.value
+        val target = when (g) {
+            SrsGrade.GOOD -> Offset(o.x, -flyY)
+            SrsGrade.EASY -> Offset(flyX, o.y)
+            SrsGrade.AGAIN -> Offset(-flyX, o.y)
+        }
+        scope.launch {
+            if (reducedMotion) offset.snapTo(target)
+            else offset.animateTo(target, Motion.snappy())
+            onGrade(g)
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -405,6 +437,10 @@ internal fun WordSession(
         val front = if (production) card.word.en else card.word.hr
         val back = if (production) card.word.hr else card.word.en
 
+        // key(cardKey): the reveal-crossfade must be scoped to ONE card. Without it, the card
+        // swap animated old-revealed → new-hidden and, mid-transition, rendered the NEW card's
+        // data in the OLD revealed layout — the "what just flashed?" glitch.
+        key(cardKey) {
         AnimatedContent(targetState = revealed, label = "card-flip") { isRevealed ->
             Surface(
                 shape = RoundedCornerShape(16.dp),
@@ -418,6 +454,9 @@ internal fun WordSession(
                         translationX = offset.value.x
                         translationY = offset.value.y.coerceAtMost(0f)
                         rotationZ = offset.value.x / 60f
+                        alpha = enter.value
+                        scaleX = 0.96f + 0.04f * enter.value
+                        scaleY = 0.96f + 0.04f * enter.value
                     }
                     .pointerInput(cardKey, isRevealed) {
                         if (isRevealed) {
@@ -443,20 +482,8 @@ internal fun WordSession(
                                         o.x < -threshold -> SrsGrade.AGAIN
                                         else -> null
                                     }
-                                    if (grade != null && !graded) {
-                                        // Fling the card off-screen in its direction, THEN commit
-                                        // the grade (which swaps in the next card at center).
-                                        graded = true
-                                        val target = when (grade) {
-                                            SrsGrade.GOOD -> Offset(o.x, -flyY)
-                                            SrsGrade.EASY -> Offset(flyX, o.y)
-                                            else -> Offset(-flyX, o.y)
-                                        }
-                                        scope.launch {
-                                            if (reducedMotion) offset.snapTo(target)
-                                            else offset.animateTo(target, Motion.settle())
-                                            onGrade(grade)
-                                        }
+                                    if (grade != null) {
+                                        flingAndGrade(grade)
                                     } else {
                                         // Under threshold: settle back to center.
                                         scope.launch {
@@ -548,48 +575,55 @@ internal fun WordSession(
                 }
             }
         }
+        }   // key(cardKey)
 
-        if (revealed) {
-            // One grade per card: once a swipe-fling is in flight (or a button was tapped),
-            // further taps must not grade — a second grade would hit the NEXT, unseen card.
-            val gradeOnce: (SrsGrade) -> Unit = { g ->
-                if (!graded) { graded = true; onGrade(g) }
+        // Fade + collapse instead of popping in/out: the buttons appear when the card is
+        // revealed and melt away DURING the fling, so the next card starts from a calm layout
+        // instead of the row flashing on/off between cards.
+        AnimatedVisibility(
+            visible = revealed && !graded,
+            enter = if (reducedMotion) fadeIn(snap()) else
+                fadeIn(Motion.snappy()) + expandVertically(Motion.snappy()),
+            exit = if (reducedMotion) fadeOut(snap()) else
+                fadeOut(Motion.snappy()) + shrinkVertically(Motion.snappy())
+        ) {
+            Column {
+                // Slim horizontal padding: three labels must fit side-by-side on 320dp-wide
+                // phones and at large accessibility font scales without wrapping.
+                val slimPad = PaddingValues(horizontal = 6.dp, vertical = 10.dp)
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Button(
+                        onClick = { flingAndGrade(SrsGrade.AGAIN) },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = feedback.wrongContainer,
+                            contentColor = feedback.onWrongContainer
+                        ),
+                        contentPadding = slimPad,
+                        modifier = Modifier.weight(1f)
+                    ) { Text("← Again", maxLines = 1, softWrap = false) }
+                    Button(
+                        onClick = { flingAndGrade(SrsGrade.GOOD) },
+                        contentPadding = slimPad,
+                        modifier = Modifier.weight(1f)
+                    ) { Text("↑ Good ↑", maxLines = 1, softWrap = false) }
+                    Button(
+                        onClick = { flingAndGrade(SrsGrade.EASY) },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = feedback.correctContainer,
+                            contentColor = feedback.onCorrectContainer
+                        ),
+                        contentPadding = slimPad,
+                        modifier = Modifier.weight(1f)
+                    ) { Text("Easy →", maxLines = 1, softWrap = false) }
+                }
+                Text(
+                    "Tap a button, or swipe the card in its arrow's direction.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                )
             }
-            // Slim horizontal padding: three labels must fit side-by-side on 320dp-wide phones
-            // and at large accessibility font scales without wrapping to uneven heights.
-            val slimPad = PaddingValues(horizontal = 6.dp, vertical = 10.dp)
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                Button(
-                    onClick = { gradeOnce(SrsGrade.AGAIN) },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = feedback.wrongContainer,
-                        contentColor = feedback.onWrongContainer
-                    ),
-                    contentPadding = slimPad,
-                    modifier = Modifier.weight(1f)
-                ) { Text("← Again", maxLines = 1, softWrap = false) }
-                Button(
-                    onClick = { gradeOnce(SrsGrade.GOOD) },
-                    contentPadding = slimPad,
-                    modifier = Modifier.weight(1f)
-                ) { Text("↑ Good ↑", maxLines = 1, softWrap = false) }
-                Button(
-                    onClick = { gradeOnce(SrsGrade.EASY) },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = feedback.correctContainer,
-                        contentColor = feedback.onCorrectContainer
-                    ),
-                    contentPadding = slimPad,
-                    modifier = Modifier.weight(1f)
-                ) { Text("Easy →", maxLines = 1, softWrap = false) }
-            }
-            Text(
-                "Tap a button, or swipe the card in its arrow's direction.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-            )
         }
 
         OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {

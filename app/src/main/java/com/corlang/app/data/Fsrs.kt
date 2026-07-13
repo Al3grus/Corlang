@@ -32,6 +32,12 @@ object Fsrs {
     /** Stability at which a word reads as "mastered". */
     const val MASTERED_STABILITY = 21.0
 
+    /**
+     * Longest a word can be scheduled out. Uncapped FSRS growth reaches decades after a dozen
+     * good reviews — pointless for exam prep; every word gets touched at least yearly.
+     */
+    const val MAX_INTERVAL_DAYS = 365L
+
     private const val RETENTION = 0.9
     private const val DECAY = -0.5
     private val FACTOR = 0.9.pow(1.0 / DECAY) - 1.0   // = 19/81 ≈ 0.2346
@@ -93,7 +99,8 @@ object Fsrs {
 
     /** Days until the next review for a memory with the given [stability], at retention 0.9. */
     fun intervalDays(stability: Double): Long =
-        ((stability / FACTOR) * (RETENTION.pow(1.0 / DECAY) - 1.0)).roundToLong().coerceIn(1, 36500)
+        ((stability / FACTOR) * (RETENTION.pow(1.0 / DECAY) - 1.0)).roundToLong()
+            .coerceIn(1, MAX_INTERVAL_DAYS)
 
     /** Applies a grade and returns the updated FSRS review state. */
     fun review(review: WordReview, grade: SrsGrade, todayEpochDay: Long): WordReview {
