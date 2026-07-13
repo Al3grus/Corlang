@@ -45,23 +45,36 @@ class ReminderWorker(
         if (progress?.lastStudiedEpochDay == today) return Result.success()
 
         val streak = progress?.streak ?: 0
+        // Copy follows the ACTIVE language — a French learner must not be nagged about Croatian.
+        val languageName = when (lang) {
+            "fr" -> "French"
+            else -> "Croatian"
+        }
+        val title = when (lang) {
+            "fr" -> "C'est l'heure du français ! 🇫🇷"
+            else -> "Vrijeme je za hrvatski! 🇭🇷"
+        }
+        val littleByLittle = when (lang) {
+            "fr" -> "Petit à petit, a little today is all it takes."
+            else -> "Malo po malo, a little today is all it takes."
+        }
         // Rotate copy so the reminder doesn't become invisible through repetition.
         val variants = if (streak > 0) listOf(
             "Your $streak-day streak is on the line, today's lesson banks it.",
             "One guided lesson = streak safe. $streak days and counting.",
-            "$streak days of Croatian so far. Don't let today be the gap.",
+            "$streak days of $languageName so far. Don't let today be the gap.",
             "Finishing today's lesson beats starting over. Streak: $streak days."
         ) else listOf(
-            "A few minutes of Croatian today beats an hour next week. Start today's lesson.",
+            "A few minutes of $languageName today beats an hour next week. Start today's lesson.",
             "Day 1 of a streak starts with one guided lesson.",
-            "Malo po malo, a little today is all it takes."
+            littleByLittle
         )
         val text = variants[(LocalDate.now().dayOfYear % variants.size)]
-        postNotification(ctx, text)
+        postNotification(ctx, title, text)
         return Result.success()
     }
 
-    private fun postNotification(ctx: Context, text: String) {
+    private fun postNotification(ctx: Context, title: String, text: String) {
         if (Build.VERSION.SDK_INT >= 33 &&
             ContextCompat.checkSelfPermission(ctx, Manifest.permission.POST_NOTIFICATIONS) !=
             PackageManager.PERMISSION_GRANTED
@@ -82,7 +95,7 @@ class ReminderWorker(
         )
         val notification = NotificationCompat.Builder(ctx, CHANNEL_ID)
             .setSmallIcon(com.corlang.app.R.drawable.ic_notification)
-            .setContentTitle("Vrijeme je za hrvatski! 🇭🇷")
+            .setContentTitle(title)
             .setContentText(text)
             .setStyle(NotificationCompat.BigTextStyle().bigText(text))
             .setContentIntent(intent)

@@ -88,6 +88,16 @@ private fun CorlangApp(container: AppContainer) {
         container.speech.setLanguage(lang)
     }
 
+    // Warm every language's heavyweight content (plan + vocab) off the main thread, so the
+    // first language switch doesn't parse megabytes of JSON inside composition (visible hitch).
+    LaunchedEffect(Unit) {
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Default) {
+            container.content.availableLanguages.forEach {
+                runCatching { container.content.vocab(it); container.content.plan(it) }
+            }
+        }
+    }
+
     // Keep the process-wide haptic strength in sync with the setting (runs pre-onboarding too).
     LaunchedEffect(Unit) {
         container.languagePrefs.hapticsStrength.collect { v ->

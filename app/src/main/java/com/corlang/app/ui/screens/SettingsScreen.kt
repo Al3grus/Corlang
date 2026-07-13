@@ -244,13 +244,16 @@ fun SettingsScreen(
         }
 
         // ----- Speech -----
-        SectionTitle("🔊 Croatian voice (TTS)")
+        // Follows the ACTIVE language: a French learner manages the French voice here.
+        val ttsLang by container.languagePrefs.selectedLanguage.collectAsState(initial = "hr")
+        val voiceName = remember(ttsLang) { container.content.meta(ttsLang).name }
+        SectionTitle("🔊 $voiceName voice (TTS)")
         val ttsState by container.tts.state.collectAsState()
         InfoCard {
             Text(
                 when (ttsState) {
-                    TtsState.READY -> "Croatian voice ready ✓"
-                    TtsState.LANGUAGE_MISSING -> "Croatian voice not installed"
+                    TtsState.READY -> "$voiceName voice ready ✓"
+                    TtsState.LANGUAGE_MISSING -> "$voiceName voice not installed"
                     TtsState.UNAVAILABLE -> "Text-to-speech unavailable on this device"
                     else -> "Checking…"
                 },
@@ -261,10 +264,15 @@ fun SettingsScreen(
                 Button(
                     onClick = { container.tts.promptInstallVoice() },
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Install Croatian voice") }
+                ) { Text("Install $voiceName voice") }
             } else {
                 OutlinedButton(
-                    onClick = { container.tts.speak("Dobar dan! Ja sam Corlang.") },
+                    onClick = {
+                        container.tts.speak(
+                            if (ttsLang == "fr") "Bonjour ! Je suis Corlang."
+                            else "Dobar dan! Ja sam Corlang."
+                        )
+                    },
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                 ) { Text("Test voice") }
             }
@@ -281,8 +289,8 @@ fun SettingsScreen(
                         else MaterialTheme.colorScheme.onSurface
             )
             Text(
-                "Premium unlocks the AI tutor: a conversation partner that chats in Croatian at " +
-                    "your level (Talk tab) and examiner feedback on your exam writing. " +
+                "Premium unlocks the AI tutor: a conversation partner that chats in your learning " +
+                    "language at your level (Talk tab) and examiner feedback on your exam writing. " +
                     if (entitled) "Enjoy!"
                     else "It arrives with the Google Play release.",
                 style = MaterialTheme.typography.bodySmall,
@@ -434,8 +442,8 @@ fun SettingsScreen(
             )
             Text(
                 "Learn the core of a language on an evidence-based daily method (retrieval practice + " +
-                    "distributed practice), anchored to the official Croatian curriculum and the real " +
-                    "B1 exam format. Current target: A1 → B1.",
+                    "distributed practice), anchored to official curricula and the real exam formats " +
+                    "(Croatian NN B1, French DELF B1/B2).",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 4.dp)

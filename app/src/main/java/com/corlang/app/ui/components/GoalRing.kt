@@ -16,6 +16,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -71,9 +72,9 @@ fun GoalRing(
         Text(
             label,
             style = MaterialTheme.typography.labelMedium,
-            // Sized from the ring, not the system font scale alone: "100%" at accessibility
-            // font sizes must stay inside the ring's hole instead of painting over the arcs.
-            fontSize = (size.value * 0.20f).sp,
+            // Sized from the ring and COMPENSATED for the system font scale: "100%" must stay
+            // inside the ring's hole at accessibility font sizes, not paint over the arcs.
+            fontSize = (size.value * 0.20f / LocalDensity.current.fontScale).sp,
             maxLines = 1,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface

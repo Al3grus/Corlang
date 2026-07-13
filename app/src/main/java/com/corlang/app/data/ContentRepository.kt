@@ -32,8 +32,13 @@ class ContentRepository(private val context: Context) {
         isLenient = true
     }
 
-    /** Cache keyed by asset path, so each JSON file is read and decoded at most once. */
-    private val cache = mutableMapOf<String, Any>()
+    /**
+     * Cache keyed by asset path, so each JSON file is read and decoded at most once.
+     * Concurrent: read from the main thread by composition AND written from background warm-up
+     * (a plain HashMap here would be a data race). getOrPut may rarely parse twice under
+     * contention — harmless, parsing is idempotent.
+     */
+    private val cache = java.util.concurrent.ConcurrentHashMap<String, Any>()
 
     /**
      * Language codes that ship with the app, in display order.

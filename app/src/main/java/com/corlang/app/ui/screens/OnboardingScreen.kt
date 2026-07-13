@@ -279,7 +279,9 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- 3 · Where from / where living ----
             3 -> StepFrame("Where are you from, and where do you live?",
-                "These become your intro phrases, with the correct Croatian case endings.") {
+                if (learnLang == "hr")
+                    "These become your intro phrases, with the correct Croatian case endings."
+                else "These become your first intro phrases.") {
                 CountryPicker("I am from", from) { from = it }
                 Spacer(Modifier.height(10.dp))
                 CountryPicker("I live in", livesIn) { livesIn = it }

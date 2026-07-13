@@ -158,9 +158,10 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
 fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
     val source = drillWords(container, lang)
     val items = remember(source) { DrillGen.buildRecallItems(source, 8) }
+    val name = remember(lang) { container.content.meta(lang).name }
     RecallRunner(
-        container, items,
-        "Producing the Croatian yourself, with the right diacritics, is what speaking needs.",
+        container, items, name,
+        "Producing the $name yourself, with the right diacritics, is what speaking needs.",
         onFinished
     )
 }
@@ -171,16 +172,17 @@ fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
  * "recall your intro / greetings / nationalities" tests the content just studied, not random words.
  */
 @Composable
-fun WrapupRecall(container: AppContainer, day: StudyDay, onFinished: () -> Unit) {
+fun WrapupRecall(container: AppContainer, lang: String, day: StudyDay, onFinished: () -> Unit) {
     val items = remember(day.day) {
-        // No hint: this is from-memory recall, and the LEARN note often contains the Croatian
-        // itself, which would hand you the answer right under the prompt.
+        // No hint: this is from-memory recall, and the LEARN note often contains the target
+        // language itself, which would hand you the answer right under the prompt.
         wrapupRecallPhrases(day)
             .map { DrillGen.Recall(en = it.en, answerHr = it.hr, posHint = null) }
             .take(8)
     }
     RecallRunner(
         container, items,
+        remember(lang) { container.content.meta(lang).name },
         "Recalling today's phrases from memory is what makes them stick.",
         onFinished
     )
@@ -208,6 +210,7 @@ fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
 private fun RecallRunner(
     container: AppContainer,
     items: List<DrillGen.Recall>,
+    languageName: String,
     resultLine: String,
     onFinished: () -> Unit
 ) {
@@ -248,7 +251,7 @@ private fun RecallRunner(
         OutlinedTextField(
             value = input,
             onValueChange = { if (!checked) input = it },
-            label = { Text("Croatian (diacritics count!)") },
+            label = { Text("$languageName (diacritics count!)") },
             enabled = !checked,
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
         )

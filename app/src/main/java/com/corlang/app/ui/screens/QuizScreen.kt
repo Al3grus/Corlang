@@ -33,8 +33,11 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.listSaver
+import androidx.compose.runtime.saveable.mapSaver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -168,8 +171,24 @@ private fun QuizRunner(
     // Per-question response state.
     var selectedOption by rememberSaveable(quiz.id) { mutableStateOf<String?>(null) }
     var fillText by rememberSaveable(quiz.id) { mutableStateOf("") }
-    val reorderAssembled = remember(quiz.id) { mutableStateListOf<String>() }
-    val matchMapping = remember(quiz.id) { mutableStateMapOf<String, String>() }
+    // Saveable like the rest of the question state: after process death mid-question the
+    // assembled word order / match mapping must restore alongside index/checked, or a checked
+    // REORDER shows its verdict above a blank answer.
+    val reorderAssembled = rememberSaveable(
+        quiz.id,
+        saver = listSaver(save = { it.toList() }, restore = { it.toMutableStateList() })
+    ) { mutableStateListOf<String>() }
+    val matchMapping = rememberSaveable(
+        quiz.id,
+        saver = mapSaver(
+            save = { it.toMap() },
+            restore = { saved ->
+                mutableStateMapOf<String, String>().apply {
+                    saved.forEach { (k, v) -> put(k, v as String) }
+                }
+            }
+        )
+    ) { mutableStateMapOf<String, String>() }
 
     fun resetResponse() {
         selectedOption = null

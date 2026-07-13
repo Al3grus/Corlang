@@ -112,7 +112,9 @@ fun TodayScreen(
     }
     // Keyed on lang TOO: both languages can sit on the same day number, and the cached step
     // list must not survive a language switch.
-    val steps = remember(lang, day.day) { buildSessionSteps(day, resourceUrls) }
+    val steps = remember(lang, day.day) {
+        buildSessionSteps(day, resourceUrls, container.content.meta(lang).name)
+    }
     val checks by container.progress.dayTaskChecks(lang, day.day)
         .collectAsState(initial = emptyList())
     val doneIds = checks.map { it.itemId }.toSet()
@@ -141,7 +143,9 @@ fun TodayScreen(
     val completedToday by container.progress.completionsSince(lang, startOfToday)
         .collectAsState(initial = 0)
     val targetDayObj = plan.days.firstOrNull { it.day == targetDay } ?: day
-    val targetSteps = remember(lang, targetDay) { buildSessionSteps(targetDayObj, resourceUrls) }
+    val targetSteps = remember(lang, targetDay) {
+        buildSessionSteps(targetDayObj, resourceUrls, container.content.meta(lang).name)
+    }
     val targetChecks by container.progress.dayTaskChecks(lang, targetDay)
         .collectAsState(initial = emptyList())
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
