@@ -82,6 +82,17 @@ object ExamRules {
         val per25 = sections.map { (score, total) -> if (total <= 0) 0.0 else score * 25.0 / total }
         return per25.sum() >= 50.0 && per25.all { it >= 5.0 }
     }
+
+    /**
+     * CAPLE whole-exam rule (Univ. Lisbon, verified 2026-07): final classification is a global
+     * percentage across the equally-weighted components; pass = Suficiente ≥ 55%. No published
+     * per-component floor. Used by the Portuguese DEPLE (B1) / DIPLE (B2) mocks.
+     */
+    fun caplePassed(sections: List<Pair<Int, Int>>): Boolean {
+        if (sections.isEmpty()) return false
+        val pct = sections.map { (score, total) -> if (total <= 0) 0.0 else score * 100.0 / total }
+        return pct.average() >= 55.0
+    }
 }
 
 /**
@@ -187,22 +198,23 @@ private fun ExamOverview(
         .collectAsState(initial = emptyList())
     val latestBySection = remember(latest) { latest.associateBy { it.sectionId } }
     // DELF mocks (French) apply the FEI rule: each section /25, total >= 50/100 with a 5/25 floor.
+    // CAPLE mocks (Portuguese DEPLE/DIPLE) apply the ≥55% Suficiente global-average rule.
     // Scored sections use their score/total; self-assessed (writing/speaking) map pass->20/25,
     // fail/unattempted->0/25. Other exams (Croatian NN) keep the all-sections-passed rule.
     val isDelf = exam.id.contains("delf")
-    val verdict = if (isDelf) {
-        ExamRules.delfPassed(
-            exam.sections.map { s ->
-                val a = latestBySection[s.id]
-                when {
-                    a == null -> 0 to 25
-                    a.total > 0 -> a.score to a.total
-                    else -> (if (a.passed) 20 else 0) to 25
-                }
-            }
-        )
-    } else {
-        ExamRules.examPassed(
+    val isCaple = exam.id.contains("deple") || exam.id.contains("diple")
+    val sectionScores = exam.sections.map { s ->
+        val a = latestBySection[s.id]
+        when {
+            a == null -> 0 to 25
+            a.total > 0 -> a.score to a.total
+            else -> (if (a.passed) 20 else 0) to 25
+        }
+    }
+    val verdict = when {
+        isDelf -> ExamRules.delfPassed(sectionScores)
+        isCaple -> ExamRules.caplePassed(sectionScores)
+        else -> ExamRules.examPassed(
             exam.sections.map { it.id },
             latestBySection.mapValues { it.value.passed }
         )

@@ -269,8 +269,11 @@ fun SettingsScreen(
                 OutlinedButton(
                     onClick = {
                         container.tts.speak(
-                            if (ttsLang == "fr") "Bonjour ! Je suis Corlang."
-                            else "Dobar dan! Ja sam Corlang."
+                            when (ttsLang) {
+                                "fr" -> "Bonjour ! Je suis Corlang."
+                                "pt" -> "Olá! Eu sou o Corlang."
+                                else -> "Dobar dan! Ja sam Corlang."
+                            }
                         )
                     },
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)

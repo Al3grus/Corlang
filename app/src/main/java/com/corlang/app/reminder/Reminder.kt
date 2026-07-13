@@ -48,14 +48,17 @@ class ReminderWorker(
         // Copy follows the ACTIVE language — a French learner must not be nagged about Croatian.
         val languageName = when (lang) {
             "fr" -> "French"
+            "pt" -> "Portuguese"
             else -> "Croatian"
         }
         val title = when (lang) {
             "fr" -> "C'est l'heure du français ! 🇫🇷"
+            "pt" -> "Está na hora do português! 🇵🇹"
             else -> "Vrijeme je za hrvatski! 🇭🇷"
         }
         val littleByLittle = when (lang) {
             "fr" -> "Petit à petit, a little today is all it takes."
+            "pt" -> "Devagar se vai ao longe, a little today is all it takes."
             else -> "Malo po malo, a little today is all it takes."
         }
         // Rotate copy so the reminder doesn't become invisible through repetition.

@@ -42,7 +42,10 @@ class ContentValidationTest {
         "croaticum-b1-sample", "cefr-grid", "ffzg-ecourse",
         // French (DELF B2 target)
         "cecrl", "delf-b1-sample", "delf-b2-sample",
-        "referentiel-fr", "francais-fondamental", "freq-fr"
+        "referentiel-fr", "francais-fondamental", "freq-fr",
+        // Portuguese, European (DIPLE B2 target)
+        "qecr", "caple", "deple-sample", "diple-sample",
+        "referencial-camoes", "portugues-fundamental", "freq-pt"
     )
 
     private fun read(lang: String, file: String): String =
@@ -321,6 +324,121 @@ class ContentValidationTest {
         if (exists("fr", "grammar.json")) {
             assertTrue("fr grammar.json must cite sources", read("fr", "grammar.json").contains("\"sources\""))
         }
+    }
+
+    // ---------- Portuguese (pt), guarded so each check activates as content lands ----------
+    //
+    // European Portuguese (pt-PT) built to the hr/fr standard (docs/portuguese-plan.md). The
+    // Brazilianism test is the pt-specific guarantee: Corlang teaches EUROPEAN Portuguese, so
+    // unambiguous Brazilian lexis is a build failure anywhere in the pt content.
+
+    private fun ptDir(name: String) = File(contentRoot, "pt/$name")
+
+    @Test
+    fun `portuguese split vocab has unique NFC ids, frozen ids hold, provenance known`() {
+        if (!ptDir("vocab").isDirectory) return
+        val packs = loadVocabPacks("pt")
+        val ids = packs.flatMap { it.words }.map { it.id }
+        assertEquals("duplicate pt word ids", ids.size, ids.toSet().size)
+        ids.forEach { id ->
+            assertEquals("pt word id not NFC-normalized: $id",
+                Normalizer.normalize(id, Normalizer.Form.NFC), id)
+        }
+        packs.forEach { pack ->
+            assertTrue("pt pack ${pack.id} missing sources", pack.sources.isNotEmpty())
+            pack.sources.forEach {
+                assertTrue("pt pack ${pack.id}: unknown source key '$it'", it in knownSourceKeys)
+            }
+        }
+        val frozenStream = javaClass.getResourceAsStream("/frozen-word-ids-pt.txt") ?: return
+        val frozen = frozenStream.bufferedReader(Charsets.UTF_8).readLines().filter { it.isNotBlank() }
+        val missing = frozen.filterNot { it in ids.toSet() }
+        assertTrue("frozen pt word ids missing (SRS progress would orphan): $missing", missing.isEmpty())
+    }
+
+    @Test
+    fun `portuguese plan is contiguous with complete embedded activities`() {
+        if (!ptDir("plan").isDirectory) return
+        val plan = loadPlan("pt")
+        assertEquals("pt plan days not contiguous 1..N",
+            (1..plan.days.size).toList(), plan.days.map { it.day })
+        plan.days.forEach { d ->
+            assertTrue("pt day ${d.day}: blank level/phase/title",
+                d.level.isNotBlank() && d.phase.isNotBlank() && d.title.isNotBlank())
+            d.activities.forEachIndexed { i, a ->
+                when (a.type) {
+                    com.corlang.app.data.model.ActivityKind.LEARN ->
+                        assertTrue("pt day ${d.day} act $i: LEARN needs >=3 items with content",
+                            a.items.size >= 3 && a.items.all { it.hr.isNotBlank() && it.en.isNotBlank() })
+                    com.corlang.app.data.model.ActivityKind.EXERCISE -> {
+                        assertTrue("pt day ${d.day} act $i: EXERCISE needs >=4 questions",
+                            a.questions.size >= 4)
+                        a.questions.forEach { q ->
+                            when (q.type) {
+                                QuestionType.MCQ -> assertTrue(
+                                    "pt day ${d.day}: MCQ answer not in options: '${q.answer}'",
+                                    q.answer in q.options && q.options.size >= 2)
+                                QuestionType.FILL -> assertTrue(
+                                    "pt day ${d.day}: FILL blank answer", q.answer.isNotBlank())
+                                QuestionType.REORDER -> assertEquals(
+                                    "pt day ${d.day}: REORDER not a permutation",
+                                    q.options.sorted(), q.ordered.sorted())
+                                else -> {}
+                            }
+                        }
+                    }
+                    com.corlang.app.data.model.ActivityKind.DIALOGUE ->
+                        assertTrue("pt day ${d.day} act $i: DIALOGUE needs >=4 lines",
+                            a.lines.size >= 4 && a.lines.all { it.hr.isNotBlank() })
+                }
+                assertTrue("pt day ${d.day} act $i: missing sources", a.sources.isNotEmpty())
+            }
+        }
+    }
+
+    @Test
+    fun `portuguese placement and exams are consistent when present`() {
+        if (exists("pt", "placement.json") && ptDir("plan").isDirectory) {
+            val test = strictJson.decodeFromString<com.corlang.app.data.model.PlacementTest>(
+                read("pt", "placement.json")
+            )
+            val planSize = loadPlan("pt").days.size
+            assertTrue("pt placement has no questions", test.questions.isNotEmpty())
+            test.questions.forEach { q ->
+                assertTrue("pt placement: answer not in options: '${q.answer}'", q.answer in q.options)
+                assertTrue("pt placement: startDay ${q.startDay} outside 1..$planSize",
+                    q.startDay in 1..planSize)
+            }
+        }
+        if (exists("pt", "exams.json")) {
+            assertTrue("pt exams.json must cite sources", read("pt", "exams.json").contains("\"sources\""))
+        }
+        if (exists("pt", "grammar.json")) {
+            assertTrue("pt grammar.json must cite sources", read("pt", "grammar.json").contains("\"sources\""))
+        }
+    }
+
+    @Test
+    fun `portuguese content contains no Brazilianisms`() {
+        val ptRoot = File(contentRoot, "pt")
+        if (!ptRoot.isDirectory) return
+        // Unambiguous Brazilian lexis only (words that are simply not European Portuguese);
+        // ambiguous/shared items are left to human review.
+        val blocked = listOf(
+            "ônibus", "celular", "banheiro", "sorvete", "geladeira", "açougue",
+            "esporte", "aeromoça", "café da manhã", "caminhão", "usuário", "gerenciar",
+            "bonde", "encanador", "faxina", "grampeador", "história em quadrinhos"
+        )
+        val hits = mutableListOf<String>()
+        ptRoot.walkTopDown().filter { it.isFile && it.extension == "json" }.forEach { f ->
+            val text = f.readText(Charsets.UTF_8).lowercase()
+            blocked.forEach { term ->
+                if (Regex("(?<![\\p{L}])${Regex.escape(term)}(?![\\p{L}])").containsMatchIn(text)) {
+                    hits.add("${f.name}: '$term'")
+                }
+            }
+        }
+        assertTrue("Brazilianisms found in EUROPEAN Portuguese content: $hits", hits.isEmpty())
     }
 
     // ---------- Placement test ----------
