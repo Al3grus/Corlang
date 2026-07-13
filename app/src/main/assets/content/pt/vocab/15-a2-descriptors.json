@@ -1,0 +1,941 @@
+{
+  "packs": [
+    {
+      "id": "15-a2-descriptors",
+      "title": "Adjectives & adverbs",
+      "level": "A2",
+      "words": [
+        {
+          "id": "fácil",
+          "hr": "fácil",
+          "en": "easy",
+          "pos": "adj.",
+          "example": {
+            "target": "Este exercício é muito fácil.",
+            "gloss": "This exercise is very easy."
+          }
+        },
+        {
+          "id": "difícil",
+          "hr": "difícil",
+          "en": "difficult, hard",
+          "pos": "adj.",
+          "example": {
+            "target": "Foi difícil encontrar estacionamento no centro.",
+            "gloss": "It was hard to find parking in the centre."
+          }
+        },
+        {
+          "id": "simples",
+          "hr": "simples",
+          "en": "simple",
+          "pos": "adj.",
+          "example": {
+            "target": "A receita é simples: só tem três ingredientes.",
+            "gloss": "The recipe is simple: it only has three ingredients."
+          }
+        },
+        {
+          "id": "complicado",
+          "hr": "complicado",
+          "en": "complicated",
+          "pos": "adj.",
+          "example": {
+            "target": "O caminho para lá é um bocado complicado.",
+            "gloss": "The way there is a bit complicated."
+          }
+        },
+        {
+          "id": "importante",
+          "hr": "importante",
+          "en": "important",
+          "pos": "adj.",
+          "example": {
+            "target": "É importante beber água todos os dias.",
+            "gloss": "It's important to drink water every day."
+          }
+        },
+        {
+          "id": "necessário",
+          "hr": "necessário",
+          "en": "necessary",
+          "pos": "adj.",
+          "example": {
+            "target": "Não é necessário trazer nada, temos tudo.",
+            "gloss": "It's not necessary to bring anything, we have everything."
+          }
+        },
+        {
+          "id": "possível",
+          "hr": "possível",
+          "en": "possible",
+          "pos": "adj.",
+          "example": {
+            "target": "É possível pagar com cartão?",
+            "gloss": "Is it possible to pay by card?"
+          }
+        },
+        {
+          "id": "impossível",
+          "hr": "impossível",
+          "en": "impossible",
+          "pos": "adj.",
+          "example": {
+            "target": "É impossível estudar com este barulho.",
+            "gloss": "It's impossible to study with this noise."
+          }
+        },
+        {
+          "id": "certo",
+          "hr": "certo",
+          "en": "right, correct",
+          "pos": "adj.",
+          "example": {
+            "target": "A resposta está certa, parabéns!",
+            "gloss": "The answer is correct, congratulations!"
+          }
+        },
+        {
+          "id": "errado",
+          "hr": "errado",
+          "en": "wrong",
+          "pos": "adj.",
+          "example": {
+            "target": "Marquei o número errado.",
+            "gloss": "I dialled the wrong number."
+          }
+        },
+        {
+          "id": "verdadeiro",
+          "hr": "verdadeiro",
+          "en": "true, real",
+          "pos": "adj.",
+          "example": {
+            "target": "A história do filme é verdadeira.",
+            "gloss": "The story in the film is true."
+          }
+        },
+        {
+          "id": "falso",
+          "hr": "falso",
+          "en": "false, fake",
+          "pos": "adj.",
+          "example": {
+            "target": "A notícia era falsa.",
+            "gloss": "The news was false."
+          }
+        },
+        {
+          "id": "igual",
+          "hr": "igual",
+          "en": "equal, the same",
+          "pos": "adj.",
+          "example": {
+            "target": "As duas camisolas são iguais.",
+            "gloss": "The two jumpers are the same."
+          }
+        },
+        {
+          "id": "diferente",
+          "hr": "diferente",
+          "en": "different",
+          "pos": "adj.",
+          "example": {
+            "target": "A vida na cidade é muito diferente da vida na aldeia.",
+            "gloss": "Life in the city is very different from life in the village."
+          }
+        },
+        {
+          "id": "parecido",
+          "hr": "parecido",
+          "en": "similar, alike",
+          "pos": "adj.",
+          "note": "parecido com",
+          "example": {
+            "target": "O filho é muito parecido com o pai.",
+            "gloss": "The son looks a lot like his father."
+          }
+        },
+        {
+          "id": "próprio",
+          "hr": "próprio",
+          "en": "own; proper",
+          "pos": "adj.",
+          "example": {
+            "target": "Cada aluno tem o seu próprio computador.",
+            "gloss": "Each student has their own computer."
+          }
+        },
+        {
+          "id": "principal",
+          "hr": "principal",
+          "en": "main",
+          "pos": "adj.",
+          "example": {
+            "target": "A entrada principal está fechada; use a porta lateral.",
+            "gloss": "The main entrance is closed; use the side door."
+          }
+        },
+        {
+          "id": "seguinte",
+          "hr": "seguinte",
+          "en": "next, following",
+          "pos": "adj.",
+          "example": {
+            "target": "No dia seguinte, fomos à praia.",
+            "gloss": "The next day, we went to the beach."
+          }
+        },
+        {
+          "id": "último",
+          "hr": "último",
+          "en": "last",
+          "pos": "adj.",
+          "example": {
+            "target": "Este é o último dia de férias.",
+            "gloss": "This is the last day of the holidays."
+          }
+        },
+        {
+          "id": "cheio",
+          "hr": "cheio",
+          "en": "full",
+          "pos": "adj.",
+          "note": "cheio de",
+          "example": {
+            "target": "O comboio estava cheio de gente.",
+            "gloss": "The train was full of people."
+          }
+        },
+        {
+          "id": "vazio",
+          "hr": "vazio",
+          "en": "empty",
+          "pos": "adj.",
+          "example": {
+            "target": "O frigorífico está vazio, temos de ir às compras.",
+            "gloss": "The fridge is empty, we have to go shopping."
+          }
+        },
+        {
+          "id": "aberto",
+          "hr": "aberto",
+          "en": "open",
+          "pos": "adj.",
+          "example": {
+            "target": "A farmácia está aberta até às oito.",
+            "gloss": "The pharmacy is open until eight."
+          }
+        },
+        {
+          "id": "fechado",
+          "hr": "fechado",
+          "en": "closed",
+          "pos": "adj.",
+          "example": {
+            "target": "O museu está fechado à segunda-feira.",
+            "gloss": "The museum is closed on Mondays."
+          }
+        },
+        {
+          "id": "limpo",
+          "hr": "limpo",
+          "en": "clean",
+          "pos": "adj.",
+          "example": {
+            "target": "Deixei a cozinha limpa antes de sair.",
+            "gloss": "I left the kitchen clean before going out."
+          }
+        },
+        {
+          "id": "sujo",
+          "hr": "sujo",
+          "en": "dirty",
+          "pos": "adj.",
+          "example": {
+            "target": "Os pratos ainda estão sujos.",
+            "gloss": "The dishes are still dirty."
+          }
+        },
+        {
+          "id": "usado",
+          "hr": "usado",
+          "en": "used, second-hand",
+          "pos": "adj.",
+          "example": {
+            "target": "O carro é usado, mas está em bom estado.",
+            "gloss": "The car is second-hand, but it's in good condition."
+          }
+        },
+        {
+          "id": "moderno",
+          "hr": "moderno",
+          "en": "modern",
+          "pos": "adj.",
+          "example": {
+            "target": "O hotel é moderno e confortável.",
+            "gloss": "The hotel is modern and comfortable."
+          }
+        },
+        {
+          "id": "antigo",
+          "hr": "antigo",
+          "en": "old, ancient; former",
+          "pos": "adj.",
+          "example": {
+            "target": "Visitámos um castelo muito antigo.",
+            "gloss": "We visited a very old castle."
+          }
+        },
+        {
+          "id": "pesado",
+          "hr": "pesado",
+          "en": "heavy",
+          "pos": "adj.",
+          "example": {
+            "target": "Esta mala é demasiado pesada para mim.",
+            "gloss": "This suitcase is too heavy for me."
+          }
+        },
+        {
+          "id": "leve",
+          "hr": "leve",
+          "en": "light (weight)",
+          "pos": "adj.",
+          "example": {
+            "target": "No verão prefiro roupa leve.",
+            "gloss": "In summer I prefer light clothes."
+          }
+        },
+        {
+          "id": "duro",
+          "hr": "duro",
+          "en": "hard (not soft)",
+          "pos": "adj.",
+          "example": {
+            "target": "O pão de ontem já está duro.",
+            "gloss": "Yesterday's bread is already hard."
+          }
+        },
+        {
+          "id": "mole",
+          "hr": "mole",
+          "en": "soft",
+          "pos": "adj.",
+          "example": {
+            "target": "A manteiga fica mole fora do frigorífico.",
+            "gloss": "Butter goes soft outside the fridge."
+          }
+        },
+        {
+          "id": "morno",
+          "hr": "morno",
+          "en": "lukewarm",
+          "pos": "adj.",
+          "example": {
+            "target": "A água do banho está morna.",
+            "gloss": "The bath water is lukewarm."
+          }
+        },
+        {
+          "id": "amargo",
+          "hr": "amargo",
+          "en": "bitter",
+          "pos": "adj.",
+          "example": {
+            "target": "Não gosto de café amargo; ponho sempre açúcar.",
+            "gloss": "I don't like bitter coffee; I always add sugar."
+          }
+        },
+        {
+          "id": "azedo",
+          "hr": "azedo",
+          "en": "sour",
+          "pos": "adj.",
+          "example": {
+            "target": "O leite está azedo, deita-o fora.",
+            "gloss": "The milk is sour, throw it away."
+          }
+        },
+        {
+          "id": "picante",
+          "hr": "picante",
+          "en": "spicy",
+          "pos": "adj.",
+          "example": {
+            "target": "A comida indiana é muito picante.",
+            "gloss": "Indian food is very spicy."
+          }
+        },
+        {
+          "id": "rápido",
+          "hr": "rápido",
+          "en": "fast, quick",
+          "pos": "adj.",
+          "example": {
+            "target": "O metro é mais rápido do que o autocarro.",
+            "gloss": "The underground is faster than the bus."
+          }
+        },
+        {
+          "id": "lento",
+          "hr": "lento",
+          "en": "slow",
+          "pos": "adj.",
+          "example": {
+            "target": "O serviço no restaurante foi muito lento.",
+            "gloss": "The service at the restaurant was very slow."
+          }
+        },
+        {
+          "id": "barulhento",
+          "hr": "barulhento",
+          "en": "noisy",
+          "pos": "adj.",
+          "example": {
+            "target": "Os vizinhos de cima são muito barulhentos.",
+            "gloss": "The upstairs neighbours are very noisy."
+          }
+        },
+        {
+          "id": "silencioso",
+          "hr": "silencioso",
+          "en": "quiet, silent",
+          "pos": "adj.",
+          "example": {
+            "target": "A biblioteca é um lugar silencioso.",
+            "gloss": "The library is a quiet place."
+          }
+        },
+        {
+          "id": "perigoso",
+          "hr": "perigoso",
+          "en": "dangerous",
+          "pos": "adj.",
+          "example": {
+            "target": "É perigoso atravessar fora da passadeira.",
+            "gloss": "It's dangerous to cross outside the zebra crossing."
+          }
+        },
+        {
+          "id": "rico",
+          "hr": "rico",
+          "en": "rich",
+          "pos": "adj.",
+          "example": {
+            "target": "O país é rico em história e cultura.",
+            "gloss": "The country is rich in history and culture."
+          }
+        },
+        {
+          "id": "pobre",
+          "hr": "pobre",
+          "en": "poor",
+          "pos": "adj.",
+          "example": {
+            "target": "Antigamente, esta era uma zona pobre da cidade.",
+            "gloss": "In the past, this was a poor area of the city."
+          }
+        },
+        {
+          "id": "gratuito",
+          "hr": "gratuito",
+          "en": "free (of charge)",
+          "pos": "adj.",
+          "example": {
+            "target": "A entrada no museu é gratuita ao domingo.",
+            "gloss": "Entry to the museum is free on Sundays."
+          }
+        },
+        {
+          "id": "livre",
+          "hr": "livre",
+          "en": "free (available, not occupied)",
+          "pos": "adj.",
+          "example": {
+            "target": "Estás livre no sábado à tarde?",
+            "gloss": "Are you free on Saturday afternoon?"
+          }
+        },
+        {
+          "id": "pronto",
+          "hr": "pronto",
+          "en": "ready",
+          "pos": "adj.",
+          "example": {
+            "target": "O jantar está pronto!",
+            "gloss": "Dinner is ready!"
+          }
+        },
+        {
+          "id": "adiantado",
+          "hr": "adiantado",
+          "en": "early, ahead of time",
+          "pos": "adj.",
+          "example": {
+            "target": "O meu relógio está adiantado cinco minutos.",
+            "gloss": "My watch is five minutes fast."
+          }
+        },
+        {
+          "id": "famoso",
+          "hr": "famoso",
+          "en": "famous",
+          "pos": "adj.",
+          "example": {
+            "target": "Ele é um ator famoso em Portugal.",
+            "gloss": "He is a famous actor in Portugal."
+          }
+        },
+        {
+          "id": "conhecido",
+          "hr": "conhecido",
+          "en": "well-known",
+          "pos": "adj.",
+          "example": {
+            "target": "Esta praia é pouco conhecida pelos turistas.",
+            "gloss": "This beach is little known by tourists."
+          }
+        },
+        {
+          "id": "típico",
+          "hr": "típico",
+          "en": "typical, traditional",
+          "pos": "adj.",
+          "example": {
+            "target": "Provámos um prato típico da região.",
+            "gloss": "We tried a typical dish of the region."
+          }
+        },
+        {
+          "id": "lindo",
+          "hr": "lindo",
+          "en": "beautiful",
+          "pos": "adj.",
+          "example": {
+            "target": "O pôr do sol na praia estava lindo.",
+            "gloss": "The sunset at the beach was beautiful."
+          }
+        },
+        {
+          "id": "horrível",
+          "hr": "horrível",
+          "en": "horrible, awful",
+          "pos": "adj.",
+          "example": {
+            "target": "O tempo hoje está horrível: chuva e vento.",
+            "gloss": "The weather today is awful: rain and wind."
+          }
+        },
+        {
+          "id": "estranho",
+          "hr": "estranho",
+          "en": "strange, weird",
+          "pos": "adj.",
+          "example": {
+            "target": "Ouvi um barulho estranho na cozinha.",
+            "gloss": "I heard a strange noise in the kitchen."
+          }
+        },
+        {
+          "id": "normal",
+          "hr": "normal",
+          "en": "normal",
+          "pos": "adj.",
+          "example": {
+            "target": "É normal ter dúvidas no início.",
+            "gloss": "It's normal to have doubts at the beginning."
+          }
+        },
+        {
+          "id": "especial",
+          "hr": "especial",
+          "en": "special",
+          "pos": "adj.",
+          "example": {
+            "target": "Preparei um jantar especial para o teu aniversário.",
+            "gloss": "I prepared a special dinner for your birthday."
+          }
+        },
+        {
+          "id": "útil",
+          "hr": "útil",
+          "en": "useful",
+          "pos": "adj.",
+          "example": {
+            "target": "Este dicionário é muito útil para estudar.",
+            "gloss": "This dictionary is very useful for studying."
+          }
+        },
+        {
+          "id": "inútil",
+          "hr": "inútil",
+          "en": "useless",
+          "pos": "adj.",
+          "example": {
+            "target": "É inútil discutir com ele; nunca muda de opinião.",
+            "gloss": "It's useless arguing with him; he never changes his mind."
+          }
+        },
+        {
+          "id": "saudável",
+          "hr": "saudável",
+          "en": "healthy",
+          "pos": "adj.",
+          "example": {
+            "target": "Comer fruta todos os dias é saudável.",
+            "gloss": "Eating fruit every day is healthy."
+          }
+        },
+        {
+          "id": "cansativo",
+          "hr": "cansativo",
+          "en": "tiring",
+          "pos": "adj.",
+          "example": {
+            "target": "A viagem de autocarro foi longa e cansativa.",
+            "gloss": "The bus journey was long and tiring."
+          }
+        },
+        {
+          "id": "divertido",
+          "hr": "divertido",
+          "en": "fun, amusing",
+          "pos": "adj.",
+          "example": {
+            "target": "A festa foi muito divertida.",
+            "gloss": "The party was a lot of fun."
+          }
+        },
+        {
+          "id": "aborrecido",
+          "hr": "aborrecido",
+          "en": "boring; annoyed",
+          "pos": "adj.",
+          "note": "in pt-PT usually means boring",
+          "example": {
+            "target": "O filme era tão aborrecido que adormeci.",
+            "gloss": "The film was so boring that I fell asleep."
+          }
+        },
+        {
+          "id": "interessante",
+          "hr": "interessante",
+          "en": "interesting",
+          "pos": "adj.",
+          "example": {
+            "target": "Li um artigo interessante sobre Portugal.",
+            "gloss": "I read an interesting article about Portugal."
+          }
+        },
+        {
+          "id": "preguiçoso",
+          "hr": "preguiçoso",
+          "en": "lazy",
+          "pos": "adj.",
+          "example": {
+            "target": "O meu gato é gordo e preguiçoso.",
+            "gloss": "My cat is fat and lazy."
+          }
+        },
+        {
+          "id": "trabalhador",
+          "hr": "trabalhador",
+          "en": "hard-working",
+          "pos": "adj.",
+          "example": {
+            "target": "Ela é muito trabalhadora e chega sempre cedo.",
+            "gloss": "She is very hard-working and always arrives early."
+          }
+        },
+        {
+          "id": "educado",
+          "hr": "educado",
+          "en": "polite",
+          "pos": "adj.",
+          "example": {
+            "target": "O empregado foi muito educado connosco.",
+            "gloss": "The waiter was very polite to us."
+          }
+        },
+        {
+          "id": "mal-educado",
+          "hr": "mal-educado",
+          "en": "rude",
+          "pos": "adj.",
+          "example": {
+            "target": "Não sejas mal-educado; pede desculpa.",
+            "gloss": "Don't be rude; apologise."
+          }
+        },
+        {
+          "id": "falador",
+          "hr": "falador",
+          "en": "talkative",
+          "pos": "adj.",
+          "example": {
+            "target": "A minha vizinha é muito faladora.",
+            "gloss": "My neighbour is very talkative."
+          }
+        },
+        {
+          "id": "honesto",
+          "hr": "honesto",
+          "en": "honest",
+          "pos": "adj.",
+          "example": {
+            "target": "Foi honesto e devolveu a carteira que encontrou.",
+            "gloss": "He was honest and returned the wallet he found."
+          }
+        },
+        {
+          "id": "orgulhoso",
+          "hr": "orgulhoso",
+          "en": "proud",
+          "pos": "adj.",
+          "note": "orgulhoso de",
+          "example": {
+            "target": "Os pais estão muito orgulhosos da filha.",
+            "gloss": "The parents are very proud of their daughter."
+          }
+        },
+        {
+          "id": "ciumento",
+          "hr": "ciumento",
+          "en": "jealous",
+          "pos": "adj.",
+          "example": {
+            "target": "O namorado dela é muito ciumento.",
+            "gloss": "Her boyfriend is very jealous."
+          }
+        },
+        {
+          "id": "teimoso",
+          "hr": "teimoso",
+          "en": "stubborn",
+          "pos": "adj.",
+          "example": {
+            "target": "O meu avô é teimoso: nunca ouve os conselhos do médico.",
+            "gloss": "My grandfather is stubborn: he never listens to the doctor's advice."
+          }
+        },
+        {
+          "id": "rapidamente",
+          "hr": "rapidamente",
+          "en": "quickly",
+          "pos": "adv.",
+          "example": {
+            "target": "A notícia espalhou-se rapidamente.",
+            "gloss": "The news spread quickly."
+          }
+        },
+        {
+          "id": "devagar",
+          "hr": "devagar",
+          "en": "slowly",
+          "pos": "adv.",
+          "example": {
+            "target": "Fala mais devagar, por favor.",
+            "gloss": "Speak more slowly, please."
+          }
+        },
+        {
+          "id": "lentamente",
+          "hr": "lentamente",
+          "en": "slowly",
+          "pos": "adv.",
+          "example": {
+            "target": "O comboio entrou lentamente na estação.",
+            "gloss": "The train slowly entered the station."
+          }
+        },
+        {
+          "id": "quase",
+          "hr": "quase",
+          "en": "almost",
+          "pos": "adv.",
+          "example": {
+            "target": "São quase dez horas; temos de ir.",
+            "gloss": "It's almost ten o'clock; we have to go."
+          }
+        },
+        {
+          "id": "apenas",
+          "hr": "apenas",
+          "en": "only, just",
+          "pos": "adv.",
+          "example": {
+            "target": "O bilhete custa apenas cinco euros.",
+            "gloss": "The ticket costs only five euros."
+          }
+        },
+        {
+          "id": "sobretudo",
+          "hr": "sobretudo",
+          "en": "above all, especially",
+          "pos": "adv.",
+          "example": {
+            "target": "Gosto de Lisboa, sobretudo no verão.",
+            "gloss": "I like Lisbon, especially in summer."
+          }
+        },
+        {
+          "id": "felizmente",
+          "hr": "felizmente",
+          "en": "fortunately",
+          "pos": "adv.",
+          "example": {
+            "target": "Felizmente, ninguém se magoou no acidente.",
+            "gloss": "Fortunately, nobody got hurt in the accident."
+          }
+        },
+        {
+          "id": "infelizmente",
+          "hr": "infelizmente",
+          "en": "unfortunately",
+          "pos": "adv.",
+          "example": {
+            "target": "Infelizmente, não posso ir à tua festa.",
+            "gloss": "Unfortunately, I can't go to your party."
+          }
+        },
+        {
+          "id": "certamente",
+          "hr": "certamente",
+          "en": "certainly, surely",
+          "pos": "adv.",
+          "example": {
+            "target": "Certamente encontraremos uma solução.",
+            "gloss": "We will certainly find a solution."
+          }
+        },
+        {
+          "id": "provavelmente",
+          "hr": "provavelmente",
+          "en": "probably",
+          "pos": "adv.",
+          "example": {
+            "target": "Provavelmente vai chover amanhã.",
+            "gloss": "It will probably rain tomorrow."
+          }
+        },
+        {
+          "id": "realmente",
+          "hr": "realmente",
+          "en": "really, truly",
+          "pos": "adv.",
+          "example": {
+            "target": "O exame foi realmente difícil.",
+            "gloss": "The exam was really difficult."
+          }
+        },
+        {
+          "id": "geralmente",
+          "hr": "geralmente",
+          "en": "generally, usually",
+          "pos": "adv.",
+          "example": {
+            "target": "Geralmente janto por volta das oito.",
+            "gloss": "I generally have dinner around eight."
+          }
+        },
+        {
+          "id": "normalmente",
+          "hr": "normalmente",
+          "en": "normally, usually",
+          "pos": "adv.",
+          "example": {
+            "target": "Normalmente vou de bicicleta para o trabalho.",
+            "gloss": "I normally go to work by bike."
+          }
+        },
+        {
+          "id": "às vezes",
+          "hr": "às vezes",
+          "en": "sometimes",
+          "pos": "phrase",
+          "example": {
+            "target": "Às vezes almoço num café perto do escritório.",
+            "gloss": "Sometimes I have lunch in a café near the office."
+          }
+        },
+        {
+          "id": "muitas vezes",
+          "hr": "muitas vezes",
+          "en": "often",
+          "pos": "phrase",
+          "example": {
+            "target": "Vamos muitas vezes à praia no verão.",
+            "gloss": "We often go to the beach in summer."
+          }
+        },
+        {
+          "id": "raramente",
+          "hr": "raramente",
+          "en": "rarely",
+          "pos": "adv.",
+          "example": {
+            "target": "Raramente vejo televisão durante a semana.",
+            "gloss": "I rarely watch television during the week."
+          }
+        },
+        {
+          "id": "entretanto",
+          "hr": "entretanto",
+          "en": "meanwhile, in the meantime",
+          "pos": "adv.",
+          "note": "in pt-PT this means 'meanwhile', not 'however'",
+          "example": {
+            "target": "Faz o jantar; entretanto, eu ponho a mesa.",
+            "gloss": "Make dinner; meanwhile, I'll set the table."
+          }
+        },
+        {
+          "id": "de repente",
+          "hr": "de repente",
+          "en": "suddenly",
+          "pos": "phrase",
+          "example": {
+            "target": "De repente, começou a chover.",
+            "gloss": "Suddenly, it started to rain."
+          }
+        },
+        {
+          "id": "se calhar",
+          "hr": "se calhar",
+          "en": "maybe, perhaps",
+          "pos": "phrase",
+          "note": "colloquial pt-PT",
+          "example": {
+            "target": "Se calhar fico em casa este fim de semana.",
+            "gloss": "Maybe I'll stay at home this weekend."
+          }
+        },
+        {
+          "id": "aliás",
+          "hr": "aliás",
+          "en": "in fact, by the way; or rather",
+          "pos": "adv.",
+          "example": {
+            "target": "Gosto muito do Porto; aliás, é a minha cidade preferida.",
+            "gloss": "I really like Porto; in fact, it's my favourite city."
+          }
+        },
+        {
+          "id": "portanto",
+          "hr": "portanto",
+          "en": "therefore, so",
+          "pos": "conj.",
+          "example": {
+            "target": "Está a chover; portanto, levamos o guarda-chuva.",
+            "gloss": "It's raining; therefore, we're taking the umbrella."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}
