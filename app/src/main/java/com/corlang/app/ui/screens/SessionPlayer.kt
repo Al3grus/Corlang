@@ -84,7 +84,8 @@ data class SessionStep(
 /** Derives the guided steps for a plan day from its drills + review block. */
 fun buildSessionSteps(
     day: StudyDay,
-    resourceUrls: Map<String, String?>
+    resourceUrls: Map<String, String?>,
+    languageName: String = "Croatian"
 ): List<SessionStep> {
     val steps = mutableListOf<SessionStep>()
 
@@ -166,7 +167,7 @@ fun buildSessionSteps(
         if (nav == null && url == null && recallRegex.containsMatchIn(text)) {
             steps += SessionStep(
                 id = "$prefix-$index", kind = StepKind.RECALL,
-                title = "Recall drill, type the Croatian",
+                title = "Recall drill, type the $languageName",
                 detail = text,
                 phase = if (isReview) "5 · Wrap-up" else "3 · Practice"
             )
@@ -221,7 +222,7 @@ fun buildSessionSteps(
             wrapupRecallPhrases(day).size >= 4 -> steps += SessionStep(
                 id = "wrapup", kind = StepKind.WRAPUP,
                 title = "Wrap-up: recall today's phrases from memory",
-                detail = "No peeking. Produce the Croatian for each phrase you learned today.",
+                detail = "No peeking. Produce the $languageName for each phrase you learned today.",
                 phase = "5 · Wrap-up"
             )
             // Fallback for long-sentence days: a quick retest of today's exercise (still real content).
@@ -280,7 +281,9 @@ fun SessionPlayer(
     val resourceUrls = remember(lang) {
         container.content.resources(lang).resources.associate { it.name to it.url }
     }
-    val steps = remember(lang, day.day) { buildSessionSteps(day, resourceUrls) }
+    val steps = remember(lang, day.day) {
+        buildSessionSteps(day, resourceUrls, container.content.meta(lang).name)
+    }
 
     val checks by container.progress.dayTaskChecks(lang, day.day)
         .collectAsState(initial = emptyList())
@@ -374,6 +377,7 @@ fun SessionPlayer(
             card = wordQueue.first(),
             cardKey = wordServed,
             tts = container.tts,
+            languageName = remember(lang) { container.content.meta(lang).name },
             review = wordIsReview,
             done = wordDone,
             total = wordTotal,
@@ -533,7 +537,7 @@ fun SessionPlayer(
                     StepKind.LEARN -> activity?.let { LearnActivity(container, it, onDrillDone) }
                     StepKind.EXERCISE -> activity?.let { ExerciseActivity(container, it, onDrillDone) }
                     StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
-                    StepKind.WRAPUP -> WrapupRecall(container, day, onDrillDone)
+                    StepKind.WRAPUP -> WrapupRecall(container, lang, day, onDrillDone)
                     else -> {}
                 }
 

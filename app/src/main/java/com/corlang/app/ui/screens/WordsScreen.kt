@@ -99,6 +99,7 @@ private val snapshotJson = Json { ignoreUnknownKeys = true }
 fun WordsScreen(container: AppContainer, lang: String) {
     val scope = rememberCoroutineScope()
     val allWords = remember(lang) { container.words.allWords(lang) }
+    val languageName = remember(lang) { container.content.meta(lang).name }
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
 
     var refreshKey by remember(lang) { mutableIntStateOf(0) }
@@ -219,6 +220,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             card = queue.first(),
             cardKey = served,
             tts = container.tts,
+            languageName = languageName,
             review = reviewMode,
             done = doneCount,
             total = sessionTotal,
@@ -356,6 +358,7 @@ internal fun WordSession(
     card: SessionCard,
     cardKey: Int,
     tts: TtsManager,
+    languageName: String,
     review: Boolean,
     done: Int,
     total: Int,
@@ -416,7 +419,7 @@ internal fun WordSession(
             Text(
                 when {
                     review -> "Pack review"
-                    production -> "Say it in Croatian"
+                    production -> "Say it in $languageName"
                     else -> "Word review"
                 },
                 style = MaterialTheme.typography.labelLarge,
@@ -566,7 +569,7 @@ internal fun WordSession(
                         }
                     } else {
                         Text(
-                            if (production) "Say the Croatian aloud, then tap to check"
+                            if (production) "Say the $languageName aloud, then tap to check"
                             else "Say it aloud, then tap to reveal",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.6f)

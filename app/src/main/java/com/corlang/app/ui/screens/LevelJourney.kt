@@ -32,8 +32,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import com.corlang.app.data.model.StudyPlan
 import com.corlang.app.ui.components.SectionTitle
@@ -168,6 +170,10 @@ fun LevelJourney(
                     Text(
                         if (done) "✓" else "${d.day}",
                         style = MaterialTheme.typography.labelMedium,
+                        // Compensate the system font scale: a 3-digit day number must stay
+                        // inside its fixed 40dp circle even at accessibility font sizes.
+                        fontSize = (12f / LocalDensity.current.fontScale).sp,
+                        maxLines = 1,
                         fontWeight = FontWeight.Bold,
                         color = fg
                     )

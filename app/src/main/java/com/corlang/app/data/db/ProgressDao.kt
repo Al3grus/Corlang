@@ -23,6 +23,17 @@ interface ProgressDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertCompletion(c: DayCompletion)
 
+    /**
+     * Day completion is ONE atomic unit: the completion row and the updated progress (streak,
+     * currentDay) land together, so process death mid-way can't leave a completed day without
+     * its streak credit (or vice versa).
+     */
+    @Transaction
+    suspend fun completeDayTxn(completion: DayCompletion, progress: LanguageProgress) {
+        insertCompletion(completion)
+        upsertProgress(progress)
+    }
+
     @Query("SELECT day FROM day_completion WHERE langCode = :lang")
     fun completedDays(lang: String): Flow<List<Int>>
 

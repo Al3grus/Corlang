@@ -34,25 +34,9 @@ class ProgressRepository(private val dao: ProgressDao) {
         }
     }
 
-    /**
-     * Credits today as a streak day: bumps the streak if this is the first credit today
-     * (consecutive-calendar-day logic) and stamps lastStudiedEpochDay. The streak counts
-     * COMPLETED LESSON DAYS only, partial practice (words, quizzes, teach-back) is real
-     * work but doesn't bank the day; only completeDay calls this. That keeps the streak,
-     * the goal ring, and the reminder telling the same story: done = today's lesson done.
-     */
-    private suspend fun recordStudyActivity(lang: String) {
-        val today = LocalDate.now().toEpochDay()
-        val existing = dao.progressOnce(lang) ?: LanguageProgress(langCode = lang)
-        val (newStreak, newFreezes) = advanceStreak(
-            gap = today - existing.lastStudiedEpochDay,
-            streak = existing.streak,
-            freezes = existing.streakFreezes
-        )
-        dao.upsertProgress(
-            existing.copy(streak = newStreak, lastStudiedEpochDay = today, streakFreezes = newFreezes)
-        )
-    }
+    // NOTE: streak credit happens ONLY inside completeDay — the streak counts completed lesson
+    // days, not partial practice. That keeps the streak, the goal ring, and the reminder telling
+    // the same story: done = today's lesson done.
 
     companion object {
         const val MAX_FREEZES = 2
@@ -81,17 +65,30 @@ class ProgressRepository(private val dao: ProgressDao) {
     }
 
     /**
-     * Marks a study day complete: records the completion, advances currentDay if this was the
-     * current one, and credits the streak.
+     * Marks a study day complete: records the completion, credits the streak (consecutive-day
+     * logic with freezes), and advances currentDay if this was the current one — all as ONE
+     * atomic transaction, so a crash mid-way can't leave partial state.
      */
     suspend fun completeDay(lang: String, day: Int, totalDays: Int, currentLevel: String) {
         val now = System.currentTimeMillis()
-        dao.insertCompletion(DayCompletion(langCode = lang, day = day, completedAtEpoch = now))
-        recordStudyActivity(lang)
-
+        val today = LocalDate.now().toEpochDay()
         val existing = dao.progressOnce(lang) ?: LanguageProgress(langCode = lang)
+        val (newStreak, newFreezes) = advanceStreak(
+            gap = today - existing.lastStudiedEpochDay,
+            streak = existing.streak,
+            freezes = existing.streakFreezes
+        )
         val nextDay = if (day >= existing.currentDay) minOf(day + 1, totalDays) else existing.currentDay
-        dao.upsertProgress(existing.copy(currentDay = nextDay, currentLevel = currentLevel))
+        dao.completeDayTxn(
+            DayCompletion(langCode = lang, day = day, completedAtEpoch = now),
+            existing.copy(
+                streak = newStreak,
+                lastStudiedEpochDay = today,
+                streakFreezes = newFreezes,
+                currentDay = nextDay,
+                currentLevel = currentLevel
+            )
+        )
     }
 
     /** Moves the learner's start point (placement test result). Does not mark days complete. */

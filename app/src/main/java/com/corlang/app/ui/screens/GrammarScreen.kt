@@ -49,7 +49,7 @@ fun GrammarScreen(container: AppContainer, lang: String) {
     ) {
         Text("Grammar", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
         Text(
-            "The complete syllabus per CEFR level, from the official Croatian curriculum. " +
+            "The complete syllabus per CEFR level, from the official curriculum. " +
                 "Tables are reference-grade, no shortcuts.",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
