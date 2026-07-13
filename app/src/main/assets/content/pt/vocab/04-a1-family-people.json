@@ -1,0 +1,755 @@
+{
+  "packs": [
+    {
+      "id": "04-a1-family-people",
+      "title": "Family & describing people",
+      "level": "A1",
+      "words": [
+        {
+          "id": "pai",
+          "hr": "pai",
+          "en": "father",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu pai trabalha no Porto.",
+            "gloss": "My father works in Porto."
+          }
+        },
+        {
+          "id": "mãe",
+          "hr": "mãe",
+          "en": "mother",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha mãe faz um bolo.",
+            "gloss": "My mother is making a cake."
+          }
+        },
+        {
+          "id": "pais",
+          "hr": "pais",
+          "en": "parents",
+          "pos": "n. m. pl.",
+          "note": "Also 'fathers'; context decides.",
+          "example": {
+            "target": "Os meus pais moram em Coimbra.",
+            "gloss": "My parents live in Coimbra."
+          }
+        },
+        {
+          "id": "filho",
+          "hr": "filho",
+          "en": "son",
+          "pos": "n. m.",
+          "example": {
+            "target": "O filho da Ana tem cinco anos.",
+            "gloss": "Ana's son is five years old."
+          }
+        },
+        {
+          "id": "filha",
+          "hr": "filha",
+          "en": "daughter",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha filha anda na escola.",
+            "gloss": "My daughter goes to school."
+          }
+        },
+        {
+          "id": "irmão",
+          "hr": "irmão",
+          "en": "brother",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu irmão é mais velho.",
+            "gloss": "My brother is older."
+          }
+        },
+        {
+          "id": "irmã",
+          "hr": "irmã",
+          "en": "sister",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha irmã estuda em Braga.",
+            "gloss": "My sister studies in Braga."
+          }
+        },
+        {
+          "id": "avô",
+          "hr": "avô",
+          "en": "grandfather",
+          "pos": "n. m.",
+          "example": {
+            "target": "O avô lê o jornal no café.",
+            "gloss": "Grandpa reads the newspaper at the café."
+          }
+        },
+        {
+          "id": "avó",
+          "hr": "avó",
+          "en": "grandmother",
+          "pos": "n. f.",
+          "example": {
+            "target": "A avó faz sopa ao domingo.",
+            "gloss": "Grandma makes soup on Sundays."
+          }
+        },
+        {
+          "id": "avós",
+          "hr": "avós",
+          "en": "grandparents",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Os meus avós vivem no Algarve.",
+            "gloss": "My grandparents live in the Algarve."
+          }
+        },
+        {
+          "id": "tio",
+          "hr": "tio",
+          "en": "uncle",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu tio tem um carro novo.",
+            "gloss": "My uncle has a new car."
+          }
+        },
+        {
+          "id": "tia",
+          "hr": "tia",
+          "en": "aunt",
+          "pos": "n. f.",
+          "example": {
+            "target": "A tia Maria mora perto de nós.",
+            "gloss": "Aunt Maria lives near us."
+          }
+        },
+        {
+          "id": "primo",
+          "hr": "primo",
+          "en": "cousin (male)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu primo joga futebol.",
+            "gloss": "My cousin plays football."
+          }
+        },
+        {
+          "id": "prima",
+          "hr": "prima",
+          "en": "cousin (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha prima vive em Faro.",
+            "gloss": "My cousin lives in Faro."
+          }
+        },
+        {
+          "id": "marido",
+          "hr": "marido",
+          "en": "husband",
+          "pos": "n. m.",
+          "example": {
+            "target": "O marido da Rita é professor.",
+            "gloss": "Rita's husband is a teacher."
+          }
+        },
+        {
+          "id": "namorado",
+          "hr": "namorado",
+          "en": "boyfriend",
+          "pos": "n. m.",
+          "example": {
+            "target": "O namorado da Inês é do Porto.",
+            "gloss": "Inês's boyfriend is from Porto."
+          }
+        },
+        {
+          "id": "namorada",
+          "hr": "namorada",
+          "en": "girlfriend",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha namorada gosta de praia.",
+            "gloss": "My girlfriend likes the beach."
+          }
+        },
+        {
+          "id": "bebé",
+          "hr": "bebé",
+          "en": "baby",
+          "pos": "n. m.",
+          "note": "European spelling: bebé (not bebê).",
+          "example": {
+            "target": "O bebé está a dormir.",
+            "gloss": "The baby is sleeping."
+          }
+        },
+        {
+          "id": "sobrinho",
+          "hr": "sobrinho",
+          "en": "nephew",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu sobrinho tem dois anos.",
+            "gloss": "My nephew is two years old."
+          }
+        },
+        {
+          "id": "sobrinha",
+          "hr": "sobrinha",
+          "en": "niece",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha sobrinha gosta de gelado.",
+            "gloss": "My niece likes ice cream."
+          }
+        },
+        {
+          "id": "neto",
+          "hr": "neto",
+          "en": "grandson",
+          "pos": "n. m.",
+          "example": {
+            "target": "O neto visita a avó ao sábado.",
+            "gloss": "The grandson visits his grandma on Saturdays."
+          }
+        },
+        {
+          "id": "neta",
+          "hr": "neta",
+          "en": "granddaughter",
+          "pos": "n. f.",
+          "example": {
+            "target": "A neta dá um beijo à avó.",
+            "gloss": "The granddaughter gives her grandma a kiss."
+          }
+        },
+        {
+          "id": "alto",
+          "hr": "alto",
+          "en": "tall",
+          "pos": "adj.",
+          "example": {
+            "target": "O meu irmão é muito alto.",
+            "gloss": "My brother is very tall."
+          }
+        },
+        {
+          "id": "baixo",
+          "hr": "baixo",
+          "en": "short (height)",
+          "pos": "adj.",
+          "example": {
+            "target": "A avó é baixa e simpática.",
+            "gloss": "Grandma is short and kind."
+          }
+        },
+        {
+          "id": "magro",
+          "hr": "magro",
+          "en": "thin",
+          "pos": "adj.",
+          "example": {
+            "target": "O gato do vizinho é magro.",
+            "gloss": "The neighbour's cat is thin."
+          }
+        },
+        {
+          "id": "gordo",
+          "hr": "gordo",
+          "en": "fat",
+          "pos": "adj.",
+          "example": {
+            "target": "O cão está um pouco gordo.",
+            "gloss": "The dog is a bit fat."
+          }
+        },
+        {
+          "id": "bonito",
+          "hr": "bonito",
+          "en": "pretty; handsome",
+          "pos": "adj.",
+          "example": {
+            "target": "Lisboa é uma cidade bonita.",
+            "gloss": "Lisbon is a beautiful city."
+          }
+        },
+        {
+          "id": "giro",
+          "hr": "giro",
+          "en": "cute; nice-looking",
+          "pos": "adj.",
+          "note": "Very common in Portugal; informal.",
+          "example": {
+            "target": "O bebé da Rita é muito giro.",
+            "gloss": "Rita's baby is very cute."
+          }
+        },
+        {
+          "id": "feio",
+          "hr": "feio",
+          "en": "ugly",
+          "pos": "adj.",
+          "example": {
+            "target": "O tempo hoje está feio.",
+            "gloss": "The weather is ugly today."
+          }
+        },
+        {
+          "id": "novo",
+          "hr": "novo",
+          "en": "young; new",
+          "pos": "adj.",
+          "example": {
+            "target": "A minha prima é mais nova do que eu.",
+            "gloss": "My cousin is younger than me."
+          }
+        },
+        {
+          "id": "velho",
+          "hr": "velho",
+          "en": "old",
+          "pos": "adj.",
+          "note": "For people, 'idoso' is more polite.",
+          "example": {
+            "target": "O carro do avô é velho.",
+            "gloss": "Grandpa's car is old."
+          }
+        },
+        {
+          "id": "jovem",
+          "hr": "jovem",
+          "en": "young",
+          "pos": "adj.",
+          "example": {
+            "target": "A professora é jovem.",
+            "gloss": "The teacher is young."
+          }
+        },
+        {
+          "id": "simpático",
+          "hr": "simpático",
+          "en": "nice; friendly",
+          "pos": "adj.",
+          "example": {
+            "target": "Os portugueses são muito simpáticos.",
+            "gloss": "Portuguese people are very friendly."
+          }
+        },
+        {
+          "id": "antipático",
+          "hr": "antipático",
+          "en": "unfriendly",
+          "pos": "adj.",
+          "example": {
+            "target": "O empregado hoje está antipático.",
+            "gloss": "The waiter is unfriendly today."
+          }
+        },
+        {
+          "id": "inteligente",
+          "hr": "inteligente",
+          "en": "intelligent",
+          "pos": "adj.",
+          "example": {
+            "target": "A minha filha é muito inteligente.",
+            "gloss": "My daughter is very intelligent."
+          }
+        },
+        {
+          "id": "engraçado",
+          "hr": "engraçado",
+          "en": "funny",
+          "pos": "adj.",
+          "example": {
+            "target": "O meu tio é muito engraçado.",
+            "gloss": "My uncle is very funny."
+          }
+        },
+        {
+          "id": "forte",
+          "hr": "forte",
+          "en": "strong",
+          "pos": "adj.",
+          "example": {
+            "target": "O meu pai é forte.",
+            "gloss": "My father is strong."
+          }
+        },
+        {
+          "id": "fraco",
+          "hr": "fraco",
+          "en": "weak",
+          "pos": "adj.",
+          "example": {
+            "target": "O café da máquina é fraco.",
+            "gloss": "The machine coffee is weak."
+          }
+        },
+        {
+          "id": "tímido",
+          "hr": "tímido",
+          "en": "shy",
+          "pos": "adj.",
+          "example": {
+            "target": "O rapaz é tímido na escola.",
+            "gloss": "The boy is shy at school."
+          }
+        },
+        {
+          "id": "calmo",
+          "hr": "calmo",
+          "en": "calm",
+          "pos": "adj.",
+          "example": {
+            "target": "A minha mãe é uma pessoa calma.",
+            "gloss": "My mother is a calm person."
+          }
+        },
+        {
+          "id": "cabelo",
+          "hr": "cabelo",
+          "en": "hair",
+          "pos": "n. m.",
+          "example": {
+            "target": "A Sofia tem o cabelo comprido.",
+            "gloss": "Sofia has long hair."
+          }
+        },
+        {
+          "id": "olhos",
+          "hr": "olhos",
+          "en": "eyes",
+          "pos": "n. m. pl.",
+          "note": "Singular: o olho.",
+          "example": {
+            "target": "O bebé tem olhos azuis.",
+            "gloss": "The baby has blue eyes."
+          }
+        },
+        {
+          "id": "loiro",
+          "hr": "loiro",
+          "en": "blond",
+          "pos": "adj.",
+          "example": {
+            "target": "A minha amiga é loira.",
+            "gloss": "My friend is blonde."
+          }
+        },
+        {
+          "id": "moreno",
+          "hr": "moreno",
+          "en": "dark-haired; dark-skinned",
+          "pos": "adj.",
+          "example": {
+            "target": "O João é moreno e alto.",
+            "gloss": "João is dark-haired and tall."
+          }
+        },
+        {
+          "id": "ruivo",
+          "hr": "ruivo",
+          "en": "red-haired",
+          "pos": "adj.",
+          "example": {
+            "target": "A rapariga ruiva é minha colega.",
+            "gloss": "The red-haired girl is my classmate."
+          }
+        },
+        {
+          "id": "barba",
+          "hr": "barba",
+          "en": "beard",
+          "pos": "n. f.",
+          "example": {
+            "target": "O meu avô tem uma barba branca.",
+            "gloss": "My grandfather has a white beard."
+          }
+        },
+        {
+          "id": "óculos",
+          "hr": "óculos",
+          "en": "glasses",
+          "pos": "n. m. pl.",
+          "note": "Always plural: os óculos.",
+          "example": {
+            "target": "O professor usa óculos.",
+            "gloss": "The teacher wears glasses."
+          }
+        },
+        {
+          "id": "contente",
+          "hr": "contente",
+          "en": "glad; pleased",
+          "pos": "adj.",
+          "example": {
+            "target": "Estou contente com a nota.",
+            "gloss": "I'm pleased with the grade."
+          }
+        },
+        {
+          "id": "feliz",
+          "hr": "feliz",
+          "en": "happy",
+          "pos": "adj.",
+          "example": {
+            "target": "A família está feliz na praia.",
+            "gloss": "The family is happy at the beach."
+          }
+        },
+        {
+          "id": "triste",
+          "hr": "triste",
+          "en": "sad",
+          "pos": "adj.",
+          "example": {
+            "target": "O menino está triste sem o pai.",
+            "gloss": "The little boy is sad without his dad."
+          }
+        },
+        {
+          "id": "cansado",
+          "hr": "cansado",
+          "en": "tired",
+          "pos": "adj.",
+          "example": {
+            "target": "Estou cansado depois do trabalho.",
+            "gloss": "I'm tired after work."
+          }
+        },
+        {
+          "id": "doente",
+          "hr": "doente",
+          "en": "sick; ill",
+          "pos": "adj.",
+          "example": {
+            "target": "A minha irmã está doente hoje.",
+            "gloss": "My sister is sick today."
+          }
+        },
+        {
+          "id": "zangado",
+          "hr": "zangado",
+          "en": "angry",
+          "pos": "adj.",
+          "example": {
+            "target": "O pai está zangado com o filho.",
+            "gloss": "The father is angry with his son."
+          }
+        },
+        {
+          "id": "preocupado",
+          "hr": "preocupado",
+          "en": "worried",
+          "pos": "adj.",
+          "example": {
+            "target": "A mãe está preocupada com o bebé.",
+            "gloss": "The mother is worried about the baby."
+          }
+        },
+        {
+          "id": "nervoso",
+          "hr": "nervoso",
+          "en": "nervous",
+          "pos": "adj.",
+          "example": {
+            "target": "Estou nervoso antes do exame.",
+            "gloss": "I'm nervous before the exam."
+          }
+        },
+        {
+          "id": "ocupado",
+          "hr": "ocupado",
+          "en": "busy",
+          "pos": "adj.",
+          "example": {
+            "target": "O médico está ocupado agora.",
+            "gloss": "The doctor is busy now."
+          }
+        },
+        {
+          "id": "sozinho",
+          "hr": "sozinho",
+          "en": "alone",
+          "pos": "adj.",
+          "example": {
+            "target": "O avô não gosta de estar sozinho.",
+            "gloss": "Grandpa doesn't like being alone."
+          }
+        },
+        {
+          "id": "com fome",
+          "hr": "com fome",
+          "en": "hungry",
+          "pos": "phrase",
+          "note": "Used with estar: estou com fome / tenho fome.",
+          "example": {
+            "target": "Estou com fome, vamos almoçar?",
+            "gloss": "I'm hungry, shall we have lunch?"
+          }
+        },
+        {
+          "id": "com sede",
+          "hr": "com sede",
+          "en": "thirsty",
+          "pos": "phrase",
+          "example": {
+            "target": "A criança está com sede.",
+            "gloss": "The child is thirsty."
+          }
+        },
+        {
+          "id": "com frio",
+          "hr": "com frio",
+          "en": "cold (feeling)",
+          "pos": "phrase",
+          "example": {
+            "target": "Estou com frio, fecha a janela.",
+            "gloss": "I'm cold, close the window."
+          }
+        },
+        {
+          "id": "com calor",
+          "hr": "com calor",
+          "en": "hot (feeling)",
+          "pos": "phrase",
+          "example": {
+            "target": "Em agosto estamos sempre com calor.",
+            "gloss": "In August we're always hot."
+          }
+        },
+        {
+          "id": "com sono",
+          "hr": "com sono",
+          "en": "sleepy",
+          "pos": "phrase",
+          "example": {
+            "target": "O bebé está com sono.",
+            "gloss": "The baby is sleepy."
+          }
+        },
+        {
+          "id": "com medo",
+          "hr": "com medo",
+          "en": "afraid",
+          "pos": "phrase",
+          "example": {
+            "target": "A menina está com medo do cão.",
+            "gloss": "The girl is afraid of the dog."
+          }
+        },
+        {
+          "id": "meu",
+          "hr": "meu",
+          "en": "my; mine (masc.)",
+          "pos": "pron.",
+          "note": "In Portugal usually with article: o meu carro.",
+          "example": {
+            "target": "O meu telemóvel está na mesa.",
+            "gloss": "My mobile phone is on the table."
+          }
+        },
+        {
+          "id": "minha",
+          "hr": "minha",
+          "en": "my; mine (fem.)",
+          "pos": "pron.",
+          "example": {
+            "target": "A minha casa fica perto do metro.",
+            "gloss": "My house is near the metro."
+          }
+        },
+        {
+          "id": "teu",
+          "hr": "teu",
+          "en": "your; yours (informal, masc.)",
+          "pos": "pron.",
+          "example": {
+            "target": "O teu irmão está em casa?",
+            "gloss": "Is your brother at home?"
+          }
+        },
+        {
+          "id": "tua",
+          "hr": "tua",
+          "en": "your; yours (informal, fem.)",
+          "pos": "pron.",
+          "example": {
+            "target": "A tua mãe é muito simpática.",
+            "gloss": "Your mother is very nice."
+          }
+        },
+        {
+          "id": "seu",
+          "hr": "seu",
+          "en": "his; her; your (formal, masc.)",
+          "pos": "pron.",
+          "note": "In Portugal, often formal 'your'; for 'his/her' people say 'dele/dela'.",
+          "example": {
+            "target": "O seu casaco está aqui, senhor Costa.",
+            "gloss": "Your coat is here, Mr Costa."
+          }
+        },
+        {
+          "id": "sua",
+          "hr": "sua",
+          "en": "his; her; your (formal, fem.)",
+          "pos": "pron.",
+          "example": {
+            "target": "A sua mala está no carro, dona Maria.",
+            "gloss": "Your bag is in the car, Mrs Maria."
+          }
+        },
+        {
+          "id": "nosso",
+          "hr": "nosso",
+          "en": "our; ours (masc.)",
+          "pos": "pron.",
+          "example": {
+            "target": "O nosso apartamento é pequeno.",
+            "gloss": "Our flat is small."
+          }
+        },
+        {
+          "id": "nossa",
+          "hr": "nossa",
+          "en": "our; ours (fem.)",
+          "pos": "pron.",
+          "example": {
+            "target": "A nossa avó vive connosco.",
+            "gloss": "Our grandmother lives with us."
+          }
+        },
+        {
+          "id": "vosso",
+          "hr": "vosso",
+          "en": "your; yours (plural, masc.)",
+          "pos": "pron.",
+          "note": "European Portuguese plural 'your' (vocês → vosso).",
+          "example": {
+            "target": "O vosso cão é muito giro.",
+            "gloss": "Your (pl.) dog is very cute."
+          }
+        },
+        {
+          "id": "vossa",
+          "hr": "vossa",
+          "en": "your; yours (plural, fem.)",
+          "pos": "pron.",
+          "example": {
+            "target": "A vossa casa tem um jardim bonito.",
+            "gloss": "Your (pl.) house has a nice garden."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}

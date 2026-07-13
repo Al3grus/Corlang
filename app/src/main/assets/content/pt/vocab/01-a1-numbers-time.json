@@ -1,0 +1,903 @@
+{
+  "packs": [
+    {
+      "id": "01-a1-numbers-time",
+      "title": "Numbers, time & dates",
+      "level": "A1",
+      "words": [
+        {
+          "id": "zero",
+          "hr": "zero",
+          "en": "zero",
+          "pos": "n. m.",
+          "example": {
+            "target": "Hoje estão zero graus.",
+            "gloss": "It is zero degrees today."
+          }
+        },
+        {
+          "id": "um",
+          "hr": "um",
+          "en": "one",
+          "pos": "n. m.",
+          "note": "Feminine: uma.",
+          "example": {
+            "target": "Tenho um irmão.",
+            "gloss": "I have one brother."
+          }
+        },
+        {
+          "id": "dois",
+          "hr": "dois",
+          "en": "two",
+          "pos": "n. m.",
+          "note": "Feminine: duas.",
+          "example": {
+            "target": "Quero dois pastéis de nata.",
+            "gloss": "I want two custard tarts."
+          }
+        },
+        {
+          "id": "três",
+          "hr": "três",
+          "en": "three",
+          "pos": "n. m.",
+          "example": {
+            "target": "O comboio parte às três horas.",
+            "gloss": "The train leaves at three o'clock."
+          }
+        },
+        {
+          "id": "quatro",
+          "hr": "quatro",
+          "en": "four",
+          "pos": "n. m.",
+          "example": {
+            "target": "A casa tem quatro quartos.",
+            "gloss": "The house has four bedrooms."
+          }
+        },
+        {
+          "id": "cinco",
+          "hr": "cinco",
+          "en": "five",
+          "pos": "n. m.",
+          "example": {
+            "target": "São cinco euros, por favor.",
+            "gloss": "That is five euros, please."
+          }
+        },
+        {
+          "id": "seis",
+          "hr": "seis",
+          "en": "six",
+          "pos": "n. m.",
+          "example": {
+            "target": "Acordo às seis da manhã.",
+            "gloss": "I wake up at six in the morning."
+          }
+        },
+        {
+          "id": "sete",
+          "hr": "sete",
+          "en": "seven",
+          "pos": "n. m.",
+          "example": {
+            "target": "A semana tem sete dias.",
+            "gloss": "The week has seven days."
+          }
+        },
+        {
+          "id": "oito",
+          "hr": "oito",
+          "en": "eight",
+          "pos": "n. m.",
+          "example": {
+            "target": "O museu abre às oito.",
+            "gloss": "The museum opens at eight."
+          }
+        },
+        {
+          "id": "nove",
+          "hr": "nove",
+          "en": "nine",
+          "pos": "n. m.",
+          "example": {
+            "target": "A loja fecha às nove.",
+            "gloss": "The shop closes at nine."
+          }
+        },
+        {
+          "id": "dez",
+          "hr": "dez",
+          "en": "ten",
+          "pos": "n. m.",
+          "example": {
+            "target": "O bilhete custa dez euros.",
+            "gloss": "The ticket costs ten euros."
+          }
+        },
+        {
+          "id": "onze",
+          "hr": "onze",
+          "en": "eleven",
+          "pos": "n. m.",
+          "example": {
+            "target": "O autocarro onze passa aqui.",
+            "gloss": "Bus number eleven stops here."
+          }
+        },
+        {
+          "id": "doze",
+          "hr": "doze",
+          "en": "twelve",
+          "pos": "n. m.",
+          "example": {
+            "target": "Compro doze ovos.",
+            "gloss": "I buy twelve eggs."
+          }
+        },
+        {
+          "id": "treze",
+          "hr": "treze",
+          "en": "thirteen",
+          "pos": "n. m.",
+          "example": {
+            "target": "Moro no número treze.",
+            "gloss": "I live at number thirteen."
+          }
+        },
+        {
+          "id": "catorze",
+          "hr": "catorze",
+          "en": "fourteen",
+          "pos": "n. m.",
+          "note": "European spelling; Brazil uses 'quatorze'.",
+          "example": {
+            "target": "Ela tem catorze anos.",
+            "gloss": "She is fourteen years old."
+          }
+        },
+        {
+          "id": "quinze",
+          "hr": "quinze",
+          "en": "fifteen",
+          "pos": "n. m.",
+          "example": {
+            "target": "O comboio chega daqui a quinze minutos.",
+            "gloss": "The train arrives in fifteen minutes."
+          }
+        },
+        {
+          "id": "dezasseis",
+          "hr": "dezasseis",
+          "en": "sixteen",
+          "pos": "n. m.",
+          "note": "European spelling; Brazil uses 'dezesseis'.",
+          "example": {
+            "target": "O meu primo tem dezasseis anos.",
+            "gloss": "My cousin is sixteen years old."
+          }
+        },
+        {
+          "id": "dezassete",
+          "hr": "dezassete",
+          "en": "seventeen",
+          "pos": "n. m.",
+          "note": "European spelling; Brazil uses 'dezessete'.",
+          "example": {
+            "target": "A viagem dura dezassete minutos.",
+            "gloss": "The journey takes seventeen minutes."
+          }
+        },
+        {
+          "id": "dezoito",
+          "hr": "dezoito",
+          "en": "eighteen",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ele tem dezoito anos.",
+            "gloss": "He is eighteen years old."
+          }
+        },
+        {
+          "id": "dezanove",
+          "hr": "dezanove",
+          "en": "nineteen",
+          "pos": "n. m.",
+          "note": "European spelling; Brazil uses 'dezenove'.",
+          "example": {
+            "target": "Hoje é dia dezanove.",
+            "gloss": "Today is the nineteenth."
+          }
+        },
+        {
+          "id": "vinte",
+          "hr": "vinte",
+          "en": "twenty",
+          "pos": "n. m.",
+          "example": {
+            "target": "O jantar custa vinte euros.",
+            "gloss": "The dinner costs twenty euros."
+          }
+        },
+        {
+          "id": "trinta",
+          "hr": "trinta",
+          "en": "thirty",
+          "pos": "n. m.",
+          "example": {
+            "target": "O filme começa às oito e trinta.",
+            "gloss": "The film starts at eight thirty."
+          }
+        },
+        {
+          "id": "quarenta",
+          "hr": "quarenta",
+          "en": "forty",
+          "pos": "n. m.",
+          "example": {
+            "target": "A minha mãe tem quarenta anos.",
+            "gloss": "My mother is forty years old."
+          }
+        },
+        {
+          "id": "cinquenta",
+          "hr": "cinquenta",
+          "en": "fifty",
+          "pos": "n. m.",
+          "example": {
+            "target": "Há cinquenta pessoas na festa.",
+            "gloss": "There are fifty people at the party."
+          }
+        },
+        {
+          "id": "sessenta",
+          "hr": "sessenta",
+          "en": "sixty",
+          "pos": "n. m.",
+          "example": {
+            "target": "Uma hora tem sessenta minutos.",
+            "gloss": "An hour has sixty minutes."
+          }
+        },
+        {
+          "id": "setenta",
+          "hr": "setenta",
+          "en": "seventy",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu avô tem setenta anos.",
+            "gloss": "My grandfather is seventy years old."
+          }
+        },
+        {
+          "id": "oitenta",
+          "hr": "oitenta",
+          "en": "eighty",
+          "pos": "n. m.",
+          "example": {
+            "target": "A avó faz oitenta anos hoje.",
+            "gloss": "Grandma turns eighty today."
+          }
+        },
+        {
+          "id": "noventa",
+          "hr": "noventa",
+          "en": "ninety",
+          "pos": "n. m.",
+          "example": {
+            "target": "A viagem demora noventa minutos.",
+            "gloss": "The trip takes ninety minutes."
+          }
+        },
+        {
+          "id": "cem",
+          "hr": "cem",
+          "en": "one hundred",
+          "pos": "n. m.",
+          "note": "Becomes 'cento' above 100: cento e um.",
+          "example": {
+            "target": "Cem euros é muito dinheiro.",
+            "gloss": "One hundred euros is a lot of money."
+          }
+        },
+        {
+          "id": "mil",
+          "hr": "mil",
+          "en": "one thousand",
+          "pos": "n. m.",
+          "example": {
+            "target": "A cidade tem mil anos.",
+            "gloss": "The city is a thousand years old."
+          }
+        },
+        {
+          "id": "primeiro",
+          "hr": "primeiro",
+          "en": "first",
+          "pos": "n. m.",
+          "note": "Feminine: primeira.",
+          "example": {
+            "target": "Janeiro é o primeiro mês do ano.",
+            "gloss": "January is the first month of the year."
+          }
+        },
+        {
+          "id": "segundo",
+          "hr": "segundo",
+          "en": "second",
+          "pos": "n. m.",
+          "note": "Also a noun (n. m.): a second of time.",
+          "example": {
+            "target": "Fevereiro é o segundo mês.",
+            "gloss": "February is the second month."
+          }
+        },
+        {
+          "id": "terceiro",
+          "hr": "terceiro",
+          "en": "third",
+          "pos": "n. m.",
+          "example": {
+            "target": "Moro no terceiro andar.",
+            "gloss": "I live on the third floor."
+          }
+        },
+        {
+          "id": "quarto",
+          "hr": "quarto",
+          "en": "fourth",
+          "pos": "n. m.",
+          "note": "Also a noun (n. m.): bedroom; quarter.",
+          "example": {
+            "target": "É o quarto dia de férias.",
+            "gloss": "It is the fourth day of the holidays."
+          }
+        },
+        {
+          "id": "quinto",
+          "hr": "quinto",
+          "en": "fifth",
+          "pos": "n. m.",
+          "example": {
+            "target": "O escritório é no quinto andar.",
+            "gloss": "The office is on the fifth floor."
+          }
+        },
+        {
+          "id": "segunda-feira",
+          "hr": "segunda-feira",
+          "en": "Monday",
+          "pos": "n. f.",
+          "note": "'À segunda-feira' = on Mondays.",
+          "example": {
+            "target": "Na segunda-feira trabalho cedo.",
+            "gloss": "On Monday I work early."
+          }
+        },
+        {
+          "id": "terça-feira",
+          "hr": "terça-feira",
+          "en": "Tuesday",
+          "pos": "n. f.",
+          "example": {
+            "target": "Tenho aula de português na terça-feira.",
+            "gloss": "I have a Portuguese class on Tuesday."
+          }
+        },
+        {
+          "id": "quarta-feira",
+          "hr": "quarta-feira",
+          "en": "Wednesday",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na quarta-feira vou ao ginásio.",
+            "gloss": "On Wednesday I go to the gym."
+          }
+        },
+        {
+          "id": "quinta-feira",
+          "hr": "quinta-feira",
+          "en": "Thursday",
+          "pos": "n. f.",
+          "example": {
+            "target": "O mercado é na quinta-feira.",
+            "gloss": "The market is on Thursday."
+          }
+        },
+        {
+          "id": "sexta-feira",
+          "hr": "sexta-feira",
+          "en": "Friday",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na sexta-feira jantamos fora.",
+            "gloss": "On Friday we eat dinner out."
+          }
+        },
+        {
+          "id": "sábado",
+          "hr": "sábado",
+          "en": "Saturday",
+          "pos": "n. m.",
+          "example": {
+            "target": "No sábado vou à praia.",
+            "gloss": "On Saturday I go to the beach."
+          }
+        },
+        {
+          "id": "domingo",
+          "hr": "domingo",
+          "en": "Sunday",
+          "pos": "n. m.",
+          "example": {
+            "target": "No domingo almoço com a família.",
+            "gloss": "On Sunday I have lunch with the family."
+          }
+        },
+        {
+          "id": "fim de semana",
+          "hr": "fim de semana",
+          "en": "weekend",
+          "pos": "n. m.",
+          "example": {
+            "target": "Bom fim de semana!",
+            "gloss": "Have a good weekend!"
+          }
+        },
+        {
+          "id": "janeiro",
+          "hr": "janeiro",
+          "en": "January",
+          "pos": "n. m.",
+          "note": "Months are written in lowercase in Portuguese.",
+          "example": {
+            "target": "Em janeiro faz frio.",
+            "gloss": "In January it is cold."
+          }
+        },
+        {
+          "id": "fevereiro",
+          "hr": "fevereiro",
+          "en": "February",
+          "pos": "n. m.",
+          "example": {
+            "target": "O Carnaval é em fevereiro.",
+            "gloss": "Carnival is in February."
+          }
+        },
+        {
+          "id": "março",
+          "hr": "março",
+          "en": "March",
+          "pos": "n. m.",
+          "example": {
+            "target": "Em março começa a primavera.",
+            "gloss": "Spring begins in March."
+          }
+        },
+        {
+          "id": "abril",
+          "hr": "abril",
+          "en": "April",
+          "pos": "n. m.",
+          "example": {
+            "target": "Abril tem trinta dias.",
+            "gloss": "April has thirty days."
+          }
+        },
+        {
+          "id": "maio",
+          "hr": "maio",
+          "en": "May",
+          "pos": "n. m.",
+          "example": {
+            "target": "Em maio há muitas flores.",
+            "gloss": "In May there are many flowers."
+          }
+        },
+        {
+          "id": "junho",
+          "hr": "junho",
+          "en": "June",
+          "pos": "n. m.",
+          "example": {
+            "target": "As festas de Lisboa são em junho.",
+            "gloss": "The Lisbon festivals are in June."
+          }
+        },
+        {
+          "id": "julho",
+          "hr": "julho",
+          "en": "July",
+          "pos": "n. m.",
+          "example": {
+            "target": "Em julho vamos ao Algarve.",
+            "gloss": "In July we go to the Algarve."
+          }
+        },
+        {
+          "id": "agosto",
+          "hr": "agosto",
+          "en": "August",
+          "pos": "n. m.",
+          "example": {
+            "target": "Em agosto está muito calor.",
+            "gloss": "In August it is very hot."
+          }
+        },
+        {
+          "id": "setembro",
+          "hr": "setembro",
+          "en": "September",
+          "pos": "n. m.",
+          "example": {
+            "target": "As aulas começam em setembro.",
+            "gloss": "Classes start in September."
+          }
+        },
+        {
+          "id": "outubro",
+          "hr": "outubro",
+          "en": "October",
+          "pos": "n. m.",
+          "example": {
+            "target": "Em outubro chove muito.",
+            "gloss": "In October it rains a lot."
+          }
+        },
+        {
+          "id": "novembro",
+          "hr": "novembro",
+          "en": "November",
+          "pos": "n. m.",
+          "example": {
+            "target": "O São Martinho é em novembro.",
+            "gloss": "St. Martin's Day is in November."
+          }
+        },
+        {
+          "id": "dezembro",
+          "hr": "dezembro",
+          "en": "December",
+          "pos": "n. m.",
+          "example": {
+            "target": "O Natal é em dezembro.",
+            "gloss": "Christmas is in December."
+          }
+        },
+        {
+          "id": "primavera",
+          "hr": "primavera",
+          "en": "spring",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na primavera os dias são maiores.",
+            "gloss": "In spring the days are longer."
+          }
+        },
+        {
+          "id": "verão",
+          "hr": "verão",
+          "en": "summer",
+          "pos": "n. m.",
+          "example": {
+            "target": "No verão vou à praia.",
+            "gloss": "In summer I go to the beach."
+          }
+        },
+        {
+          "id": "outono",
+          "hr": "outono",
+          "en": "autumn",
+          "pos": "n. m.",
+          "example": {
+            "target": "No outono caem as folhas.",
+            "gloss": "In autumn the leaves fall."
+          }
+        },
+        {
+          "id": "inverno",
+          "hr": "inverno",
+          "en": "winter",
+          "pos": "n. m.",
+          "example": {
+            "target": "No inverno faz frio no Porto.",
+            "gloss": "In winter it is cold in Porto."
+          }
+        },
+        {
+          "id": "estação",
+          "hr": "estação",
+          "en": "season; station",
+          "pos": "n. f.",
+          "note": "Also 'estação de comboios' = train station.",
+          "example": {
+            "target": "O verão é a minha estação preferida.",
+            "gloss": "Summer is my favourite season."
+          }
+        },
+        {
+          "id": "hora",
+          "hr": "hora",
+          "en": "hour; time",
+          "pos": "n. f.",
+          "example": {
+            "target": "O filme dura duas horas.",
+            "gloss": "The film lasts two hours."
+          }
+        },
+        {
+          "id": "minuto",
+          "hr": "minuto",
+          "en": "minute",
+          "pos": "n. m.",
+          "example": {
+            "target": "Espera um minuto, por favor.",
+            "gloss": "Wait a minute, please."
+          }
+        },
+        {
+          "id": "dia",
+          "hr": "dia",
+          "en": "day",
+          "pos": "n. m.",
+          "note": "Masculine despite ending in -a.",
+          "example": {
+            "target": "Hoje é um dia bonito.",
+            "gloss": "Today is a beautiful day."
+          }
+        },
+        {
+          "id": "semana",
+          "hr": "semana",
+          "en": "week",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vou a Lisboa esta semana.",
+            "gloss": "I am going to Lisbon this week."
+          }
+        },
+        {
+          "id": "mês",
+          "hr": "mês",
+          "en": "month",
+          "pos": "n. m.",
+          "note": "Plural: meses.",
+          "example": {
+            "target": "Fico cá um mês.",
+            "gloss": "I am staying here for a month."
+          }
+        },
+        {
+          "id": "ano",
+          "hr": "ano",
+          "en": "year",
+          "pos": "n. m.",
+          "example": {
+            "target": "O ano tem doze meses.",
+            "gloss": "The year has twelve months."
+          }
+        },
+        {
+          "id": "hoje",
+          "hr": "hoje",
+          "en": "today",
+          "pos": "adv.",
+          "example": {
+            "target": "Hoje está sol.",
+            "gloss": "It is sunny today."
+          }
+        },
+        {
+          "id": "ontem",
+          "hr": "ontem",
+          "en": "yesterday",
+          "pos": "adv.",
+          "example": {
+            "target": "Ontem fui ao cinema.",
+            "gloss": "Yesterday I went to the cinema."
+          }
+        },
+        {
+          "id": "amanhã",
+          "hr": "amanhã",
+          "en": "tomorrow",
+          "pos": "adv.",
+          "example": {
+            "target": "Amanhã trabalho de manhã.",
+            "gloss": "Tomorrow I work in the morning."
+          }
+        },
+        {
+          "id": "agora",
+          "hr": "agora",
+          "en": "now",
+          "pos": "adv.",
+          "example": {
+            "target": "Agora estou a almoçar.",
+            "gloss": "I am having lunch now."
+          }
+        },
+        {
+          "id": "sempre",
+          "hr": "sempre",
+          "en": "always",
+          "pos": "adv.",
+          "example": {
+            "target": "Bebo sempre café ao pequeno-almoço.",
+            "gloss": "I always drink coffee at breakfast."
+          }
+        },
+        {
+          "id": "nunca",
+          "hr": "nunca",
+          "en": "never",
+          "pos": "adv.",
+          "example": {
+            "target": "Nunca chego tarde ao trabalho.",
+            "gloss": "I never arrive late to work."
+          }
+        },
+        {
+          "id": "cedo",
+          "hr": "cedo",
+          "en": "early",
+          "pos": "adv.",
+          "example": {
+            "target": "Levanto-me cedo.",
+            "gloss": "I get up early."
+          }
+        },
+        {
+          "id": "tarde",
+          "hr": "tarde",
+          "en": "late",
+          "pos": "adv.",
+          "note": "Also a noun (n. f.): a tarde = the afternoon.",
+          "example": {
+            "target": "O comboio chega tarde.",
+            "gloss": "The train arrives late."
+          }
+        },
+        {
+          "id": "meio-dia",
+          "hr": "meio-dia",
+          "en": "midday, noon",
+          "pos": "n. m.",
+          "example": {
+            "target": "Almoço ao meio-dia.",
+            "gloss": "I have lunch at noon."
+          }
+        },
+        {
+          "id": "meia-noite",
+          "hr": "meia-noite",
+          "en": "midnight",
+          "pos": "n. f.",
+          "example": {
+            "target": "A festa acaba à meia-noite.",
+            "gloss": "The party ends at midnight."
+          }
+        },
+        {
+          "id": "manhã",
+          "hr": "manhã",
+          "en": "morning",
+          "pos": "n. f.",
+          "example": {
+            "target": "A manhã está fria.",
+            "gloss": "The morning is cold."
+          }
+        },
+        {
+          "id": "noite",
+          "hr": "noite",
+          "en": "night, evening",
+          "pos": "n. f.",
+          "example": {
+            "target": "A noite em Lisboa é animada.",
+            "gloss": "The night in Lisbon is lively."
+          }
+        },
+        {
+          "id": "antes",
+          "hr": "antes",
+          "en": "before",
+          "pos": "adv.",
+          "note": "'Antes de' + noun/infinitive.",
+          "example": {
+            "target": "Chego antes das nove.",
+            "gloss": "I arrive before nine."
+          }
+        },
+        {
+          "id": "depois",
+          "hr": "depois",
+          "en": "after, afterwards",
+          "pos": "adv.",
+          "note": "'Depois de' + noun/infinitive.",
+          "example": {
+            "target": "Depois do jantar, vemos um filme.",
+            "gloss": "After dinner, we watch a film."
+          }
+        },
+        {
+          "id": "que horas são?",
+          "hr": "que horas são?",
+          "en": "what time is it?",
+          "pos": "phrase",
+          "example": {
+            "target": "Que horas são? São dez.",
+            "gloss": "What time is it? It is ten."
+          }
+        },
+        {
+          "id": "que horas?",
+          "hr": "que horas?",
+          "en": "at what time?",
+          "pos": "phrase",
+          "example": {
+            "target": "A que horas parte o comboio?",
+            "gloss": "At what time does the train leave?"
+          }
+        },
+        {
+          "id": "ao meio-dia",
+          "hr": "ao meio-dia",
+          "en": "at noon",
+          "pos": "phrase",
+          "example": {
+            "target": "Encontramo-nos ao meio-dia.",
+            "gloss": "We meet at noon."
+          }
+        },
+        {
+          "id": "de manhã",
+          "hr": "de manhã",
+          "en": "in the morning",
+          "pos": "phrase",
+          "example": {
+            "target": "Estudo português de manhã.",
+            "gloss": "I study Portuguese in the morning."
+          }
+        },
+        {
+          "id": "à tarde",
+          "hr": "à tarde",
+          "en": "in the afternoon",
+          "pos": "phrase",
+          "example": {
+            "target": "À tarde vou ao supermercado.",
+            "gloss": "In the afternoon I go to the supermarket."
+          }
+        },
+        {
+          "id": "à noite",
+          "hr": "à noite",
+          "en": "in the evening, at night",
+          "pos": "phrase",
+          "example": {
+            "target": "À noite jantamos em casa.",
+            "gloss": "In the evening we have dinner at home."
+          }
+        },
+        {
+          "id": "em ponto",
+          "hr": "em ponto",
+          "en": "on the dot, sharp",
+          "pos": "phrase",
+          "example": {
+            "target": "A reunião é às nove em ponto.",
+            "gloss": "The meeting is at nine sharp."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,711 @@
+{
+  "packs": [
+    {
+      "id": "07-a1-function-words",
+      "title": "Function words & connectors",
+      "level": "A1",
+      "words": [
+        {
+          "id": "eu",
+          "hr": "eu",
+          "en": "I",
+          "pos": "pron.",
+          "example": {
+            "target": "Eu sou de Lisboa.",
+            "gloss": "I am from Lisbon."
+          }
+        },
+        {
+          "id": "tu",
+          "hr": "tu",
+          "en": "you (informal singular)",
+          "pos": "pron.",
+          "note": "Standard informal \"you\" in Portugal, used with 2nd-person verb forms.",
+          "example": {
+            "target": "Tu falas inglês?",
+            "gloss": "Do you speak English?"
+          }
+        },
+        {
+          "id": "você",
+          "hr": "você",
+          "en": "you (semi-formal)",
+          "pos": "pron.",
+          "note": "In Portugal often avoided as a word: use the verb in the 3rd person, or \"o senhor / a senhora\".",
+          "example": {
+            "target": "Você é o professor novo?",
+            "gloss": "Are you the new teacher?"
+          }
+        },
+        {
+          "id": "ele",
+          "hr": "ele",
+          "en": "he",
+          "pos": "pron.",
+          "example": {
+            "target": "Ele trabalha no Porto.",
+            "gloss": "He works in Porto."
+          }
+        },
+        {
+          "id": "ela",
+          "hr": "ela",
+          "en": "she",
+          "pos": "pron.",
+          "example": {
+            "target": "Ela chama-se Ana.",
+            "gloss": "Her name is Ana."
+          }
+        },
+        {
+          "id": "nós",
+          "hr": "nós",
+          "en": "we",
+          "pos": "pron.",
+          "example": {
+            "target": "Nós vivemos em Coimbra.",
+            "gloss": "We live in Coimbra."
+          }
+        },
+        {
+          "id": "vocês",
+          "hr": "vocês",
+          "en": "you (plural)",
+          "pos": "pron.",
+          "example": {
+            "target": "Vocês são espanhóis?",
+            "gloss": "Are you (all) Spanish?"
+          }
+        },
+        {
+          "id": "eles",
+          "hr": "eles",
+          "en": "they (masculine/mixed)",
+          "pos": "pron.",
+          "example": {
+            "target": "Eles jogam futebol ao sábado.",
+            "gloss": "They play football on Saturdays."
+          }
+        },
+        {
+          "id": "elas",
+          "hr": "elas",
+          "en": "they (feminine)",
+          "pos": "pron.",
+          "example": {
+            "target": "Elas estudam juntas.",
+            "gloss": "They study together."
+          }
+        },
+        {
+          "id": "que",
+          "hr": "que",
+          "en": "what, which; that",
+          "pos": "pron.",
+          "example": {
+            "target": "Que horas são?",
+            "gloss": "What time is it?"
+          }
+        },
+        {
+          "id": "quem",
+          "hr": "quem",
+          "en": "who",
+          "pos": "pron.",
+          "example": {
+            "target": "Quem é aquele senhor?",
+            "gloss": "Who is that man?"
+          }
+        },
+        {
+          "id": "onde",
+          "hr": "onde",
+          "en": "where",
+          "pos": "adv.",
+          "example": {
+            "target": "Onde fica a estação?",
+            "gloss": "Where is the station?"
+          }
+        },
+        {
+          "id": "quando",
+          "hr": "quando",
+          "en": "when",
+          "pos": "adv.",
+          "note": "Also a conjunction: quando chegares... = when you arrive...",
+          "example": {
+            "target": "Quando chegas a casa?",
+            "gloss": "When do you get home?"
+          }
+        },
+        {
+          "id": "como",
+          "hr": "como",
+          "en": "how",
+          "pos": "adv.",
+          "example": {
+            "target": "Como te chamas?",
+            "gloss": "What is your name?"
+          }
+        },
+        {
+          "id": "quanto",
+          "hr": "quanto",
+          "en": "how much, how many",
+          "pos": "pron.",
+          "note": "Agrees in gender and number: quantos anos, quantas horas.",
+          "example": {
+            "target": "Quantos anos tens?",
+            "gloss": "How old are you?"
+          }
+        },
+        {
+          "id": "porquê",
+          "hr": "porquê",
+          "en": "why",
+          "pos": "adv.",
+          "note": "Standalone form; before a clause use \"porque\": Porque estudas?",
+          "example": {
+            "target": "Não vens à festa? Porquê?",
+            "gloss": "You're not coming to the party? Why?"
+          }
+        },
+        {
+          "id": "qual",
+          "hr": "qual",
+          "en": "which, what",
+          "pos": "pron.",
+          "example": {
+            "target": "Qual é o teu número de telemóvel?",
+            "gloss": "What is your mobile number?"
+          }
+        },
+        {
+          "id": "de",
+          "hr": "de",
+          "en": "of, from",
+          "pos": "prep.",
+          "note": "Contracts with articles: do, da, dos, das.",
+          "example": {
+            "target": "Sou de Braga.",
+            "gloss": "I am from Braga."
+          }
+        },
+        {
+          "id": "em",
+          "hr": "em",
+          "en": "in, on, at",
+          "pos": "prep.",
+          "note": "Contracts with articles: no, na, nos, nas.",
+          "example": {
+            "target": "Moro em Lisboa.",
+            "gloss": "I live in Lisbon."
+          }
+        },
+        {
+          "id": "a",
+          "hr": "a",
+          "en": "to, at",
+          "pos": "prep.",
+          "note": "Contracts with articles: ao, à, aos, às.",
+          "example": {
+            "target": "Vamos ao cinema à noite.",
+            "gloss": "We're going to the cinema in the evening."
+          }
+        },
+        {
+          "id": "para",
+          "hr": "para",
+          "en": "for, to(wards)",
+          "pos": "prep.",
+          "note": "\"Vou para casa\" suggests staying; \"vou a casa\" a short visit.",
+          "example": {
+            "target": "Vou para casa agora.",
+            "gloss": "I'm going home now."
+          }
+        },
+        {
+          "id": "por",
+          "hr": "por",
+          "en": "by, for, through",
+          "pos": "prep.",
+          "note": "Contracts with articles: pelo, pela.",
+          "example": {
+            "target": "Obrigado por tudo.",
+            "gloss": "Thank you for everything."
+          }
+        },
+        {
+          "id": "com",
+          "hr": "com",
+          "en": "with",
+          "pos": "prep.",
+          "example": {
+            "target": "Vou com os meus amigos.",
+            "gloss": "I'm going with my friends."
+          }
+        },
+        {
+          "id": "sem",
+          "hr": "sem",
+          "en": "without",
+          "pos": "prep.",
+          "example": {
+            "target": "Um café sem açúcar, por favor.",
+            "gloss": "A coffee without sugar, please."
+          }
+        },
+        {
+          "id": "sobre",
+          "hr": "sobre",
+          "en": "on, about",
+          "pos": "prep.",
+          "example": {
+            "target": "O livro está sobre a mesa.",
+            "gloss": "The book is on the table."
+          }
+        },
+        {
+          "id": "até",
+          "hr": "até",
+          "en": "until, up to",
+          "pos": "prep.",
+          "note": "Also in greetings: até logo, até amanhã.",
+          "example": {
+            "target": "Fico no trabalho até às seis.",
+            "gloss": "I stay at work until six."
+          }
+        },
+        {
+          "id": "depois de",
+          "hr": "depois de",
+          "en": "after",
+          "pos": "prep.",
+          "example": {
+            "target": "Depois do jantar, vemos um filme.",
+            "gloss": "After dinner, we watch a film."
+          }
+        },
+        {
+          "id": "antes de",
+          "hr": "antes de",
+          "en": "before",
+          "pos": "prep.",
+          "example": {
+            "target": "Antes de sair, fecha a janela.",
+            "gloss": "Before leaving, close the window."
+          }
+        },
+        {
+          "id": "dentro de",
+          "hr": "dentro de",
+          "en": "inside",
+          "pos": "prep.",
+          "example": {
+            "target": "As chaves estão dentro do saco.",
+            "gloss": "The keys are inside the bag."
+          }
+        },
+        {
+          "id": "fora de",
+          "hr": "fora de",
+          "en": "outside",
+          "pos": "prep.",
+          "example": {
+            "target": "O cão dorme fora de casa.",
+            "gloss": "The dog sleeps outside the house."
+          }
+        },
+        {
+          "id": "desde",
+          "hr": "desde",
+          "en": "since, from",
+          "pos": "prep.",
+          "example": {
+            "target": "Moro no Porto desde janeiro.",
+            "gloss": "I have lived in Porto since January."
+          }
+        },
+        {
+          "id": "durante",
+          "hr": "durante",
+          "en": "during",
+          "pos": "prep.",
+          "example": {
+            "target": "Durante a semana trabalho muito.",
+            "gloss": "During the week I work a lot."
+          }
+        },
+        {
+          "id": "e",
+          "hr": "e",
+          "en": "and",
+          "pos": "conj.",
+          "example": {
+            "target": "Quero pão e queijo.",
+            "gloss": "I want bread and cheese."
+          }
+        },
+        {
+          "id": "ou",
+          "hr": "ou",
+          "en": "or",
+          "pos": "conj.",
+          "example": {
+            "target": "Preferes chá ou café?",
+            "gloss": "Do you prefer tea or coffee?"
+          }
+        },
+        {
+          "id": "mas",
+          "hr": "mas",
+          "en": "but",
+          "pos": "conj.",
+          "example": {
+            "target": "Gosto do casaco, mas é caro.",
+            "gloss": "I like the coat, but it's expensive."
+          }
+        },
+        {
+          "id": "porque",
+          "hr": "porque",
+          "en": "because",
+          "pos": "conj.",
+          "example": {
+            "target": "Fico em casa porque estou doente.",
+            "gloss": "I'm staying home because I'm ill."
+          }
+        },
+        {
+          "id": "se",
+          "hr": "se",
+          "en": "if",
+          "pos": "conj.",
+          "example": {
+            "target": "Se chover, ficamos em casa.",
+            "gloss": "If it rains, we stay at home."
+          }
+        },
+        {
+          "id": "nem",
+          "hr": "nem",
+          "en": "nor, not even",
+          "pos": "conj.",
+          "example": {
+            "target": "Não como carne nem peixe.",
+            "gloss": "I eat neither meat nor fish."
+          }
+        },
+        {
+          "id": "muito",
+          "hr": "muito",
+          "en": "very, a lot",
+          "pos": "adv.",
+          "example": {
+            "target": "Gosto muito de Lisboa.",
+            "gloss": "I like Lisbon a lot."
+          }
+        },
+        {
+          "id": "pouco",
+          "hr": "pouco",
+          "en": "little, not much",
+          "pos": "adv.",
+          "example": {
+            "target": "Ele fala pouco.",
+            "gloss": "He speaks little."
+          }
+        },
+        {
+          "id": "bem",
+          "hr": "bem",
+          "en": "well",
+          "pos": "adv.",
+          "example": {
+            "target": "Estou bem, obrigada.",
+            "gloss": "I'm well, thank you."
+          }
+        },
+        {
+          "id": "mal",
+          "hr": "mal",
+          "en": "badly",
+          "pos": "adv.",
+          "example": {
+            "target": "Dormi mal esta noite.",
+            "gloss": "I slept badly last night."
+          }
+        },
+        {
+          "id": "já",
+          "hr": "já",
+          "en": "already; right away",
+          "pos": "adv.",
+          "example": {
+            "target": "O comboio já partiu.",
+            "gloss": "The train has already left."
+          }
+        },
+        {
+          "id": "ainda",
+          "hr": "ainda",
+          "en": "still, yet",
+          "pos": "adv.",
+          "example": {
+            "target": "Ainda estás no trabalho?",
+            "gloss": "Are you still at work?"
+          }
+        },
+        {
+          "id": "só",
+          "hr": "só",
+          "en": "only, just",
+          "pos": "adv.",
+          "example": {
+            "target": "Só quero água.",
+            "gloss": "I only want water."
+          }
+        },
+        {
+          "id": "cá",
+          "hr": "cá",
+          "en": "here (over here)",
+          "pos": "adv.",
+          "note": "Very common in Portugal, especially with movement: vem cá.",
+          "example": {
+            "target": "Vem cá, por favor.",
+            "gloss": "Come here, please."
+          }
+        },
+        {
+          "id": "logo",
+          "hr": "logo",
+          "en": "later (today), soon",
+          "pos": "adv.",
+          "note": "Very Portuguese: \"até logo\" = see you later today.",
+          "example": {
+            "target": "Falamos logo à tarde.",
+            "gloss": "We'll talk later this afternoon."
+          }
+        },
+        {
+          "id": "este",
+          "hr": "este",
+          "en": "this (near me)",
+          "pos": "pron.",
+          "note": "Determiner and pronoun; feminine esta.",
+          "example": {
+            "target": "Este livro é meu.",
+            "gloss": "This book is mine."
+          }
+        },
+        {
+          "id": "esse",
+          "hr": "esse",
+          "en": "that (near you)",
+          "pos": "pron.",
+          "note": "Refers to something near the listener; feminine essa.",
+          "example": {
+            "target": "Esse casaco é novo?",
+            "gloss": "Is that coat (of yours) new?"
+          }
+        },
+        {
+          "id": "aquele",
+          "hr": "aquele",
+          "en": "that (over there)",
+          "pos": "pron.",
+          "note": "Far from both speakers; feminine aquela.",
+          "example": {
+            "target": "Aquele senhor é o meu avô.",
+            "gloss": "That man over there is my grandfather."
+          }
+        },
+        {
+          "id": "isto",
+          "hr": "isto",
+          "en": "this (thing)",
+          "pos": "pron.",
+          "note": "Neutral, invariable.",
+          "example": {
+            "target": "Isto é para ti.",
+            "gloss": "This is for you."
+          }
+        },
+        {
+          "id": "isso",
+          "hr": "isso",
+          "en": "that (thing, near you)",
+          "pos": "pron.",
+          "note": "Neutral, invariable.",
+          "example": {
+            "target": "Isso é verdade.",
+            "gloss": "That is true."
+          }
+        },
+        {
+          "id": "aquilo",
+          "hr": "aquilo",
+          "en": "that (thing, over there)",
+          "pos": "pron.",
+          "note": "Neutral, invariable.",
+          "example": {
+            "target": "O que é aquilo ali?",
+            "gloss": "What is that over there?"
+          }
+        },
+        {
+          "id": "todo",
+          "hr": "todo",
+          "en": "all, whole, every",
+          "pos": "pron.",
+          "note": "In Portugal: todo o dia = the whole day; todos os dias = every day.",
+          "example": {
+            "target": "Trabalho todo o dia.",
+            "gloss": "I work all day."
+          }
+        },
+        {
+          "id": "outro",
+          "hr": "outro",
+          "en": "other, another",
+          "pos": "pron.",
+          "note": "No \"um\" before it: outro café, not \"um outro\".",
+          "example": {
+            "target": "Quero outro café, por favor.",
+            "gloss": "I want another coffee, please."
+          }
+        },
+        {
+          "id": "cada",
+          "hr": "cada",
+          "en": "each, every",
+          "pos": "pron.",
+          "note": "Invariable.",
+          "example": {
+            "target": "Cada aluno tem um livro.",
+            "gloss": "Each student has a book."
+          }
+        },
+        {
+          "id": "algum",
+          "hr": "algum",
+          "en": "some, any",
+          "pos": "pron.",
+          "note": "Feminine alguma; plural alguns, algumas.",
+          "example": {
+            "target": "Há algum banco aqui perto?",
+            "gloss": "Is there a bank near here?"
+          }
+        },
+        {
+          "id": "nenhum",
+          "hr": "nenhum",
+          "en": "no, none",
+          "pos": "pron.",
+          "note": "Feminine nenhuma; used with não before the verb.",
+          "example": {
+            "target": "Não tenho nenhum problema.",
+            "gloss": "I have no problem."
+          }
+        },
+        {
+          "id": "mesmo",
+          "hr": "mesmo",
+          "en": "same; really",
+          "pos": "pron.",
+          "note": "O mesmo = the same; as adverb: é mesmo bom = it's really good.",
+          "example": {
+            "target": "Temos o mesmo nome.",
+            "gloss": "We have the same name."
+          }
+        },
+        {
+          "id": "tudo",
+          "hr": "tudo",
+          "en": "everything",
+          "pos": "pron.",
+          "example": {
+            "target": "Está tudo bem?",
+            "gloss": "Is everything OK?"
+          }
+        },
+        {
+          "id": "nada",
+          "hr": "nada",
+          "en": "nothing",
+          "pos": "pron.",
+          "example": {
+            "target": "Não quero nada, obrigado.",
+            "gloss": "I don't want anything, thank you."
+          }
+        },
+        {
+          "id": "alguém",
+          "hr": "alguém",
+          "en": "somebody, anybody",
+          "pos": "pron.",
+          "example": {
+            "target": "Alguém sabe a resposta?",
+            "gloss": "Does anybody know the answer?"
+          }
+        },
+        {
+          "id": "ninguém",
+          "hr": "ninguém",
+          "en": "nobody",
+          "pos": "pron.",
+          "example": {
+            "target": "Não há ninguém em casa.",
+            "gloss": "There is nobody at home."
+          }
+        },
+        {
+          "id": "então",
+          "hr": "então",
+          "en": "so, then",
+          "pos": "adv.",
+          "note": "Very common conversation opener in Portugal: Então, tudo bem?",
+          "example": {
+            "target": "Então, vamos?",
+            "gloss": "So, shall we go?"
+          }
+        },
+        {
+          "id": "por isso",
+          "hr": "por isso",
+          "en": "that's why, therefore",
+          "pos": "phrase",
+          "example": {
+            "target": "Está a chover, por isso levo o guarda-chuva.",
+            "gloss": "It's raining, that's why I'm taking the umbrella."
+          }
+        },
+        {
+          "id": "finalmente",
+          "hr": "finalmente",
+          "en": "finally",
+          "pos": "adv.",
+          "example": {
+            "target": "Finalmente chegaste!",
+            "gloss": "You finally arrived!"
+          }
+        },
+        {
+          "id": "por exemplo",
+          "hr": "por exemplo",
+          "en": "for example",
+          "pos": "phrase",
+          "example": {
+            "target": "Gosto de fruta, por exemplo, maçãs e peras.",
+            "gloss": "I like fruit, for example, apples and pears."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}
