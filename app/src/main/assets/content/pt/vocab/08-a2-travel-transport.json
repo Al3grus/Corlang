@@ -1,0 +1,858 @@
+{
+  "packs": [
+    {
+      "id": "08-a2-travel-transport",
+      "title": "Travel & transport",
+      "level": "A2",
+      "words": [
+        {
+          "id": "mala",
+          "hr": "mala",
+          "en": "suitcase",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ainda não fiz a mala para a viagem.",
+            "gloss": "I still haven't packed my suitcase for the trip."
+          }
+        },
+        {
+          "id": "bagagem",
+          "hr": "bagagem",
+          "en": "luggage",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha bagagem ficou no aeroporto de Madrid.",
+            "gloss": "My luggage was left at Madrid airport."
+          }
+        },
+        {
+          "id": "mochila",
+          "hr": "mochila",
+          "en": "backpack",
+          "pos": "n. f.",
+          "example": {
+            "target": "Levo só uma mochila para o fim de semana.",
+            "gloss": "I'm only taking a backpack for the weekend."
+          }
+        },
+        {
+          "id": "passaporte",
+          "hr": "passaporte",
+          "en": "passport",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu passaporte está válido até 2030.",
+            "gloss": "My passport is valid until 2030."
+          }
+        },
+        {
+          "id": "bilhete de identidade",
+          "hr": "bilhete de identidade",
+          "en": "identity card",
+          "pos": "n. m.",
+          "note": "In Portugal the modern document is the Cartão de Cidadão, but people still say bilhete de identidade.",
+          "example": {
+            "target": "Mostrei o bilhete de identidade na receção do hotel.",
+            "gloss": "I showed my identity card at the hotel reception."
+          }
+        },
+        {
+          "id": "fronteira",
+          "hr": "fronteira",
+          "en": "border",
+          "pos": "n. f.",
+          "example": {
+            "target": "Passámos a fronteira entre Portugal e Espanha de manhã.",
+            "gloss": "We crossed the border between Portugal and Spain in the morning."
+          }
+        },
+        {
+          "id": "alfândega",
+          "hr": "alfândega",
+          "en": "customs",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na alfândega, abriram-me a mala.",
+            "gloss": "At customs, they opened my suitcase."
+          }
+        },
+        {
+          "id": "voo",
+          "hr": "voo",
+          "en": "flight",
+          "pos": "n. m.",
+          "example": {
+            "target": "O voo para Paris parte às sete da manhã.",
+            "gloss": "The flight to Paris leaves at seven in the morning."
+          }
+        },
+        {
+          "id": "embarque",
+          "hr": "embarque",
+          "en": "boarding",
+          "pos": "n. m.",
+          "example": {
+            "target": "O embarque começa às seis e meia.",
+            "gloss": "Boarding starts at half past six."
+          }
+        },
+        {
+          "id": "porta de embarque",
+          "hr": "porta de embarque",
+          "en": "boarding gate",
+          "pos": "n. f.",
+          "example": {
+            "target": "A nossa porta de embarque é a número doze.",
+            "gloss": "Our boarding gate is number twelve."
+          }
+        },
+        {
+          "id": "cartão de embarque",
+          "hr": "cartão de embarque",
+          "en": "boarding pass",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tenho o cartão de embarque no telemóvel.",
+            "gloss": "I have the boarding pass on my mobile phone."
+          }
+        },
+        {
+          "id": "chegada",
+          "hr": "chegada",
+          "en": "arrival",
+          "pos": "n. f.",
+          "example": {
+            "target": "A chegada do comboio está prevista para as dez.",
+            "gloss": "The train's arrival is scheduled for ten o'clock."
+          }
+        },
+        {
+          "id": "partida",
+          "hr": "partida",
+          "en": "departure",
+          "pos": "n. f.",
+          "example": {
+            "target": "O painel mostra as partidas e as chegadas.",
+            "gloss": "The board shows the departures and the arrivals."
+          }
+        },
+        {
+          "id": "atraso",
+          "hr": "atraso",
+          "en": "delay",
+          "pos": "n. m.",
+          "example": {
+            "target": "O avião tem um atraso de quarenta minutos.",
+            "gloss": "The plane has a forty-minute delay."
+          }
+        },
+        {
+          "id": "atrasado",
+          "hr": "atrasado",
+          "en": "late, delayed",
+          "pos": "adj.",
+          "example": {
+            "target": "Chegámos atrasados à estação.",
+            "gloss": "We arrived late at the station."
+          }
+        },
+        {
+          "id": "horário",
+          "hr": "horário",
+          "en": "timetable, schedule",
+          "pos": "n. m.",
+          "example": {
+            "target": "Consultei o horário dos comboios na internet.",
+            "gloss": "I checked the train timetable online."
+          }
+        },
+        {
+          "id": "escala",
+          "hr": "escala",
+          "en": "layover, stopover",
+          "pos": "n. f.",
+          "example": {
+            "target": "O voo faz escala em Madrid.",
+            "gloss": "The flight has a layover in Madrid."
+          }
+        },
+        {
+          "id": "direto",
+          "hr": "direto",
+          "en": "direct",
+          "pos": "adj.",
+          "example": {
+            "target": "Há um comboio direto para Faro?",
+            "gloss": "Is there a direct train to Faro?"
+          }
+        },
+        {
+          "id": "aterrar",
+          "hr": "aterrar",
+          "en": "to land",
+          "pos": "v.",
+          "note": "The European verb for a plane landing.",
+          "example": {
+            "target": "O avião aterrou às nove em ponto.",
+            "gloss": "The plane landed at nine o'clock sharp."
+          }
+        },
+        {
+          "id": "descolar",
+          "hr": "descolar",
+          "en": "to take off",
+          "pos": "v.",
+          "note": "The European verb for a plane taking off.",
+          "example": {
+            "target": "O avião descolou com meia hora de atraso.",
+            "gloss": "The plane took off half an hour late."
+          }
+        },
+        {
+          "id": "hospedeira",
+          "hr": "hospedeira",
+          "en": "flight attendant",
+          "pos": "n. f.",
+          "note": "Also hospedeira de bordo; the European term.",
+          "example": {
+            "target": "A hospedeira serviu-nos café durante o voo.",
+            "gloss": "The flight attendant served us coffee during the flight."
+          }
+        },
+        {
+          "id": "cinto de segurança",
+          "hr": "cinto de segurança",
+          "en": "seatbelt",
+          "pos": "n. m.",
+          "example": {
+            "target": "Aperta o cinto de segurança, por favor.",
+            "gloss": "Fasten your seatbelt, please."
+          }
+        },
+        {
+          "id": "carruagem",
+          "hr": "carruagem",
+          "en": "train carriage",
+          "pos": "n. f.",
+          "note": "The European term for a railway car.",
+          "example": {
+            "target": "O nosso lugar é na carruagem número quatro.",
+            "gloss": "Our seat is in carriage number four."
+          }
+        },
+        {
+          "id": "linha",
+          "hr": "linha",
+          "en": "line; platform track",
+          "pos": "n. f.",
+          "note": "At Portuguese stations, linha is the track a train leaves from.",
+          "example": {
+            "target": "O comboio para Sintra parte da linha três.",
+            "gloss": "The train to Sintra leaves from track three."
+          }
+        },
+        {
+          "id": "bilheteira",
+          "hr": "bilheteira",
+          "en": "ticket office",
+          "pos": "n. f.",
+          "note": "The European term.",
+          "example": {
+            "target": "Há uma fila grande na bilheteira.",
+            "gloss": "There is a long queue at the ticket office."
+          }
+        },
+        {
+          "id": "ida e volta",
+          "hr": "ida e volta",
+          "en": "return (ticket), round trip",
+          "pos": "phrase",
+          "example": {
+            "target": "Queria um bilhete de ida e volta para Coimbra.",
+            "gloss": "I'd like a return ticket to Coimbra."
+          }
+        },
+        {
+          "id": "passageiro",
+          "hr": "passageiro",
+          "en": "passenger",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os passageiros esperam na linha dois.",
+            "gloss": "The passengers are waiting on track two."
+          }
+        },
+        {
+          "id": "barco",
+          "hr": "barco",
+          "en": "boat",
+          "pos": "n. m.",
+          "example": {
+            "target": "Atravessámos o rio de barco.",
+            "gloss": "We crossed the river by boat."
+          }
+        },
+        {
+          "id": "cais",
+          "hr": "cais",
+          "en": "quay, pier",
+          "pos": "n. m.",
+          "example": {
+            "target": "O barco parte do cais número dois.",
+            "gloss": "The boat leaves from pier number two."
+          }
+        },
+        {
+          "id": "mota",
+          "hr": "mota",
+          "en": "motorbike",
+          "pos": "n. f.",
+          "note": "The European term.",
+          "example": {
+            "target": "O meu vizinho vai para o trabalho de mota.",
+            "gloss": "My neighbour goes to work by motorbike."
+          }
+        },
+        {
+          "id": "boleia",
+          "hr": "boleia",
+          "en": "lift, ride",
+          "pos": "n. f.",
+          "note": "dar boleia = to give someone a lift; the European term.",
+          "example": {
+            "target": "O João deu-me boleia até à estação.",
+            "gloss": "João gave me a lift to the station."
+          }
+        },
+        {
+          "id": "estrada",
+          "hr": "estrada",
+          "en": "road",
+          "pos": "n. f.",
+          "example": {
+            "target": "A estrada para a aldeia é estreita.",
+            "gloss": "The road to the village is narrow."
+          }
+        },
+        {
+          "id": "autoestrada",
+          "hr": "autoestrada",
+          "en": "motorway",
+          "pos": "n. f.",
+          "example": {
+            "target": "Fomos pela autoestrada até ao Algarve.",
+            "gloss": "We took the motorway to the Algarve."
+          }
+        },
+        {
+          "id": "portagem",
+          "hr": "portagem",
+          "en": "toll",
+          "pos": "n. f.",
+          "note": "The European term for a road toll.",
+          "example": {
+            "target": "Pagámos duas portagens na viagem.",
+            "gloss": "We paid two tolls on the trip."
+          }
+        },
+        {
+          "id": "rotunda",
+          "hr": "rotunda",
+          "en": "roundabout",
+          "pos": "n. f.",
+          "note": "The European term.",
+          "example": {
+            "target": "Na rotunda, sai na segunda saída.",
+            "gloss": "At the roundabout, take the second exit."
+          }
+        },
+        {
+          "id": "trânsito",
+          "hr": "trânsito",
+          "en": "traffic",
+          "pos": "n. m.",
+          "example": {
+            "target": "Há muito trânsito no centro à hora de ponta.",
+            "gloss": "There is a lot of traffic in the centre at rush hour."
+          }
+        },
+        {
+          "id": "gasolina",
+          "hr": "gasolina",
+          "en": "petrol",
+          "pos": "n. f.",
+          "example": {
+            "target": "A gasolina está muito cara este mês.",
+            "gloss": "Petrol is very expensive this month."
+          }
+        },
+        {
+          "id": "gasóleo",
+          "hr": "gasóleo",
+          "en": "diesel",
+          "pos": "n. m.",
+          "note": "The European term.",
+          "example": {
+            "target": "O nosso carro é a gasóleo.",
+            "gloss": "Our car runs on diesel."
+          }
+        },
+        {
+          "id": "bomba de gasolina",
+          "hr": "bomba de gasolina",
+          "en": "petrol station",
+          "pos": "n. f.",
+          "example": {
+            "target": "Parámos numa bomba de gasolina na autoestrada.",
+            "gloss": "We stopped at a petrol station on the motorway."
+          }
+        },
+        {
+          "id": "estacionamento",
+          "hr": "estacionamento",
+          "en": "parking, car park",
+          "pos": "n. m.",
+          "example": {
+            "target": "O hotel tem estacionamento gratuito.",
+            "gloss": "The hotel has free parking."
+          }
+        },
+        {
+          "id": "estacionar",
+          "hr": "estacionar",
+          "en": "to park",
+          "pos": "v.",
+          "example": {
+            "target": "É proibido estacionar aqui.",
+            "gloss": "Parking is forbidden here."
+          }
+        },
+        {
+          "id": "multa",
+          "hr": "multa",
+          "en": "fine, penalty",
+          "pos": "n. f.",
+          "example": {
+            "target": "Recebi uma multa por excesso de velocidade.",
+            "gloss": "I got a fine for speeding."
+          }
+        },
+        {
+          "id": "carta de condução",
+          "hr": "carta de condução",
+          "en": "driving licence",
+          "pos": "n. f.",
+          "note": "The European term.",
+          "example": {
+            "target": "Tirei a carta de condução aos dezoito anos.",
+            "gloss": "I got my driving licence at eighteen."
+          }
+        },
+        {
+          "id": "avaria",
+          "hr": "avaria",
+          "en": "breakdown",
+          "pos": "n. f.",
+          "example": {
+            "target": "O carro teve uma avaria na autoestrada.",
+            "gloss": "The car broke down on the motorway."
+          }
+        },
+        {
+          "id": "pneu",
+          "hr": "pneu",
+          "en": "tyre",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tivemos de mudar um pneu furado.",
+            "gloss": "We had to change a flat tyre."
+          }
+        },
+        {
+          "id": "alugar",
+          "hr": "alugar",
+          "en": "to rent, to hire",
+          "pos": "v.",
+          "example": {
+            "target": "Vamos alugar um carro nas férias.",
+            "gloss": "We're going to rent a car on holiday."
+          }
+        },
+        {
+          "id": "reservar",
+          "hr": "reservar",
+          "en": "to book, to reserve",
+          "pos": "v.",
+          "example": {
+            "target": "Reservei um quarto para duas noites.",
+            "gloss": "I booked a room for two nights."
+          }
+        },
+        {
+          "id": "reserva",
+          "hr": "reserva",
+          "en": "booking, reservation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Fiz a reserva em nome de Silva.",
+            "gloss": "I made the booking under the name Silva."
+          }
+        },
+        {
+          "id": "pousada",
+          "hr": "pousada",
+          "en": "inn, historic hotel",
+          "pos": "n. f.",
+          "note": "In Portugal, often a hotel in a castle, convent or historic building.",
+          "example": {
+            "target": "Dormimos numa pousada antiga no Alentejo.",
+            "gloss": "We slept in an old pousada in the Alentejo."
+          }
+        },
+        {
+          "id": "alojamento",
+          "hr": "alojamento",
+          "en": "accommodation",
+          "pos": "n. m.",
+          "example": {
+            "target": "O alojamento está incluído no preço da excursão.",
+            "gloss": "Accommodation is included in the price of the tour."
+          }
+        },
+        {
+          "id": "receção",
+          "hr": "receção",
+          "en": "reception",
+          "pos": "n. f.",
+          "note": "European spelling.",
+          "example": {
+            "target": "Deixei a chave na receção.",
+            "gloss": "I left the key at reception."
+          }
+        },
+        {
+          "id": "quarto duplo",
+          "hr": "quarto duplo",
+          "en": "double room",
+          "pos": "n. m.",
+          "example": {
+            "target": "Queria um quarto duplo com vista para o mar.",
+            "gloss": "I'd like a double room with a sea view."
+          }
+        },
+        {
+          "id": "hóspede",
+          "hr": "hóspede",
+          "en": "guest",
+          "pos": "n. m.",
+          "note": "Also feminine: a hóspede.",
+          "example": {
+            "target": "Os hóspedes podem usar a piscina até às dez.",
+            "gloss": "Guests may use the pool until ten."
+          }
+        },
+        {
+          "id": "parque de campismo",
+          "hr": "parque de campismo",
+          "en": "campsite",
+          "pos": "n. m.",
+          "note": "The European term.",
+          "example": {
+            "target": "Ficámos num parque de campismo perto da praia.",
+            "gloss": "We stayed at a campsite near the beach."
+          }
+        },
+        {
+          "id": "tenda",
+          "hr": "tenda",
+          "en": "tent",
+          "pos": "n. f.",
+          "example": {
+            "target": "Montámos a tenda debaixo de uma árvore.",
+            "gloss": "We pitched the tent under a tree."
+          }
+        },
+        {
+          "id": "pequeno-almoço incluído",
+          "hr": "pequeno-almoço incluído",
+          "en": "breakfast included",
+          "pos": "phrase",
+          "note": "pequeno-almoço is the European word for breakfast.",
+          "example": {
+            "target": "O preço do quarto tem o pequeno-almoço incluído.",
+            "gloss": "The room price includes breakfast."
+          }
+        },
+        {
+          "id": "turista",
+          "hr": "turista",
+          "en": "tourist",
+          "pos": "n. m.",
+          "note": "Also feminine: a turista.",
+          "example": {
+            "target": "No verão, há muitos turistas em Lisboa.",
+            "gloss": "In summer, there are many tourists in Lisbon."
+          }
+        },
+        {
+          "id": "mapa",
+          "hr": "mapa",
+          "en": "map",
+          "pos": "n. m.",
+          "note": "Masculine despite ending in -a.",
+          "example": {
+            "target": "Compra um mapa da cidade no quiosque.",
+            "gloss": "Buy a city map at the kiosk."
+          }
+        },
+        {
+          "id": "guia",
+          "hr": "guia",
+          "en": "guide",
+          "pos": "n. m.",
+          "note": "The person can be masculine or feminine: o guia / a guia.",
+          "example": {
+            "target": "O guia explicou a história do castelo.",
+            "gloss": "The guide explained the history of the castle."
+          }
+        },
+        {
+          "id": "monumento",
+          "hr": "monumento",
+          "en": "monument",
+          "pos": "n. m.",
+          "example": {
+            "target": "O Mosteiro dos Jerónimos é um monumento muito famoso.",
+            "gloss": "The Jerónimos Monastery is a very famous monument."
+          }
+        },
+        {
+          "id": "castelo",
+          "hr": "castelo",
+          "en": "castle",
+          "pos": "n. m.",
+          "example": {
+            "target": "Visitámos o castelo de São Jorge.",
+            "gloss": "We visited São Jorge Castle."
+          }
+        },
+        {
+          "id": "miradouro",
+          "hr": "miradouro",
+          "en": "viewpoint, lookout",
+          "pos": "n. m.",
+          "example": {
+            "target": "Deste miradouro vê-se a cidade toda.",
+            "gloss": "From this viewpoint you can see the whole city."
+          }
+        },
+        {
+          "id": "paisagem",
+          "hr": "paisagem",
+          "en": "landscape, scenery",
+          "pos": "n. f.",
+          "example": {
+            "target": "A paisagem do Douro é linda.",
+            "gloss": "The Douro landscape is beautiful."
+          }
+        },
+        {
+          "id": "ilha",
+          "hr": "ilha",
+          "en": "island",
+          "pos": "n. f.",
+          "example": {
+            "target": "A Madeira é uma ilha portuguesa.",
+            "gloss": "Madeira is a Portuguese island."
+          }
+        },
+        {
+          "id": "campo",
+          "hr": "campo",
+          "en": "countryside",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os meus avós vivem no campo.",
+            "gloss": "My grandparents live in the countryside."
+          }
+        },
+        {
+          "id": "aldeia",
+          "hr": "aldeia",
+          "en": "village",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nasci numa aldeia pequena no norte.",
+            "gloss": "I was born in a small village in the north."
+          }
+        },
+        {
+          "id": "vila",
+          "hr": "vila",
+          "en": "small town",
+          "pos": "n. f.",
+          "note": "In Portugal, a vila is bigger than an aldeia and smaller than a cidade.",
+          "example": {
+            "target": "Óbidos é uma vila muito bonita.",
+            "gloss": "Óbidos is a very pretty town."
+          }
+        },
+        {
+          "id": "norte",
+          "hr": "norte",
+          "en": "north",
+          "pos": "n. m.",
+          "example": {
+            "target": "O Porto fica no norte do país.",
+            "gloss": "Porto is in the north of the country."
+          }
+        },
+        {
+          "id": "sul",
+          "hr": "sul",
+          "en": "south",
+          "pos": "n. m.",
+          "example": {
+            "target": "O Algarve fica no sul de Portugal.",
+            "gloss": "The Algarve is in the south of Portugal."
+          }
+        },
+        {
+          "id": "oeste",
+          "hr": "oeste",
+          "en": "west",
+          "pos": "n. m.",
+          "example": {
+            "target": "O sol põe-se a oeste.",
+            "gloss": "The sun sets in the west."
+          }
+        },
+        {
+          "id": "destino",
+          "hr": "destino",
+          "en": "destination",
+          "pos": "n. m.",
+          "example": {
+            "target": "O nosso destino final é Faro.",
+            "gloss": "Our final destination is Faro."
+          }
+        },
+        {
+          "id": "visita guiada",
+          "hr": "visita guiada",
+          "en": "guided tour",
+          "pos": "n. f.",
+          "example": {
+            "target": "Fizemos uma visita guiada ao palácio.",
+            "gloss": "We took a guided tour of the palace."
+          }
+        },
+        {
+          "id": "lembrança",
+          "hr": "lembrança",
+          "en": "souvenir",
+          "pos": "n. f.",
+          "example": {
+            "target": "Comprei umas lembranças para a família.",
+            "gloss": "I bought some souvenirs for the family."
+          }
+        },
+        {
+          "id": "postal",
+          "hr": "postal",
+          "en": "postcard",
+          "pos": "n. m.",
+          "example": {
+            "target": "Mandei um postal aos meus pais.",
+            "gloss": "I sent a postcard to my parents."
+          }
+        },
+        {
+          "id": "agência de viagens",
+          "hr": "agência de viagens",
+          "en": "travel agency",
+          "pos": "n. f.",
+          "example": {
+            "target": "Marcámos as férias numa agência de viagens.",
+            "gloss": "We booked our holidays at a travel agency."
+          }
+        },
+        {
+          "id": "fazer as malas",
+          "hr": "fazer as malas",
+          "en": "to pack (one's bags)",
+          "pos": "phrase",
+          "example": {
+            "target": "Ainda tenho de fazer as malas esta noite.",
+            "gloss": "I still have to pack my bags tonight."
+          }
+        },
+        {
+          "id": "perder o comboio",
+          "hr": "perder o comboio",
+          "en": "to miss the train",
+          "pos": "phrase",
+          "example": {
+            "target": "Acordei tarde e perdi o comboio.",
+            "gloss": "I woke up late and missed the train."
+          }
+        },
+        {
+          "id": "mudar de linha",
+          "hr": "mudar de linha",
+          "en": "to change lines",
+          "pos": "phrase",
+          "example": {
+            "target": "Para ir ao aeroporto, tens de mudar de linha na Alameda.",
+            "gloss": "To go to the airport, you have to change lines at Alameda."
+          }
+        },
+        {
+          "id": "apanhar o autocarro",
+          "hr": "apanhar o autocarro",
+          "en": "to catch the bus",
+          "pos": "phrase",
+          "note": "apanhar is the usual European verb for catching transport.",
+          "example": {
+            "target": "Apanho o autocarro às oito e um quarto.",
+            "gloss": "I catch the bus at a quarter past eight."
+          }
+        },
+        {
+          "id": "virar à esquerda",
+          "hr": "virar à esquerda",
+          "en": "to turn left",
+          "pos": "phrase",
+          "example": {
+            "target": "Vira à esquerda na próxima rua.",
+            "gloss": "Turn left at the next street."
+          }
+        },
+        {
+          "id": "seguir em frente",
+          "hr": "seguir em frente",
+          "en": "to go straight ahead",
+          "pos": "phrase",
+          "example": {
+            "target": "Segue em frente até à praça.",
+            "gloss": "Go straight ahead until the square."
+          }
+        },
+        {
+          "id": "boa viagem",
+          "hr": "boa viagem",
+          "en": "have a good trip",
+          "pos": "interj.",
+          "example": {
+            "target": "Até para a semana e boa viagem!",
+            "gloss": "See you next week and have a good trip!"
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}

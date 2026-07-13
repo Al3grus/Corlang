@@ -1,0 +1,880 @@
+{
+  "packs": [
+    {
+      "id": "10-a2-work-school",
+      "title": "Work & school",
+      "level": "A2",
+      "words": [
+        {
+          "id": "emprego",
+          "hr": "emprego",
+          "en": "job",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ele encontrou um emprego novo no centro da cidade.",
+            "gloss": "He found a new job in the city centre."
+          }
+        },
+        {
+          "id": "trabalho",
+          "hr": "trabalho",
+          "en": "work",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tenho muito trabalho esta semana.",
+            "gloss": "I have a lot of work this week."
+          }
+        },
+        {
+          "id": "empresa",
+          "hr": "empresa",
+          "en": "company",
+          "pos": "n. f.",
+          "example": {
+            "target": "A empresa tem cinquenta funcionários.",
+            "gloss": "The company has fifty employees."
+          }
+        },
+        {
+          "id": "escritório",
+          "hr": "escritório",
+          "en": "office",
+          "pos": "n. m.",
+          "example": {
+            "target": "O escritório fica no segundo andar.",
+            "gloss": "The office is on the second floor."
+          }
+        },
+        {
+          "id": "fábrica",
+          "hr": "fábrica",
+          "en": "factory",
+          "pos": "n. f.",
+          "example": {
+            "target": "O meu pai trabalha numa fábrica de sapatos.",
+            "gloss": "My father works in a shoe factory."
+          }
+        },
+        {
+          "id": "chefe",
+          "hr": "chefe",
+          "en": "boss",
+          "pos": "n. m.",
+          "note": "also 'a chefe' for a woman",
+          "example": {
+            "target": "O chefe pediu-me um relatório para amanhã.",
+            "gloss": "The boss asked me for a report for tomorrow."
+          }
+        },
+        {
+          "id": "patrão",
+          "hr": "patrão",
+          "en": "employer, boss",
+          "pos": "n. m.",
+          "note": "feminine: patroa",
+          "example": {
+            "target": "O patrão paga-nos no fim do mês.",
+            "gloss": "The boss pays us at the end of the month."
+          }
+        },
+        {
+          "id": "funcionário",
+          "hr": "funcionário",
+          "en": "employee",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os funcionários têm uma pausa às dez horas.",
+            "gloss": "The employees have a break at ten o'clock."
+          }
+        },
+        {
+          "id": "empregado de mesa",
+          "hr": "empregado de mesa",
+          "en": "waiter",
+          "pos": "n. m.",
+          "example": {
+            "target": "O empregado de mesa trouxe-nos a ementa.",
+            "gloss": "The waiter brought us the menu."
+          }
+        },
+        {
+          "id": "cozinheiro",
+          "hr": "cozinheiro",
+          "en": "cook",
+          "pos": "n. m.",
+          "example": {
+            "target": "O cozinheiro prepara o almoço na cantina.",
+            "gloss": "The cook prepares lunch in the canteen."
+          }
+        },
+        {
+          "id": "motorista",
+          "hr": "motorista",
+          "en": "driver",
+          "pos": "n. m.",
+          "note": "same form for both genders: o/a motorista",
+          "example": {
+            "target": "O motorista do autocarro é muito simpático.",
+            "gloss": "The bus driver is very nice."
+          }
+        },
+        {
+          "id": "enfermeira",
+          "hr": "enfermeira",
+          "en": "nurse (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A enfermeira trabalha no hospital à noite.",
+            "gloss": "The nurse works at the hospital at night."
+          }
+        },
+        {
+          "id": "engenheiro",
+          "hr": "engenheiro",
+          "en": "engineer",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu irmão é engenheiro informático.",
+            "gloss": "My brother is a computer engineer."
+          }
+        },
+        {
+          "id": "advogado",
+          "hr": "advogado",
+          "en": "lawyer",
+          "pos": "n. m.",
+          "example": {
+            "target": "Falei com um advogado sobre o contrato.",
+            "gloss": "I spoke with a lawyer about the contract."
+          }
+        },
+        {
+          "id": "médica",
+          "hr": "médica",
+          "en": "doctor (female)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A médica atende os doentes de manhã.",
+            "gloss": "The doctor sees patients in the morning."
+          }
+        },
+        {
+          "id": "vendedor",
+          "hr": "vendedor",
+          "en": "salesman, salesperson",
+          "pos": "n. m.",
+          "example": {
+            "target": "O vendedor mostrou-me dois telemóveis.",
+            "gloss": "The salesman showed me two mobile phones."
+          }
+        },
+        {
+          "id": "canalizador",
+          "hr": "canalizador",
+          "en": "plumber",
+          "pos": "n. m.",
+          "example": {
+            "target": "O canalizador arranjou a torneira da casa de banho.",
+            "gloss": "The plumber fixed the bathroom tap."
+          }
+        },
+        {
+          "id": "eletricista",
+          "hr": "eletricista",
+          "en": "electrician",
+          "pos": "n. m.",
+          "note": "same form for both genders: o/a eletricista",
+          "example": {
+            "target": "O eletricista arranjou o interruptor da sala.",
+            "gloss": "The electrician fixed the living-room light switch."
+          }
+        },
+        {
+          "id": "cabeleireiro",
+          "hr": "cabeleireiro",
+          "en": "hairdresser",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vou ao cabeleireiro cortar o cabelo.",
+            "gloss": "I'm going to the hairdresser to get a haircut."
+          }
+        },
+        {
+          "id": "jornalista",
+          "hr": "jornalista",
+          "en": "journalist",
+          "pos": "n. m.",
+          "note": "same form for both genders: o/a jornalista",
+          "example": {
+            "target": "A jornalista escreve para um jornal de Lisboa.",
+            "gloss": "The journalist writes for a Lisbon newspaper."
+          }
+        },
+        {
+          "id": "bombeiro",
+          "hr": "bombeiro",
+          "en": "firefighter",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os bombeiros chegaram muito depressa.",
+            "gloss": "The firefighters arrived very quickly."
+          }
+        },
+        {
+          "id": "polícia",
+          "hr": "polícia",
+          "en": "police officer",
+          "pos": "n. m.",
+          "note": "o polícia = the officer; a polícia = the police force",
+          "example": {
+            "target": "O polícia pediu-me os documentos.",
+            "gloss": "The police officer asked me for my documents."
+          }
+        },
+        {
+          "id": "agricultor",
+          "hr": "agricultor",
+          "en": "farmer",
+          "pos": "n. m.",
+          "example": {
+            "target": "O agricultor levanta-se muito cedo.",
+            "gloss": "The farmer gets up very early."
+          }
+        },
+        {
+          "id": "profissão",
+          "hr": "profissão",
+          "en": "profession",
+          "pos": "n. f.",
+          "example": {
+            "target": "Qual é a tua profissão?",
+            "gloss": "What is your profession?"
+          }
+        },
+        {
+          "id": "carreira",
+          "hr": "carreira",
+          "en": "career",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ela quer fazer carreira na televisão.",
+            "gloss": "She wants to make a career in television."
+          }
+        },
+        {
+          "id": "salário",
+          "hr": "salário",
+          "en": "salary",
+          "pos": "n. m.",
+          "example": {
+            "target": "O salário mínimo subiu este ano.",
+            "gloss": "The minimum wage went up this year."
+          }
+        },
+        {
+          "id": "ordenado",
+          "hr": "ordenado",
+          "en": "wages, pay",
+          "pos": "n. m.",
+          "example": {
+            "target": "Recebo o ordenado no dia vinte e oito.",
+            "gloss": "I get my pay on the twenty-eighth."
+          }
+        },
+        {
+          "id": "aumento",
+          "hr": "aumento",
+          "en": "pay rise",
+          "pos": "n. m.",
+          "example": {
+            "target": "Pedi um aumento ao meu chefe.",
+            "gloss": "I asked my boss for a raise."
+          }
+        },
+        {
+          "id": "currículo",
+          "hr": "currículo",
+          "en": "CV, résumé",
+          "pos": "n. m.",
+          "example": {
+            "target": "Enviei o meu currículo para três empresas.",
+            "gloss": "I sent my CV to three companies."
+          }
+        },
+        {
+          "id": "estágio",
+          "hr": "estágio",
+          "en": "internship",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ela está a fazer um estágio num banco.",
+            "gloss": "She is doing an internship at a bank."
+          }
+        },
+        {
+          "id": "contrato",
+          "hr": "contrato",
+          "en": "contract",
+          "pos": "n. m.",
+          "example": {
+            "target": "Assinei o contrato de trabalho ontem.",
+            "gloss": "I signed the work contract yesterday."
+          }
+        },
+        {
+          "id": "reunião",
+          "hr": "reunião",
+          "en": "meeting",
+          "pos": "n. f.",
+          "example": {
+            "target": "A reunião começa às nove em ponto.",
+            "gloss": "The meeting starts at nine sharp."
+          }
+        },
+        {
+          "id": "entrevista",
+          "hr": "entrevista",
+          "en": "interview",
+          "pos": "n. f.",
+          "example": {
+            "target": "Tenho uma entrevista de emprego na sexta-feira.",
+            "gloss": "I have a job interview on Friday."
+          }
+        },
+        {
+          "id": "horário de trabalho",
+          "hr": "horário de trabalho",
+          "en": "working hours",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu horário de trabalho é das nove às cinco.",
+            "gloss": "My working hours are from nine to five."
+          }
+        },
+        {
+          "id": "turno",
+          "hr": "turno",
+          "en": "shift",
+          "pos": "n. m.",
+          "example": {
+            "target": "Esta semana faço o turno da noite.",
+            "gloss": "This week I'm doing the night shift."
+          }
+        },
+        {
+          "id": "férias",
+          "hr": "férias",
+          "en": "holidays, vacation",
+          "pos": "n. f. pl.",
+          "example": {
+            "target": "Vamos de férias ao Algarve em agosto.",
+            "gloss": "We're going on holiday to the Algarve in August."
+          }
+        },
+        {
+          "id": "folga",
+          "hr": "folga",
+          "en": "day off",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha folga é à segunda-feira.",
+            "gloss": "My day off is on Mondays."
+          }
+        },
+        {
+          "id": "baixa",
+          "hr": "baixa",
+          "en": "sick leave",
+          "pos": "n. f.",
+          "note": "estar de baixa = to be on sick leave",
+          "example": {
+            "target": "Ele está de baixa há duas semanas.",
+            "gloss": "He has been on sick leave for two weeks."
+          }
+        },
+        {
+          "id": "reforma",
+          "hr": "reforma",
+          "en": "retirement",
+          "pos": "n. f.",
+          "note": "also: pension",
+          "example": {
+            "target": "O meu avô já está na reforma.",
+            "gloss": "My grandfather is already retired."
+          }
+        },
+        {
+          "id": "desemprego",
+          "hr": "desemprego",
+          "en": "unemployment",
+          "pos": "n. m.",
+          "example": {
+            "target": "O desemprego baixou este ano.",
+            "gloss": "Unemployment went down this year."
+          }
+        },
+        {
+          "id": "greve",
+          "hr": "greve",
+          "en": "strike",
+          "pos": "n. f.",
+          "example": {
+            "target": "Os enfermeiros fizeram greve na quinta-feira.",
+            "gloss": "The nurses went on strike on Thursday."
+          }
+        },
+        {
+          "id": "candidatar-se",
+          "hr": "candidatar-se",
+          "en": "to apply (for a job)",
+          "pos": "v.",
+          "note": "candidatar-se a um emprego",
+          "example": {
+            "target": "Candidatei-me a um emprego numa loja.",
+            "gloss": "I applied for a job in a shop."
+          }
+        },
+        {
+          "id": "contratar",
+          "hr": "contratar",
+          "en": "to hire",
+          "pos": "v.",
+          "example": {
+            "target": "A empresa vai contratar mais duas pessoas.",
+            "gloss": "The company is going to hire two more people."
+          }
+        },
+        {
+          "id": "despedir",
+          "hr": "despedir",
+          "en": "to fire, to dismiss",
+          "pos": "v.",
+          "example": {
+            "target": "O chefe despediu dois funcionários no mês passado.",
+            "gloss": "The boss fired two employees last month."
+          }
+        },
+        {
+          "id": "demitir-se",
+          "hr": "demitir-se",
+          "en": "to resign, to quit",
+          "pos": "v.",
+          "example": {
+            "target": "Ele demitiu-se porque estava infeliz no trabalho.",
+            "gloss": "He resigned because he was unhappy at work."
+          }
+        },
+        {
+          "id": "universidade",
+          "hr": "universidade",
+          "en": "university",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha filha entrou na universidade este ano.",
+            "gloss": "My daughter got into university this year."
+          }
+        },
+        {
+          "id": "faculdade",
+          "hr": "faculdade",
+          "en": "faculty, college",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ele anda na Faculdade de Letras.",
+            "gloss": "He attends the Faculty of Humanities."
+          }
+        },
+        {
+          "id": "curso",
+          "hr": "curso",
+          "en": "course, degree programme",
+          "pos": "n. m.",
+          "example": {
+            "target": "O curso de enfermagem dura quatro anos.",
+            "gloss": "The nursing degree lasts four years."
+          }
+        },
+        {
+          "id": "aula",
+          "hr": "aula",
+          "en": "class, lesson",
+          "pos": "n. f.",
+          "example": {
+            "target": "A aula de português começa às dez.",
+            "gloss": "The Portuguese class starts at ten."
+          }
+        },
+        {
+          "id": "disciplina",
+          "hr": "disciplina",
+          "en": "school subject",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha disciplina preferida é história.",
+            "gloss": "My favourite subject is history."
+          }
+        },
+        {
+          "id": "professor",
+          "hr": "professor",
+          "en": "teacher",
+          "pos": "n. m.",
+          "example": {
+            "target": "O professor explicou-nos a matéria outra vez.",
+            "gloss": "The teacher explained the material to us again."
+          }
+        },
+        {
+          "id": "aluno",
+          "hr": "aluno",
+          "en": "pupil",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os alunos fazem muitas perguntas na aula.",
+            "gloss": "The pupils ask a lot of questions in class."
+          }
+        },
+        {
+          "id": "estudante",
+          "hr": "estudante",
+          "en": "student",
+          "pos": "n. m.",
+          "note": "same form for both genders: o/a estudante",
+          "example": {
+            "target": "Os estudantes têm desconto no comboio.",
+            "gloss": "Students get a discount on the train."
+          }
+        },
+        {
+          "id": "exame",
+          "hr": "exame",
+          "en": "exam",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tenho exame de matemática amanhã.",
+            "gloss": "I have a maths exam tomorrow."
+          }
+        },
+        {
+          "id": "teste",
+          "hr": "teste",
+          "en": "test",
+          "pos": "n. m.",
+          "example": {
+            "target": "O teste correu-me bem.",
+            "gloss": "The test went well for me."
+          }
+        },
+        {
+          "id": "média",
+          "hr": "média",
+          "en": "grade average",
+          "pos": "n. f.",
+          "example": {
+            "target": "Preciso de uma média alta para entrar em medicina.",
+            "gloss": "I need a high average to get into medicine."
+          }
+        },
+        {
+          "id": "propina",
+          "hr": "propina",
+          "en": "tuition fee",
+          "pos": "n. f.",
+          "note": "in Portugal: university tuition fee, usually plural",
+          "example": {
+            "target": "As propinas pagam-se no início do semestre.",
+            "gloss": "Tuition fees are paid at the beginning of the semester."
+          }
+        },
+        {
+          "id": "matrícula",
+          "hr": "matrícula",
+          "en": "enrolment, registration",
+          "pos": "n. f.",
+          "example": {
+            "target": "Fiz a matrícula na universidade em setembro.",
+            "gloss": "I enrolled at the university in September."
+          }
+        },
+        {
+          "id": "licenciatura",
+          "hr": "licenciatura",
+          "en": "bachelor's degree",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ela terminou a licenciatura em Direito.",
+            "gloss": "She finished her bachelor's degree in Law."
+          }
+        },
+        {
+          "id": "mestrado",
+          "hr": "mestrado",
+          "en": "master's degree",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ele quer fazer um mestrado em Coimbra.",
+            "gloss": "He wants to do a master's degree in Coimbra."
+          }
+        },
+        {
+          "id": "doutoramento",
+          "hr": "doutoramento",
+          "en": "doctorate, PhD",
+          "pos": "n. m.",
+          "example": {
+            "target": "A professora fez o doutoramento em Lisboa.",
+            "gloss": "The professor did her PhD in Lisbon."
+          }
+        },
+        {
+          "id": "bolsa de estudo",
+          "hr": "bolsa de estudo",
+          "en": "scholarship",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ele recebeu uma bolsa de estudo para estudar fora.",
+            "gloss": "He received a scholarship to study abroad."
+          }
+        },
+        {
+          "id": "apontamentos",
+          "hr": "apontamentos",
+          "en": "notes (from class)",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Emprestas-me os teus apontamentos da aula?",
+            "gloss": "Will you lend me your class notes?"
+          }
+        },
+        {
+          "id": "trabalho de casa",
+          "hr": "trabalho de casa",
+          "en": "homework",
+          "pos": "n. m.",
+          "note": "often plural: os trabalhos de casa (TPC)",
+          "example": {
+            "target": "Os meninos fazem o trabalho de casa depois do lanche.",
+            "gloss": "The kids do their homework after their afternoon snack."
+          }
+        },
+        {
+          "id": "trabalho de grupo",
+          "hr": "trabalho de grupo",
+          "en": "group project",
+          "pos": "n. m.",
+          "example": {
+            "target": "Fizemos um trabalho de grupo sobre o ambiente.",
+            "gloss": "We did a group project about the environment."
+          }
+        },
+        {
+          "id": "apresentação",
+          "hr": "apresentação",
+          "en": "presentation",
+          "pos": "n. f.",
+          "example": {
+            "target": "Amanhã tenho uma apresentação na aula de inglês.",
+            "gloss": "Tomorrow I have a presentation in English class."
+          }
+        },
+        {
+          "id": "cantina",
+          "hr": "cantina",
+          "en": "canteen",
+          "pos": "n. f.",
+          "example": {
+            "target": "O almoço na cantina custa três euros.",
+            "gloss": "Lunch at the canteen costs three euros."
+          }
+        },
+        {
+          "id": "recreio",
+          "hr": "recreio",
+          "en": "playground, break time",
+          "pos": "n. m.",
+          "example": {
+            "target": "As crianças brincam no recreio.",
+            "gloss": "The children play in the playground."
+          }
+        },
+        {
+          "id": "turma",
+          "hr": "turma",
+          "en": "class (group of students)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha turma tem vinte e cinco alunos.",
+            "gloss": "My class has twenty-five pupils."
+          }
+        },
+        {
+          "id": "semestre",
+          "hr": "semestre",
+          "en": "semester",
+          "pos": "n. m.",
+          "example": {
+            "target": "O segundo semestre acaba em junho.",
+            "gloss": "The second semester ends in June."
+          }
+        },
+        {
+          "id": "escola secundária",
+          "hr": "escola secundária",
+          "en": "secondary school",
+          "pos": "n. f.",
+          "example": {
+            "target": "A minha irmã anda na escola secundária.",
+            "gloss": "My sister goes to secondary school."
+          }
+        },
+        {
+          "id": "ensino",
+          "hr": "ensino",
+          "en": "education, teaching",
+          "pos": "n. m.",
+          "example": {
+            "target": "O ensino é obrigatório até aos dezoito anos.",
+            "gloss": "Education is compulsory until the age of eighteen."
+          }
+        },
+        {
+          "id": "explicações",
+          "hr": "explicações",
+          "en": "private tutoring",
+          "pos": "n. f. pl.",
+          "note": "singular explicação = explanation",
+          "example": {
+            "target": "O meu filho anda em explicações de matemática.",
+            "gloss": "My son goes to private maths tutoring."
+          }
+        },
+        {
+          "id": "quadro",
+          "hr": "quadro",
+          "en": "board (in classroom)",
+          "pos": "n. m.",
+          "example": {
+            "target": "A professora escreveu a data no quadro.",
+            "gloss": "The teacher wrote the date on the board."
+          }
+        },
+        {
+          "id": "sala de aula",
+          "hr": "sala de aula",
+          "en": "classroom",
+          "pos": "n. f.",
+          "example": {
+            "target": "A sala de aula é grande e tem muita luz.",
+            "gloss": "The classroom is big and has a lot of light."
+          }
+        },
+        {
+          "id": "manual escolar",
+          "hr": "manual escolar",
+          "en": "textbook",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os manuais escolares são caros.",
+            "gloss": "Textbooks are expensive."
+          }
+        },
+        {
+          "id": "avaliação",
+          "hr": "avaliação",
+          "en": "assessment",
+          "pos": "n. f.",
+          "example": {
+            "target": "A avaliação inclui dois testes e um trabalho.",
+            "gloss": "The assessment includes two tests and an assignment."
+          }
+        },
+        {
+          "id": "dúvida",
+          "hr": "dúvida",
+          "en": "doubt, question",
+          "pos": "n. f.",
+          "note": "tirar dúvidas = to clear up questions",
+          "example": {
+            "target": "Podes tirar dúvidas com o professor no fim da aula.",
+            "gloss": "You can clear up questions with the teacher at the end of class."
+          }
+        },
+        {
+          "id": "matéria",
+          "hr": "matéria",
+          "en": "subject matter, material",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ainda não percebi a matéria desta semana.",
+            "gloss": "I still haven't understood this week's material."
+          }
+        },
+        {
+          "id": "chumbar",
+          "hr": "chumbar",
+          "en": "to fail (an exam, a year)",
+          "pos": "v.",
+          "note": "colloquial",
+          "example": {
+            "target": "Ele chumbou a matemática duas vezes.",
+            "gloss": "He failed maths twice."
+          }
+        },
+        {
+          "id": "passar de ano",
+          "hr": "passar de ano",
+          "en": "to pass the school year",
+          "pos": "phrase",
+          "example": {
+            "target": "Ela esforçou-se muito e passou de ano.",
+            "gloss": "She worked very hard and passed the year."
+          }
+        },
+        {
+          "id": "tirar um curso",
+          "hr": "tirar um curso",
+          "en": "to do a degree/course",
+          "pos": "phrase",
+          "example": {
+            "target": "Quero tirar um curso de fotografia.",
+            "gloss": "I want to do a photography course."
+          }
+        },
+        {
+          "id": "inscrever-se",
+          "hr": "inscrever-se",
+          "en": "to enrol, to sign up",
+          "pos": "v.",
+          "example": {
+            "target": "Inscrevi-me num curso de alemão.",
+            "gloss": "I signed up for a German course."
+          }
+        },
+        {
+          "id": "decorar",
+          "hr": "decorar",
+          "en": "to memorize",
+          "pos": "v.",
+          "example": {
+            "target": "Tive de decorar os verbos irregulares.",
+            "gloss": "I had to memorize the irregular verbs."
+          }
+        },
+        {
+          "id": "faltar às aulas",
+          "hr": "faltar às aulas",
+          "en": "to miss class",
+          "pos": "phrase",
+          "example": {
+            "target": "Ele faltou às aulas porque estava doente.",
+            "gloss": "He missed class because he was ill."
+          }
+        }
+      ],
+      "sources": [
+        "portugues-fundamental",
+        "referencial-camoes"
+      ]
+    }
+  ]
+}
