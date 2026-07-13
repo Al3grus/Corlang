@@ -111,6 +111,7 @@ private val TAGLINES = listOf(
     "Jezik u srži",            // Croatian (canonical)
     "Language at the core",    // English
     "Au cœur de la langue",    // French
+    "No coração da língua",    // Portuguese (European)
     "Sprache im Kern",         // German
     "El idioma, en su esencia",// Spanish
     "La lingua nel cuore",     // Italian

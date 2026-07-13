@@ -33,3 +33,19 @@ source key, it doesn't ship.
 
 Keys may be added by adding a row here and a digest file, and extending the known-keys set in
 `ContentValidationTest`.
+
+### Portuguese, European (pt) — target DIPLE B2 (CAPLE), milestone DEPLE B1
+
+Corlang teaches **Português europeu (pt-PT)** exclusively — most platforms only offer Brazilian
+Portuguese. European lexis/grammar (tu, ênclise, estar a + infinitivo, pequeno-almoço…) is an
+authoring REQUIREMENT enforced by a Brazilianism blocklist in the content pipeline.
+
+| Key | Source | Digest |
+|-----|--------|--------|
+| `qecr` | Council of Europe, *Quadro Europeu Comum de Referência para as Línguas* (the CEFR in Portuguese); official can-do descriptors | [cefr-grid.md](cefr-grid.md) |
+| `caple` | CAPLE (Centro de Avaliação e Certificação de Português Língua Estrangeira, Univ. Lisbon / Instituto Camões): exam ladder CIPLE A2 → DEPLE B1 → DIPLE B2 → DAPLE C1, component structure and the ≥55% (Suficiente) pass rule | [caple.md](caple.md) |
+| `deple-sample` | CAPLE, DEPLE (B1) *modelo de exame* — 4-component template for the B1 mock | [caple.md](caple.md) |
+| `diple-sample` | CAPLE, DIPLE (B2) *modelo de exame* — 4-component template for the B2 mock | [caple.md](caple.md) |
+| `referencial-camoes` | Instituto Camões, *Referencial Camões PLE* (per-level content inventories A1–C2 for Portuguese as a foreign language) | [referencial-camoes.md](referencial-camoes.md) |
+| `portugues-fundamental` | CLUL (Centro de Linguística da Univ. de Lisboa), *Português Fundamental* (1984): the official 2,217-word basic vocabulary from a 700k-word SPOKEN European-Portuguese corpus + 30-theme availability vocabulary | [portugues-fundamental.md](portugues-fundamental.md) |
+| `freq-pt` | *A Frequency Dictionary of Portuguese* (Davies & Preto-Bay, Routledge), corpus frequency cross-check (European forms preferred where variants differ) | [portugues-fundamental.md](portugues-fundamental.md) |

@@ -63,4 +63,23 @@ class ExamRulesTest {
     fun `delf requires four sections`() {
         assertFalse(ExamRules.delfPassed(listOf(20 to 25, 20 to 25, 20 to 25)))
     }
+
+    // ----- CAPLE rule (European Portuguese DEPLE/DIPLE): global average >= 55% (Suficiente) -----
+
+    @Test
+    fun `caple passes at 55 percent average with no per-section floor`() {
+        // Equal weights: 60% + 50% + 55% + 55% = avg 55% exactly → Suficiente.
+        assertTrue(ExamRules.caplePassed(listOf(6 to 10, 5 to 10, 11 to 20, 11 to 20)))
+        // A weak section is compensable (unlike DELF): 30% + 80% + 60% + 60% = avg 57.5%.
+        assertTrue(ExamRules.caplePassed(listOf(3 to 10, 8 to 10, 6 to 10, 6 to 10)))
+    }
+
+    @Test
+    fun `caple fails below 55 percent average`() {
+        // 50% across the board.
+        assertFalse(ExamRules.caplePassed(listOf(5 to 10, 5 to 10, 10 to 20, 10 to 20)))
+        assertFalse(ExamRules.caplePassed(emptyList()))
+        // Zero-question section counts as 0% and drags the average.
+        assertFalse(ExamRules.caplePassed(listOf(9 to 10, 9 to 10, 0 to 0, 0 to 10)))
+    }
 }
