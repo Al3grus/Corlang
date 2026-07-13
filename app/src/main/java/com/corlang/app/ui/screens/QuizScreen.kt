@@ -91,6 +91,8 @@ private fun QuizzesTab(container: AppContainer, lang: String) {
     if (active == null) {
         QuizList(container, lang, quizzes) { activeId = it.id }
     } else {
+        // System back exits the quiz (same as the Exit button), not the app.
+        androidx.activity.compose.BackHandler { activeId = null }
         QuizRunner(container, lang, active) { activeId = null }
     }
 }
@@ -418,7 +420,9 @@ private fun QuizSummary(quiz: Quiz, score: Int, onExit: () -> Unit) {
     val total = quiz.questions.size
     val pct = if (total == 0) 0 else score * 100 / total
     Column(
-        modifier = Modifier.fillMaxSize().padding(24.dp),
+        // Scrollable: at large accessibility font sizes the centered stack outgrows the screen
+        // and would clip at both ends, putting the button out of reach.
+        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),
         verticalArrangement = Arrangement.Center
     ) {
         Text("Quiz complete", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)

@@ -47,7 +47,10 @@ import com.corlang.app.ui.theme.CorlangColors
 @Composable
 private fun drillWords(container: AppContainer, lang: String): List<VocabWord> {
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
-    return remember(reviews.size > 0) {
+    // Keyed on the reviews themselves: keying on a boolean (and consumers on source SIZE, which
+    // never changes) meant the due-first ordering could never take effect — drills were always
+    // built from the first deck words instead of the learner's due/seen ones.
+    return remember(reviews) {
         val all = container.words.allWords(lang)
         val today = WordsRepository.todayEpochDay()
         val due = reviews.filter { it.dueEpochDay <= today }.map { it.wordId }.toSet()
@@ -67,12 +70,14 @@ private fun drillWords(container: AppContainer, lang: String): List<VocabWord> {
 fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
     val context = LocalContext.current
     val source = drillWords(container, lang)
-    val items = remember(source.size) { DrillGen.buildClozeItems(source, 8) }
+    val items = remember(source) { DrillGen.buildClozeItems(source, 8) }
 
-    var qIndex by remember { mutableIntStateOf(0) }
-    var score by remember { mutableIntStateOf(0) }
-    var chosen by remember { mutableStateOf<String?>(null) }
-    var finished by remember { mutableStateOf(false) }
+    // Keyed on items: when the reviews flow lands (right after open) and the item list rebuilds,
+    // the drill restarts cleanly instead of pointing old indices at a new list.
+    var qIndex by remember(items) { mutableIntStateOf(0) }
+    var score by remember(items) { mutableIntStateOf(0) }
+    var chosen by remember(items) { mutableStateOf<String?>(null) }
+    var finished by remember(items) { mutableStateOf(false) }
     val feedback = CorlangColors.feedback
 
     if (items.isEmpty()) {
@@ -152,7 +157,7 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
 @Composable
 fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
     val source = drillWords(container, lang)
-    val items = remember(source.size) { DrillGen.buildRecallItems(source, 8) }
+    val items = remember(source) { DrillGen.buildRecallItems(source, 8) }
     RecallRunner(
         container, items,
         "Producing the Croatian yourself, with the right diacritics, is what speaking needs.",
@@ -208,12 +213,12 @@ private fun RecallRunner(
 ) {
     val context = LocalContext.current
 
-    var qIndex by remember { mutableIntStateOf(0) }
-    var score by remember { mutableIntStateOf(0) }
-    var input by remember { mutableStateOf("") }
-    var checked by remember { mutableStateOf(false) }
-    var correct by remember { mutableStateOf(false) }
-    var finished by remember { mutableStateOf(false) }
+    var qIndex by remember(items) { mutableIntStateOf(0) }
+    var score by remember(items) { mutableIntStateOf(0) }
+    var input by remember(items) { mutableStateOf("") }
+    var checked by remember(items) { mutableStateOf(false) }
+    var correct by remember(items) { mutableStateOf(false) }
+    var finished by remember(items) { mutableStateOf(false) }
     val feedback = CorlangColors.feedback
 
     if (items.isEmpty()) {

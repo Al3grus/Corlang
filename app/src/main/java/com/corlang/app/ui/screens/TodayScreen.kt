@@ -79,8 +79,10 @@ fun TodayScreen(
     val reviewPending = minOf(dueNow, Fsrs.REVIEW_CAP)
 
     // Which day is being viewed (defaults to the target; user can browse away with ‹ ›).
-    var viewedDay by remember(lang) { mutableStateOf(targetDay) }
-    var userBrowsed by remember(lang) { mutableStateOf(false) }
+    // Saveable alongside inPlayer: after process death mid-"revisit an old day", the restored
+    // player must show the same day, not silently swap to the current one.
+    var viewedDay by rememberSaveable(lang) { mutableStateOf(targetDay) }
+    var userBrowsed by rememberSaveable(lang) { mutableStateOf(false) }
     LaunchedEffect(targetDay) {
         if (!userBrowsed) viewedDay = targetDay
     }
@@ -91,6 +93,8 @@ fun TodayScreen(
     // Guided session mode.
     var inPlayer by rememberSaveable(lang) { mutableStateOf(false) }
     if (inPlayer) {
+        // System back leaves the player (progress is persisted per step), not the app.
+        androidx.activity.compose.BackHandler { inPlayer = false }
         SessionPlayer(
             container = container,
             lang = lang,
@@ -106,16 +110,19 @@ fun TodayScreen(
     val resourceUrls = remember(lang) {
         container.content.resources(lang).resources.associate { it.name to it.url }
     }
-    val steps = remember(day.day) { buildSessionSteps(day, resourceUrls) }
+    // Keyed on lang TOO: both languages can sit on the same day number, and the cached step
+    // list must not survive a language switch.
+    val steps = remember(lang, day.day) { buildSessionSteps(day, resourceUrls) }
     val checks by container.progress.dayTaskChecks(lang, day.day)
         .collectAsState(initial = emptyList())
     val doneIds = checks.map { it.itemId }.toSet()
     val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val stepsDone = actionSteps.count { s ->
-        // Words/review count only when actually cleared — never from opening or skipping.
+        // Words/review count when cleared OR this day's block was completed (capped blocks can
+        // leave a backlog behind). Skipping never writes the check.
         when (s.kind) {
-            StepKind.WORDS -> unlockedNew == 0
-            StepKind.REVIEW -> reviewPending == 0
+            StepKind.WORDS -> unlockedNew == 0 || s.id in doneIds
+            StepKind.REVIEW -> reviewPending == 0 || s.id in doneIds
             else -> s.id in doneIds
         }
     }
@@ -125,22 +132,24 @@ fun TodayScreen(
 
     // Daily goal ring: today's guided session, measured on the day you're up to (not the one
     // being browsed). Closes fully once a lesson day has been completed today and stays closed.
-    val startOfToday = remember {
+    // Keyed on the epoch day: an unkeyed remember froze "today" — a process alive across
+    // midnight kept counting yesterday's completion as today's and showed the ring done.
+    val startOfToday = remember(today) {
         java.time.LocalDate.now().atStartOfDay(java.time.ZoneId.systemDefault())
             .toInstant().toEpochMilli()
     }
     val completedToday by container.progress.completionsSince(lang, startOfToday)
         .collectAsState(initial = 0)
     val targetDayObj = plan.days.firstOrNull { it.day == targetDay } ?: day
-    val targetSteps = remember(targetDay) { buildSessionSteps(targetDayObj, resourceUrls) }
+    val targetSteps = remember(lang, targetDay) { buildSessionSteps(targetDayObj, resourceUrls) }
     val targetChecks by container.progress.dayTaskChecks(lang, targetDay)
         .collectAsState(initial = emptyList())
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
     val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val targetStepsDone = targetAction.count { s ->
         when (s.kind) {
-            StepKind.WORDS -> unlockedNew == 0
-            StepKind.REVIEW -> reviewPending == 0
+            StepKind.WORDS -> unlockedNew == 0 || s.id in targetDoneIds
+            StepKind.REVIEW -> reviewPending == 0 || s.id in targetDoneIds
             else -> s.id in targetDoneIds
         }
     }

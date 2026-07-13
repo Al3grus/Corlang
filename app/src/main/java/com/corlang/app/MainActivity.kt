@@ -103,6 +103,11 @@ private fun CorlangApp(container: AppContainer) {
     var showOnboarding by rememberSaveable { mutableStateOf(false) }
     if (onboarded == null) return   // one-frame gap while the flag loads; splash just covered it
     if (onboarded == false || showOnboarding) {
+        // Re-running from Settings ("Edit profile") is cancellable with system back; the true
+        // first run isn't (there is no app behind it yet to fall back to).
+        if (onboarded == true) {
+            androidx.activity.compose.BackHandler { showOnboarding = false }
+        }
         OnboardingScreen(container, onFinish = { wantsPlacement ->
             showOnboarding = false
             if (wantsPlacement) showPlacement = true
@@ -197,7 +202,12 @@ private fun CorlangApp(container: AppContainer) {
                     NavigationBarItem(
                         selected = currentRoute == dest.route,
                         onClick = {
+                            // Overlays must close when a tab is chosen, or the nav highlight
+                            // moves while the overlay stays on screen (looks frozen).
                             showSettings = false
+                            showPlacement = false
+                            // A long example sentence must not keep talking over the next tab.
+                            container.tts.stop()
                             navController.navigate(dest.route) {
                                 popUpTo(Dest.TODAY.route) { saveState = true }
                                 launchSingleTop = true

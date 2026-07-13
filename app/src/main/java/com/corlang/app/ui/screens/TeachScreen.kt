@@ -75,6 +75,8 @@ fun TeachScreen(container: AppContainer, lang: String) {
             }
         }
     } else {
+        // System back returns to the concept list, not out of the app.
+        androidx.activity.compose.BackHandler { activeId = null }
         FeynmanRunner(container, lang, active) { activeId = null }
     }
 }
@@ -182,7 +184,11 @@ private fun FeynmanRunner(
                 ) { Text("Explain again") }
                 Button(
                     onClick = {
-                        scope.launch { container.progress.recordFeynman(lang, concept.id, gotCount, total) }
+                        // App-scoped: onExit() disposes the runner at once; a composition-scoped
+                        // launch here was cancelled mid-write and the score silently lost.
+                        container.appScope.launch {
+                            container.progress.recordFeynman(lang, concept.id, gotCount, total)
+                        }
                         onExit()
                     },
                     modifier = Modifier.weight(1f)

@@ -19,6 +19,10 @@ class SpeechInput(private val context: Context) {
     fun isAvailable(): Boolean = SpeechRecognizer.isRecognitionAvailable(context)
 
     private var recognizer: SpeechRecognizer? = null
+    // The active session's listening callback: a new listen() (or cancel/dispose) must tell the
+    // PREEMPTED UI it stopped, or that mic button stays stuck on "Listening…" forever — the
+    // destroyed recognizer never fires its own callbacks.
+    private var activeOnListening: ((Boolean) -> Unit)? = null
     private var langTag: String = "hr-HR"
 
     /** Point recognition at the active language (hr -> hr-HR, fr -> fr-FR). */
@@ -38,6 +42,7 @@ class SpeechInput(private val context: Context) {
         cancel()
         val sr = SpeechRecognizer.createSpeechRecognizer(context)
         recognizer = sr
+        activeOnListening = onListening
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
             putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
             putExtra(RecognizerIntent.EXTRA_LANGUAGE, langTag)
@@ -76,11 +81,13 @@ class SpeechInput(private val context: Context) {
     }
 
     fun cancel() {
+        activeOnListening?.invoke(false)   // release the preempted UI before destroying
         runCatching { recognizer?.cancel() }
         cleanup()
     }
 
     private fun cleanup() {
+        activeOnListening = null
         runCatching { recognizer?.destroy() }
         recognizer = null
     }

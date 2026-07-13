@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -100,6 +101,9 @@ fun WordsScreen(container: AppContainer, lang: String) {
     var served by remember(lang) { mutableIntStateOf(0) }
 
     var inSession by remember(lang) { mutableStateOf(false) }
+    // False until the async queue build lands: the ring must not flash "✓ complete" (total==0)
+    // on first frame and then visibly unwind to the real due count.
+    var queueLoaded by remember(lang) { mutableStateOf(false) }
     // Pack-revisit mode: a review round of a chosen pack that must NOT touch the daily
     // session's saved progress; when it ends we restore the daily session.
     var reviewMode by remember(lang) { mutableStateOf(false) }
@@ -125,12 +129,21 @@ fun WordsScreen(container: AppContainer, lang: String) {
             runCatching { snapshotJson.decodeFromString<SessionSnapshot>(it) }.getOrNull()
         }
         queue.clear()
-        if (snap != null && snap.epochDay == today && snap.remainingIds.isNotEmpty() &&
-            (snap.langCode.isEmpty() || snap.langCode == lang)) {
-            // Resume the interrupted daily session exactly where it was left.
-            queue.addAll(container.words.sessionFromIds(lang, snap.remainingIds))
-            sessionTotal = snap.total
+        // Resume candidates, minus any card that is no longer due — the in-lesson word blocks
+        // grade cards without touching this snapshot, so a stale same-day snapshot would
+        // otherwise re-serve (and re-grade) cards already cleared in a lesson.
+        val resumed =
+            if (snap != null && snap.epochDay == today && snap.remainingIds.isNotEmpty() &&
+                (snap.langCode.isEmpty() || snap.langCode == lang)
+            ) {
+                container.words.sessionFromIds(lang, snap.remainingIds)
+                    .filter { it.review == null || it.review.dueEpochDay <= today }
+            } else emptyList()
+        if (resumed.isNotEmpty() && snap != null) {
+            // Resume the interrupted session; total = done + what actually remains due.
+            queue.addAll(resumed)
             doneCount = snap.done
+            sessionTotal = snap.done + resumed.size
         } else {
             queue.addAll(container.words.buildReviewSession(lang, today))
             sessionTotal = queue.size
@@ -139,12 +152,14 @@ fun WordsScreen(container: AppContainer, lang: String) {
             // same-day snapshot could be restored later and re-serve already-graded cards.
             container.languagePrefs.setWordsSessionSnapshot(lang, snapshotNow())
         }
+        queueLoaded = true
         container.tts.ensureInit()   // warm TTS so the first speaker tap isn't swallowed
     }
 
     val context = LocalContext.current
 
     fun grade(g: SrsGrade) {
+        if (queue.isEmpty()) return   // late fling/tap after the session already ended
         val card = queue.removeAt(0)
         served++
         if (g == SrsGrade.AGAIN) Haptics.reject(context) else Haptics.confirm(context)
@@ -156,9 +171,10 @@ fun WordsScreen(container: AppContainer, lang: String) {
         val sessionDone = queue.isEmpty()
         // In review mode we never write the daily snapshot; in daily mode we write grade +
         // snapshot in ONE ordered coroutine so a force-kill can't desync Room from DataStore.
+        // App-scoped: switching tabs right after the last swipe must not cancel the write.
         val snap = if (sessionDone || reviewMode) null else snapshotNow()
         val wasReview = reviewMode
-        scope.launch {
+        container.appScope.launch {
             container.words.grade(lang, card.word.id, g)
             if (!wasReview) container.languagePrefs.setWordsSessionSnapshot(lang, snap)
             // Rebuild only after the final grade is committed (restores the daily session
@@ -187,6 +203,11 @@ fun WordsScreen(container: AppContainer, lang: String) {
     }
 
     if (inSession && queue.isNotEmpty()) {
+        // System back pauses the session (state is persisted per grade), not the app.
+        androidx.activity.compose.BackHandler {
+            inSession = false
+            if (reviewMode) { reviewMode = false; refreshKey++ }
+        }
         WordSession(
             card = queue.first(),
             cardKey = served,
@@ -209,8 +230,11 @@ fun WordsScreen(container: AppContainer, lang: String) {
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
     val mastered = remember(reviews) { reviews.count { it.isMastered } }
     val vocab = remember(lang) { container.content.vocab(lang) }
-    val ringProgress =
-        if (sessionTotal == 0) 1f else doneCount.toFloat() / sessionTotal
+    val ringProgress = when {
+        !queueLoaded -> 0f
+        sessionTotal == 0 -> 1f
+        else -> doneCount.toFloat() / sessionTotal
+    }
 
     Column(
         modifier = Modifier
@@ -229,7 +253,11 @@ fun WordsScreen(container: AppContainer, lang: String) {
             }
             GoalRing(
                 progress = ringProgress,
-                label = if (queue.isEmpty()) "✓" else "${queue.size}"
+                label = when {
+                    !queueLoaded -> ""
+                    queue.isEmpty() -> "✓"
+                    else -> "${queue.size}"
+                }
             )
         }
 
@@ -522,26 +550,38 @@ internal fun WordSession(
         }
 
         if (revealed) {
+            // One grade per card: once a swipe-fling is in flight (or a button was tapped),
+            // further taps must not grade — a second grade would hit the NEXT, unseen card.
+            val gradeOnce: (SrsGrade) -> Unit = { g ->
+                if (!graded) { graded = true; onGrade(g) }
+            }
+            // Slim horizontal padding: three labels must fit side-by-side on 320dp-wide phones
+            // and at large accessibility font scales without wrapping to uneven heights.
+            val slimPad = PaddingValues(horizontal = 6.dp, vertical = 10.dp)
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Button(
-                    onClick = { onGrade(SrsGrade.AGAIN) },
+                    onClick = { gradeOnce(SrsGrade.AGAIN) },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = feedback.wrongContainer,
                         contentColor = feedback.onWrongContainer
                     ),
+                    contentPadding = slimPad,
                     modifier = Modifier.weight(1f)
-                ) { Text("← Again") }
-                Button(onClick = { onGrade(SrsGrade.GOOD) }, modifier = Modifier.weight(1f)) {
-                    Text("↑ Good ↑")
-                }
+                ) { Text("← Again", maxLines = 1, softWrap = false) }
                 Button(
-                    onClick = { onGrade(SrsGrade.EASY) },
+                    onClick = { gradeOnce(SrsGrade.GOOD) },
+                    contentPadding = slimPad,
+                    modifier = Modifier.weight(1f)
+                ) { Text("↑ Good ↑", maxLines = 1, softWrap = false) }
+                Button(
+                    onClick = { gradeOnce(SrsGrade.EASY) },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = feedback.correctContainer,
                         contentColor = feedback.onCorrectContainer
                     ),
+                    contentPadding = slimPad,
                     modifier = Modifier.weight(1f)
-                ) { Text("Easy →") }
+                ) { Text("Easy →", maxLines = 1, softWrap = false) }
             }
             Text(
                 "Tap a button, or swipe the card in its arrow's direction.",

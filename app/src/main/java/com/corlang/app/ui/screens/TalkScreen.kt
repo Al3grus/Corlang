@@ -7,7 +7,10 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -54,7 +57,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
         // purchase flow (docs/server-ai.md, step 4) and nothing else here changes.
         var showComingSoon by remember { mutableStateOf(false) }
         Column(
-            modifier = Modifier.fillMaxSize().padding(24.dp),
+            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -135,7 +138,9 @@ fun TalkScreen(container: AppContainer, lang: String) {
         if (count > 0) listState.animateScrollToItem(count - 1)
     }
 
-    Column(modifier = Modifier.fillMaxSize()) {
+    // imePadding: with edge-to-edge on, the keyboard would otherwise cover the composer row
+    // entirely — the user typed blind on the one screen where typing is the whole point.
+    Column(modifier = Modifier.fillMaxSize().imePadding()) {
         LazyColumn(
             state = listState,
             modifier = Modifier.weight(1f).fillMaxWidth().padding(horizontal = 12.dp),

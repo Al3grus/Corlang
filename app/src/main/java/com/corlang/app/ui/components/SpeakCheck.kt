@@ -13,6 +13,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -57,6 +58,12 @@ fun SpeakCheck(container: AppContainer, target: String, modifier: Modifier = Mod
     val permission = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { granted -> if (granted) start() else message = "Microphone permission is needed." }
+
+    // Leaving the screen mid-listen must close the mic; otherwise it stays hot until the
+    // recognizer's own timeout and its callbacks fire into a disposed composition.
+    DisposableEffect(Unit) {
+        onDispose { if (listening) container.speech.cancel() }
+    }
 
     Column(modifier = modifier) {
         Row(verticalAlignment = Alignment.CenterVertically) {

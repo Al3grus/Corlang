@@ -1,6 +1,6 @@
 {
-  "versionCode": 33,
-  "versionName": "0.13.2",
-  "notes": "Fix: the goal ring no longer vibrates every time you open the Lesson tab on a completed day. The completion buzz already happens when you mark the day complete, so the ring just fills quietly now.",
+  "versionCode": 34,
+  "versionName": "0.14.0",
+  "notes": "Big reliability pass from a full app review. Day completions, exam sections, and teach-back scores can no longer be lost when leaving a screen quickly; double-taps can't skip lesson steps or grade the wrong flashcard; the back button now exits a lesson/quiz/exam step instead of closing the app; the keyboard no longer covers the chat and lesson answer boxes; and many small fixes for small screens, large font sizes, and after-midnight sessions.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

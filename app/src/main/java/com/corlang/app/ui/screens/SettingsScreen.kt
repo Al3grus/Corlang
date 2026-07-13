@@ -238,7 +238,7 @@ fun SettingsScreen(
                         },
                         shape = SegmentedButtonDefaults.itemShape(index = i, count = options.size),
                         icon = {}
-                    ) { Text(label) }
+                    ) { Text(label, maxLines = 1, softWrap = false) }
                 }
             }
         }

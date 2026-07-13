@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -185,6 +186,10 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            // Rendered OUTSIDE the Scaffold, so with edge-to-edge it must inset itself: without
+            // this the progress bar collides with the status bar/cutout and the bottom buttons
+            // hide under the navigation bar.
+            .systemBarsPadding()
             .verticalScroll(rememberScrollState())
             .imePadding()
             .padding(24.dp)

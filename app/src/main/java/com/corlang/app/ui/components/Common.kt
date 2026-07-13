@@ -171,7 +171,12 @@ fun OptionRow(
                 shake.animateTo(-6f, tween(60))
                 shake.animateTo(0f, tween(40))
             }
-            else -> {}
+            // Reset to rest: a quick "Next" can interrupt the pop/shake mid-flight, and without
+            // this the row would stay scaled/offset for every following question.
+            else -> {
+                pop.snapTo(1f)
+                shake.snapTo(0f)
+            }
         }
     }
     Surface(
