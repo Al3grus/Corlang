@@ -1,6 +1,9 @@
 package com.corlang.app
 
 import android.content.Context
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import com.corlang.app.ai.AiClient
 import com.corlang.app.billing.PremiumManager
 import com.corlang.app.data.ContentRepository
@@ -18,6 +21,14 @@ import com.corlang.app.update.Updater
  * framework for v1; can be swapped for Hilt later without touching call sites that read these.
  */
 class AppContainer(context: Context) {
+    /**
+     * Application-lifetime scope for persistence that must SURVIVE screen disposal. A
+     * rememberCoroutineScope launch followed by navigation/unmount gets cancelled mid-write
+     * (this silently lost day completions, exam sections, and teach-back scores). Main.immediate
+     * so Compose snapshot state may still be touched safely after the write.
+     */
+    val appScope: CoroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
+
     val content: ContentRepository = ContentRepository(context)
     val languagePrefs: LanguagePrefs = LanguagePrefs(context)
     val progress: ProgressRepository =

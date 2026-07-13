@@ -156,6 +156,12 @@ fun ExamScreen(container: AppContainer, lang: String) {
 
     var activeSectionId by rememberSaveable(lang, exam.id) { mutableStateOf<String?>(null) }
 
+    // System back mirrors the on-screen exits: section → overview → exam list. Without this,
+    // back-press mid-section finished the whole Activity and lost the attempt.
+    androidx.activity.compose.BackHandler {
+        if (activeSectionId != null) activeSectionId = null else activeExamId = null
+    }
+
     val section = exam.sections.firstOrNull { it.id == activeSectionId }
     if (section == null) {
         ExamOverview(
@@ -288,7 +294,10 @@ private fun ScoredSectionRunner(
 
     if (finished) {
         val passed = ExamRules.sectionPassed(score, questions.size, section.passPercent)
-        Column(Modifier.fillMaxSize().padding(24.dp), verticalArrangement = Arrangement.Center) {
+        Column(
+            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),
+            verticalArrangement = Arrangement.Center
+        ) {
             Text(section.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             Text(
                 "$score / ${questions.size}  (${if (questions.isNotEmpty()) score * 100 / questions.size else 0}%)",
@@ -469,7 +478,10 @@ private fun OpenSectionRunner(
 
     if (finished) {
         val passed = passCount == section.prompts.size
-        Column(Modifier.fillMaxSize().padding(24.dp), verticalArrangement = Arrangement.Center) {
+        Column(
+            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),
+            verticalArrangement = Arrangement.Center
+        ) {
             Text(section.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             Text(
                 if (passed) "Section passed (self-check)."
@@ -478,9 +490,14 @@ private fun OpenSectionRunner(
                 color = if (passed) feedback.correct else feedback.wrong,
                 modifier = Modifier.padding(vertical = 12.dp)
             )
+            var saving by remember(section.id) { mutableStateOf(false) }
             Button(
+                enabled = !saving,
                 onClick = {
-                    scope.launch {
+                    saving = true
+                    // App-scoped: onExit() disposes this runner immediately, which would cancel
+                    // a composition-scoped write and silently lose the section result.
+                    container.appScope.launch {
                         container.progress.recordExamSection(
                             lang, exam.id, section.id, 0, 0, passed
                         )
@@ -623,8 +640,11 @@ private fun OpenPromptTask(
                 }
             }
             val allTicked = prompt.rubric.indices.all { ticks[it] == true }
+            // Once per prompt: a double-tap would advance twice and skip the next task entirely.
+            var submitted by remember(prompt.prompt) { mutableStateOf(false) }
             Button(
-                onClick = { onDone(allTicked) },
+                onClick = { if (!submitted) { submitted = true; onDone(allTicked) } },
+                enabled = !submitted,
                 modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
             ) {
                 Text(

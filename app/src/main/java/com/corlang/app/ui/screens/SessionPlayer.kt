@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -279,7 +280,7 @@ fun SessionPlayer(
     val resourceUrls = remember(lang) {
         container.content.resources(lang).resources.associate { it.name to it.url }
     }
-    val steps = remember(day.day) { buildSessionSteps(day, resourceUrls) }
+    val steps = remember(lang, day.day) { buildSessionSteps(day, resourceUrls) }
 
     val checks by container.progress.dayTaskChecks(lang, day.day)
         .collectAsState(initial = emptyList())
@@ -295,13 +296,17 @@ fun SessionPlayer(
     val dueNow = reviews.count { it.dueEpochDay <= today }
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
     val unlockedNew = allWords.take(day.day * perLesson).count { it.id !in seenIds }
+    // One lesson serves at most perLesson new words, even when a placement jump unlocked a large
+    // backlog — it drains one lesson-sized block at a time, never a 300-card dump.
+    val newBlock = minOf(unlockedNew, perLesson)
     val reviewPending = minOf(dueNow, Fsrs.REVIEW_CAP)
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
-        // Words/review count as done only when actually cleared, never from a skip — so opening a
-        // step without doing the flashcards leaves it incomplete.
-        StepKind.WORDS -> unlockedNew == 0
-        StepKind.REVIEW -> reviewPending == 0
+        // Done when nothing is waiting OR this day's block was completed. The check is written
+        // only by finishing the block (never by skipping), and it matters when a capped block
+        // leaves a backlog/overflow behind — the step must still count as done for the day.
+        StepKind.WORDS -> unlockedNew == 0 || s.id in doneIds
+        StepKind.REVIEW -> reviewPending == 0 || s.id in doneIds
         else -> s.id in doneIds
     }
 
@@ -332,7 +337,8 @@ fun SessionPlayer(
     var wordIsReview by remember(day.day) { mutableStateOf(false) }
 
     fun markStepDoneAndAdvance(stepId: String) {
-        scope.launch { container.progress.setDayTask(lang, day.day, stepId, true) }
+        // App-scoped: persists even if the player is closed the same instant.
+        container.appScope.launch { container.progress.setDayTask(lang, day.day, stepId, true) }
         if (index < steps.lastIndex) index++
     }
 
@@ -348,11 +354,13 @@ fun SessionPlayer(
     }
 
     fun gradeLessonWord(g: SrsGrade) {
+        if (wordQueue.isEmpty()) return   // late fling/tap after the block already ended
         val card = wordQueue.removeAt(0)
         wordServed++
         if (g == SrsGrade.AGAIN) { Haptics.reject(context); wordQueue.add(card) }
         else { Haptics.confirm(context); wordDone++ }
-        scope.launch { container.words.grade(lang, card.word.id, g) }
+        // App-scoped: an exit right after the last swipe must not cancel the FSRS write.
+        container.appScope.launch { container.words.grade(lang, card.word.id, g) }
         if (wordQueue.isEmpty()) {
             inWords = false
             markStepDoneAndAdvance(wordStepId)
@@ -360,6 +368,8 @@ fun SessionPlayer(
     }
 
     if (inWords && wordQueue.isNotEmpty()) {
+        // System back leaves the word block back to the step (grades already persisted).
+        androidx.activity.compose.BackHandler { inWords = false }
         WordSession(
             card = wordQueue.first(),
             cardKey = wordServed,
@@ -377,6 +387,9 @@ fun SessionPlayer(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
+            // imePadding: the recall/cloze/FILL drills type into fields below the step card —
+            // without it the keyboard covers them and they can't even be scrolled into view.
+            .imePadding()
             .padding(16.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -419,16 +432,21 @@ fun SessionPlayer(
             label = "session-step"
         ) { i ->
             val s = steps[i.coerceIn(0, steps.lastIndex)]
+            // Advance only if we're still ON this step: during the slide transition the outgoing
+            // step's buttons remain tappable, and a double-tap must not skip a step.
+            val advanceFrom: () -> Unit = {
+                if (index == i && index < steps.lastIndex) index++
+            }
             val onDrillDone: () -> Unit = {
-                scope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
-                if (index < steps.lastIndex) index++
+                container.appScope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
+                advanceFrom()
             }
             val markNext: () -> Unit = {
                 if (s.kind != StepKind.INFO && s.kind != StepKind.COMPLETE) {
                     Haptics.confirm(context)
-                    scope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
+                    container.appScope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
                 }
-                if (index < steps.lastIndex) index++
+                advanceFrom()
             }
             val activity = day.activities.getOrNull(s.activityIndex)
 
@@ -483,8 +501,12 @@ fun SessionPlayer(
                         }
                         if (s.kind == StepKind.WORDS) {
                             Text(
-                                if (unlockedNew == 0) "✅ New words done."
-                                else "$unlockedNew new word${if (unlockedNew == 1) "" else "s"} to learn.",
+                                when {
+                                    stepDone(s) -> "✅ New words done."
+                                    unlockedNew > newBlock ->
+                                        "$newBlock new words this lesson (${unlockedNew - newBlock} more unlocked, coming in later lessons)."
+                                    else -> "$newBlock new word${if (newBlock == 1) "" else "s"} to learn."
+                                },
                                 style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.SemiBold,
                                 modifier = Modifier.padding(top = 8.dp)
@@ -492,7 +514,7 @@ fun SessionPlayer(
                         }
                         if (s.kind == StepKind.REVIEW) {
                             Text(
-                                if (reviewPending == 0) "✅ Nothing due to review."
+                                if (stepDone(s)) "✅ Review done."
                                 else "$reviewPending card${if (reviewPending == 1) "" else "s"} to review" +
                                     if (dueNow > reviewPending) " (${dueNow - reviewPending} more in the Words tab)." else ".",
                                 style = MaterialTheme.typography.bodyMedium,
@@ -518,23 +540,24 @@ fun SessionPlayer(
                 // Step actions.
                 when (s.kind) {
                     StepKind.INFO -> Button(
-                        onClick = { if (index < steps.lastIndex) index++ },
+                        onClick = advanceFrom,
                         modifier = Modifier.fillMaxWidth()
                     ) { Text("Let's go →") }
 
                     StepKind.WORDS -> {
-                        if (unlockedNew > 0) {
+                        if (!stepDone(s) && newBlock > 0) {
                             Button(
                                 onClick = {
                                     startWordBlock("words", isReview = false) {
                                         container.words.unlockedNewWords(lang, day.day, perLesson)
+                                            .take(perLesson)
                                     }
                                 },
                                 modifier = Modifier.fillMaxWidth()
-                            ) { Text("Learn $unlockedNew new word${if (unlockedNew == 1) "" else "s"}") }
+                            ) { Text("Learn $newBlock new word${if (newBlock == 1) "" else "s"}") }
                             // Skip only moves past the step for now; it must NOT mark it done.
                             OutlinedButton(
-                                onClick = { if (index < steps.lastIndex) index++ },
+                                onClick = advanceFrom,
                                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                             ) { Text("Skip for now →") }
                         } else {
@@ -545,7 +568,7 @@ fun SessionPlayer(
                     }
 
                     StepKind.REVIEW -> {
-                        if (reviewPending > 0) {
+                        if (!stepDone(s) && reviewPending > 0) {
                             Button(
                                 onClick = {
                                     startWordBlock("review", isReview = true) {
@@ -555,7 +578,7 @@ fun SessionPlayer(
                                 modifier = Modifier.fillMaxWidth()
                             ) { Text("Review $reviewPending card${if (reviewPending == 1) "" else "s"}") }
                             OutlinedButton(
-                                onClick = { if (index < steps.lastIndex) index++ },
+                                onClick = advanceFrom,
                                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                             ) { Text("Skip for now →") }
                         } else {
@@ -600,16 +623,24 @@ fun SessionPlayer(
                     StepKind.GENDER, StepKind.CLOZE, StepKind.RECALL, StepKind.WRAPUP,
                     StepKind.LEARN, StepKind.EXERCISE, StepKind.DIALOGUE -> { /* content drives completion */ }
 
-                    StepKind.COMPLETE -> Button(
-                        onClick = {
-                            scope.launch {
-                                container.progress.completeDay(lang, day.day, totalDays, day.level)
-                            }
-                            Haptics.confirm(context)
-                            onExit()
-                        },
-                        modifier = Modifier.fillMaxWidth()
-                    ) { Text("Mark day ${day.day} complete ✓") }
+                    StepKind.COMPLETE -> {
+                        // App-scoped so exiting the player can't cancel the write mid-flight
+                        // (a composition-scoped launch here silently lost day completions).
+                        // completing guards a double-tap from inserting the day twice.
+                        var completing by remember(day.day) { mutableStateOf(false) }
+                        Button(
+                            enabled = !completing,
+                            onClick = {
+                                completing = true
+                                container.appScope.launch {
+                                    container.progress.completeDay(lang, day.day, totalDays, day.level)
+                                }
+                                Haptics.confirm(context)
+                                onExit()
+                            },
+                            modifier = Modifier.fillMaxWidth()
+                        ) { Text("Mark day ${day.day} complete ✓") }
+                    }
                 }
             }
         }

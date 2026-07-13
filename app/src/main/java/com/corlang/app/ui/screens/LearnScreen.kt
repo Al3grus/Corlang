@@ -42,7 +42,11 @@ fun LearnScreen(container: AppContainer, lang: String) {
                     onClick = { tab = i },
                     shape = SegmentedButtonDefaults.itemShape(index = i, count = labels.size),
                     icon = {}   // the fill color marks the selection; no checkmark
-                ) { Text(label) }
+                ) {
+                    // Never wrap: four labels share the row; "Cheatsheet" would fold to two
+                    // lines on narrow phones / large font scale and make the row uneven.
+                    Text(label, maxLines = 1, softWrap = false)
+                }
             }
         }
         // Peers, not a sequence → a fade (no directional slide) as you switch reference views.
