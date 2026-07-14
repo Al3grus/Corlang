@@ -6,16 +6,17 @@
       Português Fundamental 2,217-word core; Referencial Camões PLE); digests in
       `docs/sources/` (caple.md, portugues-fundamental.md, referencial-camoes.md); source
       keys registered.
-- [ ] **PT-A** — code wiring: SpeechLocales pt→pt-PT, meta.json, reminder/settings/splash pt
+- [x] **PT-A** — code wiring: SpeechLocales pt→pt-PT, meta.json, reminder/settings/splash pt
       branches, `ExamRules.caplePassed` (≥55% average) + wiring, gate extension (guarded).
-- [ ] **PT-B** — levels.json (QECR + CAPLE milestones) + grammar.json (~38 topics, European
+- [x] **PT-B** — levels.json (QECR + CAPLE milestones) + grammar.json (41 topics, European
       specifics: ênclise/próclise, estar a + inf, PPS vs PPC, conjuntivo incl. futuro do
       conjuntivo, infinitivo pessoal).
-- [ ] **PT-C** — vocabulary ~2,500–2,900 words A1→B2, split packs + `_index.json`, gender on
-      every noun, examples, frozen ids (`frozen-word-ids-pt.txt`), **Brazilianism blocklist**
+- [x] **PT-C** — vocabulary 2,300 words A1→B2 (28 packs), split packs + `_index.json`, gender
+      on every noun, examples, frozen ids (`frozen-word-ids-pt.txt`), **Brazilianism blocklist**
       enforced by the integrator.
-- [ ] **PT-D** — plan ~105 days (phase1-a1, phase2-a2, phase3-b1, phase4-b2), self-contained
-      LEARN/EXERCISE/DIALOGUE days ending in CAPLE mock days.
+- [x] **PT-D** — plan 105 days (phase1-a1 A1 1–30, phase2-a2 A2 31–60, phase3-b1 B1 61–85,
+      phase4-b2 B2 86–105), self-contained LEARN/EXERCISE/DIALOGUE days; day 60 = CIPLE
+      checkpoint, days 81–85 = DEPLE drills + mock, days 101–105 = DIPLE drills + mock.
 - [ ] **PT-E** — placement (14Q A0→B2), quizzes (A1–B2), exams.json (pt-b1-deple-mock,
       pt-b2-diple-mock), cheatsheet (European phonetics: vowel reduction, nasal ão/õe/ãe,
       lh/nh, s/z sandhi, open vs closed e/o), feynman (~9 concepts), resources.json (official
