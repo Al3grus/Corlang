@@ -189,40 +189,6 @@ fun SettingsScreen(
             )
         }
 
-        // ----- Profile -----
-        SectionTitle("👤 Profile")
-        val prof by container.languagePrefs.profile.collectAsState(
-            initial = com.corlang.app.data.prefs.LearnerProfile("", "m", "", "", "")
-        )
-        InfoCard {
-            Text(
-                if (prof.name.isBlank()) "No profile yet" else prof.name,
-                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold
-            )
-            Text(
-                buildString {
-                    if (prof.from.isNotBlank()) append("From ${prof.from}")
-                    if (prof.livesIn.isNotBlank()) {
-                        if (isNotEmpty()) append(" · ")
-                        append("lives in ${prof.livesIn}")
-                    }
-                    if (isEmpty()) append("Set it up to unlock your personalized intro phrases.")
-                },
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
-            )
-            OutlinedButton(onClick = onEditProfile, modifier = Modifier.fillMaxWidth()) {
-                Text(if (prof.name.isBlank()) "Set up profile" else "Edit profile")
-            }
-            Text(
-                "Editing the profile also lets you retake the level placement test.",
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 6.dp)
-            )
-        }
-
         // ----- Learning pace -----
         SectionTitle("🃏 Learning pace")
         val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
@@ -243,38 +209,6 @@ fun SettingsScreen(
                         shape = SegmentedButtonDefaults.itemShape(index = i, count = 3),
                         icon = {}
                     ) { Text("$v") }
-                }
-            }
-        }
-
-        // ----- Haptic feedback -----
-        SectionTitle("📳 Haptic feedback")
-        val haptics by container.languagePrefs.hapticsStrength.collectAsState(initial = "MEDIUM")
-        InfoCard {
-            Text("Vibration on answers and card grades",
-                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
-            Text(
-                "Stronger levels are easier to feel mid-swipe at the gym. Picking one plays a sample.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
-            )
-            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
-                val options = listOf("OFF" to "Off", "LIGHT" to "Light", "MEDIUM" to "Medium", "STRONG" to "Strong")
-                options.forEachIndexed { i, (value, label) ->
-                    SegmentedButton(
-                        selected = haptics == value,
-                        onClick = {
-                            scope.launch { container.languagePrefs.setHapticsStrength(value) }
-                            // Let them feel the choice immediately (collector updates the level,
-                            // set it here first so the sample uses the new strength).
-                            com.corlang.app.ui.Haptics.strength =
-                                com.corlang.app.ui.Haptics.Strength.valueOf(value)
-                            com.corlang.app.ui.Haptics.confirm(context)
-                        },
-                        shape = SegmentedButtonDefaults.itemShape(index = i, count = options.size),
-                        icon = {}
-                    ) { Text(label, maxLines = 1, softWrap = false) }
                 }
             }
         }
@@ -317,81 +251,70 @@ fun SettingsScreen(
             }
         }
 
-        // ----- Premium -----
-        SectionTitle("⭐ Corlang Premium")
-        val entitled by container.premium.entitled.collectAsState(initial = false)
+        // ----- Haptic feedback -----
+        SectionTitle("📳 Haptic feedback")
+        val haptics by container.languagePrefs.hapticsStrength.collectAsState(initial = "MEDIUM")
         InfoCard {
+            Text("Vibration on answers and card grades",
+                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
             Text(
-                if (entitled) "Active ✓" else "Coming soon",
-                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold,
-                color = if (entitled) MaterialTheme.colorScheme.primary
-                        else MaterialTheme.colorScheme.onSurface
-            )
-            Text(
-                "Premium unlocks the AI tutor: a conversation partner that chats in your learning " +
-                    "language at your level (Talk tab) and examiner feedback on your exam writing. " +
-                    if (entitled) "Enjoy!"
-                    else "It arrives with the Google Play release.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 2.dp)
-            )
-        }
-
-        // ----- Updates -----
-        SectionTitle("⬇️ App updates")
-        var checkState by remember { mutableStateOf("") }
-        var updateInfo by remember { mutableStateOf<com.corlang.app.update.ReleaseInfo?>(null) }
-        var dl by remember { mutableStateOf(false) }
-        var pct by remember { mutableStateOf(0) }
-        InfoCard {
-            Text(
-                "Installed: v${container.updater.installedVersionName()}",
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.SemiBold
-            )
-            Text(
-                "Updates download and install from within the app, no browsing needed.",
+                "Stronger levels are easier to feel mid-swipe at the gym. Picking one plays a sample.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
             )
-            if (checkState.isNotBlank()) {
-                Text(checkState, style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(bottom = 6.dp))
+            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
+                val options = listOf("OFF" to "Off", "LIGHT" to "Light", "MEDIUM" to "Medium", "STRONG" to "Strong")
+                options.forEachIndexed { i, (value, label) ->
+                    SegmentedButton(
+                        selected = haptics == value,
+                        onClick = {
+                            scope.launch { container.languagePrefs.setHapticsStrength(value) }
+                            // Let them feel the choice immediately (collector updates the level,
+                            // set it here first so the sample uses the new strength).
+                            com.corlang.app.ui.Haptics.strength =
+                                com.corlang.app.ui.Haptics.Strength.valueOf(value)
+                            com.corlang.app.ui.Haptics.confirm(context)
+                        },
+                        shape = SegmentedButtonDefaults.itemShape(index = i, count = options.size),
+                        icon = {}
+                    ) { Text(label, maxLines = 1, softWrap = false) }
+                }
             }
-            val info = updateInfo
-            if (info != null) {
-                Button(
-                    enabled = !dl,
-                    onClick = {
-                        dl = true
-                        scope.launch {
-                            val apk = container.updater.downloadApk(info) { pct = it }
-                            dl = false
-                            if (apk != null) container.updater.installApk(apk)
-                            else checkState = "Download failed, try again."
-                        }
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                ) { Text(if (dl) "Downloading… $pct%" else "Install v${info.versionName}") }
-            } else {
-                OutlinedButton(
-                    onClick = {
-                        checkState = "Checking…"
-                        scope.launch {
-                            val latest = container.updater.fetchLatest()
-                            checkState = when {
-                                latest == null -> "Couldn't reach the update server."
-                                container.updater.isNewer(latest) -> "v${latest.versionName} available!"
-                                else -> "You're on the latest version ✓"
-                            }
-                            if (latest != null && container.updater.isNewer(latest)) updateInfo = latest
-                        }
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                ) { Text("Check for updates") }
+        }
+
+        // ----- Profile -----
+        SectionTitle("👤 Profile")
+        val prof by container.languagePrefs.profile.collectAsState(
+            initial = com.corlang.app.data.prefs.LearnerProfile("", "m", "", "", "")
+        )
+        InfoCard {
+            Text(
+                if (prof.name.isBlank()) "No profile yet" else prof.name,
+                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                buildString {
+                    if (prof.from.isNotBlank()) append("From ${prof.from}")
+                    if (prof.livesIn.isNotBlank()) {
+                        if (isNotEmpty()) append(" · ")
+                        append("lives in ${prof.livesIn}")
+                    }
+                    if (isEmpty()) append("Set it up to unlock your personalized intro phrases.")
+                },
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            OutlinedButton(onClick = onEditProfile, modifier = Modifier.fillMaxWidth()) {
+                Text(if (prof.name.isBlank()) "Set up profile" else "Edit profile")
             }
+            Text(
+                "Editing the profile also lets you retake the level placement test.",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 6.dp)
+            )
         }
 
         // ----- Backup & restore -----
@@ -463,6 +386,83 @@ fun SettingsScreen(
                     modifier = Modifier.weight(1f)
                 ) { Text("Restore") }
             }
+        }
+
+        // ----- Updates -----
+        SectionTitle("⬇️ App updates")
+        var checkState by remember { mutableStateOf("") }
+        var updateInfo by remember { mutableStateOf<com.corlang.app.update.ReleaseInfo?>(null) }
+        var dl by remember { mutableStateOf(false) }
+        var pct by remember { mutableStateOf(0) }
+        InfoCard {
+            Text(
+                "Installed: v${container.updater.installedVersionName()}",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                "Updates download and install from within the app, no browsing needed.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            if (checkState.isNotBlank()) {
+                Text(checkState, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(bottom = 6.dp))
+            }
+            val info = updateInfo
+            if (info != null) {
+                Button(
+                    enabled = !dl,
+                    onClick = {
+                        dl = true
+                        scope.launch {
+                            val apk = container.updater.downloadApk(info) { pct = it }
+                            dl = false
+                            if (apk != null) container.updater.installApk(apk)
+                            else checkState = "Download failed, try again."
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                ) { Text(if (dl) "Downloading… $pct%" else "Install v${info.versionName}") }
+            } else {
+                OutlinedButton(
+                    onClick = {
+                        checkState = "Checking…"
+                        scope.launch {
+                            val latest = container.updater.fetchLatest()
+                            checkState = when {
+                                latest == null -> "Couldn't reach the update server."
+                                container.updater.isNewer(latest) -> "v${latest.versionName} available!"
+                                else -> "You're on the latest version ✓"
+                            }
+                            if (latest != null && container.updater.isNewer(latest)) updateInfo = latest
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                ) { Text("Check for updates") }
+            }
+        }
+
+        // ----- Premium -----
+        SectionTitle("⭐ Corlang Premium")
+        val entitled by container.premium.entitled.collectAsState(initial = false)
+        InfoCard {
+            Text(
+                if (entitled) "Active ✓" else "Coming soon",
+                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold,
+                color = if (entitled) MaterialTheme.colorScheme.primary
+                        else MaterialTheme.colorScheme.onSurface
+            )
+            Text(
+                "Premium unlocks the AI tutor: a conversation partner that chats in your learning " +
+                    "language at your level (Talk tab) and examiner feedback on your exam writing. " +
+                    if (entitled) "Enjoy!"
+                    else "It arrives with the Google Play release.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp)
+            )
         }
 
         // ----- About -----
