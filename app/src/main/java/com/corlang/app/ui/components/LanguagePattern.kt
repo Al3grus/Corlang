@@ -50,32 +50,35 @@ private fun DrawScope.drawChequer(color: Color) {
     }
 }
 
-/** pt: azulejo — a diamond lattice, denser toward the right edge. */
+/**
+ * pt: azulejo — two LARGE tiles sized to the card (concentric diamonds with a cross and a
+ * filled center), anchored right. A lattice of tiny diamonds read as noise; two big tiles
+ * read as azulejo.
+ */
 private fun DrawScope.drawAzulejo(color: Color) {
-    val step = 34f
-    val half = step / 2f
-    val stroke = Stroke(width = 2.2f)
-    var y = 0f
-    while (y < size.height + step) {
-        var x = 0f
-        var odd = ((y / step).toInt() % 2 == 1)
-        while (x < size.width + step) {
-            val cx = x + if (odd) half else 0f
-            val fade = (cx / size.width).coerceIn(0f, 1f)
-            if (fade >= 0.4f) {
-                val p = androidx.compose.ui.graphics.Path().apply {
-                    moveTo(cx, y - half)
-                    lineTo(cx + half, y)
-                    lineTo(cx, y + half)
-                    lineTo(cx - half, y)
-                    close()
-                }
-                drawPath(p, color.copy(alpha = color.alpha * fade), style = stroke)
-            }
-            x += step
-        }
-        y += half
-        odd = !odd
+    val stroke = Stroke(width = 2.5f)
+    val r = size.height * 0.42f
+    val cy = size.height / 2f
+
+    fun diamond(c: Offset, radius: Float) = androidx.compose.ui.graphics.Path().apply {
+        moveTo(c.x, c.y - radius)
+        lineTo(c.x + radius, c.y)
+        lineTo(c.x, c.y + radius)
+        lineTo(c.x - radius, c.y)
+        close()
+    }
+
+    val tiles = listOf(
+        Offset(size.width - r * 1.15f, cy) to 1f,
+        Offset(size.width - r * 3.4f, cy) to 0.55f   // second tile sits back, fainter
+    )
+    tiles.forEach { (c, fade) ->
+        val col = color.copy(alpha = color.alpha * fade)
+        drawPath(diamond(c, r), col, style = stroke)
+        drawPath(diamond(c, r * 0.62f), col, style = stroke)
+        drawPath(diamond(c, r * 0.16f), col)   // filled heart of the tile
+        drawLine(col, Offset(c.x - r, c.y), Offset(c.x + r, c.y), strokeWidth = 1.5f)
+        drawLine(col, Offset(c.x, c.y - r), Offset(c.x, c.y + r), strokeWidth = 1.5f)
     }
 }
 
