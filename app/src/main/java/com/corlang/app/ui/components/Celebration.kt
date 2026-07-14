@@ -170,16 +170,13 @@ fun ConfettiBurst(modifier: Modifier = Modifier) {
     )
 }
 
-/** Rotating encouragements; the flagship line leads. */
-private val CELEBRATION_MESSAGES = listOf(
-    "One day closer to fluency.",
-    "Consistency beats intensity — and you showed up.",
-    "Small daily steps carry whole languages.",
-    "Your future self just thanked you.",
-    "That's how streaks — and languages — are built."
-)
-
+/**
+ * Words are reserved for moments that earn them: the first day of a streak and the
+ * milestones. Ordinary days celebrate visually (confetti + flame + count) — a line that
+ * appears every day stops being read by day five.
+ */
 private fun milestoneLine(streak: Int): String? = when (streak) {
+    1 -> "One day closer to fluency."
     7 -> "A full week. The habit is forming. 🔥"
     14 -> "Two weeks straight — this is who you are now."
     30 -> "30 days. Your flame burns blue from here. 🔵"
@@ -223,14 +220,15 @@ fun CelebrationOverlay(
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center
                 )
-                Text(
-                    milestoneLine(streak)
-                        ?: CELEBRATION_MESSAGES[dayNumber % CELEBRATION_MESSAGES.size],
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(top = 8.dp)
-                )
+                milestoneLine(streak)?.let { line ->
+                    Text(
+                        line,
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                }
                 if (streak > 0) {
                     Text(
                         "🔥 $streak-day streak",

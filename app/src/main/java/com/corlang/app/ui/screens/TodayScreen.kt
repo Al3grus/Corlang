@@ -288,15 +288,6 @@ fun TodayScreen(
             }
         }
 
-        // The whole course at a glance: level segments, milestone dots, next checkpoint.
-        InfoCard {
-            com.corlang.app.ui.components.JourneyPath(
-                days = plan.days,
-                completedDays = completed.toSet(),
-                currentDay = targetDay
-            )
-        }
-
         // Lesson header + objective.
         Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text(
