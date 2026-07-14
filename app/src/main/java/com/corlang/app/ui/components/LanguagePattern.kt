@@ -67,16 +67,88 @@ private fun DrawScope.drawAzulejo(color: Color) {
 }
 
 private fun DrawScope.drawAzulejoTile(c: Offset, half: Float, col: Color) {
-    val stroke = Stroke(width = 2.5f)
-    val thin = Stroke(width = 1.4f)
+    val stroke = Stroke(width = 2.2f)
+    val thin = Stroke(width = 1.3f)
+    val soft = col.copy(alpha = col.alpha * 0.45f)
+    fun polar(r: Float, deg: Float) = Offset(
+        c.x + r * kotlin.math.cos(Math.toRadians(deg.toDouble())).toFloat(),
+        c.y + r * kotlin.math.sin(Math.toRadians(deg.toDouble())).toFloat()
+    )
 
-    // Tile frame + inner frame.
+    // ---- Frames ----
     drawRect(col, Offset(c.x - half, c.y - half), Size(half * 2, half * 2), style = stroke)
-    val inset = half * 0.86f
+    val inset = half * 0.90f
     drawRect(col, Offset(c.x - inset, c.y - inset), Size(inset * 2, inset * 2), style = thin)
 
-    // Eight-pointed star: an axis-aligned square and the same square rotated 45°.
-    val a = half * 0.46f
+    // ---- Corner fans: two concentric quarter-arcs + radial ticks (a fan that four
+    //      neighbouring tiles would complete into a full rosette) ----
+    val fanR1 = half * 0.26f
+    val fanR2 = half * 0.36f
+    listOf(
+        Offset(c.x - half, c.y - half) to 0f,
+        Offset(c.x + half, c.y - half) to 90f,
+        Offset(c.x + half, c.y + half) to 180f,
+        Offset(c.x - half, c.y + half) to 270f
+    ).forEach { (corner, start) ->
+        for (r in listOf(fanR1, fanR2)) {
+            drawArc(col, start, 90f, false, Offset(corner.x - r, corner.y - r), Size(r * 2, r * 2), style = thin)
+        }
+        for (k in 0..3) {
+            val deg = Math.toRadians((start + 11.25f + k * 22.5f).toDouble())
+            val dx = kotlin.math.cos(deg).toFloat(); val dy = kotlin.math.sin(deg).toFloat()
+            drawLine(col, Offset(corner.x + dx * fanR1, corner.y + dy * fanR1),
+                Offset(corner.x + dx * fanR2, corner.y + dy * fanR2), strokeWidth = 1.3f)
+        }
+    }
+
+    // ---- Edge buds at each side's midpoint: nested half-circles + a dot; they join
+    //      across the seam with the neighbouring tile ----
+    val budR = half * 0.15f
+    listOf(
+        Offset(c.x, c.y - half) to 0f,      // top edge, bud opens downward
+        Offset(c.x + half, c.y) to 90f,     // right edge, opens left
+        Offset(c.x, c.y + half) to 180f,    // bottom edge, opens up
+        Offset(c.x - half, c.y) to 270f     // left edge, opens right
+    ).forEach { (m, start) ->
+        for (r in listOf(budR, budR * 0.55f)) {
+            drawArc(col, start, 180f, false, Offset(m.x - r, m.y - r), Size(r * 2, r * 2), style = thin)
+        }
+    }
+
+    // ---- Foliage scrolls: S-curled spirals on the four diagonals (the arabesque touch) ----
+    for (diag in listOf(45f, 135f, 225f, 315f)) {
+        val base = polar(half * 0.72f, diag)
+        val spiral = androidx.compose.ui.graphics.Path()
+        var first = true
+        val steps = 26
+        for (i in 0..steps) {
+            val t = i / steps.toFloat()
+            val r = half * 0.14f * (1f - t * 0.78f)
+            val ang = Math.toRadians((diag + 180f + t * 480f).toDouble())
+            val p = Offset(base.x + r * kotlin.math.cos(ang).toFloat(),
+                           base.y + r * kotlin.math.sin(ang).toFloat())
+            if (first) { spiral.moveTo(p.x, p.y); first = false } else spiral.lineTo(p.x, p.y)
+        }
+        drawPath(spiral, col, style = thin)
+    }
+
+    // ---- Central medallion: scalloped ring around a circle ----
+    val ringR = half * 0.56f
+    drawCircle(col, ringR, c, style = thin)
+    val lobes = 12
+    for (i in 0 until lobes) {
+        val a0 = i * (360f / lobes)
+        val mid = polar(ringR * 1.13f, a0 + 360f / lobes / 2f)
+        val p0 = polar(ringR, a0)
+        val p1 = polar(ringR, a0 + 360f / lobes)
+        val lobe = androidx.compose.ui.graphics.Path().apply {
+            moveTo(p0.x, p0.y); quadraticTo(mid.x, mid.y, p1.x, p1.y)
+        }
+        drawPath(lobe, col, style = thin)
+    }
+
+    // ---- Eight-pointed star inside the medallion ----
+    val a = half * 0.36f
     drawRect(col, Offset(c.x - a, c.y - a), Size(a * 2, a * 2), style = stroke)
     val v = a * 1.4142f
     drawPath(
@@ -86,45 +158,26 @@ private fun DrawScope.drawAzulejoTile(c: Offset, half: Float, col: Color) {
         col, style = stroke
     )
 
-    // Four-petal rosette at the heart: leaf-shaped petals along the axes, softly filled.
-    val petalLen = a * 0.85f
-    val petalW = a * 0.34f
-    val petalFill = col.copy(alpha = col.alpha * 0.55f)
-    listOf(0f to -1f, 0f to 1f, -1f to 0f, 1f to 0f).forEach { (dx, dy) ->
-        val tip = Offset(c.x + dx * petalLen, c.y + dy * petalLen)
-        // Perpendicular direction for the petal's waist.
-        val px = dy * petalW
-        val py = dx * petalW
+    // ---- Eight-petal flower at the heart: leaves on axes AND diagonals, softly filled ----
+    val petalLen = a * 0.86f
+    val petalW = a * 0.30f
+    for (deg in listOf(0f, 45f, 90f, 135f, 180f, 225f, 270f, 315f)) {
+        val dirX = kotlin.math.cos(Math.toRadians(deg.toDouble())).toFloat()
+        val dirY = kotlin.math.sin(Math.toRadians(deg.toDouble())).toFloat()
+        val tip = Offset(c.x + dirX * petalLen, c.y + dirY * petalLen)
+        val px = dirY * petalW; val py = dirX * petalW
+        val midX = c.x + dirX * petalLen * 0.5f; val midY = c.y + dirY * petalLen * 0.5f
         val petal = androidx.compose.ui.graphics.Path().apply {
             moveTo(c.x, c.y)
-            quadraticTo(c.x + dx * petalLen * 0.5f - px, c.y + dy * petalLen * 0.5f - py, tip.x, tip.y)
-            quadraticTo(c.x + dx * petalLen * 0.5f + px, c.y + dy * petalLen * 0.5f + py, c.x, c.y)
+            quadraticTo(midX - px, midY - py, tip.x, tip.y)
+            quadraticTo(midX + px, midY + py, c.x, c.y)
             close()
         }
-        drawPath(petal, petalFill)
+        if (deg % 90f == 0f) drawPath(petal, soft)   // axis petals filled, diagonals outlined
         drawPath(petal, col, style = thin)
     }
-    drawCircle(col, radius = half * 0.07f, center = c)
-
-    // Corner quarter-arcs: each tile corner carries a quarter circle facing inward —
-    // on a real wall four neighbouring tiles complete these into full rosettes.
-    val arcR = half * 0.34f
-    listOf(
-        Offset(c.x - half, c.y - half) to 0f,     // top-left corner: sweep 0..90
-        Offset(c.x + half, c.y - half) to 90f,    // top-right: 90..180
-        Offset(c.x + half, c.y + half) to 180f,   // bottom-right: 180..270
-        Offset(c.x - half, c.y + half) to 270f    // bottom-left: 270..360
-    ).forEach { (corner, start) ->
-        drawArc(
-            color = col,
-            startAngle = start,
-            sweepAngle = 90f,
-            useCenter = false,
-            topLeft = Offset(corner.x - arcR, corner.y - arcR),
-            size = Size(arcR * 2, arcR * 2),
-            style = thin
-        )
-    }
+    drawCircle(col, half * 0.06f, c)
+    drawCircle(col, half * 0.11f, c, style = thin)
 }
 
 /** fr: Art-Deco rays fanning from the bottom-right corner. */
