@@ -632,6 +632,7 @@ fun SessionPlayer(
                         // (a composition-scoped launch here silently lost day completions).
                         // completing guards a double-tap from inserting the day twice.
                         var completing by remember(day.day) { mutableStateOf(false) }
+                        var celebrate by remember(day.day) { mutableStateOf(false) }
                         Button(
                             enabled = !completing,
                             onClick = {
@@ -640,10 +641,21 @@ fun SessionPlayer(
                                     container.progress.completeDay(lang, day.day, totalDays, day.level)
                                 }
                                 Haptics.confirm(context)
-                                onExit()
+                                celebrate = true
                             },
                             modifier = Modifier.fillMaxWidth()
                         ) { Text("Mark day ${day.day} complete ✓") }
+                        if (celebrate) {
+                            // Live streak: completeDay's write lands async and the flow
+                            // recomposes the overlay with the freshly banked value.
+                            val prog by container.progress.progress(lang)
+                                .collectAsState(initial = null)
+                            com.corlang.app.ui.components.CelebrationOverlay(
+                                dayNumber = day.day,
+                                streak = prog?.streak ?: 1,
+                                onDone = onExit
+                            )
+                        }
                     }
                 }
             }

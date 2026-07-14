@@ -36,6 +36,7 @@ import com.corlang.app.data.WordsRepository
 import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
+import com.corlang.app.ui.components.languagePattern
 import com.corlang.app.ui.navigation.Dest
 import kotlinx.coroutines.launch
 
@@ -183,21 +184,33 @@ fun TodayScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Row(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier
+                    // Subtle cultural texture per course (šahovnica / azulejo / Deco rays).
+                    .languagePattern(lang, MaterialTheme.colorScheme.onTertiaryContainer)
+                    .padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(Modifier.weight(1f)) {
-                    Text(
-                        buildString {
-                            append(
-                                if (streak > 0) "🔥 $streak-day streak"
-                                else "🔥 Start your streak today"
-                            )
-                            if (freezes > 0) append("  ·  ❄️ $freezes freeze${if (freezes > 1) "s" else ""}")
-                        },
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.SemiBold
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        // Grey until today's lesson banks the streak, then lit — and its
+                        // colors escalate with streak length (7/30/100 tiers).
+                        com.corlang.app.ui.components.StreakFlame(
+                            streak = streak,
+                            lit = completedToday > 0,
+                            size = 20.dp
+                        )
+                        Text(
+                            buildString {
+                                append(
+                                    if (streak > 0) " $streak-day streak"
+                                    else " Start your streak today"
+                                )
+                                if (freezes > 0) append("  ·  ❄️ $freezes freeze${if (freezes > 1) "s" else ""}")
+                            },
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
                     // Only speak up when there's something worth saying; no filler line.
                     val heroSubtitle = when {
                         completedToday > 0 -> "Today's goal is done ✓. Anything more is bonus depth."
@@ -273,6 +286,15 @@ fun TodayScreen(
                         .clickable { viewedDay = targetDay; userBrowsed = false }
                 )
             }
+        }
+
+        // The whole course at a glance: level segments, milestone dots, next checkpoint.
+        InfoCard {
+            com.corlang.app.ui.components.JourneyPath(
+                days = plan.days,
+                completedDays = completed.toSet(),
+                currentDay = targetDay
+            )
         }
 
         // Lesson header + objective.

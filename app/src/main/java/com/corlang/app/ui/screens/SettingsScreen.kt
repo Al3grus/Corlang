@@ -15,6 +15,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.VolumeUp
+import androidx.compose.material.icons.outlined.Alarm
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Person
+import androidx.compose.material.icons.outlined.Save
+import androidx.compose.material.icons.outlined.Speed
+import androidx.compose.material.icons.outlined.SystemUpdate
+import androidx.compose.material.icons.outlined.Vibration
+import androidx.compose.material.icons.outlined.WorkspacePremium
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -79,7 +89,7 @@ fun SettingsScreen(
         }
 
         // ----- Study reminder -----
-        SectionTitle("⏰ Study reminder")
+        SectionTitle("Study reminder", Icons.Outlined.Alarm)
         val enabled by container.languagePrefs.reminderEnabled.collectAsState(initial = false)
         val time by container.languagePrefs.reminderTime.collectAsState(initial = 19 to 0)
         var showPicker by remember { mutableStateOf(false) }
@@ -190,7 +200,7 @@ fun SettingsScreen(
         }
 
         // ----- Learning pace -----
-        SectionTitle("🃏 Learning pace")
+        SectionTitle("Learning pace", Icons.Outlined.Speed)
         val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
         InfoCard {
             Text("New words per lesson", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
@@ -217,7 +227,7 @@ fun SettingsScreen(
         // Follows the ACTIVE language: a French learner manages the French voice here.
         val ttsLang by container.languagePrefs.selectedLanguage.collectAsState(initial = "hr")
         val voiceName = remember(ttsLang) { container.content.meta(ttsLang).name }
-        SectionTitle("🔊 $voiceName voice (TTS)")
+        SectionTitle("$voiceName voice (TTS)", Icons.AutoMirrored.Outlined.VolumeUp)
         val ttsState by container.tts.state.collectAsState()
         InfoCard {
             Text(
@@ -252,7 +262,7 @@ fun SettingsScreen(
         }
 
         // ----- Haptic feedback -----
-        SectionTitle("📳 Haptic feedback")
+        SectionTitle("Haptic feedback", Icons.Outlined.Vibration)
         val haptics by container.languagePrefs.hapticsStrength.collectAsState(initial = "MEDIUM")
         InfoCard {
             Text("Vibration on answers and card grades",
@@ -284,7 +294,7 @@ fun SettingsScreen(
         }
 
         // ----- Profile -----
-        SectionTitle("👤 Profile")
+        SectionTitle("Profile", Icons.Outlined.Person)
         val prof by container.languagePrefs.profile.collectAsState(
             initial = com.corlang.app.data.prefs.LearnerProfile("", "m", "", "", "")
         )
@@ -318,7 +328,7 @@ fun SettingsScreen(
         }
 
         // ----- Backup & restore -----
-        SectionTitle("💾 Backup & restore")
+        SectionTitle("Backup & restore", Icons.Outlined.Save)
         var backupMsg by remember { mutableStateOf("") }
         val exportLauncher = rememberLauncherForActivityResult(
             ActivityResultContracts.CreateDocument("application/json")
@@ -389,7 +399,7 @@ fun SettingsScreen(
         }
 
         // ----- Updates -----
-        SectionTitle("⬇️ App updates")
+        SectionTitle("App updates", Icons.Outlined.SystemUpdate)
         var checkState by remember { mutableStateOf("") }
         var updateInfo by remember { mutableStateOf<com.corlang.app.update.ReleaseInfo?>(null) }
         var dl by remember { mutableStateOf(false) }
@@ -445,7 +455,7 @@ fun SettingsScreen(
         }
 
         // ----- Premium -----
-        SectionTitle("⭐ Corlang Premium")
+        SectionTitle("Corlang Premium", Icons.Outlined.WorkspacePremium)
         val entitled by container.premium.entitled.collectAsState(initial = false)
         InfoCard {
             Text(
@@ -466,7 +476,7 @@ fun SettingsScreen(
         }
 
         // ----- About -----
-        SectionTitle("ℹ️ About")
+        SectionTitle("About", Icons.Outlined.Info)
         InfoCard {
             com.corlang.app.ui.components.CorlangLogo(
                 variant = com.corlang.app.ui.components.LogoVariant.LOCKUP,
