@@ -37,15 +37,23 @@ class ReminderWorker(
 
     override suspend fun doWork(): Result {
         val ctx = applicationContext
-        val lang = LanguagePrefs(ctx).selectedLanguage.first()
-        val progress = AppDatabase.get(ctx).progressDao().progressOnce(lang)
+        val prefs = LanguagePrefs(ctx)
+        val selected = prefs.selectedLanguage.first()
+        // Only nag about languages the user opted into (Settings → Study reminder).
+        // No explicit choice yet = follow the selected language, the pre-existing behavior.
+        val chosen = prefs.reminderLanguages.first() ?: setOf(selected)
+        val dao = AppDatabase.get(ctx).progressDao()
         val today = LocalDate.now().toEpochDay()
 
-        // Today's lesson already completed (the only thing that banks the streak), no nag needed.
-        if (progress?.lastStudiedEpochDay == today) return Result.success()
+        // Selected language first so the nudge matches what the app opens to; then the rest.
+        val candidates = (listOf(selected).filter { it in chosen } + (chosen - selected).sorted())
+        // A day's lesson banks the streak; languages already studied today need no nag.
+        val lang = candidates.firstOrNull {
+            dao.progressOnce(it)?.lastStudiedEpochDay != today
+        } ?: return Result.success()
 
+        val progress = dao.progressOnce(lang)
         val streak = progress?.streak ?: 0
-        // Copy follows the ACTIVE language — a French learner must not be nagged about Croatian.
         val languageName = when (lang) {
             "fr" -> "French"
             "pt" -> "Portuguese"

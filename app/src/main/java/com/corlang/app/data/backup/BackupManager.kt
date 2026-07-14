@@ -29,7 +29,9 @@ data class BackupPrefs(
     val profileGender: String = "m",
     val profileFrom: String = "",
     val profileLivesIn: String = "",
-    val profileReason: String = ""
+    val profileReason: String = "",
+    // Reminder language opt-in (null = never customized: reminder follows the selected language).
+    val reminderLanguages: List<String>? = null
 )
 
 /** A complete, portable snapshot of the learner's progress across every language. */
@@ -84,6 +86,7 @@ class BackupManager(
                 newWordsPerDay = prefs.newWordsPerDay.first(),
                 selectedLanguage = prefs.selectedLanguage.first(),
                 onboardingDone = prefs.onboardingDone.first(),
+                reminderLanguages = prefs.reminderLanguages.first()?.sorted(),
                 profileName = profile.name,
                 profileGender = profile.gender,
                 profileFrom = profile.from,
@@ -117,6 +120,7 @@ class BackupManager(
         prefs.setNewWordsPerDay(data.prefs.newWordsPerDay)
         prefs.setLanguage(data.prefs.selectedLanguage)
         prefs.setOnboardingDone(data.prefs.onboardingDone)
+        data.prefs.reminderLanguages?.let { prefs.setReminderLanguages(it.toSet()) }
         prefs.setProfile(
             com.corlang.app.data.prefs.LearnerProfile(
                 name = data.prefs.profileName,
