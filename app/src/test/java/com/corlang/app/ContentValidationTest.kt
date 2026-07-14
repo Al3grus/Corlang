@@ -91,7 +91,7 @@ class ContentValidationTest {
 
     @Test
     fun `all languages parse strictly`() {
-        for (lang in listOf("hr", "fr")) {
+        for (lang in listOf("hr", "fr", "pt")) {
             strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
             strictJson.decodeFromString<Cheatsheet>(read(lang, "cheatsheet.json"))
             strictJson.decodeFromString<Levels>(read(lang, "levels.json"))

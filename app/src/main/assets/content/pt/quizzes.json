@@ -1,0 +1,467 @@
+{
+  "quizzes": [
+    {
+      "id": "pt-a1",
+      "levelId": "A1",
+      "title": "A1 — as bases",
+      "questions": [
+        {
+          "type": "MCQ",
+          "difficulty": 1,
+          "prompt": "'Obrigado' means:",
+          "options": [
+            "Thank you",
+            "Please",
+            "Hello",
+            "Sorry"
+          ],
+          "answer": "Thank you",
+          "explanation": "Obrigado = thank you (obrigada if you're a woman)."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 2,
+          "prompt": "Feminine article for 'casa':",
+          "options": [
+            "a",
+            "o",
+            "um",
+            "os"
+          ],
+          "answer": "a",
+          "explanation": "casa is feminine → a casa."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 2,
+          "prompt": "'Eu ___ dois irmãos.' (have)",
+          "options": [
+            "tenho",
+            "tem",
+            "sou",
+            "estou"
+          ],
+          "answer": "tenho",
+          "explanation": "ter: eu tenho."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 3,
+          "prompt": "Present of morar (eles):",
+          "options": [
+            "moram",
+            "mora",
+            "moramos",
+            "moras"
+          ],
+          "answer": "moram",
+          "explanation": "-AR verbs, eles = -am: moram."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 3,
+          "prompt": "'Ela ___ médica.' (profession)",
+          "options": [
+            "é",
+            "está",
+            "tem",
+            "são"
+          ],
+          "answer": "é",
+          "explanation": "Profession/identity takes ser: ela é."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 2,
+          "prompt": "Complete: 'Eu ___-me Paulo.' (verb chamar — to be called)",
+          "answer": "chamo",
+          "explanation": "chamar-se: eu chamo-me (ênclise: pronoun after the verb)."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 3,
+          "prompt": "'I am studying right now' in European Portuguese:",
+          "options": [
+            "Estou a estudar",
+            "Estou estudando",
+            "Vou estudar",
+            "Estudei agora"
+          ],
+          "answer": "Estou a estudar",
+          "explanation": "pt-PT uses estar a + infinitivo for actions in progress."
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 3,
+          "prompt": "Order: 'Eu sou de Portugal.'",
+          "options": [
+            "Eu",
+            "sou",
+            "de",
+            "Portugal",
+            "."
+          ],
+          "ordered": [
+            "Eu",
+            "sou",
+            "de",
+            "Portugal",
+            "."
+          ],
+          "explanation": "Saying where you're from: ser + de + country."
+        }
+      ]
+    },
+    {
+      "id": "pt-a2",
+      "levelId": "A2",
+      "title": "A2 — contar e descrever",
+      "questions": [
+        {
+          "type": "MCQ",
+          "difficulty": 4,
+          "prompt": "Completed past: 'Ontem ___ ao cinema.' (ir, eu)",
+          "options": [
+            "fui",
+            "ia",
+            "vou",
+            "fosse"
+          ],
+          "answer": "fui",
+          "explanation": "One finished event → pretérito perfeito simples: fui."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 4,
+          "prompt": "Past habit: 'Antigamente, nós ___ na praia.' (brincar)",
+          "options": [
+            "brincávamos",
+            "brincámos",
+            "brincamos",
+            "brincaremos"
+          ],
+          "answer": "brincávamos",
+          "explanation": "Habit in the past = imperfeito: brincávamos."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 4,
+          "prompt": "Reflexive placement — 'She washes herself' (European default):",
+          "options": [
+            "Ela lava-se.",
+            "Ela se lava.",
+            "Ela lava se.",
+            "Se lava ela."
+          ],
+          "answer": "Ela lava-se.",
+          "explanation": "In a plain affirmative sentence pt-PT uses ênclise: lava-se."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 5,
+          "prompt": "'I don't see him': 'Não ___ vejo.'",
+          "options": [
+            "o",
+            "lo",
+            "no",
+            "lhe"
+          ],
+          "answer": "o",
+          "explanation": "não is a proclisis trigger: the pronoun moves before the verb — não o vejo."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 4,
+          "prompt": "Demonstrative for something near the person you're talking to:",
+          "options": [
+            "esse",
+            "este",
+            "aquele",
+            "isto"
+          ],
+          "answer": "esse",
+          "explanation": "este = near me, esse = near you, aquele = far from both."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 5,
+          "prompt": "Clitic after an infinitive: 'Vou comprar o livro' → 'Vou comprá-___.'",
+          "options": [
+            "lo",
+            "o",
+            "no",
+            "la"
+          ],
+          "answer": "lo",
+          "explanation": "The infinitive drops -r and the pronoun becomes -lo: comprá-lo."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 4,
+          "prompt": "Complete: 'O Porto é mais barato ___ Lisboa.' (than)",
+          "answer": "que",
+          "accepted": [
+            "do que"
+          ],
+          "explanation": "Comparative: mais + adjective + (do) que."
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 5,
+          "prompt": "Order: 'Não te esqueças do bilhete.'",
+          "options": [
+            "Não",
+            "te",
+            "esqueças",
+            "do",
+            "bilhete",
+            "."
+          ],
+          "ordered": [
+            "Não",
+            "te",
+            "esqueças",
+            "do",
+            "bilhete",
+            "."
+          ],
+          "explanation": "Negative imperative: não triggers próclise (não te esqueças)."
+        }
+      ]
+    },
+    {
+      "id": "pt-b1",
+      "levelId": "B1",
+      "title": "B1 — opinião e hipótese",
+      "questions": [
+        {
+          "type": "MCQ",
+          "difficulty": 6,
+          "prompt": "Subjunctive: 'Espero que tu ___ bem.' (estar)",
+          "options": [
+            "estejas",
+            "estás",
+            "estares",
+            "estiveres"
+          ],
+          "answer": "estejas",
+          "explanation": "esperar que + presente do conjuntivo: que tu estejas."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 5,
+          "prompt": "Polite request: 'Eu ___ um galão, por favor.' (querer)",
+          "options": [
+            "queria",
+            "quero",
+            "quis",
+            "quererei"
+          ],
+          "answer": "queria",
+          "explanation": "pt-PT politeness uses the imperfeito de cortesia: queria."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 6,
+          "prompt": "Recent repeated action: '___ muito frio ultimamente.' (fazer)",
+          "options": [
+            "Tem feito",
+            "Fez",
+            "Fazia",
+            "Fará"
+          ],
+          "answer": "Tem feito",
+          "explanation": "Pretérito perfeito composto = repetition continuing up to now: tem feito."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 6,
+          "prompt": "Earlier past: 'Quando cheguei, ele já ___.' (sair)",
+          "options": [
+            "tinha saído",
+            "saiu",
+            "tem saído",
+            "saía"
+          ],
+          "answer": "tinha saído",
+          "explanation": "Action before another past action → mais-que-perfeito composto: tinha saído."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 6,
+          "prompt": "Relative: 'A cidade ___ nasci fica no norte.'",
+          "options": [
+            "onde",
+            "que",
+            "cujo",
+            "quem"
+          ],
+          "answer": "onde",
+          "explanation": "onde = where (place relative)."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 6,
+          "prompt": "Reported speech: 'Ele disse que ___ cansado.' (estar)",
+          "options": [
+            "estava",
+            "está",
+            "esteja",
+            "estará"
+          ],
+          "answer": "estava",
+          "explanation": "Reporting verb in the past shifts present → imperfeito: estava."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 6,
+          "prompt": "Complete with the short participle: 'A carta foi ___ ontem.' (entregar)",
+          "answer": "entregue",
+          "explanation": "Double-participle verb: with ser/estar use the short form entregue."
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 6,
+          "prompt": "Order: 'Acho que é uma boa ideia.'",
+          "options": [
+            "Acho",
+            "que",
+            "é",
+            "uma",
+            "boa",
+            "ideia",
+            "."
+          ],
+          "ordered": [
+            "Acho",
+            "que",
+            "é",
+            "uma",
+            "boa",
+            "ideia",
+            "."
+          ],
+          "explanation": "Giving an opinion: achar que + indicative."
+        }
+      ]
+    },
+    {
+      "id": "pt-b2",
+      "levelId": "B2",
+      "title": "B2 — argumentar e matizar",
+      "questions": [
+        {
+          "type": "MCQ",
+          "difficulty": 8,
+          "prompt": "Unreal condition: 'Se eu ___ mais tempo, viajava.' (ter)",
+          "options": [
+            "tivesse",
+            "tenha",
+            "tiver",
+            "tinha"
+          ],
+          "answer": "tivesse",
+          "explanation": "Unreal/hypothetical: se + imperfeito do conjuntivo (tivesse)."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 8,
+          "prompt": "Real future condition: 'Se ___ tempo amanhã, vou à praia.' (ter)",
+          "options": [
+            "tiver",
+            "tivesse",
+            "tenha",
+            "terei"
+          ],
+          "answer": "tiver",
+          "explanation": "Open future condition: se + futuro do conjuntivo (tiver)."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 7,
+          "prompt": "Personal infinitive: 'Comprei fruta para ___.' (nós — comer)",
+          "options": [
+            "comermos",
+            "comemos",
+            "comamos",
+            "comer"
+          ],
+          "answer": "comermos",
+          "explanation": "para + infinitivo pessoal with nós: comermos."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 8,
+          "prompt": "Formal written future, 'I will send it to you (lho)':",
+          "options": [
+            "Enviar-lho-ei.",
+            "Lho enviarei.",
+            "Enviarei-lho.",
+            "Enviar-ei-lho."
+          ],
+          "answer": "Enviar-lho-ei.",
+          "explanation": "Mesóclise: the clitic goes inside the simple future — enviar-lho-ei."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 7,
+          "prompt": "Compound subjunctive: 'Duvido que ele ___ o trabalho.' (fazer — already done)",
+          "options": [
+            "tenha feito",
+            "fez",
+            "tinha feito",
+            "fizesse"
+          ],
+          "answer": "tenha feito",
+          "explanation": "Doubt about a completed action → conjuntivo composto: tenha feito."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 7,
+          "prompt": "Concession: '___ esteja a chover, vamos sair.'",
+          "options": [
+            "Embora",
+            "Portanto",
+            "Porque",
+            "Logo"
+          ],
+          "answer": "Embora",
+          "explanation": "embora + conjuntivo = although."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 7,
+          "prompt": "Rewrite the Brazilian gerund in European Portuguese: 'está chovendo' → 'está a ___'",
+          "answer": "chover",
+          "explanation": "pt-PT prefers estar a + infinitivo: está a chover."
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 8,
+          "prompt": "Order: 'Embora seja caro, vale a pena.'",
+          "options": [
+            "Embora",
+            "seja",
+            "caro",
+            ",",
+            "vale",
+            "a",
+            "pena",
+            "."
+          ],
+          "ordered": [
+            "Embora",
+            "seja",
+            "caro",
+            ",",
+            "vale",
+            "a",
+            "pena",
+            "."
+          ],
+          "explanation": "Concession with embora + presente do conjuntivo."
+        }
+      ]
+    }
+  ]
+}

@@ -45,7 +45,7 @@ class ContentRepository(private val context: Context) {
      * French content still lives in assets/content/fr but is hidden for now —
      * add "fr" back here to re-enable it.
      */
-    val availableLanguages: List<String> = listOf("hr", "fr")
+    val availableLanguages: List<String> = listOf("hr", "fr", "pt")
 
     private fun readAsset(path: String): String =
         context.assets.open(path).bufferedReader().use { it.readText() }
