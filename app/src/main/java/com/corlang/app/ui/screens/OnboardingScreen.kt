@@ -173,7 +173,8 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     var gender by remember { mutableStateOf("m") }
     var from by remember { mutableStateOf<String?>(null) }
     var livesIn by remember { mutableStateOf<String?>(null) }
-    var reason by remember { mutableStateOf<String?>(null) }
+    // Multi-select: people learn for several reasons at once; stored comma-joined.
+    val reasons = remember { androidx.compose.runtime.mutableStateListOf<String>() }
     var goal by remember { mutableStateOf(10) }
     var wantsPlacement by remember { mutableStateOf<Boolean?>(null) }
 
@@ -185,7 +186,10 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         gender = p.gender
         if (p.from.isNotBlank()) from = p.from
         if (p.livesIn.isNotBlank()) livesIn = p.livesIn
-        if (p.reason.isNotBlank()) reason = p.reason
+        if (p.reason.isNotBlank()) {
+            reasons.clear()
+            reasons.addAll(p.reason.split(", ").filter { it in REASONS })
+        }
         goal = container.languagePrefs.newWordsPerDay.first()
     }
 
@@ -197,7 +201,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     gender = gender,
                     from = from.orEmpty().takeIf { it != SOMEWHERE_ELSE }.orEmpty(),
                     livesIn = livesIn.orEmpty().takeIf { it != SOMEWHERE_ELSE }.orEmpty(),
-                    reason = reason.orEmpty()
+                    reason = reasons.joinToString(", ")
                 )
             )
             container.languagePrefs.setNewWordsPerDay(goal)
@@ -320,9 +324,9 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- 4 · Reason ----
             4 -> StepFrame("Why are you learning $langName?",
-                "So the app knows what \"ready\" means for you.") {
+                "Choose all that apply — so the app knows what \"ready\" means for you.") {
                 REASONS.forEach { r ->
-                    val chosen = reason == r
+                    val chosen = r in reasons
                     Surface(
                         shape = RoundedCornerShape(10.dp),
                         color = MaterialTheme.colorScheme.surface,
@@ -334,10 +338,10 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                                 if (chosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline,
                                 RoundedCornerShape(10.dp)
                             )
-                            .clickable { reason = r }
-                    ) { Text(r, modifier = Modifier.padding(12.dp)) }
+                            .clickable { if (chosen) reasons.remove(r) else reasons.add(r) }
+                    ) { Text(if (chosen) "✓ $r" else r, modifier = Modifier.padding(12.dp)) }
                 }
-                NextRow(enabled = reason != null, onBack = { step = 3 }, onNext = { step = 5 })
+                NextRow(enabled = reasons.isNotEmpty(), onBack = { step = 3 }, onNext = { step = 5 })
             }
 
             // ---- 5 · Daily goal ----
@@ -382,7 +386,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 // The personalized first-phrases payoff uses curated Croatian forms; only shown
                 // for Croatian. Other languages get placed by the test without a fake payoff.
                 val phrases = if (learnLang == "hr") profilePhrases(
-                    LearnerProfile(name, gender, from.orEmpty(), livesIn.orEmpty(), reason.orEmpty())
+                    LearnerProfile(name, gender, from.orEmpty(), livesIn.orEmpty(), reasons.joinToString(", "))
                 ) else emptyList()
                 if (phrases.isNotEmpty()) {
                     Text(
