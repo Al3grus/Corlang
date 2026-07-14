@@ -1,6 +1,5 @@
 package com.corlang.app.ui.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -212,13 +211,14 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     }
 
     val totalSteps = 7
+    // Rendered OUTSIDE the Scaffold: the Surface supplies the theme's content color (plain
+    // Text here would otherwise default to black — unreadable in dark theme), and with
+    // edge-to-edge the screen must inset itself or the progress bar collides with the
+    // status bar/cutout and the bottom buttons hide under the navigation bar.
+    Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            // Rendered OUTSIDE the Scaffold, so with edge-to-edge it must inset itself: without
-            // this the progress bar collides with the status bar/cutout and the bottom buttons
-            // hide under the navigation bar.
             .systemBarsPadding()
             .verticalScroll(rememberScrollState())
             .imePadding()
@@ -417,6 +417,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             }
         }
         Spacer(Modifier.height(24.dp))
+    }
     }
 }
 
