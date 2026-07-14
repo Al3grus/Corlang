@@ -1,0 +1,858 @@
+{
+  "packs": [
+    {
+      "id": "23-b2-society-politics",
+      "title": "Society & politics",
+      "level": "B2",
+      "words": [
+        {
+          "id": "governo",
+          "hr": "governo",
+          "en": "government",
+          "pos": "n. m.",
+          "example": {
+            "target": "O governo apresentou um pacote de medidas para baixar o custo da habitação.",
+            "gloss": "The government presented a package of measures to lower housing costs."
+          }
+        },
+        {
+          "id": "primeiro-ministro",
+          "hr": "primeiro-ministro",
+          "en": "prime minister",
+          "pos": "n. m.",
+          "example": {
+            "target": "O primeiro-ministro reuniu-se com os parceiros sociais antes de anunciar a medida.",
+            "gloss": "The prime minister met with the social partners before announcing the measure."
+          }
+        },
+        {
+          "id": "presidente da república",
+          "hr": "presidente da República",
+          "en": "President of the Republic",
+          "pos": "n. m.",
+          "example": {
+            "target": "O presidente da República pode dissolver o parlamento em certas circunstâncias.",
+            "gloss": "The President of the Republic can dissolve parliament in certain circumstances."
+          }
+        },
+        {
+          "id": "assembleia da república",
+          "hr": "Assembleia da República",
+          "en": "Portuguese parliament",
+          "pos": "n. f.",
+          "example": {
+            "target": "A Assembleia da República debateu ontem a nova lei da habitação.",
+            "gloss": "The Portuguese parliament debated the new housing law yesterday."
+          }
+        },
+        {
+          "id": "deputado",
+          "hr": "deputado",
+          "en": "member of parliament",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os deputados votaram a favor da proposta por larga maioria.",
+            "gloss": "The MPs voted in favour of the proposal by a large majority."
+          }
+        },
+        {
+          "id": "partido",
+          "hr": "partido",
+          "en": "political party",
+          "pos": "n. m.",
+          "example": {
+            "target": "Nenhum partido conseguiu maioria absoluta nestas eleições.",
+            "gloss": "No party managed an absolute majority in these elections."
+          }
+        },
+        {
+          "id": "eleições",
+          "hr": "eleições",
+          "en": "elections",
+          "pos": "n. f. pl.",
+          "example": {
+            "target": "As eleições legislativas realizam-se de quatro em quatro anos.",
+            "gloss": "Parliamentary elections are held every four years."
+          }
+        },
+        {
+          "id": "campanha eleitoral",
+          "hr": "campanha eleitoral",
+          "en": "election campaign",
+          "pos": "n. f.",
+          "example": {
+            "target": "Durante a campanha eleitoral, os candidatos percorreram o país inteiro.",
+            "gloss": "During the election campaign, the candidates travelled the whole country."
+          }
+        },
+        {
+          "id": "voto",
+          "hr": "voto",
+          "en": "vote",
+          "pos": "n. m.",
+          "example": {
+            "target": "Cada voto conta, por isso é importante que todos participem.",
+            "gloss": "Every vote counts, so it's important that everyone take part."
+          }
+        },
+        {
+          "id": "urna",
+          "hr": "urna",
+          "en": "ballot box",
+          "pos": "n. f.",
+          "note": "ir às urnas = to go to the polls",
+          "example": {
+            "target": "Milhões de portugueses foram às urnas no domingo.",
+            "gloss": "Millions of Portuguese went to the polls on Sunday."
+          }
+        },
+        {
+          "id": "referendo",
+          "hr": "referendo",
+          "en": "referendum",
+          "pos": "n. m.",
+          "example": {
+            "target": "Alguns partidos defendem que a questão seja decidida por referendo.",
+            "gloss": "Some parties argue that the issue should be decided by referendum."
+          }
+        },
+        {
+          "id": "democracia",
+          "hr": "democracia",
+          "en": "democracy",
+          "pos": "n. f.",
+          "example": {
+            "target": "A democracia portuguesa nasceu com a revolução de 25 de Abril de 1974.",
+            "gloss": "Portuguese democracy was born with the revolution of 25 April 1974."
+          }
+        },
+        {
+          "id": "ditadura",
+          "hr": "ditadura",
+          "en": "dictatorship",
+          "pos": "n. f.",
+          "example": {
+            "target": "Durante a ditadura, a censura controlava os jornais e a rádio.",
+            "gloss": "During the dictatorship, censorship controlled the newspapers and the radio."
+          }
+        },
+        {
+          "id": "revolução",
+          "hr": "revolução",
+          "en": "revolution",
+          "pos": "n. f.",
+          "example": {
+            "target": "A Revolução dos Cravos pôs fim a quase cinquenta anos de ditadura.",
+            "gloss": "The Carnation Revolution put an end to almost fifty years of dictatorship."
+          }
+        },
+        {
+          "id": "constituição",
+          "hr": "constituição",
+          "en": "constitution",
+          "pos": "n. f.",
+          "example": {
+            "target": "A Constituição garante a liberdade de expressão a todos os cidadãos.",
+            "gloss": "The Constitution guarantees freedom of expression to all citizens."
+          }
+        },
+        {
+          "id": "parlamento",
+          "hr": "parlamento",
+          "en": "parliament",
+          "pos": "n. m.",
+          "example": {
+            "target": "O parlamento aprovou o diploma, apesar dos protestos da oposição.",
+            "gloss": "Parliament approved the bill, despite protests from the opposition."
+          }
+        },
+        {
+          "id": "autarquia",
+          "hr": "autarquia",
+          "en": "local authority, municipality",
+          "pos": "n. f.",
+          "note": "as eleições autárquicas = local elections",
+          "example": {
+            "target": "A autarquia investiu na requalificação do centro histórico.",
+            "gloss": "The local authority invested in renovating the historic centre."
+          }
+        },
+        {
+          "id": "presidente da câmara",
+          "hr": "presidente da câmara",
+          "en": "mayor",
+          "pos": "n. m.",
+          "example": {
+            "target": "O presidente da câmara prometeu construir mais habitação a preços acessíveis.",
+            "gloss": "The mayor promised to build more affordable housing."
+          }
+        },
+        {
+          "id": "cidadão",
+          "hr": "cidadão",
+          "en": "citizen",
+          "pos": "n. m.",
+          "note": "feminine: cidadã",
+          "example": {
+            "target": "Todos os cidadãos maiores de dezoito anos têm direito de voto.",
+            "gloss": "All citizens over eighteen have the right to vote."
+          }
+        },
+        {
+          "id": "população",
+          "hr": "população",
+          "en": "population",
+          "pos": "n. f.",
+          "example": {
+            "target": "A população do interior tem vindo a diminuir década após década.",
+            "gloss": "The population of the interior has been shrinking decade after decade."
+          }
+        },
+        {
+          "id": "imigração",
+          "hr": "imigração",
+          "en": "immigration",
+          "pos": "n. f.",
+          "example": {
+            "target": "A imigração tem ajudado a rejuvenescer a população portuguesa.",
+            "gloss": "Immigration has helped rejuvenate the Portuguese population."
+          }
+        },
+        {
+          "id": "emigração",
+          "hr": "emigração",
+          "en": "emigration",
+          "pos": "n. f.",
+          "example": {
+            "target": "A emigração marcou profundamente a história de Portugal no século XX.",
+            "gloss": "Emigration deeply marked the history of Portugal in the twentieth century."
+          }
+        },
+        {
+          "id": "imigrante",
+          "hr": "imigrante",
+          "en": "immigrant",
+          "pos": "n. m.",
+          "note": "common gender: o/a imigrante",
+          "example": {
+            "target": "Muitos imigrantes trabalham na agricultura e na restauração.",
+            "gloss": "Many immigrants work in agriculture and in the restaurant business."
+          }
+        },
+        {
+          "id": "emigrante",
+          "hr": "emigrante",
+          "en": "emigrant",
+          "pos": "n. m.",
+          "note": "common gender: o/a emigrante",
+          "example": {
+            "target": "Os emigrantes portugueses regressam à terra todos os verões.",
+            "gloss": "Portuguese emigrants return to their hometowns every summer."
+          }
+        },
+        {
+          "id": "refugiado",
+          "hr": "refugiado",
+          "en": "refugee",
+          "pos": "n. m.",
+          "example": {
+            "target": "O país comprometeu-se a acolher mais refugiados vindos de zonas de guerra.",
+            "gloss": "The country committed to taking in more refugees from war zones."
+          }
+        },
+        {
+          "id": "integração",
+          "hr": "integração",
+          "en": "integration",
+          "pos": "n. f.",
+          "example": {
+            "target": "Aprender a língua é fundamental para a integração dos recém-chegados.",
+            "gloss": "Learning the language is essential for the integration of newcomers."
+          }
+        },
+        {
+          "id": "discriminação",
+          "hr": "discriminação",
+          "en": "discrimination",
+          "pos": "n. f.",
+          "example": {
+            "target": "A lei proíbe qualquer discriminação com base na origem ou na religião.",
+            "gloss": "The law prohibits any discrimination based on origin or religion."
+          }
+        },
+        {
+          "id": "racismo",
+          "hr": "racismo",
+          "en": "racism",
+          "pos": "n. m.",
+          "example": {
+            "target": "É preciso que a escola fale abertamente sobre o racismo.",
+            "gloss": "Schools need to talk openly about racism."
+          }
+        },
+        {
+          "id": "igualdade de género",
+          "hr": "igualdade de género",
+          "en": "gender equality",
+          "pos": "n. f.",
+          "example": {
+            "target": "Apesar dos avanços, a igualdade de género ainda não é uma realidade nos salários.",
+            "gloss": "Despite progress, gender equality is still not a reality when it comes to pay."
+          }
+        },
+        {
+          "id": "direitos humanos",
+          "hr": "direitos humanos",
+          "en": "human rights",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Várias organizações denunciaram violações dos direitos humanos naquele país.",
+            "gloss": "Several organisations denounced human rights violations in that country."
+          }
+        },
+        {
+          "id": "liberdade de expressão",
+          "hr": "liberdade de expressão",
+          "en": "freedom of expression",
+          "pos": "n. f.",
+          "example": {
+            "target": "A liberdade de expressão não protege o discurso de ódio.",
+            "gloss": "Freedom of expression does not protect hate speech."
+          }
+        },
+        {
+          "id": "manifestação",
+          "hr": "manifestação",
+          "en": "demonstration, protest march",
+          "pos": "n. f.",
+          "example": {
+            "target": "Milhares de pessoas participaram na manifestação pelo direito à habitação.",
+            "gloss": "Thousands of people took part in the demonstration for the right to housing."
+          }
+        },
+        {
+          "id": "protesto",
+          "hr": "protesto",
+          "en": "protest",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os protestos dos professores duraram vários meses.",
+            "gloss": "The teachers' protests lasted several months."
+          }
+        },
+        {
+          "id": "greve geral",
+          "hr": "greve geral",
+          "en": "general strike",
+          "pos": "n. f.",
+          "example": {
+            "target": "Os sindicatos convocaram uma greve geral para o próximo mês.",
+            "gloss": "The unions called a general strike for next month."
+          }
+        },
+        {
+          "id": "sondagem",
+          "hr": "sondagem",
+          "en": "opinion poll",
+          "pos": "n. f.",
+          "example": {
+            "target": "As sondagens indicam um empate técnico entre os dois maiores partidos.",
+            "gloss": "The polls indicate a statistical tie between the two biggest parties."
+          }
+        },
+        {
+          "id": "corrupção",
+          "hr": "corrupção",
+          "en": "corruption",
+          "pos": "n. f.",
+          "example": {
+            "target": "O combate à corrupção exige tribunais mais rápidos e eficazes.",
+            "gloss": "Fighting corruption requires faster and more effective courts."
+          }
+        },
+        {
+          "id": "escândalo",
+          "hr": "escândalo",
+          "en": "scandal",
+          "pos": "n. m.",
+          "example": {
+            "target": "O escândalo obrigou dois ministros a abandonar o governo.",
+            "gloss": "The scandal forced two ministers to leave the government."
+          }
+        },
+        {
+          "id": "julgamento",
+          "hr": "julgamento",
+          "en": "trial",
+          "pos": "n. m.",
+          "example": {
+            "target": "O julgamento foi adiado porque uma das testemunhas não compareceu.",
+            "gloss": "The trial was postponed because one of the witnesses didn't show up."
+          }
+        },
+        {
+          "id": "tribunal",
+          "hr": "tribunal",
+          "en": "court (of law)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O caso vai ser decidido no Tribunal Constitucional.",
+            "gloss": "The case will be decided in the Constitutional Court."
+          }
+        },
+        {
+          "id": "juiz",
+          "hr": "juiz",
+          "en": "judge",
+          "pos": "n. m.",
+          "note": "feminine: juíza",
+          "example": {
+            "target": "O juiz leu a sentença perante uma sala cheia de jornalistas.",
+            "gloss": "The judge read the sentence before a room full of journalists."
+          }
+        },
+        {
+          "id": "testemunha",
+          "hr": "testemunha",
+          "en": "witness",
+          "pos": "n. f.",
+          "note": "always feminine, even for a man",
+          "example": {
+            "target": "A testemunha jurou dizer a verdade perante o tribunal.",
+            "gloss": "The witness swore to tell the truth before the court."
+          }
+        },
+        {
+          "id": "crime",
+          "hr": "crime",
+          "en": "crime",
+          "pos": "n. m.",
+          "example": {
+            "target": "O crime foi cometido durante a noite, sem que ninguém visse nada.",
+            "gloss": "The crime was committed during the night, without anyone seeing anything."
+          }
+        },
+        {
+          "id": "criminalidade",
+          "hr": "criminalidade",
+          "en": "crime (rate), criminality",
+          "pos": "n. f.",
+          "example": {
+            "target": "A criminalidade violenta diminuiu nos últimos dez anos.",
+            "gloss": "Violent crime has decreased over the last ten years."
+          }
+        },
+        {
+          "id": "pena",
+          "hr": "pena",
+          "en": "sentence, penalty",
+          "pos": "n. f.",
+          "note": "also 'pity': que pena! = what a shame!",
+          "example": {
+            "target": "Foi condenado a uma pena de oito anos de prisão.",
+            "gloss": "He was sentenced to eight years in prison."
+          }
+        },
+        {
+          "id": "prisão",
+          "hr": "prisão",
+          "en": "prison; imprisonment",
+          "pos": "n. f.",
+          "example": {
+            "target": "O arguido ficou em prisão preventiva até ao julgamento.",
+            "gloss": "The defendant was held in pre-trial detention until the trial."
+          }
+        },
+        {
+          "id": "segurança pública",
+          "hr": "segurança pública",
+          "en": "public safety",
+          "pos": "n. f.",
+          "example": {
+            "target": "A câmara reforçou a iluminação das ruas para melhorar a segurança pública.",
+            "gloss": "The city council improved street lighting to boost public safety."
+          }
+        },
+        {
+          "id": "pobreza",
+          "hr": "pobreza",
+          "en": "poverty",
+          "pos": "n. f.",
+          "example": {
+            "target": "Quase um quinto da população vive em risco de pobreza.",
+            "gloss": "Almost a fifth of the population lives at risk of poverty."
+          }
+        },
+        {
+          "id": "exclusão social",
+          "hr": "exclusão social",
+          "en": "social exclusion",
+          "pos": "n. f.",
+          "example": {
+            "target": "O desemprego de longa duração conduz muitas vezes à exclusão social.",
+            "gloss": "Long-term unemployment often leads to social exclusion."
+          }
+        },
+        {
+          "id": "sem-abrigo",
+          "hr": "sem-abrigo",
+          "en": "homeless person",
+          "pos": "n. m.",
+          "note": "invariable: o/a sem-abrigo, os sem-abrigo",
+          "example": {
+            "target": "O número de sem-abrigo aumentou com a subida das rendas.",
+            "gloss": "The number of homeless people increased with rising rents."
+          }
+        },
+        {
+          "id": "voluntariado",
+          "hr": "voluntariado",
+          "en": "volunteering, volunteer work",
+          "pos": "n. m.",
+          "example": {
+            "target": "Faz voluntariado num banco alimentar aos fins de semana.",
+            "gloss": "She does volunteer work at a food bank on weekends."
+          }
+        },
+        {
+          "id": "solidariedade",
+          "hr": "solidariedade",
+          "en": "solidarity",
+          "pos": "n. f.",
+          "example": {
+            "target": "Após os incêndios, houve uma onda de solidariedade em todo o país.",
+            "gloss": "After the wildfires, there was a wave of solidarity across the country."
+          }
+        },
+        {
+          "id": "apoio social",
+          "hr": "apoio social",
+          "en": "social support, welfare benefit",
+          "pos": "n. m.",
+          "example": {
+            "target": "As famílias mais carenciadas têm direito a apoios sociais do Estado.",
+            "gloss": "The neediest families are entitled to welfare support from the State."
+          }
+        },
+        {
+          "id": "envelhecimento",
+          "hr": "envelhecimento",
+          "en": "ageing",
+          "pos": "n. m.",
+          "example": {
+            "target": "O envelhecimento da população põe pressão sobre o sistema de pensões.",
+            "gloss": "The ageing of the population puts pressure on the pension system."
+          }
+        },
+        {
+          "id": "natalidade",
+          "hr": "natalidade",
+          "en": "birth rate",
+          "pos": "n. f.",
+          "example": {
+            "target": "O governo criou incentivos para tentar aumentar a natalidade.",
+            "gloss": "The government created incentives to try to raise the birth rate."
+          }
+        },
+        {
+          "id": "oposição",
+          "hr": "oposição",
+          "en": "opposition (political)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A oposição acusou o governo de esconder os verdadeiros números do défice.",
+            "gloss": "The opposition accused the government of hiding the real deficit figures."
+          }
+        },
+        {
+          "id": "ministro",
+          "hr": "ministro",
+          "en": "minister (government)",
+          "pos": "n. m.",
+          "note": "feminine: ministra",
+          "example": {
+            "target": "A ministra da Saúde anunciou a contratação de mais enfermeiros.",
+            "gloss": "The Health Minister announced the hiring of more nurses."
+          }
+        },
+        {
+          "id": "ministério",
+          "hr": "ministério",
+          "en": "ministry",
+          "pos": "n. m.",
+          "example": {
+            "target": "O Ministério da Educação vai rever os programas do ensino secundário.",
+            "gloss": "The Ministry of Education is going to revise the secondary school curricula."
+          }
+        },
+        {
+          "id": "coligação",
+          "hr": "coligação",
+          "en": "coalition",
+          "pos": "n. f.",
+          "example": {
+            "target": "Os dois partidos formaram uma coligação para governar o país.",
+            "gloss": "The two parties formed a coalition to govern the country."
+          }
+        },
+        {
+          "id": "mandato",
+          "hr": "mandato",
+          "en": "term of office, mandate",
+          "pos": "n. m.",
+          "example": {
+            "target": "O presidente da câmara está no segundo e último mandato.",
+            "gloss": "The mayor is in his second and final term."
+          }
+        },
+        {
+          "id": "abstenção",
+          "hr": "abstenção",
+          "en": "abstention (electoral)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A abstenção ultrapassou os quarenta por cento, o que preocupa os analistas.",
+            "gloss": "Abstention exceeded forty percent, which worries analysts."
+          }
+        },
+        {
+          "id": "freguesia",
+          "hr": "freguesia",
+          "en": "civil parish (smallest administrative division in Portugal)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Cada concelho português está dividido em várias freguesias.",
+            "gloss": "Each Portuguese municipality is divided into several civil parishes."
+          }
+        },
+        {
+          "id": "arguido",
+          "hr": "arguido",
+          "en": "defendant, formal suspect",
+          "pos": "n. m.",
+          "note": "specific term of Portuguese law: person formally named in a criminal case",
+          "example": {
+            "target": "O empresário foi constituído arguido no processo de corrupção.",
+            "gloss": "The businessman was named a formal suspect in the corruption case."
+          }
+        },
+        {
+          "id": "sentença",
+          "hr": "sentença",
+          "en": "sentence, court ruling",
+          "pos": "n. f.",
+          "example": {
+            "target": "A sentença será conhecida na próxima semana.",
+            "gloss": "The ruling will be announced next week."
+          }
+        },
+        {
+          "id": "roubo",
+          "hr": "roubo",
+          "en": "robbery, theft",
+          "pos": "n. m.",
+          "example": {
+            "target": "A polícia está a investigar uma série de roubos naquele bairro.",
+            "gloss": "The police are investigating a series of robberies in that neighbourhood."
+          }
+        },
+        {
+          "id": "desigualdade",
+          "hr": "desigualdade",
+          "en": "inequality",
+          "pos": "n. f.",
+          "example": {
+            "target": "A desigualdade entre ricos e pobres tem vindo a agravar-se.",
+            "gloss": "Inequality between rich and poor has been getting worse."
+          }
+        },
+        {
+          "id": "asilo",
+          "hr": "asilo",
+          "en": "asylum",
+          "pos": "n. m.",
+          "note": "pedir asilo = to seek asylum",
+          "example": {
+            "target": "A família pediu asilo político assim que chegou ao aeroporto.",
+            "gloss": "The family requested political asylum as soon as they arrived at the airport."
+          }
+        },
+        {
+          "id": "ong",
+          "hr": "ONG",
+          "en": "NGO, non-governmental organisation",
+          "pos": "n. f.",
+          "note": "organização não governamental",
+          "example": {
+            "target": "Várias ONG distribuem refeições aos sem-abrigo no centro da cidade.",
+            "gloss": "Several NGOs hand out meals to the homeless in the city centre."
+          }
+        },
+        {
+          "id": "votar",
+          "hr": "votar",
+          "en": "to vote",
+          "pos": "v.",
+          "example": {
+            "target": "É importante que todos votem, mesmo que estejam desiludidos com a política.",
+            "gloss": "It's important that everyone vote, even if they're disillusioned with politics."
+          }
+        },
+        {
+          "id": "eleger",
+          "hr": "eleger",
+          "en": "to elect",
+          "pos": "v.",
+          "example": {
+            "target": "Os portugueses elegeram um novo presidente à primeira volta.",
+            "gloss": "The Portuguese elected a new president in the first round."
+          }
+        },
+        {
+          "id": "governar",
+          "hr": "governar",
+          "en": "to govern",
+          "pos": "v.",
+          "example": {
+            "target": "É difícil governar sem maioria absoluta no parlamento.",
+            "gloss": "It's difficult to govern without an absolute majority in parliament."
+          }
+        },
+        {
+          "id": "aprovar uma lei",
+          "hr": "aprovar uma lei",
+          "en": "to pass a law",
+          "pos": "phrase",
+          "example": {
+            "target": "O parlamento aprovou uma lei que proíbe a publicidade dirigida a crianças.",
+            "gloss": "Parliament passed a law banning advertising aimed at children."
+          }
+        },
+        {
+          "id": "manifestar-se",
+          "hr": "manifestar-se",
+          "en": "to demonstrate, to protest publicly",
+          "pos": "v.",
+          "example": {
+            "target": "Os enfermeiros manifestaram-se em frente ao ministério para exigirem melhores salários.",
+            "gloss": "The nurses demonstrated in front of the ministry to demand better wages."
+          }
+        },
+        {
+          "id": "protestar",
+          "hr": "protestar",
+          "en": "to protest",
+          "pos": "v.",
+          "example": {
+            "target": "Os moradores protestaram contra a construção do novo aeroporto.",
+            "gloss": "The residents protested against the construction of the new airport."
+          }
+        },
+        {
+          "id": "reivindicar",
+          "hr": "reivindicar",
+          "en": "to demand, to claim (a right)",
+          "pos": "v.",
+          "example": {
+            "target": "Os trabalhadores reivindicam melhores condições e horários mais justos.",
+            "gloss": "The workers are demanding better conditions and fairer schedules."
+          }
+        },
+        {
+          "id": "julgar",
+          "hr": "julgar",
+          "en": "to judge, to try (in court)",
+          "pos": "v.",
+          "example": {
+            "target": "O antigo ministro vai ser julgado por corrupção no próximo ano.",
+            "gloss": "The former minister will be tried for corruption next year."
+          }
+        },
+        {
+          "id": "condenar",
+          "hr": "condenar",
+          "en": "to sentence, to convict; to condemn",
+          "pos": "v.",
+          "example": {
+            "target": "O tribunal condenou o arguido a cinco anos de prisão efetiva.",
+            "gloss": "The court sentenced the defendant to five years of actual prison time."
+          }
+        },
+        {
+          "id": "absolver",
+          "hr": "absolver",
+          "en": "to acquit",
+          "pos": "v.",
+          "example": {
+            "target": "O júri absolveu a arguida por falta de provas.",
+            "gloss": "The jury acquitted the defendant for lack of evidence."
+          }
+        },
+        {
+          "id": "cometer um crime",
+          "hr": "cometer um crime",
+          "en": "to commit a crime",
+          "pos": "phrase",
+          "example": {
+            "target": "Quem comete um crime deve responder perante a justiça.",
+            "gloss": "Whoever commits a crime must answer to the justice system."
+          }
+        },
+        {
+          "id": "cumprir pena",
+          "hr": "cumprir pena",
+          "en": "to serve a sentence",
+          "pos": "phrase",
+          "example": {
+            "target": "Está a cumprir pena numa prisão perto do Porto.",
+            "gloss": "He is serving his sentence in a prison near Porto."
+          }
+        },
+        {
+          "id": "integrar-se",
+          "hr": "integrar-se",
+          "en": "to integrate (oneself)",
+          "pos": "v.",
+          "example": {
+            "target": "Para nos integrarmos bem, é essencial aprendermos a língua do país.",
+            "gloss": "For us to integrate well, it's essential that we learn the country's language."
+          }
+        },
+        {
+          "id": "emigrar",
+          "hr": "emigrar",
+          "en": "to emigrate",
+          "pos": "v.",
+          "example": {
+            "target": "Muitos jovens qualificados emigraram durante a crise, à procura de melhores salários.",
+            "gloss": "Many qualified young people emigrated during the crisis, in search of better wages."
+          }
+        },
+        {
+          "id": "imigrar",
+          "hr": "imigrar",
+          "en": "to immigrate",
+          "pos": "v.",
+          "example": {
+            "target": "A família imigrou para Portugal há dez anos e hoje sente-se em casa.",
+            "gloss": "The family immigrated to Portugal ten years ago and today they feel at home."
+          }
+        },
+        {
+          "id": "tomar posse",
+          "hr": "tomar posse",
+          "en": "to take office",
+          "pos": "phrase",
+          "example": {
+            "target": "O novo governo toma posse na próxima semana, no Palácio da Ajuda.",
+            "gloss": "The new government takes office next week, at the Ajuda Palace."
+          }
+        }
+      ],
+      "sources": [
+        "referencial-camoes",
+        "freq-pt"
+      ]
+    }
+  ]
+}

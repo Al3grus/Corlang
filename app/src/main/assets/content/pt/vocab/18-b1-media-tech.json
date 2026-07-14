@@ -1,0 +1,805 @@
+{
+  "packs": [
+    {
+      "id": "18-b1-media-tech",
+      "title": "Media & technology",
+      "level": "B1",
+      "words": [
+        {
+          "id": "notícia",
+          "hr": "notícia",
+          "en": "news item, piece of news",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ouvi uma notícia importante no telejornal da noite.",
+            "gloss": "I heard an important piece of news on the evening news."
+          }
+        },
+        {
+          "id": "imprensa",
+          "hr": "imprensa",
+          "en": "press",
+          "pos": "n. f.",
+          "example": {
+            "target": "A imprensa portuguesa falou muito deste caso.",
+            "gloss": "The Portuguese press talked a lot about this case."
+          }
+        },
+        {
+          "id": "reportagem",
+          "hr": "reportagem",
+          "en": "news report, feature",
+          "pos": "n. f.",
+          "example": {
+            "target": "Vi uma reportagem sobre os incêndios no norte do país.",
+            "gloss": "I watched a report about the fires in the north of the country."
+          }
+        },
+        {
+          "id": "manchete",
+          "hr": "manchete",
+          "en": "headline",
+          "pos": "n. f.",
+          "example": {
+            "target": "A manchete do jornal de hoje é sobre as eleições.",
+            "gloss": "Today's newspaper headline is about the elections."
+          }
+        },
+        {
+          "id": "artigo",
+          "hr": "artigo",
+          "en": "article",
+          "pos": "n. m.",
+          "example": {
+            "target": "Li um artigo muito interessante sobre educação.",
+            "gloss": "I read a very interesting article about education."
+          }
+        },
+        {
+          "id": "crónica",
+          "hr": "crónica",
+          "en": "opinion column, chronicle",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ele escreve uma crónica semanal no jornal.",
+            "gloss": "He writes a weekly column in the newspaper."
+          }
+        },
+        {
+          "id": "opinião pública",
+          "hr": "opinião pública",
+          "en": "public opinion",
+          "pos": "n. f.",
+          "example": {
+            "target": "A opinião pública está dividida sobre este tema.",
+            "gloss": "Public opinion is divided on this topic."
+          }
+        },
+        {
+          "id": "canal",
+          "hr": "canal",
+          "en": "channel",
+          "pos": "n. m.",
+          "example": {
+            "target": "Em que canal dá o jogo esta noite?",
+            "gloss": "What channel is the match on tonight?"
+          }
+        },
+        {
+          "id": "emissão",
+          "hr": "emissão",
+          "en": "broadcast",
+          "pos": "n. f.",
+          "example": {
+            "target": "A emissão foi interrompida por causa da tempestade.",
+            "gloss": "The broadcast was interrupted because of the storm."
+          }
+        },
+        {
+          "id": "programa",
+          "hr": "programa",
+          "en": "programme, show",
+          "pos": "n. m.",
+          "example": {
+            "target": "O meu programa preferido dá ao sábado à noite.",
+            "gloss": "My favourite programme is on on Saturday nights."
+          }
+        },
+        {
+          "id": "telejornal",
+          "hr": "telejornal",
+          "en": "TV news",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os meus pais veem o telejornal todos os dias às oito.",
+            "gloss": "My parents watch the TV news every day at eight."
+          }
+        },
+        {
+          "id": "série",
+          "hr": "série",
+          "en": "series",
+          "pos": "n. f.",
+          "example": {
+            "target": "Estamos a ver uma série portuguesa muito boa.",
+            "gloss": "We are watching a very good Portuguese series."
+          }
+        },
+        {
+          "id": "episódio",
+          "hr": "episódio",
+          "en": "episode",
+          "pos": "n. m.",
+          "example": {
+            "target": "O último episódio deixou-me com muitas dúvidas.",
+            "gloss": "The last episode left me with a lot of questions."
+          }
+        },
+        {
+          "id": "documentário",
+          "hr": "documentário",
+          "en": "documentary",
+          "pos": "n. m.",
+          "example": {
+            "target": "Vimos um documentário sobre o oceano Atlântico.",
+            "gloss": "We watched a documentary about the Atlantic Ocean."
+          }
+        },
+        {
+          "id": "publicidade",
+          "hr": "publicidade",
+          "en": "advertising",
+          "pos": "n. f.",
+          "example": {
+            "target": "Há demasiada publicidade na televisão.",
+            "gloss": "There is too much advertising on television."
+          }
+        },
+        {
+          "id": "anúncio",
+          "hr": "anúncio",
+          "en": "advert, announcement",
+          "pos": "n. m.",
+          "example": {
+            "target": "Antes do vídeo apareceu um anúncio a um carro novo.",
+            "gloss": "Before the video, an advert for a new car appeared."
+          }
+        },
+        {
+          "id": "audiência",
+          "hr": "audiência",
+          "en": "audience, ratings",
+          "pos": "n. f.",
+          "example": {
+            "target": "O programa perdeu audiência este ano.",
+            "gloss": "The programme lost viewers this year."
+          }
+        },
+        {
+          "id": "rádio",
+          "hr": "rádio",
+          "en": "radio",
+          "pos": "n. f.",
+          "note": "a rádio = the station; o rádio = the set",
+          "example": {
+            "target": "Ouço a rádio no carro a caminho do trabalho.",
+            "gloss": "I listen to the radio in the car on the way to work."
+          }
+        },
+        {
+          "id": "podcast",
+          "hr": "podcast",
+          "en": "podcast",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ouço um podcast de história enquanto caminho.",
+            "gloss": "I listen to a history podcast while I walk."
+          }
+        },
+        {
+          "id": "meios de comunicação",
+          "hr": "meios de comunicação",
+          "en": "the media",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Os meios de comunicação seguiram o caso durante semanas.",
+            "gloss": "The media followed the case for weeks."
+          }
+        },
+        {
+          "id": "apresentador",
+          "hr": "apresentador",
+          "en": "presenter, host",
+          "pos": "n. m.",
+          "note": "f. apresentadora",
+          "example": {
+            "target": "O apresentador do concurso é muito conhecido em Portugal.",
+            "gloss": "The host of the game show is very well known in Portugal."
+          }
+        },
+        {
+          "id": "legendas",
+          "hr": "legendas",
+          "en": "subtitles",
+          "pos": "n. f. pl.",
+          "example": {
+            "target": "Prefiro ver os filmes com legendas em português.",
+            "gloss": "I prefer to watch films with Portuguese subtitles."
+          }
+        },
+        {
+          "id": "dobragem",
+          "hr": "dobragem",
+          "en": "dubbing",
+          "pos": "n. f.",
+          "example": {
+            "target": "Em Portugal, só os filmes infantis costumam ter dobragem.",
+            "gloss": "In Portugal, only children's films are usually dubbed."
+          }
+        },
+        {
+          "id": "fonte",
+          "hr": "fonte",
+          "en": "source",
+          "pos": "n. f.",
+          "example": {
+            "target": "O jornalista não revelou a fonte da informação.",
+            "gloss": "The journalist did not reveal the source of the information."
+          }
+        },
+        {
+          "id": "notícia falsa",
+          "hr": "notícia falsa",
+          "en": "fake news story",
+          "pos": "n. f.",
+          "example": {
+            "target": "É importante saber identificar uma notícia falsa.",
+            "gloss": "It is important to know how to spot a fake news story."
+          }
+        },
+        {
+          "id": "em direto",
+          "hr": "em direto",
+          "en": "live (broadcast)",
+          "pos": "phrase",
+          "example": {
+            "target": "O concerto vai ser transmitido em direto na televisão.",
+            "gloss": "The concert will be broadcast live on television."
+          }
+        },
+        {
+          "id": "computador",
+          "hr": "computador",
+          "en": "computer",
+          "pos": "n. m.",
+          "example": {
+            "target": "Passo o dia inteiro a trabalhar ao computador.",
+            "gloss": "I spend the whole day working at the computer."
+          }
+        },
+        {
+          "id": "portátil",
+          "hr": "portátil",
+          "en": "laptop",
+          "pos": "n. m.",
+          "example": {
+            "target": "Levo sempre o portátil para as reuniões.",
+            "gloss": "I always take my laptop to meetings."
+          }
+        },
+        {
+          "id": "ecrã",
+          "hr": "ecrã",
+          "en": "screen",
+          "pos": "n. m.",
+          "example": {
+            "target": "O ecrã do meu telemóvel partiu-se quando caiu ao chão.",
+            "gloss": "My phone's screen broke when it fell on the floor."
+          }
+        },
+        {
+          "id": "teclado",
+          "hr": "teclado",
+          "en": "keyboard",
+          "pos": "n. m.",
+          "example": {
+            "target": "Este teclado tem as teclas muito pequenas.",
+            "gloss": "This keyboard has very small keys."
+          }
+        },
+        {
+          "id": "rato",
+          "hr": "rato",
+          "en": "computer mouse",
+          "pos": "n. m.",
+          "example": {
+            "target": "O rato sem fios ficou sem pilhas.",
+            "gloss": "The wireless mouse ran out of batteries."
+          }
+        },
+        {
+          "id": "impressora",
+          "hr": "impressora",
+          "en": "printer",
+          "pos": "n. f.",
+          "example": {
+            "target": "A impressora do escritório está outra vez avariada.",
+            "gloss": "The office printer is broken again."
+          }
+        },
+        {
+          "id": "ficheiro",
+          "hr": "ficheiro",
+          "en": "file",
+          "pos": "n. m.",
+          "example": {
+            "target": "Não consigo abrir o ficheiro que me enviaste.",
+            "gloss": "I can't open the file you sent me."
+          }
+        },
+        {
+          "id": "pasta",
+          "hr": "pasta",
+          "en": "folder",
+          "pos": "n. f.",
+          "note": "also: briefcase",
+          "example": {
+            "target": "Guardei as fotografias numa pasta nova.",
+            "gloss": "I saved the photos in a new folder."
+          }
+        },
+        {
+          "id": "aplicação",
+          "hr": "aplicação",
+          "en": "app, application",
+          "pos": "n. f.",
+          "example": {
+            "target": "Descarreguei uma aplicação para aprender línguas.",
+            "gloss": "I downloaded an app for learning languages."
+          }
+        },
+        {
+          "id": "palavra-passe",
+          "hr": "palavra-passe",
+          "en": "password",
+          "pos": "n. f.",
+          "example": {
+            "target": "Esqueci-me da palavra-passe do meu correio eletrónico.",
+            "gloss": "I forgot the password to my email."
+          }
+        },
+        {
+          "id": "utilizador",
+          "hr": "utilizador",
+          "en": "user",
+          "pos": "n. m.",
+          "note": "f. utilizadora",
+          "example": {
+            "target": "O sítio tem mais de um milhão de utilizadores registados.",
+            "gloss": "The website has more than a million registered users."
+          }
+        },
+        {
+          "id": "correio eletrónico",
+          "hr": "correio eletrónico",
+          "en": "email",
+          "pos": "n. m.",
+          "example": {
+            "target": "Envio-te os documentos por correio eletrónico.",
+            "gloss": "I'll send you the documents by email."
+          }
+        },
+        {
+          "id": "mensagem",
+          "hr": "mensagem",
+          "en": "message",
+          "pos": "n. f.",
+          "example": {
+            "target": "Deixa-me uma mensagem se eu não atender.",
+            "gloss": "Leave me a message if I don't answer."
+          }
+        },
+        {
+          "id": "rede social",
+          "hr": "rede social",
+          "en": "social network",
+          "pos": "n. f.",
+          "example": {
+            "target": "Os jovens passam horas nas redes sociais.",
+            "gloss": "Young people spend hours on social networks."
+          }
+        },
+        {
+          "id": "sítio",
+          "hr": "sítio",
+          "en": "website; place",
+          "pos": "n. m.",
+          "note": "sítio na internet = website",
+          "example": {
+            "target": "Encontrei a informação no sítio da câmara municipal.",
+            "gloss": "I found the information on the town hall's website."
+          }
+        },
+        {
+          "id": "ligação",
+          "hr": "ligação",
+          "en": "link; connection",
+          "pos": "n. f.",
+          "example": {
+            "target": "Clica na ligação para abrires o artigo.",
+            "gloss": "Click on the link to open the article."
+          }
+        },
+        {
+          "id": "wi-fi",
+          "hr": "wi-fi",
+          "en": "Wi-Fi",
+          "pos": "n. m.",
+          "example": {
+            "target": "O café tem wi-fi gratuito para os clientes.",
+            "gloss": "The café has free Wi-Fi for customers."
+          }
+        },
+        {
+          "id": "dados móveis",
+          "hr": "dados móveis",
+          "en": "mobile data",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Fiquei sem dados móveis antes do fim do mês.",
+            "gloss": "I ran out of mobile data before the end of the month."
+          }
+        },
+        {
+          "id": "carregador",
+          "hr": "carregador",
+          "en": "charger",
+          "pos": "n. m.",
+          "example": {
+            "target": "Esqueci-me do carregador do telemóvel em casa.",
+            "gloss": "I left my phone charger at home."
+          }
+        },
+        {
+          "id": "bateria",
+          "hr": "bateria",
+          "en": "battery",
+          "pos": "n. f.",
+          "example": {
+            "target": "A bateria do portátil dura cerca de oito horas.",
+            "gloss": "The laptop battery lasts about eight hours."
+          }
+        },
+        {
+          "id": "auscultadores",
+          "hr": "auscultadores",
+          "en": "headphones",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Uso auscultadores para ouvir música no comboio.",
+            "gloss": "I use headphones to listen to music on the train."
+          }
+        },
+        {
+          "id": "coluna",
+          "hr": "coluna",
+          "en": "loudspeaker; column",
+          "pos": "n. f.",
+          "example": {
+            "target": "Comprámos uma coluna nova para ouvir música na sala.",
+            "gloss": "We bought a new speaker to listen to music in the living room."
+          }
+        },
+        {
+          "id": "câmara",
+          "hr": "câmara",
+          "en": "camera",
+          "pos": "n. f.",
+          "note": "also: câmara municipal = town hall",
+          "example": {
+            "target": "A câmara deste telemóvel tira fotografias muito boas.",
+            "gloss": "This phone's camera takes very good photos."
+          }
+        },
+        {
+          "id": "fotografia",
+          "hr": "fotografia",
+          "en": "photograph, photography",
+          "pos": "n. f.",
+          "example": {
+            "target": "Tirei imensas fotografias durante a viagem.",
+            "gloss": "I took loads of photos during the trip."
+          }
+        },
+        {
+          "id": "navegador",
+          "hr": "navegador",
+          "en": "web browser",
+          "pos": "n. m.",
+          "example": {
+            "target": "Que navegador usas no computador?",
+            "gloss": "Which browser do you use on your computer?"
+          }
+        },
+        {
+          "id": "motor de busca",
+          "hr": "motor de busca",
+          "en": "search engine",
+          "pos": "n. m.",
+          "example": {
+            "target": "Escrevi o nome do hotel no motor de busca.",
+            "gloss": "I typed the hotel's name into the search engine."
+          }
+        },
+        {
+          "id": "separador",
+          "hr": "separador",
+          "en": "browser tab",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tenho demasiados separadores abertos no navegador.",
+            "gloss": "I have too many tabs open in the browser."
+          }
+        },
+        {
+          "id": "ícone",
+          "hr": "ícone",
+          "en": "icon",
+          "pos": "n. m.",
+          "example": {
+            "target": "Clica duas vezes no ícone para abrir o programa.",
+            "gloss": "Double-click the icon to open the program."
+          }
+        },
+        {
+          "id": "tecla",
+          "hr": "tecla",
+          "en": "key (on a keyboard)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Carrega nesta tecla para apagar a letra.",
+            "gloss": "Press this key to delete the letter."
+          }
+        },
+        {
+          "id": "anexo",
+          "hr": "anexo",
+          "en": "attachment",
+          "pos": "n. m.",
+          "example": {
+            "target": "Não consigo abrir o anexo da tua mensagem.",
+            "gloss": "I can't open the attachment in your message."
+          }
+        },
+        {
+          "id": "pen",
+          "hr": "pen",
+          "en": "USB flash drive",
+          "pos": "n. f.",
+          "note": "uma pen (USB)",
+          "example": {
+            "target": "Guardei a apresentação numa pen.",
+            "gloss": "I saved the presentation on a flash drive."
+          }
+        },
+        {
+          "id": "disco rígido",
+          "hr": "disco rígido",
+          "en": "hard drive",
+          "pos": "n. m.",
+          "example": {
+            "target": "O disco rígido do meu computador está quase cheio.",
+            "gloss": "My computer's hard drive is almost full."
+          }
+        },
+        {
+          "id": "informática",
+          "hr": "informática",
+          "en": "IT, computing",
+          "pos": "n. f.",
+          "example": {
+            "target": "Ela trabalha na área da informática.",
+            "gloss": "She works in IT."
+          }
+        },
+        {
+          "id": "perfil",
+          "hr": "perfil",
+          "en": "profile",
+          "pos": "n. m.",
+          "example": {
+            "target": "Atualizei a fotografia do meu perfil.",
+            "gloss": "I updated my profile picture."
+          }
+        },
+        {
+          "id": "seguidor",
+          "hr": "seguidor",
+          "en": "follower",
+          "pos": "n. m.",
+          "note": "f. seguidora",
+          "example": {
+            "target": "Aquela página tem milhares de seguidores.",
+            "gloss": "That page has thousands of followers."
+          }
+        },
+        {
+          "id": "publicação",
+          "hr": "publicação",
+          "en": "post; publication",
+          "pos": "n. f.",
+          "example": {
+            "target": "A publicação dela teve muitos comentários.",
+            "gloss": "Her post got a lot of comments."
+          }
+        },
+        {
+          "id": "ecrã tátil",
+          "hr": "ecrã tátil",
+          "en": "touchscreen",
+          "pos": "n. m.",
+          "example": {
+            "target": "O tablet tem um ecrã tátil de dez polegadas.",
+            "gloss": "The tablet has a ten-inch touchscreen."
+          }
+        },
+        {
+          "id": "ligar-se",
+          "hr": "ligar-se",
+          "en": "to connect (to)",
+          "pos": "v.",
+          "note": "ligar-se a",
+          "example": {
+            "target": "Não consigo ligar-me à internet do hotel.",
+            "gloss": "I can't connect to the hotel's internet."
+          }
+        },
+        {
+          "id": "navegar",
+          "hr": "navegar",
+          "en": "to browse, to surf",
+          "pos": "v.",
+          "example": {
+            "target": "Passo demasiado tempo a navegar na internet.",
+            "gloss": "I spend too much time browsing the internet."
+          }
+        },
+        {
+          "id": "pesquisar",
+          "hr": "pesquisar",
+          "en": "to search, to look up",
+          "pos": "v.",
+          "example": {
+            "target": "Pesquisei os horários dos comboios na internet.",
+            "gloss": "I looked up the train times on the internet."
+          }
+        },
+        {
+          "id": "descarregar",
+          "hr": "descarregar",
+          "en": "to download",
+          "pos": "v.",
+          "example": {
+            "target": "Descarreguei o formulário do sítio da universidade.",
+            "gloss": "I downloaded the form from the university's website."
+          }
+        },
+        {
+          "id": "instalar",
+          "hr": "instalar",
+          "en": "to install",
+          "pos": "v.",
+          "example": {
+            "target": "Instalei a aplicação nova no telemóvel.",
+            "gloss": "I installed the new app on my phone."
+          }
+        },
+        {
+          "id": "atualizar",
+          "hr": "atualizar",
+          "en": "to update",
+          "pos": "v.",
+          "example": {
+            "target": "Devias atualizar o programa para a versão mais recente.",
+            "gloss": "You should update the program to the latest version."
+          }
+        },
+        {
+          "id": "partilhar",
+          "hr": "partilhar",
+          "en": "to share",
+          "pos": "v.",
+          "example": {
+            "target": "Partilhei o artigo com os meus colegas.",
+            "gloss": "I shared the article with my colleagues."
+          }
+        },
+        {
+          "id": "publicar",
+          "hr": "publicar",
+          "en": "to post, to publish",
+          "pos": "v.",
+          "example": {
+            "target": "Ela publicou as fotografias das férias na rede social.",
+            "gloss": "She posted her holiday photos on the social network."
+          }
+        },
+        {
+          "id": "comentar",
+          "hr": "comentar",
+          "en": "to comment (on)",
+          "pos": "v.",
+          "example": {
+            "target": "Muitas pessoas comentaram a notícia.",
+            "gloss": "Many people commented on the news story."
+          }
+        },
+        {
+          "id": "bloquear",
+          "hr": "bloquear",
+          "en": "to block",
+          "pos": "v.",
+          "example": {
+            "target": "Bloqueei aquele número porque recebia demasiadas chamadas.",
+            "gloss": "I blocked that number because I was getting too many calls."
+          }
+        },
+        {
+          "id": "enviar em anexo",
+          "hr": "enviar em anexo",
+          "en": "to send as an attachment",
+          "pos": "phrase",
+          "example": {
+            "target": "Envio em anexo o meu currículo.",
+            "gloss": "I am sending my CV as an attachment."
+          }
+        },
+        {
+          "id": "digitalizar",
+          "hr": "digitalizar",
+          "en": "to scan",
+          "pos": "v.",
+          "example": {
+            "target": "Digitalizei os documentos e enviei-os por correio eletrónico.",
+            "gloss": "I scanned the documents and sent them by email."
+          }
+        },
+        {
+          "id": "clicar",
+          "hr": "clicar",
+          "en": "to click",
+          "pos": "v.",
+          "note": "clicar em / carregar em",
+          "example": {
+            "target": "Clica no botão verde para confirmar.",
+            "gloss": "Click the green button to confirm."
+          }
+        },
+        {
+          "id": "registar-se",
+          "hr": "registar-se",
+          "en": "to register, to sign up",
+          "pos": "v.",
+          "example": {
+            "target": "Registei-me no sítio para receber as novidades.",
+            "gloss": "I signed up on the website to receive the news."
+          }
+        },
+        {
+          "id": "iniciar sessão",
+          "hr": "iniciar sessão",
+          "en": "to log in",
+          "pos": "phrase",
+          "example": {
+            "target": "Tens de iniciar sessão com o teu correio eletrónico.",
+            "gloss": "You have to log in with your email."
+          }
+        }
+      ],
+      "sources": [
+        "referencial-camoes",
+        "freq-pt"
+      ]
+    }
+  ]
+}

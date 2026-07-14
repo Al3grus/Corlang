@@ -1,0 +1,795 @@
+{
+  "packs": [
+    {
+      "id": "27-b2-formal-register",
+      "title": "Formal & written register",
+      "level": "B2",
+      "words": [
+        {
+          "id": "exmo. senhor",
+          "hr": "Exmo. Senhor",
+          "en": "Dear Sir (formal salutation)",
+          "pos": "phrase",
+          "note": "abbreviation of Excelentíssimo Senhor; standard opening of formal letters",
+          "example": {
+            "target": "Exmo. Senhor Diretor, venho apresentar a minha candidatura à vaga anunciada.",
+            "gloss": "Dear Sir (Director), I am writing to apply for the advertised vacancy."
+          }
+        },
+        {
+          "id": "exma. senhora",
+          "hr": "Exma. Senhora",
+          "en": "Dear Madam (formal salutation)",
+          "pos": "phrase",
+          "note": "abbreviation of Excelentíssima Senhora",
+          "example": {
+            "target": "Exma. Senhora, agradeço a resposta enviada no passado dia 10.",
+            "gloss": "Dear Madam, thank you for the reply sent on the 10th."
+          }
+        },
+        {
+          "id": "venho por este meio",
+          "hr": "Venho por este meio",
+          "en": "I hereby (write to)",
+          "pos": "phrase",
+          "note": "formal letter opening",
+          "example": {
+            "target": "Venho por este meio solicitar o cancelamento do contrato de fornecimento.",
+            "gloss": "I hereby request the cancellation of the supply contract."
+          }
+        },
+        {
+          "id": "serve a presente para",
+          "hr": "Serve a presente para",
+          "en": "the purpose of this letter is to",
+          "pos": "phrase",
+          "note": "formal letter opening",
+          "example": {
+            "target": "Serve a presente para informar V. Exa. da alteração da nossa morada.",
+            "gloss": "The purpose of this letter is to inform you of the change of our address."
+          }
+        },
+        {
+          "id": "na sequência de",
+          "hr": "Na sequência de",
+          "en": "further to, following",
+          "pos": "phrase",
+          "example": {
+            "target": "Na sequência da nossa conversa telefónica, envio os documentos pedidos.",
+            "gloss": "Further to our telephone conversation, I am sending the requested documents."
+          }
+        },
+        {
+          "id": "no seguimento de",
+          "hr": "No seguimento de",
+          "en": "following on from, in follow-up to",
+          "pos": "phrase",
+          "example": {
+            "target": "No seguimento do anúncio publicado, gostaria de obter mais informações sobre a vaga.",
+            "gloss": "Following the published advertisement, I would like to obtain more information about the vacancy."
+          }
+        },
+        {
+          "id": "em resposta a",
+          "hr": "Em resposta a",
+          "en": "in reply to",
+          "pos": "phrase",
+          "example": {
+            "target": "Em resposta à vossa carta de 3 de maio, esclarecemos os pontos levantados.",
+            "gloss": "In reply to your letter of 3 May, we clarify the points raised."
+          }
+        },
+        {
+          "id": "junto envio",
+          "hr": "Junto envio",
+          "en": "please find enclosed, I enclose",
+          "pos": "phrase",
+          "example": {
+            "target": "Junto envio o meu currículo e os certificados de habilitações.",
+            "gloss": "Please find enclosed my CV and my qualification certificates."
+          }
+        },
+        {
+          "id": "agradeço desde já a atenção dispensada",
+          "hr": "Agradeço desde já a atenção dispensada",
+          "en": "thank you in advance for your attention",
+          "pos": "phrase",
+          "note": "standard formal letter closing formula",
+          "example": {
+            "target": "Agradeço desde já a atenção dispensada e fico a aguardar uma resposta.",
+            "gloss": "Thank you in advance for your attention; I await your reply."
+          }
+        },
+        {
+          "id": "com os melhores cumprimentos",
+          "hr": "Com os melhores cumprimentos",
+          "en": "best regards, yours sincerely",
+          "pos": "phrase",
+          "example": {
+            "target": "Sem outro assunto de momento, despeço-me com os melhores cumprimentos.",
+            "gloss": "With nothing further at present, I sign off with best regards."
+          }
+        },
+        {
+          "id": "atentamente",
+          "hr": "Atentamente",
+          "en": "yours faithfully, respectfully",
+          "pos": "adv.",
+          "note": "formal letter closing",
+          "example": {
+            "target": "Aguardo o vosso contacto. Atentamente, João Ferreira.",
+            "gloss": "I await your contact. Yours faithfully, João Ferreira."
+          }
+        },
+        {
+          "id": "aguardo resposta com brevidade",
+          "hr": "Aguardo resposta com brevidade",
+          "en": "I look forward to a prompt reply",
+          "pos": "phrase",
+          "example": {
+            "target": "Aguardo resposta com brevidade, dada a urgência do assunto.",
+            "gloss": "I look forward to a prompt reply, given the urgency of the matter."
+          }
+        },
+        {
+          "id": "v. exa.",
+          "hr": "V. Exa.",
+          "en": "you (deferential form of address)",
+          "pos": "phrase",
+          "note": "abbreviation of Vossa Excelência; used in official correspondence",
+          "example": {
+            "target": "Solicito a V. Exa. o envio de uma segunda via da fatura.",
+            "gloss": "I request that you send a duplicate of the invoice."
+          }
+        },
+        {
+          "id": "dirijo-me a v. exa.",
+          "hr": "Dirijo-me a V. Exa.",
+          "en": "I am writing to you (deferential)",
+          "pos": "phrase",
+          "example": {
+            "target": "Dirijo-me a V. Exa. na qualidade de representante dos moradores do prédio.",
+            "gloss": "I am writing to you in my capacity as representative of the building's residents."
+          }
+        },
+        {
+          "id": "acuso a receção de",
+          "hr": "Acuso a receção de",
+          "en": "I acknowledge receipt of",
+          "pos": "phrase",
+          "note": "receção is the standard spelling in Portugal",
+          "example": {
+            "target": "Acuso a receção da vossa carta datada de 12 de junho.",
+            "gloss": "I acknowledge receipt of your letter dated 12 June."
+          }
+        },
+        {
+          "id": "para os devidos efeitos",
+          "hr": "para os devidos efeitos",
+          "en": "for all due purposes",
+          "pos": "phrase",
+          "note": "formal-administrative formula",
+          "example": {
+            "target": "Declara-se, para os devidos efeitos, que o trabalhador se encontra ao serviço desta empresa.",
+            "gloss": "It is hereby declared, for all due purposes, that the employee works for this company."
+          }
+        },
+        {
+          "id": "sem outro assunto de momento",
+          "hr": "Sem outro assunto de momento",
+          "en": "with nothing further at present",
+          "pos": "phrase",
+          "example": {
+            "target": "Sem outro assunto de momento, subscrevo-me atentamente.",
+            "gloss": "With nothing further at present, I remain yours faithfully."
+          }
+        },
+        {
+          "id": "à atenção de",
+          "hr": "à atenção de",
+          "en": "for the attention of",
+          "pos": "phrase",
+          "example": {
+            "target": "O requerimento deve ser enviado à atenção do chefe de divisão.",
+            "gloss": "The application must be sent for the attention of the head of division."
+          }
+        },
+        {
+          "id": "em anexo",
+          "hr": "em anexo",
+          "en": "attached, enclosed",
+          "pos": "phrase",
+          "example": {
+            "target": "Segue em anexo o comprovativo de pagamento das propinas.",
+            "gloss": "Attached is the proof of payment of the tuition fees."
+          }
+        },
+        {
+          "id": "fico ao dispor para qualquer esclarecimento",
+          "hr": "Fico ao dispor para qualquer esclarecimento",
+          "en": "I remain at your disposal for any clarification",
+          "pos": "phrase",
+          "example": {
+            "target": "Fico ao dispor para qualquer esclarecimento adicional que considerem necessário.",
+            "gloss": "I remain at your disposal for any additional clarification you may consider necessary."
+          }
+        },
+        {
+          "id": "mais se informa que",
+          "hr": "Mais se informa que",
+          "en": "it is further advised that",
+          "pos": "phrase",
+          "note": "very formal administrative connector",
+          "example": {
+            "target": "Mais se informa que o prazo de candidatura termina a 30 de setembro.",
+            "gloss": "It is further advised that the application deadline ends on 30 September."
+          }
+        },
+        {
+          "id": "cumpre-me informar que",
+          "hr": "Cumpre-me informar que",
+          "en": "it is my duty to inform you that",
+          "pos": "phrase",
+          "example": {
+            "target": "Cumpre-me informar que o seu pedido foi aprovado pela direção.",
+            "gloss": "It is my duty to inform you that your request was approved by the management."
+          }
+        },
+        {
+          "id": "com a maior brevidade possível",
+          "hr": "com a maior brevidade possível",
+          "en": "as soon as possible (formal)",
+          "pos": "phrase",
+          "example": {
+            "target": "Pedimos que o pagamento seja regularizado com a maior brevidade possível.",
+            "gloss": "We ask that the payment be settled as soon as possible."
+          }
+        },
+        {
+          "id": "em primeiro lugar",
+          "hr": "em primeiro lugar",
+          "en": "in the first place, firstly",
+          "pos": "phrase",
+          "example": {
+            "target": "Em primeiro lugar, importa definir o que se entende por trabalho remoto.",
+            "gloss": "In the first place, it is important to define what is meant by remote work."
+          }
+        },
+        {
+          "id": "em segundo lugar",
+          "hr": "em segundo lugar",
+          "en": "secondly",
+          "pos": "phrase",
+          "example": {
+            "target": "Em segundo lugar, há que considerar os custos desta medida.",
+            "gloss": "Secondly, the costs of this measure must be considered."
+          }
+        },
+        {
+          "id": "por último",
+          "hr": "por último",
+          "en": "lastly, finally",
+          "pos": "phrase",
+          "example": {
+            "target": "Por último, resta analisar as consequências a longo prazo.",
+            "gloss": "Lastly, it remains to analyse the long-term consequences."
+          }
+        },
+        {
+          "id": "por conseguinte",
+          "hr": "por conseguinte",
+          "en": "consequently, therefore",
+          "pos": "phrase",
+          "note": "formal",
+          "example": {
+            "target": "Os dados são claros; por conseguinte, é necessário agir já.",
+            "gloss": "The data is clear; consequently, it is necessary to act now."
+          }
+        },
+        {
+          "id": "deste modo",
+          "hr": "deste modo",
+          "en": "in this way, thus",
+          "pos": "phrase",
+          "example": {
+            "target": "Deste modo, garante-se que todos os alunos têm acesso aos manuais.",
+            "gloss": "In this way, it is guaranteed that all pupils have access to the textbooks."
+          }
+        },
+        {
+          "id": "desta forma",
+          "hr": "desta forma",
+          "en": "in this way, thereby",
+          "pos": "phrase",
+          "example": {
+            "target": "Desta forma, evita-se o desperdício de recursos públicos.",
+            "gloss": "In this way, waste of public resources is avoided."
+          }
+        },
+        {
+          "id": "assim sendo",
+          "hr": "assim sendo",
+          "en": "that being so, therefore",
+          "pos": "phrase",
+          "example": {
+            "target": "Assim sendo, proponho que a decisão seja adiada para a próxima reunião.",
+            "gloss": "That being so, I propose that the decision be postponed to the next meeting."
+          }
+        },
+        {
+          "id": "não obstante",
+          "hr": "não obstante",
+          "en": "nevertheless; notwithstanding",
+          "pos": "phrase",
+          "note": "formal",
+          "example": {
+            "target": "Não obstante as dificuldades, o projeto foi concluído dentro do prazo.",
+            "gloss": "Notwithstanding the difficulties, the project was completed on time."
+          }
+        },
+        {
+          "id": "todavia",
+          "hr": "todavia",
+          "en": "however, nevertheless",
+          "pos": "adv.",
+          "note": "formal, written register",
+          "example": {
+            "target": "O plano parece sólido; todavia, faltam dados sobre o financiamento.",
+            "gloss": "The plan seems solid; however, data on the funding is missing."
+          }
+        },
+        {
+          "id": "porém",
+          "hr": "porém",
+          "en": "however, yet",
+          "pos": "adv.",
+          "example": {
+            "target": "A proposta tem mérito; porém, levanta algumas dúvidas legais.",
+            "gloss": "The proposal has merit; however, it raises some legal doubts."
+          }
+        },
+        {
+          "id": "em suma",
+          "hr": "em suma",
+          "en": "in short, to sum up",
+          "pos": "phrase",
+          "example": {
+            "target": "Em suma, os benefícios desta política superam claramente os custos.",
+            "gloss": "In short, the benefits of this policy clearly outweigh the costs."
+          }
+        },
+        {
+          "id": "em conclusão",
+          "hr": "em conclusão",
+          "en": "in conclusion",
+          "pos": "phrase",
+          "example": {
+            "target": "Em conclusão, o teletrabalho veio para ficar, mas exige novas regras.",
+            "gloss": "In conclusion, remote working is here to stay, but it demands new rules."
+          }
+        },
+        {
+          "id": "meu ver",
+          "hr": "meu ver",
+          "en": "in my view",
+          "pos": "phrase",
+          "example": {
+            "target": "A meu ver, a proibição não resolve o problema de fundo.",
+            "gloss": "In my view, the ban does not solve the underlying problem."
+          }
+        },
+        {
+          "id": "na minha perspetiva",
+          "hr": "na minha perspetiva",
+          "en": "from my perspective",
+          "pos": "phrase",
+          "note": "perspetiva is the standard spelling in Portugal",
+          "example": {
+            "target": "Na minha perspetiva, as escolas deviam dar mais atenção à educação financeira.",
+            "gloss": "From my perspective, schools should pay more attention to financial education."
+          }
+        },
+        {
+          "id": "do meu ponto de vista",
+          "hr": "do meu ponto de vista",
+          "en": "from my point of view",
+          "pos": "phrase",
+          "example": {
+            "target": "Do meu ponto de vista, esta medida chega demasiado tarde.",
+            "gloss": "From my point of view, this measure comes too late."
+          }
+        },
+        {
+          "id": "é de salientar que",
+          "hr": "é de salientar que",
+          "en": "it should be highlighted that",
+          "pos": "phrase",
+          "example": {
+            "target": "É de salientar que o número de leitores aumentou nos últimos anos.",
+            "gloss": "It should be highlighted that the number of readers has increased in recent years."
+          }
+        },
+        {
+          "id": "convém referir que",
+          "hr": "convém referir que",
+          "en": "it is worth mentioning that",
+          "pos": "phrase",
+          "example": {
+            "target": "Convém referir que nem todos os concelhos dispõem de transportes públicos.",
+            "gloss": "It is worth mentioning that not all municipalities have public transport."
+          }
+        },
+        {
+          "id": "importa sublinhar que",
+          "hr": "importa sublinhar que",
+          "en": "it is important to underline that",
+          "pos": "phrase",
+          "example": {
+            "target": "Importa sublinhar que os resultados variam muito de região para região.",
+            "gloss": "It is important to underline that the results vary greatly from region to region."
+          }
+        },
+        {
+          "id": "tendo em conta que",
+          "hr": "tendo em conta que",
+          "en": "bearing in mind that",
+          "pos": "phrase",
+          "example": {
+            "target": "Tendo em conta que os preços continuam a subir, o apoio devia ser reforçado.",
+            "gloss": "Bearing in mind that prices keep rising, the support should be strengthened."
+          }
+        },
+        {
+          "id": "vez que",
+          "hr": "vez que",
+          "en": "since, given that",
+          "pos": "phrase",
+          "example": {
+            "target": "Uma vez que o prédio não tem elevador, o acesso é difícil para os idosos.",
+            "gloss": "Since the building has no lift, access is difficult for the elderly."
+          }
+        },
+        {
+          "id": "dado que",
+          "hr": "dado que",
+          "en": "given that",
+          "pos": "phrase",
+          "example": {
+            "target": "Dado que a procura aumentou, será necessário contratar mais pessoal.",
+            "gloss": "Given that demand has increased, it will be necessary to hire more staff."
+          }
+        },
+        {
+          "id": "visto que",
+          "hr": "visto que",
+          "en": "seeing that, since",
+          "pos": "phrase",
+          "example": {
+            "target": "Visto que ninguém se opôs, a proposta foi aprovada.",
+            "gloss": "Seeing that nobody objected, the proposal was approved."
+          }
+        },
+        {
+          "id": "na medida em que",
+          "hr": "na medida em que",
+          "en": "insofar as, in that",
+          "pos": "phrase",
+          "example": {
+            "target": "A medida é positiva na medida em que reduz a burocracia.",
+            "gloss": "The measure is positive insofar as it reduces bureaucracy."
+          }
+        },
+        {
+          "id": "no que diz respeito a",
+          "hr": "no que diz respeito a",
+          "en": "with regard to",
+          "pos": "phrase",
+          "example": {
+            "target": "No que diz respeito ao ambiente, ainda há muito por fazer.",
+            "gloss": "With regard to the environment, there is still much to be done."
+          }
+        },
+        {
+          "id": "relativamente a",
+          "hr": "relativamente a",
+          "en": "regarding, concerning",
+          "pos": "phrase",
+          "example": {
+            "target": "Relativamente ao horário, a empresa mostrou-se disponível para negociar.",
+            "gloss": "Regarding the schedule, the company showed itself willing to negotiate."
+          }
+        },
+        {
+          "id": "face a",
+          "hr": "face a",
+          "en": "in view of, faced with",
+          "pos": "phrase",
+          "example": {
+            "target": "Face à subida das rendas, muitas famílias saíram do centro de Lisboa.",
+            "gloss": "In view of rising rents, many families left the centre of Lisbon."
+          }
+        },
+        {
+          "id": "perante",
+          "hr": "perante",
+          "en": "before, in the face of",
+          "pos": "phrase",
+          "example": {
+            "target": "Perante a falta de respostas, os trabalhadores decidiram avançar para a greve.",
+            "gloss": "Faced with the lack of answers, the workers decided to go ahead with the strike."
+          }
+        },
+        {
+          "id": "âmbito",
+          "hr": "âmbito",
+          "en": "scope, framework",
+          "pos": "n. m.",
+          "example": {
+            "target": "No âmbito do projeto europeu, foram criados vinte estágios.",
+            "gloss": "Within the framework of the European project, twenty internships were created."
+          }
+        },
+        {
+          "id": "teor",
+          "hr": "teor",
+          "en": "content, wording (of a document)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Só depois de ler o teor da carta percebi a gravidade da situação.",
+            "gloss": "Only after reading the content of the letter did I realise the seriousness of the situation."
+          }
+        },
+        {
+          "id": "requerente",
+          "hr": "requerente",
+          "en": "applicant, petitioner",
+          "pos": "n. m.",
+          "note": "also feminine: a requerente",
+          "example": {
+            "target": "O requerente deve apresentar o pedido no balcão da câmara municipal.",
+            "gloss": "The applicant must submit the request at the town hall counter."
+          }
+        },
+        {
+          "id": "entidade",
+          "hr": "entidade",
+          "en": "entity, body, organisation",
+          "pos": "n. f.",
+          "example": {
+            "target": "A queixa foi enviada à entidade reguladora do setor.",
+            "gloss": "The complaint was sent to the sector's regulatory body."
+          }
+        },
+        {
+          "id": "vaga",
+          "hr": "vaga",
+          "en": "vacancy, opening; wave",
+          "pos": "n. f.",
+          "example": {
+            "target": "Há apenas uma vaga disponível para o curso de mestrado.",
+            "gloss": "There is only one place available on the master's course."
+          }
+        },
+        {
+          "id": "deliberação",
+          "hr": "deliberação",
+          "en": "decision, resolution (of a body)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A deliberação da assembleia foi publicada no sítio da câmara.",
+            "gloss": "The assembly's resolution was published on the council's website."
+          }
+        },
+        {
+          "id": "despacho",
+          "hr": "despacho",
+          "en": "official order, ruling",
+          "pos": "n. m.",
+          "example": {
+            "target": "O despacho do ministro autoriza a contratação de mais enfermeiros.",
+            "gloss": "The minister's order authorises the hiring of more nurses."
+          }
+        },
+        {
+          "id": "ofício",
+          "hr": "ofício",
+          "en": "official letter",
+          "pos": "n. m.",
+          "example": {
+            "target": "A escola recebeu um ofício do ministério com as novas orientações.",
+            "gloss": "The school received an official letter from the ministry with the new guidelines."
+          }
+        },
+        {
+          "id": "diretriz",
+          "hr": "diretriz",
+          "en": "guideline, directive",
+          "pos": "n. f.",
+          "example": {
+            "target": "As diretrizes do ministério devem ser seguidas por todas as escolas.",
+            "gloss": "The ministry's guidelines must be followed by all schools."
+          }
+        },
+        {
+          "id": "protocolo",
+          "hr": "protocolo",
+          "en": "agreement, protocol",
+          "pos": "n. m.",
+          "example": {
+            "target": "A universidade assinou um protocolo com várias empresas da região.",
+            "gloss": "The university signed an agreement with several companies in the region."
+          }
+        },
+        {
+          "id": "parceria",
+          "hr": "parceria",
+          "en": "partnership",
+          "pos": "n. f.",
+          "example": {
+            "target": "O festival nasceu de uma parceria entre a câmara e as associações locais.",
+            "gloss": "The festival was born from a partnership between the council and local associations."
+          }
+        },
+        {
+          "id": "mais-valia",
+          "hr": "mais-valia",
+          "en": "asset, added value",
+          "pos": "n. f.",
+          "note": "very common in formal speech in Portugal",
+          "example": {
+            "target": "Falar várias línguas é uma mais-valia no mercado de trabalho.",
+            "gloss": "Speaking several languages is an asset in the job market."
+          }
+        },
+        {
+          "id": "lacuna",
+          "hr": "lacuna",
+          "en": "gap, shortcoming",
+          "pos": "n. f.",
+          "example": {
+            "target": "O relatório aponta lacunas graves na formação dos técnicos.",
+            "gloss": "The report points out serious gaps in the training of the technicians."
+          }
+        },
+        {
+          "id": "entrave",
+          "hr": "entrave",
+          "en": "obstacle, hindrance",
+          "pos": "n. m.",
+          "example": {
+            "target": "A burocracia continua a ser um entrave ao investimento.",
+            "gloss": "Bureaucracy continues to be an obstacle to investment."
+          }
+        },
+        {
+          "id": "vertente",
+          "hr": "vertente",
+          "en": "aspect, dimension, strand",
+          "pos": "n. f.",
+          "example": {
+            "target": "O programa tem uma vertente cultural e outra desportiva.",
+            "gloss": "The programme has a cultural strand and a sports strand."
+          }
+        },
+        {
+          "id": "pressuposto",
+          "hr": "pressuposto",
+          "en": "assumption, premise",
+          "pos": "n. m.",
+          "example": {
+            "target": "A proposta parte do pressuposto de que haverá financiamento europeu.",
+            "gloss": "The proposal is based on the assumption that there will be European funding."
+          }
+        },
+        {
+          "id": "diligência",
+          "hr": "diligência",
+          "en": "formal step, procedure; diligence",
+          "pos": "n. f.",
+          "example": {
+            "target": "O advogado prometeu tomar todas as diligências necessárias.",
+            "gloss": "The lawyer promised to take all the necessary steps."
+          }
+        },
+        {
+          "id": "solicitar",
+          "hr": "solicitar",
+          "en": "to request (formal)",
+          "pos": "v.",
+          "example": {
+            "target": "Venho solicitar o envio do comprovativo de inscrição.",
+            "gloss": "I am writing to request that you send proof of enrolment."
+          }
+        },
+        {
+          "id": "remeter",
+          "hr": "remeter",
+          "en": "to send, to forward (formal)",
+          "pos": "v.",
+          "example": {
+            "target": "O processo foi remetido ao tribunal competente.",
+            "gloss": "The case was forwarded to the competent court."
+          }
+        },
+        {
+          "id": "anexar",
+          "hr": "anexar",
+          "en": "to attach, to enclose",
+          "pos": "v.",
+          "example": {
+            "target": "Deve anexar ao requerimento uma cópia do cartão de cidadão.",
+            "gloss": "You must attach a copy of your citizen card to the application."
+          }
+        },
+        {
+          "id": "comparecer",
+          "hr": "comparecer",
+          "en": "to attend, to appear (in person, formally)",
+          "pos": "v.",
+          "example": {
+            "target": "O candidato deve comparecer no consulado à hora marcada.",
+            "gloss": "The candidate must appear at the consulate at the appointed time."
+          }
+        },
+        {
+          "id": "usufruir",
+          "hr": "usufruir",
+          "en": "to enjoy, to benefit from (usufruir de)",
+          "pos": "v.",
+          "note": "formal",
+          "example": {
+            "target": "Os sócios usufruem de um desconto de vinte por cento.",
+            "gloss": "Members enjoy a twenty percent discount."
+          }
+        },
+        {
+          "id": "vigorar",
+          "hr": "vigorar",
+          "en": "to be in force, to apply",
+          "pos": "v.",
+          "example": {
+            "target": "O novo horário vigora a partir de segunda-feira.",
+            "gloss": "The new timetable is in force from Monday."
+          }
+        },
+        {
+          "id": "deferir",
+          "hr": "deferir",
+          "en": "to grant, to approve (a request)",
+          "pos": "v.",
+          "note": "administrative register",
+          "example": {
+            "target": "O pedido de bolsa foi deferido pelos serviços académicos.",
+            "gloss": "The scholarship request was granted by the academic services."
+          }
+        },
+        {
+          "id": "indeferir",
+          "hr": "indeferir",
+          "en": "to reject, to refuse (a request)",
+          "pos": "v.",
+          "note": "administrative register",
+          "example": {
+            "target": "A câmara indeferiu o pedido de licença de obras.",
+            "gloss": "The council rejected the application for a building permit."
+          }
+        },
+        {
+          "id": "habilitações",
+          "hr": "habilitações",
+          "en": "qualifications",
+          "pos": "n. f.",
+          "note": "usually plural: habilitações literárias = academic qualifications",
+          "example": {
+            "target": "As habilitações exigidas para o cargo incluem uma licenciatura.",
+            "gloss": "The qualifications required for the post include a bachelor's degree."
+          }
+        }
+      ],
+      "sources": [
+        "referencial-camoes",
+        "freq-pt"
+      ]
+    }
+  ]
+}

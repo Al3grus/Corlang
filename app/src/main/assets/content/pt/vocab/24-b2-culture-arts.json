@@ -1,0 +1,847 @@
+{
+  "packs": [
+    {
+      "id": "24-b2-culture-arts",
+      "title": "Culture & the arts",
+      "level": "B2",
+      "words": [
+        {
+          "id": "obra",
+          "hr": "obra",
+          "en": "work (of art, literature)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A obra de Saramago está traduzida em dezenas de línguas.",
+            "gloss": "Saramago's work is translated into dozens of languages."
+          }
+        },
+        {
+          "id": "obra-prima",
+          "hr": "obra-prima",
+          "en": "masterpiece",
+          "pos": "n. f.",
+          "example": {
+            "target": "Os Lusíadas são considerados a obra-prima da literatura portuguesa.",
+            "gloss": "The Lusiads are considered the masterpiece of Portuguese literature."
+          }
+        },
+        {
+          "id": "autor",
+          "hr": "autor",
+          "en": "author",
+          "pos": "n. m.",
+          "example": {
+            "target": "O autor vai estar na feira do livro para autografar exemplares.",
+            "gloss": "The author will be at the book fair to sign copies."
+          }
+        },
+        {
+          "id": "escritor",
+          "hr": "escritor",
+          "en": "writer",
+          "pos": "n. m.",
+          "example": {
+            "target": "Aquele escritor publica um romance novo de dois em dois anos.",
+            "gloss": "That writer publishes a new novel every two years."
+          }
+        },
+        {
+          "id": "poeta",
+          "hr": "poeta",
+          "en": "poet",
+          "pos": "n. m.",
+          "example": {
+            "target": "Fernando Pessoa é o poeta português mais estudado no estrangeiro.",
+            "gloss": "Fernando Pessoa is the Portuguese poet most studied abroad."
+          }
+        },
+        {
+          "id": "poesia",
+          "hr": "poesia",
+          "en": "poetry",
+          "pos": "n. f.",
+          "example": {
+            "target": "A poesia dele fala sobretudo de saudade e do mar.",
+            "gloss": "His poetry speaks mostly of longing and the sea."
+          }
+        },
+        {
+          "id": "poema",
+          "hr": "poema",
+          "en": "poem",
+          "pos": "n. m.",
+          "example": {
+            "target": "Tive de decorar um poema de Camões para a aula de Português.",
+            "gloss": "I had to memorise a poem by Camões for Portuguese class."
+          }
+        },
+        {
+          "id": "conto",
+          "hr": "conto",
+          "en": "short story; tale",
+          "pos": "n. m.",
+          "example": {
+            "target": "Este livro reúne vinte contos de autores contemporâneos.",
+            "gloss": "This book brings together twenty short stories by contemporary authors."
+          }
+        },
+        {
+          "id": "ensaio",
+          "hr": "ensaio",
+          "en": "essay",
+          "pos": "n. m.",
+          "note": "Also means 'rehearsal' — see ensaiar and ensaio geral.",
+          "example": {
+            "target": "Escreveu um ensaio brilhante sobre a identidade portuguesa.",
+            "gloss": "He wrote a brilliant essay on Portuguese identity."
+          }
+        },
+        {
+          "id": "personagem",
+          "hr": "personagem",
+          "en": "character (in a story)",
+          "pos": "n. f.",
+          "note": "Usually feminine in Portugal: a personagem.",
+          "example": {
+            "target": "A personagem principal morre no último capítulo.",
+            "gloss": "The main character dies in the last chapter."
+          }
+        },
+        {
+          "id": "enredo",
+          "hr": "enredo",
+          "en": "plot (of a story)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O enredo do filme é demasiado complicado para o público mais novo.",
+            "gloss": "The film's plot is too complicated for younger audiences."
+          }
+        },
+        {
+          "id": "capítulo",
+          "hr": "capítulo",
+          "en": "chapter",
+          "pos": "n. m.",
+          "example": {
+            "target": "Li os primeiros capítulos de uma vez só, sem conseguir parar.",
+            "gloss": "I read the first chapters in one go, unable to stop."
+          }
+        },
+        {
+          "id": "editora",
+          "hr": "editora",
+          "en": "publishing house",
+          "pos": "n. f.",
+          "example": {
+            "target": "A editora decidiu apostar em jovens autores portugueses.",
+            "gloss": "The publishing house decided to bet on young Portuguese authors."
+          }
+        },
+        {
+          "id": "lançamento",
+          "hr": "lançamento",
+          "en": "launch; release (of a book, album)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O lançamento do livro está marcado para quinta-feira à noite.",
+            "gloss": "The book launch is scheduled for Thursday evening."
+          }
+        },
+        {
+          "id": "crítico",
+          "hr": "crítico",
+          "en": "critic",
+          "pos": "n. m.",
+          "example": {
+            "target": "O crítico de cinema deste jornal raramente elogia comédias.",
+            "gloss": "This newspaper's film critic rarely praises comedies."
+          }
+        },
+        {
+          "id": "prémio nobel",
+          "hr": "Prémio Nobel",
+          "en": "Nobel Prize",
+          "pos": "n. m.",
+          "example": {
+            "target": "José Saramago recebeu o Prémio Nobel da Literatura em 1998.",
+            "gloss": "José Saramago received the Nobel Prize in Literature in 1998."
+          }
+        },
+        {
+          "id": "património",
+          "hr": "património",
+          "en": "heritage; assets",
+          "pos": "n. m.",
+          "note": "European spelling with ó.",
+          "example": {
+            "target": "O centro histórico do Porto é Património Mundial da UNESCO.",
+            "gloss": "Porto's historic centre is a UNESCO World Heritage Site."
+          }
+        },
+        {
+          "id": "azulejo",
+          "hr": "azulejo",
+          "en": "glazed ceramic tile",
+          "pos": "n. m.",
+          "example": {
+            "target": "As fachadas cobertas de azulejos são típicas das cidades portuguesas.",
+            "gloss": "Façades covered in glazed tiles are typical of Portuguese cities."
+          }
+        },
+        {
+          "id": "azulejaria",
+          "hr": "azulejaria",
+          "en": "tilework; tile art",
+          "pos": "n. f.",
+          "example": {
+            "target": "O museu tem uma coleção impressionante de azulejaria do século XVIII.",
+            "gloss": "The museum has an impressive collection of 18th-century tilework."
+          }
+        },
+        {
+          "id": "fado",
+          "hr": "fado",
+          "en": "fado (Portuguese song genre)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ouvimos fado ao vivo numa casa típica de Alfama.",
+            "gloss": "We listened to live fado in a traditional house in Alfama."
+          }
+        },
+        {
+          "id": "fadista",
+          "hr": "fadista",
+          "en": "fado singer",
+          "pos": "n. m.",
+          "note": "Same form for both genders: o/a fadista.",
+          "example": {
+            "target": "A fadista emocionou o público com uma voz cheia de saudade.",
+            "gloss": "The fado singer moved the audience with a voice full of longing."
+          }
+        },
+        {
+          "id": "guitarra portuguesa",
+          "hr": "guitarra portuguesa",
+          "en": "Portuguese guitar",
+          "pos": "n. f.",
+          "example": {
+            "target": "O som da guitarra portuguesa distingue o fado de qualquer outra música.",
+            "gloss": "The sound of the Portuguese guitar sets fado apart from any other music."
+          }
+        },
+        {
+          "id": "romance histórico",
+          "hr": "romance histórico",
+          "en": "historical novel",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ando a ler um romance histórico passado na Lisboa do século XVI.",
+            "gloss": "I'm reading a historical novel set in 16th-century Lisbon."
+          }
+        },
+        {
+          "id": "banda desenhada",
+          "hr": "banda desenhada",
+          "en": "comics; comic strip",
+          "pos": "n. f.",
+          "note": "The European term for comics.",
+          "example": {
+            "target": "Quando era miúdo, gastava a semanada toda em banda desenhada.",
+            "gloss": "When I was a kid, I spent my whole weekly allowance on comics."
+          }
+        },
+        {
+          "id": "escultura",
+          "hr": "escultura",
+          "en": "sculpture",
+          "pos": "n. f.",
+          "example": {
+            "target": "A escultura em bronze foi colocada no centro da praça.",
+            "gloss": "The bronze sculpture was placed in the centre of the square."
+          }
+        },
+        {
+          "id": "pintura",
+          "hr": "pintura",
+          "en": "painting (art form)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A pintura a óleo do século XIX é a minha área preferida.",
+            "gloss": "Nineteenth-century oil painting is my favourite field."
+          }
+        },
+        {
+          "id": "retrato",
+          "hr": "retrato",
+          "en": "portrait",
+          "pos": "n. m.",
+          "example": {
+            "target": "O pintor demorou três meses a terminar o retrato da rainha.",
+            "gloss": "The painter took three months to finish the queen's portrait."
+          }
+        },
+        {
+          "id": "galeria",
+          "hr": "galeria",
+          "en": "gallery",
+          "pos": "n. f.",
+          "example": {
+            "target": "A nova galeria de arte abre ao público no próximo mês.",
+            "gloss": "The new art gallery opens to the public next month."
+          }
+        },
+        {
+          "id": "leilão",
+          "hr": "leilão",
+          "en": "auction",
+          "pos": "n. m.",
+          "example": {
+            "target": "O quadro foi vendido em leilão por dois milhões de euros.",
+            "gloss": "The painting was sold at auction for two million euros."
+          }
+        },
+        {
+          "id": "artesanato",
+          "hr": "artesanato",
+          "en": "handicrafts; craftwork",
+          "pos": "n. m.",
+          "example": {
+            "target": "Comprei uma peça de artesanato local na feira da aldeia.",
+            "gloss": "I bought a piece of local craftwork at the village fair."
+          }
+        },
+        {
+          "id": "cerâmica",
+          "hr": "cerâmica",
+          "en": "ceramics; pottery",
+          "pos": "n. f.",
+          "example": {
+            "target": "A cerâmica de Caldas da Rainha é conhecida em todo o país.",
+            "gloss": "The pottery of Caldas da Rainha is known throughout the country."
+          }
+        },
+        {
+          "id": "bordado",
+          "hr": "bordado",
+          "en": "embroidery",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os bordados da Madeira são famosos pela sua qualidade.",
+            "gloss": "Madeira embroidery is famous for its quality."
+          }
+        },
+        {
+          "id": "arquitetura",
+          "hr": "arquitetura",
+          "en": "architecture",
+          "pos": "n. f.",
+          "example": {
+            "target": "A arquitetura contemporânea convive bem com os edifícios antigos da baixa.",
+            "gloss": "Contemporary architecture sits well alongside the old buildings of the city centre."
+          }
+        },
+        {
+          "id": "estilo manuelino",
+          "hr": "estilo manuelino",
+          "en": "Manueline style (Portuguese late Gothic)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O Mosteiro dos Jerónimos é o exemplo mais famoso do estilo manuelino.",
+            "gloss": "The Jerónimos Monastery is the most famous example of the Manueline style."
+          }
+        },
+        {
+          "id": "mosteiro",
+          "hr": "mosteiro",
+          "en": "monastery",
+          "pos": "n. m.",
+          "example": {
+            "target": "O mosteiro foi fundado por monges no século XII.",
+            "gloss": "The monastery was founded by monks in the 12th century."
+          }
+        },
+        {
+          "id": "convento",
+          "hr": "convento",
+          "en": "convent",
+          "pos": "n. m.",
+          "example": {
+            "target": "O antigo convento foi transformado numa pousada de luxo.",
+            "gloss": "The old convent was turned into a luxury inn."
+          }
+        },
+        {
+          "id": "sé",
+          "hr": "sé",
+          "en": "cathedral",
+          "pos": "n. f.",
+          "example": {
+            "target": "A Sé de Lisboa é a igreja mais antiga da cidade.",
+            "gloss": "Lisbon Cathedral is the oldest church in the city."
+          }
+        },
+        {
+          "id": "capela",
+          "hr": "capela",
+          "en": "chapel",
+          "pos": "n. f.",
+          "example": {
+            "target": "Casaram numa pequena capela no campo, só com a família.",
+            "gloss": "They got married in a small chapel in the countryside, with just the family."
+          }
+        },
+        {
+          "id": "vitral",
+          "hr": "vitral",
+          "en": "stained-glass window",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os vitrais coloridos da igreja filtram a luz da tarde.",
+            "gloss": "The church's coloured stained-glass windows filter the afternoon light."
+          }
+        },
+        {
+          "id": "restauro",
+          "hr": "restauro",
+          "en": "restoration (of art, buildings)",
+          "pos": "n. m.",
+          "note": "The usual European term for restoring monuments and works of art.",
+          "example": {
+            "target": "O restauro do teatro custou vários milhões de euros.",
+            "gloss": "The restoration of the theatre cost several million euros."
+          }
+        },
+        {
+          "id": "realizador",
+          "hr": "realizador",
+          "en": "film director",
+          "pos": "n. m.",
+          "note": "The European term for a film director.",
+          "example": {
+            "target": "O realizador português foi premiado no festival de Cannes.",
+            "gloss": "The Portuguese director won an award at the Cannes festival."
+          }
+        },
+        {
+          "id": "guião",
+          "hr": "guião",
+          "en": "script (film, TV)",
+          "pos": "n. m.",
+          "note": "The European term for a script.",
+          "example": {
+            "target": "Ela escreveu o guião da série em apenas seis meses.",
+            "gloss": "She wrote the script for the series in just six months."
+          }
+        },
+        {
+          "id": "estreia",
+          "hr": "estreia",
+          "en": "premiere; debut",
+          "pos": "n. f.",
+          "example": {
+            "target": "A estreia da peça está esgotada há semanas.",
+            "gloss": "The play's premiere has been sold out for weeks."
+          }
+        },
+        {
+          "id": "palco",
+          "hr": "palco",
+          "en": "stage",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os atores subiram ao palco para agradecer os aplausos.",
+            "gloss": "The actors went up on stage to acknowledge the applause."
+          }
+        },
+        {
+          "id": "plateia",
+          "hr": "plateia",
+          "en": "audience; stalls",
+          "pos": "n. f.",
+          "example": {
+            "target": "A plateia levantou-se para aplaudir no final do concerto.",
+            "gloss": "The audience stood up to applaud at the end of the concert."
+          }
+        },
+        {
+          "id": "ensaio geral",
+          "hr": "ensaio geral",
+          "en": "dress rehearsal",
+          "pos": "n. m.",
+          "example": {
+            "target": "O ensaio geral correu mal, mas a estreia foi um êxito.",
+            "gloss": "The dress rehearsal went badly, but the premiere was a success."
+          }
+        },
+        {
+          "id": "bastidores",
+          "hr": "bastidores",
+          "en": "backstage; behind the scenes",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Depois do espetáculo, fomos aos bastidores cumprimentar os atores.",
+            "gloss": "After the show, we went backstage to greet the actors."
+          }
+        },
+        {
+          "id": "cenário",
+          "hr": "cenário",
+          "en": "set; scenery",
+          "pos": "n. m.",
+          "example": {
+            "target": "O cenário da peça reproduz uma rua de Lisboa nos anos quarenta.",
+            "gloss": "The play's set reproduces a Lisbon street in the 1940s."
+          }
+        },
+        {
+          "id": "figurino",
+          "hr": "figurino",
+          "en": "costume (design)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os figurinos da ópera foram desenhados por um estilista famoso.",
+            "gloss": "The opera's costumes were designed by a famous fashion designer."
+          }
+        },
+        {
+          "id": "atuação",
+          "hr": "atuação",
+          "en": "performance (by an actor, musician)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A atuação dela foi tão convincente que o público chorou.",
+            "gloss": "Her performance was so convincing that the audience cried."
+          }
+        },
+        {
+          "id": "orquestra",
+          "hr": "orquestra",
+          "en": "orchestra",
+          "pos": "n. f.",
+          "example": {
+            "target": "A orquestra afinava os instrumentos enquanto o público se sentava.",
+            "gloss": "The orchestra was tuning its instruments while the audience took their seats."
+          }
+        },
+        {
+          "id": "maestro",
+          "hr": "maestro",
+          "en": "conductor",
+          "pos": "n. m.",
+          "example": {
+            "target": "O maestro dirigiu a orquestra sem olhar uma única vez para a partitura.",
+            "gloss": "The conductor led the orchestra without looking at the score even once."
+          }
+        },
+        {
+          "id": "coro",
+          "hr": "coro",
+          "en": "choir; chorus",
+          "pos": "n. m.",
+          "example": {
+            "target": "O coro da igreja ensaia todas as quartas-feiras à noite.",
+            "gloss": "The church choir rehearses every Wednesday evening."
+          }
+        },
+        {
+          "id": "ópera",
+          "hr": "ópera",
+          "en": "opera",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nunca tinha ido à ópera antes de me mudar para Lisboa.",
+            "gloss": "I had never been to the opera before moving to Lisbon."
+          }
+        },
+        {
+          "id": "compositor",
+          "hr": "compositor",
+          "en": "composer",
+          "pos": "n. m.",
+          "example": {
+            "target": "O compositor escreveu esta sinfonia quando já estava surdo.",
+            "gloss": "The composer wrote this symphony when he was already deaf."
+          }
+        },
+        {
+          "id": "letra",
+          "hr": "letra",
+          "en": "lyrics; letter (of the alphabet)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A letra desta canção foi escrita por um poeta conhecido.",
+            "gloss": "The lyrics of this song were written by a well-known poet."
+          }
+        },
+        {
+          "id": "refrão",
+          "hr": "refrão",
+          "en": "chorus; refrain",
+          "pos": "n. m.",
+          "example": {
+            "target": "O refrão é tão fácil que toda a gente canta ao fim de um minuto.",
+            "gloss": "The chorus is so easy that everyone is singing it within a minute."
+          }
+        },
+        {
+          "id": "álbum",
+          "hr": "álbum",
+          "en": "album",
+          "pos": "n. m.",
+          "example": {
+            "target": "A banda lança o novo álbum na próxima semana.",
+            "gloss": "The band releases its new album next week."
+          }
+        },
+        {
+          "id": "digressão",
+          "hr": "digressão",
+          "en": "(concert) tour",
+          "pos": "n. f.",
+          "note": "The European term for an artist's tour.",
+          "example": {
+            "target": "A cantora vai fazer uma digressão por dez cidades europeias.",
+            "gloss": "The singer is going on a tour of ten European cities."
+          }
+        },
+        {
+          "id": "festival",
+          "hr": "festival",
+          "en": "festival",
+          "pos": "n. m.",
+          "example": {
+            "target": "Todos os verões há festivais de música por todo o país.",
+            "gloss": "Every summer there are music festivals all over the country."
+          }
+        },
+        {
+          "id": "dramaturgo",
+          "hr": "dramaturgo",
+          "en": "playwright",
+          "pos": "n. m.",
+          "example": {
+            "target": "Gil Vicente é considerado o primeiro grande dramaturgo português.",
+            "gloss": "Gil Vicente is considered the first great Portuguese playwright."
+          }
+        },
+        {
+          "id": "peça de teatro",
+          "hr": "peça de teatro",
+          "en": "play (theatre)",
+          "pos": "n. f.",
+          "example": {
+            "target": "Fomos ver uma peça de teatro encenada por uma companhia local.",
+            "gloss": "We went to see a play staged by a local company."
+          }
+        },
+        {
+          "id": "tradução",
+          "hr": "tradução",
+          "en": "translation",
+          "pos": "n. f.",
+          "example": {
+            "target": "A tradução portuguesa do romance sai em outubro.",
+            "gloss": "The Portuguese translation of the novel comes out in October."
+          }
+        },
+        {
+          "id": "tradutor",
+          "hr": "tradutor",
+          "en": "translator",
+          "pos": "n. m.",
+          "example": {
+            "target": "O tradutor demorou dois anos a traduzir o clássico russo.",
+            "gloss": "The translator took two years to translate the Russian classic."
+          }
+        },
+        {
+          "id": "exemplar",
+          "hr": "exemplar",
+          "en": "copy (of a book)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O autor autografou o meu exemplar do livro.",
+            "gloss": "The author signed my copy of the book."
+          }
+        },
+        {
+          "id": "êxito",
+          "hr": "êxito",
+          "en": "success; hit",
+          "pos": "n. m.",
+          "example": {
+            "target": "A peça foi um êxito e ficou em cena mais três meses.",
+            "gloss": "The play was a success and ran for another three months."
+          }
+        },
+        {
+          "id": "feira do livro",
+          "hr": "feira do livro",
+          "en": "book fair",
+          "pos": "n. f.",
+          "example": {
+            "target": "Compro sempre demasiados livros na Feira do Livro de Lisboa.",
+            "gloss": "I always buy too many books at the Lisbon Book Fair."
+          }
+        },
+        {
+          "id": "verso",
+          "hr": "verso",
+          "en": "verse; line (of a poem)",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ainda sei de cor os primeiros versos desse poema.",
+            "gloss": "I still know the first lines of that poem by heart."
+          }
+        },
+        {
+          "id": "rima",
+          "hr": "rima",
+          "en": "rhyme",
+          "pos": "n. f.",
+          "example": {
+            "target": "As rimas deste poema seguem um esquema tradicional.",
+            "gloss": "The rhymes in this poem follow a traditional scheme."
+          }
+        },
+        {
+          "id": "narrador",
+          "hr": "narrador",
+          "en": "narrator",
+          "pos": "n. m.",
+          "example": {
+            "target": "O narrador do romance é uma criança de dez anos.",
+            "gloss": "The narrator of the novel is a ten-year-old child."
+          }
+        },
+        {
+          "id": "romaria",
+          "hr": "romaria",
+          "en": "religious festival; pilgrimage feast",
+          "pos": "n. f.",
+          "example": {
+            "target": "A romaria da Senhora da Agonia enche Viana do Castelo todos os anos em agosto.",
+            "gloss": "The Senhora da Agonia festival fills Viana do Castelo every year in August."
+          }
+        },
+        {
+          "id": "festa popular",
+          "hr": "festa popular",
+          "en": "folk festival; street party",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nas festas populares há sardinha assada, música e bailarico até de madrugada.",
+            "gloss": "At the folk festivals there are grilled sardines, music and dancing until the early hours."
+          }
+        },
+        {
+          "id": "santos populares",
+          "hr": "santos populares",
+          "en": "June saints' festivities",
+          "pos": "n. m. pl.",
+          "note": "The June festivities for Saint Anthony, Saint John and Saint Peter.",
+          "example": {
+            "target": "Durante os santos populares, os bairros históricos enchem-se de manjericos e arraiais.",
+            "gloss": "During the June saints' festivities, the historic neighbourhoods fill with basil pots and street parties."
+          }
+        },
+        {
+          "id": "marchas",
+          "hr": "marchas",
+          "en": "marchas (June neighbourhood parades)",
+          "pos": "n. f. pl.",
+          "note": "Usually plural: as marchas populares.",
+          "example": {
+            "target": "As marchas de Lisboa desfilam na Avenida da Liberdade na noite de Santo António.",
+            "gloss": "The Lisbon marchas parade down Avenida da Liberdade on Saint Anthony's night."
+          }
+        },
+        {
+          "id": "compor",
+          "hr": "compor",
+          "en": "to compose",
+          "pos": "v.",
+          "example": {
+            "target": "O músico compôs a banda sonora de vários filmes portugueses.",
+            "gloss": "The musician composed the soundtrack for several Portuguese films."
+          }
+        },
+        {
+          "id": "ensaiar",
+          "hr": "ensaiar",
+          "en": "to rehearse",
+          "pos": "v.",
+          "example": {
+            "target": "A companhia ensaia todos os dias até à estreia.",
+            "gloss": "The company rehearses every day until the premiere."
+          }
+        },
+        {
+          "id": "estrear",
+          "hr": "estrear",
+          "en": "to premiere; to debut",
+          "pos": "v.",
+          "example": {
+            "target": "O filme estreia nos cinemas portugueses em dezembro.",
+            "gloss": "The film premieres in Portuguese cinemas in December."
+          }
+        },
+        {
+          "id": "editar",
+          "hr": "editar",
+          "en": "to publish; to edit",
+          "pos": "v.",
+          "note": "In Portugal, often means 'to publish' (a book, an album).",
+          "example": {
+            "target": "A obra foi editada pela primeira vez em 1572.",
+            "gloss": "The work was first published in 1572."
+          }
+        },
+        {
+          "id": "esculpir",
+          "hr": "esculpir",
+          "en": "to sculpt; to carve",
+          "pos": "v.",
+          "example": {
+            "target": "O artista esculpiu a estátua num único bloco de mármore.",
+            "gloss": "The artist carved the statue from a single block of marble."
+          }
+        },
+        {
+          "id": "retratar",
+          "hr": "retratar",
+          "en": "to portray; to depict",
+          "pos": "v.",
+          "example": {
+            "target": "O romance retrata a vida rural no Alentejo dos anos cinquenta.",
+            "gloss": "The novel portrays rural life in 1950s Alentejo."
+          }
+        },
+        {
+          "id": "inspirar-se",
+          "hr": "inspirar-se",
+          "en": "to draw inspiration (em: from)",
+          "pos": "v.",
+          "example": {
+            "target": "O realizador inspirou-se num crime verdadeiro para escrever o filme.",
+            "gloss": "The director drew inspiration from a real crime to write the film."
+          }
+        },
+        {
+          "id": "dedicar",
+          "hr": "dedicar",
+          "en": "to dedicate (a work)",
+          "pos": "v.",
+          "example": {
+            "target": "A escritora dedicou o livro à memória da avó.",
+            "gloss": "The writer dedicated the book to the memory of her grandmother."
+          }
+        }
+      ],
+      "sources": [
+        "referencial-camoes",
+        "freq-pt"
+      ]
+    }
+  ]
+}

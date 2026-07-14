@@ -1,0 +1,801 @@
+{
+  "packs": [
+    {
+      "id": "25-b2-science-health",
+      "title": "Science & health",
+      "level": "B2",
+      "words": [
+        {
+          "id": "ciência",
+          "hr": "ciência",
+          "en": "science",
+          "pos": "n. f.",
+          "example": {
+            "target": "A ciência ainda não tem resposta para todas estas perguntas.",
+            "gloss": "Science does not yet have an answer to all these questions."
+          }
+        },
+        {
+          "id": "cientista",
+          "hr": "cientista",
+          "en": "scientist",
+          "pos": "n. m.",
+          "note": "Same form for both genders: o/a cientista.",
+          "example": {
+            "target": "Uma equipa de cientistas portugueses participou no estudo.",
+            "gloss": "A team of Portuguese scientists took part in the study."
+          }
+        },
+        {
+          "id": "investigação",
+          "hr": "investigação",
+          "en": "research; investigation",
+          "pos": "n. f.",
+          "note": "The usual European term for scientific research.",
+          "example": {
+            "target": "A investigação sobre o cancro recebeu novos fundos europeus.",
+            "gloss": "Cancer research received new European funding."
+          }
+        },
+        {
+          "id": "investigador",
+          "hr": "investigador",
+          "en": "researcher",
+          "pos": "n. m.",
+          "example": {
+            "target": "O investigador apresentou os resultados numa conferência internacional.",
+            "gloss": "The researcher presented the results at an international conference."
+          }
+        },
+        {
+          "id": "laboratório",
+          "hr": "laboratório",
+          "en": "laboratory",
+          "pos": "n. m.",
+          "example": {
+            "target": "As amostras foram analisadas num laboratório da universidade.",
+            "gloss": "The samples were analysed in a university laboratory."
+          }
+        },
+        {
+          "id": "experiência científica",
+          "hr": "experiência científica",
+          "en": "scientific experiment",
+          "pos": "n. f.",
+          "note": "'Experiência' on its own also means 'experience'.",
+          "example": {
+            "target": "Os alunos fizeram uma experiência científica simples na aula de química.",
+            "gloss": "The students did a simple scientific experiment in chemistry class."
+          }
+        },
+        {
+          "id": "descoberta",
+          "hr": "descoberta",
+          "en": "discovery",
+          "pos": "n. f.",
+          "example": {
+            "target": "A descoberta deste gene pode mudar o tratamento da doença.",
+            "gloss": "The discovery of this gene may change the treatment of the disease."
+          }
+        },
+        {
+          "id": "teoria",
+          "hr": "teoria",
+          "en": "theory",
+          "pos": "n. f.",
+          "example": {
+            "target": "A teoria da evolução explica a diversidade das espécies.",
+            "gloss": "The theory of evolution explains the diversity of species."
+          }
+        },
+        {
+          "id": "hipótese",
+          "hr": "hipótese",
+          "en": "hypothesis; chance",
+          "pos": "n. f.",
+          "example": {
+            "target": "Os dados recolhidos confirmaram a hipótese inicial.",
+            "gloss": "The data collected confirmed the initial hypothesis."
+          }
+        },
+        {
+          "id": "dados",
+          "hr": "dados",
+          "en": "data",
+          "pos": "n. m. pl.",
+          "example": {
+            "target": "Os dados do estudo ainda estão a ser analisados.",
+            "gloss": "The study's data are still being analysed."
+          }
+        },
+        {
+          "id": "estatística",
+          "hr": "estatística",
+          "en": "statistics; statistic",
+          "pos": "n. f.",
+          "example": {
+            "target": "Segundo as estatísticas, os portugueses vivem cada vez mais anos.",
+            "gloss": "According to the statistics, the Portuguese are living longer and longer."
+          }
+        },
+        {
+          "id": "percentagem",
+          "hr": "percentagem",
+          "en": "percentage",
+          "pos": "n. f.",
+          "note": "The European form of the word.",
+          "example": {
+            "target": "A percentagem de fumadores baixou nos últimos dez anos.",
+            "gloss": "The percentage of smokers has fallen in the last ten years."
+          }
+        },
+        {
+          "id": "gráfico",
+          "hr": "gráfico",
+          "en": "graph; chart",
+          "pos": "n. m.",
+          "example": {
+            "target": "O gráfico mostra a evolução dos casos ao longo do ano.",
+            "gloss": "The graph shows how the cases evolved over the year."
+          }
+        },
+        {
+          "id": "célula",
+          "hr": "célula",
+          "en": "cell (biology)",
+          "pos": "n. f.",
+          "example": {
+            "target": "A professora levou-nos a observar células ao microscópio.",
+            "gloss": "The teacher had us observe cells under the microscope."
+          }
+        },
+        {
+          "id": "gene",
+          "hr": "gene",
+          "en": "gene",
+          "pos": "n. m.",
+          "example": {
+            "target": "Alguns genes aumentam o risco de desenvolver certas doenças.",
+            "gloss": "Some genes increase the risk of developing certain diseases."
+          }
+        },
+        {
+          "id": "adn",
+          "hr": "ADN",
+          "en": "DNA",
+          "pos": "n. m.",
+          "note": "The European abbreviation (ácido desoxirribonucleico).",
+          "example": {
+            "target": "A polícia identificou o suspeito através de uma análise de ADN.",
+            "gloss": "The police identified the suspect through a DNA test."
+          }
+        },
+        {
+          "id": "vírus",
+          "hr": "vírus",
+          "en": "virus",
+          "pos": "n. m.",
+          "example": {
+            "target": "O vírus transmite-se sobretudo pelo ar.",
+            "gloss": "The virus is transmitted mainly through the air."
+          }
+        },
+        {
+          "id": "bactéria",
+          "hr": "bactéria",
+          "en": "bacterium",
+          "pos": "n. f.",
+          "example": {
+            "target": "Algumas bactérias tornaram-se resistentes aos antibióticos.",
+            "gloss": "Some bacteria have become resistant to antibiotics."
+          }
+        },
+        {
+          "id": "epidemia",
+          "hr": "epidemia",
+          "en": "epidemic",
+          "pos": "n. f.",
+          "example": {
+            "target": "A epidemia de cólera do século XIX matou milhares de pessoas em Lisboa.",
+            "gloss": "The 19th-century cholera epidemic killed thousands of people in Lisbon."
+          }
+        },
+        {
+          "id": "pandemia",
+          "hr": "pandemia",
+          "en": "pandemic",
+          "pos": "n. f.",
+          "example": {
+            "target": "Durante a pandemia, muita gente passou a trabalhar a partir de casa.",
+            "gloss": "During the pandemic, many people started working from home."
+          }
+        },
+        {
+          "id": "terapia",
+          "hr": "terapia",
+          "en": "therapy",
+          "pos": "n. f.",
+          "example": {
+            "target": "A terapia ajudou-a a lidar com a ansiedade.",
+            "gloss": "Therapy helped her deal with anxiety."
+          }
+        },
+        {
+          "id": "cirurgia",
+          "hr": "cirurgia",
+          "en": "surgery",
+          "pos": "n. f.",
+          "example": {
+            "target": "A cirurgia demorou quase oito horas, mas correu bem.",
+            "gloss": "The surgery took almost eight hours, but it went well."
+          }
+        },
+        {
+          "id": "transplante",
+          "hr": "transplante",
+          "en": "transplant",
+          "pos": "n. m.",
+          "example": {
+            "target": "O doente espera há dois anos por um transplante de rim.",
+            "gloss": "The patient has been waiting two years for a kidney transplant."
+          }
+        },
+        {
+          "id": "diagnóstico",
+          "hr": "diagnóstico",
+          "en": "diagnosis",
+          "pos": "n. m.",
+          "example": {
+            "target": "Um diagnóstico precoce aumenta muito as hipóteses de cura.",
+            "gloss": "An early diagnosis greatly increases the chances of a cure."
+          }
+        },
+        {
+          "id": "doença crónica",
+          "hr": "doença crónica",
+          "en": "chronic illness",
+          "pos": "n. f.",
+          "note": "European spelling with ó.",
+          "example": {
+            "target": "Quem sofre de uma doença crónica tem desconto nos medicamentos.",
+            "gloss": "People with a chronic illness get a discount on medication."
+          }
+        },
+        {
+          "id": "diabetes",
+          "hr": "diabetes",
+          "en": "diabetes",
+          "pos": "n. f.",
+          "note": "Usually feminine in Portugal: a diabetes.",
+          "example": {
+            "target": "A diabetes obriga a controlar bem a alimentação.",
+            "gloss": "Diabetes forces you to keep a close watch on your diet."
+          }
+        },
+        {
+          "id": "tensão arterial",
+          "hr": "tensão arterial",
+          "en": "blood pressure",
+          "pos": "n. f.",
+          "note": "The usual European term.",
+          "example": {
+            "target": "O enfermeiro mediu-me a tensão arterial antes da consulta.",
+            "gloss": "The nurse took my blood pressure before the appointment."
+          }
+        },
+        {
+          "id": "colesterol",
+          "hr": "colesterol",
+          "en": "cholesterol",
+          "pos": "n. m.",
+          "example": {
+            "target": "Para baixar o colesterol, cortei nas gorduras e comecei a caminhar.",
+            "gloss": "To lower my cholesterol, I cut down on fats and started walking."
+          }
+        },
+        {
+          "id": "obesidade",
+          "hr": "obesidade",
+          "en": "obesity",
+          "pos": "n. f.",
+          "example": {
+            "target": "A obesidade infantil é um problema crescente nos países desenvolvidos.",
+            "gloss": "Childhood obesity is a growing problem in developed countries."
+          }
+        },
+        {
+          "id": "dependência",
+          "hr": "dependência",
+          "en": "addiction; dependence",
+          "pos": "n. f.",
+          "example": {
+            "target": "A dependência do telemóvel afeta cada vez mais adolescentes.",
+            "gloss": "Phone addiction affects more and more teenagers."
+          }
+        },
+        {
+          "id": "toxicodependência",
+          "hr": "toxicodependência",
+          "en": "drug addiction",
+          "pos": "n. f.",
+          "example": {
+            "target": "Portugal mudou a forma de tratar a toxicodependência nos anos noventa.",
+            "gloss": "Portugal changed the way it treats drug addiction in the nineties."
+          }
+        },
+        {
+          "id": "saúde mental",
+          "hr": "saúde mental",
+          "en": "mental health",
+          "pos": "n. f.",
+          "example": {
+            "target": "Fala-se hoje muito mais abertamente de saúde mental do que antigamente.",
+            "gloss": "People talk much more openly about mental health today than in the past."
+          }
+        },
+        {
+          "id": "depressão",
+          "hr": "depressão",
+          "en": "depression",
+          "pos": "n. f.",
+          "example": {
+            "target": "Depois de meses difíceis, foi-lhe diagnosticada uma depressão.",
+            "gloss": "After some difficult months, she was diagnosed with depression."
+          }
+        },
+        {
+          "id": "stress",
+          "hr": "stress",
+          "en": "stress",
+          "pos": "n. m.",
+          "note": "European spelling.",
+          "example": {
+            "target": "O stress no trabalho está a afetar-lhe o sono.",
+            "gloss": "Stress at work is affecting his sleep."
+          }
+        },
+        {
+          "id": "insónia",
+          "hr": "insónia",
+          "en": "insomnia",
+          "pos": "n. f.",
+          "note": "European spelling with ó; often used in the plural.",
+          "example": {
+            "target": "Ando com insónias por causa das preocupações com o trabalho.",
+            "gloss": "I've been having insomnia because of worries about work."
+          }
+        },
+        {
+          "id": "esgotamento",
+          "hr": "esgotamento",
+          "en": "burnout; exhaustion",
+          "pos": "n. m.",
+          "example": {
+            "target": "O médico disse-lhe que estava à beira de um esgotamento.",
+            "gloss": "The doctor told him he was on the verge of a burnout."
+          }
+        },
+        {
+          "id": "prevenção",
+          "hr": "prevenção",
+          "en": "prevention",
+          "pos": "n. f.",
+          "example": {
+            "target": "A prevenção é sempre mais barata do que o tratamento.",
+            "gloss": "Prevention is always cheaper than treatment."
+          }
+        },
+        {
+          "id": "rastreio",
+          "hr": "rastreio",
+          "en": "screening (medical)",
+          "pos": "n. m.",
+          "note": "The European term for a health screening.",
+          "example": {
+            "target": "O centro de saúde organiza um rastreio gratuito do cancro da pele.",
+            "gloss": "The health centre is organising a free skin cancer screening."
+          }
+        },
+        {
+          "id": "jejum",
+          "hr": "jejum",
+          "en": "fasting; fast",
+          "pos": "n. m.",
+          "example": {
+            "target": "As análises ao sangue fazem-se em jejum.",
+            "gloss": "Blood tests are done on an empty stomach."
+          }
+        },
+        {
+          "id": "nutriente",
+          "hr": "nutriente",
+          "en": "nutrient",
+          "pos": "n. m.",
+          "example": {
+            "target": "As leguminosas são ricas em nutrientes essenciais.",
+            "gloss": "Legumes are rich in essential nutrients."
+          }
+        },
+        {
+          "id": "proteína",
+          "hr": "proteína",
+          "en": "protein",
+          "pos": "n. f.",
+          "example": {
+            "target": "Depois do treino, convém comer alimentos ricos em proteína.",
+            "gloss": "After training, it's a good idea to eat protein-rich foods."
+          }
+        },
+        {
+          "id": "vitamina",
+          "hr": "vitamina",
+          "en": "vitamin",
+          "pos": "n. f.",
+          "example": {
+            "target": "No inverno, muita gente toma vitamina D.",
+            "gloss": "In winter, many people take vitamin D."
+          }
+        },
+        {
+          "id": "tecnologia",
+          "hr": "tecnologia",
+          "en": "technology",
+          "pos": "n. f.",
+          "example": {
+            "target": "A tecnologia mudou por completo a forma como comunicamos.",
+            "gloss": "Technology has completely changed the way we communicate."
+          }
+        },
+        {
+          "id": "inteligência artificial",
+          "hr": "inteligência artificial",
+          "en": "artificial intelligence",
+          "pos": "n. f.",
+          "example": {
+            "target": "A inteligência artificial já é usada para detetar doenças em exames médicos.",
+            "gloss": "Artificial intelligence is already used to detect diseases in medical scans."
+          }
+        },
+        {
+          "id": "robô",
+          "hr": "robô",
+          "en": "robot",
+          "pos": "n. m.",
+          "example": {
+            "target": "Na fábrica, os robôs fazem o trabalho mais pesado.",
+            "gloss": "In the factory, robots do the heaviest work."
+          }
+        },
+        {
+          "id": "satélite",
+          "hr": "satélite",
+          "en": "satellite",
+          "pos": "n. m.",
+          "example": {
+            "target": "O satélite envia imagens da Terra em tempo real.",
+            "gloss": "The satellite sends images of Earth in real time."
+          }
+        },
+        {
+          "id": "foguetão",
+          "hr": "foguetão",
+          "en": "rocket",
+          "pos": "n. m.",
+          "note": "The European term for a space rocket.",
+          "example": {
+            "target": "O foguetão foi lançado com dois satélites a bordo.",
+            "gloss": "The rocket was launched with two satellites on board."
+          }
+        },
+        {
+          "id": "espaço",
+          "hr": "espaço",
+          "en": "space (outer space)",
+          "pos": "n. m.",
+          "example": {
+            "target": "O primeiro português a ir ao espaço ainda está por acontecer.",
+            "gloss": "The first Portuguese person to go to space is yet to happen."
+          }
+        },
+        {
+          "id": "planeta",
+          "hr": "planeta",
+          "en": "planet",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os cientistas descobriram um planeta parecido com a Terra.",
+            "gloss": "Scientists have discovered a planet similar to Earth."
+          }
+        },
+        {
+          "id": "universo",
+          "hr": "universo",
+          "en": "universe",
+          "pos": "n. m.",
+          "example": {
+            "target": "O universo está em expansão desde o Big Bang.",
+            "gloss": "The universe has been expanding since the Big Bang."
+          }
+        },
+        {
+          "id": "gravidade",
+          "hr": "gravidade",
+          "en": "gravity; seriousness",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sem gravidade, os astronautas flutuam dentro da estação espacial.",
+            "gloss": "Without gravity, astronauts float inside the space station."
+          }
+        },
+        {
+          "id": "energia nuclear",
+          "hr": "energia nuclear",
+          "en": "nuclear energy",
+          "pos": "n. f.",
+          "example": {
+            "target": "Portugal não produz energia nuclear.",
+            "gloss": "Portugal does not produce nuclear energy."
+          }
+        },
+        {
+          "id": "física",
+          "hr": "física",
+          "en": "physics",
+          "pos": "n. f.",
+          "example": {
+            "target": "A física quântica desafia o senso comum.",
+            "gloss": "Quantum physics defies common sense."
+          }
+        },
+        {
+          "id": "química",
+          "hr": "química",
+          "en": "chemistry",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sempre tive melhores notas a química do que a física.",
+            "gloss": "I always got better marks in chemistry than in physics."
+          }
+        },
+        {
+          "id": "biologia",
+          "hr": "biologia",
+          "en": "biology",
+          "pos": "n. f.",
+          "example": {
+            "target": "Na aula de biologia estudámos o corpo humano.",
+            "gloss": "In biology class we studied the human body."
+          }
+        },
+        {
+          "id": "matemática",
+          "hr": "matemática",
+          "en": "mathematics",
+          "pos": "n. f.",
+          "example": {
+            "target": "Sem uma boa base de matemática, é difícil seguir engenharia.",
+            "gloss": "Without a good grounding in mathematics, it's hard to go into engineering."
+          }
+        },
+        {
+          "id": "engenharia genética",
+          "hr": "engenharia genética",
+          "en": "genetic engineering",
+          "pos": "n. f.",
+          "example": {
+            "target": "A engenharia genética permite corrigir alguns defeitos nos genes.",
+            "gloss": "Genetic engineering makes it possible to correct some defects in genes."
+          }
+        },
+        {
+          "id": "ensaio clínico",
+          "hr": "ensaio clínico",
+          "en": "clinical trial",
+          "pos": "n. m.",
+          "example": {
+            "target": "O novo medicamento está na última fase dos ensaios clínicos.",
+            "gloss": "The new drug is in the final phase of clinical trials."
+          }
+        },
+        {
+          "id": "análises",
+          "hr": "análises",
+          "en": "(medical) tests",
+          "pos": "n. f. pl.",
+          "note": "Usually plural: análises ao sangue, à urina.",
+          "example": {
+            "target": "O médico pediu-me análises ao sangue e à urina.",
+            "gloss": "The doctor ordered blood and urine tests for me."
+          }
+        },
+        {
+          "id": "receita médica",
+          "hr": "receita médica",
+          "en": "prescription",
+          "pos": "n. f.",
+          "example": {
+            "target": "Este medicamento só se vende com receita médica.",
+            "gloss": "This medicine is only sold with a prescription."
+          }
+        },
+        {
+          "id": "efeito secundário",
+          "hr": "efeito secundário",
+          "en": "side effect",
+          "pos": "n. m.",
+          "note": "The usual European term.",
+          "example": {
+            "target": "O medicamento é eficaz, mas tem alguns efeitos secundários.",
+            "gloss": "The medicine is effective, but it has some side effects."
+          }
+        },
+        {
+          "id": "dose",
+          "hr": "dose",
+          "en": "dose",
+          "pos": "n. f.",
+          "example": {
+            "target": "Nunca tome uma dose superior à indicada pelo médico.",
+            "gloss": "Never take a higher dose than the one indicated by the doctor."
+          }
+        },
+        {
+          "id": "imunidade",
+          "hr": "imunidade",
+          "en": "immunity",
+          "pos": "n. f.",
+          "example": {
+            "target": "Depois da vacina, o corpo desenvolve imunidade contra o vírus.",
+            "gloss": "After the vaccine, the body develops immunity against the virus."
+          }
+        },
+        {
+          "id": "avanço",
+          "hr": "avanço",
+          "en": "advance; breakthrough",
+          "pos": "n. m.",
+          "example": {
+            "target": "Os avanços da medicina permitem viver mais e melhor.",
+            "gloss": "Advances in medicine allow people to live longer and better."
+          }
+        },
+        {
+          "id": "amostra",
+          "hr": "amostra",
+          "en": "sample",
+          "pos": "n. f.",
+          "example": {
+            "target": "Os investigadores recolheram amostras de água do rio.",
+            "gloss": "The researchers collected water samples from the river."
+          }
+        },
+        {
+          "id": "microscópio",
+          "hr": "microscópio",
+          "en": "microscope",
+          "pos": "n. m.",
+          "example": {
+            "target": "Ao microscópio, as bactérias eram claramente visíveis.",
+            "gloss": "Under the microscope, the bacteria were clearly visible."
+          }
+        },
+        {
+          "id": "diagnosticar",
+          "hr": "diagnosticar",
+          "en": "to diagnose",
+          "pos": "v.",
+          "example": {
+            "target": "A doença foi diagnosticada a tempo, felizmente.",
+            "gloss": "The disease was diagnosed in time, fortunately."
+          }
+        },
+        {
+          "id": "operar",
+          "hr": "operar",
+          "en": "to operate (on)",
+          "pos": "v.",
+          "example": {
+            "target": "O cirurgião opera todas as manhãs no hospital.",
+            "gloss": "The surgeon operates every morning at the hospital."
+          }
+        },
+        {
+          "id": "vacinar",
+          "hr": "vacinar",
+          "en": "to vaccinate",
+          "pos": "v.",
+          "example": {
+            "target": "Milhões de pessoas foram vacinadas em poucos meses.",
+            "gloss": "Millions of people were vaccinated in just a few months."
+          }
+        },
+        {
+          "id": "prevenir",
+          "hr": "prevenir",
+          "en": "to prevent; to warn",
+          "pos": "v.",
+          "example": {
+            "target": "Lavar as mãos ajuda a prevenir muitas infeções.",
+            "gloss": "Washing your hands helps prevent many infections."
+          }
+        },
+        {
+          "id": "contagiar",
+          "hr": "contagiar",
+          "en": "to infect; to be contagious to",
+          "pos": "v.",
+          "example": {
+            "target": "Fica em casa para não contagiares os colegas.",
+            "gloss": "Stay home so you don't infect your colleagues."
+          }
+        },
+        {
+          "id": "alastrar",
+          "hr": "alastrar",
+          "en": "to spread (disease, fire, rumour)",
+          "pos": "v.",
+          "note": "Also reflexive: alastrar-se.",
+          "example": {
+            "target": "O vírus alastrou rapidamente a todo o continente.",
+            "gloss": "The virus quickly spread across the whole continent."
+          }
+        },
+        {
+          "id": "inovar",
+          "hr": "inovar",
+          "en": "to innovate",
+          "pos": "v.",
+          "example": {
+            "target": "As empresas que não inovam acabam por desaparecer.",
+            "gloss": "Companies that don't innovate end up disappearing."
+          }
+        },
+        {
+          "id": "inventar",
+          "hr": "inventar",
+          "en": "to invent",
+          "pos": "v.",
+          "example": {
+            "target": "Gutenberg inventou a imprensa no século XV.",
+            "gloss": "Gutenberg invented the printing press in the 15th century."
+          }
+        },
+        {
+          "id": "fazer um rastreio",
+          "hr": "fazer um rastreio",
+          "en": "to have a screening (test)",
+          "pos": "phrase",
+          "example": {
+            "target": "Depois dos cinquenta anos, convém fazer um rastreio ao cólon regularmente.",
+            "gloss": "After fifty, it's advisable to have a colon screening regularly."
+          }
+        },
+        {
+          "id": "estar de baixa",
+          "hr": "estar de baixa",
+          "en": "to be on sick leave",
+          "pos": "phrase",
+          "note": "Common European expression.",
+          "example": {
+            "target": "Ela está de baixa há três semanas por causa de uma cirurgia.",
+            "gloss": "She has been on sick leave for three weeks because of a surgery."
+          }
+        },
+        {
+          "id": "dar entrada nas urgências",
+          "hr": "dar entrada nas urgências",
+          "en": "to be admitted to A&E",
+          "pos": "phrase",
+          "example": {
+            "target": "A vítima do acidente deu entrada nas urgências em estado grave.",
+            "gloss": "The accident victim was admitted to A&E in a serious condition."
+          }
+        }
+      ],
+      "sources": [
+        "referencial-camoes",
+        "freq-pt"
+      ]
+    }
+  ]
+}
