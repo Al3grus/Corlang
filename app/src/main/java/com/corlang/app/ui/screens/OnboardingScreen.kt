@@ -129,14 +129,6 @@ val NATIONS: List<NationOption> = listOf(
 
 private const val SOMEWHERE_ELSE = "Somewhere else"
 
-private val REASONS = listOf(
-    "Family & marriage",
-    "Citizenship / official exam",
-    "Work",
-    "Travel",
-    "Heritage & roots",
-)
-
 /** The personalized phrases the profile unlocks; empty parts are simply skipped. */
 fun profilePhrases(p: LearnerProfile): List<Pair<String, String>> {
     val from = NATIONS.firstOrNull { it.english == p.from }
@@ -173,8 +165,6 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     var gender by remember { mutableStateOf("m") }
     var from by remember { mutableStateOf<String?>(null) }
     var livesIn by remember { mutableStateOf<String?>(null) }
-    // Multi-select: people learn for several reasons at once; stored comma-joined.
-    val reasons = remember { androidx.compose.runtime.mutableStateListOf<String>() }
     var goal by remember { mutableStateOf(10) }
     var wantsPlacement by remember { mutableStateOf<Boolean?>(null) }
 
@@ -186,10 +176,6 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         gender = p.gender
         if (p.from.isNotBlank()) from = p.from
         if (p.livesIn.isNotBlank()) livesIn = p.livesIn
-        if (p.reason.isNotBlank()) {
-            reasons.clear()
-            reasons.addAll(p.reason.split(", ").filter { it in REASONS })
-        }
         goal = container.languagePrefs.newWordsPerDay.first()
     }
 
@@ -201,7 +187,9 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     gender = gender,
                     from = from.orEmpty().takeIf { it != SOMEWHERE_ELSE }.orEmpty(),
                     livesIn = livesIn.orEmpty().takeIf { it != SOMEWHERE_ELSE }.orEmpty(),
-                    reason = reasons.joinToString(", ")
+                    // The "why are you learning" step was removed: nothing consumed it.
+                    // The field stays for backup compatibility, just no longer collected.
+                    reason = ""
                 )
             )
             container.languagePrefs.setNewWordsPerDay(goal)
@@ -214,7 +202,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         }
     }
 
-    val totalSteps = 7
+    val totalSteps = 6
     // Rendered OUTSIDE the Scaffold: the Surface supplies the theme's content color (plain
     // Text here would otherwise default to black — unreadable in dark theme), and with
     // edge-to-edge the screen must inset itself or the progress bar collides with the
@@ -322,30 +310,8 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 NextRow(enabled = from != null && livesIn != null, onBack = { step = 2 }, onNext = { step = 4 })
             }
 
-            // ---- 4 · Reason ----
-            4 -> StepFrame("Why are you learning $langName?",
-                "Choose all that apply — so the app knows what \"ready\" means for you.") {
-                REASONS.forEach { r ->
-                    val chosen = r in reasons
-                    Surface(
-                        shape = RoundedCornerShape(10.dp),
-                        color = MaterialTheme.colorScheme.surface,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 3.dp)
-                            .border(
-                                2.dp,
-                                if (chosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline,
-                                RoundedCornerShape(10.dp)
-                            )
-                            .clickable { if (chosen) reasons.remove(r) else reasons.add(r) }
-                    ) { Text(if (chosen) "✓ $r" else r, modifier = Modifier.padding(12.dp)) }
-                }
-                NextRow(enabled = reasons.isNotEmpty(), onBack = { step = 3 }, onNext = { step = 5 })
-            }
-
-            // ---- 5 · Daily goal ----
-            5 -> StepFrame("New words per lesson",
+            // ---- 4 · Daily goal ----
+            4 -> StepFrame("New words per lesson",
                 "How many new words each lesson introduces. 10 is the sustainable default; you can " +
                     "change this anytime in Settings.") {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
@@ -358,11 +324,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         ) { Text("$v") }
                     }
                 }
-                NextRow(enabled = true, onBack = { step = 4 }, onNext = { step = 6 })
+                NextRow(enabled = true, onBack = { step = 3 }, onNext = { step = 5 })
             }
 
-            // ---- 6 · Level + payoff: your first phrases ----
-            6 -> StepFrame("Last one: do you already know some $langName?", "") {
+            // ---- 5 · Level + payoff: your first phrases ----
+            5 -> StepFrame("Last one: do you already know some $langName?", "") {
                 listOf(
                     false to "I'm new, start me at Day 1",
                     true to "I know some, take the 2-minute placement test"
@@ -386,7 +352,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 // The personalized first-phrases payoff uses curated Croatian forms; only shown
                 // for Croatian. Other languages get placed by the test without a fake payoff.
                 val phrases = if (learnLang == "hr") profilePhrases(
-                    LearnerProfile(name, gender, from.orEmpty(), livesIn.orEmpty(), reasons.joinToString(", "))
+                    LearnerProfile(name, gender, from.orEmpty(), livesIn.orEmpty(), "")
                 ) else emptyList()
                 if (phrases.isNotEmpty()) {
                     Text(
@@ -410,7 +376,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 }
 
                 Row(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
-                    OutlinedButton(onClick = { step = 5 }, modifier = Modifier.weight(1f)) { Text("← Back") }
+                    OutlinedButton(onClick = { step = 4 }, modifier = Modifier.weight(1f)) { Text("← Back") }
                     Spacer(Modifier.height(0.dp))
                     Button(
                         onClick = { save(thenPlacement = wantsPlacement == true) },

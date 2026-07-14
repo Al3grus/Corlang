@@ -206,10 +206,6 @@ fun SettingsScreen(
                         if (isNotEmpty()) append(" · ")
                         append("lives in ${prof.livesIn}")
                     }
-                    if (prof.reason.isNotBlank()) {
-                        if (isNotEmpty()) append(" · ")
-                        append(prof.reason)
-                    }
                     if (isEmpty()) append("Set it up to unlock your personalized intro phrases.")
                 },
                 style = MaterialTheme.typography.bodySmall,
