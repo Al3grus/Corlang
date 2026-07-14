@@ -51,34 +51,79 @@ private fun DrawScope.drawChequer(color: Color) {
 }
 
 /**
- * pt: azulejo — two LARGE tiles sized to the card (concentric diamonds with a cross and a
- * filled center), anchored right. A lattice of tiny diamonds read as noise; two big tiles
- * read as azulejo.
+ * pt: azulejo — two large traditional tiles anchored right. Each tile is the classic
+ * Hispano-Moorish composition: a framed square, an eight-pointed star (two overlapping
+ * squares, one rotated 45°), a four-petal rosette at the heart, and quarter-circle corner
+ * arcs that hint at the infinite repeating pattern azulejo walls are famous for.
  */
 private fun DrawScope.drawAzulejo(color: Color) {
-    val stroke = Stroke(width = 2.5f)
-    val r = size.height * 0.42f
+    val half = size.height * 0.40f
     val cy = size.height / 2f
-
-    fun diamond(c: Offset, radius: Float) = androidx.compose.ui.graphics.Path().apply {
-        moveTo(c.x, c.y - radius)
-        lineTo(c.x + radius, c.y)
-        lineTo(c.x, c.y + radius)
-        lineTo(c.x - radius, c.y)
-        close()
-    }
-
     val tiles = listOf(
-        Offset(size.width - r * 1.15f, cy) to 1f,
-        Offset(size.width - r * 3.4f, cy) to 0.55f   // second tile sits back, fainter
+        Offset(size.width - half * 1.25f, cy) to 1f,
+        Offset(size.width - half * 3.65f, cy) to 0.5f   // second tile sits back, fainter
     )
-    tiles.forEach { (c, fade) ->
-        val col = color.copy(alpha = color.alpha * fade)
-        drawPath(diamond(c, r), col, style = stroke)
-        drawPath(diamond(c, r * 0.62f), col, style = stroke)
-        drawPath(diamond(c, r * 0.16f), col)   // filled heart of the tile
-        drawLine(col, Offset(c.x - r, c.y), Offset(c.x + r, c.y), strokeWidth = 1.5f)
-        drawLine(col, Offset(c.x, c.y - r), Offset(c.x, c.y + r), strokeWidth = 1.5f)
+    tiles.forEach { (c, fade) -> drawAzulejoTile(c, half, color.copy(alpha = color.alpha * fade)) }
+}
+
+private fun DrawScope.drawAzulejoTile(c: Offset, half: Float, col: Color) {
+    val stroke = Stroke(width = 2.5f)
+    val thin = Stroke(width = 1.4f)
+
+    // Tile frame + inner frame.
+    drawRect(col, Offset(c.x - half, c.y - half), Size(half * 2, half * 2), style = stroke)
+    val inset = half * 0.86f
+    drawRect(col, Offset(c.x - inset, c.y - inset), Size(inset * 2, inset * 2), style = thin)
+
+    // Eight-pointed star: an axis-aligned square and the same square rotated 45°.
+    val a = half * 0.46f
+    drawRect(col, Offset(c.x - a, c.y - a), Size(a * 2, a * 2), style = stroke)
+    val v = a * 1.4142f
+    drawPath(
+        androidx.compose.ui.graphics.Path().apply {
+            moveTo(c.x, c.y - v); lineTo(c.x + v, c.y); lineTo(c.x, c.y + v); lineTo(c.x - v, c.y); close()
+        },
+        col, style = stroke
+    )
+
+    // Four-petal rosette at the heart: leaf-shaped petals along the axes, softly filled.
+    val petalLen = a * 0.85f
+    val petalW = a * 0.34f
+    val petalFill = col.copy(alpha = col.alpha * 0.55f)
+    listOf(0f to -1f, 0f to 1f, -1f to 0f, 1f to 0f).forEach { (dx, dy) ->
+        val tip = Offset(c.x + dx * petalLen, c.y + dy * petalLen)
+        // Perpendicular direction for the petal's waist.
+        val px = dy * petalW
+        val py = dx * petalW
+        val petal = androidx.compose.ui.graphics.Path().apply {
+            moveTo(c.x, c.y)
+            quadraticTo(c.x + dx * petalLen * 0.5f - px, c.y + dy * petalLen * 0.5f - py, tip.x, tip.y)
+            quadraticTo(c.x + dx * petalLen * 0.5f + px, c.y + dy * petalLen * 0.5f + py, c.x, c.y)
+            close()
+        }
+        drawPath(petal, petalFill)
+        drawPath(petal, col, style = thin)
+    }
+    drawCircle(col, radius = half * 0.07f, center = c)
+
+    // Corner quarter-arcs: each tile corner carries a quarter circle facing inward —
+    // on a real wall four neighbouring tiles complete these into full rosettes.
+    val arcR = half * 0.34f
+    listOf(
+        Offset(c.x - half, c.y - half) to 0f,     // top-left corner: sweep 0..90
+        Offset(c.x + half, c.y - half) to 90f,    // top-right: 90..180
+        Offset(c.x + half, c.y + half) to 180f,   // bottom-right: 180..270
+        Offset(c.x - half, c.y + half) to 270f    // bottom-left: 270..360
+    ).forEach { (corner, start) ->
+        drawArc(
+            color = col,
+            startAngle = start,
+            sweepAngle = 90f,
+            useCenter = false,
+            topLeft = Offset(corner.x - arcR, corner.y - arcR),
+            size = Size(arcR * 2, arcR * 2),
+            style = thin
+        )
     }
 }
 
