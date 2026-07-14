@@ -119,18 +119,20 @@ fun TodayScreen(
         .collectAsState(initial = emptyList())
     val doneIds = checks.map { it.itemId }.toSet()
     val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
-    val stepsDone = actionSteps.count { s ->
-        // Words/review count when cleared OR this day's block was completed (capped blocks can
-        // leave a backlog behind). Skipping never writes the check.
-        when (s.kind) {
-            StepKind.WORDS -> unlockedNew == 0 || s.id in doneIds
-            StepKind.REVIEW -> reviewPending == 0 || s.id in doneIds
-            else -> s.id in doneIds
-        }
-    }
     // "Started" = you actually completed a step of THIS lesson (a persisted check), so opening the
     // lesson or a shared-word state never turns "Start" into "Continue".
     val lessonStarted = doneIds.isNotEmpty()
+    val stepsDone = actionSteps.count { s ->
+        // Words/review count when this day's block was completed, OR — only once the lesson has
+        // been started — when the block is already cleared (capped blocks can leave a backlog
+        // behind). Without the started gate a fresh course showed phantom progress: zero due
+        // reviews auto-ticked the review step before the learner did anything.
+        when (s.kind) {
+            StepKind.WORDS -> s.id in doneIds || (lessonStarted && unlockedNew == 0)
+            StepKind.REVIEW -> s.id in doneIds || (lessonStarted && reviewPending == 0)
+            else -> s.id in doneIds
+        }
+    }
 
     // Daily goal ring: today's guided session, measured on the day you're up to (not the one
     // being browsed). Closes fully once a lesson day has been completed today and stays closed.
@@ -150,14 +152,15 @@ fun TodayScreen(
         .collectAsState(initial = emptyList())
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
     val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
+    val targetStarted = targetDoneIds.isNotEmpty()
     val targetStepsDone = targetAction.count { s ->
+        // Same started-gate as above: an untouched lesson must show a 0% ring.
         when (s.kind) {
-            StepKind.WORDS -> unlockedNew == 0 || s.id in targetDoneIds
-            StepKind.REVIEW -> reviewPending == 0 || s.id in targetDoneIds
+            StepKind.WORDS -> s.id in targetDoneIds || (targetStarted && unlockedNew == 0)
+            StepKind.REVIEW -> s.id in targetDoneIds || (targetStarted && reviewPending == 0)
             else -> s.id in targetDoneIds
         }
     }
-    val targetStarted = targetDoneIds.isNotEmpty()
     val ringProgress = when {
         completedToday > 0 -> 1f
         targetAction.isEmpty() -> 0f
