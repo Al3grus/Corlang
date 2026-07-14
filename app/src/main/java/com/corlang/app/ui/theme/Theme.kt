@@ -84,15 +84,46 @@ object CorlangColors {
         @Composable get() = LocalFeedbackColors.current
 }
 
-/** One deliberate type scale: slightly tighter headlines, roomier body text. */
+/**
+ * Display face for headlines only: Fraunces (OFL), a warm editorial serif that gives the
+ * brand a voice beyond Roboto. Variable font — weights come from the wght axis. Body text
+ * stays on the system sans for reading comfort.
+ */
+@OptIn(androidx.compose.ui.text.ExperimentalTextApi::class)
+private val Fraunces = androidx.compose.ui.text.font.FontFamily(
+    androidx.compose.ui.text.font.Font(
+        com.corlang.app.R.font.fraunces,
+        weight = FontWeight.SemiBold,
+        variationSettings = androidx.compose.ui.text.font.FontVariation.Settings(
+            androidx.compose.ui.text.font.FontVariation.weight(600)
+        )
+    ),
+    androidx.compose.ui.text.font.Font(
+        com.corlang.app.R.font.fraunces,
+        weight = FontWeight.Bold,
+        variationSettings = androidx.compose.ui.text.font.FontVariation.Settings(
+            androidx.compose.ui.text.font.FontVariation.weight(700)
+        )
+    )
+)
+
+/** One deliberate type scale: Fraunces display headlines, roomier system-sans body text. */
 private fun corlangTypography(): Typography {
     val base = Typography()
     return base.copy(
+        headlineMedium = base.headlineMedium.copy(
+            fontFamily = Fraunces,
+            fontWeight = FontWeight.Bold
+        ),
         headlineSmall = base.headlineSmall.copy(
+            fontFamily = Fraunces,
             fontWeight = FontWeight.Bold,
             letterSpacing = (-0.25).sp
         ),
-        titleLarge = base.titleLarge.copy(fontWeight = FontWeight.SemiBold),
+        titleLarge = base.titleLarge.copy(
+            fontFamily = Fraunces,
+            fontWeight = FontWeight.SemiBold
+        ),
         titleMedium = base.titleMedium.copy(
             fontWeight = FontWeight.SemiBold,
             letterSpacing = 0.sp
