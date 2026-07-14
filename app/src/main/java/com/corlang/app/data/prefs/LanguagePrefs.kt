@@ -41,6 +41,18 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[reminderKey] = enabled }
     }
 
+    // Which languages the daily reminder may nag about. Absent = follow the selected
+    // language (pre-existing behavior); set = only these, so trying a French placement
+    // test never turns into daily French nags for a Croatian learner.
+    private val reminderLanguagesKey = stringSetPreferencesKey("reminder_languages")
+
+    val reminderLanguages: Flow<Set<String>?> =
+        context.dataStore.data.map { it[reminderLanguagesKey] }
+
+    suspend fun setReminderLanguages(langs: Set<String>) {
+        context.dataStore.edit { it[reminderLanguagesKey] = langs }
+    }
+
     private val reminderHourKey = intPreferencesKey("reminder_hour")
     private val reminderMinuteKey = intPreferencesKey("reminder_minute")
 

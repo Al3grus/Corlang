@@ -18,6 +18,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -120,6 +121,45 @@ fun SettingsScreen(
                             apply(on)
                         }
                     }
+                )
+            }
+
+            if (enabled) {
+                // Which courses may nag. Trying a placement test in another language must not
+                // sign you up for its daily reminders — only the languages picked here do.
+                val selectedLang by container.languagePrefs.selectedLanguage
+                    .collectAsState(initial = "hr")
+                val chosenLangs by container.languagePrefs.reminderLanguages
+                    .collectAsState(initial = null)
+                val effective = chosenLangs ?: setOf(selectedLang)
+
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "Remind me about",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Row {
+                    container.content.allMeta().forEach { meta ->
+                        val checked = meta.code in effective
+                        FilterChip(
+                            selected = checked,
+                            onClick = {
+                                // Never allow zero languages — turn the reminder off instead.
+                                val next = if (checked) effective - meta.code else effective + meta.code
+                                if (next.isNotEmpty()) {
+                                    scope.launch { container.languagePrefs.setReminderLanguages(next) }
+                                }
+                            },
+                            label = { Text("${meta.flagEmoji} ${meta.name}") },
+                            modifier = Modifier.padding(end = 8.dp)
+                        )
+                    }
+                }
+                Text(
+                    "Only the languages you pick here send the daily nudge.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }
