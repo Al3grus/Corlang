@@ -15,14 +15,17 @@ import androidx.compose.ui.graphics.drawscope.Stroke
  * Keep alpha low: this is texture, not decoration.
  */
 
-/** Draws the language's motif behind the content. [tint] is usually the card's content color. */
-fun Modifier.languagePattern(lang: String, tint: Color, alpha: Float = 0.05f): Modifier =
+/**
+ * Draws the language's motif behind the content. [tint] is usually the card's content color.
+ * Stroke-drawn motifs (azulejo, Deco rays) get a higher base alpha than the solid chequer —
+ * thin outlines read far fainter than filled squares at the same opacity.
+ */
+fun Modifier.languagePattern(lang: String, tint: Color): Modifier =
     drawBehind {
-        val c = tint.copy(alpha = alpha)
         when (lang) {
-            "pt" -> drawAzulejo(c)
-            "fr" -> drawDecoRays(c)
-            else -> drawChequer(c)
+            "pt" -> drawAzulejo(tint.copy(alpha = 0.14f))
+            "fr" -> drawDecoRays(tint.copy(alpha = 0.14f))
+            else -> drawChequer(tint.copy(alpha = 0.05f))
         }
     }
 
@@ -51,7 +54,7 @@ private fun DrawScope.drawChequer(color: Color) {
 private fun DrawScope.drawAzulejo(color: Color) {
     val step = 34f
     val half = step / 2f
-    val stroke = Stroke(width = 1.5f)
+    val stroke = Stroke(width = 2.2f)
     var y = 0f
     while (y < size.height + step) {
         var x = 0f
@@ -89,7 +92,7 @@ private fun DrawScope.drawDecoRays(color: Color) {
             color = color,
             start = origin + Offset(dirX * size.width * 0.12f, dirY * size.width * 0.12f),
             end = origin + Offset(dirX * reach, dirY * reach),
-            strokeWidth = if (i % 2 == 0) 2.5f else 1.2f
+            strokeWidth = if (i % 2 == 0) 3.5f else 1.8f
         )
     }
 }
