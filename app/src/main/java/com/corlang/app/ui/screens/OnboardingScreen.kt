@@ -74,27 +74,57 @@ data class NationOption(
 val NATIONS: List<NationOption> = listOf(
     NationOption("United States", "Amerikanac", "Amerikanka", "iz Amerike", "u Americi"),
     NationOption("Croatia", "Hrvat", "Hrvatica", "iz Hrvatske", "u Hrvatskoj"),
+    NationOption("Albania", "Albanac", "Albanka", "iz Albanije", "u Albaniji"),
+    // Microstates: blank nationality = no widely attested Croatian demonym; the
+    // nationality phrase is simply skipped, the from/lives-in phrases still work.
+    NationOption("Andorra", "", "", "iz Andore", "u Andori"),
     NationOption("Argentina", "Argentinac", "Argentinka", "iz Argentine", "u Argentini"),
     NationOption("Australia", "Australac", "Australka", "iz Australije", "u Australiji"),
     NationOption("Austria", "Austrijanac", "Austrijanka", "iz Austrije", "u Austriji"),
+    NationOption("Belarus", "Bjelorus", "Bjeloruskinja", "iz Bjelorusije", "u Bjelorusiji"),
+    NationOption("Belgium", "Belgijanac", "Belgijanka", "iz Belgije", "u Belgiji"),
     NationOption("Bosnia and Herzegovina", "Bosanac", "Bosanka", "iz Bosne i Hercegovine", "u Bosni i Hercegovini"),
     NationOption("Brazil", "Brazilac", "Brazilka", "iz Brazila", "u Brazilu"),
+    NationOption("Bulgaria", "Bugarin", "Bugarka", "iz Bugarske", "u Bugarskoj"),
     NationOption("Canada", "Kanađanin", "Kanađanka", "iz Kanade", "u Kanadi"),
+    NationOption("Cyprus", "Cipranin", "Cipranka", "s Cipra", "na Cipru"),
     NationOption("Czechia", "Čeh", "Čehinja", "iz Češke", "u Češkoj"),
+    NationOption("Denmark", "Danac", "Dankinja", "iz Danske", "u Danskoj"),
+    NationOption("Estonia", "Estonac", "Estonka", "iz Estonije", "u Estoniji"),
+    NationOption("Finland", "Finac", "Finkinja", "iz Finske", "u Finskoj"),
     NationOption("France", "Francuz", "Francuskinja", "iz Francuske", "u Francuskoj"),
     NationOption("Germany", "Nijemac", "Njemica", "iz Njemačke", "u Njemačkoj"),
+    NationOption("Greece", "Grk", "Grkinja", "iz Grčke", "u Grčkoj"),
+    NationOption("Hungary", "Mađar", "Mađarica", "iz Mađarske", "u Mađarskoj"),
+    NationOption("Iceland", "Islanđanin", "Islanđanka", "s Islanda", "na Islandu"),
     NationOption("Ireland", "Irac", "Irkinja", "iz Irske", "u Irskoj"),
     NationOption("Italy", "Talijan", "Talijanka", "iz Italije", "u Italiji"),
+    NationOption("Kosovo", "Kosovar", "Kosovarka", "s Kosova", "na Kosovu"),
+    NationOption("Latvia", "Latvijac", "Latvijka", "iz Latvije", "u Latviji"),
+    NationOption("Liechtenstein", "", "", "iz Lihtenštajna", "u Lihtenštajnu"),
+    NationOption("Lithuania", "Litavac", "Litavka", "iz Litve", "u Litvi"),
+    NationOption("Luxembourg", "Luksemburžanin", "Luksemburžanka", "iz Luksemburga", "u Luksemburgu"),
+    NationOption("Malta", "Maltežanin", "Maltežanka", "s Malte", "na Malti"),
     NationOption("Mexico", "Meksikanac", "Meksikanka", "iz Meksika", "u Meksiku"),
+    NationOption("Moldova", "Moldavac", "Moldavka", "iz Moldavije", "u Moldaviji"),
+    NationOption("Monaco", "", "", "iz Monaka", "u Monaku"),
+    NationOption("Montenegro", "Crnogorac", "Crnogorka", "iz Crne Gore", "u Crnoj Gori"),
     NationOption("Netherlands", "Nizozemac", "Nizozemka", "iz Nizozemske", "u Nizozemskoj"),
+    NationOption("North Macedonia", "Makedonac", "Makedonka", "iz Sjeverne Makedonije", "u Sjevernoj Makedoniji"),
     NationOption("Norway", "Norvežanin", "Norvežanka", "iz Norveške", "u Norveškoj"),
     NationOption("Poland", "Poljak", "Poljakinja", "iz Poljske", "u Poljskoj"),
     NationOption("Portugal", "Portugalac", "Portugalka", "iz Portugala", "u Portugalu"),
+    NationOption("Romania", "Rumunj", "Rumunjka", "iz Rumunjske", "u Rumunjskoj"),
+    NationOption("Russia", "Rus", "Ruskinja", "iz Rusije", "u Rusiji"),
+    NationOption("San Marino", "", "", "iz San Marina", "u San Marinu"),
     NationOption("Serbia", "Srbin", "Srpkinja", "iz Srbije", "u Srbiji"),
+    NationOption("Slovakia", "Slovak", "Slovakinja", "iz Slovačke", "u Slovačkoj"),
     NationOption("Slovenia", "Slovenac", "Slovenka", "iz Slovenije", "u Sloveniji"),
     NationOption("Spain", "Španjolac", "Španjolka", "iz Španjolske", "u Španjolskoj"),
     NationOption("Sweden", "Šveđanin", "Šveđanka", "iz Švedske", "u Švedskoj"),
     NationOption("Switzerland", "Švicarac", "Švicarka", "iz Švicarske", "u Švicarskoj"),
+    NationOption("Turkey", "Turčin", "Turkinja", "iz Turske", "u Turskoj"),
+    NationOption("Ukraine", "Ukrajinac", "Ukrajinka", "iz Ukrajine", "u Ukrajini"),
     NationOption("United Kingdom", "Britanac", "Britanka", "iz Velike Britanije", "u Velikoj Britaniji"),
 )
 
@@ -116,7 +146,7 @@ fun profilePhrases(p: LearnerProfile): List<Pair<String, String>> {
     if (p.name.isNotBlank()) out += "Zovem se ${p.name.trim()}." to "My name is ${p.name.trim()}."
     from?.let {
         val nat = if (p.gender == "f") it.natF else it.natM
-        out += "Ja sam $nat." to "I am ${it.english.demonymEn()}."
+        if (nat.isNotBlank()) out += "Ja sam $nat." to "I am ${it.english.demonymEn()}."
         out += "Ja sam ${it.fromHr}." to "I am from ${it.english}."
     }
     livesIn?.let { out += "Živim ${it.inHr}." to "I live in ${it.english}." }
