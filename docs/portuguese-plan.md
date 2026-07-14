@@ -1,6 +1,6 @@
 # Corlang Portuguese (European, pt-PT): Exam-Validated Content Plan (A1 → B2)
 
-## STATUS (2026-07): IN PROGRESS
+## STATUS (2026-07): CONTENT COMPLETE — shipped behind the standard gate; in-app native review (the user) ongoing
 
 - [x] **PT-0** — official anchors verified live (CAPLE ladder + ≥55% Suficiente rule;
       Português Fundamental 2,217-word core; Referencial Camões PLE); digests in
@@ -17,14 +17,15 @@
 - [x] **PT-D** — plan 105 days (phase1-a1 A1 1–30, phase2-a2 A2 31–60, phase3-b1 B1 61–85,
       phase4-b2 B2 86–105), self-contained LEARN/EXERCISE/DIALOGUE days; day 60 = CIPLE
       checkpoint, days 81–85 = DEPLE drills + mock, days 101–105 = DIPLE drills + mock.
-- [ ] **PT-E** — placement (14Q A0→B2), quizzes (A1–B2), exams.json (pt-b1-deple-mock,
-      pt-b2-diple-mock), cheatsheet (European phonetics: vowel reduction, nasal ão/õe/ãe,
-      lh/nh, s/z sandhi, open vs closed e/o), feynman (~9 concepts), resources.json (official
-      only: Instituto Camões, CAPLE modelos, Português Fundamental, RTP Ensina).
-- [ ] **PT-F** — audits (answer-in-prompt leaks, Brazilianisms, noun genders), add "pt" to
-      `ContentRepository.availableLanguages` + gate strict list, release.
-      **The user IS the native reviewer** (native pt-PT speaker) — review happens in-app
-      after ship.
+- [x] **PT-E** — placement (14Q A0→B2), quizzes (pt-a1..pt-b2, 8Q each), exams.json
+      (pt-b1-deple-mock, pt-b2-diple-mock: 4 CAPLE components, Suficiente ≥55% global),
+      cheatsheet ("O português europeu numa página", 10 phonetics/orthography sections),
+      feynman (9 concepts), resources.json (Camões, CAPLE, Practice Portuguese, RTP Ensina,
+      Priberam — every URL verified live at authoring time).
+- [x] **PT-F** — audits passed (answer-in-prompt leaks 0, Brazilianisms 0, all 1,218 nouns
+      carry gender), "pt" added to `ContentRepository.availableLanguages` + the test-gate
+      strict list. **The user IS the native reviewer** (native pt-PT speaker) — review
+      happens in-app now that it ships.
 
 ## Positioning
 
