@@ -102,13 +102,13 @@ private fun FeynmanRunner(
             style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
 
         InfoCard {
-            SectionTitle("📖 In the simplest terms")
+            SectionTitle("In the simplest terms")
             Text(concept.simpleExplanation, style = MaterialTheme.typography.bodyMedium)
-            SectionTitle("💡 Analogy")
+            SectionTitle("Analogy")
             Text(concept.analogy, style = MaterialTheme.typography.bodyMedium, fontStyle = FontStyle.Italic)
         }
 
-        SectionTitle("🗣️ Now explain it back in your own words")
+        SectionTitle("Now explain it back in your own words")
         OutlinedTextField(
             value = myExplanation,
             onValueChange = { myExplanation = it },
@@ -124,7 +124,7 @@ private fun FeynmanRunner(
                 modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
             ) { Text("Check what I missed") }
         } else {
-            SectionTitle("✅ Did you cover these? Tick the ones you got")
+            SectionTitle("Did you cover these? Tick the ones you got")
             concept.rubricPoints.forEachIndexed { i, rp ->
                 val got = covered[i] ?: false
                 Surface(
@@ -164,7 +164,7 @@ private fun FeynmanRunner(
             ) {
                 Text(
                     if (gotCount == total)
-                        "🎉 You covered all $total points, you can explain this on your own."
+                        "You covered all $total points, you can explain this on your own."
                     else
                         "You covered $gotCount / $total. Re-read the missed points above, then explain again.",
                     modifier = Modifier.padding(14.dp),

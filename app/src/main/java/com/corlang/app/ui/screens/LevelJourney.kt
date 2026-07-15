@@ -65,7 +65,7 @@ fun LevelJourney(
     var selectedLevel by rememberSaveable(currentLevel) { mutableStateOf(currentLevel) }
 
     Column {
-        SectionTitle("🪜 Your journey")
+        SectionTitle("Your journey")
 
         // Level selector chips.
         Row(

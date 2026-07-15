@@ -76,8 +76,8 @@ fun ProgressScreen(
         // Stats row
         Row(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            StatTile("🔥 $streak", "day streak", Modifier.weight(1f))
-            StatTile("📅 $daysDone", "days done", Modifier.weight(1f))
+            StatTile("$streak", "day streak", Modifier.weight(1f))
+            StatTile("$daysDone", "days done", Modifier.weight(1f))
             StatTile(currentLevel, "current level", Modifier.weight(1f))
         }
         Text(
@@ -89,9 +89,9 @@ fun ProgressScreen(
         // Vocabulary stats
         Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            StatTile("🌱 $wordsStarted", "words started", Modifier.weight(1f))
-            StatTile("📖 $wordsLearned", "words learned", Modifier.weight(1f))
-            StatTile("🏆 $wordsMastered", "words mastered", Modifier.weight(1f))
+            StatTile("$wordsStarted", "words started", Modifier.weight(1f))
+            StatTile("$wordsLearned", "words learned", Modifier.weight(1f))
+            StatTile("$wordsMastered", "words mastered", Modifier.weight(1f))
         }
 
         // Practice & assessment: level quizzes and the official-format mock exam. Not a bottom
@@ -105,12 +105,12 @@ fun ProgressScreen(
 
         // Pareto summary
         InfoCard {
-            SectionTitle("⚡ The 20% that drives 80%")
+            SectionTitle("The 20% that drives 80%")
             Text(meta.paretoSummary, style = MaterialTheme.typography.bodyMedium)
         }
 
         // CEFR ladder
-        SectionTitle("🪜 CEFR ladder & milestones")
+        SectionTitle("CEFR ladder & milestones")
         Text(
             "C2 is intentionally excluded, it's effectively unreachable for most non-native learners.",
             style = MaterialTheme.typography.bodySmall,
@@ -136,7 +136,7 @@ fun ProgressScreen(
                             color = MaterialTheme.colorScheme.primary,
                             style = MaterialTheme.typography.labelMedium)
                     }
-                    Text("🏁 Milestone: ${level.milestone}",
+                    Text("Milestone: ${level.milestone}",
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(top = 4.dp))
                     level.canDo.forEach { Bullet(it) }
@@ -151,7 +151,7 @@ fun ProgressScreen(
         }
         if (examLevel?.exam != null) {
             val exam = examLevel.exam!!
-            SectionTitle("🎓 Exam readiness, ${examLevel.id}")
+            SectionTitle("Exam readiness · ${examLevel.id}")
             InfoCard {
                 Text(exam.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                 Text(exam.passRule, style = MaterialTheme.typography.bodySmall,
@@ -215,7 +215,7 @@ fun ProgressScreen(
         }
 
         // Resources
-        SectionTitle("⭐ The best resources to learn ${meta.name} fast")
+        SectionTitle("The best resources to learn ${meta.name} fast")
         val uriHandler = LocalUriHandler.current
         resources.forEach { r ->
             // Whole card is the tap target (48dp+); show the domain, not a wrapping raw URL.

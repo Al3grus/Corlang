@@ -470,19 +470,19 @@ fun SessionPlayer(
                             buildString {
                                 append(
                                     when (s.kind) {
-                                        StepKind.INFO -> "📖 Today"
-                                        StepKind.WORDS -> "🃏 New words"
-                                        StepKind.REVIEW -> "🔁 Review"
-                                        StepKind.GENDER -> "🎯 Drill"
-                                        StepKind.CLOZE -> "🎯 Case drill"
-                                        StepKind.RECALL -> "⌨️ Recall drill"
-                                        StepKind.WRAPUP -> "🧠 Wrap-up recall"
-                                        StepKind.LEARN -> "📚 Learn"
-                                        StepKind.EXERCISE -> "✏️ Exercise"
-                                        StepKind.DIALOGUE -> "🗣 Dialogue"
-                                        StepKind.LINK -> "🔗 Course task"
-                                        StepKind.COMPLETE -> "🏁 Finish"
-                                        else -> "✍️ Task"
+                                        StepKind.INFO -> "Today"
+                                        StepKind.WORDS -> "New words"
+                                        StepKind.REVIEW -> "Review"
+                                        StepKind.GENDER -> "Drill"
+                                        StepKind.CLOZE -> "Case drill"
+                                        StepKind.RECALL -> "Recall drill"
+                                        StepKind.WRAPUP -> "Wrap-up recall"
+                                        StepKind.LEARN -> "Learn"
+                                        StepKind.EXERCISE -> "Exercise"
+                                        StepKind.DIALOGUE -> "Dialogue"
+                                        StepKind.LINK -> "Course task"
+                                        StepKind.COMPLETE -> "Finish"
+                                        else -> "Task"
                                     }
                                 )
                                 if (s.phase.isNotBlank()) append("   ·   ${s.phase}")
@@ -506,7 +506,7 @@ fun SessionPlayer(
                         if (s.kind == StepKind.WORDS) {
                             Text(
                                 when {
-                                    stepDone(s) -> "✅ New words done."
+                                    stepDone(s) -> "New words done ✓"
                                     unlockedNew > newBlock ->
                                         "$newBlock new words this lesson (${unlockedNew - newBlock} more unlocked, coming in later lessons)."
                                     else -> "$newBlock new word${if (newBlock == 1) "" else "s"} to learn."
@@ -518,7 +518,7 @@ fun SessionPlayer(
                         }
                         if (s.kind == StepKind.REVIEW) {
                             Text(
-                                if (stepDone(s)) "✅ Review done."
+                                if (stepDone(s)) "Review done ✓"
                                 else "$reviewPending card${if (reviewPending == 1) "" else "s"} to review" +
                                     if (dueNow > reviewPending) " (${dueNow - reviewPending} more in the Words tab)." else ".",
                                 style = MaterialTheme.typography.bodyMedium,
@@ -720,7 +720,7 @@ private fun GenderDrill(container: AppContainer, lang: String, onFinished: () ->
     if (finished) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             Text(
-                "🎯 $score / ${items.size}",
+                "$score / ${items.size}",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(vertical = 8.dp)
