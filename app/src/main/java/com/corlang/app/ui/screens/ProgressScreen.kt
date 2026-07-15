@@ -4,8 +4,10 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -84,13 +86,6 @@ fun ProgressScreen(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        // Practice & assessment: level quizzes and the official-format mock exam. Not a bottom
-        // tab — it belongs here, next to the CEFR ladder and exam readiness it measures.
-        OutlinedButton(
-            onClick = { onNavigate(Dest.PRACTICE.route) },
-            modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
-        ) { Text("Practice: quizzes & mock exam →") }
-
         // Vocabulary stats
         Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -98,6 +93,15 @@ fun ProgressScreen(
             StatTile("📖 $wordsLearned", "words learned", Modifier.weight(1f))
             StatTile("🏆 $wordsMastered", "words mastered", Modifier.weight(1f))
         }
+
+        // Practice & assessment: level quizzes and the official-format mock exam. Not a bottom
+        // tab — it belongs here, by the vocabulary stats and the CEFR ladder it measures.
+        OutlinedButton(
+            onClick = { onNavigate(Dest.PRACTICE.route) },
+            modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
+        ) { Text("Practice: quizzes & mock exam →") }
+
+        Spacer(Modifier.height(20.dp))
 
         // Pareto summary
         InfoCard {
