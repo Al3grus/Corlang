@@ -28,7 +28,7 @@ import com.corlang.app.ui.theme.rememberReducedMotion
 @Composable
 fun LearnScreen(container: AppContainer, lang: String) {
     var tab by rememberSaveable(lang) { mutableIntStateOf(0) }
-    val labels = listOf("Cheatsheet", "Grammar", "Teach", "Talk")
+    val labels = listOf("Cheatsheet", "Grammar", "Teach", "Tutor")
 
     Column(modifier = Modifier.fillMaxSize()) {
         SingleChoiceSegmentedButtonRow(
