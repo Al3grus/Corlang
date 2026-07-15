@@ -203,7 +203,7 @@ fun TodayScreen(
                                     if (streak > 0) " $streak-day streak"
                                     else " Start your streak today"
                                 )
-                                if (freezes > 0) append("  ·  ❄️ $freezes freeze${if (freezes > 1) "s" else ""}")
+                                if (freezes > 0) append("  ·  $freezes freeze${if (freezes > 1) "s" else ""}")
                             },
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.SemiBold

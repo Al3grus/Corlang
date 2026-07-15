@@ -303,7 +303,7 @@ private fun RecallRunner(
 private fun DrillResult(score: Int, total: Int, line: String, onFinished: () -> Unit) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
         Text(
-            "🎯 $score / $total",
+            "$score / $total",
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(vertical = 8.dp)

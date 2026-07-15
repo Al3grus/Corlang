@@ -126,7 +126,7 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
     if (finished || queue.isEmpty()) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
             Text(
-                "🎯 $total / $total",
+                "$total / $total",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(vertical = 8.dp)

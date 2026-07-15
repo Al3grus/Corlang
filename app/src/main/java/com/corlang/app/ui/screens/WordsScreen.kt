@@ -285,7 +285,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
                 modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
             ) {
                 Text(
-                    "🎉 All caught up on reviews. New words unlock as you do your lessons.",
+                    "All caught up on reviews. New words unlock as you do your lessons.",
                     modifier = Modifier.padding(14.dp),
                     fontWeight = FontWeight.SemiBold
                 )
@@ -306,7 +306,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
             )
         }
 
-        SectionTitle("📦 Packs")
+        SectionTitle("Packs")
         Text(
             "Tap a pack you've started to review its words any time.",
             style = MaterialTheme.typography.bodySmall,
