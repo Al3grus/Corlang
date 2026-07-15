@@ -175,11 +175,13 @@ fun TodayScreen(
             .padding(horizontal = 16.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        // Hero: streak + daily goal ring + ONE unmissable next action.
+        // Hero: streak + daily goal ring + ONE unmissable next action. A quiet bordered surface
+        // rather than a loud coloured banner — the streak is a calm signal, not a trophy.
         Surface(
-            color = MaterialTheme.colorScheme.tertiaryContainer,
-            contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
+            color = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.onSurface,
             shape = RoundedCornerShape(16.dp),
+            border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
             modifier = Modifier.fillMaxWidth()
         ) {
             Row(
@@ -268,36 +270,40 @@ fun TodayScreen(
             }
         }
 
-        // Days must be done in order: a future day is locked until you finish the current one.
-        val locked = day.day > targetDay
-        if (locked) {
-            Surface(
-                color = MaterialTheme.colorScheme.surfaceVariant,
-                contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                shape = RoundedCornerShape(12.dp),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    "🔒 Locked. Finish Day $targetDay first, no skipping ahead.",
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.padding(16.dp)
-                )
-            }
-        } else {
-            Button(
-                onClick = { inPlayer = true },
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    when {
-                        isDone -> "Day done ✓, revisit the lesson"
-                        lessonStarted -> "Continue lesson ($stepsDone/${actionSteps.size} steps done)"
-                        else -> "Start lesson →"
-                    },
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.padding(vertical = 6.dp)
-                )
+        // The hero already starts today's lesson — so a start button here would just repeat it.
+        // Only when you've browsed to a DIFFERENT day (via the map below) do we surface an action
+        // for that day; days ahead of the one you're up to stay locked.
+        if (day.day != targetDay) {
+            val locked = day.day > targetDay
+            if (locked) {
+                Surface(
+                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        "Locked — finish Day $targetDay first. No skipping ahead.",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
+            } else {
+                Button(
+                    onClick = { inPlayer = true },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        when {
+                            isDone -> "Revisit Day ${day.day} ✓"
+                            lessonStarted -> "Continue Day ${day.day} ($stepsDone/${actionSteps.size} steps)"
+                            else -> "Open Day ${day.day} →"
+                        },
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.padding(vertical = 6.dp)
+                    )
+                }
             }
         }
 

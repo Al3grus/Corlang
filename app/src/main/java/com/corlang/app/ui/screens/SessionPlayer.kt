@@ -499,7 +499,7 @@ fun SessionPlayer(
                         if (s.detail.isNotBlank()) {
                             Text(
                                 s.detail,
-                                style = MaterialTheme.typography.bodyMedium,
+                                style = com.corlang.app.ui.theme.CorlangType.reading,
                                 modifier = Modifier.padding(top = 8.dp)
                             )
                         }
