@@ -14,8 +14,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 34
-        versionCode = 46
-        versionName = "0.17.1"
+        versionCode = 47
+        versionName = "0.18.0"
         vectorDrawables { useSupportLibrary = true }
     }
 
