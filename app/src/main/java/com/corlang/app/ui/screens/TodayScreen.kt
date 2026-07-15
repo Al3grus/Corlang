@@ -249,41 +249,6 @@ fun TodayScreen(
             }
         }
 
-        // Day navigator (browse the plan). Lands on your current lesson; ‹ › to look around.
-        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                OutlinedButton(
-                    onClick = { if (viewedDay > 1) { viewedDay--; userBrowsed = true } },
-                    enabled = viewedDay > 1
-                ) { Text("‹") }
-                Text(
-                    "Day ${day.day} / ${plan.days.size}" + if (isDone) "  ✓" else "",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
-                OutlinedButton(
-                    onClick = { if (viewedDay < plan.days.size) { viewedDay++; userBrowsed = true } },
-                    enabled = viewedDay < plan.days.size
-                ) { Text("›") }
-            }
-            // If the learner browsed away, one tap returns to the day they're up to.
-            if (viewedDay != targetDay) {
-                Text(
-                    "↩ Back to your current lesson (Day $targetDay)",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.primary,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { viewedDay = targetDay; userBrowsed = false }
-                )
-            }
-        }
-
         // Lesson header + objective.
         Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text(
@@ -297,8 +262,8 @@ fun TodayScreen(
                 fontWeight = FontWeight.Bold
             )
             InfoCard {
-                SectionTitle("🎯 In this lesson you will")
-                Text(day.objective, style = MaterialTheme.typography.bodyMedium,
+                SectionTitle("In this lesson you will")
+                Text(day.objective, style = com.corlang.app.ui.theme.CorlangType.reading,
                     modifier = Modifier.padding(bottom = 4.dp))
             }
         }

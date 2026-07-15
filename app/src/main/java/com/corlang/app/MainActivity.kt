@@ -265,9 +265,17 @@ private fun CorlangApp(container: AppContainer) {
                 })
             }
             composable(Dest.WORDS.route) { WordsScreen(container, lang) }
-            composable(Dest.QUIZ.route) { QuizScreen(container, lang) }
+            composable(Dest.PRACTICE.route) { QuizScreen(container, lang) }
             composable(Dest.LEARN.route) { LearnScreen(container, lang) }
-            composable(Dest.PROGRESS.route) { ProgressScreen(container, lang) }
+            composable(Dest.PROGRESS.route) {
+                ProgressScreen(container, lang, onNavigate = { route ->
+                    navController.navigate(route) {
+                        popUpTo(Dest.TODAY.route) { saveState = true }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                })
+            }
         }
     }
 }

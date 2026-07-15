@@ -20,32 +20,33 @@ import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 
 /*
- * Corlang palette, "Adriatic" on ink: deep sea blue (primary), terracotta roof-tile
- * (secondary), warm sand (tertiary). Dark-only by design; every Material role is
- * specified so no default (purple) role can leak into the UI.
+ * Corlang palette, "Adriatic" on ink: a calm, muted sea-blue (primary) that reads as trust and
+ * quiet rather than candy-bright; terracotta roof-tile (secondary) as the warm counterpoint;
+ * warm sand (tertiary). Dark-only by design; every Material role is specified so no default
+ * (purple) role can leak into the UI. The blue is deliberately desaturated — peace, not pop.
  */
 
 private val DarkColors = darkColorScheme(
-    primary = Color(0xFF92CBEC),
-    onPrimary = Color(0xFF06344E),
-    primaryContainer = Color(0xFF114A6E),
-    onPrimaryContainer = Color(0xFFCDE5F5),
-    secondary = Color(0xFFEFB3A3),
-    onSecondary = Color(0xFF4A170C),
-    secondaryContainer = Color(0xFF5E2B1E),
-    onSecondaryContainer = Color(0xFFFADCD3),
-    tertiary = Color(0xFFE2C86B),
-    onTertiary = Color(0xFF382F00),
-    tertiaryContainer = Color(0xFF524700),
-    onTertiaryContainer = Color(0xFFF7E7B4),
-    background = Color(0xFF111417),
-    onBackground = Color(0xFFE1E3E6),
-    surface = Color(0xFF171B1F),
-    onSurface = Color(0xFFE1E3E6),
-    surfaceVariant = Color(0xFF2C363E),
-    onSurfaceVariant = Color(0xFFBCC8D1),
-    outline = Color(0xFF86929C),
-    outlineVariant = Color(0xFF42505A),
+    primary = Color(0xFF8CBAD2),
+    onPrimary = Color(0xFF06293D),
+    primaryContainer = Color(0xFF123F5A),
+    onPrimaryContainer = Color(0xFFC9E1F0),
+    secondary = Color(0xFFE7AE9D),
+    onSecondary = Color(0xFF48160B),
+    secondaryContainer = Color(0xFF5A281B),
+    onSecondaryContainer = Color(0xFFF9DAD0),
+    tertiary = Color(0xFFDBC271),
+    onTertiary = Color(0xFF362D00),
+    tertiaryContainer = Color(0xFF4E4300),
+    onTertiaryContainer = Color(0xFFF5E4AF),
+    background = Color(0xFF0F1418),
+    onBackground = Color(0xFFE0E3E6),
+    surface = Color(0xFF161B20),
+    onSurface = Color(0xFFE0E3E6),
+    surfaceVariant = Color(0xFF29323B),
+    onSurfaceVariant = Color(0xFFB8C4CE),
+    outline = Color(0xFF7E8A95),
+    outlineVariant = Color(0xFF3A4650),
     error = Color(0xFFFFB4AB),
     onError = Color(0xFF690005),
     errorContainer = Color(0xFF93000A),
@@ -85,9 +86,8 @@ object CorlangColors {
 }
 
 /**
- * Display face for headlines only: Fraunces (OFL), a warm editorial serif that gives the
- * brand a voice beyond Roboto. Variable font — weights come from the wght axis. Body text
- * stays on the system sans for reading comfort.
+ * Display face: Fraunces (OFL), a warm editorial serif that gives the brand a voice beyond
+ * Roboto. Variable font — weights come from the wght axis. Used bold for headlines and titles.
  */
 @OptIn(androidx.compose.ui.text.ExperimentalTextApi::class)
 private val Fraunces = androidx.compose.ui.text.font.FontFamily(
@@ -107,10 +107,65 @@ private val Fraunces = androidx.compose.ui.text.font.FontFamily(
     )
 )
 
-/** One deliberate type scale: Fraunces display headlines, roomier system-sans body text. */
+/**
+ * Reading face: the same Fraunces at book weights (regular + medium). Set lesson and reading
+ * content in this — a serif for prose is the single biggest signal of "book, not toy," while
+ * UI/chrome stays on the system sans. Exposed through [CorlangType.reading].
+ */
+@OptIn(androidx.compose.ui.text.ExperimentalTextApi::class)
+private val FrauncesReading = androidx.compose.ui.text.font.FontFamily(
+    androidx.compose.ui.text.font.Font(
+        com.corlang.app.R.font.fraunces,
+        weight = FontWeight.Normal,
+        variationSettings = androidx.compose.ui.text.font.FontVariation.Settings(
+            androidx.compose.ui.text.font.FontVariation.weight(430)
+        )
+    ),
+    androidx.compose.ui.text.font.Font(
+        com.corlang.app.R.font.fraunces,
+        weight = FontWeight.Medium,
+        variationSettings = androidx.compose.ui.text.font.FontVariation.Settings(
+            androidx.compose.ui.text.font.FontVariation.weight(520)
+        )
+    )
+)
+
+/** Reading/prose style, mirroring MaterialTheme.typography access. Serif, roomy line-height. */
+object CorlangType {
+    val reading: androidx.compose.ui.text.TextStyle
+        @Composable get() = MaterialTheme.typography.bodyLarge.copy(
+            fontFamily = FrauncesReading,
+            fontWeight = FontWeight.Normal,
+            fontSize = 18.sp,
+            lineHeight = 29.sp,
+            letterSpacing = 0.sp
+        )
+
+    /** Larger reading style for the focal sentence/phrase of a lesson card. */
+    val readingLarge: androidx.compose.ui.text.TextStyle
+        @Composable get() = MaterialTheme.typography.bodyLarge.copy(
+            fontFamily = FrauncesReading,
+            fontWeight = FontWeight.Medium,
+            fontSize = 22.sp,
+            lineHeight = 32.sp,
+            letterSpacing = 0.sp
+        )
+}
+
+/** One deliberate type scale: Fraunces for display/headlines/titles, system sans for UI body. */
 private fun corlangTypography(): Typography {
     val base = Typography()
     return base.copy(
+        displaySmall = base.displaySmall.copy(
+            fontFamily = Fraunces,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = (-0.5).sp
+        ),
+        headlineLarge = base.headlineLarge.copy(
+            fontFamily = Fraunces,
+            fontWeight = FontWeight.Bold,
+            letterSpacing = (-0.5).sp
+        ),
         headlineMedium = base.headlineMedium.copy(
             fontFamily = Fraunces,
             fontWeight = FontWeight.Bold

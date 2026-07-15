@@ -12,6 +12,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,6 +32,7 @@ import com.corlang.app.ui.components.Bullet
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.StatTile
+import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.theme.Radius
 import kotlinx.coroutines.launch
 
@@ -39,7 +41,11 @@ import kotlinx.coroutines.launch
  * level (current level highlighted), the top-5 resources, and recent quiz history.
  */
 @Composable
-fun ProgressScreen(container: AppContainer, lang: String) {
+fun ProgressScreen(
+    container: AppContainer,
+    lang: String,
+    onNavigate: (String) -> Unit = {}
+) {
     val meta = remember(lang) { container.content.meta(lang) }
     val levels = remember(lang) { container.content.levels(lang).levels }
     val plan = remember(lang) { container.content.plan(lang) }
@@ -77,6 +83,13 @@ fun ProgressScreen(container: AppContainer, lang: String) {
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
+
+        // Practice & assessment: level quizzes and the official-format mock exam. Not a bottom
+        // tab — it belongs here, next to the CEFR ladder and exam readiness it measures.
+        OutlinedButton(
+            onClick = { onNavigate(Dest.PRACTICE.route) },
+            modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
+        ) { Text("Practice: quizzes & mock exam →") }
 
         // Vocabulary stats
         Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
@@ -156,10 +169,13 @@ fun ProgressScreen(container: AppContainer, lang: String) {
                             }
                         )
                     }
-                    Text("Take the mock exam in the Quiz tab.",
+                    Text("Take the mock exam →",
                         style = MaterialTheme.typography.bodySmall,
+                        fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(top = 4.dp))
+                        modifier = Modifier
+                            .padding(top = 4.dp)
+                            .clickable { onNavigate(Dest.PRACTICE.route) })
                 }
             }
             if (examLevel.skills.isNotEmpty()) {

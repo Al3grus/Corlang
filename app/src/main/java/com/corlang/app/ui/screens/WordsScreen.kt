@@ -253,9 +253,9 @@ fun WordsScreen(container: AppContainer, lang: String) {
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {
-                Text("Words", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+                Text("Review", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 Text(
-                    "${allWords.size} core words · review what's due. New words come from your lessons.",
+                    "Spaced repetition of what you've learned. New words come from your lessons.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -555,8 +555,7 @@ internal fun WordSession(
                             Spacer(Modifier.height(10.dp))
                             Text(
                                 "“${ex.target}”",
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.SemiBold,
+                                style = com.corlang.app.ui.theme.CorlangType.readingLarge,
                                 textAlign = TextAlign.Center
                             )
                             Text(
