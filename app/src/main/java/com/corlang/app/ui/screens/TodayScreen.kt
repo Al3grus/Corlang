@@ -36,7 +36,6 @@ import com.corlang.app.data.WordsRepository
 import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
-import com.corlang.app.ui.components.languagePattern
 import com.corlang.app.ui.navigation.Dest
 import kotlinx.coroutines.launch
 
@@ -184,10 +183,7 @@ fun TodayScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Row(
-                modifier = Modifier
-                    // Subtle cultural texture per course (šahovnica / nau / Deco rays).
-                    .languagePattern(lang, MaterialTheme.colorScheme.onTertiaryContainer)
-                    .padding(16.dp),
+                modifier = Modifier.padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(Modifier.weight(1f)) {
