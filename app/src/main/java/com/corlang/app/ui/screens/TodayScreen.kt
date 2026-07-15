@@ -185,7 +185,7 @@ fun TodayScreen(
         ) {
             Row(
                 modifier = Modifier
-                    // Subtle cultural texture per course (šahovnica / azulejo / Deco rays).
+                    // Subtle cultural texture per course (šahovnica / nau / Deco rays).
                     .languagePattern(lang, MaterialTheme.colorScheme.onTertiaryContainer)
                     .padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically
