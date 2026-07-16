@@ -75,7 +75,7 @@ fun LevelJourney(
 
         // Level selector chips.
         Row(
-            modifier = Modifier.horizontalScroll(rememberScrollState()).padding(bottom = 8.dp),
+            modifier = Modifier.horizontalScroll(rememberScrollState()).padding(top = 12.dp, bottom = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             levelGroups.forEach { entry ->
