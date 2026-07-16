@@ -32,17 +32,19 @@ Things to close before a public launch, so nothing gets forgotten. Grouped by ar
 - [ ] (Optional) enable R8/shrinking (`isMinifyEnabled = true`) and verify with the proguard rules.
 
 ## Distribution decision
-- [ ] Choose: **stay sideload + in-app updater** (independent, local-first) **or** go **Play Store**.
-      They conflict — Play forbids self-updating APKs, so going Play means removing/disabling the
-      in-app updater (`update/Updater.kt`) and shipping signed release builds.
+- [x] ~~Choose sideload vs Play~~ Solved with the `distribution` flavor split (2026-07-16): the
+      `sideload` flavor keeps the in-app updater; the `play` flavor compiles it out and carries no
+      REQUEST_INSTALL_PACKAGES/FileProvider. Both channels can coexist.
+- [x] Target API: bumped to compileSdk/targetSdk **35** (2026-07-16). Watch for the next Play
+      floor raise (~Aug 2026 → API 36).
 - [ ] If Play: create the listing (title, description, screenshots, feature graphic), set content
-      rating, complete the **Data safety** form (Corlang collects nothing — easy), confirm target API
-      level meets Play's current minimum, and upload a signed AAB.
+      rating, complete the **Data safety** form (Corlang collects nothing — easy), and upload a
+      signed AAB built from the `play` flavor (`:app:bundlePlayRelease`).
 
 ## Monetization (only if going Play)
 - [ ] Google Play Developer account + Play Billing integration for Premium (client/server already built).
-- [ ] Deploy the AI/premium backend (Cloudflare) **only if** offering managed AI; bring-your-own-key
-      already works without it.
+- [ ] Deploy the AI/premium backend (Cloudflare) — required for any AI features: the BYO-key path
+      was fully removed (2026-07-16), so AI stays dark until the proxy is live.
 
 ## Nice-to-have (not blockers)
 - [ ] App icon / store feature graphic polish.

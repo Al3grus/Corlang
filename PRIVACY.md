@@ -19,9 +19,7 @@ All of the following is stored **only on your device**, in the app's private sto
 - Your progress: streak, days completed, current level, per-day task checks.
 - Your vocabulary review data (the spaced-repetition schedule for each word).
 - Your quiz and mock-exam attempts and can-do self-checks.
-- Your settings: daily goal, reminder time, voice/haptics preferences, and — if you enable the
-  optional AI feature — the API key you enter (kept in the app's private settings storage and
-  **excluded from backups**).
+- Your settings: daily goal, reminder time, and voice/haptics preferences.
 
 We never upload any of this. There is no Corlang user database.
 
@@ -33,11 +31,10 @@ Corlang works fully offline for learning. It makes network requests only in thes
    to update, the app package) from the project's public GitHub repository over HTTPS. This is an
    ordinary file download. No personal data is sent; as with any web request, the server you
    download from can see standard request metadata such as your IP address.
-2. **Optional AI practice.** If you use the AI tutor / AI writing feedback, the text you submit is
-   sent to the AI provider (Anthropic) to generate a reply — using either the API key you provide
-   or the app's managed endpoint. Only the text you type for that request is sent. No progress,
-   profile, or identifying data is attached. If you never use the AI feature, no such request is
-   ever made.
+2. **Optional AI practice (Premium).** If you use the AI tutor / AI writing feedback, the text you
+   submit is sent through Corlang's managed endpoint to the AI provider (Anthropic) to generate a
+   reply. Only the text you type for that request is sent. No progress, profile, or identifying
+   data is attached. If you never use the AI feature, no such request is ever made.
 3. **Speech and audio.** Pronunciation playback and speech input use your device's built-in
    Android text-to-speech and speech-recognition services. Speech recognition may be processed by
    your device's speech provider (e.g. Google) according to your device settings — this happens

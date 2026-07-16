@@ -18,15 +18,32 @@ val keystoreProps = Properties().apply {
 
 android {
     namespace = "com.corlang.app"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.corlang.app"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 62
-        versionName = "0.20.9"
+        targetSdk = 35
+        versionCode = 63
+        versionName = "0.20.10"
         vectorDrawables { useSupportLibrary = true }
+    }
+
+    // Two distribution channels that must stay apart: `sideload` (GitHub releases/ + the in-app
+    // self-updater) and `play` (Google Play, which FORBIDS self-updating apps). The play flavor
+    // compiles the updater out via ENABLE_UPDATER and ships no REQUEST_INSTALL_PACKAGES
+    // permission / FileProvider (both live in src/sideload/AndroidManifest.xml).
+    flavorDimensions += "distribution"
+    productFlavors {
+        create("sideload") {
+            dimension = "distribution"
+            isDefault = true
+            buildConfigField("boolean", "ENABLE_UPDATER", "true")
+        }
+        create("play") {
+            dimension = "distribution"
+            buildConfigField("boolean", "ENABLE_UPDATER", "false")
+        }
     }
 
     signingConfigs {
@@ -59,7 +76,10 @@ android {
     }
     kotlinOptions { jvmTarget = "17" }
 
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true   // for the per-flavor ENABLE_UPDATER switch
+    }
 
     packaging {
         resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" }

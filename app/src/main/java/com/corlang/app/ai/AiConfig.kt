@@ -7,10 +7,10 @@ package com.corlang.app.ai
 object AiConfig {
 
     /**
-     * Base URL of the Corlang AI proxy (see server/ai-proxy). While null, AiClient falls back
-     * to calling Anthropic directly with the developer API key stored on-device (the pre-launch
-     * testing path). Set to the deployed Worker URL, e.g. "https://ai.corlang.app", to switch
-     * every install to server-side AI, no client code changes needed.
+     * Base URL of the Corlang AI proxy (see server/ai-proxy). While null, the AI features are
+     * simply unavailable ("arrives with Premium") — there is no on-device key path. Set to the
+     * deployed Worker URL, e.g. "https://ai.corlang.app", to switch every install to server-side
+     * AI, no client code changes needed.
      */
     val proxyBaseUrl: String? = null
 

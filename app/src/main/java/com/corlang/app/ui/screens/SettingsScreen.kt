@@ -398,60 +398,9 @@ fun SettingsScreen(
             }
         }
 
-        // ----- Updates -----
-        SectionTitle("App updates", Icons.Outlined.SystemUpdate)
-        var checkState by remember { mutableStateOf("") }
-        var updateInfo by remember { mutableStateOf<com.corlang.app.update.ReleaseInfo?>(null) }
-        var dl by remember { mutableStateOf(false) }
-        var pct by remember { mutableStateOf(0) }
-        InfoCard {
-            Text(
-                "Installed: v${container.updater.installedVersionName()}",
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.SemiBold
-            )
-            Text(
-                "Updates download and install from within the app, no browsing needed.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
-            )
-            if (checkState.isNotBlank()) {
-                Text(checkState, style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(bottom = 6.dp))
-            }
-            val info = updateInfo
-            if (info != null) {
-                Button(
-                    enabled = !dl,
-                    onClick = {
-                        dl = true
-                        scope.launch {
-                            val apk = container.updater.downloadApk(info) { pct = it }
-                            dl = false
-                            if (apk != null) container.updater.installApk(apk)
-                            else checkState = "Download failed, try again."
-                        }
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                ) { Text(if (dl) "Downloading… $pct%" else "Install v${info.versionName}") }
-            } else {
-                OutlinedButton(
-                    onClick = {
-                        checkState = "Checking…"
-                        scope.launch {
-                            val latest = container.updater.fetchLatest()
-                            checkState = when {
-                                latest == null -> "Couldn't reach the update server."
-                                container.updater.isNewer(latest) -> "v${latest.versionName} available!"
-                                else -> "You're on the latest version ✓"
-                            }
-                            if (latest != null && container.updater.isNewer(latest)) updateInfo = latest
-                        }
-                    },
-                    modifier = Modifier.fillMaxWidth()
-                ) { Text("Check for updates") }
-            }
+        // ----- Updates (sideload flavor only; Play builds update through the store) -----
+        if (com.corlang.app.BuildConfig.ENABLE_UPDATER) {
+            UpdatesSection(container)
         }
 
         // ----- Premium -----
@@ -516,5 +465,69 @@ fun SettingsScreen(
             )
         }
         Spacer(Modifier.height(24.dp))
+    }
+}
+
+/**
+ * The self-updater card (check → download → hand to the system installer). Compiled into every
+ * build but only reachable in the sideload flavor (BuildConfig.ENABLE_UPDATER) — the Play flavor
+ * updates through the store and carries no install permission.
+ */
+@Composable
+private fun UpdatesSection(container: AppContainer) {
+    val scope = rememberCoroutineScope()
+    SectionTitle("App updates", Icons.Outlined.SystemUpdate)
+    var checkState by remember { mutableStateOf("") }
+    var updateInfo by remember { mutableStateOf<com.corlang.app.update.ReleaseInfo?>(null) }
+    var dl by remember { mutableStateOf(false) }
+    var pct by remember { mutableStateOf(0) }
+    InfoCard {
+        Text(
+            "Installed: v${container.updater.installedVersionName()}",
+            style = MaterialTheme.typography.titleSmall,
+            fontWeight = FontWeight.SemiBold
+        )
+        Text(
+            "Updates download and install from within the app, no browsing needed.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+        )
+        if (checkState.isNotBlank()) {
+            Text(checkState, style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(bottom = 6.dp))
+        }
+        val info = updateInfo
+        if (info != null) {
+            Button(
+                enabled = !dl,
+                onClick = {
+                    dl = true
+                    scope.launch {
+                        val apk = container.updater.downloadApk(info) { pct = it }
+                        dl = false
+                        if (apk != null) container.updater.installApk(apk)
+                        else checkState = "Download failed, try again."
+                    }
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) { Text(if (dl) "Downloading… $pct%" else "Install v${info.versionName}") }
+        } else {
+            OutlinedButton(
+                onClick = {
+                    checkState = "Checking…"
+                    scope.launch {
+                        val latest = container.updater.fetchLatest()
+                        checkState = when {
+                            latest == null -> "Couldn't reach the update server."
+                            container.updater.isNewer(latest) -> "v${latest.versionName} available!"
+                            else -> "You're on the latest version ✓"
+                        }
+                        if (latest != null && container.updater.isNewer(latest)) updateInfo = latest
+                    }
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) { Text("Check for updates") }
+        }
     }
 }
