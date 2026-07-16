@@ -12,7 +12,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -20,8 +24,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
@@ -39,8 +46,10 @@ import com.corlang.app.ui.theme.Radius
 import kotlinx.coroutines.launch
 
 /**
- * Progress hub: streak + completion stats, the CEFR ladder A0→C1 with the milestone for each
- * level (current level highlighted), the top-5 resources, and recent quiz history.
+ * Profile, organised into bands so it leads with identity and progress instead of a wall:
+ *   You (name), Progress (streak/days/level + vocab stats), Assessment (practice, exam
+ *   readiness, can-do), and Reference (CEFR ladder, the Pareto insight, resources) — the last
+ *   group collapsed by default since it's browse-when-you-want material.
  */
 @Composable
 fun ProgressScreen(
@@ -75,11 +84,16 @@ fun ProgressScreen(
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
     ) {
-        Text("${meta.flagEmoji} ${meta.name} progress",
+        // ---- You ----
+        Text("${meta.flagEmoji} ${meta.name}",
             style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+        Text("Your progress — kept on this device.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 2.dp))
 
-        // Stats row
-        Row(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+        // ---- Progress ----
+        Row(modifier = Modifier.fillMaxWidth().padding(top = 14.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             StatTile("$streak", "day streak", Modifier.weight(1f))
             StatTile("$daysDone", "days done", Modifier.weight(1f))
@@ -88,10 +102,9 @@ fun ProgressScreen(
         Text(
             "On day $currentDay of ${plan.days.size} in the plan.",
             style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 8.dp)
         )
-
-        // Vocabulary stats
         Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             StatTile("$wordsStarted", "words started", Modifier.weight(1f))
@@ -99,60 +112,26 @@ fun ProgressScreen(
             StatTile("$wordsMastered", "words mastered", Modifier.weight(1f))
         }
 
-        // Practice & assessment: level quizzes and the official-format mock exam. Not a bottom
-        // tab — it belongs here, by the vocabulary stats and the CEFR ladder it measures.
+        // ---- Assessment ----
+        Spacer(Modifier.height(22.dp))
+        SectionTitle("Assessment")
         OutlinedButton(
             onClick = { onNavigate(Dest.PRACTICE.route) },
-            modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
+            modifier = Modifier.fillMaxWidth().padding(top = 4.dp, bottom = 2.dp)
         ) { Text("Practice: quizzes & mock exam →") }
 
-        Spacer(Modifier.height(20.dp))
-
-        // Pareto summary
-        InfoCard {
-            SectionTitle("The 20% that drives 80%")
-            Text(meta.paretoSummary, style = MaterialTheme.typography.bodyMedium)
-        }
-
-        // CEFR ladder
-        SectionTitle("CEFR ladder & milestones")
-        levels.forEach { level ->
-            val isCurrent = level.id == currentLevel
-            Surface(
-                shape = RoundedCornerShape(Radius.md),
-                color = if (isCurrent) MaterialTheme.colorScheme.primaryContainer
-                        else MaterialTheme.colorScheme.surface,
-                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
-            ) {
-                Column(modifier = Modifier.padding(14.dp)) {
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(level.id, fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.primary,
-                            style = MaterialTheme.typography.titleMedium)
-                        Text(level.title, fontWeight = FontWeight.SemiBold,
-                            style = MaterialTheme.typography.titleMedium)
-                        if (isCurrent) Text("• you are here",
-                            color = MaterialTheme.colorScheme.primary,
-                            style = MaterialTheme.typography.labelMedium)
-                    }
-                    Text("Milestone: ${level.milestone}",
-                        style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.padding(top = 4.dp))
-                    level.canDo.forEach { Bullet(it) }
-                }
-            }
-        }
-
-        // Exam readiness: the B1 milestone with official sections + can-do self-checklist.
+        // Exam readiness: the milestone exam with official sections; stays open (it's actionable).
         val examLevel = levels.firstOrNull { it.exam != null }
         val examSpec = remember(lang, examLevel?.id) {
             container.content.exams(lang).firstOrNull { it.levelId == examLevel?.id }
         }
         if (examLevel?.exam != null) {
             val exam = examLevel.exam!!
-            SectionTitle("Exam readiness · ${examLevel.id}")
             InfoCard {
-                Text(exam.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                Text("Exam readiness · ${examLevel.id}",
+                    style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                Text(exam.name, style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 4.dp))
                 Text(exam.passRule, style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 2.dp, bottom = 6.dp))
@@ -182,9 +161,7 @@ fun ProgressScreen(
                 }
             }
             if (examLevel.skills.isNotEmpty()) {
-                InfoCard {
-                    Text("Can-do self-check (official CEFR descriptors)",
-                        style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+                CollapsibleCard("Can-do self-check (CEFR descriptors)") {
                     val checks by container.progress.canDoChecks(lang, examLevel.id)
                         .collectAsState(initial = emptyList())
                     val checkedIds = checks.map { it.itemId }.toSet()
@@ -213,40 +190,110 @@ fun ProgressScreen(
             }
         }
 
-        // Resources
-        SectionTitle("The best resources to learn ${meta.name} fast")
-        val uriHandler = LocalUriHandler.current
-        resources.forEach { r ->
-            // Whole card is the tap target (48dp+); show the domain, not a wrapping raw URL.
-            Surface(
-                shape = RoundedCornerShape(Radius.md),
-                color = MaterialTheme.colorScheme.surface,
-                tonalElevation = 1.dp,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 6.dp)
-                    .clickable(enabled = r.url != null) { r.url?.let { uriHandler.openUri(it) } }
-            ) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text("${r.rank}. ${r.name}",
-                        style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                    Text(
-                        r.type.replaceFirstChar { it.uppercase() } +
-                            (r.url?.let { url ->
-                                val domain = url.removePrefix("https://").removePrefix("http://")
-                                    .substringBefore('/')
-                                " · $domain ↗"
-                            } ?: ""),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Text(r.why, style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.padding(top = 4.dp))
+        // ---- Reference ---- (the long, browse-when-you-want material, collapsed by default)
+        Spacer(Modifier.height(22.dp))
+        SectionTitle("Reference")
+
+        CollapsibleCard("CEFR ladder & milestones") {
+            levels.forEach { level ->
+                val isCurrent = level.id == currentLevel
+                Surface(
+                    shape = RoundedCornerShape(Radius.md),
+                    color = if (isCurrent) MaterialTheme.colorScheme.primaryContainer
+                            else MaterialTheme.colorScheme.surfaceVariant,
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                ) {
+                    Column(modifier = Modifier.padding(14.dp)) {
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Text(level.id, fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.primary,
+                                style = MaterialTheme.typography.titleMedium)
+                            Text(level.title, fontWeight = FontWeight.SemiBold,
+                                style = MaterialTheme.typography.titleMedium)
+                            if (isCurrent) Text("• you are here",
+                                color = MaterialTheme.colorScheme.primary,
+                                style = MaterialTheme.typography.labelMedium)
+                        }
+                        Text("Milestone: ${level.milestone}",
+                            style = MaterialTheme.typography.bodyMedium,
+                            modifier = Modifier.padding(top = 4.dp))
+                        level.canDo.forEach { Bullet(it) }
+                    }
                 }
             }
         }
 
-        Text("", modifier = Modifier.padding(bottom = 24.dp))
+        CollapsibleCard("The 20% that drives 80%") {
+            Text(meta.paretoSummary, style = MaterialTheme.typography.bodyMedium)
+        }
+
+        CollapsibleCard("Best resources to learn ${meta.name}") {
+            val uriHandler = LocalUriHandler.current
+            resources.forEach { r ->
+                // Whole card is the tap target (48dp+); show the domain, not a wrapping raw URL.
+                Surface(
+                    shape = RoundedCornerShape(Radius.md),
+                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp)
+                        .clickable(enabled = r.url != null) { r.url?.let { uriHandler.openUri(it) } }
+                ) {
+                    Column(modifier = Modifier.padding(14.dp)) {
+                        Text("${r.rank}. ${r.name}",
+                            style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                        Text(
+                            r.type.replaceFirstChar { it.uppercase() } +
+                                (r.url?.let { url ->
+                                    val domain = url.removePrefix("https://").removePrefix("http://")
+                                        .substringBefore('/')
+                                    " · $domain ↗"
+                                } ?: ""),
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        Text(r.why, style = MaterialTheme.typography.bodyMedium,
+                            modifier = Modifier.padding(top = 4.dp))
+                    }
+                }
+            }
+        }
+
+        Spacer(Modifier.height(24.dp))
+    }
+}
+
+/**
+ * A section that opens on tap — used for the long "Reference" material so Profile leads with
+ * identity and progress instead of a wall. Bordered surface to match the app's card style;
+ * collapsed by default.
+ */
+@Composable
+private fun CollapsibleCard(title: String, content: @Composable () -> Unit) {
+    var expanded by rememberSaveable(title) { mutableStateOf(false) }
+    Surface(
+        shape = RoundedCornerShape(Radius.md),
+        color = MaterialTheme.colorScheme.surface,
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth().clickable { expanded = !expanded }
+            ) {
+                Text(title, style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
+                Icon(
+                    if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+                    contentDescription = if (expanded) "Collapse" else "Expand"
+                )
+            }
+            if (expanded) {
+                Spacer(Modifier.height(8.dp))
+                content()
+            }
+        }
     }
 }
 
