@@ -16,6 +16,16 @@ val keystoreProps = Properties().apply {
     if (keystorePropsFile.exists()) keystorePropsFile.inputStream().use { load(it) }
 }
 
+// AI proxy wiring comes from gitignored local.properties (public repo: the worker URL and app
+// token must never be committed). Absent keys leave the AI features dark — a fresh clone builds
+// an app identical to pre-proxy behavior. See server/ai-proxy/README.md.
+val localPropsFile = rootProject.file("local.properties")
+val localProps = Properties().apply {
+    if (localPropsFile.exists()) localPropsFile.inputStream().use { load(it) }
+}
+val proxyBaseUrl: String = localProps.getProperty("corlang.proxyBaseUrl") ?: ""
+val proxyAuthToken: String = localProps.getProperty("corlang.proxyAuthToken") ?: ""
+
 android {
     namespace = "com.corlang.app"
     compileSdk = 35
@@ -27,6 +37,11 @@ android {
         versionCode = 75
         versionName = "0.20.22"
         vectorDrawables { useSupportLibrary = true }
+
+        buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
+        buildConfigField("String", "CORLANG_PROXY_AUTH_TOKEN", "\"$proxyAuthToken\"")
+        // Overridden per-flavor below; the default keeps every build honest.
+        buildConfigField("boolean", "DEV_PREMIUM", "false")
     }
 
     // Two distribution channels that must stay apart: `sideload` (GitHub releases/ + the in-app
@@ -39,6 +54,13 @@ android {
             dimension = "distribution"
             isDefault = true
             buildConfigField("boolean", "ENABLE_UPDATER", "true")
+            // Pre-billing test unlock (corlang.devPremium=true in local.properties): grants
+            // Premium so the AI can be exercised. SIDELOAD ONLY — the play flavor keeps the
+            // default false and can never ship a free-Premium build by accident.
+            buildConfigField(
+                "boolean", "DEV_PREMIUM",
+                (localProps.getProperty("corlang.devPremium") == "true").toString()
+            )
         }
         create("play") {
             dimension = "distribution"
