@@ -145,18 +145,21 @@ private fun CorlangApp(container: AppContainer) {
     }
 
     // Silent update check on launch; shows a dialog only if a newer build exists.
-    var pendingUpdate by remember { mutableStateOf<ReleaseInfo?>(null) }
-    LaunchedEffect(Unit) {
-        container.updater.fetchLatest()?.let { info ->
-            if (container.updater.isNewer(info)) pendingUpdate = info
+    // Sideload flavor only — the Play flavor must never self-update (Play policy).
+    if (BuildConfig.ENABLE_UPDATER) {
+        var pendingUpdate by remember { mutableStateOf<ReleaseInfo?>(null) }
+        LaunchedEffect(Unit) {
+            container.updater.fetchLatest()?.let { info ->
+                if (container.updater.isNewer(info)) pendingUpdate = info
+            }
         }
-    }
-    pendingUpdate?.let { info ->
-        UpdateDialog(
-            container = container,
-            info = info,
-            onDismiss = { pendingUpdate = null }
-        )
+        pendingUpdate?.let { info ->
+            UpdateDialog(
+                container = container,
+                info = info,
+                onDismiss = { pendingUpdate = null }
+            )
+        }
     }
 
     // One-time "new language" placement prompt: switching to a language the learner has never

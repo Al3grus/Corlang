@@ -165,30 +165,13 @@ class LanguagePrefs(private val context: Context) {
     /**
      * Persisted Play-purchase entitlement. Written by the Play Billing connector once the
      * purchase is verified (see docs/server-ai.md); until billing ships this stays false and
-     * the developer API key below doubles as the dev entitlement.
+     * the AI features stay dark.
      */
     val premiumEntitled: Flow<Boolean> =
         context.dataStore.data.map { it[premiumKey] ?: false }
 
     suspend fun setPremiumEntitled(entitled: Boolean) {
         context.dataStore.edit { it[premiumKey] = entitled }
-    }
-
-    // ----- AI tutor (developer fallback; user supplies an Anthropic API key) -----
-
-    private val apiKeyKey = stringPreferencesKey("anthropic_api_key")
-
-    /**
-     * The user's own Anthropic API key, enabling the AI tutor and writing feedback. Stored
-     * locally only and deliberately excluded from backups (it's a secret). Empty = AI off.
-     */
-    val anthropicApiKey: Flow<String> =
-        context.dataStore.data.map { it[apiKeyKey] ?: "" }
-
-    suspend fun setAnthropicApiKey(key: String) {
-        context.dataStore.edit {
-            if (key.isBlank()) it.remove(apiKeyKey) else it[apiKeyKey] = key.trim()
-        }
     }
 
     // ----- Words session snapshot (gym-proof resume) -----

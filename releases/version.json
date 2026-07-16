@@ -1,6 +1,6 @@
 {
-  "versionCode": 62,
-  "versionName": "0.20.9",
-  "notes": "The Today dashboard ring now reflects partial exercise progress: clear 3 of 8 exercises in a step and exit, and the ring credits those 3 instead of snapping back to the last whole step. The ring and the in-lesson bar now always agree.",
+  "versionCode": 63,
+  "versionName": "0.20.10",
+  "notes": "Play Store groundwork: the app now targets Android 15 (API 35), and this sideload build is unchanged in behavior. Internally the self-updater moved behind a build flavor so a future Play build ships without it, and the old bring-your-own-API-key path was removed entirely — AI features arrive with Premium.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

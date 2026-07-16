@@ -45,7 +45,7 @@ import kotlinx.coroutines.launch
  * the learner's current CEFR level: it converses in simple Croatian, glosses new words, and
  * gently corrects mistakes. Tap any tutor line to hear it in the Croatian voice.
  *
- * Gated on the user's own API key (Settings). The transcript lives in memory for the session.
+ * Premium-gated. The transcript lives in memory for the session.
  */
 @Composable
 fun TalkScreen(container: AppContainer, lang: String) {

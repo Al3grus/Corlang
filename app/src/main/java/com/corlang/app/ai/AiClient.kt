@@ -1,8 +1,6 @@
 package com.corlang.app.ai
 
-import com.corlang.app.data.prefs.LanguagePrefs
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.addJsonObject
@@ -20,19 +18,19 @@ import java.net.URL
 data class ChatMessage(val role: String, val content: String)
 
 /**
- * Minimal client for the Anthropic Messages API, using the user's own key. No SDK dependency:
- * a single HttpURLConnection POST keeps the app light and the network path auditable. The key
- * never leaves the device except in the request to api.anthropic.com.
+ * Minimal client for the Corlang AI proxy (server/ai-proxy), which holds the real Anthropic key
+ * server-side — no key ever lives on the device. No SDK dependency: a single HttpURLConnection
+ * POST keeps the app light and the network path auditable.
+ *
+ * While AiConfig.proxyBaseUrl is null (proxy not deployed yet), every call fails with the
+ * "arrives with Premium" message — the AI features are dark, by design.
  *
  * All calls are suspend + run on the IO dispatcher. Failures return a human-readable message so
- * callers can show it directly (bad key, no network, rate limit).
+ * callers can show it directly (no access, no network, rate limit).
  */
-class AiClient(private val prefs: LanguagePrefs) {
+class AiClient {
 
     private val json = Json { ignoreUnknownKeys = true }
-
-    /** True if the user has supplied a key (the AI features are gated on this). */
-    suspend fun hasKey(): Boolean = prefs.anthropicApiKey.first().isNotBlank()
 
     /**
      * Sends a conversation and returns the assistant's text reply.
@@ -48,32 +46,17 @@ class AiClient(private val prefs: LanguagePrefs) {
         model: String = DEFAULT_MODEL,
         maxTokens: Int = 1024
     ): Result<String> = withContext(Dispatchers.IO) {
-        // Server-side mode: the proxy holds the real key (server/ai-proxy); the app sends the
-        // entitlement token. Active as soon as AiConfig.proxyBaseUrl is set at build time.
+        // Server-side only: the proxy holds the key (server/ai-proxy); the app sends the
+        // entitlement token. Dark until AiConfig.proxyBaseUrl is set at build time.
         val proxy = AiConfig.proxyBaseUrl
-        val key = prefs.anthropicApiKey.first().trim()
-        val endpoint: String
-        val headers: Map<String, String>
-        if (proxy != null) {
-            endpoint = "${proxy.trimEnd('/')}/v1/messages"
-            headers = mapOf(
-                "content-type" to "application/json",
-                "x-corlang-auth" to AiConfig.PROXY_AUTH_TOKEN
+            ?: return@withContext Result.failure(
+                IllegalStateException("The AI tutor isn't available yet, it arrives with Corlang Premium.")
             )
-        } else {
-            // Developer fallback while no server is deployed: direct Anthropic with the local key.
-            if (key.isBlank()) {
-                return@withContext Result.failure(
-                    IllegalStateException("The AI tutor isn't available yet, it arrives with Corlang Premium.")
-                )
-            }
-            endpoint = ENDPOINT
-            headers = mapOf(
-                "content-type" to "application/json",
-                "x-api-key" to key,
-                "anthropic-version" to ANTHROPIC_VERSION
-            )
-        }
+        val endpoint = "${proxy.trimEnd('/')}/v1/messages"
+        val headers = mapOf(
+            "content-type" to "application/json",
+            "x-corlang-auth" to AiConfig.PROXY_AUTH_TOKEN
+        )
 
         val body = buildJsonObject {
             put("model", model)
@@ -132,9 +115,6 @@ class AiClient(private val prefs: LanguagePrefs) {
     }
 
     companion object {
-        private const val ENDPOINT = "https://api.anthropic.com/v1/messages"
-        private const val ANTHROPIC_VERSION = "2023-06-01"
-
         /** Fast, low-cost default for interactive tutor chat. */
         const val DEFAULT_MODEL = "claude-haiku-4-5-20251001"
 

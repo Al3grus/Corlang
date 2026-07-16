@@ -6,8 +6,9 @@ repo, so the steps below are sequenced to never break the running setup.
 
 ## Phase 0: now (solo testing)
 
-Keep everything as-is: public repo, in-app updater, developer API key on-device. No secrets
-live in the repo, so this is safe. Just keep testing.
+Keep everything as-is: public repo, in-app updater (sideload flavor). No secrets live in the
+repo or on the device, so this is safe. Just keep testing. AI features are dark until the
+proxy deploys — there is no on-device key path.
 
 ## Phase 1: accounts (no code changes, do in any order)
 
@@ -26,11 +27,12 @@ live in the repo, so this is safe. Just keep testing.
 
 Do these together, in this order, in one release cycle:
 
-7.  Make the GitHub repo PRIVATE. This immediately breaks the in-app updater for existing
-    installs, which is fine because...
-8.  Remove the in-app updater: update/Updater.kt, the UpdateDialog in MainActivity, the
-    Settings "App updates" section, REQUEST_INSTALL_PACKAGES from the manifest, and
-    releases/ from the repo. Play forbids self-updating apps anyway.
+7.  Make the GitHub repo PRIVATE. This breaks the in-app updater for existing sideload
+    installs — acceptable once Play is the channel.
+8.  ~~Remove the in-app updater~~ DONE via the `distribution` flavor split: the `play`
+    flavor compiles the updater out (BuildConfig.ENABLE_UPDATER=false) and carries no
+    REQUEST_INSTALL_PACKAGES / FileProvider (both live in src/sideload/). Ship Play builds
+    from the `play` flavor; optionally drop releases/ from the repo when going private.
 9.  Deploy the AI proxy (server/ai-proxy/README.md): wrangler secrets, deploy, get the URL.
 10. Point the app at the proxy: AiConfig.proxyBaseUrl = worker URL; inject PROXY_AUTH_TOKEN
     from local.properties via BuildConfig (never hardcode it, even in the now-private repo).
@@ -45,7 +47,8 @@ Do these together, in this order, in one release cycle:
     billing/PlayBillingConnector.kt, add /v1/verify to the worker. Full detail:
     docs/server-ai.md, "Step 2".
 14. Swap the Talk "Subscribe to Premium" dialog and the Settings Premium card for the real
-    purchase flow. Remove (or DEBUG-gate) the dev-key entitlement fallback in PremiumManager.
+    purchase flow. (The dev-key entitlement fallback is already removed — Play purchase is
+    the only entitlement source.)
 15. Internal testing track first (your own device installs from Play now), then closed
     testing (wife + friends), then production.
 

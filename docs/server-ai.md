@@ -15,7 +15,7 @@ account used for publication).
 | Premium gating | Talk tab, exam writing feedback, Settings status card | Done |
 | Proxy-mode AI client | `app/.../ai/AiClient.kt` + `ai/AiConfig.kt` | Done. Flips on when `proxyBaseUrl` is set |
 | AI proxy server | `server/ai-proxy/` (Cloudflare Worker) | Done. Deploy with `wrangler deploy` |
-| Dev fallback | Locally stored Anthropic key = dev entitlement | Done, keeps pre-launch testing working |
+| Entitlement source | Play purchase flag only (BYO-key fallback fully removed 2026-07-16) | Done |
 
 ## Step 1: hosting (do anytime, ~15 minutes)
 
@@ -37,8 +37,8 @@ Corlang-owned key and the app never contains a secret.
 5. Server: add a `/v1/verify` route to the worker that checks the purchase token against the
    Play Developer API (service-account JSON as a secret), returns a short-lived session token,
    and change `authorize()` to accept that token (cache verdicts in Workers KV).
-6. Remove the dev-key fallback from `PremiumManager` before public launch, or keep it behind
-   `BuildConfig.DEBUG` only.
+6. ~~Remove the dev-key fallback from `PremiumManager`~~ Done (2026-07-16): the BYO-key path
+   was removed entirely; Play purchase is the sole entitlement source.
 
 ## Pricing decision (open)
 
