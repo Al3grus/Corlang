@@ -55,7 +55,16 @@ fun LanguageTopBar(
                 // Brand mark in the header, per the logo usage checklist. Rings take the bar's
                 // text color so they read on the blue/surface bar; the core keeps its red pop.
                 CorlangLogo(variant = LogoVariant.ORBIT, size = 26.dp, brand = onBar)
-                Text("Corlang", fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 8.dp))
+                // On zoomed displays / large accessibility fonts the wordmark wrapped to two
+                // lines and broke the bar — past ~1.2× font scale the logo stands alone.
+                if (androidx.compose.ui.platform.LocalDensity.current.fontScale <= 1.2f) {
+                    Text(
+                        "Corlang",
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
+                }
             }
         },
         colors = TopAppBarDefaults.topAppBarColors(

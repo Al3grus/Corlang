@@ -238,16 +238,34 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         fontWeight = FontWeight.SemiBold,
                         modifier = Modifier.fillMaxWidth()
                     )
-                    SingleChoiceSegmentedButtonRow(
-                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 16.dp)
-                    ) {
-                        allMeta.forEachIndexed { i, m ->
-                            SegmentedButton(
-                                selected = learnLang == m.code,
+                    // One full-width row per language: names never fight for horizontal space,
+                    // so they can't overflow at large font scales (a 3-way segmented row did).
+                    Column(modifier = Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 16.dp)) {
+                        allMeta.forEach { m ->
+                            val chosen = learnLang == m.code
+                            OutlinedButton(
                                 onClick = { learnLang = m.code },
-                                shape = SegmentedButtonDefaults.itemShape(index = i, count = allMeta.size),
-                                icon = {}
-                            ) { Text("${m.flagEmoji}  ${m.name}") }
+                                border = androidx.compose.foundation.BorderStroke(
+                                    if (chosen) 2.dp else 1.dp,
+                                    if (chosen) MaterialTheme.colorScheme.primary
+                                    else MaterialTheme.colorScheme.outline
+                                ),
+                                colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
+                                    containerColor =
+                                        if (chosen) MaterialTheme.colorScheme.secondaryContainer
+                                        else MaterialTheme.colorScheme.surface,
+                                    contentColor =
+                                        if (chosen) MaterialTheme.colorScheme.onSecondaryContainer
+                                        else MaterialTheme.colorScheme.onSurface
+                                ),
+                                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                            ) {
+                                Text(
+                                    "${m.flagEmoji}  ${m.name}" + if (chosen) "  ✓" else "",
+                                    maxLines = 1,
+                                    fontWeight = if (chosen) FontWeight.SemiBold else FontWeight.Normal
+                                )
+                            }
                         }
                     }
                 }
@@ -417,13 +435,16 @@ private fun StepFrame(title: String, subtitle: String, content: @Composable () -
 
 @Composable
 private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
+    // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales.
     Row(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
-        OutlinedButton(onClick = onBack, modifier = Modifier.weight(1f)) { Text("← Back") }
+        OutlinedButton(onClick = onBack, modifier = Modifier.weight(1f)) {
+            Text("← Back", maxLines = 1)
+        }
         Button(
             onClick = onNext,
             enabled = enabled,
-            modifier = Modifier.weight(2f).padding(start = 8.dp)
-        ) { Text("Next →") }
+            modifier = Modifier.weight(1f).padding(start = 8.dp)
+        ) { Text("Next →", maxLines = 1) }
     }
 }
 
