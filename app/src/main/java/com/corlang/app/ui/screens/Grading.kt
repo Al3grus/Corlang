@@ -58,6 +58,40 @@ object Grading {
     fun gradeMatch(q: Question, mapping: Map<String, String>): Boolean =
         q.pairs.all { normalize(mapping[it.left] ?: "") == normalize(it.right) }
 
+    /**
+     * All typed answers accepted for a recall target with " / " alternatives.
+     *
+     * Two content shapes exist and need different expansions:
+     *  - Shared tail — "on / ona je" teaches "on je" OR "ona je": each leading alternative
+     *    borrows the last alternative's tail. A bare "on" is NOT accepted (it drops the verb
+     *    the gloss "he / she is" asks for).
+     *  - Complete alternatives — "dobar dan / bok": either full form is right.
+     * Writing both (e.g. "on/ona je") is always accepted via slash-insensitive comparison
+     * in [gradeRecall].
+     */
+    fun recallVariants(answer: String): List<String> {
+        val parts = answer.split(" / ").map { it.trim() }.filter { it.isNotEmpty() }
+        if (parts.size < 2) return listOf(answer)
+        val tail = parts.last().split(" ").drop(1).joinToString(" ")
+        return buildList {
+            add(answer)   // both alternatives, as written
+            if (tail.isBlank()) {
+                addAll(parts)                                     // complete alternatives
+            } else {
+                parts.dropLast(1).forEach { add("$it $tail") }    // "on" -> "on je"
+                add(parts.last())                                 // "ona je"
+            }
+        }
+    }
+
+    /** True if the typed [input] matches any accepted variant of the recall [answer].
+     *  Strict diacritics (exam-grade), slash-insensitive ("on/ona je" == "on / ona je"). */
+    fun gradeRecall(answer: String, input: String): Boolean {
+        fun canon(s: String) = normalize(s.replace("/", " "), strict = true)
+        val c = canon(input)
+        return recallVariants(answer).any { canon(it) == c }
+    }
+
     /** Convenience for simple MCQ/FILL grading used by the quiz runner. */
     fun isCorrect(q: Question, response: String): Boolean = when (q.type) {
         QuestionType.MCQ -> gradeMcq(q, response)

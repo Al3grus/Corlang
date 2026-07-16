@@ -98,8 +98,12 @@ fun TodayScreen(
     // player must show the same day, not silently swap to the current one.
     var viewedDay by rememberSaveable(lang) { mutableStateOf(targetDay) }
     var userBrowsed by rememberSaveable(lang) { mutableStateOf(false) }
-    LaunchedEffect(targetDay) {
-        if (!userBrowsed) viewedDay = targetDay
+    // NOT while a lesson is open: "Mark day complete" advances targetDay the instant the write
+    // lands, and retargeting viewedDay mid-lesson swapped the open SessionPlayer to the next
+    // day — killing the streak celebration after one frame. The inLesson key re-runs the
+    // effect on exit, so the dashboard lands on the new day then.
+    LaunchedEffect(targetDay, inLesson) {
+        if (!userBrowsed && !inLesson) viewedDay = targetDay
     }
 
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()

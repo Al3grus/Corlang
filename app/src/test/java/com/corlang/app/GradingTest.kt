@@ -83,6 +83,28 @@ class GradingTest {
         assertFalse(Grading.gradeReorder(question, tapped.reversed()))
     }
 
+    @Test fun recall_sharedTailAlternatives() {
+        // "on / ona je" (he / she is): each alternative borrows the shared tail.
+        assertTrue(Grading.gradeRecall("on / ona je", "on je"))
+        assertTrue(Grading.gradeRecall("on / ona je", "ona je"))
+        assertTrue(Grading.gradeRecall("on / ona je", "on/ona je"))      // writing both, compact
+        assertTrue(Grading.gradeRecall("on / ona je", "on / ona je"))    // writing both, as shown
+        assertFalse(Grading.gradeRecall("on / ona je", "on"))            // drops the verb — incomplete
+        assertTrue(Grading.gradeRecall("oni / one su", "oni su"))
+        assertTrue(Grading.gradeRecall("oni / one su", "one su"))
+        assertTrue(Grading.gradeRecall("oni / one su", "oni/one su"))
+    }
+
+    @Test fun recall_completeAlternativesAndPlainAnswers() {
+        // No shared tail: either full form is a complete answer.
+        assertTrue(Grading.gradeRecall("dobar dan / bok", "bok"))
+        assertTrue(Grading.gradeRecall("dobar dan / bok", "dobar dan"))
+        assertFalse(Grading.gradeRecall("dobar dan / bok", "dan"))
+        // No slash: behaves like the old exact (strict-diacritics) match.
+        assertTrue(Grading.gradeRecall("želim", "želim"))
+        assertFalse(Grading.gradeRecall("želim", "zelim"))
+    }
+
     @Test fun match_requiresAllPairsCorrect() {
         val question = q(
             QuestionType.MATCH,
