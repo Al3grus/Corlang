@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -255,26 +257,44 @@ private fun CorlangApp(container: AppContainer) {
             startDestination = Dest.TODAY.route,
             modifier = Modifier.padding(innerPadding)
         ) {
+            // Each screen crossfades on a language switch, so content doesn't hard-cut/flicker as
+            // the new language's progress, journey position and lists load in.
             composable(Dest.TODAY.route) {
-                TodayScreen(container, lang, onNavigate = { route ->
-                    navController.navigate(route) {
-                        popUpTo(Dest.TODAY.route) { saveState = true }
-                        launchSingleTop = true
-                        restoreState = true
-                    }
-                })
+                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-today") { l ->
+                    TodayScreen(container, l, onNavigate = { route ->
+                        navController.navigate(route) {
+                            popUpTo(Dest.TODAY.route) { saveState = true }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    })
+                }
             }
-            composable(Dest.WORDS.route) { WordsScreen(container, lang) }
-            composable(Dest.PRACTICE.route) { QuizScreen(container, lang) }
-            composable(Dest.LEARN.route) { LearnScreen(container, lang) }
+            composable(Dest.WORDS.route) {
+                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-review") { l ->
+                    WordsScreen(container, l)
+                }
+            }
+            composable(Dest.PRACTICE.route) {
+                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-practice") { l ->
+                    QuizScreen(container, l)
+                }
+            }
+            composable(Dest.LEARN.route) {
+                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-learn") { l ->
+                    LearnScreen(container, l)
+                }
+            }
             composable(Dest.PROGRESS.route) {
-                ProgressScreen(container, lang, onNavigate = { route ->
-                    navController.navigate(route) {
-                        popUpTo(Dest.TODAY.route) { saveState = true }
-                        launchSingleTop = true
-                        restoreState = true
-                    }
-                })
+                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-profile") { l ->
+                    ProgressScreen(container, l, onNavigate = { route ->
+                        navController.navigate(route) {
+                            popUpTo(Dest.TODAY.route) { saveState = true }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    })
+                }
             }
         }
     }
