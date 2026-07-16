@@ -62,6 +62,21 @@ class ProgressRepository(private val dao: ProgressDao) {
             }
             return newStreak to f
         }
+
+        /**
+         * The streak as it should read RIGHT NOW, decayed for missed days. The stored streak is
+         * only recomputed on the next completion, so without this a broken streak keeps showing
+         * its last value (the "still 3 after skipping a day" bug). A banked freeze bridges exactly
+         * one missed day, matching [advanceStreak]. [today] and [lastStudiedEpochDay] are epoch days.
+         */
+        fun displayStreak(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Int {
+            if (streak <= 0) return 0
+            return when (today - lastStudiedEpochDay) {
+                in Long.MIN_VALUE..1L -> streak       // studied today or yesterday: still alive
+                2L -> if (freezes > 0) streak else 0  // one missed day: a freeze can bridge it
+                else -> 0                             // more missed than a freeze can cover
+            }
+        }
     }
 
     /**
@@ -78,7 +93,13 @@ class ProgressRepository(private val dao: ProgressDao) {
             streak = existing.streak,
             freezes = existing.streakFreezes
         )
-        val nextDay = if (day >= existing.currentDay) minOf(day + 1, totalDays) else existing.currentDay
+        // Reviewing an EARLIER day must never drag your position backwards: only a day at or
+        // past your current one advances currentDay — and, likewise, your current level. Without
+        // the level guard, replaying an A0 day rewrote currentLevel to "A0" while currentDay stayed
+        // put (the "stuck back in A0, can't reach A1" bug).
+        val advancing = day >= existing.currentDay
+        val nextDay = if (advancing) minOf(day + 1, totalDays) else existing.currentDay
+        val nextLevel = if (advancing) currentLevel else existing.currentLevel
         dao.completeDayTxn(
             DayCompletion(langCode = lang, day = day, completedAtEpoch = now),
             existing.copy(
@@ -86,7 +107,7 @@ class ProgressRepository(private val dao: ProgressDao) {
                 lastStudiedEpochDay = today,
                 streakFreezes = newFreezes,
                 currentDay = nextDay,
-                currentLevel = currentLevel
+                currentLevel = nextLevel
             )
         )
     }

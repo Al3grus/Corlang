@@ -59,7 +59,12 @@ fun ProgressScreen(
     val scope = rememberCoroutineScope()
 
     val currentLevel = progress?.currentLevel ?: "A0"
-    val streak = progress?.streak ?: 0
+    val streak = com.corlang.app.data.ProgressRepository.displayStreak(
+        streak = progress?.streak ?: 0,
+        lastStudiedEpochDay = progress?.lastStudiedEpochDay ?: 0L,
+        freezes = progress?.streakFreezes ?: 0,
+        today = com.corlang.app.data.WordsRepository.todayEpochDay()
+    )
     val currentDay = progress?.currentDay ?: 1
     // "Started" = introduced at all; "learned" = memory durable (stability ≥ 7d); "mastered" =
     // long interval (stability ≥ 21d). Thresholds live in Fsrs.
@@ -111,12 +116,6 @@ fun ProgressScreen(
 
         // CEFR ladder
         SectionTitle("CEFR ladder & milestones")
-        Text(
-            "C2 is intentionally excluded, it's effectively unreachable for most non-native learners.",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(bottom = 4.dp)
-        )
         levels.forEach { level ->
             val isCurrent = level.id == currentLevel
             Surface(

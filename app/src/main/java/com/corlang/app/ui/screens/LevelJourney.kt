@@ -24,6 +24,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -124,12 +125,29 @@ fun LevelJourney(
         )
         val pulse = if (reduced) 1f else pulseAnim
 
+        // Auto-centre the current day: earlier days stay anchored left (offset coerced ≥ 0), and
+        // once the path grows the scroll slides so "you are here" sits mid-screen.
+        val journeyScroll = rememberScrollState()
+        val density = LocalDensity.current
+        val screenWidthDp = androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp
+        LaunchedEffect(targetDay, selectedLevel, stones.size) {
+            val idx = stones.indexOfFirst { it.day == targetDay }
+            if (idx >= 0) {
+                val stridePx = with(density) { 52.dp.toPx() }      // ~40dp node + 12dp connector
+                val startPadPx = with(density) { 8.dp.toPx() }
+                val nodeHalfPx = with(density) { 23.dp.toPx() }
+                val viewportPx = with(density) { (screenWidthDp - 32).dp.toPx() }
+                val nodeCentre = startPadPx + idx * stridePx + nodeHalfPx
+                journeyScroll.animateScrollTo((nodeCentre - viewportPx / 2f).coerceAtLeast(0f).toInt())
+            }
+        }
+
         Row(
             // Inner padding (child of the scroll) gives the pulsing current-day node room to
             // expand without being clipped by the scroll container's edges — otherwise day 1,
             // flush against the left edge, gets its left side cut off as it breathes.
             modifier = Modifier
-                .horizontalScroll(rememberScrollState())
+                .horizontalScroll(journeyScroll)
                 .padding(horizontal = 8.dp, vertical = 6.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {

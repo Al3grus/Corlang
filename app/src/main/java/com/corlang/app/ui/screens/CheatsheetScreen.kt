@@ -55,9 +55,9 @@ fun CheatsheetScreen(container: AppContainer, lang: String) {
             modifier = Modifier.padding(bottom = 8.dp)
         )
 
-        // First section starts open so the page isn't a wall of collapsed headers.
-        sheet.sections.forEachIndexed { i, section ->
-            CheatsheetSectionCard(section, container.tts, initiallyExpanded = i == 0)
+        // Every section starts collapsed (like Grammar) so the page opens as a scannable index.
+        sheet.sections.forEach { section ->
+            CheatsheetSectionCard(section, container.tts)
         }
     }
 }
@@ -65,10 +65,9 @@ fun CheatsheetScreen(container: AppContainer, lang: String) {
 @Composable
 private fun CheatsheetSectionCard(
     section: CheatSection,
-    tts: TtsManager,
-    initiallyExpanded: Boolean
+    tts: TtsManager
 ) {
-    var expanded by rememberSaveable(section.title) { mutableStateOf(initiallyExpanded) }
+    var expanded by rememberSaveable(section.title) { mutableStateOf(false) }
     InfoCard {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -77,8 +76,7 @@ private fun CheatsheetSectionCard(
             Text(
                 section.title,
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.secondary,
+                fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.weight(1f)
             )
             Icon(
