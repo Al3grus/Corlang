@@ -90,7 +90,9 @@ fun TodayScreen(
     // fresh lesson reads 0% until you actually do its words.
     val allWords = remember(lang) { container.words.allWords(lang) }
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
-    val unlockedNew = allWords.take(targetDay * newPerDay).count { it.id !in seenIds }
+    // Placement offset: deck words the placement test skipped are never counted as unlocked.
+    val deckStart by container.languagePrefs.wordDeckStart(lang).collectAsState(initial = 0)
+    val unlockedNew = allWords.take(targetDay * newPerDay).drop(deckStart).count { it.id !in seenIds }
     val reviewPending = minOf(dueNow, Fsrs.REVIEW_CAP)
 
     // Which day is being viewed (defaults to the target; user can browse away with ‹ ›).

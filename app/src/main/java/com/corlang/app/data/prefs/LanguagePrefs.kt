@@ -174,6 +174,21 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[premiumKey] = entitled }
     }
 
+    // ----- Placement word offset -----
+
+    // Per-language: how many deck words the placement test skipped past. The new-word window
+    // is deck[start, day*perLesson) — without this, a learner placed at Day 61 was served the
+    // deck's day-1 words ("very basic words", field report 2026-07-16).
+    private fun deckStartKey(lang: String) = intPreferencesKey("word_deck_start_$lang")
+
+    /** First deck index the learner should ever be taught as NEW (0 = full deck from Day 1). */
+    fun wordDeckStart(lang: String): Flow<Int> =
+        context.dataStore.data.map { it[deckStartKey(lang)] ?: 0 }
+
+    suspend fun setWordDeckStart(lang: String, index: Int) {
+        context.dataStore.edit { it[deckStartKey(lang)] = index.coerceAtLeast(0) }
+    }
+
     // ----- Words session snapshot (gym-proof resume) -----
 
     // Per-language so a Croatian session never bleeds into French (or vice-versa); the snapshot

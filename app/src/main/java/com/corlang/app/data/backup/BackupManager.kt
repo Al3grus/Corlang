@@ -31,7 +31,9 @@ data class BackupPrefs(
     val profileLivesIn: String = "",
     val profileReason: String = "",
     // Reminder language opt-in (null = never customized: reminder follows the selected language).
-    val reminderLanguages: List<String>? = null
+    val reminderLanguages: List<String>? = null,
+    // Per-language deck offset set by the placement test (added with a default: old backups parse).
+    val wordDeckStarts: Map<String, Int> = emptyMap()
 )
 
 /** A complete, portable snapshot of the learner's progress across every language. */
@@ -61,7 +63,9 @@ data class BackupData(
  */
 class BackupManager(
     private val dao: ProgressDao,
-    private val prefs: LanguagePrefs
+    private val prefs: LanguagePrefs,
+    /** Shipped language codes — the keys under which per-language prefs are exported. */
+    private val languages: List<String> = emptyList()
 ) {
     private val json = Json { prettyPrint = true; ignoreUnknownKeys = true }
 
@@ -91,7 +95,9 @@ class BackupManager(
                 profileGender = profile.gender,
                 profileFrom = profile.from,
                 profileLivesIn = profile.livesIn,
-                profileReason = profile.reason
+                profileReason = profile.reason,
+                wordDeckStarts = languages.associateWith { prefs.wordDeckStart(it).first() }
+                    .filterValues { it > 0 }
             )
         )
         return json.encodeToString(data)
@@ -121,6 +127,8 @@ class BackupManager(
         prefs.setLanguage(data.prefs.selectedLanguage)
         prefs.setOnboardingDone(data.prefs.onboardingDone)
         data.prefs.reminderLanguages?.let { prefs.setReminderLanguages(it.toSet()) }
+        // Reset then apply: a restore must not keep this device's stale placement offsets.
+        languages.forEach { prefs.setWordDeckStart(it, data.prefs.wordDeckStarts[it] ?: 0) }
         prefs.setProfile(
             com.corlang.app.data.prefs.LearnerProfile(
                 name = data.prefs.profileName,

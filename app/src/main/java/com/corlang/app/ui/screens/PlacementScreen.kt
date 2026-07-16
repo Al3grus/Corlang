@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 /**
@@ -97,6 +98,11 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                     // you on Day 1).
                     scope.launch {
                         container.progress.setPlacement(lang, placeDay, placeLevel)
+                        // Skip the deck past the placed-over days: a Day-61 learner must get
+                        // Day-61 vocabulary, not the deck's day-1 basics. Overwritten (not
+                        // maxed) on retake so placing lower re-opens earlier words.
+                        val perLesson = container.languagePrefs.newWordsPerDay.first()
+                        container.languagePrefs.setWordDeckStart(lang, (placeDay - 1) * perLesson)
                         onDone()
                     }
                 },

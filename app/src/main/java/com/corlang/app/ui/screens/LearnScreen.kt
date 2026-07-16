@@ -18,6 +18,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.corlang.app.AppContainer
 import com.corlang.app.ui.theme.rememberReducedMotion
 
@@ -36,6 +37,10 @@ fun LearnScreen(container: AppContainer, lang: String) {
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp)
         ) {
+            // Four labels share one row: past ~1.15× font scale the text physically outgrows
+            // its segment ("runs out of its box", field report), so growth is capped there.
+            val fontScale = androidx.compose.ui.platform.LocalDensity.current.fontScale
+            val labelSize = (14f * minOf(fontScale, 1.15f) / fontScale).sp
             labels.forEachIndexed { i, label ->
                 SegmentedButton(
                     selected = tab == i,
@@ -43,9 +48,8 @@ fun LearnScreen(container: AppContainer, lang: String) {
                     shape = SegmentedButtonDefaults.itemShape(index = i, count = labels.size),
                     icon = {}   // the fill color marks the selection; no checkmark
                 ) {
-                    // Never wrap: four labels share the row; "Cheatsheet" would fold to two
-                    // lines on narrow phones / large font scale and make the row uneven.
-                    Text(label, maxLines = 1, softWrap = false)
+                    // Never wrap: "Cheatsheet" would fold to two lines on narrow phones.
+                    Text(label, maxLines = 1, softWrap = false, fontSize = labelSize)
                 }
             }
         }

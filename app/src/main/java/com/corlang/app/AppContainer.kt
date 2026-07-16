@@ -34,9 +34,9 @@ class AppContainer(context: Context) {
     val progress: ProgressRepository =
         ProgressRepository(AppDatabase.get(context).progressDao())
     val words: WordsRepository =
-        WordsRepository(AppDatabase.get(context).progressDao(), content)
+        WordsRepository(AppDatabase.get(context).progressDao(), content, languagePrefs)
     val backup: BackupManager =
-        BackupManager(AppDatabase.get(context).progressDao(), languagePrefs)
+        BackupManager(AppDatabase.get(context).progressDao(), languagePrefs, content.availableLanguages)
     val ai: AiClient = AiClient()
     val premium: PremiumManager = PremiumManager(languagePrefs)
     val tts: TtsManager = TtsManager(context)

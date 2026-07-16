@@ -4,6 +4,7 @@ import com.corlang.app.data.db.ProgressDao
 import com.corlang.app.data.db.WordReview
 import com.corlang.app.data.model.VocabWord
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import java.time.LocalDate
 
 /** A word queued for today's session, with its persisted SRS state (null = brand new). */
@@ -19,7 +20,8 @@ data class SessionCard(
  */
 class WordsRepository(
     private val dao: ProgressDao,
-    private val content: ContentRepository
+    private val content: ContentRepository,
+    private val prefs: com.corlang.app.data.prefs.LanguagePrefs
 ) {
 
     fun reviews(lang: String): Flow<List<WordReview>> = dao.wordReviews(lang)
@@ -40,9 +42,10 @@ class WordsRepository(
     }
 
     /**
-     * New words a learner is allowed to introduce, gated by lesson progress: the first
-     * [uptoDay] * [perLesson] words of the deck (deck order = introduction order) that haven't
-     * been introduced yet. You can never run ahead of the lessons you've reached.
+     * New words a learner is allowed to introduce, gated by lesson progress: deck words in
+     * [deckStart, uptoDay * perLesson) that haven't been introduced yet (deck order = SRS
+     * introduction order). You can never run ahead of the lessons you've reached, and the
+     * placement test's deckStart keeps a Day-61 learner from being served day-1 words.
      */
     suspend fun unlockedNewWords(
         lang: String,
@@ -50,8 +53,10 @@ class WordsRepository(
         perLesson: Int = Fsrs.NEW_WORDS_PER_DAY
     ): List<SessionCard> {
         val seenIds = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()
+        val deckStart = prefs.wordDeckStart(lang).first()
         return allWords(lang)
             .take((uptoDay * perLesson).coerceAtLeast(0))
+            .drop(deckStart)
             .filter { it.id !in seenIds }
             .map { SessionCard(it, null) }
     }

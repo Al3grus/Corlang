@@ -301,7 +301,10 @@ fun SessionPlayer(
     val allWords = remember(lang) { container.words.allWords(lang) }
     val dueNow = reviews.count { it.dueEpochDay <= today }
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
-    val unlockedNew = allWords.take(day.day * perLesson).count { it.id !in seenIds }
+    // Placement offset: deck words before deckStart are never taught as new (a Day-61
+    // placement must not serve day-1 basics).
+    val deckStart by container.languagePrefs.wordDeckStart(lang).collectAsState(initial = 0)
+    val unlockedNew = allWords.take(day.day * perLesson).drop(deckStart).count { it.id !in seenIds }
     // One lesson serves at most perLesson new words, even when a placement jump unlocked a large
     // backlog — it drains one lesson-sized block at a time, never a 300-card dump.
     val newBlock = minOf(unlockedNew, perLesson)
