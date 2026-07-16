@@ -58,7 +58,6 @@ fun ProgressScreen(
 ) {
     val meta = remember(lang) { container.content.meta(lang) }
     val levels = remember(lang) { container.content.levels(lang).levels }
-    val plan = remember(lang) { container.content.plan(lang) }
     val resources = remember(lang) { container.content.resources(lang).resources.sortedBy { it.rank } }
 
     val progress by container.progress.progress(lang).collectAsState(initial = null)
@@ -73,7 +72,6 @@ fun ProgressScreen(
         freezes = progress?.streakFreezes ?: 0,
         today = com.corlang.app.data.WordsRepository.todayEpochDay()
     )
-    val currentDay = progress?.currentDay ?: 1
     // "Started" = introduced at all; "learned" = memory durable (stability ≥ 7d); "mastered" =
     // long interval (stability ≥ 21d). Thresholds live in Fsrs.
     val wordsStarted = reviews.size
@@ -98,12 +96,6 @@ fun ProgressScreen(
             StatTile("$daysDone", "days done", Modifier.weight(1f))
             StatTile(currentLevel, "current level", Modifier.weight(1f))
         }
-        Text(
-            "On day $currentDay of ${plan.days.size} in the plan.",
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(top = 8.dp)
-        )
         Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             StatTile("$wordsStarted", "words started", Modifier.weight(1f))
