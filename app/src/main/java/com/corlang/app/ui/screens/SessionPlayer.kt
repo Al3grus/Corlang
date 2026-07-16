@@ -330,6 +330,25 @@ fun SessionPlayer(
     val actionCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val reducedMotion = rememberReducedMotion()
 
+    // The session bar creeps with partial exercise progress within the CURRENT step, not only when
+    // a whole step finishes. Reads the same persisted "<stepId>::x<n>" checks the resume uses, so
+    // clearing 3 of 8 exercises nudges the bar by ~3/8 of one step.
+    val currentPartial: Float = run {
+        val cs = steps.getOrNull(index) ?: return@run 0f
+        if (cs.kind != StepKind.EXERCISE || stepDone(cs)) return@run 0f
+        val total = day.activities.getOrNull(cs.activityIndex)?.questions?.size ?: 0
+        if (total <= 0) return@run 0f
+        doneIds.count { it.startsWith("${cs.id}::x") }.coerceAtMost(total).toFloat() / total
+    }
+    val sessionProgress = if (actionCount == 0) 0f
+        else ((doneCount + currentPartial) / actionCount).coerceIn(0f, 1f)
+    val animatedProgress by androidx.compose.animation.core.animateFloatAsState(
+        targetValue = sessionProgress,
+        animationSpec = if (reducedMotion) androidx.compose.animation.core.snap()
+                        else androidx.compose.animation.core.tween(durationMillis = 400),
+        label = "session-progress"
+    )
+
     // In-lesson word block, shared by the new-words step and the review step. New vocabulary only
     // ever enters through lessons; the review block is capped. Grading persists per card.
     val wordQueue = remember(day.day) { mutableStateListOf<SessionCard>() }
@@ -411,7 +430,7 @@ fun SessionPlayer(
             )
         }
         LinearProgressIndicator(
-            progress = { if (actionCount == 0) 0f else doneCount.toFloat() / actionCount },
+            progress = { animatedProgress },
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
         )
         Text(
