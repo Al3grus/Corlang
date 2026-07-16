@@ -55,13 +55,21 @@ fun TodayScreen(
     val completed by container.progress.completedDays(lang).collectAsState(initial = emptyList())
 
     val currentDay = progress?.currentDay ?: 1
-    val streak = progress?.streak ?: 0
     val freezes = progress?.streakFreezes ?: 0
 
     // Live due count for the hero ('today' computed fresh, no stale midnight state).
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
     val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
     val today = WordsRepository.todayEpochDay()
+
+    // Streak decayed to right-now: a missed day (beyond a freeze) reads 0, not the stale stored
+    // value — the stored streak only self-heals on the next completion.
+    val streak = com.corlang.app.data.ProgressRepository.displayStreak(
+        streak = progress?.streak ?: 0,
+        lastStudiedEpochDay = progress?.lastStudiedEpochDay ?: 0L,
+        freezes = freezes,
+        today = today
+    )
     val dueNow = reviews.count { it.dueEpochDay <= today }
 
     // The lesson to land on = the day AFTER your last completed one (also covers doing several

@@ -1,6 +1,6 @@
 {
-  "versionCode": 48,
-  "versionName": "0.18.1",
-  "notes": "A calmer, more editorial voice: decorative emoji have been removed from section headers, stat tiles, and lesson-step labels across Today, Review, Profile, the guided player, and Teach-back. The meaningful cues stay — the streak flame, language flags, speaker/listen icons, checkmarks, and locks. Numbers and titles now stand on their own.",
+  "versionCode": 49,
+  "versionName": "0.18.2",
+  "notes": "Fixes and polish. The streak now decays correctly — miss a day (beyond a banked freeze) and it reads 0 instead of clinging to its last value. Reviewing an earlier day no longer drags your level backwards (replaying an A0 day kept you 'stuck' out of A1). The journey path now auto-centres the current day as it grows, with the first days still anchored left. In the cheatsheet every section starts collapsed with titles styled like Grammar, and the CEFR ladder drops its explanatory footnote.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
