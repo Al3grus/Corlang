@@ -101,6 +101,8 @@ private fun CorlangApp(container: AppContainer) {
         kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Default) {
             container.content.availableLanguages.forEach {
                 runCatching { container.content.vocab(it); container.content.plan(it) }
+                // Heal any stale currentDay that lags behind completed days (legacy data).
+                runCatching { container.progress.reconcileCurrentDay(it) }
             }
         }
     }

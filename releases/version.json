@@ -1,6 +1,6 @@
 {
-  "versionCode": 58,
-  "versionName": "0.20.5",
-  "notes": "Removed the misleading \"On day X of Y in the plan\" line from Profile — it could lag behind your actual progress (showing day 1 even after several days done). Your day streak, days done, level and the journey map already tell the real story.",
+  "versionCode": 59,
+  "versionName": "0.20.6",
+  "notes": "Under-the-hood release prep. Fixes a stale current-day value so it can no longer lag behind your completed days, adds a link to the full privacy policy in Settings › About, and corrects an internal note (all three languages are live). No visible course changes.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

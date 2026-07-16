@@ -40,11 +40,7 @@ class ContentRepository(private val context: Context) {
      */
     private val cache = java.util.concurrent.ConcurrentHashMap<String, Any>()
 
-    /**
-     * Language codes that ship with the app, in display order.
-     * French content still lives in assets/content/fr but is hidden for now —
-     * add "fr" back here to re-enable it.
-     */
+    /** Language codes that ship with the app, in display order. All are live. */
     val availableLanguages: List<String> = listOf("hr", "fr", "pt")
 
     private fun readAsset(path: String): String =

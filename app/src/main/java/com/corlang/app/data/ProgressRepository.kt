@@ -9,6 +9,7 @@ import com.corlang.app.data.db.LanguageProgress
 import com.corlang.app.data.db.ProgressDao
 import com.corlang.app.data.db.QuizAttempt
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import java.time.LocalDate
 
 /**
@@ -77,6 +78,34 @@ class ProgressRepository(private val dao: ProgressDao) {
                 else -> 0                             // more missed than a freeze can cover
             }
         }
+
+        /**
+         * Where the learner sits after completing [completedDay]. Never regresses: replaying an
+         * earlier day keeps the current day and level (only a day at/after the frontier advances
+         * them). Pulled out of completeDay so it's unit-testable without a database.
+         */
+        fun advancePosition(
+            completedDay: Int, currentDay: Int, totalDays: Int,
+            completedLevel: String, currentLevel: String
+        ): Pair<Int, String> {
+            val advancing = completedDay >= currentDay
+            val nextDay = if (advancing) minOf(completedDay + 1, totalDays) else currentDay
+            val nextLevel = if (advancing) completedLevel else currentLevel
+            return nextDay to nextLevel
+        }
+    }
+
+    /**
+     * Heals a stale currentDay: it should never sit behind the furthest completed day. Legacy data
+     * (or completions recorded by older builds) could leave currentDay lagging — e.g. "day 1" with
+     * five days done. Only ever bumps forward. Called per language on app start.
+     */
+    suspend fun reconcileCurrentDay(lang: String) {
+        val p = dao.progressOnce(lang) ?: return
+        val maxCompleted = dao.completedDays(lang).first().maxOrNull() ?: 0
+        if (p.currentDay < maxCompleted + 1) {
+            dao.upsertProgress(p.copy(currentDay = maxCompleted + 1))
+        }
     }
 
     /**
@@ -93,13 +122,12 @@ class ProgressRepository(private val dao: ProgressDao) {
             streak = existing.streak,
             freezes = existing.streakFreezes
         )
-        // Reviewing an EARLIER day must never drag your position backwards: only a day at or
-        // past your current one advances currentDay — and, likewise, your current level. Without
-        // the level guard, replaying an A0 day rewrote currentLevel to "A0" while currentDay stayed
-        // put (the "stuck back in A0, can't reach A1" bug).
-        val advancing = day >= existing.currentDay
-        val nextDay = if (advancing) minOf(day + 1, totalDays) else existing.currentDay
-        val nextLevel = if (advancing) currentLevel else existing.currentLevel
+        // Reviewing an EARLIER day must never drag your position backwards (the "stuck back in A0,
+        // can't reach A1" bug). advancePosition guards both currentDay and currentLevel.
+        val (nextDay, nextLevel) = advancePosition(
+            completedDay = day, currentDay = existing.currentDay, totalDays = totalDays,
+            completedLevel = currentLevel, currentLevel = existing.currentLevel
+        )
         dao.completeDayTxn(
             DayCompletion(langCode = lang, day = day, completedAtEpoch = now),
             existing.copy(

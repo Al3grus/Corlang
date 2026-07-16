@@ -504,6 +504,16 @@ fun SettingsScreen(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 8.dp)
             )
+            val privacyUri = androidx.compose.ui.platform.LocalUriHandler.current
+            Text(
+                "Read the full privacy policy ↗",
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier
+                    .padding(top = 8.dp)
+                    .clickable { privacyUri.openUri("https://github.com/Al3grus/Corlang/blob/main/PRIVACY.md") }
+            )
         }
         Spacer(Modifier.height(24.dp))
     }
