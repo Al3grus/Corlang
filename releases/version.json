@@ -1,6 +1,6 @@
 {
-  "versionCode": 59,
-  "versionName": "0.20.6",
-  "notes": "Under-the-hood release prep. Fixes a stale current-day value so it can no longer lag behind your completed days, adds a link to the full privacy policy in Settings › About, and corrects an internal note (all three languages are live). No visible course changes.",
+  "versionCode": 60,
+  "versionName": "0.20.7",
+  "notes": "Exercises now resume where you left off. If a lesson step has several exercises and you do a few then leave, reopening the step continues from the next one instead of restarting at the first. Progress is saved per cleared exercise.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
