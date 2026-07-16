@@ -94,6 +94,10 @@ fun LearnActivity(container: AppContainer, activity: DayActivity, onDone: () -> 
     }
 }
 
+/** What an interrupted exercise step left behind: which questions were cleared, and whether
+ *  any answer was ever missed (drives the honest finish message across an exit/resume). */
+data class ExerciseResume(val solvedIndices: Set<Int>, val missedAny: Boolean)
+
 /** EXERCISE: sequential graded questions (MCQ / FILL / REORDER) with instant feedback.
  *
  * A missed question isn't a dead end: it's re-queued to the end and re-asked until answered
@@ -105,26 +109,34 @@ fun LearnActivity(container: AppContainer, activity: DayActivity, onDone: () -> 
 fun ExerciseActivity(
     container: AppContainer,
     activity: DayActivity,
-    loadResumeSolved: suspend () -> Int = { 0 },
-    onSolvedChange: (Int) -> Unit = {},
+    loadResumeState: suspend () -> ExerciseResume = { ExerciseResume(emptySet(), false) },
+    onSolved: (questionIndex: Int) -> Unit = {},
+    onMissed: () -> Unit = {},
     onDone: () -> Unit
 ) {
     val context = LocalContext.current
     val total = activity.questions.size
 
-    // Resume: load how many distinct questions were already cleared (persisted per step), then
-    // build the queue skipping them — exit after 3 of 8 and you return to the 4th, not the 1st.
+    // Resume: load WHICH questions were already cleared (persisted per step as indices, not a
+    // count — a count broke when a missed question was re-queued: "drop the first N" then
+    // silently dropped the miss, and the step ended claiming "first try on every one").
     // Gated on the async load so the first frame doesn't momentarily start from question one.
-    var resumeSolved by remember(activity.title) { mutableIntStateOf(-1) }
-    LaunchedEffect(activity.title) { resumeSolved = loadResumeSolved().coerceIn(0, total) }
-    if (resumeSolved < 0) return
+    var resume by remember(activity.title) { mutableStateOf<ExerciseResume?>(null) }
+    LaunchedEffect(activity.title) { resume = loadResumeState() }
+    val resumed = resume ?: return
+    val resumeIdx = remember(activity.title) {
+        resumed.solvedIndices.filter { it in activity.questions.indices }.toSet()
+    }
 
-    // Live queue of remaining questions; missed ones get re-appended. `served` bumps each
-    // time we advance so option-shuffle / response state re-init cleanly.
-    val queue = remember(activity.title) { mutableStateListOf<Question>().apply { addAll(activity.questions.drop(resumeSolved)) } }
+    // Live queue of remaining question INDICES (identity survives re-queuing); missed ones get
+    // re-appended. `served` bumps each time we advance so option-shuffle / response state
+    // re-init cleanly.
+    val queue = remember(activity.title) {
+        mutableStateListOf<Int>().apply { addAll(activity.questions.indices.filter { it !in resumeIdx }) }
+    }
     var served by remember(activity.title) { mutableIntStateOf(0) }
-    var solved by remember(activity.title) { mutableIntStateOf(resumeSolved) }   // distinct questions cleared
-    var missedAny by remember(activity.title) { mutableStateOf(false) }
+    var solved by remember(activity.title) { mutableIntStateOf(resumeIdx.size) }   // distinct questions cleared
+    var missedAny by remember(activity.title) { mutableStateOf(resumed.missedAny) }
     var checked by remember(activity.title) { mutableStateOf(false) }
     var lastCorrect by remember(activity.title) { mutableStateOf(false) }
     var finished by remember(activity.title) { mutableStateOf(false) }
@@ -158,7 +170,7 @@ fun ExerciseActivity(
         return
     }
 
-    val q = queue.first()
+    val q = activity.questions[queue.first()]
     // Shuffle MCQ options once per showing so position never gives away the answer.
     val displayOptions = remember(activity.title, served) {
         if (q.type == QuestionType.MCQ) q.options.shuffled() else q.options
@@ -308,9 +320,11 @@ fun ExerciseActivity(
                         // from the "✅ Correct" feedback screen (tab tap, back) used to lose this
                         // question and re-serve it on resume.
                         solved++
-                        onSolvedChange(solved)
+                        onSolved(queue.first())
                     } else {
-                        Haptics.reject(context); missedAny = true
+                        Haptics.reject(context)
+                        if (!missedAny) onMissed()   // persist once; the finish message must
+                        missedAny = true             // stay honest across an exit/resume
                     }
                     checked = true
                 } else {

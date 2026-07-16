@@ -178,14 +178,15 @@ fun TodayScreen(
         }
     }
     // Partial credit inside multi-exercise steps: clearing 3 of 8 exercises nudges the ring by
-    // ~3/8 of one step. Reads the same persisted "<stepId>::x<n>" checks the SessionPlayer's
-    // resume + session bar use, so the ring and the in-lesson bar always agree.
+    // ~3/8 of one step. Reads the same persisted per-question "<stepId>::q<i>" checks (plus
+    // legacy "::x<n>"; never "::missed") the SessionPlayer's resume + session bar use, so the
+    // ring and the in-lesson bar always agree.
     val targetPartial = targetAction
         .filter { it.kind == StepKind.EXERCISE && it.id !in targetDoneIds }
         .sumOf { s ->
             val total = targetDayObj.activities.getOrNull(s.activityIndex)?.questions?.size ?: 0
             if (total <= 0) 0.0
-            else targetDoneIds.count { it.startsWith("${s.id}::x") }
+            else targetDoneIds.count { it.startsWith("${s.id}::q") || it.startsWith("${s.id}::x") }
                 .coerceAtMost(total).toDouble() / total
         }.toFloat()
     val ringProgress = when {
