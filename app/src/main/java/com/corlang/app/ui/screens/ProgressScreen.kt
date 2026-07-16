@@ -38,7 +38,6 @@ import com.corlang.app.AppContainer
 import com.corlang.app.data.isLearned
 import com.corlang.app.data.isMastered
 import com.corlang.app.ui.components.Bullet
-import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.StatTile
 import com.corlang.app.ui.navigation.Dest
@@ -120,18 +119,17 @@ fun ProgressScreen(
             modifier = Modifier.fillMaxWidth().padding(top = 4.dp, bottom = 2.dp)
         ) { Text("Practice: quizzes & mock exam →") }
 
-        // Exam readiness: the milestone exam with official sections; stays open (it's actionable).
+        // Exam readiness + can-do, folded into ONE collapsible. The Practice button above already
+        // opens the mock exam, so this is reference detail: per-section pass status and the CEFR
+        // self-check — no need for a second always-open box repeating the same call to action.
         val examLevel = levels.firstOrNull { it.exam != null }
         val examSpec = remember(lang, examLevel?.id) {
             container.content.exams(lang).firstOrNull { it.levelId == examLevel?.id }
         }
         if (examLevel?.exam != null) {
             val exam = examLevel.exam!!
-            InfoCard {
-                Text("Exam readiness · ${examLevel.id}",
-                    style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                Text(exam.name, style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 4.dp))
+            CollapsibleCard("Exam readiness · ${examLevel.id}") {
+                Text(exam.name, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
                 Text(exam.passRule, style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 2.dp, bottom = 6.dp))
@@ -151,20 +149,14 @@ fun ProgressScreen(
                             }
                         )
                     }
-                    Text("Take the mock exam →",
-                        style = MaterialTheme.typography.bodySmall,
-                        fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier
-                            .padding(top = 4.dp)
-                            .clickable { onNavigate(Dest.PRACTICE.route) })
                 }
-            }
-            if (examLevel.skills.isNotEmpty()) {
-                CollapsibleCard("Can-do self-check (CEFR descriptors)") {
+                if (examLevel.skills.isNotEmpty()) {
                     val checks by container.progress.canDoChecks(lang, examLevel.id)
                         .collectAsState(initial = emptyList())
                     val checkedIds = checks.map { it.itemId }.toSet()
+                    Text("Can-do self-check (CEFR descriptors)",
+                        style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.padding(top = 12.dp))
                     examLevel.skills.forEachIndexed { si, skill ->
                         Text(skill.skill, style = MaterialTheme.typography.labelMedium,
                             fontWeight = FontWeight.Bold,
