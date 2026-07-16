@@ -288,14 +288,12 @@ fun ExerciseActivity(
                 Column(Modifier.padding(12.dp)) {
                     val correctText = if (q.type == QuestionType.REORDER)
                         q.ordered.joinToString(" ") else q.answer
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(
-                            if (lastCorrect) "✅ Correct" else "❌ $correctText",
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.weight(1f)
-                        )
-                        SpeakerButton(tts = container.tts, text = correctText)
-                    }
+                    // Text only — no speaker in the verdict (field feedback: audio on the
+                    // answer reveal doesn't make sense; pronunciation lives on prompts/LEARN).
+                    Text(
+                        if (lastCorrect) "✅ Correct" else "❌ $correctText",
+                        fontWeight = FontWeight.Bold
+                    )
                     if (q.explanation.isNotBlank()) {
                         Text(q.explanation, modifier = Modifier.padding(top = 4.dp),
                             style = MaterialTheme.typography.bodySmall)

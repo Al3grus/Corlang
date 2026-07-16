@@ -317,6 +317,55 @@ class ContentValidationTest {
     }
 
     @Test
+    fun `reorder prompts never contain their own sentence`() {
+        // Guards the field-found class: "Put in order: 'Il faut que je finisse mon travail.'"
+        // handed the learner the full answer. Prompts must carry the MEANING (English), never
+        // the target sentence — neither verbatim nor most of its words.
+        val lenient = Json { ignoreUnknownKeys = true }
+        fun norm(s: String) = com.corlang.app.ui.screens.Grading.normalize(s, strict = true)
+        fun collect(
+            e: kotlinx.serialization.json.JsonElement,
+            out: MutableList<Pair<String, List<String>>>
+        ) {
+            when (e) {
+                is kotlinx.serialization.json.JsonObject -> {
+                    val prompt = (e["prompt"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                    val ordered = (e["ordered"] as? kotlinx.serialization.json.JsonArray)
+                        ?.mapNotNull { (it as? kotlinx.serialization.json.JsonPrimitive)?.content }
+                    if (prompt != null && !ordered.isNullOrEmpty()) out += prompt to ordered
+                    e.values.forEach { collect(it, out) }
+                }
+                is kotlinx.serialization.json.JsonArray -> e.forEach { collect(it, out) }
+                else -> {}
+            }
+        }
+        for (lang in listOf("hr", "fr", "pt")) {
+            val reorders = mutableListOf<Pair<String, List<String>>>()
+            val planDir = File(contentRoot, "$lang/plan")
+            val files = (planDir.listFiles()?.map { "plan/${it.name}" } ?: emptyList()) +
+                listOf("quizzes.json", "exams.json", "placement.json")
+            files.filter { exists(lang, it) && it.endsWith(".json") && "_index" !in it }
+                .forEach { collect(lenient.parseToJsonElement(read(lang, it)), reorders) }
+            reorders.forEach { (prompt, ordered) ->
+                val p = norm(prompt)
+                val sentence = norm(ordered.joinToString(" "))
+                assertTrue(
+                    "$lang: REORDER prompt contains its own sentence: $prompt",
+                    sentence.isBlank() || sentence !in p
+                )
+                val tokens = ordered.map { norm(it) }.filter { it.isNotBlank() }.distinct()
+                if (tokens.size >= 3) {
+                    val present = tokens.count { Regex("(^| )${Regex.escape(it)}( |$)").containsMatchIn(p) }
+                    assertTrue(
+                        "$lang: REORDER prompt reveals most of its words ($present/${tokens.size}): $prompt",
+                        present.toDouble() / tokens.size < 0.7
+                    )
+                }
+            }
+        }
+    }
+
+    @Test
     fun `typed fill answers never appear verbatim in their own prompt`() {
         // Guards the field-found class: a FILL prompt whose format example IS the answer
         // ("Kada je sljedeći polazak? (npr. 'sutra u 7')" with answer "sutra u 7").
