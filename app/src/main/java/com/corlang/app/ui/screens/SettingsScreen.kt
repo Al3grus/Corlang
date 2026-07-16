@@ -440,8 +440,8 @@ fun SettingsScreen(
             )
             Text(
                 "Learn the core of a language on an evidence-based daily method (retrieval practice + " +
-                    "distributed practice), anchored to official curricula and the real exam formats " +
-                    "(Croatian NN B1, French DELF B1/B2).",
+                    "distributed practice), anchored to each language's official curriculum and real " +
+                    "exam format.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 4.dp)
