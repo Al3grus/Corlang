@@ -1,6 +1,6 @@
 {
-  "versionCode": 64,
-  "versionName": "0.20.11",
-  "notes": "Two exercise fixes. Word-order exercises no longer give the answer away: tapped words now show all-lowercase with no sentence punctuation, so the capital letter and the final dot don't betray the first and last word. And a resume bug is gone — exiting right after a correct answer (before tapping Next) used to re-serve that same exercise when you returned; the solve now saves the moment it's graded correct.",
+  "versionCode": 65,
+  "versionName": "0.20.12",
+  "notes": "Exercise resume is now exact: the app remembers WHICH questions you cleared, not just how many. A question you missed comes back after an exit/resume (it used to be silently dropped), and the finish message stays honest — no more \"Perfect, first try on every one\" when one had to be retried.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

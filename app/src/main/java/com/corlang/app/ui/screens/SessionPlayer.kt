@@ -331,14 +331,16 @@ fun SessionPlayer(
     val reducedMotion = rememberReducedMotion()
 
     // The session bar creeps with partial exercise progress within the CURRENT step, not only when
-    // a whole step finishes. Reads the same persisted "<stepId>::x<n>" checks the resume uses, so
-    // clearing 3 of 8 exercises nudges the bar by ~3/8 of one step.
+    // a whole step finishes. Reads the same persisted per-question "<stepId>::q<i>" checks the
+    // resume uses (plus legacy "::x<n>" count checks; never the "::missed" flag), so clearing
+    // 3 of 8 exercises nudges the bar by ~3/8 of one step.
     val currentPartial: Float = run {
         val cs = steps.getOrNull(index) ?: return@run 0f
         if (cs.kind != StepKind.EXERCISE || stepDone(cs)) return@run 0f
         val total = day.activities.getOrNull(cs.activityIndex)?.questions?.size ?: 0
         if (total <= 0) return@run 0f
-        doneIds.count { it.startsWith("${cs.id}::x") }.coerceAtMost(total).toFloat() / total
+        doneIds.count { it.startsWith("${cs.id}::q") || it.startsWith("${cs.id}::x") }
+            .coerceAtMost(total).toFloat() / total
     }
     val sessionProgress = if (actionCount == 0) 0f
         else ((doneCount + currentPartial) / actionCount).coerceIn(0f, 1f)
@@ -558,14 +560,31 @@ fun SessionPlayer(
                     StepKind.EXERCISE -> activity?.let { act ->
                         ExerciseActivity(
                             container, act,
-                            // Resume within a multi-exercise step: how many were already cleared.
-                            loadResumeSolved = {
-                                container.progress.dayTaskChecks(lang, day.day).first()
-                                    .count { it.itemId.startsWith("${s.id}::x") }
+                            // Resume within a multi-exercise step: WHICH questions were cleared
+                            // ("<stepId>::q<i>") + whether any answer was missed ("<stepId>::missed").
+                            // Legacy count-style "<stepId>::x<n>" checks (pre-0.20.12) map to "the
+                            // first n questions" — the best a bare count can say.
+                            loadResumeState = {
+                                val ids = container.progress.dayTaskChecks(lang, day.day).first()
+                                    .map { it.itemId }
+                                val qPrefix = "${s.id}::q"
+                                val solved = ids.filter { it.startsWith(qPrefix) }
+                                    .mapNotNull { it.removePrefix(qPrefix).toIntOrNull() }
+                                    .toSet()
+                                val legacy = ids.count { it.startsWith("${s.id}::x") }
+                                ExerciseResume(
+                                    solvedIndices = solved + (0 until legacy),
+                                    missedAny = "${s.id}::missed" in ids
+                                )
                             },
-                            onSolvedChange = { n ->
+                            onSolved = { i ->
                                 container.appScope.launch {
-                                    container.progress.setDayTask(lang, day.day, "${s.id}::x$n", true)
+                                    container.progress.setDayTask(lang, day.day, "${s.id}::q$i", true)
+                                }
+                            },
+                            onMissed = {
+                                container.appScope.launch {
+                                    container.progress.setDayTask(lang, day.day, "${s.id}::missed", true)
                                 }
                             },
                             onDone = onDrillDone
