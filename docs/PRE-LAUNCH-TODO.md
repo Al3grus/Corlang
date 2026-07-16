@@ -14,8 +14,40 @@ Things to close before a public launch, so nothing gets forgotten. Grouped by ar
 - [ ] Full end-to-end pass on a **real device**: onboarding → placement → lesson (all step types) →
       review/SRS → quizzes → mock exam → cross a midnight (streak) → switch languages.
 - [ ] Verify streak resets correctly after a genuinely missed day.
-- [ ] Verify lesson resume lands on the right step/exercise after Exit.
+- [x] Verify lesson resume lands on the right step/exercise after Exit — field-tested and fixed
+      (v0.20.11/12, see log below); re-verify once more after the next few lessons.
 - [ ] Confirm backup export/import round-trips cleanly.
+
+## Field-testing log — fixed 2026-07-16 (v0.20.9 → v0.20.18)
+
+Real-device findings from dogfooding days 1-6 (Croatian), all fixed + released same day:
+
+- **Today ring partial credit** (v0.20.9): the dashboard ring now credits exercises cleared
+  inside an unfinished step (3/8 done shows as 3/8 of a step, same math as the session bar).
+- **REORDER answers leaked position** (v0.20.11): "tap the words in order" tokens now display
+  lowercased with edge punctuation stripped — the capital and final dot betrayed first/last word.
+- **Exercise solve lost on exit-from-feedback** (v0.20.11): a correct answer now persists at
+  Check time, not on the Next tap.
+- **Missed exercise dropped by resume + false "Perfect"** (v0.20.12): resume state is now WHICH
+  questions were cleared (::q<i>) + a ::missed flag, not a bare count; the re-queued missed
+  question survives exit/resume and the finish message stays honest. Quizzes/mock exams audited:
+  structurally immune (linear, no requeue, no partial persistence).
+- **Language switch mid-session** (v0.20.13): the top-bar picker locks (static badge) while a
+  lesson/review/quiz/exam section/placement/teach-back/tutor chat is active; crossfade 1.3s.
+- **"he / she is" graded against bare "on"** (v0.20.14): recall grading is slash-aware —
+  "on je" / "ona je" / "on/ona je" all pass; alternatives are never truncated.
+- **Streak celebration flashed away** (v0.20.14): completing a day no longer retargets the open
+  lesson to the next day; the celebration stays until tapped, then lands on the dashboard.
+- **Celebration phrases on ordinary days** (v0.20.15): milestone lines only (7/14/30/…) — the
+  streak-1 line recurred on every restart.
+- **Misleading "Learn extra words" button** (v0.20.15/16): the streak hero only offers review
+  (when due > 0); all Start/Continue/Revisit actions live on the lesson card (outlined style,
+  v0.20.17).
+- **Revisits could re-credit the streak** (v0.20.17): re-marking a completed day is blocked in
+  the UI and completeDay is idempotent in the data layer — one streak credit per new day, ever.
+- **PT "ão — não, pão, mão" demanded verbatim** (v0.20.18): "headword — example" LEARN demos
+  now recall just the headword against its gloss headword; items whose gloss contains their own
+  answer are excluded. A permanent ContentValidationTest sweep enforces both across hr/fr/pt.
 
 ## Legal / trust
 - [ ] **Add a real contact email** to `PRIVACY.md` (replace the `[add your contact email here]` placeholder).

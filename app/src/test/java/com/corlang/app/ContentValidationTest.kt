@@ -294,6 +294,29 @@ class ContentValidationTest {
     }
 
     @Test
+    fun `wrapup recall items never leak or mangle their answer`() {
+        // Guards the field-reported classes: "he / she is" graded against a truncated "on"
+        // (hr day 6) and "no, bread, hand" demanding the "ão — …" demo string (pt day 1).
+        for (lang in listOf("hr", "fr", "pt")) {
+            val plan = loadPlan(lang)
+            plan.days.forEach { day ->
+                com.corlang.app.ui.screens.wrapupRecallPhrases(day).forEach { item ->
+                    assertTrue(
+                        "$lang day ${day.day}: demo dash survived in recall target '${item.hr}'",
+                        " — " !in item.hr
+                    )
+                    val gloss = com.corlang.app.ui.screens.Grading.normalize(item.en, strict = true)
+                    val answer = com.corlang.app.ui.screens.Grading.normalize(item.hr, strict = true)
+                    assertTrue(
+                        "$lang day ${day.day}: gloss '${item.en}' contains its own answer '${item.hr}'",
+                        answer !in gloss
+                    )
+                }
+            }
+        }
+    }
+
+    @Test
     fun `french split vocab carries provenance from known keys`() {
         if (!frDir("vocab").isDirectory) return
         loadVocabPacks("fr").forEach { pack ->

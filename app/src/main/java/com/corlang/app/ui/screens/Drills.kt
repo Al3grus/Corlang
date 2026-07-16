@@ -190,11 +190,19 @@ fun WrapupRecall(container: AppContainer, lang: String, day: StudyDay, onFinishe
 
 /**
  * The clean, typable phrases from a day's LEARN activities, used to build the wrap-up recall.
- * "A / B" entries keep BOTH alternatives — truncating to the first form orphaned the gloss
- * ("he / she is" graded against a bare "on"); Grading.gradeRecall accepts any alternative.
- * We drop ellipsis stubs ("Zovem se…") and anything too long to reproduce letter-for-letter
- * fairly. Shared with the session builder so it only inserts a recall wrap-up when there's
- * enough to test.
+ *
+ * - "A / B" entries keep BOTH alternatives — truncating to the first form orphaned the gloss
+ *   ("he / she is" graded against a bare "on"); Grading.gradeRecall accepts any alternative.
+ * - "headword — example" entries (pronunciation demos, verb showcases: "morar — Moras em
+ *   Lisboa?") recall just the headword against the gloss's headword. Both sides must carry
+ *   the dash; when only the target does, the halves don't pair and the item is a demo, not a
+ *   producible phrase — dropped.
+ * - Answer-leak guard: an item whose gloss contains its own answer ("ão" glossed as "nasal
+ *   diphthong 'ão'") would print the answer inside the prompt — dropped.
+ * - We also drop ellipsis stubs ("Zovem se…") and anything too long to reproduce fairly.
+ *
+ * Shared with the session builder so it only inserts a recall wrap-up when there's enough
+ * to test.
  */
 fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
     day.activities
@@ -202,7 +210,20 @@ fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
         .flatMap { it.items }
         .asSequence()
         .filter { it.en.isNotBlank() && "…" !in it.hr && "..." !in it.hr }
-        .filter { it.hr.length in 2..40 }
+        .mapNotNull { item ->
+            if (" — " in item.hr) {
+                if (" — " !in item.en) return@mapNotNull null
+                item.copy(
+                    hr = item.hr.substringBefore(" — ").trim(),
+                    en = item.en.substringBefore(" — ").trim()
+                )
+            } else item
+        }
+        .filterNot {
+            Grading.normalize(it.en, strict = true)
+                .contains(Grading.normalize(it.hr, strict = true))
+        }
+        .filter { it.hr.length in 2..40 && it.en.isNotBlank() }
         .distinctBy { it.hr.lowercase() }
         .toList()
 

@@ -1,6 +1,6 @@
 {
-  "versionCode": 70,
-  "versionName": "0.20.17",
-  "notes": "Revisiting a completed day no longer offers \"Mark day complete\" — it shows \"already complete ✓\" with a plain exit, and re-completing can never re-credit the streak or count as today's goal (guarded in the data layer too). The lesson card's action button is now a quiet outlined style instead of a full-color block.",
+  "versionCode": 71,
+  "versionName": "0.20.18",
+  "notes": "Portuguese wrap-up recall fixed: pattern demos like \"ão — não, pão, mão\" no longer demand the whole demo string. Items shaped \"headword — example\" now ask for just the headword, and any item whose English prompt contains its own answer is excluded from recall. A permanent content test enforces both rules across all three languages.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
