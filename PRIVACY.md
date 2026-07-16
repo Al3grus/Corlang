@@ -64,4 +64,4 @@ in this repository.
 
 ## Contact
 
-Questions about privacy: **[add your contact email here]**
+Questions about privacy: **support@corlang.app**
