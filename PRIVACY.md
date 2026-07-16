@@ -1,0 +1,70 @@
+# Corlang — Privacy Policy
+
+**Effective date:** 2026-07-16
+
+Corlang is built to be **private by design**. It has no account, no sign-in, no advertising,
+no analytics, and no third-party tracking of any kind. This policy explains, plainly, what that
+means.
+
+## The short version
+
+Your learning data never leaves your device unless *you* choose to move it. We do not collect,
+transmit, sell, or share personal information — because we do not have an account system or any
+server that stores your data.
+
+## What Corlang stores, and where
+
+All of the following is stored **only on your device**, in the app's private storage:
+
+- Your progress: streak, days completed, current level, per-day task checks.
+- Your vocabulary review data (the spaced-repetition schedule for each word).
+- Your quiz and mock-exam attempts and can-do self-checks.
+- Your settings: daily goal, reminder time, voice/haptics preferences, and — if you enable the
+  optional AI feature — the API key you enter (kept in the app's private settings storage and
+  **excluded from backups**).
+
+We never upload any of this. There is no Corlang user database.
+
+## When Corlang uses the network
+
+Corlang works fully offline for learning. It makes network requests only in these cases:
+
+1. **Update check.** On launch, the app fetches a small `version.json` file (and, if you choose
+   to update, the app package) from the project's public GitHub repository over HTTPS. This is an
+   ordinary file download. No personal data is sent; as with any web request, the server you
+   download from can see standard request metadata such as your IP address.
+2. **Optional AI practice.** If you use the AI tutor / AI writing feedback, the text you submit is
+   sent to the AI provider (Anthropic) to generate a reply — using either the API key you provide
+   or the app's managed endpoint. Only the text you type for that request is sent. No progress,
+   profile, or identifying data is attached. If you never use the AI feature, no such request is
+   ever made.
+3. **Speech and audio.** Pronunciation playback and speech input use your device's built-in
+   Android text-to-speech and speech-recognition services. Speech recognition may be processed by
+   your device's speech provider (e.g. Google) according to your device settings — this happens
+   outside Corlang and is governed by that provider's own policy. Corlang does not record, store,
+   or transmit your audio itself.
+
+## Backups
+
+Backup and restore is entirely manual and local. When you export a backup, Corlang writes a file
+to a location **you** pick; when you import, it reads a file **you** select. Backups are never
+created automatically and are never sent anywhere.
+
+## Permissions
+
+- **Internet** — used only for the update check and the optional AI feature described above.
+- **Microphone / record audio** — used only when you actively use speech-input exercises.
+
+## Children
+
+Corlang is a general-audience language-learning tool and is not directed at children. Regardless,
+it collects no personal information from anyone.
+
+## Changes to this policy
+
+If this policy changes, the effective date above will be updated and the revised policy published
+in this repository.
+
+## Contact
+
+Questions about privacy: **[add your contact email here]**
