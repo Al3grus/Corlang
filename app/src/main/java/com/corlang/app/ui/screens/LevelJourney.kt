@@ -20,6 +20,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Flag
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -55,6 +58,8 @@ fun LevelJourney(
     completed: List<Int>,
     targetDay: Int,
     viewedDay: Int,
+    examLevelIds: Set<String> = emptySet(),
+    onOpenExam: () -> Unit = {},
     onPickDay: (Int) -> Unit
 ) {
     val completedSet = remember(completed) { completed.toSet() }
@@ -211,10 +216,49 @@ fun LevelJourney(
                     )
                 }
             }
+
+            // Checkpoint: a flag at the tail of a level that ends in an official exam. It unlocks
+            // once every day in the level is done; tapping opens the mock exam.
+            if (selectedLevel in examLevelIds && stones.isNotEmpty()) {
+                val levelDone = stones.all { it.day in completedSet }
+                Box(
+                    modifier = Modifier
+                        .width(12.dp)
+                        .height(2.dp)
+                        .background(
+                            if (levelDone) MaterialTheme.colorScheme.primary
+                            else MaterialTheme.colorScheme.outlineVariant
+                        )
+                )
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .size(46.dp)
+                        .background(
+                            if (levelDone) MaterialTheme.colorScheme.tertiary
+                            else MaterialTheme.colorScheme.surfaceVariant,
+                            CircleShape
+                        )
+                        .then(
+                            if (levelDone) Modifier.clickable { onOpenExam() } else Modifier
+                        )
+                ) {
+                    Icon(
+                        Icons.Filled.Flag,
+                        contentDescription = "Level exam checkpoint",
+                        tint = if (levelDone) MaterialTheme.colorScheme.onTertiary
+                               else MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.size(22.dp)
+                    )
+                }
+            }
         }
         Text(
             "$selectedLevel · $doneInLevel / ${stones.size} lessons done" +
-                if (stones.isNotEmpty()) "  (day ${stones.first().day}–${stones.last().day})" else "",
+                (if (stones.isNotEmpty()) "  (day ${stones.first().day}–${stones.last().day})" else "") +
+                (if (selectedLevel in examLevelIds && stones.isNotEmpty()) {
+                    if (stones.all { it.day in completedSet }) "  ·  exam unlocked" else "  ·  finish to unlock the exam"
+                } else ""),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 6.dp)

@@ -256,6 +256,13 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         "exams. Two minutes of setup makes it yours.",
                     style = MaterialTheme.typography.bodyLarge
                 )
+                Text(
+                    "Private by design — your learning data stays on this device. No account, " +
+                        "no sign-in, no tracking.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 12.dp)
+                )
                 Button(onClick = { step = 1 }, modifier = Modifier.fillMaxWidth().padding(top = 24.dp)) {
                     Text("Set up my learning →")
                 }

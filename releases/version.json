@@ -1,6 +1,6 @@
 {
-  "versionCode": 49,
-  "versionName": "0.18.2",
-  "notes": "Fixes and polish. The streak now decays correctly — miss a day (beyond a banked freeze) and it reads 0 instead of clinging to its last value. Reviewing an earlier day no longer drags your level backwards (replaying an A0 day kept you 'stuck' out of A1). The journey path now auto-centres the current day as it grows, with the first days still anchored left. In the cheatsheet every section starts collapsed with titles styled like Grammar, and the CEFR ladder drops its explanatory footnote.",
+  "versionCode": 50,
+  "versionName": "0.19.0",
+  "notes": "Two additions. Levels that end in an official exam now show a checkpoint flag at the tail of their path in Your journey — finish every day in the level and the flag unlocks, tapping it opens the mock exam. And Corlang now states its stance plainly: Private by design — your learning data stays on this device, no account, no sign-in, no tracking (shown in onboarding and Settings › About).",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

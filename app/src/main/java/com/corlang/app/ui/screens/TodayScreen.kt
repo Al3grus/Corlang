@@ -51,6 +51,11 @@ fun TodayScreen(
     onNavigate: (String) -> Unit = {}
 ) {
     val plan = remember(lang) { container.content.plan(lang) }
+    // Which CEFR levels end in an official exam — used to draw a checkpoint at the tail of each
+    // such level's path (finish the level to unlock its mock exam).
+    val examLevelIds = remember(lang) {
+        container.content.levels(lang).levels.filter { it.exam != null }.map { it.id }.toSet()
+    }
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val completed by container.progress.completedDays(lang).collectAsState(initial = emptyList())
 
@@ -322,6 +327,8 @@ fun TodayScreen(
             completed = completed,
             targetDay = targetDay,
             viewedDay = viewedDay,
+            examLevelIds = examLevelIds,
+            onOpenExam = { onNavigate(Dest.PRACTICE.route) },
             onPickDay = { d -> viewedDay = d; userBrowsed = true }
         )
 
