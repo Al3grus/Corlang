@@ -1,6 +1,6 @@
 {
-  "versionCode": 61,
-  "versionName": "0.20.8",
-  "notes": "The lesson progress bar now moves as you go: within a step that has several exercises, clearing each one nudges the overall session bar forward (with a smooth glide), instead of only jumping when the whole step is finished. The step counter still reads in whole steps.",
+  "versionCode": 62,
+  "versionName": "0.20.9",
+  "notes": "The Today dashboard ring now reflects partial exercise progress: clear 3 of 8 exercises in a step and exit, and the ring credits those 3 instead of snapping back to the last whole step. The ring and the in-lesson bar now always agree.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
