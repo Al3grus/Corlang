@@ -1,6 +1,6 @@
 {
-  "versionCode": 69,
-  "versionName": "0.20.16",
-  "notes": "Dashboard actions now live where they belong. The streak hero only ever offers review (\"Review N words\" when the day is done and words are due; nothing otherwise). Starting, continuing, or revisiting a lesson — including \"Start Day 7\" right after finishing Day 6 — is a button inside the lesson card itself, next to the day's title and objective.",
+  "versionCode": 70,
+  "versionName": "0.20.17",
+  "notes": "Revisiting a completed day no longer offers \"Mark day complete\" — it shows \"already complete ✓\" with a plain exit, and re-completing can never re-credit the streak or count as today's goal (guarded in the data layer too). The lesson card's action button is now a quiet outlined style instead of a full-color block.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

@@ -689,18 +689,37 @@ fun SessionPlayer(
                         // completing guards a double-tap from inserting the day twice.
                         var completing by remember(day.day) { mutableStateOf(false) }
                         var celebrate by remember(day.day) { mutableStateOf(false) }
-                        Button(
-                            enabled = !completing,
-                            onClick = {
-                                completing = true
-                                container.appScope.launch {
-                                    container.progress.completeDay(lang, day.day, totalDays, day.level)
-                                }
-                                Haptics.confirm(context)
-                                celebrate = true
-                            },
-                            modifier = Modifier.fillMaxWidth()
-                        ) { Text("Mark day ${day.day} complete ✓") }
+                        val completedList by container.progress.completedDays(lang)
+                            .collectAsState(initial = null)
+                        // Revisits don't re-mark: the day is already banked, and re-completing
+                        // must not re-credit the streak (completeDay is also idempotent). The
+                        // !completing guard keeps THIS session's fresh completion on the
+                        // celebration path instead of flipping mid-overlay.
+                        val alreadyDone = !completing && completedList?.contains(day.day) == true
+                        if (alreadyDone) {
+                            Text(
+                                "Day ${day.day} is already complete ✓ — revisiting doesn't need re-marking.",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(bottom = 8.dp)
+                            )
+                            Button(
+                                onClick = onExit,
+                                modifier = Modifier.fillMaxWidth()
+                            ) { Text("Back to Today →") }
+                        } else {
+                            Button(
+                                enabled = !completing && completedList != null,
+                                onClick = {
+                                    completing = true
+                                    container.appScope.launch {
+                                        container.progress.completeDay(lang, day.day, totalDays, day.level)
+                                    }
+                                    Haptics.confirm(context)
+                                    celebrate = true
+                                },
+                                modifier = Modifier.fillMaxWidth()
+                            ) { Text("Mark day ${day.day} complete ✓") }
+                        }
                         if (celebrate) {
                             // Live streak: completeDay's write lands async and the flow
                             // recomposes the overlay with the freshly banked value.
