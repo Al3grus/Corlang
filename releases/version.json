@@ -1,6 +1,6 @@
 {
-  "versionCode": 56,
-  "versionName": "0.20.3",
-  "notes": "Profile › Assessment tidy-up: the always-open Exam readiness box is gone. The Practice button already opens quizzes and the mock exam, so the exam detail — per-section pass status and the CEFR can-do self-check — now lives together inside a single collapsible Exam readiness · B1 toggle instead of a redundant second card.",
+  "versionCode": 57,
+  "versionName": "0.20.4",
+  "notes": "Lesson navigation fixed. Tapping any bottom tab while a lesson is open — including Today — now exits it back to the Today dashboard, the same as Exit (saved); your progress is kept per step, so Continue picks up exactly where you left off. This also fixes the odd step-jump: leaving to Review and coming back no longer resumes the lesson at the wrong step, because Today returns to the homepage instead of silently rebuilding the session. Switching languages returns to the dashboard too.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

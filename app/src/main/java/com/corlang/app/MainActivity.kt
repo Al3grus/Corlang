@@ -83,11 +83,16 @@ private fun CorlangApp(container: AppContainer) {
     var showSettings by rememberSaveable { mutableStateOf(false) }
     // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
     var showPlacement by rememberSaveable { mutableStateOf(false) }
+    // Whether a guided lesson is open on the Today tab. Hoisted here so any bottom-nav tap can
+    // exit it back to the Today dashboard (lesson progress is saved per step, so it resumes).
+    var inLesson by rememberSaveable { mutableStateOf(false) }
 
     // Point the voice and speech recognizer at the active language (hr/fr).
     LaunchedEffect(lang) {
         container.tts.setLanguage(lang)
         container.speech.setLanguage(lang)
+        // Switching language returns to the Today dashboard, not a half-done lesson of the old one.
+        inLesson = false
     }
 
     // Warm every language's heavyweight content (plan + vocab) off the main thread, so the
@@ -218,6 +223,9 @@ private fun CorlangApp(container: AppContainer) {
                             // moves while the overlay stays on screen (looks frozen).
                             showSettings = false
                             showPlacement = false
+                            // Any tab tap (including Today itself) exits an open lesson back to the
+                            // dashboard — the same as "Exit (saved)". Progress is saved per step.
+                            inLesson = false
                             // A long example sentence must not keep talking over the next tab.
                             container.tts.stop()
                             navController.navigate(dest.route) {
@@ -261,13 +269,18 @@ private fun CorlangApp(container: AppContainer) {
             // the new language's progress, journey position and lists load in.
             composable(Dest.TODAY.route) {
                 Crossfade(targetState = lang, animationSpec = tween(durationMillis = 650, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-today") { l ->
-                    TodayScreen(container, l, onNavigate = { route ->
-                        navController.navigate(route) {
-                            popUpTo(Dest.TODAY.route) { saveState = true }
-                            launchSingleTop = true
-                            restoreState = true
+                    TodayScreen(
+                        container, l,
+                        inLesson = inLesson,
+                        onInLessonChange = { inLesson = it },
+                        onNavigate = { route ->
+                            navController.navigate(route) {
+                                popUpTo(Dest.TODAY.route) { saveState = true }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
                         }
-                    })
+                    )
                 }
             }
             composable(Dest.WORDS.route) {

@@ -48,6 +48,8 @@ import kotlinx.coroutines.launch
 fun TodayScreen(
     container: AppContainer,
     lang: String,
+    inLesson: Boolean = false,
+    onInLessonChange: (Boolean) -> Unit = {},
     onNavigate: (String) -> Unit = {}
 ) {
     val plan = remember(lang) { container.content.plan(lang) }
@@ -103,18 +105,19 @@ fun TodayScreen(
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
     val isDone = completed.contains(day.day)
 
-    // Guided session mode.
-    var inPlayer by rememberSaveable(lang) { mutableStateOf(false) }
-    if (inPlayer) {
+    // Guided session mode. inLesson is hoisted to the app scaffold so a bottom-nav tap (any tab,
+    // including Today) exits the lesson back to the dashboard — progress is saved per step, so a
+    // "Continue" resumes exactly where it left off.
+    if (inLesson) {
         // System back leaves the player (progress is persisted per step), not the app.
-        androidx.activity.compose.BackHandler { inPlayer = false }
+        androidx.activity.compose.BackHandler { onInLessonChange(false) }
         SessionPlayer(
             container = container,
             lang = lang,
             day = day,
             totalDays = plan.days.size,
             onNavigate = onNavigate,
-            onExit = { inPlayer = false }
+            onExit = { onInLessonChange(false) }
         )
         return
     }
@@ -241,7 +244,7 @@ fun TodayScreen(
                     Button(
                         onClick = {
                             if (completedToday > 0) onNavigate(Dest.WORDS.route)
-                            else { viewedDay = targetDay; userBrowsed = false; inPlayer = true }
+                            else { viewedDay = targetDay; userBrowsed = false; onInLessonChange(true) }
                         },
                         modifier = Modifier.padding(top = 10.dp)
                     ) {
@@ -314,7 +317,7 @@ fun TodayScreen(
                 }
             } else {
                 Button(
-                    onClick = { inPlayer = true },
+                    onClick = { onInLessonChange(true) },
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
