@@ -1,6 +1,6 @@
 {
-  "versionCode": 66,
-  "versionName": "0.20.13",
-  "notes": "The language switcher now locks while you're mid-anything — lesson, word review, quiz, exam section, placement, teach-back, or a tutor chat. The current language stays visible top-right; the picker simply won't open until the session ends, so a stray tap can't tear down your progress. The language-switch crossfade is also slower (1.3s) for a calmer transition.",
+  "versionCode": 67,
+  "versionName": "0.20.14",
+  "notes": "Two lesson fixes. Wrap-up recall no longer mangles alternatives: \"he / she is\" now shows and accepts \"on je\", \"ona je\", or \"on/ona je\" (it used to demand a bare \"on\", which didn't match the English). And the day-complete streak celebration no longer flashes away — it stays up until you tap it, then returns to the Today dashboard.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

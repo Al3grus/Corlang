@@ -190,9 +190,11 @@ fun WrapupRecall(container: AppContainer, lang: String, day: StudyDay, onFinishe
 
 /**
  * The clean, typable phrases from a day's LEARN activities, used to build the wrap-up recall.
- * For "A / B" entries we keep just the first form (one clean answer to produce); we drop
- * ellipsis stubs ("Zovem se…") and anything too long to reproduce letter-for-letter fairly.
- * Shared with the session builder so it only inserts a recall wrap-up when there's enough to test.
+ * "A / B" entries keep BOTH alternatives — truncating to the first form orphaned the gloss
+ * ("he / she is" graded against a bare "on"); Grading.gradeRecall accepts any alternative.
+ * We drop ellipsis stubs ("Zovem se…") and anything too long to reproduce letter-for-letter
+ * fairly. Shared with the session builder so it only inserts a recall wrap-up when there's
+ * enough to test.
  */
 fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
     day.activities
@@ -200,7 +202,6 @@ fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
         .flatMap { it.items }
         .asSequence()
         .filter { it.en.isNotBlank() && "…" !in it.hr && "..." !in it.hr }
-        .map { it.copy(hr = it.hr.substringBefore(" / ").trim()) }   // keep the first alternative form
         .filter { it.hr.length in 2..40 }
         .distinctBy { it.hr.lowercase() }
         .toList()
@@ -268,15 +269,16 @@ private fun RecallRunner(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.weight(1f)
                     )
-                    SpeakerButton(tts = container.tts, text = item.answerHr)
+                    // Speak alternatives with a pause, not a literal slash ("on, ona je").
+                    SpeakerButton(tts = container.tts, text = item.answerHr.replace(" / ", ", "))
                 }
             }
         }
         Button(
             onClick = {
                 if (!checked) {
-                    correct = Grading.normalize(input, strict = true) ==
-                        Grading.normalize(item.answerHr, strict = true)
+                    // Slash-aware: "on / ona je" accepts "on je", "ona je", or writing both.
+                    correct = Grading.gradeRecall(item.answerHr, input)
                     if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
                     checked = true
                 } else if (qIndex + 1 >= items.size) {
