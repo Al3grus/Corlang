@@ -124,7 +124,9 @@ fun buildSessionSteps(
         return when {
             "words tab" in t || "due words" in t -> Dest.WORDS.route
             "quiz" in t || "mock exam" in t -> Dest.PRACTICE.route
-            "cheatsheet" in t || "grammar tab" in t || "feynman" in t || "teach" in t -> Dest.LEARN.route
+            // Cheatsheet/Grammar live on the Profile tab now; Learn keeps Teach + Tutor.
+            "cheatsheet" in t || "grammar tab" in t -> Dest.PROGRESS.route
+            "feynman" in t || "teach" in t -> Dest.LEARN.route
             else -> null
         }
     }

@@ -32,7 +32,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.collectAsState
 import com.corlang.app.AppContainer
+import com.corlang.app.ai.AiClient
+import com.corlang.app.ai.ChatMessage
 import com.corlang.app.data.model.FeynmanConcept
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
@@ -97,6 +100,13 @@ private fun FeynmanRunner(
     // Which rubric points the learner says they covered.
     val covered = remember(concept.id) { mutableStateMapOf<Int, Boolean>() }
 
+    // AI review of the typed explanation (Premium): an honest grader for what the self-tick
+    // rubric can't enforce. Same gating as the exam writing feedback.
+    val entitled by container.premium.entitled.collectAsState(initial = false)
+    var aiReview by rememberSaveable(concept.id) { mutableStateOf<String?>(null) }
+    var aiLoading by remember(concept.id) { mutableStateOf(false) }
+    var aiError by remember(concept.id) { mutableStateOf<String?>(null) }
+
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).imePadding().padding(16.dp)
     ) {
@@ -126,6 +136,46 @@ private fun FeynmanRunner(
                 modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
             ) { Text("Check what I missed") }
         } else {
+            // Premium: an AI examiner grades the explanation against the rubric — the honest
+            // check the self-tick below can't be. Dark until the AI service ships.
+            if (entitled) {
+                OutlinedButton(
+                    onClick = {
+                        aiLoading = true; aiError = null; aiReview = null
+                        scope.launch {
+                            val result = container.ai.complete(
+                                system = teachReviewSystemPrompt(concept),
+                                messages = listOf(
+                                    ChatMessage("user", "My explanation:\n${myExplanation.trim()}")
+                                ),
+                                model = AiClient.FEEDBACK_MODEL,
+                                maxTokens = 800
+                            )
+                            aiLoading = false
+                            result.fold(
+                                onSuccess = { aiReview = it },
+                                onFailure = { aiError = it.message ?: "Review failed." }
+                            )
+                        }
+                    },
+                    enabled = !aiLoading,
+                    modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
+                ) { Text(if (aiLoading) "Reviewing…" else "🤖 Get AI review of my explanation") }
+                aiError?.let {
+                    Text(it, style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.error,
+                        modifier = Modifier.padding(top = 4.dp))
+                }
+                aiReview?.let {
+                    InfoCard {
+                        Text("AI review", style = MaterialTheme.typography.labelMedium,
+                            fontWeight = FontWeight.Bold)
+                        Text(it, style = MaterialTheme.typography.bodyMedium,
+                            modifier = Modifier.padding(top = 4.dp))
+                    }
+                }
+            }
+
             SectionTitle("Did you cover these? Tick the ones you got")
             concept.rubricPoints.forEachIndexed { i, rp ->
                 val got = covered[i] ?: false
@@ -202,4 +252,28 @@ private fun FeynmanRunner(
             Text("Back to concepts")
         }
     }
+}
+
+/**
+ * Examiner persona for the teach-back review: grades the learner's own-words explanation
+ * against the concept's rubric, point by point, without rewriting their text for them.
+ */
+private fun teachReviewSystemPrompt(concept: FeynmanConcept): String = buildString {
+    appendLine(
+        "You are a strict but encouraging examiner using the Feynman technique. The learner " +
+        "was asked to explain a language concept in their own words. Grade their explanation " +
+        "against the rubric below."
+    )
+    appendLine()
+    appendLine("Concept: ${concept.title}")
+    appendLine("Reference explanation: ${concept.simpleExplanation}")
+    appendLine("Rubric points:")
+    concept.rubricPoints.forEachIndexed { i, rp -> appendLine("${i + 1}. ${rp.point}") }
+    appendLine()
+    appendLine(
+        "Reply with: one line per rubric point — '✓' if their explanation genuinely covers it " +
+        "or '✗' with a short reason if not — then at most two sentences on the most important " +
+        "thing to fix or sharpen. Judge only what they wrote; do not rewrite it for them. " +
+        "Keep the whole reply under 120 words."
+    )
 }

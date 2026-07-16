@@ -414,8 +414,9 @@ fun SettingsScreen(
                         else MaterialTheme.colorScheme.onSurface
             )
             Text(
-                "Premium unlocks the AI tutor: a conversation partner that chats in your learning " +
-                    "language at your level (Talk tab) and examiner feedback on your exam writing. " +
+                "Premium unlocks the AI: a conversation partner in your learning language " +
+                    "(Learn › Tutor), examiner feedback on your exam writing, and reviews of " +
+                    "your teach-back explanations (Learn › Teach). " +
                     if (entitled) "Enjoy!"
                     else "It arrives with the Google Play release.",
                 style = MaterialTheme.typography.bodySmall,

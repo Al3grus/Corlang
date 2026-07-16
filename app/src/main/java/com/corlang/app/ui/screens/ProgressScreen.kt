@@ -2,6 +2,7 @@ package com.corlang.app.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -77,6 +78,24 @@ fun ProgressScreen(
     val wordsStarted = reviews.size
     val wordsLearned = reviews.count { it.isLearned }
     val wordsMastered = reviews.count { it.isMastered }
+
+    // Reference reading opened from this tab (Cheatsheet / Grammar moved here from Learn —
+    // Learn is now the two active AI modes; this is the browse-when-you-want library).
+    var refPage by rememberSaveable(lang) { mutableStateOf<String?>(null) }
+    if (refPage != null) {
+        androidx.activity.compose.BackHandler { refPage = null }
+        Column(Modifier.fillMaxSize()) {
+            OutlinedButton(
+                onClick = { refPage = null },
+                modifier = Modifier.padding(start = 16.dp, top = 8.dp)
+            ) { Text("← Back") }
+            Box(Modifier.weight(1f)) {
+                if (refPage == "cheatsheet") CheatsheetScreen(container, lang)
+                else GrammarScreen(container, lang)
+            }
+        }
+        return
+    }
 
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
@@ -177,6 +196,15 @@ fun ProgressScreen(
         // ---- Reference ---- (the long, browse-when-you-want material, collapsed by default)
         Spacer(Modifier.height(22.dp))
         SectionTitle("Reference")
+
+        OutlinedButton(
+            onClick = { refPage = "cheatsheet" },
+            modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
+        ) { Text("Cheatsheet — the language on one page →") }
+        OutlinedButton(
+            onClick = { refPage = "grammar" },
+            modifier = Modifier.fillMaxWidth().padding(top = 4.dp, bottom = 6.dp)
+        ) { Text("Grammar syllabus →") }
 
         CollapsibleCard("CEFR ladder & milestones") {
             levels.forEach { level ->

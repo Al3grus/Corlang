@@ -23,13 +23,14 @@ import com.corlang.app.AppContainer
 import com.corlang.app.ui.theme.rememberReducedMotion
 
 /**
- * Learn = the reference half of the app: the one-page Cheatsheet, the full source-anchored
- * Grammar syllabus, and the Feynman Teach-back loop, switched with a segmented control.
+ * Learn = the active-learning half of the app: the Feynman Teach-back loop and the AI Tutor
+ * chat. Reference material (Cheatsheet, Grammar) lives on the Profile tab — keeping this tab
+ * to two focused modes instead of a four-way junk drawer.
  */
 @Composable
 fun LearnScreen(container: AppContainer, lang: String) {
     var tab by rememberSaveable(lang) { mutableIntStateOf(0) }
-    val labels = listOf("Cheatsheet", "Grammar", "Teach", "Tutor")
+    val labels = listOf("Teach", "Tutor")
 
     Column(modifier = Modifier.fillMaxSize()) {
         SingleChoiceSegmentedButtonRow(
@@ -61,9 +62,7 @@ fun LearnScreen(container: AppContainer, lang: String) {
             label = "learn-tab"
         ) { t ->
             when (t) {
-                0 -> CheatsheetScreen(container, lang)
-                1 -> GrammarScreen(container, lang)
-                2 -> TeachScreen(container, lang)
+                0 -> TeachScreen(container, lang)
                 else -> TalkScreen(container, lang)
             }
         }
