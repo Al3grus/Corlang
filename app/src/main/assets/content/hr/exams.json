@@ -154,7 +154,7 @@
             "audioText": "Zbog jakog vjetra trajekt za Hvar danas ne vozi. Sljedeći polazak je sutra ujutro u sedam sati.",
             "options": ["zbog jakog vjetra", "zbog kiše", "zbog kvara", "zbog gužve"], "answer": "zbog jakog vjetra",
             "explanation": "'Zbog jakog vjetra' = because of strong wind." },
-          { "type": "FILL", "difficulty": 4, "prompt": "Kada je sljedeći polazak trajekta? (npr. 'sutra u 7')",
+          { "type": "FILL", "difficulty": 4, "prompt": "Kada je sljedeći polazak trajekta? (npr. 'danas u 15')",
             "audioText": "Zbog jakog vjetra trajekt za Hvar danas ne vozi. Sljedeći polazak je sutra ujutro u sedam sati.",
             "answer": "sutra u 7", "accepted": ["sutra ujutro u sedam", "sutra u sedam", "sutra ujutro u 7", "u 7", "u sedam"],
             "explanation": "'sutra ujutro u sedam sati' = tomorrow morning at seven." },

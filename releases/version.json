@@ -1,6 +1,6 @@
 {
-  "versionCode": 71,
-  "versionName": "0.20.18",
-  "notes": "Portuguese wrap-up recall fixed: pattern demos like \"ão — não, pão, mão\" no longer demand the whole demo string. Items shaped \"headword — example\" now ask for just the headword, and any item whose English prompt contains its own answer is excluded from recall. A permanent content test enforces both rules across all three languages.",
+  "versionCode": 72,
+  "versionName": "0.20.19",
+  "notes": "Quizzes and mock exams audited for answer leaks: one Croatian listening question's format example was literally the answer — fixed, and a permanent content test now blocks any typed question whose prompt contains its own answer, in every language. The About text also stops naming only two exam formats — it now speaks for every language's official curriculum and exam.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

@@ -317,6 +317,50 @@ class ContentValidationTest {
     }
 
     @Test
+    fun `typed fill answers never appear verbatim in their own prompt`() {
+        // Guards the field-found class: a FILL prompt whose format example IS the answer
+        // ("Kada je sljedeći polazak? (npr. 'sutra u 7')" with answer "sutra u 7").
+        // Single-word coincidences are legitimate declension tasks (a lemma hint whose asked
+        // form is unchanged: "(godina)" → gen.pl "godina"), so only multi-word answers count.
+        val lenient = Json { ignoreUnknownKeys = true }
+        fun norm(s: String) = com.corlang.app.ui.screens.Grading.normalize(s, strict = true)
+        fun collectFills(
+            e: kotlinx.serialization.json.JsonElement,
+            out: MutableList<Pair<String, List<String>>>
+        ) {
+            when (e) {
+                is kotlinx.serialization.json.JsonObject -> {
+                    val type = (e["type"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                    val prompt = (e["prompt"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                    val answer = (e["answer"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                    if (type == "FILL" && prompt != null && !answer.isNullOrBlank()) {
+                        val accepted = (e["accepted"] as? kotlinx.serialization.json.JsonArray)
+                            ?.mapNotNull { (it as? kotlinx.serialization.json.JsonPrimitive)?.content }
+                            ?: emptyList()
+                        out += prompt to (listOf(answer) + accepted)
+                    }
+                    e.values.forEach { collectFills(it, out) }
+                }
+                is kotlinx.serialization.json.JsonArray -> e.forEach { collectFills(it, out) }
+                else -> {}
+            }
+        }
+        for (lang in listOf("hr", "fr", "pt")) {
+            for (name in listOf("quizzes.json", "exams.json", "placement.json")) {
+                if (!exists(lang, name)) continue
+                val fills = mutableListOf<Pair<String, List<String>>>()
+                collectFills(lenient.parseToJsonElement(read(lang, name)), fills)
+                fills.forEach { (prompt, answers) ->
+                    val p = norm(prompt)
+                    answers.map { norm(it) }.filter { " " in it }.forEach { a ->
+                        assertTrue("$lang/$name: FILL prompt leaks its answer '$a': $prompt", a !in p)
+                    }
+                }
+            }
+        }
+    }
+
+    @Test
     fun `french split vocab carries provenance from known keys`() {
         if (!frDir("vocab").isDirectory) return
         loadVocabPacks("fr").forEach { pack ->
