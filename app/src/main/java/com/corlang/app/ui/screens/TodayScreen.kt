@@ -255,26 +255,15 @@ fun TodayScreen(
                             modifier = Modifier.padding(top = 2.dp)
                         )
                     }
-                    // The single next best action. The lesson itself opens with the due words,
-                    // so before it's done we always just start the lesson, no words-first detour.
-                    // Day done + nothing due = NO button: new words only enter through lessons,
-                    // so there is genuinely nothing to send the learner to.
-                    if (completedToday == 0 || dueNow > 0) {
+                    // The streak hero only ever offers REVIEW: with the day done and words due,
+                    // one button; day done and nothing due, none (new words only enter through
+                    // lessons). Starting/continuing a lesson lives on the lesson card below —
+                    // it's a lesson action, not a streak action.
+                    if (completedToday > 0 && dueNow > 0) {
                         Button(
-                            onClick = {
-                                if (completedToday > 0) onNavigate(Dest.WORDS.route)
-                                else { viewedDay = targetDay; userBrowsed = false; onInLessonChange(true) }
-                            },
+                            onClick = { onNavigate(Dest.WORDS.route) },
                             modifier = Modifier.padding(top = 10.dp)
-                        ) {
-                            Text(
-                                when {
-                                    completedToday > 0 -> "Review $dueNow words →"
-                                    targetStarted -> "Continue Day $targetDay →"
-                                    else -> "Start Day $targetDay →"
-                                }
-                            )
-                        }
+                        ) { Text("Review $dueNow words →") }
                     }
                 }
                 GoalRing(
@@ -312,42 +301,39 @@ fun TodayScreen(
                 )
                 SectionTitle("In this lesson you will")
                 Text(day.objective, style = com.corlang.app.ui.theme.CorlangType.reading)
-            }
-        }
 
-        // The hero already starts today's lesson — so a start button here would just repeat it.
-        // Only when you've browsed to a DIFFERENT day (via the map below) do we surface an action
-        // for that day; days ahead of the one you're up to stay locked.
-        if (day.day != targetDay) {
-            val locked = day.day > targetDay
-            if (locked) {
-                Surface(
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                    shape = RoundedCornerShape(12.dp),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text(
-                        "Locked — finish Day $targetDay first. No skipping ahead.",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
-            } else {
-                Button(
-                    onClick = { onInLessonChange(true) },
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text(
-                        when {
-                            isDone -> "Revisit Day ${day.day} ✓"
-                            lessonStarted -> "Continue Day ${day.day} ($stepsDone/${actionSteps.size} steps)"
-                            else -> "Open Day ${day.day} →"
-                        },
-                        style = MaterialTheme.typography.titleMedium,
-                        modifier = Modifier.padding(vertical = 6.dp)
-                    )
+                // The lesson action lives HERE, with the lesson it acts on — never on the
+                // streak hero. Days ahead of the one you're up to stay locked.
+                if (day.day > targetDay) {
+                    Surface(
+                        color = MaterialTheme.colorScheme.surfaceVariant,
+                        contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                    ) {
+                        Text(
+                            "Locked — finish Day $targetDay first. No skipping ahead.",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold,
+                            modifier = Modifier.padding(16.dp)
+                        )
+                    }
+                } else {
+                    Button(
+                        onClick = { onInLessonChange(true) },
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                    ) {
+                        Text(
+                            when {
+                                isDone -> "Revisit Day ${day.day} ✓"
+                                lessonStarted -> "Continue Day ${day.day} ($stepsDone/${actionSteps.size} steps)"
+                                day.day == targetDay -> "Start Day ${day.day} →"
+                                else -> "Open Day ${day.day} →"
+                            },
+                            style = MaterialTheme.typography.titleMedium,
+                            modifier = Modifier.padding(vertical = 6.dp)
+                        )
+                    }
                 }
             }
         }
