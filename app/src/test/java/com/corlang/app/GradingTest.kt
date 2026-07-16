@@ -61,6 +61,28 @@ class GradingTest {
         assertFalse(Grading.gradeReorder(question, listOf("parle", "Je", "français")))
     }
 
+    @Test fun reorderToken_hidesSentencePositionButKeepsDiacritics() {
+        // Sentence-case capital and trailing dot would betray the first/last token.
+        assertEquals("zovem", Grading.reorderToken("Zovem"))
+        assertEquals("ana", Grading.reorderToken("Ana."))
+        assertEquals("kavu", Grading.reorderToken("kavu,"))
+        assertEquals("živiš", Grading.reorderToken("živiš?"))   // diacritics preserved
+        assertEquals("j'ai", Grading.reorderToken("J'ai"))       // internal apostrophe kept
+        assertEquals("?", Grading.reorderToken("?"))             // never emit an empty chip
+    }
+
+    @Test fun reorder_gradesDisplayNormalizedTokensAgainstOriginalOrdered() {
+        // The UI shows reorderToken() forms; grading must accept them against the raw ordered list.
+        val question = q(
+            QuestionType.REORDER,
+            options = listOf("Zovem", "se", "Ana."),
+            ordered = listOf("Zovem", "se", "Ana.")
+        )
+        val tapped = question.ordered.map { Grading.reorderToken(it) }
+        assertTrue(Grading.gradeReorder(question, tapped))
+        assertFalse(Grading.gradeReorder(question, tapped.reversed()))
+    }
+
     @Test fun match_requiresAllPairsCorrect() {
         val question = q(
             QuestionType.MATCH,

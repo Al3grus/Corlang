@@ -267,12 +267,16 @@ private fun QuizRunner(
 
             QuestionType.REORDER -> {
                 // Scramble the tokens for display, content lists them in the correct order,
-                // and an already-solved puzzle is no exercise.
+                // and an already-solved puzzle is no exercise. Tokens are shown lowercased with
+                // edge punctuation stripped: the sentence-case capital and the trailing dot
+                // would give the first and last word away.
                 val scrambled = remember(q.prompt) {
-                    var s = q.options.shuffled()
+                    val tokens = q.options.map(Grading::reorderToken)
+                    val answer = q.ordered.map(Grading::reorderToken)
+                    var s = tokens.shuffled()
                     var tries = 0
-                    while (s == q.ordered && q.options.distinct().size > 1 && tries < 10) {
-                        s = q.options.shuffled(); tries++
+                    while (s == answer && tokens.distinct().size > 1 && tries < 10) {
+                        s = tokens.shuffled(); tries++
                     }
                     s
                 }
@@ -284,7 +288,7 @@ private fun QuizRunner(
                 FlowRow(modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp)) {
                     scrambled.forEach { token ->
                         val used = reorderAssembled.count { it == token } >=
-                            q.options.count { it == token }
+                            scrambled.count { it == token }
                         Surface(
                             shape = RoundedCornerShape(8.dp),
                             color = if (used) MaterialTheme.colorScheme.surfaceVariant
