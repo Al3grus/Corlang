@@ -17,6 +17,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
@@ -101,15 +102,28 @@ fun LearnActivity(container: AppContainer, activity: DayActivity, onDone: () -> 
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () -> Unit) {
+fun ExerciseActivity(
+    container: AppContainer,
+    activity: DayActivity,
+    loadResumeSolved: suspend () -> Int = { 0 },
+    onSolvedChange: (Int) -> Unit = {},
+    onDone: () -> Unit
+) {
     val context = LocalContext.current
     val total = activity.questions.size
 
+    // Resume: load how many distinct questions were already cleared (persisted per step), then
+    // build the queue skipping them — exit after 3 of 8 and you return to the 4th, not the 1st.
+    // Gated on the async load so the first frame doesn't momentarily start from question one.
+    var resumeSolved by remember(activity.title) { mutableIntStateOf(-1) }
+    LaunchedEffect(activity.title) { resumeSolved = loadResumeSolved().coerceIn(0, total) }
+    if (resumeSolved < 0) return
+
     // Live queue of remaining questions; missed ones get re-appended. `served` bumps each
     // time we advance so option-shuffle / response state re-init cleanly.
-    val queue = remember(activity.title) { mutableStateListOf<Question>().apply { addAll(activity.questions) } }
+    val queue = remember(activity.title) { mutableStateListOf<Question>().apply { addAll(activity.questions.drop(resumeSolved)) } }
     var served by remember(activity.title) { mutableIntStateOf(0) }
-    var solved by remember(activity.title) { mutableIntStateOf(0) }   // distinct questions cleared
+    var solved by remember(activity.title) { mutableIntStateOf(resumeSolved) }   // distinct questions cleared
     var missedAny by remember(activity.title) { mutableStateOf(false) }
     var checked by remember(activity.title) { mutableStateOf(false) }
     var lastCorrect by remember(activity.title) { mutableStateOf(false) }
@@ -290,6 +304,7 @@ fun ExerciseActivity(container: AppContainer, activity: DayActivity, onDone: () 
                     val cur = queue.removeAt(0)
                     if (lastCorrect) {
                         solved++            // a distinct question cleared
+                        onSolvedChange(solved)   // persist so an exit/resume continues here
                     } else {
                         queue.add(cur)      // re-ask this one later, until it's right
                     }

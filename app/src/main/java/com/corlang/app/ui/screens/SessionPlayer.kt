@@ -57,6 +57,7 @@ import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.theme.CorlangColors
 import com.corlang.app.ui.theme.Motion
 import com.corlang.app.ui.theme.rememberReducedMotion
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 /**
@@ -535,7 +536,22 @@ fun SessionPlayer(
                     StepKind.CLOZE -> ClozeDrill(container, lang, onDrillDone)
                     StepKind.RECALL -> RecallDrill(container, lang, onDrillDone)
                     StepKind.LEARN -> activity?.let { LearnActivity(container, it, onDrillDone) }
-                    StepKind.EXERCISE -> activity?.let { ExerciseActivity(container, it, onDrillDone) }
+                    StepKind.EXERCISE -> activity?.let { act ->
+                        ExerciseActivity(
+                            container, act,
+                            // Resume within a multi-exercise step: how many were already cleared.
+                            loadResumeSolved = {
+                                container.progress.dayTaskChecks(lang, day.day).first()
+                                    .count { it.itemId.startsWith("${s.id}::x") }
+                            },
+                            onSolvedChange = { n ->
+                                container.appScope.launch {
+                                    container.progress.setDayTask(lang, day.day, "${s.id}::x$n", true)
+                                }
+                            },
+                            onDone = onDrillDone
+                        )
+                    }
                     StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
                     StepKind.WRAPUP -> WrapupRecall(container, lang, day, onDrillDone)
                     else -> {}
