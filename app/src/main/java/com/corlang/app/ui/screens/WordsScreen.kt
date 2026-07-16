@@ -365,6 +365,8 @@ internal fun WordSession(
     onGrade: (SrsGrade) -> Unit,
     onExit: () -> Unit
 ) {
+    // A review card on screen locks the top-bar language picker (mid-session switch guard).
+    com.corlang.app.ui.Engagement.Report()
     var revealed by remember(cardKey) { mutableStateOf(false) }
     val feedback = CorlangColors.feedback
     val context = LocalContext.current

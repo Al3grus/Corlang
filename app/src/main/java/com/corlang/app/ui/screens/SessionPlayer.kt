@@ -275,6 +275,8 @@ fun SessionPlayer(
     onNavigate: (String) -> Unit,
     onExit: () -> Unit
 ) {
+    // A lesson in progress locks the top-bar language picker (switching would tear it down).
+    com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current

@@ -291,6 +291,8 @@ private fun ScoredSectionRunner(
     section: ExamSection,
     onExit: () -> Unit
 ) {
+    // An exam section in progress locks the top-bar language picker (mid-session switch guard).
+    com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
     val questions = section.questions
@@ -482,6 +484,8 @@ private fun OpenSectionRunner(
     section: ExamSection,
     onExit: () -> Unit
 ) {
+    // An exam section in progress locks the top-bar language picker (mid-session switch guard).
+    com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
     var promptIndex by rememberSaveable(section.id) { mutableIntStateOf(0) }
     var passCount by rememberSaveable(section.id) { mutableIntStateOf(0) }

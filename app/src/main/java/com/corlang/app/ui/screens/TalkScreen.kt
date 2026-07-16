@@ -116,6 +116,12 @@ fun TalkScreen(container: AppContainer, lang: String) {
     val scope = rememberCoroutineScope()
     val listState = rememberLazyListState()
 
+    // A conversation in progress locks the top-bar language picker — the transcript is
+    // in-memory only and a language switch would wipe it. An empty Tutor tab doesn't lock.
+    if (messages.isNotEmpty() || sending) {
+        com.corlang.app.ui.Engagement.Report()
+    }
+
     fun send(text: String) {
         if (text.isBlank() || sending) return
         messages.add(ChatMessage("user", text.trim()))
