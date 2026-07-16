@@ -50,8 +50,10 @@ Real-device findings from dogfooding days 1-6 (Croatian), all fixed + released s
   answer are excluded. A permanent ContentValidationTest sweep enforces both across hr/fr/pt.
 
 ## Legal / trust
-- [ ] **Add a real contact email** to `PRIVACY.md` (replace the `[add your contact email here]` placeholder).
-- [ ] Host the privacy policy at a stable public URL (GitHub serves `PRIVACY.md` fine).
+- [x] **Contact email** in `PRIVACY.md`: support@corlang.app (Cloudflare Email Routing →
+      corlang@proton.me; domain corlang.app registered 2026-07-16).
+- [x] Privacy policy at a stable public URL — GitHub `PRIVACY.md` for launch; move to
+      corlang.app/privacy when the one-page site goes up (Cloudflare Pages).
 - [ ] Sanity-check content licensing: confirm curricula/exam material is referenced/mapped, not copied.
 
 ## Release engineering
