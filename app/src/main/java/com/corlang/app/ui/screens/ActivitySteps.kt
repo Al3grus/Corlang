@@ -216,11 +216,15 @@ fun ExerciseActivity(
             )
 
             QuestionType.REORDER -> {
+                // Tokens are shown lowercased with edge punctuation stripped: the sentence-case
+                // capital and the trailing dot would give the first and last word away.
                 val scrambled = remember(q.prompt) {
-                    var s = q.options.shuffled()
+                    val tokens = q.options.map(Grading::reorderToken)
+                    val answer = q.ordered.map(Grading::reorderToken)
+                    var s = tokens.shuffled()
                     var tries = 0
-                    while (s == q.ordered && q.options.distinct().size > 1 && tries < 10) {
-                        s = q.options.shuffled(); tries++
+                    while (s == answer && tokens.distinct().size > 1 && tries < 10) {
+                        s = tokens.shuffled(); tries++
                     }
                     s
                 }
@@ -228,7 +232,7 @@ fun ExerciseActivity(
                 FlowRow(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
                     scrambled.forEach { token ->
                         val used = reorderAssembled.count { it == token } >=
-                            q.options.count { it == token }
+                            scrambled.count { it == token }
                         Surface(
                             shape = RoundedCornerShape(8.dp),
                             color = if (used) MaterialTheme.colorScheme.surfaceVariant
@@ -298,14 +302,20 @@ fun ExerciseActivity(
                         else -> false
                     }
                     lastCorrect = correct
-                    if (correct) Haptics.confirm(context) else { Haptics.reject(context); missedAny = true }
+                    if (correct) {
+                        Haptics.confirm(context)
+                        // Persist the solve NOW, at Check time — not on the advance tap. Exiting
+                        // from the "✅ Correct" feedback screen (tab tap, back) used to lose this
+                        // question and re-serve it on resume.
+                        solved++
+                        onSolvedChange(solved)
+                    } else {
+                        Haptics.reject(context); missedAny = true
+                    }
                     checked = true
                 } else {
                     val cur = queue.removeAt(0)
-                    if (lastCorrect) {
-                        solved++            // a distinct question cleared
-                        onSolvedChange(solved)   // persist so an exit/resume continues here
-                    } else {
+                    if (!lastCorrect) {
                         queue.add(cur)      // re-ask this one later, until it's right
                     }
                     if (queue.isEmpty()) {

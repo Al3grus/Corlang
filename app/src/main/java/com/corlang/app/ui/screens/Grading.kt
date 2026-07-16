@@ -42,6 +42,18 @@ object Grading {
     fun gradeReorder(q: Question, assembled: List<String>): Boolean =
         assembled.map { normalize(it) } == q.ordered.map { normalize(it) }
 
+    /**
+     * Display form of a REORDER token: lowercased, edge punctuation stripped. Content stores
+     * the tokens as they appear in the sentence ("Zovem", "se.") — shown verbatim, the capital
+     * letter betrays the first token and the trailing dot the last. Diacritics stay (this is
+     * display, not lenient matching); [gradeReorder] normalizes both sides, so tokens shaped
+     * here still grade correctly against q.ordered.
+     */
+    fun reorderToken(s: String): String =
+        s.trim().lowercase()
+            .trim('.', ',', '!', '?', ';', ':', '"', '\'', '’', '…', '(', ')')
+            .ifEmpty { s }
+
     /** True if every left item was matched to its correct right item. */
     fun gradeMatch(q: Question, mapping: Map<String, String>): Boolean =
         q.pairs.all { normalize(mapping[it.left] ?: "") == normalize(it.right) }
