@@ -180,13 +180,14 @@ fun TodayScreen(
         else -> targetStepsDone.toFloat() / targetAction.size
     }
 
-    // One even rhythm between the page's blocks so nothing clusters at the top.
+    // Generous, even rhythm so the three blocks read as distinct bands — streak up top, the
+    // lesson card mid, the journey anchoring the bottom — instead of clustering under the hero.
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
             .padding(horizontal = 16.dp, vertical = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(20.dp)
+        verticalArrangement = Arrangement.spacedBy(28.dp)
     ) {
         // Hero: streak + daily goal ring + ONE unmissable next action. A quiet bordered surface
         // rather than a loud coloured banner — the streak is a calm signal, not a trophy.
@@ -264,22 +265,31 @@ fun TodayScreen(
             }
         }
 
-        // Lesson header + objective.
-        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(
-                "${day.phase} · Week ${day.week} · ${day.level}",
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.primary
-            )
-            Text(
-                day.title,
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold
-            )
-            InfoCard {
+        // Lesson header + objective, in the same calm bordered card as the streak hero, so the
+        // screen reads as two matching cards sitting above the open journey path.
+        Surface(
+            color = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.onSurface,
+            shape = RoundedCornerShape(16.dp),
+            border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                Text(
+                    "${day.phase} · Week ${day.week} · ${day.level}",
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    day.title,
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold
+                )
                 SectionTitle("In this lesson you will")
-                Text(day.objective, style = com.corlang.app.ui.theme.CorlangType.reading,
-                    modifier = Modifier.padding(bottom = 4.dp))
+                Text(day.objective, style = com.corlang.app.ui.theme.CorlangType.reading)
             }
         }
 
