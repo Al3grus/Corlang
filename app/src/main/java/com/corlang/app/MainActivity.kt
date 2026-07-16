@@ -260,7 +260,7 @@ private fun CorlangApp(container: AppContainer) {
             // Each screen crossfades on a language switch, so content doesn't hard-cut/flicker as
             // the new language's progress, journey position and lists load in.
             composable(Dest.TODAY.route) {
-                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-today") { l ->
+                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 650, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-today") { l ->
                     TodayScreen(container, l, onNavigate = { route ->
                         navController.navigate(route) {
                             popUpTo(Dest.TODAY.route) { saveState = true }
@@ -271,22 +271,22 @@ private fun CorlangApp(container: AppContainer) {
                 }
             }
             composable(Dest.WORDS.route) {
-                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-review") { l ->
+                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 650, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-review") { l ->
                     WordsScreen(container, l)
                 }
             }
             composable(Dest.PRACTICE.route) {
-                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-practice") { l ->
+                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 650, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-practice") { l ->
                     QuizScreen(container, l)
                 }
             }
             composable(Dest.LEARN.route) {
-                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-learn") { l ->
+                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 650, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-learn") { l ->
                     LearnScreen(container, l)
                 }
             }
             composable(Dest.PROGRESS.route) {
-                Crossfade(targetState = lang, animationSpec = tween(300), label = "lang-profile") { l ->
+                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 650, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-profile") { l ->
                     ProgressScreen(container, l, onNavigate = { route ->
                         navController.navigate(route) {
                             popUpTo(Dest.TODAY.route) { saveState = true }
