@@ -114,6 +114,10 @@ class ProgressRepository(private val dao: ProgressDao) {
      * atomic transaction, so a crash mid-way can't leave partial state.
      */
     suspend fun completeDay(lang: String, day: Int, totalDays: Int, currentLevel: String) {
+        // Idempotent: re-completing an already-completed day (a revisit) must NOT re-credit the
+        // streak, count as today's goal, or touch the plan position. The UI hides the button on
+        // revisits; this guards the data layer against any other path.
+        if (dao.isDayCompleted(lang, day)) return
         val now = System.currentTimeMillis()
         val today = LocalDate.now().toEpochDay()
         val existing = dao.progressOnce(lang) ?: LanguageProgress(langCode = lang)

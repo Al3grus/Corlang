@@ -37,6 +37,9 @@ interface ProgressDao {
     @Query("SELECT day FROM day_completion WHERE langCode = :lang")
     fun completedDays(lang: String): Flow<List<Int>>
 
+    @Query("SELECT EXISTS(SELECT 1 FROM day_completion WHERE langCode = :lang AND day = :day)")
+    suspend fun isDayCompleted(lang: String, day: Int): Boolean
+
     @Query("SELECT COUNT(DISTINCT day) FROM day_completion WHERE langCode = :lang")
     fun completedDayCount(lang: String): Flow<Int>
 

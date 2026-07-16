@@ -319,8 +319,13 @@ fun TodayScreen(
                         )
                     }
                 } else {
-                    Button(
+                    // Outlined, not filled: a quiet bordered action that matches the card's
+                    // calm style instead of a full-color block.
+                    OutlinedButton(
                         onClick = { onInLessonChange(true) },
+                        border = androidx.compose.foundation.BorderStroke(
+                            1.dp, MaterialTheme.colorScheme.primary
+                        ),
                         modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                     ) {
                         Text(
@@ -329,9 +334,7 @@ fun TodayScreen(
                                 lessonStarted -> "Continue Day ${day.day} ($stepsDone/${actionSteps.size} steps)"
                                 day.day == targetDay -> "Start Day ${day.day} →"
                                 else -> "Open Day ${day.day} →"
-                            },
-                            style = MaterialTheme.typography.titleMedium,
-                            modifier = Modifier.padding(vertical = 6.dp)
+                            }
                         )
                     }
                 }
