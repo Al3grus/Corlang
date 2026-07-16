@@ -37,6 +37,8 @@ import kotlinx.coroutines.launch
  */
 @Composable
 fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
+    // A placement test in progress locks the top-bar language picker (mid-session switch guard).
+    com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
     val test = remember(lang) { container.content.placement(lang) }
     if (test == null) {

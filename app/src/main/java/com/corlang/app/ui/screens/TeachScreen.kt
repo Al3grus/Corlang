@@ -88,6 +88,8 @@ private fun FeynmanRunner(
     concept: FeynmanConcept,
     onExit: () -> Unit
 ) {
+    // A teach-back in progress locks the top-bar language picker (mid-session switch guard).
+    com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
     // Saveable: a half-typed explanation survives rotation and accidental tab switches.
     var myExplanation by rememberSaveable(concept.id) { mutableStateOf("") }

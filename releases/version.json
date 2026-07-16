@@ -1,6 +1,6 @@
 {
-  "versionCode": 65,
-  "versionName": "0.20.12",
-  "notes": "Exercise resume is now exact: the app remembers WHICH questions you cleared, not just how many. A question you missed comes back after an exit/resume (it used to be silently dropped), and the finish message stays honest — no more \"Perfect, first try on every one\" when one had to be retried.",
+  "versionCode": 66,
+  "versionName": "0.20.13",
+  "notes": "The language switcher now locks while you're mid-anything — lesson, word review, quiz, exam section, placement, teach-back, or a tutor chat. The current language stays visible top-right; the picker simply won't open until the session ends, so a stray tap can't tear down your progress. The language-switch crossfade is also slower (1.3s) for a calmer transition.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

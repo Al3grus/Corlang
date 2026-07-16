@@ -26,14 +26,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.corlang.app.data.model.LanguageMeta
 
-/** Top bar showing the app title and a language picker (flag + name) on the right. */
+/**
+ * Top bar showing the app title and a language picker (flag + name) on the right.
+ *
+ * [pickerEnabled] = false locks the picker while the learner is mid-session (lesson, review,
+ * quiz, exam…): the current language stays visible as a static badge, but the dropdown can't
+ * open — a mid-session switch would tear down the session and lose partial work.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LanguageTopBar(
     languages: List<LanguageMeta>,
     selected: String,
     onSelect: (String) -> Unit,
-    onSettings: () -> Unit = {}
+    onSettings: () -> Unit = {},
+    pickerEnabled: Boolean = true
 ) {
     var expanded by remember { mutableStateOf(false) }
     val current = languages.firstOrNull { it.code == selected } ?: languages.firstOrNull()
@@ -60,10 +67,11 @@ fun LanguageTopBar(
             IconButton(onClick = onSettings) {
                 Icon(Icons.Filled.Settings, contentDescription = "Settings", tint = onBar)
             }
-            if (languages.size <= 1) {
-                // Single language: show it as a static badge, no picker.
+            if (languages.size <= 1 || !pickerEnabled) {
+                // Single language, or picker locked mid-session: a static badge, no dropdown.
                 Text(
-                    (current?.flagEmoji ?: "") + "  " + (current?.nativeName ?: ""),
+                    (current?.flagEmoji ?: "") + "  " +
+                        (if (languages.size <= 1) current?.nativeName ?: "" else current?.name ?: ""),
                     color = onBar,
                     fontSize = 15.sp,
                     modifier = Modifier.padding(end = 16.dp)

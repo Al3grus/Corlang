@@ -158,6 +158,8 @@ private fun QuizRunner(
     quiz: Quiz,
     onExit: () -> Unit
 ) {
+    // A quiz in progress locks the top-bar language picker (mid-session switch guard).
+    com.corlang.app.ui.Engagement.Report()
     val questions = remember(quiz.id) { quiz.questions.sortedBy { it.difficulty } }
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
