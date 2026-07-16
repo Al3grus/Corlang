@@ -130,16 +130,14 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
             ) { Text(option, modifier = Modifier.padding(12.dp)) }
         }
         if (chosen != null) {
-            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(top = 4.dp)) {
-                Text(
-                    item.sentence.replace("___", item.answer),
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.weight(1f)
-                )
-                SpeakerButton(tts = container.tts, text = item.sentence.replace("___", item.answer))
-            }
+            // Text only in the verdict — no speaker on answer reveals (field feedback).
+            Text(
+                item.sentence.replace("___", item.answer),
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(top = 4.dp)
+            )
             Button(
                 onClick = {
                     if (qIndex + 1 >= items.size) finished = true else { qIndex++; chosen = null }
@@ -284,15 +282,12 @@ private fun RecallRunner(
                 contentColor = if (correct) feedback.onCorrectContainer else feedback.onWrongContainer,
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(10.dp)) {
-                    Text(
-                        if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.weight(1f)
-                    )
-                    // Speak alternatives with a pause, not a literal slash ("on, ona je").
-                    SpeakerButton(tts = container.tts, text = item.answerHr.replace(" / ", ", "))
-                }
+                // Text only in the verdict — no speaker on answer reveals (field feedback).
+                Text(
+                    if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(10.dp)
+                )
             }
         }
         Button(
