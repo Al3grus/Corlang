@@ -1,6 +1,6 @@
 {
-  "versionCode": 60,
-  "versionName": "0.20.7",
-  "notes": "Exercises now resume where you left off. If a lesson step has several exercises and you do a few then leave, reopening the step continues from the next one instead of restarting at the first. Progress is saved per cleared exercise.",
+  "versionCode": 61,
+  "versionName": "0.20.8",
+  "notes": "The lesson progress bar now moves as you go: within a step that has several exercises, clearing each one nudges the overall session bar forward (with a smooth glide), instead of only jumping when the whole step is finished. The step counter still reads in whole steps.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
