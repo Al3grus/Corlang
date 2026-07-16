@@ -135,6 +135,9 @@ fun LevelJourney(
         val journeyScroll = rememberScrollState()
         val density = LocalDensity.current
         val screenWidthDp = androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp
+        // Snap to centre the first time we land on a level (so a language switch fades in already
+        // centred, no visible slide); animate only for later shifts, e.g. finishing a day.
+        val positioned = remember(selectedLevel) { mutableStateOf(false) }
         LaunchedEffect(targetDay, selectedLevel, stones.size) {
             val idx = stones.indexOfFirst { it.day == targetDay }
             if (idx >= 0) {
@@ -143,7 +146,9 @@ fun LevelJourney(
                 val nodeHalfPx = with(density) { 23.dp.toPx() }
                 val viewportPx = with(density) { (screenWidthDp - 32).dp.toPx() }
                 val nodeCentre = startPadPx + idx * stridePx + nodeHalfPx
-                journeyScroll.animateScrollTo((nodeCentre - viewportPx / 2f).coerceAtLeast(0f).toInt())
+                val target = (nodeCentre - viewportPx / 2f).coerceAtLeast(0f).toInt()
+                if (positioned.value) journeyScroll.animateScrollTo(target)
+                else { journeyScroll.scrollTo(target); positioned.value = true }
             }
         }
 
