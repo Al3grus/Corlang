@@ -171,12 +171,11 @@ fun ConfettiBurst(modifier: Modifier = Modifier) {
 }
 
 /**
- * Words are reserved for moments that earn them: the first day of a streak and the
- * milestones. Ordinary days celebrate visually (confetti + flame + count) — a line that
- * appears every day stops being read by day five.
+ * Words are reserved for moments that earn them: the milestones only. Ordinary days celebrate
+ * visually (confetti + flame + count) — a line that appears every day stops being read by day
+ * five, and streak 1 recurs on every restart, so it gets no line either.
  */
 private fun milestoneLine(streak: Int): String? = when (streak) {
-    1 -> "One day closer to fluency."
     7 -> "A full week. The habit is forming. 🔥"
     14 -> "Two weeks straight — this is who you are now."
     30 -> "30 days. Your flame burns blue from here. 🔵"

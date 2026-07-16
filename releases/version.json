@@ -1,6 +1,6 @@
 {
-  "versionCode": 67,
-  "versionName": "0.20.14",
-  "notes": "Two lesson fixes. Wrap-up recall no longer mangles alternatives: \"he / she is\" now shows and accepts \"on je\", \"ona je\", or \"on/ona je\" (it used to demand a bare \"on\", which didn't match the English). And the day-complete streak celebration no longer flashes away — it stays up until you tap it, then returns to the Today dashboard.",
+  "versionCode": 68,
+  "versionName": "0.20.15",
+  "notes": "Celebration phrases now appear only on real streak milestones (7, 14, 30, 50, 100, 365) — the streak-1 line recurred on every restart, so it's gone. And after finishing today's lesson with no reviews due, the dashboard no longer offers \"Learn extra words\": new words only enter through lessons, so the button now appears only when there's genuinely something to review.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

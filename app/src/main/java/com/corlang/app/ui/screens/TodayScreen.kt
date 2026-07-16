@@ -257,21 +257,24 @@ fun TodayScreen(
                     }
                     // The single next best action. The lesson itself opens with the due words,
                     // so before it's done we always just start the lesson, no words-first detour.
-                    Button(
-                        onClick = {
-                            if (completedToday > 0) onNavigate(Dest.WORDS.route)
-                            else { viewedDay = targetDay; userBrowsed = false; onInLessonChange(true) }
-                        },
-                        modifier = Modifier.padding(top = 10.dp)
-                    ) {
-                        Text(
-                            when {
-                                completedToday > 0 && dueNow > 0 -> "Review $dueNow words →"
-                                completedToday > 0 -> "Learn extra words →"
-                                targetStarted -> "Continue Day $targetDay →"
-                                else -> "Start Day $targetDay →"
-                            }
-                        )
+                    // Day done + nothing due = NO button: new words only enter through lessons,
+                    // so there is genuinely nothing to send the learner to.
+                    if (completedToday == 0 || dueNow > 0) {
+                        Button(
+                            onClick = {
+                                if (completedToday > 0) onNavigate(Dest.WORDS.route)
+                                else { viewedDay = targetDay; userBrowsed = false; onInLessonChange(true) }
+                            },
+                            modifier = Modifier.padding(top = 10.dp)
+                        ) {
+                            Text(
+                                when {
+                                    completedToday > 0 -> "Review $dueNow words →"
+                                    targetStarted -> "Continue Day $targetDay →"
+                                    else -> "Start Day $targetDay →"
+                                }
+                            )
+                        }
                     }
                 }
                 GoalRing(
