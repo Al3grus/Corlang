@@ -150,40 +150,59 @@ highest severity (field: the tutor "corrected" correct Croatian *trebam učiti* 
 
 ## 6. Research appendix (why §4 says what it says)
 
-Adversarially verified findings (deep-research run, 2026-07-16; 3-0 verification votes):
+Deep-research run **completed 2026-07-17** (105 agents, 25 claims verified, **0 refuted**,
+14 findings after synthesis). Nothing here contradicts what the app implements; the empirical
+`ai-variety-eval.py` gate (§4) remains the authority for our specific Claude tiers, since **no
+benchmark tested Sonnet 5 / Haiku 4.5 on variety fidelity** — every Portuguese-variety number
+below is from other model families (Gemini/Gemma/Llama/EuroLLM/AMALIA), so they inform but do
+not decide our config.
 
-- **CEFR alignment drift**: prompted level constraints degrade over multi-turn dialogue;
-  level differences shrink as conversations continue (arxiv.org/html/2505.08351v1,
-  arxiv.org/html/2506.04072v2).
-- **Variety default bias**: without explicit instructions most LLMs default to pt-BR over
-  pt-PT (training-data imbalance); even a pt-PT fine-tuned Llama still showed BR bias
-  (aclanthology.org/2026.mellm-1.23).
-- **Single instruction decays**: an initial variety instruction erodes across turns 1–3 in
-  weakly-aligned models — variety must be pinned continuously (system prompt every call,
-  seed anchor, short windows) (ibid.).
-- **Steerability scales with model strength**: newer/larger models follow variety
-  instructions far better (e.g. 99.8 vs 47.7/100 across model families) — supports
-  Sonnet-tier for tutoring (ibid.).
-- **LLM-as-judge with category rubrics** beats fine-tuned variety classifiers and exceeded
-  human-human agreement for variety evaluation (κ 0.81 vs 0.69) (ibid.).
-- **Token Miss Rate** (share of output tokens outside the learner's known vocabulary)
-  correlates ρ=0.78 with human comprehensibility judgments — our per-day vocab decks make
-  this computable for free as a future automated check (arxiv.org/html/2506.04072v2).
+Verified findings (3-0 unless noted):
 
-Supporting (source-verified, adversarial pass cut short by session limits):
+- **CEFR alignment drift**: prompted level constraints degrade over a dialogue; A1/B1/C1-prompted
+  levels converge within ~5–9 turns. Prompt-only level control is brittle → re-anchor per turn.
+  (arxiv 2505.08351, 2506.04072)
+- **Variety default bias**: LLMs default to the dominant variety (pt-BR over pt-PT); fine-tuning
+  alone is insufficient (a pt-PT Llama still leaned BR). The Croatian↔Serbian case is the direct
+  analogue. (P3B3 / MeLLM 2026, AMALIA report)
+- **Single instruction decays over turns 1–3** in weakly-aligned models → pin variety
+  continuously (system prompt every call + seed anchor + short window). (P3B3 §5.2)
+- **Model strength helps but data dominates**: explicit prompting nearly eliminates bleed for
+  strong families (Gemini-3-Flash 63.7→99.8) but not weak ones (Llama 47.7–67.8); and a targeted
+  9B (AMALIA) beat a general 12B (Gemma). So a *fast* model isn't inherently worse at variety —
+  which is exactly why our gate, not model size, decides per language. (P3B3, AMALIA)
+- **Generation is the unsolved half**: models comprehend minority varieties far better than they
+  produce them; even frontier models score <70% on dialect ID (DialectLLM tested Haiku-4.5 +
+  Sonnet-4). (arxiv 2607.07669, 2601.22888)
+- **Hybrid-output failure mode**, ready-made validator checklist: weak pt-PT output mixes BR
+  grammar (proclisis, gerund vs `estar a`+inf, `você`) with partial EP lexicon + inconsistent
+  orthography — mirrors our `varietyRules` WRONG-lists. (P3B3 §5.3)
+- **Three-part pre-ship eval that can disagree**: (a) automated variety classifier, (b) adversarial
+  provoking-prompt suite, (c) blind native-speaker pairwise rubric. Our stack has (b)+(c-lite via
+  LLM judge); (a) for Croatian exists off-the-shelf — **Helsinki-NLP BERTic/XLM-R BCMS classifiers**
+  (sentence-level B/C/M/S). Caveat: Twitter-domain, multi-label-ambiguous → a screening signal, not
+  a gate. (DiaLLM; Miletić et al. 2025)
+- **LLM-as-judge with category rubrics** ≈ or beats human agreement for variety eval (κ 0.81) —
+  what our `ai-variety-eval.py` judge does. (2-1; P3B3)
+- **Token Miss Rate** (share of output tokens above the learner's vocab level) ρ=0.78 with human
+  comprehensibility; traditional readability ≈0 — computable for free from our per-day decks as a
+  future level-check. (arxiv 2506.04072)
+- **Stronger model materially worth it for one-shot teaching feedback**: Duolingo shipped "Explain
+  my Answer" only at GPT-4-class accuracy — one wrong term teaches an error. Supports Sonnet for
+  exam-writing feedback + teach-review. (Duolingo/OpenAI case study)
+- **Correction timing is a wash for learning** (no significant gain, immediate vs delayed) but
+  immediate scores higher on UX — gentle in-conversation correction is the right default.
+  (Frontiers in Education 2026, n≈54–66, English-only)
+- Few-shot in-language exemplars: line-level language consistency 86%→99% with 5 shots — the
+  basis for our native seed greeting as a few-shot anchor. (Language Confusion Benchmark, 2406.20052)
 
-- Few-shot in-language examples: line-level language consistency 86.2%→99.0% with 5 shots
-  (arxiv.org/html/2406.20052 — Language Confusion Benchmark; also the template for our
-  line/word-level eval design).
-- Temperature 0.0 vs 1.0: word-level wrong-language intrusions drop measurably at low
-  temperature (ibid.).
-- Weaker models asked for pt-PT produce *hybrid* outputs (BR grammar + partial PT lexicon) —
-  the exam-penalized failure mode (aclanthology.org/2026.mellm-1.23).
-- Duolingo shipped "Explain my Answer" only at GPT-4-class accuracy — one wrong term in an
-  explanation teaches the error (openai.com/index/duolingo).
-- Immediate vs delayed corrective feedback: no significant learning-gain difference, but
-  immediate feedback scores higher on perceived effectiveness/UX — gentle in-conversation
-  correction is the right default (researchgate.net/publication/391485619).
+Open questions the literature does NOT answer for us (our gate/field-testing must):
+1. How much Sonnet 5 / Haiku 4.5 specifically drift on pt-PT and standard-Croatian over a tutor
+   chat, and whether per-turn re-anchoring measurably helps. (We re-anchor by design.)
+2. A Croatian-vs-Serbian validator for tutor-length PROSE (the BCMS classifier is Twitter-domain).
+3. The cost/quality crossover for THIS app — answered empirically: hr needs Sonnet, pt/fr pass on
+   Haiku (§4).
+4. Whether the timing-is-a-wash result holds for variety/register errors (study was general grammar).
 
 ---
 
