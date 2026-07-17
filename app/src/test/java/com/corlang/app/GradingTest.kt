@@ -45,10 +45,23 @@ class GradingTest {
         assertFalse(Grading.gradeFill(question, "radiš"))
     }
 
-    @Test fun mcq_isCaseAndAccentInsensitive() {
-        val question = q(QuestionType.MCQ, answer = "Bonjour", options = listOf("Bonjour", "Merci"))
-        assertTrue(Grading.gradeMcq(question, "bonjour"))
-        assertFalse(Grading.gradeMcq(question, "Merci"))
+    @Test fun mcq_isExactMatch() {
+        // Options are TAPPED, not typed — chosen is always a canonical option string. Exact
+        // comparison is required: many MCQs teach diacritics/capitalization, so a distractor
+        // that differs only by accent or case ("s" vs "š", "engleski" vs "Engleski") must
+        // grade as wrong.
+        val question = q(QuestionType.MCQ, answer = "š", options = listOf("š", "s", "č"))
+        assertTrue(Grading.gradeMcq(question, "š"))
+        assertFalse(Grading.gradeMcq(question, "s"))
+        val caseQ = q(QuestionType.MCQ, answer = "engleski", options = listOf("engleski", "Engleski"))
+        assertTrue(Grading.gradeMcq(caseQ, "engleski"))
+        assertFalse(Grading.gradeMcq(caseQ, "Engleski"))
+    }
+
+    @Test fun normalize_trimsEdgeSpaceLeftByPunctuationStrip() {
+        // French typography puts a space before ?/!/: — "ce que ?" must equal "ce que".
+        assertTrue(Grading.gradeFill(q(QuestionType.FILL, answer = "ce que"), "ce que ?"))
+        assertTrue(Grading.gradeRecall("ce que", "ce que ?"))
     }
 
     @Test fun reorder_requiresExactOrder() {

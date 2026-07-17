@@ -19,11 +19,16 @@ class AppState(private val container: AppContainer) : ViewModel() {
 
     val languages: List<LanguageMeta> = container.content.allMeta()
 
-    val selected: StateFlow<String> = container.languagePrefs.selectedLanguage
+    // NULL until DataStore's first emission, not seeded "hr": the eager "hr" seed made every
+    // pt/fr cold start briefly run the app as Croatian — a synchronous parse of the full hr
+    // plan on the main thread, a flag flash, and (because per-tab state is keyed on lang) all
+    // process-death-restored state discarded when the value flipped hr→pt one frame later.
+    // The UI gates on the first real value; the splash covers the (sub-frame) gap.
+    val selected: StateFlow<String?> = container.languagePrefs.selectedLanguage
         // A previously-persisted language may since have been hidden (e.g. "fr") —
         // fall back to the first shipped language instead of showing hidden content.
         .map { if (it in container.content.availableLanguages) it else container.content.availableLanguages.first() }
-        .stateIn(viewModelScope, SharingStarted.Eagerly, "hr")
+        .stateIn(viewModelScope, SharingStarted.Eagerly, null)
 
     init {
         // Ensure a progress row exists for every shipped language.

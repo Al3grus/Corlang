@@ -32,6 +32,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.key
 import androidx.compose.runtime.collectAsState
@@ -111,6 +112,26 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
     var refreshKey by remember(lang) { mutableIntStateOf(0) }
     val queue = remember(lang) { mutableStateListOf<SessionCard>() }
+
+    // Midnight rollover: the queue is built once per (lang, refreshKey), so an app left open
+    // (or backgrounded) across midnight kept serving yesterday's queue while the Today tab
+    // already counted the new day. On every ON_RESUME, rebuild if the epoch day moved — but
+    // never mid-session (the LaunchedEffect below ignores rebuilds while inSession anyway).
+    var builtEpochDay by remember(lang) { mutableStateOf(WordsRepository.todayEpochDay()) }
+    val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner, lang) {
+        val observer = androidx.lifecycle.LifecycleEventObserver { _, event ->
+            if (event == androidx.lifecycle.Lifecycle.Event.ON_RESUME) {
+                val now = WordsRepository.todayEpochDay()
+                if (now != builtEpochDay) {
+                    builtEpochDay = now
+                    refreshKey++
+                }
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
     var sessionTotal by remember(lang) { mutableIntStateOf(0) }
     var doneCount by remember(lang) { mutableIntStateOf(0) }
     var served by remember(lang) { mutableIntStateOf(0) }
@@ -279,7 +300,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
         Spacer(Modifier.height(10.dp))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            StatTile("${queue.size}", "to review", Modifier.weight(1f))
+            StatTile(if (queueLoaded) "${queue.size}" else "–", "to review", Modifier.weight(1f))
             StatTile("${seenIds.size}", "started", Modifier.weight(1f))
             StatTile("$mastered", "mastered", Modifier.weight(1f))
         }
@@ -301,11 +322,14 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
         Button(
             onClick = { celebration = false; inSession = true },
-            enabled = queue.isNotEmpty(),
+            enabled = queueLoaded && queue.isNotEmpty(),
             modifier = Modifier.fillMaxWidth().padding(vertical = 10.dp)
         ) {
             Text(
                 when {
+                    // Same gate as the ring: while the queue is still building, no label —
+                    // "No reviews due ✓" flashed for a frame before flipping to the count.
+                    !queueLoaded -> " "
                     queue.isEmpty() -> "No reviews due ✓"
                     doneCount > 0 -> "Continue review (${queue.size} left)"
                     else -> "Review ${queue.size} words"

@@ -81,6 +81,14 @@ class AiClient {
         }.toString()
 
         var conn: HttpURLConnection? = null
+        // Coroutine cancellation cannot interrupt blocking HttpURLConnection I/O on its own:
+        // leaving the screen mid-request would keep the IO thread blocked (and the call billed)
+        // for up to the full timeout. disconnect() from the cancellation path aborts the
+        // socket, which unblocks the read with an exception immediately.
+        val job = kotlin.coroutines.coroutineContext[kotlinx.coroutines.Job]
+        val cancelHook = job?.invokeOnCompletion { cause ->
+            if (cause is kotlinx.coroutines.CancellationException) conn?.disconnect()
+        }
         try {
             conn = (URL(endpoint).openConnection() as HttpURLConnection).apply {
                 requestMethod = "POST"
@@ -96,15 +104,26 @@ class AiClient {
             val text = stream?.bufferedReader()?.use(BufferedReader::readText) ?: ""
 
             if (code in 200..299) {
+                val root = json.parseToJsonElement(text).jsonObject
                 // First TEXT block, not content[0]: the model may emit a thinking block first.
-                val reply = json.parseToJsonElement(text).jsonObject["content"]
+                val reply = root["content"]
                     ?.jsonArray
                     ?.firstNotNullOfOrNull { el ->
                         el.jsonObject.takeIf { it["type"]?.jsonPrimitive?.content == "text" }
                             ?.get("text")?.jsonPrimitive?.content
                     }
-                if (reply.isNullOrBlank()) Result.failure(IllegalStateException("Empty response from the model."))
-                else Result.success(reply)
+                // stop_reason matters: with thinking enabled, max_tokens can be spent entirely
+                // on invisible reasoning (no text block at all) or cut the visible reply
+                // mid-sentence. Never present a truncated correction as if it were complete.
+                val hitCap = root["stop_reason"]?.jsonPrimitive?.content == "max_tokens"
+                when {
+                    reply.isNullOrBlank() && hitCap -> Result.failure(
+                        IllegalStateException("The reply ran too long, please try again with a shorter message.")
+                    )
+                    reply.isNullOrBlank() -> Result.failure(IllegalStateException("Empty response from the model."))
+                    hitCap -> Result.success("$reply\n\n(Reply was cut short — ask me to continue.)")
+                    else -> Result.success(reply)
+                }
             } else {
                 val message = runCatching {
                     json.parseToJsonElement(text).jsonObject["error"]
@@ -112,9 +131,12 @@ class AiClient {
                 }.getOrNull()
                 Result.failure(IllegalStateException(friendlyError(code, message)))
             }
+        } catch (e: kotlinx.coroutines.CancellationException) {
+            throw e   // never swallow cancellation as a "network error"
         } catch (e: Exception) {
             Result.failure(IllegalStateException("Network error: ${e.message ?: "check your connection."}"))
         } finally {
+            cancelHook?.dispose()
             conn?.disconnect()
         }
     }

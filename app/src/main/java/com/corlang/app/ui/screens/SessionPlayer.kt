@@ -299,15 +299,23 @@ fun SessionPlayer(
     // The NEW-words step = this lesson's unlocked words (deck order, first day.day * perLesson) not
     // yet introduced. The REVIEW step = due cards, capped so they can't pile up (overflow → Words
     // tab). Both are lesson-scoped, so an earlier lesson never marks this one done.
-    val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
-    val perLesson by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
+    // Nullable-until-loaded (same as rawChecks): stepDone() reads all of these, so the resume
+    // jump below must not run before they emit — an empty-initial reviews list read as "review
+    // step done" and resume could land PAST a step with 12 cards actually due.
+    val rawReviews by container.words.reviews(lang).collectAsState(initial = null)
+    val reviews = rawReviews.orEmpty()
+    val rawPerLesson by container.languagePrefs.newWordsPerDay
+        .collectAsState(initial = null)
+    val perLesson = rawPerLesson ?: 10
     val today = WordsRepository.todayEpochDay()
     val allWords = remember(lang) { container.words.allWords(lang) }
     val dueNow = reviews.count { it.dueEpochDay <= today }
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
     // Placement offset: deck words before deckStart are never taught as new (a Day-61
     // placement must not serve day-1 basics).
-    val deckStart by container.languagePrefs.wordDeckStart(lang).collectAsState(initial = 0)
+    val rawDeckStart by container.languagePrefs.wordDeckStart(lang)
+        .collectAsState(initial = null)
+    val deckStart = rawDeckStart ?: 0
     val unlockedNew = allWords.take(day.day * perLesson).drop(deckStart).count { it.id !in seenIds }
     // One lesson serves at most perLesson new words, even when a placement jump unlocked a large
     // backlog — it drains one lesson-sized block at a time, never a 300-card dump.
@@ -327,15 +335,25 @@ fun SessionPlayer(
     var index by rememberSaveable(day.day) {
         mutableIntStateOf(0)
     }
-    // On first composition per day, jump past finished steps. Gated on checks LOADING (not
-    // just "non-empty") so we resolve the resume step BEFORE the first visible frame — otherwise
-    // step 0 (the intro card) flashed for a frame while checks loaded, then jumped to step 4.
+    // On first composition per day, jump past finished steps. Gated on EVERY flow stepDone()
+    // reads (checks, reviews, perLesson, deckStart) having actually emitted — not just being
+    // non-empty — so the resume target is resolved from real data before the first visible
+    // frame. Two bugs lived here: (a) gating on checks alone let resume race the reviews flow
+    // and land past a review step with cards still due; (b) latching `resumed` only when
+    // checks were non-empty left the jump armed on a fresh day — the first check written
+    // mid-session (e.g. after skipping the words step) then yanked the user backwards.
     var resumed by rememberSaveable(day.day) { mutableStateOf(false) }
-    if (!resumed && rawChecks == null) return   // one blank frame < wrong-step flash
-    if (!resumed && checks.isNotEmpty()) {
-        val firstOpen = steps.indexOfFirst { it.kind != StepKind.INFO && !stepDone(it) }
-        if (firstOpen > 0) index = firstOpen
-        resumed = true
+    if (!resumed && (rawChecks == null || rawReviews == null ||
+            rawPerLesson == null || rawDeckStart == null)
+    ) {
+        return   // one blank frame < wrong-step flash
+    }
+    if (!resumed) {
+        if (checks.isNotEmpty()) {
+            val firstOpen = steps.indexOfFirst { it.kind != StepKind.INFO && !stepDone(it) }
+            if (firstOpen > 0) index = firstOpen
+        }
+        resumed = true   // latch unconditionally: the jump must never fire mid-session
     }
 
     val doneCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE && stepDone(it) }

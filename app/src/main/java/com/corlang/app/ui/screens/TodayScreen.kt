@@ -103,12 +103,22 @@ fun TodayScreen(
     // player must show the same day, not silently swap to the current one.
     var viewedDay by rememberSaveable(lang) { mutableStateOf(targetDay) }
     var userBrowsed by rememberSaveable(lang) { mutableStateOf(false) }
+    // lastAnchor detects a targetDay ADVANCE (day completed): browsing must not outlive it —
+    // userBrowsed was previously never reset, so one journey tap froze the dashboard on the
+    // browsed day forever ("Revisit Day N ✓" instead of "Start Day N+1" after every lesson).
+    var lastAnchor by rememberSaveable(lang) { mutableStateOf(targetDay) }
     // NOT while a lesson is open: "Mark day complete" advances targetDay the instant the write
     // lands, and retargeting viewedDay mid-lesson swapped the open SessionPlayer to the next
     // day — killing the streak celebration after one frame. The inLesson key re-runs the
     // effect on exit, so the dashboard lands on the new day then.
     LaunchedEffect(targetDay, inLesson) {
-        if (!userBrowsed && !inLesson) viewedDay = targetDay
+        if (!inLesson) {
+            if (targetDay != lastAnchor) {
+                userBrowsed = false
+                lastAnchor = targetDay
+            }
+            if (!userBrowsed) viewedDay = targetDay
+        }
     }
 
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
@@ -140,8 +150,13 @@ fun TodayScreen(
     val steps = remember(lang, day.day) {
         buildSessionSteps(day, resourceUrls, container.content.meta(lang).name)
     }
-    val rawChecks by container.progress.dayTaskChecks(lang, day.day)
-        .collectAsState(initial = null)
+    // key(day.day): collectAsState keeps the PREVIOUS flow's value until the new one emits,
+    // and step ids are day-agnostic ("words", "activity-0") — browsing from day 8 to day 3
+    // flashed day 8's ticks on day 3 for a frame. Re-keying resets to the null initial, which
+    // the load gate below turns into one blank frame instead.
+    val rawChecks by androidx.compose.runtime.key(day.day) {
+        container.progress.dayTaskChecks(lang, day.day).collectAsState(initial = null)
+    }
     val checks = rawChecks.orEmpty()
     val doneIds = checks.map { it.itemId }.toSet()
     val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
@@ -174,8 +189,10 @@ fun TodayScreen(
     val targetSteps = remember(lang, targetDay) {
         buildSessionSteps(targetDayObj, resourceUrls, container.content.meta(lang).name)
     }
-    val rawTargetChecks by container.progress.dayTaskChecks(lang, targetDay)
-        .collectAsState(initial = null)
+    // Same re-key as rawChecks above, for when targetDay moves (day completed / reconcile).
+    val rawTargetChecks by androidx.compose.runtime.key(targetDay) {
+        container.progress.dayTaskChecks(lang, targetDay).collectAsState(initial = null)
+    }
     val targetChecks = rawTargetChecks.orEmpty()
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
     val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
@@ -367,7 +384,9 @@ fun TodayScreen(
             viewedDay = viewedDay,
             examLevelIds = examLevelIds,
             onOpenExam = { onNavigate(Dest.PRACTICE.route) },
-            onPickDay = { d -> viewedDay = d; userBrowsed = true }
+            // Tapping the CURRENT day's stone is not "browsing away" — the dashboard keeps
+            // following the plan.
+            onPickDay = { d -> viewedDay = d; userBrowsed = d != targetDay }
         )
 
         Spacer(Modifier.height(8.dp))

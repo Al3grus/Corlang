@@ -53,7 +53,15 @@ class ReminderWorker(
         } ?: return Result.success()
 
         val progress = dao.progressOnce(lang)
-        val streak = progress?.streak ?: 0
+        // Decayed to right-now, same as the UI: the STORED streak only updates on the next
+        // completion, so after 2+ missed days the raw value still read "12-day streak on the
+        // line" when the streak was already gone.
+        val streak = com.corlang.app.data.ProgressRepository.displayStreak(
+            streak = progress?.streak ?: 0,
+            lastStudiedEpochDay = progress?.lastStudiedEpochDay ?: 0L,
+            freezes = progress?.streakFreezes ?: 0,
+            today = today
+        )
         val languageName = when (lang) {
             "fr" -> "French"
             "pt" -> "Portuguese"

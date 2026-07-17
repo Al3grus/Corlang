@@ -5,3 +5,11 @@ compatibility_date = "2026-01-01"
 # Secrets (set via CLI, never committed):
 #   wrangler secret put ANTHROPIC_API_KEY
 #   wrangler secret put APP_AUTH_TOKEN
+
+# Daily rate-limit counters. Create the namespace once:
+#   wrangler kv namespace create RATE_KV
+# then paste the printed id below and redeploy. Without this binding the worker still runs
+# but request volume is unbounded (see worker.js header).
+[[kv_namespaces]]
+binding = "RATE_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"

@@ -38,6 +38,8 @@ class AppContainer(context: Context) {
     val backup: BackupManager =
         BackupManager(AppDatabase.get(context).progressDao(), languagePrefs, content.availableLanguages)
     val ai: AiClient = AiClient()
+    // Tutor transcripts live at app scope so a tab switch never wipes a conversation.
+    val chat: com.corlang.app.ai.ChatStore = com.corlang.app.ai.ChatStore()
     val premium: PremiumManager = PremiumManager(languagePrefs)
     val tts: TtsManager = TtsManager(context)
     val speech: SpeechInput = SpeechInput(context)

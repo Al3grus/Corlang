@@ -179,11 +179,32 @@ class LanguagePrefs(private val context: Context) {
     // Per-language: how many deck words the placement test skipped past. The new-word window
     // is deck[start, day*perLesson) — without this, a learner placed at Day 61 was served the
     // deck's day-1 words ("very basic words", field report 2026-07-16).
+    //
+    // Stored as the PLACEMENT DAY, not an absolute word index: the old absolute offset froze
+    // the pace it was computed with — place at Day 61 on pace 20 (offset 1200), later lower
+    // the pace to 10, and day*10 stays below 1200 until Day 120: zero new words for weeks,
+    // silently. Deriving the offset from (day, current pace) at read time keeps the window
+    // correct through any pace change. The legacy absolute key is still read as a fallback
+    // for installs that placed before this change (their exact placement day is unrecoverable
+    // from offset ÷ pace, so they keep the old semantics — no worse than before).
     private fun deckStartKey(lang: String) = intPreferencesKey("word_deck_start_$lang")
+    private fun placementDayKey(lang: String) = intPreferencesKey("placement_day_$lang")
+
+    /** The day the placement test placed the learner at (0 = never placed). */
+    fun placementDay(lang: String): Flow<Int> =
+        context.dataStore.data.map { it[placementDayKey(lang)] ?: 0 }
+
+    suspend fun setPlacementDay(lang: String, day: Int) {
+        context.dataStore.edit { it[placementDayKey(lang)] = day.coerceAtLeast(0) }
+    }
 
     /** First deck index the learner should ever be taught as NEW (0 = full deck from Day 1). */
     fun wordDeckStart(lang: String): Flow<Int> =
-        context.dataStore.data.map { it[deckStartKey(lang)] ?: 0 }
+        context.dataStore.data.map {
+            val placedDay = it[placementDayKey(lang)] ?: 0
+            if (placedDay > 0) (placedDay - 1) * (it[newWordsKey] ?: 10)
+            else it[deckStartKey(lang)] ?: 0   // legacy absolute offset
+        }
 
     suspend fun setWordDeckStart(lang: String, index: Int) {
         context.dataStore.edit { it[deckStartKey(lang)] = index.coerceAtLeast(0) }

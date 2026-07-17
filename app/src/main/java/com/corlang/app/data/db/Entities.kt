@@ -18,7 +18,13 @@ data class LanguageProgress(
 )
 
 @Serializable
-@Entity(tableName = "day_completion")
+// Unique (langCode, day): a day can only ever be completed once. Without this the IGNORE
+// strategy on insertCompletion had nothing to conflict on (the PK is autoincrement), so a
+// racing double-insert produced duplicate rows that inflated completionsSince (the goal ring).
+@Entity(
+    tableName = "day_completion",
+    indices = [androidx.room.Index(value = ["langCode", "day"], unique = true)]
+)
 data class DayCompletion(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val langCode: String,

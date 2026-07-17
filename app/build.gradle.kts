@@ -108,6 +108,13 @@ android {
     }
 }
 
+// Room writes one JSON per schema version here; the directory is COMMITTED so migrations can
+// be regression-tested and a released schema is never lost (post-launch a botched migration
+// is unrecoverable).
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+}
+
 dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2024.09.02")
     implementation(composeBom)
