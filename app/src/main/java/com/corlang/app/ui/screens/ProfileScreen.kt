@@ -57,12 +57,18 @@ fun ProfileScreen(
     onSelectLanguage: (String) -> Unit,
     onOpenSettings: () -> Unit
 ) {
-    // Sub-page routing within the tab (null = the menu).
+    // Sub-page routing within the tab (null = the menu). A short crossfade smooths the
+    // menu↔sub-page transitions (matching the app's tab fade, not a slow one).
     var page by rememberSaveable(lang) { mutableStateOf<String?>(null) }
 
-    when (page) {
+    androidx.compose.animation.Crossfade(
+        targetState = page,
+        animationSpec = androidx.compose.animation.core.tween(durationMillis = 260),
+        label = "profile-page"
+    ) { p -> when (p) {
         "language" -> SubPage("Language", onBack = { page = null }) {
-            LanguagePage(container, lang, onSelectLanguage)
+            // Choosing a language returns to the Profile menu (like closing Settings does).
+            LanguagePage(container, lang) { code -> onSelectLanguage(code); page = null }
         }
         "premium" -> SubPage("Corlang Premium", onBack = { page = null }) {
             PremiumPage(container)
@@ -92,7 +98,7 @@ fun ProfileScreen(
             MenuRow(Icons.AutoMirrored.Outlined.MenuBook, "References",
                 "Cheatsheet, grammar, best resources", onClick = { page = "references" })
         }
-    }
+    } }
 }
 
 /** One uniform Profile menu row: icon · title/subtitle · chevron. */

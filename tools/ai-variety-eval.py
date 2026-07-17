@@ -18,7 +18,10 @@ import json, subprocess, sys, time
 sys.stdout.reconfigure(encoding="utf-8")   # Windows console defaults to cp1252
 
 WORKER = "https://corlang-ai-proxy.ricardo-infante.workers.dev/v1/messages"
-MODEL = "claude-sonnet-5"
+# The TUTOR model under test (arg 2, default Haiku — the cheap chat model we want to ship).
+# The JUDGE is always Sonnet (grading reliability matters, one call per prompt).
+TUTOR_MODEL = "claude-haiku-4-5-20251001"
+JUDGE_MODEL = "claude-sonnet-5"
 
 # Keep in sync with TalkScreen.varietyRules / tutorSystemPrompt (the app is the source of truth).
 VARIETY = {
@@ -116,8 +119,8 @@ def token():
     sys.exit("corlang.proxyAuthToken not found in local.properties")
 
 
-def call(tok, system, messages, max_tokens=500):
-    body = json.dumps({"model": MODEL, "max_tokens": max_tokens,
+def call(tok, system, messages, model, max_tokens=500):
+    body = json.dumps({"model": model, "max_tokens": max_tokens,
                        "system": system, "messages": messages})
     out = subprocess.run(
         ["curl", "-s", "-X", "POST", WORKER, "-H", "content-type: application/json",
@@ -130,7 +133,8 @@ def call(tok, system, messages, max_tokens=500):
     for block in d["content"]:
         if block.get("type") == "text":
             return block["text"]
-    raise RuntimeError(f"no text block in response: {d}")
+    # No text block (e.g. thinking hit max_tokens). Signal it rather than crash the run.
+    return '{"pass": false, "failures": ["no text block — likely max_tokens on thinking"]}'
 
 
 def system_prompt(lang):
@@ -155,21 +159,24 @@ Rules:
 
 def main():
     lang = sys.argv[1] if len(sys.argv) > 1 else "hr"
+    tutor_model = sys.argv[2] if len(sys.argv) > 2 else TUTOR_MODEL
     tok = token()
     sysp = system_prompt(lang)
     opener, greeting = SEED[lang]
+    print(f"Tutor model under test: {tutor_model}\n")
     fails, results = 0, []
     for i, user in enumerate(PROMPTS[lang]):
         reply = call(tok, sysp, [
             {"role": "user", "content": opener},
             {"role": "assistant", "content": greeting},
             {"role": "user", "content": user},
-        ])
+        ], model=tutor_model)
+        # Generous cap: Sonnet may spend output on a thinking block before the JSON verdict.
         judge_raw = call(tok, "You are a precise JSON-only grader.", [{
             "role": "user",
             "content": JUDGE.format(name=NAME[lang], variety_label=VARIETY_LABEL[lang],
                                     syntax_marker=SYNTAX_MARKER[lang], user=user, reply=reply)
-        }], max_tokens=300)
+        }], model=JUDGE_MODEL, max_tokens=1024)
         try:
             verdict = json.loads(judge_raw[judge_raw.index("{"):judge_raw.rindex("}") + 1])
         except Exception:
