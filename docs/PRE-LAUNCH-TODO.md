@@ -3,6 +3,28 @@
 Things to close before a public launch, so nothing gets forgotten. Grouped by area.
 (Design/UX and the core app are done; this is the last mile.)
 
+## ▶ TOMORROW (2026-07-19) — Play Console upload, in order
+
+The AAB is already built & verified: `app/build/outputs/bundle/playRelease/app-play-release.aab`
+(versionCode 84, signed, no updater permission, DEV_PREMIUM=false, ZERO proxy credentials).
+
+1. [ ] **Anthropic spend alert**: console.anthropic.com → Billing → set a usage alert (~$5).
+2. [ ] Play Console → Corlang → **Testing → Closed testing** → create track ("Alpha") →
+       **Create release** → upload the AAB above.
+3. [ ] If prompted, accept **Play App Signing** enrollment (Google re-signs for distribution;
+       our keystore becomes the upload key — this is normal and wanted).
+4. [ ] Release notes: "Correctness release: exercise grading, lesson resume, and streak fixes
+       from a full code audit."
+5. [ ] **Testers**: create an email list; add your Gmail + the 2 friends. Target = 12 testers,
+       14 consecutive days opted-in, before applying for production.
+6. [ ] Complete the required forms when prompted: **content rating** questionnaire,
+       **data safety** (collects nothing, shares nothing, all data on-device),
+       **privacy policy URL** (GitHub PRIVACY.md raw link is fine for testing).
+7. [ ] Optional hardening: Cloudflare dashboard → corlang-ai-proxy → Security → WAF
+       rate-limiting rule (e.g. 10 req/min per IP) on top of the KV daily quota.
+8. [ ] Tell the 2 sideload friends to update in-app to **v0.20.31** (restores their AI tutor —
+       the old token was rotated dead).
+
 ## Content correctness (blocker)
 - [ ] **Native-speaker review — Croatian** (use `docs/review/hr-content-review.html`, print or PDF).
 - [ ] **Native-speaker review — Portuguese** (`docs/review/pt-content-review.html`).
