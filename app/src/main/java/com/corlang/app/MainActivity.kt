@@ -43,6 +43,7 @@ import com.corlang.app.ui.screens.CorlangSplash
 import com.corlang.app.ui.screens.LearnScreen
 import com.corlang.app.ui.screens.OnboardingScreen
 import com.corlang.app.ui.screens.PlacementScreen
+import com.corlang.app.ui.screens.ProfileScreen
 import com.corlang.app.ui.screens.ProgressScreen
 import com.corlang.app.ui.screens.QuizScreen
 import com.corlang.app.ui.screens.SettingsScreen
@@ -78,6 +79,9 @@ private fun CorlangApp(container: AppContainer) {
     val backStack by navController.currentBackStackEntryAsState()
     val currentRoute = backStack?.destination?.route ?: Dest.TODAY.route
     val scope = rememberCoroutineScope()
+
+    // The Learn tab (AI: Teach + Tutor) appears in the bottom bar only when Premium is unlocked.
+    val premium by container.premium.entitled.collectAsState(initial = false)
 
     // Settings lives OUTSIDE the nav graph: pushing it onto a tab's back stack gets it
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
@@ -214,16 +218,12 @@ private fun CorlangApp(container: AppContainer) {
         topBar = {
             LanguageTopBar(
                 languages = appState.languages,
-                selected = lang,
-                onSelect = appState::selectLanguage,
-                // Locked while the learner is mid-anything (lesson, review, quiz, exam,
-                // placement, teach-back, tutor chat) — see Engagement.
-                pickerEnabled = !com.corlang.app.ui.Engagement.engaged
+                selected = lang
             )
         },
         bottomBar = {
             NavigationBar {
-                Dest.all.forEach { dest ->
+                Dest.bar(premium).forEach { dest ->
                     NavigationBarItem(
                         selected = currentRoute == dest.route,
                         onClick = {
@@ -313,7 +313,7 @@ private fun CorlangApp(container: AppContainer) {
                 }
             }
             composable(Dest.PROGRESS.route) {
-                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-profile") { l ->
+                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-progress") { l ->
                     ProgressScreen(container, l,
                         onNavigate = { route ->
                             navController.navigate(route) {
@@ -321,8 +321,16 @@ private fun CorlangApp(container: AppContainer) {
                                 launchSingleTop = true
                                 restoreState = true
                             }
-                        },
-                        onOpenSettings = { showSettings = true })
+                        })
+                }
+            }
+            composable(Dest.PROFILE.route) {
+                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-profile") { l ->
+                    ProfileScreen(
+                        container, l,
+                        onSelectLanguage = appState::selectLanguage,
+                        onOpenSettings = { showSettings = true }
+                    )
                 }
             }
         }
