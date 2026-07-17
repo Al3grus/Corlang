@@ -1,6 +1,6 @@
 {
-  "versionCode": 83,
-  "versionName": "0.20.30",
-  "notes": "Smoother, flicker-free navigation. The Today screen now waits until your progress has fully loaded before it paints, so the lesson button lands on the right label (\"Start Day 8\") and the ring shows its real value on the first frame — no more flashing a wrong state for a split second. Switching tabs is snappier too: the fade is shorter, so you no longer catch a glimpse of the previous tab before the new one appears.",
+  "versionCode": 84,
+  "versionName": "0.20.31",
+  "notes": "Big correctness release from a full code audit. Fixed: multiple-choice questions that teach accents/capitalization now actually require the right form (no more \"s\" accepted for \"š\"); resuming a lesson can no longer jump you backwards or skip a due review step; a lesson in progress survives the app being killed; the Today dashboard follows your plan again after browsing old days; French answers typed with a space before ? are graded correctly; exam fill-ins are strictly graded as promised; your streak survives timezone changes; the AI tutor conversation survives switching tabs, and truncated AI replies are detected instead of shown as complete. IMPORTANT: this update also restores the AI tutor (security rotation disabled it on older versions) — update to get it back.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

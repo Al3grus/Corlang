@@ -34,8 +34,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 83
-        versionName = "0.20.30"
+        versionCode = 84
+        versionName = "0.20.31"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -65,6 +65,12 @@ android {
         create("play") {
             dimension = "distribution"
             buildConfigField("boolean", "ENABLE_UPDATER", "false")
+            // No AI credential in the store binary: Premium is unwired until Play Billing
+            // ships, so the play build can't use the proxy anyway — an empty token means
+            // there's nothing to extract from the public Play APK. Remove when billing lands
+            // (per-user purchase-token verification replaces the shared token entirely).
+            buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"\"")
+            buildConfigField("String", "CORLANG_PROXY_AUTH_TOKEN", "\"\"")
         }
     }
 
