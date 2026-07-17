@@ -1,6 +1,6 @@
 {
-  "versionCode": 81,
-  "versionName": "0.20.28",
-  "notes": "Smoother, snappier transitions. Every tab now switches with the same quick fade (Review no longer feels like a hard cut), the transition time is about half what it was, and choosing a language no longer triggers a slow fade — it drops you straight back to the Profile menu, like closing Settings does.",
+  "versionCode": 82,
+  "versionName": "0.20.29",
+  "notes": "Snappier and cheaper. The Review tab now loads instantly — it only lists word packs up to your level instead of the whole course. The Today ring settles instantly instead of re-animating every visit. Continuing a lesson jumps straight to where you left off (no more flash of the first card). And under the hood the tutor now uses a lighter, cheaper model for Portuguese and French while keeping the stronger one for Croatian, where it's needed for correctness.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

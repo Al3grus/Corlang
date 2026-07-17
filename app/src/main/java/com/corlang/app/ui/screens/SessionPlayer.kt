@@ -290,8 +290,10 @@ fun SessionPlayer(
         buildSessionSteps(day, resourceUrls, container.content.meta(lang).name)
     }
 
-    val checks by container.progress.dayTaskChecks(lang, day.day)
-        .collectAsState(initial = emptyList())
+    // null until the first DB emit — used to gate the resume jump so we don't flash step 0.
+    val rawChecks by container.progress.dayTaskChecks(lang, day.day)
+        .collectAsState(initial = null)
+    val checks = rawChecks.orEmpty()
     val doneIds = checks.map { it.itemId }.toSet()
 
     // The NEW-words step = this lesson's unlocked words (deck order, first day.day * perLesson) not
@@ -325,8 +327,11 @@ fun SessionPlayer(
     var index by rememberSaveable(day.day) {
         mutableIntStateOf(0)
     }
-    // On first composition per day, jump past finished steps.
+    // On first composition per day, jump past finished steps. Gated on checks LOADING (not
+    // just "non-empty") so we resolve the resume step BEFORE the first visible frame — otherwise
+    // step 0 (the intro card) flashed for a frame while checks loaded, then jumped to step 4.
     var resumed by rememberSaveable(day.day) { mutableStateOf(false) }
+    if (!resumed && rawChecks == null) return   // one blank frame < wrong-step flash
     if (!resumed && checks.isNotEmpty()) {
         val firstOpen = steps.indexOfFirst { it.kind != StepKind.INFO && !stepDone(it) }
         if (firstOpen > 0) index = firstOpen

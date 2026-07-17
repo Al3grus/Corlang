@@ -102,6 +102,13 @@ fun WordsScreen(container: AppContainer, lang: String) {
     val languageName = remember(lang) { container.content.meta(lang).name }
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
 
+    // Current level + level order, to bound the pack list. Rendering a card per pack across the
+    // whole course (dozens for Croatian, each filtering ~2800 words) was what made this tab lag
+    // on open; a learner only ever reviews words up to the level they've reached.
+    val progress by container.progress.progress(lang).collectAsState(initial = null)
+    val currentLevel = progress?.currentLevel ?: "A0"
+    val levelOrder = remember(lang) { container.content.levels(lang).levels.map { it.id } }
+
     var refreshKey by remember(lang) { mutableIntStateOf(0) }
     val queue = remember(lang) { mutableStateListOf<SessionCard>() }
     var sessionTotal by remember(lang) { mutableIntStateOf(0) }
@@ -313,7 +320,16 @@ fun WordsScreen(container: AppContainer, lang: String) {
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 4.dp)
         )
-        vocab.packs.forEach { pack ->
+        // Only packs up to the level you've reached — A0 shows A0, A2 shows A0+A1+A2. An
+        // unknown/unordered level index (-1) is kept visible rather than hidden.
+        val currentIdx = levelOrder.indexOf(currentLevel)
+        val shownPacks = remember(vocab, currentLevel, levelOrder) {
+            vocab.packs.filter {
+                val i = levelOrder.indexOf(it.level)
+                i < 0 || currentIdx < 0 || i <= currentIdx
+            }
+        }
+        shownPacks.forEach { pack ->
             val startedIds = pack.words.map { it.id }.filter { it in seenIds }
             val seen = startedIds.size
             val canReview = seen > 0

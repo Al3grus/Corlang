@@ -1,15 +1,11 @@
 package com.corlang.app.ui.components
 
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.snap
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -21,16 +17,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.corlang.app.ui.theme.rememberReducedMotion
 
 /**
- * The daily goal ring: closes as today's work is cleared. [progress] in 0..1; the fill tweens
- * smoothly. Center shows a label (e.g. "12 left" or "✓").
+ * The daily goal ring: closes as today's work is cleared. [progress] in 0..1; the fill SNAPS
+ * to its value. Center shows a label (e.g. "12 left" or "✓").
  *
- * Note: no completion haptic/pulse here. The flows that drive [progress] start below 1 and emit
- * their real value on every recomposition, so a "just completed" pulse couldn't be told apart
- * from simply opening an already-complete day — it fired on every tab switch. The genuine
- * day-completion buzz already happens when you tap "Mark day complete".
+ * No fill tween: the flows driving [progress] emit null/0 → real on every fresh composition, so
+ * a tween replayed the fill on every return to the tab (a distracting entrance-animation loop).
+ * Progress only genuinely changes INSIDE a lesson, not while the dashboard is on screen, so the
+ * dashboard ring settling instantly reads as calm and static; the real "goal complete" delight
+ * is the celebration overlay. No completion haptic here for the same "can't tell settle from
+ * completion" reason — the buzz happens on "Mark day complete".
  */
 @Composable
 fun GoalRing(
@@ -40,12 +37,7 @@ fun GoalRing(
     size: Dp = 72.dp,
     stroke: Dp = 8.dp
 ) {
-    val reduced = rememberReducedMotion()
-    val animated by animateFloatAsState(
-        targetValue = progress.coerceIn(0f, 1f),
-        animationSpec = if (reduced) snap() else tween(durationMillis = 500),
-        label = "goal-ring"
-    )
+    val animated = progress.coerceIn(0f, 1f)
     val ringColor = MaterialTheme.colorScheme.primary
     val trackColor = MaterialTheme.colorScheme.surfaceVariant
 

@@ -44,7 +44,12 @@ class AiClient {
         system: String?,
         messages: List<ChatMessage>,
         model: String = DEFAULT_MODEL,
-        maxTokens: Int = 1024
+        maxTokens: Int = 1024,
+        // Sonnet 5 defaults to ADAPTIVE thinking when the field is omitted — ~75% of output
+        // tokens went to invisible reasoning on a trivial reply. Disable it for high-volume
+        // interactive chat (verified: no variety-quality loss). Sonnet 5 accepts "disabled";
+        // never send this to a Fable-family model (it 400s there).
+        disableThinking: Boolean = false
     ): Result<String> = withContext(Dispatchers.IO) {
         // Server-side only: the proxy holds the key (server/ai-proxy); the app sends the
         // entitlement token. Dark until AiConfig.proxyBaseUrl is set at build time.
@@ -63,6 +68,7 @@ class AiClient {
         val body = buildJsonObject {
             put("model", model)
             put("max_tokens", maxTokens)
+            if (disableThinking) put("thinking", buildJsonObject { put("type", "disabled") })
             if (!system.isNullOrBlank()) put("system", system)
             put("messages", buildJsonArray {
                 messages.forEach { m ->

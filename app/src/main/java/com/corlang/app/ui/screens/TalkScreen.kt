@@ -37,6 +37,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.ai.AiClient
 import com.corlang.app.ai.ChatMessage
 import kotlinx.coroutines.launch
 
@@ -136,9 +137,12 @@ fun TalkScreen(container: AppContainer, lang: String) {
         sending = true
         error = null
         scope.launch {
-            // Sonnet, not Haiku, for the tutor: Haiku's Croatian bled into Serbian (it
-            // "corrected" correct Croatian into 'trebam da učim'). A chat turn is still
-            // well under a cent; revisit the model split when billing ships.
+            // Per-language chat model (verified via tools/ai-variety-eval.py, §4 gate):
+            //   hr → Sonnet 5 WITH thinking. Haiku's Croatian bled into Serbian (~30% fail),
+            //        and thinking-disabled Sonnet slipped on adversarial 'da'-explanation
+            //        prompts; only Sonnet + reasoning passes 12/12 consistently.
+            //   pt/fr → Haiku (both pass 12/12; higher-resource, no self-contradiction trap).
+            //        Haiku doesn't think by default, so it's the cheap path.
             //
             // Payload shape: a hidden in-language user opener (the API requires user-first)
             // + the authored seed greeting + recent turns. History is trimmed: variety and
@@ -152,7 +156,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
             val result = container.ai.complete(
                 system = system,
                 messages = payload,
-                model = com.corlang.app.ai.AiClient.FEEDBACK_MODEL
+                model = if (lang == "hr") AiClient.FEEDBACK_MODEL else AiClient.DEFAULT_MODEL
             )
             sending = false
             result.fold(
@@ -344,11 +348,13 @@ private fun varietyRules(lang: String): String = when (lang) {
     - You speak STANDARD CROATIAN (hrvatski standardni jezik) — NEVER Serbian, Bosnian, or mixed
       forms. Concretely: after modal and semi-modal verbs use the INFINITIVE (trebam učiti, mogu
       doći, želim ići) — NEVER the Serbian 'da' + present ('trebam da učim' is WRONG in Croatian).
-      Use ijekavian forms (lijepo, mlijeko, htjeti), Croatian month names (siječanj, veljača...),
-      and Croatian vocabulary (tjedan, kruh, tisuća, zrak, vlak — never nedelja, hleb, hiljada,
-      vazduh, voz).
+      Yes/no questions use the '-li' enclitic or 'je li' (Dolaziš li?, Je li točno?) — NEVER the
+      Serbian 'da li' ('da li dolaziš' is non-standard in Croatian). Use ijekavian forms (lijepo,
+      mlijeko, htjeti), Croatian month names (siječanj, veljača...), and Croatian vocabulary
+      (tjedan, kruh, tisuća, zrak, vlak — never nedelja, hleb, hiljada, vazduh, voz).
     - If the student's sentence is ALREADY correct standard Croatian, do not invent a correction —
-      confirm it's right and continue. Never "correct" a correct form.""".trimIndent()
+      confirm it's right and continue. Never "correct" a correct form, and do not present two
+      valid orderings as if one were an error.""".trimIndent()
     "pt" -> """
     - You speak EUROPEAN Portuguese (português europeu, Portugal) — NEVER Brazilian. Concretely:
       'estar a' + infinitive (estou a aprender — never 'estou aprendendo'), tu with correct verb

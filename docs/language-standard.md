@@ -97,14 +97,30 @@ highest severity (field: the tutor "corrected" correct Croatian *trebam učiti* 
 2. **Native-authored seed exchange** (`seedGreeting` + hidden `seedOpener`): the first thing
    in every payload is correct target-variety text — a few-shot anchor (strongest measured
    lever: 5-shot lifted language consistency 86%→99%).
-3. **Model tier: Sonnet-class or better for anything that teaches** (chat corrections,
-   feedback, explanations). Duolingo precedent: explanation features only shipped at
-   GPT-4-class accuracy. Haiku-class is acceptable only for non-teaching utility calls.
+3. **Model tier is PER-LANGUAGE, gated by the eval (§4), not assumed.** Run the gate on the
+   cheap model first; only escalate the languages that fail. Findings (2026-07-17):
+   - **hr → Sonnet 5 WITH thinking.** Haiku bled into Serbian (~30% fail); thinking-disabled
+     Sonnet slipped on adversarial "explain 'da'" prompts. Only Sonnet + reasoning passes
+     12/12 consistently. This is the expensive path — accepted because Croatian variety is
+     exam-critical.
+   - **pt, fr → Haiku 4.5.** Both pass 12/12 (higher-resource, no self-contradiction trap).
+     Haiku doesn't think by default → already the cheap path; do NOT send it
+     `thinking:{type:disabled}` (older models 400 on that; they use `budget_tokens`).
+   - Model choice lives in `TalkScreen.send()` (`lang == "hr"` → FEEDBACK_MODEL else DEFAULT_MODEL).
+     `AiClient.complete(disableThinking=)` disables Sonnet's adaptive thinking (Sonnet accepts
+     `{type:disabled}`; Fable family 400s) — verified, currently unused by chat because hr needs
+     the reasoning and Haiku is already thinking-free.
+   Duolingo precedent: explanation features only shipped at GPT-4-class accuracy.
 4. **Low temperature (≤0.3)** — measurably fewer wrong-language word intrusions.
 5. **History trimming** in chat (seed + last ~12 messages): variety and CEFR-level adherence
    demonstrably DRIFT as conversations grow; short windows blunt it and cap cost.
 6. **CEFR level restated in the system prompt** and replies kept short (2–5 sentences) —
    prompt-only level control drifts; short replies and a stated level slow that decay.
+7. **Prompt caching does NOT apply at current prompt sizes.** Min cacheable prefix is 2048
+   tokens (Sonnet 5) / 4096 (Haiku); the tutor system prompt + seed is ~600 tokens, so
+   `cache_control` silently caches nothing. Revisit only if the shared prefix ever grows past
+   the floor (e.g. large few-shot blocks). Don't add `cache_control` speculatively — it's a
+   1.25× write with zero reads at this size.
 
 **Pre-ship AI eval gate [SCRIPT] — run per language, per model change, per prompt change:**
 

@@ -28,11 +28,13 @@ VARIETY = {
     "hr": """- You speak STANDARD CROATIAN (hrvatski standardni jezik) — NEVER Serbian, Bosnian, or mixed
 forms. Concretely: after modal and semi-modal verbs use the INFINITIVE (trebam učiti, mogu
 doći, želim ići) — NEVER the Serbian 'da' + present ('trebam da učim' is WRONG in Croatian).
-Use ijekavian forms (lijepo, mlijeko, htjeti), Croatian month names (siječanj, veljača...),
-and Croatian vocabulary (tjedan, kruh, tisuća, zrak, vlak — never nedelja, hleb, hiljada,
-vazduh, voz).
+Yes/no questions use the '-li' enclitic or 'je li' (Dolaziš li?, Je li točno?) — NEVER the
+Serbian 'da li' ('da li dolaziš' is non-standard in Croatian). Use ijekavian forms (lijepo,
+mlijeko, htjeti), Croatian month names (siječanj, veljača...), and Croatian vocabulary
+(tjedan, kruh, tisuća, zrak, vlak — never nedelja, hleb, hiljada, vazduh, voz).
 - If the student's sentence is ALREADY correct standard Croatian, do not invent a correction —
-confirm it's right and continue. Never "correct" a correct form.""",
+confirm it's right and continue. Never "correct" a correct form, and do not present two valid
+orderings as if one were an error.""",
     "pt": """- You speak EUROPEAN Portuguese (português europeu, Portugal) — NEVER Brazilian. Concretely:
 'estar a' + infinitive (estou a aprender — never 'estou aprendendo'), tu with correct verb
 forms in informal speech, European clitic placement (chamo-me, disse-lhe), and European
@@ -119,9 +121,12 @@ def token():
     sys.exit("corlang.proxyAuthToken not found in local.properties")
 
 
-def call(tok, system, messages, model, max_tokens=500):
-    body = json.dumps({"model": model, "max_tokens": max_tokens,
-                       "system": system, "messages": messages})
+def call(tok, system, messages, model, max_tokens=500, disable_thinking=False):
+    payload = {"model": model, "max_tokens": max_tokens,
+               "system": system, "messages": messages}
+    if disable_thinking:
+        payload["thinking"] = {"type": "disabled"}
+    body = json.dumps(payload)
     out = subprocess.run(
         ["curl", "-s", "-X", "POST", WORKER, "-H", "content-type: application/json",
          "-H", f"x-corlang-auth: {tok}", "-d", body],
@@ -160,17 +165,19 @@ Rules:
 def main():
     lang = sys.argv[1] if len(sys.argv) > 1 else "hr"
     tutor_model = sys.argv[2] if len(sys.argv) > 2 else TUTOR_MODEL
+    # arg 3 = "nothink" disables the tutor's extended thinking (mirrors the app's chat path).
+    disable_thinking = len(sys.argv) > 3 and sys.argv[3] == "nothink"
     tok = token()
     sysp = system_prompt(lang)
     opener, greeting = SEED[lang]
-    print(f"Tutor model under test: {tutor_model}\n")
+    print(f"Tutor model under test: {tutor_model}  (thinking {'DISABLED' if disable_thinking else 'default'})\n")
     fails, results = 0, []
     for i, user in enumerate(PROMPTS[lang]):
         reply = call(tok, sysp, [
             {"role": "user", "content": opener},
             {"role": "assistant", "content": greeting},
             {"role": "user", "content": user},
-        ], model=tutor_model)
+        ], model=tutor_model, disable_thinking=disable_thinking)
         # Generous cap: Sonnet may spend output on a thinking block before the JSON verdict.
         judge_raw = call(tok, "You are a precise JSON-only grader.", [{
             "role": "user",
