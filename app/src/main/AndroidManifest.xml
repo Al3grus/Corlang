@@ -25,10 +25,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Corlang">
 
+        <!-- adjustResize, explicitly: the unspecified default resolves to adjustPan on some
+             OEMs, which pans the window up by the keyboard height WHILE imePadding also adds
+             it — composer fields floated a full keyboard-height above the IME. -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.Corlang">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

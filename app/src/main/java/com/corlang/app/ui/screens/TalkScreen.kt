@@ -106,10 +106,16 @@ fun TalkScreen(container: AppContainer, lang: String) {
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val level = progress?.currentLevel ?: "A1"
     val languageName = remember(lang) { container.content.meta(lang).name }
-    val system = remember(level, languageName) { tutorSystemPrompt(languageName, level) }
+    val system = remember(lang, level, languageName) { tutorSystemPrompt(lang, languageName, level) }
 
     // Transcript for display + as the API history (same list; roles map directly).
-    val messages: SnapshotStateList<ChatMessage> = remember(lang) { mutableListOf<ChatMessage>().toMutableStateList() }
+    // Seeded with a NATIVE-AUTHORED greeting: an in-language few-shot anchor is one of the
+    // strongest measured levers against wrong-language/variety drift (arXiv 2406.20052), it
+    // pins the variety before the model generates a single word, and the first exchange
+    // costs no API call.
+    val messages: SnapshotStateList<ChatMessage> = remember(lang) {
+        mutableListOf(ChatMessage("assistant", seedGreeting(lang))).toMutableStateList()
+    }
     var input by remember(lang) { mutableStateOf("") }
     var sending by remember(lang) { mutableStateOf(false) }
     var error by remember(lang) { mutableStateOf<String?>(null) }
@@ -117,8 +123,9 @@ fun TalkScreen(container: AppContainer, lang: String) {
     val listState = rememberLazyListState()
 
     // A conversation in progress locks the top-bar language picker — the transcript is
-    // in-memory only and a language switch would wipe it. An empty Tutor tab doesn't lock.
-    if (messages.isNotEmpty() || sending) {
+    // in-memory only and a language switch would wipe it. The seed greeting alone (size 1,
+    // no learner turn yet) doesn't lock.
+    if (messages.size > 1 || sending) {
         com.corlang.app.ui.Engagement.Report()
     }
 
@@ -129,7 +136,24 @@ fun TalkScreen(container: AppContainer, lang: String) {
         sending = true
         error = null
         scope.launch {
-            val result = container.ai.complete(system = system, messages = messages.toList())
+            // Sonnet, not Haiku, for the tutor: Haiku's Croatian bled into Serbian (it
+            // "corrected" correct Croatian into 'trebam da učim'). A chat turn is still
+            // well under a cent; revisit the model split when billing ships.
+            //
+            // Payload shape: a hidden in-language user opener (the API requires user-first)
+            // + the authored seed greeting + recent turns. History is trimmed: variety and
+            // CEFR-level adherence measurably DRIFT as conversations grow (alignment drift;
+            // pt-PT→pt-BR reversion over turns), and a short window also caps cost. The
+            // trim drops whole exchanges so user/assistant alternation stays valid.
+            val all = messages.toList()
+            var tail = all.drop(1).takeLast(12)   // after the seed: u,a,u,a…
+            if (tail.firstOrNull()?.role == "assistant") tail = tail.drop(1)
+            val payload = listOf(ChatMessage("user", seedOpener(lang)), all.first()) + tail
+            val result = container.ai.complete(
+                system = system,
+                messages = payload,
+                model = com.corlang.app.ai.AiClient.FEEDBACK_MODEL
+            )
             sending = false
             result.fold(
                 onSuccess = { messages.add(ChatMessage("assistant", it)) },
@@ -262,18 +286,72 @@ private val STARTERS = listOf(
 private fun stripGloss(text: String): String =
     text.replace(Regex("\\([^)]*\\)"), "").replace(Regex("\\s{2,}"), " ").trim()
 
-private fun tutorSystemPrompt(languageName: String, level: String): String = """
+/**
+ * Native-authored seed exchange: the greeting the learner sees on opening the Tutor, and the
+ * hidden one-word opener that precedes it in the API payload (the Messages API is user-first).
+ * Being IN the target variety, the pair doubles as a few-shot anchor — measurably one of the
+ * strongest levers against wrong-language drift (arXiv 2406.20052: 5-shot raised line-level
+ * language consistency from 86% to 99%).
+ */
+fun seedGreeting(lang: String): String = when (lang) {
+    "hr" -> "Bok! Ja sam tvoj hrvatski tutor. Možemo razgovarati o čemu god želiš — polako i jednostavno. Kako si danas?"
+    "pt" -> "Olá! Sou o teu tutor de português europeu. Podemos falar sobre o que quiseres — com calma e frases simples. Como estás hoje?"
+    "fr" -> "Bonjour ! Je suis ton tuteur de français. On peut parler de ce que tu veux — doucement et simplement. Comment vas-tu aujourd'hui ?"
+    else -> "Hi! I'm your language tutor. We can talk about anything you like — slowly and simply. How are you today?"
+}
+
+private fun seedOpener(lang: String): String = when (lang) {
+    "hr" -> "Bok!"
+    "pt" -> "Olá!"
+    "fr" -> "Bonjour !"
+    else -> "Hello!"
+}
+
+/**
+ * The variety guardrail is the load-bearing part: without it the model drifted into SERBIAN
+ * for Croatian — it "corrected" the correct 'trebam učiti' into the Serbian da-construction
+ * 'trebam da učim' (field report). Exam prep punishes exactly those variety mistakes.
+ */
+private fun varietyRules(lang: String): String = when (lang) {
+    "hr" -> """
+    - You speak STANDARD CROATIAN (hrvatski standardni jezik) — NEVER Serbian, Bosnian, or mixed
+      forms. Concretely: after modal and semi-modal verbs use the INFINITIVE (trebam učiti, mogu
+      doći, želim ići) — NEVER the Serbian 'da' + present ('trebam da učim' is WRONG in Croatian).
+      Use ijekavian forms (lijepo, mlijeko, htjeti), Croatian month names (siječanj, veljača...),
+      and Croatian vocabulary (tjedan, kruh, tisuća, zrak, vlak — never nedelja, hleb, hiljada,
+      vazduh, voz).
+    - If the student's sentence is ALREADY correct standard Croatian, do not invent a correction —
+      confirm it's right and continue. Never "correct" a correct form.""".trimIndent()
+    "pt" -> """
+    - You speak EUROPEAN Portuguese (português europeu, Portugal) — NEVER Brazilian. Concretely:
+      'estar a' + infinitive (estou a aprender — never 'estou aprendendo'), tu with correct verb
+      forms in informal speech, European clitic placement (chamo-me, disse-lhe), and European
+      vocabulary (pequeno-almoço, autocarro, telemóvel, casa de banho — never café da manhã,
+      ônibus, celular, banheiro).
+    - If the student's sentence is ALREADY correct European Portuguese, do not invent a
+      correction — confirm it's right and continue. Never "correct" a correct form.""".trimIndent()
+    "fr" -> """
+    - You speak standard metropolitan French, as tested by the DELF exams.
+    - If the student's sentence is ALREADY correct, do not invent a correction — confirm it's
+      right and continue.""".trimIndent()
+    else -> "- If the student's sentence is already correct, say so — never invent corrections."
+}
+
+private fun tutorSystemPrompt(lang: String, languageName: String, level: String): String = """
     You are a warm, patient $languageName conversation tutor. Your student is an adult learning
     $languageName at CEFR level $level, preparing for the official $languageName exam, so accuracy
     matters, but keep it encouraging.
 
     Rules:
+    ${varietyRules(lang)}
     - Converse mainly in $languageName, kept at or slightly below level $level. Use short, natural sentences.
     - When you use a word or phrase the student likely doesn't know yet, add a brief English gloss
       in parentheses right after it.
-    - If the student makes a mistake, gently correct it: give the corrected $languageName sentence and a
-      one-line reason, then continue naturally. Don't nitpick every tiny error; focus on what helps most.
+    - If the student makes a genuine mistake, gently correct it: give the corrected $languageName
+      sentence and a one-line reason, then continue naturally. Don't nitpick; focus on what helps most.
     - Always end with a simple follow-up question to keep the conversation going.
     - Keep each reply short (2 to 5 sentences) so it stays a real back-and-forth, not a lecture.
     - Use correct $languageName spelling and accents at all times.
+    - PLAIN TEXT ONLY: no markdown, no asterisks, no bullet lists — your reply is shown verbatim
+      in a chat bubble.
 """.trimIndent()
