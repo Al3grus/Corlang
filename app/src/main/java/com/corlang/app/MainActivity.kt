@@ -4,8 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
@@ -268,9 +269,16 @@ private fun CorlangApp(container: AppContainer) {
             )
             return@Scaffold
         }
+        // One quick fade for every tab switch (~half the old 1300ms). Uniform across all
+        // destinations so nothing — Review included — reads as a hard cut.
+        val tabFade = tween<Float>(durationMillis = 420)
         NavHost(
             navController = navController,
             startDestination = Dest.TODAY.route,
+            enterTransition = { fadeIn(tabFade) },
+            exitTransition = { fadeOut(tabFade) },
+            popEnterTransition = { fadeIn(tabFade) },
+            popExitTransition = { fadeOut(tabFade) },
             // consumeWindowInsets is the missing half of edge-to-edge keyboard handling:
             // padding(innerPadding) already spends the bottom-bar + system-bar insets, and
             // without marking them consumed every imePadding() below ALSO added them —
@@ -279,59 +287,45 @@ private fun CorlangApp(container: AppContainer) {
                 .padding(innerPadding)
                 .consumeWindowInsets(innerPadding)
         ) {
-            // Each screen crossfades on a language switch, so content doesn't hard-cut/flicker as
-            // the new language's progress, journey position and lists load in.
+            // Tab switches share ONE uniform fade (below), so every tab — Review included —
+            // animates identically. The old per-screen Crossfade(lang) wrappers are gone: they
+            // fired a slow 1300ms fade on every language change and animated inconsistently
+            // across tabs (Review reveals its async-loaded queue, so a content-crossfade there
+            // showed a loading frame). Language now switches only from Profile, so a fade on
+            // `lang` isn't needed at all.
             composable(Dest.TODAY.route) {
-                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-today") { l ->
-                    TodayScreen(
-                        container, l,
-                        inLesson = inLesson,
-                        onInLessonChange = { inLesson = it },
-                        onNavigate = { route ->
-                            navController.navigate(route) {
-                                popUpTo(Dest.TODAY.route) { saveState = true }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
+                TodayScreen(
+                    container, lang,
+                    inLesson = inLesson,
+                    onInLessonChange = { inLesson = it },
+                    onNavigate = { route ->
+                        navController.navigate(route) {
+                            popUpTo(Dest.TODAY.route) { saveState = true }
+                            launchSingleTop = true
+                            restoreState = true
                         }
-                    )
-                }
+                    }
+                )
             }
-            composable(Dest.WORDS.route) {
-                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-review") { l ->
-                    WordsScreen(container, l)
-                }
-            }
-            composable(Dest.PRACTICE.route) {
-                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-practice") { l ->
-                    QuizScreen(container, l)
-                }
-            }
-            composable(Dest.LEARN.route) {
-                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-learn") { l ->
-                    LearnScreen(container, l)
-                }
-            }
+            composable(Dest.WORDS.route) { WordsScreen(container, lang) }
+            composable(Dest.PRACTICE.route) { QuizScreen(container, lang) }
+            composable(Dest.LEARN.route) { LearnScreen(container, lang) }
             composable(Dest.PROGRESS.route) {
-                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-progress") { l ->
-                    ProgressScreen(container, l,
-                        onNavigate = { route ->
-                            navController.navigate(route) {
-                                popUpTo(Dest.TODAY.route) { saveState = true }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
-                        })
-                }
+                ProgressScreen(container, lang,
+                    onNavigate = { route ->
+                        navController.navigate(route) {
+                            popUpTo(Dest.TODAY.route) { saveState = true }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    })
             }
             composable(Dest.PROFILE.route) {
-                Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-profile") { l ->
-                    ProfileScreen(
-                        container, l,
-                        onSelectLanguage = appState::selectLanguage,
-                        onOpenSettings = { showSettings = true }
-                    )
-                }
+                ProfileScreen(
+                    container, lang,
+                    onSelectLanguage = appState::selectLanguage,
+                    onOpenSettings = { showSettings = true }
+                )
             }
         }
     }
