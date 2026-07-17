@@ -58,6 +58,8 @@ class AiClient {
             "x-corlang-auth" to AiConfig.PROXY_AUTH_TOKEN
         )
 
+        // NOTE: no `temperature` — the claude-sonnet-5 family REJECTS the parameter as
+        // deprecated (verified against the live API 2026-07-17); default sampling it is.
         val body = buildJsonObject {
             put("model", model)
             put("max_tokens", maxTokens)
@@ -88,9 +90,13 @@ class AiClient {
             val text = stream?.bufferedReader()?.use(BufferedReader::readText) ?: ""
 
             if (code in 200..299) {
+                // First TEXT block, not content[0]: the model may emit a thinking block first.
                 val reply = json.parseToJsonElement(text).jsonObject["content"]
-                    ?.jsonArray?.firstOrNull()
-                    ?.jsonObject?.get("text")?.jsonPrimitive?.content
+                    ?.jsonArray
+                    ?.firstNotNullOfOrNull { el ->
+                        el.jsonObject.takeIf { it["type"]?.jsonPrimitive?.content == "text" }
+                            ?.get("text")?.jsonPrimitive?.content
+                    }
                 if (reply.isNullOrBlank()) Result.failure(IllegalStateException("Empty response from the model."))
                 else Result.success(reply)
             } else {

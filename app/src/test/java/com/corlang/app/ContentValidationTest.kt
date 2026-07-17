@@ -35,6 +35,16 @@ class ContentValidationTest {
             ?: error("content assets directory not found from ${File(".").absolutePath}")
     }
 
+    /**
+     * Every language DISCOVERED from the content directory — never a hardcoded list. A new
+     * language enters every automated gate the moment its folder lands in assets/content/,
+     * with no test edits required (docs/language-standard.md is the companion checklist).
+     */
+    private val allLangs: List<String> by lazy {
+        contentRoot.listFiles()!!.filter { it.isDirectory }.map { it.name }.sorted()
+            .also { require(it.isNotEmpty()) { "no language directories under $contentRoot" } }
+    }
+
     /** Source keys registered in docs/sources/README.md. */
     private val knownSourceKeys = setOf(
         // Croatian
@@ -91,7 +101,7 @@ class ContentValidationTest {
 
     @Test
     fun `all languages parse strictly`() {
-        for (lang in listOf("hr", "fr", "pt")) {
+        for (lang in allLangs) {
             strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
             strictJson.decodeFromString<Cheatsheet>(read(lang, "cheatsheet.json"))
             strictJson.decodeFromString<Levels>(read(lang, "levels.json"))
@@ -297,7 +307,7 @@ class ContentValidationTest {
     fun `wrapup recall items never leak or mangle their answer`() {
         // Guards the field-reported classes: "he / she is" graded against a truncated "on"
         // (hr day 6) and "no, bread, hand" demanding the "ão — …" demo string (pt day 1).
-        for (lang in listOf("hr", "fr", "pt")) {
+        for (lang in allLangs) {
             val plan = loadPlan(lang)
             plan.days.forEach { day ->
                 com.corlang.app.ui.screens.wrapupRecallPhrases(day).forEach { item ->
@@ -339,7 +349,7 @@ class ContentValidationTest {
                 else -> {}
             }
         }
-        for (lang in listOf("hr", "fr", "pt")) {
+        for (lang in allLangs) {
             val reorders = mutableListOf<Pair<String, List<String>>>()
             val planDir = File(contentRoot, "$lang/plan")
             val files = (planDir.listFiles()?.map { "plan/${it.name}" } ?: emptyList()) +
@@ -394,7 +404,7 @@ class ContentValidationTest {
                 else -> {}
             }
         }
-        for (lang in listOf("hr", "fr", "pt")) {
+        for (lang in allLangs) {
             for (name in listOf("quizzes.json", "exams.json", "placement.json")) {
                 if (!exists(lang, name)) continue
                 val fills = mutableListOf<Pair<String, List<String>>>()
