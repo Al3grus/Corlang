@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -251,10 +252,10 @@ private fun CorlangApp(container: AppContainer) {
     ) { innerPadding ->
         if (showPlacement) {
             androidx.activity.compose.BackHandler { showPlacement = false }
-            Modifier.padding(innerPadding).let { pad ->
-                androidx.compose.foundation.layout.Box(pad) {
-                    PlacementScreen(container, lang, onDone = { showPlacement = false })
-                }
+            androidx.compose.foundation.layout.Box(
+                Modifier.padding(innerPadding).consumeWindowInsets(innerPadding)
+            ) {
+                PlacementScreen(container, lang, onDone = { showPlacement = false })
             }
             return@Scaffold
         }
@@ -264,14 +265,20 @@ private fun CorlangApp(container: AppContainer) {
                 container,
                 onBack = { showSettings = false },
                 onEditProfile = { showSettings = false; showOnboarding = true },
-                modifier = Modifier.padding(innerPadding)
+                modifier = Modifier.padding(innerPadding).consumeWindowInsets(innerPadding)
             )
             return@Scaffold
         }
         NavHost(
             navController = navController,
             startDestination = Dest.TODAY.route,
-            modifier = Modifier.padding(innerPadding)
+            // consumeWindowInsets is the missing half of edge-to-edge keyboard handling:
+            // padding(innerPadding) already spends the bottom-bar + system-bar insets, and
+            // without marking them consumed every imePadding() below ALSO added them —
+            // composers floated a bottom-bar-height (or more) above the keyboard.
+            modifier = Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding)
         ) {
             // Each screen crossfades on a language switch, so content doesn't hard-cut/flicker as
             // the new language's progress, journey position and lists load in.
