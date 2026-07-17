@@ -18,10 +18,20 @@ import json, subprocess, sys, time
 sys.stdout.reconfigure(encoding="utf-8")   # Windows console defaults to cp1252
 
 WORKER = "https://corlang-ai-proxy.ricardo-infante.workers.dev/v1/messages"
-# The TUTOR model under test (arg 2, default Haiku — the cheap chat model we want to ship).
-# The JUDGE is always Sonnet (grading reliability matters, one call per prompt).
-TUTOR_MODEL = "claude-haiku-4-5-20251001"
+# Default tutor model PER LANGUAGE = exactly what the app ships (TalkScreen.send):
+#   hr -> Sonnet 5 with thinking (Haiku bled into Serbian ~30%), pt/fr -> Haiku.
+# So a bare `python tools/ai-variety-eval.py hr` tests the SHIPPED configuration — the old
+# single Haiku default silently gated the wrong model for hr. Override with arg 2 to test a
+# candidate model. The JUDGE is always Sonnet (grading reliability matters).
+SHIPPED_TUTOR = {
+    "hr": "claude-sonnet-5",
+    "pt": "claude-haiku-4-5-20251001",
+    "fr": "claude-haiku-4-5-20251001",
+}
 JUDGE_MODEL = "claude-sonnet-5"
+# Matches AiClient/TalkScreen maxTokens per model so truncation behavior mirrors production.
+TUTOR_MAX_TOKENS = {"claude-sonnet-5": 2048}
+DEFAULT_TUTOR_MAX_TOKENS = 1024
 
 # Keep in sync with TalkScreen.varietyRules / tutorSystemPrompt (the app is the source of truth).
 VARIETY = {
@@ -164,7 +174,7 @@ Rules:
 
 def main():
     lang = sys.argv[1] if len(sys.argv) > 1 else "hr"
-    tutor_model = sys.argv[2] if len(sys.argv) > 2 else TUTOR_MODEL
+    tutor_model = sys.argv[2] if len(sys.argv) > 2 else SHIPPED_TUTOR[lang]
     # arg 3 = "nothink" disables the tutor's extended thinking (mirrors the app's chat path).
     disable_thinking = len(sys.argv) > 3 and sys.argv[3] == "nothink"
     tok = token()
@@ -177,7 +187,8 @@ def main():
             {"role": "user", "content": opener},
             {"role": "assistant", "content": greeting},
             {"role": "user", "content": user},
-        ], model=tutor_model, disable_thinking=disable_thinking)
+        ], model=tutor_model, disable_thinking=disable_thinking,
+            max_tokens=TUTOR_MAX_TOKENS.get(tutor_model, DEFAULT_TUTOR_MAX_TOKENS))
         # Generous cap: Sonnet may spend output on a thinking block before the JSON verdict.
         judge_raw = call(tok, "You are a precise JSON-only grader.", [{
             "role": "user",

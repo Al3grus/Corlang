@@ -115,7 +115,7 @@ private fun QuizList(
     ) {
         Text("Quizzes", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
         Text(
-            "10 questions each, easy → hard. Graded with explanations.",
+            "A few minutes each, easy → hard. Graded with explanations.",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 8.dp)
@@ -239,7 +239,7 @@ private fun QuizRunner(
         when (q.type) {
             QuestionType.MCQ -> {
                 // Shuffle per question so the correct option isn't positionally predictable.
-                val shownOptions = remember(q.prompt) { q.options.shuffled() }
+                val shownOptions = remember(index) { q.options.shuffled() }
                 shownOptions.forEach { option ->
                     val isChosen = selectedOption == option
                     val state = when {
@@ -272,7 +272,7 @@ private fun QuizRunner(
                 // and an already-solved puzzle is no exercise. Tokens are shown lowercased with
                 // edge punctuation stripped: the sentence-case capital and the trailing dot
                 // would give the first and last word away.
-                val scrambled = remember(q.prompt) {
+                val scrambled = remember(index) {
                     val tokens = q.options.map(Grading::reorderToken)
                     val answer = q.ordered.map(Grading::reorderToken)
                     var s = tokens.shuffled()
@@ -324,7 +324,7 @@ private fun QuizRunner(
             QuestionType.MATCH -> {
                 val feedback = CorlangColors.feedback
                 // Shuffle the right-hand options once per question so the answer order isn't given away.
-                val rights = remember(q.prompt) { q.pairs.map { it.right }.distinct().shuffled() }
+                val rights = remember(index) { q.pairs.map { it.right }.distinct().shuffled() }
                 Text(
                     "Tap to match each item with its pair:",
                     style = MaterialTheme.typography.bodySmall,

@@ -33,7 +33,10 @@ data class BackupPrefs(
     // Reminder language opt-in (null = never customized: reminder follows the selected language).
     val reminderLanguages: List<String>? = null,
     // Per-language deck offset set by the placement test (added with a default: old backups parse).
-    val wordDeckStarts: Map<String, Int> = emptyMap()
+    val wordDeckStarts: Map<String, Int> = emptyMap(),
+    // Per-language placement DAY (pace-independent successor of wordDeckStarts; default: old
+    // backups parse and fall back to the absolute offsets above).
+    val placementDays: Map<String, Int> = emptyMap()
 )
 
 /** A complete, portable snapshot of the learner's progress across every language. */
@@ -97,6 +100,8 @@ class BackupManager(
                 profileLivesIn = profile.livesIn,
                 profileReason = profile.reason,
                 wordDeckStarts = languages.associateWith { prefs.wordDeckStart(it).first() }
+                    .filterValues { it > 0 },
+                placementDays = languages.associateWith { prefs.placementDay(it).first() }
                     .filterValues { it > 0 }
             )
         )
@@ -129,6 +134,7 @@ class BackupManager(
         data.prefs.reminderLanguages?.let { prefs.setReminderLanguages(it.toSet()) }
         // Reset then apply: a restore must not keep this device's stale placement offsets.
         languages.forEach { prefs.setWordDeckStart(it, data.prefs.wordDeckStarts[it] ?: 0) }
+        languages.forEach { prefs.setPlacementDay(it, data.prefs.placementDays[it] ?: 0) }
         prefs.setProfile(
             com.corlang.app.data.prefs.LearnerProfile(
                 name = data.prefs.profileName,
@@ -142,6 +148,8 @@ class BackupManager(
             data.wordReviews.size + data.feynmanAttempts.size + data.examAttempts.size +
             data.canDoChecks.size + data.dayTaskChecks.size
         Result.success(rows)
+    } catch (e: kotlinx.coroutines.CancellationException) {
+        throw e   // never convert a coroutine cancellation into "bad backup file"
     } catch (e: Exception) {
         Result.failure(e)
     }

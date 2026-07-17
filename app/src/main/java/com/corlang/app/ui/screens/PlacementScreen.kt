@@ -28,7 +28,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 /**
@@ -71,7 +70,10 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
     // Placement so far: the last correct answer's day/level. Questions run easy → hard, so the
     // first one you can't answer is your ceiling — no right/wrong is ever revealed.
     var placeDay by remember(lang) { mutableIntStateOf(1) }
-    var placeLevel by remember(lang) { mutableStateOf("A0") }
+    // Default = the course's actual first level, not a hardcoded "A0" (pt starts at A1).
+    var placeLevel by remember(lang) {
+        mutableStateOf(container.content.levels(lang).levels.first().id)
+    }
     var finished by remember(lang) { mutableStateOf(false) }
 
     if (finished) {
@@ -99,10 +101,12 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                     scope.launch {
                         container.progress.setPlacement(lang, placeDay, placeLevel)
                         // Skip the deck past the placed-over days: a Day-61 learner must get
-                        // Day-61 vocabulary, not the deck's day-1 basics. Overwritten (not
-                        // maxed) on retake so placing lower re-opens earlier words.
-                        val perLesson = container.languagePrefs.newWordsPerDay.first()
-                        container.languagePrefs.setWordDeckStart(lang, (placeDay - 1) * perLesson)
+                        // Day-61 vocabulary, not the deck's day-1 basics. Stored as the DAY
+                        // (offset derived at read time from the current pace, see
+                        // LanguagePrefs.wordDeckStart) so a later pace change can't starve
+                        // new words. Overwritten (not maxed) on retake so placing lower
+                        // re-opens earlier words.
+                        container.languagePrefs.setPlacementDay(lang, placeDay)
                         onDone()
                     }
                 },

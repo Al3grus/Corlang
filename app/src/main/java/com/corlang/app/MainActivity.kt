@@ -60,7 +60,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             CorlangTheme {
                 // Branded loader while content preloads; reveals the app when it hits 100%.
-                var ready by rememberSaveable { mutableStateOf(false) }
+                // Plain remember, NOT rememberSaveable: after process death the content caches
+                // are cold again, and skipping the splash meant the first composition parsed
+                // the full plan synchronously on the main thread (visible freeze). Within a
+                // live process (config change) the caches are warm and the splash is instant.
+                var ready by remember { mutableStateOf(false) }
                 if (ready) {
                     CorlangApp(container)
                 } else {
@@ -75,14 +79,18 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun CorlangApp(container: AppContainer) {
     val appState: AppState = viewModel(factory = AppState.Factory(container))
-    val lang by appState.selected.collectAsState()
+    // Load-then-show at the root: lang is null until DataStore emits (see AppState.selected),
+    // and premium uses a null initial for the same reason — with `initial = false` a premium
+    // user's bottom bar rendered 4 tabs for a frame before Learn popped in. Both emit within
+    // ~a frame and the splash is still on screen, so the gate is invisible.
+    val langOrNull by appState.selected.collectAsState()
+    val premiumOrNull by container.premium.entitled.collectAsState(initial = null)
+    val lang = langOrNull ?: return
+    val premium = premiumOrNull ?: return
     val navController = rememberNavController()
     val backStack by navController.currentBackStackEntryAsState()
     val currentRoute = backStack?.destination?.route ?: Dest.TODAY.route
     val scope = rememberCoroutineScope()
-
-    // The Learn tab (AI: Teach + Tutor) appears in the bottom bar only when Premium is unlocked.
-    val premium by container.premium.entitled.collectAsState(initial = false)
 
     // Settings lives OUTSIDE the nav graph: pushing it onto a tab's back stack gets it
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
@@ -94,11 +102,17 @@ private fun CorlangApp(container: AppContainer) {
     var inLesson by rememberSaveable { mutableStateOf(false) }
 
     // Point the voice and speech recognizer at the active language (hr/fr).
+    // prevLang distinguishes a real language SWITCH from the first composition after process
+    // death / recreation: this effect always runs once on entry, and unconditionally clearing
+    // inLesson there destroyed the restored mid-lesson state that rememberSaveable had just
+    // brought back.
+    var prevLang by rememberSaveable { mutableStateOf<String?>(null) }
     LaunchedEffect(lang) {
         container.tts.setLanguage(lang)
         container.speech.setLanguage(lang)
         // Switching language returns to the Today dashboard, not a half-done lesson of the old one.
-        inLesson = false
+        if (prevLang != null && prevLang != lang) inLesson = false
+        prevLang = lang
     }
 
     // Warm every language's heavyweight content (plan + vocab) off the main thread, so the

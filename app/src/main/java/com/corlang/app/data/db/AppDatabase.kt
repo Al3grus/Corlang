@@ -18,8 +18,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         CanDoCheck::class,
         DayTaskCheck::class
     ],
-    version = 5,
-    exportSchema = false
+    version = 6,
+    // Schemas are committed (app/schemas/) so migrations stay testable — after Play launch a
+    // botched migration is unrecoverable, so never flip this back off.
+    exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun progressDao(): ProgressDao
@@ -108,12 +110,31 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * v5 → v6: unique (langCode, day) on day_completion, so double-completing a day is a
+         * DB-level no-op (the autoincrement PK gave OnConflict.IGNORE nothing to conflict on).
+         * Existing duplicates are removed first — keeping the EARLIEST row per (lang, day),
+         * the original completion — or the index creation would fail.
+         */
+        private val MIGRATION_5_6 = object : Migration(5, 6) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "DELETE FROM `day_completion` WHERE `id` NOT IN (" +
+                        "SELECT MIN(`id`) FROM `day_completion` GROUP BY `langCode`, `day`)"
+                )
+                db.execSQL(
+                    "CREATE UNIQUE INDEX IF NOT EXISTS `index_day_completion_langCode_day` " +
+                        "ON `day_completion` (`langCode`, `day`)"
+                )
+            }
+        }
+
         fun get(context: Context): AppDatabase = instance ?: synchronized(this) {
             instance ?: Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
                 "corlang.db"
-            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
                 .build().also { instance = it }
         }
     }

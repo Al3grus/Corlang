@@ -230,7 +230,9 @@ fun ExerciseActivity(
             QuestionType.REORDER -> {
                 // Tokens are shown lowercased with edge punctuation stripped: the sentence-case
                 // capital and the trailing dot would give the first and last word away.
-                val scrambled = remember(q.prompt) {
+                // Keyed on `served` (like displayOptions), not prompt text: identical wording
+                // must not reuse a previous question's scramble.
+                val scrambled = remember(activity.title, served) {
                     val tokens = q.options.map(Grading::reorderToken)
                     val answer = q.ordered.map(Grading::reorderToken)
                     var s = tokens.shuffled()

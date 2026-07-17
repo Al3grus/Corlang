@@ -50,7 +50,11 @@ class ProgressRepository(private val dao: ProgressDao) {
         fun advanceStreak(gap: Long, streak: Int, freezes: Int): Pair<Int, Int> {
             var f = freezes
             val newStreak = when {
-                gap == 0L -> maxOf(streak, 1)                  // already studied today
+                // gap <= 0, not == 0: a NEGATIVE gap (clock set back, westward timezone
+                // travel) is not a broken streak — falling through to the reset branch
+                // wiped an N-day streak for changing timezones. displayStreak already
+                // treats negative gaps as alive; the two must agree.
+                gap <= 0L -> maxOf(streak, 1)                  // already studied today
                 gap == 1L -> streak + 1                         // consecutive day
                 gap == 2L && f > 0 && streak > 0 -> {           // one missed day: spend a freeze
                     f--
@@ -136,7 +140,9 @@ class ProgressRepository(private val dao: ProgressDao) {
             DayCompletion(langCode = lang, day = day, completedAtEpoch = now),
             existing.copy(
                 streak = newStreak,
-                lastStudiedEpochDay = today,
+                // Never move the anchor BACKWARDS: writing a smaller epoch day (clock set
+                // back) would make the next real day look like a 2+ day gap.
+                lastStudiedEpochDay = maxOf(today, existing.lastStudiedEpochDay),
                 streakFreezes = newFreezes,
                 currentDay = nextDay,
                 currentLevel = nextLevel

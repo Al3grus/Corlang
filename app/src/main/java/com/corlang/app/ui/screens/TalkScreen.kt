@@ -28,10 +28,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshots.SnapshotStateList
-import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -104,6 +102,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
         return
     }
 
+    assertTutorLangRegistered(lang)   // debug builds fail loudly on a language with no tutor content
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val level = progress?.currentLevel ?: "A1"
     val languageName = remember(lang) { container.content.meta(lang).name }
@@ -114,13 +113,18 @@ fun TalkScreen(container: AppContainer, lang: String) {
     // strongest measured levers against wrong-language/variety drift (arXiv 2406.20052), it
     // pins the variety before the model generates a single word, and the first exchange
     // costs no API call.
-    val messages: SnapshotStateList<ChatMessage> = remember(lang) {
-        mutableListOf(ChatMessage("assistant", seedGreeting(lang))).toMutableStateList()
+    //
+    // State lives in the app-scoped ChatStore, NOT in remember: a tab switch (or the
+    // Teach↔Tutor crossfade) disposes this composable, and remember-held state wiped the
+    // conversation and dropped in-flight, already-billed replies. Requests launch on
+    // container.appScope for the same reason — the reply lands even if the user has left.
+    val convo = container.chat.conversation(lang) {
+        ChatMessage("assistant", seedGreeting(lang))
     }
-    var input by remember(lang) { mutableStateOf("") }
-    var sending by remember(lang) { mutableStateOf(false) }
-    var error by remember(lang) { mutableStateOf<String?>(null) }
-    val scope = rememberCoroutineScope()
+    val messages: SnapshotStateList<ChatMessage> = convo.messages
+    var input by convo::draft
+    var sending by convo::sending
+    var error by convo::error
     val listState = rememberLazyListState()
 
     // A conversation in progress locks the top-bar language picker — the transcript is
@@ -136,7 +140,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
         input = ""
         sending = true
         error = null
-        scope.launch {
+        container.appScope.launch {
             // Per-language chat model (verified via tools/ai-variety-eval.py, §4 gate):
             //   hr → Sonnet 5 WITH thinking. Haiku's Croatian bled into Serbian (~30% fail),
             //        and thinking-disabled Sonnet slipped on adversarial 'da'-explanation
@@ -156,7 +160,10 @@ fun TalkScreen(container: AppContainer, lang: String) {
             val result = container.ai.complete(
                 system = system,
                 messages = payload,
-                model = if (lang == "hr") AiClient.FEEDBACK_MODEL else AiClient.DEFAULT_MODEL
+                model = if (lang == "hr") AiClient.FEEDBACK_MODEL else AiClient.DEFAULT_MODEL,
+                // hr runs Sonnet WITH thinking, which shares max_tokens with the visible
+                // reply — give it the proxy cap (2048) so reasoning can't starve the answer.
+                maxTokens = if (lang == "hr") 2048 else 1024
             )
             sending = false
             result.fold(
@@ -278,6 +285,24 @@ private fun MessageBubble(msg: ChatMessage, onSpeak: () -> Unit) {
                     )
                 }
             }
+        }
+    }
+}
+
+/**
+ * Languages with authored tutor content (starters, seed greeting/opener, variety rules,
+ * composer hint). The `else` branches below degrade an unregistered language to English
+ * silently — safe, but a NEW course must never ship on that fallback unnoticed: the seed
+ * greeting would anchor the whole chat in English and there'd be no variety rule. The debug
+ * check makes it fail loudly during development instead.
+ */
+private val TUTOR_LANGS = setOf("hr", "pt", "fr")
+
+internal fun assertTutorLangRegistered(lang: String) {
+    if (com.corlang.app.BuildConfig.DEBUG) {
+        check(lang in TUTOR_LANGS) {
+            "Language \"$lang\" has no authored tutor content (TalkScreen tables) — " +
+                "add starters/seedGreeting/seedOpener/varietyRules/composerHint before shipping."
         }
     }
 }

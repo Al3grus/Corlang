@@ -25,6 +25,9 @@ object Grading {
         return deAccented
             .replace("[.,!?;:\"'’]".toRegex(), "")       // remove common punctuation
             .replace("\\s+".toRegex(), " ")
+            // Final trim: stripping punctuation can leave an edge space ("ce que ?" → "ce que ").
+            // Space before ?/!/: is CORRECT French typography — it must not fail the grade.
+            .trim()
     }
 
     /** True if the learner's free-text [input] matches the FILL answer or any accepted variant. */
@@ -34,9 +37,14 @@ object Grading {
         return normalize(input, strict) in target
     }
 
-    /** True if [chosen] is the correct MCQ option. */
-    fun gradeMcq(q: Question, chosen: String): Boolean =
-        normalize(chosen, q.strictDiacritics) == normalize(q.answer, q.strictDiacritics)
+    /**
+     * True if [chosen] is the correct MCQ option. EXACT comparison, deliberately: options are
+     * tapped, not typed, so [chosen] is always a canonical option string — and many MCQs exist
+     * precisely to teach diacritics or capitalization ("š" vs "s", "engleski" vs "Engleski").
+     * Lenient normalization here graded those distractors as correct while the highlight
+     * (exact match) showed them red.
+     */
+    fun gradeMcq(q: Question, chosen: String): Boolean = chosen == q.answer
 
     /** True if the assembled token sequence equals the correct order. */
     fun gradeReorder(q: Question, assembled: List<String>): Boolean =

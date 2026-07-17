@@ -88,6 +88,11 @@ class ContentValidationTest {
             val index = strictJson.decodeFromString<List<String>>(
                 File(dir, "_index.json").readText(Charsets.UTF_8)
             )
+            // Same sync rule as vocab: a phase file on disk but missing from _index.json is
+            // silently dropped by the app's loader — and if it's the FINAL phase, the
+            // contiguity test still passes with a shorter course. Fail loudly instead.
+            val actual = dir.listFiles()!!.map { it.name }.filter { it != "_index.json" }.toSet()
+            assertEquals("$lang plan/_index.json out of sync with directory", actual, index.toSet())
             val plans = index.map {
                 strictJson.decodeFromString<StudyPlan>(File(dir, it).readText(Charsets.UTF_8))
             }
@@ -166,14 +171,16 @@ class ContentValidationTest {
 
     @Test
     fun `plan resource references exist in resources json`() {
-        val resourceNames = strictJson
-            .decodeFromString<ResourceList>(read("hr", "resources.json"))
-            .resources.map { it.name }.toSet()
-        // In-app references (like the Words tab) are allowed; external ones must resolve.
-        val allowed = resourceNames + setOf("Words tab (built-in daily flashcards)")
-        loadPlan("hr").days.forEach { d ->
-            d.resources.forEach { r ->
-                assertTrue("day ${d.day} references unknown resource: $r", r in allowed)
+        for (lang in allLangs) {
+            val resourceNames = strictJson
+                .decodeFromString<ResourceList>(read(lang, "resources.json"))
+                .resources.map { it.name }.toSet()
+            // In-app references (like the Words tab) are allowed; external ones must resolve.
+            val allowed = resourceNames + setOf("Words tab (built-in daily flashcards)")
+            loadPlan(lang).days.forEach { d ->
+                d.resources.forEach { r ->
+                    assertTrue("$lang day ${d.day} references unknown resource: $r", r in allowed)
+                }
             }
         }
     }
@@ -182,23 +189,29 @@ class ContentValidationTest {
 
     @Test
     fun `quiz questions are internally consistent`() {
-        strictJson.decodeFromString<QuizSet>(read("hr", "quizzes.json")).quizzes.forEach { quiz ->
-            quiz.questions.forEach { q ->
-                when (q.type) {
-                    QuestionType.MCQ -> {
-                        assertTrue("${quiz.id}: MCQ answer not in options: '${q.answer}'",
-                            q.answer in q.options)
-                        assertTrue("${quiz.id}: MCQ needs 2+ options", q.options.size >= 2)
+        // Every discovered language — this ran hr-only for months while pt/fr quizzes shipped
+        // ungated (clean by luck, not by gate).
+        for (lang in allLangs) {
+            strictJson.decodeFromString<QuizSet>(read(lang, "quizzes.json")).quizzes.forEach { quiz ->
+                quiz.questions.forEach { q ->
+                    when (q.type) {
+                        QuestionType.MCQ -> {
+                            assertTrue("$lang/${quiz.id}: MCQ answer not in options: '${q.answer}'",
+                                q.answer in q.options)
+                            assertTrue("$lang/${quiz.id}: MCQ needs 2+ options", q.options.size >= 2)
+                            assertEquals("$lang/${quiz.id}: duplicate MCQ options: ${q.options}",
+                                q.options.size, q.options.toSet().size)
+                        }
+                        QuestionType.FILL ->
+                            assertTrue("$lang/${quiz.id}: FILL with blank answer", q.answer.isNotBlank())
+                        QuestionType.REORDER ->
+                            assertEquals("$lang/${quiz.id}: REORDER ordered != permutation of options",
+                                q.options.sorted(), q.ordered.sorted())
+                        QuestionType.MATCH ->
+                            assertTrue("$lang/${quiz.id}: MATCH without pairs", q.pairs.isNotEmpty())
                     }
-                    QuestionType.FILL ->
-                        assertTrue("${quiz.id}: FILL with blank answer", q.answer.isNotBlank())
-                    QuestionType.REORDER ->
-                        assertEquals("${quiz.id}: REORDER ordered != permutation of options",
-                            q.options.sorted(), q.ordered.sorted())
-                    QuestionType.MATCH ->
-                        assertTrue("${quiz.id}: MATCH without pairs", q.pairs.isNotEmpty())
+                    assertTrue("$lang/${quiz.id}: question missing explanation", q.explanation.isNotBlank())
                 }
-                assertTrue("${quiz.id}: question missing explanation", q.explanation.isNotBlank())
             }
         }
     }
@@ -207,7 +220,10 @@ class ContentValidationTest {
 
     @Test
     fun `day activities are complete lessons, not references`() {
-        loadPlan("hr").days.forEach { d ->
+        // All discovered languages (was hr-only; the fr/pt copies below remain as belt-and-
+        // suspenders, and a 4th language is gated here automatically).
+        for (lang in allLangs) {
+        loadPlan(lang).days.forEach { d ->
             d.activities.forEachIndexed { i, a ->
                 when (a.type) {
                     com.corlang.app.data.model.ActivityKind.LEARN ->
@@ -236,6 +252,7 @@ class ContentValidationTest {
                 }
                 assertTrue("day ${d.day} activity $i: missing sources", a.sources.isNotEmpty())
             }
+        }
         }
     }
 
@@ -405,14 +422,125 @@ class ContentValidationTest {
             }
         }
         for (lang in allLangs) {
-            for (name in listOf("quizzes.json", "exams.json", "placement.json")) {
-                if (!exists(lang, name)) continue
+            // plan/ INCLUDED — this test originally scanned only quizzes/exams/placement while
+            // the REORDER-leak test scanned plan/ too; a fr lesson FILL quoting the sentence
+            // containing its own answer ("ce que") slipped through that gap.
+            val planDir = File(contentRoot, "$lang/plan")
+            val names = (planDir.listFiles()?.map { "plan/${it.name}" } ?: emptyList()) +
+                listOf("quizzes.json", "exams.json", "placement.json")
+            for (name in names) {
+                if (!exists(lang, name) || !name.endsWith(".json") || "_index" in name) continue
                 val fills = mutableListOf<Pair<String, List<String>>>()
                 collectFills(lenient.parseToJsonElement(read(lang, name)), fills)
                 fills.forEach { (prompt, answers) ->
                     val p = norm(prompt)
                     answers.map { norm(it) }.filter { " " in it }.forEach { a ->
                         assertTrue("$lang/$name: FILL prompt leaks its answer '$a': $prompt", a !in p)
+                    }
+                }
+            }
+        }
+    }
+
+    // ---------- Exam structure (all languages) ----------
+
+    @Test
+    fun `exam sections are structurally sound`() {
+        // Exams were never structurally validated for ANY language: an empty prompts list
+        // would crash the runner (prompts[promptIndex]); a REORDER in a scored section would
+        // render as a bare text field and be unanswerable.
+        val scoredKinds = setOf(
+            com.corlang.app.data.model.ExamSectionKind.LISTENING,
+            com.corlang.app.data.model.ExamSectionKind.READING,
+            com.corlang.app.data.model.ExamSectionKind.GRAMMAR
+        )
+        for (lang in allLangs) {
+            if (!exists(lang, "exams.json")) continue
+            strictJson.decodeFromString<List<com.corlang.app.data.model.ExamSpec>>(
+                read(lang, "exams.json")
+            ).forEach { exam ->
+                assertTrue("$lang/${exam.id}: exam without sections", exam.sections.isNotEmpty())
+                exam.sections.forEach { s ->
+                    if (s.kind in scoredKinds) {
+                        assertTrue("$lang/${exam.id}/${s.id}: scored section without questions",
+                            s.questions.isNotEmpty())
+                        s.questions.forEach { q ->
+                            assertTrue(
+                                "$lang/${exam.id}/${s.id}: scored sections support only MCQ/FILL, got ${q.type}",
+                                q.type == QuestionType.MCQ || q.type == QuestionType.FILL
+                            )
+                            if (q.type == QuestionType.MCQ) {
+                                assertTrue("$lang/${exam.id}/${s.id}: MCQ answer not in options: '${q.answer}'",
+                                    q.answer in q.options && q.options.size >= 2)
+                                assertEquals("$lang/${exam.id}/${s.id}: duplicate MCQ options",
+                                    q.options.size, q.options.toSet().size)
+                            } else {
+                                assertTrue("$lang/${exam.id}/${s.id}: FILL blank answer",
+                                    q.answer.isNotBlank())
+                                // The runner's field label promises "diacritics count!" — the
+                                // grading must actually be strict for every exam FILL.
+                                assertTrue("$lang/${exam.id}/${s.id}: exam FILL not strictDiacritics: '${q.answer}'",
+                                    q.strictDiacritics)
+                            }
+                        }
+                    } else {
+                        assertTrue("$lang/${exam.id}/${s.id}: ${s.kind} section needs >=1 prompt",
+                            s.prompts.isNotEmpty())
+                        s.prompts.forEach { p ->
+                            assertTrue("$lang/${exam.id}/${s.id}: prompt missing model answer or rubric",
+                                p.modelAnswer.isNotBlank() && p.rubric.isNotEmpty())
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Test
+    fun `day exercises never use MATCH`() {
+        // ExerciseActivity has no MATCH renderer: a MATCH question in a lesson would grade
+        // false forever and re-queue infinitely. Ban it at the gate instead of skipping it.
+        for (lang in allLangs) {
+            loadPlan(lang).days.forEach { d ->
+                d.activities.filter { it.type == com.corlang.app.data.model.ActivityKind.EXERCISE }
+                    .forEach { a ->
+                        a.questions.forEach { q ->
+                            assertTrue(
+                                "$lang day ${d.day}: MATCH in a day exercise is unplayable (no renderer)",
+                                q.type != QuestionType.MATCH
+                            )
+                        }
+                    }
+            }
+        }
+    }
+
+    @Test
+    fun `no duplicate prompts within a question container`() {
+        // Question UI state was historically keyed on prompt TEXT; it's index-keyed now, but
+        // duplicate prompts inside one activity/quiz/section are an authoring error regardless
+        // (the learner sees the same question twice and the intent is ambiguous).
+        for (lang in allLangs) {
+            loadPlan(lang).days.forEach { d ->
+                d.activities.forEachIndexed { i, a ->
+                    val prompts = a.questions.map { it.prompt }
+                    assertEquals("$lang day ${d.day} activity $i: duplicate question prompts",
+                        prompts.size, prompts.toSet().size)
+                }
+            }
+            strictJson.decodeFromString<QuizSet>(read(lang, "quizzes.json")).quizzes.forEach { quiz ->
+                val prompts = quiz.questions.map { it.prompt }
+                assertEquals("$lang/${quiz.id}: duplicate question prompts",
+                    prompts.size, prompts.toSet().size)
+            }
+            if (exists(lang, "exams.json")) {
+                strictJson.decodeFromString<List<com.corlang.app.data.model.ExamSpec>>(
+                    read(lang, "exams.json")
+                ).forEach { exam ->
+                    exam.sections.forEach { s ->
+                        val prompts = s.questions.map { it.prompt } + s.prompts.map { it.prompt }
+                        assertEquals("$lang/${exam.id}/${s.id}: duplicate prompts",
+                            prompts.size, prompts.toSet().size)
                     }
                 }
             }

@@ -63,9 +63,19 @@ fun ProgressScreen(
     val levels = remember(lang) { container.content.levels(lang).levels }
 
     val progress by container.progress.progress(lang).collectAsState(initial = null)
-    val daysDone by container.progress.completedDayCount(lang).collectAsState(initial = 0)
-    val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
+    val rawDaysDone by container.progress.completedDayCount(lang)
+        .collectAsState(initial = null)
+    val rawReviews by container.words.reviews(lang).collectAsState(initial = null)
     val scope = rememberCoroutineScope()
+
+    // Load-then-show (same rule as Today): without the gate every tab entry painted one frame
+    // of "0 day streak / 0 days done / A0" stat tiles before Room emitted.
+    if (progress == null || rawDaysDone == null || rawReviews == null) {
+        Column(Modifier.fillMaxSize()) {}
+        return
+    }
+    val daysDone = rawDaysDone ?: 0
+    val reviews = rawReviews.orEmpty()
 
     val currentLevel = progress?.currentLevel ?: "A0"
     val streak = com.corlang.app.data.ProgressRepository.displayStreak(

@@ -26,10 +26,13 @@ interface ProgressDao {
     /**
      * Day completion is ONE atomic unit: the completion row and the updated progress (streak,
      * currentDay) land together, so process death mid-way can't leave a completed day without
-     * its streak credit (or vice versa).
+     * its streak credit (or vice versa). The already-completed check lives INSIDE the
+     * transaction (check-then-act outside it was racy) — a duplicate completion is a no-op
+     * for both the row (unique index + IGNORE) and the progress/streak update.
      */
     @Transaction
     suspend fun completeDayTxn(completion: DayCompletion, progress: LanguageProgress) {
+        if (isDayCompleted(completion.langCode, completion.day)) return
         insertCompletion(completion)
         upsertProgress(progress)
     }
