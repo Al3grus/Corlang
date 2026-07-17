@@ -13,8 +13,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -27,11 +25,12 @@ import androidx.compose.ui.unit.sp
 import com.corlang.app.data.model.LanguageMeta
 
 /**
- * Top bar showing the app title and a language picker (flag + name) on the right.
+ * Top bar: brand mark on the left, a compact language picker (flag only) on the right. Settings
+ * lives on the Profile tab now, not here — a cleaner bar.
  *
  * [pickerEnabled] = false locks the picker while the learner is mid-session (lesson, review,
- * quiz, exam…): the current language stays visible as a static badge, but the dropdown can't
- * open — a mid-session switch would tear down the session and lose partial work.
+ * quiz, exam…): the current language's flag stays visible, but the dropdown can't open — a
+ * mid-session switch would tear down the session and lose partial work.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -39,7 +38,6 @@ fun LanguageTopBar(
     languages: List<LanguageMeta>,
     selected: String,
     onSelect: (String) -> Unit,
-    onSettings: () -> Unit = {},
     pickerEnabled: Boolean = true
 ) {
     var expanded by remember { mutableStateOf(false) }
@@ -73,28 +71,19 @@ fun LanguageTopBar(
             actionIconContentColor = onBar
         ),
         actions = {
-            IconButton(onClick = onSettings) {
-                Icon(Icons.Filled.Settings, contentDescription = "Settings", tint = onBar)
-            }
+            // Flag only: the chosen language is obvious from its flag, and it keeps the bar
+            // compact (names crowded the bar and could wrap on zoomed displays).
             if (languages.size <= 1 || !pickerEnabled) {
-                // Single language, or picker locked mid-session: a static badge, no dropdown.
+                // Single language, or picker locked mid-session: a static flag, no dropdown.
                 Text(
-                    (current?.flagEmoji ?: "") + "  " +
-                        (if (languages.size <= 1) current?.nativeName ?: "" else current?.name ?: ""),
-                    color = onBar,
-                    fontSize = 15.sp,
-                    modifier = Modifier.padding(end = 16.dp)
+                    current?.flagEmoji ?: "",
+                    fontSize = 22.sp,
+                    modifier = Modifier.padding(end = 20.dp)
                 )
             } else {
                 Row {
-                    // TextButton, not IconButton: IconButton clips its content to a 40dp circle,
-                    // which would crop the flag+name label the moment a 2nd language ships.
                     TextButton(onClick = { expanded = true }) {
-                        Text(
-                            (current?.flagEmoji ?: "") + "  " + (current?.name ?: ""),
-                            color = onBar,
-                            fontSize = 15.sp
-                        )
+                        Text(current?.flagEmoji ?: "", fontSize = 22.sp)
                         Icon(Icons.Filled.ArrowDropDown, contentDescription = "Choose language", tint = onBar)
                     }
                     DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {

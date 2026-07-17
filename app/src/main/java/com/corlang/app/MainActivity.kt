@@ -216,7 +216,6 @@ private fun CorlangApp(container: AppContainer) {
                 languages = appState.languages,
                 selected = lang,
                 onSelect = appState::selectLanguage,
-                onSettings = { showSettings = true },
                 // Locked while the learner is mid-anything (lesson, review, quiz, exam,
                 // placement, teach-back, tutor chat) — see Engagement.
                 pickerEnabled = !com.corlang.app.ui.Engagement.engaged
@@ -315,13 +314,15 @@ private fun CorlangApp(container: AppContainer) {
             }
             composable(Dest.PROGRESS.route) {
                 Crossfade(targetState = lang, animationSpec = tween(durationMillis = 1300, easing = androidx.compose.animation.core.FastOutSlowInEasing), label = "lang-profile") { l ->
-                    ProgressScreen(container, l, onNavigate = { route ->
-                        navController.navigate(route) {
-                            popUpTo(Dest.TODAY.route) { saveState = true }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    })
+                    ProgressScreen(container, l,
+                        onNavigate = { route ->
+                            navController.navigate(route) {
+                                popUpTo(Dest.TODAY.route) { saveState = true }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        },
+                        onOpenSettings = { showSettings = true })
                 }
             }
         }
