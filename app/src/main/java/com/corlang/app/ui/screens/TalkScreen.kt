@@ -176,16 +176,25 @@ fun TalkScreen(container: AppContainer, lang: String) {
             modifier = Modifier.weight(1f).fillMaxWidth().padding(horizontal = 12.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            if (messages.isEmpty()) {
+            itemsIndexed(messages) { _, msg ->
+                MessageBubble(
+                    msg = msg,
+                    onSpeak = { container.tts.speak(stripGloss(msg.content)) }
+                )
+            }
+            // Starters BELOW the seed greeting, until the learner's first message. (The old
+            // messages.isEmpty() condition went dead when the seed greeting arrived — the
+            // list is never empty now, so the starters had silently vanished.)
+            if (messages.size <= 1 && !sending) {
                 item {
-                    Column(Modifier.fillMaxWidth().padding(top = 24.dp)) {
+                    Column(Modifier.fillMaxWidth().padding(top = 8.dp)) {
                         Text(
-                            "Start a conversation ($level). Tap a starter or type your own.",
+                            "Tap a starter or type your own ($level).",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(bottom = 10.dp)
                         )
-                        STARTERS.forEach { starter ->
+                        starters(lang).forEach { starter ->
                             OutlinedButton(
                                 onClick = { send(starter) },
                                 modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp)
@@ -193,12 +202,6 @@ fun TalkScreen(container: AppContainer, lang: String) {
                         }
                     }
                 }
-            }
-            itemsIndexed(messages) { _, msg ->
-                MessageBubble(
-                    msg = msg,
-                    onSpeak = { container.tts.speak(stripGloss(msg.content)) }
-                )
             }
             if (sending) {
                 item {
@@ -231,7 +234,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
             OutlinedTextField(
                 value = input,
                 onValueChange = { input = it },
-                placeholder = { Text("Piši na hrvatskom…") },
+                placeholder = { Text(composerHint(lang)) },
                 modifier = Modifier.weight(1f),
                 maxLines = 4
             )
@@ -275,12 +278,36 @@ private fun MessageBubble(msg: ChatMessage, onSpeak: () -> Unit) {
     }
 }
 
-private val STARTERS = listOf(
-    "Bok! Kako si danas?",
-    "Možemo li vježbati naručivanje kave?",
-    "Postavi mi jedno lako pitanje.",
-    "Ispravi moje greške, molim te."
-)
+/** Per-language conversation starters — shown until the learner sends their first message. */
+private fun starters(lang: String): List<String> = when (lang) {
+    "hr" -> listOf(
+        "Bok! Kako si danas?",
+        "Možemo li vježbati naručivanje kave?",
+        "Postavi mi jedno lako pitanje.",
+        "Ispravi moje greške, molim te."
+    )
+    "pt" -> listOf(
+        "Olá! Como estás?",
+        "Podemos praticar como pedir um café?",
+        "Faz-me uma pergunta fácil.",
+        "Corrige os meus erros, por favor."
+    )
+    "fr" -> listOf(
+        "Bonjour ! Comment ça va ?",
+        "On peut pratiquer comment commander un café ?",
+        "Pose-moi une question facile.",
+        "Corrige mes erreurs, s'il te plaît."
+    )
+    else -> listOf("Hello! How are you?")
+}
+
+/** Per-language composer hint ("write in <language>" in that language). */
+private fun composerHint(lang: String): String = when (lang) {
+    "hr" -> "Piši na hrvatskom…"
+    "pt" -> "Escreve em português…"
+    "fr" -> "Écris en français…"
+    else -> "Write in your learning language…"
+}
 
 /** Removes "(English gloss)" parentheticals so the Croatian voice doesn't read English aloud. */
 private fun stripGloss(text: String): String =

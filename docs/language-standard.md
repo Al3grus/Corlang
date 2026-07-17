@@ -68,6 +68,10 @@ Adding language `xx` requires exactly these code edits — grep each symbol:
    (NN per-section / DELF ≥50-with-floors / CAPLE ≥55% average).
 4. `TalkScreen.varietyRules("xx")` — **mandatory, see §4.**
 5. `TalkScreen.seedGreeting/seedOpener("xx")` — **native-authored, see §4.**
+5a. `TalkScreen.starters("xx")` and `composerHint("xx")` — starter buttons + the input
+    placeholder, both in the target language. (Field bug: these were hardcoded Croatian and
+    showed on the Portuguese tutor.) Grep TalkScreen for any hardcoded target-language string
+    — every learner-facing string there must be keyed by `lang`.
 6. Onboarding gender-forms copy if the language is gendered like hr.
 7. Reminder copy/languages — works automatically via meta.
 8. Placement: verify `setWordDeckStart` fires (placement must gate the vocab deck — field:
