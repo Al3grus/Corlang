@@ -1,6 +1,6 @@
 {
-  "versionCode": 82,
-  "versionName": "0.20.29",
-  "notes": "Snappier and cheaper. The Review tab now loads instantly — it only lists word packs up to your level instead of the whole course. The Today ring settles instantly instead of re-animating every visit. Continuing a lesson jumps straight to where you left off (no more flash of the first card). And under the hood the tutor now uses a lighter, cheaper model for Portuguese and French while keeping the stronger one for Croatian, where it's needed for correctness.",
+  "versionCode": 83,
+  "versionName": "0.20.30",
+  "notes": "Smoother, flicker-free navigation. The Today screen now waits until your progress has fully loaded before it paints, so the lesson button lands on the right label (\"Start Day 8\") and the ring shows its real value on the first frame — no more flashing a wrong state for a split second. Switching tabs is snappier too: the fade is shorter, so you no longer catch a glimpse of the previous tab before the new one appears.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

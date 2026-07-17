@@ -269,9 +269,13 @@ private fun CorlangApp(container: AppContainer) {
             )
             return@Scaffold
         }
-        // One quick fade for every tab switch (~half the old 1300ms). Uniform across all
-        // destinations so nothing — Review included — reads as a hard cut.
-        val tabFade = tween<Float>(durationMillis = 420)
+        // One snappy fade for every tab switch. Kept short on purpose: a long crossfade keeps the
+        // OUTGOING tab painted while the incoming one is still populating its flows, so you'd see
+        // e.g. Today linger for a beat before Review resolves. 150ms is long enough to read as a
+        // soft fade (not a hard cut) but short enough that the old tab never lingers. Uniform
+        // across all destinations. Pairs with each screen's own load-gate so the incoming tab
+        // fades in already-populated rather than mid-load.
+        val tabFade = tween<Float>(durationMillis = 150)
         NavHost(
             navController = navController,
             startDestination = Dest.TODAY.route,

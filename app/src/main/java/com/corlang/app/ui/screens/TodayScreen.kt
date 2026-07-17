@@ -59,7 +59,10 @@ fun TodayScreen(
         container.content.levels(lang).levels.filter { it.exam != null }.map { it.id }.toSet()
     }
     val progress by container.progress.progress(lang).collectAsState(initial = null)
-    val completed by container.progress.completedDays(lang).collectAsState(initial = emptyList())
+    // Nullable-until-loaded so the load-gate below can tell "no completed days" apart from
+    // "haven't loaded yet" — collectAsState(emptyList()) conflates the two and paints a stale frame.
+    val rawCompleted by container.progress.completedDays(lang).collectAsState(initial = null)
+    val completed = rawCompleted.orEmpty()
 
     val currentDay = progress?.currentDay ?: 1
     val freezes = progress?.streakFreezes ?: 0
@@ -137,8 +140,9 @@ fun TodayScreen(
     val steps = remember(lang, day.day) {
         buildSessionSteps(day, resourceUrls, container.content.meta(lang).name)
     }
-    val checks by container.progress.dayTaskChecks(lang, day.day)
-        .collectAsState(initial = emptyList())
+    val rawChecks by container.progress.dayTaskChecks(lang, day.day)
+        .collectAsState(initial = null)
+    val checks = rawChecks.orEmpty()
     val doneIds = checks.map { it.itemId }.toSet()
     val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     // "Started" = you actually completed a step of THIS lesson (a persisted check), so opening the
@@ -170,8 +174,9 @@ fun TodayScreen(
     val targetSteps = remember(lang, targetDay) {
         buildSessionSteps(targetDayObj, resourceUrls, container.content.meta(lang).name)
     }
-    val targetChecks by container.progress.dayTaskChecks(lang, targetDay)
-        .collectAsState(initial = emptyList())
+    val rawTargetChecks by container.progress.dayTaskChecks(lang, targetDay)
+        .collectAsState(initial = null)
+    val targetChecks = rawTargetChecks.orEmpty()
     val targetDoneIds = targetChecks.map { it.itemId }.toSet()
     val targetAction = targetSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val targetStarted = targetDoneIds.isNotEmpty()
@@ -199,6 +204,16 @@ fun TodayScreen(
         completedToday > 0 -> 1f
         targetAction.isEmpty() -> 0f
         else -> ((targetStepsDone + targetPartial) / targetAction.size).coerceIn(0f, 1f)
+    }
+
+    // Load-then-show: hold the first paint until every flow that decides the lesson button's
+    // label, the ring, and the journey's completed stones has actually emitted. Without this a
+    // tab-return paints one frame from the still-loading defaults (progress=null → targetDay=1 →
+    // "Open Day 8", empty checks → 0% ring) before snapping to the real state ("Start Day 8") —
+    // the flicker. All four settle within ~1 frame from Room/DataStore, so the blank is invisible.
+    if (progress == null || rawCompleted == null || rawChecks == null || rawTargetChecks == null) {
+        Column(Modifier.fillMaxSize()) {}
+        return
     }
 
     // Generous, even rhythm so the three blocks read as distinct bands — streak up top, the
