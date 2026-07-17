@@ -57,12 +57,10 @@ import kotlinx.coroutines.launch
 fun ProgressScreen(
     container: AppContainer,
     lang: String,
-    onNavigate: (String) -> Unit = {},
-    onOpenSettings: () -> Unit = {}
+    onNavigate: (String) -> Unit = {}
 ) {
     val meta = remember(lang) { container.content.meta(lang) }
     val levels = remember(lang) { container.content.levels(lang).levels }
-    val resources = remember(lang) { container.content.resources(lang).resources.sortedBy { it.rank } }
 
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val daysDone by container.progress.completedDayCount(lang).collectAsState(initial = 0)
@@ -82,41 +80,16 @@ fun ProgressScreen(
     val wordsLearned = reviews.count { it.isLearned }
     val wordsMastered = reviews.count { it.isMastered }
 
-    // Reference reading opened from this tab (Cheatsheet / Grammar moved here from Learn —
-    // Learn is now the two active AI modes; this is the browse-when-you-want library).
-    var refPage by rememberSaveable(lang) { mutableStateOf<String?>(null) }
-    if (refPage != null) {
-        androidx.activity.compose.BackHandler { refPage = null }
-        Column(Modifier.fillMaxSize()) {
-            OutlinedButton(
-                onClick = { refPage = null },
-                modifier = Modifier.padding(start = 16.dp, top = 8.dp)
-            ) { Text("← Back") }
-            Box(Modifier.weight(1f)) {
-                if (refPage == "cheatsheet") CheatsheetScreen(container, lang)
-                else GrammarScreen(container, lang)
-            }
-        }
-        return
-    }
-
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
     ) {
-        // ---- You ---- (title + Settings gear, which moved here from the top bar)
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Column(Modifier.weight(1f)) {
-                Text("${meta.flagEmoji} ${meta.name}",
-                    style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-                Text("Your progress — kept on this device.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 2.dp))
-            }
-            IconButton(onClick = onOpenSettings) {
-                Icon(Icons.Outlined.Settings, contentDescription = "Settings")
-            }
-        }
+        // ---- You ----
+        Text("${meta.flagEmoji} ${meta.name}",
+            style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+        Text("Your progress — kept on this device.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 2.dp))
 
         // ---- Progress ----
         Row(modifier = Modifier.fillMaxWidth().padding(top = 14.dp),
@@ -203,18 +176,9 @@ fun ProgressScreen(
             }
         }
 
-        // ---- Reference ---- (the long, browse-when-you-want material, collapsed by default)
+        // ---- Level map ---- (where you are on the CEFR ladder; reference library is in Profile)
         Spacer(Modifier.height(22.dp))
-        SectionTitle("Reference")
-
-        OutlinedButton(
-            onClick = { refPage = "cheatsheet" },
-            modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
-        ) { Text("Cheatsheet — the language on one page →") }
-        OutlinedButton(
-            onClick = { refPage = "grammar" },
-            modifier = Modifier.fillMaxWidth().padding(top = 4.dp, bottom = 6.dp)
-        ) { Text("Grammar syllabus →") }
+        SectionTitle("Your level")
 
         CollapsibleCard("CEFR ladder & milestones") {
             levels.forEach { level ->
@@ -240,42 +204,6 @@ fun ProgressScreen(
                             style = MaterialTheme.typography.bodyMedium,
                             modifier = Modifier.padding(top = 4.dp))
                         level.canDo.forEach { Bullet(it) }
-                    }
-                }
-            }
-        }
-
-        CollapsibleCard("The 20% that drives 80%") {
-            Text(meta.paretoSummary, style = MaterialTheme.typography.bodyMedium)
-        }
-
-        CollapsibleCard("Best resources to learn ${meta.name}") {
-            val uriHandler = LocalUriHandler.current
-            resources.forEach { r ->
-                // Whole card is the tap target (48dp+); show the domain, not a wrapping raw URL.
-                Surface(
-                    shape = RoundedCornerShape(Radius.md),
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 4.dp)
-                        .clickable(enabled = r.url != null) { r.url?.let { uriHandler.openUri(it) } }
-                ) {
-                    Column(modifier = Modifier.padding(14.dp)) {
-                        Text("${r.rank}. ${r.name}",
-                            style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                        Text(
-                            r.type.replaceFirstChar { it.uppercase() } +
-                                (r.url?.let { url ->
-                                    val domain = url.removePrefix("https://").removePrefix("http://")
-                                        .substringBefore('/')
-                                    " · $domain ↗"
-                                } ?: ""),
-                            style = MaterialTheme.typography.labelMedium,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                        Text(r.why, style = MaterialTheme.typography.bodyMedium,
-                            modifier = Modifier.padding(top = 4.dp))
                     }
                 }
             }
