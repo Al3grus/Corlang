@@ -47,9 +47,11 @@ const MAX_BODY_BYTES = 100_000;
 const DAILY_LIMIT_PER_IP = 300;
 const DAILY_LIMIT_GLOBAL = 3000;
 // Per-subscriber daily message cap, keyed on the Play subscription token (x-corlang-sub).
-// This is the cost guardrail that makes the flat-price subscription safe: even a heavy
-// Croatian user maxing it every day costs ~€4.4/mo (measured), under the plan's net revenue.
-const DAILY_LIMIT_PER_SUB = 40;
+// This is the cost guardrail that makes the flat-price subscription safe: at 30/day a
+// cap-maxing Croatian user costs ~€3.3/mo (measured €0.0036/msg), comfortably under the
+// monthly plan's net revenue. DISCLOSED on the paywall ("fair use: up to 30 AI messages a
+// day") — the number here and that copy must move together.
+const DAILY_LIMIT_PER_SUB = 30;
 
 // The request may only carry the fields the app actually sends. Anything else — tools,
 // mcp_servers, stream, metadata, containers — is stripped, so an extracted token cannot be
