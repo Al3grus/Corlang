@@ -83,8 +83,16 @@ import kotlinx.coroutines.launch
  */
 private val STEP_TITLE_GAP = 28.dp
 private val STEP_ACTION_GAP = 24.dp
-/** Air above and below the welcome lockup, equal on both sides so it sits between bar and title. */
-private val LOGO_BAND = 22.dp
+/**
+ * Air above and below the welcome lockup, equal on both sides so it sits midway between the
+ * progress bar and the title. Generous (not a token gap) because the alternative reads as the
+ * logo being stuck to the bar.
+ */
+private val LOGO_BAND = 40.dp
+/** Gap under the progress bar on steps with no logo, so titles never touch the bar either. */
+private val FRAME_TOP = 40.dp
+/** Gap under the button row, lifting it off the bottom edge of the screen. */
+private val FRAME_BOTTOM = 36.dp
 
 private const val STEP_WELCOME = 0
 private const val STEP_HOW = 1
@@ -208,8 +216,8 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 modifier = Modifier.padding(vertical = LOGO_BAND)
             )
         }
-        // Steps that have no logo still start their title where the welcome's title starts.
-        if (step != STEP_WELCOME) Spacer(Modifier.height(LOGO_BAND))
+        // Steps with no logo still need the bar-to-title gap.
+        if (step != STEP_WELCOME) Spacer(Modifier.height(FRAME_TOP))
 
         // Every step fills this same frame, so the title lands in one place and the buttons
         // land in another, on every screen. Only the middle differs, and it centres itself
@@ -336,7 +344,10 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // following screens let you change anyway.
             STEP_NAME -> StepFrame(
                 title = "What's your name?",
-                subtitle = "It becomes your very first phrase: introducing yourself.",
+                // The old subtitle promised it would become "your very first phrase", which went
+                // with the removed phrases payoff. The name's real jobs are the daily reminder
+                // ("Vrijeme je za hrvatski, <name>!") and the tutor addressing the learner.
+                subtitle = "Your reminders and your tutor will use it.",
                 actions = {
                     Button(
                         onClick = { go(+1) },
@@ -489,6 +500,9 @@ private fun StepFrame(
 
         Spacer(Modifier.height(STEP_ACTION_GAP))
         actions()
+        // Lifts the button row off the bottom edge; without it the primary button sat flush
+        // against the navigation bar and read as pinned to the screen rather than to the step.
+        Spacer(Modifier.height(FRAME_BOTTOM))
     }
 }
 

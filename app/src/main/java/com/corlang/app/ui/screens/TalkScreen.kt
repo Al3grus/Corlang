@@ -108,7 +108,13 @@ fun TalkScreen(container: AppContainer, lang: String) {
     // Sent to the worker so the 40-msg/day cap keys on this subscriber (null on DEV_PREMIUM).
     val subToken by container.languagePrefs.subPurchaseToken.collectAsState(initial = null)
     val languageName = remember(lang) { container.content.meta(lang).name }
-    val system = remember(lang, level, languageName) { tutorSystemPrompt(lang, languageName, level) }
+    val profile by container.languagePrefs.profile.collectAsState(
+        initial = com.corlang.app.data.prefs.LearnerProfile("", "m", "", "", "")
+    )
+    val studentName = profile.name.trim()
+    val system = remember(lang, level, languageName, studentName) {
+        tutorSystemPrompt(lang, languageName, level, studentName)
+    }
 
     // Transcript for display + as the API history (same list; roles map directly).
     // Seeded with a NATIVE-AUTHORED greeting: an in-language few-shot anchor is one of the
@@ -238,6 +244,20 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.error,
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
+            )
+        }
+
+        // Explicit permission to break out into English. Beginners stall because they assume the
+        // chat has to be entirely in the target language, and a learner who can ask a question
+        // keeps talking instead of quitting. A0 to A2 only: from B1 the point is to push through
+        // without falling back. It lives in the UI rather than the greeting on purpose, the seed
+        // greeting is an in-language anchor against variety drift and must stay all in-language.
+        if (level in setOf("A0", "A1", "A2")) {
+            Text(
+                "Stuck? Ask anything in English and your tutor will explain.",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 2.dp)
             )
         }
 
@@ -398,16 +418,29 @@ private fun varietyRules(lang: String): String = when (lang) {
     else -> "- If the student's sentence is already correct, say so — never invent corrections."
 }
 
-private fun tutorSystemPrompt(lang: String, languageName: String, level: String): String = """
+private fun tutorSystemPrompt(
+    lang: String,
+    languageName: String,
+    level: String,
+    studentName: String
+): String = """
     You are a warm, patient $languageName conversation tutor. Your student is an adult learning
     $languageName at CEFR level $level, preparing for the official $languageName exam, so accuracy
     matters, but keep it encouraging.
+    ${if (studentName.isBlank()) "" else
+        "The student's name is $studentName. Use it occasionally, the way a real tutor would, " +
+        "not in every message."}
 
     Rules:
     ${varietyRules(lang)}
     - Converse mainly in $languageName, kept at or slightly below level $level. Use short, natural sentences.
     - When you use a word or phrase the student likely doesn't know yet, add a brief English gloss
       in parentheses right after it.
+    - The student may ask you anything in ENGLISH at any time: what a word means, why a form is
+      used, how to say something. Answer that question directly and clearly IN ENGLISH, briefly,
+      then return to $languageName and keep the conversation going. Never refuse, never pretend
+      not to understand, and never scold them for using English. Falling back to English when
+      stuck is normal, and a learner who can ask questions keeps talking instead of giving up.
     - If the student makes a genuine mistake, gently correct it: give the corrected $languageName
       sentence and a one-line reason, then continue naturally. Don't nitpick; focus on what helps most.
     - Always end with a simple follow-up question to keep the conversation going.
