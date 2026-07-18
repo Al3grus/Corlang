@@ -92,12 +92,98 @@ object Grading {
         }
     }
 
+    /*
+     * Pro-drop equivalence. Croatian and Portuguese omit subject pronouns ("radim" == "ja
+     * radim"), but recall targets are stored one way and the prompt never says which way to
+     * write it, so "ja radim" was graded wrong against "radim" (field report). The English
+     * gloss picks WHICH pronouns are equivalent — "I work" licenses "ja radim", never
+     * "ti radim" — so a wrong-person pronoun still fails. French is not pro-drop and gets
+     * no expansion.
+     */
+    private val PRO_DROP_SUBJECTS: Map<String, Map<String, List<String>>> = mapOf(
+        "hr" to mapOf(
+            "i" to listOf("ja"),
+            "he" to listOf("on"), "she" to listOf("ona"), "it" to listOf("ono"),
+            "we" to listOf("mi"),
+            "they" to listOf("oni", "one", "ona"),
+            // "you" resolves by verb ending below (-š → ti, -te → vi).
+            "you" to listOf("ti", "vi")
+        ),
+        "pt" to mapOf(
+            "i" to listOf("eu"),
+            "he" to listOf("ele"), "she" to listOf("ela"), "it" to listOf("ele", "ela"),
+            "we" to listOf("nós"),
+            "they" to listOf("eles", "elas"),
+            "you" to listOf("tu", "você", "vocês")
+        )
+    )
+
+    /** hr clitics that cannot open a sentence: dropping "ja" from "ja sam..." would create
+     *  ungrammatical "sam...", so the pronoun-less variant is NOT offered before these. */
+    private val HR_CLITICS = setOf(
+        "sam", "si", "je", "smo", "ste", "su",
+        "ću", "ćeš", "će", "ćemo", "ćete",
+        "bih", "bi", "bismo", "biste",
+        "se", "me", "te", "ga", "mu", "joj", "ju", "im", "nam", "vam",
+        // ti/mi double as subject pronouns, but inside a clause they are dative clitics
+        // ("šaljem ti poruku"), which is what these guards exist for.
+        "ti", "mi", "nas", "vas", "ih"
+    )
+
+    /** The pronouns the English gloss licenses in [lang], narrowed for "you" by verb ending. */
+    private fun licensedPronouns(en: String, lang: String, answer: String): List<String> {
+        val table = PRO_DROP_SUBJECTS[lang] ?: return emptyList()
+        val subject = en.trim().lowercase().substringBefore(" ").trim('\'', '"', '“', '”')
+        val pronouns = table[subject] ?: return emptyList()
+        if (subject != "you") return pronouns
+        // Person is written into the verb; use it so "vi radiš" is never accepted.
+        val verbEndsTe = answer.trim().split(" ").any { it.endsWith("te") }
+        val verbEndsS = answer.trim().split(" ").any { it.endsWith("š") || it.endsWith("s") }
+        return when (lang) {
+            "hr" -> if (verbEndsTe) listOf("vi") else if (verbEndsS) listOf("ti") else pronouns
+            else -> if (verbEndsS) listOf("tu") else pronouns
+        }
+    }
+
     /** True if the typed [input] matches any accepted variant of the recall [answer].
-     *  Strict diacritics (exam-grade), slash-insensitive ("on/ona je" == "on / ona je"). */
-    fun gradeRecall(answer: String, input: String): Boolean {
+     *  Strict diacritics (exam-grade), slash-insensitive ("on/ona je" == "on / ona je").
+     *  With [en] and [lang], pro-drop pronoun variants are also accepted (see above). */
+    fun gradeRecall(answer: String, input: String, en: String = "", lang: String = ""): Boolean {
         fun canon(s: String) = normalize(s.replace("/", " "), strict = true)
         val c = canon(input)
-        return recallVariants(answer).any { canon(it) == c }
+        val base = recallVariants(answer)
+        if (base.any { canon(it) == c }) return true
+
+        val table = PRO_DROP_SUBJECTS[lang] ?: return false
+        val allPronouns = table.values.flatten().toSet()
+        val licensed = licensedPronouns(en, lang, answer)
+        val expanded = buildList {
+            base.forEach { v ->
+                val words = v.trim().split(" ")
+                val first = words.first().lowercase()
+                when {
+                    // Target carries a pronoun: the pronoun-less form is equally right,
+                    // except before a Croatian clitic, which cannot open the sentence.
+                    first in allPronouns && words.size > 1 -> {
+                        val rest = words.drop(1)
+                        if (!(lang == "hr" && rest.first().lowercase() in HR_CLITICS)) {
+                            add(rest.joinToString(" "))
+                        }
+                    }
+                    // Bare-verb target: the gloss's own pronoun in front is equally right —
+                    // EXCEPT when the Croatian sentence contains a second-position clitic,
+                    // which would have to reorder around the new subject ("Šaljem ti poruku"
+                    // becomes "Ja ti šaljem poruku", not "Ja šaljem ti poruku"); prepending
+                    // there would accept ungrammatical input, so those targets stay as-is.
+                    else -> {
+                        val hasClitic = lang == "hr" &&
+                            words.any { it.trim('.', ',', '!', '?').lowercase() in HR_CLITICS }
+                        if (!hasClitic) licensed.forEach { p -> add("$p $v") }
+                    }
+                }
+            }
+        }
+        return expanded.any { canon(it) == c }
     }
 
     /** Convenience for simple MCQ/FILL grading used by the quiz runner. */

@@ -134,4 +134,48 @@ class GradingTest {
         // MATCH/REORDER are not handled by the simple isCorrect helper.
         assertFalse(Grading.isCorrect(q(QuestionType.REORDER, ordered = listOf("a")), "a"))
     }
+
+    // ---- Pro-drop pronoun equivalence (hr/pt recall) ----
+
+    @Test fun recall_hr_acceptsPronounForBareVerb() {
+        // "I work" licenses ja, and only ja.
+        assertTrue(Grading.gradeRecall("radim", "radim", en = "I work", lang = "hr"))
+        assertTrue(Grading.gradeRecall("radim", "ja radim", en = "I work", lang = "hr"))
+        assertFalse(Grading.gradeRecall("radim", "ti radim", en = "I work", lang = "hr"))
+    }
+
+    @Test fun recall_hr_youResolvesByVerbEnding() {
+        assertTrue(Grading.gradeRecall("radiš", "ti radiš", en = "you work", lang = "hr"))
+        assertFalse(Grading.gradeRecall("radiš", "vi radiš", en = "you work", lang = "hr"))
+        assertTrue(Grading.gradeRecall("radite", "vi radite", en = "you work", lang = "hr"))
+    }
+
+    @Test fun recall_hr_pronounfulTargetAcceptsBareForm() {
+        assertTrue(Grading.gradeRecall("ja radim", "radim", en = "I work", lang = "hr"))
+    }
+
+    @Test fun recall_hr_cliticsBlockNaiveVariants() {
+        // "ja sam umoran" minus ja would start with the clitic "sam": not offered.
+        assertFalse(Grading.gradeRecall("ja sam umoran", "sam umoran", en = "I am tired", lang = "hr"))
+        // "šaljem ti poruku" plus ja would need clitic reordering: naive prepend not offered.
+        assertFalse(
+            Grading.gradeRecall("šaljem ti poruku", "ja šaljem ti poruku",
+                en = "I am sending you a message", lang = "hr")
+        )
+    }
+
+    @Test fun recall_pt_acceptsPronounForBareVerb() {
+        assertTrue(Grading.gradeRecall("trabalho", "eu trabalho", en = "I work", lang = "pt"))
+        assertFalse(Grading.gradeRecall("trabalho", "ele trabalho", en = "I work", lang = "pt"))
+    }
+
+    @Test fun recall_fr_noExpansion() {
+        // French is not pro-drop: nothing is added or stripped.
+        assertFalse(Grading.gradeRecall("travaille", "je travaille", en = "I work", lang = "fr"))
+    }
+
+    @Test fun recall_withoutContext_behavesAsBefore() {
+        assertTrue(Grading.gradeRecall("radim", "radim"))
+        assertFalse(Grading.gradeRecall("radim", "ja radim"))
+    }
 }
