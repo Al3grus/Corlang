@@ -282,8 +282,8 @@ private fun teachReviewSystemPrompt(concept: FeynmanConcept): String = buildStri
     concept.rubricPoints.forEachIndexed { i, rp -> appendLine("${i + 1}. ${rp.point}") }
     appendLine()
     appendLine(
-        "Reply with: one line per rubric point — '✓' if their explanation genuinely covers it " +
-        "or '✗' with a short reason if not — then at most two sentences on the most important " +
+        "Reply with: one line per rubric point, '✓' if their explanation genuinely covers it " +
+        "or '✗' with a short reason if not, then at most two sentences on the most important " +
         "thing to fix or sharpen. Judge only what they wrote; do not rewrite it for them. " +
         "Keep the whole reply under 120 words."
     )
