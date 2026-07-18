@@ -105,19 +105,21 @@ fun buildSessionSteps(
         phase = "1 · Recall"
     )
 
-    fun urlFor(text: String): String? {
-        val t = text.lowercase()
-        return when {
-            "a1.ffzg" in t || "a1.hr" in t -> "https://a1.ffzg.unizg.hr/"
-            "a2.ffzg" in t || "a2.hr" in t -> "https://a2.ffzg.unizg.hr/"
-            "unit" in t || "e-tečaj" in t ->
-                day.resources.firstNotNullOfOrNull { r ->
-                    resourceUrls[r]?.takeIf { "ffzg" in it }
-                }
-            "hrt" in t -> "https://vijesti.hrt.hr/"
-            else -> null
-        }
-    }
+    /*
+     * A lesson NEVER sends the learner to another site to study. The plan was originally written
+     * around the Zagreb e-course, and this used to turn drill lines like "Sign in at
+     * a1.ffzg.unizg.hr and do Unit 1" into a link step placed right after the new words, so day
+     * one of Croatian opened with an instruction to go and learn somewhere else. The content is
+     * cleaned, and this filter keeps it that way: any drill still naming an external course or a
+     * sign-in is dropped rather than shown. External material belongs on Profile, under
+     * references (resources.json), where the learner goes looking for it deliberately.
+     */
+    val externalRegex = Regex(
+        "https?://|www\\.|ffzg|unizg|a1\\.hr|a2\\.hr|e-tečaj|e-course|\\bhrt\\b|" +
+            "sign in|sign up|log in|\\blogin\\b|\\bunit \\d",
+        RegexOption.IGNORE_CASE
+    )
+    fun isExternal(text: String): Boolean = externalRegex.containsMatchIn(text)
 
     fun navFor(text: String): String? {
         val t = text.lowercase()
@@ -146,7 +148,8 @@ fun buildSessionSteps(
     )
 
     fun addItem(prefix: String, index: Int, text: String, isReview: Boolean) {
-        val url = urlFor(text)
+        if (isExternal(text)) return
+        val url: String? = null
         val nav = navFor(text)
         // Instruction-shaped drills become real in-app exercises.
         if (genderRegex.containsMatchIn(text)) {
@@ -193,16 +196,9 @@ fun buildSessionSteps(
     }
 
     if (day.activities.isNotEmpty()) {
-        // The upgraded path: the day's content is embedded. Keep only course-link drills
-        // from the text (e.g. "do Unit 12"), then run the real lesson activities.
-        day.drills.forEachIndexed { i, d ->
-            if (urlFor(d) != null) {
-                steps += SessionStep(
-                    id = "drill-$i", kind = StepKind.LINK, title = d,
-                    url = urlFor(d), phase = "2 · Input"
-                )
-            }
-        }
+        // The day's content is embedded, so the activities ARE the lesson. This used to emit a
+        // link step first, sending the learner to the external course before their own lesson
+        // had started. Nothing precedes the activities now.
         day.activities.forEachIndexed { i, a ->
             val (kind, phase) = when (a.type) {
                 com.corlang.app.data.model.ActivityKind.LEARN -> StepKind.LEARN to "2 · Input"

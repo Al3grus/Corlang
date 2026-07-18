@@ -127,16 +127,16 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
             Text(test.title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
             Text(test.intro, style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(vertical = 6.dp))
+                modifier = Modifier.padding(vertical = 18.dp))
         }
         LinearProgressIndicator(
             progress = { (index + 1f) / questions.size },
-            modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
+            modifier = Modifier.fillMaxWidth().padding(vertical = 24.dp)
         )
         Text("Question ${index + 1} / ${questions.size}", style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         Text(q.prompt, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold,
-            modifier = Modifier.padding(vertical = 8.dp))
+            modifier = Modifier.padding(vertical = 24.dp))
 
         val shown = remember(index) { q.options.shuffled() }
         shown.forEach { option ->
@@ -146,14 +146,14 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                 color = MaterialTheme.colorScheme.surface,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 3.dp)
+                    .padding(vertical = 9.dp)
                     .border(
                         2.dp,
                         if (isChosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline,
                         RoundedCornerShape(10.dp)
                     )
                     .clickable { chosen = option }
-            ) { Text(option, modifier = Modifier.padding(12.dp)) }
+            ) { Text(option, modifier = Modifier.padding(16.dp)) }
         }
 
         val lastQuestion = index + 1 >= questions.size
@@ -169,13 +169,13 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                 }
             },
             enabled = chosen != null,
-            modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
+            modifier = Modifier.fillMaxWidth().padding(top = 36.dp)
         ) { Text(if (lastQuestion) "See my placement" else "Next →") }
 
         // Honest exit when a question is too hard — this is the ceiling, so place them here.
         OutlinedButton(
             onClick = { finished = true },
-            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+            modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
         ) { Text("I don't know this one — place me here") }
         Spacer(Modifier.height(16.dp))
     }
