@@ -232,7 +232,7 @@ private fun CorlangApp(container: AppContainer) {
             text = {
                 Text(
                     "Take a quick placement test so $name starts at the right level? It's about " +
-                        "two minutes. Your profile carries over — no need to set anything up again."
+                        "two minutes. Your profile carries over, no need to set anything up again."
                 )
             },
             confirmButton = {
@@ -303,7 +303,7 @@ private fun CorlangApp(container: AppContainer) {
         //
         // consumeWindowInsets is the missing half of edge-to-edge keyboard handling:
         // padding(innerPadding) already spends the bottom-bar + system-bar insets, and
-        // without marking them consumed every imePadding() below ALSO added them —
+        // without marking them consumed every imePadding() below ALSO added them,
         // composers floated a bottom-bar-height (or more) above the keyboard. Spent once
         // here on the Box so every layer inherits it.
         Box(
@@ -365,7 +365,7 @@ private fun CorlangApp(container: AppContainer) {
 
         // Overlays: opaque, full-bleed, drawn over the (still-composed) NavHost. Each is
         // mutually exclusive and dismissed with system back. Surface supplies the opaque
-        // background — without it the tab underneath shows through.
+        // background, without it the tab underneath shows through.
         when {
             showPlacement -> {
                 androidx.activity.compose.BackHandler { showPlacement = false }

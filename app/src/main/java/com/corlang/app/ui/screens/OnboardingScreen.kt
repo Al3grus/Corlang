@@ -4,12 +4,14 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
@@ -133,7 +135,7 @@ private const val SOMEWHERE_ELSE = "Somewhere else"
  * Onboarding steps, as identities rather than bare indices: the language step only exists when
  * more than one course is available, so hardcoded numbers drift the moment a course is hidden
  * (French currently is). `visibleSteps` below builds the real running order, and every Back/Next
- * walks THAT list — no step ever needs to know its own number.
+ * walks THAT list, so no step ever needs to know its own number.
  */
 private const val STEP_WELCOME = 0
 private const val STEP_LANG = 1
@@ -232,7 +234,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     }
 
     // Rendered OUTSIDE the Scaffold: the Surface supplies the theme's content color (plain
-    // Text here would otherwise default to black — unreadable in dark theme), and with
+    // Text here would otherwise default to black, unreadable in dark theme), and with
     // edge-to-edge the screen must inset itself or the progress bar collides with the
     // status bar/cutout and the bottom buttons hide under the navigation bar.
     Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
@@ -240,7 +242,6 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .verticalScroll(rememberScrollState())
             .imePadding()
             .padding(24.dp)
     ) {
@@ -249,42 +250,58 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp)
         )
 
+        // The step body sits in the remaining space and is centred in it, so a short step
+        // (the welcome, the goal picker) reads as a composed screen instead of hanging off
+        // the top. heightIn(min = viewport) is what makes centring possible while STILL
+        // scrolling: the inner column is at least a screenful tall, so Arrangement.Center
+        // has room to centre, and it simply grows past the viewport when a step is long
+        // (or when the keyboard shrinks it) and scrolls as before.
+        BoxWithConstraints(modifier = Modifier.fillMaxWidth().weight(1f)) {
+        val viewport = maxHeight
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
+        ) {
+        Column(
+            modifier = Modifier.fillMaxWidth().heightIn(min = viewport),
+            verticalArrangement = Arrangement.Center
+        ) {
         when (step) {
             // ---- Welcome: what this app is, before it asks for anything ----
             STEP_WELCOME -> Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp, modifier = Modifier.padding(top = 32.dp))
+                CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp)
                 Text(
-                    "Language at the core",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 6.dp, bottom = 28.dp)
-                )
-                Text(
-                    "Welcome",
+                    "Welcome to Corlang!",
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth().padding(top = 28.dp)
                 )
                 Text(
-                    "Corlang is a structured, day-by-day course that takes you from your first " +
-                        "words to B2 — the level real exams and real conversations ask for. One " +
-                        "guided lesson a day: new words, short exercises, and review that brings " +
-                        "them back just before you'd forget.",
+                    "Corlang is a language learning app built around complete courses. Each one " +
+                        "takes you from your first words to B2, the level real exams and real " +
+                        "conversations ask for.",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.padding(top = 14.dp)
+                )
+                Text(
+                    "You learn with one guided lesson a day: a handful of new words, short " +
+                        "exercises, and review that brings them back just before you would forget.",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 12.dp)
                 )
                 Text(
-                    "It works fully offline, and your learning data stays on this device — no " +
-                        "account, no sign-in, no tracking.",
+                    "Everything works offline, and your learning stays on this device. No account, " +
+                        "no sign-in, no tracking.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 14.dp)
+                    modifier = Modifier.padding(top = 16.dp)
                 )
                 Text(
-                    "The next couple of minutes set the course up for you.",
+                    "The next couple of minutes set things up for you.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 14.dp)
@@ -336,15 +353,15 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 // so it must not change as you tap between languages (a moving description reads
                 // like the app is reloading under you).
                 Text(
-                    "Every course follows the same structured path: a complete A0→B2 plan built " +
-                        "on official curricula and the real exams, with spaced-repetition review " +
-                        "and full mock papers.",
+                    "Every course follows the same path: a complete plan from A0 to B2, built on " +
+                        "official curricula. Daily lessons, review that keeps words from slipping, " +
+                        "and quizzes to check yourself.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 4.dp)
                 )
                 Text(
-                    "You can add the others later, and switch any time — each keeps its own progress.",
+                    "You can start another one later and switch any time, each keeps its own progress.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 10.dp)
@@ -473,7 +490,9 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 }
             }
         }
-        Spacer(Modifier.height(24.dp))
+        }
+        }
+        }
     }
     }
 }
