@@ -138,12 +138,13 @@ private const val SOMEWHERE_ELSE = "Somewhere else"
  * walks THAT list, so no step ever needs to know its own number.
  */
 private const val STEP_WELCOME = 0
-private const val STEP_LANG = 1
-private const val STEP_NAME = 2
-private const val STEP_GENDER = 3
-private const val STEP_ORIGIN = 4
-private const val STEP_GOAL = 5
-private const val STEP_LEVEL = 6
+private const val STEP_HOW = 1
+private const val STEP_LANG = 2
+private const val STEP_NAME = 3
+private const val STEP_GENDER = 4
+private const val STEP_ORIGIN = 5
+private const val STEP_GOAL = 6
+private const val STEP_LEVEL = 7
 
 /** The personalized phrases the profile unlocks; empty parts are simply skipped. */
 fun profilePhrases(p: LearnerProfile): List<Pair<String, String>> {
@@ -222,7 +223,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     // and the progress bar counts the shorter path honestly.
     val visibleSteps = remember(multiLang) {
         listOfNotNull(
-            STEP_WELCOME,
+            STEP_WELCOME, STEP_HOW,
             STEP_LANG.takeIf { multiLang },
             STEP_NAME, STEP_GENDER, STEP_ORIGIN, STEP_GOAL, STEP_LEVEL
         )
@@ -290,12 +291,18 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
+                Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth().padding(top = 32.dp)) {
+                    Text("Get started →")
+                }
+            }
+
+            // ---- How it works: the substance, one page before anything is asked ----
+            STEP_HOW -> StepFrame("How it works", "") {
                 Text(
                     "Every course runs from absolute beginner to B2, the level asked for by " +
                         "employers, universities and citizenship applications, and the level " +
                         "certified exams test.",
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 12.dp)
+                    style = MaterialTheme.typography.bodyLarge
                 )
                 // "mock exams in the official format" and not "one after every level": mocks
                 // exist at A1/A2/B1 for Croatian and B1/B2 for Portuguese and French, so the
@@ -304,19 +311,24 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     "Daily lessons, word review that catches you just before you forget, quizzes, " +
                         "and full mock exams in the official exam format. An optional AI tutor for " +
                         "conversation practice and written feedback.",
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 12.dp)
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.padding(top = 14.dp)
                 )
                 Text(
                     "No accounts, no tracking, no data collection. Everything works offline and " +
                         "stays on your device.",
-                    style = MaterialTheme.typography.bodySmall,
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 16.dp)
                 )
-                Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth().padding(top = 28.dp)) {
-                    Text("Get started →")
-                }
+                NextRow(
+                    enabled = true,
+                    onBack = { go(-1) },
+                    onNext = { go(+1) },
+                    // Name the destination when there is a choice to make; a single-course
+                    // build goes straight to the profile questions instead.
+                    nextLabel = if (multiLang) "Choose your language →" else "Next →"
+                )
             }
 
             // ---- Language choice (only when more than one course ships) ----
@@ -509,8 +521,15 @@ private fun StepFrame(title: String, subtitle: String, content: @Composable () -
 }
 
 @Composable
-private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
-    // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales.
+private fun NextRow(
+    enabled: Boolean,
+    onBack: () -> Unit,
+    onNext: () -> Unit,
+    nextLabel: String = "Next →"
+) {
+    // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales. A long
+    // nextLabel ("Choose your language →") needs the room the other way, so Back keeps its
+    // natural width and the primary button takes the rest.
     Row(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
         OutlinedButton(onClick = onBack, modifier = Modifier.weight(1f)) {
             Text("← Back", maxLines = 1)
@@ -518,8 +537,8 @@ private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
         Button(
             onClick = onNext,
             enabled = enabled,
-            modifier = Modifier.weight(1f).padding(start = 8.dp)
-        ) { Text("Next →", maxLines = 1) }
+            modifier = Modifier.weight(if (nextLabel.length > 10) 2f else 1f).padding(start = 8.dp)
+        ) { Text(nextLabel, maxLines = 1) }
     }
 }
 
