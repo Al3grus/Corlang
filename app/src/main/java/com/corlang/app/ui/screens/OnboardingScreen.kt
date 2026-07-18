@@ -281,30 +281,35 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     modifier = Modifier.fillMaxWidth().padding(top = 28.dp)
                 )
                 Text(
-                    "Corlang is a language learning app built around complete courses. Each one " +
-                        "takes you from your first words to B2, the level real exams and real " +
-                        "conversations ask for.",
+                    "Corlang is built on how people actually learn a language: structured study, " +
+                        "deliberate repetition, and retention methods with real evidence behind " +
+                        "them. Not gamified filler that feels like progress without being it.",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
                 Text(
-                    "You learn with one guided lesson a day: a handful of new words, short " +
-                        "exercises, and review that brings them back just before you would forget.",
-                    style = MaterialTheme.typography.bodyLarge,
+                    "Every course runs from absolute beginner to B2, the level asked for by " +
+                        "employers, universities and citizenship applications, and the level " +
+                        "certified exams test.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(top = 12.dp)
+                )
+                // "mock exams in the official format" and not "one after every level": mocks
+                // exist at A1/A2/B1 for Croatian and B1/B2 for Portuguese and French, so the
+                // stronger claim would be false. The format really is the official one.
+                Text(
+                    "Daily lessons, word review that catches you just before you forget, quizzes, " +
+                        "and full mock exams in the official exam format. An optional AI tutor for " +
+                        "conversation practice and written feedback.",
+                    style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = 12.dp)
                 )
                 Text(
-                    "Everything works offline, and your learning stays on this device. No account, " +
-                        "no sign-in, no tracking.",
+                    "No accounts, no tracking, no data collection. Everything works offline and " +
+                        "stays on your device.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 16.dp)
-                )
-                Text(
-                    "The next couple of minutes set things up for you.",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 14.dp)
                 )
                 Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth().padding(top = 28.dp)) {
                     Text("Get started →")
@@ -349,23 +354,9 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         }
                     }
                 }
-                // Deliberately generic: this text describes the app, not the highlighted course,
-                // so it must not change as you tap between languages (a moving description reads
-                // like the app is reloading under you).
-                Text(
-                    "Every course follows the same path: a complete plan from A0 to B2, built on " +
-                        "official curricula. Daily lessons, review that keeps words from slipping, " +
-                        "and quizzes to check yourself.",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 4.dp)
-                )
-                Text(
-                    "You can start another one later and switch any time, each keeps its own progress.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 10.dp)
-                )
+                // No supporting copy here on purpose: the welcome step already explained what
+                // Corlang is, and any description sitting under the choices either repeats it
+                // or (worse, the previous version) changes as you tap between languages.
                 NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
