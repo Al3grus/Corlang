@@ -85,7 +85,15 @@ import kotlinx.coroutines.launch
  * OnboardingScreen measures the frame and caps the gap at a share of it, so a normal phone gets
  * the full 100dp and a short screen (or one with the keyboard open) degrades smoothly.
  */
-private val STEP_GAP = 100.dp
+/**
+ * Air above and below the welcome lockup. Large on purpose: the welcome step is a title card,
+ * and pushing the mark well clear of the progress bar is what makes it read as one.
+ */
+private val LOGO_BAND = 150.dp
+/** Title-to-body and body-to-button gap on the two intro pages, which carry real paragraphs. */
+private val GAP_INTRO = 50.dp
+/** The same gap on the question steps, whose bodies are a field or two or three buttons. */
+private val GAP_FORM = 25.dp
 
 private const val STEP_WELCOME = 0
 private const val STEP_HOW = 1
@@ -183,17 +191,13 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             .imePadding()
             .padding(24.dp)
     ) {
-    // Derived from a budget rather than a flat ratio. The welcome step is the worst case: FIVE
-    // gap slots (logo band above and below, under the title, above the buttons, under them)
-    // around roughly 136dp of furniture (progress bar, lockup, title, button row). Reserving
-    // that plus a 64dp minimum for the body leaves (frame - 200) to split five ways.
-    //
-    // A flat maxHeight/7 looked fine on a tall phone and still overran a 569dp-tall screen,
-    // where the buttons left the frame; only the middle band scrolls, so they were unreachable.
-    // Every current phone in portrait clears the 700dp needed for the full 100dp.
-    val gap = STEP_GAP
-        .coerceAtMost((maxHeight - 200.dp) / 5)
-        .coerceAtLeast(12.dp)
+    // Only the lockup's band needs measuring now: it sits outside the step frame, so on a short
+    // screen it would eat the space the step needs. Everything inside a step scrolls as one
+    // block (see StepFrame), so those gaps can be plain fixed values without risking a button
+    // that cannot be reached.
+    val logoBand = LOGO_BAND
+        .coerceAtMost((maxHeight - 320.dp) / 2)
+        .coerceAtLeast(16.dp)
     Column(modifier = Modifier.fillMaxSize()) {
         // drawStopIndicator = {}: Material3 1.3.0 draws a dot at the end of the track by
         // default (the spec's "stop indicator"). Nobody chose it here and it reads as a stray
@@ -223,11 +227,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             CorlangLogo(
                 variant = LogoVariant.LOCKUP,
                 size = 44.dp,
-                modifier = Modifier.padding(vertical = gap)
+                modifier = Modifier.padding(vertical = logoBand)
             )
         }
-        // Steps with no logo still need the bar-to-title gap.
-        if (step != STEP_WELCOME) Spacer(Modifier.height(gap))
+        // No bar-to-title spacer on the other steps: each step now centres itself in the frame
+        // below, which is what brings its title and buttons in toward the content.
 
         // Every step fills this same frame, so the title lands in one place and the buttons
         // land in another, on every screen. Only the middle differs, and it centres itself
@@ -251,7 +255,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // Just "Welcome!": the lockup above already reads Corlang, and the thesis sentence
             // names it again. Naming it in the greeting too put it three times in five words.
             STEP_WELCOME -> StepFrame(
-                gap = gap,
+                gap = GAP_INTRO,
                 title = "Welcome!",
                 centered = true,
                 actions = {
@@ -269,7 +273,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- How it works: the substance, one page before anything is asked ----
             STEP_HOW -> StepFrame(
-                gap = gap,
+                gap = GAP_INTRO,
                 title = "How it works",
                 // No Back here: the intro pages carry nothing you can get wrong. The label
                 // names the destination; a single-course build skips to the profile questions.
@@ -312,7 +316,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // and a description under the choices either repeats it or (as it once did) changes
             // as you tap between languages. No Back either, everything before this is intro.
             STEP_LANG -> StepFrame(
-                gap = gap,
+                gap = GAP_FORM,
                 title = "Which language do you want to learn?",
                 actions = {
                     Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
@@ -356,7 +360,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // Back starts at the next step: everything before this is intro or a choice the
             // following screens let you change anyway.
             STEP_NAME -> StepFrame(
-                gap = gap,
+                gap = GAP_FORM,
                 title = "What's your name?",
                 // The old subtitle promised it would become "your very first phrase", which went
                 // with the removed phrases payoff. The name's real jobs are the daily reminder
@@ -381,7 +385,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- Word forms (gender) ----
             STEP_GENDER -> StepFrame(
-                gap = gap,
+                gap = GAP_FORM,
                 title = "Which forms should $langName use for you?",
                 subtitle = if (learnLang == "hr")
                     "Croatian words change with the speaker: a man says \"Ja sam Amerikanac, radio sam\", " +
@@ -405,7 +409,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- Daily goal ----
             STEP_GOAL -> StepFrame(
-                gap = gap,
+                gap = GAP_FORM,
                 title = "New words per lesson",
                 subtitle = "How many new words each lesson introduces. 10 is the sustainable " +
                     "default; you can change this anytime in Settings.",
@@ -428,7 +432,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // a speaker button). Removed: this step asks one question with two answers, and a
             // reward block underneath buried the actual decision.
             STEP_LEVEL -> StepFrame(
-                gap = gap,
+                gap = GAP_FORM,
                 title = "Last one: do you already know some $langName?",
                 actions = {
                     Row(modifier = Modifier.fillMaxWidth()) {
@@ -481,54 +485,54 @@ private fun StepFrame(
     content: @Composable () -> Unit
 ) {
     val align = if (centered) Alignment.CenterHorizontally else Alignment.Start
-    Column(Modifier.fillMaxSize(), horizontalAlignment = align) {
-        Text(
-            title,
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = if (centered) TextAlign.Center else null
-        )
-        if (subtitle.isNotBlank()) {
-            Text(
-                subtitle,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 10.dp)
-            )
-        }
-        Spacer(Modifier.height(gap))
-
-        // The body claims the space between title and buttons and centres itself in it, so a
-        // one-line step and a six-paragraph step both look composed. heightIn(min = viewport)
-        // is what allows centring while still scrolling: the inner column is at least a
-        // frameful tall, so Arrangement.Center has room, and it grows past the frame (or when
-        // the keyboard shrinks it) and scrolls instead.
-        BoxWithConstraints(modifier = Modifier.fillMaxWidth().weight(1f)) {
-            val viewport = maxHeight
+    // Title, body and buttons are ONE centred cluster, not furniture pinned to the frame edges.
+    // With a short body (a text field, three buttons) the old top/bottom pinning stranded the
+    // title near the progress bar and the buttons near the navigation bar with a lake of empty
+    // space around the content; `gap` now sets the real distance between the three parts and
+    // the whole group sits in the middle.
+    //
+    // heightIn(min = viewport) inside a scroll is what allows centring AND scrolling: the column
+    // is at least a frameful tall so Arrangement.Center has room, and it simply grows past the
+    // frame when the body is long or the keyboard is up. Because the buttons are inside that
+    // scroll, they can always be reached.
+    BoxWithConstraints(Modifier.fillMaxSize()) {
+        val viewport = maxHeight
+        Column(
+            modifier = Modifier.fillMaxWidth().verticalScroll(rememberScrollState())
+        ) {
             Column(
-                modifier = Modifier.fillMaxWidth().verticalScroll(rememberScrollState())
+                modifier = Modifier.fillMaxWidth().heightIn(min = viewport),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = align
             ) {
-                Column(
-                    modifier = Modifier.fillMaxWidth().heightIn(min = viewport),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = align
-                ) { content() }
+                Text(
+                    title,
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = if (centered) TextAlign.Center else null
+                )
+                if (subtitle.isNotBlank()) {
+                    Text(
+                        subtitle,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(top = 10.dp)
+                    )
+                }
+                Spacer(Modifier.height(gap))
+                content()
+                Spacer(Modifier.height(gap))
+                actions()
             }
         }
-
-        Spacer(Modifier.height(gap))
-        actions()
-        // Lifts the button row off the bottom edge; without it the primary button sat flush
-        // against the navigation bar and read as pinned to the screen rather than to the step.
-        Spacer(Modifier.height(gap))
     }
 }
 
 @Composable
 private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
     // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales. No top padding:
-    // StepFrame already spends STEP_ACTION_GAP above the actions slot.
+    // StepFrame already spends its gap above the actions slot.
     Row(modifier = Modifier.fillMaxWidth()) {
         OutlinedButton(onClick = onBack, modifier = Modifier.weight(1f)) {
             Text("← Back", maxLines = 1)
