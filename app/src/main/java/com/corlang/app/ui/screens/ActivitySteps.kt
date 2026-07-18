@@ -61,7 +61,7 @@ fun LearnActivity(container: AppContainer, activity: DayActivity, onDone: () -> 
                 shape = RoundedCornerShape(10.dp),
                 color = MaterialTheme.colorScheme.surface,
                 tonalElevation = 1.dp,
-                modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp)
+                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -213,7 +213,7 @@ fun ExerciseActivity(
                     color = MaterialTheme.colorScheme.surface,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 3.dp)
+                        .padding(vertical = 4.dp)
                         .border(2.dp, border, RoundedCornerShape(10.dp))
                         .clickable(enabled = !checked) { selectedOption = option }
                 ) { Text(option, modifier = Modifier.padding(12.dp)) }
@@ -385,7 +385,7 @@ fun DialogueActivity(container: AppContainer, activity: DayActivity, onDone: () 
                                else MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 3.dp)
+                    .padding(vertical = 4.dp)
                     .padding(start = if (you) 24.dp else 0.dp, end = if (you) 0.dp else 24.dp)
             ) {
                 Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {

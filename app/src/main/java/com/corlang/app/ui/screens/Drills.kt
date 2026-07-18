@@ -120,7 +120,7 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
                 color = MaterialTheme.colorScheme.surface,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 3.dp)
+                    .padding(vertical = 4.dp)
                     .border(2.dp, border, RoundedCornerShape(10.dp))
                     .clickable(enabled = chosen == null) {
                         chosen = option
