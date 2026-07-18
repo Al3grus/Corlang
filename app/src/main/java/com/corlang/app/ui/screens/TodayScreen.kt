@@ -150,13 +150,10 @@ fun TodayScreen(
     }
 
     // Session progress for the viewed day (steps ticked in the player).
-    val resourceUrls = remember(lang) {
-        container.content.resources(lang).resources.associate { it.name to it.url }
-    }
     // Keyed on lang TOO: both languages can sit on the same day number, and the cached step
     // list must not survive a language switch.
     val steps = remember(lang, day.day) {
-        buildSessionSteps(day, resourceUrls, container.content.meta(lang).name)
+        buildSessionSteps(day, container.content.meta(lang).name)
     }
     // key(day.day): collectAsState keeps the PREVIOUS flow's value until the new one emits,
     // and step ids are day-agnostic ("words", "activity-0") — browsing from day 8 to day 3
@@ -195,7 +192,7 @@ fun TodayScreen(
         .collectAsState(initial = 0)
     val targetDayObj = plan.days.firstOrNull { it.day == targetDay } ?: day
     val targetSteps = remember(lang, targetDay) {
-        buildSessionSteps(targetDayObj, resourceUrls, container.content.meta(lang).name)
+        buildSessionSteps(targetDayObj, container.content.meta(lang).name)
     }
     // Same re-key as rawChecks above, for when targetDay moves (day completed / reconcile).
     val rawTargetChecks by androidx.compose.runtime.key(targetDay) {

@@ -33,14 +33,24 @@ ask Claude to do it · **(you, phone)** = on-device.
    - Ads: no ads.
    - Content rating questionnaire (educational → Everyone/PEGI 3).
    - Target audience: 13+.
-   - Data safety: **no data collected, no data shared** (local-only); deletion = uninstall.
+   - Data safety: learning data is local-only (deletion = uninstall), BUT declare the AI
+     tutor's data flow: user-typed chat text + profile name transmitted off-device to our
+     endpoint/Anthropic when the optional AI feature is used. Google counts transmitted-off-
+     device as "collected", and the ephemeral-processing exemption likely does not apply.
+     Declaring "no data collected" flat-out is a misdeclaration risk (app removal), and
+     PRIVACY.md now documents this flow explicitly. Category: "Other in-app messages",
+     purpose app functionality, not shared for ads, optional.
    - Privacy policy URL: `https://raw.githubusercontent.com/Al3grus/Corlang/main/PRIVACY.md`.
 3. **(browser + assets)** Main store listing. Copy is drafted in `road-to-play.md`. Needs the
    assets from Track C (icon, feature graphic, screenshots).
 4. **(browser)** Create the 4 billing products — **IDs must match exactly** (in `road-to-play.md`
    / `monetization-roadmap.md`):
-   - Subscription `corlang_ai_premium`: base plan `monthly` €9.99, base plan `annual` €99 +
-     **7-day free-trial offer** on annual.
+   - Subscription `corlang_ai_premium`: base plan `monthly` €9.99, base plan `annual` — ⚠️
+     **DECIDE THE ANNUAL PRICE FIRST**: monetization-roadmap.md's research table says €59.99
+     (loses money on a cap-maxing hr annual at regional prices) while its Console section and
+     this file said €99 (only 17% off monthly, conversion-dead). Review recommendation:
+     **€69.99**. Sub price increases are painful later (subscriber notify/opt-in), so this is
+     a one-way door upward. Add the **7-day free-trial offer** on annual.
    - Managed products: `unlock_a2` €4.99, `unlock_b1` €7.99, `unlock_b2` €7.99, `unlock_all` €14.99.
    - Activate all; accept Google's regional prices.
 5. **(browser)** Upload the AAB to **Internal testing** (live in minutes, billing works).

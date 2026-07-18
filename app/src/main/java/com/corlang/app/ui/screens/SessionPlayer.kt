@@ -41,7 +41,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -62,19 +61,18 @@ import kotlinx.coroutines.launch
 
 /**
  * The guided daily session: the app walks you through today's work one step at a time.
- * Every step is either an in-app activity launched right here (word review, gender drill),
- * a deep link with a done-gate (e-course unit), or a concrete task. Step completion is
- * persisted per day (day_task_check), so leaving and returning resumes exactly.
+ * Every step is an in-app activity launched right here (word review, gender drill, learn,
+ * exercise, dialogue) or a concrete task. Step completion is persisted per day
+ * (day_task_check), so leaving and returning resumes exactly.
  */
 
-enum class StepKind { INFO, TASK, LINK, WORDS, REVIEW, GENDER, CLOZE, RECALL, LEARN, EXERCISE, DIALOGUE, WRAPUP, COMPLETE }
+enum class StepKind { INFO, TASK, WORDS, REVIEW, GENDER, CLOZE, RECALL, LEARN, EXERCISE, DIALOGUE, WRAPUP, COMPLETE }
 
 data class SessionStep(
     val id: String,
     val kind: StepKind,
     val title: String,
     val detail: String = "",
-    val url: String? = null,
     val navRoute: String? = null,
     /** Which phase of the evidence-based session shape this step belongs to (docs/sources/method.md). */
     val phase: String = "",
@@ -85,7 +83,6 @@ data class SessionStep(
 /** Derives the guided steps for a plan day from its drills + review block. */
 fun buildSessionSteps(
     day: StudyDay,
-    resourceUrls: Map<String, String?>,
     languageName: String = "Croatian"
 ): List<SessionStep> {
     val steps = mutableListOf<SessionStep>()
@@ -149,7 +146,6 @@ fun buildSessionSteps(
 
     fun addItem(prefix: String, index: Int, text: String, isReview: Boolean) {
         if (isExternal(text)) return
-        val url: String? = null
         val nav = navFor(text)
         // Instruction-shaped drills become real in-app exercises.
         if (genderRegex.containsMatchIn(text)) {
@@ -161,7 +157,7 @@ fun buildSessionSteps(
             )
             return
         }
-        if (nav != Dest.WORDS.route && url == null && caseRegex.containsMatchIn(text)) {
+        if (nav != Dest.WORDS.route && caseRegex.containsMatchIn(text)) {
             steps += SessionStep(
                 id = "$prefix-$index", kind = StepKind.CLOZE,
                 title = "Case drill, the right form in context",
@@ -170,7 +166,7 @@ fun buildSessionSteps(
             )
             return
         }
-        if (nav == null && url == null && recallRegex.containsMatchIn(text)) {
+        if (nav == null && recallRegex.containsMatchIn(text)) {
             steps += SessionStep(
                 id = "$prefix-$index", kind = StepKind.RECALL,
                 title = "Recall drill, type the $languageName",
@@ -179,19 +175,16 @@ fun buildSessionSteps(
             )
             return
         }
-        val phase = when {
-            isReview -> "5 · Wrap-up"
-            url != null -> "2 · Input"
-            outputRegex.containsMatchIn(text) -> "4 · Output"
-            else -> "3 · Practice"
-        }
         steps += SessionStep(
             id = "$prefix-$index",
-            kind = if (url != null) StepKind.LINK else StepKind.TASK,
+            kind = StepKind.TASK,
             title = text,
-            url = url,
             navRoute = nav,
-            phase = phase
+            phase = when {
+                isReview -> "5 · Wrap-up"
+                outputRegex.containsMatchIn(text) -> "4 · Output"
+                else -> "3 · Practice"
+            }
         )
     }
 
@@ -277,13 +270,9 @@ fun SessionPlayer(
     com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
-    val uriHandler = LocalUriHandler.current
 
-    val resourceUrls = remember(lang) {
-        container.content.resources(lang).resources.associate { it.name to it.url }
-    }
     val steps = remember(lang, day.day) {
-        buildSessionSteps(day, resourceUrls, container.content.meta(lang).name)
+        buildSessionSteps(day, container.content.meta(lang).name)
     }
 
     // null until the first DB emit — used to gate the resume jump so we don't flash step 0.
@@ -528,7 +517,6 @@ fun SessionPlayer(
                                         StepKind.LEARN -> "Learn"
                                         StepKind.EXERCISE -> "Exercise"
                                         StepKind.DIALOGUE -> "Dialogue"
-                                        StepKind.LINK -> "Course task"
                                         StepKind.COMPLETE -> "Finish"
                                         else -> "Task"
                                     }
@@ -670,17 +658,6 @@ fun SessionPlayer(
                                 Text("Next →")
                             }
                         }
-                    }
-
-                    StepKind.LINK -> {
-                        Button(
-                            onClick = { s.url?.let { uriHandler.openUri(it) } },
-                            modifier = Modifier.fillMaxWidth()
-                        ) { Text("Open ↗") }
-                        Button(
-                            onClick = markNext,
-                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                        ) { Text("Done, next step →") }
                     }
 
                     StepKind.TASK -> {
