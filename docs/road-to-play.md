@@ -120,12 +120,13 @@ What's inside:
 • Quizzes and full mock exams modelled on the official tests (Croatian residency/citizenship,
   DELF for French, CAPLE for Portuguese).
 • A progress journey you can see, and a daily streak to keep the habit.
-• Works fully offline. Your data stays on your device — no account, no tracking.
+• The whole course works offline. Your data stays on your device, no account, no tracking.
+  (Only the optional AI tutor needs a connection.)
 
 Free forever: the entire A0 and A1 course, all its words, quizzes and the A1 exam.
 Optional upgrades: unlock A2, B1 and B2 as one-time purchases, and subscribe to Corlang Premium
 for an AI tutor that chats with you in your language, reviews your exam writing, and checks your
-explanations — all graded for your target level.
+explanations, all graded for your target level.
 
 Croatian isn't on the big apps. European Portuguese gets treated as an afterthought. Corlang
 takes both — and French — seriously, with exam-focused content and correct, native-quality
