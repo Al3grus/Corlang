@@ -50,13 +50,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.prefs.LearnerProfile
 import com.corlang.app.ui.components.CorlangLogo
-import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.LogoVariant
-import com.corlang.app.ui.components.SpeakerButton
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -153,7 +152,9 @@ private const val SOMEWHERE_ELSE = "Somewhere else"
  * middle; letting title, content and actions breathe fills the screen instead.
  */
 private val STEP_TITLE_GAP = 28.dp
-private val STEP_ACTION_GAP = 34.dp
+private val STEP_ACTION_GAP = 24.dp
+/** Air above and below the welcome lockup, equal on both sides so it sits between bar and title. */
+private val LOGO_BAND = 22.dp
 
 private const val STEP_WELCOME = 0
 private const val STEP_HOW = 1
@@ -281,13 +282,12 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         LinearProgressIndicator(
             progress = { barProgress },
             drawStopIndicator = {},
-            modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp)
+            modifier = Modifier.fillMaxWidth()
         )
 
-        // The lockup is anchored up here rather than travelling with the centred text block:
-        // on the short welcome step a logo inside the centred group floats into mid-screen,
-        // leaving the top empty. Pinned under the bar, it balances the page. It fades rather
-        // than popping when the welcome step leaves.
+        // The lockup sits in its own band between the bar and the step title, with equal air
+        // above and below so it belongs to neither. It fades rather than popping when the
+        // welcome step leaves.
         AnimatedVisibility(
             visible = step == STEP_WELCOME,
             enter = fadeIn(tween(220)),
@@ -297,68 +297,60 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             CorlangLogo(
                 variant = LogoVariant.LOCKUP,
                 size = 44.dp,
-                modifier = Modifier.padding(bottom = 4.dp)
+                modifier = Modifier.padding(vertical = LOGO_BAND)
             )
         }
+        // Steps that have no logo still start their title where the welcome's title starts.
+        if (step != STEP_WELCOME) Spacer(Modifier.height(LOGO_BAND))
 
-        // The step body sits in the remaining space and is centred in it, so a short step
-        // (the welcome, the goal picker) reads as a composed screen instead of hanging off
-        // the top. heightIn(min = viewport) is what makes centring possible while STILL
-        // scrolling: the inner column is at least a screenful tall, so Arrangement.Center
-        // has room to centre, and it simply grows past the viewport when a step is long
-        // (or when the keyboard shrinks it) and scrolls as before.
-        BoxWithConstraints(modifier = Modifier.fillMaxWidth().weight(1f)) {
-        val viewport = maxHeight
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .verticalScroll(rememberScrollState())
-        ) {
-        Column(
-            modifier = Modifier.fillMaxWidth().heightIn(min = viewport),
-            verticalArrangement = Arrangement.Center
-        ) {
-        // Steps slide in the direction of travel and cross-fade. The outgoing step leaves the
-        // opposite way, which is what makes the sequence feel like it is advancing rather than
-        // redrawing in place.
+        // Every step fills this same frame, so the title lands in one place and the buttons
+        // land in another, on every screen. Only the middle differs, and it centres itself
+        // between the two. That is what keeps the slide from looking ragged: the fixed
+        // furniture stays put while the content moves.
         AnimatedContent(
             targetState = step,
+            modifier = Modifier.fillMaxWidth().weight(1f),
+            // The incoming step waits for the outgoing one to clear before it fades up,
+            // otherwise two differently-sized bodies overlap mid-slide and it reads as a smear.
             transitionSpec = {
                 val d = direction
-                (slideInHorizontally(tween(300)) { w -> d * w } + fadeIn(tween(220))) togetherWith
-                    (slideOutHorizontally(tween(300)) { w -> -d * w } + fadeOut(tween(180)))
+                (slideInHorizontally(tween(300)) { w -> d * w } +
+                    fadeIn(tween(durationMillis = 200, delayMillis = 120))) togetherWith
+                    (slideOutHorizontally(tween(300)) { w -> -d * w } + fadeOut(tween(160)))
             },
             label = "onboardingStep"
         ) { animatedStep ->
         when (animatedStep) {
             // ---- Welcome: what this app is, before it asks for anything ----
-            STEP_WELCOME -> Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxWidth()
+            // Just "Welcome!": the lockup above already reads Corlang, and the thesis sentence
+            // names it again. Naming it in the greeting too put it three times in five words.
+            STEP_WELCOME -> StepFrame(
+                title = "Welcome!",
+                centered = true,
+                actions = {
+                    Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
+                        Text("Get started →")
+                    }
+                }
             ) {
-                // Just "Welcome!": the lockup above already reads Corlang, and the thesis
-                // sentence below names it again. Naming it in the greeting too put it three
-                // times in five words.
-                Text(
-                    "Welcome!",
-                    style = MaterialTheme.typography.headlineMedium,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.fillMaxWidth()
-                )
                 Text(
                     "Corlang is built on how people actually learn a language: structured study, " +
                         "deliberate repetition, and retention methods with real evidence behind them.",
-                    style = MaterialTheme.typography.bodyLarge,
-                    modifier = Modifier.padding(top = 14.dp)
+                    style = MaterialTheme.typography.bodyLarge
                 )
-                Button(
-                    onClick = { go(+1) },
-                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
-                ) { Text("Get started →") }
             }
 
             // ---- How it works: the substance, one page before anything is asked ----
-            STEP_HOW -> StepFrame("How it works", "") {
+            STEP_HOW -> StepFrame(
+                title = "How it works",
+                // No Back here: the intro pages carry nothing you can get wrong. The label
+                // names the destination; a single-course build skips to the profile questions.
+                actions = {
+                    Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
+                        Text(if (multiLang) "Choose your language →" else "Next →")
+                    }
+                }
+            ) {
                 Text(
                     "Every course runs from absolute beginner to B2, the level asked for by " +
                         "employers, universities and citizenship applications, and the level " +
@@ -385,27 +377,23 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 16.dp)
                 )
-                // No Back here: the two intro pages carry nothing you can get wrong, so a
-                // Back button would only add a decision. Back appears from the first real
-                // question onwards, where an answer might need changing. The label names the
-                // destination; a single-course build goes straight to the profile questions.
-                Button(
-                    onClick = { go(+1) },
-                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
-                ) { Text(if (multiLang) "Choose your language →" else "Next →") }
             }
 
             // ---- Language choice (only when more than one course ships) ----
-            STEP_LANG -> Column(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    "Which language do you want to learn?",
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.fillMaxWidth()
-                )
+            // No supporting copy here on purpose: the intro already explained what Corlang is,
+            // and a description under the choices either repeats it or (as it once did) changes
+            // as you tap between languages. No Back either, everything before this is intro.
+            STEP_LANG -> StepFrame(
+                title = "Which language do you want to learn?",
+                actions = {
+                    Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
+                        Text("Next →")
+                    }
+                }
+            ) {
                 // One full-width row per language: names never fight for horizontal space,
                 // so they can't overflow at large font scales (a 3-way segmented row did).
-                Column(modifier = Modifier.fillMaxWidth().padding(top = 12.dp, bottom = 8.dp)) {
+                Column(modifier = Modifier.fillMaxWidth()) {
                     allMeta.forEach { m ->
                         val chosen = learnLang == m.code
                         OutlinedButton(
@@ -433,20 +421,22 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         }
                     }
                 }
-                // No supporting copy here on purpose: the welcome step already explained what
-                // Corlang is, and any description sitting under the choices either repeats it
-                // or (worse, the previous version) changes as you tap between languages.
-                // No Back either: everything before this point is intro, so Back first appears
-                // on the profile questions, where an answer might actually need changing.
-                Button(
-                    onClick = { go(+1) },
-                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
-                ) { Text("Next →") }
             }
 
             // ---- Name ----
-            STEP_NAME -> StepFrame("What's your name?",
-                "It becomes your very first phrase: introducing yourself.") {
+            // Back starts at the next step: everything before this is intro or a choice the
+            // following screens let you change anyway.
+            STEP_NAME -> StepFrame(
+                title = "What's your name?",
+                subtitle = "It becomes your very first phrase: introducing yourself.",
+                actions = {
+                    Button(
+                        onClick = { go(+1) },
+                        enabled = name.isNotBlank(),
+                        modifier = Modifier.fillMaxWidth()
+                    ) { Text("Next →") }
+                }
+            ) {
                 OutlinedTextField(
                     value = name,
                     onValueChange = { name = it },
@@ -454,23 +444,19 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
                 )
-                // Back starts at the next step: everything before this is intro or a choice
-                // the following screens let you change anyway.
-                Button(
-                    onClick = { go(+1) },
-                    enabled = name.isNotBlank(),
-                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
-                ) { Text("Next →") }
             }
 
             // ---- Word forms (gender) ----
-            STEP_GENDER -> StepFrame("Which forms should $langName use for you?",
-                if (learnLang == "hr")
+            STEP_GENDER -> StepFrame(
+                title = "Which forms should $langName use for you?",
+                subtitle = if (learnLang == "hr")
                     "Croatian words change with the speaker: a man says \"Ja sam Amerikanac, radio sam\", " +
                         "a woman says \"Ja sam Amerikanka, radila sam\"."
                 else
                     "Many words and endings change with the speaker's gender, so we'll use the right " +
-                        "forms for you.") {
+                        "forms for you.",
+                actions = { NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) }) }
+            ) {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
                     listOf("m" to "Male forms", "f" to "Female forms").forEachIndexed { i, (v, label) ->
                         SegmentedButton(
@@ -481,24 +467,34 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         ) { Text(label) }
                     }
                 }
-                NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
             // ---- Where from / where living ----
-            STEP_ORIGIN -> StepFrame("Where are you from, and where do you live?",
-                if (learnLang == "hr")
+            STEP_ORIGIN -> StepFrame(
+                title = "Where are you from, and where do you live?",
+                subtitle = if (learnLang == "hr")
                     "These become your intro phrases, with the correct Croatian case endings."
-                else "These become your first intro phrases.") {
+                else "These become your first intro phrases.",
+                actions = {
+                    NextRow(
+                        enabled = from != null && livesIn != null,
+                        onBack = { go(-1) },
+                        onNext = { go(+1) }
+                    )
+                }
+            ) {
                 CountryPicker("I am from", from) { from = it }
                 Spacer(Modifier.height(10.dp))
                 CountryPicker("I live in", livesIn) { livesIn = it }
-                NextRow(enabled = from != null && livesIn != null, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
             // ---- Daily goal ----
-            STEP_GOAL -> StepFrame("New words per lesson",
-                "How many new words each lesson introduces. 10 is the sustainable default; you can " +
-                    "change this anytime in Settings.") {
+            STEP_GOAL -> StepFrame(
+                title = "New words per lesson",
+                subtitle = "How many new words each lesson introduces. 10 is the sustainable " +
+                    "default; you can change this anytime in Settings.",
+                actions = { NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) }) }
+            ) {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
                     listOf(10, 15, 20).forEachIndexed { i, v ->
                         SegmentedButton(
@@ -509,11 +505,28 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         ) { Text("$v") }
                     }
                 }
-                NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
-            // ---- Level + payoff: your first phrases ----
-            STEP_LEVEL -> StepFrame("Last one: do you already know some $langName?", "") {
+            // ---- Level: start at day 1, or place ----
+            // The old "your first phrases" payoff lived here (curated Croatian intro lines with
+            // a speaker button). Removed: this step asks one question with two answers, and a
+            // reward block underneath buried the actual decision.
+            STEP_LEVEL -> StepFrame(
+                title = "Last one: do you already know some $langName?",
+                actions = {
+                    Row(modifier = Modifier.fillMaxWidth()) {
+                        OutlinedButton(
+                            onClick = { go(-1) },
+                            modifier = Modifier.weight(1f)
+                        ) { Text("← Back", maxLines = 1) }
+                        Button(
+                            onClick = { save(thenPlacement = wantsPlacement == true) },
+                            enabled = wantsPlacement != null,
+                            modifier = Modifier.weight(2f).padding(start = 8.dp)
+                        ) { Text("Start learning →", maxLines = 1) }
+                    }
+                }
+            ) {
                 listOf(
                     false to "I'm new, start me at Day 1",
                     true to "I know some, take the 2-minute placement test"
@@ -533,46 +546,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                             .clickable { wantsPlacement = wants }
                     ) { Text(label, modifier = Modifier.padding(12.dp)) }
                 }
-
-                // The personalized first-phrases payoff uses curated Croatian forms; only shown
-                // for Croatian. Other languages get placed by the test without a fake payoff.
-                val phrases = if (learnLang == "hr") profilePhrases(
-                    LearnerProfile(name, gender, from.orEmpty(), livesIn.orEmpty(), "")
-                ) else emptyList()
-                if (phrases.isNotEmpty()) {
-                    Text(
-                        "Your first phrases, tap to hear them:",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(top = 18.dp, bottom = 4.dp)
-                    )
-                    phrases.forEach { (hr, en) ->
-                        InfoCard {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Column(Modifier.weight(1f)) {
-                                    Text(hr, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                                    Text(en, style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant)
-                                }
-                                SpeakerButton(tts = container.tts, text = hr)
-                            }
-                        }
-                    }
-                }
-
-                Row(modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)) {
-                    OutlinedButton(onClick = { go(-1) }, modifier = Modifier.weight(1f)) { Text("← Back") }
-                    Spacer(Modifier.height(0.dp))
-                    Button(
-                        onClick = { save(thenPlacement = wantsPlacement == true) },
-                        enabled = wantsPlacement != null,
-                        modifier = Modifier.weight(2f).padding(start = 8.dp)
-                    ) { Text("Start learning →") }
-                }
             }
-        }
-        }
-        }
         }
         }
     }
@@ -580,9 +554,22 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 }
 
 @Composable
-private fun StepFrame(title: String, subtitle: String, content: @Composable () -> Unit) {
-    Column {
-        Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+private fun StepFrame(
+    title: String,
+    subtitle: String = "",
+    centered: Boolean = false,
+    actions: @Composable () -> Unit,
+    content: @Composable () -> Unit
+) {
+    val align = if (centered) Alignment.CenterHorizontally else Alignment.Start
+    Column(Modifier.fillMaxSize(), horizontalAlignment = align) {
+        Text(
+            title,
+            style = MaterialTheme.typography.headlineSmall,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = if (centered) TextAlign.Center else null
+        )
         if (subtitle.isNotBlank()) {
             Text(
                 subtitle,
@@ -592,7 +579,27 @@ private fun StepFrame(title: String, subtitle: String, content: @Composable () -
             )
         }
         Spacer(Modifier.height(STEP_TITLE_GAP))
-        content()
+
+        // The body claims the space between title and buttons and centres itself in it, so a
+        // one-line step and a six-paragraph step both look composed. heightIn(min = viewport)
+        // is what allows centring while still scrolling: the inner column is at least a
+        // frameful tall, so Arrangement.Center has room, and it grows past the frame (or when
+        // the keyboard shrinks it) and scrolls instead.
+        BoxWithConstraints(modifier = Modifier.fillMaxWidth().weight(1f)) {
+            val viewport = maxHeight
+            Column(
+                modifier = Modifier.fillMaxWidth().verticalScroll(rememberScrollState())
+            ) {
+                Column(
+                    modifier = Modifier.fillMaxWidth().heightIn(min = viewport),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = align
+                ) { content() }
+            }
+        }
+
+        Spacer(Modifier.height(STEP_ACTION_GAP))
+        actions()
     }
 }
 
