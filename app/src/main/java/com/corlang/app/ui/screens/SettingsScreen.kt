@@ -65,7 +65,6 @@ import kotlinx.coroutines.withContext
 @Composable
 fun SettingsScreen(
     container: AppContainer,
-    onBack: () -> Unit = {},
     onEditProfile: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
@@ -78,15 +77,12 @@ fun SettingsScreen(
             .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            OutlinedButton(onClick = onBack) { Text("← Back") }
-            Text(
-                "Settings",
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(start = 12.dp)
-            )
-        }
+        // No visible back button: system back dismisses (BackHandler in MainActivity).
+        Text(
+            "Settings",
+            style = MaterialTheme.typography.headlineSmall,
+            fontWeight = FontWeight.Bold
+        )
 
         // ----- Study reminder -----
         val enabled by container.languagePrefs.reminderEnabled.collectAsState(initial = false)

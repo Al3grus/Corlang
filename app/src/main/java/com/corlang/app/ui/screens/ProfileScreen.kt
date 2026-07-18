@@ -133,16 +133,15 @@ private fun MenuRow(icon: ImageVector, title: String, subtitle: String, onClick:
 /** A titled sub-page with a back button; system back returns to the menu too. */
 @Composable
 private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -> Unit) {
+    // No visible back button: the system back gesture/bar is the one way back, handled here.
     BackHandler(onBack = onBack)
     Column(Modifier.fillMaxSize()) {
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(start = 8.dp, top = 8.dp, end = 16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            OutlinedButton(onClick = onBack) { Text("← Back") }
-            Text(title, style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold, modifier = Modifier.padding(start = 12.dp))
-        }
+        Text(
+            title,
+            style = MaterialTheme.typography.titleLarge,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(start = 16.dp, top = 12.dp, end = 16.dp)
+        )
         Box(Modifier.weight(1f)) { content() }
     }
 }
@@ -234,10 +233,10 @@ private fun ReferencesPage(container: AppContainer, lang: String) {
     // restored when the learner comes back to the Profile tab later.
     var doc by remember(lang) { mutableStateOf<String?>(null) }
     if (doc != null) {
+        // System back closes the document; a second visible button here stacked under the
+        // References header's own controls.
         BackHandler { doc = null }
         Column(Modifier.fillMaxSize()) {
-            OutlinedButton(onClick = { doc = null },
-                modifier = Modifier.padding(start = 16.dp, top = 8.dp)) { Text("← Back") }
             Box(Modifier.weight(1f)) {
                 if (doc == "cheatsheet") CheatsheetScreen(container, lang)
                 else GrammarScreen(container, lang)
