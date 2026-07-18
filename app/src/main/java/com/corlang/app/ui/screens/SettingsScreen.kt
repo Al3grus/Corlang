@@ -67,7 +67,6 @@ fun SettingsScreen(
     container: AppContainer,
     onBack: () -> Unit = {},
     onEditProfile: () -> Unit = {},
-    onRetakePlacement: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -284,12 +283,8 @@ fun SettingsScreen(
             OutlinedButton(onClick = onEditProfile, modifier = Modifier.fillMaxWidth()) {
                 Text("Edit profile")
             }
-            // Placement is its own deliberate action, not a step of profile editing: the level
-            // was already settled when the course started.
-            OutlinedButton(
-                onClick = onRetakePlacement,
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-            ) { Text("Retake the placement test") }
+            // No placement here: placement's purpose is onboarding and starting a language
+            // that has never been touched, and it lives only in those two moments.
         }
 
         // ----- Backup & restore -----

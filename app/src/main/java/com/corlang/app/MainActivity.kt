@@ -417,8 +417,7 @@ private fun CorlangApp(container: AppContainer) {
                     SettingsScreen(
                         container,
                         onBack = { showSettings = false },
-                        onEditProfile = { showSettings = false; showOnboarding = true },
-                        onRetakePlacement = { showSettings = false; showPlacement = true }
+                        onEditProfile = { showSettings = false; showOnboarding = true }
                     )
                 }
             }
