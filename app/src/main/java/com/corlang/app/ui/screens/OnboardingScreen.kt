@@ -1,7 +1,7 @@
 package com.corlang.app.ui.screens
 
 import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ContentTransform
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -85,11 +85,6 @@ import kotlinx.coroutines.launch
  * OnboardingScreen measures the frame and caps the gap at a share of it, so a normal phone gets
  * the full 100dp and a short screen (or one with the keyboard open) degrades smoothly.
  */
-/**
- * Air above and below the welcome lockup: enough to lift the mark clear of the progress bar
- * without pushing the greeting down the screen.
- */
-private val LOGO_BAND = 80.dp
 /** Title-to-body and body-to-button gap on the two intro pages, which carry real paragraphs. */
 private val GAP_INTRO = 50.dp
 /** The same gap on the question steps, whose bodies are a field or two or three buttons. */
@@ -184,21 +179,13 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     // keyboard. Measuring fillMaxSize() instead overstates the frame by the bars plus padding
     // and never shrinks when the keyboard opens, so on the name step the gaps kept their
     // full-screen size inside a half-screen frame and pushed the button row off the bottom.
-    BoxWithConstraints(
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()
             .imePadding()
             .padding(24.dp)
     ) {
-    // Only the lockup's band needs measuring now: it sits outside the step frame, so on a short
-    // screen it would eat the space the step needs. Everything inside a step scrolls as one
-    // block (see StepFrame), so those gaps can be plain fixed values without risking a button
-    // that cannot be reached.
-    val logoBand = LOGO_BAND
-        .coerceAtMost((maxHeight - 320.dp) / 2)
-        .coerceAtLeast(16.dp)
-    Column(modifier = Modifier.fillMaxSize()) {
         // drawStopIndicator = {}: Material3 1.3.0 draws a dot at the end of the track by
         // default (the spec's "stop indicator"). Nobody chose it here and it reads as a stray
         // blue dot on an otherwise plain bar, so it is switched off.
@@ -215,38 +202,30 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             modifier = Modifier.fillMaxWidth()
         )
 
-        // The lockup sits in its own band between the bar and the step title, with equal air
-        // above and below so it belongs to neither. It fades rather than popping when the
-        // welcome step leaves.
-        AnimatedVisibility(
-            visible = step == STEP_WELCOME,
-            enter = fadeIn(tween(220)),
-            exit = fadeOut(tween(160)),
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        ) {
-            CorlangLogo(
-                variant = LogoVariant.LOCKUP,
-                size = 44.dp,
-                modifier = Modifier.padding(vertical = logoBand)
-            )
-        }
-        // No bar-to-title spacer on the other steps: each step now centres itself in the frame
-        // below, which is what brings its title and buttons in toward the content.
+        // The lockup is part of the welcome step's own cluster (StepFrame's header slot), not a
+        // separate band under the progress bar. Held outside, it was spaced by its own rule and
+        // never sat right against a group that centres itself; inside, it is simply the first
+        // element and takes the same gap as everything else.
 
-        // Every step fills this same frame, so the title lands in one place and the buttons
-        // land in another, on every screen. Only the middle differs, and it centres itself
-        // between the two. That is what keeps the slide from looking ragged: the fixed
-        // furniture stays put while the content moves.
+        // Every step fills this same frame, so the motion between them is purely horizontal.
         AnimatedContent(
             targetState = step,
             modifier = Modifier.fillMaxWidth().weight(1f),
-            // The incoming step waits for the outgoing one to clear before it fades up,
-            // otherwise two differently-sized bodies overlap mid-slide and it reads as a smear.
             transitionSpec = {
                 val d = direction
-                (slideInHorizontally(tween(300)) { w -> d * w } +
-                    fadeIn(tween(durationMillis = 200, delayMillis = 120))) togetherWith
-                    (slideOutHorizontally(tween(300)) { w -> -d * w } + fadeOut(tween(160)))
+                ContentTransform(
+                    targetContentEnter = slideInHorizontally(tween(300)) { w -> d * w } +
+                        // The incoming step waits for the outgoing one to clear before fading
+                        // up, otherwise the two overlap mid-slide and it reads as a smear.
+                        fadeIn(tween(durationMillis = 200, delayMillis = 120)),
+                    initialContentExit = slideOutHorizontally(tween(300)) { w -> -d * w } +
+                        fadeOut(tween(160)),
+                    // sizeTransform = null: AnimatedContent otherwise ANIMATES THE CONTAINER
+                    // HEIGHT between steps, which rides on top of the horizontal slide and
+                    // reads as the new screen rising from the bottom. Every step fills the
+                    // frame now, so there is no size change worth animating.
+                    sizeTransform = null
+                )
             },
             label = "onboardingStep"
         ) { animatedStep ->
@@ -258,6 +237,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 gap = GAP_INTRO,
                 title = "Welcome!",
                 centered = true,
+                header = { CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp) },
                 actions = {
                     Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
                         Text("Get started →")
@@ -472,7 +452,6 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         }
     }
     }
-    }
 }
 
 @Composable
@@ -481,6 +460,7 @@ private fun StepFrame(
     title: String,
     subtitle: String = "",
     centered: Boolean = false,
+    header: (@Composable () -> Unit)? = null,
     actions: @Composable () -> Unit,
     content: @Composable () -> Unit
 ) {
@@ -505,6 +485,10 @@ private fun StepFrame(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = align
             ) {
+                if (header != null) {
+                    header()
+                    Spacer(Modifier.height(gap))
+                }
                 Text(
                     title,
                     style = MaterialTheme.typography.headlineSmall,
