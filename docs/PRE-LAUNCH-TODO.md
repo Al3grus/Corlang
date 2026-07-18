@@ -6,7 +6,7 @@ Things to close before a public launch, so nothing gets forgotten. Grouped by ar
 ## ▶ TOMORROW (2026-07-19) — Play Console upload, in order
 
 The AAB is already built & verified: `app/build/outputs/bundle/playRelease/app-play-release.aab`
-(versionCode 84, signed, no updater permission, DEV_PREMIUM=false, ZERO proxy credentials).
+(versionCode 85 / v0.20.32, signed, no updater permission, DEV_PREMIUM=false, WITH billing).
 
 1. [ ] **Anthropic spend alert**: console.anthropic.com → Billing → set a usage alert (~$5).
 2. [ ] Play Console → Corlang → **Testing → Closed testing** → create track ("Alpha") →
@@ -20,6 +20,13 @@ The AAB is already built & verified: `app/build/outputs/bundle/playRelease/app-p
 6. [ ] Complete the required forms when prompted: **content rating** questionnaire,
        **data safety** (collects nothing, shares nothing, all data on-device),
        **privacy policy URL** (GitHub PRIVACY.md raw link is fine for testing).
+6a.[ ] **Create the 5 billing products** (Monetize tab) — exact IDs + prices in
+       `docs/monetization-roadmap.md` (`corlang_ai_premium` sub with monthly/annual +
+       7-day trial; `unlock_a2/b1/b2/all`). The app already reads their live prices;
+       the paywall shows "unavailable" until they exist.
+6b.[ ] **License testers** (Setup → License testing) = your + friends' emails, so they
+       can buy every product with auto-refunded transactions and exercise the full
+       paywall → purchase → unlock flow during closed testing.
 7. [ ] Optional hardening: Cloudflare dashboard → corlang-ai-proxy → Security → WAF
        rate-limiting rule (e.g. 10 req/min per IP) on top of the KV daily quota.
 8. [ ] Tell the 2 sideload friends to update in-app to **v0.20.31** (restores their AI tutor —
