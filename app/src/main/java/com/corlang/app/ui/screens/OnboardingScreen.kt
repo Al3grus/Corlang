@@ -86,10 +86,10 @@ import kotlinx.coroutines.launch
  * the full 100dp and a short screen (or one with the keyboard open) degrades smoothly.
  */
 /**
- * Air above and below the welcome lockup. Large on purpose: the welcome step is a title card,
- * and pushing the mark well clear of the progress bar is what makes it read as one.
+ * Air above and below the welcome lockup: enough to lift the mark clear of the progress bar
+ * without pushing the greeting down the screen.
  */
-private val LOGO_BAND = 150.dp
+private val LOGO_BAND = 80.dp
 /** Title-to-body and body-to-button gap on the two intro pages, which carry real paragraphs. */
 private val GAP_INTRO = 50.dp
 /** The same gap on the question steps, whose bodies are a field or two or three buttons. */
