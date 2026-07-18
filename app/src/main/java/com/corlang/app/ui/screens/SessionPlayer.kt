@@ -454,6 +454,7 @@ fun SessionPlayer(
         }
         LinearProgressIndicator(
             progress = { animatedProgress },
+            drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
         )
         Text(
@@ -503,10 +504,11 @@ fun SessionPlayer(
                     shape = RoundedCornerShape(16.dp),
                     color = MaterialTheme.colorScheme.primaryContainer,
                     contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                    // No minimum height: the card wraps its content. The old heightIn(180.dp)
+                    // left a one-line instruction floating over a lake of empty blue.
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 12.dp)
-                        .heightIn(min = 180.dp)
                 ) {
                     Column(modifier = Modifier.padding(20.dp)) {
                         Text(

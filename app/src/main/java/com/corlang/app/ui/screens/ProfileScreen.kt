@@ -32,7 +32,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -60,7 +59,11 @@ fun ProfileScreen(
 ) {
     // Sub-page routing within the tab (null = the menu). A short crossfade smooths the
     // menu↔sub-page transitions (matching the app's tab fade, not a slow one).
-    var page by rememberSaveable(lang) { mutableStateOf<String?>(null) }
+    // Plain remember, NOT rememberSaveable: the NavHost saves/restores each tab's saveable
+    // state across switches, so a saveable page re-opened the sub-page (Premium, References)
+    // when you came BACK to Profile from another tab. Leaving the tab should reset to the
+    // Profile main view, so this state is meant to die with the visit.
+    var page by remember(lang) { mutableStateOf<String?>(null) }
 
     androidx.compose.animation.Crossfade(
         targetState = page,
@@ -227,7 +230,9 @@ private fun PremiumPage(container: AppContainer, onGetPremium: () -> Unit) {
 /** Reference library: cheatsheet, grammar, the Pareto note, and curated external resources. */
 @Composable
 private fun ReferencesPage(container: AppContainer, lang: String) {
-    var doc by rememberSaveable(lang) { mutableStateOf<String?>(null) }
+    // Plain remember for the same reason as `page` above: an open document must not be
+    // restored when the learner comes back to the Profile tab later.
+    var doc by remember(lang) { mutableStateOf<String?>(null) }
     if (doc != null) {
         BackHandler { doc = null }
         Column(Modifier.fillMaxSize()) {
