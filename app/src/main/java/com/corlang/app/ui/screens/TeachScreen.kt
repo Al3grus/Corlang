@@ -103,6 +103,7 @@ private fun FeynmanRunner(
     // AI review of the typed explanation (Premium): an honest grader for what the self-tick
     // rubric can't enforce. Same gating as the exam writing feedback.
     val entitled by container.premium.entitled.collectAsState(initial = false)
+    val subToken by container.languagePrefs.subPurchaseToken.collectAsState(initial = null)
     var aiReview by rememberSaveable(concept.id) { mutableStateOf<String?>(null) }
     var aiLoading by remember(concept.id) { mutableStateOf(false) }
     var aiError by remember(concept.id) { mutableStateOf<String?>(null) }
@@ -158,7 +159,8 @@ private fun FeynmanRunner(
                                 // stake, so thinking off: cheaper, faster, and the whole
                                 // budget goes to visible feedback (no truncation mode).
                                 maxTokens = 1200,
-                                disableThinking = true
+                                disableThinking = true,
+                                subToken = subToken
                             )
                             aiLoading = false
                             result.fold(

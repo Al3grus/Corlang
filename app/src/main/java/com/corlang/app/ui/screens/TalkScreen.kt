@@ -105,6 +105,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
     assertTutorLangRegistered(lang)   // debug builds fail loudly on a language with no tutor content
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val level = progress?.currentLevel ?: "A1"
+    // Sent to the worker so the 40-msg/day cap keys on this subscriber (null on DEV_PREMIUM).
+    val subToken by container.languagePrefs.subPurchaseToken.collectAsState(initial = null)
     val languageName = remember(lang) { container.content.meta(lang).name }
     val system = remember(lang, level, languageName) { tutorSystemPrompt(lang, languageName, level) }
 
@@ -163,7 +165,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 model = if (lang == "hr") AiClient.FEEDBACK_MODEL else AiClient.DEFAULT_MODEL,
                 // hr runs Sonnet WITH thinking, which shares max_tokens with the visible
                 // reply — give it the proxy cap (2048) so reasoning can't starve the answer.
-                maxTokens = if (lang == "hr") 2048 else 1024
+                maxTokens = if (lang == "hr") 2048 else 1024,
+                subToken = subToken
             )
             sending = false
             result.fold(

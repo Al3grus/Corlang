@@ -18,6 +18,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -41,6 +42,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.screens.CorlangSplash
+import com.corlang.app.ui.screens.PaywallScreen
 import com.corlang.app.ui.screens.LearnScreen
 import com.corlang.app.ui.screens.OnboardingScreen
 import com.corlang.app.ui.screens.PlacementScreen
@@ -97,6 +99,10 @@ private fun CorlangApp(container: AppContainer) {
     var showSettings by rememberSaveable { mutableStateOf(false) }
     // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
     var showPlacement by rememberSaveable { mutableStateOf(false) }
+    // Paywall overlay: open flag + mode. paywallLevel null = Premium subscription; else the CEFR
+    // level id ("A2"/"B1"/"B2") being unlocked. Overlay (not a nav dest) for the same reason.
+    var showPaywall by rememberSaveable { mutableStateOf(false) }
+    var paywallLevel by rememberSaveable { mutableStateOf<String?>(null) }
     // Whether a guided lesson is open on the Today tab. Hoisted here so any bottom-nav tap can
     // exit it back to the Today dashboard (lesson progress is saved per step, so it resumes).
     var inLesson by rememberSaveable { mutableStateOf(false) }
@@ -113,6 +119,18 @@ private fun CorlangApp(container: AppContainer) {
         // Switching language returns to the Today dashboard, not a half-done lesson of the old one.
         if (prevLang != null && prevLang != lang) inLesson = false
         prevLang = lang
+    }
+
+    // Play Billing: connect + reconcile entitlement on every resume. start() is idempotent and
+    // re-queries purchases, so a subscription bought/refunded (or a purchase completed while the
+    // app was backgrounded on the Play sheet) is reflected the moment the user returns.
+    val billingOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
+    DisposableEffect(billingOwner) {
+        val obs = androidx.lifecycle.LifecycleEventObserver { _, event ->
+            if (event == androidx.lifecycle.Lifecycle.Event.ON_RESUME) container.billing.start()
+        }
+        billingOwner.lifecycle.addObserver(obs)
+        onDispose { billingOwner.lifecycle.removeObserver(obs) }
     }
 
     // Warm every language's heavyweight content (plan + vocab) off the main thread, so the
@@ -283,6 +301,15 @@ private fun CorlangApp(container: AppContainer) {
             )
             return@Scaffold
         }
+        if (showPaywall) {
+            androidx.activity.compose.BackHandler { showPaywall = false }
+            androidx.compose.foundation.layout.Box(
+                Modifier.padding(innerPadding).consumeWindowInsets(innerPadding)
+            ) {
+                PaywallScreen(container, levelId = paywallLevel, onClose = { showPaywall = false })
+            }
+            return@Scaffold
+        }
         // One snappy fade for every tab switch. Kept short on purpose: a long crossfade keeps the
         // OUTGOING tab painted while the incoming one is still populating its flows, so you'd see
         // e.g. Today linger for a beat before Review resolves. 150ms is long enough to read as a
@@ -322,7 +349,8 @@ private fun CorlangApp(container: AppContainer) {
                             launchSingleTop = true
                             restoreState = true
                         }
-                    }
+                    },
+                    onOpenPaywall = { level -> paywallLevel = level; showPaywall = true }
                 )
             }
             composable(Dest.WORDS.route) { WordsScreen(container, lang) }
@@ -342,7 +370,8 @@ private fun CorlangApp(container: AppContainer) {
                 ProfileScreen(
                     container, lang,
                     onSelectLanguage = appState::selectLanguage,
-                    onOpenSettings = { showSettings = true }
+                    onOpenSettings = { showSettings = true },
+                    onGetPremium = { paywallLevel = null; showPaywall = true }
                 )
             }
         }

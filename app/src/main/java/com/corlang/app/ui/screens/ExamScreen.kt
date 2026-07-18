@@ -564,6 +564,7 @@ private fun OpenPromptTask(
     // AI writing feedback (Premium).
     val scope = rememberCoroutineScope()
     val entitled by container.premium.entitled.collectAsState(initial = false)
+    val subToken by container.languagePrefs.subPurchaseToken.collectAsState(initial = null)
     var feedback by rememberSaveable(section.id, index) { mutableStateOf<String?>(null) }
     var feedbackLoading by remember(section.id, index) { mutableStateOf(false) }
     var feedbackError by remember(section.id, index) { mutableStateOf<String?>(null) }
@@ -608,7 +609,8 @@ private fun OpenPromptTask(
                                 model = AiClient.FEEDBACK_MODEL,
                                 // 2048 = the proxy's cap. Thinking shares this budget; the
                                 // headroom keeps a long corrected essay from truncating.
-                                maxTokens = 2048
+                                maxTokens = 2048,
+                                subToken = subToken
                             )
                             feedbackLoading = false
                             result.fold(

@@ -1,6 +1,6 @@
 {
-  "versionCode": 84,
-  "versionName": "0.20.31",
-  "notes": "Big correctness release from a full code audit. Fixed: multiple-choice questions that teach accents/capitalization now actually require the right form (no more \"s\" accepted for \"š\"); resuming a lesson can no longer jump you backwards or skip a due review step; a lesson in progress survives the app being killed; the Today dashboard follows your plan again after browsing old days; French answers typed with a space before ? are graded correctly; exam fill-ins are strictly graded as promised; your streak survives timezone changes; the AI tutor conversation survives switching tabs, and truncated AI replies are detected instead of shown as complete. IMPORTANT: this update also restores the AI tutor (security rotation disabled it on older versions) — update to get it back.",
+  "versionCode": 85,
+  "versionName": "0.20.32",
+  "notes": "Monetization is in. Google Play Billing is wired: the AI tutor (Learn tab) becomes a subscription with a free trial, and levels A2/B1/B2 unlock with a one-time purchase (A0/A1 stay free forever). The AI tutor now has a fair daily message limit so the subscription price stays sustainable. Prices come from the store per your region and include tax. Nothing about the free course changed — lessons, spaced-repetition review, quizzes and progress tracking remain free.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

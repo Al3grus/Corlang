@@ -50,7 +50,8 @@ fun TodayScreen(
     lang: String,
     inLesson: Boolean = false,
     onInLessonChange: (Boolean) -> Unit = {},
-    onNavigate: (String) -> Unit = {}
+    onNavigate: (String) -> Unit = {},
+    onOpenPaywall: (String) -> Unit = {}
 ) {
     val plan = remember(lang) { container.content.plan(lang) }
     // Which CEFR levels end in an official exam — used to draw a checkpoint at the tail of each
@@ -123,6 +124,13 @@ fun TodayScreen(
 
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
     val isDone = completed.contains(day.day)
+
+    // One-time level gate: A0/A1 are free; A2+ need a purchase (or DEV_PREMIUM). A locked day's
+    // action opens the paywall instead of the lesson. emptySet initial is fine — the load gate
+    // below holds the first frame, and a paid level resolves within it.
+    val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
+    val dayLocked = !com.corlang.app.BuildConfig.DEV_PREMIUM &&
+        day.level !in container.premium.freeLevels && day.level !in unlockedLevels
 
     // Guided session mode. inLesson is hoisted to the app scaffold so a bottom-nav tap (any tab,
     // including Today) exits the lesson back to the dashboard — progress is saved per step, so a
@@ -356,7 +364,10 @@ fun TodayScreen(
                     // Outlined, not filled: a quiet bordered action that matches the card's
                     // calm style instead of a full-color block.
                     OutlinedButton(
-                        onClick = { onInLessonChange(true) },
+                        // Locked level → paywall; otherwise open the guided lesson.
+                        onClick = {
+                            if (dayLocked) onOpenPaywall(day.level) else onInLessonChange(true)
+                        },
                         border = androidx.compose.foundation.BorderStroke(
                             1.dp, MaterialTheme.colorScheme.primary
                         ),
@@ -364,6 +375,7 @@ fun TodayScreen(
                     ) {
                         Text(
                             when {
+                                dayLocked -> "🔒 Unlock ${day.level} to continue"
                                 isDone -> "Revisit Day ${day.day} ✓"
                                 lessonStarted -> "Continue Day ${day.day} ($stepsDone/${actionSteps.size} steps)"
                                 day.day == targetDay -> "Start Day ${day.day} →"

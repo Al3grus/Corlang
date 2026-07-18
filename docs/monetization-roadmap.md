@@ -100,6 +100,27 @@ Freemium converts only **~2% of installs to paid** (RevenueCat; even mature Duol
 API + Play fee + domain), not profit — and at these prices the AI sub covers its own API cost
 with margin, so the app never loses money by being used. Growth is a separate problem from pricing.
 
+### Play Console products to create (IDs must match BillingManager EXACTLY)
+The billing layer shipped in the app (v0.20.32); it reads prices live from Play, so create
+these products in Play Console → Monetize. Until they exist the paywall shows "unavailable"
+(never a wrong/free price). Product IDs are case-sensitive and must match verbatim:
+
+**Subscription** — Monetize → Subscriptions → create `corlang_ai_premium`:
+- Base plan `monthly` — auto-renewing, **€9.99/month**.
+- Base plan `annual` — auto-renewing, **€99/year** (its own effective ~€8.25/mo = "2 months
+  free" vs monthly). Add an **Offer** on the annual base plan: a **7-day free trial** phase
+  (optionally an intro price). Google requires trials of 3d–3y, once per user.
+
+**One-time unlocks** — Monetize → In-app products (managed products):
+- `unlock_a2` — **€4.99**
+- `unlock_b1` — **€7.99**
+- `unlock_b2` — **€7.99**
+- `unlock_all` — **€14.99**  (bundle → grants A2+B1+B2; the app maps it to all three)
+
+Accept Google's suggested **regional prices** for each. Set them as the tax-inclusive charm
+prices above; Google handles EU VAT. The 40-msg/day per-subscriber cap is enforced in the
+worker (keyed on the Play sub token the app sends), so the flat annual price stays safe.
+
 ### Testing implication
 Closed-testing **license testers** (Play Console → Settings → License testing) can buy every
 product above with auto-refunded/never-charged transactions — so the full purchase flow
