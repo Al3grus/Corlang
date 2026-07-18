@@ -48,6 +48,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.prefs.LearnerProfile
@@ -76,23 +77,15 @@ import kotlinx.coroutines.launch
  * walks THAT list, so no step ever needs to know its own number.
  */
 /*
- * Shared vertical rhythm for every step: the gap under a step's title, and the gap above the
- * button row. Both are generous on purpose. The step body is centred in the space left by the
- * progress bar, so with cramped spacing a short step reads as one dense clump floating in the
- * middle; letting title, content and actions breathe fills the screen instead.
+ * One number for the whole onboarding rhythm: the lockup, the title and the button row each get
+ * this much air on both sides. Deliberately large, the steps are short and the space is the design.
+ *
+ * It is a MAXIMUM, not a fixed height. Five of these gaps plus a title and a button row overrun a
+ * short screen outright, which would push the buttons off the bottom with nothing to scroll to.
+ * OnboardingScreen measures the frame and caps the gap at a share of it, so a normal phone gets
+ * the full 100dp and a short screen (or one with the keyboard open) degrades smoothly.
  */
-private val STEP_TITLE_GAP = 28.dp
-private val STEP_ACTION_GAP = 24.dp
-/**
- * Air above and below the welcome lockup, equal on both sides so it sits midway between the
- * progress bar and the title. Generous (not a token gap) because the alternative reads as the
- * logo being stuck to the bar.
- */
-private val LOGO_BAND = 40.dp
-/** Gap under the progress bar on steps with no logo, so titles never touch the bar either. */
-private val FRAME_TOP = 40.dp
-/** Gap under the button row, lifting it off the bottom edge of the screen. */
-private val FRAME_BOTTOM = 36.dp
+private val STEP_GAP = 100.dp
 
 private const val STEP_WELCOME = 0
 private const val STEP_HOW = 1
@@ -178,6 +171,12 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     // edge-to-edge the screen must inset itself or the progress bar collides with the
     // status bar/cutout and the bottom buttons hide under the navigation bar.
     Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
+    BoxWithConstraints(Modifier.fillMaxSize()) {
+    // The full 100dp everywhere once there is room for it (roughly a 700dp-tall frame and up,
+    // which is any current phone in portrait), scaled down proportionally on anything shorter
+    // or when the keyboard halves the screen. Without this the fixed gaps simply overrun the
+    // column and the button row walks off the bottom edge with no way to scroll to it.
+    val gap = minOf(STEP_GAP, maxHeight / 7)
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -213,11 +212,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             CorlangLogo(
                 variant = LogoVariant.LOCKUP,
                 size = 44.dp,
-                modifier = Modifier.padding(vertical = LOGO_BAND)
+                modifier = Modifier.padding(vertical = gap)
             )
         }
         // Steps with no logo still need the bar-to-title gap.
-        if (step != STEP_WELCOME) Spacer(Modifier.height(FRAME_TOP))
+        if (step != STEP_WELCOME) Spacer(Modifier.height(gap))
 
         // Every step fills this same frame, so the title lands in one place and the buttons
         // land in another, on every screen. Only the middle differs, and it centres itself
@@ -241,6 +240,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // Just "Welcome!": the lockup above already reads Corlang, and the thesis sentence
             // names it again. Naming it in the greeting too put it three times in five words.
             STEP_WELCOME -> StepFrame(
+                gap = gap,
                 title = "Welcome!",
                 centered = true,
                 actions = {
@@ -258,6 +258,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- How it works: the substance, one page before anything is asked ----
             STEP_HOW -> StepFrame(
+                gap = gap,
                 title = "How it works",
                 // No Back here: the intro pages carry nothing you can get wrong. The label
                 // names the destination; a single-course build skips to the profile questions.
@@ -300,6 +301,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // and a description under the choices either repeats it or (as it once did) changes
             // as you tap between languages. No Back either, everything before this is intro.
             STEP_LANG -> StepFrame(
+                gap = gap,
                 title = "Which language do you want to learn?",
                 actions = {
                     Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
@@ -343,6 +345,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // Back starts at the next step: everything before this is intro or a choice the
             // following screens let you change anyway.
             STEP_NAME -> StepFrame(
+                gap = gap,
                 title = "What's your name?",
                 // The old subtitle promised it would become "your very first phrase", which went
                 // with the removed phrases payoff. The name's real jobs are the daily reminder
@@ -367,6 +370,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- Word forms (gender) ----
             STEP_GENDER -> StepFrame(
+                gap = gap,
                 title = "Which forms should $langName use for you?",
                 subtitle = if (learnLang == "hr")
                     "Croatian words change with the speaker: a man says \"Ja sam Amerikanac, radio sam\", " +
@@ -390,6 +394,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
 
             // ---- Daily goal ----
             STEP_GOAL -> StepFrame(
+                gap = gap,
                 title = "New words per lesson",
                 subtitle = "How many new words each lesson introduces. 10 is the sustainable " +
                     "default; you can change this anytime in Settings.",
@@ -412,6 +417,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             // a speaker button). Removed: this step asks one question with two answers, and a
             // reward block underneath buried the actual decision.
             STEP_LEVEL -> StepFrame(
+                gap = gap,
                 title = "Last one: do you already know some $langName?",
                 actions = {
                     Row(modifier = Modifier.fillMaxWidth()) {
@@ -451,10 +457,12 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         }
     }
     }
+    }
 }
 
 @Composable
 private fun StepFrame(
+    gap: Dp,
     title: String,
     subtitle: String = "",
     centered: Boolean = false,
@@ -478,7 +486,7 @@ private fun StepFrame(
                 modifier = Modifier.padding(top = 10.dp)
             )
         }
-        Spacer(Modifier.height(STEP_TITLE_GAP))
+        Spacer(Modifier.height(gap))
 
         // The body claims the space between title and buttons and centres itself in it, so a
         // one-line step and a six-paragraph step both look composed. heightIn(min = viewport)
@@ -498,11 +506,11 @@ private fun StepFrame(
             }
         }
 
-        Spacer(Modifier.height(STEP_ACTION_GAP))
+        Spacer(Modifier.height(gap))
         actions()
         // Lifts the button row off the bottom edge; without it the primary button sat flush
         // against the navigation bar and read as pinned to the screen rather than to the step.
-        Spacer(Modifier.height(FRAME_BOTTOM))
+        Spacer(Modifier.height(gap))
     }
 }
 
