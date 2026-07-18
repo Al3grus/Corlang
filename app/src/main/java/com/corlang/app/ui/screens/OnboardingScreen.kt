@@ -12,7 +12,6 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -28,8 +27,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -60,84 +57,17 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 /*
- * First-run onboarding: who you are, why you're learning, your daily goal, and your level.
- * The payoff step turns the answers into your personalized first Croatian phrases
- * (Zovem se…, Ja sam iz…, Živim u…) with the Croatian voice, so onboarding doubles as
- * lesson zero. Question-driven setup before content is the convention every serious
- * language app follows; re-runnable any time from Settings.
+ * First-run onboarding: which course, who you are, your daily goal, and your level.
+ * Question-driven setup before content is the convention every serious language app follows,
+ * and it is re-runnable any time from Settings.
+ *
+ * It deliberately asks as little as possible. "Where are you from / where do you live" used to
+ * be here, feeding a curated-Croatian phrases payoff on the last step; both are gone. Nothing
+ * else consumed those answers, so collecting them contradicted the app's own promise not to
+ * collect anything. A learner who wants "I am from ..." can ask the tutor, or meet it in a
+ * lesson. The curated NationOption/NATIONS table and profilePhrases() are recoverable from git
+ * history (see the v0.20.37 tree) if a lesson step ever wants them.
  */
-
-/**
- * Curated Croatian forms per country: nationality (m/f), origin ("iz" + genitive) and
- * residence ("u" + locative). Standard dictionary forms only, the app never generates
- * Croatian grammar, so an unknown country simply omits those phrases.
- */
-data class NationOption(
-    val english: String,
-    val natM: String,
-    val natF: String,
-    val fromHr: String,   // "iz Amerike"
-    val inHr: String      // "u Americi"
-)
-
-val NATIONS: List<NationOption> = listOf(
-    NationOption("United States", "Amerikanac", "Amerikanka", "iz Amerike", "u Americi"),
-    NationOption("Croatia", "Hrvat", "Hrvatica", "iz Hrvatske", "u Hrvatskoj"),
-    NationOption("Albania", "Albanac", "Albanka", "iz Albanije", "u Albaniji"),
-    // Microstates: blank nationality = no widely attested Croatian demonym; the
-    // nationality phrase is simply skipped, the from/lives-in phrases still work.
-    NationOption("Andorra", "", "", "iz Andore", "u Andori"),
-    NationOption("Argentina", "Argentinac", "Argentinka", "iz Argentine", "u Argentini"),
-    NationOption("Australia", "Australac", "Australka", "iz Australije", "u Australiji"),
-    NationOption("Austria", "Austrijanac", "Austrijanka", "iz Austrije", "u Austriji"),
-    NationOption("Belarus", "Bjelorus", "Bjeloruskinja", "iz Bjelorusije", "u Bjelorusiji"),
-    NationOption("Belgium", "Belgijanac", "Belgijanka", "iz Belgije", "u Belgiji"),
-    NationOption("Bosnia and Herzegovina", "Bosanac", "Bosanka", "iz Bosne i Hercegovine", "u Bosni i Hercegovini"),
-    NationOption("Brazil", "Brazilac", "Brazilka", "iz Brazila", "u Brazilu"),
-    NationOption("Bulgaria", "Bugarin", "Bugarka", "iz Bugarske", "u Bugarskoj"),
-    NationOption("Canada", "Kanađanin", "Kanađanka", "iz Kanade", "u Kanadi"),
-    NationOption("Cyprus", "Cipranin", "Cipranka", "s Cipra", "na Cipru"),
-    NationOption("Czechia", "Čeh", "Čehinja", "iz Češke", "u Češkoj"),
-    NationOption("Denmark", "Danac", "Dankinja", "iz Danske", "u Danskoj"),
-    NationOption("Estonia", "Estonac", "Estonka", "iz Estonije", "u Estoniji"),
-    NationOption("Finland", "Finac", "Finkinja", "iz Finske", "u Finskoj"),
-    NationOption("France", "Francuz", "Francuskinja", "iz Francuske", "u Francuskoj"),
-    NationOption("Germany", "Nijemac", "Njemica", "iz Njemačke", "u Njemačkoj"),
-    NationOption("Greece", "Grk", "Grkinja", "iz Grčke", "u Grčkoj"),
-    NationOption("Hungary", "Mađar", "Mađarica", "iz Mađarske", "u Mađarskoj"),
-    NationOption("Iceland", "Islanđanin", "Islanđanka", "s Islanda", "na Islandu"),
-    NationOption("Ireland", "Irac", "Irkinja", "iz Irske", "u Irskoj"),
-    NationOption("Italy", "Talijan", "Talijanka", "iz Italije", "u Italiji"),
-    NationOption("Kosovo", "Kosovar", "Kosovarka", "s Kosova", "na Kosovu"),
-    NationOption("Latvia", "Latvijac", "Latvijka", "iz Latvije", "u Latviji"),
-    NationOption("Liechtenstein", "", "", "iz Lihtenštajna", "u Lihtenštajnu"),
-    NationOption("Lithuania", "Litavac", "Litavka", "iz Litve", "u Litvi"),
-    NationOption("Luxembourg", "Luksemburžanin", "Luksemburžanka", "iz Luksemburga", "u Luksemburgu"),
-    NationOption("Malta", "Maltežanin", "Maltežanka", "s Malte", "na Malti"),
-    NationOption("Mexico", "Meksikanac", "Meksikanka", "iz Meksika", "u Meksiku"),
-    NationOption("Moldova", "Moldavac", "Moldavka", "iz Moldavije", "u Moldaviji"),
-    NationOption("Monaco", "", "", "iz Monaka", "u Monaku"),
-    NationOption("Montenegro", "Crnogorac", "Crnogorka", "iz Crne Gore", "u Crnoj Gori"),
-    NationOption("Netherlands", "Nizozemac", "Nizozemka", "iz Nizozemske", "u Nizozemskoj"),
-    NationOption("North Macedonia", "Makedonac", "Makedonka", "iz Sjeverne Makedonije", "u Sjevernoj Makedoniji"),
-    NationOption("Norway", "Norvežanin", "Norvežanka", "iz Norveške", "u Norveškoj"),
-    NationOption("Poland", "Poljak", "Poljakinja", "iz Poljske", "u Poljskoj"),
-    NationOption("Portugal", "Portugalac", "Portugalka", "iz Portugala", "u Portugalu"),
-    NationOption("Romania", "Rumunj", "Rumunjka", "iz Rumunjske", "u Rumunjskoj"),
-    NationOption("Russia", "Rus", "Ruskinja", "iz Rusije", "u Rusiji"),
-    NationOption("San Marino", "", "", "iz San Marina", "u San Marinu"),
-    NationOption("Serbia", "Srbin", "Srpkinja", "iz Srbije", "u Srbiji"),
-    NationOption("Slovakia", "Slovak", "Slovakinja", "iz Slovačke", "u Slovačkoj"),
-    NationOption("Slovenia", "Slovenac", "Slovenka", "iz Slovenije", "u Sloveniji"),
-    NationOption("Spain", "Španjolac", "Španjolka", "iz Španjolske", "u Španjolskoj"),
-    NationOption("Sweden", "Šveđanin", "Šveđanka", "iz Švedske", "u Švedskoj"),
-    NationOption("Switzerland", "Švicarac", "Švicarka", "iz Švicarske", "u Švicarskoj"),
-    NationOption("Turkey", "Turčin", "Turkinja", "iz Turske", "u Turskoj"),
-    NationOption("Ukraine", "Ukrajinac", "Ukrajinka", "iz Ukrajine", "u Ukrajini"),
-    NationOption("United Kingdom", "Britanac", "Britanka", "iz Velike Britanije", "u Velikoj Britaniji"),
-)
-
-private const val SOMEWHERE_ELSE = "Somewhere else"
 
 /*
  * Onboarding steps, as identities rather than bare indices: the language step only exists when
@@ -161,29 +91,8 @@ private const val STEP_HOW = 1
 private const val STEP_LANG = 2
 private const val STEP_NAME = 3
 private const val STEP_GENDER = 4
-private const val STEP_ORIGIN = 5
-private const val STEP_GOAL = 6
-private const val STEP_LEVEL = 7
-
-/** The personalized phrases the profile unlocks; empty parts are simply skipped. */
-fun profilePhrases(p: LearnerProfile): List<Pair<String, String>> {
-    val from = NATIONS.firstOrNull { it.english == p.from }
-    val livesIn = NATIONS.firstOrNull { it.english == p.livesIn }
-    val out = mutableListOf<Pair<String, String>>()
-    if (p.name.isNotBlank()) out += "Zovem se ${p.name.trim()}." to "My name is ${p.name.trim()}."
-    from?.let {
-        val nat = if (p.gender == "f") it.natF else it.natM
-        if (nat.isNotBlank()) out += "Ja sam $nat." to "I am ${it.english.demonymEn()}."
-        out += "Ja sam ${it.fromHr}." to "I am from ${it.english}."
-    }
-    livesIn?.let { out += "Živim ${it.inHr}." to "I live in ${it.english}." }
-    return out
-}
-
-private fun String.demonymEn(): String = when (this) {
-    "United States" -> "American"; "Croatia" -> "Croatian"; "United Kingdom" -> "British"
-    else -> "from $this"
-}
+private const val STEP_GOAL = 5
+private const val STEP_LEVEL = 6
 
 @Composable
 fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean) -> Unit) {
@@ -199,8 +108,6 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     var step by remember { mutableIntStateOf(STEP_WELCOME) }
     var name by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("m") }
-    var from by remember { mutableStateOf<String?>(null) }
-    var livesIn by remember { mutableStateOf<String?>(null) }
     var goal by remember { mutableStateOf(10) }
     var wantsPlacement by remember { mutableStateOf<Boolean?>(null) }
 
@@ -210,21 +117,22 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         val p = container.languagePrefs.profile.first()
         if (p.name.isNotBlank()) name = p.name
         gender = p.gender
-        if (p.from.isNotBlank()) from = p.from
-        if (p.livesIn.isNotBlank()) livesIn = p.livesIn
         goal = container.languagePrefs.newWordsPerDay.first()
     }
 
     fun save(thenPlacement: Boolean) {
         scope.launch {
             container.languagePrefs.setProfile(
+                // from / livesIn / reason are no longer collected: nothing consumed them, and
+                // asking for them contradicted "no data collection". The fields stay on
+                // LearnerProfile so existing backups still parse, and are written blank so a
+                // learner who re-runs onboarding ends up with nothing stored rather than a
+                // stale answer to a question the app no longer asks.
                 LearnerProfile(
                     name = name.trim(),
                     gender = gender,
-                    from = from.orEmpty().takeIf { it != SOMEWHERE_ELSE }.orEmpty(),
-                    livesIn = livesIn.orEmpty().takeIf { it != SOMEWHERE_ELSE }.orEmpty(),
-                    // The "why are you learning" step was removed: nothing consumed it.
-                    // The field stays for backup compatibility, just no longer collected.
+                    from = "",
+                    livesIn = "",
                     reason = ""
                 )
             )
@@ -244,7 +152,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         listOfNotNull(
             STEP_WELCOME, STEP_HOW,
             STEP_LANG.takeIf { multiLang },
-            STEP_NAME, STEP_GENDER, STEP_ORIGIN, STEP_GOAL, STEP_LEVEL
+            STEP_NAME, STEP_GENDER, STEP_GOAL, STEP_LEVEL
         )
     }
     val stepIndex = visibleSteps.indexOf(step).coerceAtLeast(0)
@@ -469,25 +377,6 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 }
             }
 
-            // ---- Where from / where living ----
-            STEP_ORIGIN -> StepFrame(
-                title = "Where are you from, and where do you live?",
-                subtitle = if (learnLang == "hr")
-                    "These become your intro phrases, with the correct Croatian case endings."
-                else "These become your first intro phrases.",
-                actions = {
-                    NextRow(
-                        enabled = from != null && livesIn != null,
-                        onBack = { go(-1) },
-                        onNext = { go(+1) }
-                    )
-                }
-            ) {
-                CountryPicker("I am from", from) { from = it }
-                Spacer(Modifier.height(10.dp))
-                CountryPicker("I live in", livesIn) { livesIn = it }
-            }
-
             // ---- Daily goal ----
             STEP_GOAL -> StepFrame(
                 title = "New words per lesson",
@@ -605,8 +494,9 @@ private fun StepFrame(
 
 @Composable
 private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
-    // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales.
-    Row(modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)) {
+    // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales. No top padding:
+    // StepFrame already spends STEP_ACTION_GAP above the actions slot.
+    Row(modifier = Modifier.fillMaxWidth()) {
         OutlinedButton(onClick = onBack, modifier = Modifier.weight(1f)) {
             Text("← Back", maxLines = 1)
         }
@@ -615,27 +505,5 @@ private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
             enabled = enabled,
             modifier = Modifier.weight(1f).padding(start = 8.dp)
         ) { Text("Next →", maxLines = 1) }
-    }
-}
-
-@Composable
-private fun CountryPicker(label: String, selected: String?, onSelect: (String) -> Unit) {
-    var expanded by remember { mutableStateOf(false) }
-    Box {
-        OutlinedButton(onClick = { expanded = true }, modifier = Modifier.fillMaxWidth()) {
-            Text("$label:  ${selected ?: "choose…"}")
-        }
-        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            NATIONS.forEach { n ->
-                DropdownMenuItem(
-                    text = { Text(n.english) },
-                    onClick = { onSelect(n.english); expanded = false }
-                )
-            }
-            DropdownMenuItem(
-                text = { Text(SOMEWHERE_ELSE) },
-                onClick = { onSelect(SOMEWHERE_ELSE); expanded = false }
-            )
-        }
     }
 }
