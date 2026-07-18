@@ -23,6 +23,14 @@
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
 const ANTHROPIC_VERSION = "2023-06-01";
 
+// Play Developer API — server-side subscription verification (production entitlement gate).
+// Enabled only when the PLAY_SERVICE_ACCOUNT secret is set (the full service-account JSON);
+// until then the worker keeps its pre-verification behavior so closed testing / sideload work.
+// Setup: docs/server-ai.md → "Play subscription verification".
+const PACKAGE_NAME = "com.corlang.app";
+const ANDROIDPUBLISHER = "https://androidpublisher.googleapis.com/androidpublisher/v3";
+const PLAY_SCOPE = "https://www.googleapis.com/auth/androidpublisher";
+
 // Guardrails: only the models the app actually uses, and a hard output cap, so a leaked
 // token can't run up a large PER-REQUEST bill. Aggregate volume is bounded by the KV daily
 // quota below + the dashboard rate-limit rule; the Anthropic prepaid balance is the backstop.
@@ -114,6 +122,96 @@ async function checkRateLimit(request, env) {
   }
 }
 
+// ---- Play subscription verification ----
+
+function b64url(bytes) {
+  let s = "";
+  const b = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  for (let i = 0; i < b.length; i++) s += String.fromCharCode(b[i]);
+  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function b64urlStr(str) { return b64url(new TextEncoder().encode(str)); }
+
+/** Import the service account's PKCS8 PEM private key for RS256 signing. */
+async function importKey(pem) {
+  const body = pem.replace(/-----[^-]+-----/g, "").replace(/\s+/g, "");
+  const der = Uint8Array.from(atob(body), (c) => c.charCodeAt(0));
+  return crypto.subtle.importKey(
+    "pkcs8", der.buffer,
+    { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["sign"]
+  );
+}
+
+/** OAuth access token for the service account (cached in KV until ~5 min before expiry). */
+async function getAccessToken(env) {
+  const cacheKey = "play:access_token";
+  if (env.RATE_KV) {
+    const cached = await env.RATE_KV.get(cacheKey);
+    if (cached) return cached;
+  }
+  const sa = JSON.parse(env.PLAY_SERVICE_ACCOUNT);
+  const now = Math.floor(Date.now() / 1000);
+  const header = b64urlStr(JSON.stringify({ alg: "RS256", typ: "JWT" }));
+  const claim = b64urlStr(JSON.stringify({
+    iss: sa.client_email, scope: PLAY_SCOPE,
+    aud: "https://oauth2.googleapis.com/token", iat: now, exp: now + 3600,
+  }));
+  const key = await importKey(sa.private_key);
+  const sig = await crypto.subtle.sign(
+    "RSASSA-PKCS1-v1_5", key, new TextEncoder().encode(`${header}.${claim}`)
+  );
+  const jwt = `${header}.${claim}.${b64url(sig)}`;
+  const res = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "content-type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: jwt,
+    }),
+  });
+  const data = await res.json();
+  if (!data.access_token) throw new Error("no access_token from Google");
+  if (env.RATE_KV) {
+    await env.RATE_KV.put(cacheKey, data.access_token,
+      { expirationTtl: Math.max(60, (data.expires_in ?? 3600) - 300) });
+  }
+  return data.access_token;
+}
+
+/**
+ * True if [subToken] is an active Play subscription. Verdicts are cached in KV (6h for valid,
+ * 10m for invalid) so we don't hit the Play API on every message. Fail-OPEN on transport errors
+ * (a Google outage must not brick paying users); a definitive "not active" fails closed.
+ */
+async function verifySubscription(env, subToken) {
+  const verdictKey = `play:verdict:${subToken}`;
+  if (env.RATE_KV) {
+    const cached = await env.RATE_KV.get(verdictKey);
+    if (cached === "1") return true;
+    if (cached === "0") return false;
+  }
+  try {
+    const access = await getAccessToken(env);
+    const url = `${ANDROIDPUBLISHER}/applications/${PACKAGE_NAME}` +
+      `/purchases/subscriptionsv2/tokens/${encodeURIComponent(subToken)}`;
+    const res = await fetch(url, { headers: { Authorization: `Bearer ${access}` } });
+    if (res.status === 410) { // token permanently gone
+      if (env.RATE_KV) await env.RATE_KV.put(verdictKey, "0", { expirationTtl: 600 });
+      return false;
+    }
+    if (!res.ok) return true; // transient (5xx/quota): fail open, don't punish a real user
+    const data = await res.json();
+    const ok = data.subscriptionState === "SUBSCRIPTION_STATE_ACTIVE" ||
+      data.subscriptionState === "SUBSCRIPTION_STATE_IN_GRACE_PERIOD";
+    if (env.RATE_KV) {
+      await env.RATE_KV.put(verdictKey, ok ? "1" : "0",
+        { expirationTtl: ok ? 21600 : 600 });
+    }
+    return ok;
+  } catch {
+    return true; // signing / network failure: fail open
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -123,6 +221,20 @@ export default {
     if (!authorize(request, env)) {
       return json(403, { error: { message: "Not authorized." } });
     }
+    // Production entitlement gate: when the service account is configured AND the caller
+    // presents a sub token, it must verify as an ACTIVE Play subscription. A refunded/expired/
+    // forged token is rejected here even though the client already granted itself entitlement.
+    // No sub token (DEV_PREMIUM sideload) skips this and stays bounded by the per-IP cap.
+    const subToken = request.headers.get("x-corlang-sub");
+    if (env.PLAY_SERVICE_ACCOUNT && subToken) {
+      const valid = await verifySubscription(env, subToken);
+      if (!valid) {
+        return json(403, {
+          error: { message: "Your subscription isn't active. Reopen the app to refresh it." },
+        });
+      }
+    }
+
     const rate = await checkRateLimit(request, env);
     if (!rate.ok) {
       const msg = rate.reason === "sub"
