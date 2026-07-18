@@ -246,10 +246,25 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             .imePadding()
             .padding(24.dp)
     ) {
+        // drawStopIndicator = {}: Material3 1.3.0 draws a dot at the end of the track by
+        // default (the spec's "stop indicator"). Nobody chose it here and it reads as a stray
+        // blue dot on an otherwise plain bar, so it is switched off.
         LinearProgressIndicator(
             progress = { (stepIndex + 1f) / visibleSteps.size },
+            drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp)
         )
+
+        // The lockup is anchored up here rather than travelling with the centred text block:
+        // on the short welcome step a logo inside the centred group floats into mid-screen,
+        // leaving the top empty. Pinned under the bar, it balances the page.
+        if (step == STEP_WELCOME) {
+            CorlangLogo(
+                variant = LogoVariant.LOCKUP,
+                size = 44.dp,
+                modifier = Modifier.align(Alignment.CenterHorizontally).padding(bottom = 4.dp)
+            )
+        }
 
         // The step body sits in the remaining space and is centred in it, so a short step
         // (the welcome, the goal picker) reads as a composed screen instead of hanging off
@@ -274,7 +289,6 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp)
                 // Just "Welcome!": the lockup above already reads Corlang, and the thesis
                 // sentence below names it again. Naming it in the greeting too put it three
                 // times in five words.
@@ -282,12 +296,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     "Welcome!",
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier.fillMaxWidth().padding(top = 28.dp)
+                    modifier = Modifier.fillMaxWidth()
                 )
                 Text(
                     "Corlang is built on how people actually learn a language: structured study, " +
-                        "deliberate repetition, and retention methods with real evidence behind " +
-                        "them. Not gamified filler that feels like progress without being it.",
+                        "deliberate repetition, and retention methods with real evidence behind them.",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
@@ -314,9 +327,12 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
+                // Not "everything works offline": the AI tutor calls out to a server, so the
+                // blanket claim was false. The course itself genuinely is offline.
                 Text(
-                    "No accounts, no tracking, no data collection. Everything works offline and " +
-                        "stays on your device.",
+                    "No accounts, no tracking, no data collection. Lessons, review, quizzes and " +
+                        "exams all work offline and stay on your device. Only the AI tutor needs " +
+                        "a connection.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 16.dp)
@@ -372,7 +388,12 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 // No supporting copy here on purpose: the welcome step already explained what
                 // Corlang is, and any description sitting under the choices either repeats it
                 // or (worse, the previous version) changes as you tap between languages.
-                NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
+                // No Back either: everything before this point is intro, so Back first appears
+                // on the profile questions, where an answer might actually need changing.
+                Button(
+                    onClick = { go(+1) },
+                    modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
+                ) { Text("Next →") }
             }
 
             // ---- Name ----
@@ -385,7 +406,13 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
                 )
-                NextRow(enabled = name.isNotBlank(), onBack = { go(-1) }, onNext = { go(+1) })
+                // Back starts at the next step: everything before this is intro or a choice
+                // the following screens let you change anyway.
+                Button(
+                    onClick = { go(+1) },
+                    enabled = name.isNotBlank(),
+                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp)
+                ) { Text("Next →") }
             }
 
             // ---- Word forms (gender) ----
