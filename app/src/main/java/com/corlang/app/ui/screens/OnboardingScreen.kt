@@ -1,5 +1,14 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -137,6 +146,15 @@ private const val SOMEWHERE_ELSE = "Somewhere else"
  * (French currently is). `visibleSteps` below builds the real running order, and every Back/Next
  * walks THAT list, so no step ever needs to know its own number.
  */
+/*
+ * Shared vertical rhythm for every step: the gap under a step's title, and the gap above the
+ * button row. Both are generous on purpose. The step body is centred in the space left by the
+ * progress bar, so with cramped spacing a short step reads as one dense clump floating in the
+ * middle; letting title, content and actions breathe fills the screen instead.
+ */
+private val STEP_TITLE_GAP = 28.dp
+private val STEP_ACTION_GAP = 34.dp
+
 private const val STEP_WELCOME = 0
 private const val STEP_HOW = 1
 private const val STEP_LANG = 2
@@ -229,8 +247,12 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         )
     }
     val stepIndex = visibleSteps.indexOf(step).coerceAtLeast(0)
+    // +1 = moving forward, -1 = went Back. Read by the transition below so the slide runs the
+    // way you travelled: forward pushes left, Back pulls right.
+    var direction by remember { mutableIntStateOf(1) }
     /** Walk the visible order, so Back/Next never land on a step that isn't shown. */
     fun go(delta: Int) {
+        direction = if (delta < 0) -1 else 1
         step = visibleSteps[(stepIndex + delta).coerceIn(0, visibleSteps.lastIndex)]
     }
 
@@ -249,20 +271,33 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         // drawStopIndicator = {}: Material3 1.3.0 draws a dot at the end of the track by
         // default (the spec's "stop indicator"). Nobody chose it here and it reads as a stray
         // blue dot on an otherwise plain bar, so it is switched off.
+        // The bar fills toward the new step rather than jumping, so it reads as part of the
+        // same forward movement as the slide below.
+        val barProgress by animateFloatAsState(
+            targetValue = (stepIndex + 1f) / visibleSteps.size,
+            animationSpec = tween(durationMillis = 320),
+            label = "onboardingProgress"
+        )
         LinearProgressIndicator(
-            progress = { (stepIndex + 1f) / visibleSteps.size },
+            progress = { barProgress },
             drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp)
         )
 
         // The lockup is anchored up here rather than travelling with the centred text block:
         // on the short welcome step a logo inside the centred group floats into mid-screen,
-        // leaving the top empty. Pinned under the bar, it balances the page.
-        if (step == STEP_WELCOME) {
+        // leaving the top empty. Pinned under the bar, it balances the page. It fades rather
+        // than popping when the welcome step leaves.
+        AnimatedVisibility(
+            visible = step == STEP_WELCOME,
+            enter = fadeIn(tween(220)),
+            exit = fadeOut(tween(160)),
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        ) {
             CorlangLogo(
                 variant = LogoVariant.LOCKUP,
                 size = 44.dp,
-                modifier = Modifier.align(Alignment.CenterHorizontally).padding(bottom = 4.dp)
+                modifier = Modifier.padding(bottom = 4.dp)
             )
         }
 
@@ -283,7 +318,19 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             modifier = Modifier.fillMaxWidth().heightIn(min = viewport),
             verticalArrangement = Arrangement.Center
         ) {
-        when (step) {
+        // Steps slide in the direction of travel and cross-fade. The outgoing step leaves the
+        // opposite way, which is what makes the sequence feel like it is advancing rather than
+        // redrawing in place.
+        AnimatedContent(
+            targetState = step,
+            transitionSpec = {
+                val d = direction
+                (slideInHorizontally(tween(300)) { w -> d * w } + fadeIn(tween(220))) togetherWith
+                    (slideOutHorizontally(tween(300)) { w -> -d * w } + fadeOut(tween(180)))
+            },
+            label = "onboardingStep"
+        ) { animatedStep ->
+        when (animatedStep) {
             // ---- Welcome: what this app is, before it asks for anything ----
             STEP_WELCOME -> Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -304,9 +351,10 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
-                Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth().padding(top = 32.dp)) {
-                    Text("Get started →")
-                }
+                Button(
+                    onClick = { go(+1) },
+                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
+                ) { Text("Get started →") }
             }
 
             // ---- How it works: the substance, one page before anything is asked ----
@@ -343,7 +391,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 // destination; a single-course build goes straight to the profile questions.
                 Button(
                     onClick = { go(+1) },
-                    modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
+                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
                 ) { Text(if (multiLang) "Choose your language →" else "Next →") }
             }
 
@@ -392,7 +440,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 // on the profile questions, where an answer might actually need changing.
                 Button(
                     onClick = { go(+1) },
-                    modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
+                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
                 ) { Text("Next →") }
             }
 
@@ -411,7 +459,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 Button(
                     onClick = { go(+1) },
                     enabled = name.isNotBlank(),
-                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp)
+                    modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)
                 ) { Text("Next →") }
             }
 
@@ -512,7 +560,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     }
                 }
 
-                Row(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
+                Row(modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)) {
                     OutlinedButton(onClick = { go(-1) }, modifier = Modifier.weight(1f)) { Text("← Back") }
                     Spacer(Modifier.height(0.dp))
                     Button(
@@ -522,6 +570,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     ) { Text("Start learning →") }
                 }
             }
+        }
         }
         }
         }
@@ -539,10 +588,10 @@ private fun StepFrame(title: String, subtitle: String, content: @Composable () -
                 subtitle,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 6.dp)
+                modifier = Modifier.padding(top = 10.dp)
             )
         }
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(STEP_TITLE_GAP))
         content()
     }
 }
@@ -550,7 +599,7 @@ private fun StepFrame(title: String, subtitle: String, content: @Composable () -
 @Composable
 private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
     // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales.
-    Row(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
+    Row(modifier = Modifier.fillMaxWidth().padding(top = STEP_ACTION_GAP)) {
         OutlinedButton(onClick = onBack, modifier = Modifier.weight(1f)) {
             Text("← Back", maxLines = 1)
         }
