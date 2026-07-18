@@ -158,10 +158,6 @@ private fun PurchaseCard(
                 Text(subtitle, style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            if (footnote != null) {
-                Text(footnote, style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
             if (price != null) {
                 Text("$price$priceSuffix", style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold)
@@ -173,6 +169,12 @@ private fun PurchaseCard(
                 Button(onClick = {}, enabled = false, modifier = Modifier.fillMaxWidth()) {
                     Text("Unavailable")
                 }
+            }
+            // Fine print CLOSES the card, after the price and button, so the pitch reads
+            // trial -> price -> act, with the cap as the last word rather than mid-pitch.
+            if (footnote != null) {
+                Text(footnote, style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
     }

@@ -10,6 +10,7 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -33,6 +34,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -232,28 +234,54 @@ private fun CorlangApp(container: AppContainer) {
     newLangPrompt?.let { pl ->
         val meta = appState.languages.firstOrNull { it.code == pl }
         val name = meta?.name ?: "this language"
+        // Dismissing (tap outside / system back) also marks the language handled: an accidental
+        // switch must not re-arm this dialog on every app open until a choice is made. The
+        // learner just starts at day 1 by default and can retake placement from Settings.
+        val dismiss: () -> Unit = {
+            scope.launch { container.languagePrefs.markPlacementHandled(pl) }
+            newLangPrompt = null
+        }
         AlertDialog(
-            onDismissRequest = { },
+            onDismissRequest = dismiss,
             title = { Text("Start $name") },
             text = {
-                Text(
-                    "Take a quick placement test so $name starts at the right level? It's about " +
-                        "two minutes. Your profile carries over, no need to set anything up again."
-                )
+                // The actions live in the body so they can be full-width and centred instead
+                // of huddling in the dialog's bottom-right corner.
+                androidx.compose.foundation.layout.Column {
+                    Text(
+                        "Take a quick placement test so $name starts at the right level? It's " +
+                            "about two minutes. Your profile carries over, no need to set " +
+                            "anything up again."
+                    )
+                    Button(
+                        onClick = {
+                            scope.launch { container.languagePrefs.markPlacementHandled(pl) }
+                            newLangPrompt = null
+                            showPlacement = true
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 20.dp)
+                    ) { Text("Take placement test") }
+                    OutlinedButton(
+                        onClick = {
+                            scope.launch { container.languagePrefs.markPlacementHandled(pl) }
+                            newLangPrompt = null
+                            // Day 1 means the lesson, so land the learner on it, not back on
+                            // the Profile page they switched languages from.
+                            navController.navigate(Dest.TODAY.route) {
+                                popUpTo(Dest.TODAY.route) { saveState = true }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 8.dp)
+                    ) { Text("Start at Day 1") }
+                }
             },
-            confirmButton = {
-                Button(onClick = {
-                    scope.launch { container.languagePrefs.markPlacementHandled(pl) }
-                    newLangPrompt = null
-                    showPlacement = true
-                }) { Text("Take placement test") }
-            },
-            dismissButton = {
-                OutlinedButton(onClick = {
-                    scope.launch { container.languagePrefs.markPlacementHandled(pl) }
-                    newLangPrompt = null
-                }) { Text("Start at Day 1") }
-            }
+            confirmButton = {}
         )
     }
 
@@ -389,7 +417,8 @@ private fun CorlangApp(container: AppContainer) {
                     SettingsScreen(
                         container,
                         onBack = { showSettings = false },
-                        onEditProfile = { showSettings = false; showOnboarding = true }
+                        onEditProfile = { showSettings = false; showOnboarding = true },
+                        onRetakePlacement = { showSettings = false; showPlacement = true }
                     )
                 }
             }

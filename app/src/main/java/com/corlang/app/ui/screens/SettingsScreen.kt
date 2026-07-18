@@ -15,7 +15,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.animation.animateContentSize
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.automirrored.outlined.VolumeUp
 import androidx.compose.material.icons.outlined.Alarm
 import androidx.compose.material.icons.outlined.Info
@@ -64,6 +67,7 @@ fun SettingsScreen(
     container: AppContainer,
     onBack: () -> Unit = {},
     onEditProfile: () -> Unit = {},
+    onRetakePlacement: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -280,12 +284,12 @@ fun SettingsScreen(
             OutlinedButton(onClick = onEditProfile, modifier = Modifier.fillMaxWidth()) {
                 Text("Edit profile")
             }
-            Text(
-                "Editing the profile also lets you retake the level placement test.",
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 6.dp)
-            )
+            // Placement is its own deliberate action, not a step of profile editing: the level
+            // was already settled when the course started.
+            OutlinedButton(
+                onClick = onRetakePlacement,
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+            ) { Text("Retake the placement test") }
         }
 
         // ----- Backup & restore -----
@@ -407,8 +411,9 @@ fun SettingsScreen(
 
 /**
  * One settings card in the same visual language as the Profile tab's menu rows: a bordered
- * surface, a primary-tinted icon, a semibold title, content below. Settings cards hold
- * controls rather than navigating, so there is no chevron.
+ * surface, a primary-tinted icon, a semibold title. Collapsed by default, tap the header to
+ * expand: eight cards of controls open at once read as clutter, and a visit usually touches
+ * one of them.
  */
 @Composable
 private fun SettingsCard(
@@ -416,16 +421,19 @@ private fun SettingsCard(
     title: String,
     content: @Composable () -> Unit
 ) {
+    var expanded by remember { mutableStateOf(false) }
     androidx.compose.material3.Surface(
         shape = androidx.compose.foundation.shape.RoundedCornerShape(14.dp),
         color = MaterialTheme.colorScheme.surface,
         border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
         modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp)
     ) {
-        Column(Modifier.padding(16.dp)) {
+        Column(Modifier.padding(16.dp).animateContentSize()) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(bottom = 10.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { expanded = !expanded }
             ) {
                 androidx.compose.material3.Icon(
                     icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary
@@ -434,10 +442,18 @@ private fun SettingsCard(
                     title,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.padding(start = 14.dp)
+                    modifier = Modifier.weight(1f).padding(start = 14.dp)
+                )
+                androidx.compose.material3.Icon(
+                    if (expanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
+                    contentDescription = if (expanded) "Collapse" else "Expand",
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
-            content()
+            if (expanded) {
+                Spacer(Modifier.height(10.dp))
+                content()
+            }
         }
     }
 }
