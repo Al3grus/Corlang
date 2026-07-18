@@ -274,8 +274,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 modifier = Modifier.fillMaxWidth()
             ) {
                 CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp)
+                // Just "Welcome!": the lockup above already reads Corlang, and the thesis
+                // sentence below names it again. Naming it in the greeting too put it three
+                // times in five words.
                 Text(
-                    "Welcome to Corlang!",
+                    "Welcome!",
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.fillMaxWidth().padding(top = 28.dp)
