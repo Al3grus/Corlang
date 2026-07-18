@@ -40,7 +40,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.corlang.app.reminder.ReminderScheduler
 import com.corlang.app.ui.AppState
-import com.corlang.app.ui.components.LanguageTopBar
+import com.corlang.app.ui.components.CorlangTopBar
 import com.corlang.app.update.ReleaseInfo
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -252,12 +252,7 @@ private fun CorlangApp(container: AppContainer) {
     }
 
     Scaffold(
-        topBar = {
-            LanguageTopBar(
-                languages = appState.languages,
-                selected = lang
-            )
-        },
+        topBar = { CorlangTopBar() },
         bottomBar = {
             // The placement test owns the screen while it runs: it's a short, ordered flow with
             // its own exit, and leaving the tabs tappable mid-test silently abandoned the test.
