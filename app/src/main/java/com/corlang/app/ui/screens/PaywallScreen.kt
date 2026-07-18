@@ -42,7 +42,7 @@ private fun Context.activity(): Activity? {
 /**
  * The purchase surface. Two modes:
  *  - [levelId] non-null → one-time unlock for that CEFR level, plus the "unlock everything" bundle.
- *  - [levelId] null      → the AI Premium subscription (monthly / annual + trial).
+ *  - [levelId] null      → the AI Premium subscription (monthly only + 7-day trial).
  *
  * Prices are read LIVE from Play (BillingManager.prices); if a product isn't resolved yet
  * (Play Console products not created, or billing still connecting) its button is disabled with a
@@ -101,23 +101,17 @@ fun PaywallScreen(
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
-            PurchaseCard(
-                title = "Annual",
-                subtitle = "Best value — 2 months free. Starts with a 7-day free trial.",
-                price = prices["${BillingManager.SUB_PREMIUM}:${BillingManager.BASE_ANNUAL}"],
-                priceSuffix = "/year",
-                primary = true,
-                onBuy = {
-                    activity?.let {
-                        container.billing.purchaseSubscription(it, BillingManager.BASE_ANNUAL)
-                    }
-                }
-            )
+            // Monthly ONLY, deliberately: AI models and costs can shift within a year, and a
+            // sold annual locks us into serving 12 months at 2026 economics. Monthly keeps
+            // repricing freedom on both sides. The fair-use cap is disclosed HERE, before
+            // purchase — an undisclosed hard stop on a paid AI tutor is refund-request and
+            // Play-policy material.
             PurchaseCard(
                 title = "Monthly",
+                subtitle = "Starts with a 7-day free trial. Fair use: up to 30 AI messages a day.",
                 price = prices["${BillingManager.SUB_PREMIUM}:${BillingManager.BASE_MONTHLY}"],
                 priceSuffix = "/month",
-                primary = false,
+                primary = true,
                 onBuy = {
                     activity?.let {
                         container.billing.purchaseSubscription(it, BillingManager.BASE_MONTHLY)

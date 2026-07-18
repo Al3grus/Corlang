@@ -63,7 +63,7 @@ first paywall is at A1→A2, after the learner has felt the product work.
 | **A2 unlock** | **€4.99** | first paid step, low-friction |
 | **B1 unlock** | **€7.99** | the exam level: NN citizenship (B1), DELF/CAPLE B1 — highest willingness-to-pay |
 | **B2 unlock** | **€7.99** | DELF/CAPLE B2 (research: DELF B1 & B2 are priced *identically* — don't tier B2 above B1) |
-| **Full course bundle (A2+B1+B2)** | **€14.99** | ~30% off à-la-carte (€20.97); the "unlock everything" hero. This IS the lifetime-content option. |
+| **Full course bundle (A2+B1+B2)** | **€16.99** | ~20% off à-la-carte (€20.97); the "unlock everything" hero. This IS the lifetime-content option. |
 
 Anchors: DELF one-time prep courses run **€59** (PrepMyFuture, Alliance Française); official
 citizenship-exam apps sell at **£5.99 + a content-unlock IAP**. Our per-level prices sit well
@@ -76,23 +76,25 @@ lever to revisit once the base funnel is proven; NOT in v1.
 | Plan | Price | Effective | Note |
 |---|---|---|---|
 | **Monthly** | **€9.99** | — | education-app median; well under Ling €16.99 & Duolingo Max €14.99 |
-| **Annual** | **€59.99** | €5.00/mo | **50% off** monthly — the headline; annual retains 44% vs 17% monthly (RevenueCat) |
-| **7-day free trial** | — | once per user | Google requires 3d-3y; niche-language norm (Ling ships a 7-day trial) |
+| **7-day free trial** | — | once per user | on the monthly plan. Google requires 3d-3y; niche-language norm (Ling ships a 7-day trial) |
+
+**No annual plan** — decided 2026-07-18. AI models and per-message costs can shift within a
+year; a sold annual locks 12 months of service at old economics, and Play sub price increases
+need subscriber notice/opt-in, so monthly keeps both sides free. Earlier drafts priced an
+annual at €59.99 and €99; both are superseded.
 
 **No lifetime AI** — deliberate. The AI has a real recurring per-user cost (Anthropic API), so
 a one-time fee can't cover perpetual calls. (Babbel can sell lifetime because its content is
 static and marginal-cost-zero; our AI is not.) Lifetime *content* exists — it's the bundle above.
 
-### Margin guardrail (the one number the research can't set for us)
-Croatian chat runs on **Sonnet** (~€0.015/msg incl. thinking); pt/fr on **Haiku** (~€0.003/msg).
-Realistic heavy hr user ≈ **€3-6/mo** API; heavy pt/fr ≈ **€1/mo**.
-- Monthly €9.99 → net €8.49/mo: **safely profitable** for every language.
-- Annual €59.99 → net €50.99/yr = **€4.25/mo**: covers moderate hr users and all pt/fr; a
-  *heavy-every-day-for-a-year* Croatian user is break-even to slight loss — rare, and the
-  cash-upfront + retention value of annual offsets it.
-- Backstops: the **300 req/day hard cap** (anti-abuse) already exists. If testing shows heavy
-  hr annual users bleeding margin, add a **soft per-subscriber comfort cap** (~40 msg/day,
-  gentle "back tomorrow") — separate from the 300 ceiling. Don't build it pre-emptively.
+### Margin guardrail (measured, not estimated)
+Live-measured per message: Croatian on **Sonnet** €0.0036 (incl. thinking); pt/fr on **Haiku**
+€0.0007. The per-subscriber cap is **30 msgs/day**, enforced in the worker and DISCLOSED on
+the paywall ("fair use: up to 30 AI messages a day").
+- Worst case (hr, cap-maxed every day): 30 x 30.4 x €0.0036 ≈ **€3.28/mo** API.
+- Monthly €9.99 → roughly €6.8 net after VAT + Play fee: **profitable even at the cap**; a
+  typical 5-15 msg/day user costs well under €1.7/mo.
+- Backstops: the **300 req/day per-IP cap** and 3000/day global (anti-abuse) already exist.
 
 ### Revenue sanity check (set expectations honestly)
 Freemium converts only **~2% of installs to paid** (RevenueCat; even mature Duolingo monetizes
@@ -106,27 +108,26 @@ these products in Play Console → Monetize. Until they exist the paywall shows 
 (never a wrong/free price). Product IDs are case-sensitive and must match verbatim:
 
 **Subscription** — Monetize → Subscriptions → create `corlang_ai_premium`:
-- Base plan `monthly` — auto-renewing, **€9.99/month**.
-- Base plan `annual` — auto-renewing, **€99/year** (its own effective ~€8.25/mo = "2 months
-  free" vs monthly). Add an **Offer** on the annual base plan: a **7-day free trial** phase
-  (optionally an intro price). Google requires trials of 3d–3y, once per user.
+- ONE base plan `monthly` — auto-renewing, **€9.99/month**. Add an **Offer** on it: a
+  **7-day free trial** phase. Google requires trials of 3d-3y, once per user.
+- No annual base plan (see the decision above). The app requests only `monthly`.
 
 **One-time unlocks** — Monetize → In-app products (managed products):
 - `unlock_a2` — **€4.99**
 - `unlock_b1` — **€7.99**
 - `unlock_b2` — **€7.99**
-- `unlock_all` — **€14.99**  (bundle → grants A2+B1+B2; the app maps it to all three)
+- `unlock_all` — **€16.99**  (bundle → grants A2+B1+B2, ~20% off à-la-carte; the app maps it to all three)
 
 Accept Google's suggested **regional prices** for each. Set them as the tax-inclusive charm
-prices above; Google handles EU VAT. The 40-msg/day per-subscriber cap is enforced in the
-worker (keyed on the Play sub token the app sends), so the flat annual price stays safe.
+prices above; Google handles EU VAT. The 30-msg/day per-subscriber cap is enforced in the
+worker (keyed on the Play sub token the app sends), so the flat price stays safe.
 
 ### Testing implication
 Closed-testing **license testers** (Play Console → Settings → License testing) can buy every
 product above with auto-refunded/never-charged transactions — so the full purchase flow
 (paywall → Play sheet → entitlement unlock → worker `/v1/verify`) gets real coverage before
-production. Create all 5 products (3 level unlocks + bundle + subscription with monthly/annual
-base plans) in Play Console when the billing build lands mid-testing-window.
+production. Create all 5 products (3 level unlocks + bundle + the monthly-only subscription)
+in Play Console when the billing build lands mid-testing-window.
 
 ## What is already true in the app (v0.20.27)
 

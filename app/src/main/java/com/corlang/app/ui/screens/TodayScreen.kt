@@ -1,7 +1,8 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.animation.ContentTransform
+import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -303,8 +304,15 @@ fun TodayScreen(
         androidx.compose.animation.AnimatedContent(
             targetState = day,
             transitionSpec = {
-                androidx.compose.animation.fadeIn(tween(220)) togetherWith
-                    androidx.compose.animation.fadeOut(tween(120))
+                // The explicit SizeTransform is the half that keeps the JOURNEY smooth: two
+                // days' cards differ in height (objective length, locked banner vs button), and
+                // without an animated size the container snaps to the new height, jolting
+                // everything below. With it, the card glides and the journey rides along.
+                ContentTransform(
+                    targetContentEnter = androidx.compose.animation.fadeIn(tween(220)),
+                    initialContentExit = androidx.compose.animation.fadeOut(tween(120)),
+                    sizeTransform = SizeTransform(clip = false) { _, _ -> tween(250) }
+                )
             },
             label = "lessonCard"
         ) { d ->

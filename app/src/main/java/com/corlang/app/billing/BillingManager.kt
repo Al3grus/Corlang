@@ -26,13 +26,15 @@ import kotlinx.coroutines.launch
  * process (created in AppContainer); an Activity is passed only at purchase time.
  *
  * Products (create these in Play Console — see docs/monetization-roadmap.md):
- *  - SUB  `corlang_ai_premium`  base plans `monthly`, `annual` (+ 7-day trial offer on annual)
+ *  - SUB  `corlang_ai_premium`  ONE base plan `monthly` (+ 7-day trial offer). Deliberately no
+ *    annual: AI models and costs can shift within a year, and a sold annual locks 12 months of
+ *    service at old economics. Monthly keeps repricing freedom.
  *  - INAPP `unlock_a2` `unlock_b1` `unlock_b2` (per-level) and `unlock_all` (bundle → all three)
  *
  * SECURITY NOTE: entitlement here is granted on the client after Play's local signature check.
  * That is fine for closed testing (license testers) but before PUBLIC launch the worker must
  * verify the purchase token via the Play Developer API (service account) — the AI path already
- * sends the sub token to the worker for that, and the 40/day cap is enforced there regardless.
+ * sends the sub token to the worker for that, and the daily cap is enforced there regardless.
  */
 class BillingManager(
     context: Context,
@@ -42,7 +44,6 @@ class BillingManager(
     companion object {
         const val SUB_PREMIUM = "corlang_ai_premium"
         const val BASE_MONTHLY = "monthly"
-        const val BASE_ANNUAL = "annual"
 
         const val UNLOCK_A2 = "unlock_a2"
         const val UNLOCK_B1 = "unlock_b1"
@@ -139,7 +140,7 @@ class BillingManager(
 
     // ---- Launch purchases ----
 
-    /** Launch the subscription purchase for [basePlanId] (BASE_MONTHLY / BASE_ANNUAL). */
+    /** Launch the subscription purchase for [basePlanId] (BASE_MONTHLY). */
     fun purchaseSubscription(activity: Activity, basePlanId: String) {
         val pd = subDetails.value ?: return
         val offer = pd.subscriptionOfferDetails?.firstOrNull { it.basePlanId == basePlanId }

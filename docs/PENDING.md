@@ -15,7 +15,8 @@ ask Claude to do it · **(you, phone)** = on-device.
   field allowlist, byte-accurate body cap.
 - **Billing layer built** (v0.20.32): Play Billing 7.1.1, `BillingManager`, `PaywallScreen`,
   level gate, Get Premium, entitlement layer. Subscription + one-time unlocks.
-- **40 msg/day per-subscriber cap** live in worker (keyed on Play sub token). Real cost
+- **30 msg/day per-subscriber cap** live in worker (keyed on Play sub token), disclosed
+  on the paywall. Real cost
   measured: hr €0.0036/msg, pt/fr €0.0007/msg.
 - **Server-side Play subscription verification** coded + deployed (v0.20.33), **dormant** until
   the `PLAY_SERVICE_ACCOUNT` secret is added (see Track B).
@@ -45,13 +46,11 @@ ask Claude to do it · **(you, phone)** = on-device.
    assets from Track C (icon, feature graphic, screenshots).
 4. **(browser)** Create the 4 billing products — **IDs must match exactly** (in `road-to-play.md`
    / `monetization-roadmap.md`):
-   - Subscription `corlang_ai_premium`: base plan `monthly` €9.99, base plan `annual` — ⚠️
-     **DECIDE THE ANNUAL PRICE FIRST**: monetization-roadmap.md's research table says €59.99
-     (loses money on a cap-maxing hr annual at regional prices) while its Console section and
-     this file said €99 (only 17% off monthly, conversion-dead). Review recommendation:
-     **€69.99**. Sub price increases are painful later (subscriber notify/opt-in), so this is
-     a one-way door upward. Add the **7-day free-trial offer** on annual.
-   - Managed products: `unlock_a2` €4.99, `unlock_b1` €7.99, `unlock_b2` €7.99, `unlock_all` €14.99.
+   - Subscription `corlang_ai_premium`: ONE base plan `monthly` €9.99 with the **7-day
+     free-trial offer** on it. **No annual plan** (decided 2026-07-18: AI models/costs can
+     shift within a year; monthly keeps repricing freedom). The app requests only `monthly`.
+   - Managed products: `unlock_a2` €4.99, `unlock_b1` €7.99, `unlock_b2` €7.99, `unlock_all`
+     €16.99 (~20% off à-la-carte).
    - Activate all; accept Google's regional prices.
 5. **(browser)** Upload the AAB to **Internal testing** (live in minutes, billing works).
 6. **(browser)** License testing (Setup → License testing): add your + testers' Gmail addresses
@@ -141,7 +140,7 @@ All assets live in `docs/store-assets/` — see the README there.
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
 - Package name: `com.corlang.app`. Product IDs: `corlang_ai_premium` (base plans `monthly`,
-  `annual`), `unlock_a2`, `unlock_b1`, `unlock_b2`, `unlock_all`.
+  only), `unlock_a2`, `unlock_b1`, `unlock_b2`, `unlock_all` (bundle €16.99).
 - **`local.properties` is currently `devPremium=false`** (for your gated preview). The committed
   public sideload release is still devPremium=true (friends keep AI). Decide per future release.
 - Build: no gradlew; JBR at Android Studio + gradle 8.14.5 in `~/.gradle/wrapper/dists`.

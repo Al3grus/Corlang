@@ -45,8 +45,12 @@ Play Console → All apps → **Create app**. Name "Corlang", default language, 
 - **Ads**: contains no ads.
 - **Content rating**: fill the questionnaire (educational, no objectionable content → Everyone/PEGI 3).
 - **Target audience**: 13+ (avoids the strict children's-policy requirements).
-- **Data safety**: **No data collected, no data shared** (Corlang is local-only). Declare an
-  in-app data-deletion path = "uninstalling removes all data" (true — it's all on-device).
+- **Data safety**: learning data is local-only (deletion = uninstall), BUT declare the AI
+  tutor's flow: user-typed chat text + profile name are transmitted off-device to our
+  endpoint/Anthropic when the optional AI feature is used. Google counts transmitted-off-device
+  as "collected"; declaring "no data collected" flat-out is a misdeclaration risk. Category
+  "Other in-app messages", purpose app functionality, not shared for ads, optional. Matches
+  PRIVACY.md.
 - **Privacy policy**: paste the PRIVACY.md raw URL
   (`https://raw.githubusercontent.com/Al3grus/Corlang/main/PRIVACY.md`).
 - Government/financial/health features: No.
@@ -58,11 +62,9 @@ Review, the journey, the tutor). Category **Education**. Contact email support@c
 
 ### 4. Create the billing products **(browser)** — Monetize tab; IDs must match EXACTLY
 - **Subscriptions → create `corlang_ai_premium`**:
-  - base plan `monthly`, auto-renewing, **€9.99/month**
-  - base plan `annual`, auto-renewing, **€99/year**; add an **Offer** on it = **7-day free
-    trial** phase
-- **In-app products (managed) → create**: `unlock_a2` €4.99 · `unlock_b1` €7.99 ·
-  `unlock_b2` €7.99 · `unlock_all` €14.99. **Activate** each; accept Google's regional prices.
+  - base plan `monthly`, auto-renewing, **€9.99/month**; add an **Offer** on it = **7-day free trial** phase. No annual plan (AI economics may shift within a year).
+  - **In-app products (managed) → create**: `unlock_a2` €4.99 · `unlock_b1` €7.99 ·
+  `unlock_b2` €7.99 · `unlock_all` €16.99. **Activate** each; accept Google's regional prices.
 
 ### 5. Upload the AAB to **Internal testing** first **(browser)**
 Internal testing = live in minutes, no review wait, up to 100 testers, **billing works**.
