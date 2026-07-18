@@ -73,7 +73,8 @@ ask Claude to do it · **(you, phone)** = on-device.
    - Grant its email "View financial data / app info" in Play Console → Users and permissions.
    - `cd server/ai-proxy && wrangler secret put PLAY_SERVICE_ACCOUNT` (paste JSON at hidden prompt).
    - Verify: invalid sub token → 403, real subscriber → 200. (Turns the dormant worker code ON.)
-2. **(browser)** **Anthropic spend alert**: console.anthropic.com → Billing → usage alert (~$5).
+2. ✅ **Anthropic spend alert + limits set** (2026-07-18); auto-reload confirmed off is the
+   guard that bounds worst-case token abuse to the prepaid balance.
 3. **(browser, optional)** Cloudflare WAF rate-limit rule on the worker route (belt-and-suspenders
    over the KV daily caps).
 
@@ -130,7 +131,7 @@ All assets live in `docs/store-assets/` — see the README there.
 |---|---|---|
 | Google Play Console | ✅ have ($25, verified) | create app + products + tracks (Track A) |
 | Google Cloud (service account) | ⬜ create | Track B step 1 |
-| Anthropic | ✅ have (Corlang acct, ~$9 prepaid) | set spend alert (Track B step 2) |
+| Anthropic | ✅ have (Corlang acct, ~$9 prepaid) | ✅ spend alert + limits set |
 | Cloudflare (worker + KV) | ✅ deployed | optional WAF rule (Track B step 3) |
 | corlang.app domain + proton email | ✅ have | optional website (Track F) |
 
