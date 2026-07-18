@@ -1,5 +1,7 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -123,14 +125,15 @@ fun TodayScreen(
     }
 
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
-    val isDone = completed.contains(day.day)
 
     // One-time level gate: A0/A1 are free; A2+ need a purchase (or DEV_PREMIUM). A locked day's
     // action opens the paywall instead of the lesson. emptySet initial is fine — the load gate
     // below holds the first frame, and a paid level resolves within it.
     val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
-    val dayLocked = !com.corlang.app.BuildConfig.DEV_PREMIUM &&
-        day.level !in container.premium.freeLevels && day.level !in unlockedLevels
+    fun lockedFor(d: com.corlang.app.data.model.StudyDay) =
+        !com.corlang.app.BuildConfig.DEV_PREMIUM &&
+            d.level !in container.premium.freeLevels && d.level !in unlockedLevels
+    val dayLocked = lockedFor(day)
 
     // Guided session mode. inLesson is hoisted to the app scaffold so a bottom-nav tap (any tab,
     // including Today) exits the lesson back to the dashboard — progress is saved per step, so a
@@ -149,36 +152,8 @@ fun TodayScreen(
         return
     }
 
-    // Session progress for the viewed day (steps ticked in the player).
-    // Keyed on lang TOO: both languages can sit on the same day number, and the cached step
-    // list must not survive a language switch.
-    val steps = remember(lang, day.day) {
-        buildSessionSteps(day, container.content.meta(lang).name)
-    }
-    // key(day.day): collectAsState keeps the PREVIOUS flow's value until the new one emits,
-    // and step ids are day-agnostic ("words", "activity-0") — browsing from day 8 to day 3
-    // flashed day 8's ticks on day 3 for a frame. Re-keying resets to the null initial, which
-    // the load gate below turns into one blank frame instead.
-    val rawChecks by androidx.compose.runtime.key(day.day) {
-        container.progress.dayTaskChecks(lang, day.day).collectAsState(initial = null)
-    }
-    val checks = rawChecks.orEmpty()
-    val doneIds = checks.map { it.itemId }.toSet()
-    val actionSteps = steps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
-    // "Started" = you actually completed a step of THIS lesson (a persisted check), so opening the
-    // lesson or a shared-word state never turns "Start" into "Continue".
-    val lessonStarted = doneIds.isNotEmpty()
-    val stepsDone = actionSteps.count { s ->
-        // Words/review count when this day's block was completed, OR — only once the lesson has
-        // been started — when the block is already cleared (capped blocks can leave a backlog
-        // behind). Without the started gate a fresh course showed phantom progress: zero due
-        // reviews auto-ticked the review step before the learner did anything.
-        when (s.kind) {
-            StepKind.WORDS -> s.id in doneIds || (lessonStarted && unlockedNew == 0)
-            StepKind.REVIEW -> s.id in doneIds || (lessonStarted && reviewPending == 0)
-            else -> s.id in doneIds
-        }
-    }
+    // The viewed day's step checks are collected INSIDE the lesson card (see below), per
+    // animated card instance, so browsing days never blanks the rest of the dashboard.
 
     // Daily goal ring: today's guided session, measured on the day you're up to (not the one
     // being browsed). Closes fully once a lesson day has been completed today and stays closed.
@@ -228,12 +203,14 @@ fun TodayScreen(
         else -> ((targetStepsDone + targetPartial) / targetAction.size).coerceIn(0f, 1f)
     }
 
-    // Load-then-show: hold the first paint until every flow that decides the lesson button's
-    // label, the ring, and the journey's completed stones has actually emitted. Without this a
-    // tab-return paints one frame from the still-loading defaults (progress=null → targetDay=1 →
-    // "Open Day 8", empty checks → 0% ring) before snapping to the real state ("Start Day 8") —
-    // the flicker. All four settle within ~1 frame from Room/DataStore, so the blank is invisible.
-    if (progress == null || rawCompleted == null || rawChecks == null || rawTargetChecks == null) {
+    // Load-then-show: hold the first paint until every flow that decides the ring and the
+    // journey's completed stones has actually emitted. Without this a tab-return paints one
+    // frame from the still-loading defaults before snapping to the real state — the flicker.
+    // Deliberately NOT gated on the viewed day's checks: those re-key to null on every journey
+    // tap, and blanking the whole screen for that frame destroyed LevelJourney's internal state
+    // (selected level chip, scroll), which is why browsing to another level's day snapped the
+    // journey straight back to the current level. The lesson card gates itself instead.
+    if (progress == null || rawCompleted == null || rawTargetChecks == null) {
         Column(Modifier.fillMaxSize()) {}
         return
     }
@@ -317,6 +294,43 @@ fun TodayScreen(
 
         // Lesson header + objective, in the same calm bordered card as the streak hero, so the
         // screen reads as two matching cards sitting above the open journey path.
+        //
+        // The card cross-fades between days while the hero above and the journey below stay
+        // put — browsing the journey changes only the thing the tap is about. Each animated
+        // instance collects ITS OWN day's step checks (keyed per day), so the outgoing card
+        // fades out with the old day's label and the incoming one fades in with the new day's
+        // — no shared state to flash the wrong ticks, and no full-screen load gate needed.
+        androidx.compose.animation.AnimatedContent(
+            targetState = day,
+            transitionSpec = {
+                androidx.compose.animation.fadeIn(tween(220)) togetherWith
+                    androidx.compose.animation.fadeOut(tween(120))
+            },
+            label = "lessonCard"
+        ) { d ->
+        val cardChecks by androidx.compose.runtime.key(d.day) {
+            container.progress.dayTaskChecks(lang, d.day).collectAsState(initial = null)
+        }
+        val doneIds = cardChecks.orEmpty().map { it.itemId }.toSet()
+        val cardSteps = remember(lang, d.day) {
+            buildSessionSteps(d, container.content.meta(lang).name)
+        }
+        val actionSteps = cardSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
+        // "Started" = you actually completed a step of THIS lesson (a persisted check), so
+        // opening the lesson or a shared-word state never turns "Start" into "Continue".
+        val lessonStarted = doneIds.isNotEmpty()
+        val stepsDone = actionSteps.count { s ->
+            // Words/review count when this day's block was completed, OR — only once the lesson
+            // has been started — when the block is already cleared (capped blocks can leave a
+            // backlog behind). Without the started gate a fresh course showed phantom progress.
+            when (s.kind) {
+                StepKind.WORDS -> s.id in doneIds || (lessonStarted && unlockedNew == 0)
+                StepKind.REVIEW -> s.id in doneIds || (lessonStarted && reviewPending == 0)
+                else -> s.id in doneIds
+            }
+        }
+        val dDone = completed.contains(d.day)
+        val dLocked = lockedFor(d)
         Surface(
             color = MaterialTheme.colorScheme.surface,
             contentColor = MaterialTheme.colorScheme.onSurface,
@@ -329,21 +343,21 @@ fun TodayScreen(
                 verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 Text(
-                    "${day.phase} · Week ${day.week} · ${day.level}",
+                    "${d.phase} · Week ${d.week} · ${d.level}",
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.primary
                 )
                 Text(
-                    day.title,
+                    d.title,
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold
                 )
                 SectionTitle("In this lesson you will")
-                Text(day.objective, style = com.corlang.app.ui.theme.CorlangType.reading)
+                Text(d.objective, style = com.corlang.app.ui.theme.CorlangType.reading)
 
                 // The lesson action lives HERE, with the lesson it acts on — never on the
                 // streak hero. Days ahead of the one you're up to stay locked.
-                if (day.day > targetDay) {
+                if (d.day > targetDay) {
                     Surface(
                         color = MaterialTheme.colorScheme.surfaceVariant,
                         contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -363,7 +377,7 @@ fun TodayScreen(
                     OutlinedButton(
                         // Locked level → paywall; otherwise open the guided lesson.
                         onClick = {
-                            if (dayLocked) onOpenPaywall(day.level) else onInLessonChange(true)
+                            if (dLocked) onOpenPaywall(d.level) else onInLessonChange(true)
                         },
                         border = androidx.compose.foundation.BorderStroke(
                             1.dp, MaterialTheme.colorScheme.primary
@@ -372,16 +386,17 @@ fun TodayScreen(
                     ) {
                         Text(
                             when {
-                                dayLocked -> "🔒 Unlock ${day.level} to continue"
-                                isDone -> "Revisit Day ${day.day} ✓"
-                                lessonStarted -> "Continue Day ${day.day} ($stepsDone/${actionSteps.size} steps)"
-                                day.day == targetDay -> "Start Day ${day.day} →"
-                                else -> "Open Day ${day.day} →"
+                                dLocked -> "🔒 Unlock ${d.level} to continue"
+                                dDone -> "Revisit Day ${d.day} ✓"
+                                lessonStarted -> "Continue Day ${d.day} ($stepsDone/${actionSteps.size} steps)"
+                                d.day == targetDay -> "Start Day ${d.day} →"
+                                else -> "Open Day ${d.day} →"
                             }
                         )
                     }
                 }
             }
+        }
         }
 
         // The stepping-stones map: scroll your level's lessons, jump to any you've reached,

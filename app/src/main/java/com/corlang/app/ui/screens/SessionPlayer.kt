@@ -29,6 +29,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -424,10 +425,15 @@ fun SessionPlayer(
         return
     }
 
+    // One scroll state for the whole player, reset on every step change: without the reset, a
+    // long step left scrolled down bled its offset into the next step, which then opened
+    // mid-content and had to be scrolled UP to see its own title.
+    val stepScroll = rememberScrollState()
+    LaunchedEffect(index, inWords) { stepScroll.scrollTo(0) }
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(stepScroll)
             // imePadding: the recall/cloze/FILL drills type into fields below the step card —
             // without it the keyboard covers them and they can't even be scrolled into view.
             .imePadding()
