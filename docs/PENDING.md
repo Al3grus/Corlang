@@ -72,10 +72,15 @@ ask Claude to do it · **(you, phone)** = on-device.
 
 ## 🎨 TRACK C — Creative assets (blocks the store listing, step A3)
 
-1. **App icon** 512×512 PNG. **(me** can generate a candidate; **you** finalize.)
-2. **Feature graphic** 1024×500 PNG. **(me** can generate.)
-3. **Phone screenshots** ×4–8 — capture from the app: Today dashboard, a lesson exercise,
-   Review/SRS, the level journey, the AI tutor. **(you, phone** — or **me** via emulator.)
+All assets live in `docs/store-assets/` — see the README there.
+
+1. ✅ **App icon** 512×512 — `docs/store-assets/play-icon-512.png`. Generated from the same
+   Orbit Core geometry as the launcher icon, so store and phone match.
+2. ✅ **Feature graphic** 1024×500 — `docs/store-assets/feature-graphic-1024x500.png`.
+   Both are reproducible via `docs/store-assets/make_assets.py` (Pillow).
+3. ⬜ **Phone screenshots** ×4–8 **(you, phone)** — shot list + Play's size rules in
+   `docs/store-assets/README.md`; drop PNGs in `docs/store-assets/screenshots/`.
+   Then **(me)**: verify dimensions + draft the listing captions.
 
 ---
 
