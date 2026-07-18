@@ -303,15 +303,14 @@ fun SettingsScreen(
                 if (prof.name.isBlank()) "No profile yet" else prof.name,
                 style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold
             )
+            // The profile is now just a name and which word forms to use. "From / lives in" was
+            // dropped along with the onboarding step that asked for it, and the old empty-state
+            // line promised "personalized intro phrases" that no longer exist.
             Text(
-                buildString {
-                    if (prof.from.isNotBlank()) append("From ${prof.from}")
-                    if (prof.livesIn.isNotBlank()) {
-                        if (isNotEmpty()) append(" · ")
-                        append("lives in ${prof.livesIn}")
-                    }
-                    if (isEmpty()) append("Set it up to unlock your personalized intro phrases.")
-                },
+                if (prof.name.isBlank())
+                    "Set it up so lessons can use your name and the right word forms."
+                else if (prof.gender == "f") "Female word forms"
+                else "Male word forms",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
