@@ -261,10 +261,13 @@ private fun CorlangApp(container: AppContainer) {
                     NavigationBarItem(
                         selected = currentRoute == dest.route,
                         onClick = {
-                            // Overlays must close when a tab is chosen, or the nav highlight
-                            // moves while the overlay stays on screen (looks frozen).
+                            // EVERY overlay must close when a tab is chosen, or the nav highlight
+                            // moves while the overlay stays on screen (looks frozen). The paywall
+                            // was missing from this list: Get Premium then any tab tap navigated
+                            // underneath while the opaque paywall stayed up.
                             showSettings = false
                             showPlacement = false
+                            showPaywall = false
                             // Any tab tap (including Today itself) exits an open lesson back to the
                             // dashboard — the same as "Exit (saved)". Progress is saved per step.
                             inLesson = false

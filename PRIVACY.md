@@ -1,6 +1,6 @@
 # Corlang — Privacy Policy
 
-**Effective date:** 2026-07-16
+**Effective date:** 2026-07-18
 
 Corlang is built to be **private by design**. It has no account, no sign-in, no advertising,
 no analytics, and no third-party tracking of any kind. This policy explains, plainly, what that
@@ -16,6 +16,8 @@ server that stores your data.
 
 All of the following is stored **only on your device**, in the app's private storage:
 
+- Your profile: the name you enter at setup (any name or nickname you like, it is never
+  verified) and which word forms the course uses for you.
 - Your progress: streak, days completed, current level, per-day task checks.
 - Your vocabulary review data (the spaced-repetition schedule for each word).
 - Your quiz and mock-exam attempts and can-do self-checks.
@@ -33,8 +35,10 @@ Corlang works fully offline for learning. It makes network requests only in thes
    download from can see standard request metadata such as your IP address.
 2. **Optional AI practice (Premium).** If you use the AI tutor / AI writing feedback, the text you
    submit is sent through Corlang's managed endpoint to the AI provider (Anthropic) to generate a
-   reply. Only the text you type for that request is sent. No progress, profile, or identifying
-   data is attached. If you never use the AI feature, no such request is ever made.
+   reply. What is sent: the text you type, the name from your profile (so the tutor can address
+   you; any nickname works), and, for subscribers, your Google Play subscription token so the
+   server can confirm an active subscription and apply the daily fair-use limit. No progress or
+   review data is ever attached. If you never use the AI feature, no such request is ever made.
 3. **Speech and audio.** Pronunciation playback and speech input use your device's built-in
    Android text-to-speech and speech-recognition services. Speech recognition may be processed by
    your device's speech provider (e.g. Google) according to your device settings — this happens

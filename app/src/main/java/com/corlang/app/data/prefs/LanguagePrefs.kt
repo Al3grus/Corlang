@@ -135,8 +135,9 @@ class LanguagePrefs(private val context: Context) {
     }
 
     /**
-     * Who the learner is, captured at onboarding. Drives the personalized first phrases
-     * (Zovem se…, Ja sam iz…) and correct gendered Croatian forms; editable from Settings.
+     * Who the learner is, captured at onboarding: the name (used by the daily reminder greeting
+     * and the tutor prompt) and which word forms the course uses; editable from Settings.
+     * from/livesIn/reason are legacy fields kept only so old backups parse.
      */
     val profile: Flow<LearnerProfile> = context.dataStore.data.map {
         LearnerProfile(

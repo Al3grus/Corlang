@@ -77,17 +77,13 @@ import kotlinx.coroutines.launch
  * walks THAT list, so no step ever needs to know its own number.
  */
 /*
- * One number for the whole onboarding rhythm: the lockup, the title and the button row each get
- * this much air on both sides. Deliberately large, the steps are short and the space is the design.
- *
- * It is a MAXIMUM, not a fixed height. Five of these gaps plus a title and a button row overrun a
- * short screen outright, which would push the buttons off the bottom with nothing to scroll to.
- * OnboardingScreen measures the frame and caps the gap at a share of it, so a normal phone gets
- * the full 100dp and a short screen (or one with the keyboard open) degrades smoothly.
+ * The onboarding rhythm: each step is one centred cluster (see StepFrame), and these gaps set
+ * the distance between its parts. The intro pages carry paragraphs, so they breathe more; the
+ * question steps hold a field or a few buttons, so their furniture sits close to the content.
+ * Fixed values are safe here because the whole cluster scrolls: a short screen or an open
+ * keyboard scrolls the buttons into reach instead of pushing them off the edge.
  */
-/** Title-to-body and body-to-button gap on the two intro pages, which carry real paragraphs. */
 private val GAP_INTRO = 50.dp
-/** The same gap on the question steps, whose bodies are a field or two or three buttons. */
 private val GAP_FORM = 25.dp
 
 private const val STEP_WELCOME = 0
