@@ -171,19 +171,30 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     // edge-to-edge the screen must inset itself or the progress bar collides with the
     // status bar/cutout and the bottom buttons hide under the navigation bar.
     Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
-    BoxWithConstraints(Modifier.fillMaxSize()) {
-    // The full 100dp everywhere once there is room for it (roughly a 700dp-tall frame and up,
-    // which is any current phone in portrait), scaled down proportionally on anything shorter
-    // or when the keyboard halves the screen. Without this the fixed gaps simply overrun the
-    // column and the button row walks off the bottom edge with no way to scroll to it.
-    val gap = minOf(STEP_GAP, maxHeight / 7)
-    Column(
+    // The insets live on the MEASURING box, not inside it: maxHeight has to be the frame the
+    // step is actually drawn in, after the system bars, the 24dp margin and, above all, the
+    // keyboard. Measuring fillMaxSize() instead overstates the frame by the bars plus padding
+    // and never shrinks when the keyboard opens, so on the name step the gaps kept their
+    // full-screen size inside a half-screen frame and pushed the button row off the bottom.
+    BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()
             .imePadding()
             .padding(24.dp)
     ) {
+    // Derived from a budget rather than a flat ratio. The welcome step is the worst case: FIVE
+    // gap slots (logo band above and below, under the title, above the buttons, under them)
+    // around roughly 136dp of furniture (progress bar, lockup, title, button row). Reserving
+    // that plus a 64dp minimum for the body leaves (frame - 200) to split five ways.
+    //
+    // A flat maxHeight/7 looked fine on a tall phone and still overran a 569dp-tall screen,
+    // where the buttons left the frame; only the middle band scrolls, so they were unreachable.
+    // Every current phone in portrait clears the 700dp needed for the full 100dp.
+    val gap = STEP_GAP
+        .coerceAtMost((maxHeight - 200.dp) / 5)
+        .coerceAtLeast(12.dp)
+    Column(modifier = Modifier.fillMaxSize()) {
         // drawStopIndicator = {}: Material3 1.3.0 draws a dot at the end of the track by
         // default (the spec's "stop indicator"). Nobody chose it here and it reads as a stray
         // blue dot on an otherwise plain bar, so it is switched off.
