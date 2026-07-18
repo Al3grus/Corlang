@@ -214,6 +214,12 @@ private fun PremiumPage(container: AppContainer, onGetPremium: () -> Unit) {
                 onClick = onGetPremium, modifier = Modifier.fillMaxWidth()
             ) { Text("See plans") }
         }
+        // Restore also runs automatically on every app resume; this is the explicit affordance
+        // (a reinstall / new device picks the purchase back up from the Play account).
+        OutlinedButton(
+            onClick = { container.billing.start() },
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+        ) { Text("Restore purchases") }
         Spacer(Modifier.height(24.dp))
     }
 }

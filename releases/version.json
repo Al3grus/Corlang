@@ -1,6 +1,6 @@
 {
-  "versionCode": 85,
-  "versionName": "0.20.32",
-  "notes": "Monetization is in. Google Play Billing is wired: the AI tutor (Learn tab) becomes a subscription with a free trial, and levels A2/B1/B2 unlock with a one-time purchase (A0/A1 stay free forever). The AI tutor now has a fair daily message limit so the subscription price stays sustainable. Prices come from the store per your region and include tax. Nothing about the free course changed — lessons, spaced-repetition review, quizzes and progress tracking remain free.",
+  "versionCode": 86,
+  "versionName": "0.20.33",
+  "notes": "Purchases now verify against Google Play on the server for real subscribers, and there's a Restore purchases button under Profile → Get Premium (purchases also restore automatically when you reopen the app). The free course, review, quizzes and progress are unchanged.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
