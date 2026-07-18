@@ -222,6 +222,7 @@ private fun QuizRunner(
         )
         LinearProgressIndicator(
             progress = { (index + 1f) / questions.size },
+            drawStopIndicator = {},
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 8.dp)

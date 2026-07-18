@@ -176,9 +176,12 @@ fun ExerciseActivity(
         if (q.type == QuestionType.MCQ) q.options.shuffled() else q.options
     }
     Column(modifier = Modifier.fillMaxWidth()) {
+        // Tripled air on both sides: this bar sits between the step card above and the question
+        // below, and at the old 6dp it read as glued to both.
         LinearProgressIndicator(
             progress = { solved.toFloat() / total },
-            modifier = Modifier.fillMaxWidth().padding(bottom = 6.dp)
+            drawStopIndicator = {},
+            modifier = Modifier.fillMaxWidth().padding(top = 24.dp, bottom = 18.dp)
         )
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(

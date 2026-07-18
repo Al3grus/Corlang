@@ -131,6 +131,7 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
         }
         LinearProgressIndicator(
             progress = { (index + 1f) / questions.size },
+            drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 24.dp)
         )
         Text("Question ${index + 1} / ${questions.size}", style = MaterialTheme.typography.bodySmall,

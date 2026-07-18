@@ -108,7 +108,8 @@ fun PaywallScreen(
             // Play-policy material.
             PurchaseCard(
                 title = "Monthly",
-                subtitle = "Starts with a 7-day free trial. Fair use: up to 30 AI messages a day.",
+                subtitle = "Starts with a 7-day free trial.",
+                footnote = "Fair use: up to 30 AI messages a day.",
                 price = prices["${BillingManager.SUB_PREMIUM}:${BillingManager.BASE_MONTHLY}"],
                 priceSuffix = "/month",
                 primary = true,
@@ -124,7 +125,7 @@ fun PaywallScreen(
         OutlinedButton(onClick = onClose, modifier = Modifier.fillMaxWidth()) { Text("Not now") }
         Text(
             "Prices shown include tax and are set by Google Play for your region. " +
-                "Subscriptions renew until cancelled in Play.",
+                "Subscriptions renew until cancelled.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -137,6 +138,8 @@ private fun PurchaseCard(
     price: String?,
     onBuy: () -> Unit,
     subtitle: String? = null,
+    /** Fine print under the subtitle, on its own line and smaller (e.g. the fair-use cap). */
+    footnote: String? = null,
     priceSuffix: String = "",
     primary: Boolean = false,
 ) {
@@ -153,6 +156,10 @@ private fun PurchaseCard(
             Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
             if (subtitle != null) {
                 Text(subtitle, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            if (footnote != null) {
+                Text(footnote, style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             if (price != null) {

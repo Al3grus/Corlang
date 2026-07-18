@@ -343,6 +343,7 @@ private fun ScoredSectionRunner(
         Text(section.title, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
         LinearProgressIndicator(
             progress = { (index + 1f) / questions.size },
+            drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
         )
         if (section.instructions.isNotBlank() && index == 0) {

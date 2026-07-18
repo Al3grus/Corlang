@@ -385,6 +385,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
                 }
                 LinearProgressIndicator(
                     progress = { if (pack.words.isEmpty()) 0f else seen.toFloat() / pack.words.size },
+                    drawStopIndicator = {},
                     modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                 )
             }
@@ -476,6 +477,7 @@ internal fun WordSession(
         }
         LinearProgressIndicator(
             progress = { if (total == 0) 0f else done.toFloat() / total },
+            drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
         )
 
