@@ -161,7 +161,10 @@ fun OnboardingScreen(
     // first run, a single-course build drops the language step and the bar counts the shorter
     // path honestly.
     val visibleSteps = remember(multiLang, editProfile) {
-        if (editProfile) listOf(STEP_NAME, STEP_GENDER, STEP_GOAL, STEP_LEVEL)
+        // Edit mode has NO level step: the learner already placed (or chose day 1) when they
+        // started the course, and re-asking on every profile edit made editing feel like
+        // re-onboarding. Retaking placement is its own deliberate action in Settings.
+        if (editProfile) listOf(STEP_NAME, STEP_GENDER, STEP_GOAL)
         else listOfNotNull(
             STEP_WELCOME, STEP_HOW,
             STEP_LANG.takeIf { multiLang },
@@ -402,7 +405,24 @@ fun OnboardingScreen(
                 title = "New words per lesson",
                 subtitle = "How many new words each lesson introduces. 10 is the sustainable " +
                     "default; you can change this anytime in Settings.",
-                actions = { NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) }) }
+                actions = {
+                    // In edit mode this is the last step, so it saves; the level question only
+                    // belongs to the first run.
+                    if (editProfile) {
+                        Row(modifier = Modifier.fillMaxWidth()) {
+                            OutlinedButton(
+                                onClick = { go(-1) },
+                                modifier = Modifier.weight(1f)
+                            ) { Text("← Back", maxLines = 1) }
+                            Button(
+                                onClick = { save(thenPlacement = false) },
+                                modifier = Modifier.weight(1f).padding(start = 8.dp)
+                            ) { Text("Save ✓", maxLines = 1) }
+                        }
+                    } else {
+                        NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
+                    }
+                }
             ) {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
                     listOf(10, 15, 20).forEachIndexed { i, v ->
