@@ -129,6 +129,20 @@ val NATIONS: List<NationOption> = listOf(
 
 private const val SOMEWHERE_ELSE = "Somewhere else"
 
+/*
+ * Onboarding steps, as identities rather than bare indices: the language step only exists when
+ * more than one course is available, so hardcoded numbers drift the moment a course is hidden
+ * (French currently is). `visibleSteps` below builds the real running order, and every Back/Next
+ * walks THAT list — no step ever needs to know its own number.
+ */
+private const val STEP_WELCOME = 0
+private const val STEP_LANG = 1
+private const val STEP_NAME = 2
+private const val STEP_GENDER = 3
+private const val STEP_ORIGIN = 4
+private const val STEP_GOAL = 5
+private const val STEP_LEVEL = 6
+
 /** The personalized phrases the profile unlocks; empty parts are simply skipped. */
 fun profilePhrases(p: LearnerProfile): List<Pair<String, String>> {
     val from = NATIONS.firstOrNull { it.english == p.from }
@@ -160,7 +174,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     var learnLang by remember { mutableStateOf(container.content.availableLanguages.first()) }
     val langName = allMeta.firstOrNull { it.code == learnLang }?.name ?: "the language"
 
-    var step by remember { mutableIntStateOf(0) }
+    var step by remember { mutableIntStateOf(STEP_WELCOME) }
     var name by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("m") }
     var from by remember { mutableStateOf<String?>(null) }
@@ -202,7 +216,21 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         }
     }
 
-    val totalSteps = 6
+    // The steps that actually run, in order. With a single course the language step disappears
+    // and the progress bar counts the shorter path honestly.
+    val visibleSteps = remember(multiLang) {
+        listOfNotNull(
+            STEP_WELCOME,
+            STEP_LANG.takeIf { multiLang },
+            STEP_NAME, STEP_GENDER, STEP_ORIGIN, STEP_GOAL, STEP_LEVEL
+        )
+    }
+    val stepIndex = visibleSteps.indexOf(step).coerceAtLeast(0)
+    /** Walk the visible order, so Back/Next never land on a step that isn't shown. */
+    fun go(delta: Int) {
+        step = visibleSteps[(stepIndex + delta).coerceIn(0, visibleSteps.lastIndex)]
+    }
+
     // Rendered OUTSIDE the Scaffold: the Surface supplies the theme's content color (plain
     // Text here would otherwise default to black — unreadable in dark theme), and with
     // edge-to-edge the screen must inset itself or the progress bar collides with the
@@ -217,81 +245,115 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
             .padding(24.dp)
     ) {
         LinearProgressIndicator(
-            progress = { (step + 1f) / totalSteps },
+            progress = { (stepIndex + 1f) / visibleSteps.size },
             modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp)
         )
 
         when (step) {
-            // ---- 0 · Welcome + language choice ----
-            0 -> Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
-                CorlangLogo(variant = LogoVariant.LOCKUP, size = 40.dp, modifier = Modifier.padding(top = 24.dp))
+            // ---- Welcome: what this app is, before it asks for anything ----
+            STEP_WELCOME -> Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp, modifier = Modifier.padding(top = 32.dp))
                 Text(
                     "Language at the core",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 6.dp, bottom = 20.dp)
+                    modifier = Modifier.padding(top = 6.dp, bottom = 28.dp)
                 )
-                if (multiLang) {
-                    Text(
-                        "Which language do you want to learn?",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                    // One full-width row per language: names never fight for horizontal space,
-                    // so they can't overflow at large font scales (a 3-way segmented row did).
-                    Column(modifier = Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 16.dp)) {
-                        allMeta.forEach { m ->
-                            val chosen = learnLang == m.code
-                            OutlinedButton(
-                                onClick = { learnLang = m.code },
-                                border = androidx.compose.foundation.BorderStroke(
-                                    if (chosen) 2.dp else 1.dp,
-                                    if (chosen) MaterialTheme.colorScheme.primary
-                                    else MaterialTheme.colorScheme.outline
-                                ),
-                                colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
-                                    containerColor =
-                                        if (chosen) MaterialTheme.colorScheme.secondaryContainer
-                                        else MaterialTheme.colorScheme.surface,
-                                    contentColor =
-                                        if (chosen) MaterialTheme.colorScheme.onSecondaryContainer
-                                        else MaterialTheme.colorScheme.onSurface
-                                ),
-                                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
-                            ) {
-                                Text(
-                                    "${m.flagEmoji}  ${m.name}" + if (chosen) "  ✓" else "",
-                                    maxLines = 1,
-                                    fontWeight = if (chosen) FontWeight.SemiBold else FontWeight.Normal
-                                )
-                            }
+                Text(
+                    "Welcome",
+                    style = MaterialTheme.typography.headlineMedium,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Text(
+                    "Corlang is a structured, day-by-day course that takes you from your first " +
+                        "words to B2 — the level real exams and real conversations ask for. One " +
+                        "guided lesson a day: new words, short exercises, and review that brings " +
+                        "them back just before you'd forget.",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.padding(top = 12.dp)
+                )
+                Text(
+                    "It works fully offline, and your learning data stays on this device — no " +
+                        "account, no sign-in, no tracking.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 14.dp)
+                )
+                Text(
+                    "The next couple of minutes set the course up for you.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 14.dp)
+                )
+                Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth().padding(top = 28.dp)) {
+                    Text("Get started →")
+                }
+            }
+
+            // ---- Language choice (only when more than one course ships) ----
+            STEP_LANG -> Column(modifier = Modifier.fillMaxWidth()) {
+                Text(
+                    "Which language do you want to learn?",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                // One full-width row per language: names never fight for horizontal space,
+                // so they can't overflow at large font scales (a 3-way segmented row did).
+                Column(modifier = Modifier.fillMaxWidth().padding(top = 12.dp, bottom = 8.dp)) {
+                    allMeta.forEach { m ->
+                        val chosen = learnLang == m.code
+                        OutlinedButton(
+                            onClick = { learnLang = m.code },
+                            border = androidx.compose.foundation.BorderStroke(
+                                if (chosen) 2.dp else 1.dp,
+                                if (chosen) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.outline
+                            ),
+                            colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
+                                containerColor =
+                                    if (chosen) MaterialTheme.colorScheme.secondaryContainer
+                                    else MaterialTheme.colorScheme.surface,
+                                contentColor =
+                                    if (chosen) MaterialTheme.colorScheme.onSecondaryContainer
+                                    else MaterialTheme.colorScheme.onSurface
+                            ),
+                            modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                        ) {
+                            Text(
+                                "${m.flagEmoji}  ${m.name}" + if (chosen) "  ✓" else "",
+                                maxLines = 1,
+                                fontWeight = if (chosen) FontWeight.SemiBold else FontWeight.Normal
+                            )
                         }
                     }
                 }
+                // Deliberately generic: this text describes the app, not the highlighted course,
+                // so it must not change as you tap between languages (a moving description reads
+                // like the app is reloading under you).
                 Text(
-                    "A study-based path to real $langName, built on official curricula and the real " +
-                        "exams. Two minutes of setup makes it yours.",
-                    style = MaterialTheme.typography.bodyLarge
+                    "Every course follows the same structured path: a complete A0→B2 plan built " +
+                        "on official curricula and the real exams, with spaced-repetition review " +
+                        "and full mock papers.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 4.dp)
                 )
                 Text(
-                    "Private by design — your learning data stays on this device. No account, " +
-                        "no sign-in, no tracking.",
+                    "You can add the others later, and switch any time — each keeps its own progress.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 12.dp)
+                    modifier = Modifier.padding(top = 10.dp)
                 )
-                Button(onClick = { step = 1 }, modifier = Modifier.fillMaxWidth().padding(top = 24.dp)) {
-                    Text("Set up my learning →")
-                }
-                OutlinedButton(
-                    onClick = { save(thenPlacement = false) },
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Skip for now") }
+                NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
-            // ---- 1 · Name ----
-            1 -> StepFrame("What's your name?",
+            // ---- Name ----
+            STEP_NAME -> StepFrame("What's your name?",
                 "It becomes your very first phrase: introducing yourself.") {
                 OutlinedTextField(
                     value = name,
@@ -300,11 +362,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
                 )
-                NextRow(enabled = name.isNotBlank(), onBack = { step = 0 }, onNext = { step = 2 })
+                NextRow(enabled = name.isNotBlank(), onBack = { go(-1) }, onNext = { go(+1) })
             }
 
-            // ---- 2 · Word forms (gender) ----
-            2 -> StepFrame("Which forms should $langName use for you?",
+            // ---- Word forms (gender) ----
+            STEP_GENDER -> StepFrame("Which forms should $langName use for you?",
                 if (learnLang == "hr")
                     "Croatian words change with the speaker: a man says \"Ja sam Amerikanac, radio sam\", " +
                         "a woman says \"Ja sam Amerikanka, radila sam\"."
@@ -321,22 +383,22 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         ) { Text(label) }
                     }
                 }
-                NextRow(enabled = true, onBack = { step = 1 }, onNext = { step = 3 })
+                NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
-            // ---- 3 · Where from / where living ----
-            3 -> StepFrame("Where are you from, and where do you live?",
+            // ---- Where from / where living ----
+            STEP_ORIGIN -> StepFrame("Where are you from, and where do you live?",
                 if (learnLang == "hr")
                     "These become your intro phrases, with the correct Croatian case endings."
                 else "These become your first intro phrases.") {
                 CountryPicker("I am from", from) { from = it }
                 Spacer(Modifier.height(10.dp))
                 CountryPicker("I live in", livesIn) { livesIn = it }
-                NextRow(enabled = from != null && livesIn != null, onBack = { step = 2 }, onNext = { step = 4 })
+                NextRow(enabled = from != null && livesIn != null, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
-            // ---- 4 · Daily goal ----
-            4 -> StepFrame("New words per lesson",
+            // ---- Daily goal ----
+            STEP_GOAL -> StepFrame("New words per lesson",
                 "How many new words each lesson introduces. 10 is the sustainable default; you can " +
                     "change this anytime in Settings.") {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
@@ -349,11 +411,11 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                         ) { Text("$v") }
                     }
                 }
-                NextRow(enabled = true, onBack = { step = 3 }, onNext = { step = 5 })
+                NextRow(enabled = true, onBack = { go(-1) }, onNext = { go(+1) })
             }
 
-            // ---- 5 · Level + payoff: your first phrases ----
-            5 -> StepFrame("Last one: do you already know some $langName?", "") {
+            // ---- Level + payoff: your first phrases ----
+            STEP_LEVEL -> StepFrame("Last one: do you already know some $langName?", "") {
                 listOf(
                     false to "I'm new, start me at Day 1",
                     true to "I know some, take the 2-minute placement test"
@@ -401,7 +463,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                 }
 
                 Row(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
-                    OutlinedButton(onClick = { step = 4 }, modifier = Modifier.weight(1f)) { Text("← Back") }
+                    OutlinedButton(onClick = { go(-1) }, modifier = Modifier.weight(1f)) { Text("← Back") }
                     Spacer(Modifier.height(0.dp))
                     Button(
                         onClick = { save(thenPlacement = wantsPlacement == true) },

@@ -7,15 +7,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -255,7 +259,9 @@ private fun CorlangApp(container: AppContainer) {
             )
         },
         bottomBar = {
-            NavigationBar {
+            // The placement test owns the screen while it runs: it's a short, ordered flow with
+            // its own exit, and leaving the tabs tappable mid-test silently abandoned the test.
+            if (!showPlacement) NavigationBar {
                 Dest.bar(premium).forEach { dest ->
                     NavigationBarItem(
                         selected = currentRoute == dest.route,
@@ -282,34 +288,6 @@ private fun CorlangApp(container: AppContainer) {
             }
         }
     ) { innerPadding ->
-        if (showPlacement) {
-            androidx.activity.compose.BackHandler { showPlacement = false }
-            androidx.compose.foundation.layout.Box(
-                Modifier.padding(innerPadding).consumeWindowInsets(innerPadding)
-            ) {
-                PlacementScreen(container, lang, onDone = { showPlacement = false })
-            }
-            return@Scaffold
-        }
-        if (showSettings) {
-            androidx.activity.compose.BackHandler { showSettings = false }
-            SettingsScreen(
-                container,
-                onBack = { showSettings = false },
-                onEditProfile = { showSettings = false; showOnboarding = true },
-                modifier = Modifier.padding(innerPadding).consumeWindowInsets(innerPadding)
-            )
-            return@Scaffold
-        }
-        if (showPaywall) {
-            androidx.activity.compose.BackHandler { showPaywall = false }
-            androidx.compose.foundation.layout.Box(
-                Modifier.padding(innerPadding).consumeWindowInsets(innerPadding)
-            ) {
-                PaywallScreen(container, levelId = paywallLevel, onClose = { showPaywall = false })
-            }
-            return@Scaffold
-        }
         // One snappy fade for every tab switch. Kept short on purpose: a long crossfade keeps the
         // OUTGOING tab painted while the incoming one is still populating its flows, so you'd see
         // e.g. Today linger for a beat before Review resolves. 150ms is long enough to read as a
@@ -317,20 +295,29 @@ private fun CorlangApp(container: AppContainer) {
         // across all destinations. Pairs with each screen's own load-gate so the incoming tab
         // fades in already-populated rather than mid-load.
         val tabFade = tween<Float>(durationMillis = 150)
+        // The NavHost is the BASE layer and always composes; overlays draw on top of it.
+        // It must never be skipped: NavHost is the only thing that calls setGraph(), so an
+        // early-return overlay (placement opening straight out of onboarding) left the
+        // controller graph-less and the next bottom-bar tap threw
+        // "Cannot navigate to <route>. Navigation graph has not been set".
+        //
+        // consumeWindowInsets is the missing half of edge-to-edge keyboard handling:
+        // padding(innerPadding) already spends the bottom-bar + system-bar insets, and
+        // without marking them consumed every imePadding() below ALSO added them —
+        // composers floated a bottom-bar-height (or more) above the keyboard. Spent once
+        // here on the Box so every layer inherits it.
+        Box(
+            Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding)
+        ) {
         NavHost(
             navController = navController,
             startDestination = Dest.TODAY.route,
             enterTransition = { fadeIn(tabFade) },
             exitTransition = { fadeOut(tabFade) },
             popEnterTransition = { fadeIn(tabFade) },
-            popExitTransition = { fadeOut(tabFade) },
-            // consumeWindowInsets is the missing half of edge-to-edge keyboard handling:
-            // padding(innerPadding) already spends the bottom-bar + system-bar insets, and
-            // without marking them consumed every imePadding() below ALSO added them —
-            // composers floated a bottom-bar-height (or more) above the keyboard.
-            modifier = Modifier
-                .padding(innerPadding)
-                .consumeWindowInsets(innerPadding)
+            popExitTransition = { fadeOut(tabFade) }
         ) {
             // Tab switches share ONE uniform fade (below), so every tab — Review included —
             // animates identically. The old per-screen Crossfade(lang) wrappers are gone: they
@@ -374,6 +361,44 @@ private fun CorlangApp(container: AppContainer) {
                     onGetPremium = { paywallLevel = null; showPaywall = true }
                 )
             }
+        }
+
+        // Overlays: opaque, full-bleed, drawn over the (still-composed) NavHost. Each is
+        // mutually exclusive and dismissed with system back. Surface supplies the opaque
+        // background — without it the tab underneath shows through.
+        when {
+            showPlacement -> {
+                androidx.activity.compose.BackHandler { showPlacement = false }
+                Surface(
+                    color = MaterialTheme.colorScheme.background,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    PlacementScreen(container, lang, onDone = { showPlacement = false })
+                }
+            }
+            showSettings -> {
+                androidx.activity.compose.BackHandler { showSettings = false }
+                Surface(
+                    color = MaterialTheme.colorScheme.background,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    SettingsScreen(
+                        container,
+                        onBack = { showSettings = false },
+                        onEditProfile = { showSettings = false; showOnboarding = true }
+                    )
+                }
+            }
+            showPaywall -> {
+                androidx.activity.compose.BackHandler { showPaywall = false }
+                Surface(
+                    color = MaterialTheme.colorScheme.background,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    PaywallScreen(container, levelId = paywallLevel, onClose = { showPaywall = false })
+                }
+            }
+        }
         }
     }
 }
