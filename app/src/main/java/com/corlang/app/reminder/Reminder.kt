@@ -67,10 +67,17 @@ class ReminderWorker(
             "pt" -> "Portuguese"
             else -> "Croatian"
         }
+        // The learner's name, when they gave one, is what makes the nudge feel addressed to a
+        // person rather than broadcast. Appended to the in-language title so the greeting still
+        // opens in the language being learned: "Vrijeme je za hrvatski, Ricardo! 🇭🇷".
+        val who = prefs.profile.first().name.trim()
         val title = when (lang) {
-            "fr" -> "C'est l'heure du français ! 🇫🇷"
-            "pt" -> "Está na hora do português! 🇵🇹"
-            else -> "Vrijeme je za hrvatski! 🇭🇷"
+            "fr" -> if (who.isEmpty()) "C'est l'heure du français ! 🇫🇷"
+                else "C'est l'heure du français, $who ! 🇫🇷"
+            "pt" -> if (who.isEmpty()) "Está na hora do português! 🇵🇹"
+                else "Está na hora do português, $who! 🇵🇹"
+            else -> if (who.isEmpty()) "Vrijeme je za hrvatski! 🇭🇷"
+                else "Vrijeme je za hrvatski, $who! 🇭🇷"
         }
         val littleByLittle = when (lang) {
             "fr" -> "Petit à petit, a little today is all it takes."
