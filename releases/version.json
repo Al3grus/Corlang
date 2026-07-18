@@ -1,6 +1,6 @@
 {
-  "versionCode": 86,
-  "versionName": "0.20.33",
-  "notes": "Purchases now verify against Google Play on the server for real subscribers, and there's a Restore purchases button under Profile → Get Premium (purchases also restore automatically when you reopen the app). The free course, review, quizzes and progress are unchanged.",
+  "versionCode": 89,
+  "versionName": "0.20.36",
+  "notes": "Reworked onboarding: a welcome page, a 'How it works' page, and the language choice on its own screen, with steps that slide forward as you go. Fixed a crash when tapping a tab during the placement test, and the test now keeps the screen to itself until it's finished. The flag is gone from the top bar (it looked like a button but wasn't). The free course, review, quizzes and progress are unchanged.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
