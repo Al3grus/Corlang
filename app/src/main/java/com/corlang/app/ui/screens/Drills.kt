@@ -158,7 +158,7 @@ fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
     val items = remember(source) { DrillGen.buildRecallItems(source, 8) }
     val name = remember(lang) { container.content.meta(lang).name }
     RecallRunner(
-        container, items, name,
+        container, items, name, lang,
         "Producing the $name yourself, with the right diacritics, is what speaking needs.",
         onFinished
     )
@@ -181,6 +181,7 @@ fun WrapupRecall(container: AppContainer, lang: String, day: StudyDay, onFinishe
     RecallRunner(
         container, items,
         remember(lang) { container.content.meta(lang).name },
+        lang,
         "Recalling today's phrases from memory is what makes them stick.",
         onFinished
     )
@@ -231,6 +232,7 @@ private fun RecallRunner(
     container: AppContainer,
     items: List<DrillGen.Recall>,
     languageName: String,
+    langCode: String,
     resultLine: String,
     onFinished: () -> Unit
 ) {
@@ -293,8 +295,9 @@ private fun RecallRunner(
         Button(
             onClick = {
                 if (!checked) {
-                    // Slash-aware: "on / ona je" accepts "on je", "ona je", or writing both.
-                    correct = Grading.gradeRecall(item.answerHr, input)
+                    // Slash-aware ("on / ona je" accepts either) and pro-drop-aware: the
+                    // English gloss licenses the subject pronoun, so "ja radim" == "radim".
+                    correct = Grading.gradeRecall(item.answerHr, input, en = item.en, lang = langCode)
                     if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
                     checked = true
                 } else if (qIndex + 1 >= items.size) {
