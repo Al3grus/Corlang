@@ -49,7 +49,11 @@ class AiClient {
         // tokens went to invisible reasoning on a trivial reply. Disable it for high-volume
         // interactive chat (verified: no variety-quality loss). Sonnet 5 accepts "disabled";
         // never send this to a Fable-family model (it 400s there).
-        disableThinking: Boolean = false
+        disableThinking: Boolean = false,
+        // The active Play subscription token. The worker keys the 40-msg/day per-subscriber cap
+        // on it (no user accounts needed — the token is the identity). Null on DEV_PREMIUM /
+        // sideload, where the worker falls back to its per-IP daily limit.
+        subToken: String? = null
     ): Result<String> = withContext(Dispatchers.IO) {
         // Server-side only: the proxy holds the key (server/ai-proxy); the app sends the
         // entitlement token. Dark until AiConfig.proxyBaseUrl is set at build time.
@@ -58,10 +62,11 @@ class AiClient {
                 IllegalStateException("The AI tutor isn't available yet, it arrives with Corlang Premium.")
             )
         val endpoint = "${proxy.trimEnd('/')}/v1/messages"
-        val headers = mapOf(
-            "content-type" to "application/json",
-            "x-corlang-auth" to AiConfig.PROXY_AUTH_TOKEN
-        )
+        val headers = buildMap {
+            put("content-type", "application/json")
+            put("x-corlang-auth", AiConfig.PROXY_AUTH_TOKEN)
+            if (!subToken.isNullOrBlank()) put("x-corlang-sub", subToken)
+        }
 
         // NOTE: no `temperature` — the claude-sonnet-5 family REJECTS the parameter as
         // deprecated (verified against the live API 2026-07-17); default sampling it is.

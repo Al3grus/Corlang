@@ -34,8 +34,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 84
-        versionName = "0.20.31"
+        versionCode = 85
+        versionName = "0.20.32"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -65,12 +65,10 @@ android {
         create("play") {
             dimension = "distribution"
             buildConfigField("boolean", "ENABLE_UPDATER", "false")
-            // No AI credential in the store binary: Premium is unwired until Play Billing
-            // ships, so the play build can't use the proxy anyway — an empty token means
-            // there's nothing to extract from the public Play APK. Remove when billing lands
-            // (per-user purchase-token verification replaces the shared token entirely).
-            buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"\"")
-            buildConfigField("String", "CORLANG_PROXY_AUTH_TOKEN", "\"\"")
+            // Inherits CORLANG_PROXY_* from defaultConfig: Play subscribers reach the AI proxy.
+            // The shared app token in the binary is bounded by the worker's per-IP/global daily
+            // rate limits + the per-subscriber 40/day cap keyed on the Play sub token; full
+            // Play-Developer-API sub-token verification is the pre-production hardening step.
         }
     }
 
@@ -146,6 +144,9 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
+
+    // Google Play Billing — subscriptions (AI Premium) + one-time level unlocks.
+    implementation("com.android.billingclient:billing-ktx:7.1.1")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
 

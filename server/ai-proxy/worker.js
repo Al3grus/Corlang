@@ -38,6 +38,10 @@ const MAX_BODY_BYTES = 100_000;
 // prepaid balance even against a botnet spreading over IPs.
 const DAILY_LIMIT_PER_IP = 300;
 const DAILY_LIMIT_GLOBAL = 3000;
+// Per-subscriber daily message cap, keyed on the Play subscription token (x-corlang-sub).
+// This is the cost guardrail that makes the flat-price subscription safe: even a heavy
+// Croatian user maxing it every day costs ~€4.4/mo (measured), under the plan's net revenue.
+const DAILY_LIMIT_PER_SUB = 40;
 
 // The request may only carry the fields the app actually sends. Anything else — tools,
 // mcp_servers, stream, metadata, containers — is stripped, so an extracted token cannot be
@@ -77,21 +81,32 @@ async function checkRateLimit(request, env) {
   if (!env.RATE_KV) return { ok: true };
   const day = new Date().toISOString().slice(0, 10);
   const ip = request.headers.get("cf-connecting-ip") || "unknown";
+  const sub = request.headers.get("x-corlang-sub");
   const ipKey = `rl:${day}:ip:${ip}`;
   const globalKey = `rl:${day}:global`;
+  // Per-subscriber cap only when a sub token is presented (real Play subscribers). DEV_PREMIUM
+  // / sideload sends none and is bounded by the per-IP cap instead.
+  const subKey = sub ? `rl:${day}:sub:${sub}` : null;
   try {
-    const [ipCount, globalCount] = await Promise.all([
+    const [ipCount, globalCount, subCount] = await Promise.all([
       env.RATE_KV.get(ipKey), env.RATE_KV.get(globalKey),
+      subKey ? env.RATE_KV.get(subKey) : Promise.resolve(null),
     ]);
     const ipN = parseInt(ipCount ?? "0", 10);
     const gN = parseInt(globalCount ?? "0", 10);
+    const sN = parseInt(subCount ?? "0", 10);
     if (ipN >= DAILY_LIMIT_PER_IP || gN >= DAILY_LIMIT_GLOBAL) {
-      return { ok: false };
+      return { ok: false, reason: "ip/global" };
+    }
+    if (subKey && sN >= DAILY_LIMIT_PER_SUB) {
+      return { ok: false, reason: "sub" };
     }
     // Two-day TTL: today's keys expire on their own, no cleanup job needed.
     await Promise.all([
       env.RATE_KV.put(ipKey, String(ipN + 1), { expirationTtl: 172800 }),
       env.RATE_KV.put(globalKey, String(gN + 1), { expirationTtl: 172800 }),
+      subKey ? env.RATE_KV.put(subKey, String(sN + 1), { expirationTtl: 172800 })
+             : Promise.resolve(),
     ]);
     return { ok: true };
   } catch {
@@ -110,7 +125,10 @@ export default {
     }
     const rate = await checkRateLimit(request, env);
     if (!rate.ok) {
-      return json(429, { error: { message: "Daily limit reached. Try again tomorrow." } });
+      const msg = rate.reason === "sub"
+        ? "You've reached today's message limit. It resets tomorrow."
+        : "Daily limit reached. Try again tomorrow.";
+      return json(429, { error: { message: msg } });
     }
 
     const raw = await request.text();

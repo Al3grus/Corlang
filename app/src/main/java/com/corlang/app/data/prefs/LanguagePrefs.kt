@@ -174,6 +174,38 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[premiumKey] = entitled }
     }
 
+    // The active AI-subscription Play purchase token. Sent to the worker (x-corlang-sub) so the
+    // 40-msg/day cap can be keyed per subscriber WITHOUT any user account — the token IS the
+    // stable identity. Cleared on lapse/refund.
+    private val subTokenKey = stringPreferencesKey("premium_sub_token")
+
+    val subPurchaseToken: Flow<String?> =
+        context.dataStore.data.map { it[subTokenKey] }
+
+    suspend fun setSubPurchaseToken(token: String?) {
+        context.dataStore.edit {
+            if (token == null) it.remove(subTokenKey) else it[subTokenKey] = token
+        }
+    }
+
+    // ----- Level unlocks (one-time IAP; global across languages) -----
+
+    // A0/A1 are free forever; A2/B1/B2 are unlocked by a one-time purchase (or the bundle).
+    // Stored as a comma-joined set of CEFR level ids. Global, not per-language, by design:
+    // buying A2 unlocks A2 in every course. Written by the Billing connector after a verified
+    // purchase; the bundle grants all three at once.
+    private val unlockedLevelsKey = stringPreferencesKey("unlocked_levels")
+
+    val unlockedLevels: Flow<Set<String>> =
+        context.dataStore.data.map {
+            (it[unlockedLevelsKey] ?: "").split(",").map { s -> s.trim() }
+                .filter { s -> s.isNotEmpty() }.toSet()
+        }
+
+    suspend fun setUnlockedLevels(levels: Set<String>) {
+        context.dataStore.edit { it[unlockedLevelsKey] = levels.joinToString(",") }
+    }
+
     // ----- Placement word offset -----
 
     // Per-language: how many deck words the placement test skipped past. The new-word window

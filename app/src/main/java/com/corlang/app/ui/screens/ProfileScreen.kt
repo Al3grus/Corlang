@@ -55,7 +55,8 @@ fun ProfileScreen(
     container: AppContainer,
     lang: String,
     onSelectLanguage: (String) -> Unit,
-    onOpenSettings: () -> Unit
+    onOpenSettings: () -> Unit,
+    onGetPremium: () -> Unit = {}
 ) {
     // Sub-page routing within the tab (null = the menu). A short crossfade smooths the
     // menu↔sub-page transitions (matching the app's tab fade, not a slow one).
@@ -71,7 +72,7 @@ fun ProfileScreen(
             LanguagePage(container, lang) { code -> onSelectLanguage(code); page = null }
         }
         "premium" -> SubPage("Corlang Premium", onBack = { page = null }) {
-            PremiumPage(container)
+            PremiumPage(container, onGetPremium)
         }
         "references" -> SubPage("References", onBack = { page = null }) {
             ReferencesPage(container, lang)
@@ -181,7 +182,7 @@ private fun LanguagePage(container: AppContainer, lang: String, onSelect: (Strin
 
 /** Premium = the AI-tutor subscription: what it unlocks and its current state. */
 @Composable
-private fun PremiumPage(container: AppContainer) {
+private fun PremiumPage(container: AppContainer, onGetPremium: () -> Unit) {
     val entitled by container.premium.entitled.collectAsState(initial = false)
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
         InfoCard {
@@ -202,11 +203,16 @@ private fun PremiumPage(container: AppContainer) {
             }
             Text(
                 if (entitled) "Enjoy — the Learn tab is in your bottom bar."
-                else "Subscriptions arrive with the Google Play release. The whole course, " +
-                    "spaced-repetition review and progress tracking stay free.",
+                else "The whole course, spaced-repetition review and progress tracking stay free.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 10.dp))
+        }
+        if (!entitled) {
+            Spacer(Modifier.height(16.dp))
+            androidx.compose.material3.Button(
+                onClick = onGetPremium, modifier = Modifier.fillMaxWidth()
+            ) { Text("See plans") }
         }
         Spacer(Modifier.height(24.dp))
     }
