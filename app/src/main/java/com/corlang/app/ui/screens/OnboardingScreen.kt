@@ -95,7 +95,17 @@ private const val STEP_GOAL = 5
 private const val STEP_LEVEL = 6
 
 @Composable
-fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean) -> Unit) {
+fun OnboardingScreen(
+    container: AppContainer,
+    /**
+     * Editing an existing profile from Settings, as opposed to the true first run. Edit mode
+     * skips the intro pages (Welcome, How it works, language choice) and starts at the name
+     * step, and the progress bar counts only the profile steps, so editing is not a replay of
+     * onboarding.
+     */
+    editProfile: Boolean = false,
+    onFinish: (wantsPlacement: Boolean) -> Unit
+) {
     val scope = rememberCoroutineScope()
 
     // Which language they're setting up. Profile below is language-neutral; this just picks the
@@ -105,7 +115,7 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
     var learnLang by remember { mutableStateOf(container.content.availableLanguages.first()) }
     val langName = allMeta.firstOrNull { it.code == learnLang }?.name ?: "the language"
 
-    var step by remember { mutableIntStateOf(STEP_WELCOME) }
+    var step by remember { mutableIntStateOf(if (editProfile) STEP_NAME else STEP_WELCOME) }
     var name by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("m") }
     var goal by remember { mutableStateOf(10) }
@@ -146,10 +156,13 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
         }
     }
 
-    // The steps that actually run, in order. With a single course the language step disappears
-    // and the progress bar counts the shorter path honestly.
-    val visibleSteps = remember(multiLang) {
-        listOfNotNull(
+    // The steps that actually run, in order. Edit mode is only the profile questions, so its
+    // progress bar starts at the beginning of what the learner is actually doing; on a true
+    // first run, a single-course build drops the language step and the bar counts the shorter
+    // path honestly.
+    val visibleSteps = remember(multiLang, editProfile) {
+        if (editProfile) listOf(STEP_NAME, STEP_GENDER, STEP_GOAL, STEP_LEVEL)
+        else listOfNotNull(
             STEP_WELCOME, STEP_HOW,
             STEP_LANG.takeIf { multiLang },
             STEP_NAME, STEP_GENDER, STEP_GOAL, STEP_LEVEL

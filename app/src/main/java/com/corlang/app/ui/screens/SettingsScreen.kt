@@ -24,7 +24,6 @@ import androidx.compose.material.icons.outlined.Save
 import androidx.compose.material.icons.outlined.Speed
 import androidx.compose.material.icons.outlined.SystemUpdate
 import androidx.compose.material.icons.outlined.Vibration
-import androidx.compose.material.icons.outlined.WorkspacePremium
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -54,8 +53,6 @@ import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.reminder.ReminderScheduler
 import com.corlang.app.speech.TtsState
-import com.corlang.app.ui.components.InfoCard
-import com.corlang.app.ui.components.SectionTitle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -89,7 +86,6 @@ fun SettingsScreen(
         }
 
         // ----- Study reminder -----
-        SectionTitle("Study reminder", Icons.Outlined.Alarm)
         val enabled by container.languagePrefs.reminderEnabled.collectAsState(initial = false)
         val time by container.languagePrefs.reminderTime.collectAsState(initial = 19 to 0)
         var showPicker by remember { mutableStateOf(false) }
@@ -104,7 +100,7 @@ fun SettingsScreen(
             ActivityResultContracts.RequestPermission()
         ) { granted -> if (granted) apply(true) }
 
-        InfoCard {
+        SettingsCard(Icons.Outlined.Alarm, "Study reminder") {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(
                     Modifier
@@ -200,10 +196,8 @@ fun SettingsScreen(
         }
 
         // ----- Learning pace -----
-        SectionTitle("Learning pace", Icons.Outlined.Speed)
         val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
-        InfoCard {
-            Text("New words per lesson", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+        SettingsCard(Icons.Outlined.Speed, "New words per lesson") {
             Text(
                 "How many new words each lesson introduces. 10 is the sustainable default. New words " +
                     "come from lessons, so the Words tab stays a pure review of what you've learned.",
@@ -223,50 +217,32 @@ fun SettingsScreen(
             }
         }
 
-        // ----- Speech -----
-        // Follows the ACTIVE language: a French learner manages the French voice here.
+        // ----- Speech: only surfaces when something is WRONG (voice missing/unavailable).
+        // A healthy voice needs no card, and the old "Test voice" button had no utility:
+        // every speaker button in a lesson is a live test.
         val ttsLang by container.languagePrefs.selectedLanguage.collectAsState(initial = "hr")
         val voiceName = remember(ttsLang) { container.content.meta(ttsLang).name }
-        SectionTitle("$voiceName voice (TTS)", Icons.AutoMirrored.Outlined.VolumeUp)
         val ttsState by container.tts.state.collectAsState()
-        InfoCard {
-            Text(
-                when (ttsState) {
-                    TtsState.READY -> "$voiceName voice ready ✓"
-                    TtsState.LANGUAGE_MISSING -> "$voiceName voice not installed"
-                    TtsState.UNAVAILABLE -> "Text-to-speech unavailable on this device"
-                    else -> "Checking…"
-                },
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.SemiBold
-            )
-            if (ttsState == TtsState.LANGUAGE_MISSING) {
-                Button(
-                    onClick = { container.tts.promptInstallVoice() },
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Install $voiceName voice") }
-            } else {
-                OutlinedButton(
-                    onClick = {
-                        container.tts.speak(
-                            when (ttsLang) {
-                                "fr" -> "Bonjour ! Je suis Corlang."
-                                "pt" -> "Olá! Eu sou o Corlang."
-                                else -> "Dobar dan! Ja sam Corlang."
-                            }
-                        )
-                    },
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) { Text("Test voice") }
+        if (ttsState == TtsState.LANGUAGE_MISSING || ttsState == TtsState.UNAVAILABLE) {
+            SettingsCard(Icons.AutoMirrored.Outlined.VolumeUp, "$voiceName voice") {
+                Text(
+                    if (ttsState == TtsState.LANGUAGE_MISSING) "$voiceName voice not installed"
+                    else "Text-to-speech unavailable on this device",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                if (ttsState == TtsState.LANGUAGE_MISSING) {
+                    Button(
+                        onClick = { container.tts.promptInstallVoice() },
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                    ) { Text("Install $voiceName voice") }
+                }
             }
         }
 
         // ----- Haptic feedback -----
-        SectionTitle("Haptic feedback", Icons.Outlined.Vibration)
         val haptics by container.languagePrefs.hapticsStrength.collectAsState(initial = "MEDIUM")
-        InfoCard {
-            Text("Vibration on answers and card grades",
-                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+        SettingsCard(Icons.Outlined.Vibration, "Haptic feedback") {
             Text(
                 "Stronger levels are easier to feel mid-swipe at the gym. Picking one plays a sample.",
                 style = MaterialTheme.typography.bodySmall,
@@ -294,29 +270,15 @@ fun SettingsScreen(
         }
 
         // ----- Profile -----
-        SectionTitle("Profile", Icons.Outlined.Person)
-        val prof by container.languagePrefs.profile.collectAsState(
-            initial = com.corlang.app.data.prefs.LearnerProfile("", "m", "", "", "")
-        )
-        InfoCard {
+        SettingsCard(Icons.Outlined.Person, "Profile") {
             Text(
-                if (prof.name.isBlank()) "No profile yet" else prof.name,
-                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold
-            )
-            // The profile is now just a name and which word forms to use. "From / lives in" was
-            // dropped along with the onboarding step that asked for it, and the old empty-state
-            // line promised "personalized intro phrases" that no longer exist.
-            Text(
-                if (prof.name.isBlank())
-                    "Set it up so lessons can use your name and the right word forms."
-                else if (prof.gender == "f") "Female word forms"
-                else "Male word forms",
+                "Your name, word forms, learning pace and starting level.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+                modifier = Modifier.padding(bottom = 8.dp)
             )
             OutlinedButton(onClick = onEditProfile, modifier = Modifier.fillMaxWidth()) {
-                Text(if (prof.name.isBlank()) "Set up profile" else "Edit profile")
+                Text("Edit profile")
             }
             Text(
                 "Editing the profile also lets you retake the level placement test.",
@@ -327,7 +289,6 @@ fun SettingsScreen(
         }
 
         // ----- Backup & restore -----
-        SectionTitle("Backup & restore", Icons.Outlined.Save)
         var backupMsg by remember { mutableStateOf("") }
         val exportLauncher = rememberLauncherForActivityResult(
             ActivityResultContracts.CreateDocument("application/json")
@@ -369,9 +330,7 @@ fun SettingsScreen(
                 }
             }
         }
-        InfoCard {
-            Text("Save your progress to a file", style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.SemiBold)
+        SettingsCard(Icons.Outlined.Save, "Backup & restore") {
             Text(
                 "Export your streak, learned words, and lesson progress to a file you keep, then " +
                     "restore it after reinstalling or on a new phone. Restoring replaces the current " +
@@ -402,31 +361,9 @@ fun SettingsScreen(
             UpdatesSection(container)
         }
 
-        // ----- Premium -----
-        SectionTitle("Corlang Premium", Icons.Outlined.WorkspacePremium)
-        val entitled by container.premium.entitled.collectAsState(initial = false)
-        InfoCard {
-            Text(
-                if (entitled) "Active ✓" else "Coming soon",
-                style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold,
-                color = if (entitled) MaterialTheme.colorScheme.primary
-                        else MaterialTheme.colorScheme.onSurface
-            )
-            Text(
-                "Premium unlocks the AI: a conversation partner in your learning language " +
-                    "(Learn › Tutor), examiner feedback on your exam writing, and reviews of " +
-                    "your teach-back explanations (Learn › Teach). " +
-                    if (entitled) "Enjoy!"
-                    else "It arrives with the Google Play release.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 2.dp)
-            )
-        }
-
         // ----- About -----
-        SectionTitle("About", Icons.Outlined.Info)
-        InfoCard {
+        // (No Premium card here: Profile -> Get Premium is its one home.)
+        SettingsCard(Icons.Outlined.Info, "About") {
             com.corlang.app.ui.components.CorlangLogo(
                 variant = com.corlang.app.ui.components.LogoVariant.LOCKUP,
                 size = 28.dp,
@@ -469,6 +406,43 @@ fun SettingsScreen(
 }
 
 /**
+ * One settings card in the same visual language as the Profile tab's menu rows: a bordered
+ * surface, a primary-tinted icon, a semibold title, content below. Settings cards hold
+ * controls rather than navigating, so there is no chevron.
+ */
+@Composable
+private fun SettingsCard(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    title: String,
+    content: @Composable () -> Unit
+) {
+    androidx.compose.material3.Surface(
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(14.dp),
+        color = MaterialTheme.colorScheme.surface,
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp)
+    ) {
+        Column(Modifier.padding(16.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(bottom = 10.dp)
+            ) {
+                androidx.compose.material3.Icon(
+                    icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    title,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.padding(start = 14.dp)
+                )
+            }
+            content()
+        }
+    }
+}
+
+/**
  * The self-updater card (check → download → hand to the system installer). Compiled into every
  * build but only reachable in the sideload flavor (BuildConfig.ENABLE_UPDATER) — the Play flavor
  * updates through the store and carries no install permission.
@@ -476,12 +450,11 @@ fun SettingsScreen(
 @Composable
 private fun UpdatesSection(container: AppContainer) {
     val scope = rememberCoroutineScope()
-    SectionTitle("App updates", Icons.Outlined.SystemUpdate)
     var checkState by remember { mutableStateOf("") }
     var updateInfo by remember { mutableStateOf<com.corlang.app.update.ReleaseInfo?>(null) }
     var dl by remember { mutableStateOf(false) }
     var pct by remember { mutableStateOf(0) }
-    InfoCard {
+    SettingsCard(Icons.Outlined.SystemUpdate, "App updates") {
         Text(
             "Installed: v${container.updater.installedVersionName()}",
             style = MaterialTheme.typography.titleSmall,

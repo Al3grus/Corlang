@@ -169,10 +169,16 @@ private fun CorlangApp(container: AppContainer) {
         if (onboarded == true) {
             androidx.activity.compose.BackHandler { showOnboarding = false }
         }
-        OnboardingScreen(container, onFinish = { wantsPlacement ->
-            showOnboarding = false
-            if (wantsPlacement) showPlacement = true
-        })
+        OnboardingScreen(
+            container,
+            // Re-running from Settings edits the profile: intro pages skipped, the progress
+            // bar counts only the profile steps. Only the true first run gets the full intro.
+            editProfile = onboarded == true,
+            onFinish = { wantsPlacement ->
+                showOnboarding = false
+                if (wantsPlacement) showPlacement = true
+            }
+        )
         return
     }
 
