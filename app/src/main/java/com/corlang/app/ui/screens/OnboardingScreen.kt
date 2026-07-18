@@ -321,14 +321,14 @@ fun OnboardingScreen(container: AppContainer, onFinish: (wantsPlacement: Boolean
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 16.dp)
                 )
-                NextRow(
-                    enabled = true,
-                    onBack = { go(-1) },
-                    onNext = { go(+1) },
-                    // Name the destination when there is a choice to make; a single-course
-                    // build goes straight to the profile questions instead.
-                    nextLabel = if (multiLang) "Choose your language →" else "Next →"
-                )
+                // No Back here: the two intro pages carry nothing you can get wrong, so a
+                // Back button would only add a decision. Back appears from the first real
+                // question onwards, where an answer might need changing. The label names the
+                // destination; a single-course build goes straight to the profile questions.
+                Button(
+                    onClick = { go(+1) },
+                    modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
+                ) { Text(if (multiLang) "Choose your language →" else "Next →") }
             }
 
             // ---- Language choice (only when more than one course ships) ----
@@ -521,15 +521,8 @@ private fun StepFrame(title: String, subtitle: String, content: @Composable () -
 }
 
 @Composable
-private fun NextRow(
-    enabled: Boolean,
-    onBack: () -> Unit,
-    onNext: () -> Unit,
-    nextLabel: String = "Next →"
-) {
-    // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales. A long
-    // nextLabel ("Choose your language →") needs the room the other way, so Back keeps its
-    // natural width and the primary button takes the rest.
+private fun NextRow(enabled: Boolean, onBack: () -> Unit, onNext: () -> Unit) {
+    // 50/50: a 1:2 split squeezed "← Back" into wrapping at larger font scales.
     Row(modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
         OutlinedButton(onClick = onBack, modifier = Modifier.weight(1f)) {
             Text("← Back", maxLines = 1)
@@ -537,8 +530,8 @@ private fun NextRow(
         Button(
             onClick = onNext,
             enabled = enabled,
-            modifier = Modifier.weight(if (nextLabel.length > 10) 2f else 1f).padding(start = 8.dp)
-        ) { Text(nextLabel, maxLines = 1) }
+            modifier = Modifier.weight(1f).padding(start = 8.dp)
+        ) { Text("Next →", maxLines = 1) }
     }
 }
 
