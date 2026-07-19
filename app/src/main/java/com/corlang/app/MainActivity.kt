@@ -364,6 +364,14 @@ private fun CorlangApp(container: AppContainer) {
             // showed a loading frame). Language now switches only from Profile, so a fade on
             // `lang` isn't needed at all.
             composable(Dest.TODAY.route) {
+                // key(lang): a language switch tears the screen down and rebuilds it, so the
+                // first frame of the new language starts from the load-gate instead of showing
+                // one frame of the OLD language's numbers mapped onto the new plan. Without it,
+                // collectAsState retains the previous language's non-null values across the
+                // switch, the gate passes on stale data, and saveable state (viewedDay, the
+                // journey's selected level) initializes from the wrong course (field: erasing
+                // Portuguese landed a day-8 A0 Croatian learner on A1).
+                androidx.compose.runtime.key(lang) {
                 TodayScreen(
                     container, lang,
                     inLesson = inLesson,
@@ -377,10 +385,11 @@ private fun CorlangApp(container: AppContainer) {
                     },
                     onOpenPaywall = { level -> paywallLevel = level; showPaywall = true }
                 )
+                }
             }
-            composable(Dest.WORDS.route) { WordsScreen(container, lang) }
-            composable(Dest.LEARN.route) { LearnScreen(container, lang) }
-            composable(Dest.PROGRESS.route) { ProgressScreen(container, lang) }
+            composable(Dest.WORDS.route) { androidx.compose.runtime.key(lang) { WordsScreen(container, lang) } }
+            composable(Dest.LEARN.route) { androidx.compose.runtime.key(lang) { LearnScreen(container, lang) } }
+            composable(Dest.PROGRESS.route) { androidx.compose.runtime.key(lang) { ProgressScreen(container, lang) } }
             // End-of-level checkpoints, opened from the journey (Today tab). Argumented routes,
             // not tabs: each exits by popping back to wherever the journey was.
             composable("quiz/{level}") { entry ->

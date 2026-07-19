@@ -1,6 +1,6 @@
 {
-  "versionCode": 132,
-  "versionName": "0.20.79",
-  "notes": "Settings gains a Reset progress card, next to Backup on purpose. Pick a course, see exactly what would be erased, and confirm past a warning; the wipe is all-or-nothing and cannot be undone. Afterwards the app takes you to the Today page of the course you have the most progress on, or a fresh Lesson 1 if that was your only one, and the reset course offers the placement test again like a new language.",
+  "versionCode": 133,
+  "versionName": "0.20.80",
+  "notes": "Two fixes to the new reset flow. The erase dialog's buttons are now full width and stacked. And switching course, whether after a reset or from Profile, no longer shows a flash of the previous course's position: erasing Portuguese while on Croatian lesson 8 briefly landed the journey on A1 because one frame mixed the old course's numbers with the new course's plan. Each course's screens now rebuild cleanly on switch.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

@@ -426,48 +426,53 @@ fun SettingsScreen(
                     onDismissRequest = { confirmReset = null },
                     title = { Text("Erase all ${meta.name} progress?") },
                     text = {
-                        Text(
-                            "This permanently deletes $lessonsDone completed lessons, your " +
-                                "${meta.name} streak, ${words.size} words of review history, and " +
-                                "every quiz and exam result. There is no undo. The course itself " +
-                                "stays installed and starts fresh from Lesson 1."
-                        )
+                        // Actions live in the body so they can be full-width and stacked (same
+                        // pattern as the new-language dialog) instead of huddling bottom-right.
+                        Column {
+                            Text(
+                                "This permanently deletes $lessonsDone completed lessons, your " +
+                                    "${meta.name} streak, ${words.size} words of review history, " +
+                                    "and every quiz and exam result. There is no undo. The course " +
+                                    "itself stays installed and starts fresh from Lesson 1."
+                            )
+                            Button(
+                                colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.error,
+                                    contentColor = MaterialTheme.colorScheme.onError
+                                ),
+                                onClick = {
+                                    confirmReset = null
+                                    scope.launch {
+                                        // DB wipe is transactional; then the placement-era prefs,
+                                        // so a fresh start is genuinely fresh (deck offset, session
+                                        // snapshot, and the one-time placement prompt re-armed).
+                                        container.progress.resetLanguage(code)
+                                        container.languagePrefs.setPlacementDay(code, 0)
+                                        container.languagePrefs.setWordDeckStart(code, 0)
+                                        container.languagePrefs.setWordsSessionSnapshot(code, null)
+                                        container.languagePrefs.unmarkPlacementHandled(code)
+                                        // Land on the course with the most remaining progress; if
+                                        // none has any, the reset course itself at Lesson 1.
+                                        val target = container.content.availableLanguages
+                                            .filter { it != code }
+                                            .maxByOrNull {
+                                                container.progress.completedDayCount(it).first()
+                                            }
+                                            ?.takeIf {
+                                                container.progress.completedDayCount(it).first() > 0
+                                            } ?: code
+                                        onProgressReset(target)
+                                    }
+                                },
+                                modifier = Modifier.fillMaxWidth().padding(top = 20.dp)
+                            ) { Text("Erase everything") }
+                            OutlinedButton(
+                                onClick = { confirmReset = null },
+                                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                            ) { Text("Keep my progress") }
+                        }
                     },
-                    confirmButton = {
-                        Button(
-                            colors = androidx.compose.material3.ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.error,
-                                contentColor = MaterialTheme.colorScheme.onError
-                            ),
-                            onClick = {
-                                confirmReset = null
-                                scope.launch {
-                                    // DB wipe is transactional; then the placement-era prefs,
-                                    // so a fresh start is genuinely fresh (deck offset, session
-                                    // snapshot, and the one-time placement prompt re-armed).
-                                    container.progress.resetLanguage(code)
-                                    container.languagePrefs.setPlacementDay(code, 0)
-                                    container.languagePrefs.setWordDeckStart(code, 0)
-                                    container.languagePrefs.setWordsSessionSnapshot(code, null)
-                                    container.languagePrefs.unmarkPlacementHandled(code)
-                                    // Land on the course with the most remaining progress; if
-                                    // none has any, the reset course itself at Lesson 1.
-                                    val target = container.content.availableLanguages
-                                        .filter { it != code }
-                                        .maxByOrNull {
-                                            container.progress.completedDayCount(it).first()
-                                        }
-                                        ?.takeIf {
-                                            container.progress.completedDayCount(it).first() > 0
-                                        } ?: code
-                                    onProgressReset(target)
-                                }
-                            }
-                        ) { Text("Erase everything") }
-                    },
-                    dismissButton = {
-                        OutlinedButton(onClick = { confirmReset = null }) { Text("Keep my progress") }
-                    }
+                    confirmButton = {}
                 )
             }
         }
