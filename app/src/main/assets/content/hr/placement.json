@@ -1,195 +1,195 @@
 {
-  "title": "Where should you start?",
-  "intro": "A quick check that gets harder as it goes. Answer each question, or tap “I don't know” when one is too hard — the first one you can't do is your level, and we'll start you there.",
-  "questions": [
-    {
-      "level": "A0",
-      "startDay": 1,
-      "type": "MCQ",
-      "difficulty": 1,
-      "prompt": "How do you say 'thank you'?",
-      "options": [
-        "Hvala",
-        "Molim",
-        "Bok",
-        "Oprostite"
-      ],
-      "answer": "Hvala",
-      "explanation": "Hvala = thank you."
-    },
-    {
-      "level": "A0",
-      "startDay": 1,
-      "type": "MCQ",
-      "difficulty": 2,
-      "prompt": "'Ja ___ student.' (I am a student)",
-      "options": [
-        "sam",
-        "si",
-        "je",
-        "su"
-      ],
-      "answer": "sam",
-      "explanation": "biti: ja sam, ti si, on je."
-    },
-    {
-      "level": "A1",
-      "startDay": 15,
-      "type": "MCQ",
-      "difficulty": 3,
-      "prompt": "Put 'kava' into the accusative: 'Pijem ___.'",
-      "options": [
-        "kavu",
-        "kava",
-        "kave",
-        "kavom"
-      ],
-      "answer": "kavu",
-      "strictDiacritics": true,
-      "explanation": "Feminine -a becomes -u in the accusative object."
-    },
-    {
-      "level": "A1",
-      "startDay": 15,
-      "type": "MCQ",
-      "difficulty": 4,
-      "prompt": "Future tense: 'Sutra ___ raditi.' (Tomorrow I will work)",
-      "options": [
-        "ću",
-        "sam",
-        "bih",
-        "imam"
-      ],
-      "answer": "ću",
-      "strictDiacritics": true,
-      "explanation": "Futur I = ću/ćeš/će + infinitive."
-    },
-    {
-      "level": "A1",
-      "startDay": 31,
-      "type": "MCQ",
-      "difficulty": 5,
-      "prompt": "Past tense, male speaker: 'Jučer sam ___.' (worked)",
-      "options": [
-        "radio",
-        "radila",
-        "raditi",
-        "radim"
-      ],
-      "answer": "radio",
-      "strictDiacritics": true,
-      "explanation": "Perfekt participle agrees with gender: radio (m) / radila (f)."
-    },
-    {
-      "level": "A2",
-      "startDay": 61,
-      "type": "MCQ",
-      "difficulty": 6,
-      "prompt": "Genitive: 'a glass of water' = 'čaša ___.'",
-      "options": [
-        "vode",
-        "voda",
-        "vodu",
-        "vodom"
-      ],
-      "answer": "vode",
-      "strictDiacritics": true,
-      "explanation": "Feminine -a becomes -e in the genitive."
-    },
-    {
-      "level": "A2",
-      "startDay": 85,
-      "type": "MCQ",
-      "difficulty": 7,
-      "prompt": "Conditional: 'I would like a coffee.' 'Htio ___ kavu.'",
-      "options": [
-        "bih",
-        "ću",
-        "sam",
-        "bi"
-      ],
-      "answer": "bih",
-      "strictDiacritics": true,
-      "explanation": "Kondicional: bih, bi, bi, bismo, biste, bi."
-    },
-    {
-      "level": "A2",
-      "startDay": 91,
-      "type": "MCQ",
-      "difficulty": 7,
-      "prompt": "Instrumental: 'I travel by train.' 'Putujem ___.'",
-      "options": [
-        "vlakom",
-        "vlak",
-        "vlaka",
-        "vlaku"
-      ],
-      "answer": "vlakom",
-      "strictDiacritics": true,
-      "explanation": "Bare instrumental for means of transport: vlak → vlakom."
-    },
-    {
-      "level": "B1",
-      "startDay": 151,
-      "type": "MCQ",
-      "difficulty": 8,
-      "prompt": "Aspect: 'I read (and finished) the book.' Pick the verb.",
-      "options": [
-        "pročitao sam",
-        "čitao sam",
-        "čitam",
-        "čitat ću"
-      ],
-      "answer": "pročitao sam",
-      "strictDiacritics": true,
-      "explanation": "Completed whole action takes the perfective: pročitati."
-    },
-    {
-      "level": "B1",
-      "startDay": 151,
-      "type": "MCQ",
-      "difficulty": 8,
-      "prompt": "Clitic order: 'She gave it to me.'",
-      "options": [
-        "Dala mi ga je.",
-        "Dala je mi ga.",
-        "Mi ga je dala.",
-        "Je mi ga dala."
-      ],
-      "answer": "Dala mi ga je.",
-      "explanation": "Second-position clitics: aux/participle, then dat 'mi', then acc 'ga', with 'je' last."
-    },
-    {
-      "level": "B1",
-      "startDay": 181,
-      "type": "MCQ",
-      "difficulty": 9,
-      "prompt": "Passive participle: 'The shop is ___ .' (closed)",
-      "options": [
-        "zatvorena",
-        "zatvoriti",
-        "zatvara",
-        "zatvorenje"
-      ],
-      "answer": "zatvorena",
-      "strictDiacritics": true,
-      "explanation": "Passive participle agreeing with feminine 'trgovina': zatvorena."
-    },
-    {
-      "level": "B1",
-      "startDay": 201,
-      "type": "MCQ",
-      "difficulty": 9,
-      "prompt": "'Iako ___ , nastavio je raditi.' (Although [he was] tired)",
-      "options": [
-        "umoran",
-        "umorno",
-        "umorna",
-        "umornom"
-      ],
-      "answer": "umoran",
-      "strictDiacritics": true,
-      "explanation": "Masculine subject: umoran (elliptical concessive clause)."
-    }
-  ]
+ "title": "Where should you start?",
+ "intro": "A quick check that gets harder as it goes. Answer each question, or tap “I don't know” when one is too hard — the first one you can't do is your level, and we'll start you there.",
+ "questions": [
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "How do you say 'thank you'?",
+   "options": [
+    "Hvala",
+    "Molim",
+    "Bok",
+    "Oprostite"
+   ],
+   "answer": "Hvala",
+   "explanation": "Hvala = thank you."
+  },
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'Ja ___ student.' (I am a student)",
+   "options": [
+    "sam",
+    "si",
+    "je",
+    "su"
+   ],
+   "answer": "sam",
+   "explanation": "biti: ja sam, ti si, on je."
+  },
+  {
+   "level": "A1",
+   "startDay": 15,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "Put 'kava' into the accusative: 'Pijem ___.'",
+   "options": [
+    "kavu",
+    "kava",
+    "kave",
+    "kavom"
+   ],
+   "answer": "kavu",
+   "strictDiacritics": true,
+   "explanation": "Feminine -a becomes -u in the accusative object."
+  },
+  {
+   "level": "A1",
+   "startDay": 15,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "Future tense: 'Sutra ___ raditi.' (Tomorrow I will work)",
+   "options": [
+    "ću",
+    "sam",
+    "bih",
+    "imam"
+   ],
+   "answer": "ću",
+   "strictDiacritics": true,
+   "explanation": "Futur I = ću/ćeš/će + infinitive."
+  },
+  {
+   "level": "A1",
+   "startDay": 31,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "Past tense, male speaker: 'Jučer sam ___.' (worked)",
+   "options": [
+    "radio",
+    "radila",
+    "raditi",
+    "radim"
+   ],
+   "answer": "radio",
+   "strictDiacritics": true,
+   "explanation": "Perfekt participle agrees with gender: radio (m) / radila (f)."
+  },
+  {
+   "level": "A2",
+   "startDay": 61,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "Genitive: 'a glass of water' = 'čaša ___.'",
+   "options": [
+    "vode",
+    "voda",
+    "vodu",
+    "vodom"
+   ],
+   "answer": "vode",
+   "strictDiacritics": true,
+   "explanation": "Feminine -a becomes -e in the genitive."
+  },
+  {
+   "level": "A2",
+   "startDay": 85,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "Conditional: 'I would like a coffee.' 'Htio ___ kavu.'",
+   "options": [
+    "bih",
+    "ću",
+    "sam",
+    "bi"
+   ],
+   "answer": "bih",
+   "strictDiacritics": true,
+   "explanation": "Kondicional: bih, bi, bi, bismo, biste, bi."
+  },
+  {
+   "level": "A2",
+   "startDay": 91,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "Instrumental: 'I travel by train.' 'Putujem ___.'",
+   "options": [
+    "vlakom",
+    "vlak",
+    "vlaka",
+    "vlaku"
+   ],
+   "answer": "vlakom",
+   "strictDiacritics": true,
+   "explanation": "Bare instrumental for means of transport: vlak → vlakom."
+  },
+  {
+   "level": "B1",
+   "startDay": 151,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "Aspect: 'I read (and finished) the book.' Pick the verb.",
+   "options": [
+    "pročitao sam",
+    "čitao sam",
+    "čitam",
+    "čitat ću"
+   ],
+   "answer": "pročitao sam",
+   "strictDiacritics": true,
+   "explanation": "Completed whole action takes the perfective: pročitati."
+  },
+  {
+   "level": "B1",
+   "startDay": 151,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "Clitic order: 'She gave it to me.'",
+   "options": [
+    "Dala mi ga je.",
+    "Dala je mi ga.",
+    "Mi ga je dala.",
+    "Je mi ga dala."
+   ],
+   "answer": "Dala mi ga je.",
+   "explanation": "Second-position clitics: aux/participle, then dat 'mi', then acc 'ga', with 'je' last."
+  },
+  {
+   "level": "B1",
+   "startDay": 184,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Passive participle: 'The shop is ___ .' (closed)",
+   "options": [
+    "zatvorena",
+    "zatvoriti",
+    "zatvara",
+    "zatvorenje"
+   ],
+   "answer": "zatvorena",
+   "strictDiacritics": true,
+   "explanation": "Passive participle agreeing with feminine 'trgovina': zatvorena."
+  },
+  {
+   "level": "B1",
+   "startDay": 207,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "'Iako ___ , nastavio je raditi.' (Although [he was] tired)",
+   "options": [
+    "umoran",
+    "umorno",
+    "umorna",
+    "umornom"
+   ],
+   "answer": "umoran",
+   "strictDiacritics": true,
+   "explanation": "Masculine subject: umoran (elliptical concessive clause)."
+  }
+ ]
 }

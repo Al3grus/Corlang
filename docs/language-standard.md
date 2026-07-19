@@ -30,6 +30,10 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
 | `placement.json` | yes | maps score → plan day + level |
 | `cheatsheet.json`, `feynman.json`, `resources.json` | yes | reference + teach-back + curated links |
 
+- **[AUTO] A course ships at least 250 lessons.** CEFR guided-hours estimates put B2 at roughly
+  550 to 600 hours; a ~100-lesson course cannot honestly carry a learner to its exam (French and
+  Portuguese shipped at 108 and 105 before this floor). Suggested shape for a B2 target:
+  A1 45, A2 55, B1 70, B2 80. A separate onramp level (A0) sits on top of that.
 - **Every CEFR level (A1 and up) ends in the three journey checkpoints**: a level quiz
   (`quizzes.json`, one per level), an exam readiness milestone (`exam` object on the level in
   `levels.json`: name, pass rule, section list, can-do skills), and a mock exam in the official
