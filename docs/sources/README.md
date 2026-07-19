@@ -34,6 +34,21 @@ source key, it doesn't ship.
 Keys may be added by adding a row here and a digest file, and extending the known-keys set in
 `ContentValidationTest`.
 
+### German (de) — target Goethe-Zertifikat B1 (citizenship / settlement level)
+
+German at **B1** is the legal bar for naturalisation (§ 10 StAG) and the settlement permit, and
+is why the Corlang German course ends there. Standard German is taught; Austrian and Swiss
+divergences are noted contrastively, never mixed in.
+
+| Key | Source | Digest |
+|-----|--------|--------|
+| `goethe-a1` | Goethe-Institut, *Goethe-Zertifikat A1: Start Deutsch 1*, Prüfungsziele/Testbeschreibung (4-part exam, 60% overall) | [goethe-exams.md](goethe-exams.md) |
+| `goethe-a2` | Goethe-Institut, *Goethe-Zertifikat A2*, exam description (4 parts, 25 points each, 60/100 to pass) | [goethe-exams.md](goethe-exams.md) |
+| `goethe-b1` | Goethe-Institut, *Goethe-Zertifikat B1*, exam description (modular; 60% required in EVERY module) | [goethe-exams.md](goethe-exams.md) |
+| `telc-b1` | telc, *Zertifikat Deutsch / telc Deutsch B1* exam description (non-modular alternative accepted for citizenship) | [goethe-exams.md](goethe-exams.md) |
+| `goethe-wortliste` | Goethe-Institut official *Wortliste* A1/A2/B1, the per-level lexical inventory anchoring the deck's level banding | [goethe-exams.md](goethe-exams.md) |
+| `stag-10` | Staatsangehörigkeitsgesetz § 10, the statutory B1 language requirement for naturalisation | [goethe-exams.md](goethe-exams.md) |
+
 ### Portuguese, European (pt) — target DIPLE B2 (CAPLE), milestone DEPLE B1
 
 Corlang teaches **Português europeu (pt-PT)** exclusively — most platforms only offer Brazilian

@@ -55,7 +55,9 @@ class ContentValidationTest {
         "referentiel-fr", "francais-fondamental", "freq-fr",
         // Portuguese, European (DIPLE B2 target)
         "qecr", "caple", "deple-sample", "diple-sample",
-        "referencial-camoes", "portugues-fundamental", "freq-pt"
+        "referencial-camoes", "portugues-fundamental", "freq-pt",
+        // German (Goethe-Zertifikat B1 target, the citizenship / settlement level)
+        "goethe-a1", "goethe-a2", "goethe-b1", "telc-b1", "goethe-wortliste", "stag-10"
     )
 
     private fun read(lang: String, file: String): String =
