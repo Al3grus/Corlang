@@ -206,16 +206,57 @@ Open questions the literature does NOT answer for us (our gate/field-testing mus
 
 ---
 
+## 7. Voice, wording and boundaries (field sweep 2026-07-18/19)
+
+Every rule here came out of a real defect found while dogfooding the shipped courses. The two
+mechanically-checkable ones are enforced by ContentValidationTest and marked [AUTO]; the rest
+are authoring discipline a new language must follow from its first line.
+
+- **[AUTO] App-only content: a lesson NEVER sends the learner elsewhere to study.** No URLs,
+  no course sites, no sign-in instructions, no named institutions (exam bodies included), no
+  competitor apps — anywhere in learner-visible content. `resources.json` (Profile →
+  References) is the ONE sanctioned home for external material. Named-media immersion habits
+  ("watch the evening news") are fine; courses/sites/apps are not. Runtime backstop:
+  SessionPlayer's `isExternal` filter drops any drill that slips through.
+  (Field: lesson 1 of Croatian opened with "Sign in at a1.ffzg.unizg.hr and do Unit 1" —
+  the entire hr plan had been authored around an external e-course; 300+ references purged.)
+- **[AUTO] Course positions are "lesson N", never "day N"** — in content text exactly as in
+  the UI. Learners do not necessarily study daily. Calendar durations keep "day" ("a 7-day
+  streak"); they put the number first and the gate never matches them.
+- **The exam is described generically.** What passing requires (pass rules, section shapes)
+  is exam knowledge and belongs in content; WHO administers it and where to register does not.
+  (Field: a quiz whose correct answer was an institution's course URL.)
+- **Pro-drop languages: write recall/FILL targets either bare or pronoun-ful, and add the
+  other form to `accepted` ONLY when it is grammatical.** The grader already accepts
+  gloss-licensed pronoun variants ("I work" → both "radim" and "ja radim") and refuses
+  wrong-person pronouns. The trap is clitics: never author a naive pronoun-prepend across a
+  second-position clitic ("Šaljem ti poruku" + ja must become "Ja ti šaljem poruku", so no
+  variant is added at all). French is not pro-drop; write full sentences.
+- **Claims made to the learner must match shipped content.** "A mock exam after every level"
+  was false (mocks exist at A1/A2/B1 hr, B1/B2 pt/fr) and became "mock exams in the official
+  exam format". Before writing any coverage claim, count the files.
+- **No em or en dashes in learner-visible strings.** Commas, or split the sentence. Hyphens
+  inside compounds ("spaced-repetition") are fine.
+- **Strictness is explained in plain words, not jargon.** The answer box says "Write your
+  answer"; never "(diacritics count!)" — a beginner does not know the word.
+- **Collect nothing a feature does not consume.** Onboarding asks course, name (used by the
+  reminder greeting + tutor prompt), word forms, pace, level — and nothing else. The
+  where-are-you-from step died because nothing read it. A new language adds NO profile
+  questions unless something consumes the answer the day it ships.
+
 ## New-language launch checklist (condensed)
 
 ```
 [ ] Content folder complete (§1) — build green = structure + leak gates pass [AUTO]
 [ ] Exercise authoring rules reviewed on a content sample (§2) [HUMAN]
+[ ] Voice/boundary rules hold (§7): app-only content + lesson-not-day pass [AUTO];
+    exam described generically, claims counted against files, pro-drop accepted
+    variants grammatical, no dashes, no unconsumed data [HUMAN]
 [ ] Code wiring: availableLanguages, SpeechLocales, ExamRules, varietyRules,
     seedGreeting/opener, placement deck gating (§3)
 [ ] AI eval suite run & passed: zero false corrections, zero variety bleed (§4) [SCRIPT]
 [ ] Native content review done + corrections applied (§5) [HUMAN]
 [ ] Native AI spot-check done (§5) [HUMAN]
 [ ] TTS spot-check on device (§5) [HUMAN]
-[ ] Field test days 1–2 by a real learner (§5) [HUMAN]
+[ ] Field test lessons 1–2 by a real learner (§5) [HUMAN]
 ```
