@@ -70,6 +70,43 @@ class WordsRepository(
         }
     }
 
+    /**
+     * Queues one CEFR level's vocabulary for REVIEW after a placement test.
+     *
+     * Placement is a dozen questions and cannot verify the thousand-odd words it skips past, so
+     * a learner placed into B1 is assumed to know A2 rather than proven to. These words are
+     * therefore seeded as due-today review cards, never as new words: the learner is checked on
+     * them instead of being taught them, anything they have actually forgotten fails its first
+     * card and re-enters normal FSRS scheduling, and the daily review limit keeps the resulting
+     * backlog bounded. Words already introduced are left untouched.
+     *
+     * Returns how many cards were queued, so the caller can tell the learner.
+     */
+    suspend fun seedLevelForReview(
+        lang: String,
+        level: String,
+        today: Long = todayEpochDay()
+    ): Int {
+        val seen = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()
+        val words = content.vocab(lang).packs
+            .filter { it.level.equals(level, ignoreCase = true) }
+            .flatMap { it.words }
+            .filter { it.id !in seen }
+        words.forEach {
+            // A fresh card due today: the first grading runs the normal first-review path, so a
+            // half-remembered word gets a short interval and a solid one a long jump.
+            dao.upsertWordReview(
+                WordReview(
+                    langCode = lang,
+                    wordId = it.id,
+                    introducedEpochDay = today,
+                    dueEpochDay = today
+                )
+            )
+        }
+        return words.size
+    }
+
     /** Persists one grading. Returns the updated review state. */
     suspend fun grade(
         lang: String,
@@ -86,5 +123,17 @@ class WordsRepository(
 
     companion object {
         fun todayEpochDay(): Long = LocalDate.now().toEpochDay()
+
+        /** The CEFR ladder, low to high. A0 is an optional onramp some courses provide. */
+        private val LADDER = listOf("A0", "A1", "A2", "B1", "B2", "C1")
+
+        /**
+         * The CEFR level immediately below [level], or null at the bottom of the ladder or for
+         * an unrecognised level. Pure, so the placement seeding rule is unit-testable.
+         */
+        fun levelBelow(level: String): String? {
+            val i = LADDER.indexOfFirst { it.equals(level, ignoreCase = true) }
+            return if (i > 0) LADDER[i - 1] else null
+        }
     }
 }
