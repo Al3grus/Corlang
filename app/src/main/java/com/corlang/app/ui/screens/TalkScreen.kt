@@ -350,6 +350,12 @@ private fun starters(lang: String): List<String> = when (lang) {
         "Pose-moi une question facile.",
         "Corrige mes erreurs, s'il te plaît."
     )
+    "de" -> listOf(
+        "Hallo! Wie geht es dir?",
+        "Können wir üben, einen Kaffee zu bestellen?",
+        "Stell mir eine leichte Frage.",
+        "Korrigiere bitte meine Fehler."
+    )
     else -> listOf("Hello! How are you?")
 }
 
@@ -358,6 +364,7 @@ private fun composerHint(lang: String): String = when (lang) {
     "hr" -> "Piši na hrvatskom…"
     "pt" -> "Escreve em português…"
     "fr" -> "Écris en français…"
+    "de" -> "Schreib auf Deutsch…"
     else -> "Write in your learning language…"
 }
 
@@ -376,6 +383,7 @@ fun seedGreeting(lang: String): String = when (lang) {
     "hr" -> "Bok! Ja sam tvoj hrvatski tutor. Možemo razgovarati o čemu god želiš — polako i jednostavno. Kako si danas?"
     "pt" -> "Olá! Sou o teu tutor de português europeu. Podemos falar sobre o que quiseres — com calma e frases simples. Como estás hoje?"
     "fr" -> "Bonjour ! Je suis ton tuteur de français. On peut parler de ce que tu veux — doucement et simplement. Comment vas-tu aujourd'hui ?"
+    "de" -> "Hallo! Ich bin dein Deutschtutor. Wir können über alles reden, was du möchtest, ganz langsam und mit einfachen Sätzen. Wie geht es dir heute?"
     else -> "Hi! I'm your language tutor. We can talk about anything you like — slowly and simply. How are you today?"
 }
 
@@ -383,6 +391,7 @@ private fun seedOpener(lang: String): String = when (lang) {
     "hr" -> "Bok!"
     "pt" -> "Olá!"
     "fr" -> "Bonjour !"
+    "de" -> "Hallo!"
     else -> "Hello!"
 }
 
@@ -415,6 +424,21 @@ private fun varietyRules(lang: String): String = when (lang) {
     - You speak standard metropolitan French, as tested by the DELF exams.
     - If the student's sentence is ALREADY correct, do not invent a correction — confirm it's
       right and continue.""".trimIndent()
+    "de" -> """
+    - You speak STANDARD GERMAN (Standarddeutsch, Bundesrepublik), as tested by the
+      Goethe-Zertifikat and telc exams. Use the standard forms: ich habe/bin as the perfect
+      auxiliary per verb (NOT the southern 'ich bin gesessen/gestanden/gelegen'), 'am Samstag'
+      style prepositions, and standard vocabulary (Brötchen, Tüte, Sahne, Januar, Tschüss).
+    - Austrian and Swiss forms are NOT errors in their own countries, but they are not what this
+      course teaches: if the student uses Jänner, Sackerl, Obers, Grüß Gott, Velo or Rüebli,
+      say plainly that it is Austrian or Swiss and give the standard German equivalent, rather
+      than marking it simply wrong.
+    - Swiss German drops the ß entirely; this course writes ß where the standard requires it
+      (Straße, groß, heißen), and after a short vowel writes ss (dass, muss, Fluss).
+    - Never mix in English words a German speaker would not use, and keep capitalisation of
+      nouns correct, since that is what an exam corrector checks first.
+    - If the student's sentence is ALREADY correct standard German, do not invent a correction,
+      confirm it is right and continue. Never "correct" a correct form.""".trimIndent()
     else -> "- If the student's sentence is already correct, say so — never invent corrections."
 }
 

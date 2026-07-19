@@ -93,6 +93,21 @@ object ExamRules {
         val pct = sections.map { (score, total) -> if (total <= 0) 0.0 else score * 100.0 / total }
         return pct.average() >= 55.0
     }
+
+    /**
+     * Goethe-Zertifikat A1 and A2 rule (verified 2026-07: goethe-a1, goethe-a2): the four parts
+     * are NOT modular, they are graded together and carry equal weight, and 60 of 100 points
+     * passes. With equal weighting that is the average of the section percentages.
+     *
+     * B1 deliberately does NOT use this: the Goethe B1 is modular and requires 60% in EVERY
+     * module, which is [examPassed] over sections whose own passPercent is 60. A learner who
+     * clears that also clears telc's separate 60% written and 60% oral thresholds.
+     */
+    fun goetheGlobalPassed(sections: List<Pair<Int, Int>>): Boolean {
+        if (sections.isEmpty()) return false
+        val pct = sections.map { (score, total) -> if (total <= 0) 0.0 else score * 100.0 / total }
+        return pct.average() >= 60.0
+    }
 }
 
 /**
@@ -168,9 +183,12 @@ private fun ExamOverview(
     // CAPLE mocks (Portuguese ACESSO/CIPLE/DEPLE/DIPLE) apply the ≥55% Suficiente global-average
     // rule. Scored sections use their score/total; self-assessed (writing/speaking) map
     // pass->20/25, fail/unattempted->0/25. Other exams (Croatian NN) keep all-sections-passed.
+    // Goethe A1/A2 are non-modular: equal-weight parts, 60 of 100 overall. Goethe B1 is
+    // modular and needs 60% in EVERY module, so it falls through to the all-sections rule.
     val isDelf = exam.id.contains("delf")
     val isCaple = exam.id.contains("deple") || exam.id.contains("diple") ||
         exam.id.contains("ciple") || exam.id.contains("acesso")
+    val isGoetheGlobal = exam.id.contains("goethe-a1") || exam.id.contains("goethe-a2")
     val sectionScores = exam.sections.map { s ->
         val a = latestBySection[s.id]
         when {
@@ -182,6 +200,7 @@ private fun ExamOverview(
     val verdict = when {
         isDelf -> ExamRules.delfPassed(sectionScores)
         isCaple -> ExamRules.caplePassed(sectionScores)
+        isGoetheGlobal -> ExamRules.goetheGlobalPassed(sectionScores)
         else -> ExamRules.examPassed(
             exam.sections.map { it.id },
             latestBySection.mapValues { it.value.passed }
