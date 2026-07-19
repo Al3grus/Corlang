@@ -225,7 +225,7 @@ fun ExerciseActivity(
             QuestionType.FILL -> OutlinedTextField(
                 value = fillText,
                 onValueChange = { if (!checked) fillText = it },
-                label = { Text(if (q.strictDiacritics) "Type it (diacritics count!)" else "Type it") },
+                label = { Text(if (q.strictDiacritics) "Type it, accents are graded" else "Type it") },
                 enabled = !checked,
                 modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
             )

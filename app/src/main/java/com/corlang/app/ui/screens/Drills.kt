@@ -273,7 +273,19 @@ private fun RecallRunner(
         OutlinedTextField(
             value = input,
             onValueChange = { if (!checked) input = it },
-            label = { Text("$languageName (diacritics count!)") },
+            label = { Text(languageName) },
+            // Plain words instead of "(diacritics count!)": a beginner does not know the term,
+            // and the point is simply that accents are graded here, like on the real exam.
+            supportingText = {
+                Text(
+                    when (langCode) {
+                        "hr" -> "Write the accents: š and s are different letters."
+                        "pt" -> "Write the accents: ã and a are different letters."
+                        "fr" -> "Write the accents: é and e are different letters."
+                        else -> "Accent marks are graded."
+                    }
+                )
+            },
             enabled = !checked,
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
         )
