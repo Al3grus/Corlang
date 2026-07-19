@@ -149,6 +149,12 @@ fun LevelJourney(
                 val target = (nodeCentre - viewportPx / 2f).coerceAtLeast(0f).toInt()
                 if (positioned.value) journeyScroll.animateScrollTo(target)
                 else { journeyScroll.scrollTo(target); positioned.value = true }
+            } else {
+                // Browsing a level that does NOT contain the current lesson: start at its
+                // first stone. Without this the scroll kept the previous level's offset and
+                // opened mid-path.
+                journeyScroll.scrollTo(0)
+                positioned.value = true
             }
         }
 

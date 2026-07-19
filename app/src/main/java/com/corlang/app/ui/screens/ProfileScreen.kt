@@ -147,7 +147,9 @@ private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -
     Column(Modifier.fillMaxSize()) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth().padding(start = 4.dp, top = 4.dp, end = 16.dp)
+            // top = 16 mirrors the Settings screen, whose whole column carries 16dp padding;
+            // 4dp here left these headers sitting visibly higher than the Settings one.
+            modifier = Modifier.fillMaxWidth().padding(start = 4.dp, top = 16.dp, end = 16.dp)
         ) {
             // A bare arrow, no box or text: system back works too, this is just the visible way.
             IconButton(onClick = onBack) {

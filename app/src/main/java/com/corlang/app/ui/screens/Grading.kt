@@ -186,6 +186,51 @@ object Grading {
         return expanded.any { canon(it) == c }
     }
 
+    /*
+     * Teach-back rubric matching: does the learner's own-words explanation cover a rubric
+     * point? Offline and instant, replacing both the self-tick checkboxes (people tick what
+     * they meant, not what they wrote) and the AI-review button (retappable = token drain).
+     * Heuristic: a point is covered when enough of its SALIENT terms (content words, numbers,
+     * percentages; stopwords dropped) appear in the explanation, with a small stem tolerance
+     * so "ending"/"endings" and "phonetic"/"phonetics" match.
+     */
+    private val STOPWORDS = setOf(
+        "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
+        "of", "to", "in", "on", "for", "it", "its", "and", "or", "with", "that", "this",
+        "these", "those", "you", "your", "as", "by", "at", "has", "have", "had", "not",
+        "no", "from", "like", "when", "what", "which", "how", "they", "their", "them",
+        "there", "then", "than", "but", "can", "will", "just", "so", "we", "our", "one",
+        "two", "all", "every", "each", "only", "always", "never", "into", "about", "over",
+        "after", "before", "more", "most", "some", "any", "if", "do", "does", "did", "use",
+        "used", "uses", "get", "gets", "means", "way", "same", "also", "very", "make",
+        "makes", "say", "says", "word", "words"
+    )
+
+    private fun salientTokens(s: String): List<String> =
+        normalize(s).split(" ")
+            .filter { it.length >= 3 || it.any(Char::isDigit) }
+            .filter { it !in STOPWORDS }
+            .distinct()
+
+    private fun tokenMatches(a: String, b: String): Boolean {
+        if (a == b) return true
+        // Stem tolerance: one is a prefix of the other with at least 4 shared chars.
+        val shared = minOf(a.length, b.length)
+        return shared >= 4 && (a.startsWith(b) || b.startsWith(a))
+    }
+
+    /** True if [explanation] covers enough of [point]'s salient terms to count as taught. */
+    fun coversRubricPoint(point: String, explanation: String): Boolean {
+        val pointTokens = salientTokens(point)
+        if (pointTokens.isEmpty()) return explanation.isNotBlank()
+        val explTokens = salientTokens(explanation)
+        val hits = pointTokens.count { p -> explTokens.any { e -> tokenMatches(p, e) } }
+        val needed =
+            if (pointTokens.size <= 2) pointTokens.size
+            else maxOf(2, (pointTokens.size * 2 + 4) / 5)   // ceil(size * 0.4)
+        return hits >= needed
+    }
+
     /** Convenience for simple MCQ/FILL grading used by the quiz runner. */
     fun isCorrect(q: Question, response: String): Boolean = when (q.type) {
         QuestionType.MCQ -> gradeMcq(q, response)
