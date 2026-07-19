@@ -1,0 +1,917 @@
+{
+ "packs": [
+  {
+   "id": "28-b2-law-economy-science",
+   "title": "B2: direito, economia e ciência",
+   "level": "B2",
+   "sources": [
+    "referencial-camoes",
+    "portugues-fundamental"
+   ],
+   "words": [
+    {
+     "id": "acórdão",
+     "hr": "acórdão",
+     "en": "ruling, judgment of a higher court",
+     "pos": "n. m.",
+     "note": "decisão de um tribunal coletivo ou superior, ao contrário da sentença de um juiz singular",
+     "example": {
+      "target": "O acórdão do tribunal da relação deu razão aos trabalhadores.",
+      "gloss": "The appeal court's ruling found in favour of the workers."
+     }
+    },
+    {
+     "id": "ónus",
+     "hr": "ónus",
+     "en": "burden, onus",
+     "pos": "n. m.",
+     "note": "invariável no plural; muito frequente em ónus da prova",
+     "example": {
+      "target": "O ónus da prova cabe a quem faz a acusação.",
+      "gloss": "The burden of proof lies with whoever makes the accusation."
+     }
+    },
+    {
+     "id": "recurso",
+     "hr": "recurso",
+     "en": "appeal",
+     "pos": "n. m.",
+     "note": "interpor recurso de uma decisão; também significa meio ou recurso natural",
+     "example": {
+      "target": "A defesa já anunciou que vai interpor recurso da decisão.",
+      "gloss": "The defence has already announced it will appeal the decision."
+     }
+    },
+    {
+     "id": "litígio",
+     "hr": "litígio",
+     "en": "dispute, litigation",
+     "pos": "n. m.",
+     "note": "resolver um litígio por via judicial ou por arbitragem",
+     "example": {
+      "target": "As duas empresas estão a tentar resolver o litígio fora dos tribunais.",
+      "gloss": "The two companies are trying to settle the dispute out of court."
+     }
+    },
+    {
+     "id": "taxativo",
+     "hr": "taxativo",
+     "en": "exhaustive, categorical",
+     "pos": "adj.",
+     "note": "uma lista taxativa não admite acrescentos; também se diz de quem fala sem deixar margem para dúvidas",
+     "example": {
+      "target": "A lei apresenta uma lista taxativa dos casos em que a isenção se aplica.",
+      "gloss": "The law sets out an exhaustive list of the cases in which the exemption applies."
+     }
+    },
+    {
+     "id": "revogar",
+     "hr": "revogar",
+     "en": "to repeal, to revoke",
+     "pos": "v.",
+     "note": "revoga-se uma lei, uma licença ou uma decisão anterior",
+     "example": {
+      "target": "O parlamento revogou o diploma aprovado no ano passado.",
+      "gloss": "Parliament repealed the law passed last year."
+     }
+    },
+    {
+     "id": "jurisprudência",
+     "hr": "jurisprudência",
+     "en": "case law",
+     "pos": "n. f.",
+     "note": "conjunto das decisões dos tribunais sobre uma matéria",
+     "example": {
+      "target": "A jurisprudência recente tem sido favorável aos consumidores.",
+      "gloss": "Recent case law has been favourable to consumers."
+     }
+    },
+    {
+     "id": "instaurar",
+     "hr": "instaurar",
+     "en": "to open, to bring (proceedings)",
+     "pos": "v.",
+     "note": "instaurar um processo, um inquérito ou uma ação",
+     "example": {
+      "target": "O ministério público instaurou um inquérito à gestão da empresa.",
+      "gloss": "The public prosecutor opened an investigation into the company's management."
+     }
+    },
+    {
+     "id": "queixa",
+     "hr": "queixa",
+     "en": "complaint, formal report to the police",
+     "pos": "n. f.",
+     "note": "apresentar queixa é o passo formal; queixar-se é o verbo do dia-a-dia",
+     "example": {
+      "target": "Os moradores apresentaram queixa por causa do ruído noturno.",
+      "gloss": "The residents filed a complaint because of the night-time noise."
+     }
+    },
+    {
+     "id": "prescrever",
+     "hr": "prescrever",
+     "en": "to lapse, to become time-barred",
+     "pos": "v.",
+     "note": "em direito, perder validade por decurso do prazo; em medicina, receitar",
+     "example": {
+      "target": "O crime prescreveu antes de o julgamento começar.",
+      "gloss": "The offence became time-barred before the trial began."
+     }
+    },
+    {
+     "id": "lesado",
+     "hr": "lesado",
+     "en": "injured party, harmed",
+     "pos": "adj.",
+     "note": "usa-se também como nome: os lesados do banco",
+     "example": {
+      "target": "Os clientes lesados vão receber parte do dinheiro em setembro.",
+      "gloss": "The customers who lost out will get part of the money back in September."
+     }
+    },
+    {
+     "id": "morosidade",
+     "hr": "morosidade",
+     "en": "slowness, sluggishness",
+     "pos": "n. f.",
+     "note": "quase sempre com sentido crítico: a morosidade da justiça",
+     "example": {
+      "target": "A morosidade dos tribunais afasta muita gente de avançar com uma ação.",
+      "gloss": "The slowness of the courts puts many people off bringing a case."
+     }
+    },
+    {
+     "id": "burocracia",
+     "hr": "burocracia",
+     "en": "bureaucracy, red tape",
+     "pos": "n. f.",
+     "note": "no plural, tratar das burocracias significa tratar dos papéis",
+     "example": {
+      "target": "Abrir uma empresa já envolve muito menos burocracia do que há dez anos.",
+      "gloss": "Setting up a company now involves far less red tape than ten years ago."
+     }
+    },
+    {
+     "id": "tramitação",
+     "hr": "tramitação",
+     "en": "processing, procedural steps",
+     "pos": "n. f.",
+     "note": "tramitação de um processo, do pedido à decisão final",
+     "example": {
+      "target": "A tramitação do processo demora, em média, seis meses.",
+      "gloss": "Processing the case takes six months on average."
+     }
+    },
+    {
+     "id": "fiscalização",
+     "hr": "fiscalização",
+     "en": "inspection, monitoring, enforcement",
+     "pos": "n. f.",
+     "note": "ações de fiscalização são as operações no terreno",
+     "example": {
+      "target": "A fiscalização apanhou várias obras sem licença no centro histórico.",
+      "gloss": "Inspectors found several unlicensed building works in the historic centre."
+     }
+    },
+    {
+     "id": "licenciamento",
+     "hr": "licenciamento",
+     "en": "licensing, permit process",
+     "pos": "n. m.",
+     "note": "licenciamento de obras, industrial ou ambiental",
+     "example": {
+      "target": "O licenciamento das obras foi simplificado no ano passado.",
+      "gloss": "The permit process for building works was simplified last year."
+     }
+    },
+    {
+     "id": "abrangido",
+     "hr": "abrangido",
+     "en": "covered, included (by a rule)",
+     "pos": "adj.",
+     "note": "estar abrangido por uma lei, por um acordo ou por um apoio",
+     "example": {
+      "target": "Os contratos a prazo também estão abrangidos por esta medida.",
+      "gloss": "Fixed-term contracts are also covered by this measure."
+     }
+    },
+    {
+     "id": "isenção",
+     "hr": "isenção",
+     "en": "exemption; impartiality",
+     "pos": "n. f.",
+     "note": "isenção de taxas; num segundo sentido, isenção significa imparcialidade",
+     "example": {
+      "target": "As famílias com menores rendimentos têm isenção do pagamento das taxas.",
+      "gloss": "Lower-income families are exempt from paying the charges."
+     }
+    },
+    {
+     "id": "atribuição",
+     "hr": "atribuição",
+     "en": "granting, award; remit",
+     "pos": "n. f.",
+     "note": "no plural, as atribuições de um organismo são as suas competências",
+     "example": {
+      "target": "A atribuição das bolsas será anunciada até ao fim do mês.",
+      "gloss": "The award of the grants will be announced by the end of the month."
+     }
+    },
+    {
+     "id": "vinculativo",
+     "hr": "vinculativo",
+     "en": "binding",
+     "pos": "adj.",
+     "note": "um parecer pode ser vinculativo ou meramente indicativo",
+     "example": {
+      "target": "O parecer da comissão não é vinculativo, mas pesa na decisão.",
+      "gloss": "The committee's opinion is not binding, but it carries weight in the decision."
+     }
+    },
+    {
+     "id": "delegar",
+     "hr": "delegar",
+     "en": "to delegate",
+     "pos": "v.",
+     "note": "delegar competências em alguém",
+     "example": {
+      "target": "O presidente delegou parte das competências no vice-presidente.",
+      "gloss": "The chair delegated some of his powers to the deputy chair."
+     }
+    },
+    {
+     "id": "alavancar",
+     "hr": "alavancar",
+     "en": "to leverage, to boost",
+     "pos": "v.",
+     "note": "muito usado na linguagem económica e empresarial",
+     "example": {
+      "target": "O turismo ajudou a alavancar a economia da região.",
+      "gloss": "Tourism helped to boost the region's economy."
+     }
+    },
+    {
+     "id": "auferir",
+     "hr": "auferir",
+     "en": "to earn, to receive (income)",
+     "pos": "v.",
+     "note": "registo formal; usa-se sobretudo com rendimentos e salários",
+     "example": {
+      "target": "Quem aufere o salário mínimo não paga este imposto.",
+      "gloss": "Those earning the minimum wage do not pay this tax."
+     }
+    },
+    {
+     "id": "contrapartida",
+     "hr": "contrapartida",
+     "en": "trade-off, quid pro quo",
+     "pos": "n. f.",
+     "note": "em contrapartida funciona como conector de contraste",
+     "example": {
+      "target": "O apoio foi concedido sem qualquer contrapartida para as empresas.",
+      "gloss": "The support was granted without anything being asked of the companies in return."
+     }
+    },
+    {
+     "id": "endividamento",
+     "hr": "endividamento",
+     "en": "indebtedness, debt levels",
+     "pos": "n. m.",
+     "note": "endividamento das famílias, público ou externo",
+     "example": {
+      "target": "O endividamento das famílias voltou a subir no último trimestre.",
+      "gloss": "Household debt rose again in the last quarter."
+     }
+    },
+    {
+     "id": "juro",
+     "hr": "juro",
+     "en": "interest (on money)",
+     "pos": "n. m.",
+     "note": "quase sempre no plural: taxa de juro, juros altos",
+     "example": {
+      "target": "Com os juros a descer, a prestação da casa ficou mais leve.",
+      "gloss": "With interest rates falling, the mortgage payment became easier to bear."
+     }
+    },
+    {
+     "id": "excedente",
+     "hr": "excedente",
+     "en": "surplus",
+     "pos": "n. m.",
+     "note": "contrário de défice; também adjetivo, com o sentido de sobrante",
+     "example": {
+      "target": "O país fechou o ano com um pequeno excedente orçamental.",
+      "gloss": "The country ended the year with a small budget surplus."
+     }
+    },
+    {
+     "id": "rentabilidade",
+     "hr": "rentabilidade",
+     "en": "profitability, return",
+     "pos": "n. f.",
+     "note": "rentabilidade de um investimento ou de um negócio",
+     "example": {
+      "target": "A rentabilidade deste depósito mal cobre a inflação.",
+      "gloss": "The return on this deposit barely covers inflation."
+     }
+    },
+    {
+     "id": "cabaz",
+     "hr": "cabaz",
+     "en": "basket (of goods)",
+     "pos": "n. m.",
+     "note": "cabaz alimentar ou cabaz de compras nos textos sobre preços",
+     "example": {
+      "target": "O cabaz de compras de uma família média subiu quinze euros.",
+      "gloss": "The shopping basket of an average family went up by fifteen euros."
+     }
+    },
+    {
+     "id": "tributação",
+     "hr": "tributação",
+     "en": "taxation",
+     "pos": "n. f.",
+     "note": "tributar é o verbo; tributação autónoma é um termo fiscal frequente",
+     "example": {
+      "target": "A tributação dos lucros das empresas vai mudar já no próximo ano.",
+      "gloss": "The taxation of company profits will change as soon as next year."
+     }
+    },
+    {
+     "id": "amortizar",
+     "hr": "amortizar",
+     "en": "to pay off, to amortise",
+     "pos": "v.",
+     "note": "amortizar um empréstimo antes do prazo",
+     "example": {
+      "target": "Decidimos amortizar parte do crédito da casa com as poupanças.",
+      "gloss": "We decided to pay off part of the mortgage with our savings."
+     }
+    },
+    {
+     "id": "depreciar",
+     "hr": "depreciar",
+     "en": "to depreciate, to lose value",
+     "pos": "v.",
+     "note": "também significa desvalorizar alguém com palavras",
+     "example": {
+      "target": "Um carro novo deprecia bastante no primeiro ano.",
+      "gloss": "A new car loses a lot of value in the first year."
+     }
+    },
+    {
+     "id": "volátil",
+     "hr": "volátil",
+     "en": "volatile",
+     "pos": "adj.",
+     "note": "mercados voláteis; o nome é volatilidade",
+     "example": {
+      "target": "O mercado continua volátil e ninguém arrisca previsões.",
+      "gloss": "The market remains volatile and nobody is risking any forecasts."
+     }
+    },
+    {
+     "id": "conjuntura",
+     "hr": "conjuntura",
+     "en": "economic climate, current situation",
+     "pos": "n. f.",
+     "note": "conjuntura é passageira, estrutura é de fundo",
+     "example": {
+      "target": "Na atual conjuntura, poucas empresas estão dispostas a investir.",
+      "gloss": "In the current climate, few companies are willing to invest."
+     }
+    },
+    {
+     "id": "arrecadar",
+     "hr": "arrecadar",
+     "en": "to collect (revenue), to take in",
+     "pos": "v.",
+     "note": "o Estado arrecada impostos; uma equipa arrecada títulos",
+     "example": {
+      "target": "O Estado arrecadou mais mil milhões de euros em impostos.",
+      "gloss": "The state collected a further billion euros in taxes."
+     }
+    },
+    {
+     "id": "vínculo",
+     "hr": "vínculo",
+     "en": "employment tie, bond",
+     "pos": "n. m.",
+     "note": "vínculo laboral, vínculo efetivo, sem vínculo",
+     "example": {
+      "target": "Ao fim de cinco anos, conseguiu finalmente um vínculo estável.",
+      "gloss": "After five years, she finally got a stable employment contract."
+     }
+    },
+    {
+     "id": "remuneração",
+     "hr": "remuneração",
+     "en": "pay, remuneration",
+     "pos": "n. f.",
+     "note": "termo formal para o conjunto do que se recebe pelo trabalho",
+     "example": {
+      "target": "A remuneração base não inclui o subsídio de alimentação.",
+      "gloss": "The base pay does not include the meal allowance."
+     }
+    },
+    {
+     "id": "contratação",
+     "hr": "contratação",
+     "en": "hiring; procurement",
+     "pos": "n. f.",
+     "note": "contratação pública é a compra de bens e serviços pelo Estado",
+     "example": {
+      "target": "A contratação de novos enfermeiros foi adiada para o próximo ano.",
+      "gloss": "The hiring of new nurses was postponed until next year."
+     }
+    },
+    {
+     "id": "precariedade",
+     "hr": "precariedade",
+     "en": "job insecurity, precariousness",
+     "pos": "n. f.",
+     "note": "trabalho precário é o adjetivo correspondente",
+     "example": {
+      "target": "A precariedade continua a afetar sobretudo os mais jovens.",
+      "gloss": "Job insecurity continues to affect young people above all."
+     }
+    },
+    {
+     "id": "laboral",
+     "hr": "laboral",
+     "en": "employment-related, workplace",
+     "pos": "adj.",
+     "note": "legislação laboral, horário laboral, tribunal do trabalho",
+     "example": {
+      "target": "A nova legislação laboral entra em vigor em outubro.",
+      "gloss": "The new employment legislation comes into force in October."
+     }
+    },
+    {
+     "id": "efetivo",
+     "hr": "efetivo",
+     "en": "permanent (staff); atual",
+     "pos": "adj.",
+     "note": "ficar efetivo é passar a contrato sem termo; grafia atual sem c",
+     "example": {
+      "target": "Ao fim de três contratos a prazo, ficou efetivo na empresa.",
+      "gloss": "After three fixed-term contracts, he became a permanent employee."
+     }
+    },
+    {
+     "id": "chefia",
+     "hr": "chefia",
+     "en": "management, line managers",
+     "pos": "n. f.",
+     "note": "as chefias intermédias são os quadros médios de uma organização",
+     "example": {
+      "target": "A chefia ainda não respondeu ao pedido de teletrabalho.",
+      "gloss": "Management has not yet replied to the request to work from home."
+     }
+    },
+    {
+     "id": "aferir",
+     "hr": "aferir",
+     "en": "to gauge, to assess accurately",
+     "pos": "v.",
+     "note": "aferir resultados, aferir o impacto de uma medida",
+     "example": {
+      "target": "Ainda é cedo para aferir o impacto real da medida.",
+      "gloss": "It is still too early to gauge the real impact of the measure."
+     }
+    },
+    {
+     "id": "evidência",
+     "hr": "evidência",
+     "en": "evidence",
+     "pos": "n. f.",
+     "note": "pôr em evidência significa destacar",
+     "example": {
+      "target": "Não há evidência científica que sustente essa afirmação.",
+      "gloss": "There is no scientific evidence to support that claim."
+     }
+    },
+    {
+     "id": "refutar",
+     "hr": "refutar",
+     "en": "to refute, to disprove",
+     "pos": "v.",
+     "note": "refutar uma tese com dados; o contrário é corroborar",
+     "example": {
+      "target": "Os novos dados refutam a teoria defendida durante anos.",
+      "gloss": "The new data refute the theory defended for years."
+     }
+    },
+    {
+     "id": "plausível",
+     "hr": "plausível",
+     "en": "plausible",
+     "pos": "adj.",
+     "note": "mais fraco do que provável e mais forte do que possível",
+     "example": {
+      "target": "A explicação parece plausível, mas falta confirmá-la.",
+      "gloss": "The explanation seems plausible, but it still has to be confirmed."
+     }
+    },
+    {
+     "id": "subjacente",
+     "hr": "subjacente",
+     "en": "underlying",
+     "pos": "adj.",
+     "note": "a ideia subjacente a um raciocínio ou a uma proposta",
+     "example": {
+      "target": "A ideia subjacente ao projeto é simples e barata.",
+      "gloss": "The idea underlying the project is simple and cheap."
+     }
+    },
+    {
+     "id": "metodologia",
+     "hr": "metodologia",
+     "en": "methodology",
+     "pos": "n. f.",
+     "note": "a crítica mais comum a um estudo é feita à sua metodologia",
+     "example": {
+      "target": "Vários especialistas criticaram a metodologia do inquérito.",
+      "gloss": "Several experts criticised the survey's methodology."
+     }
+    },
+    {
+     "id": "divulgação",
+     "hr": "divulgação",
+     "en": "dissemination, public communication",
+     "pos": "n. f.",
+     "note": "divulgação científica é a comunicação de ciência ao público",
+     "example": {
+      "target": "A divulgação dos resultados está marcada para segunda-feira.",
+      "gloss": "The release of the results is scheduled for Monday."
+     }
+    },
+    {
+     "id": "financiamento",
+     "hr": "financiamento",
+     "en": "funding",
+     "pos": "n. m.",
+     "note": "financiamento público, comunitário ou privado",
+     "example": {
+      "target": "O projeto perdeu o financiamento a meio da investigação.",
+      "gloss": "The project lost its funding halfway through the research."
+     }
+    },
+    {
+     "id": "replicar",
+     "hr": "replicar",
+     "en": "to replicate; to reply sharply",
+     "pos": "v.",
+     "note": "em ciência, replicar um estudo é repeti-lo para confirmar",
+     "example": {
+      "target": "Nenhuma equipa conseguiu replicar os resultados do estudo original.",
+      "gloss": "No team managed to replicate the results of the original study."
+     }
+    },
+    {
+     "id": "inferir",
+     "hr": "inferir",
+     "en": "to infer",
+     "pos": "v.",
+     "note": "inferir algo a partir de dados; o nome é inferência",
+     "example": {
+      "target": "Destes números pode inferir-se que a tendência vai continuar.",
+      "gloss": "From these figures it can be inferred that the trend will continue."
+     }
+    },
+    {
+     "id": "telemóvel",
+     "hr": "telemóvel",
+     "en": "mobile phone",
+     "pos": "n. m.",
+     "note": "palavra usada em Portugal; abrevia-se por vezes para telefone",
+     "example": {
+      "target": "Deixei o telemóvel em casa e senti-me perdido o dia todo.",
+      "gloss": "I left my phone at home and felt lost all day."
+     }
+    },
+    {
+     "id": "armazenamento",
+     "hr": "armazenamento",
+     "en": "storage",
+     "pos": "n. m.",
+     "note": "armazenamento de dados, na nuvem ou local",
+     "example": {
+      "target": "O armazenamento na nuvem sai mais barato do que comprar discos.",
+      "gloss": "Cloud storage works out cheaper than buying disks."
+     }
+    },
+    {
+     "id": "encriptação",
+     "hr": "encriptação",
+     "en": "encryption",
+     "pos": "n. f.",
+     "note": "encriptar é o verbo; fala-se de encriptação ponta a ponta",
+     "example": {
+      "target": "As mensagens têm encriptação de ponta a ponta.",
+      "gloss": "The messages have end-to-end encryption."
+     }
+    },
+    {
+     "id": "servidor",
+     "hr": "servidor",
+     "en": "server",
+     "pos": "n. m.",
+     "note": "os servidores estão alojados num centro de dados",
+     "example": {
+      "target": "O servidor esteve em baixo durante toda a manhã.",
+      "gloss": "The server was down all morning."
+     }
+    },
+    {
+     "id": "algoritmo",
+     "hr": "algoritmo",
+     "en": "algorithm",
+     "pos": "n. m.",
+     "note": "fala-se muito de algoritmos de recomendação nas redes sociais",
+     "example": {
+      "target": "O algoritmo decide o que cada pessoa vê primeiro.",
+      "gloss": "The algorithm decides what each person sees first."
+     }
+    },
+    {
+     "id": "atualização",
+     "hr": "atualização",
+     "en": "update",
+     "pos": "n. f.",
+     "note": "grafia atual sem c; atualizar é o verbo",
+     "example": {
+      "target": "A última atualização resolveu o problema da bateria.",
+      "gloss": "The latest update fixed the battery problem."
+     }
+    },
+    {
+     "id": "desempenho",
+     "hr": "desempenho",
+     "en": "performance",
+     "pos": "n. m.",
+     "note": "desempenho de um sistema, de uma equipa ou de um aluno",
+     "example": {
+      "target": "O desempenho do sistema piorou desde a última atualização.",
+      "gloss": "The system's performance has got worse since the last update."
+     }
+    },
+    {
+     "id": "obsoleto",
+     "hr": "obsoleto",
+     "en": "obsolete, outdated",
+     "pos": "adj.",
+     "note": "equipamento obsoleto; a obsolescência programada é um tema de consumo",
+     "example": {
+      "target": "O equipamento ficou obsoleto ao fim de poucos anos.",
+      "gloss": "The equipment became obsolete after only a few years."
+     }
+    },
+    {
+     "id": "cópia de segurança",
+     "hr": "cópia de segurança",
+     "en": "backup",
+     "pos": "expr.",
+     "note": "expressão portuguesa para backup; fazer uma cópia de segurança",
+     "example": {
+      "target": "Faz uma cópia de segurança antes de mudares de computador.",
+      "gloss": "Make a backup before you change computers."
+     }
+    },
+    {
+     "id": "vulnerabilidade",
+     "hr": "vulnerabilidade",
+     "en": "vulnerability, security flaw",
+     "pos": "n. f.",
+     "note": "usa-se em informática e também em contexto social",
+     "example": {
+      "target": "Foi detetada uma vulnerabilidade grave no sistema de pagamentos.",
+      "gloss": "A serious vulnerability was found in the payment system."
+     }
+    },
+    {
+     "id": "urgência",
+     "hr": "urgência",
+     "en": "emergency department; urgency",
+     "pos": "n. f.",
+     "note": "ir às urgências é a expressão corrente",
+     "example": {
+      "target": "Esperámos seis horas nas urgências do hospital.",
+      "gloss": "We waited six hours in the hospital emergency department."
+     }
+    },
+    {
+     "id": "internamento",
+     "hr": "internamento",
+     "en": "hospital admission, inpatient stay",
+     "pos": "n. m.",
+     "note": "forma portuguesa; ficar internado é o verbo",
+     "example": {
+      "target": "O internamento durou uma semana e correu tudo bem.",
+      "gloss": "The hospital stay lasted a week and everything went well."
+     }
+    },
+    {
+     "id": "crónico",
+     "hr": "crónico",
+     "en": "chronic",
+     "pos": "adj.",
+     "note": "grafia com acento agudo em Portugal; doente crónico",
+     "example": {
+      "target": "Sofre de uma doença crónica que exige medicação diária.",
+      "gloss": "He suffers from a chronic illness that requires daily medication."
+     }
+    },
+    {
+     "id": "sequela",
+     "hr": "sequela",
+     "en": "after-effect, lasting damage",
+     "pos": "n. f.",
+     "note": "quase sempre no plural: ficar com sequelas",
+     "example": {
+      "target": "Recuperou bem, mas ficou com algumas sequelas na fala.",
+      "gloss": "He recovered well, but was left with some speech problems."
+     }
+    },
+    {
+     "id": "vacinação",
+     "hr": "vacinação",
+     "en": "vaccination",
+     "pos": "n. f.",
+     "note": "campanha de vacinação; o boletim de vacinas regista as doses",
+     "example": {
+      "target": "A campanha de vacinação começa no primeiro dia de outubro.",
+      "gloss": "The vaccination campaign starts on the first of October."
+     }
+    },
+    {
+     "id": "terapêutica",
+     "hr": "terapêutica",
+     "en": "treatment regimen, therapy",
+     "pos": "n. f.",
+     "note": "termo clínico para o conjunto do tratamento prescrito",
+     "example": {
+      "target": "O médico alterou a terapêutica ao fim de duas semanas.",
+      "gloss": "The doctor changed the treatment after two weeks."
+     }
+    },
+    {
+     "id": "encaminhar",
+     "hr": "encaminhar",
+     "en": "to refer, to forward",
+     "pos": "v.",
+     "note": "encaminhar um doente para a especialidade ou um pedido para outro serviço",
+     "example": {
+      "target": "O médico de família encaminhou-a para a consulta de cardiologia.",
+      "gloss": "The family doctor referred her to the cardiology clinic."
+     }
+    },
+    {
+     "id": "lista de espera",
+     "hr": "lista de espera",
+     "en": "waiting list",
+     "pos": "expr.",
+     "note": "estar em lista de espera para uma cirurgia ou uma vaga",
+     "example": {
+      "target": "Está em lista de espera para a operação há mais de um ano.",
+      "gloss": "He has been on the waiting list for the operation for over a year."
+     }
+    },
+    {
+     "id": "ambulatório",
+     "hr": "ambulatório",
+     "en": "outpatient care",
+     "pos": "n. m.",
+     "note": "em ambulatório significa sem internamento",
+     "example": {
+      "target": "A maior parte destes tratamentos já se faz em ambulatório.",
+      "gloss": "Most of these treatments are now done on an outpatient basis."
+     }
+    },
+    {
+     "id": "mediana",
+     "hr": "mediana",
+     "en": "median",
+     "pos": "n. f.",
+     "note": "a mediana é menos sensível a valores muito altos ou muito baixos do que a média",
+     "example": {
+      "target": "A mediana dos salários conta melhor a história do que a média.",
+      "gloss": "The median wage tells the story better than the average does."
+     }
+    },
+    {
+     "id": "desvio",
+     "hr": "desvio",
+     "en": "deviation; detour",
+     "pos": "n. m.",
+     "note": "desvio padrão em estatística; desvio de fundos em contexto criminal",
+     "example": {
+      "target": "O desvio em relação ao previsto foi de apenas dois por cento.",
+      "gloss": "The deviation from what was forecast was only two per cent."
+     }
+    },
+    {
+     "id": "tendência",
+     "hr": "tendência",
+     "en": "trend",
+     "pos": "n. f.",
+     "note": "inverter a tendência é a colocação mais frequente",
+     "example": {
+      "target": "A tendência de subida dos preços começa finalmente a inverter-se.",
+      "gloss": "The upward trend in prices is finally starting to reverse."
+     }
+    },
+    {
+     "id": "margem de erro",
+     "hr": "margem de erro",
+     "en": "margin of error",
+     "pos": "expr.",
+     "note": "aparece sempre na ficha técnica das sondagens",
+     "example": {
+      "target": "A diferença entre os dois está dentro da margem de erro.",
+      "gloss": "The difference between the two is within the margin of error."
+     }
+    },
+    {
+     "id": "quantificar",
+     "hr": "quantificar",
+     "en": "to quantify",
+     "pos": "v.",
+     "note": "usa-se muito na negativa: difícil de quantificar",
+     "example": {
+      "target": "Os prejuízos ainda são difíceis de quantificar.",
+      "gloss": "The losses are still hard to quantify."
+     }
+    },
+    {
+     "id": "estimativa",
+     "hr": "estimativa",
+     "en": "estimate",
+     "pos": "n. f.",
+     "note": "estimativa preliminar, revista em alta ou em baixa",
+     "example": {
+      "target": "Segundo as primeiras estimativas, o prejuízo ronda os dois milhões.",
+      "gloss": "According to the first estimates, the loss is around two million."
+     }
+    },
+    {
+     "id": "indicador",
+     "hr": "indicador",
+     "en": "indicator",
+     "pos": "n. m.",
+     "note": "indicadores económicos, de saúde ou de desempenho",
+     "example": {
+      "target": "Quase todos os indicadores apontam para uma recuperação lenta.",
+      "gloss": "Almost every indicator points to a slow recovery."
+     }
+    },
+    {
+     "id": "variação",
+     "hr": "variação",
+     "en": "variation, change",
+     "pos": "n. f.",
+     "note": "variação homóloga compara com o mesmo período do ano anterior",
+     "example": {
+      "target": "A variação homóloga dos preços foi de três por cento.",
+      "gloss": "The year-on-year change in prices was three per cent."
+     }
+    },
+    {
+     "id": "correlação",
+     "hr": "correlação",
+     "en": "correlation",
+     "pos": "n. f.",
+     "note": "correlação não implica causalidade",
+     "example": {
+      "target": "Há uma correlação forte entre escolaridade e rendimento.",
+      "gloss": "There is a strong correlation between education and income."
+     }
+    },
+    {
+     "id": "apurar",
+     "hr": "apurar",
+     "en": "to ascertain, to establish (facts or figures)",
+     "pos": "v.",
+     "note": "apurar resultados, responsabilidades ou a verdade dos factos",
+     "example": {
+      "target": "As autoridades ainda estão a apurar as causas do acidente.",
+      "gloss": "The authorities are still establishing the causes of the accident."
+     }
+    },
+    {
+     "id": "discrepância",
+     "hr": "discrepância",
+     "en": "discrepancy",
+     "pos": "n. f.",
+     "note": "discrepância entre dois conjuntos de dados ou versões",
+     "example": {
+      "target": "Há uma discrepância evidente entre os dois relatórios.",
+      "gloss": "There is an obvious discrepancy between the two reports."
+     }
+    }
+   ]
+  }
+ ]
+}

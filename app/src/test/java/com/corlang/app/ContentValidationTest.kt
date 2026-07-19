@@ -866,6 +866,44 @@ class ContentValidationTest {
     }
 
     /**
+     * No em or en dashes in learner-visible content (docs/language-standard.md §7). The rule
+     * was stated from the start but never enforced, so 3822 strings had accumulated across all
+     * three languages before this gate existed. Commas, parentheses or a split sentence say the
+     * same thing; a hyphen inside a compound ("spaced-repetition") is fine and not matched here.
+     */
+    @Test
+    fun content_usesNoEmOrEnDashes() {
+        val dash = Regex("[–—]")
+        allLangs.forEach { lang ->
+            val hits = learnerStrings(lang).filter { (_, str) -> dash.containsMatchIn(str) }
+            assertTrue(
+                "em/en dashes in learner-visible content (use commas):\n" +
+                    hits.take(20).joinToString("\n") { (f, str) -> "  $f: ${str.take(110)}" },
+                hits.isEmpty()
+            )
+        }
+    }
+
+    /**
+     * Deck-size floor (docs/language-standard.md §1). The SRS unlocks
+     * `deck[0 .. lesson * NEW_WORDS_PER_DAY]`, so a 250-lesson course at the fixed pace of 10 a
+     * lesson consumes 2500 words. A shorter deck means the last lessons introduce nothing, which
+     * is exactly what Portuguese (2300) and Croatian (2412) did before this floor.
+     */
+    @Test
+    fun everyDeckCoversTheWholeCourse() {
+        allLangs.forEach { lang ->
+            val words = loadVocabPacks(lang).sumOf { it.words.size }
+            val needed = loadPlan(lang).days.size * com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
+            assertTrue(
+                "$lang deck has $words words but the course needs $needed " +
+                    "(${loadPlan(lang).days.size} lessons x ${com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY})",
+                words >= needed
+            )
+        }
+    }
+
+    /**
      * Course-length floor (docs/language-standard.md §1). CEFR guided-hours estimates put B2 at
      * roughly 550 to 600 hours, which a 100-lesson course cannot honestly deliver; French and
      * Portuguese shipped at 108 and 105 until this floor was set. 250 is the agreed minimum for

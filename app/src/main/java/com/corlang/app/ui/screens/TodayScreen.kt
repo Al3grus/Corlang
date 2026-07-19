@@ -112,15 +112,17 @@ fun TodayScreen(
     val targetDay = maxOf(currentDay, lastCompleted + 1).coerceIn(1, plan.days.size)
 
     // The current lesson's word load, split like the lesson's two steps: NEW words this lesson
-    // unlocks (deck order, first targetDay * perLesson, not yet introduced), and the REVIEW load
-    // capped at REVIEW_CAP. Lesson-scoped, so an earlier day never marks a later day done, and a
-    // fresh lesson reads 0% until you actually do its words.
+    // unlocks (deck order, first targetDay * newPerDay, not yet introduced), and the REVIEW load
+    // capped at the learner's own maximum. Lesson-scoped, so an earlier day never marks a later
+    // day done, and a fresh lesson reads 0% until you actually do its words.
     val allWords = remember(lang) { container.words.allWords(lang) }
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
     // Placement offset: deck words the placement test skipped are never counted as unlocked.
     val deckStart by container.languagePrefs.wordDeckStart(lang).collectAsState(initial = 0)
     val unlockedNew = allWords.take(targetDay * newPerDay).drop(deckStart).count { it.id !in seenIds }
-    val reviewPending = minOf(dueNow, Fsrs.REVIEW_CAP)
+    val maxReviews by container.languagePrefs.maxReviewsPerDay
+        .collectAsState(initial = Fsrs.REVIEW_CAP)
+    val reviewPending = minOf(dueNow, maxReviews)
 
     // Which day is being viewed (defaults to the target; user can browse away with ‹ ›).
     // Saveable alongside inPlayer: after process death mid-"revisit an old day", the restored

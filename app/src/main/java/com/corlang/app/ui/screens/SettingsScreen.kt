@@ -61,7 +61,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/** All app settings in one place: reminder, SRS pace, speech, about. */
+/**
+ * Daily review limits offered to the learner. New words stay fixed at the course's pace, so
+ * this is the only SRS dial: how much consolidation you take on per day. Shared with
+ * onboarding so both places offer exactly the same choices.
+ */
+internal val REVIEW_LIMIT_CHOICES = listOf(20, 40, 60, 100)
+
+/** All app settings in one place: reminder, review limit, speech, about. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(
@@ -205,21 +212,27 @@ fun SettingsScreen(
         }
 
         // ----- Learning pace -----
-        val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
-        SettingsCard(Icons.Outlined.Speed, "New words per lesson") {
+        val maxReviews by container.languagePrefs.maxReviewsPerDay
+            .collectAsState(initial = com.corlang.app.data.Fsrs.REVIEW_CAP)
+        SettingsCard(Icons.Outlined.Speed, "Daily review limit") {
             Text(
-                "How many new words each lesson introduces. 10 is the sustainable default. New words " +
-                    "come from lessons, so the Words tab stays a pure review of what you've learned.",
+                "Every lesson introduces ${com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY} new words, " +
+                    "a pace the course is built around. This sets how many words already learned " +
+                    "you are willing to review on top of that each day. A higher limit clears a " +
+                    "backlog faster, a lower one keeps a heavy day short. Words never disappear, " +
+                    "anything over the limit simply waits for the next day.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
             SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
-                listOf(10, 15, 20).forEachIndexed { i, v ->
+                REVIEW_LIMIT_CHOICES.forEachIndexed { i, v ->
                     SegmentedButton(
-                        selected = newPerDay == v,
-                        onClick = { scope.launch { container.languagePrefs.setNewWordsPerDay(v) } },
-                        shape = SegmentedButtonDefaults.itemShape(index = i, count = 3),
+                        selected = maxReviews == v,
+                        onClick = { scope.launch { container.languagePrefs.setMaxReviewsPerDay(v) } },
+                        shape = SegmentedButtonDefaults.itemShape(
+                            index = i, count = REVIEW_LIMIT_CHOICES.size
+                        ),
                         icon = {}
                     ) { Text("$v") }
                 }

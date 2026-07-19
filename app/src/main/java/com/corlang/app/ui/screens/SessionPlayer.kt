@@ -294,7 +294,11 @@ fun SessionPlayer(
     val reviews = rawReviews.orEmpty()
     val rawPerLesson by container.languagePrefs.newWordsPerDay
         .collectAsState(initial = null)
-    val perLesson = rawPerLesson ?: 10
+    val perLesson = rawPerLesson ?: Fsrs.NEW_WORDS_PER_DAY
+    // The learner's cap on due-word reviews per day; new words are fixed at [perLesson].
+    val rawMaxReviews by container.languagePrefs.maxReviewsPerDay
+        .collectAsState(initial = null)
+    val maxReviews = rawMaxReviews ?: Fsrs.REVIEW_CAP
     val today = WordsRepository.todayEpochDay()
     val allWords = remember(lang) { container.words.allWords(lang) }
     val dueNow = reviews.count { it.dueEpochDay <= today }
@@ -305,10 +309,14 @@ fun SessionPlayer(
         .collectAsState(initial = null)
     val deckStart = rawDeckStart ?: 0
     val unlockedNew = allWords.take(day.day * perLesson).drop(deckStart).count { it.id !in seenIds }
+    // Every deck word has been introduced: no lesson can ever serve a new word again. Distinct
+    // from "none left for today", and unavoidable at the faster paces, so the UI names it.
+    val deckFinished = allWords.drop(deckStart).none { it.id !in seenIds }
+    val deckLanguageName = remember(lang) { container.content.meta(lang).name }
     // One lesson serves at most perLesson new words, even when a placement jump unlocked a large
     // backlog — it drains one lesson-sized block at a time, never a 300-card dump.
     val newBlock = minOf(unlockedNew, perLesson)
-    val reviewPending = minOf(dueNow, Fsrs.REVIEW_CAP)
+    val reviewPending = minOf(dueNow, maxReviews)
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
         // Done when nothing is waiting OR this day's block was completed. The check is written
@@ -665,6 +673,19 @@ fun SessionPlayer(
                                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                             ) { Text("Skip for now →") }
                         } else {
+                            // The deck is finite, and at 15 or 20 words a lesson it is spent
+                            // well before lesson 250. Say so plainly instead of showing a bare
+                            // "Next" under a "New words" heading, which reads like a bug.
+                            if (deckFinished) {
+                                Text(
+                                    "You have met every word in the ${deckLanguageName} deck, " +
+                                        "${allWords.size} in total. From here the word work is " +
+                                        "pure review, keeping what you know from fading.",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    modifier = Modifier.padding(bottom = 12.dp)
+                                )
+                            }
                             Button(onClick = markNext, modifier = Modifier.fillMaxWidth()) {
                                 Text("Next →")
                             }
@@ -676,7 +697,7 @@ fun SessionPlayer(
                             Button(
                                 onClick = {
                                     startWordBlock("review", isReview = true) {
-                                        container.words.buildReviewSession(lang, today).take(Fsrs.REVIEW_CAP)
+                                        container.words.buildReviewSession(lang, today).take(maxReviews)
                                     }
                                 },
                                 modifier = Modifier.fillMaxWidth()

@@ -1,0 +1,836 @@
+{
+ "packs": [
+  {
+   "id": "30-b2-topup",
+   "title": "B2: reforço lexical",
+   "level": "B2",
+   "sources": [
+    "referencial-camoes",
+    "portugues-fundamental"
+   ],
+   "words": [
+    {
+     "id": "acatar",
+     "hr": "acatar",
+     "en": "to comply with, abide by",
+     "pos": "v.",
+     "note": "Usa-se com ordens, regras e decisões, não com pessoas.",
+     "example": {
+      "target": "A equipa acatou a decisão da chefia sem levantar objeções.",
+      "gloss": "The team complied with management's decision without raising objections."
+     }
+    },
+    {
+     "id": "escassear",
+     "hr": "escassear",
+     "en": "to grow scarce, run short",
+     "pos": "v.",
+     "example": {
+      "target": "No verão, a água começa a escassear nas aldeias do interior.",
+      "gloss": "In the summer, water starts to run short in the villages inland."
+     }
+    },
+    {
+     "id": "incumbir",
+     "hr": "incumbir",
+     "en": "to task someone with, to be someone's duty",
+     "pos": "v.",
+     "note": "Incumbir alguém de algo, ou incumbe a alguém fazer algo.",
+     "example": {
+      "target": "Incumbiram-me de preparar o relatório até sexta-feira.",
+      "gloss": "They tasked me with preparing the report by Friday."
+     }
+    },
+    {
+     "id": "granjear",
+     "hr": "granjear",
+     "en": "to win, earn (esteem, fame)",
+     "pos": "v.",
+     "example": {
+      "target": "O escritor granjeou o respeito dos críticos com o segundo livro.",
+      "gloss": "The writer earned the critics' respect with his second book."
+     }
+    },
+    {
+     "id": "lograr",
+     "hr": "lograr",
+     "en": "to manage to, succeed in",
+     "pos": "v.",
+     "note": "Registo cuidado, seguido de infinitivo.",
+     "example": {
+      "target": "Só ao fim de três tentativas logrou marcar a consulta.",
+      "gloss": "Only after three attempts did he manage to book the appointment."
+     }
+    },
+    {
+     "id": "reiterar",
+     "hr": "reiterar",
+     "en": "to reiterate, restate",
+     "pos": "v.",
+     "example": {
+      "target": "O ministro reiterou que não haverá aumento de impostos este ano.",
+      "gloss": "The minister reiterated that there will be no tax increase this year."
+     }
+    },
+    {
+     "id": "suprir",
+     "hr": "suprir",
+     "en": "to make up for, meet (a need)",
+     "pos": "v.",
+     "example": {
+      "target": "Contratámos dois estagiários para suprir a falta de pessoal.",
+      "gloss": "We hired two interns to make up for the lack of staff."
+     }
+    },
+    {
+     "id": "sanar",
+     "hr": "sanar",
+     "en": "to remedy, put right",
+     "pos": "v.",
+     "note": "Sana-se um problema, uma dívida ou uma irregularidade.",
+     "example": {
+      "target": "A empresa teve trinta dias para sanar a irregularidade.",
+      "gloss": "The company had thirty days to put the irregularity right."
+     }
+    },
+    {
+     "id": "vedar",
+     "hr": "vedar",
+     "en": "to bar, prohibit; to seal off",
+     "pos": "v.",
+     "example": {
+      "target": "A lei veda o acesso do público àquela zona do porto.",
+      "gloss": "The law bars public access to that part of the harbour."
+     }
+    },
+    {
+     "id": "abarcar",
+     "hr": "abarcar",
+     "en": "to cover, take in, encompass",
+     "pos": "v.",
+     "example": {
+      "target": "O estudo abarca todo o período entre as duas crises.",
+      "gloss": "The study covers the whole period between the two crises."
+     }
+    },
+    {
+     "id": "proferir",
+     "hr": "proferir",
+     "en": "to utter, deliver (a speech, a ruling)",
+     "pos": "v.",
+     "example": {
+      "target": "O tribunal só profere a sentença no próximo mês.",
+      "gloss": "The court will only deliver the ruling next month."
+     }
+    },
+    {
+     "id": "redundar",
+     "hr": "redundar",
+     "en": "to result in, end up as",
+     "pos": "v.",
+     "note": "Quase sempre com em e com resultado negativo.",
+     "example": {
+      "target": "A falta de manutenção redundou numa avaria grave.",
+      "gloss": "The lack of maintenance resulted in a serious breakdown."
+     }
+    },
+    {
+     "id": "vincar",
+     "hr": "vincar",
+     "en": "to stress, drive home (a point)",
+     "pos": "v.",
+     "example": {
+      "target": "A professora vincou bem a diferença entre os dois tempos verbais.",
+      "gloss": "The teacher really drove home the difference between the two tenses."
+     }
+    },
+    {
+     "id": "zelar",
+     "hr": "zelar",
+     "en": "to look after, safeguard",
+     "pos": "v.",
+     "note": "Zelar por alguma coisa.",
+     "example": {
+      "target": "Cabe a cada morador zelar pela limpeza das escadas.",
+      "gloss": "It is up to each resident to look after the cleanliness of the stairs."
+     }
+    },
+    {
+     "id": "ludibriar",
+     "hr": "ludibriar",
+     "en": "to dupe, deceive",
+     "pos": "v.",
+     "example": {
+      "target": "Foram ludibriados por uma falsa promessa de emprego.",
+      "gloss": "They were duped by a fake job offer."
+     }
+    },
+    {
+     "id": "despoletar",
+     "hr": "despoletar",
+     "en": "to trigger, set off",
+     "pos": "v.",
+     "example": {
+      "target": "A notícia despoletou uma onda de comentários nas redes.",
+      "gloss": "The news triggered a wave of comments online."
+     }
+    },
+    {
+     "id": "enveredar",
+     "hr": "enveredar",
+     "en": "to take a path, go down a route",
+     "pos": "v.",
+     "note": "Enveredar por um caminho, uma carreira, uma solução.",
+     "example": {
+      "target": "Depois do curso, enveredou pela investigação.",
+      "gloss": "After the degree, she went into research."
+     }
+    },
+    {
+     "id": "sopesar",
+     "hr": "sopesar",
+     "en": "to weigh up, consider carefully",
+     "pos": "v.",
+     "example": {
+      "target": "Convém sopesar bem os custos antes de assinar o contrato.",
+      "gloss": "It is worth weighing up the costs carefully before signing the contract."
+     }
+    },
+    {
+     "id": "acautelar",
+     "hr": "acautelar",
+     "en": "to guard against, take precautions over",
+     "pos": "v.",
+     "example": {
+      "target": "O contrato acautela a situação de quem sai antes do prazo.",
+      "gloss": "The contract provides for the situation of anyone leaving before the term."
+     }
+    },
+    {
+     "id": "abster-se",
+     "hr": "abster-se",
+     "en": "to abstain, refrain",
+     "pos": "v.",
+     "note": "Abster-se de alguma coisa; muito usado em votações.",
+     "example": {
+      "target": "Dois deputados abstiveram-se na votação final.",
+      "gloss": "Two members abstained in the final vote."
+     }
+    },
+    {
+     "id": "pautar-se",
+     "hr": "pautar-se",
+     "en": "to be guided by (a principle)",
+     "pos": "v.",
+     "example": {
+      "target": "A instituição pauta-se por critérios de transparência.",
+      "gloss": "The institution is guided by criteria of transparency."
+     }
+    },
+    {
+     "id": "desbravar",
+     "hr": "desbravar",
+     "en": "to clear, break new ground",
+     "pos": "v.",
+     "example": {
+      "target": "Foram eles que desbravaram este terreno há vinte anos.",
+      "gloss": "They were the ones who broke new ground here twenty years ago."
+     }
+    },
+    {
+     "id": "esbater",
+     "hr": "esbater",
+     "en": "to blur, soften, tone down",
+     "pos": "v.",
+     "example": {
+      "target": "As diferenças entre as duas propostas foram-se esbatendo.",
+      "gloss": "The differences between the two proposals gradually blurred."
+     }
+    },
+    {
+     "id": "galgar",
+     "hr": "galgar",
+     "en": "to climb over, cover (ground)",
+     "pos": "v.",
+     "example": {
+      "target": "O mar galgou o passeio durante a tempestade.",
+      "gloss": "The sea came over the walkway during the storm."
+     }
+    },
+    {
+     "id": "obviar",
+     "hr": "obviar",
+     "en": "to obviate, avoid (a problem)",
+     "pos": "v.",
+     "note": "Obviar a alguma coisa, registo formal.",
+     "example": {
+      "target": "Marcámos tudo com antecedência para obviar a atrasos.",
+      "gloss": "We booked everything in advance to avoid delays."
+     }
+    },
+    {
+     "id": "escorregar",
+     "hr": "escorregar",
+     "en": "to slip, slide",
+     "pos": "v.",
+     "example": {
+      "target": "Cuidado, o chão está molhado e escorrega muito.",
+      "gloss": "Careful, the floor is wet and very slippery."
+     }
+    },
+    {
+     "id": "tropeçar",
+     "hr": "tropeçar",
+     "en": "to trip, stumble",
+     "pos": "v.",
+     "example": {
+      "target": "Tropecei num degrau e torci o pulso.",
+      "gloss": "I tripped on a step and sprained my wrist."
+     }
+    },
+    {
+     "id": "bocejar",
+     "hr": "bocejar",
+     "en": "to yawn",
+     "pos": "v.",
+     "example": {
+      "target": "Estás a bocejar desde o início da reunião.",
+      "gloss": "You have been yawning since the meeting started."
+     }
+    },
+    {
+     "id": "parco",
+     "hr": "parco",
+     "en": "scant, sparing",
+     "pos": "adj.",
+     "note": "Parco em palavras significa pouco falador.",
+     "example": {
+      "target": "Foi parco em explicações e ninguém percebeu o plano.",
+      "gloss": "He was sparing with explanations and nobody understood the plan."
+     }
+    },
+    {
+     "id": "ínfimo",
+     "hr": "ínfimo",
+     "en": "minute, negligible",
+     "pos": "adj.",
+     "example": {
+      "target": "O risco de complicações é ínfimo neste tipo de exame.",
+      "gloss": "The risk of complications is negligible in this kind of test."
+     }
+    },
+    {
+     "id": "paulatino",
+     "hr": "paulatino",
+     "en": "gradual, slow and steady",
+     "pos": "adj.",
+     "example": {
+      "target": "Houve uma recuperação paulatina do emprego na região.",
+      "gloss": "There was a gradual recovery of employment in the region."
+     }
+    },
+    {
+     "id": "atinente",
+     "hr": "atinente",
+     "en": "pertaining to, relating to",
+     "pos": "adj.",
+     "note": "Atinente a, típico de textos oficiais.",
+     "example": {
+      "target": "Junto os documentos atinentes ao pedido de apoio.",
+      "gloss": "I enclose the documents pertaining to the support application."
+     }
+    },
+    {
+     "id": "escorreito",
+     "hr": "escorreito",
+     "en": "flawless, sound (esp. of language)",
+     "pos": "adj.",
+     "example": {
+      "target": "Escreve um português escorreito, sem um erro.",
+      "gloss": "She writes flawless Portuguese, without a single mistake."
+     }
+    },
+    {
+     "id": "cabal",
+     "hr": "cabal",
+     "en": "full, thorough, conclusive",
+     "pos": "adj.",
+     "example": {
+      "target": "Ainda não houve uma explicação cabal para o apagão.",
+      "gloss": "There has still been no full explanation for the blackout."
+     }
+    },
+    {
+     "id": "profícuo",
+     "hr": "profícuo",
+     "en": "fruitful, productive",
+     "pos": "adj.",
+     "example": {
+      "target": "Foi um encontro profícuo entre as duas equipas.",
+      "gloss": "It was a fruitful meeting between the two teams."
+     }
+    },
+    {
+     "id": "exíguo",
+     "hr": "exíguo",
+     "en": "scanty, very small",
+     "pos": "adj.",
+     "example": {
+      "target": "O prazo era exíguo para um trabalho daquela dimensão.",
+      "gloss": "The deadline was far too short for a job of that size."
+     }
+    },
+    {
+     "id": "célere",
+     "hr": "célere",
+     "en": "swift, speedy",
+     "pos": "adj.",
+     "example": {
+      "target": "Pedimos uma resposta célere ao nosso requerimento.",
+      "gloss": "We ask for a swift reply to our application."
+     }
+    },
+    {
+     "id": "premente",
+     "hr": "premente",
+     "en": "pressing, urgent",
+     "pos": "adj.",
+     "example": {
+      "target": "A falta de casas acessíveis é um problema premente.",
+      "gloss": "The lack of affordable housing is a pressing problem."
+     }
+    },
+    {
+     "id": "patente",
+     "hr": "patente",
+     "en": "evident, plain to see",
+     "pos": "adj.",
+     "note": "Ficar patente significa tornar-se evidente.",
+     "example": {
+      "target": "O cansaço da equipa estava patente no jogo de ontem.",
+      "gloss": "The team's tiredness was plain to see in yesterday's match."
+     }
+    },
+    {
+     "id": "criterioso",
+     "hr": "criterioso",
+     "en": "careful, judicious",
+     "pos": "adj.",
+     "example": {
+      "target": "Fez uma escolha criteriosa dos materiais da obra.",
+      "gloss": "He made a judicious choice of materials for the building work."
+     }
+    },
+    {
+     "id": "módico",
+     "hr": "módico",
+     "en": "modest, low (of a price)",
+     "pos": "adj.",
+     "example": {
+      "target": "O museu abre ao domingo por um preço módico.",
+      "gloss": "The museum opens on Sundays for a modest price."
+     }
+    },
+    {
+     "id": "avultado",
+     "hr": "avultado",
+     "en": "large, sizeable (of sums)",
+     "pos": "adj.",
+     "example": {
+      "target": "A obra exigiu um investimento avultado da autarquia.",
+      "gloss": "The works required a sizeable investment from the council."
+     }
+    },
+    {
+     "id": "renitente",
+     "hr": "renitente",
+     "en": "reluctant, resistant",
+     "pos": "adj.",
+     "example": {
+      "target": "Continua renitente em aceitar o novo horário.",
+      "gloss": "He is still reluctant to accept the new schedule."
+     }
+    },
+    {
+     "id": "atempado",
+     "hr": "atempado",
+     "en": "timely, done in good time",
+     "pos": "adj.",
+     "example": {
+      "target": "Agradecemos o envio atempado dos comprovativos.",
+      "gloss": "We thank you for sending the receipts in good time."
+     }
+    },
+    {
+     "id": "desprovido",
+     "hr": "desprovido",
+     "en": "devoid of, lacking",
+     "pos": "adj.",
+     "note": "Desprovido de alguma coisa.",
+     "example": {
+      "target": "A acusação é totalmente desprovida de fundamento.",
+      "gloss": "The accusation is entirely devoid of grounds."
+     }
+    },
+    {
+     "id": "incipiente",
+     "hr": "incipiente",
+     "en": "incipient, in its early stages",
+     "pos": "adj.",
+     "example": {
+      "target": "O mercado ainda é incipiente e cresce devagar.",
+      "gloss": "The market is still in its early stages and grows slowly."
+     }
+    },
+    {
+     "id": "alçada",
+     "hr": "alçada",
+     "en": "remit, jurisdiction",
+     "pos": "n. f.",
+     "note": "Estar fora da alçada de alguém.",
+     "example": {
+      "target": "Esse assunto está fora da minha alçada, fale com a direção.",
+      "gloss": "That matter is outside my remit, speak to the management."
+     }
+    },
+    {
+     "id": "ressonância",
+     "hr": "ressonância",
+     "en": "resonance, impact",
+     "pos": "n. f.",
+     "example": {
+      "target": "O discurso teve grande ressonância na imprensa.",
+      "gloss": "The speech had great resonance in the press."
+     }
+    },
+    {
+     "id": "azo",
+     "hr": "azo",
+     "en": "occasion, opening (that allows something)",
+     "pos": "n. m.",
+     "note": "Dar azo a alguma coisa.",
+     "example": {
+      "target": "A redação do contrato deu azo a várias interpretações.",
+      "gloss": "The wording of the contract gave rise to several interpretations."
+     }
+    },
+    {
+     "id": "mote",
+     "hr": "mote",
+     "en": "theme, cue, watchword",
+     "pos": "n. m.",
+     "note": "Dar o mote significa lançar o tema.",
+     "example": {
+      "target": "A canção deu o mote para toda a noite.",
+      "gloss": "The song set the tone for the whole evening."
+     }
+    },
+    {
+     "id": "cerne",
+     "hr": "cerne",
+     "en": "core, heart of the matter",
+     "pos": "n. m.",
+     "example": {
+      "target": "O cerne da questão é o financiamento, não as regras.",
+      "gloss": "The heart of the matter is funding, not the rules."
+     }
+    },
+    {
+     "id": "esteio",
+     "hr": "esteio",
+     "en": "mainstay, pillar of support",
+     "pos": "n. m.",
+     "example": {
+      "target": "A avó sempre foi o esteio daquela casa.",
+      "gloss": "The grandmother was always the mainstay of that household."
+     }
+    },
+    {
+     "id": "escolho",
+     "hr": "escolho",
+     "en": "stumbling block, obstacle",
+     "pos": "n. m.",
+     "example": {
+      "target": "O maior escolho da negociação foi o preço.",
+      "gloss": "The biggest stumbling block in the negotiation was the price."
+     }
+    },
+    {
+     "id": "desiderato",
+     "hr": "desiderato",
+     "en": "aim, desired goal",
+     "pos": "n. m.",
+     "example": {
+      "target": "O desiderato do programa é reduzir o abandono escolar.",
+      "gloss": "The aim of the programme is to reduce school dropout."
+     }
+    },
+    {
+     "id": "anuência",
+     "hr": "anuência",
+     "en": "consent, assent",
+     "pos": "n. f.",
+     "example": {
+      "target": "As obras avançam com a anuência do senhorio.",
+      "gloss": "The works go ahead with the landlord's consent."
+     }
+    },
+    {
+     "id": "chancela",
+     "hr": "chancela",
+     "en": "seal of approval, imprint",
+     "pos": "n. f.",
+     "example": {
+      "target": "O projeto recebeu a chancela do conselho científico.",
+      "gloss": "The project received the seal of approval of the scientific board."
+     }
+    },
+    {
+     "id": "lastro",
+     "hr": "lastro",
+     "en": "backing, solid grounding",
+     "pos": "n. m.",
+     "example": {
+      "target": "A proposta não tem lastro nos números apresentados.",
+      "gloss": "The proposal has no grounding in the figures presented."
+     }
+    },
+    {
+     "id": "míngua",
+     "hr": "míngua",
+     "en": "shortage, want",
+     "pos": "n. f.",
+     "note": "Sobretudo na expressão à míngua de.",
+     "example": {
+      "target": "O projeto parou à míngua de financiamento.",
+      "gloss": "The project stopped for want of funding."
+     }
+    },
+    {
+     "id": "pendor",
+     "hr": "pendor",
+     "en": "leaning, inclination",
+     "pos": "n. m.",
+     "example": {
+      "target": "O romance tem um pendor claramente autobiográfico.",
+      "gloss": "The novel has a clearly autobiographical leaning."
+     }
+    },
+    {
+     "id": "quezília",
+     "hr": "quezília",
+     "en": "petty quarrel, grudge",
+     "pos": "n. f.",
+     "example": {
+      "target": "Andam de quezília por causa de um lugar de estacionamento.",
+      "gloss": "They have been squabbling over a parking space."
+     }
+    },
+    {
+     "id": "viés",
+     "hr": "viés",
+     "en": "bias, slant",
+     "pos": "n. m.",
+     "example": {
+      "target": "O estudo tem um viés que os autores não assumem.",
+      "gloss": "The study has a bias that the authors do not acknowledge."
+     }
+    },
+    {
+     "id": "tónica",
+     "hr": "tónica",
+     "en": "emphasis, main stress",
+     "pos": "n. f.",
+     "note": "Pôr a tónica em alguma coisa.",
+     "example": {
+      "target": "O relatório põe a tónica na prevenção.",
+      "gloss": "The report puts the emphasis on prevention."
+     }
+    },
+    {
+     "id": "desafogo",
+     "hr": "desafogo",
+     "en": "relief, breathing space",
+     "pos": "n. m.",
+     "example": {
+      "target": "O apoio veio dar algum desafogo às famílias.",
+      "gloss": "The support gave families some breathing space."
+     }
+    },
+    {
+     "id": "empenho",
+     "hr": "empenho",
+     "en": "commitment, dedication",
+     "pos": "n. m.",
+     "example": {
+      "target": "Trabalharam com muito empenho até ao último dia.",
+      "gloss": "They worked with great dedication until the last day."
+     }
+    },
+    {
+     "id": "entrosamento",
+     "hr": "entrosamento",
+     "en": "rapport, working fit between people",
+     "pos": "n. m.",
+     "example": {
+      "target": "Falta entrosamento entre os dois departamentos.",
+      "gloss": "There is a lack of rapport between the two departments."
+     }
+    },
+    {
+     "id": "rol",
+     "hr": "rol",
+     "en": "list, roll",
+     "pos": "n. m.",
+     "example": {
+      "target": "Trouxe um rol de queixas sobre o serviço.",
+      "gloss": "He brought a list of complaints about the service."
+     }
+    },
+    {
+     "id": "bitola",
+     "hr": "bitola",
+     "en": "benchmark, standard, gauge",
+     "pos": "n. f.",
+     "example": {
+      "target": "Não se pode medir tudo pela mesma bitola.",
+      "gloss": "You cannot measure everything by the same standard."
+     }
+    },
+    {
+     "id": "prontidão",
+     "hr": "prontidão",
+     "en": "readiness, promptness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Respondeu com uma prontidão que nos surpreendeu.",
+      "gloss": "She answered with a promptness that surprised us."
+     }
+    },
+    {
+     "id": "sotaque",
+     "hr": "sotaque",
+     "en": "accent (way of speaking)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nota-se que tem sotaque do norte quando fala depressa.",
+      "gloss": "You can tell she has a northern accent when she speaks fast."
+     }
+    },
+    {
+     "id": "alicerce",
+     "hr": "alicerce",
+     "en": "foundation, groundwork",
+     "pos": "n. m.",
+     "example": {
+      "target": "A confiança é o alicerce de qualquer equipa.",
+      "gloss": "Trust is the foundation of any team."
+     }
+    },
+    {
+     "id": "outrossim",
+     "hr": "outrossim",
+     "en": "moreover, likewise",
+     "pos": "adv.",
+     "note": "Muito formal, quase só em documentos.",
+     "example": {
+      "target": "Outrossim, informa-se que o prazo termina no dia trinta.",
+      "gloss": "Moreover, please note that the deadline ends on the thirtieth."
+     }
+    },
+    {
+     "id": "amiúde",
+     "hr": "amiúde",
+     "en": "often, frequently",
+     "pos": "adv.",
+     "example": {
+      "target": "Amiúde encontramo-nos no mesmo café ao sábado.",
+      "gloss": "We often run into each other at the same cafe on Saturdays."
+     }
+    },
+    {
+     "id": "doravante",
+     "hr": "doravante",
+     "en": "from now on, henceforth",
+     "pos": "adv.",
+     "example": {
+      "target": "Doravante, os pedidos são entregues no balcão do primeiro andar.",
+      "gloss": "From now on, requests are handed in at the first floor desk."
+     }
+    },
+    {
+     "id": "porventura",
+     "hr": "porventura",
+     "en": "perhaps, by any chance",
+     "pos": "adv.",
+     "example": {
+      "target": "Se porventura chegares primeiro, guarda-me um lugar.",
+      "gloss": "If by any chance you get there first, save me a seat."
+     }
+    },
+    {
+     "id": "mormente",
+     "hr": "mormente",
+     "en": "especially, chiefly",
+     "pos": "adv.",
+     "example": {
+      "target": "A medida afeta muita gente, mormente os mais idosos.",
+      "gloss": "The measure affects many people, especially the elderly."
+     }
+    },
+    {
+     "id": "sobremaneira",
+     "hr": "sobremaneira",
+     "en": "greatly, exceedingly",
+     "pos": "adv.",
+     "example": {
+      "target": "A notícia agradou sobremaneira aos moradores.",
+      "gloss": "The news greatly pleased the residents."
+     }
+    },
+    {
+     "id": "conquanto",
+     "hr": "conquanto",
+     "en": "although, albeit",
+     "pos": "conj.",
+     "note": "Pede conjuntivo, tal como embora.",
+     "example": {
+      "target": "Conquanto seja caro, o serviço compensa.",
+      "gloss": "Although it is expensive, the service is worth it."
+     }
+    },
+    {
+     "id": "porquanto",
+     "hr": "porquanto",
+     "en": "since, inasmuch as",
+     "pos": "conj.",
+     "example": {
+      "target": "O pedido foi recusado, porquanto faltavam dois documentos.",
+      "gloss": "The request was refused, since two documents were missing."
+     }
+    },
+    {
+     "id": "deveras",
+     "hr": "deveras",
+     "en": "truly, indeed",
+     "pos": "adv.",
+     "example": {
+      "target": "Foi uma exposição deveras interessante.",
+      "gloss": "It was a truly interesting exhibition."
+     }
+    },
+    {
+     "id": "tão-pouco",
+     "hr": "tão-pouco",
+     "en": "nor, neither",
+     "pos": "adv.",
+     "note": "Reforça uma negação anterior.",
+     "example": {
+      "target": "Não avisou ninguém, tão-pouco deixou um recado.",
+      "gloss": "He did not warn anyone, nor did he leave a message."
+     }
+    }
+   ]
+  }
+ ]
+}
