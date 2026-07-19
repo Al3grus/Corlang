@@ -403,7 +403,7 @@ private fun ScoredSectionRunner(
             else -> OutlinedTextField(
                 value = fillText,
                 onValueChange = { if (!checked) fillText = it },
-                label = { Text("Your answer (diacritics count!)") },
+                label = { Text("Your answer, accents are graded") },
                 enabled = !checked,
                 modifier = Modifier.fillMaxWidth()
             )
