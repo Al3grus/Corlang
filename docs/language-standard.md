@@ -30,6 +30,14 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
 | `placement.json` | yes | maps score → plan day + level |
 | `cheatsheet.json`, `feynman.json`, `resources.json` | yes | reference + teach-back + curated links |
 
+- **Every CEFR level (A1 and up) ends in the three journey checkpoints**: a level quiz
+  (`quizzes.json`, one per level), an exam readiness milestone (`exam` object on the level in
+  `levels.json`: name, pass rule, section list, can-do skills), and a mock exam in the official
+  format (`exams.json`, one per level). The journey renders them as ? / ☑ / flag stones after
+  the level's last lesson; a missing entry silently drops that checkpoint, so author all three.
+  An A0 onramp is the one exception: it ends with its quiz only (no official A0 exam exists).
+  Mocks for levels below the first real certificate still use the official format and pass
+  rules, labeled as practice, never claiming a certificate that does not exist at that level.
 - [AUTO] All files strict-parse (unknown JSON keys fail the build).
 - [AUTO] Plan days contiguous 1..N; activities are complete lessons, not references.
 - [AUTO] `_index.json` in sync with directory contents (order = concatenation order).
@@ -251,8 +259,10 @@ are authoring discipline a new language must follow from its first line.
   second-position clitic ("Šaljem ti poruku" + ja must become "Ja ti šaljem poruku", so no
   variant is added at all). French is not pro-drop; write full sentences.
 - **Claims made to the learner must match shipped content.** "A mock exam after every level"
-  was false (mocks exist at A1/A2/B1 hr, B1/B2 pt/fr) and became "mock exams in the official
-  exam format". Before writing any coverage claim, count the files.
+  was once false and had to be reworded; since 2026-07 the every-level checkpoint rule (§1)
+  makes it true by construction, and it must STAY true: adding a plan level without its quiz,
+  readiness milestone and mock re-breaks the claim. Before writing any coverage claim, count
+  the files.
 - **No em or en dashes in learner-visible strings.** Commas, or split the sentence. Hyphens
   inside compounds ("spaced-repetition") are fine.
 - **Strictness is explained in plain words, not jargon.** The answer box says "Write your

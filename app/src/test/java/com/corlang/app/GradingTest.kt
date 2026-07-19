@@ -31,12 +31,25 @@ class GradingTest {
         assertEquals("ecole", Grading.normalize("école"))
     }
 
-    @Test fun fill_acceptsAccentInsensitiveAndVariants() {
+    @Test fun fill_strictDiacriticsWithExplicitAcceptedVariants() {
         val question = q(QuestionType.FILL, answer = "allée", accepted = listOf("allee"))
-        assertTrue(Grading.gradeFill(question, "allee"))
-        assertTrue(Grading.gradeFill(question, "Allée"))
-        assertTrue(Grading.gradeFill(question, "  allée  "))
+        assertTrue(Grading.gradeFill(question, "allee"))     // listed variant
+        assertTrue(Grading.gradeFill(question, "Allée"))     // case-insensitive
+        assertTrue(Grading.gradeFill(question, "  allée  ")) // trim
         assertFalse(Grading.gradeFill(question, "allé"))
+    }
+
+    @Test fun fill_wrongAccentIsWrong() {
+        // Field report: a French lesson asking for "è" graded "é" as correct — the lenient
+        // accent-stripping path made every accented letter interchangeable.
+        val letter = q(QuestionType.FILL, answer = "è")
+        assertTrue(Grading.gradeFill(letter, "è"))
+        assertFalse(Grading.gradeFill(letter, "é"))
+        assertFalse(Grading.gradeFill(letter, "e"))
+        // Without a listed accent-free variant, the accent is required in words too.
+        val word = q(QuestionType.FILL, answer = "não")
+        assertTrue(Grading.gradeFill(word, "não"))
+        assertFalse(Grading.gradeFill(word, "nao"))
     }
 
     @Test fun fill_matchesPrimaryAnswer() {

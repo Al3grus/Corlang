@@ -276,12 +276,11 @@ fun LevelJourney(
             selectedLevel in quizLevelIds || selectedLevel in readinessLevelIds ||
                 selectedLevel in examLevelIds
         )
+        // Locked-state hint only; once unlocked the stones speak for themselves.
+        val lockedHint = hasCheckpoints && !stones.all { it.day in completedSet }
         Text(
             "$selectedLevel · $doneInLevel / ${stones.size} lessons done" +
-                (if (hasCheckpoints) {
-                    if (stones.all { it.day in completedSet }) "  ·  checkpoints unlocked"
-                    else "  ·  finish the lessons to unlock the checkpoints"
-                } else ""),
+                (if (lockedHint) "  ·  complete to unlock exam" else ""),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 6.dp)

@@ -165,11 +165,12 @@ private fun ExamOverview(
         .collectAsState(initial = emptyList())
     val latestBySection = remember(latest) { latest.associateBy { it.sectionId } }
     // DELF mocks (French) apply the FEI rule: each section /25, total >= 50/100 with a 5/25 floor.
-    // CAPLE mocks (Portuguese DEPLE/DIPLE) apply the ≥55% Suficiente global-average rule.
-    // Scored sections use their score/total; self-assessed (writing/speaking) map pass->20/25,
-    // fail/unattempted->0/25. Other exams (Croatian NN) keep the all-sections-passed rule.
+    // CAPLE mocks (Portuguese ACESSO/CIPLE/DEPLE/DIPLE) apply the ≥55% Suficiente global-average
+    // rule. Scored sections use their score/total; self-assessed (writing/speaking) map
+    // pass->20/25, fail/unattempted->0/25. Other exams (Croatian NN) keep all-sections-passed.
     val isDelf = exam.id.contains("delf")
-    val isCaple = exam.id.contains("deple") || exam.id.contains("diple")
+    val isCaple = exam.id.contains("deple") || exam.id.contains("diple") ||
+        exam.id.contains("ciple") || exam.id.contains("acesso")
     val sectionScores = exam.sections.map { s ->
         val a = latestBySection[s.id]
         when {
