@@ -17,12 +17,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,13 +26,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
@@ -45,21 +39,18 @@ import com.corlang.app.data.isMastered
 import com.corlang.app.ui.components.Bullet
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.StatTile
-import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.theme.Radius
-import kotlinx.coroutines.launch
 
 /**
- * Profile, organised into bands so it leads with identity and progress instead of a wall:
- *   You (name), Progress (streak/days/level + vocab stats), Assessment (practice, exam
- *   readiness, can-do), and Reference (CEFR ladder, the Pareto insight, resources) — the last
- *   group collapsed by default since it's browse-when-you-want material.
+ * Progress, organised into bands so it leads with identity and progress instead of a wall:
+ *   You (name), Progress (streak/days/level + vocab stats), Course milestones, and the CEFR
+ *   ladder (collapsed by default since it's browse-when-you-want material). Quizzes, exam
+ *   readiness, and mock exams live on the journey as end-of-level checkpoints.
  */
 @Composable
 fun ProgressScreen(
     container: AppContainer,
-    lang: String,
-    onNavigate: (String) -> Unit = {}
+    lang: String
 ) {
     val meta = remember(lang) { container.content.meta(lang) }
     val levels = remember(lang) { container.content.levels(lang).levels }
@@ -72,7 +63,6 @@ fun ProgressScreen(
     val completedSet by container.progress.completedDays(lang)
         .collectAsState(initial = emptyList())
     val rawReviews by container.words.reviews(lang).collectAsState(initial = null)
-    val scope = rememberCoroutineScope()
 
     // Load-then-show (same rule as Today): without the gate every tab entry painted one frame
     // of "0 day streak / 0 days done / A0" stat tiles before Room emitted.
@@ -133,76 +123,8 @@ fun ProgressScreen(
             modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
         )
 
-        // ---- Assessment ----
-        Spacer(Modifier.height(22.dp))
-        SectionTitle("Assessment")
-        OutlinedButton(
-            onClick = { onNavigate(Dest.PRACTICE.route) },
-            modifier = Modifier.fillMaxWidth().padding(top = 4.dp, bottom = 2.dp)
-        ) { Text("Practice: quizzes & mock exam →") }
-
-        // Exam readiness + can-do, folded into ONE collapsible. The Practice button above already
-        // opens the mock exam, so this is reference detail: per-section pass status and the CEFR
-        // self-check — no need for a second always-open box repeating the same call to action.
-        val examLevel = levels.firstOrNull { it.exam != null }
-        val examSpec = remember(lang, examLevel?.id) {
-            container.content.exams(lang).firstOrNull { it.levelId == examLevel?.id }
-        }
-        if (examLevel?.exam != null) {
-            val exam = examLevel.exam!!
-            CollapsibleCard("Exam readiness · ${examLevel.id}") {
-                Text(exam.name, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
-                Text(exam.passRule, style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 2.dp, bottom = 6.dp))
-                if (examSpec != null) {
-                    val latest by container.progress.latestExamAttempts(lang, examSpec.id)
-                        .collectAsState(initial = emptyList())
-                    val bySection = latest.associateBy { it.sectionId }
-                    examSpec.sections.forEach { s ->
-                        val a = bySection[s.id]
-                        Bullet(
-                            s.title + ", " + when {
-                                a == null -> "not attempted"
-                                a.passed -> "passed ✓"
-                                s.passPercent != null && a.total > 0 ->
-                                    "${a.score * 100 / a.total}% (need ${s.passPercent}%)"
-                                else -> "not passed yet"
-                            }
-                        )
-                    }
-                }
-                if (examLevel.skills.isNotEmpty()) {
-                    val checks by container.progress.canDoChecks(lang, examLevel.id)
-                        .collectAsState(initial = emptyList())
-                    val checkedIds = checks.map { it.itemId }.toSet()
-                    Text("Can-do self-check (CEFR descriptors)",
-                        style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(top = 12.dp))
-                    examLevel.skills.forEachIndexed { si, skill ->
-                        Text(skill.skill, style = MaterialTheme.typography.labelMedium,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.secondary,
-                            modifier = Modifier.padding(top = 6.dp))
-                        skill.descriptors.forEachIndexed { di, d ->
-                            val itemId = "$si-$di"
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Checkbox(
-                                    checked = itemId in checkedIds,
-                                    onCheckedChange = { on ->
-                                        scope.launch {
-                                            container.progress.setCanDo(lang, examLevel.id, itemId, on)
-                                        }
-                                    }
-                                )
-                                Text(d, style = MaterialTheme.typography.bodySmall,
-                                    modifier = Modifier.padding(vertical = 4.dp))
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        // (Quizzes, exam readiness, and mock exams live on the journey as end-of-level
+        // checkpoints — see LevelJourney; no Assessment section here.)
 
         // ---- Level map ---- (where you are on the CEFR ladder; reference library is in Profile)
         Spacer(Modifier.height(22.dp))

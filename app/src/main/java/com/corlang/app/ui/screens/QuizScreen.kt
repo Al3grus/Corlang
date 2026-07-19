@@ -15,18 +15,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Card
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.SegmentedButton
-import androidx.compose.material3.SegmentedButtonDefaults
-import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.mutableStateListOf
@@ -54,100 +49,31 @@ import com.corlang.app.ui.theme.CorlangColors
 import kotlinx.coroutines.launch
 
 /**
- * Practice hub: level quizzes and the official-format mock exam, switched with a
- * segmented control (same pattern as the Learn tab).
+ * End-of-level quiz checkpoint, opened from the journey: runs the level's quiz directly.
+ * A best score is kept per quiz; finishing or exiting returns to where you came from.
  */
 @Composable
-fun QuizScreen(container: AppContainer, lang: String) {
-    var tab by rememberSaveable(lang) { mutableStateOf(0) }
-    Column(modifier = Modifier.fillMaxSize()) {
-        SingleChoiceSegmentedButtonRow(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 8.dp)
+fun LevelQuizScreen(container: AppContainer, lang: String, levelId: String, onExit: () -> Unit) {
+    val quiz = remember(lang, levelId) {
+        container.content.quizzes(lang).quizzes.firstOrNull { it.levelId == levelId }
+    }
+    if (quiz == null) {
+        // The journey only draws the checkpoint for levels that have a quiz; this is the
+        // safety net for a bad deep link.
+        Column(
+            modifier = Modifier.fillMaxSize().padding(24.dp),
+            verticalArrangement = Arrangement.Center
         ) {
-            SegmentedButton(
-                selected = tab == 0,
-                onClick = { tab = 0 },
-                shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2)
-            ) { Text("Quizzes") }
-            SegmentedButton(
-                selected = tab == 1,
-                onClick = { tab = 1 },
-                shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2)
-            ) { Text("Mock exam") }
-        }
-        when (tab) {
-            0 -> QuizzesTab(container, lang)
-            else -> ExamScreen(container, lang)
-        }
-    }
-}
-
-@Composable
-private fun QuizzesTab(container: AppContainer, lang: String) {
-    val quizzes = remember(lang) { container.content.quizzes(lang).quizzes }
-    // Store only the id so an in-progress quiz survives rotation/process recreation.
-    var activeId by rememberSaveable(lang) { mutableStateOf<String?>(null) }
-    val active = quizzes.firstOrNull { it.id == activeId }
-
-    if (active == null) {
-        QuizList(container, lang, quizzes) { activeId = it.id }
-    } else {
-        // System back exits the quiz (same as the Exit button), not the app.
-        androidx.activity.compose.BackHandler { activeId = null }
-        QuizRunner(container, lang, active) { activeId = null }
-    }
-}
-
-@Composable
-private fun QuizList(
-    container: AppContainer,
-    lang: String,
-    quizzes: List<Quiz>,
-    onPick: (Quiz) -> Unit
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .padding(16.dp)
-    ) {
-        Text("Quizzes", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-        Text(
-            "A few minutes each, easy → hard. Graded with explanations.",
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
-        if (quizzes.isEmpty()) {
-            Text("No quizzes for this language yet, coming soon.")
-        }
-        quizzes.forEach { quiz ->
-            val best by container.progress.bestQuizScore(lang, quiz.id)
-                .collectAsState(initial = null)
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 6.dp)
-                    .clickable { onPick(quiz) }
-            ) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        "${quiz.levelId} · ${quiz.title}",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        "${quiz.questions.size} questions" +
-                            (best?.let { " · best ${it}/${quiz.questions.size}" } ?: ""),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                }
+            Text("No quiz for this level yet.")
+            OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
+                Text("Back")
             }
         }
+        return
     }
+    // System back exits the quiz (same as the Exit button), not the app.
+    androidx.activity.compose.BackHandler { onExit() }
+    QuizRunner(container, lang, quiz, onExit = onExit)
 }
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -468,7 +394,7 @@ private fun QuizSummary(quiz: Quiz, score: Int, onExit: () -> Unit) {
             style = MaterialTheme.typography.bodyLarge
         )
         Button(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 24.dp)) {
-            Text("Back to quizzes")
+            Text("Back to your journey")
         }
     }
 }
