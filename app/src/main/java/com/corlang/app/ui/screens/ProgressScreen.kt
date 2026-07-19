@@ -1,5 +1,6 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,6 +35,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -65,6 +67,10 @@ fun ProgressScreen(
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val rawDaysDone by container.progress.completedDayCount(lang)
         .collectAsState(initial = null)
+    // For the course milestone bar: lessons per level (plan order) and which are done.
+    val plan = remember(lang) { container.content.plan(lang) }
+    val completedSet by container.progress.completedDays(lang)
+        .collectAsState(initial = emptyList())
     val rawReviews by container.words.reviews(lang).collectAsState(initial = null)
     val scope = rememberCoroutineScope()
 
@@ -105,7 +111,7 @@ fun ProgressScreen(
         Row(modifier = Modifier.fillMaxWidth().padding(top = 14.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             StatTile("$streak", "day streak", Modifier.weight(1f))
-            StatTile("$daysDone", "days done", Modifier.weight(1f))
+            StatTile("$daysDone", "lessons done", Modifier.weight(1f))
             StatTile(currentLevel, "current level", Modifier.weight(1f))
         }
         Row(modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
@@ -114,6 +120,18 @@ fun ProgressScreen(
             StatTile("$wordsLearned", "words learned", Modifier.weight(1f))
             StatTile("$wordsMastered", "words mastered", Modifier.weight(1f))
         }
+
+        // ---- Course milestone bar: the whole road in one line, a segment per level, each
+        // filling with that level's completed lessons. ----
+        Spacer(Modifier.height(22.dp))
+        SectionTitle("Course milestones")
+        CourseMilestoneBar(
+            segments = remember(plan) {
+                plan.days.groupBy { it.level }.map { (level, days) -> level to days.map { it.day } }
+            },
+            completed = completedSet.toSet(),
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+        )
 
         // ---- Assessment ----
         Spacer(Modifier.height(22.dp))
@@ -257,3 +275,60 @@ private fun CollapsibleCard(title: String, content: @Composable () -> Unit) {
     }
 }
 
+/**
+ * One horizontal bar for the whole course: a segment per CEFR level, width proportional to the
+ * level's lesson count, filled by the share of its lessons completed, labelled underneath with
+ * the level id and its done/total count. A finished level's label turns primary.
+ */
+@Composable
+private fun CourseMilestoneBar(
+    segments: List<Pair<String, List<Int>>>,
+    completed: Set<Int>,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(3.dp)
+        ) {
+            segments.forEach { (_, days) ->
+                val fraction =
+                    if (days.isEmpty()) 0f
+                    else days.count { it in completed }.toFloat() / days.size
+                Box(
+                    modifier = Modifier
+                        .weight(days.size.coerceAtLeast(1).toFloat())
+                        .height(10.dp)
+                        .clip(RoundedCornerShape(5.dp))
+                        .background(MaterialTheme.colorScheme.surfaceVariant)
+                ) {
+                    if (fraction > 0f) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth(fraction)
+                                .height(10.dp)
+                                .background(MaterialTheme.colorScheme.primary)
+                        )
+                    }
+                }
+            }
+        }
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
+            horizontalArrangement = Arrangement.spacedBy(3.dp)
+        ) {
+            segments.forEach { (level, days) ->
+                val done = days.count { it in completed }
+                Text(
+                    "$level $done/${days.size}",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = if (done == days.size && days.isNotEmpty())
+                        MaterialTheme.colorScheme.primary
+                    else MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 1,
+                    modifier = Modifier.weight(days.size.coerceAtLeast(1).toFloat())
+                )
+            }
+        }
+    }
+}

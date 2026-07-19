@@ -82,14 +82,14 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
         ) {
             Text("You're placed at", style = MaterialTheme.typography.titleMedium)
             Text(
-                "$placeLevel · Day $placeDay",
+                "$placeLevel · Lesson $placeDay",
                 style = MaterialTheme.typography.displaySmall,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.padding(vertical = 12.dp)
             )
             Text(
-                "Your lessons will start here. Earlier days stay available to review any time, and " +
+                "Your lessons will start here. Earlier lessons stay available to review any time, and " +
                     "you can retake this test from Settings.",
                 style = MaterialTheme.typography.bodyMedium
             )
@@ -111,7 +111,7 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                     }
                 },
                 modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
-            ) { Text("Start at $placeLevel · Day $placeDay") }
+            ) { Text("Start at $placeLevel · Lesson $placeDay") }
             OutlinedButton(onClick = onDone, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
                 Text("Cancel")
             }

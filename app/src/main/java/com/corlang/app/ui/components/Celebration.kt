@@ -217,7 +217,7 @@ fun CelebrationOverlay(
                 StreakFlame(streak = streak, lit = true, size = 96.dp)
                 Spacer(Modifier.height(20.dp))
                 Text(
-                    "Day $dayNumber complete!",
+                    "Lesson $dayNumber complete!",
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center

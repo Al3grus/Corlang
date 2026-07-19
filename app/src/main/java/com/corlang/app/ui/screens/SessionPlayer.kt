@@ -252,8 +252,8 @@ fun buildSessionSteps(
 
     steps += SessionStep(
         id = "complete", kind = StepKind.COMPLETE,
-        title = "Day ${day.day} done",
-        detail = "Mark the day complete, streak credited, plan advances."
+        title = "Lesson ${day.day} done",
+        detail = "Mark the lesson complete, streak credited, plan advances."
     )
     return steps
 }
@@ -441,7 +441,7 @@ fun SessionPlayer(
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                "Day ${day.day} session",
+                "Lesson ${day.day}",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.weight(1f)
@@ -736,7 +736,7 @@ fun SessionPlayer(
                         val alreadyDone = !completing && completedList?.contains(day.day) == true
                         if (alreadyDone) {
                             Text(
-                                "Day ${day.day} is already complete ✓ — revisiting doesn't need re-marking.",
+                                "Lesson ${day.day} is already complete ✓, revisiting doesn't need re-marking.",
                                 style = MaterialTheme.typography.bodyMedium,
                                 modifier = Modifier.padding(bottom = 8.dp)
                             )
@@ -757,7 +757,7 @@ fun SessionPlayer(
                                     celebrate = true
                                 },
                                 modifier = Modifier.fillMaxWidth()
-                            ) { Text("Mark day ${day.day} complete ✓") }
+                            ) { Text("Mark lesson ${day.day} complete ✓") }
                         }
                         if (celebrate) {
                             // completeDay's write lands async; the flow recomposes the overlay
