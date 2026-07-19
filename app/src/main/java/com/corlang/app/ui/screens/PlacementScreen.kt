@@ -94,15 +94,19 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                     "you can retake this test from Settings.",
                 style = MaterialTheme.typography.bodyMedium
             )
-            // A short test cannot prove you know every word it skipped, so the level just below
-            // your placement is queued for REVIEW, not retaught. Anything you have forgotten
-            // shows up as a failed card and returns to normal scheduling.
-            val below = remember(placeLevel) { WordsRepository.levelBelow(placeLevel) }
-            if (below != null) {
+            // A short test cannot prove you know every word it skipped, so the run-up to your
+            // placement is queued for REVIEW, not retaught. Anything you have forgotten shows up
+            // as a failed card and returns to normal scheduling.
+            val seedCount = remember(placeDay) {
+                val (from, until) = WordsRepository.prePlacementRange(placeDay)
+                until - from
+            }
+            if (seedCount > 0) {
                 Text(
-                    "Because this test is short, your $below words will be added to your reviews " +
-                        "so nothing slips through the cracks. They are spread over the coming days, " +
-                        "within your daily review limit.",
+                    "Because this test is short, the words from the lessons just before here, " +
+                        "about $seedCount of them, are added to your reviews so nothing slips " +
+                        "through the cracks. They are spread over the coming days, within your " +
+                        "daily review limit.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 10.dp)
@@ -122,11 +126,11 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                         // new words. Overwritten (not maxed) on retake so placing lower
                         // re-opens earlier words.
                         container.languagePrefs.setPlacementDay(lang, placeDay)
-                        // Check, don't reteach: the level below is queued for review so a
-                        // mis-placement surfaces as failed cards instead of silent gaps.
-                        WordsRepository.levelBelow(placeLevel)?.let {
-                            container.words.seedLevelForReview(lang, it)
-                        }
+                        // Check, don't reteach: the lessons just before the placement point are
+                        // queued for review, so a mis-placement surfaces as failed cards instead
+                        // of silent gaps. Anchored at the placement point, so it can never touch
+                        // words the learner has not reached yet.
+                        container.words.seedPrePlacementForReview(lang, placeDay)
                         onDone()
                     }
                 },

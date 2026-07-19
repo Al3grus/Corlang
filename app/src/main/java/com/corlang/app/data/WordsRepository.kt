@@ -71,26 +71,34 @@ class WordsRepository(
     }
 
     /**
-     * Queues one CEFR level's vocabulary for REVIEW after a placement test.
+     * Queues the vocabulary from the lessons immediately BEFORE a placement for review.
      *
-     * Placement is a dozen questions and cannot verify the thousand-odd words it skips past, so
-     * a learner placed into B1 is assumed to know A2 rather than proven to. These words are
-     * therefore seeded as due-today review cards, never as new words: the learner is checked on
-     * them instead of being taught them, anything they have actually forgotten fails its first
-     * card and re-enters normal FSRS scheduling, and the daily review limit keeps the resulting
-     * backlog bounded. Words already introduced are left untouched.
+     * Placement is a dozen questions and cannot verify the hundreds of words it skips past, so
+     * the run-up to the placement point is checked rather than assumed: seeded as due-today
+     * review cards, never as new words. A word the learner really knows passes and gets a long
+     * interval; one they have lost fails its first card and rejoins normal FSRS scheduling. The
+     * daily review limit bounds the backlog.
      *
-     * Returns how many cards were queued, so the caller can tell the learner.
+     * The window is measured in DECK INDEX, anchored at the placement point, which is what makes
+     * it safe. Seeding by CEFR level instead looks equivalent but is not: pack levels do not map
+     * to contiguous deck ranges (Croatian A0 spans 0..207 while A1 starts at 68), so a level
+     * window reached PAST the placement point and marked words the learner had never seen as
+     * already known, which permanently stopped them ever being taught. Anchoring at deckStart
+     * makes that impossible.
+     *
+     * Returns how many cards were queued.
      */
-    suspend fun seedLevelForReview(
+    suspend fun seedPrePlacementForReview(
         lang: String,
-        level: String,
+        placedDay: Int,
+        lessons: Int = REVIEW_SEED_LESSONS,
         today: Long = todayEpochDay()
     ): Int {
+        val (from, until) = prePlacementRange(placedDay, lessons)
+        if (until <= from) return 0
         val seen = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()
-        val words = content.vocab(lang).packs
-            .filter { it.level.equals(level, ignoreCase = true) }
-            .flatMap { it.words }
+        val words = allWords(lang).subList(from.coerceAtMost(allWords(lang).size),
+                                           until.coerceAtMost(allWords(lang).size))
             .filter { it.id !in seen }
         words.forEach {
             // A fresh card due today: the first grading runs the normal first-review path, so a
@@ -124,16 +132,26 @@ class WordsRepository(
     companion object {
         fun todayEpochDay(): Long = LocalDate.now().toEpochDay()
 
-        /** The CEFR ladder, low to high. A0 is an optional onramp some courses provide. */
-        private val LADDER = listOf("A0", "A1", "A2", "B1", "B2", "C1")
+        /**
+         * How many lessons' worth of vocabulary a placement queues for review. 60 lessons is
+         * about 600 words: enough to cover the run-up a short test cannot verify, small enough
+         * that the daily review limit clears it in a couple of weeks.
+         */
+        const val REVIEW_SEED_LESSONS = 60
 
         /**
-         * The CEFR level immediately below [level], or null at the bottom of the ladder or for
-         * an unrecognised level. Pure, so the placement seeding rule is unit-testable.
+         * The deck slice `[from, until)` a placement at [placedDay] should queue for review:
+         * the last [lessons] lessons before the placement point. Never reaches past the
+         * placement point, and never below zero. Pure, so the rule is unit-testable.
          */
-        fun levelBelow(level: String): String? {
-            val i = LADDER.indexOfFirst { it.equals(level, ignoreCase = true) }
-            return if (i > 0) LADDER[i - 1] else null
+        fun prePlacementRange(
+            placedDay: Int,
+            lessons: Int = REVIEW_SEED_LESSONS,
+            perLesson: Int = Fsrs.NEW_WORDS_PER_DAY
+        ): Pair<Int, Int> {
+            val until = ((placedDay - 1) * perLesson).coerceAtLeast(0)
+            val from = (until - lessons * perLesson).coerceAtLeast(0)
+            return from to until
         }
     }
 }
