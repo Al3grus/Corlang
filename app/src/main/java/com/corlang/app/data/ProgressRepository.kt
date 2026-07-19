@@ -28,6 +28,13 @@ class ProgressRepository(private val dao: ProgressDao) {
     fun bestQuizScore(lang: String, quizId: String): Flow<Int?> = dao.bestQuizScore(lang, quizId)
     fun feynmanAttempts(lang: String): Flow<List<FeynmanAttempt>> = dao.feynmanAttempts(lang)
 
+    /**
+     * Erases EVERY trace of one language's progress: lessons, streak, word memory, quiz, exam,
+     * teach-back and can-do records. Transactional and irreversible; the caller owns the
+     * confirmation dialog and the preference cleanup (placement offsets, session snapshots).
+     */
+    suspend fun resetLanguage(lang: String) = dao.resetLanguage(lang)
+
     /** Ensures a progress row exists for a language (called on first open of that language). */
     suspend fun ensure(lang: String) {
         if (dao.progressOnce(lang) == null) {

@@ -143,6 +143,13 @@ class LanguagePrefs(private val context: Context) {
     val placementHandledLanguages: Flow<Set<String>> =
         context.dataStore.data.map { it[placementHandledKey] ?: emptySet() }
 
+    /** Re-arms the new-language placement prompt, used when a course's progress is reset. */
+    suspend fun unmarkPlacementHandled(lang: String) {
+        context.dataStore.edit {
+            it[placementHandledKey] = (it[placementHandledKey] ?: emptySet()) - lang
+        }
+    }
+
     suspend fun markPlacementHandled(lang: String) {
         context.dataStore.edit {
             it[placementHandledKey] = (it[placementHandledKey] ?: emptySet()) + lang

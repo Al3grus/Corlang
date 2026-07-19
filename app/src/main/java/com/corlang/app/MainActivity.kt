@@ -437,7 +437,19 @@ private fun CorlangApp(container: AppContainer) {
                     SettingsScreen(
                         container,
                         onBack = { showSettings = false },
-                        onEditProfile = { showSettings = false; showOnboarding = true }
+                        onEditProfile = { showSettings = false; showOnboarding = true },
+                        onProgressReset = { landOn ->
+                            // Land on the Today dashboard of the chosen course (the one with the
+                            // most remaining progress, or the freshly reset course itself).
+                            appState.selectLanguage(landOn)
+                            showSettings = false
+                            inLesson = false
+                            navController.navigate(Dest.TODAY.route) {
+                                popUpTo(Dest.TODAY.route) { saveState = true }
+                                launchSingleTop = true
+                                restoreState = true
+                            }
+                        }
                     )
                 }
             }
