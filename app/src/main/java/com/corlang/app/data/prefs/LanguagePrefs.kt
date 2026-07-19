@@ -246,11 +246,18 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[placementDayKey(lang)] = day.coerceAtLeast(0) }
     }
 
-    /** First deck index the learner should ever be taught as NEW (0 = full deck from Day 1). */
+    /**
+     * First deck index the learner should ever be taught as NEW (0 = full deck from Day 1).
+     *
+     * Derived from the placement DAY at the course's fixed pace. It must NOT read the stored
+     * new_words_per_day key: that key can still hold a 15 or 20 from before the pace was fixed,
+     * and multiplying by it would skip up to twice as much of the deck as the learner actually
+     * placed over, silently burying hundreds of words they were never taught.
+     */
     fun wordDeckStart(lang: String): Flow<Int> =
         context.dataStore.data.map {
             val placedDay = it[placementDayKey(lang)] ?: 0
-            if (placedDay > 0) (placedDay - 1) * (it[newWordsKey] ?: 10)
+            if (placedDay > 0) (placedDay - 1) * com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
             else it[deckStartKey(lang)] ?: 0   // legacy absolute offset
         }
 
