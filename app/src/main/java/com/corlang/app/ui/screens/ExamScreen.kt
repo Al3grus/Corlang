@@ -96,13 +96,17 @@ object ExamRules {
 }
 
 /**
- * Mock-exam hub + section runners, mirroring the official B1 exam format
+ * The end-of-level mock exam, opened from the journey's flag checkpoint: overview + section
+ * runners mirroring the official exam format for that level
  * (see docs/sources/croaticum-b1-sample.md and nn-exam-regulations.md).
  */
 @Composable
-fun ExamScreen(container: AppContainer, lang: String) {
-    val exams = remember(lang) { container.content.exams(lang) }
-    if (exams.isEmpty()) {
+fun ExamScreen(container: AppContainer, lang: String, levelId: String, onExit: () -> Unit) {
+    val exam = remember(lang, levelId) {
+        container.content.exams(lang).firstOrNull { it.levelId == levelId }
+    }
+    if (exam == null) {
+        // The journey only draws the flag for levels that have a mock; bad-deep-link safety net.
         Column(
             Modifier.fillMaxSize().padding(24.dp),
             verticalArrangement = Arrangement.Center,
@@ -115,69 +119,32 @@ fun ExamScreen(container: AppContainer, lang: String) {
                 core = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Text(
-                "No exam content for this language yet.",
+                "No mock exam for this level yet.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 12.dp)
             )
-        }
-        return
-    }
-    // Ids only, so an in-progress exam/section survives rotation/recreation.
-    var activeExamId by rememberSaveable(lang) { mutableStateOf<String?>(null) }
-    val exam = exams.firstOrNull { it.id == activeExamId }
-
-    if (exam == null) {
-        // Pick the mock for YOUR level, practice the official format from A1 up.
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .verticalScroll(rememberScrollState())
-                .padding(16.dp)
-        ) {
-            Text("Mock exams", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-            Text(
-                "All levels use the official 5-section exam format. Practise at your current level; " +
-                    "B1 is the real certificate exam.",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(vertical = 6.dp)
-            )
-            exams.forEach { e ->
-                InfoCard {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.fillMaxWidth().clickable { activeExamId = e.id }
-                    ) {
-                        Column(Modifier.weight(1f)) {
-                            Text("${e.levelId} · ${e.title}",
-                                style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                            Text(e.description,
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        }
-                        Text("▶", style = MaterialTheme.typography.titleLarge)
-                    }
-                }
+            OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
+                Text("Back")
             }
-            Spacer(Modifier.height(24.dp))
         }
         return
     }
 
+    // Id only, so an in-progress section survives rotation/recreation.
     var activeSectionId by rememberSaveable(lang, exam.id) { mutableStateOf<String?>(null) }
 
-    // System back mirrors the on-screen exits: section → overview → exam list. Without this,
+    // System back mirrors the on-screen exits: section → overview → journey. Without this,
     // back-press mid-section finished the whole Activity and lost the attempt.
     androidx.activity.compose.BackHandler {
-        if (activeSectionId != null) activeSectionId = null else activeExamId = null
+        if (activeSectionId != null) activeSectionId = null else onExit()
     }
 
     val section = exam.sections.firstOrNull { it.id == activeSectionId }
     if (section == null) {
         ExamOverview(
             container, lang, exam,
-            onBack = { activeExamId = null }
+            onBack = onExit
         ) { activeSectionId = it.id }
     } else if (section.kind == ExamSectionKind.WRITING || section.kind == ExamSectionKind.SPEAKING) {
         OpenSectionRunner(container, lang, exam, section) { activeSectionId = null }
@@ -276,7 +243,7 @@ private fun ExamOverview(
             }
         }
         OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
-            Text("Choose another level")
+            Text("Back to your journey")
         }
         Spacer(Modifier.height(24.dp))
     }

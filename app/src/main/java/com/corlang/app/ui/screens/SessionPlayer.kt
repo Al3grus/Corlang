@@ -123,7 +123,9 @@ fun buildSessionSteps(
         val t = text.lowercase()
         return when {
             "words tab" in t || "due words" in t -> Dest.WORDS.route
-            "quiz" in t || "mock exam" in t -> Dest.PRACTICE.route
+            // The level quiz lives on the journey as an end-of-level checkpoint; a drill that
+            // mentions it deep-links straight to this day's level quiz.
+            "quiz" in t || "mock exam" in t -> "quiz/${day.level}"
             // Cheatsheet/Grammar live on the Profile tab now; Learn keeps Teach + Tutor.
             "cheatsheet" in t || "grammar tab" in t -> Dest.PROGRESS.route
             "feynman" in t || "teach" in t -> Dest.LEARN.route
@@ -697,9 +699,9 @@ fun SessionPlayer(
                                 modifier = Modifier.fillMaxWidth()
                             ) {
                                 Text(
-                                    when (route) {
-                                        Dest.PRACTICE.route -> "Open quizzes"
-                                        Dest.LEARN.route -> "Open Learn tab"
+                                    when {
+                                        route.startsWith("quiz/") -> "Open the level quiz"
+                                        route == Dest.LEARN.route -> "Open Learn tab"
                                         else -> "Open Review"
                                     }
                                 )

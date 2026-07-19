@@ -48,13 +48,15 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.screens.CorlangSplash
+import com.corlang.app.ui.screens.ExamScreen
+import com.corlang.app.ui.screens.LevelQuizScreen
 import com.corlang.app.ui.screens.PaywallScreen
 import com.corlang.app.ui.screens.LearnScreen
 import com.corlang.app.ui.screens.OnboardingScreen
 import com.corlang.app.ui.screens.PlacementScreen
 import com.corlang.app.ui.screens.ProfileScreen
 import com.corlang.app.ui.screens.ProgressScreen
-import com.corlang.app.ui.screens.QuizScreen
+import com.corlang.app.ui.screens.ReadinessScreen
 import com.corlang.app.ui.screens.SettingsScreen
 import com.corlang.app.ui.screens.TodayScreen
 import com.corlang.app.ui.screens.WordsScreen
@@ -377,17 +379,30 @@ private fun CorlangApp(container: AppContainer) {
                 )
             }
             composable(Dest.WORDS.route) { WordsScreen(container, lang) }
-            composable(Dest.PRACTICE.route) { QuizScreen(container, lang) }
             composable(Dest.LEARN.route) { LearnScreen(container, lang) }
-            composable(Dest.PROGRESS.route) {
-                ProgressScreen(container, lang,
-                    onNavigate = { route ->
-                        navController.navigate(route) {
-                            popUpTo(Dest.TODAY.route) { saveState = true }
-                            launchSingleTop = true
-                            restoreState = true
-                        }
-                    })
+            composable(Dest.PROGRESS.route) { ProgressScreen(container, lang) }
+            // End-of-level checkpoints, opened from the journey (Today tab). Argumented routes,
+            // not tabs: each exits by popping back to wherever the journey was.
+            composable("quiz/{level}") { entry ->
+                LevelQuizScreen(
+                    container, lang,
+                    levelId = entry.arguments?.getString("level") ?: "",
+                    onExit = { navController.popBackStack() }
+                )
+            }
+            composable("readiness/{level}") { entry ->
+                ReadinessScreen(
+                    container, lang,
+                    levelId = entry.arguments?.getString("level") ?: "",
+                    onExit = { navController.popBackStack() }
+                )
+            }
+            composable("exam/{level}") { entry ->
+                ExamScreen(
+                    container, lang,
+                    levelId = entry.arguments?.getString("level") ?: "",
+                    onExit = { navController.popBackStack() }
+                )
             }
             composable(Dest.PROFILE.route) {
                 ProfileScreen(

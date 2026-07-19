@@ -57,10 +57,26 @@ fun TodayScreen(
     onOpenPaywall: (String) -> Unit = {}
 ) {
     val plan = remember(lang) { container.content.plan(lang) }
-    // Which CEFR levels end in an official exam — used to draw a checkpoint at the tail of each
-    // such level's path (finish the level to unlock its mock exam).
-    val examLevelIds = remember(lang) {
+    // End-of-level checkpoints drawn at the tail of each level's journey path:
+    //  - quiz: every level that has a level quiz (extra practice + confirmation you learned it)
+    //  - readiness: levels whose official exam has a readiness check (pass status + can-do)
+    //  - exam flag: every level that has a mock exam in the official format
+    val quizLevelIds = remember(lang) {
+        container.content.quizzes(lang).quizzes.map { it.levelId }.toSet()
+    }
+    val readinessLevelIds = remember(lang) {
         container.content.levels(lang).levels.filter { it.exam != null }.map { it.id }.toSet()
+    }
+    val examLevelIds = remember(lang) {
+        container.content.exams(lang).map { it.levelId }.toSet()
+    }
+    // Levels whose quiz has been completed at least once — fills the quiz checkpoint stone.
+    val quizIdToLevel = remember(lang) {
+        container.content.quizzes(lang).quizzes.associate { it.id to it.levelId }
+    }
+    val quizAttempts by container.progress.quizAttempts(lang).collectAsState(initial = emptyList())
+    val quizDoneLevelIds = remember(quizAttempts, quizIdToLevel) {
+        quizAttempts.mapNotNull { quizIdToLevel[it.quizId] }.toSet()
     }
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     // Nullable-until-loaded so the load-gate below can tell "no completed days" apart from
@@ -423,8 +439,13 @@ fun TodayScreen(
             completed = completed,
             targetDay = targetDay,
             viewedDay = viewedDay,
+            quizLevelIds = quizLevelIds,
+            readinessLevelIds = readinessLevelIds,
             examLevelIds = examLevelIds,
-            onOpenExam = { onNavigate(Dest.PRACTICE.route) },
+            quizDoneLevelIds = quizDoneLevelIds,
+            onOpenQuiz = { level -> onNavigate("quiz/$level") },
+            onOpenReadiness = { level -> onNavigate("readiness/$level") },
+            onOpenExam = { level -> onNavigate("exam/$level") },
             // Tapping the CURRENT day's stone is not "browsing away" — the dashboard keeps
             // following the plan.
             onPickDay = { d -> viewedDay = d; userBrowsed = d != targetDay }

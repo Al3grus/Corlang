@@ -21,7 +21,9 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CheckBox
 import androidx.compose.material.icons.filled.Flag
+import androidx.compose.material.icons.filled.QuestionMark
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -58,8 +60,13 @@ fun LevelJourney(
     completed: List<Int>,
     targetDay: Int,
     viewedDay: Int,
+    quizLevelIds: Set<String> = emptySet(),
+    readinessLevelIds: Set<String> = emptySet(),
     examLevelIds: Set<String> = emptySet(),
-    onOpenExam: () -> Unit = {},
+    quizDoneLevelIds: Set<String> = emptySet(),
+    onOpenQuiz: (String) -> Unit = {},
+    onOpenReadiness: (String) -> Unit = {},
+    onOpenExam: (String) -> Unit = {},
     onPickDay: (Int) -> Unit
 ) {
     val completedSet = remember(completed) { completed.toSet() }
@@ -228,50 +235,110 @@ fun LevelJourney(
                 }
             }
 
-            // Checkpoint: a flag at the tail of a level that ends in an official exam. It unlocks
-            // once every day in the level is done; tapping opens the mock exam.
-            if (selectedLevel in examLevelIds && stones.isNotEmpty()) {
-                val levelDone = stones.all { it.day in completedSet }
-                Box(
-                    modifier = Modifier
-                        .width(12.dp)
-                        .height(2.dp)
-                        .background(
-                            if (levelDone) MaterialTheme.colorScheme.primary
-                            else MaterialTheme.colorScheme.outlineVariant
-                        )
-                )
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .size(46.dp)
-                        .background(
-                            if (levelDone) MaterialTheme.colorScheme.tertiary
-                            else MaterialTheme.colorScheme.surfaceVariant,
-                            CircleShape
-                        )
-                        .then(
-                            if (levelDone) Modifier.clickable { onOpenExam() } else Modifier
-                        )
-                ) {
-                    Icon(
-                        Icons.Filled.Flag,
+            // Checkpoints at the tail of the level's path, in the order you take them:
+            // level quiz → exam readiness check → mock exam flag. All unlock together once
+            // every lesson in the level is done; each taps through to its own screen.
+            val levelDone = stones.isNotEmpty() && stones.all { it.day in completedSet }
+            if (stones.isNotEmpty()) {
+                if (selectedLevel in quizLevelIds) {
+                    CheckpointConnector(levelDone)
+                    CheckpointNode(
+                        icon = Icons.Filled.QuestionMark,
+                        contentDescription = "Level quiz checkpoint",
+                        unlocked = levelDone,
+                        done = selectedLevel in quizDoneLevelIds,
+                        onClick = { onOpenQuiz(selectedLevel) }
+                    )
+                }
+                if (selectedLevel in readinessLevelIds) {
+                    CheckpointConnector(levelDone)
+                    CheckpointNode(
+                        icon = Icons.Filled.CheckBox,
+                        contentDescription = "Exam readiness checkpoint",
+                        unlocked = levelDone,
+                        done = false,
+                        onClick = { onOpenReadiness(selectedLevel) }
+                    )
+                }
+                if (selectedLevel in examLevelIds) {
+                    CheckpointConnector(levelDone)
+                    CheckpointNode(
+                        icon = Icons.Filled.Flag,
                         contentDescription = "Level exam checkpoint",
-                        tint = if (levelDone) MaterialTheme.colorScheme.onTertiary
-                               else MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.size(22.dp)
+                        unlocked = levelDone,
+                        done = false,
+                        onClick = { onOpenExam(selectedLevel) }
                     )
                 }
             }
         }
+        val hasCheckpoints = stones.isNotEmpty() && (
+            selectedLevel in quizLevelIds || selectedLevel in readinessLevelIds ||
+                selectedLevel in examLevelIds
+        )
         Text(
             "$selectedLevel · $doneInLevel / ${stones.size} lessons done" +
-                (if (selectedLevel in examLevelIds && stones.isNotEmpty()) {
-                    if (stones.all { it.day in completedSet }) "  ·  exam unlocked" else "  ·  finish to unlock the exam"
+                (if (hasCheckpoints) {
+                    if (stones.all { it.day in completedSet }) "  ·  checkpoints unlocked"
+                    else "  ·  finish the lessons to unlock the checkpoints"
                 } else ""),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 6.dp)
+        )
+    }
+}
+
+/** Path segment leading into a checkpoint node, filled once the level's lessons are done. */
+@Composable
+private fun CheckpointConnector(levelDone: Boolean) {
+    Box(
+        modifier = Modifier
+            .width(12.dp)
+            .height(2.dp)
+            .background(
+                if (levelDone) MaterialTheme.colorScheme.primary
+                else MaterialTheme.colorScheme.outlineVariant
+            )
+    )
+}
+
+/**
+ * One end-of-level checkpoint stone. Locked (grey) until the level's lessons are done,
+ * unlocked (tertiary) and tappable after, and filled primary once completed at least once
+ * (only the quiz tracks a done state for now).
+ */
+@Composable
+private fun CheckpointNode(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    contentDescription: String,
+    unlocked: Boolean,
+    done: Boolean,
+    onClick: () -> Unit
+) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .size(46.dp)
+            .background(
+                when {
+                    done -> MaterialTheme.colorScheme.primary
+                    unlocked -> MaterialTheme.colorScheme.tertiary
+                    else -> MaterialTheme.colorScheme.surfaceVariant
+                },
+                CircleShape
+            )
+            .then(if (unlocked) Modifier.clickable { onClick() } else Modifier)
+    ) {
+        Icon(
+            icon,
+            contentDescription = contentDescription,
+            tint = when {
+                done -> MaterialTheme.colorScheme.onPrimary
+                unlocked -> MaterialTheme.colorScheme.onTertiary
+                else -> MaterialTheme.colorScheme.onSurfaceVariant
+            },
+            modifier = Modifier.size(22.dp)
         )
     }
 }
