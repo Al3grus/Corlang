@@ -112,6 +112,9 @@ private fun CorlangApp(container: AppContainer) {
     // Whether a guided lesson is open on the Today tab. Hoisted here so any bottom-nav tap can
     // exit it back to the Today dashboard (lesson progress is saved per step, so it resumes).
     var inLesson by rememberSaveable { mutableStateOf(false) }
+    // Bumped on every Profile tab tap. ProfileScreen watches it to close any open sub-page:
+    // when the tab is ALREADY selected, navigate() is a no-op and nothing else would reset it.
+    var profileTabTick by remember { mutableStateOf(0) }
 
     // Point the voice and speech recognizer at the active language (hr/fr).
     // prevLang distinguishes a real language SWITCH from the first composition after process
@@ -302,6 +305,7 @@ private fun CorlangApp(container: AppContainer) {
                             showSettings = false
                             showPlacement = false
                             showPaywall = false
+                            if (dest.route == Dest.PROFILE.route) profileTabTick++
                             // Any tab tap (including Today itself) exits an open lesson back to the
                             // dashboard — the same as "Exit (saved)". Progress is saved per step.
                             inLesson = false
@@ -388,6 +392,7 @@ private fun CorlangApp(container: AppContainer) {
             composable(Dest.PROFILE.route) {
                 ProfileScreen(
                     container, lang,
+                    resetTick = profileTabTick,
                     onSelectLanguage = appState::selectLanguage,
                     onOpenSettings = { showSettings = true },
                     onGetPremium = { paywallLevel = null; showPaywall = true }
@@ -416,6 +421,7 @@ private fun CorlangApp(container: AppContainer) {
                 ) {
                     SettingsScreen(
                         container,
+                        onBack = { showSettings = false },
                         onEditProfile = { showSettings = false; showOnboarding = true }
                     )
                 }

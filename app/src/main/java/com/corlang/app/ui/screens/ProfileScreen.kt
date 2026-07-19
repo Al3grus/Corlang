@@ -16,17 +16,20 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.WorkspacePremium
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -53,6 +56,7 @@ import kotlinx.coroutines.launch
 fun ProfileScreen(
     container: AppContainer,
     lang: String,
+    resetTick: Int = 0,
     onSelectLanguage: (String) -> Unit,
     onOpenSettings: () -> Unit,
     onGetPremium: () -> Unit = {}
@@ -64,6 +68,8 @@ fun ProfileScreen(
     // when you came BACK to Profile from another tab. Leaving the tab should reset to the
     // Profile main view, so this state is meant to die with the visit.
     var page by remember(lang) { mutableStateOf<String?>(null) }
+    // A Profile tab tap closes whatever sub-page is open, landing back on the menu.
+    LaunchedEffect(resetTick) { if (resetTick > 0) page = null }
 
     androidx.compose.animation.Crossfade(
         targetState = page,
@@ -133,15 +139,18 @@ private fun MenuRow(icon: ImageVector, title: String, subtitle: String, onClick:
 /** A titled sub-page with a back button; system back returns to the menu too. */
 @Composable
 private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -> Unit) {
-    // No visible back button: the system back gesture/bar is the one way back, handled here.
     BackHandler(onBack = onBack)
     Column(Modifier.fillMaxSize()) {
-        Text(
-            title,
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(start = 16.dp, top = 12.dp, end = 16.dp)
-        )
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth().padding(start = 4.dp, top = 4.dp, end = 16.dp)
+        ) {
+            // A bare arrow, no box or text: system back works too, this is just the visible way.
+            IconButton(onClick = onBack) {
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+            }
+            Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+        }
         Box(Modifier.weight(1f)) { content() }
     }
 }
@@ -233,10 +242,11 @@ private fun ReferencesPage(container: AppContainer, lang: String) {
     // restored when the learner comes back to the Profile tab later.
     var doc by remember(lang) { mutableStateOf<String?>(null) }
     if (doc != null) {
-        // System back closes the document; a second visible button here stacked under the
-        // References header's own controls.
         BackHandler { doc = null }
         Column(Modifier.fillMaxSize()) {
+            IconButton(onClick = { doc = null }, modifier = Modifier.padding(start = 4.dp)) {
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+            }
             Box(Modifier.weight(1f)) {
                 if (doc == "cheatsheet") CheatsheetScreen(container, lang)
                 else GrammarScreen(container, lang)
