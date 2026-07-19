@@ -815,4 +815,36 @@ class ContentValidationTest {
             )
         }
     }
+
+    /**
+     * The every-level checkpoint rule (docs/language-standard.md §1): every CEFR level the
+     * plan actually teaches (A1 and up) must end in all three journey checkpoints — a level
+     * quiz, an exam readiness milestone (levels.json `exam`), and a mock exam. A missing
+     * entry silently drops the stone from the journey, so the gate fails loudly instead.
+     * A0 onramps are quiz-only (no official A0 exam exists to mirror).
+     */
+    @Test
+    fun everyPlanLevelEndsInQuizReadinessAndMockExam() {
+        allLangs.forEach { lang ->
+            val planLevels = loadPlan(lang).days.map { it.level }.distinct()
+            val quizLevels = strictJson.decodeFromString<QuizSet>(read(lang, "quizzes.json"))
+                .quizzes.map { it.levelId }.toSet()
+            val readinessLevels = strictJson.decodeFromString<Levels>(read(lang, "levels.json"))
+                .levels.filter { it.exam != null }.map { it.id }.toSet()
+            val examLevels =
+                if (exists(lang, "exams.json"))
+                    strictJson.decodeFromString<List<com.corlang.app.data.model.ExamSpec>>(
+                        read(lang, "exams.json")
+                    ).map { it.levelId }.toSet()
+                else emptySet()
+            planLevels.forEach { level ->
+                assertTrue("$lang $level: no level quiz in quizzes.json", level in quizLevels)
+                if (level != "A0") {
+                    assertTrue("$lang $level: no exam readiness milestone in levels.json",
+                        level in readinessLevels)
+                    assertTrue("$lang $level: no mock exam in exams.json", level in examLevels)
+                }
+            }
+        }
+    }
 }

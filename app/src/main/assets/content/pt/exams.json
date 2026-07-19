@@ -1,460 +1,930 @@
 [
-  {
-    "id": "pt-b1-deple-mock",
-    "levelId": "B1",
-    "title": "Exame-modelo DEPLE (B1)",
-    "description": "A full DEPLE (CAPLE B1) mock across the four official components.",
-    "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
-    "sources": [
-      "caple",
-      "deple-sample"
+ {
+  "id": "pt-a1-acesso-mock",
+  "levelId": "A1",
+  "title": "Exame-modelo ACESSO (A1)",
+  "description": "A full ACESSO (CAPLE A1) mock across the four official components.",
+  "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
+  "sources": [
+   "caple",
+   "deple-sample"
+  ],
+  "sections": [
+   {
+    "id": "cl",
+    "kind": "READING",
+    "title": "Compreensão da Leitura",
+    "instructions": "Read the notice and answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "cl1",
+      "title": "Horário da Biblioteca Municipal",
+      "text": "Biblioteca Municipal. A biblioteca está aberta de segunda a sexta, das 10h00 às 19h00, e ao sábado, das 10h00 às 13h00. Ao domingo está fechada. A entrada é gratuita. Para levar livros para casa, é preciso fazer o cartão de leitor: custa 5 euros e é válido por um ano. As crianças até aos 12 anos não pagam. No primeiro andar há uma sala de estudo com internet grátis. É proibido comer e falar ao telemóvel dentro da biblioteca.",
+      "audioOnly": false
+     }
     ],
-    "sections": [
-      {
-        "id": "cl",
-        "kind": "READING",
-        "title": "Compreensão da Leitura",
-        "instructions": "Read the notice and answer.",
-        "passPercent": null,
-        "passages": [
-          {
-            "id": "cl1",
-            "title": "Aviso da Câmara Municipal de Braga",
-            "text": "Aviso — Câmara Municipal de Braga. Informam-se os munícipes de que a piscina municipal estará encerrada para obras de renovação entre 3 e 28 de fevereiro. Durante este período, os utentes com cartão podem utilizar gratuitamente a piscina da Rodovia, todos os dias, das 8h00 às 21h00. Está disponível um autocarro gratuito, com partida do centro da cidade de hora a hora. As aulas de natação para crianças continuam no pavilhão da escola secundária, à mesma hora, mas é necessário fazer nova inscrição no sítio da câmara na internet ou no balcão de atendimento até 30 de janeiro. Para mais informações, contacte o número 253 200 100 ou envie um e-mail para desporto@cm-braga.pt. Pedimos desculpa pelo incómodo.",
-            "audioOnly": false
-          }
-        ],
-        "questions": [
-          {
-            "type": "MCQ",
-            "prompt": "Porque é que a piscina municipal vai estar encerrada?",
-            "options": [
-              "Para obras de renovação",
-              "Por falta de funcionários",
-              "Por causa de uma festa municipal",
-              "Por falta de água"
-            ],
-            "answer": "Para obras de renovação",
-            "difficulty": 4,
-            "explanation": "The notice says the pool will be closed 'para obras de renovação' (for renovation works) between 3 and 28 February."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "O que podem fazer os utentes com cartão durante as obras?",
-            "options": [
-              "Utilizar gratuitamente a piscina da Rodovia",
-              "Pedir o dinheiro do cartão de volta",
-              "Usar a piscina de outra cidade pagando metade",
-              "Nadar no pavilhão da escola secundária"
-            ],
-            "answer": "Utilizar gratuitamente a piscina da Rodovia",
-            "difficulty": 5,
-            "explanation": "Card holders ('utentes com cartão') may use the Rodovia pool free of charge every day from 8:00 to 21:00."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Com que frequência parte o autocarro gratuito do centro da cidade?",
-            "options": [
-              "De hora a hora",
-              "De meia em meia hora",
-              "Duas vezes por dia",
-              "Só ao fim de semana"
-            ],
-            "answer": "De hora a hora",
-            "difficulty": 5,
-            "explanation": "A free bus leaves the city centre 'de hora a hora', i.e. every hour."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Onde continuam as aulas de natação para crianças?",
-            "options": [
-              "No pavilhão da escola secundária",
-              "Na piscina da Rodovia",
-              "No balcão de atendimento da câmara",
-              "Na piscina municipal, aos sábados"
-            ],
-            "answer": "No pavilhão da escola secundária",
-            "difficulty": 6,
-            "explanation": "Children's swimming lessons continue 'no pavilhão da escola secundária', at the same time as before. The Rodovia pool is the alternative for card holders, not for the lessons."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "O que é necessário fazer até 30 de janeiro?",
-            "options": [
-              "Fazer nova inscrição nas aulas de natação",
-              "Pagar uma taxa extra pelo autocarro",
-              "Devolver o cartão de utente à câmara",
-              "Telefonar para confirmar o horário da piscina"
-            ],
-            "answer": "Fazer nova inscrição nas aulas de natação",
-            "difficulty": 7,
-            "explanation": "For the lessons to continue, a new enrolment ('nova inscrição') must be made online or at the service desk by 30 January."
-          }
-        ]
-      },
-      {
-        "id": "pie",
-        "kind": "WRITING",
-        "title": "Produção e Interação Escritas",
-        "instructions": "Write an informal letter of about 100 words, then self-assess with the rubric.",
-        "passPercent": null,
-        "prompts": [
-          {
-            "prompt": "O teu amigo Miguel convidou-te para passar um fim de semana em casa dele, no Porto. Escreve-lhe uma carta informal (cerca de 100 palavras): agradece o convite, aceita, diz quando e como chegas e faz-lhe duas perguntas sobre o programa do fim de semana.",
-            "modelAnswer": "Olá, Miguel!\n\nMuito obrigado pelo convite para passar o fim de semana no Porto. Claro que aceito! Há muito tempo que quero visitar-te e conhecer melhor a tua cidade.\n\nPenso chegar na sexta-feira à noite, no comboio das 19h30, se te der jeito. Podes ir buscar-me à estação de Campanhã? Se não puderes, apanho o metro sem problema.\n\nDiz-me só duas coisas: o que devo levar? Vai estar frio? E já agora, preferes mostrar-me a Ribeira no sábado ou irmos ver um jogo?\n\nFico à espera da tua resposta. Um abraço,\nRui",
-            "rubric": [
-              "O texto tem cerca de 100 palavras",
-              "Agradece, aceita e indica quando e como chega",
-              "Faz duas perguntas sobre o programa",
-              "O registo informal (tu) é consistente, com ênclise correta (visitar-te, diz-me)",
-              "Ortografia e concordâncias corretas"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "co",
-        "kind": "LISTENING",
-        "title": "Compreensão do Oral",
-        "instructions": "Listen to the phone message (played by the app's Portuguese voice), then answer.",
-        "passPercent": null,
-        "passages": [
-          {
-            "id": "co1",
-            "title": "Mensagem no telemóvel",
-            "text": "Olá, Ana, é a Sofia. Estou a ligar por causa do jantar de sábado. Afinal não podemos ir ao restaurante às oito, porque a minha irmã só sai do trabalho às oito e meia. Mudei a reserva para as nove, está bem? E há outra alteração: em vez do restaurante italiano, reservei mesa naquela marisqueira nova ao pé do mercado, porque o Pedro não gosta de massa. Não é preciso levares nada, mas, se quiseres, podes trazer uma sobremesa. Ah, e vem de autocarro, porque é impossível estacionar naquela zona ao fim de semana. Liga-me quando ouvires esta mensagem. Beijinhos!",
-            "audioOnly": true
-          }
-        ],
-        "questions": [
-          {
-            "type": "MCQ",
-            "prompt": "Porque é que a Sofia está a ligar à Ana?",
-            "options": [
-              "Para mudar os planos do jantar de sábado",
-              "Para cancelar o jantar de sábado",
-              "Para convidar a Ana para um almoço",
-              "Para pedir a receita de uma sobremesa"
-            ],
-            "answer": "Para mudar os planos do jantar de sábado",
-            "difficulty": 4,
-            "explanation": "Sofia calls about Saturday's dinner to announce two changes (time and restaurant); she does not cancel it."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Para que horas ficou a nova reserva?",
-            "options": [
-              "Para as nove",
-              "Para as oito",
-              "Para as oito e meia",
-              "Para as dez"
-            ],
-            "answer": "Para as nove",
-            "difficulty": 5,
-            "explanation": "Because her sister only leaves work at 8:30, Sofia moved the booking to nine o'clock ('Mudei a reserva para as nove')."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Porque é que mudaram de restaurante?",
-            "options": [
-              "Porque o Pedro não gosta de massa",
-              "Porque o restaurante italiano fechou",
-              "Porque a marisqueira é mais barata",
-              "Porque a irmã da Sofia trabalha no mercado"
-            ],
-            "answer": "Porque o Pedro não gosta de massa",
-            "difficulty": 6,
-            "explanation": "Sofia booked the new seafood restaurant instead of the Italian one 'porque o Pedro não gosta de massa' (Pedro doesn't like pasta)."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "O que pode a Ana levar, se quiser?",
-            "options": [
-              "Uma sobremesa",
-              "Uma garrafa de vinho",
-              "Marisco fresco do mercado",
-              "Nada — é proibido levar comida"
-            ],
-            "answer": "Uma sobremesa",
-            "difficulty": 5,
-            "explanation": "Sofia says Ana doesn't need to bring anything, but she may bring a dessert if she wants ('se quiseres, podes trazer uma sobremesa')."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Como deve a Ana ir ao restaurante, e porquê?",
-            "options": [
-              "De autocarro, porque é impossível estacionar naquela zona",
-              "De carro, porque o restaurante tem parque",
-              "De metro, porque é mais rápido",
-              "A pé, porque o restaurante é perto de casa dela"
-            ],
-            "answer": "De autocarro, porque é impossível estacionar naquela zona",
-            "difficulty": 7,
-            "explanation": "Sofia tells her to come by bus because parking in that area is impossible at the weekend."
-          }
-        ]
-      },
-      {
-        "id": "pio",
-        "kind": "SPEAKING",
-        "title": "Produção e Interação Orais",
-        "instructions": "Speak aloud for each task, then self-assess with the rubric.",
-        "passPercent": null,
-        "prompts": [
-          {
-            "prompt": "Apresentação: apresente-se — fale de si, do seu trabalho ou estudos, da sua família e dos seus tempos livres (1-2 minutos).",
-            "modelAnswer": "Bom dia. Chamo-me Marta, tenho trinta e dois anos e sou de Aveiro, mas neste momento vivo em Lisboa. Trabalho como enfermeira num hospital público e gosto muito do que faço, embora os horários sejam cansativos. Sou casada e tenho uma filha de quatro anos. Nos tempos livres, gosto de ir ao ginásio e de passear à beira-mar com a família. Ao fim de semana, costumamos visitar os meus pais, que ainda vivem em Aveiro; vamos de comboio, porque é mais prático do que conduzir. Atualmente estou a aprender inglês, porque gostava de fazer um curso no estrangeiro.",
-            "rubric": [
-              "Apresenta-se de forma clara e organizada",
-              "Fala durante 1-2 minutos sem pausas longas",
-              "Usa o presente, costumar + infinitivo e vocabulário do dia a dia corretamente"
-            ]
-          },
-          {
-            "prompt": "Monólogo: fale de uma viagem que fez recentemente — para onde foi, com quem, o que fez e o que mais gostou.",
-            "modelAnswer": "No verão passado fui aos Açores com dois amigos. Ficámos uma semana na ilha de São Miguel, num alojamento local perto de Ponta Delgada. Todos os dias alugávamos um carro e íamos descobrir a ilha: vimos a Lagoa das Sete Cidades, tomámos banho nas piscinas naturais e provámos o famoso cozido das Furnas, que é cozinhado debaixo da terra. O tempo nem sempre esteve bom — chovia quase todas as tardes —, mas isso não nos estragou as férias. O que mais gostei foi de observar baleias a partir de um barco. Foi uma experiência inesquecível e quero lá voltar.",
-            "rubric": [
-              "Conta a experiência no passado, distinguindo perfeito e imperfeito",
-              "Organiza o discurso (primeiro, depois, no fim)",
-              "Dá detalhes concretos e uma opinião pessoal"
-            ]
-          },
-          {
-            "prompt": "Interação: está numa loja de roupa em Lisboa e quer trocar um casaco que comprou ontem, porque tem um defeito. Fale com o empregado (o examinador).",
-            "modelAnswer": "Boa tarde. Comprei este casaco aqui ontem, mas, quando cheguei a casa, reparei que tem um defeito: falta um botão e o fecho não funciona bem. Tenho aqui o talão. Queria trocá-lo por outro igual, se for possível. Não têm o mesmo modelo no tamanho M? Nesse caso, preferia que me devolvessem o dinheiro. Também posso ficar com um vale de compras, se for mais fácil para a loja. Podia verificar no armazém, se faz favor? Muito obrigado pela ajuda e desculpe o incómodo.",
-            "rubric": [
-              "Explica o problema e o que pretende (troca ou reembolso)",
-              "Reage às respostas do empregado e propõe alternativas",
-              "Mantém um registo educado (podia..., se faz favor, queria...)"
-            ]
-          }
-        ]
-      }
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "A que horas abre a biblioteca de segunda a sexta?",
+      "options": [
+       "Às 10h00",
+       "Às 9h00",
+       "Às 13h00",
+       "Às 19h00"
+      ],
+      "answer": "Às 10h00",
+      "difficulty": 2,
+      "explanation": "It opens at 10:00 on weekdays; 19:00 is closing time and 13:00 is Saturday closing."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quando está fechada a biblioteca?",
+      "options": [
+       "Ao domingo",
+       "Ao sábado",
+       "À segunda-feira",
+       "À sexta-feira"
+      ],
+      "answer": "Ao domingo",
+      "difficulty": 2,
+      "explanation": "'Ao domingo está fechada', closed on Sundays."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quanto custa o cartão de leitor?",
+      "options": [
+       "5 euros",
+       "É grátis",
+       "12 euros",
+       "1 euro"
+      ],
+      "answer": "5 euros",
+      "difficulty": 3,
+      "explanation": "The reader card costs 5 euros and is valid for one year; entry itself is free, a distractor."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quem não paga o cartão?",
+      "options": [
+       "As crianças até aos 12 anos",
+       "Os estudantes",
+       "Toda a gente",
+       "Ninguém"
+      ],
+      "answer": "As crianças até aos 12 anos",
+      "difficulty": 3,
+      "explanation": "Children up to 12 do not pay for the card."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que há no primeiro andar?",
+      "options": [
+       "Uma sala de estudo com internet",
+       "Um café",
+       "Uma loja de livros",
+       "Uma sala de cinema"
+      ],
+      "answer": "Uma sala de estudo com internet",
+      "difficulty": 3,
+      "explanation": "The first floor has a study room with free internet."
+     }
     ]
-  },
-  {
-    "id": "pt-b2-diple-mock",
-    "levelId": "B2",
-    "title": "Exame-modelo DIPLE (B2)",
-    "description": "A full DIPLE (CAPLE B2) mock across the four official components.",
-    "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
-    "sources": [
-      "caple",
-      "diple-sample"
+   },
+   {
+    "id": "pie",
+    "kind": "WRITING",
+    "title": "Produção e Interação Escritas",
+    "instructions": "Write 30 to 40 words, then self-assess with the rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Escreve um postal a um amigo português (30 a 40 palavras): diz onde estás de férias, com quem, como está o tempo e o que fazes todos os dias.",
+      "modelAnswer": "Olá, Pedro!\n\nEstou de férias no Algarve com a minha família. Está muito calor e o céu está azul. Todos os dias vou à praia de manhã e à tarde passeio na cidade. À noite como um gelado.\n\nAté breve!\nTomás",
+      "rubric": [
+       "O texto tem 30 a 40 palavras (ou mais)",
+       "Diz onde está e com quem",
+       "Descreve o tempo",
+       "Descreve uma atividade de todos os dias",
+       "Tem saudação e despedida (Olá..., Até breve)"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "co",
+    "kind": "LISTENING",
+    "title": "Compreensão do Oral",
+    "instructions": "Listen to the announcement (played by the app's Portuguese voice), then answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "co1",
+      "title": "Anúncio no supermercado",
+      "text": "Boa tarde! Bem-vindos ao supermercado Bom Preço. Hoje temos promoções especiais: o quilo de maçãs custa só um euro e o pão está a metade do preço. Na peixaria, o peixe fresco chega às nove da manhã. O supermercado está aberto todos os dias, das oito da manhã às nove da noite. Ao domingo fechamos às duas da tarde. Obrigado pela sua visita e boas compras!",
+      "audioOnly": true
+     }
     ],
-    "sections": [
-      {
-        "id": "cl",
-        "kind": "READING",
-        "title": "Compreensão da Leitura",
-        "instructions": "Read the opinion article and answer.",
-        "passPercent": null,
-        "passages": [
-          {
-            "id": "cl1",
-            "title": "Turismo a mais? O caso de Lisboa",
-            "text": "Ninguém duvida de que o turismo trouxe prosperidade a Lisboa: criou emprego, recuperou prédios degradados e devolveu vida a bairros que estavam a morrer. Contudo, seria ingénuo ignorar o reverso da medalha. Nos bairros históricos, os alojamentos turísticos multiplicaram-se de tal forma que muitos moradores foram empurrados para a periferia, incapazes de pagar as rendas atuais. As mercearias de bairro deram lugar a lojas de lembranças, e há ruas onde já quase não se ouve falar português. Não defendo, evidentemente, que se feche a cidade aos visitantes — isso seria absurdo e economicamente suicida. Defendo, sim, que a câmara imponha limites claros: travar novas licenças de alojamento local nas zonas saturadas, reforçar a habitação acessível e investir nos transportes. Embora estas medidas desagradem a alguns investidores, são a única forma de garantir que Lisboa continue a ser uma cidade para se viver, e não apenas um cenário para fotografias.",
-            "audioOnly": false
-          }
-        ],
-        "questions": [
-          {
-            "type": "MCQ",
-            "prompt": "Qual é a posição do autor em relação ao turismo em Lisboa?",
-            "options": [
-              "Reconhece os benefícios, mas defende que se imponham limites claros",
-              "Defende que a cidade seja fechada aos visitantes",
-              "Considera que o turismo só trouxe vantagens à cidade",
-              "Recusa-se a tomar posição sobre o assunto"
-            ],
-            "answer": "Reconhece os benefícios, mas defende que se imponham limites claros",
-            "difficulty": 7,
-            "explanation": "Classic concession-refutation: the author admits tourism brought prosperity, rejects closing the city ('isso seria absurdo'), and argues the city hall should impose clear limits."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Segundo o texto, o que aconteceu a muitos moradores dos bairros históricos?",
-            "options": [
-              "Foram empurrados para a periferia por não conseguirem pagar as rendas",
-              "Abriram lojas de lembranças para os turistas",
-              "Receberam licenças de alojamento local da câmara",
-              "Mudaram-se para prédios degradados no centro"
-            ],
-            "answer": "Foram empurrados para a periferia por não conseguirem pagar as rendas",
-            "difficulty": 6,
-            "explanation": "Tourist lets multiplied to the point that many residents were pushed to the outskirts, 'incapazes de pagar as rendas atuais'."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "O que quer dizer o autor com a expressão «o reverso da medalha»?",
-            "options": [
-              "Os efeitos negativos que acompanham os benefícios do turismo",
-              "O prémio que Lisboa recebeu pelo seu turismo",
-              "O valor das moedas antigas vendidas aos turistas",
-              "A opinião oficial da câmara municipal"
-            ],
-            "answer": "Os efeitos negativos que acompanham os benefícios do turismo",
-            "difficulty": 8,
-            "explanation": "'O reverso da medalha' (the other side of the coin) is figurative: after listing tourism's benefits, the author turns to its downside. It has nothing to do with literal medals or coins."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Qual destas medidas é proposta pelo autor?",
-            "options": [
-              "Travar novas licenças de alojamento local nas zonas saturadas",
-              "Reduzir o investimento nos transportes públicos",
-              "Dar mais licenças de alojamento local nos bairros históricos",
-              "Transformar as mercearias de bairro em lojas de lembranças"
-            ],
-            "answer": "Travar novas licenças de alojamento local nas zonas saturadas",
-            "difficulty": 6,
-            "explanation": "He proposes three measures: halting new short-term rental licences in saturated areas, reinforcing affordable housing and investing in transport. The distractors invert or contradict these."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "O que admite o autor sobre as medidas que propõe?",
-            "options": [
-              "Que podem desagradar a alguns investidores",
-              "Que serão aprovadas por toda a gente",
-              "Que são economicamente suicidas",
-              "Que não terão qualquer efeito na cidade"
-            ],
-            "answer": "Que podem desagradar a alguns investidores",
-            "difficulty": 8,
-            "explanation": "The concessive clause 'Embora estas medidas desagradem a alguns investidores' concedes that some investors will dislike them — yet he still deems them the only way forward. 'Economicamente suicida' referred to closing the city, not to his measures."
-          }
-        ]
-      },
-      {
-        "id": "pie",
-        "kind": "WRITING",
-        "title": "Produção e Interação Escritas",
-        "instructions": "Write a formal letter of complaint of about 180 words, then self-assess with the rubric.",
-        "passPercent": null,
-        "prompts": [
-          {
-            "prompt": "Comprou um frigorífico numa loja online portuguesa. O aparelho chegou com quinze dias de atraso e danificado, e o serviço de apoio ao cliente nunca respondeu às suas mensagens. Escreva uma carta de reclamação (cerca de 180 palavras) à empresa: exponha os factos, exprima o seu descontentamento e diga o que exige (substituição ou reembolso), num registo formal.",
-            "modelAnswer": "Exmos. Senhores,\n\nVenho, por este meio, apresentar uma reclamação relativa à encomenda n.º 48213, efetuada no vosso sítio na internet no dia 2 de junho.\n\nDe acordo com as condições de venda, o frigorífico deveria ter sido entregue no prazo de cinco dias úteis. Contudo, só o recebi passadas três semanas e, para meu espanto, o aparelho apresentava a porta amolgada e um ruído anormal no motor. Contactei de imediato o vosso serviço de apoio ao cliente, por e-mail e por telefone, sem que até hoje tenha obtido qualquer resposta — o que considero inaceitável numa empresa que se apresenta como líder do setor.\n\nNestas circunstâncias, exijo a substituição imediata do aparelho por um novo, sem quaisquer custos adicionais, ou, caso tal não seja possível, o reembolso integral do valor pago (649 euros). Informo ainda que, se não obtiver resposta no prazo de dez dias úteis, apresentarei queixa no Livro de Reclamações eletrónico e junto da associação de defesa do consumidor.\n\nAguardo uma resposta célere e apresento os meus melhores cumprimentos,\n\nRui Almeida",
-            "rubric": [
-              "O texto tem cerca de 180 palavras",
-              "O registo formal é consistente (Exmos. Senhores, venho por este meio...)",
-              "Os factos, o descontentamento e a exigência estão claramente expostos",
-              "Usa conectores e estruturas complexas (contudo, caso + conjuntivo, sem que + conjuntivo)",
-              "Ortografia e concordâncias corretas"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "co",
-        "kind": "LISTENING",
-        "title": "Compreensão do Oral",
-        "instructions": "Listen to the radio news report (played by the app's Portuguese voice), then answer.",
-        "passPercent": null,
-        "passages": [
-          {
-            "id": "co1",
-            "title": "Noticiário da manhã",
-            "text": "Notícias da manhã. A greve dos trabalhadores do Metro de Lisboa, marcada para amanhã, foi desconvocada ao fim da tarde de ontem, depois de o sindicato ter chegado a acordo com a administração. Segundo o comunicado, os trabalhadores obtiveram um aumento salarial de quatro por cento e a contratação de mais sessenta funcionários até ao final do ano. A empresa, por seu lado, comprometeu-se a rever os horários noturnos a partir de setembro. Recorde-se que esta seria a terceira paralisação este ano, depois de as greves de março e de maio terem deixado milhares de passageiros sem alternativa. Ainda assim, o sindicato avisa que voltará à luta caso o acordo não seja cumprido. Entretanto, os comboios da linha de Sintra circulam hoje com atrasos, devido a uma avaria no sistema de sinalização.",
-            "audioOnly": true
-          }
-        ],
-        "questions": [
-          {
-            "type": "MCQ",
-            "prompt": "Qual é a principal notícia deste noticiário?",
-            "options": [
-              "A greve do Metro de Lisboa foi desconvocada",
-              "O Metro de Lisboa vai estar parado amanhã",
-              "Os comboios de Sintra deixaram de circular este ano",
-              "A administração do Metro despediu sessenta funcionários"
-            ],
-            "answer": "A greve do Metro de Lisboa foi desconvocada",
-            "difficulty": 6,
-            "explanation": "The strike planned for tomorrow 'foi desconvocada' (was called off) after the union reached an agreement with management — so the metro will not be stopped."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "O que obtiveram os trabalhadores com o acordo?",
-            "options": [
-              "Um aumento de quatro por cento e a contratação de mais sessenta funcionários",
-              "Um aumento de sessenta por cento no salário",
-              "A redução dos horários noturnos a partir de amanhã",
-              "Quatro dias de férias adicionais por ano"
-            ],
-            "answer": "Um aumento de quatro por cento e a contratação de mais sessenta funcionários",
-            "difficulty": 6,
-            "explanation": "The workers obtained a 4% pay rise and the hiring of sixty more staff by the end of the year. The distractors swap the numbers' roles."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "A que se comprometeu a empresa a partir de setembro?",
-            "options": [
-              "A rever os horários noturnos",
-              "A comprar comboios novos",
-              "A baixar o preço dos bilhetes",
-              "A encerrar o serviço noturno"
-            ],
-            "answer": "A rever os horários noturnos",
-            "difficulty": 7,
-            "explanation": "Management, for its part, 'comprometeu-se a rever os horários noturnos' from September — to review the night schedules, not to end them."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Em que condição é que o sindicato ameaça voltar à luta?",
-            "options": [
-              "Caso o acordo não seja cumprido",
-              "Se houver uma nova avaria na linha de Sintra",
-              "Se a empresa contratar mais funcionários",
-              "Quando os horários noturnos forem revistos"
-            ],
-            "answer": "Caso o acordo não seja cumprido",
-            "difficulty": 8,
-            "explanation": "The union warns it will return to the fight 'caso o acordo não seja cumprido' — if the agreement is not honoured (caso + present subjunctive)."
-          },
-          {
-            "type": "MCQ",
-            "prompt": "Porque é que os comboios da linha de Sintra circulam hoje com atrasos?",
-            "options": [
-              "Devido a uma avaria no sistema de sinalização",
-              "Por causa da greve do Metro de Lisboa",
-              "Porque os maquinistas aderiram à paralisação",
-              "Devido às obras nos horários noturnos"
-            ],
-            "answer": "Devido a uma avaria no sistema de sinalização",
-            "difficulty": 7,
-            "explanation": "The final item is separate news: Sintra-line trains are delayed today because of a signalling failure ('avaria no sistema de sinalização'), unrelated to the metro strike."
-          }
-        ]
-      },
-      {
-        "id": "pio",
-        "kind": "SPEAKING",
-        "title": "Produção e Interação Orais",
-        "instructions": "Prepare, then argue your viewpoint aloud; self-assess with the rubric.",
-        "passPercent": null,
-        "prompts": [
-          {
-            "prompt": "Monólogo argumentativo (3-4 minutos): exponha o seu ponto de vista sobre a seguinte questão: «Cada vez mais jovens portugueses emigram depois de terminarem os estudos. Deve o Estado fazer mais para os reter?» Identifique a problemática, apresente argumentos dos dois lados e conclua com a sua posição.",
-            "modelAnswer": "O documento levanta um problema bem conhecido em Portugal: a saída de jovens qualificados para o estrangeiro. A questão que se coloca é a de saber se cabe ao Estado travar este movimento e, sobretudo, como.\n\nAntes de tomarmos posição, convém reconhecer que a emigração tem aspetos positivos: os jovens ganham experiência internacional, aprendem línguas e muitos acabam por regressar com competências valiosas. Não se trata, portanto, de uma tragédia em si mesma.\n\nContudo, quando um país forma médicos e engenheiros para depois os ver partir por falta de salários dignos, algo está errado. Parece-me evidente que o Estado deve agir: reduzindo os impostos aos jovens no início de carreira, apoiando o arrendamento e garantindo progressão nas carreiras públicas. Embora nenhuma destas medidas produza efeitos imediatos, o pior seria não fazer nada.\n\nEm suma, defendo que a resposta não passa por impedir ninguém de sair, mas por criar condições para que ficar seja uma verdadeira escolha, e não um sacrifício.",
-            "rubric": [
-              "Identifica a problemática e estrutura o discurso (introdução, argumentos, conclusão)",
-              "Apresenta uma posição equilibrada, com concessão e refutação",
-              "Usa conectores de argumentação e o conjuntivo com correção (embora, para que, caso)",
-              "Fala 3-4 minutos num registo cuidado"
-            ]
-          },
-          {
-            "prompt": "Interação — debate: o examinador vai defender a posição contrária à sua sobre a emigração dos jovens. Responda às objeções dele, concedendo quando necessário, mas mantendo e reforçando o seu ponto de vista.",
-            "modelAnswer": "Compreendo o seu argumento: é verdade que, num mercado europeu aberto, o Estado não pode simplesmente fechar as fronteiras, e admito que a experiência no estrangeiro enriquece qualquer percurso profissional. Nesse ponto, estamos de acordo. No entanto, permita-me discordar da conclusão. O senhor diz que os salários dependem apenas das empresas, mas o Estado define os impostos, os salários da função pública e as políticas de habitação — e é precisamente aí que os jovens mais sofrem. Dir-me-á que essas medidas custam caro; responder-lhe-ei que mais caro fica formar um médico durante seis anos para que ele vá exercer para a Alemanha. Por isso, mantenho a minha posição: sem uma política ativa de retenção, Portugal continuará a exportar aquilo de que mais precisa.",
-            "rubric": [
-              "Responde diretamente às objeções (concede e depois refuta)",
-              "Mantém e reformula o seu ponto de vista com novos argumentos",
-              "Usa um registo formal e estruturas complexas (mesóclise, conjuntivo)"
-            ]
-          }
-        ]
-      }
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Onde se ouve esta mensagem?",
+      "options": [
+       "Num supermercado",
+       "Numa escola",
+       "Num restaurante",
+       "Numa farmácia"
+      ],
+      "answer": "Num supermercado",
+      "difficulty": 2,
+      "explanation": "It is a welcome announcement at the Bom Preço supermarket."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quanto custa hoje o quilo de maçãs?",
+      "options": [
+       "Um euro",
+       "Dois euros",
+       "Metade do preço",
+       "Nove euros"
+      ],
+      "answer": "Um euro",
+      "difficulty": 3,
+      "explanation": "Apples cost one euro per kilo today; it is the bread that is half price."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "A que horas chega o peixe fresco?",
+      "options": [
+       "Às nove da manhã",
+       "Às oito da manhã",
+       "Às duas da tarde",
+       "À noite"
+      ],
+      "answer": "Às nove da manhã",
+      "difficulty": 3,
+      "explanation": "Fresh fish arrives at nine in the morning."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "A que horas fecha o supermercado ao domingo?",
+      "options": [
+       "Às duas da tarde",
+       "Às nove da noite",
+       "Às oito da manhã",
+       "Não fecha"
+      ],
+      "answer": "Às duas da tarde",
+      "difficulty": 4,
+      "explanation": "On Sundays it closes at two in the afternoon, earlier than the usual nine at night."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que está a metade do preço?",
+      "options": [
+       "O pão",
+       "As maçãs",
+       "O peixe",
+       "O leite"
+      ],
+      "answer": "O pão",
+      "difficulty": 3,
+      "explanation": "The bread is at half price; the apples have their own one-euro promotion."
+     }
     ]
-  }
+   },
+   {
+    "id": "pio",
+    "kind": "SPEAKING",
+    "title": "Produção e Interação Orais",
+    "instructions": "Three tasks: introduce yourself, ask questions, role play. Speak ALOUD, then self-assess.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Apresenta-te (1 minuto): diz o teu nome, a tua idade, a tua nacionalidade, onde moras, o que fazes e o que gostas de fazer.",
+      "modelAnswer": "Olá! Chamo-me Sara, tenho vinte e dois anos e sou espanhola. Moro em Madrid, mas estudo português porque quero viver em Lisboa. Sou estudante de medicina. Gosto de ler, de nadar e de cozinhar. Ao fim de semana passeio com os meus amigos.",
+      "rubric": [
+       "Diz o nome, a idade e a nacionalidade",
+       "Diz onde mora e o que faz",
+       "Diz o que gosta de fazer",
+       "Pronúncia compreensível, frases completas"
+      ]
+     },
+     {
+      "prompt": "Faz quatro perguntas ao examinador com as palavras « trabalho », « família », « fim de semana », « comida ».",
+      "modelAnswer": "Qual é o seu trabalho? Tem uma família grande? O que faz ao fim de semana? Qual é a sua comida preferida?",
+      "rubric": [
+       "Quatro perguntas, uma por palavra",
+       "Os interrogativos estão corretos (qual, o que...)",
+       "As perguntas são compreensíveis"
+      ]
+     },
+     {
+      "prompt": "No café: cumprimenta, pede uma bebida e um bolo, pergunta o preço, paga e despede-te.",
+      "modelAnswer": "Bom dia! Queria um galão e um pastel de nata, se faz favor. Quanto é? Dois euros e meio? Aqui está. Muito obrigado, bom dia!",
+      "rubric": [
+       "Cumprimenta no início e despede-se no fim",
+       "Pede com « queria... se faz favor »",
+       "Pergunta o preço",
+       "É simpático e educado (se faz favor, obrigado)"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pt-a2-ciple-mock",
+  "levelId": "A2",
+  "title": "Exame-modelo CIPLE (A2)",
+  "description": "A CIPLE (CAPLE A2) mock in the four-part practice format (the real CIPLE merges reading and writing into one component).",
+  "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
+  "sources": [
+   "caple",
+   "deple-sample"
+  ],
+  "sections": [
+   {
+    "id": "cl",
+    "kind": "READING",
+    "title": "Compreensão da Leitura",
+    "instructions": "Read the email and answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "cl1",
+      "title": "E-mail da Marta",
+      "text": "De: Marta. Assunto: Visita ao Porto. Olá, João! Que bom que vens visitar-me em outubro! Deixa-me dar-te algumas informações. O melhor é vires de comboio: a viagem de Lisboa demora menos de três horas e a estação fica perto da minha casa. Não tragas roupa quente demais: em outubro ainda está bom tempo, mas traz um casaco impermeável, porque às vezes chove. No sábado vamos visitar a Livraria Lello e as caves de vinho, e no domingo almoçamos em casa da minha avó, que faz um bacalhau ótimo. Diz-me a que horas chegas para eu ir buscar-te à estação. Beijinhos, Marta",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Porque é que a Marta escreve ao João?",
+      "options": [
+       "Para dar informações sobre a visita dele",
+       "Para cancelar a visita",
+       "Para pedir dinheiro emprestado",
+       "Para convidar a avó"
+      ],
+      "answer": "Para dar informações sobre a visita dele",
+      "difficulty": 3,
+      "explanation": "João is visiting in October and Marta writes to give him practical information."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Como deve o João viajar?",
+      "options": [
+       "De comboio",
+       "De avião",
+       "De carro",
+       "De autocarro"
+      ],
+      "answer": "De comboio",
+      "difficulty": 3,
+      "explanation": "'O melhor é vires de comboio', the trip takes under three hours and the station is near her house."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que deve o João trazer?",
+      "options": [
+       "Um casaco impermeável",
+       "Roupa muito quente",
+       "Botas de neve",
+       "Um guarda-sol"
+      ],
+      "answer": "Um casaco impermeável",
+      "difficulty": 4,
+      "explanation": "The weather is still good in October, but it sometimes rains, so a waterproof jacket."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que vão fazer no domingo?",
+      "options": [
+       "Almoçar em casa da avó",
+       "Visitar a Livraria Lello",
+       "Ver as caves de vinho",
+       "Ir à praia"
+      ],
+      "answer": "Almoçar em casa da avó",
+      "difficulty": 4,
+      "explanation": "Sunday is lunch at the grandmother's house; the Lello bookshop and the wine cellars are Saturday."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que pede a Marta no fim?",
+      "options": [
+       "A hora de chegada do João",
+       "O número de telefone",
+       "Uma fotografia",
+       "A morada do João"
+      ],
+      "answer": "A hora de chegada do João",
+      "difficulty": 5,
+      "explanation": "She asks what time he arrives so she can pick him up at the station."
+     }
+    ]
+   },
+   {
+    "id": "pie",
+    "kind": "WRITING",
+    "title": "Produção e Interação Escritas",
+    "instructions": "Write 50 to 60 words, then self-assess with the rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Recebeste um convite para jantar em casa de um colega na sexta-feira, mas não podes ir. Escreve-lhe uma mensagem (50 a 60 palavras): agradece, pede desculpa, explica porque não podes ir e propõe outro dia.",
+      "modelAnswer": "Olá, Ricardo!\n\nMuito obrigada pelo convite para jantar na sexta-feira. Peço desculpa, mas não posso ir: os meus pais chegam nesse dia de Espanha e vou buscá-los ao aeroporto. Fico triste, porque adoro os teus jantares!\n\nPodemos combinar para a próxima semana? Sábado à noite é bom para ti?\n\nUm beijinho,\nInês",
+      "rubric": [
+       "O texto tem 50 a 60 palavras (ou mais)",
+       "Agradece o convite e pede desculpa",
+       "Explica porque não pode ir",
+       "Propõe outro dia",
+       "O registo informal (tu) é consistente"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "co",
+    "kind": "LISTENING",
+    "title": "Compreensão do Oral",
+    "instructions": "Listen to the phone message (played by the app's Portuguese voice), then answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "co1",
+      "title": "Mensagem do consultório",
+      "text": "Bom dia, esta é uma mensagem do consultório da doutora Fernandes. A sua consulta de quinta-feira às dez da manhã foi alterada para sexta-feira às três da tarde, porque a doutora tem uma reunião no hospital. Se não puder vir na sexta, telefone para remarcar. Lembre-se de trazer os resultados das análises e o cartão de utente. O consultório fica agora no segundo andar, ao lado da farmácia. Obrigado.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Quem deixa a mensagem?",
+      "options": [
+       "O consultório da doutora Fernandes",
+       "O hospital",
+       "A farmácia",
+       "Um amigo"
+      ],
+      "answer": "O consultório da doutora Fernandes",
+      "difficulty": 3,
+      "explanation": "It is a message from Dr. Fernandes' practice about an appointment change."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Para quando foi alterada a consulta?",
+      "options": [
+       "Sexta-feira às três da tarde",
+       "Quinta-feira às dez da manhã",
+       "Sábado de manhã",
+       "Sexta-feira às dez da manhã"
+      ],
+      "answer": "Sexta-feira às três da tarde",
+      "difficulty": 4,
+      "explanation": "The Thursday 10:00 appointment moved to Friday at three in the afternoon."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Porque foi alterada a consulta?",
+      "options": [
+       "A doutora tem uma reunião",
+       "A doutora está doente",
+       "O consultório fechou",
+       "O doente pediu"
+      ],
+      "answer": "A doutora tem uma reunião",
+      "difficulty": 4,
+      "explanation": "The doctor has a meeting at the hospital."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que deve o doente levar?",
+      "options": [
+       "Os resultados das análises e o cartão de utente",
+       "Só dinheiro",
+       "Uma receita antiga",
+       "Nada"
+      ],
+      "answer": "Os resultados das análises e o cartão de utente",
+      "difficulty": 5,
+      "explanation": "He must bring the test results and the health-service user card."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Onde fica agora o consultório?",
+      "options": [
+       "No segundo andar, ao lado da farmácia",
+       "No hospital",
+       "No primeiro andar",
+       "Em frente à estação"
+      ],
+      "answer": "No segundo andar, ao lado da farmácia",
+      "difficulty": 5,
+      "explanation": "The practice is now on the second floor, next to the pharmacy."
+     }
+    ]
+   },
+   {
+    "id": "pio",
+    "kind": "SPEAKING",
+    "title": "Produção e Interação Orais",
+    "instructions": "Three tasks: monologue, questions, role play. Speak ALOUD, then self-assess.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Fala das tuas últimas férias (2 minutos): para onde foste, com quem, o que fizeste e do que gostaste mais.",
+      "modelAnswer": "No verão passado fui ao Algarve com dois amigos. Ficámos numa casa pequena perto da praia. De manhã íamos à praia e à tarde visitávamos as vilas da região. Um dia alugámos bicicletas e andámos pela costa. Comi peixe grelhado quase todos os dias. Do que gostei mais foi das praias, porque a água estava quente e havia pouca gente.",
+      "rubric": [
+       "Diz para onde foi, quando e com quem",
+       "Conta pelo menos duas atividades no pretérito perfeito",
+       "Usa o imperfeito para hábitos ou descrições",
+       "Diz do que gostou mais, com uma razão"
+      ]
+     },
+     {
+      "prompt": "Faz quatro perguntas ao examinador com as palavras « cinema », « cozinha », « viagens », « animais ».",
+      "modelAnswer": "Que tipo de filmes gosta de ver? O que sabe cozinhar? A que países já viajou? Tem algum animal em casa?",
+      "rubric": [
+       "Quatro perguntas, uma por palavra",
+       "Estruturas interrogativas variadas e corretas",
+       "Pelo menos uma pergunta no passado"
+      ]
+     },
+     {
+      "prompt": "Na estação: compra um bilhete para Coimbra para sábado de manhã. Pergunta o horário, o preço e se é preciso mudar de comboio.",
+      "modelAnswer": "Bom dia! Queria um bilhete para Coimbra, para sábado de manhã, se faz favor. A que horas parte o comboio? E a que horas chega? Quanto custa em segunda classe? É preciso mudar de comboio? Então prefiro o das nove. Muito obrigado, bom dia!",
+      "rubric": [
+       "Cumprimenta, pede o bilhete e despede-se",
+       "Pergunta o horário e o preço",
+       "Pergunta se é preciso mudar de comboio",
+       "Reage às respostas e escolhe um comboio"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pt-b1-deple-mock",
+  "levelId": "B1",
+  "title": "Exame-modelo DEPLE (B1)",
+  "description": "A full DEPLE (CAPLE B1) mock across the four official components.",
+  "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
+  "sources": [
+   "caple",
+   "deple-sample"
+  ],
+  "sections": [
+   {
+    "id": "cl",
+    "kind": "READING",
+    "title": "Compreensão da Leitura",
+    "instructions": "Read the notice and answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "cl1",
+      "title": "Aviso da Câmara Municipal de Braga",
+      "text": "Aviso — Câmara Municipal de Braga. Informam-se os munícipes de que a piscina municipal estará encerrada para obras de renovação entre 3 e 28 de fevereiro. Durante este período, os utentes com cartão podem utilizar gratuitamente a piscina da Rodovia, todos os dias, das 8h00 às 21h00. Está disponível um autocarro gratuito, com partida do centro da cidade de hora a hora. As aulas de natação para crianças continuam no pavilhão da escola secundária, à mesma hora, mas é necessário fazer nova inscrição no sítio da câmara na internet ou no balcão de atendimento até 30 de janeiro. Para mais informações, contacte o número 253 200 100 ou envie um e-mail para desporto@cm-braga.pt. Pedimos desculpa pelo incómodo.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Porque é que a piscina municipal vai estar encerrada?",
+      "options": [
+       "Para obras de renovação",
+       "Por falta de funcionários",
+       "Por causa de uma festa municipal",
+       "Por falta de água"
+      ],
+      "answer": "Para obras de renovação",
+      "difficulty": 4,
+      "explanation": "The notice says the pool will be closed 'para obras de renovação' (for renovation works) between 3 and 28 February."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que podem fazer os utentes com cartão durante as obras?",
+      "options": [
+       "Utilizar gratuitamente a piscina da Rodovia",
+       "Pedir o dinheiro do cartão de volta",
+       "Usar a piscina de outra cidade pagando metade",
+       "Nadar no pavilhão da escola secundária"
+      ],
+      "answer": "Utilizar gratuitamente a piscina da Rodovia",
+      "difficulty": 5,
+      "explanation": "Card holders ('utentes com cartão') may use the Rodovia pool free of charge every day from 8:00 to 21:00."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Com que frequência parte o autocarro gratuito do centro da cidade?",
+      "options": [
+       "De hora a hora",
+       "De meia em meia hora",
+       "Duas vezes por dia",
+       "Só ao fim de semana"
+      ],
+      "answer": "De hora a hora",
+      "difficulty": 5,
+      "explanation": "A free bus leaves the city centre 'de hora a hora', i.e. every hour."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Onde continuam as aulas de natação para crianças?",
+      "options": [
+       "No pavilhão da escola secundária",
+       "Na piscina da Rodovia",
+       "No balcão de atendimento da câmara",
+       "Na piscina municipal, aos sábados"
+      ],
+      "answer": "No pavilhão da escola secundária",
+      "difficulty": 6,
+      "explanation": "Children's swimming lessons continue 'no pavilhão da escola secundária', at the same time as before. The Rodovia pool is the alternative for card holders, not for the lessons."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que é necessário fazer até 30 de janeiro?",
+      "options": [
+       "Fazer nova inscrição nas aulas de natação",
+       "Pagar uma taxa extra pelo autocarro",
+       "Devolver o cartão de utente à câmara",
+       "Telefonar para confirmar o horário da piscina"
+      ],
+      "answer": "Fazer nova inscrição nas aulas de natação",
+      "difficulty": 7,
+      "explanation": "For the lessons to continue, a new enrolment ('nova inscrição') must be made online or at the service desk by 30 January."
+     }
+    ]
+   },
+   {
+    "id": "pie",
+    "kind": "WRITING",
+    "title": "Produção e Interação Escritas",
+    "instructions": "Write an informal letter of about 100 words, then self-assess with the rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "O teu amigo Miguel convidou-te para passar um fim de semana em casa dele, no Porto. Escreve-lhe uma carta informal (cerca de 100 palavras): agradece o convite, aceita, diz quando e como chegas e faz-lhe duas perguntas sobre o programa do fim de semana.",
+      "modelAnswer": "Olá, Miguel!\n\nMuito obrigado pelo convite para passar o fim de semana no Porto. Claro que aceito! Há muito tempo que quero visitar-te e conhecer melhor a tua cidade.\n\nPenso chegar na sexta-feira à noite, no comboio das 19h30, se te der jeito. Podes ir buscar-me à estação de Campanhã? Se não puderes, apanho o metro sem problema.\n\nDiz-me só duas coisas: o que devo levar? Vai estar frio? E já agora, preferes mostrar-me a Ribeira no sábado ou irmos ver um jogo?\n\nFico à espera da tua resposta. Um abraço,\nRui",
+      "rubric": [
+       "O texto tem cerca de 100 palavras",
+       "Agradece, aceita e indica quando e como chega",
+       "Faz duas perguntas sobre o programa",
+       "O registo informal (tu) é consistente, com ênclise correta (visitar-te, diz-me)",
+       "Ortografia e concordâncias corretas"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "co",
+    "kind": "LISTENING",
+    "title": "Compreensão do Oral",
+    "instructions": "Listen to the phone message (played by the app's Portuguese voice), then answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "co1",
+      "title": "Mensagem no telemóvel",
+      "text": "Olá, Ana, é a Sofia. Estou a ligar por causa do jantar de sábado. Afinal não podemos ir ao restaurante às oito, porque a minha irmã só sai do trabalho às oito e meia. Mudei a reserva para as nove, está bem? E há outra alteração: em vez do restaurante italiano, reservei mesa naquela marisqueira nova ao pé do mercado, porque o Pedro não gosta de massa. Não é preciso levares nada, mas, se quiseres, podes trazer uma sobremesa. Ah, e vem de autocarro, porque é impossível estacionar naquela zona ao fim de semana. Liga-me quando ouvires esta mensagem. Beijinhos!",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Porque é que a Sofia está a ligar à Ana?",
+      "options": [
+       "Para mudar os planos do jantar de sábado",
+       "Para cancelar o jantar de sábado",
+       "Para convidar a Ana para um almoço",
+       "Para pedir a receita de uma sobremesa"
+      ],
+      "answer": "Para mudar os planos do jantar de sábado",
+      "difficulty": 4,
+      "explanation": "Sofia calls about Saturday's dinner to announce two changes (time and restaurant); she does not cancel it."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Para que horas ficou a nova reserva?",
+      "options": [
+       "Para as nove",
+       "Para as oito",
+       "Para as oito e meia",
+       "Para as dez"
+      ],
+      "answer": "Para as nove",
+      "difficulty": 5,
+      "explanation": "Because her sister only leaves work at 8:30, Sofia moved the booking to nine o'clock ('Mudei a reserva para as nove')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Porque é que mudaram de restaurante?",
+      "options": [
+       "Porque o Pedro não gosta de massa",
+       "Porque o restaurante italiano fechou",
+       "Porque a marisqueira é mais barata",
+       "Porque a irmã da Sofia trabalha no mercado"
+      ],
+      "answer": "Porque o Pedro não gosta de massa",
+      "difficulty": 6,
+      "explanation": "Sofia booked the new seafood restaurant instead of the Italian one 'porque o Pedro não gosta de massa' (Pedro doesn't like pasta)."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que pode a Ana levar, se quiser?",
+      "options": [
+       "Uma sobremesa",
+       "Uma garrafa de vinho",
+       "Marisco fresco do mercado",
+       "Nada — é proibido levar comida"
+      ],
+      "answer": "Uma sobremesa",
+      "difficulty": 5,
+      "explanation": "Sofia says Ana doesn't need to bring anything, but she may bring a dessert if she wants ('se quiseres, podes trazer uma sobremesa')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Como deve a Ana ir ao restaurante, e porquê?",
+      "options": [
+       "De autocarro, porque é impossível estacionar naquela zona",
+       "De carro, porque o restaurante tem parque",
+       "De metro, porque é mais rápido",
+       "A pé, porque o restaurante é perto de casa dela"
+      ],
+      "answer": "De autocarro, porque é impossível estacionar naquela zona",
+      "difficulty": 7,
+      "explanation": "Sofia tells her to come by bus because parking in that area is impossible at the weekend."
+     }
+    ]
+   },
+   {
+    "id": "pio",
+    "kind": "SPEAKING",
+    "title": "Produção e Interação Orais",
+    "instructions": "Speak aloud for each task, then self-assess with the rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Apresentação: apresente-se — fale de si, do seu trabalho ou estudos, da sua família e dos seus tempos livres (1-2 minutos).",
+      "modelAnswer": "Bom dia. Chamo-me Marta, tenho trinta e dois anos e sou de Aveiro, mas neste momento vivo em Lisboa. Trabalho como enfermeira num hospital público e gosto muito do que faço, embora os horários sejam cansativos. Sou casada e tenho uma filha de quatro anos. Nos tempos livres, gosto de ir ao ginásio e de passear à beira-mar com a família. Ao fim de semana, costumamos visitar os meus pais, que ainda vivem em Aveiro; vamos de comboio, porque é mais prático do que conduzir. Atualmente estou a aprender inglês, porque gostava de fazer um curso no estrangeiro.",
+      "rubric": [
+       "Apresenta-se de forma clara e organizada",
+       "Fala durante 1-2 minutos sem pausas longas",
+       "Usa o presente, costumar + infinitivo e vocabulário do dia a dia corretamente"
+      ]
+     },
+     {
+      "prompt": "Monólogo: fale de uma viagem que fez recentemente — para onde foi, com quem, o que fez e o que mais gostou.",
+      "modelAnswer": "No verão passado fui aos Açores com dois amigos. Ficámos uma semana na ilha de São Miguel, num alojamento local perto de Ponta Delgada. Todos os dias alugávamos um carro e íamos descobrir a ilha: vimos a Lagoa das Sete Cidades, tomámos banho nas piscinas naturais e provámos o famoso cozido das Furnas, que é cozinhado debaixo da terra. O tempo nem sempre esteve bom — chovia quase todas as tardes —, mas isso não nos estragou as férias. O que mais gostei foi de observar baleias a partir de um barco. Foi uma experiência inesquecível e quero lá voltar.",
+      "rubric": [
+       "Conta a experiência no passado, distinguindo perfeito e imperfeito",
+       "Organiza o discurso (primeiro, depois, no fim)",
+       "Dá detalhes concretos e uma opinião pessoal"
+      ]
+     },
+     {
+      "prompt": "Interação: está numa loja de roupa em Lisboa e quer trocar um casaco que comprou ontem, porque tem um defeito. Fale com o empregado (o examinador).",
+      "modelAnswer": "Boa tarde. Comprei este casaco aqui ontem, mas, quando cheguei a casa, reparei que tem um defeito: falta um botão e o fecho não funciona bem. Tenho aqui o talão. Queria trocá-lo por outro igual, se for possível. Não têm o mesmo modelo no tamanho M? Nesse caso, preferia que me devolvessem o dinheiro. Também posso ficar com um vale de compras, se for mais fácil para a loja. Podia verificar no armazém, se faz favor? Muito obrigado pela ajuda e desculpe o incómodo.",
+      "rubric": [
+       "Explica o problema e o que pretende (troca ou reembolso)",
+       "Reage às respostas do empregado e propõe alternativas",
+       "Mantém um registo educado (podia..., se faz favor, queria...)"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pt-b2-diple-mock",
+  "levelId": "B2",
+  "title": "Exame-modelo DIPLE (B2)",
+  "description": "A full DIPLE (CAPLE B2) mock across the four official components.",
+  "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
+  "sources": [
+   "caple",
+   "diple-sample"
+  ],
+  "sections": [
+   {
+    "id": "cl",
+    "kind": "READING",
+    "title": "Compreensão da Leitura",
+    "instructions": "Read the opinion article and answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "cl1",
+      "title": "Turismo a mais? O caso de Lisboa",
+      "text": "Ninguém duvida de que o turismo trouxe prosperidade a Lisboa: criou emprego, recuperou prédios degradados e devolveu vida a bairros que estavam a morrer. Contudo, seria ingénuo ignorar o reverso da medalha. Nos bairros históricos, os alojamentos turísticos multiplicaram-se de tal forma que muitos moradores foram empurrados para a periferia, incapazes de pagar as rendas atuais. As mercearias de bairro deram lugar a lojas de lembranças, e há ruas onde já quase não se ouve falar português. Não defendo, evidentemente, que se feche a cidade aos visitantes — isso seria absurdo e economicamente suicida. Defendo, sim, que a câmara imponha limites claros: travar novas licenças de alojamento local nas zonas saturadas, reforçar a habitação acessível e investir nos transportes. Embora estas medidas desagradem a alguns investidores, são a única forma de garantir que Lisboa continue a ser uma cidade para se viver, e não apenas um cenário para fotografias.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Qual é a posição do autor em relação ao turismo em Lisboa?",
+      "options": [
+       "Reconhece os benefícios, mas defende que se imponham limites claros",
+       "Defende que a cidade seja fechada aos visitantes",
+       "Considera que o turismo só trouxe vantagens à cidade",
+       "Recusa-se a tomar posição sobre o assunto"
+      ],
+      "answer": "Reconhece os benefícios, mas defende que se imponham limites claros",
+      "difficulty": 7,
+      "explanation": "Classic concession-refutation: the author admits tourism brought prosperity, rejects closing the city ('isso seria absurdo'), and argues the city hall should impose clear limits."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Segundo o texto, o que aconteceu a muitos moradores dos bairros históricos?",
+      "options": [
+       "Foram empurrados para a periferia por não conseguirem pagar as rendas",
+       "Abriram lojas de lembranças para os turistas",
+       "Receberam licenças de alojamento local da câmara",
+       "Mudaram-se para prédios degradados no centro"
+      ],
+      "answer": "Foram empurrados para a periferia por não conseguirem pagar as rendas",
+      "difficulty": 6,
+      "explanation": "Tourist lets multiplied to the point that many residents were pushed to the outskirts, 'incapazes de pagar as rendas atuais'."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que quer dizer o autor com a expressão «o reverso da medalha»?",
+      "options": [
+       "Os efeitos negativos que acompanham os benefícios do turismo",
+       "O prémio que Lisboa recebeu pelo seu turismo",
+       "O valor das moedas antigas vendidas aos turistas",
+       "A opinião oficial da câmara municipal"
+      ],
+      "answer": "Os efeitos negativos que acompanham os benefícios do turismo",
+      "difficulty": 8,
+      "explanation": "'O reverso da medalha' (the other side of the coin) is figurative: after listing tourism's benefits, the author turns to its downside. It has nothing to do with literal medals or coins."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Qual destas medidas é proposta pelo autor?",
+      "options": [
+       "Travar novas licenças de alojamento local nas zonas saturadas",
+       "Reduzir o investimento nos transportes públicos",
+       "Dar mais licenças de alojamento local nos bairros históricos",
+       "Transformar as mercearias de bairro em lojas de lembranças"
+      ],
+      "answer": "Travar novas licenças de alojamento local nas zonas saturadas",
+      "difficulty": 6,
+      "explanation": "He proposes three measures: halting new short-term rental licences in saturated areas, reinforcing affordable housing and investing in transport. The distractors invert or contradict these."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que admite o autor sobre as medidas que propõe?",
+      "options": [
+       "Que podem desagradar a alguns investidores",
+       "Que serão aprovadas por toda a gente",
+       "Que são economicamente suicidas",
+       "Que não terão qualquer efeito na cidade"
+      ],
+      "answer": "Que podem desagradar a alguns investidores",
+      "difficulty": 8,
+      "explanation": "The concessive clause 'Embora estas medidas desagradem a alguns investidores' concedes that some investors will dislike them — yet he still deems them the only way forward. 'Economicamente suicida' referred to closing the city, not to his measures."
+     }
+    ]
+   },
+   {
+    "id": "pie",
+    "kind": "WRITING",
+    "title": "Produção e Interação Escritas",
+    "instructions": "Write a formal letter of complaint of about 180 words, then self-assess with the rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Comprou um frigorífico numa loja online portuguesa. O aparelho chegou com quinze dias de atraso e danificado, e o serviço de apoio ao cliente nunca respondeu às suas mensagens. Escreva uma carta de reclamação (cerca de 180 palavras) à empresa: exponha os factos, exprima o seu descontentamento e diga o que exige (substituição ou reembolso), num registo formal.",
+      "modelAnswer": "Exmos. Senhores,\n\nVenho, por este meio, apresentar uma reclamação relativa à encomenda n.º 48213, efetuada no vosso sítio na internet no dia 2 de junho.\n\nDe acordo com as condições de venda, o frigorífico deveria ter sido entregue no prazo de cinco dias úteis. Contudo, só o recebi passadas três semanas e, para meu espanto, o aparelho apresentava a porta amolgada e um ruído anormal no motor. Contactei de imediato o vosso serviço de apoio ao cliente, por e-mail e por telefone, sem que até hoje tenha obtido qualquer resposta — o que considero inaceitável numa empresa que se apresenta como líder do setor.\n\nNestas circunstâncias, exijo a substituição imediata do aparelho por um novo, sem quaisquer custos adicionais, ou, caso tal não seja possível, o reembolso integral do valor pago (649 euros). Informo ainda que, se não obtiver resposta no prazo de dez dias úteis, apresentarei queixa no Livro de Reclamações eletrónico e junto da associação de defesa do consumidor.\n\nAguardo uma resposta célere e apresento os meus melhores cumprimentos,\n\nRui Almeida",
+      "rubric": [
+       "O texto tem cerca de 180 palavras",
+       "O registo formal é consistente (Exmos. Senhores, venho por este meio...)",
+       "Os factos, o descontentamento e a exigência estão claramente expostos",
+       "Usa conectores e estruturas complexas (contudo, caso + conjuntivo, sem que + conjuntivo)",
+       "Ortografia e concordâncias corretas"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "co",
+    "kind": "LISTENING",
+    "title": "Compreensão do Oral",
+    "instructions": "Listen to the radio news report (played by the app's Portuguese voice), then answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "co1",
+      "title": "Noticiário da manhã",
+      "text": "Notícias da manhã. A greve dos trabalhadores do Metro de Lisboa, marcada para amanhã, foi desconvocada ao fim da tarde de ontem, depois de o sindicato ter chegado a acordo com a administração. Segundo o comunicado, os trabalhadores obtiveram um aumento salarial de quatro por cento e a contratação de mais sessenta funcionários até ao final do ano. A empresa, por seu lado, comprometeu-se a rever os horários noturnos a partir de setembro. Recorde-se que esta seria a terceira paralisação este ano, depois de as greves de março e de maio terem deixado milhares de passageiros sem alternativa. Ainda assim, o sindicato avisa que voltará à luta caso o acordo não seja cumprido. Entretanto, os comboios da linha de Sintra circulam hoje com atrasos, devido a uma avaria no sistema de sinalização.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Qual é a principal notícia deste noticiário?",
+      "options": [
+       "A greve do Metro de Lisboa foi desconvocada",
+       "O Metro de Lisboa vai estar parado amanhã",
+       "Os comboios de Sintra deixaram de circular este ano",
+       "A administração do Metro despediu sessenta funcionários"
+      ],
+      "answer": "A greve do Metro de Lisboa foi desconvocada",
+      "difficulty": 6,
+      "explanation": "The strike planned for tomorrow 'foi desconvocada' (was called off) after the union reached an agreement with management — so the metro will not be stopped."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que obtiveram os trabalhadores com o acordo?",
+      "options": [
+       "Um aumento de quatro por cento e a contratação de mais sessenta funcionários",
+       "Um aumento de sessenta por cento no salário",
+       "A redução dos horários noturnos a partir de amanhã",
+       "Quatro dias de férias adicionais por ano"
+      ],
+      "answer": "Um aumento de quatro por cento e a contratação de mais sessenta funcionários",
+      "difficulty": 6,
+      "explanation": "The workers obtained a 4% pay rise and the hiring of sixty more staff by the end of the year. The distractors swap the numbers' roles."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "A que se comprometeu a empresa a partir de setembro?",
+      "options": [
+       "A rever os horários noturnos",
+       "A comprar comboios novos",
+       "A baixar o preço dos bilhetes",
+       "A encerrar o serviço noturno"
+      ],
+      "answer": "A rever os horários noturnos",
+      "difficulty": 7,
+      "explanation": "Management, for its part, 'comprometeu-se a rever os horários noturnos' from September — to review the night schedules, not to end them."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Em que condição é que o sindicato ameaça voltar à luta?",
+      "options": [
+       "Caso o acordo não seja cumprido",
+       "Se houver uma nova avaria na linha de Sintra",
+       "Se a empresa contratar mais funcionários",
+       "Quando os horários noturnos forem revistos"
+      ],
+      "answer": "Caso o acordo não seja cumprido",
+      "difficulty": 8,
+      "explanation": "The union warns it will return to the fight 'caso o acordo não seja cumprido' — if the agreement is not honoured (caso + present subjunctive)."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Porque é que os comboios da linha de Sintra circulam hoje com atrasos?",
+      "options": [
+       "Devido a uma avaria no sistema de sinalização",
+       "Por causa da greve do Metro de Lisboa",
+       "Porque os maquinistas aderiram à paralisação",
+       "Devido às obras nos horários noturnos"
+      ],
+      "answer": "Devido a uma avaria no sistema de sinalização",
+      "difficulty": 7,
+      "explanation": "The final item is separate news: Sintra-line trains are delayed today because of a signalling failure ('avaria no sistema de sinalização'), unrelated to the metro strike."
+     }
+    ]
+   },
+   {
+    "id": "pio",
+    "kind": "SPEAKING",
+    "title": "Produção e Interação Orais",
+    "instructions": "Prepare, then argue your viewpoint aloud; self-assess with the rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Monólogo argumentativo (3-4 minutos): exponha o seu ponto de vista sobre a seguinte questão: «Cada vez mais jovens portugueses emigram depois de terminarem os estudos. Deve o Estado fazer mais para os reter?» Identifique a problemática, apresente argumentos dos dois lados e conclua com a sua posição.",
+      "modelAnswer": "O documento levanta um problema bem conhecido em Portugal: a saída de jovens qualificados para o estrangeiro. A questão que se coloca é a de saber se cabe ao Estado travar este movimento e, sobretudo, como.\n\nAntes de tomarmos posição, convém reconhecer que a emigração tem aspetos positivos: os jovens ganham experiência internacional, aprendem línguas e muitos acabam por regressar com competências valiosas. Não se trata, portanto, de uma tragédia em si mesma.\n\nContudo, quando um país forma médicos e engenheiros para depois os ver partir por falta de salários dignos, algo está errado. Parece-me evidente que o Estado deve agir: reduzindo os impostos aos jovens no início de carreira, apoiando o arrendamento e garantindo progressão nas carreiras públicas. Embora nenhuma destas medidas produza efeitos imediatos, o pior seria não fazer nada.\n\nEm suma, defendo que a resposta não passa por impedir ninguém de sair, mas por criar condições para que ficar seja uma verdadeira escolha, e não um sacrifício.",
+      "rubric": [
+       "Identifica a problemática e estrutura o discurso (introdução, argumentos, conclusão)",
+       "Apresenta uma posição equilibrada, com concessão e refutação",
+       "Usa conectores de argumentação e o conjuntivo com correção (embora, para que, caso)",
+       "Fala 3-4 minutos num registo cuidado"
+      ]
+     },
+     {
+      "prompt": "Interação — debate: o examinador vai defender a posição contrária à sua sobre a emigração dos jovens. Responda às objeções dele, concedendo quando necessário, mas mantendo e reforçando o seu ponto de vista.",
+      "modelAnswer": "Compreendo o seu argumento: é verdade que, num mercado europeu aberto, o Estado não pode simplesmente fechar as fronteiras, e admito que a experiência no estrangeiro enriquece qualquer percurso profissional. Nesse ponto, estamos de acordo. No entanto, permita-me discordar da conclusão. O senhor diz que os salários dependem apenas das empresas, mas o Estado define os impostos, os salários da função pública e as políticas de habitação — e é precisamente aí que os jovens mais sofrem. Dir-me-á que essas medidas custam caro; responder-lhe-ei que mais caro fica formar um médico durante seis anos para que ele vá exercer para a Alemanha. Por isso, mantenho a minha posição: sem uma política ativa de retenção, Portugal continuará a exportar aquilo de que mais precisa.",
+      "rubric": [
+       "Responde diretamente às objeções (concede e depois refuta)",
+       "Mantém e reformula o seu ponto de vista com novos argumentos",
+       "Usa um registo formal e estruturas complexas (mesóclise, conjuntivo)"
+      ]
+     }
+    ]
+   }
+  ]
+ }
 ]

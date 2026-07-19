@@ -30,11 +30,16 @@ object Grading {
             .trim()
     }
 
-    /** True if the learner's free-text [input] matches the FILL answer or any accepted variant. */
+    /**
+     * True if the learner's free-text [input] matches the FILL answer or any accepted variant.
+     * Diacritics are ALWAYS strict, the same exam-grade bar as [gradeRecall]: é and è are
+     * different letters, and the lenient legacy path graded a French lesson asking for "è"
+     * as correct when the learner typed "é" (field report). A question that wants to accept
+     * accent-free typing lists that spelling in `accepted` explicitly.
+     */
     fun gradeFill(q: Question, input: String): Boolean {
-        val strict = q.strictDiacritics
-        val target = (listOf(q.answer) + q.accepted).map { normalize(it, strict) }
-        return normalize(input, strict) in target
+        val target = (listOf(q.answer) + q.accepted).map { normalize(it, strict = true) }
+        return normalize(input, strict = true) in target
     }
 
     /**
