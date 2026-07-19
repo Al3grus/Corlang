@@ -122,8 +122,8 @@ catch, build, release, push. **The language goes live in this phase and only thi
 | L.1 skeleton, identity, code wiring | done | | |
 | L.2 vocabulary deck | done, 2524 words | | |
 | L.3 A0 and A1 lessons | done, 70 lessons | | |
-| L.4 A2 lessons | topics written | | |
-| L.5 B1 lessons | topics written | | |
+| L.4 A2 lessons | done, 85 lessons | | |
+| L.5 B1 lessons | in progress | | |
 | L.6 assessment set | | | |
 | L.7 integrate and ship | | | |
 
