@@ -85,6 +85,10 @@ fun TodayScreen(
         today = today
     )
     val dueNow = reviews.count { it.dueEpochDay <= today }
+    // Yesterday was missed and a banked freeze is the only thing holding the streak: the one
+    // moment the freeze system must speak up, because acting today is what saves the streak.
+    val freezeHolding = streak > 0 && freezes > 0 &&
+        (today - (progress?.lastStudiedEpochDay ?: 0L)) == 2L
 
     // The lesson to land on = the day AFTER your last completed one (also covers doing several
     // days at once). Robust even if the stored currentDay lags behind completions.
@@ -260,7 +264,12 @@ fun TodayScreen(
                         )
                     }
                     // Only speak up when there's something worth saying; no filler line.
+                    // The freeze line comes first: it is the one urgent state, and it is also
+                    // the only time the freeze system explains itself.
                     val heroSubtitle = when {
+                        freezeHolding ->
+                            "You missed yesterday, a streak freeze is holding your $streak days. " +
+                                "Finish a lesson today to keep them."
                         completedToday > 0 -> "Today's goal is done ✓. Anything more is bonus depth."
                         dueNow > 0 -> "Starts with your $dueNow due words."
                         else -> ""
