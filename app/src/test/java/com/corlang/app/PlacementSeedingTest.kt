@@ -1,6 +1,7 @@
 package com.corlang.app
 
 import com.corlang.app.data.WordsRepository.Companion.REVIEW_SEED_LESSONS
+import com.corlang.app.data.WordsRepository.Companion.REVIEW_SEED_SPREAD_DAYS
 import com.corlang.app.data.WordsRepository.Companion.prePlacementRange
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -60,5 +61,38 @@ class PlacementSeedingTest {
     @Test fun `a nonsensical placement day cannot produce a negative window`() {
         assertEquals(0 to 0, prePlacementRange(0))
         assertEquals(0 to 0, prePlacementRange(-5))
+    }
+
+    /**
+     * The window is sized to absorb one lucky guess. Placement promotes on "last correct before
+     * the first miss", so a single guessed four-option question moves the learner up a whole
+     * anchor; the widest gap between adjacent anchors in the shipped courses is 60 lessons
+     * (Croatian), 51 (Portuguese) and 37 (French). A 30-lesson window would leave the Croatian
+     * and Portuguese cases uncovered, and the placement literature reports short tests misplace
+     * learners upward more often than downward, which is the damaging direction.
+     */
+    @Test fun `the window covers the widest single-guess overshoot in every course`() {
+        val widestAnchorGap = mapOf("hr" to 60, "pt" to 51, "fr" to 37)
+        widestAnchorGap.forEach { (lang, gap) ->
+            assertTrue(
+                "$lang: a $gap-lesson overshoot is not covered by a $REVIEW_SEED_LESSONS-lesson window",
+                REVIEW_SEED_LESSONS >= gap
+            )
+        }
+    }
+
+    /**
+     * Coverage and daily load are separate concerns: the window stays wide, and the backlog is
+     * spread instead of dumped. Standard spaced-repetition guidance is that a big overdue pile
+     * should drain gradually rather than crowd out new material.
+     */
+    @Test fun `the seeded backlog is spread, not dumped on one day`() {
+        val (from, until) = prePlacementRange(101)
+        val count = until - from
+        val perDay = kotlin.math.ceil(count.toDouble() / REVIEW_SEED_SPREAD_DAYS).toInt()
+        assertEquals(600, count)
+        assertTrue("a day's seeded share should stay modest, got $perDay", perDay <= 30)
+        // The last card must still land inside the spread window.
+        assertTrue((count - 1) / perDay < REVIEW_SEED_SPREAD_DAYS)
     }
 }
