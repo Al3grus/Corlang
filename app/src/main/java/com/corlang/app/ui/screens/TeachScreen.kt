@@ -264,7 +264,9 @@ private fun FeynmanRunner(
             }
 
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                OutlinedButton(
+                // Perfect score: nothing left to improve, so no retry, and no way to burn
+                // another AI review on an exercise that is already fully passed.
+                if (gotCount < total) OutlinedButton(
                     onClick = {
                         // Loop: clear and try again, keeping the same concept. A new attempt
                         // means a new review; the old verdicts die with it.
