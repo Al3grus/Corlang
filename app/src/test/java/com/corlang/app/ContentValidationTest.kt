@@ -678,17 +678,66 @@ class ContentValidationTest {
         if (!ptRoot.isDirectory) return
         // Unambiguous Brazilian lexis only (words that are simply not European Portuguese);
         // ambiguous/shared items are left to human review.
-        val blocked = listOf(
-            "ônibus", "celular", "banheiro", "sorvete", "geladeira", "açougue",
-            "esporte", "aeromoça", "café da manhã", "caminhão", "usuário", "gerenciar",
-            "bonde", "encanador", "faxina", "grampeador", "história em quadrinhos"
+        // Each Brazilian form maps to the European word that must accompany it. A bleed form is
+        // allowed ONLY as a CONTRASTIVE example: it has to sit in the same activity as its
+        // European counterpart (an MCQ distractor beside the correct answer, or a dialogue line
+        // the learner corrects). docs/language-standard.md asks for exactly that teaching, so a
+        // whole-file ban would forbid it; a bleed form with no correction nearby is drift, fails.
+        val blocked = mapOf(
+            "ônibus" to "autocarro", "celular" to "telemóvel", "banheiro" to "casa de banho",
+            "sorvete" to "gelado", "geladeira" to "frigorífico", "açougue" to "talho",
+            "esporte" to "desporto", "aeromoça" to "hospedeira", "café da manhã" to "pequeno-almoço",
+            "caminhão" to "camião", "usuário" to "utilizador", "gerenciar" to "gerir",
+            "bonde" to "elétrico", "encanador" to "canalizador", "faxina" to "limpeza",
+            "grampeador" to "agrafador", "história em quadrinhos" to "banda desenhada"
         )
+        val lenient = Json { ignoreUnknownKeys = true }
+
+        /** All strings under [e], flattened. */
+        fun flatten(e: kotlinx.serialization.json.JsonElement): String = buildString {
+            fun rec(x: kotlinx.serialization.json.JsonElement) {
+                when (x) {
+                    is kotlinx.serialization.json.JsonObject -> x.values.forEach { rec(it) }
+                    is kotlinx.serialization.json.JsonArray -> x.forEach { rec(it) }
+                    is kotlinx.serialization.json.JsonPrimitive ->
+                        if (x.isString) append(x.content).append(' ')
+                    else -> {}
+                }
+            }
+            rec(e)
+        }
+
+        /** One scope per activity, plus one scope for everything outside any activity. */
+        fun scopes(root: kotlinx.serialization.json.JsonElement): List<String> {
+            val activities = mutableListOf<String>()
+            val outside = StringBuilder()
+            fun rec(e: kotlinx.serialization.json.JsonElement) {
+                when (e) {
+                    is kotlinx.serialization.json.JsonObject -> {
+                        val kind = (e["type"] as? kotlinx.serialization.json.JsonPrimitive)?.content
+                        if (kind in setOf("LEARN", "EXERCISE", "DIALOGUE")) activities.add(flatten(e))
+                        else e.values.forEach { rec(it) }
+                    }
+                    is kotlinx.serialization.json.JsonArray -> e.forEach { rec(it) }
+                    is kotlinx.serialization.json.JsonPrimitive ->
+                        if (e.isString) outside.append(e.content).append(' ')
+                    else -> {}
+                }
+            }
+            rec(root)
+            return activities + outside.toString()
+        }
+
         val hits = mutableListOf<String>()
         ptRoot.walkTopDown().filter { it.isFile && it.extension == "json" }.forEach { f ->
-            val text = f.readText(Charsets.UTF_8).lowercase()
-            blocked.forEach { term ->
-                if (Regex("(?<![\\p{L}])${Regex.escape(term)}(?![\\p{L}])").containsMatchIn(text)) {
-                    hits.add("${f.name}: '$term'")
+            scopes(lenient.parseToJsonElement(f.readText(Charsets.UTF_8))).forEach { scope ->
+                val text = scope.lowercase()
+                blocked.forEach { (term, european) ->
+                    val present = Regex("(?<![\\p{L}])${Regex.escape(term)}(?![\\p{L}])")
+                        .containsMatchIn(text)
+                    if (present && !text.contains(european)) {
+                        hits.add("${f.name}: '$term' without '$european' in the same activity")
+                    }
                 }
             }
         }
@@ -813,6 +862,20 @@ class ContentValidationTest {
                     hits.joinToString("\n") { (f, str) -> "  $f: ${str.take(120)}" },
                 hits.isEmpty()
             )
+        }
+    }
+
+    /**
+     * Course-length floor (docs/language-standard.md §1). CEFR guided-hours estimates put B2 at
+     * roughly 550 to 600 hours, which a 100-lesson course cannot honestly deliver; French and
+     * Portuguese shipped at 108 and 105 until this floor was set. 250 is the agreed minimum for
+     * a course that claims to carry a learner to its exam.
+     */
+    @Test
+    fun everyCourseHasAtLeast250Lessons() {
+        allLangs.forEach { lang ->
+            val n = loadPlan(lang).days.size
+            assertTrue("$lang has only $n lessons, the minimum is 250", n >= 250)
         }
     }
 
