@@ -73,7 +73,11 @@ fun ProgressScreen(
     val daysDone = rawDaysDone ?: 0
     val reviews = rawReviews.orEmpty()
 
-    val currentLevel = progress?.currentLevel ?: "A0"
+    // Same floor as the Review tab: the row's default "A0" is not a level pt/fr ever teach,
+    // so a fresh learner's tile must show the course's real first level, not the default.
+    val planLevels = remember(lang) { plan.days.map { it.level }.distinct() }
+    val storedLevel = progress?.currentLevel ?: planLevels.first()
+    val currentLevel = if (storedLevel in planLevels) storedLevel else planLevels.first()
     val streak = com.corlang.app.data.ProgressRepository.displayStreak(
         streak = progress?.streak ?: 0,
         lastStudiedEpochDay = progress?.lastStudiedEpochDay ?: 0L,
