@@ -92,7 +92,7 @@ fun SettingsScreen(
                 fontWeight = FontWeight.Bold
             )
         }
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(16.dp))
 
         // ----- Study reminder -----
         val enabled by container.languagePrefs.reminderEnabled.collectAsState(initial = false)

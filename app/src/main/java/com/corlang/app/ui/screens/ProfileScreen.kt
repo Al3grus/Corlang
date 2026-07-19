@@ -95,7 +95,7 @@ fun ProfileScreen(
                 "Profile",
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 10.dp)
+                modifier = Modifier.padding(bottom = 16.dp)
             )
 
             val entitled by container.premium.entitled.collectAsState(initial = false)
@@ -140,7 +140,8 @@ private fun MenuRow(icon: ImageVector, title: String, subtitle: String, onClick:
 }
 
 /** A titled sub-page with a back button; system back returns to the menu too.
- *  Header matches the Settings screen exactly: arrow + headlineSmall bold + 10dp air below. */
+ *  Header matches the Settings screen exactly: arrow + headlineSmall bold, 16dp above and
+ *  below so the title sits centred in its band. */
 @Composable
 private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -> Unit) {
     BackHandler(onBack = onBack)
@@ -157,7 +158,8 @@ private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -
             }
             Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
         }
-        Spacer(Modifier.height(10.dp))
+        // 16dp under the header mirrors the 16dp above it, centring the title in its band.
+        Spacer(Modifier.height(16.dp))
         Box(Modifier.weight(1f)) { content() }
     }
 }

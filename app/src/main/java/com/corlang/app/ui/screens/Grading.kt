@@ -219,16 +219,35 @@ object Grading {
         return shared >= 4 && (a.startsWith(b) || b.startsWith(a))
     }
 
-    /** True if [explanation] covers enough of [point]'s salient terms to count as taught. */
-    fun coversRubricPoint(point: String, explanation: String): Boolean {
+    /**
+     * True if [explanation] covers [point]: either enough of the point's own salient terms, or
+     * enough of the authored paraphrase [keywords] (the words a learner uses when they have the
+     * idea but not the phrasing — "how it sounds is how it's written" carries no token of
+     * "Croatian is 100% phonetic" yet plainly covers it). Multi-word keywords match as phrases.
+     */
+    fun coversRubricPoint(
+        point: String,
+        explanation: String,
+        keywords: List<String> = emptyList()
+    ): Boolean {
         val pointTokens = salientTokens(point)
-        if (pointTokens.isEmpty()) return explanation.isNotBlank()
         val explTokens = salientTokens(explanation)
-        val hits = pointTokens.count { p -> explTokens.any { e -> tokenMatches(p, e) } }
-        val needed =
-            if (pointTokens.size <= 2) pointTokens.size
-            else maxOf(2, (pointTokens.size * 2 + 4) / 5)   // ceil(size * 0.4)
-        return hits >= needed
+        if (pointTokens.isNotEmpty()) {
+            val hits = pointTokens.count { p -> explTokens.any { e -> tokenMatches(p, e) } }
+            val needed =
+                if (pointTokens.size <= 2) pointTokens.size
+                else maxOf(2, (pointTokens.size * 2 + 4) / 5)   // ceil(size * 0.4)
+            if (hits >= needed) return true
+        } else if (explanation.isNotBlank()) return true
+
+        if (keywords.isEmpty()) return false
+        val explNorm = " " + normalize(explanation) + " "
+        val kwHits = keywords.count { kw ->
+            val k = normalize(kw)
+            if (" " in k) explNorm.contains(" $k ") || explNorm.contains(" $k")
+            else explTokens.any { e -> tokenMatches(k, e) }
+        }
+        return kwHits >= minOf(2, keywords.size)
     }
 
     /** Convenience for simple MCQ/FILL grading used by the quiz runner. */
