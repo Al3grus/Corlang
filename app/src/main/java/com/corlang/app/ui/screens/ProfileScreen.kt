@@ -90,12 +90,12 @@ fun ProfileScreen(
             modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
         ) {
             // Just the title: the menu rows below already name everything here, so a subtitle
-            // listing them again added nothing.
+            // listing them again added nothing. Same size and air as the Settings header.
             Text(
                 "Profile",
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 12.dp)
+                modifier = Modifier.padding(bottom = 10.dp)
             )
 
             val entitled by container.premium.entitled.collectAsState(initial = false)
@@ -139,7 +139,8 @@ private fun MenuRow(icon: ImageVector, title: String, subtitle: String, onClick:
     }
 }
 
-/** A titled sub-page with a back button; system back returns to the menu too. */
+/** A titled sub-page with a back button; system back returns to the menu too.
+ *  Header matches the Settings screen exactly: arrow + headlineSmall bold + 10dp air below. */
 @Composable
 private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -> Unit) {
     BackHandler(onBack = onBack)
@@ -152,8 +153,9 @@ private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -
             IconButton(onClick = onBack) {
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
             }
-            Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+            Text(title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
         }
+        Spacer(Modifier.height(10.dp))
         Box(Modifier.weight(1f)) { content() }
     }
 }
