@@ -1,7 +1,7 @@
 package com.corlang.app
 
 import com.corlang.app.data.WordsRepository.Companion.REVIEW_SEED_LESSONS
-import com.corlang.app.data.WordsRepository.Companion.REVIEW_SEED_SPREAD_DAYS
+import com.corlang.app.data.WordsRepository.Companion.REVIEW_SEED_MIN_PER_DAY
 import com.corlang.app.data.WordsRepository.Companion.prePlacementRange
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -83,16 +83,22 @@ class PlacementSeedingTest {
 
     /**
      * Coverage and daily load are separate concerns: the window stays wide, and the backlog is
-     * spread instead of dumped. Standard spaced-repetition guidance is that a big overdue pile
-     * should drain gradually rather than crowd out new material.
+     * spread at half the learner's own review limit per day, so seeded checks (which sort as
+     * maximally urgent, having no history) can never fill the lesson's review step on their
+     * own. A fixed 21-day spread once put ~29 a day against the default limit of 20, growing
+     * faster than the lesson step could drain.
      */
-    @Test fun `the seeded backlog is spread, not dumped on one day`() {
+    @Test fun `the seeded daily share never exceeds half the review limit`() {
+        listOf(20, 40, 60, 100).forEach { cap ->
+            val perDay = (cap / 2).coerceAtLeast(REVIEW_SEED_MIN_PER_DAY)
+            assertTrue("cap $cap: share $perDay exceeds half the cap",
+                perDay <= maxOf(cap / 2, REVIEW_SEED_MIN_PER_DAY))
+            assertTrue("share must be positive", perDay >= REVIEW_SEED_MIN_PER_DAY)
+        }
+        // The whole 600-card seed drains in a bounded time even at the smallest cap.
         val (from, until) = prePlacementRange(101)
-        val count = until - from
-        val perDay = kotlin.math.ceil(count.toDouble() / REVIEW_SEED_SPREAD_DAYS).toInt()
-        assertEquals(600, count)
-        assertTrue("a day's seeded share should stay modest, got $perDay", perDay <= 30)
-        // The last card must still land inside the spread window.
-        assertTrue((count - 1) / perDay < REVIEW_SEED_SPREAD_DAYS)
+        assertEquals(600, until - from)
+        assertTrue("600 cards at 10/day is 60 days, the acceptable worst case",
+            (until - from) / (20 / 2) <= 60)
     }
 }

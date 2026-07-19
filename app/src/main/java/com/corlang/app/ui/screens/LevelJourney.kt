@@ -272,12 +272,11 @@ fun LevelJourney(
                 }
             }
         }
-        val hasCheckpoints = stones.isNotEmpty() && (
-            selectedLevel in quizLevelIds || selectedLevel in readinessLevelIds ||
-                selectedLevel in examLevelIds
-        )
-        // Locked-state hint only; once unlocked the stones speak for themselves.
-        val lockedHint = hasCheckpoints && !stones.all { it.day in completedSet }
+        // Locked-state hint only; once unlocked the stones speak for themselves. Worded around
+        // the exam, so it only shows for levels that actually END in one (an A0 onramp has just
+        // its quiz, and "unlock exam" there would promise something that does not exist).
+        val lockedHint = stones.isNotEmpty() && selectedLevel in examLevelIds &&
+            !stones.all { it.day in completedSet }
         Text(
             "$selectedLevel · $doneInLevel / ${stones.size} lessons done" +
                 (if (lockedHint) "  ·  complete to unlock exam" else ""),

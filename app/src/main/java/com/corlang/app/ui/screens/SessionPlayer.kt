@@ -677,10 +677,14 @@ fun SessionPlayer(
                             // well before lesson 250. Say so plainly instead of showing a bare
                             // "Next" under a "New words" heading, which reads like a bug.
                             if (deckFinished) {
+                                // Count from deckStart: a placed learner skipped the deck's
+                                // opening stretch, so "met every word, 2566 in total" would
+                                // claim words they never saw.
                                 Text(
-                                    "You have met every word in the ${deckLanguageName} deck, " +
-                                        "${allWords.size} in total. From here the word work is " +
-                                        "pure review, keeping what you know from fading.",
+                                    "You have met every word on your ${deckLanguageName} path, " +
+                                        "${allWords.size - deckStart} in total. From here the " +
+                                        "word work is pure review, keeping what you know from " +
+                                        "fading.",
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     modifier = Modifier.padding(bottom = 12.dp)
