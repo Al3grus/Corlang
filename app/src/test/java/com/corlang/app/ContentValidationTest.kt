@@ -12,6 +12,7 @@ import com.corlang.app.data.model.VocabPack
 import com.corlang.app.data.model.VocabSet
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
@@ -990,6 +991,23 @@ class ContentValidationTest {
                     assertTrue("$lang $level: no mock exam in exams.json", level in examLevels)
                 }
             }
+        }
+    }
+
+    /**
+     * The no-dashes rule covers everything the learner reads, but the existing gate only walks
+     * assets/content, so learner-facing strings that live in Kotlin were never checked. The
+     * tutor's seed greeting is the clearest example: it is the first sentence of every Tutor
+     * conversation, and three of the four shipped greetings carried an em dash unnoticed.
+     */
+    @Test
+    fun `tutor seed greetings carry no em or en dashes`() {
+        (allLangs + "unknown-fallback").forEach { lang ->
+            val greeting = com.corlang.app.ui.screens.seedGreeting(lang)
+            assertFalse(
+                "$lang tutor seed greeting contains an em or en dash: $greeting",
+                greeting.contains('—') || greeting.contains('–')
+            )
         }
     }
 }

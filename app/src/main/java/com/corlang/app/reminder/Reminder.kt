@@ -65,6 +65,7 @@ class ReminderWorker(
         val languageName = when (lang) {
             "fr" -> "French"
             "pt" -> "Portuguese"
+            "de" -> "German"
             else -> "Croatian"
         }
         // The learner's name, when they gave one, is what makes the nudge feel addressed to a
@@ -76,12 +77,15 @@ class ReminderWorker(
                 else "C'est l'heure du français, $who ! 🇫🇷"
             "pt" -> if (who.isEmpty()) "Está na hora do português! 🇵🇹"
                 else "Está na hora do português, $who! 🇵🇹"
+            "de" -> if (who.isEmpty()) "Zeit für Deutsch! 🇩🇪"
+                else "Zeit für Deutsch, $who! 🇩🇪"
             else -> if (who.isEmpty()) "Vrijeme je za hrvatski! 🇭🇷"
                 else "Vrijeme je za hrvatski, $who! 🇭🇷"
         }
         val littleByLittle = when (lang) {
             "fr" -> "Petit à petit, a little today is all it takes."
             "pt" -> "Devagar se vai ao longe, a little today is all it takes."
+            "de" -> "Steter Tropfen höhlt den Stein, a little today is all it takes."
             else -> "Malo po malo, a little today is all it takes."
         }
         // Rotate copy so the reminder doesn't become invisible through repetition.
