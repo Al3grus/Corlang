@@ -1,6 +1,6 @@
 {
-  "versionCode": 133,
-  "versionName": "0.20.80",
-  "notes": "Two fixes to the new reset flow. The erase dialog's buttons are now full width and stacked. And switching course, whether after a reset or from Profile, no longer shows a flash of the previous course's position: erasing Portuguese while on Croatian lesson 8 briefly landed the journey on A1 because one frame mixed the old course's numbers with the new course's plan. Each course's screens now rebuild cleanly on switch.",
+  "versionCode": 134,
+  "versionName": "0.20.81",
+  "notes": "The Review tab now shows your course's word packs from the very first lesson. Portuguese and French start at A1, but a fresh profile was treated as A0, a level those courses never teach, so every pack was hidden until the first lesson was completed. Packs list from day one; each becomes tappable for review once you have met its first words in a lesson. The current-level tile in Progress gets the same correction.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

@@ -107,7 +107,14 @@ fun WordsScreen(container: AppContainer, lang: String) {
     // whole course (dozens for Croatian, each filtering ~2800 words) was what made this tab lag
     // on open; a learner only ever reviews words up to the level they've reached.
     val progress by container.progress.progress(lang).collectAsState(initial = null)
-    val currentLevel = progress?.currentLevel ?: "A0"
+    // Floor the stored level at the course's real first level. The progress row is created for
+    // every language at startup with the entity default "A0", but Portuguese and French start
+    // at A1 and have no A0 packs, so trusting the default filtered out EVERY pack for a fresh
+    // learner (field report: "no packs available" on pt lesson 1). currentLevel only holds
+    // plan levels once a lesson is completed or a placement runs; anything else is the default.
+    val planLevels = remember(lang) { container.content.plan(lang).days.map { it.level }.distinct() }
+    val storedLevel = progress?.currentLevel ?: planLevels.first()
+    val currentLevel = if (storedLevel in planLevels) storedLevel else planLevels.first()
     val levelOrder = remember(lang) { container.content.levels(lang).levels.map { it.id } }
 
     var refreshKey by remember(lang) { mutableIntStateOf(0) }
