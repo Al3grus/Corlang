@@ -1,43 +1,58 @@
 {
- "title": "Por onde começar?",
- "intro": "A quick check that gets harder as it goes. Answer each question, or tap “I don't know” when one is too hard, the first one you can't do is your level, and we'll start you there.",
+ "title": "Find your starting point",
+ "intro": "A short European Portuguese check that gets harder as it goes, so we can start you in the right place. It takes about two minutes and you can retake it any time.",
  "questions": [
   {
    "level": "A0",
    "startDay": 1,
    "type": "MCQ",
    "difficulty": 1,
-   "prompt": "How do you say 'thank you'?",
+   "prompt": "'Eu ___ portuguesa.' (I am Portuguese)",
    "options": [
-    "Obrigado",
-    "Olá",
-    "Desculpe",
-    "Adeus"
+    "sou",
+    "és",
+    "é",
+    "são"
    ],
-   "answer": "Obrigado",
-   "explanation": "Obrigado (obrigada if you're a woman) = thank you."
+   "answer": "sou",
+   "explanation": "With eu, the verb ser is sou."
   },
   {
    "level": "A0",
    "startDay": 1,
    "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'Eu ___ estudante.' (I am a student)",
+   "difficulty": 1,
+   "prompt": "How do you say 'good morning'?",
    "options": [
-    "sou",
-    "és",
-    "é",
-    "estou"
+    "Bom dia",
+    "Boa tarde",
+    "Boa noite",
+    "Até logo"
    ],
-   "answer": "sou",
-   "explanation": "Identity/profession takes ser: eu sou."
+   "answer": "Bom dia",
+   "explanation": "Bom dia is used before lunchtime; boa tarde and boa noite come later in the day."
+  },
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "Someone thanks you. What do you reply?",
+   "options": [
+    "De nada",
+    "Por favor",
+    "Com licença",
+    "Boa sorte"
+   ],
+   "answer": "De nada",
+   "explanation": "De nada is the standard reply to thanks, like 'you're welcome'."
   },
   {
    "level": "A1",
    "startDay": 6,
    "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "'A sopa ___ fria hoje.' (temporary state)",
+   "difficulty": 2,
+   "prompt": "'A sopa ___ fria hoje.' (the soup is cold today, a temporary state)",
    "options": [
     "está",
     "é",
@@ -45,28 +60,88 @@
     "ser"
    ],
    "answer": "está",
-   "explanation": "Temporary state → estar; permanent quality → ser."
+   "explanation": "A temporary state takes estar, while a permanent quality takes ser."
+  },
+  {
+   "level": "A1",
+   "startDay": 6,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "How do you say 'it's half past three'?",
+   "options": [
+    "São três e meia.",
+    "É três e meia.",
+    "São três e metade.",
+    "Está três e meia."
+   ],
+   "answer": "São três e meia.",
+   "explanation": "Hours from two onwards take the plural são, and half past is e meia."
+  },
+  {
+   "level": "A1",
+   "startDay": 6,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'___ problema é difícil.' (this word looks feminine but is not)",
+   "options": [
+    "O",
+    "A",
+    "As",
+    "Uma"
+   ],
+   "answer": "O",
+   "explanation": "Problema is masculine despite the final a, so it takes o."
   },
   {
    "level": "A1",
    "startDay": 12,
    "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "Present tense: 'Nós ___ português todos os dias.' (falar)",
+   "difficulty": 3,
+   "prompt": "Present tense: 'A loja ___ às nove da manhã.' (abrir)",
    "options": [
-    "falamos",
-    "falam",
-    "fala",
-    "falo"
+    "abre",
+    "abrem",
+    "abro",
+    "abrir"
    ],
-   "answer": "falamos",
-   "explanation": "-AR verbs, nós = -amos: falamos."
+   "answer": "abre",
+   "explanation": "An -IR verb with a singular subject takes the ending -e: abre."
+  },
+  {
+   "level": "A1",
+   "startDay": 12,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "In a café in Portugal you want a small black espresso. What do you order?",
+   "options": [
+    "Um café",
+    "Um galão",
+    "Uma meia de leite",
+    "Um chá"
+   ],
+   "answer": "Um café",
+   "explanation": "Um café is the small espresso; galão and meia de leite are milky coffees."
+  },
+  {
+   "level": "A1",
+   "startDay": 12,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "'___ é que tu moras?' (asking about the place)",
+   "options": [
+    "Onde",
+    "Quando",
+    "Como",
+    "Quem"
+   ],
+   "answer": "Onde",
+   "explanation": "Onde asks about place; quando asks about time."
   },
   {
    "level": "A2",
    "startDay": 46,
    "type": "MCQ",
-   "difficulty": 5,
+   "difficulty": 4,
    "prompt": "Completed past: 'Ontem eu ___ um filme.' (ver)",
    "options": [
     "vi",
@@ -75,13 +150,43 @@
     "verei"
    ],
    "answer": "vi",
-   "explanation": "One completed event → pretérito perfeito simples: vi."
+   "explanation": "One finished event in the past takes the pretérito perfeito simples: vi."
+  },
+  {
+   "level": "A2",
+   "startDay": 46,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "Replace the object in 'Comprei o bilhete.' with a pronoun.",
+   "options": [
+    "Comprei-o.",
+    "O comprei.",
+    "Comprei ele.",
+    "Comprei-lo."
+   ],
+   "answer": "Comprei-o.",
+   "explanation": "The direct object pronoun o attaches after the verb with a hyphen: comprei-o."
+  },
+  {
+   "level": "A2",
+   "startDay": 46,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "You have finished eating in a restaurant and want to pay. What do you ask for?",
+   "options": [
+    "A conta, se faz favor.",
+    "A ementa, se faz favor.",
+    "O troco, se faz favor.",
+    "A gorjeta, se faz favor."
+   ],
+   "answer": "A conta, se faz favor.",
+   "explanation": "A conta is the bill; a ementa is the menu and a gorjeta is the tip."
   },
   {
    "level": "A2",
    "startDay": 52,
    "type": "MCQ",
-   "difficulty": 6,
+   "difficulty": 5,
    "prompt": "Past habit: 'Quando era pequeno, ___ à bola todos os dias.' (jogar)",
    "options": [
     "jogava",
@@ -90,59 +195,164 @@
     "jogarei"
    ],
    "answer": "jogava",
-   "explanation": "Habit/background in the past = imperfeito: jogava."
+   "explanation": "A repeated habit in the past takes the imperfeito: jogava."
+  },
+  {
+   "level": "A2",
+   "startDay": 52,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "Which sentence is correct for 'They told me nothing'?",
+   "options": [
+    "Não me disseram nada.",
+    "Não disseram-me nada.",
+    "Nunca disseram-me nada.",
+    "Não disseram nada-me."
+   ],
+   "answer": "Não me disseram nada.",
+   "explanation": "A negative word pulls the pronoun in front of the verb: não me disseram."
+  },
+  {
+   "level": "A2",
+   "startDay": 52,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "At the doctor you want to say that your throat hurts.",
+   "options": [
+    "Dói-me a garganta.",
+    "Dói-me o estômago.",
+    "Dói-me a cabeça.",
+    "Dói-me o joelho."
+   ],
+   "answer": "Dói-me a garganta.",
+   "explanation": "Garganta is the throat; estômago, cabeça and joelho are other body parts."
   },
   {
    "level": "A2",
    "startDay": 59,
    "type": "MCQ",
    "difficulty": 6,
-   "prompt": "Pronoun placement: which is the normal European way to say 'I saw her yesterday'?",
+   "prompt": "Telling a friend the way: '___ sempre em frente até ao mercado.' (seguir, tu)",
    "options": [
-    "Vi-a ontem.",
-    "A vi ontem.",
-    "Vi ela ontem.",
-    "Ontem a vi."
+    "Segue",
+    "Siga",
+    "Segues",
+    "Seguir"
    ],
-   "answer": "Vi-a ontem.",
-   "explanation": "European default is ênclise: verb + hyphen + pronoun (vi-a)."
+   "answer": "Segue",
+   "explanation": "The tu imperative drops the final s of the present form, and siga is the formal one."
+  },
+  {
+   "level": "A2",
+   "startDay": 59,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Este restaurante é ___ do que o outro.' (better)",
+   "options": [
+    "melhor",
+    "mais bom",
+    "mais melhor",
+    "o melhor"
+   ],
+   "answer": "melhor",
+   "explanation": "Bom has the irregular comparative melhor, never mais bom."
+  },
+  {
+   "level": "A2",
+   "startDay": 59,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "Which word means 'bus' in Portugal?",
+   "options": [
+    "autocarro",
+    "ónibus",
+    "carrinha",
+    "elétrico"
+   ],
+   "answer": "autocarro",
+   "explanation": "Portugal uses autocarro; ónibus is Brazilian and elétrico is the tram."
   },
   {
    "level": "B1",
    "startDay": 110,
    "type": "MCQ",
    "difficulty": 7,
-   "prompt": "Subjunctive: 'Quero que tu ___ cedo.' (vir)",
+   "prompt": "'Quero que tu ___ cedo.' (vir)",
    "options": [
     "venhas",
     "vens",
     "vieres",
-    "vires"
+    "vieste"
    ],
    "answer": "venhas",
-   "explanation": "querer que + presente do conjuntivo: que tu venhas."
+   "explanation": "Querer que triggers the presente do conjuntivo: que tu venhas."
+  },
+  {
+   "level": "B1",
+   "startDay": 110,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'Ele prometeu que ___ o dinheiro na sexta.' (devolver, standard written form)",
+   "options": [
+    "devolveria",
+    "devolverá",
+    "devolvesse",
+    "devolveu"
+   ],
+   "answer": "devolveria",
+   "explanation": "A future seen from a past moment takes the condicional: devolveria."
+  },
+  {
+   "level": "B1",
+   "startDay": 110,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "How do you politely ask an older stranger in a shop if she wants a bag?",
+   "options": [
+    "A senhora quer um saco?",
+    "Tu queres um saco?",
+    "Você quer um saco?",
+    "Vocês querem um saco?"
+   ],
+   "answer": "A senhora quer um saco?",
+   "explanation": "European Portuguese prefers o senhor or a senhora with strangers, not tu or você."
   },
   {
    "level": "B1",
    "startDay": 121,
    "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "Repeated recent action: 'Ultimamente ___ muito.' (trabalhar)",
+   "difficulty": 8,
+   "prompt": "'Procuro alguém que ___ falar alemão.' (saber, the person may not exist)",
    "options": [
-    "tenho trabalhado",
-    "trabalhei",
-    "trabalhava",
-    "vou trabalhar"
+    "saiba",
+    "sabe",
+    "soubesse",
+    "souber"
    ],
-   "answer": "tenho trabalhado",
-   "explanation": "Pretérito perfeito composto (ter + particípio) = repeated action up to now."
+   "answer": "saiba",
+   "explanation": "A relative clause about an unidentified person takes the conjuntivo: saiba."
   },
   {
    "level": "B1",
-   "startDay": 136,
+   "startDay": 121,
    "type": "MCQ",
    "difficulty": 8,
-   "prompt": "Relative: 'O autor ___ livro li é português.' (whose)",
+   "prompt": "He asked: 'Tens tempo?' Report it: 'Ele perguntou-me ___ eu tinha tempo.'",
+   "options": [
+    "se",
+    "que",
+    "o que",
+    "qual"
+   ],
+   "answer": "se",
+   "explanation": "A reported yes or no question is introduced by se."
+  },
+  {
+   "level": "B1",
+   "startDay": 121,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "'O autor ___ livro li é português.' (whose)",
    "options": [
     "cujo",
     "que",
@@ -150,14 +360,59 @@
     "onde"
    ],
    "answer": "cujo",
-   "explanation": "cujo = whose; it agrees with the thing possessed (cujo livro)."
+   "explanation": "Cujo means whose and agrees with the thing possessed, here livro."
+  },
+  {
+   "level": "B1",
+   "startDay": 136,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Combine the pronouns me and o: 'He gave me the book.'",
+   "options": [
+    "Ele deu-mo.",
+    "Ele deu-me-o.",
+    "Ele deu-lo-me.",
+    "Ele deu-me ele."
+   ],
+   "answer": "Ele deu-mo.",
+   "explanation": "Me plus o contract into mo, so the verb takes deu-mo."
+  },
+  {
+   "level": "B1",
+   "startDay": 136,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "A sign in an estate agent's window meaning 'houses for sale'.",
+   "options": [
+    "Vendem-se casas.",
+    "Se vendem casas.",
+    "Vende-se casas.",
+    "São vendidas casas."
+   ],
+   "answer": "Vendem-se casas.",
+   "explanation": "In the passive with se the verb agrees with the plural noun and the pronoun follows it."
+  },
+  {
+   "level": "B1",
+   "startDay": 136,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "'Ela insistiu ___ pagar a conta.'",
+   "options": [
+    "em",
+    "de",
+    "a",
+    "por"
+   ],
+   "answer": "em",
+   "explanation": "Insistir governs the preposition em before an infinitive."
   },
   {
    "level": "B2",
    "startDay": 171,
    "type": "MCQ",
    "difficulty": 8,
-   "prompt": "Hypothesis: 'Se eu ___ rico, comprava uma casa no Porto.' (ser)",
+   "prompt": "'Se eu ___ rico, comprava uma casa no Porto.' (ser)",
    "options": [
     "fosse",
     "for",
@@ -165,29 +420,44 @@
     "era"
    ],
    "answer": "fosse",
-   "explanation": "Unreal condition: se + imperfeito do conjuntivo (fosse)."
+   "explanation": "An unreal condition takes se plus the imperfeito do conjuntivo: fosse."
+  },
+  {
+   "level": "B2",
+   "startDay": 171,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "'Quando ___ a Lisboa, liga-me.' (vir, tu, future time)",
+   "options": [
+    "vieres",
+    "venhas",
+    "vens",
+    "virias"
+   ],
+   "answer": "vieres",
+   "explanation": "Quando pointing at future time takes the futuro do conjuntivo: vieres."
+  },
+  {
+   "level": "B2",
+   "startDay": 171,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "'___ mau tempo, o jogo realizou-se na mesma.'",
+   "options": [
+    "Apesar do",
+    "Apesar de",
+    "Embora",
+    "Ainda que"
+   ],
+   "answer": "Apesar do",
+   "explanation": "Apesar de takes a noun and contracts with o, and embora would need a verb in the conjuntivo."
   },
   {
    "level": "B2",
    "startDay": 175,
    "type": "MCQ",
    "difficulty": 9,
-   "prompt": "Future reference: 'Quando ___ a Lisboa, liga-me.' (vir, tu)",
-   "options": [
-    "vieres",
-    "venhas",
-    "vens",
-    "vieste"
-   ],
-   "answer": "vieres",
-   "explanation": "quando + future time → futuro do conjuntivo: quando vieres."
-  },
-  {
-   "level": "B2",
-   "startDay": 183,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "Personal infinitive: 'É melhor ___ agora.' (nós, partir)",
+   "prompt": "'É melhor ___ agora.' (partir, we)",
    "options": [
     "partirmos",
     "partimos",
@@ -195,14 +465,44 @@
     "partir"
    ],
    "answer": "partirmos",
-   "explanation": "Infinitivo pessoal with nós adds -mos to the infinitive: partirmos."
+   "explanation": "The infinitivo pessoal for nós adds -mos to the infinitive: partirmos."
   },
   {
    "level": "B2",
-   "startDay": 204,
+   "startDay": 175,
    "type": "MCQ",
    "difficulty": 9,
-   "prompt": "Formal written future with a clitic: 'I will tell you (te) the truth.'",
+   "prompt": "'Lamento que eles não ___ a tempo.' (chegar, already happened)",
+   "options": [
+    "tenham chegado",
+    "tinham chegado",
+    "chegaram",
+    "cheguem"
+   ],
+   "answer": "tenham chegado",
+   "explanation": "A past event under lamentar que takes the pretérito perfeito composto do conjuntivo."
+  },
+  {
+   "level": "B2",
+   "startDay": 175,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "How do you close a formal email to a company in Portugal?",
+   "options": [
+    "Com os melhores cumprimentos,",
+    "Um abraço,",
+    "Beijinhos,",
+    "Até já,"
+   ],
+   "answer": "Com os melhores cumprimentos,",
+   "explanation": "Com os melhores cumprimentos is the standard formal sign off; the others are for friends."
+  },
+  {
+   "level": "B2",
+   "startDay": 183,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Formal written future with the pronoun te: 'I will tell you the truth.'",
    "options": [
     "Dir-te-ei a verdade.",
     "Te direi a verdade.",
@@ -210,7 +510,82 @@
     "Dir-ei-te a verdade."
    ],
    "answer": "Dir-te-ei a verdade.",
-   "explanation": "Mesóclise: the pronoun goes inside the future form, dir-te-ei."
+   "explanation": "Mesóclise puts the pronoun inside the future form, giving dir-te-ei."
+  },
+  {
+   "level": "B2",
+   "startDay": 183,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Which noun is formed from the verb desenvolver?",
+   "options": [
+    "desenvolvimento",
+    "desenvolvência",
+    "desenvolvação",
+    "desenvolvido"
+   ],
+   "answer": "desenvolvimento",
+   "explanation": "The suffix -mento turns this verb into a noun: desenvolvimento."
+  },
+  {
+   "level": "B2",
+   "startDay": 183,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Current Portugal spelling: 'A doença ___ sobretudo os idosos.'",
+   "options": [
+    "afeta",
+    "afecta",
+    "efeta",
+    "efetua"
+   ],
+   "answer": "afeta",
+   "explanation": "The silent c was dropped in current Portugal spelling, and efetuar means to carry out."
+  },
+  {
+   "level": "B2",
+   "startDay": 204,
+   "type": "MCQ",
+   "difficulty": 10,
+   "prompt": "What does 'ficar com a pulga atrás da orelha' mean?",
+   "options": [
+    "to become suspicious",
+    "to lose your temper",
+    "to be embarrassed",
+    "to fall asleep quickly"
+   ],
+   "answer": "to become suspicious",
+   "explanation": "The idiom describes a nagging suspicion that something is not right."
+  },
+  {
+   "level": "B2",
+   "startDay": 204,
+   "type": "MCQ",
+   "difficulty": 10,
+   "prompt": "What does 'Ele nem por isso gostou do filme.' convey?",
+   "options": [
+    "He did not really like it.",
+    "He liked it a lot.",
+    "He absolutely hated it.",
+    "He had not seen it yet."
+   ],
+   "answer": "He did not really like it.",
+   "explanation": "Nem por isso is a soft negative, closer to not particularly than to hated."
+  },
+  {
+   "level": "B2",
+   "startDay": 204,
+   "type": "MCQ",
+   "difficulty": 10,
+   "prompt": "'Caso ___ dúvidas, não hesite em contactar os nossos serviços.' (ter, formal you)",
+   "options": [
+    "tenha",
+    "tiver",
+    "tem",
+    "teria"
+   ],
+   "answer": "tenha",
+   "explanation": "Caso triggers the presente do conjuntivo, while tiver would need se or quando."
   }
  ]
 }
