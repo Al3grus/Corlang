@@ -120,12 +120,30 @@ catch, build, release, push. **The language goes live in this phase and only thi
 |---|---|---|---|
 | L.0 research and provenance | done | | |
 | L.1 skeleton, identity, code wiring | done | | |
-| L.2 vocabulary deck | in progress | | |
-| L.3 A0 and A1 lessons | in progress | | |
+| L.2 vocabulary deck | done, 2524 words | | |
+| L.3 A0 and A1 lessons | done, 70 lessons | | |
 | L.4 A2 lessons | topics written | | |
 | L.5 B1 lessons | topics written | | |
 | L.6 assessment set | | | |
 | L.7 integrate and ship | | | |
+
+Two tools were added to the scratchpad during the German build and are worth reusing for
+Italian and Spanish:
+
+- `build_language.py` assembles a course **from scratch** into the `plan/` and `vocab/` layout
+  the app expects. `merge_plan.py` and `merge_vocab.py` only append to a language that already
+  exists in `assets/content`, so neither could start a new one.
+- `check_de.py` layers the German-only checks over `check_batch.py`: regional Austrian and
+  Swiss forms, southern perfect auxiliaries, and pre-reform sharp-s spellings. Both the
+  regional check and the auxiliary check are **activity-scoped**, so a form may appear when the
+  lesson is teaching against it (as an incorrect MCQ option, or beside its standard
+  counterpart) but not otherwise. Italian and Spanish need the same shape of file, with
+  regionalisms and Latin American forms respectively.
+
+A note for whoever writes the deck next: budget the vocabulary batches to **exceed** 2500
+before deduplication, not to hit it. Parallel authors cannot see each other's output, and the
+German run lost 376 words to cross-batch duplication, which needed a third round of top-ups
+authored against an explicit exclusion list.
 
 German lesson sequencing is fixed in `plan/TOPICS-A0-A1.md`, `plan/TOPICS-A2.md` and
 `plan/TOPICS-B1.md` inside the build directory. Those files are the contract the batch
