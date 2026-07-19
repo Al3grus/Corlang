@@ -899,6 +899,18 @@ class ContentValidationTest {
             )
             val bands = test.questions.groupBy { it.level to it.startDay }
             assertTrue("$lang placement has fewer than 2 bands", bands.size >= 2)
+            // Every anchor must carry the level the plan actually teaches on that day: the
+            // result screen shows "LEVEL · Lesson N" and writes both into progress, so a
+            // mislabeled anchor tells the learner they are at a level the course never visits
+            // (field: pt/fr bottom bands said A0 while both courses start at A1).
+            val levelByDay = loadPlan(lang).days.associate { it.day to it.level }
+            bands.keys.forEach { (level, startDay) ->
+                assertEquals(
+                    "$lang placement anchor at lesson $startDay is labeled $level but the " +
+                        "plan teaches ${levelByDay[startDay]} there",
+                    levelByDay[startDay], level
+                )
+            }
             bands.forEach { (band, items) ->
                 assertEquals("$lang placement band $band must carry exactly 3 items",
                     3, items.size)
