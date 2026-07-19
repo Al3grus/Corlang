@@ -319,7 +319,7 @@ private fun MessageBubble(msg: ChatMessage, onSpeak: () -> Unit) {
  * greeting would anchor the whole chat in English and there'd be no variety rule. The debug
  * check makes it fail loudly during development instead.
  */
-private val TUTOR_LANGS = setOf("hr", "pt", "fr")
+private val TUTOR_LANGS = setOf("hr", "pt", "fr", "de")
 
 internal fun assertTutorLangRegistered(lang: String) {
     if (com.corlang.app.BuildConfig.DEBUG) {
@@ -380,11 +380,11 @@ private fun stripGloss(text: String): String =
  * language consistency from 86% to 99%).
  */
 fun seedGreeting(lang: String): String = when (lang) {
-    "hr" -> "Bok! Ja sam tvoj hrvatski tutor. Možemo razgovarati o čemu god želiš — polako i jednostavno. Kako si danas?"
-    "pt" -> "Olá! Sou o teu tutor de português europeu. Podemos falar sobre o que quiseres — com calma e frases simples. Como estás hoje?"
-    "fr" -> "Bonjour ! Je suis ton tuteur de français. On peut parler de ce que tu veux — doucement et simplement. Comment vas-tu aujourd'hui ?"
+    "hr" -> "Bok! Ja sam tvoj hrvatski tutor. Možemo razgovarati o čemu god želiš, polako i jednostavno. Kako si danas?"
+    "pt" -> "Olá! Sou o teu tutor de português europeu. Podemos falar sobre o que quiseres, com calma e frases simples. Como estás hoje?"
+    "fr" -> "Bonjour ! Je suis ton tuteur de français. On peut parler de ce que tu veux, doucement et simplement. Comment vas-tu aujourd'hui ?"
     "de" -> "Hallo! Ich bin dein Deutschtutor. Wir können über alles reden, was du möchtest, ganz langsam und mit einfachen Sätzen. Wie geht es dir heute?"
-    else -> "Hi! I'm your language tutor. We can talk about anything you like — slowly and simply. How are you today?"
+    else -> "Hi! I'm your language tutor. We can talk about anything you like, slowly and simply. How are you today?"
 }
 
 private fun seedOpener(lang: String): String = when (lang) {
