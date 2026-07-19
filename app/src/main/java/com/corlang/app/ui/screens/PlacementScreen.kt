@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.data.WordsRepository
 import kotlinx.coroutines.launch
 
 /**
@@ -93,6 +94,20 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                     "you can retake this test from Settings.",
                 style = MaterialTheme.typography.bodyMedium
             )
+            // A short test cannot prove you know every word it skipped, so the level just below
+            // your placement is queued for REVIEW, not retaught. Anything you have forgotten
+            // shows up as a failed card and returns to normal scheduling.
+            val below = remember(placeLevel) { WordsRepository.levelBelow(placeLevel) }
+            if (below != null) {
+                Text(
+                    "Because this test is short, your $below words will be added to your reviews " +
+                        "so nothing slips through the cracks. They are spread over the coming days, " +
+                        "within your daily review limit.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 10.dp)
+                )
+            }
             Button(
                 onClick = {
                     // Close only AFTER the write commits — calling onDone() first would remove
@@ -107,6 +122,11 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                         // new words. Overwritten (not maxed) on retake so placing lower
                         // re-opens earlier words.
                         container.languagePrefs.setPlacementDay(lang, placeDay)
+                        // Check, don't reteach: the level below is queued for review so a
+                        // mis-placement surfaces as failed cards instead of silent gaps.
+                        WordsRepository.levelBelow(placeLevel)?.let {
+                            container.words.seedLevelForReview(lang, it)
+                        }
                         onDone()
                     }
                 },

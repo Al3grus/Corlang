@@ -1,6 +1,6 @@
 {
-  "versionCode": 125,
-  "versionName": "0.20.72",
-  "notes": "New words are now fixed at 10 a lesson, the pace the courses are built around, and the setting you choose is your daily review limit instead: 20, 40, 60 or 100 words on top of the new ones. Croatian and Portuguese gained 234 new words so the decks carry all 250 lessons, and once you have met every word the lesson says so and turns to review only. Every em dash in the courses is gone, replaced by commas and brackets.",
+  "versionCode": 126,
+  "versionName": "0.20.73",
+  "notes": "Placement no longer leaves silent gaps. A short test cannot prove you know every word it skips, so the level just below your placement is now added to your reviews: place into B1 and your A2 words come up for review, place into A2 and your A1 words do. Anything you have actually forgotten simply fails its first card and returns to normal scheduling, all within your daily review limit. Also fixes a bug where placement could skip twice as much vocabulary as intended.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
