@@ -1,6 +1,6 @@
 # Corlang — Master pending checklist
 
-Single source of truth for everything left to do, as of **2026-07-18**. Pick items one by one.
+Single source of truth for everything left to do, as of **2026-07-19**. Pick items one by one.
 Deep detail lives in: `road-to-play.md` (Play steps + store copy), `server-ai.md` (subscription
 verification setup), `monetization-roadmap.md` (pricing + product IDs), `PRE-LAUNCH-TODO.md`
 (content/QA log). Legend: **(browser)** = Play Console / Google Cloud, you do it · **(me)** =
@@ -21,8 +21,14 @@ ask Claude to do it · **(you, phone)** = on-device.
 - **Server-side Play subscription verification** coded + deployed (v0.20.33), **dormant** until
   the `PLAY_SERVICE_ACCOUNT` secret is added (see Track B).
 - Pricing research done (deep-research, 23 verified claims) + plan written.
-- Play AAB built: `app/build/outputs/bundle/playRelease/app-play-release.aab` (v0.20.33, vc 86).
+- Play AAB built: `app/build/outputs/bundle/playRelease/app-play-release.aab` (v0.20.81, vc 134,
+  rebuilt 2026-07-19 — always rebuild this right before uploading, step A5).
 - Gated-preview sideload APK (DEV_PREMIUM=false) built + sent to you.
+- **2026-07-19 (vc 120-134)**: all three courses at 250 lessons + full checkpoint set
+  (quiz/readiness/mock per level), decks >=2500 words, adaptive 3-item-band placement,
+  review-limit setting, per-course Reset progress, em-dash purge, strict accent grading,
+  cross-language stale-frame fix, A0-default fixes; 108 tests green. See the session-resume
+  memory for the full log.
 
 ---
 
@@ -99,6 +105,9 @@ All assets live in `docs/store-assets/` — see the README there.
 1. Croatian native review (`docs/review/hr-content-review.html`).
 2. Portuguese native review (sister; `docs/review/pt-content-review.html`).
 3. French native review (`docs/review/fr-content-review.html`).
+   **Docs regenerated 2026-07-19 against the 250-lesson courses (+297 machine-authored
+   lessons, +422 words, new placement tests + 4 new mocks) — the PRIORITY track now: none
+   of the new material has been read by a human. Start reviewers at A1/A2.**
 4. **(me)** Fold returned corrections into the JSON; tests + ai-variety-eval re-verify.
 5. **(you, phone)** TTS pronunciation spot-check per language.
 
@@ -136,7 +145,7 @@ All assets live in `docs/store-assets/` — see the README there.
 | corlang.app domain + proton email | ✅ have | optional website (Track F) |
 
 ## Key facts the next session needs
-- Latest release: **v0.20.33 / versionCode 86**. Play AAB path above.
+- Latest release: **v0.20.81 / versionCode 134**. Play AAB path above (same version).
 - Worker: `https://corlang-ai-proxy.ricardo-infante.workers.dev`; secrets `ANTHROPIC_API_KEY`,
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
