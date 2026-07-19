@@ -82,4 +82,36 @@ class ExamRulesTest {
         // Zero-question section counts as 0% and drags the average.
         assertFalse(ExamRules.caplePassed(listOf(9 to 10, 9 to 10, 0 to 0, 0 to 10)))
     }
+
+    // ----- Goethe rule (German): A1/A2 global 60%, B1 modular 60% in EVERY module -----
+
+    @Test
+    fun `goethe a1 and a2 pass at 60 percent overall`() {
+        // Equal-weight parts, 60 of 100: exactly on the bar passes.
+        assertTrue(ExamRules.goetheGlobalPassed(listOf(6 to 10, 6 to 10, 15 to 25, 15 to 25)))
+        // A weak part is compensable at A1/A2, since the parts are graded together.
+        assertTrue(ExamRules.goetheGlobalPassed(listOf(4 to 10, 9 to 10, 8 to 10, 7 to 10)))
+    }
+
+    @Test
+    fun `goethe a1 and a2 fail below 60 percent overall`() {
+        assertFalse(ExamRules.goetheGlobalPassed(listOf(5 to 10, 6 to 10, 6 to 10, 6 to 10)))
+        assertFalse(ExamRules.goetheGlobalPassed(emptyList()))
+        // Stricter than CAPLE's 55%: this average is 57.5%, enough for CAPLE, not for Goethe.
+        assertTrue(ExamRules.caplePassed(listOf(3 to 10, 8 to 10, 6 to 10, 6 to 10)))
+        assertFalse(ExamRules.goetheGlobalPassed(listOf(3 to 10, 8 to 10, 6 to 10, 6 to 10)))
+    }
+
+    @Test
+    fun `goethe b1 is modular, so one failed module sinks the exam`() {
+        // B1 uses the all-sections rule: compensation is NOT allowed, unlike A1/A2.
+        val modules = listOf("lesen", "hoeren", "schreiben", "sprechen")
+        assertTrue(ExamRules.examPassed(modules, modules.associateWith { true }))
+        assertFalse(
+            ExamRules.examPassed(modules, modules.associateWith { true } + ("schreiben" to false))
+        )
+        // A module at 59% fails its own 60% bar, which is what feeds the map above.
+        assertFalse(ExamRules.sectionPassed(59, 100, 60))
+        assertTrue(ExamRules.sectionPassed(60, 100, 60))
+    }
 }

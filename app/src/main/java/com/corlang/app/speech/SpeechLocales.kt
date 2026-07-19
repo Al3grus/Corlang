@@ -12,6 +12,9 @@ object SpeechLocales {
         // pt-PT explicitly: the default pt voice on many devices is BRAZILIAN — the whole point
         // of the course is European Portuguese, so the region must never be left to chance.
         "pt" -> Locale("pt", "PT")
+        // de-DE explicitly for the same reason: the course teaches standard German, so an
+        // Austrian or Swiss system voice must not be picked up by accident.
+        "de" -> Locale("de", "DE")
         else -> Locale("hr", "HR")
     }
 
@@ -19,6 +22,7 @@ object SpeechLocales {
     fun tagFor(code: String): String = when (code) {
         "fr" -> "fr-FR"
         "pt" -> "pt-PT"
+        "de" -> "de-DE"
         else -> "hr-HR"
     }
 }
