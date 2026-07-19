@@ -15,6 +15,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -90,7 +91,7 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
         return
     }
 
-    val item = items[qIndex]
+    val item = items[qIndex.coerceIn(0, items.lastIndex)]
     Column(modifier = Modifier.fillMaxWidth()) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
@@ -170,7 +171,14 @@ fun RecallDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
  * "recall your intro / greetings / nationalities" tests the content just studied, not random words.
  */
 @Composable
-fun WrapupRecall(container: AppContainer, lang: String, day: StudyDay, onFinished: () -> Unit) {
+fun WrapupRecall(
+    container: AppContainer,
+    lang: String,
+    day: StudyDay,
+    loadResume: (suspend () -> RecallResume)? = null,
+    onAnswered: (index: Int, correct: Boolean) -> Unit = { _, _ -> },
+    onFinished: () -> Unit
+) {
     val items = remember(day.day) {
         // No hint: this is from-memory recall, and the LEARN note often contains the target
         // language itself, which would hand you the answer right under the prompt.
@@ -183,9 +191,15 @@ fun WrapupRecall(container: AppContainer, lang: String, day: StudyDay, onFinishe
         remember(lang) { container.content.meta(lang).name },
         lang,
         "Recalling today's phrases from memory is what makes them stick.",
-        onFinished
+        onFinished,
+        loadResume = loadResume,
+        onAnswered = onAnswered
     )
 }
+
+/** What an interrupted wrap-up left behind. Items run strictly in order with no re-queue, so a
+ *  count of answered items plus the number answered correctly restores the exact position. */
+data class RecallResume(val answered: Int, val correctCount: Int)
 
 /**
  * The clean, typable phrases from a day's LEARN activities, used to build the wrap-up recall.
@@ -234,16 +248,28 @@ private fun RecallRunner(
     languageName: String,
     langCode: String,
     resultLine: String,
-    onFinished: () -> Unit
+    onFinished: () -> Unit,
+    /** Persisted resume for deterministic item lists (the wrap-up). Null = always start fresh
+     *  (the deck drill draws random items, so a saved position would be meaningless). */
+    loadResume: (suspend () -> RecallResume)? = null,
+    onAnswered: (index: Int, correct: Boolean) -> Unit = { _, _ -> }
 ) {
     val context = LocalContext.current
 
-    var qIndex by remember(items) { mutableIntStateOf(0) }
-    var score by remember(items) { mutableIntStateOf(0) }
-    var input by remember(items) { mutableStateOf("") }
-    var checked by remember(items) { mutableStateOf(false) }
-    var correct by remember(items) { mutableStateOf(false) }
-    var finished by remember(items) { mutableStateOf(false) }
+    // Gate on the async resume load exactly like ExerciseActivity, so the first frame never
+    // flashes question one before jumping to the saved position.
+    var resume by remember(items) {
+        mutableStateOf(if (loadResume == null) RecallResume(0, 0) else null)
+    }
+    LaunchedEffect(items) { if (loadResume != null) resume = loadResume() }
+    val resumed = resume ?: return
+
+    var qIndex by remember(resumed) { mutableIntStateOf(resumed.answered.coerceIn(0, items.size)) }
+    var score by remember(resumed) { mutableIntStateOf(resumed.correctCount.coerceAtMost(items.size)) }
+    var input by remember(resumed) { mutableStateOf("") }
+    var checked by remember(resumed) { mutableStateOf(false) }
+    var correct by remember(resumed) { mutableStateOf(false) }
+    var finished by remember(resumed) { mutableStateOf(resumed.answered >= items.size && items.isNotEmpty()) }
     val feedback = CorlangColors.feedback
 
     if (items.isEmpty()) {
@@ -255,7 +281,7 @@ private fun RecallRunner(
         return
     }
 
-    val item = items[qIndex]
+    val item = items[qIndex.coerceIn(0, items.lastIndex)]
     Column(modifier = Modifier.fillMaxWidth()) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
@@ -273,19 +299,7 @@ private fun RecallRunner(
         OutlinedTextField(
             value = input,
             onValueChange = { if (!checked) input = it },
-            label = { Text(languageName) },
-            // Plain words instead of "(diacritics count!)": a beginner does not know the term,
-            // and the point is simply that accents are graded here, like on the real exam.
-            supportingText = {
-                Text(
-                    when (langCode) {
-                        "hr" -> "Write the accents: š and s are different letters."
-                        "pt" -> "Write the accents: ã and a are different letters."
-                        "fr" -> "Write the accents: é and e are different letters."
-                        else -> "Accent marks are graded."
-                    }
-                )
-            },
+            label = { Text("Write your answer") },
             enabled = !checked,
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
         )
@@ -311,6 +325,7 @@ private fun RecallRunner(
                     // English gloss licenses the subject pronoun, so "ja radim" == "radim".
                     correct = Grading.gradeRecall(item.answerHr, input, en = item.en, lang = langCode)
                     if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
+                    onAnswered(qIndex, correct)
                     checked = true
                 } else if (qIndex + 1 >= items.size) {
                     finished = true

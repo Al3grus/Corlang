@@ -613,7 +613,29 @@ fun SessionPlayer(
                         )
                     }
                     StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
-                    StepKind.WRAPUP -> WrapupRecall(container, lang, day, onDrillDone)
+                    StepKind.WRAPUP -> WrapupRecall(
+                        container, lang, day,
+                        // Same persistence scheme as EXERCISE: "<stepId>::q<i>" = answered
+                        // right, "<stepId>::w<i>" = answered wrong. Items run in a fixed
+                        // order, so the counts restore the exact position on resume.
+                        loadResume = {
+                            val ids = container.progress.dayTaskChecks(lang, day.day).first()
+                                .map { it.itemId }
+                            val right = ids.count { it.startsWith("${s.id}::q") }
+                            val wrong = ids.count { it.startsWith("${s.id}::w") }
+                            RecallResume(answered = right + wrong, correctCount = right)
+                        },
+                        onAnswered = { i, ok ->
+                            container.appScope.launch {
+                                container.progress.setDayTask(
+                                    lang, day.day,
+                                    if (ok) "${s.id}::q$i" else "${s.id}::w$i",
+                                    true
+                                )
+                            }
+                        },
+                        onFinished = onDrillDone
+                    )
                     else -> {}
                 }
 
