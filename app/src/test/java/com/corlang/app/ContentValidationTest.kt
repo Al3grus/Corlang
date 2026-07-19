@@ -746,4 +746,73 @@ class ContentValidationTest {
             }
         }
     }
+
+    // ---- App-only content + wording invariants (docs/language-standard.md section 7) ----
+
+    /** Every learner-visible string in every content file, minus provenance `sources` arrays
+     *  and resources.json (the ONE sanctioned home for external material, on Profile). */
+    private fun learnerStrings(lang: String): List<Pair<String, String>> {
+        val out = mutableListOf<Pair<String, String>>()
+        fun walk(el: kotlinx.serialization.json.JsonElement, file: String) {
+            when (el) {
+                is kotlinx.serialization.json.JsonObject ->
+                    el.forEach { (k, v) -> if (k != "sources") walk(v, file) }
+                is kotlinx.serialization.json.JsonArray -> el.forEach { walk(it, file) }
+                is kotlinx.serialization.json.JsonPrimitive ->
+                    if (el.isString) out += file to el.content
+                else -> {}
+            }
+        }
+        File(contentRoot, lang).walkTopDown()
+            .filter { it.isFile && it.extension == "json" }
+            .filter { it.name != "resources.json" && it.name != "_index.json" }
+            .forEach { f ->
+                walk(Json.parseToJsonElement(f.readText(Charsets.UTF_8)), "$lang/${f.name}")
+            }
+        return out
+    }
+
+    /**
+     * Lessons NEVER send the learner to study elsewhere: no URLs, no course sites, no named
+     * institutions, no sign-in instructions, no competitor apps. External material lives only
+     * in resources.json (Profile > References). Mirrors SessionPlayer's runtime isExternal
+     * filter, but at the content gate so it can't even be authored. (Named-media immersion
+     * habits like watching the news are allowed; course/site/app references are not.)
+     */
+    @Test
+    fun content_neverSendsLearnersElsewhere() {
+        val banned = Regex(
+            // \be-course: without the boundary, "three-course interaction" matched.
+            "https?://|www\\.|ffzg|unizg|a1\\.hr|a2\\.hr|e-tečaj|\\be-course|" +
+                "croaticum|cehas|rijeka school|sign in at|sign up at|log in at|" +
+                "\\bduolingo\\b|\\bmemrise\\b|\\banki\\b",
+            RegexOption.IGNORE_CASE
+        )
+        allLangs.forEach { lang ->
+            val hits = learnerStrings(lang).filter { (_, str) -> banned.containsMatchIn(str) }
+            assertTrue(
+                "external-study references in learner-visible content:\n" +
+                    hits.joinToString("\n") { (f, str) -> "  $f: ${str.take(120)}" },
+                hits.isEmpty()
+            )
+        }
+    }
+
+    /**
+     * Course positions are "lesson N", never "day N": learners do not necessarily study daily,
+     * and the app's UI says Lesson everywhere. Calendar durations ("30 days", "7-day streak")
+     * put the number first and never match; target languages say dan/dia/jour.
+     */
+    @Test
+    fun content_saysLessonNotDayForPositions() {
+        val dayRef = Regex("\\b[Dd]ays?\\s+\\d")
+        allLangs.forEach { lang ->
+            val hits = learnerStrings(lang).filter { (_, str) -> dayRef.containsMatchIn(str) }
+            assertTrue(
+                "'day N' position references (should be 'lesson N'):\n" +
+                    hits.joinToString("\n") { (f, str) -> "  $f: ${str.take(120)}" },
+                hits.isEmpty()
+            )
+        }
+    }
 }
