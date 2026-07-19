@@ -210,7 +210,11 @@ data class FeynmanConcept(
 @Serializable
 data class RubricPoint(
     val point: String,               // the idea the learner should have covered
-    val reTeach: String              // shown if they say they missed it
+    val reTeach: String,             // shown when the grader marks it missed
+    /** Paraphrase vocabulary for the offline grader: the words a learner naturally uses when
+     *  they have the idea but not the point's own phrasing ("written", "sounds" for the
+     *  phonetic point). Multi-word entries match as phrases. */
+    val keywords: List<String> = emptyList()
 )
 
 // ---------- Vocabulary (spaced-repetition deck) ----------
