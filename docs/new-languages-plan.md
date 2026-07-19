@@ -52,6 +52,21 @@ turns the build red (no 250 lessons, no 2500 words, no checkpoints).
 final phase of that language,** when it can pass everything at once. The code wiring lands in
 the same final phase. Nothing incomplete is ever committed into the assets tree.
 
+The cost of that choice is that in-flight work lives outside git, in a session-scoped temp
+directory. Scratchpads are not deleted when a session ends, so nothing is lost, but a new
+session will not find the work unless it is told where to look. **Current German build
+directory:**
+
+```
+C:\Users\al3gr\AppData\Local\Temp\claude\C--Users-al3gr-Desktop-Github-Corlang\
+  4eb9e133-fe10-44a6-adf4-e0fbfa9f0267\scratchpad\
+```
+
+with the assembled course under `de-build/` and the raw authored batches (`de_vocab_*.json`,
+`de_a0.json`, `de_a1*.json`) beside it. The shared authoring tools live in the same directory:
+`LESSON_SPEC.md`, `PLACEMENT_SPEC.md`, `check_batch.py`, `check_placement.py`, `merge_plan.py`,
+`merge_vocab.py`, `purge_dashes.py`. Update this path when a later session starts a new build.
+
 ---
 
 ## Phases (repeat per language; L = de, it, es)
@@ -98,6 +113,24 @@ gate suite** (`--rerun-tasks`, since assets are not tracked inputs), fix whateve
 catch, build, release, push. **The language goes live in this phase and only this phase.**
 
 ---
+
+## Progress
+
+| Phase | German | Italian | Spanish |
+|---|---|---|---|
+| L.0 research and provenance | done | | |
+| L.1 skeleton, identity, code wiring | done | | |
+| L.2 vocabulary deck | in progress | | |
+| L.3 A0 and A1 lessons | in progress | | |
+| L.4 A2 lessons | topics written | | |
+| L.5 B1 lessons | topics written | | |
+| L.6 assessment set | | | |
+| L.7 integrate and ship | | | |
+
+German lesson sequencing is fixed in `plan/TOPICS-A0-A1.md`, `plan/TOPICS-A2.md` and
+`plan/TOPICS-B1.md` inside the build directory. Those files are the contract the batch
+authoring agents work against, so a resumed session should author against them rather than
+inventing a new sequence.
 
 ## Order of work
 
