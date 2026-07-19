@@ -144,6 +144,30 @@ interface ProgressDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllCanDoChecks(x: List<CanDoCheck>)
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllDayTaskChecks(x: List<DayTaskCheck>)
 
+    /** Wipes one language's progress in a single transaction, so a crash cannot half-reset. */
+    @Transaction
+    suspend fun resetLanguage(lang: String) {
+        clearProgressFor(lang)
+        clearCompletionsFor(lang)
+        clearQuizAttemptsFor(lang)
+        clearWordReviewsFor(lang)
+        clearFeynmanAttemptsFor(lang)
+        clearExamAttemptsFor(lang)
+        clearCanDoChecksFor(lang)
+        clearDayTaskChecksFor(lang)
+    }
+
+    // ----- Per-language reset (Settings "Reset progress"): every table keyed by langCode -----
+
+    @Query("DELETE FROM language_progress WHERE langCode = :lang") suspend fun clearProgressFor(lang: String)
+    @Query("DELETE FROM day_completion WHERE langCode = :lang") suspend fun clearCompletionsFor(lang: String)
+    @Query("DELETE FROM quiz_attempt WHERE langCode = :lang") suspend fun clearQuizAttemptsFor(lang: String)
+    @Query("DELETE FROM word_review WHERE langCode = :lang") suspend fun clearWordReviewsFor(lang: String)
+    @Query("DELETE FROM feynman_attempt WHERE langCode = :lang") suspend fun clearFeynmanAttemptsFor(lang: String)
+    @Query("DELETE FROM exam_section_attempt WHERE langCode = :lang") suspend fun clearExamAttemptsFor(lang: String)
+    @Query("DELETE FROM can_do_check WHERE langCode = :lang") suspend fun clearCanDoChecksFor(lang: String)
+    @Query("DELETE FROM day_task_check WHERE langCode = :lang") suspend fun clearDayTaskChecksFor(lang: String)
+
     @Query("DELETE FROM language_progress") suspend fun clearProgress()
     @Query("DELETE FROM day_completion") suspend fun clearCompletions()
     @Query("DELETE FROM quiz_attempt") suspend fun clearQuizAttempts()

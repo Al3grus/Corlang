@@ -24,6 +24,7 @@ import androidx.compose.material.icons.automirrored.outlined.VolumeUp
 import androidx.compose.material.icons.outlined.Alarm
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Person
+import androidx.compose.material.icons.outlined.DeleteForever
 import androidx.compose.material.icons.outlined.Save
 import androidx.compose.material.icons.outlined.Speed
 import androidx.compose.material.icons.outlined.SystemUpdate
@@ -58,6 +59,7 @@ import com.corlang.app.AppContainer
 import com.corlang.app.reminder.ReminderScheduler
 import com.corlang.app.speech.TtsState
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -75,6 +77,8 @@ fun SettingsScreen(
     container: AppContainer,
     onBack: () -> Unit = {},
     onEditProfile: () -> Unit = {},
+    /** Fired after a language's progress was erased; the argument is the course to land on. */
+    onProgressReset: (String) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -371,6 +375,100 @@ fun SettingsScreen(
                     onClick = { importLauncher.launch(arrayOf("application/json")) },
                     modifier = Modifier.weight(1f)
                 ) { Text("Restore") }
+            }
+        }
+
+        // ----- Reset progress -----
+        // Beside Backup on purpose: the safety net sits next to the destructive action.
+        SettingsCard(Icons.Outlined.DeleteForever, "Reset progress") {
+            Text(
+                "Erases everything for one course: lessons done, streak, learned words, quiz and " +
+                    "exam results. This cannot be undone, so consider a backup first.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            var confirmReset by remember { mutableStateOf<String?>(null) }
+            container.content.allMeta().forEach { meta ->
+                val lessonsDone by container.progress.completedDayCount(meta.code)
+                    .collectAsState(initial = 0)
+                val words by container.words.reviews(meta.code).collectAsState(initial = emptyList())
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text("${meta.flagEmoji} ${meta.name}",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold)
+                        Text(
+                            if (lessonsDone == 0 && words.isEmpty()) "No progress yet"
+                            else "$lessonsDone lessons, ${words.size} words started",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    OutlinedButton(
+                        onClick = { confirmReset = meta.code },
+                        enabled = lessonsDone > 0 || words.isNotEmpty(),
+                        colors = androidx.compose.material3.ButtonDefaults.outlinedButtonColors(
+                            contentColor = MaterialTheme.colorScheme.error
+                        )
+                    ) { Text("Reset…") }
+                }
+            }
+            confirmReset?.let { code ->
+                val meta = container.content.allMeta().first { it.code == code }
+                val lessonsDone by container.progress.completedDayCount(code)
+                    .collectAsState(initial = 0)
+                val words by container.words.reviews(code).collectAsState(initial = emptyList())
+                androidx.compose.material3.AlertDialog(
+                    onDismissRequest = { confirmReset = null },
+                    title = { Text("Erase all ${meta.name} progress?") },
+                    text = {
+                        Text(
+                            "This permanently deletes $lessonsDone completed lessons, your " +
+                                "${meta.name} streak, ${words.size} words of review history, and " +
+                                "every quiz and exam result. There is no undo. The course itself " +
+                                "stays installed and starts fresh from Lesson 1."
+                        )
+                    },
+                    confirmButton = {
+                        Button(
+                            colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.error,
+                                contentColor = MaterialTheme.colorScheme.onError
+                            ),
+                            onClick = {
+                                confirmReset = null
+                                scope.launch {
+                                    // DB wipe is transactional; then the placement-era prefs,
+                                    // so a fresh start is genuinely fresh (deck offset, session
+                                    // snapshot, and the one-time placement prompt re-armed).
+                                    container.progress.resetLanguage(code)
+                                    container.languagePrefs.setPlacementDay(code, 0)
+                                    container.languagePrefs.setWordDeckStart(code, 0)
+                                    container.languagePrefs.setWordsSessionSnapshot(code, null)
+                                    container.languagePrefs.unmarkPlacementHandled(code)
+                                    // Land on the course with the most remaining progress; if
+                                    // none has any, the reset course itself at Lesson 1.
+                                    val target = container.content.availableLanguages
+                                        .filter { it != code }
+                                        .maxByOrNull {
+                                            container.progress.completedDayCount(it).first()
+                                        }
+                                        ?.takeIf {
+                                            container.progress.completedDayCount(it).first() > 0
+                                        } ?: code
+                                    onProgressReset(target)
+                                }
+                            }
+                        ) { Text("Erase everything") }
+                    },
+                    dismissButton = {
+                        OutlinedButton(onClick = { confirmReset = null }) { Text("Keep my progress") }
+                    }
+                )
             }
         }
 
