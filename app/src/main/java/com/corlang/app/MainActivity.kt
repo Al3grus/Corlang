@@ -270,7 +270,7 @@ private fun CorlangApp(container: AppContainer) {
                         onClick = {
                             scope.launch { container.languagePrefs.markPlacementHandled(pl) }
                             newLangPrompt = null
-                            // Day 1 means the lesson, so land the learner on it, not back on
+                            // Lesson 1 means the lesson itself, so land the learner on it, not back on
                             // the Profile page they switched languages from.
                             navController.navigate(Dest.TODAY.route) {
                                 popUpTo(Dest.TODAY.route) { saveState = true }
@@ -281,7 +281,7 @@ private fun CorlangApp(container: AppContainer) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(top = 8.dp)
-                    ) { Text("Start at Day 1") }
+                    ) { Text("Start at Lesson 1") }
                 }
             },
             confirmButton = {}

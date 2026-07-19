@@ -458,7 +458,7 @@ fun OnboardingScreen(
                 }
             ) {
                 listOf(
-                    false to "I'm new, start me at Day 1",
+                    false to "I'm new, start me at Lesson 1",
                     true to "I know some, take the 2-minute placement test"
                 ).forEach { (wants, label) ->
                     val chosen = wantsPlacement == wants

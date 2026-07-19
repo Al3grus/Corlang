@@ -97,9 +97,9 @@ fun LevelJourney(
                         reached -> MaterialTheme.colorScheme.onSecondaryContainer
                         else -> MaterialTheme.colorScheme.onSurfaceVariant
                     },
-                    modifier = Modifier.then(
-                        if (reached) Modifier.clickable { selectedLevel = level } else Modifier
-                    )
+                    // Every chip is tappable, reached or not: peeking at a future level shows
+                    // its (locked) lessons and how many there are. Locked stones stay untappable.
+                    modifier = Modifier.clickable { selectedLevel = level }
                 ) {
                     Text(
                         level + when {
@@ -260,7 +260,6 @@ fun LevelJourney(
         }
         Text(
             "$selectedLevel · $doneInLevel / ${stones.size} lessons done" +
-                (if (stones.isNotEmpty()) "  (day ${stones.first().day}–${stones.last().day})" else "") +
                 (if (selectedLevel in examLevelIds && stones.isNotEmpty()) {
                     if (stones.all { it.day in completedSet }) "  ·  exam unlocked" else "  ·  finish to unlock the exam"
                 } else ""),

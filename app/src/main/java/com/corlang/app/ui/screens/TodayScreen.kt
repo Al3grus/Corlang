@@ -382,7 +382,7 @@ fun TodayScreen(
                         modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                     ) {
                         Text(
-                            "Locked — finish Day $targetDay first. No skipping ahead.",
+                            "Locked, finish Lesson $targetDay first. No skipping ahead.",
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.SemiBold,
                             modifier = Modifier.padding(16.dp)
@@ -404,10 +404,10 @@ fun TodayScreen(
                         Text(
                             when {
                                 dLocked -> "🔒 Unlock ${d.level} to continue"
-                                dDone -> "Revisit Day ${d.day} ✓"
-                                lessonStarted -> "Continue Day ${d.day} ($stepsDone/${actionSteps.size} steps)"
-                                d.day == targetDay -> "Start Day ${d.day} →"
-                                else -> "Open Day ${d.day} →"
+                                dDone -> "Revisit Lesson ${d.day} ✓"
+                                lessonStarted -> "Continue Lesson ${d.day} ($stepsDone/${actionSteps.size} steps)"
+                                d.day == targetDay -> "Start Lesson ${d.day} →"
+                                else -> "Open Lesson ${d.day} →"
                             }
                         )
                     }
