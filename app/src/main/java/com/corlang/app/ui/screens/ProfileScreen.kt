@@ -89,11 +89,14 @@ fun ProfileScreen(
         else -> Column(
             modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
         ) {
-            Text("Profile", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-            Text("Settings, language, premium and reference material.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 2.dp, bottom = 16.dp))
+            // Just the title: the menu rows below already name everything here, so a subtitle
+            // listing them again added nothing.
+            Text(
+                "Profile",
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 12.dp)
+            )
 
             val entitled by container.premium.entitled.collectAsState(initial = false)
             val meta = remember(lang) { container.content.meta(lang) }
