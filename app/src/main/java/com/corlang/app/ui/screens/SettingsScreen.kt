@@ -19,6 +19,7 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.outlined.VolumeUp
 import androidx.compose.material.icons.outlined.Alarm
 import androidx.compose.material.icons.outlined.Info
@@ -65,6 +66,7 @@ import kotlinx.coroutines.withContext
 @Composable
 fun SettingsScreen(
     container: AppContainer,
+    onBack: () -> Unit = {},
     onEditProfile: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
@@ -77,12 +79,20 @@ fun SettingsScreen(
             .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        // No visible back button: system back dismisses (BackHandler in MainActivity).
-        Text(
-            "Settings",
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold
-        )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            // A bare arrow, no box or text: system back works too, this is just the visible way.
+            androidx.compose.material3.IconButton(onClick = onBack) {
+                androidx.compose.material3.Icon(
+                    Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back"
+                )
+            }
+            Text(
+                "Settings",
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold
+            )
+        }
+        Spacer(Modifier.height(10.dp))
 
         // ----- Study reminder -----
         val enabled by container.languagePrefs.reminderEnabled.collectAsState(initial = false)
@@ -442,7 +452,7 @@ private fun SettingsCard(
                 )
             }
             if (expanded) {
-                Spacer(Modifier.height(10.dp))
+                Spacer(Modifier.height(16.dp))
                 content()
             }
         }
