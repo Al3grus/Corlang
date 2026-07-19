@@ -1,6 +1,6 @@
 {
-  "versionCode": 126,
-  "versionName": "0.20.73",
-  "notes": "Placement no longer leaves silent gaps. A short test cannot prove you know every word it skips, so the level just below your placement is now added to your reviews: place into B1 and your A2 words come up for review, place into A2 and your A1 words do. Anything you have actually forgotten simply fails its first card and returns to normal scheduling, all within your daily review limit. Also fixes a bug where placement could skip twice as much vocabulary as intended.",
+  "versionCode": 127,
+  "versionName": "0.20.74",
+  "notes": "Placement now adds the words from the 60 lessons just before where it puts you to your reviews, about 600 words, so a short test cannot leave silent gaps. This replaces yesterday's version, which queued a whole CEFR level and could wrongly mark words you had never seen as already known, so they were never taught. The window is anchored at your placement point and can no longer reach past it.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

@@ -1,49 +1,64 @@
 package com.corlang.app
 
-import com.corlang.app.data.WordsRepository.Companion.levelBelow
+import com.corlang.app.data.WordsRepository.Companion.REVIEW_SEED_LESSONS
+import com.corlang.app.data.WordsRepository.Companion.prePlacementRange
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
- * Placement seeds the level BELOW the placed level for review.
+ * Placement queues the run-up to the placement point for review.
  *
- * The placement test is a dozen questions and its result is only as fine-grained as the day
- * anchors authored on them, so it cannot prove a learner knows the hundreds of words it skips
- * past. Rather than reteach those words (patronising) or drop them (silent, permanent gaps),
- * the level immediately below the placement is queued for REVIEW, where anything genuinely
- * forgotten fails its first card and rejoins normal scheduling.
+ * The test is a dozen questions and its result is only as fine-grained as the day anchors
+ * authored on them, so it cannot prove a learner knows the hundreds of words it places over.
+ * The window is measured in DECK INDEX and anchored at the placement point, which is the whole
+ * point: an earlier attempt seeded by CEFR level instead, and because pack levels do not map to
+ * contiguous deck ranges it reached PAST the placement point, marking words the learner had
+ * never seen as already known so they could never be taught (up to 1886 words in French).
+ * These cases pin the arithmetic that makes that impossible.
  */
 class PlacementSeedingTest {
 
-    @Test fun `each placement queues the level directly below it`() {
-        assertEquals("B1", levelBelow("B2"))
-        assertEquals("A2", levelBelow("B1"))
-        assertEquals("A1", levelBelow("A2"))
-        assertEquals("A0", levelBelow("A1"))
+    @Test fun `the window is the lessons immediately before the placement`() {
+        // Placed at lesson 101: deck index 1000 is the first word still to be taught, so the
+        // window is the 600 words before it.
+        assertEquals(400 to 1000, prePlacementRange(101, lessons = 60, perLesson = 10))
     }
 
-    @Test fun `placing at the bottom of the ladder queues nothing`() {
-        assertNull(levelBelow("A0"))
+    @Test fun `the window never reaches past the placement point`() {
+        listOf(1, 2, 15, 46, 61, 101, 151, 171, 207, 250).forEach { day ->
+            val (from, until) = prePlacementRange(day)
+            val deckStart = (day - 1) * 10
+            assertEquals("window must end exactly at the placement point", deckStart, until)
+            assertTrue("window must not start after it ends", from <= until)
+        }
     }
 
-    @Test fun `level matching ignores case`() {
-        assertEquals("A2", levelBelow("b1"))
+    @Test fun `placing near the start clamps to the beginning of the deck`() {
+        assertEquals(0 to 0, prePlacementRange(1))          // nothing skipped, nothing to check
+        assertEquals(0 to 140, prePlacementRange(15))       // only 14 lessons exist behind
+        assertEquals(0 to 590, prePlacementRange(60))       // still inside the window
     }
 
-    @Test fun `an unrecognised level queues nothing rather than guessing`() {
-        assertNull(levelBelow("C2"))
-        assertNull(levelBelow(""))
-        assertNull(levelBelow("intermediate"))
+    @Test fun `a deep placement queues exactly the window, not everything behind it`() {
+        val (from, until) = prePlacementRange(207)
+        assertEquals(2060, until)
+        assertEquals(2060 - REVIEW_SEED_LESSONS * 10, from)
+        assertEquals(REVIEW_SEED_LESSONS * 10, until - from)
     }
 
-    /**
-     * Only ONE level is queued, never the whole history: a B1 placement checks A2 and trusts
-     * A1. Seeding everything below would bury a new learner under a four-figure backlog.
-     */
-    @Test fun `the rule is one level down, not everything below`() {
-        val below = levelBelow("B2")
-        assertEquals("B1", below)
-        assertEquals("A2", levelBelow(below!!))   // reachable only by placing lower, not at once
+    @Test fun `the window size is bounded by the seed constant`() {
+        listOf(1, 46, 101, 151, 250).forEach { day ->
+            val (from, until) = prePlacementRange(day)
+            assertTrue(
+                "queued $day: ${until - from} words exceeds the cap",
+                until - from <= REVIEW_SEED_LESSONS * 10
+            )
+        }
+    }
+
+    @Test fun `a nonsensical placement day cannot produce a negative window`() {
+        assertEquals(0 to 0, prePlacementRange(0))
+        assertEquals(0 to 0, prePlacementRange(-5))
     }
 }
