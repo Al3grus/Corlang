@@ -28,13 +28,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.data.Placement
 import com.corlang.app.data.WordsRepository
 import kotlinx.coroutines.launch
 
 /**
- * A short check across all levels. Walking from easiest to hardest, the learner's placement is
- * the last question they answer correctly before their first miss (a "you're solid up to here"
- * rule). The result sets the current lesson day and level, so nobody has to start at day 1.
+ * A short adaptive check across all levels. The ladder is a series of ability BANDS, each three
+ * independent items, cleared on 2 of 3; the test binary-searches them for the highest band the
+ * learner can clear. The result sets the current lesson day and level, so nobody starts at day 1.
+ *
+ * It replaced a linear walk with one item per band that ended on the first wrong answer, which
+ * let a lucky guess promote a learner a whole band and gave an advanced learner a one in three
+ * chance of being placed too low by a single mis-tap. See [Placement] for the arithmetic.
  */
 @Composable
 fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
@@ -64,18 +69,24 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
         }
         return
     }
-    val questions = remember(lang) { test.questions.sortedBy { it.difficulty } }
+    // Bands, easiest first: each is three independent items at one ability level, cleared on
+    // 2 of 3. Bands are located by binary search (see Placement), so a learner answers about a
+    // dozen items whatever their level, and no single mis-tap can end the test.
+    val bands = remember(lang) { Placement.bandsOf(test.questions) }
+    val maxItems = remember(bands) { Placement.maxItems(bands.size) }
 
-    var index by remember(lang) { mutableIntStateOf(0) }
+    var search by remember(lang) { mutableStateOf(Placement.start(bands.size)) }
+    var itemInBand by remember(lang) { mutableIntStateOf(0) }
+    var correctInBand by remember(lang) { mutableIntStateOf(0) }
+    var wrongInBand by remember(lang) { mutableIntStateOf(0) }
+    var asked by remember(lang) { mutableIntStateOf(0) }
     var chosen by remember(lang) { mutableStateOf<String?>(null) }
-    // Placement so far: the last correct answer's day/level. Questions run easy → hard, so the
-    // first one you can't answer is your ceiling — no right/wrong is ever revealed.
-    var placeDay by remember(lang) { mutableIntStateOf(1) }
-    // Default = the course's actual first level, not a hardcoded "A0" (pt starts at A1).
-    var placeLevel by remember(lang) {
-        mutableStateOf(container.content.levels(lang).levels.first().id)
-    }
     var finished by remember(lang) { mutableStateOf(false) }
+
+    // Where the search currently says the learner belongs.
+    val placement = remember(search, bands) { Placement.result(bands, search) }
+    val placeLevel = placement.first
+    val placeDay = placement.second
 
     if (finished) {
         Column(
@@ -144,27 +155,56 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
         return
     }
 
-    val q = questions[index]
+    // The search settles the moment lo passes hi; guard against a test with no bands at all.
+    val probeIndex = search.probe
+    if (probeIndex == null || bands.isEmpty()) {
+        finished = true
+        return
+    }
+    val band = bands[probeIndex]
+    val q = band.items[itemInBand.coerceAtMost(band.items.lastIndex)]
+
+    /** Folds one answer into the band, then into the search once the band is decided. */
+    fun answer(wasCorrect: Boolean) {
+        val correct = correctInBand + if (wasCorrect) 1 else 0
+        val wrong = wrongInBand + if (wasCorrect) 0 else 1
+        asked++
+        val lastInBand = itemInBand + 1 >= band.items.size
+        if (Placement.bandDecided(correct, wrong) || lastInBand) {
+            search = Placement.advance(search, probeIndex, Placement.bandCleared(correct))
+            itemInBand = 0; correctInBand = 0; wrongInBand = 0
+            if (search.finished) finished = true
+        } else {
+            itemInBand++; correctInBand = correct; wrongInBand = wrong
+        }
+        chosen = null
+    }
+
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
     ) {
-        if (index == 0) {
+        if (asked == 0) {
             Text(test.title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
             Text(test.intro, style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(vertical = 18.dp))
         }
+        // Progress against the worst case: the bar only ever moves forward, and the count is
+        // "about" because a band that settles in two items saves the third.
         LinearProgressIndicator(
-            progress = { (index + 1f) / questions.size },
+            progress = { ((asked + 1f) / maxItems).coerceIn(0f, 1f) },
             drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 24.dp)
         )
-        Text("Question ${index + 1} / ${questions.size}", style = MaterialTheme.typography.bodySmall,
+        Text("Question ${asked + 1} of about $maxItems",
+            style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         Text(q.prompt, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(vertical = 24.dp))
 
-        val shown = remember(index) { q.options.shuffled() }
+        // Keyed on the item actually being shown, so two identically-worded prompts never share
+        // a stale shuffle.
+        val shown = remember(probeIndex, itemInBand) { q.options.shuffled() }
         shown.forEach { option ->
             val isChosen = chosen == option
             Surface(
@@ -182,27 +222,18 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
             ) { Text(option, modifier = Modifier.padding(16.dp)) }
         }
 
-        val lastQuestion = index + 1 >= questions.size
         Button(
-            onClick = {
-                if (chosen == q.answer) {
-                    // Cleared this level — advance the ceiling and move on.
-                    placeDay = q.startDay; placeLevel = q.level
-                    if (lastQuestion) finished = true else { index++; chosen = null }
-                } else {
-                    // First question you can't do = your level. Place at the last one you cleared.
-                    finished = true
-                }
-            },
+            onClick = { answer(chosen == q.answer) },
             enabled = chosen != null,
             modifier = Modifier.fillMaxWidth().padding(top = 36.dp)
-        ) { Text(if (lastQuestion) "See my placement" else "Next →") }
+        ) { Text("Next →") }
 
-        // Honest exit when a question is too hard — this is the ceiling, so place them here.
+        // Honest exit when a question is too hard. Counts as failing THIS band only, not as
+        // ending the test: the search then looks lower, which is exactly what it should do.
         OutlinedButton(
-            onClick = { finished = true },
+            onClick = { answer(false) },
             modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
-        ) { Text("I don't know this one — place me here") }
+        ) { Text("I don't know this one") }
         Spacer(Modifier.height(16.dp))
     }
 }

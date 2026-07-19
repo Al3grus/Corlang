@@ -30,6 +30,13 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
 | `placement.json` | yes | maps score → plan day + level |
 | `cheatsheet.json`, `feynman.json`, `resources.json` | yes | reference + teach-back + curated links |
 
+- **Placement is banded and adaptive.** `placement.json` is a ladder of ability BANDS, each an
+  anchor `(level, startDay)` carrying EXACTLY THREE independent items, cleared on 2 of 3. Three
+  items per band is not decoration: with one item a four-option guess promotes a learner a whole
+  band 25% of the time, and an advanced learner has a 34% chance of being placed too low by one
+  careless tap. The three items must probe DIFFERENT things (a form choice, a meaning choice, a
+  usage choice), or one remembered fact clears the band. The app binary-searches the bands, so
+  ~6 to 12 items are asked whatever the learner's level.
 - **[AUTO] The vocabulary deck covers the whole course: at least 2500 words.** The SRS unlocks
   `deck[0 .. lesson * newWordsPerDay]`, so at the default pace of 10 a lesson a 250-lesson course
   consumes 2500 words. Deck order IS introduction order, so top-up packs are APPENDED, never
