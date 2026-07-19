@@ -6,7 +6,6 @@ import com.corlang.app.data.model.VocabWord
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import java.time.LocalDate
-import kotlin.math.ceil
 
 /** A word queued for today's session, with its persisted SRS state (null = brand new). */
 data class SessionCard(
@@ -105,8 +104,15 @@ class WordsRepository(
 
         // Hardest first: the words nearest the placement point sit at the edge of the learner's
         // ability, so they are the most likely gaps and the most worth checking early. Then
-        // spread the rest across the spread window so no single day is buried.
-        val perDay = ceil(words.size.toDouble() / REVIEW_SEED_SPREAD_DAYS).toInt().coerceAtLeast(1)
+        // spread the rest so no single day is buried.
+        //
+        // The daily share adapts to the learner's OWN review limit and never claims more than
+        // half of it. Seeded cards have no review history, so they sort as maximally urgent and
+        // fill the lesson's review step first; a fixed 21-day spread put ~29 a day against the
+        // default limit of 20, which meant the seeded pile grew faster than the lesson step
+        // could drain it and real reviews were crowded out for weeks (session-review finding).
+        val cap = prefs.maxReviewsPerDay.first()
+        val perDay = (cap / 2).coerceAtLeast(REVIEW_SEED_MIN_PER_DAY)
         words.reversed().forEachIndexed { i, w ->
             // A fresh card: the first grading runs the normal first-review path, so a
             // half-remembered word gets a short interval and a solid one a long jump.
@@ -151,19 +157,19 @@ class WordsRepository(
          * far more often than downward. 60 covers the worst gap in every course.
          *
          * The usual objection to a window this size, a large due-today backlog, is answered by
-         * [REVIEW_SEED_SPREAD_DAYS] rather than by shrinking the window: coverage and daily load
-         * are separate problems and should not be traded against each other.
+         * spreading (half the learner's review limit a day, see [REVIEW_SEED_MIN_PER_DAY])
+         * rather than by shrinking the window: coverage and daily load are separate problems
+         * and should not be traded against each other.
          */
         const val REVIEW_SEED_LESSONS = 60
 
         /**
-         * Seeded cards are spread across this many days instead of all falling due at once.
-         * Standard spaced-repetition guidance is that a large overdue pile should be drained
-         * gradually and never allowed to crowd out new material; staggering keeps the daily
-         * share small enough to sit alongside real reviews, and the learner's own review limit
-         * caps whatever is left.
+         * Floor for the daily share of seeded placement cards. The real share is half the
+         * learner's own review limit (so seeded checks never crowd real reviews out of the
+         * lesson step), but never below this, so a tiny limit still drains the seed in
+         * reasonable time.
          */
-        const val REVIEW_SEED_SPREAD_DAYS = 21
+        const val REVIEW_SEED_MIN_PER_DAY = 5
 
         /**
          * The deck slice `[from, until)` a placement at [placedDay] should queue for review:

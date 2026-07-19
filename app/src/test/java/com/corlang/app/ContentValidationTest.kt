@@ -885,6 +885,36 @@ class ContentValidationTest {
     }
 
     /**
+     * Placement band shape (docs/language-standard.md §1). The adaptive scorer clears a band on
+     * 2 of 3 items, so a band with fewer than two items can NEVER be cleared: the learner would
+     * silently always fail it and place below their level. Exactly three keeps every band's
+     * evidence equal; uniform difficulty keeps the ladder honest.
+     */
+    @Test
+    fun placementBandsCarryExactlyThreeItemsEach() {
+        allLangs.forEach { lang ->
+            if (!exists(lang, "placement.json")) return@forEach
+            val test = strictJson.decodeFromString<com.corlang.app.data.model.PlacementTest>(
+                read(lang, "placement.json")
+            )
+            val bands = test.questions.groupBy { it.level to it.startDay }
+            assertTrue("$lang placement has fewer than 2 bands", bands.size >= 2)
+            bands.forEach { (band, items) ->
+                assertEquals("$lang placement band $band must carry exactly 3 items",
+                    3, items.size)
+                assertEquals("$lang placement band $band mixes difficulties",
+                    1, items.map { it.difficulty }.distinct().size)
+                items.forEach { q ->
+                    assertEquals("$lang $band: MCQ needs 4 options: ${q.prompt.take(50)}",
+                        4, q.options.size)
+                    assertTrue("$lang $band: answer not among options: ${q.prompt.take(50)}",
+                        q.answer in q.options)
+                }
+            }
+        }
+    }
+
+    /**
      * Deck-size floor (docs/language-standard.md §1). The SRS unlocks
      * `deck[0 .. lesson * NEW_WORDS_PER_DAY]`, so a 250-lesson course at the fixed pace of 10 a
      * lesson consumes 2500 words. A shorter deck means the last lessons introduce nothing, which

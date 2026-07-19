@@ -116,9 +116,9 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                 Text(
                     "Because this test is short, the words from the lessons just before here, " +
                         "about $seedCount of them, are added to your reviews so nothing slips " +
-                        "through the cracks. They arrive a few a day over the next three weeks, " +
-                        "hardest first. Anything you already know you will pass once and rarely " +
-                        "see again.",
+                        "through the cracks. They arrive a few a day, hardest first, never more " +
+                        "than half your daily review limit. Anything you already know you will " +
+                        "pass once and rarely see again.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 10.dp)
