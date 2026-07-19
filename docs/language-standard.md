@@ -206,6 +206,24 @@ Open questions the literature does NOT answer for us (our gate/field-testing mus
 
 ---
 
+## 0. Research FIRST, author second
+
+Before a single lesson is written for a new language, research online, fresh, never from
+memory:
+
+1. **The official curriculum** — the state or council framework the language's public
+   education and certification actually follow (the analogue of Croatia's NN decisions,
+   France's CECRL référentiels, Portugal's Camões referencial). Lessons map to it; it is what
+   makes "built on official curricula" true.
+2. **The official exam, in its current form** — sections, timing, pass rules, who sits it and
+   why (citizenship, residency, university). Mock exams reproduce THIS structure, quizzes
+   drill its section formats, and the B-level goal is defined by it.
+3. **Verify everything live** — exam formats and fees change year to year, and a dead
+   reference has shipped once already (a training-data YouTube link that no longer existed).
+   Sources get registered in docs/sources/README.md and referenced, never copied.
+
+Only then does §1 authoring begin, with the plan designed around that exam as its finish line.
+
 ## 7. Voice, wording and boundaries (field sweep 2026-07-18/19)
 
 Every rule here came out of a real defect found while dogfooding the shipped courses. The two
@@ -247,6 +265,8 @@ are authoring discipline a new language must follow from its first line.
 ## New-language launch checklist (condensed)
 
 ```
+[ ] Curriculum + official exam researched ONLINE and current (§0) — plan designed
+    around the real exam before any authoring [HUMAN]
 [ ] Content folder complete (§1) — build green = structure + leak gates pass [AUTO]
 [ ] Exercise authoring rules reviewed on a content sample (§2) [HUMAN]
 [ ] Voice/boundary rules hold (§7): app-only content + lesson-not-day pass [AUTO];

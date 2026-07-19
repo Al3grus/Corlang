@@ -178,4 +178,20 @@ class GradingTest {
         assertTrue(Grading.gradeRecall("radim", "radim"))
         assertFalse(Grading.gradeRecall("radim", "ja radim"))
     }
+
+    // ---- Teach-back rubric matching ----
+
+    @Test fun rubric_coversWhenSalientTermsPresent() {
+        val point = "Croatian is 100% phonetic: one letter, one sound, no exceptions."
+        assertTrue(Grading.coversRubricPoint(point, "croatian is 100% phonetic"))
+        assertTrue(Grading.coversRubricPoint(point, "each letter has one sound, there are no exceptions"))
+        assertFalse(Grading.coversRubricPoint(point, "it is about grammar cases"))
+        assertFalse(Grading.coversRubricPoint(point, ""))
+    }
+
+    @Test fun rubric_stemToleranceAndDiacritics() {
+        val point = "Verb endings change with the speaker's gender."
+        assertTrue(Grading.coversRubricPoint(point, "the ending of the verb changes with gender"))
+        assertFalse(Grading.coversRubricPoint(point, "nouns have seven cases"))
+    }
 }
