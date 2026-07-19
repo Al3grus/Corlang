@@ -722,6 +722,13 @@ fun SessionPlayer(
                         var celebrate by remember(day.day) { mutableStateOf(false) }
                         val completedList by container.progress.completedDays(lang)
                             .collectAsState(initial = null)
+                        // Live progress, collected BEFORE the completion write so the freeze
+                        // bank can be snapshotted at tap time: comparing it with the post-write
+                        // value is what makes "freeze earned" honest (at the bank cap of 2,
+                        // a 7-day milestone earns nothing and must not claim it did).
+                        val prog by container.progress.progress(lang)
+                            .collectAsState(initial = null)
+                        var preFreezes by remember(day.day) { mutableStateOf(-1) }
                         // Revisits don't re-mark: the day is already banked, and re-completing
                         // must not re-credit the streak (completeDay is also idempotent). The
                         // !completing guard keeps THIS session's fresh completion on the
@@ -742,6 +749,7 @@ fun SessionPlayer(
                                 enabled = !completing && completedList != null,
                                 onClick = {
                                     completing = true
+                                    preFreezes = prog?.streakFreezes ?: 0
                                     container.appScope.launch {
                                         container.progress.completeDay(lang, day.day, totalDays, day.level)
                                     }
@@ -752,13 +760,15 @@ fun SessionPlayer(
                             ) { Text("Mark day ${day.day} complete ✓") }
                         }
                         if (celebrate) {
-                            // Live streak: completeDay's write lands async and the flow
-                            // recomposes the overlay with the freshly banked value.
-                            val prog by container.progress.progress(lang)
-                                .collectAsState(initial = null)
+                            // completeDay's write lands async; the flow recomposes the overlay
+                            // with the freshly banked streak, and the freeze line lights up the
+                            // moment the bank actually grew past its tap-time snapshot.
+                            val nowFreezes = prog?.streakFreezes ?: 0
                             com.corlang.app.ui.components.CelebrationOverlay(
                                 dayNumber = day.day,
                                 streak = prog?.streak ?: 1,
+                                freezeEarned = preFreezes in 0 until nowFreezes,
+                                freezes = nowFreezes,
                                 onDone = onExit
                             )
                         }
