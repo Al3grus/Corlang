@@ -21,8 +21,12 @@ data class BackupPrefs(
     val reminderEnabled: Boolean,
     val reminderHour: Int,
     val reminderMinute: Int,
+    // Kept so older backups still parse; new words per lesson are fixed by the course now and
+    // the value is ignored on restore. The learner's dial is maxReviewsPerDay below.
     val newWordsPerDay: Int,
     val selectedLanguage: String,
+    /** Daily review limit (added later; older backups fall back to the default). */
+    val maxReviewsPerDay: Int = com.corlang.app.data.Fsrs.REVIEW_CAP,
     // Learner profile (added in format 1 with defaults, so older backups still parse).
     val onboardingDone: Boolean = false,
     val profileName: String = "",
@@ -92,6 +96,7 @@ class BackupManager(
                 reminderMinute = m,
                 newWordsPerDay = prefs.newWordsPerDay.first(),
                 selectedLanguage = prefs.selectedLanguage.first(),
+                maxReviewsPerDay = prefs.maxReviewsPerDay.first(),
                 onboardingDone = prefs.onboardingDone.first(),
                 reminderLanguages = prefs.reminderLanguages.first()?.sorted(),
                 profileName = profile.name,
@@ -128,7 +133,7 @@ class BackupManager(
         )
         prefs.setReminderEnabled(data.prefs.reminderEnabled)
         prefs.setReminderTime(data.prefs.reminderHour, data.prefs.reminderMinute)
-        prefs.setNewWordsPerDay(data.prefs.newWordsPerDay)
+        prefs.setMaxReviewsPerDay(data.prefs.maxReviewsPerDay)
         prefs.setLanguage(data.prefs.selectedLanguage)
         prefs.setOnboardingDone(data.prefs.onboardingDone)
         data.prefs.reminderLanguages?.let { prefs.setReminderLanguages(it.toSet()) }

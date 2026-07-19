@@ -30,6 +30,11 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
 | `placement.json` | yes | maps score → plan day + level |
 | `cheatsheet.json`, `feynman.json`, `resources.json` | yes | reference + teach-back + curated links |
 
+- **[AUTO] The vocabulary deck covers the whole course: at least 2500 words.** The SRS unlocks
+  `deck[0 .. lesson * newWordsPerDay]`, so at the default pace of 10 a lesson a 250-lesson course
+  consumes 2500 words. Deck order IS introduction order, so top-up packs are APPENDED, never
+  inserted. Faster paces (15 and 20 are offered) exhaust any finite deck sooner; that is expected,
+  and the lesson then says so and turns to review only. Do not try to size a deck for 20 a lesson.
 - **[AUTO] A course ships at least 250 lessons.** CEFR guided-hours estimates put B2 at roughly
   550 to 600 hours; a ~100-lesson course cannot honestly carry a learner to its exam (French and
   Portuguese shipped at 108 and 105 before this floor). Suggested shape for a B2 target:

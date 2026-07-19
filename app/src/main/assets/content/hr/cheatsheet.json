@@ -7,27 +7,39 @@
         "Croatian has 30 letters and every letter is ALWAYS pronounced the same way. Learn it once → you can read any word.",
         "Special letters: č/ć = 'ch', š = 'sh', ž = 'zh', đ = soft 'j', dž = hard 'j', lj = 'ly' (as in miLLion), nj = 'ny' (as in caNYon), c = 'ts', j = 'y'.",
         "No silent letters, no surprises. Spelling = sound, sound = spelling.",
-        "Stress never falls on the last syllable — in short words it's usually on the first."
+        "Stress never falls on the last syllable, in short words it's usually on the first."
       ],
       "diagram": "LETTER  SOUND        EXAMPLE\nc       ts           cipela (shoe)\nč / ć   ch           čaj (tea), ćao (bye)\nš       sh           škola (school)\nž       zh           žena (woman)\nj       y            ja (I)\nlj      ly           ljubav (love)\nnj      ny           konj (horse)\ndž / đ  j            džem (jam), đak (pupil)",
       "examples": [
-        { "target": "Dobar dan", "gloss": "Good day (DOH-bar dahn)" },
-        { "target": "Hvala", "gloss": "Thank you (HVAH-lah)" }
+        {
+          "target": "Dobar dan",
+          "gloss": "Good day (DOH-bar dahn)"
+        },
+        {
+          "target": "Hvala",
+          "gloss": "Thank you (HVAH-lah)"
+        }
       ]
     },
     {
       "title": "2 · Three genders & the dictionary form (nominative)",
       "bullets": [
-        "Nouns are masculine, feminine or neuter — and you can usually TELL from the ending.",
+        "Nouns are masculine, feminine or neuter, and you can usually TELL from the ending.",
         "Masculine: usually ends in a consonant (grad = city, stol = table).",
         "Feminine: usually ends in -a (žena = woman, kava = coffee).",
         "Neuter: usually ends in -o or -e (mlijeko = milk, more = sea).",
-        "There are NO articles — no 'a' or 'the'. 'Žena' means woman / a woman / the woman."
+        "There are NO articles, no 'a' or 'the'. 'Žena' means woman / a woman / the woman."
       ],
       "diagram": "GENDER     TYPICAL END   EXAMPLE\nmasculine  consonant     grad, stol, prijatelj\nfeminine   -a            žena, kava, škola\nneuter     -o / -e       mlijeko, more, dijete",
       "examples": [
-        { "target": "Ovo je kava.", "gloss": "This is coffee." },
-        { "target": "To je grad.", "gloss": "That is a city." }
+        {
+          "target": "Ovo je kava.",
+          "gloss": "This is coffee."
+        },
+        {
+          "target": "To je grad.",
+          "gloss": "That is a city."
+        }
       ]
     },
     {
@@ -40,37 +52,55 @@
       ],
       "diagram": "          SHORT   NEGATIVE\nja        sam     nisam\nti        si      nisi\non/ona    je      nije\nmi        smo     nismo\nvi        ste     niste\noni       su      nisu",
       "examples": [
-        { "target": "Ja sam student.", "gloss": "I am a student." },
-        { "target": "Ona nije ovdje.", "gloss": "She is not here." }
+        {
+          "target": "Ja sam student.",
+          "gloss": "I am a student."
+        },
+        {
+          "target": "Ona nije ovdje.",
+          "gloss": "She is not here."
+        }
       ]
     },
     {
       "title": "4 · Present tense of verbs",
       "bullets": [
-        "Drop the infinitive -ti and add personal endings: -m, -š, –, -mo, -te, -ju/-e.",
+        "Drop the infinitive -ti and add personal endings: -m, -š, (none), -mo, -te, -ju/-e.",
         "Most verbs follow predictable -a / -i / -e patterns: raditi (to work), govoriti (to speak), učiti (to study).",
         "Like biti, the ending tells you the subject, so pronouns are optional.",
         "Example raditi (to work): radim, radiš, radi, radimo, radite, rade."
       ],
       "diagram": "RADITI (to work)\nja radim     mi radimo\nti radiš     vi radite\non radi      oni rade\n(ending shows the subject)",
       "examples": [
-        { "target": "Govorim malo hrvatski.", "gloss": "I speak a little Croatian." },
-        { "target": "Što radiš?", "gloss": "What are you doing?" }
+        {
+          "target": "Govorim malo hrvatski.",
+          "gloss": "I speak a little Croatian."
+        },
+        {
+          "target": "Što radiš?",
+          "gloss": "What are you doing?"
+        }
       ]
     },
     {
       "title": "5 · Cases: start with just TWO",
       "bullets": [
-        "Croatian has 7 cases — endings that change a noun depending on its ROLE in the sentence. Don't panic: master two first.",
+        "Croatian has 7 cases, endings that change a noun depending on its ROLE in the sentence. Don't panic: master two first.",
         "NOMINATIVE = the subject / dictionary form (the one DOING the action): 'Žena pije.' (The woman drinks.)",
         "ACCUSATIVE = the direct object (the thing RECEIVING the action). Feminine -a → -u; masculine inanimate stays the same.",
-        "Because endings show the role, WORD ORDER is flexible — meaning stays clear even if you move words around.",
+        "Because endings show the role, WORD ORDER is flexible, meaning stays clear even if you move words around.",
         "The other 5 cases (genitive, dative, locative, instrumental, vocative) come later, one at a time."
       ],
       "diagram": "ROLE        QUESTION   FEM EXAMPLE (kava)\nnominative  who/what?  kava (subject)\naccusative  what?      kavu  (object)\n'Pijem kavu.' = I drink coffee.\n(kava -> kavu because it's the object)",
       "examples": [
-        { "target": "Žena pije kavu.", "gloss": "The woman drinks coffee. (žena = subject, kavu = object)" },
-        { "target": "Volim Hrvatsku.", "gloss": "I love Croatia. (Hrvatska → Hrvatsku, object)" }
+        {
+          "target": "Žena pije kavu.",
+          "gloss": "The woman drinks coffee. (žena = subject, kavu = object)"
+        },
+        {
+          "target": "Volim Hrvatsku.",
+          "gloss": "I love Croatia. (Hrvatska → Hrvatsku, object)"
+        }
       ]
     },
     {
@@ -79,12 +109,18 @@
         "Most Croatian verbs come in PAIRS: an imperfective (ongoing/repeated/process) and a perfective (single completed action).",
         "Example: piti (to be drinking / drink habitually) vs popiti (to drink up completely).",
         "Imperfective = the movie of the action; perfective = the snapshot of it finished.",
-        "You don't need every pair now — just notice the concept; it replaces a lot of English tense machinery."
+        "You don't need every pair now, just notice the concept; it replaces a lot of English tense machinery."
       ],
       "diagram": "ASPECT         MEANING            EXAMPLE\nimperfective   ongoing/habitual   pisati (to write)\nperfective     completed once     napisati (to write up)",
       "examples": [
-        { "target": "Pišem pismo.", "gloss": "I am writing a letter. (in progress)" },
-        { "target": "Napisao sam pismo.", "gloss": "I wrote (finished) the letter." }
+        {
+          "target": "Pišem pismo.",
+          "gloss": "I am writing a letter. (in progress)"
+        },
+        {
+          "target": "Napisao sam pismo.",
+          "gloss": "I wrote (finished) the letter."
+        }
       ]
     },
     {
@@ -97,8 +133,14 @@
       ],
       "diagram": "biti + participle (agrees with gender)\nRadio sam   (I worked - male)\nRadila sam  (I worked - female)\nRadili smo  (we worked - plural)",
       "examples": [
-        { "target": "Jučer sam bio u gradu.", "gloss": "Yesterday I was in the city. (male speaker)" },
-        { "target": "Što si rekla?", "gloss": "What did you say? (to a female)" }
+        {
+          "target": "Jučer sam bio u gradu.",
+          "gloss": "Yesterday I was in the city. (male speaker)"
+        },
+        {
+          "target": "Što si rekla?",
+          "gloss": "What did you say? (to a female)"
+        }
       ]
     },
     {
@@ -111,8 +153,14 @@
       ],
       "diagram": "htjeti (short) + infinitive\nja ću        mi ćemo\nti ćeš       vi ćete\non će        oni će\n'Ja ću učiti hrvatski.' = I will study Croatian.",
       "examples": [
-        { "target": "Sutra ću raditi.", "gloss": "Tomorrow I will work." },
-        { "target": "Hoćeš li doći?", "gloss": "Will you come?" }
+        {
+          "target": "Sutra ću raditi.",
+          "gloss": "Tomorrow I will work."
+        },
+        {
+          "target": "Hoćeš li doći?",
+          "gloss": "Will you come?"
+        }
       ]
     },
     {
@@ -120,12 +168,18 @@
       "bullets": [
         "0-10: nula, jedan, dva, tri, četiri, pet, šest, sedam, osam, devet, deset.",
         "Question words: tko (who), što (what), gdje (where), kada (when), zašto (why), kako (how), koliko (how much).",
-        "Yes/no question: add 'li' after the verb — 'Govoriš li engleski?' (Do you speak English?).",
+        "Yes/no question: add 'li' after the verb, 'Govoriš li engleski?' (Do you speak English?).",
         "Essential politeness: molim (please/you're welcome), hvala (thanks), oprostite (excuse me), da/ne (yes/no)."
       ],
       "examples": [
-        { "target": "Gdje je kolodvor?", "gloss": "Where is the station?" },
-        { "target": "Koliko košta?", "gloss": "How much does it cost?" }
+        {
+          "target": "Gdje je kolodvor?",
+          "gloss": "Where is the station?"
+        },
+        {
+          "target": "Koliko košta?",
+          "gloss": "How much does it cost?"
+        }
       ]
     },
     {
@@ -134,11 +188,17 @@
         "Connectors: i (and), ali (but), jer (because), pa/onda (so/then), s/sa (with), za (for).",
         "Greetings: Bok / Dobar dan (hi/good day), Kako si? (How are you?), Doviđenja (goodbye).",
         "'Ja sam…' + name/nationality starts any introduction.",
-        "Don't fear mistakes — Croatians are delighted anyone tries their language."
+        "Don't fear mistakes, Croatians are delighted anyone tries their language."
       ],
       "examples": [
-        { "target": "Bok, ja sam Marko. Kako si?", "gloss": "Hi, I'm Marko. How are you?" },
-        { "target": "Ne govorim dobro, ali učim.", "gloss": "I don't speak well, but I'm learning." }
+        {
+          "target": "Bok, ja sam Marko. Kako si?",
+          "gloss": "Hi, I'm Marko. How are you?"
+        },
+        {
+          "target": "Ne govorim dobro, ali učim.",
+          "gloss": "I don't speak well, but I'm learning."
+        }
       ]
     }
   ]

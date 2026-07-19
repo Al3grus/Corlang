@@ -71,12 +71,27 @@ class LanguagePrefs(private val context: Context) {
 
     private val newWordsKey = intPreferencesKey("new_words_per_day")
 
-    /** How many brand-new words the SRS may introduce per day (10 default; 15/20 to go faster). */
+    /**
+     * How many brand-new words a lesson introduces. FIXED at [Fsrs.NEW_WORDS_PER_DAY]: the
+     * course is paced around it, and letting learners raise it only burned through the finite
+     * deck sooner. The dial they actually get is [maxReviewsPerDay]. The key is still read so
+     * an existing install that had set 15 or 20 settles back to the paced default.
+     */
     val newWordsPerDay: Flow<Int> =
-        context.dataStore.data.map { it[newWordsKey] ?: 10 }
+        context.dataStore.data.map { com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY }
 
-    suspend fun setNewWordsPerDay(count: Int) {
-        context.dataStore.edit { it[newWordsKey] = count }
+    private val maxReviewsKey = intPreferencesKey("max_reviews_per_day")
+
+    /**
+     * The learner's own dial: how many due words they are willing to review in a day, on top of
+     * the fixed new words each lesson introduces. Bigger means a shorter backlog and faster
+     * consolidation; smaller keeps a heavy review day bounded. Default [Fsrs.REVIEW_CAP].
+     */
+    val maxReviewsPerDay: Flow<Int> =
+        context.dataStore.data.map { it[maxReviewsKey] ?: com.corlang.app.data.Fsrs.REVIEW_CAP }
+
+    suspend fun setMaxReviewsPerDay(count: Int) {
+        context.dataStore.edit { it[maxReviewsKey] = count }
     }
 
     // ----- Launch counter (rotates the splash tagline across languages) -----

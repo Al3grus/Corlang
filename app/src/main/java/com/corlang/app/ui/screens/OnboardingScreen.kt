@@ -118,7 +118,8 @@ fun OnboardingScreen(
     var step by remember { mutableIntStateOf(if (editProfile) STEP_NAME else STEP_WELCOME) }
     var name by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("m") }
-    var goal by remember { mutableStateOf(10) }
+    // The learner's daily review limit (new words per lesson are fixed by the course).
+    var goal by remember { mutableStateOf(com.corlang.app.data.Fsrs.REVIEW_CAP) }
     var wantsPlacement by remember { mutableStateOf<Boolean?>(null) }
 
     // Editing from Settings: prefill from the saved profile.
@@ -127,7 +128,7 @@ fun OnboardingScreen(
         val p = container.languagePrefs.profile.first()
         if (p.name.isNotBlank()) name = p.name
         gender = p.gender
-        goal = container.languagePrefs.newWordsPerDay.first()
+        goal = container.languagePrefs.maxReviewsPerDay.first()
     }
 
     fun save(thenPlacement: Boolean) {
@@ -146,7 +147,7 @@ fun OnboardingScreen(
                     reason = ""
                 )
             )
-            container.languagePrefs.setNewWordsPerDay(goal)
+            container.languagePrefs.setMaxReviewsPerDay(goal)
             container.languagePrefs.setLanguage(learnLang)
             // Mark this course handled BEFORE onboarding-done flips, so MainActivity's
             // new-language prompt never fires for the language just set up here.
@@ -399,12 +400,13 @@ fun OnboardingScreen(
                 }
             }
 
-            // ---- Daily goal ----
+            // ---- Daily review limit ----
             STEP_GOAL -> StepFrame(
                 gap = GAP_FORM,
-                title = "New words per lesson",
-                subtitle = "How many new words each lesson introduces. 10 is the sustainable " +
-                    "default; you can change this anytime in Settings.",
+                title = "Daily review limit",
+                subtitle = "Each lesson introduces ${com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY} " +
+                    "new words. How many words you already know are you happy to review on top of " +
+                    "that each day? You can change this anytime in Settings.",
                 actions = {
                     // In edit mode this is the last step, so it saves; the level question only
                     // belongs to the first run.
@@ -425,11 +427,13 @@ fun OnboardingScreen(
                 }
             ) {
                 SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
-                    listOf(10, 15, 20).forEachIndexed { i, v ->
+                    REVIEW_LIMIT_CHOICES.forEachIndexed { i, v ->
                         SegmentedButton(
                             selected = goal == v,
                             onClick = { goal = v },
-                            shape = SegmentedButtonDefaults.itemShape(index = i, count = 3),
+                            shape = SegmentedButtonDefaults.itemShape(
+                                index = i, count = REVIEW_LIMIT_CHOICES.size
+                            ),
                             icon = {}
                         ) { Text("$v") }
                     }
