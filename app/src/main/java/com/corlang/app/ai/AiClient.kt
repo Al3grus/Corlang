@@ -126,7 +126,7 @@ class AiClient {
                         IllegalStateException("The reply ran too long, please try again with a shorter message.")
                     )
                     reply.isNullOrBlank() -> Result.failure(IllegalStateException("Empty response from the model."))
-                    hitCap -> Result.success("$reply\n\n(Reply was cut short — ask me to continue.)")
+                    hitCap -> Result.success("$reply\n\n(Reply was cut short, ask me to continue.)")
                     else -> Result.success(reply)
                 }
             } else {

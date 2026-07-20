@@ -324,7 +324,7 @@ private val TUTOR_LANGS = setOf("hr", "pt", "fr", "de", "it")
 internal fun assertTutorLangRegistered(lang: String) {
     if (com.corlang.app.BuildConfig.DEBUG) {
         check(lang in TUTOR_LANGS) {
-            "Language \"$lang\" has no authored tutor content (TalkScreen tables) — " +
+            "Language \"$lang\" has no authored tutor content (TalkScreen tables), " +
                 "add starters/seedGreeting/seedOpener/varietyRules/composerHint before shipping."
         }
     }
@@ -464,7 +464,7 @@ private fun varietyRules(lang: String): String = when (lang) {
       the auxiliary is essere.
     - If the student's sentence is ALREADY correct standard Italian, do not invent a correction,
       confirm it is right and continue. Never "correct" a correct form.""".trimIndent()
-    else -> "- If the student's sentence is already correct, say so — never invent corrections."
+    else -> "- If the student's sentence is already correct, say so, never invent corrections."
 }
 
 private fun tutorSystemPrompt(
