@@ -245,6 +245,20 @@ the gold book's job is to make that pass find nothing.
 
 ---
 
+## The error loop (applies to every phase, and is how this book improves)
+
+`docs/error-registry.md` is the list of every defect class ever found, its automation, and its
+sweep status per language. The lifecycle is mandatory and happens in the SAME commit as any
+fix: **register → scope → sweep every language → automate at the strongest layer → encode the
+prevention here.** An error without a registry row is not fixed, it is postponed; an error
+fixed where it was found but not swept elsewhere is a bug you have chosen to keep in three
+other languages. The registry's founding example: the dash rule was "fixed" twice and a sweep
+still found ~40 dash-bearing strings in UI Kotlin.
+
+When building a NEW language, the registry doubles as its pre-flight: every V-row is a
+candidate check for the new `check_<code>.py`, every C-row already guards it through the
+shared tools, and every P-row is a process trap the build must not repeat.
+
 ## Standing rules that apply to every phase
 
 - No em dashes, no en dashes, anywhere learner-visible. Commas, or split the sentence.
