@@ -29,9 +29,9 @@ jobs:
         run: |
           for l in hr fr pt de; do
             echo "=== $l ==="
-            # Advisory while the C10-C14 backlog is being drained; flip to hard-fail
-            # (remove '|| true') once the registry's Open sweeps section is empty.
-            python3 tools/course/proctor.py app/src/main/assets/content/$l || true
+            # Hard-fail since 2026-07-20: the C10-C14 backlog is drained, so any new
+            # repetition, leak, or bias regression blocks the push that introduces it.
+            python3 tools/course/proctor.py app/src/main/assets/content/$l
           done
 
       - name: Test report on failure
