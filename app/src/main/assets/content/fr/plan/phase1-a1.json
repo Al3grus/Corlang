@@ -665,7 +665,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Order: 'Quel âge avez-vous ?'",
+       "prompt": "Build the French for: 'How old are you?' (formal)",
        "difficulty": 4,
        "options": [
         "Quel",
@@ -8142,6 +8142,890 @@
    ],
    "day": 45,
    "week": 7,
+   "phase": "Phase 1 : A0 → A1",
+   "level": "A1",
+   "resources": [
+    "TV5MONDE, Apprendre le français",
+    "Words tab (built-in daily flashcards)"
+   ]
+  },
+  {
+   "title": "Les nombres de 20 à 100 et les ordinaux",
+   "objective": "You can say prices, floors, bus numbers and dates using the tens from 20 to 100, and rank things with premier, deuxième and troisième.",
+   "paretoFocus": "Almost every first real transaction in French is a number: a price, an age, a floor, a platform. The tens quarante, cinquante and soixante carry most of them.",
+   "drills": [
+    "Say the price of five things in your kitchen out loud, each one between 15 and 100 euros.",
+    "Name the floor you live on, the floor above you and the floor below you, using ordinals.",
+    "Count from soixante to soixante-neuf out loud twice, then do the same from quarante."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "How do you say 15, 40, 50 and 60 in French, without looking?",
+     "What changes in premier when the noun is feminine?",
+     "How do you build an ordinal from trois and from quatre?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Compter et classer",
+     "intro": "Each ten has its own single word up to sixty: vingt, trente, quarante, cinquante, soixante. Ordinals are built by adding -ième to the number, dropping a final e first, so quatre becomes quatrième. Only the first has its own word, premier, and it is the only ordinal that changes for the feminine.",
+     "items": [
+      {
+       "hr": "Le livre coûte quinze euros.",
+       "en": "The book costs fifteen euros.",
+       "note": "quinze = 15"
+      },
+      {
+       "hr": "Mon voisin a quarante ans et sa femme a cinquante ans.",
+       "en": "My neighbour is forty and his wife is fifty.",
+       "note": "quarante = 40, cinquante = 50; ages use avoir"
+      },
+      {
+       "hr": "Le bus numéro soixante passe à midi.",
+       "en": "The number sixty bus goes past at noon.",
+       "note": "soixante = 60; 70 is soixante-dix"
+      },
+      {
+       "hr": "J'habite au premier étage et ma sœur habite au deuxième.",
+       "en": "I live on the first floor and my sister lives on the second.",
+       "note": "premier becomes première before a feminine noun"
+      },
+      {
+       "hr": "C'est la troisième fois cette semaine.",
+       "en": "That is the third time this week.",
+       "note": "trois plus -ième gives troisième"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Chiffres, étages et rangs",
+     "intro": "Practise the tens and the first three ordinals in everyday sentences.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Ma grand-mère a ____ ans. (she is 60)",
+       "difficulty": 3,
+       "options": [
+        "quarante",
+        "cinquante",
+        "soixante",
+        "quinze"
+       ],
+       "answer": "soixante",
+       "explanation": "soixante is 60. quarante is 40, cinquante is 50 and quinze is 15."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which sentence uses the ordinal correctly with a feminine noun?",
+       "difficulty": 4,
+       "options": [
+        "C'est la premier fois.",
+        "C'est la première fois.",
+        "C'est le première fois.",
+        "C'est la premièr fois."
+       ],
+       "answer": "C'est la première fois.",
+       "explanation": "fois is feminine, so the article is la and premier becomes première."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the number 40 as a word: Il y a ____ personnes dans la salle.",
+       "difficulty": 3,
+       "answer": "quarante",
+       "explanation": "40 is quarante, with no hyphen and no s."
+      },
+      {
+       "type": "FILL",
+       "prompt": "The verb of age from your earlier lessons is needed here: Mon frère ____ quinze ans.",
+       "difficulty": 3,
+       "answer": "a",
+       "explanation": "French says how many years you have, so age uses avoir: il a quinze ans."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the French for: 'I live on the second floor.'",
+       "difficulty": 4,
+       "options": [
+        "J'habite",
+        "au",
+        "deuxième",
+        "étage"
+       ],
+       "ordered": [
+        "J'habite",
+        "au",
+        "deuxième",
+        "étage"
+       ],
+       "explanation": "habiter à plus le gives au, and the ordinal comes before étage."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "À l'entrée de l'immeuble",
+     "intro": "Play 'Me'. You are looking for a flat in a building and you use numbers and ordinals to find it.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bonjour, vous cherchez quelqu'un ?",
+       "en": "Hello, are you looking for someone?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Oui, je cherche l'appartement quarante.",
+       "en": "Yes, I am looking for flat forty."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "C'est au troisième étage, à droite.",
+       "en": "It is on the third floor, on the right."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Merci. Et le cinquante, c'est où ?",
+       "en": "Thank you. And number fifty, where is that?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Au premier étage. L'ascenseur est là.",
+       "en": "On the first floor. The lift is over there."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Parfait, c'est la première fois que je viens ici.",
+       "en": "Perfect, this is the first time I have come here."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ],
+   "day": 46,
+   "week": 7,
+   "phase": "Phase 1 : A0 → A1",
+   "level": "A1",
+   "resources": [
+    "TV5MONDE, Apprendre le français",
+    "Words tab (built-in daily flashcards)"
+   ]
+  },
+  {
+   "title": "Les nationalités et les langues",
+   "objective": "You can say where you are from, what nationality you are and which languages you speak, using être, parler and venir de.",
+   "paretoFocus": "The first two minutes of any conversation with a stranger in France are about where you come from and what you speak, so these three patterns unlock every introduction.",
+   "drills": [
+    "Say your nationality out loud in the masculine, then in the feminine.",
+    "List three languages you can name and use parler with each one, with no article.",
+    "Say where three people you know come from, using venir de plus the country."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Do nationality adjectives take a capital letter in French?",
+     "What happens to de before Portugal, before France and before États-Unis?",
+     "When does a language name take le and when does it take nothing?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "D'où viens-tu et que parles-tu ?",
+     "intro": "A nationality after être is an adjective, so it agrees with the person and stays lower case. After parler, a language takes no article at all. With venir de, the preposition merges with the country's article: du Portugal, de France, des États-Unis.",
+     "items": [
+      {
+       "hr": "Je suis français et ma femme est espagnole.",
+       "en": "I am French and my wife is Spanish.",
+       "note": "adjective, so no capital letter; espagnol becomes espagnole"
+      },
+      {
+       "hr": "Elle parle anglais et allemand au travail.",
+       "en": "She speaks English and German at work.",
+       "note": "parler plus language, never with an article"
+      },
+      {
+       "hr": "Nous venons du Canada, et vous ?",
+       "en": "We come from Canada, and you?",
+       "note": "de plus le Canada gives du Canada"
+      },
+      {
+       "hr": "Il y a beaucoup d'étudiants étrangers dans ma classe.",
+       "en": "There are many foreign students in my class.",
+       "note": "étranger becomes étrangère in the feminine"
+      },
+      {
+       "hr": "Le français est difficile mais très beau.",
+       "en": "French is difficult but very beautiful.",
+       "note": "as a noun the language takes le: le français, l'anglais"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Pays, langues et personnes",
+     "intro": "Practise nationalities, languages and the country preposition.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Choose the correct sentence about a German woman.",
+       "difficulty": 4,
+       "options": [
+        "Elle est Allemande.",
+        "Elle est allemande.",
+        "Elle est allemand.",
+        "Elle est l'allemande."
+       ],
+       "answer": "Elle est allemande.",
+       "explanation": "A nationality after être is an adjective: lower case, and feminine agreement adds an e."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Nous venons ____ Canada.",
+       "difficulty": 4,
+       "options": [
+        "de",
+        "du",
+        "des",
+        "de la"
+       ],
+       "answer": "du",
+       "explanation": "Canada is masculine, so de plus le contracts to du."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Name the language: Au bureau, on parle ____ tous les jours. (English)",
+       "difficulty": 3,
+       "answer": "anglais",
+       "explanation": "After parler the language takes no article: on parle anglais."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Reach back to the plural of être: Mes collègues ____ espagnols.",
+       "difficulty": 3,
+       "answer": "sont",
+       "explanation": "ils/elles sont is the third person plural of être, and the adjective takes s to match."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the French for: 'She speaks Spanish and German.'",
+       "difficulty": 4,
+       "options": [
+        "Elle",
+        "parle",
+        "espagnol",
+        "et",
+        "allemand"
+       ],
+       "ordered": [
+        "Elle",
+        "parle",
+        "espagnol",
+        "et",
+        "allemand"
+       ],
+       "explanation": "No article appears between parler and the languages."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "À la soirée internationale",
+     "intro": "Play 'Me'. You meet someone new at a party and you exchange nationalities and languages.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bonsoir ! Vous êtes français ?",
+       "en": "Good evening! Are you French?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Non, je viens du Portugal, mais j'habite ici.",
+       "en": "No, I come from Portugal, but I live here."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Et vous parlez quelles langues ?",
+       "en": "And which languages do you speak?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Je parle portugais, anglais et un peu espagnol.",
+       "en": "I speak Portuguese, English and a little Spanish."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Moi je suis allemande, de Hambourg.",
+       "en": "I am German, from Hamburg."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ici, nous sommes tous étrangers ce soir !",
+       "en": "Here, we are all foreigners tonight!"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ],
+   "day": 47,
+   "week": 7,
+   "phase": "Phase 1 : A0 → A1",
+   "level": "A1",
+   "resources": [
+    "TV5MONDE, Apprendre le français",
+    "Words tab (built-in daily flashcards)"
+   ]
+  },
+  {
+   "title": "Les mots du temps qui passe",
+   "objective": "You can talk about when and how often things happen with an, année, fois, minute, moment, maintenant, tôt, tard, midi and l'après-midi.",
+   "paretoFocus": "These small time words appear in nearly every spoken sentence, and choosing an instead of année or tôt instead of tard is what makes a plan understandable.",
+   "drills": [
+    "Say how many times a week you do three regular activities, using fois.",
+    "Describe your day in three sentences: one for le matin, one for midi, one for le soir.",
+    "Say one thing you do tôt and one thing you do tard."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "When do you use an and when do you use année?",
+     "How do you say twice a month in French?",
+     "What is the difference between une minute and un moment in everyday speech?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Le temps de tous les jours",
+     "intro": "An counts years as units, while année describes the year as a stretch of time you live through. Fois counts occasions. Maintenant, tôt and tard place an action on the day, and midi is twelve o'clock exactly.",
+     "items": [
+      {
+       "hr": "Mon fils a huit ans, et cette année il apprend à nager.",
+       "en": "My son is eight, and this year he is learning to swim.",
+       "note": "an counts, année describes the whole period"
+      },
+      {
+       "hr": "Je vais à la piscine deux fois par semaine.",
+       "en": "I go to the swimming pool twice a week.",
+       "note": "une fois, deux fois, trois fois par semaine"
+      },
+      {
+       "hr": "Une minute, s'il vous plaît, j'ai besoin d'un petit moment.",
+       "en": "One minute please, I need a short while.",
+       "note": "un moment is vague, une minute is closer to exact"
+      },
+      {
+       "hr": "Maintenant il est midi, et l'après-midi je suis libre.",
+       "en": "It is noon now, and in the afternoon I am free.",
+       "note": "midi = 12h, minuit = 24h"
+      },
+      {
+       "hr": "Le lundi, je commence tôt et je finis tard.",
+       "en": "On Mondays I start early and I finish late.",
+       "note": "le matin même = that very morning, as in: elle part demain et je la vois le matin même"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Quand et combien de fois",
+     "intro": "Practise choosing the right time word.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which sentence gives someone's age correctly?",
+       "difficulty": 3,
+       "options": [
+        "J'ai vingt années.",
+        "J'ai vingt ans.",
+        "Je suis vingt ans.",
+        "J'ai vingt an."
+       ],
+       "answer": "J'ai vingt ans.",
+       "explanation": "Age counts years as units, so it takes an in the plural: ans."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Il est douze heures : on dit aussi ____.",
+       "difficulty": 3,
+       "options": [
+        "minuit",
+        "midi",
+        "le matin",
+        "le soir"
+       ],
+       "answer": "midi",
+       "explanation": "midi is twelve in the middle of the day; minuit is twelve at night."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete: Je prends ce train trois ____ par mois.",
+       "difficulty": 3,
+       "answer": "fois",
+       "explanation": "fois counts occasions and does not change in the plural."
+      },
+      {
+       "type": "FILL",
+       "prompt": "The negative frame you have already met is missing a piece: Je ____ suis pas libre ce matin.",
+       "difficulty": 4,
+       "answer": "ne",
+       "explanation": "Standard negation wraps the verb: ne before it and pas after it."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the French for: 'Now it is noon and I am free.'",
+       "difficulty": 4,
+       "options": [
+        "Maintenant",
+        "il",
+        "est",
+        "midi",
+        "et",
+        "je",
+        "suis",
+        "libre"
+       ],
+       "ordered": [
+        "Maintenant",
+        "il",
+        "est",
+        "midi",
+        "et",
+        "je",
+        "suis",
+        "libre"
+       ],
+       "explanation": "Time expressions like maintenant sit comfortably at the front of the sentence."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Rendez-vous à midi",
+     "intro": "Play 'Me'. You are fixing a meeting time with a colleague and you use the day's time words.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Tu es libre maintenant ou plus tard ?",
+       "en": "Are you free now or later?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Pas maintenant, mais l'après-midi, oui.",
+       "en": "Not now, but in the afternoon, yes."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Alors on se voit à midi et demi ?",
+       "en": "So shall we meet at half past twelve?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Une minute, je regarde mon agenda.",
+       "en": "One minute, I am checking my diary."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Tu vas là-bas combien de fois par semaine ?",
+       "en": "How many times a week do you go there?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Deux fois. Et vendredi je pars tôt, donc je te vois le matin même.",
+       "en": "Twice. And on Friday I leave early, so I will see you that very morning."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ],
+   "day": 48,
+   "week": 7,
+   "phase": "Phase 1 : A0 → A1",
+   "level": "A1",
+   "resources": [
+    "TV5MONDE, Apprendre le français",
+    "Words tab (built-in daily flashcards)"
+   ]
+  },
+  {
+   "title": "Les indispensables de la conversation",
+   "objective": "You can keep a simple conversation moving and agree with someone using chose, quelque chose, quelqu'un, tout le monde, d'accord, peut-être, vite and ensemble.",
+   "paretoFocus": "These eight words fill the gaps between the sentences you already know, and d'accord alone answers a large share of everyday suggestions.",
+   "drills": [
+    "Offer someone three different things using quelque chose plus a verb.",
+    "Answer three imaginary suggestions with d'accord, and three with peut-être.",
+    "Say two plans you would do ensemble with a friend."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which word means someone and which one means something?",
+     "How do you agree with a suggestion in one word?",
+     "Is tout le monde followed by a singular or a plural verb?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Les petits mots qui servent partout",
+     "intro": "Quelqu'un points at a person, quelque chose at a thing, and une chose is a thing you can count. Tout le monde means everybody but takes a singular verb. D'accord accepts a suggestion, and peut-être leaves it open.",
+     "items": [
+      {
+       "hr": "Tu veux boire quelque chose ?",
+       "en": "Do you want something to drink?",
+       "note": "quelque chose plus a verb in the infinitive"
+      },
+      {
+       "hr": "J'ai une chose à te dire, et quelqu'un t'attend en bas.",
+       "en": "I have one thing to tell you, and someone is waiting for you downstairs.",
+       "note": "une chose is countable; quelqu'un is a person"
+      },
+      {
+       "hr": "D'accord, je suis d'accord avec toi.",
+       "en": "All right, I agree with you.",
+       "note": "être d'accord avec quelqu'un"
+      },
+      {
+       "hr": "Tout le monde arrive, peut-être avant midi.",
+       "en": "Everybody is arriving, maybe before noon.",
+       "note": "tout le monde takes a singular verb: arrive, not arrivent"
+      },
+      {
+       "hr": "Viens vite, on part ensemble !",
+       "en": "Come quickly, we are leaving together!",
+       "note": "vite = quickly; ensemble = together"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Répondre et se mettre d'accord",
+     "intro": "Practise the everyday words that hold a conversation together.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "You want to say that a person is waiting for you. Which word do you need?",
+       "difficulty": 3,
+       "options": [
+        "quelque chose",
+        "quelqu'un",
+        "tout le monde",
+        "une chose"
+       ],
+       "answer": "quelqu'un",
+       "explanation": "quelqu'un refers to one unnamed person; quelque chose refers to a thing."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "A friend suggests a film tonight. Which reply shows simple agreement?",
+       "difficulty": 3,
+       "options": [
+        "Peut-être pas.",
+        "D'accord, avec plaisir.",
+        "Je ne sais pas du tout.",
+        "C'est vraiment dommage."
+       ],
+       "answer": "D'accord, avec plaisir.",
+       "explanation": "D'accord accepts the suggestion directly; peut-être only leaves it open."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the word for maybe: Je ne suis pas sûr, ____ demain.",
+       "difficulty": 3,
+       "answer": "peut-être",
+       "explanation": "peut-être keeps the answer open and always carries its hyphen."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Gender from your earlier article work decides this one: Il y a ____ chose sur la table. (one thing)",
+       "difficulty": 4,
+       "answer": "une",
+       "explanation": "chose is feminine, so the indefinite article is une."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the French for: 'Everybody is leaving together.'",
+       "difficulty": 4,
+       "options": [
+        "Tout",
+        "le",
+        "monde",
+        "part",
+        "ensemble"
+       ],
+       "ordered": [
+        "Tout",
+        "le",
+        "monde",
+        "part",
+        "ensemble"
+       ],
+       "explanation": "tout le monde is grammatically singular, so the verb is part."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "On se décide vite",
+     "intro": "Play 'Me'. Two friends are deciding what to do this evening, and you agree, hesitate and settle it.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "On mange quelque chose en ville ce soir ?",
+       "en": "Shall we eat something in town tonight?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "D'accord ! Tout le monde vient ?",
+       "en": "All right! Is everybody coming?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Peut-être. Quelqu'un doit encore répondre.",
+       "en": "Maybe. Someone still has to answer."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Une chose est sûre : on part ensemble.",
+       "en": "One thing is certain: we are leaving together."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Alors viens vite, le bus arrive.",
+       "en": "Then come quickly, the bus is coming."
+      },
+      {
+       "speaker": "Me",
+       "hr": "D'accord, deux minutes et je suis là.",
+       "en": "All right, two minutes and I am there."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ],
+   "day": 49,
+   "week": 7,
+   "phase": "Phase 1 : A0 → A1",
+   "level": "A1",
+   "resources": [
+    "TV5MONDE, Apprendre le français",
+    "Words tab (built-in daily flashcards)"
+   ]
+  },
+  {
+   "title": "On et nous, être en train de, venir de",
+   "objective": "You can use on as the spoken equivalent of nous, say what is happening right now with être en train de, and say what has just happened with venir de.",
+   "paretoFocus": "Spoken French replaces nous with on almost everywhere, and these two short verb frames let you talk about the immediate present and the immediate past without any new tense.",
+   "drills": [
+    "Say three plans with nous, then repeat each one with on.",
+    "Describe what three people around you are doing at this moment, using être en train de.",
+    "Say three things you finished in the last hour using venir de."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which person of the verb follows on?",
+     "After être en train de, which verb form follows, and which one follows venir de?",
+     "How would you say the same plan twice, once formally and once as people really speak?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "On parle, on est en train, on vient de",
+     "intro": "On means we in everyday speech but takes the same verb form as il and elle. Être en train de plus an infinitive says an action is under way at this moment. Venir de plus an infinitive says it finished a moment ago.",
+     "items": [
+      {
+       "hr": "On part à huit heures.",
+       "en": "We are leaving at eight.",
+       "note": "on plus third person singular, even though it means nous"
+      },
+      {
+       "hr": "Nous partons à huit heures.",
+       "en": "We are leaving at eight.",
+       "note": "same meaning, but this is the written or more formal version"
+      },
+      {
+       "hr": "Je suis en train de préparer le dîner.",
+       "en": "I am in the middle of making dinner.",
+       "note": "être en train de plus infinitive"
+      },
+      {
+       "hr": "Elle vient d'arriver.",
+       "en": "She has just arrived.",
+       "note": "venir de plus infinitive; de becomes d' before a vowel"
+      },
+      {
+       "hr": "On est en train de manger, on vient de commencer.",
+       "en": "We are eating, we have just started.",
+       "note": "both frames work with on exactly as with il"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Maintenant et juste avant",
+     "intro": "Practise on, the action in progress and the action just finished.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "On ____ au cinéma ce soir.",
+       "difficulty": 4,
+       "options": [
+        "allons",
+        "va",
+        "vont",
+        "allez"
+       ],
+       "answer": "va",
+       "explanation": "on always takes the same form as il and elle, so the verb is va."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "What does 'Il vient de sortir' mean?",
+       "difficulty": 4,
+       "options": [
+        "He is going out.",
+        "He has just gone out.",
+        "He wants to go out.",
+        "He used to go out."
+       ],
+       "answer": "He has just gone out.",
+       "explanation": "venir de plus infinitive expresses an action completed moments ago."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the frame for an action under way: Je suis ____ train de lire.",
+       "difficulty": 4,
+       "answer": "en",
+       "explanation": "The full expression is être en train de plus infinitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "An irregular nous form from earlier practice is wanted here: Nous ____ le bus tous les matins. (prendre)",
+       "difficulty": 5,
+       "answer": "prenons",
+       "explanation": "prendre keeps its stem in the plural: nous prenons, vous prenez, ils prennent."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the French for: 'We have just finished the exercise.'",
+       "difficulty": 5,
+       "options": [
+        "On",
+        "vient",
+        "de",
+        "finir",
+        "l'exercice"
+       ],
+       "ordered": [
+        "On",
+        "vient",
+        "de",
+        "finir",
+        "l'exercice"
+       ],
+       "explanation": "With on the verb is vient, and the second verb stays in the infinitive after de."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Au téléphone, juste avant de sortir",
+     "intro": "Play 'Me'. A friend calls while you are busy, and you say what is happening now and what has just happened.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Salut ! Qu'est-ce que tu fais ?",
+       "en": "Hi! What are you doing?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Je suis en train de préparer mon sac.",
+       "en": "I am in the middle of packing my bag."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Vous partez déjà ?",
+       "en": "Are you leaving already?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Oui, on part dans dix minutes.",
+       "en": "Yes, we are leaving in ten minutes."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Et Marc, il est là ?",
+       "en": "And Marc, is he there?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Il vient d'arriver, on t'appelle ce soir.",
+       "en": "He has just arrived, we will call you tonight."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ],
+   "day": 50,
+   "week": 8,
    "phase": "Phase 1 : A0 → A1",
    "level": "A1",
    "resources": [

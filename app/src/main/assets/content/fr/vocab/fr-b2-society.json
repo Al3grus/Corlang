@@ -1,0 +1,1517 @@
+{
+ "packs": [
+  {
+   "id": "fr-b2-society",
+   "title": "B2 : société et débat",
+   "level": "B2",
+   "sources": [
+    "lexique383"
+   ],
+   "words": [
+    {
+     "id": "gouvernance",
+     "hr": "gouvernance",
+     "en": "governance",
+     "pos": "n. f.",
+     "example": {
+      "target": "On reproche à cette gouvernance son manque de transparence.",
+      "gloss": "This governance is criticised for its lack of transparency."
+     }
+    },
+    {
+     "id": "état de droit",
+     "hr": "État de droit",
+     "en": "rule of law",
+     "pos": "n. m.",
+     "example": {
+      "target": "Sans séparation des pouvoirs, il n'y a pas d'État de droit.",
+      "gloss": "Without separation of powers, there is no rule of law."
+     }
+    },
+    {
+     "id": "séparation des pouvoirs",
+     "hr": "séparation des pouvoirs",
+     "en": "separation of powers",
+     "pos": "n. f.",
+     "example": {
+      "target": "La séparation des pouvoirs protège le citoyen de l'arbitraire.",
+      "gloss": "The separation of powers protects the citizen from arbitrariness."
+     }
+    },
+    {
+     "id": "contre-pouvoir",
+     "hr": "contre-pouvoir",
+     "en": "counterbalancing power",
+     "pos": "n. m.",
+     "example": {
+      "target": "La presse joue le rôle de contre-pouvoir face à l'exécutif.",
+      "gloss": "The press acts as a counterbalance to the executive."
+     }
+    },
+    {
+     "id": "décentralisation",
+     "hr": "décentralisation",
+     "en": "decentralisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La décentralisation rapproche la décision du terrain.",
+      "gloss": "Decentralisation brings the decision closer to the ground."
+     }
+    },
+    {
+     "id": "fédéralisme",
+     "hr": "fédéralisme",
+     "en": "federalism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les partisans du fédéralisme prônent plus d'autonomie régionale.",
+      "gloss": "Supporters of federalism advocate more regional autonomy."
+     }
+    },
+    {
+     "id": "centralisme",
+     "hr": "centralisme",
+     "en": "centralism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le centralisme concentre tout le pouvoir dans la capitale.",
+      "gloss": "Centralism concentrates all power in the capital."
+     }
+    },
+    {
+     "id": "bureaucratie",
+     "hr": "bureaucratie",
+     "en": "bureaucracy",
+     "pos": "n. f.",
+     "example": {
+      "target": "La lourdeur de la bureaucratie décourage les initiatives.",
+      "gloss": "The weight of bureaucracy discourages initiative."
+     }
+    },
+    {
+     "id": "technocratie",
+     "hr": "technocratie",
+     "en": "technocracy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les critiques dénoncent une technocratie coupée du peuple.",
+      "gloss": "Critics denounce a technocracy cut off from the people."
+     }
+    },
+    {
+     "id": "gouvernant",
+     "hr": "gouvernant",
+     "en": "governing figure, ruler",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les gouvernants doivent rendre des comptes aux gouvernés.",
+      "gloss": "Those who govern must answer to the governed."
+     }
+    },
+    {
+     "id": "abstentionnisme",
+     "hr": "abstentionnisme",
+     "en": "abstentionism",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'abstentionnisme croissant fragilise la légitimité du scrutin.",
+      "gloss": "Rising abstentionism weakens the legitimacy of the vote."
+     }
+    },
+    {
+     "id": "militantisme",
+     "hr": "militantisme",
+     "en": "activism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Son militantisme l'a conduit à s'engager très jeune.",
+      "gloss": "His activism led him to get involved very young."
+     }
+    },
+    {
+     "id": "militant",
+     "hr": "militant",
+     "en": "activist, campaigner",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les militants réclament une réforme du droit de vote.",
+      "gloss": "The activists are calling for a reform of voting rights."
+     }
+    },
+    {
+     "id": "adhésion",
+     "hr": "adhésion",
+     "en": "membership, support",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le projet a recueilli une large adhésion au sein du parti.",
+      "gloss": "The project won broad support within the party."
+     }
+    },
+    {
+     "id": "mobilisation",
+     "hr": "mobilisation",
+     "en": "mobilisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mobilisation citoyenne a fait reculer le gouvernement.",
+      "gloss": "Citizen mobilisation made the government back down."
+     }
+    },
+    {
+     "id": "contestation",
+     "hr": "contestation",
+     "en": "protest, challenge",
+     "pos": "n. f.",
+     "example": {
+      "target": "La réforme fait l'objet d'une vive contestation sociale.",
+      "gloss": "The reform is the subject of fierce social protest."
+     }
+    },
+    {
+     "id": "populisme",
+     "hr": "populisme",
+     "en": "populism",
+     "pos": "n. m.",
+     "example": {
+      "target": "On accuse ce discours de flatter le populisme ambiant.",
+      "gloss": "This rhetoric is accused of pandering to the prevailing populism."
+     }
+    },
+    {
+     "id": "démagogie",
+     "hr": "démagogie",
+     "en": "demagoguery",
+     "pos": "n. f.",
+     "example": {
+      "target": "Promettre tout à tout le monde relève de la démagogie.",
+      "gloss": "Promising everything to everyone is sheer demagoguery."
+     }
+    },
+    {
+     "id": "extrémisme",
+     "hr": "extrémisme",
+     "en": "extremism",
+     "pos": "n. m.",
+     "example": {
+      "target": "La crise économique favorise la montée de l'extrémisme.",
+      "gloss": "The economic crisis fuels the rise of extremism."
+     }
+    },
+    {
+     "id": "radicalisation",
+     "hr": "radicalisation",
+     "en": "radicalisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La radicalisation d'une minorité inquiète les autorités.",
+      "gloss": "The radicalisation of a minority worries the authorities."
+     }
+    },
+    {
+     "id": "clientélisme",
+     "hr": "clientélisme",
+     "en": "clientelism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ces nominations sentent le clientélisme politique.",
+      "gloss": "These appointments smack of political clientelism."
+     }
+    },
+    {
+     "id": "népotisme",
+     "hr": "népotisme",
+     "en": "nepotism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Confier ce poste à son neveu, c'est du pur népotisme.",
+      "gloss": "Giving this post to his nephew is pure nepotism."
+     }
+    },
+    {
+     "id": "légitimité",
+     "hr": "légitimité",
+     "en": "legitimacy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Un pouvoir sans légitimité ne tient jamais longtemps.",
+      "gloss": "A power without legitimacy never lasts long."
+     }
+    },
+    {
+     "id": "naturalisation",
+     "hr": "naturalisation",
+     "en": "naturalisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La naturalisation exige désormais un niveau de langue plus élevé.",
+      "gloss": "Naturalisation now requires a higher language level."
+     }
+    },
+    {
+     "id": "laïque",
+     "hr": "laïque",
+     "en": "secular",
+     "pos": "adj.",
+     "example": {
+      "target": "L'école publique est un espace laïque par principe.",
+      "gloss": "Public schooling is a secular space on principle."
+     }
+    },
+    {
+     "id": "pluralisme",
+     "hr": "pluralisme",
+     "en": "pluralism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le pluralisme des médias est une condition de la démocratie.",
+      "gloss": "Media pluralism is a condition of democracy."
+     }
+    },
+    {
+     "id": "égalitarisme",
+     "hr": "égalitarisme",
+     "en": "egalitarianism",
+     "pos": "n. m.",
+     "example": {
+      "target": "On lui reproche un égalitarisme qui nierait tout mérite.",
+      "gloss": "He is accused of an egalitarianism that would deny all merit."
+     }
+    },
+    {
+     "id": "équité",
+     "hr": "équité",
+     "en": "equity, fairness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il faut distinguer l'égalité stricte de l'équité réelle.",
+      "gloss": "One must distinguish strict equality from real equity."
+     }
+    },
+    {
+     "id": "iniquité",
+     "hr": "iniquité",
+     "en": "iniquity, unfairness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cette réforme creuse l'iniquité entre générations.",
+      "gloss": "This reform deepens the unfairness between generations."
+     }
+    },
+    {
+     "id": "ségrégation",
+     "hr": "ségrégation",
+     "en": "segregation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ségrégation urbaine concentre la pauvreté dans certains quartiers.",
+      "gloss": "Urban segregation concentrates poverty in certain neighbourhoods."
+     }
+    },
+    {
+     "id": "stigmatisation",
+     "hr": "stigmatisation",
+     "en": "stigmatisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La stigmatisation des chômeurs aggrave leur exclusion.",
+      "gloss": "The stigmatisation of the unemployed worsens their exclusion."
+     }
+    },
+    {
+     "id": "impunité",
+     "hr": "impunité",
+     "en": "impunity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le sentiment d'impunité encourage les récidives.",
+      "gloss": "The feeling of impunity encourages reoffending."
+     }
+    },
+    {
+     "id": "répression",
+     "hr": "répression",
+     "en": "repression, crackdown",
+     "pos": "n. f.",
+     "example": {
+      "target": "La répression du mouvement a suscité un tollé international.",
+      "gloss": "The crackdown on the movement sparked international outrage."
+     }
+    },
+    {
+     "id": "oppression",
+     "hr": "oppression",
+     "en": "oppression",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le récit dénonce l'oppression des minorités.",
+      "gloss": "The account denounces the oppression of minorities."
+     }
+    },
+    {
+     "id": "émancipation",
+     "hr": "émancipation",
+     "en": "emancipation",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'instruction reste un puissant levier d'émancipation.",
+      "gloss": "Education remains a powerful lever of emancipation."
+     }
+    },
+    {
+     "id": "servitude",
+     "hr": "servitude",
+     "en": "servitude, bondage",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le poète oppose la liberté à toute forme de servitude.",
+      "gloss": "The poet contrasts freedom with every form of servitude."
+     }
+    },
+    {
+     "id": "paupérisation",
+     "hr": "paupérisation",
+     "en": "impoverishment",
+     "pos": "n. f.",
+     "example": {
+      "target": "On observe une paupérisation progressive des classes moyennes.",
+      "gloss": "A gradual impoverishment of the middle classes can be observed."
+     }
+    },
+    {
+     "id": "inégalités",
+     "hr": "inégalités",
+     "en": "inequalities",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les inégalités se creusent malgré la croissance.",
+      "gloss": "Inequalities are widening despite growth."
+     },
+     "note": "toujours au pluriel"
+    },
+    {
+     "id": "redistribution",
+     "hr": "redistribution",
+     "en": "redistribution",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'impôt sert aussi à la redistribution des richesses.",
+      "gloss": "Taxation also serves to redistribute wealth."
+     }
+    },
+    {
+     "id": "libéralisme",
+     "hr": "libéralisme",
+     "en": "liberalism (economic)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les défenseurs du libéralisme prônent moins d'État.",
+      "gloss": "Defenders of liberalism advocate a smaller state."
+     }
+    },
+    {
+     "id": "capitalisme",
+     "hr": "capitalisme",
+     "en": "capitalism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le débat oppose partisans et critiques du capitalisme.",
+      "gloss": "The debate pits supporters against critics of capitalism."
+     }
+    },
+    {
+     "id": "protectionnisme",
+     "hr": "protectionnisme",
+     "en": "protectionism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le protectionnisme protège certains emplois mais renchérit les prix.",
+      "gloss": "Protectionism shields some jobs but raises prices."
+     }
+    },
+    {
+     "id": "spéculation",
+     "hr": "spéculation",
+     "en": "speculation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La spéculation immobilière chasse les jeunes des grandes villes.",
+      "gloss": "Property speculation drives young people out of big cities."
+     }
+    },
+    {
+     "id": "délocalisation",
+     "hr": "délocalisation",
+     "en": "offshoring, relocation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La délocalisation des usines a vidé la région de ses emplois.",
+      "gloss": "The offshoring of factories emptied the region of its jobs."
+     }
+    },
+    {
+     "id": "désindustrialisation",
+     "hr": "désindustrialisation",
+     "en": "deindustrialisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La désindustrialisation a laissé des territoires entiers à l'abandon.",
+      "gloss": "Deindustrialisation left entire areas abandoned."
+     }
+    },
+    {
+     "id": "prélèvement",
+     "hr": "prélèvement",
+     "en": "levy, deduction",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ces prélèvements obligatoires financent la protection sociale.",
+      "gloss": "These compulsory levies fund social protection."
+     }
+    },
+    {
+     "id": "cotisation",
+     "hr": "cotisation",
+     "en": "contribution (social)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les cotisations salariales alimentent le système de retraite.",
+      "gloss": "Employee contributions feed the pension system."
+     }
+    },
+    {
+     "id": "rente",
+     "hr": "rente",
+     "en": "unearned income, annuity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il vit d'une rente et n'a jamais eu à travailler.",
+      "gloss": "He lives off private income and never had to work."
+     }
+    },
+    {
+     "id": "durabilité",
+     "hr": "durabilité",
+     "en": "sustainability",
+     "pos": "n. f.",
+     "example": {
+      "target": "La durabilité d'un modèle se juge sur le long terme.",
+      "gloss": "The sustainability of a model is judged over the long term."
+     }
+    },
+    {
+     "id": "sobriété",
+     "hr": "sobriété",
+     "en": "restraint, frugality",
+     "pos": "n. f.",
+     "example": {
+      "target": "La sobriété énergétique devient une nécessité, non un choix.",
+      "gloss": "Energy frugality is becoming a necessity, not a choice."
+     }
+    },
+    {
+     "id": "dérèglement",
+     "hr": "dérèglement",
+     "en": "disruption, disturbance",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le dérèglement climatique multiplie les phénomènes extrêmes.",
+      "gloss": "Climate disruption is multiplying extreme events."
+     }
+    },
+    {
+     "id": "pollueur",
+     "hr": "pollueur",
+     "en": "polluter",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le principe est simple : le pollueur doit payer.",
+      "gloss": "The principle is simple: the polluter must pay."
+     }
+    },
+    {
+     "id": "nuisance",
+     "hr": "nuisance",
+     "en": "nuisance, harm",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les riverains se plaignent des nuisances sonores de l'aéroport.",
+      "gloss": "Local residents complain about the noise nuisance from the airport."
+     }
+    },
+    {
+     "id": "préservation",
+     "hr": "préservation",
+     "en": "preservation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La préservation des sols conditionne notre sécurité alimentaire.",
+      "gloss": "Soil preservation determines our food security."
+     }
+    },
+    {
+     "id": "épuisement des ressources",
+     "hr": "épuisement des ressources",
+     "en": "depletion of resources",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'épuisement des ressources impose de repenser la production.",
+      "gloss": "The depletion of resources forces us to rethink production."
+     }
+    },
+    {
+     "id": "pénibilité",
+     "hr": "pénibilité",
+     "en": "arduousness (of work)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La pénibilité du travail justifie un départ anticipé.",
+      "gloss": "The arduousness of the work justifies early retirement."
+     }
+    },
+    {
+     "id": "reconversion",
+     "hr": "reconversion",
+     "en": "career change, retraining",
+     "pos": "n. f.",
+     "example": {
+      "target": "La reconversion des salariés licenciés reste difficile.",
+      "gloss": "Retraining laid-off workers remains difficult."
+     }
+    },
+    {
+     "id": "flexibilité",
+     "hr": "flexibilité",
+     "en": "flexibility",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les employeurs réclament plus de flexibilité du marché du travail.",
+      "gloss": "Employers demand more labour-market flexibility."
+     }
+    },
+    {
+     "id": "automatisation",
+     "hr": "automatisation",
+     "en": "automation",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'automatisation menace des pans entiers de l'emploi.",
+      "gloss": "Automation threatens whole swathes of employment."
+     }
+    },
+    {
+     "id": "salariat",
+     "hr": "salariat",
+     "en": "wage-earning class",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'ubérisation remet en cause le modèle du salariat.",
+      "gloss": "The gig economy calls the wage-earning model into question."
+     }
+    },
+    {
+     "id": "patronat",
+     "hr": "patronat",
+     "en": "employers (collectively)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le patronat s'oppose à toute hausse des cotisations.",
+      "gloss": "Employers oppose any rise in contributions."
+     }
+    },
+    {
+     "id": "syndicalisme",
+     "hr": "syndicalisme",
+     "en": "trade unionism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le syndicalisme a obtenu des avancées sociales majeures.",
+      "gloss": "Trade unionism won major social advances."
+     }
+    },
+    {
+     "id": "plein-emploi",
+     "hr": "plein-emploi",
+     "en": "full employment",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le plein-emploi reste l'objectif affiché du gouvernement.",
+      "gloss": "Full employment remains the government's stated goal."
+     }
+    },
+    {
+     "id": "propagande",
+     "hr": "propagande",
+     "en": "propaganda",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ce média diffuse une propagande à peine déguisée.",
+      "gloss": "This outlet spreads barely disguised propaganda."
+     }
+    },
+    {
+     "id": "complotisme",
+     "hr": "complotisme",
+     "en": "conspiracy thinking",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le complotisme prospère sur la défiance envers les experts.",
+      "gloss": "Conspiracy thinking thrives on distrust of experts."
+     }
+    },
+    {
+     "id": "sensationnalisme",
+     "hr": "sensationnalisme",
+     "en": "sensationalism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le sensationnalisme prend le pas sur la vérification des faits.",
+      "gloss": "Sensationalism takes precedence over fact-checking."
+     }
+    },
+    {
+     "id": "partialité",
+     "hr": "partialité",
+     "en": "bias, partiality",
+     "pos": "n. f.",
+     "example": {
+      "target": "On reproche à ce journal sa partialité manifeste.",
+      "gloss": "This paper is criticised for its obvious bias."
+     }
+    },
+    {
+     "id": "surveillance",
+     "hr": "surveillance",
+     "en": "surveillance",
+     "pos": "n. f.",
+     "example": {
+      "target": "La surveillance généralisée pose la question des libertés.",
+      "gloss": "Widespread surveillance raises the question of liberties."
+     }
+    },
+    {
+     "id": "émigration",
+     "hr": "émigration",
+     "en": "emigration",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'émigration des jeunes diplômés appauvrit le pays.",
+      "gloss": "The emigration of young graduates impoverishes the country."
+     }
+    },
+    {
+     "id": "exil",
+     "hr": "exil",
+     "en": "exile",
+     "pos": "n. m.",
+     "example": {
+      "target": "Beaucoup ont choisi l'exil plutôt que la répression.",
+      "gloss": "Many chose exile over repression."
+     }
+    },
+    {
+     "id": "diaspora",
+     "hr": "diaspora",
+     "en": "diaspora",
+     "pos": "n. f.",
+     "example": {
+      "target": "La diaspora envoie chaque année des fonds au pays d'origine.",
+      "gloss": "The diaspora sends funds to the home country every year."
+     }
+    },
+    {
+     "id": "asile",
+     "hr": "asile",
+     "en": "asylum",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le droit d'asile protège ceux qui fuient les persécutions.",
+      "gloss": "The right of asylum protects those fleeing persecution."
+     }
+    },
+    {
+     "id": "clandestin",
+     "hr": "clandestin",
+     "en": "illegal, clandestine",
+     "pos": "adj.",
+     "example": {
+      "target": "Ces travailleurs clandestins échappent à toute protection.",
+      "gloss": "These undocumented workers fall outside any protection."
+     }
+    },
+    {
+     "id": "expulsion",
+     "hr": "expulsion",
+     "en": "expulsion, deportation",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'expulsion des sans-papiers divise l'opinion.",
+      "gloss": "The deportation of undocumented migrants divides opinion."
+     }
+    },
+    {
+     "id": "déracinement",
+     "hr": "déracinement",
+     "en": "uprooting",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'exil s'accompagne souvent d'un profond déracinement.",
+      "gloss": "Exile often comes with a deep sense of uprooting."
+     }
+    },
+    {
+     "id": "métissage",
+     "hr": "métissage",
+     "en": "cultural mixing",
+     "pos": "n. m.",
+     "example": {
+      "target": "La cuisine du pays témoigne d'un long métissage.",
+      "gloss": "The country's cuisine reflects a long history of mixing."
+     }
+    },
+    {
+     "id": "communautarisme",
+     "hr": "communautarisme",
+     "en": "communitarianism, sectarianism",
+     "pos": "n. m.",
+     "example": {
+      "target": "Certains y voient une dérive vers le communautarisme.",
+      "gloss": "Some see in it a slide towards sectarianism."
+     }
+    },
+    {
+     "id": "xénophobie",
+     "hr": "xénophobie",
+     "en": "xenophobia",
+     "pos": "n. f.",
+     "example": {
+      "target": "La crise a libéré une xénophobie longtemps contenue.",
+      "gloss": "The crisis unleashed a long-contained xenophobia."
+     }
+    },
+    {
+     "id": "altérité",
+     "hr": "altérité",
+     "en": "otherness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Accepter l'altérité, c'est renoncer à imposer sa norme.",
+      "gloss": "Accepting otherness means giving up imposing one's own norm."
+     }
+    },
+    {
+     "id": "cohésion sociale",
+     "hr": "cohésion sociale",
+     "en": "social cohesion",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le chômage de masse fragilise la cohésion sociale.",
+      "gloss": "Mass unemployment weakens social cohesion."
+     }
+    },
+    {
+     "id": "fracture sociale",
+     "hr": "fracture sociale",
+     "en": "social divide",
+     "pos": "n. f.",
+     "example": {
+      "target": "La fracture sociale se lit jusque dans la géographie des villes.",
+      "gloss": "The social divide is visible even in the geography of cities."
+     }
+    },
+    {
+     "id": "mixité sociale",
+     "hr": "mixité sociale",
+     "en": "social diversity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ce quartier rénové vise une plus grande mixité sociale.",
+      "gloss": "This renovated district aims for greater social diversity."
+     }
+    },
+    {
+     "id": "inclusion",
+     "hr": "inclusion",
+     "en": "inclusion",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'inclusion des personnes handicapées progresse trop lentement.",
+      "gloss": "The inclusion of disabled people is progressing too slowly."
+     }
+    },
+    {
+     "id": "marginalité",
+     "hr": "marginalité",
+     "en": "marginality",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le roman décrit la marginalité de ceux que la société oublie.",
+      "gloss": "The novel depicts the marginality of those society forgets."
+     }
+    },
+    {
+     "id": "précarité énergétique",
+     "hr": "précarité énergétique",
+     "en": "energy poverty",
+     "pos": "n. f.",
+     "example": {
+      "target": "La précarité énergétique touche des millions de foyers.",
+      "gloss": "Energy poverty affects millions of households."
+     }
+    },
+    {
+     "id": "civisme",
+     "hr": "civisme",
+     "en": "civic-mindedness",
+     "pos": "n. m.",
+     "example": {
+      "target": "Trier ses déchets relève d'un civisme élémentaire.",
+      "gloss": "Sorting one's waste is a matter of basic civic-mindedness."
+     }
+    },
+    {
+     "id": "incivilité",
+     "hr": "incivilité",
+     "en": "antisocial behaviour",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les incivilités du quotidien empoisonnent la vie collective.",
+      "gloss": "Everyday antisocial behaviour poisons communal life."
+     }
+    },
+    {
+     "id": "bénévolat",
+     "hr": "bénévolat",
+     "en": "volunteering",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le bénévolat comble les manques du service public.",
+      "gloss": "Volunteering fills the gaps left by public services."
+     }
+    },
+    {
+     "id": "entraide",
+     "hr": "entraide",
+     "en": "mutual aid",
+     "pos": "n. f.",
+     "example": {
+      "target": "En temps de crise, l'entraide entre voisins reprend ses droits.",
+      "gloss": "In times of crisis, mutual aid between neighbours revives."
+     }
+    },
+    {
+     "id": "dévouement",
+     "hr": "dévouement",
+     "en": "dedication, devotion",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les soignants ont fait preuve d'un dévouement exemplaire.",
+      "gloss": "Care workers showed exemplary dedication."
+     }
+    },
+    {
+     "id": "redevabilité",
+     "hr": "redevabilité",
+     "en": "accountability",
+     "pos": "n. f.",
+     "example": {
+      "target": "La redevabilité des dirigeants est au cœur de la démocratie.",
+      "gloss": "The accountability of leaders is at the heart of democracy."
+     }
+    },
+    {
+     "id": "hégémonie",
+     "hr": "hégémonie",
+     "en": "hegemony",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ils dénoncent l'hégémonie culturelle des grandes puissances.",
+      "gloss": "They denounce the cultural hegemony of the great powers."
+     }
+    },
+    {
+     "id": "ingérence",
+     "hr": "ingérence",
+     "en": "interference, meddling",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le gouvernement dénonce une ingérence étrangère dans l'élection.",
+      "gloss": "The government denounces foreign interference in the election."
+     }
+    },
+    {
+     "id": "répartition",
+     "hr": "répartition",
+     "en": "distribution, allocation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La répartition des richesses reste très inégale.",
+      "gloss": "The distribution of wealth remains highly unequal."
+     }
+    },
+    {
+     "id": "statu quo",
+     "hr": "statu quo",
+     "en": "status quo",
+     "pos": "n. m.",
+     "example": {
+      "target": "Faute d'accord, les parties se sont résignées au statu quo.",
+      "gloss": "For want of agreement, the parties settled for the status quo."
+     }
+    },
+    {
+     "id": "régulation",
+     "hr": "régulation",
+     "en": "regulation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le marché ne s'autorégule pas ; il exige une régulation publique.",
+      "gloss": "The market does not self-regulate; it requires public regulation."
+     }
+    },
+    {
+     "id": "dérégulation",
+     "hr": "dérégulation",
+     "en": "deregulation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La dérégulation financière est accusée d'avoir nourri la crise.",
+      "gloss": "Financial deregulation is blamed for feeding the crisis."
+     }
+    },
+    {
+     "id": "moratoire",
+     "hr": "moratoire",
+     "en": "moratorium",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les élus réclament un moratoire sur les nouvelles constructions.",
+      "gloss": "Elected officials call for a moratorium on new construction."
+     }
+    },
+    {
+     "id": "clivage",
+     "hr": "clivage",
+     "en": "divide, cleavage",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce sujet crée un clivage au sein même de la majorité.",
+      "gloss": "This issue creates a divide within the majority itself."
+     }
+    },
+    {
+     "id": "polarisation",
+     "hr": "polarisation",
+     "en": "polarisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La polarisation du débat rend tout compromis impossible.",
+      "gloss": "The polarisation of the debate makes any compromise impossible."
+     }
+    },
+    {
+     "id": "concertation",
+     "hr": "concertation",
+     "en": "consultation, dialogue",
+     "pos": "n. f.",
+     "example": {
+      "target": "La réforme a été menée sans réelle concertation.",
+      "gloss": "The reform was carried out without real consultation."
+     }
+    },
+    {
+     "id": "médiation",
+     "hr": "médiation",
+     "en": "mediation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Un tiers a proposé sa médiation pour dénouer le conflit.",
+      "gloss": "A third party offered to mediate to resolve the conflict."
+     }
+    },
+    {
+     "id": "réglementer",
+     "hr": "réglementer",
+     "en": "to regulate",
+     "pos": "v.",
+     "example": {
+      "target": "L'État cherche à réglementer l'usage des données personnelles.",
+      "gloss": "The state seeks to regulate the use of personal data."
+     }
+    },
+    {
+     "id": "instaurer",
+     "hr": "instaurer",
+     "en": "to establish, introduce",
+     "pos": "v.",
+     "example": {
+      "target": "Le gouvernement veut instaurer un revenu minimum garanti.",
+      "gloss": "The government wants to establish a guaranteed minimum income."
+     }
+    },
+    {
+     "id": "abroger",
+     "hr": "abroger",
+     "en": "to repeal",
+     "pos": "v.",
+     "example": {
+      "target": "Le Parlement a fini par abroger cette loi contestée.",
+      "gloss": "Parliament eventually repealed this contested law."
+     }
+    },
+    {
+     "id": "promulguer",
+     "hr": "promulguer",
+     "en": "to enact, promulgate",
+     "pos": "v.",
+     "example": {
+      "target": "La loi a été promulguée malgré l'opposition de la rue.",
+      "gloss": "The law was enacted despite street opposition."
+     }
+    },
+    {
+     "id": "ratifier",
+     "hr": "ratifier",
+     "en": "to ratify",
+     "pos": "v.",
+     "example": {
+      "target": "Le pays a refusé de ratifier ce traité international.",
+      "gloss": "The country refused to ratify this international treaty."
+     }
+    },
+    {
+     "id": "réformer",
+     "hr": "réformer",
+     "en": "to reform",
+     "pos": "v.",
+     "example": {
+      "target": "Réformer sans concerter revient à imposer.",
+      "gloss": "To reform without consulting amounts to imposing."
+     }
+    },
+    {
+     "id": "marginaliser",
+     "hr": "marginaliser",
+     "en": "to marginalise",
+     "pos": "v.",
+     "example": {
+      "target": "Ce discours tend à marginaliser toute voix dissidente.",
+      "gloss": "This rhetoric tends to marginalise any dissenting voice."
+     }
+    },
+    {
+     "id": "précariser",
+     "hr": "précariser",
+     "en": "to make precarious",
+     "pos": "v.",
+     "example": {
+      "target": "Ces contrats courts précarisent toute une catégorie de salariés.",
+      "gloss": "These short contracts make a whole category of workers precarious."
+     }
+    },
+    {
+     "id": "s'insurger",
+     "hr": "s'insurger",
+     "en": "to rise up, protest",
+     "pos": "v.",
+     "note": "s'insurger contre",
+     "example": {
+      "target": "De nombreux intellectuels se sont insurgés contre cette mesure.",
+      "gloss": "Many intellectuals rose up against this measure."
+     }
+    },
+    {
+     "id": "réprimer",
+     "hr": "réprimer",
+     "en": "to repress, suppress",
+     "pos": "v.",
+     "example": {
+      "target": "Les autorités ont violemment réprimé la manifestation.",
+      "gloss": "The authorities violently suppressed the demonstration."
+     }
+    },
+    {
+     "id": "bafouer",
+     "hr": "bafouer",
+     "en": "to flout, trample on",
+     "pos": "v.",
+     "example": {
+      "target": "Ce régime bafoue ouvertement les droits fondamentaux.",
+      "gloss": "This regime openly flouts fundamental rights."
+     }
+    },
+    {
+     "id": "dénoncer",
+     "hr": "dénoncer",
+     "en": "to denounce, expose",
+     "pos": "v.",
+     "example": {
+      "target": "L'enquête dénonce un système de fraude organisé.",
+      "gloss": "The investigation exposes an organised fraud system."
+     }
+    },
+    {
+     "id": "s'affranchir",
+     "hr": "s'affranchir",
+     "en": "to free oneself",
+     "pos": "v.",
+     "note": "s'affranchir de",
+     "example": {
+      "target": "La presse doit pouvoir s'affranchir de toute tutelle.",
+      "gloss": "The press must be able to free itself from any oversight."
+     }
+    },
+    {
+     "id": "institutionnel",
+     "hr": "institutionnel",
+     "en": "institutional",
+     "pos": "adj.",
+     "example": {
+      "target": "La crise est autant morale qu'institutionnelle.",
+      "gloss": "The crisis is as much moral as institutional."
+     }
+    },
+    {
+     "id": "systémique",
+     "hr": "systémique",
+     "en": "systemic",
+     "pos": "adj.",
+     "example": {
+      "target": "Le problème n'est pas ponctuel, il est systémique.",
+      "gloss": "The problem is not isolated, it is systemic."
+     }
+    },
+    {
+     "id": "structurel",
+     "hr": "structurel",
+     "en": "structural",
+     "pos": "adj.",
+     "example": {
+      "target": "Le chômage structurel résiste à toute reprise.",
+      "gloss": "Structural unemployment resists any recovery."
+     }
+    },
+    {
+     "id": "conjoncturel",
+     "hr": "conjoncturel",
+     "en": "cyclical, short-term",
+     "pos": "adj.",
+     "example": {
+      "target": "Cette baisse est conjoncturelle, non durable.",
+      "gloss": "This drop is cyclical, not lasting."
+     }
+    },
+    {
+     "id": "répressif",
+     "hr": "répressif",
+     "en": "repressive",
+     "pos": "adj.",
+     "example": {
+      "target": "Un arsenal purement répressif ne règle pas le fond.",
+      "gloss": "A purely repressive arsenal does not address the root cause."
+     }
+    },
+    {
+     "id": "marchand",
+     "hr": "marchand",
+     "en": "commercial, market-driven",
+     "pos": "adj.",
+     "example": {
+      "target": "Faut-il soumettre la culture à la logique marchande ?",
+      "gloss": "Should culture be subjected to market logic?"
+     }
+    },
+    {
+     "id": "solidaire",
+     "hr": "solidaire",
+     "en": "in solidarity, mutually supportive",
+     "pos": "adj.",
+     "example": {
+      "target": "Une société solidaire ne laisse personne au bord du chemin.",
+      "gloss": "A society of solidarity leaves no one by the wayside."
+     }
+    },
+    {
+     "id": "précaire",
+     "hr": "précaire",
+     "en": "precarious",
+     "pos": "adj.",
+     "example": {
+      "target": "Des millions de gens vivent dans un emploi précaire.",
+      "gloss": "Millions of people live in precarious employment."
+     }
+    },
+    {
+     "id": "marginal",
+     "hr": "marginal",
+     "en": "marginal, fringe",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce phénomène, longtemps marginal, se généralise.",
+      "gloss": "This phenomenon, long marginal, is becoming widespread."
+     }
+    },
+    {
+     "id": "dominant",
+     "hr": "dominant",
+     "en": "dominant, prevailing",
+     "pos": "adj.",
+     "example": {
+      "target": "Le discours dominant tend à écarter les voix critiques.",
+      "gloss": "The prevailing discourse tends to sideline critical voices."
+     }
+    },
+    {
+     "id": "collectif",
+     "hr": "collectif",
+     "en": "collective",
+     "pos": "adj.",
+     "example": {
+      "target": "La réponse à la crise doit être collective.",
+      "gloss": "The response to the crisis must be collective."
+     }
+    },
+    {
+     "id": "inégalitaire",
+     "hr": "inégalitaire",
+     "en": "unequal, inequitable",
+     "pos": "adj.",
+     "example": {
+      "target": "Un système inégalitaire finit toujours par se fissurer.",
+      "gloss": "An unequal system always ends up cracking."
+     }
+    },
+    {
+     "id": "citadin",
+     "hr": "citadin",
+     "en": "urban, city-dweller",
+     "pos": "adj.",
+     "example": {
+      "target": "Le mode de vie citadin gagne peu à peu les campagnes.",
+      "gloss": "The urban way of life is gradually reaching the countryside."
+     }
+    },
+    {
+     "id": "concitoyen",
+     "hr": "concitoyen",
+     "en": "fellow citizen",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il en appelle à la responsabilité de ses concitoyens.",
+      "gloss": "He appeals to the responsibility of his fellow citizens."
+     }
+    },
+    {
+     "id": "parité",
+     "hr": "parité",
+     "en": "parity, gender balance",
+     "pos": "n. f.",
+     "example": {
+      "target": "La loi impose la parité sur les listes électorales.",
+      "gloss": "The law requires gender parity on electoral lists."
+     }
+    },
+    {
+     "id": "quota",
+     "hr": "quota",
+     "en": "quota",
+     "pos": "n. m.",
+     "example": {
+      "target": "Faut-il instaurer des quotas pour corriger les inégalités ?",
+      "gloss": "Should quotas be introduced to correct inequalities?"
+     }
+    },
+    {
+     "id": "méritocratie",
+     "hr": "méritocratie",
+     "en": "meritocracy",
+     "pos": "n. f.",
+     "example": {
+      "target": "La méritocratie promise masque souvent la reproduction sociale.",
+      "gloss": "The promised meritocracy often masks social reproduction."
+     }
+    },
+    {
+     "id": "dépénalisation",
+     "hr": "dépénalisation",
+     "en": "decriminalisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le débat sur la dépénalisation divise l'opinion.",
+      "gloss": "The debate on decriminalisation divides opinion."
+     }
+    },
+    {
+     "id": "précariat",
+     "hr": "précariat",
+     "en": "precariat",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un vaste précariat vit d'emplois courts et mal payés.",
+      "gloss": "A vast precariat lives on short, poorly paid jobs."
+     }
+    },
+    {
+     "id": "gentrification",
+     "hr": "gentrification",
+     "en": "gentrification",
+     "pos": "n. f.",
+     "example": {
+      "target": "La gentrification chasse peu à peu les anciens habitants.",
+      "gloss": "Gentrification gradually drives out the old residents."
+     }
+    },
+    {
+     "id": "désertification",
+     "hr": "désertification",
+     "en": "depopulation, desertification",
+     "pos": "n. f.",
+     "example": {
+      "target": "La désertification des campagnes prive les villages de services.",
+      "gloss": "The depopulation of rural areas deprives villages of services."
+     }
+    },
+    {
+     "id": "ghettoïsation",
+     "hr": "ghettoïsation",
+     "en": "ghettoisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ghettoïsation de certains quartiers alimente les tensions.",
+      "gloss": "The ghettoisation of some districts fuels tension."
+     }
+    },
+    {
+     "id": "relégation",
+     "hr": "relégation",
+     "en": "relegation, marginalisation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ces quartiers cumulent chômage et relégation sociale.",
+      "gloss": "These districts combine unemployment and social marginalisation."
+     }
+    },
+    {
+     "id": "assistanat",
+     "hr": "assistanat",
+     "en": "welfare dependency (pej.)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les uns dénoncent l'assistanat, les autres la précarité.",
+      "gloss": "Some denounce welfare dependency, others precariousness."
+     }
+    },
+    {
+     "id": "déclassement",
+     "hr": "déclassement",
+     "en": "downward mobility, loss of status",
+     "pos": "n. m.",
+     "example": {
+      "target": "La peur du déclassement travaille les classes moyennes.",
+      "gloss": "The fear of losing status gnaws at the middle classes."
+     }
+    },
+    {
+     "id": "acculturation",
+     "hr": "acculturation",
+     "en": "acculturation",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'acculturation des migrants est un processus à double sens.",
+      "gloss": "The acculturation of migrants is a two-way process."
+     }
+    },
+    {
+     "id": "exode",
+     "hr": "exode",
+     "en": "exodus",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'exode rural a vidé des régions entières.",
+      "gloss": "The rural exodus emptied entire regions."
+     }
+    },
+    {
+     "id": "frontalier",
+     "hr": "frontalier",
+     "en": "cross-border (worker)",
+     "pos": "adj.",
+     "example": {
+      "target": "Des milliers de travailleurs frontaliers franchissent la frontière chaque jour.",
+      "gloss": "Thousands of cross-border workers cross the border each day."
+     }
+    },
+    {
+     "id": "concorde",
+     "hr": "concorde",
+     "en": "concord, harmony",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le traité devait sceller une concorde durable entre les peuples.",
+      "gloss": "The treaty was meant to seal a lasting concord between peoples."
+     }
+    },
+    {
+     "id": "discorde",
+     "hr": "discorde",
+     "en": "discord, strife",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cette question a semé la discorde au sein du gouvernement.",
+      "gloss": "This question sowed discord within the government."
+     }
+    },
+    {
+     "id": "insurrection",
+     "hr": "insurrection",
+     "en": "insurrection, uprising",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le pouvoir a réprimé l'insurrection dans le sang.",
+      "gloss": "The regime crushed the uprising in blood."
+     }
+    },
+    {
+     "id": "soulèvement",
+     "hr": "soulèvement",
+     "en": "uprising, revolt",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un soulèvement populaire a renversé le régime.",
+      "gloss": "A popular uprising overthrew the regime."
+     }
+    },
+    {
+     "id": "émeute",
+     "hr": "émeute",
+     "en": "riot",
+     "pos": "n. f.",
+     "example": {
+      "target": "La hausse du pain a déclenché de violentes émeutes.",
+      "gloss": "The rise in bread prices triggered violent riots."
+     }
+    },
+    {
+     "id": "sédition",
+     "hr": "sédition",
+     "en": "sedition",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les meneurs ont été poursuivis pour sédition.",
+      "gloss": "The ringleaders were prosecuted for sedition."
+     }
+    },
+    {
+     "id": "désobéissance civile",
+     "hr": "désobéissance civile",
+     "en": "civil disobedience",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ils revendiquent une désobéissance civile pacifique.",
+      "gloss": "They advocate peaceful civil disobedience."
+     }
+    }
+   ]
+  }
+ ]
+}
