@@ -112,6 +112,10 @@ fun ExerciseActivity(
     loadResumeState: suspend () -> ExerciseResume = { ExerciseResume(emptySet(), false) },
     onSolved: (questionIndex: Int) -> Unit = {},
     onMissed: () -> Unit = {},
+    // Mistake bank hooks: the QUESTION that was answered, right or wrong, so a wrong answer
+    // is banked for later sessions and a right answer clears any banked copy.
+    onQuestionCleared: (Question) -> Unit = {},
+    onQuestionMissed: (Question) -> Unit = {},
     onDone: () -> Unit
 ) {
     val context = LocalContext.current
@@ -317,6 +321,7 @@ fun ExerciseActivity(
                         else -> false
                     }
                     lastCorrect = correct
+                    if (correct) onQuestionCleared(q) else onQuestionMissed(q)
                     if (correct) {
                         Haptics.confirm(context)
                         // Persist the solve NOW, at Check time — not on the advance tap. Exiting

@@ -211,6 +211,54 @@ class ProgressRepository(private val dao: ProgressDao) {
         }
     }
 
+    // ----- Mistake bank -----
+
+    private val mistakeJson = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
+
+    /** A wrong answer banks the question (or bumps an existing entry back to due). */
+    suspend fun recordMistake(lang: String, day: Int, q: com.corlang.app.data.model.Question) {
+        val today = java.time.LocalDate.now().toEpochDay()
+        val existing = dao.missedQuestion(lang, q.prompt)
+        dao.upsertMissedQuestion(
+            existing?.copy(
+                timesMissed = existing.timesMissed + 1,
+                lastMissedEpochDay = today,
+                clearedEpochDay = null
+            ) ?: com.corlang.app.data.db.MissedQuestion(
+                langCode = lang,
+                promptKey = q.prompt,
+                questionJson = mistakeJson.encodeToString(
+                    com.corlang.app.data.model.Question.serializer(), q
+                ),
+                day = day,
+                timesMissed = 1,
+                lastMissedEpochDay = today
+            )
+        )
+    }
+
+    /** A correct answer clears the banked entry, if one exists. */
+    suspend fun clearMistake(lang: String, q: com.corlang.app.data.model.Question) {
+        val existing = dao.missedQuestion(lang, q.prompt) ?: return
+        if (existing.clearedEpochDay != null) return
+        dao.upsertMissedQuestion(
+            existing.copy(clearedEpochDay = java.time.LocalDate.now().toEpochDay())
+        )
+    }
+
+    /** Up to [limit] questions missed on EARLIER days, oldest first, decoded and ready to run.
+     *  A snapshot that no longer parses (model drift across an update) is dropped silently. */
+    suspend fun dueMistakes(lang: String, limit: Int = 3): List<com.corlang.app.data.model.Question> {
+        val today = java.time.LocalDate.now().toEpochDay()
+        return dao.dueMistakes(lang, today, limit).mapNotNull { row ->
+            runCatching {
+                mistakeJson.decodeFromString(
+                    com.corlang.app.data.model.Question.serializer(), row.questionJson
+                )
+            }.getOrNull()
+        }
+    }
+
     // ----- Can-do checklist -----
 
     fun canDoChecks(lang: String, levelId: String): Flow<List<CanDoCheck>> =
