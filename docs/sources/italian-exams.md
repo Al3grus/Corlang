@@ -292,3 +292,176 @@ specification. Use it for level banding decisions; use the NVdB for frequency cr
 
 **Not verified:** a published per-level word count from *Profilo della lingua italiana* could not be
 confirmed live today. Do not quote a per-level lexical size for Italian in app copy.
+
+---
+
+## Syllabus and vocabulary cross-check (Phase 8b)
+
+**Date: 2026-07-20.** This is the check that the `freq-it` and `cils-a1` / `cils-a2` / `cils-b1`
+source keys (cited by all 16 packs in the Italian deck and by the course plan) had claimed
+without ever being performed. Same shape and same honesty standard as the German Wortliste
+cross-check in `docs/sources/goethe-exams.md`. Checked content: the 4 deck files
+(2,840 raw entries, 2,536 unique headwords: A1 510, A2 939, B1 1,087) and the 240-lesson
+topic sequence (`TOPICS.md`, `TOPICS-B1.md`).
+
+### Fetch provenance and completeness
+
+- **NVdB (De Mauro and Chiari 2016), complete.** Primary machine-readable source: the
+  `memdevice/nvdb` GitHub lexical dataset (bands FO 1,976 / AU 3,003 / AD 2,227, total 7,206,
+  matching the published sizes of about 2,000 / 3,000 / 2,300). Validated against the official
+  PDF of the list (Internazionale, 23 December 2016, "Il Nuovo vocabolario di base della lingua
+  italiana", the dizionario.internazionale.it rendering, fetched via its Dropbox mirror). Band
+  marking in the PDF is typographic (bold = fondamentale, regular = alto uso, italic = alta
+  disponibilità) and was extracted per word with font information. Result: 7,203 of 7,206
+  mirror lemmas confirmed present in the PDF text; band agreement 99.5 percent on shared
+  lemmas, with the roughly 40 disagreements all being homographs (1stare / 2stare), resolved
+  to the higher band. Nine OCR glitches in the mirror were repaired by hand. Working universe
+  after cleanup: **FO 1,980, AU 2,980, AD 2,215**. The three unconfirmed mirror lemmas
+  (sicuramente, confusione, one flagged typo) were kept; noise well under 0.1 percent.
+- **Joint syllabus of the four CLIQ exam bodies, complete.** "Sillabo di riferimento per i
+  livelli di competenza in italiano L2", one PDF per level from `unistrapg.it`
+  (`sillabo-4-enti-A1.pdf` 55 pages, `-A2.pdf` 60 pages, `-B1.pdf` 57 pages), authored jointly
+  by the certifying bodies including Siena (Barni, Masillo) and Roma Tre (Ambroso, Orletti).
+  Each contains the official per-level table of socio-communicative functions and the
+  structure inventory (fonologia through frasi complesse). This is the exam-body grammar and
+  function authority the `cils-*` keys are checked against.
+- **PLIDA, mostly complete.** The official Sillabo della Certificazione PLIDA, second edition
+  March 2021 (48 pages, from `cms.plida.dante.global`): full function, domain, theme and text
+  inventories per level; it contains NO grammar tables. The PLIDA B1 Quaderno delle
+  specifiche (67 pages, same host): fetched complete, including the official "Elenco delle
+  strutture ricorrenti nelle prove di produzione del livello B1" (pages 38 to 39). The A2
+  Quaderno download returned a truncated stream twice and was NOT obtained. The pre-2021
+  sillabo (plida.it) was recovered via web.archive.org; it also has no grammar tables.
+- **CILS directly: NOT obtained.** `cils.unistrasi.it` loads but exposes no sillabo; the
+  linee guida PDF path returns an HTML error page. CILS is nonetheless represented through
+  the joint sillabo above, which Siena co-authored. Re-try the direct site before launch.
+- **Profilo della lingua italiana (Spinelli and Parizzi 2010): NOT reachable.** The
+  inventories exist only in the printed book and its CD-ROM; the unistrapg companion site is
+  descriptive with no inventory pages. It enters this check indirectly: the joint sillabo
+  states its taxonomies are built on Spinelli and Parizzi (2010).
+- **wordfreq (Zipf, Italian)** was used ONLY to order the missing lemmas by frequency, never
+  as a coverage authority.
+
+### Vocabulary coverage: deck vs NVdB
+
+Matching rules: lemma = headword minus article (il/lo/la/l'/un/un' etc., matched only with a
+following space or apostrophe), casefolded NFC; reflexives credit the base infinitive;
+multiword entries credit content tokens; plural-only and feminine deck forms credit the
+NVdB lemma (pantaloni to pantalone, studentessa to studente).
+
+| NVdB band | Lemmas | Covered by deck | Coverage | Missing |
+|---|---|---|---|---|
+| Fondamentale (FO) | 1,980 | 1,113 | **56.2%** | 867 |
+| Alto uso (AU) | 2,980 | 673 | **22.6%** | 2,307 |
+| Alta disponibilità (AD, informational) | 2,215 | 255 | 11.5% | 1,960 |
+
+Of the 1,113 covered FO lemmas, only 374 are introduced in the A1 packs and 347 more at A2:
+a learner reaches the end of A2 having met 36.4 percent of the fondamentale band, and the
+whole course delivers 56.2 percent. That is ten points better than the German result (46.3
+percent) but the same failure mode: roughly half the official core vocabulary is absent.
+
+**Top 30 absent fondamentale lemmas, frequency first** (Zipf order, paradigm noise such as
+clitics and articles excluded): solo, mondo, qualcosa, qualcuno, nessuno, nulla, insieme,
+durante, oltre, verso, ciò, ecco, tipo, gruppo, paese, sistema, serie, nazionale, guerra,
+morte, forza, importante, difficile, presidente, terra, genere, lungo, mezzo, attività,
+vivere. Next in line: attraverso, qualsiasi, unico, voce, uso, semplice, futuro, dentro,
+luce, zona, cultura, giornata, foto, video, nord, sud, sociale, regione. Spot checks
+confirmed none of these appears in any deck entry at any level. (fra is credited: the deck
+teaches tra. The NVdB fondamentale band also contains two vulgar items the deck excludes by
+design; that exclusion is correct and costs two lemmas.)
+
+**Level fit, deck to NVdB** (the healthy direction):
+
+| Deck level | Words | In NVdB (any band) | Of which FO | Outside NVdB entirely |
+|---|---|---|---|---|
+| A1 | 510 | 485 (95.1%) | 378 (74.1%) | 25 (4.9%) |
+| A2 | 939 | 797 (84.9%) | n/a | 142 (15.1%) |
+| B1 | 1,087 | 926 (85.2%) | n/a | 161 (14.8%) |
+| Whole deck | 2,536 | 2,208 (87.1%) | | 328 (12.9%) |
+
+The A1 non-FO items are mostly benign banding artifacts (weekday names, teens and tens
+numerals, buonasera, cognome: NVdB bands by corpus frequency, which pushes such words to AU
+or AD). The 25 A1 words outside the NVdB are defensible realia (passaporto, menu, tram,
+trattoria, fermata). The A2 and B1 outside-list words are overwhelmingly deliberate civic
+and exam realia (anagrafe, raccomandata, sostenibilità, graduatoria, password): unlike the
+German case, where a majority of B1 content fell outside the official inventory, the
+Italian deck's outside-list share is 13 to 15 percent and thematically motivated. Level fit
+passes; coverage does not.
+
+### Grammar and function coverage: 240 topics vs the official inventories
+
+Checked against: the joint 4-enti structure and function tables for A1, A2 and B1, the PLIDA
+B1 strutture ricorrenti list, and the PLIDA 2021 function inventories for A1, A2, B1.
+
+**Covered, with margin.** Every structure in the joint sillabo B1 table and every item of
+the PLIDA B1 strutture list has a named topic or an unambiguous home: articles, agreement,
+possessives, full pronoun system including combined clitics and ci/ne, comparatives and
+superlatives, presente / passato prossimo with both auxiliaries / imperfetto and their
+contrast / trapassato / futuro (temporal and modal) / condizionale, imperativo formal and
+informal, si impersonale, stare + gerundio, congiuntivo presente after opinion verbs (a
+whole block, far beyond the requirement), periodo ipotetico type 1, relatives, discorso
+diretto and indiretto, causal and temporal subordinates, the full connective set. The PLIDA
+function inventories (opinions, complaints, advice, feelings, narration, projects, formal
+register, exam-task rehearsal) map cleanly onto the A2 services block and B1 blocks 2 to 7.
+
+**Missing or misplaced against the official inventories** (follow-up authoring tasks, in
+priority order):
+
+1. **I dimostrativi (questo / quello)**: required from A1 in the joint sillabo (deictic
+   demonstratives, both adjective and pronoun use). No named topic anywhere in the 240.
+   Almost certainly used incidentally from lesson 1, but the syllabus names it and the plan
+   must teach it explicitly. Highest priority.
+2. **Il che relativo at A2**: the joint A2 sillabo requires che as subject and object at A2.
+   The plan defers all relatives to B1 (positions 133 to 134). A learner sitting CILS A2 or
+   A2 integrazione mid-course would arrive without a required structure. Either pull a
+   minimal che lesson into A2 or accept the gap knowingly for A2 sitters.
+3. **Interrogative indirette (se, come)**: explicit in the PLIDA B1 strutture list. The
+   discorso indiretto lessons (130 to 131) cover reported statements; indirect questions
+   must be named in their content.
+4. **Enclisi dei pronomi atoni con infinito e imperativo** (dammelo, senza farlo): explicit
+   in the PLIDA B1 list; the imperativo (55 to 56) and pronomi combinati (53, 135) topics
+   never name enclisis.
+5. **Indefiniti e quantificatori** (ogni, qualche, alcuni, nessuno, ognuno, un po' di):
+   required across the joint A2 and B1 tables and PLIDA B1 morphology; no named topic.
+6. **Frasi esclamative** (Che bello!, Quanto è caro!): in the joint B1 structure table and
+   the A2 function list; not named.
+7. **Alla posta** (spedire un pacco, una raccomandata): a named PLIDA A2 transaction
+   context; the A2 services block covers banca, anagrafe, farmacia but has no post office
+   lesson, and raccomandata only appears in B1 vocabulary.
+8. **Raccontare un imprevisto** (smarrimento, furto, incidente): a named PLIDA B1 function;
+   the nearest topics (truffe 176, reclami 95/108/123) do not cover reporting a theft or
+   accident.
+
+**Off-level upward** (taught at B1 but above both official B1 inventories): congiuntivo
+imperfetto and trapassato, periodo ipotetico dell'irrealtà, condizionale passato, futuro
+anteriore, passivo con venire e andare, concordanza dei tempi, discorso indiretto al
+passato. The joint immigration-oriented B1 sillabo does not even require congiuntivo
+presente, and PLIDA B1 asks only for congiuntivo presente of essere in fixed opinion
+frames. Teaching above the floor is a deliberate safety margin for the standard CILS
+UNO-B1 and is not a defect, but these seven items are B2-grade and their difficulty
+banding should reflect it. Nothing in the A1 or A2 blocks is above level.
+
+### Verdicts
+
+- **`freq-it`: PARTIALLY EARNED, not shippable as-is on the packs.** The level-fit
+  direction passes (87.1 percent of deck lemmas inside the NVdB, A1 packs 74 percent
+  fondamentale, outside-list content thematically motivated). The coverage direction fails:
+  56.2 percent of the fondamentale band and 22.6 percent of alto uso, with the very top of
+  the frequency list among the 867 missing core lemmas (solo, mondo, qualcosa, importante,
+  difficile, vivere). Per the German precedent, either author a fondamentale top-up pass
+  (priority: the 150 to 250 highest-frequency FO absences ranked above) before shipping
+  with the key, or remove `freq-it` from all 16 packs now and restore it when the top-up
+  lands.
+- **`cils-a1`: EARNED for the topic sequence**, subject to follow-up 1 (dimostrativi must
+  become explicit).
+- **`cils-a2`: PARTIALLY EARNED for the topic sequence**: complete except that che relativo
+  is taught off-level late (follow-up 2) and the posta transaction context is absent
+  (follow-up 7).
+- **`cils-b1`: EARNED for the topic sequence**: both official B1 structure lists and the
+  function inventories are covered with a deliberate margin; follow-ups 3, 4 and 8 are
+  content-note fixes inside existing topics, not missing topics.
+- Caveat on all three `cils-*` keys: the check ran against the joint syllabus of the four
+  certifying bodies (Siena co-author) and PLIDA documents, because nothing could be fetched
+  from `cils.unistrasi.it` itself today. That is the correct authority chain, but re-verify
+  against Siena directly when the site works, and note the PLIDA A2 Quaderno was not
+  retrievable.

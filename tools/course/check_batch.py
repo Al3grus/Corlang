@@ -56,6 +56,13 @@ def check_file(path):
     if not isinstance(days, list):
         return ["top level must be a JSON array of day objects"]
 
+    # day/week are 0 in a PRE-MERGE batch (the merge tool assigns them) but populated in an
+    # assembled build. Detect which we are looking at, so the language checkers can also be run
+    # against a finished course; flagging 245 populated days as errors made that impossible.
+    nums = [d.get("day") for d in days]
+    merged = (len(days) > 1 and all(isinstance(n, int) and n > 0 for n in nums)
+              and nums == list(range(nums[0], nums[0] + len(nums))))
+
     prompts_seen = {}
     for di, day in enumerate(days):
         tag = f"[{di}] {day.get('title', '?')[:40]}"
@@ -63,7 +70,7 @@ def check_file(path):
         if missing:
             errs.append(f"{tag}: missing keys {sorted(missing)}")
             continue
-        if day["day"] != 0 or day["week"] != 0:
+        if not merged and (day["day"] != 0 or day["week"] != 0):
             errs.append(f"{tag}: day/week must be 0 (merge tool assigns them)")
         if len(day["drills"]) < 2:
             errs.append(f"{tag}: needs at least 2 drills")
