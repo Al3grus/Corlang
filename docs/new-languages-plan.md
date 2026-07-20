@@ -118,14 +118,14 @@ catch, build, release, push. **The language goes live in this phase and only thi
 
 | Phase | German | Italian | Spanish |
 |---|---|---|---|
-| L.0 research and provenance | done | | |
-| L.1 skeleton, identity, code wiring | done | | |
-| L.2 vocabulary deck | done, 2913 words | | |
-| L.3 A0 and A1 lessons | done, 65 lessons | | |
-| L.4 A2 lessons | done, 80 lessons | | |
-| L.5 B1 lessons | done, 140 lessons | | |
-| L.6 assessment set | done | | |
-| L.7 integrate and ship | **done, live** | | |
+| L.0 research and provenance | done | done | |
+| L.1 skeleton, identity, code wiring | done | done | |
+| L.2 vocabulary deck | done, 2913 words | done, 2836 words | |
+| L.3 A0 and A1 lessons | done, 65 lessons | done, 47 lessons | |
+| L.4 A2 lessons | done, 80 lessons | done, 72 lessons | |
+| L.5 B1 lessons | done, 140 lessons | done, 126 lessons | |
+| L.6 assessment set | done | done | |
+| L.7 integrate and ship | **done, live** | **done, live** | |
 
 **German is live.** 285 lessons (A0 15, A1 50, A2 80, B1 140), 2913 words, 4 quizzes, 3 Goethe
 mock exams, a 14-band placement test and a grammar syllabus. `"de"` is in `availableLanguages`

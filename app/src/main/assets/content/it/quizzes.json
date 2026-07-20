@@ -1,0 +1,390 @@
+{
+ "quizzes": [
+  {
+   "id": "it-a1",
+   "levelId": "A1",
+   "title": "A1, le basi dell'italiano",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "In which word is the letter c pronounced hard, as in the word cane?",
+     "options": [
+      "la chiesa",
+      "la cena",
+      "il cinema",
+      "la città"
+     ],
+     "answer": "la chiesa",
+     "explanation": "Before e and i the letter c is soft, as in cena and cinema. The h in ch keeps the hard sound: chiesa, chi, perché."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Which sentence shows correct agreement between noun and adjective?",
+     "options": [
+      "Le ragazze sono simpatiche.",
+      "Le ragazze sono simpatici.",
+      "Le ragazze sono simpatica.",
+      "Le ragazze è simpatiche."
+     ],
+     "answer": "Le ragazze sono simpatiche.",
+     "explanation": "An adjective in -o has four forms. With a feminine plural noun it ends in -e, and the verb essere agrees too: loro sono."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Which indefinite article goes with the noun studente?",
+     "options": [
+      "uno studente",
+      "un studente",
+      "una studente",
+      "un' studente"
+     ],
+     "answer": "uno studente",
+     "explanation": "The masculine article is uno before s plus consonant, z, gn, ps, x and y. Elsewhere it is un, as in un ragazzo and un amico."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete with the present tense of the verb capire: 'Loro ___ tutto.'",
+     "answer": "capiscono",
+     "accepted": [
+      "Loro capiscono"
+     ],
+     "explanation": "Many verbs of the third conjugation add -isc- in the singular and in the third person plural: capisco, capisci, capisce, capiamo, capite, capiscono."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Choose the correct passato prossimo: 'Maria ___ al mercato.'",
+     "options": [
+      "è andata",
+      "ha andata",
+      "è andato",
+      "ha andato"
+     ],
+     "answer": "è andata",
+     "explanation": "Verbs of movement such as andare take essere, and with essere the participle agrees with the subject: Maria è andata, i ragazzi sono andati."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Which form completes the sentence: 'Il libro è ___ tavolo.'",
+     "options": [
+      "sul",
+      "su il",
+      "sullo",
+      "sui"
+     ],
+     "answer": "sul",
+     "explanation": "The preposition su joins the article: su plus il gives sul, su plus lo gives sullo, su plus i gives sui."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Which sentence uses the verb piacere correctly?",
+     "options": [
+      "Mi piacciono i film italiani.",
+      "Mi piace i film italiani.",
+      "Io piaccio i film italiani.",
+      "Mi piacciono il film italiano."
+     ],
+     "answer": "Mi piacciono i film italiani.",
+     "explanation": "With piacere the thing liked is the subject, so a plural thing takes piacciono. The person who likes it is the indirect object: mi, ti, gli, le."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete the sentence about what exists in the square: 'In piazza ___ molti turisti.'",
+     "answer": "ci sono",
+     "accepted": [
+      "ci sono",
+      "Ci sono"
+     ],
+     "explanation": "Use c'è with a singular noun and ci sono with a plural one. The verb agrees with what follows, not with the place."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 3,
+     "prompt": "Complete with the verb avere: 'Mio fratello ___ ventidue anni.'",
+     "answer": "ha",
+     "accepted": [
+      "Ha"
+     ],
+     "explanation": "Italian expresses age with avere, not with essere. The third person singular is ha, written without an accent but with the silent h."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Which sentence places the reflexive pronoun correctly with a modal verb?",
+     "options": [
+      "Mi devo alzare presto.",
+      "Devo mi alzare presto.",
+      "Mi devo alzarmi presto.",
+      "Devo alzare mi presto."
+     ],
+     "answer": "Mi devo alzare presto.",
+     "explanation": "With potere, volere and dovere the reflexive pronoun either stands before the modal or attaches to the infinitive: mi devo alzare or devo alzarmi, never both."
+    }
+   ]
+  },
+  {
+   "id": "it-a2",
+   "levelId": "A2",
+   "title": "A2, pronomi e nuovi tempi",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Choose the right past tense: 'Mentre ___, è squillato il telefono.'",
+     "options": [
+      "cucinavo",
+      "ho cucinato",
+      "cucinerò",
+      "cucinerei"
+     ],
+     "answer": "cucinavo",
+     "explanation": "The imperfetto describes an action in progress that forms the background, while the passato prossimo reports the single completed event that interrupts it."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete the answer: 'Mi dai il libro?' 'Sì, ___ do subito.'",
+     "options": [
+      "te lo",
+      "ti lo",
+      "me lo",
+      "lo ti"
+     ],
+     "answer": "te lo",
+     "explanation": "When an indirect pronoun meets a direct one, mi, ti, ci and vi become me, te, ce and ve: te lo do, ce ne parla."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete with the right participle: 'Le chiavi? Non le ho ancora ___.'",
+     "options": [
+      "viste",
+      "visto",
+      "visti",
+      "vista"
+     ],
+     "answer": "viste",
+     "explanation": "After avere the participle agrees with a direct object pronoun that comes before the verb: le ho viste, li ho visti, l'ho vista."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 5,
+     "prompt": "Complete the reply about quantity: 'Quanti fratelli hai?' '___ ho due.'",
+     "answer": "Ne",
+     "accepted": [
+      "ne"
+     ],
+     "explanation": "The particle ne replaces a quantified noun already mentioned, so it means of them here: ne ho due, ne parliamo domani."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "You address a client formally and invite the person to sit down. Which form is right?",
+     "options": [
+      "Si accomodi, prego.",
+      "Ti accomodi, prego.",
+      "Accomodati, prego.",
+      "Vi accomodate, prego."
+     ],
+     "answer": "Si accomodi, prego.",
+     "explanation": "The formal imperative uses the third person of the congiuntivo, and its pronoun stands before the verb: si accomodi, mi scusi, mi dica."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete with the futuro semplice of the verb andare: 'Domani noi ___ al mare.'",
+     "answer": "andremo",
+     "accepted": [
+      "Andremo"
+     ],
+     "explanation": "Andare drops the vowel of the stem in the future: andrò, andrai, andrà, andremo, andrete, andranno."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Which sentence orders a coffee politely?",
+     "options": [
+      "Vorrei un caffè, per favore.",
+      "Vorrò un caffè, per favore.",
+      "Volerei un caffè, per favore.",
+      "Volevo volere un caffè, per favore."
+     ],
+     "answer": "Vorrei un caffè, per favore.",
+     "explanation": "The condizionale presente softens a request. Volere is irregular and gives vorrei, vorresti, vorrebbe."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Complete the comparison: 'Marco è più alto ___ me.'",
+     "options": [
+      "di",
+      "che",
+      "come",
+      "quanto"
+     ],
+     "answer": "di",
+     "explanation": "Use di before a noun or a pronoun. Use che when you compare two adjectives, two verbs or two elements introduced by a preposition."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 6,
+     "prompt": "Complete with the trapassato prossimo of the verb uscire: 'Quando ho telefonato, Anna era già ___.'",
+     "answer": "uscita",
+     "accepted": [
+      "Uscita"
+     ],
+     "explanation": "The trapassato prossimo marks what happened before another past action. Uscire takes essere, so the participle agrees with Anna."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Which sentence states a general habit with the impersonal si?",
+     "options": [
+      "In Italia si cena tardi.",
+      "In Italia si cenano tardi.",
+      "In Italia ci cena tardi.",
+      "In Italia si è cena tardi."
+     ],
+     "answer": "In Italia si cena tardi.",
+     "explanation": "The impersonal si takes the third person singular when no direct object follows, and it means people in general."
+    }
+   ]
+  },
+  {
+   "id": "it-b1",
+   "levelId": "B1",
+   "title": "B1, congiuntivo e strutture complesse",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete the opinion: 'Penso che lui ___ ragione.'",
+     "options": [
+      "abbia",
+      "ha",
+      "avrà",
+      "avrebbe"
+     ],
+     "answer": "abbia",
+     "explanation": "Verbs of opinion such as pensare, credere and sembrare take the congiuntivo in the subordinate clause when the subjects differ."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Both clauses share the same subject. Which sentence is correct?",
+     "options": [
+      "Spero di arrivare in tempo.",
+      "Spero che arrivo in tempo.",
+      "Spero che arrivi in tempo io.",
+      "Spero di arrivi in tempo."
+     ],
+     "answer": "Spero di arrivare in tempo.",
+     "explanation": "When the two clauses share one subject, Italian uses di plus the infinitive instead of che plus the congiuntivo."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Complete the impossible condition: 'Se lo ___, te lo avrei detto.'",
+     "options": [
+      "avessi saputo",
+      "sapessi",
+      "sapevo",
+      "avrei saputo"
+     ],
+     "answer": "avessi saputo",
+     "explanation": "The third periodo ipotetico pairs the congiuntivo trapassato in the se clause with the condizionale passato in the main clause."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 7,
+     "prompt": "Complete with the imperfetto congiuntivo of the verb essere: 'Se ___ più giovane, viaggerei di più.'",
+     "answer": "fossi",
+     "accepted": [
+      "io fossi",
+      "Fossi"
+     ],
+     "explanation": "The second periodo ipotetico expresses an unlikely hypothesis: se plus imperfetto congiuntivo in one clause, condizionale presente in the other."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Complete respecting the sequence of tenses: 'Pensavo che tu ___ già partito.'",
+     "options": [
+      "fossi",
+      "sei",
+      "sarai",
+      "sia"
+     ],
+     "answer": "fossi",
+     "explanation": "When the main verb is in the past, an earlier or simultaneous subordinate action takes the congiuntivo imperfetto or trapassato, not the presente."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete the relative clause: 'Il collega ___ ti ho parlato arriva domani.'",
+     "options": [
+      "di cui",
+      "che",
+      "il che",
+      "quale"
+     ],
+     "answer": "di cui",
+     "explanation": "Cui replaces che after a preposition, and the preposition is the one the verb requires: parlare di qualcuno gives di cui."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 7,
+     "prompt": "Report the promise using the condizionale passato of the verb tornare: 'Mi ha promesso che ___ presto.'",
+     "answer": "sarebbe tornato",
+     "accepted": [
+      "Sarebbe tornato"
+     ],
+     "explanation": "Italian expresses the future seen from a past moment with the condizionale passato, not with the condizionale presente."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Which sentence expresses that the form must be handed in by Friday?",
+     "options": [
+      "Il modulo va compilato entro venerdì.",
+      "Il modulo viene stato compilato entro venerdì.",
+      "Il modulo è andato compilato entro venerdì.",
+      "Il modulo si è compilare entro venerdì."
+     ],
+     "answer": "Il modulo va compilato entro venerdì.",
+     "explanation": "In the passive, essere is neutral, venire stresses the action and andare adds the sense of obligation: va fatto means it must be done."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Which sentence uses the si passivante correctly?",
+     "options": [
+      "In questo negozio si vendono prodotti locali.",
+      "In questo negozio si vende prodotti locali.",
+      "In questo negozio si sono venduto prodotti locali.",
+      "In questo negozio ci vendono prodotti locali."
+     ],
+     "answer": "In questo negozio si vendono prodotti locali.",
+     "explanation": "With a transitive verb the si passivante makes the object the subject, so the verb agrees with it in number: si vende un prodotto, si vendono prodotti."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 7,
+     "prompt": "Turn the words of Luca into reported speech. He said: 'Ho finito il lavoro.' Luca ha detto che ___ il lavoro.",
+     "answer": "aveva finito",
+     "accepted": [
+      "Aveva finito"
+     ],
+     "explanation": "In reported speech after a past reporting verb, a passato prossimo shifts to the trapassato prossimo, and pronouns shift with it."
+    }
+   ]
+  }
+ ]
+}

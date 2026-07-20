@@ -1,0 +1,670 @@
+[
+ {
+  "id": "it-a1-cils-mock",
+  "levelId": "A1",
+  "title": "Prova modello CILS A1",
+  "description": "A full A1 mock with four abilities in the official modular format. Each ability is passed or failed on its own.",
+  "passRule": "Prova modulare: ogni abilità deve essere superata da sola con almeno il 55%. Il totale non compensa una sezione insufficiente.",
+  "sources": [
+   "cils-a1"
+  ],
+  "sections": [
+   {
+    "id": "ascolto",
+    "kind": "LISTENING",
+    "title": "Ascolto",
+    "instructions": "Listen to the announcement (the app reads the transcript aloud), then answer the five questions.",
+    "passPercent": 55,
+    "passages": [
+     {
+      "id": "ascolto1",
+      "title": "Annuncio al supermercato",
+      "text": "Buongiorno e benvenuti al supermercato Il Girasole. Oggi abbiamo un'offerta speciale: due chili di arance costano solo tre euro. Al banco del pane trovate la focaccia calda fino alle dodici. La cassa numero quattro è solo per chi ha meno di dieci prodotti. Il supermercato chiude alle venti. Grazie e buona spesa.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Dove si sente questo annuncio?",
+      "options": [
+       "Al supermercato",
+       "Alla stazione",
+       "Al cinema",
+       "A scuola"
+      ],
+      "answer": "Al supermercato",
+      "difficulty": 2,
+      "explanation": "It is an in-store announcement at the supermarket Il Girasole."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quanto costano due chili di arance?",
+      "options": [
+       "Tre euro",
+       "Due euro",
+       "Quattro euro",
+       "Dieci euro"
+      ],
+      "answer": "Tre euro",
+      "difficulty": 2,
+      "explanation": "The special offer is two kilos of oranges for three euros."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa si trova al banco del pane fino alle dodici?",
+      "options": [
+       "La focaccia calda",
+       "Il pesce fresco",
+       "Il latte freddo",
+       "La pizza fredda"
+      ],
+      "answer": "La focaccia calda",
+      "difficulty": 3,
+      "explanation": "Warm focaccia is available at the bread counter until midday."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Per chi è la cassa numero quattro?",
+      "options": [
+       "Per chi ha meno di dieci prodotti",
+       "Per chi paga con la carta",
+       "Per le famiglie con bambini",
+       "Per chi compra solo pane"
+      ],
+      "answer": "Per chi ha meno di dieci prodotti",
+      "difficulty": 3,
+      "explanation": "Checkout four is reserved for customers with fewer than ten items."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Il supermercato chiude alle ___ (numero in cifre).",
+      "answer": "20",
+      "difficulty": 3,
+      "explanation": "The announcement says the supermarket closes at eight in the evening, alle venti.",
+      "strictDiacritics": true
+     }
+    ]
+   },
+   {
+    "id": "lettura",
+    "kind": "READING",
+    "title": "Comprensione della lettura",
+    "instructions": "Read the notice and answer the five questions.",
+    "passPercent": 55,
+    "passages": [
+     {
+      "id": "lettura1",
+      "title": "Avviso: corso di nuoto in piscina",
+      "text": "Piscina comunale: corso di nuoto per adulti. Le lezioni sono il martedì e il giovedì, dalle diciotto alle diciannove. Il corso comincia il tre marzo e dura due mesi. Il prezzo è quaranta euro al mese, ma gli studenti pagano trenta euro. La piscina è in via Roma 15, vicino alla farmacia. Per il corso servono il costume, la cuffia e un asciugamano. Per l'iscrizione l'ufficio è aperto dal lunedì al venerdì, dalle nove alle tredici.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "In quali giorni sono le lezioni di nuoto?",
+      "options": [
+       "Il martedì e il giovedì",
+       "Il lunedì e il mercoledì",
+       "Il sabato e la domenica",
+       "Tutti i giorni"
+      ],
+      "answer": "Il martedì e il giovedì",
+      "difficulty": 2,
+      "explanation": "Lessons run on Tuesday and Thursday from six to seven in the evening."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quando comincia il corso?",
+      "options": [
+       "Il tre marzo",
+       "Il due marzo",
+       "Il tre maggio",
+       "Il primo aprile"
+      ],
+      "answer": "Il tre marzo",
+      "difficulty": 2,
+      "explanation": "The course starts on 3 March and lasts two months."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Uno studente paga ___ euro al mese (numero in cifre).",
+      "answer": "30",
+      "difficulty": 3,
+      "explanation": "Students pay a reduced price of thirty euros; the normal price is forty.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Dov'è la piscina?",
+      "options": [
+       "In via Roma 15",
+       "In via Roma 50",
+       "Vicino alla stazione",
+       "Dietro la scuola"
+      ],
+      "answer": "In via Roma 15",
+      "difficulty": 3,
+      "explanation": "The pool is at via Roma 15, next to the pharmacy."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa serve per il corso?",
+      "options": [
+       "Il costume, la cuffia e un asciugamano",
+       "Un libro e un quaderno",
+       "Le scarpe da tennis",
+       "Niente"
+      ],
+      "answer": "Il costume, la cuffia e un asciugamano",
+      "difficulty": 3,
+      "explanation": "A swimsuit, a swim cap and a towel are needed for the course."
+     }
+    ]
+   },
+   {
+    "id": "scrittura",
+    "kind": "WRITING",
+    "title": "Produzione scritta",
+    "instructions": "Write a short message of 30 to 40 words, then tick the rubric points.",
+    "passPercent": 55,
+    "prompts": [
+     {
+      "prompt": "Non puoi andare alla cena di sabato a casa della tua amica Sara. Scrivile un messaggio (da 30 a 40 parole): saluta, di' che non puoi venire, spiega perché e proponi un altro giorno.",
+      "modelAnswer": "Ciao Sara! Grazie per l'invito. Mi dispiace, sabato non posso venire alla cena. Lavoro fino a tardi perché un collega è malato. Sono libero domenica sera: mangiamo una pizza insieme? Un abbraccio, Luca",
+      "rubric": [
+       "Il testo ha da 30 a 40 parole",
+       "Il testo comincia con un saluto",
+       "Il testo dice chiaramente che sabato non vengo",
+       "Il testo spiega perché non posso venire",
+       "Il testo propone un altro giorno",
+       "Il testo finisce con un saluto e il nome"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "orale",
+    "kind": "SPEAKING",
+    "title": "Produzione orale",
+    "instructions": "Speak each task ALOUD, then tick the rubric points.",
+    "passPercent": 55,
+    "prompts": [
+     {
+      "prompt": "Presentati: nome, età, paese, città, lingue, lavoro e un hobby. Parla ad alta voce per circa un minuto.",
+      "modelAnswer": "Ciao, mi chiamo Ana Petrova. Ho ventisei anni e vengo dalla Bulgaria. Adesso abito a Torino. Parlo bulgaro, inglese e un po' di italiano. Sono infermiera e lavoro in un ospedale. Ho un fratello e un gatto. Il fine settimana faccio sport e cucino con gli amici.",
+      "rubric": [
+       "Dico il mio nome, la mia età e il mio paese",
+       "Dico dove abito e che lavoro faccio",
+       "Nomino almeno due lingue",
+       "Nomino un hobby",
+       "Parlo con frasi complete, senza pause lunghe"
+      ]
+     },
+     {
+      "prompt": "Fai una domanda semplice sul tema del cibo e poi rispondi tu alla stessa domanda. Parla ad alta voce.",
+      "modelAnswer": "Che cosa mangi a colazione? Io a colazione mangio pane con la marmellata e bevo un caffè. La domenica mangio anche un cornetto. E tu? Bevi il caffè o il tè?",
+      "rubric": [
+       "Faccio una domanda con una parola interrogativa (che cosa, dove, quando)",
+       "La domanda è sul tema del cibo",
+       "Rispondo io con almeno due frasi",
+       "Alla fine faccio una seconda domanda"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "it-a2-cils-mock",
+  "levelId": "A2",
+  "title": "Prova modello CILS A2",
+  "description": "A full A2 mock with four abilities in the official modular format. Each ability is passed or failed on its own.",
+  "passRule": "Prova modulare: serve almeno il 55% in ogni singola abilità. Una sezione sotto la soglia non viene compensata dalle altre.",
+  "sources": [
+   "cils-a2"
+  ],
+  "sections": [
+   {
+    "id": "ascolto",
+    "kind": "LISTENING",
+    "title": "Ascolto",
+    "instructions": "Listen to the voicemail (the app reads the transcript aloud), then answer the five questions.",
+    "passPercent": 55,
+    "passages": [
+     {
+      "id": "ascolto1",
+      "title": "Messaggio in segreteria telefonica",
+      "text": "Buongiorno, sono Marta della farmacia Bellini. La chiamo per il suo ordine. Le gocce per gli occhi sono arrivate questa mattina, però la crema che ha ordinato non era disponibile: arriverà giovedì. Se vuole, può passare oggi per le gocce e tornare giovedì per la crema, oppure ritirare tutto insieme venerdì. In totale pagherà ventidue euro. Siamo aperti dalle otto e trenta alle diciannove e trenta, il sabato solo la mattina. Deve portare la ricetta del medico, altrimenti non possiamo darle le gocce. Grazie e buona giornata.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Chi lascia il messaggio?",
+      "options": [
+       "Una farmacia",
+       "Un medico",
+       "Un supermercato",
+       "Una parrucchiera"
+      ],
+      "answer": "Una farmacia",
+      "difficulty": 3,
+      "explanation": "Marta introduces herself as calling from the Bellini pharmacy."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quando arriverà la crema?",
+      "options": [
+       "Giovedì",
+       "Questa mattina",
+       "Venerdì",
+       "Sabato"
+      ],
+      "answer": "Giovedì",
+      "difficulty": 3,
+      "explanation": "The eye drops arrived this morning; the cream will arrive on Thursday."
+     },
+     {
+      "type": "FILL",
+      "prompt": "In totale il cliente pagherà ___ euro (numero in lettere).",
+      "answer": "ventidue",
+      "difficulty": 4,
+      "explanation": "The total price given in the message is 22 euros.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quando è aperta la farmacia il sabato?",
+      "options": [
+       "Solo la mattina",
+       "Tutto il giorno",
+       "Solo il pomeriggio",
+       "Il sabato è chiusa"
+      ],
+      "answer": "Solo la mattina",
+      "difficulty": 4,
+      "explanation": "Weekdays 8:30 to 19:30, but on Saturday only in the morning."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa deve portare il cliente?",
+      "options": [
+       "La ricetta del medico",
+       "La tessera della palestra",
+       "La vecchia crema",
+       "Il numero dell'ordine"
+      ],
+      "answer": "La ricetta del medico",
+      "difficulty": 4,
+      "explanation": "Without the doctor's prescription the pharmacy cannot hand over the drops."
+     }
+    ]
+   },
+   {
+    "id": "lettura",
+    "kind": "READING",
+    "title": "Comprensione della lettura",
+    "instructions": "Read the email and answer the five questions.",
+    "passPercent": 55,
+    "passages": [
+     {
+      "id": "lettura1",
+      "title": "Mail di Paola: gita di domenica",
+      "text": "Da: Paola. Oggetto: gita di domenica. Ciao Marco, domenica finalmente faremo la gita al lago! Partiremo dalla piazza del mercato alle otto e mezza, così arriveremo prima dei turisti. Verrà anche mio cugino Luca con la sua macchina, quindi non dovrai prendere la tua. Porta scarpe comode, perché faremo un sentiero di due ore intorno al lago. Io preparerò i panini per tutti, tu potresti portare l'acqua e la frutta? Se il tempo sarà brutto, rimanderemo tutto alla domenica dopo. Dimmi entro venerdì se vieni, così Luca sa quanti posti servono. Un abbraccio, Paola",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Perché Paola scrive questa mail?",
+      "options": [
+       "Per organizzare una gita al lago",
+       "Per invitare Marco al cinema",
+       "Per cancellare un viaggio",
+       "Per vendere la sua macchina"
+      ],
+      "answer": "Per organizzare una gita al lago",
+      "difficulty": 3,
+      "explanation": "The whole email organises Sunday's trip to the lake."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "A che ora partirà il gruppo?",
+      "options": [
+       "Alle otto e mezza",
+       "Alle otto",
+       "Alle nove e mezza",
+       "Alle dieci"
+      ],
+      "answer": "Alle otto e mezza",
+      "difficulty": 3,
+      "explanation": "They leave from the market square at half past eight to beat the tourists."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Marco dovrebbe portare l'acqua e la ___.",
+      "answer": "frutta",
+      "difficulty": 4,
+      "explanation": "Paola makes the sandwiches and asks Marco to bring water and fruit.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa faranno se il tempo sarà brutto?",
+      "options": [
+       "Rimanderanno la gita alla domenica dopo",
+       "Andranno al cinema",
+       "Faranno la gita sotto la pioggia",
+       "Partiranno il sabato"
+      ],
+      "answer": "Rimanderanno la gita alla domenica dopo",
+      "difficulty": 4,
+      "explanation": "In bad weather everything is postponed to the following Sunday."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Entro quando deve rispondere Marco?",
+      "options": [
+       "Entro venerdì",
+       "Entro domenica",
+       "Entro giovedì",
+       "Entro stasera"
+      ],
+      "answer": "Entro venerdì",
+      "difficulty": 5,
+      "explanation": "Paola asks for an answer by Friday so Luca knows how many seats are needed."
+     }
+    ]
+   },
+   {
+    "id": "scrittura",
+    "kind": "WRITING",
+    "title": "Produzione scritta",
+    "instructions": "Write a short email of about 50 words, then tick the rubric points.",
+    "passPercent": 55,
+    "prompts": [
+     {
+      "prompt": "Un amico ti ha invitato alla sua festa di compleanno venerdì, ma non puoi andare. Scrivigli una mail (circa 50 parole): ringrazia per l'invito, di' che non puoi andare, spiega il motivo e proponi un altro momento per vedervi.",
+      "modelAnswer": "Caro Davide,\n\ngrazie mille per l'invito alla tua festa! Purtroppo venerdì non potrò venire, perché quella sera lavorerò fino alle dieci: una collega è in ferie e la sostituisco io. Mi dispiace davvero. Potremmo vederci sabato pomeriggio per un caffè? Così ti porto anche il regalo.\n\nA presto\nElena",
+      "rubric": [
+       "Il testo ha circa 50 parole",
+       "Il testo ringrazia per l'invito",
+       "Il testo dice chiaramente che venerdì non vengo",
+       "Il testo spiega il motivo",
+       "Il testo propone un altro momento per vedersi",
+       "Saluto iniziale e finale adatti al tono informale (tu)"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "orale",
+    "kind": "SPEAKING",
+    "title": "Produzione orale",
+    "instructions": "Speak each task ALOUD, then tick the rubric points.",
+    "passPercent": 55,
+    "prompts": [
+     {
+      "prompt": "Gioco di ruolo al mercato: compra frutta e verdura per una cena, chiedi il prezzo, chiedi un sacchetto in modo gentile e saluta. Parla ad alta voce.",
+      "modelAnswer": "Buongiorno! Vorrei un chilo di pomodori e due peperoni, per favore. Quanto costano le melanzane? Due euro al chilo? Allora ne prendo una. Quanto viene tutto insieme? Sei euro e cinquanta, ecco a lei. Potrebbe darmi un sacchetto, per favore? Grazie mille, arrivederci!",
+      "rubric": [
+       "Saluto all'inizio e alla fine",
+       "Compro almeno due cose",
+       "Chiedo il prezzo",
+       "Chiedo un sacchetto in modo gentile",
+       "Uso una forma di cortesia (vorrei, potrebbe)"
+      ]
+     },
+     {
+      "prompt": "Racconta il tuo ultimo fine settimana: che cosa hai fatto sabato e domenica, con chi, e com'era il tempo. Parla ad alta voce per circa due minuti.",
+      "modelAnswer": "Sabato mattina sono andata al mercato con mia sorella e ho comprato frutta e fiori. Il tempo era bellissimo, quindi il pomeriggio abbiamo fatto un giro in bicicletta lungo il fiume. La sera ho cucinato una torta per la cena da mia madre. Domenica invece pioveva, così sono rimasta a casa: ho letto un libro, ho ascoltato musica e ho chiamato una vecchia amica che abita in Spagna. Prima parlavamo ogni settimana, adesso solo una volta al mese.",
+      "rubric": [
+       "Racconto almeno tre attività al passato",
+       "Parlo sia del sabato sia della domenica",
+       "Dico con chi ho fatto le attività",
+       "Descrivo com'era il tempo",
+       "Parlo per circa due minuti"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "it-b1-cils-mock",
+  "levelId": "B1",
+  "title": "Prova modello CILS UNO-B1",
+  "description": "A full B1 mock with four abilities in the official modular format, passed ability by ability. B1 is the level Italian citizenship requires. A separate shortened B1 Cittadinanza exam also exists: it is valid only for citizenship, not for work or study.",
+  "passRule": "Prova modulare: ogni abilità va superata separatamente con almeno il 55% (11 punti su 20). Il totale non salva un'abilità insufficiente.",
+  "sources": [
+   "cils-b1",
+   "b1-cittadinanza"
+  ],
+  "sections": [
+   {
+    "id": "ascolto",
+    "kind": "LISTENING",
+    "title": "Ascolto",
+    "instructions": "Listen to the radio item (the app reads the transcript aloud), then answer the five questions.",
+    "passPercent": 55,
+    "passages": [
+     {
+      "id": "ascolto1",
+      "title": "Notizia alla radio: il caffè delle riparazioni",
+      "text": "E ora una notizia dal nostro quartiere. Sabato prossimo aprirà in via dei Tigli il primo caffè delle riparazioni della città. L'idea è semplice: chi ha un oggetto rotto, una lampada, un tostapane, una bicicletta, lo porta al caffè e prova a ripararlo insieme a un volontario, invece di buttarlo via. Il servizio è gratuito: si paga soltanto il pezzo di ricambio, quando serve. L'iniziativa nasce da un gruppo di pensionati, ma i responsabili sperano che partecipino anche i giovani, perché molti non hanno mai imparato a riparare niente. Il caffè sarà aperto ogni secondo sabato del mese, dalle dieci alle diciassette, e non serve prenotare; però chi arriva dopo le sedici rischia di aspettare a lungo. L'anno scorso un progetto simile a Ferrara ha riparato più di seicento oggetti.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa aprirà sabato prossimo in via dei Tigli?",
+      "options": [
+       "Un caffè delle riparazioni",
+       "Un negozio di biciclette",
+       "Un bar per pensionati",
+       "Un mercato dell'usato"
+      ],
+      "answer": "Un caffè delle riparazioni",
+      "difficulty": 4,
+      "explanation": "The city's first repair cafe opens next Saturday in via dei Tigli."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quanto costa il servizio?",
+      "options": [
+       "È gratuito, si paga solo l'eventuale pezzo di ricambio",
+       "Dieci euro a oggetto",
+       "È gratuito solo per i pensionati",
+       "Si paga solo il primo sabato"
+      ],
+      "answer": "È gratuito, si paga solo l'eventuale pezzo di ricambio",
+      "difficulty": 5,
+      "explanation": "The repair help is free; only a spare part, if needed, is paid for."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Chi ha avuto l'idea del progetto?",
+      "options": [
+       "Un gruppo di pensionati",
+       "Un gruppo di studenti",
+       "Il comune",
+       "Un negozio del quartiere"
+      ],
+      "answer": "Un gruppo di pensionati",
+      "difficulty": 5,
+      "explanation": "The initiative comes from a group of pensioners, who hope young people will join too."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Il caffè sarà aperto ogni secondo ___ del mese.",
+      "answer": "sabato",
+      "difficulty": 6,
+      "explanation": "Opening day is every second Saturday of the month, from ten to five.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa è successo l'anno scorso a Ferrara?",
+      "options": [
+       "Un progetto simile ha riparato più di seicento oggetti",
+       "Il caffè ha chiuso per mancanza di volontari",
+       "Sono stati buttati via seicento oggetti",
+       "È stato aperto un negozio di ricambi"
+      ],
+      "answer": "Un progetto simile ha riparato più di seicento oggetti",
+      "difficulty": 6,
+      "explanation": "A similar project in Ferrara repaired more than six hundred objects last year."
+     }
+    ]
+   },
+   {
+    "id": "lettura",
+    "kind": "READING",
+    "title": "Comprensione della lettura",
+    "instructions": "Read the forum post and answer the five questions.",
+    "passPercent": 55,
+    "passages": [
+     {
+      "id": "lettura1",
+      "title": "Messaggio dal forum: negozi aperti la domenica",
+      "text": "Messaggio di Giulia, ore 21:47. Da quando il centro commerciale vicino a casa mia resta aperto tutte le domeniche, nel mio quartiere non si parla d'altro. Devo ammettere che all'inizio ero contenta: lavoro su turni e la domenica era l'unico giorno in cui riuscivo a fare la spesa con calma. Con il tempo, però, ho cambiato idea. Mia cognata fa la cassiera proprio lì e da due anni non passa una domenica intera con i suoi figli: può scegliere il giorno di riposo solo una volta al mese. Non credo che tutta questa apertura ci abbia reso la vita davvero più comoda; abbiamo solo spostato la spesa che prima facevamo il sabato. Inoltre i piccoli negozi del quartiere, che la domenica restano chiusi, perdono clienti ogni anno. Secondo me servirebbe una via di mezzo: aprire una o due domeniche al mese, pagare meglio chi accetta quel turno e lasciare agli altri il diritto di dire di no senza conseguenze. Prima che chiuda anche l'ultima libreria del quartiere, vorrei che il comune ne discutesse sul serio.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa pensava Giulia all'inizio delle aperture domenicali?",
+      "options": [
+       "Era contenta perché poteva fare la spesa con calma",
+       "Era contraria per colpa dei turni",
+       "Non aveva un'opinione precisa",
+       "Pensava che fossero inutili"
+      ],
+      "answer": "Era contenta perché poteva fare la spesa con calma",
+      "difficulty": 4,
+      "explanation": "Working shifts, she was initially happy: Sunday was her only calm shopping day."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Perché Giulia ha cambiato idea?",
+      "options": [
+       "Perché sua cognata non passa quasi mai la domenica con i figli",
+       "Perché il centro commerciale ha alzato i prezzi",
+       "Perché la domenica c'è troppa gente",
+       "Perché ha cambiato lavoro"
+      ],
+      "answer": "Perché sua cognata non passa quasi mai la domenica con i figli",
+      "difficulty": 5,
+      "explanation": "Her sister-in-law works there and has not had a full Sunday with her children in two years."
+     },
+     {
+      "type": "FILL",
+      "prompt": "La cognata di Giulia lavora come ___ nel centro commerciale.",
+      "answer": "cassiera",
+      "difficulty": 6,
+      "explanation": "The text says her sister-in-law works there as a cashier, fa la cassiera.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa dice Giulia dei piccoli negozi del quartiere?",
+      "options": [
+       "Perdono clienti ogni anno",
+       "Aprono anche la domenica",
+       "Hanno prezzi troppo alti",
+       "Sono più comodi del centro commerciale"
+      ],
+      "answer": "Perdono clienti ogni anno",
+      "difficulty": 6,
+      "explanation": "The small shops stay closed on Sundays and lose customers every year."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa propone Giulia alla fine del suo messaggio?",
+      "options": [
+       "Aprire una o due domeniche al mese e pagare meglio quei turni",
+       "Chiudere il centro commerciale",
+       "Aprire tutti i negozi ogni domenica",
+       "Trasferire la libreria nel centro commerciale"
+      ],
+      "answer": "Aprire una o due domeniche al mese e pagare meglio quei turni",
+      "difficulty": 7,
+      "explanation": "Her middle way: one or two open Sundays a month, better pay, and the right to refuse the shift."
+     }
+    ]
+   },
+   {
+    "id": "scrittura",
+    "kind": "WRITING",
+    "title": "Produzione scritta",
+    "instructions": "Write about 120 words per task, then tick the rubric points.",
+    "passPercent": 55,
+    "prompts": [
+     {
+      "prompt": "In un forum si discute se i ragazzi debbano avere il telefono a scuola. Scrivi una risposta (circa 120 parole): esprimi la tua opinione, racconta un'esperienza tua o di persone che conosci, riconosci un argomento della parte opposta e concludi con una proposta concreta.",
+      "modelAnswer": "Non credo che vietare del tutto il telefono sia la soluzione giusta, anche se capisco chi lo chiede.\n\nMio nipote frequenta la seconda media e nella sua classe i telefoni si consegnano all'ingresso; mi ha raccontato che all'inizio protestavano tutti, ma dopo qualche mese perfino lui ammette che durante l'intervallo si parla di più.\n\nÈ vero che il telefono distrae e che i social possono diventare un problema serio. Però lo strumento in sé può servire: dizionari, calendari, ricerche veloci.\n\nLa mia proposta è una via di mezzo: telefoni spenti e raccolti durante le lezioni, ma un'ora alla settimana in cui si usino in classe per imparare a usarli bene. Sarebbe più utile di qualsiasi divieto.",
+      "rubric": [
+       "Il testo ha circa 120 parole",
+       "Il testo esprime un'opinione chiara sul telefono a scuola",
+       "Il testo racconta un'esperienza concreta, propria o di conoscenti",
+       "Il testo riconosce almeno un argomento della parte opposta",
+       "Il testo si chiude con una proposta concreta",
+       "Il testo usa connettivi (però, anche se, ma) ed è diviso in paragrafi"
+      ]
+     },
+     {
+      "prompt": "Hai frequentato un corso serale di italiano, ma l'aula era spesso troppo fredda e due lezioni sono state cancellate senza avviso. Scrivi una mail formale alla scuola (circa 120 parole): presenta il problema, descrivi i due episodi, chiedi un rimborso parziale o lezioni di recupero e chiedi una risposta scritta.",
+      "modelAnswer": "Gentile Segreteria,\n\nfrequento il corso serale di italiano del martedì, iniziato a gennaio, e vi scrivo per segnalare due problemi.\n\nIn primo luogo, l'aula 12 è stata spesso troppo fredda: in febbraio diverse lezioni si sono svolte con i cappotti addosso, e alcuni iscritti hanno smesso di venire. In secondo luogo, le lezioni del 4 e dell'11 marzo sono state cancellate senza alcun avviso: ci siamo presentati davanti a un'aula chiusa.\n\nCapisco che possano esserci imprevisti, ma ritengo che un corso a pagamento debba garantire un servizio regolare. Vi chiedo quindi un rimborso parziale della quota oppure due lezioni di recupero entro la fine del corso.\n\nResto in attesa di una risposta scritta.\n\nCordiali saluti\nMarta Kovač",
+      "rubric": [
+       "Il testo ha circa 120 parole",
+       "Il testo indica quale corso frequento",
+       "Il testo descrive i due problemi (aula fredda e lezioni cancellate)",
+       "Il testo chiede un rimborso parziale oppure lezioni di recupero",
+       "Il testo chiede una risposta scritta",
+       "Saluto iniziale e finale formali (Gentile, Cordiali saluti)"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "orale",
+    "kind": "SPEAKING",
+    "title": "Produzione orale",
+    "instructions": "Speak each task ALOUD, then tick the rubric points.",
+    "passPercent": 55,
+    "prompts": [
+     {
+      "prompt": "Breve presentazione (2 o 3 minuti) sul tema dei mezzi pubblici nella tua città: descrivi la situazione, racconta un'esperienza personale, indica un vantaggio e un problema e concludi con la tua opinione su come migliorarli.",
+      "modelAnswer": "Oggi vorrei parlare dei mezzi pubblici della mia città. Abbiamo una rete di autobus abbastanza estesa e da due anni anche una linea di tram, però le corse serali sono poche.\n\nIo uso il tram ogni giorno per andare al lavoro. Il mese scorso, quando la linea è rimasta chiusa una settimana per lavori, ho dovuto prendere la macchina e ci mettevo il doppio del tempo: mi ha fatto capire quanto i mezzi mi servano.\n\nIl vantaggio principale è il prezzo: l'abbonamento mensile costa meno di due pieni di benzina. Il problema più grave è la puntualità, soprattutto d'inverno.\n\nSecondo me il comune dovrebbe aumentare le corse serali, anche se questo costasse di più: penso che più persone lascerebbero la macchina a casa se il servizio fosse davvero affidabile.",
+      "rubric": [
+       "Presento il tema all'inizio",
+       "Descrivo la situazione della mia città con almeno due dettagli",
+       "Racconto un'esperienza personale al passato",
+       "Indico almeno un vantaggio e un problema",
+       "Concludo con la mia opinione e una proposta",
+       "Parlo per 2 o 3 minuti in modo continuo"
+      ]
+     },
+     {
+      "prompt": "Pianificare insieme: con un compagno di corso devi organizzare la festa di fine corso per venti persone. Parlate di luogo, data, cibo e budget, fate proposte, reagite alle proposte dell'altro e trovate un accordo. Recita ad alta voce anche la parte del compagno.",
+      "modelAnswer": "Allora, cominciamo dalla data. Che ne dici dell'ultimo venerdì del corso, subito dopo la lezione?\n\nPer me va bene. E il luogo? Io proporrei la sala al piano terra della scuola, è gratuita.\n\nNon sono del tutto d'accordo: è un po' triste. Non potremmo andare in quel parco vicino alla scuola? Se facessimo un picnic, ognuno porterebbe qualcosa.\n\nBella idea, a meno che non piova. Facciamo così: parco se c'è il sole, sala della scuola in caso di pioggia.\n\nPerfetto. Per la musica porto io la cassa, e per il budget direi cinque euro a testa per le bibite. Sei d'accordo?\n\nD'accordo, allora scrivo io il messaggio agli altri.",
+      "rubric": [
+       "Faccio almeno due proposte concrete",
+       "Reagisco a una proposta dell'altro e spiego la mia posizione",
+       "Parliamo di luogo, data, cibo e budget",
+       "Decidiamo chi avvisa gli altri partecipanti",
+       "Alla fine troviamo un accordo",
+       "Uso espressioni per proporre e concordare (che ne dici di, sono d'accordo, facciamo così)"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

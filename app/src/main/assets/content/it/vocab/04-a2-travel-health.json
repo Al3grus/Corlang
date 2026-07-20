@@ -1,0 +1,1766 @@
+{
+ "packs": [
+  {
+   "id": "04-a2-travel-health",
+   "title": "A2: viaggi e salute",
+   "level": "A2",
+   "sources": [
+    "cils-a2",
+    "freq-it"
+   ],
+   "words": [
+    {
+     "id": "il viaggio",
+     "hr": "il viaggio",
+     "en": "trip, journey",
+     "pos": "n. m.",
+     "note": "pl. i viaggi; buon viaggio!",
+     "example": {
+      "target": "Il viaggio è durato sei ore.",
+      "gloss": "The journey took six hours."
+     }
+    },
+    {
+     "id": "la vacanza",
+     "hr": "la vacanza",
+     "en": "holiday",
+     "pos": "n. f.",
+     "note": "spesso al plurale: le vacanze",
+     "example": {
+      "target": "Andiamo in vacanza in Sardegna.",
+      "gloss": "We're going on holiday to Sardinia."
+     }
+    },
+    {
+     "id": "il turista",
+     "hr": "il turista",
+     "en": "tourist",
+     "pos": "n. m.",
+     "note": "pl. i turisti; f. la turista",
+     "example": {
+      "target": "D'estate ci sono troppi turisti.",
+      "gloss": "In summer there are too many tourists."
+     }
+    },
+    {
+     "id": "l'albergo",
+     "hr": "l'albergo",
+     "en": "hotel",
+     "pos": "n. m.",
+     "note": "pl. gli alberghi",
+     "example": {
+      "target": "Abbiamo prenotato un albergo in centro.",
+      "gloss": "We booked a hotel in the centre."
+     }
+    },
+    {
+     "id": "la camera doppia",
+     "hr": "la camera doppia",
+     "en": "double room",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vorrei una camera doppia per due notti.",
+      "gloss": "I'd like a double room for two nights."
+     }
+    },
+    {
+     "id": "la prenotazione",
+     "hr": "la prenotazione",
+     "en": "booking, reservation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho una prenotazione a nome Rossi.",
+      "gloss": "I have a booking under the name Rossi."
+     }
+    },
+    {
+     "id": "la valigia",
+     "hr": "la valigia",
+     "en": "suitcase",
+     "pos": "n. f.",
+     "note": "pl. le valigie",
+     "example": {
+      "target": "Devo ancora fare la valigia.",
+      "gloss": "I still have to pack my suitcase."
+     }
+    },
+    {
+     "id": "il bagaglio",
+     "hr": "il bagaglio",
+     "en": "luggage",
+     "pos": "n. m.",
+     "note": "pl. i bagagli",
+     "example": {
+      "target": "Il mio bagaglio non è arrivato.",
+      "gloss": "My luggage hasn't arrived."
+     }
+    },
+    {
+     "id": "il biglietto",
+     "hr": "il biglietto",
+     "en": "ticket",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ho comprato il biglietto di andata e ritorno.",
+      "gloss": "I bought a return ticket."
+     }
+    },
+    {
+     "id": "il volo",
+     "hr": "il volo",
+     "en": "flight",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il volo è stato cancellato.",
+      "gloss": "The flight was cancelled."
+     }
+    },
+    {
+     "id": "l'aeroporto",
+     "hr": "l'aeroporto",
+     "en": "airport",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ti accompagno all'aeroporto.",
+      "gloss": "I'll take you to the airport."
+     }
+    },
+    {
+     "id": "il porto",
+     "hr": "il porto",
+     "en": "port, harbour",
+     "pos": "n. m.",
+     "example": {
+      "target": "La nave è già in porto.",
+      "gloss": "The ship is already in port."
+     }
+    },
+    {
+     "id": "la nave",
+     "hr": "la nave",
+     "en": "ship",
+     "pos": "n. f.",
+     "example": {
+      "target": "Siamo andati in Grecia in nave.",
+      "gloss": "We went to Greece by ship."
+     }
+    },
+    {
+     "id": "il traghetto",
+     "hr": "il traghetto",
+     "en": "ferry",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il traghetto parte ogni due ore.",
+      "gloss": "The ferry leaves every two hours."
+     }
+    },
+    {
+     "id": "il binario",
+     "hr": "il binario",
+     "en": "platform, track",
+     "pos": "n. m.",
+     "note": "pl. i binari",
+     "example": {
+      "target": "Il treno parte dal binario cinque.",
+      "gloss": "The train leaves from platform five."
+     }
+    },
+    {
+     "id": "il ritardo",
+     "hr": "il ritardo",
+     "en": "delay",
+     "pos": "n. m.",
+     "note": "in ritardo significa late",
+     "example": {
+      "target": "Il treno ha venti minuti di ritardo.",
+      "gloss": "The train is twenty minutes late."
+     }
+    },
+    {
+     "id": "l'arrivo",
+     "hr": "l'arrivo",
+     "en": "arrival",
+     "pos": "n. m.",
+     "example": {
+      "target": "Gli arrivi sono al piano terra.",
+      "gloss": "Arrivals are on the ground floor."
+     }
+    },
+    {
+     "id": "la partenza",
+     "hr": "la partenza",
+     "en": "departure",
+     "pos": "n. f.",
+     "example": {
+      "target": "La partenza è prevista alle nove.",
+      "gloss": "Departure is scheduled for nine."
+     }
+    },
+    {
+     "id": "la dogana",
+     "hr": "la dogana",
+     "en": "customs",
+     "pos": "n. f.",
+     "example": {
+      "target": "Alla dogana ci hanno controllato i bagagli.",
+      "gloss": "At customs they checked our luggage."
+     }
+    },
+    {
+     "id": "il confine",
+     "hr": "il confine",
+     "en": "border",
+     "pos": "n. m.",
+     "example": {
+      "target": "Abbiamo passato il confine di notte.",
+      "gloss": "We crossed the border at night."
+     }
+    },
+    {
+     "id": "la mappa",
+     "hr": "la mappa",
+     "en": "map",
+     "pos": "n. f.",
+     "note": "anche la cartina",
+     "example": {
+      "target": "Guarda sulla mappa dove siamo.",
+      "gloss": "Look on the map to see where we are."
+     }
+    },
+    {
+     "id": "la guida",
+     "hr": "la guida",
+     "en": "guide, guidebook",
+     "pos": "n. f.",
+     "example": {
+      "target": "La guida ci ha spiegato la storia del posto.",
+      "gloss": "The guide explained the history of the place to us."
+     }
+    },
+    {
+     "id": "la cartolina",
+     "hr": "la cartolina",
+     "en": "postcard",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ti mando una cartolina dal mare.",
+      "gloss": "I'll send you a postcard from the seaside."
+     }
+    },
+    {
+     "id": "la spiaggia",
+     "hr": "la spiaggia",
+     "en": "beach",
+     "pos": "n. f.",
+     "note": "pl. le spiagge",
+     "example": {
+      "target": "La spiaggia è a dieci minuti a piedi.",
+      "gloss": "The beach is a ten minute walk away."
+     }
+    },
+    {
+     "id": "il mare",
+     "hr": "il mare",
+     "en": "sea",
+     "pos": "n. m.",
+     "note": "al mare significa at the seaside",
+     "example": {
+      "target": "D'estate andiamo sempre al mare.",
+      "gloss": "In summer we always go to the seaside."
+     }
+    },
+    {
+     "id": "la montagna",
+     "hr": "la montagna",
+     "en": "mountain",
+     "pos": "n. f.",
+     "example": {
+      "target": "In montagna si respira bene.",
+      "gloss": "In the mountains the air is good."
+     }
+    },
+    {
+     "id": "il lago",
+     "hr": "il lago",
+     "en": "lake",
+     "pos": "n. m.",
+     "note": "pl. i laghi",
+     "example": {
+      "target": "Abbiamo passato il weekend al lago.",
+      "gloss": "We spent the weekend at the lake."
+     }
+    },
+    {
+     "id": "il fiume",
+     "hr": "il fiume",
+     "en": "river",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il fiume passa dietro il paese.",
+      "gloss": "The river runs behind the village."
+     }
+    },
+    {
+     "id": "l'isola",
+     "hr": "l'isola",
+     "en": "island",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'isola si raggiunge solo in traghetto.",
+      "gloss": "The island can only be reached by ferry."
+     }
+    },
+    {
+     "id": "il campeggio",
+     "hr": "il campeggio",
+     "en": "campsite, camping",
+     "pos": "n. m.",
+     "example": {
+      "target": "Dormiamo in campeggio per risparmiare.",
+      "gloss": "We sleep at a campsite to save money."
+     }
+    },
+    {
+     "id": "l'ostello",
+     "hr": "l'ostello",
+     "en": "hostel",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'ostello costa venti euro a notte.",
+      "gloss": "The hostel costs twenty euros a night."
+     }
+    },
+    {
+     "id": "la pensione",
+     "hr": "la pensione",
+     "en": "guesthouse; pension",
+     "pos": "n. f.",
+     "example": {
+      "target": "Alloggiamo in una piccola pensione.",
+      "gloss": "We're staying in a small guesthouse."
+     }
+    },
+    {
+     "id": "il portiere",
+     "hr": "il portiere",
+     "en": "receptionist, porter",
+     "pos": "n. m.",
+     "example": {
+      "target": "Lascia la chiave al portiere.",
+      "gloss": "Leave the key with the receptionist."
+     }
+    },
+    {
+     "id": "la sveglia",
+     "hr": "la sveglia",
+     "en": "alarm clock",
+     "pos": "n. f.",
+     "example": {
+      "target": "Metti la sveglia alle sei.",
+      "gloss": "Set the alarm for six."
+     }
+    },
+    {
+     "id": "il noleggio",
+     "hr": "il noleggio",
+     "en": "hire, rental",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il noleggio della bici costa poco.",
+      "gloss": "Bike hire is cheap."
+     }
+    },
+    {
+     "id": "la patente",
+     "hr": "la patente",
+     "en": "driving licence",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho preso la patente a vent'anni.",
+      "gloss": "I got my driving licence at twenty."
+     }
+    },
+    {
+     "id": "la benzina",
+     "hr": "la benzina",
+     "en": "petrol",
+     "pos": "n. f.",
+     "example": {
+      "target": "Dobbiamo fare benzina.",
+      "gloss": "We need to get petrol."
+     }
+    },
+    {
+     "id": "l'autostrada",
+     "hr": "l'autostrada",
+     "en": "motorway",
+     "pos": "n. f.",
+     "example": {
+      "target": "In autostrada si paga il pedaggio.",
+      "gloss": "On the motorway you pay a toll."
+     }
+    },
+    {
+     "id": "il parcheggio",
+     "hr": "il parcheggio",
+     "en": "car park, parking",
+     "pos": "n. m.",
+     "note": "pl. i parcheggi",
+     "example": {
+      "target": "Non trovo parcheggio da nessuna parte.",
+      "gloss": "I can't find parking anywhere."
+     }
+    },
+    {
+     "id": "l'incidente",
+     "hr": "l'incidente",
+     "en": "accident",
+     "pos": "n. m.",
+     "example": {
+      "target": "C'è stato un incidente in autostrada.",
+      "gloss": "There's been an accident on the motorway."
+     }
+    },
+    {
+     "id": "viaggiare",
+     "hr": "viaggiare",
+     "en": "to travel",
+     "pos": "v.",
+     "example": {
+      "target": "Mi piace viaggiare in treno.",
+      "gloss": "I like travelling by train."
+     }
+    },
+    {
+     "id": "partire",
+     "hr": "partire",
+     "en": "to leave, to depart",
+     "pos": "v.",
+     "note": "aux. essere; partire per, partire da",
+     "example": {
+      "target": "Partiamo domani all'alba.",
+      "gloss": "We're leaving tomorrow at dawn."
+     }
+    },
+    {
+     "id": "arrivare",
+     "hr": "arrivare",
+     "en": "to arrive",
+     "pos": "v.",
+     "note": "aux. essere",
+     "example": {
+      "target": "Sono arrivato ieri sera.",
+      "gloss": "I arrived last night."
+     }
+    },
+    {
+     "id": "prenotare",
+     "hr": "prenotare",
+     "en": "to book",
+     "pos": "v.",
+     "example": {
+      "target": "Ho prenotato un tavolo per quattro.",
+      "gloss": "I booked a table for four."
+     }
+    },
+    {
+     "id": "visitare",
+     "hr": "visitare",
+     "en": "to visit (a place)",
+     "pos": "v.",
+     "note": "per le persone si dice andare a trovare",
+     "example": {
+      "target": "Domani visitiamo il centro storico.",
+      "gloss": "Tomorrow we're visiting the old town."
+     }
+    },
+    {
+     "id": "volare",
+     "hr": "volare",
+     "en": "to fly",
+     "pos": "v.",
+     "example": {
+      "target": "Non ho mai volato di notte.",
+      "gloss": "I've never flown at night."
+     }
+    },
+    {
+     "id": "guidare",
+     "hr": "guidare",
+     "en": "to drive",
+     "pos": "v.",
+     "example": {
+      "target": "Guido io, tu sei stanco.",
+      "gloss": "I'll drive, you're tired."
+     }
+    },
+    {
+     "id": "salire",
+     "hr": "salire",
+     "en": "to go up, to get on",
+     "pos": "v.",
+     "note": "io salgo; aux. essere",
+     "example": {
+      "target": "Saliamo sul treno, sta per partire.",
+      "gloss": "Let's get on the train, it's about to leave."
+     }
+    },
+    {
+     "id": "scendere",
+     "hr": "scendere",
+     "en": "to go down, to get off",
+     "pos": "v.",
+     "note": "aux. essere; p.p. sceso",
+     "example": {
+      "target": "Scendo alla prossima stazione.",
+      "gloss": "I'm getting off at the next station."
+     }
+    },
+    {
+     "id": "attraversare",
+     "hr": "attraversare",
+     "en": "to cross",
+     "pos": "v.",
+     "example": {
+      "target": "Attraversa la strada sulle strisce.",
+      "gloss": "Cross the road at the crossing."
+     }
+    },
+    {
+     "id": "perdere",
+     "hr": "perdere",
+     "en": "to lose, to miss",
+     "pos": "v.",
+     "note": "p.p. perso",
+     "example": {
+      "target": "Ho perso il treno delle otto.",
+      "gloss": "I missed the eight o'clock train."
+     }
+    },
+    {
+     "id": "portare",
+     "hr": "portare",
+     "en": "to bring, to carry, to wear",
+     "pos": "v.",
+     "example": {
+      "target": "Porto io il vino stasera.",
+      "gloss": "I'll bring the wine tonight."
+     }
+    },
+    {
+     "id": "la salute",
+     "hr": "la salute",
+     "en": "health",
+     "pos": "n. f.",
+     "example": {
+      "target": "La salute viene prima di tutto.",
+      "gloss": "Health comes before everything."
+     }
+    },
+    {
+     "id": "il dolore",
+     "hr": "il dolore",
+     "en": "pain",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ho un dolore forte alla schiena.",
+      "gloss": "I have a strong pain in my back."
+     }
+    },
+    {
+     "id": "la malattia",
+     "hr": "la malattia",
+     "en": "illness",
+     "pos": "n. f.",
+     "example": {
+      "target": "È una malattia poco grave.",
+      "gloss": "It's not a serious illness."
+     }
+    },
+    {
+     "id": "la febbre",
+     "hr": "la febbre",
+     "en": "fever, temperature",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho la febbre a trentotto.",
+      "gloss": "I have a temperature of thirty-eight."
+     }
+    },
+    {
+     "id": "il raffreddore",
+     "hr": "il raffreddore",
+     "en": "cold (illness)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ho preso il raffreddore.",
+      "gloss": "I've caught a cold."
+     }
+    },
+    {
+     "id": "la tosse",
+     "hr": "la tosse",
+     "en": "cough",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho la tosse da una settimana.",
+      "gloss": "I've had a cough for a week."
+     }
+    },
+    {
+     "id": "il mal di testa",
+     "hr": "il mal di testa",
+     "en": "headache",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ho un mal di testa terribile.",
+      "gloss": "I have a terrible headache."
+     }
+    },
+    {
+     "id": "il mal di gola",
+     "hr": "il mal di gola",
+     "en": "sore throat",
+     "pos": "n. m.",
+     "example": {
+      "target": "Con il mal di gola non riesco a parlare.",
+      "gloss": "With a sore throat I can't speak."
+     }
+    },
+    {
+     "id": "lo stomaco",
+     "hr": "lo stomaco",
+     "en": "stomach",
+     "pos": "n. m.",
+     "note": "pl. gli stomaci",
+     "example": {
+      "target": "Mi fa male lo stomaco.",
+      "gloss": "My stomach hurts."
+     }
+    },
+    {
+     "id": "la medicina",
+     "hr": "la medicina",
+     "en": "medicine",
+     "pos": "n. f.",
+     "example": {
+      "target": "Prendi la medicina dopo i pasti.",
+      "gloss": "Take the medicine after meals."
+     }
+    },
+    {
+     "id": "la pastiglia",
+     "hr": "la pastiglia",
+     "en": "tablet, pill",
+     "pos": "n. f.",
+     "example": {
+      "target": "Una pastiglia ogni otto ore.",
+      "gloss": "One tablet every eight hours."
+     }
+    },
+    {
+     "id": "la ricetta",
+     "hr": "la ricetta",
+     "en": "prescription; recipe",
+     "pos": "n. f.",
+     "example": {
+      "target": "Senza ricetta non posso darle il farmaco.",
+      "gloss": "Without a prescription I can't give you the drug."
+     }
+    },
+    {
+     "id": "la puntura",
+     "hr": "la puntura",
+     "en": "injection, sting",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'infermiere mi ha fatto una puntura.",
+      "gloss": "The nurse gave me an injection."
+     }
+    },
+    {
+     "id": "l'ambulanza",
+     "hr": "l'ambulanza",
+     "en": "ambulance",
+     "pos": "n. f.",
+     "example": {
+      "target": "Chiamate un'ambulanza, presto!",
+      "gloss": "Call an ambulance, quick!"
+     }
+    },
+    {
+     "id": "il pronto soccorso",
+     "hr": "il pronto soccorso",
+     "en": "accident and emergency",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'ho portato al pronto soccorso.",
+      "gloss": "I took him to accident and emergency."
+     }
+    },
+    {
+     "id": "il dentista",
+     "hr": "il dentista",
+     "en": "dentist",
+     "pos": "n. m.",
+     "note": "pl. i dentisti; f. la dentista",
+     "example": {
+      "target": "Domani vado dal dentista.",
+      "gloss": "Tomorrow I'm going to the dentist."
+     }
+    },
+    {
+     "id": "la visita",
+     "hr": "la visita",
+     "en": "medical examination, visit",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho una visita giovedì mattina.",
+      "gloss": "I have a medical appointment on Thursday morning."
+     }
+    },
+    {
+     "id": "l'analisi",
+     "hr": "l'analisi",
+     "en": "test, analysis",
+     "pos": "n. f.",
+     "note": "invariabile: le analisi",
+     "example": {
+      "target": "Devo fare le analisi del sangue.",
+      "gloss": "I have to have a blood test."
+     }
+    },
+    {
+     "id": "la ferita",
+     "hr": "la ferita",
+     "en": "wound",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ferita non è profonda.",
+      "gloss": "The wound isn't deep."
+     }
+    },
+    {
+     "id": "la benda",
+     "hr": "la benda",
+     "en": "bandage",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cambia la benda ogni giorno.",
+      "gloss": "Change the bandage every day."
+     }
+    },
+    {
+     "id": "il sangue",
+     "hr": "il sangue",
+     "en": "blood",
+     "pos": "n. m.",
+     "example": {
+      "target": "Alla vista del sangue mi sento male.",
+      "gloss": "At the sight of blood I feel faint."
+     }
+    },
+    {
+     "id": "la pelle",
+     "hr": "la pelle",
+     "en": "skin",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho la pelle molto sensibile al sole.",
+      "gloss": "My skin is very sensitive to the sun."
+     }
+    },
+    {
+     "id": "l'osso",
+     "hr": "l'osso",
+     "en": "bone",
+     "pos": "n. m.",
+     "note": "pl. le ossa, femminile",
+     "example": {
+      "target": "Si è rotto un osso del piede.",
+      "gloss": "He broke a bone in his foot."
+     }
+    },
+    {
+     "id": "il polmone",
+     "hr": "il polmone",
+     "en": "lung",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il fumo fa male ai polmoni.",
+      "gloss": "Smoking is bad for the lungs."
+     }
+    },
+    {
+     "id": "il paziente",
+     "hr": "il paziente",
+     "en": "patient",
+     "pos": "n. m.",
+     "note": "f. la paziente",
+     "example": {
+      "target": "Il medico riceve dieci pazienti al giorno.",
+      "gloss": "The doctor sees ten patients a day."
+     }
+    },
+    {
+     "id": "la cura",
+     "hr": "la cura",
+     "en": "treatment, care",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cura dura tre settimane.",
+      "gloss": "The treatment lasts three weeks."
+     }
+    },
+    {
+     "id": "ammalarsi",
+     "hr": "ammalarsi",
+     "en": "to fall ill",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere",
+     "example": {
+      "target": "Mi sono ammalato durante le vacanze.",
+      "gloss": "I fell ill during the holidays."
+     }
+    },
+    {
+     "id": "guarire",
+     "hr": "guarire",
+     "en": "to recover, to heal",
+     "pos": "v.",
+     "note": "io guarisco; aux. essere quando è intransitivo",
+     "example": {
+      "target": "Sono guarito in pochi giorni.",
+      "gloss": "I recovered in a few days."
+     }
+    },
+    {
+     "id": "curare",
+     "hr": "curare",
+     "en": "to treat, to look after",
+     "pos": "v.",
+     "example": {
+      "target": "Il dottore mi cura da anni.",
+      "gloss": "The doctor has been treating me for years."
+     }
+    },
+    {
+     "id": "far male",
+     "hr": "far male",
+     "en": "to hurt",
+     "pos": "expr.",
+     "note": "mi fa male la testa",
+     "example": {
+      "target": "Mi fanno male i piedi.",
+      "gloss": "My feet hurt."
+     }
+    },
+    {
+     "id": "sentirsi",
+     "hr": "sentirsi",
+     "en": "to feel",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere",
+     "example": {
+      "target": "Oggi mi sento molto meglio.",
+      "gloss": "Today I feel much better."
+     }
+    },
+    {
+     "id": "riposarsi",
+     "hr": "riposarsi",
+     "en": "to rest, to take a rest",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere",
+     "example": {
+      "target": "Devi riposarti almeno due giorni.",
+      "gloss": "You must rest for at least two days."
+     }
+    },
+    {
+     "id": "respirare",
+     "hr": "respirare",
+     "en": "to breathe",
+     "pos": "v.",
+     "example": {
+      "target": "Respiri profondamente, per favore.",
+      "gloss": "Breathe deeply, please."
+     }
+    },
+    {
+     "id": "malato",
+     "hr": "malato",
+     "en": "ill, sick",
+     "pos": "adj.",
+     "example": {
+      "target": "Mio figlio è malato e resta a casa.",
+      "gloss": "My son is ill and is staying home."
+     }
+    },
+    {
+     "id": "sano",
+     "hr": "sano",
+     "en": "healthy",
+     "pos": "adj.",
+     "example": {
+      "target": "Cerco di mangiare in modo sano.",
+      "gloss": "I try to eat healthily."
+     }
+    },
+    {
+     "id": "ferito",
+     "hr": "ferito",
+     "en": "injured",
+     "pos": "adj.",
+     "example": {
+      "target": "Per fortuna nessuno è rimasto ferito.",
+      "gloss": "Luckily nobody was injured."
+     }
+    },
+    {
+     "id": "grave",
+     "hr": "grave",
+     "en": "serious",
+     "pos": "adj.",
+     "note": "pl. gravi",
+     "example": {
+      "target": "Non è niente di grave.",
+      "gloss": "It's nothing serious."
+     }
+    },
+    {
+     "id": "urgente",
+     "hr": "urgente",
+     "en": "urgent",
+     "pos": "adj.",
+     "example": {
+      "target": "È una cosa urgente, mi scusi.",
+      "gloss": "It's urgent, excuse me."
+     }
+    },
+    {
+     "id": "stare bene",
+     "hr": "stare bene",
+     "en": "to be well; to suit",
+     "pos": "expr.",
+     "example": {
+      "target": "Quel vestito ti sta bene.",
+      "gloss": "That dress suits you."
+     }
+    },
+    {
+     "id": "avere bisogno di",
+     "hr": "avere bisogno di",
+     "en": "to need",
+     "pos": "expr.",
+     "example": {
+      "target": "Ho bisogno di riposare un po'.",
+      "gloss": "I need to rest a bit."
+     }
+    },
+    {
+     "id": "l'aiuto",
+     "hr": "l'aiuto",
+     "en": "help",
+     "pos": "n. m.",
+     "example": {
+      "target": "Grazie per il tuo aiuto.",
+      "gloss": "Thanks for your help."
+     }
+    },
+    {
+     "id": "il pericolo",
+     "hr": "il pericolo",
+     "en": "danger",
+     "pos": "n. m.",
+     "example": {
+      "target": "Non c'è nessun pericolo.",
+      "gloss": "There's no danger."
+     }
+    },
+    {
+     "id": "la sicurezza",
+     "hr": "la sicurezza",
+     "en": "safety, security",
+     "pos": "n. f.",
+     "example": {
+      "target": "Allacciate le cinture di sicurezza.",
+      "gloss": "Fasten your seatbelts."
+     }
+    },
+    {
+     "id": "la polizia",
+     "hr": "la polizia",
+     "en": "police",
+     "pos": "n. f.",
+     "note": "singolare, verbo al singolare",
+     "example": {
+      "target": "Ho chiamato la polizia.",
+      "gloss": "I called the police."
+     }
+    },
+    {
+     "id": "l'emergenza",
+     "hr": "l'emergenza",
+     "en": "emergency",
+     "pos": "n. f.",
+     "example": {
+      "target": "In caso di emergenza chiami questo numero.",
+      "gloss": "In an emergency call this number."
+     }
+    },
+    {
+     "id": "il furto",
+     "hr": "il furto",
+     "en": "theft",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ho denunciato il furto della bici.",
+      "gloss": "I reported the theft of my bike."
+     }
+    },
+    {
+     "id": "la denuncia",
+     "hr": "la denuncia",
+     "en": "police report",
+     "pos": "n. f.",
+     "note": "pl. le denunce",
+     "example": {
+      "target": "Devo fare la denuncia entro oggi.",
+      "gloss": "I have to file the report by today."
+     }
+    },
+    {
+     "id": "il modulo",
+     "hr": "il modulo",
+     "en": "form",
+     "pos": "n. m.",
+     "example": {
+      "target": "Compili il modulo in stampatello.",
+      "gloss": "Fill in the form in block capitals."
+     }
+    },
+    {
+     "id": "il comune",
+     "hr": "il comune",
+     "en": "town hall, municipality",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il certificato si chiede al comune.",
+      "gloss": "You request the certificate at the town hall."
+     }
+    },
+    {
+     "id": "il permesso di soggiorno",
+     "hr": "il permesso di soggiorno",
+     "en": "residence permit",
+     "pos": "n. m.",
+     "example": {
+      "target": "Devo rinnovare il permesso di soggiorno.",
+      "gloss": "I have to renew my residence permit."
+     }
+    },
+    {
+     "id": "la cittadinanza",
+     "hr": "la cittadinanza",
+     "en": "citizenship",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho fatto domanda di cittadinanza.",
+      "gloss": "I applied for citizenship."
+     }
+    },
+    {
+     "id": "la residenza",
+     "hr": "la residenza",
+     "en": "residence, registered address",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho cambiato residenza il mese scorso.",
+      "gloss": "I changed my registered address last month."
+     }
+    },
+    {
+     "id": "il certificato",
+     "hr": "il certificato",
+     "en": "certificate",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi serve un certificato di residenza.",
+      "gloss": "I need a certificate of residence."
+     }
+    },
+    {
+     "id": "la richiesta",
+     "hr": "la richiesta",
+     "en": "request, application",
+     "pos": "n. f.",
+     "example": {
+      "target": "La richiesta va presentata entro maggio.",
+      "gloss": "The application must be submitted by May."
+     }
+    },
+    {
+     "id": "lo sportello",
+     "hr": "lo sportello",
+     "en": "counter, window (office)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Si rivolga allo sportello tre.",
+      "gloss": "Please go to counter three."
+     }
+    },
+    {
+     "id": "la coda",
+     "hr": "la coda",
+     "en": "queue",
+     "pos": "n. f.",
+     "note": "fare la coda significa to queue",
+     "example": {
+      "target": "Ho fatto un'ora di coda.",
+      "gloss": "I queued for an hour."
+     }
+    },
+    {
+     "id": "il tempo libero",
+     "hr": "il tempo libero",
+     "en": "free time",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nel tempo libero leggo molto.",
+      "gloss": "In my free time I read a lot."
+     }
+    },
+    {
+     "id": "lo sport",
+     "hr": "lo sport",
+     "en": "sport",
+     "pos": "n. m.",
+     "note": "invariabile al plurale",
+     "example": {
+      "target": "Faccio sport tre volte a settimana.",
+      "gloss": "I do sport three times a week."
+     }
+    },
+    {
+     "id": "il calcio",
+     "hr": "il calcio",
+     "en": "football",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il calcio è lo sport più seguito in Italia.",
+      "gloss": "Football is the most followed sport in Italy."
+     }
+    },
+    {
+     "id": "la partita",
+     "hr": "la partita",
+     "en": "match, game",
+     "pos": "n. f.",
+     "example": {
+      "target": "La partita comincia alle venti e quarantacinque.",
+      "gloss": "The match starts at eight forty-five."
+     }
+    },
+    {
+     "id": "la squadra",
+     "hr": "la squadra",
+     "en": "team",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mia squadra ha vinto ieri.",
+      "gloss": "My team won yesterday."
+     }
+    },
+    {
+     "id": "la palestra",
+     "hr": "la palestra",
+     "en": "gym",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vado in palestra tre volte a settimana.",
+      "gloss": "I go to the gym three times a week."
+     }
+    },
+    {
+     "id": "il nuoto",
+     "hr": "il nuoto",
+     "en": "swimming",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il nuoto fa bene alla schiena.",
+      "gloss": "Swimming is good for your back."
+     }
+    },
+    {
+     "id": "la corsa",
+     "hr": "la corsa",
+     "en": "running, race",
+     "pos": "n. f.",
+     "example": {
+      "target": "Dopo la corsa mi faccio la doccia.",
+      "gloss": "After my run I have a shower."
+     }
+    },
+    {
+     "id": "la passeggiata",
+     "hr": "la passeggiata",
+     "en": "walk, stroll",
+     "pos": "n. f.",
+     "example": {
+      "target": "Facciamo una passeggiata dopo cena?",
+      "gloss": "Shall we take a walk after dinner?"
+     }
+    },
+    {
+     "id": "il ciclismo",
+     "hr": "il ciclismo",
+     "en": "cycling",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il ciclismo è molto popolare qui.",
+      "gloss": "Cycling is very popular here."
+     }
+    },
+    {
+     "id": "la musica",
+     "hr": "la musica",
+     "en": "music",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ascolto musica mentre lavoro.",
+      "gloss": "I listen to music while I work."
+     }
+    },
+    {
+     "id": "la canzone",
+     "hr": "la canzone",
+     "en": "song",
+     "pos": "n. f.",
+     "example": {
+      "target": "Questa canzone mi piace tantissimo.",
+      "gloss": "I really like this song."
+     }
+    },
+    {
+     "id": "il concerto",
+     "hr": "il concerto",
+     "en": "concert",
+     "pos": "n. m.",
+     "example": {
+      "target": "Sabato andiamo a un concerto.",
+      "gloss": "On Saturday we're going to a concert."
+     }
+    },
+    {
+     "id": "il film",
+     "hr": "il film",
+     "en": "film",
+     "pos": "n. m.",
+     "note": "invariabile al plurale",
+     "example": {
+      "target": "Che film hai visto ieri?",
+      "gloss": "What film did you see yesterday?"
+     }
+    },
+    {
+     "id": "il ballo",
+     "hr": "il ballo",
+     "en": "dance, dancing",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ho iniziato un corso di ballo.",
+      "gloss": "I've started a dance course."
+     }
+    },
+    {
+     "id": "la festa",
+     "hr": "la festa",
+     "en": "party, holiday",
+     "pos": "n. f.",
+     "example": {
+      "target": "Sabato c'è una festa da Anna.",
+      "gloss": "On Saturday there's a party at Anna's."
+     }
+    },
+    {
+     "id": "il gioco",
+     "hr": "il gioco",
+     "en": "game",
+     "pos": "n. m.",
+     "note": "pl. i giochi",
+     "example": {
+      "target": "Questo gioco è adatto ai bambini.",
+      "gloss": "This game is suitable for children."
+     }
+    },
+    {
+     "id": "il videogioco",
+     "hr": "il videogioco",
+     "en": "video game",
+     "pos": "n. m.",
+     "note": "pl. i videogiochi",
+     "example": {
+      "target": "Mio figlio passa ore ai videogiochi.",
+      "gloss": "My son spends hours playing video games."
+     }
+    },
+    {
+     "id": "il disegno",
+     "hr": "il disegno",
+     "en": "drawing",
+     "pos": "n. m.",
+     "example": {
+      "target": "Che bel disegno hai fatto!",
+      "gloss": "What a nice drawing you've made!"
+     }
+    },
+    {
+     "id": "la fotografia",
+     "hr": "la fotografia",
+     "en": "photography, photo",
+     "pos": "n. f.",
+     "note": "abbreviato: la foto, invariabile",
+     "example": {
+      "target": "La fotografia è la mia passione.",
+      "gloss": "Photography is my passion."
+     }
+    },
+    {
+     "id": "il romanzo",
+     "hr": "il romanzo",
+     "en": "novel",
+     "pos": "n. m.",
+     "example": {
+      "target": "Sto leggendo un romanzo italiano.",
+      "gloss": "I'm reading an Italian novel."
+     }
+    },
+    {
+     "id": "la mostra",
+     "hr": "la mostra",
+     "en": "exhibition",
+     "pos": "n. f.",
+     "example": {
+      "target": "C'è una mostra interessante in centro.",
+      "gloss": "There's an interesting exhibition downtown."
+     }
+    },
+    {
+     "id": "giocare",
+     "hr": "giocare",
+     "en": "to play (a game)",
+     "pos": "v.",
+     "note": "giocare a calcio, a carte; tu giochi",
+     "example": {
+      "target": "I bambini giocano a pallone in cortile.",
+      "gloss": "The children are playing ball in the courtyard."
+     }
+    },
+    {
+     "id": "nuotare",
+     "hr": "nuotare",
+     "en": "to swim",
+     "pos": "v.",
+     "example": {
+      "target": "Nuoto due volte a settimana.",
+      "gloss": "I swim twice a week."
+     }
+    },
+    {
+     "id": "correre",
+     "hr": "correre",
+     "en": "to run",
+     "pos": "v.",
+     "note": "p.p. corso",
+     "example": {
+      "target": "Corro ogni mattina al parco.",
+      "gloss": "I run in the park every morning."
+     }
+    },
+    {
+     "id": "ballare",
+     "hr": "ballare",
+     "en": "to dance",
+     "pos": "v.",
+     "example": {
+      "target": "Balliamo questa canzone?",
+      "gloss": "Shall we dance to this song?"
+     }
+    },
+    {
+     "id": "cantare",
+     "hr": "cantare",
+     "en": "to sing",
+     "pos": "v.",
+     "example": {
+      "target": "Canta sempre sotto la doccia.",
+      "gloss": "He always sings in the shower."
+     }
+    },
+    {
+     "id": "suonare",
+     "hr": "suonare",
+     "en": "to play (an instrument), to ring",
+     "pos": "v.",
+     "example": {
+      "target": "Suono la chitarra da dieci anni.",
+      "gloss": "I've played the guitar for ten years."
+     }
+    },
+    {
+     "id": "dipingere",
+     "hr": "dipingere",
+     "en": "to paint",
+     "pos": "v.",
+     "note": "p.p. dipinto",
+     "example": {
+      "target": "Nel weekend dipingo per rilassarmi.",
+      "gloss": "At the weekend I paint to relax."
+     }
+    },
+    {
+     "id": "disegnare",
+     "hr": "disegnare",
+     "en": "to draw",
+     "pos": "v.",
+     "example": {
+      "target": "Mia figlia disegna benissimo.",
+      "gloss": "My daughter draws very well."
+     }
+    },
+    {
+     "id": "fotografare",
+     "hr": "fotografare",
+     "en": "to photograph",
+     "pos": "v.",
+     "example": {
+      "target": "Ho fotografato tutto il centro storico.",
+      "gloss": "I photographed the whole old town."
+     }
+    },
+    {
+     "id": "divertirsi",
+     "hr": "divertirsi",
+     "en": "to have fun, to enjoy oneself",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere",
+     "example": {
+      "target": "Ci siamo divertiti moltissimo.",
+      "gloss": "We had a great time."
+     }
+    },
+    {
+     "id": "annoiarsi",
+     "hr": "annoiarsi",
+     "en": "to get bored",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere",
+     "example": {
+      "target": "Mi annoio quando piove tutto il giorno.",
+      "gloss": "I get bored when it rains all day."
+     }
+    },
+    {
+     "id": "rilassarsi",
+     "hr": "rilassarsi",
+     "en": "to relax",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere",
+     "example": {
+      "target": "La sera mi rilasso con un libro.",
+      "gloss": "In the evening I relax with a book."
+     }
+    },
+    {
+     "id": "passeggiare",
+     "hr": "passeggiare",
+     "en": "to stroll",
+     "pos": "v.",
+     "example": {
+      "target": "Passeggiamo lungo il fiume.",
+      "gloss": "We stroll along the river."
+     }
+    },
+    {
+     "id": "allenarsi",
+     "hr": "allenarsi",
+     "en": "to train, to work out",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere",
+     "example": {
+      "target": "Mi alleno il lunedì e il giovedì.",
+      "gloss": "I train on Mondays and Thursdays."
+     }
+    },
+    {
+     "id": "la paura",
+     "hr": "la paura",
+     "en": "fear",
+     "pos": "n. f.",
+     "note": "avere paura di",
+     "example": {
+      "target": "Ho paura dei cani grandi.",
+      "gloss": "I'm afraid of big dogs."
+     }
+    },
+    {
+     "id": "la gioia",
+     "hr": "la gioia",
+     "en": "joy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Che gioia rivederti!",
+      "gloss": "What a joy to see you again!"
+     }
+    },
+    {
+     "id": "la rabbia",
+     "hr": "la rabbia",
+     "en": "anger",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi è passata la rabbia.",
+      "gloss": "My anger has passed."
+     }
+    },
+    {
+     "id": "la sorpresa",
+     "hr": "la sorpresa",
+     "en": "surprise",
+     "pos": "n. f.",
+     "example": {
+      "target": "Che bella sorpresa!",
+      "gloss": "What a nice surprise!"
+     }
+    },
+    {
+     "id": "la speranza",
+     "hr": "la speranza",
+     "en": "hope",
+     "pos": "n. f.",
+     "example": {
+      "target": "Non ho perso la speranza.",
+      "gloss": "I haven't lost hope."
+     }
+    },
+    {
+     "id": "il sogno",
+     "hr": "il sogno",
+     "en": "dream",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ho fatto un sogno strano.",
+      "gloss": "I had a strange dream."
+     }
+    },
+    {
+     "id": "l'amore",
+     "hr": "l'amore",
+     "en": "love",
+     "pos": "n. m.",
+     "example": {
+      "target": "È stato amore a prima vista.",
+      "gloss": "It was love at first sight."
+     }
+    },
+    {
+     "id": "l'amicizia",
+     "hr": "l'amicizia",
+     "en": "friendship",
+     "pos": "n. f.",
+     "example": {
+      "target": "La nostra amicizia dura da vent'anni.",
+      "gloss": "Our friendship has lasted twenty years."
+     }
+    },
+    {
+     "id": "sperare",
+     "hr": "sperare",
+     "en": "to hope",
+     "pos": "v.",
+     "note": "sperare di + inf., sperare che + congiuntivo",
+     "example": {
+      "target": "Spero di rivederti presto.",
+      "gloss": "I hope to see you again soon."
+     }
+    },
+    {
+     "id": "sognare",
+     "hr": "sognare",
+     "en": "to dream",
+     "pos": "v.",
+     "example": {
+      "target": "Sogno di aprire un ristorante.",
+      "gloss": "I dream of opening a restaurant."
+     }
+    },
+    {
+     "id": "arrabbiarsi",
+     "hr": "arrabbiarsi",
+     "en": "to get angry",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere; arrabbiarsi con",
+     "example": {
+      "target": "Non arrabbiarti, è stato un errore.",
+      "gloss": "Don't get angry, it was a mistake."
+     }
+    },
+    {
+     "id": "preoccuparsi",
+     "hr": "preoccuparsi",
+     "en": "to worry",
+     "pos": "v.",
+     "note": "riflessivo, aux. essere; preoccuparsi per",
+     "example": {
+      "target": "Non ti preoccupare, arrivo io.",
+      "gloss": "Don't worry, I'm on my way."
+     }
+    },
+    {
+     "id": "sorridere",
+     "hr": "sorridere",
+     "en": "to smile",
+     "pos": "v.",
+     "note": "p.p. sorriso",
+     "example": {
+      "target": "Mi ha sorriso da lontano.",
+      "gloss": "She smiled at me from a distance."
+     }
+    },
+    {
+     "id": "piangere",
+     "hr": "piangere",
+     "en": "to cry",
+     "pos": "v.",
+     "note": "p.p. pianto",
+     "example": {
+      "target": "Il bambino piange perché ha sonno.",
+      "gloss": "The baby is crying because he's sleepy."
+     }
+    },
+    {
+     "id": "la nebbia",
+     "hr": "la nebbia",
+     "en": "fog",
+     "pos": "n. f.",
+     "example": {
+      "target": "Stamattina c'è molta nebbia.",
+      "gloss": "This morning there's a lot of fog."
+     }
+    },
+    {
+     "id": "il temporale",
+     "hr": "il temporale",
+     "en": "thunderstorm",
+     "pos": "n. m.",
+     "example": {
+      "target": "Sta arrivando un temporale.",
+      "gloss": "A thunderstorm is coming."
+     }
+    },
+    {
+     "id": "il ghiaccio",
+     "hr": "il ghiaccio",
+     "en": "ice",
+     "pos": "n. m.",
+     "example": {
+      "target": "Attenzione, sulla strada c'è ghiaccio.",
+      "gloss": "Careful, there's ice on the road."
+     }
+    },
+    {
+     "id": "il cielo",
+     "hr": "il cielo",
+     "en": "sky",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il cielo è limpido stasera.",
+      "gloss": "The sky is clear tonight."
+     }
+    },
+    {
+     "id": "la stella",
+     "hr": "la stella",
+     "en": "star",
+     "pos": "n. f.",
+     "example": {
+      "target": "In montagna si vedono tante stelle.",
+      "gloss": "In the mountains you can see a lot of stars."
+     }
+    },
+    {
+     "id": "la luna",
+     "hr": "la luna",
+     "en": "moon",
+     "pos": "n. f.",
+     "example": {
+      "target": "Stanotte c'è la luna piena.",
+      "gloss": "Tonight there's a full moon."
+     }
+    },
+    {
+     "id": "umido",
+     "hr": "umido",
+     "en": "damp, humid",
+     "pos": "adj.",
+     "example": {
+      "target": "Qui il clima è troppo umido.",
+      "gloss": "The climate here is too humid."
+     }
+    },
+    {
+     "id": "sereno",
+     "hr": "sereno",
+     "en": "clear (weather), calm",
+     "pos": "adj.",
+     "example": {
+      "target": "Domani il tempo sarà sereno.",
+      "gloss": "Tomorrow the weather will be clear."
+     }
+    },
+    {
+     "id": "secondo me",
+     "hr": "secondo me",
+     "en": "in my opinion",
+     "pos": "expr.",
+     "example": {
+      "target": "Secondo me hai fatto bene.",
+      "gloss": "In my opinion you did the right thing."
+     }
+    },
+    {
+     "id": "magari",
+     "hr": "magari",
+     "en": "maybe; I wish",
+     "pos": "adv.",
+     "example": {
+      "target": "Magari andiamo al mare domenica.",
+      "gloss": "Maybe we'll go to the seaside on Sunday."
+     }
+    },
+    {
+     "id": "purtroppo",
+     "hr": "purtroppo",
+     "en": "unfortunately",
+     "pos": "adv.",
+     "example": {
+      "target": "Purtroppo non posso aiutarti.",
+      "gloss": "Unfortunately I can't help you."
+     }
+    },
+    {
+     "id": "insomma",
+     "hr": "insomma",
+     "en": "in short, well",
+     "pos": "adv.",
+     "example": {
+      "target": "Insomma, alla fine è andata bene.",
+      "gloss": "In short, in the end it went well."
+     }
+    }
+   ]
+  }
+ ]
+}

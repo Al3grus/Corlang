@@ -1,0 +1,983 @@
+{
+  "levels": [
+    {
+      "levelId": "A1",
+      "intro": "A1 grammar builds the survival core of standard Italian: reading any word aloud correctly, the gender and number system that every other rule depends on, the articles and their fused prepositions, the present tense of the three conjugations, and essere and avere, the two verbs the rest of the language hangs from.",
+      "sources": [
+        "cils-a1",
+        "freq-it"
+      ],
+      "topics": [
+        {
+          "id": "a1-pronuncia-ortografia",
+          "title": "Pronunciation and spelling",
+          "summary": "Italian spelling is close to phonetic, which is why this course needs no onramp level: read what you see. Learn four rules and you can read anything. First, c and g are hard before a, o and u and soft before e and i, an h re-hardens them (che, spaghetti) and a silent i softens them before a, o and u (ciao, giorno). Second, the digraphs gli, gn and sc have fixed values. Third, h is always silent. Fourth, double consonants are longer sounds that change meaning: fato is fate, fatto is done. Stress usually falls on the second-to-last syllable and a written accent appears only when it falls on a final vowel: città, perché, così, più, caffè.",
+          "tables": [
+            "SPELLING      SOUND        EXAMPLE\nc + a/o/u     [k]          casa, cosa, cubo\nc + e/i       [tʃ] 'ch'    cena, cinema\nci + a/o/u    [tʃ]         ciao, cioccolato (i is silent)\nch + e/i      [k]          che, chi, chiesa\ng + a/o/u     [g]          gatto, gonna\ng + e/i       [dʒ] 'j'     gelato, giro\ngi + a/o/u    [dʒ]         giallo, giorno (i is silent)\ngh + e/i      [g]          spaghetti, ghiaccio\ngli           [ʎ] 'lli'    figlio, famiglia\ngn            [ɲ] 'ny'     gnocchi, bagno, signore\nsc + e/i      [ʃ] 'sh'     pesce, sci\nsc + a/o/u    [sk]         scuola, scarpa\nsch + e/i     [sk]         scherzo, schiena\nz             [ts]/[dz]    pizza, grazie, zero\nh             silent       ho, hanno, hotel",
+            "DOUBLE CONSONANTS CHANGE THE WORD\nfato (fate)      fatto (done)\nnono (ninth)     nonno (grandfather)\nsete (thirst)    sette (seven)\npala (spade)     palla (ball)\ncapello (hair)   cappello (hat)\ncopia (copy)     coppia (couple)\ncamino (chimney) cammino (path)\n\nSTRESS AND WRITTEN ACCENTS\nnormal: aMIco, parLAre, ragazZI (no mark)\nfinal stressed vowel: città, perché, così, più, caffè, lunedì\nthird-from-last, no mark: TAvolo, teLEfono, MACchina\nè (is) vs e (and): Luca è alto e magro."
+          ],
+          "examples": [
+            {
+              "target": "Ciao! Come stai? Vorrei un caffè.",
+              "gloss": "Hi! How are you? I'd like a coffee."
+            },
+            {
+              "target": "Mio figlio mangia gli gnocchi in cucina.",
+              "gloss": "My son is eating the gnocchi in the kitchen."
+            },
+            {
+              "target": "Il nonno ha nove nipoti.",
+              "gloss": "Grandfather has nine grandchildren. (nonno long n, nove short)"
+            },
+            {
+              "target": "Perché non andiamo a scuola in bicicletta?",
+              "gloss": "Why don't we go to school by bike?"
+            },
+            {
+              "target": "Che cosa c'è nel bicchiere? Solo acqua.",
+              "gloss": "What is in the glass? Only water."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-nomi-genere-numero",
+          "title": "Nouns: gender and plurals",
+          "summary": "Every noun is masculine or feminine and the ending usually tells you which: -o masculine, -a feminine, -e either way. Plurals change the ending rather than adding an s: -o becomes -i, -a becomes -e, and -e becomes -i for both genders. Watch three groups. Masculine nouns in -a of Greek origin (il problema, il programma, il tema, il sistema, il poeta) take -i in the plural. Nouns in -ista serve both genders. And plurals of -co, -go, -ca, -ga keep the sound of the consonant, so an h often appears: amica becomes amiche, lago becomes laghi, while medico becomes medici. Accented and foreign nouns never change: le città, i bar, i film.",
+          "tables": [
+            "SINGULAR        PLURAL       EXAMPLE\n-o (m.)         -i           libro -> libri\n-a (f.)         -e           casa -> case\n-e (m. or f.)   -i           studente -> studenti, chiave -> chiavi\n-a (m., Greek)  -i           problema -> problemi, tema -> temi\n-ista           -isti/-iste  turista -> turisti / turiste\n-ca, -ga        -che, -ghe   amica -> amiche, riga -> righe\n-co, -go        -chi, -ghi   fuoco -> fuochi, lago -> laghi\n(stress back)   -ci, -gi     medico -> medici, asparago -> asparagi\naccented        no change    città -> città, caffè -> caffè\nforeign         no change    bar, film, sport, computer",
+            "COMMON EXCEPTIONS AND IRREGULARS\namico -> amici    greco -> greci    nemico -> nemici\nuomo -> uomini    uovo -> le uova   la mano -> le mani\nil braccio -> le braccia   il dito -> le dita\nl'uovo (m.) but le uova (f.): the plural changes gender."
+          ],
+          "examples": [
+            {
+              "target": "Ho comprato due libri e tre riviste.",
+              "gloss": "I bought two books and three magazines."
+            },
+            {
+              "target": "Gli studenti aspettano la chiave della classe.",
+              "gloss": "The students are waiting for the key to the classroom."
+            },
+            {
+              "target": "Le mie amiche abitano in due città diverse.",
+              "gloss": "My friends (f.) live in two different cities."
+            },
+            {
+              "target": "Non è un problema, è solo un programma nuovo.",
+              "gloss": "It is not a problem, it is just a new programme."
+            },
+            {
+              "target": "Ho due uova e un po' di pane.",
+              "gloss": "I have two eggs and a bit of bread."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-articoli",
+          "title": "Definite and indefinite articles",
+          "summary": "The article is chosen by the gender of the noun and by the sound that starts it. Masculine: lo before s plus consonant, z, gn, ps, pn, x, y and semivowel i (lo studente, lo zio, lo psicologo), l' before a vowel (l'amico), il everywhere else (il libro). Their plurals are gli (for lo and l') and i (for il). Feminine: la before a consonant, l' before a vowel, and le for all plurals. The indefinite article follows the same sound logic: uno, un, una and un'. Note the spelling detail that catches everyone: un amico has no apostrophe because un is already a complete word, while un'amica does, because it is una with the a cut off.",
+          "tables": [
+            "DEFINITE ARTICLE\n                       SINGULAR       PLURAL\nmasc. + consonant      il libro       i libri\nmasc. + s+cons/z/gn/ps lo studente    gli studenti\n                       lo zaino       gli zaini\nmasc. + vowel          l'amico        gli amici\nfem. + consonant       la casa        le case\nfem. + vowel           l'amica        le amiche",
+            "INDEFINITE ARTICLE\nmasc. + consonant       un libro\nmasc. + vowel           un amico     (NO apostrophe)\nmasc. + s+cons/z/gn/ps  uno studente, uno zaino\nfem. + consonant        una casa\nfem. + vowel            un'amica     (apostrophe: una -> un')\n\nNo plural indefinite article: use dei, degli, delle\ndei libri, degli studenti, delle case"
+          ],
+          "examples": [
+            {
+              "target": "Il libro è nuovo, ma lo zaino è vecchio.",
+              "gloss": "The book is new, but the backpack is old."
+            },
+            {
+              "target": "Gli studenti e le studentesse sono in aula.",
+              "gloss": "The male and female students are in the classroom."
+            },
+            {
+              "target": "Ho un amico a Roma e un'amica a Napoli.",
+              "gloss": "I have a friend (m.) in Rome and a friend (f.) in Naples."
+            },
+            {
+              "target": "C'è uno specchio grande nell'ingresso.",
+              "gloss": "There is a big mirror in the hallway."
+            },
+            {
+              "target": "Vorrei dei fiori per la nonna.",
+              "gloss": "I would like some flowers for grandma."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-preposizioni-articolate",
+          "title": "Preposizioni articolate (del, alla, nel, sui)",
+          "summary": "Five prepositions fuse with the definite article into one word, and the fusion is obligatory: di, a, da, in and su. That is where del, alla, dal, nel and sui come from. You cannot say vado a il mercato; it must be vado al mercato. con fuses only with il and only optionally (col treno, con il treno), and per never fuses at all: per il lavoro. Meanings to fix now: di shows possession and origin of things (il libro di Marco, la porta della casa), a shows destination and location in a town (vado a Roma, al bar), da shows the point you come from and also 'at someone's place' (vengo da Milano, vado dal medico), in covers countries, regions and enclosed places (in Italia, in banca), and su means on.",
+          "tables": [
+            "       il      lo      l'      la      i       gli     le\n----   -----   ------  ------  ------  -----   -----   -----\ndi     del     dello   dell'   della   dei     degli   delle\na      al      allo    all'    alla    ai      agli    alle\nda     dal     dallo   dall'   dalla   dai     dagli   dalle\nin     nel     nello   nell'   nella   nei     negli   nelle\nsu     sul     sullo   sull'   sulla   sui     sugli   sulle\ncon    col (optional; con il is always correct)\nper    NEVER fuses: per il, per lo, per la, per i, per gli, per le",
+            "WHAT EACH ONE DOES\ndi   possession, origin   il libro di Anna, la porta della casa\na    destination, town    vado a Roma, al cinema, alla stazione\nda   origin, someone's    vengo da Torino, vado dal dentista\nin   countries, places    in Italia, in banca, nel parco\nsu   on                   sul tavolo, sulla sedia\n\nNOTE: many nouns take in with NO article\nin banca, in centro, in ufficio, in classe, in montagna"
+          ],
+          "examples": [
+            {
+              "target": "Il libro è sul tavolo e le chiavi sono nella borsa.",
+              "gloss": "The book is on the table and the keys are in the bag."
+            },
+            {
+              "target": "Vado al mercato e poi passo dal medico.",
+              "gloss": "I'm going to the market and then dropping by the doctor's."
+            },
+            {
+              "target": "La macchina degli amici è davanti all'ufficio.",
+              "gloss": "The friends' car is in front of the office."
+            },
+            {
+              "target": "Abito nella città vecchia, vicino alla chiesa.",
+              "gloss": "I live in the old town, near the church."
+            },
+            {
+              "target": "Questo regalo è per la nonna, non per gli zii.",
+              "gloss": "This present is for grandma, not for the uncles."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-presente-regolari",
+          "title": "Present tense: the three conjugations",
+          "summary": "Every verb belongs to one of three families named after its infinitive: -are (parlare), -ere (credere) or -ire (dormire). Remove the ending and add the personal endings. The -are family is by far the largest and is where new verbs go. A big subgroup of -ire verbs inserts -isc- in the singular and the third person plural: capisco, capisci, capisce, capiamo, capite, capiscono, and the same pattern runs through finire, preferire, pulire and spedire. Subject pronouns are normally dropped because the ending already tells you who: parlo italiano means I speak Italian. Use io, tu, lui, lei, noi, voi and loro only for contrast or emphasis.",
+          "tables": [
+            "         parlare (-are)  credere (-ere)  dormire (-ire)  capire (-isc-)\nio       parlo           credo           dormo           capisco\ntu       parli           credi           dormi           capisci\nlui/lei  parla           crede           dorme           capisce\nnoi      parliamo        crediamo        dormiamo        capiamo\nvoi      parlate         credete         dormite         capite\nloro     parlano         credono         dormono         capiscono",
+            "SPELLING NOTES\n-care, -gare add an h before i: cercare -> cerchi, cerchiamo\n                               pagare  -> paghi, paghiamo\n-ciare, -giare drop the i:     cominciare -> cominci, cominciamo\n                               mangiare   -> mangi, mangiamo\n-isc- FAMILY: capire, finire, preferire, pulire, spedire,\n              costruire, unire, guarire"
+          ],
+          "examples": [
+            {
+              "target": "Parlo italiano e capisco un po' di spagnolo.",
+              "gloss": "I speak Italian and I understand a little Spanish."
+            },
+            {
+              "target": "Che cosa preferite, il pesce o la carne?",
+              "gloss": "What do you (pl.) prefer, fish or meat?"
+            },
+            {
+              "target": "Mangiamo alle otto e poi guardiamo un film.",
+              "gloss": "We eat at eight and then watch a film."
+            },
+            {
+              "target": "Loro dormono ancora, non fare rumore.",
+              "gloss": "They are still sleeping, don't make noise."
+            },
+            {
+              "target": "Cerchi la stazione? È a destra.",
+              "gloss": "Are you looking for the station? It's on the right."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-essere-avere",
+          "title": "essere and avere",
+          "summary": "These two verbs carry the whole language: they are the most frequent verbs in Italian and they build the passato prossimo later. essere states identity, origin, profession, quality and location (sono italiano, siamo a Roma, la casa è grande). avere states possession, but also a long list of physical and emotional states where English uses 'to be': ho vent'anni (I am twenty), ho fame, ho sete, ho freddo, ho caldo, ho sonno, ho paura, ho fretta. Getting sono vent'anni instead of ho vent'anni is the classic first-week mistake. Remember too that the forms of avere with an h are silent: ho, hai, ha and hanno sound exactly like o, ai, a and anno, and the h is purely a spelling device.",
+          "tables": [
+            "         essere    avere\nio       sono      ho\ntu       sei       hai\nlui/lei  è         ha\nnoi      siamo     abbiamo\nvoi      siete     avete\nloro     sono      hanno\n\n(io sono and loro sono are identical: context decides.)",
+            "AVERE WHERE ENGLISH SAYS 'BE'\nho vent'anni    I am twenty        ho fame     I am hungry\nho sete         I am thirsty       ho freddo   I am cold\nho caldo        I am hot           ho sonno    I am sleepy\nho paura        I am afraid        ho fretta   I am in a hurry\nho ragione      I am right         ho torto    I am wrong\n\nC'È / CI SONO (there is / there are)\nC'è un problema.   Ci sono due problemi."
+          ],
+          "examples": [
+            {
+              "target": "Sono italiana e ho trent'anni.",
+              "gloss": "I am Italian and I am thirty."
+            },
+            {
+              "target": "Hai fame? No, ma ho molta sete.",
+              "gloss": "Are you hungry? No, but I am very thirsty."
+            },
+            {
+              "target": "Siamo in ritardo perché c'è molto traffico.",
+              "gloss": "We are late because there is a lot of traffic."
+            },
+            {
+              "target": "I ragazzi hanno freddo e sono stanchi.",
+              "gloss": "The boys are cold and tired."
+            },
+            {
+              "target": "Ci sono due farmacie in questa via.",
+              "gloss": "There are two pharmacies on this street."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-irregolari-frequenti",
+          "title": "The frequent irregular verbs",
+          "summary": "A handful of irregular verbs do more work than hundreds of regular ones, so learn them as a block. andare (to go), venire (to come), fare (to do or make), stare (to stay, and to be in the sense of how you are), dare (to give), dire (to say), uscire (to go out) and the three modals potere (can), volere (want) and dovere (must). The modals are followed straight by an infinitive with no preposition: posso entrare, voglio partire, devo studiare. stare deserves special attention: come stai? asks how you are, stare a casa means to stay at home, stare per plus infinitive means to be about to do something, and stare plus gerund is the Italian progressive, sto mangiando.",
+          "tables": [
+            "         andare    venire    fare       stare     dare\nio       vado      vengo     faccio     sto       do\ntu       vai       vieni     fai        stai      dai\nlui/lei  va        viene     fa         sta       dà\nnoi      andiamo   veniamo   facciamo   stiamo    diamo\nvoi      andate    venite    fate       state     date\nloro     vanno     vengono   fanno      stanno    danno",
+            "         potere    volere     dovere     dire      uscire\nio       posso     voglio     devo       dico      esco\ntu       puoi      vuoi       devi       dici      esci\nlui/lei  può       vuole      deve       dice      esce\nnoi      possiamo  vogliamo   dobbiamo   diciamo   usciamo\nvoi      potete    volete     dovete     dite      uscite\nloro     possono   vogliono   devono     dicono    escono\n\nMODAL + INFINITIVE, no preposition\nPosso entrare?  Voglio partire.  Devo studiare.\n\nSTARE\ncome stai?          how are you?\nsto a casa          I'm staying at home\nsto per uscire      I'm about to go out\nsto mangiando       I'm eating (progressive)"
+          ],
+          "examples": [
+            {
+              "target": "Ciao, come stai? Sto bene, grazie.",
+              "gloss": "Hi, how are you? I'm well, thanks."
+            },
+            {
+              "target": "Che cosa fate stasera? Andiamo al cinema.",
+              "gloss": "What are you doing tonight? We're going to the cinema."
+            },
+            {
+              "target": "Non posso venire, devo lavorare fino alle otto.",
+              "gloss": "I can't come, I have to work until eight."
+            },
+            {
+              "target": "Vengono anche loro o escono più tardi?",
+              "gloss": "Are they coming too or are they going out later?"
+            },
+            {
+              "target": "Sto per uscire, ti chiamo dopo.",
+              "gloss": "I'm about to go out, I'll call you later."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-aggettivi",
+          "title": "Adjectives and agreement",
+          "summary": "Adjectives agree with their noun in gender and number and normally follow it: un libro nuovo, una casa nuova, dei libri nuovi, delle case nuove. There are two families. Adjectives ending in -o have four forms (alto, alta, alti, alte); adjectives ending in -e have two (grande, grandi) and serve both genders. A short group of very common adjectives goes before the noun and usually carries a judgement rather than a fact: bello, buono, brutto, grande, piccolo, giovane, vecchio, nuovo, bravo. Before the noun, bello copies the shape of the definite article (bel libro, begli amici) and buono copies the indefinite (buon giorno, buon'amica). Mixed groups of people go masculine plural, and colours taken from nouns never change: scarpe rosa, giacche blu.",
+          "tables": [
+            "FOUR-FORM (-o)              TWO-FORM (-e)\nil ragazzo italiano         il film interessante\nla ragazza italiana         la storia interessante\ni ragazzi italiani          i film interessanti\nle ragazze italiane         le storie interessanti",
+            "BELLO BEFORE THE NOUN (like the article)\nbel libro     bello specchio   bell'albero\nbei libri     begli specchi    begli alberi\nbella casa    bell'amica       belle case\n\nBUONO BEFORE THE NOUN (like un/uno/una)\nbuon giorno   buono studente   buon'amica   buona sera\n\nPOSITION CHANGES THE SENSE\nun vecchio amico   a long-standing friend\nun amico vecchio   an elderly friend\n\nINVARIABLE COLOURS: rosa, blu, viola, beige, marrone (often)"
+          ],
+          "examples": [
+            {
+              "target": "Ho conosciuto una ragazza simpatica e due ragazzi simpatici.",
+              "gloss": "I met a nice girl and two nice boys."
+            },
+            {
+              "target": "Che bella giornata! Facciamo una passeggiata?",
+              "gloss": "What a beautiful day! Shall we go for a walk?"
+            },
+            {
+              "target": "Firenze è una città piccola ma molto interessante.",
+              "gloss": "Florence is a small but very interesting city."
+            },
+            {
+              "target": "Anna, Maria e Luca sono stanchi.",
+              "gloss": "Anna, Maria and Luca are tired. (mixed group, masculine plural)"
+            },
+            {
+              "target": "Porta le scarpe rosa e una giacca blu.",
+              "gloss": "She's wearing pink shoes and a blue jacket."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a1-domande-negazione",
+          "title": "Questions, negation, numbers and time",
+          "summary": "A yes/no question has the same word order as a statement and is marked only by intonation in speech and by a question mark in writing: Parli italiano? Question words come first: chi, che cosa (or cosa, or che), dove, quando, come, quanto, quale and perché. Negation is simple: put non directly before the verb, and before any object pronoun. Double negatives are correct and required: non vedo niente, non c'è nessuno, non vado mai. Telling the time uses essere: sono le tre, but è l'una, è mezzogiorno, è mezzanotte. Dates use cardinal numbers except the first: il due maggio, il primo maggio.",
+          "tables": [
+            "QUESTION WORDS\nchi          who        Chi è?\nche cosa     what       Che cosa fai?\ndove         where      Dove abiti?  (dov'è = dove è)\nquando       when       Quando arrivi?\ncome         how        Come stai?  (com'è = come è)\nquanto/a/i/e how much   Quanto costa?\nquale/quali  which      Quale preferisci?\nperché       why/because Perché? Perché sono stanco.",
+            "NEGATION: non BEFORE the verb\nNon parlo tedesco.        Non lo so.\nNon vedo niente.          I don't see anything.\nNon c'è nessuno.          There is nobody.\nNon vado mai al mare.     I never go to the seaside.\nNon ho ancora finito.     I haven't finished yet.\n\nTIME\nChe ore sono?  Sono le tre. Sono le sette e mezza.\nSingular: È l'una. È mezzogiorno. È mezzanotte.\n'at': alle tre, all'una, a mezzogiorno\n\nDATES: il due maggio, il primo maggio (only the 1st is ordinal)\nMonths and days are lower case: lunedì, gennaio."
+          ],
+          "examples": [
+            {
+              "target": "Dove abiti? Abito a Bologna.",
+              "gloss": "Where do you live? I live in Bologna."
+            },
+            {
+              "target": "Non parlo tedesco e non capisco niente.",
+              "gloss": "I don't speak German and I don't understand anything."
+            },
+            {
+              "target": "Che ore sono? Sono le otto e un quarto.",
+              "gloss": "What time is it? It's a quarter past eight."
+            },
+            {
+              "target": "Il corso comincia il primo ottobre.",
+              "gloss": "The course starts on the first of October."
+            },
+            {
+              "target": "Non c'è nessuno in ufficio il sabato.",
+              "gloss": "There is nobody in the office on Saturdays."
+            }
+          ],
+          "sources": [
+            "cils-a1",
+            "freq-it"
+          ]
+        }
+      ]
+    },
+    {
+      "levelId": "A2",
+      "intro": "A2 grammar opens the past and the pronoun system: the passato prossimo with its two auxiliaries and its participle agreement, the imperfetto and the choice between the two, direct and indirect object pronouns, reflexives, the particles ci and ne, the future and the imperative. This is the level where you stop naming things and start telling stories.",
+      "sources": [
+        "cils-a2",
+        "freq-it"
+      ],
+      "topics": [
+        {
+          "id": "a2-passato-prossimo",
+          "title": "Passato prossimo: form and auxiliary",
+          "summary": "The everyday past is avere or essere in the present plus the past participle, and it covers both English 'I ate' and 'I have eaten'. Regular participles: -are gives -ato, -ere gives -uto, -ire gives -ito. Most verbs take avere. essere is used with verbs of movement and change of state (andare, venire, arrivare, partire, entrare, uscire, tornare, salire, scendere, cadere, nascere, morire, diventare, restare, rimanere, stare, essere), with piacere, and with all reflexive verbs. After essere the participle agrees with the subject: sono andato, sono andata, siamo andati, siamo andate. After avere it normally stays in -o. Many high-frequency verbs have irregular participles and the list below is worth learning as vocabulary.",
+          "tables": [
+            "AVERE + PARTICIPLE (no agreement)\nho parlato    hai creduto    ha dormito\nabbiamo fatto avete visto    hanno letto\n\nESSERE + PARTICIPLE (agrees with the subject)\nsono andato / andata      siamo andati / andate\nsei partito / partita     siete partiti / partite\nè uscito / uscita         sono tornati / tornate",
+            "ESSERE VERBS\nandare venire arrivare partire entrare uscire tornare\nsalire scendere cadere nascere morire diventare restare\nrimanere stare essere piacere costare + ALL reflexives\n\nIRREGULAR PARTICIPLES (high frequency)\nfare -> fatto        dire -> detto        leggere -> letto\nscrivere -> scritto  vedere -> visto      prendere -> preso\nmettere -> messo     chiudere -> chiuso   aprire -> aperto\nvenire -> venuto     rimanere -> rimasto  chiedere -> chiesto\nrispondere -> risposto  bere -> bevuto    vivere -> vissuto\nnascere -> nato      morire -> morto      offrire -> offerto\nspendere -> speso    decidere -> deciso   rompere -> rotto\nscegliere -> scelto  perdere -> perso     succedere -> successo"
+          ],
+          "examples": [
+            {
+              "target": "Ieri ho mangiato una pizza e ho bevuto un bicchiere di vino.",
+              "gloss": "Yesterday I ate a pizza and drank a glass of wine."
+            },
+            {
+              "target": "Maria è arrivata alle otto e siamo usciti insieme.",
+              "gloss": "Maria arrived at eight and we went out together."
+            },
+            {
+              "target": "Abbiamo letto il giornale e poi abbiamo scritto due email.",
+              "gloss": "We read the paper and then wrote two emails."
+            },
+            {
+              "target": "Le mie sorelle sono rimaste a casa tutto il giorno.",
+              "gloss": "My sisters stayed at home all day."
+            },
+            {
+              "target": "Che cosa è successo? Non ho capito niente.",
+              "gloss": "What happened? I didn't understand anything."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-imperfetto",
+          "title": "Imperfetto",
+          "summary": "The imperfetto is the most regular tense in Italian. Take the infinitive, drop -re and add -vo, -vi, -va, -vamo, -vate, -vano: parlavo, credevo, dormivo. Only essere is genuinely irregular (ero, eri, era, eravamo, eravate, erano), while fare, dire and bere simply revert to their older Latin stems and are then regular: facevo, dicevo, bevevo. Its jobs are description (la casa era grande, faceva freddo), habit in the past (da bambino giocavo a calcio ogni giorno), age and time (avevo dieci anni, erano le tre) and an action in progress. It also softens a request in shops and offices, where volevo un caffè is common alongside vorrei.",
+          "tables": [
+            "         parlare     credere     dormire     essere\nio       parlavo     credevo     dormivo     ero\ntu       parlavi     credevi     dormivi     eri\nlui/lei  parlava     credeva     dormiva     era\nnoi      parlavamo   credevamo   dormivamo   eravamo\nvoi      parlavate   credevate   dormivate   eravate\nloro     parlavano   credevano   dormivano   erano",
+            "OLD STEMS, THEN REGULAR\nfare -> facevo, facevi, faceva, facevamo, facevate, facevano\ndire -> dicevo ...      bere -> bevevo ...\n\nUSES\ndescription   La casa era grande. Faceva freddo.\nhabit         Da bambino giocavo a calcio ogni giorno.\nage / time    Avevo dieci anni. Erano le tre.\nin progress   Guardavo la TV.\npoliteness    Volevo un caffè, per favore."
+          ],
+          "examples": [
+            {
+              "target": "Da bambino andavo al mare ogni estate.",
+              "gloss": "As a child I went to the seaside every summer."
+            },
+            {
+              "target": "Faceva freddo e non c'era nessuno per strada.",
+              "gloss": "It was cold and there was nobody in the street."
+            },
+            {
+              "target": "Quando avevo vent'anni, vivevo a Torino.",
+              "gloss": "When I was twenty, I lived in Turin."
+            },
+            {
+              "target": "Erano le tre e il negozio era ancora chiuso.",
+              "gloss": "It was three o'clock and the shop was still closed."
+            },
+            {
+              "target": "Scusi, volevo un chilo di pomodori.",
+              "gloss": "Excuse me, I'd like a kilo of tomatoes."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-passato-vs-imperfetto",
+          "title": "Passato prossimo vs imperfetto",
+          "summary": "The two tenses answer different questions. The passato prossimo answers 'what happened?' and reports a completed event with a beginning and an end: ieri ho giocato a calcio. The imperfetto answers 'what was it like?' or 'what used to happen?' and gives description, habit, age, time and background. Put them in one sentence and the imperfetto is the scene while the passato prossimo is the event that lands on it: leggevo quando è squillato il telefono. Watch what happens with modal verbs, where the difference is real: dovevo partire means I was supposed to leave, ho dovuto partire means I had to leave and did. Time expressions are your guide: sempre, di solito, ogni giorno, mentre and da bambino point to the imperfetto, while ieri, l'anno scorso, due volte, poi and all'improvviso point to the passato prossimo.",
+          "tables": [
+            "IMPERFETTO (background)          PASSATO PROSSIMO (event)\n-----------------------------    -----------------------------\ndescription  Era alto.           single event  Ha telefonato.\nhabit        Giocavo sempre.     one time      Ho giocato ieri.\nage / time   Avevo 10 anni.      change        È diventato medico.\nin progress  Leggevo...          interruption  ...è arrivato Luca.\nweather      Pioveva.            start/end     È cominciato a piovere.",
+            "SIGNAL WORDS\nimperfetto:        sempre, di solito, ogni giorno, mentre,\n                   da bambino, spesso, tutti i giorni\npassato prossimo:  ieri, l'anno scorso, due volte, poi,\n                   all'improvviso, un giorno, stamattina\n\nMODALS CHANGE MEANING\ndovevo partire      I was supposed to leave (maybe I didn't)\nho dovuto partire   I had to leave (and I did)\nvolevo chiamarti    I meant to call you\nho voluto chiamarti I decided to call you (and did)\nnon potevo entrare  I wasn't able to (situation)\nnon sono potuto entrare  I couldn't get in (that time)"
+          ],
+          "examples": [
+            {
+              "target": "Leggevo il giornale quando è squillato il telefono.",
+              "gloss": "I was reading the paper when the phone rang."
+            },
+            {
+              "target": "Mentre cucinavo, i bambini hanno apparecchiato la tavola.",
+              "gloss": "While I was cooking, the children set the table."
+            },
+            {
+              "target": "L'estate scorsa sono andato in Sardegna: il mare era bellissimo.",
+              "gloss": "Last summer I went to Sardinia: the sea was beautiful."
+            },
+            {
+              "target": "Dovevo studiare, ma alla fine ho guardato un film.",
+              "gloss": "I was supposed to study, but in the end I watched a film."
+            },
+            {
+              "target": "Ogni domenica pranzavamo dai nonni.",
+              "gloss": "Every Sunday we had lunch at our grandparents'."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-pronomi-diretti",
+          "title": "Direct object pronouns",
+          "summary": "Direct object pronouns replace a noun that answers chi? or che cosa?: mi, ti, lo, la, ci, vi, li, le. They go before a conjugated verb (lo vedo, non la conosco) and attach to the end of an infinitive, which drops its final -e (voglio vederlo, devo comprarli). With a modal plus infinitive both positions are correct: lo voglio vedere and voglio vederlo mean the same thing. In the passato prossimo these pronouns force the participle to agree: lo and la elide to l' and the participle shows the gender, l'ho visto, l'ho vista, while li and le stay whole, li ho visti, le ho viste. The polite pronoun La, written with a capital, means 'you' formally: La ringrazio.",
+          "tables": [
+            "mi   me            ci   us\nti   you (informal) vi   you (plural)\nlo   him, it (m.)   li   them (m.)\nla   her, it (f.)   le   them (f.)\nLa   you (formal, capital L)",
+            "POSITION\nbefore a conjugated verb      Lo vedo. Non la conosco.\nattached to an infinitive     Voglio vederlo. Devo comprarli.\nmodal: either is correct      Lo voglio vedere = Voglio vederlo.\nwith non                      Non lo vedo. (non first)\n\nAGREEMENT IN THE PASSATO PROSSIMO\nHo visto Marco.      -> L'ho visto.\nHo visto Maria.      -> L'ho vista.\nHo letto i libri.    -> Li ho letti.\nHo comprato le mele. -> Le ho comprate."
+          ],
+          "examples": [
+            {
+              "target": "Conosci Marco? Sì, lo conosco molto bene.",
+              "gloss": "Do you know Marco? Yes, I know him very well."
+            },
+            {
+              "target": "Hai comprato le mele? Sì, le ho comprate stamattina.",
+              "gloss": "Did you buy the apples? Yes, I bought them this morning."
+            },
+            {
+              "target": "Questo film è bello, voglio vederlo di nuovo.",
+              "gloss": "This film is good, I want to see it again."
+            },
+            {
+              "target": "Dove sono le chiavi? Non le trovo.",
+              "gloss": "Where are the keys? I can't find them."
+            },
+            {
+              "target": "La ringrazio molto, signora.",
+              "gloss": "Thank you very much, madam. (formal La)"
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-pronomi-indiretti",
+          "title": "Indirect object pronouns and piacere",
+          "summary": "Indirect object pronouns replace a plus a person and answer a chi?: mi, ti, gli, le, ci, vi, gli. They differ from the direct set only in the third person, and that is where the errors are: lo vedo means I see him, gli parlo means I speak to him. Unlike direct pronouns they never make the participle agree: gli ho parlato, le ho scritto. They matter most for piacere, which does not work like English 'to like'. In Italian the thing liked is the subject and the person is the indirect object, so mi piace il caffè literally says coffee is pleasing to me. The verb therefore agrees with the thing: mi piace la pizza but mi piacciono le lasagne. The same pattern runs through servire, mancare, bastare, sembrare and interessare.",
+          "tables": [
+            "INDIRECT              DIRECT (for contrast)\nmi   to me            mi\nti   to you           ti\ngli  to him           lo\nle   to her           la\nci   to us            ci\nvi   to you (pl.)     vi\ngli  to them          li / le\n\nNo participle agreement: gli ho parlato, le ho scritto.",
+            "PIACERE: the thing liked is the SUBJECT\nMi piace il caffè.        I like coffee.\nMi piacciono le lasagne.  I like lasagne. (plural subject)\nTi piace viaggiare?       Do you like travelling?\nA Marco piace il calcio.  Marco likes football.\nNon mi è piaciuto il film.  I didn't like the film.\n(piacere takes ESSERE, so the participle agrees:\n Mi sono piaciute le foto.)\n\nSAME PATTERN: servire, mancare, bastare, sembrare, interessare\nMi serve una penna.  Mi manchi.  Non mi basta il tempo."
+          ],
+          "examples": [
+            {
+              "target": "Ho visto Anna e le ho detto tutto.",
+              "gloss": "I saw Anna and told her everything."
+            },
+            {
+              "target": "Gli telefono ogni domenica.",
+              "gloss": "I phone him every Sunday."
+            },
+            {
+              "target": "Mi piace il mare, ma mi piacciono di più le montagne.",
+              "gloss": "I like the sea, but I like the mountains more."
+            },
+            {
+              "target": "Ti è piaciuto il concerto? Sì, moltissimo.",
+              "gloss": "Did you like the concert? Yes, a lot."
+            },
+            {
+              "target": "Ci serve un'altra sedia, per favore.",
+              "gloss": "We need another chair, please."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-riflessivi",
+          "title": "Reflexive verbs",
+          "summary": "Reflexive verbs turn the action back on the subject and carry the pronouns mi, ti, si, ci, vi, si: mi alzo, ti lavi, si veste. They cover the whole daily routine (svegliarsi, alzarsi, lavarsi, vestirsi, riposarsi, addormentarsi) and a set of common verbs that are simply reflexive in Italian without being reflexive in English: chiamarsi, sentirsi, ricordarsi, dimenticarsi, arrabbiarsi, annoiarsi, divertirsi, sposarsi, fermarsi. In the passato prossimo every reflexive takes essere and the participle agrees with the subject: mi sono alzato, mi sono alzata, ci siamo alzati. There is also a reciprocal use with the plural forms: ci vediamo domani, si sono conosciuti a Roma.",
+          "tables": [
+            "alzarsi (present)          lavarsi\nio mi alzo                 io mi lavo\ntu ti alzi                 tu ti lavi\nlui/lei si alza            lui/lei si lava\nnoi ci alziamo             noi ci laviamo\nvoi vi alzate              voi vi lavate\nloro si alzano             loro si lavano",
+            "PASSATO PROSSIMO: always ESSERE, participle agrees\nmi sono alzato / alzata      ci siamo alzati / alzate\nti sei vestito / vestita     vi siete vestiti / vestite\nsi è divertito / divertita   si sono divertiti / divertite\n\nWITH AN INFINITIVE the pronoun moves or attaches\nMi devo alzare presto. = Devo alzarmi presto.\n\nRECIPROCAL (each other)\nCi vediamo domani.   Si sono conosciuti a Roma.\nCi scriviamo spesso. Si aiutano sempre.\n\nREFLEXIVE IN ITALIAN, NOT IN ENGLISH\nchiamarsi, sentirsi, ricordarsi, dimenticarsi, arrabbiarsi,\nannoiarsi, divertirsi, sposarsi, fermarsi, trasferirsi"
+          ],
+          "examples": [
+            {
+              "target": "Mi chiamo Giulia e mi alzo sempre alle sei.",
+              "gloss": "My name is Giulia and I always get up at six."
+            },
+            {
+              "target": "Ieri sera ci siamo divertiti moltissimo.",
+              "gloss": "Last night we had a great time."
+            },
+            {
+              "target": "Non mi ricordo il suo nome.",
+              "gloss": "I don't remember his name."
+            },
+            {
+              "target": "Si sono sposati a Napoli l'anno scorso.",
+              "gloss": "They got married in Naples last year."
+            },
+            {
+              "target": "Devo alzarmi presto domani, quindi vado a letto.",
+              "gloss": "I have to get up early tomorrow, so I'm going to bed."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-ci-ne",
+          "title": "The particles ci and ne",
+          "summary": "Two tiny words that Italians use constantly and learners avoid. ci replaces a place already mentioned, meaning 'there': Vai a Roma? Sì, ci vado domani. It also replaces a plus a thing after verbs like pensare and credere (Ci penso io) and it is built into c'è and ci sono. ne replaces di plus something, meaning 'of it' or 'about it', and it is compulsory after a quantity: Quante mele vuoi? Ne voglio tre. Ne parliamo domani. In the passato prossimo, ne makes the participle agree with the quantity: ne ho comprate tre. Both particles sit in the same slots as object pronouns, before a conjugated verb or attached to an infinitive.",
+          "tables": [
+            "CI\nplace ('there')     Vai a Roma? Sì, ci vado domani.\n                    Sei mai stato in Sicilia? No, non ci sono mai stato.\na + thing           Pensi al lavoro? Sì, ci penso sempre.\n                    Credi ai fantasmi? No, non ci credo.\nfixed               c'è, ci sono, ci vuole, ci vogliono\n                    Ci vuole un'ora. Ci vogliono due ore.",
+            "NE\ndi + thing          Parliamo del progetto? Sì, ne parliamo domani.\nquantity            Quante mele vuoi? Ne voglio tre.\n                    Quanti anni hai? Ne ho trenta.\nsome / any          Vuoi del pane? Sì, ne voglio un po'.\nfrom a place        Sei uscito di casa? Sì, ne sono uscito adesso.\n\nAGREEMENT WITH NE IN THE PAST\nHo comprato tre mele. -> Ne ho comprate tre.\nHo letto due libri.   -> Ne ho letti due."
+          ],
+          "examples": [
+            {
+              "target": "Vai in ufficio oggi? Sì, ci vado alle nove.",
+              "gloss": "Are you going to the office today? Yes, I'm going there at nine."
+            },
+            {
+              "target": "Quante sorelle hai? Ne ho due.",
+              "gloss": "How many sisters do you have? I have two."
+            },
+            {
+              "target": "Non ci penso più, è passato.",
+              "gloss": "I don't think about it any more, it's over."
+            },
+            {
+              "target": "Ci vogliono venti minuti a piedi.",
+              "gloss": "It takes twenty minutes on foot."
+            },
+            {
+              "target": "Hai comprato le arance? Sì, ne ho comprate quattro.",
+              "gloss": "Did you buy the oranges? Yes, I bought four (of them)."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-futuro",
+          "title": "Futuro semplice",
+          "summary": "The future is built on the infinitive minus its final -e, with -are verbs changing that a into an e: parlare gives parler-, credere gives creder-, dormire gives dormir-. Then add -ò, -ai, -à, -emo, -ete, -anno. A dozen verbs have a contracted stem, and those same stems serve the conditional at B1, so learning them once pays twice: sar-, avr-, andr-, potr-, dovr-, vorr-, verr-, vedr-, sapr-, rimarr-, berr-, far-, dar-, star-. In ordinary speech Italians often use the present for scheduled plans (domani parto alle sei), which leaves the future doing a second job that surprises learners: guessing about the present. Saranno le tre means it must be about three, and avrà trent'anni means he's probably thirty.",
+          "tables": [
+            "         parlare      credere      dormire\nio       parlerò      crederò      dormirò\ntu       parlerai     crederai     dormirai\nlui/lei  parlerà      crederà      dormirà\nnoi      parleremo    crederemo    dormiremo\nvoi      parlerete    crederete    dormirete\nloro     parleranno   crederanno   dormiranno",
+            "IRREGULAR STEMS\nessere   sar-     sarò       potere    potr-    potrò\navere    avr-     avrò       dovere    dovr-    dovrò\nandare   andr-    andrò      volere    vorr-    vorrò\nvenire   verr-    verrò      rimanere  rimarr-  rimarrò\nvedere   vedr-    vedrò      bere      berr-    berrò\nsapere   sapr-    saprò      fare      far-     farò\ndare     dar-     darò       stare     star-    starò\n\nSPELLING: -care/-gare add an h  cercherò, pagherò\n          -ciare/-giare drop i  comincerò, mangerò\n\nTHE FUTURE AS A GUESS\nChe ore sono? Saranno le tre.   It must be about three.\nQuanti anni ha? Avrà trent'anni.  He's probably thirty."
+          ],
+          "examples": [
+            {
+              "target": "Domani partiremo presto e arriveremo prima di sera.",
+              "gloss": "Tomorrow we will leave early and arrive before evening."
+            },
+            {
+              "target": "L'anno prossimo andrò a vivere a Milano.",
+              "gloss": "Next year I will go and live in Milan."
+            },
+            {
+              "target": "Quando avrò tempo, ti scriverò una lettera lunga.",
+              "gloss": "When I have time, I will write you a long letter."
+            },
+            {
+              "target": "Dov'è Luca? Sarà ancora in ufficio.",
+              "gloss": "Where's Luca? He must still be at the office."
+            },
+            {
+              "target": "Non potremo venire sabato, ci dispiace.",
+              "gloss": "We won't be able to come on Saturday, we're sorry."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "a2-imperativo",
+          "title": "Imperative and formal address",
+          "summary": "The informal imperative is simple: for tu, -are verbs take -a (parla!) while -ere and -ire verbs take -e or -i as in the present (prendi!, dormi!). noi and voi use the present forms: parliamo!, parlate!. The negative tu command is always non plus the infinitive: non parlare!, non andare!. A few very frequent verbs have short forms: va', da', fa', di', sta'. The formal command uses the congiuntivo, which is why scusi, senta, prenda and mi dica are the shapes you hear in shops and offices. Pronouns attach to the end of the tu, noi and voi imperative (guardalo, diamoglielo) but go before the formal one (mi dica, La prego). With the short forms the pronoun doubles its consonant: dimmi, fammi, dammi, vacci.",
+          "tables": [
+            "            parlare      prendere     dormire\ntu (+)      parla!       prendi!      dormi!\ntu (-)      non parlare! non prendere! non dormire!\nnoi         parliamo!    prendiamo!   dormiamo!\nvoi         parlate!     prendete!    dormite!\nLei (formal) parli!      prenda!      dorma!",
+            "SHORT TU FORMS AND DOUBLING\nandare va'   -> vacci!     dare da'  -> dammi!\nfare   fa'   -> fammi!     dire di'  -> dimmi!\nstare  sta'  -> stammi bene!\n\nPRONOUN POSITION\ninformal: attached      Guardalo! Scrivigli! Alzati! Diamoglielo!\nnegative tu: either     Non lo guardare! = Non guardarlo!\nformal: before          Mi dica. Lo prenda. Si accomodi.\n\nEVERYDAY FORMAL FORMS (these are congiuntivo)\nScusi. Senta. Prenda. Aspetti. Mi dica. Si accomodi. Vada avanti."
+          ],
+          "examples": [
+            {
+              "target": "Prendi la prima a destra e poi vai sempre dritto.",
+              "gloss": "Take the first on the right and then go straight on."
+            },
+            {
+              "target": "Non parlare così forte, per favore.",
+              "gloss": "Don't speak so loudly, please."
+            },
+            {
+              "target": "Scusi, mi dica dov'è la stazione.",
+              "gloss": "Excuse me, tell me where the station is. (formal)"
+            },
+            {
+              "target": "Dammi una mano, per favore.",
+              "gloss": "Give me a hand, please."
+            },
+            {
+              "target": "Si accomodi pure, il dottore arriva subito.",
+              "gloss": "Please take a seat, the doctor is coming right away."
+            }
+          ],
+          "sources": [
+            "cils-a2",
+            "freq-it"
+          ]
+        }
+      ]
+    },
+    {
+      "levelId": "B1",
+      "intro": "B1 grammar is where Italian becomes an opinion language: the conditional for politeness and hypothesis, the congiuntivo and the verbs and conjunctions that demand it, the hypothetical period, combined pronouns, relatives, the passive and the si passivante, the remaining past tenses and reported speech. This is the level Italian citizenship requires, and this is the grammar the CILS UNO-B1 papers test.",
+      "sources": [
+        "cils-b1",
+        "freq-it"
+      ],
+      "topics": [
+        {
+          "id": "b1-condizionale",
+          "title": "Condizionale presente and passato",
+          "summary": "The conditional is built exactly like the future, on the infinitive minus -e with -are turning into -er-, and it shares every irregular stem with it, so sar-, avr-, andr-, potr-, dovr-, vorr- and verr- work for both. Endings: -ei, -esti, -ebbe, -emmo, -este, -ebbero. Watch the double m of parleremmo, which is the only thing separating it from the future parleremo. Uses: politeness (vorrei un caffè, potrebbe aiutarmi), advice (dovresti riposare), personal opinion (direi di sì), unrealised wishes and the main clause of a hypothesis. The condizionale passato (avrei fatto) covers what would have happened but did not, and it is also the Italian 'future in the past': ha detto che sarebbe arrivato alle otto, where English would say he would arrive.",
+          "tables": [
+            "         parlare         credere         dormire\nio       parlerei        crederei        dormirei\ntu       parleresti      crederesti      dormiresti\nlui/lei  parlerebbe      crederebbe      dormirebbe\nnoi      parleremmo      crederemmo      dormiremmo\nvoi      parlereste      credereste      dormireste\nloro     parlerebbero    crederebbero    dormirebbero\n\nfuturo parleremo (one m)  vs  condizionale parleremmo (two m)",
+            "IRREGULAR STEMS (same as the future)\nsarei, avrei, andrei, potrei, dovrei, vorrei, verrei,\nvedrei, saprei, rimarrei, berrei, farei, darei, starei\n\nCONDIZIONALE PASSATO: avrei / sarei + participle\nAvrei voluto venire.        I would have liked to come.\nSarei partito prima.        I would have left earlier.\nHa detto che sarebbe arrivato alle otto.\n   He said he would arrive at eight. (future in the past)\n\nUSES\npoliteness  Vorrei un caffè. Potrebbe ripetere?\nadvice      Dovresti riposare. Al posto tuo, chiederei.\nopinion     Direi di sì. Sarebbe meglio partire presto.\nhypothesis  Verrei volentieri, ma non posso."
+          ],
+          "examples": [
+            {
+              "target": "Vorrei prenotare un tavolo per due, per favore.",
+              "gloss": "I would like to book a table for two, please."
+            },
+            {
+              "target": "Dovresti riposare un po', sembri stanchissimo.",
+              "gloss": "You should rest a bit, you look exhausted."
+            },
+            {
+              "target": "Avrei voluto avvisarti, ma non avevo il tuo numero.",
+              "gloss": "I would have liked to warn you, but I didn't have your number."
+            },
+            {
+              "target": "Ha detto che sarebbe arrivato alle otto.",
+              "gloss": "He said he would arrive at eight."
+            },
+            {
+              "target": "Potrebbe aiutarmi a portare le valigie?",
+              "gloss": "Could you help me carry the suitcases?"
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-congiuntivo-presente",
+          "title": "Congiuntivo presente",
+          "summary": "The congiuntivo is a mood, not a tense: it appears in a subordinate clause when the main clause expresses opinion, wish, doubt, emotion or necessity instead of asserting a fact. Compare so che è vero, a report, with penso che sia vero, an opinion. Forms: -are verbs take -i (che io parli), -ere and -ire verbs take -a (che io creda, che io dorma), and -isc- verbs keep the insert (che io capisca). The three singular persons are identical, which is why the pronoun is usually stated. The noi form is the same as the indicative and the voi form ends in -iate. If both clauses share one subject, Italian prefers an infinitive instead: penso di venire, not penso che io venga.",
+          "tables": [
+            "           parlare    credere    dormire    capire\nche io     parli      creda      dorma      capisca\nche tu     parli      creda      dorma      capisca\nche lui    parli      creda      dorma      capisca\nche noi    parliamo   crediamo   dormiamo   capiamo\nche voi    parliate   crediate   dormiate   capiate\nche loro   parlino    credano    dormano    capiscano",
+            "IRREGULARS (io/tu/lui form; noi and voi are regular)\nessere sia (siamo, siate)      avere abbia (abbiamo, abbiate)\nfare faccia    andare vada     potere possa    volere voglia\ndovere debba   sapere sappia   venire venga    dare dia\nstare stia     dire dica       uscire esca     rimanere rimanga\nscegliere scelga   bere beva    tenere tenga\n\nTRIGGERS IN THE MAIN CLAUSE\nopinion    penso che, credo che, mi sembra che, immagino che\nwish       voglio che, spero che, desidero che, preferisco che\ndoubt      dubito che, non sono sicuro che, non credo che\nemotion    temo che, mi dispiace che, sono contento che\nnecessity  bisogna che, è necessario che, è meglio che,\n           è importante che, è possibile che\n\nINDICATIVO instead: so che, sono sicuro che, è vero che,\n                    dico che, ho visto che"
+          ],
+          "examples": [
+            {
+              "target": "Penso che sia una buona idea.",
+              "gloss": "I think it is a good idea."
+            },
+            {
+              "target": "So che è una buona idea.",
+              "gloss": "I know it is a good idea. (fact, indicativo)"
+            },
+            {
+              "target": "Voglio che tu venga alla festa con noi.",
+              "gloss": "I want you to come to the party with us."
+            },
+            {
+              "target": "Bisogna che finiate il lavoro entro venerdì.",
+              "gloss": "You need to finish the work by Friday."
+            },
+            {
+              "target": "Spero che abbiate fatto buon viaggio.",
+              "gloss": "I hope you had a good journey."
+            },
+            {
+              "target": "Penso di venire domani.",
+              "gloss": "I think I'll come tomorrow. (same subject, so infinitive)"
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-congiuntivo-imperfetto-ipotesi",
+          "title": "Congiuntivo imperfetto and the periodo ipotetico",
+          "summary": "The imperfect subjunctive is very regular: parlassi, credessi, dormissi, with only essere (fossi), dare (dessi), stare (stessi), fare (facessi), dire (dicessi) and bere (bevessi) needing attention. It appears after a main clause in the past or the conditional (pensavo che fosse tardi, vorrei che tu venissi) and, above all, in the hypothetical period. Italian has three of these. Reality: se piove, resto a casa, both clauses in the indicative. Possibility: se piovesse, resterei a casa, se plus congiuntivo imperfetto and then the conditional present. Impossibility, about the past: se avessi studiato, avrei passato l'esame, se plus congiuntivo trapassato and then the conditional past. Learn the second and third as fixed frames, since putting a conditional after se is the single most recognisable error.",
+          "tables": [
+            "CONGIUNTIVO IMPERFETTO\n           parlare      credere      dormire     essere\nche io     parlassi     credessi     dormissi    fossi\nche tu     parlassi     credessi     dormissi    fossi\nche lui    parlasse     credesse     dormisse    fosse\nche noi    parlassimo   credessimo   dormissimo  fossimo\nche voi    parlaste     credeste     dormiste    foste\nche loro   parlassero   credessero   dormissero  fossero\n\nirregular: dare dessi, stare stessi, fare facessi,\n           dire dicessi, bere bevessi",
+            "THE THREE HYPOTHETICAL PERIODS\n1. REALITY      se + indicativo         , indicativo\n   Se piove, resto a casa.\n   Se studi, passerai l'esame.\n\n2. POSSIBILITY  se + cong. imperfetto   , condizionale presente\n   Se piovesse, resterei a casa.\n   Se avessi tempo, verrei con te.\n\n3. IMPOSSIBILITY se + cong. trapassato  , condizionale passato\n   Se avessi studiato, avrei passato l'esame.\n   Se fossi partito prima, non avresti perso il treno.\n\nNEVER: se verrei, se sarei. The conditional never follows se."
+          ],
+          "examples": [
+            {
+              "target": "Se avessi più tempo, imparerei anche il tedesco.",
+              "gloss": "If I had more time, I would learn German too."
+            },
+            {
+              "target": "Se fossi in te, non direi niente.",
+              "gloss": "If I were you, I wouldn't say anything."
+            },
+            {
+              "target": "Se avessimo prenotato prima, avremmo trovato posto.",
+              "gloss": "If we had booked earlier, we would have found a seat."
+            },
+            {
+              "target": "Pensavo che fosse più tardi.",
+              "gloss": "I thought it was later."
+            },
+            {
+              "target": "Vorrei che tu venissi con noi in Sicilia.",
+              "gloss": "I would like you to come with us to Sicily."
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-pronomi-combinati",
+          "title": "Combined pronouns",
+          "summary": "When an indirect and a direct pronoun meet, the indirect comes first and changes shape: mi, ti, ci and vi become me, te, ce and ve, while gli and le both become glie- and are written as one word with the following pronoun. Me lo dai? Te ne parlo domani. Glielo dico io. Note that glielo covers 'to him', 'to her' and 'to them' alike, so context does the disambiguating. The whole cluster obeys the same placement rules as a single pronoun: before a conjugated verb, attached to an infinitive (voglio dirtelo), attached to the informal imperative (dammelo, diteglielo) and before the formal one (me lo dia). With reflexives the si becomes se: se ne va, se lo mette.",
+          "tables": [
+            "         + lo      + la      + li      + le      + ne\nmi   ->  me lo     me la     me li     me le     me ne\nti   ->  te lo     te la     te li     te le     te ne\ngli  ->  glielo    gliela    glieli    gliele    gliene\nle   ->  glielo    gliela    glieli    gliele    gliene\nci   ->  ce lo     ce la     ce li     ce le     ce ne\nvi   ->  ve lo     ve la     ve li     ve le     ve ne\ngli (pl) glielo    gliela    glieli    gliele    gliene\n\nglie- is written JOINED to the direct pronoun: glielo, gliene.\nAll the others stay as two words: me lo, ce ne.",
+            "PLACEMENT\nbefore a conjugated verb   Me lo dai? Non gliene parlo.\nattached to an infinitive  Voglio dirtelo. Devo portargliela.\ninformal imperative        Dammelo! Diteglielo!\nformal imperative          Me lo dia. Gliela porti.\nreflexive si -> se         Se ne va. Se lo mette. Se ne sono andati.\n\nPARTICIPLE AGREEMENT still applies to lo, la, li, le, ne\nGliel'ho detto.   Me le ha date.   Ce ne ha portati tre."
+          ],
+          "examples": [
+            {
+              "target": "Questo libro è bellissimo: te lo presto volentieri.",
+              "gloss": "This book is wonderful: I'll happily lend it to you."
+            },
+            {
+              "target": "La verità? Gliela diciamo domani.",
+              "gloss": "The truth? We'll tell it to him tomorrow."
+            },
+            {
+              "target": "Se ti serve la macchina, te la do io.",
+              "gloss": "If you need the car, I'll give it to you."
+            },
+            {
+              "target": "Non gliene ho ancora parlato.",
+              "gloss": "I haven't spoken to him about it yet."
+            },
+            {
+              "target": "Se n'è andato senza salutare nessuno.",
+              "gloss": "He left without saying goodbye to anyone."
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-relativi",
+          "title": "Relative pronouns: che, cui, il quale",
+          "summary": "che is the all-purpose relative for people and things and works as both subject and direct object: il libro che ho letto, la ragazza che parla. It never changes and it can never follow a preposition. When a preposition is needed, use cui: la persona con cui lavoro, la città in cui vivo, il motivo per cui sono partito. In formal writing il quale, la quale, i quali and le quali replace both, and because they carry gender and number they are useful when che would be ambiguous. Two more to know: chi means 'the one who' in proverbs and general statements (chi dorme non piglia pesci), and il cui, la cui and so on mean 'whose', agreeing with the thing possessed rather than the owner: lo scrittore il cui romanzo ha vinto il premio.",
+          "tables": [
+            "che        subject or direct object, people and things\n           il libro che ho letto, la ragazza che parla\ncui        after any preposition\n           la persona con cui lavoro\n           la città in cui vivo\n           il motivo per cui sono partito\n           l'amico a cui ho scritto (a cui = to whom)\nil quale   formal alternative, carries gender and number\n           il collega del quale ti ho parlato\nchi        'the one who', general statements\n           Chi dorme non piglia pesci.\nil cui     'whose', agrees with the thing possessed\n           lo scrittore il cui romanzo ha vinto",
+            "DISAMBIGUATION\nHo parlato con la sorella di Luca, la quale abita a Roma.\n  (la quale = the sister, feminine; che would be ambiguous)\n\nNOTE: dove often replaces in cui for places\n  la città in cui vivo = la città dove vivo"
+          ],
+          "examples": [
+            {
+              "target": "Il libro che mi hai prestato è bellissimo.",
+              "gloss": "The book you lent me is wonderful."
+            },
+            {
+              "target": "La collega con cui lavoro è di Palermo.",
+              "gloss": "The colleague I work with is from Palermo."
+            },
+            {
+              "target": "Non capisco il motivo per cui non mi hai chiamato.",
+              "gloss": "I don't understand the reason why you didn't call me."
+            },
+            {
+              "target": "Lo scrittore il cui romanzo ha vinto il premio è italiano.",
+              "gloss": "The writer whose novel won the prize is Italian."
+            },
+            {
+              "target": "Chi cerca trova.",
+              "gloss": "He who seeks, finds."
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-passivo-si",
+          "title": "The passive and the si passivante",
+          "summary": "The passive is essere plus the past participle, and the participle agrees with the subject: la lettera è stata scritta, i documenti sono stati firmati. The agent takes da: il romanzo è stato scritto da Calvino. In written and administrative Italian venire often replaces essere in simple tenses (la porta viene chiusa alle otto), and andare adds a sense of obligation (la domanda va compilata in stampatello). Far more common in speech, though, is the si passivante, where si plus a third-person verb makes an impersonal statement and the verb agrees with the thing: in Italia si mangia bene, qui si vendono libri usati. Distinguish it from the impersonal si with an intransitive verb, which is always singular: si parte alle sei, in Italia si mangia tardi.",
+          "tables": [
+            "PASSIVE: essere + participle (agrees with the subject)\nLa lettera è stata scritta ieri.\nI documenti sono stati firmati dal direttore.\nagent: da + person   scritto DA Calvino\n\nvenire (simple tenses only, neutral/administrative)\n  La porta viene chiusa alle otto.\nandare (obligation)\n  La domanda va compilata in stampatello.",
+            "SI PASSIVANTE (verb agrees with the thing)\nQui si vende il pane.        singular thing -> singular verb\nQui si vendono i giornali.   plural thing   -> plural verb\nIn Italia si beve molto caffè.\nIn questo negozio si accettano carte di credito.\n\nSI IMPERSONALE (no object, always singular)\nSi parte alle sei.   In Italia si mangia tardi.\nD'estate si sta bene in montagna.\n\nIn compound tenses the si forms take ESSERE\n  Si è mangiato bene.   Si sono vendute molte case."
+          ],
+          "examples": [
+            {
+              "target": "Il romanzo è stato scritto da Italo Calvino.",
+              "gloss": "The novel was written by Italo Calvino."
+            },
+            {
+              "target": "I moduli vanno consegnati entro il trenta settembre.",
+              "gloss": "The forms must be handed in by the thirtieth of September."
+            },
+            {
+              "target": "In questo ristorante si mangia benissimo.",
+              "gloss": "You eat very well in this restaurant."
+            },
+            {
+              "target": "Qui si vendono giornali stranieri.",
+              "gloss": "Foreign newspapers are sold here. (plural verb)"
+            },
+            {
+              "target": "La riunione è stata rimandata a lunedì.",
+              "gloss": "The meeting has been postponed to Monday."
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-trapassato-remoto",
+          "title": "Trapassato prossimo and passato remoto",
+          "summary": "The trapassato prossimo is the past before the past: the imperfect of avere or essere plus the participle. Quando sono arrivato, il treno era già partito. You need it actively, because without it a sequence of two past events collapses. The passato remoto is different: it is the literary and narrative past of novels, history books and fairy tales, and in central and southern speech it is also used in conversation for events felt as finished and distant. At B1 you must recognise it, not produce it. The forms worth knowing are the ones you will actually meet on a page: fu, ebbe, disse, fece, andò, venne, vide, nacque, morì. Note that the third person singular of -are verbs carries a written accent: parlò, andò.",
+          "tables": [
+            "TRAPASSATO PROSSIMO: imperfetto of avere/essere + participle\navevo parlato       ero andato / andata\navevi parlato       eri andato / andata\naveva parlato       era andato / andata\navevamo parlato     eravamo andati / andate\navevate parlato     eravate andati / andate\navevano parlato     erano andati / andate\n\nQuando sono arrivato, il treno era già partito.\nHo capito che avevo sbagliato strada.",
+            "PASSATO REMOTO (recognise, do not produce at B1)\n         parlare     credere       dormire\nio       parlai      credei/-etti  dormii\ntu       parlasti    credesti      dormisti\nlui/lei  parlò       credé/-ette   dormì\nnoi      parlammo    credemmo      dormimmo\nvoi      parlaste    credeste      dormiste\nloro     parlarono   crederono     dormirono\n\nCOMMON IRREGULAR THIRD PERSONS IN TEXTS\nessere fu, furono      avere ebbe, ebbero\ndire disse            fare fece         andare andò\nvenire venne          vedere vide       nascere nacque\nmorire morì           dare diede        stare stette"
+          ],
+          "examples": [
+            {
+              "target": "Quando sono arrivato in stazione, il treno era già partito.",
+              "gloss": "When I got to the station, the train had already left."
+            },
+            {
+              "target": "Ha detto che non era mai stato in Sicilia.",
+              "gloss": "He said he had never been to Sicily."
+            },
+            {
+              "target": "Avevamo prenotato un tavolo, ma il ristorante era chiuso.",
+              "gloss": "We had booked a table, but the restaurant was closed."
+            },
+            {
+              "target": "Dante nacque a Firenze nel 1265 e morì a Ravenna.",
+              "gloss": "Dante was born in Florence in 1265 and died in Ravenna. (passato remoto in a text)"
+            },
+            {
+              "target": "Non sono venuto perché mi ero dimenticato dell'appuntamento.",
+              "gloss": "I didn't come because I had forgotten about the appointment."
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-discorso-indiretto",
+          "title": "Reported speech",
+          "summary": "When the reporting verb is in the past (ha detto che, ha chiesto se, mi ha chiesto di), the tenses shift one step back: presente becomes imperfetto, passato prossimo becomes trapassato prossimo, futuro becomes condizionale passato, and imperativo becomes di plus infinitive or a congiuntivo imperfetto. Time and place words move with them: oggi becomes quel giorno, domani becomes il giorno dopo, ieri becomes il giorno prima, qui becomes lì, questo becomes quello. Pronouns and possessives follow logic. A yes/no question is reported with se: mi ha chiesto se avevo tempo. If the reporting verb is in the present (dice che), nothing shifts at all.",
+          "tables": [
+            "DIRECT                    REPORTED (after ha detto che)\npresente    «Sono stanco»  imperfetto        era stanco\npass. pross.«Ho visto»     trapassato        aveva visto\nimperfetto  «Ero stanco»   imperfetto        era stanco (no change)\nfuturo      «Verrò»        condizionale pass. sarebbe venuto\ncondizionale«Verrei»       condiz. passato    sarebbe venuto\nimperativo  «Aspetta!»     di + infinito      di aspettare\nquestion    «Hai tempo?»   se + verb          se aveva tempo",
+            "TIME AND PLACE SHIFTS\noggi -> quel giorno          domani -> il giorno dopo\nieri -> il giorno prima      adesso -> allora\nqui -> lì                    questo -> quello\nl'anno prossimo -> l'anno dopo\n\nNO SHIFT after a present reporting verb\n«Sono stanco» -> Dice che è stanco."
+          ],
+          "examples": [
+            {
+              "target": "«Sono molto stanco.» Ha detto che era molto stanco.",
+              "gloss": "'I am very tired.' He said he was very tired."
+            },
+            {
+              "target": "«Ho visto quel film ieri.» Disse che aveva visto quel film il giorno prima.",
+              "gloss": "'I saw that film yesterday.' He said he had seen that film the day before."
+            },
+            {
+              "target": "«Verrò domani.» Ha promesso che sarebbe venuto il giorno dopo.",
+              "gloss": "'I will come tomorrow.' He promised he would come the following day."
+            },
+            {
+              "target": "Mi ha chiesto se avevo tempo per un caffè.",
+              "gloss": "He asked me if I had time for a coffee."
+            },
+            {
+              "target": "«Aspettami qui!» Mi ha detto di aspettarlo lì.",
+              "gloss": "'Wait for me here!' He told me to wait for him there."
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        },
+        {
+          "id": "b1-connettivi-registro",
+          "title": "Connectives and register",
+          "summary": "At B1 the exam stops rewarding correct sentences and starts rewarding connected ones, so the linking words matter as much as the verb forms. Learn them in groups: cause (perché, poiché, siccome, dato che, grazie a, a causa di), consequence (quindi, perciò, allora, di conseguenza), contrast (ma, però, invece, mentre, anche se, tuttavia), addition (inoltre, anche, oltre a) and reformulation (cioè, infatti, insomma, in altre parole). Note that siccome and poiché open the sentence while perché cannot: siccome pioveva, sono rimasto a casa. Register matters too. Italian keeps a real distance between the Lei you use with officials and shopkeepers and the tu you use with friends, and a written letter or email uses Gentile, Cordiali saluti and the Lei throughout, while Ciao and a presto belong to messages between friends.",
+          "tables": [
+            "CAUSE          perché, poiché, siccome, dato che,\n               grazie a (positive), a causa di (negative)\nCONSEQUENCE    quindi, perciò, allora, di conseguenza, così\nCONTRAST       ma, però, invece, mentre, anche se, tuttavia,\n               al contrario, d'altra parte\nADDITION       inoltre, anche, oltre a, non solo... ma anche\nREFORMULATION  cioè, infatti, insomma, in altre parole\nSEQUENCE       prima, poi, dopo, infine, alla fine\nOPINION        secondo me, a mio parere, credo che, direi che\n\nPOSITION: siccome and poiché open the sentence,\nperché never does.\n  Siccome pioveva, sono rimasto a casa.\n  Sono rimasto a casa perché pioveva.",
+            "REGISTER\nFORMAL (Lei)                 INFORMAL (tu)\nBuongiorno, come sta?        Ciao, come stai?\nGentile Signora / Egregio    Caro / Cara\nLe scrivo per...             Ti scrivo per...\nCordiali saluti              Un abbraccio / A presto\nMi scusi, potrebbe...        Scusa, puoi...\nLa ringrazio                 Grazie mille\n\nEmail opening:  Gentile Dottoressa, / Ciao Marco,\nEmail closing:  Cordiali saluti / Un caro saluto"
+          ],
+          "examples": [
+            {
+              "target": "Siccome pioveva, siamo rimasti a casa.",
+              "gloss": "Since it was raining, we stayed at home."
+            },
+            {
+              "target": "Il treno era in ritardo, quindi ho perso la coincidenza.",
+              "gloss": "The train was late, so I missed my connection."
+            },
+            {
+              "target": "Anche se costa molto, secondo me ne vale la pena.",
+              "gloss": "Even though it costs a lot, in my opinion it is worth it."
+            },
+            {
+              "target": "Gentile Dottoressa, Le scrivo per chiedere un appuntamento.",
+              "gloss": "Dear Doctor, I am writing to ask for an appointment. (formal)"
+            },
+            {
+              "target": "Non solo parla italiano, ma scrive anche molto bene.",
+              "gloss": "Not only does he speak Italian, he also writes very well."
+            }
+          ],
+          "sources": [
+            "cils-b1",
+            "freq-it"
+          ]
+        }
+      ]
+    }
+  ]
+}
