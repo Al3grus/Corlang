@@ -1,1025 +1,1024 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "03-a1-nature",
+   "title": "A1 weather, nature & animals",
+   "level": "A1",
+   "words": [
     {
-      "id": "03-a1-nature",
-      "title": "A1 weather, nature & animals",
-      "level": "A1",
-      "words": [
-        {
-          "id": "temps",
-          "hr": "temps",
-          "en": "weather; time",
-          "pos": "n. m.",
-          "example": {
-            "target": "Quel temps fait-il aujourd'hui ?",
-            "gloss": "What's the weather like today?"
-          }
-        },
-        {
-          "id": "météo",
-          "hr": "météo",
-          "en": "weather forecast",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je regarde la météo avant de sortir.",
-            "gloss": "I check the forecast before going out."
-          }
-        },
-        {
-          "id": "pluie",
-          "hr": "pluie",
-          "en": "rain",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je n'aime pas la pluie.",
-            "gloss": "I don't like the rain."
-          }
-        },
-        {
-          "id": "neige",
-          "hr": "neige",
-          "en": "snow",
-          "pos": "n. f.",
-          "example": {
-            "target": "La neige est blanche.",
-            "gloss": "The snow is white."
-          }
-        },
-        {
-          "id": "soleil",
-          "hr": "soleil",
-          "en": "sun",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le soleil brille.",
-            "gloss": "The sun is shining."
-          }
-        },
-        {
-          "id": "vent",
-          "hr": "vent",
-          "en": "wind",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a beaucoup de vent.",
-            "gloss": "It's very windy."
-          }
-        },
-        {
-          "id": "nuage",
-          "hr": "nuage",
-          "en": "cloud",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a un nuage dans le ciel.",
-            "gloss": "There is a cloud in the sky."
-          }
-        },
-        {
-          "id": "orage",
-          "hr": "orage",
-          "en": "thunderstorm",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un orage arrive ce soir.",
-            "gloss": "A storm is coming tonight."
-          }
-        },
-        {
-          "id": "brouillard",
-          "hr": "brouillard",
-          "en": "fog",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a du brouillard ce matin.",
-            "gloss": "It's foggy this morning."
-          }
-        },
-        {
-          "id": "tempête",
-          "hr": "tempête",
-          "en": "storm",
-          "pos": "n. f.",
-          "example": {
-            "target": "La tempête est très forte.",
-            "gloss": "The storm is very strong."
-          }
-        },
-        {
-          "id": "degré",
-          "hr": "degré",
-          "en": "degree",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il fait dix degrés dehors.",
-            "gloss": "It's ten degrees outside."
-          }
-        },
-        {
-          "id": "climat",
-          "hr": "climat",
-          "en": "climate",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le climat est doux ici.",
-            "gloss": "The climate is mild here."
-          }
-        },
-        {
-          "id": "éclair",
-          "hr": "éclair",
-          "en": "lightning",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'ai vu un éclair dans le ciel.",
-            "gloss": "I saw lightning in the sky."
-          }
-        },
-        {
-          "id": "tonnerre",
-          "hr": "tonnerre",
-          "en": "thunder",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le tonnerre fait peur au chien.",
-            "gloss": "The thunder scares the dog."
-          }
-        },
-        {
-          "id": "glace",
-          "hr": "glace",
-          "en": "ice; ice cream",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a de la glace sur la route.",
-            "gloss": "There is ice on the road."
-          }
-        },
-        {
-          "id": "gel",
-          "hr": "gel",
-          "en": "frost",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le gel couvre le jardin.",
-            "gloss": "Frost covers the garden."
-          }
-        },
-        {
-          "id": "arc-en-ciel",
-          "hr": "arc-en-ciel",
-          "en": "rainbow",
-          "pos": "n. m.",
-          "example": {
-            "target": "Regarde le bel arc-en-ciel !",
-            "gloss": "Look at the beautiful rainbow!"
-          }
-        },
-        {
-          "id": "pleuvoir",
-          "hr": "pleuvoir",
-          "en": "to rain",
-          "pos": "v.",
-          "example": {
-            "target": "Il va pleuvoir demain.",
-            "gloss": "It's going to rain tomorrow."
-          }
-        },
-        {
-          "id": "neiger",
-          "hr": "neiger",
-          "en": "to snow",
-          "pos": "v.",
-          "example": {
-            "target": "En hiver, il neige souvent.",
-            "gloss": "In winter, it often snows."
-          }
-        },
-        {
-          "id": "geler",
-          "hr": "geler",
-          "en": "to freeze",
-          "pos": "v.",
-          "example": {
-            "target": "Cette nuit, il va geler.",
-            "gloss": "Tonight it's going to freeze."
-          }
-        },
-        {
-          "id": "souffler",
-          "hr": "souffler",
-          "en": "to blow",
-          "pos": "v.",
-          "example": {
-            "target": "Le vent souffle fort.",
-            "gloss": "The wind is blowing hard."
-          }
-        },
-        {
-          "id": "briller",
-          "hr": "briller",
-          "en": "to shine",
-          "pos": "v.",
-          "example": {
-            "target": "Les étoiles brillent la nuit.",
-            "gloss": "The stars shine at night."
-          }
-        },
-        {
-          "id": "nuageux",
-          "hr": "nuageux",
-          "en": "cloudy",
-          "pos": "adj.",
-          "example": {
-            "target": "Le ciel est nuageux.",
-            "gloss": "The sky is cloudy."
-          }
-        },
-        {
-          "id": "ensoleillé",
-          "hr": "ensoleillé",
-          "en": "sunny",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est une journée ensoleillée.",
-            "gloss": "It's a sunny day."
-          }
-        },
-        {
-          "id": "humide",
-          "hr": "humide",
-          "en": "damp, humid",
-          "pos": "adj.",
-          "example": {
-            "target": "L'air est humide ce matin.",
-            "gloss": "The air is humid this morning."
-          }
-        },
-        {
-          "id": "sec",
-          "hr": "sec",
-          "en": "dry",
-          "pos": "adj.",
-          "example": {
-            "target": "Le temps est sec en été.",
-            "gloss": "The weather is dry in summer."
-          }
-        },
-        {
-          "id": "saison",
-          "hr": "saison",
-          "en": "season",
-          "pos": "n. f.",
-          "example": {
-            "target": "Quelle est ta saison préférée ?",
-            "gloss": "What's your favorite season?"
-          }
-        },
-        {
-          "id": "printemps",
-          "hr": "printemps",
-          "en": "spring",
-          "pos": "n. m.",
-          "example": {
-            "target": "Au printemps, les fleurs poussent.",
-            "gloss": "In spring, the flowers grow."
-          }
-        },
-        {
-          "id": "été",
-          "hr": "été",
-          "en": "summer",
-          "pos": "n. m.",
-          "example": {
-            "target": "En été, il fait chaud.",
-            "gloss": "In summer, it's hot."
-          }
-        },
-        {
-          "id": "automne",
-          "hr": "automne",
-          "en": "autumn, fall",
-          "pos": "n. m.",
-          "example": {
-            "target": "En automne, les feuilles tombent.",
-            "gloss": "In autumn, the leaves fall."
-          }
-        },
-        {
-          "id": "hiver",
-          "hr": "hiver",
-          "en": "winter",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'hiver est ma saison préférée.",
-            "gloss": "Winter is my favorite season."
-          }
-        },
-        {
-          "id": "nature",
-          "hr": "nature",
-          "en": "nature",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'aime marcher dans la nature.",
-            "gloss": "I like walking in nature."
-          }
-        },
-        {
-          "id": "paysage",
-          "hr": "paysage",
-          "en": "landscape, scenery",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le paysage est magnifique.",
-            "gloss": "The landscape is magnificent."
-          }
-        },
-        {
-          "id": "mer",
-          "hr": "mer",
-          "en": "sea",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous allons à la mer en été.",
-            "gloss": "We go to the sea in summer."
-          }
-        },
-        {
-          "id": "côte",
-          "hr": "côte",
-          "en": "coast",
-          "pos": "n. f.",
-          "example": {
-            "target": "La côte est très belle ici.",
-            "gloss": "The coast is very beautiful here."
-          }
-        },
-        {
-          "id": "vague",
-          "hr": "vague",
-          "en": "wave",
-          "pos": "n. f.",
-          "example": {
-            "target": "Les vagues sont grandes aujourd'hui.",
-            "gloss": "The waves are big today."
-          }
-        },
-        {
-          "id": "plage",
-          "hr": "plage",
-          "en": "beach",
-          "pos": "n. f.",
-          "example": {
-            "target": "Les enfants jouent sur la plage.",
-            "gloss": "The children play on the beach."
-          }
-        },
-        {
-          "id": "sable",
-          "hr": "sable",
-          "en": "sand",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le sable est chaud sous mes pieds.",
-            "gloss": "The sand is warm under my feet."
-          }
-        },
-        {
-          "id": "montagne",
-          "hr": "montagne",
-          "en": "mountain",
-          "pos": "n. f.",
-          "example": {
-            "target": "La montagne est couverte de neige.",
-            "gloss": "The mountain is covered with snow."
-          }
-        },
-        {
-          "id": "colline",
-          "hr": "colline",
-          "en": "hill",
-          "pos": "n. f.",
-          "example": {
-            "target": "La maison est sur une colline.",
-            "gloss": "The house is on a hill."
-          }
-        },
-        {
-          "id": "vallée",
-          "hr": "vallée",
-          "en": "valley",
-          "pos": "n. f.",
-          "example": {
-            "target": "La vallée est verte au printemps.",
-            "gloss": "The valley is green in spring."
-          }
-        },
-        {
-          "id": "rivière",
-          "hr": "rivière",
-          "en": "river (small)",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous nageons dans la rivière.",
-            "gloss": "We swim in the river."
-          }
-        },
-        {
-          "id": "fleuve",
-          "hr": "fleuve",
-          "en": "river (large)",
-          "pos": "n. m.",
-          "example": {
-            "target": "La Seine est un grand fleuve.",
-            "gloss": "The Seine is a big river."
-          }
-        },
-        {
-          "id": "lac",
-          "hr": "lac",
-          "en": "lake",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le lac est calme ce matin.",
-            "gloss": "The lake is calm this morning."
-          }
-        },
-        {
-          "id": "île",
-          "hr": "île",
-          "en": "island",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous visitons une petite île.",
-            "gloss": "We are visiting a small island."
-          }
-        },
-        {
-          "id": "forêt",
-          "hr": "forêt",
-          "en": "forest",
-          "pos": "n. f.",
-          "example": {
-            "target": "La forêt est pleine d'arbres.",
-            "gloss": "The forest is full of trees."
-          }
-        },
-        {
-          "id": "bois",
-          "hr": "bois",
-          "en": "wood, woods",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous marchons dans le bois.",
-            "gloss": "We walk in the woods."
-          }
-        },
-        {
-          "id": "champ",
-          "hr": "champ",
-          "en": "field",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les vaches sont dans le champ.",
-            "gloss": "The cows are in the field."
-          }
-        },
-        {
-          "id": "campagne",
-          "hr": "campagne",
-          "en": "countryside",
-          "pos": "n. f.",
-          "example": {
-            "target": "Mes grands-parents vivent à la campagne.",
-            "gloss": "My grandparents live in the countryside."
-          }
-        },
-        {
-          "id": "terre",
-          "hr": "terre",
-          "en": "earth, ground, land",
-          "pos": "n. f.",
-          "example": {
-            "target": "La terre est humide après la pluie.",
-            "gloss": "The ground is wet after the rain."
-          }
-        },
-        {
-          "id": "ciel",
-          "hr": "ciel",
-          "en": "sky",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le ciel est bleu aujourd'hui.",
-            "gloss": "The sky is blue today."
-          }
-        },
-        {
-          "id": "air",
-          "hr": "air",
-          "en": "air",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'air de la montagne est pur.",
-            "gloss": "The mountain air is pure."
-          }
-        },
-        {
-          "id": "lune",
-          "hr": "lune",
-          "en": "moon",
-          "pos": "n. f.",
-          "example": {
-            "target": "La lune est belle ce soir.",
-            "gloss": "The moon is beautiful tonight."
-          }
-        },
-        {
-          "id": "étoile",
-          "hr": "étoile",
-          "en": "star",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je vois beaucoup d'étoiles.",
-            "gloss": "I see a lot of stars."
-          }
-        },
-        {
-          "id": "arbre",
-          "hr": "arbre",
-          "en": "tree",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'oiseau est dans l'arbre.",
-            "gloss": "The bird is in the tree."
-          }
-        },
-        {
-          "id": "branche",
-          "hr": "branche",
-          "en": "branch",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'oiseau chante sur la branche.",
-            "gloss": "The bird sings on the branch."
-          }
-        },
-        {
-          "id": "feuille",
-          "hr": "feuille",
-          "en": "leaf, sheet",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une feuille tombe de l'arbre.",
-            "gloss": "A leaf falls from the tree."
-          }
-        },
-        {
-          "id": "racine",
-          "hr": "racine",
-          "en": "root",
-          "pos": "n. f.",
-          "example": {
-            "target": "Les racines de l'arbre sont profondes.",
-            "gloss": "The tree's roots are deep."
-          }
-        },
-        {
-          "id": "plante",
-          "hr": "plante",
-          "en": "plant",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'arrose la plante chaque jour.",
-            "gloss": "I water the plant every day."
-          }
-        },
-        {
-          "id": "fleur",
-          "hr": "fleur",
-          "en": "flower",
-          "pos": "n. f.",
-          "example": {
-            "target": "Cette fleur sent très bon.",
-            "gloss": "This flower smells very good."
-          }
-        },
-        {
-          "id": "rose",
-          "hr": "rose",
-          "en": "rose",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il m'offre une rose rouge.",
-            "gloss": "He gives me a red rose."
-          }
-        },
-        {
-          "id": "graine",
-          "hr": "graine",
-          "en": "seed",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je plante une graine dans la terre.",
-            "gloss": "I plant a seed in the ground."
-          }
-        },
-        {
-          "id": "herbe",
-          "hr": "herbe",
-          "en": "grass",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le lapin mange de l'herbe.",
-            "gloss": "The rabbit eats grass."
-          }
-        },
-        {
-          "id": "pierre",
-          "hr": "pierre",
-          "en": "stone",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a une pierre sur le chemin.",
-            "gloss": "There is a stone on the path."
-          }
-        },
-        {
-          "id": "rocher",
-          "hr": "rocher",
-          "en": "rock",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le chat dort sur le rocher.",
-            "gloss": "The cat sleeps on the rock."
-          }
-        },
-        {
-          "id": "pousser",
-          "hr": "pousser",
-          "en": "to grow, to push",
-          "pos": "v.",
-          "example": {
-            "target": "Les fleurs poussent au printemps.",
-            "gloss": "Flowers grow in spring."
-          }
-        },
-        {
-          "id": "animal",
-          "hr": "animal",
-          "en": "animal",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le chien est un animal gentil.",
-            "gloss": "The dog is a kind animal."
-          }
-        },
-        {
-          "id": "chien",
-          "hr": "chien",
-          "en": "dog",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon chien aime courir.",
-            "gloss": "My dog likes to run."
-          }
-        },
-        {
-          "id": "chat",
-          "hr": "chat",
-          "en": "cat",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le chat dort sur le lit.",
-            "gloss": "The cat sleeps on the bed."
-          }
-        },
-        {
-          "id": "oiseau",
-          "hr": "oiseau",
-          "en": "bird",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'oiseau chante le matin.",
-            "gloss": "The bird sings in the morning."
-          }
-        },
-        {
-          "id": "cheval",
-          "hr": "cheval",
-          "en": "horse",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le cheval court dans le champ.",
-            "gloss": "The horse runs in the field."
-          }
-        },
-        {
-          "id": "vache",
-          "hr": "vache",
-          "en": "cow",
-          "pos": "n. f.",
-          "example": {
-            "target": "La vache donne du lait.",
-            "gloss": "The cow gives milk."
-          }
-        },
-        {
-          "id": "poule",
-          "hr": "poule",
-          "en": "hen",
-          "pos": "n. f.",
-          "example": {
-            "target": "La poule pond des œufs.",
-            "gloss": "The hen lays eggs."
-          }
-        },
-        {
-          "id": "coq",
-          "hr": "coq",
-          "en": "rooster",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le coq chante le matin.",
-            "gloss": "The rooster crows in the morning."
-          }
-        },
-        {
-          "id": "canard",
-          "hr": "canard",
-          "en": "duck",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le canard nage sur le lac.",
-            "gloss": "The duck swims on the lake."
-          }
-        },
-        {
-          "id": "mouton",
-          "hr": "mouton",
-          "en": "sheep",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le mouton a beaucoup de laine.",
-            "gloss": "The sheep has a lot of wool."
-          }
-        },
-        {
-          "id": "chèvre",
-          "hr": "chèvre",
-          "en": "goat",
-          "pos": "n. f.",
-          "example": {
-            "target": "La chèvre mange de l'herbe.",
-            "gloss": "The goat eats grass."
-          }
-        },
-        {
-          "id": "cochon",
-          "hr": "cochon",
-          "en": "pig",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le cochon est dans la ferme.",
-            "gloss": "The pig is on the farm."
-          }
-        },
-        {
-          "id": "âne",
-          "hr": "âne",
-          "en": "donkey",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'âne porte un lourd sac.",
-            "gloss": "The donkey carries a heavy bag."
-          }
-        },
-        {
-          "id": "lapin",
-          "hr": "lapin",
-          "en": "rabbit",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le lapin saute dans le jardin.",
-            "gloss": "The rabbit hops in the garden."
-          }
-        },
-        {
-          "id": "souris",
-          "hr": "souris",
-          "en": "mouse",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le chat attrape la souris.",
-            "gloss": "The cat catches the mouse."
-          }
-        },
-        {
-          "id": "renard",
-          "hr": "renard",
-          "en": "fox",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le renard vit dans la forêt.",
-            "gloss": "The fox lives in the forest."
-          }
-        },
-        {
-          "id": "loup",
-          "hr": "loup",
-          "en": "wolf",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le loup court vite.",
-            "gloss": "The wolf runs fast."
-          }
-        },
-        {
-          "id": "ours",
-          "hr": "ours",
-          "en": "bear",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'ours dort tout l'hiver.",
-            "gloss": "The bear sleeps all winter."
-          }
-        },
-        {
-          "id": "lion",
-          "hr": "lion",
-          "en": "lion",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le lion est un grand animal.",
-            "gloss": "The lion is a big animal."
-          }
-        },
-        {
-          "id": "éléphant",
-          "hr": "éléphant",
-          "en": "elephant",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'éléphant est très grand.",
-            "gloss": "The elephant is very big."
-          }
-        },
-        {
-          "id": "singe",
-          "hr": "singe",
-          "en": "monkey",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le singe grimpe à l'arbre.",
-            "gloss": "The monkey climbs the tree."
-          }
-        },
-        {
-          "id": "serpent",
-          "hr": "serpent",
-          "en": "snake",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le serpent est dans l'herbe.",
-            "gloss": "The snake is in the grass."
-          }
-        },
-        {
-          "id": "grenouille",
-          "hr": "grenouille",
-          "en": "frog",
-          "pos": "n. f.",
-          "example": {
-            "target": "La grenouille saute dans le lac.",
-            "gloss": "The frog jumps into the lake."
-          }
-        },
-        {
-          "id": "insecte",
-          "hr": "insecte",
-          "en": "insect",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un insecte vole près de la fleur.",
-            "gloss": "An insect flies near the flower."
-          }
-        },
-        {
-          "id": "abeille",
-          "hr": "abeille",
-          "en": "bee",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'abeille fait du miel.",
-            "gloss": "The bee makes honey."
-          }
-        },
-        {
-          "id": "papillon",
-          "hr": "papillon",
-          "en": "butterfly",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le papillon est très coloré.",
-            "gloss": "The butterfly is very colorful."
-          }
-        },
-        {
-          "id": "mouche",
-          "hr": "mouche",
-          "en": "fly",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une mouche est sur la fenêtre.",
-            "gloss": "A fly is on the window."
-          }
-        },
-        {
-          "id": "araignée",
-          "hr": "araignée",
-          "en": "spider",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'araignée fait sa toile.",
-            "gloss": "The spider makes its web."
-          }
-        },
-        {
-          "id": "queue",
-          "hr": "queue",
-          "en": "tail, queue",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le chat remue la queue.",
-            "gloss": "The cat wags its tail."
-          }
-        },
-        {
-          "id": "aile",
-          "hr": "aile",
-          "en": "wing",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'oiseau ouvre ses ailes.",
-            "gloss": "The bird opens its wings."
-          }
-        },
-        {
-          "id": "patte",
-          "hr": "patte",
-          "en": "paw, leg (animal)",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le chien a mal à la patte.",
-            "gloss": "The dog has a hurt paw."
-          }
-        },
-        {
-          "id": "nid",
-          "hr": "nid",
-          "en": "nest",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'oiseau construit un nid.",
-            "gloss": "The bird builds a nest."
-          }
-        },
-        {
-          "id": "voler",
-          "hr": "voler",
-          "en": "to fly; to steal",
-          "pos": "v.",
-          "example": {
-            "target": "Les oiseaux volent dans le ciel.",
-            "gloss": "The birds fly in the sky."
-          }
-        },
-        {
-          "id": "nager",
-          "hr": "nager",
-          "en": "to swim",
-          "pos": "v.",
-          "example": {
-            "target": "Le canard nage bien.",
-            "gloss": "The duck swims well."
-          }
-        },
-        {
-          "id": "chanter",
-          "hr": "chanter",
-          "en": "to sing",
-          "pos": "v.",
-          "example": {
-            "target": "Les oiseaux chantent au printemps.",
-            "gloss": "The birds sing in spring."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "temps",
+     "hr": "temps",
+     "en": "weather; time",
+     "pos": "n. m.",
+     "example": {
+      "target": "Quel temps fait-il aujourd'hui ?",
+      "gloss": "What's the weather like today?"
+     }
+    },
+    {
+     "id": "météo",
+     "hr": "météo",
+     "en": "weather forecast",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je regarde la météo avant de sortir.",
+      "gloss": "I check the forecast before going out."
+     }
+    },
+    {
+     "id": "pluie",
+     "hr": "pluie",
+     "en": "rain",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je n'aime pas la pluie.",
+      "gloss": "I don't like the rain."
+     }
+    },
+    {
+     "id": "neige",
+     "hr": "neige",
+     "en": "snow",
+     "pos": "n. f.",
+     "example": {
+      "target": "La neige est blanche.",
+      "gloss": "The snow is white."
+     }
+    },
+    {
+     "id": "soleil",
+     "hr": "soleil",
+     "en": "sun",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le soleil brille.",
+      "gloss": "The sun is shining."
+     }
+    },
+    {
+     "id": "vent",
+     "hr": "vent",
+     "en": "wind",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a beaucoup de vent.",
+      "gloss": "It's very windy."
+     }
+    },
+    {
+     "id": "nuage",
+     "hr": "nuage",
+     "en": "cloud",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a un nuage dans le ciel.",
+      "gloss": "There is a cloud in the sky."
+     }
+    },
+    {
+     "id": "orage",
+     "hr": "orage",
+     "en": "thunderstorm",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un orage arrive ce soir.",
+      "gloss": "A storm is coming tonight."
+     }
+    },
+    {
+     "id": "brouillard",
+     "hr": "brouillard",
+     "en": "fog",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a du brouillard ce matin.",
+      "gloss": "It's foggy this morning."
+     }
+    },
+    {
+     "id": "tempête",
+     "hr": "tempête",
+     "en": "storm",
+     "pos": "n. f.",
+     "example": {
+      "target": "La tempête est très forte.",
+      "gloss": "The storm is very strong."
+     }
+    },
+    {
+     "id": "degré",
+     "hr": "degré",
+     "en": "degree",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il fait dix degrés dehors.",
+      "gloss": "It's ten degrees outside."
+     }
+    },
+    {
+     "id": "climat",
+     "hr": "climat",
+     "en": "climate",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le climat est doux ici.",
+      "gloss": "The climate is mild here."
+     }
+    },
+    {
+     "id": "éclair",
+     "hr": "éclair",
+     "en": "lightning",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'ai vu un éclair dans le ciel.",
+      "gloss": "I saw lightning in the sky."
+     }
+    },
+    {
+     "id": "tonnerre",
+     "hr": "tonnerre",
+     "en": "thunder",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le tonnerre fait peur au chien.",
+      "gloss": "The thunder scares the dog."
+     }
+    },
+    {
+     "id": "glace",
+     "hr": "glace",
+     "en": "ice; ice cream",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a de la glace sur la route.",
+      "gloss": "There is ice on the road."
+     }
+    },
+    {
+     "id": "gel",
+     "hr": "gel",
+     "en": "frost",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le gel couvre le jardin.",
+      "gloss": "Frost covers the garden."
+     }
+    },
+    {
+     "id": "arc-en-ciel",
+     "hr": "arc-en-ciel",
+     "en": "rainbow",
+     "pos": "n. m.",
+     "example": {
+      "target": "Regarde le bel arc-en-ciel !",
+      "gloss": "Look at the beautiful rainbow!"
+     }
+    },
+    {
+     "id": "pleuvoir",
+     "hr": "pleuvoir",
+     "en": "to rain",
+     "pos": "v.",
+     "example": {
+      "target": "Il va pleuvoir demain.",
+      "gloss": "It's going to rain tomorrow."
+     }
+    },
+    {
+     "id": "neiger",
+     "hr": "neiger",
+     "en": "to snow",
+     "pos": "v.",
+     "example": {
+      "target": "En hiver, il neige souvent.",
+      "gloss": "In winter, it often snows."
+     }
+    },
+    {
+     "id": "geler",
+     "hr": "geler",
+     "en": "to freeze",
+     "pos": "v.",
+     "example": {
+      "target": "Cette nuit, il va geler.",
+      "gloss": "Tonight it's going to freeze."
+     }
+    },
+    {
+     "id": "souffler",
+     "hr": "souffler",
+     "en": "to blow",
+     "pos": "v.",
+     "example": {
+      "target": "Le vent souffle fort.",
+      "gloss": "The wind is blowing hard."
+     }
+    },
+    {
+     "id": "briller",
+     "hr": "briller",
+     "en": "to shine",
+     "pos": "v.",
+     "example": {
+      "target": "Les étoiles brillent la nuit.",
+      "gloss": "The stars shine at night."
+     }
+    },
+    {
+     "id": "nuageux",
+     "hr": "nuageux",
+     "en": "cloudy",
+     "pos": "adj.",
+     "example": {
+      "target": "Le ciel est nuageux.",
+      "gloss": "The sky is cloudy."
+     }
+    },
+    {
+     "id": "ensoleillé",
+     "hr": "ensoleillé",
+     "en": "sunny",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est une journée ensoleillée.",
+      "gloss": "It's a sunny day."
+     }
+    },
+    {
+     "id": "humide",
+     "hr": "humide",
+     "en": "damp, humid",
+     "pos": "adj.",
+     "example": {
+      "target": "L'air est humide ce matin.",
+      "gloss": "The air is humid this morning."
+     }
+    },
+    {
+     "id": "sec",
+     "hr": "sec",
+     "en": "dry",
+     "pos": "adj.",
+     "example": {
+      "target": "Le temps est sec en été.",
+      "gloss": "The weather is dry in summer."
+     }
+    },
+    {
+     "id": "saison",
+     "hr": "saison",
+     "en": "season",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quelle est ta saison préférée ?",
+      "gloss": "What's your favorite season?"
+     }
+    },
+    {
+     "id": "printemps",
+     "hr": "printemps",
+     "en": "spring",
+     "pos": "n. m.",
+     "example": {
+      "target": "Au printemps, les fleurs poussent.",
+      "gloss": "In spring, the flowers grow."
+     }
+    },
+    {
+     "id": "été",
+     "hr": "été",
+     "en": "summer",
+     "pos": "n. m.",
+     "example": {
+      "target": "En été, il fait chaud.",
+      "gloss": "In summer, it's hot."
+     }
+    },
+    {
+     "id": "automne",
+     "hr": "automne",
+     "en": "autumn, fall",
+     "pos": "n. m.",
+     "example": {
+      "target": "En automne, les feuilles tombent.",
+      "gloss": "In autumn, the leaves fall."
+     }
+    },
+    {
+     "id": "hiver",
+     "hr": "hiver",
+     "en": "winter",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'hiver est ma saison préférée.",
+      "gloss": "Winter is my favorite season."
+     }
+    },
+    {
+     "id": "nature",
+     "hr": "nature",
+     "en": "nature",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'aime marcher dans la nature.",
+      "gloss": "I like walking in nature."
+     }
+    },
+    {
+     "id": "paysage",
+     "hr": "paysage",
+     "en": "landscape, scenery",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le paysage est magnifique.",
+      "gloss": "The landscape is magnificent."
+     }
+    },
+    {
+     "id": "mer",
+     "hr": "mer",
+     "en": "sea",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous allons à la mer en été.",
+      "gloss": "We go to the sea in summer."
+     }
+    },
+    {
+     "id": "côte",
+     "hr": "côte",
+     "en": "coast",
+     "pos": "n. f.",
+     "example": {
+      "target": "La côte est très belle ici.",
+      "gloss": "The coast is very beautiful here."
+     }
+    },
+    {
+     "id": "vague",
+     "hr": "vague",
+     "en": "wave",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les vagues sont grandes aujourd'hui.",
+      "gloss": "The waves are big today."
+     }
+    },
+    {
+     "id": "plage",
+     "hr": "plage",
+     "en": "beach",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les enfants jouent sur la plage.",
+      "gloss": "The children play on the beach."
+     }
+    },
+    {
+     "id": "sable",
+     "hr": "sable",
+     "en": "sand",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le sable est chaud sous mes pieds.",
+      "gloss": "The sand is warm under my feet."
+     }
+    },
+    {
+     "id": "montagne",
+     "hr": "montagne",
+     "en": "mountain",
+     "pos": "n. f.",
+     "example": {
+      "target": "La montagne est couverte de neige.",
+      "gloss": "The mountain is covered with snow."
+     }
+    },
+    {
+     "id": "colline",
+     "hr": "colline",
+     "en": "hill",
+     "pos": "n. f.",
+     "example": {
+      "target": "La maison est sur une colline.",
+      "gloss": "The house is on a hill."
+     }
+    },
+    {
+     "id": "vallée",
+     "hr": "vallée",
+     "en": "valley",
+     "pos": "n. f.",
+     "example": {
+      "target": "La vallée est verte au printemps.",
+      "gloss": "The valley is green in spring."
+     }
+    },
+    {
+     "id": "rivière",
+     "hr": "rivière",
+     "en": "river (small)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous nageons dans la rivière.",
+      "gloss": "We swim in the river."
+     }
+    },
+    {
+     "id": "fleuve",
+     "hr": "fleuve",
+     "en": "river (large)",
+     "pos": "n. m.",
+     "example": {
+      "target": "La Seine est un grand fleuve.",
+      "gloss": "The Seine is a big river."
+     }
+    },
+    {
+     "id": "lac",
+     "hr": "lac",
+     "en": "lake",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le lac est calme ce matin.",
+      "gloss": "The lake is calm this morning."
+     }
+    },
+    {
+     "id": "île",
+     "hr": "île",
+     "en": "island",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous visitons une petite île.",
+      "gloss": "We are visiting a small island."
+     }
+    },
+    {
+     "id": "forêt",
+     "hr": "forêt",
+     "en": "forest",
+     "pos": "n. f.",
+     "example": {
+      "target": "La forêt est pleine d'arbres.",
+      "gloss": "The forest is full of trees."
+     }
+    },
+    {
+     "id": "bois",
+     "hr": "bois",
+     "en": "wood, woods",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous marchons dans le bois.",
+      "gloss": "We walk in the woods."
+     }
+    },
+    {
+     "id": "champ",
+     "hr": "champ",
+     "en": "field",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les vaches sont dans le champ.",
+      "gloss": "The cows are in the field."
+     }
+    },
+    {
+     "id": "campagne",
+     "hr": "campagne",
+     "en": "countryside",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mes grands-parents vivent à la campagne.",
+      "gloss": "My grandparents live in the countryside."
+     }
+    },
+    {
+     "id": "terre",
+     "hr": "terre",
+     "en": "earth, ground, land",
+     "pos": "n. f.",
+     "example": {
+      "target": "La terre est humide après la pluie.",
+      "gloss": "The ground is wet after the rain."
+     }
+    },
+    {
+     "id": "ciel",
+     "hr": "ciel",
+     "en": "sky",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le ciel est bleu aujourd'hui.",
+      "gloss": "The sky is blue today."
+     }
+    },
+    {
+     "id": "air",
+     "hr": "air",
+     "en": "air",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'air de la montagne est pur.",
+      "gloss": "The mountain air is pure."
+     }
+    },
+    {
+     "id": "lune",
+     "hr": "lune",
+     "en": "moon",
+     "pos": "n. f.",
+     "example": {
+      "target": "La lune est belle ce soir.",
+      "gloss": "The moon is beautiful tonight."
+     }
+    },
+    {
+     "id": "étoile",
+     "hr": "étoile",
+     "en": "star",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je vois beaucoup d'étoiles.",
+      "gloss": "I see a lot of stars."
+     }
+    },
+    {
+     "id": "arbre",
+     "hr": "arbre",
+     "en": "tree",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'oiseau est dans l'arbre.",
+      "gloss": "The bird is in the tree."
+     }
+    },
+    {
+     "id": "branche",
+     "hr": "branche",
+     "en": "branch",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'oiseau chante sur la branche.",
+      "gloss": "The bird sings on the branch."
+     }
+    },
+    {
+     "id": "feuille",
+     "hr": "feuille",
+     "en": "leaf, sheet",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une feuille tombe de l'arbre.",
+      "gloss": "A leaf falls from the tree."
+     }
+    },
+    {
+     "id": "racine",
+     "hr": "racine",
+     "en": "root",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les racines de l'arbre sont profondes.",
+      "gloss": "The tree's roots are deep."
+     }
+    },
+    {
+     "id": "plante",
+     "hr": "plante",
+     "en": "plant",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'arrose la plante chaque jour.",
+      "gloss": "I water the plant every day."
+     }
+    },
+    {
+     "id": "fleur",
+     "hr": "fleur",
+     "en": "flower",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cette fleur sent très bon.",
+      "gloss": "This flower smells very good."
+     }
+    },
+    {
+     "id": "rose",
+     "hr": "rose",
+     "en": "rose",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il m'offre une rose rouge.",
+      "gloss": "He gives me a red rose."
+     }
+    },
+    {
+     "id": "graine",
+     "hr": "graine",
+     "en": "seed",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je plante une graine dans la terre.",
+      "gloss": "I plant a seed in the ground."
+     }
+    },
+    {
+     "id": "herbe",
+     "hr": "herbe",
+     "en": "grass",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le lapin mange de l'herbe.",
+      "gloss": "The rabbit eats grass."
+     }
+    },
+    {
+     "id": "pierre",
+     "hr": "pierre",
+     "en": "stone",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a une pierre sur le chemin.",
+      "gloss": "There is a stone on the path."
+     }
+    },
+    {
+     "id": "rocher",
+     "hr": "rocher",
+     "en": "rock",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le chat dort sur le rocher.",
+      "gloss": "The cat sleeps on the rock."
+     }
+    },
+    {
+     "id": "pousser",
+     "hr": "pousser",
+     "en": "to grow, to push",
+     "pos": "v.",
+     "example": {
+      "target": "Les fleurs poussent au printemps.",
+      "gloss": "Flowers grow in spring."
+     }
+    },
+    {
+     "id": "animal",
+     "hr": "animal",
+     "en": "animal",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le chien est un animal gentil.",
+      "gloss": "The dog is a kind animal."
+     }
+    },
+    {
+     "id": "chien",
+     "hr": "chien",
+     "en": "dog",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon chien aime courir.",
+      "gloss": "My dog likes to run."
+     }
+    },
+    {
+     "id": "chat",
+     "hr": "chat",
+     "en": "cat",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le chat dort sur le lit.",
+      "gloss": "The cat sleeps on the bed."
+     }
+    },
+    {
+     "id": "oiseau",
+     "hr": "oiseau",
+     "en": "bird",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'oiseau chante le matin.",
+      "gloss": "The bird sings in the morning."
+     }
+    },
+    {
+     "id": "cheval",
+     "hr": "cheval",
+     "en": "horse",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le cheval court dans le champ.",
+      "gloss": "The horse runs in the field."
+     }
+    },
+    {
+     "id": "vache",
+     "hr": "vache",
+     "en": "cow",
+     "pos": "n. f.",
+     "example": {
+      "target": "La vache donne du lait.",
+      "gloss": "The cow gives milk."
+     }
+    },
+    {
+     "id": "poule",
+     "hr": "poule",
+     "en": "hen",
+     "pos": "n. f.",
+     "example": {
+      "target": "La poule pond des œufs.",
+      "gloss": "The hen lays eggs."
+     }
+    },
+    {
+     "id": "coq",
+     "hr": "coq",
+     "en": "rooster",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le coq chante le matin.",
+      "gloss": "The rooster crows in the morning."
+     }
+    },
+    {
+     "id": "canard",
+     "hr": "canard",
+     "en": "duck",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le canard nage sur le lac.",
+      "gloss": "The duck swims on the lake."
+     }
+    },
+    {
+     "id": "mouton",
+     "hr": "mouton",
+     "en": "sheep",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le mouton a beaucoup de laine.",
+      "gloss": "The sheep has a lot of wool."
+     }
+    },
+    {
+     "id": "chèvre",
+     "hr": "chèvre",
+     "en": "goat",
+     "pos": "n. f.",
+     "example": {
+      "target": "La chèvre mange de l'herbe.",
+      "gloss": "The goat eats grass."
+     }
+    },
+    {
+     "id": "cochon",
+     "hr": "cochon",
+     "en": "pig",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le cochon est dans la ferme.",
+      "gloss": "The pig is on the farm."
+     }
+    },
+    {
+     "id": "âne",
+     "hr": "âne",
+     "en": "donkey",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'âne porte un lourd sac.",
+      "gloss": "The donkey carries a heavy bag."
+     }
+    },
+    {
+     "id": "lapin",
+     "hr": "lapin",
+     "en": "rabbit",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le lapin saute dans le jardin.",
+      "gloss": "The rabbit hops in the garden."
+     }
+    },
+    {
+     "id": "souris",
+     "hr": "souris",
+     "en": "mouse",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le chat attrape la souris.",
+      "gloss": "The cat catches the mouse."
+     }
+    },
+    {
+     "id": "renard",
+     "hr": "renard",
+     "en": "fox",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le renard vit dans la forêt.",
+      "gloss": "The fox lives in the forest."
+     }
+    },
+    {
+     "id": "loup",
+     "hr": "loup",
+     "en": "wolf",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le loup court vite.",
+      "gloss": "The wolf runs fast."
+     }
+    },
+    {
+     "id": "ours",
+     "hr": "ours",
+     "en": "bear",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'ours dort tout l'hiver.",
+      "gloss": "The bear sleeps all winter."
+     }
+    },
+    {
+     "id": "lion",
+     "hr": "lion",
+     "en": "lion",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le lion est un grand animal.",
+      "gloss": "The lion is a big animal."
+     }
+    },
+    {
+     "id": "éléphant",
+     "hr": "éléphant",
+     "en": "elephant",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'éléphant est très grand.",
+      "gloss": "The elephant is very big."
+     }
+    },
+    {
+     "id": "singe",
+     "hr": "singe",
+     "en": "monkey",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le singe grimpe à l'arbre.",
+      "gloss": "The monkey climbs the tree."
+     }
+    },
+    {
+     "id": "serpent",
+     "hr": "serpent",
+     "en": "snake",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le serpent est dans l'herbe.",
+      "gloss": "The snake is in the grass."
+     }
+    },
+    {
+     "id": "grenouille",
+     "hr": "grenouille",
+     "en": "frog",
+     "pos": "n. f.",
+     "example": {
+      "target": "La grenouille saute dans le lac.",
+      "gloss": "The frog jumps into the lake."
+     }
+    },
+    {
+     "id": "insecte",
+     "hr": "insecte",
+     "en": "insect",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un insecte vole près de la fleur.",
+      "gloss": "An insect flies near the flower."
+     }
+    },
+    {
+     "id": "abeille",
+     "hr": "abeille",
+     "en": "bee",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'abeille fait du miel.",
+      "gloss": "The bee makes honey."
+     }
+    },
+    {
+     "id": "papillon",
+     "hr": "papillon",
+     "en": "butterfly",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le papillon est très coloré.",
+      "gloss": "The butterfly is very colorful."
+     }
+    },
+    {
+     "id": "mouche",
+     "hr": "mouche",
+     "en": "fly",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une mouche est sur la fenêtre.",
+      "gloss": "A fly is on the window."
+     }
+    },
+    {
+     "id": "araignée",
+     "hr": "araignée",
+     "en": "spider",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'araignée fait sa toile.",
+      "gloss": "The spider makes its web."
+     }
+    },
+    {
+     "id": "queue",
+     "hr": "queue",
+     "en": "tail, queue",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le chat remue la queue.",
+      "gloss": "The cat wags its tail."
+     }
+    },
+    {
+     "id": "aile",
+     "hr": "aile",
+     "en": "wing",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'oiseau ouvre ses ailes.",
+      "gloss": "The bird opens its wings."
+     }
+    },
+    {
+     "id": "patte",
+     "hr": "patte",
+     "en": "paw, leg (animal)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le chien a mal à la patte.",
+      "gloss": "The dog has a hurt paw."
+     }
+    },
+    {
+     "id": "nid",
+     "hr": "nid",
+     "en": "nest",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'oiseau construit un nid.",
+      "gloss": "The bird builds a nest."
+     }
+    },
+    {
+     "id": "voler",
+     "hr": "voler",
+     "en": "to fly; to steal",
+     "pos": "v.",
+     "example": {
+      "target": "Les oiseaux volent dans le ciel.",
+      "gloss": "The birds fly in the sky."
+     }
+    },
+    {
+     "id": "nager",
+     "hr": "nager",
+     "en": "to swim",
+     "pos": "v.",
+     "example": {
+      "target": "Le canard nage bien.",
+      "gloss": "The duck swims well."
+     }
+    },
+    {
+     "id": "chanter",
+     "hr": "chanter",
+     "en": "to sing",
+     "pos": "v.",
+     "example": {
+      "target": "Les oiseaux chantent au printemps.",
+      "gloss": "The birds sing in spring."
+     }
     }
-  ]
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  }
+ ]
 }

@@ -47,7 +47,7 @@ Sweep key: ✅ swept clean · 🔧 swept, fixes pending · ▢ not yet swept · 
 | C13 | Quiz/exam prompts colliding with lesson prompts (tests memory, not language) | 2026-07-20 proctor design | `proctor.py` check 4 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C14 | MCQ answer visible in its own prompt | 2026-07-20 proctor design | `proctor.py` check 4 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C15 | Longest-option-is-answer bias > 55% (guessable course) | 2026-07-20 proctor design | `proctor.py` check 5 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ▢ | ▢ | ▢ | ✅ | ✅ |
+| C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ▢ | ✅ | ▢ | ✅ | ✅ |
 
 *C10–C14 sweep counts (2026-07-20): hr 118, fr 56, pt 45, de 80 problems. 🔧 clears to ✅
 when `proctor.py` runs clean on that language.*
@@ -129,7 +129,10 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    A1 and A2 by a 477-word gap-close and a 540-word swap that lifted coverage to 81.9% and
    89.2%; it stays off the B1 packs, whose 41% coverage cannot be fixed without more lessons. **it CHECKED and ACTED ON before shipping**: the cross-check found 5 required
    structures missing (demonstratives from A1 among them), all now authored, plus a 300-word
-   fondamentale top-up against a measured 56.2% coverage gap. hr/fr/pt digests still unchecked.
+   fondamentale top-up against a measured 56.2% coverage gap. **fr CHECKED**: three keys were pure overclaims (referentiel-fr on 723 citations, plus
+   francais-fondamental and freq-fr; none of those documents was ever fetchable). referentiel-fr
+   re-pointed to the Eaquals/CIEP Inventaire which WAS fetched complete, the other two retired in
+   favour of Lexique 3.83. hr and pt digests still unchecked.
 4. **C4**: live re-verification of hr and fr resources.json URLs; de's DW link was confirmed
    by search only (fetcher blocks dw.com), noted in its digest.
 5. **S8**: weighted-floor debt, fr +145 (legally B2, priority) → hr +90 → pt +70.

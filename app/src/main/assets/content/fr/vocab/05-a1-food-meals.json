@@ -1,996 +1,994 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "05-a1-food-meals",
+   "title": "A1 food, meals, restaurant & shopping",
+   "level": "A1",
+   "words": [
     {
-      "id": "05-a1-food-meals",
-      "title": "A1 food, meals, restaurant & shopping",
-      "level": "A1",
-      "words": [
-        {
-          "id": "entrée",
-          "hr": "entrée",
-          "en": "starter, appetizer",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je prends une salade en entrée.",
-            "gloss": "I'll have a salad as a starter."
-          }
-        },
-        {
-          "id": "plat",
-          "hr": "plat",
-          "en": "dish, main course",
-          "pos": "n. m.",
-          "example": {
-            "target": "Quel est le plat du jour ?",
-            "gloss": "What is the dish of the day?"
-          }
-        },
-        {
-          "id": "dessert",
-          "hr": "dessert",
-          "en": "dessert",
-          "pos": "n. m.",
-          "example": {
-            "target": "Comme dessert, je veux une glace.",
-            "gloss": "For dessert, I want an ice cream."
-          }
-        },
-        {
-          "id": "apéritif",
-          "hr": "apéritif",
-          "en": "aperitif, pre-dinner drink",
-          "pos": "n. m.",
-          "example": {
-            "target": "On prend l'apéritif à sept heures.",
-            "gloss": "We have the aperitif at seven o'clock."
-          }
-        },
-        {
-          "id": "goûter",
-          "hr": "goûter",
-          "en": "to taste; afternoon snack",
-          "pos": "v.",
-          "example": {
-            "target": "Tu veux goûter ma soupe ?",
-            "gloss": "Do you want to taste my soup?"
-          }
-        },
-        {
-          "id": "beurre",
-          "hr": "beurre",
-          "en": "butter",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je mets du beurre sur le pain.",
-            "gloss": "I put butter on the bread."
-          }
-        },
-        {
-          "id": "œuf",
-          "hr": "œuf",
-          "en": "egg",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je mange un œuf le matin.",
-            "gloss": "I eat an egg in the morning."
-          }
-        },
-        {
-          "id": "sucre",
-          "hr": "sucre",
-          "en": "sugar",
-          "pos": "n. m.",
-          "example": {
-            "target": "Tu prends du sucre dans ton café ?",
-            "gloss": "Do you take sugar in your coffee?"
-          }
-        },
-        {
-          "id": "sel",
-          "hr": "sel",
-          "en": "salt",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il n'y a pas assez de sel.",
-            "gloss": "There isn't enough salt."
-          }
-        },
-        {
-          "id": "poivre",
-          "hr": "poivre",
-          "en": "pepper (spice)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Passe-moi le poivre, s'il te plaît.",
-            "gloss": "Pass me the pepper, please."
-          }
-        },
-        {
-          "id": "farine",
-          "hr": "farine",
-          "en": "flour",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'achète de la farine pour le gâteau.",
-            "gloss": "I'm buying flour for the cake."
-          }
-        },
-        {
-          "id": "huile",
-          "hr": "huile",
-          "en": "oil",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je mets de l'huile dans la salade.",
-            "gloss": "I put oil in the salad."
-          }
-        },
-        {
-          "id": "pâtes",
-          "hr": "pâtes",
-          "en": "pasta",
-          "pos": "n. f. pl.",
-          "example": {
-            "target": "Ce soir, on mange des pâtes.",
-            "gloss": "Tonight we're eating pasta."
-          }
-        },
-        {
-          "id": "pomme de terre",
-          "hr": "pomme de terre",
-          "en": "potato",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'aime les pommes de terre au four.",
-            "gloss": "I like baked potatoes."
-          }
-        },
-        {
-          "id": "tomate",
-          "hr": "tomate",
-          "en": "tomato",
-          "pos": "n. f.",
-          "example": {
-            "target": "La tomate est rouge.",
-            "gloss": "The tomato is red."
-          }
-        },
-        {
-          "id": "salade",
-          "hr": "salade",
-          "en": "salad; lettuce",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je prépare une salade verte.",
-            "gloss": "I'm making a green salad."
-          }
-        },
-        {
-          "id": "poulet",
-          "hr": "poulet",
-          "en": "chicken",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je mange du poulet avec du riz.",
-            "gloss": "I eat chicken with rice."
-          }
-        },
-        {
-          "id": "jambon",
-          "hr": "jambon",
-          "en": "ham",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un sandwich au jambon, s'il vous plaît.",
-            "gloss": "A ham sandwich, please."
-          }
-        },
-        {
-          "id": "gâteau",
-          "hr": "gâteau",
-          "en": "cake",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le gâteau au chocolat est délicieux.",
-            "gloss": "The chocolate cake is delicious."
-          }
-        },
-        {
-          "id": "chocolat",
-          "hr": "chocolat",
-          "en": "chocolate",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'adore le chocolat noir.",
-            "gloss": "I love dark chocolate."
-          }
-        },
-        {
-          "id": "yaourt",
-          "hr": "yaourt",
-          "en": "yoghurt",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je mange un yaourt après le repas.",
-            "gloss": "I eat a yoghurt after the meal."
-          }
-        },
-        {
-          "id": "soupe",
-          "hr": "soupe",
-          "en": "soup",
-          "pos": "n. f.",
-          "example": {
-            "target": "La soupe est chaude.",
-            "gloss": "The soup is hot."
-          }
-        },
-        {
-          "id": "frites",
-          "hr": "frites",
-          "en": "fries, chips",
-          "pos": "n. f. pl.",
-          "example": {
-            "target": "Un steak avec des frites, s'il vous plaît.",
-            "gloss": "A steak with fries, please."
-          }
-        },
-        {
-          "id": "sandwich",
-          "hr": "sandwich",
-          "en": "sandwich",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je mange un sandwich à midi.",
-            "gloss": "I eat a sandwich at noon."
-          }
-        },
-        {
-          "id": "confiture",
-          "hr": "confiture",
-          "en": "jam",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a de la confiture de fraise.",
-            "gloss": "There is strawberry jam."
-          }
-        },
-        {
-          "id": "miel",
-          "hr": "miel",
-          "en": "honey",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je mets du miel dans mon thé.",
-            "gloss": "I put honey in my tea."
-          }
-        },
-        {
-          "id": "biscuit",
-          "hr": "biscuit",
-          "en": "biscuit, cookie",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les enfants mangent des biscuits.",
-            "gloss": "The children are eating biscuits."
-          }
-        },
-        {
-          "id": "croissant",
-          "hr": "croissant",
-          "en": "croissant",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je prends un croissant le matin.",
-            "gloss": "I have a croissant in the morning."
-          }
-        },
-        {
-          "id": "banane",
-          "hr": "banane",
-          "en": "banana",
-          "pos": "n. f.",
-          "example": {
-            "target": "La banane est jaune.",
-            "gloss": "The banana is yellow."
-          }
-        },
-        {
-          "id": "orange",
-          "hr": "orange",
-          "en": "orange",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je mange une orange chaque jour.",
-            "gloss": "I eat an orange every day."
-          }
-        },
-        {
-          "id": "fraise",
-          "hr": "fraise",
-          "en": "strawberry",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'aime la tarte aux fraises.",
-            "gloss": "I like strawberry tart."
-          }
-        },
-        {
-          "id": "citron",
-          "hr": "citron",
-          "en": "lemon",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je mets du citron dans l'eau.",
-            "gloss": "I put lemon in the water."
-          }
-        },
-        {
-          "id": "poire",
-          "hr": "poire",
-          "en": "pear",
-          "pos": "n. f.",
-          "example": {
-            "target": "Cette poire est très sucrée.",
-            "gloss": "This pear is very sweet."
-          }
-        },
-        {
-          "id": "raisin",
-          "hr": "raisin",
-          "en": "grape(s)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le raisin est bon en automne.",
-            "gloss": "Grapes are good in autumn."
-          }
-        },
-        {
-          "id": "cerise",
-          "hr": "cerise",
-          "en": "cherry",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'achète un kilo de cerises.",
-            "gloss": "I'm buying a kilo of cherries."
-          }
-        },
-        {
-          "id": "abricot",
-          "hr": "abricot",
-          "en": "apricot",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les abricots sont mûrs.",
-            "gloss": "The apricots are ripe."
-          }
-        },
-        {
-          "id": "pêche",
-          "hr": "pêche",
-          "en": "peach",
-          "pos": "n. f.",
-          "example": {
-            "target": "La pêche est un fruit d'été.",
-            "gloss": "The peach is a summer fruit."
-          }
-        },
-        {
-          "id": "carotte",
-          "hr": "carotte",
-          "en": "carrot",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le lapin mange une carotte.",
-            "gloss": "The rabbit eats a carrot."
-          }
-        },
-        {
-          "id": "oignon",
-          "hr": "oignon",
-          "en": "onion",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je coupe un oignon pour la soupe.",
-            "gloss": "I'm cutting an onion for the soup."
-          }
-        },
-        {
-          "id": "ail",
-          "hr": "ail",
-          "en": "garlic",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'ajoute de l'ail dans les pâtes.",
-            "gloss": "I add garlic to the pasta."
-          }
-        },
-        {
-          "id": "haricot",
-          "hr": "haricot",
-          "en": "bean",
-          "pos": "n. m.",
-          "example": {
-            "target": "On mange des haricots verts.",
-            "gloss": "We're eating green beans."
-          }
-        },
-        {
-          "id": "champignon",
-          "hr": "champignon",
-          "en": "mushroom",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'aime la pizza aux champignons.",
-            "gloss": "I like mushroom pizza."
-          }
-        },
-        {
-          "id": "concombre",
-          "hr": "concombre",
-          "en": "cucumber",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le concombre est dans la salade.",
-            "gloss": "The cucumber is in the salad."
-          }
-        },
-        {
-          "id": "petit pois",
-          "hr": "petit pois",
-          "en": "pea",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les petits pois sont verts.",
-            "gloss": "The peas are green."
-          }
-        },
-        {
-          "id": "sauce",
-          "hr": "sauce",
-          "en": "sauce",
-          "pos": "n. f.",
-          "example": {
-            "target": "La sauce tomate est bonne.",
-            "gloss": "The tomato sauce is good."
-          }
-        },
-        {
-          "id": "pizza",
-          "hr": "pizza",
-          "en": "pizza",
-          "pos": "n. f.",
-          "example": {
-            "target": "On commande une pizza ce soir.",
-            "gloss": "We're ordering a pizza tonight."
-          }
-        },
-        {
-          "id": "steak",
-          "hr": "steak",
-          "en": "steak",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je voudrais un steak frites.",
-            "gloss": "I'd like a steak with fries."
-          }
-        },
-        {
-          "id": "tarte",
-          "hr": "tarte",
-          "en": "tart, pie",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ma mère fait une tarte aux pommes.",
-            "gloss": "My mother makes an apple tart."
-          }
-        },
-        {
-          "id": "bonbon",
-          "hr": "bonbon",
-          "en": "sweet, candy",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les enfants aiment les bonbons.",
-            "gloss": "Children like sweets."
-          }
-        },
-        {
-          "id": "jus",
-          "hr": "jus",
-          "en": "juice",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je bois un jus d'orange.",
-            "gloss": "I drink an orange juice."
-          }
-        },
-        {
-          "id": "boisson",
-          "hr": "boisson",
-          "en": "drink, beverage",
-          "pos": "n. f.",
-          "example": {
-            "target": "Quelle boisson tu veux ?",
-            "gloss": "Which drink do you want?"
-          }
-        },
-        {
-          "id": "assiette",
-          "hr": "assiette",
-          "en": "plate",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je mets l'assiette sur la table.",
-            "gloss": "I put the plate on the table."
-          }
-        },
-        {
-          "id": "verre",
-          "hr": "verre",
-          "en": "glass",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un verre d'eau, s'il vous plaît.",
-            "gloss": "A glass of water, please."
-          }
-        },
-        {
-          "id": "couteau",
-          "hr": "couteau",
-          "en": "knife",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le couteau est à droite de l'assiette.",
-            "gloss": "The knife is to the right of the plate."
-          }
-        },
-        {
-          "id": "fourchette",
-          "hr": "fourchette",
-          "en": "fork",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je mange les pâtes avec une fourchette.",
-            "gloss": "I eat the pasta with a fork."
-          }
-        },
-        {
-          "id": "cuillère",
-          "hr": "cuillère",
-          "en": "spoon",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je mange la soupe avec une cuillère.",
-            "gloss": "I eat the soup with a spoon."
-          }
-        },
-        {
-          "id": "bouteille",
-          "hr": "bouteille",
-          "en": "bottle",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une bouteille d'eau, s'il vous plaît.",
-            "gloss": "A bottle of water, please."
-          }
-        },
-        {
-          "id": "tasse",
-          "hr": "tasse",
-          "en": "cup",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je bois une tasse de café.",
-            "gloss": "I drink a cup of coffee."
-          }
-        },
-        {
-          "id": "bol",
-          "hr": "bol",
-          "en": "bowl",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le matin, je prends un bol de lait.",
-            "gloss": "In the morning, I have a bowl of milk."
-          }
-        },
-        {
-          "id": "nappe",
-          "hr": "nappe",
-          "en": "tablecloth",
-          "pos": "n. f.",
-          "example": {
-            "target": "La nappe est blanche.",
-            "gloss": "The tablecloth is white."
-          }
-        },
-        {
-          "id": "menu",
-          "hr": "menu",
-          "en": "set menu",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je prends le menu à quinze euros.",
-            "gloss": "I'll have the fifteen-euro menu."
-          }
-        },
-        {
-          "id": "carte",
-          "hr": "carte",
-          "en": "menu (à la carte); card",
-          "pos": "n. f.",
-          "example": {
-            "target": "Vous pouvez me donner la carte ?",
-            "gloss": "Can you give me the menu?"
-          }
-        },
-        {
-          "id": "addition",
-          "hr": "addition",
-          "en": "bill, check",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'addition, s'il vous plaît.",
-            "gloss": "The bill, please."
-          }
-        },
-        {
-          "id": "serveur",
-          "hr": "serveur",
-          "en": "waiter",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le serveur apporte les plats.",
-            "gloss": "The waiter brings the dishes."
-          }
-        },
-        {
-          "id": "serveuse",
-          "hr": "serveuse",
-          "en": "waitress",
-          "pos": "n. f.",
-          "example": {
-            "target": "La serveuse est très gentille.",
-            "gloss": "The waitress is very kind."
-          }
-        },
-        {
-          "id": "client",
-          "hr": "client",
-          "en": "customer",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le client attend son café.",
-            "gloss": "The customer is waiting for his coffee."
-          }
-        },
-        {
-          "id": "prix",
-          "hr": "prix",
-          "en": "price",
-          "pos": "n. m.",
-          "example": {
-            "target": "Quel est le prix de ce plat ?",
-            "gloss": "What is the price of this dish?"
-          }
-        },
-        {
-          "id": "pourboire",
-          "hr": "pourboire",
-          "en": "tip",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je laisse un pourboire au serveur.",
-            "gloss": "I leave a tip for the waiter."
-          }
-        },
-        {
-          "id": "commander",
-          "hr": "commander",
-          "en": "to order",
-          "pos": "v.",
-          "example": {
-            "target": "Nous allons commander maintenant.",
-            "gloss": "We are going to order now."
-          }
-        },
-        {
-          "id": "payer",
-          "hr": "payer",
-          "en": "to pay",
-          "pos": "v.",
-          "example": {
-            "target": "Je vais payer à la caisse.",
-            "gloss": "I'm going to pay at the till."
-          }
-        },
-        {
-          "id": "coûter",
-          "hr": "coûter",
-          "en": "to cost",
-          "pos": "v.",
-          "example": {
-            "target": "Ça coûte combien ?",
-            "gloss": "How much does it cost?"
-          }
-        },
-        {
-          "id": "préparer",
-          "hr": "préparer",
-          "en": "to prepare",
-          "pos": "v.",
-          "example": {
-            "target": "Je prépare le dîner.",
-            "gloss": "I'm preparing dinner."
-          }
-        },
-        {
-          "id": "servir",
-          "hr": "servir",
-          "en": "to serve",
-          "pos": "v.",
-          "example": {
-            "target": "On sert le repas à midi.",
-            "gloss": "The meal is served at noon."
-          }
-        },
-        {
-          "id": "couper",
-          "hr": "couper",
-          "en": "to cut",
-          "pos": "v.",
-          "example": {
-            "target": "Je coupe le pain.",
-            "gloss": "I'm cutting the bread."
-          }
-        },
-        {
-          "id": "kilo",
-          "hr": "kilo",
-          "en": "kilo",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je voudrais un kilo de tomates.",
-            "gloss": "I'd like a kilo of tomatoes."
-          }
-        },
-        {
-          "id": "gramme",
-          "hr": "gramme",
-          "en": "gram",
-          "pos": "n. m.",
-          "example": {
-            "target": "Cent grammes de jambon, s'il vous plaît.",
-            "gloss": "A hundred grams of ham, please."
-          }
-        },
-        {
-          "id": "litre",
-          "hr": "litre",
-          "en": "litre",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un litre de lait, s'il vous plaît.",
-            "gloss": "A litre of milk, please."
-          }
-        },
-        {
-          "id": "morceau",
-          "hr": "morceau",
-          "en": "piece",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je prends un morceau de gâteau.",
-            "gloss": "I'll have a piece of cake."
-          }
-        },
-        {
-          "id": "tranche",
-          "hr": "tranche",
-          "en": "slice",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une tranche de jambon, s'il vous plaît.",
-            "gloss": "A slice of ham, please."
-          }
-        },
-        {
-          "id": "paquet",
-          "hr": "paquet",
-          "en": "packet",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'achète un paquet de pâtes.",
-            "gloss": "I'm buying a packet of pasta."
-          }
-        },
-        {
-          "id": "boîte",
-          "hr": "boîte",
-          "en": "box, can, tin",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une boîte de tomates, s'il vous plaît.",
-            "gloss": "A tin of tomatoes, please."
-          }
-        },
-        {
-          "id": "caisse",
-          "hr": "caisse",
-          "en": "checkout, till",
-          "pos": "n. f.",
-          "example": {
-            "target": "On paie à la caisse.",
-            "gloss": "You pay at the checkout."
-          }
-        },
-        {
-          "id": "courses",
-          "hr": "courses",
-          "en": "grocery shopping",
-          "pos": "n. f. pl.",
-          "example": {
-            "target": "Je fais les courses le samedi.",
-            "gloss": "I do the grocery shopping on Saturdays."
-          }
-        },
-        {
-          "id": "marché",
-          "hr": "marché",
-          "en": "market",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'achète des légumes au marché.",
-            "gloss": "I buy vegetables at the market."
-          }
-        },
-        {
-          "id": "supermarché",
-          "hr": "supermarché",
-          "en": "supermarket",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le supermarché est ouvert le dimanche.",
-            "gloss": "The supermarket is open on Sundays."
-          }
-        },
-        {
-          "id": "boulangerie",
-          "hr": "boulangerie",
-          "en": "bakery",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'achète du pain à la boulangerie.",
-            "gloss": "I buy bread at the bakery."
-          }
-        },
-        {
-          "id": "boucherie",
-          "hr": "boucherie",
-          "en": "butcher's shop",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je vais à la boucherie pour la viande.",
-            "gloss": "I go to the butcher's for meat."
-          }
-        },
-        {
-          "id": "pâtisserie",
-          "hr": "pâtisserie",
-          "en": "pastry shop; pastry",
-          "pos": "n. f.",
-          "example": {
-            "target": "La pâtisserie vend de beaux gâteaux.",
-            "gloss": "The pastry shop sells beautiful cakes."
-          }
-        },
-        {
-          "id": "épicerie",
-          "hr": "épicerie",
-          "en": "grocery store",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'épicerie du coin est pratique.",
-            "gloss": "The corner grocery store is handy."
-          }
-        },
-        {
-          "id": "vendeur",
-          "hr": "vendeur",
-          "en": "shop assistant, seller",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le vendeur est aimable.",
-            "gloss": "The shop assistant is friendly."
-          }
-        },
-        {
-          "id": "monnaie",
-          "hr": "monnaie",
-          "en": "change (coins)",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le vendeur me rend la monnaie.",
-            "gloss": "The seller gives me the change."
-          }
-        },
-        {
-          "id": "faim",
-          "hr": "faim",
-          "en": "hunger (avoir faim = to be hungry)",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'ai faim, on mange ?",
-            "gloss": "I'm hungry, shall we eat?"
-          }
-        },
-        {
-          "id": "soif",
-          "hr": "soif",
-          "en": "thirst (avoir soif = to be thirsty)",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'ai soif, je veux de l'eau.",
-            "gloss": "I'm thirsty, I want some water."
-          }
-        },
-        {
-          "id": "délicieux",
-          "hr": "délicieux",
-          "en": "delicious",
-          "pos": "adj.",
-          "example": {
-            "target": "Ce gâteau est délicieux.",
-            "gloss": "This cake is delicious."
-          }
-        },
-        {
-          "id": "sucré",
-          "hr": "sucré",
-          "en": "sweet",
-          "pos": "adj.",
-          "example": {
-            "target": "Le dessert est trop sucré.",
-            "gloss": "The dessert is too sweet."
-          }
-        },
-        {
-          "id": "salé",
-          "hr": "salé",
-          "en": "salty, savoury",
-          "pos": "adj.",
-          "example": {
-            "target": "Les frites sont un peu salées.",
-            "gloss": "The fries are a little salty."
-          }
-        },
-        {
-          "id": "frais",
-          "hr": "frais",
-          "en": "fresh",
-          "pos": "adj.",
-          "example": {
-            "target": "Le poisson est très frais.",
-            "gloss": "The fish is very fresh."
-          }
-        },
-        {
-          "id": "recette",
-          "hr": "recette",
-          "en": "recipe",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ma grand-mère a une bonne recette.",
-            "gloss": "My grandmother has a good recipe."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr",
-        "referentiel-fr"
-      ]
+     "id": "entrée",
+     "hr": "entrée",
+     "en": "starter, appetizer",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je prends une salade en entrée.",
+      "gloss": "I'll have a salad as a starter."
+     }
+    },
+    {
+     "id": "plat",
+     "hr": "plat",
+     "en": "dish, main course",
+     "pos": "n. m.",
+     "example": {
+      "target": "Quel est le plat du jour ?",
+      "gloss": "What is the dish of the day?"
+     }
+    },
+    {
+     "id": "dessert",
+     "hr": "dessert",
+     "en": "dessert",
+     "pos": "n. m.",
+     "example": {
+      "target": "Comme dessert, je veux une glace.",
+      "gloss": "For dessert, I want an ice cream."
+     }
+    },
+    {
+     "id": "apéritif",
+     "hr": "apéritif",
+     "en": "aperitif, pre-dinner drink",
+     "pos": "n. m.",
+     "example": {
+      "target": "On prend l'apéritif à sept heures.",
+      "gloss": "We have the aperitif at seven o'clock."
+     }
+    },
+    {
+     "id": "goûter",
+     "hr": "goûter",
+     "en": "to taste; afternoon snack",
+     "pos": "v.",
+     "example": {
+      "target": "Tu veux goûter ma soupe ?",
+      "gloss": "Do you want to taste my soup?"
+     }
+    },
+    {
+     "id": "beurre",
+     "hr": "beurre",
+     "en": "butter",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je mets du beurre sur le pain.",
+      "gloss": "I put butter on the bread."
+     }
+    },
+    {
+     "id": "œuf",
+     "hr": "œuf",
+     "en": "egg",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je mange un œuf le matin.",
+      "gloss": "I eat an egg in the morning."
+     }
+    },
+    {
+     "id": "sucre",
+     "hr": "sucre",
+     "en": "sugar",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tu prends du sucre dans ton café ?",
+      "gloss": "Do you take sugar in your coffee?"
+     }
+    },
+    {
+     "id": "sel",
+     "hr": "sel",
+     "en": "salt",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il n'y a pas assez de sel.",
+      "gloss": "There isn't enough salt."
+     }
+    },
+    {
+     "id": "poivre",
+     "hr": "poivre",
+     "en": "pepper (spice)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Passe-moi le poivre, s'il te plaît.",
+      "gloss": "Pass me the pepper, please."
+     }
+    },
+    {
+     "id": "farine",
+     "hr": "farine",
+     "en": "flour",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'achète de la farine pour le gâteau.",
+      "gloss": "I'm buying flour for the cake."
+     }
+    },
+    {
+     "id": "huile",
+     "hr": "huile",
+     "en": "oil",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je mets de l'huile dans la salade.",
+      "gloss": "I put oil in the salad."
+     }
+    },
+    {
+     "id": "pâtes",
+     "hr": "pâtes",
+     "en": "pasta",
+     "pos": "n. f. pl.",
+     "example": {
+      "target": "Ce soir, on mange des pâtes.",
+      "gloss": "Tonight we're eating pasta."
+     }
+    },
+    {
+     "id": "pomme de terre",
+     "hr": "pomme de terre",
+     "en": "potato",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'aime les pommes de terre au four.",
+      "gloss": "I like baked potatoes."
+     }
+    },
+    {
+     "id": "tomate",
+     "hr": "tomate",
+     "en": "tomato",
+     "pos": "n. f.",
+     "example": {
+      "target": "La tomate est rouge.",
+      "gloss": "The tomato is red."
+     }
+    },
+    {
+     "id": "salade",
+     "hr": "salade",
+     "en": "salad; lettuce",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je prépare une salade verte.",
+      "gloss": "I'm making a green salad."
+     }
+    },
+    {
+     "id": "poulet",
+     "hr": "poulet",
+     "en": "chicken",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je mange du poulet avec du riz.",
+      "gloss": "I eat chicken with rice."
+     }
+    },
+    {
+     "id": "jambon",
+     "hr": "jambon",
+     "en": "ham",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un sandwich au jambon, s'il vous plaît.",
+      "gloss": "A ham sandwich, please."
+     }
+    },
+    {
+     "id": "gâteau",
+     "hr": "gâteau",
+     "en": "cake",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le gâteau au chocolat est délicieux.",
+      "gloss": "The chocolate cake is delicious."
+     }
+    },
+    {
+     "id": "chocolat",
+     "hr": "chocolat",
+     "en": "chocolate",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'adore le chocolat noir.",
+      "gloss": "I love dark chocolate."
+     }
+    },
+    {
+     "id": "yaourt",
+     "hr": "yaourt",
+     "en": "yoghurt",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je mange un yaourt après le repas.",
+      "gloss": "I eat a yoghurt after the meal."
+     }
+    },
+    {
+     "id": "soupe",
+     "hr": "soupe",
+     "en": "soup",
+     "pos": "n. f.",
+     "example": {
+      "target": "La soupe est chaude.",
+      "gloss": "The soup is hot."
+     }
+    },
+    {
+     "id": "frites",
+     "hr": "frites",
+     "en": "fries, chips",
+     "pos": "n. f. pl.",
+     "example": {
+      "target": "Un steak avec des frites, s'il vous plaît.",
+      "gloss": "A steak with fries, please."
+     }
+    },
+    {
+     "id": "sandwich",
+     "hr": "sandwich",
+     "en": "sandwich",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je mange un sandwich à midi.",
+      "gloss": "I eat a sandwich at noon."
+     }
+    },
+    {
+     "id": "confiture",
+     "hr": "confiture",
+     "en": "jam",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a de la confiture de fraise.",
+      "gloss": "There is strawberry jam."
+     }
+    },
+    {
+     "id": "miel",
+     "hr": "miel",
+     "en": "honey",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je mets du miel dans mon thé.",
+      "gloss": "I put honey in my tea."
+     }
+    },
+    {
+     "id": "biscuit",
+     "hr": "biscuit",
+     "en": "biscuit, cookie",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les enfants mangent des biscuits.",
+      "gloss": "The children are eating biscuits."
+     }
+    },
+    {
+     "id": "croissant",
+     "hr": "croissant",
+     "en": "croissant",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je prends un croissant le matin.",
+      "gloss": "I have a croissant in the morning."
+     }
+    },
+    {
+     "id": "banane",
+     "hr": "banane",
+     "en": "banana",
+     "pos": "n. f.",
+     "example": {
+      "target": "La banane est jaune.",
+      "gloss": "The banana is yellow."
+     }
+    },
+    {
+     "id": "orange",
+     "hr": "orange",
+     "en": "orange",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je mange une orange chaque jour.",
+      "gloss": "I eat an orange every day."
+     }
+    },
+    {
+     "id": "fraise",
+     "hr": "fraise",
+     "en": "strawberry",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'aime la tarte aux fraises.",
+      "gloss": "I like strawberry tart."
+     }
+    },
+    {
+     "id": "citron",
+     "hr": "citron",
+     "en": "lemon",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je mets du citron dans l'eau.",
+      "gloss": "I put lemon in the water."
+     }
+    },
+    {
+     "id": "poire",
+     "hr": "poire",
+     "en": "pear",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cette poire est très sucrée.",
+      "gloss": "This pear is very sweet."
+     }
+    },
+    {
+     "id": "raisin",
+     "hr": "raisin",
+     "en": "grape(s)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le raisin est bon en automne.",
+      "gloss": "Grapes are good in autumn."
+     }
+    },
+    {
+     "id": "cerise",
+     "hr": "cerise",
+     "en": "cherry",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'achète un kilo de cerises.",
+      "gloss": "I'm buying a kilo of cherries."
+     }
+    },
+    {
+     "id": "abricot",
+     "hr": "abricot",
+     "en": "apricot",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les abricots sont mûrs.",
+      "gloss": "The apricots are ripe."
+     }
+    },
+    {
+     "id": "pêche",
+     "hr": "pêche",
+     "en": "peach",
+     "pos": "n. f.",
+     "example": {
+      "target": "La pêche est un fruit d'été.",
+      "gloss": "The peach is a summer fruit."
+     }
+    },
+    {
+     "id": "carotte",
+     "hr": "carotte",
+     "en": "carrot",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le lapin mange une carotte.",
+      "gloss": "The rabbit eats a carrot."
+     }
+    },
+    {
+     "id": "oignon",
+     "hr": "oignon",
+     "en": "onion",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je coupe un oignon pour la soupe.",
+      "gloss": "I'm cutting an onion for the soup."
+     }
+    },
+    {
+     "id": "ail",
+     "hr": "ail",
+     "en": "garlic",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'ajoute de l'ail dans les pâtes.",
+      "gloss": "I add garlic to the pasta."
+     }
+    },
+    {
+     "id": "haricot",
+     "hr": "haricot",
+     "en": "bean",
+     "pos": "n. m.",
+     "example": {
+      "target": "On mange des haricots verts.",
+      "gloss": "We're eating green beans."
+     }
+    },
+    {
+     "id": "champignon",
+     "hr": "champignon",
+     "en": "mushroom",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'aime la pizza aux champignons.",
+      "gloss": "I like mushroom pizza."
+     }
+    },
+    {
+     "id": "concombre",
+     "hr": "concombre",
+     "en": "cucumber",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le concombre est dans la salade.",
+      "gloss": "The cucumber is in the salad."
+     }
+    },
+    {
+     "id": "petit pois",
+     "hr": "petit pois",
+     "en": "pea",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les petits pois sont verts.",
+      "gloss": "The peas are green."
+     }
+    },
+    {
+     "id": "sauce",
+     "hr": "sauce",
+     "en": "sauce",
+     "pos": "n. f.",
+     "example": {
+      "target": "La sauce tomate est bonne.",
+      "gloss": "The tomato sauce is good."
+     }
+    },
+    {
+     "id": "pizza",
+     "hr": "pizza",
+     "en": "pizza",
+     "pos": "n. f.",
+     "example": {
+      "target": "On commande une pizza ce soir.",
+      "gloss": "We're ordering a pizza tonight."
+     }
+    },
+    {
+     "id": "steak",
+     "hr": "steak",
+     "en": "steak",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je voudrais un steak frites.",
+      "gloss": "I'd like a steak with fries."
+     }
+    },
+    {
+     "id": "tarte",
+     "hr": "tarte",
+     "en": "tart, pie",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ma mère fait une tarte aux pommes.",
+      "gloss": "My mother makes an apple tart."
+     }
+    },
+    {
+     "id": "bonbon",
+     "hr": "bonbon",
+     "en": "sweet, candy",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les enfants aiment les bonbons.",
+      "gloss": "Children like sweets."
+     }
+    },
+    {
+     "id": "jus",
+     "hr": "jus",
+     "en": "juice",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je bois un jus d'orange.",
+      "gloss": "I drink an orange juice."
+     }
+    },
+    {
+     "id": "boisson",
+     "hr": "boisson",
+     "en": "drink, beverage",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quelle boisson tu veux ?",
+      "gloss": "Which drink do you want?"
+     }
+    },
+    {
+     "id": "assiette",
+     "hr": "assiette",
+     "en": "plate",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je mets l'assiette sur la table.",
+      "gloss": "I put the plate on the table."
+     }
+    },
+    {
+     "id": "verre",
+     "hr": "verre",
+     "en": "glass",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un verre d'eau, s'il vous plaît.",
+      "gloss": "A glass of water, please."
+     }
+    },
+    {
+     "id": "couteau",
+     "hr": "couteau",
+     "en": "knife",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le couteau est à droite de l'assiette.",
+      "gloss": "The knife is to the right of the plate."
+     }
+    },
+    {
+     "id": "fourchette",
+     "hr": "fourchette",
+     "en": "fork",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je mange les pâtes avec une fourchette.",
+      "gloss": "I eat the pasta with a fork."
+     }
+    },
+    {
+     "id": "cuillère",
+     "hr": "cuillère",
+     "en": "spoon",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je mange la soupe avec une cuillère.",
+      "gloss": "I eat the soup with a spoon."
+     }
+    },
+    {
+     "id": "bouteille",
+     "hr": "bouteille",
+     "en": "bottle",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une bouteille d'eau, s'il vous plaît.",
+      "gloss": "A bottle of water, please."
+     }
+    },
+    {
+     "id": "tasse",
+     "hr": "tasse",
+     "en": "cup",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je bois une tasse de café.",
+      "gloss": "I drink a cup of coffee."
+     }
+    },
+    {
+     "id": "bol",
+     "hr": "bol",
+     "en": "bowl",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le matin, je prends un bol de lait.",
+      "gloss": "In the morning, I have a bowl of milk."
+     }
+    },
+    {
+     "id": "nappe",
+     "hr": "nappe",
+     "en": "tablecloth",
+     "pos": "n. f.",
+     "example": {
+      "target": "La nappe est blanche.",
+      "gloss": "The tablecloth is white."
+     }
+    },
+    {
+     "id": "menu",
+     "hr": "menu",
+     "en": "set menu",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je prends le menu à quinze euros.",
+      "gloss": "I'll have the fifteen-euro menu."
+     }
+    },
+    {
+     "id": "carte",
+     "hr": "carte",
+     "en": "menu (à la carte); card",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vous pouvez me donner la carte ?",
+      "gloss": "Can you give me the menu?"
+     }
+    },
+    {
+     "id": "addition",
+     "hr": "addition",
+     "en": "bill, check",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'addition, s'il vous plaît.",
+      "gloss": "The bill, please."
+     }
+    },
+    {
+     "id": "serveur",
+     "hr": "serveur",
+     "en": "waiter",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le serveur apporte les plats.",
+      "gloss": "The waiter brings the dishes."
+     }
+    },
+    {
+     "id": "serveuse",
+     "hr": "serveuse",
+     "en": "waitress",
+     "pos": "n. f.",
+     "example": {
+      "target": "La serveuse est très gentille.",
+      "gloss": "The waitress is very kind."
+     }
+    },
+    {
+     "id": "client",
+     "hr": "client",
+     "en": "customer",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le client attend son café.",
+      "gloss": "The customer is waiting for his coffee."
+     }
+    },
+    {
+     "id": "prix",
+     "hr": "prix",
+     "en": "price",
+     "pos": "n. m.",
+     "example": {
+      "target": "Quel est le prix de ce plat ?",
+      "gloss": "What is the price of this dish?"
+     }
+    },
+    {
+     "id": "pourboire",
+     "hr": "pourboire",
+     "en": "tip",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je laisse un pourboire au serveur.",
+      "gloss": "I leave a tip for the waiter."
+     }
+    },
+    {
+     "id": "commander",
+     "hr": "commander",
+     "en": "to order",
+     "pos": "v.",
+     "example": {
+      "target": "Nous allons commander maintenant.",
+      "gloss": "We are going to order now."
+     }
+    },
+    {
+     "id": "payer",
+     "hr": "payer",
+     "en": "to pay",
+     "pos": "v.",
+     "example": {
+      "target": "Je vais payer à la caisse.",
+      "gloss": "I'm going to pay at the till."
+     }
+    },
+    {
+     "id": "coûter",
+     "hr": "coûter",
+     "en": "to cost",
+     "pos": "v.",
+     "example": {
+      "target": "Ça coûte combien ?",
+      "gloss": "How much does it cost?"
+     }
+    },
+    {
+     "id": "préparer",
+     "hr": "préparer",
+     "en": "to prepare",
+     "pos": "v.",
+     "example": {
+      "target": "Je prépare le dîner.",
+      "gloss": "I'm preparing dinner."
+     }
+    },
+    {
+     "id": "servir",
+     "hr": "servir",
+     "en": "to serve",
+     "pos": "v.",
+     "example": {
+      "target": "On sert le repas à midi.",
+      "gloss": "The meal is served at noon."
+     }
+    },
+    {
+     "id": "couper",
+     "hr": "couper",
+     "en": "to cut",
+     "pos": "v.",
+     "example": {
+      "target": "Je coupe le pain.",
+      "gloss": "I'm cutting the bread."
+     }
+    },
+    {
+     "id": "kilo",
+     "hr": "kilo",
+     "en": "kilo",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je voudrais un kilo de tomates.",
+      "gloss": "I'd like a kilo of tomatoes."
+     }
+    },
+    {
+     "id": "gramme",
+     "hr": "gramme",
+     "en": "gram",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cent grammes de jambon, s'il vous plaît.",
+      "gloss": "A hundred grams of ham, please."
+     }
+    },
+    {
+     "id": "litre",
+     "hr": "litre",
+     "en": "litre",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un litre de lait, s'il vous plaît.",
+      "gloss": "A litre of milk, please."
+     }
+    },
+    {
+     "id": "morceau",
+     "hr": "morceau",
+     "en": "piece",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je prends un morceau de gâteau.",
+      "gloss": "I'll have a piece of cake."
+     }
+    },
+    {
+     "id": "tranche",
+     "hr": "tranche",
+     "en": "slice",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une tranche de jambon, s'il vous plaît.",
+      "gloss": "A slice of ham, please."
+     }
+    },
+    {
+     "id": "paquet",
+     "hr": "paquet",
+     "en": "packet",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'achète un paquet de pâtes.",
+      "gloss": "I'm buying a packet of pasta."
+     }
+    },
+    {
+     "id": "boîte",
+     "hr": "boîte",
+     "en": "box, can, tin",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une boîte de tomates, s'il vous plaît.",
+      "gloss": "A tin of tomatoes, please."
+     }
+    },
+    {
+     "id": "caisse",
+     "hr": "caisse",
+     "en": "checkout, till",
+     "pos": "n. f.",
+     "example": {
+      "target": "On paie à la caisse.",
+      "gloss": "You pay at the checkout."
+     }
+    },
+    {
+     "id": "courses",
+     "hr": "courses",
+     "en": "grocery shopping",
+     "pos": "n. f. pl.",
+     "example": {
+      "target": "Je fais les courses le samedi.",
+      "gloss": "I do the grocery shopping on Saturdays."
+     }
+    },
+    {
+     "id": "marché",
+     "hr": "marché",
+     "en": "market",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'achète des légumes au marché.",
+      "gloss": "I buy vegetables at the market."
+     }
+    },
+    {
+     "id": "supermarché",
+     "hr": "supermarché",
+     "en": "supermarket",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le supermarché est ouvert le dimanche.",
+      "gloss": "The supermarket is open on Sundays."
+     }
+    },
+    {
+     "id": "boulangerie",
+     "hr": "boulangerie",
+     "en": "bakery",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'achète du pain à la boulangerie.",
+      "gloss": "I buy bread at the bakery."
+     }
+    },
+    {
+     "id": "boucherie",
+     "hr": "boucherie",
+     "en": "butcher's shop",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je vais à la boucherie pour la viande.",
+      "gloss": "I go to the butcher's for meat."
+     }
+    },
+    {
+     "id": "pâtisserie",
+     "hr": "pâtisserie",
+     "en": "pastry shop; pastry",
+     "pos": "n. f.",
+     "example": {
+      "target": "La pâtisserie vend de beaux gâteaux.",
+      "gloss": "The pastry shop sells beautiful cakes."
+     }
+    },
+    {
+     "id": "épicerie",
+     "hr": "épicerie",
+     "en": "grocery store",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'épicerie du coin est pratique.",
+      "gloss": "The corner grocery store is handy."
+     }
+    },
+    {
+     "id": "vendeur",
+     "hr": "vendeur",
+     "en": "shop assistant, seller",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le vendeur est aimable.",
+      "gloss": "The shop assistant is friendly."
+     }
+    },
+    {
+     "id": "monnaie",
+     "hr": "monnaie",
+     "en": "change (coins)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le vendeur me rend la monnaie.",
+      "gloss": "The seller gives me the change."
+     }
+    },
+    {
+     "id": "faim",
+     "hr": "faim",
+     "en": "hunger (avoir faim = to be hungry)",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'ai faim, on mange ?",
+      "gloss": "I'm hungry, shall we eat?"
+     }
+    },
+    {
+     "id": "soif",
+     "hr": "soif",
+     "en": "thirst (avoir soif = to be thirsty)",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'ai soif, je veux de l'eau.",
+      "gloss": "I'm thirsty, I want some water."
+     }
+    },
+    {
+     "id": "délicieux",
+     "hr": "délicieux",
+     "en": "delicious",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce gâteau est délicieux.",
+      "gloss": "This cake is delicious."
+     }
+    },
+    {
+     "id": "sucré",
+     "hr": "sucré",
+     "en": "sweet",
+     "pos": "adj.",
+     "example": {
+      "target": "Le dessert est trop sucré.",
+      "gloss": "The dessert is too sweet."
+     }
+    },
+    {
+     "id": "salé",
+     "hr": "salé",
+     "en": "salty, savoury",
+     "pos": "adj.",
+     "example": {
+      "target": "Les frites sont un peu salées.",
+      "gloss": "The fries are a little salty."
+     }
+    },
+    {
+     "id": "frais",
+     "hr": "frais",
+     "en": "fresh",
+     "pos": "adj.",
+     "example": {
+      "target": "Le poisson est très frais.",
+      "gloss": "The fish is very fresh."
+     }
+    },
+    {
+     "id": "recette",
+     "hr": "recette",
+     "en": "recipe",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ma grand-mère a une bonne recette.",
+      "gloss": "My grandmother has a good recipe."
+     }
     }
-  ]
+   ],
+   "sources": [
+    "inventaire-cecrl"
+   ]
+  }
+ ]
 }

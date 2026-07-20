@@ -1,1006 +1,1006 @@
 {
-  "levels": [
+ "levels": [
+  {
+   "levelId": "A1",
+   "intro": "A1 grammar unlocks the survival core of French: gender and articles, the present of the key verbs, asking and answering, and first steps into the past and future.",
+   "sources": [
+    "inventaire-cecrl",
+    "cecrl"
+   ],
+   "topics": [
     {
-      "levelId": "A1",
-      "intro": "A1 grammar unlocks the survival core of French: gender and articles, the present of the key verbs, asking and answering, and first steps into the past and future.",
-      "sources": [
-        "referentiel-fr",
-        "cecrl"
-      ],
-      "topics": [
-        {
-          "id": "a1-sons-orthographe",
-          "title": "Sounds & spelling (les sons et l'orthographe)",
-          "summary": "French spelling hides sounds: most final consonants are silent (petit, grand, vous), and letters combine into single sounds. The nasal vowels are key: on/om, an/en/am/em, in/im/ain/ein all resonate through the nose. The accents change sound or meaning: e (closed, ete), e (open, mere), e (as in tete), and the cedille c gives an s-sound before a/o/u (ca, francais). Liaison links a silent final consonant to a following vowel: vous_avez, les_amis. The French r is uvular, made at the back of the throat.",
-          "tables": [
-            "Sound      Spellings              Example\n---------  ---------------------  --------------\n[o~] nasal on, om               bonjour, nom\n[a~] nasal an, en, am, em       enfant, temps\n[e~] nasal in, im, ain, ein     vin, pain, plein\n[e] closed e, e, -er, -ez      ete, parler, nez\n[e] open   e, e, ai, et        mere, tete, mais\n[s] c+e/i  c before a/o/u       ca, francais, glace\nsilent     final consonants     petit, grand, vous"
-          ],
-          "examples": [
-            {
-              "target": "Bonjour, comment allez-vous ?",
-              "gloss": "Hello, how are you?"
-            },
-            {
-              "target": "Je m'appelle Marie.",
-              "gloss": "My name is Marie."
-            },
-            {
-              "target": "Nous avons deux enfants.",
-              "gloss": "We have two children."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-genre-articles",
-          "title": "Gender & articles (le genre et les articles)",
-          "summary": "Every French noun is masculine or feminine, and the article shows which: le/un for masculine, la/une for feminine, les/des in the plural. Before a vowel or silent h, le/la become l' (l'ami, l'ecole). Definite (le/la/les) points to something specific or general; indefinite (un/une/des) introduces something new. The partitive (du/de la/de l'/des) expresses 'some' of an uncountable: du pain, de l'eau. Learn each noun WITH its article, since gender is rarely predictable.",
-          "tables": [
-            "            Masculine   Feminine   Plural\n--------    ---------   --------   ------\ndefinite    le / l'     la / l'    les\nindefinite  un          une        des\npartitive   du / de l'  de la      des"
-          ],
-          "examples": [
-            {
-              "target": "Le livre est sur la table.",
-              "gloss": "The book is on the table."
-            },
-            {
-              "target": "Je voudrais un cafe et une eau.",
-              "gloss": "I'd like a coffee and a water."
-            },
-            {
-              "target": "Il mange du pain et de la confiture.",
-              "gloss": "He eats (some) bread and (some) jam."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-etre-avoir",
-          "title": "The verbs etre and avoir (present)",
-          "summary": "Etre (to be) and avoir (to have) are the two most important verbs: they describe states and possession, and later form the passe compose. They are irregular and must be memorised. Avoir also appears in fixed expressions of age and feeling: j'ai 30 ans (I am 30), j'ai faim (I'm hungry).",
-          "tables": [
-            "etre (to be)          avoir (to have)\n-------------------   -------------------\nje suis               j'ai\ntu es                 tu as\nil/elle est           il/elle a\nnous sommes           nous avons\nvous etes             vous avez\nils/elles sont        ils/elles ont"
-          ],
-          "examples": [
-            {
-              "target": "Je suis etudiant et j'ai vingt ans.",
-              "gloss": "I am a student and I am twenty."
-            },
-            {
-              "target": "Elle est fatiguee, elle a faim.",
-              "gloss": "She is tired, she is hungry."
-            },
-            {
-              "target": "Nous sommes en France.",
-              "gloss": "We are in France."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-aller-faire-er",
-          "title": "aller, faire and regular -ER verbs",
-          "summary": "Regular -ER verbs are the biggest and easiest group: drop -er and add -e, -es, -e, -ons, -ez, -ent (parler -> je parle). Aller (to go) and faire (to do/make) are irregular but essential; aller also builds the near future (aller + infinitive). Watch: the -ent ending on ils/elles is silent, so parle and parlent sound the same.",
-          "tables": [
-            "parler (regular -ER)   aller (to go)   faire (to do)\n--------------------   -------------   -------------\nje parle               je vais         je fais\ntu parles              tu vas          tu fais\nil parle               il va           il fait\nnous parlons           nous allons     nous faisons\nvous parlez            vous allez      vous faites\nils parlent            ils vont        ils font"
-          ],
-          "examples": [
-            {
-              "target": "Je parle un peu francais.",
-              "gloss": "I speak a little French."
-            },
-            {
-              "target": "Nous allons au marche.",
-              "gloss": "We are going to the market."
-            },
-            {
-              "target": "Qu'est-ce que tu fais ?",
-              "gloss": "What are you doing?"
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-ir-re-pronominaux",
-          "title": "Regular -IR/-RE and pronominal verbs",
-          "summary": "A second regular group ends in -IR (finir -> je finis, nous finissons) and a third in -RE (attendre -> j'attends, nous attendons). Pronominal (reflexive) verbs carry a pronoun that refers back to the subject: se lever (to get up) -> je me leve, tu te leves. They cover daily routine: se laver, s'appeler, se coucher.",
-          "tables": [
-            "finir (-IR)      attendre (-RE)    se lever (pronominal)\n--------------   ---------------   ---------------------\nje finis         j'attends         je me leve\ntu finis         tu attends        tu te leves\nil finit         il attend         il se leve\nnous finissons   nous attendons    nous nous levons\nvous finissez    vous attendez     vous vous levez\nils finissent    ils attendent     ils se levent"
-          ],
-          "examples": [
-            {
-              "target": "Je me leve a sept heures.",
-              "gloss": "I get up at seven."
-            },
-            {
-              "target": "Le train arrive, nous attendons.",
-              "gloss": "The train is coming, we are waiting."
-            },
-            {
-              "target": "Comment tu t'appelles ?",
-              "gloss": "What's your name?"
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-negation-questions",
-          "title": "Negation and questions",
-          "summary": "Negation wraps the verb in ne ... pas: je ne parle pas. Before a vowel ne becomes n' (je n'ai pas). Questions have three registers: intonation (Tu viens ?), est-ce que (Est-ce que tu viens ?), and inversion (Viens-tu ?). Question words: qui (who), que/quoi (what), ou (where), quand (when), comment (how), pourquoi (why), combien (how much).",
-          "tables": [
-            "Negation:  ne + verb + pas     Je ne comprends pas.\n           n' before vowel     Je n'ai pas faim.\nQuestions: intonation          Tu parles francais ?\n           est-ce que          Est-ce que tu parles ?\n           inversion           Parles-tu francais ?\nWords: qui, que, ou, quand, comment, pourquoi, combien"
-          ],
-          "examples": [
-            {
-              "target": "Je ne comprends pas la question.",
-              "gloss": "I don't understand the question."
-            },
-            {
-              "target": "Ou est-ce que tu habites ?",
-              "gloss": "Where do you live?"
-            },
-            {
-              "target": "Pourquoi es-tu en retard ?",
-              "gloss": "Why are you late?"
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-adjectifs",
-          "title": "Adjectives: agreement and position",
-          "summary": "Adjectives agree with the noun in gender and number: usually add -e for feminine and -s for plural (petit, petite, petits, petites). Most adjectives follow the noun (une voiture rouge), but a few common ones come before: beau, joli, grand, petit, bon, mauvais, jeune, vieux, nouveau (un grand jardin).",
-          "tables": [
-            "            Masc.     Fem.       Plural\n--------    -------   --------   ---------\nregular     grand     grande     grand(e)s\n-e both     rouge     rouge      rouges\nirregular   beau      belle      beaux/belles\n            vieux     vieille    vieux/vieilles\nBefore noun: beau, joli, grand, petit, bon, jeune, nouveau"
-          ],
-          "examples": [
-            {
-              "target": "C'est une petite maison blanche.",
-              "gloss": "It's a small white house."
-            },
-            {
-              "target": "Ils ont de beaux enfants.",
-              "gloss": "They have beautiful children."
-            },
-            {
-              "target": "La nouvelle voiture est rouge.",
-              "gloss": "The new car is red."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-possessifs-demonstratifs",
-          "title": "Possessives and demonstratives",
-          "summary": "Possessive adjectives agree with the thing possessed, not the owner: mon/ma/mes, ton/ta/tes, son/sa/ses, notre/nos, votre/vos, leur/leurs. Before a feminine noun starting with a vowel, use mon/ton/son (mon amie). Demonstratives (this/that): ce (masc.), cet (masc. before vowel), cette (fem.), ces (plural).",
-          "tables": [
-            "Possessive  masc    fem    plural\n----------  -----   ----   ------\nmy          mon     ma     mes\nyour        ton     ta     tes\nhis/her     son     sa     ses\nour/your    notre   notre  nos/vos\ntheir       leur    leur   leurs\nDemonstrative: ce / cet(vowel) / cette / ces"
-          ],
-          "examples": [
-            {
-              "target": "C'est ma soeur et mon frere.",
-              "gloss": "This is my sister and my brother."
-            },
-            {
-              "target": "Cette ville est tres belle.",
-              "gloss": "This town is very beautiful."
-            },
-            {
-              "target": "J'aime ces chaussures.",
-              "gloss": "I like these shoes."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-futur-proche",
-          "title": "The near future (le futur proche)",
-          "summary": "The simplest way to talk about the future is aller (present) + infinitive: it means 'to be going to do'. Je vais manger = I'm going to eat. Negation wraps aller: je ne vais pas manger. It's used constantly in speech for plans and intentions.",
-          "tables": [
-            "aller (present) + infinitive\n----------------------------\nje vais manger        I'm going to eat\ntu vas partir         you're going to leave\nil va pleuvoir        it's going to rain\nnous allons voir      we're going to see\nnegation: je ne vais pas manger"
-          ],
-          "examples": [
-            {
-              "target": "Ce soir, je vais regarder un film.",
-              "gloss": "Tonight I'm going to watch a film."
-            },
-            {
-              "target": "Nous allons visiter Paris demain.",
-              "gloss": "We're going to visit Paris tomorrow."
-            },
-            {
-              "target": "Il ne va pas venir.",
-              "gloss": "He's not going to come."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-passe-compose-avoir",
-          "title": "The past with avoir (passe compose)",
-          "summary": "The passe compose tells completed past actions. Most verbs form it with avoir (present) + past participle: -ER -> -e (parle), -IR -> -i (fini), -RE -> -u (attendu). Many common verbs are irregular: avoir->eu, etre->ete, faire->fait, voir->vu, prendre->pris. Negation wraps the auxiliary: je n'ai pas mange.",
-          "tables": [
-            "avoir + past participle\n-----------------------\nj'ai parle            I spoke / I have spoken\ntu as fini            you finished\nil a attendu          he waited\nParticiples: -er->e, -ir->i, -re->u\nIrregular: eu, ete, fait, vu, pris, mis, dit"
-          ],
-          "examples": [
-            {
-              "target": "Hier, j'ai mange au restaurant.",
-              "gloss": "Yesterday I ate at the restaurant."
-            },
-            {
-              "target": "Elle a fini son travail.",
-              "gloss": "She finished her work."
-            },
-            {
-              "target": "Nous avons vu un bon film.",
-              "gloss": "We saw a good film."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a1-nombres-lieu",
-          "title": "Numbers, time and place words",
-          "summary": "Numbers: essential up to 100 (note 70 = soixante-dix, 80 = quatre-vingts, 90 = quatre-vingt-dix). Telling time: Il est trois heures et quart / et demie / moins le quart. Prepositions of place: a (at/to), dans (in), sur (on), sous (under), devant (in front of), derriere (behind), a cote de (next to). There-is: il y a (une table). It-is: c'est (bon).",
-          "tables": [
-            "Place: a, dans, sur, sous, devant, derriere, a cote de\nTime:  Il est... heure(s); et quart / et demie / moins le quart\nUseful: il y a (there is/are), c'est / ce sont (it is / they are)\nNumbers: 70 soixante-dix, 80 quatre-vingts, 90 quatre-vingt-dix"
-          ],
-          "examples": [
-            {
-              "target": "Il y a un supermarche a cote de la gare.",
-              "gloss": "There's a supermarket next to the station."
-            },
-            {
-              "target": "Il est huit heures et demie.",
-              "gloss": "It's half past eight."
-            },
-            {
-              "target": "Le chat est sous la table.",
-              "gloss": "The cat is under the table."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        }
-      ]
+     "id": "a1-sons-orthographe",
+     "title": "Sounds & spelling (les sons et l'orthographe)",
+     "summary": "French spelling hides sounds: most final consonants are silent (petit, grand, vous), and letters combine into single sounds. The nasal vowels are key: on/om, an/en/am/em, in/im/ain/ein all resonate through the nose. The accents change sound or meaning: e (closed, ete), e (open, mere), e (as in tete), and the cedille c gives an s-sound before a/o/u (ca, francais). Liaison links a silent final consonant to a following vowel: vous_avez, les_amis. The French r is uvular, made at the back of the throat.",
+     "tables": [
+      "Sound      Spellings              Example\n---------  ---------------------  --------------\n[o~] nasal on, om               bonjour, nom\n[a~] nasal an, en, am, em       enfant, temps\n[e~] nasal in, im, ain, ein     vin, pain, plein\n[e] closed e, e, -er, -ez      ete, parler, nez\n[e] open   e, e, ai, et        mere, tete, mais\n[s] c+e/i  c before a/o/u       ca, francais, glace\nsilent     final consonants     petit, grand, vous"
+     ],
+     "examples": [
+      {
+       "target": "Bonjour, comment allez-vous ?",
+       "gloss": "Hello, how are you?"
+      },
+      {
+       "target": "Je m'appelle Marie.",
+       "gloss": "My name is Marie."
+      },
+      {
+       "target": "Nous avons deux enfants.",
+       "gloss": "We have two children."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
     },
     {
-      "levelId": "A2",
-      "intro": "A2 grammar makes you a storyteller: past narration (passe compose vs imparfait), pronouns that make speech flow, the future, comparison and connectors.",
-      "sources": [
-        "referentiel-fr",
-        "cecrl"
-      ],
-      "topics": [
-        {
-          "id": "a2-pc-imparfait",
-          "title": "Passe compose vs imparfait",
-          "summary": "Both are past tenses but do different jobs. The passe compose reports a completed, punctual event ('what happened'): j'ai mange. The imparfait describes a background: ongoing states, habits and descriptions ('what was going on'): je mangeais, il faisait beau, quand j'etais petit. Imparfait endings on the nous-stem: -ais, -ais, -ait, -ions, -iez, -aient.",
-          "tables": [
-            "                 passe compose        imparfait\n---------------  ------------------   -----------------\nuse              completed event      background/habit\nsignal words     hier, soudain, un    souvent, toujours,\n                 jour, a 3 heures     quand j'etais...\nform             avoir/etre + p.p.    stem(nous) + -ais...\nexample          j'ai mange           je mangeais"
-          ],
-          "examples": [
-            {
-              "target": "Quand j'etais petit, je jouais au foot.",
-              "gloss": "When I was little, I used to play football."
-            },
-            {
-              "target": "Il faisait beau quand nous sommes sortis.",
-              "gloss": "It was nice out when we went out."
-            },
-            {
-              "target": "Hier, elle a rate son train.",
-              "gloss": "Yesterday she missed her train."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-pc-etre",
-          "title": "Passe compose with etre and agreement",
-          "summary": "A set of verbs of movement and change of state form the passe compose with etre, not avoir: aller, venir, arriver, partir, entrer, sortir, monter, descendre, rester, tomber, naitre, mourir, and all pronominal verbs. With etre, the participle agrees with the subject: elle est allee, ils sont partis, nous nous sommes leves.",
-          "tables": [
-            "etre-verbs (DR & MRS VANDERTRAMP):\naller, venir, arriver, partir, entrer, sortir,\nmonter, descendre, rester, tomber, naitre, mourir,\nretourner, passer + all pronominal verbs\nAgreement with subject:\n  il est alle / elle est allee / ils sont alles / elles sont allees"
-          ],
-          "examples": [
-            {
-              "target": "Elle est arrivee en retard.",
-              "gloss": "She arrived late."
-            },
-            {
-              "target": "Ils sont partis a midi.",
-              "gloss": "They left at noon."
-            },
-            {
-              "target": "Nous nous sommes couches tard.",
-              "gloss": "We went to bed late."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-pronoms-cod-coi",
-          "title": "Object pronouns (COD and COI)",
-          "summary": "Pronouns replace nouns to avoid repetition. Direct-object (COD): me, te, le/la, nous, vous, les (Je vois Marie -> Je la vois). Indirect-object (COI), for people after a 'a': me, te, lui, nous, vous, leur (Je parle a Marie -> Je lui parle). They go BEFORE the verb.",
-          "tables": [
-            "             direct (COD)   indirect (COI)\n-----------  -------------  ---------------\nme/te        me, te         me, te\nhim/her      le, la         lui\nus/you       nous, vous     nous, vous\nthem         les            leur\nPosition: pronoun + verb  (Je le vois. Je lui parle.)"
-          ],
-          "examples": [
-            {
-              "target": "Tu vois ce film ? - Oui, je le regarde.",
-              "gloss": "Do you see this film? - Yes, I'm watching it."
-            },
-            {
-              "target": "J'ecris a mes parents, je leur ecris souvent.",
-              "gloss": "I write to my parents, I write to them often."
-            },
-            {
-              "target": "Elle nous invite a diner.",
-              "gloss": "She invites us to dinner."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-y-en",
-          "title": "The pronouns y and en",
-          "summary": "Y replaces a place or a 'a + thing' (Je vais a Paris -> J'y vais; Je pense a mon travail -> J'y pense). En replaces 'de + thing' or a quantity (Je viens de Paris -> J'en viens; Tu veux du cafe ? -> Oui, j'en veux). Both go before the verb.",
-          "tables": [
-            "y  = a + place/thing     J'y vais (a Paris).\n                          J'y pense (a ce probleme).\nen = de + thing / amount  J'en viens (de Lyon).\n                          J'en ai trois. (des livres)\nPosition: before the verb"
-          ],
-          "examples": [
-            {
-              "target": "Tu vas au marche ? - Oui, j'y vais.",
-              "gloss": "Are you going to the market? - Yes, I'm going (there)."
-            },
-            {
-              "target": "Des pommes ? J'en ai achete un kilo.",
-              "gloss": "Apples? I bought a kilo (of them)."
-            },
-            {
-              "target": "Il parle de son voyage, il en parle beaucoup.",
-              "gloss": "He talks about his trip, he talks about it a lot."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-futur-simple",
-          "title": "The simple future (le futur simple)",
-          "summary": "The futur simple states what will happen. Regular verbs: infinitive + -ai, -as, -a, -ons, -ez, -ont (je parlerai, je finirai, j'attendrai -drop the final e of -RE). Key irregular stems: etre->ser-, avoir->aur-, aller->ir-, faire->fer-, venir->viendr-, voir->verr-, pouvoir->pourr-, vouloir->voudr-.",
-          "tables": [
-            "infinitive + -ai/-as/-a/-ons/-ez/-ont\n-------------------------------------\nje parlerai        nous finirons\ntu attendras       vous partirez\nIrregular stems: etre ser-, avoir aur-, aller ir-,\nfaire fer-, venir viendr-, voir verr-, pouvoir pourr-"
-          ],
-          "examples": [
-            {
-              "target": "Demain je serai a Paris.",
-              "gloss": "Tomorrow I'll be in Paris."
-            },
-            {
-              "target": "Nous partirons en vacances en juillet.",
-              "gloss": "We'll go on holiday in July."
-            },
-            {
-              "target": "Tu auras le temps ce week-end ?",
-              "gloss": "Will you have time this weekend?"
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-comparatif-superlatif",
-          "title": "Comparatives and superlatives",
-          "summary": "Compare with plus / moins / aussi + adjective + que: plus grand que (bigger than), moins cher que (less expensive than), aussi bon que (as good as). Superlative: le/la/les plus/moins + adjective (le plus grand). Irregular: bon -> meilleur (better) -> le meilleur; bien -> mieux (better) -> le mieux.",
-          "tables": [
-            "Comparative: plus / moins / aussi + adj + que\n  plus grand que, moins cher que, aussi bon que\nSuperlative: le/la/les plus (moins) + adj\n  le plus grand, la moins chere\nIrregular: bon->meilleur->le meilleur; bien->mieux->le mieux"
-          ],
-          "examples": [
-            {
-              "target": "Cette voiture est plus chere que l'autre.",
-              "gloss": "This car is more expensive than the other."
-            },
-            {
-              "target": "C'est le meilleur restaurant de la ville.",
-              "gloss": "It's the best restaurant in town."
-            },
-            {
-              "target": "Elle chante mieux que moi.",
-              "gloss": "She sings better than me."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-relatifs-qui-que",
-          "title": "Relative pronouns qui and que",
-          "summary": "Relative pronouns join two clauses. Qui is the subject of the relative clause (the one doing the action): l'homme qui parle (the man who is speaking). Que is the object (the one acted upon): le livre que je lis (the book that I'm reading). Que becomes qu' before a vowel.",
-          "tables": [
-            "qui = subject of the clause   l'ami qui habite ici\nque = object of the clause    le film que j'aime\nque -> qu' before a vowel     la ville qu'il visite\n(qui is never shortened)"
-          ],
-          "examples": [
-            {
-              "target": "C'est un ami qui travaille a Lyon.",
-              "gloss": "He's a friend who works in Lyon."
-            },
-            {
-              "target": "Le repas que tu as prepare etait delicieux.",
-              "gloss": "The meal you made was delicious."
-            },
-            {
-              "target": "Voici la maison qu'ils ont achetee.",
-              "gloss": "Here's the house they bought."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-connecteurs",
-          "title": "Everyday connectors",
-          "summary": "Connectors link ideas into real sentences. Cause: parce que (because), car (for). Consequence: donc (so), alors (then/so). Opposition: mais (but). Sequence: d'abord (first), ensuite/puis (then), enfin (finally). Addition: et, aussi.",
-          "tables": [
-            "cause:        parce que, car\nconsequence:  donc, alors, c'est pourquoi\nopposition:   mais, par contre\nsequence:     d'abord, ensuite, puis, enfin\naddition:     et, aussi, de plus"
-          ],
-          "examples": [
-            {
-              "target": "Je reste chez moi parce qu'il pleut.",
-              "gloss": "I'm staying home because it's raining."
-            },
-            {
-              "target": "D'abord on mange, ensuite on sort.",
-              "gloss": "First we eat, then we go out."
-            },
-            {
-              "target": "Il est malade, donc il ne vient pas.",
-              "gloss": "He's ill, so he's not coming."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "a2-venir-de-en-train",
-          "title": "venir de and etre en train de",
-          "summary": "Two useful periphrastic tenses. Venir de + infinitive = to have just done something (recent past): je viens de manger (I've just eaten). Etre en train de + infinitive = to be in the middle of doing (action in progress): je suis en train de travailler (I'm (busy) working).",
-          "tables": [
-            "venir de + inf     = just did       je viens d'arriver\netre en train de   = doing now      il est en train de lire\n+ inf\n(both use the present of venir / etre)"
-          ],
-          "examples": [
-            {
-              "target": "Je viens de finir mes devoirs.",
-              "gloss": "I've just finished my homework."
-            },
-            {
-              "target": "Elle est en train de cuisiner.",
-              "gloss": "She is (in the middle of) cooking."
-            },
-            {
-              "target": "Nous venons de rentrer.",
-              "gloss": "We've just got back."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        }
-      ]
+     "id": "a1-genre-articles",
+     "title": "Gender & articles (le genre et les articles)",
+     "summary": "Every French noun is masculine or feminine, and the article shows which: le/un for masculine, la/une for feminine, les/des in the plural. Before a vowel or silent h, le/la become l' (l'ami, l'ecole). Definite (le/la/les) points to something specific or general; indefinite (un/une/des) introduces something new. The partitive (du/de la/de l'/des) expresses 'some' of an uncountable: du pain, de l'eau. Learn each noun WITH its article, since gender is rarely predictable.",
+     "tables": [
+      "            Masculine   Feminine   Plural\n--------    ---------   --------   ------\ndefinite    le / l'     la / l'    les\nindefinite  un          une        des\npartitive   du / de l'  de la      des"
+     ],
+     "examples": [
+      {
+       "target": "Le livre est sur la table.",
+       "gloss": "The book is on the table."
+      },
+      {
+       "target": "Je voudrais un cafe et une eau.",
+       "gloss": "I'd like a coffee and a water."
+      },
+      {
+       "target": "Il mange du pain et de la confiture.",
+       "gloss": "He eats (some) bread and (some) jam."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
     },
     {
-      "levelId": "B1",
-      "intro": "B1 grammar unlocks opinion and hypothesis: the subjunctive, the conditional and si-clauses, richer relatives, reported speech and the tools to justify a view - the DELF B1 toolkit.",
-      "sources": [
-        "referentiel-fr",
-        "cecrl"
-      ],
-      "topics": [
-        {
-          "id": "b1-subjonctif-present",
-          "title": "The present subjunctive (le subjonctif present)",
-          "summary": "The subjonctif expresses subjectivity: necessity, wish, emotion, doubt. It appears after 'que' following triggers like il faut que, je veux que, je suis content que, bien que. Form it from the ils-stem of the present + -e, -es, -e, -ions, -iez, -ent (ils parlent -> que je parle). Key irregulars: etre (que je sois), avoir (que j'aie), aller (que j'aille), faire (que je fasse), pouvoir (que je puisse).",
-          "tables": [
-            "Trigger + que + subjunctive\n---------------------------\nil faut que, je veux que, je souhaite que,\nje suis content/triste que, il est important que,\navant que, bien que, pour que\nForm: ils-stem + -e -es -e -ions -iez -ent\nIrregular: sois, aie, aille, fasse, puisse, sache"
-          ],
-          "examples": [
-            {
-              "target": "Il faut que tu fasses tes devoirs.",
-              "gloss": "You need to do your homework."
-            },
-            {
-              "target": "Je suis content que tu sois la.",
-              "gloss": "I'm glad you're here."
-            },
-            {
-              "target": "Bien qu'il pleuve, nous sortons.",
-              "gloss": "Although it's raining, we're going out."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-conditionnel-si",
-          "title": "The conditional and si-clauses",
-          "summary": "The conditionnel present expresses politeness, wishes and hypotheses. Form: future stem + imparfait endings (je voudrais, il faudrait, je pourrais). The classic hypothesis pattern is: Si + imparfait, conditionnel present -> Si j'avais le temps, je voyagerais (If I had time, I would travel).",
-          "tables": [
-            "Form: future stem + imparfait endings\n  je voudrais, tu aimerais, il faudrait, nous pourrions\nHypothesis:\n  Si + present, futur        Si j'ai le temps, je viendrai.\n  Si + imparfait, conditionnel Si j'avais le temps, je viendrais."
-          ],
-          "examples": [
-            {
-              "target": "Je voudrais un cafe, s'il vous plait.",
-              "gloss": "I would like a coffee, please."
-            },
-            {
-              "target": "Si j'etais riche, je voyagerais partout.",
-              "gloss": "If I were rich, I would travel everywhere."
-            },
-            {
-              "target": "Tu pourrais m'aider ?",
-              "gloss": "Could you help me?"
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-relatifs-dont-ou",
-          "title": "Relative pronouns dont and ou",
-          "summary": "Two more relatives extend qui/que. Dont replaces 'de + noun' (possession, or verbs with de): le livre dont je parle (the book I'm talking about), l'homme dont la voiture est rouge (the man whose car is red). Ou means where/when: la ville ou j'habite, le jour ou il est arrive.",
-          "tables": [
-            "dont = de + noun    le sujet dont on parle\n                    la femme dont le fils est medecin\nou   = where/when   le pays ou je vis\n                    l'annee ou je suis ne\nce qui / ce que = what (subject / object)"
-          ],
-          "examples": [
-            {
-              "target": "C'est le film dont tout le monde parle.",
-              "gloss": "It's the film everyone is talking about."
-            },
-            {
-              "target": "Voici la ville ou je suis ne.",
-              "gloss": "Here's the town where I was born."
-            },
-            {
-              "target": "Je ne comprends pas ce que tu veux dire.",
-              "gloss": "I don't understand what you mean."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-plus-que-parfait",
-          "title": "The pluperfect (le plus-que-parfait)",
-          "summary": "The plus-que-parfait expresses a past action that happened BEFORE another past action ('had done'). Form: imparfait of avoir/etre + past participle -> j'avais mange, il etait parti. Same auxiliary and agreement rules as the passe compose.",
-          "tables": [
-            "imparfait of avoir/etre + past participle\n-----------------------------------------\nj'avais fini          I had finished\ntu etais parti(e)     you had left\nUse: an earlier past   Quand je suis arrive, il etait deja parti."
-          ],
-          "examples": [
-            {
-              "target": "Quand je suis arrive, le train etait deja parti.",
-              "gloss": "When I arrived, the train had already left."
-            },
-            {
-              "target": "Elle avait prepare le diner avant notre arrivee.",
-              "gloss": "She had made dinner before we arrived."
-            },
-            {
-              "target": "Nous avions deja mange.",
-              "gloss": "We had already eaten."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-discours-indirect",
-          "title": "Reported speech (le discours indirect)",
-          "summary": "Reported speech turns direct quotes into subordinate clauses. 'Il dit : Je viens' -> Il dit qu'il vient. Questions: est-ce que -> si (Il demande si tu viens); qu'est-ce que -> ce que. When the reporting verb is past, tenses shift back (present -> imparfait, passe compose -> plus-que-parfait, futur -> conditionnel).",
-          "tables": [
-            "Direct              Indirect\n------------------  --------------------------\n'Je viens'          il dit qu'il vient\n'Viens-tu ?'        il demande si tu viens\n'Qu'est-ce que...'  il demande ce que...\nPast reporting shifts: present->imparfait,\n  passe compose->plus-que-parfait, futur->conditionnel"
-          ],
-          "examples": [
-            {
-              "target": "Il dit qu'il est fatigue.",
-              "gloss": "He says he's tired."
-            },
-            {
-              "target": "Elle m'a demande si je voulais venir.",
-              "gloss": "She asked me if I wanted to come."
-            },
-            {
-              "target": "Je ne sais pas ce qu'il fait.",
-              "gloss": "I don't know what he's doing."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-ordre-pronoms",
-          "title": "Combining and ordering pronouns",
-          "summary": "When two object pronouns meet before the verb, they follow a fixed order: me/te/se/nous/vous come before le/la/les, which come before lui/leur, then y, then en. Il me le donne (he gives it to me), je le lui ai dit (I said it to him).",
-          "tables": [
-            "Order before the verb:\n me/te/se/nous/vous | le/la/les | lui/leur | y | en\nExamples:\n  Il me le donne.       (me + le)\n  Je le lui ai dit.     (le + lui)\n  Donne-m'en.           (imperative: verb-moi-en)"
-          ],
-          "examples": [
-            {
-              "target": "Tu me pretes ton stylo ? - Oui, je te le prete.",
-              "gloss": "Will you lend me your pen? - Yes, I'll lend it to you."
-            },
-            {
-              "target": "Ces fleurs ? Je les lui ai offertes.",
-              "gloss": "These flowers? I gave them to her."
-            },
-            {
-              "target": "Il y en a encore.",
-              "gloss": "There's still some (of it) there."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-gerondif",
-          "title": "The gerund (le gerondif)",
-          "summary": "The gerondif (en + present participle) says how or when something happens, with the SAME subject as the main verb. Form the participle from the nous-stem + -ant (nous parlons -> parlant). En mangeant (while eating), en travaillant (by working). It expresses simultaneity, manner or condition.",
-          "tables": [
-            "en + present participle (nous-stem + -ant)\n------------------------------------------\nparler -> en parlant     finir -> en finissant\nManner/means: Il apprend en pratiquant.\nSimultaneity: Elle chante en cuisinant.\n(Irregular: etant, ayant, sachant)"
-          ],
-          "examples": [
-            {
-              "target": "Il ecoute la radio en conduisant.",
-              "gloss": "He listens to the radio while driving."
-            },
-            {
-              "target": "On apprend en faisant des erreurs.",
-              "gloss": "You learn by making mistakes."
-            },
-            {
-              "target": "En arrivant, j'ai vu la lumiere.",
-              "gloss": "On arriving, I saw the light."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-passif",
-          "title": "The passive voice (la voix passive)",
-          "summary": "The passive puts the receiver of the action first: form etre (in the needed tense) + past participle, which agrees with the subject. La lettre est ecrite (the letter is written), la maison a ete construite en 1900. The doer, if named, follows par: le livre a ete ecrit par Camus.",
-          "tables": [
-            "etre (any tense) + past participle (agrees)\n-------------------------------------------\nLa porte est fermee.        (present)\nLe pont a ete construit.    (passe compose)\nLes resultats seront publies. (futur)\nAgent: ... par + doer   (ecrit par l'auteur)"
-          ],
-          "examples": [
-            {
-              "target": "Ce roman a ete ecrit par Victor Hugo.",
-              "gloss": "This novel was written by Victor Hugo."
-            },
-            {
-              "target": "La reunion est reportee.",
-              "gloss": "The meeting is postponed."
-            },
-            {
-              "target": "Les billets seront vendus en ligne.",
-              "gloss": "The tickets will be sold online."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b1-connecteurs-opinion",
-          "title": "Connectors for opinion and cause",
-          "summary": "To express and structure opinions: expressing view (je pense que, a mon avis, selon moi), concession (cependant, pourtant, malgre), cause (a cause de + negative, grace a + positive), purpose (pour, afin de). These are essential for the DELF B1 opinion essay and interaction.",
-          "tables": [
-            "opinion:     je pense que, a mon avis, selon moi\nconcession:  cependant, pourtant, malgre (+ noun)\ncause:       parce que; a cause de (neg); grace a (pos)\npurpose:     pour + inf, afin de + inf\naddition:    de plus, en outre"
-          ],
-          "examples": [
-            {
-              "target": "A mon avis, cette solution est meilleure.",
-              "gloss": "In my opinion, this solution is better."
-            },
-            {
-              "target": "Il a reussi grace a son travail.",
-              "gloss": "He succeeded thanks to his hard work."
-            },
-            {
-              "target": "Le vol est annule a cause du mauvais temps.",
-              "gloss": "The flight is cancelled because of the bad weather."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        }
-      ]
+     "id": "a1-etre-avoir",
+     "title": "The verbs etre and avoir (present)",
+     "summary": "Etre (to be) and avoir (to have) are the two most important verbs: they describe states and possession, and later form the passe compose. They are irregular and must be memorised. Avoir also appears in fixed expressions of age and feeling: j'ai 30 ans (I am 30), j'ai faim (I'm hungry).",
+     "tables": [
+      "etre (to be)          avoir (to have)\n-------------------   -------------------\nje suis               j'ai\ntu es                 tu as\nil/elle est           il/elle a\nnous sommes           nous avons\nvous etes             vous avez\nils/elles sont        ils/elles ont"
+     ],
+     "examples": [
+      {
+       "target": "Je suis etudiant et j'ai vingt ans.",
+       "gloss": "I am a student and I am twenty."
+      },
+      {
+       "target": "Elle est fatiguee, elle a faim.",
+       "gloss": "She is tired, she is hungry."
+      },
+      {
+       "target": "Nous sommes en France.",
+       "gloss": "We are in France."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
     },
     {
-      "levelId": "B2",
-      "intro": "B2 grammar is the language of argument: subjunctive nuance, full tense concordance, the unreal past, idiomatic passive, and the articulators that structure a debate or essay - the DELF B2 toolkit.",
-      "sources": [
-        "referentiel-fr",
-        "cecrl"
-      ],
-      "topics": [
-        {
-          "id": "b2-subjonctif-nuance",
-          "title": "The subjunctive in nuance and the past subjunctive",
-          "summary": "At B2 the subjonctif marks fine distinctions: after conjunctions of concession/purpose/condition (bien que, quoique, pour que, a condition que, avant que), and after doubt/possibility (je doute que, il est possible que, je ne pense pas que). The subjonctif passe (que j'aie fait / que je sois parti) expresses an anteriority: bien qu'il ait fini... (although he has finished).",
-          "tables": [
-            "Triggers (concession/purpose/doubt):\n  bien que, quoique, pour que, a condition que,\n  avant que, je doute que, il est possible que,\n  je ne pense pas que\nPast subjunctive: que + aie/sois + participle\n  Je suis content qu'il soit venu."
-          ],
-          "examples": [
-            {
-              "target": "Bien qu'il ait beaucoup travaille, il a echoue.",
-              "gloss": "Although he worked hard, he failed."
-            },
-            {
-              "target": "Je doute qu'elle soit d'accord.",
-              "gloss": "I doubt she'll agree."
-            },
-            {
-              "target": "Il faut agir avant qu'il ne soit trop tard.",
-              "gloss": "We must act before it's too late."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b2-concordance-temps",
-          "title": "Tense agreement and reported speech in the past",
-          "summary": "In complex sentences, tenses must agree (concordance des temps). With a past main verb, the subordinate shifts: simultaneity -> imparfait, anteriority -> plus-que-parfait, posteriority -> conditionnel. This governs indirect speech reported in the past and hypotheses.",
-          "tables": [
-            "Main verb in the past -> subordinate shifts:\n  same time     -> imparfait      (il pensait que c'etait vrai)\n  earlier       -> plus-que-parfait(il croyait qu'elle etait partie)\n  later         -> conditionnel    (il a dit qu'il viendrait)"
-          ],
-          "examples": [
-            {
-              "target": "Il a dit qu'il viendrait le lendemain.",
-              "gloss": "He said he would come the next day."
-            },
-            {
-              "target": "Je pensais que tu avais compris.",
-              "gloss": "I thought you had understood."
-            },
-            {
-              "target": "Elle ignorait qu'il etait deja parti.",
-              "gloss": "She didn't know he had already left."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b2-conditionnel-passe",
-          "title": "The past conditional (le conditionnel passe)",
-          "summary": "The conditionnel passe expresses an unreal past ('would have done'), regret or reproach. Form: conditionnel of avoir/etre + past participle (j'aurais fait, il serait venu). The full irrealis of the past: Si + plus-que-parfait, conditionnel passe -> Si j'avais su, je serais venu (If I had known, I would have come).",
-          "tables": [
-            "conditionnel of avoir/etre + past participle\n--------------------------------------------\nj'aurais aime      I would have liked\ntu serais venu(e)  you would have come\nRegret:   J'aurais du l'appeler. (I should have called)\nUnreal past: Si + plus-que-parfait, conditionnel passe"
-          ],
-          "examples": [
-            {
-              "target": "Si j'avais su, je serais venu plus tot.",
-              "gloss": "If I had known, I would have come earlier."
-            },
-            {
-              "target": "Tu aurais du me prevenir.",
-              "gloss": "You should have warned me."
-            },
-            {
-              "target": "Elle aurait aime rester.",
-              "gloss": "She would have liked to stay."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b2-passif-pronominal",
-          "title": "Passive and pronominal-passive constructions",
-          "summary": "Beyond the etre-passive, French often avoids the passive with the pronominal-passive (ca se fait, le vin se boit frais = wine is drunk cool) or with on (on parle francais ici = French is spoken here). These are more idiomatic in speech and writing than a heavy passive.",
-          "tables": [
-            "etre-passive:        La maison a ete vendue.\npronominal passive:  Ces produits se vendent bien.\n                     Le francais se parle ici.\nwith 'on':           On dit que... / Ici on parle francais.\nUse the lighter forms for natural French."
-          ],
-          "examples": [
-            {
-              "target": "Ce plat se mange avec du riz.",
-              "gloss": "This dish is eaten with rice."
-            },
-            {
-              "target": "On m'a dit que le musee etait ferme.",
-              "gloss": "I was told the museum was closed."
-            },
-            {
-              "target": "Ces erreurs se corrigent facilement.",
-              "gloss": "These mistakes are easily corrected."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b2-participe-present",
-          "title": "The present participle in writing",
-          "summary": "Distinct from the gerondif, the bare present participle (-ant) works like a relative clause or expresses cause, mostly in written/formal French: une personne parlant trois langues (a person speaking three languages), Ne sachant pas quoi faire, il est parti (Not knowing what to do, he left). The participe passe compose (ayant fini) marks anteriority.",
-          "tables": [
-            "present participle = -ant (from nous-stem)\n  as a relative:  un candidat maitrisant l'anglais\n  as cause:       Etant malade, il est reste chez lui.\ncompound (anteriority): ayant fini, il est sorti\n(gerondif = EN + participle, same subject, spoken)"
-          ],
-          "examples": [
-            {
-              "target": "Ne sachant pas la reponse, il s'est tu.",
-              "gloss": "Not knowing the answer, he kept quiet."
-            },
-            {
-              "target": "Les etudiants ayant reussi peuvent partir.",
-              "gloss": "The students who have passed may leave."
-            },
-            {
-              "target": "Etant donne la situation, il faut agir.",
-              "gloss": "Given the situation, we must act."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b2-argumentation",
-          "title": "Articulators for argumentation",
-          "summary": "The heart of the DELF B2 written and oral production: structuring an argument. Introduce (tout d'abord, en premier lieu), add (par ailleurs, de plus, en outre), contrast (en revanche, neanmoins, toutefois, or), illustrate (en effet, par exemple, ainsi), conclude (en somme, par consequent, en definitive).",
-          "tables": [
-            "introduce:  tout d'abord, en premier lieu, d'une part\nadd:        par ailleurs, de plus, en outre, d'autre part\ncontrast:   en revanche, neanmoins, toutefois, cependant, or\nexplain:    en effet, c'est-a-dire, ainsi\nconclude:   en somme, par consequent, en definitive, donc"
-          ],
-          "examples": [
-            {
-              "target": "D'une part c'est utile, d'autre part c'est cher.",
-              "gloss": "On one hand it's useful, on the other it's expensive."
-            },
-            {
-              "target": "Ce projet est risque ; neanmoins, il en vaut la peine.",
-              "gloss": "This project is risky; nevertheless, it's worth it."
-            },
-            {
-              "target": "En effet, les chiffres le confirment.",
-              "gloss": "Indeed, the figures confirm it."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b2-mise-en-relief",
-          "title": "Emphasis (la mise en relief)",
-          "summary": "French emphasises an element with cleft structures c'est ... qui / c'est ... que: C'est Marie qui a raison (it's Marie who is right), c'est ce livre que je veux (it's this book that I want). Ce qui/ce que ... , c'est ... front an idea: Ce que je veux, c'est la paix. These add force without changing word order awkwardly.",
-          "tables": [
-            "c'est ... qui  (emphasise the subject)  C'est lui qui decide.\nc'est ... que  (emphasise object/other)  C'est ici que j'habite.\nCe qui/que ..., c'est ...  Ce qui compte, c'est l'effort.\nUse to highlight the key element of a sentence."
-          ],
-          "examples": [
-            {
-              "target": "C'est toi qui as commence.",
-              "gloss": "It's you who started it."
-            },
-            {
-              "target": "Ce qui m'interesse, c'est l'histoire.",
-              "gloss": "What interests me is history."
-            },
-            {
-              "target": "C'est en France que j'ai appris le francais.",
-              "gloss": "It was in France that I learned French."
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        },
-        {
-          "id": "b2-registres",
-          "title": "Registers (les registres de langue)",
-          "summary": "B2 requires choosing register. Soutenu (formal): full negation (je ne sais pas), nous, inversion, vocabulary like 'toutefois'. Courant (standard): everyday neutral French. Familier (informal speech): dropped ne (je sais pas), on for nous, elision, slang. The DELF B2 formal letter needs soutenu/courant; the oral debate is courant.",
-          "tables": [
-            "             soutenu        courant        familier\n-----------  -------------  -------------  -------------\nnegation     je ne sais     je ne sais     je sais pas\nwe           nous           nous/on        on\nquestion     Viendrez-vous? Vous venez ?   Tu viens ?\nlexis        toutefois      mais           mais bon\nMatch register to the task (letter=formal, chat=familier)."
-          ],
-          "examples": [
-            {
-              "target": "Je vous prie d'agreer mes salutations distinguees.",
-              "gloss": "Yours faithfully. (formal closing)"
-            },
-            {
-              "target": "On se voit demain ?",
-              "gloss": "See each other tomorrow? (informal)"
-            },
-            {
-              "target": "Je vous serais reconnaissant de me repondre.",
-              "gloss": "I would be grateful if you would reply. (formal)"
-            }
-          ],
-          "sources": [
-            "referentiel-fr",
-            "cecrl"
-          ]
-        }
-      ]
+     "id": "a1-aller-faire-er",
+     "title": "aller, faire and regular -ER verbs",
+     "summary": "Regular -ER verbs are the biggest and easiest group: drop -er and add -e, -es, -e, -ons, -ez, -ent (parler -> je parle). Aller (to go) and faire (to do/make) are irregular but essential; aller also builds the near future (aller + infinitive). Watch: the -ent ending on ils/elles is silent, so parle and parlent sound the same.",
+     "tables": [
+      "parler (regular -ER)   aller (to go)   faire (to do)\n--------------------   -------------   -------------\nje parle               je vais         je fais\ntu parles              tu vas          tu fais\nil parle               il va           il fait\nnous parlons           nous allons     nous faisons\nvous parlez            vous allez      vous faites\nils parlent            ils vont        ils font"
+     ],
+     "examples": [
+      {
+       "target": "Je parle un peu francais.",
+       "gloss": "I speak a little French."
+      },
+      {
+       "target": "Nous allons au marche.",
+       "gloss": "We are going to the market."
+      },
+      {
+       "target": "Qu'est-ce que tu fais ?",
+       "gloss": "What are you doing?"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a1-ir-re-pronominaux",
+     "title": "Regular -IR/-RE and pronominal verbs",
+     "summary": "A second regular group ends in -IR (finir -> je finis, nous finissons) and a third in -RE (attendre -> j'attends, nous attendons). Pronominal (reflexive) verbs carry a pronoun that refers back to the subject: se lever (to get up) -> je me leve, tu te leves. They cover daily routine: se laver, s'appeler, se coucher.",
+     "tables": [
+      "finir (-IR)      attendre (-RE)    se lever (pronominal)\n--------------   ---------------   ---------------------\nje finis         j'attends         je me leve\ntu finis         tu attends        tu te leves\nil finit         il attend         il se leve\nnous finissons   nous attendons    nous nous levons\nvous finissez    vous attendez     vous vous levez\nils finissent    ils attendent     ils se levent"
+     ],
+     "examples": [
+      {
+       "target": "Je me leve a sept heures.",
+       "gloss": "I get up at seven."
+      },
+      {
+       "target": "Le train arrive, nous attendons.",
+       "gloss": "The train is coming, we are waiting."
+      },
+      {
+       "target": "Comment tu t'appelles ?",
+       "gloss": "What's your name?"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a1-negation-questions",
+     "title": "Negation and questions",
+     "summary": "Negation wraps the verb in ne ... pas: je ne parle pas. Before a vowel ne becomes n' (je n'ai pas). Questions have three registers: intonation (Tu viens ?), est-ce que (Est-ce que tu viens ?), and inversion (Viens-tu ?). Question words: qui (who), que/quoi (what), ou (where), quand (when), comment (how), pourquoi (why), combien (how much).",
+     "tables": [
+      "Negation:  ne + verb + pas     Je ne comprends pas.\n           n' before vowel     Je n'ai pas faim.\nQuestions: intonation          Tu parles francais ?\n           est-ce que          Est-ce que tu parles ?\n           inversion           Parles-tu francais ?\nWords: qui, que, ou, quand, comment, pourquoi, combien"
+     ],
+     "examples": [
+      {
+       "target": "Je ne comprends pas la question.",
+       "gloss": "I don't understand the question."
+      },
+      {
+       "target": "Ou est-ce que tu habites ?",
+       "gloss": "Where do you live?"
+      },
+      {
+       "target": "Pourquoi es-tu en retard ?",
+       "gloss": "Why are you late?"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a1-adjectifs",
+     "title": "Adjectives: agreement and position",
+     "summary": "Adjectives agree with the noun in gender and number: usually add -e for feminine and -s for plural (petit, petite, petits, petites). Most adjectives follow the noun (une voiture rouge), but a few common ones come before: beau, joli, grand, petit, bon, mauvais, jeune, vieux, nouveau (un grand jardin).",
+     "tables": [
+      "            Masc.     Fem.       Plural\n--------    -------   --------   ---------\nregular     grand     grande     grand(e)s\n-e both     rouge     rouge      rouges\nirregular   beau      belle      beaux/belles\n            vieux     vieille    vieux/vieilles\nBefore noun: beau, joli, grand, petit, bon, jeune, nouveau"
+     ],
+     "examples": [
+      {
+       "target": "C'est une petite maison blanche.",
+       "gloss": "It's a small white house."
+      },
+      {
+       "target": "Ils ont de beaux enfants.",
+       "gloss": "They have beautiful children."
+      },
+      {
+       "target": "La nouvelle voiture est rouge.",
+       "gloss": "The new car is red."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a1-possessifs-demonstratifs",
+     "title": "Possessives and demonstratives",
+     "summary": "Possessive adjectives agree with the thing possessed, not the owner: mon/ma/mes, ton/ta/tes, son/sa/ses, notre/nos, votre/vos, leur/leurs. Before a feminine noun starting with a vowel, use mon/ton/son (mon amie). Demonstratives (this/that): ce (masc.), cet (masc. before vowel), cette (fem.), ces (plural).",
+     "tables": [
+      "Possessive  masc    fem    plural\n----------  -----   ----   ------\nmy          mon     ma     mes\nyour        ton     ta     tes\nhis/her     son     sa     ses\nour/your    notre   notre  nos/vos\ntheir       leur    leur   leurs\nDemonstrative: ce / cet(vowel) / cette / ces"
+     ],
+     "examples": [
+      {
+       "target": "C'est ma soeur et mon frere.",
+       "gloss": "This is my sister and my brother."
+      },
+      {
+       "target": "Cette ville est tres belle.",
+       "gloss": "This town is very beautiful."
+      },
+      {
+       "target": "J'aime ces chaussures.",
+       "gloss": "I like these shoes."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a1-futur-proche",
+     "title": "The near future (le futur proche)",
+     "summary": "The simplest way to talk about the future is aller (present) + infinitive: it means 'to be going to do'. Je vais manger = I'm going to eat. Negation wraps aller: je ne vais pas manger. It's used constantly in speech for plans and intentions.",
+     "tables": [
+      "aller (present) + infinitive\n----------------------------\nje vais manger        I'm going to eat\ntu vas partir         you're going to leave\nil va pleuvoir        it's going to rain\nnous allons voir      we're going to see\nnegation: je ne vais pas manger"
+     ],
+     "examples": [
+      {
+       "target": "Ce soir, je vais regarder un film.",
+       "gloss": "Tonight I'm going to watch a film."
+      },
+      {
+       "target": "Nous allons visiter Paris demain.",
+       "gloss": "We're going to visit Paris tomorrow."
+      },
+      {
+       "target": "Il ne va pas venir.",
+       "gloss": "He's not going to come."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a1-passe-compose-avoir",
+     "title": "The past with avoir (passe compose)",
+     "summary": "The passe compose tells completed past actions. Most verbs form it with avoir (present) + past participle: -ER -> -e (parle), -IR -> -i (fini), -RE -> -u (attendu). Many common verbs are irregular: avoir->eu, etre->ete, faire->fait, voir->vu, prendre->pris. Negation wraps the auxiliary: je n'ai pas mange.",
+     "tables": [
+      "avoir + past participle\n-----------------------\nj'ai parle            I spoke / I have spoken\ntu as fini            you finished\nil a attendu          he waited\nParticiples: -er->e, -ir->i, -re->u\nIrregular: eu, ete, fait, vu, pris, mis, dit"
+     ],
+     "examples": [
+      {
+       "target": "Hier, j'ai mange au restaurant.",
+       "gloss": "Yesterday I ate at the restaurant."
+      },
+      {
+       "target": "Elle a fini son travail.",
+       "gloss": "She finished her work."
+      },
+      {
+       "target": "Nous avons vu un bon film.",
+       "gloss": "We saw a good film."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a1-nombres-lieu",
+     "title": "Numbers, time and place words",
+     "summary": "Numbers: essential up to 100 (note 70 = soixante-dix, 80 = quatre-vingts, 90 = quatre-vingt-dix). Telling time: Il est trois heures et quart / et demie / moins le quart. Prepositions of place: a (at/to), dans (in), sur (on), sous (under), devant (in front of), derriere (behind), a cote de (next to). There-is: il y a (une table). It-is: c'est (bon).",
+     "tables": [
+      "Place: a, dans, sur, sous, devant, derriere, a cote de\nTime:  Il est... heure(s); et quart / et demie / moins le quart\nUseful: il y a (there is/are), c'est / ce sont (it is / they are)\nNumbers: 70 soixante-dix, 80 quatre-vingts, 90 quatre-vingt-dix"
+     ],
+     "examples": [
+      {
+       "target": "Il y a un supermarche a cote de la gare.",
+       "gloss": "There's a supermarket next to the station."
+      },
+      {
+       "target": "Il est huit heures et demie.",
+       "gloss": "It's half past eight."
+      },
+      {
+       "target": "Le chat est sous la table.",
+       "gloss": "The cat is under the table."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "levelId": "A2",
+   "intro": "A2 grammar makes you a storyteller: past narration (passe compose vs imparfait), pronouns that make speech flow, the future, comparison and connectors.",
+   "sources": [
+    "inventaire-cecrl",
+    "cecrl"
+   ],
+   "topics": [
+    {
+     "id": "a2-pc-imparfait",
+     "title": "Passe compose vs imparfait",
+     "summary": "Both are past tenses but do different jobs. The passe compose reports a completed, punctual event ('what happened'): j'ai mange. The imparfait describes a background: ongoing states, habits and descriptions ('what was going on'): je mangeais, il faisait beau, quand j'etais petit. Imparfait endings on the nous-stem: -ais, -ais, -ait, -ions, -iez, -aient.",
+     "tables": [
+      "                 passe compose        imparfait\n---------------  ------------------   -----------------\nuse              completed event      background/habit\nsignal words     hier, soudain, un    souvent, toujours,\n                 jour, a 3 heures     quand j'etais...\nform             avoir/etre + p.p.    stem(nous) + -ais...\nexample          j'ai mange           je mangeais"
+     ],
+     "examples": [
+      {
+       "target": "Quand j'etais petit, je jouais au foot.",
+       "gloss": "When I was little, I used to play football."
+      },
+      {
+       "target": "Il faisait beau quand nous sommes sortis.",
+       "gloss": "It was nice out when we went out."
+      },
+      {
+       "target": "Hier, elle a rate son train.",
+       "gloss": "Yesterday she missed her train."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-pc-etre",
+     "title": "Passe compose with etre and agreement",
+     "summary": "A set of verbs of movement and change of state form the passe compose with etre, not avoir: aller, venir, arriver, partir, entrer, sortir, monter, descendre, rester, tomber, naitre, mourir, and all pronominal verbs. With etre, the participle agrees with the subject: elle est allee, ils sont partis, nous nous sommes leves.",
+     "tables": [
+      "etre-verbs (DR & MRS VANDERTRAMP):\naller, venir, arriver, partir, entrer, sortir,\nmonter, descendre, rester, tomber, naitre, mourir,\nretourner, passer + all pronominal verbs\nAgreement with subject:\n  il est alle / elle est allee / ils sont alles / elles sont allees"
+     ],
+     "examples": [
+      {
+       "target": "Elle est arrivee en retard.",
+       "gloss": "She arrived late."
+      },
+      {
+       "target": "Ils sont partis a midi.",
+       "gloss": "They left at noon."
+      },
+      {
+       "target": "Nous nous sommes couches tard.",
+       "gloss": "We went to bed late."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-pronoms-cod-coi",
+     "title": "Object pronouns (COD and COI)",
+     "summary": "Pronouns replace nouns to avoid repetition. Direct-object (COD): me, te, le/la, nous, vous, les (Je vois Marie -> Je la vois). Indirect-object (COI), for people after a 'a': me, te, lui, nous, vous, leur (Je parle a Marie -> Je lui parle). They go BEFORE the verb.",
+     "tables": [
+      "             direct (COD)   indirect (COI)\n-----------  -------------  ---------------\nme/te        me, te         me, te\nhim/her      le, la         lui\nus/you       nous, vous     nous, vous\nthem         les            leur\nPosition: pronoun + verb  (Je le vois. Je lui parle.)"
+     ],
+     "examples": [
+      {
+       "target": "Tu vois ce film ? - Oui, je le regarde.",
+       "gloss": "Do you see this film? - Yes, I'm watching it."
+      },
+      {
+       "target": "J'ecris a mes parents, je leur ecris souvent.",
+       "gloss": "I write to my parents, I write to them often."
+      },
+      {
+       "target": "Elle nous invite a diner.",
+       "gloss": "She invites us to dinner."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-y-en",
+     "title": "The pronouns y and en",
+     "summary": "Y replaces a place or a 'a + thing' (Je vais a Paris -> J'y vais; Je pense a mon travail -> J'y pense). En replaces 'de + thing' or a quantity (Je viens de Paris -> J'en viens; Tu veux du cafe ? -> Oui, j'en veux). Both go before the verb.",
+     "tables": [
+      "y  = a + place/thing     J'y vais (a Paris).\n                          J'y pense (a ce probleme).\nen = de + thing / amount  J'en viens (de Lyon).\n                          J'en ai trois. (des livres)\nPosition: before the verb"
+     ],
+     "examples": [
+      {
+       "target": "Tu vas au marche ? - Oui, j'y vais.",
+       "gloss": "Are you going to the market? - Yes, I'm going (there)."
+      },
+      {
+       "target": "Des pommes ? J'en ai achete un kilo.",
+       "gloss": "Apples? I bought a kilo (of them)."
+      },
+      {
+       "target": "Il parle de son voyage, il en parle beaucoup.",
+       "gloss": "He talks about his trip, he talks about it a lot."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-futur-simple",
+     "title": "The simple future (le futur simple)",
+     "summary": "The futur simple states what will happen. Regular verbs: infinitive + -ai, -as, -a, -ons, -ez, -ont (je parlerai, je finirai, j'attendrai -drop the final e of -RE). Key irregular stems: etre->ser-, avoir->aur-, aller->ir-, faire->fer-, venir->viendr-, voir->verr-, pouvoir->pourr-, vouloir->voudr-.",
+     "tables": [
+      "infinitive + -ai/-as/-a/-ons/-ez/-ont\n-------------------------------------\nje parlerai        nous finirons\ntu attendras       vous partirez\nIrregular stems: etre ser-, avoir aur-, aller ir-,\nfaire fer-, venir viendr-, voir verr-, pouvoir pourr-"
+     ],
+     "examples": [
+      {
+       "target": "Demain je serai a Paris.",
+       "gloss": "Tomorrow I'll be in Paris."
+      },
+      {
+       "target": "Nous partirons en vacances en juillet.",
+       "gloss": "We'll go on holiday in July."
+      },
+      {
+       "target": "Tu auras le temps ce week-end ?",
+       "gloss": "Will you have time this weekend?"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-comparatif-superlatif",
+     "title": "Comparatives and superlatives",
+     "summary": "Compare with plus / moins / aussi + adjective + que: plus grand que (bigger than), moins cher que (less expensive than), aussi bon que (as good as). Superlative: le/la/les plus/moins + adjective (le plus grand). Irregular: bon -> meilleur (better) -> le meilleur; bien -> mieux (better) -> le mieux.",
+     "tables": [
+      "Comparative: plus / moins / aussi + adj + que\n  plus grand que, moins cher que, aussi bon que\nSuperlative: le/la/les plus (moins) + adj\n  le plus grand, la moins chere\nIrregular: bon->meilleur->le meilleur; bien->mieux->le mieux"
+     ],
+     "examples": [
+      {
+       "target": "Cette voiture est plus chere que l'autre.",
+       "gloss": "This car is more expensive than the other."
+      },
+      {
+       "target": "C'est le meilleur restaurant de la ville.",
+       "gloss": "It's the best restaurant in town."
+      },
+      {
+       "target": "Elle chante mieux que moi.",
+       "gloss": "She sings better than me."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-relatifs-qui-que",
+     "title": "Relative pronouns qui and que",
+     "summary": "Relative pronouns join two clauses. Qui is the subject of the relative clause (the one doing the action): l'homme qui parle (the man who is speaking). Que is the object (the one acted upon): le livre que je lis (the book that I'm reading). Que becomes qu' before a vowel.",
+     "tables": [
+      "qui = subject of the clause   l'ami qui habite ici\nque = object of the clause    le film que j'aime\nque -> qu' before a vowel     la ville qu'il visite\n(qui is never shortened)"
+     ],
+     "examples": [
+      {
+       "target": "C'est un ami qui travaille a Lyon.",
+       "gloss": "He's a friend who works in Lyon."
+      },
+      {
+       "target": "Le repas que tu as prepare etait delicieux.",
+       "gloss": "The meal you made was delicious."
+      },
+      {
+       "target": "Voici la maison qu'ils ont achetee.",
+       "gloss": "Here's the house they bought."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-connecteurs",
+     "title": "Everyday connectors",
+     "summary": "Connectors link ideas into real sentences. Cause: parce que (because), car (for). Consequence: donc (so), alors (then/so). Opposition: mais (but). Sequence: d'abord (first), ensuite/puis (then), enfin (finally). Addition: et, aussi.",
+     "tables": [
+      "cause:        parce que, car\nconsequence:  donc, alors, c'est pourquoi\nopposition:   mais, par contre\nsequence:     d'abord, ensuite, puis, enfin\naddition:     et, aussi, de plus"
+     ],
+     "examples": [
+      {
+       "target": "Je reste chez moi parce qu'il pleut.",
+       "gloss": "I'm staying home because it's raining."
+      },
+      {
+       "target": "D'abord on mange, ensuite on sort.",
+       "gloss": "First we eat, then we go out."
+      },
+      {
+       "target": "Il est malade, donc il ne vient pas.",
+       "gloss": "He's ill, so he's not coming."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "a2-venir-de-en-train",
+     "title": "venir de and etre en train de",
+     "summary": "Two useful periphrastic tenses. Venir de + infinitive = to have just done something (recent past): je viens de manger (I've just eaten). Etre en train de + infinitive = to be in the middle of doing (action in progress): je suis en train de travailler (I'm (busy) working).",
+     "tables": [
+      "venir de + inf     = just did       je viens d'arriver\netre en train de   = doing now      il est en train de lire\n+ inf\n(both use the present of venir / etre)"
+     ],
+     "examples": [
+      {
+       "target": "Je viens de finir mes devoirs.",
+       "gloss": "I've just finished my homework."
+      },
+      {
+       "target": "Elle est en train de cuisiner.",
+       "gloss": "She is (in the middle of) cooking."
+      },
+      {
+       "target": "Nous venons de rentrer.",
+       "gloss": "We've just got back."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ]
+  },
+  {
+   "levelId": "B1",
+   "intro": "B1 grammar unlocks opinion and hypothesis: the subjunctive, the conditional and si-clauses, richer relatives, reported speech and the tools to justify a view - the DELF B1 toolkit.",
+   "sources": [
+    "inventaire-cecrl",
+    "cecrl"
+   ],
+   "topics": [
+    {
+     "id": "b1-subjonctif-present",
+     "title": "The present subjunctive (le subjonctif present)",
+     "summary": "The subjonctif expresses subjectivity: necessity, wish, emotion, doubt. It appears after 'que' following triggers like il faut que, je veux que, je suis content que, bien que. Form it from the ils-stem of the present + -e, -es, -e, -ions, -iez, -ent (ils parlent -> que je parle). Key irregulars: etre (que je sois), avoir (que j'aie), aller (que j'aille), faire (que je fasse), pouvoir (que je puisse).",
+     "tables": [
+      "Trigger + que + subjunctive\n---------------------------\nil faut que, je veux que, je souhaite que,\nje suis content/triste que, il est important que,\navant que, bien que, pour que\nForm: ils-stem + -e -es -e -ions -iez -ent\nIrregular: sois, aie, aille, fasse, puisse, sache"
+     ],
+     "examples": [
+      {
+       "target": "Il faut que tu fasses tes devoirs.",
+       "gloss": "You need to do your homework."
+      },
+      {
+       "target": "Je suis content que tu sois la.",
+       "gloss": "I'm glad you're here."
+      },
+      {
+       "target": "Bien qu'il pleuve, nous sortons.",
+       "gloss": "Although it's raining, we're going out."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-conditionnel-si",
+     "title": "The conditional and si-clauses",
+     "summary": "The conditionnel present expresses politeness, wishes and hypotheses. Form: future stem + imparfait endings (je voudrais, il faudrait, je pourrais). The classic hypothesis pattern is: Si + imparfait, conditionnel present -> Si j'avais le temps, je voyagerais (If I had time, I would travel).",
+     "tables": [
+      "Form: future stem + imparfait endings\n  je voudrais, tu aimerais, il faudrait, nous pourrions\nHypothesis:\n  Si + present, futur        Si j'ai le temps, je viendrai.\n  Si + imparfait, conditionnel Si j'avais le temps, je viendrais."
+     ],
+     "examples": [
+      {
+       "target": "Je voudrais un cafe, s'il vous plait.",
+       "gloss": "I would like a coffee, please."
+      },
+      {
+       "target": "Si j'etais riche, je voyagerais partout.",
+       "gloss": "If I were rich, I would travel everywhere."
+      },
+      {
+       "target": "Tu pourrais m'aider ?",
+       "gloss": "Could you help me?"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-relatifs-dont-ou",
+     "title": "Relative pronouns dont and ou",
+     "summary": "Two more relatives extend qui/que. Dont replaces 'de + noun' (possession, or verbs with de): le livre dont je parle (the book I'm talking about), l'homme dont la voiture est rouge (the man whose car is red). Ou means where/when: la ville ou j'habite, le jour ou il est arrive.",
+     "tables": [
+      "dont = de + noun    le sujet dont on parle\n                    la femme dont le fils est medecin\nou   = where/when   le pays ou je vis\n                    l'annee ou je suis ne\nce qui / ce que = what (subject / object)"
+     ],
+     "examples": [
+      {
+       "target": "C'est le film dont tout le monde parle.",
+       "gloss": "It's the film everyone is talking about."
+      },
+      {
+       "target": "Voici la ville ou je suis ne.",
+       "gloss": "Here's the town where I was born."
+      },
+      {
+       "target": "Je ne comprends pas ce que tu veux dire.",
+       "gloss": "I don't understand what you mean."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-plus-que-parfait",
+     "title": "The pluperfect (le plus-que-parfait)",
+     "summary": "The plus-que-parfait expresses a past action that happened BEFORE another past action ('had done'). Form: imparfait of avoir/etre + past participle -> j'avais mange, il etait parti. Same auxiliary and agreement rules as the passe compose.",
+     "tables": [
+      "imparfait of avoir/etre + past participle\n-----------------------------------------\nj'avais fini          I had finished\ntu etais parti(e)     you had left\nUse: an earlier past   Quand je suis arrive, il etait deja parti."
+     ],
+     "examples": [
+      {
+       "target": "Quand je suis arrive, le train etait deja parti.",
+       "gloss": "When I arrived, the train had already left."
+      },
+      {
+       "target": "Elle avait prepare le diner avant notre arrivee.",
+       "gloss": "She had made dinner before we arrived."
+      },
+      {
+       "target": "Nous avions deja mange.",
+       "gloss": "We had already eaten."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-discours-indirect",
+     "title": "Reported speech (le discours indirect)",
+     "summary": "Reported speech turns direct quotes into subordinate clauses. 'Il dit : Je viens' -> Il dit qu'il vient. Questions: est-ce que -> si (Il demande si tu viens); qu'est-ce que -> ce que. When the reporting verb is past, tenses shift back (present -> imparfait, passe compose -> plus-que-parfait, futur -> conditionnel).",
+     "tables": [
+      "Direct              Indirect\n------------------  --------------------------\n'Je viens'          il dit qu'il vient\n'Viens-tu ?'        il demande si tu viens\n'Qu'est-ce que...'  il demande ce que...\nPast reporting shifts: present->imparfait,\n  passe compose->plus-que-parfait, futur->conditionnel"
+     ],
+     "examples": [
+      {
+       "target": "Il dit qu'il est fatigue.",
+       "gloss": "He says he's tired."
+      },
+      {
+       "target": "Elle m'a demande si je voulais venir.",
+       "gloss": "She asked me if I wanted to come."
+      },
+      {
+       "target": "Je ne sais pas ce qu'il fait.",
+       "gloss": "I don't know what he's doing."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-ordre-pronoms",
+     "title": "Combining and ordering pronouns",
+     "summary": "When two object pronouns meet before the verb, they follow a fixed order: me/te/se/nous/vous come before le/la/les, which come before lui/leur, then y, then en. Il me le donne (he gives it to me), je le lui ai dit (I said it to him).",
+     "tables": [
+      "Order before the verb:\n me/te/se/nous/vous | le/la/les | lui/leur | y | en\nExamples:\n  Il me le donne.       (me + le)\n  Je le lui ai dit.     (le + lui)\n  Donne-m'en.           (imperative: verb-moi-en)"
+     ],
+     "examples": [
+      {
+       "target": "Tu me pretes ton stylo ? - Oui, je te le prete.",
+       "gloss": "Will you lend me your pen? - Yes, I'll lend it to you."
+      },
+      {
+       "target": "Ces fleurs ? Je les lui ai offertes.",
+       "gloss": "These flowers? I gave them to her."
+      },
+      {
+       "target": "Il y en a encore.",
+       "gloss": "There's still some (of it) there."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-gerondif",
+     "title": "The gerund (le gerondif)",
+     "summary": "The gerondif (en + present participle) says how or when something happens, with the SAME subject as the main verb. Form the participle from the nous-stem + -ant (nous parlons -> parlant). En mangeant (while eating), en travaillant (by working). It expresses simultaneity, manner or condition.",
+     "tables": [
+      "en + present participle (nous-stem + -ant)\n------------------------------------------\nparler -> en parlant     finir -> en finissant\nManner/means: Il apprend en pratiquant.\nSimultaneity: Elle chante en cuisinant.\n(Irregular: etant, ayant, sachant)"
+     ],
+     "examples": [
+      {
+       "target": "Il ecoute la radio en conduisant.",
+       "gloss": "He listens to the radio while driving."
+      },
+      {
+       "target": "On apprend en faisant des erreurs.",
+       "gloss": "You learn by making mistakes."
+      },
+      {
+       "target": "En arrivant, j'ai vu la lumiere.",
+       "gloss": "On arriving, I saw the light."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-passif",
+     "title": "The passive voice (la voix passive)",
+     "summary": "The passive puts the receiver of the action first: form etre (in the needed tense) + past participle, which agrees with the subject. La lettre est ecrite (the letter is written), la maison a ete construite en 1900. The doer, if named, follows par: le livre a ete ecrit par Camus.",
+     "tables": [
+      "etre (any tense) + past participle (agrees)\n-------------------------------------------\nLa porte est fermee.        (present)\nLe pont a ete construit.    (passe compose)\nLes resultats seront publies. (futur)\nAgent: ... par + doer   (ecrit par l'auteur)"
+     ],
+     "examples": [
+      {
+       "target": "Ce roman a ete ecrit par Victor Hugo.",
+       "gloss": "This novel was written by Victor Hugo."
+      },
+      {
+       "target": "La reunion est reportee.",
+       "gloss": "The meeting is postponed."
+      },
+      {
+       "target": "Les billets seront vendus en ligne.",
+       "gloss": "The tickets will be sold online."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b1-connecteurs-opinion",
+     "title": "Connectors for opinion and cause",
+     "summary": "To express and structure opinions: expressing view (je pense que, a mon avis, selon moi), concession (cependant, pourtant, malgre), cause (a cause de + negative, grace a + positive), purpose (pour, afin de). These are essential for the DELF B1 opinion essay and interaction.",
+     "tables": [
+      "opinion:     je pense que, a mon avis, selon moi\nconcession:  cependant, pourtant, malgre (+ noun)\ncause:       parce que; a cause de (neg); grace a (pos)\npurpose:     pour + inf, afin de + inf\naddition:    de plus, en outre"
+     ],
+     "examples": [
+      {
+       "target": "A mon avis, cette solution est meilleure.",
+       "gloss": "In my opinion, this solution is better."
+      },
+      {
+       "target": "Il a reussi grace a son travail.",
+       "gloss": "He succeeded thanks to his hard work."
+      },
+      {
+       "target": "Le vol est annule a cause du mauvais temps.",
+       "gloss": "The flight is cancelled because of the bad weather."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ]
+  },
+  {
+   "levelId": "B2",
+   "intro": "B2 grammar is the language of argument: subjunctive nuance, full tense concordance, the unreal past, idiomatic passive, and the articulators that structure a debate or essay - the DELF B2 toolkit.",
+   "sources": [
+    "inventaire-cecrl",
+    "cecrl"
+   ],
+   "topics": [
+    {
+     "id": "b2-subjonctif-nuance",
+     "title": "The subjunctive in nuance and the past subjunctive",
+     "summary": "At B2 the subjonctif marks fine distinctions: after conjunctions of concession/purpose/condition (bien que, quoique, pour que, a condition que, avant que), and after doubt/possibility (je doute que, il est possible que, je ne pense pas que). The subjonctif passe (que j'aie fait / que je sois parti) expresses an anteriority: bien qu'il ait fini... (although he has finished).",
+     "tables": [
+      "Triggers (concession/purpose/doubt):\n  bien que, quoique, pour que, a condition que,\n  avant que, je doute que, il est possible que,\n  je ne pense pas que\nPast subjunctive: que + aie/sois + participle\n  Je suis content qu'il soit venu."
+     ],
+     "examples": [
+      {
+       "target": "Bien qu'il ait beaucoup travaille, il a echoue.",
+       "gloss": "Although he worked hard, he failed."
+      },
+      {
+       "target": "Je doute qu'elle soit d'accord.",
+       "gloss": "I doubt she'll agree."
+      },
+      {
+       "target": "Il faut agir avant qu'il ne soit trop tard.",
+       "gloss": "We must act before it's too late."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-concordance-temps",
+     "title": "Tense agreement and reported speech in the past",
+     "summary": "In complex sentences, tenses must agree (concordance des temps). With a past main verb, the subordinate shifts: simultaneity -> imparfait, anteriority -> plus-que-parfait, posteriority -> conditionnel. This governs indirect speech reported in the past and hypotheses.",
+     "tables": [
+      "Main verb in the past -> subordinate shifts:\n  same time     -> imparfait      (il pensait que c'etait vrai)\n  earlier       -> plus-que-parfait(il croyait qu'elle etait partie)\n  later         -> conditionnel    (il a dit qu'il viendrait)"
+     ],
+     "examples": [
+      {
+       "target": "Il a dit qu'il viendrait le lendemain.",
+       "gloss": "He said he would come the next day."
+      },
+      {
+       "target": "Je pensais que tu avais compris.",
+       "gloss": "I thought you had understood."
+      },
+      {
+       "target": "Elle ignorait qu'il etait deja parti.",
+       "gloss": "She didn't know he had already left."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-conditionnel-passe",
+     "title": "The past conditional (le conditionnel passe)",
+     "summary": "The conditionnel passe expresses an unreal past ('would have done'), regret or reproach. Form: conditionnel of avoir/etre + past participle (j'aurais fait, il serait venu). The full irrealis of the past: Si + plus-que-parfait, conditionnel passe -> Si j'avais su, je serais venu (If I had known, I would have come).",
+     "tables": [
+      "conditionnel of avoir/etre + past participle\n--------------------------------------------\nj'aurais aime      I would have liked\ntu serais venu(e)  you would have come\nRegret:   J'aurais du l'appeler. (I should have called)\nUnreal past: Si + plus-que-parfait, conditionnel passe"
+     ],
+     "examples": [
+      {
+       "target": "Si j'avais su, je serais venu plus tot.",
+       "gloss": "If I had known, I would have come earlier."
+      },
+      {
+       "target": "Tu aurais du me prevenir.",
+       "gloss": "You should have warned me."
+      },
+      {
+       "target": "Elle aurait aime rester.",
+       "gloss": "She would have liked to stay."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-passif-pronominal",
+     "title": "Passive and pronominal-passive constructions",
+     "summary": "Beyond the etre-passive, French often avoids the passive with the pronominal-passive (ca se fait, le vin se boit frais = wine is drunk cool) or with on (on parle francais ici = French is spoken here). These are more idiomatic in speech and writing than a heavy passive.",
+     "tables": [
+      "etre-passive:        La maison a ete vendue.\npronominal passive:  Ces produits se vendent bien.\n                     Le francais se parle ici.\nwith 'on':           On dit que... / Ici on parle francais.\nUse the lighter forms for natural French."
+     ],
+     "examples": [
+      {
+       "target": "Ce plat se mange avec du riz.",
+       "gloss": "This dish is eaten with rice."
+      },
+      {
+       "target": "On m'a dit que le musee etait ferme.",
+       "gloss": "I was told the museum was closed."
+      },
+      {
+       "target": "Ces erreurs se corrigent facilement.",
+       "gloss": "These mistakes are easily corrected."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-participe-present",
+     "title": "The present participle in writing",
+     "summary": "Distinct from the gerondif, the bare present participle (-ant) works like a relative clause or expresses cause, mostly in written/formal French: une personne parlant trois langues (a person speaking three languages), Ne sachant pas quoi faire, il est parti (Not knowing what to do, he left). The participe passe compose (ayant fini) marks anteriority.",
+     "tables": [
+      "present participle = -ant (from nous-stem)\n  as a relative:  un candidat maitrisant l'anglais\n  as cause:       Etant malade, il est reste chez lui.\ncompound (anteriority): ayant fini, il est sorti\n(gerondif = EN + participle, same subject, spoken)"
+     ],
+     "examples": [
+      {
+       "target": "Ne sachant pas la reponse, il s'est tu.",
+       "gloss": "Not knowing the answer, he kept quiet."
+      },
+      {
+       "target": "Les etudiants ayant reussi peuvent partir.",
+       "gloss": "The students who have passed may leave."
+      },
+      {
+       "target": "Etant donne la situation, il faut agir.",
+       "gloss": "Given the situation, we must act."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-argumentation",
+     "title": "Articulators for argumentation",
+     "summary": "The heart of the DELF B2 written and oral production: structuring an argument. Introduce (tout d'abord, en premier lieu), add (par ailleurs, de plus, en outre), contrast (en revanche, neanmoins, toutefois, or), illustrate (en effet, par exemple, ainsi), conclude (en somme, par consequent, en definitive).",
+     "tables": [
+      "introduce:  tout d'abord, en premier lieu, d'une part\nadd:        par ailleurs, de plus, en outre, d'autre part\ncontrast:   en revanche, neanmoins, toutefois, cependant, or\nexplain:    en effet, c'est-a-dire, ainsi\nconclude:   en somme, par consequent, en definitive, donc"
+     ],
+     "examples": [
+      {
+       "target": "D'une part c'est utile, d'autre part c'est cher.",
+       "gloss": "On one hand it's useful, on the other it's expensive."
+      },
+      {
+       "target": "Ce projet est risque ; neanmoins, il en vaut la peine.",
+       "gloss": "This project is risky; nevertheless, it's worth it."
+      },
+      {
+       "target": "En effet, les chiffres le confirment.",
+       "gloss": "Indeed, the figures confirm it."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-mise-en-relief",
+     "title": "Emphasis (la mise en relief)",
+     "summary": "French emphasises an element with cleft structures c'est ... qui / c'est ... que: C'est Marie qui a raison (it's Marie who is right), c'est ce livre que je veux (it's this book that I want). Ce qui/ce que ... , c'est ... front an idea: Ce que je veux, c'est la paix. These add force without changing word order awkwardly.",
+     "tables": [
+      "c'est ... qui  (emphasise the subject)  C'est lui qui decide.\nc'est ... que  (emphasise object/other)  C'est ici que j'habite.\nCe qui/que ..., c'est ...  Ce qui compte, c'est l'effort.\nUse to highlight the key element of a sentence."
+     ],
+     "examples": [
+      {
+       "target": "C'est toi qui as commence.",
+       "gloss": "It's you who started it."
+      },
+      {
+       "target": "Ce qui m'interesse, c'est l'histoire.",
+       "gloss": "What interests me is history."
+      },
+      {
+       "target": "C'est en France que j'ai appris le francais.",
+       "gloss": "It was in France that I learned French."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-registres",
+     "title": "Registers (les registres de langue)",
+     "summary": "B2 requires choosing register. Soutenu (formal): full negation (je ne sais pas), nous, inversion, vocabulary like 'toutefois'. Courant (standard): everyday neutral French. Familier (informal speech): dropped ne (je sais pas), on for nous, elision, slang. The DELF B2 formal letter needs soutenu/courant; the oral debate is courant.",
+     "tables": [
+      "             soutenu        courant        familier\n-----------  -------------  -------------  -------------\nnegation     je ne sais     je ne sais     je sais pas\nwe           nous           nous/on        on\nquestion     Viendrez-vous? Vous venez ?   Tu viens ?\nlexis        toutefois      mais           mais bon\nMatch register to the task (letter=formal, chat=familier)."
+     ],
+     "examples": [
+      {
+       "target": "Je vous prie d'agreer mes salutations distinguees.",
+       "gloss": "Yours faithfully. (formal closing)"
+      },
+      {
+       "target": "On se voit demain ?",
+       "gloss": "See each other tomorrow? (informal)"
+      },
+      {
+       "target": "Je vous serais reconnaissant de me repondre.",
+       "gloss": "I would be grateful if you would reply. (formal)"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    }
+   ]
+  }
+ ]
 }

@@ -1,796 +1,794 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "06-a1-town-services",
+   "title": "A1 town, services, directions & money",
+   "level": "A1",
+   "words": [
     {
-      "id": "06-a1-town-services",
-      "title": "A1 town, services, directions & money",
-      "level": "A1",
-      "words": [
-        {
-          "id": "poste",
-          "hr": "poste",
-          "en": "post office",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je vais à la poste.",
-            "gloss": "I'm going to the post office."
-          }
-        },
-        {
-          "id": "bureau de poste",
-          "hr": "bureau de poste",
-          "en": "post office (branch)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le bureau de poste est fermé.",
-            "gloss": "The post office is closed."
-          }
-        },
-        {
-          "id": "mairie",
-          "hr": "mairie",
-          "en": "town hall",
-          "pos": "n. f.",
-          "example": {
-            "target": "La mairie est sur la place.",
-            "gloss": "The town hall is on the square."
-          }
-        },
-        {
-          "id": "église",
-          "hr": "église",
-          "en": "church",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'église est très vieille.",
-            "gloss": "The church is very old."
-          }
-        },
-        {
-          "id": "cathédrale",
-          "hr": "cathédrale",
-          "en": "cathedral",
-          "pos": "n. f.",
-          "example": {
-            "target": "La cathédrale est magnifique.",
-            "gloss": "The cathedral is magnificent."
-          }
-        },
-        {
-          "id": "musée",
-          "hr": "musée",
-          "en": "museum",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous visitons le musée.",
-            "gloss": "We are visiting the museum."
-          }
-        },
-        {
-          "id": "cinéma",
-          "hr": "cinéma",
-          "en": "cinema",
-          "pos": "n. m.",
-          "example": {
-            "target": "On va au cinéma ce soir.",
-            "gloss": "We're going to the cinema tonight."
-          }
-        },
-        {
-          "id": "théâtre",
-          "hr": "théâtre",
-          "en": "theatre",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le théâtre est près d'ici.",
-            "gloss": "The theatre is near here."
-          }
-        },
-        {
-          "id": "parc",
-          "hr": "parc",
-          "en": "park",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les enfants jouent au parc.",
-            "gloss": "The children play in the park."
-          }
-        },
-        {
-          "id": "jardin",
-          "hr": "jardin",
-          "en": "garden",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a un jardin public.",
-            "gloss": "There is a public garden."
-          }
-        },
-        {
-          "id": "place",
-          "hr": "place",
-          "en": "square",
-          "pos": "n. f.",
-          "example": {
-            "target": "La place est grande.",
-            "gloss": "The square is big."
-          }
-        },
-        {
-          "id": "pont",
-          "hr": "pont",
-          "en": "bridge",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous traversons le pont.",
-            "gloss": "We are crossing the bridge."
-          }
-        },
-        {
-          "id": "bibliothèque",
-          "hr": "bibliothèque",
-          "en": "library",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je lis à la bibliothèque.",
-            "gloss": "I read at the library."
-          }
-        },
-        {
-          "id": "commissariat",
-          "hr": "commissariat",
-          "en": "police station",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le commissariat est en face.",
-            "gloss": "The police station is across the street."
-          }
-        },
-        {
-          "id": "boutique",
-          "hr": "boutique",
-          "en": "shop",
-          "pos": "n. f.",
-          "example": {
-            "target": "C'est une petite boutique.",
-            "gloss": "It's a small shop."
-          }
-        },
-        {
-          "id": "station",
-          "hr": "station",
-          "en": "station (metro/bus)",
-          "pos": "n. f.",
-          "example": {
-            "target": "La station de métro est là.",
-            "gloss": "The metro station is there."
-          }
-        },
-        {
-          "id": "aéroport",
-          "hr": "aéroport",
-          "en": "airport",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'aéroport est loin.",
-            "gloss": "The airport is far."
-          }
-        },
-        {
-          "id": "stade",
-          "hr": "stade",
-          "en": "stadium",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le match est au stade.",
-            "gloss": "The match is at the stadium."
-          }
-        },
-        {
-          "id": "piscine",
-          "hr": "piscine",
-          "en": "swimming pool",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je vais à la piscine.",
-            "gloss": "I'm going to the swimming pool."
-          }
-        },
-        {
-          "id": "arrêt",
-          "hr": "arrêt",
-          "en": "stop (bus)",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'arrêt de bus est ici.",
-            "gloss": "The bus stop is here."
-          }
-        },
-        {
-          "id": "boulevard",
-          "hr": "boulevard",
-          "en": "boulevard",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il habite sur le boulevard.",
-            "gloss": "He lives on the boulevard."
-          }
-        },
-        {
-          "id": "avenue",
-          "hr": "avenue",
-          "en": "avenue",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'avenue est très longue.",
-            "gloss": "The avenue is very long."
-          }
-        },
-        {
-          "id": "immeuble",
-          "hr": "immeuble",
-          "en": "building (apartment)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon immeuble a six étages.",
-            "gloss": "My building has six floors."
-          }
-        },
-        {
-          "id": "château",
-          "hr": "château",
-          "en": "castle",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le château est sur la colline.",
-            "gloss": "The castle is on the hill."
-          }
-        },
-        {
-          "id": "fontaine",
-          "hr": "fontaine",
-          "en": "fountain",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a une fontaine sur la place.",
-            "gloss": "There is a fountain on the square."
-          }
-        },
-        {
-          "id": "tour",
-          "hr": "tour",
-          "en": "tower",
-          "pos": "n. f.",
-          "example": {
-            "target": "La tour est très haute.",
-            "gloss": "The tower is very high."
-          }
-        },
-        {
-          "id": "quartier",
-          "hr": "quartier",
-          "en": "neighbourhood",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'aime mon quartier.",
-            "gloss": "I like my neighbourhood."
-          }
-        },
-        {
-          "id": "centre-ville",
-          "hr": "centre-ville",
-          "en": "town centre",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le centre-ville est animé.",
-            "gloss": "The town centre is lively."
-          }
-        },
-        {
-          "id": "adresse",
-          "hr": "adresse",
-          "en": "address",
-          "pos": "n. f.",
-          "example": {
-            "target": "Quelle est ton adresse ?",
-            "gloss": "What is your address?"
-          }
-        },
-        {
-          "id": "numéro",
-          "hr": "numéro",
-          "en": "number",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'habite au numéro dix.",
-            "gloss": "I live at number ten."
-          }
-        },
-        {
-          "id": "plan",
-          "hr": "plan",
-          "en": "map (town)",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'ai un plan de la ville.",
-            "gloss": "I have a map of the town."
-          }
-        },
-        {
-          "id": "feu",
-          "hr": "feu",
-          "en": "traffic light",
-          "pos": "n. m.",
-          "example": {
-            "target": "Tournez au feu rouge.",
-            "gloss": "Turn at the red light."
-          }
-        },
-        {
-          "id": "trottoir",
-          "hr": "trottoir",
-          "en": "pavement / sidewalk",
-          "pos": "n. m.",
-          "example": {
-            "target": "Marche sur le trottoir.",
-            "gloss": "Walk on the pavement."
-          }
-        },
-        {
-          "id": "coin",
-          "hr": "coin",
-          "en": "corner",
-          "pos": "n. m.",
-          "example": {
-            "target": "La boulangerie est au coin.",
-            "gloss": "The bakery is on the corner."
-          }
-        },
-        {
-          "id": "chemin",
-          "hr": "chemin",
-          "en": "path / way",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je cherche mon chemin.",
-            "gloss": "I'm looking for my way."
-          }
-        },
-        {
-          "id": "direction",
-          "hr": "direction",
-          "en": "direction",
-          "pos": "n. f.",
-          "example": {
-            "target": "C'est la bonne direction ?",
-            "gloss": "Is this the right direction?"
-          }
-        },
-        {
-          "id": "nord",
-          "hr": "nord",
-          "en": "north",
-          "pos": "n. m.",
-          "example": {
-            "target": "La gare est au nord.",
-            "gloss": "The station is to the north."
-          }
-        },
-        {
-          "id": "sud",
-          "hr": "sud",
-          "en": "south",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il habite dans le sud.",
-            "gloss": "He lives in the south."
-          }
-        },
-        {
-          "id": "est",
-          "hr": "est",
-          "en": "east",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le soleil se lève à l'est.",
-            "gloss": "The sun rises in the east."
-          }
-        },
-        {
-          "id": "ouest",
-          "hr": "ouest",
-          "en": "west",
-          "pos": "n. m.",
-          "example": {
-            "target": "La plage est à l'ouest.",
-            "gloss": "The beach is to the west."
-          }
-        },
-        {
-          "id": "tout droit",
-          "hr": "tout droit",
-          "en": "straight ahead",
-          "pos": "adverb",
-          "example": {
-            "target": "Allez tout droit.",
-            "gloss": "Go straight ahead."
-          }
-        },
-        {
-          "id": "en face",
-          "hr": "en face",
-          "en": "opposite / across",
-          "pos": "adverb",
-          "example": {
-            "target": "Le musée est en face.",
-            "gloss": "The museum is across the street."
-          }
-        },
-        {
-          "id": "au coin",
-          "hr": "au coin",
-          "en": "on the corner",
-          "pos": "phrase",
-          "example": {
-            "target": "Tournez au coin de la rue.",
-            "gloss": "Turn at the corner of the street."
-          }
-        },
-        {
-          "id": "près de",
-          "hr": "près de",
-          "en": "near",
-          "pos": "preposition",
-          "example": {
-            "target": "J'habite près de la gare.",
-            "gloss": "I live near the station."
-          }
-        },
-        {
-          "id": "loin de",
-          "hr": "loin de",
-          "en": "far from",
-          "pos": "preposition",
-          "example": {
-            "target": "C'est loin de la ville.",
-            "gloss": "It's far from the town."
-          }
-        },
-        {
-          "id": "jusqu'à",
-          "hr": "jusqu'à",
-          "en": "as far as / until",
-          "pos": "preposition",
-          "example": {
-            "target": "Continuez jusqu'à l'église.",
-            "gloss": "Continue as far as the church."
-          }
-        },
-        {
-          "id": "entre",
-          "hr": "entre",
-          "en": "between",
-          "pos": "preposition",
-          "example": {
-            "target": "C'est entre la banque et le parc.",
-            "gloss": "It's between the bank and the park."
-          }
-        },
-        {
-          "id": "devant",
-          "hr": "devant",
-          "en": "in front of",
-          "pos": "preposition",
-          "example": {
-            "target": "Je t'attends devant le cinéma.",
-            "gloss": "I'll wait for you in front of the cinema."
-          }
-        },
-        {
-          "id": "derrière",
-          "hr": "derrière",
-          "en": "behind",
-          "pos": "preposition",
-          "example": {
-            "target": "Le parking est derrière l'hôtel.",
-            "gloss": "The parking is behind the hotel."
-          }
-        },
-        {
-          "id": "à côté de",
-          "hr": "à côté de",
-          "en": "next to",
-          "pos": "preposition",
-          "example": {
-            "target": "La poste est à côté de la mairie.",
-            "gloss": "The post office is next to the town hall."
-          }
-        },
-        {
-          "id": "au bout de",
-          "hr": "au bout de",
-          "en": "at the end of",
-          "pos": "phrase",
-          "example": {
-            "target": "C'est au bout de la rue.",
-            "gloss": "It's at the end of the street."
-          }
-        },
-        {
-          "id": "sur",
-          "hr": "sur",
-          "en": "on",
-          "pos": "preposition",
-          "example": {
-            "target": "Le plan est sur la table.",
-            "gloss": "The map is on the table."
-          }
-        },
-        {
-          "id": "sous",
-          "hr": "sous",
-          "en": "under",
-          "pos": "preposition",
-          "example": {
-            "target": "Le chat est sous le pont.",
-            "gloss": "The cat is under the bridge."
-          }
-        },
-        {
-          "id": "monter",
-          "hr": "monter",
-          "en": "to go up",
-          "pos": "verb",
-          "example": {
-            "target": "Il faut monter la rue.",
-            "gloss": "You have to go up the street."
-          }
-        },
-        {
-          "id": "descendre",
-          "hr": "descendre",
-          "en": "to go down",
-          "pos": "verb",
-          "example": {
-            "target": "Descendez à l'arrêt suivant.",
-            "gloss": "Get off at the next stop."
-          }
-        },
-        {
-          "id": "tourner",
-          "hr": "tourner",
-          "en": "to turn",
-          "pos": "verb",
-          "example": {
-            "target": "Tournez à gauche.",
-            "gloss": "Turn left."
-          }
-        },
-        {
-          "id": "traverser",
-          "hr": "traverser",
-          "en": "to cross",
-          "pos": "verb",
-          "example": {
-            "target": "Traversez la place.",
-            "gloss": "Cross the square."
-          }
-        },
-        {
-          "id": "continuer",
-          "hr": "continuer",
-          "en": "to continue",
-          "pos": "verb",
-          "example": {
-            "target": "Continuez tout droit.",
-            "gloss": "Continue straight ahead."
-          }
-        },
-        {
-          "id": "suivre",
-          "hr": "suivre",
-          "en": "to follow",
-          "pos": "verb",
-          "example": {
-            "target": "Suivez cette rue.",
-            "gloss": "Follow this street."
-          }
-        },
-        {
-          "id": "passer",
-          "hr": "passer",
-          "en": "to pass / go by",
-          "pos": "verb",
-          "example": {
-            "target": "Passez devant la banque.",
-            "gloss": "Go past the bank."
-          }
-        },
-        {
-          "id": "euro",
-          "hr": "euro",
-          "en": "euro",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ça coûte dix euros.",
-            "gloss": "It costs ten euros."
-          }
-        },
-        {
-          "id": "centime",
-          "hr": "centime",
-          "en": "cent",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il manque vingt centimes.",
-            "gloss": "Twenty cents are missing."
-          }
-        },
-        {
-          "id": "billet",
-          "hr": "billet",
-          "en": "banknote / ticket",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'ai un billet de vingt euros.",
-            "gloss": "I have a twenty-euro note."
-          }
-        },
-        {
-          "id": "pièce",
-          "hr": "pièce",
-          "en": "coin",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une pièce d'un euro.",
-            "gloss": "A one-euro coin."
-          }
-        },
-        {
-          "id": "carte bancaire",
-          "hr": "carte bancaire",
-          "en": "bank card",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je paie par carte bancaire.",
-            "gloss": "I pay by bank card."
-          }
-        },
-        {
-          "id": "espèces",
-          "hr": "espèces",
-          "en": "cash",
-          "pos": "n. f. pl.",
-          "example": {
-            "target": "Je paie en espèces.",
-            "gloss": "I pay in cash."
-          }
-        },
-        {
-          "id": "gratuit",
-          "hr": "gratuit",
-          "en": "free (of charge)",
-          "pos": "adjective",
-          "example": {
-            "target": "L'entrée est gratuite.",
-            "gloss": "Entry is free."
-          }
-        },
-        {
-          "id": "dépenser",
-          "hr": "dépenser",
-          "en": "to spend",
-          "pos": "verb",
-          "example": {
-            "target": "Je dépense trop d'argent.",
-            "gloss": "I spend too much money."
-          }
-        },
-        {
-          "id": "gagner",
-          "hr": "gagner",
-          "en": "to earn / win",
-          "pos": "verb",
-          "example": {
-            "target": "Elle gagne bien sa vie.",
-            "gloss": "She earns a good living."
-          }
-        },
-        {
-          "id": "vendre",
-          "hr": "vendre",
-          "en": "to sell",
-          "pos": "verb",
-          "example": {
-            "target": "Ils vendent des fruits ici.",
-            "gloss": "They sell fruit here."
-          }
-        },
-        {
-          "id": "coût",
-          "hr": "coût",
-          "en": "cost",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le coût est élevé.",
-            "gloss": "The cost is high."
-          }
-        },
-        {
-          "id": "distributeur",
-          "hr": "distributeur",
-          "en": "cash machine (ATM)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Où est le distributeur ?",
-            "gloss": "Where is the cash machine?"
-          }
-        },
-        {
-          "id": "ticket",
-          "hr": "ticket",
-          "en": "ticket (bus/receipt)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Gardez votre ticket.",
-            "gloss": "Keep your ticket."
-          }
-        },
-        {
-          "id": "panneau",
-          "hr": "panneau",
-          "en": "sign (road)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Regardez le panneau.",
-            "gloss": "Look at the sign."
-          }
-        },
-        {
-          "id": "sortie",
-          "hr": "sortie",
-          "en": "exit",
-          "pos": "n. f.",
-          "example": {
-            "target": "Où est la sortie ?",
-            "gloss": "Where is the exit?"
-          }
-        },
-        {
-          "id": "parking",
-          "hr": "parking",
-          "en": "car park",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le parking est gratuit.",
-            "gloss": "The car park is free."
-          }
-        },
-        {
-          "id": "métro",
-          "hr": "métro",
-          "en": "underground / metro",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je prends le métro.",
-            "gloss": "I take the metro."
-          }
-        },
-        {
-          "id": "à pied",
-          "hr": "à pied",
-          "en": "on foot",
-          "pos": "phrase",
-          "example": {
-            "target": "J'y vais à pied.",
-            "gloss": "I go there on foot."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr",
-        "referentiel-fr"
-      ]
+     "id": "poste",
+     "hr": "poste",
+     "en": "post office",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je vais à la poste.",
+      "gloss": "I'm going to the post office."
+     }
+    },
+    {
+     "id": "bureau de poste",
+     "hr": "bureau de poste",
+     "en": "post office (branch)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le bureau de poste est fermé.",
+      "gloss": "The post office is closed."
+     }
+    },
+    {
+     "id": "mairie",
+     "hr": "mairie",
+     "en": "town hall",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mairie est sur la place.",
+      "gloss": "The town hall is on the square."
+     }
+    },
+    {
+     "id": "église",
+     "hr": "église",
+     "en": "church",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'église est très vieille.",
+      "gloss": "The church is very old."
+     }
+    },
+    {
+     "id": "cathédrale",
+     "hr": "cathédrale",
+     "en": "cathedral",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cathédrale est magnifique.",
+      "gloss": "The cathedral is magnificent."
+     }
+    },
+    {
+     "id": "musée",
+     "hr": "musée",
+     "en": "museum",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous visitons le musée.",
+      "gloss": "We are visiting the museum."
+     }
+    },
+    {
+     "id": "cinéma",
+     "hr": "cinéma",
+     "en": "cinema",
+     "pos": "n. m.",
+     "example": {
+      "target": "On va au cinéma ce soir.",
+      "gloss": "We're going to the cinema tonight."
+     }
+    },
+    {
+     "id": "théâtre",
+     "hr": "théâtre",
+     "en": "theatre",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le théâtre est près d'ici.",
+      "gloss": "The theatre is near here."
+     }
+    },
+    {
+     "id": "parc",
+     "hr": "parc",
+     "en": "park",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les enfants jouent au parc.",
+      "gloss": "The children play in the park."
+     }
+    },
+    {
+     "id": "jardin",
+     "hr": "jardin",
+     "en": "garden",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a un jardin public.",
+      "gloss": "There is a public garden."
+     }
+    },
+    {
+     "id": "place",
+     "hr": "place",
+     "en": "square",
+     "pos": "n. f.",
+     "example": {
+      "target": "La place est grande.",
+      "gloss": "The square is big."
+     }
+    },
+    {
+     "id": "pont",
+     "hr": "pont",
+     "en": "bridge",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous traversons le pont.",
+      "gloss": "We are crossing the bridge."
+     }
+    },
+    {
+     "id": "bibliothèque",
+     "hr": "bibliothèque",
+     "en": "library",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je lis à la bibliothèque.",
+      "gloss": "I read at the library."
+     }
+    },
+    {
+     "id": "commissariat",
+     "hr": "commissariat",
+     "en": "police station",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le commissariat est en face.",
+      "gloss": "The police station is across the street."
+     }
+    },
+    {
+     "id": "boutique",
+     "hr": "boutique",
+     "en": "shop",
+     "pos": "n. f.",
+     "example": {
+      "target": "C'est une petite boutique.",
+      "gloss": "It's a small shop."
+     }
+    },
+    {
+     "id": "station",
+     "hr": "station",
+     "en": "station (metro/bus)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La station de métro est là.",
+      "gloss": "The metro station is there."
+     }
+    },
+    {
+     "id": "aéroport",
+     "hr": "aéroport",
+     "en": "airport",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'aéroport est loin.",
+      "gloss": "The airport is far."
+     }
+    },
+    {
+     "id": "stade",
+     "hr": "stade",
+     "en": "stadium",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le match est au stade.",
+      "gloss": "The match is at the stadium."
+     }
+    },
+    {
+     "id": "piscine",
+     "hr": "piscine",
+     "en": "swimming pool",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je vais à la piscine.",
+      "gloss": "I'm going to the swimming pool."
+     }
+    },
+    {
+     "id": "arrêt",
+     "hr": "arrêt",
+     "en": "stop (bus)",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'arrêt de bus est ici.",
+      "gloss": "The bus stop is here."
+     }
+    },
+    {
+     "id": "boulevard",
+     "hr": "boulevard",
+     "en": "boulevard",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il habite sur le boulevard.",
+      "gloss": "He lives on the boulevard."
+     }
+    },
+    {
+     "id": "avenue",
+     "hr": "avenue",
+     "en": "avenue",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'avenue est très longue.",
+      "gloss": "The avenue is very long."
+     }
+    },
+    {
+     "id": "immeuble",
+     "hr": "immeuble",
+     "en": "building (apartment)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon immeuble a six étages.",
+      "gloss": "My building has six floors."
+     }
+    },
+    {
+     "id": "château",
+     "hr": "château",
+     "en": "castle",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le château est sur la colline.",
+      "gloss": "The castle is on the hill."
+     }
+    },
+    {
+     "id": "fontaine",
+     "hr": "fontaine",
+     "en": "fountain",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a une fontaine sur la place.",
+      "gloss": "There is a fountain on the square."
+     }
+    },
+    {
+     "id": "tour",
+     "hr": "tour",
+     "en": "tower",
+     "pos": "n. f.",
+     "example": {
+      "target": "La tour est très haute.",
+      "gloss": "The tower is very high."
+     }
+    },
+    {
+     "id": "quartier",
+     "hr": "quartier",
+     "en": "neighbourhood",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'aime mon quartier.",
+      "gloss": "I like my neighbourhood."
+     }
+    },
+    {
+     "id": "centre-ville",
+     "hr": "centre-ville",
+     "en": "town centre",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le centre-ville est animé.",
+      "gloss": "The town centre is lively."
+     }
+    },
+    {
+     "id": "adresse",
+     "hr": "adresse",
+     "en": "address",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quelle est ton adresse ?",
+      "gloss": "What is your address?"
+     }
+    },
+    {
+     "id": "numéro",
+     "hr": "numéro",
+     "en": "number",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'habite au numéro dix.",
+      "gloss": "I live at number ten."
+     }
+    },
+    {
+     "id": "plan",
+     "hr": "plan",
+     "en": "map (town)",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'ai un plan de la ville.",
+      "gloss": "I have a map of the town."
+     }
+    },
+    {
+     "id": "feu",
+     "hr": "feu",
+     "en": "traffic light",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tournez au feu rouge.",
+      "gloss": "Turn at the red light."
+     }
+    },
+    {
+     "id": "trottoir",
+     "hr": "trottoir",
+     "en": "pavement / sidewalk",
+     "pos": "n. m.",
+     "example": {
+      "target": "Marche sur le trottoir.",
+      "gloss": "Walk on the pavement."
+     }
+    },
+    {
+     "id": "coin",
+     "hr": "coin",
+     "en": "corner",
+     "pos": "n. m.",
+     "example": {
+      "target": "La boulangerie est au coin.",
+      "gloss": "The bakery is on the corner."
+     }
+    },
+    {
+     "id": "chemin",
+     "hr": "chemin",
+     "en": "path / way",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je cherche mon chemin.",
+      "gloss": "I'm looking for my way."
+     }
+    },
+    {
+     "id": "direction",
+     "hr": "direction",
+     "en": "direction",
+     "pos": "n. f.",
+     "example": {
+      "target": "C'est la bonne direction ?",
+      "gloss": "Is this the right direction?"
+     }
+    },
+    {
+     "id": "nord",
+     "hr": "nord",
+     "en": "north",
+     "pos": "n. m.",
+     "example": {
+      "target": "La gare est au nord.",
+      "gloss": "The station is to the north."
+     }
+    },
+    {
+     "id": "sud",
+     "hr": "sud",
+     "en": "south",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il habite dans le sud.",
+      "gloss": "He lives in the south."
+     }
+    },
+    {
+     "id": "est",
+     "hr": "est",
+     "en": "east",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le soleil se lève à l'est.",
+      "gloss": "The sun rises in the east."
+     }
+    },
+    {
+     "id": "ouest",
+     "hr": "ouest",
+     "en": "west",
+     "pos": "n. m.",
+     "example": {
+      "target": "La plage est à l'ouest.",
+      "gloss": "The beach is to the west."
+     }
+    },
+    {
+     "id": "tout droit",
+     "hr": "tout droit",
+     "en": "straight ahead",
+     "pos": "adverb",
+     "example": {
+      "target": "Allez tout droit.",
+      "gloss": "Go straight ahead."
+     }
+    },
+    {
+     "id": "en face",
+     "hr": "en face",
+     "en": "opposite / across",
+     "pos": "adverb",
+     "example": {
+      "target": "Le musée est en face.",
+      "gloss": "The museum is across the street."
+     }
+    },
+    {
+     "id": "au coin",
+     "hr": "au coin",
+     "en": "on the corner",
+     "pos": "phrase",
+     "example": {
+      "target": "Tournez au coin de la rue.",
+      "gloss": "Turn at the corner of the street."
+     }
+    },
+    {
+     "id": "près de",
+     "hr": "près de",
+     "en": "near",
+     "pos": "preposition",
+     "example": {
+      "target": "J'habite près de la gare.",
+      "gloss": "I live near the station."
+     }
+    },
+    {
+     "id": "loin de",
+     "hr": "loin de",
+     "en": "far from",
+     "pos": "preposition",
+     "example": {
+      "target": "C'est loin de la ville.",
+      "gloss": "It's far from the town."
+     }
+    },
+    {
+     "id": "jusqu'à",
+     "hr": "jusqu'à",
+     "en": "as far as / until",
+     "pos": "preposition",
+     "example": {
+      "target": "Continuez jusqu'à l'église.",
+      "gloss": "Continue as far as the church."
+     }
+    },
+    {
+     "id": "entre",
+     "hr": "entre",
+     "en": "between",
+     "pos": "preposition",
+     "example": {
+      "target": "C'est entre la banque et le parc.",
+      "gloss": "It's between the bank and the park."
+     }
+    },
+    {
+     "id": "devant",
+     "hr": "devant",
+     "en": "in front of",
+     "pos": "preposition",
+     "example": {
+      "target": "Je t'attends devant le cinéma.",
+      "gloss": "I'll wait for you in front of the cinema."
+     }
+    },
+    {
+     "id": "derrière",
+     "hr": "derrière",
+     "en": "behind",
+     "pos": "preposition",
+     "example": {
+      "target": "Le parking est derrière l'hôtel.",
+      "gloss": "The parking is behind the hotel."
+     }
+    },
+    {
+     "id": "à côté de",
+     "hr": "à côté de",
+     "en": "next to",
+     "pos": "preposition",
+     "example": {
+      "target": "La poste est à côté de la mairie.",
+      "gloss": "The post office is next to the town hall."
+     }
+    },
+    {
+     "id": "au bout de",
+     "hr": "au bout de",
+     "en": "at the end of",
+     "pos": "phrase",
+     "example": {
+      "target": "C'est au bout de la rue.",
+      "gloss": "It's at the end of the street."
+     }
+    },
+    {
+     "id": "sur",
+     "hr": "sur",
+     "en": "on",
+     "pos": "preposition",
+     "example": {
+      "target": "Le plan est sur la table.",
+      "gloss": "The map is on the table."
+     }
+    },
+    {
+     "id": "sous",
+     "hr": "sous",
+     "en": "under",
+     "pos": "preposition",
+     "example": {
+      "target": "Le chat est sous le pont.",
+      "gloss": "The cat is under the bridge."
+     }
+    },
+    {
+     "id": "monter",
+     "hr": "monter",
+     "en": "to go up",
+     "pos": "verb",
+     "example": {
+      "target": "Il faut monter la rue.",
+      "gloss": "You have to go up the street."
+     }
+    },
+    {
+     "id": "descendre",
+     "hr": "descendre",
+     "en": "to go down",
+     "pos": "verb",
+     "example": {
+      "target": "Descendez à l'arrêt suivant.",
+      "gloss": "Get off at the next stop."
+     }
+    },
+    {
+     "id": "tourner",
+     "hr": "tourner",
+     "en": "to turn",
+     "pos": "verb",
+     "example": {
+      "target": "Tournez à gauche.",
+      "gloss": "Turn left."
+     }
+    },
+    {
+     "id": "traverser",
+     "hr": "traverser",
+     "en": "to cross",
+     "pos": "verb",
+     "example": {
+      "target": "Traversez la place.",
+      "gloss": "Cross the square."
+     }
+    },
+    {
+     "id": "continuer",
+     "hr": "continuer",
+     "en": "to continue",
+     "pos": "verb",
+     "example": {
+      "target": "Continuez tout droit.",
+      "gloss": "Continue straight ahead."
+     }
+    },
+    {
+     "id": "suivre",
+     "hr": "suivre",
+     "en": "to follow",
+     "pos": "verb",
+     "example": {
+      "target": "Suivez cette rue.",
+      "gloss": "Follow this street."
+     }
+    },
+    {
+     "id": "passer",
+     "hr": "passer",
+     "en": "to pass / go by",
+     "pos": "verb",
+     "example": {
+      "target": "Passez devant la banque.",
+      "gloss": "Go past the bank."
+     }
+    },
+    {
+     "id": "euro",
+     "hr": "euro",
+     "en": "euro",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ça coûte dix euros.",
+      "gloss": "It costs ten euros."
+     }
+    },
+    {
+     "id": "centime",
+     "hr": "centime",
+     "en": "cent",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il manque vingt centimes.",
+      "gloss": "Twenty cents are missing."
+     }
+    },
+    {
+     "id": "billet",
+     "hr": "billet",
+     "en": "banknote / ticket",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'ai un billet de vingt euros.",
+      "gloss": "I have a twenty-euro note."
+     }
+    },
+    {
+     "id": "pièce",
+     "hr": "pièce",
+     "en": "coin",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une pièce d'un euro.",
+      "gloss": "A one-euro coin."
+     }
+    },
+    {
+     "id": "carte bancaire",
+     "hr": "carte bancaire",
+     "en": "bank card",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je paie par carte bancaire.",
+      "gloss": "I pay by bank card."
+     }
+    },
+    {
+     "id": "espèces",
+     "hr": "espèces",
+     "en": "cash",
+     "pos": "n. f. pl.",
+     "example": {
+      "target": "Je paie en espèces.",
+      "gloss": "I pay in cash."
+     }
+    },
+    {
+     "id": "gratuit",
+     "hr": "gratuit",
+     "en": "free (of charge)",
+     "pos": "adjective",
+     "example": {
+      "target": "L'entrée est gratuite.",
+      "gloss": "Entry is free."
+     }
+    },
+    {
+     "id": "dépenser",
+     "hr": "dépenser",
+     "en": "to spend",
+     "pos": "verb",
+     "example": {
+      "target": "Je dépense trop d'argent.",
+      "gloss": "I spend too much money."
+     }
+    },
+    {
+     "id": "gagner",
+     "hr": "gagner",
+     "en": "to earn / win",
+     "pos": "verb",
+     "example": {
+      "target": "Elle gagne bien sa vie.",
+      "gloss": "She earns a good living."
+     }
+    },
+    {
+     "id": "vendre",
+     "hr": "vendre",
+     "en": "to sell",
+     "pos": "verb",
+     "example": {
+      "target": "Ils vendent des fruits ici.",
+      "gloss": "They sell fruit here."
+     }
+    },
+    {
+     "id": "coût",
+     "hr": "coût",
+     "en": "cost",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le coût est élevé.",
+      "gloss": "The cost is high."
+     }
+    },
+    {
+     "id": "distributeur",
+     "hr": "distributeur",
+     "en": "cash machine (ATM)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Où est le distributeur ?",
+      "gloss": "Where is the cash machine?"
+     }
+    },
+    {
+     "id": "ticket",
+     "hr": "ticket",
+     "en": "ticket (bus/receipt)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Gardez votre ticket.",
+      "gloss": "Keep your ticket."
+     }
+    },
+    {
+     "id": "panneau",
+     "hr": "panneau",
+     "en": "sign (road)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Regardez le panneau.",
+      "gloss": "Look at the sign."
+     }
+    },
+    {
+     "id": "sortie",
+     "hr": "sortie",
+     "en": "exit",
+     "pos": "n. f.",
+     "example": {
+      "target": "Où est la sortie ?",
+      "gloss": "Where is the exit?"
+     }
+    },
+    {
+     "id": "parking",
+     "hr": "parking",
+     "en": "car park",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le parking est gratuit.",
+      "gloss": "The car park is free."
+     }
+    },
+    {
+     "id": "métro",
+     "hr": "métro",
+     "en": "underground / metro",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je prends le métro.",
+      "gloss": "I take the metro."
+     }
+    },
+    {
+     "id": "à pied",
+     "hr": "à pied",
+     "en": "on foot",
+     "pos": "phrase",
+     "example": {
+      "target": "J'y vais à pied.",
+      "gloss": "I go there on foot."
+     }
     }
-  ]
+   ],
+   "sources": [
+    "inventaire-cecrl"
+   ]
+  }
+ ]
 }
