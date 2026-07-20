@@ -152,6 +152,9 @@ Three design rules, each paid for:
 - Validate every batch the moment it lands with `check_<code>.py`. Fix small defects in place
   (a two-token REORDER, an e' for è); the checkers catch them one at a time when they are
   cheap.
+- **Spiral review rule**: from Italian's B1 onward, each EXERCISE should include at least one
+  item exercising material from five or more lessons earlier, so nothing decays unpracticed.
+  (Linear courses front-load forgetting; the SRS covers words but nothing recycled grammar.)
 - Real-world procedure claims (sick-leave rules, holiday minima, licence exchange) get
   LISTED as they are authored, for the Phase 8 fact audit. Prefer describing how a process
   works over quoting figures that change.
@@ -269,9 +272,15 @@ Still to build, in value order:
    match before `assembleSideloadRelease`.
 6. **Golden screenshot tests** (Paparazzi) for Journey/Today/Words per language, catching
    layout regressions without an emulator.
-7. **TTS listening mode**: mock-exam listening sections already carry transcripts and the app
-   already has per-language TTS; reading the transcript aloud with text hidden until answered
-   turns fake listening practice into real listening practice with zero new content.
+7. ~~TTS listening mode~~ **Already built** (found on audit 2026-07-20): audioOnly passages
+   hide their transcript behind a play button and speak at 0.9 rate, with per-question audio
+   ("twice max, like the real exam"). AI writing feedback under Premium was likewise already
+   built (fenced student answer, dedicated model). Both had been listed as gaps from stale
+   assumptions; see registry P9.
+8. **Mistake bank** (the one genuinely missing learning feature): a failed exercise question
+   is currently never seen again, while every serious system recycles errors. Room table,
+   recorded at grading time, resurfaced in later sessions' review step, cleared on correct.
+9. **Learner-visible word count on writing tasks**: built 2026-07-20.
 
 ## The error loop (applies to every phase, and is how this book improves)
 

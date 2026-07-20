@@ -33,7 +33,7 @@ Sweep key: ✅ swept clean · 🔧 swept, fixes pending · ▢ not yet swept · 
 | ID | Failure class | Found | Automated by | hr | fr | pt | de | it |
 |---|---|---|---|---|---|---|---|---|
 | C1 | Em/en dashes in learner-visible content | 2026-07-19, all courses (3822 purged) | Kotlin gate `content_usesNoEmOrEnDashes`; DASH regex in every tool | ✅ | ✅ | ✅ | ✅ | ✅ |
-| C2 | Dashes in learner-visible KOTLIN copy (gate above only walks assets) | 2026-07-20, tutor seed greetings | Kotlin gate on `seedGreeting` only | ▢ | ▢ | ▢ | ▢ | ▢ |
+| C2 | Dashes in learner-visible KOTLIN copy (gate above only walks assets) | 2026-07-20, tutor seed greetings | Kotlin gate over ALL string literals (16 swept, Drills.kt delimiters allowlisted) | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C3 | Sending learners outside the app (URLs, institutions, platforms) | 2026-07-18, hr Croaticum/FFZG refs | EXTERNAL regex in `check_batch.py`; Kotlin gate | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C4 | Dead or unverified resource URLs | pre-2026-07 (dead YouTube link shipped) | Live-verify rule, Gold Book Phase 2; no automated gate possible | ▢ | ▢ | ✅ | 🔧 | ✅ |
 | C5 | FILL answer appearing in its own prompt | fr/pt expansion | `check_batch.py`; Kotlin gate | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -103,6 +103,7 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | P6 | Content-only changes silently skipping gates (test task doesn't track assets) | fr/pt expansion | `--rerun-tasks` always, encoded in Gold Book Phase 8f/9 |
 | P7 | Retiring lessons by deleting authored files | de rebalance (avoided) | title-based retire lists with reasons, loud-fail on mismatch |
 | P8 | Agent self-validation accepted as verification | it vocab (agent's "validated" file had 3 article misses) | every delivered batch independently re-verified; Gold Book Phase 4/5 |
+| P9 | Claiming feature gaps without auditing the implementation (TTS listening and AI writing feedback both existed while being reported as missing) | 2026-07-20 roadmap discussion | audit the code BEFORE writing any gap analysis; a roadmap claim about the app is a claim about code and gets verified like one |
 
 ## V. Checker bugs (the checks themselves are code and fail)
 
@@ -121,8 +122,6 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 1. **C10–C14**: proctor backlog, hr 118 / fr 56 / pt 45 / de 80; it audited at assembly.
 2. **C16**: Phase 8b syllabus cross-check for de (Goethe Wortliste) and it (CILS sillabo /
    Profilo); then hr/fr/pt digests re-verified against what their content actually cites.
-3. **C2**: dash sweep over learner-visible Kotlin copy (~40 candidate strings found
-   2026-07-20); extend the seed-greeting gate to a curated list of UI copy surfaces.
 4. **C4**: live re-verification of hr and fr resources.json URLs; de's DW link was confirmed
    by search only (fetcher blocks dw.com), noted in its digest.
 5. **S8**: weighted-floor debt, fr +145 (legally B2, priority) → hr +90 → pt +70.

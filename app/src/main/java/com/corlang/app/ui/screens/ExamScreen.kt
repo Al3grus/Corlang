@@ -574,7 +574,14 @@ private fun OpenPromptTask(
                 onValueChange = { text = it },
                 label = { Text("Write your text here (7-8 sentences)") },
                 minLines = 6,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                // Exam writing tasks are marked against a word count ("about 80 words") and
+                // candidates lose easy marks by under-writing; the live count keeps the target
+                // visible while they write, the same aid the paper exam denies them last.
+                supportingText = {
+                    val words = text.trim().split(Regex("\\s+")).count { it.isNotBlank() }
+                    Text("$words words")
+                }
             )
 
             // Optional AI examiner (Premium): corrects the text and estimates its level.
