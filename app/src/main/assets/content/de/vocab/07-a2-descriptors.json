@@ -1,0 +1,1500 @@
+{
+ "packs": [
+  {
+   "id": "07-a2-descriptors",
+   "title": "A2: Beschreiben und Bewerten",
+   "level": "A2",
+   "sources": [
+    "goethe-wortliste",
+    "goethe-a2"
+   ],
+   "words": [
+    {
+     "id": "nötig",
+     "hr": "nötig",
+     "en": "necessary",
+     "pos": "adj.",
+     "note": "etwas nötig haben",
+     "example": {
+      "target": "Mehr als eine Kopie ist nicht nötig.",
+      "gloss": "More than one copy is not necessary."
+     }
+    },
+    {
+     "id": "unmöglich",
+     "hr": "unmöglich",
+     "en": "impossible",
+     "pos": "adj.",
+     "note": "Gegenteil von möglich",
+     "example": {
+      "target": "Vor Montag ist das leider unmöglich.",
+      "gloss": "Before Monday that is unfortunately impossible."
+     }
+    },
+    {
+     "id": "nützlich",
+     "hr": "nützlich",
+     "en": "useful",
+     "pos": "adj.",
+     "note": "nützlich für + Akk.",
+     "example": {
+      "target": "Der Kurs war wirklich nützlich.",
+      "gloss": "The course was really useful."
+     }
+    },
+    {
+     "id": "sinnvoll",
+     "hr": "sinnvoll",
+     "en": "sensible, meaningful",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Es wäre sinnvoll, vorher anzurufen.",
+      "gloss": "It would be sensible to call beforehand."
+     }
+    },
+    {
+     "id": "praktisch",
+     "hr": "praktisch",
+     "en": "practical, handy",
+     "pos": "adj.",
+     "note": "auch Adverb: praktisch gesehen",
+     "example": {
+      "target": "Die kleine Tasche ist sehr praktisch.",
+      "gloss": "The small bag is very handy."
+     }
+    },
+    {
+     "id": "gemütlich",
+     "hr": "gemütlich",
+     "en": "cosy",
+     "pos": "adj.",
+     "note": "typisch für Räume und Abende",
+     "example": {
+      "target": "Bei euch ist es richtig gemütlich.",
+      "gloss": "It is really cosy at your place."
+     }
+    },
+    {
+     "id": "angenehm",
+     "hr": "angenehm",
+     "en": "pleasant",
+     "pos": "adj.",
+     "note": "angenehm für + Akk.",
+     "example": {
+      "target": "Die Temperatur draußen ist gerade angenehm.",
+      "gloss": "The temperature outside is pleasant right now."
+     }
+    },
+    {
+     "id": "unangenehm",
+     "hr": "unangenehm",
+     "en": "unpleasant, awkward",
+     "pos": "adj.",
+     "note": "Gegenteil von angenehm",
+     "example": {
+      "target": "Das Gespräch war ziemlich unangenehm.",
+      "gloss": "The conversation was rather unpleasant."
+     }
+    },
+    {
+     "id": "kompliziert",
+     "hr": "kompliziert",
+     "en": "complicated",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Das Formular ist unnötig kompliziert.",
+      "gloss": "The form is unnecessarily complicated."
+     }
+    },
+    {
+     "id": "deutlich",
+     "hr": "deutlich",
+     "en": "clear, distinct",
+     "pos": "adj.",
+     "note": "auch Adverb: deutlich sprechen",
+     "example": {
+      "target": "Bitte sprechen Sie etwas deutlicher.",
+      "gloss": "Please speak a bit more clearly."
+     }
+    },
+    {
+     "id": "klar",
+     "hr": "klar",
+     "en": "clear",
+     "pos": "adj.",
+     "note": "auch als Zustimmung: na klar",
+     "example": {
+      "target": "Jetzt ist mir alles klar.",
+      "gloss": "Now everything is clear to me."
+     }
+    },
+    {
+     "id": "genau",
+     "hr": "genau",
+     "en": "exact, precise",
+     "pos": "adj.",
+     "note": "auch Adverb: genau um acht",
+     "example": {
+      "target": "Ich brauche die genaue Adresse.",
+      "gloss": "I need the exact address."
+     }
+    },
+    {
+     "id": "unsicher",
+     "hr": "unsicher",
+     "en": "unsure; unsafe",
+     "pos": "adj.",
+     "note": "Gegenteil von sicher",
+     "example": {
+      "target": "Ich bin noch unsicher, ob ich zusage.",
+      "gloss": "I am still unsure whether to accept."
+     }
+    },
+    {
+     "id": "gefährlich",
+     "hr": "gefährlich",
+     "en": "dangerous",
+     "pos": "adj.",
+     "note": "gefährlich für + Akk.",
+     "example": {
+      "target": "Diese Kreuzung ist für Radfahrer gefährlich.",
+      "gloss": "This junction is dangerous for cyclists."
+     }
+    },
+    {
+     "id": "leise",
+     "hr": "leise",
+     "en": "quiet, soft (sound)",
+     "pos": "adj.",
+     "note": "Gegenteil von laut",
+     "example": {
+      "target": "Sprich bitte leise, das Baby schläft.",
+      "gloss": "Please speak quietly, the baby is sleeping."
+     }
+    },
+    {
+     "id": "hell",
+     "hr": "hell",
+     "en": "bright, light",
+     "pos": "adj.",
+     "note": "für Licht und Farben",
+     "example": {
+      "target": "Das Zimmer ist schön hell.",
+      "gloss": "The room is nice and bright."
+     }
+    },
+    {
+     "id": "dunkel",
+     "hr": "dunkel",
+     "en": "dark",
+     "pos": "adj.",
+     "note": "attributiv: ein dunkler Flur",
+     "example": {
+      "target": "Im Winter wird es früh dunkel.",
+      "gloss": "In winter it gets dark early."
+     }
+    },
+    {
+     "id": "ordentlich",
+     "hr": "ordentlich",
+     "en": "tidy, orderly",
+     "pos": "adj.",
+     "note": "auch Adverb: ordentlich arbeiten",
+     "example": {
+      "target": "Sein Schreibtisch ist immer ordentlich.",
+      "gloss": "His desk is always tidy."
+     }
+    },
+    {
+     "id": "frisch",
+     "hr": "frisch",
+     "en": "fresh",
+     "pos": "adj.",
+     "note": "frisch gebacken, frische Luft",
+     "example": {
+      "target": "Das Brot ist noch ganz frisch.",
+      "gloss": "The bread is still completely fresh."
+     }
+    },
+    {
+     "id": "scharf",
+     "hr": "scharf",
+     "en": "spicy; sharp",
+     "pos": "adj.",
+     "note": "schärfer, am schärfsten",
+     "example": {
+      "target": "Das Essen war mir zu scharf.",
+      "gloss": "The food was too spicy for me."
+     }
+    },
+    {
+     "id": "fit",
+     "hr": "fit",
+     "en": "fit",
+     "pos": "adj.",
+     "note": "nicht gesteigert",
+     "example": {
+      "target": "Mit dem Rad bleibe ich fit.",
+      "gloss": "I stay fit with the bike."
+     }
+    },
+    {
+     "id": "schwach",
+     "hr": "schwach",
+     "en": "weak",
+     "pos": "adj.",
+     "note": "schwächer, am schwächsten",
+     "example": {
+      "target": "Nach der Grippe fühlte er sich schwach.",
+      "gloss": "After the flu he felt weak."
+     }
+    },
+    {
+     "id": "dick",
+     "hr": "dick",
+     "en": "thick; fat",
+     "pos": "adj.",
+     "note": "dicker, am dicksten",
+     "example": {
+      "target": "Nimm die dicke Jacke, es ist kalt.",
+      "gloss": "Take the thick jacket, it is cold."
+     }
+    },
+    {
+     "id": "weich",
+     "hr": "weich",
+     "en": "soft",
+     "pos": "adj.",
+     "note": "Gegenteil von hart",
+     "example": {
+      "target": "Das Bett ist zu weich für meinen Rücken.",
+      "gloss": "The bed is too soft for my back."
+     }
+    },
+    {
+     "id": "hart",
+     "hr": "hart",
+     "en": "hard, tough",
+     "pos": "adj.",
+     "note": "härter, am härtesten",
+     "example": {
+      "target": "Das Brot von gestern ist hart geworden.",
+      "gloss": "Yesterday's bread has gone hard."
+     }
+    },
+    {
+     "id": "nass",
+     "hr": "nass",
+     "en": "wet",
+     "pos": "adj.",
+     "note": "nasser, am nassesten",
+     "example": {
+      "target": "Meine Jacke ist ganz nass.",
+      "gloss": "My jacket is completely wet."
+     }
+    },
+    {
+     "id": "trocken",
+     "hr": "trocken",
+     "en": "dry",
+     "pos": "adj.",
+     "note": "Gegenteil von nass",
+     "example": {
+      "target": "Die Wäsche ist noch nicht trocken.",
+      "gloss": "The laundry is not dry yet."
+     }
+    },
+    {
+     "id": "besetzt",
+     "hr": "besetzt",
+     "en": "occupied, taken",
+     "pos": "adj.",
+     "note": "Gegenteil von frei",
+     "example": {
+      "target": "Die Leitung ist gerade besetzt.",
+      "gloss": "The line is busy right now."
+     }
+    },
+    {
+     "id": "kostenlos",
+     "hr": "kostenlos",
+     "en": "free of charge",
+     "pos": "adj.",
+     "note": "nicht gesteigert",
+     "example": {
+      "target": "Der Eintritt für Kinder ist kostenlos.",
+      "gloss": "Entry for children is free."
+     }
+    },
+    {
+     "id": "wertvoll",
+     "hr": "wertvoll",
+     "en": "valuable",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Die Uhr ist sehr wertvoll.",
+      "gloss": "The watch is very valuable."
+     }
+    },
+    {
+     "id": "modern",
+     "hr": "modern",
+     "en": "modern",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Die Küche ist neu und modern.",
+      "gloss": "The kitchen is new and modern."
+     }
+    },
+    {
+     "id": "altmodisch",
+     "hr": "altmodisch",
+     "en": "old fashioned",
+     "pos": "adj.",
+     "note": "Gegenteil von modern",
+     "example": {
+      "target": "Der Mantel wirkt etwas altmodisch.",
+      "gloss": "The coat looks a bit old fashioned."
+     }
+    },
+    {
+     "id": "gebraucht",
+     "hr": "gebraucht",
+     "en": "used, second hand",
+     "pos": "adj.",
+     "note": "Partizip von gebrauchen",
+     "example": {
+      "target": "Wir haben ein gebrauchtes Auto gekauft.",
+      "gloss": "We bought a used car."
+     }
+    },
+    {
+     "id": "kaputt",
+     "hr": "kaputt",
+     "en": "broken",
+     "pos": "adj.",
+     "note": "kaputtgehen, kaputtmachen",
+     "example": {
+      "target": "Mein Handy ist seit gestern kaputt.",
+      "gloss": "My phone has been broken since yesterday."
+     }
+    },
+    {
+     "id": "ähnlich",
+     "hr": "ähnlich",
+     "en": "similar",
+     "pos": "adj.",
+     "note": "ähnlich + Dat.",
+     "example": {
+      "target": "Die beiden Wohnungen sind sehr ähnlich.",
+      "gloss": "The two flats are very similar."
+     }
+    },
+    {
+     "id": "seltsam",
+     "hr": "seltsam",
+     "en": "strange, odd",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Er hat sich gestern seltsam verhalten.",
+      "gloss": "He behaved strangely yesterday."
+     }
+    },
+    {
+     "id": "komisch",
+     "hr": "komisch",
+     "en": "funny; strange",
+     "pos": "adj.",
+     "note": "beide Bedeutungen im Alltag",
+     "example": {
+      "target": "Der Käse riecht komisch.",
+      "gloss": "The cheese smells strange."
+     }
+    },
+    {
+     "id": "wunderbar",
+     "hr": "wunderbar",
+     "en": "wonderful",
+     "pos": "adj.",
+     "note": "auch Adverb",
+     "example": {
+      "target": "Das Wetter war wunderbar.",
+      "gloss": "The weather was wonderful."
+     }
+    },
+    {
+     "id": "furchtbar",
+     "hr": "furchtbar",
+     "en": "terrible, awful",
+     "pos": "adj.",
+     "note": "auch verstärkend: furchtbar müde",
+     "example": {
+      "target": "Der Lärm war furchtbar.",
+      "gloss": "The noise was terrible."
+     }
+    },
+    {
+     "id": "schrecklich",
+     "hr": "schrecklich",
+     "en": "dreadful",
+     "pos": "adj.",
+     "note": "auch verstärkend im Gespräch",
+     "example": {
+      "target": "Ich finde diese Farbe schrecklich.",
+      "gloss": "I find this colour dreadful."
+     }
+    },
+    {
+     "id": "ausgezeichnet",
+     "hr": "ausgezeichnet",
+     "en": "excellent",
+     "pos": "adj.",
+     "note": "nicht gesteigert",
+     "example": {
+      "target": "Sie spricht ausgezeichnet Deutsch.",
+      "gloss": "She speaks excellent German."
+     }
+    },
+    {
+     "id": "normal",
+     "hr": "normal",
+     "en": "normal",
+     "pos": "adj.",
+     "note": "Adverb: normalerweise",
+     "example": {
+      "target": "Das ist bei uns ganz normal.",
+      "gloss": "That is quite normal here."
+     }
+    },
+    {
+     "id": "beliebt",
+     "hr": "beliebt",
+     "en": "popular",
+     "pos": "adj.",
+     "note": "beliebt bei + Dat.",
+     "example": {
+      "target": "Dieser Park ist bei Familien sehr beliebt.",
+      "gloss": "This park is very popular with families."
+     }
+    },
+    {
+     "id": "unfreundlich",
+     "hr": "unfreundlich",
+     "en": "unfriendly",
+     "pos": "adj.",
+     "note": "Gegenteil von freundlich",
+     "example": {
+      "target": "Der Mann am Schalter war leider unfreundlich.",
+      "gloss": "The man at the counter was unfortunately unfriendly."
+     }
+    },
+    {
+     "id": "höflich",
+     "hr": "höflich",
+     "en": "polite",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Er hat sehr höflich gefragt.",
+      "gloss": "He asked very politely."
+     }
+    },
+    {
+     "id": "unhöflich",
+     "hr": "unhöflich",
+     "en": "impolite, rude",
+     "pos": "adj.",
+     "note": "Gegenteil von höflich",
+     "example": {
+      "target": "So zu antworten finde ich unhöflich.",
+      "gloss": "I find answering like that rude."
+     }
+    },
+    {
+     "id": "hilfsbereit",
+     "hr": "hilfsbereit",
+     "en": "helpful, willing to help",
+     "pos": "adj.",
+     "note": "über Personen",
+     "example": {
+      "target": "Meine Kollegen sind alle sehr hilfsbereit.",
+      "gloss": "My colleagues are all very helpful."
+     }
+    },
+    {
+     "id": "geduldig",
+     "hr": "geduldig",
+     "en": "patient",
+     "pos": "adj.",
+     "note": "geduldig mit + Dat.",
+     "example": {
+      "target": "Die Lehrerin ist mit allen geduldig.",
+      "gloss": "The teacher is patient with everyone."
+     }
+    },
+    {
+     "id": "ungeduldig",
+     "hr": "ungeduldig",
+     "en": "impatient",
+     "pos": "adj.",
+     "note": "Gegenteil von geduldig",
+     "example": {
+      "target": "Beim Warten werde ich schnell ungeduldig.",
+      "gloss": "When waiting I quickly become impatient."
+     }
+    },
+    {
+     "id": "fleißig",
+     "hr": "fleißig",
+     "en": "hard working, diligent",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Sie ist eine fleißige Schülerin.",
+      "gloss": "She is a hard working pupil."
+     }
+    },
+    {
+     "id": "faul",
+     "hr": "faul",
+     "en": "lazy",
+     "pos": "adj.",
+     "note": "auch: verdorben, für Obst",
+     "example": {
+      "target": "Am Sonntag bin ich gern faul.",
+      "gloss": "On Sundays I like being lazy."
+     }
+    },
+    {
+     "id": "ehrlich",
+     "hr": "ehrlich",
+     "en": "honest",
+     "pos": "adj.",
+     "note": "ehrlich gesagt",
+     "example": {
+      "target": "Ehrlich gesagt gefällt mir das nicht.",
+      "gloss": "Honestly, I do not like that."
+     }
+    },
+    {
+     "id": "zuverlässig",
+     "hr": "zuverlässig",
+     "en": "reliable",
+     "pos": "adj.",
+     "note": "über Personen und Geräte",
+     "example": {
+      "target": "Er ist ein zuverlässiger Mitarbeiter.",
+      "gloss": "He is a reliable employee."
+     }
+    },
+    {
+     "id": "neugierig",
+     "hr": "neugierig",
+     "en": "curious, nosy",
+     "pos": "adj.",
+     "note": "neugierig auf + Akk.",
+     "example": {
+      "target": "Ich bin neugierig auf die neue Kollegin.",
+      "gloss": "I am curious about the new colleague."
+     }
+    },
+    {
+     "id": "schüchtern",
+     "hr": "schüchtern",
+     "en": "shy",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Als Kind war er sehr schüchtern.",
+      "gloss": "As a child he was very shy."
+     }
+    },
+    {
+     "id": "selbstbewusst",
+     "hr": "selbstbewusst",
+     "en": "self confident",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Sie tritt im Gespräch sehr selbstbewusst auf.",
+      "gloss": "She comes across very confidently in conversation."
+     }
+    },
+    {
+     "id": "mutig",
+     "hr": "mutig",
+     "en": "brave",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Das war eine mutige Entscheidung.",
+      "gloss": "That was a brave decision."
+     }
+    },
+    {
+     "id": "ängstlich",
+     "hr": "ängstlich",
+     "en": "anxious, fearful",
+     "pos": "adj.",
+     "note": "Gegenteil von mutig",
+     "example": {
+      "target": "Der kleine Hund ist sehr ängstlich.",
+      "gloss": "The little dog is very fearful."
+     }
+    },
+    {
+     "id": "nervös",
+     "hr": "nervös",
+     "en": "nervous",
+     "pos": "adj.",
+     "note": "nervös wegen + Gen. oder vor + Dat.",
+     "example": {
+      "target": "Vor der Prüfung bin ich immer nervös.",
+      "gloss": "Before the exam I am always nervous."
+     }
+    },
+    {
+     "id": "streng",
+     "hr": "streng",
+     "en": "strict",
+     "pos": "adj.",
+     "note": "streng zu + Dat.",
+     "example": {
+      "target": "Mein Chef ist streng, aber gerecht.",
+      "gloss": "My boss is strict but fair."
+     }
+    },
+    {
+     "id": "großzügig",
+     "hr": "großzügig",
+     "en": "generous",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Sie war mit dem Trinkgeld sehr großzügig.",
+      "gloss": "She was very generous with the tip."
+     }
+    },
+    {
+     "id": "geizig",
+     "hr": "geizig",
+     "en": "stingy",
+     "pos": "adj.",
+     "note": "Gegenteil von großzügig",
+     "example": {
+      "target": "Er ist beim Einkaufen ziemlich geizig.",
+      "gloss": "He is rather stingy when shopping."
+     }
+    },
+    {
+     "id": "egoistisch",
+     "hr": "egoistisch",
+     "en": "selfish",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Das war ein egoistisches Verhalten.",
+      "gloss": "That was selfish behaviour."
+     }
+    },
+    {
+     "id": "sympathisch",
+     "hr": "sympathisch",
+     "en": "likeable, nice",
+     "pos": "adj.",
+     "note": "jemand ist mir sympathisch",
+     "example": {
+      "target": "Der neue Nachbar ist mir sympathisch.",
+      "gloss": "I find the new neighbour likeable."
+     }
+    },
+    {
+     "id": "humorvoll",
+     "hr": "humorvoll",
+     "en": "humorous",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Sie erzählt sehr humorvoll.",
+      "gloss": "She tells stories very humorously."
+     }
+    },
+    {
+     "id": "ernst",
+     "hr": "ernst",
+     "en": "serious",
+     "pos": "adj.",
+     "note": "etwas ernst nehmen",
+     "example": {
+      "target": "Nimm die Sache bitte ernst.",
+      "gloss": "Please take the matter seriously."
+     }
+    },
+    {
+     "id": "zufrieden",
+     "hr": "zufrieden",
+     "en": "satisfied, content",
+     "pos": "adj.",
+     "note": "zufrieden mit + Dat.",
+     "example": {
+      "target": "Ich bin mit dem Ergebnis zufrieden.",
+      "gloss": "I am satisfied with the result."
+     }
+    },
+    {
+     "id": "unzufrieden",
+     "hr": "unzufrieden",
+     "en": "dissatisfied",
+     "pos": "adj.",
+     "note": "unzufrieden mit + Dat.",
+     "example": {
+      "target": "Der Kunde war unzufrieden mit der Lieferung.",
+      "gloss": "The customer was dissatisfied with the delivery."
+     }
+    },
+    {
+     "id": "stolz",
+     "hr": "stolz",
+     "en": "proud",
+     "pos": "adj.",
+     "note": "stolz auf + Akk.",
+     "example": {
+      "target": "Ich bin stolz auf meine Tochter.",
+      "gloss": "I am proud of my daughter."
+     }
+    },
+    {
+     "id": "eifersüchtig",
+     "hr": "eifersüchtig",
+     "en": "jealous",
+     "pos": "adj.",
+     "note": "eifersüchtig auf + Akk.",
+     "example": {
+      "target": "Er ist eifersüchtig auf seinen Bruder.",
+      "gloss": "He is jealous of his brother."
+     }
+    },
+    {
+     "id": "wütend",
+     "hr": "wütend",
+     "en": "furious, angry",
+     "pos": "adj.",
+     "note": "wütend auf + Akk.",
+     "example": {
+      "target": "Sie war wütend auf den Fahrer.",
+      "gloss": "She was furious with the driver."
+     }
+    },
+    {
+     "id": "ärgerlich",
+     "hr": "ärgerlich",
+     "en": "annoying; annoyed",
+     "pos": "adj.",
+     "note": "ärgerlich über + Akk.",
+     "example": {
+      "target": "Die Verspätung ist wirklich ärgerlich.",
+      "gloss": "The delay is really annoying."
+     }
+    },
+    {
+     "id": "enttäuscht",
+     "hr": "enttäuscht",
+     "en": "disappointed",
+     "pos": "adj.",
+     "note": "enttäuscht von + Dat.",
+     "example": {
+      "target": "Ich war von dem Film enttäuscht.",
+      "gloss": "I was disappointed by the film."
+     }
+    },
+    {
+     "id": "überrascht",
+     "hr": "überrascht",
+     "en": "surprised",
+     "pos": "adj.",
+     "note": "überrascht über + Akk.",
+     "example": {
+      "target": "Alle waren über die Nachricht überrascht.",
+      "gloss": "Everyone was surprised by the news."
+     }
+    },
+    {
+     "id": "aufgeregt",
+     "hr": "aufgeregt",
+     "en": "excited, worked up",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "Vor der Reise sind die Kinder ganz aufgeregt.",
+      "gloss": "Before the trip the children are quite excited."
+     }
+    },
+    {
+     "id": "entspannt",
+     "hr": "entspannt",
+     "en": "relaxed",
+     "pos": "adj.",
+     "note": "Partizip von entspannen",
+     "example": {
+      "target": "Nach dem Urlaub wirkt er sehr entspannt.",
+      "gloss": "After the holiday he seems very relaxed."
+     }
+    },
+    {
+     "id": "gestresst",
+     "hr": "gestresst",
+     "en": "stressed",
+     "pos": "adj.",
+     "note": "umgangssprachlich verbreitet",
+     "example": {
+      "target": "Diese Woche bin ich total gestresst.",
+      "gloss": "This week I am totally stressed."
+     }
+    },
+    {
+     "id": "erschöpft",
+     "hr": "erschöpft",
+     "en": "exhausted",
+     "pos": "adj.",
+     "note": "stärker als müde",
+     "example": {
+      "target": "Nach der Wanderung waren alle erschöpft.",
+      "gloss": "After the hike everyone was exhausted."
+     }
+    },
+    {
+     "id": "einsam",
+     "hr": "einsam",
+     "en": "lonely",
+     "pos": "adj.",
+     "note": "regelmäßig gesteigert",
+     "example": {
+      "target": "In der großen Stadt fühlt er sich einsam.",
+      "gloss": "In the big city he feels lonely."
+     }
+    },
+    {
+     "id": "dankbar",
+     "hr": "dankbar",
+     "en": "grateful",
+     "pos": "adj.",
+     "note": "dankbar für + Akk.",
+     "example": {
+      "target": "Ich bin dir für deine Hilfe sehr dankbar.",
+      "gloss": "I am very grateful to you for your help."
+     }
+    },
+    {
+     "id": "die angst",
+     "hr": "die Angst",
+     "en": "fear",
+     "pos": "n. f.",
+     "note": "pl. die Ängste; Angst haben vor + Dat.",
+     "example": {
+      "target": "Sie hat Angst vor großen Hunden.",
+      "gloss": "She is afraid of big dogs."
+     }
+    },
+    {
+     "id": "die freude",
+     "hr": "die Freude",
+     "en": "joy",
+     "pos": "n. f.",
+     "note": "pl. die Freuden; Freude an + Dat.",
+     "example": {
+      "target": "Er hat viel Freude an seiner Arbeit.",
+      "gloss": "He gets a lot of joy from his work."
+     }
+    },
+    {
+     "id": "die liebe",
+     "hr": "die Liebe",
+     "en": "love",
+     "pos": "n. f.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Liebe ist wichtiger als Geld.",
+      "gloss": "Love is more important than money."
+     }
+    },
+    {
+     "id": "die wut",
+     "hr": "die Wut",
+     "en": "rage, anger",
+     "pos": "n. f.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Seine Wut war schnell wieder weg.",
+      "gloss": "His anger was quickly gone again."
+     }
+    },
+    {
+     "id": "die sorge",
+     "hr": "die Sorge",
+     "en": "worry",
+     "pos": "n. f.",
+     "note": "pl. die Sorgen; sich Sorgen machen um + Akk.",
+     "example": {
+      "target": "Mach dir keine Sorgen, das schaffst du.",
+      "gloss": "Do not worry, you will manage it."
+     }
+    },
+    {
+     "id": "die laune",
+     "hr": "die Laune",
+     "en": "mood",
+     "pos": "n. f.",
+     "note": "gute oder schlechte Laune haben",
+     "example": {
+      "target": "Heute hat der Chef gute Laune.",
+      "gloss": "The boss is in a good mood today."
+     }
+    },
+    {
+     "id": "das gefühl",
+     "hr": "das Gefühl",
+     "en": "feeling",
+     "pos": "n. n.",
+     "note": "pl. die Gefühle",
+     "example": {
+      "target": "Ich habe das Gefühl, wir haben etwas vergessen.",
+      "gloss": "I have the feeling we have forgotten something."
+     }
+    },
+    {
+     "id": "die stimmung",
+     "hr": "die Stimmung",
+     "en": "mood, atmosphere",
+     "pos": "n. f.",
+     "note": "pl. die Stimmungen",
+     "example": {
+      "target": "Die Stimmung auf der Feier war super.",
+      "gloss": "The atmosphere at the party was great."
+     }
+    },
+    {
+     "id": "der charakter",
+     "hr": "der Charakter",
+     "en": "character, personality",
+     "pos": "n. m.",
+     "note": "pl. die Charaktere",
+     "example": {
+      "target": "Sie hat einen ruhigen Charakter.",
+      "gloss": "She has a calm character."
+     }
+    },
+    {
+     "id": "die geduld",
+     "hr": "die Geduld",
+     "en": "patience",
+     "pos": "n. f.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Für diese Arbeit braucht man viel Geduld.",
+      "gloss": "You need a lot of patience for this work."
+     }
+    },
+    {
+     "id": "das vertrauen",
+     "hr": "das Vertrauen",
+     "en": "trust",
+     "pos": "n. n.",
+     "note": "nur Singular; Vertrauen zu + Dat.",
+     "example": {
+      "target": "Zwischen uns gibt es großes Vertrauen.",
+      "gloss": "There is great trust between us."
+     }
+    },
+    {
+     "id": "die hoffnung",
+     "hr": "die Hoffnung",
+     "en": "hope",
+     "pos": "n. f.",
+     "note": "pl. die Hoffnungen; Hoffnung auf + Akk.",
+     "example": {
+      "target": "Ich habe die Hoffnung noch nicht aufgegeben.",
+      "gloss": "I have not given up hope yet."
+     }
+    },
+    {
+     "id": "nachher",
+     "hr": "nachher",
+     "en": "afterwards, later on",
+     "pos": "adv.",
+     "note": "Gegenteil von vorher",
+     "example": {
+      "target": "Nachher gehe ich noch einkaufen.",
+      "gloss": "Later on I am going shopping."
+     }
+    },
+    {
+     "id": "damals",
+     "hr": "damals",
+     "en": "back then",
+     "pos": "adv.",
+     "note": "über die Vergangenheit",
+     "example": {
+      "target": "Damals gab es hier noch keine Häuser.",
+      "gloss": "Back then there were no houses here yet."
+     }
+    },
+    {
+     "id": "häufig",
+     "hr": "häufig",
+     "en": "frequently, often",
+     "pos": "adv.",
+     "note": "auch Adjektiv: ein häufiger Fehler",
+     "example": {
+      "target": "Dieser Fehler kommt häufig vor.",
+      "gloss": "This mistake occurs frequently."
+     }
+    },
+    {
+     "id": "meistens",
+     "hr": "meistens",
+     "en": "mostly, usually",
+     "pos": "adv.",
+     "note": "Häufigkeitsangabe",
+     "example": {
+      "target": "Meistens fahre ich mit dem Rad.",
+      "gloss": "I usually go by bike."
+     }
+    },
+    {
+     "id": "normalerweise",
+     "hr": "normalerweise",
+     "en": "normally",
+     "pos": "adv.",
+     "note": "Häufigkeitsangabe",
+     "example": {
+      "target": "Normalerweise stehe ich um sechs auf.",
+      "gloss": "Normally I get up at six."
+     }
+    },
+    {
+     "id": "plötzlich",
+     "hr": "plötzlich",
+     "en": "suddenly",
+     "pos": "adv.",
+     "note": "auch Adjektiv",
+     "example": {
+      "target": "Plötzlich ging das Licht aus.",
+      "gloss": "Suddenly the light went out."
+     }
+    },
+    {
+     "id": "wahrscheinlich",
+     "hr": "wahrscheinlich",
+     "en": "probably",
+     "pos": "adv.",
+     "note": "auch Adjektiv",
+     "example": {
+      "target": "Wahrscheinlich komme ich etwas später.",
+      "gloss": "I will probably come a bit later."
+     }
+    },
+    {
+     "id": "unbedingt",
+     "hr": "unbedingt",
+     "en": "definitely, absolutely",
+     "pos": "adv.",
+     "note": "verstärkt eine Aussage",
+     "example": {
+      "target": "Du musst dir diesen Film unbedingt ansehen.",
+      "gloss": "You absolutely have to watch this film."
+     }
+    },
+    {
+     "id": "ungefähr",
+     "hr": "ungefähr",
+     "en": "approximately",
+     "pos": "adv.",
+     "note": "vor Zahlen",
+     "example": {
+      "target": "Die Fahrt dauert ungefähr eine Stunde.",
+      "gloss": "The journey takes approximately an hour."
+     }
+    },
+    {
+     "id": "überall",
+     "hr": "überall",
+     "en": "everywhere",
+     "pos": "adv.",
+     "note": "Ortsangabe",
+     "example": {
+      "target": "Ich habe überall nach dem Schlüssel gesucht.",
+      "gloss": "I looked everywhere for the key."
+     }
+    },
+    {
+     "id": "sogar",
+     "hr": "sogar",
+     "en": "even",
+     "pos": "adv.",
+     "note": "verstärkend",
+     "example": {
+      "target": "Er hat sogar am Sonntag gearbeitet.",
+      "gloss": "He even worked on Sunday."
+     }
+    },
+    {
+     "id": "kaum",
+     "hr": "kaum",
+     "en": "hardly, barely",
+     "pos": "adv.",
+     "note": "negierend",
+     "example": {
+      "target": "Ich habe letzte Nacht kaum geschlafen.",
+      "gloss": "I hardly slept last night."
+     }
+    },
+    {
+     "id": "besonders",
+     "hr": "besonders",
+     "en": "especially, particularly",
+     "pos": "adv.",
+     "note": "auch Adjektiv: besondere",
+     "example": {
+      "target": "Heute war es besonders voll.",
+      "gloss": "Today it was particularly crowded."
+     }
+    },
+    {
+     "id": "der bildschirm",
+     "hr": "der Bildschirm",
+     "en": "screen",
+     "pos": "n. m.",
+     "note": "pl. die Bildschirme",
+     "example": {
+      "target": "Der Bildschirm bleibt einfach schwarz.",
+      "gloss": "The screen simply stays black."
+     }
+    },
+    {
+     "id": "die tastatur",
+     "hr": "die Tastatur",
+     "en": "keyboard",
+     "pos": "n. f.",
+     "note": "pl. die Tastaturen",
+     "example": {
+      "target": "Auf dieser Tastatur fehlt ein Buchstabe.",
+      "gloss": "A letter is missing on this keyboard."
+     }
+    },
+    {
+     "id": "das passwort",
+     "hr": "das Passwort",
+     "en": "password",
+     "pos": "n. n.",
+     "note": "pl. die Passwörter",
+     "example": {
+      "target": "Ich habe mein Passwort vergessen.",
+      "gloss": "I have forgotten my password."
+     }
+    },
+    {
+     "id": "die datei",
+     "hr": "die Datei",
+     "en": "file (digital)",
+     "pos": "n. f.",
+     "note": "pl. die Dateien",
+     "example": {
+      "target": "Die Datei ist zu groß für eine E-Mail.",
+      "gloss": "The file is too big for an email."
+     }
+    },
+    {
+     "id": "die app",
+     "hr": "die App",
+     "en": "app",
+     "pos": "n. f.",
+     "note": "pl. die Apps",
+     "example": {
+      "target": "Mit dieser App lerne ich jeden Tag Wörter.",
+      "gloss": "With this app I learn words every day."
+     }
+    },
+    {
+     "id": "das internet",
+     "hr": "das Internet",
+     "en": "internet",
+     "pos": "n. n.",
+     "note": "nur Singular; im Internet",
+     "example": {
+      "target": "Ich habe die Information im Internet gefunden.",
+      "gloss": "I found the information on the internet."
+     }
+    },
+    {
+     "id": "die webseite",
+     "hr": "die Webseite",
+     "en": "website",
+     "pos": "n. f.",
+     "note": "pl. die Webseiten",
+     "example": {
+      "target": "Die Webseite lädt heute sehr langsam.",
+      "gloss": "The website is loading very slowly today."
+     }
+    },
+    {
+     "id": "das ladegerät",
+     "hr": "das Ladegerät",
+     "en": "charger",
+     "pos": "n. n.",
+     "note": "pl. die Ladegeräte",
+     "example": {
+      "target": "Hast du ein Ladegerät für mich?",
+      "gloss": "Do you have a charger for me?"
+     }
+    },
+    {
+     "id": "der akku",
+     "hr": "der Akku",
+     "en": "battery (rechargeable)",
+     "pos": "n. m.",
+     "note": "pl. die Akkus",
+     "example": {
+      "target": "Der Akku hält nur noch zwei Stunden.",
+      "gloss": "The battery only lasts two hours now."
+     }
+    },
+    {
+     "id": "die verbindung",
+     "hr": "die Verbindung",
+     "en": "connection",
+     "pos": "n. f.",
+     "note": "pl. die Verbindungen",
+     "example": {
+      "target": "Die Verbindung ist hier ziemlich schlecht.",
+      "gloss": "The connection is rather bad here."
+     }
+    },
+    {
+     "id": "die werbung",
+     "hr": "die Werbung",
+     "en": "advertising, adverts",
+     "pos": "n. f.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Vor dem Film kommt viel Werbung.",
+      "gloss": "There are a lot of adverts before the film."
+     }
+    },
+    {
+     "id": "die zeitschrift",
+     "hr": "die Zeitschrift",
+     "en": "magazine",
+     "pos": "n. f.",
+     "note": "pl. die Zeitschriften",
+     "example": {
+      "target": "Im Wartezimmer lagen alte Zeitschriften.",
+      "gloss": "There were old magazines in the waiting room."
+     }
+    },
+    {
+     "id": "die sendung",
+     "hr": "die Sendung",
+     "en": "programme, broadcast",
+     "pos": "n. f.",
+     "note": "pl. die Sendungen",
+     "example": {
+      "target": "Die Sendung läuft jeden Mittwoch.",
+      "gloss": "The programme is on every Wednesday."
+     }
+    },
+    {
+     "id": "die folge",
+     "hr": "die Folge",
+     "en": "episode; consequence",
+     "pos": "n. f.",
+     "note": "pl. die Folgen",
+     "example": {
+      "target": "Die letzte Folge war die beste.",
+      "gloss": "The last episode was the best."
+     }
+    },
+    {
+     "id": "das gerät",
+     "hr": "das Gerät",
+     "en": "device, appliance",
+     "pos": "n. n.",
+     "note": "pl. die Geräte",
+     "example": {
+      "target": "Das Gerät ist einfach zu bedienen.",
+      "gloss": "The device is easy to operate."
+     }
+    },
+    {
+     "id": "die einstellung",
+     "hr": "die Einstellung",
+     "en": "setting; attitude",
+     "pos": "n. f.",
+     "note": "pl. die Einstellungen",
+     "example": {
+      "target": "Diese Einstellung kannst du später ändern.",
+      "gloss": "You can change this setting later."
+     }
+    },
+    {
+     "id": "der verein",
+     "hr": "der Verein",
+     "en": "club, association",
+     "pos": "n. m.",
+     "note": "pl. die Vereine",
+     "example": {
+      "target": "Sie ist seit Jahren in einem Verein aktiv.",
+      "gloss": "She has been active in a club for years."
+     }
+    },
+    {
+     "id": "die mannschaft",
+     "hr": "die Mannschaft",
+     "en": "team",
+     "pos": "n. f.",
+     "note": "pl. die Mannschaften",
+     "example": {
+      "target": "Unsere Mannschaft spielt am Samstag.",
+      "gloss": "Our team plays on Saturday."
+     }
+    },
+    {
+     "id": "der wettkampf",
+     "hr": "der Wettkampf",
+     "en": "competition, contest",
+     "pos": "n. m.",
+     "note": "pl. die Wettkämpfe",
+     "example": {
+      "target": "Der Wettkampf beginnt um zehn.",
+      "gloss": "The competition starts at ten."
+     }
+    },
+    {
+     "id": "das tor",
+     "hr": "das Tor",
+     "en": "goal; gate",
+     "pos": "n. n.",
+     "note": "pl. die Tore",
+     "example": {
+      "target": "Er hat kurz vor Schluss ein Tor geschossen.",
+      "gloss": "He scored a goal shortly before the end."
+     }
+    },
+    {
+     "id": "der sieg",
+     "hr": "der Sieg",
+     "en": "victory, win",
+     "pos": "n. m.",
+     "note": "pl. die Siege",
+     "example": {
+      "target": "Der Sieg war völlig verdient.",
+      "gloss": "The victory was completely deserved."
+     }
+    },
+    {
+     "id": "die niederlage",
+     "hr": "die Niederlage",
+     "en": "defeat",
+     "pos": "n. f.",
+     "note": "pl. die Niederlagen",
+     "example": {
+      "target": "Nach der Niederlage waren alle still.",
+      "gloss": "After the defeat everyone was quiet."
+     }
+    },
+    {
+     "id": "das stadion",
+     "hr": "das Stadion",
+     "en": "stadium",
+     "pos": "n. n.",
+     "note": "pl. die Stadien",
+     "example": {
+      "target": "Das Stadion war komplett ausverkauft.",
+      "gloss": "The stadium was completely sold out."
+     }
+    },
+    {
+     "id": "das fitnessstudio",
+     "hr": "das Fitnessstudio",
+     "en": "gym",
+     "pos": "n. n.",
+     "note": "pl. die Fitnessstudios",
+     "example": {
+      "target": "Nach der Arbeit gehe ich ins Fitnessstudio.",
+      "gloss": "After work I go to the gym."
+     }
+    },
+    {
+     "id": "das training",
+     "hr": "das Training",
+     "en": "training, practice",
+     "pos": "n. n.",
+     "note": "pl. die Trainings",
+     "example": {
+      "target": "Das Training fällt heute aus.",
+      "gloss": "Training is cancelled today."
+     }
+    },
+    {
+     "id": "der spaziergang",
+     "hr": "der Spaziergang",
+     "en": "walk, stroll",
+     "pos": "n. m.",
+     "note": "pl. die Spaziergänge; einen Spaziergang machen",
+     "example": {
+      "target": "Nach dem Essen machen wir einen Spaziergang.",
+      "gloss": "After the meal we go for a walk."
+     }
+    },
+    {
+     "id": "das konzert",
+     "hr": "das Konzert",
+     "en": "concert",
+     "pos": "n. n.",
+     "note": "pl. die Konzerte",
+     "example": {
+      "target": "Das Konzert war leider ausverkauft.",
+      "gloss": "The concert was unfortunately sold out."
+     }
+    },
+    {
+     "id": "die ausstellung",
+     "hr": "die Ausstellung",
+     "en": "exhibition",
+     "pos": "n. f.",
+     "note": "pl. die Ausstellungen",
+     "example": {
+      "target": "Die Ausstellung läuft noch bis Mai.",
+      "gloss": "The exhibition runs until May."
+     }
+    },
+    {
+     "id": "der eintritt",
+     "hr": "der Eintritt",
+     "en": "entry, admission",
+     "pos": "n. m.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Der Eintritt kostet acht Euro.",
+      "gloss": "Admission costs eight euros."
+     }
+    },
+    {
+     "id": "die veranstaltung",
+     "hr": "die Veranstaltung",
+     "en": "event",
+     "pos": "n. f.",
+     "note": "pl. die Veranstaltungen",
+     "example": {
+      "target": "Die Veranstaltung findet im Freien statt.",
+      "gloss": "The event takes place outdoors."
+     }
+    }
+   ]
+  }
+ ]
+}

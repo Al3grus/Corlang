@@ -1,0 +1,994 @@
+{
+ "packs": [
+  {
+   "id": "21-b1-collocations",
+   "title": "B1: Feste Wendungen",
+   "level": "B1",
+   "sources": [
+    "goethe-wortliste",
+    "goethe-b1"
+   ],
+   "words": [
+    {
+     "id": "bescheid wissen",
+     "hr": "Bescheid wissen",
+     "en": "to be in the know",
+     "pos": "expr.",
+     "note": "Bescheid wissen über + Akkusativ; wissen: weiß, wusste, hat gewusst",
+     "example": {
+      "target": "Frag Anna, die weiß über den Ablauf Bescheid.",
+      "gloss": "Ask Anna, she knows about the procedure."
+     }
+    },
+    {
+     "id": "bescheid geben",
+     "hr": "Bescheid geben",
+     "en": "to let someone know",
+     "pos": "expr.",
+     "note": "jemandem Bescheid geben; geben: gibt, gab, hat gegeben",
+     "example": {
+      "target": "Gib mir kurz Bescheid, wenn du losfährst.",
+      "gloss": "Just let me know when you set off."
+     }
+    },
+    {
+     "id": "in ordnung sein",
+     "hr": "in Ordnung sein",
+     "en": "to be all right",
+     "pos": "expr.",
+     "note": "auch als Zustimmung: geht in Ordnung",
+     "example": {
+      "target": "Ist es für dich in Ordnung, wenn wir eine Stunde später anfangen?",
+      "gloss": "Is it all right with you if we start an hour later?"
+     }
+    },
+    {
+     "id": "angst haben",
+     "hr": "Angst haben",
+     "en": "to be afraid",
+     "pos": "expr.",
+     "note": "Angst haben vor + Dativ; auch: Angst haben, etwas zu tun",
+     "example": {
+      "target": "Sie hat Angst vor großen Hunden.",
+      "gloss": "She is afraid of big dogs."
+     }
+    },
+    {
+     "id": "eine frage stellen",
+     "hr": "eine Frage stellen",
+     "en": "to ask a question",
+     "pos": "expr.",
+     "note": "jemandem eine Frage stellen",
+     "example": {
+      "target": "Darf ich Ihnen noch eine Frage stellen?",
+      "gloss": "May I ask you one more question?"
+     }
+    },
+    {
+     "id": "einen termin vereinbaren",
+     "hr": "einen Termin vereinbaren",
+     "en": "to arrange an appointment",
+     "pos": "expr.",
+     "note": "einen Termin vereinbaren mit + Dativ",
+     "example": {
+      "target": "Ich möchte einen Termin für nächste Woche vereinbaren.",
+      "gloss": "I would like to arrange an appointment for next week."
+     }
+    },
+    {
+     "id": "abschied nehmen",
+     "hr": "Abschied nehmen",
+     "en": "to say goodbye",
+     "pos": "expr.",
+     "note": "Abschied nehmen von + Dativ; gehobener als sich verabschieden",
+     "example": {
+      "target": "Am Bahnhof haben wir Abschied von ihr genommen.",
+      "gloss": "We said goodbye to her at the station."
+     }
+    },
+    {
+     "id": "zu ende gehen",
+     "hr": "zu Ende gehen",
+     "en": "to come to an end",
+     "pos": "expr.",
+     "note": "gehen: ging, ist gegangen; Perfekt mit sein",
+     "example": {
+      "target": "Der Urlaub geht leider schon zu Ende.",
+      "gloss": "Sadly the holiday is already coming to an end."
+     }
+    },
+    {
+     "id": "auf dem laufenden bleiben",
+     "hr": "auf dem Laufenden bleiben",
+     "en": "to keep up to date",
+     "pos": "expr.",
+     "note": "bleiben: blieb, ist geblieben",
+     "example": {
+      "target": "Über die App bleibe ich auf dem Laufenden.",
+      "gloss": "I keep up to date via the app."
+     }
+    },
+    {
+     "id": "auf dem laufenden halten",
+     "hr": "auf dem Laufenden halten",
+     "en": "to keep someone posted",
+     "pos": "expr.",
+     "note": "jemanden auf dem Laufenden halten; halten: hält, hielt, hat gehalten",
+     "example": {
+      "target": "Ich halte dich auf dem Laufenden, sobald ich mehr weiß.",
+      "gloss": "I will keep you posted as soon as I know more."
+     }
+    },
+    {
+     "id": "das ist mir egal",
+     "hr": "das ist mir egal",
+     "en": "I do not mind",
+     "pos": "expr.",
+     "note": "auch: es ist mir egal, ob ...",
+     "example": {
+      "target": "Pizza oder Nudeln, das ist mir egal.",
+      "gloss": "Pizza or pasta, I do not mind."
+     }
+    },
+    {
+     "id": "keine ahnung haben",
+     "hr": "keine Ahnung haben",
+     "en": "to have no idea",
+     "pos": "expr.",
+     "note": "keine Ahnung haben von + Dativ; umgangssprachlich auch nur: keine Ahnung",
+     "example": {
+      "target": "Von Autos habe ich wirklich keine Ahnung.",
+      "gloss": "I really have no idea about cars."
+     }
+    },
+    {
+     "id": "im stich lassen",
+     "hr": "im Stich lassen",
+     "en": "to let someone down",
+     "pos": "expr.",
+     "note": "jemanden im Stich lassen; lassen: lässt, ließ, hat gelassen",
+     "example": {
+      "target": "Er hat uns mitten im Projekt im Stich gelassen.",
+      "gloss": "He let us down in the middle of the project."
+     }
+    },
+    {
+     "id": "die nase voll haben",
+     "hr": "die Nase voll haben",
+     "en": "to be fed up",
+     "pos": "expr.",
+     "note": "die Nase voll haben von + Dativ; umgangssprachlich",
+     "example": {
+      "target": "Ich habe die Nase voll von diesem Regen.",
+      "gloss": "I am fed up with this rain."
+     }
+    },
+    {
+     "id": "unter vier augen",
+     "hr": "unter vier Augen",
+     "en": "in private, one to one",
+     "pos": "expr.",
+     "note": "meist mit sprechen, reden oder besprechen",
+     "example": {
+      "target": "Können wir das kurz unter vier Augen besprechen?",
+      "gloss": "Can we discuss that in private for a moment?"
+     }
+    },
+    {
+     "id": "den faden verlieren",
+     "hr": "den Faden verlieren",
+     "en": "to lose one's train of thought",
+     "pos": "expr.",
+     "note": "verlieren: verlor, hat verloren",
+     "example": {
+      "target": "Entschuldigung, ich habe den Faden verloren.",
+      "gloss": "Sorry, I have lost my train of thought."
+     }
+    },
+    {
+     "id": "ins wasser fallen",
+     "hr": "ins Wasser fallen",
+     "en": "to fall through",
+     "pos": "expr.",
+     "note": "fallen: fällt, fiel, ist gefallen; von Plänen und Terminen",
+     "example": {
+      "target": "Das Grillfest ist wegen des Gewitters ins Wasser gefallen.",
+      "gloss": "The barbecue fell through because of the thunderstorm."
+     }
+    },
+    {
+     "id": "die daumen drücken",
+     "hr": "die Daumen drücken",
+     "en": "to keep one's fingers crossed",
+     "pos": "expr.",
+     "note": "jemandem die Daumen drücken",
+     "example": {
+      "target": "Ich drücke dir für die Prüfung die Daumen.",
+      "gloss": "I will keep my fingers crossed for your exam."
+     }
+    },
+    {
+     "id": "auf die nerven gehen",
+     "hr": "auf die Nerven gehen",
+     "en": "to get on someone's nerves",
+     "pos": "expr.",
+     "note": "jemandem auf die Nerven gehen; gehen: ging, ist gegangen",
+     "example": {
+      "target": "Das ständige Klingeln geht mir auf die Nerven.",
+      "gloss": "The constant ringing gets on my nerves."
+     }
+    },
+    {
+     "id": "schlange stehen",
+     "hr": "Schlange stehen",
+     "en": "to queue",
+     "pos": "expr.",
+     "note": "stehen: stand, hat gestanden",
+     "example": {
+      "target": "Wir mussten eine halbe Stunde Schlange stehen.",
+      "gloss": "We had to queue for half an hour."
+     }
+    },
+    {
+     "id": "feierabend machen",
+     "hr": "Feierabend machen",
+     "en": "to finish work for the day",
+     "pos": "expr.",
+     "note": "umgangssprachlich, sehr gebräuchlich",
+     "example": {
+      "target": "Ich mache heute früher Feierabend.",
+      "gloss": "I am finishing work earlier today."
+     }
+    },
+    {
+     "id": "pause machen",
+     "hr": "Pause machen",
+     "en": "to take a break",
+     "pos": "expr.",
+     "note": "auch: eine Pause machen",
+     "example": {
+      "target": "Lass uns kurz Pause machen, ich brauche Kaffee.",
+      "gloss": "Let us take a short break, I need coffee."
+     }
+    },
+    {
+     "id": "zu fuß gehen",
+     "hr": "zu Fuß gehen",
+     "en": "to go on foot, to walk",
+     "pos": "expr.",
+     "note": "gehen: ging, ist gegangen",
+     "example": {
+      "target": "Bei dem Wetter gehe ich lieber zu Fuß.",
+      "gloss": "In this weather I would rather walk."
+     }
+    },
+    {
+     "id": "rad fahren",
+     "hr": "Rad fahren",
+     "en": "to cycle",
+     "pos": "expr.",
+     "note": "fährt Rad, fuhr Rad, ist Rad gefahren",
+     "example": {
+      "target": "Im Sommer fahre ich jeden Tag Rad.",
+      "gloss": "In summer I cycle every day."
+     }
+    },
+    {
+     "id": "sport treiben",
+     "hr": "Sport treiben",
+     "en": "to do sport",
+     "pos": "expr.",
+     "note": "treiben: trieb, hat getrieben",
+     "example": {
+      "target": "Mein Arzt sagt, ich soll mehr Sport treiben.",
+      "gloss": "My doctor says I should do more sport."
+     }
+    },
+    {
+     "id": "eine prüfung ablegen",
+     "hr": "eine Prüfung ablegen",
+     "en": "to sit an exam",
+     "pos": "expr.",
+     "note": "trennbar: legt ab, legte ab, hat abgelegt; förmlicher als eine Prüfung machen",
+     "example": {
+      "target": "Im Juni lege ich die Prüfung ab.",
+      "gloss": "I will sit the exam in June."
+     }
+    },
+    {
+     "id": "eine prüfung bestehen",
+     "hr": "eine Prüfung bestehen",
+     "en": "to pass an exam",
+     "pos": "expr.",
+     "note": "bestehen: bestand, hat bestanden; Gegenteil: durchfallen",
+     "example": {
+      "target": "Sie hat die Prüfung mit einer guten Note bestanden.",
+      "gloss": "She passed the exam with a good grade."
+     }
+    },
+    {
+     "id": "einen kurs belegen",
+     "hr": "einen Kurs belegen",
+     "en": "to take a course",
+     "pos": "expr.",
+     "note": "belegen: belegte, hat belegt",
+     "example": {
+      "target": "Ich habe einen Kurs am Abend belegt.",
+      "gloss": "I have taken an evening course."
+     }
+    },
+    {
+     "id": "notizen machen",
+     "hr": "Notizen machen",
+     "en": "to take notes",
+     "pos": "expr.",
+     "note": "meist mit Dativpronomen: sich Notizen machen",
+     "example": {
+      "target": "Mach dir am besten Notizen, das kommt in der Prüfung dran.",
+      "gloss": "You had better take notes, that will come up in the exam."
+     }
+    },
+    {
+     "id": "eine frist einhalten",
+     "hr": "eine Frist einhalten",
+     "en": "to meet a deadline",
+     "pos": "expr.",
+     "note": "trennbar: hält ein, hielt ein, hat eingehalten",
+     "example": {
+      "target": "Wenn wir die Frist nicht einhalten, kostet es extra.",
+      "gloss": "If we do not meet the deadline, it will cost extra."
+     }
+    },
+    {
+     "id": "wort halten",
+     "hr": "Wort halten",
+     "en": "to keep one's word",
+     "pos": "expr.",
+     "note": "halten: hält, hielt, hat gehalten; ohne Artikel",
+     "example": {
+      "target": "Er hat Wort gehalten und pünktlich bezahlt.",
+      "gloss": "He kept his word and paid on time."
+     }
+    },
+    {
+     "id": "ein auge zudrücken",
+     "hr": "ein Auge zudrücken",
+     "en": "to turn a blind eye",
+     "pos": "expr.",
+     "note": "trennbar: drückt zu, drückte zu, hat zugedrückt",
+     "example": {
+      "target": "Der Lehrer hat diesmal ein Auge zugedrückt.",
+      "gloss": "The teacher turned a blind eye this time."
+     }
+    },
+    {
+     "id": "einen gefallen tun",
+     "hr": "einen Gefallen tun",
+     "en": "to do someone a favour",
+     "pos": "expr.",
+     "note": "jemandem einen Gefallen tun; tun: tat, hat getan",
+     "example": {
+      "target": "Tust du mir einen Gefallen und holst die Post?",
+      "gloss": "Would you do me a favour and get the post?"
+     }
+    },
+    {
+     "id": "druck ausüben",
+     "hr": "Druck ausüben",
+     "en": "to put pressure on",
+     "pos": "expr.",
+     "note": "Druck ausüben auf + Akkusativ; trennbar: übt aus, übte aus, hat ausgeübt",
+     "example": {
+      "target": "Man sollte keinen Druck auf Kinder ausüben.",
+      "gloss": "You should not put pressure on children."
+     }
+    },
+    {
+     "id": "anspruch haben auf",
+     "hr": "Anspruch haben auf",
+     "en": "to be entitled to",
+     "pos": "expr.",
+     "note": "Anspruch haben auf + Akkusativ",
+     "example": {
+      "target": "Nach einem Jahr hast du Anspruch auf mehr Urlaub.",
+      "gloss": "After a year you are entitled to more holiday."
+     }
+    },
+    {
+     "id": "in kontakt bleiben",
+     "hr": "in Kontakt bleiben",
+     "en": "to stay in touch",
+     "pos": "expr.",
+     "note": "in Kontakt bleiben mit + Dativ",
+     "example": {
+      "target": "Wir sind auch nach dem Kurs in Kontakt geblieben.",
+      "gloss": "We stayed in touch even after the course."
+     }
+    },
+    {
+     "id": "kontakt aufnehmen",
+     "hr": "Kontakt aufnehmen",
+     "en": "to get in touch",
+     "pos": "expr.",
+     "note": "Kontakt aufnehmen mit + Dativ; trennbar: nimmt auf, nahm auf, hat aufgenommen",
+     "example": {
+      "target": "Nehmen Sie bitte mit uns Kontakt auf.",
+      "gloss": "Please get in touch with us."
+     }
+    },
+    {
+     "id": "sich sorgen machen",
+     "hr": "sich Sorgen machen",
+     "en": "to worry",
+     "pos": "expr.",
+     "note": "sich Sorgen machen um + Akkusativ; reflexiv im Dativ",
+     "example": {
+      "target": "Mach dir keine Sorgen, das schaffst du.",
+      "gloss": "Do not worry, you will manage."
+     }
+    },
+    {
+     "id": "sich zeit nehmen",
+     "hr": "sich Zeit nehmen",
+     "en": "to take one's time",
+     "pos": "expr.",
+     "note": "sich Zeit nehmen für + Akkusativ; reflexiv im Dativ",
+     "example": {
+      "target": "Nimm dir Zeit für die Antwort.",
+      "gloss": "Take your time with the answer."
+     }
+    },
+    {
+     "id": "sich mühe geben",
+     "hr": "sich Mühe geben",
+     "en": "to make an effort",
+     "pos": "expr.",
+     "note": "reflexiv im Dativ; sich Mühe geben mit + Dativ",
+     "example": {
+      "target": "Er hat sich mit dem Referat wirklich Mühe gegeben.",
+      "gloss": "He really made an effort with the presentation."
+     }
+    },
+    {
+     "id": "zur kenntnis nehmen",
+     "hr": "zur Kenntnis nehmen",
+     "en": "to take note of",
+     "pos": "expr.",
+     "note": "etwas zur Kenntnis nehmen",
+     "example": {
+      "target": "Ich habe Ihre Anmerkung zur Kenntnis genommen.",
+      "gloss": "I have taken note of your comment."
+     }
+    },
+    {
+     "id": "in betracht ziehen",
+     "hr": "in Betracht ziehen",
+     "en": "to consider",
+     "pos": "expr.",
+     "note": "etwas in Betracht ziehen; ziehen: zog, hat gezogen",
+     "example": {
+      "target": "Wir ziehen einen Umzug ernsthaft in Betracht.",
+      "gloss": "We are seriously considering moving."
+     }
+    },
+    {
+     "id": "auf die lange bank schieben",
+     "hr": "auf die lange Bank schieben",
+     "en": "to keep putting off",
+     "pos": "expr.",
+     "note": "schieben: schob, hat geschoben",
+     "example": {
+      "target": "Schieb den Zahnarzttermin nicht wieder auf die lange Bank.",
+      "gloss": "Do not keep putting off the dentist appointment again."
+     }
+    },
+    {
+     "id": "unter den teppich kehren",
+     "hr": "unter den Teppich kehren",
+     "en": "to sweep under the carpet",
+     "pos": "expr.",
+     "note": "kehren: kehrte, hat gekehrt",
+     "example": {
+      "target": "Solche Probleme darf man nicht unter den Teppich kehren.",
+      "gloss": "You must not sweep problems like that under the carpet."
+     }
+    },
+    {
+     "id": "übel nehmen",
+     "hr": "übel nehmen",
+     "en": "to hold something against someone",
+     "pos": "expr.",
+     "note": "jemandem etwas übel nehmen; trennbar: nimmt übel, nahm übel, hat übelgenommen",
+     "example": {
+      "target": "Nimm es mir nicht übel, aber ich sage heute ab.",
+      "gloss": "Do not hold it against me, but I am cancelling today."
+     }
+    },
+    {
+     "id": "zur seite stehen",
+     "hr": "zur Seite stehen",
+     "en": "to stand by someone",
+     "pos": "expr.",
+     "note": "jemandem zur Seite stehen; stehen: stand, hat gestanden",
+     "example": {
+      "target": "Meine Schwester hat mir in dieser Zeit zur Seite gestanden.",
+      "gloss": "My sister stood by me during that time."
+     }
+    },
+    {
+     "id": "über den weg laufen",
+     "hr": "über den Weg laufen",
+     "en": "to run into someone",
+     "pos": "expr.",
+     "note": "jemandem über den Weg laufen; laufen: läuft, lief, ist gelaufen",
+     "example": {
+      "target": "Gestern ist mir ein alter Schulfreund über den Weg gelaufen.",
+      "gloss": "Yesterday I ran into an old school friend."
+     }
+    },
+    {
+     "id": "auf die sprünge helfen",
+     "hr": "auf die Sprünge helfen",
+     "en": "to jog someone's memory",
+     "pos": "expr.",
+     "note": "jemandem auf die Sprünge helfen; helfen: hilft, half, hat geholfen",
+     "example": {
+      "target": "Soll ich deinem Gedächtnis auf die Sprünge helfen?",
+      "gloss": "Shall I jog your memory?"
+     }
+    },
+    {
+     "id": "schritt halten",
+     "hr": "Schritt halten",
+     "en": "to keep up",
+     "pos": "expr.",
+     "note": "Schritt halten mit + Dativ",
+     "example": {
+      "target": "Die Löhne halten mit den Preisen nicht Schritt.",
+      "gloss": "Wages are not keeping up with prices."
+     }
+    },
+    {
+     "id": "abstand halten",
+     "hr": "Abstand halten",
+     "en": "to keep one's distance",
+     "pos": "expr.",
+     "note": "Abstand halten zu + Dativ",
+     "example": {
+      "target": "Auf der Autobahn muss man genug Abstand halten.",
+      "gloss": "On the motorway you have to keep enough distance."
+     }
+    },
+    {
+     "id": "platz nehmen",
+     "hr": "Platz nehmen",
+     "en": "to take a seat",
+     "pos": "expr.",
+     "note": "höflicher als sich setzen",
+     "example": {
+      "target": "Nehmen Sie bitte Platz, der Arzt kommt gleich.",
+      "gloss": "Please take a seat, the doctor is coming shortly."
+     }
+    },
+    {
+     "id": "eine rede halten",
+     "hr": "eine Rede halten",
+     "en": "to give a speech",
+     "pos": "expr.",
+     "note": "halten: hält, hielt, hat gehalten",
+     "example": {
+      "target": "Der Chef hielt eine kurze Rede zum Abschied.",
+      "gloss": "The boss gave a short farewell speech."
+     }
+    },
+    {
+     "id": "einen vortrag halten",
+     "hr": "einen Vortrag halten",
+     "en": "to give a talk",
+     "pos": "expr.",
+     "note": "einen Vortrag halten über + Akkusativ",
+     "example": {
+      "target": "Morgen halte ich einen Vortrag über gesunde Ernährung.",
+      "gloss": "Tomorrow I am giving a talk about healthy eating."
+     }
+    },
+    {
+     "id": "zum ausdruck bringen",
+     "hr": "zum Ausdruck bringen",
+     "en": "to express",
+     "pos": "expr.",
+     "note": "etwas zum Ausdruck bringen; bringen: brachte, hat gebracht",
+     "example": {
+      "target": "Damit wollte er seine Enttäuschung zum Ausdruck bringen.",
+      "gloss": "With that he wanted to express his disappointment."
+     }
+    },
+    {
+     "id": "in erfüllung gehen",
+     "hr": "in Erfüllung gehen",
+     "en": "to come true",
+     "pos": "expr.",
+     "note": "gehen: ging, ist gegangen",
+     "example": {
+      "target": "Ihr größter Wunsch ist endlich in Erfüllung gegangen.",
+      "gloss": "Her greatest wish has finally come true."
+     }
+    },
+    {
+     "id": "ums leben kommen",
+     "hr": "ums Leben kommen",
+     "en": "to lose one's life",
+     "pos": "expr.",
+     "note": "kommen: kam, ist gekommen",
+     "example": {
+      "target": "Bei dem Unfall kam zum Glück niemand ums Leben.",
+      "gloss": "Luckily nobody lost their life in the accident."
+     }
+    },
+    {
+     "id": "zur sprache kommen",
+     "hr": "zur Sprache kommen",
+     "en": "to come up, to be raised",
+     "pos": "expr.",
+     "note": "auch aktiv: etwas zur Sprache bringen",
+     "example": {
+      "target": "Das Thema kam gestern zur Sprache.",
+      "gloss": "The topic came up yesterday."
+     }
+    },
+    {
+     "id": "auf den punkt bringen",
+     "hr": "auf den Punkt bringen",
+     "en": "to sum up precisely",
+     "pos": "expr.",
+     "note": "etwas auf den Punkt bringen",
+     "example": {
+      "target": "Du hast das Problem genau auf den Punkt gebracht.",
+      "gloss": "You have summed the problem up exactly."
+     }
+    },
+    {
+     "id": "in erinnerung bleiben",
+     "hr": "in Erinnerung bleiben",
+     "en": "to stay in one's memory",
+     "pos": "expr.",
+     "note": "jemandem in Erinnerung bleiben; bleiben: blieb, ist geblieben",
+     "example": {
+      "target": "Dieser Abend wird mir lange in Erinnerung bleiben.",
+      "gloss": "I will remember this evening for a long time."
+     }
+    },
+    {
+     "id": "aus dem weg gehen",
+     "hr": "aus dem Weg gehen",
+     "en": "to avoid",
+     "pos": "expr.",
+     "note": "jemandem oder einer Sache aus dem Weg gehen (Dativ)",
+     "example": {
+      "target": "Er geht jedem Streit aus dem Weg.",
+      "gloss": "He avoids every argument."
+     }
+    },
+    {
+     "id": "zu weit gehen",
+     "hr": "zu weit gehen",
+     "en": "to go too far",
+     "pos": "expr.",
+     "note": "gehen: ging, ist gegangen",
+     "example": {
+      "target": "Jetzt gehst du aber zu weit.",
+      "gloss": "Now you really are going too far."
+     }
+    },
+    {
+     "id": "schluss machen",
+     "hr": "Schluss machen",
+     "en": "to call it a day; to break up",
+     "pos": "expr.",
+     "note": "Schluss machen mit + Dativ",
+     "example": {
+      "target": "Für heute machen wir Schluss.",
+      "gloss": "We will call it a day for today."
+     }
+    },
+    {
+     "id": "die ruhe bewahren",
+     "hr": "die Ruhe bewahren",
+     "en": "to keep calm",
+     "pos": "expr.",
+     "note": "bewahren: bewahrte, hat bewahrt",
+     "example": {
+      "target": "Wichtig ist, dass alle die Ruhe bewahren.",
+      "gloss": "The important thing is that everybody keeps calm."
+     }
+    },
+    {
+     "id": "verständnis haben",
+     "hr": "Verständnis haben",
+     "en": "to be understanding",
+     "pos": "expr.",
+     "note": "Verständnis haben für + Akkusativ",
+     "example": {
+      "target": "Ich habe Verständnis für deine Situation.",
+      "gloss": "I am understanding about your situation."
+     }
+    },
+    {
+     "id": "an die reihe kommen",
+     "hr": "an die Reihe kommen",
+     "en": "to have one's turn",
+     "pos": "expr.",
+     "note": "kommen: kam, ist gekommen; auch: du bist an der Reihe",
+     "example": {
+      "target": "Nach zwanzig Minuten kam ich endlich an die Reihe.",
+      "gloss": "After twenty minutes it was finally my turn."
+     }
+    },
+    {
+     "id": "das sehe ich auch so",
+     "hr": "das sehe ich auch so",
+     "en": "I see it that way too",
+     "pos": "expr.",
+     "note": "Zustimmungsformel im Gespräch",
+     "example": {
+      "target": "Das sehe ich auch so, wir sollten früher anfangen.",
+      "gloss": "I see it that way too, we should start earlier."
+     }
+    },
+    {
+     "id": "das stimmt",
+     "hr": "das stimmt",
+     "en": "that is true",
+     "pos": "expr.",
+     "note": "Zustimmung; einräumend: das stimmt schon, aber ...",
+     "example": {
+      "target": "Das stimmt, daran habe ich gar nicht gedacht.",
+      "gloss": "That is true, I had not thought of that at all."
+     }
+    },
+    {
+     "id": "das kann sein",
+     "hr": "das kann sein",
+     "en": "that may be so",
+     "pos": "expr.",
+     "note": "abschwächende Zustimmung",
+     "example": {
+      "target": "Das kann sein, sicher bin ich mir aber nicht.",
+      "gloss": "That may be so, but I am not sure."
+     }
+    },
+    {
+     "id": "soweit ich weiß",
+     "hr": "soweit ich weiß",
+     "en": "as far as I know",
+     "pos": "expr.",
+     "note": "Nebensatz mit Verb am Ende; wissen: weiß, wusste, hat gewusst",
+     "example": {
+      "target": "Soweit ich weiß, ist der Laden sonntags zu.",
+      "gloss": "As far as I know, the shop is closed on Sundays."
+     }
+    },
+    {
+     "id": "ehrlich gesagt",
+     "hr": "ehrlich gesagt",
+     "en": "to be honest",
+     "pos": "expr.",
+     "note": "Diskursformel, meist am Satzanfang",
+     "example": {
+      "target": "Ehrlich gesagt habe ich keine Lust dazu.",
+      "gloss": "To be honest, I do not feel like it."
+     }
+    },
+    {
+     "id": "im gegenteil",
+     "hr": "im Gegenteil",
+     "en": "on the contrary",
+     "pos": "expr.",
+     "note": "widersprechende Formel; verstärkt: ganz im Gegenteil",
+     "example": {
+      "target": "Es war nicht langweilig, im Gegenteil.",
+      "gloss": "It was not boring, on the contrary."
+     }
+    },
+    {
+     "id": "nicht unbedingt",
+     "hr": "nicht unbedingt",
+     "en": "not necessarily",
+     "pos": "expr.",
+     "note": "abschwächende Formel",
+     "example": {
+      "target": "Teuer heißt nicht unbedingt gut.",
+      "gloss": "Expensive does not necessarily mean good."
+     }
+    },
+    {
+     "id": "da bin ich anderer meinung",
+     "hr": "da bin ich anderer Meinung",
+     "en": "I disagree",
+     "pos": "expr.",
+     "note": "höfliche Widerspruchsformel",
+     "example": {
+      "target": "Da bin ich anderer Meinung, das Problem liegt woanders.",
+      "gloss": "I disagree, the problem lies elsewhere."
+     }
+    },
+    {
+     "id": "das leuchtet mir ein",
+     "hr": "das leuchtet mir ein",
+     "en": "that makes sense to me",
+     "pos": "expr.",
+     "note": "von einleuchten, trennbar: leuchtet ein, hat eingeleuchtet",
+     "example": {
+      "target": "Jetzt erklärst du es gut, das leuchtet mir ein.",
+      "gloss": "Now you are explaining it well, that makes sense to me."
+     }
+    },
+    {
+     "id": "das ergibt sinn",
+     "hr": "das ergibt Sinn",
+     "en": "that makes sense",
+     "pos": "expr.",
+     "note": "ergeben: ergibt, ergab, hat ergeben",
+     "example": {
+      "target": "So gesehen ergibt das Sinn.",
+      "gloss": "Seen like that, it makes sense."
+     }
+    },
+    {
+     "id": "kein wunder",
+     "hr": "kein Wunder",
+     "en": "no wonder",
+     "pos": "expr.",
+     "note": "oft mit anschließendem dass-Satz",
+     "example": {
+      "target": "Kein Wunder, dass du müde bist.",
+      "gloss": "No wonder you are tired."
+     }
+    },
+    {
+     "id": "und so weiter",
+     "hr": "und so weiter",
+     "en": "and so on",
+     "pos": "expr.",
+     "note": "schließt eine Aufzählung ab",
+     "example": {
+      "target": "Wir brauchen Teller, Gläser, Servietten und so weiter.",
+      "gloss": "We need plates, glasses, napkins and so on."
+     }
+    },
+    {
+     "id": "alles klar",
+     "hr": "alles klar",
+     "en": "got it, all good",
+     "pos": "expr.",
+     "note": "umgangssprachliche Bestätigung, auch als Frage",
+     "example": {
+      "target": "Alles klar, dann sehen wir uns um acht.",
+      "gloss": "Got it, we will see each other at eight then."
+     }
+    },
+    {
+     "id": "macht nichts",
+     "hr": "macht nichts",
+     "en": "never mind",
+     "pos": "expr.",
+     "note": "umgangssprachliche Beruhigungsformel",
+     "example": {
+      "target": "Macht nichts, das passiert jedem mal.",
+      "gloss": "Never mind, that happens to everyone."
+     }
+    },
+    {
+     "id": "schon gut",
+     "hr": "schon gut",
+     "en": "it is fine, forget it",
+     "pos": "expr.",
+     "note": "umgangssprachlich; wehrt eine Entschuldigung ab",
+     "example": {
+      "target": "Schon gut, du musst dich nicht entschuldigen.",
+      "gloss": "It is fine, you do not have to apologise."
+     }
+    },
+    {
+     "id": "kein problem",
+     "hr": "kein Problem",
+     "en": "no problem",
+     "pos": "expr.",
+     "note": "häufige Antwort auf eine Bitte oder Entschuldigung",
+     "example": {
+      "target": "Kein Problem, ich mache das gern.",
+      "gloss": "No problem, I am happy to do it."
+     }
+    },
+    {
+     "id": "auf gut glück",
+     "hr": "auf gut Glück",
+     "en": "on the off chance",
+     "pos": "expr.",
+     "note": "adverbiale Wendung",
+     "example": {
+      "target": "Wir sind auf gut Glück hingefahren und hatten Glück.",
+      "gloss": "We went there on the off chance and were lucky."
+     }
+    },
+    {
+     "id": "letzten endes",
+     "hr": "letzten Endes",
+     "en": "in the end, ultimately",
+     "pos": "expr.",
+     "note": "zusammenfassende Formel",
+     "example": {
+      "target": "Letzten Endes hat es sich doch gelohnt.",
+      "gloss": "In the end it was worth it after all."
+     }
+    },
+    {
+     "id": "auf anhieb",
+     "hr": "auf Anhieb",
+     "en": "straight away, first time",
+     "pos": "expr.",
+     "note": "adverbiale Wendung, oft mit klappen oder verstehen",
+     "example": {
+      "target": "Es hat auf Anhieb geklappt.",
+      "gloss": "It worked first time."
+     }
+    },
+    {
+     "id": "ohne weiteres",
+     "hr": "ohne Weiteres",
+     "en": "without any problem",
+     "pos": "expr.",
+     "note": "auch verneint: nicht ohne Weiteres",
+     "example": {
+      "target": "Das lässt sich ohne Weiteres ändern.",
+      "gloss": "That can be changed without any problem."
+     }
+    },
+    {
+     "id": "in gewisser weise",
+     "hr": "in gewisser Weise",
+     "en": "in a way",
+     "pos": "expr.",
+     "note": "abschwächende Formel",
+     "example": {
+      "target": "In gewisser Weise hast du recht.",
+      "gloss": "In a way you are right."
+     }
+    },
+    {
+     "id": "wie dem auch sei",
+     "hr": "wie dem auch sei",
+     "en": "be that as it may",
+     "pos": "expr.",
+     "note": "überleitende Formel",
+     "example": {
+      "target": "Wie dem auch sei, wir müssen jetzt weitermachen.",
+      "gloss": "Be that as it may, we have to carry on now."
+     }
+    },
+    {
+     "id": "wie gesagt",
+     "hr": "wie gesagt",
+     "en": "as I said",
+     "pos": "expr.",
+     "note": "rückverweisende Formel",
+     "example": {
+      "target": "Wie gesagt, ich kann erst am Montag.",
+      "gloss": "As I said, I cannot make it before Monday."
+     }
+    },
+    {
+     "id": "nebenbei bemerkt",
+     "hr": "nebenbei bemerkt",
+     "en": "incidentally",
+     "pos": "expr.",
+     "note": "einschiebende Formel",
+     "example": {
+      "target": "Nebenbei bemerkt war das Essen ausgezeichnet.",
+      "gloss": "Incidentally, the food was excellent."
+     }
+    }
+   ]
+  }
+ ]
+}

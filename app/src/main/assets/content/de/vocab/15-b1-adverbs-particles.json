@@ -1,0 +1,1225 @@
+{
+ "packs": [
+  {
+   "id": "15-b1-adverbs-particles",
+   "title": "B1: Adverbien und Partikeln",
+   "level": "B1",
+   "sources": [
+    "goethe-wortliste",
+    "goethe-b1"
+   ],
+   "words": [
+    {
+     "id": "bereits",
+     "hr": "bereits",
+     "en": "already",
+     "pos": "adv.",
+     "note": "schriftsprachliches Synonym von schon",
+     "example": {
+      "target": "Der Termin ist bereits vergeben.",
+      "gloss": "The appointment has already been taken."
+     }
+    },
+    {
+     "id": "vorhin",
+     "hr": "vorhin",
+     "en": "a short while ago",
+     "pos": "adv.",
+     "note": "nur für die jüngste Vergangenheit am selben Tag",
+     "example": {
+      "target": "Ich habe ihn vorhin im Treppenhaus gesehen.",
+      "gloss": "I saw him in the stairwell a short while ago."
+     }
+    },
+    {
+     "id": "neulich",
+     "hr": "neulich",
+     "en": "the other day",
+     "pos": "adv.",
+     "note": "unbestimmte nahe Vergangenheit",
+     "example": {
+      "target": "Neulich habe ich einen alten Freund getroffen.",
+      "gloss": "The other day I met an old friend."
+     }
+    },
+    {
+     "id": "kürzlich",
+     "hr": "kürzlich",
+     "en": "recently",
+     "pos": "adv.",
+     "note": "etwas förmlicher als neulich",
+     "example": {
+      "target": "Die Regeln wurden kürzlich geändert.",
+      "gloss": "The rules were changed recently."
+     }
+    },
+    {
+     "id": "demnächst",
+     "hr": "demnächst",
+     "en": "shortly, soon",
+     "pos": "adv.",
+     "note": "Zukunft ohne genaues Datum",
+     "example": {
+      "target": "Die Ergebnisse werden demnächst veröffentlicht.",
+      "gloss": "The results will be published shortly."
+     }
+    },
+    {
+     "id": "künftig",
+     "hr": "künftig",
+     "en": "in future",
+     "pos": "adv.",
+     "note": "auch als Adjektiv möglich, hier adverbial",
+     "example": {
+      "target": "Künftig arbeiten wir zwei Tage von zu Hause.",
+      "gloss": "In future we will work two days from home."
+     }
+    },
+    {
+     "id": "anschließend",
+     "hr": "anschließend",
+     "en": "afterwards",
+     "pos": "adv.",
+     "note": "Reihenfolge, unmittelbar danach",
+     "example": {
+      "target": "Wir essen zuerst, anschließend gehen wir spazieren.",
+      "gloss": "We eat first, afterwards we go for a walk."
+     }
+    },
+    {
+     "id": "zunächst",
+     "hr": "zunächst",
+     "en": "at first, to begin with",
+     "pos": "adv.",
+     "note": "Reihenfolge, erster Schritt",
+     "example": {
+      "target": "Zunächst müssen wir das Formular ausfüllen.",
+      "gloss": "To begin with we have to fill in the form."
+     }
+    },
+    {
+     "id": "inzwischen",
+     "hr": "inzwischen",
+     "en": "meanwhile, by now",
+     "pos": "adv.",
+     "note": "Zeit zwischen zwei Punkten oder bis jetzt",
+     "example": {
+      "target": "Inzwischen kenne ich die Stadt ganz gut.",
+      "gloss": "By now I know the city quite well."
+     }
+    },
+    {
+     "id": "mittlerweile",
+     "hr": "mittlerweile",
+     "en": "by now",
+     "pos": "adv.",
+     "note": "Synonym von inzwischen",
+     "example": {
+      "target": "Mittlerweile spricht sie fast fließend Deutsch.",
+      "gloss": "By now she speaks German almost fluently."
+     }
+    },
+    {
+     "id": "seither",
+     "hr": "seither",
+     "en": "since then",
+     "pos": "adv.",
+     "note": "verweist auf einen vorher genannten Zeitpunkt",
+     "example": {
+      "target": "Er ist umgezogen und seither sehen wir uns selten.",
+      "gloss": "He moved and since then we rarely see each other."
+     }
+    },
+    {
+     "id": "vorerst",
+     "hr": "vorerst",
+     "en": "for the time being",
+     "pos": "adv.",
+     "note": "kennzeichnet eine vorläufige Regelung",
+     "example": {
+      "target": "Vorerst bleibt alles beim Alten.",
+      "gloss": "For the time being everything stays as it is."
+     }
+    },
+    {
+     "id": "vorübergehend",
+     "hr": "vorübergehend",
+     "en": "temporarily",
+     "pos": "adv.",
+     "note": "auch adjektivisch verwendbar",
+     "example": {
+      "target": "Der Aufzug ist vorübergehend außer Betrieb.",
+      "gloss": "The lift is temporarily out of service."
+     }
+    },
+    {
+     "id": "ständig",
+     "hr": "ständig",
+     "en": "constantly",
+     "pos": "adv.",
+     "note": "häufige, oft störende Wiederholung",
+     "example": {
+      "target": "Er unterbricht mich ständig.",
+      "gloss": "He constantly interrupts me."
+     }
+    },
+    {
+     "id": "stets",
+     "hr": "stets",
+     "en": "always",
+     "pos": "adv.",
+     "note": "gehoben, häufig in festen Wendungen",
+     "example": {
+      "target": "Sie war stets pünktlich.",
+      "gloss": "She was always punctual."
+     }
+    },
+    {
+     "id": "jeweils",
+     "hr": "jeweils",
+     "en": "in each case",
+     "pos": "adv.",
+     "note": "verteilt eine Menge auf mehrere Fälle",
+     "example": {
+      "target": "Die Kurse dauern jeweils zwei Stunden.",
+      "gloss": "The courses last two hours each."
+     }
+    },
+    {
+     "id": "gelegentlich",
+     "hr": "gelegentlich",
+     "en": "occasionally",
+     "pos": "adv.",
+     "note": "seltener als manchmal",
+     "example": {
+      "target": "Wir treffen uns gelegentlich auf einen Kaffee.",
+      "gloss": "We occasionally meet for a coffee."
+     }
+    },
+    {
+     "id": "regelmäßig",
+     "hr": "regelmäßig",
+     "en": "regularly",
+     "pos": "adv.",
+     "note": "auch adjektivisch verwendbar",
+     "example": {
+      "target": "Er geht regelmäßig zum Sport.",
+      "gloss": "He goes to do sport regularly."
+     }
+    },
+    {
+     "id": "mehrmals",
+     "hr": "mehrmals",
+     "en": "several times",
+     "pos": "adv.",
+     "note": "zählt Wiederholungen unbestimmt",
+     "example": {
+      "target": "Ich habe mehrmals angerufen.",
+      "gloss": "I called several times."
+     }
+    },
+    {
+     "id": "heutzutage",
+     "hr": "heutzutage",
+     "en": "nowadays",
+     "pos": "adv.",
+     "note": "Gegenwart im Vergleich zu früher",
+     "example": {
+      "target": "Heutzutage lernt man Sprachen oft am Handy.",
+      "gloss": "Nowadays people often learn languages on their phones."
+     }
+    },
+    {
+     "id": "tagsüber",
+     "hr": "tagsüber",
+     "en": "during the day",
+     "pos": "adv.",
+     "note": "Gegensatz zu nachts",
+     "example": {
+      "target": "Tagsüber ist es in der Wohnung sehr warm.",
+      "gloss": "During the day it is very warm in the flat."
+     }
+    },
+    {
+     "id": "rechtzeitig",
+     "hr": "rechtzeitig",
+     "en": "in good time",
+     "pos": "adv.",
+     "note": "früh genug vor dem nötigen Zeitpunkt",
+     "example": {
+      "target": "Melde dich bitte rechtzeitig an.",
+      "gloss": "Please register in good time."
+     }
+    },
+    {
+     "id": "vorläufig",
+     "hr": "vorläufig",
+     "en": "provisionally",
+     "pos": "adv.",
+     "note": "noch nicht endgültig",
+     "example": {
+      "target": "Der Plan gilt nur vorläufig.",
+      "gloss": "The plan applies only provisionally."
+     }
+    },
+    {
+     "id": "zurzeit",
+     "hr": "zurzeit",
+     "en": "at the moment",
+     "pos": "adv.",
+     "note": "in einem Wort geschrieben, nicht zu verwechseln mit zur Zeit von",
+     "example": {
+      "target": "Zurzeit suche ich eine neue Wohnung.",
+      "gloss": "At the moment I am looking for a new flat."
+     }
+    },
+    {
+     "id": "äußerst",
+     "hr": "äußerst",
+     "en": "extremely",
+     "pos": "adv.",
+     "note": "steigert stark, steht vor Adjektiven",
+     "example": {
+      "target": "Das Ergebnis ist äußerst wichtig für uns.",
+      "gloss": "The result is extremely important for us."
+     }
+    },
+    {
+     "id": "durchaus",
+     "hr": "durchaus",
+     "en": "quite, absolutely",
+     "pos": "adv.",
+     "note": "bestätigt gegen einen möglichen Einwand",
+     "example": {
+      "target": "Das ist durchaus möglich.",
+      "gloss": "That is quite possible."
+     }
+    },
+    {
+     "id": "einigermaßen",
+     "hr": "einigermaßen",
+     "en": "reasonably",
+     "pos": "adv.",
+     "note": "mittleres Maß, weder gut noch schlecht",
+     "example": {
+      "target": "Mir geht es einigermaßen.",
+      "gloss": "I am doing reasonably well."
+     }
+    },
+    {
+     "id": "halbwegs",
+     "hr": "halbwegs",
+     "en": "more or less",
+     "pos": "adv.",
+     "note": "umgangssprachlich, unvollständiges Maß",
+     "example": {
+      "target": "Wenn das Wetter halbwegs gut ist, fahren wir los.",
+      "gloss": "If the weather is more or less good, we will set off."
+     }
+    },
+    {
+     "id": "völlig",
+     "hr": "völlig",
+     "en": "completely",
+     "pos": "adv.",
+     "note": "verstärkt Adjektive und Verben",
+     "example": {
+      "target": "Da hast du völlig recht.",
+      "gloss": "You are completely right there."
+     }
+    },
+    {
+     "id": "vollkommen",
+     "hr": "vollkommen",
+     "en": "completely, perfectly",
+     "pos": "adv.",
+     "note": "etwas gehobener als völlig",
+     "example": {
+      "target": "Ich bin vollkommen ihrer Meinung.",
+      "gloss": "I completely share her opinion."
+     }
+    },
+    {
+     "id": "teilweise",
+     "hr": "teilweise",
+     "en": "partly",
+     "pos": "adv.",
+     "note": "nur ein Teil trifft zu",
+     "example": {
+      "target": "Die Kosten werden teilweise erstattet.",
+      "gloss": "The costs are partly refunded."
+     }
+    },
+    {
+     "id": "überwiegend",
+     "hr": "überwiegend",
+     "en": "predominantly",
+     "pos": "adv.",
+     "note": "nennt den größten Teil",
+     "example": {
+      "target": "Die Teilnehmer waren überwiegend jung.",
+      "gloss": "The participants were predominantly young."
+     }
+    },
+    {
+     "id": "hauptsächlich",
+     "hr": "hauptsächlich",
+     "en": "mainly",
+     "pos": "adv.",
+     "note": "nennt den wichtigsten Grund oder Teil",
+     "example": {
+      "target": "Ich lerne hauptsächlich abends.",
+      "gloss": "I study mainly in the evenings."
+     }
+    },
+    {
+     "id": "lediglich",
+     "hr": "lediglich",
+     "en": "merely",
+     "pos": "adv.",
+     "note": "schriftsprachliches nur",
+     "example": {
+      "target": "Es handelt sich lediglich um einen Vorschlag.",
+      "gloss": "It is merely a suggestion."
+     }
+    },
+    {
+     "id": "ausschließlich",
+     "hr": "ausschließlich",
+     "en": "exclusively",
+     "pos": "adv.",
+     "note": "schließt alles andere aus",
+     "example": {
+      "target": "Der Parkplatz ist ausschließlich für Kunden.",
+      "gloss": "The car park is exclusively for customers."
+     }
+    },
+    {
+     "id": "immerhin",
+     "hr": "immerhin",
+     "en": "at least, after all",
+     "pos": "adv.",
+     "note": "hebt einen positiven Rest hervor",
+     "example": {
+      "target": "Es hat geregnet, immerhin war es nicht kalt.",
+      "gloss": "It rained, at least it was not cold."
+     }
+    },
+    {
+     "id": "zumindest",
+     "hr": "zumindest",
+     "en": "at least",
+     "pos": "adv.",
+     "note": "nennt die Mindestgeltung einer Aussage",
+     "example": {
+      "target": "Er hat sich zumindest entschuldigt.",
+      "gloss": "At least he apologised."
+     }
+    },
+    {
+     "id": "wenigstens",
+     "hr": "wenigstens",
+     "en": "at least",
+     "pos": "adv.",
+     "note": "nennt eine Mindestmenge oder einen Trost",
+     "example": {
+      "target": "Ruf wenigstens kurz an.",
+      "gloss": "At least give me a quick call."
+     }
+    },
+    {
+     "id": "höchstens",
+     "hr": "höchstens",
+     "en": "at most",
+     "pos": "adv.",
+     "note": "nennt die obere Grenze",
+     "example": {
+      "target": "Das dauert höchstens zehn Minuten.",
+      "gloss": "That takes ten minutes at most."
+     }
+    },
+    {
+     "id": "mindestens",
+     "hr": "mindestens",
+     "en": "at least, minimum",
+     "pos": "adv.",
+     "note": "nennt die untere Grenze bei Zahlen",
+     "example": {
+      "target": "Wir brauchen mindestens drei Personen.",
+      "gloss": "We need at least three people."
+     }
+    },
+    {
+     "id": "etwa",
+     "hr": "etwa",
+     "en": "about, roughly",
+     "pos": "adv.",
+     "note": "vor Zahlen; als Partikel in Fragen drückt etwa Besorgnis oder Überraschung aus",
+     "example": {
+      "target": "Der Weg dauert etwa zwanzig Minuten.",
+      "gloss": "The way takes about twenty minutes."
+     }
+    },
+    {
+     "id": "nahezu",
+     "hr": "nahezu",
+     "en": "almost, virtually",
+     "pos": "adv.",
+     "note": "schriftsprachlich",
+     "example": {
+      "target": "Der Saal war nahezu leer.",
+      "gloss": "The hall was almost empty."
+     }
+    },
+    {
+     "id": "beinahe",
+     "hr": "beinahe",
+     "en": "almost",
+     "pos": "adv.",
+     "note": "bei Beinaheereignissen oft mit Konjunktiv II",
+     "example": {
+      "target": "Ich hätte beinahe den Bus verpasst.",
+      "gloss": "I almost missed the bus."
+     }
+    },
+    {
+     "id": "insbesondere",
+     "hr": "insbesondere",
+     "en": "in particular",
+     "pos": "adv.",
+     "note": "hebt ein Element aus einer Gruppe heraus",
+     "example": {
+      "target": "Das gilt insbesondere für neue Mitarbeiter.",
+      "gloss": "That applies in particular to new employees."
+     }
+    },
+    {
+     "id": "absichtlich",
+     "hr": "absichtlich",
+     "en": "deliberately",
+     "pos": "adv.",
+     "note": "Gegenteil von versehentlich",
+     "example": {
+      "target": "Das habe ich nicht absichtlich gemacht.",
+      "gloss": "I did not do that deliberately."
+     }
+    },
+    {
+     "id": "versehentlich",
+     "hr": "versehentlich",
+     "en": "accidentally",
+     "pos": "adv.",
+     "note": "durch ein Versehen, ohne Absicht",
+     "example": {
+      "target": "Ich habe die Nachricht versehentlich gelöscht.",
+      "gloss": "I deleted the message accidentally."
+     }
+    },
+    {
+     "id": "zufällig",
+     "hr": "zufällig",
+     "en": "by chance",
+     "pos": "adv.",
+     "note": "in Fragen auch höflich: weißt du zufällig",
+     "example": {
+      "target": "Wir haben uns zufällig getroffen.",
+      "gloss": "We met by chance."
+     }
+    },
+    {
+     "id": "mühelos",
+     "hr": "mühelos",
+     "en": "effortlessly",
+     "pos": "adv.",
+     "note": "ohne Anstrengung",
+     "example": {
+      "target": "Sie hat die Prüfung mühelos bestanden.",
+      "gloss": "She passed the exam effortlessly."
+     }
+    },
+    {
+     "id": "heimlich",
+     "hr": "heimlich",
+     "en": "secretly",
+     "pos": "adv.",
+     "note": "ohne dass andere es merken",
+     "example": {
+      "target": "Sie haben die Feier heimlich vorbereitet.",
+      "gloss": "They prepared the party secretly."
+     }
+    },
+    {
+     "id": "offensichtlich",
+     "hr": "offensichtlich",
+     "en": "obviously",
+     "pos": "adv.",
+     "note": "für alle erkennbar",
+     "example": {
+      "target": "Er hat den Termin offensichtlich vergessen.",
+      "gloss": "He has obviously forgotten the appointment."
+     }
+    },
+    {
+     "id": "anscheinend",
+     "hr": "anscheinend",
+     "en": "apparently",
+     "pos": "adv.",
+     "note": "Vermutung aus guten Anzeichen, meist zutreffend",
+     "example": {
+      "target": "Anscheinend ist niemand zu Hause.",
+      "gloss": "Apparently nobody is at home."
+     }
+    },
+    {
+     "id": "scheinbar",
+     "hr": "scheinbar",
+     "en": "seemingly but not really",
+     "pos": "adv.",
+     "note": "im Standard nur wenn der Schein trügt, anders als anscheinend",
+     "example": {
+      "target": "Er hörte scheinbar zu, dachte aber an etwas anderes.",
+      "gloss": "He seemingly listened, but he was thinking about something else."
+     }
+    },
+    {
+     "id": "keineswegs",
+     "hr": "keineswegs",
+     "en": "by no means",
+     "pos": "adv.",
+     "note": "starke Verneinung",
+     "example": {
+      "target": "Das ist keineswegs selbstverständlich.",
+      "gloss": "That is by no means a matter of course."
+     }
+    },
+    {
+     "id": "keinesfalls",
+     "hr": "keinesfalls",
+     "en": "under no circumstances",
+     "pos": "adv.",
+     "note": "starke Ablehnung einer Möglichkeit",
+     "example": {
+      "target": "Du darfst das keinesfalls unterschreiben.",
+      "gloss": "You must under no circumstances sign that."
+     }
+    },
+    {
+     "id": "gewissermaßen",
+     "hr": "gewissermaßen",
+     "en": "in a way, so to speak",
+     "pos": "adv.",
+     "note": "schwächt eine Aussage ab",
+     "example": {
+      "target": "Er ist gewissermaßen mein zweiter Vater.",
+      "gloss": "He is in a way my second father."
+     }
+    },
+    {
+     "id": "sozusagen",
+     "hr": "sozusagen",
+     "en": "so to speak",
+     "pos": "adv.",
+     "note": "markiert einen bildlichen Ausdruck",
+     "example": {
+      "target": "Sie ist sozusagen die Seele des Vereins.",
+      "gloss": "She is, so to speak, the soul of the club."
+     }
+    },
+    {
+     "id": "gegebenenfalls",
+     "hr": "gegebenenfalls",
+     "en": "if necessary",
+     "pos": "adv.",
+     "note": "häufig in Formularen und im Amtsdeutsch",
+     "example": {
+      "target": "Gegebenenfalls reichen Sie weitere Unterlagen nach.",
+      "gloss": "If necessary, submit further documents later."
+     }
+    },
+    {
+     "id": "notfalls",
+     "hr": "notfalls",
+     "en": "if need be",
+     "pos": "adv.",
+     "note": "umgangssprachlicher als gegebenenfalls",
+     "example": {
+      "target": "Notfalls nehmen wir ein Taxi.",
+      "gloss": "If need be we will take a taxi."
+     }
+    },
+    {
+     "id": "möglicherweise",
+     "hr": "möglicherweise",
+     "en": "possibly",
+     "pos": "adv.",
+     "note": "Vermutung mit offenem Ausgang",
+     "example": {
+      "target": "Möglicherweise fällt der Kurs aus.",
+      "gloss": "The course will possibly be cancelled."
+     }
+    },
+    {
+     "id": "selbstverständlich",
+     "hr": "selbstverständlich",
+     "en": "of course",
+     "pos": "adv.",
+     "note": "auch allein als höfliche Zusage verwendbar",
+     "example": {
+      "target": "Selbstverständlich helfe ich dir.",
+      "gloss": "Of course I will help you."
+     }
+    },
+    {
+     "id": "zweifellos",
+     "hr": "zweifellos",
+     "en": "without doubt",
+     "pos": "adv.",
+     "note": "drückt hohe Sicherheit des Sprechers aus",
+     "example": {
+      "target": "Das ist zweifellos die beste Lösung.",
+      "gloss": "That is without doubt the best solution."
+     }
+    },
+    {
+     "id": "allmählich",
+     "hr": "allmählich",
+     "en": "gradually",
+     "pos": "adv.",
+     "note": "langsame, stetige Veränderung",
+     "example": {
+      "target": "Es wird allmählich dunkel.",
+      "gloss": "It is gradually getting dark."
+     }
+    },
+    {
+     "id": "doch",
+     "hr": "doch",
+     "en": "after all, do (emphatic)",
+     "pos": "adv.",
+     "note": "Modalpartikel: widerspricht einer Erwartung oder verstärkt eine Aufforderung; als Antwort auf eine verneinte Frage bedeutet doch ein klares Ja",
+     "example": {
+      "target": "Komm doch einfach mit.",
+      "gloss": "Just come along, why don't you."
+     }
+    },
+    {
+     "id": "mal",
+     "hr": "mal",
+     "en": "just (softener)",
+     "pos": "adv.",
+     "note": "Modalpartikel, Kurzform von einmal: macht Aufforderungen leichter und unverbindlicher",
+     "example": {
+      "target": "Sag mal, hast du kurz Zeit?",
+      "gloss": "Tell me, do you have a moment?"
+     }
+    },
+    {
+     "id": "halt",
+     "hr": "halt",
+     "en": "just, simply",
+     "pos": "adv.",
+     "note": "Modalpartikel der Resignation: das ist so und nicht zu ändern",
+     "example": {
+      "target": "Dann müssen wir halt zu Fuß gehen.",
+      "gloss": "Then we will just have to walk."
+     }
+    },
+    {
+     "id": "eben",
+     "hr": "eben",
+     "en": "just, precisely",
+     "pos": "adv.",
+     "note": "Modalpartikel: bestätigt eine unabänderliche Tatsache; als Zeitadverb bedeutet eben gerade",
+     "example": {
+      "target": "So ist das Leben eben.",
+      "gloss": "That is just how life is."
+     }
+    },
+    {
+     "id": "wohl",
+     "hr": "wohl",
+     "en": "probably, I suppose",
+     "pos": "adv.",
+     "note": "Modalpartikel der Vermutung, ähnlich wahrscheinlich",
+     "example": {
+      "target": "Er hat den Zug wohl verpasst.",
+      "gloss": "He has probably missed the train."
+     }
+    },
+    {
+     "id": "eigentlich",
+     "hr": "eigentlich",
+     "en": "actually",
+     "pos": "adv.",
+     "note": "Modalpartikel: leitet eine beiläufige Frage ein oder stellt eine Annahme richtig",
+     "example": {
+      "target": "Wie heißt du eigentlich mit Nachnamen?",
+      "gloss": "What is your surname, actually?"
+     }
+    },
+    {
+     "id": "bloß",
+     "hr": "bloß",
+     "en": "just, only",
+     "pos": "adv.",
+     "note": "Modalpartikel: verstärkt Warnungen und Wünsche; als Adverb bedeutet bloß nur",
+     "example": {
+      "target": "Mach das bloß nicht noch einmal.",
+      "gloss": "Just do not do that again."
+     }
+    },
+    {
+     "id": "nur",
+     "hr": "nur",
+     "en": "only, just",
+     "pos": "adv.",
+     "note": "Fokuspartikel: schließt anderes aus; in Aufforderungen verstärkend wie bloß",
+     "example": {
+      "target": "Ich habe nur zwei Fragen.",
+      "gloss": "I have only two questions."
+     }
+    },
+    {
+     "id": "überhaupt",
+     "hr": "überhaupt",
+     "en": "at all, in general",
+     "pos": "adv.",
+     "note": "Partikel in Fragen und Verneinungen: überhaupt nicht heißt nicht im Geringsten",
+     "example": {
+      "target": "Hast du überhaupt Zeit dafür?",
+      "gloss": "Do you have time for that at all?"
+     }
+    },
+    {
+     "id": "ansonsten",
+     "hr": "ansonsten",
+     "en": "otherwise, apart from that",
+     "pos": "adv.",
+     "note": "leitet die Alternative oder den Rest ein",
+     "example": {
+      "target": "Ich brauche nur Milch, ansonsten haben wir alles.",
+      "gloss": "I only need milk, apart from that we have everything."
+     }
+    },
+    {
+     "id": "andernfalls",
+     "hr": "andernfalls",
+     "en": "otherwise, or else",
+     "pos": "adv.",
+     "note": "nennt die Folge, wenn die Bedingung nicht erfüllt wird",
+     "example": {
+      "target": "Bitte antworten Sie schnell, andernfalls verfällt das Angebot.",
+      "gloss": "Please answer quickly, otherwise the offer expires."
+     }
+    },
+    {
+     "id": "stattdessen",
+     "hr": "stattdessen",
+     "en": "instead",
+     "pos": "adv.",
+     "note": "ersetzt eine zuvor genannte Handlung",
+     "example": {
+      "target": "Er hat nicht angerufen, stattdessen hat er geschrieben.",
+      "gloss": "He did not call, instead he wrote."
+     }
+    },
+    {
+     "id": "hingegen",
+     "hr": "hingegen",
+     "en": "by contrast",
+     "pos": "adv.",
+     "note": "stellt zwei Aussagen gegenüber",
+     "example": {
+      "target": "Der Süden war sonnig, im Norden hingegen regnete es.",
+      "gloss": "The south was sunny, in the north by contrast it rained."
+     }
+    },
+    {
+     "id": "vielmehr",
+     "hr": "vielmehr",
+     "en": "rather",
+     "pos": "adv.",
+     "note": "korrigiert die vorherige Aussage",
+     "example": {
+      "target": "Das war kein Zufall, vielmehr war es gut geplant.",
+      "gloss": "That was no coincidence, rather it was well planned."
+     }
+    },
+    {
+     "id": "zumal",
+     "hr": "zumal",
+     "en": "especially since",
+     "pos": "conj.",
+     "note": "leitet einen Nebensatz ein, das Verb steht am Ende",
+     "example": {
+      "target": "Wir sollten früh losfahren, zumal es schneien soll.",
+      "gloss": "We should set off early, especially since it is supposed to snow."
+     }
+    },
+    {
+     "id": "ohnehin",
+     "hr": "ohnehin",
+     "en": "anyway",
+     "pos": "adv.",
+     "note": "die Sache gilt unabhängig vom Genannten",
+     "example": {
+      "target": "Das wollte ich ohnehin machen.",
+      "gloss": "I wanted to do that anyway."
+     }
+    },
+    {
+     "id": "somit",
+     "hr": "somit",
+     "en": "thus",
+     "pos": "adv.",
+     "note": "zieht eine logische Folge",
+     "example": {
+      "target": "Die Frist ist abgelaufen, somit ist der Antrag ungültig.",
+      "gloss": "The deadline has passed, thus the application is invalid."
+     }
+    },
+    {
+     "id": "demnach",
+     "hr": "demnach",
+     "en": "accordingly",
+     "pos": "adv.",
+     "note": "Schlussfolgerung aus einer genannten Quelle",
+     "example": {
+      "target": "Demnach ist mit einer Antwort erst nächste Woche zu rechnen.",
+      "gloss": "Accordingly, an answer is not to be expected until next week."
+     }
+    },
+    {
+     "id": "daher",
+     "hr": "daher",
+     "en": "therefore",
+     "pos": "adv.",
+     "note": "nennt die Folge; danach steht das Verb an zweiter Stelle",
+     "example": {
+      "target": "Der Bus fiel aus, daher kam ich zu spät.",
+      "gloss": "The bus was cancelled, therefore I arrived late."
+     }
+    },
+    {
+     "id": "infolgedessen",
+     "hr": "infolgedessen",
+     "en": "as a result",
+     "pos": "adv.",
+     "note": "schriftsprachlicher Folgeausdruck",
+     "example": {
+      "target": "Die Preise stiegen, infolgedessen kauften die Leute weniger.",
+      "gloss": "Prices rose, as a result people bought less."
+     }
+    },
+    {
+     "id": "gleichzeitig",
+     "hr": "gleichzeitig",
+     "en": "at the same time",
+     "pos": "adv.",
+     "note": "zeitlich parallel, auch bei Gegensätzen",
+     "example": {
+      "target": "Man kann nicht gleichzeitig sprechen und zuhören.",
+      "gloss": "You cannot speak and listen at the same time."
+     }
+    },
+    {
+     "id": "ebenfalls",
+     "hr": "ebenfalls",
+     "en": "likewise",
+     "pos": "adv.",
+     "note": "gilt auch für die zweite Person oder Sache",
+     "example": {
+      "target": "Ich wünsche Ihnen ebenfalls ein schönes Wochenende.",
+      "gloss": "I wish you a nice weekend likewise."
+     }
+    },
+    {
+     "id": "ebenso",
+     "hr": "ebenso",
+     "en": "just as, equally",
+     "pos": "adv.",
+     "note": "Vergleich in der Form ebenso wie",
+     "example": {
+      "target": "Sie ist ebenso freundlich wie ihre Schwester.",
+      "gloss": "She is just as friendly as her sister."
+     }
+    },
+    {
+     "id": "übrigens",
+     "hr": "übrigens",
+     "en": "by the way",
+     "pos": "adv.",
+     "note": "fügt eine Nebeninformation ein",
+     "example": {
+      "target": "Übrigens, dein Paket ist angekommen.",
+      "gloss": "By the way, your parcel has arrived."
+     }
+    },
+    {
+     "id": "nebenbei",
+     "hr": "nebenbei",
+     "en": "on the side, incidentally",
+     "pos": "adv.",
+     "note": "neben der Haupttätigkeit",
+     "example": {
+      "target": "Er studiert und arbeitet nebenbei.",
+      "gloss": "He studies and works on the side."
+     }
+    },
+    {
+     "id": "letztendlich",
+     "hr": "letztendlich",
+     "en": "in the end",
+     "pos": "adv.",
+     "note": "schließt eine Argumentation ab",
+     "example": {
+      "target": "Letztendlich zählt nur das Ergebnis.",
+      "gloss": "In the end only the result counts."
+     }
+    },
+    {
+     "id": "grundsätzlich",
+     "hr": "grundsätzlich",
+     "en": "in principle, as a rule",
+     "pos": "adv.",
+     "note": "gilt als Regel und lässt Ausnahmen zu",
+     "example": {
+      "target": "Grundsätzlich bin ich einverstanden.",
+      "gloss": "In principle I agree."
+     }
+    },
+    {
+     "id": "offenbar",
+     "hr": "offenbar",
+     "en": "evidently",
+     "pos": "adv.",
+     "note": "Schluss aus sichtbaren Anzeichen",
+     "example": {
+      "target": "Sie hat die Nachricht offenbar nicht gelesen.",
+      "gloss": "She evidently has not read the message."
+     }
+    },
+    {
+     "id": "angeblich",
+     "hr": "angeblich",
+     "en": "allegedly",
+     "pos": "adv.",
+     "note": "der Sprecher distanziert sich von der Aussage",
+     "example": {
+      "target": "Der Zug soll angeblich pünktlich sein.",
+      "gloss": "The train is allegedly on time."
+     }
+    },
+    {
+     "id": "bekanntlich",
+     "hr": "bekanntlich",
+     "en": "as is well known",
+     "pos": "adv.",
+     "note": "setzt das Wissen der Zuhörer voraus",
+     "example": {
+      "target": "Rauchen ist bekanntlich ungesund.",
+      "gloss": "Smoking is, as is well known, unhealthy."
+     }
+    },
+    {
+     "id": "tatsächlich",
+     "hr": "tatsächlich",
+     "en": "actually, indeed",
+     "pos": "adv.",
+     "note": "bestätigt etwas Überraschendes",
+     "example": {
+      "target": "Er hat tatsächlich alles allein geschafft.",
+      "gloss": "He actually managed everything on his own."
+     }
+    },
+    {
+     "id": "auf jeden fall",
+     "hr": "auf jeden Fall",
+     "en": "definitely, in any case",
+     "pos": "expr.",
+     "note": "feste Wendung, Fall wird großgeschrieben",
+     "example": {
+      "target": "Ich komme auf jeden Fall zu deiner Feier.",
+      "gloss": "I will definitely come to your party."
+     }
+    },
+    {
+     "id": "auf keinen fall",
+     "hr": "auf keinen Fall",
+     "en": "on no account",
+     "pos": "expr.",
+     "note": "feste Wendung der starken Ablehnung",
+     "example": {
+      "target": "Das darfst du auf keinen Fall vergessen.",
+      "gloss": "You must on no account forget that."
+     }
+    },
+    {
+     "id": "auf einmal",
+     "hr": "auf einmal",
+     "en": "suddenly, all at once",
+     "pos": "expr.",
+     "note": "feste Wendung; bedeutet auch alles gleichzeitig",
+     "example": {
+      "target": "Auf einmal ging das Licht aus.",
+      "gloss": "Suddenly the light went out."
+     }
+    },
+    {
+     "id": "vor allem",
+     "hr": "vor allem",
+     "en": "above all",
+     "pos": "expr.",
+     "note": "feste Wendung zur Hervorhebung",
+     "example": {
+      "target": "Vor allem brauchen wir mehr Zeit.",
+      "gloss": "Above all we need more time."
+     }
+    },
+    {
+     "id": "zum beispiel",
+     "hr": "zum Beispiel",
+     "en": "for example",
+     "pos": "expr.",
+     "note": "feste Wendung, oft abgekürzt",
+     "example": {
+      "target": "Nimm etwas Leichtes mit, zum Beispiel einen Apfel.",
+      "gloss": "Take something light with you, for example an apple."
+     }
+    },
+    {
+     "id": "zum glück",
+     "hr": "zum Glück",
+     "en": "luckily",
+     "pos": "expr.",
+     "note": "feste Wendung",
+     "example": {
+      "target": "Zum Glück war die Wohnung noch frei.",
+      "gloss": "Luckily the flat was still available."
+     }
+    },
+    {
+     "id": "ab und zu",
+     "hr": "ab und zu",
+     "en": "now and then",
+     "pos": "expr.",
+     "note": "feste Wendung für geringe Häufigkeit",
+     "example": {
+      "target": "Ab und zu koche ich für die ganze Familie.",
+      "gloss": "Now and then I cook for the whole family."
+     }
+    },
+    {
+     "id": "hin und wieder",
+     "hr": "hin und wieder",
+     "en": "every now and again",
+     "pos": "expr.",
+     "note": "feste Wendung, Synonym von ab und zu",
+     "example": {
+      "target": "Hin und wieder gehen wir ins Theater.",
+      "gloss": "Every now and again we go to the theatre."
+     }
+    },
+    {
+     "id": "nach und nach",
+     "hr": "nach und nach",
+     "en": "little by little",
+     "pos": "expr.",
+     "note": "feste Wendung für eine langsame Steigerung",
+     "example": {
+      "target": "Nach und nach verstehe ich die Nachrichten im Radio.",
+      "gloss": "Little by little I understand the news on the radio."
+     }
+    },
+    {
+     "id": "bescheid sagen",
+     "hr": "Bescheid sagen",
+     "en": "to let someone know",
+     "pos": "expr.",
+     "note": "feste Wendung mit Dativ: jemandem Bescheid sagen; Bescheid wird großgeschrieben",
+     "example": {
+      "target": "Sag mir bitte Bescheid, wenn du ankommst.",
+      "gloss": "Please let me know when you arrive."
+     }
+    },
+    {
+     "id": "recht haben",
+     "hr": "recht haben",
+     "en": "to be right",
+     "pos": "expr.",
+     "note": "feste Wendung, recht wird hier kleingeschrieben",
+     "example": {
+      "target": "Du hast völlig recht.",
+      "gloss": "You are completely right."
+     }
+    },
+    {
+     "id": "spaß machen",
+     "hr": "Spaß machen",
+     "en": "to be fun",
+     "pos": "expr.",
+     "note": "feste Wendung mit Dativ: etwas macht mir Spaß",
+     "example": {
+      "target": "Das Lernen macht mir zurzeit richtig Spaß.",
+      "gloss": "Studying is really fun for me at the moment."
+     }
+    },
+    {
+     "id": "zur verfügung stehen",
+     "hr": "zur Verfügung stehen",
+     "en": "to be available",
+     "pos": "expr.",
+     "note": "feste Wendung mit Dativ der Person",
+     "example": {
+      "target": "Für Fragen stehe ich Ihnen gern zur Verfügung.",
+      "gloss": "I am happy to be available to you for questions."
+     }
+    },
+    {
+     "id": "in frage kommen",
+     "hr": "in Frage kommen",
+     "en": "to be an option",
+     "pos": "expr.",
+     "note": "feste Wendung, sehr oft verneint",
+     "example": {
+      "target": "Ein Umzug kommt für uns nicht in Frage.",
+      "gloss": "Moving house is not an option for us."
+     }
+    },
+    {
+     "id": "wert legen auf",
+     "hr": "Wert legen auf",
+     "en": "to attach importance to",
+     "pos": "expr.",
+     "note": "feste Wendung: Wert legen auf + Akk.",
+     "example": {
+      "target": "Sie legt großen Wert auf Pünktlichkeit.",
+      "gloss": "She attaches great importance to punctuality."
+     }
+    },
+    {
+     "id": "es geht um",
+     "hr": "es geht um",
+     "en": "it is about",
+     "pos": "expr.",
+     "note": "unpersönliche Wendung: es geht um + Akk.",
+     "example": {
+      "target": "In dem Text geht es um den Klimawandel.",
+      "gloss": "The text is about climate change."
+     }
+    },
+    {
+     "id": "gute besserung",
+     "hr": "gute Besserung",
+     "en": "get well soon",
+     "pos": "expr.",
+     "note": "feste Wunschformel für Kranke",
+     "example": {
+      "target": "Gute Besserung und erhol dich gut.",
+      "gloss": "Get well soon and rest up well."
+     }
+    }
+   ]
+  }
+ ]
+}

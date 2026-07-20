@@ -1,0 +1,1958 @@
+{
+ "packs": [
+  {
+   "id": "02-a1-home-food-city",
+   "title": "A1: Wohnen, Essen, Stadt",
+   "level": "A1",
+   "sources": [
+    "goethe-wortliste",
+    "goethe-a1"
+   ],
+   "words": [
+    {
+     "id": "das zimmer",
+     "hr": "das Zimmer",
+     "en": "room",
+     "pos": "n. n.",
+     "note": "pl. die Zimmer",
+     "example": {
+      "target": "Das Zimmer ist hell und ruhig.",
+      "gloss": "The room is bright and quiet."
+     }
+    },
+    {
+     "id": "das schlafzimmer",
+     "hr": "das Schlafzimmer",
+     "en": "bedroom",
+     "pos": "n. n.",
+     "note": "pl. die Schlafzimmer",
+     "example": {
+      "target": "Unser Schlafzimmer ist ziemlich klein.",
+      "gloss": "Our bedroom is quite small."
+     }
+    },
+    {
+     "id": "das wohnzimmer",
+     "hr": "das Wohnzimmer",
+     "en": "living room",
+     "pos": "n. n.",
+     "note": "pl. die Wohnzimmer",
+     "example": {
+      "target": "Im Wohnzimmer steht ein großes Sofa.",
+      "gloss": "There is a big sofa in the living room."
+     }
+    },
+    {
+     "id": "die küche",
+     "hr": "die Küche",
+     "en": "kitchen",
+     "pos": "n. f.",
+     "note": "pl. die Küchen",
+     "example": {
+      "target": "Die Küche ist neu und modern.",
+      "gloss": "The kitchen is new and modern."
+     }
+    },
+    {
+     "id": "das bad",
+     "hr": "das Bad",
+     "en": "bathroom",
+     "pos": "n. n.",
+     "note": "pl. die Bäder",
+     "example": {
+      "target": "Das Bad hat kein Fenster.",
+      "gloss": "The bathroom has no window."
+     }
+    },
+    {
+     "id": "die toilette",
+     "hr": "die Toilette",
+     "en": "toilet",
+     "pos": "n. f.",
+     "note": "pl. die Toiletten",
+     "example": {
+      "target": "Wo ist bitte die Toilette?",
+      "gloss": "Where is the toilet, please?"
+     }
+    },
+    {
+     "id": "der flur",
+     "hr": "der Flur",
+     "en": "hallway",
+     "pos": "n. m.",
+     "note": "pl. die Flure",
+     "example": {
+      "target": "Im Flur ist es dunkel.",
+      "gloss": "It is dark in the hallway."
+     }
+    },
+    {
+     "id": "der balkon",
+     "hr": "der Balkon",
+     "en": "balcony",
+     "pos": "n. m.",
+     "note": "pl. die Balkone",
+     "example": {
+      "target": "Wir frühstücken oft auf dem Balkon.",
+      "gloss": "We often have breakfast on the balcony."
+     }
+    },
+    {
+     "id": "der garten",
+     "hr": "der Garten",
+     "en": "garden",
+     "pos": "n. m.",
+     "note": "pl. die Gärten",
+     "example": {
+      "target": "Im Garten wachsen Tomaten.",
+      "gloss": "Tomatoes grow in the garden."
+     }
+    },
+    {
+     "id": "der keller",
+     "hr": "der Keller",
+     "en": "cellar, basement",
+     "pos": "n. m.",
+     "note": "pl. die Keller",
+     "example": {
+      "target": "Die Fahrräder stehen im Keller.",
+      "gloss": "The bicycles are in the cellar."
+     }
+    },
+    {
+     "id": "die tür",
+     "hr": "die Tür",
+     "en": "door",
+     "pos": "n. f.",
+     "note": "pl. die Türen",
+     "example": {
+      "target": "Bitte machen Sie die Tür zu.",
+      "gloss": "Please close the door."
+     }
+    },
+    {
+     "id": "das fenster",
+     "hr": "das Fenster",
+     "en": "window",
+     "pos": "n. n.",
+     "note": "pl. die Fenster",
+     "example": {
+      "target": "Das Fenster steht offen.",
+      "gloss": "The window is open."
+     }
+    },
+    {
+     "id": "die wand",
+     "hr": "die Wand",
+     "en": "wall",
+     "pos": "n. f.",
+     "note": "pl. die Wände",
+     "example": {
+      "target": "An der Wand hängt ein Bild.",
+      "gloss": "A picture is hanging on the wall."
+     }
+    },
+    {
+     "id": "der boden",
+     "hr": "der Boden",
+     "en": "floor, ground",
+     "pos": "n. m.",
+     "note": "pl. die Böden",
+     "example": {
+      "target": "Der Boden ist noch nass.",
+      "gloss": "The floor is still wet."
+     }
+    },
+    {
+     "id": "die treppe",
+     "hr": "die Treppe",
+     "en": "stairs",
+     "pos": "n. f.",
+     "note": "pl. die Treppen",
+     "example": {
+      "target": "Ich nehme immer die Treppe.",
+      "gloss": "I always take the stairs."
+     }
+    },
+    {
+     "id": "der stock",
+     "hr": "der Stock",
+     "en": "floor, storey",
+     "pos": "n. m.",
+     "note": "pl. die Stockwerke",
+     "example": {
+      "target": "Wir wohnen im dritten Stock.",
+      "gloss": "We live on the third floor."
+     }
+    },
+    {
+     "id": "die miete",
+     "hr": "die Miete",
+     "en": "rent",
+     "pos": "n. f.",
+     "note": "pl. die Mieten",
+     "example": {
+      "target": "Die Miete ist ziemlich hoch.",
+      "gloss": "The rent is quite high."
+     }
+    },
+    {
+     "id": "der vermieter",
+     "hr": "der Vermieter",
+     "en": "landlord",
+     "pos": "n. m.",
+     "note": "pl. die Vermieter",
+     "example": {
+      "target": "Der Vermieter wohnt im gleichen Haus.",
+      "gloss": "The landlord lives in the same building."
+     }
+    },
+    {
+     "id": "der mieter",
+     "hr": "der Mieter",
+     "en": "tenant",
+     "pos": "n. m.",
+     "note": "pl. die Mieter",
+     "example": {
+      "target": "Die neuen Mieter sind sehr nett.",
+      "gloss": "The new tenants are very nice."
+     }
+    },
+    {
+     "id": "umziehen",
+     "hr": "umziehen",
+     "en": "to move house",
+     "pos": "v.",
+     "note": "trennbar: ich ziehe um, ist umgezogen",
+     "example": {
+      "target": "Im Mai ziehen wir um.",
+      "gloss": "We are moving house in May."
+     }
+    },
+    {
+     "id": "mieten",
+     "hr": "mieten",
+     "en": "to rent",
+     "pos": "v.",
+     "example": {
+      "target": "Wir mieten eine Wohnung im Zentrum.",
+      "gloss": "We are renting a flat in the centre."
+     }
+    },
+    {
+     "id": "die möbel",
+     "hr": "die Möbel",
+     "en": "furniture",
+     "pos": "n. f.",
+     "note": "plural only",
+     "example": {
+      "target": "Die Möbel sind schon alt.",
+      "gloss": "The furniture is already old."
+     }
+    },
+    {
+     "id": "der tisch",
+     "hr": "der Tisch",
+     "en": "table",
+     "pos": "n. m.",
+     "note": "pl. die Tische",
+     "example": {
+      "target": "Das Essen steht auf dem Tisch.",
+      "gloss": "The food is on the table."
+     }
+    },
+    {
+     "id": "der stuhl",
+     "hr": "der Stuhl",
+     "en": "chair",
+     "pos": "n. m.",
+     "note": "pl. die Stühle",
+     "example": {
+      "target": "Nimm bitte den Stuhl dort.",
+      "gloss": "Please take that chair over there."
+     }
+    },
+    {
+     "id": "das sofa",
+     "hr": "das Sofa",
+     "en": "sofa",
+     "pos": "n. n.",
+     "note": "pl. die Sofas",
+     "example": {
+      "target": "Der Hund schläft auf dem Sofa.",
+      "gloss": "The dog is sleeping on the sofa."
+     }
+    },
+    {
+     "id": "das bett",
+     "hr": "das Bett",
+     "en": "bed",
+     "pos": "n. n.",
+     "note": "pl. die Betten",
+     "example": {
+      "target": "Ich gehe früh ins Bett.",
+      "gloss": "I go to bed early."
+     }
+    },
+    {
+     "id": "der schrank",
+     "hr": "der Schrank",
+     "en": "cupboard, wardrobe",
+     "pos": "n. m.",
+     "note": "pl. die Schränke",
+     "example": {
+      "target": "Die Teller sind im Schrank.",
+      "gloss": "The plates are in the cupboard."
+     }
+    },
+    {
+     "id": "das regal",
+     "hr": "das Regal",
+     "en": "shelf",
+     "pos": "n. n.",
+     "note": "pl. die Regale",
+     "example": {
+      "target": "Im Regal stehen viele Bücher.",
+      "gloss": "There are many books on the shelf."
+     }
+    },
+    {
+     "id": "die lampe",
+     "hr": "die Lampe",
+     "en": "lamp",
+     "pos": "n. f.",
+     "note": "pl. die Lampen",
+     "example": {
+      "target": "Die Lampe im Flur ist kaputt.",
+      "gloss": "The lamp in the hallway is broken."
+     }
+    },
+    {
+     "id": "der herd",
+     "hr": "der Herd",
+     "en": "cooker, stove",
+     "pos": "n. m.",
+     "note": "pl. die Herde",
+     "example": {
+      "target": "Der Herd ist noch heiß.",
+      "gloss": "The cooker is still hot."
+     }
+    },
+    {
+     "id": "der kühlschrank",
+     "hr": "der Kühlschrank",
+     "en": "fridge",
+     "pos": "n. m.",
+     "note": "pl. die Kühlschränke",
+     "example": {
+      "target": "Die Milch ist im Kühlschrank.",
+      "gloss": "The milk is in the fridge."
+     }
+    },
+    {
+     "id": "die waschmaschine",
+     "hr": "die Waschmaschine",
+     "en": "washing machine",
+     "pos": "n. f.",
+     "note": "pl. die Waschmaschinen",
+     "example": {
+      "target": "Die Waschmaschine läuft gerade.",
+      "gloss": "The washing machine is running."
+     }
+    },
+    {
+     "id": "die dusche",
+     "hr": "die Dusche",
+     "en": "shower",
+     "pos": "n. f.",
+     "note": "pl. die Duschen",
+     "example": {
+      "target": "Die Dusche funktioniert nicht.",
+      "gloss": "The shower does not work."
+     }
+    },
+    {
+     "id": "das handtuch",
+     "hr": "das Handtuch",
+     "en": "towel",
+     "pos": "n. n.",
+     "note": "pl. die Handtücher",
+     "example": {
+      "target": "Gib mir bitte ein sauberes Handtuch.",
+      "gloss": "Please give me a clean towel."
+     }
+    },
+    {
+     "id": "der schlüssel",
+     "hr": "der Schlüssel",
+     "en": "key",
+     "pos": "n. m.",
+     "note": "pl. die Schlüssel",
+     "example": {
+      "target": "Ich habe den Schlüssel vergessen.",
+      "gloss": "I have forgotten the key."
+     }
+    },
+    {
+     "id": "die heizung",
+     "hr": "die Heizung",
+     "en": "heating",
+     "pos": "n. f.",
+     "note": "pl. die Heizungen",
+     "example": {
+      "target": "Die Heizung ist im Winter sehr teuer.",
+      "gloss": "The heating is very expensive in winter."
+     }
+    },
+    {
+     "id": "der strom",
+     "hr": "der Strom",
+     "en": "electricity",
+     "pos": "n. m.",
+     "example": {
+      "target": "Der Strom ist schon wieder weg.",
+      "gloss": "The electricity is off again."
+     }
+    },
+    {
+     "id": "das essen",
+     "hr": "das Essen",
+     "en": "food, meal",
+     "pos": "n. n.",
+     "note": "pl. die Essen",
+     "example": {
+      "target": "Das Essen war wirklich lecker.",
+      "gloss": "The food was really tasty."
+     }
+    },
+    {
+     "id": "das frühstück",
+     "hr": "das Frühstück",
+     "en": "breakfast",
+     "pos": "n. n.",
+     "note": "pl. die Frühstücke",
+     "example": {
+      "target": "Zum Frühstück esse ich ein Ei.",
+      "gloss": "For breakfast I eat an egg."
+     }
+    },
+    {
+     "id": "das mittagessen",
+     "hr": "das Mittagessen",
+     "en": "lunch",
+     "pos": "n. n.",
+     "note": "pl. die Mittagessen",
+     "example": {
+      "target": "Das Mittagessen gibt es um eins.",
+      "gloss": "Lunch is at one o'clock."
+     }
+    },
+    {
+     "id": "das abendessen",
+     "hr": "das Abendessen",
+     "en": "dinner",
+     "pos": "n. n.",
+     "note": "pl. die Abendessen",
+     "example": {
+      "target": "Zum Abendessen essen wir kalt.",
+      "gloss": "For dinner we eat something cold."
+     }
+    },
+    {
+     "id": "das brötchen",
+     "hr": "das Brötchen",
+     "en": "bread roll",
+     "pos": "n. n.",
+     "note": "pl. die Brötchen",
+     "example": {
+      "target": "Ich hole zwei Brötchen vom Bäcker.",
+      "gloss": "I will fetch two rolls from the baker."
+     }
+    },
+    {
+     "id": "die butter",
+     "hr": "die Butter",
+     "en": "butter",
+     "pos": "n. f.",
+     "example": {
+      "target": "Die Butter ist im Kühlschrank.",
+      "gloss": "The butter is in the fridge."
+     }
+    },
+    {
+     "id": "der käse",
+     "hr": "der Käse",
+     "en": "cheese",
+     "pos": "n. m.",
+     "example": {
+      "target": "Dieser Käse schmeckt sehr gut.",
+      "gloss": "This cheese tastes very good."
+     }
+    },
+    {
+     "id": "die wurst",
+     "hr": "die Wurst",
+     "en": "sausage",
+     "pos": "n. f.",
+     "note": "pl. die Würste",
+     "example": {
+      "target": "Auf dem Brot ist Wurst.",
+      "gloss": "There is sausage on the bread."
+     }
+    },
+    {
+     "id": "das fleisch",
+     "hr": "das Fleisch",
+     "en": "meat",
+     "pos": "n. n.",
+     "example": {
+      "target": "Ich esse nur wenig Fleisch.",
+      "gloss": "I eat only a little meat."
+     }
+    },
+    {
+     "id": "das hähnchen",
+     "hr": "das Hähnchen",
+     "en": "chicken (to eat)",
+     "pos": "n. n.",
+     "note": "pl. die Hähnchen",
+     "example": {
+      "target": "Heute gibt es Hähnchen mit Reis.",
+      "gloss": "Today there is chicken with rice."
+     }
+    },
+    {
+     "id": "der fisch",
+     "hr": "der Fisch",
+     "en": "fish",
+     "pos": "n. m.",
+     "note": "pl. die Fische",
+     "example": {
+      "target": "Freitags essen wir Fisch.",
+      "gloss": "On Fridays we eat fish."
+     }
+    },
+    {
+     "id": "das ei",
+     "hr": "das Ei",
+     "en": "egg",
+     "pos": "n. n.",
+     "note": "pl. die Eier",
+     "example": {
+      "target": "Das Ei ist noch weich.",
+      "gloss": "The egg is still soft."
+     }
+    },
+    {
+     "id": "die milch",
+     "hr": "die Milch",
+     "en": "milk",
+     "pos": "n. f.",
+     "example": {
+      "target": "Möchtest du Milch im Kaffee?",
+      "gloss": "Would you like milk in your coffee?"
+     }
+    },
+    {
+     "id": "die sahne",
+     "hr": "die Sahne",
+     "en": "cream",
+     "pos": "n. f.",
+     "example": {
+      "target": "Der Kuchen schmeckt mit Sahne besser.",
+      "gloss": "The cake tastes better with cream."
+     }
+    },
+    {
+     "id": "der zucker",
+     "hr": "der Zucker",
+     "en": "sugar",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ich trinke Tee ohne Zucker.",
+      "gloss": "I drink tea without sugar."
+     }
+    },
+    {
+     "id": "das salz",
+     "hr": "das Salz",
+     "en": "salt",
+     "pos": "n. n.",
+     "example": {
+      "target": "In der Suppe fehlt Salz.",
+      "gloss": "The soup needs salt."
+     }
+    },
+    {
+     "id": "der pfeffer",
+     "hr": "der Pfeffer",
+     "en": "pepper",
+     "pos": "n. m.",
+     "example": {
+      "target": "Bitte gib mir den Pfeffer.",
+      "gloss": "Please pass me the pepper."
+     }
+    },
+    {
+     "id": "das öl",
+     "hr": "das Öl",
+     "en": "oil",
+     "pos": "n. n.",
+     "note": "pl. die Öle",
+     "example": {
+      "target": "Ich brauche noch Öl zum Kochen.",
+      "gloss": "I still need oil for cooking."
+     }
+    },
+    {
+     "id": "die nudeln",
+     "hr": "die Nudeln",
+     "en": "pasta, noodles",
+     "pos": "n. f.",
+     "note": "plural of die Nudel",
+     "example": {
+      "target": "Die Kinder essen gern Nudeln.",
+      "gloss": "The children like eating pasta."
+     }
+    },
+    {
+     "id": "der reis",
+     "hr": "der Reis",
+     "en": "rice",
+     "pos": "n. m.",
+     "example": {
+      "target": "Der Reis ist in zehn Minuten fertig.",
+      "gloss": "The rice will be ready in ten minutes."
+     }
+    },
+    {
+     "id": "die kartoffel",
+     "hr": "die Kartoffel",
+     "en": "potato",
+     "pos": "n. f.",
+     "note": "pl. die Kartoffeln",
+     "example": {
+      "target": "Die Kartoffeln koche ich mit Salz.",
+      "gloss": "I cook the potatoes with salt."
+     }
+    },
+    {
+     "id": "das gemüse",
+     "hr": "das Gemüse",
+     "en": "vegetables",
+     "pos": "n. n.",
+     "example": {
+      "target": "Frisches Gemüse kaufe ich auf dem Markt.",
+      "gloss": "I buy fresh vegetables at the market."
+     }
+    },
+    {
+     "id": "die tomate",
+     "hr": "die Tomate",
+     "en": "tomato",
+     "pos": "n. f.",
+     "note": "pl. die Tomaten",
+     "example": {
+      "target": "Die Tomaten sind schon reif.",
+      "gloss": "The tomatoes are already ripe."
+     }
+    },
+    {
+     "id": "die gurke",
+     "hr": "die Gurke",
+     "en": "cucumber",
+     "pos": "n. f.",
+     "note": "pl. die Gurken",
+     "example": {
+      "target": "Im Salat ist auch Gurke.",
+      "gloss": "There is cucumber in the salad too."
+     }
+    },
+    {
+     "id": "die zwiebel",
+     "hr": "die Zwiebel",
+     "en": "onion",
+     "pos": "n. f.",
+     "note": "pl. die Zwiebeln",
+     "example": {
+      "target": "Die Zwiebel macht mir Tränen.",
+      "gloss": "The onion makes me cry."
+     }
+    },
+    {
+     "id": "der salat",
+     "hr": "der Salat",
+     "en": "salad, lettuce",
+     "pos": "n. m.",
+     "note": "pl. die Salate",
+     "example": {
+      "target": "Ich nehme nur einen kleinen Salat.",
+      "gloss": "I will just have a small salad."
+     }
+    },
+    {
+     "id": "das obst",
+     "hr": "das Obst",
+     "en": "fruit",
+     "pos": "n. n.",
+     "example": {
+      "target": "Obst ist gut für die Gesundheit.",
+      "gloss": "Fruit is good for your health."
+     }
+    },
+    {
+     "id": "der apfel",
+     "hr": "der Apfel",
+     "en": "apple",
+     "pos": "n. m.",
+     "note": "pl. die Äpfel",
+     "example": {
+      "target": "Ich esse jeden Tag einen Apfel.",
+      "gloss": "I eat an apple every day."
+     }
+    },
+    {
+     "id": "die banane",
+     "hr": "die Banane",
+     "en": "banana",
+     "pos": "n. f.",
+     "note": "pl. die Bananen",
+     "example": {
+      "target": "Die Bananen sind noch grün.",
+      "gloss": "The bananas are still green."
+     }
+    },
+    {
+     "id": "die orange",
+     "hr": "die Orange",
+     "en": "orange",
+     "pos": "n. f.",
+     "note": "pl. die Orangen",
+     "example": {
+      "target": "Aus Orangen mache ich Saft.",
+      "gloss": "I make juice from oranges."
+     }
+    },
+    {
+     "id": "der kuchen",
+     "hr": "der Kuchen",
+     "en": "cake",
+     "pos": "n. m.",
+     "note": "pl. die Kuchen",
+     "example": {
+      "target": "Meine Oma backt den besten Kuchen.",
+      "gloss": "My grandma bakes the best cake."
+     }
+    },
+    {
+     "id": "die schokolade",
+     "hr": "die Schokolade",
+     "en": "chocolate",
+     "pos": "n. f.",
+     "note": "pl. die Schokoladen",
+     "example": {
+      "target": "Abends esse ich gern Schokolade.",
+      "gloss": "In the evening I like eating chocolate."
+     }
+    },
+    {
+     "id": "das eis",
+     "hr": "das Eis",
+     "en": "ice, ice cream",
+     "pos": "n. n.",
+     "example": {
+      "target": "Die Kinder möchten ein Eis.",
+      "gloss": "The children would like an ice cream."
+     }
+    },
+    {
+     "id": "die suppe",
+     "hr": "die Suppe",
+     "en": "soup",
+     "pos": "n. f.",
+     "note": "pl. die Suppen",
+     "example": {
+      "target": "Die Suppe ist noch zu heiß.",
+      "gloss": "The soup is still too hot."
+     }
+    },
+    {
+     "id": "der kaffee",
+     "hr": "der Kaffee",
+     "en": "coffee",
+     "pos": "n. m.",
+     "note": "pl. die Kaffees",
+     "example": {
+      "target": "Ich trinke morgens zwei Tassen Kaffee.",
+      "gloss": "In the mornings I drink two cups of coffee."
+     }
+    },
+    {
+     "id": "der tee",
+     "hr": "der Tee",
+     "en": "tea",
+     "pos": "n. m.",
+     "note": "pl. die Tees",
+     "example": {
+      "target": "Bei Erkältung trinke ich viel Tee.",
+      "gloss": "When I have a cold I drink a lot of tea."
+     }
+    },
+    {
+     "id": "der saft",
+     "hr": "der Saft",
+     "en": "juice",
+     "pos": "n. m.",
+     "note": "pl. die Säfte",
+     "example": {
+      "target": "Der Saft ist frisch gepresst.",
+      "gloss": "The juice is freshly squeezed."
+     }
+    },
+    {
+     "id": "das bier",
+     "hr": "das Bier",
+     "en": "beer",
+     "pos": "n. n.",
+     "note": "pl. die Biere",
+     "example": {
+      "target": "Ein Bier, bitte.",
+      "gloss": "A beer, please."
+     }
+    },
+    {
+     "id": "der wein",
+     "hr": "der Wein",
+     "en": "wine",
+     "pos": "n. m.",
+     "note": "pl. die Weine",
+     "example": {
+      "target": "Zum Essen trinken wir Wein.",
+      "gloss": "With the meal we drink wine."
+     }
+    },
+    {
+     "id": "die flasche",
+     "hr": "die Flasche",
+     "en": "bottle",
+     "pos": "n. f.",
+     "note": "pl. die Flaschen",
+     "example": {
+      "target": "Bringst du eine Flasche Wasser mit?",
+      "gloss": "Will you bring a bottle of water?"
+     }
+    },
+    {
+     "id": "das glas",
+     "hr": "das Glas",
+     "en": "glass",
+     "pos": "n. n.",
+     "note": "pl. die Gläser",
+     "example": {
+      "target": "Ich möchte ein Glas Wasser.",
+      "gloss": "I would like a glass of water."
+     }
+    },
+    {
+     "id": "die tasse",
+     "hr": "die Tasse",
+     "en": "cup",
+     "pos": "n. f.",
+     "note": "pl. die Tassen",
+     "example": {
+      "target": "Die Tasse ist leer.",
+      "gloss": "The cup is empty."
+     }
+    },
+    {
+     "id": "der teller",
+     "hr": "der Teller",
+     "en": "plate",
+     "pos": "n. m.",
+     "note": "pl. die Teller",
+     "example": {
+      "target": "Stell die Teller auf den Tisch.",
+      "gloss": "Put the plates on the table."
+     }
+    },
+    {
+     "id": "die gabel",
+     "hr": "die Gabel",
+     "en": "fork",
+     "pos": "n. f.",
+     "note": "pl. die Gabeln",
+     "example": {
+      "target": "Mir fehlt eine Gabel.",
+      "gloss": "I am missing a fork."
+     }
+    },
+    {
+     "id": "das messer",
+     "hr": "das Messer",
+     "en": "knife",
+     "pos": "n. n.",
+     "note": "pl. die Messer",
+     "example": {
+      "target": "Das Messer ist nicht scharf.",
+      "gloss": "The knife is not sharp."
+     }
+    },
+    {
+     "id": "der löffel",
+     "hr": "der Löffel",
+     "en": "spoon",
+     "pos": "n. m.",
+     "note": "pl. die Löffel",
+     "example": {
+      "target": "Für die Suppe brauchst du einen Löffel.",
+      "gloss": "You need a spoon for the soup."
+     }
+    },
+    {
+     "id": "die speisekarte",
+     "hr": "die Speisekarte",
+     "en": "menu",
+     "pos": "n. f.",
+     "note": "pl. die Speisekarten",
+     "example": {
+      "target": "Können wir bitte die Speisekarte haben?",
+      "gloss": "Could we have the menu, please?"
+     }
+    },
+    {
+     "id": "die rechnung",
+     "hr": "die Rechnung",
+     "en": "bill",
+     "pos": "n. f.",
+     "note": "pl. die Rechnungen",
+     "example": {
+      "target": "Die Rechnung, bitte.",
+      "gloss": "The bill, please."
+     }
+    },
+    {
+     "id": "das trinkgeld",
+     "hr": "das Trinkgeld",
+     "en": "tip",
+     "pos": "n. n.",
+     "note": "pl. die Trinkgelder",
+     "example": {
+      "target": "Wir geben immer Trinkgeld.",
+      "gloss": "We always leave a tip."
+     }
+    },
+    {
+     "id": "das restaurant",
+     "hr": "das Restaurant",
+     "en": "restaurant",
+     "pos": "n. n.",
+     "note": "pl. die Restaurants",
+     "example": {
+      "target": "Das Restaurant ist montags geschlossen.",
+      "gloss": "The restaurant is closed on Mondays."
+     }
+    },
+    {
+     "id": "das café",
+     "hr": "das Café",
+     "en": "cafe",
+     "pos": "n. n.",
+     "note": "pl. die Cafés",
+     "example": {
+      "target": "Wir sitzen im Café und reden.",
+      "gloss": "We are sitting in the cafe and talking."
+     }
+    },
+    {
+     "id": "bestellen",
+     "hr": "bestellen",
+     "en": "to order",
+     "pos": "v.",
+     "note": "hat bestellt",
+     "example": {
+      "target": "Ich bestelle einen Salat.",
+      "gloss": "I am ordering a salad."
+     }
+    },
+    {
+     "id": "schmecken",
+     "hr": "schmecken",
+     "en": "to taste",
+     "pos": "v.",
+     "note": "schmecken plus Dativ",
+     "example": {
+      "target": "Der Kuchen schmeckt mir sehr gut.",
+      "gloss": "I really like the cake."
+     }
+    },
+    {
+     "id": "hungrig",
+     "hr": "hungrig",
+     "en": "hungry",
+     "pos": "adj.",
+     "example": {
+      "target": "Ich bin sehr hungrig.",
+      "gloss": "I am very hungry."
+     }
+    },
+    {
+     "id": "durstig",
+     "hr": "durstig",
+     "en": "thirsty",
+     "pos": "adj.",
+     "example": {
+      "target": "Nach dem Sport bin ich durstig.",
+      "gloss": "After sport I am thirsty."
+     }
+    },
+    {
+     "id": "lecker",
+     "hr": "lecker",
+     "en": "tasty",
+     "pos": "adj.",
+     "example": {
+      "target": "Das Brot schmeckt sehr lecker.",
+      "gloss": "The bread tastes very good."
+     }
+    },
+    {
+     "id": "süß",
+     "hr": "süß",
+     "en": "sweet",
+     "pos": "adj.",
+     "example": {
+      "target": "Der Tee ist mir zu süß.",
+      "gloss": "The tea is too sweet for me."
+     }
+    },
+    {
+     "id": "sauer",
+     "hr": "sauer",
+     "en": "sour",
+     "pos": "adj.",
+     "example": {
+      "target": "Die Zitrone ist sehr sauer.",
+      "gloss": "The lemon is very sour."
+     }
+    },
+    {
+     "id": "satt",
+     "hr": "satt",
+     "en": "full, not hungry",
+     "pos": "adj.",
+     "example": {
+      "target": "Danke, ich bin satt.",
+      "gloss": "Thank you, I am full."
+     }
+    },
+    {
+     "id": "der supermarkt",
+     "hr": "der Supermarkt",
+     "en": "supermarket",
+     "pos": "n. m.",
+     "note": "pl. die Supermärkte",
+     "example": {
+      "target": "Der Supermarkt hat bis zwanzig Uhr offen.",
+      "gloss": "The supermarket is open until eight in the evening."
+     }
+    },
+    {
+     "id": "die bäckerei",
+     "hr": "die Bäckerei",
+     "en": "bakery",
+     "pos": "n. f.",
+     "note": "pl. die Bäckereien",
+     "example": {
+      "target": "Die Bäckerei öffnet um sechs.",
+      "gloss": "The bakery opens at six."
+     }
+    },
+    {
+     "id": "der markt",
+     "hr": "der Markt",
+     "en": "market",
+     "pos": "n. m.",
+     "note": "pl. die Märkte",
+     "example": {
+      "target": "Der Markt ist mittwochs und samstags.",
+      "gloss": "The market is on Wednesdays and Saturdays."
+     }
+    },
+    {
+     "id": "das geschäft",
+     "hr": "das Geschäft",
+     "en": "shop",
+     "pos": "n. n.",
+     "note": "pl. die Geschäfte",
+     "example": {
+      "target": "Das Geschäft ist heute geschlossen.",
+      "gloss": "The shop is closed today."
+     }
+    },
+    {
+     "id": "die kasse",
+     "hr": "die Kasse",
+     "en": "checkout, till",
+     "pos": "n. f.",
+     "note": "pl. die Kassen",
+     "example": {
+      "target": "An der Kasse ist eine lange Schlange.",
+      "gloss": "There is a long queue at the checkout."
+     }
+    },
+    {
+     "id": "das geld",
+     "hr": "das Geld",
+     "en": "money",
+     "pos": "n. n.",
+     "example": {
+      "target": "Ich habe kein Geld dabei.",
+      "gloss": "I do not have any money on me."
+     }
+    },
+    {
+     "id": "der euro",
+     "hr": "der Euro",
+     "en": "euro",
+     "pos": "n. m.",
+     "note": "pl. die Euro",
+     "example": {
+      "target": "Das macht zwölf Euro.",
+      "gloss": "That comes to twelve euros."
+     }
+    },
+    {
+     "id": "der cent",
+     "hr": "der Cent",
+     "en": "cent",
+     "pos": "n. m.",
+     "note": "pl. die Cent",
+     "example": {
+      "target": "Es fehlen noch fünfzig Cent.",
+      "gloss": "Fifty cents are still missing."
+     }
+    },
+    {
+     "id": "der preis",
+     "hr": "der Preis",
+     "en": "price",
+     "pos": "n. m.",
+     "note": "pl. die Preise",
+     "example": {
+      "target": "Die Preise sind wieder gestiegen.",
+      "gloss": "Prices have gone up again."
+     }
+    },
+    {
+     "id": "teuer",
+     "hr": "teuer",
+     "en": "expensive",
+     "pos": "adj.",
+     "example": {
+      "target": "Diese Wohnung ist zu teuer.",
+      "gloss": "This flat is too expensive."
+     }
+    },
+    {
+     "id": "billig",
+     "hr": "billig",
+     "en": "cheap",
+     "pos": "adj.",
+     "example": {
+      "target": "Die Schuhe waren sehr billig.",
+      "gloss": "The shoes were very cheap."
+     }
+    },
+    {
+     "id": "günstig",
+     "hr": "günstig",
+     "en": "good value, reasonable",
+     "pos": "adj.",
+     "example": {
+      "target": "Hier kauft man günstig ein.",
+      "gloss": "You can shop cheaply here."
+     }
+    },
+    {
+     "id": "die tüte",
+     "hr": "die Tüte",
+     "en": "bag (paper or plastic)",
+     "pos": "n. f.",
+     "note": "pl. die Tüten",
+     "example": {
+      "target": "Brauchen Sie eine Tüte?",
+      "gloss": "Do you need a bag?"
+     }
+    },
+    {
+     "id": "das kilo",
+     "hr": "das Kilo",
+     "en": "kilo",
+     "pos": "n. n.",
+     "note": "pl. die Kilo",
+     "example": {
+      "target": "Ich nehme ein Kilo Äpfel.",
+      "gloss": "I will take a kilo of apples."
+     }
+    },
+    {
+     "id": "das gramm",
+     "hr": "das Gramm",
+     "en": "gram",
+     "pos": "n. n.",
+     "note": "pl. die Gramm",
+     "example": {
+      "target": "Zweihundert Gramm Käse, bitte.",
+      "gloss": "Two hundred grams of cheese, please."
+     }
+    },
+    {
+     "id": "der liter",
+     "hr": "der Liter",
+     "en": "litre",
+     "pos": "n. m.",
+     "note": "pl. die Liter",
+     "example": {
+      "target": "Wir brauchen zwei Liter Milch.",
+      "gloss": "We need two litres of milk."
+     }
+    },
+    {
+     "id": "das stück",
+     "hr": "das Stück",
+     "en": "piece",
+     "pos": "n. n.",
+     "note": "pl. die Stücke",
+     "example": {
+      "target": "Ein Stück Kuchen, bitte.",
+      "gloss": "A piece of cake, please."
+     }
+    },
+    {
+     "id": "die packung",
+     "hr": "die Packung",
+     "en": "pack, packet",
+     "pos": "n. f.",
+     "note": "pl. die Packungen",
+     "example": {
+      "target": "Eine Packung Reis reicht für vier Personen.",
+      "gloss": "A packet of rice is enough for four people."
+     }
+    },
+    {
+     "id": "kosten",
+     "hr": "kosten",
+     "en": "to cost",
+     "pos": "v.",
+     "example": {
+      "target": "Was kostet die Fahrkarte?",
+      "gloss": "How much does the ticket cost?"
+     }
+    },
+    {
+     "id": "verkaufen",
+     "hr": "verkaufen",
+     "en": "to sell",
+     "pos": "v.",
+     "note": "hat verkauft",
+     "example": {
+      "target": "Sie verkaufen ihr altes Auto.",
+      "gloss": "They are selling their old car."
+     }
+    },
+    {
+     "id": "die größe",
+     "hr": "die Größe",
+     "en": "size",
+     "pos": "n. f.",
+     "note": "pl. die Größen",
+     "example": {
+      "target": "Haben Sie das eine Größe größer?",
+      "gloss": "Do you have this one size bigger?"
+     }
+    },
+    {
+     "id": "das zentrum",
+     "hr": "das Zentrum",
+     "en": "centre",
+     "pos": "n. n.",
+     "note": "pl. die Zentren",
+     "example": {
+      "target": "Wir wohnen nicht weit vom Zentrum.",
+      "gloss": "We do not live far from the centre."
+     }
+    },
+    {
+     "id": "der platz",
+     "hr": "der Platz",
+     "en": "square, seat, space",
+     "pos": "n. m.",
+     "note": "pl. die Plätze",
+     "example": {
+      "target": "Ist dieser Platz noch frei?",
+      "gloss": "Is this seat still free?"
+     }
+    },
+    {
+     "id": "die kreuzung",
+     "hr": "die Kreuzung",
+     "en": "crossroads",
+     "pos": "n. f.",
+     "note": "pl. die Kreuzungen",
+     "example": {
+      "target": "An der Kreuzung gehen Sie nach rechts.",
+      "gloss": "At the crossroads you turn right."
+     }
+    },
+    {
+     "id": "die ecke",
+     "hr": "die Ecke",
+     "en": "corner",
+     "pos": "n. f.",
+     "note": "pl. die Ecken",
+     "example": {
+      "target": "Die Post ist an der Ecke.",
+      "gloss": "The post office is on the corner."
+     }
+    },
+    {
+     "id": "die ampel",
+     "hr": "die Ampel",
+     "en": "traffic light",
+     "pos": "n. f.",
+     "note": "pl. die Ampeln",
+     "example": {
+      "target": "Warten Sie an der Ampel.",
+      "gloss": "Wait at the traffic light."
+     }
+    },
+    {
+     "id": "die brücke",
+     "hr": "die Brücke",
+     "en": "bridge",
+     "pos": "n. f.",
+     "note": "pl. die Brücken",
+     "example": {
+      "target": "Gehen Sie über die Brücke.",
+      "gloss": "Go over the bridge."
+     }
+    },
+    {
+     "id": "der park",
+     "hr": "der Park",
+     "en": "park",
+     "pos": "n. m.",
+     "note": "pl. die Parks",
+     "example": {
+      "target": "Im Park kann man gut laufen.",
+      "gloss": "You can run well in the park."
+     }
+    },
+    {
+     "id": "die kirche",
+     "hr": "die Kirche",
+     "en": "church",
+     "pos": "n. f.",
+     "note": "pl. die Kirchen",
+     "example": {
+      "target": "Die Kirche ist sehr alt.",
+      "gloss": "The church is very old."
+     }
+    },
+    {
+     "id": "das museum",
+     "hr": "das Museum",
+     "en": "museum",
+     "pos": "n. n.",
+     "note": "pl. die Museen",
+     "example": {
+      "target": "Das Museum ist am Montag zu.",
+      "gloss": "The museum is closed on Monday."
+     }
+    },
+    {
+     "id": "das kino",
+     "hr": "das Kino",
+     "en": "cinema",
+     "pos": "n. n.",
+     "note": "pl. die Kinos",
+     "example": {
+      "target": "Gehen wir heute Abend ins Kino?",
+      "gloss": "Shall we go to the cinema tonight?"
+     }
+    },
+    {
+     "id": "das theater",
+     "hr": "das Theater",
+     "en": "theatre",
+     "pos": "n. n.",
+     "note": "pl. die Theater",
+     "example": {
+      "target": "Die Karten für das Theater sind teuer.",
+      "gloss": "The theatre tickets are expensive."
+     }
+    },
+    {
+     "id": "die post",
+     "hr": "die Post",
+     "en": "post office, mail",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ich bringe den Brief zur Post.",
+      "gloss": "I am taking the letter to the post office."
+     }
+    },
+    {
+     "id": "die bank",
+     "hr": "die Bank",
+     "en": "bank",
+     "pos": "n. f.",
+     "note": "pl. die Banken",
+     "example": {
+      "target": "Die Bank öffnet erst um neun.",
+      "gloss": "The bank does not open until nine."
+     }
+    },
+    {
+     "id": "die bibliothek",
+     "hr": "die Bibliothek",
+     "en": "library",
+     "pos": "n. f.",
+     "note": "pl. die Bibliotheken",
+     "example": {
+      "target": "In der Bibliothek muss man leise sein.",
+      "gloss": "You have to be quiet in the library."
+     }
+    },
+    {
+     "id": "das krankenhaus",
+     "hr": "das Krankenhaus",
+     "en": "hospital",
+     "pos": "n. n.",
+     "note": "pl. die Krankenhäuser",
+     "example": {
+      "target": "Sie liegt seit gestern im Krankenhaus.",
+      "gloss": "She has been in hospital since yesterday."
+     }
+    },
+    {
+     "id": "die schule",
+     "hr": "die Schule",
+     "en": "school",
+     "pos": "n. f.",
+     "note": "pl. die Schulen",
+     "example": {
+      "target": "Die Schule beginnt um acht Uhr.",
+      "gloss": "School starts at eight o'clock."
+     }
+    },
+    {
+     "id": "die universität",
+     "hr": "die Universität",
+     "en": "university",
+     "pos": "n. f.",
+     "note": "pl. die Universitäten",
+     "example": {
+      "target": "Meine Tochter studiert an der Universität.",
+      "gloss": "My daughter studies at the university."
+     }
+    },
+    {
+     "id": "das rathaus",
+     "hr": "das Rathaus",
+     "en": "town hall",
+     "pos": "n. n.",
+     "note": "pl. die Rathäuser",
+     "example": {
+      "target": "Das Formular bekommt man im Rathaus.",
+      "gloss": "You get the form at the town hall."
+     }
+    },
+    {
+     "id": "der bahnhof",
+     "hr": "der Bahnhof",
+     "en": "train station",
+     "pos": "n. m.",
+     "note": "pl. die Bahnhöfe",
+     "example": {
+      "target": "Der Bahnhof ist zehn Minuten von hier.",
+      "gloss": "The station is ten minutes from here."
+     }
+    },
+    {
+     "id": "die haltestelle",
+     "hr": "die Haltestelle",
+     "en": "stop (bus or tram)",
+     "pos": "n. f.",
+     "note": "pl. die Haltestellen",
+     "example": {
+      "target": "Die Haltestelle ist direkt vor dem Haus.",
+      "gloss": "The stop is right in front of the house."
+     }
+    },
+    {
+     "id": "der flughafen",
+     "hr": "der Flughafen",
+     "en": "airport",
+     "pos": "n. m.",
+     "note": "pl. die Flughäfen",
+     "example": {
+      "target": "Zum Flughafen fahre ich mit dem Bus.",
+      "gloss": "I take the bus to the airport."
+     }
+    },
+    {
+     "id": "das hotel",
+     "hr": "das Hotel",
+     "en": "hotel",
+     "pos": "n. n.",
+     "note": "pl. die Hotels",
+     "example": {
+      "target": "Das Hotel liegt sehr zentral.",
+      "gloss": "The hotel is very central."
+     }
+    },
+    {
+     "id": "das schwimmbad",
+     "hr": "das Schwimmbad",
+     "en": "swimming pool",
+     "pos": "n. n.",
+     "note": "pl. die Schwimmbäder",
+     "example": {
+      "target": "Im Sommer gehen wir oft ins Schwimmbad.",
+      "gloss": "In summer we often go to the swimming pool."
+     }
+    },
+    {
+     "id": "der bus",
+     "hr": "der Bus",
+     "en": "bus",
+     "pos": "n. m.",
+     "note": "pl. die Busse",
+     "example": {
+      "target": "Der Bus kommt alle zehn Minuten.",
+      "gloss": "The bus comes every ten minutes."
+     }
+    },
+    {
+     "id": "die bahn",
+     "hr": "die Bahn",
+     "en": "railway, train",
+     "pos": "n. f.",
+     "note": "pl. die Bahnen",
+     "example": {
+      "target": "Ich fahre lieber mit der Bahn.",
+      "gloss": "I prefer to travel by train."
+     }
+    },
+    {
+     "id": "der zug",
+     "hr": "der Zug",
+     "en": "train",
+     "pos": "n. m.",
+     "note": "pl. die Züge",
+     "example": {
+      "target": "Der Zug hat zwanzig Minuten Verspätung.",
+      "gloss": "The train is twenty minutes late."
+     }
+    },
+    {
+     "id": "die u-bahn",
+     "hr": "die U-Bahn",
+     "en": "underground",
+     "pos": "n. f.",
+     "note": "pl. die U-Bahnen",
+     "example": {
+      "target": "Mit der U-Bahn bin ich schneller.",
+      "gloss": "I am faster by underground."
+     }
+    },
+    {
+     "id": "die straßenbahn",
+     "hr": "die Straßenbahn",
+     "en": "tram",
+     "pos": "n. f.",
+     "note": "pl. die Straßenbahnen",
+     "example": {
+      "target": "Die Straßenbahn hält am Markt.",
+      "gloss": "The tram stops at the market."
+     }
+    },
+    {
+     "id": "das auto",
+     "hr": "das Auto",
+     "en": "car",
+     "pos": "n. n.",
+     "note": "pl. die Autos",
+     "example": {
+      "target": "Unser Auto ist in der Werkstatt.",
+      "gloss": "Our car is at the garage."
+     }
+    },
+    {
+     "id": "das fahrrad",
+     "hr": "das Fahrrad",
+     "en": "bicycle",
+     "pos": "n. n.",
+     "note": "pl. die Fahrräder",
+     "example": {
+      "target": "Ich fahre mit dem Fahrrad zur Arbeit.",
+      "gloss": "I cycle to work."
+     }
+    },
+    {
+     "id": "das taxi",
+     "hr": "das Taxi",
+     "en": "taxi",
+     "pos": "n. n.",
+     "note": "pl. die Taxis",
+     "example": {
+      "target": "Nachts nehme ich lieber ein Taxi.",
+      "gloss": "At night I prefer to take a taxi."
+     }
+    },
+    {
+     "id": "das flugzeug",
+     "hr": "das Flugzeug",
+     "en": "aeroplane",
+     "pos": "n. n.",
+     "note": "pl. die Flugzeuge",
+     "example": {
+      "target": "Das Flugzeug startet um sieben.",
+      "gloss": "The plane takes off at seven."
+     }
+    },
+    {
+     "id": "die fahrkarte",
+     "hr": "die Fahrkarte",
+     "en": "ticket",
+     "pos": "n. f.",
+     "note": "pl. die Fahrkarten",
+     "example": {
+      "target": "Eine Fahrkarte nach Leipzig, bitte.",
+      "gloss": "One ticket to Leipzig, please."
+     }
+    },
+    {
+     "id": "der fahrplan",
+     "hr": "der Fahrplan",
+     "en": "timetable",
+     "pos": "n. m.",
+     "note": "pl. die Fahrpläne",
+     "example": {
+      "target": "Schau bitte im Fahrplan nach.",
+      "gloss": "Please check the timetable."
+     }
+    },
+    {
+     "id": "die reise",
+     "hr": "die Reise",
+     "en": "journey, trip",
+     "pos": "n. f.",
+     "note": "pl. die Reisen",
+     "example": {
+      "target": "Die Reise dauert fünf Stunden.",
+      "gloss": "The journey takes five hours."
+     }
+    },
+    {
+     "id": "die fahrt",
+     "hr": "die Fahrt",
+     "en": "ride, drive",
+     "pos": "n. f.",
+     "note": "pl. die Fahrten",
+     "example": {
+      "target": "Gute Fahrt!",
+      "gloss": "Have a good trip!"
+     }
+    },
+    {
+     "id": "abfahren",
+     "hr": "abfahren",
+     "en": "to depart",
+     "pos": "v.",
+     "note": "trennbar: der Zug fährt ab, ist abgefahren",
+     "example": {
+      "target": "Der Zug fährt in fünf Minuten ab.",
+      "gloss": "The train departs in five minutes."
+     }
+    },
+    {
+     "id": "ankommen",
+     "hr": "ankommen",
+     "en": "to arrive",
+     "pos": "v.",
+     "note": "trennbar: ich komme an, ist angekommen",
+     "example": {
+      "target": "Wir kommen um acht Uhr an.",
+      "gloss": "We arrive at eight o'clock."
+     }
+    },
+    {
+     "id": "einsteigen",
+     "hr": "einsteigen",
+     "en": "to get on, to board",
+     "pos": "v.",
+     "note": "trennbar: ich steige ein, ist eingestiegen",
+     "example": {
+      "target": "Bitte vorne einsteigen.",
+      "gloss": "Please board at the front."
+     }
+    },
+    {
+     "id": "aussteigen",
+     "hr": "aussteigen",
+     "en": "to get off",
+     "pos": "v.",
+     "note": "trennbar: ich steige aus, ist ausgestiegen",
+     "example": {
+      "target": "Wir steigen am Bahnhof aus.",
+      "gloss": "We get off at the station."
+     }
+    },
+    {
+     "id": "umsteigen",
+     "hr": "umsteigen",
+     "en": "to change (transport)",
+     "pos": "v.",
+     "note": "trennbar: ich steige um, ist umgestiegen",
+     "example": {
+      "target": "Sie müssen in Hannover umsteigen.",
+      "gloss": "You have to change in Hanover."
+     }
+    },
+    {
+     "id": "parken",
+     "hr": "parken",
+     "en": "to park",
+     "pos": "v.",
+     "example": {
+      "target": "Hier darf man nicht parken.",
+      "gloss": "You are not allowed to park here."
+     }
+    },
+    {
+     "id": "zu fuß",
+     "hr": "zu Fuß",
+     "en": "on foot",
+     "pos": "expr.",
+     "example": {
+      "target": "Ich gehe zu Fuß nach Hause.",
+      "gloss": "I am walking home."
+     }
+    },
+    {
+     "id": "der weg",
+     "hr": "der Weg",
+     "en": "way, path",
+     "pos": "n. m.",
+     "note": "pl. die Wege",
+     "example": {
+      "target": "Können Sie mir den Weg zeigen?",
+      "gloss": "Can you show me the way?"
+     }
+    },
+    {
+     "id": "die richtung",
+     "hr": "die Richtung",
+     "en": "direction",
+     "pos": "n. f.",
+     "note": "pl. die Richtungen",
+     "example": {
+      "target": "Sie fahren in die falsche Richtung.",
+      "gloss": "You are going in the wrong direction."
+     }
+    },
+    {
+     "id": "links",
+     "hr": "links",
+     "en": "left",
+     "pos": "adv.",
+     "example": {
+      "target": "An der Ampel gehen Sie links.",
+      "gloss": "At the traffic light you go left."
+     }
+    },
+    {
+     "id": "rechts",
+     "hr": "rechts",
+     "en": "right",
+     "pos": "adv.",
+     "example": {
+      "target": "Die Apotheke ist rechts.",
+      "gloss": "The pharmacy is on the right."
+     }
+    },
+    {
+     "id": "geradeaus",
+     "hr": "geradeaus",
+     "en": "straight ahead",
+     "pos": "adv.",
+     "example": {
+      "target": "Gehen Sie immer geradeaus.",
+      "gloss": "Keep going straight ahead."
+     }
+    },
+    {
+     "id": "die karte",
+     "hr": "die Karte",
+     "en": "map, card, ticket",
+     "pos": "n. f.",
+     "note": "pl. die Karten",
+     "example": {
+      "target": "Ich schaue kurz auf die Karte.",
+      "gloss": "I will have a quick look at the map."
+     }
+    },
+    {
+     "id": "das wetter",
+     "hr": "das Wetter",
+     "en": "weather",
+     "pos": "n. n.",
+     "example": {
+      "target": "Das Wetter wird morgen besser.",
+      "gloss": "The weather will be better tomorrow."
+     }
+    },
+    {
+     "id": "die sonne",
+     "hr": "die Sonne",
+     "en": "sun",
+     "pos": "n. f.",
+     "note": "pl. die Sonnen",
+     "example": {
+      "target": "Heute scheint die Sonne.",
+      "gloss": "The sun is shining today."
+     }
+    },
+    {
+     "id": "der regen",
+     "hr": "der Regen",
+     "en": "rain",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nach dem Regen riecht es gut.",
+      "gloss": "It smells good after the rain."
+     }
+    },
+    {
+     "id": "der schnee",
+     "hr": "der Schnee",
+     "en": "snow",
+     "pos": "n. m.",
+     "example": {
+      "target": "Der Schnee liegt schon hoch.",
+      "gloss": "The snow is already deep."
+     }
+    },
+    {
+     "id": "der wind",
+     "hr": "der Wind",
+     "en": "wind",
+     "pos": "n. m.",
+     "note": "pl. die Winde",
+     "example": {
+      "target": "Heute geht ein kalter Wind.",
+      "gloss": "There is a cold wind today."
+     }
+    },
+    {
+     "id": "warm",
+     "hr": "warm",
+     "en": "warm",
+     "pos": "adj.",
+     "note": "wärmer, am wärmsten",
+     "example": {
+      "target": "Heute ist es angenehm warm.",
+      "gloss": "Today it is pleasantly warm."
+     }
+    },
+    {
+     "id": "kalt",
+     "hr": "kalt",
+     "en": "cold",
+     "pos": "adj.",
+     "note": "kälter, am kältesten",
+     "example": {
+      "target": "Mir ist kalt.",
+      "gloss": "I am cold."
+     }
+    },
+    {
+     "id": "heiß",
+     "hr": "heiß",
+     "en": "hot",
+     "pos": "adj.",
+     "example": {
+      "target": "Der Kaffee ist noch zu heiß.",
+      "gloss": "The coffee is still too hot."
+     }
+    },
+    {
+     "id": "kühl",
+     "hr": "kühl",
+     "en": "cool",
+     "pos": "adj.",
+     "example": {
+      "target": "Am Morgen war es kühl.",
+      "gloss": "It was cool in the morning."
+     }
+    },
+    {
+     "id": "sonnig",
+     "hr": "sonnig",
+     "en": "sunny",
+     "pos": "adj.",
+     "example": {
+      "target": "Am Wochenende wird es sonnig.",
+      "gloss": "It will be sunny at the weekend."
+     }
+    },
+    {
+     "id": "regnen",
+     "hr": "regnen",
+     "en": "to rain",
+     "pos": "v.",
+     "note": "es regnet, hat geregnet",
+     "example": {
+      "target": "Es regnet seit heute Morgen.",
+      "gloss": "It has been raining since this morning."
+     }
+    },
+    {
+     "id": "schneien",
+     "hr": "schneien",
+     "en": "to snow",
+     "pos": "v.",
+     "note": "es schneit",
+     "example": {
+      "target": "Im Januar schneit es oft.",
+      "gloss": "In January it often snows."
+     }
+    },
+    {
+     "id": "der grad",
+     "hr": "der Grad",
+     "en": "degree",
+     "pos": "n. m.",
+     "note": "pl. die Grad",
+     "example": {
+      "target": "Heute sind es zwanzig Grad.",
+      "gloss": "It is twenty degrees today."
+     }
+    },
+    {
+     "id": "die temperatur",
+     "hr": "die Temperatur",
+     "en": "temperature",
+     "pos": "n. f.",
+     "note": "pl. die Temperaturen",
+     "example": {
+      "target": "Die Temperatur sinkt in der Nacht.",
+      "gloss": "The temperature drops at night."
+     }
+    }
+   ]
+  }
+ ]
+}

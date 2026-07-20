@@ -1,0 +1,636 @@
+{
+ "title": "Find your starting point",
+ "intro": "A short German check that gets harder as it goes, so we can start you in the right place. It takes about two minutes and you can retake it any time.",
+ "questions": [
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "'Ich ___ Anna.' (I am Anna)",
+   "options": [
+    "bin",
+    "bist",
+    "ist",
+    "sind"
+   ],
+   "answer": "bin",
+   "explanation": "With ich the verb sein is bin."
+  },
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "Which sentence is written with correct German capitalisation?",
+   "options": [
+    "Ich habe einen Hund.",
+    "Ich habe einen hund.",
+    "ich habe einen Hund.",
+    "ich habe einen hund."
+   ],
+   "answer": "Ich habe einen Hund.",
+   "explanation": "German capitalises every noun, and Hund is a noun."
+  },
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "Which word means the number 7?",
+   "options": [
+    "sieben",
+    "sechs",
+    "acht",
+    "neun"
+   ],
+   "answer": "sieben",
+   "explanation": "Sieben is 7, while sechs is 6, acht is 8 and neun is 9."
+  },
+  {
+   "level": "A1",
+   "startDay": 16,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "Which sentence has correct German word order?",
+   "options": [
+    "Morgen fahre ich nach Berlin.",
+    "Morgen ich fahre nach Berlin.",
+    "Fahre morgen ich nach Berlin.",
+    "Morgen ich nach Berlin fahre."
+   ],
+   "answer": "Morgen fahre ich nach Berlin.",
+   "explanation": "The conjugated verb takes second position, so the subject moves behind it."
+  },
+  {
+   "level": "A1",
+   "startDay": 16,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'___ Buch liegt auf dem Tisch.' (the book)",
+   "options": [
+    "Das",
+    "Der",
+    "Die",
+    "Den"
+   ],
+   "answer": "Das",
+   "explanation": "Buch is neuter, so the definite article in the nominative is das."
+  },
+  {
+   "level": "A1",
+   "startDay": 16,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'Du ___ sehr schnell.' (sprechen)",
+   "options": [
+    "sprichst",
+    "sprechst",
+    "spricht",
+    "sprechen"
+   ],
+   "answer": "sprichst",
+   "explanation": "Sprechen changes its stem vowel in the du form: du sprichst."
+  },
+  {
+   "level": "A1",
+   "startDay": 29,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "What is the plural of das Haus?",
+   "options": [
+    "Häuser",
+    "Hause",
+    "Häusen",
+    "Hausen"
+   ],
+   "answer": "Häuser",
+   "explanation": "Haus takes an umlaut plus the plural ending er: die Häuser."
+  },
+  {
+   "level": "A1",
+   "startDay": 29,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'Ich sehe ___ Mann.' (I see the man)",
+   "options": [
+    "den",
+    "der",
+    "dem",
+    "des"
+   ],
+   "answer": "den",
+   "explanation": "Sehen takes the accusative, and masculine der becomes den there."
+  },
+  {
+   "level": "A1",
+   "startDay": 29,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'Ich habe ___ Zeit.' (I have no time)",
+   "options": [
+    "keine",
+    "nicht",
+    "nicht eine",
+    "kein"
+   ],
+   "answer": "keine",
+   "explanation": "A noun without an article is negated with kein, and Zeit is feminine, so keine."
+  },
+  {
+   "level": "A1",
+   "startDay": 42,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "'Das ist ___ Schwester.' (my sister)",
+   "options": [
+    "meine",
+    "mein",
+    "meinen",
+    "meiner"
+   ],
+   "answer": "meine",
+   "explanation": "Schwester is feminine and stands in the nominative, so the possessive is meine."
+  },
+  {
+   "level": "A1",
+   "startDay": 42,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "'Er ___ gut Klavier spielen.' (he can play the piano well)",
+   "options": [
+    "kann",
+    "kannst",
+    "können",
+    "könnt"
+   ],
+   "answer": "kann",
+   "explanation": "Modal verbs lose the ending in the er form and change the vowel: er kann."
+  },
+  {
+   "level": "A1",
+   "startDay": 42,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "Which sentence uses the separable verb aufstehen correctly?",
+   "options": [
+    "Ich stehe um sieben Uhr auf.",
+    "Ich aufstehe um sieben Uhr.",
+    "Ich auf stehe um sieben Uhr.",
+    "Ich stehe auf um sieben Uhr."
+   ],
+   "answer": "Ich stehe um sieben Uhr auf.",
+   "explanation": "The prefix splits off and goes to the very end of the main clause."
+  },
+  {
+   "level": "A1",
+   "startDay": 55,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "'Kannst du ___ helfen?' (help me)",
+   "options": [
+    "mir",
+    "mich",
+    "ich",
+    "mein"
+   ],
+   "answer": "mir",
+   "explanation": "Helfen takes the dative, and the dative of ich is mir."
+  },
+  {
+   "level": "A1",
+   "startDay": 55,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "'Wir treffen uns ___ Montag.' (on Monday)",
+   "options": [
+    "am",
+    "im",
+    "um",
+    "in"
+   ],
+   "answer": "am",
+   "explanation": "Days of the week take an, which contracts with dem to am."
+  },
+  {
+   "level": "A1",
+   "startDay": 55,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "How do Germans normally say the time 7:30?",
+   "options": [
+    "halb acht",
+    "halb sieben",
+    "sieben halb",
+    "dreißig nach sieben"
+   ],
+   "answer": "halb acht",
+   "explanation": "German counts towards the coming hour, so 7:30 is half of the eighth hour."
+  },
+  {
+   "level": "A2",
+   "startDay": 66,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "'Ich hänge das Bild an ___ Wand.' (movement to a place)",
+   "options": [
+    "die",
+    "der",
+    "dem",
+    "den"
+   ],
+   "answer": "die",
+   "explanation": "An is a two way preposition, and movement answering wohin takes the accusative."
+  },
+  {
+   "level": "A2",
+   "startDay": 66,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "'Wir freuen ___ auf den Urlaub.' (we are looking forward to the holiday)",
+   "options": [
+    "uns",
+    "sich",
+    "euch",
+    "mich"
+   ],
+   "answer": "uns",
+   "explanation": "The reflexive pronoun for wir is uns."
+  },
+  {
+   "level": "A2",
+   "startDay": 66,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "'Ich war heute ___ Arzt.' (at the doctor's)",
+   "options": [
+    "beim",
+    "zum",
+    "am",
+    "im"
+   ],
+   "answer": "beim",
+   "explanation": "Being at a person's place takes bei, which contracts with dem to beim."
+  },
+  {
+   "level": "A2",
+   "startDay": 82,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "Which sentence has the correct word order after dass?",
+   "options": [
+    "Ich weiß, dass er morgen kommt.",
+    "Ich weiß, dass er kommt morgen.",
+    "Ich weiß, dass kommt er morgen.",
+    "Ich weiß, dass morgen er kommt."
+   ],
+   "answer": "Ich weiß, dass er morgen kommt.",
+   "explanation": "In a subordinate clause the conjugated verb stands at the end."
+  },
+  {
+   "level": "A2",
+   "startDay": 82,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "'Ich frage mich, ___ sie schon da ist.' (whether)",
+   "options": [
+    "ob",
+    "wenn",
+    "dass",
+    "als"
+   ],
+   "answer": "ob",
+   "explanation": "An indirect yes or no question is introduced by ob."
+  },
+  {
+   "level": "A2",
+   "startDay": 82,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "'Es regnet, ___ bleiben wir zu Hause.' (therefore)",
+   "options": [
+    "deshalb",
+    "weil",
+    "obwohl",
+    "dass"
+   ],
+   "answer": "deshalb",
+   "explanation": "Deshalb states the consequence and keeps the verb in second position."
+  },
+  {
+   "level": "A2",
+   "startDay": 98,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "'Gestern ___ ich nach Hamburg gefahren.'",
+   "options": [
+    "bin",
+    "habe",
+    "war",
+    "hatte"
+   ],
+   "answer": "bin",
+   "explanation": "Verbs of movement such as fahren build the Perfekt with sein."
+  },
+  {
+   "level": "A2",
+   "startDay": 98,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "What is the past participle of sprechen?",
+   "options": [
+    "gesprochen",
+    "gesprecht",
+    "gespricht",
+    "gesprachen"
+   ],
+   "answer": "gesprochen",
+   "explanation": "Sprechen is a strong verb, and its participle is gesprochen."
+  },
+  {
+   "level": "A2",
+   "startDay": 98,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "'Als Kind ___ ich oft krank.' (spoken German prefers the simple past here)",
+   "options": [
+    "war",
+    "bin",
+    "gewesen",
+    "wäre"
+   ],
+   "answer": "war",
+   "explanation": "Sein is normally used in the Präteritum even in speech: ich war."
+  },
+  {
+   "level": "A2",
+   "startDay": 114,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "'Berlin ist ___ als Bonn.' (bigger)",
+   "options": [
+    "größer",
+    "größerer",
+    "mehr groß",
+    "am größten"
+   ],
+   "answer": "größer",
+   "explanation": "The comparative of groß adds an umlaut and the ending er."
+  },
+  {
+   "level": "A2",
+   "startDay": 114,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "'Im August ist es hier ___.' (hottest)",
+   "options": [
+    "am heißesten",
+    "der heißeste",
+    "am heiß",
+    "meist heiß"
+   ],
+   "answer": "am heißesten",
+   "explanation": "A superlative after the verb sein takes the form am plus the ending sten."
+  },
+  {
+   "level": "A2",
+   "startDay": 114,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "'Ich kaufe einen ___ Mantel.' (warm)",
+   "options": [
+    "warmen",
+    "warmer",
+    "warmes",
+    "warme"
+   ],
+   "answer": "warmen",
+   "explanation": "After einen a masculine accusative adjective takes the ending en."
+  },
+  {
+   "level": "A2",
+   "startDay": 130,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'___ Sie mir bitte helfen?' (polite request to a stranger)",
+   "options": [
+    "Könnten",
+    "Konnten",
+    "Könnte",
+    "Könntet"
+   ],
+   "answer": "Könnten",
+   "explanation": "The polite Konjunktiv II form used with Sie is könnten."
+  },
+  {
+   "level": "A2",
+   "startDay": 130,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'___ ich mehr Zeit hätte, würde ich mehr lesen.' (if)",
+   "options": [
+    "Wenn",
+    "Wann",
+    "Als",
+    "Ob"
+   ],
+   "answer": "Wenn",
+   "explanation": "A conditional clause is introduced by wenn, while wann only asks about time."
+  },
+  {
+   "level": "A2",
+   "startDay": 130,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "In a clothes shop you want to try a jacket on. What do you ask?",
+   "options": [
+    "Kann ich die Jacke anprobieren?",
+    "Kann ich die Jacke ausziehen?",
+    "Kann ich die Jacke abholen?",
+    "Kann ich die Jacke aufräumen?"
+   ],
+   "answer": "Kann ich die Jacke anprobieren?",
+   "explanation": "Anprobieren means to try on, while ausziehen means to take off."
+  },
+  {
+   "level": "B1",
+   "startDay": 146,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Das ist der Mann, ___ ich gestern getroffen habe.'",
+   "options": [
+    "den",
+    "der",
+    "dem",
+    "dessen"
+   ],
+   "answer": "den",
+   "explanation": "The relative pronoun is the object of treffen, so the masculine accusative den is used."
+  },
+  {
+   "level": "B1",
+   "startDay": 146,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Das ist das Auto ___ Bruders.' (my brother's car)",
+   "options": [
+    "meines",
+    "meinem",
+    "meinen",
+    "mein"
+   ],
+   "answer": "meines",
+   "explanation": "Possession is expressed with the genitive, and masculine takes meines."
+  },
+  {
+   "level": "B1",
+   "startDay": 146,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Ich warte ___ den Bus.' (I am waiting for the bus)",
+   "options": [
+    "auf",
+    "für",
+    "an",
+    "nach"
+   ],
+   "answer": "auf",
+   "explanation": "Warten has the fixed preposition auf with the accusative."
+  },
+  {
+   "level": "B1",
+   "startDay": 180,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'Ich habe den ___ gefragt.' (der Student)",
+   "options": [
+    "Studenten",
+    "Student",
+    "Studente",
+    "Studentes"
+   ],
+   "answer": "Studenten",
+   "explanation": "Student belongs to the n declension and adds en in every case except the nominative singular."
+  },
+  {
+   "level": "B1",
+   "startDay": 180,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'___ interessierst du dich?' (what are you interested in)",
+   "options": [
+    "Wofür",
+    "Wovon",
+    "Womit",
+    "Worauf"
+   ],
+   "answer": "Wofür",
+   "explanation": "Sich interessieren takes für, so the question word compound is wofür."
+  },
+  {
+   "level": "B1",
+   "startDay": 180,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'Die Frau, ___ ich geholfen habe, ist Ärztin.'",
+   "options": [
+    "der",
+    "die",
+    "den",
+    "deren"
+   ],
+   "answer": "der",
+   "explanation": "Helfen takes the dative, and the feminine dative relative pronoun is der."
+  },
+  {
+   "level": "B1",
+   "startDay": 215,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'Das Haus ___ 1920 gebaut.' (was built)",
+   "options": [
+    "wurde",
+    "war",
+    "hatte",
+    "ist"
+   ],
+   "answer": "wurde",
+   "explanation": "The passive in the past is formed with wurde plus the past participle."
+  },
+  {
+   "level": "B1",
+   "startDay": 215,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'Als wir ankamen, ___ der Film schon begonnen.'",
+   "options": [
+    "hatte",
+    "hat",
+    "war",
+    "wurde"
+   ],
+   "answer": "hatte",
+   "explanation": "An event before another past event takes the Plusquamperfekt with hatte."
+  },
+  {
+   "level": "B1",
+   "startDay": 215,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'Es regnete stark. ___ sind wir spazieren gegangen.'",
+   "options": [
+    "Trotzdem",
+    "Obwohl",
+    "Weil",
+    "Damit"
+   ],
+   "answer": "Trotzdem",
+   "explanation": "Trotzdem starts a main clause, while obwohl would need a subordinate clause."
+  },
+  {
+   "level": "B1",
+   "startDay": 250,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "'Wenn ich früher losgefahren wäre, ___ ich den Zug erreicht.'",
+   "options": [
+    "hätte",
+    "hatte",
+    "würde",
+    "wäre"
+   ],
+   "answer": "hätte",
+   "explanation": "Erreichen takes haben, so the past Konjunktiv II is hätte plus the participle."
+  },
+  {
+   "level": "B1",
+   "startDay": 250,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "'Ich ___ mein Auto reparieren.' (I am having my car repaired)",
+   "options": [
+    "lasse",
+    "mache",
+    "gebe",
+    "werde"
+   ],
+   "answer": "lasse",
+   "explanation": "Lassen plus an infinitive expresses having something done by someone else."
+  },
+  {
+   "level": "B1",
+   "startDay": 250,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "'Ich freue mich schon ___, dich zu sehen.'",
+   "options": [
+    "darauf",
+    "dafür",
+    "davon",
+    "damit"
+   ],
+   "answer": "darauf",
+   "explanation": "Sich freuen auf points forward to the clause, so the compound is darauf."
+  }
+ ]
+}
