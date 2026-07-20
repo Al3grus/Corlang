@@ -42,10 +42,55 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
   consumes 2500 words. Deck order IS introduction order, so top-up packs are APPENDED, never
   inserted. Faster paces (15 and 20 are offered) exhaust any finite deck sooner; that is expected,
   and the lesson then says so and turns to review only. Do not try to size a deck for 20 a lesson.
-- **[AUTO] A course ships at least 250 lessons.** CEFR guided-hours estimates put B2 at roughly
-  550 to 600 hours; a ~100-lesson course cannot honestly carry a learner to its exam (French and
-  Portuguese shipped at 108 and 105 before this floor). Suggested shape for a B2 target:
-  A1 45, A2 55, B1 70, B2 80. A separate onramp level (A0) sits on top of that.
+- **[AUTO] A course ships at least 250 lessons, allocated by level weight, to the level the law
+  actually requires.** The old form of this rule was a flat 250-lesson floor with a suggested
+  shape of A1 45, A2 55, B1 70, B2 80. That floor did its job (French and Portuguese had shipped
+  at 108 and 105 lessons) but it is a VOLUME rule wearing the costume of a quality rule: two
+  courses can both satisfy it while covering wildly different ground, and the suggested shape was
+  backwards.
+
+  **Levels are not equal in size.** Cumulative guided-learning hours run about 60 to 80 for A1,
+  160 to 200 for A2, 350 to 400 for B1 and 500 to 600 for B2. As increments that is roughly 70,
+  110, 195 and 175 hours, so **B1 alone costs about 2.8x what A1 costs**. Every Corlang course
+  built before this rule front-loaded the cheap levels and thinned out exactly where the hours
+  concentrate.
+
+  **Allocate by weight, A1 1.0 : A2 1.6 : B1 2.8 : B2 2.5**, then scale the total by how far the
+  language sits from English (FSI groups French, Portuguese, Spanish and Italian as closest;
+  German a tier out for its cases and word order; Croatian further still). For a B1 target that
+  gives roughly:
+
+  | | A0 | A1 | A2 | B1 |
+  |---|---|---|---|---|
+  | Closest group (fr, pt, es, it) | 0 to 15 | 45 | 70 | 125 |
+  | German | 15 | 45 | 70 | 125 |
+  | Croatian | 15 | 50 | 80 | 140 |
+
+- **[AUTO] The target level is the one the country's law requires, and never higher.** Corlang
+  exists for exam preparation with legal stakes, so the finish line is set by the requirement,
+  not by symmetry between courses. Verified live 2026-07-20, and worth re-verifying, since two of
+  these changed recently:
+
+  | Country | Requirement for citizenship | Corlang target |
+  |---|---|---|
+  | Germany | B1 (§ 10 StAG, and the settlement permit) | B1 |
+  | Italy | B1 since Dec 2018 (CILS or CELI B1 cittadinanza) | B1 |
+  | Croatia | B1 (commission exam, 60% to pass) | B1 |
+  | Portugal | **A2** (CIPLE) | B1, with the shipped B2 kept as legacy |
+  | Spain | **A2** (DELE A2) plus the CCSE civics test | B1 |
+  | France | **B2 since 1 Jan 2026**, raised from B1 | B2 |
+
+  France is the only language where B2 is load-bearing (law 2024-42, decree 2025-648, applying to
+  applications filed from 2026). Portugal and Spain require only A2, so B2 work there is beyond
+  the driver that justifies the course; A2 is too thin to be a product, so B1 is the floor.
+  **B2 is not a target for any other language.** Real B2 comes from living in the language, not
+  from an app, and a course that claims it without the hours behind it is the over-claim this
+  standard exists to prevent.
+
+- **Civics exams are out of scope.** France added a civic exam in 2026 and Spain has long had the
+  CCSE. Both are sat in the target language but test knowledge of a country's institutions,
+  history and culture, not language ability. Corlang teaches the language and says so; it does not
+  claim to prepare the civics component.
 - **Every CEFR level (A1 and up) ends in the three journey checkpoints**: a level quiz
   (`quizzes.json`, one per level), an exam readiness milestone (`exam` object on the level in
   `levels.json`: name, pass rule, section list, can-do skills), and a mock exam in the official
