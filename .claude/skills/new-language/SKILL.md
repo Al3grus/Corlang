@@ -37,6 +37,12 @@ result must satisfy. Tools live in `tools/course/`.
    `knownSourceKeys`; a shipped fix removes its entry from any debt map.
 9. Follow every standing rule in the Gold Book's final section (dashes, the `hr` key, no
    external references, frozen resource names, difficulty bands).
+10. **The error loop.** Any defect found, in any phase, in any language, follows the lifecycle
+    in `docs/error-registry.md` in the same commit as the fix: register → scope → sweep every
+    language → automate → encode prevention. Before authoring a new language, read the
+    registry: every V-row is a candidate check for its `check_<code>.py`, every P-row a
+    process trap not to repeat. Before declaring an audit done, drain or explicitly defer
+    every entry in the registry's Open sweeps section.
 
 ## Current state (update this section whenever it changes)
 
