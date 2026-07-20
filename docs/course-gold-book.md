@@ -152,8 +152,11 @@ Three design rules, each paid for:
 - Validate every batch the moment it lands with `check_<code>.py`. Fix small defects in place
   (a two-token REORDER, an e' for è); the checkers catch them one at a time when they are
   cheap.
-- **Spiral review rule**: from Italian's B1 onward, each EXERCISE should include at least one
-  item exercising material from five or more lessons earlier, so nothing decays unpracticed.
+- **Spiral review rule**: each EXERCISE should include at least one item exercising material
+  from five or more lessons earlier, so nothing decays unpracticed. State this to agents as an
+  INTENT and tell them to vary the surface wording: given identical phrasing in every prompt,
+  parallel agents produced "with one review point from an earlier lesson" in 17 Italian
+  lessons, so the rule that fixes decay created boilerplate instead (registry P10).
   (Linear courses front-load forgetting; the SRS covers words but nothing recycled grammar.)
 - Real-world procedure claims (sick-leave rules, holiday minima, licence exchange) get
   LISTED as they are authored, for the Phase 8 fact audit. Prefer describing how a process
@@ -193,6 +196,12 @@ shipped or nearly-shipped bug.
 
 This phase exists because green structural gates measure less than they seem to. Run it on the
 assembled build BEFORE integration, and on shipped languages as an audit.
+
+**Order matters: assemble FIRST, audit LAST.** The assembler regenerates plan files from the
+source batches, so any fix made to an assembled build is destroyed by the next assembly. Italian
+went from 0 problems back to 48 that way, on a reassembly whose only purpose was adding
+vocabulary. Re-run the proctor after ANY assembly, and keep the audit fix script so it can be
+re-applied if the order has to change (registry P11).
 
 **8a. Mechanical sweep:** `python tools/course/proctor.py <build-dir>` catches what per-file
 checkers cannot: a day's objective restated verbatim in its drills or intros (the Portuguese

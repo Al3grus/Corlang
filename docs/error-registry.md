@@ -103,6 +103,8 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | P6 | Content-only changes silently skipping gates (test task doesn't track assets) | fr/pt expansion | `--rerun-tasks` always, encoded in Gold Book Phase 8f/9 |
 | P7 | Retiring lessons by deleting authored files | de rebalance (avoided) | title-based retire lists with reasons, loud-fail on mismatch |
 | P8 | Agent self-validation accepted as verification | it vocab (agent's "validated" file had 3 article misses) | every delivered batch independently re-verified; Gold Book Phase 4/5 |
+| P11 | Re-running the assembler AFTER auditing the assembled build silently discards every audit fix, because plan files are regenerated from the source batches (Italian went 0 problems back to 48 on a reassembly to add vocabulary) | 2026-07-20, it | audit LAST, after the final assembly; if a reassembly is unavoidable, keep the fix script and re-apply it, and always re-run the proctor after ANY assembly |
+| P10 | An authoring RULE worded identically in every agent prompt becomes boilerplate in the output (the spiral-review rule produced "with one review point from an earlier lesson" in 17 Italian lessons) | 2026-07-20, it proctor | state the rule as an INTENT plus an explicit instruction to vary the surface wording; proctor catches the residue |
 | P9 | Claiming feature gaps without auditing the implementation (TTS listening and AI writing feedback both existed while being reported as missing) | 2026-07-20 roadmap discussion | audit the code BEFORE writing any gap analysis; a roadmap claim about the app is a claim about code and gets verified like one |
 
 ## V. Checker bugs (the checks themselves are code and fail)
