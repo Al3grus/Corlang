@@ -954,7 +954,16 @@ class ContentValidationTest {
      * ground. Guided-hours research weights the levels A1 1.0 : A2 1.6 : B1 2.8, so B1 alone
      * costs about 2.8x what A1 costs, and every course built before this rule was top-light.
      */
-    private val levelFloor = mapOf("A1" to 45, "A2" to 70, "B1" to 125, "B2" to 110)
+    private val levelFloor = mapOf(
+        // Baseline is the closest-to-English group (es, it, pt). Harder languages scale up by
+        // the square root of their FSI hour ratio, rounded to 5: see the table in the standard.
+        "es" to mapOf("A1" to 45, "A2" to 70, "B1" to 125),
+        "it" to mapOf("A1" to 45, "A2" to 70, "B1" to 125),
+        "pt" to mapOf("A1" to 45, "A2" to 70, "B1" to 125),
+        "de" to mapOf("A1" to 50, "A2" to 80, "B1" to 140),
+        "fr" to mapOf("A1" to 50, "A2" to 80, "B1" to 140, "B2" to 125),
+        "hr" to mapOf("A1" to 60, "A2" to 95, "B1" to 170)
+    )
 
     /**
      * Courses authored before the weighted rule and not yet rebalanced. Each entry is a DEBT,
@@ -978,9 +987,15 @@ class ContentValidationTest {
                 println("SKIP $lang, known weighted-rule debt: $debt")
                 return@forEach
             }
+            val floors = levelFloor[lang] ?: emptyMap()
+            assertTrue(
+                "$lang has no row in levelFloor, add it to the table in " +
+                    "docs/language-standard.md before shipping the language",
+                floors.isNotEmpty()
+            )
             val byLevel = loadPlan(lang).days.groupingBy { it.level }.eachCount()
             byLevel.forEach { (level, n) ->
-                val floor = levelFloor[level] ?: return@forEach   // A0 onramp has no floor
+                val floor = floors[level] ?: return@forEach   // A0 onramp carries no floor
                 assertTrue(
                     "$lang $level has $n lessons, the weighted floor is $floor " +
                         "(see docs/language-standard.md)",
