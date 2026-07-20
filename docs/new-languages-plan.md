@@ -123,9 +123,47 @@ catch, build, release, push. **The language goes live in this phase and only thi
 | L.2 vocabulary deck | done, 2524 words | | |
 | L.3 A0 and A1 lessons | done, 70 lessons | | |
 | L.4 A2 lessons | done, 85 lessons | | |
-| L.5 B1 lessons | in progress | | |
-| L.6 assessment set | | | |
+| L.5 B1 lessons | done, 95 lessons | | |
+| L.6 assessment set | next | | |
 | L.7 integrate and ship | | | |
+
+**German stands at 250 lessons and 2524 words, fully assembled** in `de-build/` as `plan/`
+(phase0-a0 15, phase1-a1 55, phase2-a2 85, phase3-b1 95, days contiguous 1 to 250) and
+`vocab/` (18 packs in ladder order), plus the five identity files. Everything passes
+`check_de.py`. What remains for German is L.6 and L.7 only.
+
+### What L.6 still needs, with the decisions already made
+
+`quizzes.json`: 4 quizzes keyed `levelId` A0, A1, A2, B1, 8 to 10 questions each, same
+question shape as the lesson EXERCISE types.
+
+`exams.json`: a JSON ARRAY (not an object) of 3 mock exams, each with `id`, `levelId`, `title`,
+`description`, `passRule`, `sources`, `sections`. Sections carry `id`, `kind`
+(READING/LISTENING/WRITING/SPEAKING), `title`, `instructions`, `passPercent`, and then either
+`passages` plus `questions` for the scored skills or `prompts` (with `modelAnswer` and `rubric`)
+for writing and speaking.
+
+**The `passPercent` values are load-bearing and differ per level, so get them right:**
+
+- A1 and A2 mocks: `passPercent: null` on every section. These exams are NOT modular, and
+  `ExamRules.goetheGlobalPassed` grades the four parts together at 60% overall.
+- B1 mock: `passPercent: 60` on every section, because the Goethe B1 IS modular and
+  `ExamRules.examPassed` requires every section to have a passing latest attempt.
+
+One thing to verify before authoring the B1 mock: `sectionPassed` returns false when `total`
+is 0, and WRITING and SPEAKING sections carry `prompts` rather than scored `questions`. Check
+how a self-assessed section records its verdict in `ExamScreen`, because if such a section
+reaches `sectionPassed` with no questions, a `passPercent` of 60 would make the B1 mock
+impossible to pass. The Portuguese mocks never hit this because CAPLE averages instead.
+
+`placement.json`: `title`, `intro`, `questions`, each question carrying `level`, `startDay`,
+`type`, `difficulty`, `prompt`, `options`, `answer`, `explanation`. The gate requires exactly
+three items per band and the `level` to match the level of the plan day at `startDay`. Planned
+German bands, 14 bands and 42 questions:
+
+| startDay | 1 | 16 | 30 | 44 | 58 | 71 | 88 | 105 | 122 | 139 | 156 | 180 | 205 | 228 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| level | A0 | A1 | A1 | A1 | A1 | A2 | A2 | A2 | A2 | A2 | B1 | B1 | B1 | B1 |
 
 Two tools were added to the scratchpad during the German build and are worth reusing for
 Italian and Spanish:
