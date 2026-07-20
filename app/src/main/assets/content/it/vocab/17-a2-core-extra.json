@@ -1,0 +1,1665 @@
+{
+ "packs": [
+  {
+   "id": "17-a2-core-extra",
+   "title": "A2: parole fondamentali",
+   "level": "A2",
+   "sources": [
+    "cils-a2",
+    "freq-it"
+   ],
+   "words": [
+    {
+     "id": "il popolo",
+     "hr": "il popolo",
+     "en": "people, nation",
+     "pos": "n. m.",
+     "note": "pl. i popoli",
+     "example": {
+      "target": "Il popolo è sceso in piazza per tre giorni di fila.",
+      "gloss": "The people took to the streets for three days running."
+     }
+    },
+    {
+     "id": "il soldato",
+     "hr": "il soldato",
+     "en": "soldier",
+     "pos": "n. m.",
+     "note": "pl. i soldati",
+     "example": {
+      "target": "Suo nonno era un soldato semplice e non ne parlava mai.",
+      "gloss": "His grandfather was an ordinary soldier and never talked about it."
+     }
+    },
+    {
+     "id": "il secolo",
+     "hr": "il secolo",
+     "en": "century",
+     "pos": "n. m.",
+     "note": "pl. i secoli",
+     "example": {
+      "target": "Questa chiesa è stata costruita nel quindicesimo secolo.",
+      "gloss": "This church was built in the fifteenth century."
+     }
+    },
+    {
+     "id": "lo spazio",
+     "hr": "lo spazio",
+     "en": "space, room",
+     "pos": "n. m.",
+     "note": "pl. gli spazi; lo before s plus consonant",
+     "example": {
+      "target": "Nell'armadio non c'è più spazio per i tuoi vestiti.",
+      "gloss": "There is no more room in the wardrobe for your clothes."
+     }
+    },
+    {
+     "id": "il lato",
+     "hr": "il lato",
+     "en": "side",
+     "pos": "n. m.",
+     "note": "pl. i lati; d'altro lato means on the other hand",
+     "example": {
+      "target": "Il lato sinistro della macchina è tutto graffiato.",
+      "gloss": "The left side of the car is all scratched."
+     }
+    },
+    {
+     "id": "il fondo",
+     "hr": "il fondo",
+     "en": "bottom, background",
+     "pos": "n. m.",
+     "note": "pl. i fondi; in fondo means at the bottom or after all",
+     "example": {
+      "target": "La chiave era in fondo alla borsa, sotto tutto il resto.",
+      "gloss": "The key was at the bottom of the bag, under everything else."
+     }
+    },
+    {
+     "id": "la distanza",
+     "hr": "la distanza",
+     "en": "distance",
+     "pos": "n. f.",
+     "note": "pl. le distanze",
+     "example": {
+      "target": "La distanza tra le due città è di ottanta chilometri.",
+      "gloss": "The distance between the two cities is eighty kilometres."
+     }
+    },
+    {
+     "id": "la direzione",
+     "hr": "la direzione",
+     "en": "direction; management",
+     "pos": "n. f.",
+     "note": "pl. le direzioni",
+     "example": {
+      "target": "Abbiamo preso la direzione sbagliata al bivio.",
+      "gloss": "We took the wrong direction at the fork."
+     }
+    },
+    {
+     "id": "la quantità",
+     "hr": "la quantità",
+     "en": "quantity, amount",
+     "pos": "n. f.",
+     "note": "invariable in the plural: le quantità",
+     "example": {
+      "target": "Serve una quantità enorme di acqua per fare un chilo di carne.",
+      "gloss": "It takes an enormous amount of water to produce a kilo of meat."
+     }
+    },
+    {
+     "id": "il totale",
+     "hr": "il totale",
+     "en": "total",
+     "pos": "n. m.",
+     "note": "pl. i totali; in totale means in all",
+     "example": {
+      "target": "Il totale della spesa è di quarantadue euro.",
+      "gloss": "The total for the shopping is forty-two euros."
+     }
+    },
+    {
+     "id": "la serie",
+     "hr": "la serie",
+     "en": "series",
+     "pos": "n. f.",
+     "note": "invariable in the plural: le serie",
+     "example": {
+      "target": "Ha fatto una serie di errori che si potevano evitare.",
+      "gloss": "He made a series of mistakes that could have been avoided."
+     }
+    },
+    {
+     "id": "la maniera",
+     "hr": "la maniera",
+     "en": "manner, way",
+     "pos": "n. f.",
+     "note": "pl. le maniere; in maniera che means so that",
+     "example": {
+      "target": "Lo ha detto in una maniera che non ammetteva risposta.",
+      "gloss": "He said it in a way that left no room for an answer."
+     }
+    },
+    {
+     "id": "il metodo",
+     "hr": "il metodo",
+     "en": "method",
+     "pos": "n. m.",
+     "note": "pl. i metodi",
+     "example": {
+      "target": "Il suo metodo di studio è lento ma alla fine funziona.",
+      "gloss": "His study method is slow but in the end it works."
+     }
+    },
+    {
+     "id": "il sistema",
+     "hr": "il sistema",
+     "en": "system",
+     "pos": "n. m.",
+     "note": "pl. i sistemi; masculine despite the ending in -a",
+     "example": {
+      "target": "Il sistema sanitario qui è gratuito per tutti i residenti.",
+      "gloss": "The health system here is free for all residents."
+     }
+    },
+    {
+     "id": "la norma",
+     "hr": "la norma",
+     "en": "rule, norm",
+     "pos": "n. f.",
+     "note": "pl. le norme; di norma means as a rule",
+     "example": {
+      "target": "Di norma il negozio chiude alle otto, oggi ha chiuso prima.",
+      "gloss": "As a rule the shop closes at eight, today it closed earlier."
+     }
+    },
+    {
+     "id": "il genere",
+     "hr": "il genere",
+     "en": "kind, genre; gender",
+     "pos": "n. m.",
+     "note": "pl. i generi; in genere means generally",
+     "example": {
+      "target": "Che genere di film ti piace guardare la sera?",
+      "gloss": "What kind of films do you like to watch in the evening?"
+     }
+    },
+    {
+     "id": "lo sforzo",
+     "hr": "lo sforzo",
+     "en": "effort",
+     "pos": "n. m.",
+     "note": "pl. gli sforzi; lo before s plus consonant; fare uno sforzo",
+     "example": {
+      "target": "Con un piccolo sforzo in più avresti passato l'esame.",
+      "gloss": "With a little more effort you would have passed the exam."
+     }
+    },
+    {
+     "id": "la fatica",
+     "hr": "la fatica",
+     "en": "effort, tiredness",
+     "pos": "n. f.",
+     "note": "pl. le fatiche; fare fatica a means to struggle to",
+     "example": {
+      "target": "Faccio fatica a svegliarmi presto d'inverno.",
+      "gloss": "I struggle to wake up early in winter."
+     }
+    },
+    {
+     "id": "l'impegno",
+     "hr": "l'impegno",
+     "en": "commitment",
+     "pos": "n. m.",
+     "note": "pl. gli impegni",
+     "example": {
+      "target": "Ho un impegno giovedì sera, non posso venire a cena.",
+      "gloss": "I have a commitment on Thursday evening, I cannot come to dinner."
+     }
+    },
+    {
+     "id": "la volontà",
+     "hr": "la volontà",
+     "en": "will",
+     "pos": "n. f.",
+     "note": "invariable in the plural: le volontà",
+     "example": {
+      "target": "Ha la volontà di cambiare vita ma non sa da dove cominciare.",
+      "gloss": "He has the will to change his life but does not know where to start."
+     }
+    },
+    {
+     "id": "il desiderio",
+     "hr": "il desiderio",
+     "en": "wish, desire",
+     "pos": "n. m.",
+     "note": "pl. i desideri",
+     "example": {
+      "target": "Il suo unico desiderio era rivedere il mare prima di morire.",
+      "gloss": "His only wish was to see the sea again before dying."
+     }
+    },
+    {
+     "id": "l'odio",
+     "hr": "l'odio",
+     "en": "hatred",
+     "pos": "n. m.",
+     "note": "pl. gli odi; the verb is odiare",
+     "example": {
+      "target": "Tra i due vicini c'è un odio vecchio di vent'anni.",
+      "gloss": "Between the two neighbours there is a hatred twenty years old."
+     }
+    },
+    {
+     "id": "il coraggio",
+     "hr": "il coraggio",
+     "en": "courage",
+     "pos": "n. m.",
+     "note": "farsi coraggio means to pluck up courage",
+     "example": {
+      "target": "Non ho avuto il coraggio di dirle come stavano le cose.",
+      "gloss": "I did not have the courage to tell her how things stood."
+     }
+    },
+    {
+     "id": "il sentimento",
+     "hr": "il sentimento",
+     "en": "feeling",
+     "pos": "n. m.",
+     "note": "pl. i sentimenti",
+     "example": {
+      "target": "Non è capace di nascondere i suoi sentimenti nemmeno al lavoro.",
+      "gloss": "He is incapable of hiding his feelings even at work."
+     }
+    },
+    {
+     "id": "l'abitudine",
+     "hr": "l'abitudine",
+     "en": "habit",
+     "pos": "n. f.",
+     "note": "feminine, pl. le abitudini; avere l'abitudine di",
+     "example": {
+      "target": "Ho l'abitudine di leggere mezz'ora prima di dormire.",
+      "gloss": "I am in the habit of reading for half an hour before sleeping."
+     }
+    },
+    {
+     "id": "la capacità",
+     "hr": "la capacità",
+     "en": "ability, capacity",
+     "pos": "n. f.",
+     "note": "invariable in the plural: le capacità",
+     "example": {
+      "target": "Ha una grande capacità di ascoltare senza interrompere.",
+      "gloss": "She has a great ability to listen without interrupting."
+     }
+    },
+    {
+     "id": "la conoscenza",
+     "hr": "la conoscenza",
+     "en": "knowledge; acquaintance",
+     "pos": "n. f.",
+     "note": "pl. le conoscenze; perdere conoscenza means to pass out",
+     "example": {
+      "target": "La sua conoscenza dell'inglese basta per lavorare all'estero.",
+      "gloss": "His knowledge of English is enough to work abroad."
+     }
+    },
+    {
+     "id": "l'arte",
+     "hr": "l'arte",
+     "en": "art",
+     "pos": "n. f.",
+     "note": "feminine, pl. le arti",
+     "example": {
+      "target": "Ha studiato storia dell'arte per cinque anni e adesso fa il cuoco.",
+      "gloss": "He studied art history for five years and now he is a cook."
+     }
+    },
+    {
+     "id": "la cultura",
+     "hr": "la cultura",
+     "en": "culture",
+     "pos": "n. f.",
+     "note": "pl. le culture",
+     "example": {
+      "target": "Vivere all'estero ti obbliga a capire un'altra cultura.",
+      "gloss": "Living abroad forces you to understand another culture."
+     }
+    },
+    {
+     "id": "il discorso",
+     "hr": "il discorso",
+     "en": "speech; talk",
+     "pos": "n. m.",
+     "note": "pl. i discorsi; cambiare discorso means to change the subject",
+     "example": {
+      "target": "Il suo discorso è durato quaranta minuti e nessuno si è annoiato.",
+      "gloss": "His speech lasted forty minutes and nobody got bored."
+     }
+    },
+    {
+     "id": "il segno",
+     "hr": "il segno",
+     "en": "sign, mark",
+     "pos": "n. m.",
+     "note": "pl. i segni",
+     "example": {
+      "target": "La caduta gli ha lasciato un segno sul ginocchio.",
+      "gloss": "The fall left a mark on his knee."
+     }
+    },
+    {
+     "id": "la figura",
+     "hr": "la figura",
+     "en": "figure; impression",
+     "pos": "n. f.",
+     "note": "pl. le figure; fare brutta figura means to look bad",
+     "example": {
+      "target": "Ho fatto una brutta figura arrivando con un'ora di ritardo.",
+      "gloss": "I made a bad impression by turning up an hour late."
+     }
+    },
+    {
+     "id": "il nemico",
+     "hr": "il nemico",
+     "en": "enemy",
+     "pos": "n. m.",
+     "note": "pl. i nemici; f. la nemica",
+     "example": {
+      "target": "Il fumo è il peggior nemico dei polmoni.",
+      "gloss": "Smoking is the worst enemy of the lungs."
+     }
+    },
+    {
+     "id": "il motore",
+     "hr": "il motore",
+     "en": "engine",
+     "pos": "n. m.",
+     "note": "pl. i motori",
+     "example": {
+      "target": "Il motore fa uno strano rumore da ieri sera.",
+      "gloss": "The engine has been making a strange noise since last night."
+     }
+    },
+    {
+     "id": "la ruota",
+     "hr": "la ruota",
+     "en": "wheel",
+     "pos": "n. f.",
+     "note": "pl. le ruote",
+     "example": {
+      "target": "Ho bucato una ruota sulla strada per il lavoro.",
+      "gloss": "I got a flat tyre on the way to work."
+     }
+    },
+    {
+     "id": "il buco",
+     "hr": "il buco",
+     "en": "hole",
+     "pos": "n. m.",
+     "note": "pl. i buchi",
+     "example": {
+      "target": "Ho un buco nel calzino destro e le scarpe nuove.",
+      "gloss": "I have a hole in my right sock and new shoes."
+     }
+    },
+    {
+     "id": "la superficie",
+     "hr": "la superficie",
+     "en": "surface",
+     "pos": "n. f.",
+     "note": "pl. le superfici",
+     "example": {
+      "target": "Pulisci bene la superficie prima di incollare le due parti.",
+      "gloss": "Clean the surface well before gluing the two parts."
+     }
+    },
+    {
+     "id": "la linea",
+     "hr": "la linea",
+     "en": "line",
+     "pos": "n. f.",
+     "note": "pl. le linee; in linea di massima means broadly speaking",
+     "example": {
+      "target": "Firma sulla linea in fondo alla pagina.",
+      "gloss": "Sign on the line at the bottom of the page."
+     }
+    },
+    {
+     "id": "la fila",
+     "hr": "la fila",
+     "en": "queue, row",
+     "pos": "n. f.",
+     "note": "pl. le file; fare la fila means to queue",
+     "example": {
+      "target": "C'era una fila lunghissima alla posta e ho rinunciato.",
+      "gloss": "There was a very long queue at the post office and I gave up."
+     }
+    },
+    {
+     "id": "la lunghezza",
+     "hr": "la lunghezza",
+     "en": "length",
+     "pos": "n. f.",
+     "note": "pl. le lunghezze",
+     "example": {
+      "target": "La lunghezza del tavolo è di due metri esatti.",
+      "gloss": "The length of the table is exactly two metres."
+     }
+    },
+    {
+     "id": "la profondità",
+     "hr": "la profondità",
+     "en": "depth",
+     "pos": "n. f.",
+     "note": "invariable in the plural: le profondità",
+     "example": {
+      "target": "Il lago raggiunge una profondità di trenta metri al centro.",
+      "gloss": "The lake reaches a depth of thirty metres in the middle."
+     }
+    },
+    {
+     "id": "il volume",
+     "hr": "il volume",
+     "en": "volume",
+     "pos": "n. m.",
+     "note": "pl. i volumi",
+     "example": {
+      "target": "Abbassa il volume, i vicini dormono già.",
+      "gloss": "Turn the volume down, the neighbours are already asleep."
+     }
+    },
+    {
+     "id": "la somma",
+     "hr": "la somma",
+     "en": "sum, amount",
+     "pos": "n. f.",
+     "note": "pl. le somme; tirare le somme means to sum up",
+     "example": {
+      "target": "Hanno speso una somma enorme per il matrimonio.",
+      "gloss": "They spent an enormous sum on the wedding."
+     }
+    },
+    {
+     "id": "la media",
+     "hr": "la media",
+     "en": "average",
+     "pos": "n. f.",
+     "note": "pl. le medie; in media means on average",
+     "example": {
+      "target": "In media dormo sei ore per notte e non basta.",
+      "gloss": "On average I sleep six hours a night and it is not enough."
+     }
+    },
+    {
+     "id": "il minimo",
+     "hr": "il minimo",
+     "en": "minimum, the least",
+     "pos": "n. m.",
+     "note": "pl. i minimi; also an adjective, minimo/minima",
+     "example": {
+      "target": "Ha fatto il minimo indispensabile per non essere licenziato.",
+      "gloss": "He did the bare minimum not to get fired."
+     }
+    },
+    {
+     "id": "il massimo",
+     "hr": "il massimo",
+     "en": "maximum, the most",
+     "pos": "n. m.",
+     "note": "pl. i massimi; al massimo means at most",
+     "example": {
+      "target": "Questo è il massimo che posso offrirti, non ho altro.",
+      "gloss": "This is the most I can offer you, I have nothing else."
+     }
+    },
+    {
+     "id": "il milione",
+     "hr": "il milione",
+     "en": "million",
+     "pos": "num.",
+     "note": "pl. i milioni; takes di before a noun: un milione di persone",
+     "example": {
+      "target": "La città ha superato il milione di abitanti dieci anni fa.",
+      "gloss": "The city passed a million inhabitants ten years ago."
+     }
+    },
+    {
+     "id": "il centinaio",
+     "hr": "il centinaio",
+     "en": "hundred (about)",
+     "pos": "n. m.",
+     "note": "irregular plural: le centinaia, feminine",
+     "example": {
+      "target": "Alla manifestazione c'era un centinaio di persone.",
+      "gloss": "At the demonstration there were about a hundred people."
+     }
+    },
+    {
+     "id": "il migliaio",
+     "hr": "il migliaio",
+     "en": "thousand (about)",
+     "pos": "n. m.",
+     "note": "irregular plural: le migliaia, feminine",
+     "example": {
+      "target": "Ha speso un migliaio di euro per riparare il tetto.",
+      "gloss": "He spent about a thousand euros to repair the roof."
+     }
+    },
+    {
+     "id": "il sapore",
+     "hr": "il sapore",
+     "en": "taste, flavour",
+     "pos": "n. m.",
+     "note": "pl. i sapori",
+     "example": {
+      "target": "Questa zuppa non ha nessun sapore, manca il sale.",
+      "gloss": "This soup has no flavour at all, it needs salt."
+     }
+    },
+    {
+     "id": "l'odore",
+     "hr": "l'odore",
+     "en": "smell",
+     "pos": "n. m.",
+     "note": "pl. gli odori",
+     "example": {
+      "target": "In casa c'era odore di pane appena fatto.",
+      "gloss": "The house smelled of freshly baked bread."
+     }
+    },
+    {
+     "id": "il profumo",
+     "hr": "il profumo",
+     "en": "perfume, scent",
+     "pos": "n. m.",
+     "note": "pl. i profumi",
+     "example": {
+      "target": "Il profumo del caffè mi sveglia meglio della sveglia.",
+      "gloss": "The smell of coffee wakes me up better than the alarm."
+     }
+    },
+    {
+     "id": "la fame",
+     "hr": "la fame",
+     "en": "hunger",
+     "pos": "n. f.",
+     "note": "no plural in normal use; avere fame means to be hungry",
+     "example": {
+      "target": "Ho una fame terribile, ho saltato il pranzo per una riunione.",
+      "gloss": "I am terribly hungry, I skipped lunch for a meeting."
+     }
+    },
+    {
+     "id": "la sete",
+     "hr": "la sete",
+     "en": "thirst",
+     "pos": "n. f.",
+     "note": "no plural in normal use; avere sete means to be thirsty",
+     "example": {
+      "target": "Dopo la corsa avevo una sete che non passava con l'acqua.",
+      "gloss": "After the run I had a thirst that water would not quench."
+     }
+    },
+    {
+     "id": "la vista",
+     "hr": "la vista",
+     "en": "sight; view",
+     "pos": "n. f.",
+     "note": "pl. le viste; a prima vista means at first sight",
+     "example": {
+      "target": "Dalla camera si ha una vista che arriva fino alle montagne.",
+      "gloss": "From the bedroom there is a view stretching to the mountains."
+     }
+    },
+    {
+     "id": "il pasto",
+     "hr": "il pasto",
+     "en": "meal",
+     "pos": "n. m.",
+     "note": "pl. i pasti",
+     "example": {
+      "target": "La medicina va presa dopo i pasti, mai a stomaco vuoto.",
+      "gloss": "The medicine should be taken after meals, never on an empty stomach."
+     }
+    },
+    {
+     "id": "l'alba",
+     "hr": "l'alba",
+     "en": "dawn",
+     "pos": "n. f.",
+     "note": "pl. le albe; all'alba means at dawn",
+     "example": {
+      "target": "Siamo partiti all'alba per evitare il traffico dell'estate.",
+      "gloss": "We left at dawn to avoid the summer traffic."
+     }
+    },
+    {
+     "id": "il tramonto",
+     "hr": "il tramonto",
+     "en": "sunset",
+     "pos": "n. m.",
+     "note": "pl. i tramonti",
+     "example": {
+      "target": "D'estate qui il tramonto arriva quasi alle nove.",
+      "gloss": "In summer sunset here comes at almost nine."
+     }
+    },
+    {
+     "id": "la stagione",
+     "hr": "la stagione",
+     "en": "season",
+     "pos": "n. f.",
+     "note": "pl. le stagioni; alta stagione means peak season",
+     "example": {
+      "target": "L'autunno è la stagione in cui questo posto è più bello.",
+      "gloss": "Autumn is the season when this place is at its most beautiful."
+     }
+    },
+    {
+     "id": "la temperatura",
+     "hr": "la temperatura",
+     "en": "temperature",
+     "pos": "n. f.",
+     "note": "pl. le temperature",
+     "example": {
+      "target": "La temperatura è scesa sotto zero durante la notte.",
+      "gloss": "The temperature dropped below zero during the night."
+     }
+    },
+    {
+     "id": "l'uccello",
+     "hr": "l'uccello",
+     "en": "bird",
+     "pos": "n. m.",
+     "note": "pl. gli uccelli",
+     "example": {
+      "target": "Gli uccelli cominciano a cantare molto prima delle cinque.",
+      "gloss": "The birds start singing well before five."
+     }
+    },
+    {
+     "id": "il frutto",
+     "hr": "il frutto",
+     "en": "fruit; result",
+     "pos": "n. m.",
+     "note": "pl. i frutti; la frutta means fruit as food",
+     "example": {
+      "target": "Questo libro è il frutto di due anni di lavoro.",
+      "gloss": "This book is the fruit of two years of work."
+     }
+    },
+    {
+     "id": "il ritorno",
+     "hr": "il ritorno",
+     "en": "return",
+     "pos": "n. m.",
+     "note": "pl. i ritorni; andata e ritorno means return ticket",
+     "example": {
+      "target": "Al ritorno abbiamo trovato la cucina allagata.",
+      "gloss": "On our return we found the kitchen flooded."
+     }
+    },
+    {
+     "id": "il prodotto",
+     "hr": "il prodotto",
+     "en": "product",
+     "pos": "n. m.",
+     "note": "pl. i prodotti",
+     "example": {
+      "target": "Questo prodotto è fatto interamente a mano da due persone.",
+      "gloss": "This product is made entirely by hand by two people."
+     }
+    },
+    {
+     "id": "il materiale",
+     "hr": "il materiale",
+     "en": "material",
+     "pos": "n. m.",
+     "note": "pl. i materiali",
+     "example": {
+      "target": "Serve altro materiale per finire il tetto prima della pioggia.",
+      "gloss": "We need more material to finish the roof before the rain."
+     }
+    },
+    {
+     "id": "la spesa",
+     "hr": "la spesa",
+     "en": "shopping; expense",
+     "pos": "n. f.",
+     "note": "pl. le spese; fare la spesa means to buy groceries",
+     "example": {
+      "target": "Faccio la spesa il sabato mattina presto, dopo c'è troppa gente.",
+      "gloss": "I do the shopping early on Saturday morning, later it is too crowded."
+     }
+    },
+    {
+     "id": "l'affare",
+     "hr": "l'affare",
+     "en": "deal, business matter",
+     "pos": "n. m.",
+     "note": "pl. gli affari; gli affari means business",
+     "example": {
+      "target": "Comprare adesso è un ottimo affare, i prezzi saliranno.",
+      "gloss": "Buying now is a great deal, prices will go up."
+     }
+    },
+    {
+     "id": "l'industria",
+     "hr": "l'industria",
+     "en": "industry",
+     "pos": "n. f.",
+     "note": "pl. le industrie",
+     "example": {
+      "target": "L'industria del turismo dà lavoro a mezza città.",
+      "gloss": "The tourism industry employs half the town."
+     }
+    },
+    {
+     "id": "l'economia",
+     "hr": "l'economia",
+     "en": "economy; economics",
+     "pos": "n. f.",
+     "note": "pl. le economie",
+     "example": {
+      "target": "L'economia del paese cresce da tre anni ma i salari no.",
+      "gloss": "The country's economy has been growing for three years but wages have not."
+     }
+    },
+    {
+     "id": "la professione",
+     "hr": "la professione",
+     "en": "profession",
+     "pos": "n. f.",
+     "note": "pl. le professioni; di professione means by trade",
+     "example": {
+      "target": "Fa l'infermiere di professione ma dipinge da vent'anni.",
+      "gloss": "He is a nurse by profession but he has been painting for twenty years."
+     }
+    },
+    {
+     "id": "la nazione",
+     "hr": "la nazione",
+     "en": "nation",
+     "pos": "n. f.",
+     "note": "pl. le nazioni",
+     "example": {
+      "target": "Alla gara partecipano atleti di venti nazioni diverse.",
+      "gloss": "Athletes from twenty different nations take part in the race."
+     }
+    },
+    {
+     "id": "la regione",
+     "hr": "la regione",
+     "en": "region",
+     "pos": "n. f.",
+     "note": "pl. le regioni",
+     "example": {
+      "target": "L'Italia è divisa in venti regioni con leggi proprie.",
+      "gloss": "Italy is divided into twenty regions with their own laws."
+     }
+    },
+    {
+     "id": "l'edificio",
+     "hr": "l'edificio",
+     "en": "building",
+     "pos": "n. m.",
+     "note": "pl. gli edifici",
+     "example": {
+      "target": "L'edificio davanti alla stazione è del dopoguerra.",
+      "gloss": "The building in front of the station dates from after the war."
+     }
+    },
+    {
+     "id": "la proposta",
+     "hr": "la proposta",
+     "en": "proposal",
+     "pos": "n. f.",
+     "note": "pl. le proposte; fare una proposta",
+     "example": {
+      "target": "La tua proposta mi sembra ragionevole, ne parlo con gli altri.",
+      "gloss": "Your proposal seems reasonable to me, I will discuss it with the others."
+     }
+    },
+    {
+     "id": "la vittoria",
+     "hr": "la vittoria",
+     "en": "victory",
+     "pos": "n. f.",
+     "note": "pl. le vittorie",
+     "example": {
+      "target": "È stata una vittoria facile, l'avversario era già stanco.",
+      "gloss": "It was an easy victory, the opponent was already tired."
+     }
+    },
+    {
+     "id": "la sconfitta",
+     "hr": "la sconfitta",
+     "en": "defeat",
+     "pos": "n. f.",
+     "note": "pl. le sconfitte",
+     "example": {
+      "target": "Dopo la sconfitta l'allenatore ha lasciato la squadra.",
+      "gloss": "After the defeat the coach left the team."
+     }
+    },
+    {
+     "id": "il danno",
+     "hr": "il danno",
+     "en": "damage",
+     "pos": "n. m.",
+     "note": "pl. i danni; fare danni means to cause damage",
+     "example": {
+      "target": "L'acqua ha fatto danni per migliaia di euro in cantina.",
+      "gloss": "The water caused thousands of euros of damage in the cellar."
+     }
+    },
+    {
+     "id": "il disastro",
+     "hr": "il disastro",
+     "en": "disaster",
+     "pos": "n. m.",
+     "note": "pl. i disastri",
+     "example": {
+      "target": "La cena è stata un disastro, ho bruciato tutto.",
+      "gloss": "The dinner was a disaster, I burnt everything."
+     }
+    },
+    {
+     "id": "la violenza",
+     "hr": "la violenza",
+     "en": "violence",
+     "pos": "n. f.",
+     "note": "pl. le violenze",
+     "example": {
+      "target": "La violenza non ha mai risolto un conflitto di questo tipo.",
+      "gloss": "Violence has never solved a conflict of this kind."
+     }
+    },
+    {
+     "id": "la difesa",
+     "hr": "la difesa",
+     "en": "defence",
+     "pos": "n. f.",
+     "note": "pl. le difese; prendere le difese di means to stand up for",
+     "example": {
+      "target": "Ha parlato in difesa del collega davanti a tutti.",
+      "gloss": "He spoke in defence of his colleague in front of everyone."
+     }
+    },
+    {
+     "id": "l'attacco",
+     "hr": "l'attacco",
+     "en": "attack",
+     "pos": "n. m.",
+     "note": "pl. gli attacchi",
+     "example": {
+      "target": "L'attacco è arrivato di notte, senza nessun preavviso.",
+      "gloss": "The attack came at night, with no warning at all."
+     }
+    },
+    {
+     "id": "la lotta",
+     "hr": "la lotta",
+     "en": "struggle, fight",
+     "pos": "n. f.",
+     "note": "pl. le lotte",
+     "example": {
+      "target": "La lotta contro l'inquinamento richiede decenni, non mesi.",
+      "gloss": "The fight against pollution takes decades, not months."
+     }
+    },
+    {
+     "id": "il conflitto",
+     "hr": "il conflitto",
+     "en": "conflict",
+     "pos": "n. m.",
+     "note": "pl. i conflitti",
+     "example": {
+      "target": "Tra i due reparti c'è un conflitto aperto da mesi.",
+      "gloss": "Between the two departments there has been an open conflict for months."
+     }
+    },
+    {
+     "id": "l'esercito",
+     "hr": "l'esercito",
+     "en": "army",
+     "pos": "n. m.",
+     "note": "pl. gli eserciti",
+     "example": {
+      "target": "Suo padre ha lavorato vent'anni nell'esercito come meccanico.",
+      "gloss": "His father worked twenty years in the army as a mechanic."
+     }
+    },
+    {
+     "id": "l'arma",
+     "hr": "l'arma",
+     "en": "weapon",
+     "pos": "n. f.",
+     "note": "feminine with an irregular plural: le armi",
+     "example": {
+      "target": "La pazienza è la sua arma migliore nelle trattative.",
+      "gloss": "Patience is his best weapon in negotiations."
+     }
+    },
+    {
+     "id": "la religione",
+     "hr": "la religione",
+     "en": "religion",
+     "pos": "n. f.",
+     "note": "pl. le religioni",
+     "example": {
+      "target": "In classe ci sono ragazzi di quattro religioni diverse.",
+      "gloss": "In the class there are children of four different religions."
+     }
+    },
+    {
+     "id": "l'anima",
+     "hr": "l'anima",
+     "en": "soul",
+     "pos": "n. f.",
+     "note": "pl. le anime; non c'è anima viva means there is not a soul",
+     "example": {
+      "target": "D'inverno in questo paese non c'è anima viva.",
+      "gloss": "In winter there is not a soul in this village."
+     }
+    },
+    {
+     "id": "lo spirito",
+     "hr": "lo spirito",
+     "en": "spirit; wit",
+     "pos": "n. m.",
+     "note": "pl. gli spiriti; lo before s plus consonant",
+     "example": {
+      "target": "Ha affrontato la malattia con uno spirito che ci ha sorpresi.",
+      "gloss": "She faced the illness with a spirit that surprised us."
+     }
+    },
+    {
+     "id": "la fede",
+     "hr": "la fede",
+     "en": "faith; wedding ring",
+     "pos": "n. f.",
+     "note": "pl. le fedi",
+     "example": {
+      "target": "La sua fede non è cambiata nemmeno nei mesi peggiori.",
+      "gloss": "His faith did not change even in the worst months."
+     }
+    },
+    {
+     "id": "la bellezza",
+     "hr": "la bellezza",
+     "en": "beauty",
+     "pos": "n. f.",
+     "note": "pl. le bellezze",
+     "example": {
+      "target": "La bellezza di questo posto è che d'inverno non ci viene nessuno.",
+      "gloss": "The beauty of this place is that nobody comes here in winter."
+     }
+    },
+    {
+     "id": "il racconto",
+     "hr": "il racconto",
+     "en": "story, short story",
+     "pos": "n. m.",
+     "note": "pl. i racconti",
+     "example": {
+      "target": "Ha scritto un racconto di dieci pagine in una notte sola.",
+      "gloss": "She wrote a ten-page story in a single night."
+     }
+    },
+    {
+     "id": "la popolazione",
+     "hr": "la popolazione",
+     "en": "population",
+     "pos": "n. f.",
+     "note": "pl. le popolazioni",
+     "example": {
+      "target": "La popolazione della città è raddoppiata in trent'anni.",
+      "gloss": "The city's population has doubled in thirty years."
+     }
+    },
+    {
+     "id": "l'abitante",
+     "hr": "l'abitante",
+     "en": "inhabitant",
+     "pos": "n. m.",
+     "note": "pl. gli abitanti; also feminine: un'abitante",
+     "example": {
+      "target": "Il paese ha meno di duecento abitanti e una sola strada.",
+      "gloss": "The village has fewer than two hundred inhabitants and a single road."
+     }
+    },
+    {
+     "id": "la generazione",
+     "hr": "la generazione",
+     "en": "generation",
+     "pos": "n. f.",
+     "note": "pl. le generazioni",
+     "example": {
+      "target": "La mia generazione è cresciuta senza telefoni in tasca.",
+      "gloss": "My generation grew up without phones in their pockets."
+     }
+    },
+    {
+     "id": "il matrimonio",
+     "hr": "il matrimonio",
+     "en": "marriage; wedding",
+     "pos": "n. m.",
+     "note": "pl. i matrimoni",
+     "example": {
+      "target": "Il loro matrimonio è durato quarant'anni senza un litigio serio.",
+      "gloss": "Their marriage lasted forty years without a serious quarrel."
+     }
+    },
+    {
+     "id": "il legame",
+     "hr": "il legame",
+     "en": "bond, link",
+     "pos": "n. m.",
+     "note": "pl. i legami",
+     "example": {
+      "target": "Tra le due sorelle c'è un legame che nessuno riesce a spiegare.",
+      "gloss": "Between the two sisters there is a bond nobody can explain."
+     }
+    },
+    {
+     "id": "il contatto",
+     "hr": "il contatto",
+     "en": "contact",
+     "pos": "n. m.",
+     "note": "pl. i contatti; mettersi in contatto con",
+     "example": {
+      "target": "Siamo rimasti in contatto anche dopo il trasferimento.",
+      "gloss": "We stayed in contact even after the move."
+     }
+    },
+    {
+     "id": "l'incontro",
+     "hr": "l'incontro",
+     "en": "meeting; match",
+     "pos": "n. m.",
+     "note": "pl. gli incontri",
+     "example": {
+      "target": "L'incontro con il direttore è stato rimandato a lunedì.",
+      "gloss": "The meeting with the director has been postponed to Monday."
+     }
+    },
+    {
+     "id": "il membro",
+     "hr": "il membro",
+     "en": "member",
+     "pos": "n. m.",
+     "note": "pl. i membri",
+     "example": {
+      "target": "Ogni membro del gruppo porta qualcosa da mangiare.",
+      "gloss": "Every member of the group brings something to eat."
+     }
+    },
+    {
+     "id": "la folla",
+     "hr": "la folla",
+     "en": "crowd",
+     "pos": "n. f.",
+     "note": "pl. le folle",
+     "example": {
+      "target": "La folla ha riempito la piazza in mezz'ora.",
+      "gloss": "The crowd filled the square in half an hour."
+     }
+    },
+    {
+     "id": "l'individuo",
+     "hr": "l'individuo",
+     "en": "individual",
+     "pos": "n. m.",
+     "note": "pl. gli individui",
+     "example": {
+      "target": "Ogni individuo reagisce allo stress in modo diverso.",
+      "gloss": "Every individual reacts to stress differently."
+     }
+    },
+    {
+     "id": "occorrere",
+     "hr": "occorrere",
+     "en": "to be necessary, to take",
+     "pos": "v.",
+     "note": "aux. essere; used impersonally: occorre plus infinitive",
+     "example": {
+      "target": "Occorrono due ore per arrivare in aeroporto con il traffico.",
+      "gloss": "It takes two hours to get to the airport with the traffic."
+     }
+    },
+    {
+     "id": "convenire",
+     "hr": "convenire",
+     "en": "to be worth it, to suit",
+     "pos": "v.",
+     "note": "aux. essere; conviene plus infinitive; conjugated like venire",
+     "example": {
+      "target": "Ti conviene partire presto, dopo le sette c'è la coda.",
+      "gloss": "You had better leave early, after seven there is a queue."
+     }
+    },
+    {
+     "id": "costituire",
+     "hr": "costituire",
+     "en": "to constitute, to make up",
+     "pos": "v.",
+     "note": "-isc- verb: costituisco, costituisci",
+     "example": {
+      "target": "Le donne costituiscono la maggioranza degli iscritti al corso.",
+      "gloss": "Women make up the majority of those enrolled in the course."
+     }
+    },
+    {
+     "id": "rappresentare",
+     "hr": "rappresentare",
+     "en": "to represent; to depict",
+     "pos": "v.",
+     "note": "regular -are verb",
+     "example": {
+      "target": "Questo quadro rappresenta il porto com'era prima della guerra.",
+      "gloss": "This painting depicts the harbour as it was before the war."
+     }
+    },
+    {
+     "id": "indicare",
+     "hr": "indicare",
+     "en": "to indicate, to point out",
+     "pos": "v.",
+     "note": "indico, indichi; the h keeps the hard sound",
+     "example": {
+      "target": "Il cartello indica la strada per il centro, ma è girato male.",
+      "gloss": "The sign indicates the way to the centre, but it is turned the wrong way."
+     }
+    },
+    {
+     "id": "consigliare",
+     "hr": "consigliare",
+     "en": "to advise, to recommend",
+     "pos": "v.",
+     "note": "consigliare a qualcuno di fare qualcosa",
+     "example": {
+      "target": "Ti consiglio di prenotare, il sabato è sempre pieno.",
+      "gloss": "I advise you to book, on Saturdays it is always full."
+     }
+    },
+    {
+     "id": "accompagnare",
+     "hr": "accompagnare",
+     "en": "to accompany",
+     "pos": "v.",
+     "note": "regular -are verb",
+     "example": {
+      "target": "Ti accompagno alla stazione, tanto devo uscire lo stesso.",
+      "gloss": "I will walk you to the station, I have to go out anyway."
+     }
+    },
+    {
+     "id": "abbandonare",
+     "hr": "abbandonare",
+     "en": "to abandon, to give up",
+     "pos": "v.",
+     "note": "regular -are verb",
+     "example": {
+      "target": "Ha abbandonato gli studi a vent'anni per aiutare la famiglia.",
+      "gloss": "He gave up his studies at twenty to help his family."
+     }
+    },
+    {
+     "id": "spostare",
+     "hr": "spostare",
+     "en": "to move (something)",
+     "pos": "v.",
+     "note": "spostarsi means to move oneself, aux. essere",
+     "example": {
+      "target": "Puoi spostare la macchina? Blocchi il cancello.",
+      "gloss": "Can you move the car? You are blocking the gate."
+     }
+    },
+    {
+     "id": "colpire",
+     "hr": "colpire",
+     "en": "to hit; to strike",
+     "pos": "v.",
+     "note": "-isc- verb: colpisco, colpisci",
+     "example": {
+      "target": "Mi ha colpito la calma con cui ha risposto a quell'accusa.",
+      "gloss": "I was struck by the calm with which he answered that accusation."
+     }
+    },
+    {
+     "id": "battere",
+     "hr": "battere",
+     "en": "to beat, to knock",
+     "pos": "v.",
+     "note": "regular -ere verb; battere le mani means to clap",
+     "example": {
+      "target": "Il cuore mi batteva fortissimo prima di entrare.",
+      "gloss": "My heart was beating very hard before I went in."
+     }
+    },
+    {
+     "id": "stringere",
+     "hr": "stringere",
+     "en": "to tighten, to squeeze",
+     "pos": "v.",
+     "note": "irregular: strinsi, stretto; stringere la mano",
+     "example": {
+      "target": "Queste scarpe mi stringono, ho preso un numero troppo piccolo.",
+      "gloss": "These shoes are too tight on me, I took a size too small."
+     }
+    },
+    {
+     "id": "piegare",
+     "hr": "piegare",
+     "en": "to fold, to bend",
+     "pos": "v.",
+     "note": "piego, pieghi; the h keeps the hard sound",
+     "example": {
+      "target": "Piega il foglio a metà e mettilo nella busta.",
+      "gloss": "Fold the sheet in half and put it in the envelope."
+     }
+    },
+    {
+     "id": "sollevare",
+     "hr": "sollevare",
+     "en": "to lift, to raise",
+     "pos": "v.",
+     "note": "regular -are verb",
+     "example": {
+      "target": "Non riesco a sollevare questa valigia da solo, aiutami.",
+      "gloss": "I cannot lift this suitcase on my own, help me."
+     }
+    },
+    {
+     "id": "appoggiare",
+     "hr": "appoggiare",
+     "en": "to lean, to rest; to back",
+     "pos": "v.",
+     "note": "appoggiarsi a means to lean on",
+     "example": {
+      "target": "Appoggia la bici al muro, non lasciarla per terra.",
+      "gloss": "Lean the bike against the wall, do not leave it on the ground."
+     }
+    },
+    {
+     "id": "mescolare",
+     "hr": "mescolare",
+     "en": "to mix, to stir",
+     "pos": "v.",
+     "note": "regular -are verb",
+     "example": {
+      "target": "Mescola piano finché il composto non diventa liscio.",
+      "gloss": "Stir slowly until the mixture becomes smooth."
+     }
+    },
+    {
+     "id": "scambiare",
+     "hr": "scambiare",
+     "en": "to exchange; to mistake",
+     "pos": "v.",
+     "note": "scambiare per means to mistake for",
+     "example": {
+      "target": "Abbiamo scambiato i cappotti all'uscita del teatro.",
+      "gloss": "We swapped coats by mistake on the way out of the theatre."
+     }
+    },
+    {
+     "id": "separare",
+     "hr": "separare",
+     "en": "to separate",
+     "pos": "v.",
+     "note": "separarsi means to split up, aux. essere",
+     "example": {
+      "target": "Separa i bicchieri dai piatti quando carichi la lavastoviglie.",
+      "gloss": "Separate the glasses from the plates when you load the dishwasher."
+     }
+    },
+    {
+     "id": "verificare",
+     "hr": "verificare",
+     "en": "to check, to verify",
+     "pos": "v.",
+     "note": "verifico, verifichi; the h keeps the hard sound",
+     "example": {
+      "target": "Verifica l'orario prima di uscire, la domenica cambia.",
+      "gloss": "Check the timetable before you go out, on Sundays it changes."
+     }
+    },
+    {
+     "id": "proteggere",
+     "hr": "proteggere",
+     "en": "to protect",
+     "pos": "v.",
+     "note": "irregular: protessi, protetto; proteggere da",
+     "example": {
+      "target": "Questa crema protegge la pelle anche in montagna.",
+      "gloss": "This cream protects the skin even in the mountains."
+     }
+    },
+    {
+     "id": "difendere",
+     "hr": "difendere",
+     "en": "to defend",
+     "pos": "v.",
+     "note": "irregular: difesi, difeso",
+     "example": {
+      "target": "Ha difeso la sua idea davanti a tutta la commissione.",
+      "gloss": "She defended her idea in front of the whole committee."
+     }
+    },
+    {
+     "id": "combattere",
+     "hr": "combattere",
+     "en": "to fight",
+     "pos": "v.",
+     "note": "regular -ere verb; combattere contro qualcosa",
+     "example": {
+      "target": "La città combatte da anni contro l'inquinamento dell'aria.",
+      "gloss": "The city has been fighting air pollution for years."
+     }
+    },
+    {
+     "id": "resistere",
+     "hr": "resistere",
+     "en": "to resist, to hold out",
+     "pos": "v.",
+     "note": "irregular past participle: resistito; resistere a qualcosa",
+     "example": {
+      "target": "Non ho resistito e ho finito la torta da solo.",
+      "gloss": "I could not resist and finished the cake on my own."
+     }
+    },
+    {
+     "id": "cedere",
+     "hr": "cedere",
+     "en": "to give in; to give up",
+     "pos": "v.",
+     "note": "regular -ere verb; cedere il posto means to give up one's seat",
+     "example": {
+      "target": "Alla fine ha ceduto e ci ha lasciati uscire.",
+      "gloss": "In the end he gave in and let us go out."
+     }
+    },
+    {
+     "id": "godere",
+     "hr": "godere",
+     "en": "to enjoy",
+     "pos": "v.",
+     "note": "godersi qualcosa; godere di means to enjoy a right",
+     "example": {
+      "target": "Godiamoci questi giorni di sole, giovedì torna la pioggia.",
+      "gloss": "Let us enjoy these sunny days, the rain comes back on Thursday."
+     }
+    },
+    {
+     "id": "bruciare",
+     "hr": "bruciare",
+     "en": "to burn",
+     "pos": "v.",
+     "note": "aux. avere when transitive, essere when intransitive",
+     "example": {
+      "target": "Ho bruciato la cena mentre parlavo al telefono.",
+      "gloss": "I burnt the dinner while I was on the phone."
+     }
+    },
+    {
+     "id": "asciugare",
+     "hr": "asciugare",
+     "en": "to dry",
+     "pos": "v.",
+     "note": "asciugo, asciughi; asciugarsi means to dry oneself",
+     "example": {
+      "target": "Asciuga i piatti mentre io finisco di lavare.",
+      "gloss": "Dry the dishes while I finish washing."
+     }
+    },
+    {
+     "id": "valere",
+     "hr": "valere",
+     "en": "to be worth",
+     "pos": "v.",
+     "note": "aux. essere; irregular: valgo, valsi, valso; vale la pena",
+     "example": {
+      "target": "Non vale la pena discutere per venti euro.",
+      "gloss": "It is not worth arguing over twenty euros."
+     }
+    },
+    {
+     "id": "causare",
+     "hr": "causare",
+     "en": "to cause",
+     "pos": "v.",
+     "note": "regular -are verb",
+     "example": {
+      "target": "Il ritardo del treno ha causato problemi a tutti i pendolari.",
+      "gloss": "The train delay caused problems for all the commuters."
+     }
+    },
+    {
+     "id": "distruggere",
+     "hr": "distruggere",
+     "en": "to destroy",
+     "pos": "v.",
+     "note": "irregular: distrussi, distrutto",
+     "example": {
+      "target": "Il fuoco ha distrutto metà del bosco in una notte.",
+      "gloss": "The fire destroyed half the wood in one night."
+     }
+    },
+    {
+     "id": "l'opposto",
+     "hr": "l'opposto",
+     "en": "opposite",
+     "pos": "n. m.",
+     "note": "pl. gli opposti; l'opposto di means the opposite of",
+     "example": {
+      "target": "Fa esattamente l'opposto di quello che consiglia agli altri.",
+      "gloss": "He does exactly the opposite of what he advises others to do."
+     }
+    },
+    {
+     "id": "tale",
+     "hr": "tale",
+     "en": "such, such a",
+     "pos": "adj.",
+     "note": "invariable in gender, pl. tali; tale ... che means such ... that",
+     "example": {
+      "target": "Ha fatto un tale rumore che si è svegliato tutto il palazzo.",
+      "gloss": "He made such a noise that the whole building woke up."
+     }
+    },
+    {
+     "id": "esatto",
+     "hr": "esatto",
+     "en": "exact, correct",
+     "pos": "adj.",
+     "note": "f. esatta; esatto! on its own means exactly!",
+     "example": {
+      "target": "Dammi l'ora esatta, il mio orologio è avanti di dieci minuti.",
+      "gloss": "Tell me the exact time, my watch is ten minutes fast."
+     }
+    },
+    {
+     "id": "preciso",
+     "hr": "preciso",
+     "en": "precise, accurate",
+     "pos": "adj.",
+     "note": "f. precisa",
+     "example": {
+      "target": "Ho bisogno di istruzioni precise, non di consigli generali.",
+      "gloss": "I need precise instructions, not general advice."
+     }
+    },
+    {
+     "id": "ovvio",
+     "hr": "ovvio",
+     "en": "obvious",
+     "pos": "adj.",
+     "note": "f. ovvia, m.pl. ovvi",
+     "example": {
+      "target": "Era ovvio che sarebbe finita così, lo dicevano tutti.",
+      "gloss": "It was obvious it would end like that, everyone said so."
+     }
+    },
+    {
+     "id": "noto",
+     "hr": "noto",
+     "en": "well known",
+     "pos": "adj.",
+     "note": "f. nota; è noto che means it is well known that",
+     "example": {
+      "target": "È un problema noto e lo stanno risolvendo da mesi.",
+      "gloss": "It is a known problem and they have been fixing it for months."
+     }
+    },
+    {
+     "id": "sconosciuto",
+     "hr": "sconosciuto",
+     "en": "unknown",
+     "pos": "adj.",
+     "note": "f. sconosciuta; also a noun, uno sconosciuto, a stranger",
+     "example": {
+      "target": "Ha ricevuto una chiamata da un numero sconosciuto alle tre di notte.",
+      "gloss": "She got a call from an unknown number at three in the morning."
+     }
+    },
+    {
+     "id": "famoso",
+     "hr": "famoso",
+     "en": "famous",
+     "pos": "adj.",
+     "note": "f. famosa; famoso per means famous for",
+     "example": {
+      "target": "Questo paese è famoso per un formaggio che fanno in dieci case.",
+      "gloss": "This village is famous for a cheese made in ten households."
+     }
+    },
+    {
+     "id": "attento",
+     "hr": "attento",
+     "en": "careful, attentive",
+     "pos": "adj.",
+     "note": "f. attenta; stare attento a means to watch out for",
+     "example": {
+      "target": "Stai attento al gradino, è più alto degli altri.",
+      "gloss": "Watch out for the step, it is higher than the others."
+     }
+    },
+    {
+     "id": "serio",
+     "hr": "serio",
+     "en": "serious",
+     "pos": "adj.",
+     "note": "f. seria, m.pl. seri; sul serio means seriously",
+     "example": {
+      "target": "Il problema è più serio di quanto pensassimo all'inizio.",
+      "gloss": "The problem is more serious than we thought at first."
+     }
+    },
+    {
+     "id": "improvviso",
+     "hr": "improvviso",
+     "en": "sudden",
+     "pos": "adj.",
+     "note": "f. improvvisa; all'improvviso means suddenly",
+     "example": {
+      "target": "Un rumore improvviso ci ha svegliati tutti verso le due.",
+      "gloss": "A sudden noise woke us all up at around two."
+     }
+    },
+    {
+     "id": "immediato",
+     "hr": "immediato",
+     "en": "immediate",
+     "pos": "adj.",
+     "note": "f. immediata; l'immediato means the near future",
+     "example": {
+      "target": "La risposta è stata immediata, meno di un minuto.",
+      "gloss": "The answer was immediate, less than a minute."
+     }
+    },
+    {
+     "id": "continuo",
+     "hr": "continuo",
+     "en": "continuous, constant",
+     "pos": "adj.",
+     "note": "f. continua; di continuo means constantly",
+     "example": {
+      "target": "Il rumore continuo del traffico non mi lascia dormire.",
+      "gloss": "The constant noise of the traffic does not let me sleep."
+     }
+    },
+    {
+     "id": "sociale",
+     "hr": "sociale",
+     "en": "social",
+     "pos": "adj.",
+     "note": "same form for both genders, pl. sociali",
+     "example": {
+      "target": "La casa è di proprietà sociale, l'affitto è molto basso.",
+      "gloss": "The house is publicly owned, the rent is very low."
+     }
+    },
+    {
+     "id": "ufficiale",
+     "hr": "ufficiale",
+     "en": "official",
+     "pos": "adj.",
+     "note": "same form for both genders, pl. ufficiali; also a noun, an officer",
+     "example": {
+      "target": "La versione ufficiale non convince nessuno in paese.",
+      "gloss": "The official version convinces nobody in the village."
+     }
+    },
+    {
+     "id": "altrove",
+     "hr": "altrove",
+     "en": "elsewhere",
+     "pos": "adv.",
+     "note": "invariable",
+     "example": {
+      "target": "Qui non ci ricevono, proviamo altrove.",
+      "gloss": "They will not see us here, let us try elsewhere."
+     }
+    },
+    {
+     "id": "dappertutto",
+     "hr": "dappertutto",
+     "en": "everywhere",
+     "pos": "adv.",
+     "note": "invariable, written as one word",
+     "example": {
+      "target": "Ho cercato dappertutto e le chiavi erano in tasca.",
+      "gloss": "I looked everywhere and the keys were in my pocket."
+     }
+    },
+    {
+     "id": "entro",
+     "hr": "entro",
+     "en": "by, within",
+     "pos": "prep.",
+     "note": "used with a time expression: entro domani",
+     "example": {
+      "target": "Il documento va consegnato entro venerdì a mezzogiorno.",
+      "gloss": "The document must be handed in by Friday at noon."
+     }
+    },
+    {
+     "id": "tranne",
+     "hr": "tranne",
+     "en": "except",
+     "pos": "prep.",
+     "note": "invariable; tranne che means except that",
+     "example": {
+      "target": "Vengono tutti tranne Marco, che lavora di sabato.",
+      "gloss": "Everyone is coming except Marco, who works on Saturdays."
+     }
+    }
+   ]
+  }
+ ]
+}

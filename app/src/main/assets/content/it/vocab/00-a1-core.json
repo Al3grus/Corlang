@@ -1,0 +1,1795 @@
+{
+ "packs": [
+  {
+   "id": "00-a1-core",
+   "title": "A1: le prime parole",
+   "level": "A1",
+   "sources": [
+    "cils-a1",
+    "freq-it"
+   ],
+   "words": [
+    {
+     "id": "ciao",
+     "hr": "ciao",
+     "en": "hi, bye",
+     "pos": "expr.",
+     "note": "informale, per salutare e per congedarsi",
+     "example": {
+      "target": "Ciao, io sono Marco.",
+      "gloss": "Hi, I'm Marco."
+     }
+    },
+    {
+     "id": "buongiorno",
+     "hr": "buongiorno",
+     "en": "good morning, hello",
+     "pos": "expr.",
+     "example": {
+      "target": "Buongiorno, un caffè per favore.",
+      "gloss": "Good morning, a coffee please."
+     }
+    },
+    {
+     "id": "buonasera",
+     "hr": "buonasera",
+     "en": "good evening",
+     "pos": "expr.",
+     "example": {
+      "target": "Buonasera, un tavolo per due.",
+      "gloss": "Good evening, a table for two."
+     }
+    },
+    {
+     "id": "buonanotte",
+     "hr": "buonanotte",
+     "en": "good night",
+     "pos": "expr.",
+     "note": "solo prima di andare a dormire",
+     "example": {
+      "target": "Sono stanco, buonanotte a tutti.",
+      "gloss": "I'm tired, good night everyone."
+     }
+    },
+    {
+     "id": "arrivederci",
+     "hr": "arrivederci",
+     "en": "goodbye",
+     "pos": "expr.",
+     "note": "formale: arrivederLa",
+     "example": {
+      "target": "Arrivederci e grazie di tutto.",
+      "gloss": "Goodbye and thanks for everything."
+     }
+    },
+    {
+     "id": "salve",
+     "hr": "salve",
+     "en": "hello",
+     "pos": "expr.",
+     "note": "neutro, tra ciao e buongiorno",
+     "example": {
+      "target": "Salve, cerco il signor Rossi.",
+      "gloss": "Hello, I'm looking for Mr Rossi."
+     }
+    },
+    {
+     "id": "grazie",
+     "hr": "grazie",
+     "en": "thank you",
+     "pos": "expr.",
+     "example": {
+      "target": "Grazie mille per il tuo aiuto.",
+      "gloss": "Thank you very much for your help."
+     }
+    },
+    {
+     "id": "prego",
+     "hr": "prego",
+     "en": "you're welcome, please go ahead",
+     "pos": "expr.",
+     "example": {
+      "target": "Grazie! Prego, si accomodi.",
+      "gloss": "Thanks! You're welcome, have a seat."
+     }
+    },
+    {
+     "id": "per favore",
+     "hr": "per favore",
+     "en": "please",
+     "pos": "expr.",
+     "note": "anche per piacere, per cortesia",
+     "example": {
+      "target": "Mi passi il sale, per favore?",
+      "gloss": "Can you pass me the salt, please?"
+     }
+    },
+    {
+     "id": "scusa",
+     "hr": "scusa",
+     "en": "sorry, excuse me",
+     "pos": "expr.",
+     "note": "informale, dal verbo scusare",
+     "example": {
+      "target": "Scusa, non ti ho sentito.",
+      "gloss": "Sorry, I didn't hear you."
+     }
+    },
+    {
+     "id": "scusi",
+     "hr": "scusi",
+     "en": "excuse me",
+     "pos": "expr.",
+     "note": "formale, con il Lei",
+     "example": {
+      "target": "Scusi, dov'è la stazione?",
+      "gloss": "Excuse me, where is the station?"
+     }
+    },
+    {
+     "id": "sì",
+     "hr": "sì",
+     "en": "yes",
+     "pos": "adv.",
+     "note": "con accento; si senza accento è un pronome",
+     "example": {
+      "target": "Sì, certo, vengo anch'io.",
+      "gloss": "Yes, of course, I'm coming too."
+     }
+    },
+    {
+     "id": "no",
+     "hr": "no",
+     "en": "no",
+     "pos": "adv.",
+     "example": {
+      "target": "No, oggi non posso.",
+      "gloss": "No, I can't today."
+     }
+    },
+    {
+     "id": "forse",
+     "hr": "forse",
+     "en": "maybe",
+     "pos": "adv.",
+     "example": {
+      "target": "Forse domani piove.",
+      "gloss": "Maybe it will rain tomorrow."
+     }
+    },
+    {
+     "id": "va bene",
+     "hr": "va bene",
+     "en": "okay, all right",
+     "pos": "expr.",
+     "example": {
+      "target": "Ci vediamo alle otto, va bene?",
+      "gloss": "See you at eight, okay?"
+     }
+    },
+    {
+     "id": "piacere",
+     "hr": "piacere",
+     "en": "nice to meet you",
+     "pos": "expr.",
+     "note": "risposta: piacere mio",
+     "example": {
+      "target": "Piacere, mi chiamo Giulia.",
+      "gloss": "Nice to meet you, my name is Giulia."
+     }
+    },
+    {
+     "id": "a presto",
+     "hr": "a presto",
+     "en": "see you soon",
+     "pos": "expr.",
+     "example": {
+      "target": "Devo andare, a presto!",
+      "gloss": "I have to go, see you soon!"
+     }
+    },
+    {
+     "id": "a domani",
+     "hr": "a domani",
+     "en": "see you tomorrow",
+     "pos": "expr.",
+     "example": {
+      "target": "Buonanotte, a domani.",
+      "gloss": "Good night, see you tomorrow."
+     }
+    },
+    {
+     "id": "come stai?",
+     "hr": "come stai?",
+     "en": "how are you? (informal)",
+     "pos": "expr.",
+     "example": {
+      "target": "Ciao Luca, come stai?",
+      "gloss": "Hi Luca, how are you?"
+     }
+    },
+    {
+     "id": "come sta?",
+     "hr": "come sta?",
+     "en": "how are you? (formal)",
+     "pos": "expr.",
+     "example": {
+      "target": "Buongiorno dottore, come sta?",
+      "gloss": "Good morning doctor, how are you?"
+     }
+    },
+    {
+     "id": "bene",
+     "hr": "bene",
+     "en": "well, fine",
+     "pos": "adv.",
+     "example": {
+      "target": "Sto bene, grazie.",
+      "gloss": "I'm fine, thanks."
+     }
+    },
+    {
+     "id": "male",
+     "hr": "male",
+     "en": "badly",
+     "pos": "adv.",
+     "example": {
+      "target": "Oggi sto un po' male.",
+      "gloss": "I feel a bit unwell today."
+     }
+    },
+    {
+     "id": "così così",
+     "hr": "così così",
+     "en": "so-so",
+     "pos": "expr.",
+     "example": {
+      "target": "Come va? Così così.",
+      "gloss": "How's it going? So-so."
+     }
+    },
+    {
+     "id": "io",
+     "hr": "io",
+     "en": "I",
+     "pos": "pron.",
+     "example": {
+      "target": "Io sono italiano.",
+      "gloss": "I am Italian."
+     }
+    },
+    {
+     "id": "tu",
+     "hr": "tu",
+     "en": "you (singular, informal)",
+     "pos": "pron.",
+     "example": {
+      "target": "Tu che lavoro fai?",
+      "gloss": "What work do you do?"
+     }
+    },
+    {
+     "id": "lui",
+     "hr": "lui",
+     "en": "he, him",
+     "pos": "pron.",
+     "example": {
+      "target": "Lui abita a Roma.",
+      "gloss": "He lives in Rome."
+     }
+    },
+    {
+     "id": "lei",
+     "hr": "lei",
+     "en": "she, her; you (formal)",
+     "pos": "pron.",
+     "note": "con la maiuscola, Lei, è il you formale",
+     "example": {
+      "target": "Lei parla molto bene l'inglese.",
+      "gloss": "She speaks English very well."
+     }
+    },
+    {
+     "id": "noi",
+     "hr": "noi",
+     "en": "we, us",
+     "pos": "pron.",
+     "example": {
+      "target": "Noi andiamo al mare.",
+      "gloss": "We are going to the seaside."
+     }
+    },
+    {
+     "id": "voi",
+     "hr": "voi",
+     "en": "you (plural)",
+     "pos": "pron.",
+     "example": {
+      "target": "Voi siete di Milano?",
+      "gloss": "Are you from Milan?"
+     }
+    },
+    {
+     "id": "loro",
+     "hr": "loro",
+     "en": "they, them",
+     "pos": "pron.",
+     "example": {
+      "target": "Loro non capiscono l'italiano.",
+      "gloss": "They don't understand Italian."
+     }
+    },
+    {
+     "id": "questo",
+     "hr": "questo",
+     "en": "this",
+     "pos": "adj.",
+     "note": "questa, questi, queste",
+     "example": {
+      "target": "Questo libro è mio.",
+      "gloss": "This book is mine."
+     }
+    },
+    {
+     "id": "quello",
+     "hr": "quello",
+     "en": "that",
+     "pos": "adj.",
+     "note": "quel, quella, quei, quegli, quelle",
+     "example": {
+      "target": "Quella ragazza è mia sorella.",
+      "gloss": "That girl is my sister."
+     }
+    },
+    {
+     "id": "mio",
+     "hr": "mio",
+     "en": "my, mine",
+     "pos": "adj.",
+     "note": "mia, miei, mie",
+     "example": {
+      "target": "Il mio nome è Anna.",
+      "gloss": "My name is Anna."
+     }
+    },
+    {
+     "id": "tuo",
+     "hr": "tuo",
+     "en": "your, yours (singular)",
+     "pos": "adj.",
+     "note": "tua, tuoi, tue",
+     "example": {
+      "target": "Dov'è la tua macchina?",
+      "gloss": "Where is your car?"
+     }
+    },
+    {
+     "id": "suo",
+     "hr": "suo",
+     "en": "his, her, its",
+     "pos": "adj.",
+     "note": "concorda con l'oggetto, non con il possessore",
+     "example": {
+      "target": "Marco esce con i suoi amici.",
+      "gloss": "Marco is going out with his friends."
+     }
+    },
+    {
+     "id": "nostro",
+     "hr": "nostro",
+     "en": "our, ours",
+     "pos": "adj.",
+     "note": "nostra, nostri, nostre",
+     "example": {
+      "target": "Questa è la nostra casa.",
+      "gloss": "This is our house."
+     }
+    },
+    {
+     "id": "vostro",
+     "hr": "vostro",
+     "en": "your, yours (plural)",
+     "pos": "adj.",
+     "note": "vostra, vostri, vostre",
+     "example": {
+      "target": "Il vostro treno parte alle sei.",
+      "gloss": "Your train leaves at six."
+     }
+    },
+    {
+     "id": "chi",
+     "hr": "chi",
+     "en": "who",
+     "pos": "pron.",
+     "example": {
+      "target": "Chi è quel signore?",
+      "gloss": "Who is that gentleman?"
+     }
+    },
+    {
+     "id": "che cosa",
+     "hr": "che cosa",
+     "en": "what",
+     "pos": "pron.",
+     "note": "anche solo che o cosa",
+     "example": {
+      "target": "Che cosa vuoi bere?",
+      "gloss": "What do you want to drink?"
+     }
+    },
+    {
+     "id": "la cosa",
+     "hr": "la cosa",
+     "en": "thing; what",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ho una cosa importante da dirti.",
+      "gloss": "I have something important to tell you."
+     }
+    },
+    {
+     "id": "come",
+     "hr": "come",
+     "en": "how, like",
+     "pos": "adv.",
+     "example": {
+      "target": "Come si dice questo in italiano?",
+      "gloss": "How do you say this in Italian?"
+     }
+    },
+    {
+     "id": "dove",
+     "hr": "dove",
+     "en": "where",
+     "pos": "adv.",
+     "note": "dov'è davanti a è",
+     "example": {
+      "target": "Dove abiti adesso?",
+      "gloss": "Where do you live now?"
+     }
+    },
+    {
+     "id": "quando",
+     "hr": "quando",
+     "en": "when",
+     "pos": "adv.",
+     "example": {
+      "target": "Quando arriva il tuo treno?",
+      "gloss": "When does your train arrive?"
+     }
+    },
+    {
+     "id": "perché",
+     "hr": "perché",
+     "en": "why; because",
+     "pos": "adv.",
+     "example": {
+      "target": "Perché non vieni con noi?",
+      "gloss": "Why don't you come with us?"
+     }
+    },
+    {
+     "id": "quanto",
+     "hr": "quanto",
+     "en": "how much",
+     "pos": "adj.",
+     "note": "quanta, quanti, quante",
+     "example": {
+      "target": "Quanto costa questa maglietta?",
+      "gloss": "How much does this T-shirt cost?"
+     }
+    },
+    {
+     "id": "quale",
+     "hr": "quale",
+     "en": "which",
+     "pos": "adj.",
+     "note": "pl. quali; qual è senza apostrofo",
+     "example": {
+      "target": "Quale film vuoi vedere?",
+      "gloss": "Which film do you want to see?"
+     }
+    },
+    {
+     "id": "e",
+     "hr": "e",
+     "en": "and",
+     "pos": "conj.",
+     "note": "senza accento; è con accento significa is",
+     "example": {
+      "target": "Vorrei un caffè e un cornetto.",
+      "gloss": "I'd like a coffee and a croissant."
+     }
+    },
+    {
+     "id": "ma",
+     "hr": "ma",
+     "en": "but",
+     "pos": "conj.",
+     "example": {
+      "target": "Vorrei venire, ma devo lavorare.",
+      "gloss": "I'd like to come, but I have to work."
+     }
+    },
+    {
+     "id": "o",
+     "hr": "o",
+     "en": "or",
+     "pos": "conj.",
+     "note": "anche oppure",
+     "example": {
+      "target": "Prendi il tè o il caffè?",
+      "gloss": "Are you having tea or coffee?"
+     }
+    },
+    {
+     "id": "anche",
+     "hr": "anche",
+     "en": "also, too",
+     "pos": "adv.",
+     "example": {
+      "target": "Anche io vado a casa.",
+      "gloss": "I'm going home too."
+     }
+    },
+    {
+     "id": "non",
+     "hr": "non",
+     "en": "not",
+     "pos": "adv.",
+     "note": "sempre prima del verbo",
+     "example": {
+      "target": "Non parlo bene l'italiano.",
+      "gloss": "I don't speak Italian well."
+     }
+    },
+    {
+     "id": "molto",
+     "hr": "molto",
+     "en": "very, a lot",
+     "pos": "adv.",
+     "note": "come aggettivo concorda: molta, molti, molte",
+     "example": {
+      "target": "Questa città mi piace molto.",
+      "gloss": "I like this city a lot."
+     }
+    },
+    {
+     "id": "poco",
+     "hr": "poco",
+     "en": "little, few",
+     "pos": "adj.",
+     "note": "poca, pochi, poche",
+     "example": {
+      "target": "Ho poco tempo stamattina.",
+      "gloss": "I have little time this morning."
+     }
+    },
+    {
+     "id": "un po'",
+     "hr": "un po'",
+     "en": "a bit",
+     "pos": "adv.",
+     "note": "con l'apostrofo, abbreviazione di un poco",
+     "example": {
+      "target": "Parlo un po' di italiano.",
+      "gloss": "I speak a bit of Italian."
+     }
+    },
+    {
+     "id": "già",
+     "hr": "già",
+     "en": "already",
+     "pos": "adv.",
+     "example": {
+      "target": "Ho già mangiato, grazie.",
+      "gloss": "I've already eaten, thanks."
+     }
+    },
+    {
+     "id": "ancora",
+     "hr": "ancora",
+     "en": "still, yet, again",
+     "pos": "adv.",
+     "example": {
+      "target": "Non è ancora arrivato.",
+      "gloss": "He hasn't arrived yet."
+     }
+    },
+    {
+     "id": "sempre",
+     "hr": "sempre",
+     "en": "always",
+     "pos": "adv.",
+     "example": {
+      "target": "La mattina bevo sempre un caffè.",
+      "gloss": "In the morning I always drink a coffee."
+     }
+    },
+    {
+     "id": "mai",
+     "hr": "mai",
+     "en": "never, ever",
+     "pos": "adv.",
+     "note": "con non: non ... mai",
+     "example": {
+      "target": "Non sono mai stato in Sicilia.",
+      "gloss": "I have never been to Sicily."
+     }
+    },
+    {
+     "id": "qui",
+     "hr": "qui",
+     "en": "here",
+     "pos": "adv.",
+     "note": "anche qua",
+     "example": {
+      "target": "Vieni qui un attimo.",
+      "gloss": "Come here a moment."
+     }
+    },
+    {
+     "id": "lì",
+     "hr": "lì",
+     "en": "there",
+     "pos": "adv.",
+     "note": "con accento; li senza accento è un pronome",
+     "example": {
+      "target": "Il mio zaino è lì, sulla sedia.",
+      "gloss": "My backpack is there, on the chair."
+     }
+    },
+    {
+     "id": "di",
+     "hr": "di",
+     "en": "of, from",
+     "pos": "prep.",
+     "note": "articolata: del, dello, della, dei, degli, delle",
+     "example": {
+      "target": "Sono di Napoli.",
+      "gloss": "I'm from Naples."
+     }
+    },
+    {
+     "id": "a",
+     "hr": "a",
+     "en": "to, at",
+     "pos": "prep.",
+     "note": "articolata: al, allo, alla, ai, agli, alle",
+     "example": {
+      "target": "Vado a scuola in autobus.",
+      "gloss": "I go to school by bus."
+     }
+    },
+    {
+     "id": "da",
+     "hr": "da",
+     "en": "from, since, at someone's place",
+     "pos": "prep.",
+     "note": "articolata: dal, dallo, dalla, dai, dagli, dalle",
+     "example": {
+      "target": "Stasera ceniamo da mia madre.",
+      "gloss": "Tonight we're having dinner at my mother's."
+     }
+    },
+    {
+     "id": "in",
+     "hr": "in",
+     "en": "in, into, by",
+     "pos": "prep.",
+     "note": "articolata: nel, nello, nella, nei, negli, nelle",
+     "example": {
+      "target": "Il latte è in frigorifero.",
+      "gloss": "The milk is in the fridge."
+     }
+    },
+    {
+     "id": "con",
+     "hr": "con",
+     "en": "with",
+     "pos": "prep.",
+     "example": {
+      "target": "Esco con i miei amici.",
+      "gloss": "I'm going out with my friends."
+     }
+    },
+    {
+     "id": "su",
+     "hr": "su",
+     "en": "on",
+     "pos": "prep.",
+     "note": "articolata: sul, sullo, sulla, sui, sugli, sulle",
+     "example": {
+      "target": "Le chiavi sono sul tavolo.",
+      "gloss": "The keys are on the table."
+     }
+    },
+    {
+     "id": "per",
+     "hr": "per",
+     "en": "for, in order to",
+     "pos": "prep.",
+     "example": {
+      "target": "Questo regalo è per te.",
+      "gloss": "This present is for you."
+     }
+    },
+    {
+     "id": "tra",
+     "hr": "tra",
+     "en": "between, among; in (time)",
+     "pos": "prep.",
+     "note": "fra ha lo stesso significato",
+     "example": {
+      "target": "Il treno parte tra dieci minuti.",
+      "gloss": "The train leaves in ten minutes."
+     }
+    },
+    {
+     "id": "senza",
+     "hr": "senza",
+     "en": "without",
+     "pos": "prep.",
+     "example": {
+      "target": "Prendo il caffè senza zucchero.",
+      "gloss": "I take my coffee without sugar."
+     }
+    },
+    {
+     "id": "dopo",
+     "hr": "dopo",
+     "en": "after, afterwards",
+     "pos": "prep.",
+     "example": {
+      "target": "Ci vediamo dopo il lavoro.",
+      "gloss": "See you after work."
+     }
+    },
+    {
+     "id": "prima",
+     "hr": "prima",
+     "en": "before, first",
+     "pos": "adv.",
+     "note": "prima di + nome o infinito",
+     "example": {
+      "target": "Chiamami prima di uscire.",
+      "gloss": "Call me before you go out."
+     }
+    },
+    {
+     "id": "zero",
+     "hr": "zero",
+     "en": "zero",
+     "pos": "num.",
+     "example": {
+      "target": "Fuori ci sono zero gradi.",
+      "gloss": "It's zero degrees outside."
+     }
+    },
+    {
+     "id": "uno",
+     "hr": "uno",
+     "en": "one",
+     "pos": "num.",
+     "note": "davanti al nome: un, uno, una, un'",
+     "example": {
+      "target": "Vorrei un panino, per favore.",
+      "gloss": "I'd like one sandwich, please."
+     }
+    },
+    {
+     "id": "due",
+     "hr": "due",
+     "en": "two",
+     "pos": "num.",
+     "example": {
+      "target": "Ho due fratelli.",
+      "gloss": "I have two brothers."
+     }
+    },
+    {
+     "id": "tre",
+     "hr": "tre",
+     "en": "three",
+     "pos": "num.",
+     "example": {
+      "target": "Il film dura tre ore.",
+      "gloss": "The film lasts three hours."
+     }
+    },
+    {
+     "id": "quattro",
+     "hr": "quattro",
+     "en": "four",
+     "pos": "num.",
+     "example": {
+      "target": "Abitiamo al quattro di via Verdi.",
+      "gloss": "We live at number four on Via Verdi."
+     }
+    },
+    {
+     "id": "cinque",
+     "hr": "cinque",
+     "en": "five",
+     "pos": "num.",
+     "example": {
+      "target": "Il negozio chiude alle cinque.",
+      "gloss": "The shop closes at five."
+     }
+    },
+    {
+     "id": "sei",
+     "hr": "sei",
+     "en": "six",
+     "pos": "num.",
+     "note": "sei è anche la forma di essere con tu",
+     "example": {
+      "target": "Mi alzo alle sei ogni mattina.",
+      "gloss": "I get up at six every morning."
+     }
+    },
+    {
+     "id": "sette",
+     "hr": "sette",
+     "en": "seven",
+     "pos": "num.",
+     "example": {
+      "target": "La settimana ha sette giorni.",
+      "gloss": "A week has seven days."
+     }
+    },
+    {
+     "id": "otto",
+     "hr": "otto",
+     "en": "eight",
+     "pos": "num.",
+     "example": {
+      "target": "La lezione comincia alle otto.",
+      "gloss": "The lesson starts at eight."
+     }
+    },
+    {
+     "id": "nove",
+     "hr": "nove",
+     "en": "nine",
+     "pos": "num.",
+     "example": {
+      "target": "Torno a casa alle nove.",
+      "gloss": "I get home at nine."
+     }
+    },
+    {
+     "id": "dieci",
+     "hr": "dieci",
+     "en": "ten",
+     "pos": "num.",
+     "example": {
+      "target": "Ci sono dieci studenti in classe.",
+      "gloss": "There are ten students in the class."
+     }
+    },
+    {
+     "id": "undici",
+     "hr": "undici",
+     "en": "eleven",
+     "pos": "num.",
+     "example": {
+      "target": "Il negozio apre alle undici.",
+      "gloss": "The shop opens at eleven."
+     }
+    },
+    {
+     "id": "dodici",
+     "hr": "dodici",
+     "en": "twelve",
+     "pos": "num.",
+     "example": {
+      "target": "L'anno ha dodici mesi.",
+      "gloss": "A year has twelve months."
+     }
+    },
+    {
+     "id": "tredici",
+     "hr": "tredici",
+     "en": "thirteen",
+     "pos": "num.",
+     "example": {
+      "target": "Mio figlio ha tredici anni.",
+      "gloss": "My son is thirteen."
+     }
+    },
+    {
+     "id": "quattordici",
+     "hr": "quattordici",
+     "en": "fourteen",
+     "pos": "num.",
+     "example": {
+      "target": "Ci vediamo il quattordici marzo.",
+      "gloss": "See you on the fourteenth of March."
+     }
+    },
+    {
+     "id": "quindici",
+     "hr": "quindici",
+     "en": "fifteen",
+     "pos": "num.",
+     "example": {
+      "target": "Aspetto da quindici minuti.",
+      "gloss": "I've been waiting for fifteen minutes."
+     }
+    },
+    {
+     "id": "sedici",
+     "hr": "sedici",
+     "en": "sixteen",
+     "pos": "num.",
+     "example": {
+      "target": "Ho sedici euro nel portafoglio.",
+      "gloss": "I have sixteen euros in my wallet."
+     }
+    },
+    {
+     "id": "diciassette",
+     "hr": "diciassette",
+     "en": "seventeen",
+     "pos": "num.",
+     "note": "doppia s",
+     "example": {
+      "target": "Il treno arriva alle diciassette.",
+      "gloss": "The train arrives at five p.m."
+     }
+    },
+    {
+     "id": "diciotto",
+     "hr": "diciotto",
+     "en": "eighteen",
+     "pos": "num.",
+     "example": {
+      "target": "In Italia si vota a diciotto anni.",
+      "gloss": "In Italy you can vote at eighteen."
+     }
+    },
+    {
+     "id": "diciannove",
+     "hr": "diciannove",
+     "en": "nineteen",
+     "pos": "num.",
+     "note": "doppia n",
+     "example": {
+      "target": "La festa finisce alle diciannove.",
+      "gloss": "The party ends at seven p.m."
+     }
+    },
+    {
+     "id": "venti",
+     "hr": "venti",
+     "en": "twenty",
+     "pos": "num.",
+     "example": {
+      "target": "Il biglietto costa venti euro.",
+      "gloss": "The ticket costs twenty euros."
+     }
+    },
+    {
+     "id": "trenta",
+     "hr": "trenta",
+     "en": "thirty",
+     "pos": "num.",
+     "example": {
+      "target": "Settembre ha trenta giorni.",
+      "gloss": "September has thirty days."
+     }
+    },
+    {
+     "id": "quaranta",
+     "hr": "quaranta",
+     "en": "forty",
+     "pos": "num.",
+     "example": {
+      "target": "Mia sorella ha quaranta anni.",
+      "gloss": "My sister is forty."
+     }
+    },
+    {
+     "id": "cinquanta",
+     "hr": "cinquanta",
+     "en": "fifty",
+     "pos": "num.",
+     "example": {
+      "target": "Ho pagato cinquanta euro.",
+      "gloss": "I paid fifty euros."
+     }
+    },
+    {
+     "id": "sessanta",
+     "hr": "sessanta",
+     "en": "sixty",
+     "pos": "num.",
+     "example": {
+      "target": "Un'ora ha sessanta minuti.",
+      "gloss": "An hour has sixty minutes."
+     }
+    },
+    {
+     "id": "settanta",
+     "hr": "settanta",
+     "en": "seventy",
+     "pos": "num.",
+     "example": {
+      "target": "Mio nonno ha settanta anni.",
+      "gloss": "My grandfather is seventy."
+     }
+    },
+    {
+     "id": "ottanta",
+     "hr": "ottanta",
+     "en": "eighty",
+     "pos": "num.",
+     "example": {
+      "target": "In autostrada vado a ottanta all'ora.",
+      "gloss": "On the motorway I drive at eighty an hour."
+     }
+    },
+    {
+     "id": "novanta",
+     "hr": "novanta",
+     "en": "ninety",
+     "pos": "num.",
+     "example": {
+      "target": "La partita dura novanta minuti.",
+      "gloss": "The match lasts ninety minutes."
+     }
+    },
+    {
+     "id": "cento",
+     "hr": "cento",
+     "en": "hundred",
+     "pos": "num.",
+     "note": "invariabile",
+     "example": {
+      "target": "Questo libro ha cento pagine.",
+      "gloss": "This book has a hundred pages."
+     }
+    },
+    {
+     "id": "mille",
+     "hr": "mille",
+     "en": "thousand",
+     "pos": "num.",
+     "note": "pl. mila: duemila",
+     "example": {
+      "target": "L'affitto è di mille euro al mese.",
+      "gloss": "The rent is a thousand euros a month."
+     }
+    },
+    {
+     "id": "primo",
+     "hr": "primo",
+     "en": "first",
+     "pos": "adj.",
+     "note": "prima, primi, prime",
+     "example": {
+      "target": "Abito al primo piano.",
+      "gloss": "I live on the first floor."
+     }
+    },
+    {
+     "id": "secondo",
+     "hr": "secondo",
+     "en": "second",
+     "pos": "adj.",
+     "example": {
+      "target": "È la seconda volta che vengo qui.",
+      "gloss": "It's the second time I've come here."
+     }
+    },
+    {
+     "id": "ultimo",
+     "hr": "ultimo",
+     "en": "last",
+     "pos": "adj.",
+     "example": {
+      "target": "Ho perso l'ultimo autobus.",
+      "gloss": "I missed the last bus."
+     }
+    },
+    {
+     "id": "lunedì",
+     "hr": "lunedì",
+     "en": "Monday",
+     "pos": "n. m.",
+     "note": "i giorni si scrivono con la minuscola",
+     "example": {
+      "target": "Lunedì comincio il nuovo lavoro.",
+      "gloss": "On Monday I start the new job."
+     }
+    },
+    {
+     "id": "martedì",
+     "hr": "martedì",
+     "en": "Tuesday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il martedì vado in palestra.",
+      "gloss": "On Tuesdays I go to the gym."
+     }
+    },
+    {
+     "id": "mercoledì",
+     "hr": "mercoledì",
+     "en": "Wednesday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mercoledì ho un esame.",
+      "gloss": "On Wednesday I have an exam."
+     }
+    },
+    {
+     "id": "giovedì",
+     "hr": "giovedì",
+     "en": "Thursday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Giovedì sera sono libero.",
+      "gloss": "Thursday evening I'm free."
+     }
+    },
+    {
+     "id": "venerdì",
+     "hr": "venerdì",
+     "en": "Friday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Venerdì usciamo con gli amici.",
+      "gloss": "On Friday we're going out with friends."
+     }
+    },
+    {
+     "id": "sabato",
+     "hr": "sabato",
+     "en": "Saturday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il sabato dormo fino a tardi.",
+      "gloss": "On Saturdays I sleep in."
+     }
+    },
+    {
+     "id": "domenica",
+     "hr": "domenica",
+     "en": "Sunday",
+     "pos": "n. f.",
+     "note": "unico giorno femminile",
+     "example": {
+      "target": "La domenica pranziamo dai nonni.",
+      "gloss": "On Sundays we have lunch at my grandparents'."
+     }
+    },
+    {
+     "id": "oggi",
+     "hr": "oggi",
+     "en": "today",
+     "pos": "adv.",
+     "example": {
+      "target": "Oggi non lavoro.",
+      "gloss": "I'm not working today."
+     }
+    },
+    {
+     "id": "domani",
+     "hr": "domani",
+     "en": "tomorrow",
+     "pos": "adv.",
+     "example": {
+      "target": "Domani parto per Firenze.",
+      "gloss": "Tomorrow I'm leaving for Florence."
+     }
+    },
+    {
+     "id": "ieri",
+     "hr": "ieri",
+     "en": "yesterday",
+     "pos": "adv.",
+     "example": {
+      "target": "Ieri ho visto un bel film.",
+      "gloss": "Yesterday I saw a good film."
+     }
+    },
+    {
+     "id": "il giorno",
+     "hr": "il giorno",
+     "en": "day",
+     "pos": "n. m.",
+     "example": {
+      "target": "Che giorno è oggi?",
+      "gloss": "What day is it today?"
+     }
+    },
+    {
+     "id": "la settimana",
+     "hr": "la settimana",
+     "en": "week",
+     "pos": "n. f.",
+     "example": {
+      "target": "La prossima settimana sono in ferie.",
+      "gloss": "Next week I'm on holiday."
+     }
+    },
+    {
+     "id": "la mattina",
+     "hr": "la mattina",
+     "en": "morning",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mattina bevo solo un caffè.",
+      "gloss": "In the morning I only have a coffee."
+     }
+    },
+    {
+     "id": "il pomeriggio",
+     "hr": "il pomeriggio",
+     "en": "afternoon",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nel pomeriggio studio in biblioteca.",
+      "gloss": "In the afternoon I study in the library."
+     }
+    },
+    {
+     "id": "la sera",
+     "hr": "la sera",
+     "en": "evening",
+     "pos": "n. f.",
+     "example": {
+      "target": "La sera guardiamo la televisione.",
+      "gloss": "In the evening we watch television."
+     }
+    },
+    {
+     "id": "la notte",
+     "hr": "la notte",
+     "en": "night",
+     "pos": "n. f.",
+     "example": {
+      "target": "Questa notte ho dormito male.",
+      "gloss": "Last night I slept badly."
+     }
+    },
+    {
+     "id": "l'ora",
+     "hr": "l'ora",
+     "en": "hour, time",
+     "pos": "n. f.",
+     "note": "che ora è? significa what time is it?",
+     "example": {
+      "target": "Scusi, che ora è?",
+      "gloss": "Excuse me, what time is it?"
+     }
+    },
+    {
+     "id": "il minuto",
+     "hr": "il minuto",
+     "en": "minute",
+     "pos": "n. m.",
+     "example": {
+      "target": "Aspetta un minuto, arrivo.",
+      "gloss": "Wait a minute, I'm coming."
+     }
+    },
+    {
+     "id": "adesso",
+     "hr": "adesso",
+     "en": "now",
+     "pos": "adv.",
+     "note": "anche ora",
+     "example": {
+      "target": "Adesso devo andare.",
+      "gloss": "I have to go now."
+     }
+    },
+    {
+     "id": "presto",
+     "hr": "presto",
+     "en": "early, soon",
+     "pos": "adv.",
+     "example": {
+      "target": "Domani mi alzo presto.",
+      "gloss": "Tomorrow I'm getting up early."
+     }
+    },
+    {
+     "id": "tardi",
+     "hr": "tardi",
+     "en": "late",
+     "pos": "adv.",
+     "example": {
+      "target": "Scusa, ho fatto tardi.",
+      "gloss": "Sorry, I'm late."
+     }
+    },
+    {
+     "id": "il tempo",
+     "hr": "il tempo",
+     "en": "time; weather",
+     "pos": "n. m.",
+     "example": {
+      "target": "Non ho tempo per il caffè.",
+      "gloss": "I don't have time for a coffee."
+     }
+    },
+    {
+     "id": "essere",
+     "hr": "essere",
+     "en": "to be",
+     "pos": "v.",
+     "note": "io sono, tu sei, lui è, noi siamo, voi siete, loro sono; p.p. stato",
+     "example": {
+      "target": "Sono le nove e mezza.",
+      "gloss": "It's half past nine."
+     }
+    },
+    {
+     "id": "avere",
+     "hr": "avere",
+     "en": "to have",
+     "pos": "v.",
+     "note": "io ho, tu hai, lui ha, noi abbiamo, voi avete, loro hanno",
+     "example": {
+      "target": "Ho due gatti a casa.",
+      "gloss": "I have two cats at home."
+     }
+    },
+    {
+     "id": "chiamarsi",
+     "hr": "chiamarsi",
+     "en": "to be called",
+     "pos": "v.",
+     "note": "riflessivo: mi chiamo, ti chiami, si chiama",
+     "example": {
+      "target": "Come ti chiami?",
+      "gloss": "What's your name?"
+     }
+    },
+    {
+     "id": "stare",
+     "hr": "stare",
+     "en": "to stay, to be (health)",
+     "pos": "v.",
+     "note": "io sto, tu stai, lui sta; aux. essere",
+     "example": {
+      "target": "Stasera sto a casa.",
+      "gloss": "Tonight I'm staying at home."
+     }
+    },
+    {
+     "id": "fare",
+     "hr": "fare",
+     "en": "to do, to make",
+     "pos": "v.",
+     "note": "io faccio, tu fai, noi facciamo, loro fanno; p.p. fatto",
+     "example": {
+      "target": "Che lavoro fai?",
+      "gloss": "What do you do for a living?"
+     }
+    },
+    {
+     "id": "andare",
+     "hr": "andare",
+     "en": "to go",
+     "pos": "v.",
+     "note": "io vado, tu vai, noi andiamo, loro vanno; aux. essere",
+     "example": {
+      "target": "Vado al lavoro in bicicletta.",
+      "gloss": "I go to work by bike."
+     }
+    },
+    {
+     "id": "venire",
+     "hr": "venire",
+     "en": "to come",
+     "pos": "v.",
+     "note": "io vengo, tu vieni, loro vengono; aux. essere, p.p. venuto",
+     "example": {
+      "target": "Vieni con noi stasera?",
+      "gloss": "Are you coming with us tonight?"
+     }
+    },
+    {
+     "id": "volere",
+     "hr": "volere",
+     "en": "to want",
+     "pos": "v.",
+     "note": "io voglio, tu vuoi, noi vogliamo, loro vogliono",
+     "example": {
+      "target": "Voglio imparare l'italiano bene.",
+      "gloss": "I want to learn Italian well."
+     }
+    },
+    {
+     "id": "potere",
+     "hr": "potere",
+     "en": "can, to be able to",
+     "pos": "v.",
+     "note": "io posso, tu puoi, noi possiamo, loro possono",
+     "example": {
+      "target": "Non posso venire, mi dispiace.",
+      "gloss": "I can't come, I'm sorry."
+     }
+    },
+    {
+     "id": "dovere",
+     "hr": "dovere",
+     "en": "must, to have to",
+     "pos": "v.",
+     "note": "io devo, tu devi, noi dobbiamo, loro devono",
+     "example": {
+      "target": "Devo andare dal medico.",
+      "gloss": "I have to go to the doctor."
+     }
+    },
+    {
+     "id": "sapere",
+     "hr": "sapere",
+     "en": "to know (facts), to know how to",
+     "pos": "v.",
+     "note": "io so, tu sai, noi sappiamo, loro sanno",
+     "example": {
+      "target": "Sai dov'è la farmacia?",
+      "gloss": "Do you know where the pharmacy is?"
+     }
+    },
+    {
+     "id": "parlare",
+     "hr": "parlare",
+     "en": "to speak",
+     "pos": "v.",
+     "note": "parlare con qualcuno, parlare di qualcosa",
+     "example": {
+      "target": "Parlo italiano e inglese.",
+      "gloss": "I speak Italian and English."
+     }
+    },
+    {
+     "id": "capire",
+     "hr": "capire",
+     "en": "to understand",
+     "pos": "v.",
+     "note": "io capisco, tu capisci, loro capiscono",
+     "example": {
+      "target": "Scusi, non ho capito.",
+      "gloss": "Sorry, I didn't understand."
+     }
+    },
+    {
+     "id": "abitare",
+     "hr": "abitare",
+     "en": "to live, to reside",
+     "pos": "v.",
+     "note": "abitare a + città, abitare in + via",
+     "example": {
+      "target": "Abito a Bologna da tre anni.",
+      "gloss": "I've lived in Bologna for three years."
+     }
+    },
+    {
+     "id": "lavorare",
+     "hr": "lavorare",
+     "en": "to work",
+     "pos": "v.",
+     "example": {
+      "target": "Lavoro in un ristorante.",
+      "gloss": "I work in a restaurant."
+     }
+    },
+    {
+     "id": "studiare",
+     "hr": "studiare",
+     "en": "to study",
+     "pos": "v.",
+     "example": {
+      "target": "Studio italiano ogni sera.",
+      "gloss": "I study Italian every evening."
+     }
+    },
+    {
+     "id": "mangiare",
+     "hr": "mangiare",
+     "en": "to eat",
+     "pos": "v.",
+     "note": "tu mangi, noi mangiamo, senza doppia i",
+     "example": {
+      "target": "A mezzogiorno mangio un panino.",
+      "gloss": "At midday I eat a sandwich."
+     }
+    },
+    {
+     "id": "bere",
+     "hr": "bere",
+     "en": "to drink",
+     "pos": "v.",
+     "note": "io bevo, noi beviamo; p.p. bevuto",
+     "example": {
+      "target": "Bevo molta acqua durante il giorno.",
+      "gloss": "I drink a lot of water during the day."
+     }
+    },
+    {
+     "id": "vedere",
+     "hr": "vedere",
+     "en": "to see",
+     "pos": "v.",
+     "note": "p.p. visto",
+     "example": {
+      "target": "Ci vediamo domani sera.",
+      "gloss": "See you tomorrow evening."
+     }
+    },
+    {
+     "id": "sentire",
+     "hr": "sentire",
+     "en": "to hear, to feel",
+     "pos": "v.",
+     "example": {
+      "target": "Non ti sento, parla più forte.",
+      "gloss": "I can't hear you, speak louder."
+     }
+    },
+    {
+     "id": "dire",
+     "hr": "dire",
+     "en": "to say, to tell",
+     "pos": "v.",
+     "note": "io dico, noi diciamo, loro dicono; p.p. detto",
+     "example": {
+      "target": "Che cosa hai detto?",
+      "gloss": "What did you say?"
+     }
+    },
+    {
+     "id": "dare",
+     "hr": "dare",
+     "en": "to give",
+     "pos": "v.",
+     "note": "io do, tu dai, loro danno; p.p. dato",
+     "example": {
+      "target": "Mi dai il tuo numero?",
+      "gloss": "Will you give me your number?"
+     }
+    },
+    {
+     "id": "prendere",
+     "hr": "prendere",
+     "en": "to take, to have (food)",
+     "pos": "v.",
+     "note": "p.p. preso",
+     "example": {
+      "target": "Prendo un caffè macchiato.",
+      "gloss": "I'll have a macchiato."
+     }
+    },
+    {
+     "id": "conoscere",
+     "hr": "conoscere",
+     "en": "to know (people, places)",
+     "pos": "v.",
+     "note": "p.p. conosciuto",
+     "example": {
+      "target": "Conosci il fratello di Luca?",
+      "gloss": "Do you know Luca's brother?"
+     }
+    },
+    {
+     "id": "il nome",
+     "hr": "il nome",
+     "en": "name, first name",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il mio nome è Sofia.",
+      "gloss": "My name is Sofia."
+     }
+    },
+    {
+     "id": "il cognome",
+     "hr": "il cognome",
+     "en": "surname",
+     "pos": "n. m.",
+     "example": {
+      "target": "Come si scrive il suo cognome?",
+      "gloss": "How do you spell your surname?"
+     }
+    },
+    {
+     "id": "la persona",
+     "hr": "la persona",
+     "en": "person",
+     "pos": "n. f.",
+     "note": "sempre femminile, anche per un uomo",
+     "example": {
+      "target": "È una persona molto gentile.",
+      "gloss": "He is a very kind person."
+     }
+    },
+    {
+     "id": "l'uomo",
+     "hr": "l'uomo",
+     "en": "man",
+     "pos": "n. m.",
+     "note": "pl. gli uomini",
+     "example": {
+      "target": "Quell'uomo lavora con me.",
+      "gloss": "That man works with me."
+     }
+    },
+    {
+     "id": "la donna",
+     "hr": "la donna",
+     "en": "woman",
+     "pos": "n. f.",
+     "example": {
+      "target": "La donna al bar è la mia vicina.",
+      "gloss": "The woman at the bar is my neighbour."
+     }
+    },
+    {
+     "id": "il ragazzo",
+     "hr": "il ragazzo",
+     "en": "boy, young man",
+     "pos": "n. m.",
+     "example": {
+      "target": "Quel ragazzo studia con me.",
+      "gloss": "That boy studies with me."
+     }
+    },
+    {
+     "id": "la ragazza",
+     "hr": "la ragazza",
+     "en": "girl, young woman",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ragazza dietro di me è francese.",
+      "gloss": "The girl behind me is French."
+     }
+    },
+    {
+     "id": "il signore",
+     "hr": "il signore",
+     "en": "gentleman, Mr",
+     "pos": "n. m.",
+     "note": "davanti al cognome diventa signor",
+     "example": {
+      "target": "Il signor Bianchi non c'è.",
+      "gloss": "Mr Bianchi isn't here."
+     }
+    },
+    {
+     "id": "la signora",
+     "hr": "la signora",
+     "en": "lady, Mrs",
+     "pos": "n. f.",
+     "example": {
+      "target": "Buongiorno signora, come sta?",
+      "gloss": "Good morning madam, how are you?"
+     }
+    },
+    {
+     "id": "l'amico",
+     "hr": "l'amico",
+     "en": "friend (male)",
+     "pos": "n. m.",
+     "note": "pl. gli amici",
+     "example": {
+      "target": "Vado al cinema con un amico.",
+      "gloss": "I'm going to the cinema with a friend."
+     }
+    },
+    {
+     "id": "l'amica",
+     "hr": "l'amica",
+     "en": "friend (female)",
+     "pos": "n. f.",
+     "note": "pl. le amiche",
+     "example": {
+      "target": "La mia amica arriva domani.",
+      "gloss": "My friend is arriving tomorrow."
+     }
+    },
+    {
+     "id": "la lingua",
+     "hr": "la lingua",
+     "en": "language; tongue",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'italiano è una lingua bellissima.",
+      "gloss": "Italian is a beautiful language."
+     }
+    },
+    {
+     "id": "buono",
+     "hr": "buono",
+     "en": "good, tasty",
+     "pos": "adj.",
+     "note": "buona, buoni, buone; comp. migliore",
+     "example": {
+      "target": "Questo vino è molto buono.",
+      "gloss": "This wine is very good."
+     }
+    },
+    {
+     "id": "grande",
+     "hr": "grande",
+     "en": "big, large",
+     "pos": "adj.",
+     "note": "pl. grandi",
+     "example": {
+      "target": "Abitiamo in una casa grande.",
+      "gloss": "We live in a big house."
+     }
+    },
+    {
+     "id": "piccolo",
+     "hr": "piccolo",
+     "en": "small",
+     "pos": "adj.",
+     "example": {
+      "target": "Il mio paese è molto piccolo.",
+      "gloss": "My village is very small."
+     }
+    },
+    {
+     "id": "bello",
+     "hr": "bello",
+     "en": "beautiful, nice",
+     "pos": "adj.",
+     "note": "bel, bello, bella, bei, begli, belle",
+     "example": {
+      "target": "Che bella giornata!",
+      "gloss": "What a beautiful day!"
+     }
+    },
+    {
+     "id": "nuovo",
+     "hr": "nuovo",
+     "en": "new",
+     "pos": "adj.",
+     "example": {
+      "target": "Ho comprato una macchina nuova.",
+      "gloss": "I bought a new car."
+     }
+    },
+    {
+     "id": "vecchio",
+     "hr": "vecchio",
+     "en": "old",
+     "pos": "adj.",
+     "note": "pl. vecchi, vecchie",
+     "example": {
+      "target": "Questo palazzo è molto vecchio.",
+      "gloss": "This building is very old."
+     }
+    },
+    {
+     "id": "giovane",
+     "hr": "giovane",
+     "en": "young",
+     "pos": "adj.",
+     "note": "pl. giovani",
+     "example": {
+      "target": "È troppo giovane per guidare.",
+      "gloss": "He is too young to drive."
+     }
+    },
+    {
+     "id": "italiano",
+     "hr": "italiano",
+     "en": "Italian",
+     "pos": "adj.",
+     "note": "italiana, italiani, italiane; minuscolo",
+     "example": {
+      "target": "Mia moglie è italiana.",
+      "gloss": "My wife is Italian."
+     }
+    }
+   ]
+  }
+ ]
+}
