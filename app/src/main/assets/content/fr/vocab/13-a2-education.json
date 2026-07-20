@@ -1,866 +1,864 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "13-a2-education",
+   "title": "A2 education & study",
+   "level": "A2",
+   "words": [
     {
-      "id": "13-a2-education",
-      "title": "A2 education & study",
-      "level": "A2",
-      "words": [
-        {
-          "id": "université",
-          "hr": "université",
-          "en": "university",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ma sœur étudie à l'université.",
-            "gloss": "My sister studies at the university."
-          }
-        },
-        {
-          "id": "collège",
-          "hr": "collège",
-          "en": "middle school",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il entre au collège cette année.",
-            "gloss": "He is starting middle school this year."
-          }
-        },
-        {
-          "id": "lycée",
-          "hr": "lycée",
-          "en": "high school",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le lycée est près de chez moi.",
-            "gloss": "The high school is near my home."
-          }
-        },
-        {
-          "id": "classe",
-          "hr": "classe",
-          "en": "class",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a trente élèves dans ma classe.",
-            "gloss": "There are thirty pupils in my class."
-          }
-        },
-        {
-          "id": "salle",
-          "hr": "salle",
-          "en": "room",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le cours a lieu dans la salle 12.",
-            "gloss": "The class takes place in room 12."
-          }
-        },
-        {
-          "id": "étudiant",
-          "hr": "étudiant",
-          "en": "student",
-          "pos": "n. m.",
-          "example": {
-            "target": "Cet étudiant travaille beaucoup.",
-            "gloss": "This student works a lot."
-          }
-        },
-        {
-          "id": "étudiante",
-          "hr": "étudiante",
-          "en": "student (female)",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'étudiante prend des notes.",
-            "gloss": "The (female) student takes notes."
-          }
-        },
-        {
-          "id": "élève",
-          "hr": "élève",
-          "en": "pupil",
-          "pos": "n. m.",
-          "example": {
-            "target": "Chaque élève a un cahier.",
-            "gloss": "Each pupil has a notebook."
-          }
-        },
-        {
-          "id": "maître",
-          "hr": "maître",
-          "en": "teacher (primary)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le maître explique la leçon.",
-            "gloss": "The teacher explains the lesson."
-          }
-        },
-        {
-          "id": "maîtresse",
-          "hr": "maîtresse",
-          "en": "teacher (female, primary)",
-          "pos": "n. f.",
-          "example": {
-            "target": "La maîtresse est très gentille.",
-            "gloss": "The (female) teacher is very kind."
-          }
-        },
-        {
-          "id": "camarade",
-          "hr": "camarade",
-          "en": "classmate",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je joue avec mes camarades pendant la récréation.",
-            "gloss": "I play with my classmates during recess."
-          }
-        },
-        {
-          "id": "leçon",
-          "hr": "leçon",
-          "en": "lesson",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'apprends ma leçon d'histoire.",
-            "gloss": "I am learning my history lesson."
-          }
-        },
-        {
-          "id": "matière",
-          "hr": "matière",
-          "en": "subject",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ma matière préférée est la géographie.",
-            "gloss": "My favorite subject is geography."
-          }
-        },
-        {
-          "id": "note",
-          "hr": "note",
-          "en": "grade",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'ai eu une bonne note en maths.",
-            "gloss": "I got a good grade in math."
-          }
-        },
-        {
-          "id": "test",
-          "hr": "test",
-          "en": "test",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous avons un test demain matin.",
-            "gloss": "We have a test tomorrow morning."
-          }
-        },
-        {
-          "id": "exercice",
-          "hr": "exercice",
-          "en": "exercise",
-          "pos": "n. m.",
-          "example": {
-            "target": "Cet exercice de grammaire est facile.",
-            "gloss": "This grammar exercise is easy."
-          }
-        },
-        {
-          "id": "question",
-          "hr": "question",
-          "en": "question",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le professeur pose une question.",
-            "gloss": "The teacher asks a question."
-          }
-        },
-        {
-          "id": "réponse",
-          "hr": "réponse",
-          "en": "answer",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ta réponse est correcte.",
-            "gloss": "Your answer is correct."
-          }
-        },
-        {
-          "id": "erreur",
-          "hr": "erreur",
-          "en": "mistake",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'ai fait une erreur dans mon calcul.",
-            "gloss": "I made a mistake in my calculation."
-          }
-        },
-        {
-          "id": "résultat",
-          "hr": "résultat",
-          "en": "result",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les résultats de l'examen arrivent lundi.",
-            "gloss": "The exam results come out on Monday."
-          }
-        },
-        {
-          "id": "bulletin",
-          "hr": "bulletin",
-          "en": "report card",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon bulletin est bon ce trimestre.",
-            "gloss": "My report card is good this term."
-          }
-        },
-        {
-          "id": "emploi du temps",
-          "hr": "emploi du temps",
-          "en": "timetable",
-          "pos": "n. m.",
-          "example": {
-            "target": "Regarde l'emploi du temps de la semaine.",
-            "gloss": "Look at the timetable for the week."
-          }
-        },
-        {
-          "id": "cartable",
-          "hr": "cartable",
-          "en": "schoolbag",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon cartable est très lourd.",
-            "gloss": "My schoolbag is very heavy."
-          }
-        },
-        {
-          "id": "règle",
-          "hr": "règle",
-          "en": "ruler",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je trace une ligne avec ma règle.",
-            "gloss": "I draw a line with my ruler."
-          }
-        },
-        {
-          "id": "crayon",
-          "hr": "crayon",
-          "en": "pencil",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'écris au crayon.",
-            "gloss": "I write with a pencil."
-          }
-        },
-        {
-          "id": "gomme",
-          "hr": "gomme",
-          "en": "eraser",
-          "pos": "n. f.",
-          "example": {
-            "target": "Passe-moi la gomme, s'il te plaît.",
-            "gloss": "Pass me the eraser, please."
-          }
-        },
-        {
-          "id": "tableau",
-          "hr": "tableau",
-          "en": "blackboard",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le professeur écrit au tableau.",
-            "gloss": "The teacher writes on the blackboard."
-          }
-        },
-        {
-          "id": "craie",
-          "hr": "craie",
-          "en": "chalk",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il prend un morceau de craie.",
-            "gloss": "He takes a piece of chalk."
-          }
-        },
-        {
-          "id": "dictionnaire",
-          "hr": "dictionnaire",
-          "en": "dictionary",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je cherche un mot dans le dictionnaire.",
-            "gloss": "I look up a word in the dictionary."
-          }
-        },
-        {
-          "id": "manuel",
-          "hr": "manuel",
-          "en": "textbook",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ouvrez votre manuel page vingt.",
-            "gloss": "Open your textbook to page twenty."
-          }
-        },
-        {
-          "id": "mathématiques",
-          "hr": "mathématiques",
-          "en": "mathematics",
-          "pos": "n. f. pl.",
-          "example": {
-            "target": "Les mathématiques sont difficiles pour moi.",
-            "gloss": "Mathematics is difficult for me."
-          }
-        },
-        {
-          "id": "histoire",
-          "hr": "histoire",
-          "en": "history",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'aime le cours d'histoire.",
-            "gloss": "I like the history class."
-          }
-        },
-        {
-          "id": "géographie",
-          "hr": "géographie",
-          "en": "geography",
-          "pos": "n. f.",
-          "example": {
-            "target": "En géographie, on étudie les fleuves.",
-            "gloss": "In geography, we study rivers."
-          }
-        },
-        {
-          "id": "science",
-          "hr": "science",
-          "en": "science",
-          "pos": "n. f.",
-          "example": {
-            "target": "La science explique la nature.",
-            "gloss": "Science explains nature."
-          }
-        },
-        {
-          "id": "littérature",
-          "hr": "littérature",
-          "en": "literature",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous lisons de la littérature française.",
-            "gloss": "We read French literature."
-          }
-        },
-        {
-          "id": "philosophie",
-          "hr": "philosophie",
-          "en": "philosophy",
-          "pos": "n. f.",
-          "example": {
-            "target": "La philosophie fait réfléchir.",
-            "gloss": "Philosophy makes you think."
-          }
-        },
-        {
-          "id": "informatique",
-          "hr": "informatique",
-          "en": "computer science",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le cours d'informatique est le mardi.",
-            "gloss": "The computer science class is on Tuesday."
-          }
-        },
-        {
-          "id": "grammaire",
-          "hr": "grammaire",
-          "en": "grammar",
-          "pos": "n. f.",
-          "example": {
-            "target": "La grammaire française a beaucoup de règles.",
-            "gloss": "French grammar has many rules."
-          }
-        },
-        {
-          "id": "vocabulaire",
-          "hr": "vocabulaire",
-          "en": "vocabulary",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'apprends du nouveau vocabulaire chaque jour.",
-            "gloss": "I learn new vocabulary every day."
-          }
-        },
-        {
-          "id": "enseigner",
-          "hr": "enseigner",
-          "en": "to teach",
-          "pos": "verb",
-          "example": {
-            "target": "Elle enseigne l'anglais au collège.",
-            "gloss": "She teaches English at the middle school."
-          }
-        },
-        {
-          "id": "réviser",
-          "hr": "réviser",
-          "en": "to review",
-          "pos": "verb",
-          "example": {
-            "target": "Je révise avant l'examen.",
-            "gloss": "I review before the exam."
-          }
-        },
-        {
-          "id": "passer un examen",
-          "hr": "passer un examen",
-          "en": "to take an exam",
-          "pos": "verb phrase",
-          "example": {
-            "target": "Je passe un examen la semaine prochaine.",
-            "gloss": "I am taking an exam next week."
-          }
-        },
-        {
-          "id": "échouer",
-          "hr": "échouer",
-          "en": "to fail",
-          "pos": "verb",
-          "example": {
-            "target": "Il a peur d'échouer au test.",
-            "gloss": "He is afraid of failing the test."
-          }
-        },
-        {
-          "id": "redoubler",
-          "hr": "redoubler",
-          "en": "to repeat a year",
-          "pos": "verb",
-          "example": {
-            "target": "Elle doit redoubler sa classe.",
-            "gloss": "She has to repeat her grade."
-          }
-        },
-        {
-          "id": "corriger",
-          "hr": "corriger",
-          "en": "to correct",
-          "pos": "verb",
-          "example": {
-            "target": "Le professeur corrige les copies.",
-            "gloss": "The teacher corrects the papers."
-          }
-        },
-        {
-          "id": "noter",
-          "hr": "noter",
-          "en": "to grade / note down",
-          "pos": "verb",
-          "example": {
-            "target": "Note la date dans ton agenda.",
-            "gloss": "Note the date in your planner."
-          }
-        },
-        {
-          "id": "s'inscrire",
-          "hr": "s'inscrire",
-          "en": "to enroll",
-          "pos": "verb",
-          "example": {
-            "target": "Je veux m'inscrire à ce cours.",
-            "gloss": "I want to enroll in this course."
-          }
-        },
-        {
-          "id": "calculer",
-          "hr": "calculer",
-          "en": "to calculate",
-          "pos": "verb",
-          "example": {
-            "target": "Il faut calculer le total.",
-            "gloss": "You have to calculate the total."
-          }
-        },
-        {
-          "id": "compter",
-          "hr": "compter",
-          "en": "to count",
-          "pos": "verb",
-          "example": {
-            "target": "L'enfant apprend à compter jusqu'à dix.",
-            "gloss": "The child learns to count to ten."
-          }
-        },
-        {
-          "id": "résoudre",
-          "hr": "résoudre",
-          "en": "to solve",
-          "pos": "verb",
-          "example": {
-            "target": "Il faut résoudre le problème de maths.",
-            "gloss": "You have to solve the math problem."
-          }
-        },
-        {
-          "id": "poser une question",
-          "hr": "poser une question",
-          "en": "to ask a question",
-          "pos": "verb phrase",
-          "example": {
-            "target": "Je veux poser une question.",
-            "gloss": "I want to ask a question."
-          }
-        },
-        {
-          "id": "apprendre par cœur",
-          "hr": "apprendre par cœur",
-          "en": "to memorize",
-          "pos": "verb phrase",
-          "example": {
-            "target": "Il faut apprendre le poème par cœur.",
-            "gloss": "You must memorize the poem."
-          }
-        },
-        {
-          "id": "scolaire",
-          "hr": "scolaire",
-          "en": "school (adj.)",
-          "pos": "adjective",
-          "example": {
-            "target": "L'année scolaire commence en septembre.",
-            "gloss": "The school year starts in September."
-          }
-        },
-        {
-          "id": "obligatoire",
-          "hr": "obligatoire",
-          "en": "compulsory",
-          "pos": "adjective",
-          "example": {
-            "target": "Ce cours est obligatoire pour tout le monde.",
-            "gloss": "This class is compulsory for everyone."
-          }
-        },
-        {
-          "id": "absent",
-          "hr": "absent",
-          "en": "absent",
-          "pos": "adjective",
-          "example": {
-            "target": "Deux élèves sont absents aujourd'hui.",
-            "gloss": "Two pupils are absent today."
-          }
-        },
-        {
-          "id": "présent",
-          "hr": "présent",
-          "en": "present",
-          "pos": "adjective",
-          "example": {
-            "target": "Tous les étudiants sont présents.",
-            "gloss": "All the students are present."
-          }
-        },
-        {
-          "id": "récréation",
-          "hr": "récréation",
-          "en": "recess",
-          "pos": "n. f.",
-          "example": {
-            "target": "La récréation dure quinze minutes.",
-            "gloss": "Recess lasts fifteen minutes."
-          }
-        },
-        {
-          "id": "cour",
-          "hr": "cour",
-          "en": "schoolyard",
-          "pos": "n. f.",
-          "example": {
-            "target": "Les enfants jouent dans la cour.",
-            "gloss": "The children play in the schoolyard."
-          }
-        },
-        {
-          "id": "cantine",
-          "hr": "cantine",
-          "en": "cafeteria",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je mange à la cantine à midi.",
-            "gloss": "I eat in the cafeteria at noon."
-          }
-        },
-        {
-          "id": "copie",
-          "hr": "copie",
-          "en": "exam paper",
-          "pos": "n. f.",
-          "example": {
-            "target": "Rendez vos copies à la fin du cours.",
-            "gloss": "Hand in your papers at the end of class."
-          }
-        },
-        {
-          "id": "page",
-          "hr": "page",
-          "en": "page",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ouvrez le livre à la page dix.",
-            "gloss": "Open the book to page ten."
-          }
-        },
-        {
-          "id": "mot",
-          "hr": "mot",
-          "en": "word",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je ne comprends pas ce mot.",
-            "gloss": "I don't understand this word."
-          }
-        },
-        {
-          "id": "phrase",
-          "hr": "phrase",
-          "en": "sentence",
-          "pos": "n. f.",
-          "example": {
-            "target": "Écris une phrase complète.",
-            "gloss": "Write a complete sentence."
-          }
-        },
-        {
-          "id": "texte",
-          "hr": "texte",
-          "en": "text",
-          "pos": "n. m.",
-          "example": {
-            "target": "Lis le texte à voix haute.",
-            "gloss": "Read the text out loud."
-          }
-        },
-        {
-          "id": "chiffre",
-          "hr": "chiffre",
-          "en": "digit",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le nombre douze a deux chiffres.",
-            "gloss": "The number twelve has two digits."
-          }
-        },
-        {
-          "id": "problème",
-          "hr": "problème",
-          "en": "problem",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ce problème de maths est difficile.",
-            "gloss": "This math problem is difficult."
-          }
-        },
-        {
-          "id": "calcul",
-          "hr": "calcul",
-          "en": "calculation",
-          "pos": "n. m.",
-          "example": {
-            "target": "Vérifie bien ton calcul.",
-            "gloss": "Check your calculation carefully."
-          }
-        },
-        {
-          "id": "contrôle",
-          "hr": "contrôle",
-          "en": "quiz / test",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous avons un contrôle de français vendredi.",
-            "gloss": "We have a French test on Friday."
-          }
-        },
-        {
-          "id": "trousse",
-          "hr": "trousse",
-          "en": "pencil case",
-          "pos": "n. f.",
-          "example": {
-            "target": "Mes crayons sont dans ma trousse.",
-            "gloss": "My pencils are in my pencil case."
-          }
-        },
-        {
-          "id": "feutre",
-          "hr": "feutre",
-          "en": "marker",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je colorie avec un feutre rouge.",
-            "gloss": "I color with a red marker."
-          }
-        },
-        {
-          "id": "classeur",
-          "hr": "classeur",
-          "en": "binder",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je range mes feuilles dans un classeur.",
-            "gloss": "I put my sheets in a binder."
-          }
-        },
-        {
-          "id": "agenda",
-          "hr": "agenda",
-          "en": "planner",
-          "pos": "n. m.",
-          "example": {
-            "target": "Note tes devoirs dans ton agenda.",
-            "gloss": "Note your homework in your planner."
-          }
-        },
-        {
-          "id": "cours particulier",
-          "hr": "cours particulier",
-          "en": "private lesson",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je prends des cours particuliers de maths.",
-            "gloss": "I take private math lessons."
-          }
-        },
-        {
-          "id": "trimestre",
-          "hr": "trimestre",
-          "en": "term",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le premier trimestre finit en décembre.",
-            "gloss": "The first term ends in December."
-          }
-        },
-        {
-          "id": "semestre",
-          "hr": "semestre",
-          "en": "semester",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le semestre commence en janvier.",
-            "gloss": "The semester begins in January."
-          }
-        },
-        {
-          "id": "rentrée",
-          "hr": "rentrée",
-          "en": "back to school",
-          "pos": "n. f.",
-          "example": {
-            "target": "La rentrée est au mois de septembre.",
-            "gloss": "Back to school is in September."
-          }
-        },
-        {
-          "id": "groupe",
-          "hr": "groupe",
-          "en": "group",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous travaillons en groupe aujourd'hui.",
-            "gloss": "We are working in groups today."
-          }
-        },
-        {
-          "id": "connaissance",
-          "hr": "connaissance",
-          "en": "knowledge",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il a de bonnes connaissances en histoire.",
-            "gloss": "He has good knowledge of history."
-          }
-        },
-        {
-          "id": "progrès",
-          "hr": "progrès",
-          "en": "progress",
-          "pos": "n. m.",
-          "example": {
-            "target": "Tu as fait beaucoup de progrès en français.",
-            "gloss": "You have made a lot of progress in French."
-          }
-        },
-        {
-          "id": "difficulté",
-          "hr": "difficulté",
-          "en": "difficulty",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'ai des difficultés en mathématiques.",
-            "gloss": "I have difficulties in mathematics."
-          }
-        },
-        {
-          "id": "attention",
-          "hr": "attention",
-          "en": "attention",
-          "pos": "n. f.",
-          "example": {
-            "target": "Fais attention au professeur.",
-            "gloss": "Pay attention to the teacher."
-          }
-        },
-        {
-          "id": "effort",
-          "hr": "effort",
-          "en": "effort",
-          "pos": "n. m.",
-          "example": {
-            "target": "Fais un effort pour réussir.",
-            "gloss": "Make an effort to succeed."
-          }
-        },
-        {
-          "id": "bourse",
-          "hr": "bourse",
-          "en": "scholarship",
-          "pos": "n. f.",
-          "example": {
-            "target": "Elle a une bourse pour ses études.",
-            "gloss": "She has a scholarship for her studies."
-          }
-        },
-        {
-          "id": "uniforme",
-          "hr": "uniforme",
-          "en": "uniform",
-          "pos": "n. m.",
-          "example": {
-            "target": "Dans cette école, on porte un uniforme.",
-            "gloss": "In this school, students wear a uniform."
-          }
-        },
-        {
-          "id": "études",
-          "hr": "études",
-          "en": "studies",
-          "pos": "n. f. pl.",
-          "example": {
-            "target": "Elle continue ses études à Paris.",
-            "gloss": "She continues her studies in Paris."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr",
-        "referentiel-fr"
-      ]
+     "id": "université",
+     "hr": "université",
+     "en": "university",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ma sœur étudie à l'université.",
+      "gloss": "My sister studies at the university."
+     }
+    },
+    {
+     "id": "collège",
+     "hr": "collège",
+     "en": "middle school",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il entre au collège cette année.",
+      "gloss": "He is starting middle school this year."
+     }
+    },
+    {
+     "id": "lycée",
+     "hr": "lycée",
+     "en": "high school",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le lycée est près de chez moi.",
+      "gloss": "The high school is near my home."
+     }
+    },
+    {
+     "id": "classe",
+     "hr": "classe",
+     "en": "class",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a trente élèves dans ma classe.",
+      "gloss": "There are thirty pupils in my class."
+     }
+    },
+    {
+     "id": "salle",
+     "hr": "salle",
+     "en": "room",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le cours a lieu dans la salle 12.",
+      "gloss": "The class takes place in room 12."
+     }
+    },
+    {
+     "id": "étudiant",
+     "hr": "étudiant",
+     "en": "student",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cet étudiant travaille beaucoup.",
+      "gloss": "This student works a lot."
+     }
+    },
+    {
+     "id": "étudiante",
+     "hr": "étudiante",
+     "en": "student (female)",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'étudiante prend des notes.",
+      "gloss": "The (female) student takes notes."
+     }
+    },
+    {
+     "id": "élève",
+     "hr": "élève",
+     "en": "pupil",
+     "pos": "n. m.",
+     "example": {
+      "target": "Chaque élève a un cahier.",
+      "gloss": "Each pupil has a notebook."
+     }
+    },
+    {
+     "id": "maître",
+     "hr": "maître",
+     "en": "teacher (primary)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le maître explique la leçon.",
+      "gloss": "The teacher explains the lesson."
+     }
+    },
+    {
+     "id": "maîtresse",
+     "hr": "maîtresse",
+     "en": "teacher (female, primary)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La maîtresse est très gentille.",
+      "gloss": "The (female) teacher is very kind."
+     }
+    },
+    {
+     "id": "camarade",
+     "hr": "camarade",
+     "en": "classmate",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je joue avec mes camarades pendant la récréation.",
+      "gloss": "I play with my classmates during recess."
+     }
+    },
+    {
+     "id": "leçon",
+     "hr": "leçon",
+     "en": "lesson",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'apprends ma leçon d'histoire.",
+      "gloss": "I am learning my history lesson."
+     }
+    },
+    {
+     "id": "matière",
+     "hr": "matière",
+     "en": "subject",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ma matière préférée est la géographie.",
+      "gloss": "My favorite subject is geography."
+     }
+    },
+    {
+     "id": "note",
+     "hr": "note",
+     "en": "grade",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'ai eu une bonne note en maths.",
+      "gloss": "I got a good grade in math."
+     }
+    },
+    {
+     "id": "test",
+     "hr": "test",
+     "en": "test",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous avons un test demain matin.",
+      "gloss": "We have a test tomorrow morning."
+     }
+    },
+    {
+     "id": "exercice",
+     "hr": "exercice",
+     "en": "exercise",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cet exercice de grammaire est facile.",
+      "gloss": "This grammar exercise is easy."
+     }
+    },
+    {
+     "id": "question",
+     "hr": "question",
+     "en": "question",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le professeur pose une question.",
+      "gloss": "The teacher asks a question."
+     }
+    },
+    {
+     "id": "réponse",
+     "hr": "réponse",
+     "en": "answer",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ta réponse est correcte.",
+      "gloss": "Your answer is correct."
+     }
+    },
+    {
+     "id": "erreur",
+     "hr": "erreur",
+     "en": "mistake",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'ai fait une erreur dans mon calcul.",
+      "gloss": "I made a mistake in my calculation."
+     }
+    },
+    {
+     "id": "résultat",
+     "hr": "résultat",
+     "en": "result",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les résultats de l'examen arrivent lundi.",
+      "gloss": "The exam results come out on Monday."
+     }
+    },
+    {
+     "id": "bulletin",
+     "hr": "bulletin",
+     "en": "report card",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon bulletin est bon ce trimestre.",
+      "gloss": "My report card is good this term."
+     }
+    },
+    {
+     "id": "emploi du temps",
+     "hr": "emploi du temps",
+     "en": "timetable",
+     "pos": "n. m.",
+     "example": {
+      "target": "Regarde l'emploi du temps de la semaine.",
+      "gloss": "Look at the timetable for the week."
+     }
+    },
+    {
+     "id": "cartable",
+     "hr": "cartable",
+     "en": "schoolbag",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon cartable est très lourd.",
+      "gloss": "My schoolbag is very heavy."
+     }
+    },
+    {
+     "id": "règle",
+     "hr": "règle",
+     "en": "ruler",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je trace une ligne avec ma règle.",
+      "gloss": "I draw a line with my ruler."
+     }
+    },
+    {
+     "id": "crayon",
+     "hr": "crayon",
+     "en": "pencil",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'écris au crayon.",
+      "gloss": "I write with a pencil."
+     }
+    },
+    {
+     "id": "gomme",
+     "hr": "gomme",
+     "en": "eraser",
+     "pos": "n. f.",
+     "example": {
+      "target": "Passe-moi la gomme, s'il te plaît.",
+      "gloss": "Pass me the eraser, please."
+     }
+    },
+    {
+     "id": "tableau",
+     "hr": "tableau",
+     "en": "blackboard",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le professeur écrit au tableau.",
+      "gloss": "The teacher writes on the blackboard."
+     }
+    },
+    {
+     "id": "craie",
+     "hr": "craie",
+     "en": "chalk",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il prend un morceau de craie.",
+      "gloss": "He takes a piece of chalk."
+     }
+    },
+    {
+     "id": "dictionnaire",
+     "hr": "dictionnaire",
+     "en": "dictionary",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je cherche un mot dans le dictionnaire.",
+      "gloss": "I look up a word in the dictionary."
+     }
+    },
+    {
+     "id": "manuel",
+     "hr": "manuel",
+     "en": "textbook",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ouvrez votre manuel page vingt.",
+      "gloss": "Open your textbook to page twenty."
+     }
+    },
+    {
+     "id": "mathématiques",
+     "hr": "mathématiques",
+     "en": "mathematics",
+     "pos": "n. f. pl.",
+     "example": {
+      "target": "Les mathématiques sont difficiles pour moi.",
+      "gloss": "Mathematics is difficult for me."
+     }
+    },
+    {
+     "id": "histoire",
+     "hr": "histoire",
+     "en": "history",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'aime le cours d'histoire.",
+      "gloss": "I like the history class."
+     }
+    },
+    {
+     "id": "géographie",
+     "hr": "géographie",
+     "en": "geography",
+     "pos": "n. f.",
+     "example": {
+      "target": "En géographie, on étudie les fleuves.",
+      "gloss": "In geography, we study rivers."
+     }
+    },
+    {
+     "id": "science",
+     "hr": "science",
+     "en": "science",
+     "pos": "n. f.",
+     "example": {
+      "target": "La science explique la nature.",
+      "gloss": "Science explains nature."
+     }
+    },
+    {
+     "id": "littérature",
+     "hr": "littérature",
+     "en": "literature",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous lisons de la littérature française.",
+      "gloss": "We read French literature."
+     }
+    },
+    {
+     "id": "philosophie",
+     "hr": "philosophie",
+     "en": "philosophy",
+     "pos": "n. f.",
+     "example": {
+      "target": "La philosophie fait réfléchir.",
+      "gloss": "Philosophy makes you think."
+     }
+    },
+    {
+     "id": "informatique",
+     "hr": "informatique",
+     "en": "computer science",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le cours d'informatique est le mardi.",
+      "gloss": "The computer science class is on Tuesday."
+     }
+    },
+    {
+     "id": "grammaire",
+     "hr": "grammaire",
+     "en": "grammar",
+     "pos": "n. f.",
+     "example": {
+      "target": "La grammaire française a beaucoup de règles.",
+      "gloss": "French grammar has many rules."
+     }
+    },
+    {
+     "id": "vocabulaire",
+     "hr": "vocabulaire",
+     "en": "vocabulary",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'apprends du nouveau vocabulaire chaque jour.",
+      "gloss": "I learn new vocabulary every day."
+     }
+    },
+    {
+     "id": "enseigner",
+     "hr": "enseigner",
+     "en": "to teach",
+     "pos": "verb",
+     "example": {
+      "target": "Elle enseigne l'anglais au collège.",
+      "gloss": "She teaches English at the middle school."
+     }
+    },
+    {
+     "id": "réviser",
+     "hr": "réviser",
+     "en": "to review",
+     "pos": "verb",
+     "example": {
+      "target": "Je révise avant l'examen.",
+      "gloss": "I review before the exam."
+     }
+    },
+    {
+     "id": "passer un examen",
+     "hr": "passer un examen",
+     "en": "to take an exam",
+     "pos": "verb phrase",
+     "example": {
+      "target": "Je passe un examen la semaine prochaine.",
+      "gloss": "I am taking an exam next week."
+     }
+    },
+    {
+     "id": "échouer",
+     "hr": "échouer",
+     "en": "to fail",
+     "pos": "verb",
+     "example": {
+      "target": "Il a peur d'échouer au test.",
+      "gloss": "He is afraid of failing the test."
+     }
+    },
+    {
+     "id": "redoubler",
+     "hr": "redoubler",
+     "en": "to repeat a year",
+     "pos": "verb",
+     "example": {
+      "target": "Elle doit redoubler sa classe.",
+      "gloss": "She has to repeat her grade."
+     }
+    },
+    {
+     "id": "corriger",
+     "hr": "corriger",
+     "en": "to correct",
+     "pos": "verb",
+     "example": {
+      "target": "Le professeur corrige les copies.",
+      "gloss": "The teacher corrects the papers."
+     }
+    },
+    {
+     "id": "noter",
+     "hr": "noter",
+     "en": "to grade / note down",
+     "pos": "verb",
+     "example": {
+      "target": "Note la date dans ton agenda.",
+      "gloss": "Note the date in your planner."
+     }
+    },
+    {
+     "id": "s'inscrire",
+     "hr": "s'inscrire",
+     "en": "to enroll",
+     "pos": "verb",
+     "example": {
+      "target": "Je veux m'inscrire à ce cours.",
+      "gloss": "I want to enroll in this course."
+     }
+    },
+    {
+     "id": "calculer",
+     "hr": "calculer",
+     "en": "to calculate",
+     "pos": "verb",
+     "example": {
+      "target": "Il faut calculer le total.",
+      "gloss": "You have to calculate the total."
+     }
+    },
+    {
+     "id": "compter",
+     "hr": "compter",
+     "en": "to count",
+     "pos": "verb",
+     "example": {
+      "target": "L'enfant apprend à compter jusqu'à dix.",
+      "gloss": "The child learns to count to ten."
+     }
+    },
+    {
+     "id": "résoudre",
+     "hr": "résoudre",
+     "en": "to solve",
+     "pos": "verb",
+     "example": {
+      "target": "Il faut résoudre le problème de maths.",
+      "gloss": "You have to solve the math problem."
+     }
+    },
+    {
+     "id": "poser une question",
+     "hr": "poser une question",
+     "en": "to ask a question",
+     "pos": "verb phrase",
+     "example": {
+      "target": "Je veux poser une question.",
+      "gloss": "I want to ask a question."
+     }
+    },
+    {
+     "id": "apprendre par cœur",
+     "hr": "apprendre par cœur",
+     "en": "to memorize",
+     "pos": "verb phrase",
+     "example": {
+      "target": "Il faut apprendre le poème par cœur.",
+      "gloss": "You must memorize the poem."
+     }
+    },
+    {
+     "id": "scolaire",
+     "hr": "scolaire",
+     "en": "school (adj.)",
+     "pos": "adjective",
+     "example": {
+      "target": "L'année scolaire commence en septembre.",
+      "gloss": "The school year starts in September."
+     }
+    },
+    {
+     "id": "obligatoire",
+     "hr": "obligatoire",
+     "en": "compulsory",
+     "pos": "adjective",
+     "example": {
+      "target": "Ce cours est obligatoire pour tout le monde.",
+      "gloss": "This class is compulsory for everyone."
+     }
+    },
+    {
+     "id": "absent",
+     "hr": "absent",
+     "en": "absent",
+     "pos": "adjective",
+     "example": {
+      "target": "Deux élèves sont absents aujourd'hui.",
+      "gloss": "Two pupils are absent today."
+     }
+    },
+    {
+     "id": "présent",
+     "hr": "présent",
+     "en": "present",
+     "pos": "adjective",
+     "example": {
+      "target": "Tous les étudiants sont présents.",
+      "gloss": "All the students are present."
+     }
+    },
+    {
+     "id": "récréation",
+     "hr": "récréation",
+     "en": "recess",
+     "pos": "n. f.",
+     "example": {
+      "target": "La récréation dure quinze minutes.",
+      "gloss": "Recess lasts fifteen minutes."
+     }
+    },
+    {
+     "id": "cour",
+     "hr": "cour",
+     "en": "schoolyard",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les enfants jouent dans la cour.",
+      "gloss": "The children play in the schoolyard."
+     }
+    },
+    {
+     "id": "cantine",
+     "hr": "cantine",
+     "en": "cafeteria",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je mange à la cantine à midi.",
+      "gloss": "I eat in the cafeteria at noon."
+     }
+    },
+    {
+     "id": "copie",
+     "hr": "copie",
+     "en": "exam paper",
+     "pos": "n. f.",
+     "example": {
+      "target": "Rendez vos copies à la fin du cours.",
+      "gloss": "Hand in your papers at the end of class."
+     }
+    },
+    {
+     "id": "page",
+     "hr": "page",
+     "en": "page",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ouvrez le livre à la page dix.",
+      "gloss": "Open the book to page ten."
+     }
+    },
+    {
+     "id": "mot",
+     "hr": "mot",
+     "en": "word",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je ne comprends pas ce mot.",
+      "gloss": "I don't understand this word."
+     }
+    },
+    {
+     "id": "phrase",
+     "hr": "phrase",
+     "en": "sentence",
+     "pos": "n. f.",
+     "example": {
+      "target": "Écris une phrase complète.",
+      "gloss": "Write a complete sentence."
+     }
+    },
+    {
+     "id": "texte",
+     "hr": "texte",
+     "en": "text",
+     "pos": "n. m.",
+     "example": {
+      "target": "Lis le texte à voix haute.",
+      "gloss": "Read the text out loud."
+     }
+    },
+    {
+     "id": "chiffre",
+     "hr": "chiffre",
+     "en": "digit",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le nombre douze a deux chiffres.",
+      "gloss": "The number twelve has two digits."
+     }
+    },
+    {
+     "id": "problème",
+     "hr": "problème",
+     "en": "problem",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce problème de maths est difficile.",
+      "gloss": "This math problem is difficult."
+     }
+    },
+    {
+     "id": "calcul",
+     "hr": "calcul",
+     "en": "calculation",
+     "pos": "n. m.",
+     "example": {
+      "target": "Vérifie bien ton calcul.",
+      "gloss": "Check your calculation carefully."
+     }
+    },
+    {
+     "id": "contrôle",
+     "hr": "contrôle",
+     "en": "quiz / test",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous avons un contrôle de français vendredi.",
+      "gloss": "We have a French test on Friday."
+     }
+    },
+    {
+     "id": "trousse",
+     "hr": "trousse",
+     "en": "pencil case",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mes crayons sont dans ma trousse.",
+      "gloss": "My pencils are in my pencil case."
+     }
+    },
+    {
+     "id": "feutre",
+     "hr": "feutre",
+     "en": "marker",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je colorie avec un feutre rouge.",
+      "gloss": "I color with a red marker."
+     }
+    },
+    {
+     "id": "classeur",
+     "hr": "classeur",
+     "en": "binder",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je range mes feuilles dans un classeur.",
+      "gloss": "I put my sheets in a binder."
+     }
+    },
+    {
+     "id": "agenda",
+     "hr": "agenda",
+     "en": "planner",
+     "pos": "n. m.",
+     "example": {
+      "target": "Note tes devoirs dans ton agenda.",
+      "gloss": "Note your homework in your planner."
+     }
+    },
+    {
+     "id": "cours particulier",
+     "hr": "cours particulier",
+     "en": "private lesson",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je prends des cours particuliers de maths.",
+      "gloss": "I take private math lessons."
+     }
+    },
+    {
+     "id": "trimestre",
+     "hr": "trimestre",
+     "en": "term",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le premier trimestre finit en décembre.",
+      "gloss": "The first term ends in December."
+     }
+    },
+    {
+     "id": "semestre",
+     "hr": "semestre",
+     "en": "semester",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le semestre commence en janvier.",
+      "gloss": "The semester begins in January."
+     }
+    },
+    {
+     "id": "rentrée",
+     "hr": "rentrée",
+     "en": "back to school",
+     "pos": "n. f.",
+     "example": {
+      "target": "La rentrée est au mois de septembre.",
+      "gloss": "Back to school is in September."
+     }
+    },
+    {
+     "id": "groupe",
+     "hr": "groupe",
+     "en": "group",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous travaillons en groupe aujourd'hui.",
+      "gloss": "We are working in groups today."
+     }
+    },
+    {
+     "id": "connaissance",
+     "hr": "connaissance",
+     "en": "knowledge",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il a de bonnes connaissances en histoire.",
+      "gloss": "He has good knowledge of history."
+     }
+    },
+    {
+     "id": "progrès",
+     "hr": "progrès",
+     "en": "progress",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tu as fait beaucoup de progrès en français.",
+      "gloss": "You have made a lot of progress in French."
+     }
+    },
+    {
+     "id": "difficulté",
+     "hr": "difficulté",
+     "en": "difficulty",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'ai des difficultés en mathématiques.",
+      "gloss": "I have difficulties in mathematics."
+     }
+    },
+    {
+     "id": "attention",
+     "hr": "attention",
+     "en": "attention",
+     "pos": "n. f.",
+     "example": {
+      "target": "Fais attention au professeur.",
+      "gloss": "Pay attention to the teacher."
+     }
+    },
+    {
+     "id": "effort",
+     "hr": "effort",
+     "en": "effort",
+     "pos": "n. m.",
+     "example": {
+      "target": "Fais un effort pour réussir.",
+      "gloss": "Make an effort to succeed."
+     }
+    },
+    {
+     "id": "bourse",
+     "hr": "bourse",
+     "en": "scholarship",
+     "pos": "n. f.",
+     "example": {
+      "target": "Elle a une bourse pour ses études.",
+      "gloss": "She has a scholarship for her studies."
+     }
+    },
+    {
+     "id": "uniforme",
+     "hr": "uniforme",
+     "en": "uniform",
+     "pos": "n. m.",
+     "example": {
+      "target": "Dans cette école, on porte un uniforme.",
+      "gloss": "In this school, students wear a uniform."
+     }
+    },
+    {
+     "id": "études",
+     "hr": "études",
+     "en": "studies",
+     "pos": "n. f. pl.",
+     "example": {
+      "target": "Elle continue ses études à Paris.",
+      "gloss": "She continues her studies in Paris."
+     }
     }
-  ]
+   ],
+   "sources": [
+    "inventaire-cecrl"
+   ]
+  }
+ ]
 }

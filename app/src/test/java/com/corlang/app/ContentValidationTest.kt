@@ -51,9 +51,13 @@ class ContentValidationTest {
         // Croatian
         "asoo", "nn-6-2021", "nn-100-2021", "croaticum-syllabus",
         "croaticum-b1-sample", "cefr-grid", "ffzg-ecourse",
-        // French (DELF B2 target)
+        // French (DELF B2 target, the level naturalisation requires since 2026-01-01).
+        // referentiel-fr / francais-fondamental / freq-fr were retired on 2026-07-20: the
+        // Beacco volumes and the official Fondamental list were never fetchable, so citing
+        // them was an overclaim (registry C16). The Eaquals/CIEP Inventaire and Lexique 3.83
+        // are the fetched, verified replacements.
         "cecrl", "delf-b1-sample", "delf-b2-sample",
-        "referentiel-fr", "francais-fondamental", "freq-fr",
+        "inventaire-cecrl", "lexique383", "decret-2025-648",
         // Portuguese, European (DIPLE B2 target)
         "qecr", "caple", "deple-sample", "diple-sample",
         "referencial-camoes", "portugues-fundamental", "freq-pt",

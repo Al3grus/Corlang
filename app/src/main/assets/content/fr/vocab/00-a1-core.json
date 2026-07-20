@@ -1,1695 +1,1685 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "a1-core-greetings",
+   "title": "Greetings & politeness",
+   "level": "A1",
+   "words": [
     {
-      "id": "a1-core-greetings",
-      "title": "Greetings & politeness",
-      "level": "A1",
-      "words": [
-        {
-          "id": "bonjour",
-          "hr": "bonjour",
-          "en": "hello / good day",
-          "pos": "interj.",
-          "example": {
-            "target": "Bonjour, comment allez-vous ?",
-            "gloss": "Hello, how are you?"
-          }
-        },
-        {
-          "id": "bonsoir",
-          "hr": "bonsoir",
-          "en": "good evening",
-          "pos": "interj.",
-          "example": {
-            "target": "Bonsoir, madame.",
-            "gloss": "Good evening, madam."
-          }
-        },
-        {
-          "id": "salut",
-          "hr": "salut",
-          "en": "hi / bye (informal)",
-          "pos": "interj.",
-          "example": {
-            "target": "Salut, ça va ?",
-            "gloss": "Hi, how's it going?"
-          }
-        },
-        {
-          "id": "au revoir",
-          "hr": "au revoir",
-          "en": "goodbye",
-          "pos": "interj.",
-          "example": {
-            "target": "Au revoir, à demain !",
-            "gloss": "Goodbye, see you tomorrow!"
-          }
-        },
-        {
-          "id": "merci",
-          "hr": "merci",
-          "en": "thank you",
-          "pos": "interj.",
-          "example": {
-            "target": "Merci beaucoup !",
-            "gloss": "Thank you very much!"
-          }
-        },
-        {
-          "id": "s'il vous plaît",
-          "hr": "s'il vous plaît",
-          "en": "please (formal)",
-          "pos": "interj.",
-          "example": {
-            "target": "Un café, s'il vous plaît.",
-            "gloss": "A coffee, please."
-          }
-        },
-        {
-          "id": "pardon",
-          "hr": "pardon",
-          "en": "sorry / excuse me",
-          "pos": "interj.",
-          "example": {
-            "target": "Pardon, je suis en retard.",
-            "gloss": "Sorry, I'm late."
-          }
-        },
-        {
-          "id": "excusez-moi",
-          "hr": "excusez-moi",
-          "en": "excuse me (formal)",
-          "pos": "interj.",
-          "example": {
-            "target": "Excusez-moi, où est la gare ?",
-            "gloss": "Excuse me, where is the station?"
-          }
-        },
-        {
-          "id": "oui",
-          "hr": "oui",
-          "en": "yes",
-          "pos": "adv.",
-          "example": {
-            "target": "Oui, je suis d'accord.",
-            "gloss": "Yes, I agree."
-          }
-        },
-        {
-          "id": "non",
-          "hr": "non",
-          "en": "no",
-          "pos": "adv.",
-          "example": {
-            "target": "Non, merci.",
-            "gloss": "No, thank you."
-          }
-        },
-        {
-          "id": "de rien",
-          "hr": "de rien",
-          "en": "you're welcome",
-          "pos": "interj.",
-          "example": {
-            "target": "Merci ! - De rien.",
-            "gloss": "Thanks! - You're welcome."
-          }
-        },
-        {
-          "id": "à bientôt",
-          "hr": "à bientôt",
-          "en": "see you soon",
-          "pos": "interj.",
-          "example": {
-            "target": "À bientôt !",
-            "gloss": "See you soon!"
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "bonjour",
+     "hr": "bonjour",
+     "en": "hello / good day",
+     "pos": "interj.",
+     "example": {
+      "target": "Bonjour, comment allez-vous ?",
+      "gloss": "Hello, how are you?"
+     }
     },
     {
-      "id": "a1-core-people",
-      "title": "People & family",
-      "level": "A1",
-      "words": [
-        {
-          "id": "homme",
-          "hr": "homme",
-          "en": "man",
-          "pos": "n. m.",
-          "example": {
-            "target": "Cet homme est mon père.",
-            "gloss": "This man is my father."
-          }
-        },
-        {
-          "id": "femme",
-          "hr": "femme",
-          "en": "woman / wife",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une femme travaille au bureau.",
-            "gloss": "A woman works at the office."
-          }
-        },
-        {
-          "id": "enfant",
-          "hr": "enfant",
-          "en": "child",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'enfant joue dans le parc.",
-            "gloss": "The child plays in the park."
-          }
-        },
-        {
-          "id": "garçon",
-          "hr": "garçon",
-          "en": "boy",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le garçon lit un livre.",
-            "gloss": "The boy reads a book."
-          }
-        },
-        {
-          "id": "fille",
-          "hr": "fille",
-          "en": "girl / daughter",
-          "pos": "n. f.",
-          "example": {
-            "target": "Sa fille a dix ans.",
-            "gloss": "His daughter is ten."
-          }
-        },
-        {
-          "id": "ami",
-          "hr": "ami",
-          "en": "friend",
-          "pos": "n. m.",
-          "example": {
-            "target": "C'est mon ami Marc.",
-            "gloss": "This is my friend Marc."
-          },
-          "note": "f. amie"
-        },
-        {
-          "id": "famille",
-          "hr": "famille",
-          "en": "family",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'aime ma famille.",
-            "gloss": "I love my family."
-          }
-        },
-        {
-          "id": "père",
-          "hr": "père",
-          "en": "father",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon père est médecin.",
-            "gloss": "My father is a doctor."
-          }
-        },
-        {
-          "id": "mère",
-          "hr": "mère",
-          "en": "mother",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ma mère cuisine bien.",
-            "gloss": "My mother cooks well."
-          }
-        },
-        {
-          "id": "parents",
-          "hr": "parents",
-          "en": "parents",
-          "pos": "n. m. pl.",
-          "example": {
-            "target": "Mes parents habitent à Lyon.",
-            "gloss": "My parents live in Lyon."
-          }
-        },
-        {
-          "id": "frère",
-          "hr": "frère",
-          "en": "brother",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'ai un frère et une sœur.",
-            "gloss": "I have a brother and a sister."
-          }
-        },
-        {
-          "id": "sœur",
-          "hr": "sœur",
-          "en": "sister",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ma sœur est étudiante.",
-            "gloss": "My sister is a student."
-          }
-        },
-        {
-          "id": "fils",
-          "hr": "fils",
-          "en": "son",
-          "pos": "n. m.",
-          "example": {
-            "target": "Leur fils a cinq ans.",
-            "gloss": "Their son is five."
-          }
-        },
-        {
-          "id": "mari",
-          "hr": "mari",
-          "en": "husband",
-          "pos": "n. m.",
-          "example": {
-            "target": "Son mari est français.",
-            "gloss": "Her husband is French."
-          }
-        },
-        {
-          "id": "monsieur",
-          "hr": "monsieur",
-          "en": "sir / Mr",
-          "pos": "n. m.",
-          "example": {
-            "target": "Bonjour monsieur.",
-            "gloss": "Hello sir."
-          }
-        },
-        {
-          "id": "madame",
-          "hr": "madame",
-          "en": "madam / Mrs",
-          "pos": "n. f.",
-          "example": {
-            "target": "Merci, madame.",
-            "gloss": "Thank you, madam."
-          }
-        },
-        {
-          "id": "gens",
-          "hr": "gens",
-          "en": "people",
-          "pos": "n. m. pl.",
-          "example": {
-            "target": "Il y a beaucoup de gens ici.",
-            "gloss": "There are a lot of people here."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "bonsoir",
+     "hr": "bonsoir",
+     "en": "good evening",
+     "pos": "interj.",
+     "example": {
+      "target": "Bonsoir, madame.",
+      "gloss": "Good evening, madam."
+     }
     },
     {
-      "id": "a1-core-numbers",
-      "title": "Numbers",
-      "level": "A1",
-      "words": [
-        {
-          "id": "un",
-          "hr": "un",
-          "en": "one",
-          "pos": "num.",
-          "example": {
-            "target": "J'ai un frère.",
-            "gloss": "I have one brother."
-          }
-        },
-        {
-          "id": "deux",
-          "hr": "deux",
-          "en": "two",
-          "pos": "num.",
-          "example": {
-            "target": "Deux cafés, s'il vous plaît.",
-            "gloss": "Two coffees, please."
-          }
-        },
-        {
-          "id": "trois",
-          "hr": "trois",
-          "en": "three",
-          "pos": "num.",
-          "example": {
-            "target": "Il est trois heures.",
-            "gloss": "It's three o'clock."
-          }
-        },
-        {
-          "id": "quatre",
-          "hr": "quatre",
-          "en": "four",
-          "pos": "num.",
-          "example": {
-            "target": "Nous sommes quatre.",
-            "gloss": "There are four of us."
-          }
-        },
-        {
-          "id": "cinq",
-          "hr": "cinq",
-          "en": "five",
-          "pos": "num.",
-          "example": {
-            "target": "Cinq minutes, s'il te plaît.",
-            "gloss": "Five minutes, please."
-          }
-        },
-        {
-          "id": "six",
-          "hr": "six",
-          "en": "six",
-          "pos": "num.",
-          "example": {
-            "target": "Il a six ans.",
-            "gloss": "He is six."
-          }
-        },
-        {
-          "id": "sept",
-          "hr": "sept",
-          "en": "seven",
-          "pos": "num.",
-          "example": {
-            "target": "Une semaine a sept jours.",
-            "gloss": "A week has seven days."
-          }
-        },
-        {
-          "id": "huit",
-          "hr": "huit",
-          "en": "eight",
-          "pos": "num.",
-          "example": {
-            "target": "Le magasin ouvre à huit heures.",
-            "gloss": "The shop opens at eight."
-          }
-        },
-        {
-          "id": "neuf",
-          "hr": "neuf",
-          "en": "nine",
-          "pos": "num.",
-          "example": {
-            "target": "J'habite au neuf, rue Verte.",
-            "gloss": "I live at number nine, Green Street."
-          }
-        },
-        {
-          "id": "dix",
-          "hr": "dix",
-          "en": "ten",
-          "pos": "num.",
-          "example": {
-            "target": "Elle a dix euros.",
-            "gloss": "She has ten euros."
-          }
-        },
-        {
-          "id": "vingt",
-          "hr": "vingt",
-          "en": "twenty",
-          "pos": "num.",
-          "example": {
-            "target": "J'ai vingt ans.",
-            "gloss": "I am twenty."
-          }
-        },
-        {
-          "id": "trente",
-          "hr": "trente",
-          "en": "thirty",
-          "pos": "num.",
-          "example": {
-            "target": "Il y a trente jours en avril.",
-            "gloss": "There are thirty days in April."
-          }
-        },
-        {
-          "id": "cent",
-          "hr": "cent",
-          "en": "hundred",
-          "pos": "num.",
-          "example": {
-            "target": "Ça coûte cent euros.",
-            "gloss": "It costs a hundred euros."
-          }
-        },
-        {
-          "id": "mille",
-          "hr": "mille",
-          "en": "thousand",
-          "pos": "num.",
-          "example": {
-            "target": "Il y a mille habitants.",
-            "gloss": "There are a thousand inhabitants."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "salut",
+     "hr": "salut",
+     "en": "hi / bye (informal)",
+     "pos": "interj.",
+     "example": {
+      "target": "Salut, ça va ?",
+      "gloss": "Hi, how's it going?"
+     }
     },
     {
-      "id": "a1-core-time",
-      "title": "Time & days",
-      "level": "A1",
-      "words": [
-        {
-          "id": "jour",
-          "hr": "jour",
-          "en": "day",
-          "pos": "n. m.",
-          "example": {
-            "target": "Quel jour sommes-nous ?",
-            "gloss": "What day is it?"
-          }
-        },
-        {
-          "id": "semaine",
-          "hr": "semaine",
-          "en": "week",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je travaille cinq jours par semaine.",
-            "gloss": "I work five days a week."
-          }
-        },
-        {
-          "id": "mois",
-          "hr": "mois",
-          "en": "month",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le mois de mai est beau.",
-            "gloss": "The month of May is nice."
-          }
-        },
-        {
-          "id": "année",
-          "hr": "année",
-          "en": "year",
-          "pos": "n. f.",
-          "example": {
-            "target": "Bonne année !",
-            "gloss": "Happy New Year!"
-          }
-        },
-        {
-          "id": "heure",
-          "hr": "heure",
-          "en": "hour / o'clock",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il est une heure.",
-            "gloss": "It's one o'clock."
-          }
-        },
-        {
-          "id": "aujourd'hui",
-          "hr": "aujourd'hui",
-          "en": "today",
-          "pos": "adv.",
-          "example": {
-            "target": "Aujourd'hui, il fait beau.",
-            "gloss": "Today it's nice out."
-          }
-        },
-        {
-          "id": "demain",
-          "hr": "demain",
-          "en": "tomorrow",
-          "pos": "adv.",
-          "example": {
-            "target": "À demain !",
-            "gloss": "See you tomorrow!"
-          }
-        },
-        {
-          "id": "hier",
-          "hr": "hier",
-          "en": "yesterday",
-          "pos": "adv.",
-          "example": {
-            "target": "Hier, j'ai travaillé.",
-            "gloss": "Yesterday I worked."
-          }
-        },
-        {
-          "id": "matin",
-          "hr": "matin",
-          "en": "morning",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le matin, je bois un café.",
-            "gloss": "In the morning I drink a coffee."
-          }
-        },
-        {
-          "id": "soir",
-          "hr": "soir",
-          "en": "evening",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ce soir, nous sortons.",
-            "gloss": "Tonight we're going out."
-          }
-        },
-        {
-          "id": "nuit",
-          "hr": "nuit",
-          "en": "night",
-          "pos": "n. f.",
-          "example": {
-            "target": "Bonne nuit !",
-            "gloss": "Good night!"
-          }
-        },
-        {
-          "id": "lundi",
-          "hr": "lundi",
-          "en": "Monday",
-          "pos": "n. m.",
-          "example": {
-            "target": "Lundi, je commence le travail.",
-            "gloss": "On Monday I start work."
-          }
-        },
-        {
-          "id": "mardi",
-          "hr": "mardi",
-          "en": "Tuesday",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mardi, j'ai un rendez-vous.",
-            "gloss": "On Tuesday I have an appointment."
-          }
-        },
-        {
-          "id": "mercredi",
-          "hr": "mercredi",
-          "en": "Wednesday",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mercredi, les enfants ne vont pas à l'école.",
-            "gloss": "On Wednesday the children don't go to school."
-          }
-        },
-        {
-          "id": "jeudi",
-          "hr": "jeudi",
-          "en": "Thursday",
-          "pos": "n. m.",
-          "example": {
-            "target": "Jeudi soir, on dîne ensemble.",
-            "gloss": "Thursday evening we have dinner together."
-          }
-        },
-        {
-          "id": "vendredi",
-          "hr": "vendredi",
-          "en": "Friday",
-          "pos": "n. m.",
-          "example": {
-            "target": "Vendredi, c'est le week-end.",
-            "gloss": "Friday, it's the weekend."
-          }
-        },
-        {
-          "id": "samedi",
-          "hr": "samedi",
-          "en": "Saturday",
-          "pos": "n. m.",
-          "example": {
-            "target": "Samedi, je fais les courses.",
-            "gloss": "On Saturday I do the shopping."
-          }
-        },
-        {
-          "id": "dimanche",
-          "hr": "dimanche",
-          "en": "Sunday",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le dimanche, je me repose.",
-            "gloss": "On Sunday I rest."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "au revoir",
+     "hr": "au revoir",
+     "en": "goodbye",
+     "pos": "interj.",
+     "example": {
+      "target": "Au revoir, à demain !",
+      "gloss": "Goodbye, see you tomorrow!"
+     }
     },
     {
-      "id": "a1-core-food",
-      "title": "Food & drink",
-      "level": "A1",
-      "words": [
-        {
-          "id": "eau",
-          "hr": "eau",
-          "en": "water",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je bois de l'eau.",
-            "gloss": "I drink water."
-          }
-        },
-        {
-          "id": "café",
-          "hr": "café",
-          "en": "coffee",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un café, s'il vous plaît.",
-            "gloss": "A coffee, please."
-          }
-        },
-        {
-          "id": "thé",
-          "hr": "thé",
-          "en": "tea",
-          "pos": "n. m.",
-          "example": {
-            "target": "Elle préfère le thé.",
-            "gloss": "She prefers tea."
-          }
-        },
-        {
-          "id": "pain",
-          "hr": "pain",
-          "en": "bread",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'achète du pain le matin.",
-            "gloss": "I buy bread in the morning."
-          }
-        },
-        {
-          "id": "vin",
-          "hr": "vin",
-          "en": "wine",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un verre de vin rouge.",
-            "gloss": "A glass of red wine."
-          }
-        },
-        {
-          "id": "bière",
-          "hr": "bière",
-          "en": "beer",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il boit une bière.",
-            "gloss": "He drinks a beer."
-          }
-        },
-        {
-          "id": "lait",
-          "hr": "lait",
-          "en": "milk",
-          "pos": "n. m.",
-          "example": {
-            "target": "Du café avec du lait.",
-            "gloss": "Coffee with milk."
-          }
-        },
-        {
-          "id": "fromage",
-          "hr": "fromage",
-          "en": "cheese",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le fromage français est célèbre.",
-            "gloss": "French cheese is famous."
-          }
-        },
-        {
-          "id": "viande",
-          "hr": "viande",
-          "en": "meat",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je ne mange pas de viande.",
-            "gloss": "I don't eat meat."
-          }
-        },
-        {
-          "id": "poisson",
-          "hr": "poisson",
-          "en": "fish",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le vendredi, on mange du poisson.",
-            "gloss": "On Fridays we eat fish."
-          }
-        },
-        {
-          "id": "légume",
-          "hr": "légume",
-          "en": "vegetable",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les légumes sont bons pour la santé.",
-            "gloss": "Vegetables are good for your health."
-          }
-        },
-        {
-          "id": "fruit",
-          "hr": "fruit",
-          "en": "fruit",
-          "pos": "n. m.",
-          "example": {
-            "target": "Une salade de fruits.",
-            "gloss": "A fruit salad."
-          }
-        },
-        {
-          "id": "pomme",
-          "hr": "pomme",
-          "en": "apple",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je mange une pomme.",
-            "gloss": "I eat an apple."
-          }
-        },
-        {
-          "id": "riz",
-          "hr": "riz",
-          "en": "rice",
-          "pos": "n. m.",
-          "example": {
-            "target": "Du poulet avec du riz.",
-            "gloss": "Chicken with rice."
-          }
-        },
-        {
-          "id": "repas",
-          "hr": "repas",
-          "en": "meal",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le repas est prêt.",
-            "gloss": "The meal is ready."
-          }
-        },
-        {
-          "id": "petit-déjeuner",
-          "hr": "petit-déjeuner",
-          "en": "breakfast",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je prends le petit-déjeuner à huit heures.",
-            "gloss": "I have breakfast at eight."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "merci",
+     "hr": "merci",
+     "en": "thank you",
+     "pos": "interj.",
+     "example": {
+      "target": "Merci beaucoup !",
+      "gloss": "Thank you very much!"
+     }
     },
     {
-      "id": "a1-core-home",
-      "title": "Home & everyday objects",
-      "level": "A1",
-      "words": [
-        {
-          "id": "maison",
-          "hr": "maison",
-          "en": "house",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous avons une petite maison.",
-            "gloss": "We have a small house."
-          }
-        },
-        {
-          "id": "appartement",
-          "hr": "appartement",
-          "en": "flat / apartment",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ils habitent un appartement à Paris.",
-            "gloss": "They live in a flat in Paris."
-          }
-        },
-        {
-          "id": "chambre",
-          "hr": "chambre",
-          "en": "bedroom",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ma chambre est au premier étage.",
-            "gloss": "My bedroom is on the first floor."
-          }
-        },
-        {
-          "id": "cuisine",
-          "hr": "cuisine",
-          "en": "kitchen / cooking",
-          "pos": "n. f.",
-          "example": {
-            "target": "La cuisine est petite mais jolie.",
-            "gloss": "The kitchen is small but pretty."
-          }
-        },
-        {
-          "id": "table",
-          "hr": "table",
-          "en": "table",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le repas est sur la table.",
-            "gloss": "The meal is on the table."
-          }
-        },
-        {
-          "id": "chaise",
-          "hr": "chaise",
-          "en": "chair",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a quatre chaises.",
-            "gloss": "There are four chairs."
-          }
-        },
-        {
-          "id": "lit",
-          "hr": "lit",
-          "en": "bed",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je vais au lit.",
-            "gloss": "I'm going to bed."
-          }
-        },
-        {
-          "id": "porte",
-          "hr": "porte",
-          "en": "door",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ferme la porte, s'il te plaît.",
-            "gloss": "Close the door, please."
-          }
-        },
-        {
-          "id": "fenêtre",
-          "hr": "fenêtre",
-          "en": "window",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ouvre la fenêtre.",
-            "gloss": "Open the window."
-          }
-        },
-        {
-          "id": "livre-book",
-          "hr": "livre",
-          "en": "book",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je lis un livre intéressant.",
-            "gloss": "I'm reading an interesting book."
-          }
-        },
-        {
-          "id": "téléphone",
-          "hr": "téléphone",
-          "en": "telephone",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon téléphone ne marche pas.",
-            "gloss": "My phone doesn't work."
-          }
-        },
-        {
-          "id": "voiture",
-          "hr": "voiture",
-          "en": "car",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous avons une voiture rouge.",
-            "gloss": "We have a red car."
-          }
-        },
-        {
-          "id": "argent",
-          "hr": "argent",
-          "en": "money",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je n'ai pas d'argent.",
-            "gloss": "I don't have any money."
-          }
-        },
-        {
-          "id": "clé",
-          "hr": "clé",
-          "en": "key",
-          "pos": "n. f.",
-          "example": {
-            "target": "Où sont mes clés ?",
-            "gloss": "Where are my keys?"
-          }
-        },
-        {
-          "id": "sac",
-          "hr": "sac",
-          "en": "bag",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon sac est lourd.",
-            "gloss": "My bag is heavy."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "s'il vous plaît",
+     "hr": "s'il vous plaît",
+     "en": "please (formal)",
+     "pos": "interj.",
+     "example": {
+      "target": "Un café, s'il vous plaît.",
+      "gloss": "A coffee, please."
+     }
     },
     {
-      "id": "a1-core-places",
-      "title": "Places & directions",
-      "level": "A1",
-      "words": [
-        {
-          "id": "ville",
-          "hr": "ville",
-          "en": "town / city",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'habite dans une grande ville.",
-            "gloss": "I live in a big city."
-          }
-        },
-        {
-          "id": "rue",
-          "hr": "rue",
-          "en": "street",
-          "pos": "n. f.",
-          "example": {
-            "target": "La rue est calme.",
-            "gloss": "The street is quiet."
-          }
-        },
-        {
-          "id": "magasin",
-          "hr": "magasin",
-          "en": "shop",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le magasin est fermé.",
-            "gloss": "The shop is closed."
-          }
-        },
-        {
-          "id": "gare",
-          "hr": "gare",
-          "en": "station",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le train part de la gare.",
-            "gloss": "The train leaves from the station."
-          }
-        },
-        {
-          "id": "restaurant",
-          "hr": "restaurant",
-          "en": "restaurant",
-          "pos": "n. m.",
-          "example": {
-            "target": "On mange au restaurant ce soir.",
-            "gloss": "We're eating at a restaurant tonight."
-          }
-        },
-        {
-          "id": "hôtel",
-          "hr": "hôtel",
-          "en": "hotel",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'hôtel est près de la plage.",
-            "gloss": "The hotel is near the beach."
-          }
-        },
-        {
-          "id": "école",
-          "hr": "école",
-          "en": "school",
-          "pos": "n. f.",
-          "example": {
-            "target": "Les enfants vont à l'école.",
-            "gloss": "The children go to school."
-          }
-        },
-        {
-          "id": "hôpital",
-          "hr": "hôpital",
-          "en": "hospital",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il travaille à l'hôpital.",
-            "gloss": "He works at the hospital."
-          }
-        },
-        {
-          "id": "banque",
-          "hr": "banque",
-          "en": "bank",
-          "pos": "n. f.",
-          "example": {
-            "target": "La banque ouvre à neuf heures.",
-            "gloss": "The bank opens at nine."
-          }
-        },
-        {
-          "id": "gauche",
-          "hr": "gauche",
-          "en": "left",
-          "pos": "n. f.",
-          "example": {
-            "target": "Tournez à gauche.",
-            "gloss": "Turn left."
-          }
-        },
-        {
-          "id": "droite",
-          "hr": "droite",
-          "en": "right",
-          "pos": "n. f.",
-          "example": {
-            "target": "La pharmacie est à droite.",
-            "gloss": "The pharmacy is on the right."
-          }
-        },
-        {
-          "id": "ici",
-          "hr": "ici",
-          "en": "here",
-          "pos": "adv.",
-          "example": {
-            "target": "Viens ici !",
-            "gloss": "Come here!"
-          }
-        },
-        {
-          "id": "là",
-          "hr": "là",
-          "en": "there",
-          "pos": "adv.",
-          "example": {
-            "target": "Il est là.",
-            "gloss": "He is there."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "pardon",
+     "hr": "pardon",
+     "en": "sorry / excuse me",
+     "pos": "interj.",
+     "example": {
+      "target": "Pardon, je suis en retard.",
+      "gloss": "Sorry, I'm late."
+     }
     },
     {
-      "id": "a1-core-verbs",
-      "title": "Common verbs",
-      "level": "A1",
-      "words": [
-        {
-          "id": "être",
-          "hr": "être",
-          "en": "to be",
-          "pos": "v.",
-          "example": {
-            "target": "Je suis fatigué.",
-            "gloss": "I am tired."
-          }
-        },
-        {
-          "id": "avoir",
-          "hr": "avoir",
-          "en": "to have",
-          "pos": "v.",
-          "example": {
-            "target": "J'ai deux enfants.",
-            "gloss": "I have two children."
-          }
-        },
-        {
-          "id": "aller",
-          "hr": "aller",
-          "en": "to go",
-          "pos": "v.",
-          "example": {
-            "target": "Nous allons au marché.",
-            "gloss": "We're going to the market."
-          }
-        },
-        {
-          "id": "faire",
-          "hr": "faire",
-          "en": "to do / make",
-          "pos": "v.",
-          "example": {
-            "target": "Qu'est-ce que tu fais ?",
-            "gloss": "What are you doing?"
-          }
-        },
-        {
-          "id": "dire",
-          "hr": "dire",
-          "en": "to say / tell",
-          "pos": "v.",
-          "example": {
-            "target": "Qu'est-ce que tu dis ?",
-            "gloss": "What are you saying?"
-          }
-        },
-        {
-          "id": "pouvoir",
-          "hr": "pouvoir",
-          "en": "to be able to / can",
-          "pos": "v.",
-          "example": {
-            "target": "Tu peux m'aider ?",
-            "gloss": "Can you help me?"
-          }
-        },
-        {
-          "id": "vouloir",
-          "hr": "vouloir",
-          "en": "to want",
-          "pos": "v.",
-          "example": {
-            "target": "Je veux un café.",
-            "gloss": "I want a coffee."
-          }
-        },
-        {
-          "id": "savoir",
-          "hr": "savoir",
-          "en": "to know (a fact)",
-          "pos": "v.",
-          "example": {
-            "target": "Je ne sais pas.",
-            "gloss": "I don't know."
-          }
-        },
-        {
-          "id": "voir",
-          "hr": "voir",
-          "en": "to see",
-          "pos": "v.",
-          "example": {
-            "target": "Je vois la mer.",
-            "gloss": "I see the sea."
-          }
-        },
-        {
-          "id": "venir",
-          "hr": "venir",
-          "en": "to come",
-          "pos": "v.",
-          "example": {
-            "target": "Il vient de Paris.",
-            "gloss": "He comes from Paris."
-          }
-        },
-        {
-          "id": "prendre",
-          "hr": "prendre",
-          "en": "to take",
-          "pos": "v.",
-          "example": {
-            "target": "Je prends le bus.",
-            "gloss": "I take the bus."
-          }
-        },
-        {
-          "id": "manger",
-          "hr": "manger",
-          "en": "to eat",
-          "pos": "v.",
-          "example": {
-            "target": "Nous mangeons à midi.",
-            "gloss": "We eat at noon."
-          }
-        },
-        {
-          "id": "boire",
-          "hr": "boire",
-          "en": "to drink",
-          "pos": "v.",
-          "example": {
-            "target": "Il boit de l'eau.",
-            "gloss": "He drinks water."
-          }
-        },
-        {
-          "id": "parler",
-          "hr": "parler",
-          "en": "to speak / talk",
-          "pos": "v.",
-          "example": {
-            "target": "Je parle un peu français.",
-            "gloss": "I speak a little French."
-          }
-        },
-        {
-          "id": "aimer",
-          "hr": "aimer",
-          "en": "to like / love",
-          "pos": "v.",
-          "example": {
-            "target": "J'aime la musique.",
-            "gloss": "I like music."
-          }
-        },
-        {
-          "id": "habiter",
-          "hr": "habiter",
-          "en": "to live (reside)",
-          "pos": "v.",
-          "example": {
-            "target": "J'habite à Marseille.",
-            "gloss": "I live in Marseille."
-          }
-        },
-        {
-          "id": "travailler",
-          "hr": "travailler",
-          "en": "to work",
-          "pos": "v.",
-          "example": {
-            "target": "Elle travaille dans un bureau.",
-            "gloss": "She works in an office."
-          }
-        },
-        {
-          "id": "comprendre",
-          "hr": "comprendre",
-          "en": "to understand",
-          "pos": "v.",
-          "example": {
-            "target": "Je ne comprends pas.",
-            "gloss": "I don't understand."
-          }
-        },
-        {
-          "id": "acheter",
-          "hr": "acheter",
-          "en": "to buy",
-          "pos": "v.",
-          "example": {
-            "target": "J'achète du pain.",
-            "gloss": "I buy bread."
-          }
-        },
-        {
-          "id": "donner",
-          "hr": "donner",
-          "en": "to give",
-          "pos": "v.",
-          "example": {
-            "target": "Donne-moi le livre.",
-            "gloss": "Give me the book."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "excusez-moi",
+     "hr": "excusez-moi",
+     "en": "excuse me (formal)",
+     "pos": "interj.",
+     "example": {
+      "target": "Excusez-moi, où est la gare ?",
+      "gloss": "Excuse me, where is the station?"
+     }
     },
     {
-      "id": "a1-core-adjectives",
-      "title": "Common adjectives & colours",
-      "level": "A1",
-      "words": [
-        {
-          "id": "grand",
-          "hr": "grand",
-          "en": "big / tall",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est une grande maison.",
-            "gloss": "It's a big house."
-          }
-        },
-        {
-          "id": "petit",
-          "hr": "petit",
-          "en": "small / short",
-          "pos": "adj.",
-          "example": {
-            "target": "Un petit café, merci.",
-            "gloss": "A small coffee, thanks."
-          }
-        },
-        {
-          "id": "bon",
-          "hr": "bon",
-          "en": "good",
-          "pos": "adj.",
-          "example": {
-            "target": "Ce repas est très bon.",
-            "gloss": "This meal is very good."
-          }
-        },
-        {
-          "id": "mauvais",
-          "hr": "mauvais",
-          "en": "bad",
-          "pos": "adj.",
-          "example": {
-            "target": "Il fait mauvais temps.",
-            "gloss": "The weather is bad."
-          }
-        },
-        {
-          "id": "beau",
-          "hr": "beau",
-          "en": "beautiful / handsome",
-          "pos": "adj.",
-          "example": {
-            "target": "Quel beau jardin !",
-            "gloss": "What a beautiful garden!"
-          }
-        },
-        {
-          "id": "nouveau",
-          "hr": "nouveau",
-          "en": "new",
-          "pos": "adj.",
-          "example": {
-            "target": "J'ai un nouveau travail.",
-            "gloss": "I have a new job."
-          }
-        },
-        {
-          "id": "jeune",
-          "hr": "jeune",
-          "en": "young",
-          "pos": "adj.",
-          "example": {
-            "target": "Elle est jeune.",
-            "gloss": "She is young."
-          }
-        },
-        {
-          "id": "vieux",
-          "hr": "vieux",
-          "en": "old",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est un vieux livre.",
-            "gloss": "It's an old book."
-          }
-        },
-        {
-          "id": "chaud",
-          "hr": "chaud",
-          "en": "hot / warm",
-          "pos": "adj.",
-          "example": {
-            "target": "Le café est chaud.",
-            "gloss": "The coffee is hot."
-          }
-        },
-        {
-          "id": "froid",
-          "hr": "froid",
-          "en": "cold",
-          "pos": "adj.",
-          "example": {
-            "target": "Il fait froid aujourd'hui.",
-            "gloss": "It's cold today."
-          }
-        },
-        {
-          "id": "cher",
-          "hr": "cher",
-          "en": "expensive / dear",
-          "pos": "adj.",
-          "example": {
-            "target": "Ce restaurant est cher.",
-            "gloss": "This restaurant is expensive."
-          }
-        },
-        {
-          "id": "facile",
-          "hr": "facile",
-          "en": "easy",
-          "pos": "adj.",
-          "example": {
-            "target": "Le français n'est pas facile.",
-            "gloss": "French isn't easy."
-          }
-        },
-        {
-          "id": "difficile",
-          "hr": "difficile",
-          "en": "difficult",
-          "pos": "adj.",
-          "example": {
-            "target": "La question est difficile.",
-            "gloss": "The question is difficult."
-          }
-        },
-        {
-          "id": "rouge",
-          "hr": "rouge",
-          "en": "red",
-          "pos": "adj.",
-          "example": {
-            "target": "Une pomme rouge.",
-            "gloss": "A red apple."
-          }
-        },
-        {
-          "id": "bleu",
-          "hr": "bleu",
-          "en": "blue",
-          "pos": "adj.",
-          "example": {
-            "target": "Le ciel est bleu.",
-            "gloss": "The sky is blue."
-          }
-        },
-        {
-          "id": "vert",
-          "hr": "vert",
-          "en": "green",
-          "pos": "adj.",
-          "example": {
-            "target": "Les feux sont verts.",
-            "gloss": "The lights are green."
-          }
-        },
-        {
-          "id": "blanc",
-          "hr": "blanc",
-          "en": "white",
-          "pos": "adj.",
-          "example": {
-            "target": "Une chemise blanche.",
-            "gloss": "A white shirt."
-          }
-        },
-        {
-          "id": "noir",
-          "hr": "noir",
-          "en": "black",
-          "pos": "adj.",
-          "example": {
-            "target": "Un café noir.",
-            "gloss": "A black coffee."
-          }
-        },
-        {
-          "id": "jaune",
-          "hr": "jaune",
-          "en": "yellow",
-          "pos": "adj.",
-          "example": {
-            "target": "Le soleil est jaune.",
-            "gloss": "The sun is yellow."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "oui",
+     "hr": "oui",
+     "en": "yes",
+     "pos": "adv.",
+     "example": {
+      "target": "Oui, je suis d'accord.",
+      "gloss": "Yes, I agree."
+     }
     },
     {
-      "id": "a1-core-function",
-      "title": "Question & function words",
-      "level": "A1",
-      "words": [
-        {
-          "id": "qui",
-          "hr": "qui",
-          "en": "who",
-          "pos": "pron.",
-          "example": {
-            "target": "Qui est là ?",
-            "gloss": "Who's there?"
-          }
-        },
-        {
-          "id": "que-what",
-          "hr": "que",
-          "en": "what / that",
-          "pos": "pron.",
-          "example": {
-            "target": "Qu'est-ce que c'est ?",
-            "gloss": "What is it?"
-          }
-        },
-        {
-          "id": "où",
-          "hr": "où",
-          "en": "where",
-          "pos": "adv.",
-          "example": {
-            "target": "Où habites-tu ?",
-            "gloss": "Where do you live?"
-          }
-        },
-        {
-          "id": "quand",
-          "hr": "quand",
-          "en": "when",
-          "pos": "adv.",
-          "example": {
-            "target": "Quand pars-tu ?",
-            "gloss": "When are you leaving?"
-          }
-        },
-        {
-          "id": "comment",
-          "hr": "comment",
-          "en": "how",
-          "pos": "adv.",
-          "example": {
-            "target": "Comment ça va ?",
-            "gloss": "How are you?"
-          }
-        },
-        {
-          "id": "pourquoi",
-          "hr": "pourquoi",
-          "en": "why",
-          "pos": "adv.",
-          "example": {
-            "target": "Pourquoi es-tu en retard ?",
-            "gloss": "Why are you late?"
-          }
-        },
-        {
-          "id": "combien",
-          "hr": "combien",
-          "en": "how much / how many",
-          "pos": "adv.",
-          "example": {
-            "target": "Combien ça coûte ?",
-            "gloss": "How much does it cost?"
-          }
-        },
-        {
-          "id": "et",
-          "hr": "et",
-          "en": "and",
-          "pos": "conj.",
-          "example": {
-            "target": "Un café et un thé.",
-            "gloss": "A coffee and a tea."
-          }
-        },
-        {
-          "id": "mais",
-          "hr": "mais",
-          "en": "but",
-          "pos": "conj.",
-          "example": {
-            "target": "C'est petit mais joli.",
-            "gloss": "It's small but pretty."
-          }
-        },
-        {
-          "id": "avec",
-          "hr": "avec",
-          "en": "with",
-          "pos": "prep.",
-          "example": {
-            "target": "Je viens avec toi.",
-            "gloss": "I'm coming with you."
-          }
-        },
-        {
-          "id": "dans",
-          "hr": "dans",
-          "en": "in",
-          "pos": "prep.",
-          "example": {
-            "target": "Le livre est dans le sac.",
-            "gloss": "The book is in the bag."
-          }
-        },
-        {
-          "id": "pour",
-          "hr": "pour",
-          "en": "for / in order to",
-          "pos": "prep.",
-          "example": {
-            "target": "C'est pour toi.",
-            "gloss": "This is for you."
-          }
-        },
-        {
-          "id": "très",
-          "hr": "très",
-          "en": "very",
-          "pos": "adv.",
-          "example": {
-            "target": "C'est très bon.",
-            "gloss": "It's very good."
-          }
-        },
-        {
-          "id": "aussi",
-          "hr": "aussi",
-          "en": "also / too",
-          "pos": "adv.",
-          "example": {
-            "target": "Moi aussi.",
-            "gloss": "Me too."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "non",
+     "hr": "non",
+     "en": "no",
+     "pos": "adv.",
+     "example": {
+      "target": "Non, merci.",
+      "gloss": "No, thank you."
+     }
+    },
+    {
+     "id": "de rien",
+     "hr": "de rien",
+     "en": "you're welcome",
+     "pos": "interj.",
+     "example": {
+      "target": "Merci ! - De rien.",
+      "gloss": "Thanks! - You're welcome."
+     }
+    },
+    {
+     "id": "à bientôt",
+     "hr": "à bientôt",
+     "en": "see you soon",
+     "pos": "interj.",
+     "example": {
+      "target": "À bientôt !",
+      "gloss": "See you soon!"
+     }
     }
-  ]
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-people",
+   "title": "People & family",
+   "level": "A1",
+   "words": [
+    {
+     "id": "homme",
+     "hr": "homme",
+     "en": "man",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cet homme est mon père.",
+      "gloss": "This man is my father."
+     }
+    },
+    {
+     "id": "femme",
+     "hr": "femme",
+     "en": "woman / wife",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une femme travaille au bureau.",
+      "gloss": "A woman works at the office."
+     }
+    },
+    {
+     "id": "enfant",
+     "hr": "enfant",
+     "en": "child",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'enfant joue dans le parc.",
+      "gloss": "The child plays in the park."
+     }
+    },
+    {
+     "id": "garçon",
+     "hr": "garçon",
+     "en": "boy",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le garçon lit un livre.",
+      "gloss": "The boy reads a book."
+     }
+    },
+    {
+     "id": "fille",
+     "hr": "fille",
+     "en": "girl / daughter",
+     "pos": "n. f.",
+     "example": {
+      "target": "Sa fille a dix ans.",
+      "gloss": "His daughter is ten."
+     }
+    },
+    {
+     "id": "ami",
+     "hr": "ami",
+     "en": "friend",
+     "pos": "n. m.",
+     "example": {
+      "target": "C'est mon ami Marc.",
+      "gloss": "This is my friend Marc."
+     },
+     "note": "f. amie"
+    },
+    {
+     "id": "famille",
+     "hr": "famille",
+     "en": "family",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'aime ma famille.",
+      "gloss": "I love my family."
+     }
+    },
+    {
+     "id": "père",
+     "hr": "père",
+     "en": "father",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon père est médecin.",
+      "gloss": "My father is a doctor."
+     }
+    },
+    {
+     "id": "mère",
+     "hr": "mère",
+     "en": "mother",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ma mère cuisine bien.",
+      "gloss": "My mother cooks well."
+     }
+    },
+    {
+     "id": "parents",
+     "hr": "parents",
+     "en": "parents",
+     "pos": "n. m. pl.",
+     "example": {
+      "target": "Mes parents habitent à Lyon.",
+      "gloss": "My parents live in Lyon."
+     }
+    },
+    {
+     "id": "frère",
+     "hr": "frère",
+     "en": "brother",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'ai un frère et une sœur.",
+      "gloss": "I have a brother and a sister."
+     }
+    },
+    {
+     "id": "sœur",
+     "hr": "sœur",
+     "en": "sister",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ma sœur est étudiante.",
+      "gloss": "My sister is a student."
+     }
+    },
+    {
+     "id": "fils",
+     "hr": "fils",
+     "en": "son",
+     "pos": "n. m.",
+     "example": {
+      "target": "Leur fils a cinq ans.",
+      "gloss": "Their son is five."
+     }
+    },
+    {
+     "id": "mari",
+     "hr": "mari",
+     "en": "husband",
+     "pos": "n. m.",
+     "example": {
+      "target": "Son mari est français.",
+      "gloss": "Her husband is French."
+     }
+    },
+    {
+     "id": "monsieur",
+     "hr": "monsieur",
+     "en": "sir / Mr",
+     "pos": "n. m.",
+     "example": {
+      "target": "Bonjour monsieur.",
+      "gloss": "Hello sir."
+     }
+    },
+    {
+     "id": "madame",
+     "hr": "madame",
+     "en": "madam / Mrs",
+     "pos": "n. f.",
+     "example": {
+      "target": "Merci, madame.",
+      "gloss": "Thank you, madam."
+     }
+    },
+    {
+     "id": "gens",
+     "hr": "gens",
+     "en": "people",
+     "pos": "n. m. pl.",
+     "example": {
+      "target": "Il y a beaucoup de gens ici.",
+      "gloss": "There are a lot of people here."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-numbers",
+   "title": "Numbers",
+   "level": "A1",
+   "words": [
+    {
+     "id": "un",
+     "hr": "un",
+     "en": "one",
+     "pos": "num.",
+     "example": {
+      "target": "J'ai un frère.",
+      "gloss": "I have one brother."
+     }
+    },
+    {
+     "id": "deux",
+     "hr": "deux",
+     "en": "two",
+     "pos": "num.",
+     "example": {
+      "target": "Deux cafés, s'il vous plaît.",
+      "gloss": "Two coffees, please."
+     }
+    },
+    {
+     "id": "trois",
+     "hr": "trois",
+     "en": "three",
+     "pos": "num.",
+     "example": {
+      "target": "Il est trois heures.",
+      "gloss": "It's three o'clock."
+     }
+    },
+    {
+     "id": "quatre",
+     "hr": "quatre",
+     "en": "four",
+     "pos": "num.",
+     "example": {
+      "target": "Nous sommes quatre.",
+      "gloss": "There are four of us."
+     }
+    },
+    {
+     "id": "cinq",
+     "hr": "cinq",
+     "en": "five",
+     "pos": "num.",
+     "example": {
+      "target": "Cinq minutes, s'il te plaît.",
+      "gloss": "Five minutes, please."
+     }
+    },
+    {
+     "id": "six",
+     "hr": "six",
+     "en": "six",
+     "pos": "num.",
+     "example": {
+      "target": "Il a six ans.",
+      "gloss": "He is six."
+     }
+    },
+    {
+     "id": "sept",
+     "hr": "sept",
+     "en": "seven",
+     "pos": "num.",
+     "example": {
+      "target": "Une semaine a sept jours.",
+      "gloss": "A week has seven days."
+     }
+    },
+    {
+     "id": "huit",
+     "hr": "huit",
+     "en": "eight",
+     "pos": "num.",
+     "example": {
+      "target": "Le magasin ouvre à huit heures.",
+      "gloss": "The shop opens at eight."
+     }
+    },
+    {
+     "id": "neuf",
+     "hr": "neuf",
+     "en": "nine",
+     "pos": "num.",
+     "example": {
+      "target": "J'habite au neuf, rue Verte.",
+      "gloss": "I live at number nine, Green Street."
+     }
+    },
+    {
+     "id": "dix",
+     "hr": "dix",
+     "en": "ten",
+     "pos": "num.",
+     "example": {
+      "target": "Elle a dix euros.",
+      "gloss": "She has ten euros."
+     }
+    },
+    {
+     "id": "vingt",
+     "hr": "vingt",
+     "en": "twenty",
+     "pos": "num.",
+     "example": {
+      "target": "J'ai vingt ans.",
+      "gloss": "I am twenty."
+     }
+    },
+    {
+     "id": "trente",
+     "hr": "trente",
+     "en": "thirty",
+     "pos": "num.",
+     "example": {
+      "target": "Il y a trente jours en avril.",
+      "gloss": "There are thirty days in April."
+     }
+    },
+    {
+     "id": "cent",
+     "hr": "cent",
+     "en": "hundred",
+     "pos": "num.",
+     "example": {
+      "target": "Ça coûte cent euros.",
+      "gloss": "It costs a hundred euros."
+     }
+    },
+    {
+     "id": "mille",
+     "hr": "mille",
+     "en": "thousand",
+     "pos": "num.",
+     "example": {
+      "target": "Il y a mille habitants.",
+      "gloss": "There are a thousand inhabitants."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-time",
+   "title": "Time & days",
+   "level": "A1",
+   "words": [
+    {
+     "id": "jour",
+     "hr": "jour",
+     "en": "day",
+     "pos": "n. m.",
+     "example": {
+      "target": "Quel jour sommes-nous ?",
+      "gloss": "What day is it?"
+     }
+    },
+    {
+     "id": "semaine",
+     "hr": "semaine",
+     "en": "week",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je travaille cinq jours par semaine.",
+      "gloss": "I work five days a week."
+     }
+    },
+    {
+     "id": "mois",
+     "hr": "mois",
+     "en": "month",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le mois de mai est beau.",
+      "gloss": "The month of May is nice."
+     }
+    },
+    {
+     "id": "année",
+     "hr": "année",
+     "en": "year",
+     "pos": "n. f.",
+     "example": {
+      "target": "Bonne année !",
+      "gloss": "Happy New Year!"
+     }
+    },
+    {
+     "id": "heure",
+     "hr": "heure",
+     "en": "hour / o'clock",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il est une heure.",
+      "gloss": "It's one o'clock."
+     }
+    },
+    {
+     "id": "aujourd'hui",
+     "hr": "aujourd'hui",
+     "en": "today",
+     "pos": "adv.",
+     "example": {
+      "target": "Aujourd'hui, il fait beau.",
+      "gloss": "Today it's nice out."
+     }
+    },
+    {
+     "id": "demain",
+     "hr": "demain",
+     "en": "tomorrow",
+     "pos": "adv.",
+     "example": {
+      "target": "À demain !",
+      "gloss": "See you tomorrow!"
+     }
+    },
+    {
+     "id": "hier",
+     "hr": "hier",
+     "en": "yesterday",
+     "pos": "adv.",
+     "example": {
+      "target": "Hier, j'ai travaillé.",
+      "gloss": "Yesterday I worked."
+     }
+    },
+    {
+     "id": "matin",
+     "hr": "matin",
+     "en": "morning",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le matin, je bois un café.",
+      "gloss": "In the morning I drink a coffee."
+     }
+    },
+    {
+     "id": "soir",
+     "hr": "soir",
+     "en": "evening",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce soir, nous sortons.",
+      "gloss": "Tonight we're going out."
+     }
+    },
+    {
+     "id": "nuit",
+     "hr": "nuit",
+     "en": "night",
+     "pos": "n. f.",
+     "example": {
+      "target": "Bonne nuit !",
+      "gloss": "Good night!"
+     }
+    },
+    {
+     "id": "lundi",
+     "hr": "lundi",
+     "en": "Monday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Lundi, je commence le travail.",
+      "gloss": "On Monday I start work."
+     }
+    },
+    {
+     "id": "mardi",
+     "hr": "mardi",
+     "en": "Tuesday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mardi, j'ai un rendez-vous.",
+      "gloss": "On Tuesday I have an appointment."
+     }
+    },
+    {
+     "id": "mercredi",
+     "hr": "mercredi",
+     "en": "Wednesday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mercredi, les enfants ne vont pas à l'école.",
+      "gloss": "On Wednesday the children don't go to school."
+     }
+    },
+    {
+     "id": "jeudi",
+     "hr": "jeudi",
+     "en": "Thursday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Jeudi soir, on dîne ensemble.",
+      "gloss": "Thursday evening we have dinner together."
+     }
+    },
+    {
+     "id": "vendredi",
+     "hr": "vendredi",
+     "en": "Friday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Vendredi, c'est le week-end.",
+      "gloss": "Friday, it's the weekend."
+     }
+    },
+    {
+     "id": "samedi",
+     "hr": "samedi",
+     "en": "Saturday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Samedi, je fais les courses.",
+      "gloss": "On Saturday I do the shopping."
+     }
+    },
+    {
+     "id": "dimanche",
+     "hr": "dimanche",
+     "en": "Sunday",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le dimanche, je me repose.",
+      "gloss": "On Sunday I rest."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-food",
+   "title": "Food & drink",
+   "level": "A1",
+   "words": [
+    {
+     "id": "eau",
+     "hr": "eau",
+     "en": "water",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je bois de l'eau.",
+      "gloss": "I drink water."
+     }
+    },
+    {
+     "id": "café",
+     "hr": "café",
+     "en": "coffee",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un café, s'il vous plaît.",
+      "gloss": "A coffee, please."
+     }
+    },
+    {
+     "id": "thé",
+     "hr": "thé",
+     "en": "tea",
+     "pos": "n. m.",
+     "example": {
+      "target": "Elle préfère le thé.",
+      "gloss": "She prefers tea."
+     }
+    },
+    {
+     "id": "pain",
+     "hr": "pain",
+     "en": "bread",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'achète du pain le matin.",
+      "gloss": "I buy bread in the morning."
+     }
+    },
+    {
+     "id": "vin",
+     "hr": "vin",
+     "en": "wine",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un verre de vin rouge.",
+      "gloss": "A glass of red wine."
+     }
+    },
+    {
+     "id": "bière",
+     "hr": "bière",
+     "en": "beer",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il boit une bière.",
+      "gloss": "He drinks a beer."
+     }
+    },
+    {
+     "id": "lait",
+     "hr": "lait",
+     "en": "milk",
+     "pos": "n. m.",
+     "example": {
+      "target": "Du café avec du lait.",
+      "gloss": "Coffee with milk."
+     }
+    },
+    {
+     "id": "fromage",
+     "hr": "fromage",
+     "en": "cheese",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le fromage français est célèbre.",
+      "gloss": "French cheese is famous."
+     }
+    },
+    {
+     "id": "viande",
+     "hr": "viande",
+     "en": "meat",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je ne mange pas de viande.",
+      "gloss": "I don't eat meat."
+     }
+    },
+    {
+     "id": "poisson",
+     "hr": "poisson",
+     "en": "fish",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le vendredi, on mange du poisson.",
+      "gloss": "On Fridays we eat fish."
+     }
+    },
+    {
+     "id": "légume",
+     "hr": "légume",
+     "en": "vegetable",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les légumes sont bons pour la santé.",
+      "gloss": "Vegetables are good for your health."
+     }
+    },
+    {
+     "id": "fruit",
+     "hr": "fruit",
+     "en": "fruit",
+     "pos": "n. m.",
+     "example": {
+      "target": "Une salade de fruits.",
+      "gloss": "A fruit salad."
+     }
+    },
+    {
+     "id": "pomme",
+     "hr": "pomme",
+     "en": "apple",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je mange une pomme.",
+      "gloss": "I eat an apple."
+     }
+    },
+    {
+     "id": "riz",
+     "hr": "riz",
+     "en": "rice",
+     "pos": "n. m.",
+     "example": {
+      "target": "Du poulet avec du riz.",
+      "gloss": "Chicken with rice."
+     }
+    },
+    {
+     "id": "repas",
+     "hr": "repas",
+     "en": "meal",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le repas est prêt.",
+      "gloss": "The meal is ready."
+     }
+    },
+    {
+     "id": "petit-déjeuner",
+     "hr": "petit-déjeuner",
+     "en": "breakfast",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je prends le petit-déjeuner à huit heures.",
+      "gloss": "I have breakfast at eight."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-home",
+   "title": "Home & everyday objects",
+   "level": "A1",
+   "words": [
+    {
+     "id": "maison",
+     "hr": "maison",
+     "en": "house",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous avons une petite maison.",
+      "gloss": "We have a small house."
+     }
+    },
+    {
+     "id": "appartement",
+     "hr": "appartement",
+     "en": "flat / apartment",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ils habitent un appartement à Paris.",
+      "gloss": "They live in a flat in Paris."
+     }
+    },
+    {
+     "id": "chambre",
+     "hr": "chambre",
+     "en": "bedroom",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ma chambre est au premier étage.",
+      "gloss": "My bedroom is on the first floor."
+     }
+    },
+    {
+     "id": "cuisine",
+     "hr": "cuisine",
+     "en": "kitchen / cooking",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cuisine est petite mais jolie.",
+      "gloss": "The kitchen is small but pretty."
+     }
+    },
+    {
+     "id": "table",
+     "hr": "table",
+     "en": "table",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le repas est sur la table.",
+      "gloss": "The meal is on the table."
+     }
+    },
+    {
+     "id": "chaise",
+     "hr": "chaise",
+     "en": "chair",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a quatre chaises.",
+      "gloss": "There are four chairs."
+     }
+    },
+    {
+     "id": "lit",
+     "hr": "lit",
+     "en": "bed",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je vais au lit.",
+      "gloss": "I'm going to bed."
+     }
+    },
+    {
+     "id": "porte",
+     "hr": "porte",
+     "en": "door",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ferme la porte, s'il te plaît.",
+      "gloss": "Close the door, please."
+     }
+    },
+    {
+     "id": "fenêtre",
+     "hr": "fenêtre",
+     "en": "window",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ouvre la fenêtre.",
+      "gloss": "Open the window."
+     }
+    },
+    {
+     "id": "livre-book",
+     "hr": "livre",
+     "en": "book",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je lis un livre intéressant.",
+      "gloss": "I'm reading an interesting book."
+     }
+    },
+    {
+     "id": "téléphone",
+     "hr": "téléphone",
+     "en": "telephone",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon téléphone ne marche pas.",
+      "gloss": "My phone doesn't work."
+     }
+    },
+    {
+     "id": "voiture",
+     "hr": "voiture",
+     "en": "car",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous avons une voiture rouge.",
+      "gloss": "We have a red car."
+     }
+    },
+    {
+     "id": "argent",
+     "hr": "argent",
+     "en": "money",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je n'ai pas d'argent.",
+      "gloss": "I don't have any money."
+     }
+    },
+    {
+     "id": "clé",
+     "hr": "clé",
+     "en": "key",
+     "pos": "n. f.",
+     "example": {
+      "target": "Où sont mes clés ?",
+      "gloss": "Where are my keys?"
+     }
+    },
+    {
+     "id": "sac",
+     "hr": "sac",
+     "en": "bag",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon sac est lourd.",
+      "gloss": "My bag is heavy."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-places",
+   "title": "Places & directions",
+   "level": "A1",
+   "words": [
+    {
+     "id": "ville",
+     "hr": "ville",
+     "en": "town / city",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'habite dans une grande ville.",
+      "gloss": "I live in a big city."
+     }
+    },
+    {
+     "id": "rue",
+     "hr": "rue",
+     "en": "street",
+     "pos": "n. f.",
+     "example": {
+      "target": "La rue est calme.",
+      "gloss": "The street is quiet."
+     }
+    },
+    {
+     "id": "magasin",
+     "hr": "magasin",
+     "en": "shop",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le magasin est fermé.",
+      "gloss": "The shop is closed."
+     }
+    },
+    {
+     "id": "gare",
+     "hr": "gare",
+     "en": "station",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le train part de la gare.",
+      "gloss": "The train leaves from the station."
+     }
+    },
+    {
+     "id": "restaurant",
+     "hr": "restaurant",
+     "en": "restaurant",
+     "pos": "n. m.",
+     "example": {
+      "target": "On mange au restaurant ce soir.",
+      "gloss": "We're eating at a restaurant tonight."
+     }
+    },
+    {
+     "id": "hôtel",
+     "hr": "hôtel",
+     "en": "hotel",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'hôtel est près de la plage.",
+      "gloss": "The hotel is near the beach."
+     }
+    },
+    {
+     "id": "école",
+     "hr": "école",
+     "en": "school",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les enfants vont à l'école.",
+      "gloss": "The children go to school."
+     }
+    },
+    {
+     "id": "hôpital",
+     "hr": "hôpital",
+     "en": "hospital",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il travaille à l'hôpital.",
+      "gloss": "He works at the hospital."
+     }
+    },
+    {
+     "id": "banque",
+     "hr": "banque",
+     "en": "bank",
+     "pos": "n. f.",
+     "example": {
+      "target": "La banque ouvre à neuf heures.",
+      "gloss": "The bank opens at nine."
+     }
+    },
+    {
+     "id": "gauche",
+     "hr": "gauche",
+     "en": "left",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tournez à gauche.",
+      "gloss": "Turn left."
+     }
+    },
+    {
+     "id": "droite",
+     "hr": "droite",
+     "en": "right",
+     "pos": "n. f.",
+     "example": {
+      "target": "La pharmacie est à droite.",
+      "gloss": "The pharmacy is on the right."
+     }
+    },
+    {
+     "id": "ici",
+     "hr": "ici",
+     "en": "here",
+     "pos": "adv.",
+     "example": {
+      "target": "Viens ici !",
+      "gloss": "Come here!"
+     }
+    },
+    {
+     "id": "là",
+     "hr": "là",
+     "en": "there",
+     "pos": "adv.",
+     "example": {
+      "target": "Il est là.",
+      "gloss": "He is there."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-verbs",
+   "title": "Common verbs",
+   "level": "A1",
+   "words": [
+    {
+     "id": "être",
+     "hr": "être",
+     "en": "to be",
+     "pos": "v.",
+     "example": {
+      "target": "Je suis fatigué.",
+      "gloss": "I am tired."
+     }
+    },
+    {
+     "id": "avoir",
+     "hr": "avoir",
+     "en": "to have",
+     "pos": "v.",
+     "example": {
+      "target": "J'ai deux enfants.",
+      "gloss": "I have two children."
+     }
+    },
+    {
+     "id": "aller",
+     "hr": "aller",
+     "en": "to go",
+     "pos": "v.",
+     "example": {
+      "target": "Nous allons au marché.",
+      "gloss": "We're going to the market."
+     }
+    },
+    {
+     "id": "faire",
+     "hr": "faire",
+     "en": "to do / make",
+     "pos": "v.",
+     "example": {
+      "target": "Qu'est-ce que tu fais ?",
+      "gloss": "What are you doing?"
+     }
+    },
+    {
+     "id": "dire",
+     "hr": "dire",
+     "en": "to say / tell",
+     "pos": "v.",
+     "example": {
+      "target": "Qu'est-ce que tu dis ?",
+      "gloss": "What are you saying?"
+     }
+    },
+    {
+     "id": "pouvoir",
+     "hr": "pouvoir",
+     "en": "to be able to / can",
+     "pos": "v.",
+     "example": {
+      "target": "Tu peux m'aider ?",
+      "gloss": "Can you help me?"
+     }
+    },
+    {
+     "id": "vouloir",
+     "hr": "vouloir",
+     "en": "to want",
+     "pos": "v.",
+     "example": {
+      "target": "Je veux un café.",
+      "gloss": "I want a coffee."
+     }
+    },
+    {
+     "id": "savoir",
+     "hr": "savoir",
+     "en": "to know (a fact)",
+     "pos": "v.",
+     "example": {
+      "target": "Je ne sais pas.",
+      "gloss": "I don't know."
+     }
+    },
+    {
+     "id": "voir",
+     "hr": "voir",
+     "en": "to see",
+     "pos": "v.",
+     "example": {
+      "target": "Je vois la mer.",
+      "gloss": "I see the sea."
+     }
+    },
+    {
+     "id": "venir",
+     "hr": "venir",
+     "en": "to come",
+     "pos": "v.",
+     "example": {
+      "target": "Il vient de Paris.",
+      "gloss": "He comes from Paris."
+     }
+    },
+    {
+     "id": "prendre",
+     "hr": "prendre",
+     "en": "to take",
+     "pos": "v.",
+     "example": {
+      "target": "Je prends le bus.",
+      "gloss": "I take the bus."
+     }
+    },
+    {
+     "id": "manger",
+     "hr": "manger",
+     "en": "to eat",
+     "pos": "v.",
+     "example": {
+      "target": "Nous mangeons à midi.",
+      "gloss": "We eat at noon."
+     }
+    },
+    {
+     "id": "boire",
+     "hr": "boire",
+     "en": "to drink",
+     "pos": "v.",
+     "example": {
+      "target": "Il boit de l'eau.",
+      "gloss": "He drinks water."
+     }
+    },
+    {
+     "id": "parler",
+     "hr": "parler",
+     "en": "to speak / talk",
+     "pos": "v.",
+     "example": {
+      "target": "Je parle un peu français.",
+      "gloss": "I speak a little French."
+     }
+    },
+    {
+     "id": "aimer",
+     "hr": "aimer",
+     "en": "to like / love",
+     "pos": "v.",
+     "example": {
+      "target": "J'aime la musique.",
+      "gloss": "I like music."
+     }
+    },
+    {
+     "id": "habiter",
+     "hr": "habiter",
+     "en": "to live (reside)",
+     "pos": "v.",
+     "example": {
+      "target": "J'habite à Marseille.",
+      "gloss": "I live in Marseille."
+     }
+    },
+    {
+     "id": "travailler",
+     "hr": "travailler",
+     "en": "to work",
+     "pos": "v.",
+     "example": {
+      "target": "Elle travaille dans un bureau.",
+      "gloss": "She works in an office."
+     }
+    },
+    {
+     "id": "comprendre",
+     "hr": "comprendre",
+     "en": "to understand",
+     "pos": "v.",
+     "example": {
+      "target": "Je ne comprends pas.",
+      "gloss": "I don't understand."
+     }
+    },
+    {
+     "id": "acheter",
+     "hr": "acheter",
+     "en": "to buy",
+     "pos": "v.",
+     "example": {
+      "target": "J'achète du pain.",
+      "gloss": "I buy bread."
+     }
+    },
+    {
+     "id": "donner",
+     "hr": "donner",
+     "en": "to give",
+     "pos": "v.",
+     "example": {
+      "target": "Donne-moi le livre.",
+      "gloss": "Give me the book."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-adjectives",
+   "title": "Common adjectives & colours",
+   "level": "A1",
+   "words": [
+    {
+     "id": "grand",
+     "hr": "grand",
+     "en": "big / tall",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est une grande maison.",
+      "gloss": "It's a big house."
+     }
+    },
+    {
+     "id": "petit",
+     "hr": "petit",
+     "en": "small / short",
+     "pos": "adj.",
+     "example": {
+      "target": "Un petit café, merci.",
+      "gloss": "A small coffee, thanks."
+     }
+    },
+    {
+     "id": "bon",
+     "hr": "bon",
+     "en": "good",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce repas est très bon.",
+      "gloss": "This meal is very good."
+     }
+    },
+    {
+     "id": "mauvais",
+     "hr": "mauvais",
+     "en": "bad",
+     "pos": "adj.",
+     "example": {
+      "target": "Il fait mauvais temps.",
+      "gloss": "The weather is bad."
+     }
+    },
+    {
+     "id": "beau",
+     "hr": "beau",
+     "en": "beautiful / handsome",
+     "pos": "adj.",
+     "example": {
+      "target": "Quel beau jardin !",
+      "gloss": "What a beautiful garden!"
+     }
+    },
+    {
+     "id": "nouveau",
+     "hr": "nouveau",
+     "en": "new",
+     "pos": "adj.",
+     "example": {
+      "target": "J'ai un nouveau travail.",
+      "gloss": "I have a new job."
+     }
+    },
+    {
+     "id": "jeune",
+     "hr": "jeune",
+     "en": "young",
+     "pos": "adj.",
+     "example": {
+      "target": "Elle est jeune.",
+      "gloss": "She is young."
+     }
+    },
+    {
+     "id": "vieux",
+     "hr": "vieux",
+     "en": "old",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est un vieux livre.",
+      "gloss": "It's an old book."
+     }
+    },
+    {
+     "id": "chaud",
+     "hr": "chaud",
+     "en": "hot / warm",
+     "pos": "adj.",
+     "example": {
+      "target": "Le café est chaud.",
+      "gloss": "The coffee is hot."
+     }
+    },
+    {
+     "id": "froid",
+     "hr": "froid",
+     "en": "cold",
+     "pos": "adj.",
+     "example": {
+      "target": "Il fait froid aujourd'hui.",
+      "gloss": "It's cold today."
+     }
+    },
+    {
+     "id": "cher",
+     "hr": "cher",
+     "en": "expensive / dear",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce restaurant est cher.",
+      "gloss": "This restaurant is expensive."
+     }
+    },
+    {
+     "id": "facile",
+     "hr": "facile",
+     "en": "easy",
+     "pos": "adj.",
+     "example": {
+      "target": "Le français n'est pas facile.",
+      "gloss": "French isn't easy."
+     }
+    },
+    {
+     "id": "difficile",
+     "hr": "difficile",
+     "en": "difficult",
+     "pos": "adj.",
+     "example": {
+      "target": "La question est difficile.",
+      "gloss": "The question is difficult."
+     }
+    },
+    {
+     "id": "rouge",
+     "hr": "rouge",
+     "en": "red",
+     "pos": "adj.",
+     "example": {
+      "target": "Une pomme rouge.",
+      "gloss": "A red apple."
+     }
+    },
+    {
+     "id": "bleu",
+     "hr": "bleu",
+     "en": "blue",
+     "pos": "adj.",
+     "example": {
+      "target": "Le ciel est bleu.",
+      "gloss": "The sky is blue."
+     }
+    },
+    {
+     "id": "vert",
+     "hr": "vert",
+     "en": "green",
+     "pos": "adj.",
+     "example": {
+      "target": "Les feux sont verts.",
+      "gloss": "The lights are green."
+     }
+    },
+    {
+     "id": "blanc",
+     "hr": "blanc",
+     "en": "white",
+     "pos": "adj.",
+     "example": {
+      "target": "Une chemise blanche.",
+      "gloss": "A white shirt."
+     }
+    },
+    {
+     "id": "noir",
+     "hr": "noir",
+     "en": "black",
+     "pos": "adj.",
+     "example": {
+      "target": "Un café noir.",
+      "gloss": "A black coffee."
+     }
+    },
+    {
+     "id": "jaune",
+     "hr": "jaune",
+     "en": "yellow",
+     "pos": "adj.",
+     "example": {
+      "target": "Le soleil est jaune.",
+      "gloss": "The sun is yellow."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  },
+  {
+   "id": "a1-core-function",
+   "title": "Question & function words",
+   "level": "A1",
+   "words": [
+    {
+     "id": "qui",
+     "hr": "qui",
+     "en": "who",
+     "pos": "pron.",
+     "example": {
+      "target": "Qui est là ?",
+      "gloss": "Who's there?"
+     }
+    },
+    {
+     "id": "que-what",
+     "hr": "que",
+     "en": "what / that",
+     "pos": "pron.",
+     "example": {
+      "target": "Qu'est-ce que c'est ?",
+      "gloss": "What is it?"
+     }
+    },
+    {
+     "id": "où",
+     "hr": "où",
+     "en": "where",
+     "pos": "adv.",
+     "example": {
+      "target": "Où habites-tu ?",
+      "gloss": "Where do you live?"
+     }
+    },
+    {
+     "id": "quand",
+     "hr": "quand",
+     "en": "when",
+     "pos": "adv.",
+     "example": {
+      "target": "Quand pars-tu ?",
+      "gloss": "When are you leaving?"
+     }
+    },
+    {
+     "id": "comment",
+     "hr": "comment",
+     "en": "how",
+     "pos": "adv.",
+     "example": {
+      "target": "Comment ça va ?",
+      "gloss": "How are you?"
+     }
+    },
+    {
+     "id": "pourquoi",
+     "hr": "pourquoi",
+     "en": "why",
+     "pos": "adv.",
+     "example": {
+      "target": "Pourquoi es-tu en retard ?",
+      "gloss": "Why are you late?"
+     }
+    },
+    {
+     "id": "combien",
+     "hr": "combien",
+     "en": "how much / how many",
+     "pos": "adv.",
+     "example": {
+      "target": "Combien ça coûte ?",
+      "gloss": "How much does it cost?"
+     }
+    },
+    {
+     "id": "et",
+     "hr": "et",
+     "en": "and",
+     "pos": "conj.",
+     "example": {
+      "target": "Un café et un thé.",
+      "gloss": "A coffee and a tea."
+     }
+    },
+    {
+     "id": "mais",
+     "hr": "mais",
+     "en": "but",
+     "pos": "conj.",
+     "example": {
+      "target": "C'est petit mais joli.",
+      "gloss": "It's small but pretty."
+     }
+    },
+    {
+     "id": "avec",
+     "hr": "avec",
+     "en": "with",
+     "pos": "prep.",
+     "example": {
+      "target": "Je viens avec toi.",
+      "gloss": "I'm coming with you."
+     }
+    },
+    {
+     "id": "dans",
+     "hr": "dans",
+     "en": "in",
+     "pos": "prep.",
+     "example": {
+      "target": "Le livre est dans le sac.",
+      "gloss": "The book is in the bag."
+     }
+    },
+    {
+     "id": "pour",
+     "hr": "pour",
+     "en": "for / in order to",
+     "pos": "prep.",
+     "example": {
+      "target": "C'est pour toi.",
+      "gloss": "This is for you."
+     }
+    },
+    {
+     "id": "très",
+     "hr": "très",
+     "en": "very",
+     "pos": "adv.",
+     "example": {
+      "target": "C'est très bon.",
+      "gloss": "It's very good."
+     }
+    },
+    {
+     "id": "aussi",
+     "hr": "aussi",
+     "en": "also / too",
+     "pos": "adv.",
+     "example": {
+      "target": "Moi aussi.",
+      "gloss": "Me too."
+     }
+    }
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  }
+ ]
 }

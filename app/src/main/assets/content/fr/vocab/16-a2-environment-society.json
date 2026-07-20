@@ -1,786 +1,784 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "16-a2-environment-society",
+   "title": "A2 environment, city life & society",
+   "level": "A2",
+   "words": [
     {
-      "id": "16-a2-environment-society",
-      "title": "A2 environment, city life & society",
-      "level": "A2",
-      "words": [
-        {
-          "id": "environnement",
-          "hr": "environnement",
-          "en": "environment",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il faut protéger l'environnement.",
-            "gloss": "We must protect the environment."
-          }
-        },
-        {
-          "id": "pollution",
-          "hr": "pollution",
-          "en": "pollution",
-          "pos": "n. f.",
-          "example": {
-            "target": "La pollution de l'air est un grand problème.",
-            "gloss": "Air pollution is a big problem."
-          }
-        },
-        {
-          "id": "déchet",
-          "hr": "déchet",
-          "en": "waste, rubbish",
-          "pos": "n. m.",
-          "example": {
-            "target": "On doit trier les déchets.",
-            "gloss": "We must sort the waste."
-          }
-        },
-        {
-          "id": "recyclage",
-          "hr": "recyclage",
-          "en": "recycling",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le recyclage du verre est important.",
-            "gloss": "Glass recycling is important."
-          }
-        },
-        {
-          "id": "électricité",
-          "hr": "électricité",
-          "en": "electricity",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il n'y a plus d'électricité dans la maison.",
-            "gloss": "There is no more electricity in the house."
-          }
-        },
-        {
-          "id": "planète",
-          "hr": "planète",
-          "en": "planet",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous devons sauver la planète.",
-            "gloss": "We must save the planet."
-          }
-        },
-        {
-          "id": "population",
-          "hr": "population",
-          "en": "population",
-          "pos": "n. f.",
-          "example": {
-            "target": "La population de la ville augmente.",
-            "gloss": "The city's population is increasing."
-          }
-        },
-        {
-          "id": "habitant",
-          "hr": "habitant",
-          "en": "inhabitant, resident",
-          "pos": "n. m.",
-          "example": {
-            "target": "Cette ville a un million d'habitants.",
-            "gloss": "This city has one million inhabitants."
-          }
-        },
-        {
-          "id": "voisin",
-          "hr": "voisin",
-          "en": "neighbour",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon voisin est très gentil.",
-            "gloss": "My neighbour is very nice."
-          }
-        },
-        {
-          "id": "centre",
-          "hr": "centre",
-          "en": "centre, downtown",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'habite dans le centre de la ville.",
-            "gloss": "I live in the city centre."
-          }
-        },
-        {
-          "id": "banlieue",
-          "hr": "banlieue",
-          "en": "suburbs",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ils habitent en banlieue.",
-            "gloss": "They live in the suburbs."
-          }
-        },
-        {
-          "id": "circulation",
-          "hr": "circulation",
-          "en": "traffic",
-          "pos": "n. f.",
-          "example": {
-            "target": "La circulation est difficile le matin.",
-            "gloss": "Traffic is difficult in the morning."
-          }
-        },
-        {
-          "id": "embouteillage",
-          "hr": "embouteillage",
-          "en": "traffic jam",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a un embouteillage sur l'autoroute.",
-            "gloss": "There is a traffic jam on the motorway."
-          }
-        },
-        {
-          "id": "sécurité",
-          "hr": "sécurité",
-          "en": "safety, security",
-          "pos": "n. f.",
-          "example": {
-            "target": "La sécurité des enfants est importante.",
-            "gloss": "Children's safety is important."
-          }
-        },
-        {
-          "id": "police",
-          "hr": "police",
-          "en": "police",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il a appelé la police.",
-            "gloss": "He called the police."
-          }
-        },
-        {
-          "id": "loi",
-          "hr": "loi",
-          "en": "law",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il faut respecter la loi.",
-            "gloss": "We must respect the law."
-          }
-        },
-        {
-          "id": "droit",
-          "hr": "droit",
-          "en": "right (entitlement)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Chaque citoyen a des droits.",
-            "gloss": "Every citizen has rights."
-          }
-        },
-        {
-          "id": "gouvernement",
-          "hr": "gouvernement",
-          "en": "government",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le gouvernement prend une décision.",
-            "gloss": "The government makes a decision."
-          }
-        },
-        {
-          "id": "président",
-          "hr": "président",
-          "en": "president",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le président parle à la télévision.",
-            "gloss": "The president speaks on television."
-          }
-        },
-        {
-          "id": "maire",
-          "hr": "maire",
-          "en": "mayor",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le maire habite dans notre quartier.",
-            "gloss": "The mayor lives in our neighbourhood."
-          }
-        },
-        {
-          "id": "citoyen",
-          "hr": "citoyen",
-          "en": "citizen",
-          "pos": "n. m.",
-          "example": {
-            "target": "Chaque citoyen peut voter.",
-            "gloss": "Every citizen can vote."
-          }
-        },
-        {
-          "id": "association",
-          "hr": "association",
-          "en": "association, group",
-          "pos": "n. f.",
-          "example": {
-            "target": "Elle travaille dans une association.",
-            "gloss": "She works in an association."
-          }
-        },
-        {
-          "id": "manifestation",
-          "hr": "manifestation",
-          "en": "demonstration, protest",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a une manifestation dans la rue.",
-            "gloss": "There is a demonstration in the street."
-          }
-        },
-        {
-          "id": "solution",
-          "hr": "solution",
-          "en": "solution",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il faut trouver une solution.",
-            "gloss": "We must find a solution."
-          }
-        },
-        {
-          "id": "situation",
-          "hr": "situation",
-          "en": "situation",
-          "pos": "n. f.",
-          "example": {
-            "target": "La situation est difficile.",
-            "gloss": "The situation is difficult."
-          }
-        },
-        {
-          "id": "événement",
-          "hr": "événement",
-          "en": "event",
-          "pos": "n. m.",
-          "example": {
-            "target": "C'est un événement important.",
-            "gloss": "It is an important event."
-          }
-        },
-        {
-          "id": "changement",
-          "hr": "changement",
-          "en": "change",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a un changement de programme.",
-            "gloss": "There is a change of programme."
-          }
-        },
-        {
-          "id": "différence",
-          "hr": "différence",
-          "en": "difference",
-          "pos": "n. f.",
-          "example": {
-            "target": "Quelle est la différence entre ces deux mots ?",
-            "gloss": "What is the difference between these two words?"
-          }
-        },
-        {
-          "id": "exemple",
-          "hr": "exemple",
-          "en": "example",
-          "pos": "n. m.",
-          "example": {
-            "target": "Peux-tu donner un exemple ?",
-            "gloss": "Can you give an example?"
-          }
-        },
-        {
-          "id": "but",
-          "hr": "but",
-          "en": "goal, aim",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon but est d'apprendre le français.",
-            "gloss": "My goal is to learn French."
-          }
-        },
-        {
-          "id": "cause",
-          "hr": "cause",
-          "en": "cause",
-          "pos": "n. f.",
-          "example": {
-            "target": "Quelle est la cause du problème ?",
-            "gloss": "What is the cause of the problem?"
-          }
-        },
-        {
-          "id": "effet",
-          "hr": "effet",
-          "en": "effect",
-          "pos": "n. m.",
-          "example": {
-            "target": "La pollution a un effet sur la santé.",
-            "gloss": "Pollution has an effect on health."
-          }
-        },
-        {
-          "id": "moyen",
-          "hr": "moyen",
-          "en": "means, way",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le train est un bon moyen de transport.",
-            "gloss": "The train is a good means of transport."
-          }
-        },
-        {
-          "id": "façon",
-          "hr": "façon",
-          "en": "way, manner",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il parle d'une façon calme.",
-            "gloss": "He speaks in a calm way."
-          }
-        },
-        {
-          "id": "manière",
-          "hr": "manière",
-          "en": "manner, way",
-          "pos": "n. f.",
-          "example": {
-            "target": "Chacun a sa manière de travailler.",
-            "gloss": "Everyone has their own way of working."
-          }
-        },
-        {
-          "id": "partie",
-          "hr": "partie",
-          "en": "part",
-          "pos": "n. f.",
-          "example": {
-            "target": "Une partie des gens est d'accord.",
-            "gloss": "Part of the people agree."
-          }
-        },
-        {
-          "id": "nombre",
-          "hr": "nombre",
-          "en": "number (quantity)",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le nombre d'étudiants augmente.",
-            "gloss": "The number of students is increasing."
-          }
-        },
-        {
-          "id": "quantité",
-          "hr": "quantité",
-          "en": "quantity, amount",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a une grande quantité de déchets.",
-            "gloss": "There is a large quantity of waste."
-          }
-        },
-        {
-          "id": "niveau",
-          "hr": "niveau",
-          "en": "level",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon niveau de français est A2.",
-            "gloss": "My French level is A2."
-          }
-        },
-        {
-          "id": "ordre",
-          "hr": "ordre",
-          "en": "order",
-          "pos": "n. m.",
-          "example": {
-            "target": "Range les livres dans l'ordre.",
-            "gloss": "Put the books in order."
-          }
-        },
-        {
-          "id": "risque",
-          "hr": "risque",
-          "en": "risk",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a un risque d'accident.",
-            "gloss": "There is a risk of an accident."
-          }
-        },
-        {
-          "id": "avenir",
-          "hr": "avenir",
-          "en": "future",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je pense à mon avenir.",
-            "gloss": "I am thinking about my future."
-          }
-        },
-        {
-          "id": "passé",
-          "hr": "passé",
-          "en": "past",
-          "pos": "n. m.",
-          "example": {
-            "target": "On ne peut pas changer le passé.",
-            "gloss": "We cannot change the past."
-          }
-        },
-        {
-          "id": "protection",
-          "hr": "protection",
-          "en": "protection",
-          "pos": "n. f.",
-          "example": {
-            "target": "La protection de la nature est essentielle.",
-            "gloss": "The protection of nature is essential."
-          }
-        },
-        {
-          "id": "bruit",
-          "hr": "bruit",
-          "en": "noise",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a trop de bruit dans la rue.",
-            "gloss": "There is too much noise in the street."
-          }
-        },
-        {
-          "id": "espace",
-          "hr": "espace",
-          "en": "space",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a beaucoup d'espaces verts ici.",
-            "gloss": "There are many green spaces here."
-          }
-        },
-        {
-          "id": "bâtiment",
-          "hr": "bâtiment",
-          "en": "building",
-          "pos": "n. m.",
-          "example": {
-            "target": "C'est un grand bâtiment moderne.",
-            "gloss": "It is a big modern building."
-          }
-        },
-        {
-          "id": "élection",
-          "hr": "élection",
-          "en": "election",
-          "pos": "n. f.",
-          "example": {
-            "target": "L'élection a lieu dimanche.",
-            "gloss": "The election takes place on Sunday."
-          }
-        },
-        {
-          "id": "vote",
-          "hr": "vote",
-          "en": "vote",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le vote est un droit important.",
-            "gloss": "Voting is an important right."
-          }
-        },
-        {
-          "id": "guerre",
-          "hr": "guerre",
-          "en": "war",
-          "pos": "n. f.",
-          "example": {
-            "target": "La guerre a duré quatre ans.",
-            "gloss": "The war lasted four years."
-          }
-        },
-        {
-          "id": "paix",
-          "hr": "paix",
-          "en": "peace",
-          "pos": "n. f.",
-          "example": {
-            "target": "Tout le monde veut la paix.",
-            "gloss": "Everyone wants peace."
-          }
-        },
-        {
-          "id": "liberté",
-          "hr": "liberté",
-          "en": "freedom",
-          "pos": "n. f.",
-          "example": {
-            "target": "La liberté est très importante.",
-            "gloss": "Freedom is very important."
-          }
-        },
-        {
-          "id": "égalité",
-          "hr": "égalité",
-          "en": "equality",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous voulons l'égalité pour tous.",
-            "gloss": "We want equality for all."
-          }
-        },
-        {
-          "id": "respect",
-          "hr": "respect",
-          "en": "respect",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le respect des autres est essentiel.",
-            "gloss": "Respect for others is essential."
-          }
-        },
-        {
-          "id": "décision",
-          "hr": "décision",
-          "en": "decision",
-          "pos": "n. f.",
-          "example": {
-            "target": "C'est une décision difficile.",
-            "gloss": "It is a difficult decision."
-          }
-        },
-        {
-          "id": "système",
-          "hr": "système",
-          "en": "system",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le système de transport est moderne.",
-            "gloss": "The transport system is modern."
-          }
-        },
-        {
-          "id": "service",
-          "hr": "service",
-          "en": "service",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le service est très rapide.",
-            "gloss": "The service is very fast."
-          }
-        },
-        {
-          "id": "importance",
-          "hr": "importance",
-          "en": "importance",
-          "pos": "n. f.",
-          "example": {
-            "target": "On comprend l'importance de l'eau.",
-            "gloss": "We understand the importance of water."
-          }
-        },
-        {
-          "id": "valeur",
-          "hr": "valeur",
-          "en": "value",
-          "pos": "n. f.",
-          "example": {
-            "target": "La famille a une grande valeur pour lui.",
-            "gloss": "Family has great value for him."
-          }
-        },
-        {
-          "id": "avantage",
-          "hr": "avantage",
-          "en": "advantage",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le vélo a beaucoup d'avantages.",
-            "gloss": "The bicycle has many advantages."
-          }
-        },
-        {
-          "id": "développement",
-          "hr": "développement",
-          "en": "development",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le développement de la ville est rapide.",
-            "gloss": "The development of the city is fast."
-          }
-        },
-        {
-          "id": "public",
-          "hr": "public",
-          "en": "public",
-          "pos": "adj.",
-          "example": {
-            "target": "Je prends les transports publics.",
-            "gloss": "I take public transport."
-          }
-        },
-        {
-          "id": "privé",
-          "hr": "privé",
-          "en": "private",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est une école privée.",
-            "gloss": "It is a private school."
-          }
-        },
-        {
-          "id": "national",
-          "hr": "national",
-          "en": "national",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est une fête nationale.",
-            "gloss": "It is a national holiday."
-          }
-        },
-        {
-          "id": "social",
-          "hr": "social",
-          "en": "social",
-          "pos": "adj.",
-          "example": {
-            "target": "Les réseaux sociaux sont populaires.",
-            "gloss": "Social networks are popular."
-          }
-        },
-        {
-          "id": "général",
-          "hr": "général",
-          "en": "general",
-          "pos": "adj.",
-          "example": {
-            "target": "En général, je me lève tôt.",
-            "gloss": "In general, I get up early."
-          }
-        },
-        {
-          "id": "particulier",
-          "hr": "particulier",
-          "en": "particular, special",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est un cas particulier.",
-            "gloss": "It is a particular case."
-          }
-        },
-        {
-          "id": "principal",
-          "hr": "principal",
-          "en": "main, principal",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est la raison principale.",
-            "gloss": "It is the main reason."
-          }
-        },
-        {
-          "id": "plusieurs",
-          "hr": "plusieurs",
-          "en": "several",
-          "pos": "adj.",
-          "example": {
-            "target": "J'ai plusieurs amis en France.",
-            "gloss": "I have several friends in France."
-          }
-        },
-        {
-          "id": "quelques",
-          "hr": "quelques",
-          "en": "a few, some",
-          "pos": "adj.",
-          "example": {
-            "target": "J'ai quelques questions.",
-            "gloss": "I have a few questions."
-          }
-        },
-        {
-          "id": "chaque",
-          "hr": "chaque",
-          "en": "each, every",
-          "pos": "adj.",
-          "example": {
-            "target": "Chaque jour, je fais du sport.",
-            "gloss": "Every day, I do sport."
-          }
-        },
-        {
-          "id": "même",
-          "hr": "même",
-          "en": "same",
-          "pos": "adj.",
-          "example": {
-            "target": "Nous avons le même âge.",
-            "gloss": "We are the same age."
-          }
-        },
-        {
-          "id": "autre",
-          "hr": "autre",
-          "en": "other",
-          "pos": "adj.",
-          "example": {
-            "target": "Je voudrais un autre café.",
-            "gloss": "I would like another coffee."
-          }
-        },
-        {
-          "id": "politique",
-          "hr": "politique",
-          "en": "political",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est une décision politique.",
-            "gloss": "It is a political decision."
-          }
-        },
-        {
-          "id": "économique",
-          "hr": "économique",
-          "en": "economic",
-          "pos": "adj.",
-          "example": {
-            "target": "La situation économique est difficile.",
-            "gloss": "The economic situation is difficult."
-          }
-        },
-        {
-          "id": "naturel",
-          "hr": "naturel",
-          "en": "natural",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est un produit naturel.",
-            "gloss": "It is a natural product."
-          }
-        },
-        {
-          "id": "urbain",
-          "hr": "urbain",
-          "en": "urban",
-          "pos": "adj.",
-          "example": {
-            "target": "La vie urbaine est stressante.",
-            "gloss": "Urban life is stressful."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr",
-        "referentiel-fr"
-      ]
+     "id": "environnement",
+     "hr": "environnement",
+     "en": "environment",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il faut protéger l'environnement.",
+      "gloss": "We must protect the environment."
+     }
+    },
+    {
+     "id": "pollution",
+     "hr": "pollution",
+     "en": "pollution",
+     "pos": "n. f.",
+     "example": {
+      "target": "La pollution de l'air est un grand problème.",
+      "gloss": "Air pollution is a big problem."
+     }
+    },
+    {
+     "id": "déchet",
+     "hr": "déchet",
+     "en": "waste, rubbish",
+     "pos": "n. m.",
+     "example": {
+      "target": "On doit trier les déchets.",
+      "gloss": "We must sort the waste."
+     }
+    },
+    {
+     "id": "recyclage",
+     "hr": "recyclage",
+     "en": "recycling",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le recyclage du verre est important.",
+      "gloss": "Glass recycling is important."
+     }
+    },
+    {
+     "id": "électricité",
+     "hr": "électricité",
+     "en": "electricity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il n'y a plus d'électricité dans la maison.",
+      "gloss": "There is no more electricity in the house."
+     }
+    },
+    {
+     "id": "planète",
+     "hr": "planète",
+     "en": "planet",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous devons sauver la planète.",
+      "gloss": "We must save the planet."
+     }
+    },
+    {
+     "id": "population",
+     "hr": "population",
+     "en": "population",
+     "pos": "n. f.",
+     "example": {
+      "target": "La population de la ville augmente.",
+      "gloss": "The city's population is increasing."
+     }
+    },
+    {
+     "id": "habitant",
+     "hr": "habitant",
+     "en": "inhabitant, resident",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cette ville a un million d'habitants.",
+      "gloss": "This city has one million inhabitants."
+     }
+    },
+    {
+     "id": "voisin",
+     "hr": "voisin",
+     "en": "neighbour",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon voisin est très gentil.",
+      "gloss": "My neighbour is very nice."
+     }
+    },
+    {
+     "id": "centre",
+     "hr": "centre",
+     "en": "centre, downtown",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'habite dans le centre de la ville.",
+      "gloss": "I live in the city centre."
+     }
+    },
+    {
+     "id": "banlieue",
+     "hr": "banlieue",
+     "en": "suburbs",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ils habitent en banlieue.",
+      "gloss": "They live in the suburbs."
+     }
+    },
+    {
+     "id": "circulation",
+     "hr": "circulation",
+     "en": "traffic",
+     "pos": "n. f.",
+     "example": {
+      "target": "La circulation est difficile le matin.",
+      "gloss": "Traffic is difficult in the morning."
+     }
+    },
+    {
+     "id": "embouteillage",
+     "hr": "embouteillage",
+     "en": "traffic jam",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a un embouteillage sur l'autoroute.",
+      "gloss": "There is a traffic jam on the motorway."
+     }
+    },
+    {
+     "id": "sécurité",
+     "hr": "sécurité",
+     "en": "safety, security",
+     "pos": "n. f.",
+     "example": {
+      "target": "La sécurité des enfants est importante.",
+      "gloss": "Children's safety is important."
+     }
+    },
+    {
+     "id": "police",
+     "hr": "police",
+     "en": "police",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il a appelé la police.",
+      "gloss": "He called the police."
+     }
+    },
+    {
+     "id": "loi",
+     "hr": "loi",
+     "en": "law",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il faut respecter la loi.",
+      "gloss": "We must respect the law."
+     }
+    },
+    {
+     "id": "droit",
+     "hr": "droit",
+     "en": "right (entitlement)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Chaque citoyen a des droits.",
+      "gloss": "Every citizen has rights."
+     }
+    },
+    {
+     "id": "gouvernement",
+     "hr": "gouvernement",
+     "en": "government",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le gouvernement prend une décision.",
+      "gloss": "The government makes a decision."
+     }
+    },
+    {
+     "id": "président",
+     "hr": "président",
+     "en": "president",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le président parle à la télévision.",
+      "gloss": "The president speaks on television."
+     }
+    },
+    {
+     "id": "maire",
+     "hr": "maire",
+     "en": "mayor",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le maire habite dans notre quartier.",
+      "gloss": "The mayor lives in our neighbourhood."
+     }
+    },
+    {
+     "id": "citoyen",
+     "hr": "citoyen",
+     "en": "citizen",
+     "pos": "n. m.",
+     "example": {
+      "target": "Chaque citoyen peut voter.",
+      "gloss": "Every citizen can vote."
+     }
+    },
+    {
+     "id": "association",
+     "hr": "association",
+     "en": "association, group",
+     "pos": "n. f.",
+     "example": {
+      "target": "Elle travaille dans une association.",
+      "gloss": "She works in an association."
+     }
+    },
+    {
+     "id": "manifestation",
+     "hr": "manifestation",
+     "en": "demonstration, protest",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a une manifestation dans la rue.",
+      "gloss": "There is a demonstration in the street."
+     }
+    },
+    {
+     "id": "solution",
+     "hr": "solution",
+     "en": "solution",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il faut trouver une solution.",
+      "gloss": "We must find a solution."
+     }
+    },
+    {
+     "id": "situation",
+     "hr": "situation",
+     "en": "situation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La situation est difficile.",
+      "gloss": "The situation is difficult."
+     }
+    },
+    {
+     "id": "événement",
+     "hr": "événement",
+     "en": "event",
+     "pos": "n. m.",
+     "example": {
+      "target": "C'est un événement important.",
+      "gloss": "It is an important event."
+     }
+    },
+    {
+     "id": "changement",
+     "hr": "changement",
+     "en": "change",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a un changement de programme.",
+      "gloss": "There is a change of programme."
+     }
+    },
+    {
+     "id": "différence",
+     "hr": "différence",
+     "en": "difference",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quelle est la différence entre ces deux mots ?",
+      "gloss": "What is the difference between these two words?"
+     }
+    },
+    {
+     "id": "exemple",
+     "hr": "exemple",
+     "en": "example",
+     "pos": "n. m.",
+     "example": {
+      "target": "Peux-tu donner un exemple ?",
+      "gloss": "Can you give an example?"
+     }
+    },
+    {
+     "id": "but",
+     "hr": "but",
+     "en": "goal, aim",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon but est d'apprendre le français.",
+      "gloss": "My goal is to learn French."
+     }
+    },
+    {
+     "id": "cause",
+     "hr": "cause",
+     "en": "cause",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quelle est la cause du problème ?",
+      "gloss": "What is the cause of the problem?"
+     }
+    },
+    {
+     "id": "effet",
+     "hr": "effet",
+     "en": "effect",
+     "pos": "n. m.",
+     "example": {
+      "target": "La pollution a un effet sur la santé.",
+      "gloss": "Pollution has an effect on health."
+     }
+    },
+    {
+     "id": "moyen",
+     "hr": "moyen",
+     "en": "means, way",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le train est un bon moyen de transport.",
+      "gloss": "The train is a good means of transport."
+     }
+    },
+    {
+     "id": "façon",
+     "hr": "façon",
+     "en": "way, manner",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il parle d'une façon calme.",
+      "gloss": "He speaks in a calm way."
+     }
+    },
+    {
+     "id": "manière",
+     "hr": "manière",
+     "en": "manner, way",
+     "pos": "n. f.",
+     "example": {
+      "target": "Chacun a sa manière de travailler.",
+      "gloss": "Everyone has their own way of working."
+     }
+    },
+    {
+     "id": "partie",
+     "hr": "partie",
+     "en": "part",
+     "pos": "n. f.",
+     "example": {
+      "target": "Une partie des gens est d'accord.",
+      "gloss": "Part of the people agree."
+     }
+    },
+    {
+     "id": "nombre",
+     "hr": "nombre",
+     "en": "number (quantity)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le nombre d'étudiants augmente.",
+      "gloss": "The number of students is increasing."
+     }
+    },
+    {
+     "id": "quantité",
+     "hr": "quantité",
+     "en": "quantity, amount",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a une grande quantité de déchets.",
+      "gloss": "There is a large quantity of waste."
+     }
+    },
+    {
+     "id": "niveau",
+     "hr": "niveau",
+     "en": "level",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon niveau de français est A2.",
+      "gloss": "My French level is A2."
+     }
+    },
+    {
+     "id": "ordre",
+     "hr": "ordre",
+     "en": "order",
+     "pos": "n. m.",
+     "example": {
+      "target": "Range les livres dans l'ordre.",
+      "gloss": "Put the books in order."
+     }
+    },
+    {
+     "id": "risque",
+     "hr": "risque",
+     "en": "risk",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a un risque d'accident.",
+      "gloss": "There is a risk of an accident."
+     }
+    },
+    {
+     "id": "avenir",
+     "hr": "avenir",
+     "en": "future",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je pense à mon avenir.",
+      "gloss": "I am thinking about my future."
+     }
+    },
+    {
+     "id": "passé",
+     "hr": "passé",
+     "en": "past",
+     "pos": "n. m.",
+     "example": {
+      "target": "On ne peut pas changer le passé.",
+      "gloss": "We cannot change the past."
+     }
+    },
+    {
+     "id": "protection",
+     "hr": "protection",
+     "en": "protection",
+     "pos": "n. f.",
+     "example": {
+      "target": "La protection de la nature est essentielle.",
+      "gloss": "The protection of nature is essential."
+     }
+    },
+    {
+     "id": "bruit",
+     "hr": "bruit",
+     "en": "noise",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a trop de bruit dans la rue.",
+      "gloss": "There is too much noise in the street."
+     }
+    },
+    {
+     "id": "espace",
+     "hr": "espace",
+     "en": "space",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a beaucoup d'espaces verts ici.",
+      "gloss": "There are many green spaces here."
+     }
+    },
+    {
+     "id": "bâtiment",
+     "hr": "bâtiment",
+     "en": "building",
+     "pos": "n. m.",
+     "example": {
+      "target": "C'est un grand bâtiment moderne.",
+      "gloss": "It is a big modern building."
+     }
+    },
+    {
+     "id": "élection",
+     "hr": "élection",
+     "en": "election",
+     "pos": "n. f.",
+     "example": {
+      "target": "L'élection a lieu dimanche.",
+      "gloss": "The election takes place on Sunday."
+     }
+    },
+    {
+     "id": "vote",
+     "hr": "vote",
+     "en": "vote",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le vote est un droit important.",
+      "gloss": "Voting is an important right."
+     }
+    },
+    {
+     "id": "guerre",
+     "hr": "guerre",
+     "en": "war",
+     "pos": "n. f.",
+     "example": {
+      "target": "La guerre a duré quatre ans.",
+      "gloss": "The war lasted four years."
+     }
+    },
+    {
+     "id": "paix",
+     "hr": "paix",
+     "en": "peace",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tout le monde veut la paix.",
+      "gloss": "Everyone wants peace."
+     }
+    },
+    {
+     "id": "liberté",
+     "hr": "liberté",
+     "en": "freedom",
+     "pos": "n. f.",
+     "example": {
+      "target": "La liberté est très importante.",
+      "gloss": "Freedom is very important."
+     }
+    },
+    {
+     "id": "égalité",
+     "hr": "égalité",
+     "en": "equality",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous voulons l'égalité pour tous.",
+      "gloss": "We want equality for all."
+     }
+    },
+    {
+     "id": "respect",
+     "hr": "respect",
+     "en": "respect",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le respect des autres est essentiel.",
+      "gloss": "Respect for others is essential."
+     }
+    },
+    {
+     "id": "décision",
+     "hr": "décision",
+     "en": "decision",
+     "pos": "n. f.",
+     "example": {
+      "target": "C'est une décision difficile.",
+      "gloss": "It is a difficult decision."
+     }
+    },
+    {
+     "id": "système",
+     "hr": "système",
+     "en": "system",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le système de transport est moderne.",
+      "gloss": "The transport system is modern."
+     }
+    },
+    {
+     "id": "service",
+     "hr": "service",
+     "en": "service",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le service est très rapide.",
+      "gloss": "The service is very fast."
+     }
+    },
+    {
+     "id": "importance",
+     "hr": "importance",
+     "en": "importance",
+     "pos": "n. f.",
+     "example": {
+      "target": "On comprend l'importance de l'eau.",
+      "gloss": "We understand the importance of water."
+     }
+    },
+    {
+     "id": "valeur",
+     "hr": "valeur",
+     "en": "value",
+     "pos": "n. f.",
+     "example": {
+      "target": "La famille a une grande valeur pour lui.",
+      "gloss": "Family has great value for him."
+     }
+    },
+    {
+     "id": "avantage",
+     "hr": "avantage",
+     "en": "advantage",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le vélo a beaucoup d'avantages.",
+      "gloss": "The bicycle has many advantages."
+     }
+    },
+    {
+     "id": "développement",
+     "hr": "développement",
+     "en": "development",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le développement de la ville est rapide.",
+      "gloss": "The development of the city is fast."
+     }
+    },
+    {
+     "id": "public",
+     "hr": "public",
+     "en": "public",
+     "pos": "adj.",
+     "example": {
+      "target": "Je prends les transports publics.",
+      "gloss": "I take public transport."
+     }
+    },
+    {
+     "id": "privé",
+     "hr": "privé",
+     "en": "private",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est une école privée.",
+      "gloss": "It is a private school."
+     }
+    },
+    {
+     "id": "national",
+     "hr": "national",
+     "en": "national",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est une fête nationale.",
+      "gloss": "It is a national holiday."
+     }
+    },
+    {
+     "id": "social",
+     "hr": "social",
+     "en": "social",
+     "pos": "adj.",
+     "example": {
+      "target": "Les réseaux sociaux sont populaires.",
+      "gloss": "Social networks are popular."
+     }
+    },
+    {
+     "id": "général",
+     "hr": "général",
+     "en": "general",
+     "pos": "adj.",
+     "example": {
+      "target": "En général, je me lève tôt.",
+      "gloss": "In general, I get up early."
+     }
+    },
+    {
+     "id": "particulier",
+     "hr": "particulier",
+     "en": "particular, special",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est un cas particulier.",
+      "gloss": "It is a particular case."
+     }
+    },
+    {
+     "id": "principal",
+     "hr": "principal",
+     "en": "main, principal",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est la raison principale.",
+      "gloss": "It is the main reason."
+     }
+    },
+    {
+     "id": "plusieurs",
+     "hr": "plusieurs",
+     "en": "several",
+     "pos": "adj.",
+     "example": {
+      "target": "J'ai plusieurs amis en France.",
+      "gloss": "I have several friends in France."
+     }
+    },
+    {
+     "id": "quelques",
+     "hr": "quelques",
+     "en": "a few, some",
+     "pos": "adj.",
+     "example": {
+      "target": "J'ai quelques questions.",
+      "gloss": "I have a few questions."
+     }
+    },
+    {
+     "id": "chaque",
+     "hr": "chaque",
+     "en": "each, every",
+     "pos": "adj.",
+     "example": {
+      "target": "Chaque jour, je fais du sport.",
+      "gloss": "Every day, I do sport."
+     }
+    },
+    {
+     "id": "même",
+     "hr": "même",
+     "en": "same",
+     "pos": "adj.",
+     "example": {
+      "target": "Nous avons le même âge.",
+      "gloss": "We are the same age."
+     }
+    },
+    {
+     "id": "autre",
+     "hr": "autre",
+     "en": "other",
+     "pos": "adj.",
+     "example": {
+      "target": "Je voudrais un autre café.",
+      "gloss": "I would like another coffee."
+     }
+    },
+    {
+     "id": "politique",
+     "hr": "politique",
+     "en": "political",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est une décision politique.",
+      "gloss": "It is a political decision."
+     }
+    },
+    {
+     "id": "économique",
+     "hr": "économique",
+     "en": "economic",
+     "pos": "adj.",
+     "example": {
+      "target": "La situation économique est difficile.",
+      "gloss": "The economic situation is difficult."
+     }
+    },
+    {
+     "id": "naturel",
+     "hr": "naturel",
+     "en": "natural",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est un produit naturel.",
+      "gloss": "It is a natural product."
+     }
+    },
+    {
+     "id": "urbain",
+     "hr": "urbain",
+     "en": "urban",
+     "pos": "adj.",
+     "example": {
+      "target": "La vie urbaine est stressante.",
+      "gloss": "Urban life is stressful."
+     }
     }
-  ]
+   ],
+   "sources": [
+    "inventaire-cecrl"
+   ]
+  }
+ ]
 }

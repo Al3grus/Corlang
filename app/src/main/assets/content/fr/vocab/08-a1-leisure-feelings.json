@@ -1,826 +1,824 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "08-a1-leisure-feelings",
+   "title": "A1 leisure, sport, hobbies & feelings",
+   "level": "A1",
+   "words": [
     {
-      "id": "08-a1-leisure-feelings",
-      "title": "A1 leisure, sport, hobbies & feelings",
-      "level": "A1",
-      "words": [
-        {
-          "id": "loisir",
-          "hr": "loisir",
-          "en": "leisure, free-time activity",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'ai beaucoup de loisirs le week-end.",
-            "gloss": "I have a lot of leisure activities on the weekend."
-          }
-        },
-        {
-          "id": "jeu",
-          "hr": "jeu",
-          "en": "game",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ce jeu est très amusant.",
-            "gloss": "This game is very fun."
-          }
-        },
-        {
-          "id": "film",
-          "hr": "film",
-          "en": "film, movie",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous regardons un film ce soir.",
-            "gloss": "We are watching a film tonight."
-          }
-        },
-        {
-          "id": "concert",
-          "hr": "concert",
-          "en": "concert",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le concert commence à huit heures.",
-            "gloss": "The concert starts at eight o'clock."
-          }
-        },
-        {
-          "id": "fête",
-          "hr": "fête",
-          "en": "party, celebration",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a une fête chez Marie.",
-            "gloss": "There is a party at Marie's."
-          }
-        },
-        {
-          "id": "promenade",
-          "hr": "promenade",
-          "en": "walk, stroll",
-          "pos": "n. f.",
-          "example": {
-            "target": "Nous faisons une promenade dans le parc.",
-            "gloss": "We are taking a walk in the park."
-          }
-        },
-        {
-          "id": "lecture",
-          "hr": "lecture",
-          "en": "reading",
-          "pos": "n. f.",
-          "example": {
-            "target": "La lecture est mon passe-temps préféré.",
-            "gloss": "Reading is my favorite hobby."
-          }
-        },
-        {
-          "id": "dessin",
-          "hr": "dessin",
-          "en": "drawing",
-          "pos": "n. m.",
-          "example": {
-            "target": "Elle aime le dessin et la peinture.",
-            "gloss": "She likes drawing and painting."
-          }
-        },
-        {
-          "id": "danse",
-          "hr": "danse",
-          "en": "dance, dancing",
-          "pos": "n. f.",
-          "example": {
-            "target": "La danse est bonne pour la santé.",
-            "gloss": "Dancing is good for your health."
-          }
-        },
-        {
-          "id": "chanson",
-          "hr": "chanson",
-          "en": "song",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'aime bien cette chanson française.",
-            "gloss": "I really like this French song."
-          }
-        },
-        {
-          "id": "photo",
-          "hr": "photo",
-          "en": "photo, photograph",
-          "pos": "n. f.",
-          "example": {
-            "target": "Je prends une photo de la tour.",
-            "gloss": "I am taking a photo of the tower."
-          }
-        },
-        {
-          "id": "télé",
-          "hr": "télé",
-          "en": "TV, television",
-          "pos": "n. f.",
-          "example": {
-            "target": "Le soir, je regarde la télé.",
-            "gloss": "In the evening, I watch TV."
-          }
-        },
-        {
-          "id": "radio",
-          "hr": "radio",
-          "en": "radio",
-          "pos": "n. f.",
-          "example": {
-            "target": "J'écoute la radio dans la voiture.",
-            "gloss": "I listen to the radio in the car."
-          }
-        },
-        {
-          "id": "livre",
-          "hr": "livre",
-          "en": "book",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je lis un livre intéressant.",
-            "gloss": "I am reading an interesting book."
-          }
-        },
-        {
-          "id": "passe-temps",
-          "hr": "passe-temps",
-          "en": "hobby, pastime",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon passe-temps favori est le vélo.",
-            "gloss": "My favorite hobby is cycling."
-          }
-        },
-        {
-          "id": "peinture",
-          "hr": "peinture",
-          "en": "painting",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il fait de la peinture le dimanche.",
-            "gloss": "He does painting on Sundays."
-          }
-        },
-        {
-          "id": "football",
-          "hr": "football",
-          "en": "football, soccer",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les enfants jouent au football.",
-            "gloss": "The children are playing football."
-          }
-        },
-        {
-          "id": "tennis",
-          "hr": "tennis",
-          "en": "tennis",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je joue au tennis avec mon frère.",
-            "gloss": "I play tennis with my brother."
-          }
-        },
-        {
-          "id": "natation",
-          "hr": "natation",
-          "en": "swimming",
-          "pos": "n. f.",
-          "example": {
-            "target": "La natation est mon sport préféré.",
-            "gloss": "Swimming is my favorite sport."
-          }
-        },
-        {
-          "id": "course",
-          "hr": "course",
-          "en": "running, race",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il fait de la course tous les matins.",
-            "gloss": "He goes running every morning."
-          }
-        },
-        {
-          "id": "ski",
-          "hr": "ski",
-          "en": "skiing",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous faisons du ski en hiver.",
-            "gloss": "We go skiing in winter."
-          }
-        },
-        {
-          "id": "match",
-          "hr": "match",
-          "en": "match, game",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le match de football est ce soir.",
-            "gloss": "The football match is tonight."
-          }
-        },
-        {
-          "id": "équipe",
-          "hr": "équipe",
-          "en": "team",
-          "pos": "n. f.",
-          "example": {
-            "target": "Mon équipe a gagné le match.",
-            "gloss": "My team won the match."
-          }
-        },
-        {
-          "id": "basket",
-          "hr": "basket",
-          "en": "basketball",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il joue au basket avec ses amis.",
-            "gloss": "He plays basketball with his friends."
-          }
-        },
-        {
-          "id": "gymnastique",
-          "hr": "gymnastique",
-          "en": "gymnastics",
-          "pos": "n. f.",
-          "example": {
-            "target": "Elle fait de la gymnastique le mercredi.",
-            "gloss": "She does gymnastics on Wednesdays."
-          }
-        },
-        {
-          "id": "joueur",
-          "hr": "joueur",
-          "en": "player",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ce joueur est très rapide.",
-            "gloss": "This player is very fast."
-          }
-        },
-        {
-          "id": "champion",
-          "hr": "champion",
-          "en": "champion",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il est champion de natation.",
-            "gloss": "He is a swimming champion."
-          }
-        },
-        {
-          "id": "perdre",
-          "hr": "perdre",
-          "en": "to lose",
-          "pos": "v.",
-          "example": {
-            "target": "Ils vont peut-être perdre le match.",
-            "gloss": "They might lose the match."
-          }
-        },
-        {
-          "id": "danser",
-          "hr": "danser",
-          "en": "to dance",
-          "pos": "v.",
-          "example": {
-            "target": "Elle adore danser à la fête.",
-            "gloss": "She loves to dance at the party."
-          }
-        },
-        {
-          "id": "dessiner",
-          "hr": "dessiner",
-          "en": "to draw",
-          "pos": "v.",
-          "example": {
-            "target": "Les enfants aiment dessiner des animaux.",
-            "gloss": "The children like to draw animals."
-          }
-        },
-        {
-          "id": "s'amuser",
-          "hr": "s'amuser",
-          "en": "to have fun",
-          "pos": "v.",
-          "example": {
-            "target": "Les enfants s'amusent au parc.",
-            "gloss": "The children are having fun at the park."
-          }
-        },
-        {
-          "id": "faire du sport",
-          "hr": "faire du sport",
-          "en": "to do sport, to exercise",
-          "pos": "loc.v.",
-          "example": {
-            "target": "Je fais du sport trois fois par semaine.",
-            "gloss": "I do sport three times a week."
-          }
-        },
-        {
-          "id": "sentiment",
-          "hr": "sentiment",
-          "en": "feeling",
-          "pos": "n. m.",
-          "example": {
-            "target": "C'est un sentiment très fort.",
-            "gloss": "It is a very strong feeling."
-          }
-        },
-        {
-          "id": "peur",
-          "hr": "peur",
-          "en": "fear",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il a peur des chiens.",
-            "gloss": "He is afraid of dogs."
-          }
-        },
-        {
-          "id": "joie",
-          "hr": "joie",
-          "en": "joy",
-          "pos": "n. f.",
-          "example": {
-            "target": "Quelle joie de te voir!",
-            "gloss": "What a joy to see you!"
-          }
-        },
-        {
-          "id": "colère",
-          "hr": "colère",
-          "en": "anger",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il est en colère contre son frère.",
-            "gloss": "He is angry with his brother."
-          }
-        },
-        {
-          "id": "amour",
-          "hr": "amour",
-          "en": "love",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'amour est un beau sentiment.",
-            "gloss": "Love is a beautiful feeling."
-          }
-        },
-        {
-          "id": "rire",
-          "hr": "rire",
-          "en": "to laugh",
-          "pos": "v.",
-          "example": {
-            "target": "Nous aimons rire ensemble.",
-            "gloss": "We like to laugh together."
-          }
-        },
-        {
-          "id": "pleurer",
-          "hr": "pleurer",
-          "en": "to cry",
-          "pos": "v.",
-          "example": {
-            "target": "Le bébé pleure la nuit.",
-            "gloss": "The baby cries at night."
-          }
-        },
-        {
-          "id": "sourire",
-          "hr": "sourire",
-          "en": "to smile; smile",
-          "pos": "v.",
-          "example": {
-            "target": "Elle sourit à tout le monde.",
-            "gloss": "She smiles at everyone."
-          }
-        },
-        {
-          "id": "détester",
-          "hr": "détester",
-          "en": "to hate",
-          "pos": "v.",
-          "example": {
-            "target": "Je déteste les lundis.",
-            "gloss": "I hate Mondays."
-          }
-        },
-        {
-          "id": "préférer",
-          "hr": "préférer",
-          "en": "to prefer",
-          "pos": "v.",
-          "example": {
-            "target": "Je préfère le thé au café.",
-            "gloss": "I prefer tea to coffee."
-          }
-        },
-        {
-          "id": "espérer",
-          "hr": "espérer",
-          "en": "to hope",
-          "pos": "v.",
-          "example": {
-            "target": "J'espère te voir bientôt.",
-            "gloss": "I hope to see you soon."
-          }
-        },
-        {
-          "id": "avoir envie",
-          "hr": "avoir envie",
-          "en": "to feel like, to want",
-          "pos": "loc.v.",
-          "example": {
-            "target": "J'ai envie d'un café.",
-            "gloss": "I feel like having a coffee."
-          }
-        },
-        {
-          "id": "adorer",
-          "hr": "adorer",
-          "en": "to adore, to love",
-          "pos": "v.",
-          "example": {
-            "target": "J'adore le chocolat.",
-            "gloss": "I love chocolate."
-          }
-        },
-        {
-          "id": "bonheur",
-          "hr": "bonheur",
-          "en": "happiness",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le bonheur est simple.",
-            "gloss": "Happiness is simple."
-          }
-        },
-        {
-          "id": "tristesse",
-          "hr": "tristesse",
-          "en": "sadness",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il y a de la tristesse dans ses yeux.",
-            "gloss": "There is sadness in his eyes."
-          }
-        },
-        {
-          "id": "surprise",
-          "hr": "surprise",
-          "en": "surprise",
-          "pos": "n. f.",
-          "example": {
-            "target": "Quelle bonne surprise!",
-            "gloss": "What a nice surprise!"
-          }
-        },
-        {
-          "id": "caractère",
-          "hr": "caractère",
-          "en": "character, personality",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il a un bon caractère.",
-            "gloss": "He has a good character."
-          }
-        },
-        {
-          "id": "timide",
-          "hr": "timide",
-          "en": "shy",
-          "pos": "adj.",
-          "example": {
-            "target": "Ma sœur est très timide.",
-            "gloss": "My sister is very shy."
-          }
-        },
-        {
-          "id": "sympa",
-          "hr": "sympa",
-          "en": "nice, friendly",
-          "pos": "adj.",
-          "example": {
-            "target": "Tes amis sont très sympas.",
-            "gloss": "Your friends are very nice."
-          }
-        },
-        {
-          "id": "drôle",
-          "hr": "drôle",
-          "en": "funny",
-          "pos": "adj.",
-          "example": {
-            "target": "Cette histoire est très drôle.",
-            "gloss": "This story is very funny."
-          }
-        },
-        {
-          "id": "sérieux",
-          "hr": "sérieux",
-          "en": "serious",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est un étudiant sérieux.",
-            "gloss": "He is a serious student."
-          }
-        },
-        {
-          "id": "poli",
-          "hr": "poli",
-          "en": "polite",
-          "pos": "adj.",
-          "example": {
-            "target": "Cet enfant est très poli.",
-            "gloss": "This child is very polite."
-          }
-        },
-        {
-          "id": "courageux",
-          "hr": "courageux",
-          "en": "brave, courageous",
-          "pos": "adj.",
-          "example": {
-            "target": "Le pompier est courageux.",
-            "gloss": "The firefighter is brave."
-          }
-        },
-        {
-          "id": "intelligent",
-          "hr": "intelligent",
-          "en": "intelligent, smart",
-          "pos": "adj.",
-          "example": {
-            "target": "Elle est très intelligente.",
-            "gloss": "She is very intelligent."
-          }
-        },
-        {
-          "id": "bête",
-          "hr": "bête",
-          "en": "stupid, silly",
-          "pos": "adj.",
-          "example": {
-            "target": "Ne sois pas bête!",
-            "gloss": "Don't be silly!"
-          }
-        },
-        {
-          "id": "jaloux",
-          "hr": "jaloux",
-          "en": "jealous",
-          "pos": "adj.",
-          "example": {
-            "target": "Il est jaloux de son frère.",
-            "gloss": "He is jealous of his brother."
-          }
-        },
-        {
-          "id": "amoureux",
-          "hr": "amoureux",
-          "en": "in love",
-          "pos": "adj.",
-          "example": {
-            "target": "Il est amoureux de Julie.",
-            "gloss": "He is in love with Julie."
-          }
-        },
-        {
-          "id": "surpris",
-          "hr": "surpris",
-          "en": "surprised",
-          "pos": "adj.",
-          "example": {
-            "target": "Je suis surpris de te voir ici.",
-            "gloss": "I am surprised to see you here."
-          }
-        },
-        {
-          "id": "inquiet",
-          "hr": "inquiet",
-          "en": "worried",
-          "pos": "adj.",
-          "example": {
-            "target": "Ma mère est inquiète pour moi.",
-            "gloss": "My mother is worried about me."
-          }
-        },
-        {
-          "id": "énervé",
-          "hr": "énervé",
-          "en": "annoyed, irritated",
-          "pos": "adj.",
-          "example": {
-            "target": "Il est énervé après le travail.",
-            "gloss": "He is irritated after work."
-          }
-        },
-        {
-          "id": "généreux",
-          "hr": "généreux",
-          "en": "generous",
-          "pos": "adj.",
-          "example": {
-            "target": "Il est généreux avec ses amis.",
-            "gloss": "He is generous with his friends."
-          }
-        },
-        {
-          "id": "curieux",
-          "hr": "curieux",
-          "en": "curious",
-          "pos": "adj.",
-          "example": {
-            "target": "Les enfants sont curieux.",
-            "gloss": "Children are curious."
-          }
-        },
-        {
-          "id": "paresseux",
-          "hr": "paresseux",
-          "en": "lazy",
-          "pos": "adj.",
-          "example": {
-            "target": "Mon chat est paresseux.",
-            "gloss": "My cat is lazy."
-          }
-        },
-        {
-          "id": "actif",
-          "hr": "actif",
-          "en": "active",
-          "pos": "adj.",
-          "example": {
-            "target": "Elle est très active.",
-            "gloss": "She is very active."
-          }
-        },
-        {
-          "id": "sage",
-          "hr": "sage",
-          "en": "well-behaved, wise",
-          "pos": "adj.",
-          "example": {
-            "target": "L'enfant est sage à l'école.",
-            "gloss": "The child is well-behaved at school."
-          }
-        },
-        {
-          "id": "honnête",
-          "hr": "honnête",
-          "en": "honest",
-          "pos": "adj.",
-          "example": {
-            "target": "C'est une personne honnête.",
-            "gloss": "He is an honest person."
-          }
-        },
-        {
-          "id": "patient",
-          "hr": "patient",
-          "en": "patient",
-          "pos": "adj.",
-          "example": {
-            "target": "Le professeur est patient.",
-            "gloss": "The teacher is patient."
-          }
-        },
-        {
-          "id": "joyeux",
-          "hr": "joyeux",
-          "en": "cheerful, joyful",
-          "pos": "adj.",
-          "example": {
-            "target": "Il a un caractère joyeux.",
-            "gloss": "He has a cheerful character."
-          }
-        },
-        {
-          "id": "nerveux",
-          "hr": "nerveux",
-          "en": "nervous",
-          "pos": "adj.",
-          "example": {
-            "target": "Elle est nerveuse avant l'examen.",
-            "gloss": "She is nervous before the exam."
-          }
-        },
-        {
-          "id": "seul",
-          "hr": "seul",
-          "en": "alone, lonely",
-          "pos": "adj.",
-          "example": {
-            "target": "Il se sent seul le soir.",
-            "gloss": "He feels lonely in the evening."
-          }
-        },
-        {
-          "id": "fier",
-          "hr": "fier",
-          "en": "proud",
-          "pos": "adj.",
-          "example": {
-            "target": "Je suis fier de toi.",
-            "gloss": "I am proud of you."
-          }
-        },
-        {
-          "id": "aimable",
-          "hr": "aimable",
-          "en": "friendly, kind",
-          "pos": "adj.",
-          "example": {
-            "target": "La vendeuse est aimable.",
-            "gloss": "The saleswoman is friendly."
-          }
-        },
-        {
-          "id": "hobby",
-          "hr": "hobby",
-          "en": "hobby",
-          "pos": "n. m.",
-          "example": {
-            "target": "La photo est son hobby.",
-            "gloss": "Photography is his hobby."
-          }
-        },
-        {
-          "id": "guitare",
-          "hr": "guitare",
-          "en": "guitar",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il joue de la guitare.",
-            "gloss": "He plays the guitar."
-          }
-        },
-        {
-          "id": "piano",
-          "hr": "piano",
-          "en": "piano",
-          "pos": "n. m.",
-          "example": {
-            "target": "Elle apprend le piano.",
-            "gloss": "She is learning the piano."
-          }
-        },
-        {
-          "id": "ballon",
-          "hr": "ballon",
-          "en": "ball, balloon",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les enfants jouent au ballon.",
-            "gloss": "The children are playing ball."
-          }
-        },
-        {
-          "id": "gagnant",
-          "hr": "gagnant",
-          "en": "winner",
-          "pos": "n. m.",
-          "example": {
-            "target": "Qui est le gagnant du match?",
-            "gloss": "Who is the winner of the match?"
-          }
-        },
-        {
-          "id": "spectacle",
-          "hr": "spectacle",
-          "en": "show, performance",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le spectacle est magnifique.",
-            "gloss": "The show is wonderful."
-          }
-        },
-        {
-          "id": "chance",
-          "hr": "chance",
-          "en": "luck",
-          "pos": "n. f.",
-          "example": {
-            "target": "Bonne chance pour ton examen!",
-            "gloss": "Good luck with your exam!"
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr",
-        "referentiel-fr"
-      ]
+     "id": "loisir",
+     "hr": "loisir",
+     "en": "leisure, free-time activity",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'ai beaucoup de loisirs le week-end.",
+      "gloss": "I have a lot of leisure activities on the weekend."
+     }
+    },
+    {
+     "id": "jeu",
+     "hr": "jeu",
+     "en": "game",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce jeu est très amusant.",
+      "gloss": "This game is very fun."
+     }
+    },
+    {
+     "id": "film",
+     "hr": "film",
+     "en": "film, movie",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous regardons un film ce soir.",
+      "gloss": "We are watching a film tonight."
+     }
+    },
+    {
+     "id": "concert",
+     "hr": "concert",
+     "en": "concert",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le concert commence à huit heures.",
+      "gloss": "The concert starts at eight o'clock."
+     }
+    },
+    {
+     "id": "fête",
+     "hr": "fête",
+     "en": "party, celebration",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a une fête chez Marie.",
+      "gloss": "There is a party at Marie's."
+     }
+    },
+    {
+     "id": "promenade",
+     "hr": "promenade",
+     "en": "walk, stroll",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nous faisons une promenade dans le parc.",
+      "gloss": "We are taking a walk in the park."
+     }
+    },
+    {
+     "id": "lecture",
+     "hr": "lecture",
+     "en": "reading",
+     "pos": "n. f.",
+     "example": {
+      "target": "La lecture est mon passe-temps préféré.",
+      "gloss": "Reading is my favorite hobby."
+     }
+    },
+    {
+     "id": "dessin",
+     "hr": "dessin",
+     "en": "drawing",
+     "pos": "n. m.",
+     "example": {
+      "target": "Elle aime le dessin et la peinture.",
+      "gloss": "She likes drawing and painting."
+     }
+    },
+    {
+     "id": "danse",
+     "hr": "danse",
+     "en": "dance, dancing",
+     "pos": "n. f.",
+     "example": {
+      "target": "La danse est bonne pour la santé.",
+      "gloss": "Dancing is good for your health."
+     }
+    },
+    {
+     "id": "chanson",
+     "hr": "chanson",
+     "en": "song",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'aime bien cette chanson française.",
+      "gloss": "I really like this French song."
+     }
+    },
+    {
+     "id": "photo",
+     "hr": "photo",
+     "en": "photo, photograph",
+     "pos": "n. f.",
+     "example": {
+      "target": "Je prends une photo de la tour.",
+      "gloss": "I am taking a photo of the tower."
+     }
+    },
+    {
+     "id": "télé",
+     "hr": "télé",
+     "en": "TV, television",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le soir, je regarde la télé.",
+      "gloss": "In the evening, I watch TV."
+     }
+    },
+    {
+     "id": "radio",
+     "hr": "radio",
+     "en": "radio",
+     "pos": "n. f.",
+     "example": {
+      "target": "J'écoute la radio dans la voiture.",
+      "gloss": "I listen to the radio in the car."
+     }
+    },
+    {
+     "id": "livre",
+     "hr": "livre",
+     "en": "book",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je lis un livre intéressant.",
+      "gloss": "I am reading an interesting book."
+     }
+    },
+    {
+     "id": "passe-temps",
+     "hr": "passe-temps",
+     "en": "hobby, pastime",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon passe-temps favori est le vélo.",
+      "gloss": "My favorite hobby is cycling."
+     }
+    },
+    {
+     "id": "peinture",
+     "hr": "peinture",
+     "en": "painting",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il fait de la peinture le dimanche.",
+      "gloss": "He does painting on Sundays."
+     }
+    },
+    {
+     "id": "football",
+     "hr": "football",
+     "en": "football, soccer",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les enfants jouent au football.",
+      "gloss": "The children are playing football."
+     }
+    },
+    {
+     "id": "tennis",
+     "hr": "tennis",
+     "en": "tennis",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je joue au tennis avec mon frère.",
+      "gloss": "I play tennis with my brother."
+     }
+    },
+    {
+     "id": "natation",
+     "hr": "natation",
+     "en": "swimming",
+     "pos": "n. f.",
+     "example": {
+      "target": "La natation est mon sport préféré.",
+      "gloss": "Swimming is my favorite sport."
+     }
+    },
+    {
+     "id": "course",
+     "hr": "course",
+     "en": "running, race",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il fait de la course tous les matins.",
+      "gloss": "He goes running every morning."
+     }
+    },
+    {
+     "id": "ski",
+     "hr": "ski",
+     "en": "skiing",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous faisons du ski en hiver.",
+      "gloss": "We go skiing in winter."
+     }
+    },
+    {
+     "id": "match",
+     "hr": "match",
+     "en": "match, game",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le match de football est ce soir.",
+      "gloss": "The football match is tonight."
+     }
+    },
+    {
+     "id": "équipe",
+     "hr": "équipe",
+     "en": "team",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mon équipe a gagné le match.",
+      "gloss": "My team won the match."
+     }
+    },
+    {
+     "id": "basket",
+     "hr": "basket",
+     "en": "basketball",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il joue au basket avec ses amis.",
+      "gloss": "He plays basketball with his friends."
+     }
+    },
+    {
+     "id": "gymnastique",
+     "hr": "gymnastique",
+     "en": "gymnastics",
+     "pos": "n. f.",
+     "example": {
+      "target": "Elle fait de la gymnastique le mercredi.",
+      "gloss": "She does gymnastics on Wednesdays."
+     }
+    },
+    {
+     "id": "joueur",
+     "hr": "joueur",
+     "en": "player",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce joueur est très rapide.",
+      "gloss": "This player is very fast."
+     }
+    },
+    {
+     "id": "champion",
+     "hr": "champion",
+     "en": "champion",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il est champion de natation.",
+      "gloss": "He is a swimming champion."
+     }
+    },
+    {
+     "id": "perdre",
+     "hr": "perdre",
+     "en": "to lose",
+     "pos": "v.",
+     "example": {
+      "target": "Ils vont peut-être perdre le match.",
+      "gloss": "They might lose the match."
+     }
+    },
+    {
+     "id": "danser",
+     "hr": "danser",
+     "en": "to dance",
+     "pos": "v.",
+     "example": {
+      "target": "Elle adore danser à la fête.",
+      "gloss": "She loves to dance at the party."
+     }
+    },
+    {
+     "id": "dessiner",
+     "hr": "dessiner",
+     "en": "to draw",
+     "pos": "v.",
+     "example": {
+      "target": "Les enfants aiment dessiner des animaux.",
+      "gloss": "The children like to draw animals."
+     }
+    },
+    {
+     "id": "s'amuser",
+     "hr": "s'amuser",
+     "en": "to have fun",
+     "pos": "v.",
+     "example": {
+      "target": "Les enfants s'amusent au parc.",
+      "gloss": "The children are having fun at the park."
+     }
+    },
+    {
+     "id": "faire du sport",
+     "hr": "faire du sport",
+     "en": "to do sport, to exercise",
+     "pos": "loc.v.",
+     "example": {
+      "target": "Je fais du sport trois fois par semaine.",
+      "gloss": "I do sport three times a week."
+     }
+    },
+    {
+     "id": "sentiment",
+     "hr": "sentiment",
+     "en": "feeling",
+     "pos": "n. m.",
+     "example": {
+      "target": "C'est un sentiment très fort.",
+      "gloss": "It is a very strong feeling."
+     }
+    },
+    {
+     "id": "peur",
+     "hr": "peur",
+     "en": "fear",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il a peur des chiens.",
+      "gloss": "He is afraid of dogs."
+     }
+    },
+    {
+     "id": "joie",
+     "hr": "joie",
+     "en": "joy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quelle joie de te voir!",
+      "gloss": "What a joy to see you!"
+     }
+    },
+    {
+     "id": "colère",
+     "hr": "colère",
+     "en": "anger",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il est en colère contre son frère.",
+      "gloss": "He is angry with his brother."
+     }
+    },
+    {
+     "id": "amour",
+     "hr": "amour",
+     "en": "love",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'amour est un beau sentiment.",
+      "gloss": "Love is a beautiful feeling."
+     }
+    },
+    {
+     "id": "rire",
+     "hr": "rire",
+     "en": "to laugh",
+     "pos": "v.",
+     "example": {
+      "target": "Nous aimons rire ensemble.",
+      "gloss": "We like to laugh together."
+     }
+    },
+    {
+     "id": "pleurer",
+     "hr": "pleurer",
+     "en": "to cry",
+     "pos": "v.",
+     "example": {
+      "target": "Le bébé pleure la nuit.",
+      "gloss": "The baby cries at night."
+     }
+    },
+    {
+     "id": "sourire",
+     "hr": "sourire",
+     "en": "to smile; smile",
+     "pos": "v.",
+     "example": {
+      "target": "Elle sourit à tout le monde.",
+      "gloss": "She smiles at everyone."
+     }
+    },
+    {
+     "id": "détester",
+     "hr": "détester",
+     "en": "to hate",
+     "pos": "v.",
+     "example": {
+      "target": "Je déteste les lundis.",
+      "gloss": "I hate Mondays."
+     }
+    },
+    {
+     "id": "préférer",
+     "hr": "préférer",
+     "en": "to prefer",
+     "pos": "v.",
+     "example": {
+      "target": "Je préfère le thé au café.",
+      "gloss": "I prefer tea to coffee."
+     }
+    },
+    {
+     "id": "espérer",
+     "hr": "espérer",
+     "en": "to hope",
+     "pos": "v.",
+     "example": {
+      "target": "J'espère te voir bientôt.",
+      "gloss": "I hope to see you soon."
+     }
+    },
+    {
+     "id": "avoir envie",
+     "hr": "avoir envie",
+     "en": "to feel like, to want",
+     "pos": "loc.v.",
+     "example": {
+      "target": "J'ai envie d'un café.",
+      "gloss": "I feel like having a coffee."
+     }
+    },
+    {
+     "id": "adorer",
+     "hr": "adorer",
+     "en": "to adore, to love",
+     "pos": "v.",
+     "example": {
+      "target": "J'adore le chocolat.",
+      "gloss": "I love chocolate."
+     }
+    },
+    {
+     "id": "bonheur",
+     "hr": "bonheur",
+     "en": "happiness",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le bonheur est simple.",
+      "gloss": "Happiness is simple."
+     }
+    },
+    {
+     "id": "tristesse",
+     "hr": "tristesse",
+     "en": "sadness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il y a de la tristesse dans ses yeux.",
+      "gloss": "There is sadness in his eyes."
+     }
+    },
+    {
+     "id": "surprise",
+     "hr": "surprise",
+     "en": "surprise",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quelle bonne surprise!",
+      "gloss": "What a nice surprise!"
+     }
+    },
+    {
+     "id": "caractère",
+     "hr": "caractère",
+     "en": "character, personality",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il a un bon caractère.",
+      "gloss": "He has a good character."
+     }
+    },
+    {
+     "id": "timide",
+     "hr": "timide",
+     "en": "shy",
+     "pos": "adj.",
+     "example": {
+      "target": "Ma sœur est très timide.",
+      "gloss": "My sister is very shy."
+     }
+    },
+    {
+     "id": "sympa",
+     "hr": "sympa",
+     "en": "nice, friendly",
+     "pos": "adj.",
+     "example": {
+      "target": "Tes amis sont très sympas.",
+      "gloss": "Your friends are very nice."
+     }
+    },
+    {
+     "id": "drôle",
+     "hr": "drôle",
+     "en": "funny",
+     "pos": "adj.",
+     "example": {
+      "target": "Cette histoire est très drôle.",
+      "gloss": "This story is very funny."
+     }
+    },
+    {
+     "id": "sérieux",
+     "hr": "sérieux",
+     "en": "serious",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est un étudiant sérieux.",
+      "gloss": "He is a serious student."
+     }
+    },
+    {
+     "id": "poli",
+     "hr": "poli",
+     "en": "polite",
+     "pos": "adj.",
+     "example": {
+      "target": "Cet enfant est très poli.",
+      "gloss": "This child is very polite."
+     }
+    },
+    {
+     "id": "courageux",
+     "hr": "courageux",
+     "en": "brave, courageous",
+     "pos": "adj.",
+     "example": {
+      "target": "Le pompier est courageux.",
+      "gloss": "The firefighter is brave."
+     }
+    },
+    {
+     "id": "intelligent",
+     "hr": "intelligent",
+     "en": "intelligent, smart",
+     "pos": "adj.",
+     "example": {
+      "target": "Elle est très intelligente.",
+      "gloss": "She is very intelligent."
+     }
+    },
+    {
+     "id": "bête",
+     "hr": "bête",
+     "en": "stupid, silly",
+     "pos": "adj.",
+     "example": {
+      "target": "Ne sois pas bête!",
+      "gloss": "Don't be silly!"
+     }
+    },
+    {
+     "id": "jaloux",
+     "hr": "jaloux",
+     "en": "jealous",
+     "pos": "adj.",
+     "example": {
+      "target": "Il est jaloux de son frère.",
+      "gloss": "He is jealous of his brother."
+     }
+    },
+    {
+     "id": "amoureux",
+     "hr": "amoureux",
+     "en": "in love",
+     "pos": "adj.",
+     "example": {
+      "target": "Il est amoureux de Julie.",
+      "gloss": "He is in love with Julie."
+     }
+    },
+    {
+     "id": "surpris",
+     "hr": "surpris",
+     "en": "surprised",
+     "pos": "adj.",
+     "example": {
+      "target": "Je suis surpris de te voir ici.",
+      "gloss": "I am surprised to see you here."
+     }
+    },
+    {
+     "id": "inquiet",
+     "hr": "inquiet",
+     "en": "worried",
+     "pos": "adj.",
+     "example": {
+      "target": "Ma mère est inquiète pour moi.",
+      "gloss": "My mother is worried about me."
+     }
+    },
+    {
+     "id": "énervé",
+     "hr": "énervé",
+     "en": "annoyed, irritated",
+     "pos": "adj.",
+     "example": {
+      "target": "Il est énervé après le travail.",
+      "gloss": "He is irritated after work."
+     }
+    },
+    {
+     "id": "généreux",
+     "hr": "généreux",
+     "en": "generous",
+     "pos": "adj.",
+     "example": {
+      "target": "Il est généreux avec ses amis.",
+      "gloss": "He is generous with his friends."
+     }
+    },
+    {
+     "id": "curieux",
+     "hr": "curieux",
+     "en": "curious",
+     "pos": "adj.",
+     "example": {
+      "target": "Les enfants sont curieux.",
+      "gloss": "Children are curious."
+     }
+    },
+    {
+     "id": "paresseux",
+     "hr": "paresseux",
+     "en": "lazy",
+     "pos": "adj.",
+     "example": {
+      "target": "Mon chat est paresseux.",
+      "gloss": "My cat is lazy."
+     }
+    },
+    {
+     "id": "actif",
+     "hr": "actif",
+     "en": "active",
+     "pos": "adj.",
+     "example": {
+      "target": "Elle est très active.",
+      "gloss": "She is very active."
+     }
+    },
+    {
+     "id": "sage",
+     "hr": "sage",
+     "en": "well-behaved, wise",
+     "pos": "adj.",
+     "example": {
+      "target": "L'enfant est sage à l'école.",
+      "gloss": "The child is well-behaved at school."
+     }
+    },
+    {
+     "id": "honnête",
+     "hr": "honnête",
+     "en": "honest",
+     "pos": "adj.",
+     "example": {
+      "target": "C'est une personne honnête.",
+      "gloss": "He is an honest person."
+     }
+    },
+    {
+     "id": "patient",
+     "hr": "patient",
+     "en": "patient",
+     "pos": "adj.",
+     "example": {
+      "target": "Le professeur est patient.",
+      "gloss": "The teacher is patient."
+     }
+    },
+    {
+     "id": "joyeux",
+     "hr": "joyeux",
+     "en": "cheerful, joyful",
+     "pos": "adj.",
+     "example": {
+      "target": "Il a un caractère joyeux.",
+      "gloss": "He has a cheerful character."
+     }
+    },
+    {
+     "id": "nerveux",
+     "hr": "nerveux",
+     "en": "nervous",
+     "pos": "adj.",
+     "example": {
+      "target": "Elle est nerveuse avant l'examen.",
+      "gloss": "She is nervous before the exam."
+     }
+    },
+    {
+     "id": "seul",
+     "hr": "seul",
+     "en": "alone, lonely",
+     "pos": "adj.",
+     "example": {
+      "target": "Il se sent seul le soir.",
+      "gloss": "He feels lonely in the evening."
+     }
+    },
+    {
+     "id": "fier",
+     "hr": "fier",
+     "en": "proud",
+     "pos": "adj.",
+     "example": {
+      "target": "Je suis fier de toi.",
+      "gloss": "I am proud of you."
+     }
+    },
+    {
+     "id": "aimable",
+     "hr": "aimable",
+     "en": "friendly, kind",
+     "pos": "adj.",
+     "example": {
+      "target": "La vendeuse est aimable.",
+      "gloss": "The saleswoman is friendly."
+     }
+    },
+    {
+     "id": "hobby",
+     "hr": "hobby",
+     "en": "hobby",
+     "pos": "n. m.",
+     "example": {
+      "target": "La photo est son hobby.",
+      "gloss": "Photography is his hobby."
+     }
+    },
+    {
+     "id": "guitare",
+     "hr": "guitare",
+     "en": "guitar",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il joue de la guitare.",
+      "gloss": "He plays the guitar."
+     }
+    },
+    {
+     "id": "piano",
+     "hr": "piano",
+     "en": "piano",
+     "pos": "n. m.",
+     "example": {
+      "target": "Elle apprend le piano.",
+      "gloss": "She is learning the piano."
+     }
+    },
+    {
+     "id": "ballon",
+     "hr": "ballon",
+     "en": "ball, balloon",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les enfants jouent au ballon.",
+      "gloss": "The children are playing ball."
+     }
+    },
+    {
+     "id": "gagnant",
+     "hr": "gagnant",
+     "en": "winner",
+     "pos": "n. m.",
+     "example": {
+      "target": "Qui est le gagnant du match?",
+      "gloss": "Who is the winner of the match?"
+     }
+    },
+    {
+     "id": "spectacle",
+     "hr": "spectacle",
+     "en": "show, performance",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le spectacle est magnifique.",
+      "gloss": "The show is wonderful."
+     }
+    },
+    {
+     "id": "chance",
+     "hr": "chance",
+     "en": "luck",
+     "pos": "n. f.",
+     "example": {
+      "target": "Bonne chance pour ton examen!",
+      "gloss": "Good luck with your exam!"
+     }
     }
-  ]
+   ],
+   "sources": [
+    "inventaire-cecrl"
+   ]
+  }
+ ]
 }

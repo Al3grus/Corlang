@@ -30,6 +30,15 @@ source key, it doesn't ship.
 | `referentiel-fr` | Beacco et al., *Référentiels : Niveau A1/A2/B1/B2 pour le français* (Didier + Council of Europe), the per-level content inventory | [referentiel-fr.md](referentiel-fr.md) |
 | `francais-fondamental` | *Le Français fondamental* (Ministry of Education core-French inventory) | [francais-fondamental.md](francais-fondamental.md) |
 | `freq-fr` | *A Frequency Dictionary of French* (Lonsdale & Le Bras, Routledge), corpus frequency cross-check | [francais-fondamental.md](francais-fondamental.md) |
+| `inventaire-cecrl` | Eaquals & CIEP (now France Éducation international), *Inventaire linguistique des contenus clés des niveaux du CECRL* (2015): per-level A1–C1 inventories of functions, discourse, sociocultural content, grammar and vocabulary themes for French; fetched complete 2026-07-20 | [french-referentiel.md](french-referentiel.md) |
+| `lexique383` | *Lexique 3.83* (New, Pallier et al., lexique.org): 46,947-lemma French frequency database (film + book corpora), the ranked frequency authority for the deck; fetched complete 2026-07-20 | [french-referentiel.md](french-referentiel.md) |
+| `decret-2025-648` | Décret n° 2025-648 (15 July 2025) + arrêté du 22 décembre 2025: French at **B2** (written and oral) required for naturalisation by decree and by marriage from 1 January 2026; verified via service-public.gouv.fr F11926 | [french-referentiel.md](french-referentiel.md) |
+
+Phase 8b cross-check for French performed 2026-07-20: see
+[french-referentiel.md](french-referentiel.md) for per-key verdicts (`referentiel-fr`,
+`francais-fondamental` and `freq-fr` are currently UNEARNED on content; `delf-b2-sample` and
+the three new keys above are earned). The three new keys must also be added to
+`ContentValidationTest.knownSourceKeys` before any content cites them.
 
 Keys may be added by adding a row here and a digest file, and extending the known-keys set in
 `ContentValidationTest`.

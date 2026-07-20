@@ -1,855 +1,854 @@
 {
-  "packs": [
+ "packs": [
+  {
+   "id": "04-a1-clothing-descriptors",
+   "title": "A1 clothing, house & descriptors",
+   "level": "A1",
+   "words": [
     {
-      "id": "04-a1-clothing-descriptors",
-      "title": "A1 clothing, house & descriptors",
-      "level": "A1",
-      "words": [
-        {
-          "id": "vêtement",
-          "hr": "vêtement",
-          "en": "garment, item of clothing",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je range mes vêtements dans l'armoire.",
-            "gloss": "I put my clothes away in the wardrobe."
-          }
-        },
-        {
-          "id": "chemise",
-          "hr": "chemise",
-          "en": "shirt",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il porte une chemise blanche.",
-            "gloss": "He is wearing a white shirt."
-          }
-        },
-        {
-          "id": "pantalon",
-          "hr": "pantalon",
-          "en": "trousers, pants",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ce pantalon est trop long.",
-            "gloss": "These trousers are too long."
-          }
-        },
-        {
-          "id": "robe",
-          "hr": "robe",
-          "en": "dress",
-          "pos": "n. f.",
-          "example": {
-            "target": "Elle achète une robe rouge.",
-            "gloss": "She is buying a red dress."
-          }
-        },
-        {
-          "id": "jupe",
-          "hr": "jupe",
-          "en": "skirt",
-          "pos": "n. f.",
-          "example": {
-            "target": "La jupe est trop courte.",
-            "gloss": "The skirt is too short."
-          }
-        },
-        {
-          "id": "manteau",
-          "hr": "manteau",
-          "en": "coat",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mets ton manteau, il fait froid.",
-            "gloss": "Put on your coat, it's cold."
-          }
-        },
-        {
-          "id": "chaussure",
-          "hr": "chaussure",
-          "en": "shoe",
-          "pos": "n. f.",
-          "example": {
-            "target": "Mes chaussures sont neuves.",
-            "gloss": "My shoes are new."
-          }
-        },
-        {
-          "id": "chapeau",
-          "hr": "chapeau",
-          "en": "hat",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il porte un chapeau noir.",
-            "gloss": "He is wearing a black hat."
-          }
-        },
-        {
-          "id": "veste",
-          "hr": "veste",
-          "en": "jacket",
-          "pos": "n. f.",
-          "example": {
-            "target": "Ta veste est sur la chaise.",
-            "gloss": "Your jacket is on the chair."
-          }
-        },
-        {
-          "id": "pull",
-          "hr": "pull",
-          "en": "sweater, jumper",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ce pull est très chaud.",
-            "gloss": "This sweater is very warm."
-          }
-        },
-        {
-          "id": "lunettes",
-          "hr": "lunettes",
-          "en": "glasses",
-          "pos": "n. f. pl.",
-          "example": {
-            "target": "Je ne trouve pas mes lunettes.",
-            "gloss": "I can't find my glasses."
-          }
-        },
-        {
-          "id": "chaussette",
-          "hr": "chaussette",
-          "en": "sock",
-          "pos": "n. f.",
-          "example": {
-            "target": "Où est mon autre chaussette ?",
-            "gloss": "Where is my other sock?"
-          }
-        },
-        {
-          "id": "short",
-          "hr": "short",
-          "en": "shorts",
-          "pos": "n. m.",
-          "example": {
-            "target": "En été, je mets un short.",
-            "gloss": "In summer, I wear shorts."
-          }
-        },
-        {
-          "id": "costume",
-          "hr": "costume",
-          "en": "suit",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il porte un costume au travail.",
-            "gloss": "He wears a suit to work."
-          }
-        },
-        {
-          "id": "ceinture",
-          "hr": "ceinture",
-          "en": "belt",
-          "pos": "n. f.",
-          "example": {
-            "target": "Cette ceinture est en cuir.",
-            "gloss": "This belt is made of leather."
-          }
-        },
-        {
-          "id": "gant",
-          "hr": "gant",
-          "en": "glove",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'ai perdu un gant.",
-            "gloss": "I lost one glove."
-          }
-        },
-        {
-          "id": "tee-shirt",
-          "hr": "tee-shirt",
-          "en": "T-shirt",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il porte un tee-shirt bleu.",
-            "gloss": "He is wearing a blue T-shirt."
-          }
-        },
-        {
-          "id": "jean",
-          "hr": "jean",
-          "en": "jeans",
-          "pos": "n. m.",
-          "example": {
-            "target": "Mon jean est trop grand.",
-            "gloss": "My jeans are too big."
-          }
-        },
-        {
-          "id": "cravate",
-          "hr": "cravate",
-          "en": "tie",
-          "pos": "n. f.",
-          "example": {
-            "target": "Il met une cravate le matin.",
-            "gloss": "He puts on a tie in the morning."
-          }
-        },
-        {
-          "id": "écharpe",
-          "hr": "écharpe",
-          "en": "scarf",
-          "pos": "n. f.",
-          "example": {
-            "target": "Elle porte une écharpe rouge.",
-            "gloss": "She is wearing a red scarf."
-          }
-        },
-        {
-          "id": "botte",
-          "hr": "botte",
-          "en": "boot",
-          "pos": "n. f.",
-          "example": {
-            "target": "Mes bottes sont sales.",
-            "gloss": "My boots are dirty."
-          }
-        },
-        {
-          "id": "pyjama",
-          "hr": "pyjama",
-          "en": "pyjamas",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il dort en pyjama.",
-            "gloss": "He sleeps in pyjamas."
-          }
-        },
-        {
-          "id": "mur",
-          "hr": "mur",
-          "en": "wall",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le mur est blanc.",
-            "gloss": "The wall is white."
-          }
-        },
-        {
-          "id": "toit",
-          "hr": "toit",
-          "en": "roof",
-          "pos": "n. m.",
-          "example": {
-            "target": "Un chat est sur le toit.",
-            "gloss": "A cat is on the roof."
-          }
-        },
-        {
-          "id": "escalier",
-          "hr": "escalier",
-          "en": "stairs, staircase",
-          "pos": "n. m.",
-          "example": {
-            "target": "Je monte l'escalier.",
-            "gloss": "I go up the stairs."
-          }
-        },
-        {
-          "id": "étage",
-          "hr": "étage",
-          "en": "floor, storey",
-          "pos": "n. m.",
-          "example": {
-            "target": "J'habite au premier étage.",
-            "gloss": "I live on the first floor."
-          }
-        },
-        {
-          "id": "salle de bain",
-          "hr": "salle de bain",
-          "en": "bathroom",
-          "pos": "n. f.",
-          "example": {
-            "target": "La salle de bain est petite.",
-            "gloss": "The bathroom is small."
-          }
-        },
-        {
-          "id": "salon",
-          "hr": "salon",
-          "en": "living room",
-          "pos": "n. m.",
-          "example": {
-            "target": "Nous regardons la télé au salon.",
-            "gloss": "We watch TV in the living room."
-          }
-        },
-        {
-          "id": "garage",
-          "hr": "garage",
-          "en": "garage",
-          "pos": "n. m.",
-          "example": {
-            "target": "La voiture est au garage.",
-            "gloss": "The car is in the garage."
-          }
-        },
-        {
-          "id": "meuble",
-          "hr": "meuble",
-          "en": "piece of furniture",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ce meuble est très lourd.",
-            "gloss": "This piece of furniture is very heavy."
-          }
-        },
-        {
-          "id": "frigo",
-          "hr": "frigo",
-          "en": "fridge",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le lait est dans le frigo.",
-            "gloss": "The milk is in the fridge."
-          }
-        },
-        {
-          "id": "four",
-          "hr": "four",
-          "en": "oven",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le gâteau est dans le four.",
-            "gloss": "The cake is in the oven."
-          }
-        },
-        {
-          "id": "lampe",
-          "hr": "lampe",
-          "en": "lamp",
-          "pos": "n. f.",
-          "example": {
-            "target": "Allume la lampe, s'il te plaît.",
-            "gloss": "Turn on the lamp, please."
-          }
-        },
-        {
-          "id": "miroir",
-          "hr": "miroir",
-          "en": "mirror",
-          "pos": "n. m.",
-          "example": {
-            "target": "Elle se regarde dans le miroir.",
-            "gloss": "She looks at herself in the mirror."
-          }
-        },
-        {
-          "id": "tapis",
-          "hr": "tapis",
-          "en": "rug, carpet",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le chien dort sur le tapis.",
-            "gloss": "The dog sleeps on the rug."
-          }
-        },
-        {
-          "id": "rideau",
-          "hr": "rideau",
-          "en": "curtain",
-          "pos": "n. m.",
-          "example": {
-            "target": "Ferme les rideaux, s'il te plaît.",
-            "gloss": "Close the curtains, please."
-          }
-        },
-        {
-          "id": "ascenseur",
-          "hr": "ascenseur",
-          "en": "lift, elevator",
-          "pos": "n. m.",
-          "example": {
-            "target": "L'ascenseur ne marche pas.",
-            "gloss": "The lift isn't working."
-          }
-        },
-        {
-          "id": "plafond",
-          "hr": "plafond",
-          "en": "ceiling",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le plafond est très haut.",
-            "gloss": "The ceiling is very high."
-          }
-        },
-        {
-          "id": "sol",
-          "hr": "sol",
-          "en": "floor, ground",
-          "pos": "n. m.",
-          "example": {
-            "target": "Le sol est mouillé.",
-            "gloss": "The floor is wet."
-          }
-        },
-        {
-          "id": "couloir",
-          "hr": "couloir",
-          "en": "corridor, hallway",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les toilettes sont au bout du couloir.",
-            "gloss": "The toilet is at the end of the corridor."
-          }
-        },
-        {
-          "id": "canapé",
-          "hr": "canapé",
-          "en": "sofa, couch",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il dort sur le canapé.",
-            "gloss": "He is sleeping on the sofa."
-          }
-        },
-        {
-          "id": "fauteuil",
-          "hr": "fauteuil",
-          "en": "armchair",
-          "pos": "n. m.",
-          "example": {
-            "target": "Grand-père lit dans son fauteuil.",
-            "gloss": "Grandpa reads in his armchair."
-          }
-        },
-        {
-          "id": "placard",
-          "hr": "placard",
-          "en": "cupboard, closet",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les verres sont dans le placard.",
-            "gloss": "The glasses are in the cupboard."
-          }
-        },
-        {
-          "id": "étagère",
-          "hr": "étagère",
-          "en": "shelf",
-          "pos": "n. f.",
-          "example": {
-            "target": "Les livres sont sur l'étagère.",
-            "gloss": "The books are on the shelf."
-          }
-        },
-        {
-          "id": "tiroir",
-          "hr": "tiroir",
-          "en": "drawer",
-          "pos": "n. m.",
-          "example": {
-            "target": "Les couverts sont dans le tiroir.",
-            "gloss": "The cutlery is in the drawer."
-          }
-        },
-        {
-          "id": "poubelle",
-          "hr": "poubelle",
-          "en": "bin, trash can",
-          "pos": "n. f.",
-          "example": {
-            "target": "Jette ça à la poubelle.",
-            "gloss": "Throw that in the bin."
-          }
-        },
-        {
-          "id": "balcon",
-          "hr": "balcon",
-          "en": "balcony",
-          "pos": "n. m.",
-          "example": {
-            "target": "Il y a des fleurs sur le balcon.",
-            "gloss": "There are flowers on the balcony."
-          }
-        },
-        {
-          "id": "content",
-          "hr": "content",
-          "en": "glad, pleased",
-          "pos": "adj.",
-          "example": {
-            "target": "Je suis content de te voir.",
-            "gloss": "I'm glad to see you."
-          }
-        },
-        {
-          "id": "triste",
-          "hr": "triste",
-          "en": "sad",
-          "pos": "adj.",
-          "example": {
-            "target": "Elle est triste aujourd'hui.",
-            "gloss": "She is sad today."
-          }
-        },
-        {
-          "id": "heureux",
-          "hr": "heureux",
-          "en": "happy",
-          "pos": "adj.",
-          "example": {
-            "target": "Ils sont très heureux ensemble.",
-            "gloss": "They are very happy together."
-          }
-        },
-        {
-          "id": "gentil",
-          "hr": "gentil",
-          "en": "kind, nice",
-          "pos": "adj.",
-          "example": {
-            "target": "Ton frère est très gentil.",
-            "gloss": "Your brother is very kind."
-          }
-        },
-        {
-          "id": "méchant",
-          "hr": "méchant",
-          "en": "mean, nasty",
-          "pos": "adj.",
-          "example": {
-            "target": "Ce chien n'est pas méchant.",
-            "gloss": "This dog isn't mean."
-          }
-        },
-        {
-          "id": "long",
-          "hr": "long",
-          "en": "long",
-          "pos": "adj.",
-          "example": {
-            "target": "Le chemin est très long.",
-            "gloss": "The path is very long."
-          }
-        },
-        {
-          "id": "court",
-          "hr": "court",
-          "en": "short",
-          "pos": "adj.",
-          "example": {
-            "target": "Ses cheveux sont courts.",
-            "gloss": "Her hair is short."
-          }
-        },
-        {
-          "id": "haut",
-          "hr": "haut",
-          "en": "high, tall",
-          "pos": "adj.",
-          "example": {
-            "target": "La montagne est très haute.",
-            "gloss": "The mountain is very high."
-          }
-        },
-        {
-          "id": "bas",
-          "hr": "bas",
-          "en": "low",
-          "pos": "adj.",
-          "example": {
-            "target": "Le plafond est trop bas.",
-            "gloss": "The ceiling is too low."
-          }
-        },
-        {
-          "id": "plein",
-          "hr": "plein",
-          "en": "full",
-          "pos": "adj.",
-          "example": {
-            "target": "Mon verre est plein.",
-            "gloss": "My glass is full."
-          }
-        },
-        {
-          "id": "vide",
-          "hr": "vide",
-          "en": "empty",
-          "pos": "adj.",
-          "example": {
-            "target": "La bouteille est vide.",
-            "gloss": "The bottle is empty."
-          }
-        },
-        {
-          "id": "lourd",
-          "hr": "lourd",
-          "en": "heavy",
-          "pos": "adj.",
-          "example": {
-            "target": "Cette valise est trop lourde.",
-            "gloss": "This suitcase is too heavy."
-          }
-        },
-        {
-          "id": "léger",
-          "hr": "léger",
-          "en": "light (in weight)",
-          "pos": "adj.",
-          "example": {
-            "target": "Ce sac est très léger.",
-            "gloss": "This bag is very light."
-          }
-        },
-        {
-          "id": "dur",
-          "hr": "dur",
-          "en": "hard",
-          "pos": "adj.",
-          "example": {
-            "target": "Le pain est dur.",
-            "gloss": "The bread is hard."
-          }
-        },
-        {
-          "id": "mou",
-          "hr": "mou",
-          "en": "soft, floppy",
-          "pos": "adj.",
-          "example": {
-            "target": "Ce coussin est très mou.",
-            "gloss": "This cushion is very soft."
-          }
-        },
-        {
-          "id": "joli",
-          "hr": "joli",
-          "en": "pretty",
-          "pos": "adj.",
-          "example": {
-            "target": "Quelle jolie robe !",
-            "gloss": "What a pretty dress!"
-          }
-        },
-        {
-          "id": "laid",
-          "hr": "laid",
-          "en": "ugly",
-          "pos": "adj.",
-          "example": {
-            "target": "Ce meuble est un peu laid.",
-            "gloss": "This piece of furniture is a bit ugly."
-          }
-        },
-        {
-          "id": "large",
-          "hr": "large",
-          "en": "wide, broad",
-          "pos": "adj.",
-          "example": {
-            "target": "La rue est très large.",
-            "gloss": "The street is very wide."
-          }
-        },
-        {
-          "id": "ouvert",
-          "hr": "ouvert",
-          "en": "open",
-          "pos": "adj.",
-          "example": {
-            "target": "La porte est ouverte.",
-            "gloss": "The door is open."
-          }
-        },
-        {
-          "id": "fermé",
-          "hr": "fermé",
-          "en": "closed",
-          "pos": "adj.",
-          "example": {
-            "target": "Le magasin est fermé.",
-            "gloss": "The shop is closed."
-          }
-        },
-        {
-          "id": "cassé",
-          "hr": "cassé",
-          "en": "broken",
-          "pos": "adj.",
-          "example": {
-            "target": "Mon téléphone est cassé.",
-            "gloss": "My phone is broken."
-          }
-        },
-        {
-          "id": "calme",
-          "hr": "calme",
-          "en": "calm, quiet",
-          "pos": "adj.",
-          "example": {
-            "target": "Le quartier est très calme.",
-            "gloss": "The neighbourhood is very quiet."
-          }
-        },
-        {
-          "id": "lentement",
-          "hr": "lentement",
-          "en": "slowly",
-          "pos": "adv.",
-          "example": {
-            "target": "Parle plus lentement, s'il te plaît.",
-            "gloss": "Speak more slowly, please."
-          }
-        },
-        {
-          "id": "beaucoup",
-          "hr": "beaucoup",
-          "en": "a lot, much",
-          "pos": "adv.",
-          "example": {
-            "target": "Je t'aime beaucoup.",
-            "gloss": "I love you a lot."
-          }
-        },
-        {
-          "id": "peu",
-          "hr": "peu",
-          "en": "little, few",
-          "pos": "adv.",
-          "example": {
-            "target": "Il mange très peu.",
-            "gloss": "He eats very little."
-          }
-        },
-        {
-          "id": "trop",
-          "hr": "trop",
-          "en": "too, too much",
-          "pos": "adv.",
-          "example": {
-            "target": "C'est trop cher.",
-            "gloss": "It's too expensive."
-          }
-        },
-        {
-          "id": "encore",
-          "hr": "encore",
-          "en": "again, still",
-          "pos": "adv.",
-          "example": {
-            "target": "Répète encore une fois.",
-            "gloss": "Say it one more time."
-          }
-        },
-        {
-          "id": "déjà",
-          "hr": "déjà",
-          "en": "already",
-          "pos": "adv.",
-          "example": {
-            "target": "Tu as déjà fini ?",
-            "gloss": "Have you already finished?"
-          }
-        },
-        {
-          "id": "toujours",
-          "hr": "toujours",
-          "en": "always, still",
-          "pos": "adv.",
-          "example": {
-            "target": "Il est toujours en retard.",
-            "gloss": "He is always late."
-          }
-        },
-        {
-          "id": "jamais",
-          "hr": "jamais",
-          "en": "never",
-          "pos": "adv.",
-          "example": {
-            "target": "Elle ne ment jamais.",
-            "gloss": "She never lies."
-          }
-        },
-        {
-          "id": "parfois",
-          "hr": "parfois",
-          "en": "sometimes",
-          "pos": "adv.",
-          "example": {
-            "target": "Parfois, je travaille le soir.",
-            "gloss": "Sometimes I work in the evening."
-          }
-        },
-        {
-          "id": "vraiment",
-          "hr": "vraiment",
-          "en": "really, truly",
-          "pos": "adv.",
-          "example": {
-            "target": "C'est vraiment délicieux.",
-            "gloss": "It's really delicious."
-          }
-        },
-        {
-          "id": "seulement",
-          "hr": "seulement",
-          "en": "only",
-          "pos": "adv.",
-          "example": {
-            "target": "J'ai seulement dix euros.",
-            "gloss": "I only have ten euros."
-          }
-        },
-        {
-          "id": "loin",
-          "hr": "loin",
-          "en": "far",
-          "pos": "adv.",
-          "example": {
-            "target": "La gare est loin d'ici.",
-            "gloss": "The station is far from here."
-          }
-        },
-        {
-          "id": "près",
-          "hr": "près",
-          "en": "near, close",
-          "pos": "adv.",
-          "example": {
-            "target": "J'habite tout près.",
-            "gloss": "I live very close by."
-          }
-        },
-        {
-          "id": "tôt",
-          "hr": "tôt",
-          "en": "early",
-          "pos": "adv.",
-          "example": {
-            "target": "Je me lève tôt le matin.",
-            "gloss": "I get up early in the morning."
-          }
-        },
-        {
-          "id": "tard",
-          "hr": "tard",
-          "en": "late",
-          "pos": "adv.",
-          "example": {
-            "target": "Il rentre tard le soir.",
-            "gloss": "He comes home late in the evening."
-          }
-        }
-      ],
-      "sources": [
-        "francais-fondamental",
-        "freq-fr"
-      ]
+     "id": "vêtement",
+     "hr": "vêtement",
+     "en": "garment, item of clothing",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je range mes vêtements dans l'armoire.",
+      "gloss": "I put my clothes away in the wardrobe."
+     }
+    },
+    {
+     "id": "chemise",
+     "hr": "chemise",
+     "en": "shirt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il porte une chemise blanche.",
+      "gloss": "He is wearing a white shirt."
+     }
+    },
+    {
+     "id": "pantalon",
+     "hr": "pantalon",
+     "en": "trousers, pants",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce pantalon est trop long.",
+      "gloss": "These trousers are too long."
+     }
+    },
+    {
+     "id": "robe",
+     "hr": "robe",
+     "en": "dress",
+     "pos": "n. f.",
+     "example": {
+      "target": "Elle achète une robe rouge.",
+      "gloss": "She is buying a red dress."
+     }
+    },
+    {
+     "id": "jupe",
+     "hr": "jupe",
+     "en": "skirt",
+     "pos": "n. f.",
+     "example": {
+      "target": "La jupe est trop courte.",
+      "gloss": "The skirt is too short."
+     }
+    },
+    {
+     "id": "manteau",
+     "hr": "manteau",
+     "en": "coat",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mets ton manteau, il fait froid.",
+      "gloss": "Put on your coat, it's cold."
+     }
+    },
+    {
+     "id": "chaussure",
+     "hr": "chaussure",
+     "en": "shoe",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mes chaussures sont neuves.",
+      "gloss": "My shoes are new."
+     }
+    },
+    {
+     "id": "chapeau",
+     "hr": "chapeau",
+     "en": "hat",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il porte un chapeau noir.",
+      "gloss": "He is wearing a black hat."
+     }
+    },
+    {
+     "id": "veste",
+     "hr": "veste",
+     "en": "jacket",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ta veste est sur la chaise.",
+      "gloss": "Your jacket is on the chair."
+     }
+    },
+    {
+     "id": "pull",
+     "hr": "pull",
+     "en": "sweater, jumper",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce pull est très chaud.",
+      "gloss": "This sweater is very warm."
+     }
+    },
+    {
+     "id": "lunettes",
+     "hr": "lunettes",
+     "en": "glasses",
+     "pos": "n. f. pl.",
+     "example": {
+      "target": "Je ne trouve pas mes lunettes.",
+      "gloss": "I can't find my glasses."
+     }
+    },
+    {
+     "id": "chaussette",
+     "hr": "chaussette",
+     "en": "sock",
+     "pos": "n. f.",
+     "example": {
+      "target": "Où est mon autre chaussette ?",
+      "gloss": "Where is my other sock?"
+     }
+    },
+    {
+     "id": "short",
+     "hr": "short",
+     "en": "shorts",
+     "pos": "n. m.",
+     "example": {
+      "target": "En été, je mets un short.",
+      "gloss": "In summer, I wear shorts."
+     }
+    },
+    {
+     "id": "costume",
+     "hr": "costume",
+     "en": "suit",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il porte un costume au travail.",
+      "gloss": "He wears a suit to work."
+     }
+    },
+    {
+     "id": "ceinture",
+     "hr": "ceinture",
+     "en": "belt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cette ceinture est en cuir.",
+      "gloss": "This belt is made of leather."
+     }
+    },
+    {
+     "id": "gant",
+     "hr": "gant",
+     "en": "glove",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'ai perdu un gant.",
+      "gloss": "I lost one glove."
+     }
+    },
+    {
+     "id": "tee-shirt",
+     "hr": "tee-shirt",
+     "en": "T-shirt",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il porte un tee-shirt bleu.",
+      "gloss": "He is wearing a blue T-shirt."
+     }
+    },
+    {
+     "id": "jean",
+     "hr": "jean",
+     "en": "jeans",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mon jean est trop grand.",
+      "gloss": "My jeans are too big."
+     }
+    },
+    {
+     "id": "cravate",
+     "hr": "cravate",
+     "en": "tie",
+     "pos": "n. f.",
+     "example": {
+      "target": "Il met une cravate le matin.",
+      "gloss": "He puts on a tie in the morning."
+     }
+    },
+    {
+     "id": "écharpe",
+     "hr": "écharpe",
+     "en": "scarf",
+     "pos": "n. f.",
+     "example": {
+      "target": "Elle porte une écharpe rouge.",
+      "gloss": "She is wearing a red scarf."
+     }
+    },
+    {
+     "id": "botte",
+     "hr": "botte",
+     "en": "boot",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mes bottes sont sales.",
+      "gloss": "My boots are dirty."
+     }
+    },
+    {
+     "id": "pyjama",
+     "hr": "pyjama",
+     "en": "pyjamas",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il dort en pyjama.",
+      "gloss": "He sleeps in pyjamas."
+     }
+    },
+    {
+     "id": "mur",
+     "hr": "mur",
+     "en": "wall",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le mur est blanc.",
+      "gloss": "The wall is white."
+     }
+    },
+    {
+     "id": "toit",
+     "hr": "toit",
+     "en": "roof",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un chat est sur le toit.",
+      "gloss": "A cat is on the roof."
+     }
+    },
+    {
+     "id": "escalier",
+     "hr": "escalier",
+     "en": "stairs, staircase",
+     "pos": "n. m.",
+     "example": {
+      "target": "Je monte l'escalier.",
+      "gloss": "I go up the stairs."
+     }
+    },
+    {
+     "id": "étage",
+     "hr": "étage",
+     "en": "floor, storey",
+     "pos": "n. m.",
+     "example": {
+      "target": "J'habite au premier étage.",
+      "gloss": "I live on the first floor."
+     }
+    },
+    {
+     "id": "salle de bain",
+     "hr": "salle de bain",
+     "en": "bathroom",
+     "pos": "n. f.",
+     "example": {
+      "target": "La salle de bain est petite.",
+      "gloss": "The bathroom is small."
+     }
+    },
+    {
+     "id": "salon",
+     "hr": "salon",
+     "en": "living room",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nous regardons la télé au salon.",
+      "gloss": "We watch TV in the living room."
+     }
+    },
+    {
+     "id": "garage",
+     "hr": "garage",
+     "en": "garage",
+     "pos": "n. m.",
+     "example": {
+      "target": "La voiture est au garage.",
+      "gloss": "The car is in the garage."
+     }
+    },
+    {
+     "id": "meuble",
+     "hr": "meuble",
+     "en": "piece of furniture",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ce meuble est très lourd.",
+      "gloss": "This piece of furniture is very heavy."
+     }
+    },
+    {
+     "id": "frigo",
+     "hr": "frigo",
+     "en": "fridge",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le lait est dans le frigo.",
+      "gloss": "The milk is in the fridge."
+     }
+    },
+    {
+     "id": "four",
+     "hr": "four",
+     "en": "oven",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le gâteau est dans le four.",
+      "gloss": "The cake is in the oven."
+     }
+    },
+    {
+     "id": "lampe",
+     "hr": "lampe",
+     "en": "lamp",
+     "pos": "n. f.",
+     "example": {
+      "target": "Allume la lampe, s'il te plaît.",
+      "gloss": "Turn on the lamp, please."
+     }
+    },
+    {
+     "id": "miroir",
+     "hr": "miroir",
+     "en": "mirror",
+     "pos": "n. m.",
+     "example": {
+      "target": "Elle se regarde dans le miroir.",
+      "gloss": "She looks at herself in the mirror."
+     }
+    },
+    {
+     "id": "tapis",
+     "hr": "tapis",
+     "en": "rug, carpet",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le chien dort sur le tapis.",
+      "gloss": "The dog sleeps on the rug."
+     }
+    },
+    {
+     "id": "rideau",
+     "hr": "rideau",
+     "en": "curtain",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ferme les rideaux, s'il te plaît.",
+      "gloss": "Close the curtains, please."
+     }
+    },
+    {
+     "id": "ascenseur",
+     "hr": "ascenseur",
+     "en": "lift, elevator",
+     "pos": "n. m.",
+     "example": {
+      "target": "L'ascenseur ne marche pas.",
+      "gloss": "The lift isn't working."
+     }
+    },
+    {
+     "id": "plafond",
+     "hr": "plafond",
+     "en": "ceiling",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le plafond est très haut.",
+      "gloss": "The ceiling is very high."
+     }
+    },
+    {
+     "id": "sol",
+     "hr": "sol",
+     "en": "floor, ground",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le sol est mouillé.",
+      "gloss": "The floor is wet."
+     }
+    },
+    {
+     "id": "couloir",
+     "hr": "couloir",
+     "en": "corridor, hallway",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les toilettes sont au bout du couloir.",
+      "gloss": "The toilet is at the end of the corridor."
+     }
+    },
+    {
+     "id": "canapé",
+     "hr": "canapé",
+     "en": "sofa, couch",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il dort sur le canapé.",
+      "gloss": "He is sleeping on the sofa."
+     }
+    },
+    {
+     "id": "fauteuil",
+     "hr": "fauteuil",
+     "en": "armchair",
+     "pos": "n. m.",
+     "example": {
+      "target": "Grand-père lit dans son fauteuil.",
+      "gloss": "Grandpa reads in his armchair."
+     }
+    },
+    {
+     "id": "placard",
+     "hr": "placard",
+     "en": "cupboard, closet",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les verres sont dans le placard.",
+      "gloss": "The glasses are in the cupboard."
+     }
+    },
+    {
+     "id": "étagère",
+     "hr": "étagère",
+     "en": "shelf",
+     "pos": "n. f.",
+     "example": {
+      "target": "Les livres sont sur l'étagère.",
+      "gloss": "The books are on the shelf."
+     }
+    },
+    {
+     "id": "tiroir",
+     "hr": "tiroir",
+     "en": "drawer",
+     "pos": "n. m.",
+     "example": {
+      "target": "Les couverts sont dans le tiroir.",
+      "gloss": "The cutlery is in the drawer."
+     }
+    },
+    {
+     "id": "poubelle",
+     "hr": "poubelle",
+     "en": "bin, trash can",
+     "pos": "n. f.",
+     "example": {
+      "target": "Jette ça à la poubelle.",
+      "gloss": "Throw that in the bin."
+     }
+    },
+    {
+     "id": "balcon",
+     "hr": "balcon",
+     "en": "balcony",
+     "pos": "n. m.",
+     "example": {
+      "target": "Il y a des fleurs sur le balcon.",
+      "gloss": "There are flowers on the balcony."
+     }
+    },
+    {
+     "id": "content",
+     "hr": "content",
+     "en": "glad, pleased",
+     "pos": "adj.",
+     "example": {
+      "target": "Je suis content de te voir.",
+      "gloss": "I'm glad to see you."
+     }
+    },
+    {
+     "id": "triste",
+     "hr": "triste",
+     "en": "sad",
+     "pos": "adj.",
+     "example": {
+      "target": "Elle est triste aujourd'hui.",
+      "gloss": "She is sad today."
+     }
+    },
+    {
+     "id": "heureux",
+     "hr": "heureux",
+     "en": "happy",
+     "pos": "adj.",
+     "example": {
+      "target": "Ils sont très heureux ensemble.",
+      "gloss": "They are very happy together."
+     }
+    },
+    {
+     "id": "gentil",
+     "hr": "gentil",
+     "en": "kind, nice",
+     "pos": "adj.",
+     "example": {
+      "target": "Ton frère est très gentil.",
+      "gloss": "Your brother is very kind."
+     }
+    },
+    {
+     "id": "méchant",
+     "hr": "méchant",
+     "en": "mean, nasty",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce chien n'est pas méchant.",
+      "gloss": "This dog isn't mean."
+     }
+    },
+    {
+     "id": "long",
+     "hr": "long",
+     "en": "long",
+     "pos": "adj.",
+     "example": {
+      "target": "Le chemin est très long.",
+      "gloss": "The path is very long."
+     }
+    },
+    {
+     "id": "court",
+     "hr": "court",
+     "en": "short",
+     "pos": "adj.",
+     "example": {
+      "target": "Ses cheveux sont courts.",
+      "gloss": "Her hair is short."
+     }
+    },
+    {
+     "id": "haut",
+     "hr": "haut",
+     "en": "high, tall",
+     "pos": "adj.",
+     "example": {
+      "target": "La montagne est très haute.",
+      "gloss": "The mountain is very high."
+     }
+    },
+    {
+     "id": "bas",
+     "hr": "bas",
+     "en": "low",
+     "pos": "adj.",
+     "example": {
+      "target": "Le plafond est trop bas.",
+      "gloss": "The ceiling is too low."
+     }
+    },
+    {
+     "id": "plein",
+     "hr": "plein",
+     "en": "full",
+     "pos": "adj.",
+     "example": {
+      "target": "Mon verre est plein.",
+      "gloss": "My glass is full."
+     }
+    },
+    {
+     "id": "vide",
+     "hr": "vide",
+     "en": "empty",
+     "pos": "adj.",
+     "example": {
+      "target": "La bouteille est vide.",
+      "gloss": "The bottle is empty."
+     }
+    },
+    {
+     "id": "lourd",
+     "hr": "lourd",
+     "en": "heavy",
+     "pos": "adj.",
+     "example": {
+      "target": "Cette valise est trop lourde.",
+      "gloss": "This suitcase is too heavy."
+     }
+    },
+    {
+     "id": "léger",
+     "hr": "léger",
+     "en": "light (in weight)",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce sac est très léger.",
+      "gloss": "This bag is very light."
+     }
+    },
+    {
+     "id": "dur",
+     "hr": "dur",
+     "en": "hard",
+     "pos": "adj.",
+     "example": {
+      "target": "Le pain est dur.",
+      "gloss": "The bread is hard."
+     }
+    },
+    {
+     "id": "mou",
+     "hr": "mou",
+     "en": "soft, floppy",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce coussin est très mou.",
+      "gloss": "This cushion is very soft."
+     }
+    },
+    {
+     "id": "joli",
+     "hr": "joli",
+     "en": "pretty",
+     "pos": "adj.",
+     "example": {
+      "target": "Quelle jolie robe !",
+      "gloss": "What a pretty dress!"
+     }
+    },
+    {
+     "id": "laid",
+     "hr": "laid",
+     "en": "ugly",
+     "pos": "adj.",
+     "example": {
+      "target": "Ce meuble est un peu laid.",
+      "gloss": "This piece of furniture is a bit ugly."
+     }
+    },
+    {
+     "id": "large",
+     "hr": "large",
+     "en": "wide, broad",
+     "pos": "adj.",
+     "example": {
+      "target": "La rue est très large.",
+      "gloss": "The street is very wide."
+     }
+    },
+    {
+     "id": "ouvert",
+     "hr": "ouvert",
+     "en": "open",
+     "pos": "adj.",
+     "example": {
+      "target": "La porte est ouverte.",
+      "gloss": "The door is open."
+     }
+    },
+    {
+     "id": "fermé",
+     "hr": "fermé",
+     "en": "closed",
+     "pos": "adj.",
+     "example": {
+      "target": "Le magasin est fermé.",
+      "gloss": "The shop is closed."
+     }
+    },
+    {
+     "id": "cassé",
+     "hr": "cassé",
+     "en": "broken",
+     "pos": "adj.",
+     "example": {
+      "target": "Mon téléphone est cassé.",
+      "gloss": "My phone is broken."
+     }
+    },
+    {
+     "id": "calme",
+     "hr": "calme",
+     "en": "calm, quiet",
+     "pos": "adj.",
+     "example": {
+      "target": "Le quartier est très calme.",
+      "gloss": "The neighbourhood is very quiet."
+     }
+    },
+    {
+     "id": "lentement",
+     "hr": "lentement",
+     "en": "slowly",
+     "pos": "adv.",
+     "example": {
+      "target": "Parle plus lentement, s'il te plaît.",
+      "gloss": "Speak more slowly, please."
+     }
+    },
+    {
+     "id": "beaucoup",
+     "hr": "beaucoup",
+     "en": "a lot, much",
+     "pos": "adv.",
+     "example": {
+      "target": "Je t'aime beaucoup.",
+      "gloss": "I love you a lot."
+     }
+    },
+    {
+     "id": "peu",
+     "hr": "peu",
+     "en": "little, few",
+     "pos": "adv.",
+     "example": {
+      "target": "Il mange très peu.",
+      "gloss": "He eats very little."
+     }
+    },
+    {
+     "id": "trop",
+     "hr": "trop",
+     "en": "too, too much",
+     "pos": "adv.",
+     "example": {
+      "target": "C'est trop cher.",
+      "gloss": "It's too expensive."
+     }
+    },
+    {
+     "id": "encore",
+     "hr": "encore",
+     "en": "again, still",
+     "pos": "adv.",
+     "example": {
+      "target": "Répète encore une fois.",
+      "gloss": "Say it one more time."
+     }
+    },
+    {
+     "id": "déjà",
+     "hr": "déjà",
+     "en": "already",
+     "pos": "adv.",
+     "example": {
+      "target": "Tu as déjà fini ?",
+      "gloss": "Have you already finished?"
+     }
+    },
+    {
+     "id": "toujours",
+     "hr": "toujours",
+     "en": "always, still",
+     "pos": "adv.",
+     "example": {
+      "target": "Il est toujours en retard.",
+      "gloss": "He is always late."
+     }
+    },
+    {
+     "id": "jamais",
+     "hr": "jamais",
+     "en": "never",
+     "pos": "adv.",
+     "example": {
+      "target": "Elle ne ment jamais.",
+      "gloss": "She never lies."
+     }
+    },
+    {
+     "id": "parfois",
+     "hr": "parfois",
+     "en": "sometimes",
+     "pos": "adv.",
+     "example": {
+      "target": "Parfois, je travaille le soir.",
+      "gloss": "Sometimes I work in the evening."
+     }
+    },
+    {
+     "id": "vraiment",
+     "hr": "vraiment",
+     "en": "really, truly",
+     "pos": "adv.",
+     "example": {
+      "target": "C'est vraiment délicieux.",
+      "gloss": "It's really delicious."
+     }
+    },
+    {
+     "id": "seulement",
+     "hr": "seulement",
+     "en": "only",
+     "pos": "adv.",
+     "example": {
+      "target": "J'ai seulement dix euros.",
+      "gloss": "I only have ten euros."
+     }
+    },
+    {
+     "id": "loin",
+     "hr": "loin",
+     "en": "far",
+     "pos": "adv.",
+     "example": {
+      "target": "La gare est loin d'ici.",
+      "gloss": "The station is far from here."
+     }
+    },
+    {
+     "id": "près",
+     "hr": "près",
+     "en": "near, close",
+     "pos": "adv.",
+     "example": {
+      "target": "J'habite tout près.",
+      "gloss": "I live very close by."
+     }
+    },
+    {
+     "id": "tôt",
+     "hr": "tôt",
+     "en": "early",
+     "pos": "adv.",
+     "example": {
+      "target": "Je me lève tôt le matin.",
+      "gloss": "I get up early in the morning."
+     }
+    },
+    {
+     "id": "tard",
+     "hr": "tard",
+     "en": "late",
+     "pos": "adv.",
+     "example": {
+      "target": "Il rentre tard le soir.",
+      "gloss": "He comes home late in the evening."
+     }
     }
-  ]
+   ],
+   "sources": [
+    "lexique383"
+   ]
+  }
+ ]
 }
