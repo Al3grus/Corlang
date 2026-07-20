@@ -1,0 +1,670 @@
+[
+ {
+  "id": "de-a1-goethe-mock",
+  "levelId": "A1",
+  "title": "Modellprüfung Goethe-Zertifikat A1",
+  "description": "A full A1 mock in the official four-part format. Not modular: the four parts are graded together.",
+  "passRule": "Die vier Teile werden zusammen bewertet. Bestanden ab 60% insgesamt.",
+  "sources": [
+   "goethe-a1"
+  ],
+  "sections": [
+   {
+    "id": "hoeren",
+    "kind": "LISTENING",
+    "title": "Hören",
+    "instructions": "Listen to the station announcement (the app reads the transcript aloud), then answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "hoeren1",
+      "title": "Durchsage am Bahnhof",
+      "text": "Achtung, eine Information für die Reisenden an Gleis 3. Der Zug nach München fährt heute nicht um 14 Uhr 10. Der Zug fährt um 14 Uhr 40. Wir haben ein Problem mit der Technik. Der Zug hält in Augsburg und in München. Bitte nehmen Sie den vorderen Teil vom Zug, der hintere Teil bleibt heute hier. Sie finden ein Café direkt neben Gleis 3. Wir wünschen Ihnen eine gute Fahrt.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Wo hört man diese Durchsage?",
+      "options": [
+       "Am Bahnhof",
+       "Im Supermarkt",
+       "Im Kino",
+       "In der Schule"
+      ],
+      "answer": "Am Bahnhof",
+      "difficulty": 2,
+      "explanation": "It is a platform announcement about a train to Munich."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wann fährt der Zug nach München?",
+      "options": [
+       "Um 14 Uhr 40",
+       "Um 14 Uhr 10",
+       "Um 13 Uhr 40",
+       "Um 15 Uhr 10"
+      ],
+      "answer": "Um 14 Uhr 40",
+      "difficulty": 3,
+      "explanation": "14:10 was the old time; the train now leaves at 14:40."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Der Zug fährt von Gleis ___ ab.",
+      "answer": "3",
+      "difficulty": 3,
+      "explanation": "The announcement is for travellers at platform 3.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Warum fährt der Zug später?",
+      "options": [
+       "Es gibt ein Problem mit der Technik",
+       "Der Zugführer ist krank",
+       "Das Wetter ist schlecht",
+       "Es sind zu viele Leute im Zug"
+      ],
+      "answer": "Es gibt ein Problem mit der Technik",
+      "difficulty": 4,
+      "explanation": "A technical problem is the reason given for the delay."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wo hält der Zug?",
+      "options": [
+       "In Augsburg und in München",
+       "Nur in München",
+       "In Augsburg und in Nürnberg",
+       "In Hamburg"
+      ],
+      "answer": "In Augsburg und in München",
+      "difficulty": 3,
+      "explanation": "The train stops in Augsburg and Munich."
+     }
+    ]
+   },
+   {
+    "id": "lesen",
+    "kind": "READING",
+    "title": "Lesen",
+    "instructions": "Read the notice and answer the five questions.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "lesen1",
+      "title": "Aushang: Deutschkurs im Nachbarschaftshaus",
+      "text": "Deutschkurs für Anfänger im Nachbarschaftshaus. Wir lernen Deutsch am Montag und am Mittwoch, immer von 18 bis 20 Uhr. Der Kurs beginnt am 5. Oktober und dauert drei Monate. Ein Monat kostet 30 Euro. Studenten und Studentinnen zahlen nur 20 Euro im Monat. Der Kurs ist in Raum 4 im ersten Stock. Bitte bringen Sie einen Stift und ein Heft mit. Ein Buch brauchen Sie nicht, wir haben genug Material. Sie können sich im Büro anmelden. Das Büro ist von Montag bis Freitag von 9 bis 12 Uhr offen.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "An welchen Tagen ist der Deutschkurs?",
+      "options": [
+       "Am Montag und am Mittwoch",
+       "Am Dienstag und am Donnerstag",
+       "Am Freitag und am Samstag",
+       "Jeden Tag"
+      ],
+      "answer": "Am Montag und am Mittwoch",
+      "difficulty": 2,
+      "explanation": "The notice says the course runs on Monday and Wednesday from 18:00 to 20:00."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wann beginnt der Kurs?",
+      "options": [
+       "Am 5. Oktober",
+       "Am 5. November",
+       "Am 4. Oktober",
+       "Am 30. September"
+      ],
+      "answer": "Am 5. Oktober",
+      "difficulty": 2,
+      "explanation": "The course starts on 5 October and lasts three months."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Ein Student zahlt im Monat ___ Euro.",
+      "answer": "20",
+      "difficulty": 3,
+      "explanation": "Students pay a reduced 20 euros a month; the normal price is 30 euros.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wo findet der Kurs statt?",
+      "options": [
+       "In Raum 4 im ersten Stock",
+       "Im Büro",
+       "In Raum 9 im Erdgeschoss",
+       "In einer Schule"
+      ],
+      "answer": "In Raum 4 im ersten Stock",
+      "difficulty": 3,
+      "explanation": "Room 4 on the first floor. The office is only for enrolment."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was bringen die Teilnehmer mit?",
+      "options": [
+       "Einen Stift und ein Heft",
+       "Ein Buch und ein Wörterbuch",
+       "Einen Computer",
+       "Nichts"
+      ],
+      "answer": "Einen Stift und ein Heft",
+      "difficulty": 3,
+      "explanation": "A pen and an exercise book. A book is explicitly not needed."
+     }
+    ]
+   },
+   {
+    "id": "schreiben",
+    "kind": "WRITING",
+    "title": "Schreiben",
+    "instructions": "Write a short message of 30 to 40 words, then tick the rubric points.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Sie können am Montag nicht in den Deutschkurs kommen. Schreiben Sie eine Nachricht an Ihre Kursleiterin Frau Berger (30 bis 40 Wörter): entschuldigen Sie sich, nennen Sie den Grund und fragen Sie nach der Hausaufgabe.",
+      "modelAnswer": "Liebe Frau Berger,\n\nes tut mir leid. Ich komme am Montag nicht in den Kurs. Ich bin krank und habe Fieber. Am Mittwoch bin ich wieder da. Haben wir eine Hausaufgabe? Bitte schreiben Sie mir eine kurze Nachricht.\n\nViele Grüße\nAnna Kovac",
+      "rubric": [
+       "Der Text hat 30 bis 40 Wörter",
+       "Der Text beginnt mit einer Anrede (Liebe Frau Berger)",
+       "Der Text sagt klar, dass ich am Montag nicht komme",
+       "Der Text nennt den Grund für die Absage",
+       "Der Text stellt eine Frage zur Hausaufgabe",
+       "Der Text endet mit Gruß und Namen"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "sprechen",
+    "kind": "SPEAKING",
+    "title": "Sprechen",
+    "instructions": "Speak each task ALOUD, then tick the rubric points.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Stellen Sie sich vor: Name, Alter, Land, Wohnort, Sprachen, Beruf und ein Hobby. Sprechen Sie ungefähr eine Minute laut.",
+      "modelAnswer": "Hallo, ich heiße Marko Novak. Ich bin achtundzwanzig Jahre alt und komme aus Kroatien. Ich wohne jetzt in Hamburg. Ich spreche Kroatisch, Englisch und ein bisschen Deutsch. Ich bin Koch und arbeite in einem Restaurant. Ich habe eine Schwester und einen Hund. Am Wochenende spiele ich Fußball.",
+      "rubric": [
+       "Ich nenne meinen Namen, mein Alter und mein Land",
+       "Ich sage, wo ich wohne und was ich von Beruf bin",
+       "Ich nenne mindestens zwei Sprachen",
+       "Ich nenne ein Hobby",
+       "Ich spreche in ganzen Sätzen und mache keine langen Pausen"
+      ]
+     },
+     {
+      "prompt": "Stellen Sie eine einfache Frage zum Thema Wohnen und beantworten Sie danach die gleiche Frage selbst. Sprechen Sie laut.",
+      "modelAnswer": "Wo wohnst du? Ich wohne in Hamburg. Meine Wohnung hat zwei Zimmer und einen Balkon. Der Balkon ist klein, aber ich mag ihn. Und du? Wohnst du allein?",
+      "rubric": [
+       "Ich stelle eine Frage mit einem Fragewort (wo, was, wie)",
+       "Die Frage passt zum Thema Wohnen",
+       "Ich antworte selbst in mindestens zwei Sätzen",
+       "Ich stelle am Ende noch eine zweite Frage"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "de-a2-goethe-mock",
+  "levelId": "A2",
+  "title": "Modellprüfung Goethe-Zertifikat A2",
+  "description": "A full A2 mock in the official four-part format. Not modular: 100 points in total, 25 per part.",
+  "passRule": "100 Punkte insgesamt, 25 pro Teil. Bestanden ab 60 von 100 Punkten.",
+  "sources": [
+   "goethe-a2"
+  ],
+  "sections": [
+   {
+    "id": "lesen",
+    "kind": "READING",
+    "title": "Lesen",
+    "instructions": "Read the email and answer the five questions.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "lesen1",
+      "title": "E-Mail von Julia: Umzug am Samstag",
+      "text": "Von: Julia. Betreff: Umzug am Samstag. Hallo Sven, am Samstag ziehe ich endlich um. Die neue Wohnung liegt in der Gartenstraße, nur zehn Minuten von meiner Arbeit entfernt, und sie hat sogar einen kleinen Garten. Könntest du mir helfen? Wir fangen um neun Uhr morgens an. Ein Freund bringt einen Transporter mit, deshalb brauchen wir kein zweites Auto. Bring bitte feste Schuhe mit, denn wir tragen schwere Kisten. Mittags bestelle ich Pizza für alle, das ist mein Dankeschön. Wenn du erst später kommen kannst, ist das überhaupt kein Problem. Sag mir bitte bis Donnerstag Bescheid, damit ich weiß, wie viele Leute wir sind. Liebe Grüße, Julia",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Warum schreibt Julia diese E-Mail?",
+      "options": [
+       "Sie bittet Sven um Hilfe beim Umzug",
+       "Sie sucht eine neue Wohnung",
+       "Sie lädt Sven ins Kino ein",
+       "Sie sagt einen Termin ab"
+      ],
+      "answer": "Sie bittet Sven um Hilfe beim Umzug",
+      "difficulty": 3,
+      "explanation": "The whole message is a request for help with Saturday's move."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wann fängt der Umzug an?",
+      "options": [
+       "Um neun Uhr morgens",
+       "Um zehn Uhr morgens",
+       "Am Mittag",
+       "Am Donnerstagabend"
+      ],
+      "answer": "Um neun Uhr morgens",
+      "difficulty": 3,
+      "explanation": "They start at nine in the morning; Thursday is only the reply deadline."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Sven soll feste ___ mitbringen.",
+      "answer": "Schuhe",
+      "difficulty": 4,
+      "explanation": "Sturdy shoes are needed because they will be carrying heavy boxes.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was gibt es mittags?",
+      "options": [
+       "Pizza für alle",
+       "Kuchen und Kaffee",
+       "Ein warmes Frühstück",
+       "Nichts, alle bringen etwas mit"
+      ],
+      "answer": "Pizza für alle",
+      "difficulty": 4,
+      "explanation": "Julia orders pizza for everyone as a thank-you."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Bis wann soll Sven antworten?",
+      "options": [
+       "Bis Donnerstag",
+       "Bis Samstag",
+       "Bis Sonntag",
+       "Bis heute Abend"
+      ],
+      "answer": "Bis Donnerstag",
+      "difficulty": 5,
+      "explanation": "She asks for an answer by Thursday so she knows how many people are coming."
+     }
+    ]
+   },
+   {
+    "id": "hoeren",
+    "kind": "LISTENING",
+    "title": "Hören",
+    "instructions": "Listen to the voicemail (the app reads the transcript aloud), then answer.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "hoeren1",
+      "title": "Nachricht auf der Mailbox",
+      "text": "Guten Tag, hier ist die Fahrradwerkstatt Wendt. Ich rufe wegen Ihres Fahrrads an. Die Reparatur ist fertig, aber sie war leider teurer als geplant. Die Bremsen waren kaputt, und wir haben außerdem eine neue Kette eingebaut. Zusammen kostet das fünfundachtzig Euro. Sie können das Fahrrad ab morgen abholen. Wir haben von Dienstag bis Freitag von zehn bis achtzehn Uhr geöffnet, am Samstag nur bis dreizehn Uhr. Bringen Sie bitte den gelben Zettel mit, sonst können wir das Rad nicht herausgeben. Wenn Sie Fragen haben, rufen Sie uns einfach zurück. Auf Wiederhören.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Wer hat die Nachricht hinterlassen?",
+      "options": [
+       "Eine Fahrradwerkstatt",
+       "Eine Werkstatt für Autos",
+       "Ein Sportgeschäft",
+       "Eine Nachbarin"
+      ],
+      "answer": "Eine Fahrradwerkstatt",
+      "difficulty": 3,
+      "explanation": "The caller introduces the message as coming from a bicycle repair shop."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was war an dem Fahrrad kaputt?",
+      "options": [
+       "Die Bremsen",
+       "Das Licht",
+       "Der Sattel",
+       "Die Klingel"
+      ],
+      "answer": "Die Bremsen",
+      "difficulty": 4,
+      "explanation": "The brakes were broken; a new chain was fitted as well."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Die Reparatur kostet zusammen ___ Euro (Zahl in Worten).",
+      "answer": "fünfundachtzig",
+      "difficulty": 5,
+      "explanation": "The total price given in the message is 85 euros.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Ab wann kann der Kunde das Fahrrad abholen?",
+      "options": [
+       "Ab morgen",
+       "Ab nächster Woche",
+       "Sofort, noch heute",
+       "Erst am Samstag"
+      ],
+      "answer": "Ab morgen",
+      "difficulty": 4,
+      "explanation": "The bicycle can be picked up from tomorrow."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was muss der Kunde unbedingt mitbringen?",
+      "options": [
+       "Den gelben Zettel",
+       "Den Schlüssel für das Schloss",
+       "Eine alte Rechnung",
+       "Einen zweiten Reifen"
+      ],
+      "answer": "Den gelben Zettel",
+      "difficulty": 5,
+      "explanation": "Without the yellow slip the shop cannot hand over the bicycle."
+     }
+    ]
+   },
+   {
+    "id": "schreiben",
+    "kind": "WRITING",
+    "title": "Schreiben",
+    "instructions": "Write a short email of about 40 words, then tick the rubric points.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Eine Kollegin hat Sie zu ihrer Geburtstagsfeier am Freitag eingeladen, aber Sie können nicht kommen. Schreiben Sie ihr eine E-Mail (ungefähr 40 Wörter): bedanken Sie sich für die Einladung, sagen Sie ab, nennen Sie den Grund und schlagen Sie einen anderen Termin vor.",
+      "modelAnswer": "Liebe Nina,\n\nvielen Dank für die Einladung zu deiner Geburtstagsfeier. Leider kann ich am Freitag nicht kommen, weil meine Eltern an diesem Wochenende zu Besuch sind. Das tut mir wirklich leid. Könnten wir uns nächste Woche treffen? Am Dienstagabend hätte ich Zeit.\n\nHerzliche Grüße\nLea",
+      "rubric": [
+       "Der Text hat ungefähr 40 Wörter",
+       "Der Text bedankt sich für die Einladung",
+       "Der Text sagt deutlich ab",
+       "Der Text nennt den Grund für die Absage",
+       "Der Text schlägt einen konkreten neuen Termin vor",
+       "Anrede und Gruß passen zum informellen Ton (du)"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "sprechen",
+    "kind": "SPEAKING",
+    "title": "Sprechen",
+    "instructions": "Speak each task ALOUD, then tick the rubric points.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Rollenspiel im Café: Bestellen Sie ein Getränk und etwas zu essen, fragen Sie nach dem Preis und bitten Sie höflich um die Rechnung. Sprechen Sie laut.",
+      "modelAnswer": "Guten Tag! Ich hätte gern einen großen Kaffee und ein Stück Apfelkuchen, bitte. Könnten Sie mir sagen, was das zusammen kostet? Sechs Euro fünfzig, in Ordnung. Könnte ich bitte zahlen? Stimmt so, vielen Dank und einen schönen Tag noch!",
+      "rubric": [
+       "Ich begrüße am Anfang und verabschiede mich am Ende",
+       "Ich bestelle ein Getränk und etwas zu essen",
+       "Ich frage nach dem Preis",
+       "Ich bitte um die Rechnung",
+       "Ich benutze eine höfliche Form (ich hätte gern, könnten Sie)"
+      ]
+     },
+     {
+      "prompt": "Erzählen Sie von einem typischen Arbeitstag oder Schultag: Wann stehen Sie auf, was machen Sie am Vormittag, am Nachmittag und am Abend? Sprechen Sie ungefähr zwei Minuten laut.",
+      "modelAnswer": "Ich stehe normalerweise um halb sieben auf und frühstücke mit meiner Familie. Um Viertel nach acht fahre ich mit dem Bus ins Büro. Am Vormittag beantworte ich E-Mails und habe oft eine lange Besprechung. Mittags esse ich in der Kantine, meistens etwas Warmes. Am Nachmittag arbeite ich an meinen Projekten. Nach der Arbeit gehe ich zweimal pro Woche ins Schwimmbad. Abends koche ich und sehe eine Serie.",
+      "rubric": [
+       "Ich nenne eine konkrete Uhrzeit für den Anfang des Tages",
+       "Ich beschreibe den Vormittag, den Nachmittag und den Abend",
+       "Ich benutze Zeitangaben (zuerst, danach, am Nachmittag)",
+       "Ich nenne mindestens eine Freizeitaktivität",
+       "Ich spreche ungefähr zwei Minuten"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "de-b1-goethe-mock",
+  "levelId": "B1",
+  "title": "Modellprüfung Goethe-Zertifikat B1",
+  "description": "A full B1 mock in the official four-module format. Modular: each module is passed or failed on its own.",
+  "passRule": "Modulare Prüfung. Bestanden ab 60% in JEDEM Modul, nicht im Durchschnitt.",
+  "sources": [
+   "goethe-b1",
+   "telc-b1"
+  ],
+  "sections": [
+   {
+    "id": "lesen",
+    "kind": "READING",
+    "title": "Lesen",
+    "instructions": "Read the forum post and answer the five questions.",
+    "passPercent": 60,
+    "passages": [
+     {
+      "id": "lesen1",
+      "title": "Forumsbeitrag: Autofreie Innenstadt",
+      "text": "Beitrag von Kerstin, 14:20 Uhr. Seit einem halben Jahr ist unsere Innenstadt an Wochenenden für Autos gesperrt, und ich muss zugeben: Am Anfang war ich strikt dagegen. Ich hatte befürchtet, dass die kleinen Geschäfte Kunden verlieren, weil niemand mehr direkt vor der Tür parken kann. Inzwischen sehe ich das anders. Die Luft ist merklich besser geworden, und auf dem Marktplatz sitzen plötzlich Menschen, wo früher nur Autos standen. Zwei Cafés haben neu eröffnet, und der Buchladen sagt, sein Umsatz sei sogar gestiegen. Trotzdem ist nicht alles gelöst. Wer schwere Einkäufe macht oder schlecht zu Fuß ist, hat es jetzt deutlich schwerer. Die Stadt hätte gleichzeitig die Busse verbessern müssen, aber am Sonntag fährt weiterhin nur alle sechzig Minuten einer. Meiner Meinung nach sollte man die Sperrung behalten, aber den Nahverkehr endlich ausbauen und einige Parkplätze für Menschen mit Behinderung reservieren. Sonst verlieren wir genau die Leute, die wir in der Stadt halten wollen.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Wie stand Kerstin am Anfang zur Sperrung?",
+      "options": [
+       "Sie war dagegen",
+       "Sie war sofort begeistert",
+       "Sie hatte keine Meinung dazu",
+       "Sie fand die Sperrung zu kurz"
+      ],
+      "answer": "Sie war dagegen",
+      "difficulty": 4,
+      "explanation": "She admits she was strictly against it at first, fearing shops would lose customers."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Welche positive Folge nennt Kerstin?",
+      "options": [
+       "Zwei Cafés haben neu eröffnet",
+       "Die Mieten sind gesunken",
+       "Es gibt mehr Parkplätze",
+       "Die Geschäfte öffnen länger"
+      ],
+      "answer": "Zwei Cafés haben neu eröffnet",
+      "difficulty": 5,
+      "explanation": "Better air, people on the square, two new cafes and rising turnover at the bookshop."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Am Sonntag fährt der Bus nur alle ___ Minuten (Zahl in Worten).",
+      "answer": "sechzig",
+      "difficulty": 6,
+      "explanation": "On Sundays a bus still runs only once an hour, that is every sixty minutes.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Welches Problem sieht Kerstin weiterhin?",
+      "options": [
+       "Menschen mit schweren Einkäufen haben es schwerer",
+       "Die Luft ist schlechter geworden",
+       "Der Buchladen hat schließen müssen",
+       "Auf dem Marktplatz sitzt niemand mehr"
+      ],
+      "answer": "Menschen mit schweren Einkäufen haben es schwerer",
+      "difficulty": 6,
+      "explanation": "People with heavy shopping or limited mobility have a harder time now."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was schlägt Kerstin am Ende vor?",
+      "options": [
+       "Die Sperrung behalten und den Nahverkehr ausbauen",
+       "Die Sperrung sofort aufheben",
+       "Alle Parkplätze in der Stadt abschaffen",
+       "Die Innenstadt auch werktags sperren"
+      ],
+      "answer": "Die Sperrung behalten und den Nahverkehr ausbauen",
+      "difficulty": 7,
+      "explanation": "She wants to keep the closure but improve public transport and reserve accessible parking."
+     }
+    ]
+   },
+   {
+    "id": "hoeren",
+    "kind": "LISTENING",
+    "title": "Hören",
+    "instructions": "Listen to the radio item (the app reads the transcript aloud), then answer.",
+    "passPercent": 60,
+    "passages": [
+     {
+      "id": "hoeren1",
+      "title": "Radiobeitrag: Ehrenamt gesucht",
+      "text": "Und jetzt zu einem Thema aus der Region. Der Verein Lesefreunde sucht dringend Freiwillige, die einmal pro Woche eine Stunde lang mit Grundschulkindern lesen. Vorkenntnisse braucht man dafür nicht, wichtig sind vor allem Geduld und Zuverlässigkeit. Vereinsleiterin Petra Sommer erklärt, warum das Angebot so gefragt ist: Viele Eltern arbeiten im Schichtdienst und haben abends schlicht keine Zeit mehr zum Vorlesen. Die Kinder verlieren dann schnell den Anschluss. Wer mitmachen möchte, meldet sich zunächst zu einem kurzen Einführungsnachmittag an. Der nächste findet am dritten Samstag im Monat in der Stadtbibliothek statt. Danach werden die Freiwilligen einer Schule in ihrer Nähe zugeteilt. Übrigens sind auch Rentnerinnen und Rentner ausdrücklich willkommen. Im Moment ist rund die Hälfte der Freiwilligen älter als sechzig Jahre.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Wen sucht der Verein?",
+      "options": [
+       "Freiwillige, die mit Kindern lesen",
+       "Neue Lehrkräfte für die Grundschule",
+       "Spenderinnen und Spender für neue Bücher",
+       "Eltern für einen Elternabend"
+      ],
+      "answer": "Freiwillige, die mit Kindern lesen",
+      "difficulty": 4,
+      "explanation": "Volunteers who read with primary school children for one hour a week."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Welche Eigenschaften sind für die Aufgabe wichtig?",
+      "options": [
+       "Geduld und Zuverlässigkeit",
+       "Ein abgeschlossenes Studium",
+       "Erfahrung als Lehrkraft",
+       "Gute Fremdsprachenkenntnisse"
+      ],
+      "answer": "Geduld und Zuverlässigkeit",
+      "difficulty": 5,
+      "explanation": "No prior qualifications are needed; patience and reliability matter."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Warum ist das Angebot so gefragt?",
+      "options": [
+       "Viele Eltern arbeiten im Schichtdienst und haben abends keine Zeit",
+       "Die Schulen haben keine Bücher mehr",
+       "Die Kinder dürfen zu Hause nicht lesen",
+       "Der Verein hat zu viele Freiwillige"
+      ],
+      "answer": "Viele Eltern arbeiten im Schichtdienst und haben abends keine Zeit",
+      "difficulty": 6,
+      "explanation": "Shift work leaves many parents without time to read aloud in the evening."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Der Einführungsnachmittag findet in der ___ statt.",
+      "answer": "Stadtbibliothek",
+      "difficulty": 6,
+      "explanation": "The introductory afternoon takes place in the town library on the third Saturday of the month.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was sagt der Beitrag über ältere Freiwillige?",
+      "options": [
+       "Rund die Hälfte der Freiwilligen ist älter als sechzig",
+       "Ältere Menschen werden nicht angenommen",
+       "Nur ein einziger Freiwilliger ist im Ruhestand",
+       "Ältere Freiwillige lesen nur zu Hause vor"
+      ],
+      "answer": "Rund die Hälfte der Freiwilligen ist älter als sechzig",
+      "difficulty": 7,
+      "explanation": "Pensioners are expressly welcome and about half the volunteers are over sixty."
+     }
+    ]
+   },
+   {
+    "id": "schreiben",
+    "kind": "WRITING",
+    "title": "Schreiben",
+    "instructions": "Write about 80 words per task, then tick the rubric points.",
+    "passPercent": 60,
+    "prompts": [
+     {
+      "prompt": "In einem Forum wird diskutiert, ob Firmen ihren Angestellten zwei Tage Homeoffice pro Woche anbieten sollten. Schreiben Sie eine Antwort (ungefähr 80 Wörter): nennen Sie Ihre Meinung, geben Sie ein Beispiel aus Ihrem Alltag, nennen Sie einen Nachteil und machen Sie einen Vorschlag.",
+      "modelAnswer": "Ich finde zwei Tage Homeoffice pro Woche sinnvoll. In meinem Betrieb arbeiten wir seit einem Jahr so, und ich spare täglich fast zwei Stunden Fahrzeit. Diese Zeit nutze ich für meine Familie, und ich bin morgens deutlich ausgeruhter.\n\nEin Nachteil ist allerdings, dass der Kontakt zu den Kolleginnen und Kollegen leidet. Kleine Fragen bleiben liegen, weil man sich nicht mehr auf dem Flur trifft.\n\nDeshalb würde ich vorschlagen, einen festen Bürotag pro Woche zu vereinbaren, an dem alle anwesend sind. So bleiben beide Vorteile erhalten.",
+      "rubric": [
+       "Der Text hat ungefähr 80 Wörter",
+       "Der Text nennt eine klare eigene Meinung zum Homeoffice",
+       "Der Text gibt ein konkretes Beispiel aus dem eigenen Alltag",
+       "Der Text nennt mindestens einen Nachteil",
+       "Der Text macht am Ende einen konkreten Vorschlag",
+       "Der Text ist in Absätze gegliedert und benutzt Konnektoren (weil, deshalb, allerdings)"
+      ]
+     },
+     {
+      "prompt": "Sie haben einen Abendkurs gebucht, können aber aus beruflichen Gründen nicht teilnehmen. Schreiben Sie eine formelle E-Mail an die Sprachschule (ungefähr 80 Wörter): nennen Sie Ihren Kurs mit Kursnummer und Beginn, erklären Sie die Situation, bitten Sie um eine Verschiebung auf einen späteren Kurs und bitten Sie um eine schriftliche Antwort.",
+      "modelAnswer": "Sehr geehrte Damen und Herren,\n\nich habe den Abendkurs B1 mit der Kursnummer 2417 gebucht, der am 6. Oktober beginnt.\n\nLeider hat mein Arbeitgeber meine Schichten geändert, sodass ich dienstags und donnerstags bis zwanzig Uhr arbeiten muss. Eine Teilnahme ist daher nicht möglich.\n\nWäre es möglich, meine Anmeldung auf den Kurs im Januar zu übertragen? Falls das nicht geht, bitte ich um eine Rückerstattung der Gebühr.\n\nÜber eine schriftliche Antwort würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\nDaniel Weber",
+      "rubric": [
+       "Der Text hat ungefähr 80 Wörter",
+       "Der Text nennt den Kurs mit Kursnummer oder Anfangsdatum",
+       "Der Text erklärt den beruflichen Grund für die Absage",
+       "Der Text bittet konkret um eine Verschiebung",
+       "Der Text bittet um eine schriftliche Antwort",
+       "Anrede und Gruß sind formell (Sehr geehrte Damen und Herren, Mit freundlichen Grüßen)"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "sprechen",
+    "kind": "SPEAKING",
+    "title": "Sprechen",
+    "instructions": "Speak each task ALOUD, then tick the rubric points.",
+    "passPercent": 60,
+    "prompts": [
+     {
+      "prompt": "Kurzpräsentation (3 bis 4 Minuten) zum Thema ehrenamtliche Arbeit: Beschreiben Sie die Situation in Ihrem Land, berichten Sie von eigenen Erfahrungen oder Erfahrungen aus Ihrem Umfeld, nennen Sie Vorteile und Nachteile und beenden Sie den Vortrag mit Ihrer Meinung.",
+      "modelAnswer": "Ich möchte heute über ehrenamtliche Arbeit sprechen. In meinem Heimatland engagieren sich viele Menschen in Sportvereinen, bei der Feuerwehr oder in der Kirche, meistens ohne Bezahlung.\n\nIch selbst habe zwei Jahre lang samstags in einer Kleiderkammer geholfen. Anfangs habe ich das nur gemacht, weil eine Freundin mich gefragt hatte, später wurde es mir wichtig.\n\nDer Vorteil liegt auf der Hand: Man lernt neue Leute kennen und tut etwas Sinnvolles. Ein Nachteil ist der Zeitdruck. Wer Vollzeit arbeitet und Kinder hat, schafft das kaum noch.\n\nMeiner Meinung nach sollten Betriebe deshalb einige Stunden im Monat dafür freistellen. Dann würden sich sicher mehr junge Leute engagieren.",
+      "rubric": [
+       "Ich nenne am Anfang das Thema meines Vortrags",
+       "Ich beschreibe die Situation in meinem Land mit mindestens zwei Beispielen",
+       "Ich berichte von einer eigenen Erfahrung oder einer Erfahrung aus meinem Umfeld",
+       "Ich nenne mindestens einen Vorteil und einen Nachteil",
+       "Ich beende den Vortrag mit meiner eigenen Meinung",
+       "Ich spreche 3 bis 4 Minuten zusammenhängend"
+      ]
+     },
+     {
+      "prompt": "Gemeinsam etwas planen: Eine Kollegin verlässt nach zehn Jahren die Firma. Planen Sie mit Ihrer Partnerin oder Ihrem Partner die Abschiedsfeier. Sprechen Sie über Ort, Termin, Essen und Geschenk und klären Sie, wer die Gäste informiert. Machen Sie Vorschläge, reagieren Sie auf Gegenvorschläge und einigen Sie sich am Ende.",
+      "modelAnswer": "Also, wir sollten zuerst den Termin festlegen. Wie wäre es mit Freitag, dem zwanzigsten, gleich nach der Arbeit?\n\nGute Idee. Und wo feiern wir? Ich hätte vorgeschlagen, den Konferenzraum zu nehmen, aber vielleicht ist ein Restaurant persönlicher.\n\nDa bin ich anderer Meinung. Im Restaurant wird es schnell teuer. Wir könnten den Garten hinter dem Gebäude nutzen und Salate und belegte Brötchen bestellen.\n\nEinverstanden. Beim Geschenk denke ich an einen Gutschein, dann kann sie selbst wählen. Ich sammle das Geld ein, und du schreibst die Einladung an alle Abteilungen. Sind wir uns einig?",
+      "rubric": [
+       "Ich mache mindestens zwei konkrete Vorschläge",
+       "Ich reagiere auf einen Gegenvorschlag und begründe meine Position",
+       "Wir sprechen über Ort, Termin, Essen und Geschenk",
+       "Wir klären, wer die Gäste informiert",
+       "Wir treffen am Ende eine gemeinsame Entscheidung",
+       "Ich benutze Redemittel zum Planen (wie wäre es mit, einverstanden, ich schlage vor)"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

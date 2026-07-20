@@ -1,0 +1,1764 @@
+{
+ "packs": [
+  {
+   "id": "05-a2-travel-health",
+   "title": "A2: Reisen und Gesundheit",
+   "level": "A2",
+   "sources": [
+    "goethe-wortliste",
+    "goethe-a2"
+   ],
+   "words": [
+    {
+     "id": "der mietvertrag",
+     "hr": "der Mietvertrag",
+     "en": "tenancy agreement",
+     "pos": "n. m.",
+     "note": "pl. die Mietverträge",
+     "example": {
+      "target": "Im Mietvertrag steht alles genau drin.",
+      "gloss": "Everything is set out precisely in the tenancy agreement."
+     }
+    },
+    {
+     "id": "die nebenkosten",
+     "hr": "die Nebenkosten",
+     "en": "additional costs, utilities",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Die Nebenkosten sind in der Miete enthalten.",
+      "gloss": "The utilities are included in the rent."
+     }
+    },
+    {
+     "id": "die kaution",
+     "hr": "die Kaution",
+     "en": "deposit",
+     "pos": "n. f.",
+     "note": "pl. die Kautionen",
+     "example": {
+      "target": "Die Kaution bekommst du nach dem Auszug zurück.",
+      "gloss": "You get the deposit back after moving out."
+     }
+    },
+    {
+     "id": "der umzug",
+     "hr": "der Umzug",
+     "en": "move, relocation",
+     "pos": "n. m.",
+     "note": "pl. die Umzüge",
+     "example": {
+      "target": "Der Umzug hat den ganzen Samstag gedauert.",
+      "gloss": "The move took the whole Saturday."
+     }
+    },
+    {
+     "id": "das erdgeschoss",
+     "hr": "das Erdgeschoss",
+     "en": "ground floor",
+     "pos": "n. n.",
+     "note": "pl. die Erdgeschosse",
+     "example": {
+      "target": "Wir wohnen im Erdgeschoss links.",
+      "gloss": "We live on the ground floor on the left."
+     }
+    },
+    {
+     "id": "der aufzug",
+     "hr": "der Aufzug",
+     "en": "lift, elevator",
+     "pos": "n. m.",
+     "note": "pl. die Aufzüge",
+     "example": {
+      "target": "Der Aufzug ist leider kaputt.",
+      "gloss": "The lift is unfortunately broken."
+     }
+    },
+    {
+     "id": "der dachboden",
+     "hr": "der Dachboden",
+     "en": "attic",
+     "pos": "n. m.",
+     "note": "pl. die Dachböden",
+     "example": {
+      "target": "Auf dem Dachboden liegen alte Koffer.",
+      "gloss": "There are old suitcases in the attic."
+     }
+    },
+    {
+     "id": "die terrasse",
+     "hr": "die Terrasse",
+     "en": "terrace, patio",
+     "pos": "n. f.",
+     "note": "pl. die Terrassen",
+     "example": {
+      "target": "Die Terrasse liegt den ganzen Tag in der Sonne.",
+      "gloss": "The terrace is in the sun all day."
+     }
+    },
+    {
+     "id": "die renovierung",
+     "hr": "die Renovierung",
+     "en": "renovation",
+     "pos": "n. f.",
+     "note": "pl. die Renovierungen",
+     "example": {
+      "target": "Nach der Renovierung sieht die Küche toll aus.",
+      "gloss": "After the renovation the kitchen looks great."
+     }
+    },
+    {
+     "id": "die steckdose",
+     "hr": "die Steckdose",
+     "en": "socket, power outlet",
+     "pos": "n. f.",
+     "note": "pl. die Steckdosen",
+     "example": {
+      "target": "Neben dem Bett gibt es keine Steckdose.",
+      "gloss": "There is no socket next to the bed."
+     }
+    },
+    {
+     "id": "die glühbirne",
+     "hr": "die Glühbirne",
+     "en": "light bulb",
+     "pos": "n. f.",
+     "note": "pl. die Glühbirnen",
+     "example": {
+      "target": "Im Bad ist die Glühbirne kaputt.",
+      "gloss": "The light bulb in the bathroom is broken."
+     }
+    },
+    {
+     "id": "der teppich",
+     "hr": "der Teppich",
+     "en": "carpet, rug",
+     "pos": "n. m.",
+     "note": "pl. die Teppiche",
+     "example": {
+      "target": "Der Teppich im Wohnzimmer ist neu.",
+      "gloss": "The rug in the living room is new."
+     }
+    },
+    {
+     "id": "der vorhang",
+     "hr": "der Vorhang",
+     "en": "curtain",
+     "pos": "n. m.",
+     "note": "pl. die Vorhänge",
+     "example": {
+      "target": "Mach bitte die Vorhänge zu.",
+      "gloss": "Please close the curtains."
+     }
+    },
+    {
+     "id": "der sessel",
+     "hr": "der Sessel",
+     "en": "armchair",
+     "pos": "n. m.",
+     "note": "pl. die Sessel",
+     "example": {
+      "target": "Abends sitzt er gern in seinem Sessel.",
+      "gloss": "In the evening he likes sitting in his armchair."
+     }
+    },
+    {
+     "id": "die spülmaschine",
+     "hr": "die Spülmaschine",
+     "en": "dishwasher",
+     "pos": "n. f.",
+     "note": "pl. die Spülmaschinen",
+     "example": {
+      "target": "Stell das Geschirr in die Spülmaschine.",
+      "gloss": "Put the dishes in the dishwasher."
+     }
+    },
+    {
+     "id": "der müll",
+     "hr": "der Müll",
+     "en": "rubbish, waste",
+     "pos": "n. m.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Bringst du bitte den Müll raus?",
+      "gloss": "Will you take the rubbish out, please?"
+     }
+    },
+    {
+     "id": "die mülltonne",
+     "hr": "die Mülltonne",
+     "en": "rubbish bin",
+     "pos": "n. f.",
+     "note": "pl. die Mülltonnen",
+     "example": {
+      "target": "Die Mülltonne wird jeden Dienstag geleert.",
+      "gloss": "The bin is emptied every Tuesday."
+     }
+    },
+    {
+     "id": "der lärm",
+     "hr": "der Lärm",
+     "en": "noise",
+     "pos": "n. m.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Der Lärm von der Straße stört mich beim Schlafen.",
+      "gloss": "The noise from the street disturbs my sleep."
+     }
+    },
+    {
+     "id": "die reparatur",
+     "hr": "die Reparatur",
+     "en": "repair",
+     "pos": "n. f.",
+     "note": "pl. die Reparaturen",
+     "example": {
+      "target": "Die Reparatur kostet mehr als ein neues Gerät.",
+      "gloss": "The repair costs more than a new appliance."
+     }
+    },
+    {
+     "id": "der schaden",
+     "hr": "der Schaden",
+     "en": "damage",
+     "pos": "n. m.",
+     "note": "pl. die Schäden",
+     "example": {
+      "target": "Der Schaden an der Wand ist nicht groß.",
+      "gloss": "The damage to the wall is not great."
+     }
+    },
+    {
+     "id": "der hausmeister",
+     "hr": "der Hausmeister",
+     "en": "caretaker, janitor",
+     "pos": "n. m.",
+     "note": "pl. die Hausmeister",
+     "example": {
+      "target": "Der Hausmeister hat einen Schlüssel für den Keller.",
+      "gloss": "The caretaker has a key for the cellar."
+     }
+    },
+    {
+     "id": "die hausordnung",
+     "hr": "die Hausordnung",
+     "en": "house rules",
+     "pos": "n. f.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Laut Hausordnung ist ab zweiundzwanzig Uhr Ruhe.",
+      "gloss": "According to the house rules there is quiet from ten at night."
+     }
+    },
+    {
+     "id": "die klingel",
+     "hr": "die Klingel",
+     "en": "doorbell",
+     "pos": "n. f.",
+     "note": "pl. die Klingeln",
+     "example": {
+      "target": "Unsere Klingel ist sehr leise.",
+      "gloss": "Our doorbell is very quiet."
+     }
+    },
+    {
+     "id": "die wohngemeinschaft",
+     "hr": "die Wohngemeinschaft",
+     "en": "shared flat",
+     "pos": "n. f.",
+     "note": "pl. die Wohngemeinschaften; kurz: die WG",
+     "example": {
+      "target": "Er wohnt in einer Wohngemeinschaft mit drei Leuten.",
+      "gloss": "He lives in a shared flat with three people."
+     }
+    },
+    {
+     "id": "das konto",
+     "hr": "das Konto",
+     "en": "account",
+     "pos": "n. n.",
+     "note": "pl. die Konten",
+     "example": {
+      "target": "Das Geld ist schon auf meinem Konto.",
+      "gloss": "The money is already in my account."
+     }
+    },
+    {
+     "id": "die überweisung",
+     "hr": "die Überweisung",
+     "en": "bank transfer",
+     "pos": "n. f.",
+     "note": "pl. die Überweisungen",
+     "example": {
+      "target": "Die Überweisung dauert einen Werktag.",
+      "gloss": "The transfer takes one working day."
+     }
+    },
+    {
+     "id": "die bankkarte",
+     "hr": "die Bankkarte",
+     "en": "bank card",
+     "pos": "n. f.",
+     "note": "pl. die Bankkarten",
+     "example": {
+      "target": "Ich habe meine Bankkarte zu Hause vergessen.",
+      "gloss": "I left my bank card at home."
+     }
+    },
+    {
+     "id": "die kreditkarte",
+     "hr": "die Kreditkarte",
+     "en": "credit card",
+     "pos": "n. f.",
+     "note": "pl. die Kreditkarten",
+     "example": {
+      "target": "Kann ich mit Kreditkarte bezahlen?",
+      "gloss": "Can I pay by credit card?"
+     }
+    },
+    {
+     "id": "das bargeld",
+     "hr": "das Bargeld",
+     "en": "cash",
+     "pos": "n. n.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Ich habe kein Bargeld dabei.",
+      "gloss": "I do not have any cash on me."
+     }
+    },
+    {
+     "id": "die münze",
+     "hr": "die Münze",
+     "en": "coin",
+     "pos": "n. f.",
+     "note": "pl. die Münzen",
+     "example": {
+      "target": "Für den Einkaufswagen brauchst du eine Münze.",
+      "gloss": "You need a coin for the trolley."
+     }
+    },
+    {
+     "id": "der schein",
+     "hr": "der Schein",
+     "en": "banknote",
+     "pos": "n. m.",
+     "note": "pl. die Scheine",
+     "example": {
+      "target": "Haben Sie es kleiner als einen Schein zu fünfzig?",
+      "gloss": "Do you have anything smaller than a fifty note?"
+     }
+    },
+    {
+     "id": "der geldautomat",
+     "hr": "der Geldautomat",
+     "en": "cash machine",
+     "pos": "n. m.",
+     "note": "pl. die Geldautomaten",
+     "example": {
+      "target": "Der Geldautomat ist um die Ecke.",
+      "gloss": "The cash machine is around the corner."
+     }
+    },
+    {
+     "id": "die quittung",
+     "hr": "die Quittung",
+     "en": "receipt",
+     "pos": "n. f.",
+     "note": "pl. die Quittungen",
+     "example": {
+      "target": "Kann ich bitte eine Quittung bekommen?",
+      "gloss": "Can I have a receipt, please?"
+     }
+    },
+    {
+     "id": "der kassenzettel",
+     "hr": "der Kassenzettel",
+     "en": "till receipt",
+     "pos": "n. m.",
+     "note": "pl. die Kassenzettel",
+     "example": {
+      "target": "Ohne Kassenzettel gibt es kein Geld zurück.",
+      "gloss": "Without the till receipt there is no refund."
+     }
+    },
+    {
+     "id": "das angebot",
+     "hr": "das Angebot",
+     "en": "offer, special deal",
+     "pos": "n. n.",
+     "note": "pl. die Angebote",
+     "example": {
+      "target": "Der Kaffee ist diese Woche im Angebot.",
+      "gloss": "The coffee is on offer this week."
+     }
+    },
+    {
+     "id": "der rabatt",
+     "hr": "der Rabatt",
+     "en": "discount",
+     "pos": "n. m.",
+     "note": "pl. die Rabatte",
+     "example": {
+      "target": "Auf alle Jacken gibt es zwanzig Prozent Rabatt.",
+      "gloss": "There is twenty percent off all jackets."
+     }
+    },
+    {
+     "id": "die ermäßigung",
+     "hr": "die Ermäßigung",
+     "en": "reduction, concession",
+     "pos": "n. f.",
+     "note": "pl. die Ermäßigungen",
+     "example": {
+      "target": "Studenten bekommen eine Ermäßigung.",
+      "gloss": "Students get a concession."
+     }
+    },
+    {
+     "id": "die schulden",
+     "hr": "die Schulden",
+     "en": "debts",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Er hat seine Schulden endlich zurückgezahlt.",
+      "gloss": "He has finally paid back his debts."
+     }
+    },
+    {
+     "id": "der kredit",
+     "hr": "der Kredit",
+     "en": "loan, credit",
+     "pos": "n. m.",
+     "note": "pl. die Kredite",
+     "example": {
+      "target": "Für das Auto haben wir einen Kredit aufgenommen.",
+      "gloss": "We took out a loan for the car."
+     }
+    },
+    {
+     "id": "die rate",
+     "hr": "die Rate",
+     "en": "instalment",
+     "pos": "n. f.",
+     "note": "pl. die Raten; in Raten zahlen",
+     "example": {
+      "target": "Wir zahlen das Sofa in zwölf Raten.",
+      "gloss": "We are paying for the sofa in twelve instalments."
+     }
+    },
+    {
+     "id": "die ersparnisse",
+     "hr": "die Ersparnisse",
+     "en": "savings",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Meine Ersparnisse reichen für die Reise.",
+      "gloss": "My savings are enough for the trip."
+     }
+    },
+    {
+     "id": "die ausgabe",
+     "hr": "die Ausgabe",
+     "en": "expense, spending",
+     "pos": "n. f.",
+     "note": "pl. die Ausgaben",
+     "example": {
+      "target": "Unsere Ausgaben sind dieses Jahr gestiegen.",
+      "gloss": "Our expenses have risen this year."
+     }
+    },
+    {
+     "id": "die einnahme",
+     "hr": "die Einnahme",
+     "en": "income, takings",
+     "pos": "n. f.",
+     "note": "meist Plural: die Einnahmen",
+     "example": {
+      "target": "Die Einnahmen im Sommer sind höher.",
+      "gloss": "The takings are higher in summer."
+     }
+    },
+    {
+     "id": "das einkommen",
+     "hr": "das Einkommen",
+     "en": "income",
+     "pos": "n. n.",
+     "note": "pl. die Einkommen",
+     "example": {
+      "target": "Sein Einkommen reicht für die ganze Familie.",
+      "gloss": "His income is enough for the whole family."
+     }
+    },
+    {
+     "id": "der betrag",
+     "hr": "der Betrag",
+     "en": "amount, sum",
+     "pos": "n. m.",
+     "note": "pl. die Beträge",
+     "example": {
+      "target": "Der Betrag wurde vom Konto abgebucht.",
+      "gloss": "The amount was debited from the account."
+     }
+    },
+    {
+     "id": "die zahlung",
+     "hr": "die Zahlung",
+     "en": "payment",
+     "pos": "n. f.",
+     "note": "pl. die Zahlungen",
+     "example": {
+      "target": "Die Zahlung ist gestern eingegangen.",
+      "gloss": "The payment arrived yesterday."
+     }
+    },
+    {
+     "id": "die zinsen",
+     "hr": "die Zinsen",
+     "en": "interest (on money)",
+     "pos": "n. f.",
+     "note": "meist Plural; Sg. der Zins",
+     "example": {
+      "target": "Die Zinsen für den Kredit sind hoch.",
+      "gloss": "The interest on the loan is high."
+     }
+    },
+    {
+     "id": "die steuererklärung",
+     "hr": "die Steuererklärung",
+     "en": "tax return",
+     "pos": "n. f.",
+     "note": "pl. die Steuererklärungen",
+     "example": {
+      "target": "Ich mache meine Steuererklärung am Wochenende.",
+      "gloss": "I am doing my tax return at the weekend."
+     }
+    },
+    {
+     "id": "die mehrwertsteuer",
+     "hr": "die Mehrwertsteuer",
+     "en": "value added tax",
+     "pos": "n. f.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Alle Preise sind mit Mehrwertsteuer angegeben.",
+      "gloss": "All prices are given including VAT."
+     }
+    },
+    {
+     "id": "das wechselgeld",
+     "hr": "das Wechselgeld",
+     "en": "change",
+     "pos": "n. n.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Sie haben mir zu wenig Wechselgeld gegeben.",
+      "gloss": "You gave me too little change."
+     }
+    },
+    {
+     "id": "die währung",
+     "hr": "die Währung",
+     "en": "currency",
+     "pos": "n. f.",
+     "note": "pl. die Währungen",
+     "example": {
+      "target": "In welcher Währung soll ich zahlen?",
+      "gloss": "In which currency should I pay?"
+     }
+    },
+    {
+     "id": "der geldbeutel",
+     "hr": "der Geldbeutel",
+     "en": "purse, wallet",
+     "pos": "n. m.",
+     "note": "pl. die Geldbeutel",
+     "example": {
+      "target": "Mein Geldbeutel liegt noch im Auto.",
+      "gloss": "My wallet is still in the car."
+     }
+    },
+    {
+     "id": "das kaufhaus",
+     "hr": "das Kaufhaus",
+     "en": "department store",
+     "pos": "n. n.",
+     "note": "pl. die Kaufhäuser",
+     "example": {
+      "target": "Im Kaufhaus findest du fast alles.",
+      "gloss": "In the department store you find almost everything."
+     }
+    },
+    {
+     "id": "das schaufenster",
+     "hr": "das Schaufenster",
+     "en": "shop window",
+     "pos": "n. n.",
+     "note": "pl. die Schaufenster",
+     "example": {
+      "target": "Die Schuhe im Schaufenster gefallen mir.",
+      "gloss": "I like the shoes in the shop window."
+     }
+    },
+    {
+     "id": "die umkleidekabine",
+     "hr": "die Umkleidekabine",
+     "en": "changing room",
+     "pos": "n. f.",
+     "note": "pl. die Umkleidekabinen",
+     "example": {
+      "target": "Die Umkleidekabine ist ganz hinten links.",
+      "gloss": "The changing room is at the very back on the left."
+     }
+    },
+    {
+     "id": "die ware",
+     "hr": "die Ware",
+     "en": "goods, merchandise",
+     "pos": "n. f.",
+     "note": "pl. die Waren",
+     "example": {
+      "target": "Die Ware wird in zwei Tagen geliefert.",
+      "gloss": "The goods will be delivered in two days."
+     }
+    },
+    {
+     "id": "das produkt",
+     "hr": "das Produkt",
+     "en": "product",
+     "pos": "n. n.",
+     "note": "pl. die Produkte",
+     "example": {
+      "target": "Dieses Produkt ist leider ausverkauft.",
+      "gloss": "This product is unfortunately sold out."
+     }
+    },
+    {
+     "id": "die marke",
+     "hr": "die Marke",
+     "en": "brand",
+     "pos": "n. f.",
+     "note": "pl. die Marken",
+     "example": {
+      "target": "Auf die Marke kommt es mir nicht an.",
+      "gloss": "The brand does not matter to me."
+     }
+    },
+    {
+     "id": "die verpackung",
+     "hr": "die Verpackung",
+     "en": "packaging",
+     "pos": "n. f.",
+     "note": "pl. die Verpackungen",
+     "example": {
+      "target": "Die Verpackung ist viel zu groß.",
+      "gloss": "The packaging is much too big."
+     }
+    },
+    {
+     "id": "der einkaufswagen",
+     "hr": "der Einkaufswagen",
+     "en": "shopping trolley",
+     "pos": "n. m.",
+     "note": "pl. die Einkaufswagen",
+     "example": {
+      "target": "Der Einkaufswagen ist schon ganz voll.",
+      "gloss": "The trolley is already completely full."
+     }
+    },
+    {
+     "id": "der umtausch",
+     "hr": "der Umtausch",
+     "en": "exchange (of goods)",
+     "pos": "n. m.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Ein Umtausch ist innerhalb von zwei Wochen möglich.",
+      "gloss": "An exchange is possible within two weeks."
+     }
+    },
+    {
+     "id": "die reklamation",
+     "hr": "die Reklamation",
+     "en": "complaint (about goods)",
+     "pos": "n. f.",
+     "note": "pl. die Reklamationen",
+     "example": {
+      "target": "Die Reklamation wurde sofort bearbeitet.",
+      "gloss": "The complaint was dealt with immediately."
+     }
+    },
+    {
+     "id": "die beschwerde",
+     "hr": "die Beschwerde",
+     "en": "complaint",
+     "pos": "n. f.",
+     "note": "pl. die Beschwerden",
+     "example": {
+      "target": "Ich möchte eine Beschwerde einreichen.",
+      "gloss": "I would like to submit a complaint."
+     }
+    },
+    {
+     "id": "die garantie",
+     "hr": "die Garantie",
+     "en": "warranty, guarantee",
+     "pos": "n. f.",
+     "note": "pl. die Garantien",
+     "example": {
+      "target": "Auf das Gerät gibt es zwei Jahre Garantie.",
+      "gloss": "There is a two year warranty on the device."
+     }
+    },
+    {
+     "id": "die lieferung",
+     "hr": "die Lieferung",
+     "en": "delivery",
+     "pos": "n. f.",
+     "note": "pl. die Lieferungen",
+     "example": {
+      "target": "Die Lieferung ist heute angekommen.",
+      "gloss": "The delivery arrived today."
+     }
+    },
+    {
+     "id": "die bestellung",
+     "hr": "die Bestellung",
+     "en": "order",
+     "pos": "n. f.",
+     "note": "pl. die Bestellungen",
+     "example": {
+      "target": "Meine Bestellung ist noch nicht da.",
+      "gloss": "My order has not arrived yet."
+     }
+    },
+    {
+     "id": "der versand",
+     "hr": "der Versand",
+     "en": "shipping, dispatch",
+     "pos": "n. m.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Ab dreißig Euro ist der Versand kostenlos.",
+      "gloss": "Shipping is free from thirty euros."
+     }
+    },
+    {
+     "id": "die bedienung",
+     "hr": "die Bedienung",
+     "en": "service; waiter, waitress",
+     "pos": "n. f.",
+     "note": "pl. die Bedienungen",
+     "example": {
+      "target": "Die Bedienung im Café war sehr nett.",
+      "gloss": "The service in the cafe was very nice."
+     }
+    },
+    {
+     "id": "die auswahl",
+     "hr": "die Auswahl",
+     "en": "selection, choice",
+     "pos": "n. f.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Die Auswahl an Broten ist riesig.",
+      "gloss": "The selection of breads is huge."
+     }
+    },
+    {
+     "id": "die qualität",
+     "hr": "die Qualität",
+     "en": "quality",
+     "pos": "n. f.",
+     "note": "pl. die Qualitäten",
+     "example": {
+      "target": "Die Qualität ist für den Preis sehr gut.",
+      "gloss": "The quality is very good for the price."
+     }
+    },
+    {
+     "id": "der mangel",
+     "hr": "der Mangel",
+     "en": "defect, lack",
+     "pos": "n. m.",
+     "note": "pl. die Mängel",
+     "example": {
+      "target": "Das Gerät hat einen Mangel und muss zurück.",
+      "gloss": "The device has a defect and has to go back."
+     }
+    },
+    {
+     "id": "die rückgabe",
+     "hr": "die Rückgabe",
+     "en": "return (of goods)",
+     "pos": "n. f.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Die Rückgabe ist nur mit Kassenzettel möglich.",
+      "gloss": "Returns are only possible with the till receipt."
+     }
+    },
+    {
+     "id": "der gutschein",
+     "hr": "der Gutschein",
+     "en": "voucher",
+     "pos": "n. m.",
+     "note": "pl. die Gutscheine",
+     "example": {
+      "target": "Zum Geburtstag habe ich einen Gutschein bekommen.",
+      "gloss": "For my birthday I got a voucher."
+     }
+    },
+    {
+     "id": "das sonderangebot",
+     "hr": "das Sonderangebot",
+     "en": "special offer",
+     "pos": "n. n.",
+     "note": "pl. die Sonderangebote",
+     "example": {
+      "target": "Die Erdbeeren sind heute ein Sonderangebot.",
+      "gloss": "The strawberries are a special offer today."
+     }
+    },
+    {
+     "id": "die öffnungszeiten",
+     "hr": "die Öffnungszeiten",
+     "en": "opening hours",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Die Öffnungszeiten stehen an der Tür.",
+      "gloss": "The opening hours are on the door."
+     }
+    },
+    {
+     "id": "der reisepass",
+     "hr": "der Reisepass",
+     "en": "passport",
+     "pos": "n. m.",
+     "note": "pl. die Reisepässe",
+     "example": {
+      "target": "Mein Reisepass ist noch fünf Jahre gültig.",
+      "gloss": "My passport is valid for another five years."
+     }
+    },
+    {
+     "id": "das visum",
+     "hr": "das Visum",
+     "en": "visa",
+     "pos": "n. n.",
+     "note": "pl. die Visa",
+     "example": {
+      "target": "Für diese Reise brauchst du kein Visum.",
+      "gloss": "You do not need a visa for this trip."
+     }
+    },
+    {
+     "id": "das gepäck",
+     "hr": "das Gepäck",
+     "en": "luggage",
+     "pos": "n. n.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Unser Gepäck ist leider nicht angekommen.",
+      "gloss": "Our luggage unfortunately did not arrive."
+     }
+    },
+    {
+     "id": "der koffer",
+     "hr": "der Koffer",
+     "en": "suitcase",
+     "pos": "n. m.",
+     "note": "pl. die Koffer",
+     "example": {
+      "target": "Mein Koffer ist wieder zu schwer.",
+      "gloss": "My suitcase is too heavy again."
+     }
+    },
+    {
+     "id": "der rucksack",
+     "hr": "der Rucksack",
+     "en": "backpack",
+     "pos": "n. m.",
+     "note": "pl. die Rucksäcke",
+     "example": {
+      "target": "Im Rucksack habe ich Wasser und Obst.",
+      "gloss": "In my backpack I have water and fruit."
+     }
+    },
+    {
+     "id": "die unterkunft",
+     "hr": "die Unterkunft",
+     "en": "accommodation",
+     "pos": "n. f.",
+     "note": "pl. die Unterkünfte",
+     "example": {
+      "target": "Wir suchen noch eine günstige Unterkunft.",
+      "gloss": "We are still looking for cheap accommodation."
+     }
+    },
+    {
+     "id": "die jugendherberge",
+     "hr": "die Jugendherberge",
+     "en": "youth hostel",
+     "pos": "n. f.",
+     "note": "pl. die Jugendherbergen",
+     "example": {
+      "target": "In der Jugendherberge kostet die Nacht wenig.",
+      "gloss": "A night at the youth hostel costs little."
+     }
+    },
+    {
+     "id": "die rezeption",
+     "hr": "die Rezeption",
+     "en": "reception",
+     "pos": "n. f.",
+     "note": "pl. die Rezeptionen",
+     "example": {
+      "target": "Den Schlüssel bekommen Sie an der Rezeption.",
+      "gloss": "You get the key at reception."
+     }
+    },
+    {
+     "id": "das einzelzimmer",
+     "hr": "das Einzelzimmer",
+     "en": "single room",
+     "pos": "n. n.",
+     "note": "pl. die Einzelzimmer",
+     "example": {
+      "target": "Ich hätte gern ein Einzelzimmer mit Dusche.",
+      "gloss": "I would like a single room with a shower."
+     }
+    },
+    {
+     "id": "das doppelzimmer",
+     "hr": "das Doppelzimmer",
+     "en": "double room",
+     "pos": "n. n.",
+     "note": "pl. die Doppelzimmer",
+     "example": {
+      "target": "Das Doppelzimmer kostet neunzig Euro pro Nacht.",
+      "gloss": "The double room costs ninety euros per night."
+     }
+    },
+    {
+     "id": "die buchung",
+     "hr": "die Buchung",
+     "en": "booking",
+     "pos": "n. f.",
+     "note": "pl. die Buchungen",
+     "example": {
+      "target": "Ihre Buchung ist bestätigt.",
+      "gloss": "Your booking is confirmed."
+     }
+    },
+    {
+     "id": "die reservierung",
+     "hr": "die Reservierung",
+     "en": "reservation",
+     "pos": "n. f.",
+     "note": "pl. die Reservierungen",
+     "example": {
+      "target": "Ich habe eine Reservierung auf den Namen Weber.",
+      "gloss": "I have a reservation under the name Weber."
+     }
+    },
+    {
+     "id": "der aufenthalt",
+     "hr": "der Aufenthalt",
+     "en": "stay",
+     "pos": "n. m.",
+     "note": "pl. die Aufenthalte",
+     "example": {
+      "target": "Wir wünschen Ihnen einen angenehmen Aufenthalt.",
+      "gloss": "We wish you a pleasant stay."
+     }
+    },
+    {
+     "id": "die abreise",
+     "hr": "die Abreise",
+     "en": "departure (from a place)",
+     "pos": "n. f.",
+     "note": "pl. die Abreisen",
+     "example": {
+      "target": "Am Tag der Abreise regnete es stark.",
+      "gloss": "On the day of departure it rained heavily."
+     }
+    },
+    {
+     "id": "die ankunft",
+     "hr": "die Ankunft",
+     "en": "arrival",
+     "pos": "n. f.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Die Ankunft ist für zwölf Uhr geplant.",
+      "gloss": "Arrival is planned for twelve o'clock."
+     }
+    },
+    {
+     "id": "die abfahrt",
+     "hr": "die Abfahrt",
+     "en": "departure (of a vehicle)",
+     "pos": "n. f.",
+     "note": "pl. die Abfahrten",
+     "example": {
+      "target": "Die Abfahrt des Zuges verzögert sich.",
+      "gloss": "The departure of the train is delayed."
+     }
+    },
+    {
+     "id": "der abflug",
+     "hr": "der Abflug",
+     "en": "take off, departure by air",
+     "pos": "n. m.",
+     "note": "pl. die Abflüge",
+     "example": {
+      "target": "Zwei Stunden vor dem Abflug sind wir da.",
+      "gloss": "We will be there two hours before departure."
+     }
+    },
+    {
+     "id": "die landung",
+     "hr": "die Landung",
+     "en": "landing",
+     "pos": "n. f.",
+     "note": "pl. die Landungen",
+     "example": {
+      "target": "Die Landung war ganz ruhig.",
+      "gloss": "The landing was quite smooth."
+     }
+    },
+    {
+     "id": "der bahnsteig",
+     "hr": "der Bahnsteig",
+     "en": "platform",
+     "pos": "n. m.",
+     "note": "pl. die Bahnsteige",
+     "example": {
+      "target": "Auf dem Bahnsteig war es sehr voll.",
+      "gloss": "It was very crowded on the platform."
+     }
+    },
+    {
+     "id": "das gleis",
+     "hr": "das Gleis",
+     "en": "track, platform number",
+     "pos": "n. n.",
+     "note": "pl. die Gleise",
+     "example": {
+      "target": "Der Zug fährt heute von Gleis sieben.",
+      "gloss": "The train leaves from track seven today."
+     }
+    },
+    {
+     "id": "die verspätung",
+     "hr": "die Verspätung",
+     "en": "delay",
+     "pos": "n. f.",
+     "note": "pl. die Verspätungen",
+     "example": {
+      "target": "Der Bus hat zwanzig Minuten Verspätung.",
+      "gloss": "The bus is twenty minutes late."
+     }
+    },
+    {
+     "id": "der anschluss",
+     "hr": "der Anschluss",
+     "en": "connection (transport)",
+     "pos": "n. m.",
+     "note": "pl. die Anschlüsse",
+     "example": {
+      "target": "Wegen der Verspätung habe ich den Anschluss verpasst.",
+      "gloss": "Because of the delay I missed my connection."
+     }
+    },
+    {
+     "id": "der schaffner",
+     "hr": "der Schaffner",
+     "en": "ticket inspector, conductor",
+     "pos": "n. m.",
+     "note": "pl. die Schaffner",
+     "example": {
+      "target": "Der Schaffner kontrolliert gleich die Fahrkarten.",
+      "gloss": "The conductor will check the tickets shortly."
+     }
+    },
+    {
+     "id": "der zuschlag",
+     "hr": "der Zuschlag",
+     "en": "surcharge",
+     "pos": "n. m.",
+     "note": "pl. die Zuschläge",
+     "example": {
+      "target": "Für den schnellen Zug zahlt man einen Zuschlag.",
+      "gloss": "You pay a surcharge for the fast train."
+     }
+    },
+    {
+     "id": "die strecke",
+     "hr": "die Strecke",
+     "en": "route, distance",
+     "pos": "n. f.",
+     "note": "pl. die Strecken",
+     "example": {
+      "target": "Die Strecke ist etwa dreihundert Kilometer lang.",
+      "gloss": "The route is about three hundred kilometres long."
+     }
+    },
+    {
+     "id": "die grenze",
+     "hr": "die Grenze",
+     "en": "border",
+     "pos": "n. f.",
+     "note": "pl. die Grenzen",
+     "example": {
+      "target": "An der Grenze mussten wir kurz warten.",
+      "gloss": "At the border we had to wait briefly."
+     }
+    },
+    {
+     "id": "der zoll",
+     "hr": "der Zoll",
+     "en": "customs",
+     "pos": "n. m.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Beim Zoll wurde mein Koffer geöffnet.",
+      "gloss": "At customs my suitcase was opened."
+     }
+    },
+    {
+     "id": "die sehenswürdigkeit",
+     "hr": "die Sehenswürdigkeit",
+     "en": "sight, tourist attraction",
+     "pos": "n. f.",
+     "note": "pl. die Sehenswürdigkeiten",
+     "example": {
+      "target": "Die Stadt hat viele Sehenswürdigkeiten.",
+      "gloss": "The city has many sights."
+     }
+    },
+    {
+     "id": "die führung",
+     "hr": "die Führung",
+     "en": "guided tour",
+     "pos": "n. f.",
+     "note": "pl. die Führungen",
+     "example": {
+      "target": "Die Führung dauert eine Stunde und ist kostenlos.",
+      "gloss": "The guided tour lasts an hour and is free."
+     }
+    },
+    {
+     "id": "der ausflug",
+     "hr": "der Ausflug",
+     "en": "excursion, day trip",
+     "pos": "n. m.",
+     "note": "pl. die Ausflüge; einen Ausflug machen",
+     "example": {
+      "target": "Am Sonntag machen wir einen Ausflug ans Meer.",
+      "gloss": "On Sunday we are taking a trip to the sea."
+     }
+    },
+    {
+     "id": "die wanderung",
+     "hr": "die Wanderung",
+     "en": "hike",
+     "pos": "n. f.",
+     "note": "pl. die Wanderungen",
+     "example": {
+      "target": "Die Wanderung war anstrengend, aber schön.",
+      "gloss": "The hike was tiring but lovely."
+     }
+    },
+    {
+     "id": "der strand",
+     "hr": "der Strand",
+     "en": "beach",
+     "pos": "n. m.",
+     "note": "pl. die Strände",
+     "example": {
+      "target": "Am Strand war fast niemand.",
+      "gloss": "There was almost nobody on the beach."
+     }
+    },
+    {
+     "id": "die küste",
+     "hr": "die Küste",
+     "en": "coast",
+     "pos": "n. f.",
+     "note": "pl. die Küsten",
+     "example": {
+      "target": "An der Küste weht immer ein frischer Wind.",
+      "gloss": "There is always a fresh wind on the coast."
+     }
+    },
+    {
+     "id": "das gebirge",
+     "hr": "das Gebirge",
+     "en": "mountain range",
+     "pos": "n. n.",
+     "note": "pl. die Gebirge",
+     "example": {
+      "target": "Im Gebirge liegt noch Schnee.",
+      "gloss": "There is still snow in the mountains."
+     }
+    },
+    {
+     "id": "der see",
+     "hr": "der See",
+     "en": "lake",
+     "pos": "n. m.",
+     "note": "pl. die Seen; die See heißt das Meer",
+     "example": {
+      "target": "Im Sommer schwimmen wir oft im See.",
+      "gloss": "In summer we often swim in the lake."
+     }
+    },
+    {
+     "id": "die insel",
+     "hr": "die Insel",
+     "en": "island",
+     "pos": "n. f.",
+     "note": "pl. die Inseln",
+     "example": {
+      "target": "Auf die Insel kommt man nur mit dem Schiff.",
+      "gloss": "You can only get to the island by boat."
+     }
+    },
+    {
+     "id": "das zelt",
+     "hr": "das Zelt",
+     "en": "tent",
+     "pos": "n. n.",
+     "note": "pl. die Zelte",
+     "example": {
+      "target": "Unser Zelt steht direkt am Wasser.",
+      "gloss": "Our tent is right by the water."
+     }
+    },
+    {
+     "id": "der campingplatz",
+     "hr": "der Campingplatz",
+     "en": "campsite",
+     "pos": "n. m.",
+     "note": "pl. die Campingplätze",
+     "example": {
+      "target": "Der Campingplatz hat sogar ein kleines Schwimmbad.",
+      "gloss": "The campsite even has a small swimming pool."
+     }
+    },
+    {
+     "id": "das andenken",
+     "hr": "das Andenken",
+     "en": "souvenir, keepsake",
+     "pos": "n. n.",
+     "note": "pl. die Andenken",
+     "example": {
+      "target": "Ich habe ein kleines Andenken für dich gekauft.",
+      "gloss": "I bought a little souvenir for you."
+     }
+    },
+    {
+     "id": "die landkarte",
+     "hr": "die Landkarte",
+     "en": "map",
+     "pos": "n. f.",
+     "note": "pl. die Landkarten",
+     "example": {
+      "target": "Auf der Landkarte finde ich das Dorf nicht.",
+      "gloss": "I cannot find the village on the map."
+     }
+    },
+    {
+     "id": "der stadtplan",
+     "hr": "der Stadtplan",
+     "en": "city map",
+     "pos": "n. m.",
+     "note": "pl. die Stadtpläne",
+     "example": {
+      "target": "Einen Stadtplan bekommst du im Hotel.",
+      "gloss": "You can get a city map at the hotel."
+     }
+    },
+    {
+     "id": "der reiseführer",
+     "hr": "der Reiseführer",
+     "en": "guidebook",
+     "pos": "n. m.",
+     "note": "pl. die Reiseführer",
+     "example": {
+      "target": "Im Reiseführer stehen gute Tipps für Restaurants.",
+      "gloss": "The guidebook has good tips for restaurants."
+     }
+    },
+    {
+     "id": "der mietwagen",
+     "hr": "der Mietwagen",
+     "en": "rental car",
+     "pos": "n. m.",
+     "note": "pl. die Mietwagen",
+     "example": {
+      "target": "Wir holen den Mietwagen am Morgen ab.",
+      "gloss": "We are picking up the rental car in the morning."
+     }
+    },
+    {
+     "id": "die tankstelle",
+     "hr": "die Tankstelle",
+     "en": "petrol station",
+     "pos": "n. f.",
+     "note": "pl. die Tankstellen",
+     "example": {
+      "target": "Die nächste Tankstelle ist zehn Kilometer entfernt.",
+      "gloss": "The next petrol station is ten kilometres away."
+     }
+    },
+    {
+     "id": "die autobahn",
+     "hr": "die Autobahn",
+     "en": "motorway",
+     "pos": "n. f.",
+     "note": "pl. die Autobahnen",
+     "example": {
+      "target": "Auf der Autobahn kommen wir schneller voran.",
+      "gloss": "We make faster progress on the motorway."
+     }
+    },
+    {
+     "id": "die ausfahrt",
+     "hr": "die Ausfahrt",
+     "en": "exit (road)",
+     "pos": "n. f.",
+     "note": "pl. die Ausfahrten",
+     "example": {
+      "target": "Nimm bitte die nächste Ausfahrt.",
+      "gloss": "Please take the next exit."
+     }
+    },
+    {
+     "id": "die umleitung",
+     "hr": "die Umleitung",
+     "en": "diversion",
+     "pos": "n. f.",
+     "note": "pl. die Umleitungen",
+     "example": {
+      "target": "Wegen der Baustelle gibt es eine Umleitung.",
+      "gloss": "Because of the roadworks there is a diversion."
+     }
+    },
+    {
+     "id": "der stau",
+     "hr": "der Stau",
+     "en": "traffic jam",
+     "pos": "n. m.",
+     "note": "pl. die Staus; im Stau stehen",
+     "example": {
+      "target": "Wir standen zwei Stunden im Stau.",
+      "gloss": "We were stuck in a traffic jam for two hours."
+     }
+    },
+    {
+     "id": "die panne",
+     "hr": "die Panne",
+     "en": "breakdown",
+     "pos": "n. f.",
+     "note": "pl. die Pannen",
+     "example": {
+      "target": "Mit dem alten Wagen hatten wir eine Panne.",
+      "gloss": "We had a breakdown with the old car."
+     }
+    },
+    {
+     "id": "die gesundheit",
+     "hr": "die Gesundheit",
+     "en": "health",
+     "pos": "n. f.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Die Gesundheit ist wichtiger als das Geld.",
+      "gloss": "Health is more important than money."
+     }
+    },
+    {
+     "id": "die krankheit",
+     "hr": "die Krankheit",
+     "en": "illness",
+     "pos": "n. f.",
+     "note": "pl. die Krankheiten",
+     "example": {
+      "target": "Nach der Krankheit war er noch lange schwach.",
+      "gloss": "After the illness he was weak for a long time."
+     }
+    },
+    {
+     "id": "der schmerz",
+     "hr": "der Schmerz",
+     "en": "pain",
+     "pos": "n. m.",
+     "note": "pl. die Schmerzen",
+     "example": {
+      "target": "Der Schmerz im Knie wird langsam besser.",
+      "gloss": "The pain in my knee is slowly getting better."
+     }
+    },
+    {
+     "id": "die grippe",
+     "hr": "die Grippe",
+     "en": "flu",
+     "pos": "n. f.",
+     "note": "meist Singular",
+     "example": {
+      "target": "Mit Grippe soll man im Bett bleiben.",
+      "gloss": "With flu you should stay in bed."
+     }
+    },
+    {
+     "id": "der husten",
+     "hr": "der Husten",
+     "en": "cough",
+     "pos": "n. m.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Der Husten hält schon zwei Wochen an.",
+      "gloss": "The cough has lasted two weeks already."
+     }
+    },
+    {
+     "id": "der schnupfen",
+     "hr": "der Schnupfen",
+     "en": "runny nose, head cold",
+     "pos": "n. m.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Bei Schnupfen hilft warmer Tee.",
+      "gloss": "Warm tea helps with a head cold."
+     }
+    },
+    {
+     "id": "die halsschmerzen",
+     "hr": "die Halsschmerzen",
+     "en": "sore throat",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Ich habe seit heute Morgen Halsschmerzen.",
+      "gloss": "I have had a sore throat since this morning."
+     }
+    },
+    {
+     "id": "die kopfschmerzen",
+     "hr": "die Kopfschmerzen",
+     "en": "headache",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Gegen Kopfschmerzen nehme ich selten Tabletten.",
+      "gloss": "I rarely take tablets for a headache."
+     }
+    },
+    {
+     "id": "die bauchschmerzen",
+     "hr": "die Bauchschmerzen",
+     "en": "stomach ache",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Nach dem Essen hatte er Bauchschmerzen.",
+      "gloss": "After the meal he had a stomach ache."
+     }
+    },
+    {
+     "id": "die übelkeit",
+     "hr": "die Übelkeit",
+     "en": "nausea",
+     "pos": "n. f.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Die Übelkeit kommt vom langen Busfahren.",
+      "gloss": "The nausea comes from the long bus ride."
+     }
+    },
+    {
+     "id": "der durchfall",
+     "hr": "der Durchfall",
+     "en": "diarrhoea",
+     "pos": "n. m.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Er hat seit gestern Durchfall.",
+      "gloss": "He has had diarrhoea since yesterday."
+     }
+    },
+    {
+     "id": "die allergie",
+     "hr": "die Allergie",
+     "en": "allergy",
+     "pos": "n. f.",
+     "note": "pl. die Allergien; eine Allergie gegen + Akk.",
+     "example": {
+      "target": "Ich habe eine Allergie gegen Nüsse.",
+      "gloss": "I have an allergy to nuts."
+     }
+    },
+    {
+     "id": "die verletzung",
+     "hr": "die Verletzung",
+     "en": "injury",
+     "pos": "n. f.",
+     "note": "pl. die Verletzungen",
+     "example": {
+      "target": "Die Verletzung am Fuß heilt gut.",
+      "gloss": "The injury to the foot is healing well."
+     }
+    },
+    {
+     "id": "die wunde",
+     "hr": "die Wunde",
+     "en": "wound",
+     "pos": "n. f.",
+     "note": "pl. die Wunden",
+     "example": {
+      "target": "Die Wunde muss sauber bleiben.",
+      "gloss": "The wound has to stay clean."
+     }
+    },
+    {
+     "id": "der knochenbruch",
+     "hr": "der Knochenbruch",
+     "en": "fracture",
+     "pos": "n. m.",
+     "note": "pl. die Knochenbrüche",
+     "example": {
+      "target": "Zum Glück ist es kein Knochenbruch.",
+      "gloss": "Luckily it is not a fracture."
+     }
+    },
+    {
+     "id": "die praxis",
+     "hr": "die Praxis",
+     "en": "doctor's practice, surgery",
+     "pos": "n. f.",
+     "note": "pl. die Praxen",
+     "example": {
+      "target": "Die Praxis ist freitags geschlossen.",
+      "gloss": "The surgery is closed on Fridays."
+     }
+    },
+    {
+     "id": "die sprechstunde",
+     "hr": "die Sprechstunde",
+     "en": "consultation hours",
+     "pos": "n. f.",
+     "note": "pl. die Sprechstunden",
+     "example": {
+      "target": "Die Sprechstunde beginnt um acht.",
+      "gloss": "Consultation hours start at eight."
+     }
+    },
+    {
+     "id": "das wartezimmer",
+     "hr": "das Wartezimmer",
+     "en": "waiting room",
+     "pos": "n. n.",
+     "note": "pl. die Wartezimmer",
+     "example": {
+      "target": "Im Wartezimmer saßen schon fünf Leute.",
+      "gloss": "Five people were already sitting in the waiting room."
+     }
+    },
+    {
+     "id": "die untersuchung",
+     "hr": "die Untersuchung",
+     "en": "examination, check up",
+     "pos": "n. f.",
+     "note": "pl. die Untersuchungen",
+     "example": {
+      "target": "Die Untersuchung tut nicht weh.",
+      "gloss": "The examination does not hurt."
+     }
+    },
+    {
+     "id": "die behandlung",
+     "hr": "die Behandlung",
+     "en": "treatment",
+     "pos": "n. f.",
+     "note": "pl. die Behandlungen",
+     "example": {
+      "target": "Die Behandlung dauert etwa drei Wochen.",
+      "gloss": "The treatment lasts about three weeks."
+     }
+    },
+    {
+     "id": "die operation",
+     "hr": "die Operation",
+     "en": "operation, surgery",
+     "pos": "n. f.",
+     "note": "pl. die Operationen",
+     "example": {
+      "target": "Nach der Operation ging es ihm schnell besser.",
+      "gloss": "After the operation he quickly got better."
+     }
+    },
+    {
+     "id": "das rezept",
+     "hr": "das Rezept",
+     "en": "prescription; recipe",
+     "pos": "n. n.",
+     "note": "pl. die Rezepte",
+     "example": {
+      "target": "Für dieses Medikament brauchen Sie ein Rezept.",
+      "gloss": "You need a prescription for this medicine."
+     }
+    },
+    {
+     "id": "die salbe",
+     "hr": "die Salbe",
+     "en": "ointment, cream",
+     "pos": "n. f.",
+     "note": "pl. die Salben",
+     "example": {
+      "target": "Die Salbe hilft gegen den Juckreiz.",
+      "gloss": "The ointment helps with the itching."
+     }
+    },
+    {
+     "id": "der tropfen",
+     "hr": "der Tropfen",
+     "en": "drop",
+     "pos": "n. m.",
+     "note": "pl. die Tropfen",
+     "example": {
+      "target": "Nehmen Sie dreimal täglich zehn Tropfen.",
+      "gloss": "Take ten drops three times a day."
+     }
+    },
+    {
+     "id": "die spritze",
+     "hr": "die Spritze",
+     "en": "injection, syringe",
+     "pos": "n. f.",
+     "note": "pl. die Spritzen",
+     "example": {
+      "target": "Vor der Spritze habe ich ein bisschen Angst.",
+      "gloss": "I am a little afraid of the injection."
+     }
+    },
+    {
+     "id": "die impfung",
+     "hr": "die Impfung",
+     "en": "vaccination",
+     "pos": "n. f.",
+     "note": "pl. die Impfungen",
+     "example": {
+      "target": "Die Impfung ist kostenlos.",
+      "gloss": "The vaccination is free."
+     }
+    },
+    {
+     "id": "der notarzt",
+     "hr": "der Notarzt",
+     "en": "emergency doctor",
+     "pos": "n. m.",
+     "note": "pl. die Notärzte",
+     "example": {
+      "target": "Der Notarzt war in fünf Minuten da.",
+      "gloss": "The emergency doctor was there in five minutes."
+     }
+    },
+    {
+     "id": "der notfall",
+     "hr": "der Notfall",
+     "en": "emergency",
+     "pos": "n. m.",
+     "note": "pl. die Notfälle; im Notfall",
+     "example": {
+      "target": "Im Notfall rufen Sie bitte sofort an.",
+      "gloss": "In an emergency please call immediately."
+     }
+    },
+    {
+     "id": "der krankenwagen",
+     "hr": "der Krankenwagen",
+     "en": "ambulance",
+     "pos": "n. m.",
+     "note": "pl. die Krankenwagen",
+     "example": {
+      "target": "Ein Nachbar hat den Krankenwagen gerufen.",
+      "gloss": "A neighbour called the ambulance."
+     }
+    },
+    {
+     "id": "die krankmeldung",
+     "hr": "die Krankmeldung",
+     "en": "sick note",
+     "pos": "n. f.",
+     "note": "pl. die Krankmeldungen",
+     "example": {
+      "target": "Die Krankmeldung muss bis Donnerstag in der Firma sein.",
+      "gloss": "The sick note has to be at the company by Thursday."
+     }
+    },
+    {
+     "id": "der zahnarzt",
+     "hr": "der Zahnarzt",
+     "en": "dentist",
+     "pos": "n. m.",
+     "note": "pl. die Zahnärzte",
+     "example": {
+      "target": "Zum Zahnarzt gehe ich zweimal im Jahr.",
+      "gloss": "I go to the dentist twice a year."
+     }
+    },
+    {
+     "id": "die zahnschmerzen",
+     "hr": "die Zahnschmerzen",
+     "en": "toothache",
+     "pos": "n. f.",
+     "note": "nur Plural",
+     "example": {
+      "target": "Wegen der Zahnschmerzen konnte ich nicht schlafen.",
+      "gloss": "Because of the toothache I could not sleep."
+     }
+    },
+    {
+     "id": "die ernährung",
+     "hr": "die Ernährung",
+     "en": "diet, nutrition",
+     "pos": "n. f.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Eine gesunde Ernährung ist die halbe Miete.",
+      "gloss": "A healthy diet is half the battle."
+     }
+    },
+    {
+     "id": "die bewegung",
+     "hr": "die Bewegung",
+     "en": "exercise, movement",
+     "pos": "n. f.",
+     "note": "pl. die Bewegungen",
+     "example": {
+      "target": "Er braucht mehr Bewegung an der frischen Luft.",
+      "gloss": "He needs more exercise in the fresh air."
+     }
+    },
+    {
+     "id": "die erholung",
+     "hr": "die Erholung",
+     "en": "rest, recovery",
+     "pos": "n. f.",
+     "note": "nur Singular",
+     "example": {
+      "target": "Nach der Arbeit brauche ich etwas Erholung.",
+      "gloss": "After work I need some rest."
+     }
+    }
+   ]
+  }
+ ]
+}

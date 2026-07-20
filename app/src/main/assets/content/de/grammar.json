@@ -1,0 +1,1465 @@
+{
+ "levels": [
+  {
+   "levelId": "A0",
+   "intro": "A0 grammar is really the sound and spelling system: the umlauts ä, ö and ü, the two ch sounds, the letters that trick English speakers, the ei and ie split, vowel length, the ß and ss rule, and the habit of capitalising every noun. Get these right first and everything you read afterwards will sound the way it looks.",
+   "sources": [
+    "goethe-a1",
+    "goethe-wortliste"
+   ],
+   "topics": [
+    {
+     "id": "a0-alphabet-buchstaben",
+     "title": "The alphabet and the letters that trick you",
+     "summary": "German has the 26 Latin letters plus ä, ö, ü and ß. Spelling is far more regular than English, so once you know the letter values you can read almost any word aloud. Six letters mislead English speakers. W is pronounced like an English v (Wasser, Wein), v is pronounced like an English f (Vater, viel, vier), z is always ts (Zeit, zehn, zwei), j is like an English y (ja, Jahr, jung), and s before a vowel is a soft z sound (sagen, Sonne, sieben). At the start of a word or stem, st and sp are said as scht and schp (Straße, Stadt, spielen, Sport). The r is made at the back of the throat, and a final -er sounds close to a short a (Mutter, Vater, oder). The trap is reading w as English w and z as English z, which makes Wein sound like vine to nobody.",
+     "tables": [
+      "Letter   Sound             Example\n------   ---------------   ------------------\nw        English v         Wasser, wir, Wein\nv        English f         Vater, viel, vier\nz        ts                Zeit, zehn, zwei\nj        English y         ja, Jahr, jung\ns + vow. English z         sagen, Sonne, sieben\nst-      scht              Straße, Stadt, stehen\nsp-      schp              spielen, Sport, sprechen\n-er      short a sound     Mutter, Vater, oder\nqu       kv                Quelle, bequem"
+     ],
+     "examples": [
+      {
+       "target": "Wir wohnen in Berlin.",
+       "gloss": "We live in Berlin."
+      },
+      {
+       "target": "Der Zug fährt um zehn.",
+       "gloss": "The train leaves at ten."
+      },
+      {
+       "target": "Mein Vater spricht sehr viel.",
+       "gloss": "My father talks a lot."
+      },
+      {
+       "target": "Ja, ich spiele gern Fußball.",
+       "gloss": "Yes, I like playing football."
+      },
+      {
+       "target": "Die Straße ist heute laut.",
+       "gloss": "The street is loud today."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a0-umlaute",
+     "title": "The umlauts ä, ö, ü",
+     "summary": "Ä, ö and ü are not decorated versions of a, o and u, they are separate sounds that change the meaning of a word. Ä sounds roughly like the e in the English word bed (Bäcker, Mädchen, spät). For ö, round your lips as if for o but say e instead (schön, hören, zwölf, können). For ü, round your lips as if for u but say ee instead (über, Tür, fünf, Bücher). Each one can be long or short. Because the umlaut is the standard way German builds plurals and comparatives, dropping it turns one word into another: Mutter is one mother and Mütter is several, schon means already while schön means beautiful. If a keyboard has no umlauts, write ae, oe and ue, never a bare a, o or u.",
+     "tables": [
+      "Umlaut   How to make it              Example\n------   -------------------------   --------------------\nä        like e in English bed       Bäcker, Mädchen, spät\nö        lips for o, say e           schön, hören, zwölf\nü        lips for u, say ee          über, Tür, fünf",
+      "Without umlaut        With umlaut\n-------------------   --------------------\ndie Mutter (mother)   die Mütter (mothers)\nder Bruder (brother)  die Brüder (brothers)\nschon (already)       schön (beautiful)\ndie Tochter           die Töchter\nich kann (I can)      ich könnte (I could)"
+     ],
+     "examples": [
+      {
+       "target": "Die Tür ist schön.",
+       "gloss": "The door is beautiful."
+      },
+      {
+       "target": "Ich möchte fünf Bücher.",
+       "gloss": "I would like five books."
+      },
+      {
+       "target": "Meine Brüder hören gern Musik.",
+       "gloss": "My brothers like listening to music."
+      },
+      {
+       "target": "Das Mädchen ist zwölf Jahre alt.",
+       "gloss": "The girl is twelve years old."
+      },
+      {
+       "target": "Können wir später essen?",
+       "gloss": "Can we eat later?"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a0-ch-laute",
+     "title": "The two ch sounds, plus sch and chs",
+     "summary": "The letters ch stand for two different sounds and the vowel in front decides which one. After a, o, u and au you get the hard ach-Laut, made far back in the throat: Buch, machen, doch, Woche, auch, Bauch. In every other position, after i, e, ä, ö, ü, ei, eu and after the consonants l, n and r, you get the soft ich-Laut, a gentle hiss made near the front: ich, nicht, Milch, München, Bücher, welche. The ending -chen always takes the soft sound: Mädchen, bisschen. Two neighbours look similar but are not ch at all: sch is the English sh (Schule, Tisch, Deutsch) and chs is pronounced ks (sechs, Fuchs, wachsen). The trap is using the English ch of chair, which exists nowhere in German.",
+     "tables": [
+      "After           Sound        Examples\n-------------   ----------   -----------------------\na, o, u, au     ach-Laut     Buch, doch, auch, Nacht\ni, e, ä, ö, ü   ich-Laut     ich, echt, Bücher, möchte\nei, eu, äu      ich-Laut     leicht, euch, Bäuche\nl, n, r         ich-Laut     Milch, München, durch\n-chen ending    ich-Laut     Mädchen, bisschen\nsch             English sh   Schule, Tisch, Deutsch\nchs             ks           sechs, Fuchs, wachsen"
+     ],
+     "examples": [
+      {
+       "target": "Ich möchte ein Buch kaufen.",
+       "gloss": "I would like to buy a book."
+      },
+      {
+       "target": "Das Mädchen spricht nicht viel.",
+       "gloss": "The girl does not talk much."
+      },
+      {
+       "target": "Sechs Bücher liegen auf dem Tisch.",
+       "gloss": "Six books are lying on the table."
+      },
+      {
+       "target": "Nach der Schule mache ich Hausaufgaben.",
+       "gloss": "After school I do homework."
+      },
+      {
+       "target": "Die Milch ist noch frisch.",
+       "gloss": "The milk is still fresh."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a0-ei-ie",
+     "title": "ei versus ie, and the other vowel pairs",
+     "summary": "Two spellings cause more mistakes than any others. Ei is pronounced like the English word eye (mein, Wein, heißen, arbeiten, zwei), while ie is a long ee (die, wie, Liebe, sieben, spielen). A reliable trick is to say the English name of the SECOND letter: in ei the second letter is i, so say eye; in ie the second letter is e, so say ee. Getting them the wrong way round changes the word, since Weise (manner) and Wiese (meadow) differ by nothing else. The other combinations are steady: au is like the ow in how (Haus, Frau, laufen), while eu and äu are both like the oy in boy (heute, neun, Freund, Häuser, Bäume). Verbs in -ieren keep the long ee: studieren, telefonieren.",
+     "tables": [
+      "Spelling   Sound              Examples\n--------   ----------------   ----------------------\nei         like English eye   mein, Wein, zwei, heißen\nie         long ee            die, wie, sieben, Liebe\nau         like ow in how     Haus, Frau, laufen\neu         like oy in boy     heute, neun, Freund\näu         like oy in boy     Häuser, Bäume, läuft",
+      "Same letters, different order\n-----------------------------\ndie Weise (the manner)   die Wiese (the meadow)\nleiten (to lead)         Lieder (songs)\nder Wein (the wine)      wieder (again)"
+     ],
+     "examples": [
+      {
+       "target": "Wie heißt du?",
+       "gloss": "What is your name?"
+      },
+      {
+       "target": "Wir bleiben eine Woche hier.",
+       "gloss": "We are staying here for a week."
+      },
+      {
+       "target": "Heute sind neun Häuser frei.",
+       "gloss": "Today nine houses are free."
+      },
+      {
+       "target": "Meine Freundin trinkt lieber Wein.",
+       "gloss": "My friend prefers to drink wine."
+      },
+      {
+       "target": "Sieben Kinder spielen vor dem Haus.",
+       "gloss": "Seven children are playing in front of the house."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a0-vokallaenge",
+     "title": "Long and short vowels",
+     "summary": "German distinguishes long vowels from short ones, and the spelling tells you which is which. A vowel is long when a silent h follows it (gehen, Uhr, ihn, Zahl), when it is doubled (Boot, Meer, Saal), when it is written ie (Liebe, sieben), and usually when only one consonant follows (Name, Tag, gut, holen). A vowel is short when two or more consonants follow (kommen, Mutter, alle, Bett, Kind, Herbst). Length alone can separate two words: Stadt is a city and Staat is a state, offen means open and Ofen means oven. Learn this early, because vowel length is what decides the ß and ss spelling and it also decides which of the two ch sounds you use.",
+     "tables": [
+      "Signal              Length   Examples\n-----------------   ------   ---------------------\nvowel + h           long     gehen, Uhr, ihn, Zahl\ndoubled vowel       long     Boot, Meer, Saal\nie                  long     Liebe, sieben, wie\nsingle consonant    long     Name, Tag, gut, holen\ndouble consonant    short    kommen, Mutter, Bett\nconsonant cluster   short    Kind, Herbst, Fenster",
+      "Short              Long\n----------------   ----------------\ndie Stadt (city)   der Staat (state)\ndas Bett (bed)     das Beet (flower bed)\noffen (open)       der Ofen (oven)\nder Wall           die Wahl (choice)"
+     ],
+     "examples": [
+      {
+       "target": "Ihr Name ist Anna.",
+       "gloss": "Her name is Anna."
+      },
+      {
+       "target": "Die Mutter kommt um acht.",
+       "gloss": "The mother is coming at eight."
+      },
+      {
+       "target": "Das Boot ist sehr alt.",
+       "gloss": "The boat is very old."
+      },
+      {
+       "target": "Er geht ohne Uhr aus dem Haus.",
+       "gloss": "He leaves the house without a watch."
+      },
+      {
+       "target": "Das Kind schläft im Bett.",
+       "gloss": "The child is sleeping in the bed."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a0-ss-ss",
+     "title": "ß after a long vowel, ss after a short one",
+     "summary": "The rule is short and it is absolute. Write ß after a long vowel or after a diphthong: Straße, groß, Fuß, heißen, weiß, außen, Grüße, fließen. Write ss after a short vowel: Fluss, Kuss, muss, dass, essen, lassen, wissen, Schloss. Since vowel length can change inside a word family, the spelling changes with it: fließen has a long vowel but der Fluss has a short one, wissen is short but ich weiß is long. Older books print ß after short vowels as well; those spellings come from before the spelling reform and count as mistakes today, so always let the vowel length decide. In all capitals, ß is usually written SS (STRASSE).",
+     "tables": [
+      "Vowel before          Spelling   Examples\n-------------------   --------   ---------------------------\nlong vowel            ß          Straße, groß, Fuß, süß\ndiphthong ei, au, eu  ß          heißen, weiß, außen, draußen\nshort vowel           ss         Fluss, Kuss, muss, essen\nshort vowel           ss         dass, lassen, wissen, Schloss",
+      "One family, two spellings\n-------------------------\nfließen (long)    der Fluss (short)\nwissen (short)    ich weiß (long)\nessen (short)     er aß (long)\nmüssen (short)    ich muss (short)"
+     ],
+     "examples": [
+      {
+       "target": "Ich weiß, dass die Straße groß ist.",
+       "gloss": "I know that the street is big."
+      },
+      {
+       "target": "Im Sommer essen wir draußen.",
+       "gloss": "In summer we eat outside."
+      },
+      {
+       "target": "Der Fluss fließt sehr langsam.",
+       "gloss": "The river flows very slowly."
+      },
+      {
+       "target": "Mein Fuß tut weh.",
+       "gloss": "My foot hurts."
+      },
+      {
+       "target": "Viele Grüße aus Hamburg!",
+       "gloss": "Greetings from Hamburg!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a0-grossschreibung",
+     "title": "Every noun is capitalised",
+     "summary": "German capitalises every noun, not just names, and it does so wherever the noun stands in the sentence: der Hund, das Wasser, ein Gespräch, mit dem Zug. Words borrowed into the noun slot are capitalised too, so an infinitive used as a noun becomes das Essen, das Lesen, beim Laufen, and an adjective used as a noun becomes das Gute, etwas Neues, nichts Wichtiges. The formal you is capitalised in all its forms, Sie, Ihnen, Ihr, which visually separates it from sie meaning she or they; the informal du, dich, dein stay in lower case. Everything that is not a noun stays lower case, including ich, adjectives and verbs. The practical signal is simple: if an article, a possessive or an adjective ending comes first, a capitalised noun is on its way.",
+     "tables": [
+      "Word type            Case      Example\n------------------   -------   -------------------------\nall nouns            capital   der Hund, das Wasser\ninfinitive as noun   capital   das Essen, beim Laufen\nadjective as noun    capital   etwas Neues, das Gute\nformal you           capital   Sie, Ihnen, Ihr Name\ninformal you         lower     du, dich, dein Name\nI                    lower     ich\nadjectives, verbs    lower     gut, klein, gehen, sehen"
+     ],
+     "examples": [
+      {
+       "target": "Der Hund trinkt Wasser.",
+       "gloss": "The dog is drinking water."
+      },
+      {
+       "target": "Das Lesen macht mir Spaß.",
+       "gloss": "Reading is fun for me."
+      },
+      {
+       "target": "Können Sie mir Ihre Telefonnummer geben?",
+       "gloss": "Can you give me your telephone number?"
+      },
+      {
+       "target": "Ich habe heute etwas Neues gelernt.",
+       "gloss": "I learned something new today."
+      },
+      {
+       "target": "Am Montag fahre ich mit dem Zug nach Hamburg.",
+       "gloss": "On Monday I am going to Hamburg by train."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a0-auslautverhaertung",
+     "title": "Final b, d, g harden to p, t, k",
+     "summary": "At the end of a word or a syllable, the letters b, d and g lose their voice and are pronounced p, t and k. So Hund sounds like Hunt, Tag sounds like Tak, halb sounds like halp and Berg sounds like Berk. The spelling never changes, which is why the soft sound comes back as soon as an ending follows: Hund but Hunde, Tag but Tage, gelb but ein gelbes Auto. The ending -ig is pronounced with the soft ich-Laut in standard German, so wichtig, günstig and zwanzig end like ich; add an ending and it turns back into a normal g, as in wichtige Termine. The trap is spelling what you hear and writing Hunt or Tak.",
+     "tables": [
+      "Written   Spoken as   With an ending\n-------   ---------   ---------------------\nHund      Hunt        die Hunde (soft d)\nTag       Tak         die Tage (soft g)\nhalb      halp        die halbe Stunde\ngelb      gelp        ein gelbes Auto\nBerg      Berk        die Berge\nwichtig   like ich    wichtige Termine"
+     ],
+     "examples": [
+      {
+       "target": "Der Hund ist klein, aber die Hunde sind laut.",
+       "gloss": "The dog is small, but the dogs are loud."
+      },
+      {
+       "target": "Der Tag war lang.",
+       "gloss": "The day was long."
+      },
+      {
+       "target": "Das ist sehr wichtig.",
+       "gloss": "That is very important."
+      },
+      {
+       "target": "Der Berg ist hoch, die Berge sind schön.",
+       "gloss": "The mountain is high, the mountains are beautiful."
+      },
+      {
+       "target": "Ich warte eine halbe Stunde.",
+       "gloss": "I am waiting half an hour."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ]
+  },
+  {
+   "levelId": "A1",
+   "intro": "A1 grammar builds the survival core of German: the present tense, sein and haben, the verb in position two, gender and articles, plurals, the accusative and the dative, negation, the modal verbs with the Satzklammer, and the Perfekt you need to talk about yesterday.",
+   "sources": [
+    "goethe-a1",
+    "goethe-wortliste"
+   ],
+   "topics": [
+    {
+     "id": "a1-praesens",
+     "title": "The present tense, including the vowel-changing verbs",
+     "summary": "One present tense covers both English forms, so ich arbeite means I work and I am working. Take the infinitive, drop -en and add the endings -e, -st, -t, -en, -t, -en. Verbs whose stem ends in d or t insert an e for pronunciation (du arbeitest, er findet), and stems ending in s, ß, z or x add only -t in the du form (du heißt, du sitzt). A large group of strong verbs changes its stem vowel in the du and er forms only, never in the plural: a becomes ä (fahren, du fährst), e becomes i (sprechen, du sprichst), e becomes ie (sehen, du siehst) and au becomes äu (laufen, du läufst). Nehmen is the messiest of them, du nimmst, er nimmt. The subject pronoun is obligatory in German, unlike in Portuguese or Spanish.",
+     "tables": [
+      "           machen    arbeiten     heißen\n--------   -------   ----------   -------\nich        mache     arbeite      heiße\ndu         machst    arbeitest    heißt\ner/sie/es  macht     arbeitet     heißt\nwir        machen    arbeiten     heißen\nihr        macht     arbeitet     heißt\nsie/Sie    machen    arbeiten     heißen",
+      "Vowel change (du and er/sie/es only)\n------------------------------------------\na  > ä    fahren    du fährst    er fährt\na  > ä    schlafen  du schläfst  er schläft\ne  > i    sprechen  du sprichst  er spricht\ne  > i    essen     du isst      er isst\ne  > ie   sehen     du siehst    er sieht\ne  > ie   lesen     du liest     er liest\nau > äu   laufen    du läufst    er läuft\nspecial   nehmen    du nimmst    er nimmt"
+     ],
+     "examples": [
+      {
+       "target": "Ich arbeite in einem Büro.",
+       "gloss": "I work in an office."
+      },
+      {
+       "target": "Wie heißt du?",
+       "gloss": "What is your name?"
+      },
+      {
+       "target": "Er fährt jeden Tag mit dem Bus.",
+       "gloss": "He goes by bus every day."
+      },
+      {
+       "target": "Sprichst du Deutsch?",
+       "gloss": "Do you speak German?"
+      },
+      {
+       "target": "Sie liest gern Romane, aber wir lesen lieber Zeitung.",
+       "gloss": "She likes reading novels, but we prefer reading the newspaper."
+      },
+      {
+       "target": "Nimmst du noch einen Kaffee?",
+       "gloss": "Are you having another coffee?"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-sein-haben",
+     "title": "sein and haben, present and Präteritum",
+     "summary": "Sein (to be) and haben (to have) are the two most frequent verbs in German and both are irregular. You need them for descriptions, for age and for feelings, and later as the auxiliaries that build the Perfekt. Unlike Portuguese, German has only one verb for to be, so both a permanent identity and a temporary state use sein: Ich bin Lehrer and Ich bin müde. Haben covers possession and a set of fixed states where English uses to be: Ich habe Hunger (I am hungry), Ich habe Durst, Ich habe Angst. These two verbs also break the general rule that spoken German prefers the Perfekt for the past. In speech you say ich war and ich hatte, not ich bin gewesen or ich habe gehabt, so learn the Präteritum forms right away.",
+     "tables": [
+      "            sein          haben\n---------   -----------   -----------\nich         bin           habe\ndu          bist          hast\ner/sie/es   ist           hat\nwir         sind          haben\nihr         seid          habt\nsie/Sie     sind          haben",
+      "Präteritum (used in speech, not the Perfekt)\n--------------------------------------------\nich war        ich hatte\ndu warst       du hattest\ner war         er hatte\nwir waren      wir hatten\nihr wart       ihr hattet\nsie waren      sie hatten",
+      "haben where English uses to be\n------------------------------\nIch habe Hunger.     I am hungry.\nIch habe Durst.      I am thirsty.\nIch habe Angst.      I am afraid.\nIch habe recht.      I am right.\nIch bin 30 Jahre alt.  I am 30. (sein for age)"
+     ],
+     "examples": [
+      {
+       "target": "Ich bin Lehrer und meine Frau ist Ärztin.",
+       "gloss": "I am a teacher and my wife is a doctor."
+      },
+      {
+       "target": "Hast du Hunger? Ja, und ich habe auch Durst.",
+       "gloss": "Are you hungry? Yes, and I am thirsty too."
+      },
+      {
+       "target": "Wir sind seit zwei Jahren hier.",
+       "gloss": "We have been here for two years."
+      },
+      {
+       "target": "Gestern war ich krank und hatte Fieber.",
+       "gloss": "Yesterday I was ill and had a fever."
+      },
+      {
+       "target": "Wart ihr schon einmal in Dresden?",
+       "gloss": "Have you ever been to Dresden?"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-satzstellung",
+     "title": "Word order: the verb in position two, questions and the imperative",
+     "summary": "German word order is not free, it is anchored by one iron rule: in a statement the conjugated verb stands in POSITION TWO. Position one holds exactly one element, and it does not have to be the subject; put a time, a place or an object there and the subject simply moves behind the verb. Heute gehe ich ins Kino, never Heute ich gehe. Yes or no questions and commands move the verb to position one instead: Gehst du mit? Komm mit! W-questions put the question word first and the verb straight after it: Wann kommst du? The imperative has three forms, du without an ending (komm, geh, but arbeite with the extra e), ihr identical to the present (kommt), and Sie with the pronoun after the verb (Kommen Sie bitte).",
+     "tables": [
+      "Position 1     Verb 2   Rest\n------------   ------   -------------------------\nIch            gehe     heute ins Kino.\nHeute          gehe     ich ins Kino.\nIns Kino       gehe     ich heute.\nAm Montag      hat      er keine Zeit.\nMeinen Bruder  sehe     ich morgen.",
+      "Question type    Order                 Example\n--------------   -------------------   ---------------------\nyes/no           verb first            Kommst du mit?\nW-question       W-word + verb         Wann kommst du?\nstatement        verb second           Du kommst um acht.",
+      "Imperative\n----------------------------------------\ndu     Komm!   Geh!   Arbeite!  Sprich!\nihr    Kommt!  Geht!  Arbeitet! Sprecht!\nSie    Kommen Sie!  Gehen Sie!  Sprechen Sie!\nsein   Sei ruhig!  Seid ruhig!  Seien Sie ruhig!"
+     ],
+     "examples": [
+      {
+       "target": "Morgen fahre ich nach Köln.",
+       "gloss": "Tomorrow I am going to Cologne."
+      },
+      {
+       "target": "Am Wochenende arbeitet meine Schwester nicht.",
+       "gloss": "At the weekend my sister does not work."
+      },
+      {
+       "target": "Wann beginnt der Kurs?",
+       "gloss": "When does the course start?"
+      },
+      {
+       "target": "Hast du meinen Schlüssel gesehen?",
+       "gloss": "Have you seen my key?"
+      },
+      {
+       "target": "Sprechen Sie bitte langsamer.",
+       "gloss": "Please speak more slowly."
+      },
+      {
+       "target": "Komm her und hilf mir!",
+       "gloss": "Come here and help me!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-genus-artikel",
+     "title": "Gender, the articles and the possessives",
+     "summary": "Every German noun is masculine, feminine or neuter, and the gender is a property of the word, not of its meaning, which is why das Mädchen (the girl) is neuter. Always learn the noun together with its article. Some endings are reliable: nouns in -ung, -heit, -keit, -schaft, -ion and -e are usually feminine, nouns in -er, -ling and -ismus are usually masculine, and nouns in -chen, -lein, -um and -ment are neuter. The definite article der, die, das points to something known, the indefinite ein, eine, ein introduces something new, and there is no plural of ein, you simply drop it. The possessives mein, dein, sein, ihr, unser, euer, ihr and formal Ihr take exactly the same endings as ein, which is why they are called ein-words. Note that sein means his and ihr means her, chosen by the OWNER, not by the thing owned.",
+     "tables": [
+      "             masc.   fem.   neut.   plural\n----------   -----   ----   -----   ------\ndefinite     der     die    das     die\nindefinite   ein     eine   ein     (none)\nnegative     kein    keine  kein    keine\npossessive   mein    meine  mein    meine",
+      "Ending clues\n-------------------------------------------\nfeminine   -ung -heit -keit -schaft -ion -e\n           die Zeitung, die Freiheit, die Lampe\nmasculine  -er -ling -ismus, days, months\n           der Lehrer, der Montag, der Mai\nneuter     -chen -lein -um -ment\n           das Mädchen, das Zentrum",
+      "Possessive articles\n--------------------------------\nich  mein      wir  unser\ndu   dein      ihr  euer\ner   sein      sie  ihr\nsie  ihr       Sie  Ihr\nes   sein"
+     ],
+     "examples": [
+      {
+       "target": "Der Mann, die Frau und das Kind warten draußen.",
+       "gloss": "The man, the woman and the child are waiting outside."
+      },
+      {
+       "target": "Ich suche eine Wohnung in der Stadt.",
+       "gloss": "I am looking for a flat in the city."
+      },
+      {
+       "target": "Das ist mein Bruder und das ist seine Freundin.",
+       "gloss": "This is my brother and this is his girlfriend."
+      },
+      {
+       "target": "Wo sind eure Kinder?",
+       "gloss": "Where are your children?"
+      },
+      {
+       "target": "Die Zeitung liegt auf dem Tisch.",
+       "gloss": "The newspaper is on the table."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-plural",
+     "title": "Noun plurals",
+     "summary": "German has no single plural ending, it has five, and the plural belongs to the word just as the gender does, so learn it with the noun from the first day. The five patterns are: no ending, sometimes with an umlaut (der Lehrer, die Lehrer; der Vater, die Väter); -e, often with an umlaut (der Tag, die Tage; die Stadt, die Städte); -er, always with an umlaut where the vowel allows it (das Kind, die Kinder; das Buch, die Bücher); -n or -en, never with an umlaut (die Frau, die Frauen; die Lampe, die Lampen); and -s for many foreign words and short forms (das Auto, die Autos; das Handy, die Handys). One reliable regularity: almost every feminine noun takes -n or -en. In the plural the article is always die in the nominative and accusative, whatever the gender was in the singular.",
+     "tables": [
+      "Pattern   Singular       Plural         Typical for\n-------   ------------   ------------   -------------------\n-         der Lehrer     die Lehrer     nouns in -er, -en, -el\n- + Uml.  der Vater      die Väter      a few masculines\n-e        der Tag        die Tage       many masculines\n-e + Uml. die Stadt      die Städte     short feminines\n-er + Um. das Kind       die Kinder     many neuters\n-er + Um. das Buch       die Bücher     one-syllable neuters\n-n/-en    die Frau       die Frauen     almost all feminines\n-n/-en    die Lampe      die Lampen     feminines in -e\n-s        das Auto       die Autos      loanwords, short forms",
+      "Watch out\n----------------------------------------\nFeminine nouns take -n or -en, not -e.\nIn the plural the article is always die.\nIn the dative plural the noun adds -n:\n  mit den Kindern, mit den Freunden"
+     ],
+     "examples": [
+      {
+       "target": "Die Kinder spielen im Garten.",
+       "gloss": "The children are playing in the garden."
+      },
+      {
+       "target": "Wir haben zwei Autos und drei Fahrräder.",
+       "gloss": "We have two cars and three bicycles."
+      },
+      {
+       "target": "In der Stadt gibt es viele Geschäfte.",
+       "gloss": "There are many shops in the city."
+      },
+      {
+       "target": "Meine Bücher stehen im Regal.",
+       "gloss": "My books are on the shelf."
+      },
+      {
+       "target": "Die Frauen arbeiten in demselben Büro.",
+       "gloss": "The women work in the same office."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-akkusativ",
+     "title": "The accusative case",
+     "summary": "The accusative marks the direct object, the person or thing the action lands on. The good news is that only the masculine changes: der becomes den and ein becomes einen, while feminine, neuter and plural look exactly like the nominative. Kein and all the possessives follow ein, so you get keinen Hund, meinen Bruder. The personal pronouns change more visibly: ich becomes mich, du becomes dich, er becomes ihn, wir becomes uns, ihr becomes euch. The accusative is also required after the prepositions durch, für, gegen, ohne and um, and it appears in fixed time expressions such as jeden Tag and letzte Woche. The classic trap is Ich sehe der Mann; the man is the object, so it must be Ich sehe den Mann.",
+     "tables": [
+      "              masc.     fem.    neut.   plural\n-----------   -------   -----   -----   ------\nnominative    der       die     das     die\naccusative    den       die     das     die\nnominative    ein       eine    ein     meine\naccusative    einen     eine    ein     meine",
+      "Pronouns\n-----------------------------\nnom.  ich    du     er    sie   es   wir   ihr    sie/Sie\nacc.  mich   dich   ihn   sie   es   uns   euch   sie/Sie",
+      "Always accusative\n----------------------------------------\ndurch   Wir gehen durch den Park.\nfür     Das ist für meinen Vater.\ngegen   Ich bin gegen den Plan.\nohne    Ich komme ohne meinen Bruder.\num      Wir sitzen um den Tisch.\ntime    jeden Tag, letzte Woche, nächsten Monat"
+     ],
+     "examples": [
+      {
+       "target": "Ich sehe den Mann und die Frau.",
+       "gloss": "I see the man and the woman."
+      },
+      {
+       "target": "Wir suchen einen Tisch für vier Personen.",
+       "gloss": "We are looking for a table for four people."
+      },
+      {
+       "target": "Kennst du ihn?",
+       "gloss": "Do you know him?"
+      },
+      {
+       "target": "Sie kauft ein Geschenk für ihren Sohn.",
+       "gloss": "She is buying a present for her son."
+      },
+      {
+       "target": "Ohne meinen Schlüssel kann ich nicht ins Haus.",
+       "gloss": "Without my key I cannot get into the house."
+      },
+      {
+       "target": "Jeden Morgen trinke ich einen Kaffee.",
+       "gloss": "Every morning I drink a coffee."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-negation",
+     "title": "nicht versus kein",
+     "summary": "German negates with two different words and the choice depends on what you are negating. Kein negates a noun that carries an indefinite article or no article at all, and it takes the ein endings: Ich habe kein Auto, Ich trinke keinen Kaffee, Das sind keine Probleme. Nicht negates everything else, that is verbs, adjectives, adverbs and any noun with a definite article or a possessive: Ich arbeite nicht, Das ist nicht mein Auto, Der Film war nicht gut. Placement matters as much as the choice. Nicht stands at the end of the sentence when it negates the whole statement, but it moves in front of the element it targets: in front of an adjective (nicht gut), a place phrase (nicht in Berlin) and always in front of the second verb part in the Satzklammer (Ich kann heute nicht kommen).",
+     "tables": [
+      "Use kein when                      Use nicht when\n--------------------------------   -----------------------------\nthe noun has ein: kein Auto        the noun has der: nicht der Chef\nthe noun has no article:           the noun has a possessive:\n  Ich trinke keinen Kaffee.          Das ist nicht mein Buch.\nplural without article:            you negate a verb: Ich komme nicht.\n  Ich habe keine Kinder.           you negate an adjective: nicht teuer",
+      "kein endings (like ein)\n----------------------------------\n           masc.     fem.     neut.   plural\nnom.       kein      keine    kein    keine\nacc.       keinen    keine    kein    keine",
+      "Where nicht goes\n-----------------------------------------\nwhole sentence, at the end   Ich arbeite heute nicht.\nbefore an adjective          Das Zimmer ist nicht groß.\nbefore a place phrase        Wir wohnen nicht in Berlin.\nbefore the second verb part  Ich kann nicht kommen."
+     ],
+     "examples": [
+      {
+       "target": "Ich habe kein Auto, ich fahre Fahrrad.",
+       "gloss": "I do not have a car, I ride a bike."
+      },
+      {
+       "target": "Das ist nicht mein Mantel.",
+       "gloss": "That is not my coat."
+      },
+      {
+       "target": "Wir trinken keinen Alkohol.",
+       "gloss": "We do not drink alcohol."
+      },
+      {
+       "target": "Der Film war nicht besonders gut.",
+       "gloss": "The film was not particularly good."
+      },
+      {
+       "target": "Heute kann ich leider nicht kommen.",
+       "gloss": "Unfortunately I cannot come today."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-modalverben-satzklammer",
+     "title": "Modal verbs, the Satzklammer and separable verbs",
+     "summary": "The modal verbs können, müssen, dürfen, wollen, sollen and mögen change their vowel in the singular and take no ending in the ich and er forms: ich kann, er kann, wir können. They also create the structure that shapes every longer German sentence, the SATZKLAMMER or sentence bracket: the modal is conjugated in position two and the main verb waits at the very end as a bare infinitive. Ich muss heute Abend meine Hausaufgaben machen. Two meanings need care. Nicht müssen means do not have to, while nicht dürfen means must not, and möchte (would like) is the polite everyday form of mögen. Separable verbs work by the same bracket logic: the prefix detaches and drops to the end, ich rufe dich morgen an, but it stays attached whenever the verb is an infinitive at the end, ich will dich morgen anrufen.",
+     "tables": [
+      "           können   müssen   dürfen   wollen   sollen   mögen   möchte\n--------   ------   ------   ------   ------   ------   -----   --------\nich        kann     muss     darf     will     soll     mag     möchte\ndu         kannst   musst    darfst   willst   sollst   magst   möchtest\ner/sie/es  kann     muss     darf     will     soll     mag     möchte\nwir        können   müssen   dürfen   wollen   sollen   mögen   möchten\nihr        könnt    müsst    dürft    wollt    sollt    mögt    möchtet\nsie/Sie    können   müssen   dürfen   wollen   sollen   mögen   möchten",
+      "The Satzklammer\n----------------------------------------------------\nPos.1      Verb 2    middle field            End\nIch        muss      heute Abend             arbeiten.\nWir        wollen    im Sommer nach Italien  fahren.\nSie        kann      sehr gut Klavier        spielen.\nDer Zug    fährt     um acht Uhr             ab.       (separable)\nIch        rufe      dich morgen             an.       (separable)",
+      "Meaning traps\n--------------------------------------------\nDu musst nicht kommen.   You do not have to come.\nDu darfst nicht kommen.  You must not come.\nIch möchte einen Tee.    I would like a tea. (polite)\nIch mag Tee.             I like tea. (taste)",
+      "Common separable prefixes\n-----------------------------------------\nan- auf- aus- ein- mit- nach- vor- zu-\nab- her- hin- los- weg- zurück-\nanrufen, aufstehen, einkaufen, mitkommen,\nabfahren, zurückkommen, fernsehen"
+     ],
+     "examples": [
+      {
+       "target": "Ich kann leider nicht schwimmen.",
+       "gloss": "Unfortunately I cannot swim."
+      },
+      {
+       "target": "Wir müssen morgen früh aufstehen.",
+       "gloss": "We have to get up early tomorrow."
+      },
+      {
+       "target": "Hier darf man nicht rauchen.",
+       "gloss": "You are not allowed to smoke here."
+      },
+      {
+       "target": "Möchten Sie noch einen Kaffee trinken?",
+       "gloss": "Would you like to drink another coffee?"
+      },
+      {
+       "target": "Der Zug fährt um Viertel nach acht ab.",
+       "gloss": "The train leaves at a quarter past eight."
+      },
+      {
+       "target": "Ich rufe dich heute Abend an.",
+       "gloss": "I will call you this evening."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-dativ",
+     "title": "The dative case and the verbs that take it",
+     "summary": "The dative marks the indirect object, the person who receives or benefits: Ich gebe dem Kind das Buch. Here the article changes in every gender: dem for masculine and neuter, der for feminine, den for the plural, and the plural noun itself adds an -n unless it already ends in -n or -s (mit den Kindern, mit den Freunden). Ein-words follow the same pattern: einem, einer, einem, keinen. The pronouns are mir, dir, ihm, ihr, ihm, uns, euch, ihnen and formal Ihnen. Nine prepositions always take the dative: aus, außer, bei, mit, nach, seit, von, zu, gegenüber. A group of very common verbs takes a dative object where English would use a direct one, among them helfen, danken, gehören, gefallen, passen, schmecken, antworten and glauben when the object is a person. Ich helfe dir, never ich helfe dich.",
+     "tables": [
+      "              masc.    fem.     neut.    plural\n-----------   ------   ------   ------   ---------\nnominative    der      die      das      die\naccusative    den      die      das      die\ndative        dem      der      dem      den + -n\ndative ein-   einem    einer    einem    keinen + -n",
+      "Pronouns\n----------------------------------------------------\nnom.  ich   du     er     sie   es    wir   ihr    sie/Sie\nacc.  mich  dich   ihn    sie   es    uns   euch   sie/Sie\ndat.  mir   dir    ihm    ihr   ihm   uns   euch   ihnen/Ihnen",
+      "Always dative\n-------------------------------------------\naus         Ich komme aus der Schweiz.\naußer       Außer mir war niemand da.\nbei         Ich wohne bei meinen Eltern.\nmit         Wir fahren mit dem Auto.\nnach        Nach dem Essen gehen wir.\nseit        Seit einem Jahr lerne ich Deutsch.\nvon         Das ist ein Geschenk von meiner Tante.\nzu          Ich gehe zum Arzt. (zu dem = zum)\ngegenüber   Die Bank liegt dem Bahnhof gegenüber.",
+      "Dative verbs\n-------------------------------------------\nhelfen      Ich helfe dir.\ndanken      Ich danke Ihnen.\ngehören     Das Buch gehört meinem Bruder.\ngefallen    Die Stadt gefällt mir.\npassen      Der Termin passt mir nicht.\nschmecken   Der Kuchen schmeckt den Kindern.\nantworten   Antworte mir bitte!\nglauben     Ich glaube dir."
+     ],
+     "examples": [
+      {
+       "target": "Ich gebe dem Kind einen Apfel.",
+       "gloss": "I am giving the child an apple."
+      },
+      {
+       "target": "Kannst du mir bitte helfen?",
+       "gloss": "Can you help me, please?"
+      },
+      {
+       "target": "Wir fahren mit dem Bus zum Bahnhof.",
+       "gloss": "We are going to the station by bus."
+      },
+      {
+       "target": "Das Auto gehört meiner Schwester.",
+       "gloss": "The car belongs to my sister."
+      },
+      {
+       "target": "Wie gefällt Ihnen die Wohnung?",
+       "gloss": "How do you like the flat?"
+      },
+      {
+       "target": "Seit einem Jahr wohne ich bei meinen Eltern.",
+       "gloss": "I have been living with my parents for a year."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a1-perfekt",
+     "title": "The Perfekt with haben and sein",
+     "summary": "The Perfekt is the normal past tense of spoken German, used for everything the Portuguese pretérito perfeito would cover. It is built from haben or sein in position two plus the Partizip II at the end of the sentence, closing the Satzklammer: Ich habe gestern einen Film gesehen. Weak verbs form the participle with ge- plus stem plus -t (gemacht, gearbeitet, gekauft); strong verbs use ge- plus stem plus -en, often with a vowel change (gesehen, gegangen, gesprochen, getrunken). Verbs with an inseparable prefix and verbs in -ieren take NO ge- (bezahlt, verstanden, studiert), and separable verbs put the ge- in the middle (aufgestanden, eingekauft). The choice of auxiliary is the real trap: sein goes with verbs of movement from place to place (gehen, fahren, kommen, fliegen), with a change of state (aufstehen, einschlafen, werden, wachsen) and with sein, bleiben and passieren. Everything else takes haben.",
+     "tables": [
+      "Verb type          Partizip II       Example\n----------------   ---------------   ----------------------\nweak               ge- + t           machen > gemacht\nweak with d/t      ge- + et          arbeiten > gearbeitet\nstrong             ge- + en          sehen > gesehen\nstrong + vowel     ge- + en          trinken > getrunken\ninseparable        no ge-            bezahlen > bezahlt\nverbs in -ieren    no ge-            studieren > studiert\nseparable          prefix + ge-      einkaufen > eingekauft",
+      "haben or sein\n-------------------------------------------------\nsein    movement A to B   Ich bin nach Berlin gefahren.\nsein    change of state   Er ist früh aufgestanden.\nsein    fixed verbs       sein, bleiben, passieren, werden\nhaben   everything else   Ich habe viel gearbeitet.\nhaben   with an object    Ich habe das Auto gefahren.",
+      "Frequent irregular participles\n-------------------------------------------\nessen > gegessen        trinken > getrunken\ngehen > gegangen        kommen > gekommen\nsehen > gesehen         sprechen > gesprochen\nschreiben > geschrieben lesen > gelesen\nnehmen > genommen       fahren > gefahren\nsein > gewesen          bleiben > geblieben"
+     ],
+     "examples": [
+      {
+       "target": "Ich habe gestern einen guten Film gesehen.",
+       "gloss": "I saw a good film yesterday."
+      },
+      {
+       "target": "Wir sind am Samstag nach Hamburg gefahren.",
+       "gloss": "We went to Hamburg on Saturday."
+      },
+      {
+       "target": "Hast du schon gegessen?",
+       "gloss": "Have you eaten yet?"
+      },
+      {
+       "target": "Er ist um sechs Uhr aufgestanden.",
+       "gloss": "He got up at six o'clock."
+      },
+      {
+       "target": "Sie hat drei Jahre in München studiert.",
+       "gloss": "She studied in Munich for three years."
+      },
+      {
+       "target": "Was ist denn passiert?",
+       "gloss": "What happened?"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ]
+  },
+  {
+   "levelId": "A2",
+   "intro": "A2 grammar puts the case system to work: the dative in full, prepositions sorted by the case they govern, the Wechselpräpositionen with the wo and wohin rule, reflexive verbs, subordinate clauses, the Präteritum, comparison, and the adjective endings that decide whether you sound like a beginner or not.",
+   "sources": [
+    "goethe-a2",
+    "goethe-wortliste"
+   ],
+   "topics": [
+    {
+     "id": "a2-dativ-komplett",
+     "title": "The dative in full",
+     "summary": "At A2 the dative stops being a list of prepositions and becomes a working case. Three things decide it. First, the indirect object: with verbs of giving, sending, showing and telling, the person is dative and the thing is accusative, Ich schicke meinem Kollegen eine Mail. Second, the fixed order in the middle field: if both objects are nouns, dative comes first (Ich gebe dem Kind das Buch), but if one is a pronoun, the pronoun comes first (Ich gebe es dem Kind), and if both are pronouns the accusative wins (Ich gebe es ihm). Third, the plural -n, which learners forget constantly: every dative plural noun adds -n unless the plural already ends in -n or -s, so mit den Freunden, mit den Kindern, but mit den Autos. Remember also that dative prepositions contract: zu dem becomes zum, zu der becomes zur, bei dem becomes beim, von dem becomes vom, in dem becomes im.",
+     "tables": [
+      "Order in the middle field\n----------------------------------------------\nnoun + noun        dative first\n                   Ich gebe dem Kind das Buch.\npronoun + noun     pronoun first\n                   Ich gebe es dem Kind.\n                   Ich gebe ihm das Buch.\npronoun + pronoun  accusative first\n                   Ich gebe es ihm.",
+      "Dative plural adds -n\n-------------------------------------\ndie Freunde   > mit den Freunden\ndie Kinder    > mit den Kindern\ndie Frauen    > mit den Frauen  (already -n)\ndie Autos     > mit den Autos   (plural in -s)",
+      "Contractions\n---------------------------------\nzu dem  = zum      zu der = zur\nbei dem = beim     von dem = vom\nin dem  = im       an dem = am"
+     ],
+     "examples": [
+      {
+       "target": "Ich schicke meinem Kollegen eine Mail.",
+       "gloss": "I am sending my colleague an email."
+      },
+      {
+       "target": "Kannst du es mir bitte erklären?",
+       "gloss": "Can you explain it to me, please?"
+      },
+      {
+       "target": "Wir fahren mit den Kindern ans Meer.",
+       "gloss": "We are going to the sea with the children."
+      },
+      {
+       "target": "Nach dem Essen gehe ich zum Arzt.",
+       "gloss": "After the meal I am going to the doctor."
+      },
+      {
+       "target": "Zeig ihn mir bitte!",
+       "gloss": "Please show it to me!"
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-praepositionen-kasus",
+     "title": "Prepositions grouped by the case they govern",
+     "summary": "German prepositions do not choose a case by meaning, they simply carry one with them, so the only workable method is to learn them in blocks. Five take the accusative always: durch, für, gegen, ohne, um, with bis and entlang joining them. Nine take the dative always: aus, außer, bei, mit, nach, seit, von, zu, gegenüber. Two pairs are worth separating carefully. Nach and zu both translate as to, but nach goes with countries and cities without an article and with nach Hause, while zu goes with people, institutions and everything with an article: nach Berlin, nach Hause, zum Arzt, zur Schule, zu meiner Tante. Bei and mit are equally distinct, bei means at somebody's place or during, mit means with or by means of transport: bei meinen Eltern, mit dem Zug. Learn each preposition as a package, the word and its case together.",
+     "tables": [
+      "Always accusative\n---------------------------------------\ndurch     durch den Wald\nfür       für meinen Sohn\ngegen     gegen die Wand\nohne      ohne ihren Mann\num        um den See\nbis       bis nächsten Freitag\nentlang   die Straße entlang (follows the noun)",
+      "Always dative\n---------------------------------------\naus         aus dem Haus\naußer       außer meiner Schwester\nbei         beim Arzt, bei der Arbeit\nmit         mit dem Fahrrad\nnach        nach der Arbeit, nach Hause\nseit        seit einem Monat\nvon         vom Bahnhof\nzu          zur Schule, zu meinen Eltern\ngegenüber   dem Park gegenüber",
+      "nach or zu\n-------------------------------------------\nnach   countries, cities, home\n       nach Deutschland, nach Köln, nach Hause\nzu     people, shops, institutions\n       zum Bäcker, zur Post, zu meiner Tante\nbei    location at somebody's place\n       Ich bin bei meiner Tante. (I am there)"
+     ],
+     "examples": [
+      {
+       "target": "Wir fahren ohne unsere Kinder in den Urlaub.",
+       "gloss": "We are going on holiday without our children."
+      },
+      {
+       "target": "Nach der Arbeit gehe ich zum Sport.",
+       "gloss": "After work I go to sport."
+      },
+      {
+       "target": "Seit einem Monat wohne ich bei einer Freundin.",
+       "gloss": "I have been living at a friend's place for a month."
+      },
+      {
+       "target": "Der Weg führt durch den Wald bis zum See.",
+       "gloss": "The path leads through the forest to the lake."
+      },
+      {
+       "target": "Das Geschenk ist für meine Großeltern.",
+       "gloss": "The present is for my grandparents."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-wechselpraepositionen",
+     "title": "The nine Wechselpräpositionen, the wo or wohin rule and the verb pairs",
+     "summary": "Nine prepositions take either the accusative or the dative, and you decide with one question. If the sentence answers WOHIN, that is movement towards a destination, use the accusative. If it answers WO, that is a position without change of place, use the dative. Ich hänge das Bild an die Wand (wohin, accusative) against Das Bild hängt an der Wand (wo, dative). The nine are an, auf, hinter, in, neben, über, unter, vor and zwischen. Note that movement alone does not force the accusative: Ich laufe im Park is dative because the running happens inside the park, while Ich laufe in den Park is accusative because the park is the destination. German backs the rule up with verb pairs. Legen, stellen, setzen and transitive hängen are weak, take a direct object and answer wohin with the accusative, while liegen, stehen, sitzen and strong hängen have no object and answer wo with the dative. Verb and case must agree: after ich lege the preposition needs the accusative, after es liegt it needs the dative. In time expressions the same nine prepositions always take the dative: am Montag, im Januar, vor einer Woche.",
+     "tables": [
+      "The nine   Example wohin (acc.)      Example wo (dat.)\n--------   ----------------------   ----------------------\nan         an die Wand              an der Wand\nauf        auf den Tisch            auf dem Tisch\nhinter     hinter das Haus          hinter dem Haus\nin         in die Küche             in der Küche\nneben      neben den Schrank        neben dem Schrank\nüber       über das Bett            über dem Bett\nunter      unter den Stuhl          unter dem Stuhl\nvor        vor die Tür              vor der Tür\nzwischen   zwischen die Bäume       zwischen den Bäumen",
+      "The test question\n-------------------------------------------\nWohin?  destination, movement to  > accusative\n        Ich stelle die Flasche auf den Tisch.\nWo?     position, no change of place > dative\n        Die Flasche steht auf dem Tisch.",
+      "The verb pairs\n-----------------------------------------------------\nwohin + accusative           wo + dative\nlegen, legte, gelegt         liegen, lag, gelegen\nstellen, stellte, gestellt   stehen, stand, gestanden\nsetzen, setzte, gesetzt      sitzen, saß, gesessen\nhängen, hängte, gehängt      hängen, hing, gehangen\nIch lege das Handy auf den Tisch.  (acc.)\nDas Handy liegt auf dem Tisch.     (dat.)\nIch stelle die Vase in das Regal.  (acc.)\nDie Vase steht in dem Regal.       (dat.)",
+      "Time expressions take the dative\n-------------------------------------\nam Montag, am Abend, am Wochenende\nim Januar, im Sommer, im Jahr 2026\nvor einer Woche, in zwei Tagen"
+     ],
+     "examples": [
+      {
+       "target": "Ich lege das Buch auf den Tisch.",
+       "gloss": "I am putting the book on the table."
+      },
+      {
+       "target": "Das Buch liegt auf dem Tisch.",
+       "gloss": "The book is lying on the table."
+      },
+      {
+       "target": "Wir gehen heute Abend in die Stadt.",
+       "gloss": "We are going into town this evening."
+      },
+      {
+       "target": "Wir waren gestern in der Stadt.",
+       "gloss": "We were in town yesterday."
+      },
+      {
+       "target": "Stell die Teller bitte auf den Tisch.",
+       "gloss": "Please put the plates on the table."
+      },
+      {
+       "target": "Das Bild hängt über dem Sofa.",
+       "gloss": "The picture is hanging above the sofa."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-reflexive-verben",
+     "title": "Reflexive verbs in the accusative and the dative",
+     "summary": "A reflexive verb turns the action back onto the subject and needs a reflexive pronoun: ich freue mich, du freust dich, er freut sich. The pronouns are mich, dich, sich, uns, euch, sich, so only the first and second person singular differ from the object pronouns you already know. Most reflexive verbs use the accusative: sich freuen, sich beeilen, sich setzen, sich erinnern, sich interessieren, sich waschen. The dative appears in one clear situation, when the sentence already has a direct object, typically a body part or a piece of clothing: Ich wasche mich but Ich wasche mir die Hände, Ich ziehe mich an but Ich ziehe mir die Schuhe an. Only mir and dir mark the difference; from the third person onwards the form is sich in both cases. Many of these verbs also carry a fixed preposition worth learning with them, such as sich freuen auf and sich interessieren für.",
+     "tables": [
+      "           accusative   dative\n--------   ----------   ------\nich        mich         mir\ndu         dich         dir\ner/sie/es  sich         sich\nwir        uns          uns\nihr        euch         euch\nsie/Sie    sich         sich",
+      "Accusative reflexive verbs\n----------------------------------------\nsich freuen        Ich freue mich.\nsich beeilen       Beeil dich!\nsich setzen        Setzen Sie sich bitte.\nsich erinnern an   Ich erinnere mich an dich.\nsich interessieren für  Er interessiert sich für Musik.\nsich treffen mit   Wir treffen uns um acht.",
+      "Dative when a direct object is present\n--------------------------------------------\nIch wasche mich.        Ich wasche mir die Hände.\nIch ziehe mich an.      Ich ziehe mir die Jacke an.\nIch putze mir die Zähne.\nKannst du dir das vorstellen?"
+     ],
+     "examples": [
+      {
+       "target": "Ich freue mich auf das Wochenende.",
+       "gloss": "I am looking forward to the weekend."
+      },
+      {
+       "target": "Beeil dich, der Bus kommt gleich!",
+       "gloss": "Hurry up, the bus is coming!"
+      },
+      {
+       "target": "Setzen Sie sich bitte, der Arzt kommt sofort.",
+       "gloss": "Please sit down, the doctor is coming right away."
+      },
+      {
+       "target": "Vor dem Essen wasche ich mir die Hände.",
+       "gloss": "Before eating I wash my hands."
+      },
+      {
+       "target": "Wir interessieren uns sehr für alte Filme.",
+       "gloss": "We are very interested in old films."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-trennbar-untrennbar",
+     "title": "Separable versus inseparable prefixes",
+     "summary": "Whether a prefix detaches depends on one thing only, the stress. Separable prefixes are stressed and are the small words you already know as prepositions or adverbs: an, auf, aus, ein, mit, nach, vor, zu, ab, zurück, weg, los, her, hin. They jump to the end of a main clause (ich stehe um sechs auf), stay attached in an infinitive (ich will früh aufstehen) and swallow the ge- of the participle (aufgestanden). Inseparable prefixes are unstressed and never appear as independent words: be-, ge-, er-, ver-, zer-, ent-, emp-, miss-. They stay glued to the verb and their participle takes NO ge- at all (bezahlt, verstanden, erklärt). Six prefixes go both ways, über, unter, um, durch, wieder and wider, and the meaning shifts with the behaviour: er übersetzt den Text (translates, inseparable) against er setzt uns über (ferries us across, separable).",
+     "tables": [
+      "Separable, stressed         Inseparable, unstressed\n-------------------------   ---------------------------\nan- auf- aus- ein- mit-     be- ge- er- ver- zer-\nnach- vor- zu- ab-          ent- emp- miss-\nzurück- weg- los- her- hin-\naufstehen > steht auf       bezahlen > bezahlt nichts\nPartizip aufgestanden       Partizip bezahlt (no ge-)",
+      "The three positions\n--------------------------------------------------\nmain clause    Ich rufe dich morgen an.\nwith a modal   Ich will dich morgen anrufen.\nsubordinate    ..., dass ich dich morgen anrufe.\nPerfekt        Ich habe dich gestern angerufen.",
+      "Prefixes that go both ways\n-----------------------------------------------\nübersetzen (insep.)  Er übersetzt den Text.\nübersetzen (sep.)    Er setzt uns über.\numfahren (insep.)    Wir umfahren die Stadt.\numfahren (sep.)      Er fährt das Schild um.\nwiederholen (insep.) Ich wiederhole den Satz."
+     ],
+     "examples": [
+      {
+       "target": "Der Kurs fängt um neun Uhr an.",
+       "gloss": "The course starts at nine o'clock."
+      },
+      {
+       "target": "Ich habe die Rechnung schon bezahlt.",
+       "gloss": "I have already paid the bill."
+      },
+      {
+       "target": "Kannst du mir die Regel erklären?",
+       "gloss": "Can you explain the rule to me?"
+      },
+      {
+       "target": "Wir sind gestern sehr früh aufgestanden.",
+       "gloss": "We got up very early yesterday."
+      },
+      {
+       "target": "Sie hat den Termin leider vergessen.",
+       "gloss": "Unfortunately she forgot the appointment."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-nebensaetze",
+     "title": "Subordinate clauses with dass, wenn and ob, and the connector deshalb",
+     "summary": "A subordinate clause sends its conjugated verb to the very END, after everything else, and it is always separated by a comma: Ich weiß, dass er heute kommt. If the clause comes first, the whole clause counts as position one, so the main clause verb follows immediately: Wenn ich Zeit habe, komme ich mit. Three conjunctions carry most of A2. Dass introduces a fact after verbs of saying, knowing and thinking. Wenn covers if and whenever, that is a condition or a repeated event. Ob means whether and only introduces an indirect yes or no question, which is where learners slip: after fragen you need ob, not wenn or dass. Deshalb behaves completely differently. It is not a subordinating conjunction but a main clause connector, so it takes position one and the verb still comes second: Ich bin müde, deshalb gehe ich ins Bett.",
+     "tables": [
+      "Conjunction   Meaning              Example\n-----------   ------------------   ----------------------------\ndass          that (a fact)        Ich glaube, dass er recht hat.\nweil          because              Ich bleibe, weil es regnet.\nwenn          if, whenever         Wenn es regnet, bleibe ich zu Hause.\nals           when (once, past)    Als ich klein war, ...\nob            whether              Ich frage, ob er kommt.\ndamit         so that              ..., damit du es verstehst.",
+      "Verb position\n-----------------------------------------------------\nmain clause          Er kommt heute.\nsubordinate          ..., dass er heute kommt.\nwith a modal         ..., dass er heute kommen muss.\nwith a separable v.  ..., dass der Zug um acht abfährt.\nclause first         Wenn er kommt, essen wir.\n                     (verb, verb next to the comma)",
+      "deshalb is not a subordinator\n----------------------------------------------\nEs regnet, deshalb bleibe ich zu Hause.  (verb 2)\nEs regnet, deswegen bleibe ich zu Hause.\nEs regnet, darum bleibe ich zu Hause.\nbut: Ich bleibe zu Hause, weil es regnet. (verb last)"
+     ],
+     "examples": [
+      {
+       "target": "Ich glaube, dass der Zug Verspätung hat.",
+       "gloss": "I think the train is delayed."
+      },
+      {
+       "target": "Wenn ich Zeit habe, besuche ich dich.",
+       "gloss": "If I have time, I will visit you."
+      },
+      {
+       "target": "Können Sie mir sagen, ob der Laden noch offen ist?",
+       "gloss": "Can you tell me whether the shop is still open?"
+      },
+      {
+       "target": "Ich habe morgen einen Termin, deshalb kann ich nicht kommen.",
+       "gloss": "I have an appointment tomorrow, so I cannot come."
+      },
+      {
+       "target": "Sie lernt viel, weil sie die Prüfung bestehen will.",
+       "gloss": "She studies a lot because she wants to pass the exam."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-praeteritum",
+     "title": "The Präteritum, and when to use it instead of the Perfekt",
+     "summary": "The Präteritum is the second past tense. Weak verbs insert -te between the stem and the ending, and the ich and er forms are identical: ich machte, er machte, wir machten. Strong verbs change their stem vowel and take no ending at all in the ich and er forms: ich ging, er ging, wir gingen. A small mixed group does both, with a vowel change plus -te: bringen became brachte, denken became dachte, wissen became wusste, kennen became kannte. The division of labour is a question of register, not of meaning. In everyday speech and in emails, the Perfekt is the normal past. The Präteritum belongs to written narrative, reports and newspapers. The exception you use daily: sein, haben, the modal verbs and es gibt prefer the Präteritum even in conversation, so say ich war, ich hatte, ich musste, es gab, not ich bin gewesen or ich habe gemusst.",
+     "tables": [
+      "           weak: machen   strong: gehen   mixed: bringen\n--------   ------------   -------------   --------------\nich        machte         ging            brachte\ndu         machtest       gingst          brachtest\ner/sie/es  machte         ging            brachte\nwir        machten        gingen          brachten\nihr        machtet        gingt           brachtet\nsie/Sie    machten        gingen          brachten",
+      "Frequent strong forms\n------------------------------------------\ngehen > ging       kommen > kam\nfahren > fuhr      sehen > sah\ngeben > gab        nehmen > nahm\nsprechen > sprach  schreiben > schrieb\ntrinken > trank    finden > fand\nbleiben > blieb    stehen > stand",
+      "Which past do I use\n---------------------------------------------\nspeech, emails         Perfekt\n                       Ich habe gestern gearbeitet.\nstories, reports       Präteritum\n                       Er ging in das Zimmer und sah ...\nsein, haben, modals    Präteritum, even in speech\n                       Ich war krank. Ich hatte keine Zeit.\n                       Wir mussten warten. Es gab kein Brot."
+     ],
+     "examples": [
+      {
+       "target": "Als Kind wohnte ich in einem kleinen Dorf.",
+       "gloss": "As a child I lived in a small village."
+      },
+      {
+       "target": "Gestern war ich müde und hatte keine Lust.",
+       "gloss": "Yesterday I was tired and did not feel like it."
+      },
+      {
+       "target": "Wir mussten zwei Stunden auf den Zug warten.",
+       "gloss": "We had to wait two hours for the train."
+      },
+      {
+       "target": "Er stand auf, ging zum Fenster und öffnete es.",
+       "gloss": "He got up, went to the window and opened it."
+      },
+      {
+       "target": "Es gab damals noch keine Handys.",
+       "gloss": "There were no mobile phones back then."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-komparativ-superlativ",
+     "title": "Comparative and superlative",
+     "summary": "The comparative adds -er and the superlative adds -st, with no equivalent of English more and most: schnell, schneller, am schnellsten. Adjectives ending in -d, -t, -s, -ß, -z or -sch insert an e in the superlative (am ältesten, am heißesten). Many short adjectives take an umlaut in both steps: alt, älter, am ältesten; jung, jünger, am jüngsten; also lang, stark, warm, kalt, groß, kurz. The irregulars are few but constant: gut, besser, am besten; viel, mehr, am meisten; gern, lieber, am liebsten; hoch, höher, am höchsten; nah, näher, am nächsten. Two comparison words must not be swapped: use als for a difference (größer als) and so wie for equality (so groß wie). Before a noun the superlative takes the article and an adjective ending, der schnellste Zug, while the am form is used after the verb.",
+     "tables": [
+      "Base      Comparative   Superlative\n-------   -----------   -------------\nschnell   schneller     am schnellsten\nklein     kleiner       am kleinsten\nalt       älter         am ältesten\njung      jünger        am jüngsten\nlang      länger        am längsten\nwarm      wärmer        am wärmsten\ngroß      größer        am größten",
+      "Irregular\n---------------------------------\ngut    besser    am besten\nviel   mehr      am meisten\ngern   lieber    am liebsten\nhoch   höher     am höchsten\nnah    näher     am nächsten",
+      "Comparison words\n--------------------------------------------\ndifference    als    Berlin ist größer als Bonn.\nequality      wie    Er ist so alt wie ich.\nnot equal     nicht so ... wie\n              Heute ist es nicht so kalt wie gestern.\nbefore a noun der schnellste Zug, die beste Idee\nafter a verb  Dieser Zug ist am schnellsten."
+     ],
+     "examples": [
+      {
+       "target": "Der Zug ist schneller als das Auto.",
+       "gloss": "The train is faster than the car."
+      },
+      {
+       "target": "Meine Schwester ist so groß wie ich.",
+       "gloss": "My sister is as tall as I am."
+      },
+      {
+       "target": "Im Juli ist es am wärmsten.",
+       "gloss": "It is warmest in July."
+      },
+      {
+       "target": "Das war die beste Entscheidung meines Lebens.",
+       "gloss": "That was the best decision of my life."
+      },
+      {
+       "target": "Ich trinke gern Tee, aber lieber Kaffee.",
+       "gloss": "I like drinking tea, but I prefer coffee."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-adjektivendungen",
+     "title": "Adjective endings, all three patterns",
+     "summary": "An adjective in front of a noun must take an ending, and which ending depends on what stands before the adjective. There are three patterns. After a definite article (der, die, das, dieser, jeder, alle) the pattern is WEAK: -e in the nominative singular of all genders and in the accusative feminine and neuter, and -en everywhere else. After ein, kein and the possessives the pattern is MIXED: the adjective must supply the gender information the article fails to show, so masculine nominative takes -er (ein guter Wein) and neuter nominative and accusative take -es (ein gutes Bier), and the rest is like the weak pattern. With no article at all the pattern is STRONG: the adjective takes over the article endings themselves, guter Wein, gute Milch, gutes Bier, mit gutem Wein. An adjective after the verb takes no ending, Der Wein ist gut. Do not forget the dative plural, where noun and adjective both end in -n, mit den kleinen Kindern.",
+     "tables": [
+      "Weak: after der, die, das, dieser, jeder, alle\n-----------------------------------------------------------\n        masc.               fem.              neut.              plural\nnom.    der gute Wein       die gute Milch    das gute Bier      die guten Weine\nacc.    den guten Wein      die gute Milch    das gute Bier      die guten Weine\ndat.    dem guten Wein      der guten Milch   dem guten Bier     den guten Weinen\ngen.    des guten Weines    der guten Milch   des guten Bieres   der guten Weine",
+      "Mixed: after ein, kein, mein, dein, sein, ihr, unser, euer\n-----------------------------------------------------------\n        masc.                fem.                neut.                plural\nnom.    ein guter Wein       eine gute Milch     ein gutes Bier       keine guten Weine\nacc.    einen guten Wein     eine gute Milch     ein gutes Bier       keine guten Weine\ndat.    einem guten Wein     einer guten Milch   einem guten Bier     keinen guten Weinen\ngen.    eines guten Weines   einer guten Milch   eines guten Bieres   keiner guten Weine",
+      "Strong: no article at all\n-----------------------------------------------------------\n        masc.            fem.           neut.            plural\nnom.    guter Wein       gute Milch     gutes Bier       gute Weine\nacc.    guten Wein       gute Milch     gutes Bier       gute Weine\ndat.    gutem Wein       guter Milch    gutem Bier       guten Weinen\ngen.    guten Weines     guter Milch    guten Bieres     guter Weine",
+      "Two shortcuts\n----------------------------------------------\nOnly three endings exist in the dative and in\nthe plural: they are almost always -en.\nAfter the verb, no ending at all:\n  Der Wein ist gut. Die Kinder sind klein."
+     ],
+     "examples": [
+      {
+       "target": "Ich hätte gern einen kalten Apfelsaft.",
+       "gloss": "I would like a cold apple juice."
+      },
+      {
+       "target": "Das neue Restaurant in der Altstadt ist sehr gut.",
+       "gloss": "The new restaurant in the old town is very good."
+      },
+      {
+       "target": "Sie wohnt in einer kleinen Wohnung mit einem großen Balkon.",
+       "gloss": "She lives in a small flat with a big balcony."
+      },
+      {
+       "target": "Wir suchen ein günstiges Hotel im Zentrum.",
+       "gloss": "We are looking for a cheap hotel in the centre."
+      },
+      {
+       "target": "Mit netten Kollegen macht die Arbeit mehr Spaß.",
+       "gloss": "Work is more fun with nice colleagues."
+      },
+      {
+       "target": "Frisches Brot schmeckt am besten.",
+       "gloss": "Fresh bread tastes best."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "a2-konjunktiv2-hoeflichkeit",
+     "title": "Konjunktiv II as the polite form",
+     "summary": "Long before you use it for hypothetical situations, you need Konjunktiv II for politeness, because a direct request in the indicative sounds blunt in German. The everyday forms are few: ich hätte, ich wäre, ich könnte, ich würde, ich müsste, ich sollte, ich dürfte and ich möchte. For most other verbs, German avoids the old one-word form and uses würde plus infinitive at the end of the sentence: Ich würde gern mitkommen. The politeness patterns are worth memorising as blocks. Ich hätte gern for ordering, Ich möchte for wishes, Könnten Sie for requests, Würden Sie bitte for very polite requests, Dürfte ich for permission, and Sie sollten for careful advice. Note the umlaut, which is what separates Konjunktiv II from the Präteritum: ich hatte is a past tense, ich hätte is a polite would have.",
+     "tables": [
+      "Verb     Präteritum   Konjunktiv II\n------   ----------   -------------\nhaben    hatte        hätte\nsein     war          wäre\nkönnen   konnte       könnte\nmüssen   musste       müsste\ndürfen   durfte       dürfte\nsollen   sollte       sollte  (no umlaut)\nwerden   wurde        würde",
+      "Politeness blocks\n-----------------------------------------------\nordering       Ich hätte gern einen Kaffee.\nwish           Ich möchte ein Zimmer reservieren.\nrequest        Könnten Sie mir bitte helfen?\npolite request Würden Sie bitte das Fenster öffnen?\npermission     Dürfte ich Sie kurz stören?\nadvice         Sie sollten mehr schlafen.\nsuggestion     Wir könnten ins Kino gehen.",
+      "würde + infinitive for other verbs\n----------------------------------------\nIch würde gern mitkommen.\nWürdest du mir kurz helfen?\nAn deiner Stelle würde ich das nicht machen."
+     ],
+     "examples": [
+      {
+       "target": "Ich hätte gern ein Glas Wasser, bitte.",
+       "gloss": "I would like a glass of water, please."
+      },
+      {
+       "target": "Könnten Sie mir bitte den Weg zum Bahnhof zeigen?",
+       "gloss": "Could you show me the way to the station, please?"
+      },
+      {
+       "target": "Wir könnten am Samstag ins Museum gehen.",
+       "gloss": "We could go to the museum on Saturday."
+      },
+      {
+       "target": "Du solltest zum Arzt gehen.",
+       "gloss": "You should go to the doctor."
+      },
+      {
+       "target": "Ich würde gern einen Termin vereinbaren.",
+       "gloss": "I would like to make an appointment."
+      }
+     ],
+     "sources": [
+      "goethe-a2",
+      "goethe-wortliste"
+     ]
+    }
+   ]
+  },
+  {
+   "levelId": "B1",
+   "intro": "B1 grammar opens up connected, adult German: relative clauses in every case, the genitive, the zu-infinitive family, verbs with fixed prepositions and their da- compounds, the passive, Konjunktiv II for the unreal, concession and time relations, and the participles and noun-verb pairs that mark written style.",
+   "sources": [
+    "goethe-b1",
+    "goethe-wortliste"
+   ],
+   "topics": [
+    {
+     "id": "b1-relativsaetze",
+     "title": "Relative clauses in every case",
+     "summary": "A relative clause describes a noun and sends its verb to the end, always separated by a comma. The relative pronoun is almost identical to the definite article, with only the dative plural and the genitive forms differing: denen, dessen, deren. Two independent decisions produce the correct pronoun. GENDER and NUMBER come from the noun you are describing, but the CASE comes from the role the pronoun plays inside the relative clause itself. Der Mann, der dort steht is nominative because he is the subject of steht, while Der Mann, den ich kenne is accusative because he is the object of kenne. If a preposition belongs to the relative clause, it stands in front of the pronoun and imposes its own case: der Kollege, mit dem ich arbeite; die Firma, für die sie arbeitet. For places you may replace the whole preposition with wo: die Stadt, wo ich geboren bin.",
+     "tables": [
+      "           masc.    fem.    neut.    plural\n--------   ------   -----   ------   ------\nnom.       der      die     das      die\nacc.       den      die     das      die\ndat.       dem      der     dem      denen\ngen.       dessen   deren   dessen   deren",
+      "Where the case comes from\n-------------------------------------------------------\nsubject in the clause     Der Mann, der dort steht, ...\nobject in the clause      Der Mann, den ich kenne, ...\ndative verb in the clause Der Mann, dem ich helfe, ...\npossession                Der Mann, dessen Auto kaputt ist, ...\nafter a preposition       Der Mann, mit dem ich spreche, ...\nplural dative             Die Leute, denen wir danken, ...",
+      "Extras\n--------------------------------------------------\nwas after alles, etwas, nichts, das:\n  Das ist alles, was ich weiß.\nwo for places:\n  Die Stadt, wo ich studiert habe, ist klein.\n  = Die Stadt, in der ich studiert habe, ..."
+     ],
+     "examples": [
+      {
+       "target": "Der Kollege, der neben mir sitzt, kommt aus Bremen.",
+       "gloss": "The colleague who sits next to me comes from Bremen."
+      },
+      {
+       "target": "Das Buch, das du mir geliehen hast, war spannend.",
+       "gloss": "The book you lent me was exciting."
+      },
+      {
+       "target": "Die Frau, der ich geholfen habe, hat sich bedankt.",
+       "gloss": "The woman I helped said thank you."
+      },
+      {
+       "target": "Das ist der Kollege, mit dem ich das Projekt mache.",
+       "gloss": "That is the colleague with whom I am doing the project."
+      },
+      {
+       "target": "Die Nachbarn, deren Kinder hier spielen, sind sehr nett.",
+       "gloss": "The neighbours whose children play here are very nice."
+      },
+      {
+       "target": "Das ist alles, was ich dazu sagen kann.",
+       "gloss": "That is all I can say about it."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-genitiv",
+     "title": "The genitive, its prepositions and the n-Deklination",
+     "summary": "The genitive expresses possession and belongs above all to written and formal German: das Auto meines Bruders, die Farbe der Wand. Masculine and neuter take des with an -s or -es on the noun itself, feminine and plural take der with no ending on the noun. In speech, von plus dative usually replaces it, das Auto von meinem Bruder, but you must recognise and produce the genitive at B1 because four common prepositions govern it: wegen, während, trotz and statt, joined in formal texts by innerhalb, außerhalb and aufgrund. A separate group of masculine nouns follows the n-Deklination and adds -n or -en in EVERY case except the nominative singular: der Junge, den Jungen, dem Jungen, des Jungen. It covers masculine nouns in -e (Kunde, Kollege, Name), plus Herr, Mensch, Nachbar and international words in -ent, -ant, -ist and -at. Herr adds -n in the singular and -en in the plural.",
+     "tables": [
+      "            masc.             fem.          neut.            plural\n---------   ---------------   -----------   --------------   ------------\ngenitive    des Mannes        der Frau      des Kindes       der Kinder\n            eines Bruders     einer Idee    eines Autos      meiner Eltern\nnoun end.   -s or -es         no ending     -s or -es        no ending",
+      "Genitive prepositions\n------------------------------------------------\nwegen        wegen des schlechten Wetters\nwährend      während der Sitzung\ntrotz        trotz der hohen Preise\nstatt        statt eines Briefes\ninnerhalb    innerhalb einer Woche\naußerhalb    außerhalb der Öffnungszeiten\naufgrund     aufgrund der neuen Regeln",
+      "n-Deklination\n-------------------------------------------------\n         singular            plural\nnom.     der Kunde           die Kunden\nacc.     den Kunden          die Kunden\ndat.     dem Kunden          den Kunden\ngen.     des Kunden          der Kunden\nMembers: Junge, Kollege, Kunde, Neffe, Name,\nHerr (den Herrn, die Herren), Mensch, Nachbar,\nStudent, Praktikant, Journalist, Automat."
+     ],
+     "examples": [
+      {
+       "target": "Das Auto meines Bruders steht vor der Tür.",
+       "gloss": "My brother's car is parked outside."
+      },
+      {
+       "target": "Wegen des schlechten Wetters bleiben wir zu Hause.",
+       "gloss": "Because of the bad weather we are staying at home."
+      },
+      {
+       "target": "Während der Sitzung hat niemand etwas gesagt.",
+       "gloss": "During the meeting nobody said anything."
+      },
+      {
+       "target": "Ich habe dem Kollegen den Vertrag gegeben.",
+       "gloss": "I gave the colleague the contract."
+      },
+      {
+       "target": "Trotz der hohen Miete möchte sie in der Stadt bleiben.",
+       "gloss": "Despite the high rent she wants to stay in the city."
+      },
+      {
+       "target": "Der Name des Studenten steht auf der Liste.",
+       "gloss": "The student's name is on the list."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-infinitiv-mit-zu",
+     "title": "The zu-infinitive family: um zu, damit, ohne zu, anstatt zu",
+     "summary": "Many verbs and expressions attach a second verb as an infinitive with zu at the end of the clause: Ich hoffe, dich bald zu sehen; Es ist wichtig, jeden Tag zu üben. With a separable verb the zu slips inside, anzurufen, mitzukommen. Modal verbs and the verbs sehen, hören, lassen, bleiben, gehen and werden take a bare infinitive with NO zu. Four constructions build on this. Um zu expresses purpose and requires the SAME subject in both parts; if the subjects differ you must use damit with a full subordinate clause: Ich lerne Deutsch, um in Berlin zu arbeiten, but Ich erkläre es dir, damit du es verstehst. Ohne zu means without doing something, anstatt zu means instead of doing something, and both follow the same same-subject rule. Note that ohne zu is not negated with nicht, the ohne already carries the negation.",
+     "tables": [
+      "Construction   Condition           Example\n------------   -----------------   -----------------------------\nverb + zu      fixed verbs         Ich versuche zu schlafen.\num ... zu      same subject        Ich fahre hin, um sie zu sehen.\ndamit          different subjects  Ich rufe an, damit sie es weiß.\nohne ... zu    same subject        Er ging, ohne etwas zu sagen.\nanstatt ... zu same subject        Er spielt, anstatt zu lernen.\nno zu          modals and others   Ich muss gehen. Ich lasse ihn gehen.",
+      "Verbs and expressions that take zu\n-----------------------------------------------\nversuchen, vergessen, vorhaben, hoffen,\nbeginnen, anfangen, aufhören, sich freuen,\nLust haben, Zeit haben, vorschlagen, empfehlen\nEs ist wichtig / schwierig / möglich / verboten",
+      "Separable verbs take zu in the middle\n----------------------------------------\nanrufen     Ich vergesse, dich anzurufen.\nmitkommen   Hast du Lust mitzukommen?\naufstehen   Es ist schwer, früh aufzustehen.\neinkaufen   Ich habe keine Zeit einzukaufen."
+     ],
+     "examples": [
+      {
+       "target": "Ich habe vergessen, dich gestern anzurufen.",
+       "gloss": "I forgot to call you yesterday."
+      },
+      {
+       "target": "Sie lernt Deutsch, um in Deutschland zu studieren.",
+       "gloss": "She is learning German in order to study in Germany."
+      },
+      {
+       "target": "Ich schreibe es auf, damit du es nicht vergisst.",
+       "gloss": "I am writing it down so that you do not forget it."
+      },
+      {
+       "target": "Er ist gegangen, ohne sich zu verabschieden.",
+       "gloss": "He left without saying goodbye."
+      },
+      {
+       "target": "Anstatt zu arbeiten, hat er den ganzen Tag ferngesehen.",
+       "gloss": "Instead of working, he watched television all day."
+      },
+      {
+       "target": "Es ist verboten, hier zu parken.",
+       "gloss": "It is forbidden to park here."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-verben-praepositionen",
+     "title": "Verbs with fixed prepositions, and the da- and wo- compounds",
+     "summary": "A large group of verbs demands a specific preposition, and that preposition brings its own case, so the two must be learned as one unit: warten AUF plus accusative, teilnehmen AN plus dative, sich kümmern UM plus accusative. The preposition rarely matches English, which is why translating word by word fails. Two question and reference systems follow from this. When the object is a THING, you cannot say auf es; German fuses the preposition with da into a compound: darauf, dafür, damit, davon, darüber, and an r is inserted whenever the preposition starts with a vowel. The matching question word replaces da with wo: worauf, wofür, womit, worüber. When the object is a PERSON, no compound is used, you keep the preposition with the pronoun or the question word: auf ihn, für sie, mit wem, auf wen. These da- compounds also announce a following clause: Ich freue mich darauf, dich zu sehen.",
+     "tables": [
+      "Verb                     Prep. + case   Example\n----------------------   ------------   -------------------------\nwarten                   auf + acc.     Ich warte auf den Bus.\nsich freuen              auf + acc.     Ich freue mich auf den Urlaub.\nsich freuen              über + acc.    Ich freue mich über dein Geschenk.\ndenken                   an + acc.      Ich denke oft an dich.\nsich interessieren       für + acc.     Er interessiert sich für Politik.\nsich ärgern              über + acc.    Sie ärgert sich über den Lärm.\nsich kümmern             um + acc.      Ich kümmere mich um die Kinder.\nbitten                   um + acc.      Ich bitte um Hilfe.\nteilnehmen               an + dat.      Wir nehmen an dem Kurs teil.\nabhängen                 von + dat.     Das hängt vom Wetter ab.\nsich beschäftigen        mit + dat.     Er beschäftigt sich mit Musik.\ngehören                  zu + dat.      Das gehört zu meinen Aufgaben.",
+      "Things take a compound, people do not\n-------------------------------------------------\nthing    Worauf wartest du? Auf den Bus. Ich warte darauf.\nperson   Auf wen wartest du? Auf meinen Bruder. Auf ihn.\nthing    Womit fährst du? Damit fahre ich jeden Tag.\nperson   Mit wem fährst du? Mit ihr.",
+      "Forms\n--------------------------------------------\nconsonant   damit, davon, dafür, dazu, danach\nvowel + r   darauf, daran, darüber, darum, darin\nquestions   womit, wovon, wofür, worauf, woran\nannouncing  Ich denke daran, dass ich das mache."
+     ],
+     "examples": [
+      {
+       "target": "Ich warte seit einer Stunde auf den Bus.",
+       "gloss": "I have been waiting for the bus for an hour."
+      },
+      {
+       "target": "Worüber habt ihr so lange gesprochen?",
+       "gloss": "What did you talk about for so long?"
+      },
+      {
+       "target": "Sie hat sich sehr über die Nachricht gefreut.",
+       "gloss": "She was very pleased about the news."
+      },
+      {
+       "target": "Das hängt ganz vom Wetter ab.",
+       "gloss": "That depends entirely on the weather."
+      },
+      {
+       "target": "Ich freue mich darauf, dich wiederzusehen.",
+       "gloss": "I am looking forward to seeing you again."
+      },
+      {
+       "target": "An wen soll ich mich wenden?",
+       "gloss": "Who should I turn to?"
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-passiv",
+     "title": "The passive in all tenses, with modals and its alternatives",
+     "summary": "The passive moves the action into focus and pushes the agent aside. It is built with werden plus Partizip II, and werden carries the tense: Das Auto wird repariert (present), wurde repariert (Präteritum), ist repariert worden (Perfekt), war repariert worden (Plusquamperfekt), wird repariert werden (future). The Perfekt is the trap, because the participle of werden here is worden, never geworden. If the agent is named, it takes von plus dative for a person and durch plus accusative for a cause or means. With a modal verb the passive infinitive repariert werden goes to the end of the bracket: Das Auto muss repariert werden. German also has three lighter alternatives that native speakers use constantly: man plus an active verb, sich lassen plus infinitive, and sein plus zu-infinitive. Note the difference between the process passive with werden and the state passive with sein: Das Fenster wird geöffnet describes the opening, Das Fenster ist geöffnet describes the result.",
+     "tables": [
+      "Tense              Form                          Example\n----------------   ---------------------------   -----------------------------\nPräsens            wird + Partizip II            Das Auto wird repariert.\nPräteritum         wurde + Partizip II           Das Auto wurde repariert.\nPerfekt            ist + Partizip II + worden    Das Auto ist repariert worden.\nPlusquamperfekt    war + Partizip II + worden    Das Auto war repariert worden.\nFutur I            wird + Part. II + werden      Das Auto wird repariert werden.\nwith a modal       muss + Part. II + werden      Das Auto muss repariert werden.\nmodal in the past  musste + Part. II + werden    Das Auto musste repariert werden.",
+      "Naming the agent\n-----------------------------------------------\nperson, dative    von     Der Brief wurde von der Chefin unterschrieben.\ncause, accusative durch   Die Stadt wurde durch das Feuer zerstört.",
+      "Alternatives to the passive\n-------------------------------------------------\nman            Man repariert das Auto morgen.\nsich lassen    Das Problem lässt sich schnell lösen.\nsein + zu-inf. Das Formular ist bis Freitag abzugeben.\nstate passive  Das Fenster ist geöffnet. (result, sein)\nprocess        Das Fenster wird geöffnet. (action, werden)",
+      "lassen itself\n---------------------------------------------\nto have something done  Ich lasse mein Auto reparieren.\nto let somebody do      Sie lässt die Kinder spielen.\nPerfekt: double infinitive\n  Ich habe mein Auto reparieren lassen."
+     ],
+     "examples": [
+      {
+       "target": "Die Rechnung wurde gestern bezahlt.",
+       "gloss": "The bill was paid yesterday."
+      },
+      {
+       "target": "Das Formular ist schon abgeschickt worden.",
+       "gloss": "The form has already been sent off."
+      },
+      {
+       "target": "Der Termin muss leider verschoben werden.",
+       "gloss": "Unfortunately the appointment has to be postponed."
+      },
+      {
+       "target": "Der Vertrag wurde von der Chefin unterschrieben.",
+       "gloss": "The contract was signed by the boss."
+      },
+      {
+       "target": "Das Problem lässt sich leicht lösen.",
+       "gloss": "The problem can be solved easily."
+      },
+      {
+       "target": "Ich lasse mein Fahrrad in der Werkstatt reparieren.",
+       "gloss": "I am having my bike repaired at the workshop."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-konjunktiv2",
+     "title": "Konjunktiv II, present and past",
+     "summary": "Konjunktiv II describes what is unreal, hypothetical or merely wished for. In the present, a handful of verbs keep their own one-word form, hätte, wäre, könnte, müsste, dürfte, sollte, wüsste, ginge, käme, and everything else uses würde plus infinitive at the end. Do not mix the two in one clause: say wenn ich Zeit hätte, not wenn ich Zeit haben würde. In the past there is only ONE form, hätte or wäre plus Partizip II, and it covers every past tense: Wenn ich das gewusst hätte, wäre ich nicht gekommen. With a modal verb the past builds a double infinitive: Ich hätte früher gehen sollen. Typical uses are the unreal condition with wenn (and the verb-first variant Hätte ich Zeit, käme ich mit), regret with the participle, the wish with beinahe, fast or nur, and comparison with als ob, whose verb goes to the end.",
+     "tables": [
+      "Present forms\n--------------------------------------------\nsein     ich wäre, du wärst, wir wären\nhaben    ich hätte, du hättest, wir hätten\nwerden   ich würde, du würdest, wir würden\nkönnen   ich könnte      müssen   ich müsste\ndürfen   ich dürfte      sollen   ich sollte\nwissen   ich wüsste      gehen    ich ginge\nall others: würde + infinitive at the end",
+      "Past: only one form\n-------------------------------------------------\nhätte + Partizip II    Ich hätte mehr gelernt.\nwäre + Partizip II     Ich wäre früher gekommen.\nwith a modal           Ich hätte gehen sollen.\n                       Er hätte kommen können.\n(double infinitive, no ge- on the modal)",
+      "Uses\n---------------------------------------------------\nunreal condition  Wenn ich Zeit hätte, käme ich mit.\nno wenn           Hätte ich Zeit, käme ich mit.\npast regret       Wenn ich das gewusst hätte, ...\nwish              Wenn ich nur mehr Zeit hätte!\nnearly happened   Fast wäre ich zu spät gekommen.\ncomparison        Er tut so, als ob er alles wüsste.\nadvice            An deiner Stelle würde ich warten."
+     ],
+     "examples": [
+      {
+       "target": "Wenn ich mehr Zeit hätte, würde ich einen Kurs machen.",
+       "gloss": "If I had more time, I would take a course."
+      },
+      {
+       "target": "Wenn ich das gewusst hätte, wäre ich früher gekommen.",
+       "gloss": "If I had known that, I would have come earlier."
+      },
+      {
+       "target": "Du hättest mir ruhig Bescheid sagen können.",
+       "gloss": "You could have let me know."
+      },
+      {
+       "target": "An deiner Stelle würde ich noch einmal nachfragen.",
+       "gloss": "In your place I would ask again."
+      },
+      {
+       "target": "Er tut so, als ob er müde wäre.",
+       "gloss": "He acts as if he were tired."
+      },
+      {
+       "target": "Beinahe hätte ich den Zug verpasst.",
+       "gloss": "I almost missed the train."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-obwohl-trotzdem",
+     "title": "Concession: obwohl, trotzdem and trotz",
+     "summary": "Three words express the same idea, that something happens against expectation, but each one occupies a different grammatical slot and that is where the mistakes happen. Obwohl is a subordinating conjunction, so its verb goes to the END of its clause: Obwohl es regnet, gehen wir spazieren. Trotzdem is an adverb and connects two main clauses, so it takes position one and the verb still comes second: Es regnet, trotzdem gehen wir spazieren. Trotz is a preposition and takes the genitive, so it is followed by a noun phrase and no verb at all: Trotz des Regens gehen wir spazieren. Watch the word order carefully when obwohl starts the sentence: the subordinate clause fills position one, so the main clause verb comes immediately after the comma. Aber and doch are the neutral contrast words, aber never changes word order because it is a coordinating conjunction.",
+     "tables": [
+      "Word       Type                     Verb position\n--------   ----------------------   ------------------------\nobwohl     subordinating conj.      verb at the end\ntrotzdem   adverb, main clause      verb second after it\ntrotz      preposition + genitive   no clause, just a noun\naber       coordinating conj.       no change at all\ndennoch    adverb, formal           verb second after it",
+      "The same idea, three structures\n-----------------------------------------------------\nObwohl es regnet, gehen wir spazieren.\nEs regnet, trotzdem gehen wir spazieren.\nTrotz des Regens gehen wir spazieren.\nEs regnet, aber wir gehen spazieren.\nWir gehen spazieren, obwohl es regnet."
+     ],
+     "examples": [
+      {
+       "target": "Obwohl er krank war, ist er zur Arbeit gegangen.",
+       "gloss": "Although he was ill, he went to work."
+      },
+      {
+       "target": "Er war krank, trotzdem ist er zur Arbeit gegangen.",
+       "gloss": "He was ill, nevertheless he went to work."
+      },
+      {
+       "target": "Trotz seiner Erkältung ist er zur Arbeit gegangen.",
+       "gloss": "Despite his cold he went to work."
+      },
+      {
+       "target": "Wir haben viel gelernt, aber die Prüfung war trotzdem schwer.",
+       "gloss": "We studied a lot, but the exam was hard anyway."
+      },
+      {
+       "target": "Obwohl die Wohnung teuer ist, möchte sie dort einziehen.",
+       "gloss": "Although the flat is expensive, she wants to move in there."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-temporalsaetze-plusquamperfekt",
+     "title": "Temporal connectors and the Plusquamperfekt",
+     "summary": "German is precise about the order of past events. The Plusquamperfekt, hatte or war plus Partizip II, marks the earlier of two past actions and normally appears together with nachdem: Nachdem ich gegessen hatte, ging ich spazieren. The tense pairing is fixed, nachdem plus Plusquamperfekt with a main clause in Präteritum or Perfekt, or nachdem plus Perfekt when the main clause is in the present. The connectors divide the timeline. Als marks a single event or a whole period in the past and is the one English speakers get wrong most often, because they use wenn for everything; wenn means whenever, that is repetition, and also covers present and future. Bevor and nachdem order two actions, während marks simultaneity, seit and seitdem measure from a starting point, sobald means as soon as, and bis means until. All of them are subordinating conjunctions, so the verb goes to the end.",
+     "tables": [
+      "Connector   Meaning                     Example\n---------   -------------------------   -----------------------------\nals         once, in the past           Als ich klein war, ...\nwenn        whenever, present, future   Wenn ich Zeit habe, ...\nnachdem     after (earlier action)      Nachdem er gegangen war, ...\nbevor       before                      Bevor ich gehe, esse ich.\nwährend     while, at the same time     Während sie kochte, las er.\nseit(dem)   since                       Seitdem er hier wohnt, ...\nsobald      as soon as                  Sobald ich ankomme, rufe ich an.\nbis         until                       Warte, bis ich fertig bin.",
+      "Plusquamperfekt\n-----------------------------------------\nhatte + Partizip II    Ich hatte gegessen.\nwar + Partizip II      Ich war gegangen.\nSame auxiliary rule as the Perfekt.",
+      "Tense pairing with nachdem\n---------------------------------------------------\nNachdem ich gegessen hatte, ging ich spazieren.\n  (Plusquamperfekt + Präteritum)\nNachdem ich gegessen habe, gehe ich spazieren.\n  (Perfekt + Präsens)\nals = one time in the past:  Als ich 18 war, ...\nwenn = every time:           Immer wenn ich müde bin, ..."
+     ],
+     "examples": [
+      {
+       "target": "Nachdem wir gegessen hatten, sind wir spazieren gegangen.",
+       "gloss": "After we had eaten, we went for a walk."
+      },
+      {
+       "target": "Als ich in Leipzig studierte, hatte ich wenig Geld.",
+       "gloss": "When I was studying in Leipzig, I had little money."
+      },
+      {
+       "target": "Immer wenn es regnet, nehme ich den Bus.",
+       "gloss": "Whenever it rains, I take the bus."
+      },
+      {
+       "target": "Bevor du gehst, mach bitte das Licht aus.",
+       "gloss": "Before you leave, please turn off the light."
+      },
+      {
+       "target": "Seitdem sie in Hamburg wohnt, sehen wir uns selten.",
+       "gloss": "Since she has been living in Hamburg, we rarely see each other."
+      },
+      {
+       "target": "Der Zug war schon abgefahren, als wir ankamen.",
+       "gloss": "The train had already left when we arrived."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-futur-vermutung",
+     "title": "Futur I and expressing a presumption",
+     "summary": "German rarely needs a future tense, because the present plus a time word already does the job: Morgen fahre ich nach Bonn. Futur I, werden plus infinitive at the end, is reserved for three jobs. It makes a prediction about the future, especially without a time word, Es wird bald regnen. It expresses a firm intention or a promise, Ich werde dich anrufen, versprochen. And, most usefully at B1, it expresses a PRESUMPTION about the present, which is where English uses probably or must be: Er wird wohl im Büro sein means he is probably at the office, not that he will be there later. The little words wohl, wahrscheinlich, vermutlich and sicher usually accompany this use and make the guess explicit. For a presumption about the past, combine werden with the Perfekt infinitive: Sie wird den Zug verpasst haben.",
+     "tables": [
+      "Use                     Form                    Example\n---------------------   ---------------------   ----------------------------\nplanned future          present + time word     Morgen fahre ich nach Bonn.\nprediction              werden + infinitive     Es wird bald regnen.\npromise, intention      werden + infinitive     Ich werde dir helfen.\npresumption, present    werden + wohl + inf.    Er wird wohl krank sein.\npresumption, past       werden + Perfekt inf.   Sie wird es vergessen haben.",
+      "Signal words for a guess\n-----------------------------------------\nwohl, wahrscheinlich, vermutlich, sicher\nEr ist wahrscheinlich schon zu Hause.\nEr wird wohl schon zu Hause sein.\n(both mean: he is probably home now)",
+      "Do not confuse werden\n---------------------------------------------\nfuture           Ich werde Arzt werden.\nto become        Es wird kalt. Sie wird Ärztin.\npassive          Das Auto wird repariert."
+     ],
+     "examples": [
+      {
+       "target": "Morgen fahre ich nach Bonn.",
+       "gloss": "Tomorrow I am going to Bonn."
+      },
+      {
+       "target": "Es wird sicher bald regnen.",
+       "gloss": "It will certainly rain soon."
+      },
+      {
+       "target": "Ich werde dich heute Abend anrufen.",
+       "gloss": "I will call you this evening."
+      },
+      {
+       "target": "Er wird wohl noch im Büro sein.",
+       "gloss": "He is probably still at the office."
+      },
+      {
+       "target": "Sie wird den Zug verpasst haben.",
+       "gloss": "She must have missed the train."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "id": "b1-partizipien-nomen-verb",
+     "title": "Participles as adjectives and Nomen-Verb-Verbindungen",
+     "summary": "Two features give written German its typical texture. First, both participles can stand in front of a noun and then take normal adjective endings. Partizip I is formed with the infinitive plus -d and is ACTIVE and simultaneous: das spielende Kind is the child that is playing, die steigenden Preise are the prices that are rising. Partizip II is PASSIVE and completed: das reparierte Auto is the car that has been repaired, die gekochten Kartoffeln are the boiled potatoes. Second, formal German loves Nomen-Verb-Verbindungen, fixed pairs where a colourless verb carries a noun that holds the meaning. Eine Entscheidung treffen is to make a decision, eine Frage stellen is to ask a question, Rücksicht nehmen is to show consideration. These combinations are not free: you take a decision with treffen, never with machen, so learn each pair whole, exactly like vocabulary.",
+     "tables": [
+      "Participle    Meaning              Example\n-----------   ------------------   ---------------------------\nPartizip I    active, ongoing      das spielende Kind\n              infinitive + d       die steigenden Preise\n                                   ein lachender Mann\nPartizip II   passive, finished    das reparierte Auto\n                                   die gekochten Kartoffeln\n                                   ein gut bezahlter Job",
+      "Frequent Nomen-Verb-Verbindungen\n-------------------------------------------------\neine Entscheidung treffen     to make a decision\neine Frage stellen            to ask a question\neinen Antrag stellen          to submit an application\nin Kontakt treten             to get in touch\nzur Verfügung stehen          to be available\nRücksicht nehmen auf          to show consideration for\neine Rolle spielen            to play a role\nAbschied nehmen von           to say goodbye to\nKritik üben an                to criticise\neine Rede halten              to give a speech\nzur Diskussion stellen        to open for discussion"
+     ],
+     "examples": [
+      {
+       "target": "Die steigenden Mieten sind ein großes Problem.",
+       "gloss": "The rising rents are a big problem."
+      },
+      {
+       "target": "Das reparierte Fahrrad steht wieder im Keller.",
+       "gloss": "The repaired bike is back in the cellar."
+      },
+      {
+       "target": "Wir müssen bis Freitag eine Entscheidung treffen.",
+       "gloss": "We have to make a decision by Friday."
+      },
+      {
+       "target": "Darf ich Ihnen eine Frage stellen?",
+       "gloss": "May I ask you a question?"
+      },
+      {
+       "target": "Ich stehe Ihnen jederzeit zur Verfügung.",
+       "gloss": "I am available to you at any time."
+      },
+      {
+       "target": "Bitte nehmen Sie Rücksicht auf die anderen Gäste.",
+       "gloss": "Please show consideration for the other guests."
+      }
+     ],
+     "sources": [
+      "goethe-b1",
+      "goethe-wortliste"
+     ]
+    }
+   ]
+  }
+ ]
+}

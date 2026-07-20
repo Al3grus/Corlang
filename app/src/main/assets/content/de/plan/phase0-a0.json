@@ -1,0 +1,2704 @@
+{
+ "title": "Deutsch bis zum Zertifikat B1",
+ "days": [
+  {
+   "title": "Das Alphabet und die ersten Laute",
+   "objective": "You can name the five German vowel letters, say each one with its true German value, and read a short word aloud without falling back on English vowel habits.",
+   "paretoFocus": "German spelling is almost perfectly regular, so once the five vowels are fixed in your ear you can pronounce thousands of new words correctly on first sight.",
+   "drills": [
+    "Say the five vowels A, E, I, O, U aloud ten times, keeping every one pure and never letting it glide into a second sound.",
+    "Read these five words slowly, twice each: Apfel, Esel, Igel, Obst, Uhr.",
+    "Find five German words you already know from packaging or brand names and mark which vowel letter each one starts with."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which English sound is the German U always closest to?",
+     "Why does the German A never sound like the a in the English word 'cat'?",
+     "Say the spelling formula for the letter A and for the letter U from memory."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Das deutsche Alphabet",
+     "intro": "German uses the same 26 letters as English plus three Umlaute and the letter ß. The big difference is that German vowels are pure: they keep one single sound from start to finish and never glide into a second vowel the way English 'go' or 'say' do. Germans introduce a letter with a fixed example word, so learn the letter and the word together.",
+     "items": [
+      {
+       "hr": "A wie Apfel",
+       "en": "A as in apple",
+       "note": "der Apfel. The German A is always open, like the a in 'father', never like the a in 'cat'."
+      },
+      {
+       "hr": "E wie Esel",
+       "en": "E as in donkey",
+       "note": "der Esel. Long E is close to the ay in 'say', but flat, with no glide at the end."
+      },
+      {
+       "hr": "I wie Igel",
+       "en": "I as in hedgehog",
+       "note": "der Igel. Long I is the ee in 'see'."
+      },
+      {
+       "hr": "O wie Obst",
+       "en": "O as in fruit",
+       "note": "das Obst. Long O is the o in 'go', again with no glide."
+      },
+      {
+       "hr": "U wie Uhr",
+       "en": "U as in clock",
+       "note": "die Uhr. U is always the oo in 'moon', never the u in 'cup'."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Die Vokale hören",
+     "intro": "Practise matching each German vowel letter to its real sound.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which German vowel letter always sounds like the oo in 'moon'?",
+       "difficulty": 1,
+       "options": [
+        "A",
+        "E",
+        "I",
+        "U"
+       ],
+       "answer": "U",
+       "explanation": "German U has one value only, the oo of 'moon'. It never sounds like the u in 'cup'."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "How many letters does the basic German alphabet have, not counting the Umlaute and ß?",
+       "difficulty": 1,
+       "options": [
+        "21",
+        "24",
+        "26",
+        "30"
+       ],
+       "answer": "26",
+       "explanation": "German uses the same 26 basic letters as English. The three Umlaute and ß are extras on top."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the standard spelling formula for the first letter of the alphabet: A wie ___",
+       "difficulty": 1,
+       "answer": "Apfel",
+       "accepted": [
+        "der Apfel"
+       ],
+       "explanation": "The fixed example word is der Apfel, and like every German noun it takes a capital letter."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for clock, with its article. It is the example word for the letter U.",
+       "difficulty": 2,
+       "answer": "die Uhr",
+       "accepted": [
+        "Uhr"
+       ],
+       "explanation": "die Uhr. The h is silent and simply makes the U long."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'The apple is red.'",
+       "difficulty": 2,
+       "options": [
+        "Der",
+        "Apfel",
+        "ist",
+        "rot"
+       ],
+       "ordered": [
+        "Der",
+        "Apfel",
+        "ist",
+        "rot"
+       ],
+       "explanation": "der Apfel is masculine, so the sentence starts with Der. The verb ist comes second, and the adjective rot stays lower case."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Erste Laute",
+     "intro": "Play 'Me'. You and a partner trade the standard spelling formulas, so say every vowel long and pure.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Hallo!",
+       "en": "Hello!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Hallo!",
+       "en": "Hello!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "A wie Apfel.",
+       "en": "A as in apple."
+      },
+      {
+       "speaker": "Me",
+       "hr": "E wie Esel.",
+       "en": "E as in donkey."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "I wie Igel.",
+       "en": "I as in hedgehog."
+      },
+      {
+       "speaker": "Me",
+       "hr": "U wie Uhr.",
+       "en": "U as in clock."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 1,
+   "week": 1,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Die Umlaute ä, ö und ü",
+   "objective": "You can produce the three Umlaute, explain how each one differs from the plain vowel underneath it, and recognise an Umlaut as a plural marker.",
+   "paretoFocus": "Umlaute carry meaning: they separate singular from plural and one word from another, so mispronouncing them makes you say a different word entirely.",
+   "drills": [
+    "Say ee as in 'see' and hold it, then round your lips into a tight circle without moving your tongue. That is ü. Repeat twenty times.",
+    "Say ay as in 'say' and hold it, then round your lips the same way. That is ö. Repeat twenty times.",
+    "Read this pair aloud five times and keep them clearly different: das Buch, die Bücher."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which English vowel gives you the tongue position for ü, and what do the lips add?",
+     "What does the Umlaut do to das Buch in the plural?",
+     "Say die Tür, schön and der Löffel from memory."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Die Umlaute",
+     "intro": "The two dots above a vowel are not decoration: they change the sound completely. Only ä has a real English match, the e in 'bed'. For ö and ü there is no English equivalent at all, so build them mechanically: set your tongue for a plain vowel, then round your lips without moving the tongue.",
+     "items": [
+      {
+       "hr": "der Bär",
+       "en": "the bear",
+       "note": "ä is the e in 'bed'. It is the only Umlaut with an honest English match."
+      },
+      {
+       "hr": "die Tür",
+       "en": "the door",
+       "note": "ü has no English equivalent. Say the ee of 'see', then round your lips hard."
+      },
+      {
+       "hr": "schön",
+       "en": "beautiful",
+       "note": "ö has no English equivalent. Say the ay of 'say', then round your lips hard. Adjectives stay lower case."
+      },
+      {
+       "hr": "die Bücher",
+       "en": "the books",
+       "note": "das Buch becomes die Bücher. The Umlaut is doing the work of marking the plural."
+      },
+      {
+       "hr": "der Löffel",
+       "en": "the spoon",
+       "note": "A short ö: same lip rounding, but cut the sound off quickly."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Zwei Punkte, neuer Laut",
+     "intro": "Practise telling the three Umlaute apart and spelling them correctly.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which German sound is made with the tongue in the 'ee' position and the lips tightly rounded?",
+       "difficulty": 2,
+       "options": [
+        "ä",
+        "ö",
+        "ü",
+        "au"
+       ],
+       "answer": "ü",
+       "explanation": "ü combines an ee tongue position with rounded lips. There is no English sound like it, so it has to be built deliberately. ö uses an ay tongue position instead."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which English vowel does the German ä come closest to?",
+       "difficulty": 2,
+       "options": [
+        "the a in 'father'",
+        "the e in 'bed'",
+        "the oo in 'moon'",
+        "the i in 'machine'"
+       ],
+       "answer": "the e in 'bed'",
+       "explanation": "ä is essentially a fronted a that lands on the e of 'bed'. It is the one Umlaut you can copy straight from English."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Add the missing Umlaut letter: the plural of das Buch is die B___cher.",
+       "difficulty": 2,
+       "answer": "ü",
+       "explanation": "The plural is die Bücher. Many German plurals are marked by adding an Umlaut to the stem vowel."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for door, with its article.",
+       "difficulty": 2,
+       "answer": "die Tür",
+       "accepted": [
+        "Tür"
+       ],
+       "explanation": "die Tür is feminine. The Umlaut is essential: without it the word is not German."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'The door is beautiful.'",
+       "difficulty": 2,
+       "options": [
+        "Die",
+        "Tür",
+        "ist",
+        "schön"
+       ],
+       "ordered": [
+        "Die",
+        "Tür",
+        "ist",
+        "schön"
+       ],
+       "explanation": "die Tür is feminine, so the sentence opens with Die. The noun keeps its capital, the adjective schön does not."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Schön und gut",
+     "intro": "Play 'Me'. Two people admire a room, and every line forces you to produce an Umlaut.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Hallo! Die Tür ist schön.",
+       "en": "Hello! The door is beautiful."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr schön.",
+       "en": "Yes, very beautiful."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Und die Bücher?",
+       "en": "And the books?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Die Bücher sind gut.",
+       "en": "The books are good."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Der Löffel ist klein.",
+       "en": "The spoon is small."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr klein.",
+       "en": "Yes, very small."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 2,
+   "week": 1,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Die zwei ch-Laute, dazu sch, sp und st",
+   "objective": "You can decide from the spelling which of the two ch sounds a word takes, and you can pronounce sch, and word-initial sp and st, the way Germans actually do.",
+   "paretoFocus": "ch, sch, sp and st appear in some of the most common words in the language, so getting them right instantly makes you sound less like a beginner.",
+   "drills": [
+    "Say ich, nicht and Milch five times each, keeping the sound soft and high in the mouth.",
+    "Say das Buch, die Nacht and auch five times each, letting the sound scrape at the back of the throat.",
+    "Read these three aloud and put a clear sch at the front of each: die Schule, spät, die Stadt."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which vowels come before the rough back-of-the-throat ch?",
+     "How do Germans actually say the sp of spät and the st of Stadt?",
+     "Say die Schule, die Stadt and das Buch from memory."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Die ch-Laute",
+     "intro": "German has two completely different ch sounds and the vowel in front decides which one you use. After a, o, u and au you get the rough sound from the back of the throat. Everywhere else you get the soft sound made high and forward in the mouth. Separately, sch is easy, and at the start of a word sp and st are pronounced with that same sch.",
+     "items": [
+      {
+       "hr": "ich",
+       "en": "I",
+       "note": "The soft ich-Laut has no English equivalent. It is a gentle hiss made where the y of 'yes' is formed, closest to a whispered h in 'huge'."
+      },
+      {
+       "hr": "das Buch",
+       "en": "the book",
+       "note": "After a, o, u and au you get the rough ach-Laut, scraped at the back of the throat like the ch in Scottish 'loch'."
+      },
+      {
+       "hr": "die Schule",
+       "en": "the school",
+       "note": "sch is simply the English sh of 'ship'."
+      },
+      {
+       "hr": "spät",
+       "en": "late",
+       "note": "At the start of a word sp is said as if it were written schp."
+      },
+      {
+       "hr": "die Stadt",
+       "en": "the city",
+       "note": "At the start of a word st is said as if it were written scht. Short a here, so the word ends in double t."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Zischlaute üben",
+     "intro": "Practise choosing the right ch sound and the right start for sp and st.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "In which of these words do you use the rough ch made at the back of the throat?",
+       "difficulty": 2,
+       "options": [
+        "ich",
+        "nicht",
+        "das Buch",
+        "die Milch"
+       ],
+       "answer": "das Buch",
+       "explanation": "The rough ach-Laut appears after a, o, u and au. Buch has u, so it takes it. The other three have i, so they take the soft ich-Laut."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "How is st pronounced at the beginning of a German word?",
+       "difficulty": 2,
+       "options": [
+        "like English st",
+        "like scht",
+        "like sst",
+        "like tsch"
+       ],
+       "answer": "like scht",
+       "explanation": "Word-initial st and sp both begin with the sch sound, so Stadt starts 'schtadt'. In the middle or at the end of a word, st is a plain st."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the German word for the place where children learn: die ___ule",
+       "difficulty": 2,
+       "answer": "Sch",
+       "accepted": [
+        "sch"
+       ],
+       "explanation": "die Schule. The three letters sch together make one single sound, the sh of 'ship'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for city, with its article.",
+       "difficulty": 2,
+       "answer": "die Stadt",
+       "accepted": [
+        "Stadt"
+       ],
+       "explanation": "die Stadt. The vowel is short, which is why the word is written with double t."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'The school is big.'",
+       "difficulty": 2,
+       "options": [
+        "Die",
+        "Schule",
+        "ist",
+        "groß"
+       ],
+       "ordered": [
+        "Die",
+        "Schule",
+        "ist",
+        "groß"
+       ],
+       "explanation": "die Schule is feminine. groß has a long o, which is why it is written with ß and not ss."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "In der Stadt",
+     "intro": "Play 'Me'. Two people look at a school building, and every line drills a ch, sch or st sound.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Hallo! Die Schule ist groß.",
+       "en": "Hello! The school is big."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr groß.",
+       "en": "Yes, very big."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Und das Buch?",
+       "en": "And the book?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Das Buch ist schön.",
+       "en": "The book is beautiful."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Die Stadt ist auch schön.",
+       "en": "The city is beautiful too."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr schön.",
+       "en": "Yes, very beautiful."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Es ist spät.",
+       "en": "It is late."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr spät.",
+       "en": "Yes, very late."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 3,
+   "week": 1,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "z, w, v, j und das stimmhafte s",
+   "objective": "You can pronounce the four German consonant letters that trap English speakers, and you know when the letter s is voiced.",
+   "paretoFocus": "These four letters look familiar but sound nothing like their English twins, so they are the single fastest source of misunderstanding for a beginner.",
+   "drills": [
+    "Say die Zeit, zehn and der Zug five times each, starting every one with a crisp ts.",
+    "Say das Wasser and der Wein five times each with an English v sound, then der Vater with an English f sound.",
+    "Say die Sonne and das Sofa five times, letting the s buzz like the z of 'zoo'."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "What English sound does the German letter w have?",
+     "What English sound does the German letter j have?",
+     "When does a German s buzz like the z in 'zoo'?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Falsche Freunde beim Lesen",
+     "intro": "Four German letters mislead English readers badly. z is always ts, w is an English v, v is usually an English f, and j is an English y. On top of that, an s standing before a vowel is voiced and buzzes like the z of 'zoo'.",
+     "items": [
+      {
+       "hr": "die Zeit",
+       "en": "the time",
+       "note": "z is always ts, like the ts in 'cats', even when it starts the word."
+      },
+      {
+       "hr": "das Wasser",
+       "en": "the water",
+       "note": "German w is the English v of 'very'. Short a here, so the word takes ss."
+      },
+      {
+       "hr": "der Vater",
+       "en": "the father",
+       "note": "German v is usually the English f of 'fine'."
+      },
+      {
+       "hr": "das Jahr",
+       "en": "the year",
+       "note": "German j is the English y of 'yes'. The h is silent and lengthens the a."
+      },
+      {
+       "hr": "die Sonne",
+       "en": "the sun",
+       "note": "An s in front of a vowel is voiced, so it buzzes like the z in 'zoo'."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Konsonanten richtig lesen",
+     "intro": "Practise reading the consonant letters that do not match their English values.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "How do you pronounce the letter z in German?",
+       "difficulty": 2,
+       "options": [
+        "like English z",
+        "like ts",
+        "like s",
+        "like tsch"
+       ],
+       "answer": "like ts",
+       "explanation": "German z is always ts. The buzzing English z sound exists in German too, but it is spelled with s."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which English sound matches the German letter w?",
+       "difficulty": 2,
+       "options": [
+        "the w in 'water'",
+        "the v in 'very'",
+        "the f in 'fine'",
+        "the b in 'boy'"
+       ],
+       "answer": "the v in 'very'",
+       "explanation": "German w is an English v. The English w sound does not exist in German at all."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for time, with its article. It begins with the letter that is always pronounced ts.",
+       "difficulty": 2,
+       "answer": "die Zeit",
+       "accepted": [
+        "Zeit"
+       ],
+       "explanation": "die Zeit. The z gives a ts sound, so the word starts 'tsait', and ei is read like the English word 'eye'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for father, with its article.",
+       "difficulty": 2,
+       "answer": "der Vater",
+       "accepted": [
+        "Vater"
+       ],
+       "explanation": "der Vater. The v here is pronounced as an f, which is typical for old native German words."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'The water is cold.'",
+       "difficulty": 2,
+       "options": [
+        "Das",
+        "Wasser",
+        "ist",
+        "kalt"
+       ],
+       "ordered": [
+        "Das",
+        "Wasser",
+        "ist",
+        "kalt"
+       ],
+       "explanation": "das Wasser is neuter, so the sentence opens with Das. Remember to say the w as an English v."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Wasser und Sonne",
+     "intro": "Play 'Me'. A short exchange outdoors, built so that every line contains at least one of the tricky consonants.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Tag!",
+       "en": "Hello!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Guten Tag!",
+       "en": "Hello!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Das Wasser ist kalt.",
+       "en": "The water is cold."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr kalt.",
+       "en": "Yes, very cold."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Und die Sonne?",
+       "en": "And the sun?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Die Sonne ist warm.",
+       "en": "The sun is warm."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 4,
+   "week": 1,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Lange und kurze Vokale, ei gegen ie",
+   "objective": "You can look at a written German word and predict whether its vowel is long or short, and you can read ei and ie correctly every time.",
+   "paretoFocus": "Vowel length is written into German spelling, so these few rules let you read almost any new word aloud correctly without ever hearing it first.",
+   "drills": [
+    "Read this pair aloud ten times, keeping the two clearly apart: der Wein, die Wiese.",
+    "Sort these five words into long and short: der Staat, der Mann, die Bahn, die Sonne, das Jahr.",
+    "Read der Fluss and der Fuß one after the other five times and exaggerate the difference in length."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "What are the three written signals that a vowel is long?",
+     "What does a doubled consonant tell you about the vowel before it?",
+     "Say der Wein and die Wiese and explain the difference in one sentence."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Lang oder kurz",
+     "intro": "German spelling tells you the length of a vowel. A doubled vowel, or a silent h after the vowel, means long. A doubled consonant after the vowel means short. The pairs ei and ie follow one simple trick: say the name of the second letter.",
+     "items": [
+      {
+       "hr": "der Wein",
+       "en": "the wine",
+       "note": "ei is said like the English word 'eye'. Say the second letter: i."
+      },
+      {
+       "hr": "die Wiese",
+       "en": "the meadow",
+       "note": "ie is a long ee as in 'see'. Say the second letter: e."
+      },
+      {
+       "hr": "der Staat",
+       "en": "the state",
+       "note": "A doubled vowel is always long."
+      },
+      {
+       "hr": "die Bahn",
+       "en": "the train line",
+       "note": "An h after a vowel is silent and simply makes that vowel long."
+      },
+      {
+       "hr": "der Mann",
+       "en": "the man",
+       "note": "A doubled consonant means the vowel in front of it is short."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Vokallänge erkennen",
+     "intro": "Practise reading vowel length straight off the page.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "How is the letter pair ei pronounced in German?",
+       "difficulty": 2,
+       "options": [
+        "like the English word 'eye'",
+        "like the English word 'see'",
+        "like the English word 'day'",
+        "like the English word 'boy'"
+       ],
+       "answer": "like the English word 'eye'",
+       "explanation": "Say the name of the second letter. In ei the second letter is i, so the pair sounds like 'eye'."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "What does a silent h directly after a vowel tell you?",
+       "difficulty": 2,
+       "options": [
+        "The vowel is short",
+        "The vowel is long",
+        "The word is plural",
+        "The word is a verb"
+       ],
+       "answer": "The vowel is long",
+       "explanation": "This h is never pronounced. Its only job is to mark the vowel in front of it as long, as in die Bahn."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for meadow, with its article. Its middle letters give a long ee sound.",
+       "difficulty": 2,
+       "answer": "die Wiese",
+       "accepted": [
+        "Wiese"
+       ],
+       "explanation": "die Wiese. The pair ie is always a long ee, so the word sounds nothing like der Wein, where ei gives the sound of English 'eye'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for wine, with its article.",
+       "difficulty": 2,
+       "answer": "der Wein",
+       "accepted": [
+        "Wein"
+       ],
+       "explanation": "der Wein. Read ei as 'eye', and remember the w is an English v."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'The man is here.'",
+       "difficulty": 2,
+       "options": [
+        "Der",
+        "Mann",
+        "ist",
+        "hier"
+       ],
+       "ordered": [
+        "Der",
+        "Mann",
+        "ist",
+        "hier"
+       ],
+       "explanation": "der Mann has a short a because of the double n, while hier has a long ee because of ie."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Wein und Wiese",
+     "intro": "Play 'Me'. A relaxed evening exchange that keeps switching between ei and ie.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Abend!",
+       "en": "Good evening!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Guten Abend!",
+       "en": "Good evening!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Der Wein ist gut.",
+       "en": "The wine is good."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr gut.",
+       "en": "Yes, very good."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Und die Wiese?",
+       "en": "And the meadow?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Die Wiese ist grün.",
+       "en": "The meadow is green."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 5,
+   "week": 1,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Großschreibung der Substantive, ß und ss",
+   "objective": "You can capitalise every German noun correctly and choose between ß and ss by listening to the length of the vowel in front.",
+   "paretoFocus": "These are the two spelling habits a German reader notices first, and both are governed by a rule short enough to learn in one sitting.",
+   "drills": [
+    "Copy out five nouns you have met so far and check that every single one starts with a capital letter.",
+    "Say die Straße and der Fluss one after the other and decide out loud which vowel is long.",
+    "Write groß and der Fuß three times each, and say why neither of them can take ss."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which class of German word always takes a capital letter, wherever it stands in the sentence?",
+     "State the rule that decides between ß and ss in one sentence.",
+     "Which of these needs ss and why: der Fluss or der Fuß?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Große Buchstaben, ß und ss",
+     "intro": "German capitalises every noun, not just names, and it does so in the middle of a sentence as well as at the start. The choice between ß and ss follows the vowel: after a long vowel or a diphthong you write ß, after a short vowel you write ss. Adjectives and verbs stay lower case.",
+     "items": [
+      {
+       "hr": "die Straße",
+       "en": "the street",
+       "note": "Long a, so ß. Like every German noun it takes a capital letter."
+      },
+      {
+       "hr": "der Fluss",
+       "en": "the river",
+       "note": "Short u, so ss."
+      },
+      {
+       "hr": "groß",
+       "en": "big",
+       "note": "Long o, so ß. This is an adjective, so it stays lower case."
+      },
+      {
+       "hr": "der Fuß",
+       "en": "the foot",
+       "note": "Long u, so ß. Compare der Fluss, where the u is short."
+      },
+      {
+       "hr": "das Schloss",
+       "en": "the castle",
+       "note": "Short o, so ss."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Richtig schreiben",
+     "intro": "Practise capitalisation and the choice between ß and ss.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "When do you write ß rather than ss?",
+       "difficulty": 3,
+       "options": [
+        "After a short vowel",
+        "After a long vowel or a diphthong",
+        "At the end of every word",
+        "Only in family names"
+       ],
+       "answer": "After a long vowel or a diphthong",
+       "explanation": "Length decides. die Straße has a long a, so ß, while der Fluss has a short u, so ss."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which spelling of the word for street is the standard German one?",
+       "difficulty": 3,
+       "options": [
+        "die Strasse",
+        "die Straße",
+        "die Straßse",
+        "die Strase"
+       ],
+       "answer": "die Straße",
+       "explanation": "The a is long, so the word takes ß. Writing it with ss is a Swiss convention, not standard German."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Every German noun must begin with a ___ letter, even in the middle of a sentence.",
+       "difficulty": 2,
+       "answer": "capital",
+       "explanation": "This is absolute in German. Nouns are capitalised everywhere, while adjectives and verbs are not."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German word for river, with its article. Listen for the short vowel before you choose the ending.",
+       "difficulty": 3,
+       "answer": "der Fluss",
+       "accepted": [
+        "Fluss"
+       ],
+       "explanation": "der Fluss has a short u, so it takes ss. Compare der Fuß, where the long u forces ß."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'The street is long.'",
+       "difficulty": 2,
+       "options": [
+        "Die",
+        "Straße",
+        "ist",
+        "lang"
+       ],
+       "ordered": [
+        "Die",
+        "Straße",
+        "ist",
+        "lang"
+       ],
+       "explanation": "die Straße is feminine and capitalised as a noun, while the adjective lang stays lower case."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Das Schloss und der Fluss",
+     "intro": "Play 'Me'. Two people describe what they can see, and every noun in the scene needs a capital letter.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Morgen!",
+       "en": "Good morning!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Guten Morgen!",
+       "en": "Good morning!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Das Schloss ist groß.",
+       "en": "The castle is big."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, sehr groß.",
+       "en": "Yes, very big."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Und der Fluss?",
+       "en": "And the river?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Der Fluss ist schön.",
+       "en": "The river is beautiful."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 6,
+   "week": 1,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Begrüßung und Verabschiedung",
+   "objective": "You can greet someone correctly for the time of day and say goodbye in either a formal or an informal way.",
+   "paretoFocus": "Greetings are the first thing anyone hears from you, and choosing the right level of formality is what makes a stranger relax and keep speaking German with you.",
+   "drills": [
+    "Say the greeting that matches the current hour out loud, then say the one you would need twelve hours from now.",
+    "Practise the formal goodbye five times until the four syllables run smoothly together.",
+    "Decide for each of these who you would greet formally and who informally: a bus driver, your neighbour's child, a doctor, a fellow student."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which greeting works safely at any hour of the working day?",
+     "Which goodbye is the informal one, and who would you say it to?",
+     "From roughly what hour do people switch to the evening greeting?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Hallo und Tschüss",
+     "intro": "German greetings depend on the clock, and the goodbye depends on how well you know the person. Guten Tag and Auf Wiedersehen are the safe formal pair with strangers, while Hallo and Tschüss are the everyday informal pair. Getting this wrong is not rude, but the right choice sounds noticeably more natural.",
+     "items": [
+      {
+       "hr": "Guten Morgen!",
+       "en": "Good morning!",
+       "note": "Used until roughly eleven in the morning."
+      },
+      {
+       "hr": "Guten Tag!",
+       "en": "Hello! Literally: good day.",
+       "note": "The neutral, safe greeting for the rest of the day. Perfect with strangers."
+      },
+      {
+       "hr": "Guten Abend!",
+       "en": "Good evening!",
+       "note": "From roughly six in the evening onwards."
+      },
+      {
+       "hr": "Tschüss!",
+       "en": "Bye!",
+       "note": "The informal goodbye, for friends, family and colleagues you know well."
+      },
+      {
+       "hr": "Auf Wiedersehen!",
+       "en": "Goodbye!",
+       "note": "The formal goodbye, for shops, offices and any stranger."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Die richtige Begrüßung",
+     "intro": "Practise picking the greeting that fits the hour and the situation.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "You walk into a bakery at nine in the morning. What do you say?",
+       "difficulty": 2,
+       "options": [
+        "Guten Abend!",
+        "Guten Morgen!",
+        "Gute Nacht!",
+        "Tschüss!"
+       ],
+       "answer": "Guten Morgen!",
+       "explanation": "The morning greeting runs until about eleven. Gute Nacht is not a greeting at all: it is said when someone is going to bed."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which of these is the formal goodbye?",
+       "difficulty": 2,
+       "options": [
+        "Tschüss!",
+        "Hallo!",
+        "Auf Wiedersehen!",
+        "Guten Tag!"
+       ],
+       "answer": "Auf Wiedersehen!",
+       "explanation": "Auf Wiedersehen is the formal parting phrase. Tschüss is its informal counterpart, and the other two are greetings, not goodbyes."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the neutral daytime greeting you can use with any stranger: Guten ___!",
+       "difficulty": 2,
+       "answer": "Tag",
+       "explanation": "Guten Tag. der Tag is a noun, so it keeps its capital letter inside the phrase."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the informal German goodbye you would say to a close friend.",
+       "difficulty": 2,
+       "answer": "Tschüss",
+       "accepted": [
+        "Tschüss!",
+        "Tschüs",
+        "Tschüs!"
+       ],
+       "explanation": "Tschüss is the everyday informal goodbye across Germany. The shorter spelling Tschüs is also standard."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'Good evening, Mr Weber!'",
+       "difficulty": 2,
+       "options": [
+        "Guten",
+        "Abend",
+        "Herr",
+        "Weber"
+       ],
+       "ordered": [
+        "Guten",
+        "Abend",
+        "Herr",
+        "Weber"
+       ],
+       "explanation": "The greeting comes first, then the polite title Herr with the family name. Both Abend and Herr are nouns, so both are capitalised."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Ein ganzer Tag",
+     "intro": "Play 'Me'. You meet the same neighbour three times in one day, so the greeting has to change each time. Two extra phrases appear: Bis später for see you later, and Gute Nacht as a bedtime farewell.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Morgen!",
+       "en": "Good morning!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Guten Morgen! Bis später!",
+       "en": "Good morning! See you later!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Guten Abend!",
+       "en": "Good evening!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Guten Abend! Alles gut?",
+       "en": "Good evening! All good?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja, alles gut. Gute Nacht!",
+       "en": "Yes, all good. Good night!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Gute Nacht! Tschüss!",
+       "en": "Good night! Bye!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 7,
+   "week": 1,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Ich heiße, wie heißt du",
+   "objective": "You can give your own name in two different ways, ask someone else for theirs, and respond when they answer.",
+   "paretoFocus": "Exchanging names is the doorway to every other conversation, and the verb heißen is the first German verb you will use daily.",
+   "drills": [
+    "Say your own full name in German three times, first with heißen and then with the verb for to be.",
+    "Ask for a name informally, then ask the same thing politely, and notice which two letters change on the verb.",
+    "Practise the short reply used after names are exchanged until it comes out without thinking."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "What are the two common ways to say what you are called?",
+     "How does the verb ending change between the informal and the polite question?",
+     "Which pronoun is always written with a capital letter, and why does that matter?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Ich heiße",
+     "intro": "heißen means to be called, and it is the standard way Germans give a name. Note the long ei, which is why the word is written with ß. You can also simply use the verb for to be, exactly as in English. The polite pronoun Sie always carries a capital S, in the middle of a sentence as well.",
+     "items": [
+      {
+       "hr": "Ich heiße Anna.",
+       "en": "My name is Anna.",
+       "note": "Literally: I am called Anna. Long ei, so ß."
+      },
+      {
+       "hr": "Wie heißt du?",
+       "en": "What is your name?",
+       "note": "The informal question, for a friend, a child or a fellow student."
+      },
+      {
+       "hr": "Wie heißen Sie?",
+       "en": "What is your name?",
+       "note": "The polite question. Sie always keeps its capital S."
+      },
+      {
+       "hr": "Ich bin Anna Weber.",
+       "en": "I am Anna Weber.",
+       "note": "A common and slightly more casual alternative to Ich heiße."
+      },
+      {
+       "hr": "Freut mich!",
+       "en": "Nice to meet you!",
+       "note": "The short standard reply once names have been exchanged."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Namen tauschen",
+     "intro": "Practise giving and asking for names in both registers.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "A new classmate asks what you are called. Which reply is correct?",
+       "difficulty": 3,
+       "options": [
+        "Ich heiße Anna.",
+        "Ich heißt Anna.",
+        "Du heiße Anna.",
+        "Wie heiße Anna."
+       ],
+       "answer": "Ich heiße Anna.",
+       "explanation": "With ich the verb heißen ends in e, so ich heiße. The ending st belongs to du."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which question would you use with a small child?",
+       "difficulty": 3,
+       "options": [
+        "Wie heißen Sie?",
+        "Wie heißt du?",
+        "Wie heiße ich?",
+        "Wie heißt Sie?"
+       ],
+       "answer": "Wie heißt du?",
+       "explanation": "Children always get du, and the du form of heißen is heißt. Sie is reserved for adults you do not know."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the correct form of the verb meaning to be called: Ich ___ Thomas.",
+       "difficulty": 3,
+       "answer": "heiße",
+       "explanation": "The ich form takes the ending e, giving heiße. The ei is long, which is why the verb is written with ß."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the two-word German phrase that means 'Nice to meet you!'",
+       "difficulty": 3,
+       "answer": "Freut mich",
+       "accepted": [
+        "Freut mich!",
+        "freut mich"
+       ],
+       "explanation": "Freut mich is a fixed short phrase. Germans say it immediately after names are exchanged."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the polite German question for: 'What is your name?'",
+       "difficulty": 3,
+       "options": [
+        "Wie",
+        "heißen",
+        "Sie"
+       ],
+       "ordered": [
+        "Wie",
+        "heißen",
+        "Sie"
+       ],
+       "explanation": "The question word comes first, then the verb, then the pronoun. With Sie the verb takes the ending en."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Erste Begegnung",
+     "intro": "Play 'Me'. You are meeting a colleague for the first time, so the whole exchange stays polite.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Tag! Wie heißen Sie?",
+       "en": "Hello! What is your name?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ich heiße Anna Weber.",
+       "en": "My name is Anna Weber."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ich heiße Thomas Berger.",
+       "en": "My name is Thomas Berger."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Freut mich!",
+       "en": "Nice to meet you!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Freut mich auch!",
+       "en": "Nice to meet you too!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Auf Wiedersehen, Herr Berger!",
+       "en": "Goodbye, Mr Berger!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 8,
+   "week": 2,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Du oder Sie",
+   "objective": "You can decide in a second whether a situation calls for du or Sie, and you can match the verb and the form of address to your choice.",
+   "paretoFocus": "Choosing the wrong pronoun is the most visible social mistake a learner can make in German, and the rule behind it is simple enough to internalise today.",
+   "drills": [
+    "Go through five people you saw yesterday and say aloud which pronoun each one would get.",
+    "Take one sentence with the informal pronoun and convert it to the polite version, changing both the verb and the name you use.",
+    "Write the polite pronoun five times and check every one has a capital letter."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Who gets the informal pronoun automatically, without anyone offering it?",
+     "Which verb form goes with the polite pronoun, and which other pronoun shares it?",
+     "What do you use instead of a first name when you are being polite?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Nähe und Distanz",
+     "intro": "German has two words for you. du is for friends, family, children, students and anyone who has offered it. Sie is the default for every adult stranger, and it is always written with a capital S. The pronoun also decides how you name the person: first name with du, Herr or Frau plus the family name with Sie.",
+     "items": [
+      {
+       "hr": "Bist du Student?",
+       "en": "Are you a student?",
+       "note": "The du form of the verb to be is bist. Students say du to each other automatically."
+      },
+      {
+       "hr": "Sind Sie Frau Meier?",
+       "en": "Are you Mrs Meier?",
+       "note": "The Sie form is sind, the same form as the plural we."
+      },
+      {
+       "hr": "Hallo, Anna!",
+       "en": "Hello, Anna!",
+       "note": "With du you use the first name on its own."
+      },
+      {
+       "hr": "Guten Tag, Herr Berger!",
+       "en": "Hello, Mr Berger!",
+       "note": "With Sie you use Herr or Frau plus the family name, never the first name alone."
+      },
+      {
+       "hr": "Sagen wir du?",
+       "en": "Shall we say du to each other?",
+       "note": "The friendly way to suggest dropping the formal pronoun. The older person usually offers first."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Formell oder informell",
+     "intro": "Practise matching the pronoun, the verb form and the name to the situation.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "You are talking to a shop assistant you have never met. Which pronoun do you use?",
+       "difficulty": 3,
+       "options": [
+        "du",
+        "Sie",
+        "ihr",
+        "wir"
+       ],
+       "answer": "Sie",
+       "explanation": "Adult strangers get Sie as the default. You switch to du only once the other person offers it."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which sentence is correct when you are speaking to a friend?",
+       "difficulty": 3,
+       "options": [
+        "Bist du Student?",
+        "Sind du Student?",
+        "Bist Sie Student?",
+        "Sind Sie Student, Anna?"
+       ],
+       "answer": "Bist du Student?",
+       "explanation": "du takes bist. sind belongs to Sie, and mixing the polite pronoun with a first name is contradictory."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Fill in the polite form of the verb meaning to be: ___ Sie Frau Meier?",
+       "difficulty": 3,
+       "answer": "Sind",
+       "accepted": [
+        "sind"
+       ],
+       "explanation": "The polite pronoun takes sind. In a yes or no question the verb moves to the front, so it takes the capital letter."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the polite pronoun, and mind its capital letter: Wie heißen ___?",
+       "difficulty": 3,
+       "answer": "Sie",
+       "explanation": "The polite pronoun is always written with a capital S, wherever it stands in the sentence. That capital is what separates it from sie meaning she or they."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the polite German question for: 'Are you Mr Berger?'",
+       "difficulty": 3,
+       "options": [
+        "Sind",
+        "Sie",
+        "Herr",
+        "Berger"
+       ],
+       "ordered": [
+        "Sind",
+        "Sie",
+        "Herr",
+        "Berger"
+       ],
+       "explanation": "Yes or no questions put the verb first, then the pronoun, then the title and family name."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Vom Sie zum Du",
+     "intro": "Play 'Me'. The conversation starts formally and then switches to the informal pronoun in the middle, exactly as it often does in real life.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Tag! Sind Sie Frau Weber?",
+       "en": "Hello! Are you Mrs Weber?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, ich heiße Anna Weber.",
+       "en": "Yes, my name is Anna Weber."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ich bin Thomas. Sagen wir du?",
+       "en": "I am Thomas. Shall we say du to each other?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, gern! Bist du Student?",
+       "en": "Yes, gladly! Are you a student?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja, ich bin Student.",
+       "en": "Yes, I am a student."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Super, Thomas!",
+       "en": "Great, Thomas!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 9,
+   "week": 2,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Die Zahlen von 0 bis 20",
+   "objective": "You can say, understand and write every German number from zero to twenty, and you can give your age.",
+   "paretoFocus": "Numbers under twenty carry ages, dates, platform numbers and quantities, and they are the part of a spoken sentence you most often need to catch on the first hearing.",
+   "drills": [
+    "Count aloud from zero to twenty, then straight back down to zero, three times.",
+    "Say the four numbers that break the pattern and explain out loud what is odd about each.",
+    "Say your own age in a full German sentence five times."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which two numbers between ten and twenty have to be learned as one-off forms?",
+     "What happens to the words for six and seven when they take the ending for the teens?",
+     "Say the numbers thirteen, sixteen and twenty from memory."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Zahlen bis zwanzig",
+     "intro": "German numbers are written in lower case, unlike nouns. From thirteen upwards you simply glue the small number onto the word for ten. Eleven and twelve are one-off forms, and six and seven lose a piece of themselves when they join the teens.",
+     "items": [
+      {
+       "hr": "null, eins, zwei, drei, vier, fünf",
+       "en": "0, 1, 2, 3, 4, 5",
+       "note": "Numbers are not nouns, so they stay lower case."
+      },
+      {
+       "hr": "sechs, sieben, acht, neun, zehn",
+       "en": "6, 7, 8, 9, 10",
+       "note": "The ch of sechs is the rough back sound, so the word comes out close to 'zeks'."
+      },
+      {
+       "hr": "elf, zwölf",
+       "en": "11, 12",
+       "note": "These two follow no pattern. Learn them as they stand."
+      },
+      {
+       "hr": "dreizehn, vierzehn, fünfzehn",
+       "en": "13, 14, 15",
+       "note": "From thirteen on you add zehn straight onto the small number."
+      },
+      {
+       "hr": "sechzehn, siebzehn, achtzehn, neunzehn, zwanzig",
+       "en": "16, 17, 18, 19, 20",
+       "note": "sechzehn drops the s of sechs, and siebzehn drops the en of sieben."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Zählen üben",
+     "intro": "Practise recognising and writing the numbers up to twenty.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which German word means the number 12?",
+       "difficulty": 2,
+       "options": [
+        "elf",
+        "zwölf",
+        "zwei",
+        "zwanzig"
+       ],
+       "answer": "zwölf",
+       "explanation": "zwölf is 12 and elf is 11. Both are irregular, which is why they must be memorised separately."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which of these teen numbers is irregular because the small number loses a letter?",
+       "difficulty": 3,
+       "options": [
+        "dreizehn",
+        "vierzehn",
+        "sechzehn",
+        "achtzehn"
+       ],
+       "answer": "sechzehn",
+       "explanation": "sechs loses its s to give sechzehn. The same shortening happens with sieben, which becomes siebzehn."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German number word for 7.",
+       "difficulty": 2,
+       "answer": "sieben",
+       "explanation": "sieben. The ie is a long ee sound, and the word stays lower case."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German number word for 20.",
+       "difficulty": 2,
+       "answer": "zwanzig",
+       "explanation": "zwanzig. The z at the start is pronounced ts, so the word begins 'tsvan'."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'I am nineteen years old.'",
+       "difficulty": 3,
+       "options": [
+        "Ich",
+        "bin",
+        "neunzehn",
+        "Jahre",
+        "alt"
+       ],
+       "ordered": [
+        "Ich",
+        "bin",
+        "neunzehn",
+        "Jahre",
+        "alt"
+       ],
+       "explanation": "German states age with the verb to be plus Jahre alt. das Jahr is a noun, so Jahre is capitalised."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Wie alt bist du",
+     "intro": "Play 'Me'. Two students compare ages, which forces a number into almost every line.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Wie alt bist du?",
+       "en": "How old are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ich bin achtzehn Jahre alt.",
+       "en": "I am eighteen years old."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ich bin zwanzig Jahre alt.",
+       "en": "I am twenty years old."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Und Anna?",
+       "en": "And Anna?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Anna ist zwölf.",
+       "en": "Anna is twelve."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Zwölf? Sehr jung!",
+       "en": "Twelve? Very young!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 10,
+   "week": 2,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Zahlen bis 100, Telefonnummern und Preise",
+   "objective": "You can say any number up to a hundred, give a phone number the German way, and understand a price said out loud.",
+   "paretoFocus": "German turns two-digit numbers back to front, so until you drill this you will mishear every price, every phone number and every house number.",
+   "drills": [
+    "Say these five numbers aloud, small part first: 21, 34, 47, 68, 99.",
+    "Read your own phone number aloud digit by digit, twice.",
+    "Say three prices in German: two euros forty, five euros ninety, twelve euros."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "In a two-digit number, which part do Germans say first?",
+     "Which of the round tens is spelled differently from all the others?",
+     "How do you say a price in euros and cents out loud?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Zahlen, Nummern und Preise",
+     "intro": "For any two-digit number German says the units first, joins them with und, and writes the whole thing as a single word. The round tens are regular apart from one exception. Phone numbers are read out digit by digit, and prices name the euros, then the cents, with nothing in between.",
+     "items": [
+      {
+       "hr": "einundzwanzig",
+       "en": "twenty-one",
+       "note": "Literally: one and twenty. Always written as one word, with no spaces."
+      },
+      {
+       "hr": "dreißig, vierzig, fünfzig",
+       "en": "30, 40, 50",
+       "note": "dreißig is the one ten written with ß instead of the usual zig ending."
+      },
+      {
+       "hr": "sechzig, siebzig, achtzig, neunzig, hundert",
+       "en": "60, 70, 80, 90, 100",
+       "note": "sechzig and siebzig shorten exactly as sechzehn and siebzehn did."
+      },
+      {
+       "hr": "Meine Nummer ist null vier drei, zwei zwei.",
+       "en": "My number is 0 4 3, 2 2.",
+       "note": "Phone numbers are read digit by digit, never as whole numbers."
+      },
+      {
+       "hr": "Das kostet drei Euro fünfzig.",
+       "en": "That costs three euros fifty.",
+       "note": "Say the euros, then the cents, with no extra word between them."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Preise und Nummern",
+     "intro": "Practise building two-digit numbers and reading prices.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "How do you say the number 43 in German?",
+       "difficulty": 3,
+       "options": [
+        "vierzigdrei",
+        "dreiundvierzig",
+        "vierunddreißig",
+        "dreivierzig"
+       ],
+       "answer": "dreiundvierzig",
+       "explanation": "The units come first, joined by und: three and forty. vierunddreißig would be 34, so the order really does change the number."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which of the round tens is written with ß?",
+       "difficulty": 3,
+       "options": [
+        "zwanzig",
+        "dreißig",
+        "vierzig",
+        "sechzig"
+       ],
+       "answer": "dreißig",
+       "explanation": "dreißig is the only ten that ends in ßig rather than zig. It is a spelling exception worth memorising on its own."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the German number word for 70.",
+       "difficulty": 3,
+       "answer": "siebzig",
+       "explanation": "siebzig. Like siebzehn it drops the en of sieben before the ending."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the price so that it means two euros eighty: Das kostet zwei Euro ___.",
+       "difficulty": 3,
+       "answer": "achtzig",
+       "explanation": "The cents are simply named after the euros, so zwei Euro achtzig. No word for cents is needed in everyday speech."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'That costs five euros.'",
+       "difficulty": 3,
+       "options": [
+        "Das",
+        "kostet",
+        "fünf",
+        "Euro"
+       ],
+       "ordered": [
+        "Das",
+        "kostet",
+        "fünf",
+        "Euro"
+       ],
+       "explanation": "Euro stays in the singular after a number in prices, and as a noun it keeps its capital letter."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Im Laden",
+     "intro": "Play 'Me'. You are paying at a small shop, so every line needs a price read the German way.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Tag! Das Brot kostet zwei Euro vierzig.",
+       "en": "Hello! The bread costs two euros forty."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Zwei Euro vierzig. Und die Milch?",
+       "en": "Two euros forty. And the milk?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Die Milch kostet ein Euro zehn.",
+       "en": "The milk costs one euro ten."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Zusammen drei Euro fünfzig?",
+       "en": "Three euros fifty altogether?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja, genau. Danke!",
+       "en": "Yes, exactly. Thank you!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Danke! Auf Wiedersehen!",
+       "en": "Thank you! Goodbye!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 11,
+   "week": 2,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Bitte, danke, Entschuldigung",
+   "objective": "You can thank someone, reply when you are thanked, apologise, and get a stranger's attention politely.",
+   "paretoFocus": "These four short words cover almost every routine interaction with a stranger, and using them makes even a beginner sound courteous rather than blunt.",
+   "drills": [
+    "Say a thank you and then its standard reply out loud five times, alternating roles.",
+    "Practise the word that both apologises and gets attention until you can say it smoothly at speed.",
+    "Take three small everyday situations from yesterday and say which of these phrases you would have needed."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which single German word means both please and you are welcome?",
+     "Which word do you use to stop a stranger in the street?",
+     "Name two ways to make a thank you sound warmer than the plain one-word version."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Höfliche Wörter",
+     "intro": "German politeness runs on a very small set of words. bitte does double duty: it softens a request and it is also the standard answer when someone thanks you. Entschuldigung likewise does two jobs, apologising and getting attention. Note that Dank is a noun here, so it takes a capital letter.",
+     "items": [
+      {
+       "hr": "Danke!",
+       "en": "Thank you!",
+       "note": "The plain everyday thank you."
+      },
+      {
+       "hr": "Bitte!",
+       "en": "Please! Also: you are welcome!",
+       "note": "Both jobs, one word. Which one it means is clear from the situation."
+      },
+      {
+       "hr": "Entschuldigung!",
+       "en": "Excuse me! Also: sorry!",
+       "note": "Use it to stop a stranger and to apologise for a small mistake."
+      },
+      {
+       "hr": "Kein Problem!",
+       "en": "No problem!",
+       "note": "A relaxed reply when someone apologises to you. das Problem, so a capital P."
+      },
+      {
+       "hr": "Vielen Dank!",
+       "en": "Many thanks!",
+       "note": "Warmer than the plain thank you. der Dank is a noun, hence the capital D."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Danke und bitte",
+     "intro": "Practise choosing the right courtesy word for each situation.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Someone thanks you for holding a door. What is the standard German reply?",
+       "difficulty": 3,
+       "options": [
+        "Danke!",
+        "Bitte!",
+        "Entschuldigung!",
+        "Tschüss!"
+       ],
+       "answer": "Bitte!",
+       "explanation": "bitte answers a thank you as well as softening a request. Replying with Danke would simply thank them back."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "You want to stop a stranger in the street to ask something. Which word do you use?",
+       "difficulty": 3,
+       "options": [
+        "Bitte!",
+        "Danke schön!",
+        "Entschuldigung!",
+        "Kein Problem!"
+       ],
+       "answer": "Entschuldigung!",
+       "explanation": "Entschuldigung is the standard opener for getting attention, and the same word also serves as an apology."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the warmer version of the thank you: Vielen ___!",
+       "difficulty": 3,
+       "answer": "Dank",
+       "explanation": "Vielen Dank. Here Dank is a noun, so it takes a capital letter even though it sits inside the phrase."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the two-word German phrase meaning 'No problem!'",
+       "difficulty": 3,
+       "answer": "Kein Problem",
+       "accepted": [
+        "Kein Problem!",
+        "kein Problem"
+       ],
+       "explanation": "Kein Problem is the usual relaxed answer to an apology. The noun Problem keeps its capital P."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'Many thanks, Mrs Meier!'",
+       "difficulty": 3,
+       "options": [
+        "Vielen",
+        "Dank",
+        "Frau",
+        "Meier"
+       ],
+       "ordered": [
+        "Vielen",
+        "Dank",
+        "Frau",
+        "Meier"
+       ],
+       "explanation": "The fixed phrase comes first, then the polite title Frau with the family name. Both Dank and Frau are capitalised as nouns."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Am Tisch",
+     "intro": "Play 'Me'. A tiny exchange at a table where every line is one of the courtesy words in action.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Entschuldigung!",
+       "en": "Excuse me!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, bitte?",
+       "en": "Yes, please?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Das Wasser, bitte.",
+       "en": "The water, please."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Bitte schön!",
+       "en": "Here you are!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Vielen Dank!",
+       "en": "Many thanks!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Kein Problem!",
+       "en": "No problem!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 12,
+   "week": 2,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Woher kommst du, Länder und Sprachen",
+   "objective": "You can say where you come from, where you live now, and which languages you speak, and you can ask the same three things.",
+   "paretoFocus": "Origin, city and languages are the three facts that come up in the first minute of every conversation with a German speaker.",
+   "drills": [
+    "Say where you come from and where you live in two separate German sentences, five times.",
+    "List three languages in German and check that each one starts with a capital letter.",
+    "Ask the origin question in the informal form, then convert it to the polite form."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which question word asks where a person is originally from?",
+     "Which preposition comes after that verb when you name a country?",
+     "Why do the names of languages take capital letters in German?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Herkunft und Sprachen",
+     "intro": "woher asks about origin and pairs with the verb kommen plus aus. To say where you live now you use wohnen plus in with a city name. Most countries take no article at all, which keeps these sentences simple. Language names are nouns in German, so they are capitalised.",
+     "items": [
+      {
+       "hr": "Woher kommst du?",
+       "en": "Where do you come from?",
+       "note": "woher asks about origin, not about your current address."
+      },
+      {
+       "hr": "Ich komme aus Deutschland.",
+       "en": "I come from Germany.",
+       "note": "Most country names take no article, so aus is followed directly by the country."
+      },
+      {
+       "hr": "Ich wohne in Berlin.",
+       "en": "I live in Berlin.",
+       "note": "wohnen plus in for the place you actually live now."
+      },
+      {
+       "hr": "Ich spreche Deutsch und Englisch.",
+       "en": "I speak German and English.",
+       "note": "Language names are nouns here, so both take a capital letter."
+      },
+      {
+       "hr": "Woher kommen Sie?",
+       "en": "Where do you come from?",
+       "note": "The polite version. With Sie the verb takes the ending en."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Länder und Sprachen",
+     "intro": "Practise talking about origin, place of residence and languages.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which question word asks about a person's origin?",
+       "difficulty": 3,
+       "options": [
+        "wohin",
+        "woher",
+        "wo",
+        "wie"
+       ],
+       "answer": "woher",
+       "explanation": "woher asks where from. wo asks where something is, and wohin asks where someone is going."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which of these sentences about origin is written correctly?",
+       "difficulty": 3,
+       "options": [
+        "Ich komme aus deutschland.",
+        "Ich komme aus Deutschland.",
+        "Ich komme von Deutschland.",
+        "Ich komme in Deutschland."
+       ],
+       "answer": "Ich komme aus Deutschland.",
+       "explanation": "Country names are nouns, so they are capitalised, and origin uses aus rather than von or in."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the verb meaning to live or reside: Ich ___ in Hamburg.",
+       "difficulty": 3,
+       "answer": "wohne",
+       "explanation": "wohnen takes the ending e with ich, giving wohne. It is used for the place you have your home."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the name of the language spoken in Germany: Ich spreche ___ und Spanisch.",
+       "difficulty": 3,
+       "answer": "Deutsch",
+       "explanation": "The language name behaves as a noun here, so it takes a capital D."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'I come from Spain.'",
+       "difficulty": 3,
+       "options": [
+        "Ich",
+        "komme",
+        "aus",
+        "Spanien"
+       ],
+       "ordered": [
+        "Ich",
+        "komme",
+        "aus",
+        "Spanien"
+       ],
+       "explanation": "Subject, then verb, then aus with the country name. Spanien needs no article."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Woher kommst du",
+     "intro": "Play 'Me'. Two people at a party work through origin, city and languages in that order.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Woher kommst du?",
+       "en": "Where do you come from?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ich komme aus Spanien.",
+       "en": "I come from Spain."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Und wo wohnst du?",
+       "en": "And where do you live?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ich wohne in Berlin.",
+       "en": "I live in Berlin."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Sprichst du Deutsch?",
+       "en": "Do you speak German?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, ich spreche Deutsch und Spanisch.",
+       "en": "Yes, I speak German and Spanish."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Sehr gut!",
+       "en": "Very good!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Danke! Und du?",
+       "en": "Thank you! And you?"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 13,
+   "week": 2,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Buchstabieren und nachfragen",
+   "objective": "You can spell your name out loud in German and ask someone to repeat, slow down or spell something for you.",
+   "paretoFocus": "Every counter, phone call and form fill in Germany ends with someone asking you to spell a name, and these four short phrases keep any conversation from collapsing when you lose the thread.",
+   "drills": [
+    "Spell your own family name aloud in German, letter by letter, three times.",
+    "Say the request for a repeat and the request for slower speech one after the other until both feel automatic.",
+    "Pick three words you met this week and spell each one out loud."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Which phrase asks how a word is written down?",
+     "Which two-word phrase asks someone to say it again?",
+     "How do you ask a fast speaker to slow down?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Noch einmal, bitte",
+     "intro": "You will not catch everything, and Germans expect you to say so. These are the standard repair phrases: they are short, polite and completely normal to use. Note the word man, which is a neutral one or you, used for what people in general do.",
+     "items": [
+      {
+       "hr": "Wie schreibt man das?",
+       "en": "How do you write that?",
+       "note": "man is the neutral one or you, for what people in general do."
+      },
+      {
+       "hr": "Buchstabieren Sie bitte!",
+       "en": "Please spell it!",
+       "note": "A polite request: verb first, then Sie, then bitte."
+      },
+      {
+       "hr": "Mein Name ist Weber: W, E, B, E, R.",
+       "en": "My name is Weber: W, E, B, E, R.",
+       "note": "der Name, so a capital N. Say each letter on its own, with a small pause."
+      },
+      {
+       "hr": "Noch einmal, bitte!",
+       "en": "Once more, please!",
+       "note": "The quickest way to ask for a repeat."
+      },
+      {
+       "hr": "Langsam, bitte!",
+       "en": "Slowly, please!",
+       "note": "Use it the moment someone speaks too fast for you."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Nachfragen",
+     "intro": "Practise the phrases that keep a conversation going when you miss something.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "You did not catch what someone just said. Which phrase asks them to say it again?",
+       "difficulty": 3,
+       "options": [
+        "Noch einmal, bitte!",
+        "Kein Problem!",
+        "Vielen Dank!",
+        "Freut mich!"
+       ],
+       "answer": "Noch einmal, bitte!",
+       "explanation": "Noch einmal means one more time. The other three are courtesy phrases that do not ask for anything."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "What does the little German word man mean when it stands in front of a verb?",
+       "difficulty": 3,
+       "options": [
+        "a male person",
+        "one, or people in general",
+        "my",
+        "many"
+       ],
+       "answer": "one, or people in general",
+       "explanation": "man is a neutral pronoun for what people generally do, close to English 'you' in 'how do you write that'. It is not the noun der Mann, which has two n."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the request you make when someone is speaking too fast: ___, bitte!",
+       "difficulty": 3,
+       "answer": "Langsam",
+       "accepted": [
+        "langsam"
+       ],
+       "explanation": "Langsam means slowly. Adding bitte turns the single word into a polite request."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the question that asks how a word is put down on paper: Wie ___ man das?",
+       "difficulty": 3,
+       "answer": "schreibt",
+       "explanation": "The verb is schreiben, and with man it takes the ending t. Note the ei, read like the English word 'eye'."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the polite German request for: 'Please spell that!'",
+       "difficulty": 4,
+       "options": [
+        "Buchstabieren",
+        "Sie",
+        "das",
+        "bitte"
+       ],
+       "ordered": [
+        "Buchstabieren",
+        "Sie",
+        "das",
+        "bitte"
+       ],
+       "explanation": "A polite request puts the verb first, then Sie, then the rest. bitte usually sits at the end."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Wie schreibt man das",
+     "intro": "Play 'Me'. Someone at a counter is writing your name down and needs it spelled out twice.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Guten Tag! Wie ist Ihr Name?",
+       "en": "Hello! What is your name?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Mein Name ist Kowalski.",
+       "en": "My name is Kowalski."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Buchstabieren Sie bitte!",
+       "en": "Please spell it!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "K, O, W, A, L, S, K, I.",
+       "en": "K, O, W, A, L, S, K, I."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Noch einmal, bitte! Langsam!",
+       "en": "Once more, please! Slowly!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "K, O, W, A, L, S, K, I.",
+       "en": "K, O, W, A, L, S, K, I."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Danke! Wie schreibt man das? Mit K?",
+       "en": "Thank you! How do you write that? With a K?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, mit K.",
+       "en": "Yes, with a K."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 14,
+   "week": 2,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  },
+  {
+   "title": "Erste Sätze mit sein, haben und kommen aus",
+   "objective": "You can build simple statements with the three most common German verbs and change their endings for I, you and he or she.",
+   "paretoFocus": "sein and haben are the two most frequent verbs in German by a wide margin, and kommen shows you the regular ending pattern that hundreds of other verbs follow.",
+   "drills": [
+    "Say the three forms of the verb to be for I, you and he, five times through.",
+    "Do the same for the verb to have, and notice where a letter disappears.",
+    "Build three sentences of your own about yourself, one with each of the three verbs."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Give the I, you and he forms of the verb meaning to be.",
+     "Which letter drops out of the verb to have in the you and he forms?",
+     "Which of the three verbs follows the regular ending pattern, and what are its three endings?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Sein, haben, kommen",
+     "intro": "sein and haben are irregular and have to be learned by heart, while kommen shows the regular pattern: e for I, st for you, t for he or she. One habit to notice is that German says you have hunger where English says you are hungry.",
+     "items": [
+      {
+       "hr": "Ich bin müde.",
+       "en": "I am tired.",
+       "note": "sein is irregular: ich bin, du bist, er ist."
+      },
+      {
+       "hr": "Du bist nett.",
+       "en": "You are nice.",
+       "note": "The du form of sein is bist. It looks nothing like the ich form."
+      },
+      {
+       "hr": "Ich habe Zeit.",
+       "en": "I have time.",
+       "note": "haben: ich habe, du hast, er hat. die Zeit is a noun, so a capital Z."
+      },
+      {
+       "hr": "Du hast Hunger.",
+       "en": "You are hungry.",
+       "note": "German says you have hunger. der Hunger is a noun, hence the capital H."
+      },
+      {
+       "hr": "Er kommt aus Italien.",
+       "en": "He comes from Italy.",
+       "note": "kommen is regular: ich komme, du kommst, er kommt."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Die ersten Verben",
+     "intro": "Practise the endings of the three verbs you will use most often.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which is the correct du form of the verb meaning to have?",
+       "difficulty": 4,
+       "options": [
+        "habst",
+        "hast",
+        "hat",
+        "habt"
+       ],
+       "answer": "hast",
+       "explanation": "The b of haben drops out in the du and er forms, giving hast and hat. habt belongs to the plural you."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which of these sentences about a man's origin is correct?",
+       "difficulty": 4,
+       "options": [
+        "Er bin aus Italien.",
+        "Er ist aus Italien.",
+        "Er sind aus Italien.",
+        "Er bist aus Italien."
+       ],
+       "answer": "Er ist aus Italien.",
+       "explanation": "er takes ist. bin belongs to ich, bist to du and sind to wir or Sie."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the correct form of the verb meaning to be: Ich ___ müde.",
+       "difficulty": 3,
+       "answer": "bin",
+       "explanation": "The ich form of sein is bin. It is irregular and must simply be memorised."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the correct form of the verb meaning to have: Ich ___ Zeit.",
+       "difficulty": 3,
+       "answer": "habe",
+       "explanation": "The ich form keeps the b and adds e, giving habe. The b only disappears in the du and er forms."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the German for: 'She comes from Italy.'",
+       "difficulty": 4,
+       "options": [
+        "Sie",
+        "kommt",
+        "aus",
+        "Italien"
+       ],
+       "ordered": [
+        "Sie",
+        "kommt",
+        "aus",
+        "Italien"
+       ],
+       "explanation": "kommen is regular, so the she form takes the ending t. Origin is expressed with aus plus the country name."
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Hunger und Zeit",
+     "intro": "Play 'Me'. Two people who have just met use all three verbs to sort out an evening plan.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Hallo! Ich bin Lena.",
+       "en": "Hello! I am Lena."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Hallo Lena! Ich bin Max.",
+       "en": "Hello Lena! I am Max."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Woher kommst du?",
+       "en": "Where do you come from?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ich komme aus Italien. Und du?",
+       "en": "I come from Italy. And you?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ich komme aus Deutschland. Hast du Zeit?",
+       "en": "I come from Germany. Do you have time?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja, ich habe Zeit.",
+       "en": "Yes, I have time."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Super! Ich habe Hunger.",
+       "en": "Great! I am hungry."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ich auch! Gehen wir!",
+       "en": "Me too! Let us go!"
+      }
+     ],
+     "sources": [
+      "goethe-a1",
+      "goethe-wortliste"
+     ]
+    }
+   ],
+   "day": 15,
+   "week": 3,
+   "phase": "A0 Onramp",
+   "level": "A0",
+   "resources": [
+    "Goethe-Institut Deutsch üben",
+    "DW Learn German"
+   ]
+  }
+ ]
+}

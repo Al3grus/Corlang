@@ -1,0 +1,1266 @@
+{
+ "packs": [
+  {
+   "id": "00-a0-core",
+   "title": "A0: die ersten Wörter",
+   "level": "A0",
+   "sources": [
+    "goethe-wortliste",
+    "goethe-a1"
+   ],
+   "words": [
+    {
+     "id": "hallo",
+     "hr": "hallo",
+     "en": "hello",
+     "pos": "expr.",
+     "example": {
+      "target": "Hallo, ich bin Anna.",
+      "gloss": "Hello, I am Anna."
+     }
+    },
+    {
+     "id": "guten tag",
+     "hr": "guten Tag",
+     "en": "good day, hello",
+     "pos": "expr.",
+     "note": "formal greeting during the day",
+     "example": {
+      "target": "Guten Tag, wie kann ich Ihnen helfen?",
+      "gloss": "Hello, how can I help you?"
+     }
+    },
+    {
+     "id": "guten morgen",
+     "hr": "guten Morgen",
+     "en": "good morning",
+     "pos": "expr.",
+     "example": {
+      "target": "Guten Morgen, hast du gut geschlafen?",
+      "gloss": "Good morning, did you sleep well?"
+     }
+    },
+    {
+     "id": "guten abend",
+     "hr": "guten Abend",
+     "en": "good evening",
+     "pos": "expr.",
+     "example": {
+      "target": "Guten Abend, schön, Sie zu sehen.",
+      "gloss": "Good evening, nice to see you."
+     }
+    },
+    {
+     "id": "gute nacht",
+     "hr": "gute Nacht",
+     "en": "good night",
+     "pos": "expr.",
+     "example": {
+      "target": "Gute Nacht, schlaf gut!",
+      "gloss": "Good night, sleep well!"
+     }
+    },
+    {
+     "id": "tschüss",
+     "hr": "tschüss",
+     "en": "bye",
+     "pos": "expr.",
+     "note": "informal",
+     "example": {
+      "target": "Tschüss, bis morgen!",
+      "gloss": "Bye, see you tomorrow!"
+     }
+    },
+    {
+     "id": "auf wiedersehen",
+     "hr": "auf Wiedersehen",
+     "en": "goodbye",
+     "pos": "expr.",
+     "note": "formal",
+     "example": {
+      "target": "Auf Wiedersehen und einen schönen Tag noch.",
+      "gloss": "Goodbye and have a nice day."
+     }
+    },
+    {
+     "id": "bitte",
+     "hr": "bitte",
+     "en": "please, you are welcome",
+     "pos": "expr.",
+     "example": {
+      "target": "Einen Kaffee, bitte.",
+      "gloss": "A coffee, please."
+     }
+    },
+    {
+     "id": "danke",
+     "hr": "danke",
+     "en": "thank you",
+     "pos": "expr.",
+     "example": {
+      "target": "Danke für deine Hilfe.",
+      "gloss": "Thanks for your help."
+     }
+    },
+    {
+     "id": "ja",
+     "hr": "ja",
+     "en": "yes",
+     "pos": "adv.",
+     "example": {
+      "target": "Ja, das stimmt.",
+      "gloss": "Yes, that is right."
+     }
+    },
+    {
+     "id": "nein",
+     "hr": "nein",
+     "en": "no",
+     "pos": "adv.",
+     "example": {
+      "target": "Nein, ich habe keine Zeit.",
+      "gloss": "No, I do not have time."
+     }
+    },
+    {
+     "id": "entschuldigung",
+     "hr": "Entschuldigung",
+     "en": "excuse me, sorry",
+     "pos": "expr.",
+     "example": {
+      "target": "Entschuldigung, wo ist der Bahnhof?",
+      "gloss": "Excuse me, where is the station?"
+     }
+    },
+    {
+     "id": "es tut mir leid",
+     "hr": "es tut mir leid",
+     "en": "I am sorry",
+     "pos": "expr.",
+     "example": {
+      "target": "Es tut mir leid, ich komme zu spät.",
+      "gloss": "I am sorry, I am late."
+     }
+    },
+    {
+     "id": "wie geht es dir",
+     "hr": "wie geht es dir",
+     "en": "how are you",
+     "pos": "expr.",
+     "note": "formal: wie geht es Ihnen",
+     "example": {
+      "target": "Hallo Peter, wie geht es dir?",
+      "gloss": "Hello Peter, how are you?"
+     }
+    },
+    {
+     "id": "ich",
+     "hr": "ich",
+     "en": "I",
+     "pos": "pron.",
+     "example": {
+      "target": "Ich komme aus Spanien.",
+      "gloss": "I come from Spain."
+     }
+    },
+    {
+     "id": "du",
+     "hr": "du",
+     "en": "you (informal singular)",
+     "pos": "pron.",
+     "example": {
+      "target": "Du sprichst sehr gut Deutsch.",
+      "gloss": "You speak German very well."
+     }
+    },
+    {
+     "id": "er",
+     "hr": "er",
+     "en": "he",
+     "pos": "pron.",
+     "example": {
+      "target": "Er arbeitet in Berlin.",
+      "gloss": "He works in Berlin."
+     }
+    },
+    {
+     "id": "sie",
+     "hr": "sie",
+     "en": "she",
+     "pos": "pron.",
+     "example": {
+      "target": "Sie ist meine Schwester.",
+      "gloss": "She is my sister."
+     }
+    },
+    {
+     "id": "es",
+     "hr": "es",
+     "en": "it",
+     "pos": "pron.",
+     "example": {
+      "target": "Es ist heute sehr kalt.",
+      "gloss": "It is very cold today."
+     }
+    },
+    {
+     "id": "wir",
+     "hr": "wir",
+     "en": "we",
+     "pos": "pron.",
+     "example": {
+      "target": "Wir wohnen zusammen.",
+      "gloss": "We live together."
+     }
+    },
+    {
+     "id": "ihr",
+     "hr": "ihr",
+     "en": "you (informal plural)",
+     "pos": "pron.",
+     "example": {
+      "target": "Ihr seid schon fertig?",
+      "gloss": "You are already finished?"
+     }
+    },
+    {
+     "id": "sie (plural)",
+     "hr": "sie (Plural)",
+     "en": "they",
+     "pos": "pron.",
+     "example": {
+      "target": "Sie kommen heute Abend.",
+      "gloss": "They are coming this evening."
+     }
+    },
+    {
+     "id": "sie (formell)",
+     "hr": "Sie (formell)",
+     "en": "you (formal)",
+     "pos": "pron.",
+     "note": "always capitalised",
+     "example": {
+      "target": "Können Sie mir bitte helfen?",
+      "gloss": "Can you help me, please?"
+     }
+    },
+    {
+     "id": "sein",
+     "hr": "sein",
+     "en": "to be",
+     "pos": "v.",
+     "note": "ich bin, du bist, er ist, ist gewesen",
+     "example": {
+      "target": "Ich bin müde.",
+      "gloss": "I am tired."
+     }
+    },
+    {
+     "id": "haben",
+     "hr": "haben",
+     "en": "to have",
+     "pos": "v.",
+     "note": "ich habe, du hast, er hat, hat gehabt",
+     "example": {
+      "target": "Wir haben zwei Kinder.",
+      "gloss": "We have two children."
+     }
+    },
+    {
+     "id": "heißen",
+     "hr": "heißen",
+     "en": "to be called",
+     "pos": "v.",
+     "note": "er heißt, hat geheißen",
+     "example": {
+      "target": "Wie heißt du?",
+      "gloss": "What is your name?"
+     }
+    },
+    {
+     "id": "der name",
+     "hr": "der Name",
+     "en": "name",
+     "pos": "n. m.",
+     "note": "pl. die Namen",
+     "example": {
+      "target": "Mein Name ist Lena Berg.",
+      "gloss": "My name is Lena Berg."
+     }
+    },
+    {
+     "id": "wie",
+     "hr": "wie",
+     "en": "how",
+     "pos": "adv.",
+     "example": {
+      "target": "Wie sagt man das auf Deutsch?",
+      "gloss": "How do you say that in German?"
+     }
+    },
+    {
+     "id": "was",
+     "hr": "was",
+     "en": "what",
+     "pos": "pron.",
+     "example": {
+      "target": "Was machst du am Wochenende?",
+      "gloss": "What are you doing at the weekend?"
+     }
+    },
+    {
+     "id": "wer",
+     "hr": "wer",
+     "en": "who",
+     "pos": "pron.",
+     "example": {
+      "target": "Wer ist das auf dem Foto?",
+      "gloss": "Who is that in the photo?"
+     }
+    },
+    {
+     "id": "wo",
+     "hr": "wo",
+     "en": "where",
+     "pos": "adv.",
+     "example": {
+      "target": "Wo wohnst du?",
+      "gloss": "Where do you live?"
+     }
+    },
+    {
+     "id": "woher",
+     "hr": "woher",
+     "en": "where from",
+     "pos": "adv.",
+     "example": {
+      "target": "Woher kommen Sie?",
+      "gloss": "Where do you come from?"
+     }
+    },
+    {
+     "id": "kommen",
+     "hr": "kommen",
+     "en": "to come",
+     "pos": "v.",
+     "note": "ist gekommen",
+     "example": {
+      "target": "Ich komme aus Kroatien.",
+      "gloss": "I come from Croatia."
+     }
+    },
+    {
+     "id": "wohnen",
+     "hr": "wohnen",
+     "en": "to live, to reside",
+     "pos": "v.",
+     "example": {
+      "target": "Sie wohnt in einer kleinen Wohnung.",
+      "gloss": "She lives in a small flat."
+     }
+    },
+    {
+     "id": "sprechen",
+     "hr": "sprechen",
+     "en": "to speak",
+     "pos": "v.",
+     "note": "er spricht, hat gesprochen",
+     "example": {
+      "target": "Sprechen Sie Englisch?",
+      "gloss": "Do you speak English?"
+     }
+    },
+    {
+     "id": "verstehen",
+     "hr": "verstehen",
+     "en": "to understand",
+     "pos": "v.",
+     "note": "hat verstanden",
+     "example": {
+      "target": "Ich verstehe das Wort nicht.",
+      "gloss": "I do not understand the word."
+     }
+    },
+    {
+     "id": "gut",
+     "hr": "gut",
+     "en": "good, well",
+     "pos": "adj.",
+     "note": "besser, am besten",
+     "example": {
+      "target": "Das Essen war sehr gut.",
+      "gloss": "The food was very good."
+     }
+    },
+    {
+     "id": "schlecht",
+     "hr": "schlecht",
+     "en": "bad",
+     "pos": "adj.",
+     "example": {
+      "target": "Mir geht es heute schlecht.",
+      "gloss": "I am not feeling well today."
+     }
+    },
+    {
+     "id": "und",
+     "hr": "und",
+     "en": "and",
+     "pos": "conj.",
+     "example": {
+      "target": "Ich trinke Kaffee und esse ein Brötchen.",
+      "gloss": "I drink coffee and eat a roll."
+     }
+    },
+    {
+     "id": "oder",
+     "hr": "oder",
+     "en": "or",
+     "pos": "conj.",
+     "example": {
+      "target": "Möchtest du Tee oder Kaffee?",
+      "gloss": "Would you like tea or coffee?"
+     }
+    },
+    {
+     "id": "nicht",
+     "hr": "nicht",
+     "en": "not",
+     "pos": "adv.",
+     "example": {
+      "target": "Heute arbeite ich nicht.",
+      "gloss": "I am not working today."
+     }
+    },
+    {
+     "id": "kein",
+     "hr": "kein",
+     "en": "no, not a",
+     "pos": "pron.",
+     "note": "negates nouns: kein Geld, keine Zeit",
+     "example": {
+      "target": "Ich habe keine Zeit.",
+      "gloss": "I have no time."
+     }
+    },
+    {
+     "id": "der mann",
+     "hr": "der Mann",
+     "en": "man, husband",
+     "pos": "n. m.",
+     "note": "pl. die Männer",
+     "example": {
+      "target": "Der Mann dort ist mein Nachbar.",
+      "gloss": "The man over there is my neighbour."
+     }
+    },
+    {
+     "id": "die frau",
+     "hr": "die Frau",
+     "en": "woman, wife",
+     "pos": "n. f.",
+     "note": "pl. die Frauen",
+     "example": {
+      "target": "Die Frau am Fenster liest ein Buch.",
+      "gloss": "The woman at the window is reading a book."
+     }
+    },
+    {
+     "id": "das kind",
+     "hr": "das Kind",
+     "en": "child",
+     "pos": "n. n.",
+     "note": "pl. die Kinder",
+     "example": {
+      "target": "Das Kind spielt im Garten.",
+      "gloss": "The child is playing in the garden."
+     }
+    },
+    {
+     "id": "der junge",
+     "hr": "der Junge",
+     "en": "boy",
+     "pos": "n. m.",
+     "note": "pl. die Jungen",
+     "example": {
+      "target": "Der Junge geht in die Schule.",
+      "gloss": "The boy goes to school."
+     }
+    },
+    {
+     "id": "das mädchen",
+     "hr": "das Mädchen",
+     "en": "girl",
+     "pos": "n. n.",
+     "note": "pl. die Mädchen",
+     "example": {
+      "target": "Das Mädchen heißt Sofia.",
+      "gloss": "The girl is called Sofia."
+     }
+    },
+    {
+     "id": "die leute",
+     "hr": "die Leute",
+     "en": "people",
+     "pos": "n. f.",
+     "note": "plural only",
+     "example": {
+      "target": "Auf dem Markt sind viele Leute.",
+      "gloss": "There are many people at the market."
+     }
+    },
+    {
+     "id": "null",
+     "hr": "null",
+     "en": "zero",
+     "pos": "num.",
+     "example": {
+      "target": "Meine Nummer beginnt mit null.",
+      "gloss": "My number starts with zero."
+     }
+    },
+    {
+     "id": "eins",
+     "hr": "eins",
+     "en": "one",
+     "pos": "num.",
+     "note": "before a noun: ein, eine",
+     "example": {
+      "target": "Es ist jetzt eins.",
+      "gloss": "It is one o'clock now."
+     }
+    },
+    {
+     "id": "zwei",
+     "hr": "zwei",
+     "en": "two",
+     "pos": "num.",
+     "example": {
+      "target": "Ich habe zwei Brüder.",
+      "gloss": "I have two brothers."
+     }
+    },
+    {
+     "id": "drei",
+     "hr": "drei",
+     "en": "three",
+     "pos": "num.",
+     "example": {
+      "target": "Wir bleiben drei Tage.",
+      "gloss": "We are staying three days."
+     }
+    },
+    {
+     "id": "vier",
+     "hr": "vier",
+     "en": "four",
+     "pos": "num.",
+     "example": {
+      "target": "Der Tisch hat vier Stühle.",
+      "gloss": "The table has four chairs."
+     }
+    },
+    {
+     "id": "fünf",
+     "hr": "fünf",
+     "en": "five",
+     "pos": "num.",
+     "example": {
+      "target": "Der Bus kommt in fünf Minuten.",
+      "gloss": "The bus comes in five minutes."
+     }
+    },
+    {
+     "id": "sechs",
+     "hr": "sechs",
+     "en": "six",
+     "pos": "num.",
+     "example": {
+      "target": "Ich stehe um sechs Uhr auf.",
+      "gloss": "I get up at six o'clock."
+     }
+    },
+    {
+     "id": "sieben",
+     "hr": "sieben",
+     "en": "seven",
+     "pos": "num.",
+     "example": {
+      "target": "Die Woche hat sieben Tage.",
+      "gloss": "The week has seven days."
+     }
+    },
+    {
+     "id": "acht",
+     "hr": "acht",
+     "en": "eight",
+     "pos": "num.",
+     "example": {
+      "target": "Der Kurs beginnt um acht.",
+      "gloss": "The course starts at eight."
+     }
+    },
+    {
+     "id": "neun",
+     "hr": "neun",
+     "en": "nine",
+     "pos": "num.",
+     "example": {
+      "target": "Sie wohnt im neunten Stock.",
+      "gloss": "She lives on the ninth floor."
+     }
+    },
+    {
+     "id": "zehn",
+     "hr": "zehn",
+     "en": "ten",
+     "pos": "num.",
+     "example": {
+      "target": "Das kostet zehn Euro.",
+      "gloss": "That costs ten euros."
+     }
+    },
+    {
+     "id": "elf",
+     "hr": "elf",
+     "en": "eleven",
+     "pos": "num.",
+     "example": {
+      "target": "Wir treffen uns um elf Uhr.",
+      "gloss": "We are meeting at eleven o'clock."
+     }
+    },
+    {
+     "id": "zwölf",
+     "hr": "zwölf",
+     "en": "twelve",
+     "pos": "num.",
+     "example": {
+      "target": "Das Jahr hat zwölf Monate.",
+      "gloss": "The year has twelve months."
+     }
+    },
+    {
+     "id": "dreizehn",
+     "hr": "dreizehn",
+     "en": "thirteen",
+     "pos": "num.",
+     "example": {
+      "target": "Mein Sohn ist dreizehn Jahre alt.",
+      "gloss": "My son is thirteen years old."
+     }
+    },
+    {
+     "id": "vierzehn",
+     "hr": "vierzehn",
+     "en": "fourteen",
+     "pos": "num.",
+     "example": {
+      "target": "Der Urlaub dauert vierzehn Tage.",
+      "gloss": "The holiday lasts fourteen days."
+     }
+    },
+    {
+     "id": "fünfzehn",
+     "hr": "fünfzehn",
+     "en": "fifteen",
+     "pos": "num.",
+     "example": {
+      "target": "Die Pause dauert fünfzehn Minuten.",
+      "gloss": "The break lasts fifteen minutes."
+     }
+    },
+    {
+     "id": "sechzehn",
+     "hr": "sechzehn",
+     "en": "sixteen",
+     "pos": "num.",
+     "note": "not sechszehn",
+     "example": {
+      "target": "Sie ist sechzehn Jahre alt.",
+      "gloss": "She is sixteen years old."
+     }
+    },
+    {
+     "id": "siebzehn",
+     "hr": "siebzehn",
+     "en": "seventeen",
+     "pos": "num.",
+     "note": "not siebenzehn",
+     "example": {
+      "target": "Wir sind siebzehn Personen im Kurs.",
+      "gloss": "We are seventeen people in the course."
+     }
+    },
+    {
+     "id": "achtzehn",
+     "hr": "achtzehn",
+     "en": "eighteen",
+     "pos": "num.",
+     "example": {
+      "target": "Mit achtzehn darf man wählen.",
+      "gloss": "At eighteen you may vote."
+     }
+    },
+    {
+     "id": "neunzehn",
+     "hr": "neunzehn",
+     "en": "nineteen",
+     "pos": "num.",
+     "example": {
+      "target": "Das Buch hat neunzehn Kapitel.",
+      "gloss": "The book has nineteen chapters."
+     }
+    },
+    {
+     "id": "zwanzig",
+     "hr": "zwanzig",
+     "en": "twenty",
+     "pos": "num.",
+     "example": {
+      "target": "Ich warte seit zwanzig Minuten.",
+      "gloss": "I have been waiting for twenty minutes."
+     }
+    },
+    {
+     "id": "dreißig",
+     "hr": "dreißig",
+     "en": "thirty",
+     "pos": "num.",
+     "example": {
+      "target": "Der Monat hat dreißig Tage.",
+      "gloss": "The month has thirty days."
+     }
+    },
+    {
+     "id": "vierzig",
+     "hr": "vierzig",
+     "en": "forty",
+     "pos": "num.",
+     "example": {
+      "target": "Sie arbeitet vierzig Stunden pro Woche.",
+      "gloss": "She works forty hours a week."
+     }
+    },
+    {
+     "id": "fünfzig",
+     "hr": "fünfzig",
+     "en": "fifty",
+     "pos": "num.",
+     "example": {
+      "target": "Die Jacke kostet fünfzig Euro.",
+      "gloss": "The jacket costs fifty euros."
+     }
+    },
+    {
+     "id": "hundert",
+     "hr": "hundert",
+     "en": "hundred",
+     "pos": "num.",
+     "example": {
+      "target": "Im Saal sind hundert Stühle.",
+      "gloss": "There are a hundred chairs in the hall."
+     }
+    },
+    {
+     "id": "tausend",
+     "hr": "tausend",
+     "en": "thousand",
+     "pos": "num.",
+     "example": {
+      "target": "Die Miete ist tausend Euro im Monat.",
+      "gloss": "The rent is a thousand euros a month."
+     }
+    },
+    {
+     "id": "die sprache",
+     "hr": "die Sprache",
+     "en": "language",
+     "pos": "n. f.",
+     "note": "pl. die Sprachen",
+     "example": {
+      "target": "Deutsch ist eine schöne Sprache.",
+      "gloss": "German is a beautiful language."
+     }
+    },
+    {
+     "id": "deutsch",
+     "hr": "deutsch",
+     "en": "German",
+     "pos": "adj.",
+     "note": "language: Deutsch, capitalised",
+     "example": {
+      "target": "Wir lesen eine deutsche Zeitung.",
+      "gloss": "We are reading a German newspaper."
+     }
+    },
+    {
+     "id": "lernen",
+     "hr": "lernen",
+     "en": "to learn",
+     "pos": "v.",
+     "example": {
+      "target": "Ich lerne jeden Tag zwanzig Wörter.",
+      "gloss": "I learn twenty words every day."
+     }
+    },
+    {
+     "id": "sagen",
+     "hr": "sagen",
+     "en": "to say",
+     "pos": "v.",
+     "example": {
+      "target": "Was hast du gesagt?",
+      "gloss": "What did you say?"
+     }
+    },
+    {
+     "id": "fragen",
+     "hr": "fragen",
+     "en": "to ask",
+     "pos": "v.",
+     "example": {
+      "target": "Darf ich Sie etwas fragen?",
+      "gloss": "May I ask you something?"
+     }
+    },
+    {
+     "id": "antworten",
+     "hr": "antworten",
+     "en": "to answer",
+     "pos": "v.",
+     "note": "antworten auf etwas",
+     "example": {
+      "target": "Bitte antworten Sie auf meine Frage.",
+      "gloss": "Please answer my question."
+     }
+    },
+    {
+     "id": "machen",
+     "hr": "machen",
+     "en": "to do, to make",
+     "pos": "v.",
+     "example": {
+      "target": "Was machst du gerade?",
+      "gloss": "What are you doing right now?"
+     }
+    },
+    {
+     "id": "gehen",
+     "hr": "gehen",
+     "en": "to go, to walk",
+     "pos": "v.",
+     "note": "ist gegangen",
+     "example": {
+      "target": "Ich gehe zu Fuß zur Arbeit.",
+      "gloss": "I walk to work."
+     }
+    },
+    {
+     "id": "sehen",
+     "hr": "sehen",
+     "en": "to see",
+     "pos": "v.",
+     "note": "er sieht, hat gesehen",
+     "example": {
+      "target": "Siehst du das Haus dort?",
+      "gloss": "Do you see the house over there?"
+     }
+    },
+    {
+     "id": "hören",
+     "hr": "hören",
+     "en": "to hear, to listen",
+     "pos": "v.",
+     "example": {
+      "target": "Ich höre gern Musik.",
+      "gloss": "I like listening to music."
+     }
+    },
+    {
+     "id": "lesen",
+     "hr": "lesen",
+     "en": "to read",
+     "pos": "v.",
+     "note": "er liest, hat gelesen",
+     "example": {
+      "target": "Am Abend lese ich ein Buch.",
+      "gloss": "In the evening I read a book."
+     }
+    },
+    {
+     "id": "schreiben",
+     "hr": "schreiben",
+     "en": "to write",
+     "pos": "v.",
+     "note": "hat geschrieben",
+     "example": {
+      "target": "Ich schreibe meiner Mutter eine Karte.",
+      "gloss": "I am writing my mother a card."
+     }
+    },
+    {
+     "id": "wissen",
+     "hr": "wissen",
+     "en": "to know (a fact)",
+     "pos": "v.",
+     "note": "ich weiß, du weißt, hat gewusst",
+     "example": {
+      "target": "Ich weiß nicht, wo er ist.",
+      "gloss": "I do not know where he is."
+     }
+    },
+    {
+     "id": "kennen",
+     "hr": "kennen",
+     "en": "to know (a person or place)",
+     "pos": "v.",
+     "note": "hat gekannt",
+     "example": {
+      "target": "Kennst du meine Schwester?",
+      "gloss": "Do you know my sister?"
+     }
+    },
+    {
+     "id": "sehr",
+     "hr": "sehr",
+     "en": "very",
+     "pos": "adv.",
+     "example": {
+      "target": "Die Aufgabe war sehr leicht.",
+      "gloss": "The task was very easy."
+     }
+    },
+    {
+     "id": "auch",
+     "hr": "auch",
+     "en": "also, too",
+     "pos": "adv.",
+     "example": {
+      "target": "Ich komme auch mit.",
+      "gloss": "I am coming along too."
+     }
+    },
+    {
+     "id": "aber",
+     "hr": "aber",
+     "en": "but",
+     "pos": "conj.",
+     "example": {
+      "target": "Ich bin müde, aber ich arbeite weiter.",
+      "gloss": "I am tired, but I keep working."
+     }
+    },
+    {
+     "id": "hier",
+     "hr": "hier",
+     "en": "here",
+     "pos": "adv.",
+     "example": {
+      "target": "Hier ist mein Ausweis.",
+      "gloss": "Here is my identity card."
+     }
+    },
+    {
+     "id": "dort",
+     "hr": "dort",
+     "en": "there",
+     "pos": "adv.",
+     "example": {
+      "target": "Dort hinten ist die Kasse.",
+      "gloss": "The checkout is over there at the back."
+     }
+    },
+    {
+     "id": "jetzt",
+     "hr": "jetzt",
+     "en": "now",
+     "pos": "adv.",
+     "example": {
+      "target": "Jetzt habe ich Zeit.",
+      "gloss": "Now I have time."
+     }
+    },
+    {
+     "id": "heute",
+     "hr": "heute",
+     "en": "today",
+     "pos": "adv.",
+     "example": {
+      "target": "Heute bleibe ich zu Hause.",
+      "gloss": "Today I am staying at home."
+     }
+    },
+    {
+     "id": "morgen",
+     "hr": "morgen",
+     "en": "tomorrow",
+     "pos": "adv.",
+     "note": "der Morgen, noun, means morning",
+     "example": {
+      "target": "Morgen fahren wir nach Hamburg.",
+      "gloss": "Tomorrow we are going to Hamburg."
+     }
+    },
+    {
+     "id": "gestern",
+     "hr": "gestern",
+     "en": "yesterday",
+     "pos": "adv.",
+     "example": {
+      "target": "Gestern war ich beim Arzt.",
+      "gloss": "Yesterday I was at the doctor's."
+     }
+    },
+    {
+     "id": "der tag",
+     "hr": "der Tag",
+     "en": "day",
+     "pos": "n. m.",
+     "note": "pl. die Tage",
+     "example": {
+      "target": "Der Tag beginnt sehr früh.",
+      "gloss": "The day starts very early."
+     }
+    },
+    {
+     "id": "die nacht",
+     "hr": "die Nacht",
+     "en": "night",
+     "pos": "n. f.",
+     "note": "pl. die Nächte",
+     "example": {
+      "target": "In der Nacht ist es ruhig.",
+      "gloss": "At night it is quiet."
+     }
+    },
+    {
+     "id": "das jahr",
+     "hr": "das Jahr",
+     "en": "year",
+     "pos": "n. n.",
+     "note": "pl. die Jahre",
+     "example": {
+      "target": "Ich lebe seit einem Jahr hier.",
+      "gloss": "I have been living here for a year."
+     }
+    },
+    {
+     "id": "alt",
+     "hr": "alt",
+     "en": "old",
+     "pos": "adj.",
+     "note": "älter, am ältesten",
+     "example": {
+      "target": "Wie alt bist du?",
+      "gloss": "How old are you?"
+     }
+    },
+    {
+     "id": "jung",
+     "hr": "jung",
+     "en": "young",
+     "pos": "adj.",
+     "note": "jünger, am jüngsten",
+     "example": {
+      "target": "Sie ist noch sehr jung.",
+      "gloss": "She is still very young."
+     }
+    },
+    {
+     "id": "neu",
+     "hr": "neu",
+     "en": "new",
+     "pos": "adj.",
+     "example": {
+      "target": "Ich habe ein neues Fahrrad.",
+      "gloss": "I have a new bicycle."
+     }
+    },
+    {
+     "id": "groß",
+     "hr": "groß",
+     "en": "big, tall",
+     "pos": "adj.",
+     "note": "größer, am größten",
+     "example": {
+      "target": "Die Wohnung ist sehr groß.",
+      "gloss": "The flat is very big."
+     }
+    },
+    {
+     "id": "klein",
+     "hr": "klein",
+     "en": "small",
+     "pos": "adj.",
+     "example": {
+      "target": "Wir haben einen kleinen Garten.",
+      "gloss": "We have a small garden."
+     }
+    },
+    {
+     "id": "viel",
+     "hr": "viel",
+     "en": "much, a lot",
+     "pos": "adj.",
+     "note": "pl. viele",
+     "example": {
+      "target": "Ich habe heute viel Arbeit.",
+      "gloss": "I have a lot of work today."
+     }
+    },
+    {
+     "id": "wenig",
+     "hr": "wenig",
+     "en": "little, few",
+     "pos": "adj.",
+     "example": {
+      "target": "Wir haben nur wenig Zeit.",
+      "gloss": "We have only little time."
+     }
+    },
+    {
+     "id": "mehr",
+     "hr": "mehr",
+     "en": "more",
+     "pos": "adv.",
+     "example": {
+      "target": "Ich brauche mehr Geld.",
+      "gloss": "I need more money."
+     }
+    },
+    {
+     "id": "das land",
+     "hr": "das Land",
+     "en": "country",
+     "pos": "n. n.",
+     "note": "pl. die Länder",
+     "example": {
+      "target": "Aus welchem Land kommst du?",
+      "gloss": "Which country do you come from?"
+     }
+    },
+    {
+     "id": "die stadt",
+     "hr": "die Stadt",
+     "en": "city, town",
+     "pos": "n. f.",
+     "note": "pl. die Städte",
+     "example": {
+      "target": "Die Stadt ist am Wochenende voll.",
+      "gloss": "The city is crowded at the weekend."
+     }
+    },
+    {
+     "id": "die straße",
+     "hr": "die Straße",
+     "en": "street",
+     "pos": "n. f.",
+     "note": "pl. die Straßen",
+     "example": {
+      "target": "Ich wohne in dieser Straße.",
+      "gloss": "I live on this street."
+     }
+    },
+    {
+     "id": "das haus",
+     "hr": "das Haus",
+     "en": "house",
+     "pos": "n. n.",
+     "note": "pl. die Häuser",
+     "example": {
+      "target": "Das Haus hat einen großen Garten.",
+      "gloss": "The house has a big garden."
+     }
+    },
+    {
+     "id": "die wohnung",
+     "hr": "die Wohnung",
+     "en": "flat, apartment",
+     "pos": "n. f.",
+     "note": "pl. die Wohnungen",
+     "example": {
+      "target": "Unsere Wohnung hat drei Zimmer.",
+      "gloss": "Our flat has three rooms."
+     }
+    },
+    {
+     "id": "das wasser",
+     "hr": "das Wasser",
+     "en": "water",
+     "pos": "n. n.",
+     "example": {
+      "target": "Ich trinke gern stilles Wasser.",
+      "gloss": "I like drinking still water."
+     }
+    },
+    {
+     "id": "das brot",
+     "hr": "das Brot",
+     "en": "bread",
+     "pos": "n. n.",
+     "note": "pl. die Brote",
+     "example": {
+      "target": "Wir kaufen frisches Brot beim Bäcker.",
+      "gloss": "We buy fresh bread at the baker's."
+     }
+    },
+    {
+     "id": "essen",
+     "hr": "essen",
+     "en": "to eat",
+     "pos": "v.",
+     "note": "er isst, hat gegessen",
+     "example": {
+      "target": "Wir essen um zwölf Uhr.",
+      "gloss": "We eat at twelve o'clock."
+     }
+    },
+    {
+     "id": "trinken",
+     "hr": "trinken",
+     "en": "to drink",
+     "pos": "v.",
+     "note": "hat getrunken",
+     "example": {
+      "target": "Sie trinkt morgens einen Kaffee.",
+      "gloss": "She drinks a coffee in the mornings."
+     }
+    },
+    {
+     "id": "der freund",
+     "hr": "der Freund",
+     "en": "friend, boyfriend",
+     "pos": "n. m.",
+     "note": "pl. die Freunde",
+     "example": {
+      "target": "Mein Freund wohnt in München.",
+      "gloss": "My friend lives in Munich."
+     }
+    },
+    {
+     "id": "die freundin",
+     "hr": "die Freundin",
+     "en": "friend, girlfriend",
+     "pos": "n. f.",
+     "note": "pl. die Freundinnen",
+     "example": {
+      "target": "Meine Freundin lernt auch Deutsch.",
+      "gloss": "My friend is learning German too."
+     }
+    },
+    {
+     "id": "die familie",
+     "hr": "die Familie",
+     "en": "family",
+     "pos": "n. f.",
+     "note": "pl. die Familien",
+     "example": {
+      "target": "Meine Familie ist nicht sehr groß.",
+      "gloss": "My family is not very big."
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,489 @@
+{
+ "quizzes": [
+  {
+   "id": "de-a0",
+   "levelId": "A0",
+   "title": "A0, Laute und erste Sätze",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 1,
+     "prompt": "Which three extra vowel letters does German add to the alphabet?",
+     "options": [
+      "ä, ö, ü",
+      "à, è, ì",
+      "å, ø, æ",
+      "â, ê, î"
+     ],
+     "answer": "ä, ö, ü",
+     "explanation": "German uses the umlauts ä, ö and ü. They are separate sounds, not decoration."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 2,
+     "prompt": "In which word is 'ch' the soft sound, as in the pronoun for the speaker?",
+     "options": [
+      "ich",
+      "Buch",
+      "acht",
+      "Nacht"
+     ],
+     "answer": "ich",
+     "explanation": "After i, e, ä, ö, ü and consonants the ch is soft. After a, o, u and au it is the hard throat sound."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 2,
+     "prompt": "Which spelling follows the German rule for the sharp s?",
+     "options": [
+      "der Fluss",
+      "der Fluß",
+      "der Flus",
+      "der Flusss"
+     ],
+     "answer": "der Fluss",
+     "explanation": "The u here is short, so the word takes ss. Only a long vowel or a diphthong takes ß, as in die Straße."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 2,
+     "prompt": "Which sentence uses German capitalisation correctly?",
+     "options": [
+      "Ich habe einen Hund.",
+      "Ich habe einen hund.",
+      "ich habe einen Hund.",
+      "ich habe einen hund."
+     ],
+     "answer": "Ich habe einen Hund.",
+     "explanation": "Every noun is capitalised in German, wherever it stands in the sentence: der Hund, einen Hund."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "You are introduced to your new boss. Which question is appropriate?",
+     "options": [
+      "Wie heißen Sie?",
+      "Wie heißt du?",
+      "Wie heißt ihr?",
+      "Wie heiße ich?"
+     ],
+     "answer": "Wie heißen Sie?",
+     "explanation": "Sie is the polite form for adults you do not know. Its verb takes the -en ending: Sie heißen."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 1,
+     "prompt": "Complete the greeting used in the early part of the day: 'Guten ___!'",
+     "answer": "Morgen",
+     "explanation": "Guten Morgen is the first greeting of the day. The noun keeps its capital letter."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 2,
+     "prompt": "Write the number 7 as a German word.",
+     "answer": "sieben",
+     "explanation": "The numbers one to ten run eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 2,
+     "prompt": "Complete: 'Ich ___ aus Spanien.' (the verb for saying where you are from)",
+     "answer": "komme",
+     "explanation": "Saying your origin: ich komme aus plus the country. The ich form ends in -e."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "Complete: 'Ich ___ zwanzig Jahre alt.'",
+     "options": [
+      "bin",
+      "habe",
+      "ist",
+      "bist"
+     ],
+     "answer": "bin",
+     "explanation": "Age uses sein: ich bin zwanzig Jahre alt. German does not use haben here."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "Complete: 'Ich ___ einen Bruder.'",
+     "options": [
+      "habe",
+      "bin",
+      "hat",
+      "haben"
+     ],
+     "answer": "habe",
+     "explanation": "The ich form of haben is habe. Possession of a person or thing uses haben."
+    }
+   ]
+  },
+  {
+   "id": "de-a1",
+   "levelId": "A1",
+   "title": "A1, Grundlagen der Grammatik",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "Complete: 'Du ___ zu schnell.' (the verb for driving)",
+     "options": [
+      "fährst",
+      "fahrst",
+      "fährt",
+      "fahrest"
+     ],
+     "answer": "fährst",
+     "explanation": "fahren is a strong verb: the a becomes ä in the du and er forms, du fährst, er fährt."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Which sentence has correct German word order?",
+     "options": [
+      "Heute gehe ich ins Kino.",
+      "Heute ich gehe ins Kino.",
+      "Ich heute gehe ins Kino.",
+      "Gehe heute ich ins Kino."
+     ],
+     "answer": "Heute gehe ich ins Kino.",
+     "explanation": "The conjugated verb is always the second element. If something else opens the sentence, the subject moves behind the verb."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "Complete: 'Ich sehe ___ Mann.'",
+     "options": [
+      "den",
+      "der",
+      "dem",
+      "des"
+     ],
+     "answer": "den",
+     "explanation": "sehen takes the accusative, and masculine der becomes den in that case."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Complete: 'Ich habe ___ Auto.' (I do not own one)",
+     "options": [
+      "kein",
+      "nicht",
+      "nichts",
+      "keine"
+     ],
+     "answer": "kein",
+     "explanation": "A noun with ein or with no article is negated with kein. das Auto is neuter, so the form is kein."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Complete: 'Ich helfe ___ Bruder.'",
+     "options": [
+      "meinem",
+      "meinen",
+      "mein",
+      "meines"
+     ],
+     "answer": "meinem",
+     "explanation": "helfen is a dative verb, and the possessive follows the same pattern as the article: dem Bruder, meinem Bruder."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete: 'Ich ___ heute arbeiten.' (obligation, I have to)",
+     "answer": "muss",
+     "explanation": "The modal for obligation is müssen, ich form muss. Written with ss because the u is short."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete: 'Der Zug fährt um acht Uhr ___.' (the verb means to depart, so its prefix goes to the end)",
+     "answer": "ab",
+     "explanation": "In a main clause the separable prefix jumps to the final position, closing the Satzklammer."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Which sentence is correct?",
+     "options": [
+      "Ich bleibe zu Hause, weil ich krank bin.",
+      "Ich bleibe zu Hause, weil ich bin krank.",
+      "Ich bleibe zu Hause, weil bin ich krank.",
+      "Ich bleibe zu Hause, weil krank ich bin."
+     ],
+     "answer": "Ich bleibe zu Hause, weil ich krank bin.",
+     "explanation": "weil sends the conjugated verb to the end. und, aber, oder and denn do not change the order."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Complete: 'Ich ___ nach Hause gegangen.'",
+     "options": [
+      "bin",
+      "habe",
+      "war",
+      "hatte"
+     ],
+     "answer": "bin",
+     "explanation": "Verbs of movement and change of state build the Perfekt with sein: ich bin gegangen, ich bin gefahren."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete: 'Gestern ___ ich in Berlin.' (simple past of sein)",
+     "answer": "war",
+     "explanation": "sein and haben are normally used in the simple past even in speech: ich war, ich hatte."
+    }
+   ]
+  },
+  {
+   "id": "de-a2",
+   "levelId": "A2",
+   "title": "A2, Fälle und Nebensätze",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Complete: 'Ich fahre mit ___ Freunden in die Berge.'",
+     "options": [
+      "den",
+      "die",
+      "der",
+      "dem"
+     ],
+     "answer": "den",
+     "explanation": "mit always governs the dative, and the dative plural article is den, with an -n on the noun."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Complete both gaps: 'Ich hänge das Bild an ___ Wand, und jetzt hängt es an ___ Wand.'",
+     "options": [
+      "die, der",
+      "der, die",
+      "die, die",
+      "der, der"
+     ],
+     "answer": "die, der",
+     "explanation": "The two way prepositions take the accusative for movement, wohin, and the dative for position, wo. die Wand becomes an die Wand, then an der Wand."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Complete: 'Das Buch ___ auf dem Tisch.'",
+     "options": [
+      "liegt",
+      "legt",
+      "legen",
+      "liegen"
+     ],
+     "answer": "liegt",
+     "explanation": "liegen describes the position and takes no object. legen is the action of putting something down and takes an accusative object."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete: 'Ich wasche ___ die Hände.' (reflexive pronoun in the dative)",
+     "answer": "mir",
+     "explanation": "When the reflexive verb already has an accusative object, the reflexive pronoun goes into the dative: ich wasche mir die Hände."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Which sentence places the verb correctly in the subordinate clause?",
+     "options": [
+      "Ich glaube, dass er morgen kommt.",
+      "Ich glaube, dass er kommt morgen.",
+      "Ich glaube, dass kommt er morgen.",
+      "Ich glaube, dass morgen er kommt."
+     ],
+     "answer": "Ich glaube, dass er morgen kommt.",
+     "explanation": "dass, wenn and ob all send the conjugated verb to the very end of the clause."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 5,
+     "prompt": "Complete the narrative past: 'Er ___ mir einen Brief.' (verb schreiben)",
+     "answer": "schrieb",
+     "explanation": "The Präteritum is the tense of written narration. Strong verbs change the stem vowel and add no ending in the er form."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "What is the superlative of 'gut'?",
+     "options": [
+      "am besten",
+      "am gutesten",
+      "der gutste",
+      "am guten"
+     ],
+     "answer": "am besten",
+     "explanation": "gut is irregular: gut, besser, am besten."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete: 'Der ___ Mann wohnt hier.'",
+     "options": [
+      "alte",
+      "alter",
+      "alten",
+      "altes"
+     ],
+     "answer": "alte",
+     "explanation": "After a definite article the adjective takes the weak ending, which is -e in the nominative singular."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 6,
+     "prompt": "Complete: 'Ich trinke ein ___ Bier.' (adjective kalt)",
+     "answer": "kaltes",
+     "explanation": "After ein the adjective carries the signal of the gender itself, so a neuter noun takes -es in the mixed pattern."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Which sentence is the polite way to order in a café?",
+     "options": [
+      "Ich hätte gern einen Kaffee.",
+      "Ich habe gern einen Kaffee.",
+      "Ich hatte gern einen Kaffee.",
+      "Ich haben gern einen Kaffee."
+     ],
+     "answer": "Ich hätte gern einen Kaffee.",
+     "explanation": "The Konjunktiv II of haben softens a request. Compare könnten Sie and würden Sie."
+    }
+   ]
+  },
+  {
+   "id": "de-b1",
+   "levelId": "B1",
+   "title": "B1, komplexe Strukturen",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Complete: 'Der Mann, ___ ich gestern geholfen habe, ist mein Nachbar.'",
+     "options": [
+      "dem",
+      "den",
+      "der",
+      "dessen"
+     ],
+     "answer": "dem",
+     "explanation": "The relative pronoun takes the case its own clause demands. helfen is a dative verb, so the masculine form is dem."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete: 'Die Frau, ___ Auto vor dem Haus steht, wohnt oben.'",
+     "options": [
+      "deren",
+      "dessen",
+      "der",
+      "die"
+     ],
+     "answer": "deren",
+     "explanation": "The genitive relative pronoun is dessen for masculine and neuter and deren for feminine and plural."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete: '___ des schlechten Wetters bleiben wir zu Hause.'",
+     "options": [
+      "Wegen",
+      "Mit",
+      "Nach",
+      "Bei"
+     ],
+     "answer": "Wegen",
+     "explanation": "wegen, während, trotz and statt govern the genitive. The other three take the dative."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 6,
+     "prompt": "Complete with the correct form: 'Ich kenne ___.' (der Student, accusative)",
+     "answer": "den Studenten",
+     "accepted": [
+      "den studenten"
+     ],
+     "explanation": "Nouns of the n-Deklination, such as der Student, der Kollege and der Herr, add -n or -en in every case except the nominative singular."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Complete: 'Ich habe vor, nächstes Jahr nach München ___.'",
+     "options": [
+      "zu ziehen",
+      "ziehen zu",
+      "zu ziehe",
+      "ziehen"
+     ],
+     "answer": "zu ziehen",
+     "explanation": "After expressions like ich habe vor, ich versuche and es ist wichtig the infinitive clause ends in zu plus the infinitive."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Complete: 'Wir fahren im Juli in den Urlaub. Ich freue mich schon ___.'",
+     "options": [
+      "darauf",
+      "auf es",
+      "dafür",
+      "worauf"
+     ],
+     "answer": "darauf",
+     "explanation": "sich freuen has the fixed preposition auf. When it points to a thing rather than a person, the preposition merges into a da-compound."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Complete: 'Das Haus ___ 1920 gebaut.'",
+     "options": [
+      "wurde",
+      "wurden",
+      "hat",
+      "war"
+     ],
+     "answer": "wurde",
+     "explanation": "The passive is werden plus the past participle. In the simple past the singular form is wurde."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 7,
+     "prompt": "Complete: 'Wenn ich mehr Zeit gehabt hätte, ___ ich gekommen.' (auxiliary for the past Konjunktiv II)",
+     "answer": "wäre",
+     "explanation": "The past Konjunktiv II uses hätte or wäre plus the participle, and verbs of movement take wäre."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Complete: '___ es stark regnete, gingen wir spazieren.'",
+     "options": [
+      "Obwohl",
+      "Trotzdem",
+      "Deswegen",
+      "Denn"
+     ],
+     "answer": "Obwohl",
+     "explanation": "obwohl is a subordinating conjunction and pushes the verb to the end. trotzdem is an adverb and takes the first position with the verb second."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 8,
+     "prompt": "Complete: 'Nachdem er gegessen ___, ging er sofort ins Bett.'",
+     "options": [
+      "hatte",
+      "hat",
+      "war",
+      "ist"
+     ],
+     "answer": "hatte",
+     "explanation": "After nachdem the earlier action stands one step further back, so a past main clause pairs with the Plusquamperfekt."
+    }
+   ]
+  }
+ ]
+}

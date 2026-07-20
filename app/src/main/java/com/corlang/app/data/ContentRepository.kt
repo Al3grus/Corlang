@@ -41,7 +41,7 @@ class ContentRepository(private val context: Context) {
     private val cache = java.util.concurrent.ConcurrentHashMap<String, Any>()
 
     /** Language codes that ship with the app, in display order. All are live. */
-    val availableLanguages: List<String> = listOf("hr", "fr", "pt")
+    val availableLanguages: List<String> = listOf("hr", "fr", "pt", "de")
 
     private fun readAsset(path: String): String =
         context.assets.open(path).bufferedReader().use { it.readText() }
