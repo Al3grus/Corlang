@@ -56,15 +56,26 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
   concentrate.
 
   **Allocate by weight, A1 1.0 : A2 1.6 : B1 2.8 : B2 2.5**, then scale the total by how far the
-  language sits from English (FSI groups French, Portuguese, Spanish and Italian as closest;
-  German a tier out for its cases and word order; Croatian further still). For a B1 target that
-  gives roughly:
+  language sits from English. FSI class hours to professional proficiency give the distance:
+  Spanish, Italian and Portuguese 600, French and German 750, Croatian 1100.
 
-  | | A0 | A1 | A2 | B1 |
-  |---|---|---|---|---|
-  | Closest group (fr, pt, es, it) | 0 to 15 | 45 | 70 | 125 |
-  | German | 15 | 45 | 70 | 125 |
-  | Croatian | 15 | 50 | 80 | 140 |
+  Scale by the **square root** of that ratio, not the ratio itself. FSI hours are dominated by
+  practice and production time, while a lesson count measures how many distinct things there are
+  to teach, and those do not grow at the same rate. Croatian has more syllabus (seven cases,
+  aspect pairs) than Spanish, but not 1.83x more. Undamped scaling produces courses of 460
+  lessons and is not defensible.
+
+  **Every figure rounds to the nearest 5**, so the numbers stay legible and plannable.
+
+  | Language | FSI | Mult | Target | A0 | A1 | A2 | B1 | B2 | Total |
+  |---|---|---|---|---|---|---|---|---|---|
+  | Spanish, Italian, Portuguese | 600 | 1.00 | B1 | 0 to 15 | 45 | 70 | 125 | – | **240** |
+  | German | 750 | 1.12 | B1 | 15 | 50 | 80 | 140 | – | **285** |
+  | French | 750 | 1.12 | B2 | – | 50 | 80 | 140 | 125 | **395** |
+  | Croatian | 1100 | 1.35 | B1 | 15 | 60 | 95 | 170 | – | **340** |
+
+  A0 is an onramp for scripts and sounds, added only where the language needs it, and carries no
+  floor of its own.
 
 - **[AUTO] The target level is the one the country's law requires, and never higher.** Corlang
   exists for exam preparation with legal stakes, so the finish line is set by the requirement,
