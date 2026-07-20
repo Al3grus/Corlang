@@ -96,7 +96,7 @@ fun ProgressScreen(
         // ---- You ----
         Text("${meta.flagEmoji} ${meta.name}",
             style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-        Text("Your progress — kept on this device.",
+        Text("Your progress, kept on this device.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 2.dp))

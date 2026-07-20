@@ -27,6 +27,39 @@ import java.time.LocalTime
 import java.util.concurrent.TimeUnit
 
 /**
+ * Per-language reminder copy, as MAPS rather than `when` branches so a test can assert the
+ * keys cover every available language (registry S13: German shipped its first wiring pass
+ * with no Reminder branch, and a `when` cannot be enumerated by a test). The hr fallback is
+ * deliberate for unknown codes, but a KNOWN language falling back is a wiring bug the
+ * coverage gate now catches.
+ */
+internal object ReminderCopy {
+    internal val names = mapOf(
+        "hr" to "Croatian", "fr" to "French", "pt" to "Portuguese",
+        "de" to "German", "it" to "Italian"
+    )
+    // title(lang, "") gives the bare greeting; with a name, the addressed one.
+    internal val titles: Map<String, (String) -> String> = mapOf(
+        "hr" to { who -> if (who.isEmpty()) "Vrijeme je za hrvatski! 🇭🇷" else "Vrijeme je za hrvatski, $who! 🇭🇷" },
+        "fr" to { who -> if (who.isEmpty()) "C'est l'heure du français ! 🇫🇷" else "C'est l'heure du français, $who ! 🇫🇷" },
+        "pt" to { who -> if (who.isEmpty()) "Está na hora do português! 🇵🇹" else "Está na hora do português, $who! 🇵🇹" },
+        "de" to { who -> if (who.isEmpty()) "Zeit für Deutsch! 🇩🇪" else "Zeit für Deutsch, $who! 🇩🇪" },
+        "it" to { who -> if (who.isEmpty()) "È ora di italiano! 🇮🇹" else "È ora di italiano, $who! 🇮🇹" }
+    )
+    internal val proverbs = mapOf(
+        "hr" to "Malo po malo, a little today is all it takes.",
+        "fr" to "Petit à petit, a little today is all it takes.",
+        "pt" to "Devagar se vai ao longe, a little today is all it takes.",
+        "de" to "Steter Tropfen höhlt den Stein, a little today is all it takes.",
+        "it" to "Goccia a goccia si scava la pietra, a little today is all it takes."
+    )
+
+    fun name(lang: String) = names[lang] ?: names.getValue("hr")
+    fun title(lang: String, who: String) = (titles[lang] ?: titles.getValue("hr"))(who)
+    fun proverb(lang: String) = proverbs[lang] ?: proverbs.getValue("hr")
+}
+
+/**
  * Daily study reminder. A periodic worker fires around [REMINDER_HOUR]; if nothing
  * has been studied that day it posts a nudge with the current streak at stake.
  */
@@ -62,36 +95,13 @@ class ReminderWorker(
             freezes = progress?.streakFreezes ?: 0,
             today = today
         )
-        val languageName = when (lang) {
-            "fr" -> "French"
-            "pt" -> "Portuguese"
-            "de" -> "German"
-            "it" -> "Italian"
-            else -> "Croatian"
-        }
+        val languageName = ReminderCopy.name(lang)
         // The learner's name, when they gave one, is what makes the nudge feel addressed to a
         // person rather than broadcast. Appended to the in-language title so the greeting still
         // opens in the language being learned: "Vrijeme je za hrvatski, Ricardo! 🇭🇷".
         val who = prefs.profile.first().name.trim()
-        val title = when (lang) {
-            "fr" -> if (who.isEmpty()) "C'est l'heure du français ! 🇫🇷"
-                else "C'est l'heure du français, $who ! 🇫🇷"
-            "pt" -> if (who.isEmpty()) "Está na hora do português! 🇵🇹"
-                else "Está na hora do português, $who! 🇵🇹"
-            "de" -> if (who.isEmpty()) "Zeit für Deutsch! 🇩🇪"
-                else "Zeit für Deutsch, $who! 🇩🇪"
-            "it" -> if (who.isEmpty()) "È ora di italiano! 🇮🇹"
-                else "È ora di italiano, $who! 🇮🇹"
-            else -> if (who.isEmpty()) "Vrijeme je za hrvatski! 🇭🇷"
-                else "Vrijeme je za hrvatski, $who! 🇭🇷"
-        }
-        val littleByLittle = when (lang) {
-            "fr" -> "Petit à petit, a little today is all it takes."
-            "pt" -> "Devagar se vai ao longe, a little today is all it takes."
-            "de" -> "Steter Tropfen höhlt den Stein, a little today is all it takes."
-            "it" -> "Goccia a goccia si scava la pietra, a little today is all it takes."
-            else -> "Malo po malo, a little today is all it takes."
-        }
+        val title = ReminderCopy.title(lang, who)
+        val littleByLittle = ReminderCopy.proverb(lang)
         // Rotate copy so the reminder doesn't become invisible through repetition.
         val variants = if (streak > 0) listOf(
             "Your $streak-day streak is on the line, today's lesson banks it.",

@@ -248,7 +248,7 @@ fun buildSessionSteps(
     steps += SessionStep(
         id = "review", kind = StepKind.REVIEW,
         title = "Review due words",
-        detail = "A quick spaced-repetition pass over words coming due — closes out the day.",
+        detail = "A quick spaced-repetition pass over words coming due, closing out the day.",
         phase = "6 · Review"
     )
 

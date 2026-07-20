@@ -307,7 +307,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
         Spacer(Modifier.height(10.dp))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            StatTile(if (queueLoaded) "${queue.size}" else "–", "to review", Modifier.weight(1f))
+            StatTile(if (queueLoaded) "${queue.size}" else "…", "to review", Modifier.weight(1f))
             StatTile("${seenIds.size}", "started", Modifier.weight(1f))
             StatTile("$mastered", "mastered", Modifier.weight(1f))
         }

@@ -66,7 +66,7 @@ fun PaywallScreen(
             Text("Unlock level $levelId", style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold)
             Text(
-                "A0 and A1 are free forever. Unlock $levelId to continue your course — lessons, " +
+                "A0 and A1 are free forever. Unlock $levelId to continue your course: lessons, " +
                     "words, quizzes, and the end-of-level exam. One-time purchase, yours for good.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -87,7 +87,7 @@ fun PaywallScreen(
             }
             PurchaseCard(
                 title = "Unlock everything (A2 + B1 + B2)",
-                subtitle = "Best value — the whole course, one payment.",
+                subtitle = "Best value: the whole course, one payment.",
                 price = prices[BillingManager.UNLOCK_ALL],
                 primary = single == null,
                 onBuy = { activity?.let { container.billing.purchaseLevel(it, BillingManager.UNLOCK_ALL) } }
@@ -97,7 +97,7 @@ fun PaywallScreen(
                 fontWeight = FontWeight.Bold)
             Text(
                 "Your personal AI tutor: chat in the language, get exam-writing feedback, and " +
-                    "check your explanations — all graded for your target level. Cancel anytime.",
+                    "check your explanations, all graded for your target level. Cancel anytime.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

@@ -177,10 +177,10 @@ fun ConfettiBurst(modifier: Modifier = Modifier) {
  */
 private fun milestoneLine(streak: Int): String? = when (streak) {
     7 -> "A full week. The habit is forming. 🔥"
-    14 -> "Two weeks straight — this is who you are now."
+    14 -> "Two weeks straight. This is who you are now."
     30 -> "30 days. Your flame burns blue from here. 🔵"
     50 -> "Fifty days of showing up."
-    100 -> "100 days — a golden flame for a golden habit. ✨"
+    100 -> "100 days, a golden flame for a golden habit. ✨"
     365 -> "A full year. Extraordinary."
     else -> null
 }

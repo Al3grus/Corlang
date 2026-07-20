@@ -106,7 +106,7 @@ fun ProfileScreen(
             MenuRow(Icons.Outlined.Language, "Language",
                 "${meta.flagEmoji} ${meta.name} · tap to switch", onClick = { page = "language" })
             MenuRow(Icons.Outlined.WorkspacePremium, "Get Premium",
-                if (entitled) "Active ✓ — AI tutor unlocked" else "Unlock the AI tutor (Learn tab)",
+                if (entitled) "Active ✓ · AI tutor unlocked" else "Unlock the AI tutor (Learn tab)",
                 onClick = { page = "premium" })
             MenuRow(Icons.AutoMirrored.Outlined.MenuBook, "References",
                 "Cheatsheet, grammar, best resources", onClick = { page = "references" })
@@ -214,7 +214,7 @@ private fun PremiumPage(container: AppContainer, onGetPremium: () -> Unit) {
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(top = 6.dp))
             listOf(
-                "AI tutor — chat in your language at your level",
+                "AI tutor: chat in your language at your level",
                 "AI review of your teach-back explanations",
                 "AI examiner feedback on your exam writing",
             ).forEach {
@@ -222,7 +222,7 @@ private fun PremiumPage(container: AppContainer, onGetPremium: () -> Unit) {
                     modifier = Modifier.padding(top = 4.dp))
             }
             Text(
-                if (entitled) "Enjoy — the Learn tab is in your bottom bar."
+                if (entitled) "Enjoy! The Learn tab is in your bottom bar."
                 else "The whole course, spaced-repetition review and progress tracking stay free.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -270,7 +270,7 @@ private fun ReferencesPage(container: AppContainer, lang: String) {
     val uriHandler = LocalUriHandler.current
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
         OutlinedButton(onClick = { doc = "cheatsheet" }, modifier = Modifier.fillMaxWidth()) {
-            Text("Cheatsheet — the language on one page →")
+            Text("Cheatsheet: the language on one page →")
         }
         OutlinedButton(onClick = { doc = "grammar" },
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp, bottom = 10.dp)) {

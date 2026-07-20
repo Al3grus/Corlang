@@ -505,7 +505,7 @@ fun SettingsScreen(
                 modifier = Modifier.padding(top = 4.dp)
             )
             Text(
-                "Private by design — your learning data lives only on this device. No account, no " +
+                "Private by design: your learning data lives only on this device. No account, no " +
                     "sign-in, no tracking. Back it up yourself any time from Backup & restore.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,

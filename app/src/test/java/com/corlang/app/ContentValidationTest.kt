@@ -1102,6 +1102,18 @@ class ContentValidationTest {
      * fallback makes a forgotten language SPEAK CROATIAN rather than fail, which no test
      * exercised until now.
      */
+    /** Same wiring class as the speech gate: a known language must never fall back to hr copy. */
+    @Test
+    fun `reminder copy covers every discovered language`() {
+        allLangs.forEach { lang ->
+            com.corlang.app.reminder.ReminderCopy.let { copy ->
+                assertTrue("$lang missing from ReminderCopy.names", lang in copy.names)
+                assertTrue("$lang missing from ReminderCopy.titles", lang in copy.titles)
+                assertTrue("$lang missing from ReminderCopy.proverbs", lang in copy.proverbs)
+            }
+        }
+    }
+
     @Test
     fun `speech locales cover every discovered language`() {
         allLangs.forEach { lang ->
@@ -1129,5 +1141,55 @@ class ContentValidationTest {
                 greeting.contains('—') || greeting.contains('–')
             )
         }
+    }
+
+    /**
+     * Registry C2, closed: the seed-greeting gate above covered one string; this walks EVERY
+     * Kotlin string literal in the app source. A sweep on 2026-07-20 found 16 dash-bearing
+     * strings that had survived two earlier "fixes" of the dash rule. Drills.kt is allowlisted:
+     * its " — " literals are data delimiters in legacy content parsing, not copy.
+     */
+    @Test
+    fun `kotlin string literals carry no em or en dashes`() {
+        val srcRoot = listOf("src/main/java", "app/src/main/java")
+            .map { File(it) }.firstOrNull { it.isDirectory }
+            ?: error("source root not found from ${File(".").absolutePath}")
+        val literal = Regex("\"((?:[^\"\\\\]|\\\\.)*)\"")
+        val offenders = mutableListOf<String>()
+        srcRoot.walkTopDown().filter { it.extension == "kt" }.forEach { file ->
+            if (file.name == "Drills.kt") return@forEach
+            file.readLines(Charsets.UTF_8).forEachIndexed { i, line ->
+                val t = line.trim()
+                if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*")) return@forEachIndexed
+                literal.findAll(line).forEach { m ->
+                    if ('—' in m.groupValues[1] || '–' in m.groupValues[1]) {
+                        offenders += "${file.name}:${i + 1}: ${m.groupValues[1].take(60)}"
+                    }
+                }
+            }
+        }
+        assertTrue("em/en dashes in Kotlin string literals:\n" + offenders.joinToString("\n"),
+            offenders.isEmpty())
+    }
+
+    /**
+     * The release flow keeps three version declarations in sync by hand (build.gradle.kts
+     * versionCode/versionName and releases/version.json); a desync ships an update banner
+     * that points at the wrong build. This pins them together.
+     */
+    @Test
+    fun `release version json matches the gradle version`() {
+        val gradle = listOf("build.gradle.kts", "app/build.gradle.kts")
+            .map { File(it) }.firstOrNull { it.isFile }?.readText(Charsets.UTF_8)
+            ?: error("app/build.gradle.kts not found from ${File(".").absolutePath}")
+        val versionJson = listOf("../releases/version.json", "releases/version.json")
+            .map { File(it) }.firstOrNull { it.isFile }?.readText(Charsets.UTF_8)
+            ?: error("releases/version.json not found")
+        val code = Regex("versionCode\\s*=\\s*(\\d+)").find(gradle)!!.groupValues[1]
+        val name = Regex("versionName\\s*=\\s*\"([^\"]+)\"").find(gradle)!!.groupValues[1]
+        assertTrue("version.json versionCode != gradle versionCode $code",
+            Regex("\"versionCode\"\\s*:\\s*$code\\b").containsMatchIn(versionJson))
+        assertTrue("version.json versionName != gradle versionName $name",
+            "\"$name\"" in versionJson)
     }
 }
