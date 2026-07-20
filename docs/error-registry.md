@@ -83,6 +83,7 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | S6 | Lesson `resources` strings not matching `resources.json` names | de integration; it caught pre-integration | assembler gate + Kotlin gate; Gold Book: freeze names BEFORE lesson authoring | ✅ all |
 | S7 | Vocab packs out of ladder order (top-ups introducing A2 words after B1) | de assembly | `build_language.py` stable level sort | ✅ all |
 | S8 | Course top-light vs guided-hours weighting (volume rule hiding thin B1) | 2026-07-20 (user question) | Kotlin `levelFloor` per language + debt map | 🔧 fr +145, hr +90, pt +70 |
+| S17 | Deck LARGER than lessons × 10, so the tail never unlocks and the words are dead weight (de ships 2913 words against a 2850 cap, 63 unreachable) | 2026-07-20, de gap-close planning | the deck is a FIXED-CAPACITY pipe: vocabulary work is a SWAP, not an add. Author missing core words by displacing the least valuable existing ones, or add lessons to widen the pipe |
 | S9 | Deck smaller than lessons × 10 (last lessons teach no words) | fr/pt expansion | Kotlin gate `everyDeckCoversTheWholeCourse` | ✅ all |
 | S10 | Level-tag deck seeding reaching past the placement point (1886 words unlearnable) | v0.20.73, reverted | deck-index windows only; `PlacementSeedingTest` | ✅ |
 | S11 | Stale composition state across language switch (day-8 A0 learner shown A1) | field report | `key(lang)` rule on every per-language screen | ✅ |
