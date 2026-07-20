@@ -274,8 +274,27 @@ fun SessionPlayer(
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
 
-    val steps = remember(lang, day.day) {
-        buildSessionSteps(day, container.content.meta(lang).name)
+    // Mistake bank: up to 3 questions missed on EARLIER days, resurfaced as a repair step.
+    // Null until loaded; the base steps render immediately and the repair step splices in
+    // before the wrap-up tail, so indices already passed never shift.
+    var repairQuestions by remember(lang, day.day) {
+        androidx.compose.runtime.mutableStateOf<List<com.corlang.app.data.model.Question>?>(null)
+    }
+    LaunchedEffect(lang, day.day) { repairQuestions = container.progress.dueMistakes(lang, 3) }
+
+    val steps = remember(lang, day.day, repairQuestions?.size) {
+        val base = buildSessionSteps(day, container.content.meta(lang).name)
+        val repairs = repairQuestions
+        if (repairs.isNullOrEmpty()) base else {
+            val tail = base.indexOfFirst { it.id == "wrapup" || it.kind == StepKind.COMPLETE }
+                .let { if (it < 0) base.size else it }
+            base.subList(0, tail) + SessionStep(
+                id = "mistakes", kind = StepKind.EXERCISE,
+                title = "Fix your mistakes",
+                detail = "Questions you missed in earlier lessons. Answer right and they stop coming back.",
+                phase = "5 · Wrap-up"
+            ) + base.subList(tail, base.size)
+        }
     }
 
     // null until the first DB emit — used to gate the resume jump so we don't flash step 0.
@@ -589,7 +608,43 @@ fun SessionPlayer(
                     StepKind.CLOZE -> ClozeDrill(container, lang, onDrillDone)
                     StepKind.RECALL -> RecallDrill(container, lang, onDrillDone)
                     StepKind.LEARN -> activity?.let { LearnActivity(container, it, onDrillDone) }
-                    StepKind.EXERCISE -> activity?.let { act ->
+                    StepKind.EXERCISE -> if (s.id == "mistakes") {
+                        val repairs = repairQuestions.orEmpty()
+                        ExerciseActivity(
+                            container,
+                            com.corlang.app.data.model.DayActivity(
+                                type = com.corlang.app.data.model.ActivityKind.EXERCISE,
+                                title = "Fix your mistakes",
+                                intro = "One more try at what got away earlier.",
+                                questions = repairs
+                            ),
+                            loadResumeState = {
+                                val ids = container.progress.dayTaskChecks(lang, day.day).first()
+                                    .map { it.itemId }
+                                val qPrefix = "${s.id}::q"
+                                ExerciseResume(
+                                    solvedIndices = ids.filter { it.startsWith(qPrefix) }
+                                        .mapNotNull { it.removePrefix(qPrefix).toIntOrNull() }
+                                        .toSet(),
+                                    missedAny = "${s.id}::missed" in ids
+                                )
+                            },
+                            onSolved = { i ->
+                                container.appScope.launch {
+                                    container.progress.setDayTask(lang, day.day, "${s.id}::q$i", true)
+                                }
+                            },
+                            // Right answer retires the banked question; wrong answer re-banks
+                            // it with a bumped count, so it returns in a later session.
+                            onQuestionCleared = { q ->
+                                container.appScope.launch { container.progress.clearMistake(lang, q) }
+                            },
+                            onQuestionMissed = { q ->
+                                container.appScope.launch { container.progress.recordMistake(lang, day.day, q) }
+                            },
+                            onDone = onDrillDone
+                        )
+                    } else activity?.let { act ->
                         ExerciseActivity(
                             container, act,
                             // Resume within a multi-exercise step: WHICH questions were cleared
@@ -618,6 +673,12 @@ fun SessionPlayer(
                                 container.appScope.launch {
                                     container.progress.setDayTask(lang, day.day, "${s.id}::missed", true)
                                 }
+                            },
+                            onQuestionCleared = { q ->
+                                container.appScope.launch { container.progress.clearMistake(lang, q) }
+                            },
+                            onQuestionMissed = { q ->
+                                container.appScope.launch { container.progress.recordMistake(lang, day.day, q) }
                             },
                             onDone = onDrillDone
                         )

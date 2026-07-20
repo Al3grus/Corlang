@@ -155,6 +155,7 @@ interface ProgressDao {
         clearExamAttemptsFor(lang)
         clearCanDoChecksFor(lang)
         clearDayTaskChecksFor(lang)
+        clearMissedQuestionsFor(lang)
     }
 
     // ----- Per-language reset (Settings "Reset progress"): every table keyed by langCode -----
@@ -167,6 +168,23 @@ interface ProgressDao {
     @Query("DELETE FROM exam_section_attempt WHERE langCode = :lang") suspend fun clearExamAttemptsFor(lang: String)
     @Query("DELETE FROM can_do_check WHERE langCode = :lang") suspend fun clearCanDoChecksFor(lang: String)
     @Query("DELETE FROM day_task_check WHERE langCode = :lang") suspend fun clearDayTaskChecksFor(lang: String)
+    @Query("DELETE FROM missed_question WHERE langCode = :lang") suspend fun clearMissedQuestionsFor(lang: String)
+
+    // ----- Mistake bank -----
+
+    @Query("SELECT * FROM missed_question WHERE langCode = :lang AND promptKey = :promptKey")
+    suspend fun missedQuestion(lang: String, promptKey: String): MissedQuestion?
+
+    @androidx.room.Upsert
+    suspend fun upsertMissedQuestion(row: MissedQuestion)
+
+    /** Uncleared mistakes from BEFORE today, oldest first: today's misses are already re-asked
+     *  inside their own exercise, so resurfacing them the same day would double-drill. */
+    @Query(
+        "SELECT * FROM missed_question WHERE langCode = :lang AND clearedEpochDay IS NULL " +
+            "AND lastMissedEpochDay < :today ORDER BY lastMissedEpochDay ASC LIMIT :limit"
+    )
+    suspend fun dueMistakes(lang: String, today: Long, limit: Int): List<MissedQuestion>
 
     @Query("DELETE FROM language_progress") suspend fun clearProgress()
     @Query("DELETE FROM day_completion") suspend fun clearCompletions()

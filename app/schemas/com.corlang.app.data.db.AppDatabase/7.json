@@ -1,0 +1,487 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 7,
+    "identityHash": "52b10e91cf38d9e2ef15800d7175389d",
+    "entities": [
+      {
+        "tableName": "language_progress",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`langCode` TEXT NOT NULL, `currentLevel` TEXT NOT NULL, `currentDay` INTEGER NOT NULL, `streak` INTEGER NOT NULL, `lastStudiedEpochDay` INTEGER NOT NULL, `streakFreezes` INTEGER NOT NULL, PRIMARY KEY(`langCode`))",
+        "fields": [
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentLevel",
+            "columnName": "currentLevel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentDay",
+            "columnName": "currentDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "streak",
+            "columnName": "streak",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastStudiedEpochDay",
+            "columnName": "lastStudiedEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "streakFreezes",
+            "columnName": "streakFreezes",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "langCode"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "day_completion",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `langCode` TEXT NOT NULL, `day` INTEGER NOT NULL, `completedAtEpoch` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedAtEpoch",
+            "columnName": "completedAtEpoch",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_day_completion_langCode_day",
+            "unique": true,
+            "columnNames": [
+              "langCode",
+              "day"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_day_completion_langCode_day` ON `${TABLE_NAME}` (`langCode`, `day`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "quiz_attempt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `langCode` TEXT NOT NULL, `quizId` TEXT NOT NULL, `score` INTEGER NOT NULL, `total` INTEGER NOT NULL, `takenAtEpoch` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quizId",
+            "columnName": "quizId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "total",
+            "columnName": "total",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "takenAtEpoch",
+            "columnName": "takenAtEpoch",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "feynman_attempt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `langCode` TEXT NOT NULL, `conceptId` TEXT NOT NULL, `selfScore` INTEGER NOT NULL, `total` INTEGER NOT NULL, `doneAtEpoch` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conceptId",
+            "columnName": "conceptId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selfScore",
+            "columnName": "selfScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "total",
+            "columnName": "total",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "doneAtEpoch",
+            "columnName": "doneAtEpoch",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "word_review",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`langCode` TEXT NOT NULL, `wordId` TEXT NOT NULL, `box` INTEGER NOT NULL, `dueEpochDay` INTEGER NOT NULL, `introducedEpochDay` INTEGER NOT NULL, `lapses` INTEGER NOT NULL, `stability` REAL NOT NULL, `difficulty` REAL NOT NULL, `lastReviewEpochDay` INTEGER NOT NULL, `reps` INTEGER NOT NULL, PRIMARY KEY(`langCode`, `wordId`))",
+        "fields": [
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "box",
+            "columnName": "box",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dueEpochDay",
+            "columnName": "dueEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "introducedEpochDay",
+            "columnName": "introducedEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lapses",
+            "columnName": "lapses",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stability",
+            "columnName": "stability",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "difficulty",
+            "columnName": "difficulty",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastReviewEpochDay",
+            "columnName": "lastReviewEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reps",
+            "columnName": "reps",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "langCode",
+            "wordId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "exam_section_attempt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `langCode` TEXT NOT NULL, `examId` TEXT NOT NULL, `sectionId` TEXT NOT NULL, `score` INTEGER NOT NULL, `total` INTEGER NOT NULL, `passed` INTEGER NOT NULL, `takenAtEpoch` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "examId",
+            "columnName": "examId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sectionId",
+            "columnName": "sectionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "total",
+            "columnName": "total",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "passed",
+            "columnName": "passed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "takenAtEpoch",
+            "columnName": "takenAtEpoch",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "can_do_check",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`langCode` TEXT NOT NULL, `levelId` TEXT NOT NULL, `itemId` TEXT NOT NULL, `checkedAtEpoch` INTEGER NOT NULL, PRIMARY KEY(`langCode`, `levelId`, `itemId`))",
+        "fields": [
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelId",
+            "columnName": "levelId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "checkedAtEpoch",
+            "columnName": "checkedAtEpoch",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "langCode",
+            "levelId",
+            "itemId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "day_task_check",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`langCode` TEXT NOT NULL, `day` INTEGER NOT NULL, `itemId` TEXT NOT NULL, `checkedAtEpoch` INTEGER NOT NULL, PRIMARY KEY(`langCode`, `day`, `itemId`))",
+        "fields": [
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "checkedAtEpoch",
+            "columnName": "checkedAtEpoch",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "langCode",
+            "day",
+            "itemId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "missed_question",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`langCode` TEXT NOT NULL, `promptKey` TEXT NOT NULL, `questionJson` TEXT NOT NULL, `day` INTEGER NOT NULL, `timesMissed` INTEGER NOT NULL, `lastMissedEpochDay` INTEGER NOT NULL, `clearedEpochDay` INTEGER, PRIMARY KEY(`langCode`, `promptKey`))",
+        "fields": [
+          {
+            "fieldPath": "langCode",
+            "columnName": "langCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "promptKey",
+            "columnName": "promptKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionJson",
+            "columnName": "questionJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timesMissed",
+            "columnName": "timesMissed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastMissedEpochDay",
+            "columnName": "lastMissedEpochDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "clearedEpochDay",
+            "columnName": "clearedEpochDay",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "langCode",
+            "promptKey"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '52b10e91cf38d9e2ef15800d7175389d')"
+    ]
+  }
+}

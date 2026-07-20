@@ -65,6 +65,26 @@ data class WordReview(
     val reps: Int = 0
 )
 
+/**
+ * The mistake bank: an exercise question answered wrong, kept until answered right. The SRS
+ * recycles WORDS, but a failed exercise was previously never seen again, which discards the
+ * single strongest learning signal a lesson produces. Keyed on the prompt text, which the
+ * duplicate-prompt gate makes unique per course and which survives day renumbering across
+ * content updates; the full question is snapshotted as JSON so it can be re-run even if the
+ * lesson that carried it changes.
+ */
+@Serializable
+@Entity(tableName = "missed_question", primaryKeys = ["langCode", "promptKey"])
+data class MissedQuestion(
+    val langCode: String,
+    val promptKey: String,
+    val questionJson: String,
+    val day: Int,                       // where it was first missed, for display only
+    val timesMissed: Int = 1,
+    val lastMissedEpochDay: Long = 0L,
+    val clearedEpochDay: Long? = null
+)
+
 @Serializable
 @Entity(tableName = "feynman_attempt")
 data class FeynmanAttempt(
