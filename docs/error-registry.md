@@ -47,7 +47,7 @@ Sweep key: ✅ swept clean · 🔧 swept, fixes pending · ▢ not yet swept · 
 | C13 | Quiz/exam prompts colliding with lesson prompts (tests memory, not language) | 2026-07-20 proctor design | `proctor.py` check 4 | 🔧 | ✅ | ✅ | 🔧 | ▢ |
 | C14 | MCQ answer visible in its own prompt | 2026-07-20 proctor design | `proctor.py` check 4 | 🔧 | ✅ | ✅ | 🔧 | ▢ |
 | C15 | Longest-option-is-answer bias > 55% (guessable course) | 2026-07-20 proctor design | `proctor.py` check 5 | ✅ | ✅ | ✅ | ✅ | ▢ |
-| C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ▢ | ▢ | ▢ | ▢ | ▢ |
+| C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ▢ | ▢ | ▢ | 🔧 | ▢ |
 
 *C10–C14 sweep counts (2026-07-20): hr 118, fr 56, pt 45, de 80 problems. 🔧 clears to ✅
 when `proctor.py` runs clean on that language.*
@@ -120,8 +120,10 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 ## Open sweeps (the queue this registry exists to drain)
 
 1. **C10–C14**: proctor backlog, hr 118 / de 80 remaining (fr and pt swept to zero 2026-07-20); it audited at assembly.
-2. **C16**: Phase 8b syllabus cross-check for de (Goethe Wortliste) and it (CILS sillabo /
-   Profilo); then hr/fr/pt digests re-verified against what their content actually cites.
+2. **C16**: de CHECKED 2026-07-20 (DWDS mirrors + all three official PDFs, complete): deck
+   covers 46.3% of the official A1..B1 inventory, 262 official A1 lemmas absent entirely, so
+   the `goethe-wortliste` key was REMOVED from all 22 packs until the gap-close authoring pass
+   earns it back. it (CILS sillabo / Profilo) still unchecked; hr/fr/pt digests likewise.
 4. **C4**: live re-verification of hr and fr resources.json URLs; de's DW link was confirmed
    by search only (fetcher blocks dw.com), noted in its digest.
 5. **S8**: weighted-floor debt, fr +145 (legally B2, priority) → hr +90 → pt +70.
