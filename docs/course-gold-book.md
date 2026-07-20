@@ -245,6 +245,34 @@ the gold book's job is to make that pass find nothing.
 
 ---
 
+## Automation roadmap (agreed direction, build as capacity allows)
+
+Built 2026-07-20: the grader cross-check (every authored MCQ/FILL/REORDER answer and accepted
+variant must grade CORRECT through the real `Grading` object, so no course can ship an answer
+a correct learner cannot pass) and discovered-language speech-locale coverage.
+
+Still to build, in value order:
+1. **CI.** Commit the Gradle wrapper (the repo has none, which is why builds depend on one
+   machine's paths) and a GitHub Actions workflow running `testSideloadDebugUnitTest
+   --rerun-tasks` on every push. Until this exists, every gate in this book only runs when
+   someone remembers to run it.
+2. **Learner walkthrough simulation.** A pure-logic test that "takes" the whole course:
+   steps every activity, answers every question correctly via the real graders, sits every
+   quiz and mock, and asserts the journey unlocks in order. Catches integration defects no
+   per-file gate can.
+3. **Map-based wiring coverage.** `Reminder`'s three per-language branches are `when`
+   expressions a test cannot enumerate; restructure to Maps and assert keys cover
+   `availableLanguages`, closing registry S13 properly.
+4. **Kotlin copy dash-lint** (registry C2): a gate scanning UI string literals, extended from
+   the seed-greeting gate, once the ~40-string sweep lands.
+5. **Release consistency gate**: versionCode/versionName vs `releases/version.json` must
+   match before `assembleSideloadRelease`.
+6. **Golden screenshot tests** (Paparazzi) for Journey/Today/Words per language, catching
+   layout regressions without an emulator.
+7. **TTS listening mode**: mock-exam listening sections already carry transcripts and the app
+   already has per-language TTS; reading the transcript aloud with text hidden until answered
+   turns fake listening practice into real listening practice with zero new content.
+
 ## The error loop (applies to every phase, and is how this book improves)
 
 `docs/error-registry.md` is the list of every defect class ever found, its automation, and its
