@@ -41,11 +41,11 @@ Sweep key: ✅ swept clean · 🔧 swept, fixes pending · ▢ not yet swept · 
 | C7 | REORDER with fewer than 3 tokens | 2026-07-20, it_a1a "il sole" | `check_batch.py` | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C8 | Duplicate prompts within a container | fr/pt expansion | `check_batch.py`; Kotlin gate | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C9 | "day N" phrasing in learner text | fr/pt expansion | `check_batch.py`; Kotlin gate | ✅ | ✅ | ✅ | ✅ | ✅ |
-| C10 | Objective restated verbatim in drills/intros ("In this lesson you will…") | 2026-07-20, pt lesson 1 (user report) | `proctor.py` check 1 | 🔧 | ✅ | ✅ | 🔧 | ▢ |
-| C11 | Stamped-out instructional boilerplate across lessons | 2026-07-20, de dialogues | `proctor.py` check 2 (ritual app nudges exempt) | 🔧 | ✅ | ✅ | 🔧 | ▢ |
-| C12 | Duplicate taught sentences across days | 2026-07-20 proctor sweep | `proctor.py` check 3 | 🔧 | ✅ | ✅ | 🔧 | ▢ |
-| C13 | Quiz/exam prompts colliding with lesson prompts (tests memory, not language) | 2026-07-20 proctor design | `proctor.py` check 4 | 🔧 | ✅ | ✅ | 🔧 | ▢ |
-| C14 | MCQ answer visible in its own prompt | 2026-07-20 proctor design | `proctor.py` check 4 | 🔧 | ✅ | ✅ | 🔧 | ▢ |
+| C10 | Objective restated verbatim in drills/intros ("In this lesson you will…") | 2026-07-20, pt lesson 1 (user report) | `proctor.py` check 1 | ✅ | ✅ | ✅ | ✅ | ▢ |
+| C11 | Stamped-out instructional boilerplate across lessons | 2026-07-20, de dialogues | `proctor.py` check 2 (ritual app nudges exempt) | ✅ | ✅ | ✅ | ✅ | ▢ |
+| C12 | Duplicate taught sentences across days | 2026-07-20 proctor sweep | `proctor.py` check 3 | ✅ | ✅ | ✅ | ✅ | ▢ |
+| C13 | Quiz/exam prompts colliding with lesson prompts (tests memory, not language) | 2026-07-20 proctor design | `proctor.py` check 4 | ✅ | ✅ | ✅ | ✅ | ▢ |
+| C14 | MCQ answer visible in its own prompt | 2026-07-20 proctor design | `proctor.py` check 4 | ✅ | ✅ | ✅ | ✅ | ▢ |
 | C15 | Longest-option-is-answer bias > 55% (guessable course) | 2026-07-20 proctor design | `proctor.py` check 5 | ✅ | ✅ | ✅ | ✅ | ▢ |
 | C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ▢ | ▢ | ▢ | 🔧 | ▢ |
 
@@ -119,7 +119,7 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 
 ## Open sweeps (the queue this registry exists to drain)
 
-1. **C10–C14**: proctor backlog, hr 118 / de 80 remaining (fr and pt swept to zero 2026-07-20); it audited at assembly.
+1. **C10–C14**: DRAINED for all four shipped languages 2026-07-20 (hr 118, de 80, fr 56, pt 45, all to zero, independently verified); it audits at assembly. The CI proctor step can flip to hard-fail.
 2. **C16**: de CHECKED 2026-07-20 (DWDS mirrors + all three official PDFs, complete): deck
    covers 46.3% of the official A1..B1 inventory, 262 official A1 lemmas absent entirely, so
    the `goethe-wortliste` key was REMOVED from all 22 packs until the gap-close authoring pass
