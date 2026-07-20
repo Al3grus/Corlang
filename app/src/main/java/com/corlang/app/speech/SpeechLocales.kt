@@ -15,6 +15,7 @@ object SpeechLocales {
         // de-DE explicitly for the same reason: the course teaches standard German, so an
         // Austrian or Swiss system voice must not be picked up by accident.
         "de" -> Locale("de", "DE")
+        "it" -> Locale("it", "IT")
         else -> Locale("hr", "HR")
     }
 
@@ -23,6 +24,7 @@ object SpeechLocales {
         "fr" -> "fr-FR"
         "pt" -> "pt-PT"
         "de" -> "de-DE"
+        "it" -> "it-IT"
         else -> "hr-HR"
     }
 }
