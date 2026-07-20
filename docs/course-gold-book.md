@@ -60,8 +60,13 @@ not by being plausible.
   per-language in `ContentValidationTest.levelFloor`; a new language must add its row or the
   gate fails it by name.
 - A0 onramp only where the sound system or script needs one (German yes, Italian no).
-- Deck size = lessons × 10 (the SRS pace), and the authoring budget must EXCEED it by at
-  least 15% before deduplication: parallel authors cannot see each other and German lost 376
+- Deck size = lessons × 10 (the SRS pace) and that is a CEILING as well as a floor: the SRS
+  unlocks `deck[0 .. lesson * 10]`, so every word past that index is unreachable and dead.
+  A deck at capacity can only gain a word by losing one, which makes late vocabulary work a
+  SWAP (displace the least valuable words with missing core ones) rather than an append.
+  Inserting mid-deck is safe for existing learners, because introduction is tracked by
+  WordReview row per wordId and not by position, so a learned word is never re-taught.
+  The authoring budget must EXCEED the target by at least 15% before deduplication: parallel authors cannot see each other and German lost 376
   words to cross-batch duplicates.
 - Write the complete topic sequence into `plan/TOPICS*.md` in the build directory BEFORE any
   lesson is authored. Sequencing rule: nothing is used before it is taught; name the
