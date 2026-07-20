@@ -422,3 +422,23 @@ Scripts and manifests live in the session scratchpad (fr_deck.tsv, gg_missing.tx
 lex_missing_content.txt, inventaire.txt, delf-b2-sujet.pdf, Lexique383.tsv, gougenheim.tsv);
 the matching rules are stated in the vocabulary section. The next session can re-run the
 whole check from the URLs in the provenance section.
+
+## Authoring progress (resume point, 2026-07-20)
+
+The 145-slot plan is being authored into the session scratchpad
+`4eb9e133-fe10-44a6-adf4-e0fbfa9f0267\scratchpad\` as `fr_gap_*.json`. State:
+
+- `fr_gap_a1a2.json` DONE, 17 days: all 5 A1 slots + A2 slots 1 to 12 (grammar/function + DELF craft). Validated clean.
+- `fr_gap_a2b.json` DONE, 13 days: A2 slots 13 to 25 (theme days hosting missing vocab). Validated clean.
+- `fr_gap_b1a.json` NOT WRITTEN: B1 slots 1 to 25 (12 grammar-depth + 13 DELF B1 craft). Session limit.
+- `fr_gap_b1b.json` NOT WRITTEN: first 23 B1 theme days. Session limit.
+- `fr_gap_b2a.json` NOT WRITTEN: B2 grammar gaps (infinitif passe, condition, participe present
+  vs adjectif verbal, lequel interrogatif, soutenu cause/consequence, plainte orale) + DELF B2 craft.
+
+Remaining to author for the 145: the three unwritten files above (~71 lessons) plus B2 theme
+days (~45) and a B2 revision day. After all land: assemble with build_language.py splicing each
+batch at its level (A1 batch after the shipped A1, etc.), REMAP placement bands to the new day
+numbering (registry S4), deck top-up of ~1060 words in level-correct positions (append, not
+swap, since 395 lessons give 3950 capacity vs a 2886 deck), proctor to zero, full Kotlin gates.
+Provenance keys already corrected: referentiel-fr -> inventaire-cecrl, francais-fondamental and
+freq-fr retired for lexique383.
