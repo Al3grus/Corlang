@@ -1,0 +1,41 @@
+# German lessons retired in the research reweighting.
+#
+# Target shape is A0 15, A1 50, A2 80, B1 140 (docs/language-standard.md, rounded to 5).
+# A1 was authored at 55 and A2 at 85, so 5 come out of each. An earlier pass retired 25 to hit
+# a lower target; 15 of those were restored when the target was rounded up, which is why the
+# authored files were never edited. Only the most redundant survive here.
+#
+# Selection rule: retire NO lesson that teaches a grammar structure. Every entry is thematic or
+# pure practice, and every one is covered later at greater depth by a block that survives.
+
+# --- A1, 5 retired (55 -> 50) ---
+Mein Tagesablauf
+# practice of the separable verbs taught immediately before, no new structure
+
+Im Supermarkt fragen und bezahlen
+# duplicates "Einkaufen, Mengen und Verpackungen" directly before it
+
+Vom Wochenende erzählen
+# practice of the Perfekt just taught; A2 "Eine Geschichte in der Vergangenheit erzählen" does it properly
+
+Einen Termin machen und absagen
+# A2 "Einen Termin vereinbaren und verschieben" is the same lesson done properly
+
+Eine kurze E-Mail schreiben
+# A2 "Formelle und informelle E-Mails" teaches the register contrast this one lacks
+
+# --- A2, 5 retired (85 -> 80) ---
+Strom, Wasser und Internet anmelden
+# niche utility admin; the Nebenkosten lesson covers what actually matters
+
+Beim Zahnarzt
+# a narrow variant of "Beim Arzt, die Symptome beschreiben"
+
+Gesund leben, Ernährung und Bewegung
+# the B1 block covers nutrition, sport and rest at a level that can hold an opinion
+
+Sich telefonisch krankmelden
+# duplicates "Die Krankmeldung beim Arbeitgeber" in the health block
+
+Über den eigenen Beruf sprechen
+# pure practice, no new material
