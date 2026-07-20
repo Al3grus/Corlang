@@ -64,3 +64,21 @@ authoring REQUIREMENT enforced by a Brazilianism blocklist in the content pipeli
 | `referencial-camoes` | Instituto Camões, *Referencial Camões PLE* (per-level content inventories A1–C2 for Portuguese as a foreign language) | [referencial-camoes.md](referencial-camoes.md) |
 | `portugues-fundamental` | CLUL (Centro de Linguística da Univ. de Lisboa), *Português Fundamental* (1984): the official 2,217-word basic vocabulary from a 700k-word SPOKEN European-Portuguese corpus + 30-theme availability vocabulary | [portugues-fundamental.md](portugues-fundamental.md) |
 | `freq-pt` | *A Frequency Dictionary of Portuguese* (Davies & Preto-Bay, Routledge), corpus frequency cross-check (European forms preferred where variants differ) | [portugues-fundamental.md](portugues-fundamental.md) |
+
+### Italian (it) — target B1 (citizenship level)
+
+Italian at **B1** is the legal bar for citizenship by residence (art. 9, L. 91/1992) and by
+marriage (art. 5), introduced by L. 132/2018 in force from 4 December 2018, and is why the Corlang
+Italian course ends there. Two bodies dominate and their pass rules DIVERGE: CILS is modular per
+skill, CELI sums parts into a written block plus an oral block. Corlang's B1 mock applies the
+stricter CILS rule.
+
+| Key | Source | Digest |
+|-----|--------|--------|
+| `cils-a1` | Università per Stranieri di Siena, CILS A1 exam (5 abilities, 12 points each, 60 total; 7 required in EVERY ability, 35 total) | [italian-exams.md](italian-exams.md) |
+| `cils-a2` | Università per Stranieri di Siena, CILS A2 exam, plus the shortened A2 Integrazione variant (4 abilities, 48 total, 7 each) | [italian-exams.md](italian-exams.md) |
+| `cils-b1` | Università per Stranieri di Siena, CILS UNO-B1, *Criteri di attribuzione dei punteggi* (modular; 11 of 20 required in EVERY one of 5 abilities, 55 of 100; capitalizzazione 18 months) | [italian-exams.md](italian-exams.md) |
+| `celi-b1` | Università per Stranieri di Perugia (CVCL), CELI 2 = B1, *Criteri di valutazione e punteggi* (global within blocks: 72/120 written AND 22/40 oral, 94/160 overall) + CELI level-to-CEFR mapping | [italian-exams.md](italian-exams.md) |
+| `b1-cittadinanza` | The shortened citizenship-only B1: CILS B1 Cittadinanza (4 sections x 12 = 48, 7 each, 28 total, NO capitalizzazione) and CELI 2 i (B1) Cittadinanza; **not valid for work or study** | [italian-exams.md](italian-exams.md) |
+| `cliq` | Associazione CLIQ (Certificazione Lingua Italiana di Qualità), the four bodies accepted by the Ministero dell'Interno (CILS, CELI, cert.it, PLIDA) per D.M. 7 December 2021, plus art. 9.1 L. 91/1992 and Corte cost. sent. 25/2025 | [italian-exams.md](italian-exams.md) |
+| `freq-it` | *Nuovo vocabolario di base della lingua italiana* (De Mauro & Chiari, 2016): ~7,000 entries in fondamentale / alto uso / alta disponibilità bands, plus *Profilo della lingua italiana* (Spinelli & Parizzi, Council of Europe RLD for Italian) | [italian-exams.md](italian-exams.md) |

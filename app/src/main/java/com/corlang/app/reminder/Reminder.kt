@@ -66,6 +66,7 @@ class ReminderWorker(
             "fr" -> "French"
             "pt" -> "Portuguese"
             "de" -> "German"
+            "it" -> "Italian"
             else -> "Croatian"
         }
         // The learner's name, when they gave one, is what makes the nudge feel addressed to a
@@ -79,6 +80,8 @@ class ReminderWorker(
                 else "Está na hora do português, $who! 🇵🇹"
             "de" -> if (who.isEmpty()) "Zeit für Deutsch! 🇩🇪"
                 else "Zeit für Deutsch, $who! 🇩🇪"
+            "it" -> if (who.isEmpty()) "È ora di italiano! 🇮🇹"
+                else "È ora di italiano, $who! 🇮🇹"
             else -> if (who.isEmpty()) "Vrijeme je za hrvatski! 🇭🇷"
                 else "Vrijeme je za hrvatski, $who! 🇭🇷"
         }
@@ -86,6 +89,7 @@ class ReminderWorker(
             "fr" -> "Petit à petit, a little today is all it takes."
             "pt" -> "Devagar se vai ao longe, a little today is all it takes."
             "de" -> "Steter Tropfen höhlt den Stein, a little today is all it takes."
+            "it" -> "Goccia a goccia si scava la pietra, a little today is all it takes."
             else -> "Malo po malo, a little today is all it takes."
         }
         // Rotate copy so the reminder doesn't become invisible through repetition.

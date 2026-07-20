@@ -319,7 +319,7 @@ private fun MessageBubble(msg: ChatMessage, onSpeak: () -> Unit) {
  * greeting would anchor the whole chat in English and there'd be no variety rule. The debug
  * check makes it fail loudly during development instead.
  */
-private val TUTOR_LANGS = setOf("hr", "pt", "fr", "de")
+private val TUTOR_LANGS = setOf("hr", "pt", "fr", "de", "it")
 
 internal fun assertTutorLangRegistered(lang: String) {
     if (com.corlang.app.BuildConfig.DEBUG) {
@@ -356,6 +356,12 @@ private fun starters(lang: String): List<String> = when (lang) {
         "Stell mir eine leichte Frage.",
         "Korrigiere bitte meine Fehler."
     )
+    "it" -> listOf(
+        "Ciao! Come stai?",
+        "Possiamo esercitarci a ordinare un caffè?",
+        "Fammi una domanda facile.",
+        "Correggi i miei errori, per favore."
+    )
     else -> listOf("Hello! How are you?")
 }
 
@@ -365,6 +371,7 @@ private fun composerHint(lang: String): String = when (lang) {
     "pt" -> "Escreve em português…"
     "fr" -> "Écris en français…"
     "de" -> "Schreib auf Deutsch…"
+    "it" -> "Scrivi in italiano…"
     else -> "Write in your learning language…"
 }
 
@@ -384,6 +391,7 @@ fun seedGreeting(lang: String): String = when (lang) {
     "pt" -> "Olá! Sou o teu tutor de português europeu. Podemos falar sobre o que quiseres, com calma e frases simples. Como estás hoje?"
     "fr" -> "Bonjour ! Je suis ton tuteur de français. On peut parler de ce que tu veux, doucement et simplement. Comment vas-tu aujourd'hui ?"
     "de" -> "Hallo! Ich bin dein Deutschtutor. Wir können über alles reden, was du möchtest, ganz langsam und mit einfachen Sätzen. Wie geht es dir heute?"
+    "it" -> "Ciao! Sono il tuo tutor di italiano. Possiamo parlare di quello che vuoi, con calma e con frasi semplici. Come stai oggi?"
     else -> "Hi! I'm your language tutor. We can talk about anything you like, slowly and simply. How are you today?"
 }
 
@@ -392,6 +400,7 @@ private fun seedOpener(lang: String): String = when (lang) {
     "pt" -> "Olá!"
     "fr" -> "Bonjour !"
     "de" -> "Hallo!"
+    "it" -> "Ciao!"
     else -> "Hello!"
 }
 
@@ -438,6 +447,22 @@ private fun varietyRules(lang: String): String = when (lang) {
     - Never mix in English words a German speaker would not use, and keep capitalisation of
       nouns correct, since that is what an exam corrector checks first.
     - If the student's sentence is ALREADY correct standard German, do not invent a correction,
+      confirm it is right and continue. Never "correct" a correct form.""".trimIndent()
+    "it" -> """
+    - You speak STANDARD ITALIAN (italiano standard), as tested by the CILS and CELI exams, not a
+      regional variety. Concretely: use the standard passato prossimo and imperfetto rather than
+      the passato remoto that is still spoken in the south, avoid regional lexis (use anguria or
+      cocomero as regional twins but say which is which, and prefer standard forms over dialect),
+      and keep the standard double consonants, which carry meaning (nono against nonno, capello
+      against cappello).
+    - Regional forms are NOT errors where they are spoken, but they are not what this course
+      teaches: if the student writes a Tuscan, Roman or southern form, name it as regional and
+      give the standard equivalent rather than marking it simply wrong.
+    - Watch the two traps an exam corrector checks first: the accents that distinguish words
+      (e against è, si against sì, la against là) and the auxiliary in the passato prossimo,
+      essere for movement and reflexives, avere for the rest, with the participle agreeing when
+      the auxiliary is essere.
+    - If the student's sentence is ALREADY correct standard Italian, do not invent a correction,
       confirm it is right and continue. Never "correct" a correct form.""".trimIndent()
     else -> "- If the student's sentence is already correct, say so — never invent corrections."
 }
