@@ -267,8 +267,15 @@ fun TalkScreen(container: AppContainer, lang: String) {
         ) {
             OutlinedTextField(
                 value = input,
-                onValueChange = { input = it },
+                // Hard cap: a tutor message is conversation, not a document. Without this a
+                // pasted wall of text rides the transcript into EVERY following request (the
+                // last 12 messages are resent each turn), multiplying its token cost by up
+                // to 12. The worker's body cap is the wall; this is the fence.
+                onValueChange = { input = it.take(TUTOR_INPUT_MAX) },
                 placeholder = { Text(composerHint(lang)) },
+                supportingText = if (input.length >= TUTOR_INPUT_MAX * 9 / 10) {
+                    { Text("${input.length}/$TUTOR_INPUT_MAX") }
+                } else null,
                 modifier = Modifier.weight(1f),
                 maxLines = 4
             )
@@ -319,6 +326,9 @@ private fun MessageBubble(msg: ChatMessage, onSpeak: () -> Unit) {
  * greeting would anchor the whole chat in English and there'd be no variety rule. The debug
  * check makes it fail loudly during development instead.
  */
+/** Chat input cap, chars. Generous for real sentences, hostile to pasted documents. */
+private const val TUTOR_INPUT_MAX = 500
+
 private val TUTOR_LANGS = setOf("hr", "pt", "fr", "de", "it")
 
 internal fun assertTutorLangRegistered(lang: String) {

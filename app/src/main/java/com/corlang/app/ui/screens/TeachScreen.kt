@@ -163,7 +163,9 @@ private fun FeynmanRunner(
         SectionTitle("Now explain it back in your own words")
         OutlinedTextField(
             value = myExplanation,
-            onValueChange = { myExplanation = it },
+            // 1500 chars is several paragraphs, far beyond any honest teach-back; the cap
+            // exists so a pasted document cannot ride this field into an AI request.
+            onValueChange = { myExplanation = it.take(1500) },
             label = { Text("Type your explanation (or say it aloud, then jot the gist)") },
             // Locked once graded: editing after the verdict would silently regrade; the
             // honest loop is Explain again with a fresh attempt.
