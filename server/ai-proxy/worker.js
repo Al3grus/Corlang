@@ -39,7 +39,9 @@ const ALLOWED_MODELS = new Set([
   "claude-sonnet-5",
 ]);
 const MAX_TOKENS_CAP = 2048;
-const MAX_BODY_BYTES = 100_000;
+// 30KB triples the largest legitimate request (tutor system prompt + 12 capped messages);
+// a pasted document is refused here even from a modified client.
+const MAX_BODY_BYTES = 30_000;
 
 // Daily ceilings (UTC midnight reset). Generous for real users — a heavy learner makes a few
 // dozen calls/day — but a hard stop for an extracted-token loop. Global cap protects the

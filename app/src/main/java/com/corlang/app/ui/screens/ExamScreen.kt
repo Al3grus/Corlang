@@ -571,7 +571,9 @@ private fun OpenPromptTask(
         if (isWriting) {
             OutlinedTextField(
                 value = text,
-                onValueChange = { text = it },
+                // Exam texts are ~80 to 180 words; 2000 chars is roomy for honest work and a
+                // wall for pasted documents heading into the AI feedback request.
+                onValueChange = { text = it.take(2000) },
                 label = { Text("Write your text here (7-8 sentences)") },
                 minLines = 6,
                 modifier = Modifier.fillMaxWidth(),
