@@ -63,9 +63,9 @@ C:\Users\al3gr\AppData\Local\Temp\claude\C--Users-al3gr-Desktop-Github-Corlang\
 ```
 
 with the assembled course under `de-build/` and the raw authored batches (`de_vocab_*.json`,
-`de_a0.json`, `de_a1*.json`) beside it. The shared authoring tools live in the same directory:
-`LESSON_SPEC.md`, `PLACEMENT_SPEC.md`, `check_batch.py`, `check_placement.py`, `merge_plan.py`,
-`merge_vocab.py`, `purge_dashes.py`. Update this path when a later session starts a new build.
+`de_a0.json`, `de_a1*.json`) beside it. The shared authoring tools now live IN THE REPO at `tools/course/` (they were session-scoped
+until 2026-07-20, which nearly lost them). The canonical workflow is `docs/course-gold-book.md`,
+invocable as the `/new-language` skill. Update this path when a later session starts a new build.
 
 ---
 
