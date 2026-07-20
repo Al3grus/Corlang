@@ -1040,6 +1040,81 @@ class ContentValidationTest {
     }
 
     /**
+     * IMPLEMENTATION x CONTENT: every authored answer must grade CORRECT through the real
+     * graders. The structural gates prove an answer exists; only the grader itself proves it
+     * is reachable by a learner who types or taps it. A FILL whose accepted variant normalizes
+     * to empty, or a REORDER whose ordered tokens disagree with the grader's normalization,
+     * is content that no correct learner can ever pass, which is the worst defect a course can
+     * ship. Grading is pure Kotlin, so the whole corpus cross-checks in one test.
+     */
+    @Test
+    fun `every authored answer grades correct through the real graders`() {
+        val grading = com.corlang.app.ui.screens.Grading
+        fun checkQuestions(where: String, qs: List<com.corlang.app.data.model.Question>) {
+            qs.forEach { q ->
+                when (q.type) {
+                    QuestionType.MCQ ->
+                        assertTrue("$where: MCQ answer fails its own grader: '${q.answer}'",
+                            grading.gradeMcq(q, q.answer))
+                    QuestionType.FILL -> {
+                        assertTrue("$where: FILL answer fails its own grader: '${q.answer}'",
+                            grading.gradeFill(q, q.answer))
+                        q.accepted.forEach {
+                            assertTrue("$where: accepted variant fails: '$it' (answer '${q.answer}')",
+                                grading.gradeFill(q, it))
+                        }
+                    }
+                    QuestionType.REORDER ->
+                        assertTrue("$where: ordered tokens fail gradeReorder: ${q.ordered}",
+                            grading.gradeReorder(q, q.ordered))
+                    else -> Unit
+                }
+            }
+        }
+        allLangs.forEach { lang ->
+            loadPlan(lang).days.forEach { day ->
+                day.activities.forEach { a ->
+                    checkQuestions("$lang day ${day.day} '${day.title.take(30)}'", a.questions)
+                }
+            }
+            strictJson.decodeFromString<QuizSet>(read(lang, "quizzes.json")).quizzes.forEach {
+                checkQuestions("$lang quiz ${it.id}", it.questions)
+            }
+            if (exists(lang, "exams.json")) {
+                strictJson.decodeFromString<List<com.corlang.app.data.model.ExamSpec>>(
+                    read(lang, "exams.json")
+                ).forEach { e ->
+                    e.sections.forEach { s ->
+                        checkQuestions("$lang exam ${e.id}/${s.id}", s.questions)
+                    }
+                }
+            }
+            // Placement questions are a separate model (PlacementQuestion, MCQ-only). MCQ
+            // grading is exact string equality, and the placement gates already assert every
+            // answer appears among its options, so the grader cross-check is subsumed there.
+        }
+    }
+
+    /**
+     * WIRING COVERAGE, discovered not hardcoded: every language whose content folder exists
+     * must have a real speech locale. German shipped its first wiring pass with the tutor
+     * table missing from TUTOR_LANGS; this is the same class of miss for the voice. The hr
+     * fallback makes a forgotten language SPEAK CROATIAN rather than fail, which no test
+     * exercised until now.
+     */
+    @Test
+    fun `speech locales cover every discovered language`() {
+        allLangs.forEach { lang ->
+            val locale = com.corlang.app.speech.SpeechLocales.localeFor(lang)
+            assertEquals("$lang falls through to the hr voice, add it to SpeechLocales",
+                lang, locale.language)
+            assertTrue("$lang: BCP-47 tag '${com.corlang.app.speech.SpeechLocales.tagFor(lang)}' " +
+                "does not match the language",
+                com.corlang.app.speech.SpeechLocales.tagFor(lang).startsWith(lang))
+        }
+    }
+
+    /**
      * The no-dashes rule covers everything the learner reads, but the existing gate only walks
      * assets/content, so learner-facing strings that live in Kotlin were never checked. The
      * tutor's seed greeting is the clearest example: it is the first sentence of every Tutor
