@@ -157,3 +157,32 @@ content is outside the official inventory. The A0 pack alone is consistent with 
 A1 absences), the key should either be removed from the packs or downgraded to a
 "level-inspired-by" note. The full missing and beyond-list word lists are reproducible from
 the sources and matching rules described above.
+
+### Rebalance and re-check (2026-07-20, same day)
+
+The gap found above was closed by a SWAP, not an append, because the deck is capacity-bound:
+285 lessons unlock `deck[0 .. 2850]`, and the deck already held 2913 words, so 63 were already
+unreachable and any addition would have stranded more.
+
+477 missing official lemmas were authored (232 from the A1 list, 245 from the A2 list) and 540
+words were removed, every one of them B1-tagged and on NO official Goethe list. Nouns took the
+brunt (360), since a narrow topic noun carries far less weight per card than a verb or a
+connective; no adverb, connective or discourse phrase was removed at all. The removal manifest
+is kept in the build scratchpad.
+
+Coverage of the official inventory, before and after:
+
+| Level | Before | After |
+|---|---|---|
+| A1 | 55.0% | **81.9%** (682 of 833) |
+| A2 | 51.6% | **89.2%** (545 of 611) |
+| B1 | 40.7% | 41.0% (755 of 1840) |
+
+Deck size is now exactly 2850, so every entry is reachable within the course.
+
+**Verdict, revised.** `goethe-wortliste` is EARNED for the A1 and A2 packs and the key has been
+restored to them: those levels were diffed against the official lists and the gap was closed to
+82% and 89%, with the residue being spelling variants, symbols and abbreviations. It remains
+UNEARNED for the B1 packs and is deliberately absent there, since B1 coverage is 41% and the
+official B1 inventory (1840 lemmas) is larger than this course's entire remaining capacity.
+Raising B1 coverage would require widening the pipe with more lessons, not more words.
