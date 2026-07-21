@@ -50,7 +50,7 @@ class ContentValidationTest {
     private val knownSourceKeys = setOf(
         // Croatian
         "asoo", "nn-6-2021", "nn-100-2021", "croaticum-syllabus",
-        "croaticum-b1-sample", "cefr-grid", "ffzg-ecourse",
+        "croaticum-b1-sample", "cefr-grid", "ffzg-ecourse", "hrlex",
         // French (DELF B2 target, the level naturalisation requires since 2026-01-01).
         // referentiel-fr / francais-fondamental / freq-fr were retired on 2026-07-20: the
         // Beacco volumes and the official Fondamental list were never fetchable, so citing

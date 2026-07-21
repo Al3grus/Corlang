@@ -56,7 +56,7 @@ when `proctor.py` runs clean on that language.*
 
 | ID | Failure class | Found | Automated by | Applies | Status |
 |---|---|---|---|---|---|
-| V1 | Serbian drift in hr (da-constructions, ekavian, Serbian lexis) | field report, Tutor | `varietyRules("hr")`; model eval `tools/ai-variety-eval.py` | hr | ✅ |
+| V1 | Serbian drift in hr (da-constructions, ekavian, Serbian lexis) | field report, Tutor | `varietyRules("hr")`; model eval; NOW ALSO `check_hr.py` batch gate (built 2026-07-21, negative-tested) | hr | ✅ |
 | V2 | Brazilianisms in pt without European counterpart in same activity | pt expansion | Kotlin gate (activity-scoped) | pt | ✅ |
 | V3 | Austrian/Swiss forms in de without standard counterpart in same activity | de build | `check_de.py` REGIONAL (whole-word both sides) | de | ✅ |
 | V4 | Southern perfect auxiliaries (ist gesessen/gestanden/gelegen) | de build | `check_de.py`, scoped to produced-German keys | de | ✅ |
