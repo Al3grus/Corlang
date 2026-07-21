@@ -45,7 +45,7 @@ DA_LI = re.compile(r"\bda\s+li\b", re.IGNORECASE)
 # ekavian reflexes whose ijekavian form is the standard. Each bare stem here is Serbian, so a
 # whole-word hit is an error. Kept tight to avoid catching unrelated words.
 EKAVIAN = re.compile(
-    r"\b(lepo|lep|lepa|lepi|mleko|mleka|vreme|vremena|dete|deca|hteti|hteo|"
+    r"\b(lepo|lep|lepa|lepi|mleko|mleka|vreme|dete|deca|hteti|hteo|"
     r"covek|coveka|reka|reke|beo|belo|bela|sneg|snega|cvet|cveta|mesto|mesta|"
     r"nedelja(?=\s|,|\.|$))\b",  # nedelja = Serbian "week"; Croatian tjedan (Sunday is nedjelja)
     re.IGNORECASE)
