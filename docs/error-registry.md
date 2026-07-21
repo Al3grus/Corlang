@@ -47,7 +47,7 @@ Sweep key: ✅ swept clean · 🔧 swept, fixes pending · ▢ not yet swept · 
 | C13 | Quiz/exam prompts colliding with lesson prompts (tests memory, not language) | 2026-07-20 proctor design | `proctor.py` check 4 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C14 | MCQ answer visible in its own prompt | 2026-07-20 proctor design | `proctor.py` check 4 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C15 | Longest-option-is-answer bias > 55% (guessable course) | 2026-07-20 proctor design | `proctor.py` check 5 | ✅ | ✅ | ✅ | ✅ | ✅ |
-| C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ▢ | ✅ | ▢ | ✅ | ✅ |
+| C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ✅ | ✅ | ▢ | ✅ | ✅ |
 
 *C10–C14 sweep counts (2026-07-20): hr 118, fr 56, pt 45, de 80 problems. 🔧 clears to ✅
 when `proctor.py` runs clean on that language.*
@@ -56,7 +56,7 @@ when `proctor.py` runs clean on that language.*
 
 | ID | Failure class | Found | Automated by | Applies | Status |
 |---|---|---|---|---|---|
-| V1 | Serbian drift in hr (da-constructions, ekavian, Serbian lexis) | field report, Tutor | `varietyRules("hr")`; model eval; NOW ALSO `check_hr.py` batch gate (built 2026-07-21, negative-tested) | hr | ✅ |
+| V1 | Serbian drift in hr (da-constructions, ekavian, Serbian lexis) | field report, Tutor | `varietyRules("hr")`; model eval; `check_hr.py` batch gate (built 2026-07-21, negative-tested). On its first assembly run it CAUGHT A SHIPPED DEFECT: the A0 day-12 lesson taught 'Da li govoris?' as the correct MCQ answer, now fixed to the standard 'Govoris li?' | hr | ✅ |
 | V2 | Brazilianisms in pt without European counterpart in same activity | pt expansion | Kotlin gate (activity-scoped) | pt | ✅ |
 | V3 | Austrian/Swiss forms in de without standard counterpart in same activity | de build | `check_de.py` REGIONAL (whole-word both sides) | de | ✅ |
 | V4 | Southern perfect auxiliaries (ist gesessen/gestanden/gelegen) | de build | `check_de.py`, scoped to produced-German keys | de | ✅ |
@@ -82,7 +82,7 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | S5 | Placement bands with <3 items (silent under-placement under 2-of-3) | v0.20.77 review | Kotlin gate `placementBandsCarryExactlyThreeItemsEach` | ✅ all |
 | S6 | Lesson `resources` strings not matching `resources.json` names | de integration; it caught pre-integration | assembler gate + Kotlin gate; Gold Book: freeze names BEFORE lesson authoring | ✅ all |
 | S7 | Vocab packs out of ladder order (top-ups introducing A2 words after B1) | de assembly | `build_language.py` stable level sort | ✅ all |
-| S8 | Course top-light vs guided-hours weighting (volume rule hiding thin B1) | 2026-07-20 (user question) | Kotlin `levelFloor` per language + debt map | 🔧 hr +90, pt +70 (fr CLEARED: 250 to 418 lessons 2026-07-21) |
+| S8 | Course top-light vs guided-hours weighting (volume rule hiding thin B1) | 2026-07-20 (user question) | Kotlin `levelFloor` per language + debt map | 🔧 pt +70 (fr and hr CLEARED 2026-07-21) |
 | S18 | Hand-reassembling a shipped deck lost/duplicated words because shipped vocab FILES contain multiple packs each (fr 00-a1-core.json holds 10), but the assembler and my splice both assumed one pack per file | 2026-07-21, fr integration | never rebuild a shipped deck; restore its files from git untouched and only ADD new pack files, inserting them into _index at the right ladder position |
 | S17 | Deck LARGER than lessons × 10, so the tail never unlocks and the words are dead weight (de ships 2913 words against a 2850 cap, 63 unreachable) | 2026-07-20, de gap-close planning | the deck is a FIXED-CAPACITY pipe: vocabulary work is a SWAP, not an add. Author missing core words by displacing the least valuable existing ones, or add lessons to widen the pipe |
 | S9 | Deck smaller than lessons × 10 (last lessons teach no words) | fr/pt expansion | Kotlin gate `everyDeckCoversTheWholeCourse` | ✅ all |

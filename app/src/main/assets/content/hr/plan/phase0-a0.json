@@ -1,5 +1,5 @@
 {
- "title": "Croatian in 60 Days, the Pareto Sprint",
+ "title": "Hrvatski do razine B1",
  "days": [
   {
    "day": 1,
@@ -2885,7 +2885,7 @@
    "drills": [
     "Negate 5 sentences with 'ne'.",
     "Form 'Govoriš li engleski?'-style questions.",
-    "Note 'da li' as an alternative."
+    "Turn three statements into questions using the 'verb + li' pattern."
    ],
    "reviewBlock": {
     "minutes": 15,
@@ -2952,9 +2952,9 @@
        "note": ""
       },
       {
-       "hr": "Da li govoriš hrvatski?",
-       "en": "Do you speak Croatian? (alternative form)",
-       "note": "'Da li…?' exists too, but 'Govoriš li…?' is the preferred standard form in Croatia."
+       "hr": "Govoriš li engleski?",
+       "en": "Do you speak English?",
+       "note": "Standard Croatian yes/no questions use 'verb + li' or 'je li'. The 'da li' form is Serbian and avoided in the Croatian standard."
       },
       {
        "hr": "Ne, ne govorim.",
@@ -3056,16 +3056,16 @@
       },
       {
        "type": "MCQ",
-       "prompt": "Which question means the same as 'Govoriš li engleski?'",
+       "prompt": "Which is the standard Croatian yes/no question?",
        "difficulty": 4,
        "options": [
+        "Govoriš li engleski?",
         "Da li govoriš engleski?",
-        "Ne govoriš engleski.",
-        "Gdje govoriš engleski?",
+        "Ti govoriš engleski.",
         "Govoriš engleski ne?"
        ],
-       "answer": "Da li govoriš engleski?",
-       "explanation": "'Da li + verb' is an alternative yes/no question form; in Croatia 'verb + li' is preferred in the standard language."
+       "answer": "Govoriš li engleski?",
+       "explanation": "Standard Croatian forms yes/no questions with 'verb + li' (Govoriš li...?) or 'je li'. The 'da li' form is Serbian and is avoided in the Croatian standard."
       },
       {
        "type": "MCQ",
@@ -3575,6 +3575,370 @@
       "croaticum-syllabus"
      ]
     }
+   ]
+  },
+  {
+   "title": "Ovo, to i ono: pokazivanje",
+   "objective": "Point at things near and far and ask what they are using ovo, to and ono.",
+   "paretoFocus": "Pointing words let you shop, ask and identify anything before you know its name, so they multiply every noun you learn.",
+   "drills": [
+    "Point at five objects around you and say Ovo je... for each one.",
+    "Ask Što je ovo? about something close and Što je ono? about something far away.",
+    "Ask one yes/no question with Je li to...? about an object in the room."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Say 'This is my book' and 'That over there is our house'.",
+     "Ask 'What is this?' in Croatian.",
+     "Ask 'Is that your bag?' as a yes/no question."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Ovo, to, ono",
+     "intro": "Croatian has three pointing words for three distances: ovo for something near me, to for something near you, and ono for something far from both of us. With Što je...? you can ask what anything is.",
+     "items": [
+      {
+       "hr": "Što je ovo?",
+       "en": "What is this?",
+       "note": "ovo = this, near me"
+      },
+      {
+       "hr": "Ovo je moja knjiga.",
+       "en": "This is my book."
+      },
+      {
+       "hr": "To je tvoj mobitel.",
+       "en": "That is your mobile phone.",
+       "note": "to = that, near you"
+      },
+      {
+       "hr": "Ono je naša kuća.",
+       "en": "That over there is our house.",
+       "note": "ono = that, far from both of us"
+      },
+      {
+       "hr": "Je li to tvoja torba?",
+       "en": "Is that your bag?",
+       "note": "yes/no question: Je li...?"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Pokaži i reci",
+     "intro": "Choose the right pointing word for each distance and build simple questions about objects.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "You are pointing at a building far away from both of you. Complete: ___ je hotel.",
+       "difficulty": 2,
+       "options": [
+        "Ono",
+        "Ovo",
+        "Tko",
+        "Gdje"
+       ],
+       "answer": "Ono",
+       "explanation": "ono points at something far from both speakers; ovo is only for things near you, the speaker."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Ask what the object in your hand is: ___ je ovo?",
+       "difficulty": 2,
+       "answer": "Što",
+       "accepted": [
+        "Što",
+        "što"
+       ],
+       "explanation": "Što je ovo? is the basic question for identifying things. Što means what."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Choose the correct yes/no question for 'Is this a museum?'",
+       "difficulty": 3,
+       "options": [
+        "Je li ovo muzej?",
+        "Da li ovo muzej?",
+        "Ovo je muzej.",
+        "Ovo muzej je?"
+       ],
+       "answer": "Je li ovo muzej?",
+       "explanation": "Standard Croatian yes/no questions use Je li...? The second option opens with a question phrase that is not standard Croatian, and it is also missing the verb."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Your friend is holding a jacket. Complete: ___ je tvoja jakna. (that, near the listener)",
+       "difficulty": 3,
+       "answer": "To",
+       "accepted": [
+        "To",
+        "to"
+       ],
+       "explanation": "For something near the person you are speaking with, Croatian uses to."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the Croatian for: 'This is my house.'",
+       "difficulty": 3,
+       "options": [
+        "je",
+        "Ovo",
+        "kuća",
+        "moja"
+       ],
+       "ordered": [
+        "Ovo",
+        "je",
+        "moja",
+        "kuća"
+       ],
+       "explanation": "Ovo starts the sentence, then the verb je, then moja kuća with the possessive before the noun."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "U novom stanu",
+     "intro": "Play 'Me'. You are showing a friend around your new apartment and pointing at things with ovo, to and ono.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Što je ovo?",
+       "en": "What is this?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "To je moj radni stol.",
+       "en": "That is my desk."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "A ono? Je li ono tvoja soba?",
+       "en": "And that over there? Is that your room?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da, ono je moja soba.",
+       "en": "Yes, that over there is my room."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ovo je lijepa slika!",
+       "en": "This is a beautiful picture!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Hvala! To je poklon od bake.",
+       "en": "Thank you! It is a present from my grandma."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ],
+   "day": 15,
+   "week": 3,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "resources": [
+    "Conversation practice (partner or tutor)",
+    "Words tab (built-in daily flashcards)"
+   ]
+  },
+  {
+   "title": "Veliki brojevi: sto, tisuća, milijun",
+   "objective": "Understand and say prices and other amounts above one hundred with sto, tisuća and milijun.",
+   "paretoFocus": "Rents, salaries and prices all live above one hundred; without these three words you cannot handle money in Croatia.",
+   "drills": [
+    "Count aloud by hundreds: sto, dvjesto, tristo... up to devetsto.",
+    "Say three realistic prices in euros, for a coffee, a phone and a holiday.",
+    "Say how many people live in a big city, using milijun."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Say the Croatian words for one hundred, one thousand and one million.",
+     "Say 'It costs two hundred euros'.",
+     "Ask 'How much does it cost?'"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Sto, tisuća, milijun",
+     "intro": "Croatian builds hundreds by stacking sto: dvjesto, tristo, četiristo. A thousand is tisuća and a million is milijun; after a verb like košta you will hear the form tisuću.",
+     "items": [
+      {
+       "hr": "sto",
+       "en": "one hundred",
+       "note": "Sto eura. A hundred euros."
+      },
+      {
+       "hr": "dvjesto, tristo, petsto",
+       "en": "two hundred, three hundred, five hundred",
+       "note": "hundreds are written as one word: četiristo, šeststo, sedamsto..."
+      },
+      {
+       "hr": "tisuća",
+       "en": "a thousand",
+       "note": "To košta tisuću eura. It costs a thousand euros."
+      },
+      {
+       "hr": "milijun",
+       "en": "a million",
+       "note": "milijun ljudi = a million people"
+      },
+      {
+       "hr": "Koliko košta?",
+       "en": "How much does it cost?",
+       "note": "Answer: Košta sto pedeset eura."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Koliko košta?",
+     "intro": "Practise the words for hundreds, thousands and millions in real prices.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Choose the standard Croatian word for 'a thousand'.",
+       "difficulty": 2,
+       "options": [
+        "tisuća",
+        "hiljada",
+        "tisuću",
+        "tisuće"
+       ],
+       "answer": "tisuća",
+       "explanation": "The standard Croatian word is tisuća; the second option is not a standard Croatian word at all. tisuću and tisuće are real forms of tisuća, but not its basic form."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the number 100 as a Croatian word.",
+       "difficulty": 2,
+       "answer": "sto",
+       "accepted": [
+        "sto",
+        "Sto"
+       ],
+       "explanation": "100 = sto. It combines into dvjesto, tristo and so on."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Complete: U Zagrebu živi gotovo ___ ljudi. (a million)",
+       "difficulty": 3,
+       "options": [
+        "milijun",
+        "milion",
+        "milijuna",
+        "milijuni"
+       ],
+       "answer": "milijun",
+       "explanation": "Standard Croatian is milijun, with j; the spelling without it is not standard Croatian. milijuna would follow a number like dva."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the price of the trip: Putovanje košta dvije ___ eura. (thousand)",
+       "difficulty": 3,
+       "answer": "tisuće",
+       "accepted": [
+        "tisuće"
+       ],
+       "explanation": "After dvije, the noun tisuća takes the form tisuće: dvije tisuće eura."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the Croatian for: 'It costs a hundred and fifty euros.'",
+       "difficulty": 3,
+       "options": [
+        "eura",
+        "To",
+        "pedeset",
+        "košta",
+        "sto"
+       ],
+       "ordered": [
+        "To",
+        "košta",
+        "sto",
+        "pedeset",
+        "eura"
+       ],
+       "explanation": "To košta + the number: sto pedeset, then eura for the currency."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "U trgovini tehnike",
+     "intro": "Play 'Me'. You are asking about prices in an electronics shop, using numbers above one hundred.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Dobar dan! Trebate li pomoć?",
+       "en": "Good afternoon! Do you need help?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da. Koliko košta ovaj mobitel?",
+       "en": "Yes. How much does this mobile phone cost?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Dvjesto pedeset eura.",
+       "en": "Two hundred and fifty euros."
+      },
+      {
+       "speaker": "Me",
+       "hr": "A koliko košta ono računalo?",
+       "en": "And how much does that computer over there cost?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Tisuću sto eura.",
+       "en": "One thousand one hundred euros."
+      },
+      {
+       "speaker": "Me",
+       "hr": "To je puno novca. Hvala lijepa!",
+       "en": "That is a lot of money. Thank you very much!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ],
+   "day": 16,
+   "week": 3,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "resources": [
+    "Conversation practice (partner or tutor)",
+    "Words tab (built-in daily flashcards)"
    ]
   }
  ]

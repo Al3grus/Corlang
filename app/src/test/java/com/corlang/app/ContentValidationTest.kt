@@ -980,7 +980,6 @@ class ContentValidationTest {
     private val weightedRuleDebt = mapOf(
         "pt" to "A2 55 and B1 70, short 15 and 55. B2 hidden 2026-07-20 (Portugal requires only " +
             "A2 for nationality), so the course is 170 lessons until B1 is topped up.",
-        "hr" to "A2 90, B1 100. Short at B1 against the Croatian column of the table."
     )
 
     @Test
