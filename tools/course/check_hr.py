@@ -54,7 +54,7 @@ EKAVIAN = re.compile(
 # optional case ending, because Croatian inflects heavily (januar, januara, januaru all Serbian;
 # Croatian is sijecanj). "nedjelja" (with j, = Sunday) is CORRECT Croatian and not listed.
 SERBIAN_LEX = re.compile(
-    r"\b(hleb\w*|hiljad\w*|vazduh\w*|voz\w*(?<!vozi)(?<!vozim)|sargarep\w*|"
+    r"\b(hleb\w*|hiljad\w*|vazduh\w*|voz|vozu|vozom|vozovi|vozova|vozovima|vozove|sargarep\w*|"
     r"januar\w*|februar\w*|avgust\w*|septembar\w*|septembr\w*|oktobar\w*|oktobr\w*|"
     r"novembar\w*|novembr\w*|decembar\w*|decembr\w*|"
     r"fudbal\w*|kasik\w*|viljusk\w*|takode\w*|ostrv\w*|vaspitanj\w*|porodic\w*)\b",

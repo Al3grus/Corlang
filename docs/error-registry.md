@@ -119,6 +119,7 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | K3 | Flagging correct words as unaccented (Sara the name, te the pronoun, meta the noun) | check_it v1 | only list forms that are not words without the accent; casing-aware for name collisions |
 | K4 | Flagging deliberate ritual repetition as boilerplate (Words-tab nudge, 185×) | proctor v1 | exempt phrases naming app surfaces; repetition by design is not a defect |
 | K5 | A loosened check silently becoming a no-op | risk, de | keep a planted-defect fixture per checker; re-run it after EVERY change |
+| K7 | A stem-with-suffix regex over-matching a legitimate word family (check_hr's voz\w* flagged vozac/vozilo/voziti, all standard Croatian, when only the Serbian train noun voz is the target) | 2026-07-21, hr | match a Serbian noun by its exact case-forms, not a stem+\w*, when a legitimate same-stem family exists |
 | K6 | Flagging a correct inflected form as the wrong variety (check_hr flagged "vremena", the correct Croatian genitive of vrijeme, as ekavian) | 2026-07-21, hr | list only forms that are the wrong variety in EVERY inflection; the ije-to-e alternation is regular in Croatian oblique cases, so match bare "vreme" not the "vremen-" stem |
 
 ---
