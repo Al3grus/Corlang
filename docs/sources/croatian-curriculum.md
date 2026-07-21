@@ -479,3 +479,31 @@ missing_spoken1000.txt); matching rules are stated in the vocabulary section. Th
 and Croaticum files in docs/sources/raw/ were re-verified byte-identical against their live
 URLs on 2026-07-21, so the whole check can be re-run from the URLs in the provenance
 section.
+
+## Authoring progress (resume point, 2026-07-21)
+
+Croatian expansion is mid-flight. Scratchpad dir:
+`4eb9e133-fe10-44a6-adf4-e0fbfa9f0267\scratchpad\`
+
+DONE and validated clean through check_hr.py (in scratchpad, not yet assembled):
+- `hr_gap_a1.json` 15 days (2 A0, 13 A1): imperative I+II, reflexives, plurals in full,
+  demonstratives, numbers >100, ordinals/dates, negative pronouns, clothes, forms/razglednica,
+  people/address words. Resources corrected to the shipped pair.
+- `hr_gap_a2b1.json` 18 days (4 A2, 14 B1): imperative II, relative pronoun koji I+II, quantities,
+  city services, igrati se, word formation, formal vocative, first B1 functions.
+
+NOT YET WRITTEN (both models rate-limited 2026-07-21, Fable out of credits, Opus session limit
+to 2:20pm Brussels):
+- `hr_gap_b1a.json`: 22 B1 theme days (incl. the two unthemed ASOO topics Zelite li promijeniti
+  svijet? x2 and Vrijednosti/sposobnosti/interesi; zivot i smrt, novac danas euro/kuna, etc.),
+  each hosting ~10 missing lemmas. Author on whichever model has capacity.
+- `hr_vocab_gap.json`: 500-word deck top-up, spoken absentees first (mama, tata, cuti, umrijeti,
+  opet, nikada, isti, vazan, uciniti, znaciti, policija...). Note: the deck is MORE complete than
+  the raw absentee list suggests (an agent hit heavy collisions), so author a generous pool and
+  filter against the shipped ids.
+- Exam-craft cycle (~12) + review/consolidation days (~13) to complete the ~90-slot plan.
+
+After all land: assemble (RESTORE shipped hr vocab from git and ADD new packs only, per S18;
+the hr deck likely also packs multiple packs per file), remap placement bands to the new
+boundaries (S4), proctor to zero, full Kotlin gates. hr floor target A1 60, A2 95, B1 170.
+check_hr.py "vremena" false positive already fixed (K6).
