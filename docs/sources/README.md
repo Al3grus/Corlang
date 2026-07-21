@@ -19,6 +19,13 @@ source key, it doesn't ship.
 | `croaticum-b1-sample` | Croaticum, *Primjeri zadataka za provjeru znanja* (official sample exam tasks; template for the mock exam) | [croaticum-b1-sample.md](croaticum-b1-sample.md) |
 | `cefr-grid` | Council of Europe, CEFR self-assessment grid (Table 2), official can-do descriptors per skill per level | [cefr-grid.md](cefr-grid.md) |
 | `ffzg-ecourse` | University of Zagreb free e-courses a1.ffzg.unizg.hr and a2.ffzg.unizg.hr (80 units each) | referenced in plan content; overview in [croaticum-syllabus.md](croaticum-syllabus.md) |
+| `hrlex` | hrLex (Ljubešić), inflectional lexicon of Croatian with hrWaC v2.2 lemma frequencies (CC BY-SA 4.0); v1.2 fetched complete 2026-07-21 via the public megahr/lexicon mirror (v1.3 on CLARIN.SI was unreachable that day); the ranked frequency authority for the hr deck, with an OpenSubtitles 2018 spoken cross-check | [croatian-curriculum.md](croatian-curriculum.md) |
+
+Phase 8b cross-check for Croatian performed 2026-07-21: see
+[croatian-curriculum.md](croatian-curriculum.md) for per-key verdicts (all seven existing
+Croatian keys are earned; `hrlex` is new and PARTIALLY earned, deck coverage must close
+before packs may cite it). `hrlex` must also be added to
+`ContentValidationTest.knownSourceKeys` before any content cites it.
 
 ### French (fr) — target DELF B2, milestone DELF B1
 
