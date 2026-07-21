@@ -106,6 +106,8 @@ def build_plan(build_dir, title, lesson_files, retired=frozenset()):
     res_path = os.path.join(build_dir, "resources.json")
     if os.path.exists(res_path):
         valid = {x["name"] for x in read_json(res_path)["resources"]}
+        # The Kotlin gate allowlists in-app references that have no resources.json entry.
+        valid.add("Words tab (built-in daily flashcards)")
         unknown = {r for d in days for r in d.get("resources", [])} - valid
         if unknown:
             die("lessons reference resources absent from resources.json: "
