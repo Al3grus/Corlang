@@ -1,6 +1,6 @@
 # Corlang
 
-**A study-based language-learning app for serious learners preparing for official exams.**
+**Study-based language learning app to prepare for citizenship, job proficiency and official European language exams.**
 
 Corlang teaches a language properly. Not with points, leagues, or games, but with a proven study
 method and a day-by-day course that takes you from zero to a real, official language exam.
