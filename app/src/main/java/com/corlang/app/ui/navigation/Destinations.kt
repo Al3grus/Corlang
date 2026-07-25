@@ -10,18 +10,22 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 /**
  * Bottom-nav destinations, ordered by how often you reach for them:
- *   Today (guided daily lesson) · Review (due SRS words) · Learn (AI: Teach + Tutor — Premium,
- *   appears only when unlocked) · Progress (stats, milestones) · Profile (settings, language,
- *   premium, references).
+ *   Learn (guided daily lesson — the TODAY route) · Review (due SRS words) · Tutor (AI chat —
+ *   the LEARN route, Premium, appears only when unlocked) · Progress (stats, milestones) ·
+ *   Profile (settings, language, premium, references).
+ *
+ * NB: the enum names/routes (TODAY, LEARN) are kept stable so saved nav state and deep links
+ * don't break; only the user-facing labels changed (Today→"Learn", Learn→"Tutor"). The Teach
+ * mode is hidden, so the "Tutor" tab is now just the AI tutor.
  *
  * Quizzes, exam readiness, and mock exams are NOT tabs: they're end-of-level checkpoints on
- * the journey (Today tab), registered as the argumented routes quiz/{level}, readiness/{level},
+ * the journey (the Learn tab), registered as the argumented routes quiz/{level}, readiness/{level},
  * exam/{level} in the NavHost.
  */
 enum class Dest(val route: String, val label: String, val icon: ImageVector) {
-    TODAY("today", "Today", Icons.Filled.Today),
+    TODAY("today", "Learn", Icons.Filled.Today),
     WORDS("words", "Review", Icons.Filled.Cached),
-    LEARN("learn", "Learn", Icons.Filled.AutoAwesome),
+    LEARN("learn", "Tutor", Icons.Filled.AutoAwesome),
     PROGRESS("progress", "Progress", Icons.Filled.Insights),
     PROFILE("profile", "Profile", Icons.Filled.Person);
 

@@ -222,9 +222,13 @@ private fun CorlangApp(container: AppContainer) {
     val handledLangs by container.languagePrefs.placementHandledLanguages
         .collectAsState(initial = null as Set<String>?)
     var newLangPrompt by remember { mutableStateOf<String?>(null) }
+    // The last language the learner was actually settled on (onboarded, or already-used). If the
+    // new-language prompt is dismissed by accident, we revert to this instead of stranding them
+    // in the just-picked language at day 1.
+    var lastSettledLang by remember { mutableStateOf<String?>(null) }
     LaunchedEffect(lang, handledLangs) {
         val handled = handledLangs ?: return@LaunchedEffect
-        if (lang in handled) { newLangPrompt = null; return@LaunchedEffect }
+        if (lang in handled) { lastSettledLang = lang; newLangPrompt = null; return@LaunchedEffect }
         val completions = container.progress.completedDays(lang).first()
         val revs = container.words.reviews(lang).first()
         val prog = container.progress.progress(lang).first()
@@ -232,6 +236,7 @@ private fun CorlangApp(container: AppContainer) {
         if (touched) {
             // Existing progress in this language → they've clearly used it; never nag.
             container.languagePrefs.markPlacementHandled(lang)
+            lastSettledLang = lang
         } else {
             newLangPrompt = lang
         }
@@ -239,12 +244,16 @@ private fun CorlangApp(container: AppContainer) {
     newLangPrompt?.let { pl ->
         val meta = appState.languages.firstOrNull { it.code == pl }
         val name = meta?.name ?: "this language"
-        // Dismissing (tap outside / system back) also marks the language handled: an accidental
-        // switch must not re-arm this dialog on every app open until a choice is made. The
-        // learner just starts at day 1 by default and can retake placement from Settings.
+        // Dismissing (tap outside / system back) is treated as "I didn't mean to switch": revert
+        // to the language the learner was on before, and do NOT mark placement handled, so a
+        // later, deliberate switch to this language still offers the test. This stops an accidental
+        // tap from stranding them in a new language at day 1 with placement locked out.
         val dismiss: () -> Unit = {
-            scope.launch { container.languagePrefs.markPlacementHandled(pl) }
+            val prev = lastSettledLang
             newLangPrompt = null
+            if (prev != null && prev != pl) {
+                scope.launch { container.languagePrefs.setLanguage(prev) }
+            }
         }
         AlertDialog(
             onDismissRequest = dismiss,

@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LinearProgressIndicator
@@ -201,6 +202,16 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
     val context = LocalContext.current
 
+    // First-run how-to for the flashcards. initial=true so the pref's first (loading) emission
+    // never flashes the dialog; once it resolves to false, the effect opens it as the session
+    // begins. A "?" on the card reopens it later.
+    val reviewTutorialSeen by container.languagePrefs.reviewTutorialSeen
+        .collectAsState(initial = true)
+    var showReviewTutorial by remember { mutableStateOf(false) }
+    LaunchedEffect(inSession, reviewTutorialSeen) {
+        if (inSession && !reviewTutorialSeen) showReviewTutorial = true
+    }
+
     fun grade(g: SrsGrade) {
         if (queue.isEmpty()) return   // late fling/tap after the session already ended
         val card = queue.removeAt(0)
@@ -251,21 +262,30 @@ fun WordsScreen(container: AppContainer, lang: String) {
             inSession = false
             if (reviewMode) { reviewMode = false; refreshKey++ }
         }
-        WordSession(
-            card = queue.first(),
-            cardKey = served,
-            tts = container.tts,
-            languageName = languageName,
-            review = reviewMode,
-            done = doneCount,
-            total = sessionTotal,
-            onGrade = ::grade,
-            onExit = {
-                inSession = false
-                if (reviewMode) { reviewMode = false; refreshKey++ }  // restore daily session
-                // (daily snapshot already persisted per grade)
+        androidx.compose.foundation.layout.Box(Modifier.fillMaxSize()) {
+            WordSession(
+                card = queue.first(),
+                cardKey = served,
+                tts = container.tts,
+                languageName = languageName,
+                review = reviewMode,
+                done = doneCount,
+                total = sessionTotal,
+                onGrade = ::grade,
+                onHelp = { showReviewTutorial = true },
+                onExit = {
+                    inSession = false
+                    if (reviewMode) { reviewMode = false; refreshKey++ }  // restore daily session
+                    // (daily snapshot already persisted per grade)
+                }
+            )
+            if (showReviewTutorial) {
+                ReviewTutorialOverlay(onDismiss = {
+                    showReviewTutorial = false
+                    scope.launch { container.languagePrefs.setReviewTutorialSeen(true) }
+                })
             }
-        )
+        }
         return
     }
 
@@ -401,6 +421,38 @@ fun WordsScreen(container: AppContainer, lang: String) {
     }
 }
 
+/**
+ * First-run how-to for the flashcards — shown over the first card, reopenable via the "?" on the
+ * card header. Teaches the Hard/Medium/Easy rating and that you can tap OR swipe.
+ */
+@Composable
+private fun ReviewTutorialOverlay(onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("How reviewing works") },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(
+                    "You'll see a word. Try to recall it, tap the card to reveal the answer, " +
+                        "then rate how hard it was:"
+                )
+                Text("← Hard  ·  you forgot it or barely knew it (it comes back soon)")
+                Text("↑ Medium  ·  you recalled it with some effort")
+                Text("Easy →  ·  you knew it instantly (it won't return for a while)")
+                Text(
+                    "Tap a button, or swipe the card in that arrow's direction. Rating honestly " +
+                        "is what makes the spacing work.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        },
+        confirmButton = {
+            Button(onClick = onDismiss, modifier = Modifier.fillMaxWidth()) { Text("Got it") }
+        }
+    )
+}
+
 @Composable
 internal fun WordSession(
     card: SessionCard,
@@ -411,6 +463,9 @@ internal fun WordSession(
     done: Int,
     total: Int,
     onGrade: (SrsGrade) -> Unit,
+    // Optional: when set, a "?" on the header reopens the how-to. Null (e.g. the in-lesson word
+    // block, which is already a guided flow) hides it.
+    onHelp: (() -> Unit)? = null,
     onExit: () -> Unit
 ) {
     // A review card on screen locks the top-bar language picker (mid-session switch guard).
@@ -476,6 +531,18 @@ internal fun WordSession(
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.weight(1f)
             )
+            val help = onHelp
+            if (help != null) {
+                Text(
+                    "?",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier
+                        .clickable { help() }
+                        .padding(horizontal = 10.dp)
+                )
+            }
             Text(
                 "$done / $total" + if (isNew && !review) " · ✨ new" else "",
                 style = MaterialTheme.typography.bodySmall,
@@ -653,12 +720,12 @@ internal fun WordSession(
                         ),
                         contentPadding = slimPad,
                         modifier = Modifier.weight(1f)
-                    ) { Text("← Again", maxLines = 1, softWrap = false) }
+                    ) { Text("← Hard", maxLines = 1, softWrap = false) }
                     Button(
                         onClick = { flingAndGrade(SrsGrade.GOOD) },
                         contentPadding = slimPad,
                         modifier = Modifier.weight(1f)
-                    ) { Text("↑ Good ↑", maxLines = 1, softWrap = false) }
+                    ) { Text("↑ Medium ↑", maxLines = 1, softWrap = false) }
                     Button(
                         onClick = { flingAndGrade(SrsGrade.EASY) },
                         colors = ButtonDefaults.buttonColors(
