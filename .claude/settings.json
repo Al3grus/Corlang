@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/tools/hooks/validate_content_json.py\"",
+            "timeout": 15,
+            "statusMessage": "Validating content JSON"
+          }
+        ]
+      }
+    ]
+  }
+}

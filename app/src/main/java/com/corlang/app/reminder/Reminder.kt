@@ -17,6 +17,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.corlang.app.MainActivity
+import com.corlang.app.data.ContentRepository
 import com.corlang.app.data.db.AppDatabase
 import com.corlang.app.data.prefs.LanguagePrefs
 import kotlinx.coroutines.flow.first
@@ -27,36 +28,23 @@ import java.time.LocalTime
 import java.util.concurrent.TimeUnit
 
 /**
- * Per-language reminder copy, as MAPS rather than `when` branches so a test can assert the
- * keys cover every available language (registry S13: German shipped its first wiring pass
- * with no Reminder branch, and a `when` cannot be enumerated by a test). The hr fallback is
- * deliberate for unknown codes, but a KNOWN language falling back is a wiring bug the
- * coverage gate now catches.
+ * Per-language reminder copy is DATA, read from each language's `meta.json` (reminderTitle,
+ * reminderTitleNamed, reminderProverb), so adding a language needs no code change here. Reads go
+ * through [ContentRepository]; the content gate (ContentValidationTest) requires every shipped
+ * language to carry these fields, which replaces the old in-code coverage map.
  */
 internal object ReminderCopy {
-    internal val names = mapOf(
-        "hr" to "Croatian", "fr" to "French", "pt" to "Portuguese",
-        "de" to "German", "it" to "Italian"
-    )
-    // title(lang, "") gives the bare greeting; with a name, the addressed one.
-    internal val titles: Map<String, (String) -> String> = mapOf(
-        "hr" to { who -> if (who.isEmpty()) "Vrijeme je za hrvatski! 🇭🇷" else "Vrijeme je za hrvatski, $who! 🇭🇷" },
-        "fr" to { who -> if (who.isEmpty()) "C'est l'heure du français ! 🇫🇷" else "C'est l'heure du français, $who ! 🇫🇷" },
-        "pt" to { who -> if (who.isEmpty()) "Está na hora do português! 🇵🇹" else "Está na hora do português, $who! 🇵🇹" },
-        "de" to { who -> if (who.isEmpty()) "Zeit für Deutsch! 🇩🇪" else "Zeit für Deutsch, $who! 🇩🇪" },
-        "it" to { who -> if (who.isEmpty()) "È ora di italiano! 🇮🇹" else "È ora di italiano, $who! 🇮🇹" }
-    )
-    internal val proverbs = mapOf(
-        "hr" to "Malo po malo, a little today is all it takes.",
-        "fr" to "Petit à petit, a little today is all it takes.",
-        "pt" to "Devagar se vai ao longe, a little today is all it takes.",
-        "de" to "Steter Tropfen höhlt den Stein, a little today is all it takes.",
-        "it" to "Goccia a goccia si scava la pietra, a little today is all it takes."
-    )
+    /** Bare or addressed title: named form fills the {name} placeholder from meta.json. */
+    fun title(meta: com.corlang.app.data.model.LanguageMeta, who: String): String =
+        if (who.isEmpty())
+            meta.reminderTitle ?: "Time to study ${meta.name}!"
+        else
+            meta.reminderTitleNamed?.replace("{name}", who)
+                ?: meta.reminderTitle
+                ?: "Time to study ${meta.name}, $who!"
 
-    fun name(lang: String) = names[lang] ?: names.getValue("hr")
-    fun title(lang: String, who: String) = (titles[lang] ?: titles.getValue("hr"))(who)
-    fun proverb(lang: String) = proverbs[lang] ?: proverbs.getValue("hr")
+    fun proverb(meta: com.corlang.app.data.model.LanguageMeta): String =
+        meta.reminderProverb ?: "A little today is all it takes."
 }
 
 /**
@@ -95,13 +83,14 @@ class ReminderWorker(
             freezes = progress?.streakFreezes ?: 0,
             today = today
         )
-        val languageName = ReminderCopy.name(lang)
+        val meta = ContentRepository(ctx).meta(lang)
+        val languageName = meta.name
         // The learner's name, when they gave one, is what makes the nudge feel addressed to a
         // person rather than broadcast. Appended to the in-language title so the greeting still
         // opens in the language being learned: "Vrijeme je za hrvatski, Ricardo! 🇭🇷".
         val who = prefs.profile.first().name.trim()
-        val title = ReminderCopy.title(lang, who)
-        val littleByLittle = ReminderCopy.proverb(lang)
+        val title = ReminderCopy.title(meta, who)
+        val littleByLittle = ReminderCopy.proverb(meta)
         // Rotate copy so the reminder doesn't become invisible through repetition.
         val variants = if (streak > 0) listOf(
             "Your $streak-day streak is on the line, today's lesson banks it.",

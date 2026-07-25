@@ -1103,27 +1103,32 @@ class ContentValidationTest {
      * fallback makes a forgotten language SPEAK CROATIAN rather than fail, which no test
      * exercised until now.
      */
-    /** Same wiring class as the speech gate: a known language must never fall back to hr copy. */
+    /**
+     * Same wiring class as the speech gate, now DATA-driven: reminder copy lives in each
+     * language's meta.json (not a Kotlin map), so a known language must carry the fields rather
+     * than fall back to hr copy at runtime.
+     */
     @Test
-    fun `reminder copy covers every discovered language`() {
+    fun `reminder copy present in every language meta`() {
         allLangs.forEach { lang ->
-            com.corlang.app.reminder.ReminderCopy.let { copy ->
-                assertTrue("$lang missing from ReminderCopy.names", lang in copy.names)
-                assertTrue("$lang missing from ReminderCopy.titles", lang in copy.titles)
-                assertTrue("$lang missing from ReminderCopy.proverbs", lang in copy.proverbs)
-            }
+            val meta = strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
+            assertTrue("$lang meta.json missing reminderTitle", !meta.reminderTitle.isNullOrBlank())
+            assertTrue("$lang meta.json missing reminderProverb", !meta.reminderProverb.isNullOrBlank())
+            val named = meta.reminderTitleNamed
+            assertTrue("$lang meta.json missing reminderTitleNamed", !named.isNullOrBlank())
+            assertTrue("$lang reminderTitleNamed must contain the {name} placeholder",
+                named!!.contains("{name}"))
         }
     }
 
     @Test
-    fun `speech locales cover every discovered language`() {
+    fun `speech tag present in every language meta`() {
         allLangs.forEach { lang ->
-            val locale = com.corlang.app.speech.SpeechLocales.localeFor(lang)
-            assertEquals("$lang falls through to the hr voice, add it to SpeechLocales",
-                lang, locale.language)
-            assertTrue("$lang: BCP-47 tag '${com.corlang.app.speech.SpeechLocales.tagFor(lang)}' " +
-                "does not match the language",
-                com.corlang.app.speech.SpeechLocales.tagFor(lang).startsWith(lang))
+            val meta = strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
+            val tag = meta.speechTag
+            assertTrue("$lang meta.json missing speechTag (e.g. \"$lang-XX\")", !tag.isNullOrBlank())
+            assertTrue("$lang speechTag '$tag' must start with the language code",
+                tag!!.startsWith(lang))
         }
     }
 

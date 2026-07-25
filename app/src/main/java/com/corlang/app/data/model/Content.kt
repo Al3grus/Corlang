@@ -16,7 +16,14 @@ data class LanguageMeta(
     val nativeName: String,      // "Français"
     val flagEmoji: String,       // "🇫🇷"
     val blurb: String,
-    val paretoSummary: String    // one-paragraph "the 20% that drives 80%"
+    val paretoSummary: String,   // one-paragraph "the 20% that drives 80%"
+    // ---- Wiring fields: data-driven so adding a language is content-only, no Kotlin edit. ----
+    // Nullable + defaulted so parsing an older meta.json without them never fails; the content
+    // gate (ContentValidationTest) requires them present for every shipped language.
+    val speechTag: String? = null,          // BCP-47 for TTS + recognizer, e.g. "pt-PT"
+    val reminderTitle: String? = null,      // bare daily-reminder title (no learner name)
+    val reminderTitleNamed: String? = null, // addressed form, with the {name} placeholder
+    val reminderProverb: String? = null     // little-by-little proverb line
 )
 
 // ---------- Cheatsheet (the 5-minute review page) ----------

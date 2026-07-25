@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import com.corlang.app.data.ContentRepository
 
 /**
  * One-shot speech recognition wrapper for the active language (hr/fr). Lets a learner say a phrase
@@ -25,9 +26,10 @@ class SpeechInput(private val context: Context) {
     private var activeOnListening: ((Boolean) -> Unit)? = null
     private var langTag: String = "hr-HR"
 
-    /** Point recognition at the active language (hr -> hr-HR, fr -> fr-FR). */
+    /** Point recognition at the active language; BCP-47 tag comes from the language's meta.json. */
     fun setLanguage(code: String) {
-        langTag = SpeechLocales.tagFor(code)
+        langTag = runCatching { ContentRepository(context).meta(code).speechTag }
+            .getOrNull()?.takeIf { it.isNotBlank() } ?: SpeechLocales.fallbackTag(code)
     }
 
     /**

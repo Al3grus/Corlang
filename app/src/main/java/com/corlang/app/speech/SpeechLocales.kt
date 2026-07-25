@@ -3,28 +3,28 @@ package com.corlang.app.speech
 import java.util.Locale
 
 /**
- * Maps a Corlang language code to its speech locale, so TTS and speech recognition follow the
- * active language (hr -> Croatian, fr -> French). One place to add a language's voice.
+ * Turns a BCP-47 speech tag into a [Locale] for TTS and speech recognition. The tag itself is
+ * DATA: it comes from each language's `meta.json` `speechTag` (e.g. "pt-PT", "de-DE") so adding a
+ * language's voice needs no code change here. The region matters — the default pt voice on many
+ * devices is Brazilian and the default de could be Austrian/Swiss — which is exactly why the tag
+ * is authored per language rather than derived from the bare code.
  */
 object SpeechLocales {
-    fun localeFor(code: String): Locale = when (code) {
-        "fr" -> Locale("fr", "FR")
-        // pt-PT explicitly: the default pt voice on many devices is BRAZILIAN — the whole point
-        // of the course is European Portuguese, so the region must never be left to chance.
-        "pt" -> Locale("pt", "PT")
-        // de-DE explicitly for the same reason: the course teaches standard German, so an
-        // Austrian or Swiss system voice must not be picked up by accident.
-        "de" -> Locale("de", "DE")
-        "it" -> Locale("it", "IT")
-        else -> Locale("hr", "HR")
+    /** Parse a BCP-47 tag like "pt-PT" into a Locale; blank/malformed falls back to Croatian. */
+    fun localeFromTag(tag: String?): Locale {
+        val parts = tag?.split('-', '_')?.filter { it.isNotBlank() }.orEmpty()
+        return when (parts.size) {
+            0 -> Locale("hr", "HR")
+            1 -> Locale(parts[0])
+            else -> Locale(parts[0], parts[1])
+        }
     }
 
-    /** BCP-47 tag for the speech-recognizer intent extras. */
-    fun tagFor(code: String): String = when (code) {
-        "fr" -> "fr-FR"
-        "pt" -> "pt-PT"
-        "de" -> "de-DE"
-        "it" -> "it-IT"
-        else -> "hr-HR"
-    }
+    /**
+     * Last-resort tag when a language's meta.json omits `speechTag`. Derives "<code>-<CODE>",
+     * which is correct for every current course; meta.json's speechTag overrides it when a
+     * language needs a region that isn't just the uppercased code.
+     */
+    fun fallbackTag(code: String): String =
+        if (code.isBlank()) "hr-HR" else "$code-${code.uppercase()}"
 }
