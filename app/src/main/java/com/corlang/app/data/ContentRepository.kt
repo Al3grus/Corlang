@@ -40,8 +40,23 @@ class ContentRepository(private val context: Context) {
      */
     private val cache = java.util.concurrent.ConcurrentHashMap<String, Any>()
 
-    /** Language codes that ship with the app, in display order. All are live. */
-    val availableLanguages: List<String> = listOf("hr", "fr", "pt", "de", "it")
+    /**
+     * Language codes that ship with the app, in display order — DATA-DRIVEN, not a code list.
+     * Source of truth is the manifest `content/_index.json` (same _index.json pattern the plan/
+     * vocab dirs use). Adding a language = drop a `content/<code>/` folder and add its code here,
+     * both pure data; no Kotlin change. If the manifest is ever missing, fall back to whatever
+     * language folders actually ship (sorted), so we never hardcode the list in code.
+     */
+    val availableLanguages: List<String> = try {
+        json.decodeFromString(
+            ListSerializer(String.serializer()),
+            readAsset("content/_index.json")
+        )
+    } catch (e: Exception) {
+        (context.assets.list("content") ?: emptyArray())
+            .filter { assetExists("content/$it/meta.json") }
+            .sorted()
+    }
 
     private fun readAsset(path: String): String =
         context.assets.open(path).bufferedReader().use { it.readText() }

@@ -3,6 +3,7 @@ package com.corlang.app.speech
 import android.content.Context
 import android.content.Intent
 import android.speech.tts.TextToSpeech
+import com.corlang.app.data.ContentRepository
 import java.util.Locale
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -26,7 +27,9 @@ class TtsManager(private val context: Context) {
 
     /** Switch voice to the active language; re-applies live if the engine is already up. */
     fun setLanguage(code: String) {
-        val next = SpeechLocales.localeFor(code)
+        val tag = runCatching { ContentRepository(context).meta(code).speechTag }
+            .getOrNull()?.takeIf { it.isNotBlank() } ?: SpeechLocales.fallbackTag(code)
+        val next = SpeechLocales.localeFromTag(tag)
         if (next == locale) return
         locale = next
         val engine = tts
