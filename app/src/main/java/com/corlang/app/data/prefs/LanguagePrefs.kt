@@ -117,6 +117,18 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[hapticsKey] = value }
     }
 
+    // ----- Feature tutorials (first-run how-to cards) -----
+
+    private val reviewTutorialSeenKey = booleanPreferencesKey("review_tutorial_seen")
+
+    /** True once the learner has seen the flashcard how-to (rate Hard/Medium/Easy, tap or swipe). */
+    val reviewTutorialSeen: Flow<Boolean> =
+        context.dataStore.data.map { it[reviewTutorialSeenKey] ?: false }
+
+    suspend fun setReviewTutorialSeen(seen: Boolean) {
+        context.dataStore.edit { it[reviewTutorialSeenKey] = seen }
+    }
+
     // ----- Learner profile (onboarding) -----
 
     private val onboardedKey = booleanPreferencesKey("onboarding_done")
