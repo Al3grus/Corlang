@@ -313,9 +313,10 @@ are authoring discipline a new language must follow from its first line.
 - **[AUTO] App-only content: a lesson NEVER sends the learner elsewhere to study.** No URLs,
   no course sites, no sign-in instructions, no named institutions (exam bodies included), no
   competitor apps — anywhere in learner-visible content. `resources.json` (Profile →
-  References) is the ONE sanctioned home for external material. Named-media immersion habits
-  ("watch the evening news") are fine; courses/sites/apps are not. Runtime backstop:
-  SessionPlayer's `isExternal` filter drops any drill that slips through.
+  References) is the ONE sanctioned home for external material. Immersion habits ("watch the
+  evening news") are fine described generically; naming the real broadcaster/publication is
+  not (2026-07-27: hr had "HRT" as the news-genre label across a whole B1 phase, genericized).
+  Runtime backstop: SessionPlayer's `isExternal` filter drops any drill that slips through.
   (Field: lesson 1 of Croatian opened with "Sign in at a1.ffzg.unizg.hr and do Unit 1" —
   the entire hr plan had been authored around an external e-course; 300+ references purged.)
 - **[AUTO] Course positions are "lesson N", never "day N"** — in content text exactly as in

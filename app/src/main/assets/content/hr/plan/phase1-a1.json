@@ -2001,12 +2001,12 @@
        "prompt": "What does 'kod prijatelja' mean?",
        "difficulty": 3,
        "options": [
-        "at my friend's place",
+        "at a friend's place",
         "next to a friend",
         "to a friend",
         "with a friend"
        ],
-       "answer": "at my friend's place",
+       "answer": "at a friend's place",
        "explanation": "kod + genitive = at someone's place: kod prijatelja, kod bake, kod kuće (at home)."
       },
       {
@@ -4009,7 +4009,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Jučer sam ustao u osam. Doručkovao sam i išao sam u grad.",
+       "hr": "Jučer sam ustala u osam. Doručkovala sam i išla sam u grad.",
        "en": "Yesterday I got up at eight. I had breakfast and went to town."
       },
       {
@@ -4019,7 +4019,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Kupio sam kruh, sir i kilogram jabuka na tržnici.",
+       "hr": "Kupila sam kruh, sir i kilogram jabuka na tržnici.",
        "en": "I bought bread, cheese and a kilo of apples at the market."
       },
       {
@@ -4029,7 +4029,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Jesam! Učio sam jedan sat i slušao sam radio. Navečer sam bio umoran i spavao sam.",
+       "hr": "Jesam! Učila sam jedan sat i slušala sam radio. Navečer sam bila umorna i spavala sam.",
        "en": "I did! I studied for an hour and listened to the radio. In the evening I was tired and I slept."
       },
       {
@@ -4351,9 +4351,9 @@
        "note": "Completed, result matters → perfective."
       },
       {
-       "hr": "Pišem. (NE: Napišem.)",
+       "hr": "Pišem.",
        "en": "I am writing. (right now)",
-       "note": "Perfective verbs cannot describe what is happening right now, for 'I am writing' you must use the imperfective."
+       "note": "NOT Napišem, perfective verbs cannot describe what is happening right now, for 'I am writing' you must use the imperfective."
       }
      ],
      "sources": [
@@ -4421,13 +4421,13 @@
        "prompt": "Which sentence means 'I am writing an email' (right now)?",
        "difficulty": 4,
        "options": [
-        "Pišem mail.",
-        "Napišem mail.",
-        "Napisao sam mail.",
-        "Pisat ću mail."
+        "Pišem e-mail.",
+        "Napišem e-mail.",
+        "Napisao sam e-mail.",
+        "Pisat ću e-mail."
        ],
-       "answer": "Pišem mail.",
-       "explanation": "Perfective verbs have no true present meaning, for an action happening now you need imperfective pisati: Pišem mail."
+       "answer": "Pišem e-mail.",
+       "explanation": "Perfective verbs have no true present meaning, for an action happening now you need imperfective pisati: Pišem e-mail."
       },
       {
        "type": "FILL",
@@ -7655,9 +7655,9 @@
        "en": "sister → sister!"
       },
       {
-       "hr": "kolega → kolega!",
+       "hr": "kolega → kolego!",
        "en": "colleague → colleague!",
-       "note": "masculine nouns in -a stay unchanged"
+       "note": "common masculine nouns in -a take -o, just like feminine nouns: kolega → kolego! (Personal names like Luka or Nikola are the ones that stay unchanged.)"
       },
       {
        "hr": "Bog → Bože!",
@@ -8951,7 +8951,9 @@
        "difficulty": 3,
        "options": [],
        "answer": "razumijem",
-       "accepted": [],
+       "accepted": [
+        "razumijem"
+       ],
        "explanation": "razumjeti → razumijem. 'Ne razumijem' is your emergency brake in any conversation.",
        "strictDiacritics": true
       },
@@ -9262,7 +9264,9 @@
        "difficulty": 4,
        "options": [],
        "answer": "ste",
-       "accepted": [],
+       "accepted": [
+        "ste"
+       ],
        "explanation": "Your boss gets Vi, and Vi takes the plural verb form: ste.",
        "strictDiacritics": true
       },
@@ -9465,7 +9469,9 @@
        "difficulty": 3,
        "options": [],
        "answer": "kavu",
-       "accepted": [],
+       "accepted": [
+        "kavu"
+       ],
        "explanation": "Direct object → accusative: kava → kavu. Feminine -a becomes -u.",
        "strictDiacritics": true
       },
@@ -9535,7 +9541,9 @@
        "difficulty": 6,
        "options": [],
        "answer": "znam",
-       "accepted": [],
+       "accepted": [
+        "znam"
+       ],
        "explanation": "Double negation is obligatory: ništa demands a negated verb, ne znam ništa.",
        "strictDiacritics": true
       },
@@ -9807,7 +9815,9 @@
        "difficulty": 3,
        "options": [],
        "answer": "kaže",
-       "accepted": [],
+       "accepted": [
+        "kaže"
+       ],
        "explanation": "Kako se kaže...? = How does one say...? (Answer, by the way: plaža.)",
        "strictDiacritics": true
       },
@@ -9831,7 +9841,9 @@
        "difficulty": 5,
        "options": [],
        "answer": "sigurna",
-       "accepted": [],
+       "accepted": [
+        "sigurna"
+       ],
        "explanation": "The adjective agrees with the speaker: siguran (m) → sigurna (f).",
        "strictDiacritics": true
       },
@@ -10049,7 +10061,9 @@
        "difficulty": 4,
        "options": [],
        "answer": "režije",
-       "accepted": [],
+       "accepted": [
+        "režije"
+       ],
        "explanation": "režije = utility bills (electricity, water, heating). Always ask about them when renting in Croatia!",
        "strictDiacritics": true
       },
@@ -10293,7 +10307,9 @@
        "difficulty": 5,
        "options": [],
        "answer": "ali",
-       "accepted": [],
+       "accepted": [
+        "ali"
+       ],
        "explanation": "ali = but. i/ali/jer/pa are the four connectors that carry an A1 text.",
        "strictDiacritics": true
       },
@@ -10317,7 +10333,9 @@
        "difficulty": 7,
        "options": [],
        "answer": "pozdrav",
-       "accepted": [],
+       "accepted": [
+        "pozdrav"
+       ],
        "explanation": "Lijep pozdrav, the everyday closing, shortened to LP in texting.",
        "strictDiacritics": true
       },
@@ -10476,7 +10494,9 @@
        "difficulty": 3,
        "options": [],
        "answer": "nije",
-       "accepted": [],
+       "accepted": [
+        "nije"
+       ],
        "explanation": "biti negatives are one word: nisam, nisi, nije, nismo, niste, nisu.",
        "strictDiacritics": true
       },
@@ -10486,7 +10506,9 @@
        "difficulty": 4,
        "options": [],
        "answer": "radimo",
-       "accepted": [],
+       "accepted": [
+        "radimo"
+       ],
        "explanation": "mi → -mo: radimo. The ending alone tells you the subject is 'we'.",
        "strictDiacritics": true
       },
@@ -10574,7 +10596,9 @@
        "difficulty": 8,
        "options": [],
        "answer": "jer",
-       "accepted": [],
+       "accepted": [
+        "jer"
+       ],
        "explanation": "jer = because, the connector that turns statements into explanations.",
        "strictDiacritics": true
       }
@@ -10903,7 +10927,9 @@
        "difficulty": 3,
        "options": [],
        "answer": "sam",
-       "accepted": [],
+       "accepted": [
+        "sam"
+       ],
        "explanation": "ja → sam. And note the correct 'iz Kanade', origin with iz + genitive.",
        "strictDiacritics": true
       },
@@ -10927,7 +10953,9 @@
        "difficulty": 5,
        "options": [],
        "answer": "kavu",
-       "accepted": [],
+       "accepted": [
+        "kavu"
+       ],
        "explanation": "Object → accusative: kava → kavu. Bonus: čašu vode = glass OF water, genitive.",
        "strictDiacritics": true
       },
@@ -10969,7 +10997,9 @@
        "difficulty": 7,
        "options": [],
        "answer": "ću",
-       "accepted": [],
+       "accepted": [
+        "ću"
+       ],
        "explanation": "Futur: ću + infinitive (ići). Negative would be: Sutra neću ići.",
        "strictDiacritics": true
       },
@@ -11012,7 +11042,7 @@
         "Živim u Zagrebu, ne imam auta i svaki dan idem u posao tramvajem."
        ],
        "answer": "Živim u Zagrebu, nemam auta i svaki dan idem na posao tramvajem.",
-       "explanation": "u Zagrebu (locative), nemam + genitive (auta), na posao (na-word), tramvajem (instrumental of transport). Every trap from lesson 53, dodged.",
+       "explanation": "u Zagrebu (locative), nemam + genitive (auta), na posao (na-word), tramvajem (instrumental of transport). Every trap from lesson 55, dodged.",
        "strictDiacritics": false
       }
      ],
@@ -11076,12 +11106,12 @@
       {
        "hr": "Mogu pročitati oglas, jelovnik i kratku poruku.",
        "en": "I can read an ad, a menu and a short message.",
-       "note": "Lesson 55 proved it: authentic texts are yours now, with se-forms, režije and radno vrijeme."
+       "note": "Lesson 57 proved it: authentic texts are yours now, with se-forms, režije and radno vrijeme."
       },
       {
        "hr": "Mogu napisati kratki tekst o sebi i svojim planovima.",
        "en": "I can write a short text about myself and my plans.",
-       "note": "Lesson 56: opening, body with connectors and mixed tenses, closing. Lijep pozdrav!"
+       "note": "Lesson 58: opening, body with connectors and mixed tenses, closing. Lijep pozdrav!"
       },
       {
        "hr": "Sljedeći korak: A2, svi padeži u praksi i glagolski vid.",
@@ -11251,7 +11281,9 @@
        "difficulty": 4,
        "options": [],
        "answer": "kavu",
-       "accepted": [],
+       "accepted": [
+        "kavu"
+       ],
        "explanation": "The accusative -u: the single ending that unlocked real Croatian sentences.",
        "strictDiacritics": true
       },
@@ -11283,7 +11315,9 @@
        "difficulty": 5,
        "options": [],
        "answer": "ću",
-       "accepted": [],
+       "accepted": [
+        "ću"
+       ],
        "explanation": "Nastavit ću učiti, the futur carries you to A2. When ću follows the infinitive, the infinitive drops its final -i.",
        "strictDiacritics": true
       },
@@ -12253,7 +12287,7 @@
       },
       {
        "hr": "Ova haljina ti lijepo stoji.",
-       "en": "That dress looks good on you.",
+       "en": "This dress looks good on you.",
        "note": "feminine: ova, ta, ona"
       },
       {
@@ -13670,7 +13704,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Nadam se samo dobro! Je li i vaš sin ovdje?",
+       "hr": "Samo dobro, nadam se! Je li i vaš sin ovdje?",
        "en": "Only good things, I hope! Is your son here too?"
       },
       {

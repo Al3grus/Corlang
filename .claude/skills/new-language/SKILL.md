@@ -49,6 +49,16 @@ result must satisfy. Tools live in `tools/course/`.
 - Shipped: hr, fr, pt, de. In progress: it (research, wiring, deck 2536, 200/240 lessons in
   the scratchpad build; missing it_b1c 35 lessons, 5 of it_b1d's 35, assessment set,
   proctoring, integration).
-- Proctor backlog on shipped languages (2026-07-20): hr 118, fr 56, pt 45, de 80 problems.
+- **hr full-course audit + fix DONE (2026-07-27)**: 19-agent audit found 31 Critical/49 High/
+  ~85 Medium/~90 Low across every lesson, the deck, quizzes/placement, mock exams and reference
+  content; all Critical/High/Medium content fixes applied and verified (`proctor.py` 0 problems,
+  Kotlin gate suite green, deck trimmed to exactly the 3,440-word cap, `check_hr.py` rewritten
+  diacritic-aware). `docs/error-registry.md` C17-C19/V11/K8 added. **Still open, NOT attempted**:
+  314 `check_batch.py` structural findings (168 lessons missing a DIALOGUE activity, 46 MCQs at
+  3 options, 55 over-length dialogues, 27 duplicate prompts) — this is new Phase-5-scale
+  authoring, not a fix, flagged as a separate follow-up. Also open: the A1 directional-
+  preposition gap the Phase 8b cross-check found (u/na/po/za + accusative never taught).
+- Proctor backlog on shipped languages (2026-07-20): fr 56, pt 45, de 80 problems (hr CLEARED,
+  see above).
 - Weighted-floor debt: fr +145 (B2 legally required since 2026-01-01, highest priority),
   hr +90, pt +70.

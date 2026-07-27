@@ -420,7 +420,7 @@ private fun buildTutorContext(container: AppContainer, lang: String, currentDay:
         .takeLast(15)
         .joinToString(", ") { "${it.hr} (${it.en})" }
     return buildString {
-        if (day != null) append("- Current lesson: \"${day.title}\" — ${day.objective}\n")
+        if (day != null) append("- Current lesson: \"${day.title}\", ${day.objective}\n")
         if (recent.isNotBlank()) append("- Words recently learned: $recent")
     }.trim()
 }
@@ -541,8 +541,8 @@ private fun tutorSystemPrompt(
         "- The student wants English help: add a brief English gloss in parentheses after any word " +
             "or phrase they likely don't know yet, and explain grammar in English whenever it helps."
     else
-        "- The student prefers to stay in $languageName: keep English to a minimum — a short gloss " +
-            "only for a genuinely new word — and switch to English only if they explicitly ask."
+        "- The student prefers to stay in $languageName: keep English to a minimum, a short gloss " +
+            "only for a genuinely new word, and switch to English only if they explicitly ask."
     // Progress context appended AFTER trimIndent so it isn't re-indented; blank for a new learner.
     val contextBlock = if (lessonContext.isBlank()) "" else
         "\n\nWhat this student is working on right now (use it to tailor the session, especially if " +

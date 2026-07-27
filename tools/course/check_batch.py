@@ -47,15 +47,22 @@ def walk_strings(node, path=""):
 
 
 def check_file(path):
-    errs = []
     raw = io.open(path, encoding="utf-8").read()
     try:
         days = json.loads(raw)
     except Exception as e:
         return [f"INVALID JSON: {e}"]
+    if isinstance(days, dict) and isinstance(days.get("days"), list):
+        days = days["days"]  # assembled course file: {"title": ..., "days": [...]}
     if not isinstance(days, list):
-        return ["top level must be a JSON array of day objects"]
+        return ["top level must be a JSON array of day objects (or {title, days})"]
+    return check_file_obj(days)
 
+
+def check_file_obj(days):
+    """Same checks as check_file, taking an already-parsed list of day objects directly (for
+    callers that already have the unwrapped days array, e.g. an assembled {title, days} file)."""
+    errs = []
     # day/week are 0 in a PRE-MERGE batch (the merge tool assigns them) but populated in an
     # assembled build. Detect which we are looking at, so the language checkers can also be run
     # against a finished course; flagging 245 populated days as errors made that impossible.

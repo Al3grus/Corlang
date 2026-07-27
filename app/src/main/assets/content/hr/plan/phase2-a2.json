@@ -2401,9 +2401,9 @@
      "intro": "All the little unstressed words gather in SECOND position of the clause, in one fixed internal order: the question particle li, then the auxiliary (sam, ću, bih...), then the dative clitic, then the accusative one, then se, and the auxiliary je, uniquely, goes last of all. Memorize the chain as a template; every example below is the chain in action.",
      "items": [
       {
-       "hr": "li → sam/ću/bih → mi/ti/mu/joj → me/te/ga/je → se → je",
-       "en": "the fixed chain, question word, auxiliary, dative, accusative, se, and je dead last",
-       "note": "This order NEVER varies. One rule, hundreds of correct sentences."
+       "hr": "declarative: aux/participle → dative → accusative → se → je; li-question: (host-)aux → li → dative → accusative → se → je",
+       "en": "in statements there is no li at all; in yes/no questions the host word comes first, then li, then dative, accusative, se, and je dead last",
+       "note": "li never opens the clause and never precedes the auxiliary, there is no 'li sam...' or 'li ću...'. In li-questions, the (host-)auxiliary comes first, then li, then dative → accusative → se → je last."
       },
       {
        "hr": "Jučer sam mu ga dao.",
@@ -2466,13 +2466,13 @@
        "prompt": "In the clitic chain, what comes immediately after li?",
        "difficulty": 1,
        "options": [
-        "the auxiliary (sam, ću, bih...)",
+        "the dative clitic (if there is one)",
         "the accusative clitic",
         "se",
         "je"
        ],
-       "answer": "the auxiliary (sam, ću, bih...)",
-       "explanation": "The chain: li → aux → dative → accusative → se → je. li opens, je closes."
+       "answer": "the dative clitic (if there is one)",
+       "explanation": "After li comes the dative clitic (if there is one), then accusative, then se, then je last. Example: Jesi li mu ga dao?"
       },
       {
        "type": "MCQ",
@@ -2671,7 +2671,7 @@
        "note": "dođem, dođeš, dođe, dođemo, dođete, dođu. Dođem po tebe u osam. (I'll come pick you up at eight.)"
       },
       {
-       "hr": "stići (stignuti) → stignem",
+       "hr": "stići → stignem",
        "en": "to arrive, to make it → I arrive",
        "note": "stignem, stigneš… stignu. Javi mi se kad stigneš. (Let me know when you arrive.)"
       },
@@ -5689,7 +5689,7 @@
       {
        "hr": "slati / poslati",
        "en": "to send (be sending, send regularly / send once)",
-       "note": "Šaljem ti fotografije. → Poslao sam ti je jučer."
+       "note": "Šaljem ti fotografije. → Poslao sam ti ih jučer."
       },
       {
        "hr": "vraćati se / vratiti se",
@@ -8887,7 +8887,7 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Dobar spas. Za tu rečenicu dobivaš kavu.",
+       "hr": "Dobro si se izvukao. Za tu rečenicu dobivaš kavu.",
        "en": "Nice save. For that sentence you get a coffee."
       },
       {
@@ -8967,8 +8967,8 @@
        "note": "s becomes sa before st-: sa stajališta."
       },
       {
-       "hr": "Sljedeća stanica: Trg bana Jelačića.",
-       "en": "Next stop: Ban Jelačić Square.",
+       "hr": "Sljedeća stanica: Glavni gradski trg.",
+       "en": "Next stop: Main City Square.",
        "note": "The tram announcement you'll hear daily in Zagreb."
       },
       {
@@ -9997,7 +9997,7 @@
    "level": "A2",
    "title": "Lesson 100: verbs of motion & aspect",
    "objective": "Use ići and its perfective family (otići, doći, stići, krenuti) accurately.",
-   "paretoFocus": "One hundred days in, and the motion-verb family is the perfect emblem of your progress: one imperfective base, a fleet of precise perfectives.",
+   "paretoFocus": "One hundred lessons in, and the motion-verb family is the perfect emblem of your progress: one imperfective base, a fleet of precise perfectives.",
    "resources": [
     "Words tab (built-in daily flashcards)"
    ],
@@ -10089,7 +10089,7 @@
     {
      "type": "EXERCISE",
      "title": "Motion-verb precision test",
-     "intro": "Conjugations first, then choosing the exact family member. If you can narrate a door-to-door trip without reaching for 'ići' five times, you've earned your day-100 badge.",
+     "intro": "Conjugations first, then choosing the exact family member. If you can narrate a door-to-door trip without reaching for 'ići' five times, you've earned your lesson-100 badge.",
      "questions": [
       {
        "type": "MCQ",
@@ -10211,16 +10211,16 @@
     {
      "type": "DIALOGUE",
      "title": "Lesson 100: door to door, and a toast",
-     "intro": "One hundred days. The exam: narrate yesterday's trip using the whole ići family, with your favourite examiner listening. Then celebrate, you've earned every line of this.",
+     "intro": "One hundred lessons. The exam: narrate yesterday's trip using the whole ići family, with your favourite examiner listening. Then celebrate, you've earned every line of this.",
      "lines": [
       {
        "speaker": "Me",
-       "hr": "Znaš li koji je danas dan? Stoti dan mog hrvatskog!",
-       "en": "Do you know what day it is? Day one hundred of my Croatian!"
+       "hr": "Znaš li koji je danas dan? Stota lekcija mog hrvatskog!",
+       "en": "Do you know what day it is? Lesson one hundred of my Croatian!"
       },
       {
        "speaker": "Partner",
-       "hr": "Stoti?! Onda zaslužuješ svečani ispit. Ispričaj mi jučerašnje putovanje, od vrata do vrata.",
+       "hr": "Stota?! Onda zaslužuješ svečani ispit. Ispričaj mi jučerašnje putovanje, od vrata do vrata.",
        "en": "One hundred?! Then you deserve a ceremonial exam. Tell me about yesterday's trip, door to door."
       },
       {
@@ -10255,8 +10255,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Prije sto dana znao sam reći samo 'dobar dan' i 'pivo, molim'.",
-       "en": "A hundred days ago I only knew how to say 'good day' and 'a beer, please'."
+       "hr": "Prije sto lekcija znao sam reći samo 'dobar dan' i 'pivo, molim'.",
+       "en": "A hundred lessons ago I only knew how to say 'good day' and 'a beer, please'."
       },
       {
        "speaker": "Partner",
@@ -10275,8 +10275,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Može! A sljedećih sto dana? Idemo dalje!",
-       "en": "Deal! And the next hundred days? Onward!"
+       "hr": "Može! A sljedećih sto lekcija? Idemo dalje!",
+       "en": "Deal! And the next hundred lessons? Onward!"
       }
      ],
      "sources": [
@@ -10721,7 +10721,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "Pick the right aspect: Dok smo ______ na autobus, počela je kiša.",
+       "prompt": "Pick the right aspect: Dok smo ______ autobus, počela je kiša.",
        "difficulty": 5,
        "options": [
         "čekali",
@@ -11871,7 +11871,7 @@
       {
        "hr": "loš → gori",
        "en": "bad → worse",
-       "note": "Irregular no. 2. Not 'lošiji' in standard Croatian."
+       "note": "gori is the classic irregular comparative; lošiji also exists as a regular form, drill gori here since it's what you'll hear most."
       },
       {
        "hr": "velik → veći, malen → manji",
@@ -11958,10 +11958,11 @@
        "difficulty": 4,
        "answer": "gori",
        "accepted": [
-        "gori"
+        "gori",
+        "lošiji"
        ],
        "strictDiacritics": true,
-       "explanation": "loš → gori is irregular. In standard Croatian it is gori, not 'lošiji'."
+       "explanation": "loš → gori is the classic irregular comparative; lošiji also exists as a regular form."
       },
       {
        "type": "MCQ",
@@ -12796,7 +12797,7 @@
        "note": "povjerenje (n.) = trust; svake veze is the genitive after temelj, 'foundation OF'."
       },
       {
-       "hr": "Svaka svađa nije kraj svijeta.",
+       "hr": "Nije svaka svađa kraj svijeta.",
        "en": "Not every argument is the end of the world.",
        "note": "svađa = argument, quarrel; the verb is posvađati se = to have a fight."
       },
@@ -13777,7 +13778,7 @@
       {
        "hr": "Sutra imam razgovor za posao.",
        "en": "Tomorrow I have a job interview.",
-       "note": "razgovor za posao, literally 'conversation for a job'. Your day-117 topic!"
+       "note": "razgovor za posao, literally 'conversation for a job'."
       },
       {
        "hr": "Imam fleksibilno radno vrijeme.",
@@ -13936,7 +13937,7 @@
    "level": "A2",
    "title": "Week 16 review + native listening",
    "objective": "Consolidate the comparison-and-future block and try real native media.",
-   "paretoFocus": "You're past Unit 49, strong enough to start mining HRT news for gist. Native input now compounds daily.",
+   "paretoFocus": "You're past Unit 49, strong enough to start mining domestic TV news for gist. Native input now compounds daily.",
    "resources": [
     "Conversation practice (partner or tutor)"
    ],
@@ -13955,7 +13956,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "News Croatian, your survival kit for HRT",
+     "title": "News Croatian, your survival kit for real TV news",
      "intro": "Eight formulas that carry half of every news item, plus two recap lines from the week. Learn these before you press play, the gist strategy is: catch numbers, names and places first.",
      "items": [
       {
@@ -14017,7 +14018,7 @@
     {
      "type": "EXERCISE",
      "title": "Ears on: three mini news items",
-     "intro": "Three short audio news items, listen for the topic and two facts, exactly like with real HRT. Between them, a cold re-test of the week's grammar.",
+     "intro": "Three short audio news items, listen for the topic and two facts, exactly like with a real TV news broadcast. Between them, a cold re-test of the week's grammar.",
      "questions": [
       {
        "type": "MCQ",
@@ -14168,8 +14169,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Jesam! Gledao sam kratku vijest na HRT-u i razumio sam temu i dvije činjenice.",
-       "en": "I did! I watched a short news item on HRT and understood the topic and two facts."
+       "hr": "Jesam! Gledao sam kratku vijest na televiziji i razumio sam temu i dvije činjenice.",
+       "en": "I did! I watched a short news item on TV and understood the topic and two facts."
       },
       {
        "speaker": "Partner",
@@ -19970,7 +19971,7 @@
    "level": "A2",
    "title": "Read the news (simple items)",
    "objective": "Read short news items and extract names, numbers and the gist.",
-   "paretoFocus": "Reading simple news with numbers and names is a named A2 can-do, and HRT's short items are the perfect daily habit to carry into B1.",
+   "paretoFocus": "Reading simple news with numbers and names is a named A2 can-do, and short news items are the perfect daily habit to carry into B1.",
    "resources": [],
    "drills": [
     "Guess 5 unknown words from context before looking them up.",
@@ -19988,7 +19989,7 @@
     {
      "type": "LEARN",
      "title": "Čitamo vijesti, the news-reading toolkit",
-     "intro": "Thirteen phrases that unlock short news items: the nouns of headlines, the verbs of reporting, and the who-what-where-when-how-many frame you'll apply to three real HRT items today.",
+     "intro": "Thirteen phrases that unlock short news items: the nouns of headlines, the verbs of reporting, and the who-what-where-when-how-many frame you'll apply to three real news items today.",
      "items": [
       {
        "hr": "Jesi li čuo najnoviju vijest?",
@@ -20064,7 +20065,7 @@
     {
      "type": "EXERCISE",
      "title": "Who, what, where, when, how many",
-     "intro": "News vocabulary first, then two real-style mini items to mine for who, what, where and when, exactly what you'll do with HRT today.",
+     "intro": "News vocabulary first, then two real-style mini items to mine for who, what, where and when, exactly what you'll do with the news today.",
      "questions": [
       {
        "type": "MCQ",
@@ -20218,12 +20219,12 @@
     {
      "type": "LEARN",
      "title": "Dnevnik decoded, the language of TV news",
-     "intro": "Tonight you watch ten minutes of HRT's Dnevnik. These twelve lines are the fixed furniture of every broadcast, know them and the anchor suddenly slows down.",
+     "intro": "Tonight you watch ten minutes of the evening news bulletin (dnevnik, literally 'the daily'). These twelve lines are the fixed furniture of every broadcast, know them and the anchor suddenly slows down.",
      "items": [
       {
        "hr": "Dnevnik počinje u devetnaest sati.",
        "en": "Dnevnik (the evening news) starts at seven p.m.",
-       "note": "Dnevnik = HRT's main evening news, literally 'the daily'. u + number + sati for clock times."
+       "note": "Dnevnik = the main evening news bulletin, literally 'the daily'. u + number + sati for clock times."
       },
       {
        "hr": "Voditeljica čita vijesti iz zemlje i svijeta.",
@@ -20261,8 +20262,8 @@
        "note": "Forecast Croatian drops verbs: Sutra sunčano. stupanj → genitive plural stupnjeva after trideset."
       },
       {
-       "hr": "U sportu: Hajduk je pobijedio 2:1.",
-       "en": "In sport: Hajduk won 2:1.",
+       "hr": "U sportu: naš klub je pobijedio 2:1.",
+       "en": "In sport: our team won 2:1.",
        "note": "pobijediti = to win (a match); scores are read dva jedan. The sport block closes every Dnevnik."
       },
       {
@@ -23467,8 +23468,8 @@
        "note": "comparative + od + genitive"
       },
       {
-       "hr": "Imate li ovo u većoj vrećici?",
-       "en": "Do you have this in a bigger bag?",
+       "hr": "Imate li ovo u većem pakiranju?",
+       "en": "Do you have this in a bigger package/size?",
        "note": "vrećica = bag"
       },
       {
@@ -23586,7 +23587,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Odlično. Imate li je u manjem broju?",
+       "hr": "Odlično. Imate li je u manjoj veličini?",
        "en": "Great. Do you have it in a smaller size?"
       },
       {

@@ -3,7 +3,7 @@
     "id": "hr-a1-mock",
     "levelId": "A1",
     "title": "A1 mock exam (vježba u službenom formatu)",
-    "description": "Practice mock at A1 in the same five-section format as the official B1 exam, get used to the exam's shape from day one. Scored by the same rule.",
+    "description": "Practice mock at A1 in the same five-section format as the official B1 exam. Get used to the exam's shape from day one. Scored by the same rule.",
     "passRule": "≥60% in listening, reading and grammar + pass in writing and speaking.",
     "sources": [
       "croaticum-b1-sample",
@@ -62,13 +62,14 @@
           {
             "type": "FILL",
             "difficulty": 3,
-            "prompt": "Od koliko sati radi trgovina? (upišite broj)",
+            "prompt": "Od kada radi trgovina? (upišite broj)",
             "audioText": "Trgovina radi svaki dan od osam do dvadeset sati.",
             "answer": "8",
             "accepted": [
               "osam",
               "od 8",
-              "od osam"
+              "od osam",
+              "od 8 sati"
             ],
             "explanation": "'od osam' = from eight o'clock.",
             "strictDiacritics": true
@@ -79,10 +80,10 @@
             "prompt": "Je li tvrdnja točna: Marko živi u Splitu.",
             "audioText": "Marko ima dvadeset pet godina i živi u Zagrebu sa svojom ženom.",
             "options": [
-              "NETOČNO",
-              "TOČNO"
+              "NE",
+              "DA"
             ],
-            "answer": "NETOČNO",
+            "answer": "NE",
             "explanation": "He lives 'u Zagrebu', in Zagreb, not Split."
           },
           {
@@ -91,10 +92,10 @@
             "prompt": "Je li tvrdnja točna: Marko ima 25 godina.",
             "audioText": "Marko ima dvadeset pet godina i živi u Zagrebu sa svojom ženom.",
             "options": [
-              "TOČNO",
-              "NETOČNO"
+              "DA",
+              "NE"
             ],
-            "answer": "TOČNO",
+            "answer": "DA",
             "explanation": "'dvadeset pet godina' = 25 years old."
           }
         ]
@@ -230,7 +231,7 @@
           {
             "type": "MCQ",
             "difficulty": 3,
-            "prompt": "______ li engleski?",
+            "prompt": "Marko, ______ li engleski?",
             "options": [
               "Govoriš",
               "Govorim",
@@ -309,7 +310,7 @@
         "prompts": [
           {
             "prompt": "Predstavite se: ime, odakle ste, gdje živite, što radite, što volite. (4-5 rečenica)",
-            "modelAnswer": "Zovem se Ana i imam trideset godina. Dolazim iz Amerike, ali sada živim u Zagrebu. Radim kao učiteljica engleskog jezika. Volim čitati knjige i šetati uz rijeku. Učim hrvatski svaki dan.",
+            "modelAnswer": "Zovem se Ana i imam trideset godina. Ja sam iz Amerike, ali sada živim u Zagrebu. Radim kao učiteljica engleskog jezika. Volim čitati knjige i šetati uz rijeku. Učim hrvatski svaki dan.",
             "rubric": [
               "4-5 complete sentences",
               "biti and one more present-tense verb used correctly",
@@ -336,7 +337,7 @@
         "instructions": "Speak ALOUD ~1 minute per prompt, then check the rubric.",
         "prompts": [
           {
-            "prompt": "Predstavite se i ispričajte o svojoj obitelji. (oko 1 minute)",
+            "prompt": "Predstavite se i ispričajte nešto o svojoj obitelji. (oko 1 minute)",
             "modelAnswer": "Dobar dan! Zovem se…, imam … godina i dolazim iz… Moja žena je Hrvatica. Imamo psa. Moji roditelji žive u… Imam brata i sestru. Volim sport i glazbu.",
             "rubric": [
               "Spoke ~1 minute without stopping",
@@ -347,7 +348,7 @@
           },
           {
             "prompt": "Opišite svoj dan: jutro, posao/škola, večer. (oko 1 minute)",
-            "modelAnswer": "Ustajem u sedam sati. Doručkujem i pijem kavu. Radim od devet do pet. Poslije posla idem u teretanu. Navečer večeram i gledam televiziju. Spavam od jedanaest sati.",
+            "modelAnswer": "Ustajem u sedam sati. Doručkujem i pijem kavu. Radim od devet do pet. Poslije posla idem u teretanu. Navečer večeram i gledam televiziju. Idem spavati u jedanaest sati.",
             "rubric": [
               "Morning, day and evening all covered",
               "Time expressions used (u sedam sati…)",
@@ -401,8 +402,8 @@
               "sutra ujutro u sedam",
               "sutra u sedam",
               "sutra ujutro u 7",
-              "u 7",
-              "u sedam"
+              "sutra u sedam sati",
+              "sutra ujutro u sedam sati"
             ],
             "explanation": "'sutra ujutro u sedam sati' = tomorrow morning at seven.",
             "strictDiacritics": true
@@ -425,19 +426,19 @@
             "type": "MCQ",
             "difficulty": 5,
             "prompt": "Je li tvrdnja točna: Ordinacija radi poslijepodne.",
-            "audioText": "Dobar dan, dobili ste ordinaciju doktorice Kovač. Radimo svaki radni dan od osam do četrnaest sati. Za hitne slučajeve nazovite sto devedeset četiri.",
+            "audioText": "Dobar dan, dobili ste ordinaciju doktorice Kovač. Radimo svaki radni dan od osam do dvanaest sati. Za hitne slučajeve nazovite sto devedeset četiri.",
             "options": [
-              "NETOČNO",
-              "TOČNO"
+              "NE",
+              "DA"
             ],
-            "answer": "NETOČNO",
-            "explanation": "Open 'od osam do četrnaest' (8:00-14:00), mornings only."
+            "answer": "NE",
+            "explanation": "Open 'od osam do dvanaest' (8:00-12:00), mornings only."
           },
           {
             "type": "FILL",
             "difficulty": 5,
             "prompt": "Koji broj zovete za hitne slučajeve? (upišite broj)",
-            "audioText": "Dobar dan, dobili ste ordinaciju doktorice Kovač. Radimo svaki radni dan od osam do četrnaest sati. Za hitne slučajeve nazovite sto devedeset četiri.",
+            "audioText": "Dobar dan, dobili ste ordinaciju doktorice Kovač. Radimo svaki radni dan od osam do dvanaest sati. Za hitne slučajeve nazovite sto devedeset četiri.",
             "answer": "194",
             "accepted": [
               "sto devedeset četiri"
@@ -451,11 +452,11 @@
             "prompt": "Je li tvrdnja točna: Koncert je preseljen u dvoranu zbog kiše.",
             "audioText": "Večerašnji koncert klape neće se održati na trgu zbog najavljene kiše, nego u gradskoj dvorani, s početkom u dvadeset sati.",
             "options": [
-              "TOČNO",
-              "NETOČNO"
+              "DA",
+              "NE"
             ],
-            "answer": "TOČNO",
-            "explanation": "Moved from the square to the city hall because of announced rain."
+            "answer": "DA",
+            "explanation": "Moved from the square to the city concert hall because of announced rain."
           }
         ]
       },
@@ -553,7 +554,7 @@
           {
             "type": "MCQ",
             "difficulty": 6,
-            "prompt": "Upišite riječ: 'Tražim stan s ______ pogledom na more.' (lijep)",
+            "prompt": "Odaberite riječ: 'Tražim stan s ______ pogledom na more.' (lijep)",
             "options": [
               "lijepim",
               "lijep",
@@ -632,7 +633,7 @@
           {
             "type": "MCQ",
             "difficulty": 5,
-            "prompt": "______ li mi pomoći, molim vas?",
+            "prompt": "______ li mi pomogli, molim vas?",
             "options": [
               "Biste",
               "Bi",
@@ -646,7 +647,7 @@
           {
             "type": "MCQ",
             "difficulty": 5,
-            "prompt": "Jučer sam ______ cijelu knjigu.",
+            "prompt": "Jučer sam ______ cijelu knjigu do kraja.",
             "options": [
               "pročitao",
               "čitao",
@@ -725,7 +726,7 @@
         "prompts": [
           {
             "prompt": "Opišite svoj stan ili kuću: sobe, namještaj, što volite kod svog doma. (5-6 rečenica)",
-            "modelAnswer": "Živim u dvosobnom stanu na drugom katu. Stan ima veliku dnevnu sobu, spavaću sobu, kuhinju i kupaonicu. U dnevnoj sobi imamo kauč, stol i policu punu knjiga. S balkona se vidi park. Najviše volim svoju kuhinju jer volim kuhati. Stan je blizu tramvajske stanice, pa mi je lako ići na posao.",
+            "modelAnswer": "Živim u dvosobnom stanu na drugom katu. Stan ima veliku dnevnu sobu, spavaću sobu, kuhinju i kupaonicu. U dnevnoj sobi imamo kauč, stol i policu punu knjiga. S balkona se vidi park. Najviše volim svoju kuhinju jer volim kuhati. Stan je blizu tramvajskog stajališta, pa mi je lako ići na posao.",
             "rubric": [
               "5-6 complete sentences",
               "Rooms and furniture vocabulary correct",
@@ -833,7 +834,7 @@
             "accepted": [
               "tisuću devetsto osamdeset sedam"
             ],
-            "explanation": "Croatian roadside assistance: 1987 (HAK).",
+            "explanation": "Croatian roadside assistance: 1987.",
             "strictDiacritics": true
           },
           {
@@ -856,10 +857,10 @@
             "prompt": "Je li tvrdnja točna: Festival se održava u Varaždinu.",
             "audioText": "Poznati festival ulične umjetnosti ove se godine ponovno održava u Varaždinu, od dvadeset drugog do trideset prvog kolovoza. Očekuje se više od tisuću izvođača iz cijele Europe: glumaca, glazbenika, plesača i žonglera. Program je namijenjen i djeci i odraslima, a većina događanja je besplatna.",
             "options": [
-              "TOČNO",
-              "NETOČNO"
+              "DA",
+              "NE"
             ],
-            "answer": "TOČNO",
+            "answer": "DA",
             "explanation": "The recording says the festival 'održava se u Varaždinu'."
           },
           {
@@ -868,10 +869,10 @@
             "prompt": "Je li tvrdnja točna: Program je samo za odrasle.",
             "audioText": "Poznati festival ulične umjetnosti ove se godine ponovno održava u Varaždinu, od dvadeset drugog do trideset prvog kolovoza. Očekuje se više od tisuću izvođača iz cijele Europe: glumaca, glazbenika, plesača i žonglera. Program je namijenjen i djeci i odraslima, a većina događanja je besplatna.",
             "options": [
-              "NETOČNO",
-              "TOČNO"
+              "NE",
+              "DA"
             ],
-            "answer": "NETOČNO",
+            "answer": "NE",
             "explanation": "'Program je namijenjen i djeci i odraslima', for children AND adults."
           },
           {
@@ -880,10 +881,10 @@
             "prompt": "Je li tvrdnja točna: Većinu događanja treba platiti.",
             "audioText": "Poznati festival ulične umjetnosti ove se godine ponovno održava u Varaždinu, od dvadeset drugog do trideset prvog kolovoza. Očekuje se više od tisuću izvođača iz cijele Europe: glumaca, glazbenika, plesača i žonglera. Program je namijenjen i djeci i odraslima, a većina događanja je besplatna.",
             "options": [
-              "NETOČNO",
-              "TOČNO"
+              "NE",
+              "DA"
             ],
-            "answer": "NETOČNO",
+            "answer": "NE",
             "explanation": "'većina događanja je besplatna', most events are free."
           },
           {
@@ -896,7 +897,8 @@
               "od 22 do 31 kolovoza",
               "22. do 31. kolovoza",
               "22-31 kolovoza",
-              "od 22. do 31. 8."
+              "od 22. do 31. 8.",
+              "od 22.8. do 31.8."
             ],
             "explanation": "'od dvadeset drugog do trideset prvog kolovoza' = from 22 to 31 August.",
             "strictDiacritics": true
@@ -912,8 +914,14 @@
         "passages": [
           {
             "id": "biografija",
-            "title": "NIKOLA TESLA",
-            "text": "Jedan od najpoznatijih izumitelja svijeta, Nikola Tesla, rodio se 1856. godine u Smiljanu, malome selu u Lici. Školu je polazio u Gospiću i Karlovcu, a studirao je u Grazu i Pragu. Kao mladi inženjer radio je u Budimpešti i Parizu, a 1884. godine otputovao je u Ameriku, gdje je proveo ostatak života. Tesla je najpoznatiji po svojim izumima na području izmjenične struje, radija i daljinskog upravljanja. Prijavio je više od tri stotine patenata. Iako je postao slavan, nikada nije postao bogat jer ga je novac zanimao manje od znanosti. Umro je u New Yorku 1943. godine, sam u hotelskoj sobi. Danas njegovo ime nosi mjerna jedinica, poznata tvrtka električnih automobila i mnoge ulice diljem svijeta.",
+            "title": "JOSIP VRANIĆ",
+            "text": "Jedan od najpoznatijih izumitelja svoga doba, Josip Vranić, rodio se 1861. godine u Vrbovskom, malome gradiću u Gorskom kotaru. Školu je polazio u Karlovcu i Rijeci, a studirao je u Beču i Zürichu. Kao mladi inženjer radio je u Berlinu i Londonu, a 1889. godine otputovao je u Ameriku, gdje je proveo ostatak života. Vranić je najpoznatiji po svojim izumima na području elektrotehnike, posebice bežičnog telegrafa i elektromotora. Prijavio je više od dvjesto patenata. Iako je postao slavan, nikada nije postao bogat jer ga je znanost zanimala više od novca. Umro je u Chicagu 1938. godine, okružen kolegama i učenicima. Danas njegovo ime nosi nekoliko ulica i jedna škola.",
+            "audioOnly": false
+          },
+          {
+            "id": "ambrozija",
+            "title": "ALERGIJA NA AMBROZIJU",
+            "text": "Ambrozija je biljka podrijetlom iz Sjeverne Amerike koja se u Hrvatskoj širi uz ceste, pruge i napuštena polja. Njezin pelud najčešće muči alergičare krajem ljeta i u jesen, kada izaziva kihanje, suzne oči i kašalj. Biljka počinje cvjetati sredinom srpnja, a najviše peludi oslobađa u kolovozu. Koncentracija peluda u zraku najveća je ujutro, osobito u sunčane i vjetrovite dane, zato se alergičnim osobama ne preporučuje boravak na otvorenom ujutro. Liječnici savjetuju da se prozori drže zatvoreni tijekom jutra i da se izlasci vani planiraju za kasno poslijepodne ili nakon kiše, kada u zraku ima manje peludi.",
             "audioOnly": false
           }
         ],
@@ -921,70 +929,71 @@
           {
             "type": "MCQ",
             "difficulty": 3,
-            "prompt": "Gdje se rodio Nikola Tesla?",
+            "prompt": "Gdje se rodio Josip Vranić?",
             "options": [
-              "u Smiljanu u Lici",
-              "u Gospiću",
-              "u Grazu",
-              "u New Yorku"
+              "u Vrbovskom u Gorskom kotaru",
+              "u Karlovcu",
+              "u Beču",
+              "u Chicagu"
             ],
-            "answer": "u Smiljanu u Lici",
-            "explanation": "'rodio se … u Smiljanu, malome selu u Lici.'"
+            "answer": "u Vrbovskom u Gorskom kotaru",
+            "explanation": "'rodio se … u Vrbovskom, malome gradiću u Gorskom kotaru.'"
           },
           {
             "type": "MCQ",
             "difficulty": 4,
-            "prompt": "Gdje je Tesla studirao?",
+            "prompt": "Gdje je Vranić studirao?",
             "options": [
-              "u Grazu i Pragu",
-              "u Gospiću i Karlovcu",
-              "u Budimpešti i Parizu",
+              "u Beču i Zürichu",
+              "u Karlovcu i Rijeci",
+              "u Berlinu i Londonu",
               "u Americi"
             ],
-            "answer": "u Grazu i Pragu",
-            "explanation": "School in Gospić and Karlovac, but he STUDIED in Graz and Prague."
+            "answer": "u Beču i Zürichu",
+            "explanation": "School in Karlovac and Rijeka, but he STUDIED in Vienna and Zürich."
           },
           {
             "type": "FILL",
             "difficulty": 5,
             "prompt": "Koje je godine otputovao u Ameriku?",
-            "answer": "1884",
+            "answer": "1889",
             "accepted": [
-              "1884."
+              "1889.",
+              "1889. godine"
             ],
-            "explanation": "'1884. godine otputovao je u Ameriku.'",
+            "explanation": "'1889. godine otputovao je u Ameriku.'",
             "strictDiacritics": true
           },
           {
             "type": "MCQ",
             "difficulty": 5,
-            "prompt": "Po čemu je Tesla najpoznatiji?",
+            "prompt": "Po čemu je Vranić najpoznatiji?",
             "options": [
-              "po izumima na području izmjenične struje",
-              "po električnim automobilima",
-              "po hotelima u New Yorku",
-              "po studiju u Pragu"
+              "po izumima na području elektrotehnike",
+              "po elektromotorima u automobilima",
+              "po hotelima u Chicagu",
+              "po studiju u Zürichu"
             ],
-            "answer": "po izumima na području izmjenične struje",
-            "explanation": "'najpoznatiji po svojim izumima na području izmjenične struje, radija i daljinskog upravljanja.'"
+            "answer": "po izumima na području elektrotehnike",
+            "explanation": "'najpoznatiji po svojim izumima na području elektrotehnike, posebice bežičnog telegrafa i elektromotora.'"
           },
           {
             "type": "MCQ",
             "difficulty": 6,
-            "prompt": "Zašto Tesla nikada nije postao bogat?",
+            "prompt": "Zašto Vranić nikada nije postao bogat?",
             "options": [
-              "jer ga je novac zanimao manje od znanosti",
+              "jer ga je znanost zanimala više od novca",
               "jer nije imao patente",
               "jer nije bio slavan",
               "jer je živio u hotelu"
             ],
-            "answer": "jer ga je novac zanimao manje od znanosti",
-            "explanation": "'nikada nije postao bogat jer ga je novac zanimao manje od znanosti.'"
+            "answer": "jer ga je znanost zanimala više od novca",
+            "explanation": "'nikada nije postao bogat jer ga je znanost zanimala više od novca.'"
           },
           {
             "type": "MCQ",
             "difficulty": 6,
-            "prompt": "Upišite riječ koja nedostaje: 'Alergija na ambroziju ___ muči mnoge ljude u Hrvatskoj.'",
+            "prompt": "Odaberite riječ koja nedostaje: 'Alergija na ambroziju ___ muči mnoge ljude u Hrvatskoj.'",
             "options": [
               "najčešće",
               "najmanja",
@@ -998,7 +1007,7 @@
           {
             "type": "MCQ",
             "difficulty": 7,
-            "prompt": "Upišite riječ koja nedostaje: 'Alergičnim osobama ne preporučuje se boravak na ___ ujutro.'",
+            "prompt": "Odaberite riječ koja nedostaje: 'Alergičnim osobama ne preporučuje se boravak na ___ ujutro.'",
             "options": [
               "otvorenom",
               "otvoreno",
@@ -1012,7 +1021,7 @@
           {
             "type": "MCQ",
             "difficulty": 7,
-            "prompt": "Upišite riječ koja nedostaje: 'Biljka počinje cvjetati sredinom ___.' (srpanj)",
+            "prompt": "Odaberite riječ koja nedostaje: 'Biljka počinje cvjetati sredinom ___.' (srpanj)",
             "options": [
               "srpnja",
               "srpanj",
@@ -1044,7 +1053,7 @@
             ],
             "answer": "stanovnika",
             "strictDiacritics": true,
-            "explanation": "Numbers above 4 (and milijun) take the genitive plural: stanovnika."
+            "explanation": "Quantity nouns like tisuća/milijun and numbers 5+ take the genitive plural: stanovnika."
           },
           {
             "type": "MCQ",
@@ -1175,7 +1184,7 @@
           {
             "type": "FILL",
             "difficulty": 9,
-            "prompt": "Putujem s ______ na more. (prijatelj → instrumental)",
+            "prompt": "Putujem s ______ na more. (prijatelj)",
             "answer": "prijateljem",
             "strictDiacritics": true,
             "explanation": "s + instrumental for company; soft-consonant masculine takes -em: s prijateljem."
@@ -1183,7 +1192,7 @@
           {
             "type": "FILL",
             "difficulty": 9,
-            "prompt": "Živim u ______ već pet godina. (Zagreb → locative)",
+            "prompt": "Živim u ______ već pet godina. (Zagreb)",
             "answer": "Zagrebu",
             "strictDiacritics": true,
             "explanation": "Static location after 'u' takes the locative: u Zagrebu."
@@ -1198,19 +1207,20 @@
         "prompts": [
           {
             "prompt": "Opišite svoj uobičajeni dan: kada ustajete, što radite ujutro, gdje radite ili učite, što radite poslijepodne i navečer. (7-8 rečenica)",
-            "modelAnswer": "Obično ustajem u sedam sati. Prvo se istuširam i doručkujem, a onda idem na posao autobusom. Radim u uredu u centru grada od devet do pet. Poslijepodne idem u teretanu ili trčim u parku. Navečer kuham večeru sa ženom i razgovaramo o danu. Poslije večere obično gledamo film ili čitam knjigu. Učim hrvatski svaki dan po pola sata. Spavati idem oko jedanaest sati.",
+            "modelAnswer": "Obično ustajem u sedam sati. Prvo se istuširam i doručkujem, a onda idem na posao autobusom. Radim u uredu u centru grada od devet do pet. Poslijepodne idem u teretanu ili trčim u parku. Navečer kuham večeru sa ženom i razgovaramo o danu. Poslije večere obično gledamo film ili čitam knjigu. Učim hrvatski svaki dan po pola sata. Idem spavati oko jedanaest sati.",
             "rubric": [
               "7-8 complete sentences on the topic",
               "Correct present-tense endings for all persons used",
-              "Reflexive verbs handled correctly (tuširam se, 'se' in second position)",
+              "Reflexive verbs handled correctly (istuširam se, 'se' in second position)",
               "At least one time expression per sentence part (u sedam sati, poslijepodne, navečer…)",
-              "Cases correct after prepositions (na posao, acc., u uredu, loc., autobusom, ins.)",
+              "Cases correct after prepositions (na posao, acc.; u uredu, loc.)",
+              "Bare instrumental of means used correctly (autobusom)",
               "Correct spelling including č/ć/š/ž/đ"
             ]
           },
           {
             "prompt": "Napišite svoj životopis (CV) u 7-8 rečenica: tko ste, odakle ste, obrazovanje, radno iskustvo, znanje jezika, što volite raditi.",
-            "modelAnswer": "Zovem se Ana Barić i rođena sam 1990. godine u Splitu. Završila sam osnovnu i srednju školu u Splitu, a ekonomiju sam studirala u Zagrebu. Nakon studija radila sam tri godine u banci kao analitičarka. Sada radim u maloj tvrtki koja se bavi turizmom. Govorim engleski i njemački, a učim hrvatski. Volim putovati, čitati i baviti se sportom. U slobodno vrijeme volontiram u udruzi za zaštitu životinja. Tražim posao u kojem mogu raditi s ljudima.",
+            "modelAnswer": "Zovem se Ana Barić i rođena sam 1990. godine u Splitu. Završila sam osnovnu i srednju školu u Splitu, a ekonomiju sam studirala u Zagrebu. Nakon studija radila sam tri godine u banci kao analitičarka. Sada radim u maloj tvrtki koja se bavi turizmom. Govorim engleski i njemački. Volim putovati, čitati i baviti se sportom. U slobodno vrijeme volontiram u udruzi za zaštitu životinja. Tražim posao u kojem mogu raditi s ljudima.",
             "rubric": [
               "7-8 complete sentences covering identity, origin, education, work, languages, interests",
               "Perfekt used correctly with gender agreement (završila sam / završio sam)",
@@ -1229,8 +1239,8 @@
         "instructions": "Speak ALOUD for 1-2 minutes per prompt (record yourself if you can). Then check the rubric honestly. In the real exam this section is a conversation with the examiner.",
         "prompts": [
           {
-            "prompt": "Predstavite se i ispričajte o svojoj obitelji, poslu i tome zašto učite hrvatski. (1-2 minute govora)",
-            "modelAnswer": "Dobar dan! Zovem se…, dolazim iz… Oženjen sam / Udana sam i moja žena / moj muž je iz Hrvatske. Radim kao… Hrvatski učim jer želim razgovarati s obitelji svoje žene / svog muža na hrvatskom i jer ćemo našu djecu odgajati dvojezično. Učim svaki dan: ponavljam riječi, slušam hrvatski i vježbam gramatiku. Najteže su mi padeži, ali svaki dan idu sve bolje.",
+            "prompt": "Predstavite se i ispričajte nešto o svojoj obitelji, poslu i tome zašto učite hrvatski. (1-2 minute govora)",
+            "modelAnswer": "Dobar dan! Zovem se…, dolazim iz… Oženjen sam / Udana sam i moja žena / moj muž je iz Hrvatske. Radim kao… Hrvatski učim jer želim razgovarati s obitelji svoje žene / svog muža na hrvatskom i jer ćemo našu djecu odgajati dvojezično. Učim svaki dan: ponavljam riječi, slušam hrvatski i vježbam gramatiku. Najteži su mi padeži, ali svaki dan mi ide sve bolje. Počeo sam učiti hrvatski prije godinu dana.",
             "rubric": [
               "Spoke for at least a minute without long breaks",
               "Used present, past AND future at least once each",
@@ -1244,7 +1254,7 @@
             "modelAnswer": "Prošli vikend bio je odličan. U subotu ujutro išao sam na tržnicu i kupio sam voće i povrće. Poslijepodne smo žena i ja šetali uz more, a navečer smo večerali kod njezinih roditelja. U nedjelju sam se odmarao, čitao sam i gledao utakmicu. Sljedeći vikend planiramo putovati u Zagreb. Posjetit ćemo muzej i naći ćemo se s prijateljima. Ako bude lijepo vrijeme, ići ćemo i na Sljeme.",
             "rubric": [
               "Past events in perfekt with correct gender agreement",
-              "Aspect chosen correctly (šetali smo (process; kupio sam) completed)",
+              "Aspect chosen correctly: šetali smo (process), kupio sam (completed)",
               "Future plans with futur I (posjetit ćemo, naći ćemo se)",
               "A conditional or future clause attempted (ako bude…)",
               "Connected speech with onda/poslije/zatim, not isolated sentences"

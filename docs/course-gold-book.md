@@ -319,9 +319,17 @@ shared tools, and every P-row is a process trap the build must not repeat.
 - English for instructional text; the target language for `hr` fields, activity titles,
   dialogue lines.
 - Position words say "lesson", never "day N".
-- No named companies, platforms, apps, parties, politicians, or institutions in lesson text;
-  institutions of state are allowed where they are the subject matter. Invented proper nouns
-  (a fictional firm answering the phone) are acceptable where the convention needs a name.
+- **No named real companies, platforms, apps, institutions, or real people, anywhere in lesson
+  text** (user rule, 2026-07-27, replacing the old "institutions of state are the subject
+  matter" carve-out after the hr audit found it used to justify HRT/Ruđer Bošković Institute/
+  Dinamo/Hajduk naming and real biography subjects like Tesla, Penkala, Zagorka, Brlić-
+  Mažuranić, Modrić and Perković throughout the B1 phase). A biography-reading or news-genre
+  lesson invents its own fictional person/team/broadcaster with consistent invented facts
+  instead. Invented proper nouns (a fictional firm answering the phone, a fictional inventor's
+  birth year and city) are the correct and only way to satisfy a convention that needs a name.
+  Real geography (cities, countries, natural landmarks like Plitvice Lakes) is not covered by
+  this rule. `resources.json` remains the one sanctioned place naming real external
+  resources/institutions, since that is its entire purpose (Profile → References).
 - Difficulty bands: A0 1–4, A1 3–5, A2 4–6, B1 5–8, B2 7–10.
 - Every content unit cites only sources it was actually checked against (Phase 8b).
 - Commit at every phase boundary; the session limit is a pause, never a loss, but only if the

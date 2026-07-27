@@ -48,9 +48,13 @@ Sweep key: ✅ swept clean · 🔧 swept, fixes pending · ▢ not yet swept · 
 | C14 | MCQ answer visible in its own prompt | 2026-07-20 proctor design | `proctor.py` check 4 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C15 | Longest-option-is-answer bias > 55% (guessable course) | 2026-07-20 proctor design | `proctor.py` check 5 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | C16 | Sources keys citing documents never consulted (provenance overclaim) | 2026-07-20, de/it decks (user question) | Gold Book Phase 8b; no mechanical gate possible | ✅ | ✅ | ▢ | ✅ | ✅ |
+| C17 | MCQ explanation names a distractor by POSITION ("the second option...") which the app shuffles at render, so the explanation can land on and disparage the CORRECT answer after shuffling | 2026-07-27, hr A0 days 15/16 | no automated gate yet; a proctor regex for "the (first\|second\|third\|last) option" across every explanation would catch it | ✅ | ▢ | ▢ | ▢ | ▢ |
+| C18 | Perfective/imperfective headword's own `example.target` shows only the OTHER aspect partner's form, never the headword itself | 2026-07-27, hr deck (8+ real hits: shvatiti, krenuti, odrediti, dozvoliti, obuhvatiti, olakšati, posvetiti se, sjediti) | no automated gate yet; a check for "headword stem present in example.target" would catch it mechanically | ✅ | ▢ | ▢ | ▢ | ▢ |
+| C19 | Grammar-note commentary concatenated directly into the target-language field (`hr`) instead of a separate `note`/`en` field, so TTS and the learner see partly-English "Croatian" | 2026-07-27, hr B1 days 311/312/315/316 (13 items, one late authoring batch) | no automated gate yet; a per-language ASCII-density check on `.hr`-suffixed keys would catch it | ✅ | ▢ | ▢ | ▢ | ▢ |
 
 *C10–C14 sweep counts (2026-07-20): hr 118, fr 56, pt 45, de 80 problems. 🔧 clears to ✅
-when `proctor.py` runs clean on that language.*
+when `proctor.py` runs clean on that language. hr re-verified clean 2026-07-27 after the
+full-course audit and fix pass below.*
 
 ## II. Content: language-specific variety and orthography
 
@@ -66,6 +70,7 @@ when `proctor.py` runs clean on that language.*
 | V8 | Passato remoto taught below B1 | it build | `check_it.py`, level-scoped (B1 recognition lesson exempt) | it | ✅ |
 | V9 | Deck nouns without their article (gender unlearnable) | de convention; 3 real hits in it_vocab_a | ad-hoc verification scripts per deck | de, it, es | ✅ de/it |
 | V10 | Article/gender cross-mismatch in deck (der X tagged n. f.) | de deck verification | ad-hoc verification scripts | de, it, es | ✅ de/it |
+| V11 | False "distinctly Croatian" vocab notes: a standard Croatian word framed as the non-Croatian alternative to a register/loanword variant that is ALSO standard (insekt, redovno, protest, geografija, šporet, mobilni telefon all wrongly cast as "Serbian"), the same overclaim class check_hr.py exists to prevent, running backwards | 2026-07-27, hr deck (7+ real hits) | no automated gate; requires a native-checked whitelist of genuine hr/sr lexical pairs vs. register pairs | hr | 🔧 (7 found and fixed 2026-07-27; no gate built yet, re-sweep needed if more vocab is authored) |
 
 *New language rule: es (and every future language) gets its own `check_<code>.py` covering its
 drift modes (for es: Latin American forms vs Castilian, per the pt/Brazilian precedent), plus
@@ -121,12 +126,31 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | K5 | A loosened check silently becoming a no-op | risk, de | keep a planted-defect fixture per checker; re-run it after EVERY change |
 | K7 | A stem-with-suffix regex over-matching a legitimate word family (check_hr's voz\w* flagged vozac/vozilo/voziti, all standard Croatian, when only the Serbian train noun voz is the target) | 2026-07-21, hr | match a Serbian noun by its exact case-forms, not a stem+\w*, when a legitimate same-stem family exists |
 | K6 | Flagging a correct inflected form as the wrong variety (check_hr flagged "vremena", the correct Croatian genitive of vrijeme, as ekavian) | 2026-07-21, hr | list only forms that are the wrong variety in EVERY inflection; the ije-to-e alternation is regular in Croatian oblique cases, so match bare "vreme" not the "vremen-" stem |
+| K8 | check_hr.py's Serbian-drift regexes were ASCII-only (no š/č/ć/ž/đ character classes), so they never matched real shipped Croatian, which always carries proper diacritics; the checker had been auditing nothing since the day it stopped seeing pre-diacritic planning drafts. Also could not parse the assembled `{title, days}` phase-file shape at all (expected a bare array), so it silently skipped the entire shipped course | 2026-07-27, hr full-course audit | rewrote the regexes with `[sš]`/`[cč]`/`[zž]`/`(?:đ\|dj)` character classes matching both spellings; added a `{title,days}` unwrap to both check_hr.py's CLI and check_batch.check_file (new check_batch.check_file_obj helper); negative-tested against both ASCII and diacritic-bearing planted defects post-fix |
 
 ---
 
 ## Open sweeps (the queue this registry exists to drain)
 
 1. **C10–C14**: DRAINED for all four shipped languages 2026-07-20 (hr 118, de 80, fr 56, pt 45, all to zero, independently verified); it audits at assembly. The CI proctor step can flip to hard-fail.
+1a. **hr full-course audit (2026-07-27)**: 19-agent audit (11 lesson-range reviewers, 4 deck
+   reviewers, quizzes/placement, exams, reference, syllabus) plus `proctor.py` + full Kotlin
+   gate + a diacritic-aware Serbian-drift sweep. Found and FIXED: 31 Critical (wrong clitic
+   order stated in 5 places incl. `feynman.json`, 13 English-contaminated `hr` fields in one
+   batch, a gender-agreement dialogue, a broken exam answer key, a broken quiz answer key, 3
+   reversed/corrupted `grammar.json` table cells), 49 High (case-government errors, aspect-
+   partner mismatches, false-Serbianism vocab notes = V11, real institutions/athletes named in
+   lesson text, an MCQ-shuffle-position bug = C17), plus most Medium findings. Deck trimmed
+   90→ back to exactly the 3,440-word cap by removing 76 off-level/redundant B1 words.
+   `check_hr.py` itself was broken (K8: ASCII-only, couldn't parse the assembled format) and is
+   now fixed and negative-tested. NOT attempted: 314 `check_batch.py` structural findings (168
+   lessons missing a DIALOGUE activity, 46 3-option MCQs, 55 over-length dialogues, 27 duplicate
+   prompts) — this is new Phase-5-scale lesson authoring, not a fix, and needs its own pass. Also
+   open: Phase 8b found the ASOO A1 directional-preposition unit (u/na/po/za + accusative) is
+   never taught. One judgment call surfaced a conflict with `[[corlang-session-resume]]`'s
+   2026-07-18 note "HRT immersion mentions kept deliberately" — this audit treated repeated HRT/
+   Ruđer Bošković Institute/Dinamo/Hajduk naming as boundary-rule violations and genericized all
+   of it; flagged for the user to confirm or revert given the prior deliberate decision.
 2. **C16**: de CHECKED 2026-07-20 (DWDS mirrors + all three official PDFs, complete): deck
    covers 46.3% of the official A1..B1 inventory, 262 official A1 lemmas absent entirely, so
    the `goethe-wortliste` key was removed from all 22 packs, then EARNED BACK the same day for
