@@ -105,6 +105,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
     assertTutorLangRegistered(lang)   // debug builds fail loudly on a language with no tutor content
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val level = progress?.currentLevel ?: "A1"
+    val currentDay = progress?.currentDay ?: 1
     // Sent to the worker so the 40-msg/day cap keys on this subscriber (null on DEV_PREMIUM).
     val subToken by container.languagePrefs.subPurchaseToken.collectAsState(initial = null)
     val languageName = remember(lang) { container.content.meta(lang).name }
@@ -112,8 +113,19 @@ fun TalkScreen(container: AppContainer, lang: String) {
         initial = com.corlang.app.data.prefs.LearnerProfile("", "m", "", "", "")
     )
     val studentName = profile.name.trim()
-    val system = remember(lang, level, languageName, studentName) {
-        tutorSystemPrompt(lang, languageName, level, studentName)
+
+    // English-help preference, per language. Unset (null) defaults ON for beginners (A0-A2) and
+    // OFF above — the old passive hint's behaviour — and the learner's explicit choice sticks.
+    val englishHelpPref by container.languagePrefs.tutorEnglishHelp(lang)
+        .collectAsState(initial = null as Boolean?)
+    val englishHelp = englishHelpPref ?: (level in setOf("A0", "A1", "A2"))
+
+    // Compact progress snapshot for the tutor, so "review my last lesson" / "practise my words"
+    // have something concrete to work from. Small on purpose — the worker caps the request.
+    val lessonContext = remember(lang, currentDay) { buildTutorContext(container, lang, currentDay) }
+
+    val system = remember(lang, level, languageName, studentName, englishHelp, lessonContext) {
+        tutorSystemPrompt(lang, languageName, level, studentName, englishHelp, lessonContext)
     }
 
     // Transcript for display + as the API history (same list; roles map directly).
@@ -207,19 +219,64 @@ fun TalkScreen(container: AppContainer, lang: String) {
             // list is never empty now, so the starters had silently vanished.)
             if (messages.size <= 1 && !sending) {
                 item {
-                    Column(Modifier.fillMaxWidth().padding(top = 8.dp)) {
+                    Column(
+                        Modifier.fillMaxWidth().padding(top = 8.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        // English-help toggle, up front: a beginner shouldn't be stranded when the
+                        // tutor speaks only the target language.
+                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                            Column(Modifier.weight(1f)) {
+                                Text(
+                                    "Explain in English when I'm stuck",
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                                Text(
+                                    "New words get a quick English translation. Turn off to stay in $languageName.",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                            androidx.compose.material3.Switch(
+                                checked = englishHelp,
+                                onCheckedChange = { on ->
+                                    container.appScope.launch {
+                                        container.languagePrefs.setTutorEnglishHelp(lang, on)
+                                    }
+                                }
+                            )
+                        }
                         Text(
-                            "Tap a starter or type your own ($level).",
+                            "How would you like to practise? ($level)",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.padding(bottom = 10.dp)
+                            modifier = Modifier.padding(top = 4.dp)
                         )
-                        starters(lang).forEach { starter ->
+                        // Clear English labels (an A0 could not read the old target-language
+                        // starters); the tutor replies in $languageName using the progress context.
+                        tutorModes().forEach { mode ->
                             OutlinedButton(
-                                onClick = { send(starter) },
-                                modifier = Modifier.fillMaxWidth().padding(vertical = 3.dp)
-                            ) { Text(starter) }
+                                onClick = { send(mode.kickoff) },
+                                modifier = Modifier.fillMaxWidth(),
+                                contentPadding = androidx.compose.foundation.layout.PaddingValues(
+                                    horizontal = 16.dp, vertical = 10.dp
+                                )
+                            ) {
+                                Column(Modifier.fillMaxWidth()) {
+                                    Text(mode.label, fontWeight = FontWeight.SemiBold)
+                                    Text(
+                                        mode.desc,
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
                         }
+                        Text(
+                            "…or just type a message below.",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
                     }
                 }
             }
@@ -244,20 +301,6 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.error,
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
-            )
-        }
-
-        // Explicit permission to break out into English. Beginners stall because they assume the
-        // chat has to be entirely in the target language, and a learner who can ask a question
-        // keeps talking instead of quitting. A0 to A2 only: from B1 the point is to push through
-        // without falling back. It lives in the UI rather than the greeting on purpose, the seed
-        // greeting is an in-language anchor against variety drift and must stay all in-language.
-        if (level in setOf("A0", "A1", "A2")) {
-            Text(
-                "Stuck? Ask anything in English and your tutor will explain.",
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 2.dp)
             )
         }
 
@@ -340,39 +383,46 @@ internal fun assertTutorLangRegistered(lang: String) {
     }
 }
 
-/** Per-language conversation starters — shown until the learner sends their first message. */
-private fun starters(lang: String): List<String> = when (lang) {
-    "hr" -> listOf(
-        "Bok! Kako si danas?",
-        "Možemo li vježbati naručivanje kave?",
-        "Postavi mi jedno lako pitanje.",
-        "Ispravi moje greške, molim te."
+/** A way to start a tutor session. [kickoff] is the (English) opening the learner sends; the
+ *  tutor replies in the target language, steered by the progress context in its system prompt. */
+private data class TutorMode(val label: String, val desc: String, val kickoff: String)
+
+private fun tutorModes(): List<TutorMode> = listOf(
+    TutorMode(
+        "Have a conversation", "Free chat at your level",
+        "Let's just have a conversation. Ask me something to get started."
+    ),
+    TutorMode(
+        "Learn something new", "A new word or grammar point",
+        "Teach me one new thing that fits my level, then help me practise it."
+    ),
+    TutorMode(
+        "Review my last lesson", "Practise what you just studied",
+        "Let's practise what I studied in my last lesson."
+    ),
+    TutorMode(
+        "Practise my words", "Quiz on words you've learned",
+        "Quiz me on a few of the words I've been learning recently."
     )
-    "pt" -> listOf(
-        "Olá! Como estás?",
-        "Podemos praticar como pedir um café?",
-        "Faz-me uma pergunta fácil.",
-        "Corrige os meus erros, por favor."
-    )
-    "fr" -> listOf(
-        "Bonjour ! Comment ça va ?",
-        "On peut pratiquer comment commander un café ?",
-        "Pose-moi une question facile.",
-        "Corrige mes erreurs, s'il te plaît."
-    )
-    "de" -> listOf(
-        "Hallo! Wie geht es dir?",
-        "Können wir üben, einen Kaffee zu bestellen?",
-        "Stell mir eine leichte Frage.",
-        "Korrigiere bitte meine Fehler."
-    )
-    "it" -> listOf(
-        "Ciao! Come stai?",
-        "Possiamo esercitarci a ordinare un caffè?",
-        "Fammi una domanda facile.",
-        "Correggi i miei errori, per favore."
-    )
-    else -> listOf("Hello! How are you?")
+)
+
+/**
+ * A compact progress snapshot for the tutor's system prompt: the current lesson plus a sample of
+ * recently-learned words, so the "review last lesson" and "practise my words" modes are grounded
+ * in what the learner has actually done. Deliberately small — the worker caps the request, and a
+ * long dump would crowd out the reply.
+ */
+private fun buildTutorContext(container: AppContainer, lang: String, currentDay: Int): String {
+    val day = container.content.plan(lang).days.firstOrNull { it.day == currentDay }
+    val perDay = com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
+    val recent = container.words.allWords(lang)
+        .take(currentDay.coerceAtLeast(1) * perDay)
+        .takeLast(15)
+        .joinToString(", ") { "${it.hr} (${it.en})" }
+    return buildString {
+        if (day != null) append("- Current lesson: \"${day.title}\" — ${day.objective}\n")
+        if (recent.isNotBlank()) append("- Words recently learned: $recent")
+    }.trim()
 }
 
 /** Per-language composer hint ("write in <language>" in that language). */
@@ -481,8 +531,24 @@ private fun tutorSystemPrompt(
     lang: String,
     languageName: String,
     level: String,
-    studentName: String
-): String = """
+    studentName: String,
+    englishHelp: Boolean,
+    lessonContext: String
+): String {
+    // Toggled by the learner (pre-chat). English is ALWAYS allowed on request either way; this
+    // only controls how PROACTIVELY the tutor glosses/explains in English.
+    val englishRule = if (englishHelp)
+        "- The student wants English help: add a brief English gloss in parentheses after any word " +
+            "or phrase they likely don't know yet, and explain grammar in English whenever it helps."
+    else
+        "- The student prefers to stay in $languageName: keep English to a minimum — a short gloss " +
+            "only for a genuinely new word — and switch to English only if they explicitly ask."
+    // Progress context appended AFTER trimIndent so it isn't re-indented; blank for a new learner.
+    val contextBlock = if (lessonContext.isBlank()) "" else
+        "\n\nWhat this student is working on right now (use it to tailor the session, especially if " +
+            "they ask to review their last lesson or practise their words; do not read it out " +
+            "verbatim):\n$lessonContext"
+    return """
     You are a warm, patient $languageName conversation tutor. Your student is an adult learning
     $languageName at CEFR level $level, preparing for the official $languageName exam, so accuracy
     matters, but keep it encouraging.
@@ -492,14 +558,11 @@ private fun tutorSystemPrompt(
 
     Rules:
     ${varietyRules(lang)}
+    $englishRule
     - Converse mainly in $languageName, kept at or slightly below level $level. Use short, natural sentences.
-    - When you use a word or phrase the student likely doesn't know yet, add a brief English gloss
-      in parentheses right after it.
-    - The student may ask you anything in ENGLISH at any time: what a word means, why a form is
-      used, how to say something. Answer that question directly and clearly IN ENGLISH, briefly,
-      then return to $languageName and keep the conversation going. Never refuse, never pretend
-      not to understand, and never scold them for using English. Falling back to English when
-      stuck is normal, and a learner who can ask questions keeps talking instead of giving up.
+    - The student may ask you anything in ENGLISH at any time (what a word means, why a form is used,
+      how to say something). Answer directly and briefly IN ENGLISH, then return to $languageName.
+      Never refuse, never pretend not to understand, and never scold them for using English.
     - If the student makes a genuine mistake, gently correct it: give the corrected $languageName
       sentence and a one-line reason, then continue naturally. Don't nitpick; focus on what helps most.
     - Always end with a simple follow-up question to keep the conversation going.
@@ -507,4 +570,5 @@ private fun tutorSystemPrompt(
     - Use correct $languageName spelling and accents at all times.
     - PLAIN TEXT ONLY: no markdown, no asterisks, no bullet lists — your reply is shown verbatim
       in a chat bubble.
-""".trimIndent()
+    """.trimIndent() + contextBlock
+}
