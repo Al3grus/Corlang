@@ -129,6 +129,19 @@ class LanguagePrefs(private val context: Context) {
         context.dataStore.edit { it[reviewTutorialSeenKey] = seen }
     }
 
+    // ----- Tutor: English-help preference, per language -----
+    // null = unset → the UI defaults it by level (on at A0-A2, off above); true/false = the
+    // learner's explicit choice, which then sticks for that language.
+    private fun tutorEnglishHelpKey(lang: String) =
+        booleanPreferencesKey("tutor_english_help_$lang")
+
+    fun tutorEnglishHelp(lang: String): Flow<Boolean?> =
+        context.dataStore.data.map { it[tutorEnglishHelpKey(lang)] }
+
+    suspend fun setTutorEnglishHelp(lang: String, on: Boolean) {
+        context.dataStore.edit { it[tutorEnglishHelpKey(lang)] = on }
+    }
+
     // ----- Learner profile (onboarding) -----
 
     private val onboardedKey = booleanPreferencesKey("onboarding_done")
