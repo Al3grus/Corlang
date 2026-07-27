@@ -62,7 +62,7 @@
     {
      "id": "nokat",
      "hr": "nokat",
-     "en": "nail",
+     "en": "(finger/toe) nail",
      "pos": "n. m.",
      "note": "pl. nokti",
      "example": {
@@ -84,7 +84,7 @@
     {
      "id": "zglob",
      "hr": "zglob",
-     "en": "joint, wrist",
+     "en": "joint (e.g. wrist, knee); colloquially 'wrist'.",
      "pos": "n. m.",
      "example": {
       "target": "Uganuo je zglob na treningu.",
@@ -128,7 +128,8 @@
      "id": "jetra",
      "hr": "jetra",
      "en": "liver",
-     "pos": "n. f.",
+     "pos": "n. n.",
+     "note": "pluralia tantum, neuter (jetra, jetara, jetrima), like pluća/prsa",
      "example": {
       "target": "Liječnik je pregledao jetra i bubrege.",
       "gloss": "The doctor examined the liver and kidneys."
@@ -526,7 +527,7 @@
     {
      "id": "četkica",
      "hr": "četkica",
-     "en": "toothbrush",
+     "en": "small brush; (za zube) toothbrush",
      "pos": "n. f.",
      "example": {
       "target": "Peri zube novom četkicom.",
@@ -660,7 +661,7 @@
      "en": "area, region",
      "pos": "n. n.",
      "example": {
-      "target": "Ovo je poznato po vinu kao poljoprivredno područje.",
+      "target": "Ovo poljoprivredno područje poznato je po vinu.",
       "gloss": "This is a farming area known for its wine."
      }
     },
@@ -810,7 +811,7 @@
      "en": "cherry",
      "pos": "n. f.",
      "example": {
-      "target": "U lipnju zru trešnje.",
+      "target": "U lipnju zriju trešnje.",
       "gloss": "Cherries ripen in June."
      }
     },
@@ -888,8 +889,9 @@
     {
      "id": "tikva",
      "hr": "tikva",
-     "en": "pumpkin, squash",
+     "en": "gourd, squash",
      "pos": "n. f.",
+     "note": "pumpkin specifically = bundeva.",
      "example": {
       "target": "U jesen kuhamo juhu od tikve.",
       "gloss": "In autumn we cook pumpkin soup."
@@ -998,8 +1000,9 @@
     {
      "id": "mapa",
      "hr": "mapa",
-     "en": "folder, map",
+     "en": "folder",
      "pos": "n. f.",
+     "note": "a (geographic) map is karta/zemljovid, mapa='map' is a common but non-standard calque.",
      "example": {
       "target": "Sve dokumente drži u jednoj mapi.",
       "gloss": "She keeps all the documents in one folder."
@@ -1062,7 +1065,7 @@
      "en": "saw",
      "pos": "n. f.",
      "example": {
-      "target": "Piluje daske novom pilom.",
+      "target": "Pili daske novom pilom.",
       "gloss": "He saws the boards with a new saw."
      }
     },
@@ -1102,6 +1105,7 @@
      "hr": "tegla",
      "en": "jar",
      "pos": "n. f.",
+     "note": "cf. staklenka (the more neutral/standard term for a preserving jar).",
      "example": {
       "target": "Med drži u staklenoj tegli.",
       "gloss": "She keeps honey in a glass jar."
@@ -1121,8 +1125,8 @@
      "id": "sjediti",
      "hr": "sjediti",
      "en": "to sit, be seated",
-     "pos": "v.",
-     "note": "impf.; pf. sjesti",
+     "pos": "v. impf.",
+     "note": "impf., stative (to be sitting); no direct pf. partner, cf. sjedati (impf.) / sjesti (pf.) for the act of sitting down.",
      "example": {
       "target": "Djed cijelo popodne sjedi u dvorištu.",
       "gloss": "Grandpa sits in the yard all afternoon."
@@ -1132,7 +1136,7 @@
      "id": "sjesti",
      "hr": "sjesti",
      "en": "to sit down",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; impf. sjedati",
      "example": {
       "target": "Sjeo je na klupu i otvorio novine.",
@@ -1143,7 +1147,7 @@
      "id": "stajati",
      "hr": "stajati",
      "en": "to stand",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.",
      "example": {
       "target": "Ljudi stoje u redu ispred pekarnice.",
@@ -1154,7 +1158,7 @@
      "id": "ležati",
      "hr": "ležati",
      "en": "to lie, be lying",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.",
      "example": {
       "target": "Cijeli dan leži u krevetu jer je bolestan.",
@@ -1165,7 +1169,7 @@
      "id": "leći",
      "hr": "leći",
      "en": "to lie down",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; impf. lijegati",
      "example": {
       "target": "Umorna je pa je legla ranije.",
@@ -1176,7 +1180,7 @@
      "id": "skakati",
      "hr": "skakati",
      "en": "to jump, leap",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. skočiti",
      "example": {
       "target": "Djeca skaču po krevetu.",
@@ -1187,7 +1191,7 @@
      "id": "zaspati",
      "hr": "zaspati",
      "en": "to fall asleep",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; base state spavati",
      "example": {
       "target": "Dijete je brzo zaspalo nakon priče.",
@@ -1198,7 +1202,7 @@
      "id": "šutjeti",
      "hr": "šutjeti",
      "en": "to be silent",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.",
      "example": {
       "target": "Kad je ljut, cijeli dan šuti.",
@@ -1209,7 +1213,7 @@
      "id": "pričati",
      "hr": "pričati",
      "en": "to talk, tell",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.",
      "example": {
       "target": "Baka mi priča o svom djetinjstvu.",
@@ -1220,8 +1224,8 @@
      "id": "brojati",
      "hr": "brojati",
      "en": "to count",
-     "pos": "v.",
-     "note": "impf.; pf. prebrojati",
+     "pos": "v. impf.",
+     "note": "impf.; pf. prebrojati (also brojiti/prebrojiti, prescriptively preferred by some handbooks)",
      "example": {
       "target": "Dijete uči brojati do deset.",
       "gloss": "The child is learning to count to ten."
@@ -1231,7 +1235,7 @@
      "id": "dirati",
      "hr": "dirati",
      "en": "to touch",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. dirnuti",
      "example": {
       "target": "Ne diraj vruću peć.",
@@ -1242,7 +1246,7 @@
      "id": "gurnuti",
      "hr": "gurnuti",
      "en": "to push, shove",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; impf. gurati",
      "example": {
       "target": "Gurnuo je vrata i ušao.",
@@ -1253,7 +1257,7 @@
      "id": "hvatati",
      "hr": "hvatati",
      "en": "to catch",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. uhvatiti",
      "example": {
       "target": "Pas hvata loptu u zraku.",
@@ -1264,7 +1268,7 @@
      "id": "puštati",
      "hr": "puštati",
      "en": "to let, release",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. pustiti",
      "example": {
       "target": "Ne puštaj psa bez uzice.",
@@ -1275,7 +1279,7 @@
      "id": "gutati",
      "hr": "gutati",
      "en": "to swallow",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. progutati",
      "example": {
       "target": "Teško guta jer ga boli grlo.",
@@ -1286,7 +1290,7 @@
      "id": "žvakati",
      "hr": "žvakati",
      "en": "to chew",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.",
      "example": {
       "target": "Dobro žvači hranu prije gutanja.",
@@ -1297,7 +1301,7 @@
      "id": "gristi",
      "hr": "gristi",
      "en": "to bite",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. ugristi",
      "example": {
       "target": "Pazi, taj pas grize.",
@@ -1308,7 +1312,7 @@
      "id": "guliti",
      "hr": "guliti",
      "en": "to peel",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. oguliti",
      "example": {
       "target": "Majka guli krumpir za ručak.",
@@ -1318,9 +1322,9 @@
     {
      "id": "sipati",
      "hr": "sipati",
-     "en": "to pour (loose/liquid)",
-     "pos": "v.",
-     "note": "impf.",
+     "en": "to pour (granular: sugar, flour, sand)",
+     "pos": "v. impf.",
+     "note": "impf.; for liquids: lijevati/točiti.",
      "example": {
       "target": "Sipa šećer u kavu.",
       "gloss": "She pours sugar into the coffee."
@@ -1330,7 +1334,7 @@
      "id": "vezati",
      "hr": "vezati",
      "en": "to tie, bind",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. svezati",
      "example": {
       "target": "Dijete uči vezati cipele.",
@@ -1341,7 +1345,7 @@
      "id": "pokriti",
      "hr": "pokriti",
      "en": "to cover",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; impf. pokrivati",
      "example": {
       "target": "Pokrila je dijete toplom dekom.",
@@ -1352,7 +1356,7 @@
      "id": "sakriti",
      "hr": "sakriti",
      "en": "to hide",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; impf. skrivati",
      "example": {
       "target": "Sakrio je poklon ispod kreveta.",
@@ -1363,7 +1367,7 @@
      "id": "okrenuti",
      "hr": "okrenuti",
      "en": "to turn",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; impf. okretati",
      "example": {
       "target": "Okreni ključ udesno.",
@@ -1374,10 +1378,10 @@
      "id": "krenuti",
      "hr": "krenuti",
      "en": "to set off, start moving",
-     "pos": "v.",
+     "pos": "v. pf.",
      "note": "pf.; impf. kretati",
      "example": {
-      "target": "Vlak kreće za pet minuta.",
+      "target": "Vlak će krenuti za pet minuta.",
       "gloss": "The train leaves in five minutes."
      }
     },
@@ -1385,7 +1389,7 @@
      "id": "kretati se",
      "hr": "kretati se",
      "en": "to move, get around",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.",
      "example": {
       "target": "Nakon operacije teško se kreće.",
@@ -1396,7 +1400,7 @@
      "id": "micati",
      "hr": "micati",
      "en": "to move (something)",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. maknuti",
      "example": {
       "target": "Ne miči stvari s mog stola.",
@@ -1407,7 +1411,7 @@
      "id": "juriti",
      "hr": "juriti",
      "en": "to rush, race",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.",
      "example": {
       "target": "Auti jure autocestom.",
@@ -1418,7 +1422,7 @@
      "id": "bježati",
      "hr": "bježati",
      "en": "to run away, flee",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. pobjeći",
      "example": {
       "target": "Mačka bježi od psa.",
@@ -1429,7 +1433,7 @@
      "id": "loviti",
      "hr": "loviti",
      "en": "to hunt, catch",
-     "pos": "v.",
+     "pos": "v. impf.",
      "note": "impf.; pf. uloviti",
      "example": {
       "target": "Djed voli loviti ribu.",

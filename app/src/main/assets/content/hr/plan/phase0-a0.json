@@ -8,7 +8,7 @@
    "level": "A0",
    "title": "The Croatian alphabet",
    "objective": "Learn all 30 letters so you can read ANY word aloud correctly.",
-   "paretoFocus": "Croatian is perfectly phonetic. Master the alphabet once (especially č/ć/š/ž/dž/đ/lj/nj) and pronunciation is solved forever.",
+   "paretoFocus": "Croatian is almost perfectly phonetic, one letter, one sound, with only a few edge cases you'll never need to worry about at this level. Master the alphabet once (especially č/ć/š/ž/dž/đ/lj/nj) and pronunciation is solved forever.",
    "resources": [],
    "drills": [
     "Listen to and repeat all 30 letters.",
@@ -27,7 +27,7 @@
     {
      "type": "LEARN",
      "title": "The 8 special letters",
-     "intro": "Croatian is 100% phonetic: every letter always makes the same sound, so pronunciation is a one-time investment that pays off for every word you ever meet. These eight letters are the only genuinely new ones. Say each letter, then its example word, out loud.",
+     "intro": "Croatian is almost perfectly phonetic, one letter, one sound, with only a few edge cases you'll never need to worry about at this level, so pronunciation is a one-time investment that pays off for every word you ever meet. These eight letters are the only genuinely new ones. Say each letter, then its example word, out loud.",
      "items": [
       {
        "hr": "č, čaj",
@@ -825,8 +825,8 @@
      "lines": [
       {
        "speaker": "Partner",
-       "hr": "Dobar dan! Ja sam Marko.",
-       "en": "Good day! I am Marko."
+       "hr": "Bok! Ja sam Marko.",
+       "en": "Hi! I am Marko."
       },
       {
        "speaker": "Me",
@@ -1176,7 +1176,8 @@
       },
       {
        "hr": "one",
-       "en": "they (women only)"
+       "en": "they (women only)",
+       "note": "There's a third gendered plural form too, ona, for neuter nouns (like vrata, doors); you'll meet it later."
       }
      ],
      "sources": [
@@ -1934,7 +1935,7 @@
       {
        "hr": "rade",
        "en": "they work",
-       "note": "-i verbs use -e for 'they'. -a verbs use -ju: gledati → gledaju (they watch)."
+       "note": "Regular -am verbs like gledati, imati, čitati take -ju: gledaju. (Some -ati verbs change their stem sound instead, more on that later.)"
       }
      ],
      "sources": [
@@ -2041,7 +2042,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "'Uči hrvatski.', who is learning?",
+       "prompt": "'Marko uči hrvatski.', who is learning?",
        "difficulty": 6,
        "options": [
         "he or she",
@@ -2050,7 +2051,7 @@
         "they"
        ],
        "answer": "he or she",
-       "explanation": "No ending after the stem (uči-) = third person singular. The bare form with no pronoun still tells you exactly who."
+       "explanation": "No ending after the stem (uči-) = third person singular, matching the subject Marko (he)."
       },
       {
        "type": "REORDER",
@@ -2076,8 +2077,7 @@
        "answer": "Radimo.",
        "accepted": [
         "Radimo",
-        "radimo",
-        "Mi radimo."
+        "radimo"
        ],
        "explanation": "Radimo. one word is a complete, natural sentence. The -mo can only mean 'we'.",
        "strictDiacritics": true
@@ -2899,7 +2899,7 @@
     {
      "type": "LEARN",
      "title": "Saying no and asking yes/no questions",
-     "intro": "Negation is beautifully simple: put 'ne' directly before the verb. Only imati fuses into one word (nemam). For yes/no questions, put 'li' right after the verb: Govoriš li engleski? Master these patterns and your range doubles.",
+     "intro": "Negation is beautifully simple: put 'ne' directly before the verb. imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.) For yes/no questions, put 'li' right after the verb: Govoriš li engleski? Master these patterns and your range doubles.",
      "items": [
       {
        "hr": "Ne govorim.",
@@ -2924,7 +2924,7 @@
       {
        "hr": "Nemam auto.",
        "en": "I don't have a car.",
-       "note": "Only imati fuses with ne: nemam, NEVER 'ne imam'."
+       "note": "imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.)"
       },
       {
        "hr": "Nisam umoran.",
@@ -2952,8 +2952,8 @@
        "note": ""
       },
       {
-       "hr": "Govoriš li engleski?",
-       "en": "Do you speak English?",
+       "hr": "Je li ovo tvoj mobitel?",
+       "en": "Is this your phone?",
        "note": "Standard Croatian yes/no questions use 'verb + li' or 'je li'. The 'da li' form is Serbian and avoided in the Croatian standard."
       },
       {
@@ -3010,7 +3010,7 @@
         "neimam"
        ],
        "answer": "nemam",
-       "explanation": "imati is the only verb that fuses with ne: nemam, nemaš, nema… 'ne imam' is wrong."
+       "explanation": "imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.)"
       },
       {
        "type": "REORDER",
@@ -3657,7 +3657,8 @@
         "Što",
         "što"
        ],
-       "explanation": "Što je ovo? is the basic question for identifying things. Što means what."
+       "explanation": "Što je ovo? is the basic question for identifying things. Što means what.",
+       "strictDiacritics": true
       },
       {
        "type": "MCQ",
@@ -3670,7 +3671,7 @@
         "Ovo muzej je?"
        ],
        "answer": "Je li ovo muzej?",
-       "explanation": "Standard Croatian yes/no questions use Je li...? The second option opens with a question phrase that is not standard Croatian, and it is also missing the verb."
+       "explanation": "Standard Croatian yes/no questions use Je li...? A question opening with 'da li' is not standard Croatian (that pattern is Serbian), and it's also missing the verb je."
       },
       {
        "type": "FILL",
@@ -3681,7 +3682,8 @@
         "To",
         "to"
        ],
-       "explanation": "For something near the person you are speaking with, Croatian uses to."
+       "explanation": "For something near the person you are speaking with, Croatian uses to.",
+       "strictDiacritics": true
       },
       {
        "type": "REORDER",
@@ -3699,6 +3701,7 @@
         "moja",
         "kuća"
        ],
+       "answer": "Ovo je moja kuća",
        "explanation": "Ovo starts the sentence, then the verb je, then moja kuća with the possessive before the noun."
       }
      ],
@@ -3828,7 +3831,7 @@
         "tisuće"
        ],
        "answer": "tisuća",
-       "explanation": "The standard Croatian word is tisuća; the second option is not a standard Croatian word at all. tisuću and tisuće are real forms of tisuća, but not its basic form."
+       "explanation": "hiljada is the Serbian word for a thousand; standard Croatian uses tisuća. tisuću and tisuće are real forms of tisuća, but not its basic form."
       },
       {
        "type": "FILL",
@@ -3839,11 +3842,12 @@
         "sto",
         "Sto"
        ],
-       "explanation": "100 = sto. It combines into dvjesto, tristo and so on."
+       "explanation": "100 = sto. It combines into dvjesto, tristo and so on.",
+       "strictDiacritics": true
       },
       {
        "type": "MCQ",
-       "prompt": "Complete: U Zagrebu živi gotovo ___ ljudi. (a million)",
+       "prompt": "Complete: U zagrebačkoj regiji živi oko ___ ljudi. (a million)",
        "difficulty": 3,
        "options": [
         "milijun",
@@ -3862,7 +3866,8 @@
        "accepted": [
         "tisuće"
        ],
-       "explanation": "After dvije, the noun tisuća takes the form tisuće: dvije tisuće eura."
+       "explanation": "After dvije, the noun tisuća takes the form tisuće: dvije tisuće eura.",
+       "strictDiacritics": true
       },
       {
        "type": "REORDER",
@@ -3882,6 +3887,7 @@
         "pedeset",
         "eura"
        ],
+       "answer": "To košta sto pedeset eura",
        "explanation": "To košta + the number: sto pedeset, then eura for the currency."
       }
      ],

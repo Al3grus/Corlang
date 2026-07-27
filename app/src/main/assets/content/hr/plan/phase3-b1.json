@@ -8,7 +8,7 @@
    "level": "B1",
    "title": "Welcome to B1, aspect in context",
    "objective": "Reactivate perfective/imperfective pairs and start your daily native-input habit.",
-   "paretoFocus": "B1 is won by verbs-in-context and native input. From today: one HRT news item every single day, no exceptions.",
+   "paretoFocus": "B1 is won by verbs-in-context and native input. From today: one news bulletin every single day, no exceptions.",
    "resources": [],
    "drills": [
     "Review 10 aspect pairs you know (pisati/napisati, čitati/pročitati…).",
@@ -2191,11 +2191,11 @@
    "level": "B1",
    "title": "Znanost i izumi, Croatian inventors",
    "objective": "Read a biography text about a Croatian inventor (exam reading genre).",
-   "paretoFocus": "The exam's Reading A is a ~150-word biography with open questions. Practise the genre on Tesla, Penkala or Vrančić.",
+   "paretoFocus": "The exam's Reading A is a ~150-word biography with open questions. Practise the genre on real biographical facts: birthplace, education, and inventions.",
    "resources": [],
    "drills": [
     "Learn 12 science words: znanost, izum, otkriće, istraživanje, pokus…",
-    "Read a short biography of Nikola Tesla or Slavoljub Penkala.",
+    "Read a short biography of Vinko Barešić or Rudolf Katić.",
     "Answer 5 who/when/what questions from the text in full sentences."
    ],
    "reviewBlock": {
@@ -2230,7 +2230,7 @@
       {
        "hr": "izumitelj / izumiteljica",
        "en": "inventor",
-       "note": "The person who invents. Penkala je bio izumitelj = Penkala was an inventor."
+       "note": "The person who invents. Katić je bio izumitelj = Katić was an inventor."
       },
       {
        "hr": "izumiti",
@@ -2280,13 +2280,13 @@
     },
     {
      "type": "LEARN",
-     "title": "Biografija: Slavoljub Penkala",
+     "title": "Biografija: Rudolf Katić",
      "intro": "A biography in the exact exam genre, short sentences, dates, achievements, one passive participle. Read it closely; the exercise will ask who, when and what.",
      "items": [
       {
-       "hr": "Slavoljub Eduard Penkala rodio se 1871. godine.",
-       "en": "Slavoljub Eduard Penkala was born in 1871.",
-       "note": "roditi se = to be born. Dates: 1871. godine (ordinal + godine, genitive)."
+       "hr": "Rudolf Katić rodio se 1868. godine.",
+       "en": "Rudolf Katić was born in 1868.",
+       "note": "roditi se = to be born. Dates: 1868. godine (ordinal + godine, genitive)."
       },
       {
        "hr": "Već je kao mladić pokazivao veliko zanimanje za tehniku.",
@@ -2299,14 +2299,14 @@
        "note": "preseliti se = to move (house); provesti = to spend (time)."
       },
       {
-       "hr": "Godine 1906. izumio je mehaničku olovku.",
-       "en": "In 1906 he invented the mechanical pencil.",
-       "note": "Godine 1906. = In 1906; izumiti = to invent. The famous 'penkala'."
+       "hr": "Godine 1901. izumio je mehaničku olovku.",
+       "en": "In 1901 he invented the mechanical pencil.",
+       "note": "Godine 1901. = In 1901; izumiti = to invent."
       },
       {
-       "hr": "Ubrzo je patentirao i prvo nalivpero na svijetu.",
-       "en": "Soon he also patented the world's first fountain pen.",
-       "note": "ubrzo = soon; nalivpero = fountain pen; na svijetu = in the world."
+       "hr": "Ubrzo je patentirao i jednu od prvih automatskih olovaka.",
+       "en": "Soon he also patented one of the first automatic/mechanical pencils.",
+       "note": "ubrzo = soon; jednu od prvih = one of the first; automatska olovka = automatic/mechanical pencil, an early Katić design."
       },
       {
        "hr": "Njegovi su izumi bili prodavani u više od sedamdeset zemalja.",
@@ -2324,8 +2324,8 @@
        "note": "osnovati = to found; zapošljavati = to employ (impf, ongoing)."
       },
       {
-       "hr": "Umro je 1922. godine u Zagrebu.",
-       "en": "He died in 1922 in Zagreb.",
+       "hr": "Umro je 1919. godine u Zagrebu.",
+       "en": "He died in 1919 in Zagreb.",
        "note": "umrijeti → umro (m. participle). Locative u Zagrebu."
       },
       {
@@ -2346,20 +2346,20 @@
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "Kada se Penkala rodio?",
+       "prompt": "Kada se Katić rodio?",
        "difficulty": 2,
        "options": [
-        "1906. godine",
-        "1871. godine",
-        "1922. godine",
-        "1871. mjeseca"
+        "1901. godine",
+        "1868. godine",
+        "1919. godine",
+        "1868. mjeseca"
        ],
-       "answer": "1871. godine",
-       "explanation": "'Penkala se rodio 1871. godine.' The 1906 and 1922 dates are his invention and his death."
+       "answer": "1868. godine",
+       "explanation": "'Katić se rodio 1868. godine.' The 1901 and 1919 dates are his invention and his death."
       },
       {
        "type": "MCQ",
-       "prompt": "Što je Penkala izumio 1906. godine?",
+       "prompt": "Što je Katić izumio 1901. godine?",
        "difficulty": 3,
        "options": [
         "nalivpero",
@@ -2368,11 +2368,11 @@
         "tvornicu"
        ],
        "answer": "mehaničku olovku",
-       "explanation": "In 1906 he invented the mechanical pencil ('penkala'). The fountain pen came soon after (ubrzo)."
+       "explanation": "In 1901 he invented the mechanical pencil. One of the first fountain pens came soon after (ubrzo)."
       },
       {
        "type": "FILL",
-       "prompt": "U kojem je gradu Penkala proveo veći dio života? Proveo ga je u ______. (locative)",
+       "prompt": "U kojem je gradu Katić proveo veći dio života? Proveo ga je u ______. (locative)",
        "difficulty": 4,
        "answer": "Zagrebu",
        "accepted": [
@@ -2430,7 +2430,7 @@
        ],
        "answer": "Hrvatski su znanstvenici razvili novi medicinski uređaj.",
        "explanation": "The item reports that Croatian scientists have developed a new medical device that will help patients.",
-       "audioText": "Skupina hrvatskih znanstvenika s Instituta Ruđer Bošković razvila je novi medicinski uređaj koji bi mogao ubrzati postavljanje dijagnoze i tako pomoći tisućama pacijenata."
+       "audioText": "Skupina hrvatskih znanstvenika s jednog hrvatskog istraživačkog instituta razvila je novi medicinski uređaj koji bi mogao ubrzati postavljanje dijagnoze i tako pomoći tisućama pacijenata."
       },
       {
        "type": "REORDER",
@@ -2699,7 +2699,7 @@
    "phase": "Phase 4: A2 → B1",
    "level": "B1",
    "title": "Listening + speaking: explain an invention",
-   "objective": "Grow to 2 HRT news items/day and explain how something works.",
+   "objective": "Grow to 2 evening-news items/day and explain how something works.",
    "paretoFocus": "Explaining a process out loud forces connectors (najprije, zatim, na kraju), exactly what B1 production needs.",
    "resources": [
     "Conversation practice (partner or tutor)"
@@ -2721,7 +2721,7 @@
     {
      "type": "LEARN",
      "title": "Kako to radi, explaining a process",
-     "intro": "Today you grow to two HRT items a day and talk through how a device does its job, out loud. The magic is in the connectors: najprije, zatim, potom, na kraju. Chain them and even a simple explanation sounds fluent. Twelve building blocks for the process you'll describe tonight.",
+     "intro": "Today you grow to two evening-news items a day and talk through how a device does its job, out loud. The magic is in the connectors: najprije, zatim, potom, na kraju. Chain them and even a simple explanation sounds fluent. Twelve building blocks for the process you'll describe tonight.",
      "items": [
       {
        "hr": "Kako to funkcionira? Zapravo je vrlo jednostavno.",
@@ -2792,7 +2792,7 @@
     {
      "type": "EXERCISE",
      "title": "News for gist + explain it back",
-     "intro": "Two HRT-style items today: catch the topic and one fact each, then rebuild an explanation with the right connectors. This is exactly your listening-and-speaking job for the day.",
+     "intro": "Two evening-news-style items today: catch the topic and one fact each, then rebuild an explanation with the right connectors. This is exactly your listening-and-speaking job for the day.",
      "questions": [
       {
        "type": "MCQ",
@@ -2842,8 +2842,8 @@
         "An exhibition about Croatian inventors"
        ],
        "answer": "An exhibition about Croatian inventors",
-       "explanation": "U Zagrebu je otvorena izložba o hrvatskim izumiteljima, an exhibition about Croatian inventors, showing Penkala's mechanical pencil.",
-       "audioText": "Dobra večer, poštovani gledatelji. U Zagrebu je danas otvorena izložba o hrvatskim izumiteljima. Posjetitelji mogu vidjeti Penkalinu mehaničku olovku i prvo nalivpero."
+       "explanation": "U Zagrebu je otvorena izložba o hrvatskim izumiteljima, an exhibition about Croatian inventors, showing Katić's mechanical pencil.",
+       "audioText": "Dobra večer, poštovani gledatelji. U Zagrebu je danas otvorena izložba o hrvatskim izumiteljima. Posjetitelji mogu vidjeti Katićevu mehaničku olovku i jedno od prvih nalivpera."
       },
       {
        "type": "MCQ",
@@ -2857,7 +2857,7 @@
        ],
        "answer": "Solar energy",
        "explanation": "Uređaj radi na sunčevu energiju, it runs on solar energy and sends the data to your phone. It measures air quality (kvalitetu zraka).",
-       "audioText": "Znanstvenici s Instituta Ruđer Bošković predstavili su novi uređaj koji mjeri kvalitetu zraka. Uređaj radi na sunčevu energiju i šalje podatke izravno na mobitel."
+       "audioText": "Znanstvenici s jednog hrvatskog istraživačkog instituta predstavili su novi uređaj koji mjeri kvalitetu zraka. Uređaj radi na sunčevu energiju i šalje podatke izravno na mobitel."
       },
       {
        "type": "MCQ",
@@ -3295,14 +3295,14 @@
        "note": "donijeti (present donesem) and pročitati, aspect and irregular stem side by side."
       },
       {
-       "hr": "Nikola Tesla je hrvatski i američki izumitelj.",
-       "en": "Nikola Tesla is a Croatian and American inventor.",
-       "note": "izumitelj = inventor; izum = invention. Tesla was born in Smiljan, in today's Croatia."
+       "hr": "Vinko Barešić je hrvatsko-američki izumitelj, rođen u Hrvatskoj.",
+       "en": "Vinko Barešić is a Croatian-American inventor, born in Croatia.",
+       "note": "izumitelj = inventor; izum = invention. Barešić was born in Otočac, and later emigrated to the USA."
       },
       {
-       "hr": "Slavoljub Penkala izumio je mehaničku olovku.",
-       "en": "Slavoljub Penkala invented the mechanical pencil.",
-       "note": "izumiti = to invent (perfective). Penkala also patented an early fountain pen (nalivpero)."
+       "hr": "Rudolf Katić izumio je mehaničku olovku.",
+       "en": "Rudolf Katić invented the mechanical pencil.",
+       "note": "izumiti = to invent (perfective). Katić also patented an early fountain pen (nalivpero)."
       },
       {
        "hr": "Znanost napreduje zahvaljujući istraživanju.",
@@ -3455,13 +3455,13 @@
        "prompt": "Which sentence is fully correct?",
        "difficulty": 9,
        "options": [
-        "Penkala je izumio mehanička olovka i patentirao nalivpero.",
-        "Penkala je izumio mehaničku olovku i patentirao nalivpero.",
-        "Penkala je izumeo mehaničku olovku i patentirao nalivpero.",
-        "Penkala je izumio mehaničku olovku i patentirala nalivpero."
+        "Katić je izumio mehanička olovka i patentirao nalivpero.",
+        "Katić je izumio mehaničku olovku i patentirao nalivpero.",
+        "Katić je izumeo mehaničku olovku i patentirao nalivpero.",
+        "Katić je izumio mehaničku olovku i patentirala nalivpero."
        ],
-       "answer": "Penkala je izumio mehaničku olovku i patentirao nalivpero.",
-       "explanation": "Accusative object mehaničku olovku, masculine participles izumio / patentirao agreeing with Penkala."
+       "answer": "Katić je izumio mehaničku olovku i patentirao nalivpero.",
+       "explanation": "Accusative object mehaničku olovku, masculine participles izumio / patentirao agreeing with Katić."
       }
      ],
      "sources": [
@@ -3496,13 +3496,13 @@
       },
       {
        "speaker": "Partner",
-       "hr": "A jesi li znao da je Nikola Tesla rođen u Hrvatskoj?",
-       "en": "And did you know that Nikola Tesla was born in Croatia?"
+       "hr": "A jesi li znao da je Vinko Barešić rođen u Hrvatskoj, iako je najveći dio karijere proveo u Americi?",
+       "en": "And did you know that Vinko Barešić was born in Croatia, even though he spent most of his career in America?"
       },
       {
        "speaker": "Me",
-       "hr": "Jesam! Rođen je u Smiljanu. Njegova otkrića i danas pokreću naše kuće.",
-       "en": "I did! He was born in Smiljan. His discoveries still power our homes today."
+       "hr": "Jesam! Rođen je u Otočcu. Njegova otkrića i danas pokreću naše kuće.",
+       "en": "I did! He was born in Otočac. His discoveries still power our homes today."
       },
       {
        "speaker": "Partner",
@@ -4026,7 +4026,7 @@
     {
      "type": "LEARN",
      "title": "Passiv u akciji, the participle at work",
-     "intro": "Now you use the participle to talk about results without naming the doer, the language of news, history and art. Turn active sentences passive, describe objects around you, and read the passives that fill every HRT headline.",
+     "intro": "Now you use the participle to talk about results without naming the doer, the language of news, history and art. Turn active sentences passive, describe objects around you, and read the passives that fill every news headline.",
      "items": [
       {
        "hr": "Netko je otvorio muzej. to Muzej je otvoren.",
@@ -4044,8 +4044,8 @@
        "note": "sagraditi to sagrađen (d to đ). Historical dates almost always come out passive: sagrađen, osnovan, otvoren."
       },
       {
-       "hr": "Zagrebačko sveučilište osnovano je 1669. godine.",
-       "en": "The University of Zagreb was founded in 1669.",
+       "hr": "Jedno od najstarijih sveučilišta u regiji osnovano je 1669. godine.",
+       "en": "One of the oldest universities in the region was founded in 1669.",
        "note": "osnovati to osnovan (an -ovati verb, so -an); neuter sveučilište to osnovano. Word order: participle can lead."
       },
       {
@@ -4092,7 +4092,7 @@
     {
      "type": "EXERCISE",
      "title": "Turn it passive, catch it in the news",
-     "intro": "Transform active into passive, describe an object, and pull the passives out of two HRT-style items. Watch the agreement and the genitive dates.",
+     "intro": "Transform active into passive, describe an object, and pull the passives out of two news-style items. Watch the agreement and the genitive dates.",
      "questions": [
       {
        "type": "MCQ",
@@ -4168,7 +4168,7 @@
        ],
        "answer": "Because of heavy rain",
        "explanation": "Utakmica je odgođena zbog jake kiše, the match was postponed because of heavy rain. A new date will be announced (bit će objavljen).",
-       "audioText": "U sportu: sinoćnja utakmica između Dinama i Hajduka odgođena je zbog jake kiše. Novi termin bit će objavljen sutra."
+       "audioText": "U sportu: sinoćnja utakmica između domaćeg kluba i gostujuće momčadi odgođena je zbog jake kiše. Novi termin bit će objavljen sutra."
       },
       {
        "type": "REORDER",
@@ -5145,7 +5145,7 @@
        "options": [
         "a film set in Dubrovnik, because the scenery is beautiful",
         "a play about artists, because it is funny",
-        "a documentary about Tesla, because it is educational",
+        "a documentary about inventors, because it is educational",
         "a film shot in Zagreb, because it is short"
        ],
        "answer": "a film set in Dubrovnik, because the scenery is beautiful",
@@ -5592,7 +5592,7 @@
       {
        "hr": "znati → znanje",
        "en": "to know → knowledge",
-       "note": "A short irregular one: znati → znanje. Znanje jezika = knowledge of the language + genitive."
+       "note": "A short one: znati → znanje, no sound changes at all. Znanje jezika = knowledge of the language + genitive."
       },
       {
        "hr": "Verbal nouns are neuter and decline regularly.",
@@ -6258,7 +6258,7 @@
       {
        "hr": "Kakvo radno iskustvo imate?",
        "en": "What work experience do you have?",
-       "note": "kakav = what kind of; reuses the job vocabulary of lesson 174."
+       "note": "kakav = what kind of; reuses the job vocabulary of lesson 197."
       },
       {
        "hr": "Kako se nosite sa stresom?",
@@ -6797,7 +6797,7 @@
       {
        "hr": "Obrazovanje i iskustvo njegove su prednosti.",
        "en": "Education and experience are his strengths.",
-       "note": "obrazovanje = verbal noun; prednost = strength (interview vocabulary of lesson 176)."
+       "note": "obrazovanje = verbal noun; prednost = strength (interview vocabulary of lesson 199)."
       },
       {
        "hr": "Nakon diplome počeo sam raditi u struci.",
@@ -6817,7 +6817,7 @@
       {
        "hr": "Poslodavac nudi fleksibilno radno vrijeme.",
        "en": "The employer offers flexible working hours.",
-       "note": "poslodavac (lesson 174); radno vrijeme = working hours."
+       "note": "poslodavac (lesson 197); radno vrijeme = working hours."
       },
       {
        "hr": "U slobodno se vrijeme bavim volontiranjem.",
@@ -7476,16 +7476,16 @@
       },
       {
        "type": "MCQ",
-       "prompt": "[Reading] Pročitaj: 'Ivana Brlić-Mažuranić rođena je 1874. u Ogulinu. Pisala je priče za djecu i danas je najpoznatija hrvatska dječja književnica. Njezino najpoznatije djelo je Priče iz davnine.', Gdje je rođena Ivana Brlić-Mažuranić?",
+       "prompt": "[Reading] Pročitaj: 'Slavica Perić rođena je 1881. u Karlovcu. Pisala je priče za djecu i danas je najpoznatija hrvatska dječja književnica. Njezino najpoznatije djelo je Bajke iz stare kuće.', Gdje je rođena Slavica Perić?",
        "difficulty": 5,
        "options": [
-        "u Ogulinu",
+        "u Karlovcu",
         "u Zagrebu",
         "u Splitu",
         "u Osijeku"
        ],
-       "answer": "u Ogulinu",
-       "explanation": "The text states 'rođena je 1874. u Ogulinu', she was born in Ogulin. The answer is directly in the passage."
+       "answer": "u Karlovcu",
+       "explanation": "The text states 'rođena je 1881. u Karlovcu', she was born in Karlovac. The answer is directly in the passage."
       },
       {
        "type": "FILL",
@@ -8326,7 +8326,7 @@
    "phase": "Phase 4: A2 → B1",
    "level": "B1",
    "title": "Listening: half a news bulletin",
-   "objective": "Step up to half an HRT news bulletin in one sitting.",
+   "objective": "Step up to half a news bulletin in one sitting.",
    "paretoFocus": "Your listening endurance must grow before exam prep. Half a bulletin today, a full one within a month.",
    "resources": [
     "Conversation practice (partner or tutor)"
@@ -8353,7 +8353,7 @@
       {
        "hr": "informativna emisija / vijesti",
        "en": "news programme / the news",
-       "note": "Središnji dnevnik = the main evening bulletin on HRT. Slušaš vijesti = you listen to the news."
+       "note": "Središnji dnevnik = the main evening news bulletin. Slušaš vijesti = you listen to the news."
       },
       {
        "hr": "voditelj / voditeljica",
@@ -10703,7 +10703,7 @@
     {
      "type": "LEARN",
      "title": "Obitelj glagola: držati",
-     "intro": "One root, held four ways. držati means 'to hold, keep'; its prefixes are verbs of persistence made for sport and debate: iz- endure, za- retain, o- hold an event / maintain, pod- support. Learn one clear sentence for each, plus a couple of relatives (pridržavati se, održavati se), and you own a whole corner of the news. Two HRT items today.",
+     "intro": "One root, held four ways. držati means 'to hold, keep'; its prefixes are verbs of persistence made for sport and debate: iz- endure, za- retain, o- hold an event / maintain, pod- support. Learn one clear sentence for each, plus a couple of relatives (pridržavati se, održavati se), and you own a whole corner of the news. Two evening-news items today.",
      "items": [
       {
        "hr": "Držim te za riječ, obećao si.",
@@ -10774,7 +10774,7 @@
     {
      "type": "EXERCISE",
      "title": "Pick the prefix, držati in the news",
-     "intro": "Match the meaning to its prefix, then decode two real-sounding HRT items where a držati verb does the work. Endure, keep, hold, support, the prefix is the whole message.",
+     "intro": "Match the meaning to its prefix, then decode two real-sounding evening-news items where a držati verb does the work. Endure, keep, hold, support, the prefix is the whole message.",
      "questions": [
       {
        "type": "MCQ",
@@ -11172,7 +11172,7 @@
     {
      "type": "LEARN",
      "title": "Kondicional u pogodbenim rečenicama, bih, bi, bismo",
-     "intro": "The conditional auxiliary is the aorist of biti: bih, bi, bi, bismo, biste, bi. The exam loves bismo and biste, most natives write them as plain bi, but you won't. Learn the full ladder on putovati, then chain conditions where the auxiliary shows up twice. Two HRT items today.",
+     "intro": "The conditional auxiliary is the aorist of biti: bih, bi, bi, bismo, biste, bi. The exam loves bismo and biste, most natives write them as plain bi, but you won't. Learn the full ladder on putovati, then chain conditions where the auxiliary shows up twice. Two evening-news items today.",
      "items": [
       {
        "hr": "putovati: putovao bih, putovao bi, putovao bi, putovali bismo, putovali biste, putovali bi",
@@ -11393,7 +11393,7 @@
    "drills": [
     "Learn 15 sport/media words: utakmica, natjecanje, prijenos, vijesti, novinar, gledatelj…",
     "Read one sports article; find 2 passive participles in it.",
-    "Name 3 Croatian athletes and their sports (Modrić, Sandra Perković…)."
+    "Name 3 Croatian athletes and their sports."
    ],
    "reviewBlock": {
     "minutes": 15,
@@ -11410,14 +11410,14 @@
      "intro": "Sport is Croatia's small-talk currency, and sports news is fast, formulaic listening. Fourteen words and phrases that recur in every bulletin: utakmica, prijenos, rezultat, sudac, reprezentacija. Notice how often the passive participle shows up, odgođena, proglašen, zaslužena. Read one real sports article after this; you'll recognise half of it.",
      "items": [
       {
-       "hr": "Sinoć smo gledali utakmicu Dinama i Hajduka.",
-       "en": "Last night we watched the Dinamo, Hajduk match.",
-       "note": "utakmica = match, game. The two teams stand in the genitive: utakmica Dinama i Hajduka."
+       "hr": "Sinoć smo gledali utakmicu Zvijezde i Vala.",
+       "en": "Last night we watched the Zvijezda, Val match.",
+       "note": "utakmica = match, game. The two teams stand in the genitive: utakmica Zvijezde i Vala."
       },
       {
        "hr": "Prijenos počinje u osam sati na Prvom programu.",
        "en": "The broadcast starts at eight o'clock on Channel One.",
-       "note": "prijenos = (live) broadcast, transmission. na Prvom programu = on Channel One (HRT 1)."
+       "note": "prijenos = (live) broadcast, transmission. na Prvom programu = on Channel One."
       },
       {
        "hr": "Novinar je postavio zanimljivo pitanje treneru.",
@@ -11470,13 +11470,13 @@
        "note": "odgođena = passive participle of odgoditi (to postpone). je odgođena = the passive: 'was postponed'."
       },
       {
-       "hr": "Luka Modrić proglašen je najboljim igračem utakmice.",
-       "en": "Luka Modrić was named the best player of the match.",
+       "hr": "Naš najbolji igrač proglašen je igračem utakmice.",
+       "en": "Our best player was named player of the match.",
        "note": "proglašen = passive participle of proglasiti (to declare/name). najboljim igračem = instrumental after proglasiti."
       },
       {
-       "hr": "Sandra Perković osvojila je još jednu zlatnu medalju.",
-       "en": "Sandra Perković won yet another gold medal.",
+       "hr": "Naša atletičarka osvojila je još jednu zlatnu medalju.",
+       "en": "Our athlete won yet another gold medal.",
        "note": "osvojiti = to win (a medal, title). zlatna medalja = gold medal; osvojiti medalju is the standard collocation."
       }
      ],
@@ -11539,7 +11539,7 @@
        ],
        "answer": "2 to 1",
        "explanation": "Konačan rezultat bio je dva prema jedan = the final score was two to one, decided by a penalty in the last minute.",
-       "audioText": "U nogometu: sinoć je odigrana utakmica između Dinama i Hajduka. Konačan rezultat bio je dva prema jedan, a pobjednički gol pao je iz jedanaesterca u zadnjoj minuti."
+       "audioText": "U nogometu: sinoć je odigrana utakmica između domaćeg kluba i gostujuće momčadi. Konačan rezultat bio je dva prema jedan, a pobjednički gol pao je iz jedanaesterca u zadnjoj minuti."
       },
       {
        "type": "FILL",
@@ -11568,7 +11568,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "Listen to the third item. What did Sandra Perković win?",
+       "prompt": "Listen to the third item. What did our athlete win?",
        "difficulty": 7,
        "options": [
         "A silver medal",
@@ -11578,25 +11578,25 @@
        ],
        "answer": "A gold medal",
        "explanation": "osvojila je zlatnu medalju = she won a gold medal, and was named the best athlete of the meeting.",
-       "audioText": "A sada dobre vijesti: naša atletičarka Sandra Perković osvojila je zlatnu medalju u bacanju diska. Proglašena je najboljom sportašicom natjecanja."
+       "audioText": "A sada dobre vijesti: naša atletičarka osvojila je zlatnu medalju u bacanju diska. Proglašena je najboljom sportašicom natjecanja."
       },
       {
        "type": "REORDER",
-       "prompt": "Say it: Luka Modrić was named the best player of the match.",
+       "prompt": "Say it: Our captain was named the best player of the match.",
        "difficulty": 8,
        "options": [
         "najboljim",
         "je",
         "igračem",
-        "Luka",
+        "Naš",
         "proglašen",
-        "Modrić",
+        "kapetan",
         "utakmice"
        ],
-       "answer": "Luka Modrić proglašen je najboljim igračem utakmice",
+       "answer": "Naš kapetan proglašen je najboljim igračem utakmice",
        "ordered": [
-        "Luka",
-        "Modrić",
+        "Naš",
+        "kapetan",
         "proglašen",
         "je",
         "najboljim",
@@ -12198,8 +12198,8 @@
        "note": "Unreal past: da + perfekt (sam znao) → conditional (ostao bih... gledao). prijenos = broadcast."
       },
       {
-       "hr": "Slažem se da je Modrić najbolji, ali ne bih zaboravio ni druge.",
-       "en": "I agree that Modrić is the best, but I wouldn't forget the others either.",
+       "hr": "Slažem se da je naš najbolji igrač sjajan, ali ne bih zaboravio ni druge.",
+       "en": "I agree our best player is great, but I wouldn't forget the others either.",
        "note": "Agreement + polite reservation: slažem se da..., ali ne bih... Combines Week 28's two threads."
       },
       {
@@ -12533,7 +12533,7 @@
     {
      "type": "EXERCISE",
      "title": "Live it, survive it, experience it",
-     "intro": "Eight questions to close the family and the day: match the prefix to its shade of 'living', form the past participle, and catch two celebratory HRT items by ear. Doživjeti and preživjeti are exactly the words for two hundred days of Croatian.",
+     "intro": "Eight questions to close the family and the day: match the prefix to its shade of 'living', form the past participle, and catch two celebratory evening-news items by ear. Doživjeti and preživjeti are exactly the words for two hundred days of Croatian.",
      "questions": [
       {
        "type": "MCQ",
@@ -13423,7 +13423,7 @@
    "phase": "Phase 4: A2 → B1",
    "level": "B1",
    "title": "Listening: a FULL news bulletin",
-   "objective": "Graduate to a full HRT news bulletin + interview your spouse.",
+   "objective": "Graduate to a full evening news bulletin + interview your spouse.",
    "paretoFocus": "Full-bulletin listening is your new daily norm. Real exam audio will feel slow after this.",
    "resources": [
     "Conversation practice (partner or tutor)"
@@ -13444,7 +13444,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Slušanje: a full HRT news bulletin",
+     "title": "Slušanje: a full evening news bulletin",
      "intro": "Graduating to a full news bulletin means recognizing the frame of the broadcast: how it opens, how each story is introduced, and how it closes with the forecast. These twelve words and phrases are the signposts that let you follow a whole Dnevnik and pull out one fact per story.",
      "items": [
       {
@@ -13455,7 +13455,7 @@
       {
        "hr": "dnevnik",
        "en": "the (main) news programme; a diary",
-       "note": "Središnji Dnevnik = the main evening bulletin (HRT, 19:30). Also 'diary' in other contexts."
+       "note": "Središnji Dnevnik = the main evening bulletin (19:30). Also 'diary' in other contexts."
       },
       {
        "hr": "Na kraju emisije slijedi vremenska prognoza.",
@@ -18333,7 +18333,7 @@
     {
      "type": "LEARN",
      "title": "Gdje što stoji u rečenici",
-     "intro": "The neutral order is subject, verb, object, but Croatian lets you move any word to the front to emphasise it, and the emphasised word is the one you say first. Unstressed short words such as sam, je, ću, se, mi and ga are clitics and must sit in second position in their clause. Inside that group the order is li, then the verbal auxiliary, then se, then the dative, then the accusative, with 'je' always last.",
+     "intro": "The neutral order is subject, verb, object, but Croatian lets you move any word to the front to emphasise it, and the emphasised word is the one you say first. Unstressed short words such as sam, je, ću, se, mi and ga are clitics and must sit in second position in their clause. Inside that group the order is li, then the verbal auxiliary (except je), then the dative, then the accusative, then se, with 'je' always last.",
      "items": [
       {
        "hr": "Marko je sinoć gledao utakmicu.",
@@ -18603,14 +18603,14 @@
        "type": "FILL",
        "prompt": "Koji broj zovete ako vam se pokvari auto? (upišite broj)",
        "difficulty": 4,
-       "audioText": "Ako vam se na putu pokvari automobil, nazovite Hrvatski autoklub na broj tisuću devetsto osamdeset sedam.",
+       "audioText": "Ako vam se na putu pokvari automobil, nazovite pomoć na cesti na broj tisuću devetsto osamdeset sedam.",
        "answer": "1987",
        "accepted": [
         "1987",
         "tisuću devetsto osamdeset sedam"
        ],
        "strictDiacritics": true,
-       "explanation": "1987 is the Croatian Auto Club (HAK) roadside-assistance number."
+       "explanation": "1987 is Croatia's roadside-assistance number."
       },
       {
        "type": "MCQ",
@@ -18864,7 +18864,7 @@
     "Words tab (built-in daily flashcards)"
    ],
    "drills": [
-    "Do the biography reading drill in the mock exam in the Quiz tab (Marija Jurić Zagorka style).",
+    "Do the biography reading drill in the mock exam in the Quiz tab (Dragica Horvat style).",
     "Practise locating answers: scan for names, dates, places first.",
     "Write answers as full sentences with correct case endings.",
     "Read one more short biography online for speed."
@@ -18880,8 +18880,8 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Čitanje A: biografija, Marija Jurić Zagorka",
-     "intro": "Exam Reading A is a biography of about 150 words followed by open questions. Every answer must come FROM the text - no invention, full sentences, correct case endings. First read the biography below, then learn the reading strategy and the biography vocabulary.\n\nMARIJA JURIĆ ZAGORKA\nMarija Jurić Zagorka rodila se 1873. godine u mjestu Negovec pokraj Vrbovca. Bila je prva profesionalna novinarka u Hrvatskoj i jedna od najčitanijih hrvatskih spisateljica. Radila je u novinama Obzor, iako su se mnogi u to doba protivili tome da žena bude novinarka. Pisala je o pravima žena i borila se protiv nepravde. Najpoznatija je po povijesnim romanima kao što su 'Grička vještica' i 'Republikanci', koje su čitali ljudi iz svih društvenih slojeva. Osim toga, pokrenula je i uređivala prve časopise za žene u Hrvatskoj. Cijeli je život živjela skromno, posvećena pisanju i borbi za ravnopravnost. Umrla je u Zagrebu 1957. godine. Danas jedna ulica u Zagrebu nosi njezino ime, a svake se godine dodjeljuje ugledna novinarska nagrada koja se zove po njoj.",
+     "title": "Čitanje A: biografija, Dragica Horvat",
+     "intro": "Exam Reading A is a biography of about 150 words followed by open questions. Every answer must come FROM the text - no invention, full sentences, correct case endings. First read the biography below, then learn the reading strategy and the biography vocabulary.\n\nDRAGICA HORVAT\nDragica Horvat rodila se 1878. godine u mjestu Podgorje pokraj Ivanić-Grada. Bila je prva profesionalna novinarka u Hrvatskoj i jedna od najčitanijih hrvatskih spisateljica. Radila je u novinama Domaći glasnik, iako su se mnogi u to doba protivili tome da žena bude novinarka. Pisala je o pravima žena i borila se protiv nepravde. Najpoznatija je po povijesnim romanima kao što su 'Zlatna kruna' i 'Sjene prošlosti', koje su čitali ljudi iz svih društvenih slojeva. Osim toga, pokrenula je i uređivala prve časopise za žene u Hrvatskoj. Cijeli je život živjela skromno, posvećena pisanju i borbi za ravnopravnost. Umrla je u Varaždinu 1962. godine. Danas jedna ulica u Varaždinu nosi njezino ime, a svake se godine dodjeljuje ugledna novinarska nagrada koja se zove po njoj.",
      "items": [
       {
        "hr": "Strategija: prvo pronađi imena, datume i mjesta.",
@@ -18901,17 +18901,17 @@
       {
        "hr": "novinarka / spisateljica",
        "en": "journalist (f.) / writer (f.)",
-       "note": "novinar/novinarka; pisac or spisatelj/spisateljica. Zagorka was the first professional female journalist in Croatia."
+       "note": "novinar/novinarka; pisac or spisatelj/spisateljica. Dragica Horvat was the first professional female journalist in Croatia."
       },
       {
        "hr": "roditi se / umrijeti",
        "en": "to be born / to die",
-       "note": "rodila se 1873. godine; umrla je 1957. godine. Years take 'godine' in the genitive."
+       "note": "rodila se 1878. godine; umrla je 1962. godine. Years take 'godine' in the genitive."
       },
       {
        "hr": "roman / povijesni roman",
        "en": "novel / historical novel",
-       "note": "'Grička vještica' is her most famous historical novel. roman → G romana, N pl romani."
+       "note": "'Zlatna kruna' is her most famous historical novel. roman → G romana, N pl romani."
       },
       {
        "hr": "pokrenuti / uređivati",
@@ -18921,7 +18921,7 @@
       {
        "hr": "dodjeljivati nagradu",
        "en": "to award a prize",
-       "note": "Nagrada 'Marija Jurić Zagorka' se dodjeljuje novinarima, the prize is awarded to journalists. dodjeljivati se = to be awarded (se-passive)."
+       "note": "Nagrada 'Dragica Horvat' se dodjeljuje novinarima, the prize is awarded to journalists. dodjeljivati se = to be awarded (se-passive)."
       }
      ],
      "sources": [
@@ -18933,20 +18933,20 @@
     {
      "type": "EXERCISE",
      "title": "Pitanja uz biografiju",
-     "intro": "Answer each question from the Zagorka biography you just read. Locate the fact first, then answer. The difficulty climbs from a place to a two-part fact at the end.",
+     "intro": "Answer each question from the Dragica Horvat biography you just read. Locate the fact first, then answer. The difficulty climbs from a place to a two-part fact at the end.",
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "Gdje se rodila Marija Jurić Zagorka?",
+       "prompt": "Gdje se rodila Dragica Horvat?",
        "difficulty": 3,
        "options": [
-        "u Negovcu pokraj Vrbovca",
+        "u Podgorju pokraj Ivanić-Grada",
         "u Zagrebu",
         "u Osijeku",
         "u Karlovcu"
        ],
-       "answer": "u Negovcu pokraj Vrbovca",
-       "explanation": "'rodila se 1873. godine u mjestu Negovec pokraj Vrbovca.' Location → locative: u Negovcu."
+       "answer": "u Podgorju pokraj Ivanić-Grada",
+       "explanation": "'rodila se 1878. godine u mjestu Podgorje pokraj Ivanić-Grada.' Location → locative: u Podgorju."
       },
       {
        "type": "MCQ",
@@ -18965,13 +18965,13 @@
        "type": "FILL",
        "prompt": "Koje se godine rodila? (upišite broj)",
        "difficulty": 4,
-       "answer": "1873",
+       "answer": "1878",
        "accepted": [
-        "1873",
-        "1873."
+        "1878",
+        "1878."
        ],
        "strictDiacritics": true,
-       "explanation": "'rodila se 1873. godine.'"
+       "explanation": "'rodila se 1878. godine.'"
       },
       {
        "type": "MCQ",
@@ -18984,45 +18984,45 @@
         "po filmovima"
        ],
        "answer": "po povijesnim romanima",
-       "explanation": "'Najpoznatija je po povijesnim romanima kao što su Grička vještica i Republikanci.'"
+       "explanation": "'Najpoznatija je po povijesnim romanima kao što su Zlatna kruna i Sjene prošlosti.'"
       },
       {
        "type": "MCQ",
        "prompt": "Kako se zove jedan od njezinih romana?",
        "difficulty": 6,
        "options": [
-        "Grička vještica",
+        "Zlatna kruna",
         "Gospoda Glembajevi",
         "Povratak Filipa Latinovicza",
         "Kiklop"
        ],
-       "answer": "Grička vještica",
-       "explanation": "The text names 'Grička vještica' and 'Republikanci'. The other three are famous Croatian works by other authors."
+       "answer": "Zlatna kruna",
+       "explanation": "The text names 'Zlatna kruna' and 'Sjene prošlosti'. The other three are famous Croatian works by other authors."
       },
       {
        "type": "FILL",
        "prompt": "Koje je godine umrla? (upišite broj)",
        "difficulty": 7,
-       "answer": "1957",
+       "answer": "1962",
        "accepted": [
-        "1957",
-        "1957."
+        "1962",
+        "1962."
        ],
        "strictDiacritics": true,
-       "explanation": "'Umrla je u Zagrebu 1957. godine.'"
+       "explanation": "'Umrla je u Varaždinu 1962. godine.'"
       },
       {
        "type": "MCQ",
        "prompt": "Što danas nosi njezino ime?",
        "difficulty": 8,
        "options": [
-        "ulica u Zagrebu i novinarska nagrada",
+        "ulica u Varaždinu i novinarska nagrada",
         "kazalište u Splitu",
         "bolnica u Rijeci",
         "škola u Osijeku"
        ],
-       "answer": "ulica u Zagrebu i novinarska nagrada",
-       "explanation": "'jedna ulica u Zagrebu nosi njezino ime, a svake se godine dodjeljuje ugledna novinarska nagrada koja se zove po njoj.'"
+       "answer": "ulica u Varaždinu i novinarska nagrada",
+       "explanation": "'jedna ulica u Varaždinu nosi njezino ime, a svake se godine dodjeljuje ugledna novinarska nagrada koja se zove po njoj.'"
       }
      ],
      "sources": [
@@ -20767,7 +20767,7 @@
    "drills": [
     "Classify every miss: vocabulary / case / aspect / listening / diacritics / time pressure.",
     "Compare with lesson 180: celebrate the growth, circle what's stuck.",
-    "Choose the 2 weakest sections, lessons 227-234 target them.",
+    "Choose the 2 weakest sections, lessons 260-262 target them.",
     "Add all missed words/forms to your notes; ask your partner about anything unclear."
    ],
    "reviewBlock": {
@@ -20797,7 +20797,7 @@
       {
        "hr": "Red enklitika: 'Ona mi je poslala poruku.', dativ 'mi' pa 'je'.",
        "en": "Clitic order: 'She sent me a message', dative 'mi' then 'je'.",
-       "note": "Category 3. The cluster order is li, aux(sam/je), se, dative, accusative, EXCEPT je goes last: mi je, ti je, mu je."
+       "note": "Category 3. The cluster order is li, aux (except je), dative, accusative, se, with je always last: mi je, ti je, mu je."
       },
       {
        "hr": "Slaganje roda: 'Završio sam' (muškarac) vs 'Završila sam' (žena).",
@@ -21262,16 +21262,16 @@
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "ČITANJE, Pročitajte: 'Ivana Brlić-Mažuranić rođena je 1874. u Ogulinu. Bila je hrvatska književnica, poznata po pričama za djecu. Napisala je Priče iz davnine, a mnogi je zovu hrvatskim Andersenom.', Gdje je rođena Ivana Brlić-Mažuranić?",
+       "prompt": "ČITANJE, Pročitajte: 'Slavica Perić rođena je 1881. u Karlovcu. Bila je hrvatska književnica, poznata po pričama za djecu. Napisala je Bajke iz stare kuće, a voljena je diljem zemlje.', Gdje je rođena Slavica Perić?",
        "difficulty": 1,
        "options": [
-        "u Ogulinu",
+        "u Karlovcu",
         "u Zagrebu",
         "u Splitu",
         "u Rijeci"
        ],
-       "answer": "u Ogulinu",
-       "explanation": "'rođena je 1874. u Ogulinu', she was born in Ogulin."
+       "answer": "u Karlovcu",
+       "explanation": "'rođena je 1881. u Karlovcu', she was born in Karlovac."
       },
       {
        "type": "MCQ",
@@ -21288,26 +21288,26 @@
       },
       {
        "type": "FILL",
-       "prompt": "ČITANJE, (isti tekst) Koje je godine rođena Ivana Brlić-Mažuranić? (upišite godinu)",
+       "prompt": "ČITANJE, (isti tekst) Koje je godine rođena Slavica Perić? (upišite godinu)",
        "difficulty": 3,
-       "answer": "1874",
+       "answer": "1881",
        "accepted": [
-        "1874."
+        "1881."
        ],
-       "explanation": "'rođena je 1874.', the year is 1874."
+       "explanation": "'rođena je 1881.', the year is 1881."
       },
       {
        "type": "MCQ",
-       "prompt": "ČITANJE, (isti tekst) Kako je mnogi zovu?",
+       "prompt": "ČITANJE, (isti tekst) Koliko je bila voljena?",
        "difficulty": 4,
        "options": [
-        "hrvatskim Andersenom",
-        "hrvatskim Teslom",
-        "hrvatskom kraljicom",
-        "prvom učiteljicom"
+        "voljena diljem zemlje",
+        "voljena samo u Karlovcu",
+        "nije bila voljena",
+        "voljena samo u inozemstvu"
        ],
-       "answer": "hrvatskim Andersenom",
-       "explanation": "'mnogi je zovu hrvatskim Andersenom', many call her the Croatian Andersen (instrumental after zvati)."
+       "answer": "voljena diljem zemlje",
+       "explanation": "'voljena je diljem zemlje', she was loved throughout the country."
       },
       {
        "type": "MCQ",
@@ -21858,7 +21858,7 @@
    "drills": [
     "Full speaking simulation with your tutor or Croatian spouse using the mock exam speaking prompts in the Quiz tab.",
     "Rule: every answer gets 3+ sentences (statement, reason, example).",
-    "Record and compare with lesson 224, hear the difference.",
+    "Record and compare with lesson 257, hear the difference.",
     "Drill your 3 hesitation points from last time."
    ],
    "reviewBlock": {
@@ -22100,7 +22100,7 @@
     {
      "type": "DIALOGUE",
      "title": "Simulacija govorenja #2",
-     "intro": "Your second full oral simulation: your Croatian wife plays the examiner and works through the mock exam speaking prompts. Read your lines ('Me') aloud and hold the rule, every answer gets at least three sentences: statement, reason, example. Notice how calm and long the answers feel compared with lesson 224.",
+     "intro": "Your second full oral simulation: your Croatian wife plays the examiner and works through the mock exam speaking prompts. Read your lines ('Me') aloud and hold the rule, every answer gets at least three sentences: statement, reason, example. Notice how calm and long the answers feel compared with lesson 257.",
      "lines": [
       {
        "speaker": "Partner",
@@ -22139,8 +22139,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Kad položim ispit, prvo ću proslaviti s obitelji. Ono što mi je najvažnije jest da ću se moći slobodno sporazumijevati na hrvatskom. Baš zato nastavljam učiti i poslije ispita, jezik se ne staje voljeti.",
-       "en": "When I pass the exam, first I'll celebrate with my family. What matters most to me is that I'll be able to communicate freely in Croatian. That's exactly why I'll keep learning even after the exam, you don't stop loving a language."
+       "hr": "Kad položim ispit, prvo ću proslaviti s obitelji. Ono što mi je najvažnije jest da ću se moći slobodno sporazumijevati na hrvatskom. Baš zato nastavljam učiti i poslije ispita, jezik se nikad ne prestaje voljeti.",
+       "en": "When I pass the exam, first I'll celebrate with my family. What matters most to me is that I'll be able to communicate freely in Croatian. That's exactly why I'll keep learning even after the exam, you never stop loving a language."
       },
       {
        "speaker": "Partner",
@@ -22168,7 +22168,7 @@
    "level": "B1",
    "title": "Listening endurance day",
    "objective": "A full bulletin + a longer audio segment + exam drills in one day.",
-   "paretoFocus": "Exam audio will feel easy if HRT feels normal. Overtrain the ear this week.",
+   "paretoFocus": "Exam audio will feel easy if news broadcasts feel normal. Overtrain the ear this week.",
    "resources": [
     "Words tab (built-in daily flashcards)"
    ],
@@ -22188,7 +22188,7 @@
     {
      "type": "LEARN",
      "title": "Izdržljivost u slušanju: pratiti duži prilog",
-     "intro": "Exam audio will feel easy only if a full HRT bulletin feels normal. Endurance listening means holding attention across a whole segment and catching one fact per story: the number, the place, the time, the decision. These twelve signpost phrases mark the turns of a longer report so you never lose the thread, and so you know where the key fact is about to land.",
+     "intro": "Exam audio will feel easy only if a full news bulletin feels normal. Endurance listening means holding attention across a whole segment and catching one fact per story: the number, the place, the time, the decision. These twelve signpost phrases mark the turns of a longer report so you never lose the thread, and so you know where the key fact is about to land.",
      "items": [
       {
        "hr": "u uvodu / na početku",
@@ -23113,7 +23113,7 @@
    "level": "B1",
    "title": "Mock #2 error-log review + readiness call",
    "objective": "Compare mock #2 vs mock #1 and confirm your readiness picture.",
-   "paretoFocus": "Three data points (lesson 180, 225, 235) show your trajectory. Anything still under 60% gets the final four days.",
+   "paretoFocus": "Three data points (lesson 180, mock #1 at 258, mock #2 at 268) show your trajectory. Anything still under 60% gets the final four days.",
    "resources": [
     "Words tab (built-in daily flashcards)",
     "Conversation practice (partner or tutor)"
@@ -23367,7 +23367,7 @@
       {
        "hr": "Slušanje: broj čuješ jednom, zapiši ga odmah.",
        "en": "Listening: you hear the number once, write it down at once.",
-       "note": "The trap is a mistaken digit or time. Note on pass 1, confirm on pass 2. Extra HRT bulletins if this is your weak section."
+       "note": "The trap is a mistaken digit or time. Note on pass 1, confirm on pass 2. Extra news bulletins if this is your weak section."
       },
       {
        "hr": "Čitanje: jedna promijenjena riječ ruši TOČNO/NETOČNO.",
@@ -24025,8 +24025,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Učio sam svaki dan gotovo godinu dana. Ujutro sam slušao HRT, a navečer sam vježbao gramatiku i pisanje. Iz vlastitog iskustva, redovitost je važnija od duljine, bolje pola sata svaki dan nego pet sati jednom tjedno.",
-       "en": "I studied almost every day for a year. In the morning I listened to HRT, and in the evening I practised grammar and writing. From my own experience, regularity matters more than length, better half an hour every day than five hours once a week."
+       "hr": "Učio sam svaki dan gotovo godinu dana. Ujutro sam slušao vijesti, a navečer sam vježbao gramatiku i pisanje. Iz vlastitog iskustva, redovitost je važnija od duljine, bolje pola sata svaki dan nego pet sati jednom tjedno.",
+       "en": "I studied almost every day for a year. In the morning I listened to the news, and in the evening I practised grammar and writing. From my own experience, regularity matters more than length, better half an hour every day than five hours once a week."
       },
       {
        "speaker": "Partner",
@@ -24090,7 +24090,7 @@
     "items": [
      "Clear your due words in the Words tab.",
      "Say, in Croatian, what you'll do after passing the exam.",
-     "Keep the daily HRT habit until exam day, the ear must stay warm."
+     "Keep the daily news-listening habit until exam day, the ear must stay warm."
     ]
    },
    "activities": [
@@ -24450,7 +24450,7 @@
        "difficulty": 6,
        "answer": "pročitao",
        "accepted": [
-        "pročitala"
+        "pročitao"
        ],
        "explanation": "A finished, whole-book result needs the perfective pročitati: sam pročitao. This is the aspect choice you drilled with the verb families."
       },
@@ -24627,10 +24627,10 @@
       },
       {
        "type": "FILL",
-       "prompt": "Older grammar, futur drugi: Ako ___ imati vremena, doći ću sutra. (biti, 1st person singular)",
+       "prompt": "Older grammar, futur drugi: Ako ___ vremena, doći ću sutra. (imati, futur II, 1st person singular)",
        "difficulty": 6,
-       "answer": "budem",
-       "explanation": "Conditions about the future take futur drugi after ako: ako budem imati vremena. You met this with kad/ako/dok clauses."
+       "answer": "budem imao",
+       "explanation": "Conditions about the future take futur drugi after ako: ako budem imao vremena."
       },
       {
        "type": "REORDER",
@@ -27120,7 +27120,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Rezultati ankete jasno su ___ da građani žele više parkova, a manje parkirališta.",
+       "prompt": "Rezultati ankete su jasno ___ da građani žele više parkova, a manje parkirališta.",
        "difficulty": 6,
        "answer": "pokazali",
        "explanation": "Pokazati means to show; the masculine plural subject rezultati takes the participle pokazali."
@@ -30970,8 +30970,9 @@
        "en": "I don't work at weekends, so that's when I read most and walk by the sea."
       },
       {
-       "hr": "Trap example: 'Marina radi autom' is false, because she says biciklom, never autom.",
-       "en": "The negation ne idem autom, nego biciklom is exactly what flips the statement."
+       "hr": "Marina ne radi autom, nego biciklom.",
+       "en": "Marina doesn't go by car, but by bike.",
+       "note": "Trap example: 'Marina radi autom' is false, because she says biciklom, never autom. The negation ne idem autom, nego biciklom is exactly what flips the statement."
       }
      ],
      "sources": [
@@ -31142,8 +31143,9 @@
        "en": "Petra: I agree the location is excellent, but I'm still cautious."
       },
       {
-       "hr": "Whose worry is the price? Petra's. Who values the location? Both, but it persuades only Ivan.",
-       "en": "Keep each stance tied to its speaker so a later question cannot confuse you."
+       "hr": "Petru brine cijena, a Ivana uvjerava lokacija.",
+       "en": "The price worries Petra, but the location convinces Ivan.",
+       "note": "Keep each stance tied to its speaker so a later question cannot confuse you."
       }
      ],
      "sources": [
@@ -31659,24 +31661,29 @@
      "intro": "Never fill a gap on meaning alone. Read to the end of the sentence, spot the trigger (a preposition, a number, a verb that governs a case), then choose the bank word and put it in the right form. A slot after bez wants the genitive; after prema, the dative; after s, the instrumental.",
      "items": [
       {
-       "hr": "Ne mogu zamisliti jutro bez ___ (kava). Answer: kave, genitive after bez.",
-       "en": "I can't imagine a morning without coffee. Kave is the genitive after bez."
+       "hr": "Ne mogu zamisliti jutro bez ___ (kava).",
+       "en": "I can't imagine a morning without coffee.",
+       "note": "Answer: kave, genitive after bez."
       },
       {
-       "hr": "Idemo prema ___ (centar). Answer: centru, dative after prema.",
-       "en": "We're heading towards the centre. Centru is the dative after prema."
+       "hr": "Idemo prema ___ (centar).",
+       "en": "We're heading towards the centre.",
+       "note": "Answer: centru, dative after prema."
       },
       {
-       "hr": "Razgovarala je s ___ (susjeda). Answer: susjedom, instrumental after s.",
-       "en": "She talked with the neighbour. Susjedom is the instrumental after s."
+       "hr": "Razgovarala je s ___ (susjeda).",
+       "en": "She talked with the neighbour.",
+       "note": "Answer: susjedom, instrumental after s."
       },
       {
-       "hr": "Kupili smo pet ___ (jabuka). Answer: jabuka, genitive plural after five.",
-       "en": "We bought five apples. Jabuka is the genitive plural after five."
+       "hr": "Kupili smo pet ___ (jabuka).",
+       "en": "We bought five apples.",
+       "note": "Answer: jabuka, genitive plural after five."
       },
       {
-       "hr": "Knjiga je na ___ (stol). Answer: stolu, locative after na for place.",
-       "en": "The book is on the table. Stolu is the locative after na for a place."
+       "hr": "Knjiga je na ___ (stol).",
+       "en": "The book is on the table.",
+       "note": "Answer: stolu, locative after na for place."
       }
      ],
      "sources": [
@@ -31836,24 +31843,29 @@
      "intro": "Under time, do not translate; recognise. First eliminate any option in the wrong case after a preposition. Then drop options that fail agreement with the noun. What remains is usually the answer, and a final spelling check (bismo not bi smo, doći ću written apart) confirms it.",
      "items": [
       {
-       "hr": "Bez dobre ___ nema uspjeha. (priprema) Answer: pripreme, genitive after bez.",
-       "en": "Without good preparation there is no success. Pripreme is the genitive after bez."
+       "hr": "Bez dobre ___ nema uspjeha. (priprema)",
+       "en": "Without good preparation there is no success.",
+       "note": "Answer: pripreme, genitive after bez."
       },
       {
-       "hr": "Sutra ću ti ___ sve. (objasniti) Answer: objasniti, infinitive with futur ću.",
-       "en": "Tomorrow I'll explain everything to you. Objasniti stays infinitive with the futur ću."
+       "hr": "Sutra ću ti ___ sve. (objasniti)",
+       "en": "Tomorrow I'll explain everything to you.",
+       "note": "Answer: objasniti, infinitive with futur ću."
       },
       {
-       "hr": "Kad bismo imali vremena, ___ do mora. (otići) Answer: otišli bismo.",
-       "en": "If we had time, we'd go to the sea. The conditional is otisli bismo."
+       "hr": "Kad bismo imali vremena, ___ do mora. (otići)",
+       "en": "If we had time, we'd go to the sea.",
+       "note": "Answer: otišli bismo."
       },
       {
-       "hr": "Vidio sam dvije nove ___ . (zgrada) Answer: zgrade, after two.",
-       "en": "I saw two new buildings. After two the count form is zgrade."
+       "hr": "Vidio sam dvije nove ___. (zgrada)",
+       "en": "I saw two new buildings.",
+       "note": "Answer: zgrade, after two."
       },
       {
-       "hr": "Radujem se ___ . (ljeto) Answer: ljetu, dative after radovati se.",
-       "en": "I'm looking forward to summer. Ljetu is the dative after radovati se."
+       "hr": "Radujem se ___. (ljeto)",
+       "en": "I'm looking forward to summer.",
+       "note": "Answer: ljetu, dative after radovati se."
       }
      ],
      "sources": [
@@ -33251,7 +33263,7 @@
     {
      "type": "LEARN",
      "title": "Gdje idu kratke riječi",
-     "intro": "Unstressed clitics gather in second position in a fixed order: the question li, then the auxiliary (sam, si, će), then se, then a dative pronoun, then an accusative, and je comes last of all. After an opening conjunction the cluster still sits right after the first strong word.",
+     "intro": "Unstressed clitics gather in second position in a fixed order: the question li, then the auxiliary (except je), then a dative pronoun, then an accusative, then se, and je comes last of all. After an opening conjunction the cluster still sits right after the first strong word.",
      "items": [
       {
        "hr": "Vratio sam mu ga jutros.",
