@@ -84,6 +84,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            // Opt-in ONLY: `-PtestId` installs debug builds under com.corlang.app.test so a test
+            // build sits side-by-side with the real (differently-signed) install without touching
+            // it. Normal builds (no flag) keep the shipping applicationId, so the sideload-debug
+            // release channel is unaffected.
+            if (project.hasProperty("testId")) applicationIdSuffix = ".test"
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
