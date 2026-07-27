@@ -238,14 +238,17 @@ fun TodayScreen(
         return
     }
 
-    // Generous, even rhythm so the three blocks read as distinct bands — streak up top, the
-    // lesson card mid, the journey anchoring the bottom — instead of clustering under the hero.
+    // ONE consistent gap between every block, and top padding == that gap, so the rhythm reads
+    // as even (streak, lesson card, journey). Sized at 16.dp — not the old 28 — so the whole
+    // dashboard, journey stones included, fits a STANDARD 360dp-wide phone without scrolling.
+    // On this maintainer's low-density display there was spare room that hid the overflow;
+    // normal-density phones were cutting the journey mid-stone (field report 2026-07-27).
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
             .padding(horizontal = 16.dp, vertical = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(28.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         // Hero: streak + daily goal ring + ONE unmissable next action. A quiet bordered surface
         // rather than a loud coloured banner — the streak is a calm signal, not a trophy.
@@ -257,7 +260,7 @@ fun TodayScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Row(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Column(Modifier.weight(1f)) {
@@ -384,11 +387,18 @@ fun TodayScreen(
                 )
                 Text(
                     d.title,
-                    style = MaterialTheme.typography.headlineSmall,
+                    style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold
                 )
                 SectionTitle("In this lesson you will")
-                Text(d.objective, style = com.corlang.app.ui.theme.CorlangType.reading)
+                // bodyLarge + a 2-line cap keeps the card compact on standard phones (the full
+                // objective is repeated inside the lesson itself, so a trim here loses nothing).
+                Text(
+                    d.objective,
+                    style = MaterialTheme.typography.bodyLarge,
+                    maxLines = 2,
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
+                )
 
                 // The lesson action lives HERE, with the lesson it acts on — never on the
                 // streak hero. Days ahead of the one you're up to stay locked.
