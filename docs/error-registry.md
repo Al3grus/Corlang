@@ -129,6 +129,10 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | K7 | A stem-with-suffix regex over-matching a legitimate word family (check_hr's voz\w* flagged vozac/vozilo/voziti, all standard Croatian, when only the Serbian train noun voz is the target) | 2026-07-21, hr | match a Serbian noun by its exact case-forms, not a stem+\w*, when a legitimate same-stem family exists |
 | K6 | Flagging a correct inflected form as the wrong variety (check_hr flagged "vremena", the correct Croatian genitive of vrijeme, as ekavian) | 2026-07-21, hr | list only forms that are the wrong variety in EVERY inflection; the ije-to-e alternation is regular in Croatian oblique cases, so match bare "vreme" not the "vremen-" stem |
 | K8 | check_hr.py's Serbian-drift regexes were ASCII-only (no š/č/ć/ž/đ character classes), so they never matched real shipped Croatian, which always carries proper diacritics; the checker had been auditing nothing since the day it stopped seeing pre-diacritic planning drafts. Also could not parse the assembled `{title, days}` phase-file shape at all (expected a bare array), so it silently skipped the entire shipped course | 2026-07-27, hr full-course audit | rewrote the regexes with `[sš]`/`[cč]`/`[zž]`/`(?:đ\|dj)` character classes matching both spellings; added a `{title,days}` unwrap to both check_hr.py's CLI and check_batch.check_file (new check_batch.check_file_obj helper); negative-tested against both ASCII and diacritic-bearing planted defects post-fix |
+| K9 | check_batch.py's CLI reported the wrong day count for assembled `{title, days}` files (`len()` on the top-level dict counted its 2 keys, not the days array), so every run of the script printed "2 days" regardless of the file's real size | 2026-07-28, hr structural sweep | count `len(obj["days"])` when the top level is a `{title, days}` dict, else `len(obj)` |
+| K10 | check_batch.py's FILL answer-leak check (`norm()` strips diacritics from both sides before comparing) false-positived on diacritic-restoration drills, where the prompt intentionally shows the undiacriticized form of its own answer — the exercise's whole point looks like a "leak" once diacritics are stripped from both sides | 2026-07-28, hr structural sweep | exempt questions with `"strictDiacritics": true` from the answer-leak check |
+| K11 | check_hr.py's `DA_PRESENT` modal list wrongly included `znam`; "znam da..." (I know that...) is a complementizer construction correct in both Croatian and Serbian, not the modal-plus-infinitive alternation the check targets (real Serbian drift is `moram da radim` for correct `moram raditi`) — flagged 4 correct sentences as Serbian drift | 2026-07-28, hr structural sweep | removed `znam` from the modal set; negative-tested against `Znam da dolazi vlak` (must not match) alongside `Moram da radim` (must still match) |
+| K12 | check_hr.py's `EKAVIAN` list included the oblique forms `leta`/`letu` as ekavian reflexes of `leto` (summer, ijekavian `ljeto`), but these collide with the genitive/dative of the unrelated, jat-free noun `let` (flight) — flagged "odgoda leta" (flight delay), correct Croatian, as ekavian | 2026-07-28, hr structural sweep | removed `leta`/`letu` from the list, kept bare `leto` (no such collision: flight's nominative is `let`, never `leto`) |
 
 ---
 
@@ -145,14 +149,24 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    lesson text, an MCQ-shuffle-position bug = C17), plus most Medium findings. Deck trimmed
    90→ back to exactly the 3,440-word cap by removing 76 off-level/redundant B1 words.
    `check_hr.py` itself was broken (K8: ASCII-only, couldn't parse the assembled format) and is
-   now fixed and negative-tested. NOT attempted: 314 `check_batch.py` structural findings (168
-   lessons missing a DIALOGUE activity, 46 3-option MCQs, 55 over-length dialogues, 27 duplicate
-   prompts) — this is new Phase-5-scale lesson authoring, not a fix, and needs its own pass. Also
-   open: Phase 8b found the ASOO A1 directional-preposition unit (u/na/po/za + accusative) is
-   never taught. One judgment call surfaced a conflict with `[[corlang-session-resume]]`'s
-   2026-07-18 note "HRT immersion mentions kept deliberately" — this audit treated repeated HRT/
-   Ruđer Bošković Institute/Dinamo/Hajduk naming as boundary-rule violations and genericized all
-   of it; flagged for the user to confirm or revert given the prior deliberate decision.
+   now fixed and negative-tested. One judgment call surfaced a conflict with
+   `[[corlang-session-resume]]`'s 2026-07-18 note "HRT immersion mentions kept deliberately" —
+   this audit treated repeated HRT/Ruđer Bošković Institute/Dinamo/Hajduk naming as boundary-rule
+   violations and genericized all of it, later confirmed by the user as the standing rule
+   (real people/institutions banned everywhere in lesson text, `docs/course-gold-book.md`
+   updated 2026-07-27).
+   **CLOSED 2026-07-28**: the 314 `check_batch.py` structural findings (recounted precisely at
+   308: 168 missing-DIALOGUE, 57 3-option MCQs, 55 over-length dialogues, 27 duplicate prompts)
+   were fixed via 11 parallel batched-range authoring agents across all 4 phase files, followed
+   by a consolidation pass closing 26 cross-range duplicate prompts the per-range agents
+   correctly couldn't see (duplicate detection needs whole-file context) and 1 pre-existing
+   answer-leak false positive (K10). Found and fixed 4 checker bugs in the same pass (K9-K12).
+   `proctor.py` caught 3 new DIALOGUE-intro-repeats-objective problems introduced by the batch
+   authoring; reworded and reverified to 0. The ASOO A1 directional-preposition unit (u/na/po/za
+   + accusative, ići present) was authored into day 24 ("Prepositions: motion vs. location"),
+   expanding an existing day rather than inserting a new one, so no day-numbering shift touched
+   placement.json/exams.json/resources.json. Full re-verification: `check_batch.py` 344 days/0
+   problems, `check_hr.py` 344/0, `proctor.py` 0 problems, Kotlin `ContentValidationTest` green.
 2. **C16**: de CHECKED 2026-07-20 (DWDS mirrors + all three official PDFs, complete): deck
    covers 46.3% of the official A1..B1 inventory, 262 official A1 lemmas absent entirely, so
    the `goethe-wortliste` key was removed from all 22 packs, then EARNED BACK the same day for
@@ -179,6 +193,15 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    here; all 4 DELF mocks missing required document types, now authored). Also closed: 4
    placement bands under-diversified (same pattern as hr), all 4 quiz difficulty orderings,
    the recurring FILL-punctuation-artifact pattern (11 instances), the œ-ligature spelling gap.
-   Still open: `decret-2025-648` (the naturalisation law, "the most important citation" per the
-   digest) is never cited despite the requirement being asserted as fact 3 times; `grammar.json`
-   was not resynced with the 12 new B2/B1/A2 gap-fill topics from the 250→418 day expansion.
+   **CLOSED 2026-07-28**: `decret-2025-648` (the registered but previously-uncited naturalisation
+   law) is now cited in the 3 activities that assert the fact (days 373/395/403 of
+   `phase4-b2.json`), in the B2 `exam.sources` in `levels.json`, and in the `fr-b2-society`
+   vocab pack's sources. `grammar.json`'s topic index was resynced with 6 real new topics found
+   by cross-checking day titles against the existing 38: A2 exclamations (quel/que/comme), B1
+   compound relative pronouns (lequel/auquel/duquel), B2 l'infinitif passé, B2 condition beyond
+   si (à condition que/pourvu que/à moins que/au cas où), B2 interrogative lequel, B2 cause/
+   consequence in formal register (en raison de.../si bien que...); the existing B2 "present
+   participle" topic was expanded in place to add the adjectif verbal agreement contrast rather
+   than duplicated, and 2 lessons (357 "se plaindre au téléphone", 358 "conditionnel passé:
+   regret/reproche/conseil") were confirmed to be functional-language or already-covered content,
+   not new grammar points, and correctly left out.

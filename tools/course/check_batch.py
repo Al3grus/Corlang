@@ -123,7 +123,11 @@ def check_file_obj(days):
                     elif qt == "FILL":
                         ans = norm(q.get("answer", ""))
                         # Gate: a multi-word answer must not appear verbatim in its own prompt.
-                        if len(ans) > 1 and " ".join(ans) in " ".join(norm(p)):
+                        # Exempt diacritic-restoration drills: norm() strips diacritics from both
+                        # sides, so a prompt showing the undiacriticized form of its own answer
+                        # (the whole point of the exercise) always "matches" under this check.
+                        if (len(ans) > 1 and " ".join(ans) in " ".join(norm(p))
+                                and not q.get("strictDiacritics")):
                             errs.append(f"{tag}/FILL: answer leaks into its prompt: {p[:60]}")
                     elif qt == "REORDER":
                         opts, ordered = q.get("options", []), q.get("ordered", [])
@@ -157,9 +161,9 @@ if __name__ == "__main__":
             bad += 1
             continue
         errs = check_file(path)
-        n = len(json.loads(io.open(path, encoding='utf-8').read())) if not errs or True else 0
         try:
-            n = len(json.load(io.open(path, encoding="utf-8")))
+            obj = json.load(io.open(path, encoding="utf-8"))
+            n = len(obj["days"]) if isinstance(obj, dict) and isinstance(obj.get("days"), list) else len(obj)
         except Exception:
             n = 0
         total += n

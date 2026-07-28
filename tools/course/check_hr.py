@@ -52,12 +52,15 @@ _Z = "[zž]"
 _DJ = "(?:đ|dj)"
 
 # da + (optional clitic/pronoun) + a present-tense verb, right after a modal or semi-modal.
-# The modal set is what actually takes a bare infinitive in Croatian.
+# The modal set is what actually takes a bare infinitive in Croatian. "znati" is deliberately
+# NOT in this set: "znam da..." (I know that...) is a complementizer construction, correct in
+# both Croatian and Serbian, not the modal-plus-infinitive alternation this check targets
+# (2026-07-28: znam was over-matching real "znam da <fact>" content as a false positive).
 DA_PRESENT = re.compile(
     r"\b(trebam|treba{s}|treba|trebamo|trebate|trebaju|mogu|mo{z}e{s}|mo{z}e|mo{z}emo|mo{z}ete|"
     r"moraju|moram|mora{s}|mora|moramo|morate|{z}elim|{z}eli{s}|{z}eli|{z}elimo|{z}elite|{z}ele|"
     r"poku{s}avam|poku{s}ava{s}|po{c}injem|volim|voli{s}|voli|volimo|namjeravam|smijem|smije{s}|"
-    r"smije|ho{c}u|ho{c}e{s}|ho{c}e|ho{c}emo|ho{c}ete|umijem|znam)\s+da\b".format(
+    r"smije|ho{c}u|ho{c}e{s}|ho{c}e|ho{c}emo|ho{c}ete|umijem)\s+da\b".format(
         s=_S, z=_Z, c=_C),
     re.IGNORECASE)
 
@@ -67,6 +70,11 @@ DA_LI = re.compile(r"\bda\s+li\b", re.IGNORECASE)
 # whole-word hit is an error. Kept tight to avoid catching unrelated words, and to avoid the K6
 # regression (flagging "vremena", the correct genitive of vrijeme, as ekavian): match only the
 # bare ekavian stem, never a stem+suffix that could also be a correct ijekavian oblique form.
+# "leta"/"letu" are deliberately excluded even though they're the ekavian oblique forms of
+# "leto" (summer): they collide with the genitive/dative of the unrelated, jat-free noun "let"
+# (flight), which is correct Croatian with no ijekavian/ekavian alternation at all (2026-07-28,
+# found flagging "odgoda leta", flight delay, as ekavian). Bare "leto" has no such collision
+# (nominative "flight" is "let", never "leto"), so it stays.
 EKAVIAN = re.compile(
     r"\b(lepo|lep|lepa|lepi|lepe|lepog|lepom|mleko|mleka|mleku|vreme|dete|deca|dece|deci|decu|"
     r"{c}ovek|{c}oveka|{c}oveku|reka|reke|beo|belo|bela|beli|sneg|snega|cvet|cveta|cve{c}e|"
@@ -74,7 +82,7 @@ EKAVIAN = re.compile(
     r"ponedeljak|ponedeljka|nedelja|nedelje|nedelju|sused|suseda|susedi|ovde|gde|negde|nigde|"
     r"posle|uvek|celo|cela|celi|dve|zvezda|zvezde|re{c}nik|telo|tela|uspe{s}no|uspe{s}an|"
     r"verovatno|razumem|razume{s}|razume|razumemo|razumete|umem|ume{s}|hteti|hteo|htela|hteli|"
-    r"leto|leta|letu|mesec|meseca|mesecu|meseci|vetar|vetra|vera|vere|veru|svetlo|svetla|"
+    r"leto|mesec|meseca|mesecu|meseci|vetar|vetra|vera|vere|veru|svetlo|svetla|"
     r"nedeljno|prevoz|prevoza|se{c}anje|se{c}am|ose{c}am|ose{c}a{s}|ose{c}anje|smejati|smeje{s}|"
     r"smeh|pobeda|pobede|savet|saveta|saveti)\b".format(c=_C, s=_S),
     re.IGNORECASE)
