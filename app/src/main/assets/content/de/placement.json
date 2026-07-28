@@ -7,90 +7,90 @@
    "startDay": 1,
    "type": "MCQ",
    "difficulty": 1,
-   "prompt": "'Ich ___ Anna.' (I am Anna)",
+   "prompt": "Which German vowel letter always sounds like the oo in 'moon'?",
    "options": [
+    "U",
+    "A",
+    "E",
+    "I"
+   ],
+   "answer": "U",
+   "explanation": "German U has one value only, the oo of 'moon'. It never sounds like the u in 'cup'."
+  },
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "How many letters does the basic German alphabet have, not counting the Umlaute and ß?",
+   "options": [
+    "26",
+    "21",
+    "24",
+    "30"
+   ],
+   "answer": "26",
+   "explanation": "The German alphabet has the same 26 base letters as English, plus ä, ö, ü and ß as extras."
+  },
+  {
+   "level": "A0",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "Complete the standard spelling formula for the first letter of the alphabet: 'A wie ___'",
+   "options": [
+    "Apfel",
+    "Esel",
+    "Igel",
+    "Obst"
+   ],
+   "answer": "Apfel",
+   "explanation": "Germans introduce each letter with a fixed example word; A is introduced with der Apfel."
+  },
+  {
+   "level": "A1",
+   "startDay": 16,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'Wir ___ heute in Hamburg.' (sein)",
+   "options": [
+    "sind",
     "bin",
     "bist",
+    "seid"
+   ],
+   "answer": "sind",
+   "explanation": "The wir form of sein is sind, the same form used for sie and Sie."
+  },
+  {
+   "level": "A1",
+   "startDay": 16,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "Which line pairs the pronoun ihr with the right verb form?",
+   "options": [
+    "Ihr seid müde.",
+    "Ihr sind müde.",
+    "Ihr bist müde.",
+    "Ihr bin müde."
+   ],
+   "answer": "Ihr seid müde.",
+   "explanation": "ihr is the informal you for a group, and its form of sein is seid, spelled without a final t."
+  },
+  {
+   "level": "A1",
+   "startDay": 16,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "Complete with the right form of sein: 'Du ___ sehr freundlich.'",
+   "options": [
+    "bist",
+    "bin",
     "ist",
-    "sind"
+    "seid"
    ],
-   "answer": "bin",
-   "explanation": "With ich the verb sein is bin."
-  },
-  {
-   "level": "A0",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "Which sentence is written with correct German capitalisation?",
-   "options": [
-    "Ich habe einen Hund.",
-    "Ich habe einen hund.",
-    "ich habe einen Hund.",
-    "ich habe einen hund."
-   ],
-   "answer": "Ich habe einen Hund.",
-   "explanation": "German capitalises every noun, and Hund is a noun."
-  },
-  {
-   "level": "A0",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "Which word means the number 7?",
-   "options": [
-    "sieben",
-    "sechs",
-    "acht",
-    "neun"
-   ],
-   "answer": "sieben",
-   "explanation": "Sieben is 7, while sechs is 6, acht is 8 and neun is 9."
-  },
-  {
-   "level": "A1",
-   "startDay": 16,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "Which sentence has correct German word order?",
-   "options": [
-    "Morgen fahre ich nach Berlin.",
-    "Morgen ich fahre nach Berlin.",
-    "Fahre morgen ich nach Berlin.",
-    "Morgen ich nach Berlin fahre."
-   ],
-   "answer": "Morgen fahre ich nach Berlin.",
-   "explanation": "The conjugated verb takes second position, so the subject moves behind it."
-  },
-  {
-   "level": "A1",
-   "startDay": 16,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'___ Buch liegt auf dem Tisch.' (the book)",
-   "options": [
-    "Das",
-    "Der",
-    "Die",
-    "Den"
-   ],
-   "answer": "Das",
-   "explanation": "Buch is neuter, so the definite article in the nominative is das."
-  },
-  {
-   "level": "A1",
-   "startDay": 16,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'Du ___ sehr schnell.' (sprechen)",
-   "options": [
-    "sprichst",
-    "sprechst",
-    "spricht",
-    "sprechen"
-   ],
-   "answer": "sprichst",
-   "explanation": "Sprechen changes its stem vowel in the du form: du sprichst."
+   "answer": "bist",
+   "explanation": "du is the informal you for one person, and its form of sein is bist."
   },
   {
    "level": "A1",
@@ -232,30 +232,30 @@
    "startDay": 66,
    "type": "MCQ",
    "difficulty": 4,
-   "prompt": "'Ich hänge das Bild an ___ Wand.' (movement to a place)",
+   "prompt": "Choose the correct form: 'Ich danke ___ Lehrer.'",
    "options": [
-    "die",
-    "der",
     "dem",
-    "den"
+    "der",
+    "den",
+    "des"
    ],
-   "answer": "die",
-   "explanation": "An is a two way preposition, and movement answering wohin takes the accusative."
+   "answer": "dem",
+   "explanation": "danken always takes the dative, and the masculine dative article is dem."
   },
   {
    "level": "A2",
    "startDay": 66,
    "type": "MCQ",
    "difficulty": 4,
-   "prompt": "'Wir freuen ___ auf den Urlaub.' (we are looking forward to the holiday)",
+   "prompt": "Which sentence uses the dative correctly?",
    "options": [
-    "uns",
-    "sich",
-    "euch",
-    "mich"
+    "Das Buch gehört meine Schwester.",
+    "Das Buch gehört meiner Schwester.",
+    "Das Buch gehört meinen Schwester.",
+    "Das Buch gehört mein Schwester."
    ],
-   "answer": "uns",
-   "explanation": "The reflexive pronoun for wir is uns."
+   "answer": "Das Buch gehört meiner Schwester.",
+   "explanation": "gehören takes the dative, and the feminine dative possessive is meiner."
   },
   {
    "level": "A2",
@@ -442,60 +442,60 @@
    "startDay": 130,
    "type": "MCQ",
    "difficulty": 6,
-   "prompt": "In a clothes shop you want to try a jacket on. What do you ask?",
+   "prompt": "Welches Wort passt? 'Ich lerne abends, ____ eine bessere Stelle zu finden.'",
    "options": [
-    "Kann ich die Jacke anprobieren?",
-    "Kann ich die Jacke ausziehen?",
-    "Kann ich die Jacke abholen?",
-    "Kann ich die Jacke aufräumen?"
-   ],
-   "answer": "Kann ich die Jacke anprobieren?",
-   "explanation": "Anprobieren means to try on, while ausziehen means to take off."
-  },
-  {
-   "level": "B1",
-   "startDay": 146,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "'Das ist der Mann, ___ ich gestern getroffen habe.'",
-   "options": [
-    "den",
-    "der",
-    "dem",
-    "dessen"
-   ],
-   "answer": "den",
-   "explanation": "The relative pronoun is the object of treffen, so the masculine accusative den is used."
-  },
-  {
-   "level": "B1",
-   "startDay": 146,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "'Das ist das Auto ___ Bruders.' (my brother's car)",
-   "options": [
-    "meines",
-    "meinem",
-    "meinen",
-    "mein"
-   ],
-   "answer": "meines",
-   "explanation": "Possession is expressed with the genitive, and masculine takes meines."
-  },
-  {
-   "level": "B1",
-   "startDay": 146,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "'Ich warte ___ den Bus.' (I am waiting for the bus)",
-   "options": [
-    "auf",
+    "um",
+    "damit",
     "für",
-    "an",
-    "nach"
+    "zu"
    ],
-   "answer": "auf",
-   "explanation": "Warten has the fixed preposition auf with the accusative."
+   "answer": "um",
+   "explanation": "um plus zu plus infinitive expresses a purpose when the subject stays the same: um eine bessere Stelle zu finden."
+  },
+  {
+   "level": "B1",
+   "startDay": 146,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Das ist die Kollegin, ___ das Projekt leitet.'",
+   "options": [
+    "die",
+    "der",
+    "das",
+    "den"
+   ],
+   "answer": "die",
+   "explanation": "The relative pronoun is the subject of leitet, and die Kollegin is feminine, so die."
+  },
+  {
+   "level": "B1",
+   "startDay": 146,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Ich habe einen Nachbarn, ___ jeden Morgen joggt.'",
+   "options": [
+    "der",
+    "die",
+    "das",
+    "dem"
+   ],
+   "answer": "der",
+   "explanation": "The relative pronoun is the subject of joggt, and der Nachbar is masculine, so der."
+  },
+  {
+   "level": "B1",
+   "startDay": 146,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Wir wohnen in einem Haus, ___ über hundert Jahre alt ist.'",
+   "options": [
+    "das",
+    "der",
+    "die",
+    "den"
+   ],
+   "answer": "das",
+   "explanation": "The relative pronoun refers back to das Haus, a neuter noun, so the nominative relative pronoun is das."
   },
   {
    "level": "B1",

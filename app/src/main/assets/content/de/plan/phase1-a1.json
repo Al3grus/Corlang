@@ -2035,14 +2035,14 @@
     "items": [
      "Which possessive words take an extra e in the nominative, and with which nouns?",
      "What is the difference in meaning between sein and ihr?",
-     "How do you know from writing alone whether Ihr means their or the polite your?"
+     "What is the difference between ihr meaning her and ihr meaning their, and how do you tell them apart in writing?"
     ]
    },
    "activities": [
     {
      "type": "LEARN",
-     "title": "Mein, dein, sein, ihr",
-     "intro": "The possessive words behave exactly like ein. In the nominative they have no ending before masculine and neuter nouns, and they add e before feminine and plural nouns. The word for his is sein and the word for her is ihr, and both refer to the owner, not to the object.",
+     "title": "Mein, dein, sein, ihr, euer",
+     "intro": "The possessive words behave exactly like ein. In the nominative they have no ending before masculine and neuter nouns, and they add e before feminine and plural nouns. The word for his is sein, ihr covers both her and their, and euer is the possessive that goes with ihr, the group you; all three refer to the owner, not to the object.",
      "items": [
       {
        "hr": "Mein Bruder wohnt in Berlin.",
@@ -2068,6 +2068,16 @@
        "hr": "Unsere Eltern sind nett.",
        "en": "Our parents are nice.",
        "note": "Plural nouns always take the ending e."
+      },
+      {
+       "hr": "Wo sind eure Eltern?",
+       "en": "Where are your parents?",
+       "note": "euer is the possessive that goes with ihr, a group of people; before a plural noun it becomes eure, just like unser becomes unsere."
+      },
+      {
+       "hr": "Frau und Herr Weber wohnen hier, und ihre Kinder wohnen in München.",
+       "en": "Mrs and Mr Weber live here, and their children live in Munich.",
+       "note": "ihr also means their, for more than one owner, and looks identical to the her-form, so only context tells them apart. This lowercase ihr is never the same word as the capitalised formal your used with Sie, which this course covers separately."
       }
      ],
      "sources": [
@@ -2436,6 +2446,11 @@
        "hr": "Wir haben keine Kinder.",
        "en": "We do not have children.",
        "note": "das Kind, die Kinder, and the plural negation is keine."
+      },
+      {
+       "hr": "Ich habe eine Tante, einen Sohn und eine Tochter.",
+       "en": "I have an aunt, a son and a daughter.",
+       "note": "die Tante is aunt, der Sohn is son and die Tochter is daughter; einen goes with the masculine Sohn, eine with the feminine Tante and Tochter."
       }
      ],
      "sources": [
@@ -3163,7 +3178,7 @@
       {
        "hr": "Der Januar ist der erste Monat im Jahr.",
        "en": "January is the first month of the year.",
-       "note": "in Germany the first month is Januar"
+       "note": "in Germany the first month is Januar; the twelve months in order are Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember."
       },
       {
        "hr": "Am Wochenende habe ich frei.",
@@ -5386,7 +5401,7 @@
       {
        "hr": "Die Katze schläft zwischen den Kissen.",
        "en": "The cat is sleeping between the cushions.",
-       "note": "Plural: die Kissen -> zwischen den Kissen, plus an extra n"
+       "note": "Plural: die Kissen -> den Kissen. Kissen already ends in n, so the dative adds nothing extra to the noun itself, only the article die changes to den. Compare with a noun whose plural does not already end in n, like Kinder -> Kindern, where the dative really does add an extra n."
       }
      ],
      "sources": [

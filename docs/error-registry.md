@@ -134,6 +134,10 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | K10 | check_batch.py's FILL answer-leak check (`norm()` strips diacritics from both sides before comparing) false-positived on diacritic-restoration drills, where the prompt intentionally shows the undiacriticized form of its own answer — the exercise's whole point looks like a "leak" once diacritics are stripped from both sides | 2026-07-28, hr structural sweep | exempt questions with `"strictDiacritics": true` from the answer-leak check |
 | K11 | check_hr.py's `DA_PRESENT` modal list wrongly included `znam`; "znam da..." (I know that...) is a complementizer construction correct in both Croatian and Serbian, not the modal-plus-infinitive alternation the check targets (real Serbian drift is `moram da radim` for correct `moram raditi`) — flagged 4 correct sentences as Serbian drift | 2026-07-28, hr structural sweep | removed `znam` from the modal set; negative-tested against `Znam da dolazi vlak` (must not match) alongside `Moram da radim` (must still match) |
 | K12 | check_hr.py's `EKAVIAN` list included the oblique forms `leta`/`letu` as ekavian reflexes of `leto` (summer, ijekavian `ljeto`), but these collide with the genitive/dative of the unrelated, jat-free noun `let` (flight) — flagged "odgoda leta" (flight delay), correct Croatian, as ekavian | 2026-07-28, hr structural sweep | removed `leta`/`letu` from the list, kept bare `leto` (no such collision: flight's nominative is `let`, never `leto`) |
+| K13 | check_de.py's `check_german()` never unwrapped the assembled `{title, days}` shape (`if not isinstance(days, list): return []` silently exited on every real course file, only pre-merge bare-array batches ever got checked) — the exact same silent-no-op failure mode as K8, meaning the Austrian/Swiss-drift, southern-perfect-auxiliary, and Swiss-ß checks had never run against shipped German content | 2026-07-28, de audit kickoff | added the same `_unwrap()` helper used in check_hr.py/check_fr.py to both `check_german()` and the CLI's day-count; negative-tested against a planted `{title, days}`-wrapped Jänner/southern-perfect defect (found) and a contrastive same-activity pair (correctly not flagged) before trusting a real-content run |
+| K14 | check_de.py/check_batch.py both hard-crash (`AttributeError`) on the vocab-pack `{"packs":[{"words":[...]}]}` shape and on the non-plan shapes of quizzes.json/placement.json/exams.json — neither ever validated the German deck or assessment content at all, a distinct gap from K13 (which only fixed the plan-file unwrap) | 2026-07-28, de audit | FIXED same day: ported check_pt.py's `_is_day_shaped()` / generic-file-fallback pattern into check_de.py (`check_german_generic()`, `_generic_distractors()` for the MCQ-distractor exemption on non-day shapes); the CLI now branches on shape instead of assuming one. Re-run against every previously-unreachable de file immediately caught one real pre-existing defect (`quizzes.json` had "der Fluß", pre-reform spelling, as the FILL answer, not just a distractor) |
+| K15 | check_de.py's Swiss-spelling check (`SHARP_S_ERRORS`) only catches the pre-reform direction (ß written where ss belongs); it has no check for the opposite, actually-live drift direction — Swiss orthography eliminating ß entirely (ss for ß, e.g. "grosse" for "große") — found live in shipped content (a FILL question silently accepted "grosse" as correct with no contrastive note) | 2026-07-28, de audit | FIXED same day: added `gross/grosse/grosser/grosses/grossen/grossem`, `weiss`, `heissen`, `aussen`, `draussen`, `fuss`, `strasse(n)`, `gruss`, `grüsse` → their ß-forms, plus the Austrian-retention exception `erdgeschoß`→`erdgeschoss`, to the existing REGIONAL dict (same activity-scoped contrastive-teaching exemption as every other entry). This immediately surfaced a SECOND checker bug (see K16) before the fix could be trusted |
+| K16 | The REGIONAL-form check (used by both check_german() and, transitively, check_german_generic()) scanned every string in a day/activity, including English `en`/`note`/commentary fields, not just the German-bearing keys — a scoping bug distinct from every other check in the file (which are correctly KEY-scoped to hr/target/answer/options/ordered/accepted). Latent since the checker was first written, but never triggered because no original REGIONAL entry (jänner, sackerl, semmel...) was also a common English word; the K15 fix's `gross`/`fuss` additions are, and immediately false-flagged "My salary is 2,800 euros **gross** per month" and "Do not make such a **fuss**" as Swiss regional drift | 2026-07-28, de audit (found while trusting the K15 fix) | FIXED: the REGIONAL loop in check_german() now scans `german_strings_of(a)` instead of the unscoped `strings_of(a)`; check_german_generic() was rewritten to use a new path-scoped `_german_strings()` helper (mirrors german_strings_of() but works on arbitrary JSON shapes via check_batch.walk_strings) for all three of its checks, not just REGIONAL. Negative-tested against both the planted English-collision case and a Croatian-audit-precedent real-drift case before trusting a final real-content run (0 problems, 285 days) |
 
 ---
 
@@ -234,3 +238,38 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    sanctioned `resources.json` mechanism and legitimate exam-format-label/city-name usage from
    actual violations). `docs/sources/README.md` and `caple.md`'s stale "target DIPLE B2"
    headers corrected to the real target (DEPLE B1, DIPLE B2 legacy since 2026-07-20).
+8. **de full-course audit + fix DONE (2026-07-28)**: check_de.py existed but its `check_german()`
+   had the K13 silent-no-op bug (fixed first, negative-tested, before trusting any result).
+   During the fix pass, two more checker bugs were found and fixed the same day: K14 (vocab/
+   assessment file shapes crashed the checker outright — ported check_pt.py's generic-shape
+   fallback pattern; immediately caught one real pre-existing defect, "der Fluß" as a quiz
+   ANSWER rather than a distractor) and K15 (no check for the live Swiss ss-for-ß drift
+   direction, only the reverse — added it, which surfaced K16, a latent English-collision
+   scoping bug the new entries exposed, also fixed same day). Then a 13-agent audit (10 over all 285
+   lessons, 1 over the 2,850-word deck, 1 over quizzes/placement/exams, 1 over reference content
+   + Phase 8b Goethe/telc syllabus cross-check — clean, no curriculum gap found) — all 13 hit a
+   shared session-limit wall simultaneously and were cleanly relaunched. Found and FIXED far
+   fewer Critical findings than hr/fr/pt (de is a noticeably cleaner-authored course: **zero**
+   real-people/institution violations anywhere in the 2,850-word deck, a first for this project):
+   ~9 Critical (2 self-contradicting grammar explanations — a false stem-vowel claim, wrong
+   ge-prefix reasoning; a wrong dative-plural rule; a `goethe-wortliste` source-key regression
+   affecting 431 citations across `grammar.json`'s B1 section and every B1 lesson activity,
+   re-introducing an overclaim a 2026-07-20 digest had explicitly closed; and the session's most
+   significant single finding — B1 days 220-223 taught a dedicated civics mini-unit quoting
+   Article 1/20 GG verbatim and naming the Bundesverfassungsgericht by name, reinstating the
+   exact "institutions of state are exempt" pattern the Gold Book's carve-out removal was written
+   to prevent; fixed by genericizing only day 222, the one day actually containing verbatim text/
+   named-institution violations, while leaving days 220/221/223's generic constitutional-organ
+   vocabulary — Bundestag, Bundeskanzler — untouched as legitimate, non-violating usage). ~21 High
+   (5 placement bands across all 4 levels testing content taught days-to-weeks later, all 6 mock
+   exam Lesen/Hören sections single-document against the real multi-Teil Goethe/telc format,
+   B1 Schreiben missing its 3rd task, quiz difficulty ordering broken in 3 of 4 levels, 2 untaught-
+   vocabulary-used-in-exercises gaps, Swiss "grosse" silently accepted as correct with no
+   contrastive note — the exact K15 gap surfacing in real content, a repetitive boilerplate drill
+   stamped into 6 lessons unrelated to its own grammar point, 8 duplicate reflexive-verb SRS
+   entries). Removing the 8 duplicate vocab entries dropped the deck 8 words under the
+   `everyDeckCoversTheWholeCourse` floor (2850 needed for 285 lessons x 10/day) — caught by the
+   Kotlin gate, closed by authoring 8 new, genuinely non-duplicate B1 words rather than reverting
+   the dedup fix. Verified: `check_batch.py`/`check_de.py` 285 days/0 problems, `proctor.py` 0
+   problems (1 new objective-echo finding from the civics rewrite, fixed same pass), Kotlin
+   `ContentValidationTest` gate green, 0 dashes, real-name sweep clean.

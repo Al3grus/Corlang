@@ -19,6 +19,13 @@
      "explanation": "German uses the umlauts ä, ö and ü. They are separate sounds, not decoration."
     },
     {
+     "type": "FILL",
+     "difficulty": 1,
+     "prompt": "Complete the greeting used in the early part of the day: 'Guten ___!'",
+     "answer": "Morgen",
+     "explanation": "Guten Morgen is the first greeting of the day. The noun keeps its capital letter."
+    },
+    {
      "type": "MCQ",
      "difficulty": 2,
      "prompt": "In which word is 'ch' the soft sound, as in the pronoun for the speaker?",
@@ -58,26 +65,6 @@
      "explanation": "Every noun is capitalised in German, wherever it stands in the sentence: der Hund, einen Hund."
     },
     {
-     "type": "MCQ",
-     "difficulty": 3,
-     "prompt": "You are introduced to your new boss. Which question is appropriate?",
-     "options": [
-      "Wie heißen Sie?",
-      "Wie heißt du?",
-      "Wie heißt ihr?",
-      "Wie heiße ich?"
-     ],
-     "answer": "Wie heißen Sie?",
-     "explanation": "Sie is the polite form for adults you do not know. Its verb takes the -en ending: Sie heißen."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 1,
-     "prompt": "Complete the greeting used in the early part of the day: 'Guten ___!'",
-     "answer": "Morgen",
-     "explanation": "Guten Morgen is the first greeting of the day. The noun keeps its capital letter."
-    },
-    {
      "type": "FILL",
      "difficulty": 2,
      "prompt": "Write the number 7 as a German word.",
@@ -90,6 +77,19 @@
      "prompt": "Complete: 'Ich ___ aus Spanien.' (the verb for saying where you are from)",
      "answer": "komme",
      "explanation": "Saying your origin: ich komme aus plus the country. The ich form ends in -e."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "You are introduced to your new boss. Which question is appropriate?",
+     "options": [
+      "Wie heißen Sie?",
+      "Wie heißt du?",
+      "Wie heißt ihr?",
+      "Wie heiße ich?"
+     ],
+     "answer": "Wie heißen Sie?",
+     "explanation": "Sie is the polite form for adults you do not know. Its verb takes the -en ending: Sie heißen."
     },
     {
      "type": "MCQ",
@@ -139,19 +139,6 @@
     },
     {
      "type": "MCQ",
-     "difficulty": 4,
-     "prompt": "Which sentence has correct German word order?",
-     "options": [
-      "Heute gehe ich ins Kino.",
-      "Heute ich gehe ins Kino.",
-      "Ich heute gehe ins Kino.",
-      "Gehe heute ich ins Kino."
-     ],
-     "answer": "Heute gehe ich ins Kino.",
-     "explanation": "The conjugated verb is always the second element. If something else opens the sentence, the subject moves behind the verb."
-    },
-    {
-     "type": "MCQ",
      "difficulty": 3,
      "prompt": "Complete: 'Ich sehe ___ Mann.'",
      "options": [
@@ -162,6 +149,19 @@
      ],
      "answer": "den",
      "explanation": "sehen takes the accusative, and masculine der becomes den in that case."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Which sentence has correct German word order?",
+     "options": [
+      "Heute gehe ich ins Kino.",
+      "Heute ich gehe ins Kino.",
+      "Ich heute gehe ins Kino.",
+      "Gehe heute ich ins Kino."
+     ],
+     "answer": "Heute gehe ich ins Kino.",
+     "explanation": "The conjugated verb is always the second element. If something else opens the sentence, the subject moves behind the verb."
     },
     {
      "type": "MCQ",
@@ -177,19 +177,6 @@
      "explanation": "A noun with ein or with no article is negated with kein. das Auto is neuter, so the form is kein."
     },
     {
-     "type": "MCQ",
-     "difficulty": 5,
-     "prompt": "Complete: 'Ich helfe ___ Bruder.'",
-     "options": [
-      "meinem",
-      "meinen",
-      "mein",
-      "meines"
-     ],
-     "answer": "meinem",
-     "explanation": "helfen is a dative verb, and the possessive follows the same pattern as the article: dem Bruder, meinem Bruder."
-    },
-    {
      "type": "FILL",
      "difficulty": 4,
      "prompt": "Complete: 'Ich ___ heute arbeiten.' (obligation, I have to)",
@@ -202,6 +189,26 @@
      "prompt": "Complete: 'Der Zug fährt um acht Uhr ___.' (the verb means to depart, so its prefix goes to the end)",
      "answer": "ab",
      "explanation": "In a main clause the separable prefix jumps to the final position, closing the Satzklammer."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete: 'Gestern ___ ich in Berlin.' (simple past of sein)",
+     "answer": "war",
+     "explanation": "sein and haben are normally used in the simple past even in speech: ich war, ich hatte."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Complete: 'Ich helfe ___ Bruder.'",
+     "options": [
+      "meinem",
+      "meinen",
+      "mein",
+      "meines"
+     ],
+     "answer": "meinem",
+     "explanation": "helfen is a dative verb, and the possessive follows the same pattern as the article: dem Bruder, meinem Bruder."
     },
     {
      "type": "MCQ",
@@ -228,13 +235,6 @@
      ],
      "answer": "bin",
      "explanation": "Verbs of movement and change of state build the Perfekt with sein: ich bin gegangen, ich bin gefahren."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 4,
-     "prompt": "Complete: 'Gestern ___ ich in Berlin.' (simple past of sein)",
-     "answer": "war",
-     "explanation": "sein and haben are normally used in the simple past even in speech: ich war, ich hatte."
     }
    ]
   },
@@ -255,6 +255,13 @@
      ],
      "answer": "den",
      "explanation": "mit always governs the dative, and the dative plural article is den, with an -n on the noun."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete: 'Ich wasche ___ die Hände.' (reflexive pronoun in the dative)",
+     "answer": "mir",
+     "explanation": "When the reflexive verb already has an accusative object, the reflexive pronoun goes into the dative: ich wasche mir die Hände."
     },
     {
      "type": "MCQ",
@@ -281,13 +288,6 @@
      ],
      "answer": "liegt",
      "explanation": "liegen describes the position and takes no object. legen is the action of putting something down and takes an accusative object."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 4,
-     "prompt": "Complete: 'Ich wasche ___ die Hände.' (reflexive pronoun in the dative)",
-     "answer": "mir",
-     "explanation": "When the reflexive verb already has an accusative object, the reflexive pronoun goes into the dative: ich wasche mir die Hände."
     },
     {
      "type": "MCQ",
@@ -324,6 +324,19 @@
     },
     {
      "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Which sentence is the polite way to order in a café?",
+     "options": [
+      "Ich hätte gern einen Kaffee.",
+      "Ich habe gern einen Kaffee.",
+      "Ich hatte gern einen Kaffee.",
+      "Ich haben gern einen Kaffee."
+     ],
+     "answer": "Ich hätte gern einen Kaffee.",
+     "explanation": "The Konjunktiv II of haben softens a request. Compare könnten Sie and würden Sie."
+    },
+    {
+     "type": "MCQ",
      "difficulty": 6,
      "prompt": "Complete: 'Der ___ Mann wohnt hier.'",
      "options": [
@@ -341,19 +354,6 @@
      "prompt": "Complete: 'Ich trinke ein ___ Bier.' (adjective kalt)",
      "answer": "kaltes",
      "explanation": "After ein the adjective carries the signal of the gender itself, so a neuter noun takes -es in the mixed pattern."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 5,
-     "prompt": "Which sentence is the polite way to order in a café?",
-     "options": [
-      "Ich hätte gern einen Kaffee.",
-      "Ich habe gern einen Kaffee.",
-      "Ich hatte gern einen Kaffee.",
-      "Ich haben gern einen Kaffee."
-     ],
-     "answer": "Ich hätte gern einen Kaffee.",
-     "explanation": "The Konjunktiv II of haben softens a request. Compare könnten Sie and würden Sie."
     }
    ]
   },

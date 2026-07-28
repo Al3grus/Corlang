@@ -97,9 +97,34 @@ result must satisfy. Tools live in `tools/course/`.
   `ContentValidationTest` green, 0 dashes. `docs/sources/README.md`/`caple.md` stale "target
   DIPLE B2" headers corrected (real target is DEPLE B1, DIPLE B2 legacy since 2026-07-20).
   Nothing open.
-- Proctor backlog on shipped languages (2026-07-20): de 80 problems (hr, fr, and pt CLEARED, see
-  above). **Next up: de audit** (no per-language checker exists yet, no floor debt).
-- Weighted-floor debt UNCHANGED by the audit above (that pass added LEARN/EXERCISE depth within
-  existing days, not new lesson days, so the day-count floor gate is untouched): fr +145 (B2
-  legally required since 2026-01-01, highest priority), hr +90, pt +70 (A2 short 15, B1 short 55,
-  per `ContentValidationTest.weightedRuleDebt`).
+- **de full-course audit + fix FULLY DONE (2026-07-28)**: `check_de.py` already existed but had
+  the K13 silent-no-op bug (fixed and negative-tested first). K14 (crashed outright on vocab/
+  assessment file shapes) and K15 (no Swiss ss-for-ß direction check, which surfaced K16, a
+  latent English-word-collision scoping bug) were found and fixed the same day, negative-tested,
+  and re-verified against real content — K14's fix alone caught one real pre-existing defect
+  ("der Fluß" as a quiz answer instead of a wrong distractor). A 13-agent audit (10 over all
+  285 lessons, 1 over the 2,850-word deck, 1 over quizzes/placement/exams, 1 over reference +
+  Phase 8b Goethe/telc syllabus cross-check, clean, no
+  curriculum gap) — all 13 hit a shared session-limit wall at once and were cleanly relaunched.
+  **de is noticeably cleaner than hr/fr/pt**: zero real-people/institution violations anywhere
+  in the 2,850-word deck. Still found and fixed ~9 Critical/~21 High/rest Medium/Low — biggest:
+  a `goethe-wortliste` source-key regression (431 stale citations across `grammar.json`'s B1
+  section and every B1 lesson activity, reintroducing an overclaim a prior digest had closed);
+  and B1 days 220-223's civics mini-unit quoting Article 1/20 GG verbatim and naming the
+  Bundesverfassungsgericht, the exact carve-out-removal pattern the Gold Book exists to prevent
+  (fixed by genericizing only day 222, the one day with actual violations — days 220/221/223's
+  generic constitutional vocabulary was correctly left alone). Also: 5 placement bands testing
+  future content, all 6 mock-exam receptive sections single-document vs. the real multi-Teil
+  format, B1 Schreiben missing its 3rd task, 8 duplicate reflexive-verb vocab entries (removing
+  them dropped the deck 8 words under the `everyDeckCoversTheWholeCourse` floor — caught by the
+  Kotlin gate, closed by authoring 8 new non-duplicate B1 words rather than reverting the dedup).
+  `docs/error-registry.md` open-sweeps item 8 has the full breakdown. Fully verified:
+  `check_batch.py`/`check_de.py`/`proctor.py` 0 problems, Kotlin `ContentValidationTest` green,
+  0 dashes. Nothing open.
+- Proctor backlog: hr, fr, pt, and de all CLEARED this session (2026-07-27/28). **Next: es from
+  zero** (PCIC-anchored, not yet built), then native review (Track D, open on all 4 shipped
+  courses — the machine-authored expansion lessons have never been human-read).
+- Weighted-floor debt UNCHANGED by the hr/fr/pt/de audit passes above (they added LEARN/EXERCISE
+  depth within existing days, not new lesson days, so the day-count floor gate is untouched for
+  pt): fr +145 (B2 legally required since 2026-01-01, highest priority), hr +90, pt +70 (A2 short
+  15, B1 short 55, per `ContentValidationTest.weightedRuleDebt`). de has no floor debt.
