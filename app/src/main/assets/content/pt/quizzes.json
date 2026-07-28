@@ -45,6 +45,26 @@
      "explanation": "ter: eu tenho."
     },
     {
+     "type": "FILL",
+     "difficulty": 2,
+     "prompt": "Complete: 'Eu ___-me Paulo.' (verb chamar, to be called)",
+     "answer": "chamo",
+     "explanation": "chamar-se: eu chamo-me (ênclise: pronoun after the verb)."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 2,
+     "prompt": "'___ é que ela se chama?' (asking someone's name)",
+     "options": [
+      "Como",
+      "Onde",
+      "Quando",
+      "Quem"
+     ],
+     "answer": "Como",
+     "explanation": "Como te chamas? / Como é que ela se chama? literally asks 'how is she called', the standard way to ask a name."
+    },
+    {
      "type": "MCQ",
      "difficulty": 3,
      "prompt": "Present of morar (eles):",
@@ -69,13 +89,6 @@
      ],
      "answer": "é",
      "explanation": "Profession/identity takes ser: ela é."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 2,
-     "prompt": "Complete: 'Eu ___-me Paulo.' (verb chamar, to be called)",
-     "answer": "chamo",
-     "explanation": "chamar-se: eu chamo-me (ênclise: pronoun after the verb)."
     },
     {
      "type": "MCQ",
@@ -109,6 +122,19 @@
       "."
      ],
      "explanation": "Saying where you're from: ser + de + country."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Plural of 'a mulher':",
+     "options": [
+      "as mulheres",
+      "as mulhers",
+      "as mulher",
+      "os mulheres"
+     ],
+     "answer": "as mulheres",
+     "explanation": "Nouns ending in -r add -es in the plural: mulher → mulheres."
     }
    ]
   },
@@ -158,19 +184,6 @@
     },
     {
      "type": "MCQ",
-     "difficulty": 5,
-     "prompt": "'I don't see him': 'Não ___ vejo.'",
-     "options": [
-      "o",
-      "lo",
-      "no",
-      "lhe"
-     ],
-     "answer": "o",
-     "explanation": "não is a proclisis trigger: the pronoun moves before the verb, não o vejo."
-    },
-    {
-     "type": "MCQ",
      "difficulty": 4,
      "prompt": "Demonstrative for something near the person you're talking to:",
      "options": [
@@ -181,6 +194,32 @@
      ],
      "answer": "esse",
      "explanation": "este = near me, esse = near you, aquele = far from both."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "'Estou constipado' means:",
+     "options": [
+      "I have a cold",
+      "I am constipated",
+      "I am tired",
+      "I am worried"
+     ],
+     "answer": "I have a cold",
+     "explanation": "False friend: constipado means 'has a cold' in pt-PT, not the English 'constipated'."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "'I don't see him': 'Não ___ vejo.'",
+     "options": [
+      "o",
+      "lo",
+      "no",
+      "lhe"
+     ],
+     "answer": "o",
+     "explanation": "não is a proclisis trigger: the pronoun moves before the verb, não o vejo."
     },
     {
      "type": "MCQ",
@@ -197,7 +236,7 @@
     },
     {
      "type": "FILL",
-     "difficulty": 4,
+     "difficulty": 5,
      "prompt": "Complete: 'O Porto é mais barato ___ Lisboa.' (than)",
      "answer": "que",
      "accepted": [
@@ -226,6 +265,19 @@
       "."
      ],
      "explanation": "Negative imperative: não triggers próclise (não te esqueças)."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "'Este é o ___ restaurante da cidade.' (the best)",
+     "options": [
+      "melhor",
+      "mais bom",
+      "o mais melhor",
+      "boníssimo"
+     ],
+     "answer": "melhor",
+     "explanation": "Bom has the irregular comparative/superlative melhor, never mais bom."
     }
    ]
   },
@@ -234,19 +286,6 @@
    "levelId": "B1",
    "title": "B1, opinião e hipótese",
    "questions": [
-    {
-     "type": "MCQ",
-     "difficulty": 6,
-     "prompt": "Subjunctive: 'Espero que tu ___ bem.' (estar)",
-     "options": [
-      "estejas",
-      "estás",
-      "estares",
-      "estiveres"
-     ],
-     "answer": "estejas",
-     "explanation": "esperar que + presente do conjuntivo: que tu estejas."
-    },
     {
      "type": "MCQ",
      "difficulty": 5,
@@ -259,6 +298,32 @@
      ],
      "answer": "queria",
      "explanation": "pt-PT politeness uses the imperfeito de cortesia: queria."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "'Amanhã eu ___ ao médico.' (ir, futuro simples)",
+     "options": [
+      "irei",
+      "vou",
+      "fui",
+      "ia"
+     ],
+     "answer": "irei",
+     "explanation": "The futuro simples adds endings straight onto the infinitive: irei."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Subjunctive: 'Espero que tu ___ bem.' (estar)",
+     "options": [
+      "estejas",
+      "estás",
+      "estares",
+      "estiveres"
+     ],
+     "answer": "estejas",
+     "explanation": "esperar que + presente do conjuntivo: que tu estejas."
     },
     {
      "type": "MCQ",
@@ -342,6 +407,19 @@
       "."
      ],
      "explanation": "Giving an opinion: achar que + indicative."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "'___ esteja a chover, vamos à praia.' (although)",
+     "options": [
+      "Embora",
+      "Porque",
+      "Já que",
+      "Portanto"
+     ],
+     "answer": "Embora",
+     "explanation": "Embora is a concession connector and always triggers the conjuntivo: embora esteja."
     }
    ]
   }

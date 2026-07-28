@@ -1,5 +1,5 @@
 {
- "title": "Português de Portugal rumo ao DIPLE",
+ "title": "Português de Portugal rumo ao DEPLE",
  "days": [
   {
    "day": 101,
@@ -1723,8 +1723,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "É verdade. Já foste ver a exposição no CCB?",
-       "en": "True. Have you been to see the exhibition at the CCB?"
+       "hr": "É verdade. Já foste ver a exposição no museu?",
+       "en": "True. Have you been to see the exhibition at the museum?"
       },
       {
        "speaker": "Partner",
@@ -3075,8 +3075,8 @@
      "intro": "The passive is ser + participle (which agrees) + por. Some verbs carry two participles: the long one with ter, the short one with ser/estar.",
      "items": [
       {
-       "hr": "Este fado foi cantado pela Amália Rodrigues.",
-       "en": "This fado was sung by Amália Rodrigues.",
+       "hr": "Este fado foi cantado por uma fadista conhecida.",
+       "en": "This fado was sung by a well-known fado singer.",
        "note": "passive = ser + particípio + por (por + a = pela)"
       },
       {
@@ -3148,7 +3148,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "'O poema foi escrito ___ Camões.' Which word introduces the agent?",
+       "prompt": "'O poema foi escrito ___ um poeta clássico.' Which word introduces the agent?",
        "difficulty": 4,
        "options": [
         "por",
@@ -3157,7 +3157,7 @@
         "para"
        ],
        "answer": "por",
-       "explanation": "The agent of a passive takes 'por' (contracting to pelo/pela): escrito por Camões."
+       "explanation": "The agent of a passive takes 'por' (contracting to pelo/pela): escrito por um poeta clássico."
       },
       {
        "type": "FILL",
@@ -3175,25 +3175,27 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Build the Portuguese for: 'This fado was sung by Amália.'",
+       "prompt": "Build the Portuguese for: 'This fado was sung by a singer.'",
        "difficulty": 5,
        "options": [
         "Este",
         "fado",
         "foi",
         "cantado",
-        "pela",
-        "Amália"
+        "por",
+        "uma",
+        "cantora"
        ],
        "ordered": [
         "Este",
         "fado",
         "foi",
         "cantado",
-        "pela",
-        "Amália"
+        "por",
+        "uma",
+        "cantora"
        ],
-       "explanation": "Passive word order: subject + ser + participle + pela + agent."
+       "explanation": "Passive word order: subject + ser + participle + por + agent."
       }
      ],
      "sources": [
@@ -3963,6 +3965,21 @@
        "hr": "É evidente que ela sabe muito mais do que diz.",
        "en": "It is obvious that she knows much more than she says.",
        "note": "certainty -> indicativo, sabe and not saiba"
+      },
+      {
+       "hr": "É preciso que todos assinem o documento antes de sexta-feira.",
+       "en": "It is necessary that everyone sign the document before Friday.",
+       "note": "assinar -> que eles assinem"
+      },
+      {
+       "hr": "Convém que leves um casaco, à noite arrefece bastante.",
+       "en": "It's advisable that you take a jacket, it gets quite cold at night.",
+       "note": "convir -> convém que + conjuntivo"
+      },
+      {
+       "hr": "É raro que ele chegue atrasado às reuniões.",
+       "en": "It's rare for him to arrive late to meetings.",
+       "note": "raridade/dúvida -> chegue"
       }
      ],
      "sources": [
@@ -4000,6 +4017,19 @@
        ],
        "answer": "É verdade que o preço subiu.",
        "explanation": "É verdade que presents the information as a fact, so the indicative subiu is used. The other three express value, feeling or doubt and need the subjunctive."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Convém que ___ o guarda-chuva, pode chover mais logo.",
+       "difficulty": 6,
+       "options": [
+        "levas",
+        "leves",
+        "levavas",
+        "levarás"
+       ],
+       "answer": "leves",
+       "explanation": "Convém que is another impersonal expression of value, so it takes the present subjunctive leves."
       },
       {
        "type": "FILL",
@@ -4150,6 +4180,21 @@
        "hr": "Vivo numa rua que tem muito comércio.",
        "en": "I live on a street that has a lot of shops.",
        "note": "a real street -> tem"
+      },
+      {
+       "hr": "Há alguma loja aqui perto que venda selos?",
+       "en": "Is there a shop nearby that sells stamps?",
+       "note": "existence in question -> venda"
+      },
+      {
+       "hr": "Precisamos de alguém que fale alemão fluentemente.",
+       "en": "We need someone who speaks German fluently.",
+       "note": "unidentified person -> fale"
+      },
+      {
+       "hr": "Trabalho num escritório que fica no oitavo andar.",
+       "en": "I work in an office that is on the eighth floor.",
+       "note": "a real, known office -> fica"
       }
      ],
      "sources": [
@@ -4187,6 +4232,19 @@
        ],
        "answer": "Vivo numa casa que tem jardim.",
        "explanation": "Only this sentence uses the indicative tem, which shows the house is real and known."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Há alguma farmácia aqui que ___ aberta a esta hora?",
+       "difficulty": 6,
+       "options": [
+        "está",
+        "esteja",
+        "estava",
+        "estará"
+       ],
+       "answer": "esteja",
+       "explanation": "Asking whether something exists puts the relative clause in doubt, so the subjunctive esteja is required."
       },
       {
        "type": "FILL",
@@ -4337,6 +4395,21 @@
        "hr": "Ainda que custe caro, vale sempre a pena viajar.",
        "en": "Even if it is expensive, travelling is always worth it.",
        "note": "ainda que works like embora"
+      },
+      {
+       "hr": "Por muito que treine, nunca corro tão depressa como ele.",
+       "en": "However much I train, I never run as fast as him.",
+       "note": "por muito que -> conjuntivo, like embora"
+      },
+      {
+       "hr": "Ainda que não concorde contigo, respeito a tua opinião.",
+       "en": "Even though I do not agree with you, I respect your opinion.",
+       "note": "ainda que -> concorde"
+      },
+      {
+       "hr": "Nem que chova, vamos à corrida de sábado.",
+       "en": "Even if it rains, we are going to Saturday's race.",
+       "note": "nem que -> conjuntivo, colloquial concession"
       }
      ],
      "sources": [
@@ -4374,6 +4447,19 @@
        ],
        "answer": "apesar de",
        "explanation": "Apesar de takes an infinitive or a noun. The other three introduce a clause with a verb in the subjunctive."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Por muito que ele ___, nunca fica satisfeito.",
+       "difficulty": 7,
+       "options": [
+        "trabalha",
+        "trabalhe",
+        "trabalhava",
+        "trabalhará"
+       ],
+       "answer": "trabalhe",
+       "explanation": "Por muito que behaves like embora and forces the present subjunctive trabalhe."
       },
       {
        "type": "FILL",
@@ -4524,6 +4610,21 @@
        "hr": "Como não tinha o telemóvel comigo, não te consegui avisar.",
        "en": "As I did not have my phone with me, I could not let you know.",
        "note": "Como only works at the start of the sentence"
+      },
+      {
+       "hr": "Por causa do trânsito, cheguei quase uma hora atrasado.",
+       "en": "Because of the traffic, I arrived almost an hour late.",
+       "note": "por causa de + nome, everyday register"
+      },
+      {
+       "hr": "Já que estás a cozinhar, aproveito para pôr a mesa.",
+       "en": "Since you are cooking, I will take the chance to set the table.",
+       "note": "já que, informal equivalent of visto que"
+      },
+      {
+       "hr": "Dado que os preços subiram, decidimos mudar de fornecedor.",
+       "en": "Given that prices went up, we decided to change supplier.",
+       "note": "dado que, formal, like visto que"
       }
      ],
      "sources": [
@@ -4561,6 +4662,19 @@
        ],
        "answer": "Uma vez que o prazo terminou, não aceitamos mais candidaturas.",
        "explanation": "Uma vez que belongs to formal register and opens the sentence. Porque is neutral and normally follows the main clause."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "___ estás a cozinhar, vou pôr a mesa.",
+       "difficulty": 6,
+       "options": [
+        "Já que",
+        "Devido a",
+        "Por causa",
+        "A fim de"
+       ],
+       "answer": "Já que",
+       "explanation": "Já que introduces a full clause with a conjugated verb. Devido a and por causa de need a noun, and a fim de introduces a purpose, not a reason."
       },
       {
        "type": "FILL",
@@ -4715,6 +4829,21 @@
        "hr": "O quarto era tão pequeno que a mala não cabia.",
        "en": "The room was so small that the suitcase did not fit.",
        "note": "tão pequeno, never tanto pequeno"
+      },
+      {
+       "hr": "Ela é tão simpática que toda a gente gosta dela.",
+       "en": "She is so nice that everyone likes her.",
+       "note": "tão plus adjective"
+      },
+      {
+       "hr": "Tínhamos tanta fome que comemos tudo em cinco minutos.",
+       "en": "We were so hungry that we ate everything in five minutes.",
+       "note": "tanta agrees with fome"
+      },
+      {
+       "hr": "Ele conduz de tal maneira que mete medo aos passageiros.",
+       "en": "He drives in such a way that it scares the passengers.",
+       "note": "de tal maneira que goes with a verb"
       }
      ],
      "sources": [
@@ -4752,6 +4881,19 @@
        ],
        "answer": "Ele fala tão depressa que ninguém percebe.",
        "explanation": "Depressa is an adverb, and adverbs and adjectives take tão."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Tínhamos ___ fome que comemos tudo em cinco minutos.",
+       "difficulty": 6,
+       "options": [
+        "tão",
+        "tanto",
+        "tanta",
+        "tantos"
+       ],
+       "answer": "tanta",
+       "explanation": "Fome is a feminine singular noun, so the intensifier agreeing with it is tanta."
       },
       {
        "type": "FILL",
@@ -4910,6 +5052,21 @@
        "hr": "Vou repetir a morada para que não haja enganos.",
        "en": "I am going to repeat the address so that there are no mistakes.",
        "note": "haver -> que haja"
+      },
+      {
+       "hr": "Liguei o alarme para que ninguém entrasse durante a noite.",
+       "en": "I turned on the alarm so that nobody would get in during the night.",
+       "note": "different subject, past tense -> entrasse"
+      },
+      {
+       "hr": "Poupo todos os meses para poder viajar no verão.",
+       "en": "I save every month to be able to travel in summer.",
+       "note": "same subject -> para plus infinitivo"
+      },
+      {
+       "hr": "A empresa mudou o horário de modo a facilitar a vida aos pais.",
+       "en": "The company changed the schedule in order to make life easier for parents.",
+       "note": "de modo a plus infinitivo, formal like a fim de"
       }
      ],
      "sources": [
@@ -4947,6 +5104,19 @@
        ],
        "answer": "com o objetivo de",
        "explanation": "Com o objetivo de always ends in de plus infinitive. The other three take que plus a verb in the subjunctive."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "A câmara instalou mais candeeiros de modo a ___ a segurança na rua.",
+       "difficulty": 6,
+       "options": [
+        "aumenta",
+        "aumentar",
+        "aumente",
+        "aumentava"
+       ],
+       "answer": "aumentar",
+       "explanation": "De modo a behaves like a fim de and takes an infinitive, never a conjugated verb."
       },
       {
        "type": "FILL",
@@ -5101,6 +5271,21 @@
        "hr": "Mal saímos de casa, começou a chover.",
        "en": "The moment we left home, it started to rain.",
        "note": "mal is the shortest way to say as soon as"
+      },
+      {
+       "hr": "Depois de jantarmos, vamos dar um passeio.",
+       "en": "After we have dinner, we are going for a walk.",
+       "note": "depois de plus infinitivo pessoal"
+      },
+      {
+       "hr": "Antes de saíres, verifica se desligaste o forno.",
+       "en": "Before you leave, check that you turned off the oven.",
+       "note": "antes de plus infinitivo pessoal"
+      },
+      {
+       "hr": "Até chegares, vou preparar tudo.",
+       "en": "Until you arrive, I am going to get everything ready.",
+       "note": "até plus infinitivo pessoal"
       }
      ],
      "sources": [
@@ -5138,6 +5323,19 @@
        ],
        "answer": "Sempre que como marisco, fico com alergia.",
        "explanation": "Sempre que with the present indicative marks a repeated situation. The other three describe one completed moment in the past."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "___ saíres, verifica se desligaste o forno.",
+       "difficulty": 6,
+       "options": [
+        "Antes de",
+        "Até",
+        "Enquanto",
+        "Assim"
+       ],
+       "answer": "Antes de",
+       "explanation": "Antes de is followed directly by the personal infinitive saíres. Até and enquanto do not fit this meaning, and assim needs que before a conjugated verb."
       },
       {
        "type": "FILL",
@@ -5290,6 +5488,21 @@
        "hr": "Eu tenho as fotografias do casamento e mostro-tas depois.",
        "en": "I have the wedding photos and I will show them to you later.",
        "note": "te plus as -> tas"
+      },
+      {
+       "hr": "O banco pediu-me os documentos e enviei-lhos por email.",
+       "en": "The bank asked me for the documents and I sent them to it by email.",
+       "note": "lhe plus os -> lhos"
+      },
+      {
+       "hr": "Perdi o guarda-chuva, mas o meu colega emprestou-mo.",
+       "en": "I lost my umbrella, but my colleague lent me his.",
+       "note": "me plus o -> mo"
+      },
+      {
+       "hr": "O professor pediu a redação e o aluno entregou-lha atrasada.",
+       "en": "The teacher asked for the essay and the student handed it in to him late.",
+       "note": "lhe plus a -> lha"
       }
      ],
      "sources": [
@@ -5327,6 +5540,19 @@
        ],
        "answer": "lhas",
        "explanation": "Lhe keeps its lh and takes the ending of the direct pronoun, so lhe plus as gives lhas."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "O banco pediu-me os documentos e eu enviei-___ ontem.",
+       "difficulty": 7,
+       "options": [
+        "lhos",
+        "lhas",
+        "mos",
+        "tos"
+       ],
+       "answer": "lhos",
+       "explanation": "Documentos is masculine plural and the receiver is o banco (lhe), so lhe plus os fuses into lhos."
       },
       {
        "type": "FILL",
@@ -5477,6 +5703,21 @@
        "hr": "Ninguém me quis dizer a verdade.",
        "en": "Nobody wanted to tell me the truth.",
        "note": "ninguém attracts the pronoun before quis"
+      },
+      {
+       "hr": "Ainda não consegui contactá-la esta semana.",
+       "en": "I still haven't managed to contact her this week.",
+       "note": "conseguir plus infinitivo, pronoun on the infinitive"
+      },
+      {
+       "hr": "Já a devíamos ter avisado sobre a mudança.",
+       "en": "We should have already warned her about the change.",
+       "note": "já attracts the pronoun before the verb group"
+      },
+      {
+       "hr": "Estás a ajudá-lo com a mudança de casa?",
+       "en": "Are you helping him with the house move?",
+       "note": "estar a plus infinitivo, pronoun on the infinitive"
       }
      ],
      "sources": [
@@ -5514,6 +5755,19 @@
        ],
        "answer": "fazê-lo",
        "explanation": "Before o the infinitive loses its final r, the pronoun becomes lo and the stressed e takes a circumflex."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Escolha a frase com o pronome bem colocado.",
+       "difficulty": 7,
+       "options": [
+        "Já lhe devíamos ter ligado.",
+        "Já devíamos ter-lhe ligado.",
+        "Já devíamos lhe ter ligado.",
+        "Já ter-lhe devíamos ligado."
+       ],
+       "answer": "Já lhe devíamos ter ligado.",
+       "explanation": "Já is an attractor, so it pulls lhe in front of the whole verb group devíamos ter ligado."
       },
       {
        "type": "FILL",
@@ -5666,6 +5920,21 @@
        "hr": "Já reparaste naquele prédio novo ao pé do mercado?",
        "en": "Have you noticed that new building next to the market?",
        "note": "reparar em, em plus aquele -> naquele"
+      },
+      {
+       "hr": "Ele confia muito em ti, não o desiludas.",
+       "en": "He trusts you a lot, do not let him down.",
+       "note": "confiar em"
+      },
+      {
+       "hr": "Sonhei contigo esta noite, foi estranho.",
+       "en": "I dreamed about you last night, it was strange.",
+       "note": "sonhar com"
+      },
+      {
+       "hr": "Apaixonou-se por ela à primeira vista.",
+       "en": "He fell in love with her at first sight.",
+       "note": "apaixonar-se por"
       }
      ],
      "sources": [
@@ -5703,6 +5972,19 @@
        ],
        "answer": "Depende de ti.",
        "explanation": "Depender always governs de, and before a stressed pronoun the form is de ti."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Ele sempre sonhou ___ viajar pelo mundo.",
+       "difficulty": 6,
+       "options": [
+        "com",
+        "em",
+        "de",
+        "a"
+       ],
+       "answer": "com",
+       "explanation": "Sonhar governs com, whether the complement is a person, a thing or, as here, an infinitive."
       },
       {
        "type": "FILL",
@@ -5856,6 +6138,21 @@
        "hr": "As obras foram concluídas no mês passado.",
        "en": "The works were completed last month.",
        "note": "concluídas agrees with as obras"
+      },
+      {
+       "hr": "Compram-se carros usados em bom estado.",
+       "en": "Used cars in good condition are bought here.",
+       "note": "se passive, plural subject"
+      },
+      {
+       "hr": "O quadro foi pintado por um artista local.",
+       "en": "The painting was painted by a local artist.",
+       "note": "ser passive with an agent"
+      },
+      {
+       "hr": "Este tipo de queijo faz-se na região do Alentejo.",
+       "en": "This type of cheese is made in the Alentejo region.",
+       "note": "se passive, singular subject"
       }
      ],
      "sources": [
@@ -5893,6 +6190,19 @@
        ],
        "answer": "A carta foi escrita pela advogada.",
        "explanation": "Only the passive with ser can add an agent introduced by por, here fused as pela advogada."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "O contrato ___ assinado pelos dois sócios ontem.",
+       "difficulty": 7,
+       "options": [
+        "foi",
+        "era",
+        "é",
+        "sido"
+       ],
+       "answer": "foi",
+       "explanation": "A single completed past event takes the pretérito perfeito of ser, foi, plus the participle assinado."
       },
       {
        "type": "FILL",
@@ -6045,6 +6355,21 @@
        "hr": "A escolha do candidato gerou muita discussão.",
        "en": "The choice of candidate caused a lot of discussion.",
        "note": "escolher -> a escolha"
+      },
+      {
+       "hr": "A mudança de horário afetou toda a gente.",
+       "en": "The change of schedule affected everyone.",
+       "note": "mudar -> a mudança"
+      },
+      {
+       "hr": "A produção da fábrica aumentou este trimestre.",
+       "en": "The factory's production increased this quarter.",
+       "note": "produzir -> a produção"
+      },
+      {
+       "hr": "A saída de emergência fica ao fundo do corredor.",
+       "en": "The emergency exit is at the end of the corridor.",
+       "note": "sair -> a saída"
       }
      ],
      "sources": [
@@ -6082,6 +6407,19 @@
        ],
        "answer": "feminine",
        "explanation": "This suffix produces feminine nouns, so they take a and uma: a construção, uma decisão."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which noun is correctly formed from *produzir*?",
+       "difficulty": 6,
+       "options": [
+        "produzimento",
+        "produção",
+        "produzura",
+        "produzagem"
+       ],
+       "answer": "produção",
+       "explanation": "Verbs like produzir form their noun with -ção, giving the feminine noun produção."
       },
       {
        "type": "FILL",
@@ -6236,6 +6574,21 @@
        "hr": "A mãezinha dele liga-lhe todos os dias.",
        "en": "His dear mother calls him every day.",
        "note": "mãe -> mãezinha, affection"
+      },
+      {
+       "hr": "Deixa-me só terminar esta tarefinha antes de sairmos.",
+       "en": "Just let me finish this little task before we leave.",
+       "note": "tarefa -> tarefinha, unstressed -a drops before -inha"
+      },
+      {
+       "hr": "Este livro é um livrão, tem mais de mil páginas.",
+       "en": "This book is a real doorstopper, it has more than a thousand pages.",
+       "note": "livro -> livrão, augmentative for size"
+      },
+      {
+       "hr": "Ele ficou caladinho o jantar todo, acho que estava chateado.",
+       "en": "He stayed all quiet through the whole dinner, I think he was annoyed.",
+       "note": "calado -> caladinho, softens the description"
       }
      ],
      "sources": [
@@ -6273,6 +6626,19 @@
        ],
        "answer": "-inho",
        "explanation": "The suffix -inho is the standard diminutive and often carries warmth rather than literal smallness."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which of these is an augmentative rather than a diminutive?",
+       "difficulty": 6,
+       "options": [
+        "livrinho",
+        "mesão",
+        "gatinho",
+        "bocadinho"
+       ],
+       "answer": "mesão",
+       "explanation": "The suffix -ão marks the augmentative, so mesa gives mesão. The other three use the diminutive suffix -inho."
       },
       {
        "type": "FILL",
@@ -6427,6 +6793,21 @@
        "hr": "Ele não estuda nem trabalha, portanto tem o dia todo livre.",
        "en": "He neither studies nor works, so he has the whole day free.",
        "note": "nem joins negatives, portanto concludes"
+      },
+      {
+       "hr": "Ele fala pouco, contudo é muito atento aos detalhes.",
+       "en": "He speaks little, however he is very attentive to detail.",
+       "note": "contudo, formal contrast like porém"
+      },
+      {
+       "hr": "Podes ficar cá ou podes ir com eles, a escolha é tua.",
+       "en": "You can stay here or you can go with them, the choice is yours.",
+       "note": "ou introduces an alternative"
+      },
+      {
+       "hr": "O relatório está pronto, além disso já foi revisto.",
+       "en": "The report is ready, and it has also already been reviewed.",
+       "note": "além disso adds a further point"
       }
      ],
      "sources": [
@@ -6464,6 +6845,19 @@
        ],
        "answer": "isto é",
        "explanation": "Isto é and ou seja restate the previous idea in other words. The other three mark contrast."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which conjunction adds a further point to what was already said?",
+       "difficulty": 6,
+       "options": [
+        "além disso",
+        "mas",
+        "ou seja",
+        "nem"
+       ],
+       "answer": "além disso",
+       "explanation": "Além disso adds new information. Mas and nem contrast or negate, and ou seja rephrases the previous idea."
       },
       {
        "type": "FILL",
@@ -6616,6 +7010,21 @@
        "hr": "Ele contou que já tinha visitado o Porto duas vezes.",
        "en": "He said he had already visited Porto twice.",
        "note": "earlier than the reporting verb"
+      },
+      {
+       "hr": "Enquanto estudava, ouvia sempre música clássica.",
+       "en": "While I studied, I always listened to classical music.",
+       "note": "imperfeito for a background habit"
+      },
+      {
+       "hr": "Já tínhamos jantado quando eles chegaram.",
+       "en": "We had already had dinner when they arrived.",
+       "note": "tínhamos jantado happens first"
+      },
+      {
+       "hr": "Naquele dia choveu tanto que cancelaram o jogo.",
+       "en": "That day it rained so much that they cancelled the game.",
+       "note": "pretérito perfeito, single completed events"
       }
      ],
      "sources": [
@@ -6653,6 +7062,19 @@
        ],
        "answer": "Aos domingos almoçávamos sempre em casa da avó.",
        "explanation": "The imperfeito almoçávamos with sempre marks a habit, while the other options refer to single or earlier events."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Enquanto eu ___, o meu irmão via televisão.",
+       "difficulty": 6,
+       "options": [
+        "estudei",
+        "estudava",
+        "tinha estudado",
+        "estude"
+       ],
+       "answer": "estudava",
+       "explanation": "Enquanto sets a background action running alongside another, which is exactly what the imperfeito expresses."
       },
       {
        "type": "FILL",
@@ -6803,6 +7225,21 @@
        "hr": "De vez em quando salto o pequeno-almoço, mas depois arrependo-me.",
        "en": "Every now and then I skip breakfast, but then I regret it.",
        "note": "arrepender-se, enclisis in an affirmative clause"
+      },
+      {
+       "hr": "Costumo beber muita água ao longo do dia.",
+       "en": "I usually drink a lot of water throughout the day.",
+       "note": "costumar for a daily habit"
+      },
+      {
+       "hr": "Não me apetece nada fazer exercício hoje.",
+       "en": "I really don't feel like exercising today.",
+       "note": "não pulls the pronoun forward: não me apetece"
+      },
+      {
+       "hr": "Sinto-me com mais energia desde que deixei de fumar.",
+       "en": "I feel more energetic since I stopped smoking.",
+       "note": "sentir-se, enclisis in an affirmative clause"
       }
      ],
      "sources": [
@@ -6840,6 +7277,19 @@
        ],
        "answer": "Nunca me deito depois da meia-noite.",
        "explanation": "Negative words such as nunca, não and ninguém attract the pronoun in front of the verb, so the hyphenated ending is dropped."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Choose the natural way to say 'I don't feel like exercising today.'",
+       "difficulty": 6,
+       "options": [
+        "Não me apetece fazer exercício hoje.",
+        "Não apetece-me fazer exercício hoje.",
+        "Não me apetece-me fazer exercício hoje.",
+        "Apetece não me fazer exercício hoje."
+       ],
+       "answer": "Não me apetece fazer exercício hoje.",
+       "explanation": "Não attracts the pronoun me in front of the verb, so it can never stay attached with a hyphen after a negative word."
       },
       {
        "type": "FILL",
@@ -6990,6 +7440,21 @@
        "hr": "O pior é que não há estacionamento nenhum à noite.",
        "en": "The worst thing is that there is no parking at all at night.",
        "note": "o pior é que + indicativo"
+      },
+      {
+       "hr": "Viver no centro tem a vantagem de tudo ficar perto.",
+       "en": "Living in the centre has the advantage that everything is close by.",
+       "note": "a vantagem de plus infinitivo"
+      },
+      {
+       "hr": "Um inconveniente é o barulho constante do trânsito.",
+       "en": "One drawback is the constant traffic noise.",
+       "note": "inconveniente = downside, drawback"
+      },
+      {
+       "hr": "Ao ponderar os prós e os contras, acabei por ficar no mesmo bairro.",
+       "en": "When weighing the pros and cons, I ended up staying in the same neighbourhood.",
+       "note": "pesar/ponderar os prós e os contras, fixed expression"
       }
      ],
      "sources": [
@@ -7027,6 +7492,19 @@
        ],
        "answer": "de",
        "explanation": "Apesar is always followed by de before an infinitive. Apesar de que is not used in careful European Portuguese."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which noun means 'drawback, disadvantage' in this context?",
+       "difficulty": 5,
+       "options": [
+        "vantagem",
+        "inconveniente",
+        "lado",
+        "vizinhança"
+       ],
+       "answer": "inconveniente",
+       "explanation": "Inconveniente names the downside of a balance, the opposite of vantagem."
       },
       {
        "type": "FILL",
@@ -12982,7 +13460,7 @@
         "correcta",
         "certa"
        ],
-       "explanation": "'Escolha a opção correta' is the standard instruction on every CAPLE reading task, recognise it instantly on exam day."
+       "explanation": "'Escolha a opção correta' is the standard instruction on every DEPLE reading task, recognise it instantly on exam day."
       },
       {
        "type": "REORDER",
@@ -13317,8 +13795,8 @@
      "intro": "The stock phrases of Portuguese announcements and recorded messages, the exact language of the DEPLE listening recordings.",
      "items": [
       {
-       "hr": "O comboio Intercidades com destino a Faro vai efetuar a sua partida da linha três.",
-       "en": "The Intercidades train to Faro is about to depart from platform three.",
+       "hr": "O comboio direto com destino a Faro vai efetuar a sua partida da linha três.",
+       "en": "The direct train to Faro is about to depart from platform three.",
        "note": "'linha' = platform in Portuguese stations, a classic listening detail"
       },
       {
@@ -13361,11 +13839,11 @@
     {
      "type": "EXERCISE",
      "title": "Compreensão do oral tipo DEPLE",
-     "intro": "Read this station announcement as if you had just heard it once, then answer from the details. TRANSCRIPT: 'Bom dia. Informamos os passageiros de que o comboio Alfa Pendular das 10h15 com destino ao Porto, Campanhã se encontra atrasado cerca de vinte minutos. A saída está agora prevista para as 10h35, na linha cinco. Os passageiros com bilhete para este comboio podem, se preferirem, viajar no Intercidades das 10h50, sem custos adicionais, mediante apresentação do bilhete. Lembramos ainda que amanhã, sábado, os comboios urbanos de Sintra funcionam com horário reduzido devido a trabalhos na via. Para mais informações, dirija-se ao balcão de apoio ao cliente.'",
+     "intro": "Read this station announcement as if you had just heard it once, then answer from the details. TRANSCRIPT: 'Bom dia. Informamos os passageiros de que o comboio expresso das 10h15 com destino ao Porto, Campanhã se encontra atrasado cerca de vinte minutos. A saída está agora prevista para as 10h35, na linha cinco. Os passageiros com bilhete para este comboio podem, se preferirem, viajar no direto das 10h50, sem custos adicionais, mediante apresentação do bilhete. Lembramos ainda que amanhã, sábado, os comboios urbanos de Sintra funcionam com horário reduzido devido a trabalhos na via. Para mais informações, dirija-se ao balcão de apoio ao cliente.'",
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "How late is the 10:15 Alfa Pendular to Porto?",
+       "prompt": "How late is the 10:15 express train to Porto?",
        "difficulty": 5,
        "options": [
         "cerca de vinte minutos",
@@ -13394,13 +13872,13 @@
        "prompt": "What can passengers with a ticket for the delayed train do?",
        "difficulty": 6,
        "options": [
-        "viajar no Intercidades das 10h50 sem pagar mais",
+        "viajar no direto das 10h50 sem pagar mais",
         "pedir o reembolso total na linha cinco",
         "apanhar um autocarro gratuito para o Porto",
         "esperar pelo comboio de amanhã"
        ],
-       "answer": "viajar no Intercidades das 10h50 sem pagar mais",
-       "explanation": "'Podem viajar no Intercidades das 10h50, sem custos adicionais', they may take the 10:50 train at no extra cost, just by showing their ticket."
+       "answer": "viajar no direto das 10h50 sem pagar mais",
+       "explanation": "'Podem viajar no direto das 10h50, sem custos adicionais', they may take the 10:50 train at no extra cost, just by showing their ticket."
       },
       {
        "type": "MCQ",
@@ -13472,8 +13950,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Bom dia. Ouvi o aviso, mas não percebi bem: o Alfa das 10h15 parte de que linha?",
-       "en": "Good morning. I heard the announcement but didn't quite catch it: which platform does the 10:15 Alfa leave from?"
+       "hr": "Bom dia. Ouvi o aviso, mas não percebi bem: o expresso das 10h15 parte de que linha?",
+       "en": "Good morning. I heard the announcement but didn't quite catch it: which platform does the 10:15 express leave from?"
       },
       {
        "speaker": "Partner",
@@ -13482,8 +13960,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "E posso usar o meu bilhete no Intercidades das 10h50?",
-       "en": "And can I use my ticket on the 10:50 Intercidades?"
+       "hr": "E posso usar o meu bilhete no direto das 10h50?",
+       "en": "And can I use my ticket on the 10:50 direct train?"
       },
       {
        "speaker": "Partner",
@@ -13772,12 +14250,12 @@
     {
      "type": "LEARN",
      "title": "O dia do exame DEPLE",
-     "intro": "The exam-day rundown: what the DEPLE consists of, how it is weighted, and exactly what you need to pass, verified against the CAPLE rules.",
+     "intro": "The exam-day rundown: what the DEPLE consists of, how it is weighted, and exactly what you need to pass, verified against the official rules.",
      "items": [
       {
        "hr": "O DEPLE tem quatro componentes: Compreensão da Leitura, Produção e Interação Escritas, Compreensão do Oral e Produção e Interação Orais.",
        "en": "The DEPLE has four components: Reading, Writing, Listening and Speaking.",
-       "note": "the B1 certificate of CAPLE, Universidade de Lisboa"
+       "note": "the official B1 certificate exam"
       },
       {
        "hr": "As quatro componentes têm peso igual: cada uma vale 25% da nota final.",
@@ -13792,10 +14270,10 @@
       {
        "hr": "Para passar, precisa de Suficiente: uma média global de, pelo menos, 55%.",
        "en": "To pass you need 'Suficiente': a global average of at least 55%.",
-       "note": "Suficiente covers 55%, 69%, the pass threshold"
+       "note": "Suficiente covers 55% to 69%, the pass threshold"
       },
       {
-       "hr": "Bom corresponde a 70%, 84% e Muito Bom a 85%, 100%.",
+       "hr": "Bom corresponde a 70%-84% e Muito Bom a 85%-100%.",
        "en": "'Bom' corresponds to 70-84% and 'Muito Bom' to 85-100%.",
        "note": "the two bands above the pass mark"
       },

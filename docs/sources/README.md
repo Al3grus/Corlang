@@ -65,7 +65,8 @@ divergences are noted contrastively, never mixed in.
 | `goethe-wortliste` | Goethe-Institut official *Wortliste* A1/A2/B1, the per-level lexical inventory anchoring the deck's level banding | [goethe-exams.md](goethe-exams.md) |
 | `stag-10` | Staatsangehörigkeitsgesetz § 10, the statutory B1 language requirement for naturalisation | [goethe-exams.md](goethe-exams.md) |
 
-### Portuguese, European (pt) — target DIPLE B2 (CAPLE), milestone DEPLE B1
+### Portuguese, European (pt) — target DEPLE B1 (CAPLE); DIPLE B2 hidden 2026-07-20 (Portugal
+requires only A2 for nationality, so B2 is legacy scope, not the live course target)
 
 Corlang teaches **Português europeu (pt-PT)** exclusively — most platforms only offer Brazilian
 Portuguese. European lexis/grammar (tu, ênclise, estar a + infinitivo, pequeno-almoço…) is an

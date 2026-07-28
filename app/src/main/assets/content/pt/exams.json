@@ -3,24 +3,30 @@
   "id": "pt-a1-acesso-mock",
   "levelId": "A1",
   "title": "Exame-modelo ACESSO (A1)",
-  "description": "A full ACESSO (CAPLE A1) mock across the four official components.",
-  "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
+  "description": "A generic four-part practice mock (reading, writing, listening, speaking) at ACESSO (CAPLE A1) level. CAPLE does not publish a detailed ACESSO exam-format digest, so this structure is illustrative practice, not a verified simulation of the official exam's component layout.",
+  "passRule": "Cada componente vale 25% nesta simulação genérica, seguindo o padrão geral dos exames CAPLE de nível superior (não há uma grelha ACESSO publicada). Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
   "sources": [
    "caple",
-   "deple-sample"
+   "referencial-camoes"
   ],
   "sections": [
    {
     "id": "cl",
     "kind": "READING",
     "title": "Compreensão da Leitura",
-    "instructions": "Read the notice and answer.",
+    "instructions": "Read the two notices and answer.",
     "passPercent": null,
     "passages": [
      {
       "id": "cl1",
       "title": "Horário da Biblioteca Municipal",
       "text": "Biblioteca Municipal. A biblioteca está aberta de segunda a sexta, das 10h00 às 19h00, e ao sábado, das 10h00 às 13h00. Ao domingo está fechada. A entrada é gratuita. Para levar livros para casa, é preciso fazer o cartão de leitor: custa 5 euros e é válido por um ano. As crianças até aos 12 anos não pagam. No primeiro andar há uma sala de estudo com internet grátis. É proibido comer e falar ao telemóvel dentro da biblioteca.",
+      "audioOnly": false
+     },
+     {
+      "id": "cl2",
+      "title": "Perdido: um cão",
+      "text": "Perdi o meu cão perto do parque na terça-feira à tarde. Chama-se Rex, é pequeno e castanho, e tem uma coleira azul. Se o encontrar, ligue para 91 234 56 78. Há uma recompensa de 20 euros. Muito obrigado!",
       "audioOnly": false
      }
     ],
@@ -69,8 +75,8 @@
       "prompt": "Quem não paga o cartão?",
       "options": [
        "As crianças até aos 12 anos",
-       "Os estudantes",
-       "Toda a gente",
+       "Os estudantes universitários",
+       "Toda a gente que tiver mais de 65 anos",
        "Ninguém"
       ],
       "answer": "As crianças até aos 12 anos",
@@ -82,13 +88,39 @@
       "prompt": "O que há no primeiro andar?",
       "options": [
        "Uma sala de estudo com internet",
-       "Um café",
-       "Uma loja de livros",
+       "Um café com esplanada",
+       "Uma sala de leitura só para crianças",
        "Uma sala de cinema"
       ],
       "answer": "Uma sala de estudo com internet",
       "difficulty": 3,
       "explanation": "The first floor has a study room with free internet."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quando é que o cão se perdeu?",
+      "options": [
+       "Na terça-feira à tarde",
+       "Na segunda-feira de manhã",
+       "No domingo à noite",
+       "No sábado"
+      ],
+      "answer": "Na terça-feira à tarde",
+      "difficulty": 2,
+      "explanation": "The dog went missing on Tuesday afternoon ('na terça-feira à tarde')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Como é o cão Rex?",
+      "options": [
+       "Pequeno e castanho, com coleira azul",
+       "Grande e preto",
+       "Branco, sem coleira",
+       "Cinzento e muito velho"
+      ],
+      "answer": "Pequeno e castanho, com coleira azul",
+      "difficulty": 3,
+      "explanation": "Rex is described as small and brown, wearing a blue collar."
      }
     ]
    },
@@ -116,13 +148,19 @@
     "id": "co",
     "kind": "LISTENING",
     "title": "Compreensão do Oral",
-    "instructions": "Listen to the announcement (played by the app's Portuguese voice), then answer.",
+    "instructions": "Listen to the two announcements (played by the app's Portuguese voice), then answer.",
     "passPercent": null,
     "passages": [
      {
       "id": "co1",
       "title": "Anúncio no supermercado",
       "text": "Boa tarde! Bem-vindos ao supermercado Bom Preço. Hoje temos promoções especiais: o quilo de maçãs custa só um euro e o pão está a metade do preço. Na peixaria, o peixe fresco chega às nove da manhã. O supermercado está aberto todos os dias, das oito da manhã às nove da noite. Ao domingo fechamos às duas da tarde. Obrigado pela sua visita e boas compras!",
+      "audioOnly": true
+     },
+     {
+      "id": "co2",
+      "title": "Anúncio na estação",
+      "text": "Atenção, senhoras e senhores: o comboio para Coimbra parte da linha dois dentro de cinco minutos. Por favor, dirijam-se à linha dois e tenham o bilhete na mão. Boa viagem!",
       "audioOnly": true
      }
     ],
@@ -132,9 +170,9 @@
       "prompt": "Onde se ouve esta mensagem?",
       "options": [
        "Num supermercado",
-       "Numa escola",
+       "Numa escola primária",
        "Num restaurante",
-       "Numa farmácia"
+       "Numa farmácia de bairro"
       ],
       "answer": "Num supermercado",
       "difficulty": 2,
@@ -191,6 +229,32 @@
       "answer": "O pão",
       "difficulty": 3,
       "explanation": "The bread is at half price; the apples have their own one-euro promotion."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Para onde parte o comboio?",
+      "options": [
+       "Para Coimbra",
+       "Para o Porto",
+       "Para Faro",
+       "Para Braga"
+      ],
+      "answer": "Para Coimbra",
+      "difficulty": 2,
+      "explanation": "The announcement is for the train to Coimbra ('o comboio para Coimbra')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "De que linha parte o comboio?",
+      "options": [
+       "Da linha dois",
+       "Da linha um",
+       "Da linha três",
+       "Da linha quatro"
+      ],
+      "answer": "Da linha dois",
+      "difficulty": 3,
+      "explanation": "Passengers are told to go to platform two ('dirijam-se à linha dois')."
      }
     ]
    },
@@ -238,8 +302,8 @@
   "id": "pt-a2-ciple-mock",
   "levelId": "A2",
   "title": "Exame-modelo CIPLE (A2)",
-  "description": "A CIPLE (CAPLE A2) mock in the four-part practice format (the real CIPLE merges reading and writing into one component).",
-  "passRule": "Cada componente vale 25%. Aprovação = Suficiente, média global ≥ 55%. Não há mínimo por componente.",
+  "description": "A CIPLE (CAPLE A2) mock split into four equally-weighted practice sections for app navigation. The real CIPLE has only three components and weights them unevenly: Compreensão da Leitura e Produção Escrita merged (45%), Compreensão do Oral (30%), Produção Oral (25%); this app version does not reproduce those exact weights.",
+  "passRule": "Nesta simulação, cada uma das quatro secções vale 25% e a aprovação (Suficiente) exige uma média global ≥ 55%, sem mínimo por secção. No exame oficial, a Compreensão da Leitura e a Produção Escritas formam um único componente que vale 45%, a Compreensão do Oral vale 30% e a Produção Oral vale 25%; os pesos desta simulação são iguais entre si por simplicidade e não reproduzem esses pesos oficiais.",
   "sources": [
    "caple",
    "deple-sample"
@@ -249,13 +313,19 @@
     "id": "cl",
     "kind": "READING",
     "title": "Compreensão da Leitura",
-    "instructions": "Read the email and answer.",
+    "instructions": "Read the two texts and answer.",
     "passPercent": null,
     "passages": [
      {
       "id": "cl1",
       "title": "E-mail da Marta",
-      "text": "De: Marta. Assunto: Visita ao Porto. Olá, João! Que bom que vens visitar-me em outubro! Deixa-me dar-te algumas informações. O melhor é vires de comboio: a viagem de Lisboa demora menos de três horas e a estação fica perto da minha casa. Não tragas roupa quente demais: em outubro ainda está bom tempo, mas traz um casaco impermeável, porque às vezes chove. No sábado vamos visitar a Livraria Lello e as caves de vinho, e no domingo almoçamos em casa da minha avó, que faz um bacalhau ótimo. Diz-me a que horas chegas para eu ir buscar-te à estação. Beijinhos, Marta",
+      "text": "De: Marta. Assunto: Visita ao Porto. Olá, João! Que bom que vens visitar-me em outubro! Deixa-me dar-te algumas informações. O melhor é vires de comboio: a viagem de Lisboa demora menos de três horas e a estação fica perto da minha casa. Não tragas roupa quente demais: em outubro ainda está bom tempo, mas traz um casaco impermeável, porque às vezes chove. No sábado vamos visitar a Livraria Folha Dourada e as caves de vinho, e no domingo almoçamos em casa da minha avó, que faz um bacalhau ótimo. Diz-me a que horas chegas para eu ir buscar-te à estação. Beijinhos, Marta",
+      "audioOnly": false
+     },
+     {
+      "id": "cl2",
+      "title": "Previsão do tempo para o fim de semana",
+      "text": "Previsão para o Porto: sábado, céu limpo e vinte e dois graus, boa altura para passear a pé pela cidade. Domingo, algumas nuvens de manhã e possibilidade de chuva à tarde, com dezoito graus. Leve sempre um guarda-chuva pequeno na mala.",
       "audioOnly": false
      }
     ],
@@ -265,8 +335,8 @@
       "prompt": "Porque é que a Marta escreve ao João?",
       "options": [
        "Para dar informações sobre a visita dele",
-       "Para cancelar a visita",
-       "Para pedir dinheiro emprestado",
+       "Para cancelar a visita ao Porto",
+       "Para pedir dinheiro emprestado para a viagem",
        "Para convidar a avó"
       ],
       "answer": "Para dar informações sobre a visita dele",
@@ -291,7 +361,7 @@
       "prompt": "O que deve o João trazer?",
       "options": [
        "Um casaco impermeável",
-       "Roupa muito quente",
+       "Muita roupa muito quente para o frio",
        "Botas de neve",
        "Um guarda-sol"
       ],
@@ -304,26 +374,52 @@
       "prompt": "O que vão fazer no domingo?",
       "options": [
        "Almoçar em casa da avó",
-       "Visitar a Livraria Lello",
+       "Visitar a Livraria Folha Dourada",
        "Ver as caves de vinho",
        "Ir à praia"
       ],
       "answer": "Almoçar em casa da avó",
       "difficulty": 4,
-      "explanation": "Sunday is lunch at the grandmother's house; the Lello bookshop and the wine cellars are Saturday."
+      "explanation": "Sunday is lunch at the grandmother's house; the Folha Dourada bookshop and the wine cellars are Saturday."
      },
      {
       "type": "MCQ",
       "prompt": "O que pede a Marta no fim?",
       "options": [
        "A hora de chegada do João",
-       "O número de telefone",
+       "O número de telefone do hotel",
        "Uma fotografia",
        "A morada do João"
       ],
       "answer": "A hora de chegada do João",
       "difficulty": 5,
       "explanation": "She asks what time he arrives so she can pick him up at the station."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Como vai estar o tempo no sábado?",
+      "options": [
+       "Céu limpo",
+       "A chover todo o dia",
+       "Muito frio",
+       "Com neve"
+      ],
+      "answer": "Céu limpo",
+      "difficulty": 3,
+      "explanation": "Saturday is described as 'céu limpo' (clear sky) at twenty-two degrees."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que se deve levar na mala, segundo a previsão?",
+      "options": [
+       "Um guarda-chuva pequeno",
+       "Um casaco de inverno",
+       "Óculos de sol apenas",
+       "Botas de neve"
+      ],
+      "answer": "Um guarda-chuva pequeno",
+      "difficulty": 3,
+      "explanation": "Because of possible rain on Sunday, the forecast advises taking a small umbrella."
      }
     ]
    },
@@ -351,13 +447,19 @@
     "id": "co",
     "kind": "LISTENING",
     "title": "Compreensão do Oral",
-    "instructions": "Listen to the phone message (played by the app's Portuguese voice), then answer.",
+    "instructions": "Listen to the two phone messages (played by the app's Portuguese voice), then answer.",
     "passPercent": null,
     "passages": [
      {
       "id": "co1",
       "title": "Mensagem do consultório",
       "text": "Bom dia, esta é uma mensagem do consultório da doutora Fernandes. A sua consulta de quinta-feira às dez da manhã foi alterada para sexta-feira às três da tarde, porque a doutora tem uma reunião no hospital. Se não puder vir na sexta, telefone para remarcar. Lembre-se de trazer os resultados das análises e o cartão de utente. O consultório fica agora no segundo andar, ao lado da farmácia. Obrigado.",
+      "audioOnly": true
+     },
+     {
+      "id": "co2",
+      "title": "Mensagem da Sara",
+      "text": "Olá, é a Sara. Já não posso ir contigo ao cinema esta noite, porque tenho de acabar um trabalho para amanhã. Podemos ir amanhã à noite em vez de hoje? Liga-me depois para combinarmos a sessão. Desculpa a mudança de planos!",
       "audioOnly": true
      }
     ],
@@ -367,7 +469,7 @@
       "prompt": "Quem deixa a mensagem?",
       "options": [
        "O consultório da doutora Fernandes",
-       "O hospital",
+       "O hospital onde a doutora trabalha às vezes",
        "A farmácia",
        "Um amigo"
       ],
@@ -393,7 +495,7 @@
       "prompt": "Porque foi alterada a consulta?",
       "options": [
        "A doutora tem uma reunião",
-       "A doutora está doente",
+       "A doutora está doente e não pode vir",
        "O consultório fechou",
        "O doente pediu"
       ],
@@ -407,7 +509,7 @@
       "options": [
        "Os resultados das análises e o cartão de utente",
        "Só dinheiro",
-       "Uma receita antiga",
+       "Uma receita médica muito antiga que já não é válida",
        "Nada"
       ],
       "answer": "Os resultados das análises e o cartão de utente",
@@ -421,11 +523,37 @@
        "No segundo andar, ao lado da farmácia",
        "No hospital",
        "No primeiro andar",
-       "Em frente à estação"
+       "Em frente à estação de comboios da cidade"
       ],
       "answer": "No segundo andar, ao lado da farmácia",
       "difficulty": 5,
       "explanation": "The practice is now on the second floor, next to the pharmacy."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Porque é que a Sara não pode ir ao cinema hoje?",
+      "options": [
+       "Tem de acabar um trabalho",
+       "Está doente",
+       "Não tem dinheiro",
+       "Já viu o filme"
+      ],
+      "answer": "Tem de acabar um trabalho",
+      "difficulty": 3,
+      "explanation": "Sara says she has to finish an assignment due tomorrow ('tenho de acabar um trabalho para amanhã')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que propõe a Sara em vez de hoje?",
+      "options": [
+       "Ir ao cinema amanhã à noite",
+       "Ir ao cinema no fim de semana",
+       "Cancelar o cinema de vez",
+       "Ir ao cinema esta tarde"
+      ],
+      "answer": "Ir ao cinema amanhã à noite",
+      "difficulty": 4,
+      "explanation": "She proposes going to the cinema tomorrow night instead ('amanhã à noite em vez de hoje')."
      }
     ]
    },
@@ -484,13 +612,19 @@
     "id": "cl",
     "kind": "READING",
     "title": "Compreensão da Leitura",
-    "instructions": "Read the notice and answer.",
+    "instructions": "Read the two texts and answer.",
     "passPercent": null,
     "passages": [
      {
       "id": "cl1",
-      "title": "Aviso da Câmara Municipal de Braga",
-      "text": "Aviso, Câmara Municipal de Braga. Informam-se os munícipes de que a piscina municipal estará encerrada para obras de renovação entre 3 e 28 de fevereiro. Durante este período, os utentes com cartão podem utilizar gratuitamente a piscina da Rodovia, todos os dias, das 8h00 às 21h00. Está disponível um autocarro gratuito, com partida do centro da cidade de hora a hora. As aulas de natação para crianças continuam no pavilhão da escola secundária, à mesma hora, mas é necessário fazer nova inscrição no sítio da câmara na internet ou no balcão de atendimento até 30 de janeiro. Para mais informações, contacte o número 253 200 100 ou envie um e-mail para desporto@cm-braga.pt. Pedimos desculpa pelo incómodo.",
+      "title": "Aviso da Câmara Municipal",
+      "text": "Aviso, Câmara Municipal. Informam-se os munícipes de que a piscina municipal estará encerrada para obras de renovação entre 3 e 28 de fevereiro. Durante este período, os utentes com cartão podem utilizar gratuitamente a piscina da Rodovia, todos os dias, das 8h00 às 21h00. Está disponível um autocarro gratuito, com partida do centro da cidade de hora a hora. As aulas de natação para crianças continuam no pavilhão da escola secundária, à mesma hora, mas é necessário fazer nova inscrição no sítio da câmara na internet ou no balcão de atendimento até 30 de janeiro. Para mais informações, contacte a linha verde 800 200 100 ou envie um e-mail para geral@camara-municipal.pt. Pedimos desculpa pelo incómodo.",
+      "audioOnly": false
+     },
+     {
+      "id": "cl2",
+      "title": "Notícia breve: feira do livro",
+      "text": "A feira do livro regressa ao jardim central de sexta-feira a domingo, com entrada gratuita. Este ano participam mais de trinta editoras e há sessões de leitura para crianças todas as tardes. No sábado à noite, um escritor local apresenta o seu novo romance e responde a perguntas do público.",
       "audioOnly": false
      }
     ],
@@ -559,6 +693,32 @@
       "answer": "Fazer nova inscrição nas aulas de natação",
       "difficulty": 7,
       "explanation": "For the lessons to continue, a new enrolment ('nova inscrição') must be made online or at the service desk by 30 January."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quando é que a feira do livro acontece?",
+      "options": [
+       "De sexta-feira a domingo",
+       "Só ao sábado",
+       "Durante um mês inteiro",
+       "De segunda a quinta-feira"
+      ],
+      "answer": "De sexta-feira a domingo",
+      "difficulty": 5,
+      "explanation": "The book fair runs Friday to Sunday ('de sexta-feira a domingo')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que acontece no sábado à noite?",
+      "options": [
+       "Um escritor local apresenta o seu novo romance",
+       "Há um concerto de música clássica",
+       "A feira fecha mais cedo",
+       "Há sessões de leitura para crianças"
+      ],
+      "answer": "Um escritor local apresenta o seu novo romance",
+      "difficulty": 6,
+      "explanation": "On Saturday evening a local writer presents his new novel and takes questions; the children's reading sessions happen every afternoon, not specifically Saturday night."
      }
     ]
    },
@@ -586,13 +746,19 @@
     "id": "co",
     "kind": "LISTENING",
     "title": "Compreensão do Oral",
-    "instructions": "Listen to the phone message (played by the app's Portuguese voice), then answer.",
+    "instructions": "Listen to the two phone messages (played by the app's Portuguese voice), then answer.",
     "passPercent": null,
     "passages": [
      {
       "id": "co1",
       "title": "Mensagem no telemóvel",
       "text": "Olá, Ana, é a Sofia. Estou a ligar por causa do jantar de sábado. Afinal não podemos ir ao restaurante às oito, porque a minha irmã só sai do trabalho às oito e meia. Mudei a reserva para as nove, está bem? E há outra alteração: em vez do restaurante italiano, reservei mesa naquela marisqueira nova ao pé do mercado, porque o Pedro não gosta de massa. Não é preciso levares nada, mas, se quiseres, podes trazer uma sobremesa. Ah, e vem de autocarro, porque é impossível estacionar naquela zona ao fim de semana. Liga-me quando ouvires esta mensagem. Beijinhos!",
+      "audioOnly": true
+     },
+     {
+      "id": "co2",
+      "title": "Lembrete de consulta",
+      "text": "Boa tarde, esta é uma chamada automática para lembrar que tem uma consulta de dentista marcada para amanhã às onze horas. Se não puder comparecer, pedimos que cancele com pelo menos vinte e quatro horas de antecedência, através do número que aparece no seu telemóvel. Até amanhã.",
       "audioOnly": true
      }
     ],
@@ -603,7 +769,7 @@
       "options": [
        "Para mudar os planos do jantar de sábado",
        "Para cancelar o jantar de sábado",
-       "Para convidar a Ana para um almoço",
+       "Para convidar a Ana para um almoço de domingo",
        "Para pedir a receita de uma sobremesa"
       ],
       "answer": "Para mudar os planos do jantar de sábado",
@@ -654,13 +820,39 @@
       "prompt": "Como deve a Ana ir ao restaurante, e porquê?",
       "options": [
        "De autocarro, porque é impossível estacionar naquela zona",
-       "De carro, porque o restaurante tem parque",
+       "De carro, porque o restaurante tem um parque de estacionamento grande",
        "De metro, porque é mais rápido",
        "A pé, porque o restaurante é perto de casa dela"
       ],
       "answer": "De autocarro, porque é impossível estacionar naquela zona",
       "difficulty": 7,
       "explanation": "Sofia tells her to come by bus because parking in that area is impossible at the weekend."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Que tipo de consulta é lembrada na chamada?",
+      "options": [
+       "Uma consulta de dentista",
+       "Uma consulta médica geral",
+       "Uma consulta de oftalmologia",
+       "Uma consulta de fisioterapia"
+      ],
+      "answer": "Uma consulta de dentista",
+      "difficulty": 4,
+      "explanation": "The automated call is a reminder for a dentist appointment ('consulta de dentista')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "O que deve fazer quem não puder ir à consulta?",
+      "options": [
+       "Cancelar com pelo menos vinte e quatro horas de antecedência",
+       "Não fazer nada, a consulta cancela-se sozinha",
+       "Ir na mesma na semana seguinte",
+       "Enviar um e-mail no próprio dia"
+      ],
+      "answer": "Cancelar com pelo menos vinte e quatro horas de antecedência",
+      "difficulty": 5,
+      "explanation": "Patients who cannot attend are asked to cancel at least twenty-four hours in advance."
      }
     ]
    },
