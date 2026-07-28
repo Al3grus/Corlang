@@ -167,8 +167,8 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Seulement s'il faut que la fièvre continue.",
-       "en": "Only if the fever should continue."
+       "hr": "Seulement si la fièvre persiste.",
+       "en": "Only if the fever persists."
       }
      ],
      "sources": [
@@ -247,16 +247,16 @@
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "Choose the correct form: 'Je suis heureux que tu ___ réussi ton examen.'",
+       "prompt": "Choose the correct form: 'Je suis heureux que tu ___ content.'",
        "difficulty": 6,
        "options": [
-        "as",
-        "aies",
-        "auras",
-        "avoir"
+        "es",
+        "sois",
+        "seras",
+        "être"
        ],
-       "answer": "aies",
-       "explanation": "'être heureux que' triggers the subjunctive; here the passé du subjonctif uses 'aies' + past participle."
+       "answer": "sois",
+       "explanation": "'être heureux que' triggers the subjunctive; être → que tu sois."
       },
       {
        "type": "MCQ",
@@ -1388,7 +1388,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Complete the passive: 'Ces tableaux ___ ___ ___ par Monet.' (peindre, passé composé)",
+       "prompt": "Complete the passive: 'Ces tableaux ___ ___ ___ par un peintre inconnu.' (peindre, passé composé)",
        "difficulty": 6,
        "answer": "ont été peints",
        "explanation": "Passive passé composé: ont été + past participle 'peints', agreeing with the masculine plural subject."
@@ -2649,7 +2649,7 @@
    ]
   },
   {
-   "title": "Écrire une lettre ou un mél",
+   "title": "Écrire une lettre ou un e-mail",
    "objective": "Write a formal or informal letter and email choosing the appropriate register.",
    "paretoFocus": "Learn opening and closing formulas and register markers to structure any B1 letter or email.",
    "drills": [
@@ -2795,7 +2795,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Aider à écrire un mél",
+     "title": "Aider à écrire un e-mail",
      "intro": "You play 'Me', helping a friend choose the right register for an email.",
      "lines": [
       {
@@ -3102,7 +3102,7 @@
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "You hear: 'Le train à destination de Lyon partira à quai numéro 4.' What is announced?",
+       "prompt": "You hear: 'Le train à destination de Lyon partira du quai numéro 4.' What is announced?",
        "difficulty": 6,
        "options": [
         "A train arrival",
@@ -8378,12 +8378,12 @@
        "prompt": "Which formula correctly ends a formal application letter?",
        "difficulty": 7,
        "options": [
-        "Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.",
+        "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.",
         "Bien à toi.",
         "À plus tard, et merci d'avance.",
         "Je vous prie d'accepter mon amitié."
        ],
-       "answer": "Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.",
+       "answer": "Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.",
        "explanation": "The closing repeats the form of address used at the top and is fixed word for word."
       },
       {
@@ -8395,7 +8395,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Complete the closing: 'Je vous ___ d'agréer, Madame, Monsieur, mes salutations distinguées.'",
+       "prompt": "Complete the closing: 'Je vous ___ d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.'",
        "difficulty": 7,
        "answer": "prie",
        "explanation": "prier quelqu'un de + infinitive is the formal verb used in courtesy formulas."
@@ -10387,8 +10387,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Au Québec, on dit magasiner, et environ un mot sur dix me surprend encore.",
-       "en": "In Quebec, people say magasiner, and about one word in ten still surprises me."
+       "hr": "Au Québec, on dit magasiner, alors qu'ici on dit plutôt faire les courses, et environ un mot sur dix me surprend encore.",
+       "en": "In Quebec, people say magasiner, whereas here we tend to say faire les courses, and about one word in ten still surprises me."
       }
      ],
      "sources": [
@@ -12684,7 +12684,7 @@
    ]
   },
   {
-   "title": "Production écrite : le mél argumenté",
+   "title": "Production écrite : le courriel argumenté",
    "objective": "You can write a formal email that states a problem, justifies it with arguments and asks for a concrete answer.",
    "paretoFocus": "The opening line, the argument connectors and the closing formula are fixed blocks: learn them once and the only thing left to invent is your actual argument.",
    "drills": [
@@ -14144,7 +14144,7 @@
     {
      "type": "LEARN",
      "title": "Former et placer l'adverbe",
-     "intro": "Most adverbs add -ment to the feminine adjective: lente becomes lentement. Adjectives ending in -ant or -ent give -amment or -emment: prudent becomes prudemment. In compound tenses a short common adverb sits between the auxiliary and the participle; longer -ment adverbs usually follow the participle.",
+     "intro": "Most adverbs add -ment to the feminine adjective: lente becomes lentement. Adjectives ending in -ant or -ent give -amment or -emment: prudent becomes prudemment. Adverbs of degree/quantity (bien, mal, trop, vraiment, déjà, complètement) usually sit between the auxiliary and the participle; adverbs of manner in -ment describing how an action is done (poliment, lentement, prudemment) usually follow the participle.",
      "items": [
       {
        "hr": "Elle parle lentement et clairement.",
@@ -14164,7 +14164,7 @@
       {
        "hr": "J'ai complètement oublié notre rendez-vous.",
        "en": "I completely forgot our appointment.",
-       "note": "short adverb between auxiliary and participle"
+       "note": "adverb of degree, sits between auxiliary and participle"
       },
       {
        "hr": "Elle a répondu poliment à toutes les questions.",
@@ -14217,10 +14217,10 @@
       },
       {
        "type": "FILL",
-       "prompt": "Il a ___ répondu à la lettre. (poli)",
+       "prompt": "Il a répondu ___ à la lettre. (poli)",
        "difficulty": 6,
        "answer": "poliment",
-       "explanation": "Poli gives poliment; here it sits after the auxiliary and before the participle."
+       "explanation": "Poli gives poliment; here it sits after the participle."
       },
       {
        "type": "REORDER",
@@ -17796,7 +17796,7 @@
         "tenue",
         "voix",
         "panne",
-        "grêve"
+        "grève"
        ],
        "answer": "tenue",
        "explanation": "Une tenue is a whole outfit; the sentence is about clothing."
@@ -17852,7 +17852,7 @@
         "plus",
         "élégante"
        ],
-       "explanation": "Je trouve que introduces the opinion, and elegante agrees with tenue."
+       "explanation": "Je trouve que introduces the opinion, and élégante agrees with tenue."
       }
      ],
      "sources": [
@@ -18506,7 +18506,7 @@
        "note": "s'endormir = to fall asleep; midi = noon"
       },
       {
-       "hr": "À mon avis, une courte sieste l'après-midi est plus utile qu'un long grasse matinée.",
+       "hr": "À mon avis, une courte sieste l'après-midi est plus utile qu'une longue grasse matinée.",
        "en": "In my opinion, a short nap in the afternoon is more useful than a long lie-in.",
        "note": "la matinée = the morning as a stretch of time"
       },
@@ -19669,9 +19669,7 @@
        "difficulty": 7,
        "answer": "trempés",
        "explanation": "Tremper here means to get soaked; trempés agrees with a plural on.",
-       "accepted": [
-        "trempes"
-       ]
+       "accepted": []
       },
       {
        "type": "REORDER",
@@ -22223,7 +22221,7 @@
         "aie"
        ],
        "answer": "avais",
-       "explanation": "Si + imparfait expresses a hypothesis: si j'avais, je preparerais."
+       "explanation": "Si + imparfait expresses a hypothesis: si j'avais, je préparerais."
       },
       {
        "type": "FILL",
@@ -22257,7 +22255,7 @@
         "ce",
         "poste"
        ],
-       "explanation": "Penser + infinitive: je pense meriter, then the object ce poste."
+       "explanation": "Penser + infinitive: je pense mériter, then the object ce poste."
       }
      ],
      "sources": [
@@ -22328,7 +22326,7 @@
    "drills": [
     "Describe your ideal office in two sentences, saying why.",
     "Write a polite way to decline an extra task you cannot take on.",
-    "Use trois office words (réunion, collègue, deadline in French) in sentences."
+    "Use trois office words (réunion, collègue, délai) in sentences."
    ],
    "reviewBlock": {
     "minutes": 15,
@@ -24968,7 +24966,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "Recall of the pronoun en: Des chemises comme ça, j'___ ai déjà trois, je n'en achète pas.",
+       "prompt": "Recall of the pronoun en: Des chemises comme ça, j'___ ai déjà trois, je n'ai pas besoin d'en racheter.",
        "difficulty": 7,
        "options": [
         "y",
@@ -25498,6 +25496,11 @@
        "hr": "Il faut que les parents soient d'accord entre eux, sinon l'enfant joue l'un contre l'autre.",
        "en": "Parents need to agree with each other, otherwise the child plays one against the other.",
        "note": "il faut que + subjunctive: que les parents soient"
+      },
+      {
+       "hr": "Élever un enfant demande beaucoup de patience, surtout quand il refuse d'écouter.",
+       "en": "Raising a child demands a lot of patience, especially when he refuses to listen.",
+       "note": "élever = to raise (a child)"
       }
      ],
      "sources": [

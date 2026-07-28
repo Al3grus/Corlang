@@ -1,475 +1,570 @@
 {
-  "quizzes": [
+ "quizzes": [
+  {
+   "id": "fr-a1",
+   "levelId": "A1",
+   "title": "A1, les bases",
+   "questions": [
     {
-      "id": "fr-a1",
-      "levelId": "A1",
-      "title": "A1, les bases",
-      "questions": [
-        {
-          "type": "MCQ",
-          "difficulty": 1,
-          "prompt": "'Bonjour' means:",
-          "options": [
-            "Hello",
-            "Goodbye",
-            "Thanks",
-            "Sorry"
-          ],
-          "answer": "Hello",
-          "explanation": "Bonjour = hello / good day."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 2,
-          "prompt": "Feminine article for 'maison':",
-          "options": [
-            "la",
-            "le",
-            "un",
-            "les"
-          ],
-          "answer": "la",
-          "explanation": "maison is feminine → la maison."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 2,
-          "prompt": "'J'___ deux frères.' (have)",
-          "options": [
-            "ai",
-            "suis",
-            "es",
-            "a"
-          ],
-          "answer": "ai",
-          "explanation": "avoir: j'ai."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 3,
-          "prompt": "Present of parler (nous):",
-          "options": [
-            "parlons",
-            "parlez",
-            "parle",
-            "parlent"
-          ],
-          "answer": "parlons",
-          "explanation": "-ER nous = -ons."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 3,
-          "prompt": "Negation: 'Je ___ comprends ___.'",
-          "options": [
-            "ne … pas",
-            "pas … ne",
-            "non … pas",
-            "ne … non"
-          ],
-          "answer": "ne … pas",
-          "explanation": "ne + verb + pas."
-        },
-        {
-          "type": "FILL",
-          "difficulty": 2,
-          "prompt": "Complete: Je m'___ Paul. (call myself)",
-          "answer": "appelle",
-          "explanation": "s'appeler: je m'appelle."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 3,
-          "prompt": "Near future 'we are going to eat':",
-          "options": [
-            "Nous allons manger",
-            "Nous mangeons",
-            "Nous avons mangé",
-            "Nous mangerons"
-          ],
-          "answer": "Nous allons manger",
-          "explanation": "aller + infinitive."
-        },
-        {
-          "type": "REORDER",
-          "difficulty": 3,
-          "prompt": "Build the French for: 'I come from France.'",
-          "options": [
-            "Je",
-            "viens",
-            "de",
-            "France",
-            "."
-          ],
-          "ordered": [
-            "Je",
-            "viens",
-            "de",
-            "France",
-            "."
-          ],
-          "explanation": "Saying where you're from."
-        }
-      ]
+     "type": "MCQ",
+     "difficulty": 1,
+     "prompt": "'Bonjour' means:",
+     "options": [
+      "Hello",
+      "Goodbye",
+      "Thanks",
+      "Sorry"
+     ],
+     "answer": "Hello",
+     "explanation": "Bonjour = hello / good day."
     },
     {
-      "id": "fr-a2",
-      "levelId": "A2",
-      "title": "A2, raconter et décrire",
-      "questions": [
-        {
-          "type": "MCQ",
-          "difficulty": 4,
-          "prompt": "Passé composé 'she arrived':",
-          "options": [
-            "Elle est arrivée",
-            "Elle a arrivé",
-            "Elle arrive",
-            "Elle arrivait"
-          ],
-          "answer": "Elle est arrivée",
-          "explanation": "arriver takes être + agreement."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 4,
-          "prompt": "Which tense sets the scene and paints background in a past narrative?",
-          "options": [
-            "imparfait",
-            "passé composé",
-            "futur",
-            "présent"
-          ],
-          "answer": "imparfait",
-          "explanation": "Description/habit = imparfait."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 4,
-          "prompt": "Pronoun: 'Je parle à Marie → Je ___ parle.'",
-          "options": [
-            "lui",
-            "la",
-            "le",
-            "leur"
-          ],
-          "answer": "lui",
-          "explanation": "Indirect object (à Marie) = lui."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 5,
-          "prompt": "'J'en ai trois.', 'en' replaces:",
-          "options": [
-            "de + quantity",
-            "à + place",
-            "a person",
-            "the subject"
-          ],
-          "answer": "de + quantity",
-          "explanation": "en replaces de + noun / a quantity."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 4,
-          "prompt": "Futur simple 'I will be':",
-          "options": [
-            "je serai",
-            "je suis",
-            "j'étais",
-            "je serais"
-          ],
-          "answer": "je serai",
-          "explanation": "être → future stem ser-."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 4,
-          "prompt": "Comparative: 'plus grand ___ moi'",
-          "options": [
-            "que",
-            "de",
-            "à",
-            "comme"
-          ],
-          "answer": "que",
-          "explanation": "plus + adj + que."
-        },
-        {
-          "type": "FILL",
-          "difficulty": 4,
-          "prompt": "Complete: C'est le film ___ j'aime. (that)",
-          "answer": "que",
-          "explanation": "Object relative = que.",
-          "accepted": [
-            "qu'"
-          ]
-        },
-        {
-          "type": "REORDER",
-          "difficulty": 5,
-          "prompt": "Build the French for: 'If I have time, I will come.'",
-          "options": [
-            "Si",
-            "j'ai",
-            "le",
-            "temps",
-            ",",
-            "je",
-            "viendrai",
-            "."
-          ],
-          "ordered": [
-            "Si",
-            "j'ai",
-            "le",
-            "temps",
-            ",",
-            "je",
-            "viendrai",
-            "."
-          ],
-          "explanation": "Si + present, futur."
-        }
-      ]
+     "type": "MCQ",
+     "difficulty": 2,
+     "prompt": "Feminine article for 'maison':",
+     "options": [
+      "la",
+      "le",
+      "un",
+      "les"
+     ],
+     "answer": "la",
+     "explanation": "maison is feminine → la maison."
     },
     {
-      "id": "fr-b1",
-      "levelId": "B1",
-      "title": "B1, opinion et hypothèse",
-      "questions": [
-        {
-          "type": "MCQ",
-          "difficulty": 6,
-          "prompt": "Subjunctive after: 'Je veux que tu ___.'",
-          "options": [
-            "viennes",
-            "viens",
-            "venir",
-            "viendras"
-          ],
-          "answer": "viennes",
-          "explanation": "vouloir que + subjonctif."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 5,
-          "prompt": "Conditional (politeness): 'Je ___ un café.'",
-          "options": [
-            "voudrais",
-            "veux",
-            "voulais",
-            "voudrai"
-          ],
-          "answer": "voudrais",
-          "explanation": "voudrais = polite conditional."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 6,
-          "prompt": "Relative: 'la ville ___ je suis né'",
-          "options": [
-            "où",
-            "que",
-            "dont",
-            "qui"
-          ],
-          "answer": "où",
-          "explanation": "où = where."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 6,
-          "prompt": "Plus-que-parfait: 'Il ___ déjà parti.'",
-          "options": [
-            "était",
-            "est",
-            "a",
-            "avait"
-          ],
-          "answer": "était",
-          "explanation": "être-verb: il était parti."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 6,
-          "prompt": "Reported: 'Il dit qu'il ___ fatigué.'",
-          "options": [
-            "est",
-            "être",
-            "soit",
-            "était"
-          ],
-          "answer": "est",
-          "explanation": "Present reporting keeps present."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 6,
-          "prompt": "Opinion connector (cause, positive):",
-          "options": [
-            "grâce à",
-            "à cause de",
-            "malgré",
-            "bien que"
-          ],
-          "answer": "grâce à",
-          "explanation": "grâce à = thanks to (positive)."
-        },
-        {
-          "type": "FILL",
-          "difficulty": 6,
-          "prompt": "Gérondif: 'Il écoute la radio en ___. (conduire)'",
-          "answer": "conduisant",
-          "explanation": "en + present participle."
-        },
-        {
-          "type": "REORDER",
-          "difficulty": 6,
-          "prompt": "Build the French for: 'I think it's a good idea.'",
-          "options": [
-            "Je",
-            "pense",
-            "que",
-            "c'est",
-            "une",
-            "bonne",
-            "idée",
-            "."
-          ],
-          "ordered": [
-            "Je",
-            "pense",
-            "que",
-            "c'est",
-            "une",
-            "bonne",
-            "idée",
-            "."
-          ],
-          "explanation": "Giving an opinion."
-        }
-      ]
+     "type": "MCQ",
+     "difficulty": 2,
+     "prompt": "'J'___ deux frères.' (have)",
+     "options": [
+      "ai",
+      "suis",
+      "es",
+      "a"
+     ],
+     "answer": "ai",
+     "explanation": "avoir: j'ai."
     },
     {
-      "id": "fr-b2",
-      "levelId": "B2",
-      "title": "B2, argumenter et nuancer",
-      "questions": [
-        {
-          "type": "MCQ",
-          "difficulty": 8,
-          "prompt": "Subjunctive: 'Quoiqu'il ___ riche, il est modeste.'",
-          "options": [
-            "soit",
-            "est",
-            "était",
-            "sera"
-          ],
-          "answer": "soit",
-          "explanation": "quoique + subjonctif."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 8,
-          "prompt": "Past conditional (regret): 'Tu ___ me prévenir.'",
-          "options": [
-            "aurais dû",
-            "as dû",
-            "devras",
-            "devais"
-          ],
-          "answer": "aurais dû",
-          "explanation": "aurais dû = should have."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 8,
-          "prompt": "Irrealis past: 'Si j'___ su, je serais venu.'",
-          "options": [
-            "avais",
-            "ai",
-            "aurais",
-            "avait"
-          ],
-          "answer": "avais",
-          "explanation": "Si + plus-que-parfait."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 7,
-          "prompt": "Pronominal passive: 'Ce plat ___ avec du riz.'",
-          "options": [
-            "se mange",
-            "est mangé par",
-            "mange",
-            "a mangé"
-          ],
-          "answer": "se mange",
-          "explanation": "Pronominal passive: se mange."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 7,
-          "prompt": "Argument connector (contrast):",
-          "options": [
-            "en revanche",
-            "en effet",
-            "par exemple",
-            "ainsi"
-          ],
-          "answer": "en revanche",
-          "explanation": "en revanche = on the other hand."
-        },
-        {
-          "type": "MCQ",
-          "difficulty": 7,
-          "prompt": "Mise en relief: 'C'est toi ___ as raison.'",
-          "options": [
-            "qui",
-            "que",
-            "dont",
-            "où"
-          ],
-          "answer": "qui",
-          "explanation": "c'est … qui emphasises the subject."
-        },
-        {
-          "type": "FILL",
-          "difficulty": 8,
-          "prompt": "Register (formal closing): 'Je vous prie d'___ mes salutations distinguées.'",
-          "answer": "agréer",
-          "explanation": "Formal letter closing."
-        },
-        {
-          "type": "REORDER",
-          "difficulty": 8,
-          "prompt": "Build the French for: 'Although he worked, he failed.'",
-          "options": [
-            "Bien",
-            "qu'il",
-            "ait",
-            "travaillé",
-            ",",
-            "il",
-            "a",
-            "échoué",
-            "."
-          ],
-          "ordered": [
-            "Bien",
-            "qu'il",
-            "ait",
-            "travaillé",
-            ",",
-            "il",
-            "a",
-            "échoué",
-            "."
-          ],
-          "explanation": "Concession with subjonctif passé."
-        }
-      ]
+     "type": "FILL",
+     "difficulty": 2,
+     "prompt": "Complete: Je m'___ Paul. (call myself)",
+     "answer": "appelle",
+     "explanation": "s'appeler: je m'appelle."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 2,
+     "prompt": "Je ___ faim.",
+     "options": [
+      "ai",
+      "es",
+      "a",
+      "as"
+     ],
+     "answer": "ai",
+     "explanation": "avoir (to have) present tense, je form: j'ai. 'Avoir faim' = to be hungry."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "Present of parler (nous):",
+     "options": [
+      "parlons",
+      "parlez",
+      "parle",
+      "parlent"
+     ],
+     "answer": "parlons",
+     "explanation": "-ER nous = -ons."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "Negation: 'Je ___ comprends ___.'",
+     "options": [
+      "ne … pas",
+      "pas … ne",
+      "non … pas",
+      "ne … non"
+     ],
+     "answer": "ne … pas",
+     "explanation": "ne + verb + pas."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 3,
+     "prompt": "Near future 'we are going to eat':",
+     "options": [
+      "Nous allons manger",
+      "Nous mangeons",
+      "Nous avons mangé",
+      "Nous mangerons"
+     ],
+     "answer": "Nous allons manger",
+     "explanation": "aller + infinitive."
+    },
+    {
+     "type": "REORDER",
+     "difficulty": 3,
+     "prompt": "Build the French for: 'I come from France.'",
+     "options": [
+      "Je",
+      "viens",
+      "de",
+      "France",
+      "."
+     ],
+     "ordered": [
+      "Je",
+      "viens",
+      "de",
+      "France",
+      "."
+     ],
+     "explanation": "Saying where you're from."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 3,
+     "prompt": "Nous habitons ___ Paris.",
+     "answer": "à",
+     "accepted": [
+      "à"
+     ],
+     "explanation": "à + a city name = 'in' that city: à Paris, à Lyon."
     }
-  ]
+   ]
+  },
+  {
+   "id": "fr-a2",
+   "levelId": "A2",
+   "title": "A2, raconter et décrire",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Passé composé 'she arrived':",
+     "options": [
+      "Elle est arrivée",
+      "Elle a arrivé",
+      "Elle arrive",
+      "Elle arrivait"
+     ],
+     "answer": "Elle est arrivée",
+     "explanation": "arriver takes être + agreement."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Which tense sets the scene and paints background in a past narrative?",
+     "options": [
+      "imparfait",
+      "passé composé",
+      "futur",
+      "présent"
+     ],
+     "answer": "imparfait",
+     "explanation": "Description/habit = imparfait."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Pronoun: 'Je parle à Marie → Je ___ parle.'",
+     "options": [
+      "lui",
+      "la",
+      "le",
+      "leur"
+     ],
+     "answer": "lui",
+     "explanation": "Indirect object (à Marie) = lui."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Futur simple 'I will be':",
+     "options": [
+      "je serai",
+      "je suis",
+      "j'étais",
+      "je serais"
+     ],
+     "answer": "je serai",
+     "explanation": "être → future stem ser-."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Comparative: 'plus grand ___ moi'",
+     "options": [
+      "que",
+      "de",
+      "à",
+      "comme"
+     ],
+     "answer": "que",
+     "explanation": "plus + adj + que."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 4,
+     "prompt": "Complete: C'est le film ___ j'aime. (that)",
+     "answer": "que",
+     "explanation": "Object relative = que."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 4,
+     "prompt": "Tu veux du café ? Non merci, je n'___ veux pas.",
+     "options": [
+      "en",
+      "y",
+      "le",
+      "lui"
+     ],
+     "answer": "en",
+     "explanation": "en replaces 'du café' (a partitive/quantity noun): je n'en veux pas."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "'J'en ai trois.', 'en' replaces:",
+     "options": [
+      "de + quantity",
+      "à + place",
+      "a person",
+      "the subject"
+     ],
+     "answer": "de + quantity",
+     "explanation": "en replaces de + noun / a quantity."
+    },
+    {
+     "type": "REORDER",
+     "difficulty": 5,
+     "prompt": "Build the French for: 'If I have time, I will come.'",
+     "options": [
+      "Si",
+      "j'ai",
+      "le",
+      "temps",
+      ",",
+      "je",
+      "viendrai",
+      "."
+     ],
+     "ordered": [
+      "Si",
+      "j'ai",
+      "le",
+      "temps",
+      ",",
+      "je",
+      "viendrai",
+      "."
+     ],
+     "explanation": "Si + present, futur."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Demain, s'il fait beau, nous ___ à la plage.",
+     "options": [
+      "irons",
+      "allons",
+      "irions",
+      "allions"
+     ],
+     "answer": "irons",
+     "explanation": "si + présent → futur simple: s'il fait beau, nous irons."
+    }
+   ]
+  },
+  {
+   "id": "fr-b1",
+   "levelId": "B1",
+   "title": "B1, opinion et hypothèse",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Conditional (politeness): 'Je ___ un café.'",
+     "options": [
+      "voudrais",
+      "veux",
+      "voulais",
+      "voudrai"
+     ],
+     "answer": "voudrais",
+     "explanation": "voudrais = polite conditional."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 5,
+     "prompt": "Si j'avais le temps, je ___ ce livre.",
+     "options": [
+      "lirais",
+      "lirai",
+      "lis",
+      "aurais lu"
+     ],
+     "answer": "lirais",
+     "explanation": "si + imparfait → conditionnel présent: si j'avais, je lirais."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Subjunctive after: 'Je veux que tu ___.'",
+     "options": [
+      "viennes",
+      "viens",
+      "venir",
+      "viendras"
+     ],
+     "answer": "viennes",
+     "explanation": "vouloir que + subjonctif."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Relative: 'la ville ___ je suis né'",
+     "options": [
+      "où",
+      "que",
+      "dont",
+      "qui"
+     ],
+     "answer": "où",
+     "explanation": "où = where."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Plus-que-parfait: 'Il ___ déjà parti.'",
+     "options": [
+      "était",
+      "est",
+      "a",
+      "avait"
+     ],
+     "answer": "était",
+     "explanation": "être-verb: il était parti."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Reported: 'Il dit qu'il ___ fatigué.'",
+     "options": [
+      "est",
+      "être",
+      "soit",
+      "était"
+     ],
+     "answer": "est",
+     "explanation": "Present reporting keeps present."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 6,
+     "prompt": "Opinion connector (cause, positive):",
+     "options": [
+      "grâce à",
+      "à cause de",
+      "malgré",
+      "bien que"
+     ],
+     "answer": "grâce à",
+     "explanation": "grâce à = thanks to (positive)."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 6,
+     "prompt": "Gérondif: 'Il écoute la radio en ___. (conduire)'",
+     "answer": "conduisant",
+     "explanation": "en + present participle."
+    },
+    {
+     "type": "REORDER",
+     "difficulty": 6,
+     "prompt": "Build the French for: 'I think it's a good idea.'",
+     "options": [
+      "Je",
+      "pense",
+      "que",
+      "c'est",
+      "une",
+      "bonne",
+      "idée",
+      "."
+     ],
+     "ordered": [
+      "Je",
+      "pense",
+      "que",
+      "c'est",
+      "une",
+      "bonne",
+      "idée",
+      "."
+     ],
+     "explanation": "Giving an opinion."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 7,
+     "prompt": "C'est le quartier ___ je te parlais hier.",
+     "answer": "dont",
+     "accepted": [
+      "dont"
+     ],
+     "explanation": "dont replaces 'de + quoi/qui': parler DE quelque chose becomes le quartier dont je parlais."
+    }
+   ]
+  },
+  {
+   "id": "fr-b2",
+   "levelId": "B2",
+   "title": "B2, argumenter et nuancer",
+   "questions": [
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Pronominal passive: 'Ce plat ___ avec du riz.'",
+     "options": [
+      "se mange",
+      "est mangé par",
+      "mange",
+      "a mangé"
+     ],
+     "answer": "se mange",
+     "explanation": "Pronominal passive: se mange."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Argument connector (contrast):",
+     "options": [
+      "en revanche",
+      "en effet",
+      "par exemple",
+      "ainsi"
+     ],
+     "answer": "en revanche",
+     "explanation": "en revanche = on the other hand."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Mise en relief: 'C'est toi ___ as raison.'",
+     "options": [
+      "qui",
+      "que",
+      "dont",
+      "où"
+     ],
+     "answer": "qui",
+     "explanation": "c'est … qui emphasises the subject."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 7,
+     "prompt": "Il m'a dit qu'il ___ le lendemain.",
+     "options": [
+      "partirait",
+      "partira",
+      "parte",
+      "était parti"
+     ],
+     "answer": "partirait",
+     "explanation": "discours indirect au passé: futur simple → conditionnel présent (concordance des temps)."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 8,
+     "prompt": "Subjunctive: 'Quoiqu'il ___ riche, il est modeste.'",
+     "options": [
+      "soit",
+      "est",
+      "était",
+      "sera"
+     ],
+     "answer": "soit",
+     "explanation": "quoique + subjonctif."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 8,
+     "prompt": "Past conditional (regret): 'Tu ___ me prévenir.'",
+     "options": [
+      "aurais dû",
+      "as dû",
+      "devras",
+      "devais"
+     ],
+     "answer": "aurais dû",
+     "explanation": "aurais dû = should have."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 8,
+     "prompt": "Irrealis past: 'Si j'___ su, je serais venu.'",
+     "options": [
+      "avais",
+      "ai",
+      "aurais",
+      "avait"
+     ],
+     "answer": "avais",
+     "explanation": "Si + plus-que-parfait."
+    },
+    {
+     "type": "FILL",
+     "difficulty": 8,
+     "prompt": "Register (formal closing): 'Je vous prie d'___ mes salutations distinguées.'",
+     "answer": "agréer",
+     "explanation": "Formal letter closing."
+    },
+    {
+     "type": "REORDER",
+     "difficulty": 8,
+     "prompt": "Build the French for: 'Although he worked, he failed.'",
+     "options": [
+      "Bien",
+      "qu'il",
+      "ait",
+      "travaillé",
+      ",",
+      "il",
+      "a",
+      "échoué",
+      "."
+     ],
+     "ordered": [
+      "Bien",
+      "qu'il",
+      "ait",
+      "travaillé",
+      ",",
+      "il",
+      "a",
+      "échoué",
+      "."
+     ],
+     "explanation": "Concession with subjonctif passé."
+    },
+    {
+     "type": "MCQ",
+     "difficulty": 9,
+     "prompt": "Je doute qu'il ___ raison, même s'il insiste.",
+     "options": [
+      "ait",
+      "a",
+      "aurait",
+      "avait"
+     ],
+     "answer": "ait",
+     "explanation": "douter que + subjonctif présent: je doute qu'il ait raison."
+    }
+   ]
+  }
+ ]
 }

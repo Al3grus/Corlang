@@ -76,6 +76,8 @@ full-course audit and fix pass below.*
 drift modes (for es: Latin American forms vs Castilian, per the pt/Brazilian precedent), plus
 V9/V10 if the deck carries articles. Every V-row is a candidate check for every new language.*
 
+| V12 | Belgian/Swiss numbers (septante/octante/nonante) and Quebecois lexis/meal-name shift (déjeuner=breakfast, dîner=lunch) taught as standard Metropolitan French, or without a contrastive counterpart in the same activity | 2026-07-27, fr full-course audit (built check_fr.py — fr had no per-language checker before this) | `check_fr.py`, built and negative-tested this session (activity-scoped exemption, same design as check_de.py's REGIONAL table); found only 1 real hit course-wide (day 185's dialogue line dropped its own lesson's contrastive pairing), now fixed | fr | ✅ |
+
 ## III. Structure, assessment and app integration
 
 | ID | Failure class | Found | Automated by | Status |
@@ -164,3 +166,19 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 4. **C4**: live re-verification of hr and fr resources.json URLs; de's DW link was confirmed
    by search only (fetcher blocks dw.com), noted in its digest.
 5. **S8**: weighted-floor debt, fr +145 (legally B2, priority) → hr +90 → pt +70.
+6. **fr full-course audit (2026-07-27)**: no per-language checker existed for fr before this
+   session; wrote and negative-tested `check_fr.py` (V12), then ran a 24-agent audit (16 over
+   all 418 lessons with extra rigor on B2, the legally load-bearing level, 5 over the 4,223-word
+   deck, plus quizzes/placement/exams/reference/syllabus). Found and FIXED: 20 Critical (13
+   real people/institutions incl. Camus, Victor Hugo and France Éducation international named
+   in `grammar.json`/`levels.json` itself; `grammar.json` missing accents on every French word
+   in the whole file, all 37 topics restored; a mock-exam elision bug; 5 self-contradicting
+   grammar rules where the course's own other examples proved the stated rule wrong), 41 High
+   (6 epicene nouns tagged masculine-only contradicting their own example; a DALF C1 task
+   labelled "the DELF B2 synthesis task", a real risk given B2 is the legal citizenship target
+   here; all 4 DELF mocks missing required document types, now authored). Also closed: 4
+   placement bands under-diversified (same pattern as hr), all 4 quiz difficulty orderings,
+   the recurring FILL-punctuation-artifact pattern (11 instances), the œ-ligature spelling gap.
+   Still open: `decret-2025-648` (the naturalisation law, "the most important citation" per the
+   digest) is never cited despite the requirement being asserted as fact 3 times; `grammar.json`
+   was not resynced with the 12 new B2/B1/A2 gap-fill topics from the 250→418 day expansion.
