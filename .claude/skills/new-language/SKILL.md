@@ -78,8 +78,28 @@ result must satisfy. Tools live in `tools/course/`.
   activities asserting the naturalisation fact plus `levels.json`'s B2 exam and the naturalisation
   vocab pack; `grammar.json`'s topic index resynced with 6 real new topics from the 250→418
   expansion. Nothing open.
-- Proctor backlog on shipped languages (2026-07-20): pt 45, de 80 problems (hr and fr CLEARED,
-  see above). **Next up per priority: pt (proctor backlog 45, floor debt +70) or de (proctor
-  backlog 80, no floor debt) — pt has the larger combined debt.**
-- Weighted-floor debt: fr +145 (B2 legally required since 2026-01-01, highest priority),
-  hr +90, pt +70.
+- **pt full-course audit + fix FULLY DONE (2026-07-28)**: pt had no per-language checker before
+  this; wrote and negative-tested `check_pt.py` (V13, mirrors the Kotlin Brazilianism gate plus
+  a closed-whitelist gerund-progressive check) first, then a 7-agent audit (4 over all 170
+  lessons, 1 over the 2,568-word deck, 1 over quizzes/placement/exams, 1 over reference content
+  + Phase 8b CAPLE/Camões syllabus cross-check, which found no curriculum gap). Found and fixed
+  85 Critical/45 High/~40 Medium/~55 Low. Real-people/institutions was by far the largest class
+  (Amália Rodrigues, Camões, Fernando Pessoa, Saramago, Gil Vicente, CAPLE, Universidade de
+  Lisboa, Livraria Lello, Câmara Municipal de Braga with a fabricated realistic contact block,
+  real CP train brands, Multibanco, Benfica — 12 of them concentrated in one vocab pack). Also:
+  34 3-option MCQs in one 10-day span, epicene-noun gender bugs, broken idiom headwords, a
+  translation leak, CIPLE mock's weighting silently wrong vs. the real 45/30/25 CAPLE split,
+  every mock's reading/listening sections single-document against the real plural-document
+  format, 3 placement-band items testing content taught days later, quizzes at 8 questions
+  instead of 10, 17 consecutive B1 days on a thinner authoring template than their neighbors —
+  all authored up to depth. `docs/error-registry.md` open-sweeps item 7 has the full breakdown.
+  Fully verified: `check_batch.py`/`check_pt.py`/`proctor.py` 0 problems, Kotlin
+  `ContentValidationTest` green, 0 dashes. `docs/sources/README.md`/`caple.md` stale "target
+  DIPLE B2" headers corrected (real target is DEPLE B1, DIPLE B2 legacy since 2026-07-20).
+  Nothing open.
+- Proctor backlog on shipped languages (2026-07-20): de 80 problems (hr, fr, and pt CLEARED, see
+  above). **Next up: de audit** (no per-language checker exists yet, no floor debt).
+- Weighted-floor debt UNCHANGED by the audit above (that pass added LEARN/EXERCISE depth within
+  existing days, not new lesson days, so the day-count floor gate is untouched): fr +145 (B2
+  legally required since 2026-01-01, highest priority), hr +90, pt +70 (A2 short 15, B1 short 55,
+  per `ContentValidationTest.weightedRuleDebt`).

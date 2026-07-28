@@ -1,5 +1,5 @@
 {
- "title": "Português de Portugal rumo ao DIPLE",
+ "title": "Português de Portugal rumo ao DEPLE",
  "days": [
   {
    "day": 1,
@@ -3681,7 +3681,7 @@
    "level": "A1",
    "title": "Às compras",
    "objective": "Shop for food: ask prices with 'Quanto custa?', understand amounts in euros, and pay by card or cash.",
-   "paretoFocus": "'Quanto custa?' plus numbers and the payment words (multibanco, dinheiro, troco) get you through any shop in Portugal. 'Multibanco' is the Portuguese card/ATM network everyone mentions.",
+   "paretoFocus": "'Quanto custa?' plus numbers and the payment words (cartão, dinheiro, troco) get you through any shop in Portugal. Paying 'com cartão' is how everyone says 'by card' in Portugal.",
    "resources": [
     "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
@@ -3703,7 +3703,7 @@
     {
      "type": "LEARN",
      "title": "Às compras",
-     "intro": "Shopping runs on a few fixed phrases. In Portugal you pay 'com multibanco' (the national debit-card network) or 'em dinheiro' (cash), and the change is 'o troco'.",
+     "intro": "Shopping runs on a few fixed phrases. In Portugal you pay 'com cartão' (by card) or 'em dinheiro' (cash), and the change is 'o troco'.",
      "items": [
       {
        "hr": "Quanto custa?",
@@ -3714,8 +3714,8 @@
        "en": "It costs two euros fifty."
       },
       {
-       "hr": "Posso pagar com multibanco?",
-       "en": "Can I pay by card? (multibanco = Portugal's debit-card/ATM network)"
+       "hr": "Posso pagar com cartão?",
+       "en": "Can I pay by card?"
       },
       {
        "hr": "em dinheiro",
@@ -3753,7 +3753,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "'Posso pagar com multibanco?' means…",
+       "prompt": "'Posso pagar com cartão?' means…",
        "difficulty": 2,
        "options": [
         "Can I pay by card?",
@@ -3762,7 +3762,7 @@
         "Can I have a discount?"
        ],
        "answer": "Can I pay by card?",
-       "explanation": "Multibanco is Portugal's debit-card and ATM network; paying 'com multibanco' = by card."
+       "explanation": "Pagar com cartão = to pay by (debit) card; em dinheiro = in cash."
       },
       {
        "type": "MCQ",
@@ -3782,7 +3782,7 @@
        "prompt": "Pay in cash: 'Posso pagar ____ dinheiro?' (the preposition)",
        "difficulty": 2,
        "answer": "em",
-       "explanation": "Em dinheiro = in cash; com multibanco = by card."
+       "explanation": "Em dinheiro = in cash; com cartão = by card."
       },
       {
        "type": "REORDER",
@@ -3866,7 +3866,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Posso pagar com multibanco?",
+       "hr": "Posso pagar com cartão?",
        "en": "Can I pay by card?"
       },
       {
@@ -4265,7 +4265,7 @@
        "options": [
         "o troco",
         "a conta",
-        "o multibanco",
+        "o desconto",
         "a gorjeta"
        ],
        "answer": "o troco",
@@ -4314,18 +4314,8 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Com certeza. Aqui está o menu. O que deseja beber?",
-       "en": "Of course. Here's the menu. What would you like to drink?"
-      },
-      {
-       "speaker": "Me",
-       "hr": "Queria um sumo de laranja, se faz favor.",
-       "en": "I'd like an orange juice, please."
-      },
-      {
-       "speaker": "Partner",
-       "hr": "E para comer? O peixe hoje está muito bom.",
-       "en": "And to eat? The fish is very good today."
+       "hr": "Com certeza. Aqui está o menu. O que deseja comer?",
+       "en": "Of course. Here's the menu. What would you like to eat?"
       },
       {
        "speaker": "Me",
@@ -4344,18 +4334,8 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Muito bem. Está a gostar de Portugal?",
-       "en": "Very well. Are you enjoying Portugal?"
-      },
-      {
-       "speaker": "Me",
-       "hr": "Estou a adorar. Estou a aprender português!",
-       "en": "I'm loving it. I'm learning Portuguese!"
-      },
-      {
-       "speaker": "Partner",
-       "hr": "E fala muito bem! Mais alguma coisa?",
-       "en": "And you speak very well! Anything else?"
+       "hr": "Muito bem. Mais alguma coisa?",
+       "en": "Very well. Anything else?"
       },
       {
        "speaker": "Me",
@@ -4473,10 +4453,11 @@
        "options": [
         "apanhar o autocarro",
         "perder o autocarro",
-        "comprar o autocarro"
+        "comprar o autocarro",
+        "esperar o autocarro"
        ],
        "answer": "apanhar o autocarro",
-       "explanation": "Apanhar = to catch; perder = to miss."
+       "explanation": "Apanhar = to catch; perder = to miss; esperar = to wait for."
       },
       {
        "type": "MCQ",
@@ -4507,7 +4488,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Put in order: ask what time the train leaves.",
+       "prompt": "Build the Portuguese for: 'What time does the train leave?'",
        "difficulty": 3,
        "options": [
         "A",
@@ -4661,10 +4642,11 @@
        "options": [
         "O senhor pode ajudar-me?",
         "Tu podes ajudar-me?",
-        "Podes ajudar-me?"
+        "Podes ajudar-me?",
+        "Você pode ajudar-me?"
        ],
        "answer": "O senhor pode ajudar-me?",
-       "explanation": "With an elderly stranger, use 'o senhor / a senhora' + 3rd person."
+       "explanation": "With an elderly stranger, use 'o senhor / a senhora' + 3rd person; saying 'você' to their face can sound blunt."
       },
       {
        "type": "MCQ",
@@ -4673,10 +4655,11 @@
        "options": [
         "Queres um café?",
         "O senhor quer um café?",
-        "A senhora deseja um café?"
+        "A senhora deseja um café?",
+        "Quer um café?"
        ],
        "answer": "Queres um café?",
-       "explanation": "With friends use tu: queres (2nd person singular)."
+       "explanation": "With friends use tu: queres (2nd person singular); 'Quer…?' is the neutral-formal form, not for close friends."
       },
       {
        "type": "MCQ",
@@ -4685,7 +4668,8 @@
        "options": [
         "blunt, it is usually avoided",
         "extremely polite",
-        "childish"
+        "childish",
+        "formal but neutral"
        ],
        "answer": "blunt, it is usually avoided",
        "explanation": "The Portuguese prefer the bare 3rd-person verb or 'o senhor / a senhora' instead of saying 'você'."
@@ -4719,7 +4703,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Put in order: a formal question to a man.",
+       "prompt": "Build the Portuguese for: 'Are you from here?' (formal, to a man)",
        "difficulty": 3,
        "options": [
         "O",
@@ -4873,10 +4857,11 @@
        "options": [
         "isso",
         "isto",
-        "aquilo"
+        "aquilo",
+        "aí"
        ],
        "answer": "isso",
-       "explanation": "Isso = near the person you are talking to (aí)."
+       "explanation": "Isso = near the person you are talking to (aí). 'Aí' is the matching place word, not the demonstrative pronoun."
       },
       {
        "type": "MCQ",
@@ -4885,10 +4870,11 @@
        "options": [
         "aquilo",
         "isto",
-        "isso"
+        "isso",
+        "lá"
        ],
        "answer": "aquilo",
-       "explanation": "Aquilo = far from speaker and listener (lá/ali)."
+       "explanation": "Aquilo = far from speaker and listener (lá/ali). 'Lá' is the matching place word, not the demonstrative pronoun."
       },
       {
        "type": "MCQ",
@@ -4897,10 +4883,11 @@
        "options": [
         "Este",
         "Esse",
-        "Aquele"
+        "Aquele",
+        "Isto"
        ],
        "answer": "Este",
-       "explanation": "'Aqui' signals the speaker's space, so este."
+       "explanation": "'Aqui' signals the speaker's space, so este. 'Isto' cannot go before a noun like livro; only este/esse/aquele agree with one."
       },
       {
        "type": "MCQ",
@@ -4909,10 +4896,11 @@
        "options": [
         "there, where you are",
         "here, where I am",
-        "over there, far from both"
+        "over there, far from both",
+        "this thing, near me"
        ],
        "answer": "there, where you are",
-       "explanation": "cá = my space, aí = your space, lá = far from both."
+       "explanation": "cá = my space, aí = your space, lá = far from both. 'This thing, near me' describes 'isto', a demonstrative pronoun, not a place word."
       },
       {
        "type": "FILL",
@@ -5101,10 +5089,11 @@
        "options": [
         "limões",
         "limães",
-        "limãos"
+        "limãos",
+        "limones"
        ],
        "answer": "limões",
-       "explanation": "Most -ão words go to -ões: limão → limões."
+       "explanation": "Most -ão words go to -ões: limão → limões. 'Limones' is the Spanish plural, not Portuguese."
       },
       {
        "type": "MCQ",
@@ -5126,17 +5115,18 @@
        "options": [
         "azuis",
         "azul",
-        "azules"
+        "azules",
+        "azuls"
        ],
        "answer": "azuis",
-       "explanation": "azul → azuis (like animal → animais); olhos is plural, so the adjective is too."
+       "explanation": "azul → azuis (like animal → animais); olhos is plural, so the adjective is too. 'Azuls' just adding -s is the naive but wrong guess."
       },
       {
        "type": "FILL",
-       "prompt": "Complete: 'Ele escreve com as duas ___.' (hands)",
+       "prompt": "Complete: 'Lavo as ___ antes de comer.' (hands)",
        "difficulty": 2,
        "answer": "mãos",
-       "explanation": "mão just adds -s: mão → mãos."
+       "explanation": "mão just adds -s: mão → mãos. Lavo as mãos antes de comer = I wash my hands before eating."
       },
       {
        "type": "FILL",
@@ -5147,7 +5137,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Put in order: praise Portugal's famous custard tarts.",
+       "prompt": "Build the Portuguese for: 'The custard tarts are delicious.'",
        "difficulty": 3,
        "options": [
         "Os",
@@ -5300,7 +5290,8 @@
        "options": [
         "Sou professor.",
         "Sou um professor.",
-        "Sou o professor um."
+        "Sou o professor um.",
+        "Eu sou de professor."
        ],
        "answer": "Sou professor.",
        "explanation": "Professions take no article: Sou professor / Sou médica."
@@ -5325,7 +5316,8 @@
        "options": [
         "no hospital",
         "na padaria",
-        "no elétrico"
+        "no elétrico",
+        "na paragem"
        ],
        "answer": "no hospital",
        "explanation": "A doctor works at the hospital: no hospital (em + o)."
@@ -5359,7 +5351,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Put in order: say where your brother works.",
+       "prompt": "Build the Portuguese for: 'My brother works in an office in Lisbon.'",
        "difficulty": 3,
        "options": [
         "O",
@@ -5516,7 +5508,8 @@
        "options": [
         "tocar",
         "jogar",
-        "dar"
+        "dar",
+        "fazer"
        ],
        "answer": "tocar",
        "explanation": "tocar guitarra, tocar piano; jogar is for games and sports."
@@ -5541,7 +5534,8 @@
        "options": [
         "to watch TV",
         "to buy a TV",
-        "to turn off the TV"
+        "to turn off the TV",
+        "to repair the TV"
        ],
        "answer": "to watch TV",
        "explanation": "In pt-PT you 'see' television: ver televisão."
@@ -5553,7 +5547,8 @@
        "options": [
         "ao fim de semana",
         "em o fim de semana",
-        "por fim de semana"
+        "por fim de semana",
+        "no fim de semana"
        ],
        "answer": "ao fim de semana",
        "explanation": "'Ao fim de semana vou à praia.', a very Portuguese turn of phrase."
@@ -5574,7 +5569,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Put in order: say what you do on Saturdays.",
+       "prompt": "Build the Portuguese for: 'On Saturdays I play football with my friends.'",
        "difficulty": 3,
        "options": [
         "Aos",
@@ -5733,7 +5728,8 @@
        "options": [
         "Combinado!",
         "Desculpe!",
-        "Quanto custa?"
+        "Quanto custa?",
+        "Tenho de ir."
        ],
        "answer": "Combinado!",
        "explanation": "Combinado! = it's a deal, we're on."
@@ -5745,7 +5741,8 @@
        "options": [
         "I feel like an ice cream",
         "I don't like ice cream",
-        "I already ate an ice cream"
+        "I already ate an ice cream",
+        "I'm buying an ice cream"
        ],
        "answer": "I feel like an ice cream",
        "explanation": "apetecer + indirect pronoun: Apetece-me = it appeals to me = I feel like."
@@ -5757,7 +5754,8 @@
        "options": [
         "sounds good / works for me",
         "absolutely not",
-        "it's too expensive"
+        "it's too expensive",
+        "maybe later"
        ],
        "answer": "sounds good / works for me",
        "explanation": "A relaxed, very Portuguese way of accepting a suggestion."
@@ -5769,7 +5767,8 @@
        "options": [
         "Fica",
         "Vai",
-        "Faz"
+        "Faz",
+        "Dá"
        ],
        "answer": "Fica",
        "explanation": "Fica para sábado = let's leave it for Saturday."
@@ -5790,7 +5789,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Put in order: invite someone to the cinema on Saturday night.",
+       "prompt": "Build the Portuguese for: 'Do you want to go to the cinema on Saturday night?'",
        "difficulty": 3,
        "options": [
         "Queres",
@@ -5960,7 +5959,8 @@
        "options": [
         "Está lá?",
         "Adeus!",
-        "Combinado!"
+        "Combinado!",
+        "Desculpe!"
        ],
        "answer": "Está lá?",
        "explanation": "'Estou?', 'Está?' or 'Está lá?' are the standard phone greetings in Portugal."
@@ -5985,10 +5985,11 @@
        "options": [
         "desligas",
         "atendes",
-        "ligas"
+        "ligas",
+        "marcas"
        ],
        "answer": "desligas",
-       "explanation": "desligar = to hang up; ligar = to call; atender = to pick up."
+       "explanation": "desligar = to hang up; ligar = to call; atender = to pick up; marcar = to schedule."
       },
       {
        "type": "FILL",
@@ -6006,7 +6007,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Put in order: ask them to call you later.",
+       "prompt": "Build the Portuguese for: 'Call me later, please.'",
        "difficulty": 3,
        "options": [
         "Liga-me",
@@ -6191,7 +6192,7 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Build the Portuguese for: 'My sister lives in the city centre.'",
+       "prompt": "Build the Portuguese for: 'My sister lives in the centre.'",
        "difficulty": 3,
        "options": [
         "A",
@@ -6274,6 +6275,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -6463,6 +6465,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -6644,6 +6647,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -6835,6 +6839,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -7024,6 +7029,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -7216,6 +7222,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -7405,6 +7412,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -7600,6 +7608,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -7787,6 +7796,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -7973,6 +7983,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -8163,6 +8174,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -8355,6 +8367,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -8537,6 +8550,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -8723,6 +8737,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -8916,6 +8931,7 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "resources": [
+    "Practice Portuguese",
     "Words tab (built-in daily flashcards)"
    ]
   },
@@ -9013,10 +9029,11 @@
        "options": [
         "O senhor tem troco?",
         "Tu tens troco?",
-        "Tens troco, pá?"
+        "Tens troco, pá?",
+        "Você tem troco?"
        ],
        "answer": "O senhor tem troco?",
-       "explanation": "Formal register: o senhor + 3rd person verb."
+       "explanation": "Formal register: o senhor + 3rd person verb; 'você' is grammatically formal but often sounds blunt said to someone's face."
       },
       {
        "type": "MCQ",
@@ -9025,10 +9042,11 @@
        "options": [
         "pães",
         "pãos",
-        "pões"
+        "pões",
+        "panes"
        ],
        "answer": "pães",
-       "explanation": "pão → pães, like cão → cães."
+       "explanation": "pão → pães, like cão → cães. 'Panes' is the Spanish plural, not Portuguese."
       },
       {
        "type": "MCQ",
@@ -9037,7 +9055,8 @@
        "options": [
         "I feel like a coffee",
         "I already had a coffee",
-        "I hate coffee"
+        "I hate coffee",
+        "I want to buy a coffee"
        ],
        "answer": "I feel like a coffee",
        "explanation": "apetecer + me = it appeals to me = I feel like."
@@ -9154,8 +9173,8 @@
    "phase": "Fase 1: A0 → A1",
    "level": "A1",
    "title": "Ponto de controlo A1",
-   "objective": "A1 checkpoint in the style of CAPLE ACESSO/CIPLE tasks: read short authentic notices, answer comprehension questions, fill in a form and ask for information at the junta de freguesia, a rehearsal for the CIPLE exam path.",
-   "paretoFocus": "CAPLE exams test exactly this: understanding public notices, filling in personal-data forms and handling a service-desk conversation. Practise the task types, not just the words.",
+   "objective": "A1 checkpoint in the style of ACESSO/CIPLE-format tasks: read short authentic notices, answer comprehension questions, fill in a form and ask for information at the junta de freguesia, a rehearsal for that exam-task format.",
+   "paretoFocus": "ACESSO/CIPLE-style exams test exactly this: understanding public notices, filling in personal-data forms and handling a service-desk conversation. Practise the task types, not just the words.",
    "resources": [
     "CAPLE, Exames de PLE (Universidade de Lisboa)",
     "Practice Portuguese",
@@ -9257,15 +9276,29 @@
       },
       {
        "type": "MCQ",
-       "prompt": "No anúncio, 'encerrado' e 'fechado' são…, e quem quer a bicicleta deve ligar…",
-       "difficulty": 3,
+       "prompt": "Nos avisos, 'encerrado' e 'fechado' são…",
+       "difficulty": 2,
        "options": [
-        "sinónimos, depois das 18h",
-        "opostos, de manhã",
-        "sinónimos, ao meio-dia"
+        "sinónimos",
+        "opostos",
+        "duas profissões",
+        "os dias da semana"
        ],
-       "answer": "sinónimos, depois das 18h",
-       "explanation": "encerrado = fechado (closed); the ad says 'Contactar… depois das 18h'."
+       "answer": "sinónimos",
+       "explanation": "encerrado = fechado (closed), the more formal word used in official notices."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Quem quiser comprar a bicicleta do anúncio deve ligar…",
+       "difficulty": 2,
+       "options": [
+        "depois das 18h",
+        "de manhã",
+        "ao meio-dia",
+        "antes das 10h"
+       ],
+       "answer": "depois das 18h",
+       "explanation": "O anúncio diz: 'Contactar… depois das 18h.'"
       },
       {
        "type": "FILL",

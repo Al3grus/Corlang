@@ -77,6 +77,7 @@ drift modes (for es: Latin American forms vs Castilian, per the pt/Brazilian pre
 V9/V10 if the deck carries articles. Every V-row is a candidate check for every new language.*
 
 | V12 | Belgian/Swiss numbers (septante/octante/nonante) and Quebecois lexis/meal-name shift (déjeuner=breakfast, dîner=lunch) taught as standard Metropolitan French, or without a contrastive counterpart in the same activity | 2026-07-27, fr full-course audit (built check_fr.py — fr had no per-language checker before this) | `check_fr.py`, built and negative-tested this session (activity-scoped exemption, same design as check_de.py's REGIONAL table); found only 1 real hit course-wide (day 185's dialogue line dropped its own lesson's contrastive pairing), now fixed | fr | ✅ |
+| V13 | Brazilian-Portuguese lexis/progressive-gerund drift into European Portuguese content | 2026-07-28, pt full-course audit (built check_pt.py — pt had no per-language checker before this) | `check_pt.py`, built and negative-tested this session (mirrors the Kotlin `ContentValidationTest` Brazilianism gate's 17-word blocklist + activity-scoped exemption, plus a closed-whitelist gerund check after a naive `\w+ndo` regex over-matched "quando"/"lindo"/"Fernando"); deliberately did NOT implement tu-vs-você or ênclise/próclise as regex — both proven too syntactically ambiguous by real, correctly-taught course content (a whole lesson teaches nuanced `você` use; genuine ênclise/próclise triggers routinely sit in the PROMPT, invisible to a KEY-scoped answer check) — found 0 hits course-wide, deck was already clean | pt | ✅ |
 
 ## III. Structure, assessment and app integration
 
@@ -205,3 +206,31 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    than duplicated, and 2 lessons (357 "se plaindre au téléphone", 358 "conditionnel passé:
    regret/reproche/conseil") were confirmed to be functional-language or already-covered content,
    not new grammar points, and correctly left out.
+7. **pt full-course audit + fix DONE (2026-07-28)**: no per-language checker existed for pt
+   before this session; wrote and negative-tested `check_pt.py` first (V13). Then a 7-agent
+   audit (4 over all 170 lessons, 1 over the 2,568-word deck via 8 sub-reviewers, 1 over
+   quizzes/placement/exams, 1 over reference content + Phase 8b CAPLE/Camões syllabus
+   cross-check — the syllabus itself checked out clean, no curriculum gap found). Found and
+   FIXED: 85 Critical (real people/institutions the largest single class by far — Amália
+   Rodrigues, Camões, Fernando Pessoa, José Saramago, Gil Vicente, CAPLE, Universidade de
+   Lisboa, Livraria Lello, Câmara Municipal de Braga with a realistic fabricated contact block,
+   real CP train brands Intercidades/Alfa Pendular, Multibanco, Benfica, concentrated 12-deep in
+   one vocab pack `24-b2-culture-arts.json`; also 34 3-option MCQs in one 10-day span, epicene
+   nouns wrongly locked masculine, broken idiom headwords missing the word that makes them
+   grammatical, a translation leak, missing-diacritic self-contradictions within the same
+   lesson), 45 High (CIPLE mock's weighting silently wrong vs. the real 45/30/25 split, every
+   mock's reading/listening sections single-document against the real plural-document format,
+   3 placement-band items testing content taught days later, quizzes shipping 8 questions
+   instead of 10, an untaught future-subjunctive construction, a reversed phone-greeting
+   convention, an "acabar de" sense self-contradicted 6 days later, 17 consecutive B1 days on a
+   visibly thinner authoring template than their neighbors). One agent was killed by a
+   connection error near-zero-progress and cleanly relaunched (session-limit-kill resilience
+   pattern holds for API errors too). One cross-agent conflict caught in re-verification: an A2
+   fix agent, confused by an unrelated concurrent edit's side effect, reverted a systemic
+   title fix ("rumo ao DIPLE" → "rumo ao DEPLE", pt's course targets the B1 diploma not B2) on
+   its own file — reapplied directly. Verified: `check_batch.py`/`check_pt.py` 0 problems,
+   `proctor.py` 0 problems (1 new finding from the batch fixes, fixed same pass), Kotlin
+   `ContentValidationTest` gate green, 0 dashes, real-name sweep clean (distinguishing the
+   sanctioned `resources.json` mechanism and legitimate exam-format-label/city-name usage from
+   actual violations). `docs/sources/README.md` and `caple.md`'s stale "target DIPLE B2"
+   headers corrected to the real target (DEPLE B1, DIPLE B2 legacy since 2026-07-20).

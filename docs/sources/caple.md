@@ -11,8 +11,8 @@ Verified live 2026-07 at caple.letras.ulisboa.pt (exam pages /exame/2/ciple, /ex
 |------|------|-----------------|
 | ACESSO | A1 | on-ramp reference |
 | **CIPLE** | **A2** | first certificate; A2 checkpoint (also the level accepted for PT nationality) |
-| **DEPLE** | **B1** | the B1 milestone mock |
-| **DIPLE** | **B2** | the target: job/academic proficiency mock |
+| **DEPLE** | **B1** | the target: Corlang's live course ends here |
+| DIPLE | B2 | legacy scope, hidden 2026-07-20 (Portugal requires only A2 for nationality) |
 | DAPLE / DUPLE | C1 / C2 | future continuation |
 
 ## Component structure
