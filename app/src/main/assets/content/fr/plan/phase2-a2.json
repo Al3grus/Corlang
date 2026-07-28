@@ -433,12 +433,12 @@
        "prompt": "Which sentence is correct?",
        "difficulty": 4,
        "options": [
-        "Mes soeurs sont venues me voir.",
+        "Mes sœurs sont venues me voir.",
         "Mes soeurs ont venu me voir.",
         "Mes soeurs sont venu me voir.",
         "Mes soeurs est venues me voir."
        ],
-       "answer": "Mes soeurs sont venues me voir.",
+       "answer": "Mes sœurs sont venues me voir.",
        "explanation": "venir uses être; the participle agrees feminine plural: sont venues."
       },
       {
@@ -495,7 +495,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Je suis allé à la mer avec ma soeur.",
+       "hr": "Je suis allé à la mer avec ma sœur.",
        "en": "I went to the sea with my sister."
       },
       {
@@ -510,7 +510,7 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Et ta soeur, elle est rentrée avec toi ?",
+       "hr": "Et ta sœur, elle est rentrée avec toi ?",
        "en": "And your sister, did she come back with you?"
       },
       {
@@ -1032,7 +1032,7 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Et à ta soeur, tu lui as envoyé les photos ?",
+       "hr": "Et à ta sœur, tu lui as envoyé les photos ?",
        "en": "And to your sister, did you send her the photos?"
       },
       {
@@ -1816,6 +1816,11 @@
        "hr": "meilleur que",
        "en": "better than",
        "note": "Irregular comparative of 'bon'"
+      },
+      {
+       "hr": "Elle chante mieux que moi.",
+       "en": "She sings better than me.",
+       "note": "mieux = irregular comparative of bien (well)"
       },
       {
        "hr": "Elle est plus grande que moi.",
@@ -6536,7 +6541,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Prends du vin blanc, mais pas trop de sucré, s'il te plaît.",
+       "hr": "Prends du vin blanc, mais pas trop sucré, s'il te plaît.",
        "en": "Get white wine, but nothing too sweet, please."
       },
       {
@@ -9673,7 +9678,7 @@
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "On gaspille ___ d'eau qu'avant.",
+       "prompt": "On gaspille ___ d'eau à la maison.",
        "difficulty": 6,
        "options": [
         "de moins en moins",
@@ -13025,7 +13030,7 @@
        "prompt": "Il me ___ dix euros pour acheter ce sac.",
        "difficulty": 5,
        "answer": "manque",
-       "explanation": "With manquer the missing thing is the subject, so the verb stays singular here."
+       "explanation": "Manquer is used impersonally here: il is the grammatical subject, so the verb stays singular even though the missing amount (dix euros) follows it."
       },
       {
        "type": "FILL",
@@ -13629,7 +13634,7 @@
         "te",
         "plaît"
        ],
-       "explanation": "The tu command of tenir drops the final s of tu tiens."
+       "explanation": "Tenir keeps the -s of tu tiens in the imperative because it is not an -er verb: Tiens !"
       }
      ],
      "sources": [

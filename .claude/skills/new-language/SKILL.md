@@ -58,7 +58,20 @@ result must satisfy. Tools live in `tools/course/`.
   3 options, 55 over-length dialogues, 27 duplicate prompts) — this is new Phase-5-scale
   authoring, not a fix, flagged as a separate follow-up. Also open: the A1 directional-
   preposition gap the Phase 8b cross-check found (u/na/po/za + accusative never taught).
-- Proctor backlog on shipped languages (2026-07-20): fr 56, pt 45, de 80 problems (hr CLEARED,
+- **fr full-course audit + fix DONE (2026-07-28)**: fr had no per-language checker before this;
+  wrote and negative-tested `check_fr.py` (V12) first, then a 24-agent audit found 20 Critical/
+  41 High/~45 Medium/~55 Low across all 418 lessons (extra rigor on B2, the legally load-bearing
+  level), the 4,223-word deck, quizzes/placement, all 4 DELF mocks, reference content, and the
+  CECRL/DELF syllabus cross-check. All Critical/High content fixes applied and verified
+  (`proctor.py` 0, `check_fr.py` 0, Kotlin gate green, quizzes now 10 questions each). Biggest
+  find: `grammar.json` was missing accents on every French word in the file, all 37 topics now
+  restored; `levels.json` had the same bug. All 4 DELF mocks were structurally missing required
+  documents (multi-document listening/reading) — new content authored to close every gap. New
+  standing rule from this pair of audits: no real people/institutions anywhere in lesson content
+  (`docs/course-gold-book.md` + `docs/language-standard.md` §7 updated; `resources.json` remains
+  the one sanctioned exception). Still open: `decret-2025-648` never cited despite being fr's
+  most important citation; `grammar.json`'s topic index not resynced with the 250→418 expansion.
+- Proctor backlog on shipped languages (2026-07-20): pt 45, de 80 problems (hr and fr CLEARED,
   see above).
 - Weighted-floor debt: fr +145 (B2 legally required since 2026-01-01, highest priority),
   hr +90, pt +70.

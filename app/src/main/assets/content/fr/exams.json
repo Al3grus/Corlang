@@ -22,6 +22,18 @@
       "title": "Message sur le répondeur",
       "text": "Salut, c'est Thomas ! On va au cinéma samedi avec Marie. Le film commence à quatre heures et demie. On se retrouve à quatre heures devant le cinéma, à côté de la gare. Apporte ton parapluie, il va pleuvoir. Après le film, on mange une pizza au restaurant italien. Rappelle-moi ce soir. Salut !",
       "audioOnly": true
+     },
+     {
+      "id": "co2",
+      "title": "Annonce à la gare",
+      "text": "Attention, mesdames et messieurs, le train pour Paris, quai numéro trois, part dans cinq minutes. Merci de monter rapidement et de valider votre billet. Bon voyage à toutes et à tous !",
+      "audioOnly": true
+     },
+     {
+      "id": "co3",
+      "title": "Un appel entre amies",
+      "text": "Léa demande à Nina si elle vient au cinéma ce soir. Nina répond que non, elle doit garder son petit frère. Léa lui dit de venir demain à la place. Nina est d'accord et remercie Léa.",
+      "audioOnly": true
      }
     ],
     "questions": [
@@ -89,6 +101,58 @@
       "answer": "Ils mangent une pizza",
       "difficulty": 3,
       "explanation": "After the film they eat a pizza at the Italian restaurant."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Où entend-on cette annonce ?",
+      "options": [
+       "Dans une gare",
+       "Dans un magasin",
+       "Dans une école",
+       "Dans un restaurant"
+      ],
+      "answer": "Dans une gare",
+      "difficulty": 2,
+      "explanation": "The announcement is about a train departure from a numbered platform, so it is heard in a train station."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Le train part dans combien de temps ?",
+      "options": [
+       "Cinq minutes",
+       "Dix minutes",
+       "Une heure",
+       "Trois minutes"
+      ],
+      "answer": "Cinq minutes",
+      "difficulty": 3,
+      "explanation": "'part dans cinq minutes', the train leaves in five minutes."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Qu'est-ce que Léa propose à Nina ?",
+      "options": [
+       "D'aller au cinéma",
+       "D'aller à la piscine",
+       "De garder son frère",
+       "De faire les courses"
+      ],
+      "answer": "D'aller au cinéma",
+      "difficulty": 2,
+      "explanation": "Léa asks Nina if she is coming to the cinema tonight ('si elle vient au cinéma ce soir')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Pourquoi Nina ne peut-elle pas venir ce soir ?",
+      "options": [
+       "Elle doit garder son petit frère",
+       "Elle est malade",
+       "Elle travaille",
+       "Elle n'aime pas le cinéma"
+      ],
+      "answer": "Elle doit garder son petit frère",
+      "difficulty": 3,
+      "explanation": "Nina must look after her little brother tonight ('elle doit garder son petit frère')."
      }
     ]
    },
@@ -103,6 +167,18 @@
       "id": "ce1",
       "title": "Invitation",
       "text": "Invitation. Samedi 12 juin, Léa fête ses 8 ans ! Rendez-vous à 15 heures au parc des Lilas, 12 rue Verte. Au programme : jeux, gâteau et musique. Merci de répondre avant le 5 juin au 06 12 34 56 78. N'oubliez pas votre chapeau : la fête est dans le jardin !",
+      "audioOnly": false
+     },
+     {
+      "id": "ce2",
+      "title": "Panneau du magasin",
+      "text": "Fermé pour congés. Nous rouvrons le 3 septembre. Merci de votre visite !",
+      "audioOnly": false
+     },
+     {
+      "id": "ce3",
+      "title": "Petite annonce",
+      "text": "À vendre : vélo rouge, très bon état, 50 euros. Téléphonez au 06 45 78 12 30 après 18 heures.",
       "audioOnly": false
      }
     ],
@@ -171,6 +247,58 @@
       "answer": "Un chapeau",
       "difficulty": 3,
       "explanation": "'N'oubliez pas votre chapeau', the party is outdoors in the garden."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Pourquoi le magasin est-il fermé ?",
+      "options": [
+       "Pour les congés",
+       "Pour travaux",
+       "Pour la nuit",
+       "Pour un jour férié"
+      ],
+      "answer": "Pour les congés",
+      "difficulty": 2,
+      "explanation": "The sign says 'Fermé pour congés', closed for holidays."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quand le magasin rouvre-t-il ?",
+      "options": [
+       "Le 3 septembre",
+       "Le 3 octobre",
+       "Demain",
+       "Ce soir"
+      ],
+      "answer": "Le 3 septembre",
+      "difficulty": 3,
+      "explanation": "'Nous rouvrons le 3 septembre', it reopens on 3 September."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Qu'est-ce qu'on vend ?",
+      "options": [
+       "Un vélo",
+       "Une voiture",
+       "Une table",
+       "Un téléphone"
+      ],
+      "answer": "Un vélo",
+      "difficulty": 2,
+      "explanation": "The ad starts with 'À vendre : vélo rouge', a red bike is for sale."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quand faut-il téléphoner ?",
+      "options": [
+       "Après 18 heures",
+       "Avant 8 heures",
+       "Le matin",
+       "Le week-end seulement"
+      ],
+      "answer": "Après 18 heures",
+      "difficulty": 3,
+      "explanation": "'Téléphonez... après 18 heures', call after 6 p.m."
      }
     ]
    },
@@ -257,6 +385,18 @@
       "title": "Message d'une agence de voyages",
       "text": "Bonjour, ici l'agence de voyages Soleil. Votre train pour Marseille part vendredi à neuf heures quinze de la gare de Lyon, voie douze. Attention : ce n'est plus le train de dix heures, l'horaire a changé. Arrivée à Marseille à midi quarante. Votre hôtel s'appelle Hôtel du Port, il est à dix minutes à pied de la gare. Le petit-déjeuner est compris, mais pas le dîner. S'il y a un problème, appelez-nous avant jeudi soir. Bon voyage !",
       "audioOnly": true
+     },
+     {
+      "id": "co2",
+      "title": "Annonce au musée",
+      "text": "Mesdames et messieurs, bienvenue au musée. Le musée ferme à dix-huit heures. La visite guidée commence dans quinze minutes, salle numéro deux. Les sacs et les parapluies doivent être laissés au vestiaire. Merci et bonne visite.",
+      "audioOnly": true
+     },
+     {
+      "id": "co3",
+      "title": "À la poste",
+      "text": "Marc demande à Sophie où se trouve la poste. Sophie explique qu'elle est fermée le lundi, mais qu'elle rouvre demain matin à neuf heures. Elle conseille aussi à Marc d'utiliser le distributeur automatique juste à côté, ouvert vingt-quatre heures sur vingt-quatre.",
+      "audioOnly": true
      }
     ],
     "questions": [
@@ -324,6 +464,58 @@
       "answer": "Avant jeudi soir",
       "difficulty": 5,
       "explanation": "'Appelez-nous avant jeudi soir', before Thursday evening."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "À quelle heure ferme le musée ?",
+      "options": [
+       "À dix-huit heures",
+       "À quinze heures",
+       "À midi",
+       "À vingt heures"
+      ],
+      "answer": "À dix-huit heures",
+      "difficulty": 3,
+      "explanation": "'Le musée ferme à dix-huit heures', the museum closes at 6 p.m."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Que doit-on laisser au vestiaire ?",
+      "options": [
+       "Les sacs et les parapluies",
+       "Les téléphones",
+       "Les appareils photo",
+       "Les manteaux seulement"
+      ],
+      "answer": "Les sacs et les parapluies",
+      "difficulty": 4,
+      "explanation": "Bags and umbrellas must be left in the cloakroom ('les sacs et les parapluies doivent être laissés au vestiaire')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Pourquoi la poste est-elle fermée ?",
+      "options": [
+       "C'est lundi",
+       "C'est un jour férié",
+       "Elle a déménagé",
+       "Elle est en travaux"
+      ],
+      "answer": "C'est lundi",
+      "difficulty": 4,
+      "explanation": "The post office is closed on Mondays ('elle est fermée le lundi')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Que conseille Sophie à Marc ?",
+      "options": [
+       "D'utiliser le distributeur automatique",
+       "D'attendre demain matin",
+       "D'aller à une autre poste",
+       "De téléphoner à la poste"
+      ],
+      "answer": "D'utiliser le distributeur automatique",
+      "difficulty": 4,
+      "explanation": "Sophie advises Marc to use the cash machine right next door, open 24 hours."
      }
     ]
    },
@@ -336,12 +528,57 @@
     "passages": [
      {
       "id": "ce1",
+      "title": "Quatre annonces de loisirs",
+      "text": "Vous voulez trouver une activité pour le week-end. Voici quatre annonces.\n\nA. Cours de poterie, tous les samedis de 10 h à 12 h, salle municipale, 15 euros la séance, inscription sur place.\nB. Randonnée en forêt, dimanche matin, départ à 8 h 30 devant la mairie, gratuit, prévoir de bonnes chaussures.\nC. Cours de yoga, le samedi à 9 h, au gymnase du quartier, 10 euros la séance, réservation par téléphone.\nD. Atelier de cuisine, le dimanche après-midi à 14 h, à la Maison des associations, 20 euros, places limitées à huit personnes.",
+      "audioOnly": false
+     },
+     {
+      "id": "ce2",
       "title": "E-mail de Claire",
       "text": "De : Claire. Objet : Mon nouvel appartement. Salut Emma ! Ça y est, j'ai déménagé ! Mon nouvel appartement est au troisième étage d'un immeuble ancien, près du marché. Il est plus petit que l'ancien, mais il a un balcon et beaucoup de lumière. Le quartier est très vivant : il y a des cafés, une bibliothèque et un parc où je cours le matin. Le seul problème, c'est le bruit de la rue le samedi soir. Tu veux venir voir l'appartement dimanche prochain ? On peut déjeuner ensemble, je fais des crêpes ! Réponds-moi vite. Bises, Claire",
       "audioOnly": false
      }
     ],
     "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Vous voulez faire une activité gratuite. Quelle annonce choisissez-vous ?",
+      "options": [
+       "L'annonce B (randonnée)",
+       "L'annonce A (poterie)",
+       "L'annonce C (yoga)",
+       "L'annonce D (cuisine)"
+      ],
+      "answer": "L'annonce B (randonnée)",
+      "difficulty": 3,
+      "explanation": "Only the hike (B) is described as 'gratuit', free; the other three activities cost money."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Vous êtes disponible seulement le dimanche après-midi. Quelle annonce choisissez-vous ?",
+      "options": [
+       "L'annonce D (cuisine)",
+       "L'annonce B (randonnée)",
+       "L'annonce A (poterie)",
+       "L'annonce C (yoga)"
+      ],
+      "answer": "L'annonce D (cuisine)",
+      "difficulty": 4,
+      "explanation": "The cooking workshop (D) is on Sunday afternoon at 14 h; the hike (B) is Sunday morning, and the other two are on Saturday."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Vous cherchez l'activité la moins chère parmi celles qui ne sont pas gratuites. Quelle annonce choisissez-vous ?",
+      "options": [
+       "L'annonce C (yoga)",
+       "L'annonce A (poterie)",
+       "L'annonce D (cuisine)",
+       "L'annonce B (randonnée)"
+      ],
+      "answer": "L'annonce C (yoga)",
+      "difficulty": 4,
+      "explanation": "Yoga costs 10 euros, cheaper than pottery (15 euros) and cooking (20 euros); the hike is free, not one of the paid options."
+     },
      {
       "type": "MCQ",
       "prompt": "Pourquoi Claire écrit-elle ?",
@@ -489,12 +726,92 @@
     "passages": [
      {
       "id": "co1",
+      "title": "Info trafic",
+      "text": "Sur notre antenne, un rappel utile : à partir de lundi prochain, la ligne de bus numéro sept changera d'itinéraire pendant les travaux de la place centrale. Les arrêts « Mairie » et « Marché » seront supprimés pendant trois semaines. Un arrêt provisoire sera installé rue des Écoles. La mairie invite les usagers à consulter le site internet pour plus de détails.",
+      "audioOnly": true
+     },
+     {
+      "id": "co2",
+      "title": "Message d'une collègue",
+      "text": "Bonjour, c'est Sarah du service marketing. La réunion prévue jeudi après-midi est reportée à vendredi matin, dix heures, en salle Bleue et non plus en salle Verte. Merci d'apporter le rapport que je vous ai envoyé hier, ainsi que vos propositions pour la nouvelle campagne. Si vous ne pouvez pas venir, prévenez-moi avant demain midi.",
+      "audioOnly": true
+     },
+     {
+      "id": "co3",
       "title": "Message sur le répondeur",
       "text": "Bonjour Camille, c'est Julien. Je t'appelle au sujet de notre voyage à Lyon le week-end prochain. Malheureusement, le train de vendredi soir est complet, donc j'ai réservé deux places pour le samedi matin, à huit heures. On arrivera vers dix heures et demie. J'ai aussi trouvé un petit hôtel dans le centre, pas très cher, à côté de la gare. Par contre, il faut confirmer avant mercredi soir. Peux-tu me rappeler ce soir après dix-neuf heures ? Il faut aussi que tu penses à prendre un manteau, parce qu'il va faire froid là-bas. À bientôt, bises !",
       "audioOnly": true
      }
     ],
     "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Pourquoi la ligne sept change-t-elle d'itinéraire ?",
+      "options": [
+       "À cause de travaux sur la place centrale",
+       "À cause d'un accident",
+       "Parce qu'il y a moins de passagers",
+       "Pour des raisons de sécurité la nuit"
+      ],
+      "answer": "À cause de travaux sur la place centrale",
+      "difficulty": 5,
+      "explanation": "The line changes route because of works on the central square ('pendant les travaux de la place centrale')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Combien de temps les arrêts seront-ils supprimés ?",
+      "options": [
+       "Trois semaines",
+       "Une semaine",
+       "Un mois",
+       "Un an"
+      ],
+      "answer": "Trois semaines",
+      "difficulty": 5,
+      "explanation": "The stops are removed for three weeks ('pendant trois semaines')."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Complétez : un arrêt provisoire sera installé rue des ________.",
+      "answer": "Écoles",
+      "difficulty": 6,
+      "explanation": "A temporary stop will be set up on rue des Écoles ('un arrêt provisoire sera installé rue des Écoles').",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quand a lieu la réunion finalement ?",
+      "options": [
+       "Vendredi matin",
+       "Jeudi après-midi",
+       "Vendredi après-midi",
+       "Jeudi matin"
+      ],
+      "answer": "Vendredi matin",
+      "difficulty": 5,
+      "explanation": "The Thursday-afternoon meeting is postponed to Friday morning at 10 a.m."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Dans quelle salle se déroule la réunion ?",
+      "options": [
+       "En salle Bleue",
+       "En salle Verte",
+       "En salle de conférence",
+       "Dans le bureau de Sarah"
+      ],
+      "answer": "En salle Bleue",
+      "difficulty": 6,
+      "explanation": "The venue changed from the Green room to the Blue room ('en salle Bleue et non plus en salle Verte')."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Complétez : il faut prévenir Sarah avant ________ midi si on ne peut pas venir.",
+      "answer": "demain",
+      "difficulty": 6,
+      "explanation": "Sarah asks to be told before tomorrow noon if you cannot attend ('prévenez-moi avant demain midi').",
+      "strictDiacritics": true
+     },
      {
       "type": "MCQ",
       "prompt": "Pourquoi Julien appelle-t-il Camille ?",
@@ -553,8 +870,7 @@
       ],
       "answer": "Un manteau",
       "difficulty": 5,
-      "explanation": "He reminds her to take a coat because it will be cold there.",
-      "audioText": "Il faut aussi que tu penses à prendre un manteau, parce qu'il va faire froid là-bas."
+      "explanation": "He reminds her to take a coat because it will be cold there."
      }
     ]
    },
@@ -567,12 +883,57 @@
     "passages": [
      {
       "id": "ce1",
+      "title": "Quatre formations du soir",
+      "text": "Vous voulez suivre une formation le soir après le travail. Voici quatre propositions du centre culturel.\n\nA. Initiation à la photographie numérique : le mardi de 19 h à 21 h, huit séances, 90 euros, niveau débutant, prêt de matériel possible.\nB. Atelier d'écriture créative : le jeudi de 18 h 30 à 20 h, dix séances, 120 euros, tous niveaux, places limitées à dix personnes.\nC. Cours de comptabilité pour indépendants : le lundi de 20 h à 22 h, six séances, 150 euros, niveau intermédiaire requis, ordinateur personnel conseillé.\nD. Cours de langue des signes française : le mercredi de 19 h à 20 h 30, douze séances, 100 euros, niveau débutant, ouvert à partir de seize ans.",
+      "audioOnly": false
+     },
+     {
+      "id": "ce2",
       "title": "Le vélo en libre-service dans notre ville",
-      "text": "Depuis le mois de mars, notre ville propose un nouveau service de vélos en libre-service. Trois cents vélos sont désormais disponibles dans quarante stations réparties dans les différents quartiers. Le principe est simple : vous prenez un vélo dans une station et vous le rendez dans n'importe quelle autre station, quand vous le souhaitez. Pour l'utiliser, il suffit de télécharger l'application sur son téléphone et de créer un compte. La première demi-heure est gratuite, ce qui permet de faire la plupart des trajets courts sans payer. Ensuite, chaque heure supplémentaire coûte un euro. Les habitants qui prennent un abonnement annuel, à vingt euros, bénéficient d'une heure gratuite par trajet. Le service est ouvert tous les jours, de six heures du matin à minuit. La mairie espère ainsi réduire la circulation automobile et améliorer la qualité de l'air. Elle prévoit déjà d'ajouter cent vélos électriques dès l'année prochaine pour les trajets plus longs.",
+      "text": "Depuis le mois de mars, notre ville propose un nouveau service de vélos en libre-service. Trois cents vélos sont désormais disponibles dans quarante stations réparties dans les différents quartiers. Le principe est simple : vous prenez un vélo dans une station et vous le rendez dans n'importe quelle autre station, quand vous le souhaitez. Pour l'utiliser, il suffit de télécharger l'application sur son téléphone et de créer un compte. La première demi-heure est gratuite, ce qui permet de faire la plupart des trajets courts sans payer. Ensuite, chaque heure supplémentaire coûte un euro. Les habitants qui prennent un abonnement annuel, à vingt euros, bénéficient d'une heure gratuite par trajet. Le service est ouvert tous les jours, de six heures du matin à minuit. La mairie espère ainsi réduire la circulation automobile et améliorer la qualité de l'air. Elle prévoit déjà d'ajouter cent vélos électriques dès l'année prochaine pour les trajets plus longs. Chaque vélo est équipé d'un casque réglable et d'un panier à l'avant, pratique pour transporter quelques courses. Un système d'éclairage automatique s'allume dès la tombée de la nuit, ce qui renforce la sécurité des cyclistes. Depuis le lancement du service, le nombre de trajets a augmenté de façon régulière : on comptait environ mille trajets par jour au printemps, contre près de trois mille aujourd'hui. Les jeunes actifs et les étudiants forment la majorité des utilisateurs, mais de plus en plus de retraités adoptent aussi ce mode de déplacement pour leurs courses quotidiennes. Certains habitants regrettent toutefois que les stations soient encore trop rares dans les quartiers périphériques et espèrent que le réseau s'étendra bientôt aux communes voisines. La mairie a d'ailleurs annoncé qu'une réunion publique serait organisée le mois prochain pour recueillir les avis des habitants sur l'extension du service. En attendant, plusieurs associations locales proposent des ateliers gratuits pour apprendre à réparer soi-même son vélo, ce qui séduit un public toujours plus large, curieux de gagner en autonomie.",
       "audioOnly": false
      }
     ],
     "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Vous êtes libre uniquement le jeudi soir. Quelle formation choisissez-vous ?",
+      "options": [
+       "L'atelier d'écriture créative",
+       "L'initiation à la photographie",
+       "Le cours de comptabilité",
+       "Le cours de langue des signes"
+      ],
+      "answer": "L'atelier d'écriture créative",
+      "difficulty": 5,
+      "explanation": "Only the creative-writing workshop (B) meets on Thursday evenings; the others are Monday, Tuesday or Wednesday."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Pourquoi la formation de comptabilité ne convient-elle pas à un vrai débutant ?",
+      "options": [
+       "Elle exige un niveau intermédiaire",
+       "Elle est trop chère",
+       "Elle a lieu le week-end",
+       "Elle n'accepte pas les indépendants"
+      ],
+      "answer": "Elle exige un niveau intermédiaire",
+      "difficulty": 6,
+      "explanation": "The accounting course requires an intermediate level ('niveau intermédiaire requis'), so a true beginner would not qualify."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Vous n'avez pas de matériel photo mais voulez apprendre la photographie. Est-ce un problème ?",
+      "options": [
+       "Non, le prêt de matériel est possible",
+       "Oui, il faut acheter un appareil cher",
+       "Non, mais il faut avoir un ordinateur",
+       "Oui, la formation est réservée aux professionnels"
+      ],
+      "answer": "Non, le prêt de matériel est possible",
+      "difficulty": 6,
+      "explanation": "The photography course allows equipment loans ('prêt de matériel possible'), so not owning a camera is not a problem."
+     },
      {
       "type": "MCQ",
       "prompt": "Que faut-il faire pour utiliser un vélo ?",
@@ -632,6 +993,27 @@
       "answer": "Ajouter des vélos électriques",
       "difficulty": 6,
       "explanation": "It plans to add a hundred electric bikes next year for longer trips."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Combien de trajets par jour sont réalisés aujourd'hui, contre mille au printemps ?",
+      "options": [
+       "Près de trois mille",
+       "Environ cinq mille",
+       "Deux mille",
+       "Dix mille"
+      ],
+      "answer": "Près de trois mille",
+      "difficulty": 6,
+      "explanation": "Daily trips grew from about a thousand in spring to nearly three thousand today."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Complétez : chaque vélo est équipé d'un casque réglable et d'un panier à l'________.",
+      "answer": "avant",
+      "difficulty": 6,
+      "explanation": "Each bike has an adjustable helmet and a basket at the front ('un panier à l'avant').",
+      "strictDiacritics": true
      }
     ]
    },
@@ -643,7 +1025,7 @@
     "prompts": [
      {
       "prompt": "Sur le forum d'un magazine, vous lisez la question suivante : « Faut-il interdire les téléphones portables au collège et au lycée ? » Donnez votre opinion dans une contribution d'environ 160 mots. Justifiez votre point de vue avec des exemples et des arguments.",
-      "modelAnswer": "À mon avis, la question des téléphones portables à l'école est très importante aujourd'hui. Personnellement, je pense qu'il faut les limiter, mais pas les interdire complètement. D'un côté, le téléphone peut déranger les élèves pendant les cours. Beaucoup de jeunes regardent leur écran au lieu d'écouter le professeur, et ils dorment moins parce qu'ils passent la nuit sur les réseaux sociaux. De plus, cela peut créer des problèmes entre les élèves, par exemple du harcèlement. D'un autre côté, le téléphone est parfois utile. On peut chercher une information, utiliser un dictionnaire ou prévenir ses parents en cas d'urgence. C'est pourquoi je propose une solution simple : les élèves devraient ranger leur téléphone pendant les cours, mais pouvoir l'utiliser pendant la pause. Ainsi, ils resteraient concentrés tout en gardant un moyen de communication. En conclusion, je crois qu'une interdiction totale serait exagérée : il vaut mieux apprendre aux jeunes à bien utiliser cet outil.",
+      "modelAnswer": "À mon avis, la question des téléphones portables à l'école est très importante aujourd'hui. Personnellement, je pense qu'il faut les limiter, mais pas les interdire complètement. D'un côté, le téléphone peut déranger les élèves pendant les cours. Beaucoup de jeunes regardent leur écran au lieu d'écouter le professeur, et ils dorment moins parce qu'ils passent la nuit sur les réseaux sociaux. De plus, cela peut créer des problèmes entre les élèves, par exemple du harcèlement. D'un autre côté, le téléphone est parfois utile. On peut chercher une information, utiliser un dictionnaire ou prévenir ses parents en cas d'urgence. C'est pourquoi je propose une solution simple : les élèves devraient ranger leur téléphone pendant les cours, mais pouvoir l'utiliser pendant la pause. Ainsi, ils resteraient concentrés tout en gardant un moyen de communication. Certains établissements ont d'ailleurs déjà testé cette solution avec succès : les élèves rangent leur téléphone dans une pochette au début du cours et le récupèrent à la sonnerie, ce qui limite les tentations sans créer de conflit inutile avec les enseignants. En conclusion, je crois qu'une interdiction totale serait exagérée : il vaut mieux apprendre aux jeunes à bien utiliser cet outil.",
       "rubric": [
        "Le texte fait environ 160 mots",
        "L'opinion est clairement exprimée et justifiée",
@@ -658,7 +1040,7 @@
     "id": "po",
     "kind": "SPEAKING",
     "title": "Production orale",
-    "instructions": "Speak aloud for each task, then self-assess with the rubric.",
+    "instructions": "Speak aloud for each task, then self-assess with the rubric. (10 minutes de préparation)",
     "prompts": [
      {
       "prompt": "Entretien dirigé : présentez-vous (études, travail, loisirs).",
@@ -711,12 +1093,52 @@
     "passages": [
      {
       "id": "co1",
+      "title": "Flash info : le vélo en ville",
+      "text": "Et pour finir ce journal, un mot sur la pratique du vélo en milieu urbain. Selon une étude publiée hier, le nombre de trajets effectués à vélo dans les grandes villes françaises a doublé en cinq ans, porté par la multiplication des pistes cyclables et la hausse du prix du carburant. Les chercheurs notent toutefois que les femmes restent sous-représentées parmi les cyclistes, en raison notamment d'un sentiment d'insécurité plus marqué. Les associations réclament donc des aménagements supplémentaires pour sécuriser les déplacements, en particulier aux heures de pointe.",
+      "audioOnly": true
+     },
+     {
+      "id": "co2",
       "title": "Débat : faut-il interdire les téléphones portables au collège ?",
-      "text": "Bonjour à toutes et à tous. Aujourd'hui, notre débat porte sur l'interdiction du téléphone portable dans les collèges. Madame Lefèvre, sociologue, vous êtes plutôt favorable à cette mesure. Effectivement, je considère que le portable nuit à la concentration des adolescents et appauvrit les échanges directs entre eux. Cependant, je nuancerais : interdire ne suffit pas, encore faut-il éduquer les jeunes à un usage raisonné du numérique. Monsieur Ndiaye, vous êtes enseignant, et vous n'êtes pas tout à fait du même avis. En effet, je crains qu'une interdiction stricte ne soit contournée et qu'elle prive les élèves d'un formidable outil pédagogique. Selon moi, plutôt que de bannir, nous devrions intégrer ces appareils dans nos cours, sous certaines conditions. Le véritable enjeu n'est donc pas l'interdiction, mais l'accompagnement.",
+      "text": "Bonjour à toutes et à tous, dit la présentatrice. Aujourd'hui, notre débat porte sur l'interdiction du téléphone portable dans les collèges. Madame Lefèvre, sociologue, vous êtes plutôt favorable à cette mesure. Effectivement, répond Madame Lefèvre, je considère que le portable nuit à la concentration des adolescents et appauvrit les échanges directs entre eux. Cependant, je nuancerais : interdire ne suffit pas, encore faut-il éduquer les jeunes à un usage raisonné du numérique. Monsieur Ndiaye, reprend la présentatrice, vous êtes enseignant, et vous n'êtes pas tout à fait du même avis. En effet, répond M. Ndiaye, je crains qu'une interdiction stricte ne soit contournée et qu'elle prive les élèves d'un formidable outil pédagogique. Selon moi, plutôt que de bannir, nous devrions intégrer ces appareils dans nos cours, sous certaines conditions. Le véritable enjeu n'est donc pas l'interdiction, mais l'accompagnement, conclut-il.",
       "audioOnly": true
      }
     ],
     "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Que révèle l'étude mentionnée dans ce flash info ?",
+      "options": [
+       "Le nombre de trajets à vélo a doublé en cinq ans",
+       "Le nombre de cyclistes a baissé",
+       "Les pistes cyclables ont été supprimées",
+       "Le prix du carburant a baissé"
+      ],
+      "answer": "Le nombre de trajets à vélo a doublé en cinq ans",
+      "difficulty": 7,
+      "explanation": "The study found that cycling trips in major French cities doubled in five years ('a doublé en cinq ans')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Pourquoi les femmes restent-elles sous-représentées parmi les cyclistes, selon les chercheurs ?",
+      "options": [
+       "À cause d'un sentiment d'insécurité plus marqué",
+       "Parce qu'elles n'aiment pas le sport",
+       "Parce que les vélos sont trop chers",
+       "Parce qu'elles travaillent loin de chez elles"
+      ],
+      "answer": "À cause d'un sentiment d'insécurité plus marqué",
+      "difficulty": 8,
+      "explanation": "Researchers point to a stronger feeling of insecurity among women ('un sentiment d'insécurité plus marqué')."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Complétez : les associations réclament des aménagements supplémentaires, en particulier aux heures de ________.",
+      "answer": "pointe",
+      "difficulty": 7,
+      "explanation": "Associations call for extra provisions especially at peak hours ('aux heures de pointe').",
+      "strictDiacritics": true
+     },
      {
       "type": "MCQ",
       "prompt": "Quel est le thème central de ce débat ?",
@@ -771,7 +1193,7 @@
      },
      {
       "type": "FILL",
-      "prompt": "Complétez : selon le présentateur, le véritable enjeu n'est pas l'interdiction, mais l'___.",
+      "prompt": "Complétez : selon M. Ndiaye, le véritable enjeu n'est pas l'interdiction, mais l'___.",
       "answer": "accompagnement",
       "difficulty": 7,
       "explanation": "The closing line states 'Le véritable enjeu n'est donc pas l'interdiction, mais l'accompagnement.' The missing word is 'accompagnement'.",
@@ -788,12 +1210,78 @@
     "passages": [
      {
       "id": "ce1",
+      "title": "Le français dans le monde",
+      "text": "On compte aujourd'hui environ trois cents millions de locuteurs de français à travers le monde, répartis sur les cinq continents. Si l'Europe reste le berceau historique de la langue, c'est en Afrique que sa progression est la plus spectaculaire : selon les projections démographiques, le continent africain pourrait rassembler plus de sept locuteurs de français sur dix d'ici le milieu du siècle. Cette expansion s'explique notamment par la forte croissance démographique et par la place du français dans l'enseignement de nombreux pays africains. Au-delà de l'Afrique, le français demeure une langue de travail dans plusieurs organisations internationales et reste très présent au Canada, notamment au Québec, ainsi que dans les Caraïbes. Les linguistes soulignent toutefois que cet avenir dépendra largement des politiques éducatives menées dans les décennies à venir.",
+      "audioOnly": false
+     },
+     {
+      "id": "ce2",
       "title": "Faut-il vraiment tout télétravailler ?",
       "text": "Depuis quelques années, le télétravail s'est imposé comme une évidence, presque comme un progrès social incontestable. Pourtant, je reste convaincu que sa généralisation mérite un examen plus critique. Certes, travailler depuis chez soi présente des avantages indéniables : moins de temps perdu dans les transports, une meilleure conciliation entre vie professionnelle et vie privée, et parfois une productivité accrue. Nul ne saurait le nier. Néanmoins, à trop vouloir tout dématérialiser, ne risque-t-on pas d'appauvrir ce qui fait la richesse d'une entreprise : les échanges informels, la créativité collective, le sentiment d'appartenance ? Un courriel ne remplacera jamais une discussion spontanée devant la machine à café. Par ailleurs, le télétravail creuse parfois les inégalités : tous les salariés ne disposent pas d'un logement adapté ni d'un environnement calme. Certains y gagnent en autonomie ; d'autres y perdent en repères et sombrent dans l'isolement. Enfin, la frontière entre le travail et la vie personnelle tend à s'effacer, si bien que l'on finit par ne plus jamais vraiment déconnecter. Je ne prône donc nullement un retour en arrière, mais je plaide pour l'équilibre. Le télétravail ne devrait être ni une obligation ni une fuite, mais un choix éclairé, encadré et négocié. À mes yeux, l'avenir n'appartient ni au tout-présentiel ni au tout-distanciel, mais à une organisation hybride, pensée pour l'humain plutôt que pour la seule rentabilité.",
       "audioOnly": false
      }
     ],
     "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Combien de locuteurs de français y a-t-il dans le monde aujourd'hui, selon le texte ?",
+      "options": [
+       "Environ trois cents millions",
+       "Environ cent millions",
+       "Environ un milliard",
+       "Environ cinquante millions"
+      ],
+      "answer": "Environ trois cents millions",
+      "difficulty": 7,
+      "explanation": "The text opens with 'environ trois cents millions de locuteurs de français'."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Sur quel continent la progression du français est-elle la plus forte ?",
+      "options": [
+       "En Afrique",
+       "En Europe",
+       "En Amérique du Nord",
+       "En Asie"
+      ],
+      "answer": "En Afrique",
+      "difficulty": 7,
+      "explanation": "'c'est en Afrique que sa progression est la plus spectaculaire', Africa shows the strongest growth."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Qu'est-ce qui explique principalement cette expansion en Afrique ?",
+      "options": [
+       "La croissance démographique et la place du français dans l'enseignement",
+       "La construction de nouvelles écoles françaises",
+       "L'arrivée de nombreux immigrants européens",
+       "La suppression des langues locales"
+      ],
+      "answer": "La croissance démographique et la place du français dans l'enseignement",
+      "difficulty": 8,
+      "explanation": "The text cites 'la forte croissance démographique' and the role of French in schooling across many African countries."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Complétez : le français reste très présent au Canada, notamment au ________.",
+      "answer": "Québec",
+      "difficulty": 7,
+      "explanation": "French remains very present in Canada, notably in Québec ('notamment au Québec').",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "De quoi dépendra l'avenir du français en Afrique, selon les linguistes cités ?",
+      "options": [
+       "Des politiques éducatives menées dans les décennies à venir",
+       "Du prix du pétrole",
+       "Du nombre de touristes",
+       "Des accords commerciaux internationaux"
+      ],
+      "answer": "Des politiques éducatives menées dans les décennies à venir",
+      "difficulty": 8,
+      "explanation": "Linguists stress that the future depends largely on education policy in the coming decades."
+     },
      {
       "type": "MCQ",
       "prompt": "Quelle est la thèse principale défendue par l'auteur ?",
@@ -864,7 +1352,7 @@
     "prompts": [
      {
       "prompt": "Le maire de votre ville envisage d'interdire complètement la circulation des voitures dans le centre-ville. Sur le forum du site de la mairie, vous réagissez à ce projet. Dans une contribution argumentée d'environ 250 mots, vous exprimez votre position, vous la justifiez à l'aide d'exemples précis et vous répondez aux éventuelles objections, dans un registre formel.",
-      "modelAnswer": "Madame, Monsieur, membres du conseil municipal,\n\nJ'ai pris connaissance du projet visant à interdire la circulation automobile dans le centre-ville, et je souhaite, par cette contribution, exprimer un soutien nuancé à cette initiative.\n\nIl me paraît en effet difficile de nier les bénéfices d'une telle mesure. En premier lieu, la qualité de l'air s'en trouverait considérablement améliorée, ce qui profiterait à la santé de tous, et notamment des enfants et des personnes âgées. Par ailleurs, un centre apaisé, rendu aux piétons et aux cyclistes, redonnerait vie aux commerces de proximité et aux terrasses, comme l'ont démontré plusieurs villes européennes.\n\nNéanmoins, je conçois que certains habitants s'inquiètent légitimement. Les commerçants craignent une baisse de leur clientèle, et les personnes à mobilité réduite redoutent d'être pénalisées. Ces objections ne sauraient être balayées d'un revers de main. C'est pourquoi une interdiction brutale me semblerait contre-productive.\n\nJe plaide donc pour une mise en œuvre progressive et concertée. Il conviendrait, en effet, de développer au préalable des transports en commun performants, de créer des parkings-relais en périphérie et de prévoir des dérogations pour les livraisons et les riverains vulnérables.\n\nEn définitive, je suis convaincu qu'un centre-ville sans voitures constitue un projet d'avenir, à condition qu'il soit pensé pour l'ensemble des citoyens et non imposé sans dialogue. La transition écologique ne réussira que si elle demeure juste et inclusive.\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.",
+      "modelAnswer": "Madame, Monsieur, membres du conseil municipal,\n\nJ'ai pris connaissance du projet visant à interdire la circulation automobile dans le centre-ville, et je souhaite, par cette contribution, exprimer un soutien nuancé à cette initiative.\n\nIl me paraît en effet difficile de nier les bénéfices d'une telle mesure. En premier lieu, la qualité de l'air s'en trouverait considérablement améliorée, ce qui profiterait à la santé de tous, et notamment des enfants et des personnes âgées. Par ailleurs, un centre apaisé, rendu aux piétons et aux cyclistes, redonnerait vie aux commerces de proximité et aux terrasses, comme l'ont démontré plusieurs villes européennes.\n\nNéanmoins, je conçois que certains habitants s'inquiètent légitimement. Les commerçants craignent une baisse de leur clientèle, et les personnes à mobilité réduite redoutent d'être pénalisées. Ces objections ne sauraient être balayées d'un revers de main. C'est pourquoi une interdiction brutale me semblerait contre-productive.\n\nJe plaide donc pour une mise en œuvre progressive et concertée. Il conviendrait, en effet, de développer au préalable des transports en commun performants, de créer des parkings-relais en périphérie et de prévoir des dérogations pour les livraisons et les riverains vulnérables. Il conviendrait également d'accompagner les commerçants pendant la transition, par exemple au moyen d'aides ponctuelles ou d'une communication renforcée sur les nouveaux accès, afin que la période d'adaptation ne se traduise pas par une perte de chiffre d'affaires. Une consultation régulière des riverains et des professionnels permettrait, en outre, d'ajuster le dispositif au fil de l'expérience.\n\nEn définitive, je suis convaincu qu'un centre-ville sans voitures constitue un projet d'avenir, à condition qu'il soit pensé pour l'ensemble des citoyens et non imposé sans dialogue. La transition écologique ne réussira que si elle demeure juste et inclusive.\n\nJe vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.",
       "rubric": [
        "Le texte fait environ 250 mots",
        "La position est argumentée avec des exemples",
@@ -879,7 +1367,7 @@
     "id": "po",
     "kind": "SPEAKING",
     "title": "Production orale",
-    "instructions": "Prepare, then defend a viewpoint aloud; self-assess with the rubric.",
+    "instructions": "Prepare, then defend a viewpoint aloud; self-assess with the rubric. (30 minutes de préparation)",
     "prompts": [
      {
       "prompt": "Monologue suivi : dégagez le problème soulevé par ce court document et présentez votre opinion argumentée. Document : « De plus en plus de jeunes s'informent uniquement par les réseaux sociaux, délaissant la presse traditionnelle. Faut-il s'en réjouir ou s'en inquiéter ? Si ces plateformes démocratisent l'accès à l'information, elles favorisent aussi la diffusion rapide de fausses nouvelles et l'enfermement dans des bulles d'opinion. »",
