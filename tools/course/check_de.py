@@ -32,6 +32,18 @@ REGIONAL = {
     "rahm": "sahne", "velo": "fahrrad", "grüezi": "guten tag",
     "znüni": "frühstück", "spital": "krankenhaus", "trottoir": "gehweg",
     "heuer": "dieses jahr", "servus": "hallo", "gelse": "mücke",
+    # Swiss orthography abolished ß entirely (ss in every position); the opposite drift
+    # direction from SHARP_S_ERRORS below, found live in shipped content 2026-07-28 ("grosse"
+    # silently accepted as correct with no contrastive note). Common everyday inflections only;
+    # same activity-scoped contrastive-teaching exemption as every other REGIONAL entry.
+    "gross": "groß", "grosse": "große", "grosser": "großer", "grosses": "großes",
+    "grossen": "großen", "grossem": "großem", "weiss": "weiß", "heissen": "heißen",
+    "aussen": "außen", "draussen": "draußen", "fuss": "fuß", "strasse": "straße",
+    "strassen": "straßen", "gruss": "gruß", "grüsse": "grüße",
+    # Austrian retains ß here specifically to distinguish "storey" from "Geschoß" (projectile);
+    # standard German (Germany) writes "Geschoss" for both senses. Found live 2026-07-28
+    # ("Erdgeschoß" silently accepted as correct with no contrastive note).
+    "erdgeschoß": "erdgeschoss",
 }
 
 SOUTHERN_PERFECT = re.compile(
@@ -99,13 +111,89 @@ def distractors_of(day):
     return out
 
 
+def _unwrap(obj):
+    """Assembled course files are {"title": ..., "days": [...]}; pre-merge batches are a bare
+    array. Accept either so this checker runs against both."""
+    if isinstance(obj, dict) and isinstance(obj.get("days"), list):
+        return obj["days"]
+    return obj
+
+
+def _is_day_shaped(days):
+    return (isinstance(days, list) and len(days) > 0 and isinstance(days[0], dict)
+            and "activities" in days[0])
+
+
+def _german_strings(node):
+    """KEY-scoped like german_strings_of(), but path-driven via check_batch.walk_strings so it
+    works on arbitrary JSON shapes (vocab packs, quizzes, exams...), not just a `day` object.
+    Scanning unscoped (every string, including English commentary/gloss fields) produced false
+    positives from ss-for-ß REGIONAL entries that are also common English words: "gross per
+    month" and "make such a fuss" both false-flagged as Swiss drift before this fix."""
+    for path, s in check_batch.walk_strings(node):
+        if (path.endswith(".hr") or path.endswith(".target") or path.endswith(".answer")
+                or ".options[" in path or ".ordered[" in path or ".accepted[" in path):
+            yield s
+
+
+def _generic_distractors(node):
+    """Wrong MCQ options anywhere in an arbitrary JSON tree, not just under day.activities:
+    quizzes/placement/exams put "type": "MCQ" questions directly under "questions" with no
+    activity wrapper. Same exemption principle as distractors_of() for day-shaped files."""
+    out = set()
+
+    def rec(x):
+        if isinstance(x, dict):
+            if x.get("type") == "MCQ":
+                ans = x.get("answer")
+                for opt in x.get("options", []):
+                    if opt != ans:
+                        out.add(opt)
+            for v in x.values():
+                rec(v)
+        elif isinstance(x, list):
+            for v in x:
+                rec(v)
+
+    rec(node)
+    return out
+
+
+def check_german_generic(label, raw):
+    """Regional-lexis, southern-perfect and sharp-s checks for non-day-shaped files (vocab
+    packs, quizzes.json, placement.json, exams.json, grammar.json...) that check_german() can't
+    parse because they have no `activities` structure to scope by. Found live 2026-07-28: these
+    file shapes crashed check_batch.check_file()/check_german() outright, so the German vocab
+    deck and assessment content had never been checked at all (K14)."""
+    errs = []
+    wrong = _generic_distractors(raw)
+    strings = list(_german_strings(raw))
+    for s in strings:
+        if s in wrong:
+            continue
+        m = SOUTHERN_PERFECT.search(s)
+        if m and not taught_against(s, m.group(2)):
+            errs.append(f"{label}: southern perfect auxiliary in {s[:70]!r}, "
+                        f"standard German takes haben")
+        m = SHARP_S_ERRORS.search(s)
+        if m:
+            errs.append(f"{label}: pre-reform or wrong sharp s {m.group(0)!r} in {s[:60]!r}")
+    blob = " ".join(s for s in strings if s not in wrong).lower()
+    for regional, standard in REGIONAL.items():
+        if (re.search(rf"\b{re.escape(regional)}\b", blob)
+                and not re.search(rf"\b{re.escape(standard)}\b", blob)):
+            errs.append(f"{label}: regional form {regional!r} without its standard "
+                        f"counterpart {standard!r} anywhere in the file")
+    return errs
+
+
 def check_german(path):
     errs = []
     try:
-        days = json.load(io.open(path, encoding="utf-8"))
+        days = _unwrap(json.load(io.open(path, encoding="utf-8")))
     except Exception:
         return []  # check_batch already reported the parse failure
-    if not isinstance(days, list):
+    if not _is_day_shaped(days):
         return []
 
     for di, day in enumerate(days):
@@ -124,9 +212,14 @@ def check_german(path):
             if m:
                 errs.append(f"{tag}: pre-reform or wrong sharp s {m.group(0)!r} in {s[:60]!r}")
 
-        # Regional forms, scoped to the activity so contrastive teaching is allowed.
+        # Regional forms, scoped to the activity so contrastive teaching is allowed. KEY-scoped
+        # like german_strings_of() (not the unscoped strings_of()): the ss-for-ß entries added
+        # 2026-07-28 (gross, fuss...) are also common English words, and scanning English
+        # commentary/gloss fields produced false positives from "gross per month" and "make
+        # such a fuss" — the same collision class the module docstring warns about elsewhere,
+        # just never triggered before because no original REGIONAL entry was also an English word.
         for a in day.get("activities", []):
-            blob = " ".join(s for s in strings_of(a) if s not in wrong_options).lower()
+            blob = " ".join(s for s in german_strings_of(a) if s not in wrong_options).lower()
             for regional, standard in REGIONAL.items():
                 # Both sides matched as whole words. A substring test would let the English
                 # gloss "January" stand in for the German "Januar" and silently excuse
@@ -146,13 +239,18 @@ if __name__ == "__main__":
             print(f"MISSING {path}")
             bad += 1
             continue
-        errs = check_batch.check_file(path) + check_german(path)
-        try:
-            n = len(json.load(io.open(path, encoding="utf-8")))
-        except Exception:
+        raw = json.load(io.open(path, encoding="utf-8"))
+        days = _unwrap(raw)
+        if _is_day_shaped(days):
+            errs = check_batch.check_file(path) + check_german(path)
+            n = len(days)
+            label = f"{n} days"
+        else:
+            errs = check_german_generic(os.path.basename(path), raw)
             n = 0
+            label = "generic file"
         total += n
-        print(f"{os.path.basename(path):<16} {n:>3} days  "
+        print(f"{os.path.basename(path):<28} {label:<12} "
               f"{'OK ' if not errs else str(len(errs)) + ' PROBLEMS'}")
         for e in errs[:30]:
             print(f"    - {e}")

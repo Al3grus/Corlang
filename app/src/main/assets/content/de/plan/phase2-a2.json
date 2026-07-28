@@ -2715,7 +2715,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Put the verb meaning 'to go' in the right place and form: Ich habe Kopfschmerzen, deshalb ___ ich heute nicht ins Kino.",
+       "prompt": "Put the verb meaning 'to go' in the right place and form: Ich habe Kopfschmerzen (a headache), deshalb ___ ich heute nicht ins Kino.",
        "difficulty": 5,
        "answer": "gehe",
        "explanation": "The verb stands directly after the adverb of consequence and before the subject."
@@ -3823,6 +3823,11 @@
        "note": "gern -> lieber, used for preferences"
       },
       {
+       "hr": "Heute habe ich viel Arbeit, aber morgen habe ich noch mehr.",
+       "en": "Today I have a lot of work, but tomorrow I will have even more.",
+       "note": "viel -> mehr, completely irregular"
+      },
+      {
        "hr": "Mein Koffer ist größer als deine Tasche.",
        "en": "My suitcase is bigger than your bag.",
        "note": "groß -> größer, the ß stays because the vowel is long"
@@ -4003,6 +4008,11 @@
        "hr": "Im Dezember sind die Tage am kürzesten.",
        "en": "In December the days are the shortest.",
        "note": "kurz -> kürzer -> am kürzesten, Umlaut plus extra e"
+      },
+      {
+       "hr": "Am meisten Zeit verbringe ich zu Hause.",
+       "en": "I spend the most time at home.",
+       "note": "viel -> mehr -> am meisten, completely irregular"
       }
      ],
      "sources": [
@@ -5477,9 +5487,6 @@
        "prompt": "Complete with the correct form of 'groß' (big): Ich habe ___ Lust auf einen Spaziergang.",
        "difficulty": 6,
        "answer": "große",
-       "accepted": [
-        "grosse"
-       ],
        "explanation": "'Die Lust' is feminine and appears here with no article in the accusative, which gives -e."
       },
       {
@@ -5614,12 +5621,12 @@
        "note": "Always ask which of the two figures an advert is showing."
       },
       {
-       "hr": "Die Kaution beträgt drei Kaltmieten, und man bekommt sie beim Auszug zurück.",
-       "en": "The deposit is three months of cold rent, and you get it back when you move out.",
+       "hr": "Die Kaution darf höchstens drei Kaltmieten betragen, und man bekommt sie beim Auszug zurück.",
+       "en": "The deposit may be at most three months of cold rent, and you get it back when you move out.",
        "note": "die Kaution, the deposit, is legally limited to three cold rents."
       },
       {
-       "hr": "Die möblierte Wohnung im Erdgeschoss hat 65 Quadratmeter und liegt in einem alten Altbau.",
+       "hr": "Die möblierte Wohnung im Erdgeschoss hat 65 Quadratmeter und liegt in einem Altbau.",
        "en": "The furnished ground floor flat has 65 square metres and is in an old period building.",
        "note": "der Altbau is a building from before roughly 1950, der Neubau a modern one."
       }
@@ -5676,7 +5683,6 @@
        "difficulty": 5,
        "answer": "Erdgeschoss",
        "accepted": [
-        "Erdgeschoß",
         "das Erdgeschoss"
        ],
        "explanation": "das Erdgeschoss is the ground floor. The floor above it is called der erste Stock, not the second."
@@ -5987,7 +5993,7 @@
    "reviewBlock": {
     "minutes": 15,
     "items": [
-     "How long is a typical Kündigungsfrist for a tenant?",
+     "How long is the legally required Kündigungsfrist for a tenant?",
      "What arrives once a year for the Nebenkosten, and what can it mean for your account?",
      "Why should you never sign a handover protocol that says everything is fine when it is not?"
     ]
@@ -6004,8 +6010,8 @@
        "note": "überweisen, to transfer money, is the normal way rent is paid."
       },
       {
-       "hr": "Die Kündigungsfrist beträgt für den Mieter meistens drei Monate.",
-       "en": "The notice period for the tenant is usually three months.",
+       "hr": "Die Kündigungsfrist beträgt für den Mieter gesetzlich drei Monate.",
+       "en": "The notice period for the tenant is fixed by law at three months.",
        "note": "You keep paying rent during the whole Kündigungsfrist."
       },
       {
@@ -6081,10 +6087,10 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Build the German for: 'The notice period is usually three months.'",
+       "prompt": "Build the German for: 'The notice period is fixed by law at three months.'",
        "difficulty": 4,
        "options": [
-        "meistens",
+        "gesetzlich",
         "Die",
         "Monate",
         "beträgt",
@@ -6095,11 +6101,11 @@
         "Die",
         "Kündigungsfrist",
         "beträgt",
-        "meistens",
+        "gesetzlich",
         "drei",
         "Monate"
        ],
-       "explanation": "betragen is the standard verb for amounts and periods, and the adverb meistens stands directly after the verb."
+       "explanation": "betragen is the standard verb for amounts and periods, and the adverb gesetzlich (by law) stands directly after the verb."
       }
      ],
      "sources": [
@@ -6337,7 +6343,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Wir haben ihn auseinandergebaut. Um zehn Uhr abends bin ich endlich eingezogen.",
+       "hr": "Wir haben ihn auseinandergenommen. Um zehn Uhr abends bin ich endlich eingezogen.",
        "en": "We took it apart. At ten in the evening I finally moved in."
       },
       {
@@ -10144,8 +10150,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "In der Gartenstraße 8, im dritten Stock.",
-       "en": "At Gartenstrasse 8, on the third floor."
+       "hr": "In der Lindenstraße 12, im dritten Stock.",
+       "en": "At Lindenstrasse 12, on the third floor."
       },
       {
        "speaker": "Partner",

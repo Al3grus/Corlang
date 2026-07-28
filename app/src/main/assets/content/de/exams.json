@@ -21,6 +21,18 @@
       "title": "Durchsage am Bahnhof",
       "text": "Achtung, eine Information für die Reisenden an Gleis 3. Der Zug nach München fährt heute nicht um 14 Uhr 10. Der Zug fährt um 14 Uhr 40. Wir haben ein Problem mit der Technik. Der Zug hält in Augsburg und in München. Bitte nehmen Sie den vorderen Teil vom Zug, der hintere Teil bleibt heute hier. Sie finden ein Café direkt neben Gleis 3. Wir wünschen Ihnen eine gute Fahrt.",
       "audioOnly": true
+     },
+     {
+      "id": "hoeren2",
+      "title": "Wettervorhersage im Radio",
+      "text": "Und jetzt das Wetter für morgen: Am Vormittag scheint die Sonne, aber am Nachmittag kommen Wolken. Es wird nicht kalt, ungefähr fünfzehn Grad. Am Abend regnet es ein bisschen. Nehmen Sie einen Regenschirm mit! Für das Wochenende wird das Wetter wieder besser.",
+      "audioOnly": true
+     },
+     {
+      "id": "hoeren3",
+      "title": "Nachricht von Peter",
+      "text": "Hallo, hier ist Peter. Ich komme heute Abend zum Essen, aber ich habe leider keine Zeit um sieben Uhr. Ist es okay, wenn ich um acht Uhr komme? Ich bringe einen Kuchen mit. Bis später!",
+      "audioOnly": true
      }
     ],
     "questions": [
@@ -83,6 +95,58 @@
       "answer": "In Augsburg und in München",
       "difficulty": 3,
       "explanation": "The train stops in Augsburg and Munich."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wie ist das Wetter am Vormittag?",
+      "options": [
+       "Die Sonne scheint",
+       "Es regnet stark",
+       "Es schneit",
+       "Es ist sehr windig"
+      ],
+      "answer": "Die Sonne scheint",
+      "difficulty": 2,
+      "explanation": "The forecast says the sun shines in the morning; clouds and rain only come later."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was soll man mitnehmen?",
+      "options": [
+       "Einen Regenschirm",
+       "Eine Sonnenbrille",
+       "Eine warme Mütze",
+       "Ein Buch"
+      ],
+      "answer": "Einen Regenschirm",
+      "difficulty": 3,
+      "explanation": "Because of the evening rain, the forecast advises taking an umbrella."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wann möchte Peter kommen?",
+      "options": [
+       "Um acht Uhr",
+       "Um sieben Uhr",
+       "Um neun Uhr",
+       "Am Nachmittag"
+      ],
+      "answer": "Um acht Uhr",
+      "difficulty": 2,
+      "explanation": "Peter has no time at seven and asks to come at eight instead."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was bringt Peter mit?",
+      "options": [
+       "Einen Kuchen",
+       "Eine Flasche Wein",
+       "Blumen",
+       "Nichts"
+      ],
+      "answer": "Einen Kuchen",
+      "difficulty": 3,
+      "explanation": "Peter says he will bring a cake."
      }
     ]
    },
@@ -97,6 +161,18 @@
       "id": "lesen1",
       "title": "Aushang: Deutschkurs im Nachbarschaftshaus",
       "text": "Deutschkurs für Anfänger im Nachbarschaftshaus. Wir lernen Deutsch am Montag und am Mittwoch, immer von 18 bis 20 Uhr. Der Kurs beginnt am 5. Oktober und dauert drei Monate. Ein Monat kostet 30 Euro. Studenten und Studentinnen zahlen nur 20 Euro im Monat. Der Kurs ist in Raum 4 im ersten Stock. Bitte bringen Sie einen Stift und ein Heft mit. Ein Buch brauchen Sie nicht, wir haben genug Material. Sie können sich im Büro anmelden. Das Büro ist von Montag bis Freitag von 9 bis 12 Uhr offen.",
+      "audioOnly": false
+     },
+     {
+      "id": "lesen2",
+      "title": "Kleinanzeige: Fahrrad zu verkaufen",
+      "text": "Verkaufe mein Fahrrad. Es ist blau und drei Jahre alt. Der Preis ist 80 Euro. Bitte rufen Sie mich an: 0176 456 789. Ich bin von Montag bis Freitag nach 17 Uhr zu Hause.",
+      "audioOnly": false
+     },
+     {
+      "id": "lesen3",
+      "title": "Nachricht von Lena",
+      "text": "Hallo Tom, ich bin heute im Büro bis 18 Uhr. Kannst du bitte Brot und Milch kaufen? Der Supermarkt ist bis 20 Uhr offen. Danke! Lena",
       "audioOnly": false
      }
     ],
@@ -160,6 +236,58 @@
       "answer": "Einen Stift und ein Heft",
       "difficulty": 3,
       "explanation": "A pen and an exercise book. A book is explicitly not needed."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Welche Farbe hat das Fahrrad?",
+      "options": [
+       "Blau",
+       "Rot",
+       "Grün",
+       "Schwarz"
+      ],
+      "answer": "Blau",
+      "difficulty": 2,
+      "explanation": "The advert says the bicycle is blue ('Es ist blau')."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wie viel kostet das Fahrrad?",
+      "options": [
+       "80 Euro",
+       "18 Euro",
+       "8 Euro",
+       "800 Euro"
+      ],
+      "answer": "80 Euro",
+      "difficulty": 3,
+      "explanation": "The price given is 80 euros."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was soll Tom kaufen?",
+      "options": [
+       "Brot und Milch",
+       "Obst und Gemüse",
+       "Käse und Wein",
+       "Nichts"
+      ],
+      "answer": "Brot und Milch",
+      "difficulty": 2,
+      "explanation": "Lena asks Tom to buy bread and milk."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Bis wann ist der Supermarkt offen?",
+      "options": [
+       "Bis 20 Uhr",
+       "Bis 18 Uhr",
+       "Bis 22 Uhr",
+       "Bis 19 Uhr"
+      ],
+      "answer": "Bis 20 Uhr",
+      "difficulty": 3,
+      "explanation": "The supermarket is open until 20:00, later than Lena's own working hours."
      }
     ]
    },
@@ -238,6 +366,24 @@
       "title": "E-Mail von Julia: Umzug am Samstag",
       "text": "Von: Julia. Betreff: Umzug am Samstag. Hallo Sven, am Samstag ziehe ich endlich um. Die neue Wohnung liegt in der Gartenstraße, nur zehn Minuten von meiner Arbeit entfernt, und sie hat sogar einen kleinen Garten. Könntest du mir helfen? Wir fangen um neun Uhr morgens an. Ein Freund bringt einen Transporter mit, deshalb brauchen wir kein zweites Auto. Bring bitte feste Schuhe mit, denn wir tragen schwere Kisten. Mittags bestelle ich Pizza für alle, das ist mein Dankeschön. Wenn du erst später kommen kannst, ist das überhaupt kein Problem. Sag mir bitte bis Donnerstag Bescheid, damit ich weiß, wie viele Leute wir sind. Liebe Grüße, Julia",
       "audioOnly": false
+     },
+     {
+      "id": "lesen2",
+      "title": "Anzeige: Deutschkurs am Wochenende",
+      "text": "Deutschkurs am Wochenende für Fortgeschrittene. Der Kurs findet jeden zweiten Samstag statt, von 10 bis 14 Uhr. Die Gruppe hat maximal zehn Teilnehmer. Ein Kurstag kostet 25 Euro, inklusive Kaffee und Kuchen in der Pause. Anmeldung online oder telefonisch unter 030 456 789.",
+      "audioOnly": false
+     },
+     {
+      "id": "lesen3",
+      "title": "Kurznachricht: Verspätung",
+      "text": "Hallo Tim, mein Zug hat zwanzig Minuten Verspätung. Kannst du bitte schon mal einen Tisch im Restaurant reservieren? Ich bin um halb acht da. Bis gleich, Nora",
+      "audioOnly": false
+     },
+     {
+      "id": "lesen4",
+      "title": "Hinweis am Schwarzen Brett",
+      "text": "Achtung, liebe Mieter: Am Donnerstag wird zwischen 9 und 13 Uhr das Wasser abgestellt, weil die Rohre repariert werden. Bitte füllen Sie rechtzeitig Wasser für den Tee oder zum Kochen ab. Bei Fragen wenden Sie sich an den Hausmeister.",
+      "audioOnly": false
      }
     ],
     "questions": [
@@ -300,6 +446,84 @@
       "answer": "Bis Donnerstag",
       "difficulty": 5,
       "explanation": "She asks for an answer by Thursday so she knows how many people are coming."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wie oft findet der Kurs statt?",
+      "options": [
+       "Jeden zweiten Samstag",
+       "Jeden Samstag",
+       "Einmal im Monat",
+       "Jeden Sonntag"
+      ],
+      "answer": "Jeden zweiten Samstag",
+      "difficulty": 3,
+      "explanation": "The course runs every other Saturday, from 10 to 14."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was ist im Preis inbegriffen?",
+      "options": [
+       "Kaffee und Kuchen",
+       "Ein Lehrbuch",
+       "Die Fahrt zum Kurs",
+       "Ein Abschlusszertifikat"
+      ],
+      "answer": "Kaffee und Kuchen",
+      "difficulty": 4,
+      "explanation": "The 25-euro price includes coffee and cake during the break."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Warum kommt Nora später?",
+      "options": [
+       "Ihr Zug hat Verspätung",
+       "Sie hat verschlafen",
+       "Ihr Auto ist kaputt",
+       "Sie muss noch arbeiten"
+      ],
+      "answer": "Ihr Zug hat Verspätung",
+      "difficulty": 3,
+      "explanation": "Nora's train is twenty minutes late."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Worum bittet Nora Tim?",
+      "options": [
+       "Einen Tisch zu reservieren",
+       "Sie abzuholen",
+       "Die Rechnung zu bezahlen",
+       "Das Restaurant zu wechseln"
+      ],
+      "answer": "Einen Tisch zu reservieren",
+      "difficulty": 4,
+      "explanation": "She asks Tim to reserve a table while she is still on the train."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Warum wird das Wasser abgestellt?",
+      "options": [
+       "Die Rohre werden repariert",
+       "Es gibt kein Wasser mehr in der Stadt",
+       "Es ist ein Feiertag",
+       "Die Miete wurde nicht bezahlt"
+      ],
+      "answer": "Die Rohre werden repariert",
+      "difficulty": 4,
+      "explanation": "The notice explains the water is off because the pipes are being repaired."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "An wen sollen sich die Mieter bei Fragen wenden?",
+      "options": [
+       "An den Hausmeister",
+       "An die Polizei",
+       "An den Nachbarn",
+       "An die Stadt"
+      ],
+      "answer": "An den Hausmeister",
+      "difficulty": 4,
+      "explanation": "Tenants with questions should contact the caretaker (Hausmeister)."
      }
     ]
    },
@@ -314,6 +538,24 @@
       "id": "hoeren1",
       "title": "Nachricht auf der Mailbox",
       "text": "Guten Tag, hier ist die Fahrradwerkstatt Wendt. Ich rufe wegen Ihres Fahrrads an. Die Reparatur ist fertig, aber sie war leider teurer als geplant. Die Bremsen waren kaputt, und wir haben außerdem eine neue Kette eingebaut. Zusammen kostet das fünfundachtzig Euro. Sie können das Fahrrad ab morgen abholen. Wir haben von Dienstag bis Freitag von zehn bis achtzehn Uhr geöffnet, am Samstag nur bis dreizehn Uhr. Bringen Sie bitte den gelben Zettel mit, sonst können wir das Rad nicht herausgeben. Wenn Sie Fragen haben, rufen Sie uns einfach zurück. Auf Wiederhören.",
+      "audioOnly": true
+     },
+     {
+      "id": "hoeren2",
+      "title": "Durchsage im Bus",
+      "text": "Liebe Fahrgäste, wegen einer Baustelle fährt der Bus heute eine andere Route. Wir halten nicht an der Haltestelle Rathaus, sondern erst am Marktplatz. Die Fahrt dauert deshalb ungefähr zehn Minuten länger. Vielen Dank für Ihr Verständnis.",
+      "audioOnly": true
+     },
+     {
+      "id": "hoeren3",
+      "title": "Ansage im Kino",
+      "text": "Der Film beginnt in fünf Minuten im Saal drei. Bitte schalten Sie Ihr Handy aus. Popcorn und Getränke bekommen Sie noch an der Theke im Foyer. Wir wünschen Ihnen viel Spaß beim Film.",
+      "audioOnly": true
+     },
+     {
+      "id": "hoeren4",
+      "title": "Nachricht von der Arztpraxis",
+      "text": "Guten Tag, hier ist die Praxis Dr. Hoffmann. Ihr Termin morgen um neun Uhr musste leider verschoben werden. Wir haben jetzt einen freien Platz um elf Uhr. Bitte rufen Sie uns zurück, wenn das nicht passt.",
       "audioOnly": true
      }
     ],
@@ -377,6 +619,84 @@
       "answer": "Den gelben Zettel",
       "difficulty": 5,
       "explanation": "Without the yellow slip the shop cannot hand over the bicycle."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Warum fährt der Bus eine andere Route?",
+      "options": [
+       "Wegen einer Baustelle",
+       "Wegen des Wetters",
+       "Wegen eines Unfalls",
+       "Wegen eines Streiks"
+      ],
+      "answer": "Wegen einer Baustelle",
+      "difficulty": 3,
+      "explanation": "The detour is because of roadworks (Baustelle)."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wie viel länger dauert die Fahrt?",
+      "options": [
+       "Ungefähr zehn Minuten",
+       "Ungefähr zwanzig Minuten",
+       "Ungefähr fünf Minuten",
+       "Eine Stunde"
+      ],
+      "answer": "Ungefähr zehn Minuten",
+      "difficulty": 4,
+      "explanation": "The announcement says the trip takes about ten minutes longer."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "In welchem Saal beginnt der Film?",
+      "options": [
+       "Im Saal drei",
+       "Im Saal eins",
+       "Im Saal zwei",
+       "Im Saal vier"
+      ],
+      "answer": "Im Saal drei",
+      "difficulty": 3,
+      "explanation": "The film starts in screen (Saal) three."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was sollen die Zuschauer tun?",
+      "options": [
+       "Das Handy ausschalten",
+       "Laut sprechen",
+       "Fotos machen",
+       "Draußen warten"
+      ],
+      "answer": "Das Handy ausschalten",
+      "difficulty": 4,
+      "explanation": "The audience is asked to switch off their phones."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Auf wie viel Uhr wurde der Termin verschoben?",
+      "options": [
+       "Auf elf Uhr",
+       "Auf neun Uhr",
+       "Auf zehn Uhr",
+       "Auf zwölf Uhr"
+      ],
+      "answer": "Auf elf Uhr",
+      "difficulty": 4,
+      "explanation": "The nine o'clock appointment moved to a free slot at eleven."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was soll der Patient tun, wenn die neue Zeit nicht passt?",
+      "options": [
+       "Zurückrufen",
+       "Eine E-Mail schreiben",
+       "Persönlich vorbeikommen",
+       "Nichts tun"
+      ],
+      "answer": "Zurückrufen",
+      "difficulty": 5,
+      "explanation": "The message asks the patient to call back if eleven o'clock does not work."
      }
     ]
    },
@@ -457,6 +777,24 @@
       "title": "Forumsbeitrag: Autofreie Innenstadt",
       "text": "Beitrag von Kerstin, 14:20 Uhr. Seit einem halben Jahr ist unsere Innenstadt an Wochenenden für Autos gesperrt, und ich muss zugeben: Am Anfang war ich strikt dagegen. Ich hatte befürchtet, dass die kleinen Geschäfte Kunden verlieren, weil niemand mehr direkt vor der Tür parken kann. Inzwischen sehe ich das anders. Die Luft ist merklich besser geworden, und auf dem Marktplatz sitzen plötzlich Menschen, wo früher nur Autos standen. Zwei Cafés haben neu eröffnet, und der Buchladen sagt, sein Umsatz sei sogar gestiegen. Trotzdem ist nicht alles gelöst. Wer schwere Einkäufe macht oder schlecht zu Fuß ist, hat es jetzt deutlich schwerer. Die Stadt hätte gleichzeitig die Busse verbessern müssen, aber am Sonntag fährt weiterhin nur alle sechzig Minuten einer. Meiner Meinung nach sollte man die Sperrung behalten, aber den Nahverkehr endlich ausbauen und einige Parkplätze für Menschen mit Behinderung reservieren. Sonst verlieren wir genau die Leute, die wir in der Stadt halten wollen.",
       "audioOnly": false
+     },
+     {
+      "id": "lesen2",
+      "title": "Leserbrief: Fahrradwege",
+      "text": "Sehr geehrte Redaktion, ich lese Ihre Zeitung seit Jahren gern, möchte aber auf ein Problem hinweisen: Die Fahrradwege in unserer Straße sind viel zu schmal und enden oft abrupt mitten im Verkehr. Als Vater von zwei Kindern traue ich mich kaum, mit ihnen zur Schule zu radeln. Ich würde mir wünschen, dass die Stadt endlich in durchgehende, sichere Radwege investiert, anstatt nur einzelne Abschnitte zu flicken. Mit freundlichen Grüßen, ein besorgter Vater",
+      "audioOnly": false
+     },
+     {
+      "id": "lesen3",
+      "title": "Kurzmeldung: Neue Bibliothek eröffnet",
+      "text": "Nach zweijähriger Bauzeit hat die neue Stadtbibliothek am Montag ihre Türen geöffnet. Neben klassischen Büchern bietet sie auch eine große Auswahl an E-Books und einen ruhigen Lernbereich mit Steckdosen an jedem Platz. Besonders beliebt ist bereits der Lesegarten auf dem Dach, der bei gutem Wetter genutzt werden kann. Die Stadt rechnet mit deutlich mehr Besuchern als in der alten Bibliothek.",
+      "audioOnly": false
+     },
+     {
+      "id": "lesen4",
+      "title": "E-Mail: Beschwerde über eine Lieferung",
+      "text": "Sehr geehrte Damen und Herren, ich habe vor einer Woche einen Schreibtisch bei Ihnen bestellt, der laut Website innerhalb von drei Tagen geliefert werden sollte. Bis heute ist jedoch nichts angekommen, und auf meine erste Nachricht habe ich keine Antwort erhalten. Ich bitte Sie höflich, mir umgehend mitzuteilen, wann mit der Lieferung zu rechnen ist. Andernfalls sehe ich mich gezwungen, die Bestellung zu stornieren. Mit freundlichen Grüßen, Julia Berger",
+      "audioOnly": false
      }
     ],
     "questions": [
@@ -519,6 +857,84 @@
       "answer": "Die Sperrung behalten und den Nahverkehr ausbauen",
       "difficulty": 7,
       "explanation": "She wants to keep the closure but improve public transport and reserve accessible parking."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Worüber beschwert sich der Leser?",
+      "options": [
+       "Über zu schmale, unterbrochene Fahrradwege",
+       "Über zu hohe Fahrpreise",
+       "Über fehlende Parkplätze",
+       "Über zu laute Straßen"
+      ],
+      "answer": "Über zu schmale, unterbrochene Fahrradwege",
+      "difficulty": 5,
+      "explanation": "He complains the cycle lanes are too narrow and often end abruptly in traffic."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was wünscht sich der Leser von der Stadt?",
+      "options": [
+       "Durchgehende, sichere Radwege",
+       "Mehr Ampeln",
+       "Weniger Autos in der Innenstadt",
+       "Neue Bushaltestellen"
+      ],
+      "answer": "Durchgehende, sichere Radwege",
+      "difficulty": 6,
+      "explanation": "He wants the city to invest in continuous, safe cycle paths instead of patching isolated stretches."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was ist auf dem Dach der neuen Bibliothek?",
+      "options": [
+       "Ein Lesegarten",
+       "Ein Café",
+       "Ein Kino",
+       "Ein Spielplatz"
+      ],
+      "answer": "Ein Lesegarten",
+      "difficulty": 4,
+      "explanation": "The rooftop reading garden is already popular in good weather."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was bietet der Lernbereich?",
+      "options": [
+       "Steckdosen an jedem Platz",
+       "Kostenlosen Kaffee",
+       "Nur zehn Plätze",
+       "Keine Bücher"
+      ],
+      "answer": "Steckdosen an jedem Platz",
+      "difficulty": 5,
+      "explanation": "The quiet study area has a power socket at every seat."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Worüber beschwert sich Julia Berger?",
+      "options": [
+       "Der Schreibtisch wurde nicht rechtzeitig geliefert",
+       "Der Schreibtisch war beschädigt",
+       "Der Preis war falsch",
+       "Sie hat den falschen Artikel bekommen"
+      ],
+      "answer": "Der Schreibtisch wurde nicht rechtzeitig geliefert",
+      "difficulty": 5,
+      "explanation": "The desk was promised within three days and still has not arrived a week later."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was passiert, wenn sie keine Antwort bekommt?",
+      "options": [
+       "Sie storniert die Bestellung",
+       "Sie bestellt einen zweiten Schreibtisch",
+       "Sie akzeptiert die Verspätung",
+       "Sie ruft die Polizei"
+      ],
+      "answer": "Sie storniert die Bestellung",
+      "difficulty": 6,
+      "explanation": "She warns she will feel forced to cancel the order otherwise."
      }
     ]
    },
@@ -533,6 +949,24 @@
       "id": "hoeren1",
       "title": "Radiobeitrag: Ehrenamt gesucht",
       "text": "Und jetzt zu einem Thema aus der Region. Der Verein Lesefreunde sucht dringend Freiwillige, die einmal pro Woche eine Stunde lang mit Grundschulkindern lesen. Vorkenntnisse braucht man dafür nicht, wichtig sind vor allem Geduld und Zuverlässigkeit. Vereinsleiterin Petra Sommer erklärt, warum das Angebot so gefragt ist: Viele Eltern arbeiten im Schichtdienst und haben abends schlicht keine Zeit mehr zum Vorlesen. Die Kinder verlieren dann schnell den Anschluss. Wer mitmachen möchte, meldet sich zunächst zu einem kurzen Einführungsnachmittag an. Der nächste findet am dritten Samstag im Monat in der Stadtbibliothek statt. Danach werden die Freiwilligen einer Schule in ihrer Nähe zugeteilt. Übrigens sind auch Rentnerinnen und Rentner ausdrücklich willkommen. Im Moment ist rund die Hälfte der Freiwilligen älter als sechzig Jahre.",
+      "audioOnly": true
+     },
+     {
+      "id": "hoeren2",
+      "title": "Durchsage im Freibad",
+      "text": "Liebe Badegäste, wir möchten Sie kurz informieren: Wegen eines Gewitters müssen wir das Becken für dreißig Minuten schließen. Bitte verlassen Sie sofort das Wasser und suchen Sie die überdachten Bereiche auf. Sobald keine Gefahr mehr besteht, geben wir das Becken wieder frei. Wir bitten um Ihr Verständnis.",
+      "audioOnly": true
+     },
+     {
+      "id": "hoeren3",
+      "title": "Interview im Radio: Homeoffice",
+      "text": "Wir sprechen heute mit dem Personalberater Herrn Klein über Homeoffice. Er sagt, viele Firmen hätten anfangs Angst gehabt, dass die Produktivität sinkt, doch das Gegenteil sei oft der Fall gewesen. Allerdings warnt er davor, den persönlichen Kontakt völlig zu vernachlässigen, und empfiehlt feste Bürotage für Teambesprechungen.",
+      "audioOnly": true
+     },
+     {
+      "id": "hoeren4",
+      "title": "Nachricht auf dem Anrufbeantworter: Wohnungsbesichtigung",
+      "text": "Guten Tag, hier ist Frau Berg von der Hausverwaltung. Der Besichtigungstermin für die Wohnung wurde leider vom Dienstag auf den Donnerstag verschoben, weil der jetzige Mieter noch nicht ausgezogen ist. Bitte bestätigen Sie mir kurz, ob der neue Termin um 17 Uhr für Sie passt.",
       "audioOnly": true
      }
     ],
@@ -596,6 +1030,84 @@
       "answer": "Rund die Hälfte der Freiwilligen ist älter als sechzig",
       "difficulty": 7,
       "explanation": "Pensioners are expressly welcome and about half the volunteers are over sixty."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Warum wird das Becken geschlossen?",
+      "options": [
+       "Wegen eines Gewitters",
+       "Wegen einer Reinigung",
+       "Wegen zu vieler Gäste",
+       "Wegen eines technischen Defekts"
+      ],
+      "answer": "Wegen eines Gewitters",
+      "difficulty": 4,
+      "explanation": "The pool closes because of a thunderstorm."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was sollen die Gäste tun?",
+      "options": [
+       "Das Wasser verlassen und die überdachten Bereiche aufsuchen",
+       "Ruhig weiterschwimmen",
+       "Nach Hause gehen",
+       "Sich beim Bademeister beschweren"
+      ],
+      "answer": "Das Wasser verlassen und die überdachten Bereiche aufsuchen",
+      "difficulty": 5,
+      "explanation": "Guests are told to leave the water immediately and head for covered areas."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Wovor hatten viele Firmen anfangs Angst?",
+      "options": [
+       "Dass die Produktivität sinkt",
+       "Dass die Mitarbeiter kündigen",
+       "Dass die Kosten steigen",
+       "Dass die Kunden unzufrieden werden"
+      ],
+      "answer": "Dass die Produktivität sinkt",
+      "difficulty": 5,
+      "explanation": "Herr Klein says companies initially feared productivity would fall."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was empfiehlt Herr Klein?",
+      "options": [
+       "Feste Bürotage für Teambesprechungen",
+       "Komplett auf Homeoffice zu verzichten",
+       "Nie ins Büro zu kommen",
+       "Nur online zu kommunizieren"
+      ],
+      "answer": "Feste Bürotage für Teambesprechungen",
+      "difficulty": 6,
+      "explanation": "He recommends fixed office days for team meetings, to preserve personal contact."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Warum wurde der Termin verschoben?",
+      "options": [
+       "Der jetzige Mieter ist noch nicht ausgezogen",
+       "Die Wohnung wurde schon vermietet",
+       "Frau Berg ist krank",
+       "Es gab ein technisches Problem"
+      ],
+      "answer": "Der jetzige Mieter ist noch nicht ausgezogen",
+      "difficulty": 5,
+      "explanation": "The viewing moved because the current tenant has not moved out yet."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Was soll der Angerufene tun?",
+      "options": [
+       "Bestätigen, ob der neue Termin passt",
+       "Sofort in die Wohnung ziehen",
+       "Eine neue Wohnung suchen",
+       "Die Kaution überweisen"
+      ],
+      "answer": "Bestätigen, ob der neue Termin passt",
+      "difficulty": 6,
+      "explanation": "Frau Berg asks for confirmation that the new Thursday 17:00 slot works."
      }
     ]
    },
@@ -628,6 +1140,17 @@
        "Der Text bittet konkret um eine Verschiebung",
        "Der Text bittet um eine schriftliche Antwort",
        "Anrede und Gruß sind formell (Sehr geehrte Damen und Herren, Mit freundlichen Grüßen)"
+      ]
+     },
+     {
+      "prompt": "Sie konnten gestern nicht zu einem vereinbarten Treffen mit einer Freundin oder einem Freund kommen. Schreiben Sie eine kurze E-Mail (ungefähr 40 Wörter): entschuldigen Sie sich, erklären Sie kurz den Grund und schlagen Sie einen neuen Termin vor.",
+      "modelAnswer": "Liebe Julia,\n\nes tut mir wirklich leid, dass ich gestern nicht zu unserem Treffen gekommen bin. Ich hatte plötzlich hohes Fieber und musste im Bett bleiben. Können wir uns stattdessen am Samstag treffen? Ich freue mich schon darauf.\n\nLiebe Grüße\nMarie",
+      "rubric": [
+       "Der Text hat ungefähr 40 Wörter",
+       "Der Text entschuldigt sich klar",
+       "Der Text nennt einen Grund für das Fernbleiben",
+       "Der Text schlägt einen neuen Termin vor",
+       "Anrede und Gruß passen zum informellen Ton (du)"
       ]
      }
     ]
