@@ -976,7 +976,8 @@
        "options": [
         "feminine",
         "masculine",
-        "neuter"
+        "neuter",
+        "masculine, like 'grad'"
        ],
        "answer": "feminine",
        "explanation": "Ends in -a → feminine."
@@ -988,7 +989,8 @@
        "options": [
         "masculine",
         "feminine",
-        "neuter"
+        "neuter",
+        "feminine, like 'žena'"
        ],
        "answer": "masculine",
        "explanation": "Ends in a consonant → masculine."
@@ -1000,7 +1002,8 @@
        "options": [
         "neuter",
         "masculine",
-        "feminine"
+        "feminine",
+        "masculine, like 'kruh'"
        ],
        "answer": "neuter",
        "explanation": "Ends in -e → neuter (like mlijeko and selo, which end in -o)."
@@ -1102,6 +1105,57 @@
        ],
        "answer": "Definiteness comes from context and word order, so articles aren't needed",
        "explanation": "Like most Slavic languages, Croatian never developed articles. Context (and later, word order and case endings) makes clear whether you mean 'a' or 'the'."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Kava, kruh i mlijeko",
+     "intro": "Two friends order breakfast. Listen for the three genders hiding in plain sight: kava is feminine, kruh is masculine, mlijeko is neuter, and none of them needs an article.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dobro sam, hvala. A ti?",
+       "en": "I'm fine, thanks. And you?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Dobro! Kava?",
+       "en": "Good! Coffee?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da, kava, hvala.",
+       "en": "Yes, coffee, thanks."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Kruh?",
+       "en": "Bread?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da, kruh, hvala.",
+       "en": "Yes, bread, thanks."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Mlijeko?",
+       "en": "Milk?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ne, hvala. Doviđenja!",
+       "en": "No, thanks. Goodbye!"
       }
      ],
      "sources": [
@@ -1325,6 +1379,57 @@
        ],
        "answer": "The verb ending already shows who the subject is",
        "explanation": "The -m in učim can only mean 'I', so ja is redundant. Keep the pronoun only for emphasis or contrast: JA učim, a ti ne."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Ja, ti, on i ona",
+     "intro": "Your partner introduces two friends. Listen for ja, on and ona doing all the work, biti's short forms sam and je carry each introduction.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Ja sam Ana.",
+       "en": "Hi! I am Ana."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Bok, Ana! Ja sam Alex.",
+       "en": "Hi, Ana! I am Alex."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Drago mi je, Alex! On je Marko.",
+       "en": "Nice to meet you, Alex! He is Marko."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Drago mi je, Marko!",
+       "en": "Nice to meet you, Marko!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "A ona je Ivana.",
+       "en": "And she is Ivana."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Drago mi je, Ivana! Hvala.",
+       "en": "Nice to meet you, Ivana! Thanks."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Molim! Doviđenja!",
+       "en": "You're welcome! Goodbye!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Doviđenja! Vidimo se!",
+       "en": "Goodbye! See you!"
       }
      ],
      "sources": [
@@ -1556,6 +1661,57 @@
       "asoo",
       "croaticum-syllabus"
      ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Umoran sam, a ti?",
+     "intro": "Two friends check in with each other using biti's short forms and their fused negatives, sam, si, je, smo, su, nisam.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Nisam dobro. Umoran sam.",
+       "en": "I'm not well. I'm tired."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja sam dobro, hvala.",
+       "en": "I'm fine, thanks."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ti si učiteljica.",
+       "en": "You are a teacher."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Da, ja sam učiteljica. On je student.",
+       "en": "Yes, I am a teacher. He is a student."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Mi smo prijatelji.",
+       "en": "We are friends."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Da! Oni su ovdje.",
+       "en": "Yes! They are here."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Super! Vidimo se!",
+       "en": "Great! See you!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
     }
    ]
   },
@@ -1779,7 +1935,8 @@
        "options": [
         "neuter",
         "feminine",
-        "masculine"
+        "masculine",
+        "feminine, like 'škola'"
        ],
        "answer": "neuter",
        "explanation": "Ends in -o → neuter, like mlijeko and jutro."
@@ -2081,6 +2238,57 @@
        ],
        "explanation": "Radimo. one word is a complete, natural sentence. The -mo can only mean 'we'.",
        "strictDiacritics": true
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Radim i učim",
+     "intro": "Two friends compare their day, radim, govoriš, govorim, učim and učimo all show the same set of endings at work.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dobro sam, hvala. Radim.",
+       "en": "I'm fine, thanks. I work."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja radim. Govorim malo hrvatski.",
+       "en": "I work. I speak a little Croatian."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja učim hrvatski.",
+       "en": "I am learning Croatian."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ti govoriš dobro!",
+       "en": "You speak well!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Hvala! A ti govoriš engleski.",
+       "en": "Thanks! And you speak English."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Da, govorim engleski i hrvatski.",
+       "en": "Yes, I speak English and Croatian."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Bravo! Mi učimo hrvatski.",
+       "en": "Bravo! We are learning Croatian."
       }
      ],
      "sources": [
@@ -2522,7 +2730,8 @@
        "options": [
         "žena",
         "pije",
-        "kavu"
+        "kavu",
+        "ženu"
        ],
        "answer": "žena",
        "explanation": "Tko pije? žena. kavu is the object (accusative, kava with a changed ending), pije is the verb."
@@ -2534,7 +2743,8 @@
        "options": [
         "brat",
         "radi",
-        "moj"
+        "moj",
+        "bratu"
        ],
        "answer": "brat",
        "explanation": "Tko radi? (moj) brat. The noun brat is in the nominative; moj agrees with it."
@@ -2644,6 +2854,57 @@
        ],
        "explanation": "Ana = nominative subject; uči = the she-form of učiti; hrvatski = Croatian (the language).",
        "strictDiacritics": true
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Tko pije, tko spava?",
+     "intro": "Your partner calls out who is doing what, listen for the subject standing in the nominative in every line.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Tko pije kavu?",
+       "en": "Who is drinking coffee?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Žena pije kavu.",
+       "en": "The woman drinks coffee."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Tko spava?",
+       "en": "Who is sleeping?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dijete spava.",
+       "en": "The child sleeps."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Grad je velik.",
+       "en": "The city is big."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da! Moj brat radi.",
+       "en": "Yes! My brother works."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ana uči hrvatski.",
+       "en": "Ana is learning Croatian."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Kava je topla!",
+       "en": "The coffee is warm!"
       }
      ],
      "sources": [
@@ -2870,6 +3131,57 @@
       "asoo",
       "croaticum-syllabus"
      ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Pijem, jedem, volim",
+     "intro": "Two friends compare what they drink, read and eat, watch the object nouns change: kavu, vodu, knjigu, but kruh stays the same.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Pijem kavu. A ti?",
+       "en": "I drink coffee. And you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja pijem vodu.",
+       "en": "I drink water."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Čitam knjigu.",
+       "en": "I am reading a book."
+      },
+      {
+       "speaker": "Me",
+       "hr": "I ja čitam knjigu!",
+       "en": "I am reading a book too!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Jedem ribu.",
+       "en": "I am eating fish."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja jedem kruh.",
+       "en": "I eat bread."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Volim Hrvatsku!",
+       "en": "I love Croatia!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "I ja volim Hrvatsku!",
+       "en": "I love Croatia too!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
     }
    ]
   },
@@ -3036,7 +3348,8 @@
        "options": [
         "Li govoriš hrvatski?",
         "Govoriš li hrvatski?",
-        "Govoriš hrvatski li?"
+        "Govoriš hrvatski li?",
+        "Da li govoriš hrvatski?"
        ],
        "answer": "Govoriš li hrvatski?",
        "explanation": "li always comes immediately after the verb, never first, never last."
@@ -3079,6 +3392,57 @@
        ],
        "answer": "Ne, ne radim.",
        "explanation": "First 'Ne,' answers the question; then 'ne radim' negates the verb. Croatian happily doubles the ne."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Razumiješ li?",
+     "intro": "A quick check-in built entirely from li-questions and their negative answers.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Govoriš li engleski?",
+       "en": "Do you speak English?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ne, ne govorim. Govorim hrvatski.",
+       "en": "No, I don't. I speak Croatian."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Razumiješ li?",
+       "en": "Do you understand?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ne razumijem.",
+       "en": "I don't understand."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Radiš li danas?",
+       "en": "Are you working today?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ne radim danas.",
+       "en": "I'm not working today."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Je li ovo tvoj mobitel?",
+       "en": "Is this your phone?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da, ovo je moj mobitel.",
+       "en": "Yes, this is my phone."
       }
      ],
      "sources": [
@@ -3288,6 +3652,57 @@
       "asoo",
       "croaticum-syllabus"
      ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Sedam pitanja",
+     "intro": "Two friends catch up using several of the new question words, gdje, zašto and koliko all get a real answer.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dobro sam, hvala. Odakle si?",
+       "en": "I'm fine, thanks. Where are you from?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja sam iz Zagreba. Zašto učiš hrvatski?",
+       "en": "I am from Zagreb. Why are you learning Croatian?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Volim Hrvatsku! Gdje je kolodvor?",
+       "en": "I love Croatia! Where is the station?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Kolodvor je ovdje.",
+       "en": "The station is here."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Hvala! Koliko košta kava?",
+       "en": "Thanks! How much does the coffee cost?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Kava košta pet.",
+       "en": "The coffee costs five."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Super, hvala! Doviđenja!",
+       "en": "Great, thanks! Goodbye!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
     }
    ]
   },
@@ -3411,7 +3826,8 @@
        "options": [
         "feminine",
         "masculine",
-        "neuter"
+        "neuter",
+        "masculine, like 'stol'"
        ],
        "answer": "feminine",
        "explanation": "Nouns in -a are (almost always) feminine: kava, žena, škola."
@@ -3496,17 +3912,17 @@
       },
       {
        "type": "FILL",
-       "prompt": "Say 'I don't understand.'",
+       "prompt": "Say 'I don't speak Croatian.'",
        "difficulty": 4,
-       "answer": "Ne razumijem",
+       "answer": "Ne govorim hrvatski",
        "accepted": [
-        "Ne razumijem",
-        "Ne razumijem.",
-        "ne razumijem",
-        "Ja ne razumijem"
+        "Ne govorim hrvatski",
+        "Ne govorim hrvatski.",
+        "ne govorim hrvatski",
+        "Ja ne govorim hrvatski"
        ],
        "strictDiacritics": true,
-       "explanation": "ne + razumijem, negation goes directly before the verb."
+       "explanation": "ne + govorim, negation goes directly before the verb, same pattern as ne razumijem."
       }
      ],
      "sources": [

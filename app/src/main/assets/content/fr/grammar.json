@@ -537,6 +537,32 @@
       "inventaire-cecrl",
       "cecrl"
      ]
+    },
+    {
+     "id": "a2-exclamation",
+     "title": "Exclamations (quel, que, comme)",
+     "summary": "French marks exclamations with quel/quelle/quels/quelles + noun (agreeing in gender/number), or que/comme + clause. Quel beau temps ! (What lovely weather!) agrees with the noun; que and comme both precede a full clause and never change form: Que c'est beau ! / Comme c'est beau ! (How beautiful it is!).",
+     "tables": [
+      "quel + noun (agrees):  Quel beau temps ! / Quelle bonne idée !\nque + clause:          Qu'il fait beau !\ncomme + clause:        Comme il fait beau !"
+     ],
+     "examples": [
+      {
+       "target": "Quelle surprise !",
+       "gloss": "What a surprise!"
+      },
+      {
+       "target": "Que c'est gentil de ta part !",
+       "gloss": "How kind of you!"
+      },
+      {
+       "target": "Comme tu as grandi !",
+       "gloss": "How you have grown!"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
     }
    ]
   },
@@ -781,6 +807,32 @@
       "inventaire-cecrl",
       "cecrl"
      ]
+    },
+    {
+     "id": "b1-lequel-relatif",
+     "title": "Compound relative pronouns (lequel, auquel, duquel)",
+     "summary": "After a preposition, French replaces qui/que with lequel/laquelle/lesquels/lesquelles, agreeing with the noun they replace. À and de contract with lequel the same way they contract with le/les: à + lequel -> auquel, de + lequel -> duquel (feminine laquelle does not contract: à laquelle, de laquelle).",
+     "tables": [
+      "le stylo avec lequel j'écris\nla raison pour laquelle il est parti\nauquel (= à + lequel), auxquels, auxquelles\nduquel (= de + lequel), desquels, desquelles\n(à laquelle / de laquelle: no contraction)"
+     ],
+     "examples": [
+      {
+       "target": "C'est le projet auquel je pense.",
+       "gloss": "It's the project I'm thinking of."
+      },
+      {
+       "target": "Voici la société pour laquelle je travaille.",
+       "gloss": "Here is the company I work for."
+      },
+      {
+       "target": "Le pont duquel on voit la ville est fermé.",
+       "gloss": "The bridge from which you can see the city is closed."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
     }
    ]
   },
@@ -898,10 +950,11 @@
     },
     {
      "id": "b2-participe-present",
-     "title": "The present participle in writing",
-     "summary": "Distinct from the gérondif, the bare present participle (-ant) works like a relative clause or expresses cause, mostly in written/formal French: une personne parlant trois langues (a person speaking three languages), Ne sachant pas quoi faire, il est parti (Not knowing what to do, he left). The participe passé composé (ayant fini) marks anteriority.",
+     "title": "The present participle and the verbal adjective",
+     "summary": "Distinct from the gérondif, the bare present participle (-ant) works like a relative clause or expresses cause, mostly in written/formal French: une personne parlant trois langues (a person speaking three languages), Ne sachant pas quoi faire, il est parti (Not knowing what to do, he left). The participe passé composé (ayant fini) marks anteriority. The verbal adjective (adjectif verbal) looks similar but AGREES like a normal adjective and is sometimes spelled differently: une eau courante (agreeing adjective) vs. l'eau courant le long du mur (invariable participle); other spelling pairs: fatigant/fatiguant, provocant/provoquant, convaincant/convainquant, négligent/négligeant.",
      "tables": [
-      "present participle = -ant (from nous-stem)\n  as a relative:  un candidat maîtrisant l'anglais\n  as cause:       Étant malade, il est resté chez lui.\ncompound (anteriority): ayant fini, il est sorti\n(gérondif = EN + participle, same subject, spoken)"
+      "present participle = -ant (from nous-stem)\n  as a relative:  un candidat maîtrisant l'anglais\n  as cause:       Étant malade, il est resté chez lui.\ncompound (anteriority): ayant fini, il est sorti\n(gérondif = EN + participle, same subject, spoken)",
+      "verbal adjective (agrees, sometimes different spelling):\n  fatigant (adj.) / fatiguant (part.)\n  provocant (adj.) / provoquant (part.)\n  convaincant (adj.) / convainquant (part.)\n  une eau courante (adj.) vs. l'eau courant le long du mur (part.)"
      ],
      "examples": [
       {
@@ -915,6 +968,10 @@
       {
        "target": "Étant donné la situation, il faut agir.",
        "gloss": "Given the situation, we must act."
+      },
+      {
+       "target": "C'est un travail fatigant.",
+       "gloss": "This is tiring work (adjective, agrees)."
       }
      ],
      "sources": [
@@ -993,6 +1050,110 @@
       {
        "target": "Je vous serais reconnaissant de me répondre.",
        "gloss": "I would be grateful if you would reply. (formal)"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-infinitif-passe",
+     "title": "The past infinitive (l'infinitif passé)",
+     "summary": "Après avoir/être + past participle expresses an action completed before the main verb's action ('after having done'): après avoir fini, après être arrivé(e)(s). The same form thanks or apologises for something already done: merci d'avoir répondu, désolé d'être arrivé en retard.",
+     "tables": [
+      "après + avoir/être (past infinitive) + past participle\n  après avoir fini      after finishing\n  après être arrivé(e)  after arriving\nmerci / désolé de + infinitif passé\n  merci d'avoir répondu"
+     ],
+     "examples": [
+      {
+       "target": "Après avoir mangé, nous sommes sortis.",
+       "gloss": "After eating, we went out."
+      },
+      {
+       "target": "Merci de nous avoir prévenus à temps.",
+       "gloss": "Thank you for warning us in time."
+      },
+      {
+       "target": "Après être rentrée, elle a appelé sa mère.",
+       "gloss": "After coming home, she called her mother."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-condition-hypothese",
+     "title": "Expressing condition beyond si",
+     "summary": "Beyond si-clauses, French sets conditions with conjunctions taking the subjonctif (à condition que, pourvu que, à moins que with its expletive ne, pour peu que) or with au cas où + conditionnel ('in case'). à moins que and pour peu que both signal a narrow, uncertain condition.",
+     "tables": [
+      "à condition que + subj.   on condition that\npourvu que + subj.        provided that\nà moins que (ne) + subj.  unless\nau cas où + conditionnel  in case\npour peu que + subj.      if only slightly"
+     ],
+     "examples": [
+      {
+       "target": "Je viendrai à condition que tu sois là.",
+       "gloss": "I'll come on condition that you're there."
+      },
+      {
+       "target": "Prends un parapluie au cas où il pleuvrait.",
+       "gloss": "Take an umbrella in case it rains."
+      },
+      {
+       "target": "Il refusera à moins que tu ne le supplies.",
+       "gloss": "He'll refuse unless you beg him."
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-lequel-interrogatif",
+     "title": "Interrogative lequel (which one?)",
+     "summary": "Lequel/laquelle/lesquels/lesquelles asks 'which one(s)?' when choosing among known options, agreeing with the noun it stands for. It contracts with à and de exactly like the relative pronoun: auquel, à laquelle, duquel, desquelles.",
+     "tables": [
+      "Lequel préférez-vous ?         Which one do you prefer?\nLaquelle de ces robes ?        Which of these dresses?\nAuquel de ces postes ?         Which of these positions?\n(same contractions as the relative: auquel, duquel...)"
+     ],
+     "examples": [
+      {
+       "target": "Il y a deux bus. Lequel dois-je prendre ?",
+       "gloss": "There are two buses. Which one should I take?"
+      },
+      {
+       "target": "Laquelle de ces options te convient ?",
+       "gloss": "Which of these options suits you?"
+      },
+      {
+       "target": "Duquel des deux parlez-vous ?",
+       "gloss": "Which of the two are you talking about?"
+      }
+     ],
+     "sources": [
+      "inventaire-cecrl",
+      "cecrl"
+     ]
+    },
+    {
+     "id": "b2-cause-consequence-soutenu",
+     "title": "Cause and consequence in formal register",
+     "summary": "Beyond parce que and donc, formal written French expresses cause with en raison de, du fait de, faute de and à force de + noun, or étant donné que + clause; and consequence with de ce fait, si bien que, au point que, par conséquent and de telle sorte que.",
+     "tables": [
+      "cause (soutenu):        en raison de, du fait de, faute de, à force de + nom\n                        étant donné que + proposition\nconséquence (soutenu):  de ce fait, si bien que, au point que,\n                        par conséquent, de telle sorte que"
+     ],
+     "examples": [
+      {
+       "target": "Le vol est annulé en raison des intempéries.",
+       "gloss": "The flight is cancelled due to bad weather."
+      },
+      {
+       "target": "Étant donné qu'il pleut, la réunion est reportée.",
+       "gloss": "Given that it is raining, the meeting is postponed."
+      },
+      {
+       "target": "Il a beaucoup travaillé, si bien qu'il a réussi.",
+       "gloss": "He worked hard, so much so that he succeeded."
       }
      ],
      "sources": [
