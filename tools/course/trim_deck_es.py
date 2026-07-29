@@ -43,6 +43,42 @@ STOP = {"the", "a", "an", "to", "of", "for", "in", "on", "at", "with", "and", "o
 TRIVIAL_GLOSSES = {"masculine", "feminine", "neuter", "plural", "singular",
                    "feminine masculine", "masculine plural", "feminine plural"}
 
+# CLOSED-CLASS CORE VOCABULARY, never a trim candidate at any frequency.
+#
+# This exists because the frequency signal's first real run proposed dropping treinta, cuarenta,
+# cincuenta, sesenta, setenta, ochenta, noventa, martes, miércoles and jueves from A1. All ten
+# are absent from the top-2,500 of the OpenSubtitles list, for the obvious reason that film
+# dialogue rarely says "ochenta" or "miércoles" and constantly says "sí" and "quiero". An A1
+# learner needs the tens and the weekdays absolutely: a course that teaches Monday and Friday
+# but not Wednesday is broken in a way no gate would catch.
+#
+# This is the `freq-es` register caveat from docs/sources/es-exams.md §4 demonstrated rather
+# than asserted, and it is the concrete reason this tool proposes instead of deciding. A closed
+# class is complete or it is wrong; frequency has no vote.
+PROTECTED = {
+    # numbers
+    "cero", "uno", "una", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve",
+    "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete",
+    "dieciocho", "diecinueve", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta",
+    "setenta", "ochenta", "noventa", "cien", "ciento", "mil", "millón", "primero", "segundo",
+    "tercero", "último",
+    # days and months
+    "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo",
+    "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+    "octubre", "noviembre", "diciembre",
+    # colours
+    "blanco", "negro", "rojo", "azul", "verde", "amarillo", "gris", "marrón", "rosa",
+    "naranja", "morado",
+    # the immediate family, which a beginner course cannot have holes in
+    "padre", "madre", "hijo", "hija", "hermano", "hermana", "abuelo", "abuela", "tío", "tía",
+    "primo", "prima", "marido", "esposa", "padres",
+}
+
+
+def strip_accents(s):
+    return "".join(c for c in unicodedata.normalize("NFD", s)
+                   if unicodedata.category(c) != "Mn")
+
 
 def slice_order(names):
     """Ladder order, then slice number, which is the SRS introduction order."""
@@ -76,6 +112,32 @@ def freq_ranks(dirpath):
             if len(parts) >= 2:
                 ranks.setdefault(parts[1].strip(), int(parts[0]))
     return ranks
+
+
+def best_rank(hw, ranks):
+    """Frequency of a LEMMA, approximated from a list of word FORMS.
+
+    The list is forms, not lemmas, which broke the naive lookup badly: `llamarse` is absent from
+    the top 2,500 while `llama`, `llamo` and `llamas` all rank high, so the signal reported one
+    of the most essential verbs in the language as droppable. Every verb infinitive was being
+    penalised the same way, because subtitle dialogue uses conjugated forms and rarely the bare
+    infinitive.
+
+    So: exact match first, then the best rank among forms sharing a stem prefix. Pronominal -se
+    is stripped, and the stem is capped at 5 characters, enough to be discriminating without
+    demanding that a radical-changing verb keep its stem vowel."""
+    if hw in ranks:
+        return ranks[hw]
+    stem = re.sub(r"se$", "", hw) if hw.endswith("se") and len(hw) > 4 else hw
+    stem = re.sub(r"(ar|er|ir)$", "", stem)
+    stem = strip_accents(stem)[:5]
+    if len(stem) < 3:
+        return None
+    best = None
+    for form, r in ranks.items():
+        if strip_accents(form).startswith(stem):
+            best = r if best is None else min(best, r)
+    return best
 
 
 def headword(hr):
@@ -160,14 +222,19 @@ def report(dirpath):
         if not over[lv]:
             print(f"  {lv}: nothing to trim")
             continue
-        scored = []
+        scored, protected = [], 0
         for e in deck:
             if e["level"] != lv:
                 continue
-            r = ranks.get(headword(e["w"]["hr"]))
+            hw = headword(e["w"]["hr"])
+            if hw in PROTECTED:
+                protected += 1
+                continue          # closed-class core: frequency has no vote, see PROTECTED
+            r = best_rank(hw, ranks)
             scored.append((r if r is not None else 10 ** 6, e))
         scored.sort(key=lambda t: -t[0])
-        print(f"  {lv}: {over[lv]} to trim, worst {min(over[lv] + 10, len(scored))} by frequency:")
+        print(f"  {lv}: {over[lv]} to trim, {protected} protected as closed-class core, "
+              f"worst {min(over[lv] + 10, len(scored))} of the rest by frequency:")
         for r, e in scored[:over[lv] + 10]:
             rank = "absent" if r >= 10 ** 6 else f"#{r}"
             print(f"      {rank:<8} {e['w']['id']:<28} {e['w'].get('en','')[:40]}")
