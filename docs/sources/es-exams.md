@@ -369,9 +369,30 @@ Candidate classes, to be confirmed against the PCIC before encoding:
    This class is expected to be the Spanish analogue of Italian's missing-`e` bug (registry
    item 9), and it is the reason a **written-accent unit belongs early in the course**.
 6. **Seseo/ceceo spellings** (`corason`, `sapato`) - phonetic misspellings, always defects.
-7. **Off-syllabus grammar below its level**, the Spanish analogue of V8's passato remoto:
-   the **preterito anterior** (`hubo llegado`) and the **futuro/imperfecto de subjuntivo**
-   (`hubiere`, and `-se` forms before they are taught) appearing below B1.
+7. **Off-syllabus grammar**, the Spanish analogue of V8's passato remoto, and after the Phase 1
+   PCIC extraction this is the **highest-value check in the whole file**, not an afterthought.
+   The PCIC level split (pulled page by page 2026-07-29 into
+   `es-research/02_gramatica_inventario_*-split.txt`) puts the **imperfecto de subjuntivo at
+   B2**, not B1: section 9.2 lists only 9.2.1 Presente in the B1 column, with 9.2.2 Preterito
+   imperfecto, 9.2.3 Preterito perfecto and 9.2.4 Pluscuamperfecto all in B2. A course that
+   ends at B1 therefore must not teach `tuviera`/`tuviese`, and by direct consequence must not
+   teach the **counterfactual conditional `si` + imperfecto de subjuntivo + condicional**
+   (`si tuviera dinero, viajaria`) at all. B1 gets real conditions with `si` + present
+   indicative and nothing more.
+
+   This will be violated. Nearly every commercial Spanish syllabus puts the counterfactual at
+   B1, so it is what a parallel authoring agent reaches for unprompted, exactly the way German
+   agents reached for civics text. A regex over produced-Spanish keys for the `-ra`/`-se`
+   imperfect-subjunctive endings of frequent verbs is mechanical and cheap; the K3 lesson
+   applies (`fuera` also means "outside", `viera`/`viere` collisions, `-ra` endings that are
+   ordinary nouns), so the list must be built from forms that are unambiguous, and the checker
+   must be negative-tested against both a planted `si tuviera` defect and the innocent
+   `Espera fuera` before it is trusted.
+
+   Also off-syllabus below B1: **futuro perfecto** and **condicional compuesto** (9.1.9,
+   9.1.10, both B2), and the **preterito anterior** (`hubo llegado`), which is absent from the
+   B1 inventory entirely. `pluscuamperfecto de indicativo` (9.1.8) and `condicional simple`
+   (9.1.5) ARE in the B1 column and are taught.
 
 ---
 
