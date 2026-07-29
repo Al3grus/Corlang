@@ -78,6 +78,17 @@ STEM_UNRECOGNISABLE = {
     "ser", "ir", "irse", "haber", "hacer", "saber", "ver", "dar", "decir", "oír", "estar",
     "caber", "valer", "andar", "jugar",
 }
+# Irregular past participles share no usable stem with their infinitive (romper -> roto), so a
+# skeleton match cannot see them. Listed explicitly rather than exempting the whole verb, which
+# would also switch the check off for that verb's regular forms.
+IRREGULAR_PARTICIPLES = {
+    "romper": "roto", "escribir": "escrito", "poner": "puesto", "volver": "vuelto",
+    "abrir": "abierto", "morir": "muerto", "cubrir": "cubierto", "resolver": "resuelto",
+    "freír": "frito", "imprimir": "impreso", "describir": "descrito", "devolver": "devuelto",
+    "envolver": "envuelto", "descubrir": "descubierto", "componer": "compuesto",
+    "proponer": "propuesto", "suponer": "supuesto", "deshacer": "deshecho",
+    "satisfacer": "satisfecho", "prever": "previsto", "disolver": "disuelto",
+}
 CONSONANTS = re.compile(r"[^aeiou]")
 # Spanish keeps a sound constant across a conjugation and changes the SPELLING to do it, so a
 # raw consonant skeleton is not stable after all. Collapsing each alternating pair onto one
@@ -109,11 +120,27 @@ def example_shows_headword(hr, target, pos):
         return False
     if core in tgt:
         return True
+
+    # A multi-word headword is a PHRASE (coger el metro, el paso de peatones, la habitación
+    # doble). Its parts inflect and reorder independently, so demanding the whole string is
+    # wrong: 'Cogemos el metro para ir al centro' is a perfect example of 'coger el metro' and
+    # contains none of it verbatim. Require one substantial token instead.
+    tokens = [t for t in core.split() if len(t) >= 4]
+    if len(core.split()) > 1:
+        if not tokens:
+            return True
+        return any(t[:4] in tgt or _skeleton(t)[:3] in _skeleton(tgt) for t in tokens)
+
     first = core.split()[0]
 
     if pos and pos.startswith("v."):
         if first in STEM_UNRECOGNISABLE:
             return True                      # stated exemption, see above
+        # A pronominal headword is the same verb: romperse -> romper.
+        plain = re.sub(r"se$", "", first) if first.endswith("se") else first
+        part = IRREGULAR_PARTICIPLES.get(plain) or IRREGULAR_PARTICIPLES.get(first)
+        if part and strip_accents(part) in tgt:
+            return True
         stem = re.sub(r"(arse|erse|irse|ar|er|ir)$", "", first)
         skel = _skeleton(stem)[:3]
         if len(skel) < 2:
@@ -228,6 +255,13 @@ def verify(paths, level=None, expect=None):
                             problems.append(
                                 f"{tag}: 'el' with a feminine noun needs a note saying why, "
                                 f"or the learner reads it as masculine")
+                        elif pos == "n. m./f.":
+                            # Epicene noun: one form, both genders, distinguished only by the
+                            # article (el turista / la turista, el estudiante / la estudiante).
+                            # Either article is correct, and FORCING one would reproduce the
+                            # exact defect the Portuguese audit found, where epicene nouns were
+                            # wrongly locked masculine.
+                            pass
                         elif not el_fem_ok and pos not in (expected, expected + " pl."):
                             problems.append(f"{tag}: article {first!r} says {expected!r} "
                                             f"but pos is {pos!r}")
