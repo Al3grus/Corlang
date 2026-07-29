@@ -157,6 +157,19 @@ Three design rules, each paid for:
 - Validate every batch the moment it lands with `check_<code>.py`. Fix small defects in place
   (a two-token REORDER, an e' for è); the checkers catch them one at a time when they are
   cheap.
+- **Also concatenate every batch delivered so far and run the checker on THAT.** No new tool is
+  needed and it costs one command. `check_batch`'s duplicate-prompt check is scoped to a single
+  container, so two batches can each be clean while sharing a prompt, and a per-range agent
+  cannot see outside its own range. Croatian found 26 such cross-range duplicates only at
+  assembly, after every per-range agent had reported clean.
+- **State in the prompt that the level ceiling applies to MCQ DISTRACTOR OPTIONS too.** Spanish
+  batch 3's agent found banned grammar hiding there after its taught content was already clean:
+  a distractor is learner-visible, so an off-syllabus tense in a wrong option teaches it anyway.
+  A wrong option must be wrong for a reason the learner can already understand.
+- **Re-read the course's own reference files when spot-checking a batch.** Spanish batch 1's
+  ser/estar lesson taught permanent-versus-temporary, the rule that course's own `feynman.json`
+  and `cheatsheet.json` explicitly debunk two files away. A lesson contradicting the reference is
+  invisible to every mechanical gate and is the class the French audit found five of.
 - **Spiral review rule**: each EXERCISE should include at least one item exercising material
   from five or more lessons earlier, so nothing decays unpracticed. State this to agents as an
   INTENT and tell them to vary the surface wording: given identical phrasing in every prompt,
