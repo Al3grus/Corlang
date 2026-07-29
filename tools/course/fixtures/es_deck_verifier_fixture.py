@@ -69,6 +69,16 @@ CASES = [
     ("stated exemption: ir / voy", pack([v("ir", "Voy al mercado.")]), False, None),
     ("stated exemption: hacer / hago",
      pack([v("hacer", "Hago la compra los sábados.")]), False, None),
+    # Orthographic alternations: Spanish changes the SPELLING to keep the sound. Found by the
+    # first real authored pack, which flagged both of these as missing their headword.
+    ("g>j spelling change: coger / cojo",
+     pack([v("coger", "Cojo el paraguas antes de salir.")]), False, None),
+    ("g>j spelling change: recoger / recojo",
+     pack([v("recoger", "Recojo mis libros de la mesa.")]), False, None),
+    ("c>z spelling change: vencer / venzo",
+     pack([v("vencer", "Nunca venzo en el ajedrez.")]), False, None),
+    ("c>zc spelling change: conocer / conozco",
+     pack([v("conocer", "Conozco muy bien esta ciudad.")]), False, None),
     # ...but a genuinely unrelated verb example must still fire.
     ("unrelated verb example still fires",
      pack([v("hablar", "Me gusta el cine y la música.")]), True, "does not contain the headword"),
