@@ -18,6 +18,15 @@ Scoped by KEY like the German checker: only strings that ARE Italian the learner
 produce, never English commentary that names a wrong form in order to reject it.
 
 Usage:  python check_it.py <file.json> [...]
+
+2026-07-28: check_italian() never unwrapped the assembled {"title", "days"} shape (the same
+silent-no-op bug found and fixed in check_hr.py/K8 and check_de.py/K13) — every real shipped
+Italian file is this shape, so this checker had validated nothing since it was written. Fixed
+with the same _unwrap()/_is_day_shaped() pattern, plus a generic-shape fallback for vocab packs
+and quizzes/placement/exams (check_de.py's K14 fix), and KEY-scoped throughout from the start
+(no equivalent of check_de.py's K16 English-collision bug: MISSING_ACCENT_LOWER's three forms
+are not common English words, so this class of false positive doesn't apply here, but the
+scoping is still correct practice and cheap insurance).
 """
 import io
 import json
@@ -75,13 +84,49 @@ def distractors_of(day):
     return out
 
 
+def _unwrap(obj):
+    """Assembled course files are {"title": ..., "days": [...]}; pre-merge batches are a bare
+    array. Accept either so this checker runs against both."""
+    if isinstance(obj, dict) and isinstance(obj.get("days"), list):
+        return obj["days"]
+    return obj
+
+
+def _is_day_shaped(days):
+    return (isinstance(days, list) and len(days) > 0 and isinstance(days[0], dict)
+            and "activities" in days[0])
+
+
+def _checks_on_string(s, level):
+    errs = []
+    m = MISSING_ACCENT.search(s) or MISSING_ACCENT_LOWER.search(s)
+    if m:
+        errs.append(f"missing accent on {m.group(0)!r} in {s[:60]!r}")
+    if APOSTROPHE_E.search(s):
+        errs.append(f"wrote e' for è in {s[:60]!r}")
+    m = WRONG_IL.search(s)
+    if m:
+        errs.append(f"wrong article, {m.group(0)!r} needs lo or l' in {s[:60]!r}")
+    m = WRONG_UNO.search(s)
+    if m:
+        errs.append(f"wrong article, {m.group(0)!r} needs uno in {s[:60]!r}")
+    if WRONG_UN_APOST.search(s):
+        errs.append(f"un' before a consonant in {s[:60]!r}, un' is feminine only")
+    if level in ("A1", "A2"):
+        m = PASSATO_REMOTO.search(s)
+        if m:
+            errs.append(f"passato remoto {m.group(0)!r} at {level}, "
+                        f"the course teaches the passato prossimo")
+    return errs
+
+
 def check_italian(path):
     errs = []
     try:
-        days = json.load(io.open(path, encoding="utf-8"))
+        days = _unwrap(json.load(io.open(path, encoding="utf-8")))
     except Exception:
         return []
-    if not isinstance(days, list):
+    if not _is_day_shaped(days):
         return []
 
     for di, day in enumerate(days):
@@ -92,24 +137,60 @@ def check_italian(path):
         for s in italian_strings_of(day):
             if s in wrong_options:
                 continue
-            m = MISSING_ACCENT.search(s) or MISSING_ACCENT_LOWER.search(s)
-            if m:
-                errs.append(f"{tag}: missing accent on {m.group(0)!r} in {s[:60]!r}")
-            if APOSTROPHE_E.search(s):
-                errs.append(f"{tag}: wrote e' for è in {s[:60]!r}")
-            m = WRONG_IL.search(s)
-            if m:
-                errs.append(f"{tag}: wrong article, {m.group(0)!r} needs lo or l' in {s[:60]!r}")
-            m = WRONG_UNO.search(s)
-            if m:
-                errs.append(f"{tag}: wrong article, {m.group(0)!r} needs uno in {s[:60]!r}")
-            if WRONG_UN_APOST.search(s):
-                errs.append(f"{tag}: un' before a consonant in {s[:60]!r}, un' is feminine only")
-            if level in ("A1", "A2"):
-                m = PASSATO_REMOTO.search(s)
-                if m:
-                    errs.append(f"{tag}: passato remoto {m.group(0)!r} at {level}, "
-                                f"the course teaches the passato prossimo")
+            for msg in _checks_on_string(s, level):
+                errs.append(f"{tag}: {msg}")
+    return errs
+
+
+def _generic_distractors(node):
+    """Wrong MCQ options anywhere in an arbitrary JSON tree, not just under day.activities:
+    quizzes/placement/exams put "type": "MCQ" questions directly under "questions" with no
+    activity wrapper."""
+    out = set()
+
+    def rec(x):
+        if isinstance(x, dict):
+            if x.get("type") == "MCQ":
+                ans = x.get("answer")
+                for opt in x.get("options", []):
+                    if opt != ans:
+                        out.add(opt)
+            for v in x.values():
+                rec(v)
+        elif isinstance(x, list):
+            for v in x:
+                rec(v)
+
+    rec(node)
+    return out
+
+
+def check_italian_generic(label, raw):
+    """Same checks as check_italian(), for non-day-shaped files (vocab packs, quizzes.json,
+    placement.json, exams.json, grammar.json...) that check_italian() can't parse because they
+    have no `activities` structure to scope by, and no `level` field to gate PASSATO_REMOTO on
+    (so that check is skipped here, not applied at every level)."""
+    errs = []
+    wrong = _generic_distractors(raw)
+    for path, s in check_batch.walk_strings(raw):
+        if not (path.endswith(".hr") or path.endswith(".target") or path.endswith(".answer")
+                or ".options[" in path or ".ordered[" in path or ".accepted[" in path):
+            continue
+        if s in wrong:
+            continue
+        m = MISSING_ACCENT.search(s) or MISSING_ACCENT_LOWER.search(s)
+        if m:
+            errs.append(f"{label}: missing accent on {m.group(0)!r} in {s[:60]!r}")
+        if APOSTROPHE_E.search(s):
+            errs.append(f"{label}: wrote e' for è in {s[:60]!r}")
+        m = WRONG_IL.search(s)
+        if m:
+            errs.append(f"{label}: wrong article, {m.group(0)!r} needs lo or l' in {s[:60]!r}")
+        m = WRONG_UNO.search(s)
+        if m:
+            errs.append(f"{label}: wrong article, {m.group(0)!r} needs uno in {s[:60]!r}")
+        if WRONG_UN_APOST.search(s):
+            errs.append(f"{label}: un' before a consonant in {s[:60]!r}, un' is feminine only")
     return errs
 
 
@@ -121,13 +202,18 @@ if __name__ == "__main__":
             print(f"MISSING {path}")
             bad += 1
             continue
-        errs = check_batch.check_file(path) + check_italian(path)
-        try:
-            n = len(json.load(io.open(path, encoding="utf-8")))
-        except Exception:
+        raw = json.load(io.open(path, encoding="utf-8"))
+        days = _unwrap(raw)
+        if _is_day_shaped(days):
+            errs = check_batch.check_file(path) + check_italian(path)
+            n = len(days)
+            label = f"{n} days"
+        else:
+            errs = check_italian_generic(os.path.basename(path), raw)
             n = 0
+            label = "generic file"
         total += n
-        print(f"{os.path.basename(path):<16} {n:>3} days  "
+        print(f"{os.path.basename(path):<28} {label:<12} "
               f"{'OK ' if not errs else str(len(errs)) + ' PROBLEMS'}")
         for e in errs[:30]:
             print(f"    - {e}")

@@ -3,8 +3,8 @@
   "id": "it-a1-cils-mock",
   "levelId": "A1",
   "title": "Prova modello CILS A1",
-  "description": "A full A1 mock with four abilities in the official modular format. Each ability is passed or failed on its own.",
-  "passRule": "Prova modulare: ogni abilità deve essere superata da sola con almeno il 55%. Il totale non compensa una sezione insufficiente.",
+  "description": "A full A1 mock with five abilities in the official modular format. Each ability is passed or failed on its own.",
+  "passRule": "Prova modulare: ogni abilità deve essere superata da sola con almeno il 58% (7 punti su 12). Il totale non compensa una sezione insufficiente.",
   "sources": [
    "cils-a1"
   ],
@@ -14,12 +14,18 @@
     "kind": "LISTENING",
     "title": "Ascolto",
     "instructions": "Listen to the announcement (the app reads the transcript aloud), then answer the five questions.",
-    "passPercent": 55,
+    "passPercent": 58,
     "passages": [
      {
       "id": "ascolto1",
       "title": "Annuncio al supermercato",
       "text": "Buongiorno e benvenuti al supermercato Il Girasole. Oggi abbiamo un'offerta speciale: due chili di arance costano solo tre euro. Al banco del pane trovate la focaccia calda fino alle dodici. La cassa numero quattro è solo per chi ha meno di dieci prodotti. Il supermercato chiude alle venti. Grazie e buona spesa.",
+      "audioOnly": true
+     },
+     {
+      "id": "ascolto2",
+      "title": "Le previsioni del tempo",
+      "text": "E ora le previsioni per domani. Al mattino cielo sereno e sole su tutta la regione. Nel pomeriggio arrivano alcune nuvole, ma non piove. La sera il vento aumenta un po'. Le temperature: minima dieci gradi, massima diciotto gradi. Buona giornata a tutti.",
       "audioOnly": true
      }
     ],
@@ -83,6 +89,40 @@
       "difficulty": 3,
       "explanation": "The announcement says the supermarket closes at eight in the evening, alle venti.",
       "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che tempo fa al mattino?",
+      "difficulty": 2,
+      "options": [
+       "Cielo sereno e sole",
+       "Pioggia forte",
+       "Molto vento",
+       "Neve"
+      ],
+      "answer": "Cielo sereno e sole",
+      "explanation": "The forecast says clear sky and sun in the morning."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa succede nel pomeriggio?",
+      "difficulty": 3,
+      "options": [
+       "Arrivano alcune nuvole",
+       "Piove tutto il giorno",
+       "Fa molto freddo",
+       "Il sole scompare"
+      ],
+      "answer": "Arrivano alcune nuvole",
+      "explanation": "Some clouds arrive in the afternoon, but it does not rain."
+     },
+     {
+      "type": "FILL",
+      "prompt": "La temperatura massima di domani è ___ gradi (numero in cifre).",
+      "difficulty": 3,
+      "answer": "18",
+      "explanation": "The high is eighteen degrees, diciotto gradi.",
+      "strictDiacritics": true
      }
     ]
    },
@@ -91,12 +131,18 @@
     "kind": "READING",
     "title": "Comprensione della lettura",
     "instructions": "Read the notice and answer the five questions.",
-    "passPercent": 55,
+    "passPercent": 58,
     "passages": [
      {
       "id": "lettura1",
       "title": "Avviso: corso di nuoto in piscina",
       "text": "Piscina comunale: corso di nuoto per adulti. Le lezioni sono il martedì e il giovedì, dalle diciotto alle diciannove. Il corso comincia il tre marzo e dura due mesi. Il prezzo è quaranta euro al mese, ma gli studenti pagano trenta euro. La piscina è in via Roma 15, vicino alla farmacia. Per il corso servono il costume, la cuffia e un asciugamano. Per l'iscrizione l'ufficio è aperto dal lunedì al venerdì, dalle nove alle tredici.",
+      "audioOnly": false
+     },
+     {
+      "id": "lettura2",
+      "title": "Avviso: il mercato del sabato",
+      "text": "Ogni sabato mattina, dalle otto alle tredici, in piazza del mercato c'è il mercato settimanale. Ci sono banchi di frutta e verdura, formaggi e pesce fresco. Il primo sabato del mese c'è anche un mercatino dell'usato, con vestiti e libri a poco prezzo. L'ingresso è libero e ci sono anche tavoli per un caffè o una colazione veloce.",
       "audioOnly": false
      }
     ],
@@ -160,6 +206,146 @@
       "answer": "Il costume, la cuffia e un asciugamano",
       "difficulty": 3,
       "explanation": "A swimsuit, a swim cap and a towel are needed for the course."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quando è il mercato settimanale?",
+      "difficulty": 2,
+      "options": [
+       "Ogni sabato mattina",
+       "Ogni domenica",
+       "Ogni giorno",
+       "Solo il primo sabato del mese"
+      ],
+      "answer": "Ogni sabato mattina",
+      "explanation": "The weekly market runs every Saturday morning."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa c'è il primo sabato del mese?",
+      "difficulty": 3,
+      "options": [
+       "Anche un mercatino dell'usato",
+       "Solo frutta e verdura",
+       "Un concerto",
+       "Niente di speciale"
+      ],
+      "answer": "Anche un mercatino dell'usato",
+      "explanation": "On the first Saturday of the month there is also a second-hand market."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Quanto costa l'ingresso al mercato?",
+      "difficulty": 3,
+      "options": [
+       "È gratuito",
+       "Due euro",
+       "Cinque euro",
+       "Dipende dal banco"
+      ],
+      "answer": "È gratuito",
+      "explanation": "Entry is free, l'ingresso è libero."
+     }
+    ]
+   },
+   {
+    "id": "strutture",
+    "kind": "GRAMMAR",
+    "title": "Strutture della comunicazione",
+    "instructions": "Scegli la forma corretta o completa la frase.",
+    "passPercent": 58,
+    "questions": [
+     {
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Io ___ studente.",
+      "options": [
+       "sono",
+       "sei",
+       "è",
+       "siamo"
+      ],
+      "answer": "sono",
+      "explanation": "essere: io sono, tu sei, lui/lei è, noi siamo."
+     },
+     {
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Noi ___ due gatti.",
+      "options": [
+       "abbiamo",
+       "ho",
+       "hai",
+       "hanno"
+      ],
+      "answer": "abbiamo",
+      "explanation": "avere: noi abbiamo."
+     },
+     {
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "___ studente è nuovo.",
+      "options": [
+       "Lo",
+       "Il",
+       "La",
+       "L'"
+      ],
+      "answer": "Lo",
+      "explanation": "Lo precede un nome maschile che inizia per s + consonante."
+     },
+     {
+      "type": "FILL",
+      "difficulty": 3,
+      "prompt": "Loro ___ (lavorare) in banca.",
+      "answer": "lavorano",
+      "explanation": "Verbi in -are, terza persona plurale: lavorano.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "Quale frase è corretta per dire che non parli spagnolo?",
+      "options": [
+       "Non parlo spagnolo.",
+       "Parlo non spagnolo.",
+       "Non io parlo spagnolo.",
+       "Spagnolo non parlo."
+      ],
+      "answer": "Non parlo spagnolo.",
+      "explanation": "La negazione non va sempre subito prima del verbo."
+     },
+     {
+      "type": "FILL",
+      "difficulty": 4,
+      "prompt": "Questo è il ___ (mio) libro.",
+      "answer": "mio",
+      "explanation": "L'aggettivo possessivo concorda con l'oggetto posseduto: il mio libro.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 4,
+      "prompt": "Vado ___ (a + lo) ufficio ogni mattina.",
+      "answer": "all'",
+      "accepted": [
+       "allo"
+      ],
+      "explanation": "a + lo si contrae in allo; davanti a vocale diventa all'.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "Completa: 'Mi ___ la pizza.' (I like pizza.)",
+      "options": [
+       "piace",
+       "piacciono",
+       "piaci",
+       "piacete"
+      ],
+      "answer": "piace",
+      "explanation": "La pizza è singolare ed è il soggetto del verbo piacere."
      }
     ]
    },
@@ -168,7 +354,7 @@
     "kind": "WRITING",
     "title": "Produzione scritta",
     "instructions": "Write a short message of 30 to 40 words, then tick the rubric points.",
-    "passPercent": 55,
+    "passPercent": 58,
     "prompts": [
      {
       "prompt": "Non puoi andare alla cena di sabato a casa della tua amica Sara. Scrivile un messaggio (da 30 a 40 parole): saluta, di' che non puoi venire, spiega perché e proponi un altro giorno.",
@@ -189,7 +375,7 @@
     "kind": "SPEAKING",
     "title": "Produzione orale",
     "instructions": "Speak each task ALOUD, then tick the rubric points.",
-    "passPercent": 55,
+    "passPercent": 58,
     "prompts": [
      {
       "prompt": "Presentati: nome, età, paese, città, lingue, lavoro e un hobby. Parla ad alta voce per circa un minuto.",
@@ -220,8 +406,8 @@
   "id": "it-a2-cils-mock",
   "levelId": "A2",
   "title": "Prova modello CILS A2",
-  "description": "A full A2 mock with four abilities in the official modular format. Each ability is passed or failed on its own.",
-  "passRule": "Prova modulare: serve almeno il 55% in ogni singola abilità. Una sezione sotto la soglia non viene compensata dalle altre.",
+  "description": "A full A2 mock with five abilities in the official modular format. Each ability is passed or failed on its own.",
+  "passRule": "Prova modulare: serve almeno il 58% (7 punti su 12) in ogni singola abilità. Una sezione sotto la soglia non viene compensata dalle altre.",
   "sources": [
    "cils-a2"
   ],
@@ -231,12 +417,18 @@
     "kind": "LISTENING",
     "title": "Ascolto",
     "instructions": "Listen to the voicemail (the app reads the transcript aloud), then answer the five questions.",
-    "passPercent": 55,
+    "passPercent": 58,
     "passages": [
      {
       "id": "ascolto1",
       "title": "Messaggio in segreteria telefonica",
       "text": "Buongiorno, sono Marta della farmacia Bellini. La chiamo per il suo ordine. Le gocce per gli occhi sono arrivate questa mattina, però la crema che ha ordinato non era disponibile: arriverà giovedì. Se vuole, può passare oggi per le gocce e tornare giovedì per la crema, oppure ritirare tutto insieme venerdì. In totale pagherà ventidue euro. Siamo aperti dalle otto e trenta alle diciannove e trenta, il sabato solo la mattina. Deve portare la ricetta del medico, altrimenti non possiamo darle le gocce. Grazie e buona giornata.",
+      "audioOnly": true
+     },
+     {
+      "id": "ascolto2",
+      "title": "Annuncio in stazione",
+      "text": "Attenzione prego. Il treno regionale delle nove e quindici per Bologna parte dal binario cinque invece del binario due. I passeggeri con biglietto per Bologna sono pregati di recarsi al binario cinque. Il treno delle dieci per Milano è in ritardo di venti minuti per un problema tecnico. Ci scusiamo per il disagio.",
       "audioOnly": true
      }
     ],
@@ -300,6 +492,40 @@
       "answer": "La ricetta del medico",
       "difficulty": 4,
       "explanation": "Without the doctor's prescription the pharmacy cannot hand over the drops."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Da quale binario parte il treno per Bologna?",
+      "difficulty": 4,
+      "options": [
+       "Dal binario cinque",
+       "Dal binario due",
+       "Dal binario tre",
+       "Dal binario uno"
+      ],
+      "answer": "Dal binario cinque",
+      "explanation": "The platform changed from two to five."
+     },
+     {
+      "type": "FILL",
+      "prompt": "Il treno per Milano è in ritardo di ___ minuti (numero in cifre).",
+      "difficulty": 4,
+      "answer": "20",
+      "explanation": "The Milan train is twenty minutes late, venti minuti.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Perché il treno per Milano è in ritardo?",
+      "difficulty": 4,
+      "options": [
+       "Per un problema tecnico",
+       "Per lo sciopero",
+       "Per il maltempo",
+       "Non si sa il motivo"
+      ],
+      "answer": "Per un problema tecnico",
+      "explanation": "A technical problem is the stated cause."
      }
     ]
    },
@@ -308,12 +534,18 @@
     "kind": "READING",
     "title": "Comprensione della lettura",
     "instructions": "Read the email and answer the five questions.",
-    "passPercent": 55,
+    "passPercent": 58,
     "passages": [
      {
       "id": "lettura1",
       "title": "Mail di Paola: gita di domenica",
       "text": "Da: Paola. Oggetto: gita di domenica. Ciao Marco, domenica finalmente faremo la gita al lago! Partiremo dalla piazza del mercato alle otto e mezza, così arriveremo prima dei turisti. Verrà anche mio cugino Luca con la sua macchina, quindi non dovrai prendere la tua. Porta scarpe comode, perché faremo un sentiero di due ore intorno al lago. Io preparerò i panini per tutti, tu potresti portare l'acqua e la frutta? Se il tempo sarà brutto, rimanderemo tutto alla domenica dopo. Dimmi entro venerdì se vieni, così Luca sa quanti posti servono. Un abbraccio, Paola",
+      "audioOnly": false
+     },
+     {
+      "id": "lettura2",
+      "title": "Annuncio: cercasi compagno di appartamento",
+      "text": "Cerco una persona per condividere un appartamento di tre stanze vicino al centro. La stanza libera è grande e luminosa, con un armadio grande. L'affitto è trecento euro al mese, bollette incluse. Cerco una persona tranquilla, non fumatrice, che abbia già un lavoro o studi all'università. Se sei interessato, scrivimi un messaggio con qualche informazione su di te.",
       "audioOnly": false
      }
     ],
@@ -377,6 +609,123 @@
       "answer": "Entro venerdì",
       "difficulty": 5,
       "explanation": "Paola asks for an answer by Friday so Luca knows how many seats are needed."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa cerca la persona che scrive l'annuncio?",
+      "difficulty": 4,
+      "options": [
+       "Un compagno di appartamento",
+       "Un lavoro",
+       "Uno studente da aiutare",
+       "Una casa da comprare"
+      ],
+      "answer": "Un compagno di appartamento",
+      "explanation": "The ad looks for someone to share the flat with."
+     },
+     {
+      "type": "FILL",
+      "prompt": "L'affitto della stanza è ___ euro al mese (numero in cifre).",
+      "difficulty": 4,
+      "answer": "300",
+      "explanation": "Rent is three hundred euros a month, bills included.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che tipo di persona cerca l'autore dell'annuncio?",
+      "difficulty": 5,
+      "options": [
+       "Una persona tranquilla e non fumatrice",
+       "Una persona con un animale",
+       "Una persona che ama le feste",
+       "Non ha preferenze"
+      ],
+      "answer": "Una persona tranquilla e non fumatrice",
+      "explanation": "The author wants a quiet, non-smoking flatmate."
+     }
+    ]
+   },
+   {
+    "id": "strutture",
+    "kind": "GRAMMAR",
+    "title": "Strutture della comunicazione",
+    "instructions": "Scegli la forma corretta o completa la frase.",
+    "passPercent": 58,
+    "questions": [
+     {
+      "type": "FILL",
+      "difficulty": 4,
+      "prompt": "Da bambino ___ (giocare) sempre fuori.",
+      "answer": "giocavo",
+      "explanation": "L'imperfetto descrive un'abitudine nel passato: io giocavo.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 5,
+      "prompt": "La pizza? L'ho ___ (mangiare) ieri.",
+      "answer": "mangiata",
+      "explanation": "Con il pronome diretto la, il participio concorda: l'ho mangiata.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 4,
+      "prompt": "Domani ___ (partire) per Roma.",
+      "answer": "partirò",
+      "explanation": "Futuro semplice, prima persona: partirò.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "Come chiedi un caffè in modo educato?",
+      "options": [
+       "Vorrei un caffè, per favore.",
+       "Voglio un caffè.",
+       "Dammi un caffè.",
+       "Un caffè, subito."
+      ],
+      "answer": "Vorrei un caffè, per favore.",
+      "explanation": "Il condizionale vorrei è la forma cortese standard."
+     },
+     {
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Roma è ___ grande ___ Firenze.",
+      "options": [
+       "più / di",
+       "più / che",
+       "tanto / di",
+       "come / di"
+      ],
+      "answer": "più / di",
+      "explanation": "Il comparativo di maggioranza tra due nomi usa più... di."
+     },
+     {
+      "type": "FILL",
+      "difficulty": 4,
+      "prompt": "Vai al mare ogni estate? Sì, ___ vado sempre.",
+      "answer": "ci",
+      "explanation": "Ci sostituisce un luogo già menzionato, al mare.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 5,
+      "prompt": "___! (aspettare, tu, imperativo)",
+      "answer": "Aspetta",
+      "explanation": "Imperativo informale dei verbi in -are, tu: aspetta.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 6,
+      "prompt": "Il libro a Marco? ___ do domani. (glielo)",
+      "answer": "Glielo",
+      "explanation": "Pronome combinato: gli + lo = glielo.",
+      "strictDiacritics": true
      }
     ]
    },
@@ -385,7 +734,7 @@
     "kind": "WRITING",
     "title": "Produzione scritta",
     "instructions": "Write a short email of about 50 words, then tick the rubric points.",
-    "passPercent": 55,
+    "passPercent": 58,
     "prompts": [
      {
       "prompt": "Un amico ti ha invitato alla sua festa di compleanno venerdì, ma non puoi andare. Scrivigli una mail (circa 50 parole): ringrazia per l'invito, di' che non puoi andare, spiega il motivo e proponi un altro momento per vedervi.",
@@ -406,7 +755,7 @@
     "kind": "SPEAKING",
     "title": "Produzione orale",
     "instructions": "Speak each task ALOUD, then tick the rubric points.",
-    "passPercent": 55,
+    "passPercent": 58,
     "prompts": [
      {
       "prompt": "Gioco di ruolo al mercato: compra frutta e verdura per una cena, chiedi il prezzo, chiedi un sacchetto in modo gentile e saluta. Parla ad alta voce.",
@@ -438,7 +787,7 @@
   "id": "it-b1-cils-mock",
   "levelId": "B1",
   "title": "Prova modello CILS UNO-B1",
-  "description": "A full B1 mock with four abilities in the official modular format, passed ability by ability. B1 is the level Italian citizenship requires. A separate shortened B1 Cittadinanza exam also exists: it is valid only for citizenship, not for work or study.",
+  "description": "A full B1 mock with five abilities in the official modular format, passed ability by ability. B1 is the level Italian citizenship requires. This mock follows the full CILS UNO-B1 format, which is stricter than the shortened B1 Cittadinanza exam used only for citizenship applications.",
   "passRule": "Prova modulare: ogni abilità va superata separatamente con almeno il 55% (11 punti su 20). Il totale non salva un'abilità insufficiente.",
   "sources": [
    "cils-b1",
@@ -456,6 +805,12 @@
       "id": "ascolto1",
       "title": "Notizia alla radio: il caffè delle riparazioni",
       "text": "E ora una notizia dal nostro quartiere. Sabato prossimo aprirà in via dei Tigli il primo caffè delle riparazioni della città. L'idea è semplice: chi ha un oggetto rotto, una lampada, un tostapane, una bicicletta, lo porta al caffè e prova a ripararlo insieme a un volontario, invece di buttarlo via. Il servizio è gratuito: si paga soltanto il pezzo di ricambio, quando serve. L'iniziativa nasce da un gruppo di pensionati, ma i responsabili sperano che partecipino anche i giovani, perché molti non hanno mai imparato a riparare niente. Il caffè sarà aperto ogni secondo sabato del mese, dalle dieci alle diciassette, e non serve prenotare; però chi arriva dopo le sedici rischia di aspettare a lungo. L'anno scorso un progetto simile a Ferrara ha riparato più di seicento oggetti.",
+      "audioOnly": true
+     },
+     {
+      "id": "ascolto2",
+      "title": "Intervista breve: la biblioteca di quartiere",
+      "text": "Restiamo in tema di quartiere con una breve intervista al responsabile della biblioteca comunale. Da settembre la biblioteca resterà aperta anche la sera, fino alle ventuno, tre giorni alla settimana. Il responsabile spiega che la decisione arriva dopo molte richieste degli studenti universitari, che lavorano di giorno e possono studiare solo la sera. Il servizio sarà gratuito per il primo anno; poi il comune valuterà se continuare in base al numero di persone che lo useranno.",
       "audioOnly": true
      }
     ],
@@ -519,6 +874,45 @@
       "answer": "Un progetto simile ha riparato più di seicento oggetti",
       "difficulty": 6,
       "explanation": "A similar project in Ferrara repaired more than six hundred objects last year."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Da quando la biblioteca resterà aperta la sera?",
+      "difficulty": 5,
+      "options": [
+       "Da settembre",
+       "Da subito",
+       "Dal prossimo anno",
+       "Da gennaio"
+      ],
+      "answer": "Da settembre",
+      "explanation": "Evening opening begins in September."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Perché è stata presa questa decisione?",
+      "difficulty": 6,
+      "options": [
+       "Per le richieste degli studenti universitari",
+       "Per un ordine del comune",
+       "Per mancanza di spazio in biblioteca",
+       "Per un problema di bilancio"
+      ],
+      "answer": "Per le richieste degli studenti universitari",
+      "explanation": "University students who work by day asked for evening hours."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che cosa succederà dopo il primo anno?",
+      "difficulty": 6,
+      "options": [
+       "Il comune valuterà se continuare il servizio",
+       "Il servizio diventerà a pagamento",
+       "La biblioteca chiuderà di sera",
+       "Non cambierà niente"
+      ],
+      "answer": "Il comune valuterà se continuare il servizio",
+      "explanation": "The municipality will assess whether to continue based on usage."
      }
     ]
    },
@@ -533,6 +927,12 @@
       "id": "lettura1",
       "title": "Messaggio dal forum: negozi aperti la domenica",
       "text": "Messaggio di Giulia, ore 21:47. Da quando il centro commerciale vicino a casa mia resta aperto tutte le domeniche, nel mio quartiere non si parla d'altro. Devo ammettere che all'inizio ero contenta: lavoro su turni e la domenica era l'unico giorno in cui riuscivo a fare la spesa con calma. Con il tempo, però, ho cambiato idea. Mia cognata fa la cassiera proprio lì e da due anni non passa una domenica intera con i suoi figli: può scegliere il giorno di riposo solo una volta al mese. Non credo che tutta questa apertura ci abbia reso la vita davvero più comoda; abbiamo solo spostato la spesa che prima facevamo il sabato. Inoltre i piccoli negozi del quartiere, che la domenica restano chiusi, perdono clienti ogni anno. Secondo me servirebbe una via di mezzo: aprire una o due domeniche al mese, pagare meglio chi accetta quel turno e lasciare agli altri il diritto di dire di no senza conseguenze. Prima che chiuda anche l'ultima libreria del quartiere, vorrei che il comune ne discutesse sul serio.",
+      "audioOnly": false
+     },
+     {
+      "id": "lettura2",
+      "title": "Un'altra risposta sul forum",
+      "text": "Risposta di Davide, ore 22:15. Capisco il punto di vista di Giulia, ma vorrei aggiungere un'altra prospettiva. Io lavoro proprio la domenica in un negozio del centro, non nel centro commerciale, e per me quell'apertura è stata un vantaggio: prima la domenica restavamo chiusi e perdevamo tutti i clienti che andavano al centro commerciale. Adesso apriamo anche noi due domeniche al mese e i clienti sono tornati. Capisco che non sia facile per chi lavora sempre, però non credo che la soluzione sia chiudere tutto: forse basterebbe che ogni negozio decidesse liberamente quando aprire, senza un obbligo per nessuno.",
       "audioOnly": false
      }
     ],
@@ -596,6 +996,123 @@
       "answer": "Aprire una o due domeniche al mese e pagare meglio quei turni",
       "difficulty": 7,
       "explanation": "Her middle way: one or two open Sundays a month, better pay, and the right to refuse the shift."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Che lavoro fa Davide?",
+      "difficulty": 6,
+      "options": [
+       "Lavora in un negozio del centro",
+       "Lavora nel centro commerciale",
+       "È un cassiere del centro commerciale",
+       "Non lavora la domenica"
+      ],
+      "answer": "Lavora in un negozio del centro",
+      "explanation": "Davide works at a downtown shop, not the mall."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Secondo Davide, che cosa succedeva prima delle aperture domenicali del centro commerciale?",
+      "difficulty": 6,
+      "options": [
+       "Il suo negozio perdeva clienti la domenica",
+       "Il suo negozio guadagnava di più",
+       "Il centro commerciale era chiuso sempre",
+       "Non c'era nessun cambiamento"
+      ],
+      "answer": "Il suo negozio perdeva clienti la domenica",
+      "explanation": "Being closed on Sundays used to cost his shop customers."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Qual è la proposta finale di Davide?",
+      "difficulty": 7,
+      "options": [
+       "Che ogni negozio decida liberamente quando aprire",
+       "Che tutti i negozi restino sempre chiusi la domenica",
+       "Che il comune obblighi tutti ad aprire",
+       "Che si chiuda il centro commerciale"
+      ],
+      "answer": "Che ogni negozio decida liberamente quando aprire",
+      "explanation": "His proposal is free choice for each shop, with no obligation."
+     }
+    ]
+   },
+   {
+    "id": "strutture",
+    "kind": "GRAMMAR",
+    "title": "Strutture della comunicazione",
+    "instructions": "Scegli la forma corretta o completa la frase.",
+    "passPercent": 55,
+    "questions": [
+     {
+      "type": "FILL",
+      "difficulty": 5,
+      "prompt": "Spero che tu ___ (stare) bene.",
+      "answer": "stia",
+      "explanation": "Congiuntivo presente di stare dopo sperare che: stia.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 6,
+      "prompt": "Penso che lui ___ (avere) ragione.",
+      "answer": "abbia",
+      "explanation": "I verbi di opinione come pensare reggono il congiuntivo: abbia.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 7,
+      "prompt": "Se ___ (avere) tempo, verrei subito.",
+      "answer": "avessi",
+      "explanation": "Periodo ipotetico della possibilità: se + congiuntivo imperfetto, avessi.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "La persona ___ ho parlato ieri è molto simpatica.",
+      "options": [
+       "con cui",
+       "con che",
+       "di che",
+       "a cui"
+      ],
+      "answer": "con cui",
+      "explanation": "Dopo una preposizione il relativo è cui: parlare con qualcuno diventa con cui."
+     },
+     {
+      "type": "FILL",
+      "difficulty": 6,
+      "prompt": "La porta ___ (chiudere) ogni sera alle otto.",
+      "answer": "viene chiusa",
+      "explanation": "Il passivo con venire: viene chiusa, al posto di è chiusa.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 7,
+      "prompt": "Esco lo stesso ___ piova. (benché)",
+      "answer": "benché",
+      "explanation": "Benché introduce una concessiva e regge il congiuntivo.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 7,
+      "prompt": "___ (dovere) dirtelo prima, scusa il ritardo.",
+      "answer": "Avrei dovuto",
+      "explanation": "Condizionale passato per un rimpianto: avrei dovuto.",
+      "strictDiacritics": true
+     },
+     {
+      "type": "FILL",
+      "difficulty": 7,
+      "prompt": "Quando ___ (finire) il lavoro, ti chiamo.",
+      "answer": "avrò finito",
+      "explanation": "Futuro anteriore per un'azione futura conclusa prima di un'altra: avrò finito.",
+      "strictDiacritics": true
      }
     ]
    },

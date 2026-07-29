@@ -50,9 +50,9 @@ result must satisfy. Tools live in `tools/course/`.
 
 ## Current state (update this section whenever it changes)
 
-- Shipped: hr, fr, pt, de. In progress: it (research, wiring, deck 2536, 200/240 lessons in
-  the scratchpad build; missing it_b1c 35 lessons, 5 of it_b1d's 35, assessment set,
-  proctoring, integration).
+- **Shipped: hr, fr, pt, de, it** (all five now fully audited, see per-language entries below).
+  Not yet built: es (target B1, PCIC-anchored, A2 legally required but too thin to be a product
+  per the standard's own reasoning).
 - **hr full-course audit + fix FULLY DONE (2026-07-27/28)**: 19-agent audit found 31 Critical/49
   High/~85 Medium/~90 Low across every lesson, the deck, quizzes/placement, mock exams and
   reference content; all fixed and verified. `docs/error-registry.md` C17-C19/V11/K8 added.
@@ -121,10 +121,36 @@ result must satisfy. Tools live in `tools/course/`.
   `docs/error-registry.md` open-sweeps item 8 has the full breakdown. Fully verified:
   `check_batch.py`/`check_de.py`/`proctor.py` 0 problems, Kotlin `ContentValidationTest` green,
   0 dashes. Nothing open.
-- Proctor backlog: hr, fr, pt, and de all CLEARED this session (2026-07-27/28). **Next: es from
-  zero** (PCIC-anchored, not yet built), then native review (Track D, open on all 4 shipped
+- **it full-course audit + fix FULLY DONE (2026-07-29)**: `check_it.py` had the K17 silent-no-op
+  bug (fixed and negative-tested proactively, before the checker was ever trusted, with every
+  lesson learned from K13-K16 baked in from the start). The fixed checker's first real run
+  surfaced a systemic missing-`è` bug concentrated entirely in `05-a2-descriptors.json` (70
+  instances + 10 missing apostrophes) — every other vocab file was confirmed clean, refuting the
+  task brief's wider claim. A 4-phase audit (all 245 plan days, all 18 vocab packs, quizzes/
+  placement/exams, reference content + Phase 8b syllabus cross-check) found and fixed 8
+  Critical + 11 High + dozens of Medium/Low in `phase1-a1.json` alone, a civics mini-unit at B1
+  day 204 whose `paretoFocus` explicitly overclaimed citizenship-exam coverage (the exact
+  `docs/language-standard.md` violation, independent of and in addition to institution-naming —
+  the institution names themselves were correctly left alone, mirroring the de day-222
+  precedent), 7 real-institution/person findings across `levels.json`/`meta.json`/`feynman.json`/
+  `grammar.json` (Università per Stranieri di Siena, Ministero dell'Interno, Italo Calvino, Dante
+  Alighieri with biography), a missing 5th CILS `GRAMMAR` section across all 3 mock exams (added),
+  all 6 receptive exam sections single-document (added a second passage to each, matching the
+  same gap already fixed in pt/de), A1/A2 exam pass rate at 55% instead of the sourced 58.3%, 6
+  `placement.json` band-anchor mismatches, and 4 `grammar.json` topics the plan had taught since
+  a 2026-07-20 digest fix but the standalone reference never mirrored. Subagent spawn cap (200)
+  was hit mid-session (confirmed cumulative, not concurrent) — remainder of the work done
+  directly with Edit/Bash. Two self-inflicted regressions were caught and fixed by the Kotlin
+  gate before commit (a `PlacementQuestion` schema mismatch, an exam-wide `strictDiacritics`
+  invariant wrongly judged "meaningless" and removed, then reverted). `freq-it`'s pre-existing
+  PARTIALLY EARNED status is unresolved by design, flagged for the user rather than unilaterally
+  decided. `docs/error-registry.md` open-sweeps item 9 has the full breakdown. Fully verified:
+  `check_batch.py`/`check_it.py`/`proctor.py` 0 problems (245 days), Kotlin `ContentValidationTest`
+  green (39/39), 0 dashes, real-name sweep clean. Nothing open.
+- Proctor backlog: hr, fr, pt, de and it all CLEARED (2026-07-27 to 2026-07-29). **Next: es from
+  zero** (PCIC-anchored, not yet built), then native review (Track D, open on all 5 shipped
   courses — the machine-authored expansion lessons have never been human-read).
-- Weighted-floor debt UNCHANGED by the hr/fr/pt/de audit passes above (they added LEARN/EXERCISE
-  depth within existing days, not new lesson days, so the day-count floor gate is untouched for
-  pt): fr +145 (B2 legally required since 2026-01-01, highest priority), hr +90, pt +70 (A2 short
-  15, B1 short 55, per `ContentValidationTest.weightedRuleDebt`). de has no floor debt.
+- Weighted-floor debt UNCHANGED by the audit passes above (they added LEARN/EXERCISE depth within
+  existing days, not new lesson days, so the day-count floor gate is untouched): fr +145 (B2
+  legally required since 2026-01-01, highest priority), hr +90, pt +70 (A2 short 15, B1 short 55,
+  per `ContentValidationTest.weightedRuleDebt`). de and it have no floor debt.

@@ -138,6 +138,7 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
 | K14 | check_de.py/check_batch.py both hard-crash (`AttributeError`) on the vocab-pack `{"packs":[{"words":[...]}]}` shape and on the non-plan shapes of quizzes.json/placement.json/exams.json — neither ever validated the German deck or assessment content at all, a distinct gap from K13 (which only fixed the plan-file unwrap) | 2026-07-28, de audit | FIXED same day: ported check_pt.py's `_is_day_shaped()` / generic-file-fallback pattern into check_de.py (`check_german_generic()`, `_generic_distractors()` for the MCQ-distractor exemption on non-day shapes); the CLI now branches on shape instead of assuming one. Re-run against every previously-unreachable de file immediately caught one real pre-existing defect (`quizzes.json` had "der Fluß", pre-reform spelling, as the FILL answer, not just a distractor) |
 | K15 | check_de.py's Swiss-spelling check (`SHARP_S_ERRORS`) only catches the pre-reform direction (ß written where ss belongs); it has no check for the opposite, actually-live drift direction — Swiss orthography eliminating ß entirely (ss for ß, e.g. "grosse" for "große") — found live in shipped content (a FILL question silently accepted "grosse" as correct with no contrastive note) | 2026-07-28, de audit | FIXED same day: added `gross/grosse/grosser/grosses/grossen/grossem`, `weiss`, `heissen`, `aussen`, `draussen`, `fuss`, `strasse(n)`, `gruss`, `grüsse` → their ß-forms, plus the Austrian-retention exception `erdgeschoß`→`erdgeschoss`, to the existing REGIONAL dict (same activity-scoped contrastive-teaching exemption as every other entry). This immediately surfaced a SECOND checker bug (see K16) before the fix could be trusted |
 | K16 | The REGIONAL-form check (used by both check_german() and, transitively, check_german_generic()) scanned every string in a day/activity, including English `en`/`note`/commentary fields, not just the German-bearing keys — a scoping bug distinct from every other check in the file (which are correctly KEY-scoped to hr/target/answer/options/ordered/accepted). Latent since the checker was first written, but never triggered because no original REGIONAL entry (jänner, sackerl, semmel...) was also a common English word; the K15 fix's `gross`/`fuss` additions are, and immediately false-flagged "My salary is 2,800 euros **gross** per month" and "Do not make such a **fuss**" as Swiss regional drift | 2026-07-28, de audit (found while trusting the K15 fix) | FIXED: the REGIONAL loop in check_german() now scans `german_strings_of(a)` instead of the unscoped `strings_of(a)`; check_german_generic() was rewritten to use a new path-scoped `_german_strings()` helper (mirrors german_strings_of() but works on arbitrary JSON shapes via check_batch.walk_strings) for all three of its checks, not just REGIONAL. Negative-tested against both the planted English-collision case and a Croatian-audit-precedent real-drift case before trusting a final real-content run (0 problems, 285 days) |
+| K17 | check_it.py's `check_italian()` never unwrapped the assembled `{title, days}` shape (`if not isinstance(days, list): return []`) — the third occurrence of this exact silent-no-op bug class (K8 in check_hr.py, K13 in check_de.py, now check_it.py), meaning the missing-accent/wrong-article/passato-remoto checks had never run against real shipped Italian content since the checker was written. Also crashed outright on vocab-pack/quizzes/placement/exams shapes (the same K14 class). Found at the start of Italian's first-ever audit, immediately before dispatching it, not after | 2026-07-28, it audit kickoff | FIXED proactively in one pass (all three fixes applied before the checker was ever trusted, rather than found incrementally the way de's were): added `_unwrap()`/`_is_day_shaped()`, ported check_de.py's generic-shape fallback (`check_italian_generic()`, `_generic_distractors()`), all correctly KEY-scoped from the start (no K16-equivalent needed: MISSING_ACCENT_LOWER's forms — sara/fara/andrà/verrà/potrà/dovrà/vorrà — are not common English words, so the English-collision class doesn't apply here, but the code is structured the same defensive way regardless). Negative-tested with 8 planted cases (missing accent, correct accent, passato remoto at A1 vs. B1, MCQ-distractor exemption, generic-shape parsing, no-crash-on-quiz-shape, wrong article) before trusting a real-content run — which immediately surfaced a large, previously-invisible finding: a systemic missing-"è" bug (the copula "è" written as bare "e", the conjunction) spanning at least 15 of 18 vocab packs, likely from an accent-stripping bug during authoring, now the subject of a full Phase 8 audit |
 
 ---
 
@@ -273,3 +274,46 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    the dedup fix. Verified: `check_batch.py`/`check_de.py` 285 days/0 problems, `proctor.py` 0
    problems (1 new objective-echo finding from the civics rewrite, fixed same pass), Kotlin
    `ContentValidationTest` gate green, 0 dashes, real-name sweep clean.
+9. **it full-course audit + fix DONE (2026-07-29)**: `check_it.py` had the K17 silent-no-op bug
+   (same class as K8/K13, fixed and negative-tested proactively at audit kickoff, with all of
+   K13-K16's lessons baked in from the start — generic-shape fallback, KEY-scoping, no
+   English-collision gap). A first-ever real check_it.py run on live content immediately
+   surfaced a systemic missing-`è` bug (bare `e` standing in for the copula) concentrated
+   entirely in `05-a2-descriptors.json` (70 instances) plus 10 missing elision apostrophes in
+   the same file — 6/9 other 00-08 vocab files and all 9 of the 09-17 files were confirmed
+   clean of this class by close read, refuting the task brief's wider claim. A 4-phase audit
+   (plan days 1-245, vocab packs 00-17, quizzes/placement/exams, reference content + Phase 8b
+   syllabus cross-check) found and FIXED, all directly (subagent spawn cap hit mid-session —
+   confirmed cumulative not concurrent — remaining work done with Edit/Bash instead of agents):
+   8 Critical + 11 High + 47 Medium/Low in `phase1-a1.json` (66 findings: untaught-grammar
+   REORDER/FILL items before their lesson, self-contradicting stress/h-insertion/article rules,
+   an MCQ answer-leak via article, missing FILL `accepted` case-variants, several incoherent or
+   off-topic dialogue lines); 2 in `phase2-a2.json`; a civics mini-unit at B1 day 204 whose
+   `paretoFocus` explicitly claimed to be "part of the citizenship syllabus" — the exact
+   overclaim `docs/language-standard.md` bans, independent of and in addition to the generic
+   institution-naming question (institution names — Parlamento, Camera dei deputati, Senato,
+   Presidente della Repubblica — were correctly left alone as the Italian equivalent of
+   "Congress"/"the Chancellor", mirroring the de day-222 precedent); 5 real-institution findings
+   (Università per Stranieri di Siena x2, Ministero dell'Interno x2, plus a 5-institution
+   concentration in one `feynman.json` teach-back concept) and 2 real-person findings (Italo
+   Calvino, Dante Alighieri with real biography) in `levels.json`/`meta.json`/`feynman.json`/
+   `grammar.json`; a missing 5th CILS `GRAMMAR`/`strutture` section across all 3 mock exams
+   (added, 8 questions each, matching each level's already-taught grammar); all 6 receptive
+   exam sections (ascolto/lettura x3 levels) single-document, matching the exact gap already
+   found and fixed in pt/de this session (added a second passage + 3 questions to each); A1/A2
+   exam `passPercent` at 55 instead of the sourced 58.3% (7/12); 3 Critical + 2 High + 1 Medium
+   `placement.json` bands testing grammar taught after their own anchor day (2 bands moved
+   anchor day forward to where their content is actually valid, 2 bands' items replaced with
+   genuine day-1/day-12/day-23/day-34-taught content); 4 `grammar.json` topics the plan had
+   taught since a 2026-07-20 digest fix but the standalone reference never mirrored
+   (dimostrativi, indefiniti/esclamative, che relativo at A2, enclisi/interrogative indirette —
+   authored and the now-stale digest updated to record all 8 of its 2026-07-20 follow-ups as
+   closed, not open). Two self-inflicted regressions caught and fixed by the Kotlin gate itself
+   before commit: `PlacementQuestion` has no `accepted` field and requires `options` even for
+   fill-style items (converted 4 FILL replacements to MCQ), and every exam FILL must carry
+   `strictDiacritics: true` unconditionally because the runner's field label promises it
+   exam-wide, not per-question (an initial "meaningless flag" judgment on 2 numeric answers was
+   wrong and reverted). `freq-it`'s pre-existing PARTIALLY EARNED status (56.2%/22.6% coverage)
+   is unresolved by design — flagged for the user rather than unilaterally decided, matching the
+   digest's own framing. Verified: `check_batch.py`/`check_it.py`/`proctor.py` 0 problems (245
+   days), Kotlin `ContentValidationTest` gate green (39/39), 0 dashes, real-name sweep clean.

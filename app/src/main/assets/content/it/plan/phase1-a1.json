@@ -108,21 +108,23 @@
       },
       {
        "type": "REORDER",
-       "prompt": "Build the Italian for: 'The sun is beautiful.'",
+       "prompt": "Build the Italian for: 'The house and the sea.'",
        "difficulty": 2,
        "options": [
-        "Il",
-        "sole",
-        "è",
-        "bello"
+        "casa",
+        "e",
+        "La",
+        "mare",
+        "il"
        ],
        "ordered": [
-        "Il",
-        "sole",
-        "è",
-        "bello"
+        "La",
+        "casa",
+        "e",
+        "il",
+        "mare"
        ],
-       "explanation": "Italian keeps subject, verb, adjective order here, and the adjective bello agrees with the masculine singular sole."
+       "explanation": "La agrees with the feminine casa and il with the masculine mare."
       }
      ],
      "sources": [
@@ -962,7 +964,7 @@
    "objective": "Use the six present tense forms of avere to say what you own, and to express age, hunger, thirst and cold the Italian way.",
    "paretoFocus": "Avere covers possession plus a whole family of everyday states where English uses to be, so it fixes the single most common beginner mistake about age.",
    "drills": [
-    "Say the six forms aloud, then say each one again without pronouncing the h.",
+    "Say the six forms aloud, noticing that ho, hai, ha and hanno are spelled with a silent h.",
     "Say your own age in Italian, then the age of two people in your family.",
     "Say four states using avere: hungry, thirsty, hot, cold."
    ],
@@ -1215,13 +1217,13 @@
        "prompt": "Which of these nouns is feminine?",
        "difficulty": 3,
        "options": [
-        "il tavolo",
-        "la stazione",
-        "il problema",
-        "il giornale"
+        "tavolo",
+        "stazione",
+        "quaderno",
+        "giornale"
        ],
-       "answer": "la stazione",
-       "explanation": "Nouns ending in -zione are always feminine, so they take la."
+       "answer": "stazione",
+       "explanation": "Nouns ending in -zione are always feminine, so stazione takes la; the others are masculine."
       },
       {
        "type": "MCQ",
@@ -1355,14 +1357,14 @@
     "items": [
      "What do masculine -o nouns and feminine -a nouns become in the plural?",
      "What happens to nouns ending in -e, whatever their gender?",
-     "Why does the plural of amica need an h while the plural of amico does not?"
+     "Why does the plural of banca need an h, and why does amico not follow the same pattern?"
     ]
    },
    "activities": [
     {
      "type": "LEARN",
      "title": "Dal singolare al plurale",
-     "intro": "Italian never adds an s. Masculine nouns in -o become -i, feminine nouns in -a become -e, and nouns in -e become -i whatever their gender. When the plural ending would soften a hard c or g, an h is written to protect the sound.",
+     "intro": "Italian never adds an s. Masculine nouns in -o become -i, feminine nouns in -a become -e, and nouns in -e become -i whatever their gender. Feminine nouns in -ca/-ga regularly add an h in the plural to keep the hard sound (banca, banche). Masculine nouns in -co/-go vary: many add the h too, but common words for people ending in -ico usually do not, and the c softens instead (amico, amici).",
      "items": [
       {
        "hr": "il libro, i libri",
@@ -1507,13 +1509,13 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Perfetto. Le banche sono aperte oggi?",
-       "en": "Perfect. Are the banks open today?"
+       "hr": "Perfetto. Hai anche le riviste di sport?",
+       "en": "Perfect. Do you also have the sports magazines?"
       },
       {
        "speaker": "Me",
-       "hr": "Sì, le banche sono aperte.",
-       "en": "Yes, the banks are open."
+       "hr": "Sì, le riviste di sport sono qui.",
+       "en": "Yes, the sports magazines are here."
       }
      ],
      "sources": [
@@ -1742,7 +1744,7 @@
     {
      "type": "LEARN",
      "title": "Un, uno, una, un'",
-     "intro": "The masculine indefinite article is un before most nouns, including those starting with a vowel, and uno before s plus consonant, z, gn and ps. The feminine is una before a consonant and un' before a vowel. The apostrophe is feminine only.",
+     "intro": "The masculine indefinite article is un before most nouns, including those starting with a vowel, and uno before s plus consonant, z, gn, ps, x and y. The feminine is una before a consonant and un' before a vowel. The apostrophe is feminine only.",
      "items": [
       {
        "hr": "un libro",
@@ -1945,9 +1947,9 @@
        "note": "sette and otto keep their double letters"
       },
       {
-       "hr": "undici, dodici, tredici, quattordici, quindici",
-       "en": "11, 12, 13, 14, 15",
-       "note": "these all end in -dici"
+       "hr": "undici, dodici, tredici, quattordici, quindici, sedici",
+       "en": "11, 12, 13, 14, 15, 16",
+       "note": "these all end in -dici, from undici to sedici"
       },
       {
        "hr": "venti, ventuno, ventitré, ventotto, trenta",
@@ -2138,6 +2140,11 @@
        "note": "months take no article: a marzo means in March"
       },
       {
+       "hr": "maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre",
+       "en": "May, June, July, August, September, October, November, December",
+       "note": "the rest of the twelve months, same rule: no article, lower case"
+      },
+      {
        "hr": "Il museo è aperto il lunedì.",
        "en": "The museum is open on Mondays.",
        "note": "il plus a day means every week, not one single time"
@@ -2299,7 +2306,7 @@
    "paretoFocus": "Times are said dozens of times a day, and the singular forms for one o'clock, midday and midnight are the ones learners always get wrong.",
    "drills": [
     "Say aloud the time on your clock now, then the same time one hour later.",
-    "Say these six times in Italian: 1:00, 3:15, 6:30, 8:45, 12:00, 24:00.",
+    "Say these six times in Italian: 1:00, 3:15, 6:30, 8:45, 12:00, 0:00.",
     "Ask the question for the time out loud five times until it comes without thinking."
    ],
    "reviewBlock": {
@@ -2363,7 +2370,7 @@
         "È le una."
        ],
        "answer": "È l'una.",
-       "explanation": "A single hour takes the singular è, and una becomes l'una before the verb drops the noun ora."
+       "explanation": "A single hour takes the singular è, and the article la elides to l' before una, giving l'una."
       },
       {
        "type": "MCQ",
@@ -2584,7 +2591,7 @@
        "difficulty": 4,
        "answer": "Lei",
        "accepted": [
-        "lei"
+        "Lei"
        ],
        "explanation": "The polite form is written with a capital and takes a third person verb."
       },
@@ -2625,8 +2632,8 @@
      "lines": [
       {
        "speaker": "Partner",
-       "hr": "Buongiorno. Lei è il signor Ferrari?",
-       "en": "Good morning. Are you Mr Ferrari?"
+       "hr": "Buongiorno. Lei è il signor Ricci?",
+       "en": "Good morning. Are you Mr Ricci?"
       },
       {
        "speaker": "Me",
@@ -2686,7 +2693,7 @@
    "drills": [
     "Conjugate parlare aloud through all six persons, then do the same with lavorare.",
     "Say five true sentences about your day using different -are verbs.",
-    "Say the loro form of three verbs aloud and put the stress on the first syllable each time."
+    "Say the loro form of three verbs aloud, keeping the stress on the same syllable as the tu/lui/lei forms, not on the ending."
    ],
    "reviewBlock": {
     "minutes": 15,
@@ -2700,7 +2707,7 @@
     {
      "type": "LEARN",
      "title": "Parlare, lavorare, abitare",
-     "intro": "To conjugate a regular -are verb, remove the -are and add -o, -i, -a, -iamo, -ate, -ano. The loro form is stressed on the first syllable, not on the ending. Verbs whose stem ends in -i, like mangiare, never double that i.",
+     "intro": "To conjugate a regular -are verb, remove the -are and add -o, -i, -a, -iamo, -ate, -ano. The loro form's stress stays on the same syllable as the tu/lui/lei forms, never moving onto the -ano ending: parlano keeps parLA's stress, and lavorano keeps lavoRA's, so it is laVOrano, not LAvorano. Verbs whose stem ends in -i, like mangiare, never double that i.",
      "items": [
       {
        "hr": "Io parlo italiano.",
@@ -2725,7 +2732,7 @@
       {
        "hr": "Voi studiate e loro abitano qui.",
        "en": "You study and they live here.",
-       "note": "-ate for voi, -ano for loro with the stress on the first syllable"
+       "note": "-ate for voi, -ano for loro, with the stress staying where it falls in the tu/lui/lei forms"
       }
      ],
      "sources": [
@@ -2749,7 +2756,7 @@
         "abitate"
        ],
        "answer": "abitano",
-       "explanation": "The loro ending for -are verbs is -ano, and the stress falls on the first syllable."
+       "explanation": "The loro ending for -are verbs is -ano, and the stress stays on the same syllable as abita (lui/lei), not on the ending."
       },
       {
        "type": "MCQ",
@@ -2902,7 +2909,7 @@
       {
        "hr": "Tu leggi un libro.",
        "en": "You are reading a book.",
-       "note": "the present covers both I read and I am reading"
+       "note": "the present covers both you read and you are reading"
       },
       {
        "hr": "Marco scrive una lettera.",
@@ -3189,7 +3196,7 @@
     {
      "type": "DIALOGUE",
      "title": "Partenze",
-     "intro": "Play 'Me'. You talk about travel plans and about what you follow or miss, so dormire and capire keep taking turns.",
+     "intro": "Play 'Me'. You talk about travel plans, understanding and finishing on time, so dormire and capire keep taking turns.",
      "lines": [
       {
        "speaker": "Partner",
@@ -3597,7 +3604,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Anche Anna non mangia la sera?",
+       "hr": "Neanche Anna mangia la sera?",
        "en": "Does Anna not eat in the evening either?"
       },
       {
@@ -3899,7 +3906,7 @@
         "il"
        ],
        "answer": "la",
-       "explanation": "Zia is feminine and begins with a consonant, so lo does not apply to it."
+       "explanation": "Lo is a masculine article and never applies to feminine nouns regardless of their initial sound, so zia takes la."
       },
       {
        "type": "FILL",
@@ -4219,7 +4226,7 @@
     {
      "type": "LEARN",
      "title": "Il mio, la mia, i miei",
-     "intro": "Italian possessives normally keep the definite article and agree with the thing owned, not with its owner. The one exception is a single family member, where the article disappears. Loro never changes its ending and always keeps the article.",
+     "intro": "Italian possessives normally keep the definite article and agree with the thing owned, not with its owner. The one exception is a single, unmodified family member (mio fratello, not il mio fratello), where the article disappears; adding an adjective brings the article back, as in il mio fratello maggiore. Loro never changes its ending and always keeps the article.",
      "items": [
       {
        "hr": "il mio libro, la mia casa",
@@ -4229,12 +4236,17 @@
       {
        "hr": "i miei amici, le mie amiche",
        "en": "my male friends, my female friends",
-       "note": "the plural forms are irregular: i miei, le mie"
+       "note": "i miei is the irregular plural of il mio; le mie is the regular feminine plural"
       },
       {
        "hr": "il tuo zaino, la tua borsa",
        "en": "your backpack, your bag",
-       "note": "suo means his or her, agreeing with the object, not the owner"
+       "note": "tuo means your, agreeing with the object owned, not with you"
+      },
+      {
+       "hr": "Marco cerca il suo telefono.",
+       "en": "Marco is looking for his phone.",
+       "note": "suo means his or her, agreeing with the object (telefono), not with the owner"
       },
       {
        "hr": "mia madre e mio fratello",
@@ -4460,7 +4472,7 @@
         "quegli"
        ],
        "answer": "quello",
-       "explanation": "Zaino starts with s plus consonant, so it takes lo zaino. Quello follows the same sound rule as the article, giving quello zaino."
+       "explanation": "Zaino starts with z, so it takes lo zaino. Quello follows the same sound rule as the article, giving quello zaino."
       },
       {
        "type": "MCQ",
@@ -4646,16 +4658,16 @@
       },
       {
        "type": "MCQ",
-       "prompt": "Scegli l'articolo corretto: ___ zaino nuovo.",
+       "prompt": "Quale frase esprime sorpresa correttamente?",
        "difficulty": 3,
        "options": [
-        "il",
-        "lo",
-        "l'",
-        "gli"
+        "Che sorpresa bella!",
+        "Che bella sorpresa!",
+        "Come sorpresa bella!",
+        "Quanto sorpresa bella!"
        ],
-       "answer": "lo",
-       "explanation": "Masculine nouns starting with s plus consonant take lo, so lo zaino. The same sound rule shapes many other words that come before the noun."
+       "answer": "Che bella sorpresa!",
+       "explanation": "Che precedes the whole noun phrase (adjective plus noun), so it is Che bella sorpresa, never splitting the adjective from Che."
       },
       {
        "type": "FILL",
@@ -4725,8 +4737,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Vero, e alcuni banchi hanno una frutta buonissima.",
-       "en": "True, and some stalls have really excellent fruit."
+       "hr": "Vero, e alcuni banchi hanno frutta molto buona.",
+       "en": "True, and some stalls have very good fruit."
       },
       {
        "speaker": "Partner",
@@ -4735,8 +4747,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "È vero, ma non tutto è caro: qualcuno vende ancora a poco.",
-       "en": "That is true, but not everything is expensive: some people still sell cheaply."
+       "hr": "È vero, ma non tutto è caro: qualcuno vende ancora a buon prezzo.",
+       "en": "That is true, but not everything is expensive: some people still sell at a good price."
       },
       {
        "speaker": "Partner",
@@ -4772,7 +4784,7 @@
     "minutes": 15,
     "items": [
      "Which preposition goes before a city name, and which one goes before a country name?",
-     "Say 'I come back from work at seven' in Italian.",
+     "Say 'I come back from Rome at seven' in Italian.",
      "Give two meanings of di and one example sentence for each."
     ]
    },
@@ -4806,6 +4818,11 @@
        "hr": "Il gatto dorme su una sedia.",
        "en": "The cat sleeps on a chair.",
        "note": "su = on"
+      },
+      {
+       "hr": "Studio per un esame e viaggio tra Roma e Napoli.",
+       "en": "I am studying for an exam and I travel between Rome and Naples.",
+       "note": "per = for, purpose; tra (or fra) = between, among"
       }
      ],
      "sources": [
@@ -4829,7 +4846,7 @@
         "su"
        ],
        "answer": "di",
-       "explanation": "Origin with the verb essere uses di: sono di Roma, e di Napoli."
+       "explanation": "Origin with the verb essere uses di: sono di Roma, è di Napoli."
       },
       {
        "type": "MCQ",
@@ -4849,14 +4866,20 @@
        "prompt": "Complete: 'Torno ___ Roma stasera.' (I am coming back from Rome tonight.)",
        "difficulty": 4,
        "answer": "da",
-       "explanation": "Da marks the place you are coming away from."
+       "explanation": "Da marks the place you are coming away from.",
+       "accepted": [
+        "Da"
+       ]
       },
       {
        "type": "FILL",
        "prompt": "Complete: 'Le chiavi sono ___ un libro.' (The keys are on a book.)",
        "difficulty": 3,
        "answer": "su",
-       "explanation": "Su means on, resting on a surface."
+       "explanation": "Su means on, resting on a surface.",
+       "accepted": [
+        "Su"
+       ]
       },
       {
        "type": "REORDER",
@@ -4898,8 +4921,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Sono di Verona, ma abito in Italia da poco.",
-       "en": "I am from Verona, but I have been living in Italy for a short time."
+       "hr": "Sono di Verona, ma adesso abito a Milano.",
+       "en": "I am from Verona, but now I live in Milan."
       },
       {
        "speaker": "Partner",
@@ -5027,14 +5050,20 @@
        "prompt": "Complete: 'Il telefono è ___ borsa.' (The phone is in the bag.)",
        "difficulty": 4,
        "answer": "nella",
-       "explanation": "In + la = nella, because borsa is feminine singular."
+       "explanation": "In + la = nella, because borsa is feminine singular.",
+       "accepted": [
+        "Nella"
+       ]
       },
       {
        "type": "FILL",
        "prompt": "Complete: 'Parlo ___ studenti ogni giorno.' (I speak to the students every day.)",
        "difficulty": 5,
        "answer": "agli",
-       "explanation": "A + gli = agli, and studenti takes gli because it starts with s plus consonant."
+       "explanation": "A + gli = agli, and studenti takes gli because it starts with s plus consonant.",
+       "accepted": [
+        "Agli"
+       ]
       },
       {
        "type": "REORDER",
@@ -5142,7 +5171,7 @@
        "note": "singular noun, so c'è"
       },
       {
-       "hr": "Nel frigorifero ci sono due bottiglie di acqua.",
+       "hr": "Nel frigorifero ci sono due bottiglie d'acqua.",
        "en": "There are two bottles of water in the fridge.",
        "note": "plural noun, so ci sono"
       },
@@ -5152,8 +5181,8 @@
        "note": "negative: non before c'è"
       },
       {
-       "hr": "Nella mia città non ci sono metropolitane.",
-       "en": "There are no underground trains in my city.",
+       "hr": "Nella mia città non ci sono aeroporti.",
+       "en": "There are no airports in my city.",
        "note": "plural negative"
       },
       {
@@ -5203,14 +5232,20 @@
        "prompt": "Complete the negative: 'Oggi in ufficio non ___ nessuno.' (Today there is nobody in the office.)",
        "difficulty": 4,
        "answer": "c'è",
-       "explanation": "Nessuno is singular, so the singular form follows non."
+       "explanation": "Nessuno is singular, so the singular form follows non.",
+       "accepted": [
+        "C'è"
+       ]
       },
       {
        "type": "FILL",
-       "prompt": "Complete: 'Nella mia camera ___ due finestre grandi.' (My bedroom has two big windows.)",
+       "prompt": "Complete: 'Nella mia camera ___ due finestre grandi.' (There are two big windows in my bedroom.)",
        "difficulty": 4,
        "answer": "ci sono",
-       "explanation": "Two windows is plural, so Italian uses the plural existence form."
+       "explanation": "Two windows is plural, so Italian uses the plural existence form.",
+       "accepted": [
+        "Ci sono"
+       ]
       },
       {
        "type": "REORDER",
@@ -5543,7 +5578,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "Complete: 'Un ___ minerale, per favore.' (A mineral water, please.)",
+       "prompt": "Complete: '___ minerale, per favore.' (A mineral water, please.)",
        "difficulty": 4,
        "options": [
         "un acqua",
@@ -5626,8 +5661,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Ecco. Pago qui o alla cassa?",
-       "en": "Here you are. Do I pay here or at the till?"
+       "hr": "Pago qui o alla cassa?",
+       "en": "Do I pay here or at the till?"
       }
      ],
      "sources": [
@@ -5647,12 +5682,12 @@
   },
   {
    "title": "Al ristorante",
-   "objective": "Book a table, understand the parts of an Italian menu and order a full meal.",
+   "objective": "Arrive at a restaurant, understand the parts of an Italian menu and order a full meal.",
    "paretoFocus": "Italian menus follow a fixed order of courses, and knowing the four names lets you read any menu in the country without help.",
    "drills": [
     "Say the four course names in order, from starter to dessert.",
     "Invent a three course meal for yourself and order it out loud in one sentence per course.",
-    "Practise booking a table for four people for tomorrow evening at eight."
+    "Practise asking for a table for four people as you arrive."
    ],
    "reviewBlock": {
     "minutes": 15,
@@ -5679,6 +5714,11 @@
        "note": "come = as, introducing the course"
       },
       {
+       "hr": "Acqua naturale o frizzante?",
+       "en": "Still or sparkling water?",
+       "note": "naturale = still, frizzante = sparkling; asked early in the meal, when drinks are ordered"
+      },
+      {
        "hr": "Di primo vorremmo gli spaghetti al pomodoro.",
        "en": "For the first course we would like spaghetti with tomato.",
        "note": "gli before s plus consonant; a + il = al"
@@ -5689,9 +5729,9 @@
        "note": "il contorno is the side dish"
       },
       {
-       "hr": "Il conto, per favore. Acqua naturale o frizzante?",
-       "en": "The bill, please. Still or sparkling water?",
-       "note": "naturale = still, frizzante = sparkling"
+       "hr": "Il conto, per favore.",
+       "en": "The bill, please.",
+       "note": "the standard closing phrase at the end of a meal"
       }
      ],
      "sources": [
@@ -5860,9 +5900,9 @@
        "note": "quantity + di + food"
       },
       {
-       "hr": "Mi dia due etti di prosciutto crudo.",
-       "en": "Give me two hundred grams of cured ham.",
-       "note": "un etto = 100 grams"
+       "hr": "Vorrei due etti di prosciutto crudo.",
+       "en": "I would like two hundred grams of cured ham.",
+       "note": "vorrei is the polite way to ask, already familiar from ordering at the bar and restaurant"
       },
       {
        "hr": "Compro il pane e il latte ogni mattina.",
@@ -5988,7 +6028,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Basta così, grazie. Quanto è in tutto?",
+       "hr": "Basta così, grazie. Quant'è in tutto?",
        "en": "That is all, thank you. How much is it altogether?"
       }
      ],
@@ -6267,7 +6307,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Complete: 'Prenda la prima strada a ___, non a sinistra.' (Take the first street on the right.)",
+       "prompt": "Complete: 'Prende la prima strada a ___, non a sinistra.' (You take the first street on the right.)",
        "difficulty": 4,
        "answer": "destra",
        "explanation": "Destra is right and sinistra is left; both are used without an article after a."
@@ -6306,12 +6346,12 @@
     {
      "type": "DIALOGUE",
      "title": "Per andare al museo?",
-     "intro": "Play 'Me'. You are lost in the centre of town and ask a passer-by for the museum.",
+     "intro": "Play 'Me'. A passer-by notices you looking lost and offers to help, so you ask for the museum.",
      "lines": [
       {
        "speaker": "Partner",
        "hr": "Prego, ha bisogno di qualcosa?",
-       "en": "Yes, do you need something?"
+       "en": "Can I help you with something?"
       },
       {
        "speaker": "Me",
@@ -6516,8 +6556,8 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Va bene. Come arriva in stazione?",
-       "en": "All right. How are you getting to the station?"
+       "hr": "Va bene. A Bologna, come arriva in albergo?",
+       "en": "All right. In Bologna, how are you getting to the hotel?"
       },
       {
        "speaker": "Me",
@@ -6699,7 +6739,7 @@
       },
       {
        "speaker": "Me",
-       "hr": "Anche a noi ci piace, lo prendiamo sempre in estate.",
+       "hr": "Piace anche a noi, lo prendiamo sempre in estate.",
        "en": "We like it too, we always have it in summer."
       }
      ],
@@ -6739,7 +6779,7 @@
     {
      "type": "LEARN",
      "title": "Posso, voglio, devo",
-     "intro": "The three modal verbs are irregular but very frequent: potere (posso, puoi, può, possiamo, potete, possono), volere (voglio, vuoi, vuole, vogliamo, volete, vogliono) and dovere (devo, devi, deve, dobbiamo, dovete, devono). They are always followed by an infinitive, never by a second conjugated verb. Posso is also the normal way to ask permission.",
+     "intro": "The three modal verbs are irregular but very frequent: potere (posso, puoi, può, possiamo, potete, possono), volere (voglio, vuoi, vuole, vogliamo, volete, vogliono) and dovere (devo, devi, deve, dobbiamo, dovete, devono). They are usually followed by an infinitive; volere can also take a direct object noun on its own, as in vogliono un caffè, but none of the three is ever followed by a second conjugated verb. Posso is also the normal way to ask permission.",
      "items": [
       {
        "hr": "Posso aprire la finestra?",
@@ -6814,7 +6854,7 @@
        "prompt": "Complete: 'Loro ___ un caffè prima di partire.' (They want a coffee before leaving.)",
        "difficulty": 5,
        "answer": "vogliono",
-       "explanation": "The loro form of volere is vogliono, with the gli sound spelled gli."
+       "explanation": "Volere is irregular throughout the present tense; the loro form is vogliono."
       },
       {
        "type": "REORDER",
@@ -6873,7 +6913,7 @@
       {
        "speaker": "Me",
        "hr": "Va bene, però vogliamo posti vicino al centro.",
-       "en": "All right, but we want seats near the middle."
+       "en": "All right, but we want seats near the town centre."
       }
      ],
      "sources": [
@@ -6951,7 +6991,7 @@
      "questions": [
       {
        "type": "MCQ",
-       "prompt": "Complete: 'Stamattina ___ freddo, mettiti la giacca.' (This morning it is cold.)",
+       "prompt": "Complete: 'Stamattina ___ freddo.' (This morning it is cold.)",
        "difficulty": 3,
        "options": [
         "fa",
@@ -7038,7 +7078,7 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Qui invece c'è il sole, ma tira vento.",
+       "hr": "Qui invece c'è il sole, ma c'è vento.",
        "en": "Here on the other hand it is sunny, but it is windy."
       },
       {
@@ -7084,9 +7124,9 @@
    "reviewBlock": {
     "minutes": 15,
     "items": [
-     "Which two common colours never change their ending?",
+     "Which three common colours never change their ending?",
      "Say 'I am wearing a white shirt and black shoes' in Italian.",
-     "Give the plural of la scarpa nera and il pantalone verde."
+     "Give the plural of la scarpa nera, and explain why pantaloni has no singular form."
     ]
    },
    "activities": [
@@ -7658,7 +7698,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "Che cosa hai fatto ieri?",
+     "title": "Che cosa hai studiato ieri?",
      "intro": "Practise building the past tense with avere and regular participles.",
      "questions": [
       {
@@ -7734,8 +7774,8 @@
      "lines": [
       {
        "speaker": "Partner",
-       "hr": "Che cosa hai fatto ieri?",
-       "en": "What did you do yesterday?"
+       "hr": "Che cosa hai studiato ieri?",
+       "en": "What did you study yesterday?"
       },
       {
        "speaker": "Me",
@@ -7872,7 +7912,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Complete: 'Abbiamo ___ la finestra perché faceva caldo.' (We opened the window, from aprire.)",
+       "prompt": "Complete: 'Abbiamo ___ la finestra perché fa caldo.' (We opened the window, from aprire.)",
        "difficulty": 5,
        "answer": "aperto",
        "explanation": "Aprire is irregular and gives aperto, not aprito."
@@ -7909,7 +7949,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Ma che cosa hai combinato?",
+     "title": "Che cosa hai fatto oggi?",
      "intro": "Play 'Me'. A friend asks about your day and every answer needs an irregular participle.",
      "lines": [
       {
@@ -8420,11 +8460,11 @@
        "type": "FILL",
        "prompt": "Complete the choice: 'Andiamo al cinema ___ a teatro?' (Are we going to the cinema or to the theatre?)",
        "difficulty": 3,
-       "answer": "oppure",
+       "answer": "o",
        "accepted": [
-        "o"
+        "oppure"
        ],
-       "explanation": "Oppure is the fuller form used to offer an alternative, and the short form is also correct here."
+       "explanation": "O offers the choice; oppure is a fuller form with the same meaning, also accepted."
       },
       {
        "type": "REORDER",
@@ -8646,7 +8686,7 @@
       },
       {
        "speaker": "Partner",
-       "hr": "Di dove è e dove abita adesso?",
+       "hr": "Di dov'è e dove abita adesso?",
        "en": "Where are you from and where do you live now?"
       },
       {

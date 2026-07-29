@@ -7,60 +7,60 @@
    "startDay": 1,
    "type": "MCQ",
    "difficulty": 2,
-   "prompt": "'Io ___ italiano.' (I am Italian)",
+   "prompt": "How many letters does the standard Italian alphabet have?",
    "options": [
-    "sono",
-    "sei",
-    "è",
-    "siamo"
+    "5",
+    "21",
+    "26",
+    "30"
    ],
-   "answer": "sono",
-   "explanation": "With io the verb essere is sono."
+   "answer": "21",
+   "explanation": "Italian uses 21 letters; j, k, w, x and y appear only in loanwords."
   },
   {
    "level": "A1",
    "startDay": 1,
    "type": "MCQ",
    "difficulty": 2,
-   "prompt": "Which form is correct for 'the student' (a male student)?",
+   "prompt": "Which group of letters appears in Italian only in words borrowed from other languages?",
    "options": [
-    "lo studente",
-    "il studente",
-    "l'studente",
-    "la studente"
+    "b, d, f, g",
+    "j, k, w, x, y",
+    "a, e, i, o, u",
+    "l, m, n, r"
    ],
-   "answer": "lo studente",
-   "explanation": "A masculine noun starting with s plus a consonant takes the article lo."
+   "answer": "j, k, w, x, y",
+   "explanation": "These five letters are not part of the native Italian alphabet."
   },
   {
    "level": "A1",
    "startDay": 1,
    "type": "MCQ",
    "difficulty": 2,
-   "prompt": "'Noi ___ due gatti.' (we have two cats)",
+   "prompt": "Which is the correct Italian word for the moon, with its article?",
    "options": [
-    "abbiamo",
-    "avete",
-    "hanno",
-    "ho"
+    "la luna",
+    "il luna",
+    "la luno",
+    "lo luna"
    ],
-   "answer": "abbiamo",
-   "explanation": "The noi form of avere is abbiamo."
+   "answer": "la luna",
+   "explanation": "Luna ends in -a and is feminine, so it takes la."
   },
   {
    "level": "A1",
    "startDay": 12,
    "type": "MCQ",
    "difficulty": 2,
-   "prompt": "'Loro ___ in centro.' (abitare, they live)",
+   "prompt": "Which of these days of the week is written correctly in Italian?",
    "options": [
-    "abitano",
-    "abitiamo",
-    "abita",
-    "abitate"
+    "lunedì",
+    "Lunedì",
+    "Lunedi",
+    "LUNEDI'"
    ],
-   "answer": "abitano",
-   "explanation": "Regular are verbs take ano in the loro form."
+   "answer": "lunedì",
+   "explanation": "Days of the week are lower case, and lunedì carries a grave accent."
   },
   {
    "level": "A1",
@@ -82,30 +82,30 @@
    "startDay": 12,
    "type": "MCQ",
    "difficulty": 2,
-   "prompt": "Which sentence says 'I do not speak Spanish'?",
+   "prompt": "How do you write 14 in Italian?",
    "options": [
-    "Non parlo spagnolo.",
-    "Io parlo non spagnolo.",
-    "No parlo spagnolo.",
-    "Parlo non spagnolo."
+    "quattordici",
+    "quattro",
+    "quaranta",
+    "quindici"
    ],
-   "answer": "Non parlo spagnolo.",
-   "explanation": "Negation uses non placed directly before the verb."
+   "answer": "quattordici",
+   "explanation": "Numbers 11 to 16 end in -dici: quattordici is 14."
   },
   {
    "level": "A1",
    "startDay": 23,
    "type": "MCQ",
    "difficulty": 3,
-   "prompt": "What is the plural of 'la città'?",
+   "prompt": "Which form of 'interessante' goes with 'una storia' (a story, feminine singular)?",
    "options": [
-    "le città",
-    "le cittàs",
-    "le citte",
-    "le cittade"
+    "interessante",
+    "interessanta",
+    "interessanti",
+    "interessanto"
    ],
-   "answer": "le città",
-   "explanation": "Nouns ending in a stressed vowel do not change in the plural, only the article does."
+   "answer": "interessante",
+   "explanation": "Adjectives ending in -e have only two forms: -e singular (both genders), -i plural."
   },
   {
    "level": "A1",
@@ -157,30 +157,30 @@
    "startDay": 34,
    "type": "MCQ",
    "difficulty": 3,
-   "prompt": "'___ i film italiani.' (I like Italian films)",
+   "prompt": "Complete: 'In centro ___ molti negozi.' (there are many shops)",
    "options": [
-    "Mi piacciono",
-    "Mi piace",
-    "Io piaccio",
-    "Mi piacere"
+    "ci sono",
+    "c'è",
+    "sono",
+    "è"
    ],
-   "answer": "Mi piacciono",
-   "explanation": "Piacere agrees with the thing liked, and i film is plural."
+   "answer": "ci sono",
+   "explanation": "Negozi is plural, so the plural existence form ci sono is required."
   },
   {
    "level": "A1",
    "startDay": 34,
    "type": "MCQ",
    "difficulty": 3,
-   "prompt": "'Maria è ___ a Roma ieri.' (andare)",
+   "prompt": "Complete: 'Vorrei un chilo ___ mele.' (a kilo of apples)",
    "options": [
-    "andata",
-    "andato",
-    "andate",
-    "andare"
+    "di",
+    "a",
+    "in",
+    "con"
    ],
-   "answer": "andata",
-   "explanation": "With the auxiliary essere the participle agrees with the subject, here feminine singular."
+   "answer": "di",
+   "explanation": "Di always links a quantity to the thing measured."
   },
   {
    "level": "A2",
@@ -364,7 +364,7 @@
   },
   {
    "level": "A2",
-   "startDay": 104,
+   "startDay": 114,
    "type": "MCQ",
    "difficulty": 6,
    "prompt": "'In Italia ___ molto caffè.' (people drink a lot of coffee)",
@@ -379,7 +379,7 @@
   },
   {
    "level": "A2",
-   "startDay": 104,
+   "startDay": 114,
    "type": "MCQ",
    "difficulty": 6,
    "prompt": "'Sto ___ una lettera.' (I am writing)",
@@ -394,7 +394,7 @@
   },
   {
    "level": "A2",
-   "startDay": 104,
+   "startDay": 114,
    "type": "MCQ",
    "difficulty": 6,
    "prompt": "'Quando sono arrivato, il treno ___ già partito.'",
@@ -409,7 +409,7 @@
   },
   {
    "level": "B1",
-   "startDay": 120,
+   "startDay": 123,
    "type": "MCQ",
    "difficulty": 6,
    "prompt": "'Penso che lui ___ ragione.' (avere)",
@@ -424,7 +424,7 @@
   },
   {
    "level": "B1",
-   "startDay": 120,
+   "startDay": 123,
    "type": "MCQ",
    "difficulty": 6,
    "prompt": "'Spero ___ presto.' (I hope to arrive soon)",
@@ -439,7 +439,7 @@
   },
   {
    "level": "B1",
-   "startDay": 120,
+   "startDay": 123,
    "type": "MCQ",
    "difficulty": 6,
    "prompt": "'___ sia stanco, esco lo stesso.' (although)",
