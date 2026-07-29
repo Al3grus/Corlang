@@ -83,6 +83,36 @@ CASES = [
     ("unrelated verb example still fires",
      pack([v("hablar", "Me gusta el cine y la música.")]), True, "does not contain the headword"),
 
+    # Adjectives inflect for gender at the very END, so a prefix of the whole word fails:
+    # 'bajo' does not appear in 'Mi hermana es baja'. Found by the second real authored pack.
+    ("adjective agreeing in the example: bajo / baja",
+     pack([w(id="bajo", hr="bajo", en="short", pos="adj.",
+             example={"target": "Mi hermana es baja.", "gloss": "My sister is short."})]),
+     False, None),
+    ("adjective agreeing in the example: rubio / rubia",
+     pack([w(id="rubio", hr="rubio", en="blond", pos="adj.",
+             example={"target": "Mi hija es rubia como su madre.", "gloss": "x"})]), False, None),
+    ("adjective in a genuinely unrelated example still fires",
+     pack([w(id="alto", hr="alto", en="tall", pos="adj.",
+             example={"target": "La casa es muy bonita.", "gloss": "x"})]), True,
+     "does not contain the headword"),
+
+    # Proper nouns take no article in Spanish, so the article rule cannot apply to them, but
+    # their gender then has nowhere to live except the note.
+    ("proper noun with a note is correct",
+     pack([w(id="espa\u00f1a", hr="Espa\u00f1a", en="Spain", pos="n. f.",
+             note="proper noun, used without an article",
+             example={"target": "Espa\u00f1a tiene muchas ciudades bonitas.", "gloss": "x"})]),
+     False, None),
+    ("proper noun without a note leaves its gender unlearnable",
+     pack([w(id="espa\u00f1a", hr="Espa\u00f1a", en="Spain", pos="n. f.",
+             example={"target": "Espa\u00f1a tiene muchas ciudades bonitas.", "gloss": "x"})]),
+     True, "only learnable from a note"),
+    ("a common noun cannot escape the article rule by being capitalised",
+     pack([w(id="libro", hr="libro", en="book", pos="n. m.",
+             example={"target": "El libro es interesante.", "gloss": "x"})]),
+     True, "without its definite article"),
+
     ("em dash in the gloss", pack([w(en="book \u2014 a thing")]), True, "em/en dash"),
     ("missing example", pack([{"id": "el sol", "hr": "el sol", "en": "sun", "pos": "n. m."}]),
      True, "missing or incomplete example"),

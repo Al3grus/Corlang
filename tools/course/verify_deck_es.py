@@ -111,7 +111,15 @@ def example_shows_headword(hr, target, pos):
             return True                      # too short to discriminate (dar, ver, ir)
         return skel in _skeleton(tgt)
 
-    # Nouns, adjectives and the rest inflect only at the end, so a prefix is safe and stricter.
+    # Adjectives inflect for gender AND number at the very end (bajo/baja, rubio/rubia,
+    # trabajador/trabajadora, inteligente/inteligentes), so a prefix of the whole word is not
+    # safe: 'bajo' does not appear in 'Mi hermana es baja'. Strip the inflecting final vowel
+    # first. Found by the second real authored pack.
+    if pos and pos.startswith("adj."):
+        stem = re.sub(r"[oae]$", "", first)
+        return bool(stem) and stem in tgt
+
+    # Nouns and the rest inflect only for number, so a prefix is safe and stricter.
     stem = first[:5] if len(first) > 5 else first
     return bool(stem) and stem in tgt
 
@@ -183,7 +191,18 @@ def verify(paths, level=None, expect=None):
 
                 # 5. article and gender cross-check
                 first = hr.split()[0].lower() if hr.split() else ""
-                if pos and pos.startswith("n."):
+                # A single capitalised token is a PROPER noun (España, Francia, Madrid), and
+                # Spanish country and city names take no article, so the article rule cannot
+                # apply to them. Narrow on purpose: one token, initial capital. A multi-word
+                # name keeps its article (el Ebro), and a capitalised common noun does not
+                # escape, because it would have to be a single token to qualify. It must still
+                # carry a note, since that is the only way the learner learns the gender.
+                is_proper = (len(hr.split()) == 1 and hr[:1].isupper())
+                if pos and pos.startswith("n.") and is_proper:
+                    if not (w.get("note") or "").strip():
+                        problems.append(f"{tag}: proper noun takes no article, so its gender is "
+                                        f"only learnable from a note, and it has none")
+                elif pos and pos.startswith("n."):
                     if first not in ARTICLES:
                         problems.append(f"{tag}: noun without its definite article "
                                         f"(gender is unlearnable without it)")
