@@ -26,18 +26,26 @@ added later as a fourth phase per language without disturbing anything below it.
 
 ## Shape of each course
 
-250 lessons, matching the standard's floor and Croatian's B1-target precedent:
+**Superseded for German and Italian, and never applied to Spanish.** This section originally
+specified a flat 250 lessons shaped A0 15 / A1 55 / A2 85 / B1 95. That shape was backwards: the
+standard moved to **weighted per-level floors** (A1 1.0 : A2 1.6 : B1 2.8, scaled by the square
+root of the FSI hour ratio) mid-way through the German build, and German was rebalanced from 250
+to 285 as a result. The live floors are the `levelFloor` table in `ContentValidationTest`, which
+is the only authority.
 
-| Level | Lessons | Cumulative |
+Spanish sits in the 600-FSI baseline group with Italian and Portuguese, so its floors are:
+
+| Level | Floor | Cumulative |
 |---|---|---|
-| A0 onramp | 15 | 15 |
-| A1 | 55 | 70 |
-| A2 | 85 | 155 |
-| B1 | 95 | 250 |
+| A0 onramp | none (optional) | — |
+| A1 | 45 | 45 |
+| A2 | 70 | 115 |
+| B1 | 125 | 240 |
 
-Per the every-level checkpoint rule: **4 quizzes** (A0, A1, A2, B1), **3 readiness milestones**
-and **3 mock exams** (A1, A2, B1). A0 gets a quiz only, since no official A0 exam exists.
-Deck: **≥2500 words** (250 lessons × 10 a lesson), packs in SRS introduction order.
+Per the every-level checkpoint rule: **3 quizzes** (A1, A2, B1) plus one more if an A0 onramp
+ships, **3 readiness milestones** and **3 mock exams** (A1, A2, B1). A0 gets a quiz only, since
+no official A0 exam exists. Deck = lessons × 10 (the SRS pace), which is a **ceiling as well as
+a floor** — every word past `lessons × 10` is unreachable and dead (registry S17).
 
 ---
 
@@ -54,8 +62,22 @@ the same final phase. Nothing incomplete is ever committed into the assets tree.
 
 The cost of that choice is that in-flight work lives outside git, in a session-scoped temp
 directory. Scratchpads are not deleted when a session ends, so nothing is lost, but a new
-session will not find the work unless it is told where to look. **Current German build
-directory:**
+session will not find the work unless it is told where to look.
+
+**Current build: Spanish (es), started 2026-07-29.**
+
+```
+C:\Users\al3gr\AppData\Local\Temp\claude\C--Users-al3gr-Desktop-Github-Corlang\
+  ff2e8d95-47f4-45d1-b3cc-50b4059d1c9c\scratchpad\
+```
+
+with the course under `es-build/` and the Phase 0 research downloads (the three DELE guide PDFs
+and their text extracts, the frequency list) under `es-research/`. The four documents that
+matter were also copied into the repo at `docs/sources/raw/`, so Phase 0 survives even if the
+scratchpad does not; the digest is `docs/sources/es-exams.md`.
+
+**Previous German build directory** (kept for reference; the course is shipped and lives in
+`assets/content/de/` now):
 
 ```
 C:\Users\al3gr\AppData\Local\Temp\claude\C--Users-al3gr-Desktop-Github-Corlang\
@@ -118,7 +140,7 @@ catch, build, release, push. **The language goes live in this phase and only thi
 
 | Phase | German | Italian | Spanish |
 |---|---|---|---|
-| L.0 research and provenance | done | done | |
+| L.0 research and provenance | done | done | **done 2026-07-29** |
 | L.1 skeleton, identity, code wiring | done | done | |
 | L.2 vocabulary deck | done, 2913 words | done, 2836 words | |
 | L.3 A0 and A1 lessons | done, 65 lessons | done, 47 lessons | |

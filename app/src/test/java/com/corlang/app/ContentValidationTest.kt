@@ -64,7 +64,11 @@ class ContentValidationTest {
         // German (Goethe-Zertifikat B1 target, the citizenship / settlement level)
         "goethe-a1", "goethe-a2", "goethe-b1", "telc-b1", "goethe-wortliste", "stag-10",
         // Italian (CILS / CELI B1 target, the citizenship level since Dec 2018)
-        "cils-a1", "cils-a2", "cils-b1", "celi-b1", "b1-cittadinanza", "cliq", "freq-it"
+        "cils-a1", "cils-a2", "cils-b1", "celi-b1", "b1-cittadinanza", "cliq", "freq-it",
+        // Spanish (DELE B1 target; Spain's legal bar is DELE A2 + the CCSE civics test, and
+        // civics is out of scope). `pcic` stays UNEARNED until the Phase 8b cross-check and
+        // `freq-es` is ordering-only: see docs/sources/es-exams.md.
+        "jus-1625-2016", "dele-a1", "dele-a2", "dele-b1", "pcic", "freq-es"
     )
 
     private fun read(lang: String, file: String): String =
