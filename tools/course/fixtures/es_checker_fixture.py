@@ -1,0 +1,277 @@
+# -*- coding: utf-8 -*-
+"""Negative-test fixture for check_es.py (Gold Book Phase 3, registry K5).
+
+A checker that has never failed a planted defect is not known to check anything, and after any
+loosening this fixture proves it still fires. Run it after EVERY change to check_es.py:
+
+    python tools/course/fixtures/es_checker_fixture.py
+
+Each case is (label, json_object, expect_fire, substring_expected_in_message). Half the cases
+are planted defects that MUST fire; the other half are correct content that must NOT, and those
+are the ones that actually matter, because every checker bug in the registry (K1, K3, K6, K7,
+K11, K12, K16) was a false positive rather than a miss.
+"""
+import io
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import check_es
+
+
+def day(level, title, activities):
+    return [{
+        "day": 1, "week": 1, "phase": "Phase 1", "level": level, "title": title,
+        "objective": "o", "paretoFocus": "p", "reviewBlock": {"minutes": 15, "items": ["r"]},
+        "activities": activities,
+    }]
+
+
+def learn(items, title="Learn"):
+    return {"type": "LEARN", "title": title, "intro": "", "sources": ["pcic"], "items": items}
+
+
+def mcq(prompt, options, answer, title="Practice"):
+    return {"type": "EXERCISE", "title": title, "intro": "", "sources": ["pcic"], "questions": [
+        {"type": "MCQ", "prompt": prompt, "difficulty": 4, "options": options,
+         "answer": answer, "explanation": "e"}
+    ]}
+
+
+def dialogue(lines, title="Dialogue"):
+    return {"type": "DIALOGUE", "title": title, "intro": "", "sources": ["pcic"], "lines": lines}
+
+
+CASES = [
+    # ---------------------------------------------------------------- must FIRE
+    ("planted: American lexis with no peninsular counterpart", day("B1", "El transporte", [
+        learn([{"hr": "Tengo un carro nuevo.", "en": "I have a new car."}])
+    ]), True, "American form 'carro'"),
+
+    ("planted: voseo as a production target", day("A2", "Saludos", [
+        learn([{"hr": "Vos sos mi amigo.", "en": "You are my friend."}])
+    ]), True, "voseo form 'sos'"),
+
+    ("planted: seseo misspelling", day("A1", "Cortesía", [
+        learn([{"hr": "Muchas grasias por todo.", "en": "Thank you for everything."}])
+    ]), True, "seseo misspelling"),
+
+    ("planted: missing written accent", day("A1", "Lugares", [
+        learn([{"hr": "El cafe esta aqui, muy cerca.", "en": "The cafe is here, very near."}])
+    ]), True, "missing written accent"),
+
+    ("planted: missing accent on a -cion noun", day("A2", "Viajes", [
+        learn([{"hr": "La estacion queda lejos.", "en": "The station is far away."}])
+    ]), True, "missing written accent on 'estacion'"),
+
+    ("planted: missing enye, the canonical case", day("A1", "El tiempo", [
+        learn([{"hr": "El ano que viene voy a Espana.", "en": "Next year I am going to Spain."}])
+    ]), True, "missing ñ"),
+
+    ("planted: question with no opening mark", day("A1", "Preguntas", [
+        dialogue([{"speaker": "Me", "hr": "Cómo te llamas?", "en": "What is your name?"}])
+    ]), True, "missing opening ¿"),
+
+    ("planted: exclamation with no opening mark", day("A1", "Saludos", [
+        dialogue([{"speaker": "Partner", "hr": "Qué alegría verte!", "en": "How lovely to see you!"}])
+    ]), True, "missing opening ¡"),
+
+    ("planted: imperfect subjunctive, the B2 ceiling breach", day("B1", "Condicionales", [
+        learn([{"hr": "Si tuviera dinero, viajaría por el mundo.",
+                "en": "If I had money, I would travel the world."}])
+    ]), True, "imperfect subjunctive"),
+
+    ("planted: imperfect subjunctive in -se", day("B1", "Deseos", [
+        learn([{"hr": "Ojalá hubiese venido antes.", "en": "If only he had come earlier."}])
+    ]), True, "imperfect subjunctive"),
+
+    ("planted: quisiera, which this course replaces with querría", day("B1", "Cortesía", [
+        learn([{"hr": "Quisiera reservar una mesa.", "en": "I would like to book a table."}])
+    ]), True, "imperfect subjunctive"),
+
+    ("planted: condicional compuesto", day("B1", "Hipótesis", [
+        learn([{"hr": "Habría llegado antes con más tiempo.",
+                "en": "He would have arrived earlier with more time."}])
+    ]), True, "compound tense above B1"),
+
+    ("planted: American form as the MCQ ANSWER still fires", day("B1", "Tecnología", [
+        mcq("Choose the peninsular word for a computer.",
+            ["computadora", "bicicleta", "teléfono", "cocina"], "computadora")
+    ]), True, "American form 'computadora'"),
+
+    # ---------------------------------------------------------- must NOT fire
+    ("correct: American form paired contrastively in the same activity", day("B1", "Variedades", [
+        learn([
+            {"hr": "En España se dice coche.", "en": "In Spain they say coche."},
+            {"hr": "En América se dice carro.", "en": "In America they say carro."},
+        ])
+    ]), False, None),
+
+    ("correct: voseo shown against its tuteo counterpart", day("B1", "Variedades", [
+        learn([
+            {"hr": "En España decimos tú eres.", "en": "In Spain we say tú eres."},
+            {"hr": "En Argentina dicen vos sos.", "en": "In Argentina they say vos sos."},
+        ])
+    ]), False, None),
+
+    ("correct: American form as a WRONG MCQ option is exempt", day("B1", "Tecnología", [
+        mcq("¿Cuál es la palabra peninsular?",
+            ["ordenador", "computadora", "celular", "carro"], "ordenador")
+    ]), False, None),
+
+    ("correct: 'fuera' the adverb must not be read as a subjunctive", day("A2", "En casa", [
+        learn([{"hr": "Espera fuera, por favor.", "en": "Wait outside, please."}])
+    ]), False, None),
+
+    ("correct: plural -ciones carries no accent", day("A2", "Viajes", [
+        learn([{"hr": "Las estaciones están cerradas.", "en": "The stations are closed."}])
+    ]), False, None),
+
+    ("planted: -sión noun that Spanish spells with a single s", day("B1", "Trabajo", [
+        learn([{"hr": "Su profesion es muy exigente.", "en": "His profession is very demanding."}])
+    ]), True, "missing written accent on 'profesion'"),
+
+    # The measured K16 case. An English word sitting in a scoped key (an MCQ option glossing a
+    # meaning, a translation answer) must never be read as a Spanish accent error. -sion endings
+    # collide across English, French and German; -cion collides with nothing, which is why the
+    # generic rule matches only -cion and -sion is a closed single-s list.
+    ("correct: English -sion words in scoped keys must not fire", day("B1", "Traducción", [
+        mcq("Which English word translates 'la decisión'?",
+            ["decision", "television", "version", "conclusion"], "decision")
+    ]), False, None),
+
+    ("planted: lowercase 'dia' and 'mia' are missing their accents", day("A1", "El tiempo", [
+        learn([{"hr": "Cada dia leo un poco.", "en": "Every day I read a little."},
+               {"hr": "Esa casa es mia.", "en": "That house is mine."}])
+    ]), True, "missing written accent"),
+
+    ("correct: the same forms in title case are names, not accent errors (K3)",
+     day("A2", "Presentaciones", [
+         dialogue([
+             {"speaker": "Me", "hr": "Te presento a Mia, mi compañera.",
+              "en": "This is Mia, my colleague."},
+             {"speaker": "Partner", "hr": "Encantado. Yo soy Leon, el hermano de Tia.",
+              "en": "Nice to meet you. I am Leon, Tia's brother."},
+         ])
+     ]), False, None),
+
+    ("correct: 'esta' and 'si' and 'tu' are real words and must not fire", day("A1", "Casa", [
+        learn([{"hr": "Si quieres, esta es tu casa.", "en": "If you like, this is your home."}])
+    ]), False, None),
+
+    ("correct: 'hubo' and 'habrá' alone are B1 forms of haber", day("B1", "Sucesos", [
+        learn([
+            {"hr": "Ayer hubo una fiesta en la plaza.", "en": "There was a party in the square."},
+            {"hr": "Mañana habrá mucha gente.", "en": "Tomorrow there will be a lot of people."},
+        ])
+    ]), False, None),
+
+    ("correct: 'para' and 'cara' must not match the -ra subjunctive sweep", day("A2", "Compras", [
+        learn([{"hr": "Esta cara es para ti, pero la otra es muy cara.",
+                "en": "This face is for you, but the other one is very expensive."}])
+    ]), False, None),
+
+    ("correct: vosotros -ís forms are the taught variety, not voseo", day("A2", "Vosotros", [
+        learn([
+            {"hr": "Vosotros vivís en Madrid.", "en": "You all live in Madrid."},
+            {"hr": "¿De dónde venís?", "en": "Where are you coming from?"},
+            {"hr": "¿Qué decís?", "en": "What are you saying?"},
+        ])
+    ]), False, None),
+
+    ("correct: English commentary naming a wrong form is not scanned (K2/K16)",
+     day("A1", "Ortografía", [
+         learn([{"hr": "año", "en": "year",
+                 "note": "Do not write ano or espanol: without the enye they are different "
+                         "words. English speakers also say gracias as grasias, which is wrong."}])
+     ]), False, None),
+
+    ("correct: accented forms are clean", day("B1", "Repaso", [
+        learn([
+            {"hr": "Aquí está la estación, y también el café.",
+             "en": "Here is the station, and the cafe too."},
+            {"hr": "¿Cuándo llegaste? ¡Qué rápido!", "en": "When did you arrive? How fast!"},
+            {"hr": "El año pasado el señor pequeño enseñaba español.",
+             "en": "Last year the small gentleman taught Spanish."},
+        ])
+    ]), False, None),
+]
+
+# Generic-shape cases: the K14 class, where the checker used to crash or silently skip.
+GENERIC_CASES = [
+    ("planted: vocab pack with a missing enye",
+     {"packs": [{"id": "p", "title": "t", "level": "A1", "sources": ["freq-es"], "words": [
+         {"id": "manana", "hr": "manana", "en": "tomorrow", "pos": "adv."}
+     ]}]}, True, "missing ñ"),
+
+    ("planted: quiz whose FILL ANSWER is an American form",
+     {"quizzes": [{"id": "q", "levelId": "B1", "title": "t", "questions": [
+         {"type": "FILL", "prompt": "Voy en ___ al trabajo.", "difficulty": 5,
+          "answer": "carro", "explanation": "e"}
+     ]}]}, True, "American form 'carro'"),
+
+    ("planted: exam FILL answer with a missing accent",
+     [{"id": "e", "levelId": "A2", "title": "t", "passRule": "r", "sources": ["dele-a2"],
+       "sections": [{"id": "s", "kind": "READING", "title": "t", "questions": [
+           {"type": "FILL", "prompt": "Voy a la ___ de tren.", "difficulty": 5,
+            "answer": "estacion", "explanation": "e", "strictDiacritics": True}
+       ]}]}], True, "missing written accent"),
+
+    ("correct: quizzes.json shape parses without crashing and stays clean",
+     {"quizzes": [{"id": "q", "levelId": "A1", "title": "t", "questions": [
+         {"type": "MCQ", "prompt": "¿Cómo se dice 'car' en España?",
+          "difficulty": 4, "options": ["coche", "carro", "casa", "calle"],
+          "answer": "coche", "explanation": "e"}
+     ]}]}, False, None),
+
+    ("correct: placement.json shape parses without crashing",
+     {"title": "t", "intro": "i", "questions": [
+         {"level": "A1", "startDay": 1, "type": "MCQ", "difficulty": 2,
+          "prompt": "¿Dónde está el señor?", "options": ["aquí", "año", "casa", "mesa"],
+          "answer": "aquí", "explanation": "e"}
+     ]}, False, None),
+]
+
+
+def main():
+    failures = []
+    for label, obj, should_fire, expect in CASES:
+        tmp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_tmp_case.json")
+        with io.open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(obj, fh, ensure_ascii=False)
+        try:
+            errs = check_es.check_spanish(tmp)
+        finally:
+            os.remove(tmp)
+        fired = bool(errs)
+        if fired != should_fire:
+            failures.append(f"{label}: expected fire={should_fire}, got {errs}")
+        elif should_fire and expect and not any(expect in e for e in errs):
+            failures.append(f"{label}: fired but not for the right reason. "
+                            f"expected {expect!r}, got {errs}")
+
+    for label, obj, should_fire, expect in GENERIC_CASES:
+        errs = check_es.check_spanish_generic("fixture", obj)
+        fired = bool(errs)
+        if fired != should_fire:
+            failures.append(f"{label}: expected fire={should_fire}, got {errs}")
+        elif should_fire and expect and not any(expect in e for e in errs):
+            failures.append(f"{label}: fired but not for the right reason. "
+                            f"expected {expect!r}, got {errs}")
+
+    total = len(CASES) + len(GENERIC_CASES)
+    if failures:
+        print(f"FIXTURE FAILED: {len(failures)} of {total} cases wrong\n")
+        for f in failures:
+            print(f"  - {f}\n")
+        sys.exit(1)
+    print(f"check_es.py fixture: {total}/{total} cases correct "
+          f"({sum(1 for c in CASES + GENERIC_CASES if c[2])} planted defects caught, "
+          f"{sum(1 for c in CASES + GENERIC_CASES if not c[2])} correct cases left alone)")
+
+
+if __name__ == "__main__":
+    main()
