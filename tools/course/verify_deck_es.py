@@ -70,14 +70,24 @@ STEM_UNRECOGNISABLE = {
     "caber", "valer", "andar", "jugar",
 }
 CONSONANTS = re.compile(r"[^aeiou]")
+# Spanish keeps a sound constant across a conjugation and changes the SPELLING to do it, so a
+# raw consonant skeleton is not stable after all. Collapsing each alternating pair onto one
+# letter makes it stable. Found by the first real authored pack, which flagged 'coger' against
+# 'Cojo el paraguas' and 'recoger' against 'Recojo mis libros', both perfectly correct Spanish.
+#   g/j    coger -> cojo, recoger -> recojo, elegir -> elijo
+#   c/z/q  vencer -> venzo, empezar -> empiece, buscar -> busqué, conocer -> conozco
+#   h      silent throughout: oler -> huelo
+SPELLING_ALTERNATIONS = str.maketrans({"j": "g", "z": "c", "q": "c", "h": None})
 
 
 def _skeleton(s):
-    """Consonant skeleton, accent-free. Radical-changing verbs alter only the stem VOWEL
-    (poder -> puedo, querer -> quiero, pedir -> pido), so the consonants survive intact and are
-    the right thing to match on. A naive prefix match does not survive e>ie / o>ue and produced
-    a false positive on the first run of this script against 'poder'/'No puedo salir hoy'."""
-    return "".join(CONSONANTS.findall(strip_accents(s.lower())))
+    """Consonant skeleton, accent-free, with the regular orthographic alternations collapsed.
+    Radical-changing verbs alter only the stem VOWEL (poder -> puedo, querer -> quiero,
+    pedir -> pido), so the consonants survive and are the right thing to match on. A naive
+    prefix match does not survive e>ie / o>ue and false-positived on 'poder' against 'No puedo
+    salir hoy' the first time this script ran."""
+    skel = "".join(CONSONANTS.findall(strip_accents(s.lower())))
+    return skel.translate(SPELLING_ALTERNATIONS)
 
 
 def example_shows_headword(hr, target, pos):
