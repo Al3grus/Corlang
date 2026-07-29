@@ -79,6 +79,58 @@ CASES = [
         dialogue([{"speaker": "Partner", "hr": "Qué alegría verte!", "en": "How lovely to see you!"}])
     ]), True, "missing opening ¡"),
 
+    # The A2 ceiling: the future in -re and the conditional are B1. Level-gated, so the same
+    # sentence must fire at A2 and stay quiet at B1.
+    ("planted: future tense at A2", day("A2", "Planes", [
+        learn([{"hr": "Mañana hablaré con el jefe.", "en": "Tomorrow I will speak to the boss."}])
+    ]), True, "future tense"),
+
+    ("planted: short irregular future at A2", day("A2", "Planes", [
+        learn([{"hr": "Iré al médico el lunes y será rápido.", "en": "I will go on Monday."}])
+    ]), True, "future tense"),
+
+    ("planted: conditional at A1", day("A1", "Cortesía", [
+        learn([{"hr": "¿Podrías abrir la puerta?", "en": "Could you open the door?"}])
+    ]), True, "conditional"),
+
+    ("correct: the same future is fine at B1", day("B1", "Planes", [
+        learn([{"hr": "Mañana hablaré con el jefe y me gustaría verte.",
+                "en": "Tomorrow I will speak to the boss and I would like to see you."}])
+    ]), False, None),
+
+    # The collisions a naive future/conditional regex produces. Each was measured against real
+    # authored content before the check was trusted.
+    ("correct: present -emos is not a future", day("A2", "Presente", [
+        learn([{"hr": "Queremos descansar un poco.", "en": "We want to rest a little."},
+               {"hr": "Vosotros coméis muy tarde.", "en": "You all eat very late."}])
+    ]), False, None),
+
+    ("correct: preterite of an -ar-stem verb is not a future", day("A2", "Pasado", [
+        learn([{"hr": "Ayer preparé la cena y paré el coche delante.",
+                "en": "Yesterday I made dinner and parked the car outside."}])
+    ]), False, None),
+
+    ("correct: -ería shops and the name María are not conditionals", day("A2", "Tiendas", [
+        learn([{"hr": "La librería está detrás de la panadería.", "en": "x"},
+               {"hr": "Te presento a María, de la peluquería.", "en": "x"}])
+    ]), False, None),
+
+    ("correct: alemán, capitán, jamás, además, detrás are not futures", day("A2", "Repaso", [
+        learn([{"hr": "Es alemán, y además jamás mira atrás.", "en": "x"},
+               {"hr": "El capitán está allá, quizá detrás del sofá.", "en": "x"}])
+    ]), False, None),
+
+    # A distractor is still learner-visible, so the LEVEL ceiling applies to it even though the
+    # variety and orthography checks exempt wrong options.
+    ("planted: out-of-level tense hiding in a distractor", day("A2", "Costumbres", [
+        mcq("Elige la frase que expresa una costumbre.",
+            ["Cuando llego a casa, ceno enseguida.",
+             "Cuando llegue a casa, cenaré enseguida.",
+             "Cuando llegué a casa, cené enseguida.",
+             "Cuando he llegado, he cenado."],
+            "Cuando llego a casa, ceno enseguida.")
+    ]), True, "in a distractor"),
+
     ("planted: imperfect subjunctive, the B2 ceiling breach", day("B1", "Condicionales", [
         learn([{"hr": "Si tuviera dinero, viajaría por el mundo.",
                 "en": "If I had money, I would travel the world."}])

@@ -190,6 +190,51 @@ COMPOUND_ABOVE_B1 = re.compile(
     r"\b(habr[éáíé]\w*|habría\w*|habrías|hubo|hubieron)\s+\w+[aií]d[oa]s?\b",
     re.IGNORECASE)
 
+# --- 6b. Above the A2 ceiling: the future in -ré and the conditional are B1 -------------------
+# Level-scoped like check_it.py's passato remoto: correct at B1, off-syllabus below it. Found
+# missing when a batch-6 agent reported that it had caught a future-tense distractor BY HAND
+# because no check existed. A measurement over the six authored A1/A2 batches then found three
+# real violations (¿Podrías abrir la puerta? at A1, "Cuando llegue a casa, cenaré" at A2, and
+# "volveré" at A2), so the gap was live and not theoretical.
+#
+# ONLY THE UNAMBIGUOUS FORMS ARE MATCHED, because the obvious regexes are unsafe and the same
+# measurement proved it:
+#   * `-aré` collides with the preterite of a verb whose STEM ends in -ar: preparé, paré,
+#     comparé, declaré. Both are stem + é. Excluded entirely.
+#   * `-emos` / `-eremos` collides with the ordinary present of -er verbs: `queremos` contains
+#     "eremos". All first-person-plural futures excluded.
+#   * a generic conditional `-aría|-ería|-iría` collides with a whole noun class (librería,
+#     panadería, peluquería, cafetería, categoría) and with the name María. Closed list only.
+# What remains is safe: the 2sg, 3sg and 3pl futures of all three conjugations, the -eré and
+# -iré first persons (the -er/-ir preterite is -í, so there is no collision), and a closed list
+# of the frequent conditionals.
+#
+# Two refinements the fixture forced, both measured rather than guessed:
+#   * `-éis` is OUT of the generic pattern. It collides with the present vosotros of -er verbs
+#     whose stem ends in -er: `queréis` is "quer" + "éis" and is ordinary present tense, while
+#     the future is `querréis` with two r's. (`coméis` does not collide, because its stem has no
+#     -er.) The vosotros future is rare in course content, so this costs almost nothing.
+#   * `-aré` IS matched, because excluding it missed two of the three real defects this check was
+#     built for (`cenaré`, `hablaré`). Its one collision is the preterite of a verb whose STEM
+#     ends in -ar (preparé, paré, declaré), and that is an ENUMERABLE set, so it is exempted by
+#     name below rather than by dropping the whole class. Match the class, list the collisions.
+FUTURE_ABOVE_A2 = re.compile(
+    r"\b\w*(?:ar|er|ir)(?:ás|á|án)\b"
+    r"|\b\w*(?:ar|er|ir)é\b"
+    r"|\b(?:tendr|pondr|saldr|vendr|podr|sabr|querr|habr|har|dir|valdr)"
+    r"(?:é|ás|á|án|éis)\b",
+    re.IGNORECASE)
+# Preterites of -ar verbs whose stem itself ends in -ar, which therefore look like -aré futures.
+AR_STEM_PRETERITES = {
+    "preparé", "paré", "comparé", "separé", "declaré", "disparé", "reparé", "aclaré",
+    "amparé", "encaré", "deparé", "maré", "aparé", "prepararé",
+}
+CONDITIONAL_ABOVE_A2 = re.compile(
+    r"\b(?:podría|tendría|haría|diría|sería|estaría|querría|sabría|habría|iría|vendría|"
+    r"saldría|pondría|gustaría|encantaría|debería|valdría|vería|daría|pediría|diríamos)"
+    r"(?:s|mos|is|n)?\b",
+    re.IGNORECASE)
+
 
 def spanish_strings_of(node):
     """Only target-language text and graded answer surfaces (K2). See check_de.german_strings_of."""
@@ -234,10 +279,20 @@ def _is_day_shaped(days):
             and "activities" in days[0])
 
 
-def _checks_on_string(s):
+def _checks_on_string(s, level=""):
     """Everything that can be decided from one string alone. The contrastive rules (AMERICAN,
-    VOSEO) need activity context and live in the callers."""
+    VOSEO) need activity context and live in the callers. [level] gates the checks that are
+    level-dependent rather than absolute."""
     errs = []
+    if level in ("A1", "A2"):
+        m = FUTURE_ABOVE_A2.search(s)
+        if m and m.group(0).lower() not in AR_STEM_PRETERITES:
+            errs.append(f"future tense {m.group(0)!r} at {level} in {s[:60]!r}, "
+                        f"the future in -re is B1")
+        m = CONDITIONAL_ABOVE_A2.search(s)
+        if m:
+            errs.append(f"conditional {m.group(0)!r} at {level} in {s[:60]!r}, "
+                        f"the conditional is B1")
     m = SESEO.search(s)
     if m:
         errs.append(f"seseo misspelling {m.group(0)!r} in {s[:60]!r}")
@@ -284,9 +339,20 @@ def check_spanish(path):
         wrong_options = distractors_of(day)
 
         for s in spanish_strings_of(day):
+            # The distractor exemption applies to the VARIETY and ORTHOGRAPHY checks, where a
+            # lesson must be able to print a wrong form in order to reject it. It does NOT apply
+            # to the LEVEL ceiling: a wrong option is still learner-visible, so an off-syllabus
+            # tense sitting in a distractor teaches that tense anyway, and a learner who cannot
+            # parse the option cannot use it to answer either. Found in three real items across
+            # the A1/A2 batches, all of them correct Spanish used as a register contrast the
+            # learner had no way to evaluate.
+            level = day.get("level", "")
             if s in wrong_options:
+                for msg in _checks_on_string(s, level):
+                    if "at " + level in msg:      # level-gated messages only
+                        errs.append(f"{tag}: {msg} (in a distractor, which is still visible)")
                 continue
-            for msg in _checks_on_string(s):
+            for msg in _checks_on_string(s, level):
                 errs.append(f"{tag}: {msg}")
 
         for s in sentence_strings_of(day):
