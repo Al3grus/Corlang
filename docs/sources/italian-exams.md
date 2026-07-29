@@ -244,8 +244,12 @@ The two bodies genuinely disagree in structure, so there is no single "Italian B
 
 Corlang's B1 mock applies the **CILS per-ability rule**, since it is the stricter of the two: a
 learner who reaches sufficiency in every skill separately also satisfies CELI's summed thresholds,
-while the reverse is not true. The CILS B1 Cittadinanza rule (7 of 12 in each of 4 sections, 28 of
-48, no carry-over) is implemented as the separate citizenship mock.
+while the reverse is not true. The shipped mock is the full 5-ability CILS UNO-B1 (11 of 20 in
+each of ascolto, lettura, strutture della comunicazione, scrittura, orale, 55 of 100 total). The
+CILS B1 Cittadinanza rule (7 of 12 in each of 4 sections, 28 of 48, no strutture section, no
+carry-over) is documented here for reference but **is not implemented as a separate mock** — a
+learner preparing specifically for the shortened citizenship exam should treat the UNO-B1 mock as
+a stricter superset rather than an exact rehearsal of the Cittadinanza format.
 
 ---
 
@@ -404,33 +408,33 @@ diretto and indiretto, causal and temporal subordinates, the full connective set
 function inventories (opinions, complaints, advice, feelings, narration, projects, formal
 register, exam-task rehearsal) map cleanly onto the A2 services block and B1 blocks 2 to 7.
 
-**Missing or misplaced against the official inventories** (follow-up authoring tasks, in
-priority order):
+**Missing or misplaced against the official inventories — CLOSED 2026-07-29.** All 8 items
+below were flagged 2026-07-20 as follow-up authoring tasks; a Phase 8b re-check during the
+`it` full-course audit confirmed all 8 are now taught as named lessons in the live plan, and
+the standalone `grammar.json` reference (which had not been mirrored) was updated in the same
+pass to document the four that were missing there too (dimostrativi, indefiniti/esclamative,
+che relativo at A2, enclisi/interrogative indirette). Kept here for provenance, not as open
+work:
 
-1. **I dimostrativi (questo / quello)**: required from A1 in the joint sillabo (deictic
-   demonstratives, both adjective and pronoun use). No named topic anywhere in the 240.
-   Almost certainly used incidentally from lesson 1, but the syllabus names it and the plan
-   must teach it explicitly. Highest priority.
-2. **Il che relativo at A2**: the joint A2 sillabo requires che as subject and object at A2.
-   The plan defers all relatives to B1 (positions 133 to 134). A learner sitting CILS A2 or
-   A2 integrazione mid-course would arrive without a required structure. Either pull a
-   minimal che lesson into A2 or accept the gap knowingly for A2 sitters.
-3. **Interrogative indirette (se, come)**: explicit in the PLIDA B1 strutture list. The
-   discorso indiretto lessons (130 to 131) cover reported statements; indirect questions
-   must be named in their content.
-4. **Enclisi dei pronomi atoni con infinito e imperativo** (dammelo, senza farlo): explicit
-   in the PLIDA B1 list; the imperativo (55 to 56) and pronomi combinati (53, 135) topics
-   never name enclisis.
-5. **Indefiniti e quantificatori** (ogni, qualche, alcuni, nessuno, ognuno, un po' di):
-   required across the joint A2 and B1 tables and PLIDA B1 morphology; no named topic.
-6. **Frasi esclamative** (Che bello!, Quanto è caro!): in the joint B1 structure table and
-   the A2 function list; not named.
-7. **Alla posta** (spedire un pacco, una raccomandata): a named PLIDA A2 transaction
-   context; the A2 services block covers banca, anagrafe, farmacia but has no post office
-   lesson, and raccomandata only appears in B1 vocabulary.
-8. **Raccontare un imprevisto** (smarrimento, furto, incidente): a named PLIDA B1 function;
-   the nearest topics (truffe 176, reclami 95/108/123) do not cover reporting a theft or
-   accident.
+1. **I dimostrativi (questo / quello)** — FIXED. `plan/phase1-a1.json` day 24, "I dimostrativi:
+   questo e quello"; `grammar.json` A1 topic `a1-dimostrativi`.
+2. **Il che relativo at A2** — FIXED. `plan/phase2-a2.json` day 66, "Il che relativo";
+   `grammar.json` A2 topic `a2-che-relativo`.
+3. **Interrogative indirette (se, come)** — FIXED. `plan/phase3-b1.json` day 220,
+   "Raccontare un imprevisto..."; `grammar.json` B1 topic
+   `b1-enclisi-interrogative-indirette`.
+4. **Enclisi dei pronomi atoni con infinito e imperativo** — FIXED. Same day-220 lesson and
+   grammar.json topic as #3.
+5. **Indefiniti e quantificatori** (ogni, qualche, alcuni, nessuno, ognuno, un po' di) —
+   FIXED. `plan/phase1-a1.json` day 25, "Gli indefiniti e le frasi esclamative";
+   `grammar.json` A1 topic `a1-indefiniti-esclamative`.
+6. **Frasi esclamative** (Che bello!, Quanto è caro!) — FIXED. Same day-25 lesson and
+   grammar.json topic as #5.
+7. **Alla posta** (spedire un pacco, una raccomandata) — FIXED. `plan/phase2-a2.json` day
+   67, "Alla posta e le spedizioni".
+8. **Raccontare un imprevisto** (smarrimento, furto, incidente) — FIXED. `plan/phase3-b1.json`
+   day 220 (same lesson as #3/#4), "Raccontare un imprevisto: un furto, uno smarrimento, un
+   incidente".
 
 **Off-level upward** (taught at B1 but above both official B1 inventories): congiuntivo
 imperfetto and trapassato, periodo ipotetico dell'irrealtà, condizionale passato, futuro
@@ -452,14 +456,12 @@ banding should reflect it. Nothing in the A1 or A2 blocks is above level.
   (priority: the 150 to 250 highest-frequency FO absences ranked above) before shipping
   with the key, or remove `freq-it` from all 16 packs now and restore it when the top-up
   lands.
-- **`cils-a1`: EARNED for the topic sequence**, subject to follow-up 1 (dimostrativi must
-  become explicit).
-- **`cils-a2`: PARTIALLY EARNED for the topic sequence**: complete except that che relativo
-  is taught off-level late (follow-up 2) and the posta transaction context is absent
-  (follow-up 7).
+- **`cils-a1`: EARNED for the topic sequence.** Follow-up 1 (dimostrativi) closed 2026-07-29.
+- **`cils-a2`: EARNED for the topic sequence.** Follow-ups 2 (che relativo) and 7 (posta
+  transaction context) closed 2026-07-29.
 - **`cils-b1`: EARNED for the topic sequence**: both official B1 structure lists and the
-  function inventories are covered with a deliberate margin; follow-ups 3, 4 and 8 are
-  content-note fixes inside existing topics, not missing topics.
+  function inventories are covered with a deliberate margin. Follow-ups 3, 4 and 8 closed
+  2026-07-29.
 - Caveat on all three `cils-*` keys: the check ran against the joint syllabus of the four
   certifying bodies (Siena co-author) and PLIDA documents, because nothing could be fetched
   from `cils.unistrasi.it` itself today. That is the correct authority chain, but re-verify
