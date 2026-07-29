@@ -108,6 +108,34 @@ CASES = [
      pack([w(id="espa\u00f1a", hr="Espa\u00f1a", en="Spain", pos="n. f.",
              example={"target": "Espa\u00f1a tiene muchas ciudades bonitas.", "gloss": "x"})]),
      True, "only learnable from a note"),
+    # Days and months are the Gold Book's named standing exception to the article rule:
+    # "el enero" is unnatural Spanish and the shipped fr/it/pt courses all list them bare.
+    ("day of the week without an article is correct",
+     pack([w(id="lunes", hr="lunes", en="Monday", pos="n. m.",
+             note="invariable in the plural: el lunes, los lunes",
+             example={"target": "Los lunes trabajo desde casa.", "gloss": "x"})]), False, None),
+    ("month without an article is correct",
+     pack([w(id="enero", hr="enero", en="January", pos="n. m.",
+             example={"target": "Enero es el primer mes del año.", "gloss": "x"})]), False, None),
+    ("an ordinary noun still needs its article",
+     pack([w(id="mes", hr="mes", en="month", pos="n. m.",
+             example={"target": "Este mes tengo mucho trabajo.", "gloss": "x"})]), True,
+     "without its definite article"),
+
+    # The articles and object pronouns are themselves headwords, so a single-token headword
+    # that happens to BE an article is not a noun carrying one.
+    ("the article 'el' as its own headword",
+     pack([w(id="el", hr="el", en="the (masculine singular)", pos="art.",
+             note="used before a masculine singular noun: el coche",
+             example={"target": "El coche es nuevo.", "gloss": "x"})]), False, None),
+    ("the object pronoun 'las' as its own headword",
+     pack([w(id="las", hr="las", en="them (feminine, direct object)", pos="pron.",
+             example={"target": "Las necesito hoy.", "gloss": "x"})]), False, None),
+    ("a real noun phrase with a non-noun pos still fires",
+     pack([w(id="la casa", hr="la casa", en="house", pos="adj.",
+             example={"target": "La casa es grande.", "gloss": "x"})]), True,
+     "carries an article but pos is"),
+
     ("a common noun cannot escape the article rule by being capitalised",
      pack([w(id="libro", hr="libro", en="book", pos="n. m.",
              example={"target": "El libro es interesante.", "gloss": "x"})]),
