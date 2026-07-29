@@ -92,7 +92,12 @@ def candidates(text):
     tokens is kept whole, so 'Universidad Complutense' reports as one name rather than two."""
     out = []
     # Split into rough sentences so "first word" can be recognised.
-    parts = re.split(r"(?<=[.!?])\s+", text)
+    # A NEWLINE is a sentence boundary too. Monospace `tables` diagrams are full of short lines
+    # with no terminal punctuation, so splitting on [.!?] alone made each table one giant
+    # "sentence" and every line-initial capital in it looked like a mid-sentence proper noun.
+    # Found running this over grammar.json, whose conjugation tables produced a dozen false
+    # hits (A, No, Quiero, Lo, Estoy) that would have been hundreds across 250 lessons.
+    parts = re.split(r"(?<=[.!?])\s+|\n+", text)
     for part in parts:
         toks = list(TOKEN.finditer(part))
         if not toks:
