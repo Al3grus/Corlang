@@ -89,7 +89,27 @@ IRREGULAR_PARTICIPLES = {
     "proponer": "propuesto", "suponer": "supuesto", "deshacer": "deshecho",
     "satisfacer": "satisfecho", "prever": "previsto", "disolver": "disuelto",
 }
+# Strong preterites replace the stem's consonants outright (poner -> puso, tener -> tuvo,
+# venir -> vino), so neither a prefix nor a consonant skeleton survives them. Matched by SUFFIX
+# so the whole compound family is covered: detener, mantener, obtener, componer, proponer,
+# suponer, convenir, prevenir, deshacer, contradecir, distraer, conducir, traducir, producir.
+STRONG_PRETERITES = [
+    ("tener", "tuv"), ("poner", "pus"), ("venir", "vin"), ("hacer", "hic"),
+    ("decir", "dij"), ("traer", "traj"), ("ducir", "duj"), ("saber", "sup"),
+    ("poder", "pud"), ("estar", "estuv"), ("andar", "anduv"), ("querer", "quis"),
+    ("caber", "cup"),
+]
 CONSONANTS = re.compile(r"[^aeiou]")
+
+
+def _strong_preterite(lemma):
+    """The preterite stem of a verb whose preterite is strong, or None."""
+    plain = re.sub(r"se$", "", lemma) if lemma.endswith("se") else lemma
+    for suffix, stem in STRONG_PRETERITES:
+        if plain.endswith(suffix):
+            # Keep any prefix: detener -> de + tuv, proponer -> pro + pus.
+            return plain[:-len(suffix)] + stem
+    return None
 # Spanish keeps a sound constant across a conjugation and changes the SPELLING to do it, so a
 # raw consonant skeleton is not stable after all. Collapsing each alternating pair onto one
 # letter makes it stable. Found by the first real authored pack, which flagged 'coger' against
@@ -133,6 +153,9 @@ def example_shows_headword(hr, target, pos):
         for t in tokens:
             if t[:4] in tgt or _skeleton(t)[:3] in tskel:
                 return True
+            pret = _strong_preterite(t)
+            if pret and strip_accents(pret) in tgt:
+                return True
             # A token may itself be an infinitive that conjugates inside the phrase:
             # 'vivir con' against 'Vivo con mis padres'. Reduce it the same way the
             # single-verb branch does before giving up.
@@ -150,6 +173,9 @@ def example_shows_headword(hr, target, pos):
         plain = re.sub(r"se$", "", first) if first.endswith("se") else first
         part = IRREGULAR_PARTICIPLES.get(plain) or IRREGULAR_PARTICIPLES.get(first)
         if part and strip_accents(part) in tgt:
+            return True
+        pret = _strong_preterite(first)
+        if pret and strip_accents(pret) in tgt:
             return True
         stem = re.sub(r"(arse|erse|irse|ar|er|ir)$", "", first)
         skel = _skeleton(stem)[:3]
