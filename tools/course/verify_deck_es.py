@@ -129,7 +129,17 @@ def example_shows_headword(hr, target, pos):
     if len(core.split()) > 1:
         if not tokens:
             return True
-        return any(t[:4] in tgt or _skeleton(t)[:3] in _skeleton(tgt) for t in tokens)
+        tskel = _skeleton(tgt)
+        for t in tokens:
+            if t[:4] in tgt or _skeleton(t)[:3] in tskel:
+                return True
+            # A token may itself be an infinitive that conjugates inside the phrase:
+            # 'vivir con' against 'Vivo con mis padres'. Reduce it the same way the
+            # single-verb branch does before giving up.
+            stem = re.sub(r"(arse|erse|irse|ar|er|ir)$", "", t)
+            if len(stem) >= 2 and _skeleton(stem)[:2] and _skeleton(stem)[:2] in tskel:
+                return True
+        return False
 
     first = core.split()[0]
 
@@ -266,11 +276,16 @@ def verify(paths, level=None, expect=None):
                             problems.append(f"{tag}: article {first!r} says {expected!r} "
                                             f"but pos is {pos!r}")
                 elif (first in ARTICLES and len(hr.split()) > 1
-                        and pos not in ("expr.",)):
-                    # Multi-token only. The articles and object pronouns are themselves
-                    # headwords (el, la, los, las), and a single-token headword that happens to
-                    # BE an article is not a noun carrying one.
-                    problems.append(f"{tag}: carries an article but pos is {pos!r}, not a noun")
+                        and pos in ("v.", "adv.", "prep.", "conj.")):
+                    # Narrowed deliberately. The check catches a noun phrase mis-tagged as
+                    # something an article cannot attach to. It CANNOT catch a noun phrase
+                    # tagged adj./pron./num., because Spanish cites real determiner and pronoun
+                    # phrases with their article ("el mismo", "la mía", "el primero"), and no
+                    # mechanical test separates those from a genuine mis-tag without a lexicon.
+                    # Firing on adj. flagged "el mismo" tagged adj., which is correct Spanish.
+                    # A check that can only be right by accident is worse than a narrower one.
+                    problems.append(f"{tag}: carries an article but pos is {pos!r}, "
+                                    f"which cannot take one")
 
                 # 6. the example must actually show the headword
                 ex = w.get("example")
