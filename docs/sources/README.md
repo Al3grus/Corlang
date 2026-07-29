@@ -120,9 +120,12 @@ Hispanic norm is valid in candidate production).
 | `pcic` | Instituto Cervantes, *Plan curricular / Niveles de referencia para el español* (NRE): the 13 per-level inventories (grammar, functions, nociones generales/específicas...) that the DELE guides themselves name as the exam's content repertoire | [es-exams.md](es-exams.md) |
 | `freq-es` | OpenSubtitles-2018 Spanish frequency list (Hermit Dave, *FrequencyWords*), 50,000 ranked forms, fetched complete 2026-07-29; ordering authority only (subtitle register, mixed varieties) | [es-exams.md](es-exams.md) |
 
-Provenance status at Phase 0 (2026-07-29): `jus-1625-2016`, `dele-a1`, `dele-a2` and `dele-b1`
-are EARNED (all four documents fetched complete, raw extracts in `raw/`). **`pcic` is NOT YET
-EARNED** and no content may cite it until the Phase 8b cross-check records a coverage figure.
-**`freq-es` is PARTIALLY EARNED**: usable for deck ordering, never for level banding or for
-deciding which of two variant forms the course teaches. RAE CREA (403) and SUBTLEX-ESP (404)
-were both unfetchable on 2026-07-29 and are deliberately NOT registered.
+Provenance status (2026-07-29, Phases 0 and 1): `jus-1625-2016`, `dele-a1`, `dele-a2` and
+`dele-b1` are EARNED (all four documents fetched complete, raw extracts in `raw/`). **`pcic` is
+EARNED for grammar and the topic sequence** (both `gramatica` inventory pages fetched,
+machine-split by level into `raw/pcic-gramatica-*-split.txt`, and the 250-lesson sequence derived
+from that split) but **NOT YET EARNED for vocabulary banding**: no vocab pack may cite it until
+the Phase 8b deck cross-check records a coverage figure. **`freq-es` is PARTIALLY EARNED**:
+usable for deck ordering, never for level banding or for deciding which of two variant forms the
+course teaches. RAE CREA (403) and SUBTLEX-ESP (404) were both unfetchable on 2026-07-29 and are
+deliberately NOT registered.
