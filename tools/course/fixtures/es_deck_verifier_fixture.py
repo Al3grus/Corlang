@@ -195,6 +195,19 @@ CASES = [
     ("a verb whose example really is unrelated still fires after the participle rule",
      pack([v("romper", "El tren llega a las ocho.")]), True, "does not contain the headword"),
 
+    # Spanish plurals carry a spelling change too: final -z becomes -ces.
+    ("z to ces plural: la ra\u00edz / las ra\u00edces",
+     pack([w(id="la ra\u00edz", hr="la ra\u00edz", en="root", pos="n. f.",
+             example={"target": "Las ra\u00edces de ese \u00e1rbol son enormes.", "gloss": "x"})]),
+     False, None),
+    ("z to ces plural: el l\u00e1piz / los l\u00e1pices",
+     pack([w(id="el l\u00e1piz", hr="el l\u00e1piz", en="pencil", pos="n. m.",
+             example={"target": "Los l\u00e1pices est\u00e1n en el caj\u00f3n.", "gloss": "x"})]), False, None),
+    ("a noun whose example really is unrelated still fires",
+     pack([w(id="la ra\u00edz", hr="la ra\u00edz", en="root", pos="n. f.",
+             example={"target": "El coche es muy r\u00e1pido.", "gloss": "x"})]), True,
+     "does not contain the headword"),
+
     ("em dash in the gloss", pack([w(en="book \u2014 a thing")]), True, "em/en dash"),
     ("missing example", pack([{"id": "el sol", "hr": "el sol", "en": "sun", "pos": "n. m."}]),
      True, "missing or incomplete example"),

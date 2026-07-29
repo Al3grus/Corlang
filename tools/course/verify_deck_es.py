@@ -167,7 +167,13 @@ def example_shows_headword(hr, target, pos):
 
     # Nouns and the rest inflect only for number, so a prefix is safe and stricter.
     stem = first[:5] if len(first) > 5 else first
-    return bool(stem) and stem in tgt
+    if stem and stem in tgt:
+        return True
+    # ...except that Spanish plurals also carry a spelling change: a final -z becomes -ces
+    # (raíz/raíces, lápiz/lápices, luz/luces, vez/veces). The prefix cannot survive that, but
+    # the consonant skeleton can, because it already collapses z onto c.
+    skel = _skeleton(first)
+    return len(skel) >= 2 and skel in _skeleton(tgt)
 
 
 def verify(paths, level=None, expect=None):
