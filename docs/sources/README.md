@@ -99,3 +99,30 @@ stricter CILS rule.
 | `b1-cittadinanza` | The shortened citizenship-only B1: CILS B1 Cittadinanza (4 sections x 12 = 48, 7 each, 28 total, NO capitalizzazione) and CELI 2 i (B1) Cittadinanza; **not valid for work or study** | [italian-exams.md](italian-exams.md) |
 | `cliq` | Associazione CLIQ (Certificazione Lingua Italiana di Qualità), the four bodies accepted by the Ministero dell'Interno (CILS, CELI, cert.it, PLIDA) per D.M. 7 December 2021, plus art. 9.1 L. 91/1992 and Corte cost. sent. 25/2025 | [italian-exams.md](italian-exams.md) |
 | `freq-it` | *Nuovo vocabolario di base della lingua italiana* (De Mauro & Chiari, 2016): ~7,000 entries in fondamentale / alto uso / alta disponibilità bands, plus *Profilo della lingua italiana* (Spinelli & Parizzi, Council of Europe RLD for Italian) | [italian-exams.md](italian-exams.md) |
+
+### Spanish (es) — target DELE B1; A2 is the legal bar
+
+Spain requires **DELE A2** plus the CCSE civics test for nationality by residence (Orden
+JUS/1625/2016 art. 10.2, re-verified live 2026-07-29; no 2026 reform raises it). A2 alone is too
+thin to be a product, so the course runs to **B1**, the same reasoning already applied to
+Portuguese. **The CCSE is out of scope**: it is sat in Spanish but tests Spain's institutions and
+society, not language. Corlang teaches **Castilian/peninsular** Spanish, with Latin American
+forms noted contrastively and never called wrong — which is exactly the DELE's own policy (A1/A2
+input texts are peninsular, B1 input texts span all varieties, and any coherently-followed
+Hispanic norm is valid in candidate production).
+
+| Key | Source | Digest |
+|-----|--------|--------|
+| `jus-1625-2016` | Orden JUS/1625/2016 art. 10, the statutory DELE A2 + CCSE requirement for Spanish nationality by residence (BOE consolidated text) | [es-exams.md](es-exams.md) |
+| `dele-a1` | Instituto Cervantes, *Guía del examen DELE A1*: 4 pruebas, 25 points each, grouped pass rule (30/50 in each of Grupo 1 and Grupo 2) | [es-exams.md](es-exams.md) |
+| `dele-a2` | Instituto Cervantes, *Guía del examen DELE A2*: 4 pruebas, task inventory and the same grouped pass rule; A2 is the level the nationality procedure requires | [es-exams.md](es-exams.md) |
+| `dele-b1` | Instituto Cervantes, *Guía del examen DELE B1*: 5+5 tareas receptive (30 items each), 2 writing tasks, 4 speaking tasks, grouped pass rule; the course's finish line | [es-exams.md](es-exams.md) |
+| `pcic` | Instituto Cervantes, *Plan curricular / Niveles de referencia para el español* (NRE): the 13 per-level inventories (grammar, functions, nociones generales/específicas...) that the DELE guides themselves name as the exam's content repertoire | [es-exams.md](es-exams.md) |
+| `freq-es` | OpenSubtitles-2018 Spanish frequency list (Hermit Dave, *FrequencyWords*), 50,000 ranked forms, fetched complete 2026-07-29; ordering authority only (subtitle register, mixed varieties) | [es-exams.md](es-exams.md) |
+
+Provenance status at Phase 0 (2026-07-29): `jus-1625-2016`, `dele-a1`, `dele-a2` and `dele-b1`
+are EARNED (all four documents fetched complete, raw extracts in `raw/`). **`pcic` is NOT YET
+EARNED** and no content may cite it until the Phase 8b cross-check records a coverage figure.
+**`freq-es` is PARTIALLY EARNED**: usable for deck ordering, never for level banding or for
+deciding which of two variant forms the course teaches. RAE CREA (403) and SUBTLEX-ESP (404)
+were both unfetchable on 2026-07-29 and are deliberately NOT registered.
