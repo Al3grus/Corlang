@@ -108,6 +108,42 @@ object ExamRules {
         val pct = sections.map { (score, total) -> if (total <= 0) 0.0 else score * 100.0 / total }
         return pct.average() >= 60.0
     }
+
+    /**
+     * DELE whole-exam rule (Instituto Cervantes; verified 2026-07-29 against the official
+     * *Guía del examen* for A1, A2 and B1, which state it identically). The four pruebas are
+     * worth 25 points each and are paired into two GRADING groups:
+     *
+     *   Grupo 1 = comprensión de lectura + expresión e interacción escritas (50 points)
+     *   Grupo 2 = comprensión auditiva + expresión e interacción orales (50 points)
+     *
+     * "Apto" requires at least 30,00 of 50 in EACH group.
+     *
+     * This is a third shape and none of the rules above expresses it:
+     *  - not modular ([examPassed]): 25/25 reading with 5/25 writing is 30/50 and still passes;
+     *  - not global ([caplePassed], [goetheGlobalPassed]): 50/50 in one group with 10/50 in the
+     *    other averages to 60% and fails;
+     *  - not DELF ([delfPassed]): DELE has no per-section floor at all, and its threshold binds
+     *    per PAIR rather than over the total.
+     *
+     * Grouping is by section KIND, never by array position, so reordering `exams.json` cannot
+     * silently change a verdict. [sections] carries (kind, score, total) per prueba in any
+     * per-section scale; each is normalised to /25 before the pair is summed.
+     */
+    fun delePassed(sections: List<Triple<ExamSectionKind, Int, Int>>): Boolean {
+        fun groupPoints(a: ExamSectionKind, b: ExamSectionKind): Double? {
+            val inGroup = sections.filter { it.first == a || it.first == b }
+            // A DELE group is exactly two pruebas. Anything else is a malformed exam spec and
+            // must fail loudly rather than pass on a partial group.
+            if (inGroup.size != 2) return null
+            return inGroup.sumOf { (_, score, total) ->
+                if (total <= 0) 0.0 else score * 25.0 / total
+            }
+        }
+        val grupo1 = groupPoints(ExamSectionKind.READING, ExamSectionKind.WRITING) ?: return false
+        val grupo2 = groupPoints(ExamSectionKind.LISTENING, ExamSectionKind.SPEAKING) ?: return false
+        return grupo1 >= 30.0 && grupo2 >= 30.0
+    }
 }
 
 /**
@@ -189,6 +225,9 @@ private fun ExamOverview(
     val isCaple = exam.id.contains("deple") || exam.id.contains("diple") ||
         exam.id.contains("ciple") || exam.id.contains("acesso")
     val isGoetheGlobal = exam.id.contains("goethe-a1") || exam.id.contains("goethe-a2")
+    // DELE (Spanish) pairs its four pruebas into two grading groups of 50 points and needs 30
+    // in each. "dele" and "delf" are distinct substrings, so the two never collide.
+    val isDele = exam.id.contains("dele")
     val sectionScores = exam.sections.map { s ->
         val a = latestBySection[s.id]
         when {
@@ -201,6 +240,11 @@ private fun ExamOverview(
         isDelf -> ExamRules.delfPassed(sectionScores)
         isCaple -> ExamRules.caplePassed(sectionScores)
         isGoetheGlobal -> ExamRules.goetheGlobalPassed(sectionScores)
+        isDele -> ExamRules.delePassed(
+            exam.sections.mapIndexed { i, s ->
+                Triple(s.kind, sectionScores[i].first, sectionScores[i].second)
+            }
+        )
         else -> ExamRules.examPassed(
             exam.sections.map { it.id },
             latestBySection.mapValues { it.value.passed }

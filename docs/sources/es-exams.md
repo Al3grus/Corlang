@@ -290,11 +290,23 @@ Those 20 thematic sections are the **level-banded lexical inventory** for Spanis
 functional equivalent of the Goethe *Wortliste* for German. They are what the Phase 8b deck
 cross-check diffs against, and they are what the deck's A1/A2/B1 banding must be justified by.
 
-**Provenance status: `pcic` is NOT YET EARNED.** Its table of contents and band structure have
-been fetched; the per-level inventories have not yet been pulled page by page and diffed against
-anything, because no content exists yet. `pcic` may be cited by content only after the Phase 8b
-cross-check records a coverage figure here, exactly as `goethe-wortliste` had to be earned back
-for German (registry C16). Until then no vocab pack, lesson or grammar topic carries the key.
+**Provenance status: `pcic` is EARNED FOR GRAMMAR, NOT YET EARNED FOR VOCABULARY.** The split is
+deliberate and each half is stated separately rather than averaged into a single comfortable
+verdict:
+
+- **Grammar and topic sequence: EARNED (2026-07-29, Phase 1).** The `gramatica` inventory pages
+  for A1-A2 and B1-B2 were fetched in full, their two-column tables were machine-split by level
+  into `raw/pcic-gramatica-a1-a2-split.txt` and `raw/pcic-gramatica-b1-b2-split.txt`, and the
+  250-lesson topic sequence was derived from that split rather than from prior belief. The
+  cross-check produced a real, non-obvious result that changed the plan (the imperfecto de
+  subjuntivo sitting at B2, §5.7 below), which is what distinguishes a consulted source from a
+  cited one. `grammar.json`, `levels.json` and lesson activities carrying grammar may therefore
+  cite `pcic`.
+- **Vocabulary banding: NOT YET EARNED.** The `nociones especificas` inventory has had only its
+  20 section headings fetched, not its per-level word lists, and nothing has been diffed against
+  a deck that does not exist yet. **No vocab pack may cite `pcic` until the Phase 8b deck
+  cross-check records a coverage figure in this digest**, exactly as `goethe-wortliste` had to be
+  earned back for German (registry C16).
 
 ---
 
@@ -415,5 +427,5 @@ Candidate classes, to be confirmed against the PCIC before encoding:
 | `dele-a1` | DELE A1 structure, task inventory, grouped pass rule. **EARNED** (official guide fetched complete). |
 | `dele-a2` | DELE A2 structure, task inventory, grouped pass rule. **EARNED** (official guide fetched complete). |
 | `dele-b1` | DELE B1 structure, task inventory, grouped pass rule. **EARNED** (official guide fetched complete). |
-| `pcic` | Per-level grammar, function and lexical inventories for Spanish. **NOT YET EARNED** - awaiting the Phase 8b cross-check. |
+| `pcic` | Per-level grammar, function and lexical inventories for Spanish. **EARNED for grammar and the topic sequence** (inventory fetched, level-split and diffed in Phase 1); **NOT YET EARNED for vocabulary banding** - no vocab pack may cite it until the Phase 8b deck cross-check. |
 | `freq-es` | Frequency ranking for deck order. **PARTIALLY EARNED** - usable for ordering only, never for banding or variety choice. |

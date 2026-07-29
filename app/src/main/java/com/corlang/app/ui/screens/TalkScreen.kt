@@ -372,7 +372,7 @@ private fun MessageBubble(msg: ChatMessage, onSpeak: () -> Unit) {
 /** Chat input cap, chars. Generous for real sentences, hostile to pasted documents. */
 private const val TUTOR_INPUT_MAX = 500
 
-private val TUTOR_LANGS = setOf("hr", "pt", "fr", "de", "it")
+private val TUTOR_LANGS = setOf("hr", "pt", "fr", "de", "it", "es")
 
 internal fun assertTutorLangRegistered(lang: String) {
     if (com.corlang.app.BuildConfig.DEBUG) {
@@ -432,6 +432,7 @@ private fun composerHint(lang: String): String = when (lang) {
     "fr" -> "Écris en français…"
     "de" -> "Schreib auf Deutsch…"
     "it" -> "Scrivi in italiano…"
+    "es" -> "Escribe en español…"
     else -> "Write in your learning language…"
 }
 
@@ -452,6 +453,7 @@ fun seedGreeting(lang: String): String = when (lang) {
     "fr" -> "Bonjour ! Je suis ton tuteur de français. On peut parler de ce que tu veux, doucement et simplement. Comment vas-tu aujourd'hui ?"
     "de" -> "Hallo! Ich bin dein Deutschtutor. Wir können über alles reden, was du möchtest, ganz langsam und mit einfachen Sätzen. Wie geht es dir heute?"
     "it" -> "Ciao! Sono il tuo tutor di italiano. Possiamo parlare di quello che vuoi, con calma e con frasi semplici. Come stai oggi?"
+    "es" -> "¡Hola! Soy tu tutor de español. Podemos hablar de lo que quieras, con calma y con frases sencillas. ¿Qué tal estás hoy?"
     else -> "Hi! I'm your language tutor. We can talk about anything you like, slowly and simply. How are you today?"
 }
 
@@ -461,6 +463,7 @@ private fun seedOpener(lang: String): String = when (lang) {
     "fr" -> "Bonjour !"
     "de" -> "Hallo!"
     "it" -> "Ciao!"
+    "es" -> "¡Hola!"
     else -> "Hello!"
 }
 
@@ -524,6 +527,32 @@ private fun varietyRules(lang: String): String = when (lang) {
       the auxiliary is essere.
     - If the student's sentence is ALREADY correct standard Italian, do not invent a correction,
       confirm it is right and continue. Never "correct" a correct form.""".trimIndent()
+    "es" -> """
+    - You speak PENINSULAR SPANISH (español de España, the Castilian standard), which is what
+      this course teaches. Concretely: use the full four-way address system, tú and vosotros
+      informally and usted and ustedes formally, and conjugate vosotros forms (habláis, tenéis,
+      hablad, no habléis) rather than avoiding them. Use the peninsular pretérito perfecto for
+      anything inside a period reaching now (hoy he comido, esta semana he trabajado). Use
+      peninsular lexis: coche, ordenador, móvil, patata, zumo, billete, piso, gafas, conducir,
+      nevera, chaqueta. Note that coger is the ordinary verb here and is not to be avoided or
+      apologised for.
+    - AMERICAN SPANISH IS NOT WRONG. The official exam explicitly accepts any Hispanic norm
+      followed coherently, and from B1 its own reading and listening texts are drawn from every
+      variety. So if the student writes carro, celular, computadora, manejar, jugo, boleto, or
+      uses ustedes for an informal plural, or writes hoy comí where Spain would write hoy he
+      comido, do NOT mark it as an error: name it as the American form, give the peninsular
+      equivalent this course teaches, and move on. The same applies to voseo (vos sos, vos
+      tenés): recognise it, explain it, do not produce it yourself.
+    - Watch the two traps an exam corrector checks first. The written accent, because it can
+      carry the whole meaning (hablo against habló, esta against está, si against sí, tu against
+      tú, que against qué), and the object pronouns, especially le turning into se before lo and
+      la (se lo doy, never le lo doy) and the doubled indirect object (le doy el libro a Ana).
+    - Keep to the level. At A1 and A2 there is no subjunctive at all. At B1 use only the PRESENT
+      subjunctive: do not introduce the imperfect subjunctive or the si tuviera dinero, viajaría
+      pattern, which belong above this course. A condition with si at B1 takes the present
+      indicative: si tengo tiempo, voy.
+    - If the student's sentence is ALREADY correct peninsular Spanish, do not invent a
+      correction, confirm it is right and continue. Never "correct" a correct form.""".trimIndent()
     else -> "- If the student's sentence is already correct, say so, never invent corrections."
 }
 
