@@ -46,6 +46,15 @@ ARTICLES = {"el": "n. m.", "la": "n. f.", "los": "n. m.", "las": "n. f."}
 EL_FEMININE = {
     "agua", "aula", "hambre", "alma", "águila", "arma", "área", "aula", "ala", "ave", "hacha",
 }
+# The Gold Book's standing exception to the article rule, quoted: "Nouns carry their article in
+# `hr` AND `id` (gender is unlearnable otherwise); days and months are the standing exception in
+# Italian-type languages." Spanish months essentially never take an article, so "el enero" would
+# be unnatural, and the shipped fr/it/pt courses all list them bare. Closed set on purpose.
+DAYS_AND_MONTHS = {
+    "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo",
+    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+}
 
 
 def strip_accents(s):
@@ -198,7 +207,10 @@ def verify(paths, level=None, expect=None):
                 # escape, because it would have to be a single token to qualify. It must still
                 # carry a note, since that is the only way the learner learns the gender.
                 is_proper = (len(hr.split()) == 1 and hr[:1].isupper())
-                if pos and pos.startswith("n.") and is_proper:
+                is_calendar = hr.strip().lower() in DAYS_AND_MONTHS
+                if pos and pos.startswith("n.") and is_calendar:
+                    pass                     # Gold Book standing exception, see DAYS_AND_MONTHS
+                elif pos and pos.startswith("n.") and is_proper:
                     if not (w.get("note") or "").strip():
                         problems.append(f"{tag}: proper noun takes no article, so its gender is "
                                         f"only learnable from a note, and it has none")
@@ -219,7 +231,11 @@ def verify(paths, level=None, expect=None):
                         elif not el_fem_ok and pos not in (expected, expected + " pl."):
                             problems.append(f"{tag}: article {first!r} says {expected!r} "
                                             f"but pos is {pos!r}")
-                elif first in ARTICLES and pos not in ("expr.",):
+                elif (first in ARTICLES and len(hr.split()) > 1
+                        and pos not in ("expr.",)):
+                    # Multi-token only. The articles and object pronouns are themselves
+                    # headwords (el, la, los, las), and a single-token headword that happens to
+                    # BE an article is not a noun carrying one.
                     problems.append(f"{tag}: carries an article but pos is {pos!r}, not a noun")
 
                 # 6. the example must actually show the headword
