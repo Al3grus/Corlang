@@ -131,10 +131,20 @@ CASES = [
     ("the object pronoun 'las' as its own headword",
      pack([w(id="las", hr="las", en="them (feminine, direct object)", pos="pron.",
              example={"target": "Las necesito hoy.", "gloss": "x"})]), False, None),
-    ("a real noun phrase with a non-noun pos still fires",
-     pack([w(id="la casa", hr="la casa", en="house", pos="adj.",
+    ("a noun phrase tagged as a verb still fires",
+     pack([w(id="la casa", hr="la casa", en="house", pos="v.",
              example={"target": "La casa es grande.", "gloss": "x"})]), True,
-     "carries an article but pos is"),
+     "which cannot take one"),
+    # ...but a determiner or pronoun phrase cited WITH its article is correct Spanish, and no
+    # mechanical test separates it from a mis-tag, so the check does not fire on adj./pron.
+    ("determiner phrase cited with its article is correct",
+     pack([w(id="el mismo", hr="el mismo", en="the same", pos="adj.",
+             note="agrees in gender and number: el mismo, la misma, los mismos, las mismas",
+             example={"target": "Vivimos en el mismo barrio.", "gloss": "x"})]), False, None),
+    ("phrase headword whose verb conjugates inside it",
+     pack([w(id="vivir con", hr="vivir con", en="to live with", pos="v.",
+             example={"target": "Vivo con mis padres y mi hermano.", "gloss": "x"})]),
+     False, None),
 
     ("a common noun cannot escape the article rule by being capitalised",
      pack([w(id="libro", hr="libro", en="book", pos="n. m.",
