@@ -208,6 +208,20 @@ CASES = [
              example={"target": "El coche es muy r\u00e1pido.", "gloss": "x"})]), True,
      "does not contain the headword"),
 
+    # Strong preterites replace the stem's consonants outright, so neither a prefix nor a
+    # consonant skeleton survives them. Matched by suffix so compounds are covered too.
+    ("strong preterite: detenerse / se detuvo",
+     pack([v("detenerse", "El tren se detuvo en la \u00faltima estaci\u00f3n.")]), False, None),
+    ("strong preterite inside a phrase: ponerse a / se puso a",
+     pack([w(id="ponerse a", hr="ponerse a", en="to start doing", pos="expr.",
+             example={"target": "En cuanto lleg\u00f3 a casa, se puso a estudiar.", "gloss": "x"})]),
+     False, None),
+    ("strong preterite in a compound: proponer / propuso",
+     pack([v("proponer", "Mi jefe propuso otra fecha.")]), False, None),
+    ("a strong-preterite verb with an unrelated example still fires",
+     pack([v("detenerse", "El pan est\u00e1 muy rico hoy.")]), True,
+     "does not contain the headword"),
+
     ("em dash in the gloss", pack([w(en="book \u2014 a thing")]), True, "em/en dash"),
     ("missing example", pack([{"id": "el sol", "hr": "el sol", "en": "sun", "pos": "n. m."}]),
      True, "missing or incomplete example"),
