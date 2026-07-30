@@ -1,0 +1,1589 @@
+{
+ "packs": [
+  {
+   "id": "es-a2-body-health",
+   "title": "Daily routine, the body, health and feelings",
+   "level": "A2",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "despertarse",
+     "hr": "despertarse",
+     "en": "to wake up",
+     "pos": "v.",
+     "note": "reflexive daily-routine verb; e>ie: me despierto",
+     "example": {
+      "target": "Todos los días me despierto a las siete.",
+      "gloss": "Every day I wake up at seven."
+     }
+    },
+    {
+     "id": "levantarse",
+     "hr": "levantarse",
+     "en": "to get up",
+     "pos": "v.",
+     "note": "reflexive daily-routine verb",
+     "example": {
+      "target": "Hoy me he levantado tarde.",
+      "gloss": "Today I got up late."
+     }
+    },
+    {
+     "id": "ducharse",
+     "hr": "ducharse",
+     "en": "to shower",
+     "pos": "v.",
+     "note": "reflexive verb",
+     "example": {
+      "target": "Me ducho todas las mañanas antes de desayunar.",
+      "gloss": "I take a shower every morning before breakfast."
+     }
+    },
+    {
+     "id": "bañarse",
+     "hr": "bañarse",
+     "en": "to bathe, to swim",
+     "pos": "v.",
+     "note": "reflexive verb; also used for swimming in the sea or a pool",
+     "example": {
+      "target": "En verano nos bañamos en la playa.",
+      "gloss": "In summer we swim at the beach."
+     }
+    },
+    {
+     "id": "lavarse",
+     "hr": "lavarse",
+     "en": "to wash (oneself)",
+     "pos": "v.",
+     "note": "reflexive; takes a direct object for body parts, lavarse las manos",
+     "example": {
+      "target": "Lavaos las manos antes de comer, niños.",
+      "gloss": "Wash your hands before eating, children."
+     }
+    },
+    {
+     "id": "peinarse",
+     "hr": "peinarse",
+     "en": "to comb one's hair",
+     "pos": "v.",
+     "note": "reflexive verb",
+     "example": {
+      "target": "Me peino delante del espejo.",
+      "gloss": "I comb my hair in front of the mirror."
+     }
+    },
+    {
+     "id": "afeitarse",
+     "hr": "afeitarse",
+     "en": "to shave",
+     "pos": "v.",
+     "note": "reflexive verb",
+     "example": {
+      "target": "Mi padre se afeita la barbilla todas las mañanas.",
+      "gloss": "My father shaves his chin every morning."
+     }
+    },
+    {
+     "id": "vestirse",
+     "hr": "vestirse",
+     "en": "to get dressed",
+     "pos": "v.",
+     "note": "reflexive; e>i: me visto",
+     "example": {
+      "target": "Los niños ya se visten solos.",
+      "gloss": "The children get dressed by themselves now."
+     }
+    },
+    {
+     "id": "maquillarse",
+     "hr": "maquillarse",
+     "en": "to put on make-up",
+     "pos": "v.",
+     "note": "reflexive verb",
+     "example": {
+      "target": "Ana se maquilla antes de salir de casa.",
+      "gloss": "Ana puts on make-up before leaving home."
+     }
+    },
+    {
+     "id": "acostarse",
+     "hr": "acostarse",
+     "en": "to go to bed",
+     "pos": "v.",
+     "note": "reflexive; o>ue: me acuesto",
+     "example": {
+      "target": "Los fines de semana me acuesto muy tarde.",
+      "gloss": "On weekends I go to bed very late."
+     }
+    },
+    {
+     "id": "dormirse",
+     "hr": "dormirse",
+     "en": "to fall asleep",
+     "pos": "v.",
+     "note": "reflexive; o>ue: me duermo; different from dormir, to sleep",
+     "example": {
+      "target": "Anoche me dormí viendo la televisión.",
+      "gloss": "Last night I fell asleep watching television."
+     }
+    },
+    {
+     "id": "sentarse",
+     "hr": "sentarse",
+     "en": "to sit down",
+     "pos": "v.",
+     "note": "reflexive; e>ie: me siento, the same form as sentirse (to feel); context tells them apart",
+     "example": {
+      "target": "Siéntate aquí, a mi lado.",
+      "gloss": "Sit here, next to me."
+     }
+    },
+    {
+     "id": "quedarse",
+     "hr": "quedarse",
+     "en": "to stay",
+     "pos": "v.",
+     "note": "reflexive, different from quedar (to arrange to meet)",
+     "example": {
+      "target": "Este fin de semana me quedo en casa.",
+      "gloss": "This weekend I'm staying home."
+     }
+    },
+    {
+     "id": "irse",
+     "hr": "irse",
+     "en": "to leave, to go away",
+     "pos": "v.",
+     "note": "reflexive, different from ir (to go); yo-form: me voy",
+     "example": {
+      "target": "Ya es tarde, me voy a casa.",
+      "gloss": "It's late already, I'm going home."
+     }
+    },
+    {
+     "id": "ponerse",
+     "hr": "ponerse",
+     "en": "to put on (clothing); to become",
+     "pos": "v.",
+     "note": "reflexive; yo-form: me pongo; also for changes of state, ponerse nervioso",
+     "example": {
+      "target": "Me pongo el abrigo porque hace frío.",
+      "gloss": "I put on my coat because it's cold."
+     }
+    },
+    {
+     "id": "quitarse",
+     "hr": "quitarse",
+     "en": "to take off (clothing)",
+     "pos": "v.",
+     "note": "reflexive, opposite of ponerse",
+     "example": {
+      "target": "Quitaos los zapatos antes de entrar.",
+      "gloss": "Take off your shoes before coming in."
+     }
+    },
+    {
+     "id": "prepararse",
+     "hr": "prepararse",
+     "en": "to get (oneself) ready",
+     "pos": "v.",
+     "note": "reflexive, different from preparar (to prepare something)",
+     "example": {
+      "target": "Me preparo para el examen desde hace una semana.",
+      "gloss": "I've been getting ready for the exam for a week."
+     }
+    },
+    {
+     "id": "arreglarse",
+     "hr": "arreglarse",
+     "en": "to get ready, to smarten oneself up",
+     "pos": "v.",
+     "note": "reflexive, different from arreglar (to fix or tidy something)",
+     "example": {
+      "target": "Mi hermana se arregla mucho para salir de noche.",
+      "gloss": "My sister gets really done up to go out at night."
+     }
+    },
+    {
+     "id": "olvidarse",
+     "hr": "olvidarse",
+     "en": "to forget",
+     "pos": "v.",
+     "note": "reflexive; governed preposition: olvidarse de",
+     "example": {
+      "target": "Me he olvidado de tu cumpleaños, lo siento.",
+      "gloss": "I forgot your birthday, I'm sorry."
+     }
+    },
+    {
+     "id": "acordarse",
+     "hr": "acordarse",
+     "en": "to remember",
+     "pos": "v.",
+     "note": "reflexive; o>ue: me acuerdo; governed preposition: acordarse de",
+     "example": {
+      "target": "No me acuerdo de su nombre.",
+      "gloss": "I don't remember his name."
+     }
+    },
+    {
+     "id": "darse cuenta",
+     "hr": "darse cuenta",
+     "en": "to realize, to notice",
+     "pos": "expr.",
+     "note": "governed preposition: darse cuenta de",
+     "example": {
+      "target": "Me di cuenta de mi error demasiado tarde.",
+      "gloss": "I realized my mistake too late."
+     }
+    },
+    {
+     "id": "sentirse",
+     "hr": "sentirse",
+     "en": "to feel (an emotion or state)",
+     "pos": "v.",
+     "note": "reflexive; e>ie: me siento, the same form as sentarse (to sit down); context tells them apart",
+     "example": {
+      "target": "Últimamente me siento muy cansada.",
+      "gloss": "Lately I've been feeling very tired."
+     }
+    },
+    {
+     "id": "enfadarse",
+     "hr": "enfadarse",
+     "en": "to get angry",
+     "pos": "v.",
+     "note": "reflexive; governed prepositions: enfadarse con alguien, enfadarse por algo",
+     "example": {
+      "target": "Mi madre se enfada si llegamos tarde.",
+      "gloss": "My mother gets angry if we arrive late."
+     }
+    },
+    {
+     "id": "alegrarse",
+     "hr": "alegrarse",
+     "en": "to be glad, to become happy",
+     "pos": "v.",
+     "note": "reflexive; governed preposition: alegrarse de",
+     "example": {
+      "target": "Me alegro mucho de verte.",
+      "gloss": "I'm very glad to see you."
+     }
+    },
+    {
+     "id": "aburrirse",
+     "hr": "aburrirse",
+     "en": "to get bored",
+     "pos": "v.",
+     "note": "reflexive, different from aburrido (bored, boring)",
+     "example": {
+      "target": "Los niños se aburren si no tienen nada que hacer.",
+      "gloss": "Children get bored if they have nothing to do."
+     }
+    },
+    {
+     "id": "divertirse",
+     "hr": "divertirse",
+     "en": "to have fun, to enjoy oneself",
+     "pos": "v.",
+     "note": "reflexive; e>ie: me divierto",
+     "example": {
+      "target": "¿Os divertís en la fiesta?",
+      "gloss": "Are you all having fun at the party?"
+     }
+    },
+    {
+     "id": "cansarse",
+     "hr": "cansarse",
+     "en": "to get tired",
+     "pos": "v.",
+     "note": "reflexive, different from cansado (tired)",
+     "example": {
+      "target": "Me canso mucho cuando subo las escaleras.",
+      "gloss": "I get very tired when I climb the stairs."
+     }
+    },
+    {
+     "id": "preocuparse",
+     "hr": "preocuparse",
+     "en": "to worry",
+     "pos": "v.",
+     "note": "reflexive; governed preposition: preocuparse por",
+     "example": {
+      "target": "Mi abuela se preocupa mucho por la familia.",
+      "gloss": "My grandmother worries a lot about the family."
+     }
+    },
+    {
+     "id": "relajarse",
+     "hr": "relajarse",
+     "en": "to relax",
+     "pos": "v.",
+     "note": "reflexive, different from relajado (relaxed)",
+     "example": {
+      "target": "Después del trabajo me relajo escuchando música.",
+      "gloss": "After work I relax by listening to music."
+     }
+    },
+    {
+     "id": "moverse",
+     "hr": "moverse",
+     "en": "to move (oneself)",
+     "pos": "v.",
+     "note": "reflexive; o>ue: me muevo",
+     "example": {
+      "target": "El bebé se mueve mucho cuando duerme.",
+      "gloss": "The baby moves a lot while sleeping."
+     }
+    },
+    {
+     "id": "la cabeza",
+     "hr": "la cabeza",
+     "en": "head",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me duele mucho la cabeza.",
+      "gloss": "My head hurts a lot."
+     }
+    },
+    {
+     "id": "la frente",
+     "hr": "la frente",
+     "en": "forehead",
+     "pos": "n. f.",
+     "note": "not to be confused with el frente (the front, m., military or weather sense)",
+     "example": {
+      "target": "El niño se ha hecho una herida en la frente.",
+      "gloss": "The boy got a cut on his forehead."
+     }
+    },
+    {
+     "id": "la ceja",
+     "hr": "la ceja",
+     "en": "eyebrow",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi hermana tiene las cejas muy oscuras.",
+      "gloss": "My sister has very dark eyebrows."
+     }
+    },
+    {
+     "id": "la pestaña",
+     "hr": "la pestaña",
+     "en": "eyelash",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tiene las pestañas muy largas.",
+      "gloss": "She has very long eyelashes."
+     }
+    },
+    {
+     "id": "la mejilla",
+     "hr": "la mejilla",
+     "en": "cheek",
+     "pos": "n. f.",
+     "example": {
+      "target": "La abuela le dio un beso en la mejilla.",
+      "gloss": "Grandma gave him a kiss on the cheek."
+     }
+    },
+    {
+     "id": "la barbilla",
+     "hr": "la barbilla",
+     "en": "chin",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tiene un hoyuelo en la barbilla.",
+      "gloss": "He has a dimple on his chin."
+     }
+    },
+    {
+     "id": "el cuello",
+     "hr": "el cuello",
+     "en": "neck",
+     "pos": "n. m.",
+     "example": {
+      "target": "Llevo una bufanda en el cuello porque hace frío.",
+      "gloss": "I'm wearing a scarf around my neck because it's cold."
+     }
+    },
+    {
+     "id": "el hombro",
+     "hr": "el hombro",
+     "en": "shoulder",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me duele el hombro derecho.",
+      "gloss": "My right shoulder hurts."
+     }
+    },
+    {
+     "id": "el brazo",
+     "hr": "el brazo",
+     "en": "arm",
+     "pos": "n. m.",
+     "example": {
+      "target": "Se ha roto el brazo jugando al fútbol.",
+      "gloss": "He broke his arm playing football."
+     }
+    },
+    {
+     "id": "el codo",
+     "hr": "el codo",
+     "en": "elbow",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me he hecho daño en el codo.",
+      "gloss": "I hurt my elbow."
+     }
+    },
+    {
+     "id": "la muñeca",
+     "hr": "la muñeca",
+     "en": "wrist",
+     "pos": "n. f.",
+     "note": "same word also means doll; context makes the meaning clear",
+     "example": {
+      "target": "Llevo un reloj en la muñeca.",
+      "gloss": "I wear a watch on my wrist."
+     }
+    },
+    {
+     "id": "la mano",
+     "hr": "la mano",
+     "en": "hand",
+     "pos": "n. f.",
+     "note": "irregular gender, ends in -o but is feminine",
+     "example": {
+      "target": "Dame la mano para cruzar la calle.",
+      "gloss": "Give me your hand to cross the street."
+     }
+    },
+    {
+     "id": "el dedo",
+     "hr": "el dedo",
+     "en": "finger",
+     "pos": "n. m.",
+     "note": "also el dedo del pie for toe",
+     "example": {
+      "target": "Me he cortado el dedo cocinando.",
+      "gloss": "I cut my finger while cooking."
+     }
+    },
+    {
+     "id": "la uña",
+     "hr": "la uña",
+     "en": "nail (finger or toe)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Se pinta las uñas de rojo.",
+      "gloss": "She paints her nails red."
+     }
+    },
+    {
+     "id": "el pecho",
+     "hr": "el pecho",
+     "en": "chest",
+     "pos": "n. m.",
+     "example": {
+      "target": "Siento un dolor en el pecho.",
+      "gloss": "I feel a pain in my chest."
+     }
+    },
+    {
+     "id": "la espalda",
+     "hr": "la espalda",
+     "en": "back",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me duele mucho la espalda de estar sentado todo el día.",
+      "gloss": "My back hurts a lot from sitting all day."
+     }
+    },
+    {
+     "id": "la cintura",
+     "hr": "la cintura",
+     "en": "waist",
+     "pos": "n. f.",
+     "example": {
+      "target": "Estos pantalones me quedan bien de cintura.",
+      "gloss": "These trousers fit me well at the waist."
+     }
+    },
+    {
+     "id": "la pierna",
+     "hr": "la pierna",
+     "en": "leg",
+     "pos": "n. f.",
+     "example": {
+      "target": "Se ha torcido la pierna esquiando.",
+      "gloss": "He twisted his leg skiing."
+     }
+    },
+    {
+     "id": "la rodilla",
+     "hr": "la rodilla",
+     "en": "knee",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me he hecho daño en la rodilla.",
+      "gloss": "I've hurt my knee."
+     }
+    },
+    {
+     "id": "el tobillo",
+     "hr": "el tobillo",
+     "en": "ankle",
+     "pos": "n. m.",
+     "example": {
+      "target": "Se ha torcido el tobillo bajando la escalera.",
+      "gloss": "He twisted his ankle going down the stairs."
+     }
+    },
+    {
+     "id": "el pie",
+     "hr": "el pie",
+     "en": "foot",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me duelen los pies después de andar tanto.",
+      "gloss": "My feet hurt after walking so much."
+     }
+    },
+    {
+     "id": "la piel",
+     "hr": "la piel",
+     "en": "skin",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tiene la piel muy morena en verano.",
+      "gloss": "His skin is very tanned in summer."
+     }
+    },
+    {
+     "id": "el hueso",
+     "hr": "el hueso",
+     "en": "bone",
+     "pos": "n. m.",
+     "example": {
+      "target": "Se ha roto un hueso del brazo.",
+      "gloss": "He broke a bone in his arm."
+     }
+    },
+    {
+     "id": "el músculo",
+     "hr": "el músculo",
+     "en": "muscle",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me duelen los músculos después de hacer deporte.",
+      "gloss": "My muscles hurt after doing sport."
+     }
+    },
+    {
+     "id": "el corazón",
+     "hr": "el corazón",
+     "en": "heart",
+     "pos": "n. m.",
+     "example": {
+      "target": "El corazón me late muy rápido cuando corro.",
+      "gloss": "My heart beats very fast when I run."
+     }
+    },
+    {
+     "id": "el estómago",
+     "hr": "el estómago",
+     "en": "stomach",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me duele el estómago porque he comido demasiado.",
+      "gloss": "My stomach hurts because I've eaten too much."
+     }
+    },
+    {
+     "id": "el pulmón",
+     "hr": "el pulmón",
+     "en": "lung",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los pulmones se llenan de aire cuando respiramos.",
+      "gloss": "Lungs fill with air when we breathe."
+     }
+    },
+    {
+     "id": "el cerebro",
+     "hr": "el cerebro",
+     "en": "brain",
+     "pos": "n. m.",
+     "example": {
+      "target": "El cerebro controla todo el cuerpo.",
+      "gloss": "The brain controls the whole body."
+     }
+    },
+    {
+     "id": "la sangre",
+     "hr": "la sangre",
+     "en": "blood",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le está saliendo sangre de la nariz.",
+      "gloss": "Blood is coming out of his nose."
+     }
+    },
+    {
+     "id": "el diente",
+     "hr": "el diente",
+     "en": "tooth",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me lavo los dientes tres veces al día.",
+      "gloss": "I brush my teeth three times a day."
+     }
+    },
+    {
+     "id": "la lengua",
+     "hr": "la lengua",
+     "en": "tongue",
+     "pos": "n. f.",
+     "note": "same word also means language; context clarifies",
+     "example": {
+      "target": "Me duele la lengua porque me la he mordido.",
+      "gloss": "My tongue hurts because I bit it."
+     }
+    },
+    {
+     "id": "la garganta",
+     "hr": "la garganta",
+     "en": "throat",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tengo la garganta muy irritada y me duele al tragar.",
+      "gloss": "My throat is very sore and it hurts to swallow."
+     }
+    },
+    {
+     "id": "la oreja",
+     "hr": "la oreja",
+     "en": "ear (outer)",
+     "pos": "n. f.",
+     "note": "outer ear; el oído is the inner ear or sense of hearing",
+     "example": {
+      "target": "Lleva un pendiente en cada oreja.",
+      "gloss": "He wears an earring in each ear."
+     }
+    },
+    {
+     "id": "el oído",
+     "hr": "el oído",
+     "en": "ear (inner), hearing",
+     "pos": "n. m.",
+     "note": "inner ear or sense of hearing, different from la oreja (outer ear)",
+     "example": {
+      "target": "Tengo un dolor de oído desde ayer.",
+      "gloss": "I've had an earache since yesterday."
+     }
+    },
+    {
+     "id": "la salud",
+     "hr": "la salud",
+     "en": "health",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hacer deporte es bueno para la salud.",
+      "gloss": "Doing sport is good for your health."
+     }
+    },
+    {
+     "id": "la enfermedad",
+     "hr": "la enfermedad",
+     "en": "illness, disease",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esa enfermedad es muy común en invierno.",
+      "gloss": "That illness is very common in winter."
+     }
+    },
+    {
+     "id": "el dolor",
+     "hr": "el dolor",
+     "en": "pain, ache",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tengo un dolor muy fuerte en la espalda.",
+      "gloss": "I have a very strong pain in my back."
+     }
+    },
+    {
+     "id": "la fiebre",
+     "hr": "la fiebre",
+     "en": "fever",
+     "pos": "n. f.",
+     "example": {
+      "target": "El niño tiene fiebre y no puede ir al colegio.",
+      "gloss": "The boy has a fever and can't go to school."
+     }
+    },
+    {
+     "id": "la tos",
+     "hr": "la tos",
+     "en": "cough",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llevo una semana con tos.",
+      "gloss": "I've had a cough for a week."
+     }
+    },
+    {
+     "id": "el resfriado",
+     "hr": "el resfriado",
+     "en": "cold (illness)",
+     "pos": "n. m.",
+     "example": {
+      "target": "He cogido un resfriado por salir sin abrigo.",
+      "gloss": "I've caught a cold from going out without a coat."
+     }
+    },
+    {
+     "id": "la gripe",
+     "hr": "la gripe",
+     "en": "flu",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esta semana media clase tiene la gripe.",
+      "gloss": "This week half the class has the flu."
+     }
+    },
+    {
+     "id": "la herida",
+     "hr": "la herida",
+     "en": "wound, injury",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le han curado la herida en el hospital.",
+      "gloss": "They treated his wound at the hospital."
+     }
+    },
+    {
+     "id": "la receta",
+     "hr": "la receta",
+     "en": "prescription",
+     "pos": "n. f.",
+     "note": "same word also means recipe; context clarifies",
+     "example": {
+      "target": "El médico me ha dado una receta para la tos.",
+      "gloss": "The doctor gave me a prescription for the cough."
+     }
+    },
+    {
+     "id": "la pastilla",
+     "hr": "la pastilla",
+     "en": "pill, tablet",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tómate esta pastilla después de comer.",
+      "gloss": "Take this pill after eating."
+     }
+    },
+    {
+     "id": "la medicina",
+     "hr": "la medicina",
+     "en": "medicine",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esta medicina sabe muy mal.",
+      "gloss": "This medicine tastes very bad."
+     }
+    },
+    {
+     "id": "la cita",
+     "hr": "la cita",
+     "en": "appointment",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tengo una cita con el médico a las cinco.",
+      "gloss": "I have an appointment with the doctor at five."
+     }
+    },
+    {
+     "id": "la consulta",
+     "hr": "la consulta",
+     "en": "doctor's office, consultation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La consulta del médico está llena de gente.",
+      "gloss": "The doctor's office is full of people."
+     }
+    },
+    {
+     "id": "la urgencia",
+     "hr": "la urgencia",
+     "en": "emergency",
+     "pos": "n. f.",
+     "note": "often plural, las urgencias, for the hospital emergency department",
+     "example": {
+      "target": "Hemos tenido que ir a urgencias por el dolor de estómago.",
+      "gloss": "We had to go to the emergency room because of the stomach ache."
+     }
+    },
+    {
+     "id": "el seguro",
+     "hr": "el seguro",
+     "en": "insurance",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi seguro médico paga la consulta.",
+      "gloss": "My health insurance pays for the appointment."
+     }
+    },
+    {
+     "id": "la vacuna",
+     "hr": "la vacuna",
+     "en": "vaccine",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me he puesto la vacuna de la gripe.",
+      "gloss": "I got the flu vaccine."
+     }
+    },
+    {
+     "id": "el jarabe",
+     "hr": "el jarabe",
+     "en": "(cough) syrup",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este jarabe es para la tos.",
+      "gloss": "This syrup is for the cough."
+     }
+    },
+    {
+     "id": "la tirita",
+     "hr": "la tirita",
+     "en": "plaster, band-aid",
+     "pos": "n. f.",
+     "note": "peninsular term; American Spanish says la curita",
+     "example": {
+      "target": "Se ha puesto una tirita en el dedo.",
+      "gloss": "He put a plaster on his finger."
+     }
+    },
+    {
+     "id": "la venda",
+     "hr": "la venda",
+     "en": "bandage",
+     "pos": "n. f.",
+     "example": {
+      "target": "El médico le ha puesto una venda en el tobillo.",
+      "gloss": "The doctor put a bandage on his ankle."
+     }
+    },
+    {
+     "id": "el termómetro",
+     "hr": "el termómetro",
+     "en": "thermometer",
+     "pos": "n. m.",
+     "example": {
+      "target": "El termómetro marca treinta y ocho grados.",
+      "gloss": "The thermometer reads thirty eight degrees."
+     }
+    },
+    {
+     "id": "la ambulancia",
+     "hr": "la ambulancia",
+     "en": "ambulance",
+     "pos": "n. f.",
+     "example": {
+      "target": "Han llamado a una ambulancia para el accidente.",
+      "gloss": "They called an ambulance for the accident."
+     }
+    },
+    {
+     "id": "la alergia",
+     "hr": "la alergia",
+     "en": "allergy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tengo alergia a los gatos.",
+      "gloss": "I'm allergic to cats."
+     }
+    },
+    {
+     "id": "la infección",
+     "hr": "la infección",
+     "en": "infection",
+     "pos": "n. f.",
+     "example": {
+      "target": "La herida se ha infectado y ahora tiene una infección.",
+      "gloss": "The wound got infected and now he has an infection."
+     }
+    },
+    {
+     "id": "el mareo",
+     "hr": "el mareo",
+     "en": "dizziness",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tengo mareos cuando viajo en barco.",
+      "gloss": "I get dizzy when I travel by boat."
+     }
+    },
+    {
+     "id": "la cicatriz",
+     "hr": "la cicatriz",
+     "en": "scar",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tiene una cicatriz en la rodilla de cuando era pequeño.",
+      "gloss": "He has a scar on his knee from when he was little."
+     }
+    },
+    {
+     "id": "el análisis",
+     "hr": "el análisis",
+     "en": "(medical) test, analysis",
+     "pos": "n. m.",
+     "note": "invariable in the plural, los análisis",
+     "example": {
+      "target": "El médico me ha pedido un análisis de sangre.",
+      "gloss": "The doctor asked me for a blood test."
+     }
+    },
+    {
+     "id": "la radiografía",
+     "hr": "la radiografía",
+     "en": "X-ray",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le han hecho una radiografía del brazo.",
+      "gloss": "They took an X-ray of his arm."
+     }
+    },
+    {
+     "id": "la operación",
+     "hr": "la operación",
+     "en": "operation, surgery",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi abuelo tiene una operación la semana que viene.",
+      "gloss": "My grandfather has an operation next week."
+     }
+    },
+    {
+     "id": "el yeso",
+     "hr": "el yeso",
+     "en": "(plaster) cast",
+     "pos": "n. m.",
+     "example": {
+      "target": "Lleva el brazo en un yeso desde el accidente.",
+      "gloss": "He's had his arm in a cast since the accident."
+     }
+    },
+    {
+     "id": "doler",
+     "hr": "doler",
+     "en": "to hurt, to ache",
+     "pos": "v.",
+     "note": "works like gustar: me duele la cabeza, me duelen los pies",
+     "example": {
+      "target": "Me duele mucho la garganta.",
+      "gloss": "My throat hurts a lot."
+     }
+    },
+    {
+     "id": "curar",
+     "hr": "curar",
+     "en": "to cure, to treat (a wound)",
+     "pos": "v.",
+     "example": {
+      "target": "La enfermera le ha curado la herida.",
+      "gloss": "The nurse treated his wound."
+     }
+    },
+    {
+     "id": "mejorar",
+     "hr": "mejorar",
+     "en": "to improve, to get better",
+     "pos": "v.",
+     "example": {
+      "target": "Con esta medicina vas a mejorar pronto.",
+      "gloss": "With this medicine you'll get better soon."
+     }
+    },
+    {
+     "id": "empeorar",
+     "hr": "empeorar",
+     "en": "to worsen, to get worse",
+     "pos": "v.",
+     "example": {
+      "target": "Si no descansas, tu resfriado va a empeorar.",
+      "gloss": "If you don't rest, your cold will get worse."
+     }
+    },
+    {
+     "id": "toser",
+     "hr": "toser",
+     "en": "to cough",
+     "pos": "v.",
+     "example": {
+      "target": "Empezó a toser durante toda la noche.",
+      "gloss": "He started coughing all night."
+     }
+    },
+    {
+     "id": "estornudar",
+     "hr": "estornudar",
+     "en": "to sneeze",
+     "pos": "v.",
+     "example": {
+      "target": "Estornudo mucho cuando hay polen.",
+      "gloss": "I sneeze a lot when there's pollen."
+     }
+    },
+    {
+     "id": "sangrar",
+     "hr": "sangrar",
+     "en": "to bleed",
+     "pos": "v.",
+     "example": {
+      "target": "La herida no deja de sangrar.",
+      "gloss": "The wound won't stop bleeding."
+     }
+    },
+    {
+     "id": "romperse",
+     "hr": "romperse",
+     "en": "to break (a bone or body part)",
+     "pos": "v.",
+     "note": "reflexive for parts of the body; irregular past participle: roto",
+     "example": {
+      "target": "Se ha roto la pierna esquiando.",
+      "gloss": "He broke his leg skiing."
+     }
+    },
+    {
+     "id": "torcerse",
+     "hr": "torcerse",
+     "en": "to twist, to sprain",
+     "pos": "v.",
+     "note": "reflexive; o>ue: me tuerzo",
+     "example": {
+      "target": "Me torcí el tobillo bajando las escaleras.",
+      "gloss": "I twisted my ankle going down the stairs."
+     }
+    },
+    {
+     "id": "operar",
+     "hr": "operar",
+     "en": "to operate (on someone)",
+     "pos": "v.",
+     "note": "governed preposition: operar a alguien de algo",
+     "example": {
+      "target": "Van a operar a mi tío del corazón.",
+      "gloss": "They're going to operate on my uncle's heart."
+     }
+    },
+    {
+     "id": "recetar",
+     "hr": "recetar",
+     "en": "to prescribe",
+     "pos": "v.",
+     "example": {
+      "target": "El médico me ha recetado unas pastillas.",
+      "gloss": "The doctor prescribed me some pills."
+     }
+    },
+    {
+     "id": "cuidar",
+     "hr": "cuidar",
+     "en": "to take care of, to look after",
+     "pos": "v.",
+     "example": {
+      "target": "Tengo que cuidar a mi abuela este fin de semana.",
+      "gloss": "I have to look after my grandmother this weekend."
+     }
+    },
+    {
+     "id": "vomitar",
+     "hr": "vomitar",
+     "en": "to vomit",
+     "pos": "v.",
+     "example": {
+      "target": "El niño ha vomitado después de comer tanto chocolate.",
+      "gloss": "The boy vomited after eating so much chocolate."
+     }
+    },
+    {
+     "id": "el despertador",
+     "hr": "el despertador",
+     "en": "alarm clock",
+     "pos": "n. m.",
+     "example": {
+      "target": "El despertador suena a las siete de la mañana.",
+      "gloss": "The alarm clock goes off at seven in the morning."
+     }
+    },
+    {
+     "id": "el cepillo de dientes",
+     "hr": "el cepillo de dientes",
+     "en": "toothbrush",
+     "pos": "n. m.",
+     "example": {
+      "target": "He comprado un cepillo de dientes nuevo.",
+      "gloss": "I bought a new toothbrush."
+     }
+    },
+    {
+     "id": "el jabón",
+     "hr": "el jabón",
+     "en": "soap",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me lavo las manos con jabón.",
+      "gloss": "I wash my hands with soap."
+     }
+    },
+    {
+     "id": "la toalla",
+     "hr": "la toalla",
+     "en": "towel",
+     "pos": "n. f.",
+     "example": {
+      "target": "Después de la ducha me seco con la toalla.",
+      "gloss": "After the shower I dry myself with the towel."
+     }
+    },
+    {
+     "id": "el champú",
+     "hr": "el champú",
+     "en": "shampoo",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este champú huele muy bien.",
+      "gloss": "This shampoo smells very good."
+     }
+    },
+    {
+     "id": "el peine",
+     "hr": "el peine",
+     "en": "comb",
+     "pos": "n. m.",
+     "example": {
+      "target": "Se peina con un peine de madera.",
+      "gloss": "She combs her hair with a wooden comb."
+     }
+    },
+    {
+     "id": "la crema",
+     "hr": "la crema",
+     "en": "cream, lotion",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me pongo crema en la cara todas las noches.",
+      "gloss": "I put cream on my face every night."
+     }
+    },
+    {
+     "id": "la rutina",
+     "hr": "la rutina",
+     "en": "routine",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi rutina de la mañana es siempre la misma.",
+      "gloss": "My morning routine is always the same."
+     }
+    },
+    {
+     "id": "la alegría",
+     "hr": "la alegría",
+     "en": "joy, happiness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Nos dio mucha alegría verte de nuevo.",
+      "gloss": "It gave us great joy to see you again."
+     }
+    },
+    {
+     "id": "la tristeza",
+     "hr": "la tristeza",
+     "en": "sadness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Sintió una gran tristeza cuando se fue su amiga.",
+      "gloss": "He felt great sadness when his friend left."
+     }
+    },
+    {
+     "id": "el miedo",
+     "hr": "el miedo",
+     "en": "fear",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le tengo miedo a las arañas.",
+      "gloss": "I'm afraid of spiders."
+     }
+    },
+    {
+     "id": "la rabia",
+     "hr": "la rabia",
+     "en": "anger, rage",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me da mucha rabia perder el autobús.",
+      "gloss": "It makes me really angry to miss the bus."
+     }
+    },
+    {
+     "id": "la sorpresa",
+     "hr": "la sorpresa",
+     "en": "surprise",
+     "pos": "n. f.",
+     "example": {
+      "target": "¡Qué sorpresa verte por aquí!",
+      "gloss": "What a surprise to see you around here!"
+     }
+    },
+    {
+     "id": "la vergüenza",
+     "hr": "la vergüenza",
+     "en": "shame, embarrassment",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me da vergüenza hablar en público.",
+      "gloss": "I'm embarrassed to speak in public."
+     }
+    },
+    {
+     "id": "los nervios",
+     "hr": "los nervios",
+     "en": "nerves, jitters",
+     "pos": "n. m.",
+     "note": "plural in this idiomatic sense; tener los nervios de punta",
+     "example": {
+      "target": "Antes de un examen siempre tengo los nervios de punta.",
+      "gloss": "Before an exam I'm always a bundle of nerves."
+     }
+    },
+    {
+     "id": "el estrés",
+     "hr": "el estrés",
+     "en": "stress",
+     "pos": "n. m.",
+     "example": {
+      "target": "El trabajo me produce mucho estrés.",
+      "gloss": "Work causes me a lot of stress."
+     }
+    },
+    {
+     "id": "el ánimo",
+     "hr": "el ánimo",
+     "en": "mood, spirit, motivation",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hoy tengo mucho ánimo para estudiar.",
+      "gloss": "Today I have a lot of motivation to study."
+     }
+    },
+    {
+     "id": "la calma",
+     "hr": "la calma",
+     "en": "calm, calmness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hay que afrontar los problemas con calma.",
+      "gloss": "You have to face problems calmly."
+     }
+    },
+    {
+     "id": "el entusiasmo",
+     "hr": "el entusiasmo",
+     "en": "enthusiasm",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los niños hablan del viaje con mucho entusiasmo.",
+      "gloss": "The children talk about the trip with a lot of enthusiasm."
+     }
+    },
+    {
+     "id": "la confianza",
+     "hr": "la confianza",
+     "en": "confidence, trust",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tengo mucha confianza en mis amigos.",
+      "gloss": "I have a lot of trust in my friends."
+     }
+    },
+    {
+     "id": "el humor",
+     "hr": "el humor",
+     "en": "mood, humor",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hoy mi jefe está de mal humor.",
+      "gloss": "Today my boss is in a bad mood."
+     }
+    },
+    {
+     "id": "la paciencia",
+     "hr": "la paciencia",
+     "en": "patience",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hay que tener paciencia con los niños pequeños.",
+      "gloss": "You have to have patience with young children."
+     }
+    },
+    {
+     "id": "cansado",
+     "hr": "cansado",
+     "en": "tired",
+     "pos": "adj.",
+     "note": "feminine cansada; complements the verb cansarse",
+     "example": {
+      "target": "Estoy muy cansado después de trabajar todo el día.",
+      "gloss": "I'm very tired after working all day."
+     }
+    },
+    {
+     "id": "enfermo",
+     "hr": "enfermo",
+     "en": "sick, ill",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermano está enfermo y no ha ido al colegio.",
+      "gloss": "My brother is sick and didn't go to school."
+     }
+    },
+    {
+     "id": "sano",
+     "hr": "sano",
+     "en": "healthy",
+     "pos": "adj.",
+     "example": {
+      "target": "Comer verdura es muy sano.",
+      "gloss": "Eating vegetables is very healthy."
+     }
+    },
+    {
+     "id": "dormido",
+     "hr": "dormido",
+     "en": "asleep",
+     "pos": "adj.",
+     "example": {
+      "target": "El bebé ya está dormido.",
+      "gloss": "The baby is already asleep."
+     }
+    },
+    {
+     "id": "despierto",
+     "hr": "despierto",
+     "en": "awake",
+     "pos": "adj.",
+     "example": {
+      "target": "A las seis ya estoy despierto.",
+      "gloss": "By six I'm already awake."
+     }
+    },
+    {
+     "id": "contento",
+     "hr": "contento",
+     "en": "happy, pleased",
+     "pos": "adj.",
+     "example": {
+      "target": "Estamos muy contentos con las notas de nuestro hijo.",
+      "gloss": "We are very pleased with our son's grades."
+     }
+    },
+    {
+     "id": "triste",
+     "hr": "triste",
+     "en": "sad",
+     "pos": "adj.",
+     "example": {
+      "target": "Se ha puesto muy triste con la noticia.",
+      "gloss": "He got very sad with the news."
+     }
+    },
+    {
+     "id": "enfadado",
+     "hr": "enfadado",
+     "en": "angry",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermana está enfadada conmigo.",
+      "gloss": "My sister is angry with me."
+     }
+    },
+    {
+     "id": "preocupado",
+     "hr": "preocupado",
+     "en": "worried",
+     "pos": "adj.",
+     "example": {
+      "target": "Estoy preocupado por el examen de mañana.",
+      "gloss": "I'm worried about tomorrow's exam."
+     }
+    },
+    {
+     "id": "sorprendido",
+     "hr": "sorprendido",
+     "en": "surprised",
+     "pos": "adj.",
+     "example": {
+      "target": "Me he quedado sorprendido con el regalo.",
+      "gloss": "I was surprised by the gift."
+     }
+    },
+    {
+     "id": "orgulloso",
+     "hr": "orgulloso",
+     "en": "proud",
+     "pos": "adj.",
+     "example": {
+      "target": "Estoy muy orgulloso de mis hijos.",
+      "gloss": "I'm very proud of my children."
+     }
+    },
+    {
+     "id": "avergonzado",
+     "hr": "avergonzado",
+     "en": "ashamed, embarrassed",
+     "pos": "adj.",
+     "example": {
+      "target": "Se sintió avergonzado delante de todos.",
+      "gloss": "He felt embarrassed in front of everyone."
+     }
+    },
+    {
+     "id": "harto",
+     "hr": "harto",
+     "en": "fed up",
+     "pos": "adj.",
+     "note": "governed preposition: harto de",
+     "example": {
+      "target": "Estoy harto de este ruido.",
+      "gloss": "I'm fed up with this noise."
+     }
+    },
+    {
+     "id": "impaciente",
+     "hr": "impaciente",
+     "en": "impatient",
+     "pos": "adj.",
+     "example": {
+      "target": "Los niños se ponen impacientes en la cola.",
+      "gloss": "Children get impatient in the queue."
+     }
+    },
+    {
+     "id": "celoso",
+     "hr": "celoso",
+     "en": "jealous",
+     "pos": "adj.",
+     "example": {
+      "target": "El perro se pone celoso cuando cojo al gato.",
+      "gloss": "The dog gets jealous when I pick up the cat."
+     }
+    },
+    {
+     "id": "asustado",
+     "hr": "asustado",
+     "en": "scared, frightened",
+     "pos": "adj.",
+     "example": {
+      "target": "El niño estaba asustado por la tormenta.",
+      "gloss": "The boy was scared of the storm."
+     }
+    },
+    {
+     "id": "relajado",
+     "hr": "relajado",
+     "en": "relaxed",
+     "pos": "adj.",
+     "example": {
+      "target": "Después de las vacaciones me siento muy relajado.",
+      "gloss": "After the holidays I feel very relaxed."
+     }
+    },
+    {
+     "id": "el papá",
+     "hr": "el papá",
+     "en": "dad, daddy",
+     "pos": "n. m.",
+     "note": "affectionate everyday form used alongside el padre",
+     "example": {
+      "target": "Mi papá me lleva al colegio en coche.",
+      "gloss": "My dad drives me to school."
+     }
+    },
+    {
+     "id": "la mamá",
+     "hr": "la mamá",
+     "en": "mom, mommy",
+     "pos": "n. f.",
+     "note": "affectionate everyday form used alongside la madre",
+     "example": {
+      "target": "Mi mamá cocina muy bien.",
+      "gloss": "My mom cooks very well."
+     }
+    },
+    {
+     "id": "los gemelos",
+     "hr": "los gemelos",
+     "en": "twins",
+     "pos": "n. m. pl.",
+     "note": "las gemelas for a female pair; los gemelos also for a mixed pair",
+     "example": {
+      "target": "Mis primos son gemelos, se parecen mucho.",
+      "gloss": "My cousins are twins, they look a lot alike."
+     }
+    },
+    {
+     "id": "el medicamento",
+     "hr": "el medicamento",
+     "en": "medication, medicine",
+     "pos": "n. m.",
+     "note": "more general than la medicina, covers pills, syrups and other treatments alike",
+     "example": {
+      "target": "El médico me ha recetado un medicamento nuevo.",
+      "gloss": "The doctor prescribed me a new medication."
+     }
+    },
+    {
+     "id": "tener hambre",
+     "hr": "tener hambre",
+     "en": "to be hungry",
+     "pos": "expr.",
+     "note": "uses tener, irregular yo-form: tengo",
+     "example": {
+      "target": "Tengo mucha hambre después de hacer deporte.",
+      "gloss": "I am very hungry after doing sport."
+     }
+    },
+    {
+     "id": "nacer",
+     "hr": "nacer",
+     "en": "to be born",
+     "pos": "v.",
+     "note": "irregular yo-form: nazco",
+     "example": {
+      "target": "Mi hermano nació en Madrid.",
+      "gloss": "My brother was born in Madrid."
+     }
+    },
+    {
+     "id": "morir",
+     "hr": "morir",
+     "en": "to die",
+     "pos": "v.",
+     "note": "o>ue in the present: muero; irregular participle: muerto",
+     "example": {
+      "target": "Mi abuelo murió el año pasado.",
+      "gloss": "My grandfather died last year."
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,268 @@
+{
+  "quizzes": [
+    {
+      "id": "es-a1",
+      "levelId": "A1",
+      "title": "A1, las bases",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "¿Cuál de estas palabras es esdrújula (lleva tilde en la antepenúltima sílaba)?",
+          "difficulty": 3,
+          "options": ["teléfono", "ciudad", "mesa", "hablar"],
+          "answer": "teléfono",
+          "explanation": "Esdrújulas (stress on the third-to-last syllable) always carry a written accent, so teléfono is marked. Ciudad and hablar are agudas ending in a consonant that does not require one, and mesa is a llana ending in a vowel, which also needs none."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "¿Cuál es la frase correcta?",
+          "difficulty": 3,
+          "options": [
+            "El día empieza a las ocho.",
+            "La día empieza a las ocho.",
+            "El días empieza a las ocho.",
+            "La días empieza a las ocho."
+          ],
+          "answer": "El día empieza a las ocho.",
+          "explanation": "Although día ends in -a, it belongs to the small group of masculine exceptions, along with el mapa and el problema, so it takes el rather than la."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: Mi profesora es muy ___. (nice, feminine)",
+          "difficulty": 3,
+          "answer": "simpática",
+          "strictDiacritics": true,
+          "explanation": "The adjective must agree in gender with profesora, which is feminine, and simpática keeps its written accent on the antepenultimate syllable in every form."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Mi tío ___ médico. ¿Cuál es correcta?",
+          "difficulty": 4,
+          "options": ["es", "está", "hay", "tiene"],
+          "answer": "es",
+          "explanation": "Ser identifies what something is by definition, such as a profession, while estar describes a state or condition rather than an identity. The choice has nothing to do with how long he has held the job, only with what kind of information is being given."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: ___ un banco al final de esta calle. ¿Cuál es correcta?",
+          "difficulty": 4,
+          "options": ["Hay", "Está", "Es", "Tiene"],
+          "answer": "Hay",
+          "explanation": "Hay introduces new, indefinite information, such as un banco, while está is reserved for something already known and definite, such as el banco de la esquina."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: Yo ___ salir esta noche con mis amigos. (querer)",
+          "difficulty": 4,
+          "answer": "quiero",
+          "explanation": "Querer changes e to ie in every present-tense form except nosotros and vosotros, so the yo form is quiero."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "¿Cuál es la forma correcta de 'poder' para 'ella'?",
+          "difficulty": 4,
+          "options": ["puede", "pode", "podie", "poder"],
+          "answer": "puede",
+          "explanation": "Poder changes o to ue in the stressed stem of every present-tense form except nosotros and vosotros, so ella puede is correct."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: A mi hermano ___ gustan los deportes. (dative pronoun for 'him')",
+          "difficulty": 5,
+          "answer": "le",
+          "explanation": "Gustar works backwards from English: the person who likes something takes a dative pronoun, and a mi hermano needs le to match él."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "¿Qué frase expresa una obligación, no un plan futuro?",
+          "difficulty": 5,
+          "options": [
+            "Tengo que estudiar esta noche.",
+            "Voy a estudiar esta noche.",
+            "Estudio esta noche.",
+            "Me gusta estudiar esta noche."
+          ],
+          "answer": "Tengo que estudiar esta noche.",
+          "explanation": "Tener que plus infinitive expresses a personal obligation, while ir a plus infinitive expresses an intended future action. Only the first sentence states a duty rather than a plan or a habit."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the Spanish for: 'We are going to visit our grandparents on Saturday.'",
+          "difficulty": 5,
+          "options": ["Vamos", "a", "visitar", "a", "nuestros", "abuelos", "el", "sábado"],
+          "ordered": ["Vamos", "a", "visitar", "a", "nuestros", "abuelos", "el", "sábado"],
+          "explanation": "Ir a plus infinitive expresses a planned future action, and visitar a person takes the personal a, giving Vamos a visitar a nuestros abuelos el sábado."
+        }
+      ]
+    },
+    {
+      "id": "es-a2",
+      "levelId": "A2",
+      "title": "A2, contar y describir",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Esta semana ___ mucho trabajo. ¿Cuál es correcta?",
+          "difficulty": 4,
+          "options": ["he tenido", "tuve", "tenía", "tengo"],
+          "answer": "he tenido",
+          "explanation": "Esta semana names a period that reaches the present moment, and peninsular Spanish uses the pretérito perfecto for exactly that kind of open period, not the indefinido or the imperfecto."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Cuando yo ___ pequeño, vivíamos en un pueblo. ¿Cuál es correcta?",
+          "difficulty": 4,
+          "options": ["era", "fui", "he sido", "soy"],
+          "answer": "era",
+          "explanation": "Describing an ongoing state in the past, such as being young, uses the imperfecto. The indefinido would present it as a single completed event, which does not fit a description."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: Yo no ___ a tu primo todavía. (conocer, presente)",
+          "difficulty": 4,
+          "answer": "conozco",
+          "explanation": "Conocer is used for knowing a person or a place through experience, while saber is for facts and skills. Since the object here is a person, conocer is required."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Este ejercicio es ___ difícil. ¿Cuál es correcta?",
+          "difficulty": 5,
+          "options": ["muy", "mucho", "muy mucho", "mucho muy"],
+          "answer": "muy",
+          "explanation": "Muy modifies adjectives and adverbs, while mucho modifies nouns and verbs. Difícil is an adjective, so muy is correct, and doubling the two words together is never grammatical."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: Ana quiere la foto; yo ___ envío por correo mañana. (indirect plus direct pronoun, 'to her, it')",
+          "difficulty": 5,
+          "answer": "se la",
+          "explanation": "The indirect pronoun le becomes se whenever it stands next to a direct pronoun beginning with l, such as lo, la, los or las. Since foto is feminine singular, the pair is se la."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "¿Cuál es la forma correcta del imperativo (tú) de 'comprar' con el pronombre 'lo'?",
+          "difficulty": 5,
+          "options": ["cómpralo", "comprálo", "cómpralotu", "comprarlo"],
+          "answer": "cómpralo",
+          "explanation": "Attaching a pronoun to an affirmative imperative adds a syllable, and Spanish keeps the original stress with a written accent, giving cómpralo rather than comprálo or the infinitive comprarlo."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Este regalo es ___ mi madre. ¿Cuál es correcta?",
+          "difficulty": 5,
+          "options": ["para", "por", "a", "de"],
+          "answer": "para",
+          "explanation": "Para introduces the recipient or the purpose of something, while por marks cause or exchange. Since the gift is intended for the mother, para is correct."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: Mi piso es ___ grande que el tuyo. (more)",
+          "difficulty": 6,
+          "answer": "más",
+          "strictDiacritics": true,
+          "explanation": "The comparative of superiority is formed with más plus the adjective plus que, so más grande que expresses that one flat is bigger than the other. Without the accent, mas means 'but'."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Ayer ___ una película muy buena. ¿Cuál es correcta?",
+          "difficulty": 6,
+          "options": ["vi", "veía", "he visto", "veo"],
+          "answer": "vi",
+          "explanation": "Ayer names a specific, closed point in the past, which calls for the pretérito indefinido. Veía would suggest a repeated or background action, and he visto is reserved for a period still open to the present."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the Spanish for: 'Give it to her right now, please.'",
+          "difficulty": 6,
+          "options": ["Dáselo", "ahora", "mismo", "por", "favor"],
+          "ordered": ["Dáselo", "ahora", "mismo", "por", "favor"],
+          "explanation": "Dar's tú imperative da takes the enclitic pronouns se and lo, and the added syllables shift the stress, so a written accent appears: dáselo."
+        }
+      ]
+    },
+    {
+      "id": "es-b1",
+      "levelId": "B1",
+      "title": "B1, opinión e hipótesis",
+      "questions": [
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Quiero que tú ___ conmigo al cine esta tarde. ¿Cuál es correcta?",
+          "difficulty": 5,
+          "options": ["vengas", "vienes", "vendrás", "viene"],
+          "answer": "vengas",
+          "explanation": "Querer que introduces a second subject different from the speaker, and that structure requires the present subjunctive, so vengas is correct rather than an indicative form."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: No creo que ella ___ tiempo hoy. ¿Cuál es correcta?",
+          "difficulty": 5,
+          "options": ["tenga", "tiene", "tendrá", "tendría"],
+          "answer": "tenga",
+          "explanation": "No creo que expresses doubt, not certainty, so it takes the present subjunctive tenga. Creo que without the negation would instead take the indicative, as in creo que tiene tiempo."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: Es importante que todos los alumnos ___ las normas de la clase. (respetar)",
+          "difficulty": 6,
+          "answer": "respeten",
+          "explanation": "Impersonal value-judgement expressions such as es importante que require the present subjunctive in the clause that follows."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Cuando ___ a casa, te llamaré. ¿Cuál es correcta?",
+          "difficulty": 6,
+          "options": ["llegue", "llego", "llegaré", "llegaría"],
+          "answer": "llegue",
+          "explanation": "Cuando referring to a future, not-yet-realised moment takes the present subjunctive, never the future indicative. Llegaré after cuando in this sense would be ungrammatical."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: No ___ tan tarde, mañana trabajas. (salir, imperativo negativo, tú)",
+          "difficulty": 6,
+          "answer": "salgas",
+          "explanation": "The negative imperative borrows the present subjunctive form, so tú's negative command from salir is no salgas, not the affirmative sal."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "¿Cuál es la forma correcta para decir 'Don't tell it to me' en español?",
+          "difficulty": 7,
+          "options": ["No me lo digas.", "No dígamelo.", "No lo digas me.", "Dímelo no."],
+          "answer": "No me lo digas.",
+          "explanation": "Pronouns precede the verb in the negative imperative instead of attaching to it, the opposite order from the affirmative dímelo, so no me lo digas is correct."
+        },
+        {
+          "type": "FILL",
+          "prompt": "Completa: El próximo año ___ un piso más grande. (tener, futuro)",
+          "difficulty": 7,
+          "answer": "tendré",
+          "explanation": "Tener has an irregular future stem, tendr-, formed by inserting a d before the regular future endings, giving tendré rather than the expected teneré."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Me dijo que ___ muy cansado. (estar; en estilo directo dijo 'Estoy muy cansado') ¿Cuál es correcta?",
+          "difficulty": 7,
+          "options": ["estaba", "está", "esté", "estuvo"],
+          "answer": "estaba",
+          "explanation": "Reported speech inside a past frame shifts a present-tense original into the imperfecto, so estoy becomes estaba. This is an ordinary indicative shift, not the subjunctive."
+        },
+        {
+          "type": "MCQ",
+          "prompt": "Completa: Busco una casa que ___ un jardín grande. ¿Cuál es correcta?",
+          "difficulty": 8,
+          "options": ["tenga", "tiene", "tendrá", "tendría"],
+          "answer": "tenga",
+          "explanation": "When the antecedent may not exist, such as an unspecified casa the speaker has not yet found, the relative clause takes the subjunctive. If the speaker already had a specific house in mind, the indicative tiene would be used instead."
+        },
+        {
+          "type": "REORDER",
+          "prompt": "Build the Spanish for: 'Foreign languages are studied in this school.'",
+          "difficulty": 8,
+          "options": ["En", "este", "colegio", "se", "estudian", "idiomas", "extranjeros"],
+          "ordered": ["En", "este", "colegio", "se", "estudian", "idiomas", "extranjeros"],
+          "explanation": "Passive se agrees in number with the noun that follows, so a plural subject like idiomas extranjeros takes the plural verb estudian. That agreement is exactly what separates it from the invariable impersonal se."
+        }
+      ]
+    }
+  ]
+}

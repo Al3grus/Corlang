@@ -1,0 +1,1375 @@
+{
+ "packs": [
+  {
+   "id": "es-a1-food-town",
+   "title": "Food, clothes, colours and the town",
+   "level": "A1",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "el pan",
+     "hr": "el pan",
+     "en": "bread",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cada mañana como pan con mantequilla.",
+      "gloss": "Every morning I eat bread with butter."
+     }
+    },
+    {
+     "id": "la leche",
+     "hr": "la leche",
+     "en": "milk",
+     "pos": "n. f.",
+     "example": {
+      "target": "Bebo un vaso de leche por la mañana.",
+      "gloss": "I drink a glass of milk in the morning."
+     }
+    },
+    {
+     "id": "el queso",
+     "hr": "el queso",
+     "en": "cheese",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este queso español es muy fuerte.",
+      "gloss": "This Spanish cheese is very strong."
+     }
+    },
+    {
+     "id": "el huevo",
+     "hr": "el huevo",
+     "en": "egg",
+     "pos": "n. m.",
+     "example": {
+      "target": "Como un huevo frito para desayunar.",
+      "gloss": "I eat a fried egg for breakfast."
+     }
+    },
+    {
+     "id": "la carne",
+     "hr": "la carne",
+     "en": "meat",
+     "pos": "n. f.",
+     "example": {
+      "target": "No como carne los viernes.",
+      "gloss": "I don't eat meat on Fridays."
+     }
+    },
+    {
+     "id": "el pollo",
+     "hr": "el pollo",
+     "en": "chicken",
+     "pos": "n. m.",
+     "example": {
+      "target": "El pollo con patatas es mi plato favorito.",
+      "gloss": "Chicken with potatoes is my favorite dish."
+     }
+    },
+    {
+     "id": "el pescado",
+     "hr": "el pescado",
+     "en": "fish (food)",
+     "pos": "n. m.",
+     "note": "Fish as food; the live animal is el pez.",
+     "example": {
+      "target": "Prefiero el pescado al pollo.",
+      "gloss": "I prefer fish to chicken."
+     }
+    },
+    {
+     "id": "la fruta",
+     "hr": "la fruta",
+     "en": "fruit",
+     "pos": "n. f.",
+     "example": {
+      "target": "Como fruta todos los días.",
+      "gloss": "I eat fruit every day."
+     }
+    },
+    {
+     "id": "la manzana",
+     "hr": "la manzana",
+     "en": "apple",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esta manzana es roja y dulce.",
+      "gloss": "This apple is red and sweet."
+     }
+    },
+    {
+     "id": "el plátano",
+     "hr": "el plátano",
+     "en": "banana",
+     "pos": "n. m.",
+     "example": {
+      "target": "El plátano es una fruta muy dulce.",
+      "gloss": "The banana is a very sweet fruit."
+     }
+    },
+    {
+     "id": "la naranja",
+     "hr": "la naranja",
+     "en": "orange (fruit)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Bebo zumo de naranja en el desayuno.",
+      "gloss": "I drink orange juice at breakfast."
+     }
+    },
+    {
+     "id": "la verdura",
+     "hr": "la verdura",
+     "en": "vegetables",
+     "pos": "n. f.",
+     "note": "Often used in the plural, verduras, with the same meaning.",
+     "example": {
+      "target": "Como verdura con la comida.",
+      "gloss": "I eat vegetables with the meal."
+     }
+    },
+    {
+     "id": "la patata",
+     "hr": "la patata",
+     "en": "potato",
+     "pos": "n. f.",
+     "note": "Peninsular for potato; Latin American Spanish uses la papa.",
+     "example": {
+      "target": "Las patatas fritas están muy ricas.",
+      "gloss": "The fries are very tasty."
+     }
+    },
+    {
+     "id": "el tomate",
+     "hr": "el tomate",
+     "en": "tomato",
+     "pos": "n. m.",
+     "example": {
+      "target": "Pongo tomate en la ensalada.",
+      "gloss": "I put tomato in the salad."
+     }
+    },
+    {
+     "id": "la ensalada",
+     "hr": "la ensalada",
+     "en": "salad",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ensalada tiene tomate y lechuga.",
+      "gloss": "The salad has tomato and lettuce."
+     }
+    },
+    {
+     "id": "el arroz",
+     "hr": "el arroz",
+     "en": "rice",
+     "pos": "n. m.",
+     "example": {
+      "target": "El arroz con pollo es una comida típica.",
+      "gloss": "Rice with chicken is a typical dish."
+     }
+    },
+    {
+     "id": "la pasta",
+     "hr": "la pasta",
+     "en": "pasta",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me gusta mucho la pasta.",
+      "gloss": "I like pasta a lot."
+     }
+    },
+    {
+     "id": "la sopa",
+     "hr": "la sopa",
+     "en": "soup",
+     "pos": "n. f.",
+     "example": {
+      "target": "Como sopa caliente cuando hace frío.",
+      "gloss": "I eat hot soup when it's cold."
+     }
+    },
+    {
+     "id": "el aceite",
+     "hr": "el aceite",
+     "en": "oil",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cocino con aceite de oliva.",
+      "gloss": "I cook with olive oil."
+     }
+    },
+    {
+     "id": "la sal",
+     "hr": "la sal",
+     "en": "salt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pongo un poco de sal en la sopa.",
+      "gloss": "I put a little salt in the soup."
+     }
+    },
+    {
+     "id": "el azúcar",
+     "hr": "el azúcar",
+     "en": "sugar",
+     "pos": "n. m.",
+     "note": "Gender is ambiguous in everyday use; el azúcar is the common form taught here.",
+     "example": {
+      "target": "No tomo azúcar en el café.",
+      "gloss": "I don't take sugar in my coffee."
+     }
+    },
+    {
+     "id": "el agua",
+     "hr": "el agua",
+     "en": "water",
+     "pos": "n. f.",
+     "note": "Feminine noun that takes el (not la) in the singular because it starts with stressed a; the plural is las aguas.",
+     "example": {
+      "target": "Bebo mucha agua cada día.",
+      "gloss": "I drink a lot of water every day."
+     }
+    },
+    {
+     "id": "el vino",
+     "hr": "el vino",
+     "en": "wine",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mis padres beben vino en la cena.",
+      "gloss": "My parents drink wine at dinner."
+     }
+    },
+    {
+     "id": "la cerveza",
+     "hr": "la cerveza",
+     "en": "beer",
+     "pos": "n. f.",
+     "example": {
+      "target": "En verano me gusta beber cerveza fría.",
+      "gloss": "In summer I like to drink cold beer."
+     }
+    },
+    {
+     "id": "el café",
+     "hr": "el café",
+     "en": "coffee",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tomo un café por la mañana.",
+      "gloss": "I have a coffee in the morning."
+     }
+    },
+    {
+     "id": "el té",
+     "hr": "el té",
+     "en": "tea",
+     "pos": "n. m.",
+     "example": {
+      "target": "Prefiero el té al café.",
+      "gloss": "I prefer tea to coffee."
+     }
+    },
+    {
+     "id": "el zumo",
+     "hr": "el zumo",
+     "en": "juice",
+     "pos": "n. m.",
+     "note": "Peninsular for juice; Latin American Spanish uses el jugo.",
+     "example": {
+      "target": "El zumo de naranja es mi favorito.",
+      "gloss": "Orange juice is my favorite."
+     }
+    },
+    {
+     "id": "el desayuno",
+     "hr": "el desayuno",
+     "en": "breakfast",
+     "pos": "n. m.",
+     "example": {
+      "target": "El desayuno es la comida más importante del día.",
+      "gloss": "Breakfast is the most important meal of the day."
+     }
+    },
+    {
+     "id": "la comida",
+     "hr": "la comida",
+     "en": "food, meal",
+     "pos": "n. f.",
+     "example": {
+      "target": "La comida española es muy variada.",
+      "gloss": "Spanish food is very varied."
+     }
+    },
+    {
+     "id": "la cena",
+     "hr": "la cena",
+     "en": "dinner",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cena es a las nueve.",
+      "gloss": "Dinner is at nine."
+     }
+    },
+    {
+     "id": "el plato",
+     "hr": "el plato",
+     "en": "plate, dish",
+     "pos": "n. m.",
+     "example": {
+      "target": "Pongo la comida en el plato.",
+      "gloss": "I put the food on the plate."
+     }
+    },
+    {
+     "id": "el vaso",
+     "hr": "el vaso",
+     "en": "glass",
+     "pos": "n. m.",
+     "example": {
+      "target": "Necesito un vaso de agua.",
+      "gloss": "I need a glass of water."
+     }
+    },
+    {
+     "id": "la taza",
+     "hr": "la taza",
+     "en": "cup",
+     "pos": "n. f.",
+     "example": {
+      "target": "Bebo el té en una taza pequeña.",
+      "gloss": "I drink tea in a small cup."
+     }
+    },
+    {
+     "id": "el cuchillo",
+     "hr": "el cuchillo",
+     "en": "knife",
+     "pos": "n. m.",
+     "example": {
+      "target": "Corto el pan con un cuchillo.",
+      "gloss": "I cut the bread with a knife."
+     }
+    },
+    {
+     "id": "el tenedor",
+     "hr": "el tenedor",
+     "en": "fork",
+     "pos": "n. m.",
+     "example": {
+      "target": "Como la ensalada con un tenedor.",
+      "gloss": "I eat the salad with a fork."
+     }
+    },
+    {
+     "id": "la cuchara",
+     "hr": "la cuchara",
+     "en": "spoon",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tomo la sopa con una cuchara.",
+      "gloss": "I have soup with a spoon."
+     }
+    },
+    {
+     "id": "la servilleta",
+     "hr": "la servilleta",
+     "en": "napkin",
+     "pos": "n. f.",
+     "example": {
+      "target": "Limpio la boca con la servilleta.",
+      "gloss": "I wipe my mouth with the napkin."
+     }
+    },
+    {
+     "id": "la cuenta",
+     "hr": "la cuenta",
+     "en": "the bill, the check",
+     "pos": "n. f.",
+     "note": "Here means the bill or check at a restaurant.",
+     "example": {
+      "target": "Pedimos la cuenta al final de la cena.",
+      "gloss": "We ask for the bill at the end of dinner."
+     }
+    },
+    {
+     "id": "la camisa",
+     "hr": "la camisa",
+     "en": "shirt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llevo una camisa blanca hoy.",
+      "gloss": "I'm wearing a white shirt today."
+     }
+    },
+    {
+     "id": "la camiseta",
+     "hr": "la camiseta",
+     "en": "t-shirt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi camiseta es azul.",
+      "gloss": "My t-shirt is blue."
+     }
+    },
+    {
+     "id": "el pantalón",
+     "hr": "el pantalón",
+     "en": "trousers, pants",
+     "pos": "n. m.",
+     "note": "Often used in the plural, los pantalones, with the same meaning.",
+     "example": {
+      "target": "Este pantalón es muy cómodo.",
+      "gloss": "These trousers are very comfortable."
+     }
+    },
+    {
+     "id": "la falda",
+     "hr": "la falda",
+     "en": "skirt",
+     "pos": "n. f.",
+     "example": {
+      "target": "La falda de mi hermana es roja.",
+      "gloss": "My sister's skirt is red."
+     }
+    },
+    {
+     "id": "el vestido",
+     "hr": "el vestido",
+     "en": "dress",
+     "pos": "n. m.",
+     "example": {
+      "target": "Compro un vestido nuevo para la boda.",
+      "gloss": "I'm buying a new dress for the wedding."
+     }
+    },
+    {
+     "id": "la chaqueta",
+     "hr": "la chaqueta",
+     "en": "jacket",
+     "pos": "n. f.",
+     "example": {
+      "target": "Necesito una chaqueta porque hace frío.",
+      "gloss": "I need a jacket because it's cold."
+     }
+    },
+    {
+     "id": "el abrigo",
+     "hr": "el abrigo",
+     "en": "coat",
+     "pos": "n. m.",
+     "example": {
+      "target": "En invierno llevo un abrigo largo.",
+      "gloss": "In winter I wear a long coat."
+     }
+    },
+    {
+     "id": "el jersey",
+     "hr": "el jersey",
+     "en": "sweater, jumper",
+     "pos": "n. m.",
+     "note": "Peninsular term for a sweater or pullover.",
+     "example": {
+      "target": "Este jersey de lana es muy caliente.",
+      "gloss": "This wool sweater is very warm."
+     }
+    },
+    {
+     "id": "los zapatos",
+     "hr": "los zapatos",
+     "en": "shoes",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mis zapatos nuevos son muy bonitos.",
+      "gloss": "My new shoes are very nice."
+     }
+    },
+    {
+     "id": "las botas",
+     "hr": "las botas",
+     "en": "boots",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llevo botas cuando llueve.",
+      "gloss": "I wear boots when it rains."
+     }
+    },
+    {
+     "id": "los calcetines",
+     "hr": "los calcetines",
+     "en": "socks",
+     "pos": "n. m.",
+     "example": {
+      "target": "Busco mis calcetines negros.",
+      "gloss": "I'm looking for my black socks."
+     }
+    },
+    {
+     "id": "el sombrero",
+     "hr": "el sombrero",
+     "en": "hat",
+     "pos": "n. m.",
+     "example": {
+      "target": "Llevo un sombrero en la playa.",
+      "gloss": "I wear a hat at the beach."
+     }
+    },
+    {
+     "id": "el bolso",
+     "hr": "el bolso",
+     "en": "handbag",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi madre lleva un bolso grande.",
+      "gloss": "My mother carries a big handbag."
+     }
+    },
+    {
+     "id": "la talla",
+     "hr": "la talla",
+     "en": "size (clothing)",
+     "pos": "n. f.",
+     "example": {
+      "target": "¿Qué talla usas tú?",
+      "gloss": "What size do you wear?"
+     }
+    },
+    {
+     "id": "blanco",
+     "hr": "blanco",
+     "en": "white",
+     "pos": "adj.",
+     "example": {
+      "target": "El vestido blanco es muy elegante.",
+      "gloss": "The white dress is very elegant."
+     }
+    },
+    {
+     "id": "negro",
+     "hr": "negro",
+     "en": "black",
+     "pos": "adj.",
+     "example": {
+      "target": "Tengo un abrigo negro.",
+      "gloss": "I have a black coat."
+     }
+    },
+    {
+     "id": "rojo",
+     "hr": "rojo",
+     "en": "red",
+     "pos": "adj.",
+     "example": {
+      "target": "El coche de mi padre es rojo.",
+      "gloss": "My father's car is red."
+     }
+    },
+    {
+     "id": "azul",
+     "hr": "azul",
+     "en": "blue",
+     "pos": "adj.",
+     "example": {
+      "target": "El cielo está azul hoy.",
+      "gloss": "The sky is blue today."
+     }
+    },
+    {
+     "id": "verde",
+     "hr": "verde",
+     "en": "green",
+     "pos": "adj.",
+     "example": {
+      "target": "Me gusta el color verde.",
+      "gloss": "I like the color green."
+     }
+    },
+    {
+     "id": "amarillo",
+     "hr": "amarillo",
+     "en": "yellow",
+     "pos": "adj.",
+     "example": {
+      "target": "El plátano es amarillo.",
+      "gloss": "The banana is yellow."
+     }
+    },
+    {
+     "id": "gris",
+     "hr": "gris",
+     "en": "gray",
+     "pos": "adj.",
+     "example": {
+      "target": "El cielo está gris antes de la lluvia.",
+      "gloss": "The sky is gray before the rain."
+     }
+    },
+    {
+     "id": "marrón",
+     "hr": "marrón",
+     "en": "brown",
+     "pos": "adj.",
+     "example": {
+      "target": "Mis zapatos son de color marrón.",
+      "gloss": "My shoes are brown."
+     }
+    },
+    {
+     "id": "naranja",
+     "hr": "naranja",
+     "en": "orange (colour)",
+     "pos": "adj.",
+     "note": "As a colour adjective, naranja does not change for gender or number.",
+     "example": {
+      "target": "Esta camiseta naranja es muy llamativa.",
+      "gloss": "This orange t-shirt is very eye catching."
+     }
+    },
+    {
+     "id": "rosa",
+     "hr": "rosa",
+     "en": "pink",
+     "pos": "adj.",
+     "note": "As a colour adjective, rosa does not change for gender or number.",
+     "example": {
+      "target": "A mi hermana le gusta el color rosa.",
+      "gloss": "My sister likes the color pink."
+     }
+    },
+    {
+     "id": "la ciudad",
+     "hr": "la ciudad",
+     "en": "city",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vivo en una ciudad grande.",
+      "gloss": "I live in a big city."
+     }
+    },
+    {
+     "id": "el pueblo",
+     "hr": "el pueblo",
+     "en": "town, village",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mis abuelos viven en un pueblo pequeño.",
+      "gloss": "My grandparents live in a small village."
+     }
+    },
+    {
+     "id": "la calle",
+     "hr": "la calle",
+     "en": "street",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cruzo la calle con cuidado.",
+      "gloss": "I cross the street carefully."
+     }
+    },
+    {
+     "id": "la plaza",
+     "hr": "la plaza",
+     "en": "square",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los niños juegan en la plaza.",
+      "gloss": "The children play in the square."
+     }
+    },
+    {
+     "id": "el barrio",
+     "hr": "el barrio",
+     "en": "neighbourhood",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi barrio es muy tranquilo.",
+      "gloss": "My neighbourhood is very quiet."
+     }
+    },
+    {
+     "id": "la tienda",
+     "hr": "la tienda",
+     "en": "shop",
+     "pos": "n. f.",
+     "example": {
+      "target": "Voy a la tienda a comprar pan.",
+      "gloss": "I'm going to the shop to buy bread."
+     }
+    },
+    {
+     "id": "el supermercado",
+     "hr": "el supermercado",
+     "en": "supermarket",
+     "pos": "n. m.",
+     "example": {
+      "target": "Compro la comida en el supermercado.",
+      "gloss": "I buy the food at the supermarket."
+     }
+    },
+    {
+     "id": "el mercado",
+     "hr": "el mercado",
+     "en": "market",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los sábados vamos al mercado.",
+      "gloss": "On Saturdays we go to the market."
+     }
+    },
+    {
+     "id": "el banco",
+     "hr": "el banco",
+     "en": "bank",
+     "pos": "n. m.",
+     "note": "Also means a bench in other contexts.",
+     "example": {
+      "target": "Voy al banco para sacar dinero.",
+      "gloss": "I'm going to the bank to withdraw money."
+     }
+    },
+    {
+     "id": "la farmacia",
+     "hr": "la farmacia",
+     "en": "pharmacy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Compro las medicinas en la farmacia.",
+      "gloss": "I buy the medicine at the pharmacy."
+     }
+    },
+    {
+     "id": "el hospital",
+     "hr": "el hospital",
+     "en": "hospital",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi tío trabaja en el hospital.",
+      "gloss": "My uncle works at the hospital."
+     }
+    },
+    {
+     "id": "la escuela",
+     "hr": "la escuela",
+     "en": "school",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los niños van a la escuela por la mañana.",
+      "gloss": "The children go to school in the morning."
+     }
+    },
+    {
+     "id": "la universidad",
+     "hr": "la universidad",
+     "en": "university",
+     "pos": "n. f.",
+     "example": {
+      "target": "Estudio inglés en la universidad.",
+      "gloss": "I study English at university."
+     }
+    },
+    {
+     "id": "la estación",
+     "hr": "la estación",
+     "en": "station",
+     "pos": "n. f.",
+     "example": {
+      "target": "El tren sale de la estación a las ocho.",
+      "gloss": "The train leaves the station at eight."
+     }
+    },
+    {
+     "id": "el aeropuerto",
+     "hr": "el aeropuerto",
+     "en": "airport",
+     "pos": "n. m.",
+     "example": {
+      "target": "El avión llega al aeropuerto a tiempo.",
+      "gloss": "The plane arrives at the airport on time."
+     }
+    },
+    {
+     "id": "el parque",
+     "hr": "el parque",
+     "en": "park",
+     "pos": "n. m.",
+     "example": {
+      "target": "Paseo por el parque los domingos.",
+      "gloss": "I walk in the park on Sundays."
+     }
+    },
+    {
+     "id": "el museo",
+     "hr": "el museo",
+     "en": "museum",
+     "pos": "n. m.",
+     "example": {
+      "target": "Visitamos un museo de arte en la ciudad.",
+      "gloss": "We visit an art museum in the city."
+     }
+    },
+    {
+     "id": "el restaurante",
+     "hr": "el restaurante",
+     "en": "restaurant",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cenamos en un restaurante cerca de casa.",
+      "gloss": "We have dinner at a restaurant near home."
+     }
+    },
+    {
+     "id": "el bar",
+     "hr": "el bar",
+     "en": "bar",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tomamos un café en el bar de la esquina.",
+      "gloss": "We have a coffee at the bar on the corner."
+     }
+    },
+    {
+     "id": "el hotel",
+     "hr": "el hotel",
+     "en": "hotel",
+     "pos": "n. m.",
+     "example": {
+      "target": "Reservamos una habitación en el hotel.",
+      "gloss": "We book a room at the hotel."
+     }
+    },
+    {
+     "id": "la playa",
+     "hr": "la playa",
+     "en": "beach",
+     "pos": "n. f.",
+     "example": {
+      "target": "En verano vamos a la playa.",
+      "gloss": "In summer we go to the beach."
+     }
+    },
+    {
+     "id": "el coche",
+     "hr": "el coche",
+     "en": "car",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi padre conduce un coche azul.",
+      "gloss": "My father drives a blue car."
+     }
+    },
+    {
+     "id": "el autobús",
+     "hr": "el autobús",
+     "en": "bus",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cojo el autobús para ir al trabajo.",
+      "gloss": "I take the bus to go to work."
+     }
+    },
+    {
+     "id": "el tren",
+     "hr": "el tren",
+     "en": "train",
+     "pos": "n. m.",
+     "example": {
+      "target": "El tren llega tarde hoy.",
+      "gloss": "The train arrives late today."
+     }
+    },
+    {
+     "id": "el metro",
+     "hr": "el metro",
+     "en": "subway, underground",
+     "pos": "n. m.",
+     "note": "Refers to the underground train here, not the unit of length.",
+     "example": {
+      "target": "Voy al centro en metro.",
+      "gloss": "I go downtown by subway."
+     }
+    },
+    {
+     "id": "la bicicleta",
+     "hr": "la bicicleta",
+     "en": "bicycle",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los fines de semana monto en bicicleta.",
+      "gloss": "On weekends I ride a bicycle."
+     }
+    },
+    {
+     "id": "el billete",
+     "hr": "el billete",
+     "en": "ticket",
+     "pos": "n. m.",
+     "note": "Peninsular for a ticket (train, bus, cinema); can also mean a banknote.",
+     "example": {
+      "target": "Compro el billete de tren en la estación.",
+      "gloss": "I buy the train ticket at the station."
+     }
+    },
+    {
+     "id": "el jamón",
+     "hr": "el jamón",
+     "en": "ham",
+     "pos": "n. m.",
+     "example": {
+      "target": "Como un bocadillo de jamón.",
+      "gloss": "I eat a ham sandwich."
+     }
+    },
+    {
+     "id": "la mantequilla",
+     "hr": "la mantequilla",
+     "en": "butter",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pongo mantequilla en el pan.",
+      "gloss": "I put butter on the bread."
+     }
+    },
+    {
+     "id": "el yogur",
+     "hr": "el yogur",
+     "en": "yogurt",
+     "pos": "n. m.",
+     "example": {
+      "target": "Desayuno un yogur con fruta.",
+      "gloss": "I have a yogurt with fruit for breakfast."
+     }
+    },
+    {
+     "id": "la mermelada",
+     "hr": "la mermelada",
+     "en": "jam",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me gusta el pan con mermelada.",
+      "gloss": "I like bread with jam."
+     }
+    },
+    {
+     "id": "las galletas",
+     "hr": "las galletas",
+     "en": "cookies, biscuits",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los niños comen galletas por la tarde.",
+      "gloss": "The children eat cookies in the afternoon."
+     }
+    },
+    {
+     "id": "el pastel",
+     "hr": "el pastel",
+     "en": "cake",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hacemos un pastel de chocolate para la fiesta.",
+      "gloss": "We make a chocolate cake for the party."
+     }
+    },
+    {
+     "id": "el helado",
+     "hr": "el helado",
+     "en": "ice cream",
+     "pos": "n. m.",
+     "example": {
+      "target": "¡El helado de fresa está buenísimo!",
+      "gloss": "The strawberry ice cream is delicious!"
+     }
+    },
+    {
+     "id": "el chocolate",
+     "hr": "el chocolate",
+     "en": "chocolate",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me encanta el chocolate caliente.",
+      "gloss": "I love hot chocolate."
+     }
+    },
+    {
+     "id": "las uvas",
+     "hr": "las uvas",
+     "en": "grapes",
+     "pos": "n. f.",
+     "example": {
+      "target": "Compro uvas verdes en el mercado.",
+      "gloss": "I buy green grapes at the market."
+     }
+    },
+    {
+     "id": "la pera",
+     "hr": "la pera",
+     "en": "pear",
+     "pos": "n. f.",
+     "example": {
+      "target": "La pera es una fruta muy jugosa.",
+      "gloss": "The pear is a very juicy fruit."
+     }
+    },
+    {
+     "id": "el limón",
+     "hr": "el limón",
+     "en": "lemon",
+     "pos": "n. m.",
+     "example": {
+      "target": "Pongo limón en el té.",
+      "gloss": "I put lemon in the tea."
+     }
+    },
+    {
+     "id": "la cebolla",
+     "hr": "la cebolla",
+     "en": "onion",
+     "pos": "n. f.",
+     "example": {
+      "target": "Corto la cebolla para la sopa.",
+      "gloss": "I chop the onion for the soup."
+     }
+    },
+    {
+     "id": "el ajo",
+     "hr": "el ajo",
+     "en": "garlic",
+     "pos": "n. m.",
+     "example": {
+      "target": "Esta receta lleva mucho ajo.",
+      "gloss": "This recipe has a lot of garlic."
+     }
+    },
+    {
+     "id": "la lechuga",
+     "hr": "la lechuga",
+     "en": "lettuce",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ensalada tiene lechuga fresca.",
+      "gloss": "The salad has fresh lettuce."
+     }
+    },
+    {
+     "id": "la zanahoria",
+     "hr": "la zanahoria",
+     "en": "carrot",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los conejos comen zanahorias.",
+      "gloss": "Rabbits eat carrots."
+     }
+    },
+    {
+     "id": "las patatas fritas",
+     "hr": "las patatas fritas",
+     "en": "fries, chips",
+     "pos": "n. f.",
+     "note": "Peninsular for fries or crisps; Latin American Spanish says papas fritas.",
+     "example": {
+      "target": "Pido patatas fritas con la hamburguesa.",
+      "gloss": "I order fries with the hamburger."
+     }
+    },
+    {
+     "id": "el bocadillo",
+     "hr": "el bocadillo",
+     "en": "sandwich",
+     "pos": "n. m.",
+     "example": {
+      "target": "Preparo un bocadillo para el almuerzo.",
+      "gloss": "I make a sandwich for lunch."
+     }
+    },
+    {
+     "id": "la hamburguesa",
+     "hr": "la hamburguesa",
+     "en": "hamburger",
+     "pos": "n. f.",
+     "example": {
+      "target": "Comemos una hamburguesa los viernes.",
+      "gloss": "We eat a hamburger on Fridays."
+     }
+    },
+    {
+     "id": "el postre",
+     "hr": "el postre",
+     "en": "dessert",
+     "pos": "n. m.",
+     "example": {
+      "target": "¿Qué hay de postre hoy?",
+      "gloss": "What's for dessert today?"
+     }
+    },
+    {
+     "id": "el hielo",
+     "hr": "el hielo",
+     "en": "ice",
+     "pos": "n. m.",
+     "example": {
+      "target": "Pongo hielo en el zumo.",
+      "gloss": "I put ice in the juice."
+     }
+    },
+    {
+     "id": "la ropa",
+     "hr": "la ropa",
+     "en": "clothes, clothing",
+     "pos": "n. f.",
+     "example": {
+      "target": "Compro ropa nueva para el verano.",
+      "gloss": "I buy new clothes for summer."
+     }
+    },
+    {
+     "id": "el traje",
+     "hr": "el traje",
+     "en": "suit",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi padre lleva traje al trabajo.",
+      "gloss": "My father wears a suit to work."
+     }
+    },
+    {
+     "id": "la corbata",
+     "hr": "la corbata",
+     "en": "tie",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llevo corbata en las reuniones.",
+      "gloss": "I wear a tie at meetings."
+     }
+    },
+    {
+     "id": "el cinturón",
+     "hr": "el cinturón",
+     "en": "belt",
+     "pos": "n. m.",
+     "example": {
+      "target": "Necesito un cinturón para este pantalón.",
+      "gloss": "I need a belt for these trousers."
+     }
+    },
+    {
+     "id": "los guantes",
+     "hr": "los guantes",
+     "en": "gloves",
+     "pos": "n. m.",
+     "example": {
+      "target": "En invierno llevo guantes.",
+      "gloss": "In winter I wear gloves."
+     }
+    },
+    {
+     "id": "la bufanda",
+     "hr": "la bufanda",
+     "en": "scarf",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llevo una bufanda cuando hace frío.",
+      "gloss": "I wear a scarf when it's cold."
+     }
+    },
+    {
+     "id": "el pijama",
+     "hr": "el pijama",
+     "en": "pyjamas",
+     "pos": "n. m.",
+     "note": "Masculine despite ending in -a; the singular form covers what English calls pyjamas.",
+     "example": {
+      "target": "Por la noche llevo el pijama.",
+      "gloss": "At night I wear pyjamas."
+     }
+    },
+    {
+     "id": "el bañador",
+     "hr": "el bañador",
+     "en": "swimsuit",
+     "pos": "n. m.",
+     "note": "Peninsular for swimsuit; Latin America often says la malla or el traje de baño.",
+     "example": {
+      "target": "Llevo el bañador a la playa.",
+      "gloss": "I take my swimsuit to the beach."
+     }
+    },
+    {
+     "id": "morado",
+     "hr": "morado",
+     "en": "purple",
+     "pos": "adj.",
+     "example": {
+      "target": "El vestido morado es muy bonito.",
+      "gloss": "The purple dress is very pretty."
+     }
+    },
+    {
+     "id": "dorado",
+     "hr": "dorado",
+     "en": "golden",
+     "pos": "adj.",
+     "example": {
+      "target": "El anillo es de color dorado.",
+      "gloss": "The ring is golden colored."
+     }
+    },
+    {
+     "id": "la iglesia",
+     "hr": "la iglesia",
+     "en": "church",
+     "pos": "n. f.",
+     "example": {
+      "target": "La iglesia del pueblo es muy antigua.",
+      "gloss": "The village church is very old."
+     }
+    },
+    {
+     "id": "el puente",
+     "hr": "el puente",
+     "en": "bridge",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cruzamos el puente para llegar al centro.",
+      "gloss": "We cross the bridge to get downtown."
+     }
+    },
+    {
+     "id": "el río",
+     "hr": "el río",
+     "en": "river",
+     "pos": "n. m.",
+     "example": {
+      "target": "El río pasa cerca de la ciudad.",
+      "gloss": "The river flows near the city."
+     }
+    },
+    {
+     "id": "la esquina",
+     "hr": "la esquina",
+     "en": "corner",
+     "pos": "n. f.",
+     "example": {
+      "target": "La farmacia está en la esquina.",
+      "gloss": "The pharmacy is on the corner."
+     }
+    },
+    {
+     "id": "el ayuntamiento",
+     "hr": "el ayuntamiento",
+     "en": "town hall",
+     "pos": "n. m.",
+     "example": {
+      "target": "El ayuntamiento está en la plaza principal.",
+      "gloss": "The town hall is in the main square."
+     }
+    },
+    {
+     "id": "la avenida",
+     "hr": "la avenida",
+     "en": "avenue",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vivimos en una avenida ancha.",
+      "gloss": "We live on a wide avenue."
+     }
+    },
+    {
+     "id": "el taxi",
+     "hr": "el taxi",
+     "en": "taxi",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cojo un taxi para ir al aeropuerto.",
+      "gloss": "I take a taxi to go to the airport."
+     }
+    },
+    {
+     "id": "el vuelo",
+     "hr": "el vuelo",
+     "en": "flight",
+     "pos": "n. m.",
+     "example": {
+      "target": "Nuestro vuelo sale por la mañana.",
+      "gloss": "Our flight leaves in the morning."
+     }
+    },
+    {
+     "id": "cerca",
+     "hr": "cerca",
+     "en": "near, nearby",
+     "pos": "adv.",
+     "note": "takes de before a following noun: cerca de la playa",
+     "example": {
+      "target": "El mercado está cerca de mi casa.",
+      "gloss": "The market is near my house."
+     }
+    },
+    {
+     "id": "lejos",
+     "hr": "lejos",
+     "en": "far, far away",
+     "pos": "adv.",
+     "note": "takes de before a following noun: lejos del centro",
+     "example": {
+      "target": "El aeropuerto está lejos del centro.",
+      "gloss": "The airport is far from downtown."
+     }
+    },
+    {
+     "id": "la primavera",
+     "hr": "la primavera",
+     "en": "spring",
+     "pos": "n. f.",
+     "example": {
+      "target": "En primavera hay muchas flores en el parque.",
+      "gloss": "In spring there are many flowers in the park."
+     }
+    },
+    {
+     "id": "el verano",
+     "hr": "el verano",
+     "en": "summer",
+     "pos": "n. m.",
+     "example": {
+      "target": "En verano voy todos los días a la playa.",
+      "gloss": "In summer I go to the beach every day."
+     }
+    },
+    {
+     "id": "el otoño",
+     "hr": "el otoño",
+     "en": "autumn, fall",
+     "pos": "n. m.",
+     "note": "spelled with ñ: otoño, not otono",
+     "example": {
+      "target": "El otoño es mi estación favorita.",
+      "gloss": "Autumn is my favorite season."
+     }
+    },
+    {
+     "id": "el invierno",
+     "hr": "el invierno",
+     "en": "winter",
+     "pos": "n. m.",
+     "example": {
+      "target": "En invierno hace mucho frío en el pueblo.",
+      "gloss": "In winter it is very cold in the village."
+     }
+    },
+    {
+     "id": "gustar",
+     "hr": "gustar",
+     "en": "to like",
+     "pos": "v.",
+     "note": "takes an indirect object pronoun and agrees with the thing liked, not the person who likes it: me gusta el café, me gustan los cafés",
+     "example": {
+      "target": "Me gusta mucho el chocolate.",
+      "gloss": "I like chocolate a lot."
+     }
+    }
+   ]
+  }
+ ]
+}

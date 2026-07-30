@@ -1,0 +1,325 @@
+{
+  "concepts": [
+    {
+      "id": "es-acento-escrito",
+      "levelId": "A1",
+      "title": "The written accent: a rule, not a decoration",
+      "simpleExplanation": "Spanish decides where a word is stressed by a rule that almost never fails. If a word ends in a vowel, in n or in s, the stress falls on the second-to-last syllable: casa, hablan, lunes. If it ends in any other consonant, the stress falls on the last one: hablar, ciudad, reloj. Those two sentences cover the enormous majority of the language, and a word that follows them is written bare. The written accent exists for exactly one job: to mark the words that break the rule. habló ends in a vowel, so the rule would put the stress on ha-, and the accent overrules it. árbol ends in l, so the rule would stress -bol, and the accent overrules it. Every word stressed three syllables from the end always carries one, because the rule cannot produce that. There is a second, smaller job: separating pairs of one-syllable words that are spelled the same but do different work, like si and sí, tu and tú, el and él, que and qué. Nothing is being stressed differently there, the accent is simply a label. All of this matters practically because the accent can be the whole difference between two tenses: hablo is I speak and habló is he spoke, and a typed exam answer is graded on it.",
+      "analogy": "Think of the stress rule as a default setting on a machine. Almost every word is happy with the factory setting and needs no sticker. The accent is the sticker you put on the few units that were configured differently at the factory, so nobody resets them by mistake. A machine with no sticker is not unmarked because someone forgot; it is unmarked because it is running the default, and that is information too.",
+      "rubricPoints": [
+        {
+          "point": "A word ending in a vowel, n or s is stressed on the second-to-last syllable",
+          "reTeach": "casa, hablan, lunes, examen: all stressed on the syllable before the last, and all written bare because that is the default.",
+          "keywords": ["vowel", "n", "s", "second to last", "penultimate", "llana", "grave"]
+        },
+        {
+          "point": "A word ending in any other consonant is stressed on the last syllable",
+          "reTeach": "hablar, ciudad, reloj, feliz: the stress lands on the final syllable and no accent is written.",
+          "keywords": ["consonant", "last syllable", "final", "aguda"]
+        },
+        {
+          "point": "The written accent marks the words that break the rule",
+          "reTeach": "habló ends in a vowel so the default would stress ha-; the accent overrules it. árbol ends in l so the default would stress -bol; the accent overrules it.",
+          "keywords": ["break", "exception", "overrule", "mark", "tilde"]
+        },
+        {
+          "point": "Stress three syllables from the end is always written",
+          "reTeach": "esdrújulas like teléfono, música, rápido, gramática carry an accent without exception, because the default rule can never produce that stress.",
+          "keywords": ["three", "esdrujula", "always", "third"]
+        },
+        {
+          "point": "A second use of the accent separates identical one-syllable words",
+          "reTeach": "si/sí, tu/tú, el/él, mas/más, que/qué, como/cómo, se/sé. Same sound, different job, and the accent is the label that tells them apart.",
+          "keywords": ["one syllable", "monosyllable", "distinguish", "pairs", "diacritic", "label"]
+        },
+        {
+          "point": "The accent can carry the entire meaning, including tense",
+          "reTeach": "hablo is I speak and habló is he spoke. In a typed exam answer that mark is the difference between right and wrong, so it is not optional polish.",
+          "keywords": ["meaning", "tense", "hablo", "hablo accent", "exam", "graded"]
+        }
+      ]
+    },
+    {
+      "id": "es-genero-concordancia",
+      "levelId": "A1",
+      "title": "Gender and agreement: what holds a Spanish sentence together",
+      "simpleExplanation": "Every Spanish noun is masculine or feminine, and it is singular or plural, and the article in front of it and every adjective attached to it have to match on both counts. El libro nuevo, la casa nueva, los libros nuevos, las casas nuevas: one idea, four outfits. The ending usually tells you the gender, -o masculine and -a feminine, and the endings -ción, -sión, -dad and -tad are always feminine, but nouns ending in -e or a consonant can be either and have to be learned with their article. A handful of frequent nouns break the pattern outright and must be memorised as exceptions: el día, el problema, el mapa, el idioma are masculine despite the -a, and la mano is feminine despite the -o. Agreement is not tidiness. In a long Spanish sentence it is the only signal telling the listener which adjective belongs to which noun, so getting it wrong does not look untidy, it makes you ambiguous.",
+      "analogy": "A noun is the captain of a small team and its gender and number are the team colours. Whoever runs onto the pitch with the captain, the article, the adjective, sometimes a participle, has to be wearing the same strip. A player in the wrong shirt is not merely badly dressed; from the stands nobody can tell which team he is playing for.",
+      "rubricPoints": [
+        {
+          "point": "Every noun has a gender, and the ending usually shows it",
+          "reTeach": "-o is usually masculine (libro), -a usually feminine (casa), and -ción, -sión, -dad, -tad are always feminine (la canción, la ciudad).",
+          "keywords": ["gender", "masculine", "feminine", "ending", "-o", "-a"]
+        },
+        {
+          "point": "The article and every adjective must match in gender and number",
+          "reTeach": "el libro nuevo, la casa nueva, los libros nuevos, las casas nuevas. Change the noun and everything around it changes with it.",
+          "keywords": ["article", "adjective", "match", "agree", "concordancia", "number"]
+        },
+        {
+          "point": "Nouns in -e or a consonant must be learned with their article",
+          "reTeach": "el peine and la muerte both end in -e; el árbol and la catedral both end in a consonant. The ending decides nothing, so store the article as part of the word.",
+          "keywords": ["-e", "consonant", "learn with article", "unpredictable"]
+        },
+        {
+          "point": "A frequent handful break the pattern and must be memorised",
+          "reTeach": "el día, el problema, el mapa, el idioma, el clima are masculine with -a; la mano is feminine with -o.",
+          "keywords": ["exception", "el dia", "el problema", "la mano", "memorise"]
+        },
+        {
+          "point": "Agreement is what tells a listener which adjective belongs to which noun",
+          "reTeach": "In a sentence with two nouns, the ending on the adjective is the only clue to what it describes. Wrong agreement is not untidy, it is ambiguous.",
+          "keywords": ["which noun", "clue", "ambiguous", "glue", "holds together"]
+        }
+      ]
+    },
+    {
+      "id": "es-ser-estar",
+      "levelId": "A1",
+      "title": "ser and estar: one question, not two verbs",
+      "simpleExplanation": "English has one verb to be and Spanish splits the job in two, which sounds like twice the work and is actually a single question asked every time: am I saying what this thing IS, or what state it is IN? ser handles identity and the things that define something: who you are, where you are from, your job, what a thing is made of, the day and the time. Es médico. Es de Sevilla. Son las cinco. estar handles location and condition: where something is right now, how someone feels, and the result of something that happened. Está en casa. Está cansado. La puerta está cerrada. The split is not permanent against temporary, which is the rule everyone is taught and which then fails on está muerto, a state as permanent as they come. It is definition against state. The pay-off is that a small group of adjectives changes meaning depending on which verb you pick: es listo is clever and está listo is ready, es aburrido is boring and está aburrido is bored. You are not choosing a verb there, you are choosing a meaning.",
+      "analogy": "Think of a passport and a boarding pass. The passport says what you are: your name, your nationality, your date of birth. It does not change when you walk through a door. The boarding pass says where you are in a process right now: this gate, this seat, today. ser issues passports, estar issues boarding passes, and asking which document the sentence needs answers the question every time.",
+      "rubricPoints": [
+        {
+          "point": "ser is for identity and definition",
+          "reTeach": "Who someone is, where they are from, their profession, what a thing is made of, the day and the time: Soy español. Es profesora. Son las cinco.",
+          "keywords": ["identity", "definition", "origin", "profession", "time", "what it is"]
+        },
+        {
+          "point": "estar is for location and condition",
+          "reTeach": "Where something is and what state it is in: Está en Madrid. Estoy cansado. La tienda está abierta.",
+          "keywords": ["location", "condition", "state", "where", "feeling", "how it is"]
+        },
+        {
+          "point": "The split is definition against state, not permanent against temporary",
+          "reTeach": "The permanent-versus-temporary rule breaks immediately on está muerto, which is as permanent as anything gets. Ask what the sentence is doing, not how long it lasts.",
+          "keywords": ["not permanent", "not temporary", "esta muerto", "wrong rule", "definition"]
+        },
+        {
+          "point": "Some adjectives change meaning with the verb",
+          "reTeach": "es listo clever against está listo ready; es aburrido boring against está aburrido bored; es rico wealthy against está rico delicious.",
+          "keywords": ["change meaning", "listo", "aburrido", "rico", "different meaning"]
+        },
+        {
+          "point": "estar plus a participle states the result of an action",
+          "reTeach": "La puerta está cerrada describes how the door is now, as the outcome of someone having closed it.",
+          "keywords": ["participle", "result", "cerrada", "outcome"]
+        }
+      ]
+    },
+    {
+      "id": "es-presente-irregular",
+      "levelId": "A1",
+      "title": "The irregular present is four families, not a list",
+      "simpleExplanation": "Spanish looks like it has hundreds of irregular verbs in the present tense and it really has four patterns plus a short list of genuine oddities. Three of the patterns change a vowel in the stem when the stress lands on it, and stress lands on the stem in every form except nosotros and vosotros. That is why the changes appear in five forms and vanish in two, and why the paradigm drawn on paper looks like a boot: quiero, quieres, quiere, queremos, queréis, quieren. The three vowel changes are e to ie (querer, empezar, pensar, preferir), o to ue (poder, volver, dormir, encontrar, and jugar doing u to ue), and e to i, which only happens in -ir verbs (pedir, seguir, repetir, servir). The fourth family is different: it is irregular in the yo form only and regular everywhere else, which is why hago, pongo, salgo, traigo, conozco, sé, veo and doy have to be learned individually but only once each. Learning the four families rather than the verbs means a new verb you have never seen tells you what it does the moment you see it conjugated once.",
+      "analogy": "Think of a set of doors with automatic hinges. When the weight of the person falls on the door, it swings; when the weight is elsewhere, it stays flat. The stress is the weight, the stem vowel is the hinge, and nosotros and vosotros are the two people who happen to walk past without touching it. Once you know a door is hinged, you never have to be told again which way it swings.",
+      "rubricPoints": [
+        {
+          "point": "The stem changes only where the stress falls on the stem",
+          "reTeach": "Stress hits the stem in yo, tú, él and ellos, and the ending in nosotros and vosotros, which is exactly where the change disappears.",
+          "keywords": ["stress", "stem", "nosotros", "vosotros", "boot", "shoe"]
+        },
+        {
+          "point": "e becomes ie",
+          "reTeach": "querer, empezar, pensar, entender, preferir: quiero, quieres, quiere, queremos, queréis, quieren.",
+          "keywords": ["e to ie", "querer", "empezar", "pensar", "quiero"]
+        },
+        {
+          "point": "o becomes ue",
+          "reTeach": "poder, volver, dormir, encontrar, costar: puedo, puedes, puede, podemos, podéis, pueden. jugar does u to ue.",
+          "keywords": ["o to ue", "poder", "volver", "dormir", "puedo", "jugar"]
+        },
+        {
+          "point": "e becomes i, and only in -ir verbs",
+          "reTeach": "pedir, seguir, repetir, servir: pido, pides, pide, pedimos, pedís, piden. There is no -ar or -er verb in this family.",
+          "keywords": ["e to i", "pedir", "seguir", "repetir", "-ir only"]
+        },
+        {
+          "point": "A fourth family is irregular in the yo form only",
+          "reTeach": "hacer, poner, salir, traer, conocer, saber, ver, dar: hago, pongo, salgo, traigo, conozco, sé, veo, doy, and then perfectly regular in every other person.",
+          "keywords": ["yo form", "first person", "hago", "pongo", "salgo", "only yo"]
+        }
+      ]
+    },
+    {
+      "id": "es-pronombres-objeto",
+      "levelId": "A2",
+      "title": "Object pronouns: the small hard thing everything depends on",
+      "simpleExplanation": "Spanish has two sets of pronouns for the thing a verb acts on. The direct set replaces what receives the action, me te lo la nos os los las, and the indirect set replaces who it goes to or is done for, me te le nos os les. Most of the two sets are the same word, and they only diverge in the third person, which is where all the difficulty lives. Three rules do almost all the work. First, they go immediately before a conjugated verb, or attach to the end of an infinitive, a gerund or an affirmative order, and with a two-verb structure both positions are equally correct: lo tengo que hacer and tengo que hacerlo. Second, when both appear, the indirect comes first: me lo das. Third, and this is the one that catches everyone, le and les cannot stand next to lo, la, los or las, so they turn into se: se lo doy, never le lo doy. On top of that Spanish routinely repeats the indirect object even when the noun is right there, le doy el libro a Ana, which feels redundant to an English speaker and is simply obligatory. This is worth the effort because almost everything later depends on it: the imperative is mostly a lesson about where these pronouns go.",
+      "analogy": "Think of handing a parcel across a counter. The parcel is the direct object and the person you hand it to is the indirect one. Spanish always names the recipient before the parcel, because in real life you turn to the person before you let go of the box. And when the recipient is a stranger rather than you or me, Spanish swaps their label for a neutral one, se, so two similar-sounding labels never end up stuck together.",
+      "rubricPoints": [
+        {
+          "point": "Direct and indirect are different sets that only diverge in the third person",
+          "reTeach": "Direct: me te lo la nos os los las. Indirect: me te le nos os les. The first and second person forms are identical, so all the difficulty is lo/la against le.",
+          "keywords": ["direct", "indirect", "third person", "lo", "le", "two sets"]
+        },
+        {
+          "point": "They go before a conjugated verb or attach to an infinitive, gerund or affirmative order",
+          "reTeach": "Lo veo. Quiero verlo. Estoy viéndolo. Míralo. With a periphrasis both are correct: lo tengo que hacer, tengo que hacerlo.",
+          "keywords": ["before", "attach", "infinitive", "gerund", "imperative", "position"]
+        },
+        {
+          "point": "Indirect comes before direct",
+          "reTeach": "Me lo das, te la mando, nos los enseña. The order never varies.",
+          "keywords": ["order", "indirect first", "me lo", "te la"]
+        },
+        {
+          "point": "le and les become se before lo, la, los, las",
+          "reTeach": "Le doy el libro becomes se lo doy. There is no such thing as le lo in Spanish.",
+          "keywords": ["se", "le becomes se", "se lo", "never le lo"]
+        },
+        {
+          "point": "Spanish repeats the indirect object even when the noun is present",
+          "reTeach": "Le doy el libro a Ana. The pronoun and the noun both appear, and leaving the pronoun out sounds wrong even though English has no equivalent.",
+          "keywords": ["repeat", "redundant", "doubling", "a Ana", "obligatory"]
+        }
+      ]
+    },
+    {
+      "id": "es-pasados",
+      "levelId": "A2",
+      "title": "Three past tenses, one decision procedure",
+      "simpleExplanation": "Spanish has three ordinary ways of talking about the past and English collapses most of them into one, so the work is not learning the forms but learning to choose. The pretérito perfecto, he hablado, puts an event inside a stretch of time that reaches the present moment: hoy, esta semana, este año, ya, todavía no, alguna vez, nunca. The pretérito indefinido, hablé, puts an event in a period that is closed: ayer, anoche, el año pasado, en 2019, hace dos años. Notice that the difference is not how long ago it happened but whether the container of time is still open. The pretérito imperfecto, hablaba, does something else entirely: instead of reporting an event it describes, so it carries background, habit, age, weather, the time of day and what things were like, with no endpoint in view. In a real story the imperfecto paints the set and the indefinido moves the plot, which is why llovía cuando salí has one of each. One honest complication: most of Latin America uses the indefinido where Spain uses the perfecto, so hoy comí is entirely normal there. This course teaches the peninsular pattern, and the American one is a difference, not a mistake.",
+      "analogy": "Think of a photograph album. The imperfecto is the wide shot of the place, the weather and the people standing around, with no particular moment attached. The indefinido is the individual snapshot, one click, done. And the perfecto is the picture still on the camera roll from this trip, the trip you have not come home from yet: the same kind of click, but inside a period that has not been closed and filed away.",
+      "rubricPoints": [
+        {
+          "point": "The perfecto is for a time period that reaches the present",
+          "reTeach": "hoy, esta mañana, esta semana, este año, ya, todavía no, alguna vez, nunca: he hablado, he estado, he comido.",
+          "keywords": ["perfecto", "he hablado", "hoy", "ya", "nunca", "reaches now", "open"]
+        },
+        {
+          "point": "The indefinido is for a closed period",
+          "reTeach": "ayer, anoche, el año pasado, en 2019, hace dos años: hablé, estuve, comí.",
+          "keywords": ["indefinido", "hable", "ayer", "closed", "finished", "el ano pasado"]
+        },
+        {
+          "point": "The difference is whether the container of time is open, not how long ago",
+          "reTeach": "Something five minutes ago takes the indefinido if you frame it as anoche or hace un rato, and something months back takes the perfecto if you frame it as este año.",
+          "keywords": ["container", "open", "closed", "not how long", "marker decides"]
+        },
+        {
+          "point": "The imperfecto describes rather than reports",
+          "reTeach": "Background, habit, age, weather, the time, what things were like: era alta, tenía un coche rojo, hacía frío, eran las cinco, iba todos los días.",
+          "keywords": ["imperfecto", "hablaba", "description", "habit", "background", "era", "no endpoint"]
+        },
+        {
+          "point": "In a story the imperfecto is the set and the indefinido is the plot",
+          "reTeach": "Llovía cuando salí: the rain is the scenery, going out is the event. A whole narrative alternates between the two.",
+          "keywords": ["story", "narrative", "background", "event", "llovia", "sali"]
+        },
+        {
+          "point": "Latin America prefers the indefinido where Spain uses the perfecto",
+          "reTeach": "hoy comí is normal across most of America and hoy he comido is the peninsular form. This course teaches the peninsular one; the other is a variety, not an error.",
+          "keywords": ["Latin America", "variety", "hoy comi", "peninsular", "not an error"]
+        }
+      ]
+    },
+    {
+      "id": "es-imperativo",
+      "levelId": "A2",
+      "title": "Giving orders, and the pronoun that moves",
+      "simpleExplanation": "Telling someone to do something in Spanish is four forms, not one, because Spain distinguishes tú, vosotros, usted and ustedes. The tú form is the same as the third person of the present, habla, come, escribe, with eight short irregulars to memorise: di, haz, pon, sal, ten, ven, sé, ve. The vosotros form is the infinitive with its final r turned into a d, hablad, comed, escribid, and it exists only in Spain. The usted and ustedes forms, and every negative order at every person, come from a different place entirely, the present subjunctive, which is why hable and no hables look nothing like habla. That is worth noticing now even though the subjunctive itself comes later, because it means half the imperative is already a subjunctive lesson. The part that actually takes practice is the pronouns. On an affirmative order they attach to the end and often force a written accent so the stress does not move: compra becomes cómpralo, and dame becomes dámelo. On a negative order they jump back in front of the verb: no me lo digas. Same sentence, same pronouns, opposite side, and the switch is entirely mechanical once you have seen it.",
+      "analogy": "Think of a magnet and a piece of metal. When the order is positive the magnet is switched on and the pronouns snap onto the back of the verb. Add the word no and the polarity flips, so the same pronouns fly round to the front. Nothing about the pronouns changed; only which end of the verb is attracting them.",
+      "rubricPoints": [
+        {
+          "point": "The affirmative tú order is the third person of the present",
+          "reTeach": "habla, come, escribe. Eight irregulars have to be learned: di, haz, pon, sal, ten, ven, sé, ve.",
+          "keywords": ["tu", "third person", "habla", "irregular", "di", "haz", "pon", "sal"]
+        },
+        {
+          "point": "The vosotros order is the infinitive with r becoming d",
+          "reTeach": "hablar becomes hablad, comer becomes comed, escribir becomes escribid. It has no irregulars and it exists only in Spain.",
+          "keywords": ["vosotros", "infinitive", "d", "hablad", "Spain only"]
+        },
+        {
+          "point": "usted, ustedes and every negative order use the subjunctive",
+          "reTeach": "hable, hablen, no hables, no habléis, no hable, no hablen. That is why the negative looks nothing like the affirmative tú form.",
+          "keywords": ["usted", "ustedes", "negative", "subjunctive", "no hables"]
+        },
+        {
+          "point": "Pronouns attach to an affirmative order and precede a negative one",
+          "reTeach": "dímelo against no me lo digas; cómpralo against no lo compres. The pronouns are identical, only the side changes.",
+          "keywords": ["attach", "before", "dimelo", "no me lo digas", "position", "flip"]
+        },
+        {
+          "point": "Attaching a pronoun often adds a written accent",
+          "reTeach": "compra has no accent, but cómpralo does, because the stress has to stay on the same syllable while the word gets longer.",
+          "keywords": ["accent", "compralo", "stress stays", "longer word"]
+        }
+      ]
+    },
+    {
+      "id": "es-subjuntivo",
+      "levelId": "B1",
+      "title": "The subjunctive: a form for what is not being asserted",
+      "simpleExplanation": "The subjunctive frightens learners because it gets taught as a mood with a philosophy. It is easier as a trigger system with one idea underneath. Spanish uses the indicative to assert that something is the case, and the subjunctive when the second clause is not being asserted: it is wanted, asked for, doubted, denied, reacted to, evaluated, or still to come. Quiero que vengas does not claim that you are coming, it wants it. No creo que sea does not claim anything about what it is. Es importante que estudies evaluates rather than reports. Cuando llegues points at a moment that has not happened. Compare each with its indicative twin and the difference is always assertion: creo que es against no creo que sea. Building it is mechanical: take the yo form of the present, drop the o, and add the endings of the other conjugation, so hablo becomes hable and como becomes coma. Six verbs are genuinely irregular, sea, esté, vaya, dé, sepa, haya. One condition applies throughout: the two clauses need different subjects, because with the same subject Spanish uses an infinitive instead. Quiero ir, never quiero que yo vaya. And one boundary matters for this course: only the present subjunctive belongs at B1. The imperfect subjunctive, and the si tuviera dinero, viajaría pattern that depends on it, sit at the level above.",
+      "analogy": "Think of two kinds of sentence as two kinds of camera shot. The indicative is a documentary: it points at something and says this is what is there. The subjunctive is a storyboard: it draws what someone wants, fears, doubts or is waiting for, and nobody is claiming the drawing is a photograph. Both are legitimate pictures, and the grammar just marks which kind you are holding.",
+      "rubricPoints": [
+        {
+          "point": "The subjunctive appears where the second clause is not being asserted",
+          "reTeach": "Wanted, asked for, doubted, denied, evaluated or still to come. Compare creo que es, an assertion, with no creo que sea, which asserts nothing about what it is.",
+          "keywords": ["assert", "not asserted", "wanted", "doubted", "evaluated", "trigger"]
+        },
+        {
+          "point": "It is formed from the yo form with the opposite vowel",
+          "reTeach": "hablo becomes hable, como becomes coma, salgo becomes salga. Any irregularity in the yo form is inherited by the whole subjunctive.",
+          "keywords": ["yo form", "opposite vowel", "hable", "coma", "salga", "formation"]
+        },
+        {
+          "point": "Six verbs are genuinely irregular",
+          "reTeach": "ser, estar, ir, dar, saber, haber: sea, esté, vaya, dé, sepa, haya.",
+          "keywords": ["irregular", "sea", "este", "vaya", "sepa", "haya", "six"]
+        },
+        {
+          "point": "The two clauses must have different subjects",
+          "reTeach": "Quiero que vengas has two subjects, so it takes que plus subjunctive. With one subject Spanish uses an infinitive: quiero ir, not quiero que yo vaya.",
+          "keywords": ["different subject", "two subjects", "infinitive", "quiero ir", "same subject"]
+        },
+        {
+          "point": "It covers wanting, emotion, value, doubt, purpose and future time",
+          "reTeach": "quiero que vengas, me alegro de que estés, es importante que estudies, dudo que venga, para que lo uses, cuando llegues.",
+          "keywords": ["wanting", "emotion", "value", "doubt", "purpose", "cuando", "para que"]
+        },
+        {
+          "point": "Only the present subjunctive belongs at B1",
+          "reTeach": "The imperfect subjunctive and the si tuviera dinero, viajaría pattern that needs it are the next level up. At B1 a condition with si takes the present indicative: si tengo tiempo, voy.",
+          "keywords": ["present only", "B1", "imperfect subjunctive", "si tuviera", "next level", "si tengo"]
+        }
+      ]
+    },
+    {
+      "id": "es-por-para",
+      "levelId": "B1",
+      "title": "por and para: backwards and forwards",
+      "simpleExplanation": "Both translate as for often enough that learners try to memorise a list of twenty uses, and the list is real but it hangs on one contrast: para looks forwards to a destination and por looks backwards to a cause, or sideways to a route. para covers where something is going (salgo para Madrid), what it is for (es para ti), what it is aimed at achieving (estudio para aprobar), by when (para el lunes) and whose opinion it is (para mí, es fácil). por covers why something happened (lo hago por ti), what was exchanged (pagué diez euros por el libro), how long (estuve allí por dos meses), which way through (paso por tu casa) and by what means (por correo). The pair that makes the whole thing click is trabajo para ella, meaning she is my employer and my work goes to her, against trabajo por ella, meaning I am covering her shift and she is the reason I am here. Same two words, opposite direction of travel.",
+      "analogy": "Imagine an arrow lying on a map. para is the head of the arrow, pointing at where it is going and what it is for. por is the tail and the line, showing where it came from, what it passed through and what pushed it. When you are unsure which preposition you want, find the arrow in the sentence and ask whether you are describing its point or its path.",
+      "rubricPoints": [
+        {
+          "point": "para points forwards to a destination or purpose",
+          "reTeach": "Salgo para Madrid, es para ti, estudio para aprobar, para el lunes. Destination, recipient, aim, deadline.",
+          "keywords": ["para", "destination", "purpose", "forwards", "recipient", "deadline"]
+        },
+        {
+          "point": "por points backwards to a cause, or sideways to a route",
+          "reTeach": "Lo hago por ti, gracias por la ayuda, paso por tu casa, por correo. Cause, exchange, route, means.",
+          "keywords": ["por", "cause", "reason", "route", "exchange", "means", "backwards"]
+        },
+        {
+          "point": "para expresses an opinion holder",
+          "reTeach": "Para mí, es fácil. The judgement is being attributed to a person rather than stated flatly.",
+          "keywords": ["opinion", "para mi", "in my view"]
+        },
+        {
+          "point": "por expresses duration and price",
+          "reTeach": "Pagué diez euros por el libro; estuve allí por dos meses. What was given up, and how long it went on.",
+          "keywords": ["price", "duration", "pague", "exchange", "how long"]
+        },
+        {
+          "point": "trabajo para ella and trabajo por ella mean different things",
+          "reTeach": "para ella means she is my employer and my work goes to her; por ella means I am standing in for her, and she is the reason I am here.",
+          "keywords": ["trabajo para", "trabajo por", "employer", "instead of", "on behalf"]
+        }
+      ]
+    }
+  ]
+}

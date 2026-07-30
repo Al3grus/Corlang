@@ -1,0 +1,1619 @@
+{
+ "packs": [
+  {
+   "id": "es-a2-connectors-time",
+   "title": "Time, connectors, adverbs and quantifiers",
+   "level": "A2",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "anoche",
+     "hr": "anoche",
+     "en": "last night",
+     "pos": "adv.",
+     "example": {
+      "target": "Anoche cené con mis padres.",
+      "gloss": "Last night I had dinner with my parents."
+     }
+    },
+    {
+     "id": "anteayer",
+     "hr": "anteayer",
+     "en": "the day before yesterday",
+     "pos": "adv.",
+     "example": {
+      "target": "Anteayer llovió mucho en Madrid.",
+      "gloss": "The day before yesterday it rained a lot in Madrid."
+     }
+    },
+    {
+     "id": "entonces",
+     "hr": "entonces",
+     "en": "then, at that time",
+     "pos": "adv.",
+     "note": "also used as a discourse connector meaning 'so, in that case'",
+     "example": {
+      "target": "Entonces vivíamos en Sevilla.",
+      "gloss": "Back then we lived in Seville."
+     }
+    },
+    {
+     "id": "luego",
+     "hr": "luego",
+     "en": "then, afterwards",
+     "pos": "adv.",
+     "example": {
+      "target": "Primero desayuno y luego salgo de casa.",
+      "gloss": "First I have breakfast and then I leave home."
+     }
+    },
+    {
+     "id": "después",
+     "hr": "después",
+     "en": "afterwards, later",
+     "pos": "adv.",
+     "note": "'después de' plus a noun or infinitive means after",
+     "example": {
+      "target": "Después fuimos al cine.",
+      "gloss": "Afterwards we went to the cinema."
+     }
+    },
+    {
+     "id": "antes",
+     "hr": "antes",
+     "en": "before, earlier",
+     "pos": "adv.",
+     "note": "'antes de' plus a noun or infinitive means before",
+     "example": {
+      "target": "Antes vivía en Bilbao.",
+      "gloss": "Before, I used to live in Bilbao."
+     }
+    },
+    {
+     "id": "mientras",
+     "hr": "mientras",
+     "en": "while",
+     "pos": "conj.",
+     "example": {
+      "target": "Mientras tú cocinabas, yo ponía la mesa.",
+      "gloss": "While you were cooking, I was setting the table."
+     }
+    },
+    {
+     "id": "ya",
+     "hr": "ya",
+     "en": "already, now",
+     "pos": "adv.",
+     "example": {
+      "target": "Ya he terminado los deberes.",
+      "gloss": "I have already finished my homework."
+     }
+    },
+    {
+     "id": "todavía",
+     "hr": "todavía",
+     "en": "still, yet",
+     "pos": "adv.",
+     "example": {
+      "target": "Todavía vivo con mis padres.",
+      "gloss": "I still live with my parents."
+     }
+    },
+    {
+     "id": "aún",
+     "hr": "aún",
+     "en": "still, yet",
+     "pos": "adv.",
+     "note": "same meaning as 'todavía'; keep the accent to tell it apart from 'aun' (even)",
+     "example": {
+      "target": "Aún no ha llegado el autobús.",
+      "gloss": "The bus still hasn't arrived."
+     }
+    },
+    {
+     "id": "recién",
+     "hr": "recién",
+     "en": "just, recently",
+     "pos": "adv.",
+     "note": "used before a past participle: 'recién casados', 'recién llegado'",
+     "example": {
+      "target": "Son un matrimonio recién casado.",
+      "gloss": "They are a newly married couple."
+     }
+    },
+    {
+     "id": "hace",
+     "hr": "hace",
+     "en": "ago",
+     "pos": "expr.",
+     "note": "'hace' plus a period of time means ago: 'hace dos años' = two years ago. With 'que' it marks an action still going on: 'Hace dos años que vivo aquí.'",
+     "example": {
+      "target": "Llegué a España hace dos años.",
+      "gloss": "I arrived in Spain two years ago."
+     }
+    },
+    {
+     "id": "desde",
+     "hr": "desde",
+     "en": "since, from",
+     "pos": "prep.",
+     "example": {
+      "target": "Vivo en esta ciudad desde el año pasado.",
+      "gloss": "I have lived in this city since last year."
+     }
+    },
+    {
+     "id": "desde hace",
+     "hr": "desde hace",
+     "en": "for (a duration, up to now)",
+     "pos": "expr.",
+     "note": "'desde hace' plus a duration: 'vivo aquí desde hace dos años' = I have lived here for two years",
+     "example": {
+      "target": "Estudio español desde hace seis meses.",
+      "gloss": "I have been studying Spanish for six months."
+     }
+    },
+    {
+     "id": "durante",
+     "hr": "durante",
+     "en": "during, for",
+     "pos": "prep.",
+     "example": {
+      "target": "Estuvimos en Francia durante dos semanas.",
+      "gloss": "We were in France for two weeks."
+     }
+    },
+    {
+     "id": "hasta",
+     "hr": "hasta",
+     "en": "until",
+     "pos": "prep.",
+     "example": {
+      "target": "Trabajé hasta las nueve de la noche.",
+      "gloss": "I worked until nine at night."
+     }
+    },
+    {
+     "id": "al principio",
+     "hr": "al principio",
+     "en": "at first, in the beginning",
+     "pos": "expr.",
+     "example": {
+      "target": "Al principio no entendía nada.",
+      "gloss": "At first I didn't understand anything."
+     }
+    },
+    {
+     "id": "al final",
+     "hr": "al final",
+     "en": "in the end, finally",
+     "pos": "expr.",
+     "example": {
+      "target": "Al final decidimos quedarnos en casa.",
+      "gloss": "In the end we decided to stay home."
+     }
+    },
+    {
+     "id": "de repente",
+     "hr": "de repente",
+     "en": "suddenly",
+     "pos": "expr.",
+     "example": {
+      "target": "De repente empezó a llover.",
+      "gloss": "Suddenly it started to rain."
+     }
+    },
+    {
+     "id": "enseguida",
+     "hr": "enseguida",
+     "en": "right away, immediately",
+     "pos": "adv.",
+     "example": {
+      "target": "Voy enseguida.",
+      "gloss": "I'm coming right away."
+     }
+    },
+    {
+     "id": "por fin",
+     "hr": "por fin",
+     "en": "finally, at last",
+     "pos": "expr.",
+     "example": {
+      "target": "Por fin hemos terminado el examen.",
+      "gloss": "We have finally finished the exam."
+     }
+    },
+    {
+     "id": "mientras tanto",
+     "hr": "mientras tanto",
+     "en": "meanwhile",
+     "pos": "expr.",
+     "example": {
+      "target": "Yo hacía la comida, mientras tanto tú limpiabas la cocina.",
+      "gloss": "I was making lunch, meanwhile you were cleaning the kitchen."
+     }
+    },
+    {
+     "id": "a menudo",
+     "hr": "a menudo",
+     "en": "often",
+     "pos": "expr.",
+     "example": {
+      "target": "Voy a menudo al mercado del barrio.",
+      "gloss": "I often go to the neighbourhood market."
+     }
+    },
+    {
+     "id": "a veces",
+     "hr": "a veces",
+     "en": "sometimes",
+     "pos": "expr.",
+     "example": {
+      "target": "A veces como sola en casa.",
+      "gloss": "Sometimes I eat alone at home."
+     }
+    },
+    {
+     "id": "casi nunca",
+     "hr": "casi nunca",
+     "en": "hardly ever, almost never",
+     "pos": "expr.",
+     "example": {
+      "target": "Casi nunca salgo entre semana.",
+      "gloss": "I hardly ever go out on weekdays."
+     }
+    },
+    {
+     "id": "casi siempre",
+     "hr": "casi siempre",
+     "en": "almost always",
+     "pos": "expr.",
+     "example": {
+      "target": "Casi siempre me levanto temprano.",
+      "gloss": "I almost always get up early."
+     }
+    },
+    {
+     "id": "cada día",
+     "hr": "cada día",
+     "en": "every day",
+     "pos": "expr.",
+     "example": {
+      "target": "Cada día tomo un café por la mañana.",
+      "gloss": "Every day I have a coffee in the morning."
+     }
+    },
+    {
+     "id": "una vez",
+     "hr": "una vez",
+     "en": "once",
+     "pos": "expr.",
+     "example": {
+      "target": "Fui a Portugal una vez.",
+      "gloss": "I went to Portugal once."
+     }
+    },
+    {
+     "id": "dos veces",
+     "hr": "dos veces",
+     "en": "twice",
+     "pos": "expr.",
+     "example": {
+      "target": "He visto esa película dos veces.",
+      "gloss": "I have seen that film twice."
+     }
+    },
+    {
+     "id": "otra vez",
+     "hr": "otra vez",
+     "en": "again",
+     "pos": "expr.",
+     "example": {
+      "target": "Se me ha olvidado el paraguas otra vez.",
+      "gloss": "I've forgotten my umbrella again."
+     }
+    },
+    {
+     "id": "por primera vez",
+     "hr": "por primera vez",
+     "en": "for the first time",
+     "pos": "expr.",
+     "example": {
+      "target": "Visité Barcelona por primera vez el año pasado.",
+      "gloss": "I visited Barcelona for the first time last year."
+     }
+    },
+    {
+     "id": "últimamente",
+     "hr": "últimamente",
+     "en": "lately",
+     "pos": "adv.",
+     "example": {
+      "target": "Últimamente estoy muy cansada.",
+      "gloss": "Lately I've been very tired."
+     }
+    },
+    {
+     "id": "actualmente",
+     "hr": "actualmente",
+     "en": "currently, nowadays",
+     "pos": "adv.",
+     "note": "false friend: it does not mean 'actually'",
+     "example": {
+      "target": "Actualmente vivo en un piso pequeño.",
+      "gloss": "Currently I live in a small flat."
+     }
+    },
+    {
+     "id": "antiguamente",
+     "hr": "antiguamente",
+     "en": "in the old days, formerly",
+     "pos": "adv.",
+     "example": {
+      "target": "Antiguamente la gente escribía cartas.",
+      "gloss": "In the old days people used to write letters."
+     }
+    },
+    {
+     "id": "pronto",
+     "hr": "pronto",
+     "en": "soon",
+     "pos": "adv.",
+     "example": {
+      "target": "Vamos a comer pronto.",
+      "gloss": "We are going to eat soon."
+     }
+    },
+    {
+     "id": "hoy en día",
+     "hr": "hoy en día",
+     "en": "nowadays",
+     "pos": "expr.",
+     "example": {
+      "target": "Hoy en día todo el mundo tiene móvil.",
+      "gloss": "Nowadays everyone has a mobile phone."
+     }
+    },
+    {
+     "id": "más tarde",
+     "hr": "más tarde",
+     "en": "later",
+     "pos": "expr.",
+     "example": {
+      "target": "Nos vemos más tarde.",
+      "gloss": "See you later."
+     }
+    },
+    {
+     "id": "de vez en cuando",
+     "hr": "de vez en cuando",
+     "en": "from time to time",
+     "pos": "expr.",
+     "example": {
+      "target": "De vez en cuando cenamos fuera.",
+      "gloss": "From time to time we have dinner out."
+     }
+    },
+    {
+     "id": "ahora mismo",
+     "hr": "ahora mismo",
+     "en": "right now",
+     "pos": "expr.",
+     "example": {
+      "target": "Ahora mismo estoy estudiando.",
+      "gloss": "Right now I am studying."
+     }
+    },
+    {
+     "id": "por ahora",
+     "hr": "por ahora",
+     "en": "for now",
+     "pos": "expr.",
+     "example": {
+      "target": "Por ahora todo va bien.",
+      "gloss": "For now everything is going well."
+     }
+    },
+    {
+     "id": "cuanto antes",
+     "hr": "cuanto antes",
+     "en": "as soon as possible",
+     "pos": "expr.",
+     "example": {
+      "target": "Necesito la respuesta cuanto antes.",
+      "gloss": "I need the answer as soon as possible."
+     }
+    },
+    {
+     "id": "en cuanto",
+     "hr": "en cuanto",
+     "en": "as soon as",
+     "pos": "conj.",
+     "note": "at higher levels this takes the subjunctive for future actions ('en cuanto llegue'); at A2 use it only with the indicative for habitual or past actions",
+     "example": {
+      "target": "En cuanto llego a casa, me quito los zapatos.",
+      "gloss": "As soon as I get home, I take off my shoes."
+     }
+    },
+    {
+     "id": "a partir de",
+     "hr": "a partir de",
+     "en": "from, starting from",
+     "pos": "prep.",
+     "example": {
+      "target": "La tienda abre a partir de las diez.",
+      "gloss": "The shop opens from ten o'clock."
+     }
+    },
+    {
+     "id": "a lo largo de",
+     "hr": "a lo largo de",
+     "en": "throughout, over the course of",
+     "pos": "prep.",
+     "example": {
+      "target": "A lo largo del año he aprendido mucho español.",
+      "gloss": "Throughout the year I have learned a lot of Spanish."
+     }
+    },
+    {
+     "id": "primero",
+     "hr": "primero",
+     "en": "first",
+     "pos": "adv.",
+     "example": {
+      "target": "Primero me ducho y después desayuno.",
+      "gloss": "First I shower and then I have breakfast."
+     }
+    },
+    {
+     "id": "segundo",
+     "hr": "segundo",
+     "en": "second, secondly",
+     "pos": "adv.",
+     "note": "used here as a sequencing adverb, not only as the ordinal adjective",
+     "example": {
+      "target": "Primero, pedimos la cuenta. Segundo, salimos del restaurante.",
+      "gloss": "First, we ask for the bill. Second, we leave the restaurant."
+     }
+    },
+    {
+     "id": "además",
+     "hr": "además",
+     "en": "besides, moreover",
+     "pos": "adv.",
+     "example": {
+      "target": "El piso es bonito y además está cerca del centro.",
+      "gloss": "The flat is nice and besides, it's close to the centre."
+     }
+    },
+    {
+     "id": "sin embargo",
+     "hr": "sin embargo",
+     "en": "however",
+     "pos": "expr.",
+     "example": {
+      "target": "Hace frío, sin embargo no llevo abrigo.",
+      "gloss": "It's cold, however I'm not wearing a coat."
+     }
+    },
+    {
+     "id": "no obstante",
+     "hr": "no obstante",
+     "en": "nevertheless",
+     "pos": "expr.",
+     "note": "more formal or written than 'sin embargo'",
+     "example": {
+      "target": "El examen fue difícil, no obstante aprobé.",
+      "gloss": "The exam was difficult, nevertheless I passed."
+     }
+    },
+    {
+     "id": "aunque",
+     "hr": "aunque",
+     "en": "although, even though",
+     "pos": "conj.",
+     "note": "at A2 'aunque' takes the indicative when the fact is known or real; the subjunctive use belongs to a higher level",
+     "example": {
+      "target": "Aunque llueve, salgo a pasear.",
+      "gloss": "Although it's raining, I'm going out for a walk."
+     }
+    },
+    {
+     "id": "sino",
+     "hr": "sino",
+     "en": "but rather",
+     "pos": "conj.",
+     "note": "used after a negative to contrast, not 'pero': 'no es rojo, sino azul'",
+     "example": {
+      "target": "No quiero café, sino té.",
+      "gloss": "I don't want coffee, but rather tea."
+     }
+    },
+    {
+     "id": "es decir",
+     "hr": "es decir",
+     "en": "that is, in other words",
+     "pos": "expr.",
+     "example": {
+      "target": "Llego tarde, es decir, después de las nueve.",
+      "gloss": "I'll arrive late, that is, after nine."
+     }
+    },
+    {
+     "id": "o sea",
+     "hr": "o sea",
+     "en": "in other words",
+     "pos": "expr.",
+     "note": "more colloquial than 'es decir'",
+     "example": {
+      "target": "No tengo coche, o sea que voy en autobús.",
+      "gloss": "I don't have a car, in other words I go by bus."
+     }
+    },
+    {
+     "id": "por ejemplo",
+     "hr": "por ejemplo",
+     "en": "for example",
+     "pos": "expr.",
+     "example": {
+      "target": "Me gustan las frutas, por ejemplo las fresas.",
+      "gloss": "I like fruit, for example strawberries."
+     }
+    },
+    {
+     "id": "en cambio",
+     "hr": "en cambio",
+     "en": "on the other hand, whereas",
+     "pos": "expr.",
+     "example": {
+      "target": "A mí me gusta el té, en cambio a mi hermana le gusta el café.",
+      "gloss": "I like tea, whereas my sister likes coffee."
+     }
+    },
+    {
+     "id": "por otro lado",
+     "hr": "por otro lado",
+     "en": "on the other hand",
+     "pos": "expr.",
+     "example": {
+      "target": "Por otro lado, también podemos ir en tren.",
+      "gloss": "On the other hand, we could also go by train."
+     }
+    },
+    {
+     "id": "por un lado",
+     "hr": "por un lado",
+     "en": "on the one hand",
+     "pos": "expr.",
+     "example": {
+      "target": "Por un lado, el piso es barato.",
+      "gloss": "On the one hand, the flat is cheap."
+     }
+    },
+    {
+     "id": "por eso",
+     "hr": "por eso",
+     "en": "that's why, so",
+     "pos": "expr.",
+     "example": {
+      "target": "Estaba cansada, por eso me acosté pronto.",
+      "gloss": "I was tired, that's why I went to bed early."
+     }
+    },
+    {
+     "id": "así que",
+     "hr": "así que",
+     "en": "so, therefore",
+     "pos": "conj.",
+     "example": {
+      "target": "No tenía dinero, así que no compré nada.",
+      "gloss": "I didn't have money, so I didn't buy anything."
+     }
+    },
+    {
+     "id": "por lo tanto",
+     "hr": "por lo tanto",
+     "en": "therefore",
+     "pos": "expr.",
+     "note": "more formal than 'así que'",
+     "example": {
+      "target": "No estudié, por lo tanto suspendí el examen.",
+      "gloss": "I didn't study, therefore I failed the exam."
+     }
+    },
+    {
+     "id": "en resumen",
+     "hr": "en resumen",
+     "en": "in short, to summarise",
+     "pos": "expr.",
+     "example": {
+      "target": "En resumen, el viaje fue estupendo.",
+      "gloss": "In short, the trip was wonderful."
+     }
+    },
+    {
+     "id": "sobre todo",
+     "hr": "sobre todo",
+     "en": "above all, especially",
+     "pos": "expr.",
+     "example": {
+      "target": "Me gusta la fruta, sobre todo las manzanas.",
+      "gloss": "I like fruit, especially apples."
+     }
+    },
+    {
+     "id": "al menos",
+     "hr": "al menos",
+     "en": "at least",
+     "pos": "expr.",
+     "example": {
+      "target": "Al menos hoy no llueve.",
+      "gloss": "At least it's not raining today."
+     }
+    },
+    {
+     "id": "por suerte",
+     "hr": "por suerte",
+     "en": "luckily",
+     "pos": "expr.",
+     "example": {
+      "target": "Por suerte encontré las llaves.",
+      "gloss": "Luckily I found the keys."
+     }
+    },
+    {
+     "id": "por desgracia",
+     "hr": "por desgracia",
+     "en": "unfortunately",
+     "pos": "expr.",
+     "example": {
+      "target": "Por desgracia perdimos el partido.",
+      "gloss": "Unfortunately we lost the match."
+     }
+    },
+    {
+     "id": "menos mal",
+     "hr": "menos mal",
+     "en": "thank goodness, it's a good thing that",
+     "pos": "expr.",
+     "example": {
+      "target": "Menos mal que llevaba paraguas.",
+      "gloss": "Thank goodness I was carrying an umbrella."
+     }
+    },
+    {
+     "id": "la verdad es que",
+     "hr": "la verdad es que",
+     "en": "the truth is that",
+     "pos": "expr.",
+     "example": {
+      "target": "La verdad es que no me gusta madrugar.",
+      "gloss": "The truth is that I don't like getting up early."
+     }
+    },
+    {
+     "id": "de hecho",
+     "hr": "de hecho",
+     "en": "in fact, actually",
+     "pos": "expr.",
+     "example": {
+      "target": "De hecho, ya he estado en esa ciudad.",
+      "gloss": "In fact, I have already been to that city."
+     }
+    },
+    {
+     "id": "en todo caso",
+     "hr": "en todo caso",
+     "en": "in any case",
+     "pos": "expr.",
+     "example": {
+      "target": "En todo caso, te llamo esta tarde.",
+      "gloss": "In any case, I'll call you this afternoon."
+     }
+    },
+    {
+     "id": "al fin y al cabo",
+     "hr": "al fin y al cabo",
+     "en": "after all, when all is said and done",
+     "pos": "expr.",
+     "example": {
+      "target": "Al fin y al cabo, somos amigos.",
+      "gloss": "After all, we are friends."
+     }
+    },
+    {
+     "id": "por último",
+     "hr": "por último",
+     "en": "lastly, finally",
+     "pos": "adv.",
+     "note": "used to close a list; distinct from the adjective 'último' (last)",
+     "example": {
+      "target": "Por último, quiero dar las gracias a todos.",
+      "gloss": "Lastly, I want to thank everyone."
+     }
+    },
+    {
+     "id": "a continuación",
+     "hr": "a continuación",
+     "en": "next, following this",
+     "pos": "expr.",
+     "example": {
+      "target": "A continuación vamos a ver un vídeo.",
+      "gloss": "Next we are going to watch a video."
+     }
+    },
+    {
+     "id": "por cierto",
+     "hr": "por cierto",
+     "en": "by the way",
+     "pos": "expr.",
+     "example": {
+      "target": "Por cierto, ¿has visto mi móvil?",
+      "gloss": "By the way, have you seen my phone?"
+     }
+    },
+    {
+     "id": "en realidad",
+     "hr": "en realidad",
+     "en": "actually, in reality",
+     "pos": "expr.",
+     "example": {
+      "target": "Parece fácil, pero en realidad es complicado.",
+      "gloss": "It seems easy, but in reality it's complicated."
+     }
+    },
+    {
+     "id": "en general",
+     "hr": "en general",
+     "en": "in general",
+     "pos": "expr.",
+     "example": {
+      "target": "En general, el tiempo aquí es bueno.",
+      "gloss": "In general, the weather here is good."
+     }
+    },
+    {
+     "id": "por lo general",
+     "hr": "por lo general",
+     "en": "generally",
+     "pos": "expr.",
+     "note": "same meaning as 'en general'",
+     "example": {
+      "target": "Por lo general, ceno a las nueve.",
+      "gloss": "Generally, I have dinner at nine."
+     }
+    },
+    {
+     "id": "en particular",
+     "hr": "en particular",
+     "en": "in particular",
+     "pos": "expr.",
+     "example": {
+      "target": "Me gustan los deportes, en particular el tenis.",
+      "gloss": "I like sports, in particular tennis."
+     }
+    },
+    {
+     "id": "en el fondo",
+     "hr": "en el fondo",
+     "en": "deep down",
+     "pos": "expr.",
+     "example": {
+      "target": "En el fondo, sabes que tengo razón.",
+      "gloss": "Deep down, you know I'm right."
+     }
+    },
+    {
+     "id": "así como",
+     "hr": "así como",
+     "en": "as well as",
+     "pos": "conj.",
+     "example": {
+      "target": "Estudio gramática, así como vocabulario.",
+      "gloss": "I study grammar, as well as vocabulary."
+     }
+    },
+    {
+     "id": "en cuanto a",
+     "hr": "en cuanto a",
+     "en": "as for, regarding",
+     "pos": "expr.",
+     "note": "different from 'en cuanto' (as soon as); this one introduces a topic",
+     "example": {
+      "target": "En cuanto a la comida, todo estaba delicioso.",
+      "gloss": "As for the food, everything was delicious."
+     }
+    },
+    {
+     "id": "así",
+     "hr": "así",
+     "en": "like this, this way",
+     "pos": "adv.",
+     "example": {
+      "target": "Hazlo así, es más fácil.",
+      "gloss": "Do it this way, it's easier."
+     }
+    },
+    {
+     "id": "bien",
+     "hr": "bien",
+     "en": "well",
+     "pos": "adv.",
+     "example": {
+      "target": "Hablas muy bien español.",
+      "gloss": "You speak Spanish very well."
+     }
+    },
+    {
+     "id": "mal",
+     "hr": "mal",
+     "en": "badly",
+     "pos": "adv.",
+     "example": {
+      "target": "Duermo mal cuando hace calor.",
+      "gloss": "I sleep badly when it's hot."
+     }
+    },
+    {
+     "id": "mejor",
+     "hr": "mejor",
+     "en": "better",
+     "pos": "adv.",
+     "example": {
+      "target": "Ahora entiendo mejor la gramática.",
+      "gloss": "Now I understand the grammar better."
+     }
+    },
+    {
+     "id": "peor",
+     "hr": "peor",
+     "en": "worse",
+     "pos": "adv.",
+     "example": {
+      "target": "Hoy me encuentro peor que ayer.",
+      "gloss": "Today I feel worse than yesterday."
+     }
+    },
+    {
+     "id": "despacio",
+     "hr": "despacio",
+     "en": "slowly",
+     "pos": "adv.",
+     "example": {
+      "target": "Habla despacio, por favor.",
+      "gloss": "Speak slowly, please."
+     }
+    },
+    {
+     "id": "deprisa",
+     "hr": "deprisa",
+     "en": "quickly, in a hurry",
+     "pos": "adv.",
+     "example": {
+      "target": "Comimos deprisa porque llegábamos tarde.",
+      "gloss": "We ate quickly because we were arriving late."
+     }
+    },
+    {
+     "id": "rápidamente",
+     "hr": "rápidamente",
+     "en": "quickly",
+     "pos": "adv.",
+     "example": {
+      "target": "Terminó los deberes rápidamente.",
+      "gloss": "He finished his homework quickly."
+     }
+    },
+    {
+     "id": "fácilmente",
+     "hr": "fácilmente",
+     "en": "easily",
+     "pos": "adv.",
+     "example": {
+      "target": "Se aprende fácilmente con práctica.",
+      "gloss": "It's learned easily with practice."
+     }
+    },
+    {
+     "id": "difícilmente",
+     "hr": "difícilmente",
+     "en": "hardly, with difficulty",
+     "pos": "adv.",
+     "example": {
+      "target": "Difícilmente vamos a llegar a tiempo.",
+      "gloss": "We are hardly going to arrive on time."
+     }
+    },
+    {
+     "id": "completamente",
+     "hr": "completamente",
+     "en": "completely",
+     "pos": "adv.",
+     "example": {
+      "target": "Estoy completamente de acuerdo contigo.",
+      "gloss": "I completely agree with you."
+     }
+    },
+    {
+     "id": "totalmente",
+     "hr": "totalmente",
+     "en": "totally",
+     "pos": "adv.",
+     "example": {
+      "target": "Es totalmente diferente.",
+      "gloss": "It's totally different."
+     }
+    },
+    {
+     "id": "absolutamente",
+     "hr": "absolutamente",
+     "en": "absolutely",
+     "pos": "adv.",
+     "example": {
+      "target": "No entiendo absolutamente nada.",
+      "gloss": "I don't understand absolutely anything."
+     }
+    },
+    {
+     "id": "seguramente",
+     "hr": "seguramente",
+     "en": "most likely, probably",
+     "pos": "adv.",
+     "example": {
+      "target": "Seguramente llueve mañana.",
+      "gloss": "It will most likely rain tomorrow."
+     }
+    },
+    {
+     "id": "probablemente",
+     "hr": "probablemente",
+     "en": "probably",
+     "pos": "adv.",
+     "example": {
+      "target": "Probablemente llego tarde a la cena.",
+      "gloss": "I'll probably arrive late for dinner."
+     }
+    },
+    {
+     "id": "quizá",
+     "hr": "quizá",
+     "en": "maybe, perhaps",
+     "pos": "adv.",
+     "note": "at A2 'quizá' is followed by the indicative; the subjunctive alternative belongs to a higher level",
+     "example": {
+      "target": "Quizá voy a la fiesta esta noche.",
+      "gloss": "Maybe I'm going to the party tonight."
+     }
+    },
+    {
+     "id": "a lo mejor",
+     "hr": "a lo mejor",
+     "en": "maybe",
+     "pos": "expr.",
+     "note": "always takes the indicative, unlike some other 'maybe' expressions in later levels",
+     "example": {
+      "target": "A lo mejor llueve esta tarde.",
+      "gloss": "Maybe it will rain this afternoon."
+     }
+    },
+    {
+     "id": "tal vez",
+     "hr": "tal vez",
+     "en": "perhaps",
+     "pos": "adv.",
+     "note": "at A2 use with the indicative, as with 'quizá'",
+     "example": {
+      "target": "Tal vez tienes razón.",
+      "gloss": "Perhaps you're right."
+     }
+    },
+    {
+     "id": "claro",
+     "hr": "claro",
+     "en": "of course",
+     "pos": "adv.",
+     "example": {
+      "target": "¿Vienes a la fiesta? Claro que sí.",
+      "gloss": "Are you coming to the party? Of course."
+     }
+    },
+    {
+     "id": "desde luego",
+     "hr": "desde luego",
+     "en": "of course, certainly",
+     "pos": "expr.",
+     "example": {
+      "target": "Desde luego, te ayudo con la mudanza.",
+      "gloss": "Of course, I'll help you with the move."
+     }
+    },
+    {
+     "id": "por supuesto",
+     "hr": "por supuesto",
+     "en": "of course",
+     "pos": "expr.",
+     "example": {
+      "target": "¿Puedo entrar? Por supuesto.",
+      "gloss": "May I come in? Of course."
+     }
+    },
+    {
+     "id": "apenas",
+     "hr": "apenas",
+     "en": "barely, hardly",
+     "pos": "adv.",
+     "example": {
+      "target": "Apenas duermo cuatro horas al día.",
+      "gloss": "I barely sleep four hours a day."
+     }
+    },
+    {
+     "id": "bastante",
+     "hr": "bastante",
+     "en": "quite, enough",
+     "pos": "adv.",
+     "example": {
+      "target": "Este ejercicio es bastante difícil.",
+      "gloss": "This exercise is quite difficult."
+     }
+    },
+    {
+     "id": "demasiado",
+     "hr": "demasiado",
+     "en": "too much",
+     "pos": "adv.",
+     "example": {
+      "target": "Hablas demasiado rápido.",
+      "gloss": "You speak too fast."
+     }
+    },
+    {
+     "id": "suficiente",
+     "hr": "suficiente",
+     "en": "enough, sufficient",
+     "pos": "adj.",
+     "example": {
+      "target": "No tengo tiempo suficiente hoy.",
+      "gloss": "I don't have enough time today."
+     }
+    },
+    {
+     "id": "tan",
+     "hr": "tan",
+     "en": "so",
+     "pos": "adv.",
+     "example": {
+      "target": "Esta película es tan aburrida.",
+      "gloss": "This film is so boring."
+     }
+    },
+    {
+     "id": "tanto",
+     "hr": "tanto",
+     "en": "so much",
+     "pos": "adv.",
+     "example": {
+      "target": "Trabaja tanto que está muy cansado.",
+      "gloss": "He works so much that he is very tired."
+     }
+    },
+    {
+     "id": "cada vez más",
+     "hr": "cada vez más",
+     "en": "more and more",
+     "pos": "expr.",
+     "example": {
+      "target": "Hablo español cada vez más.",
+      "gloss": "I speak Spanish more and more."
+     }
+    },
+    {
+     "id": "cada vez menos",
+     "hr": "cada vez menos",
+     "en": "less and less",
+     "pos": "expr.",
+     "example": {
+      "target": "Salgo de fiesta cada vez menos.",
+      "gloss": "I go out partying less and less."
+     }
+    },
+    {
+     "id": "casi",
+     "hr": "casi",
+     "en": "almost",
+     "pos": "adv.",
+     "example": {
+      "target": "Ya son casi las diez.",
+      "gloss": "It's almost ten o'clock already."
+     }
+    },
+    {
+     "id": "por poco",
+     "hr": "por poco",
+     "en": "nearly, almost",
+     "pos": "expr.",
+     "note": "used with a verb in a past tense to say something almost happened: 'por poco pierdo el tren'",
+     "example": {
+      "target": "Por poco perdí el autobús esta mañana.",
+      "gloss": "I nearly missed the bus this morning."
+     }
+    },
+    {
+     "id": "más o menos",
+     "hr": "más o menos",
+     "en": "more or less",
+     "pos": "expr.",
+     "example": {
+      "target": "Hablo inglés más o menos.",
+      "gloss": "I speak English more or less."
+     }
+    },
+    {
+     "id": "sin duda",
+     "hr": "sin duda",
+     "en": "without a doubt",
+     "pos": "expr.",
+     "example": {
+      "target": "Sin duda, este es el mejor restaurante del barrio.",
+      "gloss": "Without a doubt, this is the best restaurant in the neighbourhood."
+     }
+    },
+    {
+     "id": "poco a poco",
+     "hr": "poco a poco",
+     "en": "little by little",
+     "pos": "expr.",
+     "example": {
+      "target": "Poco a poco estoy aprendiendo a cocinar.",
+      "gloss": "Little by little I am learning to cook."
+     }
+    },
+    {
+     "id": "solamente",
+     "hr": "solamente",
+     "en": "only",
+     "pos": "adv.",
+     "example": {
+      "target": "Solamente quiero descansar un rato.",
+      "gloss": "I only want to rest for a while."
+     }
+    },
+    {
+     "id": "alguno",
+     "hr": "alguno",
+     "en": "some, any",
+     "pos": "adj.",
+     "note": "shortens to 'algún' before a masculine singular noun: 'algún día'",
+     "example": {
+      "target": "¿Tienes algún libro sobre España?",
+      "gloss": "Do you have any book about Spain?"
+     }
+    },
+    {
+     "id": "ninguno",
+     "hr": "ninguno",
+     "en": "none, not any",
+     "pos": "adj.",
+     "note": "shortens to 'ningún' before a masculine singular noun; used with 'no': 'no tengo ningún problema'",
+     "example": {
+      "target": "No tengo ningún problema con eso.",
+      "gloss": "I don't have any problem with that."
+     }
+    },
+    {
+     "id": "cualquiera",
+     "hr": "cualquiera",
+     "en": "anyone, whichever",
+     "pos": "pron.",
+     "note": "shortens to 'cualquier' before a noun",
+     "example": {
+      "target": "Cualquiera puede aprender un idioma.",
+      "gloss": "Anyone can learn a language."
+     }
+    },
+    {
+     "id": "varios",
+     "hr": "varios",
+     "en": "several",
+     "pos": "adj.",
+     "example": {
+      "target": "He leído varios libros este mes.",
+      "gloss": "I have read several books this month."
+     }
+    },
+    {
+     "id": "ambos",
+     "hr": "ambos",
+     "en": "both",
+     "pos": "adj.",
+     "example": {
+      "target": "Ambos hermanos viven en Madrid.",
+      "gloss": "Both brothers live in Madrid."
+     }
+    },
+    {
+     "id": "cada",
+     "hr": "cada",
+     "en": "each, every",
+     "pos": "adj.",
+     "example": {
+      "target": "Cada estudiante tiene su propio libro.",
+      "gloss": "Each student has their own book."
+     }
+    },
+    {
+     "id": "todo",
+     "hr": "todo",
+     "en": "all, every",
+     "pos": "adj.",
+     "note": "agrees in gender and number: todo, toda, todos, todas",
+     "example": {
+      "target": "He limpiado toda la casa.",
+      "gloss": "I have cleaned the whole house."
+     }
+    },
+    {
+     "id": "otro",
+     "hr": "otro",
+     "en": "other, another",
+     "pos": "adj.",
+     "example": {
+      "target": "¿Quieres otro café?",
+      "gloss": "Do you want another coffee?"
+     }
+    },
+    {
+     "id": "en ninguna parte",
+     "hr": "en ninguna parte",
+     "en": "nowhere",
+     "pos": "expr.",
+     "example": {
+      "target": "No encuentro mis llaves en ninguna parte.",
+      "gloss": "I can't find my keys anywhere."
+     }
+    },
+    {
+     "id": "en todas partes",
+     "hr": "en todas partes",
+     "en": "everywhere",
+     "pos": "expr.",
+     "example": {
+      "target": "Hay turistas en todas partes.",
+      "gloss": "There are tourists everywhere."
+     }
+    },
+    {
+     "id": "alguien",
+     "hr": "alguien",
+     "en": "someone",
+     "pos": "pron.",
+     "example": {
+      "target": "¿Hay alguien en casa?",
+      "gloss": "Is there someone at home?"
+     }
+    },
+    {
+     "id": "algo",
+     "hr": "algo",
+     "en": "something",
+     "pos": "pron.",
+     "example": {
+      "target": "Quiero comer algo antes de salir.",
+      "gloss": "I want to eat something before going out."
+     }
+    },
+    {
+     "id": "nada",
+     "hr": "nada",
+     "en": "nothing",
+     "pos": "pron.",
+     "example": {
+      "target": "No quiero nada, gracias.",
+      "gloss": "I don't want anything, thanks."
+     }
+    },
+    {
+     "id": "más que",
+     "hr": "más que",
+     "en": "more than",
+     "pos": "expr.",
+     "example": {
+      "target": "Trabajo más que mi hermano.",
+      "gloss": "I work more than my brother."
+     }
+    },
+    {
+     "id": "menos que",
+     "hr": "menos que",
+     "en": "less than",
+     "pos": "expr.",
+     "example": {
+      "target": "Este piso cuesta menos que el otro.",
+      "gloss": "This flat costs less than the other one."
+     }
+    },
+    {
+     "id": "tal como",
+     "hr": "tal como",
+     "en": "just as, exactly as",
+     "pos": "conj.",
+     "note": "not to be confused with the equal-comparison pattern 'tan + adjective + como' (see 'tan')",
+     "example": {
+      "target": "Tal como te dije, el tren llegó tarde.",
+      "gloss": "Just as I told you, the train arrived late."
+     }
+    },
+    {
+     "id": "tanto como",
+     "hr": "tanto como",
+     "en": "as much as",
+     "pos": "expr.",
+     "note": "also used to link two subjects meaning both: 'tanto tú como yo'",
+     "example": {
+      "target": "No estudio tanto como mi compañero.",
+      "gloss": "I don't study as much as my classmate."
+     }
+    },
+    {
+     "id": "menor",
+     "hr": "menor",
+     "en": "younger, lesser",
+     "pos": "adj.",
+     "note": "irregular comparative of 'pequeño' when referring to age; 'más pequeño' is used for size",
+     "example": {
+      "target": "Mi hermana menor tiene quince años.",
+      "gloss": "My younger sister is fifteen years old."
+     }
+    },
+    {
+     "id": "el mismo",
+     "hr": "el mismo",
+     "en": "the same",
+     "pos": "adj.",
+     "note": "agrees in gender and number: el mismo, la misma, los mismos, las mismas",
+     "example": {
+      "target": "Vivimos en el mismo barrio.",
+      "gloss": "We live in the same neighbourhood."
+     }
+    },
+    {
+     "id": "distinto",
+     "hr": "distinto",
+     "en": "different",
+     "pos": "adj.",
+     "example": {
+      "target": "Cada ciudad es distinta.",
+      "gloss": "Each city is different."
+     }
+    },
+    {
+     "id": "parecido",
+     "hr": "parecido",
+     "en": "similar",
+     "pos": "adj.",
+     "note": "often used with 'a': 'parecido a'",
+     "example": {
+      "target": "Este pueblo es parecido a mi pueblo.",
+      "gloss": "This village is similar to my village."
+     }
+    },
+    {
+     "id": "igual",
+     "hr": "igual",
+     "en": "same, equal",
+     "pos": "adj.",
+     "example": {
+      "target": "Los dos pisos son igual de grandes.",
+      "gloss": "Both flats are equally big."
+     }
+    },
+    {
+     "id": "propio",
+     "hr": "propio",
+     "en": "own",
+     "pos": "adj.",
+     "example": {
+      "target": "Tengo mi propio coche.",
+      "gloss": "I have my own car."
+     }
+    },
+    {
+     "id": "ajeno",
+     "hr": "ajeno",
+     "en": "belonging to someone else, foreign to",
+     "pos": "adj.",
+     "note": "opposite of 'propio'",
+     "example": {
+      "target": "No debes tocar las cosas ajenas.",
+      "gloss": "You shouldn't touch other people's things."
+     }
+    },
+    {
+     "id": "siguiente",
+     "hr": "siguiente",
+     "en": "next, following",
+     "pos": "adj.",
+     "example": {
+      "target": "La siguiente parada es el centro.",
+      "gloss": "The next stop is the centre."
+     }
+    },
+    {
+     "id": "anterior",
+     "hr": "anterior",
+     "en": "previous",
+     "pos": "adj.",
+     "example": {
+      "target": "El año anterior viví en Valencia.",
+      "gloss": "The previous year I lived in Valencia."
+     }
+    },
+    {
+     "id": "próximo",
+     "hr": "próximo",
+     "en": "next",
+     "pos": "adj.",
+     "example": {
+      "target": "El próximo autobús llega en diez minutos.",
+      "gloss": "The next bus arrives in ten minutes."
+     }
+    },
+    {
+     "id": "dentro de",
+     "hr": "dentro de",
+     "en": "inside, within",
+     "pos": "prep.",
+     "example": {
+      "target": "El pan está dentro del horno.",
+      "gloss": "The bread is inside the oven."
+     }
+    },
+    {
+     "id": "fuera de",
+     "hr": "fuera de",
+     "en": "outside of",
+     "pos": "prep.",
+     "example": {
+      "target": "Los niños juegan fuera de casa.",
+      "gloss": "The children play outside the house."
+     }
+    },
+    {
+     "id": "debajo de",
+     "hr": "debajo de",
+     "en": "under, underneath",
+     "pos": "prep.",
+     "example": {
+      "target": "El gato duerme debajo de la mesa.",
+      "gloss": "The cat sleeps under the table."
+     }
+    },
+    {
+     "id": "encima de",
+     "hr": "encima de",
+     "en": "on top of",
+     "pos": "prep.",
+     "example": {
+      "target": "Deja las llaves encima de la mesa.",
+      "gloss": "Leave the keys on top of the table."
+     }
+    },
+    {
+     "id": "delante de",
+     "hr": "delante de",
+     "en": "in front of",
+     "pos": "prep.",
+     "example": {
+      "target": "Aparco el coche delante de la casa.",
+      "gloss": "I park the car in front of the house."
+     }
+    },
+    {
+     "id": "detrás de",
+     "hr": "detrás de",
+     "en": "behind",
+     "pos": "prep.",
+     "example": {
+      "target": "El jardín está detrás de la casa.",
+      "gloss": "The garden is behind the house."
+     }
+    },
+    {
+     "id": "enfrente de",
+     "hr": "enfrente de",
+     "en": "opposite, facing",
+     "pos": "prep.",
+     "example": {
+      "target": "La panadería está enfrente de mi casa.",
+      "gloss": "The bakery is opposite my house."
+     }
+    },
+    {
+     "id": "alrededor de",
+     "hr": "alrededor de",
+     "en": "around",
+     "pos": "prep.",
+     "example": {
+      "target": "Los turistas caminan alrededor de la catedral.",
+      "gloss": "Tourists walk around the cathedral."
+     }
+    },
+    {
+     "id": "importante",
+     "hr": "importante",
+     "en": "important",
+     "pos": "adj.",
+     "example": {
+      "target": "Es importante dormir bien.",
+      "gloss": "It's important to sleep well."
+     }
+    },
+    {
+     "id": "normal",
+     "hr": "normal",
+     "en": "normal",
+     "pos": "adj.",
+     "example": {
+      "target": "Es normal estar nervioso antes de un examen.",
+      "gloss": "It's normal to be nervous before an exam."
+     }
+    },
+    {
+     "id": "diferente",
+     "hr": "diferente",
+     "en": "different",
+     "pos": "adj.",
+     "note": "near-synonym of distinto, already taught",
+     "example": {
+      "target": "Este plan es diferente del anterior.",
+      "gloss": "This plan is different from the previous one."
+     }
+    },
+    {
+     "id": "útil",
+     "hr": "útil",
+     "en": "useful",
+     "pos": "adj.",
+     "example": {
+      "target": "El plano de la ciudad es muy útil.",
+      "gloss": "The city map is very useful."
+     }
+    },
+    {
+     "id": "increíble",
+     "hr": "increíble",
+     "en": "incredible, amazing",
+     "pos": "adj.",
+     "example": {
+      "target": "¡Qué viaje tan increíble!",
+      "gloss": "What an incredible trip!"
+     }
+    },
+    {
+     "id": "probable",
+     "hr": "probable",
+     "en": "likely, probable",
+     "pos": "adj.",
+     "note": "one form for both genders; es probable que takes the subjunctive, taught later",
+     "example": {
+      "target": "Es probable, pero no es seguro.",
+      "gloss": "It is likely, but it is not certain."
+     }
+    },
+    {
+     "id": "seco",
+     "hr": "seco",
+     "en": "dry",
+     "pos": "adj.",
+     "note": "feminine seca; the verb is secar, to dry",
+     "example": {
+      "target": "El clima aquí es muy seco en verano.",
+      "gloss": "The climate here is very dry in summer."
+     }
+    }
+   ]
+  }
+ ]
+}

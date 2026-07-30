@@ -1,0 +1,1498 @@
+{
+ "packs": [
+  {
+   "id": "es-a1-people",
+   "title": "People, family and describing someone",
+   "level": "A1",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "el padre",
+     "hr": "el padre",
+     "en": "father",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi padre trabaja en Madrid.",
+      "gloss": "My father works in Madrid."
+     },
+     "note": "pl. los padres"
+    },
+    {
+     "id": "la madre",
+     "hr": "la madre",
+     "en": "mother",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi madre cocina muy bien.",
+      "gloss": "My mother cooks very well."
+     }
+    },
+    {
+     "id": "los padres",
+     "hr": "los padres",
+     "en": "parents",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mis padres viven en Sevilla.",
+      "gloss": "My parents live in Seville."
+     },
+     "note": "used for father and mother together, not simply the plural of el padre"
+    },
+    {
+     "id": "el hijo",
+     "hr": "el hijo",
+     "en": "son",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tengo un hijo y una hija.",
+      "gloss": "I have a son and a daughter."
+     }
+    },
+    {
+     "id": "la hija",
+     "hr": "la hija",
+     "en": "daughter",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi hija estudia en la universidad.",
+      "gloss": "My daughter studies at university."
+     }
+    },
+    {
+     "id": "el hermano",
+     "hr": "el hermano",
+     "en": "brother",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi hermano es más alto que yo.",
+      "gloss": "My brother is taller than me."
+     }
+    },
+    {
+     "id": "la hermana",
+     "hr": "la hermana",
+     "en": "sister",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi hermana vive con nosotros.",
+      "gloss": "My sister lives with us."
+     }
+    },
+    {
+     "id": "el abuelo",
+     "hr": "el abuelo",
+     "en": "grandfather",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi abuelo tiene ochenta años.",
+      "gloss": "My grandfather is eighty years old."
+     }
+    },
+    {
+     "id": "la abuela",
+     "hr": "la abuela",
+     "en": "grandmother",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi abuela vive en el pueblo.",
+      "gloss": "My grandmother lives in the village."
+     }
+    },
+    {
+     "id": "el nieto",
+     "hr": "el nieto",
+     "en": "grandson",
+     "pos": "n. m.",
+     "example": {
+      "target": "El nieto visita a sus abuelos los domingos.",
+      "gloss": "The grandson visits his grandparents on Sundays."
+     }
+    },
+    {
+     "id": "la nieta",
+     "hr": "la nieta",
+     "en": "granddaughter",
+     "pos": "n. f.",
+     "example": {
+      "target": "La nieta ayuda a su abuela en casa.",
+      "gloss": "The granddaughter helps her grandmother at home."
+     }
+    },
+    {
+     "id": "el tío",
+     "hr": "el tío",
+     "en": "uncle",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi tío es médico.",
+      "gloss": "My uncle is a doctor."
+     }
+    },
+    {
+     "id": "la tía",
+     "hr": "la tía",
+     "en": "aunt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi tía vive en Barcelona.",
+      "gloss": "My aunt lives in Barcelona."
+     }
+    },
+    {
+     "id": "el primo",
+     "hr": "el primo",
+     "en": "cousin (male)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi primo estudia conmigo.",
+      "gloss": "My cousin studies with me."
+     },
+     "note": "f. la prima"
+    },
+    {
+     "id": "la prima",
+     "hr": "la prima",
+     "en": "cousin (female)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi prima es muy simpática.",
+      "gloss": "My cousin is very nice."
+     }
+    },
+    {
+     "id": "el sobrino",
+     "hr": "el sobrino",
+     "en": "nephew",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi sobrino tiene diez años.",
+      "gloss": "My nephew is ten years old."
+     }
+    },
+    {
+     "id": "la sobrina",
+     "hr": "la sobrina",
+     "en": "niece",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi sobrina vive con sus padres.",
+      "gloss": "My niece lives with her parents."
+     }
+    },
+    {
+     "id": "el marido",
+     "hr": "el marido",
+     "en": "husband",
+     "pos": "n. m.",
+     "example": {
+      "target": "Su marido trabaja en un banco.",
+      "gloss": "Her husband works at a bank."
+     },
+     "note": "esposo is also common; the everyday word for wife is la mujer or la esposa"
+    },
+    {
+     "id": "la esposa",
+     "hr": "la esposa",
+     "en": "wife",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su esposa es profesora.",
+      "gloss": "His wife is a teacher."
+     },
+     "note": "mujer is the everyday word for wife"
+    },
+    {
+     "id": "el suegro",
+     "hr": "el suegro",
+     "en": "father-in-law",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi suegro es muy amable.",
+      "gloss": "My father-in-law is very kind."
+     }
+    },
+    {
+     "id": "la suegra",
+     "hr": "la suegra",
+     "en": "mother-in-law",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi suegra vive cerca de mi casa.",
+      "gloss": "My mother-in-law lives near my house."
+     }
+    },
+    {
+     "id": "el yerno",
+     "hr": "el yerno",
+     "en": "son-in-law",
+     "pos": "n. m.",
+     "example": {
+      "target": "El yerno ayuda a sus suegros con la casa.",
+      "gloss": "The son-in-law helps his in-laws with the house."
+     }
+    },
+    {
+     "id": "la nuera",
+     "hr": "la nuera",
+     "en": "daughter-in-law",
+     "pos": "n. f.",
+     "example": {
+      "target": "La nuera visita a sus suegros cada semana.",
+      "gloss": "The daughter-in-law visits her in-laws every week."
+     }
+    },
+    {
+     "id": "el cuñado",
+     "hr": "el cuñado",
+     "en": "brother-in-law",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi cuñado es el hermano de mi marido.",
+      "gloss": "My brother-in-law is my husband's brother."
+     }
+    },
+    {
+     "id": "la cuñada",
+     "hr": "la cuñada",
+     "en": "sister-in-law",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi cuñada vive en Valencia.",
+      "gloss": "My sister-in-law lives in Valencia."
+     }
+    },
+    {
+     "id": "el padrastro",
+     "hr": "el padrastro",
+     "en": "stepfather",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi padrastro es muy tranquilo.",
+      "gloss": "My stepfather is very calm."
+     }
+    },
+    {
+     "id": "la madrastra",
+     "hr": "la madrastra",
+     "en": "stepmother",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su madrastra vive en Italia.",
+      "gloss": "Her stepmother lives in Italy."
+     }
+    },
+    {
+     "id": "la familia",
+     "hr": "la familia",
+     "en": "family",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi familia es grande y alegre.",
+      "gloss": "My family is big and cheerful."
+     }
+    },
+    {
+     "id": "el gemelo",
+     "hr": "el gemelo",
+     "en": "twin (male)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi hermano y yo somos gemelos.",
+      "gloss": "My brother and I are twins."
+     },
+     "note": "f. la gemela"
+    },
+    {
+     "id": "la gemela",
+     "hr": "la gemela",
+     "en": "twin (female)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi hermana y yo somos gemelas.",
+      "gloss": "My sister and I are twins."
+     }
+    },
+    {
+     "id": "el hombre",
+     "hr": "el hombre",
+     "en": "man",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ese hombre es mi vecino.",
+      "gloss": "That man is my neighbor."
+     }
+    },
+    {
+     "id": "la mujer",
+     "hr": "la mujer",
+     "en": "woman",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mujer habla con el niño.",
+      "gloss": "The woman talks to the child."
+     },
+     "note": "also the everyday word for wife"
+    },
+    {
+     "id": "el niño",
+     "hr": "el niño",
+     "en": "boy, child",
+     "pos": "n. m.",
+     "example": {
+      "target": "El niño juega en el parque.",
+      "gloss": "The boy plays in the park."
+     }
+    },
+    {
+     "id": "la niña",
+     "hr": "la niña",
+     "en": "girl",
+     "pos": "n. f.",
+     "example": {
+      "target": "La niña tiene el pelo rubio.",
+      "gloss": "The girl has blond hair."
+     }
+    },
+    {
+     "id": "el chico",
+     "hr": "el chico",
+     "en": "guy, young man",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ese chico es mi amigo.",
+      "gloss": "That guy is my friend."
+     },
+     "note": "f. la chica"
+    },
+    {
+     "id": "la chica",
+     "hr": "la chica",
+     "en": "girl, young woman",
+     "pos": "n. f.",
+     "example": {
+      "target": "La chica estudia en mi clase.",
+      "gloss": "The girl studies in my class."
+     }
+    },
+    {
+     "id": "el amigo",
+     "hr": "el amigo",
+     "en": "friend",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi amigo vive cerca de aquí.",
+      "gloss": "My friend lives near here."
+     },
+     "note": "f. la amiga"
+    },
+    {
+     "id": "el vecino",
+     "hr": "el vecino",
+     "en": "neighbor",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi vecino tiene un perro.",
+      "gloss": "My neighbor has a dog."
+     },
+     "note": "f. la vecina"
+    },
+    {
+     "id": "la persona",
+     "hr": "la persona",
+     "en": "person",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esa persona es muy amable.",
+      "gloss": "That person is very kind."
+     },
+     "note": "grammatically feminine even when it refers to a man"
+    },
+    {
+     "id": "la gente",
+     "hr": "la gente",
+     "en": "people",
+     "pos": "n. f.",
+     "example": {
+      "target": "En este barrio la gente es muy amable.",
+      "gloss": "In this neighborhood people are very kind."
+     },
+     "note": "grammatically singular: la gente es, not son"
+    },
+    {
+     "id": "el señor",
+     "hr": "el señor",
+     "en": "Mr., sir, gentleman",
+     "pos": "n. m.",
+     "example": {
+      "target": "El señor espera el autobús.",
+      "gloss": "The gentleman waits for the bus."
+     }
+    },
+    {
+     "id": "la señora",
+     "hr": "la señora",
+     "en": "Mrs., madam, lady",
+     "pos": "n. f.",
+     "example": {
+      "target": "La señora vive sola.",
+      "gloss": "The lady lives alone."
+     }
+    },
+    {
+     "id": "el bebé",
+     "hr": "el bebé",
+     "en": "baby",
+     "pos": "n. m.",
+     "example": {
+      "target": "El bebé duerme mucho.",
+      "gloss": "The baby sleeps a lot."
+     },
+     "note": "also la bebé for a baby girl, colloquial"
+    },
+    {
+     "id": "el novio",
+     "hr": "el novio",
+     "en": "boyfriend, groom",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi hermana tiene novio.",
+      "gloss": "My sister has a boyfriend."
+     },
+     "note": "f. la novia"
+    },
+    {
+     "id": "la novia",
+     "hr": "la novia",
+     "en": "girlfriend, bride",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su novia es italiana.",
+      "gloss": "His girlfriend is Italian."
+     }
+    },
+    {
+     "id": "la pareja",
+     "hr": "la pareja",
+     "en": "couple, partner",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi hermano vive con su pareja.",
+      "gloss": "My brother lives with his partner."
+     },
+     "note": "grammatically feminine for a partner of any gender"
+    },
+    {
+     "id": "el adolescente",
+     "hr": "el adolescente",
+     "en": "teenager",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi sobrino ya es adolescente.",
+      "gloss": "My nephew is already a teenager."
+     },
+     "note": "f. la adolescente, same form"
+    },
+    {
+     "id": "español",
+     "hr": "español",
+     "en": "Spanish",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi amigo es español.",
+      "gloss": "My friend is Spanish."
+     },
+     "note": "f. española; also the noun for the language, el español"
+    },
+    {
+     "id": "inglés",
+     "hr": "inglés",
+     "en": "English",
+     "pos": "adj.",
+     "example": {
+      "target": "Ella es inglesa.",
+      "gloss": "She is English."
+     },
+     "note": "f. inglesa; also the noun for the language, el inglés"
+    },
+    {
+     "id": "francés",
+     "hr": "francés",
+     "en": "French",
+     "pos": "adj.",
+     "example": {
+      "target": "Su marido es francés.",
+      "gloss": "Her husband is French."
+     },
+     "note": "f. francesa; also the noun for the language, el francés"
+    },
+    {
+     "id": "alemán",
+     "hr": "alemán",
+     "en": "German",
+     "pos": "adj.",
+     "example": {
+      "target": "El profesor es alemán.",
+      "gloss": "The teacher is German."
+     },
+     "note": "f. alemana; also the noun for the language, el alemán"
+    },
+    {
+     "id": "italiano",
+     "hr": "italiano",
+     "en": "Italian",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi vecina es italiana.",
+      "gloss": "My neighbor is Italian."
+     },
+     "note": "f. italiana; also the noun for the language, el italiano"
+    },
+    {
+     "id": "portugués",
+     "hr": "portugués",
+     "en": "Portuguese",
+     "pos": "adj.",
+     "example": {
+      "target": "Su amigo es portugués.",
+      "gloss": "Her friend is Portuguese."
+     },
+     "note": "f. portuguesa; also the noun for the language, el portugués"
+    },
+    {
+     "id": "españa",
+     "hr": "España",
+     "en": "Spain",
+     "pos": "n. f.",
+     "example": {
+      "target": "España tiene muchas ciudades bonitas.",
+      "gloss": "Spain has many beautiful cities."
+     },
+     "note": "proper noun, used without an article"
+    },
+    {
+     "id": "francia",
+     "hr": "Francia",
+     "en": "France",
+     "pos": "n. f.",
+     "example": {
+      "target": "Francia está muy cerca de España.",
+      "gloss": "France is very close to Spain."
+     },
+     "note": "proper noun, used without an article"
+    },
+    {
+     "id": "italia",
+     "hr": "Italia",
+     "en": "Italy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Italia tiene ciudades muy bonitas.",
+      "gloss": "Italy has very beautiful cities."
+     },
+     "note": "proper noun, used without an article"
+    },
+    {
+     "id": "alemania",
+     "hr": "Alemania",
+     "en": "Germany",
+     "pos": "n. f.",
+     "example": {
+      "target": "Alemania está en el centro de Europa.",
+      "gloss": "Germany is in the center of Europe."
+     },
+     "note": "proper noun, used without an article"
+    },
+    {
+     "id": "inglaterra",
+     "hr": "Inglaterra",
+     "en": "England",
+     "pos": "n. f.",
+     "example": {
+      "target": "Inglaterra es un país pequeño.",
+      "gloss": "England is a small country."
+     },
+     "note": "proper noun, used without an article"
+    },
+    {
+     "id": "portugal",
+     "hr": "Portugal",
+     "en": "Portugal",
+     "pos": "n. m.",
+     "example": {
+      "target": "Portugal está al lado de España.",
+      "gloss": "Portugal is next to Spain."
+     },
+     "note": "proper noun, used without an article"
+    },
+    {
+     "id": "europeo",
+     "hr": "europeo",
+     "en": "European",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi amigo es europeo.",
+      "gloss": "My friend is European."
+     },
+     "note": "f. europea"
+    },
+    {
+     "id": "americano",
+     "hr": "americano",
+     "en": "American",
+     "pos": "adj.",
+     "example": {
+      "target": "Su profesora es americana.",
+      "gloss": "Her teacher is American."
+     },
+     "note": "f. americana; can mean from the United States or, more broadly, from the Americas"
+    },
+    {
+     "id": "el médico",
+     "hr": "el médico",
+     "en": "doctor",
+     "pos": "n. m.",
+     "example": {
+      "target": "El médico trabaja en el hospital.",
+      "gloss": "The doctor works at the hospital."
+     },
+     "note": "f. la médica"
+    },
+    {
+     "id": "el profesor",
+     "hr": "el profesor",
+     "en": "teacher",
+     "pos": "n. m.",
+     "example": {
+      "target": "El profesor explica la lección.",
+      "gloss": "The teacher explains the lesson."
+     },
+     "note": "f. la profesora"
+    },
+    {
+     "id": "el estudiante",
+     "hr": "el estudiante",
+     "en": "student",
+     "pos": "n. m.",
+     "example": {
+      "target": "El estudiante estudia todos los días.",
+      "gloss": "The student studies every day."
+     },
+     "note": "f. la estudiante, same form"
+    },
+    {
+     "id": "el camarero",
+     "hr": "el camarero",
+     "en": "waiter",
+     "pos": "n. m.",
+     "example": {
+      "target": "El camarero trae el café.",
+      "gloss": "The waiter brings the coffee."
+     },
+     "note": "f. la camarera"
+    },
+    {
+     "id": "el dependiente",
+     "hr": "el dependiente",
+     "en": "shop assistant",
+     "pos": "n. m.",
+     "example": {
+      "target": "El dependiente ayuda a los clientes.",
+      "gloss": "The shop assistant helps the customers."
+     },
+     "note": "f. la dependienta"
+    },
+    {
+     "id": "el enfermero",
+     "hr": "el enfermero",
+     "en": "nurse",
+     "pos": "n. m.",
+     "example": {
+      "target": "El enfermero cuida a los pacientes.",
+      "gloss": "The nurse looks after the patients."
+     },
+     "note": "f. la enfermera"
+    },
+    {
+     "id": "el ingeniero",
+     "hr": "el ingeniero",
+     "en": "engineer",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi hermano es ingeniero.",
+      "gloss": "My brother is an engineer."
+     },
+     "note": "f. la ingeniera"
+    },
+    {
+     "id": "el abogado",
+     "hr": "el abogado",
+     "en": "lawyer",
+     "pos": "n. m.",
+     "example": {
+      "target": "El abogado trabaja mucho.",
+      "gloss": "The lawyer works a lot."
+     },
+     "note": "f. la abogada"
+    },
+    {
+     "id": "el cocinero",
+     "hr": "el cocinero",
+     "en": "cook",
+     "pos": "n. m.",
+     "example": {
+      "target": "El cocinero prepara la comida.",
+      "gloss": "The cook prepares the food."
+     },
+     "note": "f. la cocinera"
+    },
+    {
+     "id": "el policía",
+     "hr": "el policía",
+     "en": "police officer",
+     "pos": "n. m.",
+     "example": {
+      "target": "El policía ayuda a la gente.",
+      "gloss": "The police officer helps people."
+     },
+     "note": "f. la policía, same form; la policía can also mean 'the police' as an institution"
+    },
+    {
+     "id": "el periodista",
+     "hr": "el periodista",
+     "en": "journalist",
+     "pos": "n. m.",
+     "example": {
+      "target": "El periodista escribe en el periódico.",
+      "gloss": "The journalist writes in the newspaper."
+     },
+     "note": "f. la periodista, same form"
+    },
+    {
+     "id": "el director",
+     "hr": "el director",
+     "en": "director, manager",
+     "pos": "n. m.",
+     "example": {
+      "target": "El director trabaja en la oficina.",
+      "gloss": "The director works in the office."
+     },
+     "note": "f. la directora"
+    },
+    {
+     "id": "el pelo",
+     "hr": "el pelo",
+     "en": "hair",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tiene el pelo largo y rubio.",
+      "gloss": "She has long, blond hair."
+     }
+    },
+    {
+     "id": "los ojos",
+     "hr": "los ojos",
+     "en": "eyes",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tiene los ojos azules.",
+      "gloss": "He has blue eyes."
+     },
+     "note": "sg. el ojo"
+    },
+    {
+     "id": "la cara",
+     "hr": "la cara",
+     "en": "face",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tiene la cara redonda.",
+      "gloss": "She has a round face."
+     }
+    },
+    {
+     "id": "la estatura",
+     "hr": "la estatura",
+     "en": "height, stature",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi hermano tiene una estatura media.",
+      "gloss": "My brother is of average height."
+     }
+    },
+    {
+     "id": "el cuerpo",
+     "hr": "el cuerpo",
+     "en": "body",
+     "pos": "n. m.",
+     "example": {
+      "target": "Su cuerpo es fuerte y sano.",
+      "gloss": "His body is strong and healthy."
+     }
+    },
+    {
+     "id": "la nariz",
+     "hr": "la nariz",
+     "en": "nose",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tiene la nariz pequeña.",
+      "gloss": "She has a small nose."
+     },
+     "note": "pl. las narices"
+    },
+    {
+     "id": "la boca",
+     "hr": "la boca",
+     "en": "mouth",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cuando habla, abre mucho la boca.",
+      "gloss": "When he talks, he opens his mouth a lot."
+     }
+    },
+    {
+     "id": "las orejas",
+     "hr": "las orejas",
+     "en": "ears",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi primo tiene las orejas grandes.",
+      "gloss": "My cousin has big ears."
+     },
+     "note": "sg. la oreja"
+    },
+    {
+     "id": "la barba",
+     "hr": "la barba",
+     "en": "beard",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi abuelo tiene barba blanca.",
+      "gloss": "My grandfather has a white beard."
+     }
+    },
+    {
+     "id": "alto",
+     "hr": "alto",
+     "en": "tall",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermano es alto.",
+      "gloss": "My brother is tall."
+     },
+     "note": "f. alta"
+    },
+    {
+     "id": "bajo",
+     "hr": "bajo",
+     "en": "short (height)",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermana es baja.",
+      "gloss": "My sister is short."
+     },
+     "note": "f. baja"
+    },
+    {
+     "id": "gordo",
+     "hr": "gordo",
+     "en": "fat",
+     "pos": "adj.",
+     "example": {
+      "target": "El gato de mi vecino es gordo.",
+      "gloss": "My neighbor's cat is fat."
+     },
+     "note": "f. gorda; blunt about people, gordito or grueso are softer"
+    },
+    {
+     "id": "delgado",
+     "hr": "delgado",
+     "en": "thin, slim",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi amiga es delgada.",
+      "gloss": "My friend is slim."
+     },
+     "note": "f. delgada"
+    },
+    {
+     "id": "joven",
+     "hr": "joven",
+     "en": "young",
+     "pos": "adj.",
+     "example": {
+      "target": "Su profesor es muy joven.",
+      "gloss": "Her teacher is very young."
+     },
+     "note": "same form for m./f.; pl. jóvenes"
+    },
+    {
+     "id": "viejo",
+     "hr": "viejo",
+     "en": "old (person)",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi abuelo ya es viejo.",
+      "gloss": "My grandfather is already old."
+     },
+     "note": "f. vieja; mayor is the politer word for an older person"
+    },
+    {
+     "id": "guapo",
+     "hr": "guapo",
+     "en": "good-looking, handsome",
+     "pos": "adj.",
+     "example": {
+      "target": "Tu primo es muy guapo.",
+      "gloss": "Your cousin is very handsome."
+     },
+     "note": "f. guapa"
+    },
+    {
+     "id": "feo",
+     "hr": "feo",
+     "en": "ugly",
+     "pos": "adj.",
+     "example": {
+      "target": "El perro es un poco feo pero simpático.",
+      "gloss": "The dog is a bit ugly but friendly."
+     },
+     "note": "f. fea"
+    },
+    {
+     "id": "rubio",
+     "hr": "rubio",
+     "en": "blond",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hija es rubia como su madre.",
+      "gloss": "My daughter is blond like her mother."
+     },
+     "note": "f. rubia"
+    },
+    {
+     "id": "moreno",
+     "hr": "moreno",
+     "en": "dark-haired, tanned",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermano es moreno.",
+      "gloss": "My brother is dark-haired."
+     },
+     "note": "f. morena"
+    },
+    {
+     "id": "castaño",
+     "hr": "castaño",
+     "en": "brown-haired, chestnut",
+     "pos": "adj.",
+     "example": {
+      "target": "Tiene el pelo castaño.",
+      "gloss": "He has brown hair."
+     },
+     "note": "f. castaña"
+    },
+    {
+     "id": "pelirrojo",
+     "hr": "pelirrojo",
+     "en": "red-haired",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi amigo es pelirrojo.",
+      "gloss": "My friend is red-haired."
+     },
+     "note": "f. pelirroja"
+    },
+    {
+     "id": "canoso",
+     "hr": "canoso",
+     "en": "gray-haired",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi abuelo ya es canoso.",
+      "gloss": "My grandfather is already gray-haired."
+     },
+     "note": "f. canosa"
+    },
+    {
+     "id": "calvo",
+     "hr": "calvo",
+     "en": "bald",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi tío ya es calvo.",
+      "gloss": "My uncle is already bald."
+     },
+     "note": "f. calva"
+    },
+    {
+     "id": "fuerte",
+     "hr": "fuerte",
+     "en": "strong",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermano es muy fuerte.",
+      "gloss": "My brother is very strong."
+     },
+     "note": "same form for m./f."
+    },
+    {
+     "id": "mayor",
+     "hr": "mayor",
+     "en": "older, elderly",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi abuela es mayor pero muy activa.",
+      "gloss": "My grandmother is elderly but very active."
+     },
+     "note": "invariable for m./f.; the polite word for viejo when talking about a person's age"
+    },
+    {
+     "id": "simpático",
+     "hr": "simpático",
+     "en": "nice, friendly",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi amiga es muy simpática.",
+      "gloss": "My friend is very nice."
+     },
+     "note": "f. simpática"
+    },
+    {
+     "id": "antipático",
+     "hr": "antipático",
+     "en": "unpleasant, unfriendly",
+     "pos": "adj.",
+     "example": {
+      "target": "El vecino nuevo es un poco antipático.",
+      "gloss": "The new neighbor is a bit unfriendly."
+     },
+     "note": "f. antipática"
+    },
+    {
+     "id": "amable",
+     "hr": "amable",
+     "en": "kind",
+     "pos": "adj.",
+     "example": {
+      "target": "La profesora es muy amable.",
+      "gloss": "The teacher is very kind."
+     },
+     "note": "same form for m./f."
+    },
+    {
+     "id": "serio",
+     "hr": "serio",
+     "en": "serious",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi padre es un hombre serio.",
+      "gloss": "My father is a serious man."
+     },
+     "note": "f. seria"
+    },
+    {
+     "id": "alegre",
+     "hr": "alegre",
+     "en": "cheerful",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hija es una niña muy alegre.",
+      "gloss": "My daughter is a very cheerful girl."
+     },
+     "note": "same form for m./f."
+    },
+    {
+     "id": "tranquilo",
+     "hr": "tranquilo",
+     "en": "calm",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi abuelo es muy tranquilo.",
+      "gloss": "My grandfather is very calm."
+     },
+     "note": "f. tranquila"
+    },
+    {
+     "id": "nervioso",
+     "hr": "nervioso",
+     "en": "nervous",
+     "pos": "adj.",
+     "example": {
+      "target": "Antes del examen, estoy nervioso.",
+      "gloss": "Before the exam, I'm nervous."
+     },
+     "note": "f. nerviosa"
+    },
+    {
+     "id": "tímido",
+     "hr": "tímido",
+     "en": "shy",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermano pequeño es muy tímido.",
+      "gloss": "My little brother is very shy."
+     },
+     "note": "f. tímida"
+    },
+    {
+     "id": "trabajador",
+     "hr": "trabajador",
+     "en": "hardworking",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi tía es muy trabajadora.",
+      "gloss": "My aunt is very hardworking."
+     },
+     "note": "f. trabajadora"
+    },
+    {
+     "id": "inteligente",
+     "hr": "inteligente",
+     "en": "intelligent",
+     "pos": "adj.",
+     "example": {
+      "target": "El estudiante es muy inteligente.",
+      "gloss": "The student is very intelligent."
+     },
+     "note": "same form for m./f."
+    },
+    {
+     "id": "gracioso",
+     "hr": "gracioso",
+     "en": "funny",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi primo es muy gracioso.",
+      "gloss": "My cousin is very funny."
+     },
+     "note": "f. graciosa"
+    },
+    {
+     "id": "aburrido",
+     "hr": "aburrido",
+     "en": "boring",
+     "pos": "adj.",
+     "example": {
+      "target": "Ese profesor es un poco aburrido.",
+      "gloss": "That teacher is a bit boring."
+     },
+     "note": "f. aburrida; with estar it means 'bored' instead"
+    },
+    {
+     "id": "generoso",
+     "hr": "generoso",
+     "en": "generous",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi abuela es muy generosa.",
+      "gloss": "My grandmother is very generous."
+     },
+     "note": "f. generosa"
+    },
+    {
+     "id": "honesto",
+     "hr": "honesto",
+     "en": "honest",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi amigo siempre es honesto.",
+      "gloss": "My friend is always honest."
+     },
+     "note": "f. honesta"
+    },
+    {
+     "id": "optimista",
+     "hr": "optimista",
+     "en": "optimistic",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermana es muy optimista.",
+      "gloss": "My sister is very optimistic."
+     },
+     "note": "same form for m./f."
+    },
+    {
+     "id": "cariñoso",
+     "hr": "cariñoso",
+     "en": "affectionate",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi madre es muy cariñosa con nosotros.",
+      "gloss": "My mother is very affectionate with us."
+     },
+     "note": "f. cariñosa"
+    },
+    {
+     "id": "soltero",
+     "hr": "soltero",
+     "en": "single, unmarried",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi tío todavía está soltero.",
+      "gloss": "My uncle is still single."
+     },
+     "note": "f. soltera"
+    },
+    {
+     "id": "casado",
+     "hr": "casado",
+     "en": "married",
+     "pos": "adj.",
+     "example": {
+      "target": "Mis padres están casados.",
+      "gloss": "My parents are married."
+     },
+     "note": "f. casada; usually used with estar"
+    },
+    {
+     "id": "conocer",
+     "hr": "conocer",
+     "en": "to know, to meet",
+     "pos": "v.",
+     "example": {
+      "target": "Quiero conocer a tu familia.",
+      "gloss": "I want to meet your family."
+     },
+     "note": "yo-form: conozco"
+    },
+    {
+     "id": "presentar",
+     "hr": "presentar",
+     "en": "to introduce",
+     "pos": "v.",
+     "example": {
+      "target": "Te presento a mi hermano.",
+      "gloss": "Let me introduce you to my brother."
+     },
+     "note": "regular -ar"
+    },
+    {
+     "id": "saludar",
+     "hr": "saludar",
+     "en": "to greet",
+     "pos": "v.",
+     "example": {
+      "target": "Los vecinos se saludan por la mañana.",
+      "gloss": "The neighbors greet each other in the morning."
+     },
+     "note": "regular -ar"
+    },
+    {
+     "id": "ayudar",
+     "hr": "ayudar",
+     "en": "to help",
+     "pos": "v.",
+     "example": {
+      "target": "Mi hermana me ayuda con los deberes.",
+      "gloss": "My sister helps me with my homework."
+     },
+     "note": "regular -ar"
+    },
+    {
+     "id": "esperar",
+     "hr": "esperar",
+     "en": "to wait, to hope",
+     "pos": "v.",
+     "example": {
+      "target": "Espero a mi amigo en la plaza.",
+      "gloss": "I wait for my friend in the square."
+     },
+     "note": "regular -ar"
+    },
+    {
+     "id": "invitar",
+     "hr": "invitar",
+     "en": "to invite",
+     "pos": "v.",
+     "example": {
+      "target": "Vamos a invitar a nuestros primos a la fiesta.",
+      "gloss": "We're going to invite our cousins to the party."
+     },
+     "note": "regular -ar"
+    },
+    {
+     "id": "casarse",
+     "hr": "casarse",
+     "en": "to get married",
+     "pos": "v.",
+     "example": {
+      "target": "Mi hermana se casa con un ingeniero.",
+      "gloss": "My sister is getting married to an engineer."
+     },
+     "note": "pronominal; casarse con + person"
+    },
+    {
+     "id": "quedar",
+     "hr": "quedar",
+     "en": "to arrange to meet up",
+     "pos": "v.",
+     "example": {
+      "target": "Quedo con mis amigos los sábados.",
+      "gloss": "I meet up with my friends on Saturdays."
+     },
+     "note": "quedar con alguien"
+    },
+    {
+     "id": "parecerse a",
+     "hr": "parecerse a",
+     "en": "to look like, to resemble",
+     "pos": "v.",
+     "example": {
+      "target": "Mi hija se parece a su madre.",
+      "gloss": "My daughter looks like her mother."
+     },
+     "note": "pronominal; yo-form parezco"
+    },
+    {
+     "id": "el nombre",
+     "hr": "el nombre",
+     "en": "name",
+     "pos": "n. m.",
+     "example": {
+      "target": "Su nombre es Elena.",
+      "gloss": "Her name is Elena."
+     }
+    },
+    {
+     "id": "la edad",
+     "hr": "la edad",
+     "en": "age",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tengo la misma edad que mi hermano.",
+      "gloss": "I'm the same age as my brother."
+     }
+    },
+    {
+     "id": "el apellido",
+     "hr": "el apellido",
+     "en": "surname",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi apellido es López.",
+      "gloss": "My surname is López."
+     }
+    },
+    {
+     "id": "el país",
+     "hr": "el país",
+     "en": "country",
+     "pos": "n. m.",
+     "example": {
+      "target": "Italia es un país muy bonito.",
+      "gloss": "Italy is a very beautiful country."
+     }
+    },
+    {
+     "id": "la fiesta",
+     "hr": "la fiesta",
+     "en": "party",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mis amigos organizan una fiesta el sábado.",
+      "gloss": "My friends are organizing a party on Saturday."
+     }
+    },
+    {
+     "id": "el animal",
+     "hr": "el animal",
+     "en": "animal",
+     "pos": "n. m.",
+     "example": {
+      "target": "El perro es un animal muy fiel.",
+      "gloss": "The dog is a very loyal animal."
+     },
+     "note": "grammatically masculine regardless of the animal's sex"
+    },
+    {
+     "id": "la religión",
+     "hr": "la religión",
+     "en": "religion",
+     "pos": "n. f.",
+     "example": {
+      "target": "En mi familia la religión no es un tema importante.",
+      "gloss": "In my family religion is not an important subject."
+     }
+    },
+    {
+     "id": "cristiano",
+     "hr": "cristiano",
+     "en": "Christian",
+     "pos": "adj.",
+     "note": "feminine cristiana; also used as a noun, un cristiano",
+     "example": {
+      "target": "Mi vecino es cristiano y va a la iglesia los domingos.",
+      "gloss": "My neighbour is Christian and goes to church on Sundays."
+     }
+    },
+    {
+     "id": "judío",
+     "hr": "judío",
+     "en": "Jewish",
+     "pos": "adj.",
+     "note": "feminine judía; also used as a noun",
+     "example": {
+      "target": "Su abuelo es judío y vive en Toledo.",
+      "gloss": "His grandfather is Jewish and lives in Toledo."
+     }
+    },
+    {
+     "id": "musulmán",
+     "hr": "musulmán",
+     "en": "Muslim",
+     "pos": "adj.",
+     "note": "feminine musulmana, without the accent, because the stress falls naturally there",
+     "example": {
+      "target": "Mi compañero es musulmán y no come cerdo.",
+      "gloss": "My classmate is Muslim and does not eat pork."
+     }
+    },
+    {
+     "id": "budista",
+     "hr": "budista",
+     "en": "Buddhist",
+     "pos": "adj.",
+     "note": "one form for both genders: un budista, una budista",
+     "example": {
+      "target": "Ella es budista y medita todos los días.",
+      "gloss": "She is Buddhist and meditates every day."
+     }
+    },
+    {
+     "id": "la mezquita",
+     "hr": "la mezquita",
+     "en": "mosque",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mezquita está cerca del centro.",
+      "gloss": "The mosque is near the centre."
+     }
+    },
+    {
+     "id": "la sinagoga",
+     "hr": "la sinagoga",
+     "en": "synagogue",
+     "pos": "n. f.",
+     "example": {
+      "target": "Visitamos la sinagoga el sábado por la mañana.",
+      "gloss": "We visited the synagogue on Saturday morning."
+     }
+    },
+    {
+     "id": "quizás",
+     "hr": "quizás",
+     "en": "maybe, perhaps",
+     "pos": "adv.",
+     "note": "also written quizá, without the s; both are correct",
+     "example": {
+      "target": "Quizás vamos al cine esta noche.",
+      "gloss": "Maybe we are going to the cinema tonight."
+     }
+    }
+   ]
+  }
+ ]
+}

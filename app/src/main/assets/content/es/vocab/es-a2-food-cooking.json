@@ -1,0 +1,1526 @@
+{
+ "packs": [
+  {
+   "id": "es-a2-food-cooking",
+   "title": "Food, cooking and eating out",
+   "level": "A2",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "freír",
+     "hr": "freír",
+     "en": "to fry",
+     "pos": "v.",
+     "note": "e>i: frío; irregular participle: frito",
+     "example": {
+      "target": "Voy a freír el pescado en la sartén.",
+      "gloss": "I'm going to fry the fish in the pan."
+     }
+    },
+    {
+     "id": "hervir",
+     "hr": "hervir",
+     "en": "to boil",
+     "pos": "v.",
+     "note": "e>ie: hiervo",
+     "example": {
+      "target": "El agua ya está hirviendo.",
+      "gloss": "The water is already boiling."
+     }
+    },
+    {
+     "id": "cocer",
+     "hr": "cocer",
+     "en": "to cook, to boil",
+     "pos": "v.",
+     "note": "yo-form: cuezo; o>ue: cuece",
+     "example": {
+      "target": "Cuece las lentejas durante media hora.",
+      "gloss": "Cook the lentils for half an hour."
+     }
+    },
+    {
+     "id": "asar",
+     "hr": "asar",
+     "en": "to roast",
+     "pos": "v.",
+     "example": {
+      "target": "Vamos a asar el cordero en el horno.",
+      "gloss": "We're going to roast the lamb in the oven."
+     }
+    },
+    {
+     "id": "hornear",
+     "hr": "hornear",
+     "en": "to bake",
+     "pos": "v.",
+     "example": {
+      "target": "Mi madre horneó un pastel de manzana ayer.",
+      "gloss": "My mother baked an apple cake yesterday."
+     }
+    },
+    {
+     "id": "calentar",
+     "hr": "calentar",
+     "en": "to heat up",
+     "pos": "v.",
+     "note": "e>ie: caliento",
+     "example": {
+      "target": "Calienta la sopa dos minutos en el microondas.",
+      "gloss": "Heat up the soup for two minutes in the microwave."
+     }
+    },
+    {
+     "id": "enfriar",
+     "hr": "enfriar",
+     "en": "to cool down",
+     "pos": "v.",
+     "note": "stem stress: enfrío, enfrías (present tense)",
+     "example": {
+      "target": "Deja enfriar el caldo antes de servirlo.",
+      "gloss": "Let the broth cool before serving it."
+     }
+    },
+    {
+     "id": "congelar",
+     "hr": "congelar",
+     "en": "to freeze",
+     "pos": "v.",
+     "example": {
+      "target": "Congelamos la carne para la semana que viene.",
+      "gloss": "We freeze the meat for next week."
+     }
+    },
+    {
+     "id": "descongelar",
+     "hr": "descongelar",
+     "en": "to defrost",
+     "pos": "v.",
+     "example": {
+      "target": "He descongelado el pollo esta mañana.",
+      "gloss": "I have defrosted the chicken this morning."
+     }
+    },
+    {
+     "id": "mezclar",
+     "hr": "mezclar",
+     "en": "to mix",
+     "pos": "v.",
+     "example": {
+      "target": "Mezcla la harina con los huevos.",
+      "gloss": "Mix the flour with the eggs."
+     }
+    },
+    {
+     "id": "batir",
+     "hr": "batir",
+     "en": "to whisk, to beat",
+     "pos": "v.",
+     "example": {
+      "target": "Bate los huevos antes de añadir la leche.",
+      "gloss": "Beat the eggs before adding the milk."
+     }
+    },
+    {
+     "id": "cortar",
+     "hr": "cortar",
+     "en": "to cut",
+     "pos": "v.",
+     "example": {
+      "target": "Corta la cebolla en trozos pequeños.",
+      "gloss": "Cut the onion into small pieces."
+     }
+    },
+    {
+     "id": "picar",
+     "hr": "picar",
+     "en": "to chop finely",
+     "pos": "v.",
+     "note": "here: to chop finely; also means to sting or itch",
+     "example": {
+      "target": "Pica el ajo muy fino para la salsa.",
+      "gloss": "Chop the garlic very finely for the sauce."
+     }
+    },
+    {
+     "id": "pelar",
+     "hr": "pelar",
+     "en": "to peel",
+     "pos": "v.",
+     "example": {
+      "target": "Estoy pelando las patatas para la tortilla.",
+      "gloss": "I'm peeling the potatoes for the omelette."
+     }
+    },
+    {
+     "id": "rallar",
+     "hr": "rallar",
+     "en": "to grate",
+     "pos": "v.",
+     "example": {
+      "target": "Ralla un poco de queso por encima.",
+      "gloss": "Grate a little cheese on top."
+     }
+    },
+    {
+     "id": "verter",
+     "hr": "verter",
+     "en": "to pour",
+     "pos": "v.",
+     "note": "e>ie: vierto",
+     "example": {
+      "target": "Vierte el aceite en la sartén caliente.",
+      "gloss": "Pour the oil into the hot pan."
+     }
+    },
+    {
+     "id": "echar",
+     "hr": "echar",
+     "en": "to add, to pour in",
+     "pos": "v.",
+     "note": "here: to add or pour something into a dish",
+     "example": {
+      "target": "Echa un poco de sal a la ensalada.",
+      "gloss": "Add a bit of salt to the salad."
+     }
+    },
+    {
+     "id": "añadir",
+     "hr": "añadir",
+     "en": "to add",
+     "pos": "v.",
+     "example": {
+      "target": "Añade el vinagre al final.",
+      "gloss": "Add the vinegar at the end."
+     }
+    },
+    {
+     "id": "remover",
+     "hr": "remover",
+     "en": "to stir",
+     "pos": "v.",
+     "note": "o>ue: remuevo",
+     "example": {
+      "target": "Remueve la salsa para que no se pegue.",
+      "gloss": "Stir the sauce so it doesn't stick."
+     }
+    },
+    {
+     "id": "probar",
+     "hr": "probar",
+     "en": "to taste, to try",
+     "pos": "v.",
+     "note": "o>ue: pruebo",
+     "example": {
+      "target": "¿Puedo probar la sopa antes de servirla?",
+      "gloss": "Can I taste the soup before serving it?"
+     }
+    },
+    {
+     "id": "servir",
+     "hr": "servir",
+     "en": "to serve",
+     "pos": "v.",
+     "note": "e>i: sirvo",
+     "example": {
+      "target": "Sirve la comida todavía caliente.",
+      "gloss": "Serve the food while it's still hot."
+     }
+    },
+    {
+     "id": "tapar",
+     "hr": "tapar",
+     "en": "to cover (with a lid)",
+     "pos": "v.",
+     "example": {
+      "target": "Tapa la olla y baja el fuego.",
+      "gloss": "Cover the pot and lower the heat."
+     }
+    },
+    {
+     "id": "escurrir",
+     "hr": "escurrir",
+     "en": "to drain",
+     "pos": "v.",
+     "example": {
+      "target": "Escurre la pasta y añade el aceite.",
+      "gloss": "Drain the pasta and add the oil."
+     }
+    },
+    {
+     "id": "colar",
+     "hr": "colar",
+     "en": "to strain",
+     "pos": "v.",
+     "note": "o>ue: cuelo",
+     "example": {
+      "target": "Cuela el caldo antes de guardarlo.",
+      "gloss": "Strain the broth before storing it."
+     }
+    },
+    {
+     "id": "untar",
+     "hr": "untar",
+     "en": "to spread (butter, etc.)",
+     "pos": "v.",
+     "example": {
+      "target": "Unta el pan con margarina.",
+      "gloss": "Spread the bread with margarine."
+     }
+    },
+    {
+     "id": "dorar",
+     "hr": "dorar",
+     "en": "to brown (food)",
+     "pos": "v.",
+     "example": {
+      "target": "Dora la cebolla en un poco de aceite.",
+      "gloss": "Brown the onion in a little oil."
+     }
+    },
+    {
+     "id": "condimentar",
+     "hr": "condimentar",
+     "en": "to season",
+     "pos": "v.",
+     "example": {
+      "target": "Condimenta el pescado con perejil y limón.",
+      "gloss": "Season the fish with parsley and lemon."
+     }
+    },
+    {
+     "id": "triturar",
+     "hr": "triturar",
+     "en": "to blend, to crush",
+     "pos": "v.",
+     "example": {
+      "target": "Trituramos las verduras para hacer la crema.",
+      "gloss": "We blend the vegetables to make the cream soup."
+     }
+    },
+    {
+     "id": "pesar",
+     "hr": "pesar",
+     "en": "to weigh",
+     "pos": "v.",
+     "example": {
+      "target": "Pesa la harina antes de mezclarla.",
+      "gloss": "Weigh the flour before mixing it."
+     }
+    },
+    {
+     "id": "oler",
+     "hr": "oler",
+     "en": "to smell",
+     "pos": "v.",
+     "note": "h+ue: huelo; oler a = to smell of",
+     "example": {
+      "target": "La cocina huele a ajo y cebolla.",
+      "gloss": "The kitchen smells of garlic and onion."
+     }
+    },
+    {
+     "id": "saber a",
+     "hr": "saber a",
+     "en": "to taste of",
+     "pos": "v.",
+     "note": "different meaning from saber (to know); regular conjugation, always followed by a",
+     "example": {
+      "target": "Este postre sabe a limón.",
+      "gloss": "This dessert tastes of lemon."
+     }
+    },
+    {
+     "id": "la sartén",
+     "hr": "la sartén",
+     "en": "frying pan",
+     "pos": "n. f.",
+     "note": "feminine, though it doesn't end in -a; pl. las sartenes",
+     "example": {
+      "target": "Pon un poco de aceite en la sartén.",
+      "gloss": "Put a little oil in the frying pan."
+     }
+    },
+    {
+     "id": "la olla",
+     "hr": "la olla",
+     "en": "pot, saucepan",
+     "pos": "n. f.",
+     "example": {
+      "target": "La sopa está en la olla.",
+      "gloss": "The soup is in the pot."
+     }
+    },
+    {
+     "id": "la cazuela",
+     "hr": "la cazuela",
+     "en": "casserole dish",
+     "pos": "n. f.",
+     "example": {
+      "target": "Prepara el guiso en la cazuela de barro.",
+      "gloss": "Prepare the stew in the clay casserole dish."
+     }
+    },
+    {
+     "id": "la bandeja",
+     "hr": "la bandeja",
+     "en": "tray",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pon las galletas en la bandeja del horno.",
+      "gloss": "Put the cookies on the baking tray."
+     }
+    },
+    {
+     "id": "la tabla de cortar",
+     "hr": "la tabla de cortar",
+     "en": "cutting board",
+     "pos": "n. f.",
+     "example": {
+      "target": "Corta las verduras sobre la tabla de cortar.",
+      "gloss": "Cut the vegetables on the cutting board."
+     }
+    },
+    {
+     "id": "el cuenco",
+     "hr": "el cuenco",
+     "en": "bowl",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mezcla la ensalada en un cuenco grande.",
+      "gloss": "Mix the salad in a big bowl."
+     }
+    },
+    {
+     "id": "el bol",
+     "hr": "el bol",
+     "en": "bowl (small)",
+     "pos": "n. m.",
+     "note": "similar to un cuenco, usually smaller",
+     "example": {
+      "target": "Bate los huevos en un bol.",
+      "gloss": "Beat the eggs in a bowl."
+     }
+    },
+    {
+     "id": "la jarra",
+     "hr": "la jarra",
+     "en": "jug, pitcher",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llena la jarra de agua fría.",
+      "gloss": "Fill the jug with cold water."
+     }
+    },
+    {
+     "id": "la botella",
+     "hr": "la botella",
+     "en": "bottle",
+     "pos": "n. f.",
+     "example": {
+      "target": "Abre una botella de vino tinto.",
+      "gloss": "Open a bottle of red wine."
+     }
+    },
+    {
+     "id": "la lata",
+     "hr": "la lata",
+     "en": "tin, can",
+     "pos": "n. f.",
+     "example": {
+      "target": "Compramos una lata de atún.",
+      "gloss": "We bought a tin of tuna."
+     }
+    },
+    {
+     "id": "el bote",
+     "hr": "el bote",
+     "en": "jar, small container",
+     "pos": "n. m.",
+     "note": "e.g. el bote de mayonesa",
+     "example": {
+      "target": "Queda poca mayonesa en el bote.",
+      "gloss": "There's little mayonnaise left in the jar."
+     }
+    },
+    {
+     "id": "el delantal",
+     "hr": "el delantal",
+     "en": "apron",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi abuelo siempre se pone el delantal para cocinar.",
+      "gloss": "My grandfather always puts on the apron to cook."
+     }
+    },
+    {
+     "id": "el trapo",
+     "hr": "el trapo",
+     "en": "cloth, rag",
+     "pos": "n. m.",
+     "example": {
+      "target": "Limpia la mesa con un trapo.",
+      "gloss": "Clean the table with a cloth."
+     }
+    },
+    {
+     "id": "la receta de cocina",
+     "hr": "la receta de cocina",
+     "en": "recipe",
+     "pos": "n. f.",
+     "note": "add 'de cocina' to distinguish from la receta (medical prescription)",
+     "example": {
+      "target": "Esta receta de cocina es muy fácil.",
+      "gloss": "This recipe is very easy."
+     }
+    },
+    {
+     "id": "el colador",
+     "hr": "el colador",
+     "en": "strainer, colander",
+     "pos": "n. m.",
+     "example": {
+      "target": "Pasa la pasta por el colador.",
+      "gloss": "Put the pasta through the colander."
+     }
+    },
+    {
+     "id": "la espátula",
+     "hr": "la espátula",
+     "en": "spatula",
+     "pos": "n. f.",
+     "example": {
+      "target": "Da la vuelta a la tortilla con la espátula.",
+      "gloss": "Turn the omelette over with the spatula."
+     }
+    },
+    {
+     "id": "el rallador",
+     "hr": "el rallador",
+     "en": "grater",
+     "pos": "n. m.",
+     "example": {
+      "target": "El rallador está en el cajón.",
+      "gloss": "The grater is in the drawer."
+     }
+    },
+    {
+     "id": "el abrelatas",
+     "hr": "el abrelatas",
+     "en": "can opener",
+     "pos": "n. m.",
+     "note": "invariable in the plural: los abrelatas",
+     "example": {
+      "target": "¿Dónde está el abrelatas?",
+      "gloss": "Where is the can opener?"
+     }
+    },
+    {
+     "id": "el sacacorchos",
+     "hr": "el sacacorchos",
+     "en": "corkscrew",
+     "pos": "n. m.",
+     "note": "invariable in the plural: los sacacorchos",
+     "example": {
+      "target": "Necesito el sacacorchos para abrir el vino.",
+      "gloss": "I need the corkscrew to open the wine."
+     }
+    },
+    {
+     "id": "la olla a presión",
+     "hr": "la olla a presión",
+     "en": "pressure cooker",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los garbanzos se cuecen antes en la olla a presión.",
+      "gloss": "Chickpeas cook faster in the pressure cooker."
+     }
+    },
+    {
+     "id": "la báscula de cocina",
+     "hr": "la báscula de cocina",
+     "en": "kitchen scale",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pesa la harina en la báscula de cocina.",
+      "gloss": "Weigh the flour on the kitchen scale."
+     }
+    },
+    {
+     "id": "el molde",
+     "hr": "el molde",
+     "en": "baking tin, mould",
+     "pos": "n. m.",
+     "example": {
+      "target": "Echa la masa en el molde.",
+      "gloss": "Pour the batter into the mould."
+     }
+    },
+    {
+     "id": "la fuente",
+     "hr": "la fuente",
+     "en": "serving dish, platter",
+     "pos": "n. f.",
+     "note": "also means fountain or source; here, a serving platter",
+     "example": {
+      "target": "Sirve el asado en la fuente grande.",
+      "gloss": "Serve the roast on the big platter."
+     }
+    },
+    {
+     "id": "el cazo",
+     "hr": "el cazo",
+     "en": "small saucepan",
+     "pos": "n. m.",
+     "example": {
+      "target": "Calienta la leche en un cazo.",
+      "gloss": "Heat the milk in a small saucepan."
+     }
+    },
+    {
+     "id": "la cafetera",
+     "hr": "la cafetera",
+     "en": "coffee maker",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cafetera ya está haciendo el café.",
+      "gloss": "The coffee maker is already making the coffee."
+     }
+    },
+    {
+     "id": "la tostadora",
+     "hr": "la tostadora",
+     "en": "toaster",
+     "pos": "n. f.",
+     "example": {
+      "target": "El pan está en la tostadora.",
+      "gloss": "The bread is in the toaster."
+     }
+    },
+    {
+     "id": "el cucharón",
+     "hr": "el cucharón",
+     "en": "ladle",
+     "pos": "n. m.",
+     "example": {
+      "target": "Sirve la sopa con el cucharón.",
+      "gloss": "Serve the soup with the ladle."
+     }
+    },
+    {
+     "id": "el congelador",
+     "hr": "el congelador",
+     "en": "freezer",
+     "pos": "n. m.",
+     "example": {
+      "target": "Guarda el pescado en el congelador.",
+      "gloss": "Store the fish in the freezer."
+     }
+    },
+    {
+     "id": "la harina",
+     "hr": "la harina",
+     "en": "flour",
+     "pos": "n. f.",
+     "example": {
+      "target": "Necesitamos dos tazas de harina.",
+      "gloss": "We need two cups of flour."
+     }
+    },
+    {
+     "id": "la avena",
+     "hr": "la avena",
+     "en": "oats",
+     "pos": "n. f.",
+     "example": {
+      "target": "Desayuno avena con fruta todas las mañanas.",
+      "gloss": "I have oats with fruit for breakfast every morning."
+     }
+    },
+    {
+     "id": "la legumbre",
+     "hr": "la legumbre",
+     "en": "legume, pulse",
+     "pos": "n. f.",
+     "note": "often used in the plural: las legumbres",
+     "example": {
+      "target": "Las legumbres son muy sanas.",
+      "gloss": "Legumes are very healthy."
+     }
+    },
+    {
+     "id": "el garbanzo",
+     "hr": "el garbanzo",
+     "en": "chickpea",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ponemos garbanzos en el cocido.",
+      "gloss": "We put chickpeas in the stew."
+     }
+    },
+    {
+     "id": "la lenteja",
+     "hr": "la lenteja",
+     "en": "lentil",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hoy comemos lentejas con chorizo.",
+      "gloss": "Today we're eating lentils with chorizo."
+     }
+    },
+    {
+     "id": "la judía",
+     "hr": "la judía",
+     "en": "bean",
+     "pos": "n. f.",
+     "note": "peninsular term for bean, fresh or dried",
+     "example": {
+      "target": "Las judías verdes están riquísimas.",
+      "gloss": "The green beans are delicious."
+     }
+    },
+    {
+     "id": "el guisante",
+     "hr": "el guisante",
+     "en": "pea",
+     "pos": "n. m.",
+     "example": {
+      "target": "Añade los guisantes al arroz.",
+      "gloss": "Add the peas to the rice."
+     }
+    },
+    {
+     "id": "la seta",
+     "hr": "la seta",
+     "en": "wild mushroom",
+     "pos": "n. f.",
+     "example": {
+      "target": "En otoño recogemos setas en el bosque.",
+      "gloss": "In autumn we pick wild mushrooms in the forest."
+     }
+    },
+    {
+     "id": "el champiñón",
+     "hr": "el champiñón",
+     "en": "mushroom",
+     "pos": "n. m.",
+     "example": {
+      "target": "Fríe los champiñones con ajo.",
+      "gloss": "Fry the mushrooms with garlic."
+     }
+    },
+    {
+     "id": "el pimiento",
+     "hr": "el pimiento",
+     "en": "pepper (vegetable)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Corta el pimiento rojo en tiras.",
+      "gloss": "Cut the red pepper into strips."
+     }
+    },
+    {
+     "id": "el pepino",
+     "hr": "el pepino",
+     "en": "cucumber",
+     "pos": "n. m.",
+     "example": {
+      "target": "El gazpacho lleva pepino y tomate.",
+      "gloss": "Gazpacho has cucumber and tomato in it."
+     }
+    },
+    {
+     "id": "el calabacín",
+     "hr": "el calabacín",
+     "en": "courgette, zucchini",
+     "pos": "n. m.",
+     "example": {
+      "target": "Asamos calabacín con un poco de aceite.",
+      "gloss": "We roast courgette with a little oil."
+     }
+    },
+    {
+     "id": "la berenjena",
+     "hr": "la berenjena",
+     "en": "aubergine, eggplant",
+     "pos": "n. f.",
+     "example": {
+      "target": "La berenjena se puede asar o freír.",
+      "gloss": "Aubergine can be roasted or fried."
+     }
+    },
+    {
+     "id": "las espinacas",
+     "hr": "las espinacas",
+     "en": "spinach",
+     "pos": "n. f.",
+     "note": "almost always used in the plural",
+     "example": {
+      "target": "Las espinacas se cocinan en pocos minutos.",
+      "gloss": "Spinach cooks in just a few minutes."
+     }
+    },
+    {
+     "id": "el perejil",
+     "hr": "el perejil",
+     "en": "parsley",
+     "pos": "n. m.",
+     "example": {
+      "target": "Echa perejil picado por encima.",
+      "gloss": "Sprinkle chopped parsley on top."
+     }
+    },
+    {
+     "id": "el orégano",
+     "hr": "el orégano",
+     "en": "oregano",
+     "pos": "n. m.",
+     "example": {
+      "target": "La pizza casera lleva orégano.",
+      "gloss": "Homemade pizza has oregano."
+     }
+    },
+    {
+     "id": "la pimienta",
+     "hr": "la pimienta",
+     "en": "pepper (spice)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Añade sal y pimienta negra a la salsa.",
+      "gloss": "Add salt and black pepper to the sauce."
+     }
+    },
+    {
+     "id": "el vinagre",
+     "hr": "el vinagre",
+     "en": "vinegar",
+     "pos": "n. m.",
+     "example": {
+      "target": "Aliña la ensalada con aceite y vinagre.",
+      "gloss": "Dress the salad with oil and vinegar."
+     }
+    },
+    {
+     "id": "la mostaza",
+     "hr": "la mostaza",
+     "en": "mustard",
+     "pos": "n. f.",
+     "example": {
+      "target": "Ponle un poco de mostaza al bocadillo.",
+      "gloss": "Put a bit of mustard on the sandwich."
+     }
+    },
+    {
+     "id": "la mayonesa",
+     "hr": "la mayonesa",
+     "en": "mayonnaise",
+     "pos": "n. f.",
+     "example": {
+      "target": "Prepararon la mayonesa casera.",
+      "gloss": "They made homemade mayonnaise."
+     }
+    },
+    {
+     "id": "la nata",
+     "hr": "la nata",
+     "en": "cream",
+     "pos": "n. f.",
+     "example": {
+      "target": "El postre lleva nata montada.",
+      "gloss": "The dessert has whipped cream."
+     }
+    },
+    {
+     "id": "la margarina",
+     "hr": "la margarina",
+     "en": "margarine",
+     "pos": "n. f.",
+     "example": {
+      "target": "Untamos el pan con margarina por la mañana.",
+      "gloss": "We spread margarine on the bread in the morning."
+     }
+    },
+    {
+     "id": "el embutido",
+     "hr": "el embutido",
+     "en": "cured meat, cold cuts",
+     "pos": "n. m.",
+     "example": {
+      "target": "En la nevera hay embutido y queso.",
+      "gloss": "There's cold cuts and cheese in the fridge."
+     }
+    },
+    {
+     "id": "el chorizo",
+     "hr": "el chorizo",
+     "en": "chorizo",
+     "pos": "n. m.",
+     "example": {
+      "target": "El chorizo le da mucho sabor al cocido.",
+      "gloss": "Chorizo gives the stew a lot of flavor."
+     }
+    },
+    {
+     "id": "el jamón serrano",
+     "hr": "el jamón serrano",
+     "en": "cured ham",
+     "pos": "n. m.",
+     "note": "a generic type of cured ham, not a brand",
+     "example": {
+      "target": "Nos sirvieron una ración de jamón serrano.",
+      "gloss": "They served us a portion of cured ham."
+     }
+    },
+    {
+     "id": "la ternera",
+     "hr": "la ternera",
+     "en": "veal, beef",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pedimos un filete de ternera.",
+      "gloss": "We ordered a veal steak."
+     }
+    },
+    {
+     "id": "el cerdo",
+     "hr": "el cerdo",
+     "en": "pork",
+     "pos": "n. m.",
+     "note": "also means the animal, pig",
+     "example": {
+      "target": "El cerdo asado estaba muy tierno.",
+      "gloss": "The roast pork was very tender."
+     }
+    },
+    {
+     "id": "el cordero",
+     "hr": "el cordero",
+     "en": "lamb",
+     "pos": "n. m.",
+     "example": {
+      "target": "El cordero se asa despacio en el horno.",
+      "gloss": "The lamb is roasted slowly in the oven."
+     }
+    },
+    {
+     "id": "el marisco",
+     "hr": "el marisco",
+     "en": "seafood",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este restaurante es famoso por su marisco.",
+      "gloss": "This restaurant is famous for its seafood."
+     }
+    },
+    {
+     "id": "la gamba",
+     "hr": "la gamba",
+     "en": "prawn",
+     "pos": "n. f.",
+     "example": {
+      "target": "Las gambas al ajillo son mi plato favorito.",
+      "gloss": "Garlic prawns are my favourite dish."
+     }
+    },
+    {
+     "id": "el calamar",
+     "hr": "el calamar",
+     "en": "squid",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los calamares fritos están deliciosos.",
+      "gloss": "The fried squid is delicious."
+     }
+    },
+    {
+     "id": "el atún",
+     "hr": "el atún",
+     "en": "tuna",
+     "pos": "n. m.",
+     "example": {
+      "target": "La ensalada lleva atún y huevo.",
+      "gloss": "The salad has tuna and egg."
+     }
+    },
+    {
+     "id": "la merluza",
+     "hr": "la merluza",
+     "en": "hake",
+     "pos": "n. f.",
+     "example": {
+      "target": "La merluza a la plancha es muy ligera.",
+      "gloss": "Grilled hake is very light."
+     }
+    },
+    {
+     "id": "el bacalao",
+     "hr": "el bacalao",
+     "en": "cod",
+     "pos": "n. m.",
+     "example": {
+      "target": "El bacalao con tomate es típico de aquí.",
+      "gloss": "Cod with tomato is typical here."
+     }
+    },
+    {
+     "id": "la almeja",
+     "hr": "la almeja",
+     "en": "clam",
+     "pos": "n. f.",
+     "example": {
+      "target": "Las almejas se cocinan con vino blanco.",
+      "gloss": "Clams are cooked with white wine."
+     }
+    },
+    {
+     "id": "el mejillón",
+     "hr": "el mejillón",
+     "en": "mussel",
+     "pos": "n. m.",
+     "note": "pl. los mejillones",
+     "example": {
+      "target": "Pedimos mejillones de primero.",
+      "gloss": "We ordered mussels as a starter."
+     }
+    },
+    {
+     "id": "el ingrediente",
+     "hr": "el ingrediente",
+     "en": "ingredient",
+     "pos": "n. m.",
+     "example": {
+      "target": "¿Qué ingredientes lleva esta receta de cocina?",
+      "gloss": "What ingredients does this recipe have?"
+     }
+    },
+    {
+     "id": "las especias",
+     "hr": "las especias",
+     "en": "spices",
+     "pos": "n. f.",
+     "note": "almost always used in the plural",
+     "example": {
+      "target": "El curry lleva muchas especias.",
+      "gloss": "Curry has many spices."
+     }
+    },
+    {
+     "id": "la cucharada",
+     "hr": "la cucharada",
+     "en": "tablespoon (measurement)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Añade una cucharada de aceite.",
+      "gloss": "Add a tablespoon of oil."
+     }
+    },
+    {
+     "id": "la cucharadita",
+     "hr": "la cucharadita",
+     "en": "teaspoon (measurement)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Echa una cucharadita de azúcar al café.",
+      "gloss": "Add a teaspoon of sugar to the coffee."
+     }
+    },
+    {
+     "id": "la pizca",
+     "hr": "la pizca",
+     "en": "pinch (of salt, etc.)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Solo necesitas una pizca de sal.",
+      "gloss": "You only need a pinch of salt."
+     }
+    },
+    {
+     "id": "el menú",
+     "hr": "el menú",
+     "en": "menu",
+     "pos": "n. m.",
+     "example": {
+      "target": "¿Nos traes el menú, por favor?",
+      "gloss": "Could you bring us the menu, please?"
+     }
+    },
+    {
+     "id": "el menú del día",
+     "hr": "el menú del día",
+     "en": "set daily menu",
+     "pos": "n. m.",
+     "example": {
+      "target": "El menú del día incluye postre y bebida.",
+      "gloss": "The set daily menu includes dessert and a drink."
+     }
+    },
+    {
+     "id": "la carta de vinos",
+     "hr": "la carta de vinos",
+     "en": "wine list",
+     "pos": "n. f.",
+     "example": {
+      "target": "El camarero nos trajo la carta de vinos.",
+      "gloss": "The waiter brought us the wine list."
+     }
+    },
+    {
+     "id": "el primer plato",
+     "hr": "el primer plato",
+     "en": "first course",
+     "pos": "n. m.",
+     "example": {
+      "target": "De primer plato, quiero la ensalada.",
+      "gloss": "For the first course, I want the salad."
+     }
+    },
+    {
+     "id": "el segundo plato",
+     "hr": "el segundo plato",
+     "en": "main course",
+     "pos": "n. m.",
+     "example": {
+      "target": "El segundo plato es pescado con patatas.",
+      "gloss": "The main course is fish with potatoes."
+     }
+    },
+    {
+     "id": "la ración",
+     "hr": "la ración",
+     "en": "portion, sharing plate",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pedimos una ración de calamares para compartir.",
+      "gloss": "We ordered a portion of squid to share."
+     }
+    },
+    {
+     "id": "la tapa",
+     "hr": "la tapa",
+     "en": "tapa (small dish)",
+     "pos": "n. f.",
+     "example": {
+      "target": "En este bar ponen una tapa gratis con cada bebida.",
+      "gloss": "In this bar they give a free tapa with every drink."
+     }
+    },
+    {
+     "id": "el aperitivo",
+     "hr": "el aperitivo",
+     "en": "appetizer, pre-meal snack",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tomamos un aperitivo antes de comer.",
+      "gloss": "We had an appetizer before eating."
+     }
+    },
+    {
+     "id": "la bebida",
+     "hr": "la bebida",
+     "en": "drink",
+     "pos": "n. f.",
+     "example": {
+      "target": "¿Qué bebida quieres con la comida?",
+      "gloss": "What drink do you want with the meal?"
+     }
+    },
+    {
+     "id": "el refresco",
+     "hr": "el refresco",
+     "en": "soft drink",
+     "pos": "n. m.",
+     "example": {
+      "target": "Prefiero un refresco frío.",
+      "gloss": "I prefer a cold soft drink."
+     }
+    },
+    {
+     "id": "la caña",
+     "hr": "la caña",
+     "en": "small draft beer",
+     "pos": "n. f.",
+     "note": "a small glass of draft beer, very common in Spain",
+     "example": {
+      "target": "Nos tomamos una caña en la terraza.",
+      "gloss": "We had a small beer on the terrace."
+     }
+    },
+    {
+     "id": "el vino tinto",
+     "hr": "el vino tinto",
+     "en": "red wine",
+     "pos": "n. m.",
+     "example": {
+      "target": "El vino tinto va bien con la carne.",
+      "gloss": "Red wine goes well with meat."
+     }
+    },
+    {
+     "id": "el vino blanco",
+     "hr": "el vino blanco",
+     "en": "white wine",
+     "pos": "n. m.",
+     "example": {
+      "target": "Sirvieron vino blanco con el marisco.",
+      "gloss": "They served white wine with the seafood."
+     }
+    },
+    {
+     "id": "la sobremesa",
+     "hr": "la sobremesa",
+     "en": "after-meal chat",
+     "pos": "n. f.",
+     "note": "the time spent chatting at the table after a meal",
+     "example": {
+      "target": "La sobremesa duró más de una hora.",
+      "gloss": "The after-meal chat lasted more than an hour."
+     }
+    },
+    {
+     "id": "la propina",
+     "hr": "la propina",
+     "en": "tip",
+     "pos": "n. f.",
+     "example": {
+      "target": "Dejamos una propina para el camarero.",
+      "gloss": "We left a tip for the waiter."
+     }
+    },
+    {
+     "id": "la camarera",
+     "hr": "la camarera",
+     "en": "waitress",
+     "pos": "n. f.",
+     "example": {
+      "target": "La camarera nos recomendó el pescado.",
+      "gloss": "The waitress recommended the fish to us."
+     }
+    },
+    {
+     "id": "el comedor",
+     "hr": "el comedor",
+     "en": "dining room",
+     "pos": "n. m.",
+     "example": {
+      "target": "El comedor del restaurante estaba lleno.",
+      "gloss": "The restaurant's dining room was full."
+     }
+    },
+    {
+     "id": "la barra",
+     "hr": "la barra",
+     "en": "(bar) counter",
+     "pos": "n. f.",
+     "example": {
+      "target": "Comimos de pie en la barra.",
+      "gloss": "We ate standing at the bar counter."
+     }
+    },
+    {
+     "id": "el mantel",
+     "hr": "el mantel",
+     "en": "tablecloth",
+     "pos": "n. m.",
+     "example": {
+      "target": "Puso un mantel blanco para la cena.",
+      "gloss": "She put a white tablecloth on for dinner."
+     }
+    },
+    {
+     "id": "el almuerzo",
+     "hr": "el almuerzo",
+     "en": "lunch",
+     "pos": "n. m.",
+     "note": "more formal or regional word for lunch than la comida",
+     "example": {
+      "target": "El almuerzo empieza a las dos.",
+      "gloss": "Lunch starts at two."
+     }
+    },
+    {
+     "id": "la merienda",
+     "hr": "la merienda",
+     "en": "afternoon snack",
+     "pos": "n. f.",
+     "example": {
+      "target": "La merienda de los niños es pan con chocolate.",
+      "gloss": "The children's afternoon snack is bread with chocolate."
+     }
+    },
+    {
+     "id": "el bufé libre",
+     "hr": "el bufé libre",
+     "en": "all-you-can-eat buffet",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este restaurante tiene bufé libre los domingos.",
+      "gloss": "This restaurant has an all-you-can-eat buffet on Sundays."
+     }
+    },
+    {
+     "id": "para llevar",
+     "hr": "para llevar",
+     "en": "to take away",
+     "pos": "expr.",
+     "example": {
+      "target": "Un café para llevar, por favor.",
+      "gloss": "A coffee to take away, please."
+     }
+    },
+    {
+     "id": "crudo",
+     "hr": "crudo",
+     "en": "raw",
+     "pos": "adj.",
+     "example": {
+      "target": "El pescado crudo no me gusta.",
+      "gloss": "I don't like raw fish."
+     }
+    },
+    {
+     "id": "hecho",
+     "hr": "hecho",
+     "en": "cooked, done",
+     "pos": "adj.",
+     "example": {
+      "target": "¿Ya está hecho el arroz?",
+      "gloss": "Is the rice done yet?"
+     }
+    },
+    {
+     "id": "poco hecho",
+     "hr": "poco hecho",
+     "en": "rare (meat)",
+     "pos": "adj.",
+     "example": {
+      "target": "Me gusta la carne poco hecha.",
+      "gloss": "I like my meat rare."
+     }
+    },
+    {
+     "id": "muy hecho",
+     "hr": "muy hecho",
+     "en": "well done (meat)",
+     "pos": "adj.",
+     "example": {
+      "target": "Él prefiere el filete muy hecho.",
+      "gloss": "He prefers his steak well done."
+     }
+    },
+    {
+     "id": "salado",
+     "hr": "salado",
+     "en": "salty",
+     "pos": "adj.",
+     "example": {
+      "target": "Esta sopa está muy salada.",
+      "gloss": "This soup is very salty."
+     }
+    },
+    {
+     "id": "soso",
+     "hr": "soso",
+     "en": "bland, tasteless",
+     "pos": "adj.",
+     "example": {
+      "target": "El arroz está un poco soso.",
+      "gloss": "The rice is a bit bland."
+     }
+    },
+    {
+     "id": "dulce",
+     "hr": "dulce",
+     "en": "sweet",
+     "pos": "adj.",
+     "example": {
+      "target": "El postre casero está muy dulce.",
+      "gloss": "The homemade dessert is very sweet."
+     }
+    },
+    {
+     "id": "amargo",
+     "hr": "amargo",
+     "en": "bitter",
+     "pos": "adj.",
+     "example": {
+      "target": "El café solo me parece amargo.",
+      "gloss": "Black coffee tastes bitter to me."
+     }
+    },
+    {
+     "id": "ácido",
+     "hr": "ácido",
+     "en": "sour, acidic",
+     "pos": "adj.",
+     "example": {
+      "target": "El limón es muy ácido.",
+      "gloss": "Lemon is very sour."
+     }
+    },
+    {
+     "id": "picante",
+     "hr": "picante",
+     "en": "spicy",
+     "pos": "adj.",
+     "example": {
+      "target": "¿Es muy picante esta salsa?",
+      "gloss": "Is this sauce very spicy?"
+     }
+    },
+    {
+     "id": "rico",
+     "hr": "rico",
+     "en": "tasty, delicious",
+     "pos": "adj.",
+     "example": {
+      "target": "¡Qué rica está esta tortilla!",
+      "gloss": "This omelette is so tasty!"
+     }
+    },
+    {
+     "id": "asqueroso",
+     "hr": "asqueroso",
+     "en": "disgusting",
+     "pos": "adj.",
+     "example": {
+      "target": "El pescado pasado huele asqueroso.",
+      "gloss": "The spoiled fish smells disgusting."
+     }
+    },
+    {
+     "id": "vegetariano",
+     "hr": "vegetariano",
+     "en": "vegetarian",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermana es vegetariana.",
+      "gloss": "My sister is vegetarian."
+     }
+    },
+    {
+     "id": "casero",
+     "hr": "casero",
+     "en": "homemade",
+     "pos": "adj.",
+     "example": {
+      "target": "Prefiero la comida casera.",
+      "gloss": "I prefer homemade food."
+     }
+    },
+    {
+     "id": "integral",
+     "hr": "integral",
+     "en": "wholemeal, whole grain",
+     "pos": "adj.",
+     "example": {
+      "target": "Compramos pan integral.",
+      "gloss": "We bought wholemeal bread."
+     }
+    },
+    {
+     "id": "congelado",
+     "hr": "congelado",
+     "en": "frozen",
+     "pos": "adj.",
+     "example": {
+      "target": "El pescado congelado también está bueno.",
+      "gloss": "Frozen fish is also good."
+     }
+    },
+    {
+     "id": "recién hecho",
+     "hr": "recién hecho",
+     "en": "freshly made",
+     "pos": "adj.",
+     "example": {
+      "target": "El pan recién hecho huele muy bien.",
+      "gloss": "Freshly made bread smells very good."
+     }
+    },
+    {
+     "id": "el sabor",
+     "hr": "el sabor",
+     "en": "flavor, taste",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este plato tiene mucho sabor.",
+      "gloss": "This dish has a lot of flavor."
+     }
+    },
+    {
+     "id": "al gusto",
+     "hr": "al gusto",
+     "en": "to taste (seasoning)",
+     "pos": "expr.",
+     "example": {
+      "target": "Sal y pimienta al gusto.",
+      "gloss": "Salt and pepper to taste."
+     }
+    },
+    {
+     "id": "¡que aproveche!",
+     "hr": "¡Que aproveche!",
+     "en": "Enjoy your meal!",
+     "pos": "expr.",
+     "example": {
+      "target": "¡Que aproveche a todos!",
+      "gloss": "Enjoy your meal, everyone!"
+     }
+    },
+    {
+     "id": "la docena",
+     "hr": "la docena",
+     "en": "dozen",
+     "pos": "n. f.",
+     "example": {
+      "target": "Compra una docena de huevos.",
+      "gloss": "Buy a dozen eggs."
+     }
+    },
+    {
+     "id": "el litro",
+     "hr": "el litro",
+     "en": "liter",
+     "pos": "n. m.",
+     "example": {
+      "target": "Necesitamos un litro de leche.",
+      "gloss": "We need a liter of milk."
+     }
+    },
+    {
+     "id": "el kilo",
+     "hr": "el kilo",
+     "en": "kilo, kilogram",
+     "pos": "n. m.",
+     "example": {
+      "target": "Compramos un kilo de patatas.",
+      "gloss": "We bought a kilo of potatoes."
+     }
+    },
+    {
+     "id": "el gramo",
+     "hr": "el gramo",
+     "en": "gram",
+     "pos": "n. m.",
+     "example": {
+      "target": "La receta de cocina necesita doscientos gramos de harina.",
+      "gloss": "The recipe needs two hundred grams of flour."
+     }
+    },
+    {
+     "id": "tener sed",
+     "hr": "tener sed",
+     "en": "to be thirsty",
+     "pos": "v.",
+     "note": "Spanish uses tener, not ser or estar: tengo sed, not soy sediento",
+     "example": {
+      "target": "Tengo mucha sed, quiero un vaso de agua.",
+      "gloss": "I am very thirsty, I want a glass of water."
+     }
+    }
+   ]
+  }
+ ]
+}
