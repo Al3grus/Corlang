@@ -171,6 +171,26 @@ CASES = [
                 {"hr": "Las caras claras se ven mejor.", "en": "x"}])
      ]), False, None),
 
+    # The false positives that made a batch-8 authoring agent REPHRASE CORRECT SPANISH to get
+    # past the gate. `quieran` is the present subjunctive of querer, which this course teaches at
+    # B1, and the rest are ordinary present-tense forms of verbs whose stem ends in -ar.
+    ("correct: quieran is the present subjunctive of querer, not an imperfect one",
+     day("B1", "Deseos", [
+         learn([{"hr": "Quiero que quieran venir con nosotros.", "en": "x"},
+                {"hr": "Espero que adquieran la costumbre.", "en": "x"}])
+     ]), False, None),
+
+    ("correct: present tense of -ar-stem verbs is not an imperfect subjunctive",
+     day("B1", "Rutinas", [
+         learn([{"hr": "Ellos aclaran la duda y comparan los precios.", "en": "x"},
+                {"hr": "Los vecinos separan el vidrio y preparan la cena.", "en": "x"},
+                {"hr": "Reparan el coche y declaran el total.", "en": "x"}])
+     ]), False, None),
+
+    ("correct: pasen is the present subjunctive of pasar", day("B1", "Cortesía", [
+        learn([{"hr": "Espero que pasen pronto por la oficina.", "en": "x"}])
+    ]), False, None),
+
     ("correct: envase, clase, frase, base are not subjunctives", day("B1", "Textos", [
         learn([{"hr": "Estas frases son las bases del texto.", "en": "x"},
                {"hr": "Compré el envase en esa clase de tienda.", "en": "x"}])
