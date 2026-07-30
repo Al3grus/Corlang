@@ -320,6 +320,46 @@ CASES = [
              "en": "Last year the small gentleman taught Spanish."},
         ])
     ]), False, None),
+
+    # --- The PROMPT / TITLE blind spot -----------------------------------------------------
+    # A Phase 8c audit found four real B1-ceiling violations that no check could see, because
+    # `.prompt` and an activity `.title` were in no scanned set. The patterns were always right;
+    # the fields were never read. These six cases pin the fix in both directions.
+    ("planted: imperfect subjunctive inside an MCQ PROMPT", day("B1", "Pasado", [
+        mcq("¿Qué frase indica que el tren ya se había ido antes de que llegaran?",
+            ["El tren salió antes", "El tren llegó tarde", "El tren no salió", "El tren espera"],
+            "El tren salió antes")
+    ]), True, "imperfect subjunctive"),
+
+    ("planted: imperfect subjunctive in a DIALOGUE TITLE", day("B1", "Deseos", [
+        dialogue([{"hr": "Hola, ¿qué tal?", "en": "Hi, how are you?"},
+                  {"hr": "Muy bien, gracias.", "en": "Very well, thanks."}],
+                 title="Si pudiera elegir")
+    ]), True, "imperfect subjunctive"),
+
+    ("correct: an ENGLISH prompt containing 'cafe' and 'menu' must not fire the accent list",
+     day("A1", "Bar", [
+         mcq("Order a cafe from the menu and note down the price you are given.",
+             ["un café", "una casa", "una mesa", "un menú"], "un café")
+     ]), False, None),
+
+    ("correct: a prompt naming a present subjunctive the course teaches (K23)",
+     day("B1", "Subjuntivo", [
+         mcq("Elige la opción correcta: Haz lo que quieras cuando quieras.",
+             ["quieras", "querías", "querrás", "quisiste"], "quieras")
+     ]), False, None),
+
+    ("correct: a prompt with present-tense -aran/-eran collisions (K23)",
+     day("B1", "Datos", [
+         mcq("Los datos aclaran que preparan la comida y comparan los precios.",
+             ["aclaran", "aclaraban", "aclararon", "aclarar"], "aclaran")
+     ]), False, None),
+
+    ("planted: a future in -ré inside an A1 prompt, where the ceiling forbids it",
+     day("A1", "Planes", [
+         mcq("Completa la frase: Mañana hablaré con ella por teléfono.",
+             ["hablaré", "hablo", "hablas", "habla"], "hablaré")
+     ]), True, "future tense"),
 ]
 
 # Generic-shape cases: the K14 class, where the checker used to crash or silently skip.
@@ -355,6 +395,54 @@ GENERIC_CASES = [
           "prompt": "¿Dónde está el señor?", "options": ["aquí", "año", "casa", "mesa"],
           "answer": "aquí", "explanation": "e"}
      ]}, False, None),
+
+    # --- `.name` / `.title` orthography ----------------------------------------------------
+    # `Diccionario de la lengua espanola` and `panhispanico de dudas` both shipped unaccented in
+    # the es resources.json. The accent check ran on that file and found nothing, because a
+    # resource title lives at `.resources[n].name`, which was in no scanned set.
+    ("planted: resource NAME missing its enye",
+     {"resources": [{"rank": 1, "name": "Diccionario de la lengua espanola (RAE)",
+                     "type": "book", "url": "https://example.org/", "why": "w"}]},
+     True, "missing enye"),
+
+    ("planted: resource NAME missing a written accent",
+     {"resources": [{"rank": 2, "name": "Diccionario panhispanico de dudas (RAE)",
+                     "type": "book", "url": "https://example.org/", "why": "w"}]},
+     True, "missing written accent"),
+
+    ("planted: a TITLE-CASE missing enye, invisible to the old lowercase-only pattern",
+     {"resources": [{"rank": 3, "name": "Manana y pasado manana",
+                     "type": "book", "url": "https://example.org/", "why": "w"}]},
+     True, "missing enye"),
+
+    ("correct: the accented resource names are quiet",
+     {"resources": [
+         {"rank": 1, "name": "Diccionario de la lengua española (RAE)", "type": "book",
+          "url": "https://example.org/", "why": "w"},
+         {"rank": 2, "name": "Diccionario panhispánico de dudas (RAE)", "type": "book",
+          "url": "https://example.org/", "why": "w"},
+         {"rank": 3, "name": "FundéuRAE, Fundación del Español Urgente", "type": "book",
+          "url": "https://example.org/", "why": "w"},
+     ]}, False, None),
+
+    ("correct: English resource names and an American-variety proper name are not errors",
+     {"resources": [
+         {"rank": 3, "name": "Notes in Spanish", "type": "podcast",
+          "url": "https://example.org/", "why": "w"},
+         {"rank": 4, "name": "Radio Ambulante", "type": "podcast",
+          "url": "https://example.org/", "why": "w"},
+         {"rank": 4, "name": "News in Slow Spanish", "type": "podcast",
+          "url": "https://example.org/", "why": "w"},
+     ]}, False, None),
+
+    ("correct: title-case Montana is the US state and carries no tilde",
+     {"resources": [{"rank": 5, "name": "Montana", "type": "video",
+                     "url": "https://example.org/", "why": "w"}]}, False, None),
+
+    ("correct: the PCIC level names in levels.json need no accents",
+     {"levels": [{"code": "A1", "title": "Beginner (Acceso)"},
+                 {"code": "A2", "title": "Elementary (Plataforma)"},
+                 {"code": "B1", "title": "Intermediate (Umbral)"}]}, False, None),
 ]
 
 

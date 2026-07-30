@@ -139,6 +139,22 @@ def check_italian(path):
                 continue
             for msg in _checks_on_string(s, level):
                 errs.append(f"{tag}: {msg}")
+
+        # THE LEVEL CEILING, over PROMPTS and ACTIVITY TITLES. `italian_strings_of` scans
+        # .hr/.target/.answer and the option arrays, so Italian embedded in an English prompt or
+        # in an activity title was never read. In the Spanish course that exact blind spot hid
+        # FOUR real B1-ceiling violations, found by a Phase 8c audit and not by any checker.
+        # A sweep of all 2,205 prompt/title strings across the 245 shipped Italian days found
+        # ZERO hits, so this guard is prevention rather than a fix: it is here so the hole cannot
+        # be walked into later. Level-gated messages ONLY -- a prompt is largely English
+        # instructional prose, and running the orthography or article checks over it would
+        # false-fire on ordinary English (the K16/K18 shape).
+        for path_, s in check_batch.walk_strings(day):
+            if not (path_.endswith(".prompt") or path_.endswith(".title")):
+                continue
+            for msg in _checks_on_string(s, level):
+                if "at " + level in msg:
+                    errs.append(f"{tag}: {msg} (in a prompt or title, which is learner-visible)")
     return errs
 
 
