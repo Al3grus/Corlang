@@ -1,0 +1,1464 @@
+{
+ "packs": [
+  {
+   "id": "es-b1-society-character",
+   "title": "Society, relationships, character and emotion",
+   "level": "B1",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "la población",
+     "hr": "la población",
+     "en": "population",
+     "pos": "n. f.",
+     "example": {
+      "target": "La población de la ciudad ha crecido mucho en los últimos años.",
+      "gloss": "The city's population has grown a lot in recent years."
+     }
+    },
+    {
+     "id": "la generación",
+     "hr": "la generación",
+     "en": "generation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi generación ha vivido muchos cambios tecnológicos.",
+      "gloss": "My generation has experienced many technological changes."
+     }
+    },
+    {
+     "id": "la juventud",
+     "hr": "la juventud",
+     "en": "youth",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pasó su juventud viajando por el mundo.",
+      "gloss": "He spent his youth traveling around the world."
+     }
+    },
+    {
+     "id": "la infancia",
+     "hr": "la infancia",
+     "en": "childhood",
+     "pos": "n. f.",
+     "example": {
+      "target": "En su infancia vivía en un pueblo pequeño.",
+      "gloss": "In her childhood she lived in a small village."
+     }
+    },
+    {
+     "id": "la vejez",
+     "hr": "la vejez",
+     "en": "old age",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quiere disfrutar de la vejez con salud y tranquilidad.",
+      "gloss": "She wants to enjoy old age with health and peace."
+     }
+    },
+    {
+     "id": "la justicia",
+     "hr": "la justicia",
+     "en": "justice",
+     "pos": "n. f.",
+     "example": {
+      "target": "Confiamos en que la justicia resuelva el caso pronto.",
+      "gloss": "We trust that justice will resolve the case soon."
+     }
+    },
+    {
+     "id": "la injusticia",
+     "hr": "la injusticia",
+     "en": "injustice",
+     "pos": "n. f.",
+     "example": {
+      "target": "Es una injusticia que algunos trabajen tanto y ganen tan poco.",
+      "gloss": "It is an injustice that some people work so much and earn so little."
+     }
+    },
+    {
+     "id": "el prejuicio",
+     "hr": "el prejuicio",
+     "en": "prejudice",
+     "pos": "n. m.",
+     "example": {
+      "target": "No deberíamos juzgar a nadie por un prejuicio.",
+      "gloss": "We should not judge anyone based on a prejudice."
+     }
+    },
+    {
+     "id": "el estereotipo",
+     "hr": "el estereotipo",
+     "en": "stereotype",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ese estereotipo sobre los jóvenes no es cierto.",
+      "gloss": "That stereotype about young people is not true."
+     }
+    },
+    {
+     "id": "la discriminación",
+     "hr": "la discriminación",
+     "en": "discrimination",
+     "pos": "n. f.",
+     "example": {
+      "target": "La empresa tiene una política clara contra la discriminación.",
+      "gloss": "The company has a clear policy against discrimination."
+     }
+    },
+    {
+     "id": "el voluntariado",
+     "hr": "el voluntariado",
+     "en": "volunteering",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hace voluntariado en un centro para personas mayores.",
+      "gloss": "He volunteers at a center for elderly people."
+     }
+    },
+    {
+     "id": "el conflicto",
+     "hr": "el conflicto",
+     "en": "conflict",
+     "pos": "n. m.",
+     "example": {
+      "target": "El conflicto entre los dos grupos duró varios meses.",
+      "gloss": "The conflict between the two groups lasted several months."
+     }
+    },
+    {
+     "id": "el desacuerdo",
+     "hr": "el desacuerdo",
+     "en": "disagreement",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hubo un desacuerdo sobre cómo repartir el trabajo.",
+      "gloss": "There was a disagreement about how to share out the work."
+     }
+    },
+    {
+     "id": "la mediación",
+     "hr": "la mediación",
+     "en": "mediation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Gracias a la mediación, las dos familias volvieron a hablarse.",
+      "gloss": "Thanks to mediation, the two families started speaking again."
+     }
+    },
+    {
+     "id": "el compromiso",
+     "hr": "el compromiso",
+     "en": "commitment",
+     "pos": "n. m.",
+     "example": {
+      "target": "Asumió el compromiso de ayudar cada fin de semana.",
+      "gloss": "He took on the commitment to help every weekend."
+     }
+    },
+    {
+     "id": "el respeto",
+     "hr": "el respeto",
+     "en": "respect",
+     "pos": "n. m.",
+     "example": {
+      "target": "El respeto es la base de cualquier relación.",
+      "gloss": "Respect is the basis of any relationship."
+     }
+    },
+    {
+     "id": "la tolerancia",
+     "hr": "la tolerancia",
+     "en": "tolerance",
+     "pos": "n. f.",
+     "example": {
+      "target": "En esta clase valoramos mucho la tolerancia.",
+      "gloss": "In this class we value tolerance a lot."
+     }
+    },
+    {
+     "id": "la tradición",
+     "hr": "la tradición",
+     "en": "tradition",
+     "pos": "n. f.",
+     "example": {
+      "target": "Es una tradición reunir a toda la familia en Navidad.",
+      "gloss": "It is a tradition to gather the whole family at Christmas."
+     }
+    },
+    {
+     "id": "el valor",
+     "hr": "el valor",
+     "en": "value, courage",
+     "pos": "n. m.",
+     "note": "here in the sense of value or courage, not monetary worth",
+     "example": {
+      "target": "Admiro el valor con el que afrontó la enfermedad.",
+      "gloss": "I admire the courage with which she faced the illness."
+     }
+    },
+    {
+     "id": "la norma social",
+     "hr": "la norma social",
+     "en": "social norm",
+     "pos": "n. f.",
+     "example": {
+      "target": "Saludar al entrar es una norma social muy extendida.",
+      "gloss": "Greeting people when you enter is a very widespread social norm."
+     }
+    },
+    {
+     "id": "la diversidad",
+     "hr": "la diversidad",
+     "en": "diversity",
+     "pos": "n. f.",
+     "example": {
+      "target": "El barrio es conocido por su diversidad cultural.",
+      "gloss": "The neighborhood is known for its cultural diversity."
+     }
+    },
+    {
+     "id": "la exclusión",
+     "hr": "la exclusión",
+     "en": "exclusion",
+     "pos": "n. f.",
+     "example": {
+      "target": "La exclusión social afecta sobre todo a los más vulnerables.",
+      "gloss": "Social exclusion mainly affects the most vulnerable."
+     }
+    },
+    {
+     "id": "la brecha generacional",
+     "hr": "la brecha generacional",
+     "en": "generation gap",
+     "pos": "n. f.",
+     "example": {
+      "target": "A veces la brecha generacional dificulta la comunicación en casa.",
+      "gloss": "Sometimes the generation gap makes communication at home difficult."
+     }
+    },
+    {
+     "id": "la amistad",
+     "hr": "la amistad",
+     "en": "friendship",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su amistad ha durado más de veinte años.",
+      "gloss": "Their friendship has lasted more than twenty years."
+     }
+    },
+    {
+     "id": "el compañerismo",
+     "hr": "el compañerismo",
+     "en": "camaraderie, fellowship",
+     "pos": "n. m.",
+     "example": {
+      "target": "En el equipo hay mucho compañerismo.",
+      "gloss": "There is a lot of camaraderie in the team."
+     }
+    },
+    {
+     "id": "la lealtad",
+     "hr": "la lealtad",
+     "en": "loyalty",
+     "pos": "n. f.",
+     "example": {
+      "target": "Valoro la lealtad más que cualquier otra cualidad.",
+      "gloss": "I value loyalty more than any other quality."
+     }
+    },
+    {
+     "id": "la sinceridad",
+     "hr": "la sinceridad",
+     "en": "sincerity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Habló con total sinceridad sobre sus dudas.",
+      "gloss": "He spoke with total sincerity about his doubts."
+     }
+    },
+    {
+     "id": "la intimidad",
+     "hr": "la intimidad",
+     "en": "intimacy, privacy",
+     "pos": "n. f.",
+     "example": {
+      "target": "Necesita un poco de intimidad para pensar con calma.",
+      "gloss": "She needs a little privacy to think calmly."
+     }
+    },
+    {
+     "id": "el afecto",
+     "hr": "el afecto",
+     "en": "affection",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le demuestra su afecto con pequeños gestos.",
+      "gloss": "He shows her his affection with small gestures."
+     }
+    },
+    {
+     "id": "el cariño",
+     "hr": "el cariño",
+     "en": "affection, fondness",
+     "pos": "n. m.",
+     "example": {
+      "target": "Trata a sus alumnos con mucho cariño.",
+      "gloss": "She treats her students with a lot of affection."
+     }
+    },
+    {
+     "id": "el vínculo",
+     "hr": "el vínculo",
+     "en": "bond, link",
+     "pos": "n. m.",
+     "example": {
+      "target": "El vínculo entre las dos hermanas es muy fuerte.",
+      "gloss": "The bond between the two sisters is very strong."
+     }
+    },
+    {
+     "id": "el noviazgo",
+     "hr": "el noviazgo",
+     "en": "courtship, relationship (boyfriend/girlfriend)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Llevan un noviazgo de tres años.",
+      "gloss": "They have been in a relationship for three years."
+     }
+    },
+    {
+     "id": "la boda",
+     "hr": "la boda",
+     "en": "wedding",
+     "pos": "n. f.",
+     "example": {
+      "target": "La boda de mi prima fue el sábado pasado.",
+      "gloss": "My cousin's wedding was last Saturday."
+     }
+    },
+    {
+     "id": "el divorcio",
+     "hr": "el divorcio",
+     "en": "divorce",
+     "pos": "n. m.",
+     "example": {
+      "target": "El divorcio no fue fácil para ninguno de los dos.",
+      "gloss": "The divorce was not easy for either of them."
+     }
+    },
+    {
+     "id": "la separación",
+     "hr": "la separación",
+     "en": "separation",
+     "pos": "n. f.",
+     "example": {
+      "target": "Después de la separación, siguieron siendo buenos amigos.",
+      "gloss": "After the separation, they remained good friends."
+     }
+    },
+    {
+     "id": "la ruptura",
+     "hr": "la ruptura",
+     "en": "breakup",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ruptura fue muy dolorosa para los dos.",
+      "gloss": "The breakup was very painful for both of them."
+     }
+    },
+    {
+     "id": "la discusión",
+     "hr": "la discusión",
+     "en": "argument, discussion",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tuvieron una discusión por un tema sin importancia.",
+      "gloss": "They had an argument over an unimportant matter."
+     }
+    },
+    {
+     "id": "la pelea",
+     "hr": "la pelea",
+     "en": "fight, quarrel",
+     "pos": "n. f.",
+     "example": {
+      "target": "La pelea empezó por un malentendido tonto.",
+      "gloss": "The fight started because of a silly misunderstanding."
+     }
+    },
+    {
+     "id": "la reconciliación",
+     "hr": "la reconciliación",
+     "en": "reconciliation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La reconciliación entre los hermanos llegó por fin.",
+      "gloss": "The reconciliation between the brothers finally came."
+     }
+    },
+    {
+     "id": "el malentendido",
+     "hr": "el malentendido",
+     "en": "misunderstanding",
+     "pos": "n. m.",
+     "example": {
+      "target": "Todo fue un malentendido que se solucionó hablando.",
+      "gloss": "It was all a misunderstanding that got solved by talking."
+     }
+    },
+    {
+     "id": "la disculpa",
+     "hr": "la disculpa",
+     "en": "apology",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le pidió disculpas por haber llegado tarde.",
+      "gloss": "He apologized to her for arriving late."
+     }
+    },
+    {
+     "id": "el favor",
+     "hr": "el favor",
+     "en": "favor",
+     "pos": "n. m.",
+     "example": {
+      "target": "¿Puedes hacerme un favor esta tarde?",
+      "gloss": "Can you do me a favor this afternoon?"
+     }
+    },
+    {
+     "id": "la promesa",
+     "hr": "la promesa",
+     "en": "promise",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le hizo una promesa que no pudo cumplir.",
+      "gloss": "He made her a promise that he could not keep."
+     }
+    },
+    {
+     "id": "el secreto",
+     "hr": "el secreto",
+     "en": "secret",
+     "pos": "n. m.",
+     "example": {
+      "target": "Guardó el secreto durante muchos años.",
+      "gloss": "She kept the secret for many years."
+     }
+    },
+    {
+     "id": "el chisme",
+     "hr": "el chisme",
+     "en": "gossip, piece of gossip",
+     "pos": "n. m.",
+     "note": "colloquial",
+     "example": {
+      "target": "No me interesa el chisme del barrio.",
+      "gloss": "I am not interested in the neighborhood gossip."
+     }
+    },
+    {
+     "id": "apoyar",
+     "hr": "apoyar",
+     "en": "to support",
+     "pos": "v.",
+     "example": {
+      "target": "Mis padres siempre me apoyan en mis decisiones.",
+      "gloss": "My parents always support me in my decisions."
+     }
+    },
+    {
+     "id": "confiar",
+     "hr": "confiar",
+     "en": "to trust",
+     "pos": "v.",
+     "note": "confiar en; irregular accent: confío, confías, confía, confían",
+     "example": {
+      "target": "Confío en ti más que en nadie.",
+      "gloss": "I trust you more than anyone."
+     }
+    },
+    {
+     "id": "fiarse",
+     "hr": "fiarse",
+     "en": "to trust, to rely on",
+     "pos": "v.",
+     "note": "fiarse de; pronominal; irregular accent: me fío",
+     "example": {
+      "target": "No me fío de la gente que no conozco.",
+      "gloss": "I do not trust people I do not know."
+     }
+    },
+    {
+     "id": "traicionar",
+     "hr": "traicionar",
+     "en": "to betray",
+     "pos": "v.",
+     "example": {
+      "target": "Nunca traicionaría a un amigo.",
+      "gloss": "I would never betray a friend."
+     }
+    },
+    {
+     "id": "perdonar",
+     "hr": "perdonar",
+     "en": "to forgive",
+     "pos": "v.",
+     "example": {
+      "target": "Te perdono, pero no lo olvido.",
+      "gloss": "I forgive you, but I do not forget it."
+     }
+    },
+    {
+     "id": "reconciliarse",
+     "hr": "reconciliarse",
+     "en": "to reconcile, to make up",
+     "pos": "v.",
+     "note": "reconciliarse con; pronominal",
+     "example": {
+      "target": "Después de la pelea, se reconciliaron enseguida.",
+      "gloss": "After the fight, they made up right away."
+     }
+    },
+    {
+     "id": "romper con",
+     "hr": "romper con",
+     "en": "to break up with",
+     "pos": "v.",
+     "note": "irregular past participle: roto",
+     "example": {
+      "target": "Decidió romper con su novio la semana pasada.",
+      "gloss": "She decided to break up with her boyfriend last week."
+     }
+    },
+    {
+     "id": "llevarse bien",
+     "hr": "llevarse bien",
+     "en": "to get along well",
+     "pos": "v.",
+     "note": "llevarse bien con; pronominal",
+     "example": {
+      "target": "Nos llevamos muy bien con los vecinos.",
+      "gloss": "We get along very well with the neighbors."
+     }
+    },
+    {
+     "id": "caer bien",
+     "hr": "caer bien",
+     "en": "to make a good impression on someone, to like",
+     "pos": "v.",
+     "note": "works like gustar: me cae bien, me caen bien",
+     "example": {
+      "target": "Mi compañero de piso me cae muy bien.",
+      "gloss": "I really like my flatmate."
+     }
+    },
+    {
+     "id": "la personalidad",
+     "hr": "la personalidad",
+     "en": "personality",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tiene una personalidad muy fuerte.",
+      "gloss": "He has a very strong personality."
+     }
+    },
+    {
+     "id": "el carácter",
+     "hr": "el carácter",
+     "en": "character, temperament",
+     "pos": "n. m.",
+     "note": "pl. los caracteres, with a stress shift",
+     "example": {
+      "target": "Su carácter es tranquilo y paciente.",
+      "gloss": "Her character is calm and patient."
+     }
+    },
+    {
+     "id": "la actitud",
+     "hr": "la actitud",
+     "en": "attitude",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cambió de actitud después de hablar con ella.",
+      "gloss": "He changed his attitude after talking to her."
+     }
+    },
+    {
+     "id": "el estado de ánimo",
+     "hr": "el estado de ánimo",
+     "en": "mood, state of mind",
+     "pos": "n. m.",
+     "example": {
+      "target": "Su estado de ánimo mejora cuando hace sol.",
+      "gloss": "His mood improves when it is sunny."
+     }
+    },
+    {
+     "id": "la autoestima",
+     "hr": "la autoestima",
+     "en": "self-esteem",
+     "pos": "n. f.",
+     "example": {
+      "target": "El deporte le ayuda a mejorar la autoestima.",
+      "gloss": "Sport helps her improve her self-esteem."
+     }
+    },
+    {
+     "id": "la timidez",
+     "hr": "la timidez",
+     "en": "shyness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su timidez le impide hablar en público.",
+      "gloss": "His shyness stops him from speaking in public."
+     }
+    },
+    {
+     "id": "la generosidad",
+     "hr": "la generosidad",
+     "en": "generosity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Admiro la generosidad con la que trata a los demás.",
+      "gloss": "I admire the generosity with which she treats others."
+     }
+    },
+    {
+     "id": "la envidia",
+     "hr": "la envidia",
+     "en": "envy",
+     "pos": "n. f.",
+     "example": {
+      "target": "La envidia no le deja disfrutar de los éxitos ajenos.",
+      "gloss": "Envy does not let him enjoy other people's successes."
+     }
+    },
+    {
+     "id": "los celos",
+     "hr": "los celos",
+     "en": "jealousy",
+     "pos": "n. m.",
+     "note": "usually plural; takes los",
+     "example": {
+      "target": "Los celos destruyeron su relación.",
+      "gloss": "Jealousy destroyed their relationship."
+     }
+    },
+    {
+     "id": "el orgullo",
+     "hr": "el orgullo",
+     "en": "pride",
+     "pos": "n. m.",
+     "example": {
+      "target": "El orgullo no le dejó pedir disculpas.",
+      "gloss": "Pride did not let him apologize."
+     }
+    },
+    {
+     "id": "la humildad",
+     "hr": "la humildad",
+     "en": "humility",
+     "pos": "n. f.",
+     "example": {
+      "target": "Habla de sus logros con mucha humildad.",
+      "gloss": "She talks about her achievements with great humility."
+     }
+    },
+    {
+     "id": "la terquedad",
+     "hr": "la terquedad",
+     "en": "stubbornness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su terquedad hace que nunca cambie de opinión.",
+      "gloss": "His stubbornness means he never changes his mind."
+     }
+    },
+    {
+     "id": "la ambición",
+     "hr": "la ambición",
+     "en": "ambition",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su ambición lo llevó a estudiar en el extranjero.",
+      "gloss": "His ambition led him to study abroad."
+     }
+    },
+    {
+     "id": "la curiosidad",
+     "hr": "la curiosidad",
+     "en": "curiosity",
+     "pos": "n. f.",
+     "example": {
+      "target": "La curiosidad del niño no tiene límites.",
+      "gloss": "The child's curiosity has no limits."
+     }
+    },
+    {
+     "id": "la madurez",
+     "hr": "la madurez",
+     "en": "maturity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Con la madurez ha aprendido a controlar su carácter.",
+      "gloss": "With maturity he has learned to control his temper."
+     }
+    },
+    {
+     "id": "la ilusión",
+     "hr": "la ilusión",
+     "en": "hope, excitement, enthusiasm",
+     "pos": "n. f.",
+     "note": "here in the sense of hope or excitement, not an optical illusion",
+     "example": {
+      "target": "Empieza el nuevo trabajo con mucha ilusión.",
+      "gloss": "She is starting the new job with great enthusiasm."
+     }
+    },
+    {
+     "id": "la decepción",
+     "hr": "la decepción",
+     "en": "disappointment",
+     "pos": "n. f.",
+     "example": {
+      "target": "Fue una gran decepción para toda la familia.",
+      "gloss": "It was a great disappointment for the whole family."
+     }
+    },
+    {
+     "id": "el arrepentimiento",
+     "hr": "el arrepentimiento",
+     "en": "regret, repentance",
+     "pos": "n. m.",
+     "example": {
+      "target": "Sintió un arrepentimiento profundo por sus palabras.",
+      "gloss": "He felt deep regret for his words."
+     }
+    },
+    {
+     "id": "la culpa",
+     "hr": "la culpa",
+     "en": "fault, blame, guilt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Sintió que la culpa era toda suya.",
+      "gloss": "He felt that the fault was entirely his own."
+     }
+    },
+    {
+     "id": "el remordimiento",
+     "hr": "el remordimiento",
+     "en": "remorse",
+     "pos": "n. m.",
+     "example": {
+      "target": "El remordimiento no lo dejaba dormir.",
+      "gloss": "Remorse would not let him sleep."
+     }
+    },
+    {
+     "id": "el alivio",
+     "hr": "el alivio",
+     "en": "relief",
+     "pos": "n. m.",
+     "example": {
+      "target": "Fue un alivio saber que estaba bien.",
+      "gloss": "It was a relief to know that he was fine."
+     }
+    },
+    {
+     "id": "la nostalgia",
+     "hr": "la nostalgia",
+     "en": "nostalgia, homesickness",
+     "pos": "n. f.",
+     "example": {
+      "target": "Siente nostalgia de su ciudad natal.",
+      "gloss": "She feels nostalgic for her hometown."
+     }
+    },
+    {
+     "id": "egoísta",
+     "hr": "egoísta",
+     "en": "selfish",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine",
+     "example": {
+      "target": "Es un poco egoísta con su tiempo libre.",
+      "gloss": "He is a bit selfish with his free time."
+     }
+    },
+    {
+     "id": "sincero",
+     "hr": "sincero",
+     "en": "sincere",
+     "pos": "adj.",
+     "example": {
+      "target": "Prefiero un amigo sincero a uno que solo dice lo que quiero oír.",
+      "gloss": "I prefer a sincere friend to one who only says what I want to hear."
+     }
+    },
+    {
+     "id": "hipócrita",
+     "hr": "hipócrita",
+     "en": "hypocritical",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine",
+     "example": {
+      "target": "Me parece hipócrita decir una cosa y hacer otra.",
+      "gloss": "It seems hypocritical to me to say one thing and do another."
+     }
+    },
+    {
+     "id": "fiel",
+     "hr": "fiel",
+     "en": "faithful, loyal",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine",
+     "example": {
+      "target": "Es un amigo fiel desde la infancia.",
+      "gloss": "He has been a loyal friend since childhood."
+     }
+    },
+    {
+     "id": "infiel",
+     "hr": "infiel",
+     "en": "unfaithful",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine",
+     "example": {
+      "target": "Descubrió que su pareja le había sido infiel.",
+      "gloss": "She discovered that her partner had been unfaithful to her."
+     }
+    },
+    {
+     "id": "testarudo",
+     "hr": "testarudo",
+     "en": "stubborn",
+     "pos": "adj.",
+     "example": {
+      "target": "Es tan testarudo que nunca cambia de idea.",
+      "gloss": "He is so stubborn that he never changes his mind."
+     }
+    },
+    {
+     "id": "ambicioso",
+     "hr": "ambicioso",
+     "en": "ambitious",
+     "pos": "adj.",
+     "example": {
+      "target": "Es muy ambiciosa con su carrera profesional.",
+      "gloss": "She is very ambitious about her professional career."
+     }
+    },
+    {
+     "id": "curioso",
+     "hr": "curioso",
+     "en": "curious",
+     "pos": "adj.",
+     "example": {
+      "target": "Los niños son curiosos por naturaleza.",
+      "gloss": "Children are curious by nature."
+     }
+    },
+    {
+     "id": "maduro",
+     "hr": "maduro",
+     "en": "mature",
+     "pos": "adj.",
+     "example": {
+      "target": "Para su edad, es muy maduro.",
+      "gloss": "For his age, he is very mature."
+     }
+    },
+    {
+     "id": "inmaduro",
+     "hr": "inmaduro",
+     "en": "immature",
+     "pos": "adj.",
+     "example": {
+      "target": "Actuó de forma bastante inmadura.",
+      "gloss": "He acted in a rather immature way."
+     }
+    },
+    {
+     "id": "sensible",
+     "hr": "sensible",
+     "en": "sensitive",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine; false friend, does not mean sensible",
+     "example": {
+      "target": "Es una persona muy sensible con los sentimientos ajenos.",
+      "gloss": "He is a person very sensitive to other people's feelings."
+     }
+    },
+    {
+     "id": "susceptible",
+     "hr": "susceptible",
+     "en": "touchy, easily offended",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine; susceptible a",
+     "example": {
+      "target": "Es un poco susceptible con las críticas.",
+      "gloss": "He is a bit touchy about criticism."
+     }
+    },
+    {
+     "id": "comprensivo",
+     "hr": "comprensivo",
+     "en": "understanding",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi jefe es muy comprensivo cuando tengo problemas.",
+      "gloss": "My boss is very understanding when I have problems."
+     }
+    },
+    {
+     "id": "agradecido",
+     "hr": "agradecido",
+     "en": "grateful",
+     "pos": "adj.",
+     "example": {
+      "target": "Estoy muy agradecido por vuestra ayuda.",
+      "gloss": "I am very grateful for your help."
+     }
+    },
+    {
+     "id": "decepcionado",
+     "hr": "decepcionado",
+     "en": "disappointed",
+     "pos": "adj.",
+     "example": {
+      "target": "Se sintió decepcionado con el resultado del partido.",
+      "gloss": "He felt disappointed with the result of the match."
+     }
+    },
+    {
+     "id": "arrepentido",
+     "hr": "arrepentido",
+     "en": "regretful, sorry",
+     "pos": "adj.",
+     "note": "arrepentido de",
+     "example": {
+      "target": "Está arrepentido de lo que dijo ayer.",
+      "gloss": "He regrets what he said yesterday."
+     }
+    },
+    {
+     "id": "aliviado",
+     "hr": "aliviado",
+     "en": "relieved",
+     "pos": "adj.",
+     "example": {
+      "target": "Se quedó aliviado cuando supo que todo estaba bien.",
+      "gloss": "He felt relieved when he found out everything was fine."
+     }
+    },
+    {
+     "id": "la inmigración",
+     "hr": "la inmigración",
+     "en": "immigration",
+     "pos": "n. f.",
+     "example": {
+      "target": "La inmigración ha cambiado la forma de vivir en muchas ciudades.",
+      "gloss": "Immigration has changed the way of life in many cities."
+     }
+    },
+    {
+     "id": "el racismo",
+     "hr": "el racismo",
+     "en": "racism",
+     "pos": "n. m.",
+     "example": {
+      "target": "El racismo es un problema que hay que combatir.",
+      "gloss": "Racism is a problem that needs to be fought."
+     }
+    },
+    {
+     "id": "el machismo",
+     "hr": "el machismo",
+     "en": "sexism, machismo",
+     "pos": "n. m.",
+     "example": {
+      "target": "El machismo todavía existe en algunos ambientes de trabajo.",
+      "gloss": "Sexism still exists in some work environments."
+     }
+    },
+    {
+     "id": "el feminismo",
+     "hr": "el feminismo",
+     "en": "feminism",
+     "pos": "n. m.",
+     "example": {
+      "target": "El feminismo defiende la igualdad de derechos entre hombres y mujeres.",
+      "gloss": "Feminism advocates equal rights between men and women."
+     }
+    },
+    {
+     "id": "la clase social",
+     "hr": "la clase social",
+     "en": "social class",
+     "pos": "n. f.",
+     "example": {
+      "target": "En ese barrio conviven personas de distintas clases sociales.",
+      "gloss": "In that neighborhood people from different social classes live together."
+     }
+    },
+    {
+     "id": "el estatus social",
+     "hr": "el estatus social",
+     "en": "social status",
+     "pos": "n. m.",
+     "example": {
+      "target": "El coche que conduces no define tu estatus social.",
+      "gloss": "The car you drive does not define your social status."
+     }
+    },
+    {
+     "id": "la marginación",
+     "hr": "la marginación",
+     "en": "marginalization",
+     "pos": "n. f.",
+     "example": {
+      "target": "La asociación trabaja para reducir la marginación en el barrio.",
+      "gloss": "The association works to reduce marginalization in the neighborhood."
+     }
+    },
+    {
+     "id": "el maltrato",
+     "hr": "el maltrato",
+     "en": "mistreatment, abuse",
+     "pos": "n. m.",
+     "example": {
+      "target": "Existen leyes duras contra el maltrato animal.",
+      "gloss": "There are strict laws against animal abuse."
+     }
+    },
+    {
+     "id": "la violencia",
+     "hr": "la violencia",
+     "en": "violence",
+     "pos": "n. f.",
+     "example": {
+      "target": "La violencia nunca es la solución a un conflicto.",
+      "gloss": "Violence is never the solution to a conflict."
+     }
+    },
+    {
+     "id": "el activista",
+     "hr": "el activista",
+     "en": "activist",
+     "pos": "n. m./f.",
+     "note": "epicene: el activista / la activista, invariable in gender",
+     "example": {
+      "target": "La activista lleva años defendiendo los derechos de los mayores.",
+      "gloss": "The activist has spent years defending the rights of the elderly."
+     }
+    },
+    {
+     "id": "el amor",
+     "hr": "el amor",
+     "en": "love",
+     "pos": "n. m.",
+     "example": {
+      "target": "El amor y el respeto son la base de su matrimonio.",
+      "gloss": "Love and respect are the foundation of their marriage."
+     }
+    },
+    {
+     "id": "enamorarse",
+     "hr": "enamorarse",
+     "en": "to fall in love",
+     "pos": "v.",
+     "note": "enamorarse de; pronominal",
+     "example": {
+      "target": "Se enamoró de él nada más conocerlo.",
+      "gloss": "She fell in love with him as soon as she met him."
+     }
+    },
+    {
+     "id": "el desamor",
+     "hr": "el desamor",
+     "en": "heartbreak, lack of love",
+     "pos": "n. m.",
+     "example": {
+      "target": "Después del desamor, tardó meses en volver a confiar.",
+      "gloss": "After the heartbreak, it took him months to trust again."
+     }
+    },
+    {
+     "id": "la infidelidad",
+     "hr": "la infidelidad",
+     "en": "infidelity",
+     "pos": "n. f.",
+     "example": {
+      "target": "La infidelidad acabó con su matrimonio.",
+      "gloss": "Infidelity ended their marriage."
+     }
+    },
+    {
+     "id": "el desconocido",
+     "hr": "el desconocido",
+     "en": "stranger",
+     "pos": "n. m.",
+     "note": "fem. la desconocida",
+     "example": {
+      "target": "Nunca subas a un coche con un desconocido.",
+      "gloss": "Never get into a car with a stranger."
+     }
+    },
+    {
+     "id": "la confidencia",
+     "hr": "la confidencia",
+     "en": "confidence, secret shared in confidence",
+     "pos": "n. f.",
+     "example": {
+      "target": "Le hice una confidencia que no debía contar a nadie.",
+      "gloss": "I told her something in confidence that I should not have told anyone."
+     }
+    },
+    {
+     "id": "juntarse",
+     "hr": "juntarse",
+     "en": "to get together, to meet up",
+     "pos": "v.",
+     "note": "pronominal; juntarse con",
+     "example": {
+      "target": "Nos juntamos todos los domingos en casa de mis abuelos.",
+      "gloss": "We get together every Sunday at my grandparents' house."
+     }
+    },
+    {
+     "id": "distanciarse",
+     "hr": "distanciarse",
+     "en": "to grow apart, to distance oneself",
+     "pos": "v.",
+     "note": "distanciarse de; pronominal",
+     "example": {
+      "target": "Se distanciaron después de la discusión.",
+      "gloss": "They grew apart after the argument."
+     }
+    },
+    {
+     "id": "pelearse",
+     "hr": "pelearse",
+     "en": "to fight, to quarrel",
+     "pos": "v.",
+     "note": "pronominal; pelearse con",
+     "example": {
+      "target": "Los hermanos se pelean por tonterías.",
+      "gloss": "The siblings fight over silly things."
+     }
+    },
+    {
+     "id": "reñir",
+     "hr": "reñir",
+     "en": "to quarrel, to scold",
+     "pos": "v.",
+     "note": "e>i: riñe, riñen",
+     "example": {
+      "target": "Los padres no deberían reñir a los hijos delante de otras personas.",
+      "gloss": "Parents should not scold their children in front of other people."
+     }
+    },
+    {
+     "id": "respetar",
+     "hr": "respetar",
+     "en": "to respect",
+     "pos": "v.",
+     "example": {
+      "target": "Debemos respetar las opiniones de los demás.",
+      "gloss": "We must respect other people's opinions."
+     }
+    },
+    {
+     "id": "tolerar",
+     "hr": "tolerar",
+     "en": "to tolerate",
+     "pos": "v.",
+     "example": {
+      "target": "No tolero que me mientan.",
+      "gloss": "I do not tolerate being lied to."
+     }
+    },
+    {
+     "id": "discriminar",
+     "hr": "discriminar",
+     "en": "to discriminate",
+     "pos": "v.",
+     "example": {
+      "target": "La ley prohíbe discriminar por motivos de origen.",
+      "gloss": "The law prohibits discriminating on grounds of origin."
+     }
+    },
+    {
+     "id": "integrarse",
+     "hr": "integrarse",
+     "en": "to integrate, to fit in",
+     "pos": "v.",
+     "note": "integrarse en; pronominal",
+     "example": {
+      "target": "Le costó integrarse en su nuevo barrio.",
+      "gloss": "It was hard for him to fit into his new neighborhood."
+     }
+    },
+    {
+     "id": "excluir",
+     "hr": "excluir",
+     "en": "to exclude",
+     "pos": "v.",
+     "note": "irregular: excluyo, excluye (y-insertion)",
+     "example": {
+      "target": "Nadie debería excluir a un compañero del grupo.",
+      "gloss": "Nobody should exclude a companion from the group."
+     }
+    },
+    {
+     "id": "estar de acuerdo",
+     "hr": "estar de acuerdo",
+     "en": "to agree",
+     "pos": "v.",
+     "note": "estar de acuerdo con",
+     "example": {
+      "target": "No estoy de acuerdo contigo en este tema.",
+      "gloss": "I do not agree with you on this subject."
+     }
+    },
+    {
+     "id": "ponerse de acuerdo",
+     "hr": "ponerse de acuerdo",
+     "en": "to come to an agreement",
+     "pos": "v.",
+     "note": "ponerse de acuerdo sobre; irregular: pongo",
+     "example": {
+      "target": "Al final nos pusimos de acuerdo sobre la fecha de la boda.",
+      "gloss": "In the end we agreed on the wedding date."
+     }
+    },
+    {
+     "id": "avergonzarse",
+     "hr": "avergonzarse",
+     "en": "to be ashamed, to feel embarrassed",
+     "pos": "v.",
+     "note": "o>üe: me avergüenzo; avergonzarse de; pronominal",
+     "example": {
+      "target": "Se avergüenza de haber gritado a su hermano.",
+      "gloss": "He is ashamed of having shouted at his brother."
+     }
+    },
+    {
+     "id": "el rencor",
+     "hr": "el rencor",
+     "en": "resentment, grudge",
+     "pos": "n. m.",
+     "example": {
+      "target": "No guarda rencor a nadie.",
+      "gloss": "She does not hold a grudge against anyone."
+     }
+    },
+    {
+     "id": "la simpatía",
+     "hr": "la simpatía",
+     "en": "friendliness, likeability",
+     "pos": "n. f.",
+     "example": {
+      "target": "Enseguida sintió simpatía por su nueva compañera.",
+      "gloss": "She immediately felt a liking for her new colleague."
+     }
+    },
+    {
+     "id": "la empatía",
+     "hr": "la empatía",
+     "en": "empathy",
+     "pos": "n. f.",
+     "example": {
+      "target": "La empatía nos ayuda a entender a los demás.",
+      "gloss": "Empathy helps us understand other people."
+     }
+    },
+    {
+     "id": "la sensibilidad",
+     "hr": "la sensibilidad",
+     "en": "sensitivity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Trata los temas difíciles con mucha sensibilidad.",
+      "gloss": "She handles difficult subjects with great sensitivity."
+     }
+    },
+    {
+     "id": "valiente",
+     "hr": "valiente",
+     "en": "brave",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine",
+     "example": {
+      "target": "Fue muy valiente al contar lo que le había pasado.",
+      "gloss": "She was very brave to tell what had happened to her."
+     }
+    },
+    {
+     "id": "cobarde",
+     "hr": "cobarde",
+     "en": "cowardly",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine",
+     "example": {
+      "target": "Sería cobarde no decirle la verdad.",
+      "gloss": "It would be cowardly not to tell him the truth."
+     }
+    },
+    {
+     "id": "pesimista",
+     "hr": "pesimista",
+     "en": "pessimistic",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine",
+     "example": {
+      "target": "Es demasiado pesimista sobre el futuro.",
+      "gloss": "He is too pessimistic about the future."
+     }
+    },
+    {
+     "id": "extrovertido",
+     "hr": "extrovertido",
+     "en": "extroverted, outgoing",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi hermano es muy extrovertido y habla con todo el mundo.",
+      "gloss": "My brother is very outgoing and talks to everyone."
+     }
+    },
+    {
+     "id": "introvertido",
+     "hr": "introvertido",
+     "en": "introverted",
+     "pos": "adj.",
+     "example": {
+      "target": "Es bastante introvertido y prefiere estar solo.",
+      "gloss": "He is quite introverted and prefers to be alone."
+     }
+    },
+    {
+     "id": "resentido",
+     "hr": "resentido",
+     "en": "resentful",
+     "pos": "adj.",
+     "note": "resentido con/por",
+     "example": {
+      "target": "Sigue resentido por cómo lo trataron en el trabajo.",
+      "gloss": "He is still resentful about how they treated him at work."
+     }
+    },
+    {
+     "id": "indiferente",
+     "hr": "indiferente",
+     "en": "indifferent",
+     "pos": "adj.",
+     "note": "same form for masculine and feminine; indiferente a",
+     "example": {
+      "target": "Se muestra indiferente a las críticas.",
+      "gloss": "He shows himself indifferent to criticism."
+     }
+    },
+    {
+     "id": "la indiferencia",
+     "hr": "la indiferencia",
+     "en": "indifference",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su indiferencia me dolió más que un enfado.",
+      "gloss": "Her indifference hurt me more than anger would have."
+     }
+    },
+    {
+     "id": "cooperar",
+     "hr": "cooperar",
+     "en": "to cooperate",
+     "pos": "v.",
+     "note": "cooperar con",
+     "example": {
+      "target": "Los dos equipos cooperan para terminar el proyecto a tiempo.",
+      "gloss": "The two teams cooperate to finish the project on time."
+     }
+    },
+    {
+     "id": "el habitante",
+     "hr": "el habitante",
+     "en": "inhabitant",
+     "pos": "n. m./f.",
+     "note": "epicene: el habitante / la habitante, invariable in gender",
+     "example": {
+      "target": "Cada habitante del pueblo conoce a los demás.",
+      "gloss": "Every inhabitant of the village knows everyone else."
+     }
+    },
+    {
+     "id": "el emigrante",
+     "hr": "el emigrante",
+     "en": "emigrant",
+     "pos": "n. m./f.",
+     "note": "epicene: el emigrante / la emigrante, invariable in gender",
+     "example": {
+      "target": "Muchos emigrantes vuelven a su país después de unos años.",
+      "gloss": "Many emigrants return to their country after a few years."
+     }
+    },
+    {
+     "id": "la pertenencia",
+     "hr": "la pertenencia",
+     "en": "belonging, sense of belonging",
+     "pos": "n. f.",
+     "example": {
+      "target": "El equipo le da un fuerte sentido de pertenencia.",
+      "gloss": "The team gives him a strong sense of belonging."
+     }
+    },
+    {
+     "id": "el colectivo",
+     "hr": "el colectivo",
+     "en": "collective, group",
+     "pos": "n. m.",
+     "example": {
+      "target": "El colectivo de vecinos organizó una fiesta en la plaza.",
+      "gloss": "The group of neighbors organized a party in the square."
+     }
+    },
+    {
+     "id": "la interacción social",
+     "hr": "la interacción social",
+     "en": "social interaction",
+     "pos": "n. f.",
+     "example": {
+      "target": "La interacción social es más difícil para las personas tímidas.",
+      "gloss": "Social interaction is harder for shy people."
+     }
+    },
+    {
+     "id": "el detalle",
+     "hr": "el detalle",
+     "en": "nice gesture, thoughtful act",
+     "pos": "n. m.",
+     "note": "here in the sense of a thoughtful gesture, not a small detail",
+     "example": {
+      "target": "Le encanta tener un detalle con sus amigos.",
+      "gloss": "She loves doing something nice for her friends."
+     }
+    },
+    {
+     "id": "consolar",
+     "hr": "consolar",
+     "en": "to console, to comfort",
+     "pos": "v.",
+     "note": "o>ue: consuelo, consuela",
+     "example": {
+      "target": "Fue a consolar a su amiga después de la mala noticia.",
+      "gloss": "She went to comfort her friend after the bad news."
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1558 @@
+{
+ "packs": [
+  {
+   "id": "es-b1-work-economy",
+   "title": "Work, the economy and money",
+   "level": "B1",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "el convenio",
+     "hr": "el convenio",
+     "en": "agreement, labor agreement",
+     "pos": "n. m.",
+     "note": "convenio colectivo: collective bargaining agreement",
+     "example": {
+      "target": "La empresa y los trabajadores han firmado un nuevo convenio esta semana.",
+      "gloss": "The company and the workers have signed a new agreement this week."
+     }
+    },
+    {
+     "id": "la plantilla",
+     "hr": "la plantilla",
+     "en": "workforce, staff",
+     "pos": "n. f.",
+     "example": {
+      "target": "La plantilla de la fábrica ha crecido mucho este año.",
+      "gloss": "The factory's workforce has grown a lot this year."
+     }
+    },
+    {
+     "id": "el personal",
+     "hr": "el personal",
+     "en": "staff, personnel",
+     "pos": "n. m.",
+     "note": "collective noun, usually singular",
+     "example": {
+      "target": "El personal del almacén trabaja por turnos.",
+      "gloss": "The warehouse staff works in shifts."
+     }
+    },
+    {
+     "id": "el departamento",
+     "hr": "el departamento",
+     "en": "department (of a company)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi hermana trabaja en el departamento de ventas.",
+      "gloss": "My sister works in the sales department."
+     }
+    },
+    {
+     "id": "la sede",
+     "hr": "la sede",
+     "en": "headquarters",
+     "pos": "n. f.",
+     "example": {
+      "target": "La sede de la empresa está en Sevilla.",
+      "gloss": "The company's headquarters is in Seville."
+     }
+    },
+    {
+     "id": "la sucursal",
+     "hr": "la sucursal",
+     "en": "branch (of a company)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Han abierto una sucursal nueva en el centro.",
+      "gloss": "They have opened a new branch downtown."
+     }
+    },
+    {
+     "id": "el gerente",
+     "hr": "el gerente",
+     "en": "manager",
+     "pos": "n. m./f.",
+     "note": "the article changes for a woman: la gerente",
+     "example": {
+      "target": "El gerente revisa las cuentas cada mes.",
+      "gloss": "The manager reviews the accounts every month."
+     }
+    },
+    {
+     "id": "el directivo",
+     "hr": "el directivo",
+     "en": "executive",
+     "pos": "n. m.",
+     "note": "fem. la directiva",
+     "example": {
+      "target": "Los directivos se reunieron para hablar del futuro de la empresa.",
+      "gloss": "The executives met to talk about the company's future."
+     }
+    },
+    {
+     "id": "el socio",
+     "hr": "el socio",
+     "en": "business partner, member",
+     "pos": "n. m.",
+     "note": "fem. la socia",
+     "example": {
+      "target": "Mi padre y su socio fundaron la empresa hace veinte años.",
+      "gloss": "My father and his partner founded the company twenty years ago."
+     }
+    },
+    {
+     "id": "el accionista",
+     "hr": "el accionista",
+     "en": "shareholder",
+     "pos": "n. m./f.",
+     "note": "the article changes for a woman: la accionista",
+     "example": {
+      "target": "Los accionistas votarán la propuesta mañana.",
+      "gloss": "The shareholders will vote on the proposal tomorrow."
+     }
+    },
+    {
+     "id": "la pyme",
+     "hr": "la pyme",
+     "en": "SME, small/medium business",
+     "pos": "n. f.",
+     "note": "from pequeña y mediana empresa",
+     "example": {
+      "target": "Muchas pymes no pueden competir con las grandes empresas.",
+      "gloss": "Many SMEs cannot compete with big companies."
+     }
+    },
+    {
+     "id": "el emprendedor",
+     "hr": "el emprendedor",
+     "en": "entrepreneur",
+     "pos": "n. m.",
+     "note": "fem. la emprendedora",
+     "example": {
+      "target": "El emprendedor busca inversores para su idea.",
+      "gloss": "The entrepreneur is looking for investors for his idea."
+     }
+    },
+    {
+     "id": "la empresa emergente",
+     "hr": "la empresa emergente",
+     "en": "startup",
+     "pos": "n. f.",
+     "note": "preferred over the loanword 'startup'",
+     "example": {
+      "target": "La empresa emergente ha crecido mucho en dos años.",
+      "gloss": "The startup has grown a lot in two years."
+     }
+    },
+    {
+     "id": "el sector",
+     "hr": "el sector",
+     "en": "sector",
+     "pos": "n. m.",
+     "example": {
+      "target": "El sector turístico da trabajo a mucha gente en España.",
+      "gloss": "The tourism sector employs a lot of people in Spain."
+     }
+    },
+    {
+     "id": "la industria",
+     "hr": "la industria",
+     "en": "industry",
+     "pos": "n. f.",
+     "example": {
+      "target": "La industria textil ha cambiado mucho con la tecnología.",
+      "gloss": "The textile industry has changed a lot with technology."
+     }
+    },
+    {
+     "id": "el comercio",
+     "hr": "el comercio",
+     "en": "trade, commerce",
+     "pos": "n. m.",
+     "example": {
+      "target": "El comercio entre los dos países aumenta cada año.",
+      "gloss": "Trade between the two countries increases every year."
+     }
+    },
+    {
+     "id": "la competencia",
+     "hr": "la competencia",
+     "en": "competition (market rivalry)",
+     "pos": "n. f.",
+     "note": "not to be confused with 'competencia' meaning skill",
+     "example": {
+      "target": "La competencia en este sector es muy fuerte.",
+      "gloss": "Competition in this sector is very strong."
+     }
+    },
+    {
+     "id": "el competidor",
+     "hr": "el competidor",
+     "en": "competitor",
+     "pos": "n. m.",
+     "note": "fem. la competidora",
+     "example": {
+      "target": "Nuestro principal competidor bajó los precios.",
+      "gloss": "Our main competitor lowered its prices."
+     }
+    },
+    {
+     "id": "el mercado laboral",
+     "hr": "el mercado laboral",
+     "en": "labor market",
+     "pos": "n. m.",
+     "example": {
+      "target": "El mercado laboral ha cambiado mucho en los últimos años.",
+      "gloss": "The labor market has changed a lot in recent years."
+     }
+    },
+    {
+     "id": "la demanda",
+     "hr": "la demanda",
+     "en": "demand (economics)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cuando sube el precio, la demanda suele bajar.",
+      "gloss": "When the price rises, demand usually falls."
+     }
+    },
+    {
+     "id": "el suministro",
+     "hr": "el suministro",
+     "en": "supply (of goods)",
+     "pos": "n. m.",
+     "example": {
+      "target": "La empresa garantiza el suministro de piezas cada semana.",
+      "gloss": "The company guarantees the supply of parts every week."
+     }
+    },
+    {
+     "id": "el proveedor",
+     "hr": "el proveedor",
+     "en": "supplier",
+     "pos": "n. m.",
+     "note": "fem. la proveedora",
+     "example": {
+      "target": "Necesitamos un proveedor más barato para la materia prima.",
+      "gloss": "We need a cheaper supplier for the raw material."
+     }
+    },
+    {
+     "id": "el pedido",
+     "hr": "el pedido",
+     "en": "order (of goods)",
+     "pos": "n. m.",
+     "example": {
+      "target": "El cliente ha cancelado el pedido esta mañana.",
+      "gloss": "The customer has cancelled the order this morning."
+     }
+    },
+    {
+     "id": "el envío",
+     "hr": "el envío",
+     "en": "shipment, shipping",
+     "pos": "n. m.",
+     "example": {
+      "target": "El envío llegará al almacén el viernes.",
+      "gloss": "The shipment will arrive at the warehouse on Friday."
+     }
+    },
+    {
+     "id": "el almacén",
+     "hr": "el almacén",
+     "en": "warehouse",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los trabajadores guardan las cajas en el almacén.",
+      "gloss": "The workers store the boxes in the warehouse."
+     }
+    },
+    {
+     "id": "la logística",
+     "hr": "la logística",
+     "en": "logistics",
+     "pos": "n. f.",
+     "example": {
+      "target": "La logística de la empresa mejoró mucho este año.",
+      "gloss": "The company's logistics improved a lot this year."
+     }
+    },
+    {
+     "id": "el capital",
+     "hr": "el capital",
+     "en": "capital (money)",
+     "pos": "n. m.",
+     "note": "money sense; 'la capital' means capital city",
+     "example": {
+      "target": "La empresa necesita más capital para crecer.",
+      "gloss": "The company needs more capital to grow."
+     }
+    },
+    {
+     "id": "la inversión",
+     "hr": "la inversión",
+     "en": "investment",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esta inversión será muy rentable a largo plazo.",
+      "gloss": "This investment will be very profitable in the long term."
+     }
+    },
+    {
+     "id": "el inversor",
+     "hr": "el inversor",
+     "en": "investor",
+     "pos": "n. m.",
+     "note": "fem. la inversora",
+     "example": {
+      "target": "Un inversor extranjero ha comprado parte de la empresa.",
+      "gloss": "A foreign investor has bought part of the company."
+     }
+    },
+    {
+     "id": "el préstamo",
+     "hr": "el préstamo",
+     "en": "loan",
+     "pos": "n. m.",
+     "example": {
+      "target": "Pedimos un préstamo al banco para abrir la tienda.",
+      "gloss": "We asked the bank for a loan to open the shop."
+     }
+    },
+    {
+     "id": "la hipoteca",
+     "hr": "la hipoteca",
+     "en": "mortgage",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pagamos la hipoteca todos los meses.",
+      "gloss": "We pay the mortgage every month."
+     }
+    },
+    {
+     "id": "el interés",
+     "hr": "el interés",
+     "en": "interest (finance)",
+     "pos": "n. m.",
+     "note": "pl. los intereses",
+     "example": {
+      "target": "El banco cobra un interés muy alto por este préstamo.",
+      "gloss": "The bank charges very high interest on this loan."
+     }
+    },
+    {
+     "id": "el endeudamiento",
+     "hr": "el endeudamiento",
+     "en": "indebtedness, level of debt",
+     "pos": "n. m.",
+     "example": {
+      "target": "El endeudamiento de la empresa preocupa a los socios.",
+      "gloss": "The company's level of debt worries the partners."
+     }
+    },
+    {
+     "id": "el ahorro",
+     "hr": "el ahorro",
+     "en": "savings",
+     "pos": "n. m.",
+     "note": "noun; the verb ahorrar is already in the deck",
+     "example": {
+      "target": "El ahorro mensual nos ayuda en caso de emergencia.",
+      "gloss": "Monthly savings help us in case of an emergency."
+     }
+    },
+    {
+     "id": "la ganancia",
+     "hr": "la ganancia",
+     "en": "earnings, gain",
+     "pos": "n. f.",
+     "example": {
+      "target": "Las ganancias del negocio subieron el año pasado.",
+      "gloss": "The business's earnings rose last year."
+     }
+    },
+    {
+     "id": "el beneficio",
+     "hr": "el beneficio",
+     "en": "profit",
+     "pos": "n. m.",
+     "example": {
+      "target": "La empresa obtuvo un buen beneficio este trimestre.",
+      "gloss": "The company made a good profit this quarter."
+     }
+    },
+    {
+     "id": "la pérdida",
+     "hr": "la pérdida",
+     "en": "loss",
+     "pos": "n. f.",
+     "example": {
+      "target": "La tienda tuvo pérdidas durante el invierno.",
+      "gloss": "The shop had losses during the winter."
+     }
+    },
+    {
+     "id": "el gasto",
+     "hr": "el gasto",
+     "en": "expense",
+     "pos": "n. m.",
+     "example": {
+      "target": "Debemos reducir los gastos del departamento.",
+      "gloss": "We must reduce the department's expenses."
+     }
+    },
+    {
+     "id": "el coste",
+     "hr": "el coste",
+     "en": "cost",
+     "pos": "n. m.",
+     "note": "also written 'costo' in Latin America",
+     "example": {
+      "target": "El coste de producción ha subido mucho.",
+      "gloss": "The production cost has risen a lot."
+     }
+    },
+    {
+     "id": "el ingreso",
+     "hr": "el ingreso",
+     "en": "income",
+     "pos": "n. m.",
+     "note": "pl. los ingresos",
+     "example": {
+      "target": "Sus ingresos dependen de las ventas del mes.",
+      "gloss": "Her income depends on the month's sales."
+     }
+    },
+    {
+     "id": "la cuota",
+     "hr": "la cuota",
+     "en": "fee, installment, quota",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pagamos una cuota fija cada mes al banco.",
+      "gloss": "We pay a fixed installment to the bank every month."
+     }
+    },
+    {
+     "id": "el plazo",
+     "hr": "el plazo",
+     "en": "term, deadline, installment period",
+     "pos": "n. m.",
+     "example": {
+      "target": "Podemos pagar la deuda a plazos.",
+      "gloss": "We can pay off the debt in installments."
+     }
+    },
+    {
+     "id": "la subida",
+     "hr": "la subida",
+     "en": "rise, increase (price)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La subida de los precios afecta a todas las familias.",
+      "gloss": "The rise in prices affects every family."
+     }
+    },
+    {
+     "id": "la bajada",
+     "hr": "la bajada",
+     "en": "fall, decrease (price)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esperamos una bajada del interés el próximo año.",
+      "gloss": "We expect a drop in interest rates next year."
+     }
+    },
+    {
+     "id": "la inflación",
+     "hr": "la inflación",
+     "en": "inflation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La inflación ha subido bastante este año.",
+      "gloss": "Inflation has risen quite a lot this year."
+     }
+    },
+    {
+     "id": "la crisis",
+     "hr": "la crisis",
+     "en": "crisis",
+     "pos": "n. f.",
+     "note": "invariable in plural: las crisis",
+     "example": {
+      "target": "Muchas empresas cerraron durante la crisis.",
+      "gloss": "Many companies closed during the crisis."
+     }
+    },
+    {
+     "id": "la recesión",
+     "hr": "la recesión",
+     "en": "recession",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los expertos temen una recesión el año que viene.",
+      "gloss": "Experts fear a recession next year."
+     }
+    },
+    {
+     "id": "el crecimiento",
+     "hr": "el crecimiento",
+     "en": "growth",
+     "pos": "n. m.",
+     "example": {
+      "target": "El crecimiento de la empresa fue muy rápido.",
+      "gloss": "The company's growth was very fast."
+     }
+    },
+    {
+     "id": "la riqueza",
+     "hr": "la riqueza",
+     "en": "wealth",
+     "pos": "n. f.",
+     "example": {
+      "target": "La riqueza del país no está bien repartida.",
+      "gloss": "The country's wealth is not well distributed."
+     }
+    },
+    {
+     "id": "la pobreza",
+     "hr": "la pobreza",
+     "en": "poverty",
+     "pos": "n. f.",
+     "example": {
+      "target": "El gobierno quiere reducir la pobreza en las ciudades.",
+      "gloss": "The government wants to reduce poverty in the cities."
+     }
+    },
+    {
+     "id": "la desigualdad",
+     "hr": "la desigualdad",
+     "en": "inequality",
+     "pos": "n. f.",
+     "example": {
+      "target": "La desigualdad entre ricos y pobres preocupa a muchos economistas.",
+      "gloss": "Inequality between rich and poor worries many economists."
+     }
+    },
+    {
+     "id": "el desempleo",
+     "hr": "el desempleo",
+     "en": "unemployment",
+     "pos": "n. m.",
+     "note": "the everyday Peninsular synonym 'el paro' is already in the deck",
+     "example": {
+      "target": "El desempleo bajó un poco el mes pasado.",
+      "gloss": "Unemployment fell a little last month."
+     }
+    },
+    {
+     "id": "la jubilación",
+     "hr": "la jubilación",
+     "en": "retirement",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi abuelo disfruta mucho de su jubilación.",
+      "gloss": "My grandfather enjoys his retirement a lot."
+     }
+    },
+    {
+     "id": "la pensión",
+     "hr": "la pensión",
+     "en": "pension",
+     "pos": "n. f.",
+     "note": "retirement pension; not to be confused with 'la pensión completa' (full board)",
+     "example": {
+      "target": "Cobra una pensión desde que se jubiló.",
+      "gloss": "He has been receiving a pension since he retired."
+     }
+    },
+    {
+     "id": "la subvención",
+     "hr": "la subvención",
+     "en": "subsidy, grant",
+     "pos": "n. f.",
+     "example": {
+      "target": "El ayuntamiento dio una subvención a la empresa nueva.",
+      "gloss": "The town council gave a grant to the new company."
+     }
+    },
+    {
+     "id": "la ayuda",
+     "hr": "la ayuda",
+     "en": "aid, financial help",
+     "pos": "n. f.",
+     "note": "noun; the verb ayudar is already in the deck",
+     "example": {
+      "target": "La familia recibió una ayuda del gobierno.",
+      "gloss": "The family received aid from the government."
+     }
+    },
+    {
+     "id": "el subsidio",
+     "hr": "el subsidio",
+     "en": "benefit, subsidy",
+     "pos": "n. m.",
+     "example": {
+      "target": "Recibe un subsidio mientras busca trabajo.",
+      "gloss": "He receives a benefit while he looks for work."
+     }
+    },
+    {
+     "id": "invertir",
+     "hr": "invertir",
+     "en": "to invest",
+     "pos": "v.",
+     "note": "e>ie: invierto; invertir en",
+     "example": {
+      "target": "Si el mercado crece, invertimos más dinero.",
+      "gloss": "If the market grows, we invest more money."
+     }
+    },
+    {
+     "id": "financiar",
+     "hr": "financiar",
+     "en": "to finance",
+     "pos": "v.",
+     "example": {
+      "target": "El banco financia el proyecto de la pyme.",
+      "gloss": "The bank finances the SME's project."
+     }
+    },
+    {
+     "id": "endeudarse",
+     "hr": "endeudarse",
+     "en": "to go into debt",
+     "pos": "v.",
+     "note": "pronominal; endeudarse con",
+     "example": {
+      "target": "La empresa se endeudó con varios bancos.",
+      "gloss": "The company got into debt with several banks."
+     }
+    },
+    {
+     "id": "facturar",
+     "hr": "facturar",
+     "en": "to invoice, to have a turnover of",
+     "pos": "v.",
+     "example": {
+      "target": "La empresa facturó más de un millón el año pasado.",
+      "gloss": "The company had a turnover of more than a million last year."
+     }
+    },
+    {
+     "id": "negociar",
+     "hr": "negociar",
+     "en": "to negotiate",
+     "pos": "v.",
+     "note": "negociar con",
+     "example": {
+      "target": "Los sindicatos negocian con la dirección cada año.",
+      "gloss": "The unions negotiate with management every year."
+     }
+    },
+    {
+     "id": "acordar",
+     "hr": "acordar",
+     "en": "to agree on",
+     "pos": "v.",
+     "note": "o>ue: acuerdo",
+     "example": {
+      "target": "Las dos empresas acordaron un nuevo precio.",
+      "gloss": "The two companies agreed on a new price."
+     }
+    },
+    {
+     "id": "cumplir",
+     "hr": "cumplir",
+     "en": "to fulfill, to comply",
+     "pos": "v.",
+     "note": "cumplir con",
+     "example": {
+      "target": "La empresa debe cumplir con el convenio.",
+      "gloss": "The company must comply with the agreement."
+     }
+    },
+    {
+     "id": "incumplir",
+     "hr": "incumplir",
+     "en": "to fail to comply, to breach",
+     "pos": "v.",
+     "note": "opposite of cumplir",
+     "example": {
+      "target": "Si incumples el contrato, puedes tener problemas.",
+      "gloss": "If you breach the contract, you can have problems."
+     }
+    },
+    {
+     "id": "rentable",
+     "hr": "rentable",
+     "en": "profitable",
+     "pos": "adj.",
+     "example": {
+      "target": "Este negocio es muy rentable.",
+      "gloss": "This business is very profitable."
+     }
+    },
+    {
+     "id": "la rentabilidad",
+     "hr": "la rentabilidad",
+     "en": "profitability",
+     "pos": "n. f.",
+     "example": {
+      "target": "La rentabilidad de la empresa mejoró este año.",
+      "gloss": "The company's profitability improved this year."
+     }
+    },
+    {
+     "id": "eficaz",
+     "hr": "eficaz",
+     "en": "effective",
+     "pos": "adj.",
+     "note": "pl. eficaces",
+     "example": {
+      "target": "El nuevo sistema es más eficaz que el anterior.",
+      "gloss": "The new system is more effective than the previous one."
+     }
+    },
+    {
+     "id": "eficiente",
+     "hr": "eficiente",
+     "en": "efficient",
+     "pos": "adj.",
+     "example": {
+      "target": "Buscamos un método más eficiente de trabajar.",
+      "gloss": "We are looking for a more efficient way of working."
+     }
+    },
+    {
+     "id": "competitivo",
+     "hr": "competitivo",
+     "en": "competitive",
+     "pos": "adj.",
+     "example": {
+      "target": "Nuestro sueldo no es muy competitivo.",
+      "gloss": "Our salary is not very competitive."
+     }
+    },
+    {
+     "id": "estable",
+     "hr": "estable",
+     "en": "stable",
+     "pos": "adj.",
+     "example": {
+      "target": "Quiero un trabajo estable, no temporal.",
+      "gloss": "I want a stable job, not a temporary one."
+     }
+    },
+    {
+     "id": "precario",
+     "hr": "precario",
+     "en": "precarious",
+     "pos": "adj.",
+     "example": {
+      "target": "Muchos jóvenes tienen empleos precarios.",
+      "gloss": "Many young people have precarious jobs."
+     }
+    },
+    {
+     "id": "temporal",
+     "hr": "temporal",
+     "en": "temporary",
+     "pos": "adj.",
+     "example": {
+      "target": "Firmé un contrato temporal de seis meses.",
+      "gloss": "I signed a temporary contract for six months."
+     }
+    },
+    {
+     "id": "indefinido",
+     "hr": "indefinido",
+     "en": "permanent (contract)",
+     "pos": "adj.",
+     "example": {
+      "target": "Después del periodo de prueba, me dieron un contrato indefinido.",
+      "gloss": "After the trial period, they gave me a permanent contract."
+     }
+    },
+    {
+     "id": "remunerado",
+     "hr": "remunerado",
+     "en": "paid, remunerated",
+     "pos": "adj.",
+     "example": {
+      "target": "Las prácticas no eran remuneradas.",
+      "gloss": "The internship was not paid."
+     }
+    },
+    {
+     "id": "cualificado",
+     "hr": "cualificado",
+     "en": "qualified, skilled",
+     "pos": "adj.",
+     "example": {
+      "target": "La empresa busca personal cualificado.",
+      "gloss": "The company is looking for qualified staff."
+     }
+    },
+    {
+     "id": "exigente",
+     "hr": "exigente",
+     "en": "demanding",
+     "pos": "adj.",
+     "example": {
+      "target": "Mi jefa es muy exigente con los plazos.",
+      "gloss": "My boss is very demanding about deadlines."
+     }
+    },
+    {
+     "id": "agotador",
+     "hr": "agotador",
+     "en": "exhausting",
+     "pos": "adj.",
+     "example": {
+      "target": "El trabajo en la fábrica es agotador.",
+      "gloss": "Work in the factory is exhausting."
+     }
+    },
+    {
+     "id": "gratificante",
+     "hr": "gratificante",
+     "en": "gratifying, rewarding",
+     "pos": "adj.",
+     "example": {
+      "target": "Ayudar a los clientes es gratificante.",
+      "gloss": "Helping customers is gratifying."
+     }
+    },
+    {
+     "id": "la baja por maternidad",
+     "hr": "la baja por maternidad",
+     "en": "maternity leave",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi compañera está de baja por maternidad.",
+      "gloss": "My colleague is on maternity leave."
+     }
+    },
+    {
+     "id": "el finiquito",
+     "hr": "el finiquito",
+     "en": "final settlement (paid when a job ends)",
+     "pos": "n. m.",
+     "example": {
+      "target": "La empresa le pagó el finiquito la última semana.",
+      "gloss": "The company paid him the final settlement in the last week."
+     }
+    },
+    {
+     "id": "la indemnización",
+     "hr": "la indemnización",
+     "en": "compensation, severance pay",
+     "pos": "n. f.",
+     "example": {
+      "target": "Recibió una indemnización al perder el trabajo.",
+      "gloss": "He received compensation when he lost his job."
+     }
+    },
+    {
+     "id": "el despido",
+     "hr": "el despido",
+     "en": "dismissal, layoff",
+     "pos": "n. m.",
+     "example": {
+      "target": "El despido de tantos trabajadores sorprendió a todos.",
+      "gloss": "The dismissal of so many workers surprised everyone."
+     }
+    },
+    {
+     "id": "la conciliación",
+     "hr": "la conciliación",
+     "en": "work-life balance",
+     "pos": "n. f.",
+     "note": "conciliación laboral y familiar",
+     "example": {
+      "target": "La empresa ofrece horarios que facilitan la conciliación.",
+      "gloss": "The company offers schedules that make work-life balance easier."
+     }
+    },
+    {
+     "id": "el horario flexible",
+     "hr": "el horario flexible",
+     "en": "flexible hours",
+     "pos": "n. m.",
+     "example": {
+      "target": "Prefiero un trabajo con horario flexible.",
+      "gloss": "I prefer a job with flexible hours."
+     }
+    },
+    {
+     "id": "el teletrabajo",
+     "hr": "el teletrabajo",
+     "en": "remote work, telework",
+     "pos": "n. m.",
+     "example": {
+      "target": "El teletrabajo se hizo muy común en los últimos años.",
+      "gloss": "Remote work became very common in recent years."
+     }
+    },
+    {
+     "id": "el sueldo bruto",
+     "hr": "el sueldo bruto",
+     "en": "gross salary",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi sueldo bruto es más alto que el neto.",
+      "gloss": "My gross salary is higher than my net salary."
+     }
+    },
+    {
+     "id": "el sueldo neto",
+     "hr": "el sueldo neto",
+     "en": "net salary",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cada mes recibo el sueldo neto en mi cuenta.",
+      "gloss": "Every month I receive my net salary in my account."
+     }
+    },
+    {
+     "id": "el salario mínimo",
+     "hr": "el salario mínimo",
+     "en": "minimum wage",
+     "pos": "n. m.",
+     "example": {
+      "target": "El salario mínimo sube cada cierto tiempo.",
+      "gloss": "The minimum wage rises every so often."
+     }
+    },
+    {
+     "id": "la cotización",
+     "hr": "la cotización",
+     "en": "social security contribution",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cotización a la seguridad social sale de la nómina.",
+      "gloss": "The social security contribution comes out of the payslip."
+     }
+    },
+    {
+     "id": "la seguridad social",
+     "hr": "la seguridad social",
+     "en": "social security",
+     "pos": "n. f.",
+     "example": {
+      "target": "La seguridad social cubre la baja por enfermedad.",
+      "gloss": "Social security covers sick leave."
+     }
+    },
+    {
+     "id": "la prestación",
+     "hr": "la prestación",
+     "en": "benefit, allowance",
+     "pos": "n. f.",
+     "note": "prestación por desempleo: unemployment benefit",
+     "example": {
+      "target": "Cobra la prestación por desempleo desde hace tres meses.",
+      "gloss": "He has been receiving unemployment benefit for three months."
+     }
+    },
+    {
+     "id": "la negociación",
+     "hr": "la negociación",
+     "en": "negotiation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La negociación entre las dos partes duró todo el día.",
+      "gloss": "The negotiation between the two parties lasted all day."
+     }
+    },
+    {
+     "id": "el acuerdo",
+     "hr": "el acuerdo",
+     "en": "agreement",
+     "pos": "n. m.",
+     "example": {
+      "target": "Por fin llegaron a un acuerdo.",
+      "gloss": "They finally reached an agreement."
+     }
+    },
+    {
+     "id": "el mundo laboral",
+     "hr": "el mundo laboral",
+     "en": "the working world",
+     "pos": "n. m.",
+     "example": {
+      "target": "El mundo laboral ha cambiado mucho con la tecnología.",
+      "gloss": "The working world has changed a lot with technology."
+     }
+    },
+    {
+     "id": "la carrera profesional",
+     "hr": "la carrera profesional",
+     "en": "professional career",
+     "pos": "n. f.",
+     "example": {
+      "target": "Quiere desarrollar su carrera profesional en el extranjero.",
+      "gloss": "She wants to develop her professional career abroad."
+     }
+    },
+    {
+     "id": "el ascenso profesional",
+     "hr": "el ascenso profesional",
+     "en": "professional promotion",
+     "pos": "n. m.",
+     "example": {
+      "target": "Trabajó muy duro para conseguir el ascenso profesional.",
+      "gloss": "He worked very hard to get the professional promotion."
+     }
+    },
+    {
+     "id": "el patrimonio",
+     "hr": "el patrimonio",
+     "en": "assets, net worth",
+     "pos": "n. m.",
+     "example": {
+      "target": "Su patrimonio creció mucho gracias a las inversiones.",
+      "gloss": "His net worth grew a lot thanks to the investments."
+     }
+    },
+    {
+     "id": "el activo",
+     "hr": "el activo",
+     "en": "asset (finance)",
+     "pos": "n. m.",
+     "example": {
+      "target": "El edificio es el activo más valioso de la empresa.",
+      "gloss": "The building is the company's most valuable asset."
+     }
+    },
+    {
+     "id": "el pasivo",
+     "hr": "el pasivo",
+     "en": "liability (finance)",
+     "pos": "n. m.",
+     "example": {
+      "target": "El pasivo de la empresa incluye varios préstamos.",
+      "gloss": "The company's liabilities include several loans."
+     }
+    },
+    {
+     "id": "el mercado de valores",
+     "hr": "el mercado de valores",
+     "en": "the stock market",
+     "pos": "n. m.",
+     "note": "generic term, not a named real exchange",
+     "example": {
+      "target": "El precio de las acciones subió en el mercado de valores.",
+      "gloss": "The share price rose on the stock market."
+     }
+    },
+    {
+     "id": "la acción",
+     "hr": "la acción",
+     "en": "share, stock",
+     "pos": "n. f.",
+     "note": "pl. las acciones",
+     "example": {
+      "target": "Compró acciones de una empresa emergente.",
+      "gloss": "He bought shares in a startup."
+     }
+    },
+    {
+     "id": "el dividendo",
+     "hr": "el dividendo",
+     "en": "dividend",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los accionistas recibieron un dividendo este año.",
+      "gloss": "The shareholders received a dividend this year."
+     }
+    },
+    {
+     "id": "el tipo de interés",
+     "hr": "el tipo de interés",
+     "en": "interest rate",
+     "pos": "n. m.",
+     "example": {
+      "target": "El banco subió el tipo de interés este mes.",
+      "gloss": "The bank raised the interest rate this month."
+     }
+    },
+    {
+     "id": "la divisa",
+     "hr": "la divisa",
+     "en": "foreign currency",
+     "pos": "n. f.",
+     "note": "generic term for any foreign currency",
+     "example": {
+      "target": "La empresa cobra en divisa extranjera.",
+      "gloss": "The company gets paid in foreign currency."
+     }
+    },
+    {
+     "id": "el euro",
+     "hr": "el euro",
+     "en": "euro",
+     "pos": "n. m.",
+     "example": {
+      "target": "Pagamos las facturas en euros.",
+      "gloss": "We pay the bills in euros."
+     }
+    },
+    {
+     "id": "la declaración de la renta",
+     "hr": "la declaración de la renta",
+     "en": "income tax return",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hacemos la declaración de la renta cada primavera.",
+      "gloss": "We file our income tax return every spring."
+     }
+    },
+    {
+     "id": "el sector privado",
+     "hr": "el sector privado",
+     "en": "the private sector",
+     "pos": "n. m.",
+     "example": {
+      "target": "Trabaja para el sector privado desde hace años.",
+      "gloss": "She has worked for the private sector for years."
+     }
+    },
+    {
+     "id": "el sector público",
+     "hr": "el sector público",
+     "en": "the public sector",
+     "pos": "n. m.",
+     "example": {
+      "target": "El sector público ofrece más estabilidad.",
+      "gloss": "The public sector offers more stability."
+     }
+    },
+    {
+     "id": "la globalización",
+     "hr": "la globalización",
+     "en": "globalization",
+     "pos": "n. f.",
+     "example": {
+      "target": "La globalización ha cambiado el comercio mundial.",
+      "gloss": "Globalization has changed world trade."
+     }
+    },
+    {
+     "id": "la digitalización",
+     "hr": "la digitalización",
+     "en": "digitalization",
+     "pos": "n. f.",
+     "example": {
+      "target": "La digitalización ha creado nuevos empleos.",
+      "gloss": "Digitalization has created new jobs."
+     }
+    },
+    {
+     "id": "el consumidor",
+     "hr": "el consumidor",
+     "en": "consumer",
+     "pos": "n. m.",
+     "note": "fem. la consumidora",
+     "example": {
+      "target": "El consumidor paga más por productos de calidad.",
+      "gloss": "The consumer pays more for quality products."
+     }
+    },
+    {
+     "id": "el consumo",
+     "hr": "el consumo",
+     "en": "consumption",
+     "pos": "n. m.",
+     "example": {
+      "target": "El consumo de las familias bajó durante la crisis.",
+      "gloss": "Household consumption fell during the crisis."
+     }
+    },
+    {
+     "id": "la producción",
+     "hr": "la producción",
+     "en": "production",
+     "pos": "n. f.",
+     "example": {
+      "target": "La producción de la fábrica aumentó este trimestre.",
+      "gloss": "The factory's production increased this quarter."
+     }
+    },
+    {
+     "id": "el producto",
+     "hr": "el producto",
+     "en": "product",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este producto se vende muy bien en verano.",
+      "gloss": "This product sells very well in summer."
+     }
+    },
+    {
+     "id": "la exportación",
+     "hr": "la exportación",
+     "en": "export, exporting",
+     "pos": "n. f.",
+     "example": {
+      "target": "La exportación de fruta genera muchos ingresos.",
+      "gloss": "Fruit exports generate a lot of income."
+     }
+    },
+    {
+     "id": "la importación",
+     "hr": "la importación",
+     "en": "import, importing",
+     "pos": "n. f.",
+     "example": {
+      "target": "La importación de piezas es cara para la empresa.",
+      "gloss": "Importing parts is expensive for the company."
+     }
+    },
+    {
+     "id": "el arancel",
+     "hr": "el arancel",
+     "en": "tariff",
+     "pos": "n. m.",
+     "example": {
+      "target": "El nuevo arancel encareció el producto.",
+      "gloss": "The new tariff made the product more expensive."
+     }
+    },
+    {
+     "id": "la tasa",
+     "hr": "la tasa",
+     "en": "rate, fee",
+     "pos": "n. f.",
+     "note": "e.g. tasa de crecimiento, tasa de interés",
+     "example": {
+      "target": "La tasa de crecimiento fue baja este año.",
+      "gloss": "The growth rate was low this year."
+     }
+    },
+    {
+     "id": "el coste de la vida",
+     "hr": "el coste de la vida",
+     "en": "cost of living",
+     "pos": "n. m.",
+     "example": {
+      "target": "El coste de la vida ha subido mucho en la ciudad.",
+      "gloss": "The cost of living has risen a lot in the city."
+     }
+    },
+    {
+     "id": "la escasez",
+     "hr": "la escasez",
+     "en": "shortage",
+     "pos": "n. f.",
+     "example": {
+      "target": "La escasez de materiales retrasó el pedido.",
+      "gloss": "The shortage of materials delayed the order."
+     }
+    },
+    {
+     "id": "la excedencia",
+     "hr": "la excedencia",
+     "en": "unpaid leave of absence",
+     "pos": "n. f.",
+     "example": {
+      "target": "Pidió una excedencia para cuidar a su padre.",
+      "gloss": "She requested unpaid leave to take care of her father."
+     }
+    },
+    {
+     "id": "el excedente",
+     "hr": "el excedente",
+     "en": "surplus",
+     "pos": "n. m.",
+     "example": {
+      "target": "La empresa vendió el excedente de producción.",
+      "gloss": "The company sold the production surplus."
+     }
+    },
+    {
+     "id": "fiable",
+     "hr": "fiable",
+     "en": "reliable",
+     "pos": "adj.",
+     "example": {
+      "target": "Es un proveedor muy fiable.",
+      "gloss": "He is a very reliable supplier."
+     }
+    },
+    {
+     "id": "solvente",
+     "hr": "solvente",
+     "en": "solvent (financially)",
+     "pos": "adj.",
+     "example": {
+      "target": "La empresa sigue siendo solvente.",
+      "gloss": "The company is still solvent."
+     }
+    },
+    {
+     "id": "insolvente",
+     "hr": "insolvente",
+     "en": "insolvent",
+     "pos": "adj.",
+     "example": {
+      "target": "El negocio se declaró insolvente el año pasado.",
+      "gloss": "The business declared itself insolvent last year."
+     }
+    },
+    {
+     "id": "lucrativo",
+     "hr": "lucrativo",
+     "en": "lucrative, profitable",
+     "pos": "adj.",
+     "example": {
+      "target": "Vender flores no es muy lucrativo en invierno.",
+      "gloss": "Selling flowers is not very lucrative in winter."
+     }
+    },
+    {
+     "id": "sin ánimo de lucro",
+     "hr": "sin ánimo de lucro",
+     "en": "non-profit",
+     "pos": "expr.",
+     "example": {
+      "target": "Trabaja para una organización sin ánimo de lucro.",
+      "gloss": "She works for a non-profit organization."
+     }
+    },
+    {
+     "id": "a tiempo parcial",
+     "hr": "a tiempo parcial",
+     "en": "part time",
+     "pos": "expr.",
+     "example": {
+      "target": "Trabajo a tiempo parcial los fines de semana.",
+      "gloss": "I work part time on weekends."
+     }
+    },
+    {
+     "id": "a tiempo completo",
+     "hr": "a tiempo completo",
+     "en": "full time",
+     "pos": "expr.",
+     "example": {
+      "target": "Después de graduarse, empezó a trabajar a tiempo completo.",
+      "gloss": "After graduating, he started working full time."
+     }
+    },
+    {
+     "id": "por cuenta propia",
+     "hr": "por cuenta propia",
+     "en": "self-employed",
+     "pos": "expr.",
+     "example": {
+      "target": "Mi tía trabaja por cuenta propia desde hace diez años.",
+      "gloss": "My aunt has been self-employed for ten years."
+     }
+    },
+    {
+     "id": "por cuenta ajena",
+     "hr": "por cuenta ajena",
+     "en": "employed by someone else",
+     "pos": "expr.",
+     "example": {
+      "target": "Prefiero trabajar por cuenta ajena que ser autónomo.",
+      "gloss": "I prefer working for someone else than being self-employed."
+     }
+    },
+    {
+     "id": "rendir",
+     "hr": "rendir",
+     "en": "to yield, to perform",
+     "pos": "v.",
+     "note": "e>i: rindo",
+     "example": {
+      "target": "El nuevo equipo rinde más que el anterior.",
+      "gloss": "The new team performs better than the previous one."
+     }
+    },
+    {
+     "id": "rendir cuentas",
+     "hr": "rendir cuentas",
+     "en": "to be accountable",
+     "pos": "expr.",
+     "example": {
+      "target": "El gerente debe rendir cuentas a los accionistas.",
+      "gloss": "The manager must be accountable to the shareholders."
+     }
+    },
+    {
+     "id": "el rendimiento",
+     "hr": "el rendimiento",
+     "en": "yield, return, performance",
+     "pos": "n. m.",
+     "example": {
+      "target": "El rendimiento de la inversión fue muy bueno.",
+      "gloss": "The investment's return was very good."
+     }
+    },
+    {
+     "id": "quebrar",
+     "hr": "quebrar",
+     "en": "to go bankrupt",
+     "pos": "v.",
+     "note": "e>ie: quiebro",
+     "example": {
+      "target": "Muchas tiendas pequeñas quebraron durante la crisis.",
+      "gloss": "Many small shops went bankrupt during the crisis."
+     }
+    },
+    {
+     "id": "la quiebra",
+     "hr": "la quiebra",
+     "en": "bankruptcy",
+     "pos": "n. f.",
+     "example": {
+      "target": "La empresa evitó la quiebra gracias al préstamo.",
+      "gloss": "The company avoided bankruptcy thanks to the loan."
+     }
+    },
+    {
+     "id": "fusionarse",
+     "hr": "fusionarse",
+     "en": "to merge",
+     "pos": "v.",
+     "note": "pronominal; fusionarse con",
+     "example": {
+      "target": "Las dos empresas se fusionaron el año pasado.",
+      "gloss": "The two companies merged last year."
+     }
+    },
+    {
+     "id": "la fusión",
+     "hr": "la fusión",
+     "en": "merger",
+     "pos": "n. f.",
+     "example": {
+      "target": "La fusión creó una empresa mucho más grande.",
+      "gloss": "The merger created a much bigger company."
+     }
+    },
+    {
+     "id": "ampliar",
+     "hr": "ampliar",
+     "en": "to expand",
+     "pos": "v.",
+     "note": "stress shift like enviar: amplío",
+     "example": {
+      "target": "La empresa quiere ampliar su plantilla.",
+      "gloss": "The company wants to expand its workforce."
+     }
+    },
+    {
+     "id": "reducir",
+     "hr": "reducir",
+     "en": "to reduce",
+     "pos": "v.",
+     "note": "yo-form: reduzco",
+     "example": {
+      "target": "Tuvimos que reducir los gastos del departamento.",
+      "gloss": "We had to reduce the department's expenses."
+     }
+    },
+    {
+     "id": "recortar",
+     "hr": "recortar",
+     "en": "to cut (a budget, expenses)",
+     "pos": "v.",
+     "example": {
+      "target": "El gobierno recortó las ayudas este año.",
+      "gloss": "The government cut the aid this year."
+     }
+    },
+    {
+     "id": "subvencionar",
+     "hr": "subvencionar",
+     "en": "to subsidize",
+     "pos": "v.",
+     "example": {
+      "target": "El ayuntamiento subvenciona a las pequeñas empresas.",
+      "gloss": "The town council subsidizes small businesses."
+     }
+    },
+    {
+     "id": "el auge",
+     "hr": "el auge",
+     "en": "boom (economic upswing)",
+     "pos": "n. m.",
+     "example": {
+      "target": "El sector turístico vive un auge desde hace dos años.",
+      "gloss": "The tourism sector has been booming for two years."
+     }
+    },
+    {
+     "id": "la burbuja",
+     "hr": "la burbuja",
+     "en": "bubble (economic)",
+     "pos": "n. f.",
+     "note": "e.g. la burbuja inmobiliaria",
+     "example": {
+      "target": "Muchos expertos hablaban de una burbuja antes de la crisis.",
+      "gloss": "Many experts talked about a bubble before the crisis."
+     }
+    },
+    {
+     "id": "el ciclo económico",
+     "hr": "el ciclo económico",
+     "en": "economic cycle",
+     "pos": "n. m.",
+     "example": {
+      "target": "El ciclo económico tiene fases de crecimiento y de recesión.",
+      "gloss": "The economic cycle has phases of growth and recession."
+     }
+    },
+    {
+     "id": "producir",
+     "hr": "producir",
+     "en": "to produce",
+     "pos": "v.",
+     "note": "yo-form: produzco",
+     "example": {
+      "target": "La fábrica produce miles de piezas cada día.",
+      "gloss": "The factory produces thousands of parts every day."
+     }
+    },
+    {
+     "id": "el margen",
+     "hr": "el margen",
+     "en": "margin",
+     "pos": "n. m.",
+     "note": "margen de beneficio: profit margin",
+     "example": {
+      "target": "El margen de beneficio bajó este trimestre.",
+      "gloss": "The profit margin fell this quarter."
+     }
+    },
+    {
+     "id": "el flujo de caja",
+     "hr": "el flujo de caja",
+     "en": "cash flow",
+     "pos": "n. m.",
+     "example": {
+      "target": "La empresa necesita mejorar el flujo de caja.",
+      "gloss": "The company needs to improve its cash flow."
+     }
+    },
+    {
+     "id": "la cadena de suministro",
+     "hr": "la cadena de suministro",
+     "en": "supply chain",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cadena de suministro se rompió durante la crisis.",
+      "gloss": "The supply chain broke down during the crisis."
+     }
+    }
+   ]
+  }
+ ]
+}

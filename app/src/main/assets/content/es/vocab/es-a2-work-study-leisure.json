@@ -1,0 +1,1563 @@
+{
+ "packs": [
+  {
+   "id": "es-a2-work-study-leisure",
+   "title": "Work, study and free time",
+   "level": "A2",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "el trabajo",
+     "hr": "el trabajo",
+     "en": "job, work",
+     "pos": "n. m.",
+     "note": "general word for job or work; compare el empleo (more formal employment)",
+     "example": {
+      "target": "Mi trabajo empieza a las nueve.",
+      "gloss": "My job starts at nine."
+     }
+    },
+    {
+     "id": "el empleo",
+     "hr": "el empleo",
+     "en": "employment, job",
+     "pos": "n. m.",
+     "note": "more formal than el trabajo",
+     "example": {
+      "target": "Busco un empleo estable.",
+      "gloss": "I'm looking for a stable job."
+     }
+    },
+    {
+     "id": "la empresa",
+     "hr": "la empresa",
+     "en": "company, firm",
+     "pos": "n. f.",
+     "example": {
+      "target": "La empresa tiene cien empleados.",
+      "gloss": "The company has a hundred employees."
+     }
+    },
+    {
+     "id": "el jefe",
+     "hr": "el jefe",
+     "en": "boss",
+     "pos": "n. m.",
+     "note": "fem. la jefa",
+     "example": {
+      "target": "Mi jefe llega siempre temprano.",
+      "gloss": "My boss always arrives early."
+     }
+    },
+    {
+     "id": "el compañero",
+     "hr": "el compañero",
+     "en": "colleague, coworker",
+     "pos": "n. m.",
+     "note": "fem. la compañera",
+     "example": {
+      "target": "Como con mis compañeros en la cafetería.",
+      "gloss": "I eat with my colleagues in the cafeteria."
+     }
+    },
+    {
+     "id": "el equipo",
+     "hr": "el equipo",
+     "en": "team",
+     "pos": "n. m.",
+     "example": {
+      "target": "Trabajamos en equipo todos los días.",
+      "gloss": "We work as a team every day."
+     }
+    },
+    {
+     "id": "la reunión",
+     "hr": "la reunión",
+     "en": "meeting",
+     "pos": "n. f.",
+     "note": "pl. las reuniones",
+     "example": {
+      "target": "La reunión empieza a las diez.",
+      "gloss": "The meeting starts at ten."
+     }
+    },
+    {
+     "id": "el despacho",
+     "hr": "el despacho",
+     "en": "(private) office",
+     "pos": "n. m.",
+     "note": "a person's own office; compare la oficina (the workplace in general)",
+     "example": {
+      "target": "El jefe está en su despacho.",
+      "gloss": "The boss is in his office."
+     }
+    },
+    {
+     "id": "la oficina",
+     "hr": "la oficina",
+     "en": "office",
+     "pos": "n. f.",
+     "example": {
+      "target": "Trabajo en una oficina del centro.",
+      "gloss": "I work in an office downtown."
+     }
+    },
+    {
+     "id": "el sueldo",
+     "hr": "el sueldo",
+     "en": "salary",
+     "pos": "n. m.",
+     "example": {
+      "target": "El sueldo no es muy alto pero es fijo.",
+      "gloss": "The salary isn't very high but it's fixed."
+     }
+    },
+    {
+     "id": "el contrato",
+     "hr": "el contrato",
+     "en": "contract",
+     "pos": "n. m.",
+     "example": {
+      "target": "Firmé el contrato ayer por la mañana.",
+      "gloss": "I signed the contract yesterday morning."
+     }
+    },
+    {
+     "id": "la jornada",
+     "hr": "la jornada",
+     "en": "working day, shift length",
+     "pos": "n. f.",
+     "note": "jornada completa = full time, jornada partida = split shift",
+     "example": {
+      "target": "Tengo una jornada de ocho horas.",
+      "gloss": "I have an eight hour working day."
+     }
+    },
+    {
+     "id": "las prácticas",
+     "hr": "las prácticas",
+     "en": "internship",
+     "pos": "n. f. pl.",
+     "note": "plural in this sense; singular la práctica means practice in general",
+     "example": {
+      "target": "Hago las prácticas en un hospital.",
+      "gloss": "I'm doing my internship at a hospital."
+     }
+    },
+    {
+     "id": "el currículum",
+     "hr": "el currículum",
+     "en": "CV, résumé",
+     "pos": "n. m.",
+     "note": "pl. los currículums",
+     "example": {
+      "target": "Envié mi currículum la semana pasada.",
+      "gloss": "I sent my CV last week."
+     }
+    },
+    {
+     "id": "la entrevista",
+     "hr": "la entrevista",
+     "en": "interview",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mañana tengo una entrevista de trabajo.",
+      "gloss": "Tomorrow I have a job interview."
+     }
+    },
+    {
+     "id": "el puesto",
+     "hr": "el puesto",
+     "en": "position, post",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este puesto necesita mucha experiencia.",
+      "gloss": "This position requires a lot of experience."
+     }
+    },
+    {
+     "id": "el ascenso",
+     "hr": "el ascenso",
+     "en": "promotion",
+     "pos": "n. m.",
+     "example": {
+      "target": "Por fin conseguí el ascenso.",
+      "gloss": "I finally got the promotion."
+     }
+    },
+    {
+     "id": "el paro",
+     "hr": "el paro",
+     "en": "unemployment",
+     "pos": "n. m.",
+     "note": "peninsular word for unemployment",
+     "example": {
+      "target": "Mi hermano está en el paro desde marzo.",
+      "gloss": "My brother has been unemployed since March."
+     }
+    },
+    {
+     "id": "la baja",
+     "hr": "la baja",
+     "en": "sick leave",
+     "pos": "n. f.",
+     "note": "estar de baja = to be on sick leave",
+     "example": {
+      "target": "Está de baja porque tiene la espalda mal.",
+      "gloss": "She's on sick leave because her back is bad."
+     }
+    },
+    {
+     "id": "la huelga",
+     "hr": "la huelga",
+     "en": "strike",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los trabajadores hacen huelga hoy.",
+      "gloss": "The workers are on strike today."
+     }
+    },
+    {
+     "id": "el sindicato",
+     "hr": "el sindicato",
+     "en": "labor union",
+     "pos": "n. m.",
+     "example": {
+      "target": "El sindicato defiende a los trabajadores.",
+      "gloss": "The union defends the workers."
+     }
+    },
+    {
+     "id": "la nómina",
+     "hr": "la nómina",
+     "en": "payslip, payroll",
+     "pos": "n. f.",
+     "example": {
+      "target": "Recibo la nómina el último día del mes.",
+      "gloss": "I get my payslip on the last day of the month."
+     }
+    },
+    {
+     "id": "el negocio",
+     "hr": "el negocio",
+     "en": "business",
+     "pos": "n. m.",
+     "note": "more informal or general than la empresa (a formally registered company)",
+     "example": {
+      "target": "Mis padres tienen un pequeño negocio.",
+      "gloss": "My parents have a small business."
+     }
+    },
+    {
+     "id": "contratar",
+     "hr": "contratar",
+     "en": "to hire",
+     "pos": "v.",
+     "example": {
+      "target": "La empresa va a contratar a diez personas.",
+      "gloss": "The company is going to hire ten people."
+     }
+    },
+    {
+     "id": "despedir",
+     "hr": "despedir",
+     "en": "to fire, to dismiss",
+     "pos": "v.",
+     "note": "e>i: despido",
+     "example": {
+      "target": "No quiero despedir a nadie.",
+      "gloss": "I don't want to fire anyone."
+     }
+    },
+    {
+     "id": "dimitir",
+     "hr": "dimitir",
+     "en": "to resign",
+     "pos": "v.",
+     "example": {
+      "target": "El director dimitió el mes pasado.",
+      "gloss": "The director resigned last month."
+     }
+    },
+    {
+     "id": "jubilarse",
+     "hr": "jubilarse",
+     "en": "to retire",
+     "pos": "v.",
+     "note": "reflexive verb",
+     "example": {
+      "target": "Mi abuelo se jubiló a los sesenta y cinco años.",
+      "gloss": "My grandfather retired at sixty five."
+     }
+    },
+    {
+     "id": "ganar",
+     "hr": "ganar",
+     "en": "to earn",
+     "pos": "v.",
+     "example": {
+      "target": "Gano poco dinero pero me gusta mi trabajo.",
+      "gloss": "I earn little money but I like my job."
+     }
+    },
+    {
+     "id": "dirigir",
+     "hr": "dirigir",
+     "en": "to manage, to run",
+     "pos": "v.",
+     "note": "yo-form: dirijo (g>j before o/a)",
+     "example": {
+      "target": "Ella dirige un equipo de quince personas.",
+      "gloss": "She manages a team of fifteen people."
+     }
+    },
+    {
+     "id": "organizar",
+     "hr": "organizar",
+     "en": "to organize",
+     "pos": "v.",
+     "example": {
+      "target": "Tenemos que organizar mejor el trabajo.",
+      "gloss": "We have to organize the work better."
+     }
+    },
+    {
+     "id": "planificar",
+     "hr": "planificar",
+     "en": "to plan",
+     "pos": "v.",
+     "example": {
+      "target": "Planificamos la semana los lunes.",
+      "gloss": "We plan the week on Mondays."
+     }
+    },
+    {
+     "id": "encargarse",
+     "hr": "encargarse",
+     "en": "to take charge (of)",
+     "pos": "v.",
+     "note": "reflexive; governed preposition de: encargarse de algo",
+     "example": {
+      "target": "Yo me encargo de las facturas.",
+      "gloss": "I take charge of the invoices."
+     }
+    },
+    {
+     "id": "el proyecto",
+     "hr": "el proyecto",
+     "en": "project",
+     "pos": "n. m.",
+     "example": {
+      "target": "Estamos terminando un proyecto importante.",
+      "gloss": "We're finishing an important project."
+     }
+    },
+    {
+     "id": "el informe",
+     "hr": "el informe",
+     "en": "report",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tengo que entregar el informe mañana.",
+      "gloss": "I have to hand in the report tomorrow."
+     }
+    },
+    {
+     "id": "la solicitud",
+     "hr": "la solicitud",
+     "en": "application",
+     "pos": "n. f.",
+     "example": {
+      "target": "Rellené la solicitud con mucho cuidado.",
+      "gloss": "I filled out the application very carefully."
+     }
+    },
+    {
+     "id": "el requisito",
+     "hr": "el requisito",
+     "en": "requirement",
+     "pos": "n. m.",
+     "example": {
+      "target": "El inglés es un requisito para este puesto.",
+      "gloss": "English is a requirement for this position."
+     }
+    },
+    {
+     "id": "ascender",
+     "hr": "ascender",
+     "en": "to be promoted, to promote",
+     "pos": "v.",
+     "note": "e>ie: asciendo",
+     "example": {
+      "target": "Después de dos años, ascendí a jefe de equipo.",
+      "gloss": "After two years, I was promoted to team leader."
+     }
+    },
+    {
+     "id": "el autónomo",
+     "hr": "el autónomo",
+     "en": "self-employed person, freelancer",
+     "pos": "n. m.",
+     "note": "fem. la autónoma",
+     "example": {
+      "target": "Mi hermana es autónoma y trabaja desde casa.",
+      "gloss": "My sister is self-employed and works from home."
+     }
+    },
+    {
+     "id": "el funcionario",
+     "hr": "el funcionario",
+     "en": "civil servant",
+     "pos": "n. m.",
+     "note": "fem. la funcionaria",
+     "example": {
+      "target": "Su padre es funcionario del ayuntamiento.",
+      "gloss": "Her father is a civil servant at the town hall."
+     }
+    },
+    {
+     "id": "la fábrica",
+     "hr": "la fábrica",
+     "en": "factory",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi tío trabaja en una fábrica de muebles.",
+      "gloss": "My uncle works in a furniture factory."
+     }
+    },
+    {
+     "id": "el aumento",
+     "hr": "el aumento",
+     "en": "raise, increase",
+     "pos": "n. m.",
+     "note": "here specifically aumento de sueldo, a pay raise",
+     "example": {
+      "target": "Este año no hay aumento de sueldo.",
+      "gloss": "This year there's no salary raise."
+     }
+    },
+    {
+     "id": "los estudios",
+     "hr": "los estudios",
+     "en": "studies",
+     "pos": "n. m. pl.",
+     "example": {
+      "target": "Terminé los estudios el año pasado.",
+      "gloss": "I finished my studies last year."
+     }
+    },
+    {
+     "id": "la carrera",
+     "hr": "la carrera",
+     "en": "university degree, course of study",
+     "pos": "n. f.",
+     "note": "also means race; here it means a degree program",
+     "example": {
+      "target": "Su carrera dura cuatro años.",
+      "gloss": "Her degree takes four years."
+     }
+    },
+    {
+     "id": "la asignatura",
+     "hr": "la asignatura",
+     "en": "school subject",
+     "pos": "n. f.",
+     "example": {
+      "target": "Las matemáticas son mi asignatura favorita.",
+      "gloss": "Math is my favorite subject."
+     }
+    },
+    {
+     "id": "el curso",
+     "hr": "el curso",
+     "en": "course, school year",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este curso es más difícil que el anterior.",
+      "gloss": "This school year is harder than the last one."
+     }
+    },
+    {
+     "id": "la clase",
+     "hr": "la clase",
+     "en": "class",
+     "pos": "n. f.",
+     "example": {
+      "target": "La clase de historia empieza a las once.",
+      "gloss": "The history class starts at eleven."
+     }
+    },
+    {
+     "id": "el aula",
+     "hr": "el aula",
+     "en": "classroom",
+     "pos": "n. f.",
+     "note": "feminine noun beginning with stressed a takes el in the singular (el aula, but las aulas in the plural); adjectives stay feminine: el aula grande",
+     "example": {
+      "target": "El aula está llena de estudiantes.",
+      "gloss": "The classroom is full of students."
+     }
+    },
+    {
+     "id": "el examen",
+     "hr": "el examen",
+     "en": "exam",
+     "pos": "n. m.",
+     "note": "pl. los exámenes",
+     "example": {
+      "target": "Tengo un examen difícil el viernes.",
+      "gloss": "I have a hard exam on Friday."
+     }
+    },
+    {
+     "id": "la nota",
+     "hr": "la nota",
+     "en": "grade",
+     "pos": "n. f.",
+     "example": {
+      "target": "Saqué una nota muy buena.",
+      "gloss": "I got a very good grade."
+     }
+    },
+    {
+     "id": "el aprobado",
+     "hr": "el aprobado",
+     "en": "passing grade, a pass",
+     "pos": "n. m.",
+     "example": {
+      "target": "Con un aprobado ya puedo pasar de curso.",
+      "gloss": "With a passing grade I can already move up a year."
+     }
+    },
+    {
+     "id": "el suspenso",
+     "hr": "el suspenso",
+     "en": "failing grade, a fail",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tuve un suspenso en química.",
+      "gloss": "I got a fail in chemistry."
+     }
+    },
+    {
+     "id": "el título",
+     "hr": "el título",
+     "en": "degree, diploma",
+     "pos": "n. m.",
+     "example": {
+      "target": "Consiguió el título hace dos años.",
+      "gloss": "She got her degree two years ago."
+     }
+    },
+    {
+     "id": "la beca",
+     "hr": "la beca",
+     "en": "scholarship",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tengo una beca para estudiar en Sevilla.",
+      "gloss": "I have a scholarship to study in Seville."
+     }
+    },
+    {
+     "id": "el máster",
+     "hr": "el máster",
+     "en": "master's degree",
+     "pos": "n. m.",
+     "example": {
+      "target": "Después de la carrera, hizo un máster.",
+      "gloss": "After her degree, she did a master's."
+     }
+    },
+    {
+     "id": "el doctorado",
+     "hr": "el doctorado",
+     "en": "doctorate, PhD",
+     "pos": "n. m.",
+     "example": {
+      "target": "Está haciendo el doctorado en biología.",
+      "gloss": "He's doing his PhD in biology."
+     }
+    },
+    {
+     "id": "la matrícula",
+     "hr": "la matrícula",
+     "en": "enrollment, tuition",
+     "pos": "n. f.",
+     "example": {
+      "target": "La matrícula del máster es cara.",
+      "gloss": "The master's tuition is expensive."
+     }
+    },
+    {
+     "id": "el apunte",
+     "hr": "el apunte",
+     "en": "note (written)",
+     "pos": "n. m.",
+     "note": "usually plural, los apuntes",
+     "example": {
+      "target": "¿Me dejas tus apuntes de esta semana?",
+      "gloss": "Will you lend me your notes from this week?"
+     }
+    },
+    {
+     "id": "el deber",
+     "hr": "el deber",
+     "en": "homework",
+     "pos": "n. m.",
+     "note": "usually plural, los deberes; the singular also means duty",
+     "example": {
+      "target": "Hago los deberes después de cenar.",
+      "gloss": "I do my homework after dinner."
+     }
+    },
+    {
+     "id": "el recreo",
+     "hr": "el recreo",
+     "en": "break, recess",
+     "pos": "n. m.",
+     "example": {
+      "target": "En el recreo, los niños juegan en el patio.",
+      "gloss": "At recess, the children play in the yard."
+     }
+    },
+    {
+     "id": "el compañero de clase",
+     "hr": "el compañero de clase",
+     "en": "classmate",
+     "pos": "n. m.",
+     "note": "fem. la compañera de clase",
+     "example": {
+      "target": "Mi compañero de clase me ayuda con las matemáticas.",
+      "gloss": "My classmate helps me with math."
+     }
+    },
+    {
+     "id": "aprobar",
+     "hr": "aprobar",
+     "en": "to pass (an exam)",
+     "pos": "v.",
+     "note": "o>ue: apruebo",
+     "example": {
+      "target": "Espero aprobar el examen de mañana.",
+      "gloss": "I hope to pass tomorrow's exam."
+     }
+    },
+    {
+     "id": "suspender",
+     "hr": "suspender",
+     "en": "to fail (an exam)",
+     "pos": "v.",
+     "example": {
+      "target": "Suspendí la asignatura por poco.",
+      "gloss": "I failed the subject by a little."
+     }
+    },
+    {
+     "id": "matricularse",
+     "hr": "matricularse",
+     "en": "to enroll",
+     "pos": "v.",
+     "note": "reflexive: to enroll oneself",
+     "example": {
+      "target": "Me matriculé en el curso de inglés.",
+      "gloss": "I enrolled in the English course."
+     }
+    },
+    {
+     "id": "repasar",
+     "hr": "repasar",
+     "en": "to review, to go over",
+     "pos": "v.",
+     "example": {
+      "target": "Repaso mis apuntes antes del examen.",
+      "gloss": "I review my notes before the exam."
+     }
+    },
+    {
+     "id": "memorizar",
+     "hr": "memorizar",
+     "en": "to memorize",
+     "pos": "v.",
+     "example": {
+      "target": "Tengo que memorizar toda la lección.",
+      "gloss": "I have to memorize the whole lesson."
+     }
+    },
+    {
+     "id": "corregir",
+     "hr": "corregir",
+     "en": "to correct",
+     "pos": "v.",
+     "note": "e>i: corrijo (also g>j in the yo form)",
+     "example": {
+      "target": "El profesor corrige los exámenes esta tarde.",
+      "gloss": "The teacher is correcting the exams this afternoon."
+     }
+    },
+    {
+     "id": "el colegio",
+     "hr": "el colegio",
+     "en": "school",
+     "pos": "n. m.",
+     "note": "usually primary or secondary school, more everyday than la escuela",
+     "example": {
+      "target": "Mi hija va al colegio en autobús.",
+      "gloss": "My daughter goes to school by bus."
+     }
+    },
+    {
+     "id": "el instituto",
+     "hr": "el instituto",
+     "en": "secondary school, high school",
+     "pos": "n. m.",
+     "example": {
+      "target": "En el instituto estudié tres idiomas.",
+      "gloss": "In secondary school I studied three languages."
+     }
+    },
+    {
+     "id": "el alumno",
+     "hr": "el alumno",
+     "en": "pupil, student",
+     "pos": "n. m.",
+     "note": "fem. la alumna",
+     "example": {
+      "target": "El profesor conoce a todos sus alumnos.",
+      "gloss": "The teacher knows all his students."
+     }
+    },
+    {
+     "id": "la pizarra",
+     "hr": "la pizarra",
+     "en": "whiteboard, blackboard",
+     "pos": "n. f.",
+     "example": {
+      "target": "El profesor escribe la fecha en la pizarra.",
+      "gloss": "The teacher writes the date on the whiteboard."
+     }
+    },
+    {
+     "id": "la biblioteca",
+     "hr": "la biblioteca",
+     "en": "library",
+     "pos": "n. f.",
+     "example": {
+      "target": "Estudio todas las tardes en la biblioteca.",
+      "gloss": "I study every afternoon in the library."
+     }
+    },
+    {
+     "id": "explicar",
+     "hr": "explicar",
+     "en": "to explain",
+     "pos": "v.",
+     "example": {
+      "target": "La profesora explica la lección otra vez.",
+      "gloss": "The teacher explains the lesson again."
+     }
+    },
+    {
+     "id": "responder",
+     "hr": "responder",
+     "en": "to answer",
+     "pos": "v.",
+     "example": {
+      "target": "No supe responder a esa pregunta.",
+      "gloss": "I didn't know how to answer that question."
+     }
+    },
+    {
+     "id": "el ocio",
+     "hr": "el ocio",
+     "en": "leisure",
+     "pos": "n. m.",
+     "example": {
+      "target": "El ocio es importante para descansar la mente.",
+      "gloss": "Leisure is important for resting the mind."
+     }
+    },
+    {
+     "id": "el deporte",
+     "hr": "el deporte",
+     "en": "sport",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hago deporte tres veces por semana.",
+      "gloss": "I do sports three times a week."
+     }
+    },
+    {
+     "id": "el partido",
+     "hr": "el partido",
+     "en": "match, game",
+     "pos": "n. m.",
+     "example": {
+      "target": "Anoche vimos el partido en el bar.",
+      "gloss": "Last night we watched the match at the bar."
+     }
+    },
+    {
+     "id": "el entrenamiento",
+     "hr": "el entrenamiento",
+     "en": "training",
+     "pos": "n. m.",
+     "example": {
+      "target": "El entrenamiento dura dos horas.",
+      "gloss": "Training lasts two hours."
+     }
+    },
+    {
+     "id": "el gimnasio",
+     "hr": "el gimnasio",
+     "en": "gym",
+     "pos": "n. m.",
+     "example": {
+      "target": "Voy al gimnasio antes de trabajar.",
+      "gloss": "I go to the gym before work."
+     }
+    },
+    {
+     "id": "la pista",
+     "hr": "la pista",
+     "en": "court, track",
+     "pos": "n. f.",
+     "example": {
+      "target": "Jugamos al tenis en esa pista.",
+      "gloss": "We play tennis on that court."
+     }
+    },
+    {
+     "id": "el árbitro",
+     "hr": "el árbitro",
+     "en": "referee",
+     "pos": "n. m.",
+     "note": "fem. la árbitra",
+     "example": {
+      "target": "El árbitro para el partido.",
+      "gloss": "The referee stops the match."
+     }
+    },
+    {
+     "id": "el jugador",
+     "hr": "el jugador",
+     "en": "player",
+     "pos": "n. m.",
+     "note": "fem. la jugadora",
+     "example": {
+      "target": "Ese jugador corre muy rápido.",
+      "gloss": "That player runs very fast."
+     }
+    },
+    {
+     "id": "la afición",
+     "hr": "la afición",
+     "en": "fan base, hobby",
+     "pos": "n. f.",
+     "note": "also means a liking or fondness for something (tener afición a algo)",
+     "example": {
+      "target": "La afición anima al equipo todo el partido.",
+      "gloss": "The fans cheer the team the whole match."
+     }
+    },
+    {
+     "id": "el resultado",
+     "hr": "el resultado",
+     "en": "result, score",
+     "pos": "n. m.",
+     "example": {
+      "target": "¿Sabes el resultado del partido de ayer?",
+      "gloss": "Do you know yesterday's match result?"
+     }
+    },
+    {
+     "id": "el empate",
+     "hr": "el empate",
+     "en": "draw, tie",
+     "pos": "n. m.",
+     "example": {
+      "target": "El partido terminó en empate.",
+      "gloss": "The match ended in a draw."
+     }
+    },
+    {
+     "id": "la victoria",
+     "hr": "la victoria",
+     "en": "victory",
+     "pos": "n. f.",
+     "example": {
+      "target": "Celebramos la victoria con una cena.",
+      "gloss": "We celebrated the victory with a dinner."
+     }
+    },
+    {
+     "id": "la derrota",
+     "hr": "la derrota",
+     "en": "defeat",
+     "pos": "n. f.",
+     "example": {
+      "target": "Aceptó la derrota con tranquilidad.",
+      "gloss": "He accepted the defeat calmly."
+     }
+    },
+    {
+     "id": "entrenar",
+     "hr": "entrenar",
+     "en": "to train",
+     "pos": "v.",
+     "example": {
+      "target": "Entrenamos todos los martes y jueves.",
+      "gloss": "We train every Tuesday and Thursday."
+     }
+    },
+    {
+     "id": "empatar",
+     "hr": "empatar",
+     "en": "to draw, to tie",
+     "pos": "v.",
+     "example": {
+      "target": "Los dos equipos empataron a dos.",
+      "gloss": "The two teams drew two all."
+     }
+    },
+    {
+     "id": "marcar",
+     "hr": "marcar",
+     "en": "to score",
+     "pos": "v.",
+     "example": {
+      "target": "El delantero marcó dos goles.",
+      "gloss": "The forward scored two goals."
+     }
+    },
+    {
+     "id": "nadar",
+     "hr": "nadar",
+     "en": "to swim",
+     "pos": "v.",
+     "example": {
+      "target": "Me gusta nadar por las mañanas.",
+      "gloss": "I like swimming in the mornings."
+     }
+    },
+    {
+     "id": "esquiar",
+     "hr": "esquiar",
+     "en": "to ski",
+     "pos": "v.",
+     "note": "present tense stresses the i: esquío, esquías, esquía",
+     "example": {
+      "target": "Cada invierno esquío en los Pirineos.",
+      "gloss": "Every winter I ski in the Pyrenees."
+     }
+    },
+    {
+     "id": "montar en bicicleta",
+     "hr": "montar en bicicleta",
+     "en": "to ride a bike",
+     "pos": "expr.",
+     "example": {
+      "target": "Los domingos montamos en bicicleta por el parque.",
+      "gloss": "On Sundays we ride our bikes through the park."
+     }
+    },
+    {
+     "id": "hacer deporte",
+     "hr": "hacer deporte",
+     "en": "to do sports",
+     "pos": "expr.",
+     "example": {
+      "target": "Es bueno hacer deporte todas las semanas.",
+      "gloss": "It's good to do sports every week."
+     }
+    },
+    {
+     "id": "perder",
+     "hr": "perder",
+     "en": "to lose",
+     "pos": "v.",
+     "note": "e>ie: pierdo",
+     "example": {
+      "target": "No quiero perder este partido.",
+      "gloss": "I don't want to lose this match."
+     }
+    },
+    {
+     "id": "la pelota",
+     "hr": "la pelota",
+     "en": "ball",
+     "pos": "n. f.",
+     "example": {
+      "target": "El niño juega con la pelota en el jardín.",
+      "gloss": "The boy plays with the ball in the garden."
+     }
+    },
+    {
+     "id": "el ciclismo",
+     "hr": "el ciclismo",
+     "en": "cycling",
+     "pos": "n. m.",
+     "example": {
+      "target": "El ciclismo es un deporte muy popular en España.",
+      "gloss": "Cycling is a very popular sport in Spain."
+     }
+    },
+    {
+     "id": "el senderismo",
+     "hr": "el senderismo",
+     "en": "hiking",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los fines de semana hacemos senderismo por la montaña.",
+      "gloss": "On weekends we go hiking in the mountains."
+     }
+    },
+    {
+     "id": "el ajedrez",
+     "hr": "el ajedrez",
+     "en": "chess",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi abuelo me enseñó a jugar al ajedrez.",
+      "gloss": "My grandfather taught me to play chess."
+     }
+    },
+    {
+     "id": "el pasatiempo",
+     "hr": "el pasatiempo",
+     "en": "hobby, pastime",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi pasatiempo favorito es la fotografía.",
+      "gloss": "My favorite hobby is photography."
+     }
+    },
+    {
+     "id": "el tiempo libre",
+     "hr": "el tiempo libre",
+     "en": "free time",
+     "pos": "n. m.",
+     "example": {
+      "target": "En mi tiempo libre leo novelas.",
+      "gloss": "In my free time I read novels."
+     }
+    },
+    {
+     "id": "el club",
+     "hr": "el club",
+     "en": "club",
+     "pos": "n. m.",
+     "note": "pl. los clubes",
+     "example": {
+      "target": "Pertenezco a un club de senderismo.",
+      "gloss": "I belong to a hiking club."
+     }
+    },
+    {
+     "id": "la película",
+     "hr": "la película",
+     "en": "film, movie",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esta noche vemos una película en casa.",
+      "gloss": "Tonight we're watching a movie at home."
+     }
+    },
+    {
+     "id": "la serie",
+     "hr": "la serie",
+     "en": "TV series",
+     "pos": "n. f.",
+     "example": {
+      "target": "Estoy viendo una serie muy divertida.",
+      "gloss": "I'm watching a very funny series."
+     }
+    },
+    {
+     "id": "el concierto",
+     "hr": "el concierto",
+     "en": "concert",
+     "pos": "n. m.",
+     "example": {
+      "target": "El concierto empieza a las nueve de la noche.",
+      "gloss": "The concert starts at nine at night."
+     }
+    },
+    {
+     "id": "el pase",
+     "hr": "el pase",
+     "en": "pass, ticket (for an event)",
+     "pos": "n. m.",
+     "note": "peninsular term for an entry pass to a show or session",
+     "example": {
+      "target": "Compré el pase para el concierto.",
+      "gloss": "I bought the pass for the concert."
+     }
+    },
+    {
+     "id": "el escenario",
+     "hr": "el escenario",
+     "en": "stage",
+     "pos": "n. m.",
+     "example": {
+      "target": "Los músicos suben al escenario.",
+      "gloss": "The musicians go up on stage."
+     }
+    },
+    {
+     "id": "el público",
+     "hr": "el público",
+     "en": "audience",
+     "pos": "n. m.",
+     "example": {
+      "target": "El público aplaude mucho al final.",
+      "gloss": "The audience applauds a lot at the end."
+     }
+    },
+    {
+     "id": "la obra",
+     "hr": "la obra",
+     "en": "play, work (of art)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vimos una obra de teatro muy interesante.",
+      "gloss": "We saw a very interesting play."
+     }
+    },
+    {
+     "id": "el cuadro",
+     "hr": "el cuadro",
+     "en": "painting",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ese cuadro tiene colores muy vivos.",
+      "gloss": "That painting has very bright colors."
+     }
+    },
+    {
+     "id": "la exposición",
+     "hr": "la exposición",
+     "en": "exhibition",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hay una exposición de arte en el centro.",
+      "gloss": "There's an art exhibition downtown."
+     }
+    },
+    {
+     "id": "la novela",
+     "hr": "la novela",
+     "en": "novel",
+     "pos": "n. f.",
+     "example": {
+      "target": "Estoy leyendo una novela muy larga.",
+      "gloss": "I'm reading a very long novel."
+     }
+    },
+    {
+     "id": "el capítulo",
+     "hr": "el capítulo",
+     "en": "chapter",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ya leí el primer capítulo del libro.",
+      "gloss": "I already read the first chapter of the book."
+     }
+    },
+    {
+     "id": "la letra",
+     "hr": "la letra",
+     "en": "lyrics",
+     "pos": "n. f.",
+     "note": "also means letter of the alphabet, or handwriting",
+     "example": {
+      "target": "No entiendo bien la letra de esta canción.",
+      "gloss": "I don't quite understand the lyrics of this song."
+     }
+    },
+    {
+     "id": "el grupo",
+     "hr": "el grupo",
+     "en": "band, group",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ese grupo toca en el festival este año.",
+      "gloss": "That band plays at the festival this year."
+     }
+    },
+    {
+     "id": "el instrumento",
+     "hr": "el instrumento",
+     "en": "instrument",
+     "pos": "n. m.",
+     "example": {
+      "target": "Toco un instrumento desde pequeño.",
+      "gloss": "I've played an instrument since I was little."
+     }
+    },
+    {
+     "id": "la guitarra",
+     "hr": "la guitarra",
+     "en": "guitar",
+     "pos": "n. f.",
+     "example": {
+      "target": "Aprendí a tocar la guitarra el año pasado.",
+      "gloss": "I learned to play the guitar last year."
+     }
+    },
+    {
+     "id": "el piano",
+     "hr": "el piano",
+     "en": "piano",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mi hermana estudia piano en el conservatorio.",
+      "gloss": "My sister studies piano at the conservatory."
+     }
+    },
+    {
+     "id": "la batería",
+     "hr": "la batería",
+     "en": "drums, drum kit",
+     "pos": "n. f.",
+     "note": "also means battery",
+     "example": {
+      "target": "Él toca la batería en un grupo.",
+      "gloss": "He plays the drums in a band."
+     }
+    },
+    {
+     "id": "tocar",
+     "hr": "tocar",
+     "en": "to play (an instrument), to touch",
+     "pos": "v.",
+     "example": {
+      "target": "¿Sabes tocar algún instrumento?",
+      "gloss": "Do you know how to play any instrument?"
+     }
+    },
+    {
+     "id": "pintar",
+     "hr": "pintar",
+     "en": "to paint",
+     "pos": "v.",
+     "example": {
+      "target": "Mi madre pinta cuadros los fines de semana.",
+      "gloss": "My mother paints pictures on weekends."
+     }
+    },
+    {
+     "id": "dibujar",
+     "hr": "dibujar",
+     "en": "to draw",
+     "pos": "v.",
+     "example": {
+      "target": "A mi hijo le encanta dibujar animales.",
+      "gloss": "My son loves drawing animals."
+     }
+    },
+    {
+     "id": "coleccionar",
+     "hr": "coleccionar",
+     "en": "to collect",
+     "pos": "v.",
+     "example": {
+      "target": "De pequeño coleccionaba sellos.",
+      "gloss": "As a child I used to collect stamps."
+     }
+    },
+    {
+     "id": "la música",
+     "hr": "la música",
+     "en": "music",
+     "pos": "n. f.",
+     "example": {
+      "target": "Escucho música mientras trabajo.",
+      "gloss": "I listen to music while I work."
+     }
+    },
+    {
+     "id": "el escritor",
+     "hr": "el escritor",
+     "en": "writer",
+     "pos": "n. m.",
+     "note": "fem. la escritora",
+     "example": {
+      "target": "Ese escritor publicó su primera novela este año.",
+      "gloss": "That writer published his first novel this year."
+     }
+    },
+    {
+     "id": "el pintor",
+     "hr": "el pintor",
+     "en": "painter",
+     "pos": "n. m.",
+     "note": "fem. la pintora",
+     "example": {
+      "target": "El pintor trabaja en su estudio por la mañana.",
+      "gloss": "The painter works in his studio in the morning."
+     }
+    },
+    {
+     "id": "el actor",
+     "hr": "el actor",
+     "en": "actor",
+     "pos": "n. m.",
+     "note": "fem. la actriz (irregular pair)",
+     "example": {
+      "target": "El actor principal habla muy poco en la obra.",
+      "gloss": "The main actor speaks very little in the play."
+     }
+    },
+    {
+     "id": "la actriz",
+     "hr": "la actriz",
+     "en": "actress",
+     "pos": "n. f.",
+     "note": "pl. las actrices",
+     "example": {
+      "target": "La actriz recibió muchos aplausos.",
+      "gloss": "The actress received a lot of applause."
+     }
+    },
+    {
+     "id": "el ensayo",
+     "hr": "el ensayo",
+     "en": "rehearsal, essay",
+     "pos": "n. m.",
+     "note": "rehearsal for a play or concert; also means essay in an academic context",
+     "example": {
+      "target": "Tenemos ensayo todos los jueves por la tarde.",
+      "gloss": "We have rehearsal every Thursday afternoon."
+     }
+    },
+    {
+     "id": "actuar",
+     "hr": "actuar",
+     "en": "to act (in a play or film)",
+     "pos": "v.",
+     "note": "present tense stresses the u: actúo, actúas, actúa",
+     "example": {
+      "target": "Ella actúa muy bien en esta obra.",
+      "gloss": "She acts very well in this play."
+     }
+    },
+    {
+     "id": "la actuación",
+     "hr": "la actuación",
+     "en": "performance",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su actuación fue increíble.",
+      "gloss": "Her performance was incredible."
+     }
+    },
+    {
+     "id": "el espectáculo",
+     "hr": "el espectáculo",
+     "en": "show",
+     "pos": "n. m.",
+     "example": {
+      "target": "El espectáculo dura una hora y media.",
+      "gloss": "The show lasts an hour and a half."
+     }
+    },
+    {
+     "id": "la gira",
+     "hr": "la gira",
+     "en": "tour (music, theater)",
+     "pos": "n. f.",
+     "example": {
+      "target": "El grupo empieza su gira en marzo.",
+      "gloss": "The band starts its tour in March."
+     }
+    },
+    {
+     "id": "la crítica",
+     "hr": "la crítica",
+     "en": "review, critique",
+     "pos": "n. f.",
+     "note": "also means criticism in general",
+     "example": {
+      "target": "La crítica de la película fue muy buena.",
+      "gloss": "The film review was very good."
+     }
+    },
+    {
+     "id": "el guion",
+     "hr": "el guion",
+     "en": "script, screenplay",
+     "pos": "n. m.",
+     "note": "written without an accent under current spelling rules; older texts write guión",
+     "example": {
+      "target": "Escribió el guion de la obra en un mes.",
+      "gloss": "She wrote the play's script in a month."
+     }
+    },
+    {
+     "id": "el aficionado",
+     "hr": "el aficionado",
+     "en": "fan, enthusiast",
+     "pos": "n. m.",
+     "note": "fem. la aficionada",
+     "example": {
+      "target": "Soy un gran aficionado al ajedrez.",
+      "gloss": "I'm a big chess enthusiast."
+     }
+    },
+    {
+     "id": "la fotografía",
+     "hr": "la fotografía",
+     "en": "photography, photograph",
+     "pos": "n. f.",
+     "note": "covers both the art of photography and an individual photo",
+     "example": {
+      "target": "En mi tiempo libre hago fotografía.",
+      "gloss": "In my free time I do photography."
+     }
+    },
+    {
+     "id": "el fotógrafo",
+     "hr": "el fotógrafo",
+     "en": "photographer",
+     "pos": "n. m.",
+     "note": "fem. la fotógrafa",
+     "example": {
+      "target": "El fotógrafo saca fotos en el concierto.",
+      "gloss": "The photographer takes photos at the concert."
+     }
+    },
+    {
+     "id": "la ciencia",
+     "hr": "la ciencia",
+     "en": "science",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me interesa mucho la ciencia.",
+      "gloss": "I'm very interested in science."
+     }
+    },
+    {
+     "id": "la tecnología",
+     "hr": "la tecnología",
+     "en": "technology",
+     "pos": "n. f.",
+     "example": {
+      "target": "La tecnología cambia muy rápido.",
+      "gloss": "Technology changes very quickly."
+     }
+    },
+    {
+     "id": "el científico",
+     "hr": "el científico",
+     "en": "scientist",
+     "pos": "n. m.",
+     "note": "fem. la científica",
+     "example": {
+      "target": "El científico enseña en el instituto.",
+      "gloss": "The scientist teaches at the secondary school."
+     }
+    },
+    {
+     "id": "las matemáticas",
+     "hr": "las matemáticas",
+     "en": "mathematics",
+     "pos": "n. f. pl.",
+     "note": "always plural in Spanish",
+     "example": {
+      "target": "Suspendí las matemáticas el año pasado.",
+      "gloss": "I failed math last year."
+     }
+    },
+    {
+     "id": "la respuesta",
+     "hr": "la respuesta",
+     "en": "answer, response",
+     "pos": "n. f.",
+     "note": "distinct from responder (the verb, already taught)",
+     "example": {
+      "target": "No sé la respuesta a esta pregunta.",
+      "gloss": "I don't know the answer to this question."
+     }
+    },
+    {
+     "id": "dar clases",
+     "hr": "dar clases",
+     "en": "to teach, to give lessons",
+     "pos": "v.",
+     "note": "the everyday way to say someone teaches: da clases de inglés",
+     "example": {
+      "target": "Mi hermana da clases de inglés en una academia.",
+      "gloss": "My sister teaches English at a language school."
+     }
+    },
+    {
+     "id": "estar jubilado",
+     "hr": "estar jubilado",
+     "en": "to be retired",
+     "pos": "v.",
+     "note": "feminine jubilada; the noun is la jubilación",
+     "example": {
+      "target": "Mi padre está jubilado desde el año pasado.",
+      "gloss": "My father has been retired since last year."
+     }
+    },
+    {
+     "id": "jugar a las cartas",
+     "hr": "jugar a las cartas",
+     "en": "to play cards",
+     "pos": "v.",
+     "note": "jugar takes a before the name of a game: jugar al fútbol, jugar a las cartas",
+     "example": {
+      "target": "Los domingos jugamos a las cartas con mis abuelos.",
+      "gloss": "On Sundays we play cards with my grandparents."
+     }
+    },
+    {
+     "id": "el juez",
+     "hr": "el juez",
+     "en": "judge",
+     "pos": "n. m.",
+     "note": "feminine la jueza, now the usual form",
+     "example": {
+      "target": "El juez escuchó a las dos partes.",
+      "gloss": "The judge listened to both sides."
+     }
+    },
+    {
+     "id": "el ejército",
+     "hr": "el ejército",
+     "en": "army",
+     "pos": "n. m.",
+     "example": {
+      "target": "Su hermano trabaja en el ejército.",
+      "gloss": "His brother works in the army."
+     }
+    },
+    {
+     "id": "la guerra",
+     "hr": "la guerra",
+     "en": "war",
+     "pos": "n. f.",
+     "example": {
+      "target": "La guerra terminó hace muchos años.",
+      "gloss": "The war ended many years ago."
+     }
+    },
+    {
+     "id": "la paz",
+     "hr": "la paz",
+     "en": "peace",
+     "pos": "n. f.",
+     "note": "plural las paces, rare; the everyday phrase is hacer las paces, to make up",
+     "example": {
+      "target": "Todos queremos vivir en paz.",
+      "gloss": "We all want to live in peace."
+     }
+    }
+   ]
+  }
+ ]
+}

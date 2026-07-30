@@ -143,7 +143,15 @@ the grading grouping is load-bearing for `exams.json`.
 
 **B1 Comprension de lectura** (5 tareas, 6 items each)
 1. Match people's statements to texts. Adverts, listings, personal messages, notices; 40 to 60
-   words each.
+   words each. **Six people (1-6) against TEN texts (A-J), three of which are not used.** Like
+   tarea 4, the guide leaves the count out and the model paper supplies it: `b1_cl_t1.pdf`,
+   fetched and rendered 2026-07-30 (the file is image-only, no text layer), reads "Usted va a leer
+   seis textos en los que unas personas hablan de sus gustos cinematograficos y diez resumenes de
+   peliculas extraidos de la cartelera. Relacione a las personas (1-6) con los textos de la
+   cartelera (A-J). HAY TRES TEXTOS QUE NO DEBE RELACIONAR." Its header also confirms the section
+   totals independently: "Esta prueba contiene cinco tareas. Usted debe responder a 30 preguntas.
+   Duracion: 70 minutos." Day 238 had taught this as "seis textos breves", i.e. six texts and no
+   spares, which is a different task; corrected in Phase 8c.
 2. Read one informative text, 3-option MCQ. 400 to 450 words.
 3. Match questions/statements to **three** input texts. Anecdotes, travel-guide practical
    information, experiences, news, diaries, biographies, job adverts; 100 to 120 words each.

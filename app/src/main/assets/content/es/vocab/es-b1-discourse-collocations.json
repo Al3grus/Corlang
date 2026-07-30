@@ -1,0 +1,1565 @@
+{
+ "packs": [
+  {
+   "id": "es-b1-discourse-collocations",
+   "title": "Discourse markers, fixed expressions and collocations",
+   "level": "B1",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "en primer lugar",
+     "hr": "en primer lugar",
+     "en": "first of all, firstly",
+     "pos": "expr.",
+     "note": "opens the first point of an argument; formal, mainly written register",
+     "example": {
+      "target": "En primer lugar, quiero agradecer a todos vuestro esfuerzo.",
+      "gloss": "First of all, I want to thank you all for your effort."
+     }
+    },
+    {
+     "id": "en segundo lugar",
+     "hr": "en segundo lugar",
+     "en": "secondly",
+     "pos": "expr.",
+     "note": "introduces the second point after en primer lugar; formal register",
+     "example": {
+      "target": "En segundo lugar, hay que revisar el presupuesto.",
+      "gloss": "Secondly, the budget needs to be reviewed."
+     }
+    },
+    {
+     "id": "por consiguiente",
+     "hr": "por consiguiente",
+     "en": "therefore, consequently",
+     "pos": "expr.",
+     "note": "formal connector that states a logical result, mainly written",
+     "example": {
+      "target": "No llegamos a un acuerdo y, por consiguiente, la reunión se aplazó.",
+      "gloss": "We did not reach an agreement and, therefore, the meeting was postponed."
+     }
+    },
+    {
+     "id": "en consecuencia",
+     "hr": "en consecuencia",
+     "en": "as a result, consequently",
+     "pos": "expr.",
+     "note": "formal, states the result of what was just said",
+     "example": {
+      "target": "El vuelo se canceló; en consecuencia, tuvimos que cambiar los planes.",
+      "gloss": "The flight was cancelled; as a result, we had to change our plans."
+     }
+    },
+    {
+     "id": "aun así",
+     "hr": "aun así",
+     "en": "even so",
+     "pos": "expr.",
+     "note": "closes a concession; works in speech and writing; note that aun here carries no accent, unlike aún (still)",
+     "example": {
+      "target": "Llovía muchísimo, aun así salimos a caminar.",
+      "gloss": "It was raining a lot, even so we went out for a walk."
+     }
+    },
+    {
+     "id": "a pesar de",
+     "hr": "a pesar de",
+     "en": "despite, in spite of",
+     "pos": "expr.",
+     "note": "introduces a concession before a noun or infinitive; neutral to formal",
+     "example": {
+      "target": "A pesar del tráfico, llegamos a tiempo.",
+      "gloss": "Despite the traffic, we arrived on time."
+     }
+    },
+    {
+     "id": "mientras que",
+     "hr": "mientras que",
+     "en": "whereas, while",
+     "pos": "expr.",
+     "note": "contrasts two facts; neutral register",
+     "example": {
+      "target": "Ana prefiere el campo, mientras que su hermano prefiere la ciudad.",
+      "gloss": "Ana prefers the countryside, whereas her brother prefers the city."
+     }
+    },
+    {
+     "id": "por el contrario",
+     "hr": "por el contrario",
+     "en": "on the contrary",
+     "pos": "expr.",
+     "note": "introduces an opposing idea; more formal than en cambio",
+     "example": {
+      "target": "No se enfadó; por el contrario, se echó a reír.",
+      "gloss": "He did not get angry; on the contrary, he burst out laughing."
+     }
+    },
+    {
+     "id": "dicho de otro modo",
+     "hr": "dicho de otro modo",
+     "en": "put another way",
+     "pos": "expr.",
+     "note": "rephrases what was just said; formal, mainly written",
+     "example": {
+      "target": "El proyecto no es viable, dicho de otro modo, no tenemos suficiente dinero.",
+      "gloss": "The project is not viable, put another way, we do not have enough money."
+     }
+    },
+    {
+     "id": "en otras palabras",
+     "hr": "en otras palabras",
+     "en": "in other words",
+     "pos": "expr.",
+     "note": "rephrases an idea more simply; neutral, spoken and written",
+     "example": {
+      "target": "No podemos permitírnoslo, en otras palabras, es demasiado caro.",
+      "gloss": "We cannot afford it, in other words, it is too expensive."
+     }
+    },
+    {
+     "id": "en concreto",
+     "hr": "en concreto",
+     "en": "specifically",
+     "pos": "expr.",
+     "note": "narrows a general statement to something specific",
+     "example": {
+      "target": "Me gusta la música, en concreto, el jazz.",
+      "gloss": "I like music, specifically, jazz."
+     }
+    },
+    {
+     "id": "ante todo",
+     "hr": "ante todo",
+     "en": "above all, first and foremost",
+     "pos": "expr.",
+     "note": "signals the most important point; neutral to formal",
+     "example": {
+      "target": "Ante todo, quiero deciros que estoy muy orgulloso de vosotros.",
+      "gloss": "First and foremost, I want to tell you that I am very proud of you."
+     }
+    },
+    {
+     "id": "en definitiva",
+     "hr": "en definitiva",
+     "en": "in short, ultimately",
+     "pos": "expr.",
+     "note": "sums up an argument before closing it; neutral register",
+     "example": {
+      "target": "Hemos discutido mucho, pero en definitiva, la decisión es tuya.",
+      "gloss": "We have discussed a lot, but in the end, the decision is yours."
+     }
+    },
+    {
+     "id": "en conclusión",
+     "hr": "en conclusión",
+     "en": "in conclusion",
+     "pos": "expr.",
+     "note": "opens the closing part of a written argument; formal",
+     "example": {
+      "target": "En conclusión, el plan necesita más tiempo.",
+      "gloss": "In conclusion, the plan needs more time."
+     }
+    },
+    {
+     "id": "para terminar",
+     "hr": "para terminar",
+     "en": "to finish, lastly",
+     "pos": "expr.",
+     "note": "signals the last point of a spoken or written argument; neutral",
+     "example": {
+      "target": "Para terminar, me gustaría dar las gracias al equipo.",
+      "gloss": "To finish, I would like to thank the team."
+     }
+    },
+    {
+     "id": "cabe destacar",
+     "hr": "cabe destacar",
+     "en": "it is worth noting",
+     "pos": "expr.",
+     "note": "formal, mainly written; usually followed by que",
+     "example": {
+      "target": "Cabe destacar que el proyecto se terminó antes de lo previsto.",
+      "gloss": "It should be noted that the project finished ahead of schedule."
+     }
+    },
+    {
+     "id": "hay que tener en cuenta",
+     "hr": "hay que tener en cuenta",
+     "en": "one must bear in mind",
+     "pos": "expr.",
+     "note": "impersonal formula that introduces a factor the listener must consider; more formal than the plain phrase tener en cuenta",
+     "example": {
+      "target": "Hay que tener en cuenta que el examen es el lunes.",
+      "gloss": "It must be taken into account that the exam is on Monday."
+     }
+    },
+    {
+     "id": "según parece",
+     "hr": "según parece",
+     "en": "it seems, apparently",
+     "pos": "expr.",
+     "note": "reports something without full certainty; neutral, spoken and written",
+     "example": {
+      "target": "Según parece, van a subir los precios del billete.",
+      "gloss": "Apparently, they are going to raise the ticket prices."
+     }
+    },
+    {
+     "id": "al parecer",
+     "hr": "al parecer",
+     "en": "apparently",
+     "pos": "expr.",
+     "note": "reports secondhand information; neutral register",
+     "example": {
+      "target": "Al parecer, el jefe se va de la empresa.",
+      "gloss": "Apparently, the boss is leaving the company."
+     }
+    },
+    {
+     "id": "desde mi punto de vista",
+     "hr": "desde mi punto de vista",
+     "en": "from my point of view",
+     "pos": "expr.",
+     "note": "explicitly frames what follows as a personal opinion; neutral to formal",
+     "example": {
+      "target": "Desde mi punto de vista, deberíamos esperar un poco más.",
+      "gloss": "From my point of view, we should wait a little longer."
+     }
+    },
+    {
+     "id": "en mi opinión",
+     "hr": "en mi opinión",
+     "en": "in my opinion",
+     "pos": "expr.",
+     "note": "introduces a personal opinion; neutral, common in speech and writing",
+     "example": {
+      "target": "En mi opinión, la película es demasiado larga.",
+      "gloss": "In my opinion, the film is too long."
+     }
+    },
+    {
+     "id": "a mi juicio",
+     "hr": "a mi juicio",
+     "en": "in my judgement",
+     "pos": "expr.",
+     "note": "more formal way of introducing an opinion than en mi opinión",
+     "example": {
+      "target": "A mi juicio, la propuesta tiene varios fallos.",
+      "gloss": "In my judgement, the proposal has several flaws."
+     }
+    },
+    {
+     "id": "lo cierto es que",
+     "hr": "lo cierto es que",
+     "en": "the fact is that",
+     "pos": "expr.",
+     "note": "introduces a fact the speaker presents as undeniable, often after doubt has been raised",
+     "example": {
+      "target": "Lo cierto es que nadie sabe qué va a pasar.",
+      "gloss": "The fact is that nobody knows what is going to happen."
+     }
+    },
+    {
+     "id": "resulta que",
+     "hr": "resulta que",
+     "en": "it turns out that",
+     "pos": "expr.",
+     "note": "introduces a surprising or unexpected fact, common in spoken narration",
+     "example": {
+      "target": "Resulta que el tren llegó una hora tarde.",
+      "gloss": "It turns out that the train arrived an hour late."
+     }
+    },
+    {
+     "id": "por una parte",
+     "hr": "por una parte",
+     "en": "on the one hand",
+     "pos": "expr.",
+     "note": "opens the first side of an argument; pairs with por otra parte",
+     "example": {
+      "target": "Por una parte, el piso es barato.",
+      "gloss": "On the one hand, the flat is cheap."
+     }
+    },
+    {
+     "id": "por otra parte",
+     "hr": "por otra parte",
+     "en": "on the other hand",
+     "pos": "expr.",
+     "note": "opens the second, contrasting side of an argument",
+     "example": {
+      "target": "Por otra parte, está muy lejos del centro.",
+      "gloss": "On the other hand, it is very far from the centre."
+     }
+    },
+    {
+     "id": "así pues",
+     "hr": "así pues",
+     "en": "thus, so",
+     "pos": "expr.",
+     "note": "formal, mainly written; introduces a conclusion drawn from what precedes",
+     "example": {
+      "target": "No hay billetes; así pues, tendremos que esperar al día siguiente.",
+      "gloss": "There are no tickets; so, we will have to wait until the next day."
+     }
+    },
+    {
+     "id": "puesto que",
+     "hr": "puesto que",
+     "en": "since, given that",
+     "pos": "expr.",
+     "note": "gives a reason, more formal than porque, can open the sentence",
+     "example": {
+      "target": "Puesto que ya es tarde, será mejor que nos vayamos.",
+      "gloss": "Since it is already late, we had better leave."
+     }
+    },
+    {
+     "id": "ya que",
+     "hr": "ya que",
+     "en": "since, seeing that",
+     "pos": "expr.",
+     "note": "gives a reason, neutral register, can open or follow the main clause",
+     "example": {
+      "target": "Ya que estás aquí, ayúdame con las maletas.",
+      "gloss": "Since you are here, help me with the suitcases."
+     }
+    },
+    {
+     "id": "dado que",
+     "hr": "dado que",
+     "en": "given that",
+     "pos": "expr.",
+     "note": "formal, gives a reason or premise, common in written Spanish",
+     "example": {
+      "target": "Dado que no hay más preguntas, damos por terminada la reunión.",
+      "gloss": "Given that there are no more questions, we consider the meeting over."
+     }
+    },
+    {
+     "id": "de modo que",
+     "hr": "de modo que",
+     "en": "so that, so",
+     "pos": "expr.",
+     "note": "introduces a consequence or a purpose; neutral register",
+     "example": {
+      "target": "Perdimos el autobús, de modo que llegamos tarde.",
+      "gloss": "We missed the bus, so we arrived late."
+     }
+    },
+    {
+     "id": "asimismo",
+     "hr": "asimismo",
+     "en": "likewise, also",
+     "pos": "adv.",
+     "note": "formal written connector, rare in speech",
+     "example": {
+      "target": "El contrato incluye el alquiler; asimismo, cubre los gastos de comunidad.",
+      "gloss": "The contract includes the rent; likewise, it covers the community fees."
+     }
+    },
+    {
+     "id": "por tanto",
+     "hr": "por tanto",
+     "en": "therefore",
+     "pos": "expr.",
+     "note": "shorter, common form of por lo tanto; states a logical conclusion",
+     "example": {
+      "target": "No hay entradas, por tanto, no podemos ir al concierto.",
+      "gloss": "There are no tickets, therefore, we cannot go to the concert."
+     }
+    },
+    {
+     "id": "en cualquier caso",
+     "hr": "en cualquier caso",
+     "en": "in any case",
+     "pos": "expr.",
+     "note": "signals that the point holds regardless of what precedes; neutral",
+     "example": {
+      "target": "No sé si lloverá, pero en cualquier caso llevaré paraguas.",
+      "gloss": "I do not know if it will rain, but in any case I will bring an umbrella."
+     }
+    },
+    {
+     "id": "eso sí",
+     "hr": "eso sí",
+     "en": "mind you, that said",
+     "pos": "expr.",
+     "note": "spoken, introduces a qualification right after a positive statement",
+     "example": {
+      "target": "El piso es pequeño, eso sí, está muy bien situado.",
+      "gloss": "The flat is small, mind you, it is very well located."
+     }
+    },
+    {
+     "id": "ahora bien",
+     "hr": "ahora bien",
+     "en": "now, however",
+     "pos": "expr.",
+     "note": "introduces a qualification or contrast; more formal than eso sí",
+     "example": {
+      "target": "El plan es bueno; ahora bien, necesitamos más tiempo.",
+      "gloss": "The plan is good; now, we need more time."
+     }
+    },
+    {
+     "id": "dicho esto",
+     "hr": "dicho esto",
+     "en": "that said, having said that",
+     "pos": "expr.",
+     "note": "signals that the speaker is moving on after making a point; neutral to formal",
+     "example": {
+      "target": "Dicho esto, creo que deberíamos votar.",
+      "gloss": "That said, I think we should vote."
+     }
+    },
+    {
+     "id": "por lo visto",
+     "hr": "por lo visto",
+     "en": "apparently, seemingly",
+     "pos": "expr.",
+     "note": "spoken equivalent of al parecer, reports something secondhand",
+     "example": {
+      "target": "Por lo visto, han cerrado la tienda de la esquina.",
+      "gloss": "Apparently, they have closed the corner shop."
+     }
+    },
+    {
+     "id": "que yo sepa",
+     "hr": "que yo sepa",
+     "en": "as far as I know",
+     "pos": "expr.",
+     "note": "qualifies a statement as limited to the speaker's knowledge; contains the present subjunctive sepa",
+     "example": {
+      "target": "Que yo sepa, la reunión es a las cinco.",
+      "gloss": "As far as I know, the meeting is at five."
+     }
+    },
+    {
+     "id": "a decir verdad",
+     "hr": "a decir verdad",
+     "en": "to tell the truth",
+     "pos": "expr.",
+     "note": "signals that the speaker is being frank, often correcting an earlier impression",
+     "example": {
+      "target": "A decir verdad, no me apetece nada salir esta noche.",
+      "gloss": "To tell you the truth, I do not feel like going out at all tonight."
+     }
+    },
+    {
+     "id": "por decirlo así",
+     "hr": "por decirlo así",
+     "en": "so to speak",
+     "pos": "expr.",
+     "note": "softens or hedges a word choice",
+     "example": {
+      "target": "Es, por decirlo así, un poco cabezota.",
+      "gloss": "He is, so to speak, a bit stubborn."
+     }
+    },
+    {
+     "id": "sea como sea",
+     "hr": "sea como sea",
+     "en": "whatever the case, be that as it may",
+     "pos": "expr.",
+     "note": "fixed expression built on the present subjunctive sea; neutral register",
+     "example": {
+      "target": "Sea como sea, tenemos que terminar el informe hoy.",
+      "gloss": "Whatever happens, we have to finish the report today."
+     }
+    },
+    {
+     "id": "pase lo que pase",
+     "hr": "pase lo que pase",
+     "en": "whatever happens, come what may",
+     "pos": "expr.",
+     "note": "fixed expression built on the present subjunctive pase",
+     "example": {
+      "target": "Pase lo que pase, te voy a apoyar.",
+      "gloss": "Whatever happens, I am going to support you."
+     }
+    },
+    {
+     "id": "digamos que",
+     "hr": "digamos que",
+     "en": "let us say that",
+     "pos": "expr.",
+     "note": "hedges an approximate description; built on the present subjunctive digamos",
+     "example": {
+      "target": "Digamos que la reunión no salió como esperábamos.",
+      "gloss": "Let us say that the meeting did not go as we expected."
+     }
+    },
+    {
+     "id": "a fin de cuentas",
+     "hr": "a fin de cuentas",
+     "en": "at the end of the day, when all is said and done",
+     "pos": "expr.",
+     "note": "sums up before a final judgement",
+     "example": {
+      "target": "A fin de cuentas, todos cometemos errores.",
+      "gloss": "At the end of the day, we all make mistakes."
+     }
+    },
+    {
+     "id": "vamos",
+     "hr": "vamos",
+     "en": "I mean, well",
+     "pos": "expr.",
+     "note": "spoken discourse particle used to rephrase or sum up; colloquial, do not use in formal writing; not the same word as the verb form vamos (we go)",
+     "example": {
+      "target": "No me gusta el plan, vamos, que prefiero quedarme en casa.",
+      "gloss": "I do not like the plan, I mean, I would rather stay home."
+     }
+    },
+    {
+     "id": "venga",
+     "hr": "venga",
+     "en": "come on",
+     "pos": "expr.",
+     "note": "spoken, distinctly peninsular; used to encourage, agree, or close a conversation; very colloquial, do not use in writing",
+     "example": {
+      "target": "Venga, vámonos ya, que llegamos tarde.",
+      "gloss": "Come on, let us go now, we are running late."
+     }
+    },
+    {
+     "id": "hombre",
+     "hr": "hombre",
+     "en": "well, come on (as a discourse particle)",
+     "pos": "expr.",
+     "note": "spoken discourse particle expressing mild surprise, protest, or emphasis; not the noun el hombre (man); colloquial, distinctly peninsular",
+     "example": {
+      "target": "Hombre, no me lo esperaba.",
+      "gloss": "Well, I was not expecting that."
+     }
+    },
+    {
+     "id": "oye",
+     "hr": "oye",
+     "en": "hey, listen",
+     "pos": "expr.",
+     "note": "spoken, used to get the listener's attention before saying something, from the verb oír; colloquial",
+     "example": {
+      "target": "Oye, ¿sabes si va a llover mañana?",
+      "gloss": "Hey, do you know if it is going to rain tomorrow?"
+     }
+    },
+    {
+     "id": "fíjate",
+     "hr": "fíjate",
+     "en": "would you believe it, look at that",
+     "pos": "expr.",
+     "note": "spoken, introduces a surprising remark or invites the listener to notice something; colloquial, from fijarse",
+     "example": {
+      "target": "Fíjate, al final sí que aprobó el examen.",
+      "gloss": "Would you believe it, he actually passed the exam in the end."
+     }
+    },
+    {
+     "id": "verás",
+     "hr": "verás",
+     "en": "you see, let me explain",
+     "pos": "expr.",
+     "note": "spoken, signals that an explanation is about to follow; colloquial",
+     "example": {
+      "target": "Verás, la cosa es un poco más complicada.",
+      "gloss": "You see, the thing is a bit more complicated."
+     }
+    },
+    {
+     "id": "a ver",
+     "hr": "a ver",
+     "en": "let's see",
+     "pos": "expr.",
+     "note": "spoken, introduces a question, a check, or a moment of thought; very colloquial",
+     "example": {
+      "target": "A ver, ¿cuántos vais a venir a la cena?",
+      "gloss": "Let's see, how many of you are coming to dinner?"
+     }
+    },
+    {
+     "id": "pues nada",
+     "hr": "pues nada",
+     "en": "well then, anyway",
+     "pos": "expr.",
+     "note": "spoken, closes a conversation or topic with resignation or simplicity; colloquial",
+     "example": {
+      "target": "Pues nada, ya hablamos otro día.",
+      "gloss": "Well then, we will talk another day."
+     }
+    },
+    {
+     "id": "ya ves",
+     "hr": "ya ves",
+     "en": "well, you know how it is",
+     "pos": "expr.",
+     "note": "spoken, agrees with something unfortunate or ironic the listener already knows; colloquial",
+     "example": {
+      "target": "Ya ves, así es la vida.",
+      "gloss": "Well, that is life for you."
+     }
+    },
+    {
+     "id": "qué va",
+     "hr": "qué va",
+     "en": "no way, not at all",
+     "pos": "expr.",
+     "note": "spoken, strongly denies what was just said; colloquial, distinctly peninsular; an American speaker would more likely say para nada or de ninguna manera",
+     "example": {
+      "target": "¿Estás enfadado? Qué va, para nada.",
+      "gloss": "Are you angry? No way, not at all."
+     }
+    },
+    {
+     "id": "ni hablar",
+     "hr": "ni hablar",
+     "en": "no way, out of the question",
+     "pos": "expr.",
+     "note": "spoken, flatly refuses a suggestion; colloquial",
+     "example": {
+      "target": "¿Salir con esta lluvia? Ni hablar.",
+      "gloss": "Go out in this rain? No way."
+     }
+    },
+    {
+     "id": "faltaría más",
+     "hr": "faltaría más",
+     "en": "of course, don't even mention it",
+     "pos": "expr.",
+     "note": "spoken, distinctly peninsular; accepts a request generously or waves away thanks; a fixed courtesy expression, contains the conditional faltaría but is not a productive conditional construction",
+     "example": {
+      "target": "¿Me puedes ayudar? Faltaría más.",
+      "gloss": "Can you help me? Of course, no need to even ask."
+     }
+    },
+    {
+     "id": "claro que sí",
+     "hr": "claro que sí",
+     "en": "of course, absolutely",
+     "pos": "expr.",
+     "note": "spoken, enthusiastic confirmation; neutral to colloquial",
+     "example": {
+      "target": "¿Vienes a la fiesta? Claro que sí.",
+      "gloss": "Are you coming to the party? Of course I am."
+     }
+    },
+    {
+     "id": "en absoluto",
+     "hr": "en absoluto",
+     "en": "not at all",
+     "pos": "expr.",
+     "note": "strongly denies something, more formal than qué va or para nada, works in speech and writing",
+     "example": {
+      "target": "¿Te molesta? En absoluto.",
+      "gloss": "Does it bother you? Not at all."
+     }
+    },
+    {
+     "id": "para nada",
+     "hr": "para nada",
+     "en": "not at all",
+     "pos": "expr.",
+     "note": "spoken, denies something emphatically; colloquial, less formal than en absoluto",
+     "example": {
+      "target": "No me arrepiento para nada de la decisión.",
+      "gloss": "I do not regret the decision at all."
+     }
+    },
+    {
+     "id": "por si acaso",
+     "hr": "por si acaso",
+     "en": "just in case",
+     "pos": "expr.",
+     "note": "signals a precaution taken against an unlikely event; neutral, spoken and written",
+     "example": {
+      "target": "Llévate el paraguas, por si acaso.",
+      "gloss": "Take the umbrella, just in case."
+     }
+    },
+    {
+     "id": "de todas formas",
+     "hr": "de todas formas",
+     "en": "anyway, in any case",
+     "pos": "expr.",
+     "note": "signals that a point still holds despite what was just said; neutral",
+     "example": {
+      "target": "No creo que venga, pero avísale de todas formas.",
+      "gloss": "I do not think he will come, but let him know anyway."
+     }
+    },
+    {
+     "id": "en fin",
+     "hr": "en fin",
+     "en": "well, anyway",
+     "pos": "expr.",
+     "note": "spoken, closes a topic with a note of resignation; colloquial to neutral",
+     "example": {
+      "target": "En fin, no se puede hacer nada más.",
+      "gloss": "Well, there is nothing more that can be done."
+     }
+    },
+    {
+     "id": "total que",
+     "hr": "total que",
+     "en": "so, anyway, long story short",
+     "pos": "expr.",
+     "note": "spoken, summarises a long story before its outcome; colloquial",
+     "example": {
+      "target": "Perdimos el tren, discutimos con el taxista, total que llegamos dos horas tarde.",
+      "gloss": "We missed the train, argued with the taxi driver, so anyway we arrived two hours late."
+     }
+    },
+    {
+     "id": "encima",
+     "hr": "encima",
+     "en": "on top of that, besides",
+     "pos": "adv.",
+     "note": "adds an extra, usually negative, fact; spoken and written",
+     "example": {
+      "target": "Llegó tarde y, encima, se había olvidado los documentos.",
+      "gloss": "He arrived late and, on top of that, he had forgotten the documents."
+     }
+    },
+    {
+     "id": "vale",
+     "hr": "vale",
+     "en": "okay",
+     "pos": "expr.",
+     "note": "spoken, distinctly peninsular; accepts a plan or checks the listener follows; very colloquial",
+     "example": {
+      "target": "¿Nos vemos a las ocho? Vale.",
+      "gloss": "Shall we meet at eight? Okay."
+     }
+    },
+    {
+     "id": "de acuerdo",
+     "hr": "de acuerdo",
+     "en": "agreed, okay",
+     "pos": "expr.",
+     "note": "accepts a proposal or confirms agreement; neutral, less colloquial than vale",
+     "example": {
+      "target": "De acuerdo, quedamos mañana a las nueve.",
+      "gloss": "Agreed, we will meet tomorrow at nine."
+     }
+    },
+    {
+     "id": "ni idea",
+     "hr": "ni idea",
+     "en": "no idea",
+     "pos": "expr.",
+     "note": "spoken, colloquial short form of no tengo ni idea",
+     "example": {
+      "target": "¿Dónde está el mando? Ni idea.",
+      "gloss": "Where is the remote? No idea."
+     }
+    },
+    {
+     "id": "qué sé yo",
+     "hr": "qué sé yo",
+     "en": "whatever, I don't know",
+     "pos": "expr.",
+     "note": "spoken, colloquial, expresses vague uncertainty, often listing possibilities",
+     "example": {
+      "target": "Podríamos ir al cine, al teatro, qué sé yo.",
+      "gloss": "We could go to the cinema, the theatre, whatever."
+     }
+    },
+    {
+     "id": "eso es",
+     "hr": "eso es",
+     "en": "that's right, exactly",
+     "pos": "expr.",
+     "note": "spoken, confirms that the listener has understood correctly; neutral to colloquial",
+     "example": {
+      "target": "Entonces, ¿el tren sale a las diez? Eso es.",
+      "gloss": "So the train leaves at ten? That's right."
+     }
+    },
+    {
+     "id": "dicho sea de paso",
+     "hr": "dicho sea de paso",
+     "en": "by the way, incidentally",
+     "pos": "expr.",
+     "note": "adds a remark in passing; slightly formal, spoken and written",
+     "example": {
+      "target": "El hotel, dicho sea de paso, era carísimo.",
+      "gloss": "The hotel, by the way, was extremely expensive."
+     }
+    },
+    {
+     "id": "dar un paseo",
+     "hr": "dar un paseo",
+     "en": "to go for a walk",
+     "pos": "expr.",
+     "note": "light-verb phrase; neutral register",
+     "example": {
+      "target": "Los domingos nos gusta dar un paseo por el parque.",
+      "gloss": "On Sundays we like to take a walk in the park."
+     }
+    },
+    {
+     "id": "dar las gracias",
+     "hr": "dar las gracias",
+     "en": "to thank, to give thanks",
+     "pos": "expr.",
+     "note": "light-verb phrase, formal enough for a speech, also used casually",
+     "example": {
+      "target": "Quiero dar las gracias a todos los que ayudaron.",
+      "gloss": "I want to thank everyone who helped."
+     }
+    },
+    {
+     "id": "dar pena",
+     "hr": "dar pena",
+     "en": "to make one feel sorry, to be a pity",
+     "pos": "expr.",
+     "note": "light-verb phrase, works like gustar: me da pena, nos da pena",
+     "example": {
+      "target": "Me da pena tirar la comida que sobra.",
+      "gloss": "It makes me sad to throw away leftover food."
+     }
+    },
+    {
+     "id": "hacer caso",
+     "hr": "hacer caso",
+     "en": "to pay attention, to obey",
+     "pos": "expr.",
+     "note": "light-verb phrase, usually followed by a + person",
+     "example": {
+      "target": "Nunca hace caso a lo que le dicen.",
+      "gloss": "He never pays attention to what he is told."
+     }
+    },
+    {
+     "id": "hacer daño",
+     "hr": "hacer daño",
+     "en": "to hurt, to harm",
+     "pos": "expr.",
+     "note": "light-verb phrase, physical or emotional harm",
+     "example": {
+      "target": "Ten cuidado, ese cuchillo puede hacer daño.",
+      "gloss": "Be careful, that knife can hurt you."
+     }
+    },
+    {
+     "id": "tener razón",
+     "hr": "tener razón",
+     "en": "to be right",
+     "pos": "expr.",
+     "note": "light-verb phrase; peninsular synonym llevar razón is in this same pack",
+     "example": {
+      "target": "Al final resultó que tenías razón.",
+      "gloss": "In the end it turned out you were right."
+     }
+    },
+    {
+     "id": "tener sentido",
+     "hr": "tener sentido",
+     "en": "to make sense",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Lo que dices no tiene mucho sentido.",
+      "gloss": "What you are saying does not make much sense."
+     }
+    },
+    {
+     "id": "tener en cuenta",
+     "hr": "tener en cuenta",
+     "en": "to bear in mind, to take into account",
+     "pos": "expr.",
+     "note": "everyday light-verb phrase, less formal than the fixed formula hay que tener en cuenta",
+     "example": {
+      "target": "Ten en cuenta que el museo cierra a las seis.",
+      "gloss": "Bear in mind that the museum closes at six."
+     }
+    },
+    {
+     "id": "tener prisa",
+     "hr": "tener prisa",
+     "en": "to be in a hurry",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "No puedo hablar ahora, tengo prisa.",
+      "gloss": "I cannot talk now, I am in a hurry."
+     }
+    },
+    {
+     "id": "tener cuidado",
+     "hr": "tener cuidado",
+     "en": "to be careful",
+     "pos": "expr.",
+     "note": "light-verb phrase, very common in the imperative",
+     "example": {
+      "target": "Ten cuidado al cruzar la calle.",
+      "gloss": "Be careful when crossing the street."
+     }
+    },
+    {
+     "id": "tener suerte",
+     "hr": "tener suerte",
+     "en": "to be lucky",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Tuvimos mucha suerte con el tiempo durante el viaje.",
+      "gloss": "We were very lucky with the weather during the trip."
+     }
+    },
+    {
+     "id": "poner en marcha",
+     "hr": "poner en marcha",
+     "en": "to set in motion, to launch",
+     "pos": "expr.",
+     "note": "light-verb phrase, common for starting a project or a machine",
+     "example": {
+      "target": "El ayuntamiento va a poner en marcha un nuevo programa de reciclaje.",
+      "gloss": "The town council is going to launch a new recycling programme."
+     }
+    },
+    {
+     "id": "echar una mano",
+     "hr": "echar una mano",
+     "en": "to lend a hand, to help out",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase",
+     "example": {
+      "target": "¿Me echas una mano con estas cajas?",
+      "gloss": "Can you give me a hand with these boxes?"
+     }
+    },
+    {
+     "id": "echar un vistazo",
+     "hr": "echar un vistazo",
+     "en": "to take a quick look",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Voy a echar un vistazo al periódico antes de salir.",
+      "gloss": "I am going to take a quick look at the newspaper before leaving."
+     }
+    },
+    {
+     "id": "tomar una decisión",
+     "hr": "tomar una decisión",
+     "en": "to make a decision",
+     "pos": "expr.",
+     "note": "light-verb phrase, more formal than decidir alone",
+     "example": {
+      "target": "Todavía no hemos tomado una decisión sobre el piso.",
+      "gloss": "We still have not made a decision about the flat."
+     }
+    },
+    {
+     "id": "tomar medidas",
+     "hr": "tomar medidas",
+     "en": "to take measures, to take action",
+     "pos": "expr.",
+     "note": "light-verb phrase, often institutional",
+     "example": {
+      "target": "El gobierno anunció que va a tomar medidas contra la contaminación.",
+      "gloss": "The government announced it is going to take measures against pollution."
+     }
+    },
+    {
+     "id": "llevar a cabo",
+     "hr": "llevar a cabo",
+     "en": "to carry out",
+     "pos": "expr.",
+     "note": "formal light-verb phrase, common in written Spanish",
+     "example": {
+      "target": "La empresa va a llevar a cabo una reforma completa de la oficina.",
+      "gloss": "The company is going to carry out a complete renovation of the office."
+     }
+    },
+    {
+     "id": "llegar a un acuerdo",
+     "hr": "llegar a un acuerdo",
+     "en": "to reach an agreement",
+     "pos": "expr.",
+     "note": "light-verb phrase, neutral to formal",
+     "example": {
+      "target": "Después de horas de negociación, llegaron a un acuerdo.",
+      "gloss": "After hours of negotiation, they reached an agreement."
+     }
+    },
+    {
+     "id": "sacar provecho",
+     "hr": "sacar provecho",
+     "en": "to make the most of, to benefit from",
+     "pos": "expr.",
+     "note": "light-verb phrase, usually followed by de",
+     "example": {
+      "target": "Hay que sacar provecho de estas vacaciones.",
+      "gloss": "We should make the most of this holiday."
+     }
+    },
+    {
+     "id": "sacar conclusiones",
+     "hr": "sacar conclusiones",
+     "en": "to draw conclusions",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Es pronto para sacar conclusiones sobre el resultado.",
+      "gloss": "It is too early to draw conclusions about the result."
+     }
+    },
+    {
+     "id": "cambiar de opinión",
+     "hr": "cambiar de opinión",
+     "en": "to change one's mind",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Al principio no quería ir, pero cambió de opinión.",
+      "gloss": "At first he did not want to go, but he changed his mind."
+     }
+    },
+    {
+     "id": "darse por vencido",
+     "hr": "darse por vencido",
+     "en": "to give up",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "No te des por vencido tan pronto.",
+      "gloss": "Do not give up so soon."
+     }
+    },
+    {
+     "id": "estar al tanto",
+     "hr": "estar al tanto",
+     "en": "to be up to date, to be informed",
+     "pos": "expr.",
+     "note": "light-verb phrase, usually followed by de",
+     "example": {
+      "target": "Intento estar al tanto de las noticias todos los días.",
+      "gloss": "I try to stay informed about the news every day."
+     }
+    },
+    {
+     "id": "estar harto de",
+     "hr": "estar harto de",
+     "en": "to be fed up with",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase, followed by a noun or infinitive",
+     "example": {
+      "target": "Estoy harto de esperar el autobús todos los días.",
+      "gloss": "I am fed up with waiting for the bus every day."
+     }
+    },
+    {
+     "id": "quedarse en blanco",
+     "hr": "quedarse en blanco",
+     "en": "to go blank, to draw a blank",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase, especially in an exam or a speech",
+     "example": {
+      "target": "Me puse muy nervioso y me quedé en blanco durante el examen.",
+      "gloss": "I got very nervous and my mind went blank during the exam."
+     }
+    },
+    {
+     "id": "meter la pata",
+     "hr": "meter la pata",
+     "en": "to put one's foot in it, to mess up",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase",
+     "example": {
+      "target": "Metí la pata al mencionar su cumpleaños delante de todos.",
+      "gloss": "I put my foot in it by mentioning her birthday in front of everyone."
+     }
+    },
+    {
+     "id": "salirse con la suya",
+     "hr": "salirse con la suya",
+     "en": "to get one's own way",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase",
+     "example": {
+      "target": "Al final, mi hermano siempre se sale con la suya.",
+      "gloss": "In the end, my brother always gets his own way."
+     }
+    },
+    {
+     "id": "ir al grano",
+     "hr": "ir al grano",
+     "en": "to get to the point",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase",
+     "example": {
+      "target": "Deja de dar rodeos y ve al grano.",
+      "gloss": "Stop beating around the bush and get to the point."
+     }
+    },
+    {
+     "id": "dar por hecho",
+     "hr": "dar por hecho",
+     "en": "to take for granted, to assume",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "No des por hecho que va a venir.",
+      "gloss": "Do not take it for granted that he is coming."
+     }
+    },
+    {
+     "id": "dar la razón",
+     "hr": "dar la razón",
+     "en": "to admit someone is right",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Al final tuvo que dar la razón a su hermana.",
+      "gloss": "In the end he had to admit his sister was right."
+     }
+    },
+    {
+     "id": "dar rabia",
+     "hr": "dar rabia",
+     "en": "to make someone angry, to be annoying",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase, works like gustar: me da rabia",
+     "example": {
+      "target": "Me da rabia perder el tiempo en el atasco.",
+      "gloss": "It makes me angry to waste time in the traffic jam."
+     }
+    },
+    {
+     "id": "dar vergüenza",
+     "hr": "dar vergüenza",
+     "en": "to make someone feel embarrassed",
+     "pos": "expr.",
+     "note": "light-verb phrase, works like gustar: me da vergüenza",
+     "example": {
+      "target": "Le da vergüenza hablar en público.",
+      "gloss": "He feels embarrassed speaking in public."
+     }
+    },
+    {
+     "id": "dar miedo",
+     "hr": "dar miedo",
+     "en": "to be scary, to frighten",
+     "pos": "expr.",
+     "note": "light-verb phrase, works like gustar: me da miedo",
+     "example": {
+      "target": "Esa película me da mucho miedo.",
+      "gloss": "That film scares me a lot."
+     }
+    },
+    {
+     "id": "hacer el favor de",
+     "hr": "hacer el favor de",
+     "en": "to do the favour of, please would you",
+     "pos": "expr.",
+     "note": "formal, followed by an infinitive; often used in a scolding tone",
+     "example": {
+      "target": "Haz el favor de recoger tu habitación.",
+      "gloss": "Do me the favour of tidying your room."
+     }
+    },
+    {
+     "id": "hacer las paces",
+     "hr": "hacer las paces",
+     "en": "to make up, to make peace",
+     "pos": "expr.",
+     "note": "light-verb phrase, after an argument",
+     "example": {
+      "target": "Después de la discusión, hicieron las paces enseguida.",
+      "gloss": "After the argument, they made up right away."
+     }
+    },
+    {
+     "id": "hacer un esfuerzo",
+     "hr": "hacer un esfuerzo",
+     "en": "to make an effort",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Vamos a tener que hacer un esfuerzo para terminar a tiempo.",
+      "gloss": "We are going to have to make an effort to finish on time."
+     }
+    },
+    {
+     "id": "hacer buenas migas",
+     "hr": "hacer buenas migas",
+     "en": "to hit it off with someone",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase, usually with con",
+     "example": {
+      "target": "Los nuevos vecinos y nosotros hicimos buenas migas enseguida.",
+      "gloss": "The new neighbours and we hit it off right away."
+     }
+    },
+    {
+     "id": "tener claro",
+     "hr": "tener claro",
+     "en": "to be clear about something",
+     "pos": "expr.",
+     "note": "light-verb phrase, followed by a noun or a que clause",
+     "example": {
+      "target": "Todavía no tengo claro qué voy a estudiar.",
+      "gloss": "I am still not clear about what I am going to study."
+     }
+    },
+    {
+     "id": "tener en mente",
+     "hr": "tener en mente",
+     "en": "to have in mind",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Tengo en mente un par de ideas para el regalo.",
+      "gloss": "I have a couple of ideas in mind for the gift."
+     }
+    },
+    {
+     "id": "tener paciencia",
+     "hr": "tener paciencia",
+     "en": "to be patient",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Hay que tener paciencia con los niños pequeños.",
+      "gloss": "You have to be patient with small children."
+     }
+    },
+    {
+     "id": "poner de manifiesto",
+     "hr": "poner de manifiesto",
+     "en": "to reveal, to make evident",
+     "pos": "expr.",
+     "note": "formal light-verb phrase, mainly written",
+     "example": {
+      "target": "El informe pone de manifiesto varios problemas en la gestión.",
+      "gloss": "The report reveals several problems in the management."
+     }
+    },
+    {
+     "id": "poner en duda",
+     "hr": "poner en duda",
+     "en": "to call into question",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Nadie pone en duda su honestidad.",
+      "gloss": "Nobody questions his honesty."
+     }
+    },
+    {
+     "id": "poner en práctica",
+     "hr": "poner en práctica",
+     "en": "to put into practice",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Es hora de poner en práctica lo que hemos aprendido.",
+      "gloss": "It is time to put into practice what we have learned."
+     }
+    },
+    {
+     "id": "ponerse en contacto",
+     "hr": "ponerse en contacto",
+     "en": "to get in touch",
+     "pos": "expr.",
+     "note": "light-verb phrase, often followed by con",
+     "example": {
+      "target": "Te vas a poner en contacto con el técnico mañana.",
+      "gloss": "You are going to get in touch with the technician tomorrow."
+     }
+    },
+    {
+     "id": "ponerse en la piel de otro",
+     "hr": "ponerse en la piel de otro",
+     "en": "to put oneself in someone else's shoes",
+     "pos": "expr.",
+     "note": "figurative light-verb phrase",
+     "example": {
+      "target": "Antes de juzgar, hay que ponerse en la piel de otro.",
+      "gloss": "Before judging, you have to put yourself in someone else's shoes."
+     }
+    },
+    {
+     "id": "echar la culpa",
+     "hr": "echar la culpa",
+     "en": "to blame",
+     "pos": "expr.",
+     "note": "light-verb phrase, often followed by a + person",
+     "example": {
+      "target": "Siempre me echa la culpa de todo.",
+      "gloss": "He always blames me for everything."
+     }
+    },
+    {
+     "id": "echar en falta",
+     "hr": "echar en falta",
+     "en": "to miss, to notice the lack of",
+     "pos": "expr.",
+     "note": "light-verb phrase, more neutral than echar de menos",
+     "example": {
+      "target": "Echo en falta un poco más de organización.",
+      "gloss": "I find there is a lack of a bit more organisation."
+     }
+    },
+    {
+     "id": "tomar en serio",
+     "hr": "tomar en serio",
+     "en": "to take seriously",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Nadie tomó en serio su advertencia.",
+      "gloss": "Nobody took his warning seriously."
+     }
+    },
+    {
+     "id": "tomar el pelo",
+     "hr": "tomar el pelo",
+     "en": "to tease, to pull someone's leg",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase",
+     "example": {
+      "target": "¿Me estás tomando el pelo?",
+      "gloss": "Are you pulling my leg?"
+     }
+    },
+    {
+     "id": "tomar nota",
+     "hr": "tomar nota",
+     "en": "to take note",
+     "pos": "expr.",
+     "note": "light-verb phrase, literal or figurative",
+     "example": {
+      "target": "Toma nota de la dirección antes de que se me olvide.",
+      "gloss": "Take note of the address before I forget it."
+     }
+    },
+    {
+     "id": "tomar partido",
+     "hr": "tomar partido",
+     "en": "to take sides",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Prefiero no tomar partido en esta discusión.",
+      "gloss": "I prefer not to take sides in this argument."
+     }
+    },
+    {
+     "id": "llevar tiempo",
+     "hr": "llevar tiempo",
+     "en": "to take time",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Este trámite lleva tiempo, así que ten paciencia.",
+      "gloss": "This procedure takes time, so be patient."
+     }
+    },
+    {
+     "id": "llevar la contraria",
+     "hr": "llevar la contraria",
+     "en": "to contradict, to be contrary",
+     "pos": "expr.",
+     "note": "light-verb phrase, often habitual behaviour",
+     "example": {
+      "target": "Le encanta llevar la contraria en todas las conversaciones.",
+      "gloss": "He loves contradicting people in every conversation."
+     }
+    },
+    {
+     "id": "sacar partido",
+     "hr": "sacar partido",
+     "en": "to make the most of",
+     "pos": "expr.",
+     "note": "light-verb phrase, close in meaning to sacar provecho",
+     "example": {
+      "target": "Hay que saber sacar partido a las oportunidades.",
+      "gloss": "You have to know how to make the most of opportunities."
+     }
+    },
+    {
+     "id": "sacar de quicio",
+     "hr": "sacar de quicio",
+     "en": "to drive someone mad, to exasperate",
+     "pos": "expr.",
+     "note": "colloquial light-verb phrase",
+     "example": {
+      "target": "Ese ruido me saca de quicio.",
+      "gloss": "That noise drives me crazy."
+     }
+    },
+    {
+     "id": "sacar adelante",
+     "hr": "sacar adelante",
+     "en": "to bring to success, to raise (a family, a project)",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Consiguieron sacar adelante el proyecto pese a los problemas.",
+      "gloss": "They managed to make the project succeed despite the problems."
+     }
+    },
+    {
+     "id": "salir adelante",
+     "hr": "salir adelante",
+     "en": "to get by, to pull through",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Con esfuerzo, la familia consiguió salir adelante.",
+      "gloss": "With effort, the family managed to get by."
+     }
+    },
+    {
+     "id": "salir ganando",
+     "hr": "salir ganando",
+     "en": "to come out ahead, to benefit",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Al final, todos salimos ganando con el nuevo horario.",
+      "gloss": "In the end, we all came out ahead with the new schedule."
+     }
+    },
+    {
+     "id": "salir perdiendo",
+     "hr": "salir perdiendo",
+     "en": "to come out worse off, to lose out",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Si cancelamos el contrato ahora, salimos perdiendo.",
+      "gloss": "If we cancel the contract now, we come out worse off."
+     }
+    },
+    {
+     "id": "caer mal",
+     "hr": "caer mal",
+     "en": "to make a bad impression, to dislike someone",
+     "pos": "expr.",
+     "note": "light-verb phrase, works like gustar: me cae mal",
+     "example": {
+      "target": "No sé por qué, pero ese actor me cae mal.",
+      "gloss": "I do not know why, but I do not like that actor."
+     }
+    },
+    {
+     "id": "venir bien",
+     "hr": "venir bien",
+     "en": "to suit, to be convenient",
+     "pos": "expr.",
+     "note": "light-verb phrase, works like gustar: me viene bien",
+     "example": {
+      "target": "¿Te viene bien quedar el sábado?",
+      "gloss": "Does it suit you to meet on Saturday?"
+     }
+    },
+    {
+     "id": "venir mal",
+     "hr": "venir mal",
+     "en": "to be inconvenient",
+     "pos": "expr.",
+     "note": "light-verb phrase, works like gustar: me viene mal",
+     "example": {
+      "target": "Me viene mal el jueves, ¿podemos quedar otro día?",
+      "gloss": "Thursday is inconvenient for me, can we meet another day?"
+     }
+    },
+    {
+     "id": "costar trabajo",
+     "hr": "costar trabajo",
+     "en": "to be hard for someone to do",
+     "pos": "expr.",
+     "note": "light-verb phrase, works like gustar: me cuesta trabajo",
+     "example": {
+      "target": "Me cuesta trabajo levantarme tan temprano.",
+      "gloss": "It is hard for me to get up so early."
+     }
+    },
+    {
+     "id": "pasar factura",
+     "hr": "pasar factura",
+     "en": "to take its toll",
+     "pos": "expr.",
+     "note": "figurative light-verb phrase",
+     "example": {
+      "target": "Tantas horas sin dormir acaban pasando factura.",
+      "gloss": "So many hours without sleep end up taking their toll."
+     }
+    },
+    {
+     "id": "pasarlo bien",
+     "hr": "pasarlo bien",
+     "en": "to have a good time",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "Vamos a pasarlo bien esta noche, ya veréis.",
+      "gloss": "We are going to have a great time tonight, you'll see."
+     }
+    },
+    {
+     "id": "pasarlo mal",
+     "hr": "pasarlo mal",
+     "en": "to have a hard time",
+     "pos": "expr.",
+     "note": "light-verb phrase",
+     "example": {
+      "target": "No quiero pasarlo mal en el viaje, así que lo he organizado todo.",
+      "gloss": "I do not want to have a bad time on the trip, so I have planned everything."
+     }
+    },
+    {
+     "id": "estar por ver",
+     "hr": "estar por ver",
+     "en": "to remain to be seen",
+     "pos": "expr.",
+     "note": "fixed expression",
+     "example": {
+      "target": "Si el plan va a funcionar está por ver.",
+      "gloss": "Whether the plan will work remains to be seen."
+     }
+    },
+    {
+     "id": "estar en juego",
+     "hr": "estar en juego",
+     "en": "to be at stake",
+     "pos": "expr.",
+     "note": "fixed expression",
+     "example": {
+      "target": "En esta reunión está en juego el futuro de la empresa.",
+      "gloss": "The future of the company is at stake in this meeting."
+     }
+    },
+    {
+     "id": "quedar claro",
+     "hr": "quedar claro",
+     "en": "to be made clear, to become clear",
+     "pos": "expr.",
+     "note": "light-verb phrase, often impersonal; que quede claro takes the present subjunctive",
+     "example": {
+      "target": "Que quede claro que no fue culpa mía.",
+      "gloss": "Let it be clear that it was not my fault."
+     }
+    },
+    {
+     "id": "dejar claro",
+     "hr": "dejar claro",
+     "en": "to make clear",
+     "pos": "expr.",
+     "note": "light-verb phrase, active counterpart of quedar claro",
+     "example": {
+      "target": "El director dejó claro que no habrá más cambios.",
+      "gloss": "The director made it clear that there will be no more changes."
+     }
+    }
+   ]
+  }
+ ]
+}

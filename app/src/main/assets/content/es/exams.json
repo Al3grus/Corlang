@@ -1,0 +1,1901 @@
+[
+ {
+  "id": "es-a1-dele-mock",
+  "levelId": "A1",
+  "title": "Practice mock exam, level A1",
+  "description": "A full four-part practice exam at A1: reading, listening, writing and speaking, in the same task shapes as the official paper. Not modular: the four parts are graded in two groups, reading with writing and listening with speaking.",
+  "passRule": "Grupo 1 is reading plus writing and Grupo 2 is listening plus speaking, 50 points each. Apto requires at least 30 of 50 in BOTH groups, so a weak section can be carried by its partner inside the same group, but a weak group is never rescued by the other.",
+  "sources": [
+   "dele-a1"
+  ],
+  "sections": [
+   {
+    "id": "lectura",
+    "kind": "READING",
+    "title": "Comprensión de lectura",
+    "instructions": "Officially 4 tareas and 25 items (5 / 6 / 6 / 8) in 45 minutes. This practice includes 14 items across the same 4 tareas: a short letter, two sets of very short notices and adverts to match, and one longer text.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "l1",
+      "title": "Postal de Marta",
+      "text": "¡Hola, Sofía!\n\nEstoy de vacaciones en un pueblo pequeño cerca de la montaña. El pueblo se llama Villaverde y es muy tranquilo. Aquí no hay coches en el centro, solo bicicletas y gente a pie. Mi hotel está al lado de la plaza mayor y tiene un jardín muy bonito.\n\nPor la mañana voy al mercado con mi madre. Compramos fruta, pan y queso. Por la tarde, mi hermano y yo vamos a la piscina municipal porque hace mucho calor. El agua está fría, pero es agradable. Por la noche, toda la familia cena en la terraza de un restaurante cerca del río.\n\nMañana vamos a subir a la montaña con un guía. Tengo que comprar botas nuevas porque las mías son viejas. El domingo vuelvo a Madrid en autobús.\n\nUn abrazo,\nMarta",
+      "audioOnly": false
+     },
+     {
+      "id": "l2",
+      "title": "Piso en alquiler",
+      "text": "Piso en alquiler en el centro. Dos habitaciones, cocina y baño. Precio: 450 euros al mes. Interesados, llamar al número 655 12 34 56.",
+      "audioOnly": false
+     },
+     {
+      "id": "l3",
+      "title": "Bicicleta de segunda mano",
+      "text": "Se vende bicicleta de segunda mano, color azul, en buen estado. Precio: 60 euros. Disponible los fines de semana en el mercado del pueblo.",
+      "audioOnly": false
+     },
+     {
+      "id": "l4",
+      "title": "Piscina municipal",
+      "text": "Piscina municipal abierta de lunes a domingo, de nueve de la mañana a ocho de la tarde. Entrada: dos euros con cincuenta.",
+      "audioOnly": false
+     },
+     {
+      "id": "l5",
+      "title": "Se prohíbe fumar",
+      "text": "Se prohíbe fumar dentro del edificio. Hay una zona especial para fumadores en el patio exterior, al lado de la puerta.",
+      "audioOnly": false
+     },
+     {
+      "id": "l6",
+      "title": "Clases de español",
+      "text": "Clases de español para extranjeros, los martes y jueves por la tarde. Grupos pequeños, profesores nativos. Primera clase gratis.",
+      "audioOnly": false
+     },
+     {
+      "id": "l7",
+      "title": "Se necesita camarero",
+      "text": "Se necesita camarero para cafetería en el centro. Horario de mañana, de ocho a dos. Buen ambiente de trabajo. Interesados, enviar currículum por correo.",
+      "audioOnly": false
+     },
+     {
+      "id": "l8",
+      "title": "Clases particulares de inglés",
+      "text": "Profesora nativa de inglés da clases particulares para niños y adultos. Precios económicos. Primera clase de prueba gratuita.",
+      "audioOnly": false
+     },
+     {
+      "id": "l9",
+      "title": "Se vende coche",
+      "text": "Se vende coche pequeño, poco uso, color blanco. Perfecto para la ciudad. Precio: cuatro mil euros, negociable.",
+      "audioOnly": false
+     },
+     {
+      "id": "l10",
+      "title": "Compañero de piso",
+      "text": "Busco compañero o compañera de piso para un apartamento cerca de la universidad. Habitación grande con ventana al jardín.",
+      "audioOnly": false
+     },
+     {
+      "id": "l11",
+      "title": "Perro busca familia",
+      "text": "Perro pequeño y tranquilo busca una familia. Le gusta jugar en el parque y es bueno con los niños.",
+      "audioOnly": false
+     },
+     {
+      "id": "l12",
+      "title": "Horario y precios del museo",
+      "text": "El Museo de la Ciudad está abierto de martes a domingo, de diez de la mañana a seis de la tarde. Los lunes está cerrado. La entrada general cuesta cinco euros. Los estudiantes y los jubilados pagan solo tres euros. Los niños menores de seis años entran gratis. Todos los domingos, la entrada es gratuita para todo el mundo. Dentro del museo hay una cafetería y una tienda de recuerdos. No se permite comer ni beber dentro de las salas. Las fotografías sin flash están permitidas.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "¿Dónde está Marta de vacaciones?",
+      "options": [
+       "En un pueblo cerca de la montaña",
+       "En una ciudad grande",
+       "En la playa"
+      ],
+      "answer": "En un pueblo cerca de la montaña",
+      "difficulty": 2,
+      "explanation": "Marta writes that she is on holiday in a small village near the mountains, Villaverde."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué hacen Marta y su hermano por la tarde?",
+      "options": [
+       "Van a la piscina municipal",
+       "Van al cine",
+       "Van al mercado"
+      ],
+      "answer": "Van a la piscina municipal",
+      "difficulty": 2,
+      "explanation": "In the afternoon she and her brother go to the municipal pool because it is very hot."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Cómo vuelve Marta a Madrid?",
+      "options": [
+       "En autobús",
+       "En tren",
+       "En coche"
+      ],
+      "answer": "En autobús",
+      "difficulty": 2,
+      "explanation": "On Sunday she returns to Madrid by bus, stated in the last line."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Ana busca un piso para vivir en el centro de la ciudad.",
+      "difficulty": 3,
+      "options": [
+       "Piso en alquiler",
+       "Bicicleta de segunda mano",
+       "Piscina municipal",
+       "Clases de español"
+      ],
+      "answer": "Piso en alquiler",
+      "explanation": "Each statement matches the notice answering the same need. 'Se prohíbe fumar' is a distractor notice with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Pablo quiere comprar una bicicleta barata y en buen estado.",
+      "difficulty": 3,
+      "options": [
+       "Piso en alquiler",
+       "Bicicleta de segunda mano",
+       "Piscina municipal",
+       "Clases de español"
+      ],
+      "answer": "Bicicleta de segunda mano",
+      "explanation": "Each statement matches the notice answering the same need. 'Se prohíbe fumar' is a distractor notice with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Los niños quieren nadar el sábado por la tarde.",
+      "difficulty": 3,
+      "options": [
+       "Piso en alquiler",
+       "Bicicleta de segunda mano",
+       "Piscina municipal",
+       "Clases de español"
+      ],
+      "answer": "Piscina municipal",
+      "explanation": "Each statement matches the notice answering the same need. 'Se prohíbe fumar' is a distractor notice with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Carla quiere aprender español y no tiene mucho dinero.",
+      "difficulty": 3,
+      "options": [
+       "Piso en alquiler",
+       "Bicicleta de segunda mano",
+       "Piscina municipal",
+       "Clases de español"
+      ],
+      "answer": "Clases de español",
+      "explanation": "Each statement matches the notice answering the same need. 'Se prohíbe fumar' is a distractor notice with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Rosa busca trabajo por las mañanas en un bar o una cafetería.",
+      "difficulty": 3,
+      "options": [
+       "Se necesita camarero",
+       "Compañero de piso",
+       "Clases particulares de inglés",
+       "Se vende coche"
+      ],
+      "answer": "Se necesita camarero",
+      "explanation": "Each statement matches the advert answering the same need. 'Perro busca familia' is a distractor with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Jorge es estudiante y busca una habitación cerca de la universidad.",
+      "difficulty": 3,
+      "options": [
+       "Se necesita camarero",
+       "Compañero de piso",
+       "Clases particulares de inglés",
+       "Se vende coche"
+      ],
+      "answer": "Compañero de piso",
+      "explanation": "Each statement matches the advert answering the same need. 'Perro busca familia' is a distractor with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Marina quiere mejorar su inglés y busca clases particulares.",
+      "difficulty": 3,
+      "options": [
+       "Se necesita camarero",
+       "Compañero de piso",
+       "Clases particulares de inglés",
+       "Se vende coche"
+      ],
+      "answer": "Clases particulares de inglés",
+      "explanation": "Each statement matches the advert answering the same need. 'Perro busca familia' is a distractor with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada mensaje con el anuncio correcto. Uno de los anuncios no corresponde a ningún mensaje. Diego quiere comprar un coche barato para la ciudad.",
+      "difficulty": 3,
+      "options": [
+       "Se necesita camarero",
+       "Compañero de piso",
+       "Clases particulares de inglés",
+       "Se vende coche"
+      ],
+      "answer": "Se vende coche",
+      "explanation": "Each statement matches the advert answering the same need. 'Perro busca familia' is a distractor with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué día está cerrado el museo?",
+      "options": [
+       "El lunes",
+       "El domingo",
+       "El sábado"
+      ],
+      "answer": "El lunes",
+      "difficulty": 2,
+      "explanation": "The text says the museum is closed on Mondays."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Cuánto pagan los estudiantes?",
+      "options": [
+       "Tres euros",
+       "Cinco euros",
+       "Nada"
+      ],
+      "answer": "Tres euros",
+      "difficulty": 3,
+      "explanation": "Students and pensioners pay only three euros; five euros is the general price, a distractor."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué está permitido dentro del museo?",
+      "options": [
+       "Hacer fotografías sin flash",
+       "Comer en las salas",
+       "Fumar en la cafetería"
+      ],
+      "answer": "Hacer fotografías sin flash",
+      "difficulty": 3,
+      "explanation": "Photographs without flash are allowed; eating in the rooms is explicitly not permitted."
+     }
+    ]
+   },
+   {
+    "id": "auditiva",
+    "kind": "LISTENING",
+    "title": "Comprensión auditiva",
+    "instructions": "Officially 4 tareas and 25 items (5 / 5 / 8 / 7) in 25 minutes. This practice includes 15 items: four very short dialogues, four very short announcements, one monologue and one longer conversation.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "a1",
+      "title": "En la cafetería",
+      "text": "- Buenos días, ¿qué va a tomar?\n- Un café con leche y un cruasán, por favor.\n- ¿Algo más?\n- No, gracias, eso es todo.\n- Son dos euros con cincuenta.",
+      "audioOnly": true
+     },
+     {
+      "id": "a2",
+      "title": "En la tienda de ropa",
+      "text": "- Hola, busco una camisa azul, talla mediana.\n- Tenemos estas dos camisas azules. ¿Le gusta esta?\n- Sí, me gusta mucho. ¿Cuánto cuesta?\n- Veinte euros.",
+      "audioOnly": true
+     },
+     {
+      "id": "a3",
+      "title": "Por teléfono",
+      "text": "- ¿Diga?\n- Hola, soy Elena. ¿Está Pedro en casa?\n- No, Pedro no está. Está en el trabajo.\n- Vale, llamo más tarde. Gracias.",
+      "audioOnly": true
+     },
+     {
+      "id": "a4",
+      "title": "En la calle",
+      "text": "- Perdón, ¿el museo está cerca de aquí?\n- Sí, está muy cerca. Todo recto y a la izquierda.\n- Muchas gracias.\n- De nada.",
+      "audioOnly": true
+     },
+     {
+      "id": "a5",
+      "title": "Anuncio en el aeropuerto",
+      "text": "Atención, pasajeros del vuelo con destino a Barcelona: el embarque empieza en la puerta doce en quince minutos.",
+      "audioOnly": true
+     },
+     {
+      "id": "a6",
+      "title": "Anuncio en el supermercado",
+      "text": "Atención, clientes: hoy tenemos descuentos especiales en frutas y verduras. Toda la fruta, al cincuenta por ciento.",
+      "audioOnly": true
+     },
+     {
+      "id": "a7",
+      "title": "Anuncio en la estación de tren",
+      "text": "Atención: el tren con destino a Sevilla sale de la vía tres a las cuatro y media.",
+      "audioOnly": true
+     },
+     {
+      "id": "a8",
+      "title": "Mensaje en el contestador",
+      "text": "Hola, soy Marina, del gimnasio. Tu clase de mañana es a las siete de la tarde, no a las seis.",
+      "audioOnly": true
+     },
+     {
+      "id": "a9",
+      "title": "Mi rutina diaria",
+      "text": "Me llamo Carlos y voy a hablar un poco de mi rutina diaria. Todos los días me levanto a las siete de la mañana. Primero me ducho y después desayuno café con tostadas. A las ocho y media salgo de casa y voy al trabajo en autobús. Trabajo en una oficina en el centro de la ciudad. A las dos como en un restaurante cerca de la oficina, casi siempre con mis compañeros. Por la tarde trabajo hasta las seis. Cuando termino, voy al gimnasio dos veces por semana. Los otros días vuelvo directamente a casa y veo la televisión un rato. Ceno sobre las nueve y me acuesto bastante pronto, sobre las once.",
+      "audioOnly": true
+     },
+     {
+      "id": "a10",
+      "title": "Planes para el fin de semana",
+      "text": "- Oye, ¿qué planes tienes para el sábado?\n- Todavía no sé. ¿Y tú?\n- Yo voy a ir de excursión a la montaña con unos amigos. ¿Quieres venir?\n- Me encantaría, pero el sábado tengo que trabajar hasta las tres. ¿A qué hora salís?\n- Salimos a las cuatro, así que puedes venir después del trabajo.\n- Perfecto. ¿Dónde quedamos?\n- Quedamos en la plaza mayor, delante de la iglesia.\n- Vale, muy bien. ¿Tengo que llevar algo?\n- Sí, tienes que llevar agua y algo de comer, y también botas cómodas, porque vamos a caminar mucho.\n- De acuerdo, allí estaré. Gracias por invitarme.\n- De nada, nos vemos el sábado.\n- Ah, una pregunta más: ¿cuánto cuesta la entrada al parque natural?\n- No cuesta nada, la entrada es gratuita los sábados.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "¿Dónde tiene lugar esta conversación?",
+      "options": [
+       "En una cafetería",
+       "En una farmacia",
+       "En una estación"
+      ],
+      "answer": "En una cafetería",
+      "difficulty": 2,
+      "explanation": "The customer orders coffee and a croissant, so this is at a cafeteria.",
+      "audioText": "En la cafetería"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué busca el cliente?",
+      "options": [
+       "Una camisa azul",
+       "Unos zapatos",
+       "Un abrigo"
+      ],
+      "answer": "Una camisa azul",
+      "difficulty": 2,
+      "explanation": "The customer asks for a blue shirt, medium size.",
+      "audioText": "En la tienda de ropa"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué Elena llama otra vez más tarde?",
+      "options": [
+       "Porque Pedro no está en casa",
+       "Porque no hay teléfono",
+       "Porque Pedro está enfermo"
+      ],
+      "answer": "Porque Pedro no está en casa",
+      "difficulty": 2,
+      "explanation": "Pedro is not home, he is at work, so Elena will call again later.",
+      "audioText": "Por teléfono"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué busca la persona en la calle?",
+      "options": [
+       "El museo",
+       "La estación",
+       "El hospital"
+      ],
+      "answer": "El museo",
+      "difficulty": 2,
+      "explanation": "The person asks whether the museum is nearby.",
+      "audioText": "En la calle"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué anuncia el mensaje del aeropuerto?",
+      "options": [
+       "El embarque de un vuelo",
+       "Un retraso del tren",
+       "El cierre de una tienda"
+      ],
+      "answer": "El embarque de un vuelo",
+      "difficulty": 2,
+      "explanation": "Boarding for the Barcelona flight starts at gate twelve.",
+      "audioText": "Anuncio en el aeropuerto"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué productos tienen descuento en el supermercado?",
+      "options": [
+       "Frutas y verduras",
+       "Ropa y zapatos",
+       "Libros y música"
+      ],
+      "answer": "Frutas y verduras",
+      "difficulty": 2,
+      "explanation": "Fruit and vegetables are on special discount today.",
+      "audioText": "Anuncio en el supermercado"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿De qué vía sale el tren a Sevilla?",
+      "options": [
+       "De la vía tres",
+       "De la vía uno",
+       "De la vía cinco"
+      ],
+      "answer": "De la vía tres",
+      "difficulty": 2,
+      "explanation": "The train to Sevilla leaves from platform three.",
+      "audioText": "Anuncio en la estación de tren"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿A qué hora es la clase de mañana?",
+      "options": [
+       "A las siete de la tarde",
+       "A las seis de la tarde",
+       "A las ocho de la mañana"
+      ],
+      "answer": "A las siete de la tarde",
+      "difficulty": 3,
+      "explanation": "Marina corrects the time: seven in the evening, not six.",
+      "audioText": "Mensaje en el contestador"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Carlos se levanta...",
+      "difficulty": 3,
+      "options": [
+       "a las siete de la mañana.",
+       "en autobús.",
+       "dos veces por semana.",
+       "sobre las once."
+      ],
+      "answer": "a las siete de la mañana.",
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Va al trabajo...",
+      "difficulty": 3,
+      "options": [
+       "a las siete de la mañana.",
+       "en autobús.",
+       "dos veces por semana.",
+       "sobre las once."
+      ],
+      "answer": "en autobús.",
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Va al gimnasio...",
+      "difficulty": 3,
+      "options": [
+       "a las siete de la mañana.",
+       "en autobús.",
+       "dos veces por semana.",
+       "sobre las once."
+      ],
+      "answer": "dos veces por semana.",
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Se acuesta...",
+      "difficulty": 3,
+      "options": [
+       "a las siete de la mañana.",
+       "en autobús.",
+       "dos veces por semana.",
+       "sobre las once."
+      ],
+      "answer": "sobre las once.",
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué van a hacer el sábado?",
+      "options": [
+       "Una excursión a la montaña",
+       "Una fiesta en casa",
+       "Un partido de fútbol"
+      ],
+      "answer": "Una excursión a la montaña",
+      "difficulty": 3,
+      "explanation": "One friend invites the other on a mountain hike with a group.",
+      "audioText": "Planes para el fin de semana"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué no puede salir a las cuatro la segunda persona?",
+      "options": [
+       "Porque tiene que trabajar hasta las tres",
+       "Porque no le gusta la montaña",
+       "Porque está enfermo"
+      ],
+      "answer": "Porque tiene que trabajar hasta las tres",
+      "difficulty": 3,
+      "explanation": "She has to work until three, so she can join later, after work.",
+      "audioText": "Planes para el fin de semana"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Dónde quedan?",
+      "options": [
+       "En la plaza mayor",
+       "En la estación",
+       "En el gimnasio"
+      ],
+      "answer": "En la plaza mayor",
+      "difficulty": 2,
+      "explanation": "They agree to meet in the main square, in front of the church.",
+      "audioText": "Planes para el fin de semana"
+     }
+    ]
+   },
+   {
+    "id": "escritas",
+    "kind": "WRITING",
+    "title": "Expresión e interacción escritas",
+    "instructions": "Officially 2 tareas in 25 minutes: a form or personal-details task, then a short written interaction. Self-assess each answer against its rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Vas a apuntarte a un curso de español en una escuela de idiomas. Completa la ficha de inscripción con tus datos: nombre y apellidos, nacionalidad, profesión, dirección y número de teléfono. Añade también una frase con el motivo por el que quieres aprender español.",
+      "modelAnswer": "Nombre y apellidos: Anna Kowalski\nNacionalidad: polaca\nProfesión: enfermera\nDirección: calle Mayor, número 12, Madrid\nTeléfono: 611 22 33 44\nMotivo: Quiero aprender español porque voy a vivir y trabajar en España.",
+      "rubric": [
+       "Incluye nombre y apellidos",
+       "Incluye la nacionalidad",
+       "Incluye la profesión",
+       "Incluye una dirección completa",
+       "Incluye un número de teléfono",
+       "Da un motivo con una frase simple en presente"
+      ]
+     },
+     {
+      "prompt": "Escribe una postal a un amigo o una amiga (20 a 30 palabras). Cuéntale dónde estás, cómo es el lugar y qué haces cada día.",
+      "modelAnswer": "¡Hola, Diego!\n\nEstoy de vacaciones en un pueblo muy bonito cerca del mar. Hace sol todos los días. Por la mañana voy a la playa y por la tarde paseo por el pueblo.\n\nUn abrazo,\nLucía",
+      "rubric": [
+       "Tiene entre 20 y 30 palabras",
+       "Dice dónde está",
+       "Describe el lugar con una frase simple",
+       "Dice una actividad diaria",
+       "Tiene saludo inicial y despedida"
+      ]
+     }
+    ],
+    "questions": []
+   },
+   {
+    "id": "orales",
+    "kind": "SPEAKING",
+    "title": "Expresión e interacción orales",
+    "instructions": "Officially 3 tareas in 10 minutes plus 10 minutes of preparation: a personal presentation, a prepared exposition and a conversation with the interviewer.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Preséntate ante el examinador: di tu nombre, tu edad, tu nacionalidad, dónde vives y a qué te dedicas. Habla durante uno o dos minutos.",
+      "modelAnswer": "Me llamo Ana, tengo veinticinco años y soy italiana. Vivo en Roma con mi familia. Soy estudiante de medicina. Me gusta mucho leer y hacer deporte. También tengo un hermano y una hermana.",
+      "rubric": [
+       "Dice su nombre",
+       "Dice su edad",
+       "Dice su nacionalidad",
+       "Dice dónde vive",
+       "Dice a qué se dedica",
+       "Usa frases completas en presente"
+      ]
+     },
+     {
+      "prompt": "Habla durante uno o dos minutos sobre tu familia: cuántas personas hay, quiénes son y cómo son.",
+      "modelAnswer": "Mi familia tiene cuatro personas: mi padre, mi madre, mi hermano y yo. Mi padre es alto y muy simpático. Mi madre trabaja en un hospital. Mi hermano es pequeño y le gusta jugar al fútbol. Vivimos todos juntos en una casa con jardín.",
+      "rubric": [
+       "Dice cuántas personas hay en la familia",
+       "Nombra a los miembros de la familia",
+       "Describe a una o más personas",
+       "Usa el verbo gustar correctamente",
+       "Habla con frases completas"
+      ]
+     },
+     {
+      "prompt": "El examinador te va a preguntar sobre tu rutina diaria: a qué hora te levantas, qué desayunas, cómo vas al trabajo o a la escuela, y qué haces los fines de semana. Contesta con frases completas.",
+      "modelAnswer": "Todos los días me levanto a las siete. Desayuno café con leche y pan. Voy a la escuela en autobús. Los fines de semana voy al parque con mis amigos y a veces vamos al cine.",
+      "rubric": [
+       "Dice la hora en que se levanta",
+       "Dice qué desayuna",
+       "Dice cómo va al trabajo o a la escuela",
+       "Dice una actividad del fin de semana",
+       "Responde con frases completas y no solo palabras sueltas"
+      ]
+     }
+    ],
+    "questions": []
+   }
+  ]
+ },
+ {
+  "id": "es-a2-dele-mock",
+  "levelId": "A2",
+  "title": "Practice mock exam, level A2",
+  "description": "A full four-part practice exam at A2: reading, listening, writing and speaking, in the same task shapes as the official paper. Not modular: the four parts are graded in two groups, reading with writing and listening with speaking.",
+  "passRule": "Grupo 1 is reading plus writing and Grupo 2 is listening plus speaking, 50 points each. Apto requires at least 30 of 50 in BOTH groups, so a weak section can be carried by its partner inside the same group, but a weak group is never rescued by the other.",
+  "sources": [
+   "dele-a2"
+  ],
+  "sections": [
+   {
+    "id": "lectura",
+    "kind": "READING",
+    "title": "Comprensión de lectura",
+    "instructions": "Officially 4 tareas and 25 items (5 / 8 / 6 / 6) in 60 minutes. This practice includes 15 items: a personal letter, four short informative texts, three texts to match against statements, and one longer narrative text.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "l1",
+      "title": "Carta de Laura",
+      "text": "Querida Sofía:\n\n¿Cómo estás? Yo estoy muy bien, aunque un poco cansada porque el mes pasado me mudé a Valencia por motivos de trabajo. Al principio no conocía a nadie y me sentía un poco sola, pero poco a poco he hecho nuevos amigos en la oficina. Al final, todo ha sido más fácil de lo que pensaba, y ahora me siento muy contenta con la decisión que tomé.\n\nMi piso nuevo es pequeño pero muy luminoso. Tiene un balcón desde el que se ve el mar, así que por las mañanas suelo desayunar allí antes de ir a trabajar. La semana pasada, unos compañeros me invitaron a cenar y lo pasamos genial; hablamos durante horas y me contaron muchas cosas interesantes sobre la ciudad.\n\nEl fin de semana pasado fui a la playa con ellos y nadamos un rato, aunque el agua todavía estaba bastante fría. Después comimos en un restaurante muy típico donde probé una paella riquísima. ¡Estaba buenísima!\n\nEste fin de semana voy a visitar el casco antiguo con mi compañera Marta; dicen que es precioso y que hay que verlo con calma. Te voy a mandar fotos del casco antiguo.\n\nPor cierto, ¿por qué no vienes a verme un fin de semana? Puedes quedarte en mi casa, tengo una habitación libre. Llámame o escríbeme para organizar las fechas.\n\nUn beso muy fuerte,\nLaura",
+      "audioOnly": false
+     },
+     {
+      "id": "l2",
+      "title": "Curso de cocina para principiantes",
+      "text": "¿Te gusta cocinar? Apúntate a nuestro curso de cocina para principiantes. Vas a aprender a preparar platos sencillos y sabrosos en solo cuatro clases. Las clases son los miércoles por la tarde, de seis a ocho. El precio incluye todos los ingredientes. Plazas limitadas, así que reserva tu sitio cuanto antes.",
+      "audioOnly": false
+     },
+     {
+      "id": "l3",
+      "title": "Oferta de trabajo: recepcionista",
+      "text": "Empresa de turismo busca recepcionista con buen nivel de inglés para trabajar en su oficina del centro. Se requiere experiencia mínima de un año y buena atención al cliente. Ofrecemos contrato estable y buen ambiente de trabajo. Envía tu currículum antes del final de mes.",
+      "audioOnly": false
+     },
+     {
+      "id": "l4",
+      "title": "Rebajas en la tienda de deportes",
+      "text": "Grandes rebajas esta semana en toda la ropa deportiva. Las zapatillas de running tienen un descuento del treinta por ciento y las camisetas están al dos por uno. La tienda abre de nueve a nueve, de lunes a sábado. Las ofertas duran solo hasta el domingo.",
+      "audioOnly": false
+     },
+     {
+      "id": "l5",
+      "title": "Excursión en bicicleta por la costa",
+      "text": "Este sábado organizamos una excursión en bicicleta por la costa, de unos veinte kilómetros. Salimos a las nueve de la mañana desde la plaza del puerto. La ruta es fácil y apta para todos los niveles. Trae tu propia bicicleta y algo de agua. El grupo vuelve sobre la una del mediodía.",
+      "audioOnly": false
+     },
+     {
+      "id": "l6",
+      "title": "Un viaje inolvidable",
+      "text": "El año pasado viajé sola por primera vez a un país donde no hablaba el idioma. Al principio tenía un poco de miedo, pero enseguida conocí a otros viajeros en el albergue y todo cambió. Juntos visitamos mercados, probamos comidas nuevas y nos perdimos varias veces por las calles, aunque siempre encontrábamos el camino de vuelta riéndonos. Lo que más recuerdo es una noche en la que unos vecinos nos invitaron a cenar en su casa sin conocernos de nada. Volví a casa con la sensación de ser una persona más fuerte, y desde entonces viajo sola cada vez que puedo.",
+      "audioOnly": false
+     },
+     {
+      "id": "l7",
+      "title": "Información práctica: mercado de artesanía",
+      "text": "El mercado de artesanía del barrio antiguo abre todos los fines de semana, de diez de la mañana a nueve de la noche. Allí puedes encontrar cerámica, joyas hechas a mano y ropa tradicional a precios razonables. Muchos vendedores aceptan tarjeta, aunque es más cómodo llevar algo de dinero en efectivo. El mercado está muy cerca de la catedral, así que se puede visitar todo en la misma mañana. Los sábados suele haber más gente que los domingos, especialmente por la tarde. Si buscas un regalo original, este es un buen sitio para encontrarlo.",
+      "audioOnly": false
+     },
+     {
+      "id": "l8",
+      "title": "Biografía breve: un fotógrafo de naturaleza",
+      "text": "Diego Ramos nació en un pueblo pequeño y desde niño le encantaba la naturaleza. A los veinte años se compró su primera cámara y empezó a fotografiar animales y paisajes cerca de su casa. Con el tiempo, sus fotos empezaron a aparecer en revistas y ganó varios premios importantes. Hoy en día viaja por todo el mundo para fotografiar especies en peligro de extinción y da charlas en colegios sobre la importancia de cuidar la naturaleza. Dice que su trabajo favorito sigue siendo el más sencillo: pasar horas en silencio esperando el momento perfecto.",
+      "audioOnly": false
+     },
+     {
+      "id": "l9",
+      "title": "Mi primer día en el trabajo nuevo",
+      "text": "Ayer fue mi primer día en el trabajo nuevo y quiero contarlo todo mientras lo recuerdo bien. Me desperté muy pronto, casi dos horas antes de lo normal, porque estaba nerviosa y no podía dormir más. Me duché, desayuné rápido y salí de casa con mucho tiempo de sobra, así que llegué a la oficina veinte minutos antes de la hora.\n\nEn la entrada me recibió una compañera muy simpática que se llama Elena. Me enseñó todo el edificio: la sala de reuniones, la cocina, mi mesa de trabajo y el despacho de mi jefe. Todo el mundo fue muy amable conmigo y varias personas se acercaron a saludarme y a presentarse.\n\nPor la mañana, mi jefe me explicó cuáles eran mis tareas principales y me dio una lista con los proyectos del mes. Al principio me pareció un poco complicado, porque el programa que usan es diferente al que yo conocía, pero Elena me ayudó pacientemente con cada paso. A mediodía, todo el equipo comió junto en la cafetería de la empresa; hablamos de nuestras vidas, de nuestras aficiones y hasta nos reímos mucho con las historias que contó un compañero sobre sus viajes.\n\nPor la tarde, tuve mi primera reunión, aunque solo escuché y tomé notas porque todavía no conocía bien el proyecto del que hablaban. Después, Elena me presentó al resto del departamento y me explicó cómo funcionaba el sistema interno para pedir vacaciones y organizar las tareas semanales.\n\nSalí de la oficina sobre las seis, bastante cansada pero muy contenta. De camino a casa, llamé a mi madre para contarle cómo me fue el día. Ella se alegró mucho al escuchar que todo salió bien y que la gente era tan agradable.\n\nAhora, mientras escribo esto, creo que este trabajo va a ser el comienzo de una etapa muy buena en mi vida. Todavía tengo mucho que aprender, pero después de este primer día, estoy segura de que voy a disfrutar mucho trabajando aquí. Mañana empiezo de verdad, con mis propias tareas, y tengo muchas ganas de ver qué tal me va.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué se mudó Laura a Valencia?",
+      "options": [
+       "Por motivos de trabajo",
+       "Para estudiar en la universidad",
+       "Para estar con su familia"
+      ],
+      "answer": "Por motivos de trabajo",
+      "difficulty": 3,
+      "explanation": "The letter states she moved to Valencia for work reasons."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Cómo se sentía Laura al principio?",
+      "options": [
+       "Un poco sola",
+       "Muy feliz",
+       "Muy enfadada"
+      ],
+      "answer": "Un poco sola",
+      "difficulty": 3,
+      "explanation": "She writes that at first she did not know anyone and felt a bit lonely."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué hicieron Laura y sus compañeros la semana pasada?",
+      "options": [
+       "Cenaron juntos",
+       "Fueron al cine",
+       "Jugaron al fútbol"
+      ],
+      "answer": "Cenaron juntos",
+      "difficulty": 3,
+      "explanation": "Colleagues invited her to dinner last week and they had a great time."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué le pide Laura a Sofía al final de la carta?",
+      "options": [
+       "Que la visite un fin de semana",
+       "Que le mande dinero",
+       "Que busque trabajo en Valencia"
+      ],
+      "answer": "Que la visite un fin de semana",
+      "difficulty": 3,
+      "explanation": "Laura invites Sofía to come visit her and stay at her place."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Cuándo son las clases del curso de cocina?",
+      "options": [
+       "Los miércoles por la tarde",
+       "Los lunes por la mañana",
+       "Los sábados todo el día"
+      ],
+      "answer": "Los miércoles por la tarde",
+      "difficulty": 2,
+      "explanation": "The cooking classes are on Wednesday afternoons, six to eight."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué se requiere para el puesto de recepcionista?",
+      "options": [
+       "Experiencia mínima de un año",
+       "Un título universitario",
+       "Saber conducir"
+      ],
+      "answer": "Experiencia mínima de un año",
+      "difficulty": 3,
+      "explanation": "The advert requires at least one year of experience and good customer service."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué descuento tienen las zapatillas de running?",
+      "options": [
+       "Un treinta por ciento",
+       "Un cincuenta por ciento",
+       "Un diez por ciento"
+      ],
+      "answer": "Un treinta por ciento",
+      "difficulty": 2,
+      "explanation": "Running shoes have a thirty percent discount; shirts are two-for-one instead."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿A qué hora sale la excursión en bicicleta?",
+      "options": [
+       "A las nueve de la mañana",
+       "A las doce del mediodía",
+       "A las seis de la tarde"
+      ],
+      "answer": "A las nueve de la mañana",
+      "difficulty": 2,
+      "explanation": "The bicycle excursion leaves at nine in the morning from the port square."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada frase con el texto que corresponde. Habla de una experiencia personal en otro país.",
+      "difficulty": 4,
+      "options": [
+       "Un viaje inolvidable",
+       "Información práctica: mercado de artesanía",
+       "Biografía breve: un fotógrafo de naturaleza"
+      ],
+      "answer": "Un viaje inolvidable",
+      "explanation": "Two statements can point to the same text, exactly as in the real matching task."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada frase con el texto que corresponde. Da información sobre horarios y precios.",
+      "difficulty": 4,
+      "options": [
+       "Un viaje inolvidable",
+       "Información práctica: mercado de artesanía",
+       "Biografía breve: un fotógrafo de naturaleza"
+      ],
+      "answer": "Información práctica: mercado de artesanía",
+      "explanation": "Two statements can point to the same text, exactly as in the real matching task."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada frase con el texto que corresponde. Cuenta la vida de una persona, desde su infancia hasta hoy.",
+      "difficulty": 4,
+      "options": [
+       "Un viaje inolvidable",
+       "Información práctica: mercado de artesanía",
+       "Biografía breve: un fotógrafo de naturaleza"
+      ],
+      "answer": "Biografía breve: un fotógrafo de naturaleza",
+      "explanation": "Two statements can point to the same text, exactly as in the real matching task."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada frase con el texto que corresponde. Dice que hay más gente los sábados que los domingos.",
+      "difficulty": 4,
+      "options": [
+       "Un viaje inolvidable",
+       "Información práctica: mercado de artesanía",
+       "Biografía breve: un fotógrafo de naturaleza"
+      ],
+      "answer": "Información práctica: mercado de artesanía",
+      "explanation": "Two statements can point to the same text, exactly as in the real matching task."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué se despertó tan pronto la protagonista de 'Mi primer día en el trabajo nuevo'?",
+      "options": [
+       "Porque estaba nerviosa y no podía dormir",
+       "Porque tenía que coger un avión",
+       "Porque su jefe la llamó muy temprano"
+      ],
+      "answer": "Porque estaba nerviosa y no podía dormir",
+      "difficulty": 3,
+      "explanation": "She woke up almost two hours early because she was nervous and could not sleep."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién le enseñó el edificio y le ayudó con el programa nuevo?",
+      "options": [
+       "Elena",
+       "Su jefe",
+       "Su madre"
+      ],
+      "answer": "Elena",
+      "difficulty": 2,
+      "explanation": "Elena, a colleague, showed her around and patiently helped her with the new software."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Cómo se sintió al salir de la oficina por la tarde?",
+      "options": [
+       "Cansada pero contenta",
+       "Muy enfadada",
+       "Aburrida y triste"
+      ],
+      "answer": "Cansada pero contenta",
+      "difficulty": 2,
+      "explanation": "She left tired but very happy with how the day went."
+     }
+    ]
+   },
+   {
+    "id": "auditiva",
+    "kind": "LISTENING",
+    "title": "Comprensión auditiva",
+    "instructions": "Officially 4 tareas and 25 items (6 / 6 / 6 / 7) in 40 minutes. This practice includes 15 items: four short conversations, four short radio cuts, one longer conversation between two people, and four announcements.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "a1",
+      "title": "En la farmacia",
+      "text": "- Buenas tardes, necesito algo para el dolor de cabeza.\n- Tenemos estas pastillas, son muy efectivas. Tome una cada ocho horas, con agua.\n- ¿Necesito receta?\n- No, esta medicina se vende sin receta. Son cinco euros con veinte.\n- Perfecto, me llevo dos cajas.\n- Aquí tiene. Que se mejore.",
+      "audioOnly": true
+     },
+     {
+      "id": "a2",
+      "title": "Reservando una mesa",
+      "text": "- Buenas noches, ¿tiene una mesa libre para dos personas?\n- Sí, ¿para qué hora la quiere?\n- Para las nueve, si es posible.\n- Perfecto, ¿se la reservo a nombre de quién?\n- A nombre de Ricardo.\n- Muy bien, señor Ricardo, les esperamos a las nueve.",
+      "audioOnly": true
+     },
+     {
+      "id": "a3",
+      "title": "En la oficina de correos",
+      "text": "- Hola, quiero enviar este paquete a Alemania. ¿Cuánto tarda?\n- Depende del servicio. El normal tarda una semana, más o menos, y el urgente llega en dos días.\n- Prefiero el urgente, aunque es un poco más caro.\n- Muy bien, son quince euros. ¿Algo más?\n- No, eso es todo, gracias.",
+      "audioOnly": true
+     },
+     {
+      "id": "a4",
+      "title": "Pidiendo direcciones",
+      "text": "- Perdona, ¿sabes cómo se llega a la biblioteca central desde aquí?\n- Sí, sigue todo recto hasta el semáforo y luego gira a la derecha. Está al lado del ayuntamiento.\n- ¿Está lejos?\n- No, está a diez minutos andando.\n- Genial, muchas gracias.\n- De nada, que vaya bien.",
+      "audioOnly": true
+     },
+     {
+      "id": "a5",
+      "title": "Noticia: nuevo parque",
+      "text": "Buenos días. El ayuntamiento ha anunciado la apertura de un nuevo parque en el barrio norte, con zonas verdes, una pista de skate y un área para perros. Las obras han durado casi un año y el parque abre sus puertas este fin de semana para todos los vecinos.",
+      "audioOnly": true
+     },
+     {
+      "id": "a6",
+      "title": "Noticia: el tiempo",
+      "text": "Y ahora, el tiempo para hoy: cielos nublados por la mañana con posibilidad de lluvia débil, y sol por la tarde en la mayor parte del país. Las temperaturas bajan un poco respecto a ayer, especialmente en el norte.",
+      "audioOnly": true
+     },
+     {
+      "id": "a7",
+      "title": "Noticia: transporte público",
+      "text": "Atención a los usuarios del autobús urbano: a partir del próximo lunes, la línea seis cambia de recorrido y ya no va a pasar por la plaza del mercado. Los usuarios pueden consultar el nuevo recorrido en las paradas de autobús.",
+      "audioOnly": true
+     },
+     {
+      "id": "a8",
+      "title": "Noticia: deportes",
+      "text": "En deportes, el equipo local ganó ayer su partido por dos a cero y sigue líder de la clasificación. El próximo partido, contra el segundo clasificado, se juega el sábado que viene a las ocho de la tarde.",
+      "audioOnly": true
+     },
+     {
+      "id": "a9",
+      "title": "Organizando una mudanza",
+      "text": "- Javier, tenemos que organizar bien la mudanza del sábado. ¿Ya has hablado con la empresa de transporte?\n- Sí, llamé ayer. Vienen a las nueve de la mañana con la furgoneta grande. Dicen que en cuatro horas lo tienen todo cargado.\n- Perfecto. Yo ya he empaquetado casi toda la cocina y los libros, pero todavía me faltan la ropa y las cosas del baño.\n- Yo me encargo de desmontar la cama y el armario esta noche, así mañana solo hay que bajarlo todo.\n- Buena idea. Por cierto, ¿has pedido ya la caja fuerte para los papeles importantes? El pasaporte, los contratos, todo eso.\n- No, se me olvidó completamente. La pido esta tarde por internet, no hay problema.\n- Vale. Ah, y tenemos que avisar también al portero del edificio nuevo, para poder aparcar la furgoneta delante de la puerta.\n- Eso ya lo hice yo la semana pasada, hablé con él por teléfono y no hay ningún problema.\n- Genial, entonces solo nos queda terminar las cajas. ¿Puedes ayudarme esta tarde con la ropa del armario?\n- Claro, termino con la cama y voy a tu habitación, así seguimos juntos.\n- Perfecto. Con esto casi está todo listo para el gran día.\n- Sí, estoy un poco nervioso, la verdad, pero también con muchas ganas de estrenar la casa nueva.\n- Yo también. Va a ser un fin de semana muy largo, pero después vamos a estar mucho más cómodos.",
+      "audioOnly": true
+     },
+     {
+      "id": "a10",
+      "title": "Mensaje del dentista",
+      "text": "Hola, le llamamos de la clínica dental para confirmar su cita de mañana a las diez de la mañana. Si no puede venir, llámenos para cambiar el día. Gracias y hasta mañana.",
+      "audioOnly": true
+     },
+     {
+      "id": "a11",
+      "title": "Mensaje del taller mecánico",
+      "text": "Buenos días, le informamos de que su coche ya está reparado y puede pasar a recogerlo cuando quiera, de nueve a dos y de cuatro a siete. El importe total son ciento veinte euros.",
+      "audioOnly": true
+     },
+     {
+      "id": "a12",
+      "title": "Anuncio en el gimnasio",
+      "text": "Atención, socios: el gimnasio va a cerrar este fin de semana por obras de mantenimiento. Las clases de yoga y de baile se cancelan, y el gimnasio abre de nuevo el lunes a la hora habitual.",
+      "audioOnly": true
+     },
+     {
+      "id": "a13",
+      "title": "Mensaje de una amiga",
+      "text": "Hola, soy Cristina. Al final no puedo quedar contigo esta tarde porque me ha surgido un imprevisto en el trabajo. ¿Te parece bien si quedamos mañana a la misma hora? Llámame más tarde, por favor.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué necesita el cliente en la farmacia?",
+      "options": [
+       "Algo para el dolor de cabeza",
+       "Una receta médica",
+       "Un jarabe para la tos"
+      ],
+      "answer": "Algo para el dolor de cabeza",
+      "difficulty": 2,
+      "explanation": "The customer asks for something for a headache.",
+      "audioText": "En la farmacia"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Para cuántas personas reserva la mesa?",
+      "options": [
+       "Para dos personas",
+       "Para cuatro personas",
+       "Para una persona"
+      ],
+      "answer": "Para dos personas",
+      "difficulty": 2,
+      "explanation": "The customer asks for a table for two.",
+      "audioText": "Reservando una mesa"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué servicio elige finalmente el cliente en correos?",
+      "options": [
+       "El urgente",
+       "El normal",
+       "Ninguno de los dos"
+      ],
+      "answer": "El urgente",
+      "difficulty": 3,
+      "explanation": "He prefers the express service even though it costs a bit more.",
+      "audioText": "En la oficina de correos"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Dónde está la biblioteca central?",
+      "options": [
+       "Al lado del ayuntamiento",
+       "Detrás de la estación",
+       "Enfrente del hospital"
+      ],
+      "answer": "Al lado del ayuntamiento",
+      "difficulty": 2,
+      "explanation": "The directions end at the library, next to the town hall.",
+      "audioText": "Pidiendo direcciones"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué se ha anunciado en la noticia del parque?",
+      "options": [
+       "La apertura de un nuevo parque",
+       "El cierre de una carretera",
+       "Una subida de precios"
+      ],
+      "answer": "La apertura de un nuevo parque",
+      "difficulty": 2,
+      "explanation": "The town hall has announced a new park opening this weekend.",
+      "audioText": "Noticia: nuevo parque"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Cómo va a estar el tiempo por la tarde?",
+      "options": [
+       "Soleado",
+       "Con lluvia fuerte",
+       "Con nieve"
+      ],
+      "answer": "Soleado",
+      "difficulty": 2,
+      "explanation": "Sunny in the afternoon across most of the country, after a cloudy morning.",
+      "audioText": "Noticia: el tiempo"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué cambia en la línea seis de autobús a partir del lunes?",
+      "options": [
+       "El recorrido",
+       "El precio del billete",
+       "El horario nocturno"
+      ],
+      "answer": "El recorrido",
+      "difficulty": 3,
+      "explanation": "The route changes and will no longer pass through the market square.",
+      "audioText": "Noticia: transporte público"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué resultado tuvo el equipo local ayer?",
+      "options": [
+       "Ganó dos a cero",
+       "Perdió tres a uno",
+       "Empató a uno"
+      ],
+      "answer": "Ganó dos a cero",
+      "difficulty": 2,
+      "explanation": "The local team won two to zero and remains league leader.",
+      "audioText": "Noticia: deportes"
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién dice cada cosa? Ya ha hablado con la empresa de transporte.",
+      "difficulty": 4,
+      "options": [
+       "El hombre",
+       "La mujer",
+       "Los dos"
+      ],
+      "answer": "El hombre",
+      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién dice cada cosa? Todavía le falta empaquetar la ropa y las cosas del baño.",
+      "difficulty": 4,
+      "options": [
+       "El hombre",
+       "La mujer",
+       "Los dos"
+      ],
+      "answer": "La mujer",
+      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién dice cada cosa? Se olvidó de pedir la caja fuerte para los papeles.",
+      "difficulty": 4,
+      "options": [
+       "El hombre",
+       "La mujer",
+       "Los dos"
+      ],
+      "answer": "El hombre",
+      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién dice cada cosa? Tienen ganas de vivir en la casa nueva.",
+      "difficulty": 4,
+      "options": [
+       "El hombre",
+       "La mujer",
+       "Los dos"
+      ],
+      "answer": "Los dos",
+      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada frase con el mensaje correcto. Uno de los mensajes no corresponde a ninguna frase. Este mensaje pide confirmar una cita médica.",
+      "difficulty": 3,
+      "options": [
+       "Mensaje del dentista",
+       "Anuncio en el gimnasio",
+       "Mensaje de una amiga"
+      ],
+      "answer": "Mensaje del dentista",
+      "explanation": "'Mensaje del taller mecánico' is a distractor with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada frase con el mensaje correcto. Uno de los mensajes no corresponde a ninguna frase. Este mensaje avisa de que un servicio no va a funcionar unos días.",
+      "difficulty": 3,
+      "options": [
+       "Mensaje del dentista",
+       "Anuncio en el gimnasio",
+       "Mensaje de una amiga"
+      ],
+      "answer": "Anuncio en el gimnasio",
+      "explanation": "'Mensaje del taller mecánico' is a distractor with no matching statement, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Empareja cada frase con el mensaje correcto. Uno de los mensajes no corresponde a ninguna frase. Este mensaje propone cambiar un plan para otro día.",
+      "difficulty": 3,
+      "options": [
+       "Mensaje del dentista",
+       "Anuncio en el gimnasio",
+       "Mensaje de una amiga"
+      ],
+      "answer": "Mensaje de una amiga",
+      "explanation": "'Mensaje del taller mecánico' is a distractor with no matching statement, as in the real exam."
+     }
+    ]
+   },
+   {
+    "id": "escritas",
+    "kind": "WRITING",
+    "title": "Expresión e interacción escritas",
+    "instructions": "Officially 2 tareas in 45 minutes. Tarea 1: reply to a 35-to-45-word input text with a 60-to-70-word note, message or short letter. Tarea 2: a second short written task.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Lee este mensaje de un amigo:\n\n'Hola, este fin de semana organizo una comida en mi casa para celebrar mi cumpleaños. ¿Puedes venir el sábado a las dos? Dime si puedes traer algo, como un postre o bebidas, y si tienes alguna alergia o algo que no comes.'\n\nContesta con una nota o un mensaje breve de 60 a 70 palabras. Di si puedes ir, qué vas a traer y si tienes alguna alergia o preferencia de comida.",
+      "modelAnswer": "¡Hola! Muchas gracias por la invitación, claro que puedo ir el sábado a las dos. Voy a traer un postre, una tarta de chocolate que hago muy bien. No tengo ninguna alergia, aunque no como mucho pescado; seguro que hay muchas otras cosas ricas para comer. Si necesitas ayuda para preparar la casa, avísame y llego un poco antes. ¡Hasta el sábado!",
+      "rubric": [
+       "Tiene entre 60 y 70 palabras",
+       "Confirma si puede ir o no",
+       "Dice qué va a traer",
+       "Menciona si tiene alguna alergia o preferencia",
+       "Usa un registro informal apropiado (tú)",
+       "Tiene saludo y despedida"
+      ]
+     },
+     {
+      "prompt": "Escribe un correo a una escuela de idiomas pidiendo información sobre un curso de español de nivel intermedio. Pregunta por las fechas, el precio y el horario de las clases. Escribe entre 60 y 80 palabras y usa un registro más formal (usted).",
+      "modelAnswer": "Buenos días:\n\nLes escribo porque quiero apuntarme a un curso de español de nivel intermedio y necesito más información. ¿Cuándo empieza el próximo curso? ¿Cuánto cuesta y qué horario tienen las clases, por la mañana o por la tarde? También quiero saber cuántas personas hay en cada grupo, normalmente.\n\nMuchas gracias por su ayuda.\n\nUn saludo,\nMarc",
+      "rubric": [
+       "Tiene entre 60 y 80 palabras",
+       "Usa un registro formal (usted)",
+       "Pregunta por las fechas del curso",
+       "Pregunta por el precio",
+       "Pregunta por el horario",
+       "Tiene saludo formal y despedida"
+      ]
+     }
+    ],
+    "questions": []
+   },
+   {
+    "id": "orales",
+    "kind": "SPEAKING",
+    "title": "Expresión e interacción orales",
+    "instructions": "Officially 3 tareas in 12 minutes plus 12 minutes of preparation: a prepared monologue chosen from two topics, a description of a photograph, and a simulated situation with the examiner.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Elige uno de estos dos temas y habla durante dos o tres minutos:\n\n1) Tu ciudad o pueblo: cómo es, qué se puede hacer allí y qué es lo que más te gusta.\n2) Un viaje que hiciste el año pasado: adónde fuiste, con quién y qué hiciste.",
+      "modelAnswer": "Voy a hablar de un viaje que hice el año pasado. Fui a la montaña con dos amigos durante una semana en verano. Alquilamos una casa pequeña cerca de un pueblo y cada día hacíamos una ruta diferente a pie. Un día vimos un lago precioso y nos bañamos, aunque el agua estaba helada. Por las noches cocinábamos juntos y jugábamos a las cartas. Lo que más me gustó fue la tranquilidad del lugar, muy diferente a la ciudad donde vivo. Fue un viaje sencillo pero muy especial, y quiero repetirlo pronto.",
+      "rubric": [
+       "Elige un tema y lo mantiene durante toda la respuesta",
+       "Usa el pretérito indefinido y el imperfecto correctamente",
+       "Da detalles concretos: cuándo, con quién, qué hizo",
+       "Expresa una opinión o valoración personal",
+       "Habla durante un tiempo razonable, con frases conectadas"
+      ]
+     },
+     {
+      "prompt": "Vas a describir una fotografía. Imagina esta escena: una familia está haciendo un pícnic en un parque en un día soleado. Hay una manta en el césped con comida y bebidas, dos niños están jugando con una pelota cerca de un árbol, y los padres están sentados hablando y riendo. Al fondo se ve un lago pequeño con patos. Describe la fotografía durante dos o tres minutos: quiénes son, dónde están, qué están haciendo y qué crees que va a pasar después.",
+      "modelAnswer": "En la fotografía se ve una familia haciendo un pícnic en un parque. Hace un día soleado y hay mucha luz. En primer plano hay una manta verde con comida, bebidas y unos platos de plástico. Dos niños, un chico y una chica, están jugando con una pelota roja cerca de un árbol grande. Los padres están sentados en la manta, hablando y riendo; parecen estar muy relajados. Al fondo se ve un pequeño lago con algunos patos nadando. Creo que después de comer, los niños van a seguir jugando y los padres van a dar un paseo por el parque.",
+      "rubric": [
+       "Describe quién aparece en la escena",
+       "Describe dónde están y qué tiempo hace",
+       "Usa estar más gerundio para las acciones en curso",
+       "Da algún detalle visual concreto: colores, objetos",
+       "Hace una hipótesis sobre qué va a pasar después"
+      ]
+     },
+     {
+      "prompt": "Situación simulada: estás en una tienda de ropa y una prenda que compraste la semana pasada tiene un problema, por ejemplo un botón roto. Habla con el examinador, que hace de dependiente: explica el problema y pide un cambio o la devolución del dinero.",
+      "modelAnswer": "Buenos días, compré esta camisa aquí la semana pasada y tiene un botón roto. Todavía tengo el tique de compra, aquí lo tiene. Quiero cambiarla por otra igual, si tienen mi talla. Si no tienen la misma talla, prefiero la devolución del dinero.",
+      "rubric": [
+       "Explica el problema con claridad",
+       "Menciona cuándo compró el producto",
+       "Pide un cambio o la devolución del dinero",
+       "Usa un registro cortés apropiado",
+       "Responde de forma natural a las preguntas del examinador"
+      ]
+     }
+    ],
+    "questions": []
+   }
+  ]
+ },
+ {
+  "id": "es-b1-dele-mock",
+  "levelId": "B1",
+  "title": "Examen de práctica DELE B1",
+  "description": "A full DELE B1 practice mock across the four official pruebas (reading, listening, writing, speaking), including the Latin American variety exposure the real B1 exam requires in its receptive sections.",
+  "passRule": "Grupo 1 is reading plus writing and Grupo 2 is listening plus speaking, 50 points each. Apto requires at least 30 of 50 in BOTH groups, so a weak section can be carried by its partner inside the same group, but a weak group is never rescued by the other.",
+  "sources": [
+   "dele-b1"
+  ],
+  "sections": [
+   {
+    "id": "lectura",
+    "kind": "READING",
+    "title": "Comprensión de lectura",
+    "instructions": "Official exam: 70 minutes, 5 tareas, 30 items (6 per tarea). This practice offers a representative selection from each tarea. Tarea 3 includes one text written by a Latin American Spanish speaker (Mexican), reflecting the real B1 exam's use of texts from different varieties of Spanish.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "lect-t1-a",
+      "title": "Se alquila habitación",
+      "text": "Se alquila habitación individual en piso compartido, cerca del centro. La zona es tranquila y bien comunicada, con autobús cada diez minutos hasta la universidad. El piso tiene cocina y baño compartidos con dos personas más, ambas estudiantes. Se necesita fianza de un mes. Interesados, llamar por la tarde al número que aparece en el tablón del bar de la esquina.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t1-b",
+      "title": "Se vende coche",
+      "text": "Se vende coche pequeño, poco usado, ideal para la ciudad. Consume poco y aparca fácilmente en cualquier calle estrecha. Tiene aire acondicionado y radio con conexión para el móvil. El precio es negociable si se paga al contado. Para verlo, escriba un mensaje y quedamos este fin de semana.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t1-c",
+      "title": "Aviso: piscina municipal cerrada",
+      "text": "Aviso para los vecinos: la piscina municipal permanecerá cerrada la próxima semana por obras de limpieza. Los abonados podrán usar gratis la piscina del barrio vecino presentando su carné. Pedimos disculpas por las molestias y agradecemos la paciencia mientras terminan los trabajos, que estarán listos antes del verano.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t2-a",
+      "title": "El auge de los mercados de intercambio en los barrios",
+      "text": "Cada domingo por la mañana, en muchos barrios de las ciudades españolas, aparece una escena que hace veinte años parecería imposible: decenas de vecinos colocan mesas plegables en la plaza y ofrecen, gratis o a cambio de otro objeto, cosas que ya no usan. Son los llamados mercados de intercambio, y su popularidad no deja de crecer.\n\nLa idea es sencilla. Quien quiera participar solo tiene que llevar objetos en buen estado (ropa, libros, juguetes, pequeños electrodomésticos) y colocarlos en una mesa. A cambio, puede llevarse lo que otro vecino deje, sin que exista dinero de por medio. Los organizadores insisten en que no se permite vender nada: todo se intercambia o se regala. Quienes no encuentren nada que les interese pueden simplemente marcharse con las manos vacías, sin ninguna obligación.\n\nDetrás de esta iniciativa suele haber una asociación vecinal que se encarga de conseguir el permiso del ayuntamiento, avisar a los vecinos con carteles y, cada vez más, anunciar la cita también por internet, para que se enteren quienes pasan más tiempo conectados desde el ordenador o el móvil que paseando por la plaza. Algunos barrios han creado incluso un grupo en línea donde se avisa con antelación de qué objetos concretos va a haber, de modo que nadie llegue con expectativas equivocadas.\n\nLos vecinos que ya habían organizado mercados parecidos en otras ciudades antes de mudarse explican que el mayor reto no es reunir objetos, sino conseguir que la gente pierda la vergüenza de aparecer con las manos llenas de cosas que en teoría ya no quiere. Por eso, muchas asociaciones recomiendan empezar poco a poco: llevar solo dos o tres objetos la primera vez y ver cómo funciona el ambiente antes de vaciar el armario entero.\n\nLos defensores de estos mercados destacan tres razones para participar. La primera es económica: no hace falta comprar algo nuevo si un vecino tiene exactamente lo que uno busca. La segunda es ambiental, ya que cada objeto reutilizado es uno menos que termina en la basura. La tercera, y quizá la más importante para muchos participantes, es social: la plaza se llena de conversaciones entre vecinos que normalmente no se conocen.\n\nNo faltan las dificultades. En los barrios donde el mercado atrae a mucha gente, resulta difícil organizar las mesas para que todos tengan espacio, y algunos vecinos se quejan del ruido o de la basura que queda al final de la mañana. Los organizadores piden paciencia y aseguran que, con el tiempo, cada barrio encuentra su propio ritmo. Todo indica que, mientras exista la sensación de que se gana algo sin gastar nada, estos mercados seguirán llenando las plazas los domingos por la mañana.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t3-a",
+      "title": "Anécdota: el tren que casi pierdo",
+      "text": "El mes pasado estuve a punto de perder el tren por culpa de un despertador que no sonó. Me desperté con el ruido de mi hermano gritando desde la cocina y en cinco minutos ya estaba vestida, sin desayunar y con la maleta a medio cerrar. Bajé las escaleras de dos en dos y, cuando llegué a la estación, el tren ya estaba en el andén con las puertas a punto de cerrarse. Corrí como no corría desde el instituto y conseguí subir justo a tiempo. Una vez sentada, me di cuenta de que había dejado el billete en casa, así que tuve que explicarle todo al revisor entre risas y vergüenza.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t3-b",
+      "title": "Guía práctica: rutas de senderismo en los Pirineos",
+      "text": "Para quien quiera hacer senderismo en los Pirineos por primera vez, conviene empezar por rutas cortas y bien señalizadas antes de intentar los recorridos de varios días. La mejor época va de junio a septiembre, cuando la nieve ya se ha derretido en la mayoría de los senderos. Es imprescindible llevar botas resistentes, agua suficiente y un mapa, aunque el móvil tenga cobertura en gran parte de la zona. Conviene salir temprano, porque el tiempo cambia rápido en la montaña y las tormentas suelen llegar por la tarde. Los refugios de montaña ofrecen comida y cama a quienes avisan con antelación, así que reservar es siempre buena idea.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t3-c",
+      "title": "Experiencia: mi año como voluntaria en una escuela rural (relato de una hablante mexicana)",
+      "text": "El año pasado viajé a un pueblo pequeño para trabajar como voluntaria en una escuela rural. Llegué en camión porque no tenía carro propio, pero un maestro me prestó el suyo para manejar hasta las comunidades más lejanas. En la escuela no había computadora para los niños, así que llevé la mía y organizamos turnos para que la usaran. Cada mañana les decía a los niños: “Cuando terminen la tarea, ustedes pueden salir al patio.” A la hora del recreo, siempre había alguien que compartía su jugo o unas papas fritas con los demás. Al final del año, la comunidad me regaló un boleto de camión para volver a casa, y todavía guardo esa foto en mi celular.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t4-a",
+      "title": "Cómo aprendí a cocinar sin receta",
+      "text": "Durante años pensé que cocinar bien significaba seguir una receta al pie de la letra, medir cada ingrediente y no salirme nunca de las instrucciones. ___(1)___ Empecé a improvisar con lo que tenía en la nevera, a probar la comida mientras la preparaba y a corregir sobre la marcha si algo estaba soso o demasiado salado. ___(2)___ Ahora entiendo que una receta es solo un punto de partida, no una ley que haya que cumplir sin pensar. ___(3)___ Y lo más curioso es que, desde que dejé de seguir las recetas al pie de la letra, disfruto mucho más de cocinar, porque cada plato sale un poco distinto.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t5-a",
+      "title": "Un fin de semana diferente",
+      "text": "Mis padres siempre habían soñado con pasar un fin de semana en un pueblo sin coche ni televisión, así que este año decidieron cumplirlo. Reservaron una casa rural ___(1)___ quedaba a dos horas en tren de la ciudad. El dueño les explicó que, si ___(2)___ buen tiempo, podían subir a la torre del pueblo para ver toda la comarca. Mi madre tiene miedo a las alturas, pero mi padre no quería subir solo, así que al final decidieron subir juntos. Mientras subían la escalera de piedra, mi padre le repetía: “No mires ___(3)___, mira siempre hacia arriba.” Cuando llegaron a lo alto, mi madre reconoció que había ___(4)___ la pena el esfuerzo.",
+      "audioOnly": false
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "Marta dice: “Quiero comprar un vehículo de segunda mano que no gaste mucha gasolina y que sea fácil de aparcar.” ¿A qué anuncio se refiere?",
+      "options": [
+       "Se vende coche",
+       "Se alquila habitación",
+       "Aviso: piscina municipal cerrada"
+      ],
+      "answer": "Se vende coche",
+      "difficulty": 2,
+      "explanation": "The car ad describes a small vehicle that uses little fuel and parks easily, exactly what Marta wants."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "David dice: “Busco un sitio para vivir cerca de la universidad, aunque tenga que compartir la cocina.” ¿A qué anuncio se refiere?",
+      "options": [
+       "Se alquila habitación",
+       "Se vende coche",
+       "Aviso: piscina municipal cerrada"
+      ],
+      "answer": "Se alquila habitación",
+      "difficulty": 2,
+      "explanation": "The room ad is near the university and shares kitchen and bathroom with two other students."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Elena dice: “No entiendo por qué no puedo ir a nadar esta semana en el polideportivo del barrio.” ¿A qué aviso se refiere?",
+      "options": [
+       "Aviso: piscina municipal cerrada",
+       "Se vende coche",
+       "Se alquila habitación"
+      ],
+      "answer": "Aviso: piscina municipal cerrada",
+      "difficulty": 3,
+      "explanation": "The municipal pool notice explains it will be closed next week for cleaning works."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Según el texto sobre los mercados de intercambio, ¿qué está prohibido hacer?",
+      "options": [
+       "Vender objetos a cambio de dinero",
+       "Llevarse un objeto sin dejar nada a cambio",
+       "Anunciar el mercado por internet"
+      ],
+      "answer": "Vender objetos a cambio de dinero",
+      "difficulty": 4,
+      "explanation": "The text says selling is not allowed: everything is exchanged or given away, never sold."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Para qué usan internet algunas asociaciones vecinales, según el texto?",
+      "options": [
+       "Para avisar del mercado a quienes pasan más tiempo conectados",
+       "Para vender los objetos que sobran",
+       "Para cobrar la entrada al mercado"
+      ],
+      "answer": "Para avisar del mercado a quienes pasan más tiempo conectados",
+      "difficulty": 5,
+      "explanation": "They announce the market online to reach people who spend more time connected than walking the square."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué recomiendan los vecinos con experiencia a quien participa por primera vez?",
+      "options": [
+       "Llevar pocos objetos la primera vez",
+       "Vaciar el armario entero desde el principio",
+       "No decir a nadie que va a participar"
+      ],
+      "answer": "Llevar pocos objetos la primera vez",
+      "difficulty": 5,
+      "explanation": "The text advises starting small, bringing only two or three items the first time."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Según el texto, ¿cuál es la tercera razón que se da para participar en estos mercados?",
+      "options": [
+       "El contacto social entre vecinos",
+       "El ahorro económico",
+       "El cuidado del medio ambiente"
+      ],
+      "answer": "El contacto social entre vecinos",
+      "difficulty": 6,
+      "explanation": "The third reason given is social: the square fills with conversations between neighbours who normally don't know each other."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿En qué texto se explica cuándo es mejor la época para hacer una actividad al aire libre?",
+      "options": [
+       "Guía práctica: rutas de senderismo en los Pirineos",
+       "Anécdota: el tren que casi pierdo",
+       "Experiencia: mi año como voluntaria en una escuela rural (relato de una hablante mexicana)"
+      ],
+      "answer": "Guía práctica: rutas de senderismo en los Pirineos",
+      "difficulty": 4,
+      "explanation": "The hiking guide states the best season runs from June to September."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿En qué texto una persona olvida algo importante antes de salir de casa?",
+      "options": [
+       "Anécdota: el tren que casi pierdo",
+       "Guía práctica: rutas de senderismo en los Pirineos",
+       "Experiencia: mi año como voluntaria en una escuela rural (relato de una hablante mexicana)"
+      ],
+      "answer": "Anécdota: el tren que casi pierdo",
+      "difficulty": 4,
+      "explanation": "The train anecdote reveals the narrator left the ticket at home."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿En qué texto la persona menciona que le prestaron un vehículo para poder trabajar?",
+      "options": [
+       "Experiencia: mi año como voluntaria en una escuela rural (relato de una hablante mexicana)",
+       "Anécdota: el tren que casi pierdo",
+       "Guía práctica: rutas de senderismo en los Pirineos"
+      ],
+      "answer": "Experiencia: mi año como voluntaria en una escuela rural (relato de una hablante mexicana)",
+      "difficulty": 5,
+      "explanation": "The volunteer's account says a teacher lent her his vehicle to reach the farthest communities."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿En qué texto se recomienda reservar con antelación en un alojamiento de montaña?",
+      "options": [
+       "Guía práctica: rutas de senderismo en los Pirineos",
+       "Anécdota: el tren que casi pierdo",
+       "Experiencia: mi año como voluntaria en una escuela rural (relato de una hablante mexicana)"
+      ],
+      "answer": "Guía práctica: rutas de senderismo en los Pirineos",
+      "difficulty": 5,
+      "explanation": "Mountain refuges offer food and a bed to those who book in advance, so reserving is recommended."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué frase completa mejor el hueco (1) del texto sobre cocinar sin receta?",
+      "options": [
+       "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
+       "Nunca me ha gustado especialmente la cocina de mi abuela.",
+       "Por eso decidí apuntarme a clases de repostería los sábados."
+      ],
+      "answer": "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
+      "difficulty": 5,
+      "explanation": "This sentence introduces the turning point that leads into 'Empecé a improvisar...' in the next sentence."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué frase completa mejor el hueco (2) del texto sobre cocinar sin receta?",
+      "options": [
+       "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+       "Sin embargo, sigo comprando siempre los mismos ingredientes cada semana.",
+       "Por eso ya no vuelvo a poner un pie en la cocina."
+      ],
+      "answer": "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+      "difficulty": 6,
+      "explanation": "It bridges the early mistakes with the confident understanding expressed right after."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué frase completa mejor el hueco (3) del texto sobre cocinar sin receta?",
+      "options": [
+       "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
+       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera.",
+       "De hecho, cada receta debe copiarse exactamente igual todas las veces."
+      ],
+      "answer": "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
+      "difficulty": 6,
+      "explanation": "It expands on the idea that a recipe is a starting point, not a law to follow exactly."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "En el texto 'Un fin de semana diferente', ¿qué palabra completa el hueco (1)?",
+      "options": [
+       "que",
+       "quien",
+       "cuyo"
+      ],
+      "answer": "que",
+      "difficulty": 5,
+      "explanation": "The relative pronoun 'que' correctly links 'una casa rural' to the clause 'quedaba a dos horas en tren'."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "En el texto 'Un fin de semana diferente', ¿qué palabra completa el hueco (2)?",
+      "options": [
+       "hacía",
+       "hace",
+       "hará"
+      ],
+      "answer": "hacía",
+      "difficulty": 6,
+      "explanation": "Reported speech in a past context shifts to the imperfect: 'explicó que, si hacía buen tiempo, podían subir'."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "En el texto 'Un fin de semana diferente', ¿qué palabra completa el hueco (3)?",
+      "options": [
+       "abajo",
+       "debajo",
+       "bajo"
+      ],
+      "answer": "abajo",
+      "difficulty": 5,
+      "explanation": "'No mires abajo' is the standard way to say 'don't look down'; 'debajo' needs 'de' and 'bajo' means 'under'."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "En el texto 'Un fin de semana diferente', ¿qué palabra completa el hueco (4)?",
+      "options": [
+       "valido",
+       "valía",
+       "vale"
+      ],
+      "answer": "valido",
+      "difficulty": 6,
+      "explanation": "The pluperfect 'había valido la pena' needs the past participle 'valido' after the auxiliary 'había'."
+     }
+    ]
+   },
+   {
+    "id": "auditiva",
+    "kind": "LISTENING",
+    "title": "Comprensión auditiva",
+    "instructions": "Official exam: 40 minutes, 5 tareas, 30 items (6 per tarea). Listen to each passage, played by the app's Spanish voice, before answering. This practice offers a representative selection from each tarea. Tarea 2 is a long monologue by a Latin American Spanish speaker (Mexican), reflecting the real B1 exam's use of texts from different varieties of Spanish.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "aud-t1-a",
+      "title": "Anuncio de cafetería",
+      "text": "Buenos días a todos. En la cafetería Rincón del Sol tenemos hoy un desayuno especial: café, tostada y zumo de naranja natural por solo tres euros con cincuenta. La oferta es válida hasta las once de la mañana, así que no lo dejéis para más tarde. Os esperamos con una sonrisa.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t1-b",
+      "title": "Mensaje personal de voz",
+      "text": "Hola, soy Laura. Te llamo porque al final no voy a poder recogerte en la estación esta tarde: se me ha estropeado el coche y lo tienen que revisar en el taller. Toma un taxi si quieres, o espera a que mi hermano termine de trabajar, que puede ir a buscarte sobre las siete. Perdona las molestias, ¡nos vemos pronto!",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t1-c",
+      "title": "Aviso en el ascensor",
+      "text": "Aviso para los vecinos del edificio: mañana, de nueve a una, el ascensor estará apagado por una revisión técnica obligatoria. Rogamos que disculpen las molestias y recuerden que las escaleras están al fondo del pasillo, junto al buzón. El ascensor volverá a funcionar con normalidad a partir de la una del mediodía.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t1-d",
+      "title": "Anuncio de clases de guitarra",
+      "text": "¿Te gustaría aprender a tocar la guitarra? Ofrezco clases particulares los sábados por la mañana, para principiantes y para quienes ya tienen algo de nivel. Las clases son en mi casa o, si lo prefieres, puedo desplazarme yo. El primer día es gratis para que pruebes sin compromiso. Llámame si te interesa.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t2-a",
+      "title": "Cómo empecé mi propio negocio (relato de un hablante mexicano)",
+      "text": "Buenas tardes a todos. Les voy a contar cómo empecé mi propio negocio, porque muchas personas me preguntan cómo le hice. Todo comenzó hace tres años, cuando perdí mi trabajo en una oficina y tuve que pensar rápido en qué hacer para mantener a mi familia. Mi abuela siempre hacía un pan dulce increíble, y un día decidí ponerme a hornear en mi propia cocina para vender entre los vecinos.\n\nAl principio no tenía carro, así que cargaba las charolas de pan a pie o pedía a un vecino que me llevara en el suyo. Con el tiempo compré un carro pequeño, de esos que gastan poco, y empecé a manejar hasta el centro para vender en el mercado los fines de semana. También aprendí a usar la computadora para llevar las cuentas del negocio, algo que al principio me daba mucho miedo, porque nunca había trabajado con una antes.\n\nRecuerdo el primer fin de semana en el mercado como si fuera ayer. Llevé cien piezas de pan y pensé que me iba a sobrar la mitad, pero se vendió todo antes del mediodía. Una señora compró diez piezas para llevarlas a su trabajo y me dijo: “Ustedes deberían tener un puesto fijo aquí, este pan está buenísimo.” Esa frase me dio la confianza que me faltaba.\n\nNo todo fue fácil. Hubo semanas en que casi nadie compraba nada, y otras en que el horno se descompuso justo antes de un pedido grande. Una vez tuve que pedirle a mi hermana que me prestara su celular para llamar a un técnico, porque el mío se había quedado sin batería en el peor momento posible. Ella llegó corriendo con un boleto de camión en la mano, porque venía de otra ciudad, y aun así me ayudó toda la tarde sin quejarse.\n\nHoy, tres años después, ya tengo un pequeño local con dos personas que trabajan conmigo, y los clientes que llegaron al principio siguen viniendo cada semana. Si algo aprendí de todo esto es que no hace falta tener mucho dinero para empezar, solo hace falta empezar. A quienes están pensando en abrir su propio negocio, les digo una cosa: no esperen el momento perfecto, porque ese momento nunca llega solo.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t3-a",
+      "title": "Boletín informativo de la tarde",
+      "text": "Buenas tardes, esto es el boletín informativo de la tarde. Empezamos con las noticias locales.\n\nEl ayuntamiento ha anunciado que la próxima semana empezarán las obras de renovación del parque central, que estará cerrado al público durante casi dos meses. Se instalarán nuevos bancos, una zona infantil más grande y más papeleras, según ha explicado esta mañana el responsable de parques y jardines.\n\nEn otro orden de cosas, la biblioteca municipal ampliará su horario a partir del mes que viene y abrirá también los domingos por la mañana, algo que llevaban tiempo pidiendo los estudiantes de la zona.\n\nPasamos a la información de tráfico. La carretera que conecta el barrio norte con el centro estará cortada este fin de semana por obras urgentes en el asfalto, así que se recomienda usar rutas alternativas o el transporte público durante esos días.\n\nEn cuanto al tiempo, mañana se esperan lluvias moderadas por la mañana que darán paso a un cielo más despejado por la tarde, con temperaturas suaves para la época del año.\n\nSobre economía, el precio medio de la vivienda de alquiler ha subido ligeramente este trimestre en la ciudad, aunque menos que en el mismo periodo del año pasado, según los últimos datos publicados.\n\nY terminamos con una noticia más ligera: el equipo de baloncesto del instituto ganó anoche su primer partido de la temporada, con una diferencia de veinte puntos, y sus seguidores ya piensan en la siguiente ronda.\n\nEsto ha sido todo por hoy. Volvemos mañana con más información.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t4-a",
+      "title": "Opinión de Marcos",
+      "text": "Para mí, trabajar desde casa ha sido un descubrimiento. Ya no pierdo una hora entera en el autobús cada mañana, y puedo organizar mi día como quiero. Eso sí, al principio me costaba concentrarme, porque siempre había algo que hacer en casa que me distraía. Ahora tengo una rutina fija y me funciona mucho mejor.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t4-b",
+      "title": "Opinión de Carla",
+      "text": "A mí el trabajo desde casa no me convence del todo. Echo de menos hablar con mis compañeros en persona, tomar un café juntos y resolver dudas en cinco minutos en vez de escribir diez mensajes. Además, en mi piso no tengo un sitio tranquilo para trabajar, así que muchas veces acabo en la cocina.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t4-c",
+      "title": "Opinión de Rubén",
+      "text": "Yo prefiero un poco de las dos cosas. Dos días en casa y tres en la oficina me parece el equilibrio perfecto. En casa avanzo mejor con las tareas que necesitan concentración, y en la oficina resuelvo todo lo que requiere hablar con el equipo cara a cara.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t4-d",
+      "title": "Opinión de Sonia",
+      "text": "Llevo dos años trabajando desde casa y no cambiaría nada. Vivo en un pueblo pequeño, lejos de cualquier oficina, y esto me ha permitido quedarme aquí sin renunciar a mi trabajo. Lo único que echo de menos son las conversaciones espontáneas de pasillo, pero para mí no compensa lo que se pierde con lo que se gana.",
+      "audioOnly": true
+     },
+     {
+      "id": "aud-t5-a",
+      "title": "Conversación en una tienda de ropa",
+      "text": "Dependienta: Buenas tardes, ¿le puedo ayudar en algo?\nClienta: Sí, por favor. Estoy buscando una chaqueta para el otoño, algo que no sea ni muy fina ni muy gruesa.\nDependienta: Tenemos varios modelos por aquí. Esta, por ejemplo, es muy versátil: se puede llevar con o sin jersey debajo.\nClienta: Me gusta el color, pero ¿tienen una talla más grande? Esta me queda un poco justa en los hombros.\nDependienta: Claro, espere un momento que miro en el almacén. Aquí tiene, la talla siguiente.\nClienta: Perfecta, esta sí me queda bien. ¿Cuánto cuesta?\nDependienta: Sesenta y cinco euros, pero esta semana tenemos un veinte por ciento de descuento en toda la sección de abrigos.\nClienta: Entonces me la llevo. ¿Puedo pagar con tarjeta?\nDependienta: Por supuesto. Si quiere, puedo guardarle el recibo por si necesita cambiarla más adelante.\nClienta: Sí, mejor guárdelo, por si acaso. Muchas gracias por la ayuda.\nDependienta: A usted. Que disfrute la chaqueta.",
+      "audioOnly": true
+     }
+    ],
+    "questions": [
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué se ofrece en la cafetería hasta las once de la mañana?",
+      "options": [
+       "Un desayuno especial con zumo de naranja",
+       "Una cena para dos personas",
+       "Café gratis todo el día"
+      ],
+      "answer": "Un desayuno especial con zumo de naranja",
+      "difficulty": 2,
+      "explanation": "The advert offers a special breakfast of coffee, toast and orange juice until 11am."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué no puede Laura recoger a la persona en la estación?",
+      "options": [
+       "Porque se le ha estropeado el coche",
+       "Porque está trabajando hasta muy tarde",
+       "Porque ha perdido las llaves del coche"
+      ],
+      "answer": "Porque se le ha estropeado el coche",
+      "difficulty": 3,
+      "explanation": "Laura's car broke down and needs to be checked at the garage."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué va a estar apagado el ascensor mañana?",
+      "options": [
+       "Por una revisión técnica obligatoria",
+       "Porque se ha roto sin previo aviso",
+       "Porque hay una mudanza en el edificio"
+      ],
+      "answer": "Por una revisión técnica obligatoria",
+      "difficulty": 3,
+      "explanation": "The notice explains it is a scheduled mandatory technical inspection."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué ofrece gratis el profesor de guitarra?",
+      "options": [
+       "El primer día de clase",
+       "Todas las clases de los sábados",
+       "El instrumento para practicar en casa"
+      ],
+      "answer": "El primer día de clase",
+      "difficulty": 3,
+      "explanation": "The first lesson is free so students can try it with no commitment."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué empezó la persona a vender pan?",
+      "options": [
+       "Porque perdió su trabajo en una oficina",
+       "Porque quería dejar su negocio anterior",
+       "Porque su abuela se lo pidió directamente"
+      ],
+      "answer": "Porque perdió su trabajo en una oficina",
+      "difficulty": 4,
+      "explanation": "She lost her office job and had to think quickly about how to support her family."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué le costó trabajo aprender a usar al principio?",
+      "options": [
+       "El ordenador, para llevar las cuentas",
+       "El horno de pan",
+       "El coche pequeño que compró"
+      ],
+      "answer": "El ordenador, para llevar las cuentas",
+      "difficulty": 5,
+      "explanation": "She says learning to use a computer for the accounts scared her at first, since she had never worked with one."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué le pasó a la hermana el día que se descompuso el horno?",
+      "options": [
+       "Llegó corriendo con un billete de autobús en la mano, porque venía de otra ciudad",
+       "Se negó a ayudar porque estaba muy ocupada",
+       "Llamó ella misma al técnico sin avisarle"
+      ],
+      "answer": "Llegó corriendo con un billete de autobús en la mano, porque venía de otra ciudad",
+      "difficulty": 6,
+      "explanation": "The sister rushed over straight from a bus trip from another city and helped all afternoon."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué va a pasar con el parque central la próxima semana, según el boletín?",
+      "options": [
+       "Empezarán obras de renovación y estará cerrado",
+       "Se inaugurará una nueva zona infantil",
+       "Se cerrará definitivamente"
+      ],
+      "answer": "Empezarán obras de renovación y estará cerrado",
+      "difficulty": 4,
+      "explanation": "Renovation works begin next week and the park will be closed for almost two months."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué cambio habrá en la biblioteca municipal, según el boletín?",
+      "options": [
+       "Ampliará su horario y abrirá los domingos por la mañana",
+       "Cerrará los fines de semana",
+       "Se trasladará a otro edificio"
+      ],
+      "answer": "Ampliará su horario y abrirá los domingos por la mañana",
+      "difficulty": 4,
+      "explanation": "The library will extend its hours and open on Sunday mornings, as students had requested."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Según el boletín, ¿cómo va a estar el tiempo mañana por la tarde?",
+      "options": [
+       "Más despejado, con temperaturas suaves",
+       "Con tormentas fuertes",
+       "Muy frío, con posibilidad de nieve"
+      ],
+      "answer": "Más despejado, con temperaturas suaves",
+      "difficulty": 3,
+      "explanation": "Morning rain gives way to a clearer sky in the afternoon, with mild temperatures."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién dice que en su casa no tiene un sitio tranquilo para trabajar?",
+      "options": [
+       "Carla",
+       "Marcos",
+       "Rubén"
+      ],
+      "answer": "Carla",
+      "difficulty": 4,
+      "explanation": "Carla says her flat has no quiet spot to work, so she often ends up in the kitchen."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién prefiere combinar días en casa y días en la oficina?",
+      "options": [
+       "Rubén",
+       "Sonia",
+       "Marcos"
+      ],
+      "answer": "Rubén",
+      "difficulty": 4,
+      "explanation": "Rubén describes two days at home and three at the office as his perfect balance."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién dice que ya no pierde tiempo en el autobús?",
+      "options": [
+       "Marcos",
+       "Carla",
+       "Sonia"
+      ],
+      "answer": "Marcos",
+      "difficulty": 3,
+      "explanation": "Marcos mentions he no longer loses a whole hour on the bus every morning."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Quién ha podido quedarse a vivir en un pueblo pequeño gracias al trabajo desde casa?",
+      "options": [
+       "Sonia",
+       "Rubén",
+       "Carla"
+      ],
+      "answer": "Sonia",
+      "difficulty": 5,
+      "explanation": "Sonia lives far from any office and remote work has let her stay in her small town."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué está buscando la clienta en la tienda de ropa?",
+      "options": [
+       "Una chaqueta para el otoño",
+       "Un abrigo de invierno muy grueso",
+       "Unos zapatos nuevos"
+      ],
+      "answer": "Una chaqueta para el otoño",
+      "difficulty": 3,
+      "explanation": "She asks for an autumn jacket, neither too thin nor too thick."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Por qué pide la clienta una talla diferente?",
+      "options": [
+       "Porque la primera le queda justa en los hombros",
+       "Porque no le gusta el color",
+       "Porque es demasiado larga"
+      ],
+      "answer": "Porque la primera le queda justa en los hombros",
+      "difficulty": 4,
+      "explanation": "She likes the colour but the first size is tight on the shoulders."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "¿Qué descuento hay esta semana en la sección de abrigos?",
+      "options": [
+       "Un veinte por ciento",
+       "Un diez por ciento",
+       "No hay ningún descuento"
+      ],
+      "answer": "Un veinte por ciento",
+      "difficulty": 3,
+      "explanation": "The assistant mentions a twenty percent discount on the whole coats section this week."
+     }
+    ]
+   },
+   {
+    "id": "escritas",
+    "kind": "WRITING",
+    "title": "Expresión e interacción escritas",
+    "instructions": "Official exam: 60 minutes, 2 tareas. Write each text and self-assess with the rubric.",
+    "passPercent": null,
+    "passages": [
+     {
+      "id": "escritas-t1-input",
+      "title": "Mensaje de un amigo",
+      "text": "¡Hola! Al final me han dado el trabajo en la empresa de la que te hablé la semana pasada, así que me mudo a tu ciudad en un mes. ¿Podrías recomendarme algún barrio tranquilo, no muy caro, y contarme cómo es vivir allí? Un abrazo, Pablo.",
+      "audioOnly": false
+     },
+     {
+      "id": "escritas-t2-a",
+      "title": "Noticia A: El vecino que rescata objetos de la calle",
+      "text": "Un vecino del barrio de la Estación lleva diez años recogiendo muebles y objetos que la gente tira a la calle, los arregla en su taller y los regala a quien los necesita. Hasta ahora ha entregado más de dos mil objetos a familias de la zona.",
+      "audioOnly": false
+     },
+     {
+      "id": "escritas-t2-b",
+      "title": "Noticia B: Cierra la última tienda de discos del centro",
+      "text": "Después de treinta y cinco años abierta, la tienda de discos Vinilo Azul cerrará sus puertas el mes que viene. Su dueño explica que cada vez menos clientes compran música en formato físico y que ya no puede pagar el alquiler del local.",
+      "audioOnly": false
+     }
+    ],
+    "prompts": [
+     {
+      "prompt": "Responde al mensaje de Pablo con una carta o correo informal de 100 a 120 palabras: felicítale por el trabajo, recomiéndale un barrio (puedes inventarlo) y explica por qué te parece buena idea, y hazle al menos una pregunta sobre su mudanza.",
+      "modelAnswer": "¡Hola, Pablo!\n\n¡Qué buena noticia! Me alegro muchísimo por el trabajo nuevo, ¡te lo merecías! En cuanto a barrios, yo te recomendaría el Casco Viejo: es tranquilo, tiene buen transporte público y los alquileres todavía no son tan caros como en el centro. Además, hay un mercado estupendo y varias cafeterías donde siempre hay gente simpática.\n\nSi quieres, puedo enseñarte el barrio en persona antes de que decidas nada. ¿Ya sabes cuándo llega el camión de la mudanza, o todavía no tienes fecha exacta?\n\nCuéntame cómo va todo. ¡Un abrazo enorme y bienvenido a la ciudad!\n\nMarta",
+      "rubric": [
+       "El texto tiene entre 100 y 120 palabras",
+       "Felicita a Pablo por el trabajo nuevo",
+       "Recomienda un barrio y explica por qué",
+       "Incluye al menos una pregunta sobre la mudanza",
+       "El registro informal (tú) es consistente, con saludo y despedida"
+      ]
+     },
+     {
+      "prompt": "Elige UNA de las dos noticias (A o B) y escribe una composición de 130 a 150 palabras: describe brevemente lo que cuenta la noticia, añade una parte narrativa (imagina un momento concreto relacionado, por ejemplo un día de trabajo del vecino o el último día de la tienda) y termina con tu opinión personal sobre el tema. Indica al principio qué noticia has elegido.",
+      "modelAnswer": "He elegido la noticia A, sobre el vecino que rescata objetos de la calle.\n\nMe parece una historia muy bonita. Llevar diez años dedicando su tiempo libre a arreglar muebles ajenos, sin cobrar nada a cambio, dice mucho de una persona. Imagino un sábado cualquiera: se levanta temprano, revisa lo que ha encontrado esa semana por el barrio, lija una silla vieja en el taller de su garaje y, por la tarde, avisa a una familia que necesitaba una mesa para que vaya a recogerla.\n\nEn mi opinión, este tipo de iniciativas son más importantes de lo que parece, porque no solo evitan que objetos útiles terminen en la basura, sino que también acercan a los vecinos entre sí. Espero que cada vez haya más gente dispuesta a dedicar su tiempo de esta manera, aunque sea solo un rato a la semana.",
+      "rubric": [
+       "Indica claramente qué noticia ha elegido (A o B)",
+       "El texto tiene entre 130 y 150 palabras",
+       "Incluye una descripción breve de la noticia y una parte narrativa con un momento concreto",
+       "Da una opinión personal clara al final",
+       "Usa conectores y tiempos verbales variados de forma correcta"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "orales",
+    "kind": "SPEAKING",
+    "title": "Expresión e interacción orales",
+    "instructions": "Official exam: 15 minutes plus 15 minutes of preparation, 4 tareas. Speak ALOUD for each task, then self-assess with the rubric.",
+    "passPercent": null,
+    "prompts": [
+     {
+      "prompt": "Prepara una breve presentación (1 a 2 minutos) sobre un cambio importante que has vivido en los últimos años: puede ser un cambio de ciudad, de trabajo o de forma de vida. Habla en voz alta como si estuvieras en el examen.",
+      "modelAnswer": "Voy a hablar de un cambio importante en mi vida: hace dos años dejé mi trabajo en una oficina para dedicarme a algo relacionado con la cocina, que siempre me ha gustado mucho. Al principio tenía miedo de equivocarme, porque dejaba un sueldo fijo por algo mucho más incierto. Empecé haciendo pequeños encargos para amigos y familiares, y poco a poco el negocio fue creciendo. Ahora trabajo muchas más horas que antes, pero disfruto cada día mucho más que cuando estaba en la oficina. Si alguien me pide un consejo sobre esto, siempre le digo lo mismo: que empiece poco a poco, sin dejarlo todo de golpe, porque así se puede comprobar si la idea realmente funciona antes de arriesgarlo todo.",
+      "rubric": [
+       "Presenta el cambio con claridad (qué cambió y cuándo)",
+       "Explica cómo se sintió antes y después",
+       "Da un consejo o reflexión final relacionado",
+       "Habla de forma fluida durante uno o dos minutos, con frases completas"
+      ]
+     },
+     {
+      "prompt": "El examinador te hace preguntas sobre tu presentación anterior: por qué tomaste esa decisión, qué fue lo más difícil y qué planes tienes para seguir mejorando en el futuro. Contesta en voz alta con frases completas.",
+      "modelAnswer": "Tomé esa decisión porque llevaba tiempo sin sentirme motivada en la oficina y quería disfrutar más de mi trabajo del día a día. Lo más difícil fue, sin duda, los primeros meses, cuando todavía no tenía suficientes clientes y me preocupaba el dinero. Para seguir mejorando, mis planes son aprender más sobre gestión de negocios y, si todo va bien, buscar un local un poco más grande dentro de un par de años.",
+      "rubric": [
+       "Responde a las tres preguntas de manera coherente",
+       "Usa el pretérito y el imperfecto correctamente para hablar del pasado",
+       "Explica planes futuros con naturalidad",
+       "Mantiene una conversación fluida, reaccionando a lo que se le pregunta"
+      ]
+     },
+     {
+      "prompt": "Describe en voz alta la siguiente fotografía imaginaria y después responde a las preguntas del examinador: una terraza de un bar un domingo por la mañana, con varias mesas ocupadas por grupos de amigos y familias, una camarera llevando una bandeja con cafés, y al fondo un mercado callejero con puestos de fruta y flores. Describe quiénes aparecen, qué hacen, dónde están y qué crees que va a pasar después. Luego, el examinador te preguntará si sueles ir a sitios parecidos y por qué.",
+      "modelAnswer": "En la fotografía se ve una terraza de un bar, probablemente un domingo por la mañana, porque hay bastante gente y todo el mundo parece tranquilo, sin prisa. Hay varias mesas ocupadas: en una, un grupo de amigos habla y se ríe con unas cañas delante; en otra, una familia con dos niños pequeños desayuna churros con chocolate. Una camarera con un delantal verde lleva una bandeja llena de tazas de café hacia una mesa del fondo. Detrás de la terraza se ve un mercado callejero, con puestos de fruta de colores y otros de flores, y bastante gente paseando entre ellos con bolsas de la compra. Me imagino que, después de desayunar, algunas de estas personas irán al mercado a comprar antes de que cierre, y que la familia con los niños dará un paseo por el centro. Parece una mañana de domingo bastante típica y agradable.",
+      "rubric": [
+       "Describe el lugar, las personas y lo que hacen",
+       "Usa vocabulario variado (mobiliario, comida, personas)",
+       "Hace una hipótesis razonable sobre lo que va a pasar después, usando el futuro",
+       "Responde con naturalidad a la pregunta personal del examinador"
+      ]
+     },
+     {
+      "prompt": "Simulación: has reservado una habitación de hotel para dos noches, pero al llegar te dicen que no tienen tu reserva. Habla con el examinador, que hace de recepcionista: explica la situación, pide una solución y reacciona a lo que te proponga.",
+      "modelAnswer": "Buenas tardes. Tengo una reserva a mi nombre para esta noche y mañana, pero según mi correo de confirmación debería estar ya en el sistema. ¿Podría comprobarlo otra vez, por favor? Entiendo que ha habido un error, pero llevo viajando todo el día y necesito una solución cuanto antes. ¿Tienen alguna habitación libre esta noche, aunque sea de una categoría diferente? De acuerdo, si me ofrecen una habitación superior sin coste adicional por las molestias, lo acepto sin problema. ¿A qué hora podré subir a la habitación? Perfecto, muchas gracias por la ayuda, y disculpe las molestias del principio.",
+      "rubric": [
+       "Explica el problema con claridad",
+       "Pide una solución concreta",
+       "Reacciona de forma natural a la propuesta del examinador",
+       "Mantiene un registro educado durante toda la interacción"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

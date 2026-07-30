@@ -1,0 +1,1526 @@
+{
+ "packs": [
+  {
+   "id": "es-a2-shopping-services",
+   "title": "Shopping, money, clothes and services",
+   "level": "A2",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "la compra",
+     "hr": "la compra",
+     "en": "the shopping, the purchase",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hago la compra todos los sábados.",
+      "gloss": "I do the shopping every Saturday."
+     }
+    },
+    {
+     "id": "el cliente",
+     "hr": "el cliente",
+     "en": "the customer",
+     "pos": "n. m.",
+     "note": "fem. la clienta",
+     "example": {
+      "target": "El cliente está esperando en la caja.",
+      "gloss": "The customer is waiting at the checkout."
+     }
+    },
+    {
+     "id": "el vendedor",
+     "hr": "el vendedor",
+     "en": "the salesman, the shop assistant",
+     "pos": "n. m.",
+     "note": "fem. la vendedora",
+     "example": {
+      "target": "El vendedor me ha explicado el precio del abrigo.",
+      "gloss": "The salesman explained the price of the coat to me."
+     }
+    },
+    {
+     "id": "la caja",
+     "hr": "la caja",
+     "en": "the checkout, the cash register",
+     "pos": "n. f.",
+     "example": {
+      "target": "Paga en la caja, por favor.",
+      "gloss": "Pay at the checkout, please."
+     }
+    },
+    {
+     "id": "el cajero",
+     "hr": "el cajero",
+     "en": "the cashier",
+     "pos": "n. m.",
+     "note": "fem. la cajera; not to be confused with 'el cajero automático' (the ATM)",
+     "example": {
+      "target": "El cajero ha contado el cambio con cuidado.",
+      "gloss": "The cashier counted the change carefully."
+     }
+    },
+    {
+     "id": "la cola",
+     "hr": "la cola",
+     "en": "the queue",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hay mucha cola en la panadería esta mañana.",
+      "gloss": "There is a long queue at the bakery this morning."
+     }
+    },
+    {
+     "id": "el escaparate",
+     "hr": "el escaparate",
+     "en": "the shop window",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hemos mirado el escaparate de la tienda nueva.",
+      "gloss": "We looked at the window of the new shop."
+     }
+    },
+    {
+     "id": "el probador",
+     "hr": "el probador",
+     "en": "the fitting room",
+     "pos": "n. m.",
+     "example": {
+      "target": "¿Dónde está el probador, por favor?",
+      "gloss": "Where is the fitting room, please?"
+     }
+    },
+    {
+     "id": "la percha",
+     "hr": "la percha",
+     "en": "the hanger",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cuelga la chaqueta en la percha.",
+      "gloss": "Hang the jacket on the hanger."
+     }
+    },
+    {
+     "id": "la etiqueta",
+     "hr": "la etiqueta",
+     "en": "the label, the tag",
+     "pos": "n. f.",
+     "example": {
+      "target": "La etiqueta dice la talla y el precio.",
+      "gloss": "The label shows the size and the price."
+     }
+    },
+    {
+     "id": "el precio",
+     "hr": "el precio",
+     "en": "the price",
+     "pos": "n. m.",
+     "example": {
+      "target": "El precio de estos zapatos es muy alto.",
+      "gloss": "The price of these shoes is very high."
+     }
+    },
+    {
+     "id": "la oferta",
+     "hr": "la oferta",
+     "en": "the special offer, the deal",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esta semana hay una oferta en la frutería.",
+      "gloss": "This week there is a special offer at the greengrocer's."
+     }
+    },
+    {
+     "id": "el descuento",
+     "hr": "el descuento",
+     "en": "the discount",
+     "pos": "n. m.",
+     "example": {
+      "target": "Con la tarjeta tienes un descuento del diez por ciento.",
+      "gloss": "With the card you get a ten percent discount."
+     }
+    },
+    {
+     "id": "las rebajas",
+     "hr": "las rebajas",
+     "en": "the sales (seasonal price reductions)",
+     "pos": "n. f.",
+     "note": "always plural in this sense",
+     "example": {
+      "target": "Las rebajas de enero empiezan mañana.",
+      "gloss": "The January sales start tomorrow."
+     }
+    },
+    {
+     "id": "la ganga",
+     "hr": "la ganga",
+     "en": "the bargain",
+     "pos": "n. f.",
+     "example": {
+      "target": "Este bolso por quince euros es una ganga.",
+      "gloss": "This bag for fifteen euros is a bargain."
+     }
+    },
+    {
+     "id": "el recibo",
+     "hr": "el recibo",
+     "en": "the receipt",
+     "pos": "n. m.",
+     "note": "the everyday word for a receipt, preferred over the loanword 'ticket'",
+     "example": {
+      "target": "Guarda el recibo por si tienes que devolver algo.",
+      "gloss": "Keep the receipt in case you have to return something."
+     }
+    },
+    {
+     "id": "la garantía",
+     "hr": "la garantía",
+     "en": "the warranty, the guarantee",
+     "pos": "n. f.",
+     "example": {
+      "target": "El horno tiene dos años de garantía.",
+      "gloss": "The oven has a two year warranty."
+     }
+    },
+    {
+     "id": "la devolución",
+     "hr": "la devolución",
+     "en": "the return (of a product)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La devolución es gratis durante quince días.",
+      "gloss": "Returns are free for fifteen days."
+     }
+    },
+    {
+     "id": "el cambio",
+     "hr": "el cambio",
+     "en": "the change (money)",
+     "pos": "n. m.",
+     "example": {
+      "target": "El cajero me ha dado el cambio en monedas.",
+      "gloss": "The cashier gave me the change in coins."
+     }
+    },
+    {
+     "id": "la tarjeta",
+     "hr": "la tarjeta",
+     "en": "the card",
+     "pos": "n. f.",
+     "note": "la tarjeta de crédito, la tarjeta de débito",
+     "example": {
+      "target": "¿Puedo pagar con tarjeta?",
+      "gloss": "Can I pay by card?"
+     }
+    },
+    {
+     "id": "el efectivo",
+     "hr": "el efectivo",
+     "en": "cash",
+     "pos": "n. m.",
+     "example": {
+      "target": "No tengo efectivo, ¿aceptáis tarjeta?",
+      "gloss": "I do not have cash, do you accept card?"
+     }
+    },
+    {
+     "id": "la moneda",
+     "hr": "la moneda",
+     "en": "the coin",
+     "pos": "n. f.",
+     "example": {
+      "target": "He encontrado una moneda de dos euros en el suelo.",
+      "gloss": "I found a two euro coin on the floor."
+     }
+    },
+    {
+     "id": "el billete de banco",
+     "hr": "el billete de banco",
+     "en": "the banknote",
+     "pos": "n. m.",
+     "note": "distinct from 'el billete' (travel ticket, already taught); use this longer form for money",
+     "example": {
+      "target": "El cajero automático solo da billetes de banco de veinte euros.",
+      "gloss": "The cash machine only gives out twenty euro banknotes."
+     }
+    },
+    {
+     "id": "gastar",
+     "hr": "gastar",
+     "en": "to spend",
+     "pos": "v.",
+     "example": {
+      "target": "Gastamos demasiado dinero en ropa el mes pasado.",
+      "gloss": "We spent too much money on clothes last month."
+     }
+    },
+    {
+     "id": "ahorrar",
+     "hr": "ahorrar",
+     "en": "to save (money)",
+     "pos": "v.",
+     "example": {
+      "target": "Ahorro veinte euros cada mes para las vacaciones.",
+      "gloss": "I save twenty euros every month for the holidays."
+     }
+    },
+    {
+     "id": "costar",
+     "hr": "costar",
+     "en": "to cost",
+     "pos": "v.",
+     "note": "o>ue: cuesto; works like gustar when the subject is the thing: me cuesta, me cuestan",
+     "example": {
+      "target": "Esta falda me cuesta treinta euros.",
+      "gloss": "This skirt costs me thirty euros."
+     }
+    },
+    {
+     "id": "valer",
+     "hr": "valer",
+     "en": "to be worth, to cost",
+     "pos": "v.",
+     "note": "yo-form: valgo; works like gustar when the subject is the thing: vale, valen",
+     "example": {
+      "target": "¿Cuánto vale este reloj de pulsera?",
+      "gloss": "How much is this wristwatch worth?"
+     }
+    },
+    {
+     "id": "prestar",
+     "hr": "prestar",
+     "en": "to lend",
+     "pos": "v.",
+     "example": {
+      "target": "¿Me prestas diez euros hasta mañana?",
+      "gloss": "Can you lend me ten euros until tomorrow?"
+     }
+    },
+    {
+     "id": "devolver",
+     "hr": "devolver",
+     "en": "to return, to give back",
+     "pos": "v.",
+     "note": "o>ue: devuelvo; irregular participle: devuelto",
+     "example": {
+      "target": "He devuelto la camisa porque era muy pequeña.",
+      "gloss": "I returned the shirt because it was too small."
+     }
+    },
+    {
+     "id": "cobrar",
+     "hr": "cobrar",
+     "en": "to charge, to get paid",
+     "pos": "v.",
+     "example": {
+      "target": "La tienda me ha cobrado el precio completo, sin descuento.",
+      "gloss": "The shop charged me the full price, without a discount."
+     }
+    },
+    {
+     "id": "regalar",
+     "hr": "regalar",
+     "en": "to give as a gift",
+     "pos": "v.",
+     "example": {
+      "target": "Mis padres me han regalado un reloj de pulsera.",
+      "gloss": "My parents gave me a wristwatch as a gift."
+     }
+    },
+    {
+     "id": "probarse",
+     "hr": "probarse",
+     "en": "to try on",
+     "pos": "v.",
+     "note": "o>ue: me pruebo; pronominal",
+     "example": {
+      "target": "Me pruebo estos pantalones en el probador.",
+      "gloss": "I am trying on these trousers in the fitting room."
+     }
+    },
+    {
+     "id": "elegir",
+     "hr": "elegir",
+     "en": "to choose",
+     "pos": "v.",
+     "note": "e>i: elijo, also changes the spelling g to j in the yo form",
+     "example": {
+      "target": "Siempre elijo ropa cómoda cuando voy de compras.",
+      "gloss": "I always choose comfortable clothes when I go shopping."
+     }
+    },
+    {
+     "id": "la moda",
+     "hr": "la moda",
+     "en": "fashion",
+     "pos": "n. f.",
+     "example": {
+      "target": "A mi hermana le encanta la moda.",
+      "gloss": "My sister loves fashion."
+     }
+    },
+    {
+     "id": "el número",
+     "hr": "el número",
+     "en": "the size (shoes)",
+     "pos": "n. m.",
+     "note": "for clothes size use 'la talla' (already taught); this word is for shoe size",
+     "example": {
+      "target": "¿Qué número calzas?",
+      "gloss": "What shoe size do you take?"
+     }
+    },
+    {
+     "id": "la manga",
+     "hr": "la manga",
+     "en": "the sleeve",
+     "pos": "n. f.",
+     "example": {
+      "target": "Este jersey tiene las mangas muy largas.",
+      "gloss": "This jumper has very long sleeves."
+     }
+    },
+    {
+     "id": "el bolsillo",
+     "hr": "el bolsillo",
+     "en": "the pocket",
+     "pos": "n. m.",
+     "example": {
+      "target": "He metido las llaves en el bolsillo del abrigo.",
+      "gloss": "I put the keys in the coat pocket."
+     }
+    },
+    {
+     "id": "el botón",
+     "hr": "el botón",
+     "en": "the button",
+     "pos": "n. m.",
+     "example": {
+      "target": "Se me ha caído un botón de la camisa.",
+      "gloss": "A button has fallen off my shirt."
+     }
+    },
+    {
+     "id": "la cremallera",
+     "hr": "la cremallera",
+     "en": "the zip",
+     "pos": "n. f.",
+     "example": {
+      "target": "La cremallera de la chaqueta está rota.",
+      "gloss": "The zip on the jacket is broken."
+     }
+    },
+    {
+     "id": "la tela",
+     "hr": "la tela",
+     "en": "the fabric",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esta tela es muy suave.",
+      "gloss": "This fabric is very soft."
+     }
+    },
+    {
+     "id": "el algodón",
+     "hr": "el algodón",
+     "en": "cotton",
+     "pos": "n. m.",
+     "example": {
+      "target": "Prefiero las camisetas de algodón.",
+      "gloss": "I prefer cotton t-shirts."
+     }
+    },
+    {
+     "id": "la lana",
+     "hr": "la lana",
+     "en": "wool",
+     "pos": "n. f.",
+     "example": {
+      "target": "En invierno llevo un jersey de lana.",
+      "gloss": "In winter I wear a wool jumper."
+     }
+    },
+    {
+     "id": "el cuero",
+     "hr": "el cuero",
+     "en": "leather",
+     "pos": "n. m.",
+     "example": {
+      "target": "Se ha comprado un cinturón de cuero.",
+      "gloss": "He bought himself a leather belt."
+     }
+    },
+    {
+     "id": "la seda",
+     "hr": "la seda",
+     "en": "silk",
+     "pos": "n. f.",
+     "example": {
+      "target": "Este pañuelo de seda es un regalo precioso.",
+      "gloss": "This silk scarf is a lovely gift."
+     }
+    },
+    {
+     "id": "la joya",
+     "hr": "la joya",
+     "en": "the jewel",
+     "pos": "n. f.",
+     "example": {
+      "target": "Esa pulsera es una joya muy bonita.",
+      "gloss": "That bracelet is a very pretty jewel."
+     }
+    },
+    {
+     "id": "el anillo",
+     "hr": "el anillo",
+     "en": "the ring",
+     "pos": "n. m.",
+     "example": {
+      "target": "Le ha regalado un anillo de oro.",
+      "gloss": "He gave her a gold ring."
+     }
+    },
+    {
+     "id": "el collar",
+     "hr": "el collar",
+     "en": "the necklace",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ha elegido un collar sencillo para la boda.",
+      "gloss": "She chose a simple necklace for the wedding."
+     }
+    },
+    {
+     "id": "la pulsera",
+     "hr": "la pulsera",
+     "en": "the bracelet",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llevo una pulsera de plata todos los días.",
+      "gloss": "I wear a silver bracelet every day."
+     }
+    },
+    {
+     "id": "el pendiente",
+     "hr": "el pendiente",
+     "en": "the earring",
+     "pos": "n. m.",
+     "example": {
+      "target": "He perdido un pendiente en la calle.",
+      "gloss": "I lost an earring in the street."
+     }
+    },
+    {
+     "id": "el reloj de pulsera",
+     "hr": "el reloj de pulsera",
+     "en": "the wristwatch",
+     "pos": "n. m.",
+     "note": "distinct from 'el reloj' (clock, already taught)",
+     "example": {
+      "target": "Mi abuelo me ha regalado su reloj de pulsera.",
+      "gloss": "My grandfather gave me his wristwatch."
+     }
+    },
+    {
+     "id": "ancho",
+     "hr": "ancho",
+     "en": "wide, loose",
+     "pos": "adj.",
+     "example": {
+      "target": "Este abrigo es muy ancho para ti.",
+      "gloss": "This coat is very loose on you."
+     }
+    },
+    {
+     "id": "estrecho",
+     "hr": "estrecho",
+     "en": "narrow, tight",
+     "pos": "adj.",
+     "example": {
+      "target": "Los pantalones me quedan un poco estrechos.",
+      "gloss": "The trousers are a bit tight on me."
+     }
+    },
+    {
+     "id": "apretado",
+     "hr": "apretado",
+     "en": "tight (fitting)",
+     "pos": "adj.",
+     "example": {
+      "target": "Esta falda me queda muy apretada.",
+      "gloss": "This skirt fits me very tightly."
+     }
+    },
+    {
+     "id": "suelto",
+     "hr": "suelto",
+     "en": "loose (fitting)",
+     "pos": "adj.",
+     "example": {
+      "target": "Prefiero una camisa suelta en verano.",
+      "gloss": "I prefer a loose shirt in summer."
+     }
+    },
+    {
+     "id": "cómodo",
+     "hr": "cómodo",
+     "en": "comfortable",
+     "pos": "adj.",
+     "example": {
+      "target": "Estas zapatillas son muy cómodas para andar.",
+      "gloss": "These trainers are very comfortable for walking."
+     }
+    },
+    {
+     "id": "incómodo",
+     "hr": "incómodo",
+     "en": "uncomfortable",
+     "pos": "adj.",
+     "example": {
+      "target": "Estos zapatos son muy incómodos.",
+      "gloss": "These shoes are very uncomfortable."
+     }
+    },
+    {
+     "id": "elegante",
+     "hr": "elegante",
+     "en": "elegant, smart",
+     "pos": "adj.",
+     "example": {
+      "target": "Se ha puesto un vestido muy elegante para la cena.",
+      "gloss": "She put on a very elegant dress for dinner."
+     }
+    },
+    {
+     "id": "sencillo",
+     "hr": "sencillo",
+     "en": "simple, plain",
+     "pos": "adj.",
+     "example": {
+      "target": "Prefiero un anillo sencillo, sin piedras.",
+      "gloss": "I prefer a plain ring, without stones."
+     }
+    },
+    {
+     "id": "caro",
+     "hr": "caro",
+     "en": "expensive",
+     "pos": "adj.",
+     "example": {
+      "target": "Este abrigo de cuero es demasiado caro.",
+      "gloss": "This leather coat is too expensive."
+     }
+    },
+    {
+     "id": "barato",
+     "hr": "barato",
+     "en": "cheap",
+     "pos": "adj.",
+     "example": {
+      "target": "En el mercado la fruta es más barata.",
+      "gloss": "At the market the fruit is cheaper."
+     }
+    },
+    {
+     "id": "el servicio",
+     "hr": "el servicio",
+     "en": "the service",
+     "pos": "n. m.",
+     "example": {
+      "target": "El servicio de esta tienda es muy rápido.",
+      "gloss": "The service in this shop is very fast."
+     }
+    },
+    {
+     "id": "la peluquería",
+     "hr": "la peluquería",
+     "en": "the hairdresser's",
+     "pos": "n. f.",
+     "example": {
+      "target": "Tengo cita en la peluquería a las cinco.",
+      "gloss": "I have an appointment at the hairdresser's at five."
+     }
+    },
+    {
+     "id": "la lavandería",
+     "hr": "la lavandería",
+     "en": "the launderette",
+     "pos": "n. f.",
+     "example": {
+      "target": "Llevo las sábanas a la lavandería los lunes.",
+      "gloss": "I take the sheets to the launderette on Mondays."
+     }
+    },
+    {
+     "id": "la tintorería",
+     "hr": "la tintorería",
+     "en": "the dry cleaner's",
+     "pos": "n. f.",
+     "example": {
+      "target": "He dejado el traje en la tintorería.",
+      "gloss": "I left the suit at the dry cleaner's."
+     }
+    },
+    {
+     "id": "el taller",
+     "hr": "el taller",
+     "en": "the workshop, the repair shop",
+     "pos": "n. m.",
+     "example": {
+      "target": "El coche está en el taller desde ayer.",
+      "gloss": "The car has been at the repair shop since yesterday."
+     }
+    },
+    {
+     "id": "la ferretería",
+     "hr": "la ferretería",
+     "en": "the hardware shop",
+     "pos": "n. f.",
+     "example": {
+      "target": "En la ferretería venden herramientas y pintura.",
+      "gloss": "At the hardware shop they sell tools and paint."
+     }
+    },
+    {
+     "id": "la papelería",
+     "hr": "la papelería",
+     "en": "the stationery shop",
+     "pos": "n. f.",
+     "example": {
+      "target": "He comprado cuadernos en la papelería.",
+      "gloss": "I bought notebooks at the stationery shop."
+     }
+    },
+    {
+     "id": "la panadería",
+     "hr": "la panadería",
+     "en": "the bakery",
+     "pos": "n. f.",
+     "example": {
+      "target": "El pan de esta panadería está recién hecho.",
+      "gloss": "The bread from this bakery is freshly made."
+     }
+    },
+    {
+     "id": "la carnicería",
+     "hr": "la carnicería",
+     "en": "the butcher's",
+     "pos": "n. f.",
+     "example": {
+      "target": "El carnicero de la carnicería es muy simpático.",
+      "gloss": "The butcher at the butcher's is very nice."
+     }
+    },
+    {
+     "id": "la pescadería",
+     "hr": "la pescadería",
+     "en": "the fishmonger's",
+     "pos": "n. f.",
+     "example": {
+      "target": "En la pescadería venden pescado fresco cada día.",
+      "gloss": "At the fishmonger's they sell fresh fish every day."
+     }
+    },
+    {
+     "id": "la frutería",
+     "hr": "la frutería",
+     "en": "the greengrocer's",
+     "pos": "n. f.",
+     "example": {
+      "target": "He comprado naranjas en la frutería.",
+      "gloss": "I bought oranges at the greengrocer's."
+     }
+    },
+    {
+     "id": "la librería",
+     "hr": "la librería",
+     "en": "the bookshop",
+     "pos": "n. f.",
+     "note": "false friend, does not mean 'library'",
+     "example": {
+      "target": "He encontrado un libro precioso en la librería.",
+      "gloss": "I found a lovely book at the bookshop."
+     }
+    },
+    {
+     "id": "el quiosco",
+     "hr": "el quiosco",
+     "en": "the kiosk, the newsstand",
+     "pos": "n. m.",
+     "example": {
+      "target": "Compro el periódico en el quiosco de la esquina.",
+      "gloss": "I buy the newspaper at the corner kiosk."
+     }
+    },
+    {
+     "id": "la floristería",
+     "hr": "la floristería",
+     "en": "the florist's",
+     "pos": "n. f.",
+     "example": {
+      "target": "He pedido flores en la floristería para su cumpleaños.",
+      "gloss": "I ordered flowers at the florist's for her birthday."
+     }
+    },
+    {
+     "id": "el correo",
+     "hr": "el correo",
+     "en": "the mail, the post",
+     "pos": "n. m.",
+     "note": "generic 'the mail, the post'; for the building use 'la oficina de correos'",
+     "example": {
+      "target": "He mandado el paquete por correo esta mañana.",
+      "gloss": "I sent the package by post this morning."
+     }
+    },
+    {
+     "id": "el paquete",
+     "hr": "el paquete",
+     "en": "the package, the parcel",
+     "pos": "n. m.",
+     "example": {
+      "target": "El cartero ha traído un paquete grande.",
+      "gloss": "The postman brought a big parcel."
+     }
+    },
+    {
+     "id": "el sello",
+     "hr": "el sello",
+     "en": "the stamp",
+     "pos": "n. m.",
+     "example": {
+      "target": "Necesito un sello para esta carta.",
+      "gloss": "I need a stamp for this letter."
+     }
+    },
+    {
+     "id": "el sobre",
+     "hr": "el sobre",
+     "en": "the envelope",
+     "pos": "n. m.",
+     "example": {
+      "target": "He metido la carta en el sobre.",
+      "gloss": "I put the letter in the envelope."
+     }
+    },
+    {
+     "id": "la factura",
+     "hr": "la factura",
+     "en": "the invoice, the bill",
+     "pos": "n. f.",
+     "example": {
+      "target": "La factura del taller es más alta de lo normal.",
+      "gloss": "The repair shop's bill is higher than usual."
+     }
+    },
+    {
+     "id": "la reclamación",
+     "hr": "la reclamación",
+     "en": "the formal complaint",
+     "pos": "n. f.",
+     "example": {
+      "target": "He puesto una reclamación por el servicio.",
+      "gloss": "I filed a complaint about the service."
+     }
+    },
+    {
+     "id": "la cita previa",
+     "hr": "la cita previa",
+     "en": "the prior appointment",
+     "pos": "n. f.",
+     "example": {
+      "target": "En esta oficina necesitas cita previa para entrar.",
+      "gloss": "At this office you need a prior appointment to get in."
+     }
+    },
+    {
+     "id": "entregar",
+     "hr": "entregar",
+     "en": "to hand over, to deliver",
+     "pos": "v.",
+     "example": {
+      "target": "El repartidor entrega el paquete a las diez.",
+      "gloss": "The delivery man delivers the package at ten."
+     }
+    },
+    {
+     "id": "enviar",
+     "hr": "enviar",
+     "en": "to send",
+     "pos": "v.",
+     "note": "written accent shift: envío, envías, envía",
+     "example": {
+      "target": "He enviado el sobre por correo urgente.",
+      "gloss": "I sent the envelope by express post."
+     }
+    },
+    {
+     "id": "recibir",
+     "hr": "recibir",
+     "en": "to receive",
+     "pos": "v.",
+     "example": {
+      "target": "He recibido la factura esta mañana.",
+      "gloss": "I received the invoice this morning."
+     }
+    },
+    {
+     "id": "firmar",
+     "hr": "firmar",
+     "en": "to sign",
+     "pos": "v.",
+     "example": {
+      "target": "Firma aquí, por favor.",
+      "gloss": "Sign here, please."
+     }
+    },
+    {
+     "id": "rellenar",
+     "hr": "rellenar",
+     "en": "to fill in",
+     "pos": "v.",
+     "example": {
+      "target": "Tienes que rellenar este formulario con tus datos.",
+      "gloss": "You have to fill in this form with your details."
+     }
+    },
+    {
+     "id": "solicitar",
+     "hr": "solicitar",
+     "en": "to request, to apply for",
+     "pos": "v.",
+     "example": {
+      "target": "He solicitado la devolución del dinero.",
+      "gloss": "I have requested a refund."
+     }
+    },
+    {
+     "id": "atender",
+     "hr": "atender",
+     "en": "to attend to, to serve",
+     "pos": "v.",
+     "note": "e>ie: atiendo",
+     "example": {
+      "target": "La dependienta nos ha atendido muy bien.",
+      "gloss": "The shop assistant served us very well."
+     }
+    },
+    {
+     "id": "quejarse",
+     "hr": "quejarse",
+     "en": "to complain",
+     "pos": "v.",
+     "note": "pronominal; governed preposition 'de'",
+     "example": {
+      "target": "El cliente se ha quejado del precio.",
+      "gloss": "The customer complained about the price."
+     }
+    },
+    {
+     "id": "el carrito de la compra",
+     "hr": "el carrito de la compra",
+     "en": "the shopping cart",
+     "pos": "n. m.",
+     "example": {
+      "target": "El carrito de la compra está lleno de fruta.",
+      "gloss": "The shopping cart is full of fruit."
+     }
+    },
+    {
+     "id": "la lista de la compra",
+     "hr": "la lista de la compra",
+     "en": "the shopping list",
+     "pos": "n. f.",
+     "example": {
+      "target": "He dejado la lista de la compra en casa.",
+      "gloss": "I left the shopping list at home."
+     }
+    },
+    {
+     "id": "la marca",
+     "hr": "la marca",
+     "en": "the brand",
+     "pos": "n. f.",
+     "example": {
+      "target": "Prefiero esta marca de zumo.",
+      "gloss": "I prefer this brand of juice."
+     }
+    },
+    {
+     "id": "la calidad",
+     "hr": "la calidad",
+     "en": "the quality",
+     "pos": "n. f.",
+     "example": {
+      "target": "La calidad de esta tela es excelente.",
+      "gloss": "The quality of this fabric is excellent."
+     }
+    },
+    {
+     "id": "gratis",
+     "hr": "gratis",
+     "en": "free (of charge)",
+     "pos": "adj.",
+     "note": "invariable, does not change with gender or number",
+     "example": {
+      "target": "La entrega es gratis si gastas más de treinta euros.",
+      "gloss": "Delivery is free if you spend more than thirty euros."
+     }
+    },
+    {
+     "id": "la promoción",
+     "hr": "la promoción",
+     "en": "the promotion, the special offer",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hay una promoción de dos por uno en la panadería.",
+      "gloss": "There is a two for one promotion at the bakery."
+     }
+    },
+    {
+     "id": "el catálogo",
+     "hr": "el catálogo",
+     "en": "the catalogue",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hemos elegido el vestido en el catálogo.",
+      "gloss": "We chose the dress from the catalogue."
+     }
+    },
+    {
+     "id": "el reembolso",
+     "hr": "el reembolso",
+     "en": "the refund",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me han hecho el reembolso en dos días.",
+      "gloss": "They gave me the refund within two days."
+     }
+    },
+    {
+     "id": "pedir prestado",
+     "hr": "pedir prestado",
+     "en": "to borrow",
+     "pos": "expr.",
+     "note": "pedir is e>i: pido; contrast with 'prestar' (to lend)",
+     "example": {
+      "target": "He pedido prestado el paraguas de mi vecina.",
+      "gloss": "I borrowed my neighbour's umbrella."
+     }
+    },
+    {
+     "id": "la deuda",
+     "hr": "la deuda",
+     "en": "the debt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Todavía tengo una deuda con mi hermano.",
+      "gloss": "I still have a debt with my brother."
+     }
+    },
+    {
+     "id": "deber dinero",
+     "hr": "deber dinero",
+     "en": "to owe money",
+     "pos": "expr.",
+     "note": "uses the regular verb 'deber' (no stem change) in its 'to owe' sense, distinct from the modal 'must' already taught",
+     "example": {
+      "target": "Le debo dinero a mi compañero de piso.",
+      "gloss": "I owe my flatmate money."
+     }
+    },
+    {
+     "id": "el saldo",
+     "hr": "el saldo",
+     "en": "the balance (account)",
+     "pos": "n. m.",
+     "example": {
+      "target": "He mirado el saldo de mi cuenta en el cajero automático.",
+      "gloss": "I checked my account balance at the ATM."
+     }
+    },
+    {
+     "id": "el cajero automático",
+     "hr": "el cajero automático",
+     "en": "the ATM, the cash machine",
+     "pos": "n. m.",
+     "note": "distinct from 'el cajero' (the cashier)",
+     "example": {
+      "target": "Saco dinero del cajero automático.",
+      "gloss": "I take out money from the ATM."
+     }
+    },
+    {
+     "id": "el presupuesto",
+     "hr": "el presupuesto",
+     "en": "the budget",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hemos hecho un presupuesto para las vacaciones.",
+      "gloss": "We have made a budget for the holidays."
+     }
+    },
+    {
+     "id": "el impuesto",
+     "hr": "el impuesto",
+     "en": "the tax",
+     "pos": "n. m.",
+     "example": {
+      "target": "El precio ya incluye el impuesto.",
+      "gloss": "The price already includes the tax."
+     }
+    },
+    {
+     "id": "el iva",
+     "hr": "el IVA",
+     "en": "VAT, the sales tax",
+     "pos": "n. m.",
+     "note": "Spain's general sales tax, added to the price; not a company or brand",
+     "example": {
+      "target": "El recibo muestra el precio sin el IVA.",
+      "gloss": "The receipt shows the price without VAT."
+     }
+    },
+    {
+     "id": "hacer cola",
+     "hr": "hacer cola",
+     "en": "to queue",
+     "pos": "expr.",
+     "note": "uses 'hacer' (yo-form: hago)",
+     "example": {
+      "target": "Hemos hecho cola media hora en la carnicería.",
+      "gloss": "We queued for half an hour at the butcher's."
+     }
+    },
+    {
+     "id": "rebajado",
+     "hr": "rebajado",
+     "en": "reduced, marked down",
+     "pos": "adj.",
+     "example": {
+      "target": "Este abrigo está rebajado un treinta por ciento.",
+      "gloss": "This coat is marked down by thirty percent."
+     }
+    },
+    {
+     "id": "agotado",
+     "hr": "agotado",
+     "en": "sold out",
+     "pos": "adj.",
+     "example": {
+      "target": "La talla mediana está agotada.",
+      "gloss": "The medium size is sold out."
+     }
+    },
+    {
+     "id": "disponible",
+     "hr": "disponible",
+     "en": "available",
+     "pos": "adj.",
+     "example": {
+      "target": "Este color ya no está disponible.",
+      "gloss": "This colour is no longer available."
+     }
+    },
+    {
+     "id": "ir de compras",
+     "hr": "ir de compras",
+     "en": "to go shopping",
+     "pos": "expr.",
+     "example": {
+      "target": "Los sábados vamos de compras al centro.",
+      "gloss": "On Saturdays we go shopping downtown."
+     }
+    },
+    {
+     "id": "de segunda mano",
+     "hr": "de segunda mano",
+     "en": "second hand",
+     "pos": "expr.",
+     "example": {
+      "target": "Este reloj de pulsera es de segunda mano.",
+      "gloss": "This wristwatch is second hand."
+     }
+    },
+    {
+     "id": "usado",
+     "hr": "usado",
+     "en": "used, second hand",
+     "pos": "adj.",
+     "example": {
+      "target": "He comprado unos libros usados en el mercado.",
+      "gloss": "I bought some used books at the market."
+     }
+    },
+    {
+     "id": "sentar bien",
+     "hr": "sentar bien",
+     "en": "to suit, to fit well",
+     "pos": "expr.",
+     "note": "sentar is e>ie: sienta; works like gustar: me sienta bien, te sienta bien",
+     "example": {
+      "target": "Ese vestido te sienta muy bien.",
+      "gloss": "That dress suits you very well."
+     }
+    },
+    {
+     "id": "hacer juego",
+     "hr": "hacer juego",
+     "en": "to match",
+     "pos": "expr.",
+     "example": {
+      "target": "Estos zapatos hacen juego con el bolso.",
+      "gloss": "These shoes match the bag."
+     }
+    },
+    {
+     "id": "vestir",
+     "hr": "vestir",
+     "en": "to wear, to dress",
+     "pos": "v.",
+     "note": "e>i: visto; compare with 'llevar' (to wear, already taught)",
+     "example": {
+      "target": "Hoy visto una camisa sencilla para la reunión.",
+      "gloss": "Today I am wearing a plain shirt for the meeting."
+     }
+    },
+    {
+     "id": "al contado",
+     "hr": "al contado",
+     "en": "in cash, paid in full",
+     "pos": "expr.",
+     "example": {
+      "target": "He pagado el sofá al contado.",
+      "gloss": "I paid for the sofa in cash."
+     }
+    },
+    {
+     "id": "a plazos",
+     "hr": "a plazos",
+     "en": "in instalments",
+     "pos": "expr.",
+     "example": {
+      "target": "Pagamos la nevera a plazos cada mes.",
+      "gloss": "We pay for the fridge in monthly instalments."
+     }
+    },
+    {
+     "id": "la prenda",
+     "hr": "la prenda",
+     "en": "the garment",
+     "pos": "n. f.",
+     "note": "generic word for a piece of clothing",
+     "example": {
+      "target": "Esta tienda solo vende prendas de algodón.",
+      "gloss": "This shop only sells cotton garments."
+     }
+    },
+    {
+     "id": "el complemento",
+     "hr": "el complemento",
+     "en": "the accessory",
+     "pos": "n. m.",
+     "note": "means 'accessory' here (bag, jewellery, scarf), not 'grammatical complement'",
+     "example": {
+      "target": "Los pendientes son mi complemento favorito.",
+      "gloss": "Earrings are my favourite accessory."
+     }
+    },
+    {
+     "id": "mediano",
+     "hr": "mediano",
+     "en": "medium (size)",
+     "pos": "adj.",
+     "example": {
+      "target": "Necesito una talla mediana, ni pequeña ni grande.",
+      "gloss": "I need a medium size, neither small nor large."
+     }
+    },
+    {
+     "id": "la ropa interior",
+     "hr": "la ropa interior",
+     "en": "underwear",
+     "pos": "n. f.",
+     "note": "distinct from 'la ropa' (clothes, already taught)",
+     "example": {
+      "target": "He comprado ropa interior de algodón.",
+      "gloss": "I bought cotton underwear."
+     }
+    },
+    {
+     "id": "las medias",
+     "hr": "las medias",
+     "en": "tights, stockings",
+     "pos": "n. f.",
+     "note": "always plural in this sense",
+     "example": {
+      "target": "Se ha puesto unas medias negras para la boda.",
+      "gloss": "She put on black tights for the wedding."
+     }
+    },
+    {
+     "id": "el chaleco",
+     "hr": "el chaleco",
+     "en": "the waistcoat, the vest",
+     "pos": "n. m.",
+     "example": {
+      "target": "Lleva un chaleco de lana debajo del abrigo.",
+      "gloss": "He wears a wool waistcoat under the coat."
+     }
+    },
+    {
+     "id": "la sudadera",
+     "hr": "la sudadera",
+     "en": "the sweatshirt",
+     "pos": "n. f.",
+     "example": {
+      "target": "Me pongo la sudadera cuando hace fresco.",
+      "gloss": "I put on the sweatshirt when it is cool."
+     }
+    },
+    {
+     "id": "el pañuelo",
+     "hr": "el pañuelo",
+     "en": "the scarf, the handkerchief",
+     "pos": "n. m.",
+     "example": {
+      "target": "Lleva un pañuelo de seda al cuello.",
+      "gloss": "She wears a silk scarf around her neck."
+     }
+    },
+    {
+     "id": "la gorra",
+     "hr": "la gorra",
+     "en": "the cap",
+     "pos": "n. f.",
+     "example": {
+      "target": "Se ha puesto la gorra porque hace sol.",
+      "gloss": "He put on the cap because it is sunny."
+     }
+    },
+    {
+     "id": "los tacones",
+     "hr": "los tacones",
+     "en": "high heels",
+     "pos": "n. m.",
+     "note": "always plural in this sense",
+     "example": {
+      "target": "No puedo andar con tacones tan altos.",
+      "gloss": "I cannot walk in such high heels."
+     }
+    },
+    {
+     "id": "las zapatillas",
+     "hr": "las zapatillas",
+     "en": "trainers, slippers",
+     "pos": "n. f.",
+     "note": "always plural in this sense",
+     "example": {
+      "target": "Me he comprado unas zapatillas nuevas para correr.",
+      "gloss": "I bought myself new trainers for running."
+     }
+    },
+    {
+     "id": "el formulario",
+     "hr": "el formulario",
+     "en": "the form (document)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Rellena el formulario con letra clara.",
+      "gloss": "Fill in the form in clear writing."
+     }
+    },
+    {
+     "id": "pedir cita",
+     "hr": "pedir cita",
+     "en": "to make an appointment",
+     "pos": "expr.",
+     "note": "pedir is e>i: pido",
+     "example": {
+      "target": "He pedido cita en la peluquería para el sábado.",
+      "gloss": "I made an appointment at the hairdresser's for Saturday."
+     }
+    },
+    {
+     "id": "el turno",
+     "hr": "el turno",
+     "en": "the turn (in a queue)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Espera tu turno, por favor.",
+      "gloss": "Wait your turn, please."
+     }
+    },
+    {
+     "id": "abierto",
+     "hr": "abierto",
+     "en": "open",
+     "pos": "adj.",
+     "example": {
+      "target": "La panadería ya está abierta a las siete.",
+      "gloss": "The bakery is already open by seven."
+     }
+    },
+    {
+     "id": "cerrado",
+     "hr": "cerrado",
+     "en": "closed",
+     "pos": "adj.",
+     "example": {
+      "target": "La tintorería está cerrada los domingos.",
+      "gloss": "The dry cleaner's is closed on Sundays."
+     }
+    },
+    {
+     "id": "reclamar",
+     "hr": "reclamar",
+     "en": "to formally claim, to complain",
+     "pos": "v.",
+     "note": "more formal than 'quejarse'",
+     "example": {
+      "target": "He reclamado la garantía del horno roto.",
+      "gloss": "I have claimed the warranty for the broken oven."
+     }
+    },
+    {
+     "id": "el defecto",
+     "hr": "el defecto",
+     "en": "the defect, the fault",
+     "pos": "n. m.",
+     "example": {
+      "target": "Esta camisa tiene un defecto en la manga.",
+      "gloss": "This shirt has a fault in the sleeve."
+     }
+    },
+    {
+     "id": "estropeado",
+     "hr": "estropeado",
+     "en": "broken, out of order",
+     "pos": "adj.",
+     "example": {
+      "target": "El ascensor de la tienda está estropeado.",
+      "gloss": "The shop's lift is out of order."
+     }
+    },
+    {
+     "id": "roto",
+     "hr": "roto",
+     "en": "broken, torn",
+     "pos": "adj.",
+     "note": "irregular past participle of 'romper', used here as an adjective",
+     "example": {
+      "target": "Este jersey está roto por el codo.",
+      "gloss": "This jumper is torn at the elbow."
+     }
+    },
+    {
+     "id": "el comprador",
+     "hr": "el comprador",
+     "en": "the buyer",
+     "pos": "n. m.",
+     "note": "fem. la compradora",
+     "example": {
+      "target": "El comprador ha pedido la factura.",
+      "gloss": "The buyer asked for the invoice."
+     }
+    },
+    {
+     "id": "la cesta de la compra",
+     "hr": "la cesta de la compra",
+     "en": "the shopping basket",
+     "pos": "n. f.",
+     "example": {
+      "target": "He puesto las manzanas en la cesta de la compra.",
+      "gloss": "I put the apples in the shopping basket."
+     }
+    },
+    {
+     "id": "el envase",
+     "hr": "el envase",
+     "en": "the container, the packaging",
+     "pos": "n. m.",
+     "note": "the container or packaging of a product, distinct from 'el paquete' (parcel)",
+     "example": {
+      "target": "Este envase de cristal se puede reciclar.",
+      "gloss": "This glass container can be recycled."
+     }
+    },
+    {
+     "id": "la muestra",
+     "hr": "la muestra",
+     "en": "the sample",
+     "pos": "n. f.",
+     "example": {
+      "target": "La dependienta me ha dado una muestra de crema gratis.",
+      "gloss": "The shop assistant gave me a free cream sample."
+     }
+    },
+    {
+     "id": "el estante",
+     "hr": "el estante",
+     "en": "the shelf",
+     "pos": "n. m.",
+     "note": "a single shelf; 'la estantería' (already taught) is the whole shelving unit",
+     "example": {
+      "target": "El pan está en el estante de arriba.",
+      "gloss": "The bread is on the top shelf."
+     }
+    },
+    {
+     "id": "el color",
+     "hr": "el color",
+     "en": "color",
+     "pos": "n. m.",
+     "example": {
+      "target": "Me gusta este color para la camisa nueva.",
+      "gloss": "I like this color for the new shirt."
+     }
+    },
+    {
+     "id": "la televisión",
+     "hr": "la televisión",
+     "en": "television",
+     "pos": "n. f.",
+     "note": "shortened to la tele in speech",
+     "example": {
+      "target": "Vemos la televisión después de cenar.",
+      "gloss": "We watch television after dinner."
+     }
+    },
+    {
+     "id": "la radio",
+     "hr": "la radio",
+     "en": "radio",
+     "pos": "n. f.",
+     "note": "feminine as the medium, la radio; masculine el radio only as a device in parts of America",
+     "example": {
+      "target": "Escucho la radio mientras conduzco.",
+      "gloss": "I listen to the radio while I drive."
+     }
+    },
+    {
+     "id": "el regalo",
+     "hr": "el regalo",
+     "en": "present, gift",
+     "pos": "n. m.",
+     "note": "the verb is regalar, to give as a present",
+     "example": {
+      "target": "Le compré un regalo a mi madre.",
+      "gloss": "I bought my mother a present."
+     }
+    },
+    {
+     "id": "el teléfono de emergencia",
+     "hr": "el teléfono de emergencia",
+     "en": "emergency number",
+     "pos": "n. m.",
+     "example": {
+      "target": "Apunté el teléfono de emergencia en la puerta.",
+      "gloss": "I wrote the emergency number down on the door."
+     }
+    }
+   ]
+  }
+ ]
+}

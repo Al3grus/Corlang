@@ -1,0 +1,1732 @@
+{
+ "packs": [
+  {
+   "id": "es-a1-core",
+   "title": "Core words and first contact",
+   "level": "A1",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "hola",
+     "hr": "hola",
+     "en": "hello",
+     "pos": "expr.",
+     "example": {
+      "target": "Hola, ¿cómo estás?",
+      "gloss": "Hello, how are you?"
+     }
+    },
+    {
+     "id": "adiós",
+     "hr": "adiós",
+     "en": "goodbye",
+     "pos": "expr.",
+     "example": {
+      "target": "Adiós, hasta mañana.",
+      "gloss": "Goodbye, see you tomorrow."
+     }
+    },
+    {
+     "id": "buenos días",
+     "hr": "buenos días",
+     "en": "good morning",
+     "pos": "expr.",
+     "note": "used until roughly midday",
+     "example": {
+      "target": "Buenos días, ¿cómo está usted?",
+      "gloss": "Good morning, how are you (formal)?"
+     }
+    },
+    {
+     "id": "buenas tardes",
+     "hr": "buenas tardes",
+     "en": "good afternoon",
+     "pos": "expr.",
+     "note": "used from midday until nightfall",
+     "example": {
+      "target": "Buenas tardes, ¿qué tal?",
+      "gloss": "Good afternoon, how's it going?"
+     }
+    },
+    {
+     "id": "buenas noches",
+     "hr": "buenas noches",
+     "en": "good night, good evening",
+     "pos": "expr.",
+     "note": "used both as a nighttime greeting and as a farewell",
+     "example": {
+      "target": "Buenas noches, hasta mañana.",
+      "gloss": "Good night, see you tomorrow."
+     }
+    },
+    {
+     "id": "por favor",
+     "hr": "por favor",
+     "en": "please",
+     "pos": "expr.",
+     "example": {
+      "target": "Un café, por favor.",
+      "gloss": "A coffee, please."
+     }
+    },
+    {
+     "id": "gracias",
+     "hr": "gracias",
+     "en": "thank you",
+     "pos": "expr.",
+     "note": "the standard reply is de nada, you're welcome",
+     "example": {
+      "target": "Muchas gracias por tu ayuda.",
+      "gloss": "Thank you very much for your help."
+     }
+    },
+    {
+     "id": "perdón",
+     "hr": "perdón",
+     "en": "sorry, excuse me",
+     "pos": "expr.",
+     "note": "used both to apologise and to get someone's attention politely",
+     "example": {
+      "target": "Perdón, ¿dónde está la estación?",
+      "gloss": "Excuse me, where is the station?"
+     }
+    },
+    {
+     "id": "qué",
+     "hr": "qué",
+     "en": "what",
+     "pos": "pron.",
+     "note": "combines with por to ask why: ¿por qué?",
+     "example": {
+      "target": "¿Qué haces ahora?",
+      "gloss": "What are you doing now?"
+     }
+    },
+    {
+     "id": "quién",
+     "hr": "quién",
+     "en": "who",
+     "pos": "pron.",
+     "note": "plural quiénes, for asking about more than one person",
+     "example": {
+      "target": "¿Quién habla español aquí?",
+      "gloss": "Who speaks Spanish here?"
+     }
+    },
+    {
+     "id": "cómo",
+     "hr": "cómo",
+     "en": "how",
+     "pos": "adv.",
+     "example": {
+      "target": "¿Cómo estás hoy?",
+      "gloss": "How are you today?"
+     }
+    },
+    {
+     "id": "dónde",
+     "hr": "dónde",
+     "en": "where",
+     "pos": "adv.",
+     "example": {
+      "target": "¿Dónde vives?",
+      "gloss": "Where do you live?"
+     }
+    },
+    {
+     "id": "cuándo",
+     "hr": "cuándo",
+     "en": "when",
+     "pos": "adv.",
+     "example": {
+      "target": "¿Cuándo trabajas?",
+      "gloss": "When do you work?"
+     }
+    },
+    {
+     "id": "cuánto",
+     "hr": "cuánto",
+     "en": "how much, how many",
+     "pos": "pron.",
+     "note": "agrees in gender and number when it modifies a noun: cuánta, cuántos, cuántas",
+     "example": {
+      "target": "¿Cuánto cuesta el billete?",
+      "gloss": "How much does the ticket cost?"
+     }
+    },
+    {
+     "id": "cuál",
+     "hr": "cuál",
+     "en": "which one",
+     "pos": "pron.",
+     "note": "plural cuáles",
+     "example": {
+      "target": "¿Cuál prefieres, el té o el café?",
+      "gloss": "Which do you prefer, tea or coffee?"
+     }
+    },
+    {
+     "id": "yo",
+     "hr": "yo",
+     "en": "I",
+     "pos": "pron.",
+     "example": {
+      "target": "Yo hablo español y un poco de inglés.",
+      "gloss": "I speak Spanish and a little English."
+     }
+    },
+    {
+     "id": "tú",
+     "hr": "tú",
+     "en": "you (informal singular)",
+     "pos": "pron.",
+     "note": "not to be confused with tu, the possessive, which has no accent",
+     "example": {
+      "target": "Tú vives en Madrid, ¿verdad?",
+      "gloss": "You live in Madrid, right?"
+     }
+    },
+    {
+     "id": "él",
+     "hr": "él",
+     "en": "he",
+     "pos": "pron.",
+     "example": {
+      "target": "Él trabaja en una oficina.",
+      "gloss": "He works in an office."
+     }
+    },
+    {
+     "id": "ella",
+     "hr": "ella",
+     "en": "she",
+     "pos": "pron.",
+     "example": {
+      "target": "Ella estudia en la universidad.",
+      "gloss": "She studies at university."
+     }
+    },
+    {
+     "id": "usted",
+     "hr": "usted",
+     "en": "you (formal singular)",
+     "pos": "pron.",
+     "note": "takes third-person verb forms even though it means you; the plural formal is ustedes",
+     "example": {
+      "target": "¿Usted habla inglés?",
+      "gloss": "Do you speak English?"
+     }
+    },
+    {
+     "id": "nosotros",
+     "hr": "nosotros",
+     "en": "we (masculine or mixed)",
+     "pos": "pron.",
+     "note": "feminine form nosotras, for an all-female group",
+     "example": {
+      "target": "Nosotros vamos a la playa.",
+      "gloss": "We are going to the beach."
+     }
+    },
+    {
+     "id": "vosotros",
+     "hr": "vosotros",
+     "en": "you all (informal plural, Spain)",
+     "pos": "pron.",
+     "note": "feminine form vosotras; used in Spain, replaced by ustedes in Latin America",
+     "example": {
+      "target": "Vosotros habláis muy rápido.",
+      "gloss": "You all speak very fast."
+     }
+    },
+    {
+     "id": "ellos",
+     "hr": "ellos",
+     "en": "they (masculine or mixed)",
+     "pos": "pron.",
+     "note": "feminine form ellas, for an all-female group",
+     "example": {
+      "target": "Ellos viven cerca del río.",
+      "gloss": "They live near the river."
+     }
+    },
+    {
+     "id": "ellas",
+     "hr": "ellas",
+     "en": "they (feminine)",
+     "pos": "pron.",
+     "example": {
+      "target": "Ellas trabajan en el centro.",
+      "gloss": "They work downtown."
+     }
+    },
+    {
+     "id": "el",
+     "hr": "el",
+     "en": "the (masculine singular)",
+     "pos": "art.",
+     "note": "used directly before a masculine singular noun: el coche",
+     "example": {
+      "target": "El coche es nuevo.",
+      "gloss": "The car is new."
+     }
+    },
+    {
+     "id": "la",
+     "hr": "la",
+     "en": "the (feminine singular); her, it (feminine, direct object)",
+     "pos": "pron.",
+     "note": "as an article, la casa; as a pronoun, it replaces a feminine noun already mentioned: la veo",
+     "example": {
+      "target": "La veo todos los días.",
+      "gloss": "I see her (it) every day."
+     }
+    },
+    {
+     "id": "los",
+     "hr": "los",
+     "en": "the (masculine plural); them (masculine, direct object)",
+     "pos": "pron.",
+     "note": "as an article, los libros; as a pronoun, los veo means I see them",
+     "example": {
+      "target": "Los necesito para el trabajo.",
+      "gloss": "I need them for work."
+     }
+    },
+    {
+     "id": "las",
+     "hr": "las",
+     "en": "the (feminine plural); them (feminine, direct object)",
+     "pos": "pron.",
+     "note": "as an article, las gafas; as a pronoun, las veo means I see them",
+     "example": {
+      "target": "Las necesito hoy.",
+      "gloss": "I need them today."
+     }
+    },
+    {
+     "id": "un",
+     "hr": "un",
+     "en": "a, an (masculine)",
+     "pos": "art.",
+     "note": "apocopated form of uno, used before a masculine noun",
+     "example": {
+      "target": "Quiero un café, por favor.",
+      "gloss": "I want a coffee, please."
+     }
+    },
+    {
+     "id": "una",
+     "hr": "una",
+     "en": "a, an (feminine)",
+     "pos": "art.",
+     "example": {
+      "target": "Tengo una pregunta.",
+      "gloss": "I have a question."
+     }
+    },
+    {
+     "id": "lo",
+     "hr": "lo",
+     "en": "him, it (masculine or neuter, direct object)",
+     "pos": "pron.",
+     "note": "also combines with an adjective to form an abstract noun: lo bueno, the good thing",
+     "example": {
+      "target": "No lo sé.",
+      "gloss": "I don't know it."
+     }
+    },
+    {
+     "id": "me",
+     "hr": "me",
+     "en": "me (object pronoun)",
+     "pos": "pron.",
+     "note": "used for direct object, indirect object, and reflexively with verbs like llamarse",
+     "example": {
+      "target": "Me llamo Ana.",
+      "gloss": "My name is Ana."
+     }
+    },
+    {
+     "id": "te",
+     "hr": "te",
+     "en": "you (object pronoun, informal)",
+     "pos": "pron.",
+     "example": {
+      "target": "¿Cómo te llamas?",
+      "gloss": "What is your name?"
+     }
+    },
+    {
+     "id": "le",
+     "hr": "le",
+     "en": "him, her, you (indirect object pronoun)",
+     "pos": "pron.",
+     "note": "the usual choice with gustar-type verbs: le gusta el café",
+     "example": {
+      "target": "A ella le gusta el café.",
+      "gloss": "She likes coffee."
+     }
+    },
+    {
+     "id": "este",
+     "hr": "este",
+     "en": "this (masculine)",
+     "pos": "pron.",
+     "note": "feminine esta; the farther-away equivalents ese and esa follow the same pattern",
+     "example": {
+      "target": "Este libro es interesante.",
+      "gloss": "This book is interesting."
+     }
+    },
+    {
+     "id": "esta",
+     "hr": "esta",
+     "en": "this (feminine)",
+     "pos": "pron.",
+     "example": {
+      "target": "Esta semana trabajo mucho.",
+      "gloss": "This week I work a lot."
+     }
+    },
+    {
+     "id": "esto",
+     "hr": "esto",
+     "en": "this (neuter)",
+     "pos": "pron.",
+     "note": "for an idea or an unnamed thing rather than a specific noun; farther away is eso",
+     "example": {
+      "target": "Esto es para ti.",
+      "gloss": "This is for you."
+     }
+    },
+    {
+     "id": "eso",
+     "hr": "eso",
+     "en": "that (neuter)",
+     "pos": "pron.",
+     "example": {
+      "target": "Eso no es verdad.",
+      "gloss": "That's not true."
+     }
+    },
+    {
+     "id": "mi",
+     "hr": "mi",
+     "en": "my",
+     "pos": "pron.",
+     "note": "invariable for gender, plural mis; not to be confused with mí, used after a preposition",
+     "example": {
+      "target": "Mi trabajo está en el centro.",
+      "gloss": "My job is downtown."
+     }
+    },
+    {
+     "id": "tu",
+     "hr": "tu",
+     "en": "your (informal)",
+     "pos": "pron.",
+     "note": "invariable for gender, plural tus; not to be confused with tú, the pronoun",
+     "example": {
+      "target": "Tu español es muy bueno.",
+      "gloss": "Your Spanish is very good."
+     }
+    },
+    {
+     "id": "su",
+     "hr": "su",
+     "en": "his, her, your (formal), their",
+     "pos": "pron.",
+     "note": "invariable for gender, agrees only in number: sus",
+     "example": {
+      "target": "Su idea es buena.",
+      "gloss": "His (her) idea is good."
+     }
+    },
+    {
+     "id": "nuestro",
+     "hr": "nuestro",
+     "en": "our",
+     "pos": "pron.",
+     "note": "agrees in gender and number: nuestra, nuestros, nuestras; the vosotros-equivalent is vuestro",
+     "example": {
+      "target": "Nuestro plan es simple.",
+      "gloss": "Our plan is simple."
+     }
+    },
+    {
+     "id": "cero",
+     "hr": "cero",
+     "en": "zero",
+     "pos": "num.",
+     "example": {
+      "target": "El resultado es cero.",
+      "gloss": "The result is zero."
+     }
+    },
+    {
+     "id": "uno",
+     "hr": "uno",
+     "en": "one",
+     "pos": "num.",
+     "note": "shortens to un before a masculine singular noun, una before feminine: un libro, una casa",
+     "example": {
+      "target": "Quiero solo uno, gracias.",
+      "gloss": "I only want one, thanks."
+     }
+    },
+    {
+     "id": "dos",
+     "hr": "dos",
+     "en": "two",
+     "pos": "num.",
+     "example": {
+      "target": "Trabajo dos días a la semana.",
+      "gloss": "I work two days a week."
+     }
+    },
+    {
+     "id": "tres",
+     "hr": "tres",
+     "en": "three",
+     "pos": "num.",
+     "example": {
+      "target": "Hablo tres idiomas.",
+      "gloss": "I speak three languages."
+     }
+    },
+    {
+     "id": "cuatro",
+     "hr": "cuatro",
+     "en": "four",
+     "pos": "num.",
+     "example": {
+      "target": "Como cuatro veces al día.",
+      "gloss": "I eat four times a day."
+     }
+    },
+    {
+     "id": "cinco",
+     "hr": "cinco",
+     "en": "five",
+     "pos": "num.",
+     "example": {
+      "target": "Necesito cinco minutos, por favor.",
+      "gloss": "I need five minutes, please."
+     }
+    },
+    {
+     "id": "seis",
+     "hr": "seis",
+     "en": "six",
+     "pos": "num.",
+     "example": {
+      "target": "El tren llega a las seis.",
+      "gloss": "The train arrives at six."
+     }
+    },
+    {
+     "id": "siete",
+     "hr": "siete",
+     "en": "seven",
+     "pos": "num.",
+     "example": {
+      "target": "Trabajo siete horas cada día.",
+      "gloss": "I work seven hours every day."
+     }
+    },
+    {
+     "id": "ocho",
+     "hr": "ocho",
+     "en": "eight",
+     "pos": "num.",
+     "example": {
+      "target": "Estudio ocho horas a la semana.",
+      "gloss": "I study eight hours a week."
+     }
+    },
+    {
+     "id": "nueve",
+     "hr": "nueve",
+     "en": "nine",
+     "pos": "num.",
+     "example": {
+      "target": "La tienda abre a las nueve.",
+      "gloss": "The shop opens at nine."
+     }
+    },
+    {
+     "id": "diez",
+     "hr": "diez",
+     "en": "ten",
+     "pos": "num.",
+     "example": {
+      "target": "Cuento hasta diez.",
+      "gloss": "I count to ten."
+     }
+    },
+    {
+     "id": "veinte",
+     "hr": "veinte",
+     "en": "twenty",
+     "pos": "num.",
+     "note": "numbers 21 to 29 attach directly: veintiuno, veintidós, and so on",
+     "example": {
+      "target": "Tengo veinte años.",
+      "gloss": "I am twenty years old."
+     }
+    },
+    {
+     "id": "treinta",
+     "hr": "treinta",
+     "en": "thirty",
+     "pos": "num.",
+     "note": "from treinta y uno onward, tens and units are written as separate words: treinta y uno, treinta y dos",
+     "example": {
+      "target": "Necesito treinta minutos más.",
+      "gloss": "I need thirty more minutes."
+     }
+    },
+    {
+     "id": "cuarenta",
+     "hr": "cuarenta",
+     "en": "forty",
+     "pos": "num.",
+     "example": {
+      "target": "Vivimos a cuarenta kilómetros de Madrid.",
+      "gloss": "We live forty kilometres from Madrid."
+     }
+    },
+    {
+     "id": "cincuenta",
+     "hr": "cincuenta",
+     "en": "fifty",
+     "pos": "num.",
+     "example": {
+      "target": "Trabajo cincuenta horas al mes.",
+      "gloss": "I work fifty hours a month."
+     }
+    },
+    {
+     "id": "sesenta",
+     "hr": "sesenta",
+     "en": "sixty",
+     "pos": "num.",
+     "example": {
+      "target": "Hay sesenta minutos en una hora.",
+      "gloss": "There are sixty minutes in an hour."
+     }
+    },
+    {
+     "id": "setenta",
+     "hr": "setenta",
+     "en": "seventy",
+     "pos": "num.",
+     "example": {
+      "target": "El curso dura setenta horas.",
+      "gloss": "The course lasts seventy hours."
+     }
+    },
+    {
+     "id": "ochenta",
+     "hr": "ochenta",
+     "en": "eighty",
+     "pos": "num.",
+     "example": {
+      "target": "Necesito ochenta euros.",
+      "gloss": "I need eighty euros."
+     }
+    },
+    {
+     "id": "noventa",
+     "hr": "noventa",
+     "en": "ninety",
+     "pos": "num.",
+     "example": {
+      "target": "Tengo noventa páginas para leer.",
+      "gloss": "I have ninety pages to read."
+     }
+    },
+    {
+     "id": "cien",
+     "hr": "cien",
+     "en": "hundred",
+     "pos": "num.",
+     "note": "shortened form of ciento, used alone and directly before a noun: cien euros; ciento reappears from ciento uno onward",
+     "example": {
+      "target": "El examen tiene cien preguntas.",
+      "gloss": "The exam has a hundred questions."
+     }
+    },
+    {
+     "id": "lunes",
+     "hr": "lunes",
+     "en": "Monday",
+     "pos": "n. m.",
+     "note": "invariable in the plural: el lunes, los lunes",
+     "example": {
+      "target": "Los lunes trabajo desde casa.",
+      "gloss": "On Mondays I work from home."
+     }
+    },
+    {
+     "id": "martes",
+     "hr": "martes",
+     "en": "Tuesday",
+     "pos": "n. m.",
+     "note": "invariable in the plural, like lunes",
+     "example": {
+      "target": "El martes tengo clase de español.",
+      "gloss": "On Tuesday I have Spanish class."
+     }
+    },
+    {
+     "id": "miércoles",
+     "hr": "miércoles",
+     "en": "Wednesday",
+     "pos": "n. m.",
+     "note": "invariable in the plural, like lunes",
+     "example": {
+      "target": "Miércoles es el día central de la semana.",
+      "gloss": "Wednesday is the middle day of the week."
+     }
+    },
+    {
+     "id": "jueves",
+     "hr": "jueves",
+     "en": "Thursday",
+     "pos": "n. m.",
+     "note": "invariable in the plural, like lunes",
+     "example": {
+      "target": "El jueves voy a Sevilla.",
+      "gloss": "On Thursday I'm going to Sevilla."
+     }
+    },
+    {
+     "id": "viernes",
+     "hr": "viernes",
+     "en": "Friday",
+     "pos": "n. m.",
+     "note": "invariable in the plural, like lunes",
+     "example": {
+      "target": "El viernes no trabajo.",
+      "gloss": "On Friday I don't work."
+     }
+    },
+    {
+     "id": "sábado",
+     "hr": "sábado",
+     "en": "Saturday",
+     "pos": "n. m.",
+     "note": "regular plural: sábados",
+     "example": {
+      "target": "El sábado descanso.",
+      "gloss": "On Saturday I rest."
+     }
+    },
+    {
+     "id": "domingo",
+     "hr": "domingo",
+     "en": "Sunday",
+     "pos": "n. m.",
+     "note": "regular plural: domingos",
+     "example": {
+      "target": "Los domingos no trabajo.",
+      "gloss": "On Sundays I don't work."
+     }
+    },
+    {
+     "id": "enero",
+     "hr": "enero",
+     "en": "January",
+     "pos": "n. m.",
+     "note": "months are not capitalised in Spanish, unlike English",
+     "example": {
+      "target": "Enero es el primer mes del año.",
+      "gloss": "January is the first month of the year."
+     }
+    },
+    {
+     "id": "febrero",
+     "hr": "febrero",
+     "en": "February",
+     "pos": "n. m.",
+     "example": {
+      "target": "Febrero es un mes corto.",
+      "gloss": "February is a short month."
+     }
+    },
+    {
+     "id": "marzo",
+     "hr": "marzo",
+     "en": "March",
+     "pos": "n. m.",
+     "example": {
+      "target": "Marzo tiene treinta y un días.",
+      "gloss": "March has thirty one days."
+     }
+    },
+    {
+     "id": "abril",
+     "hr": "abril",
+     "en": "April",
+     "pos": "n. m.",
+     "example": {
+      "target": "Abril tiene treinta días.",
+      "gloss": "April has thirty days."
+     }
+    },
+    {
+     "id": "mayo",
+     "hr": "mayo",
+     "en": "May",
+     "pos": "n. m.",
+     "example": {
+      "target": "Mayo es un buen mes para viajar.",
+      "gloss": "May is a good month to travel."
+     }
+    },
+    {
+     "id": "junio",
+     "hr": "junio",
+     "en": "June",
+     "pos": "n. m.",
+     "example": {
+      "target": "En junio termina el curso.",
+      "gloss": "The course ends in June."
+     }
+    },
+    {
+     "id": "julio",
+     "hr": "julio",
+     "en": "July",
+     "pos": "n. m.",
+     "example": {
+      "target": "Julio es un mes de calor en Sevilla.",
+      "gloss": "July is a hot month in Sevilla."
+     }
+    },
+    {
+     "id": "agosto",
+     "hr": "agosto",
+     "en": "August",
+     "pos": "n. m.",
+     "example": {
+      "target": "En agosto voy a la playa.",
+      "gloss": "In August I go to the beach."
+     }
+    },
+    {
+     "id": "septiembre",
+     "hr": "septiembre",
+     "en": "September",
+     "pos": "n. m.",
+     "example": {
+      "target": "En septiembre empiezan las clases.",
+      "gloss": "Classes start in September."
+     }
+    },
+    {
+     "id": "octubre",
+     "hr": "octubre",
+     "en": "October",
+     "pos": "n. m.",
+     "example": {
+      "target": "Octubre es un mes tranquilo.",
+      "gloss": "October is a quiet month."
+     }
+    },
+    {
+     "id": "noviembre",
+     "hr": "noviembre",
+     "en": "November",
+     "pos": "n. m.",
+     "example": {
+      "target": "Noviembre es el mes número once del año.",
+      "gloss": "November is the eleventh month of the year."
+     }
+    },
+    {
+     "id": "diciembre",
+     "hr": "diciembre",
+     "en": "December",
+     "pos": "n. m.",
+     "example": {
+      "target": "Diciembre es el último mes del año.",
+      "gloss": "December is the last month of the year."
+     }
+    },
+    {
+     "id": "hoy",
+     "hr": "hoy",
+     "en": "today",
+     "pos": "adv.",
+     "example": {
+      "target": "Hoy es lunes.",
+      "gloss": "Today is Monday."
+     }
+    },
+    {
+     "id": "mañana",
+     "hr": "mañana",
+     "en": "tomorrow",
+     "pos": "adv.",
+     "note": "also means morning as a noun, la mañana; here it is the adverb for tomorrow",
+     "example": {
+      "target": "Mañana estudio para el examen.",
+      "gloss": "Tomorrow I study for the exam."
+     }
+    },
+    {
+     "id": "ayer",
+     "hr": "ayer",
+     "en": "yesterday",
+     "pos": "adv.",
+     "example": {
+      "target": "Ayer es el pasado, hoy es el presente.",
+      "gloss": "Yesterday is the past, today is the present."
+     }
+    },
+    {
+     "id": "ahora",
+     "hr": "ahora",
+     "en": "now",
+     "pos": "adv.",
+     "example": {
+      "target": "Ahora vivo en Madrid.",
+      "gloss": "Now I live in Madrid."
+     }
+    },
+    {
+     "id": "siempre",
+     "hr": "siempre",
+     "en": "always",
+     "pos": "adv.",
+     "example": {
+      "target": "Siempre trabajo los lunes.",
+      "gloss": "I always work on Mondays."
+     }
+    },
+    {
+     "id": "nunca",
+     "hr": "nunca",
+     "en": "never",
+     "pos": "adv.",
+     "note": "no is not needed before the verb when nunca comes first: nunca llego tarde",
+     "example": {
+      "target": "Nunca llego tarde.",
+      "gloss": "I never arrive late."
+     }
+    },
+    {
+     "id": "tarde",
+     "hr": "tarde",
+     "en": "late; afternoon",
+     "pos": "adv.",
+     "note": "also a feminine noun for afternoon, seen in buenas tardes",
+     "example": {
+      "target": "Como tarde los viernes.",
+      "gloss": "I eat late on Fridays."
+     }
+    },
+    {
+     "id": "temprano",
+     "hr": "temprano",
+     "en": "early",
+     "pos": "adv.",
+     "example": {
+      "target": "Trabajo temprano los martes.",
+      "gloss": "I work early on Tuesdays."
+     }
+    },
+    {
+     "id": "en",
+     "hr": "en",
+     "en": "in, on, at",
+     "pos": "prep.",
+     "example": {
+      "target": "Vivo en Madrid.",
+      "gloss": "I live in Madrid."
+     }
+    },
+    {
+     "id": "a",
+     "hr": "a",
+     "en": "to, at",
+     "pos": "prep.",
+     "example": {
+      "target": "Voy a Sevilla.",
+      "gloss": "I'm going to Sevilla."
+     }
+    },
+    {
+     "id": "de",
+     "hr": "de",
+     "en": "of, from",
+     "pos": "prep.",
+     "example": {
+      "target": "Soy de España.",
+      "gloss": "I am from Spain."
+     }
+    },
+    {
+     "id": "con",
+     "hr": "con",
+     "en": "with",
+     "pos": "prep.",
+     "example": {
+      "target": "Estudio con mucho interés.",
+      "gloss": "I study with great interest."
+     }
+    },
+    {
+     "id": "sin",
+     "hr": "sin",
+     "en": "without",
+     "pos": "prep.",
+     "example": {
+      "target": "Trabajo sin problemas.",
+      "gloss": "I work without problems."
+     }
+    },
+    {
+     "id": "para",
+     "hr": "para",
+     "en": "for, in order to",
+     "pos": "prep.",
+     "note": "expresses purpose or destination; contrast with por",
+     "example": {
+      "target": "Estudio para el examen.",
+      "gloss": "I study for the exam."
+     }
+    },
+    {
+     "id": "por",
+     "hr": "por",
+     "en": "for, because of, through",
+     "pos": "prep.",
+     "note": "expresses cause, means, or duration; contrast with para",
+     "example": {
+      "target": "Viajo por trabajo.",
+      "gloss": "I travel for work."
+     }
+    },
+    {
+     "id": "sobre",
+     "hr": "sobre",
+     "en": "about, on top of",
+     "pos": "prep.",
+     "example": {
+      "target": "Hablamos sobre el examen.",
+      "gloss": "We talk about the exam."
+     }
+    },
+    {
+     "id": "entre",
+     "hr": "entre",
+     "en": "between, among",
+     "pos": "prep.",
+     "example": {
+      "target": "Vivo entre Madrid y Toledo.",
+      "gloss": "I live between Madrid and Toledo."
+     }
+    },
+    {
+     "id": "y",
+     "hr": "y",
+     "en": "and",
+     "pos": "conj.",
+     "note": "becomes e before a word starting with i or hi sound",
+     "example": {
+      "target": "Hablo español y francés.",
+      "gloss": "I speak Spanish and French."
+     }
+    },
+    {
+     "id": "o",
+     "hr": "o",
+     "en": "or",
+     "pos": "conj.",
+     "note": "becomes u before a word starting with o or ho sound",
+     "example": {
+      "target": "¿Té o café?",
+      "gloss": "Tea or coffee?"
+     }
+    },
+    {
+     "id": "pero",
+     "hr": "pero",
+     "en": "but",
+     "pos": "conj.",
+     "example": {
+      "target": "Hablo inglés, pero prefiero el español.",
+      "gloss": "I speak English, but I prefer Spanish."
+     }
+    },
+    {
+     "id": "porque",
+     "hr": "porque",
+     "en": "because",
+     "pos": "conj.",
+     "note": "one word with no accent, unlike the question word por qué",
+     "example": {
+      "target": "Estudio español porque quiero vivir en España.",
+      "gloss": "I study Spanish because I want to live in Spain."
+     }
+    },
+    {
+     "id": "también",
+     "hr": "también",
+     "en": "also, too",
+     "pos": "adv.",
+     "example": {
+      "target": "Hablo francés y también hablo alemán.",
+      "gloss": "I speak French and I also speak German."
+     }
+    },
+    {
+     "id": "tampoco",
+     "hr": "tampoco",
+     "en": "neither, not either",
+     "pos": "adv.",
+     "example": {
+      "target": "No trabajo hoy, y tampoco trabajo mañana.",
+      "gloss": "I don't work today, and I don't work tomorrow either."
+     }
+    },
+    {
+     "id": "muy",
+     "hr": "muy",
+     "en": "very",
+     "pos": "adv.",
+     "note": "used before an adjective or adverb; before a noun, use mucho instead",
+     "example": {
+      "target": "Estoy muy bien, gracias.",
+      "gloss": "I'm very well, thank you."
+     }
+    },
+    {
+     "id": "mucho",
+     "hr": "mucho",
+     "en": "a lot, much",
+     "pos": "adv.",
+     "note": "agrees as an adjective: mucha, muchos, muchas, as in muchas gracias",
+     "example": {
+      "target": "Necesito mucho tiempo para esto.",
+      "gloss": "I need a lot of time for this."
+     }
+    },
+    {
+     "id": "poco",
+     "hr": "poco",
+     "en": "a little, few",
+     "pos": "adv.",
+     "note": "agrees as an adjective: poca, pocos, pocas",
+     "example": {
+      "target": "Hablo un poco de español.",
+      "gloss": "I speak a little Spanish."
+     }
+    },
+    {
+     "id": "más",
+     "hr": "más",
+     "en": "more",
+     "pos": "adv.",
+     "example": {
+      "target": "Quiero más tiempo, por favor.",
+      "gloss": "I want more time, please."
+     }
+    },
+    {
+     "id": "menos",
+     "hr": "menos",
+     "en": "less",
+     "pos": "adv.",
+     "example": {
+      "target": "Trabajo menos los sábados.",
+      "gloss": "I work less on Saturdays."
+     }
+    },
+    {
+     "id": "ser",
+     "hr": "ser",
+     "en": "to be (essential, permanent)",
+     "pos": "v.",
+     "note": "irregular: soy, eres, es, somos, sois, son",
+     "example": {
+      "target": "Soy de Madrid.",
+      "gloss": "I am from Madrid."
+     }
+    },
+    {
+     "id": "estar",
+     "hr": "estar",
+     "en": "to be (state, location)",
+     "pos": "v.",
+     "note": "irregular: estoy, estás, está, estamos, estáis, están",
+     "example": {
+      "target": "Estoy en casa ahora.",
+      "gloss": "I am at home now."
+     }
+    },
+    {
+     "id": "hay",
+     "hr": "hay",
+     "en": "there is, there are",
+     "pos": "v.",
+     "note": "impersonal form of haber, invariable for singular and plural: hay un libro, hay dos libros",
+     "example": {
+      "target": "Hay treinta días en abril.",
+      "gloss": "There are thirty days in April."
+     }
+    },
+    {
+     "id": "tener",
+     "hr": "tener",
+     "en": "to have",
+     "pos": "v.",
+     "note": "e>ie and irregular yo-form: tengo, tienes, tiene; tener + años expresses age",
+     "example": {
+      "target": "Tengo treinta años.",
+      "gloss": "I am thirty years old."
+     }
+    },
+    {
+     "id": "ir",
+     "hr": "ir",
+     "en": "to go",
+     "pos": "v.",
+     "note": "very irregular: voy, vas, va, vamos, vais, van; ir a + infinitivo expresses the near future",
+     "example": {
+      "target": "Voy a estudiar español.",
+      "gloss": "I am going to study Spanish."
+     }
+    },
+    {
+     "id": "hacer",
+     "hr": "hacer",
+     "en": "to do, to make",
+     "pos": "v.",
+     "note": "irregular yo-form: hago; hace + time expresses weather or duration",
+     "example": {
+      "target": "Hago mucho ejercicio los sábados.",
+      "gloss": "I exercise a lot on Saturdays."
+     }
+    },
+    {
+     "id": "poder",
+     "hr": "poder",
+     "en": "can, to be able to",
+     "pos": "v.",
+     "note": "o>ue: puedo, puedes, puede",
+     "example": {
+      "target": "No puedo hablar ahora.",
+      "gloss": "I can't talk now."
+     }
+    },
+    {
+     "id": "querer",
+     "hr": "querer",
+     "en": "to want, to love",
+     "pos": "v.",
+     "note": "e>ie: quiero, quieres, quiere",
+     "example": {
+      "target": "Quiero vivir en España.",
+      "gloss": "I want to live in Spain."
+     }
+    },
+    {
+     "id": "saber",
+     "hr": "saber",
+     "en": "to know (facts, how to)",
+     "pos": "v.",
+     "note": "irregular yo-form: sé; saber + infinitivo means to know how to",
+     "example": {
+      "target": "Sé hablar tres idiomas.",
+      "gloss": "I know how to speak three languages."
+     }
+    },
+    {
+     "id": "ver",
+     "hr": "ver",
+     "en": "to see",
+     "pos": "v.",
+     "note": "irregular yo-form: veo",
+     "example": {
+      "target": "Veo bien desde aquí.",
+      "gloss": "I see well from here."
+     }
+    },
+    {
+     "id": "dar",
+     "hr": "dar",
+     "en": "to give",
+     "pos": "v.",
+     "note": "irregular yo-form: doy",
+     "example": {
+      "target": "Doy gracias por tu ayuda.",
+      "gloss": "I give thanks for your help."
+     }
+    },
+    {
+     "id": "decir",
+     "hr": "decir",
+     "en": "to say, to tell",
+     "pos": "v.",
+     "note": "e>i and irregular yo-form: digo, dices, dice",
+     "example": {
+      "target": "Digo la verdad siempre.",
+      "gloss": "I always tell the truth."
+     }
+    },
+    {
+     "id": "venir",
+     "hr": "venir",
+     "en": "to come",
+     "pos": "v.",
+     "note": "e>ie and irregular yo-form: vengo, vienes, viene",
+     "example": {
+      "target": "Vengo de Sevilla.",
+      "gloss": "I come from Sevilla."
+     }
+    },
+    {
+     "id": "hablar",
+     "hr": "hablar",
+     "en": "to speak",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Hablo bien el español.",
+      "gloss": "I speak Spanish well."
+     }
+    },
+    {
+     "id": "vivir",
+     "hr": "vivir",
+     "en": "to live",
+     "pos": "v.",
+     "note": "regular -ir verb",
+     "example": {
+      "target": "Vivo cerca del centro.",
+      "gloss": "I live near downtown."
+     }
+    },
+    {
+     "id": "comer",
+     "hr": "comer",
+     "en": "to eat",
+     "pos": "v.",
+     "note": "regular -er verb",
+     "example": {
+      "target": "Como a las dos.",
+      "gloss": "I eat at two."
+     }
+    },
+    {
+     "id": "beber",
+     "hr": "beber",
+     "en": "to drink",
+     "pos": "v.",
+     "note": "regular -er verb",
+     "example": {
+      "target": "Bebo poco por la mañana.",
+      "gloss": "I drink little in the morning."
+     }
+    },
+    {
+     "id": "trabajar",
+     "hr": "trabajar",
+     "en": "to work",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Trabajo en el centro de la ciudad.",
+      "gloss": "I work downtown."
+     }
+    },
+    {
+     "id": "estudiar",
+     "hr": "estudiar",
+     "en": "to study",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Estudio en la universidad.",
+      "gloss": "I study at university."
+     }
+    },
+    {
+     "id": "necesitar",
+     "hr": "necesitar",
+     "en": "to need",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Necesito estudiar más.",
+      "gloss": "I need to study more."
+     }
+    },
+    {
+     "id": "llamarse",
+     "hr": "llamarse",
+     "en": "to be called, to be named",
+     "pos": "v.",
+     "note": "reflexive: me llamo, te llamas, se llama; used to give or ask a name",
+     "example": {
+      "target": "Me llamo Ana y vivo en Madrid.",
+      "gloss": "My name is Ana and I live in Madrid."
+     }
+    },
+    {
+     "id": "once",
+     "hr": "once",
+     "en": "eleven",
+     "pos": "num.",
+     "example": {
+      "target": "Tengo once años.",
+      "gloss": "I am eleven years old."
+     }
+    },
+    {
+     "id": "doce",
+     "hr": "doce",
+     "en": "twelve",
+     "pos": "num.",
+     "example": {
+      "target": "El año tiene doce meses.",
+      "gloss": "The year has twelve months."
+     }
+    },
+    {
+     "id": "trece",
+     "hr": "trece",
+     "en": "thirteen",
+     "pos": "num.",
+     "example": {
+      "target": "Mi prima tiene trece años.",
+      "gloss": "My cousin is thirteen years old."
+     }
+    },
+    {
+     "id": "catorce",
+     "hr": "catorce",
+     "en": "fourteen",
+     "pos": "num.",
+     "example": {
+      "target": "Trabajo catorce días al mes.",
+      "gloss": "I work fourteen days a month."
+     }
+    },
+    {
+     "id": "quince",
+     "hr": "quince",
+     "en": "fifteen",
+     "pos": "num.",
+     "example": {
+      "target": "Necesito quince minutos más.",
+      "gloss": "I need fifteen more minutes."
+     }
+    },
+    {
+     "id": "dieciséis",
+     "hr": "dieciséis",
+     "en": "sixteen",
+     "pos": "num.",
+     "note": "the only dieci- teen that keeps a written accent, unlike diecisiete, dieciocho and diecinueve",
+     "example": {
+      "target": "Mi sobrino cumple dieciséis años.",
+      "gloss": "My nephew is turning sixteen."
+     }
+    },
+    {
+     "id": "diecisiete",
+     "hr": "diecisiete",
+     "en": "seventeen",
+     "pos": "num.",
+     "example": {
+      "target": "Ella tiene diecisiete años.",
+      "gloss": "She is seventeen years old."
+     }
+    },
+    {
+     "id": "dieciocho",
+     "hr": "dieciocho",
+     "en": "eighteen",
+     "pos": "num.",
+     "example": {
+      "target": "Con dieciocho años ya puedo votar.",
+      "gloss": "At eighteen I can already vote."
+     }
+    },
+    {
+     "id": "diecinueve",
+     "hr": "diecinueve",
+     "en": "nineteen",
+     "pos": "num.",
+     "example": {
+      "target": "Mi hermano tiene diecinueve años.",
+      "gloss": "My brother is nineteen years old."
+     }
+    },
+    {
+     "id": "mil",
+     "hr": "mil",
+     "en": "thousand",
+     "pos": "num.",
+     "note": "invariable and never takes un before it: mil euros, not un mil euros",
+     "example": {
+      "target": "El coche cuesta mil euros.",
+      "gloss": "The car costs a thousand euros."
+     }
+    },
+    {
+     "id": "millón",
+     "hr": "millón",
+     "en": "million",
+     "pos": "num.",
+     "note": "takes de before the following noun and pluralizes: un millón de personas, dos millones de euros",
+     "example": {
+      "target": "Esta ciudad tiene un millón de personas.",
+      "gloss": "This city has a million people."
+     }
+    },
+    {
+     "id": "el día",
+     "hr": "el día",
+     "en": "day",
+     "pos": "n. m.",
+     "note": "masculine despite ending in -a; pl. los días",
+     "example": {
+      "target": "Hoy es un día muy bonito.",
+      "gloss": "Today is a very nice day."
+     }
+    },
+    {
+     "id": "la semana",
+     "hr": "la semana",
+     "en": "week",
+     "pos": "n. f.",
+     "example": {
+      "target": "Trabajo cinco días a la semana.",
+      "gloss": "I work five days a week."
+     }
+    },
+    {
+     "id": "el mes",
+     "hr": "el mes",
+     "en": "month",
+     "pos": "n. m.",
+     "note": "pl. los meses",
+     "example": {
+      "target": "Trabajo veinte días al mes.",
+      "gloss": "I work twenty days a month."
+     }
+    },
+    {
+     "id": "el año",
+     "hr": "el año",
+     "en": "year",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este año voy a viajar mucho.",
+      "gloss": "This year I am going to travel a lot."
+     }
+    },
+    {
+     "id": "la hora",
+     "hr": "la hora",
+     "en": "hour, time (clock)",
+     "pos": "n. f.",
+     "note": "used to ask the time: ¿qué hora es?",
+     "example": {
+      "target": "¿Qué hora es ahora?",
+      "gloss": "What time is it now?"
+     }
+    },
+    {
+     "id": "el minuto",
+     "hr": "el minuto",
+     "en": "minute",
+     "pos": "n. m.",
+     "example": {
+      "target": "Espero cinco minutos en la parada.",
+      "gloss": "I wait five minutes at the stop."
+     }
+    },
+    {
+     "id": "el momento",
+     "hr": "el momento",
+     "en": "moment",
+     "pos": "n. m.",
+     "note": "un momento is a common way to ask someone to wait",
+     "example": {
+      "target": "Un momento, por favor.",
+      "gloss": "One moment, please."
+     }
+    },
+    {
+     "id": "el tiempo",
+     "hr": "el tiempo",
+     "en": "time",
+     "pos": "n. m.",
+     "note": "also means weather in other contexts: hace buen tiempo",
+     "example": {
+      "target": "No tengo mucho tiempo hoy.",
+      "gloss": "I don't have much time today."
+     }
+    },
+    {
+     "id": "la noche",
+     "hr": "la noche",
+     "en": "night",
+     "pos": "n. f.",
+     "example": {
+      "target": "Trabajo por la noche los martes.",
+      "gloss": "I work at night on Tuesdays."
+     }
+    },
+    {
+     "id": "aquí",
+     "hr": "aquí",
+     "en": "here",
+     "pos": "adv.",
+     "example": {
+      "target": "Vivo aquí desde hace dos años.",
+      "gloss": "I have lived here for two years."
+     }
+    },
+    {
+     "id": "allí",
+     "hr": "allí",
+     "en": "there",
+     "pos": "adv.",
+     "example": {
+      "target": "Mi oficina está allí, al lado del banco.",
+      "gloss": "My office is there, next to the bank."
+     }
+    },
+    {
+     "id": "acá",
+     "hr": "acá",
+     "en": "here (this way)",
+     "pos": "adv.",
+     "note": "similar to aquí, common in phrases like ven acá, come here",
+     "example": {
+      "target": "Ven acá un momento.",
+      "gloss": "Come here for a moment."
+     }
+    },
+    {
+     "id": "allá",
+     "hr": "allá",
+     "en": "over there",
+     "pos": "adv.",
+     "note": "farther or vaguer than allí",
+     "example": {
+      "target": "Mis primos viven allá, en el norte.",
+      "gloss": "My cousins live over there, in the north."
+     }
+    },
+    {
+     "id": "bueno",
+     "hr": "bueno",
+     "en": "good",
+     "pos": "adj.",
+     "note": "shortens to buen before a masculine singular noun: un buen día; f. buena",
+     "example": {
+      "target": "Este restaurante es muy bueno.",
+      "gloss": "This restaurant is very good."
+     }
+    },
+    {
+     "id": "malo",
+     "hr": "malo",
+     "en": "bad",
+     "pos": "adj.",
+     "note": "shortens to mal before a masculine singular noun: un mal día; f. mala",
+     "example": {
+      "target": "Este libro es malo.",
+      "gloss": "This book is bad."
+     }
+    },
+    {
+     "id": "fácil",
+     "hr": "fácil",
+     "en": "easy",
+     "pos": "adj.",
+     "note": "same form for m./f.; carries a written accent",
+     "example": {
+      "target": "El examen de hoy es fácil.",
+      "gloss": "Today's exam is easy."
+     }
+    },
+    {
+     "id": "difícil",
+     "hr": "difícil",
+     "en": "difficult",
+     "pos": "adj.",
+     "note": "same form for m./f.; carries a written accent",
+     "example": {
+      "target": "Este ejercicio es difícil para mí.",
+      "gloss": "This exercise is difficult for me."
+     }
+    },
+    {
+     "id": "interesante",
+     "hr": "interesante",
+     "en": "interesting",
+     "pos": "adj.",
+     "note": "same form for m./f.",
+     "example": {
+      "target": "Esta película es muy interesante.",
+      "gloss": "This movie is very interesting."
+     }
+    },
+    {
+     "id": "la vida",
+     "hr": "la vida",
+     "en": "life",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi vida en Madrid es muy tranquila.",
+      "gloss": "My life in Madrid is very calm."
+     }
+    },
+    {
+     "id": "la verdad",
+     "hr": "la verdad",
+     "en": "truth",
+     "pos": "n. f.",
+     "example": {
+      "target": "Siempre digo la verdad.",
+      "gloss": "I always tell the truth."
+     }
+    },
+    {
+     "id": "la palabra",
+     "hr": "la palabra",
+     "en": "word",
+     "pos": "n. f.",
+     "example": {
+      "target": "No entiendo esta palabra.",
+      "gloss": "I don't understand this word."
+     }
+    },
+    {
+     "id": "el problema",
+     "hr": "el problema",
+     "en": "problem",
+     "pos": "n. m.",
+     "note": "masculine despite ending in -a, like el día and el mapa",
+     "example": {
+      "target": "Tengo un problema con mi ordenador.",
+      "gloss": "I have a problem with my computer."
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1553 @@
+{
+ "packs": [
+  {
+   "id": "es-b1-housing-civic",
+   "title": "Housing, services, paperwork and civic life",
+   "level": "B1",
+   "sources": [
+    "freq-es"
+   ],
+   "words": [
+    {
+     "id": "el alquiler",
+     "hr": "el alquiler",
+     "en": "rent",
+     "pos": "n. m.",
+     "example": {
+      "target": "El alquiler de este piso ha subido mucho este año.",
+      "gloss": "The rent on this flat has gone up a lot this year."
+     }
+    },
+    {
+     "id": "el inquilino",
+     "hr": "el inquilino",
+     "en": "tenant",
+     "pos": "n. m.",
+     "note": "fem. la inquilina",
+     "example": {
+      "target": "El inquilino tiene que avisar al casero si hay una avería.",
+      "gloss": "The tenant has to inform the landlord if there is a breakdown."
+     }
+    },
+    {
+     "id": "el propietario",
+     "hr": "el propietario",
+     "en": "owner",
+     "pos": "n. m.",
+     "note": "fem. la propietaria",
+     "example": {
+      "target": "El propietario del piso vive en otra ciudad.",
+      "gloss": "The owner of the flat lives in another city."
+     }
+    },
+    {
+     "id": "el casero",
+     "hr": "el casero",
+     "en": "landlord",
+     "pos": "n. m.",
+     "note": "fem. la casera; more informal than 'propietario'",
+     "example": {
+      "target": "Mi casero es muy simpático y siempre responde rápido.",
+      "gloss": "My landlord is very nice and always responds quickly."
+     }
+    },
+    {
+     "id": "la fianza",
+     "hr": "la fianza",
+     "en": "deposit",
+     "pos": "n. f.",
+     "example": {
+      "target": "Al firmar el contrato, pagamos una fianza como garantía.",
+      "gloss": "When signing the contract, we paid a deposit as a guarantee."
+     }
+    },
+    {
+     "id": "el contrato de alquiler",
+     "hr": "el contrato de alquiler",
+     "en": "rental agreement, lease",
+     "pos": "n. m.",
+     "example": {
+      "target": "Antes de mudarnos, leímos el contrato de alquiler con mucho cuidado.",
+      "gloss": "Before moving in, we read the rental agreement very carefully."
+     }
+    },
+    {
+     "id": "la comunidad de vecinos",
+     "hr": "la comunidad de vecinos",
+     "en": "residents' association",
+     "pos": "n. f.",
+     "example": {
+      "target": "La comunidad de vecinos ha decidido arreglar el tejado este verano.",
+      "gloss": "The residents' association has decided to fix the roof this summer."
+     }
+    },
+    {
+     "id": "la reforma",
+     "hr": "la reforma",
+     "en": "renovation",
+     "pos": "n. f.",
+     "example": {
+      "target": "La reforma de la cocina va a durar tres semanas.",
+      "gloss": "The kitchen renovation is going to last three weeks."
+     }
+    },
+    {
+     "id": "la instalación",
+     "hr": "la instalación",
+     "en": "installation, fitting",
+     "pos": "n. f.",
+     "example": {
+      "target": "La instalación eléctrica del piso es bastante antigua.",
+      "gloss": "The flat's electrical wiring is quite old."
+     }
+    },
+    {
+     "id": "la calefacción",
+     "hr": "la calefacción",
+     "en": "heating",
+     "pos": "n. f.",
+     "example": {
+      "target": "En invierno ponemos la calefacción por la noche.",
+      "gloss": "In winter we turn on the heating at night."
+     }
+    },
+    {
+     "id": "el aire acondicionado",
+     "hr": "el aire acondicionado",
+     "en": "air conditioning",
+     "pos": "n. m.",
+     "example": {
+      "target": "El piso tiene aire acondicionado en todas las habitaciones.",
+      "gloss": "The flat has air conditioning in every room."
+     }
+    },
+    {
+     "id": "el aislamiento",
+     "hr": "el aislamiento",
+     "en": "insulation",
+     "pos": "n. m.",
+     "example": {
+      "target": "Un buen aislamiento reduce el consumo de calefacción.",
+      "gloss": "Good insulation reduces heating consumption."
+     }
+    },
+    {
+     "id": "la humedad",
+     "hr": "la humedad",
+     "en": "damp, humidity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hay mucha humedad en la pared del baño.",
+      "gloss": "There is a lot of damp on the bathroom wall."
+     }
+    },
+    {
+     "id": "la gotera",
+     "hr": "la gotera",
+     "en": "leak (in a roof or ceiling)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cuando llueve fuerte, aparece una gotera en el techo.",
+      "gloss": "When it rains hard, a leak appears in the ceiling."
+     }
+    },
+    {
+     "id": "la avería",
+     "hr": "la avería",
+     "en": "breakdown, fault",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hemos tenido una avería en la caldera esta semana.",
+      "gloss": "We've had a breakdown in the boiler this week."
+     }
+    },
+    {
+     "id": "el abastecimiento",
+     "hr": "el abastecimiento",
+     "en": "supply, provisioning (of a utility)",
+     "pos": "n. m.",
+     "note": "formal synonym of 'el suministro' for the utility supply",
+     "example": {
+      "target": "El abastecimiento de agua se cortó por unas horas debido a una avería.",
+      "gloss": "The water supply was cut off for a few hours due to a fault."
+     }
+    },
+    {
+     "id": "el contador",
+     "hr": "el contador",
+     "en": "meter (utility)",
+     "pos": "n. m.",
+     "example": {
+      "target": "El técnico vino a leer el contador de la luz.",
+      "gloss": "The technician came to read the electricity meter."
+     }
+    },
+    {
+     "id": "la lectura",
+     "hr": "la lectura",
+     "en": "meter reading",
+     "pos": "n. f.",
+     "note": "in this context, the periodic reading of the utility meter, not the general sense of reading a book",
+     "example": {
+      "target": "El técnico hace la lectura del contador una vez al mes.",
+      "gloss": "The technician takes the meter reading once a month."
+     }
+    },
+    {
+     "id": "la mudanza",
+     "hr": "la mudanza",
+     "en": "move, relocation (house)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mudanza está prevista para el sábado por la mañana.",
+      "gloss": "The move is planned for Saturday morning."
+     }
+    },
+    {
+     "id": "amueblado",
+     "hr": "amueblado",
+     "en": "furnished",
+     "pos": "adj.",
+     "example": {
+      "target": "Buscamos un piso amueblado porque no tenemos muebles.",
+      "gloss": "We are looking for a furnished flat because we don't have furniture."
+     }
+    },
+    {
+     "id": "luminoso",
+     "hr": "luminoso",
+     "en": "bright, light filled",
+     "pos": "adj.",
+     "example": {
+      "target": "El salón es muy luminoso porque tiene grandes ventanas.",
+      "gloss": "The living room is very bright because it has large windows."
+     }
+    },
+    {
+     "id": "espacioso",
+     "hr": "espacioso",
+     "en": "spacious",
+     "pos": "adj.",
+     "example": {
+      "target": "El dormitorio principal es espacioso y tiene mucho armario.",
+      "gloss": "The main bedroom is spacious and has a lot of wardrobe space."
+     }
+    },
+    {
+     "id": "céntrico",
+     "hr": "céntrico",
+     "en": "central, centrally located",
+     "pos": "adj.",
+     "example": {
+      "target": "Vivimos en un barrio muy céntrico, cerca de todo.",
+      "gloss": "We live in a very central neighborhood, close to everything."
+     }
+    },
+    {
+     "id": "ruidoso",
+     "hr": "ruidoso",
+     "en": "noisy",
+     "pos": "adj.",
+     "example": {
+      "target": "La calle es bastante ruidosa por el tráfico.",
+      "gloss": "The street is quite noisy because of the traffic."
+     }
+    },
+    {
+     "id": "reformado",
+     "hr": "reformado",
+     "en": "renovated",
+     "pos": "adj.",
+     "example": {
+      "target": "El piso está totalmente reformado y listo para entrar a vivir.",
+      "gloss": "The flat is fully renovated and ready to move into."
+     }
+    },
+    {
+     "id": "la vivienda",
+     "hr": "la vivienda",
+     "en": "housing, dwelling",
+     "pos": "n. f.",
+     "example": {
+      "target": "El precio de la vivienda ha subido mucho en la ciudad.",
+      "gloss": "The price of housing has risen a lot in the city."
+     }
+    },
+    {
+     "id": "la escritura",
+     "hr": "la escritura",
+     "en": "property deed, title deed",
+     "pos": "n. f.",
+     "example": {
+      "target": "Antes de comprar el piso, revisamos bien la escritura.",
+      "gloss": "Before buying the flat, we carefully checked the property deed."
+     }
+    },
+    {
+     "id": "el fontanero",
+     "hr": "el fontanero",
+     "en": "plumber",
+     "pos": "n. m.",
+     "note": "fem. la fontanera",
+     "example": {
+      "target": "Llamamos al fontanero porque el grifo pierde agua.",
+      "gloss": "We called the plumber because the tap is leaking."
+     }
+    },
+    {
+     "id": "el electricista",
+     "hr": "el electricista",
+     "en": "electrician",
+     "pos": "n. m./f.",
+     "note": "same form for both genders; only the article changes, el electricista / la electricista",
+     "example": {
+      "target": "El electricista revisó toda la instalación de la casa.",
+      "gloss": "The electrician checked all the wiring in the house."
+     }
+    },
+    {
+     "id": "la reparación",
+     "hr": "la reparación",
+     "en": "repair",
+     "pos": "n. f.",
+     "example": {
+      "target": "La reparación de la caldera va a costar bastante.",
+      "gloss": "Repairing the boiler is going to cost quite a lot."
+     }
+    },
+    {
+     "id": "la persiana",
+     "hr": "la persiana",
+     "en": "blind, roller shutter",
+     "pos": "n. f.",
+     "example": {
+      "target": "Bajamos la persiana para que no entre tanto sol.",
+      "gloss": "We lower the blind so that not so much sun comes in."
+     }
+    },
+    {
+     "id": "el portero automático",
+     "hr": "el portero automático",
+     "en": "intercom, entry phone",
+     "pos": "n. m.",
+     "example": {
+      "target": "El portero automático no funciona desde ayer.",
+      "gloss": "The intercom hasn't worked since yesterday."
+     }
+    },
+    {
+     "id": "el buzón",
+     "hr": "el buzón",
+     "en": "mailbox, letterbox",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cada piso tiene su propio buzón en el portal.",
+      "gloss": "Each flat has its own mailbox in the entrance hall."
+     }
+    },
+    {
+     "id": "el trastero",
+     "hr": "el trastero",
+     "en": "storage room (in a building)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Guardamos las maletas en el trastero del sótano.",
+      "gloss": "We keep the suitcases in the storage room in the basement."
+     }
+    },
+    {
+     "id": "la fachada",
+     "hr": "la fachada",
+     "en": "facade, front (of a building)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La comunidad va a pintar la fachada del edificio.",
+      "gloss": "The residents' association is going to paint the building's facade."
+     }
+    },
+    {
+     "id": "el desperfecto",
+     "hr": "el desperfecto",
+     "en": "damage, defect",
+     "pos": "n. m.",
+     "example": {
+      "target": "El inquilino debe informar de cualquier desperfecto en el piso.",
+      "gloss": "The tenant must report any damage in the flat."
+     }
+    },
+    {
+     "id": "el metro cuadrado",
+     "hr": "el metro cuadrado",
+     "en": "square meter",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este piso tiene setenta metros cuadrados.",
+      "gloss": "This flat is seventy square meters."
+     }
+    },
+    {
+     "id": "la superficie",
+     "hr": "la superficie",
+     "en": "surface area, floor area",
+     "pos": "n. f.",
+     "example": {
+      "target": "La superficie total de la vivienda es bastante grande.",
+      "gloss": "The dwelling's total floor area is quite large."
+     }
+    },
+    {
+     "id": "gotear",
+     "hr": "gotear",
+     "en": "to leak, to drip",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "El grifo de la cocina gotea desde hace días.",
+      "gloss": "The kitchen tap has been leaking for days."
+     }
+    },
+    {
+     "id": "estropearse",
+     "hr": "estropearse",
+     "en": "to break down, to stop working",
+     "pos": "v.",
+     "note": "pronominal verb, regular -ar",
+     "example": {
+      "target": "La lavadora se ha estropeado otra vez.",
+      "gloss": "The washing machine has broken down again."
+     }
+    },
+    {
+     "id": "reparar",
+     "hr": "reparar",
+     "en": "to repair, to fix",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "El técnico va a reparar la caldera mañana por la mañana.",
+      "gloss": "The technician is going to repair the boiler tomorrow morning."
+     }
+    },
+    {
+     "id": "la luz",
+     "hr": "la luz",
+     "en": "electricity, power supply",
+     "pos": "n. f.",
+     "note": "everyday word for the electricity supply, distinct from 'la electricidad'",
+     "example": {
+      "target": "Se ha ido la luz en todo el edificio.",
+      "gloss": "The power has gone out in the whole building."
+     }
+    },
+    {
+     "id": "el gas",
+     "hr": "el gas",
+     "en": "gas (utility)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Hay que revisar la instalación del gas cada cierto tiempo.",
+      "gloss": "The gas installation needs to be checked every so often."
+     }
+    },
+    {
+     "id": "el armario empotrado",
+     "hr": "el armario empotrado",
+     "en": "built in wardrobe",
+     "pos": "n. m.",
+     "example": {
+      "target": "El dormitorio tiene un armario empotrado muy grande.",
+      "gloss": "The bedroom has a very large built in wardrobe."
+     }
+    },
+    {
+     "id": "la plaza de garaje",
+     "hr": "la plaza de garaje",
+     "en": "parking space",
+     "pos": "n. f.",
+     "example": {
+      "target": "El piso se vende con una plaza de garaje incluida.",
+      "gloss": "The flat is sold with a parking space included."
+     }
+    },
+    {
+     "id": "la orientación",
+     "hr": "la orientación",
+     "en": "aspect, orientation (of a property)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La orientación sur hace que el piso sea muy luminoso.",
+      "gloss": "The south facing orientation makes the flat very bright."
+     }
+    },
+    {
+     "id": "exterior",
+     "hr": "exterior",
+     "en": "facing the street, exterior",
+     "pos": "adj.",
+     "example": {
+      "target": "Preferimos un piso exterior porque tiene más luz.",
+      "gloss": "We prefer a flat facing the street because it gets more light."
+     }
+    },
+    {
+     "id": "interior",
+     "hr": "interior",
+     "en": "facing the courtyard, interior",
+     "pos": "adj.",
+     "example": {
+      "target": "El piso interior es más barato pero más oscuro.",
+      "gloss": "The courtyard facing flat is cheaper but darker."
+     }
+    },
+    {
+     "id": "soleado",
+     "hr": "soleado",
+     "en": "sunny",
+     "pos": "adj.",
+     "example": {
+      "target": "La terraza es muy soleada por la tarde.",
+      "gloss": "The terrace gets a lot of sun in the afternoon."
+     }
+    },
+    {
+     "id": "el albañil",
+     "hr": "el albañil",
+     "en": "builder, construction worker",
+     "pos": "n. m.",
+     "note": "fem. la albañil (same form)",
+     "example": {
+      "target": "Los albañiles empezaron la obra la semana pasada.",
+      "gloss": "The builders started the construction work last week."
+     }
+    },
+    {
+     "id": "la licencia de obras",
+     "hr": "la licencia de obras",
+     "en": "building permit",
+     "pos": "n. f.",
+     "example": {
+      "target": "Antes de reformar, hay que pedir la licencia de obras al ayuntamiento.",
+      "gloss": "Before renovating, you have to apply for a building permit from the town hall."
+     }
+    },
+    {
+     "id": "el saneamiento",
+     "hr": "el saneamiento",
+     "en": "drainage system, plumbing system",
+     "pos": "n. m.",
+     "example": {
+      "target": "La instalación de saneamiento del edificio es de los años setenta.",
+      "gloss": "The building's drainage system dates from the seventies."
+     }
+    },
+    {
+     "id": "la carpintería",
+     "hr": "la carpintería",
+     "en": "woodwork, window and door frames",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vamos a cambiar la carpintería de las ventanas por unas más modernas.",
+      "gloss": "We are going to replace the window frames with more modern ones."
+     }
+    },
+    {
+     "id": "el trámite",
+     "hr": "el trámite",
+     "en": "procedure, formality",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este trámite requiere que aportes varios documentos.",
+      "gloss": "This procedure requires you to provide several documents."
+     }
+    },
+    {
+     "id": "el impreso",
+     "hr": "el impreso",
+     "en": "printed form",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tienes que rellenar el impreso a mano, no a ordenador.",
+      "gloss": "You have to fill in the form by hand, not on a computer."
+     }
+    },
+    {
+     "id": "el certificado",
+     "hr": "el certificado",
+     "en": "certificate",
+     "pos": "n. m.",
+     "example": {
+      "target": "El certificado solo es válido durante un tiempo limitado.",
+      "gloss": "The certificate is only valid for a limited time."
+     }
+    },
+    {
+     "id": "el justificante",
+     "hr": "el justificante",
+     "en": "proof, receipt (supporting document)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Guarda el justificante de pago por si lo necesitas más adelante.",
+      "gloss": "Keep the proof of payment in case you need it later."
+     }
+    },
+    {
+     "id": "el documento",
+     "hr": "el documento",
+     "en": "document",
+     "pos": "n. m.",
+     "example": {
+      "target": "Necesitas presentar un documento que acredite tu identidad.",
+      "gloss": "You need to present a document that proves your identity."
+     }
+    },
+    {
+     "id": "el expediente",
+     "hr": "el expediente",
+     "en": "file, case record",
+     "pos": "n. m.",
+     "example": {
+      "target": "Tu expediente está todavía en revisión.",
+      "gloss": "Your file is still under review."
+     }
+    },
+    {
+     "id": "la comprobación",
+     "hr": "la comprobación",
+     "en": "verification, check",
+     "pos": "n. f.",
+     "example": {
+      "target": "El organismo hace una comprobación antes de aceptar la solicitud.",
+      "gloss": "The agency carries out a verification before accepting the application."
+     }
+    },
+    {
+     "id": "el registro",
+     "hr": "el registro",
+     "en": "register, registry",
+     "pos": "n. m.",
+     "example": {
+      "target": "Este dato queda anotado en el registro correspondiente.",
+      "gloss": "This piece of information gets recorded in the corresponding register."
+     }
+    },
+    {
+     "id": "el padrón",
+     "hr": "el padrón",
+     "en": "municipal register of residents",
+     "pos": "n. m.",
+     "example": {
+      "target": "Debes actualizar el padrón cuando cambias de vivienda.",
+      "gloss": "You must update the municipal register when you change address."
+     }
+    },
+    {
+     "id": "la firma",
+     "hr": "la firma",
+     "en": "signature",
+     "pos": "n. f.",
+     "example": {
+      "target": "El documento no es válido sin tu firma.",
+      "gloss": "The document isn't valid without your signature."
+     }
+    },
+    {
+     "id": "el permiso",
+     "hr": "el permiso",
+     "en": "permit, permission",
+     "pos": "n. m.",
+     "example": {
+      "target": "Necesitas un permiso especial para hacer obras en la fachada.",
+      "gloss": "You need a special permit to do work on the facade."
+     }
+    },
+    {
+     "id": "la licencia",
+     "hr": "la licencia",
+     "en": "license",
+     "pos": "n. f.",
+     "example": {
+      "target": "Para abrir una tienda hace falta una licencia municipal.",
+      "gloss": "To open a shop you need a municipal license."
+     }
+    },
+    {
+     "id": "la normativa",
+     "hr": "la normativa",
+     "en": "regulations",
+     "pos": "n. f.",
+     "example": {
+      "target": "La normativa de la comunidad prohíbe hacer ruido por la noche.",
+      "gloss": "The building's regulations prohibit making noise at night."
+     }
+    },
+    {
+     "id": "el reglamento",
+     "hr": "el reglamento",
+     "en": "rulebook, set of rules",
+     "pos": "n. m.",
+     "example": {
+      "target": "El reglamento interno explica las normas de la piscina comunitaria.",
+      "gloss": "The internal rulebook explains the rules for the shared pool."
+     }
+    },
+    {
+     "id": "la ley",
+     "hr": "la ley",
+     "en": "law",
+     "pos": "n. f.",
+     "example": {
+      "target": "La ley protege los derechos del inquilino en varios aspectos.",
+      "gloss": "The law protects tenants' rights in several respects."
+     }
+    },
+    {
+     "id": "el derecho",
+     "hr": "el derecho",
+     "en": "right (legal, civic)",
+     "pos": "n. m.",
+     "example": {
+      "target": "Todo ciudadano tiene derecho a la educación.",
+      "gloss": "Every citizen has the right to education."
+     }
+    },
+    {
+     "id": "la obligación",
+     "hr": "la obligación",
+     "en": "obligation, duty",
+     "pos": "n. f.",
+     "example": {
+      "target": "Renovar el permiso a tiempo es una obligación del titular.",
+      "gloss": "Renewing the permit on time is the holder's obligation."
+     }
+    },
+    {
+     "id": "la denuncia",
+     "hr": "la denuncia",
+     "en": "formal complaint, report",
+     "pos": "n. f.",
+     "example": {
+      "target": "Decidieron presentar una denuncia por el ruido constante del vecino.",
+      "gloss": "They decided to file a complaint about the neighbor's constant noise."
+     }
+    },
+    {
+     "id": "el recurso",
+     "hr": "el recurso",
+     "en": "appeal, recourse",
+     "pos": "n. m.",
+     "example": {
+      "target": "Puedes presentar un recurso si no estás de acuerdo con la decisión.",
+      "gloss": "You can file an appeal if you disagree with the decision."
+     }
+    },
+    {
+     "id": "tramitar",
+     "hr": "tramitar",
+     "en": "to process, to handle (a procedure)",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Es necesario que tramites la solicitud antes de fin de mes.",
+      "gloss": "It's necessary that you process the application before the end of the month."
+     }
+    },
+    {
+     "id": "adjuntar",
+     "hr": "adjuntar",
+     "en": "to attach, to enclose (a document)",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Recuerda adjuntar una copia de tu documento de identidad.",
+      "gloss": "Remember to attach a copy of your ID document."
+     }
+    },
+    {
+     "id": "sellar",
+     "hr": "sellar",
+     "en": "to stamp (a document)",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "El funcionario selló el documento y me lo devolvió.",
+      "gloss": "The clerk stamped the document and gave it back to me."
+     }
+    },
+    {
+     "id": "prorrogar",
+     "hr": "prorrogar",
+     "en": "to extend (a deadline or permit)",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Puedes prorrogar el permiso si presentas la documentación necesaria.",
+      "gloss": "You can extend the permit if you submit the necessary documentation."
+     }
+    },
+    {
+     "id": "caducar",
+     "hr": "caducar",
+     "en": "to expire (documents, food)",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Mi permiso de residencia va a caducar pronto.",
+      "gloss": "My residency permit is going to expire soon."
+     }
+    },
+    {
+     "id": "expedir",
+     "hr": "expedir",
+     "en": "to issue (a document or certificate)",
+     "pos": "v.",
+     "note": "e>i: expido",
+     "example": {
+      "target": "El organismo expide el documento una vez comprobados los datos.",
+      "gloss": "The agency issues the document once the details have been verified."
+     }
+    },
+    {
+     "id": "acreditar",
+     "hr": "acreditar",
+     "en": "to prove, to certify formally",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Debes acreditar tu domicilio con un documento oficial.",
+      "gloss": "You must prove your address with an official document."
+     }
+    },
+    {
+     "id": "empadronarse",
+     "hr": "empadronarse",
+     "en": "to register with the local council as a resident",
+     "pos": "v.",
+     "note": "pronominal verb; governs 'en': empadronarse en",
+     "example": {
+      "target": "Es importante que te empadrones en el ayuntamiento al llegar a una ciudad nueva.",
+      "gloss": "It's important that you register with the town hall when you arrive in a new city."
+     }
+    },
+    {
+     "id": "el solicitante",
+     "hr": "el solicitante",
+     "en": "applicant",
+     "pos": "n. m./f.",
+     "note": "epicene, same form for both genders; only the article changes, el solicitante / la solicitante",
+     "example": {
+      "target": "El solicitante debe firmar todos los documentos.",
+      "gloss": "The applicant must sign all the documents."
+     }
+    },
+    {
+     "id": "el carné",
+     "hr": "el carné",
+     "en": "ID card, membership card",
+     "pos": "n. m.",
+     "example": {
+      "target": "He perdido el carné y tengo que pedir uno nuevo.",
+      "gloss": "I've lost my card and I have to request a new one."
+     }
+    },
+    {
+     "id": "la fecha límite",
+     "hr": "la fecha límite",
+     "en": "deadline",
+     "pos": "n. f.",
+     "example": {
+      "target": "La fecha límite para entregar la documentación es a final de mes.",
+      "gloss": "The deadline for submitting the documentation is at the end of the month."
+     }
+    },
+    {
+     "id": "la gestoría",
+     "hr": "la gestoría",
+     "en": "paperwork agency",
+     "pos": "n. f.",
+     "note": "a business that handles bureaucratic procedures for clients",
+     "example": {
+      "target": "Fuimos a una gestoría porque no entendíamos el formulario.",
+      "gloss": "We went to a paperwork agency because we didn't understand the form."
+     }
+    },
+    {
+     "id": "el gestor",
+     "hr": "el gestor",
+     "en": "agent, paperwork manager",
+     "pos": "n. m.",
+     "note": "fem. la gestora",
+     "example": {
+      "target": "Nuestro gestor se encarga de tramitar los permisos necesarios.",
+      "gloss": "Our agent takes care of processing the necessary permits."
+     }
+    },
+    {
+     "id": "la validez",
+     "hr": "la validez",
+     "en": "validity",
+     "pos": "n. f.",
+     "example": {
+      "target": "La validez del documento depende del tipo de trámite.",
+      "gloss": "The document's validity depends on the type of procedure."
+     }
+    },
+    {
+     "id": "válido",
+     "hr": "válido",
+     "en": "valid",
+     "pos": "adj.",
+     "example": {
+      "target": "Este certificado ya no es válido.",
+      "gloss": "This certificate is no longer valid."
+     }
+    },
+    {
+     "id": "caducado",
+     "hr": "caducado",
+     "en": "expired",
+     "pos": "adj.",
+     "example": {
+      "target": "No puedes usar un carné caducado como documento de identidad.",
+      "gloss": "You can't use an expired card as an ID document."
+     }
+    },
+    {
+     "id": "el archivo",
+     "hr": "el archivo",
+     "en": "file, archive",
+     "pos": "n. m.",
+     "example": {
+      "target": "Guardaron mi expediente en el archivo del ayuntamiento.",
+      "gloss": "They kept my file in the town hall's archive."
+     }
+    },
+    {
+     "id": "digital",
+     "hr": "digital",
+     "en": "digital, online",
+     "pos": "adj.",
+     "example": {
+      "target": "Ahora muchos trámites se pueden hacer de forma digital.",
+      "gloss": "Now many procedures can be done digitally."
+     }
+    },
+    {
+     "id": "presencial",
+     "hr": "presencial",
+     "en": "in person, face to face",
+     "pos": "adj.",
+     "example": {
+      "target": "Prefiero la atención presencial a la atención por teléfono.",
+      "gloss": "I prefer in person service to phone service."
+     }
+    },
+    {
+     "id": "la copia",
+     "hr": "la copia",
+     "en": "copy (of a document)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Haz una copia del contrato antes de enviarlo.",
+      "gloss": "Make a copy of the contract before sending it."
+     }
+    },
+    {
+     "id": "compulsar",
+     "hr": "compulsar",
+     "en": "to certify a copy as a true copy",
+     "pos": "v.",
+     "note": "regular -ar verb, bureaucratic register",
+     "example": {
+      "target": "Tuvimos que compulsar la copia del certificado en la oficina.",
+      "gloss": "We had to get the copy of the certificate certified at the office."
+     }
+    },
+    {
+     "id": "el ciudadano",
+     "hr": "el ciudadano",
+     "en": "citizen",
+     "pos": "n. m.",
+     "note": "fem. la ciudadana",
+     "example": {
+      "target": "El ciudadano puede participar en las decisiones de su barrio.",
+      "gloss": "The citizen can participate in decisions about their neighborhood."
+     }
+    },
+    {
+     "id": "la ciudadanía",
+     "hr": "la ciudadanía",
+     "en": "citizenship",
+     "pos": "n. f.",
+     "example": {
+      "target": "Después de varios años, solicitó la ciudadanía del país.",
+      "gloss": "After several years, he applied for the country's citizenship."
+     }
+    },
+    {
+     "id": "la residencia",
+     "hr": "la residencia",
+     "en": "residence",
+     "pos": "n. f.",
+     "example": {
+      "target": "Debes demostrar tu residencia con un documento oficial.",
+      "gloss": "You must prove your residence with an official document."
+     }
+    },
+    {
+     "id": "la nacionalidad",
+     "hr": "la nacionalidad",
+     "en": "nationality",
+     "pos": "n. f.",
+     "example": {
+      "target": "Mi compañero de piso tiene nacionalidad francesa.",
+      "gloss": "My flatmate has French nationality."
+     }
+    },
+    {
+     "id": "la comunidad",
+     "hr": "la comunidad",
+     "en": "community",
+     "pos": "n. f.",
+     "example": {
+      "target": "La comunidad organiza actividades para todos los vecinos.",
+      "gloss": "The community organizes activities for all the residents."
+     }
+    },
+    {
+     "id": "la sociedad",
+     "hr": "la sociedad",
+     "en": "society",
+     "pos": "n. f.",
+     "example": {
+      "target": "Una sociedad justa cuida de sus ciudadanos más vulnerables.",
+      "gloss": "A fair society takes care of its most vulnerable citizens."
+     }
+    },
+    {
+     "id": "el gobierno",
+     "hr": "el gobierno",
+     "en": "government",
+     "pos": "n. m.",
+     "example": {
+      "target": "El gobierno anunció nuevas medidas para la vivienda.",
+      "gloss": "The government announced new housing measures."
+     }
+    },
+    {
+     "id": "la administración",
+     "hr": "la administración",
+     "en": "administration (public)",
+     "pos": "n. f.",
+     "example": {
+      "target": "La administración tarda varias semanas en responder.",
+      "gloss": "The administration takes several weeks to respond."
+     }
+    },
+    {
+     "id": "el servicio público",
+     "hr": "el servicio público",
+     "en": "public service",
+     "pos": "n. m.",
+     "example": {
+      "target": "La sanidad es un servicio público fundamental.",
+      "gloss": "Healthcare is a fundamental public service."
+     }
+    },
+    {
+     "id": "la sanidad",
+     "hr": "la sanidad",
+     "en": "healthcare system",
+     "pos": "n. f.",
+     "example": {
+      "target": "La sanidad pública atiende a todos los residentes.",
+      "gloss": "The public healthcare system takes care of all residents."
+     }
+    },
+    {
+     "id": "la educación",
+     "hr": "la educación",
+     "en": "education",
+     "pos": "n. f.",
+     "example": {
+      "target": "La educación pública es un derecho de todos los niños.",
+      "gloss": "Public education is a right for all children."
+     }
+    },
+    {
+     "id": "el transporte público",
+     "hr": "el transporte público",
+     "en": "public transport",
+     "pos": "n. m.",
+     "example": {
+      "target": "El transporte público es muy puntual en esta ciudad.",
+      "gloss": "Public transport is very punctual in this city."
+     }
+    },
+    {
+     "id": "la elección",
+     "hr": "la elección",
+     "en": "election",
+     "pos": "n. f.",
+     "example": {
+      "target": "Las próximas elecciones serán en primavera.",
+      "gloss": "The next elections will be in spring."
+     }
+    },
+    {
+     "id": "el voto",
+     "hr": "el voto",
+     "en": "vote",
+     "pos": "n. m.",
+     "example": {
+      "target": "Cada voto cuenta en una democracia.",
+      "gloss": "Every vote counts in a democracy."
+     }
+    },
+    {
+     "id": "la campaña",
+     "hr": "la campaña",
+     "en": "campaign",
+     "pos": "n. f.",
+     "example": {
+      "target": "La campaña electoral dura varias semanas.",
+      "gloss": "The election campaign lasts several weeks."
+     }
+    },
+    {
+     "id": "la contribución",
+     "hr": "la contribución",
+     "en": "contribution",
+     "pos": "n. f.",
+     "example": {
+      "target": "Su contribución al barrio fue organizar la biblioteca comunitaria.",
+      "gloss": "Their contribution to the neighborhood was organizing the community library."
+     }
+    },
+    {
+     "id": "el censo",
+     "hr": "el censo",
+     "en": "census",
+     "pos": "n. m.",
+     "example": {
+      "target": "El censo ayuda a conocer cuántas personas viven en cada zona.",
+      "gloss": "The census helps to find out how many people live in each area."
+     }
+    },
+    {
+     "id": "votar",
+     "hr": "votar",
+     "en": "to vote",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Es importante que votes en las próximas elecciones.",
+      "gloss": "It's important that you vote in the next elections."
+     }
+    },
+    {
+     "id": "participar",
+     "hr": "participar",
+     "en": "to participate",
+     "pos": "v.",
+     "note": "governs 'en': participar en",
+     "example": {
+      "target": "Muchos jóvenes quieren participar en la vida del barrio.",
+      "gloss": "Many young people want to participate in neighborhood life."
+     }
+    },
+    {
+     "id": "colaborar",
+     "hr": "colaborar",
+     "en": "to collaborate",
+     "pos": "v.",
+     "note": "governs 'con': colaborar con",
+     "example": {
+      "target": "La comunidad colabora con el ayuntamiento en varios proyectos.",
+      "gloss": "The community collaborates with the town hall on several projects."
+     }
+    },
+    {
+     "id": "reivindicar",
+     "hr": "reivindicar",
+     "en": "to demand, to claim (a right)",
+     "pos": "v.",
+     "note": "regular -ar verb; often used with rights and demands, reivindicar un derecho",
+     "example": {
+      "target": "Los vecinos reivindican un parque más grande para el barrio.",
+      "gloss": "The residents are demanding a bigger park for the neighborhood."
+     }
+    },
+    {
+     "id": "manifestarse",
+     "hr": "manifestarse",
+     "en": "to demonstrate, to protest publicly",
+     "pos": "v.",
+     "note": "pronominal verb; e>ie: me manifiesto",
+     "example": {
+      "target": "Cientos de personas se manifestaron por el derecho a la vivienda.",
+      "gloss": "Hundreds of people demonstrated for the right to housing."
+     }
+    },
+    {
+     "id": "la democracia",
+     "hr": "la democracia",
+     "en": "democracy",
+     "pos": "n. f.",
+     "example": {
+      "target": "La democracia depende de la participación de todos.",
+      "gloss": "Democracy depends on everyone's participation."
+     }
+    },
+    {
+     "id": "la responsabilidad",
+     "hr": "la responsabilidad",
+     "en": "responsibility",
+     "pos": "n. f.",
+     "example": {
+      "target": "Cuidar el barrio es responsabilidad de todos.",
+      "gloss": "Taking care of the neighborhood is everyone's responsibility."
+     }
+    },
+    {
+     "id": "la igualdad",
+     "hr": "la igualdad",
+     "en": "equality",
+     "pos": "n. f.",
+     "example": {
+      "target": "La igualdad ante la ley es un principio fundamental.",
+      "gloss": "Equality before the law is a fundamental principle."
+     }
+    },
+    {
+     "id": "la libertad",
+     "hr": "la libertad",
+     "en": "freedom",
+     "pos": "n. f.",
+     "example": {
+      "target": "La libertad de expresión permite opinar sobre cualquier tema.",
+      "gloss": "Freedom of expression allows people to give their opinion on any topic."
+     }
+    },
+    {
+     "id": "la manifestación",
+     "hr": "la manifestación",
+     "en": "demonstration, protest",
+     "pos": "n. f.",
+     "example": {
+      "target": "La manifestación empezó en la plaza principal.",
+      "gloss": "The demonstration started in the main square."
+     }
+    },
+    {
+     "id": "la protesta",
+     "hr": "la protesta",
+     "en": "protest",
+     "pos": "n. f.",
+     "example": {
+      "target": "La protesta fue pacífica y organizada.",
+      "gloss": "The protest was peaceful and organized."
+     }
+    },
+    {
+     "id": "el debate",
+     "hr": "el debate",
+     "en": "debate",
+     "pos": "n. m.",
+     "example": {
+      "target": "El debate sobre el transporte público duró dos horas.",
+      "gloss": "The debate about public transport lasted two hours."
+     }
+    },
+    {
+     "id": "la mayoría",
+     "hr": "la mayoría",
+     "en": "majority",
+     "pos": "n. f.",
+     "example": {
+      "target": "La mayoría de los vecinos apoya la reforma del parque.",
+      "gloss": "The majority of residents support renovating the park."
+     }
+    },
+    {
+     "id": "la minoría",
+     "hr": "la minoría",
+     "en": "minority",
+     "pos": "n. f.",
+     "example": {
+      "target": "Una pequeña minoría votó en contra de la propuesta.",
+      "gloss": "A small minority voted against the proposal."
+     }
+    },
+    {
+     "id": "el residente",
+     "hr": "el residente",
+     "en": "resident",
+     "pos": "n. m./f.",
+     "note": "epicene, same form for both genders; only the article changes, el residente / la residente",
+     "example": {
+      "target": "Todo residente puede usar las instalaciones del centro cívico.",
+      "gloss": "Every resident can use the civic center's facilities."
+     }
+    },
+    {
+     "id": "la integración",
+     "hr": "la integración",
+     "en": "integration",
+     "pos": "n. f.",
+     "example": {
+      "target": "La integración de los nuevos vecinos lleva tiempo.",
+      "gloss": "Integrating new residents takes time."
+     }
+    },
+    {
+     "id": "la convivencia",
+     "hr": "la convivencia",
+     "en": "coexistence, living together",
+     "pos": "n. f.",
+     "example": {
+      "target": "Las normas de convivencia evitan problemas entre vecinos.",
+      "gloss": "Rules of coexistence prevent problems between neighbors."
+     }
+    },
+    {
+     "id": "cívico",
+     "hr": "cívico",
+     "en": "civic",
+     "pos": "adj.",
+     "example": {
+      "target": "Tiene un fuerte sentido cívico y siempre ayuda a los demás.",
+      "gloss": "He has a strong civic sense and always helps others."
+     }
+    },
+    {
+     "id": "público",
+     "hr": "público",
+     "en": "public",
+     "pos": "adj.",
+     "example": {
+      "target": "El parque es un espacio público abierto a todos.",
+      "gloss": "The park is a public space open to everyone."
+     }
+    },
+    {
+     "id": "privado",
+     "hr": "privado",
+     "en": "private",
+     "pos": "adj.",
+     "example": {
+      "target": "Ese jardín es privado, no se puede entrar.",
+      "gloss": "That garden is private, you can't go in."
+     }
+    },
+    {
+     "id": "la solidaridad",
+     "hr": "la solidaridad",
+     "en": "solidarity",
+     "pos": "n. f.",
+     "example": {
+      "target": "Los vecinos organizaron una campaña de solidaridad para ayudar a una familia del barrio.",
+      "gloss": "The neighbors organized a solidarity campaign to help a family in the neighborhood."
+     }
+    },
+    {
+     "id": "el voluntario",
+     "hr": "el voluntario",
+     "en": "volunteer",
+     "pos": "n. m.",
+     "note": "f. la voluntaria; used with como in 'trabajar como voluntario', without an article",
+     "example": {
+      "target": "Cada fin de semana trabaja como voluntario en un comedor social.",
+      "gloss": "Every weekend he works as a volunteer at a community canteen."
+     }
+    },
+    {
+     "id": "la ong",
+     "hr": "la ONG",
+     "en": "NGO",
+     "pos": "n. f.",
+     "note": "generic common noun for a non governmental organization, not a specific named charity",
+     "example": {
+      "target": "La ONG ayuda a familias en situación difícil.",
+      "gloss": "The NGO helps families in difficult situations."
+     }
+    },
+    {
+     "id": "la construcción",
+     "hr": "la construcción",
+     "en": "construction",
+     "pos": "n. f.",
+     "example": {
+      "target": "La construcción del nuevo edificio empezó hace un mes.",
+      "gloss": "Construction of the new building started a month ago."
+     }
+    },
+    {
+     "id": "instalar",
+     "hr": "instalar",
+     "en": "to install",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "Vamos a instalar paneles solares en el tejado.",
+      "gloss": "We are going to install solar panels on the roof."
+     }
+    },
+    {
+     "id": "el ático",
+     "hr": "el ático",
+     "en": "penthouse, top floor apartment",
+     "pos": "n. m.",
+     "example": {
+      "target": "El ático tiene una terraza enorme con vistas a la ciudad.",
+      "gloss": "The penthouse has a huge terrace with views over the city."
+     }
+    },
+    {
+     "id": "la buhardilla",
+     "hr": "la buhardilla",
+     "en": "attic, loft apartment",
+     "pos": "n. f.",
+     "example": {
+      "target": "La buhardilla tiene el techo muy bajo.",
+      "gloss": "The attic has a very low ceiling."
+     }
+    },
+    {
+     "id": "la planta",
+     "hr": "la planta",
+     "en": "floor, storey (of a building)",
+     "pos": "n. f.",
+     "example": {
+      "target": "Vivimos en la tercera planta sin ascensor.",
+      "gloss": "We live on the third floor with no elevator."
+     }
+    },
+    {
+     "id": "la instancia",
+     "hr": "la instancia",
+     "en": "formal written request",
+     "pos": "n. f.",
+     "note": "a formal written request addressed to a public office",
+     "example": {
+      "target": "Presentó una instancia pidiendo el cambio de dirección.",
+      "gloss": "He submitted a formal request asking for the change of address."
+     }
+    },
+    {
+     "id": "la petición",
+     "hr": "la petición",
+     "en": "petition, request",
+     "pos": "n. f.",
+     "example": {
+      "target": "Firmaron una petición para pedir más zonas verdes en el barrio.",
+      "gloss": "They signed a petition asking for more green areas in the neighborhood."
+     }
+    },
+    {
+     "id": "el papeleo",
+     "hr": "el papeleo",
+     "en": "paperwork, red tape",
+     "pos": "n. m.",
+     "example": {
+      "target": "Odio el papeleo que hay que hacer para cualquier trámite.",
+      "gloss": "I hate the paperwork you have to do for any procedure."
+     }
+    },
+    {
+     "id": "el vencimiento",
+     "hr": "el vencimiento",
+     "en": "due date, expiry date",
+     "pos": "n. m.",
+     "example": {
+      "target": "Apunta la fecha de vencimiento del contrato en el calendario.",
+      "gloss": "Write down the contract's expiry date in the calendar."
+     }
+    },
+    {
+     "id": "la delegación",
+     "hr": "la delegación",
+     "en": "branch office",
+     "pos": "n. f.",
+     "example": {
+      "target": "Hay una delegación de la asociación en cada barrio.",
+      "gloss": "There is a branch office of the association in every neighborhood."
+     }
+    },
+    {
+     "id": "la condición",
+     "hr": "la condición",
+     "en": "condition, requirement",
+     "pos": "n. f.",
+     "example": {
+      "target": "Una de las condiciones es tener la residencia en la ciudad.",
+      "gloss": "One of the conditions is having residence in the city."
+     }
+    },
+    {
+     "id": "cumplimentar",
+     "hr": "cumplimentar",
+     "en": "to fill in (a form)",
+     "pos": "v.",
+     "note": "formal register synonym of 'rellenar', common on official documents",
+     "example": {
+      "target": "Hay que cumplimentar todos los campos del formulario.",
+      "gloss": "You have to fill in all the fields of the form."
+     }
+    },
+    {
+     "id": "gestionar",
+     "hr": "gestionar",
+     "en": "to manage, to handle (a procedure)",
+     "pos": "v.",
+     "note": "regular -ar verb",
+     "example": {
+      "target": "La gestoría se encarga de gestionar los papeles del piso.",
+      "gloss": "The paperwork agency takes care of managing the flat's paperwork."
+     }
+    },
+    {
+     "id": "el organismo",
+     "hr": "el organismo",
+     "en": "public body, agency",
+     "pos": "n. m.",
+     "example": {
+      "target": "Ese trámite lo gestiona un organismo público diferente.",
+      "gloss": "That procedure is handled by a different public body."
+     }
+    },
+    {
+     "id": "el representante",
+     "hr": "el representante",
+     "en": "representative",
+     "pos": "n. m./f.",
+     "note": "epicene, same form for both genders; only the article changes, el representante / la representante",
+     "example": {
+      "target": "El representante de los vecinos habló en la reunión.",
+      "gloss": "The residents' representative spoke at the meeting."
+     }
+    },
+    {
+     "id": "la asociación",
+     "hr": "la asociación",
+     "en": "association",
+     "pos": "n. f.",
+     "example": {
+      "target": "La asociación de vecinos organiza actividades culturales.",
+      "gloss": "The residents' association organizes cultural activities."
+     }
+    },
+    {
+     "id": "el inmigrante",
+     "hr": "el inmigrante",
+     "en": "immigrant",
+     "pos": "n. m./f.",
+     "note": "epicene, same form for both genders; only the article changes, el inmigrante / la inmigrante",
+     "example": {
+      "target": "El inmigrante debe empadronarse al llegar a la ciudad.",
+      "gloss": "The immigrant must register with the town hall on arriving in the city."
+     }
+    }
+   ]
+  }
+ ]
+}
