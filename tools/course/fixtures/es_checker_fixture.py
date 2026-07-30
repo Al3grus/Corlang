@@ -144,6 +144,56 @@ CASES = [
         learn([{"hr": "Quisiera reservar una mesa.", "en": "I would like to book a table."}])
     ]), True, "imperfect subjunctive"),
 
+    # REGULAR imperfect subjunctives, which the strong-stem list cannot see and which are the
+    # COMMON case. Two safe routes: the unambiguous plural endings, and the singular endings
+    # only after si/que.
+    ("planted: regular imperfect subjunctive after que", day("B1", "Peticiones", [
+        learn([{"hr": "Me pidió que esperara un momento.", "en": "He asked me to wait."}])
+    ]), True, "imperfect subjunctive"),
+
+    ("planted: regular imperfect subjunctive, 2sg after si", day("B1", "Condicionales", [
+        learn([{"hr": "Si esperaras un poco, lo verías.", "en": "If you waited, you would see."}])
+    ]), True, "imperfect subjunctive"),
+
+    ("planted: regular imperfect subjunctive, plural ending", day("B1", "Deseos", [
+        learn([{"hr": "Ojalá hablaran más despacio.", "en": "If only they spoke more slowly."}])
+    ]), True, "imperfect subjunctive"),
+
+    ("planted: regular imperfect subjunctive, 1pl ending", day("B1", "Deseos", [
+        learn([{"hr": "Quería que comiéramos juntos.", "en": "He wanted us to eat together."}])
+    ]), True, "imperfect subjunctive"),
+
+    # The nouns and adjectives a bare -ara/-aras sweep would swallow.
+    ("correct: cara, clara, cámara, máscara and their plurals are not subjunctives",
+     day("B1", "Objetos", [
+         learn([{"hr": "La cara de mi hermana es muy clara.", "en": "x"},
+                {"hr": "Tengo dos cámaras y varias máscaras.", "en": "x"},
+                {"hr": "Las caras claras se ven mejor.", "en": "x"}])
+     ]), False, None),
+
+    ("correct: envase, clase, frase, base are not subjunctives", day("B1", "Textos", [
+        learn([{"hr": "Estas frases son las bases del texto.", "en": "x"},
+               {"hr": "Compré el envase en esa clase de tienda.", "en": "x"}])
+    ]), False, None),
+
+    # The PERFECT subjunctive (haya hecho) is PCIC 9.2.3, also B2, and was missing entirely.
+    ("planted: perfect subjunctive", day("B1", "Reacciones", [
+        learn([{"hr": "Me alegro de que hayas venido.", "en": "I am glad you came."}])
+    ]), True, "compound tense above B1"),
+
+    ("correct: the present subjunctive it is built on is fine", day("B1", "Reacciones", [
+        learn([{"hr": "Me alegro de que estés aquí.", "en": "I am glad you are here."}])
+    ]), False, None),
+
+    # The agentive passive is a B2 register move; B1 teaches impersonal and passive se.
+    ("planted: agentive passive with por", day("B1", "Pasiva", [
+        learn([{"hr": "El puente fue construido por los romanos.", "en": "x"}])
+    ]), True, "agentive passive"),
+
+    ("correct: estar + participle as a result state is B1", day("B1", "Estados", [
+        learn([{"hr": "La puerta está cerrada y la tienda está abierta.", "en": "x"}])
+    ]), False, None),
+
     ("planted: condicional compuesto", day("B1", "Hipótesis", [
         learn([{"hr": "Habría llegado antes con más tiempo.",
                 "en": "He would have arrived earlier with more time."}])
