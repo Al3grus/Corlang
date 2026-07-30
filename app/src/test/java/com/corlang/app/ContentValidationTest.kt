@@ -66,8 +66,11 @@ class ContentValidationTest {
         // Italian (CILS / CELI B1 target, the citizenship level since Dec 2018)
         "cils-a1", "cils-a2", "cils-b1", "celi-b1", "b1-cittadinanza", "cliq", "freq-it",
         // Spanish (DELE B1 target; Spain's legal bar is DELE A2 + the CCSE civics test, and
-        // civics is out of scope). `pcic` stays UNEARNED until the Phase 8b cross-check and
-        // `freq-es` is ordering-only: see docs/sources/es-exams.md.
+        // civics is out of scope). `pcic` is EARNED for grammar and the topic sequence but the
+        // vocabulary citation was DECLINED after the Phase 8b cross-check ran (2026-07-30): the
+        // deck is freq-es plus thematic need, so claiming the syllabus as a vocab source would be
+        // the goethe-wortliste overclaim. No vocab pack cites it; all 20 carry ["freq-es"], which
+        // is itself ordering-only. See docs/sources/es-exams.md §6c.
         "jus-1625-2016", "dele-a1", "dele-a2", "dele-b1", "pcic", "freq-es"
     )
 
