@@ -216,9 +216,27 @@ IMPERFECT_SUBJ_REGULAR_PLURAL = re.compile(
 # `quieran` (the present subjunctive of querer, which this course teaches at B1) and REPHRASED
 # CORRECT SPANISH to get past the gate, which is the worst outcome a checker can produce.
 # So they are contextual, and the collisions are exempted by name below.
-IMPERFECT_SUBJ_AFTER_SI_QUE = re.compile(
-    r"\b(?:si|que|ojalá|ojala)\s+(?:\w+\s+)?"
+# Split by TRIGGER, because the two triggers have opposite ambiguity profiles, and this is the
+# principle the two earlier patches missed:
+#
+#   After `si`, Spanish never puts ANY subjunctive. The course teaches exactly that at lesson 129.
+#   So after `si`, a subjunctive-shaped form IS an imperfect subjunctive, unambiguously, and the
+#   full ending set can be matched including the 2sg.
+#
+#   After `que` or `ojalá`, the PRESENT subjunctive is legal and, at B1, ubiquitous. The 2sg
+#   endings -aras/-ieras/-ases/-ieses therefore collide fatally: `que quieras`, `que prefieras`,
+#   `que sugieras`, `que repases` and `que adquieras` are all ordinary present subjunctives, and
+#   `que aclaras`/`que separas` are ordinary present indicatives. So the 2sg endings are excluded
+#   after those triggers, which removes the entire collision class rather than patching it one
+#   word at a time. That is what the first two attempts got wrong: exempting `quieran` and not
+#   `quieras` made a second authoring agent rewrite correct Spanish (`Haz lo que quieras`).
+IMPERFECT_SUBJ_AFTER_SI = re.compile(
+    r"\bsi\s+(?:\w+\s+)?"
     r"(\w{2,}(?:aras|ieras|ases|ieses|aran|ieran|asen|iesen|ara|iera|ase|iese))\b",
+    re.IGNORECASE)
+IMPERFECT_SUBJ_AFTER_QUE = re.compile(
+    r"\b(?:que|ojalá|ojala)\s+(?:\w+\s+)?"
+    r"(\w{2,}(?:aran|ieran|asen|iesen|ara|iera|ase|iese))\b",
     re.IGNORECASE)
 NOT_SUBJUNCTIVE = {
     # Singulars and plurals both, because the 2sg endings (-aras, -ieras) collide with the
@@ -232,7 +250,10 @@ NOT_SUBJUNCTIVE = {
     "amparan", "encaran", "deparan", "maran",
     # Present forms containing "-ieran": the subjunctive of querer and its compounds, which this
     # course teaches at B1 and must never be flagged.
-    "quieran", "adquieran", "requieran", "inquieran",
+    "quieran", "quieras", "adquieran", "adquieras", "requieran", "requieras",
+    "inquieran", "inquieras", "prefieran", "prefieras", "sugieran", "sugieras",
+    "hieran", "hieras", "difieran", "difieras", "ingieran", "ingieras",
+    "repasen", "repases", "atrasen", "engrasen", "rebasen", "traspasen", "sobrepasen",
 }
 
 # The AGENTIVE PASSIVE with ser + participle + por is a B2 register move; B1 teaches impersonal
@@ -366,10 +387,12 @@ def _checks_on_string(s, level=""):
     if m:
         errs.append(f"imperfect subjunctive {m.group(0)!r} in {s[:60]!r}, "
                     f"PCIC puts it at B2 and this course stops at B1")
-    m = IMPERFECT_SUBJ_AFTER_SI_QUE.search(s)
-    if m and m.group(1).lower() not in NOT_SUBJUNCTIVE:
-        errs.append(f"imperfect subjunctive {m.group(1)!r} after si/que in {s[:60]!r}, "
-                    f"PCIC puts it at B2 and this course stops at B1")
+    for rx, where in ((IMPERFECT_SUBJ_AFTER_SI, "si"), (IMPERFECT_SUBJ_AFTER_QUE, "que")):
+        m = rx.search(s)
+        if m and m.group(1).lower() not in NOT_SUBJUNCTIVE:
+            errs.append(f"imperfect subjunctive {m.group(1)!r} after {where} in {s[:60]!r}, "
+                        f"PCIC puts it at B2 and this course stops at B1")
+            break
     m = AGENTIVE_PASSIVE.search(s)
     if m:
         errs.append(f"agentive passive {m.group(0)!r} in {s[:60]!r}, "
