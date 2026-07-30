@@ -419,6 +419,45 @@ Candidate classes, to be confirmed against the PCIC before encoding:
 - Compare each mock section by section against §2.2/§2.3 above (task types, item counts, timing,
   pass rule). Structure only, never content.
 
+## 6b. The deck ships at 2,838 against a 2,500 capacity: a recorded S17 deviation
+
+Decided 2026-07-30, with the user, after four separate attempts to find a defensible mechanical
+basis for cutting 352 words. **All four failed, and they failed for the same reason**, which is
+worth writing down because the next language will face it too.
+
+| Signal tried | Why it failed |
+|---|---|
+| Corpus frequency (`freq-es`) | Proposed dropping `español` and `España` from a Spanish course, the whole A2 reflexive routine, and `sugerir`/`aconsejar`/`recomendar`, which `grammar.json` names as subjunctive triggers. Earlier it proposed the tens and three weekdays, because film dialogue rarely says "ochenta". |
+| Named in the course's own topic files | Topic TITLES are not lesson content, so it flagged `el brazo`, `el dedo`, `buenas tardes` and `perdón` as untaught. |
+| Never used in any of the 250 lessons | Flagged `gordo`, `delgado`, `guapo`, the entire body-part set and `comprender`. The deck exists precisely to carry vocabulary the lessons have no room for, so absence from lessons is no evidence at all. |
+| All three of the above agreeing | Still flagged `el apellido`, `el armario`, the body parts, and `analizar`/`evaluar`/`juzgar`, the abstract verbs a B1 opinion-writer needs. |
+
+The common blind spot: every one measures **textual presence**, and what matters is **pedagogical
+need**. A learner needs `el codo` to describe a symptom whether or not any lesson happens to
+contain the word.
+
+A near-synonym analysis over the whole deck found only 22 genuinely redundant clusters, and on
+inspection 8 of those were not synonyms at all (`meter`/`poner`, `acordar`/`estar de acuerdo`,
+`ampliar`/`expandirse` differ in sense or transitivity). **So trimming to 2,500 would have meant
+deliberately deleting about 330 useful words to satisfy a number.**
+
+What shipped instead: the 14 genuinely redundant duplicates were dropped, leaving **2,838 words**.
+
+Why this is defensible rather than a shrug:
+- The Kotlin gate `everyDeckCoversTheWholeCourse` requires deck >= lessons x 10 and **passes** at
+  2,838 >= 2,500. S17 is a quality concern, not a gate failure.
+- Both shipped precedents are over capacity: German 2,913 against 2,850, Italian 2,836 against
+  2,450. Spanish at 2,838 against 2,500 is squarely inside existing practice.
+- The words past index 2,500 are not unreachable, only unreachable **at the default pace**. The
+  standard itself says the 15 and 20 words-a-lesson paces exist and that faster paces "exhaust any
+  finite deck sooner; that is expected". At pace 15 the whole deck is reachable by lesson 190.
+- The alternative that fully satisfies S17 is widening the pipe to about 286 lessons, which is
+  real added value rather than destroyed value, and remains available later without disturbing
+  anything below it.
+
+**This is recorded as a known deviation, not hidden.** If a future session wants S17 satisfied
+exactly, the fix is to add lessons, not to delete vocabulary.
+
 ## 7. Registered keys
 
 | Key | What it asserts |
