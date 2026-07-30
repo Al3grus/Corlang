@@ -50,9 +50,32 @@ result must satisfy. Tools live in `tools/course/`.
 
 ## Current state (update this section whenever it changes)
 
-- **Shipped: hr, fr, pt, de, it** (all five now fully audited, see per-language entries below).
-  Not yet built: es (target B1, PCIC-anchored, A2 legally required but too thin to be a product
-  per the standard's own reasoning).
+- **Shipped: hr, fr, pt, de, it, es** (all six fully audited, see per-language entries below).
+  Nothing is unbuilt. The next course would be a new choice, not a queued one.
+- **es BUILT FROM ZERO, Phases 0-9, 2026-07-30.** Target B1 (PCIC-anchored) though Spain's legal
+  bar is only DELE A2 + CCSE civics, per the standard's own "A2 is too thin to be a product"
+  reasoning. 250 lessons (A1 45 / A2 75 / B1 130), 2,962-word deck / 20 packs, 3 quizzes, 3 DELE
+  mocks, 10-band placement. Wrote and negative-tested `check_es.py` (68-case fixture),
+  `verify_deck_es.py`, `scan_proper_nouns.py`, `pcic_crosscheck.py`. Added `ExamRules.delePassed`
+  (the DELE grouped rule: Grupo 1 = reading+writing, Grupo 2 = listening+speaking, 25 pts per
+  prueba, >=30/50 in EACH group -- a third shape that none of `examPassed`/`delfPassed`/
+  `caplePassed`/`goetheGlobalPassed` expressed) with 7 tests, plus `TalkScreen` es strings whose
+  load-bearing rule is that American Spanish is never corrected, only paired.
+  **The three findings worth carrying to the next course:**
+  (1) **V19** -- the level ceiling was never checked in `.prompt` or an activity `.title`, and an
+  adversarial audit found four real B1-ceiling violations living only there, including a dialogue
+  titled "Si pudiera elegir". Every checker was green. Now guarded in `check_es.py` and
+  `check_it.py`; hr/fr/de/pt have no ceiling axis to extend.
+  (2) **S20** -- a 2,838-word deck can still be missing the core of the language: not one of 72
+  probed core A1/A2 items was a taught headword (no `el día`, no 11-19, no `bueno`/`malo`, no
+  `gustar`), while 51 of them appeared inside example sentences. Total-count gates cannot see
+  this. 124 words authored into the A1/A2 packs, since deck POSITION decides whether a lesson
+  ever introduces a word. **Run the syllabus cross-check in BOTH directions before Phase 9.**
+  (3) **`pcic` was DECLINED for vocabulary even though the written condition was met**, because
+  the deck is frequency-plus-theme and the words were retrofitted *because* the check found them
+  missing. Coverage is not provenance.
+  Verified: check_batch/check_es/proctor all 0, 0 dashes, real-name sweep clean, all 10
+  `resources.json` URLs live-checked, 124/124 Kotlin tests. Nothing open except Track D.
 - **hr full-course audit + fix FULLY DONE (2026-07-27/28)**: 19-agent audit found 31 Critical/49
   High/~85 Medium/~90 Low across every lesson, the deck, quizzes/placement, mock exams and
   reference content; all fixed and verified. `docs/error-registry.md` C17-C19/V11/K8 added.
@@ -147,9 +170,10 @@ result must satisfy. Tools live in `tools/course/`.
   decided. `docs/error-registry.md` open-sweeps item 9 has the full breakdown. Fully verified:
   `check_batch.py`/`check_it.py`/`proctor.py` 0 problems (245 days), Kotlin `ContentValidationTest`
   green (39/39), 0 dashes, real-name sweep clean. Nothing open.
-- Proctor backlog: hr, fr, pt, de and it all CLEARED (2026-07-27 to 2026-07-29). **Next: es from
-  zero** (PCIC-anchored, not yet built), then native review (Track D, open on all 5 shipped
-  courses — the machine-authored expansion lessons have never been human-read).
+- Proctor backlog: hr, fr, pt, de, it and es all CLEARED (2026-07-27 to 2026-07-30). **The only
+  work left on any course is native review (Track D), open on all 6 — the machine-authored
+  expansion lessons have never been human-read.** That is a `[HUMAN]` gate: it cannot be closed
+  by another audit pass, and no further machine audit should be presented as closing it.
 - Weighted-floor debt UNCHANGED by the audit passes above (they added LEARN/EXERCISE depth within
   existing days, not new lesson days, so the day-count floor gate is untouched): fr +145 (B2
   legally required since 2026-01-01, highest priority), hr +90, pt +70 (A2 short 15, B1 short 55,

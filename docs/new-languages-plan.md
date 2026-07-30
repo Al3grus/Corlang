@@ -5,6 +5,17 @@ to **B1**. Every phase is a stopping point: it ends with work committed and the 
 a session that runs out of budget mid-plan loses nothing. `docs/language-standard.md` is the
 contract; this file is only the schedule.
 
+> **ALL THREE ARE NOW BUILT AND SHIPPED. This file is history, not a queue.**
+> German, Italian and Spanish are all live in `assets/content/`, and Spanish completed Phases 0
+> through 9 on 2026-07-30: 250 lessons (A1 45 / A2 75 / B1 130), a 2,962-word deck across 20
+> packs, 3 quizzes, 3 DELE mocks, a 10-band placement test, `check_es.py` + `verify_deck_es.py` +
+> `pcic_crosscheck.py` written and negative-tested, and 124/124 Kotlin tests green with six
+> languages registered. Its full record is `docs/sources/es-exams.md`; its defect harvest is in
+> `docs/error-registry.md` (V17-V20, S20, K18-K25).
+> **The one gate no machine can close is still open for every course: native-speaker review
+> (Track D).** No shipped Corlang course has been read by a native speaker, and the
+> machine-authored expansion lessons least of all. That is a `[HUMAN]` item, not a backlog item.
+
 ---
 
 ## Why these three, and why B1
