@@ -204,10 +204,21 @@ COMPOUND_ABOVE_B1 = re.compile(
 #   (b) The singular endings are matched only after `si` or `que`, the two words that actually
 #       introduce an imperfect subjunctive, with a stem of at least two characters (which alone
 #       excludes para, cara and fiera) plus a short exemption list for the survivors.
+# Context-free, and ONLY the accented first-person plurals. These are genuinely unambiguous:
+# the present subjunctive 1pl is -emos/-amos with no accent (hablemos, comamos), so nothing
+# collides with -áramos or -ásemos.
 IMPERFECT_SUBJ_REGULAR_PLURAL = re.compile(
-    r"\b\w{2,}(?:áramos|iéramos|ásemos|iésemos|aran|ieran|asen|iesen)\b", re.IGNORECASE)
+    r"\b\w{2,}(?:áramos|iéramos|ásemos|iésemos)\b", re.IGNORECASE)
+# The 3pl endings -aran and -ieran are NOT safe context-free, and this was measured, not
+# assumed: 8 of 12 probe sentences false-fired, because the present tense of any verb whose STEM
+# ends in -ar or -ier contains them. `aclaran`, `declaran`, `preparan`, `separan`, `comparan`,
+# `reparan` and `quieran` are all perfectly correct forms. A batch-8 authoring agent hit
+# `quieran` (the present subjunctive of querer, which this course teaches at B1) and REPHRASED
+# CORRECT SPANISH to get past the gate, which is the worst outcome a checker can produce.
+# So they are contextual, and the collisions are exempted by name below.
 IMPERFECT_SUBJ_AFTER_SI_QUE = re.compile(
-    r"\b(?:si|que)\s+(?:\w+\s+)?(\w{2,}(?:aras|ieras|ases|ieses|ara|iera|ase|iese))\b",
+    r"\b(?:si|que|ojalá|ojala)\s+(?:\w+\s+)?"
+    r"(\w{2,}(?:aras|ieras|ases|ieses|aran|ieran|asen|iesen|ara|iera|ase|iese))\b",
     re.IGNORECASE)
 NOT_SUBJUNCTIVE = {
     # Singulars and plurals both, because the 2sg endings (-aras, -ieras) collide with the
@@ -216,6 +227,12 @@ NOT_SUBJUNCTIVE = {
     "mascara", "máscara", "mascaras", "máscaras", "camara", "cámara", "camaras", "cámaras",
     "sahara", "guitarra", "guitarras", "pizarra", "pizarras",
     "envase", "envases", "clase", "clases", "frase", "frases", "base", "bases", "fase", "fases",
+    # Present-tense forms of verbs whose STEM ends in -ar, which therefore contain "-aran".
+    "aclaran", "declaran", "preparan", "separan", "comparan", "reparan", "disparan",
+    "amparan", "encaran", "deparan", "maran",
+    # Present forms containing "-ieran": the subjunctive of querer and its compounds, which this
+    # course teaches at B1 and must never be flagged.
+    "quieran", "adquieran", "requieran", "inquieran",
 }
 
 # The AGENTIVE PASSIVE with ser + participle + por is a B2 register move; B1 teaches impersonal
