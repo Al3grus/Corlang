@@ -124,8 +124,27 @@ Provenance status (2026-07-29, Phases 0 and 1): `jus-1625-2016`, `dele-a1`, `del
 `dele-b1` are EARNED (all four documents fetched complete, raw extracts in `raw/`). **`pcic` is
 EARNED for grammar and the topic sequence** (both `gramatica` inventory pages fetched,
 machine-split by level into `raw/pcic-gramatica-*-split.txt`, and the 250-lesson sequence derived
-from that split) but **NOT YET EARNED for vocabulary banding**: no vocab pack may cite it until
-the Phase 8b deck cross-check records a coverage figure. **`freq-es` is PARTIALLY EARNED**:
+from that split) but **NOT EARNED for vocabulary banding** (updated 2026-07-30, Phase 8b complete). The
+cross-check has now been RUN, so the "records a coverage figure" condition is discharged: all four
+`nociones` inventory pages were fetched live on 2026-07-30, parsed per level (each noción is a
+two-column A1/A2 or B1/B2 table, so a true per-level split is available), and 7,093 inventory items
+were diffed against the deck in both directions. Coverage after the Phase 8b remediation:
+específicas A1 60.4% exact / 78.5% partial, A2 46.8% / 67.1%, B1 27.7% / 46.7%; generales A1 51.7%,
+A2 35.8%, B1 27.0%. Every A1 and A2 noción with extractable content is now populated; the four
+remaining A1 zeros are collocation-only entries with no headword to author.
+**The citation is nevertheless DECLINED, on provenance rather than coverage grounds.** A
+`sources: ["pcic"]` on a vocab pack claims the words were selected from that inventory. They were
+not: the deck was built from `freq-es` plus thematic need, and 124 words were retrofitted into it
+*because* the cross-check found them missing. Citing the syllabus we failed against, on the
+strength of having then patched it, is the same overclaim that had to be stripped from 431 German
+citations (`goethe-wortliste`). The cross-check's value was finding the gap (registry S20), not
+licensing a key. All 20 vocab packs therefore keep `sources: ["freq-es"]`. Re-measure any time with
+`pcic_crosscheck.py` (offline, one command). **`freq-es` is PARTIALLY EARNED**:
 usable for deck ordering, never for level banding or for deciding which of two variant forms the
-course teaches. RAE CREA (403) and SUBTLEX-ESP (404) were both unfetchable on 2026-07-29 and are
-deliberately NOT registered.
+course teaches. Phase 8b tested even the ordering claim and it does not fully hold: the words the
+cross-check found MISSING included `freq-es` ranks 50, 90, 95, 122, 129, 134, 136, 166, 184, 206,
+243, 244 and 325, so the deck was plainly not assembled by walking the frequency list, and the 124
+remediation words were appended to their packs rather than inserted at their rank. `freq-es`
+therefore stays PARTIALLY EARNED and must not be upgraded: it is the ordering *authority* the deck
+was built with reference to, not a description of the deck's actual order. RAE CREA (403) and
+SUBTLEX-ESP (404) were both unfetchable on 2026-07-29 and are deliberately NOT registered.

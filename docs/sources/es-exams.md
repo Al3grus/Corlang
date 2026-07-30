@@ -147,7 +147,16 @@ the grading grouping is load-bearing for `exams.json`.
 2. Read one informative text, 3-option MCQ. 400 to 450 words.
 3. Match questions/statements to **three** input texts. Anecdotes, travel-guide practical
    information, experiences, news, diaries, biographies, job adverts; 100 to 120 words each.
-4. Reconstruct a text: complete paragraphs with short statements (cohesion).
+4. Reconstruct a text: complete paragraphs with short statements (cohesion). **Six gaps, EIGHT
+   candidate fragments (A-H), two of which are not used.** The guide itself does not state the
+   fragment count (its `Formato de la tarea` cell is empty in the PDF), so this was verified
+   directly from the official model paper `b1_cl_t4.pdf`, fetched live 2026-07-30, whose
+   instructions read: "Lea el siguiente texto, del que se han extraido seis fragmentos. A
+   continuacion lea los ocho fragmentos propuestos (A-H) y decida en que lugar del texto (19-24)
+   hay que colocar cada uno de ellos. HAY DOS FRAGMENTOS QUE NO TIENE QUE ELEGIR." Recorded
+   because day 241 teaches this ratio to the learner four times and the claim was previously
+   unsourced in this digest; the content was correct, only the evidence was missing. Text is 400
+   to 450 words.
 5. Cloze-style: select the correct option to complete a text.
 
 **B1 Comprension auditiva** (5 tareas, 6 items each)
@@ -418,6 +427,60 @@ Candidate classes, to be confirmed against the PCIC before encoding:
   register/variety caveats wherever it is cited.
 - Compare each mock section by section against §2.2/§2.3 above (task types, item counts, timing,
   pass rule). Structure only, never content.
+
+## 6c. Phase 8b RESULT (2026-07-30): the cross-check ran, and it found a real defect
+
+All four `nociones` inventory pages fetched live 2026-07-30 (HTTP 200, no failures):
+`09_nociones_especificas_inventario_{a1-a2,b1-b2}.htm` and
+`08_nociones_generales_inventario_{a1-a2,b1-b2}.htm`. Better than expected on granularity: the
+pages are published per band, but each noción is a two-column table (`<th>A1</th><th>A2</th>`), so
+a TRUE per-level split is available rather than a banded approximation. 7,093 inventory items
+parsed. One trap handled: 15 of 91 *específicas* and 14 of 50 *generales* nociones are empty in the
+A1 column, carry no A1 requirement, and are excluded from the denominator, or the figure would be a
+lie.
+
+**The defect (registry S20).** The deck held 2,838 words and yet NOT ONE of 72 probed core A1/A2
+items was a taught headword: no `el día`, `la semana`, `el mes`, `el año`, `la hora`; no numbers
+11-19; no `bueno`, `malo`, `grande`, `pequeño`, `fácil`, `difícil`; no `aquí`, `allí`, `cerca`,
+`lejos`; no `gustar`; the whole weather, seasons and animal sets absent. 51 of the 72 appear inside
+example sentences, so the deck *used* the words while never teaching them: `buenos días` and
+`día festivo` but never `el día`; `al gusto` but never `gustar`. Verified twice independently,
+including positive controls to prove the matcher worked, because a 72-of-72 miss rate should look
+like a broken instrument before it looks like a finding.
+
+**Fixed** by authoring 124 words (102 in two agent waves, 22 directly) into the A1 and A2 packs
+specifically. Position matters: `WordsRepository.unlockedNewWords` takes `allWords.take(uptoDay *
+10)`, so deck position decides whether a lesson ever introduces a word. All 124 verified present
+and inside the introduced window (`once`@131, `día`@142, `aquí`@151, `perro`@868, `dentro de`@1455),
+no duplicate SRS ids across 2,962.
+
+**Coverage, before -> after** (exact headword match / partial):
+
+| inventory | before | after |
+|---|---|---|
+| específicas A1 | 55.6% | **60.4%** / 78.5% |
+| específicas A2 | 41.6% | **46.8%** / 67.1% |
+| específicas B1 | 27.0% | 27.7% / 46.7% |
+| generales A1 | 37.0% | **51.7%** / 72.0% |
+| generales A2 | 26.0% | **35.8%** / 60.1% |
+| generales B1 | 26.0% | 27.0% / 45.6% |
+
+Every A1 and A2 noción with extractable content is now populated. The four remaining A1 zeros are
+collocation-only entries with no headword to author (`Desempleo`, `Características de un
+trabajador`, `Juegos`, `Televisión y radio`), plus one parser artifact where the source writes
+`quizá(s)` and the tokeniser split it (`quizás` IS in the deck).
+
+**Key verdicts.** `pcic` stays **NOT EARNED for vocabulary** and no pack cites it. The
+"record a coverage figure" condition is discharged, but the citation is declined on *provenance*:
+a `sources: ["pcic"]` claims the words were selected from that inventory, and they were not -- the
+deck is `freq-es` plus thematic need, and 124 words were retrofitted *because* the cross-check
+found them missing. Citing the syllabus we failed against, on the strength of having then patched
+it, is the `goethe-wortliste` overclaim that cost 431 German citations. `freq-es` stays
+**PARTIALLY EARNED** and must not be upgraded: the missing words included ranks 50, 90, 95, 122,
+129, 134, 136, 166, 184, 206, 243, 244 and 325, so the deck was demonstrably not assembled by
+walking the frequency list. B1 coverage at 27.7% is a *coverage fact*, not a defect: PCIC B1 lists
+1,695 *específicas* plus 826 *generales* items and no 3,000-word deck can hold them. Re-measure
+offline any time with `pcic_crosscheck.py`.
 
 ## 6b. The deck ships at 2,838 against a 2,500 capacity: a recorded S17 deviation
 
