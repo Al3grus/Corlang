@@ -259,8 +259,29 @@ NOT_SUBJUNCTIVE = {
 # The AGENTIVE PASSIVE with ser + participle + por is a B2 register move; B1 teaches impersonal
 # and passive `se`. The `por` is what distinguishes it from an ordinary estar + participle
 # result state, which IS B1 (la puerta está cerrada).
+# NARROWED after two false positives on real content, both of them correct Spanish:
+#   'El barrio es conocido por su diversidad'  -> por introduces a CAUSE, not an agent, and
+#      `conocido` has lexicalised as an adjective. `ser conocido por` is a normal B1 collocation.
+#   'La terraza es muy soleada por la tarde'    -> por introduces a TIME.
+# The distinction between an agentive passive and ser + adjectival participle + causal por is
+# semantic, so the check now demands three things at once: a participle that is not one of the
+# lexicalised adjectival ones, `por` followed by a DEFINITE or INDEFINITE article (an agent is
+# normally a noun phrase, while causal por takes a possessive or a bare noun), and that article
+# not beginning a time expression. Narrow and honest beats broad and wrong: this check has found
+# no real defect yet, and a check that rewrites correct content is worse than one that misses.
+ADJECTIVAL_PARTICIPLES = {
+    'conocido', 'conocida', 'conocidos', 'conocidas', 'soleada', 'soleado',
+    'querido', 'querida', 'apreciado', 'apreciada', 'reconocido', 'reconocida',
+    'valorado', 'valorada', 'buscado', 'buscada', 'preocupado', 'preocupada',
+    'cansado', 'cansada', 'interesado', 'interesada', 'aburrido', 'aburrida',
+    'sorprendido', 'sorprendida', 'preparado', 'preparada', 'cerrado', 'cerrada',
+    'abierto', 'abierta', 'famoso', 'famosa',
+}
+TIME_AFTER_POR = {'tarde', 'mañana', 'manana', 'noche', 'semana', 'día', 'dia', 'hora',
+                  'momento', 'rato', 'verano', 'invierno', 'primavera', 'otoño', 'otono'}
 AGENTIVE_PASSIVE = re.compile(
-    r"\b(?:fue|fueron|es|son|será|serán|era|eran)\s+(?:\w+\s+)?\w+[ai]d[oa]s?\s+por\b",
+    r"\b(?:fue|fueron|es|son|será|serán|era|eran)\s+(\w+[ai]d[oa]s?)"
+    r"\s+por\s+(el|la|los|las|un|una)\s+(\w+)\b",
     re.IGNORECASE)
 
 # --- 6b. Above the A2 ceiling: the future in -ré and the conditional are B1 -------------------
@@ -394,7 +415,8 @@ def _checks_on_string(s, level=""):
                         f"PCIC puts it at B2 and this course stops at B1")
             break
     m = AGENTIVE_PASSIVE.search(s)
-    if m:
+    if (m and m.group(1).lower() not in ADJECTIVAL_PARTICIPLES
+            and m.group(3).lower() not in TIME_AFTER_POR):
         errs.append(f"agentive passive {m.group(0)!r} in {s[:60]!r}, "
                     f"B1 teaches impersonal and passive se instead")
     return errs
