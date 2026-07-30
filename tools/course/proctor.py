@@ -141,6 +141,13 @@ def main(build):
 
     # 5. MCQ LONGEST-ANSWER BIAS: if the correct option is disproportionately the longest,
     #    the course is guessable without knowing any of the language.
+    #    The tell has to be LENGTH, so the longest option must be UNIQUELY longest: when two
+    #    options tie for longest there is no "pick the longest" strategy to exploit. Requiring
+    #    uniqueness also keeps this metric independent of authoring order. `max(opts, key=len)`
+    #    returns the FIRST maximal element, and every course authors the answer first 55-85% of
+    #    the time, so the old form scored that convention rather than option length (K25).
+    #    Position genuinely cannot leak: all four MCQ surfaces shuffle options per showing
+    #    (ActivitySteps.kt, QuizScreen.kt, ExamScreen.kt, PlacementScreen.kt).
     total = longest = 0
     all_mcq = [q for day in days for a in day.get("activities", [])
                if a.get("type") == "EXERCISE" for q in mcq_iter(a.get("questions", []))]
@@ -148,7 +155,10 @@ def main(build):
         opts = q.get("options", [])
         if len(opts) == 4:
             total += 1
-            if max(opts, key=len) == q.get("answer"):
+            longest_len = max(len(o) for o in opts)
+            ans = q.get("answer")
+            if isinstance(ans, str) and len(ans) == longest_len \
+                    and sum(1 for o in opts if len(o) == longest_len) == 1:
                 longest += 1
     if total:
         rate = longest * 100 // total
