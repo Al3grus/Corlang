@@ -121,7 +121,10 @@ MISSING_ACCENT = re.compile(
     r"telefono|musica|rapido|gramatica|numero|ultimo|proximo|publico|medico|"
     r"tenia|habia|podia|queria|decia|veia|comia|salia|vivia|ponia|venia|traia|leia|"
     r"creia|dormia|sentia|seguia|pedia|frio|"
-    r"buenisimo|buenisima|altisimo|altisima)\b",
+    r"buenisimo|buenisima|altisimo|altisima|"
+    # Reference-work vocabulary, added because `Diccionario panhispanico de dudas` shipped
+    # unaccented in the es resources.json. Unaccented these are words in no language at all.
+    r"panhispanico|panhispanica|panhispanicos|linguistico|linguistica|gramatico)\b",
     re.IGNORECASE)
 
 # Same rule, but matched LOWERCASE ONLY because the bare form collides with a proper name in
@@ -154,11 +157,22 @@ MISSING_ACCENT_SION = re.compile(
 # --- 4b. Missing ñ: the bare form is a different word, or no word at all --------------------
 # Lowercase-only where the bare form collides with a proper name (Nina, Ana). "ano" for "año"
 # is the canonical reason this check exists and is crude enough that it must always fire.
+# CASE-INSENSITIVE, because Spanish routinely starts a sentence with one of these and the
+# title-case form was invisible to the lowercase-only original: "Manana vamos al cine" passed
+# every check in this file. Verified safe by measurement rather than assumption -- a sweep of the
+# title-case forms over the whole es build returned ZERO occurrences, so widening flags nothing
+# retroactively, and none of the words below collides with a Spanish proper noun in title case
+# (Banos and Espanola exist as place names but still carry the tilde).
 MISSING_ENYE = re.compile(
     r"\b(espanol|espanola|espanoles|manana|senor|senora|senores|senorita|"
     r"pequeno|pequena|pequenos|pequenas|bano|banos|sueno|suenos|ensenar|ensena|"
-    r"companero|companera|montana|montanas|otono|ninos|ninas|"
-    r"cumpleanos|ano|anos)\b")
+    r"companero|companera|otono|ninos|ninas|"
+    r"cumpleanos|ano|anos)\b",
+    re.IGNORECASE)
+
+# Kept LOWERCASE-ONLY: title-case "Montana" is the US state, a real place name that correctly
+# carries no tilde, so this one word cannot join the case-insensitive set above.
+MISSING_ENYE_LOWER = re.compile(r"\b(montana|montanas)\b")
 
 # --- 5. Missing opening ¿ / ¡ --------------------------------------------------------------
 def _missing_opener(s):
@@ -338,6 +352,22 @@ def spanish_strings_of(node):
             yield s
 
 
+# The message fragments that identify a LEVEL-CEILING finding, as opposed to an orthography or
+# variety one. Kept as a named constant so the prompt/title scan below cannot silently widen if
+# a new check is added with a different message shape.
+CEILING_MARKERS = ("imperfect subjunctive", "compound tense above", "future tense",
+                   "conditional", "agentive passive")
+
+
+def ceiling_strings_of(node):
+    """Learner-visible text that is NOT target-language-only: question prompts and activity
+    titles. These mix English instructions with embedded Spanish, so they are checked for the
+    level ceiling alone (see the call site)."""
+    for path, s in check_batch.walk_strings(node):
+        if path.endswith(".prompt") or path.endswith(".title"):
+            yield s
+
+
 def sentence_strings_of(node):
     """Whole target-language sentences only, for the ¿ / ¡ check. Answers, options and reorder
     tokens are legitimately fragments and must not be asked to carry an opening mark."""
@@ -394,7 +424,7 @@ def _checks_on_string(s, level=""):
          or MISSING_ACCENT_CION.search(s) or MISSING_ACCENT_SION.search(s))
     if m:
         errs.append(f"missing written accent on {m.group(0)!r} in {s[:60]!r}")
-    m = MISSING_ENYE.search(s)
+    m = MISSING_ENYE.search(s) or MISSING_ENYE_LOWER.search(s)
     if m:
         errs.append(f"missing ñ in {m.group(0)!r} in {s[:60]!r}")
     m = IMPERFECT_SUBJ.search(s)
@@ -472,6 +502,21 @@ def check_spanish(path):
                 opener = "¿" if mark == "?" else "¡"
                 errs.append(f"{tag}: missing opening {opener} in {s[:60]!r}")
 
+        # THE LEVEL CEILING, over PROMPTS and ACTIVITY TITLES. These fields were outside every
+        # scanned set (spanish_strings_of takes .hr/.target/.answer and the option arrays), and a
+        # Phase 8c audit found FOUR real B1-ceiling violations living in exactly this blind spot:
+        # an imperfect subjunctive inside an MCQ prompt, one inside a FILL prompt, and a dialogue
+        # TITLED "Si pudiera elegir". The pattern fired correctly on all of them the moment the
+        # string was handed to it -- nothing was ever wrong except which fields got read.
+        # Only the CEILING checks run here, never the orthography or variety ones: a prompt is
+        # mostly English instructional prose, and `cafe`/`menu` are English words that would
+        # false-fire the accent list (the K18 shape). The ceiling patterns are safe on English
+        # because they require either a Spanish accent or a Spanish trigger word.
+        for s in ceiling_strings_of(day):
+            for msg in _checks_on_string(s, day.get("level", "")):
+                if any(k in msg for k in CEILING_MARKERS):
+                    errs.append(f"{tag}: {msg} (in a prompt or title, which is learner-visible)")
+
         # Variety, scoped to the ACTIVITY so contrastive teaching stays legal. This is the
         # whole design: the B1 course is REQUIRED to show American forms, because the B1 exam's
         # own texts do, so the rule is about pairing rather than banning.
@@ -507,6 +552,24 @@ def _generic_distractors(node):
     return out
 
 
+def _accent_only(s):
+    """Just the orthography checks: missing written accent and missing enye. Used on `.name` and
+    `.title` fields in the reference files, where the surrounding prose is English and the wider
+    battery would be wrong to apply. Deliberately NOT including MISSING_ACCENT_CION here: `-cion`
+    is a real English ending (suspicion), and these fields mix English and Spanish freely, which
+    is the K18 false-positive shape exactly. The closed-list patterns are safe because every
+    alternative they match is a form that is not a word in either language."""
+    errs = []
+    m = (MISSING_ACCENT.search(s) or MISSING_ACCENT_LOWER.search(s)
+         or MISSING_ACCENT_SION.search(s))
+    if m:
+        errs.append(f"missing written accent on {m.group(0)!r} in {s[:60]!r}")
+    m = MISSING_ENYE.search(s) or MISSING_ENYE_LOWER.search(s)
+    if m:
+        errs.append(f"missing enye in {m.group(0)!r} in {s[:60]!r}")
+    return errs
+
+
 def check_spanish_generic(label, raw):
     """The same checks for non-day-shaped files (vocab packs, quizzes.json, placement.json,
     exams.json, grammar.json...). These shapes have no `activities` to scope the contrastive
@@ -520,6 +583,17 @@ def check_spanish_generic(label, raw):
         if (path.endswith(".hr") or path.endswith(".target") or path.endswith(".answer")
                 or ".options[" in path or ".ordered[" in path or ".accepted[" in path):
             strings.append(s)
+        # `.name` and `.title` carry SPANISH PROPER NAMES in the reference files -- the resource
+        # titles in resources.json, the PCIC level names in levels.json ("Elementary (Plataforma)").
+        # They were outside the scanned set, which is exactly how `Diccionario de la lengua
+        # espanola` and `panhispanico` shipped unaccented into the es build: the accent check ran,
+        # but never over the field holding the word. Only the ORTHOGRAPHY checks are wanted here,
+        # so these go through _accent_only rather than the full string battery: a resource title
+        # is a real-world name and may legitimately contain an American form (Radio Ambulante)
+        # without owing the file a peninsular counterpart.
+        if path.endswith(".name") or path.endswith(".title"):
+            for msg in _accent_only(s):
+                errs.append(f"{label}: {msg}")
         if path.endswith(".hr") or path.endswith(".target"):
             sentences.append(s)
 
