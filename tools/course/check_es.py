@@ -187,7 +187,42 @@ IMPERFECT_SUBJ = re.compile(
 # Compound tenses above B1: they are only wrong when a participle actually follows, because
 # habrá / habría / hubo on their own are perfectly good B1 forms of haber.
 COMPOUND_ABOVE_B1 = re.compile(
-    r"\b(habr[éáíé]\w*|habría\w*|habrías|hubo|hubieron)\s+\w+[aií]d[oa]s?\b",
+    r"\b(habr[éáíé]\w*|habría\w*|habrías|hubo|hubieron|"
+    # The PERFECT SUBJUNCTIVE (haya hecho) is PCIC 9.2.3, also B2. It was missing entirely,
+    # which mattered because three B1 authoring briefs had already been told it was banned.
+    r"haya|hayas|hayamos|hayáis|hayan)\s+\w+[aií]d[oa]s?\b",
+    re.IGNORECASE)
+
+# REGULAR imperfect subjunctives, which the strong-stem list above cannot see. `esperara`,
+# `hablara`, `comiera`, `viviera` are the COMMON case, so missing them left the check covering
+# only the irregular minority.
+#
+# A bare `-ara` sweep is unusable: it swallows cara, clara, rara, avara, tiara, máscara, cámara,
+# para. So two safe routes are used instead.
+#   (a) The plural and first-person-plural endings are unambiguous on their own. No Spanish noun
+#       ends in -áramos, -iéramos, -ásemos, -iésemos, -aran, -ieran, -asen or -iesen.
+#   (b) The singular endings are matched only after `si` or `que`, the two words that actually
+#       introduce an imperfect subjunctive, with a stem of at least two characters (which alone
+#       excludes para, cara and fiera) plus a short exemption list for the survivors.
+IMPERFECT_SUBJ_REGULAR_PLURAL = re.compile(
+    r"\b\w{2,}(?:áramos|iéramos|ásemos|iésemos|aran|ieran|asen|iesen)\b", re.IGNORECASE)
+IMPERFECT_SUBJ_AFTER_SI_QUE = re.compile(
+    r"\b(?:si|que)\s+(?:\w+\s+)?(\w{2,}(?:aras|ieras|ases|ieses|ara|iera|ase|iese))\b",
+    re.IGNORECASE)
+NOT_SUBJUNCTIVE = {
+    # Singulars and plurals both, because the 2sg endings (-aras, -ieras) collide with the
+    # PLURAL of every one of these nouns and adjectives.
+    "clara", "claras", "rara", "raras", "avara", "avaras", "tiara", "tiaras",
+    "mascara", "máscara", "mascaras", "máscaras", "camara", "cámara", "camaras", "cámaras",
+    "sahara", "guitarra", "guitarras", "pizarra", "pizarras",
+    "envase", "envases", "clase", "clases", "frase", "frases", "base", "bases", "fase", "fases",
+}
+
+# The AGENTIVE PASSIVE with ser + participle + por is a B2 register move; B1 teaches impersonal
+# and passive `se`. The `por` is what distinguishes it from an ordinary estar + participle
+# result state, which IS B1 (la puerta está cerrada).
+AGENTIVE_PASSIVE = re.compile(
+    r"\b(?:fue|fueron|es|son|será|serán|era|eran)\s+(?:\w+\s+)?\w+[ai]d[oa]s?\s+por\b",
     re.IGNORECASE)
 
 # --- 6b. Above the A2 ceiling: the future in -ré and the conditional are B1 -------------------
@@ -310,6 +345,18 @@ def _checks_on_string(s, level=""):
     m = COMPOUND_ABOVE_B1.search(s)
     if m:
         errs.append(f"compound tense above B1 {m.group(0)!r} in {s[:60]!r}")
+    m = IMPERFECT_SUBJ_REGULAR_PLURAL.search(s)
+    if m:
+        errs.append(f"imperfect subjunctive {m.group(0)!r} in {s[:60]!r}, "
+                    f"PCIC puts it at B2 and this course stops at B1")
+    m = IMPERFECT_SUBJ_AFTER_SI_QUE.search(s)
+    if m and m.group(1).lower() not in NOT_SUBJUNCTIVE:
+        errs.append(f"imperfect subjunctive {m.group(1)!r} after si/que in {s[:60]!r}, "
+                    f"PCIC puts it at B2 and this course stops at B1")
+    m = AGENTIVE_PASSIVE.search(s)
+    if m:
+        errs.append(f"agentive passive {m.group(0)!r} in {s[:60]!r}, "
+                    f"B1 teaches impersonal and passive se instead")
     return errs
 
 
