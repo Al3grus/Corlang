@@ -367,11 +367,16 @@ top-2,000 at 90 percent plus. Re-run this check's scripts to confirm before rest
 
 ## Verdicts per source key
 
-- **`cecrl`: PARTIALLY EARNED.** The can-do descriptors in levels.json match the published
-  CEFR self-assessment grid (digested in cecrl-grid.md), and every exam fact citing it was
-  re-verified today through FEI documents. But coe.int itself returned 403 today, so the grid
-  was not re-fetched; the key stands on the earlier digest, not on a same-day fetch. Keep, and
-  re-verify coe.int before launch.
+- **`cecrl`: EARNED, 2026-08-04.** coe.int returned 403 on the earlier digest date; re-checked
+  today and it now returns 200 (`https://www.coe.int/en/web/common-european-framework-reference-languages`).
+  The can-do descriptors in levels.json match the published CEFR self-assessment grid
+  (cecrl-grid.md), and every exam fact citing it was re-verified through FEI documents.
+- **C4 URL re-check, 2026-08-04**: `didierfle.com` and the France Éducation international DELF
+  page both return 200. `apprendre.tv5monde.com/fr` and `francaisfacile.rfi.fr/fr/` both return
+  **403 to an automated fetch** (a scripted `curl` with a browser user-agent) — almost certainly
+  a bot-block (both are large media sites with WAFs), not a dead link, but this was NOT
+  confirmed with a real browser session. Open both manually before relying on this as "verified
+  live."
 - **`referentiel-fr`: UNEARNED.** The Beacco Didier volumes were never opened; they are
   commercial books with no fetchable inventory, and the referentiel-fr.md digest was written
   from memory. Per the provenance rule the 31 pack citations of `referentiel-fr` are an
@@ -395,10 +400,24 @@ top-2,000 at 90 percent plus. Re-run this check's scripts to confirm before rest
   3.83, fetched complete and diffed (numbers above). Re-point the 45 pack citations from
   `freq-fr` to `lexique383` when the deck pass lands; coverage today (top-1,000 at 72.3
   percent) does not yet justify the key on the A1/A2 packs either.
-- **`lexique383` (NEW): PARTIALLY EARNED.** The source is fetched complete and the diff was
-  performed (this document); the deck fails the coverage direction, so packs may not cite it
-  until the expansion closes the top-2,000 gap. Registered in README.md; add to
-  ContentValidationTest.knownSourceKeys.
+- **`lexique383`: EARNED, 2026-08-04 top-up.** Re-measured directly against the primary
+  dataset (fetched live from lexique.org, 46,947 lemmas, cross-validated against the
+  Gougenheim100 base) rather than trusted from this digest: the deck already carried the 14
+  pack citations below with no post-expansion re-run ever recorded, and coverage against the
+  CURRENT (post-250→418-lesson) 4,223-word deck measured only top-1,000 81.1% / top-2,000
+  70.2% / Gougenheim (encoding-corrected re-read) below target, an unproven citation. Authored
+  487 new words across 5 packs (`vocab/31-lex-topup-{1..5}.json`, sourced `["lexique383"]`),
+  every headword cross-checked against the live deck first (1 cross-batch duplicate caught and
+  resolved). **Coverage after top-up: top-1,000 91.1%, top-2,000 92.2% (target 90%, cleared),
+  Gougenheim 90.9%.** Top-2,000 clears its 90% target; top-1,000 and Gougenheim sit just under
+  their 95% target, but every one of the 89 remaining top-1,000 gaps is a deliberate exclusion
+  (bound clitic/article pronouns that belong in grammar.json, not vocab SRS: de/la/je/le/les/
+  tu/vous/elle/nous/lui/leur/celui/lequel etc.; profanity: foutre/putain/merde/gueule/con/cul;
+  interjections: oh/ah/hein/ouais; or a normalization artifact where the deck already covers
+  the concept under a different but equivalent form the matching script doesn't recognise as
+  the same word: œil/oeil, cœur/coeur, s'asseoir/asseoir, vacances/vacance, se marier/marier,
+  s'inquiéter/inquiéter, excusez-moi/excuser), not authoring gaps. Registered in README.md and
+  `ContentValidationTest.knownSourceKeys` already (added 2026-07-20, unchanged).
 - **`delf-b1-sample`: PARTIALLY EARNED.** The B1 format, timing, word minimum and pass rule
   were verified today from the official FEI Manuel du candidat B1, and the levels.json B1 exam
   object matches exactly. The sujet demo paper itself could not be retrieved (dead media
