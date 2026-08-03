@@ -166,6 +166,31 @@ def main(build):
         (problems if rate > 55 else info).append(
             line + (" (guessable, rewrite distractors)" if rate > 55 else ""))
 
+    # 7. POSITIONAL MCQ EXPLANATIONS: an explanation that refers to "the first/second/third/
+    #    fourth/last option" instead of quoting its content is a live bug, not just bad prose.
+    #    All four MCQ surfaces shuffle options per showing (ActivitySteps.kt, QuizScreen.kt,
+    #    ExamScreen.kt, PlacementScreen.kt), so a positional reference can end up describing
+    #    the wrong choice for whichever order the learner actually sees. Found live in
+    #    de/es/hr/it (C17, docs/error-registry.md) via a manual sweep; this makes the sweep
+    #    permanent instead of one-time.
+    # NOTE: "the other options" / "the remaining options" are NOT positional (they mean
+    # "everything but the answer", which is shuffle-safe by definition) -- only true ordinals
+    # are a real bug, so they are deliberately excluded here.
+    POSITIONAL = re.compile(
+        r"\b(the\s+)?(first|second|third|fourth|1st|2nd|3rd|4th|last|next|previous)\s+"
+        r"(option|answer|choice)s?\b", re.IGNORECASE)
+    for day in days:
+        for a in day.get("activities", []):
+            if a.get("type") != "EXERCISE":
+                continue
+            for q in mcq_iter(a.get("questions", [])):
+                exp = q.get("explanation", "")
+                if POSITIONAL.search(exp):
+                    problems.append(
+                        f"day '{day['title'][:35]}' MCQ explanation references option "
+                        f"POSITION instead of content (options shuffle per showing): "
+                        f"'{exp[:70]}'")
+
     # 6. DIFFICULTY sanity per level, advisory.
     by_level = collections.defaultdict(list)
     for day in days:
