@@ -17,7 +17,7 @@ import glob
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CONTENT = os.path.join(REPO, "app", "src", "main", "assets", "content")
 OUT_DIR = os.path.join(REPO, "docs", "review")
-LANGS = ["hr", "fr", "pt"]
+LANGS = ["hr", "fr", "pt", "de", "it"]
 
 
 def load(lang, name):
@@ -138,6 +138,41 @@ def quizzes_section(lang):
     return "\n".join(out)
 
 
+def dialogues_section(lang):
+    index_path = os.path.join(CONTENT, lang, "plan", "_index.json")
+    if not os.path.exists(index_path):
+        return "", 0
+    with open(index_path, encoding="utf-8") as f:
+        phase_files = json.load(f)
+    out, total, cur_level = [], 0, None
+    for pf in phase_files:
+        phase = load(lang, os.path.join("plan", pf))
+        if not phase:
+            continue
+        for day in phase.get("days", []):
+            dialogues = [a for a in day.get("activities", []) if a.get("type") == "DIALOGUE"]
+            if not dialogues:
+                continue
+            level = day.get("level", "")
+            if level != cur_level:
+                out.append(f'<h3>{e(level)}</h3>')
+                cur_level = level
+            out.append(f'<h4>Day {e(day.get("day", ""))} &mdash; {e(day.get("title", ""))}</h4>')
+            for d in dialogues:
+                out.append('<table><thead><tr><th>Speaker</th><th>Term</th><th>English</th>'
+                            '<th class="corr">Correction / notes</th></tr></thead><tbody>')
+                for line in d.get("lines", []):
+                    total += 1
+                    out.append(
+                        f'<tr><td class="note">{e(line.get("speaker", ""))}</td>'
+                        f'<td class="tgt">{e(line.get("hr", ""))}</td>'
+                        f'<td>{e(line.get("en", ""))}</td>'
+                        f'<td class="corr"></td></tr>'
+                    )
+                out.append('</tbody></table>')
+    return "\n".join(out), total
+
+
 CSS = """
 * { box-sizing: border-box; }
 body { font: 15px/1.5 -apple-system, Segoe UI, Roboto, sans-serif; color: #14181c; margin: 0; padding: 32px 40px; max-width: 1000px; }
@@ -183,6 +218,16 @@ def build(lang):
         '<h2>2. Grammar</h2>', grammar_section(lang),
         '<h2>3. Cheatsheet</h2>', cheatsheet_section(lang),
         '<h2>4. Quizzes (answers shown for review)</h2>', quizzes_section(lang),
+    ]
+    dialogues_html, total_lines = dialogues_section(lang)
+    parts += [
+        f'<h2>5. Dialogues <span style="font-weight:400;font-size:14px;color:#5a6b74">'
+        f'({total_lines} lines, grouped by level then day)</span></h2>',
+        '<p class="intro">These are the two-person practice conversations from the day-by-day '
+        'lessons &mdash; the least-reviewed material, since none of it overlaps the vocabulary '
+        'above. Skim for anything a real speaker would never say, wrong register (formal vs. '
+        'informal), or an unnatural word order; you do not need to read every single line.</p>',
+        dialogues_html,
         '</body></html>',
     ]
     out_path = os.path.join(OUT_DIR, f"{lang}-content-review.html")
