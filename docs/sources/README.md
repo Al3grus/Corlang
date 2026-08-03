@@ -80,7 +80,12 @@ authoring REQUIREMENT enforced by a Brazilianism blocklist in the content pipeli
 | `diple-sample` | CAPLE, DIPLE (B2) *modelo de exame* — 4-component template for the B2 mock | [caple.md](caple.md) |
 | `referencial-camoes` | Instituto Camões, *Referencial Camões PLE* (per-level content inventories A1–C2 for Portuguese as a foreign language) | [referencial-camoes.md](referencial-camoes.md) |
 | `portugues-fundamental` | CLUL (Centro de Linguística da Univ. de Lisboa), *Português Fundamental* (1984): the official 2,217-word basic vocabulary from a 700k-word SPOKEN European-Portuguese corpus + 30-theme availability vocabulary | [portugues-fundamental.md](portugues-fundamental.md) |
-| `freq-pt` | *A Frequency Dictionary of Portuguese* (Davies & Preto-Bay, Routledge), corpus frequency cross-check (European forms preferred where variants differ) | [portugues-fundamental.md](portugues-fundamental.md) |
+
+`freq-pt` (*A Frequency Dictionary of Portuguese*, Davies & Preto-Bay, Routledge) was **retired
+2026-08-04**: a commercial book, never fetched and not fetchable, the exact `freq-fr`/`freq-es`
+overclaim class (registry C16). It was cited on 12 packs with no coverage check ever performed;
+removed from all of them and from `ContentValidationTest.knownSourceKeys`. See
+[portugues-fundamental.md](portugues-fundamental.md).
 
 ### Italian (it) — target B1 (citizenship level)
 
