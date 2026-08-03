@@ -102,14 +102,18 @@ All assets live in `docs/store-assets/` — see the README there.
 
 ## 🗣️ TRACK D — Content quality (native-speaker review; parallel, non-blocking)
 
-1. Croatian native review (`docs/review/hr-content-review.html`).
-2. Portuguese native review (sister; `docs/review/pt-content-review.html`).
-3. French native review (`docs/review/fr-content-review.html`).
-   **Docs regenerated 2026-07-19 against the 250-lesson courses (+297 machine-authored
-   lessons, +422 words, new placement tests + 4 new mocks) — the PRIORITY track now: none
-   of the new material has been read by a human. Start reviewers at A1/A2.**
-4. **(me)** Fold returned corrections into the JSON; tests + ai-variety-eval re-verify.
-5. **(you, phone)** TTS pronunciation spot-check per language.
+1. Croatian native review (friend) — `docs/review/hr-content-review.html`.
+2. Portuguese native review (sister) — `docs/review/pt-content-review.html`.
+3. French native review (friend) — `docs/review/fr-content-review.html`.
+4. German native review (reviewer found) — `docs/review/de-content-review.html`.
+5. Italian native review — **(browser) find a reviewer, none assigned yet** —
+   `docs/review/it-content-review.html`.
+   **Docs regenerated 2026-08-03 against current content (all 5 shipped courses, dialogue
+   scripts now included as a 5th section — previously only vocab/grammar/cheatsheet/quizzes
+   were covered, so ~300+ machine-authored lesson dialogues had never surfaced to a
+   reviewer). Reviewer-facing instructions + reporting format: `docs/review/REVIEWER-INSTRUCTIONS.md`.**
+6. **(me)** Fold returned corrections into the JSON; tests + ai-variety-eval re-verify.
+7. **(you, phone)** TTS pronunciation spot-check per language.
 
 ---
 
