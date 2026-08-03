@@ -18,7 +18,18 @@ before it counts as done. **Word ids are frozen once shipped** (SRS keys on them
 | `08-b1-knowledge.json` | B1 | science & inventions (Znanost, otkrića, izumi), art & culture (Umjetnost), ecology (Eko-Hrvatska), food & health discourse (Ono smo što jedemo) | 226 | ✅ shipped (ids frozen) |
 | `09-b1-verbs-aspect.json` | B1 | the ASOO B1 "glagoli u kontekstu" series: pisati/gledati/misliti/raditi/zvati/stati/držati/igrati/živjeti/govoriti/pustiti/staviti families with aspect pairs; abstract nouns & word formation; opinion/argument phrases | 146 | ✅ shipped (ids frozen) |
 | `10-b1-topup.json` | A2/B1 | extended family & in-laws, children & parenting, character/emotions depth, daily-life gaps, official exam-text lemmas | 421 | ✅ shipped (ids frozen) |
-| **Total** | | | **2,412 shipped**, inside the research band for B1 (~2,400–3,000 lemmas) | |
+| **Subtotal above** | | | **2,412** | (this table's original 11-file scope) |
+
+**2026-08-04: this table is stale below this line** — the deck grew past it across several later
+sessions and the per-file theme descriptions were never backfilled here. Current file list and
+counts (all ✅ shipped, ids frozen), verified live against the repo: `11-b1-topup-2.json` (34),
+`12-b1-topup-3.json` (120), `hr-a1-core-extra.json` (110), `hr-a2-core-extra.json` (110),
+`hr-a2-mid-freq.json` (150), `hr-b1-abstract-extra.json` (100), `hr-b1-core-extra.json` (104),
+`hr-b1-mid-freq.json` (150), `hr-b1-precise.json` (150). **Real total: 3,440 words across 19
+files**, still inside the research band for B1 (~2,400-3,000 was the original target; the course
+grew past its own floor once the 250+ lesson expansions needed more SRS capacity). Themes for the
+newer files follow their filenames (mid-frequency top-up, precision/abstract B1 vocabulary,
+core-extra top-up per level) rather than the ASOO-topic-per-file granularity of the original 11.
 
 ## Batch rules
 
