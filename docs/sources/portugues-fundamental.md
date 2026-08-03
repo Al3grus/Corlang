@@ -23,8 +23,16 @@ the 30 availability themes seed the pack structure.
 
 ## Frequency cross-check
 
-*A Frequency Dictionary of Portuguese* (Davies & Preto-Bay, Routledge, 5,000 lemmas,
-corpus-based). Where European and Brazilian variants differ, the **European form is
-authoritative** for Corlang (autocarro not ônibus, telemóvel not celular, pequeno-almoço not
-café da manhã, comboio not trem, casa de banho not banheiro…). A Brazilianism blocklist is
-enforced mechanically in the content pipeline.
+`freq-pt` (*A Frequency Dictionary of Portuguese*, Davies & Preto-Bay, Routledge, 5,000 lemmas,
+corpus-based) was **RETIRED 2026-08-04**: a commercial book, never fetched and not fetchable,
+the exact overclaim class already retired for French (`freq-fr`) and refused for Spanish
+(`pcic` vocabulary). It was cited on 12 packs with no coverage check ever actually performed;
+removed from all of them and from `ContentValidationTest.knownSourceKeys`. No live, fetchable
+European-Portuguese frequency corpus with an open licence was found to replace it (unlike
+French, which had Lexique 3.83) — restore only if one is found and a real coverage diff is run,
+per the `freq-fr` → `lexique383` precedent.
+
+Where European and Brazilian variants differ, the **European form is authoritative** for
+Corlang (autocarro not ônibus, telemóvel not celular, pequeno-almoço not café da manhã,
+comboio not trem, casa de banho not banheiro…). A Brazilianism blocklist is enforced
+mechanically in the content pipeline, independent of this citation.

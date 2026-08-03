@@ -59,8 +59,12 @@ class ContentValidationTest {
         "cecrl", "delf-b1-sample", "delf-b2-sample",
         "inventaire-cecrl", "lexique383", "decret-2025-648",
         // Portuguese, European (DIPLE B2 target)
+        // freq-pt retired 2026-08-04: *A Frequency Dictionary of Portuguese* (Davies &
+        // Preto-Bay, Routledge) is a commercial book, never fetched and not fetchable, the
+        // exact freq-fr/freq-es overclaim class (registry C16). Cited on 12 packs with no
+        // coverage check ever performed; removed from all of them.
         "qecr", "caple", "deple-sample", "diple-sample",
-        "referencial-camoes", "portugues-fundamental", "freq-pt",
+        "referencial-camoes", "portugues-fundamental",
         // German (Goethe-Zertifikat B1 target, the citizenship / settlement level)
         "goethe-a1", "goethe-a2", "goethe-b1", "telc-b1", "goethe-wortliste", "stag-10",
         // Italian (CILS / CELI B1 target, the citizenship level since Dec 2018)
