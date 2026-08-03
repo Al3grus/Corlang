@@ -91,7 +91,11 @@ is the diff itself. It is below, and it found real gaps.
   mirror in the megahr/lexicon repository (the MEGAHR psycholinguistic project, which
   redistributes it under the same CC BY-SA licence). Registered as new key `hrlex`. Re-try
   the CLARIN.SI 1.3 download before launch and re-run the numbers; differences between 1.2
-  and 1.3 are incremental corrections, not a re-ranking.
+  and 1.3 are incremental corrections, not a re-ranking. **2026-08-04**: the CLARIN.SI page now
+  returns 200 (was unreachable in July); the actual bitstream download was not re-attempted this
+  session since `hrlex` is currently cited by zero content (registry-only, no live overclaim
+  risk) and 1.2's numbers are already the basis for the shipped deck. Fetch 1.3 before the key is
+  ever cited on a pack.
 - **Spoken cross-check: COMPLETE.** The OpenSubtitles 2018 Croatian wordform frequency list
   (hermitdave FrequencyWords, 50,000 rows) was fetched complete from GitHub and mapped to
   lemmas through hrLex, giving a spoken-register lemma ranking to balance hrWaC's web and
