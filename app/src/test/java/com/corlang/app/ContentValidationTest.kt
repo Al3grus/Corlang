@@ -984,10 +984,7 @@ class ContentValidationTest {
      * enforcing. Listing them here keeps the shortfall visible in code rather than letting a
      * lowered bar hide it.
      */
-    private val weightedRuleDebt = mapOf(
-        "pt" to "A2 55 and B1 70, short 15 and 55. B2 hidden 2026-07-20 (Portugal requires only " +
-            "A2 for nationality), so the course is 170 lessons until B1 is topped up.",
-    )
+    private val weightedRuleDebt = emptyMap<String, String>()
 
     @Test
     fun everyCourseMeetsTheWeightedLessonFloor() {
