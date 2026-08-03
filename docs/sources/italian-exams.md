@@ -447,15 +447,26 @@ banding should reflect it. Nothing in the A1 or A2 blocks is above level.
 
 ### Verdicts
 
-- **`freq-it`: PARTIALLY EARNED, not shippable as-is on the packs.** The level-fit
-  direction passes (87.1 percent of deck lemmas inside the NVdB, A1 packs 74 percent
-  fondamentale, outside-list content thematically motivated). The coverage direction fails:
-  56.2 percent of the fondamentale band and 22.6 percent of alto uso, with the very top of
-  the frequency list among the 867 missing core lemmas (solo, mondo, qualcosa, importante,
-  difficile, vivere). Per the German precedent, either author a fondamentale top-up pass
-  (priority: the 150 to 250 highest-frequency FO absences ranked above) before shipping
-  with the key, or remove `freq-it` from all 16 packs now and restore it when the top-up
-  lands.
+- **`freq-it`: EARNED for the fondamentale (FO) band, 2026-08-03 top-up.** Re-measured
+  directly against the primary dataset (`memdevice/nvdb` on GitHub, cross-validated against
+  the De Mauro and Chiari PDF by the original 2026-07-20 check) rather than trusted from the
+  prior digest: coverage stood at 63.0 percent FO / 21.4 percent alto uso going into this
+  pass (deck growth since 2026-07-20 had already closed some of the originally-reported
+  56.2 percent, including the four headline absences solo, mondo, qualcosa and vivere).
+  Authored 674 new words across 5 packs (`vocab/20-fo-topup-{1..5}.json`, sourced
+  `["freq-it"]`), all cross-checked against the full existing deck to avoid duplicates before
+  writing. **FO coverage after top-up: 97.1 percent** (1,918 of 1,976 lemmas; 58 remain
+  unaddressed, and re-checking that residual list confirms it is deliberate exclusions, not
+  authoring gaps: profanity (cazzo, culo, coglione, merda, stronzo, schifo), bound clitic/
+  article forms that belong in `grammar.json`'s pronoun tables rather than SRS vocab (egli,
+  essa, essi, esso, ce, gli, il, la, le, li, lo, ne, si, te, ti, ve, vi, una), English
+  loanwords of low pedagogical value (quiz, test, web, e-mail), and words already covered
+  under a different headword the agents verified against the live deck (lamentare/
+  lamentarsi, occhiale/occhiali, ok/va bene, pantalone/pantaloni, sedere/sedersi, soldo/
+  soldi, solito/di solito, voglia/avere voglia di). **`alto uso` remains untouched by this
+  pass, still around 21-22 percent** — out of scope this round; if the citation is ever read
+  as covering AU too, that would need its own top-up, tracked separately, not implied by this
+  FO-only fix.
 - **`cils-a1`: EARNED for the topic sequence.** Follow-up 1 (dimostrativi) closed 2026-07-29.
 - **`cils-a2`: EARNED for the topic sequence.** Follow-ups 2 (che relativo) and 7 (posta
   transaction context) closed 2026-07-29.
