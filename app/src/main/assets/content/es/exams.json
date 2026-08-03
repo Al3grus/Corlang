@@ -443,55 +443,63 @@
      },
      {
       "type": "MCQ",
-      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Carlos se levanta...",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Uno de los finales no corresponde a ningún principio. Carlos se levanta...",
       "difficulty": 3,
       "options": [
        "a las siete de la mañana.",
        "en autobús.",
        "dos veces por semana.",
-       "sobre las once."
+       "sobre las once.",
+       "en un restaurante cerca de la oficina.",
+       "hasta las seis de la tarde."
       ],
       "answer": "a las siete de la mañana.",
-      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine. 'En un restaurante cerca de la oficina' and 'hasta las seis de la tarde' are extra continuations from the monólogo that do not complete any of these four openings, unused distractors as in the real exam."
      },
      {
       "type": "MCQ",
-      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Va al trabajo...",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Uno de los finales no corresponde a ningún principio. Va al trabajo...",
       "difficulty": 3,
       "options": [
        "a las siete de la mañana.",
        "en autobús.",
        "dos veces por semana.",
-       "sobre las once."
+       "sobre las once.",
+       "en un restaurante cerca de la oficina.",
+       "hasta las seis de la tarde."
       ],
       "answer": "en autobús.",
-      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine. 'En un restaurante cerca de la oficina' and 'hasta las seis de la tarde' are extra continuations from the monólogo that do not complete any of these four openings, unused distractors as in the real exam."
      },
      {
       "type": "MCQ",
-      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Va al gimnasio...",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Uno de los finales no corresponde a ningún principio. Va al gimnasio...",
       "difficulty": 3,
       "options": [
        "a las siete de la mañana.",
        "en autobús.",
        "dos veces por semana.",
-       "sobre las once."
+       "sobre las once.",
+       "en un restaurante cerca de la oficina.",
+       "hasta las seis de la tarde."
       ],
       "answer": "dos veces por semana.",
-      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine. 'En un restaurante cerca de la oficina' and 'hasta las seis de la tarde' are extra continuations from the monólogo that do not complete any of these four openings, unused distractors as in the real exam."
      },
      {
       "type": "MCQ",
-      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Se acuesta...",
+      "prompt": "Empareja el principio de cada frase con su final correcto, según el monólogo de Carlos. Uno de los finales no corresponde a ningún principio. Se acuesta...",
       "difficulty": 3,
       "options": [
        "a las siete de la mañana.",
        "en autobús.",
        "dos veces por semana.",
-       "sobre las once."
+       "sobre las once.",
+       "en un restaurante cerca de la oficina.",
+       "hasta las seis de la tarde."
       ],
       "answer": "sobre las once.",
-      "explanation": "Each ending comes directly from Carlos's description of his daily routine."
+      "explanation": "Each ending comes directly from Carlos's description of his daily routine. 'En un restaurante cerca de la oficina' and 'hasta las seis de la tarde' are extra continuations from the monólogo that do not complete any of these four openings, unused distractors as in the real exam."
      },
      {
       "type": "MCQ",
@@ -1066,10 +1074,10 @@
       "options": [
        "El hombre",
        "La mujer",
-       "Los dos"
+       "Ninguno de los dos"
       ],
       "answer": "El hombre",
-      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+      "explanation": "Javier is the man and Marta is the woman; the fourth statement is true of neither of them, since a transport company brings the van instead."
      },
      {
       "type": "MCQ",
@@ -1078,10 +1086,10 @@
       "options": [
        "El hombre",
        "La mujer",
-       "Los dos"
+       "Ninguno de los dos"
       ],
       "answer": "La mujer",
-      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+      "explanation": "Javier is the man and Marta is the woman; the fourth statement is true of neither of them, since a transport company brings the van instead."
      },
      {
       "type": "MCQ",
@@ -1090,22 +1098,22 @@
       "options": [
        "El hombre",
        "La mujer",
-       "Los dos"
+       "Ninguno de los dos"
       ],
       "answer": "El hombre",
-      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+      "explanation": "Javier is the man and Marta is the woman; the fourth statement is true of neither of them, since a transport company brings the van instead."
      },
      {
       "type": "MCQ",
-      "prompt": "¿Quién dice cada cosa? Tienen ganas de vivir en la casa nueva.",
+      "prompt": "¿Quién dice cada cosa? Van a alquilar ellos mismos una furgoneta para la mudanza.",
       "difficulty": 4,
       "options": [
        "El hombre",
        "La mujer",
-       "Los dos"
+       "Ninguno de los dos"
       ],
-      "answer": "Los dos",
-      "explanation": "Javier is the man and Marta is the woman; the last statement is shared by both."
+      "answer": "Ninguno de los dos",
+      "explanation": "Javier is the man and Marta is the woman. Neither one is renting a van themselves: they hired a transport company that brings its own furgoneta, so the correct answer is neither."
      },
      {
       "type": "MCQ",
@@ -1227,7 +1235,7 @@
  {
   "id": "es-b1-dele-mock",
   "levelId": "B1",
-  "title": "Examen de práctica DELE B1",
+  "title": "Practice mock exam, level B1",
   "description": "A full DELE B1 practice mock across the four official pruebas (reading, listening, writing, speaking), including the Latin American variety exposure the real B1 exam requires in its receptive sections.",
   "passRule": "Grupo 1 is reading plus writing and Grupo 2 is listening plus speaking, 50 points each. Apto requires at least 30 of 50 in BOTH groups, so a weak section can be carried by its partner inside the same group, but a weak group is never rescued by the other.",
   "sources": [
@@ -1260,6 +1268,36 @@
       "audioOnly": false
      },
      {
+      "id": "lect-t1-d",
+      "title": "Se busca canguro",
+      "text": "Se busca canguro de confianza para dos niños de cuatro y seis años, dos tardes por semana. Imprescindible experiencia previa y referencias comprobables. Buen sueldo según experiencia. Las personas interesadas deben escribir un correo explicando brevemente su experiencia con niños.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t1-e",
+      "title": "Empiezan clases de yoga",
+      "text": "Empiezan nuevas clases de yoga para principiantes los lunes y miércoles por la tarde, en un centro cerca del parque. Grupos reducidos y profesora certificada, ideal para quien busca relajarse después del trabajo. La primera clase es gratuita para quien quiera probar sin compromiso.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t1-f",
+      "title": "Se ofrece profesor de matemáticas",
+      "text": "Profesor de matemáticas con varios años de experiencia da clases de refuerzo a estudiantes de secundaria, dos veces por semana. Explica la materia con paciencia y ejemplos claros, y prepara a sus alumnos para los exámenes del trimestre. Precio razonable y primera sesión sin compromiso.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t1-g",
+      "title": "Se vende bicicleta de montaña",
+      "text": "Se vende bicicleta de montaña, poco usada, con los cambios en muy buen estado. Ideal para rutas de fin de semana por el campo o la sierra. Precio a convenir, disponible para verla cualquier tarde entre semana.",
+      "audioOnly": false
+     },
+     {
+      "id": "lect-t1-h",
+      "title": "Se alquila plaza de garaje",
+      "text": "Se alquila plaza de garaje en el centro, muy cerca de la plaza mayor. Fácil acceso desde la calle principal y disponible desde el primer día del mes que viene. Precio mensual muy competitivo para la zona.",
+      "audioOnly": false
+     },
+     {
       "id": "lect-t2-a",
       "title": "El auge de los mercados de intercambio en los barrios",
       "text": "Cada domingo por la mañana, en muchos barrios de las ciudades españolas, aparece una escena que hace veinte años parecería imposible: decenas de vecinos colocan mesas plegables en la plaza y ofrecen, gratis o a cambio de otro objeto, cosas que ya no usan. Son los llamados mercados de intercambio, y su popularidad no deja de crecer.\n\nLa idea es sencilla. Quien quiera participar solo tiene que llevar objetos en buen estado (ropa, libros, juguetes, pequeños electrodomésticos) y colocarlos en una mesa. A cambio, puede llevarse lo que otro vecino deje, sin que exista dinero de por medio. Los organizadores insisten en que no se permite vender nada: todo se intercambia o se regala. Quienes no encuentren nada que les interese pueden simplemente marcharse con las manos vacías, sin ninguna obligación.\n\nDetrás de esta iniciativa suele haber una asociación vecinal que se encarga de conseguir el permiso del ayuntamiento, avisar a los vecinos con carteles y, cada vez más, anunciar la cita también por internet, para que se enteren quienes pasan más tiempo conectados desde el ordenador o el móvil que paseando por la plaza. Algunos barrios han creado incluso un grupo en línea donde se avisa con antelación de qué objetos concretos va a haber, de modo que nadie llegue con expectativas equivocadas.\n\nLos vecinos que ya habían organizado mercados parecidos en otras ciudades antes de mudarse explican que el mayor reto no es reunir objetos, sino conseguir que la gente pierda la vergüenza de aparecer con las manos llenas de cosas que en teoría ya no quiere. Por eso, muchas asociaciones recomiendan empezar poco a poco: llevar solo dos o tres objetos la primera vez y ver cómo funciona el ambiente antes de vaciar el armario entero.\n\nLos defensores de estos mercados destacan tres razones para participar. La primera es económica: no hace falta comprar algo nuevo si un vecino tiene exactamente lo que uno busca. La segunda es ambiental, ya que cada objeto reutilizado es uno menos que termina en la basura. La tercera, y quizá la más importante para muchos participantes, es social: la plaza se llena de conversaciones entre vecinos que normalmente no se conocen.\n\nNo faltan las dificultades. En los barrios donde el mercado atrae a mucha gente, resulta difícil organizar las mesas para que todos tengan espacio, y algunos vecinos se quejan del ruido o de la basura que queda al final de la mañana. Los organizadores piden paciencia y aseguran que, con el tiempo, cada barrio encuentra su propio ritmo. Todo indica que, mientras exista la sensación de que se gana algo sin gastar nada, estos mercados seguirán llenando las plazas los domingos por la mañana.",
@@ -1286,7 +1324,7 @@
      {
       "id": "lect-t4-a",
       "title": "Cómo aprendí a cocinar sin receta",
-      "text": "Durante años pensé que cocinar bien significaba seguir una receta al pie de la letra, medir cada ingrediente y no salirme nunca de las instrucciones. ___(1)___ Empecé a improvisar con lo que tenía en la nevera, a probar la comida mientras la preparaba y a corregir sobre la marcha si algo estaba soso o demasiado salado. ___(2)___ Ahora entiendo que una receta es solo un punto de partida, no una ley que haya que cumplir sin pensar. ___(3)___ Y lo más curioso es que, desde que dejé de seguir las recetas al pie de la letra, disfruto mucho más de cocinar, porque cada plato sale un poco distinto.",
+      "text": "Durante años pensé que cocinar bien significaba seguir una receta al pie de la letra, medir cada ingrediente y no salirme nunca de las instrucciones. ___(1)___ Empecé a improvisar con lo que tenía en la nevera, a probar la comida mientras la preparaba y a corregir sobre la marcha si algo estaba soso o demasiado salado. ___(2)___\n\nMi abuela fue la primera persona que me animó a perder el miedo a la cocina. ___(3)___ Cada domingo me llamaba para preguntarme qué había preparado esa semana. ___(4)___\n\nPoco a poco fui ganando confianza en la cocina. ___(5)___ Empecé a invitar a amigos a cenar, algo que antes me habría dado muchísimo miedo.\n\nAhora entiendo que una receta es solo un punto de partida, no una ley que haya que cumplir sin pensar. ___(6)___ Y lo más curioso es que, desde que dejé de seguir las recetas al pie de la letra, disfruto mucho más de cocinar, porque cada plato sale un poco distinto.\n\nFragmentos disponibles para los seis huecos (hay dos que no hay que usar): A) Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa. B) Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban. C) Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor. D) Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso. E) Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra. F) Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir. G) Sin embargo, sigo comprando siempre los mismos ingredientes cada semana. H) Solo los cocineros profesionales pueden permitirse improvisar de esa manera.",
       "audioOnly": false
      },
      {
@@ -1299,39 +1337,93 @@
     "questions": [
      {
       "type": "MCQ",
-      "prompt": "Marta dice: “Quiero comprar un vehículo de segunda mano que no gaste mucha gasolina y que sea fácil de aparcar.” ¿A qué anuncio se refiere?",
+      "prompt": "Relacione a las personas (1-6) con los textos (A-H). Dos de los textos no corresponden a ninguna persona. Marta dice: “Quiero comprar un vehículo de segunda mano que no gaste mucha gasolina y que sea fácil de aparcar.”",
       "options": [
-       "Se vende coche",
        "Se alquila habitación",
-       "Aviso: piscina municipal cerrada"
+       "Se vende coche",
+       "Aviso: piscina municipal cerrada",
+       "Se busca canguro",
+       "Empiezan clases de yoga",
+       "Se ofrece profesor de matemáticas"
       ],
       "answer": "Se vende coche",
       "difficulty": 2,
-      "explanation": "The car ad describes a small vehicle that uses little fuel and parks easily, exactly what Marta wants."
+      "explanation": "The car ad describes a small vehicle that uses little fuel and parks easily, exactly what Marta wants. 'Se vende bicicleta de montaña' and 'Se alquila plaza de garaje' are unused distractor texts that match none of the six people, as in the real exam."
      },
      {
       "type": "MCQ",
-      "prompt": "David dice: “Busco un sitio para vivir cerca de la universidad, aunque tenga que compartir la cocina.” ¿A qué anuncio se refiere?",
+      "prompt": "Relacione a las personas (1-6) con los textos (A-H). Dos de los textos no corresponden a ninguna persona. David dice: “Busco un sitio para vivir cerca de la universidad, aunque tenga que compartir la cocina.”",
       "options": [
        "Se alquila habitación",
        "Se vende coche",
-       "Aviso: piscina municipal cerrada"
+       "Aviso: piscina municipal cerrada",
+       "Se busca canguro",
+       "Empiezan clases de yoga",
+       "Se ofrece profesor de matemáticas"
       ],
       "answer": "Se alquila habitación",
       "difficulty": 2,
-      "explanation": "The room ad is near the university and shares kitchen and bathroom with two other students."
+      "explanation": "The room ad is near the university and shares kitchen and bathroom with two other students. 'Se vende bicicleta de montaña' and 'Se alquila plaza de garaje' are unused distractor texts that match none of the six people, as in the real exam."
      },
      {
       "type": "MCQ",
-      "prompt": "Elena dice: “No entiendo por qué no puedo ir a nadar esta semana en el polideportivo del barrio.” ¿A qué aviso se refiere?",
+      "prompt": "Relacione a las personas (1-6) con los textos (A-H). Dos de los textos no corresponden a ninguna persona. Elena dice: “No entiendo por qué no puedo ir a nadar esta semana en el polideportivo del barrio.”",
       "options": [
-       "Aviso: piscina municipal cerrada",
+       "Se alquila habitación",
        "Se vende coche",
-       "Se alquila habitación"
+       "Aviso: piscina municipal cerrada",
+       "Se busca canguro",
+       "Empiezan clases de yoga",
+       "Se ofrece profesor de matemáticas"
       ],
       "answer": "Aviso: piscina municipal cerrada",
       "difficulty": 3,
-      "explanation": "The municipal pool notice explains it will be closed next week for cleaning works."
+      "explanation": "The municipal pool notice explains it will be closed next week for cleaning works. 'Se vende bicicleta de montaña' and 'Se alquila plaza de garaje' are unused distractor texts that match none of the six people, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Relacione a las personas (1-6) con los textos (A-H). Dos de los textos no corresponden a ninguna persona. Sara dice: “Necesito encontrar a alguien de confianza que cuide de mis hijos un par de tardes a la semana.”",
+      "options": [
+       "Se alquila habitación",
+       "Se vende coche",
+       "Aviso: piscina municipal cerrada",
+       "Se busca canguro",
+       "Empiezan clases de yoga",
+       "Se ofrece profesor de matemáticas"
+      ],
+      "answer": "Se busca canguro",
+      "difficulty": 3,
+      "explanation": "The babysitter ad asks for exactly this: someone trustworthy to look after two children a couple of afternoons a week. 'Se vende bicicleta de montaña' and 'Se alquila plaza de garaje' are unused distractor texts that match none of the six people, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Relacione a las personas (1-6) con los textos (A-H). Dos de los textos no corresponden a ninguna persona. Iván dice: “Quiero empezar una actividad relajante después del trabajo, algo que nunca he probado antes.”",
+      "options": [
+       "Se alquila habitación",
+       "Se vende coche",
+       "Aviso: piscina municipal cerrada",
+       "Se busca canguro",
+       "Empiezan clases de yoga",
+       "Se ofrece profesor de matemáticas"
+      ],
+      "answer": "Empiezan clases de yoga",
+      "difficulty": 3,
+      "explanation": "The yoga ad targets beginners and is described as ideal for relaxing after work, matching what Iván wants. 'Se vende bicicleta de montaña' and 'Se alquila plaza de garaje' are unused distractor texts that match none of the six people, as in the real exam."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Relacione a las personas (1-6) con los textos (A-H). Dos de los textos no corresponden a ninguna persona. Lucía dice: “Mi hijo necesita ayuda extra con las matemáticas antes de los exámenes de este trimestre.”",
+      "options": [
+       "Se alquila habitación",
+       "Se vende coche",
+       "Aviso: piscina municipal cerrada",
+       "Se busca canguro",
+       "Empiezan clases de yoga",
+       "Se ofrece profesor de matemáticas"
+      ],
+      "answer": "Se ofrece profesor de matemáticas",
+      "difficulty": 3,
+      "explanation": "The maths teacher ad specifically mentions preparing students for their term exams. 'Se vende bicicleta de montaña' and 'Se alquila plaza de garaje' are unused distractor texts that match none of the six people, as in the real exam."
      },
      {
       "type": "MCQ",
@@ -1431,39 +1523,105 @@
      },
      {
       "type": "MCQ",
-      "prompt": "¿Qué frase completa mejor el hueco (1) del texto sobre cocinar sin receta?",
+      "prompt": "Elija, del mismo grupo de ocho fragmentos, el que completa mejor el hueco (1) del texto sobre cocinar sin receta. Dos fragmentos no se usan en ningún hueco.",
       "options": [
        "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
-       "Nunca me ha gustado especialmente la cocina de mi abuela.",
-       "Por eso decidí apuntarme a clases de repostería los sábados."
+       "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+       "Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor.",
+       "Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso.",
+       "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
+       "Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir.",
+       "Sin embargo, sigo comprando siempre los mismos ingredientes cada semana.",
+       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera."
       ],
       "answer": "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
       "difficulty": 5,
-      "explanation": "This sentence introduces the turning point that leads into 'Empecé a improvisar...' in the next sentence."
+      "explanation": "This fragment introduces the turning point that leads into 'Empecé a improvisar...' right after it. The same eight fragments serve all six gaps in this text, and two of them, about buying the same ingredients every week and about only professionals improvising, are never used."
      },
      {
       "type": "MCQ",
-      "prompt": "¿Qué frase completa mejor el hueco (2) del texto sobre cocinar sin receta?",
+      "prompt": "Elija, del mismo grupo de ocho fragmentos, el que completa mejor el hueco (2) del texto sobre cocinar sin receta. Dos fragmentos no se usan en ningún hueco.",
       "options": [
+       "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
        "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+       "Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor.",
+       "Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso.",
+       "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
+       "Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir.",
        "Sin embargo, sigo comprando siempre los mismos ingredientes cada semana.",
-       "Por eso ya no vuelvo a poner un pie en la cocina."
+       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera."
       ],
       "answer": "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
-      "difficulty": 6,
-      "explanation": "It bridges the early mistakes with the confident understanding expressed right after."
+      "difficulty": 5,
+      "explanation": "It closes off the first paragraph by summarising the early trial and error right after 'corregir sobre la marcha'."
      },
      {
       "type": "MCQ",
-      "prompt": "¿Qué frase completa mejor el hueco (3) del texto sobre cocinar sin receta?",
+      "prompt": "Elija, del mismo grupo de ocho fragmentos, el que completa mejor el hueco (3) del texto sobre cocinar sin receta. Dos fragmentos no se usan en ningún hueco.",
       "options": [
+       "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
+       "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+       "Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor.",
+       "Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso.",
        "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
-       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera.",
-       "De hecho, cada receta debe copiarse exactamente igual todas las veces."
+       "Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir.",
+       "Sin embargo, sigo comprando siempre los mismos ingredientes cada semana.",
+       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera."
+      ],
+      "answer": "Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor.",
+      "difficulty": 6,
+      "explanation": "It describes the grandmother's own way of cooking, right after she is introduced as the person who encouraged the narrator."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Elija, del mismo grupo de ocho fragmentos, el que completa mejor el hueco (4) del texto sobre cocinar sin receta. Dos fragmentos no se usan en ningún hueco.",
+      "options": [
+       "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
+       "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+       "Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor.",
+       "Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso.",
+       "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
+       "Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir.",
+       "Sin embargo, sigo comprando siempre los mismos ingredientes cada semana.",
+       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera."
+      ],
+      "answer": "Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso.",
+      "difficulty": 6,
+      "explanation": "It reports what the grandmother used to say on her Sunday calls, closing the second paragraph."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Elija, del mismo grupo de ocho fragmentos, el que completa mejor el hueco (5) del texto sobre cocinar sin receta. Dos fragmentos no se usan en ningún hueco.",
+      "options": [
+       "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
+       "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+       "Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor.",
+       "Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso.",
+       "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
+       "Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir.",
+       "Sin embargo, sigo comprando siempre los mismos ingredientes cada semana.",
+       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera."
       ],
       "answer": "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
       "difficulty": 6,
-      "explanation": "It expands on the idea that a recipe is a starting point, not a law to follow exactly."
+      "explanation": "It explains concretely what 'ganar confianza en la cocina' means, right before the narrator starts inviting friends over."
+     },
+     {
+      "type": "MCQ",
+      "prompt": "Elija, del mismo grupo de ocho fragmentos, el que completa mejor el hueco (6) del texto sobre cocinar sin receta. Dos fragmentos no se usan en ningún hueco.",
+      "options": [
+       "Todo cambió el día en que se me acabó el aceite de oliva a mitad de una receta y tuve que buscar una alternativa.",
+       "Al principio me equivoqué muchas veces, pero poco a poco fui aprendiendo qué combinaciones funcionaban.",
+       "Ella llevaba toda la vida cocinando sin pesar nada, guiándose solo por el olor y el sabor.",
+       "Siempre me decía que lo importante no era acertar a la primera, sino disfrutar del proceso.",
+       "Se puede cambiar un ingrediente por otro, añadir más de lo que a uno le gusta y quitar lo que sobra.",
+       "Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir.",
+       "Sin embargo, sigo comprando siempre los mismos ingredientes cada semana.",
+       "Solo los cocineros profesionales pueden permitirse improvisar de esa manera."
+      ],
+      "answer": "Al final, cocinar sin receta se convirtió en la parte del día que más ganas tenía de repetir.",
+      "difficulty": 7,
+      "explanation": "It bridges the idea that a recipe is only a starting point with the closing sentence about enjoying cooking more since giving up strict recipes."
      },
      {
       "type": "MCQ",
@@ -1855,7 +2013,7 @@
     "passPercent": null,
     "prompts": [
      {
-      "prompt": "Prepara una breve presentación (1 a 2 minutos) sobre un cambio importante que has vivido en los últimos años: puede ser un cambio de ciudad, de trabajo o de forma de vida. Habla en voz alta como si estuvieras en el examen.",
+      "prompt": "Prepara una breve presentación (1 a 2 minutos) sobre un cambio importante que has vivido en los últimos años: puede ser un cambio de ciudad, de trabajo o de forma de vida. Habla en voz alta, igual que en el examen real.",
       "modelAnswer": "Voy a hablar de un cambio importante en mi vida: hace dos años dejé mi trabajo en una oficina para dedicarme a algo relacionado con la cocina, que siempre me ha gustado mucho. Al principio tenía miedo de equivocarme, porque dejaba un sueldo fijo por algo mucho más incierto. Empecé haciendo pequeños encargos para amigos y familiares, y poco a poco el negocio fue creciendo. Ahora trabajo muchas más horas que antes, pero disfruto cada día mucho más que cuando estaba en la oficina. Si alguien me pide un consejo sobre esto, siempre le digo lo mismo: que empiece poco a poco, sin dejarlo todo de golpe, porque así se puede comprobar si la idea realmente funciona antes de arriesgarlo todo.",
       "rubric": [
        "Presenta el cambio con claridad (qué cambió y cuándo)",
