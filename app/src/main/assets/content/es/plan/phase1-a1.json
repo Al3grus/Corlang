@@ -4236,8 +4236,8 @@
       },
       {
        "speaker": "Me",
-       "hr": "Hablo dos: español e inglés.",
-       "en": "I speak two: Spanish and English."
+       "hr": "Hablo dos: español y portugués.",
+       "en": "I speak two: Spanish and Portuguese."
       }
      ],
      "sources": [
@@ -4341,7 +4341,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Completa: ___ tengo hermanos. (forma negativa)",
+       "prompt": "Completa: ___ tengo hermanos. (negative form)",
        "difficulty": 3,
        "answer": "No",
        "explanation": "no immediately precedes the conjugated verb to negate a sentence."
@@ -4380,13 +4380,13 @@
      "lines": [
       {
        "speaker": "Partner",
-       "hr": "¿Vienen los amigos a la fiesta?",
-       "en": "Are the friends coming to the party?"
+       "hr": "¿Está Diego en la fiesta?",
+       "en": "Is Diego at the party?"
       },
       {
        "speaker": "Me",
-       "hr": "No, no viene nadie. Todos trabajan hoy.",
-       "en": "No, nobody's coming. Everyone is working today."
+       "hr": "No, no está nadie. Todos trabajan hoy.",
+       "en": "No, nobody's here. Everyone is working today."
       },
       {
        "speaker": "Partner",
@@ -4464,6 +4464,31 @@
        "hr": "Tengo veinte años.",
        "en": "I am twenty years old.",
        "note": "tener + number + años, never ser, for age"
+      },
+      {
+       "hr": "¿Cuántos años tienes tú?",
+       "en": "How old are you?",
+       "note": "tienes is the tú form of tener"
+      },
+      {
+       "hr": "Mi hermana tiene diez años.",
+       "en": "My sister is ten years old.",
+       "note": "tiene is the él/ella/usted form"
+      },
+      {
+       "hr": "Tenemos un perro en casa.",
+       "en": "We have a dog at home.",
+       "note": "tenemos is the nosotros form"
+      },
+      {
+       "hr": "¿Tenéis hijos?",
+       "en": "Do you all have children?",
+       "note": "tenéis is the vosotros form, used in Spain for an informal plural you"
+      },
+      {
+       "hr": "Mis padres tienen un coche nuevo.",
+       "en": "My parents have a new car.",
+       "note": "tienen is the ellos/ellas/ustedes form"
       }
      ],
      "sources": [
@@ -4672,7 +4697,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Completa: El billete cuesta treinta y cinco ___. (unidad monetaria)",
+       "prompt": "Completa: El billete cuesta treinta y cinco ___. (currency unit)",
        "difficulty": 4,
        "answer": "euros",
        "explanation": "euros is the currency; céntimos names the smaller unit."
@@ -4855,7 +4880,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Completa: Soy ___ médico muy conocido. (el artículo que vuelve con un adjetivo)",
+       "prompt": "Completa: Soy ___ médico muy conocido. (the article that returns once an adjective is added)",
        "difficulty": 4,
        "answer": "un",
        "explanation": "The article returns once the profession carries an adjective."
@@ -5853,7 +5878,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Completa: ___ camarero siempre repite el pedido. (posesivo de 'nosotros')",
+       "prompt": "Completa: ___ camarero siempre repite el pedido. (our)",
        "difficulty": 4,
        "answer": "Nuestro",
        "explanation": "nuestro agrees with camarero, masculine singular."
@@ -5969,8 +5994,8 @@
        "note": "saber + infinitive: knowing how to do something"
       },
       {
-       "hr": "Veo la tele y conozco a mucha gente en el barrio.",
-       "en": "I watch TV and I know a lot of people in the neighbourhood.",
+       "hr": "Veo la tele y conozco bien el barrio.",
+       "en": "I watch TV and I know the neighbourhood well.",
        "note": "conocer: to know a person or place, different from saber"
       }
      ],
@@ -6018,7 +6043,7 @@
       },
       {
        "type": "FILL",
-       "prompt": "Completa: Traigo ___ libros para la clase de mañana. (demostrativo cercano, plural)",
+       "prompt": "Completa: Traigo ___ libros para la clase de mañana. (these)",
        "difficulty": 4,
        "answer": "estos",
        "explanation": "estos points to something near the speaker."

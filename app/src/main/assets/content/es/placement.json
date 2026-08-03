@@ -27,10 +27,10 @@
    "startDay": 1,
    "type": "MCQ",
    "difficulty": 1,
-   "prompt": "How do you say 'thank you' in Spanish?",
-   "options": ["gracias", "por favor", "perdón", "de nada"],
-   "answer": "gracias",
-   "explanation": "gracias is thank you; de nada is the reply to it."
+   "prompt": "Which word is spelled with ñ, not a plain n?",
+   "options": ["año", "hola", "calle", "pero"],
+   "answer": "año",
+   "explanation": "año uses the separate letter ñ, pronounced like the 'ny' in canyon; writing it with a plain n gives a different, crude word."
   },
 
   {
@@ -182,10 +182,10 @@
    "startDay": 77,
    "type": "MCQ",
    "difficulty": 6,
-   "prompt": "Complete: Ayer ___ que salir antes del trabajo.",
-   "options": ["tuve", "tení", "tenía que ayer", "he tenido"],
-   "answer": "tuve",
-   "explanation": "ayer closes the time period, so the indefinido is required, and tener has the strong stem tuv- with no written accent."
+   "prompt": "¿Cuál es la forma correcta del imperativo (tú) de 'abrir'?",
+   "options": ["Abre", "Abres", "Abrir", "Abrid"],
+   "answer": "Abre",
+   "explanation": "The tú imperative of regular -ir verbs matches the él/ella present form, so abrir gives abre; abrid is the vosotros form."
   },
 
   {
@@ -244,10 +244,10 @@
    "startDay": 126,
    "type": "MCQ",
    "difficulty": 8,
-   "prompt": "Which is the most polite way to ask for help?",
-   "options": ["¿Podría ayudarme?", "¿Puedes ayudarme?", "Ayúdame.", "Me ayudas."],
-   "answer": "¿Podría ayudarme?",
-   "explanation": "The conditional softens a request, which is why podría is more polite than puedes or a bare imperative."
+   "prompt": "¿Cuál es la forma correcta del condicional de 'tener' para 'yo'?",
+   "options": ["Tendría", "Tendré", "Tenía", "Tuve"],
+   "answer": "Tendría",
+   "explanation": "tener uses the irregular stem tendr- for both the future and the conditional; the conditional adds -ía, so tendría is correct, while tendré is the future and tenía/tuve are past tenses."
   },
 
   {
