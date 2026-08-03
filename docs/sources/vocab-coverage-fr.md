@@ -21,7 +21,17 @@ named frequency list; the ledger is what keeps the deck complete and duplicate-f
 - `example` sentence (target + gloss) mandatory A1/A2, encouraged B1/B2.
 - Cross-check each batch against a named frequency list; ≥10% random spot-check.
 - Freeze ids as each batch lands (`src/test/resources/frozen-word-ids-fr.txt`).
-- `sources`: `francais-fondamental` + `freq-fr` (core), `referentiel-fr` (theme provenance).
+- **`sources` (2026-08-04, corrected — the line below was stale and pointed at retired keys):**
+  `lexique383` for frequency-anchored packs, `inventaire-cecrl` for theme/topic provenance.
+  `francais-fondamental` and `freq-fr` are RETIRED (2026-07-20, unfetchable commercial sources,
+  see `docs/sources/french-referentiel.md`) and must never be cited by new content;
+  `referentiel-fr` is also UNEARNED for the same reason. All three remain in the Kotlin
+  `knownSourceKeys` set (removing a key isn't required to retire it, only citing it is banned),
+  so the gate will NOT catch a new pack that cites one by mistake — this stale line was the risk.
 
 ## Batch plan (files in _index.json order)
 `00-a1-core` (survival core, this batch) → `01-a1-*` … → `NN-b2-*`. Each ~100–150 words.
+Current deck: 4,710 words across 50 files in `_index.json` (2026-08-04), well past the ≈3,200
+target above —
+the 250→418 lesson expansion and the 2026-08-04 `lexique383` coverage top-up both added
+capacity past the original target; the target was never revised, treat it as a floor not a cap.
