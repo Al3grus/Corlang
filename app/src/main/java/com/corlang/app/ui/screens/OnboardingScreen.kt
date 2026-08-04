@@ -276,10 +276,13 @@ fun OnboardingScreen(
                     }
                 }
             ) {
+                // Not "every course runs to B2": only Croatian and French carry a B2 level. The
+                // rest stop at B1, which is what their countries actually require, so the old
+                // blanket claim promised four courses a level they do not contain.
                 Text(
-                    "Every course runs from absolute beginner to B2, the level asked for by " +
-                        "employers, universities and citizenship applications, and the level " +
-                        "certified exams test.",
+                    "Every course runs from absolute beginner to the level that country actually " +
+                        "asks for: B1 in most, B2 in French, where citizenship law requires it. " +
+                        "These are the levels employers, universities and certified exams test.",
                     style = MaterialTheme.typography.bodyLarge
                 )
                 // "mock exams in the official format" and not "one after every level": mocks

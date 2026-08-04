@@ -1,6 +1,6 @@
 {
-  "versionCode": 140,
-  "versionName": "0.23.1",
-  "notes": "Switching between the light and dark themes is now a single smooth fade. Before, the app changed colour piece by piece while you watched, which felt slow even though it was fast. It now finishes redrawing itself out of sight and only then fades across, so you never see it halfway.",
+  "versionCode": 141,
+  "versionName": "0.23.2",
+  "notes": "The light theme is now properly warm. Buttons, selections and highlights were still using the dark theme's sea blue, which sat on the beige page like a cold patch; they are now walnut brown, with terracotta and gold alongside. Cards, dialogs and menus were quietly falling back to grey and now use the same paper tones as everything else. Also corrected a claim in the intro: courses run to the level each country actually asks for, which is B1 for most and B2 for French, rather than B2 across the board.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
