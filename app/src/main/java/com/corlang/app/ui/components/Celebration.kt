@@ -48,16 +48,33 @@ import kotlin.random.Random
  * burst with an encouraging message when a day is completed.
  */
 
-/** Flame colors for a streak length: outer body, inner core. Tiers escalate like chess.com. */
-private fun flameTier(streak: Int): Pair<Color, Color> = when {
-    streak >= 100 -> Color(0xFFFFD54F) to Color(0xFFFFF9C4)   // gold / white-hot
-    streak >= 30 -> Color(0xFF64B5F6) to Color(0xFFE3F2FD)    // blue flame
-    streak >= 7 -> Color(0xFFFF8A50) to Color(0xFFFFE0B2)     // vivid orange
-    else -> Color(0xFFEF9A6A) to Color(0xFFFFCCBC)            // young ember
+/**
+ * Flame colors for a streak length: outer body, inner core. Tiers escalate like chess.com.
+ *
+ * Two sets, because a flame is drawn shape-first and owns its own colors — it cannot borrow a
+ * Material role. The dark tiers are bright, which is what makes them glow on ink and exactly what
+ * makes them vanish on paper; the light tiers are the same four steps (ember → orange → blue →
+ * gold) pitched darker, so the escalation still reads and the flame still has an edge.
+ */
+private fun flameTier(streak: Int, dark: Boolean): Pair<Color, Color> = when {
+    streak >= 100 ->
+        if (dark) Color(0xFFFFD54F) to Color(0xFFFFF9C4)      // gold / white-hot
+        else Color(0xFFC79213) to Color(0xFFF0C846)
+    streak >= 30 ->
+        if (dark) Color(0xFF64B5F6) to Color(0xFFE3F2FD)      // blue flame
+        else Color(0xFF2A6FBE) to Color(0xFF7FB2E4)
+    streak >= 7 ->
+        if (dark) Color(0xFFFF8A50) to Color(0xFFFFE0B2)      // vivid orange
+        else Color(0xFFD05A20) to Color(0xFFF0A257)
+    else ->
+        if (dark) Color(0xFFEF9A6A) to Color(0xFFFFCCBC)      // young ember
+        else Color(0xFFB86A44) to Color(0xFFE0A183)
 }
 
-private val UNLIT_BODY = Color(0xFF5A646D)
-private val UNLIT_CORE = Color(0xFF7A848D)
+/** Not-today-yet grey: cool on ink, warm stone on paper, so it sits on its own ground. */
+private fun unlitFlame(dark: Boolean): Pair<Color, Color> =
+    if (dark) Color(0xFF5A646D) to Color(0xFF7A848D)
+    else Color(0xFFAEA595) to Color(0xFFC7BFB0)
 
 /**
  * The streak flame. [lit] = today's lesson is done (grey otherwise, like chess.com's
@@ -77,7 +94,8 @@ fun StreakFlame(streak: Int, lit: Boolean, size: Dp, modifier: Modifier = Modifi
         ).value
     } else 0f
 
-    val (body, core) = if (lit) flameTier(streak) else UNLIT_BODY to UNLIT_CORE
+    val dark = com.corlang.app.ui.theme.CorlangColors.isDark
+    val (body, core) = if (lit) flameTier(streak, dark) else unlitFlame(dark)
     Box(
         modifier
             .size(size)
@@ -144,7 +162,15 @@ fun ConfettiBurst(modifier: Modifier = Modifier) {
     LaunchedEffect(Unit) { t.animateTo(1f, tween(1600, easing = LinearEasing)) }
 
     val scheme = MaterialTheme.colorScheme
-    val colors = listOf(scheme.primary, scheme.secondary, scheme.tertiary, Color(0xFF8FD694))
+    // The fourth confetti color was a hardcoded mint, invisible on paper. The feedback palette's
+    // "correct" green is the same color in dark and a legible deep green in light — and it is the
+    // right one to celebrate with anyway.
+    val colors = listOf(
+        scheme.primary,
+        scheme.secondary,
+        scheme.tertiary,
+        com.corlang.app.ui.theme.CorlangColors.feedback.correct
+    )
 
     Box(
         modifier.drawBehind {

@@ -5,4 +5,7 @@
     <color name="ic_launcher_background">#0F1620</color>
     <!-- The splash/loader background; also the launch window color (first frame, no white flash). -->
     <color name="splash_background">#0F1620</color>
+    <!-- The light theme's equivalent: warm paper, matching LightColors.background in Theme.kt.
+         Keep the two in step, or a light-mode launch flashes one shade before settling. -->
+    <color name="splash_background_light">#F6F0E6</color>
 </resources>

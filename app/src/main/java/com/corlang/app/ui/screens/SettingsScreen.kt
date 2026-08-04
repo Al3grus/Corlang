@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.outlined.VolumeUp
 import androidx.compose.material.icons.outlined.Alarm
+import androidx.compose.material.icons.outlined.DarkMode
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.DeleteForever
@@ -262,6 +263,32 @@ fun SettingsScreen(
                         onClick = { container.tts.promptInstallVoice() },
                         modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                     ) { Text("Install $voiceName voice") }
+                }
+            }
+        }
+
+        // ----- Appearance -----
+        // The same question the first run asks, in the same two words. Applying is instant and
+        // animated (CorlangTheme eases every role), so this row IS the preview: no confirm step
+        // and no restart, unlike the picker where nothing is saved until Confirm.
+        val themeMode by container.languagePrefs.themeMode
+            .collectAsState(initial = com.corlang.app.data.prefs.ThemeMode.DARK)
+        SettingsCard(Icons.Outlined.DarkMode, "Appearance") {
+            Text(
+                "Corlang keeps one look everywhere; it doesn't follow your system setting.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp, bottom = 8.dp)
+            )
+            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
+                val options = listOf(false to "Light", true to "Dark")
+                options.forEachIndexed { i, (isDark, label) ->
+                    SegmentedButton(
+                        selected = (themeMode == com.corlang.app.data.prefs.ThemeMode.DARK) == isDark,
+                        onClick = { scope.launch { container.languagePrefs.setThemeMode(isDark) } },
+                        shape = SegmentedButtonDefaults.itemShape(index = i, count = options.size),
+                        icon = {}
+                    ) { Text(label, maxLines = 1, softWrap = false) }
                 }
             }
         }

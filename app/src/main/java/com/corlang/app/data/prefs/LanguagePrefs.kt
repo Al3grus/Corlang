@@ -21,6 +21,13 @@ data class LearnerProfile(
     val reason: String,
 )
 
+/**
+ * The learner's appearance choice. [UNSET] is a real state, not a missing value: it means the
+ * question has never been asked, which is exactly what makes the first-run theme picker appear.
+ * Once answered it is only ever LIGHT or DARK — Corlang never follows the system setting.
+ */
+enum class ThemeMode { UNSET, LIGHT, DARK }
+
 /** Persists the user's selected language and small app settings across launches. */
 class LanguagePrefs(private val context: Context) {
 
@@ -115,6 +122,46 @@ class LanguagePrefs(private val context: Context) {
 
     suspend fun setHapticsStrength(value: String) {
         context.dataStore.edit { it[hapticsKey] = value }
+    }
+
+    // ----- Appearance (ink / paper) -----
+
+    private val themeDarkKey = booleanPreferencesKey("theme_dark")
+
+    /**
+     * UNSET until the learner answers the first-run picker; DARK/LIGHT after. Not backed up:
+     * like haptics, this is how this device should look, not part of the learner's progress.
+     */
+    val themeMode: Flow<ThemeMode> = context.dataStore.data.map {
+        when (it[themeDarkKey]) {
+            null -> ThemeMode.UNSET
+            true -> ThemeMode.DARK
+            false -> ThemeMode.LIGHT
+        }
+    }
+
+    suspend fun setThemeMode(dark: Boolean) {
+        context.dataStore.edit { it[themeDarkKey] = dark }
+        // Mirror it where the next launch can read it synchronously (see launchThemeIsDark).
+        context.getSharedPreferences(LAUNCH_PREFS, Context.MODE_PRIVATE)
+            .edit().putBoolean(LAUNCH_THEME_DARK, dark).apply()
+    }
+
+    companion object {
+        private const val LAUNCH_PREFS = "corlang_launch"
+        private const val LAUNCH_THEME_DARK = "theme_dark"
+
+        /**
+         * The theme for the FIRST frame, read synchronously in Activity.onCreate. DataStore is
+         * asynchronous by design, and the launch window is painted from the XML theme before any
+         * coroutine can complete — so a light-mode learner would see a flash of ink at every
+         * launch. A tiny SharedPreferences mirror, written by [setThemeMode], is the one place
+         * that can answer in time. Defaults to dark: the brand's original look, and what a
+         * first-run learner sees behind the picker.
+         */
+        fun launchThemeIsDark(context: Context): Boolean =
+            context.getSharedPreferences(LAUNCH_PREFS, Context.MODE_PRIVATE)
+                .getBoolean(LAUNCH_THEME_DARK, true)
     }
 
     // ----- Feature tutorials (first-run how-to cards) -----
