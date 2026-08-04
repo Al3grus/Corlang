@@ -57,10 +57,25 @@ import kotlin.math.roundToInt
  * plays once, then onReady() hands over to the app.
  */
 
-private val SplashBg = Color(0xFF0F1620)      // deep ink-navy
+/*
+ * The mark's two colors are BRAND and never change: the ring and the molten core are the app
+ * icon, and an icon that repaints itself per theme is no longer a mark. The ground and the
+ * lettering do follow the chosen theme (see the composable below) — ink or paper — so a light
+ * learner is not shown a dark loader before a light app.
+ */
 private val SplashBrand = Color(0xFF2F7FAE)   // ring
 private val SplashCore = Color(0xFFC8402C)    // molten core
-private val SplashInk = Color(0xFFF4EFE6)     // letters / on-dark text
+
+/*
+ * The loader's ground and lettering per theme. These are LITERALS, not colorScheme roles: this
+ * screen has to match the launch window painted before Compose existed (@color/splash_background
+ * and splash_background_light), and the app's background roles are a shade off from those. A
+ * mismatch here is a visible seam on every cold start. Change one, change all three.
+ */
+private val SplashBgDark = Color(0xFF0F1620)
+private val SplashBgLight = Color(0xFFF6F0E6)
+private val SplashInkDark = Color(0xFFF4EFE6)   // warm off-white letters on ink
+private val SplashInkLight = Color(0xFF2B2118)  // umber letters on paper
 
 private fun cl(x: Float): Float = x.coerceIn(0f, 1f)
 
@@ -119,6 +134,10 @@ private val TAGLINES = listOf(
 
 @Composable
 fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
+    // Ground and lettering follow the chosen theme; the mark's brand colors do not.
+    val dark = com.corlang.app.ui.theme.CorlangColors.isDark
+    val splashBg = if (dark) SplashBgDark else SplashBgLight
+    val splashInk = if (dark) SplashInkDark else SplashInkLight
     val progress = remember { Animatable(0f) }   // ring fill (follows real load, smoothed)
     val resolve = remember { Animatable(0f) }     // 0..1 settle -> letters -> tagline, plays once
     val stageAlpha = remember { Animatable(0f) }  // fade in when measured, fade out on handover
@@ -172,7 +191,7 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
         onReady()
     }
 
-    BoxWithConstraints(Modifier.fillMaxSize().background(SplashBg)) {
+    BoxWithConstraints(Modifier.fillMaxSize().background(splashBg)) {
         val hPx = with(density) { maxHeight.toPx() }
 
         Box(
@@ -187,7 +206,7 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
                 modifier = Modifier.align(Alignment.Center),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                SplashLetter("C", 0, resolve, rise)
+                SplashLetter("C", 0, resolve, rise, splashInk)
                 Box(
                     modifier = Modifier
                         .size(46.dp)
@@ -227,17 +246,17 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
                         if (cp > 0f) drawCircle(SplashCore, radius = 9f / 100f * w * cp, center = c)
                     }
                 }
-                SplashLetter("r", 1, resolve, rise)
-                SplashLetter("l", 2, resolve, rise)
-                SplashLetter("a", 3, resolve, rise)
-                SplashLetter("n", 4, resolve, rise)
-                SplashLetter("g", 5, resolve, rise)
+                SplashLetter("r", 1, resolve, rise, splashInk)
+                SplashLetter("l", 2, resolve, rise, splashInk)
+                SplashLetter("a", 3, resolve, rise, splashInk)
+                SplashLetter("n", 4, resolve, rise, splashInk)
+                SplashLetter("g", 5, resolve, rise, splashInk)
             }
 
             // % counter at ~59% height, visible during load.
             Text(
                 text = "${(progress.value * 100f).roundToInt()}%",
-                color = SplashInk.copy(alpha = 0.5f),
+                color = splashInk.copy(alpha = 0.5f),
                 style = TextStyle(
                     fontFamily = FontFamily.Monospace,
                     fontSize = 13.sp,
@@ -254,7 +273,7 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
             // Tagline at ~59% height, fades in after the word assembles.
             Text(
                 text = tagline,
-                color = SplashInk.copy(alpha = 0.62f),
+                color = splashInk.copy(alpha = 0.62f),
                 style = TextStyle(
                     fontFamily = com.corlang.app.ui.components.CorlangWordmarkFont,
                     fontSize = 15.sp
@@ -272,10 +291,16 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
 
 /** One wordmark letter: laid out at full width always, only fading + rising into place. */
 @Composable
-private fun SplashLetter(ch: String, index: Int, resolve: Animatable<Float, *>, rise: Float) {
+private fun SplashLetter(
+    ch: String,
+    index: Int,
+    resolve: Animatable<Float, *>,
+    rise: Float,
+    ink: Color
+) {
     Text(
         text = ch,
-        color = SplashInk,
+        color = ink,
         style = TextStyle(
             fontFamily = com.corlang.app.ui.components.CorlangWordmarkFont,
             fontWeight = FontWeight.Bold,

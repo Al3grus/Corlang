@@ -1,11 +1,15 @@
 package com.corlang.app.ui.theme
 
 import android.app.Activity
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
@@ -20,10 +24,20 @@ import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 
 /*
- * Corlang palette, "Adriatic" on ink: a calm, muted sea-blue (primary) that reads as trust and
- * quiet rather than candy-bright; terracotta roof-tile (secondary) as the warm counterpoint;
- * warm sand (tertiary). Dark-only by design; every Material role is specified so no default
- * (purple) role can leak into the UI. The blue is deliberately desaturated — peace, not pop.
+ * Corlang palette, "Adriatic": a calm, muted sea-blue (primary) that reads as trust and quiet
+ * rather than candy-bright; terracotta roof-tile (secondary) as the warm counterpoint; warm
+ * sand (tertiary). Every Material role is specified in BOTH schemes so no default (purple) role
+ * can leak into the UI, and so no screen can accidentally depend on one theme's fallbacks.
+ *
+ * Two looks, one brand:
+ *  - dark  = Adriatic on ink. The sea at night; the original and still the default.
+ *  - light = Adriatic on paper. Warm beige surfaces and brown-umber ink, the same terracotta and
+ *            ochre accents the dark theme already carries, with the blue deepened until it holds
+ *            contrast on paper. It is a warm-neutral theme, NOT an inverted grey one: a plain
+ *            white/grey light mode would have read as a different app.
+ *
+ * The theme is the learner's explicit choice (asked once on first run, changeable in Settings),
+ * never the system setting — see [CorlangTheme].
  */
 
 private val DarkColors = darkColorScheme(
@@ -53,6 +67,43 @@ private val DarkColors = darkColorScheme(
     onErrorContainer = Color(0xFFFFDAD6),
 )
 
+/*
+ * Light: "Adriatic on paper". Backgrounds are warm beige rather than white, outlines and dividers
+ * are brown rather than grey, and body text is a dark umber — the page reads like paper stock, so
+ * the terracotta and ochre accents sit on it naturally instead of fighting a cold surface.
+ * The blue is darkened from the dark theme's #8CBAD2 (which would be illegible here) to a depth
+ * that clears 4.5:1 against white for button labels; the same is true of secondary and tertiary.
+ */
+private val LightColors = lightColorScheme(
+    primary = Color(0xFF2A6183),
+    onPrimary = Color(0xFFFFFFFF),
+    primaryContainer = Color(0xFFCFE2EE),
+    onPrimaryContainer = Color(0xFF0E3549),
+    secondary = Color(0xFF9A4A31),
+    onSecondary = Color(0xFFFFFFFF),
+    secondaryContainer = Color(0xFFF7DCD0),
+    onSecondaryContainer = Color(0xFF4A1B0C),
+    tertiary = Color(0xFF785A12),
+    onTertiary = Color(0xFFFFFFFF),
+    tertiaryContainer = Color(0xFFF1E2B4),
+    onTertiaryContainer = Color(0xFF382A00),
+    background = Color(0xFFF6F0E6),
+    onBackground = Color(0xFF2B2118),
+    surface = Color(0xFFFFFBF3),
+    onSurface = Color(0xFF2B2118),
+    surfaceVariant = Color(0xFFEADFCC),
+    onSurfaceVariant = Color(0xFF574A38),
+    outline = Color(0xFF8A7357),
+    outlineVariant = Color(0xFFD5C7AE),
+    error = Color(0xFFA02F26),
+    onError = Color(0xFFFFFFFF),
+    errorContainer = Color(0xFFF8DDD8),
+    onErrorContainer = Color(0xFF410E0B),
+)
+
+/** The scheme behind a theme choice. Exposed so the first-run picker can paint both at once. */
+fun corlangColorScheme(dark: Boolean): ColorScheme = if (dark) DarkColors else LightColors
+
 /**
  * Semantic right/wrong feedback colors (quiz grading, match highlights).
  * Kept out of the Material scheme because "correct green" has no M3 role;
@@ -77,12 +128,36 @@ private val DarkFeedback = FeedbackColors(
     onWrongContainer = Color(0xFFFFD1CE),
 )
 
+/**
+ * Light-theme feedback: the same two meanings, re-tuned for paper. The dark theme's mint and
+ * salmon are near-invisible on beige, so both accents darken and both containers become warm
+ * tints rather than deep blocks.
+ */
+private val LightFeedback = FeedbackColors(
+    correct = Color(0xFF2E6B36),
+    correctContainer = Color(0xFFDDEBD9),
+    onCorrectContainer = Color(0xFF17351C),
+    wrong = Color(0xFF9E332A),
+    wrongContainer = Color(0xFFF7DDD8),
+    onWrongContainer = Color(0xFF43110D),
+)
+
 val LocalFeedbackColors = staticCompositionLocalOf { DarkFeedback }
+
+/**
+ * Whether the dark theme is active. A few things are drawn outside the Material roles — the
+ * streak flame's tiers, confetti — and need to know which ground they sit on. Reading this beats
+ * inspecting a background's luminance: it is the actual choice, not a guess about it.
+ */
+val LocalIsDarkTheme = staticCompositionLocalOf { true }
 
 /** Accessor mirroring MaterialTheme.colorScheme style. */
 object CorlangColors {
     val feedback: FeedbackColors
         @Composable get() = LocalFeedbackColors.current
+
+    val isDark: Boolean
+        @Composable get() = LocalIsDarkTheme.current
 }
 
 /**
@@ -190,24 +265,96 @@ private fun corlangTypography(): Typography {
 }
 
 /**
- * Corlang is dark-only by design (easier on the eyes; the brand lives on ink-navy).
- * The system light/dark setting is deliberately ignored, one look everywhere: launch
- * window, loader, onboarding, and the app all share the same dark surfaces.
+ * Eases one Material role between themes. Every role is animated (see [CorlangTheme]) so a theme
+ * switch is one movement rather than a stack of surfaces changing at slightly different times.
  */
 @Composable
-fun CorlangTheme(content: @Composable () -> Unit) {
-    val colors = DarkColors
+private fun anim(target: Color, label: String): Color =
+    animateColorAsState(
+        targetValue = target,
+        animationSpec = tween(durationMillis = 320),
+        label = label
+    ).value
+
+/**
+ * The target scheme with every role eased toward its new value. Written out in full rather than
+ * animating only the roles Corlang names: Material fills the rest (surfaceContainer*, scrim,
+ * inverse*) from its own defaults, and those differ between light and dark too — left un-eased,
+ * they would snap a frame ahead of everything around them.
+ */
+@Composable
+private fun animatedScheme(target: ColorScheme): ColorScheme = target.copy(
+    primary = anim(target.primary, "primary"),
+    onPrimary = anim(target.onPrimary, "onPrimary"),
+    primaryContainer = anim(target.primaryContainer, "primaryContainer"),
+    onPrimaryContainer = anim(target.onPrimaryContainer, "onPrimaryContainer"),
+    inversePrimary = anim(target.inversePrimary, "inversePrimary"),
+    secondary = anim(target.secondary, "secondary"),
+    onSecondary = anim(target.onSecondary, "onSecondary"),
+    secondaryContainer = anim(target.secondaryContainer, "secondaryContainer"),
+    onSecondaryContainer = anim(target.onSecondaryContainer, "onSecondaryContainer"),
+    tertiary = anim(target.tertiary, "tertiary"),
+    onTertiary = anim(target.onTertiary, "onTertiary"),
+    tertiaryContainer = anim(target.tertiaryContainer, "tertiaryContainer"),
+    onTertiaryContainer = anim(target.onTertiaryContainer, "onTertiaryContainer"),
+    background = anim(target.background, "background"),
+    onBackground = anim(target.onBackground, "onBackground"),
+    surface = anim(target.surface, "surface"),
+    onSurface = anim(target.onSurface, "onSurface"),
+    surfaceVariant = anim(target.surfaceVariant, "surfaceVariant"),
+    onSurfaceVariant = anim(target.onSurfaceVariant, "onSurfaceVariant"),
+    surfaceTint = anim(target.surfaceTint, "surfaceTint"),
+    inverseSurface = anim(target.inverseSurface, "inverseSurface"),
+    inverseOnSurface = anim(target.inverseOnSurface, "inverseOnSurface"),
+    error = anim(target.error, "error"),
+    onError = anim(target.onError, "onError"),
+    errorContainer = anim(target.errorContainer, "errorContainer"),
+    onErrorContainer = anim(target.onErrorContainer, "onErrorContainer"),
+    outline = anim(target.outline, "outline"),
+    outlineVariant = anim(target.outlineVariant, "outlineVariant"),
+    scrim = anim(target.scrim, "scrim"),
+    surfaceBright = anim(target.surfaceBright, "surfaceBright"),
+    surfaceDim = anim(target.surfaceDim, "surfaceDim"),
+    surfaceContainer = anim(target.surfaceContainer, "surfaceContainer"),
+    surfaceContainerHigh = anim(target.surfaceContainerHigh, "surfaceContainerHigh"),
+    surfaceContainerHighest = anim(target.surfaceContainerHighest, "surfaceContainerHighest"),
+    surfaceContainerLow = anim(target.surfaceContainerLow, "surfaceContainerLow"),
+    surfaceContainerLowest = anim(target.surfaceContainerLowest, "surfaceContainerLowest"),
+)
+
+/**
+ * Corlang has two looks and the learner picks one: ink (dark) or paper (light). The SYSTEM
+ * light/dark setting is still deliberately ignored — the choice is the app's own, asked once on
+ * first run and changeable in Settings, so one look runs everywhere: launch window, loader,
+ * onboarding, and the app all share it.
+ *
+ * [dark] defaults to true so any preview or test that renders a screen without threading the
+ * preference through still gets the original theme.
+ *
+ * The scheme is animated ([animatedScheme]), which is what makes the first-run picker work:
+ * tapping a swatch changes this one flag and the whole screen crossfades to the other theme in
+ * place, so the learner sees the app they are choosing before they confirm.
+ */
+@Composable
+fun CorlangTheme(dark: Boolean = true, content: @Composable () -> Unit) {
+    val colors = animatedScheme(corlangColorScheme(dark))
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
             @Suppress("DEPRECATION")
             window.statusBarColor = colors.surface.toArgb()
-            // Dark bar → light (white) status-bar icons.
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = false
+            // Dark bar → light (white) icons; paper bar → dark icons. Both bars, because
+            // edge-to-edge draws content under the gesture/navigation bar as well.
+            val controller = WindowCompat.getInsetsController(window, view)
+            controller.isAppearanceLightStatusBars = !dark
+            controller.isAppearanceLightNavigationBars = !dark
         }
     }
-    CompositionLocalProvider(LocalFeedbackColors provides DarkFeedback) {
+    CompositionLocalProvider(
+        LocalFeedbackColors provides if (dark) DarkFeedback else LightFeedback,
+        LocalIsDarkTheme provides dark
+    ) {
         MaterialTheme(
             colorScheme = colors,
             typography = corlangTypography(),

@@ -2,10 +2,20 @@
 <resources>
     <!-- Base theme; actual colors are driven by Compose Material3 in ui/theme.
          Dark parent + ink-navy window background so the FIRST frame (before Compose draws)
-         is already the splash background: no white flash at launch. The app is dark-only. -->
+         is already the splash background: no white flash at launch. This is the manifest theme
+         and the default for a learner who has not chosen yet. -->
     <style name="Theme.Corlang" parent="android:Theme.Material.NoActionBar">
         <item name="android:windowBackground">@color/splash_background</item>
         <item name="android:statusBarColor">@color/splash_background</item>
         <item name="android:navigationBarColor">@color/splash_background</item>
+    </style>
+
+    <!-- The same window, in paper. Applied by MainActivity.onCreate (before super) when the
+         learner chose light, so their first frame is beige rather than a flash of ink. Light
+         parent so the system draws dark bar icons on it. -->
+    <style name="Theme.Corlang.Light" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background_light</item>
+        <item name="android:statusBarColor">@color/splash_background_light</item>
+        <item name="android:navigationBarColor">@color/splash_background_light</item>
     </style>
 </resources>

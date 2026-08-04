@@ -40,6 +40,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.corlang.app.data.prefs.LanguagePrefs
+import com.corlang.app.data.prefs.ThemeMode
 import com.corlang.app.reminder.ReminderScheduler
 import com.corlang.app.ui.AppState
 import com.corlang.app.ui.components.CorlangTopBar
@@ -54,6 +56,7 @@ import com.corlang.app.ui.screens.PaywallScreen
 import com.corlang.app.ui.screens.LearnScreen
 import com.corlang.app.ui.screens.OnboardingScreen
 import com.corlang.app.ui.screens.PlacementScreen
+import com.corlang.app.ui.screens.ThemeChoiceScreen
 import com.corlang.app.ui.screens.ProfileScreen
 import com.corlang.app.ui.screens.ProgressScreen
 import com.corlang.app.ui.screens.ReadinessScreen
@@ -64,21 +67,55 @@ import com.corlang.app.ui.theme.CorlangTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Before super.onCreate, because this decides the WINDOW BACKGROUND — the very first
+        // frame, painted before Compose runs. Read synchronously from the SharedPreferences
+        // mirror (DataStore cannot answer in time); a light-mode learner otherwise gets a flash
+        // of ink at every launch.
+        val launchDark = LanguagePrefs.launchThemeIsDark(this)
+        setTheme(if (launchDark) R.style.Theme_Corlang else R.style.Theme_Corlang_Light)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val container = (application as CorlangApp).container
         setContent {
-            CorlangTheme {
+            // The theme choice, hoisted to the root so the first-run picker can re-theme the
+            // ENTIRE app live. `preview` is the picker's in-flight tap (nothing saved yet) and
+            // wins while it is set; otherwise the saved mode rules, and `launchDark` covers the
+            // frames before DataStore has emitted — the same value the window is already painted.
+            val themeMode by container.languagePrefs.themeMode
+                .collectAsState(initial = null as ThemeMode?)
+            var preview by remember { mutableStateOf<Boolean?>(null) }
+            val scope = rememberCoroutineScope()
+            val dark = preview ?: when (themeMode) {
+                ThemeMode.DARK -> true
+                ThemeMode.LIGHT -> false
+                else -> launchDark
+            }
+
+            CorlangTheme(dark = dark) {
                 // Branded loader while content preloads; reveals the app when it hits 100%.
                 // Plain remember, NOT rememberSaveable: after process death the content caches
                 // are cold again, and skipping the splash meant the first composition parsed
                 // the full plan synchronously on the main thread (visible freeze). Within a
                 // live process (config change) the caches are warm and the splash is instant.
                 var ready by remember { mutableStateOf(false) }
-                if (ready) {
-                    CorlangApp(container)
-                } else {
-                    CorlangSplash(container, onReady = { ready = true })
+                when {
+                    !ready -> CorlangSplash(container, onReady = { ready = true })
+                    // First run: pick a look before onboarding starts. UNSET is the "never
+                    // asked" state; a null themeMode is merely DataStore still loading, so it
+                    // must NOT open the picker (that would flash it for existing learners).
+                    themeMode == ThemeMode.UNSET -> ThemeChoiceScreen(
+                        dark = dark,
+                        onPreview = { preview = it },
+                        onConfirm = {
+                            // Persisting flips themeMode away from UNSET, which is what hands
+                            // over to onboarding. preview is cleared so the saved value rules.
+                            scope.launch {
+                                container.languagePrefs.setThemeMode(dark)
+                                preview = null
+                            }
+                        }
+                    )
+                    else -> CorlangApp(container)
                 }
             }
         }
