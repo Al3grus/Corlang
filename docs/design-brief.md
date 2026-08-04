@@ -13,7 +13,7 @@ I'm building an Android app called **Corlang** and I want you to design its visu
 
 ## What Corlang is
 
-A serious language-learning app for adults. Six courses (Croatian, French, German, Italian, Portuguese, Spanish), each running from absolute beginner to CEFR B2 — the level real employers, universities and citizenship applications ask for. It teaches through daily structured lessons, spaced-repetition vocabulary review, quizzes, mock exams in the official exam formats, and an optional AI conversation tutor.
+A serious language-learning app for adults. Six courses (Croatian, French, German, Italian, Portuguese, Spanish), each running from absolute beginner up to the level that country actually asks for — B1 for most, B2 for French, where citizenship law requires it. It teaches through daily structured lessons, spaced-repetition vocabulary review, quizzes, mock exams in the official exam formats, and an optional AI conversation tutor.
 
 It is **not** a gamified toy. No mascot, no cartoon characters, no hearts/lives, no XP economy, no leaderboards. The nearest emotional reference points are a well-made reading app, a good notebook, or a serious study tool — something a working adult opens every day for years. It does keep exactly two celebratory elements, both already built: a streak flame that stays grey until the day's lesson is banked, and a single confetti burst when a day is completed.
 
@@ -21,10 +21,10 @@ Built with Kotlin + Jetpack Compose + **Material 3**. Everything you design must
 
 ## Who uses it and where
 
-One adult self-learner, aiming from B1 exam level toward near-native fluency. The defining usage context is **short micro-sessions, frequently at the gym between sets**:
+One adult self-learner, aiming from B1 exam level toward near-native fluency. Sessions are short and taken wherever the day allows, which sets the physical constraints:
 
 - one-handed, thumb-reach only, phone held at arm's length
-- interrupted constantly; a session may be 90 seconds long
+- interrupted constantly; a session may be 120 seconds long
 - sometimes sweaty or imprecise fingers
 
 So: generous tap targets, no fine-precision gestures, no dense tap clusters, primary actions inside the bottom third of the screen, and text that survives being read quickly at a distance. Daily consistency is the product thesis — the design's job is to make returning tomorrow feel obvious and low-friction.
@@ -73,7 +73,16 @@ Light, "Adriatic on paper" — warm beige and brown, deliberately **not** a grey
 | tertiaryContainer | `#F1E2B4` | | errorContainer | `#F8DDD8` |
 | onTertiaryContainer | `#382A00` | | onErrorContainer | `#410E0B` |
 
-Plus semantic right/wrong feedback colors that live outside the Material roles (quiz grading, match highlights): correct accent / correct container / on-correct-container, and the same three for wrong.
+Plus semantic right/wrong feedback colors that live outside the Material roles, because "correct green" has no Material role (quiz grading, match highlights). Current values:
+
+| feedback role | dark | light |
+|---|---|---|
+| correct | `#8FD694` | `#2E6B36` |
+| correctContainer | `#1F3A25` | `#DDEBD9` |
+| onCorrectContainer | `#C0E5C1` | `#17351C` |
+| wrong | `#F3A29E` | `#9E332A` |
+| wrongContainer | `#4A2022` | `#F7DDD8` |
+| onWrongContainer | `#FFD1CE` | `#43110D` |
 
 ## The screens (the real inventory — design for these, not for imagined ones)
 
@@ -111,8 +120,10 @@ Beyond the tabs: a branded loading screen; a 7-step onboarding flow; a first-run
 ## Hard constraints
 
 - **Every color must land in a Material 3 role.** If a color can't be named as a role, it can't exist in the app. The one exception already carved out is the semantic correct/wrong feedback pair.
-- **No external assets.** No CDN, no web fonts beyond Fraunces, no photography, no bitmap illustrations, no icon set beyond Material Icons Extended. Vector shapes, type and color only. The app is fully offline.
-- **Don't invent features.** Design only for the screens listed above. The app collects no analytics, has no accounts, and stores nothing off-device, so anything needing data it doesn't have cannot ship. If you think something is genuinely missing, put it in a separate "proposals" section — don't bake it into the mocks.
+- **No external assets.** No CDN, no web fonts beyond Fraunces, no photography, no bitmap illustrations, no icon set beyond Material Icons Extended. Vector shapes, type and color only. Lessons, review, quizzes and exams all work offline; only the AI tutor needs a connection, so it is the one place a loading or offline state is worth designing.
+- **The content is data, and the layouts have to survive it.** Every lesson, word, quiz and exam is JSON loaded per language, and it changes without the UI changing. So nothing may depend on a particular string fitting: German compounds, long Croatian words and a Portuguese sentence three lines deep all land in the same component. Design for wrapping and growth, show me the long case as well as the tidy one, and don't set a height that a sentence can outgrow. Diacritics must never clip — č ć đ š ž, ã õ ç, ü ö ä ß, à è ì. All six languages are left-to-right; no RTL needed.
+- **No em dashes or en dashes in any UI copy you write.** The project bans them in shipped strings and a test enforces it, so any copy containing one has to be rewritten before it can be used. Colons, commas and full stops instead.
+- **Don't invent features.** Design only for the screens listed above. The app collects no analytics, has no accounts, and keeps the learner's progress on their own device, so anything needing data it doesn't have cannot ship. If you think something is genuinely missing, put it in a separate "proposals" section — don't bake it into the mocks.
 - **Don't restyle the brand mark or wordmark.**
 - **Both themes, always.** A component spec that only shows dark is incomplete.
 - **Warm light theme.** Beige and brown, in the same family as the existing terracotta and ochre accents. A grey/white light mode would read as a different app.
