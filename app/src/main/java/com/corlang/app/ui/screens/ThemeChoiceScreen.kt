@@ -105,7 +105,7 @@ fun ThemeChoiceScreen(
                 Spacer(Modifier.width(16.dp))
                 ThemeOption(
                     label = "Light",
-                    caption = "Adriatic on paper",
+                    caption = "Umber on paper",
                     optionIsDark = false,
                     selected = !dark,
                     onClick = { onPreview(false); Haptics.confirm(context) },

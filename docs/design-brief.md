@@ -56,14 +56,14 @@ Dark, "Adriatic on ink":
 | tertiaryContainer | `#4E4300` | | errorContainer | `#93000A` |
 | onTertiaryContainer | `#F5E4AF` | | onErrorContainer | `#FFDAD6` |
 
-Light, "Adriatic on paper" — warm beige and brown, deliberately **not** a grey/white inversion:
+Light, "Umber on paper" — warm beige and brown, deliberately **not** a grey/white inversion, and with no blue anywhere in the UI. The blue primary was tried here first and read as a cold spot dropped onto beige; the brand mark is the only place blue survives in this theme.
 
 | role | hex | | role | hex |
 |---|---|---|---|---|
-| primary | `#2A6183` | | background | `#F6F0E6` |
+| primary | `#6B4F32` | | background | `#F6F0E6` |
 | onPrimary | `#FFFFFF` | | onBackground | `#2B2118` |
-| primaryContainer | `#CFE2EE` | | surface | `#FFFBF3` |
-| onPrimaryContainer | `#0E3549` | | onSurface | `#2B2118` |
+| primaryContainer | `#EADCC6` | | surface | `#FFFBF3` |
+| onPrimaryContainer | `#2A1D0C` | | onSurface | `#2B2118` |
 | secondary | `#9A4A31` | | surfaceVariant | `#EADFCC` |
 | onSecondary | `#FFFFFF` | | onSurfaceVariant | `#574A38` |
 | secondaryContainer | `#F7DCD0` | | outline | `#8A7357` |

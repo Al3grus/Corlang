@@ -29,10 +29,10 @@ import androidx.core.view.WindowCompat
  *
  * Two looks, one brand:
  *  - dark  = Adriatic on ink. The sea at night; the original and still the default.
- *  - light = Adriatic on paper. Warm beige surfaces and brown-umber ink, the same terracotta and
- *            ochre accents the dark theme already carries, with the blue deepened until it holds
- *            contrast on paper. It is a warm-neutral theme, NOT an inverted grey one: a plain
- *            white/grey light mode would have read as a different app.
+ *  - light = Umber on paper. Warm beige surfaces, brown-umber ink, and a walnut primary, with
+ *            terracotta and ochre as the accents. Entirely warm: no blue anywhere in the UI, only
+ *            in the brand mark, which is fixed. It is a warm-neutral theme, NOT an inverted grey
+ *            one, and not the dark theme with its blue dropped onto beige.
  *
  * The theme is the learner's explicit choice (asked once on first run, changeable in Settings),
  * never the system setting — see [CorlangTheme].
@@ -63,20 +63,37 @@ private val DarkColors = darkColorScheme(
     onError = Color(0xFF690005),
     errorContainer = Color(0xFF93000A),
     onErrorContainer = Color(0xFFFFDAD6),
+    // Same reasoning as the light scheme below: Material's defaults for these are neutral grey
+    // (and purple, in inversePrimary), which is not the ink-navy this theme is built on.
+    surfaceDim = Color(0xFF0F1418),
+    surfaceBright = Color(0xFF343A40),
+    surfaceContainerLowest = Color(0xFF0A0E12),
+    surfaceContainerLow = Color(0xFF171C21),
+    surfaceContainer = Color(0xFF1B2127),
+    surfaceContainerHigh = Color(0xFF262C33),
+    surfaceContainerHighest = Color(0xFF31373E),
+    inverseSurface = Color(0xFFE0E3E6),
+    inverseOnSurface = Color(0xFF2C3238),
+    inversePrimary = Color(0xFF2A6183),
+    scrim = Color(0xFF000000),
 )
 
 /*
- * Light: "Adriatic on paper". Backgrounds are warm beige rather than white, outlines and dividers
- * are brown rather than grey, and body text is a dark umber — the page reads like paper stock, so
- * the terracotta and ochre accents sit on it naturally instead of fighting a cold surface.
- * The blue is darkened from the dark theme's #8CBAD2 (which would be illegible here) to a depth
- * that clears 4.5:1 against white for button labels; the same is true of secondary and tertiary.
+ * Light: "Umber on paper". Fully warm, with NO blue in it — the Adriatic primary was carried over
+ * from the dark theme at first and read as a cold spot dropped onto beige: the one element that
+ * did not belong to the page it sat on. The primary is now walnut brown, so buttons, selection
+ * and focus all come from the same earth family as the surfaces, with terracotta and ochre as the
+ * warm accents beside it. The blue survives only in the brand mark, which is fixed in both themes
+ * and reads as a mark rather than as UI.
+ *
+ * Backgrounds are beige rather than white, outlines brown rather than grey, body text dark umber.
+ * Every accent is darkened well past its dark-theme counterpart: white-on-primary clears 7:1.
  */
 private val LightColors = lightColorScheme(
-    primary = Color(0xFF2A6183),
+    primary = Color(0xFF6B4F32),
     onPrimary = Color(0xFFFFFFFF),
-    primaryContainer = Color(0xFFCFE2EE),
-    onPrimaryContainer = Color(0xFF0E3549),
+    primaryContainer = Color(0xFFEADCC6),
+    onPrimaryContainer = Color(0xFF2A1D0C),
     secondary = Color(0xFF9A4A31),
     onSecondary = Color(0xFFFFFFFF),
     secondaryContainer = Color(0xFFF7DCD0),
@@ -97,6 +114,22 @@ private val LightColors = lightColorScheme(
     onError = Color(0xFFFFFFFF),
     errorContainer = Color(0xFFF8DDD8),
     onErrorContainer = Color(0xFF410E0B),
+    // The surface ladder Material uses for cards, dialogs, menus and sheets. Specified because
+    // its defaults are COOL neutral greys: left alone, an AlertDialog or a Card would sit on the
+    // beige page as a grey rectangle. Each step here is the same paper, dimmed or lifted.
+    surfaceDim = Color(0xFFE3DACB),
+    surfaceBright = Color(0xFFFFFBF3),
+    surfaceContainerLowest = Color(0xFFFFFFFF),
+    surfaceContainerLow = Color(0xFFFBF5EA),
+    surfaceContainer = Color(0xFFF4EDE0),
+    surfaceContainerHigh = Color(0xFFEFE6D7),
+    surfaceContainerHighest = Color(0xFFE9E0CE),
+    // The inverse trio (snackbars, and anything drawn on the opposite ground) and the scrim
+    // behind dialogs. Also cool-grey by default, and also purple-tinted in inversePrimary.
+    inverseSurface = Color(0xFF382F25),
+    inverseOnSurface = Color(0xFFF6F0E6),
+    inversePrimary = Color(0xFFD9BE9A),
+    scrim = Color(0xFF000000),
 )
 
 /** The scheme behind a theme choice. Exposed so the first-run picker can paint both at once. */
