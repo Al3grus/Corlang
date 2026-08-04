@@ -1,8 +1,6 @@
 package com.corlang.app.ui.theme
 
 import android.app.Activity
-import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
@@ -265,64 +263,6 @@ private fun corlangTypography(): Typography {
 }
 
 /**
- * Eases one Material role between themes. Every role is animated (see [CorlangTheme]) so a theme
- * switch is one movement rather than a stack of surfaces changing at slightly different times.
- */
-@Composable
-private fun anim(target: Color, label: String): Color =
-    animateColorAsState(
-        targetValue = target,
-        animationSpec = tween(durationMillis = 320),
-        label = label
-    ).value
-
-/**
- * The target scheme with every role eased toward its new value. Written out in full rather than
- * animating only the roles Corlang names: Material fills the rest (surfaceContainer*, scrim,
- * inverse*) from its own defaults, and those differ between light and dark too — left un-eased,
- * they would snap a frame ahead of everything around them.
- */
-@Composable
-private fun animatedScheme(target: ColorScheme): ColorScheme = target.copy(
-    primary = anim(target.primary, "primary"),
-    onPrimary = anim(target.onPrimary, "onPrimary"),
-    primaryContainer = anim(target.primaryContainer, "primaryContainer"),
-    onPrimaryContainer = anim(target.onPrimaryContainer, "onPrimaryContainer"),
-    inversePrimary = anim(target.inversePrimary, "inversePrimary"),
-    secondary = anim(target.secondary, "secondary"),
-    onSecondary = anim(target.onSecondary, "onSecondary"),
-    secondaryContainer = anim(target.secondaryContainer, "secondaryContainer"),
-    onSecondaryContainer = anim(target.onSecondaryContainer, "onSecondaryContainer"),
-    tertiary = anim(target.tertiary, "tertiary"),
-    onTertiary = anim(target.onTertiary, "onTertiary"),
-    tertiaryContainer = anim(target.tertiaryContainer, "tertiaryContainer"),
-    onTertiaryContainer = anim(target.onTertiaryContainer, "onTertiaryContainer"),
-    background = anim(target.background, "background"),
-    onBackground = anim(target.onBackground, "onBackground"),
-    surface = anim(target.surface, "surface"),
-    onSurface = anim(target.onSurface, "onSurface"),
-    surfaceVariant = anim(target.surfaceVariant, "surfaceVariant"),
-    onSurfaceVariant = anim(target.onSurfaceVariant, "onSurfaceVariant"),
-    surfaceTint = anim(target.surfaceTint, "surfaceTint"),
-    inverseSurface = anim(target.inverseSurface, "inverseSurface"),
-    inverseOnSurface = anim(target.inverseOnSurface, "inverseOnSurface"),
-    error = anim(target.error, "error"),
-    onError = anim(target.onError, "onError"),
-    errorContainer = anim(target.errorContainer, "errorContainer"),
-    onErrorContainer = anim(target.onErrorContainer, "onErrorContainer"),
-    outline = anim(target.outline, "outline"),
-    outlineVariant = anim(target.outlineVariant, "outlineVariant"),
-    scrim = anim(target.scrim, "scrim"),
-    surfaceBright = anim(target.surfaceBright, "surfaceBright"),
-    surfaceDim = anim(target.surfaceDim, "surfaceDim"),
-    surfaceContainer = anim(target.surfaceContainer, "surfaceContainer"),
-    surfaceContainerHigh = anim(target.surfaceContainerHigh, "surfaceContainerHigh"),
-    surfaceContainerHighest = anim(target.surfaceContainerHighest, "surfaceContainerHighest"),
-    surfaceContainerLow = anim(target.surfaceContainerLow, "surfaceContainerLow"),
-    surfaceContainerLowest = anim(target.surfaceContainerLowest, "surfaceContainerLowest"),
-)
-
-/**
  * Corlang has two looks and the learner picks one: ink (dark) or paper (light). The SYSTEM
  * light/dark setting is still deliberately ignored — the choice is the app's own, asked once on
  * first run and changeable in Settings, so one look runs everywhere: launch window, loader,
@@ -331,13 +271,21 @@ private fun animatedScheme(target: ColorScheme): ColorScheme = target.copy(
  * [dark] defaults to true so any preview or test that renders a screen without threading the
  * preference through still gets the original theme.
  *
- * The scheme is animated ([animatedScheme]), which is what makes the first-run picker work:
- * tapping a swatch changes this one flag and the whole screen crossfades to the other theme in
- * place, so the learner sees the app they are choosing before they confirm.
+ * The scheme SNAPS: no role is animated here. Easing the colors meant recomposing every
+ * composable on screen once per frame, which is what made switching feel like a repaint in
+ * progress. The visible transition belongs to [CorlangThemeSwap], which crossfades a frozen
+ * frame over the finished new one instead — read that file before adding animation back here.
+ *
+ * [systemBarsDark] exists for the same reason: during a swap the bar ICONS must keep suiting the
+ * frame the learner is still looking at, not the theme already rendered beneath it.
  */
 @Composable
-fun CorlangTheme(dark: Boolean = true, content: @Composable () -> Unit) {
-    val colors = animatedScheme(corlangColorScheme(dark))
+fun CorlangTheme(
+    dark: Boolean = true,
+    systemBarsDark: Boolean = dark,
+    content: @Composable () -> Unit
+) {
+    val colors = corlangColorScheme(dark)
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -347,8 +295,8 @@ fun CorlangTheme(dark: Boolean = true, content: @Composable () -> Unit) {
             // Dark bar → light (white) icons; paper bar → dark icons. Both bars, because
             // edge-to-edge draws content under the gesture/navigation bar as well.
             val controller = WindowCompat.getInsetsController(window, view)
-            controller.isAppearanceLightStatusBars = !dark
-            controller.isAppearanceLightNavigationBars = !dark
+            controller.isAppearanceLightStatusBars = !systemBarsDark
+            controller.isAppearanceLightNavigationBars = !systemBarsDark
         }
     }
     CompositionLocalProvider(

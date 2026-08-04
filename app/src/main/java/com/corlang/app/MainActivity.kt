@@ -63,7 +63,7 @@ import com.corlang.app.ui.screens.ReadinessScreen
 import com.corlang.app.ui.screens.SettingsScreen
 import com.corlang.app.ui.screens.TodayScreen
 import com.corlang.app.ui.screens.WordsScreen
-import com.corlang.app.ui.theme.CorlangTheme
+import com.corlang.app.ui.theme.CorlangThemeSwap
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,7 +91,9 @@ class MainActivity : ComponentActivity() {
                 else -> launchDark
             }
 
-            CorlangTheme(dark = dark) {
+            // Not CorlangTheme directly: the swap wrapper is what turns a change of `dark` into
+            // one clean fade instead of a visible repaint (see ThemeSwap.kt).
+            CorlangThemeSwap(dark = dark) {
                 // Branded loader while content preloads; reveals the app when it hits 100%.
                 // Plain remember, NOT rememberSaveable: after process death the content caches
                 // are cold again, and skipping the splash meant the first composition parsed
