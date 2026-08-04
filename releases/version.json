@@ -1,6 +1,6 @@
 {
-  "versionCode": 139,
-  "versionName": "0.23.0",
-  "notes": "Corlang now has a light theme. Alongside the original dark look there is a warm one: beige paper surfaces, brown outlines and umber text, keeping the same terracotta and gold accents. The first time you open the app it asks which you prefer, and the whole screen changes as you tap between them so you can see each one before you commit. You can switch whenever you like under Settings > Appearance, and the loading screen follows your choice too. The app never follows your phone's own light/dark setting: the look is yours to choose, and it stays put.",
+  "versionCode": 140,
+  "versionName": "0.23.1",
+  "notes": "Switching between the light and dark themes is now a single smooth fade. Before, the app changed colour piece by piece while you watched, which felt slow even though it was fast. It now finishes redrawing itself out of sight and only then fades across, so you never see it halfway.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
