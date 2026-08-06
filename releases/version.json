@@ -1,6 +1,6 @@
 {
-  "versionCode": 151,
-  "versionName": "0.27.4",
-  "notes": "Fixes the review chart on Progress, where the busiest day was drawn shorter than the quiet ones around it. The row had a fixed height, so on a day with a lot of reviews the bar and its two labels no longer fitted and the column was squeezed, which meant the one day worth noticing was the one that shrank. Every day now shares an identical track and only the fill inside it varies.",
+  "versionCode": 152,
+  "versionName": "0.27.5",
+  "notes": "Removes the review load chart from Progress. It showed what the next seven days hold rather than what you have done, which is what the Review tab is for; Progress is now only your course, your words, your streak and your month.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
