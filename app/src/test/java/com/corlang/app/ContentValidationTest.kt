@@ -1190,6 +1190,39 @@ class ContentValidationTest {
     }
 
     /**
+     * A gated vocab pack must be held back WITHOUT costing the deck a word. The SRS deck is
+     * sized against the course (10 a lesson, and a floor test depends on it), so if gating ever
+     * dropped or duplicated a word the course would quietly run short of vocabulary near the end,
+     * which is the least visible place for it to happen.
+     */
+    @Test
+    fun `pack gating reorders the deck without losing a word`() {
+        allLangs.forEach { lang ->
+            val packs = loadVocabPacks(lang)
+            val authored = packs.flatMap { it.words }
+            val ordered = com.corlang.app.data.DeckOrder.ordered(
+                packs, com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
+            )
+            assertEquals("$lang: gating changed the deck size", authored.size, ordered.size)
+            assertEquals("$lang: gating dropped or duplicated a word",
+                authored.map { it.id }.toSet(), ordered.map { it.id }.toSet())
+
+            packs.filter { it.fromDay > 0 }.forEach { pack ->
+                assertTrue("$lang: pack '${pack.title}' has a negative fromDay", pack.fromDay > 0)
+                val firstSlot = (pack.fromDay - 1) * com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
+                val ids = pack.words.map { it.id }.toSet()
+                val earliest = ordered.indexOfFirst { it.id in ids }
+                assertTrue(
+                    "$lang: '${pack.title}' is gated to lesson ${pack.fromDay} but its first " +
+                        "word sits at slot $earliest, before lesson ${pack.fromDay} starts at " +
+                        "$firstSlot",
+                    earliest >= firstSlot
+                )
+            }
+        }
+    }
+
+    /**
      * Compose's padding modifier REJECTS a negative value, and it does so at layout time, not at
      * compile time: the screen builds, ships, and crashes the moment it is opened. That is
      * exactly what happened to the Progress tab, from a design handoff asking for a "negative
