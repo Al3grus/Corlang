@@ -238,7 +238,15 @@ data class VocabPack(
     val level: String,           // rough CEFR level of the pack
     val words: List<VocabWord>,
     /** Provenance: source keys from docs/sources/README.md. */
-    val sources: List<String> = emptyList()
+    val sources: List<String> = emptyList(),
+    /**
+     * Earliest lesson this pack's words may be introduced at, or 0 for "whenever deck order
+     * reaches them". For a themed block the course teaches on a known day: Croatian's months
+     * were reaching flashcards at lesson 8 and being explained at lesson 25. See [DeckOrder],
+     * which holds the pack back and lets the rest of the deck move up, so the deck keeps its
+     * size and nobody is left short of new words.
+     */
+    val fromDay: Int = 0
 )
 
 @Serializable

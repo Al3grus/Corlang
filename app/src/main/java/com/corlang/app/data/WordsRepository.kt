@@ -27,7 +27,7 @@ class WordsRepository(
     fun reviews(lang: String): Flow<List<WordReview>> = dao.wordReviews(lang)
 
     fun allWords(lang: String): List<VocabWord> =
-        content.vocab(lang).packs.flatMap { it.words }
+        DeckOrder.ordered(content.vocab(lang).packs, Fsrs.NEW_WORDS_PER_DAY)
 
     /** The due reviews for today (no new words), oldest box first — the Words tab is review-only. */
     suspend fun buildReviewSession(
