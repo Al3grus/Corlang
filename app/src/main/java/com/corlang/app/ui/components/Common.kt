@@ -189,7 +189,28 @@ fun OptionRow(
         OptionState.SELECTED -> MaterialTheme.colorScheme.primary
         OptionState.CORRECT -> feedback.correct
         OptionState.WRONG -> feedback.wrong
-        OptionState.DEFAULT -> MaterialTheme.colorScheme.outline
+        // outlineVariant, not outline: in the light theme `outline` is a brown a shade off the
+        // brown primary, so an outline-bordered row and a selected row read as the same thing.
+        OptionState.DEFAULT -> MaterialTheme.colorScheme.outlineVariant
+    }
+    /*
+     * State is carried by the FILL, not by the border alone. A 2dp edge changing hue is the
+     * weakest signal a row can send: it survived only as long as the palette happened to put the
+     * primary far from the outline, which the warm light theme stopped doing (both are brown).
+     * Filling the row cannot fail that way in any palette, and it is the stronger affordance in
+     * both themes. Weight moves too, so the state is legible without relying on color at all.
+     */
+    val container = when (state) {
+        OptionState.SELECTED -> MaterialTheme.colorScheme.primaryContainer
+        OptionState.CORRECT -> feedback.correctContainer
+        OptionState.WRONG -> feedback.wrongContainer
+        OptionState.DEFAULT -> MaterialTheme.colorScheme.surface
+    }
+    val onContainer = when (state) {
+        OptionState.SELECTED -> MaterialTheme.colorScheme.onPrimaryContainer
+        OptionState.CORRECT -> feedback.onCorrectContainer
+        OptionState.WRONG -> feedback.onWrongContainer
+        OptionState.DEFAULT -> MaterialTheme.colorScheme.onSurface
     }
     val reduced = rememberReducedMotion()
     val pop = remember { Animatable(1f) }
@@ -217,7 +238,8 @@ fun OptionRow(
     }
     Surface(
         shape = RoundedCornerShape(Radius.md),
-        color = MaterialTheme.colorScheme.surface,
+        color = container,
+        contentColor = onContainer,
         modifier = modifier
             .fillMaxWidth()
             .padding(vertical = Space.xs)
@@ -227,7 +249,11 @@ fun OptionRow(
             .border(2.dp, border, RoundedCornerShape(Radius.md))
             .clickable(enabled = enabled, onClick = onClick)
     ) {
-        Text(text, modifier = Modifier.padding(14.dp))
+        Text(
+            text,
+            fontWeight = if (state == OptionState.DEFAULT) FontWeight.Normal else FontWeight.SemiBold,
+            modifier = Modifier.padding(14.dp)
+        )
     }
 }
 

@@ -468,20 +468,17 @@ fun OnboardingScreen(
                     false to "I'm new, start me at Lesson 1",
                     true to "I know some, take the 2-minute placement test"
                 ).forEach { (wants, label) ->
-                    val chosen = wantsPlacement == wants
-                    Surface(
-                        shape = RoundedCornerShape(10.dp),
-                        color = MaterialTheme.colorScheme.surface,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 3.dp)
-                            .border(
-                                2.dp,
-                                if (chosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline,
-                                RoundedCornerShape(10.dp)
-                            )
-                            .clickable { wantsPlacement = wants }
-                    ) { Text(label, modifier = Modifier.padding(12.dp)) }
+                    // Same shared row as every other choice in the app; a border-only selection
+                    // here was invisible once the light theme's primary and outline both went
+                    // brown, and this is the one question with no way back if it is misread.
+                    com.corlang.app.ui.components.OptionRow(
+                        text = label,
+                        state = if (wantsPlacement == wants)
+                            com.corlang.app.ui.components.OptionState.SELECTED
+                        else com.corlang.app.ui.components.OptionState.DEFAULT,
+                        enabled = true,
+                        onClick = { wantsPlacement = wants }
+                    )
                 }
             }
         }

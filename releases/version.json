@@ -1,6 +1,6 @@
 {
-  "versionCode": 141,
-  "versionName": "0.23.2",
-  "notes": "The light theme is now properly warm. Buttons, selections and highlights were still using the dark theme's sea blue, which sat on the beige page like a cold patch; they are now walnut brown, with terracotta and gold alongside. Cards, dialogs and menus were quietly falling back to grey and now use the same paper tones as everything else. Also corrected a claim in the intro: courses run to the level each country actually asks for, which is B1 for most and B2 for French, rather than B2 across the board.",
+  "versionCode": 142,
+  "versionName": "0.23.3",
+  "notes": "Selected answers are now clearly marked. Every answer option in the app, in lessons, quizzes, exams, the placement test and onboarding, showed its state through the border colour alone, which became almost invisible in the light theme once both the primary and the outline turned brown. Selected, correct and wrong options are now filled, not just outlined. The Portuguese placement test also stopped at lesson 151 of 240, so nobody could be placed into the last third of the course however well they answered; it now runs to lesson 215. If you clear the hardest questions the test has, it says so plainly instead of reporting its own ceiling as your level. And levels you were placed past now unlock their quiz and mock exam, which were previously locked behind lessons the app itself told you to skip.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
