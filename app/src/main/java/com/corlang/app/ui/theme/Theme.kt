@@ -27,12 +27,12 @@ import androidx.core.view.WindowCompat
  * sand (tertiary). Every Material role is specified in BOTH schemes so no default (purple) role
  * can leak into the UI, and so no screen can accidentally depend on one theme's fallbacks.
  *
- * Two looks, one brand:
- *  - dark  = Adriatic on ink. The sea at night; the original and still the default.
- *  - light = Umber on paper. Warm beige surfaces, brown-umber ink, and a walnut primary, with
- *            terracotta and ochre as the accents. Entirely warm: no blue anywhere in the UI, only
- *            in the brand mark, which is fixed. It is a warm-neutral theme, NOT an inverted grey
- *            one, and not the dark theme with its blue dropped onto beige.
+ * Two themes, one brand. They are called the DARK THEME and the LIGHT THEME, nothing else:
+ *  - dark:  muted sea-blue on deep navy. The original, and still the default.
+ *  - light: warm beige surfaces, dark umber text, and a walnut primary, with terracotta and
+ *           ochre as the accents. Entirely warm: no blue anywhere in the UI. It is a
+ *           warm-neutral theme, NOT an inverted grey one, and not the dark theme's blue
+ *           dropped onto beige.
  *
  * The theme is the learner's explicit choice (asked once on first run, changeable in Settings),
  * never the system setting — see [CorlangTheme].
@@ -79,9 +79,9 @@ private val DarkColors = darkColorScheme(
 )
 
 /*
- * Light: "Umber on paper". Fully warm, with NO blue in it — the Adriatic primary was carried over
- * from the dark theme at first and read as a cold spot dropped onto beige: the one element that
- * did not belong to the page it sat on. The primary is now walnut brown, so buttons, selection
+ * The light theme. Fully warm, with NO blue in it — the dark theme's primary was carried over at
+ * first and read as a cold spot dropped onto beige: the one element that did not belong to the
+ * page it sat on. The primary is now walnut brown, so buttons, selection
  * and focus all come from the same earth family as the surfaces, with terracotta and ochre as the
  * warm accents beside it. The blue survives only in the brand mark, which is fixed in both themes
  * and reads as a mark rather than as UI.
@@ -117,18 +117,18 @@ private val LightColors = lightColorScheme(
     // The surface ladder Material uses for cards, dialogs, menus and sheets. Specified because
     // its defaults are COOL neutral greys: left alone, an AlertDialog or a Card would sit on the
     // beige page as a grey rectangle. Each step here is the same paper, dimmed or lifted.
-    surfaceDim = Color(0xFFE3DACB),
+    surfaceDim = Color(0xFFE6DFD1),
     surfaceBright = Color(0xFFFFFBF3),
     surfaceContainerLowest = Color(0xFFFFFFFF),
-    surfaceContainerLow = Color(0xFFFBF5EA),
-    surfaceContainer = Color(0xFFF4EDE0),
-    surfaceContainerHigh = Color(0xFFEFE6D7),
-    surfaceContainerHighest = Color(0xFFE9E0CE),
+    surfaceContainerLow = Color(0xFFF9F3E9),
+    surfaceContainer = Color(0xFFF2EADC),
+    surfaceContainerHigh = Color(0xFFECE3D3),
+    surfaceContainerHighest = Color(0xFFE5DBC9),
     // The inverse trio (snackbars, and anything drawn on the opposite ground) and the scrim
     // behind dialogs. Also cool-grey by default, and also purple-tinted in inversePrimary.
-    inverseSurface = Color(0xFF382F25),
-    inverseOnSurface = Color(0xFFF6F0E6),
-    inversePrimary = Color(0xFFD9BE9A),
+    inverseSurface = Color(0xFF302518),
+    inverseOnSurface = Color(0xFFF8F1E6),
+    inversePrimary = Color(0xFFD9BE99),
     scrim = Color(0xFF000000),
 )
 

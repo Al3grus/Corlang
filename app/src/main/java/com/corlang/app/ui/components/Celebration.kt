@@ -52,9 +52,9 @@ import kotlin.random.Random
  * Flame colors for a streak length: outer body, inner core. Tiers escalate like chess.com.
  *
  * Two sets, because a flame is drawn shape-first and owns its own colors — it cannot borrow a
- * Material role. The dark tiers are bright, which is what makes them glow on ink and exactly what
- * makes them vanish on paper; the light tiers are the same four steps (ember → orange → blue →
- * gold) pitched darker, so the escalation still reads and the flame still has an edge.
+ * Material role. The dark tiers are bright, which is what makes them glow in the dark theme and exactly what
+ * makes them vanish in the light theme; the light tiers are the same four steps (ember → orange
+ * → blue → gold) pitched darker, so the escalation still reads and the flame still has an edge.
  */
 private fun flameTier(streak: Int, dark: Boolean): Pair<Color, Color> = when {
     streak >= 100 ->
@@ -71,7 +71,7 @@ private fun flameTier(streak: Int, dark: Boolean): Pair<Color, Color> = when {
         else Color(0xFFB86A44) to Color(0xFFE0A183)
 }
 
-/** Not-today-yet grey: cool on ink, warm stone on paper, so it sits on its own ground. */
+/** Not-today-yet grey: cool in the dark theme, warm stone in the light one. */
 private fun unlitFlame(dark: Boolean): Pair<Color, Color> =
     if (dark) Color(0xFF5A646D) to Color(0xFF7A848D)
     else Color(0xFFAEA595) to Color(0xFFC7BFB0)
@@ -162,7 +162,7 @@ fun ConfettiBurst(modifier: Modifier = Modifier) {
     LaunchedEffect(Unit) { t.animateTo(1f, tween(1600, easing = LinearEasing)) }
 
     val scheme = MaterialTheme.colorScheme
-    // The fourth confetti color was a hardcoded mint, invisible on paper. The feedback palette's
+    // The fourth confetti color was a hardcoded mint, invisible in the light theme. The feedback palette's
     // "correct" green is the same color in dark and a legible deep green in light — and it is the
     // right one to celebrate with anyway.
     val colors = listOf(

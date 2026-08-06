@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.corlang.app.ui.theme.CorlangColors
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -47,9 +48,30 @@ enum class LogoVariant {
     WORDMARK,
 }
 
-/** Brand ring blue and molten-core red, the two fixed brand colors. */
-val CorlangBrand = Color(0xFF2F7FAE)
-val CorlangCore = Color(0xFFC8402C)
+/**
+ * The mark's two colors, per theme.
+ *
+ * On ink the mark is the brand's own blue ring and molten core. On paper it is walnut and
+ * terracotta, the light theme's own primary and secondary. This is a deliberate departure from
+ * "a logo never changes colour": the Adriatic blue is a LIGHT blue, chosen to glow on a dark
+ * navy, and on beige it goes soft enough that the ring needs a keyline to hold its shape at all.
+ * A mark that has to be outlined to be seen is the wrong colour for that ground. The shape, which
+ * is what makes it recognisable, is identical in both.
+ *
+ * The launcher icon keeps the ink version, since Android has no way to theme it.
+ */
+val CorlangBrandDark = Color(0xFF2F7FAE)
+val CorlangCoreDark = Color(0xFFC8402C)
+val CorlangBrandLight = Color(0xFF6B4F32)
+val CorlangCoreLight = Color(0xFF9A4A31)
+
+/** The ring colour for the active theme. */
+val CorlangBrand: Color
+    @Composable get() = if (CorlangColors.isDark) CorlangBrandDark else CorlangBrandLight
+
+/** The molten-core colour for the active theme. */
+val CorlangCore: Color
+    @Composable get() = if (CorlangColors.isDark) CorlangCoreDark else CorlangCoreLight
 
 /**
  * The wordmark typeface. The handoff specifies Helvetica, which is a commercial Monotype font;

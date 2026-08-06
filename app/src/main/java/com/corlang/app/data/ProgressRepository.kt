@@ -21,6 +21,9 @@ class ProgressRepository(private val dao: ProgressDao) {
 
     fun progress(lang: String): Flow<LanguageProgress?> = dao.progress(lang)
     fun completedDays(lang: String): Flow<List<Int>> = dao.completedDays(lang)
+    /** Completion rows with their timestamps, for the Progress calendar. */
+    fun completions(lang: String): Flow<List<com.corlang.app.data.db.DayCompletion>> =
+        dao.completions(lang)
     fun completionsSince(lang: String, sinceEpochMs: Long): Flow<Int> =
         dao.completionsSince(lang, sinceEpochMs)
     fun completedDayCount(lang: String): Flow<Int> = dao.completedDayCount(lang)
