@@ -1,6 +1,6 @@
 {
-  "versionCode": 144,
-  "versionName": "0.24.1",
-  "notes": "Leaving the placement test now asks first. Backing out halfway used to drop you straight into that language at lesson 1, with the placement offer already used up, which was easy to do by accident with a single back swipe. It now confirms, tells you where leaving will land you, and takes you back to the course you were actually studying. If you leave, the placement offer is put back rather than spent. The language list in your profile is also split in two: the courses you have started, each showing the lesson you are on, and the ones you have never opened.",
+  "versionCode": 145,
+  "versionName": "0.25.0",
+  "notes": "The microphone in dialogues now works, and works on every device. Pronunciation is judged on sounds rather than exact words, so a dropped accent, a merged word or one wrong ending no longer reads as a mistake, and all three of the recogniser's guesses are considered instead of only the first. It tries to work offline before reaching for the network. And when a device simply cannot understand the language, which is common for Croatian and European Portuguese, the button stops pretending: it records you instead, so you can play your attempt straight after the model line and hear the difference yourself.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
