@@ -12,7 +12,6 @@ import com.corlang.app.data.WordsRepository
 import com.corlang.app.data.backup.BackupManager
 import com.corlang.app.data.db.AppDatabase
 import com.corlang.app.data.prefs.LanguagePrefs
-import com.corlang.app.speech.SpeechInput
 import com.corlang.app.speech.TtsManager
 import com.corlang.app.update.Updater
 
@@ -44,7 +43,6 @@ class AppContainer(context: Context) {
     val billing: com.corlang.app.billing.BillingManager =
         com.corlang.app.billing.BillingManager(context, premium, appScope)
     val tts: TtsManager = TtsManager(context)
-    val speech: SpeechInput = SpeechInput(context)
     val updater: Updater = Updater(context)
 }
 

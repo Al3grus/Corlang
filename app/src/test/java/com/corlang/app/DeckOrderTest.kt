@@ -60,6 +60,33 @@ class DeckOrderTest {
         assertTrue(firstEarly >= 10)
     }
 
+    /**
+     * A gate is a FLOOR, not a summons. A first version pinned gated words to their gate slot,
+     * which pulled French janvier from lesson 87 up to lesson 16 while trying to hold the months
+     * back: the opposite of the point.
+     */
+    @Test fun `a gate never pulls a word earlier than it already was`() {
+        val early = pack("core", 100)
+        val lateSet = VocabPack(
+            id = "months", title = "months", level = "A1",
+            words = listOf(word("janvier")).map { it.copy(fromDay = 2) }
+        )
+        val packs = listOf(early, lateSet)
+        val order = DeckOrder.ordered(packs, perLesson = 10)
+        assertEquals("gated word must stay where the deck put it", 100,
+            order.indexOfFirst { it.id == "janvier" })
+    }
+
+    @Test fun `a word's own gate overrides its pack's`() {
+        val p = VocabPack(
+            id = "core", title = "core", level = "A1", fromDay = 0,
+            words = listOf(word("a"), word("b").copy(fromDay = 5), word("c"))
+        )
+        val order = DeckOrder.ordered(listOf(p, pack("filler", 60)), perLesson = 10)
+        assertTrue("the gated word waits", order.indexOfFirst { it.id == "b" } >= 40)
+        assertTrue("its neighbours do not", order.indexOfFirst { it.id == "c" } < 40)
+    }
+
     @Test fun `a deck of nothing but held words still releases them`() {
         // No filler left, so being early beats leaving the learner with an empty lesson.
         val packs = listOf(pack("months", 12, fromDay = 25))

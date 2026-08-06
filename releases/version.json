@@ -1,6 +1,6 @@
 {
-  "versionCode": 153,
-  "versionName": "0.28.0",
-  "notes": "Flashcards no longer hand you a themed block of words weeks before the lesson that teaches it. In Croatian all twelve months were arriving at lesson 8, while 'Days, months & schedules' is lesson 25, and the clock and calendar words were doing the same. Both now wait for their lesson, and the rest of the deck moves up to fill the gap, so you still get the same number of new words every lesson. Note that the word deck is deliberately larger than the lessons and runs alongside them, so you will still meet useful words before a lesson happens to use them; what has been fixed is a whole theme landing out of order.",
+  "versionCode": 154,
+  "versionName": "0.29.0",
+  "notes": "Two things. The microphone in dialogues no longer tries to grade your pronunciation: it records you and plays it back against the model line, so you can hear the difference yourself. The scoring depended on Android's speech recognition, which has no dependable model for Croatian or European Portuguese and was marking correct speech wrong, and no amount of tuning fixes a bad transcript. Second, the days of the week and the months now wait for the lesson that teaches them in every course, not just Croatian: they were arriving in flashcards up to 35 lessons early in Spanish and 18 in Portuguese. Everything else keeps its place, and no lesson gets fewer new words.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
