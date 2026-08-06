@@ -26,8 +26,8 @@ object Placement {
     /** Items sharing one (level, startDay) anchor: the unit a learner passes or fails. */
     data class Band(val level: String, val startDay: Int, val items: List<PlacementQuestion>)
 
-    const val ITEMS_PER_BAND = 3
-    const val NEEDED_TO_PASS = 2
+    /** What a band is authored to hold. Scoring reads the band's REAL size, see [neededToPass]. */
+    const val ITEMS_PER_BAND = 4
 
     /** Groups a test's questions into bands, easiest first. */
     fun bandsOf(questions: List<PlacementQuestion>): List<Band> =
@@ -35,15 +35,34 @@ object Placement {
             .map { (key, items) -> Band(key.first, key.second, items.sortedBy { it.difficulty }) }
             .sortedWith(compareBy({ it.startDay }, { it.level }))
 
+    /**
+     * How many correct answers clear a band of [size] items.
+     *
+     * Four items needing three is the rule the courses are authored to: it takes the odds of
+     * guessing through a band on four-option items from 15.6% (the old three-needing-two) to
+     * 5.1%, which is the difference between a lucky learner being promoted a whole band once in
+     * six probes and once in twenty. Three-needing-two is kept for smaller bands rather than
+     * demanding a clean sweep: requiring every item to be right would fail a learner who knows
+     * the material and mis-taps once, which is the exact failure this design exists to avoid.
+     */
+    fun neededToPass(size: Int): Int = when {
+        size >= 4 -> 3
+        size >= 2 -> 2
+        else -> 1
+    }
+
     /** True if enough of a band's items were answered correctly to clear it. */
-    fun bandCleared(correct: Int): Boolean = correct >= NEEDED_TO_PASS
+    fun bandCleared(correct: Int, size: Int): Boolean = correct >= neededToPass(size)
 
     /**
-     * Whether a band's outcome is already decided, so the third item can be skipped: two right
-     * clears it, two wrong fails it. Saves a question per band without changing any verdict.
+     * Whether a band's outcome is already decided, so its remaining items can be skipped: enough
+     * right clears it, enough wrong makes clearing impossible. Saves a question or two per band
+     * without changing any verdict.
      */
-    fun bandDecided(correct: Int, wrong: Int): Boolean =
-        correct >= NEEDED_TO_PASS || wrong > ITEMS_PER_BAND - NEEDED_TO_PASS
+    fun bandDecided(correct: Int, wrong: Int, size: Int): Boolean {
+        val need = neededToPass(size)
+        return correct >= need || wrong > size - need
+    }
 
     /**
      * The search state. [lo] and [hi] bracket the bands still in question; [placedIndex] is the
@@ -74,9 +93,10 @@ object Placement {
 
     /**
      * Worst-case number of items a learner will answer: one binary search over [bandCount]
-     * bands, three items per probe. Used to size the progress bar honestly.
+     * bands, [itemsPerBand] items per probe. Used to size the progress bar honestly, so it takes
+     * the real band size rather than assuming every course has caught up to [ITEMS_PER_BAND].
      */
-    fun maxItems(bandCount: Int): Int {
+    fun maxItems(bandCount: Int, itemsPerBand: Int = ITEMS_PER_BAND): Int {
         var probes = 0
         var lo = 0
         var hi = bandCount - 1
@@ -85,6 +105,6 @@ object Placement {
         var hi2 = bandCount - 1
         var probes2 = 0
         while (lo2 <= hi2) { probes2++; hi2 = (lo2 + hi2) / 2 - 1 }  // deepest path: always failing
-        return maxOf(probes, probes2) * ITEMS_PER_BAND
+        return maxOf(probes, probes2) * itemsPerBand
     }
 }

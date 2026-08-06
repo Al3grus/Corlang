@@ -911,7 +911,7 @@ class ContentValidationTest {
      * evidence equal; uniform difficulty keeps the ladder honest.
      */
     @Test
-    fun placementBandsCarryExactlyThreeItemsEach() {
+    fun placementBandsCarryExactlyFourItemsEach() {
         allLangs.forEach { lang ->
             if (!exists(lang, "placement.json")) return@forEach
             val test = strictJson.decodeFromString<com.corlang.app.data.model.PlacementTest>(
@@ -932,8 +932,11 @@ class ContentValidationTest {
                 )
             }
             bands.forEach { (band, items) ->
-                assertEquals("$lang placement band $band must carry exactly 3 items",
-                    3, items.size)
+                // Four, since the pass rule became 3 of 4: a band of three could only be
+                // cleared by a clean sweep under that rule, which fails a learner who knows
+                // the material and mis-taps once. See Placement.neededToPass.
+                assertEquals("$lang placement band $band must carry exactly 4 items",
+                    com.corlang.app.data.Placement.ITEMS_PER_BAND, items.size)
                 assertEquals("$lang placement band $band mixes difficulties",
                     1, items.map { it.difficulty }.distinct().size)
                 items.forEach { q ->

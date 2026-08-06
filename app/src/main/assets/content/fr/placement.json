@@ -49,6 +49,21 @@
   },
   {
    "level": "A1",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "Complete: 'Tu ___ français ?' (être)",
+   "options": [
+    "es",
+    "est",
+    "suis",
+    "êtes"
+   ],
+   "answer": "es",
+   "explanation": "Tu takes es."
+  },
+  {
+   "level": "A1",
    "startDay": 18,
    "type": "MCQ",
    "difficulty": 2,
@@ -94,6 +109,21 @@
   },
   {
    "level": "A1",
+   "startDay": 18,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "Complete: 'J'ai ___ chien.' (a dog)",
+   "options": [
+    "un",
+    "une",
+    "le",
+    "des"
+   ],
+   "answer": "un",
+   "explanation": "Chien is masculine singular, so the indefinite article is un."
+  },
+  {
+   "level": "A1",
    "startDay": 35,
    "type": "MCQ",
    "difficulty": 3,
@@ -136,6 +166,21 @@
    ],
    "answer": "quatorze heures trente",
    "explanation": "The 24 hour clock gives quatorze heures for 14, plus trente for the minutes."
+  },
+  {
+   "level": "A1",
+   "startDay": 35,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "Complete: 'Je ___ à Paris.' (habiter)",
+   "options": [
+    "habite",
+    "habites",
+    "habitent",
+    "habiter"
+   ],
+   "answer": "habite",
+   "explanation": "Je takes the -e ending: j'habite."
   },
   {
    "level": "A2",
@@ -184,6 +229,21 @@
   },
   {
    "level": "A2",
+   "startDay": 55,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "Complete: 'J'ai ___ mes clés.' (perdre)",
+   "options": [
+    "perdu",
+    "perdre",
+    "perdi",
+    "perdue"
+   ],
+   "answer": "perdu",
+   "explanation": "Perdre has the past participle perdu, and it does not agree with a following object."
+  },
+  {
+   "level": "A2",
    "startDay": 82,
    "type": "MCQ",
    "difficulty": 5,
@@ -229,6 +289,21 @@
   },
   {
    "level": "A2",
+   "startDay": 82,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "Complete: 'Tu as vu le film ? Oui, je ___ ai vu.'",
+   "options": [
+    "l'",
+    "lui",
+    "le",
+    "y"
+   ],
+   "answer": "l'",
+   "explanation": "Le film is a direct object, so the pronoun is le, elided to l' before ai."
+  },
+  {
+   "level": "A2",
    "startDay": 110,
    "type": "MCQ",
    "difficulty": 6,
@@ -271,6 +346,21 @@
    ],
    "answer": "To sleep in late",
    "explanation": "Faire la grasse matinée means to sleep in or have a lie-in."
+  },
+  {
+   "level": "A2",
+   "startDay": 110,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "Complete: 'Le livre ___ j'ai acheté est intéressant.'",
+   "options": [
+    "que",
+    "qui",
+    "dont",
+    "où"
+   ],
+   "answer": "que",
+   "explanation": "The relative is the direct object of acheter, so it is que."
   },
   {
    "level": "B1",
@@ -319,6 +409,21 @@
   },
   {
    "level": "B1",
+   "startDay": 140,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "Complete: 'Il faut que tu ___ à l'heure.' (être)",
+   "options": [
+    "sois",
+    "es",
+    "seras",
+    "soit"
+   ],
+   "answer": "sois",
+   "explanation": "Il faut que takes the subjunctive: que tu sois."
+  },
+  {
+   "level": "B1",
    "startDay": 185,
    "type": "MCQ",
    "difficulty": 8,
@@ -364,6 +469,21 @@
   },
   {
    "level": "B1",
+   "startDay": 185,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "Complete: 'C'est le livre ___ je t'ai parlé.'",
+   "options": [
+    "dont",
+    "que",
+    "qui",
+    "où"
+   ],
+   "answer": "dont",
+   "explanation": "Parler de means the relative carries the de: dont."
+  },
+  {
+   "level": "B1",
    "startDay": 235,
    "type": "MCQ",
    "difficulty": 9,
@@ -406,6 +526,21 @@
    ],
    "answer": "aurais pu",
    "explanation": "An unreal past hypothesis pairs the plus que parfait with the conditionnel passé."
+  },
+  {
+   "level": "B1",
+   "startDay": 235,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Complete: 'Bien qu'il ___ fatigué, il continue.'",
+   "options": [
+    "soit",
+    "est",
+    "était",
+    "sera"
+   ],
+   "answer": "soit",
+   "explanation": "Bien que always takes the subjunctive."
   },
   {
    "level": "B2",
@@ -454,6 +589,21 @@
   },
   {
    "level": "B2",
+   "startDay": 280,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Complete: '___ le mauvais temps, la cérémonie a eu lieu.' (despite)",
+   "options": [
+    "Malgré",
+    "Bien que",
+    "Quoique",
+    "Même si"
+   ],
+   "answer": "Malgré",
+   "explanation": "Malgré takes a noun; the others introduce a clause with a verb."
+  },
+  {
+   "level": "B2",
    "startDay": 315,
    "type": "MCQ",
    "difficulty": 9,
@@ -496,6 +646,21 @@
    ],
    "answer": "Je l'ignore.",
    "explanation": "Ignorer belongs to formal register, while the others are spoken or elliptical."
+  },
+  {
+   "level": "B2",
+   "startDay": 315,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Complete: '___ le dossier, il a signé.' (having read the file)",
+   "options": [
+    "Ayant lu",
+    "En lisant",
+    "Lisant",
+    "Avoir lu"
+   ],
+   "answer": "Ayant lu",
+   "explanation": "The past participle construction ayant lu marks an action completed before the main verb."
   },
   {
    "level": "B2",
@@ -544,6 +709,21 @@
   },
   {
    "level": "B2",
+   "startDay": 355,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "Quel est le nom correspondant au verbe 'accueillir' ?",
+   "options": [
+    "l'accueil",
+    "l'accueillement",
+    "l'accueillage",
+    "la cueillette"
+   ],
+   "answer": "l'accueil",
+   "explanation": "The noun is l'accueil; la cueillette belongs to cueillir, to pick."
+  },
+  {
+   "level": "B2",
    "startDay": 400,
    "type": "MCQ",
    "difficulty": 10,
@@ -586,6 +766,21 @@
    ],
    "answer": "It is expletive and carries no negative meaning",
    "explanation": "After verbs of fearing, this ne is stylistic and the speaker does fear it is too late."
+  },
+  {
+   "level": "B2",
+   "startDay": 400,
+   "type": "MCQ",
+   "difficulty": 10,
+   "prompt": "In 'Il fallait qu'il vînt', what form is 'vînt' ?",
+   "options": [
+    "Subjonctif imparfait",
+    "Passé simple",
+    "Conditionnel passé",
+    "Subjonctif présent"
+   ],
+   "answer": "Subjonctif imparfait",
+   "explanation": "Vînt here is the imperfect subjunctive, a literary form, written with a circumflex."
   }
  ]
 }
