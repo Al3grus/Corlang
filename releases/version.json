@@ -1,6 +1,6 @@
 {
-  "versionCode": 146,
-  "versionName": "0.26.0",
-  "notes": "The Progress page is rebuilt. It opens with your course and how far through it you are, then how many words you know and your streak, then a month calendar you can step back through to see exactly which days you studied, and finally how much review each of the next seven days is holding. Today is always shown as pending rather than missed, and the month reads '4 of 6 days' rather than '4 of 31', so a month in progress is never counted against you. In the light theme the logo is now walnut and terracotta instead of blue, which was too pale on the beige background to hold its shape, and the light palette is finalised.",
+  "versionCode": 147,
+  "versionName": "0.27.0",
+  "notes": "The placement test can now land you much closer to your real level. Every course had holes in its ladder, the worst being Portuguese, which asked nothing at all between lesson 59 and lesson 125: anyone who belonged around lesson 100 was dropped back to 59. Twenty new rungs across the six courses close every gap wider than about thirty lessons, so the test can place you within a few weeks of where you actually are rather than within a few months. The sitting barely grows, because the test halves the range with each answer instead of walking up the ladder: twice the rungs costs four more questions, not twice as many.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
