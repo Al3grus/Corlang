@@ -42,7 +42,20 @@ import kotlinx.coroutines.launch
  * chance of being placed too low by a single mis-tap. See [Placement] for the arithmetic.
  */
 @Composable
-fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
+fun PlacementScreen(
+    container: AppContainer,
+    lang: String,
+    onDone: () -> Unit,
+    /**
+     * Left the test WITHOUT finishing it. Distinct from [onDone] because the consequences are
+     * different: an unfinished test placed nobody, so the caller must undo whatever it set up in
+     * order to run it. Back used to call onDone, which silently left the learner in a language
+     * they had never studied, at lesson 1, with the placement prompt already marked handled.
+     */
+    onAbandon: () -> Unit = onDone,
+    /** Where leaving lands them, named so the confirmation can say it out loud. */
+    returnTo: String? = null
+) {
     // A placement test in progress locks the top-bar language picker (mid-session switch guard).
     com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
@@ -91,6 +104,44 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
     val placement = remember(search, bands) { Placement.result(bands, search) }
     val placeLevel = placement.first
     val placeDay = placement.second
+
+    /*
+     * Leaving mid-test is a real decision, so it is confirmed rather than obeyed. A placement
+     * test is a dozen questions deep by the end and the back gesture is one swipe: losing it to
+     * a mis-swipe, and being dropped into a language at lesson 1 as a result, is the worst
+     * outcome this screen can produce. The confirmation names where leaving lands you.
+     */
+    var confirmLeave by remember(lang) { mutableStateOf(false) }
+    // Only while the test is running: once the result is on screen there is nothing to lose, and
+    // that screen has its own Cancel.
+    androidx.activity.compose.BackHandler(enabled = !finished) { confirmLeave = true }
+    if (confirmLeave) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { confirmLeave = false },
+            title = { Text("Leave the placement test?") },
+            text = {
+                Text(
+                    if (returnTo != null)
+                        "Your answers so far will be lost and nothing will be placed. " +
+                            "You'll go back to $returnTo."
+                    else
+                        "Your answers so far will be lost and nothing will be placed. " +
+                            "You'll be asked again how you want to start this language."
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = {
+                    confirmLeave = false
+                    onAbandon()
+                }) { Text("Leave") }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { confirmLeave = false }) {
+                    Text("Keep going")
+                }
+            }
+        )
+    }
 
     // Cleared the hardest band the test has. The ladder cannot measure any higher, so saying
     // "you're placed at B1, lesson N" would report a ceiling as if it were a reading: the test

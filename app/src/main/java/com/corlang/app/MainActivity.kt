@@ -482,7 +482,26 @@ private fun CorlangApp(container: AppContainer) {
                     color = MaterialTheme.colorScheme.background,
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    PlacementScreen(container, lang, onDone = { showPlacement = false })
+                    // Where "Leave" lands them: the course they were actually studying, if any.
+                    val backTo = lastSettledLang?.takeIf { it != lang }
+                    PlacementScreen(
+                        container, lang,
+                        onDone = { showPlacement = false },
+                        onAbandon = {
+                            showPlacement = false
+                            scope.launch {
+                                // The prompt marked this language handled when it opened the
+                                // test. Nothing was placed, so re-arm it: otherwise abandoning
+                                // once means never being offered placement for this language
+                                // again, and there is no retake anywhere else.
+                                container.languagePrefs.unmarkPlacementHandled(lang)
+                                if (backTo != null) container.languagePrefs.setLanguage(backTo)
+                            }
+                        },
+                        returnTo = backTo?.let { code ->
+                            appState.languages.firstOrNull { it.code == code }?.name
+                        }
+                    )
                 }
             }
             showSettings -> {

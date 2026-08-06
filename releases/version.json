@@ -1,6 +1,6 @@
 {
-  "versionCode": 143,
-  "versionName": "0.24.0",
-  "notes": "The placement test is harder to fluke. Each rung of the ladder now carries four questions instead of three and needs three of them right, which takes the odds of guessing your way up a rung from about one in six to about one in twenty, while still forgiving a single mis-tap. That meant writing a new fourth question for all seventy rungs across the six courses. Two Spanish rungs were also asking about the conditional and about cuando plus the subjunctive, which that course only teaches at or after the lesson each rung places you at, so both have been moved to where the material is genuinely behind you.",
+  "versionCode": 144,
+  "versionName": "0.24.1",
+  "notes": "Leaving the placement test now asks first. Backing out halfway used to drop you straight into that language at lesson 1, with the placement offer already used up, which was easy to do by accident with a single back swipe. It now confirms, tells you where leaving will land you, and takes you back to the course you were actually studying. If you leave, the placement offer is put back rather than spent. The language list in your profile is also split in two: the courses you have started, each showing the lesson you are on, and the ones you have never opened.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
