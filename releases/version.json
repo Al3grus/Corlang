@@ -1,6 +1,6 @@
 {
-  "versionCode": 147,
-  "versionName": "0.27.0",
-  "notes": "The placement test can now land you much closer to your real level. Every course had holes in its ladder, the worst being Portuguese, which asked nothing at all between lesson 59 and lesson 125: anyone who belonged around lesson 100 was dropped back to 59. Twenty new rungs across the six courses close every gap wider than about thirty lessons, so the test can place you within a few weeks of where you actually are rather than within a few months. The sitting barely grows, because the test halves the range with each answer instead of walking up the ladder: twice the rungs costs four more questions, not twice as many.",
+  "versionCode": 148,
+  "versionName": "0.27.1",
+  "notes": "Fixes a flicker when opening the language list in your profile: a course you had already started would appear for a split second under 'Not started yet' before jumping up to 'Your courses'. The two lists now wait for your progress to load and appear together, so nothing is ever shown in the wrong group.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

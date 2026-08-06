@@ -180,15 +180,20 @@ private fun LanguagePage(container: AppContainer, lang: String, onSelect: (Strin
     // A course counts as started once a day is banked or the learner has been moved off day 1
     // (placement does that without completing anything). Read per language and remembered as one
     // map, so the two lists below cannot disagree about where a course belongs.
-    val startedDays by produceState(initialValue = emptyMap<String, Int>(), all) {
+    // null until Room answers. Load-then-show, the same rule Today and Progress follow: with an
+    // empty map as the initial value every language except the selected one was classified as
+    // never started for one frame, so a course you HAVE started visibly jumped from "Not started
+    // yet" up to "Your courses" as the page opened.
+    val startedDays by produceState<Map<String, Int>?>(initialValue = null, all) {
         value = all.associate { m ->
             val done = container.progress.completedDayCount(m.code).first()
             val day = container.progress.progress(m.code).first()?.currentDay ?: 1
             m.code to if (done > 0 || day > 1) maxOf(day, 1) else 0
         }
     }
-    val started = all.filter { (startedDays[it.code] ?: 0) > 0 || it.code == lang }
-    val fresh = all.filterNot { it in started }
+    val days = startedDays
+    val started = days?.let { d -> all.filter { (d[it.code] ?: 0) > 0 || it.code == lang } }
+    val fresh = started?.let { s -> all.filterNot { it in s } }
 
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
         Text("Your progress is kept separately for each language, so switching never loses anything.",
@@ -196,25 +201,29 @@ private fun LanguagePage(container: AppContainer, lang: String, onSelect: (Strin
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 12.dp))
 
-        if (started.isNotEmpty()) {
-            LanguageGroupHeading("Your courses")
-            started.forEach { m ->
-                LanguageRow(
-                    meta = m,
-                    chosen = m.code == lang,
-                    // The current language can be here without a day banked yet (it was just
-                    // picked in onboarding), so say "Ready to start" rather than claiming a day.
-                    subtitle = (startedDays[m.code] ?: 0).let {
-                        if (it > 0) "${m.nativeName} · Lesson $it" else m.nativeName
-                    },
-                    onSelect = onSelect
-                )
+        // Both lists appear together or not at all: a language must never be seen in the wrong
+        // group, however briefly.
+        if (days != null && started != null && fresh != null) {
+            if (started.isNotEmpty()) {
+                LanguageGroupHeading("Your courses")
+                started.forEach { m ->
+                    LanguageRow(
+                        meta = m,
+                        chosen = m.code == lang,
+                        // The current language can be here without a day banked yet (it was just
+                        // picked in onboarding), so name it without claiming a lesson.
+                        subtitle = (days[m.code] ?: 0).let {
+                            if (it > 0) "${m.nativeName} · Lesson $it" else m.nativeName
+                        },
+                        onSelect = onSelect
+                    )
+                }
             }
-        }
-        if (fresh.isNotEmpty()) {
-            LanguageGroupHeading("Not started yet")
-            fresh.forEach { m ->
-                LanguageRow(meta = m, chosen = false, subtitle = m.nativeName, onSelect = onSelect)
+            if (fresh.isNotEmpty()) {
+                LanguageGroupHeading("Not started yet")
+                fresh.forEach { m ->
+                    LanguageRow(meta = m, chosen = false, subtitle = m.nativeName, onSelect = onSelect)
+                }
             }
         }
     }
