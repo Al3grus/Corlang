@@ -1,6 +1,6 @@
 {
-  "versionCode": 148,
-  "versionName": "0.27.1",
-  "notes": "Fixes a flicker when opening the language list in your profile: a course you had already started would appear for a split second under 'Not started yet' before jumping up to 'Your courses'. The two lists now wait for your progress to load and appear together, so nothing is ever shown in the wrong group.",
+  "versionCode": 149,
+  "versionName": "0.27.2",
+  "notes": "The language page in your profile now fades in as one piece. It was arriving in two: the heading first, then the lists a moment later once your progress had been read, which read as a flicker. The fade lasts exactly as long as the wait actually is, and it is skipped entirely if you have animations turned down.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
