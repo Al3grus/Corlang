@@ -49,6 +49,21 @@
   },
   {
    "level": "A1",
+   "startDay": 1,
+   "type": "MCQ",
+   "difficulty": 1,
+   "prompt": "'Tu ___ estudante?' (ser)",
+   "options": [
+    "és",
+    "é",
+    "sou",
+    "são"
+   ],
+   "answer": "és",
+   "explanation": "Tu takes és; é is for ele/ela and você."
+  },
+  {
+   "level": "A1",
    "startDay": 6,
    "type": "MCQ",
    "difficulty": 2,
@@ -94,6 +109,21 @@
   },
   {
    "level": "A1",
+   "startDay": 6,
+   "type": "MCQ",
+   "difficulty": 2,
+   "prompt": "'___ água está fria.'",
+   "options": [
+    "A",
+    "O",
+    "As",
+    "Um"
+   ],
+   "answer": "A",
+   "explanation": "Água is feminine, so it takes a."
+  },
+  {
+   "level": "A1",
    "startDay": 12,
    "type": "MCQ",
    "difficulty": 3,
@@ -136,6 +166,21 @@
    ],
    "answer": "Onde",
    "explanation": "Onde asks about place; quando asks about time."
+  },
+  {
+   "level": "A1",
+   "startDay": 12,
+   "type": "MCQ",
+   "difficulty": 3,
+   "prompt": "'Nós ___ em Lisboa.' (viver)",
+   "options": [
+    "vivemos",
+    "vivem",
+    "vives",
+    "vivo"
+   ],
+   "answer": "vivemos",
+   "explanation": "Nós takes the -mos ending: vivemos."
   },
   {
    "level": "A2",
@@ -184,6 +229,21 @@
   },
   {
    "level": "A2",
+   "startDay": 46,
+   "type": "MCQ",
+   "difficulty": 4,
+   "prompt": "Completed past: 'Ontem ele ___ ao cinema.' (ir)",
+   "options": [
+    "foi",
+    "foste",
+    "fui",
+    "ia"
+   ],
+   "answer": "foi",
+   "explanation": "Ir is irregular in the pretérito perfeito: ele foi."
+  },
+  {
+   "level": "A2",
    "startDay": 52,
    "type": "MCQ",
    "difficulty": 5,
@@ -229,6 +289,21 @@
   },
   {
    "level": "A2",
+   "startDay": 52,
+   "type": "MCQ",
+   "difficulty": 5,
+   "prompt": "'Enquanto eu ___, o telefone tocou.' (dormir)",
+   "options": [
+    "dormia",
+    "dormi",
+    "dormira",
+    "durmo"
+   ],
+   "answer": "dormia",
+   "explanation": "The imperfeito describes what was going on when another action interrupted it."
+  },
+  {
+   "level": "A2",
    "startDay": 59,
    "type": "MCQ",
    "difficulty": 6,
@@ -271,6 +346,21 @@
    ],
    "answer": "autocarro",
    "explanation": "Portugal uses autocarro; ónibus is Brazilian and elétrico is the tram."
+  },
+  {
+   "level": "A2",
+   "startDay": 59,
+   "type": "MCQ",
+   "difficulty": 6,
+   "prompt": "'Perdi o comboio' means:",
+   "options": [
+    "I missed the train",
+    "I lost my ticket",
+    "I left the station",
+    "I took the wrong train"
+   ],
+   "answer": "I missed the train",
+   "explanation": "Perder o comboio is to miss it; comboio is the Portuguese word for train."
   },
   {
    "level": "B1",
@@ -319,6 +409,21 @@
   },
   {
    "level": "B1",
+   "startDay": 125,
+   "type": "MCQ",
+   "difficulty": 7,
+   "prompt": "'Quando cheguei, ele já ___ saído.' (ter)",
+   "options": [
+    "tinha",
+    "tenha",
+    "teve",
+    "tivesse"
+   ],
+   "answer": "tinha",
+   "explanation": "The mais-que-perfeito composto uses the imperfeito of ter: tinha saído."
+  },
+  {
+   "level": "B1",
    "startDay": 136,
    "type": "MCQ",
    "difficulty": 8,
@@ -361,6 +466,21 @@
    ],
    "answer": "cujo",
    "explanation": "Cujo means whose and agrees with the thing possessed, here livro."
+  },
+  {
+   "level": "B1",
+   "startDay": 136,
+   "type": "MCQ",
+   "difficulty": 8,
+   "prompt": "'É importante que tu ___ a verdade.' (dizer)",
+   "options": [
+    "digas",
+    "dizes",
+    "dirás",
+    "disseste"
+   ],
+   "answer": "digas",
+   "explanation": "Impersonal expressions like é importante que take the present subjunctive."
   },
   {
    "level": "B1",
@@ -409,6 +529,21 @@
   },
   {
    "level": "B1",
+   "startDay": 151,
+   "type": "MCQ",
+   "difficulty": 9,
+   "prompt": "'Vou ___ amanhã.' (telefonar + lhe)",
+   "options": [
+    "telefonar-lhe",
+    "telefonar-o",
+    "telefoná-lo",
+    "telefonar-se"
+   ],
+   "answer": "telefonar-lhe",
+   "explanation": "Telefonar takes an indirect object, so the clitic is lhe and it attaches to the infinitive."
+  },
+  {
+   "level": "B1",
    "startDay": 185,
    "type": "MCQ",
    "difficulty": 10,
@@ -454,6 +589,21 @@
   },
   {
    "level": "B1",
+   "startDay": 185,
+   "type": "MCQ",
+   "difficulty": 10,
+   "prompt": "'Talvez ___ melhor esperar.' (ser)",
+   "options": [
+    "seja",
+    "é",
+    "será",
+    "fosse"
+   ],
+   "answer": "seja",
+   "explanation": "Talvez expresses doubt and takes the present subjunctive seja."
+  },
+  {
+   "level": "B1",
    "startDay": 215,
    "type": "MCQ",
    "difficulty": 11,
@@ -472,15 +622,15 @@
    "startDay": 215,
    "type": "MCQ",
    "difficulty": 11,
-   "prompt": "Reported speech: 'Tens o contrato?' becomes 'Ele perguntou-me ___ eu tinha o contrato.'",
+   "prompt": "'___ muito nesta empresa.' (trabalhar, meaning people work a lot here)",
    "options": [
-    "se",
-    "que",
-    "qual",
-    "o que"
+    "Trabalha-se",
+    "Se trabalha",
+    "Trabalham-se",
+    "É trabalhado"
    ],
-   "answer": "se",
-   "explanation": "A reported yes/no question is introduced by se."
+   "answer": "Trabalha-se",
+   "explanation": "The impersonal se keeps the verb singular and follows it: trabalha-se."
   },
   {
    "level": "B1",
@@ -496,6 +646,21 @@
    ],
    "answer": "a apólice de seguro",
    "explanation": "A apólice is the insurance policy; the others are a bill, a receipt and a bank statement."
+  },
+  {
+   "level": "B1",
+   "startDay": 215,
+   "type": "MCQ",
+   "difficulty": 11,
+   "prompt": "'Assinei o contrato de ___ da casa por um ano.'",
+   "options": [
+    "arrendamento",
+    "empréstimo",
+    "seguro",
+    "imposto"
+   ],
+   "answer": "arrendamento",
+   "explanation": "A rental contract is a contrato de arrendamento; the others are a loan, insurance and tax."
   }
  ]
 }

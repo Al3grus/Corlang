@@ -1,6 +1,6 @@
 {
-  "versionCode": 142,
-  "versionName": "0.23.3",
-  "notes": "Selected answers are now clearly marked. Every answer option in the app, in lessons, quizzes, exams, the placement test and onboarding, showed its state through the border colour alone, which became almost invisible in the light theme once both the primary and the outline turned brown. Selected, correct and wrong options are now filled, not just outlined. The Portuguese placement test also stopped at lesson 151 of 240, so nobody could be placed into the last third of the course however well they answered; it now runs to lesson 215. If you clear the hardest questions the test has, it says so plainly instead of reporting its own ceiling as your level. And levels you were placed past now unlock their quiz and mock exam, which were previously locked behind lessons the app itself told you to skip.",
+  "versionCode": 143,
+  "versionName": "0.24.0",
+  "notes": "The placement test is harder to fluke. Each rung of the ladder now carries four questions instead of three and needs three of them right, which takes the odds of guessing your way up a rung from about one in six to about one in twenty, while still forgiving a single mis-tap. That meant writing a new fourth question for all seventy rungs across the six courses. Two Spanish rungs were also asking about the conditional and about cuando plus the subjunctive, which that course only teaches at or after the lesson each rung places you at, so both have been moved to where the material is genuinely behind you.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

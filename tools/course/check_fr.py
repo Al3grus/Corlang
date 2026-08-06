@@ -111,6 +111,73 @@ def _unwrap(obj):
     return obj
 
 
+def _is_day_shaped(days):
+    return (isinstance(days, list) and len(days) > 0 and isinstance(days[0], dict)
+            and "activities" in days[0])
+
+
+def _generic_distractors(data):
+    """Wrong MCQ options anywhere in a non-day-shaped file, so the contrastive exemption that
+    applies to lessons applies here too: printing the wrong form is how you teach against it."""
+    out = set()
+
+    def rec(x):
+        if isinstance(x, dict):
+            if x.get("type") == "MCQ":
+                ans = x.get("answer")
+                for opt in x.get("options", []):
+                    if opt != ans:
+                        out.add(opt)
+            for v in x.values():
+                rec(v)
+        elif isinstance(x, list):
+            for v in x:
+                rec(v)
+
+    rec(data)
+    return out
+
+
+def check_generic_french(label, data):
+    """The same French checks, over a file that has no days: placement.json, quizzes.json,
+    exams.json and the reference files.
+
+    K14, found again here: this checker only ever ran check_batch's DAY validator, which rejects
+    any other shape outright, so every one of those files has been reported as a shape error and
+    never actually checked for French drift since the checker was written. The de checker had
+    exactly this bug and the pt checker has carried the fix for a while; fr never got it.
+
+    File-scoped rather than activity-scoped, because there are no activities to scope to: a
+    regional form is allowed when its standard counterpart appears anywhere in the same file.
+    That is looser than the lesson rule, and deliberately so, an over-strict check on reference
+    files is how false positives get taught to be ignored.
+    """
+    wrong = _generic_distractors(data)
+    errs = []
+    text = " ".join(s for s in strings_of(data) if s not in wrong).lower()
+
+    for s in strings_of(data):
+        if s in wrong:
+            continue
+        m = MEAL_SHIFT_WRONG_GLOSS.search(s)
+        if m:
+            errs.append(f"{label}: Quebec meal-name shift {m.group(0)!r} in {s[:70]!r}, "
+                        f"standard French is petit-déjeuner=breakfast, déjeuner=lunch, "
+                        f"dîner=dinner")
+
+    for regional, standard in REGIONAL_NUMBERS.items():
+        if (re.search(rf"\b{re.escape(regional)}\b", text)
+                and not re.search(rf"\b{re.escape(standard)}\b", text)):
+            errs.append(f"{label}: Belgian/Swiss number {regional!r} without its standard "
+                        f"counterpart {standard!r} anywhere in the file")
+    for regional, standards in REGIONAL_LEXIS.items():
+        if (re.search(rf"\b{re.escape(regional)}\b", text)
+                and not any(re.search(rf"\b{re.escape(std)}\b", text) for std in standards)):
+            errs.append(f"{label}: Quebecois lexis {regional!r} without any of its standard "
+                        f"counterparts {standards!r} anywhere in the file")
+    return errs
+
+
 def check_french(path):
     errs = []
     try:
@@ -159,11 +226,20 @@ if __name__ == "__main__":
             print(f"MISSING {path}")
             bad += 1
             continue
-        errs = check_batch.check_file(path) + check_french(path)
-        days = _unwrap(json.load(io.open(path, encoding="utf-8")))
-        n = len(days) if isinstance(days, list) else 0
+        raw = json.load(io.open(path, encoding="utf-8"))
+        days = _unwrap(raw)
+        if _is_day_shaped(days):
+            errs = check_batch.check_file(path) + check_french(path)
+            n = len(days)
+            label = f"{n:>3} days"
+        else:
+            # Not a plan file: run the French checks over the whole string tree instead of
+            # handing it to check_batch's day validator, which can only reject it.
+            errs = check_generic_french(os.path.basename(path), raw)
+            n = 0
+            label = "generic file"
         total += n
-        print(f"{os.path.basename(path):<16} {n:>3} days  "
+        print(f"{os.path.basename(path):<22} {label:<12} "
               f"{'OK ' if not errs else str(len(errs)) + ' PROBLEMS'}")
         for e in errs[:30]:
             print(f"    - {e}")

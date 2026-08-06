@@ -33,26 +33,56 @@ class PlacementTest {
         assertTrue("every band carries its items", bands.all { it.items.size == 3 })
     }
 
-    // ---- the 2 of 3 rule ----
+    // ---- the pass rule: 3 of 4, and 2 of 3 for a band a course has not grown yet ----
 
-    @Test fun `two correct clears a band, one does not`() {
-        assertTrue(Placement.bandCleared(2))
-        assertTrue(Placement.bandCleared(3))
-        assertFalse(Placement.bandCleared(1))
-        assertFalse(Placement.bandCleared(0))
+    @Test fun `a full band needs three of its four items`() {
+        assertTrue(Placement.bandCleared(3, size = 4))
+        assertTrue(Placement.bandCleared(4, size = 4))
+        assertFalse("two of four is no longer a pass", Placement.bandCleared(2, size = 4))
+        assertFalse(Placement.bandCleared(0, size = 4))
+    }
+
+    @Test fun `a three item band still passes on two`() {
+        assertTrue(Placement.bandCleared(2, size = 3))
+        assertFalse(Placement.bandCleared(1, size = 3))
     }
 
     @Test fun `a band stops early once its outcome cannot change`() {
-        assertTrue("two right settles it", Placement.bandDecided(correct = 2, wrong = 0))
-        assertTrue("two wrong settles it", Placement.bandDecided(correct = 0, wrong = 2))
-        assertFalse("one each is still open", Placement.bandDecided(correct = 1, wrong = 1))
-        assertFalse("nothing answered is open", Placement.bandDecided(correct = 0, wrong = 0))
+        assertTrue("three right settles it", Placement.bandDecided(correct = 3, wrong = 0, size = 4))
+        assertTrue("two wrong settles it", Placement.bandDecided(correct = 0, wrong = 2, size = 4))
+        assertFalse("one wrong is still open", Placement.bandDecided(correct = 1, wrong = 1, size = 4))
+        assertFalse("nothing answered is open", Placement.bandDecided(correct = 0, wrong = 0, size = 4))
+        assertTrue("the smaller band keeps its own rule",
+            Placement.bandDecided(correct = 2, wrong = 0, size = 3))
     }
 
     @Test fun `one careless slip no longer ends the test`() {
-        // Miss the first item of a band, get the other two: the band is still cleared.
-        assertFalse(Placement.bandDecided(correct = 0, wrong = 1))
-        assertTrue(Placement.bandCleared(2))
+        // Miss the first item of a band, get the rest: the band is still cleared.
+        assertFalse(Placement.bandDecided(correct = 0, wrong = 1, size = 4))
+        assertTrue(Placement.bandCleared(3, size = 4))
+    }
+
+    /**
+     * The whole point of the change: the chance of guessing through a band of four-option items.
+     * 3-of-4 must be materially harder to fluke than the 2-of-3 it replaced.
+     */
+    @Test fun `guessing through a band is far less likely than it was`() {
+        fun flukeOdds(size: Int): Double {
+            val need = Placement.neededToPass(size)
+            fun c(n: Int, k: Int): Double {
+                var r = 1.0
+                for (i in 0 until k) r = r * (n - i) / (i + 1)
+                return r
+            }
+            return (need..size).sumOf { k ->
+                c(size, k) * Math.pow(0.25, k.toDouble()) * Math.pow(0.75, (size - k).toDouble())
+            }
+        }
+        val old = flukeOdds(3)
+        val new = flukeOdds(4)
+        assertEquals(0.156, old, 0.001)
+        assertEquals(0.051, new, 0.001)
+        assertTrue("the new rule must be at least twice as hard to fluke", new * 2 < old)
     }
 
     // ---- the search ----
@@ -109,10 +139,14 @@ class PlacementTest {
 
     // ---- length ----
 
-    @Test fun `the test stays about a dozen items at any ladder size`() {
-        // The old linear test asked up to 14. Binary search must not do worse.
-        assertEquals(12, Placement.maxItems(9))
-        assertEquals(12, Placement.maxItems(13))
-        assertTrue("a 13 band ladder must not exceed the old test", Placement.maxItems(13) <= 14)
+    @Test fun `the test stays a short sitting at any ladder size`() {
+        // Four probes settle a 9 to 13 band ladder, so the worst case is four full bands. That
+        // is the price of the harder pass rule, and it is only the worst case: a band stops the
+        // moment its outcome is decided, so three right in a row ends it at three.
+        assertEquals(16, Placement.maxItems(9))
+        assertEquals(16, Placement.maxItems(13))
+        assertTrue("no ladder we ship may run long", Placement.maxItems(13) <= 16)
+        // A course still authored at three items per band keeps the old, shorter worst case.
+        assertEquals(12, Placement.maxItems(9, itemsPerBand = 3))
     }
 }

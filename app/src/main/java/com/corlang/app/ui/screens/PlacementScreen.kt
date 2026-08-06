@@ -73,7 +73,11 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
     // 2 of 3. Bands are located by binary search (see Placement), so a learner answers about a
     // dozen items whatever their level, and no single mis-tap can end the test.
     val bands = remember(lang) { Placement.bandsOf(test.questions) }
-    val maxItems = remember(bands) { Placement.maxItems(bands.size) }
+    // Sized from the largest band this course actually ships, so the "about N questions" promise
+    // stays honest for a course still authored at three items per band.
+    val maxItems = remember(bands) {
+        Placement.maxItems(bands.size, bands.maxOfOrNull { it.items.size } ?: Placement.ITEMS_PER_BAND)
+    }
 
     var search by remember(lang) { mutableStateOf(Placement.start(bands.size)) }
     var itemInBand by remember(lang) { mutableIntStateOf(0) }
@@ -201,8 +205,8 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
         val wrong = wrongInBand + if (wasCorrect) 0 else 1
         asked++
         val lastInBand = itemInBand + 1 >= band.items.size
-        if (Placement.bandDecided(correct, wrong) || lastInBand) {
-            search = Placement.advance(search, probeIndex, Placement.bandCleared(correct))
+        if (Placement.bandDecided(correct, wrong, band.items.size) || lastInBand) {
+            search = Placement.advance(search, probeIndex, Placement.bandCleared(correct, band.items.size))
             itemInBand = 0; correctInBand = 0; wrongInBand = 0
             if (search.finished) finished = true
         } else {
