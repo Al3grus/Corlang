@@ -1,6 +1,6 @@
 {
-  "versionCode": 149,
-  "versionName": "0.27.2",
-  "notes": "The language page in your profile now fades in as one piece. It was arriving in two: the heading first, then the lists a moment later once your progress had been read, which read as a flicker. The fade lasts exactly as long as the wait actually is, and it is skipped entirely if you have animations turned down.",
+  "versionCode": 150,
+  "versionName": "0.27.3",
+  "notes": "Fixes a crash when opening the Progress tab, introduced with the new Progress page in 0.26.0. The month calendar's arrows asked for a negative margin, which Android's layout refuses outright, and it only complains at the moment the screen is drawn rather than when the app is built. The arrows keep their full-size touch areas. A check now scans the whole app for the same mistake, so this particular crash cannot reach you again.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
