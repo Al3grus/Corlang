@@ -1190,6 +1190,41 @@ class ContentValidationTest {
     }
 
     /**
+     * Compose's padding modifier REJECTS a negative value, and it does so at layout time, not at
+     * compile time: the screen builds, ships, and crashes the moment it is opened. That is
+     * exactly what happened to the Progress tab, from a design handoff asking for a "negative
+     * 14dp vertical margin" so 48dp arrows could overlap a card's padding. There is no such
+     * thing in Compose (Modifier.offset moves the drawing but not the layout), so a negative dp
+     * inside padding() is always a crash waiting for the user to find it.
+     *
+     * A compiler cannot catch this and neither can a unit test that never lays anything out, so
+     * it is caught here, in the source, the same way the dash rule is.
+     */
+    @Test
+    fun `no negative padding anywhere in the ui`() {
+        val srcRoot = listOf("src/main/java", "app/src/main/java")
+            .map { File(it) }.firstOrNull { it.isDirectory }
+            ?: error("source root not found from ${File(".").absolutePath}")
+        // padding( ... (-8).dp ... ) in any argument position, across a single line.
+        val negativePadding = Regex("""padding\s*\([^)]*\(\s*-\s*\d+(?:\.\d+)?\s*\)\s*\.dp""")
+        val offenders = mutableListOf<String>()
+        srcRoot.walkTopDown().filter { it.extension == "kt" }.forEach { file ->
+            file.readLines(Charsets.UTF_8).forEachIndexed { i, line ->
+                val t = line.trim()
+                if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*")) return@forEachIndexed
+                if (negativePadding.containsMatchIn(line)) {
+                    offenders += "${file.name}:${i + 1}: ${t.take(80)}"
+                }
+            }
+        }
+        assertTrue(
+            "negative dp passed to padding() crashes at layout time:\n" +
+                offenders.joinToString("\n"),
+            offenders.isEmpty()
+        )
+    }
+
+    /**
      * The release flow keeps three version declarations in sync by hand (build.gradle.kts
      * versionCode/versionName and releases/version.json); a desync ships an update banner
      * that points at the wrong build. This pins them together.

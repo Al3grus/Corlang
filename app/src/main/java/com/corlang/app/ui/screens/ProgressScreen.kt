@@ -265,13 +265,18 @@ private fun MonthCalendarCard(container: AppContainer, lang: String) {
 
     ProgressCard {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            // 48dp targets with a negative vertical margin: full-size touch areas that do not
-            // inflate the card. The forward arrow keeps its size when disabled so the header
-            // never shifts between months.
+            // Full 48dp touch targets (IconButton's own default), and the forward arrow keeps
+            // its size when disabled so the header never shifts between months.
+            //
+            // The handoff asked for a negative vertical margin here so the targets could overlap
+            // the card padding without growing the card. Compose has no such thing: Modifier
+            // .padding REJECTS a negative value at layout time, which is what crashed this
+            // screen. The row simply carries the buttons' height instead; the alternative,
+            // Modifier.offset, moves the drawing but not the layout, so it would leave the same
+            // gap while making the targets sit off-centre.
             androidx.compose.material3.IconButton(
                 onClick = { offset -= 1 },
-                enabled = offset > earliest,
-                modifier = Modifier.padding(vertical = (-14).dp)
+                enabled = offset > earliest
             ) {
                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowLeft, contentDescription = "Previous month")
             }
@@ -284,8 +289,7 @@ private fun MonthCalendarCard(container: AppContainer, lang: String) {
             }
             androidx.compose.material3.IconButton(
                 onClick = { offset += 1 },
-                enabled = offset < 0,
-                modifier = Modifier.padding(vertical = (-14).dp)
+                enabled = offset < 0
             ) {
                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Next month")
             }
