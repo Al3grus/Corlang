@@ -6,9 +6,6 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- RECORD_AUDIO is for recording your own attempt at a dialogue line and playing
-         it back against the model. Speech RECOGNITION was removed: see SpeakCheck. -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".CorlangApp"

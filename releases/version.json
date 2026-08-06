@@ -1,6 +1,6 @@
 {
-  "versionCode": 154,
-  "versionName": "0.29.0",
-  "notes": "Two things. The microphone in dialogues no longer tries to grade your pronunciation: it records you and plays it back against the model line, so you can hear the difference yourself. The scoring depended on Android's speech recognition, which has no dependable model for Croatian or European Portuguese and was marking correct speech wrong, and no amount of tuning fixes a bad transcript. Second, the days of the week and the months now wait for the lesson that teaches them in every course, not just Croatian: they were arriving in flashcards up to 35 lessons early in Spanish and 18 in Portuguese. Everything else keeps its place, and no lesson gets fewer new words.",
+  "versionCode": 155,
+  "versionName": "0.30.0",
+  "notes": "The microphone is gone from dialogue lines. It was there to judge your pronunciation, that never worked reliably for Croatian or European Portuguese, and recording yourself instead was not worth a button of its own. The speaker button that reads the line aloud stays, which was always the dependable half. The app no longer asks for microphone permission at all. Behind the scenes, the Croatian content checker was silently skipping 28 of the 29 files it was pointed at, including the entire word deck, the grammar reference, the quizzes and the mock exams: it has never once checked them for Serbian forms creeping in. Fixed, and they come back clean.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
