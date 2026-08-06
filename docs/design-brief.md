@@ -31,15 +31,15 @@ So: generous tap targets, no fine-precision gestures, no dense tap clusters, pri
 
 ## What already exists (evolve it; don't discard it)
 
-**Brand mark — do not restyle.** "Orbit Core": two concentric arcs with a molten core dot. Ring `#2F7FAE`, core `#C8402C`. In the wordmark, the mark *is* the "o" in Corlang. These two colors are fixed in both themes.
+**Brand mark — do not restyle the SHAPE.** "Orbit Core": two concentric arcs with a molten core dot. In the wordmark, the mark *is* the "o" in Corlang. The shape is identical in both themes; the colours are not. Dark theme: ring `#2F7FAE`, core `#C8402C`. Light theme: ring `#6B4F32`, core `#9A4A31`, because that blue is a light blue chosen to glow on navy and goes soft enough on beige to need a keyline it should not need. The launcher icon keeps the dark-theme colours, since Android cannot theme it.
 
 **Typography.** Fraunces (variable serif, OFL licensed) for display/headline/title, and also for reading prose — a serif for lesson content is the single biggest signal of "book, not toy". System sans for UI chrome and body. Current reading style is 18sp with 29sp line-height; the focal sentence of a lesson card is 22sp/32sp.
 
 **Shape and space.** Corner radius 8 / 12 / 16dp (chips & inline boxes / option rows & list cards / hero cards & flashcards). Spacing scale 4 / 8 / 12 / 16 / 24dp.
 
-**Two themes, and the learner picks one explicitly.** The app deliberately ignores the OS light/dark setting — it asks once on first run and offers a switch in Settings. Both themes are first-class and must be designed together. Current values, which you should treat as the starting point to refine rather than gospel:
+**Two themes, and the learner picks one explicitly.** They are named simply "light" and "dark", never anything more poetic. The app deliberately ignores the OS light/dark setting — it asks once on first run and offers a switch in Settings. Both themes are first-class and must be designed together. Current values, which you should treat as the starting point to refine rather than gospel:
 
-Dark, "Adriatic on ink":
+The dark theme:
 
 | role | hex | | role | hex |
 |---|---|---|---|---|
@@ -56,7 +56,7 @@ Dark, "Adriatic on ink":
 | tertiaryContainer | `#4E4300` | | errorContainer | `#93000A` |
 | onTertiaryContainer | `#F5E4AF` | | onErrorContainer | `#FFDAD6` |
 
-Light, "Umber on paper" — warm beige and brown, deliberately **not** a grey/white inversion, and with no blue anywhere in the UI. The blue primary was tried here first and read as a cold spot dropped onto beige; the brand mark is the only place blue survives in this theme.
+The light theme, warm beige and brown, deliberately **not** a grey/white inversion, and with no blue anywhere in the UI. The blue primary was tried here first and read as a cold spot dropped onto beige.
 
 | role | hex | | role | hex |
 |---|---|---|---|---|

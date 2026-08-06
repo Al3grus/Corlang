@@ -50,6 +50,14 @@ interface ProgressDao {
     @Query("SELECT COUNT(*) FROM day_completion WHERE langCode = :lang AND completedAtEpoch >= :sinceEpochMs")
     fun completionsSince(lang: String, sinceEpochMs: Long): Flow<Int>
 
+    /**
+     * The completion rows themselves, WITH their timestamps. completedDays() answers "which
+     * lessons", this answers "on which dates", which is what the Progress calendar is made of.
+     * A query, not a schema change: no migration.
+     */
+    @Query("SELECT * FROM day_completion WHERE langCode = :lang")
+    fun completions(lang: String): Flow<List<DayCompletion>>
+
     @Insert
     suspend fun insertQuizAttempt(a: QuizAttempt)
 

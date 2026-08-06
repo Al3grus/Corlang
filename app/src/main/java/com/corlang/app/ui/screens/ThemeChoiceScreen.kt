@@ -33,8 +33,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.corlang.app.ui.Haptics
-import com.corlang.app.ui.components.CorlangBrand
-import com.corlang.app.ui.components.CorlangCore
+import com.corlang.app.ui.components.CorlangBrandDark
+import com.corlang.app.ui.components.CorlangBrandLight
+import com.corlang.app.ui.components.CorlangCoreDark
+import com.corlang.app.ui.components.CorlangCoreLight
 import com.corlang.app.ui.theme.corlangColorScheme
 
 /*
@@ -96,7 +98,6 @@ fun ThemeChoiceScreen(
             Row(modifier = Modifier.fillMaxWidth()) {
                 ThemeOption(
                     label = "Dark",
-                    caption = "Adriatic on ink",
                     optionIsDark = true,
                     selected = dark,
                     onClick = { onPreview(true); Haptics.confirm(context) },
@@ -105,7 +106,6 @@ fun ThemeChoiceScreen(
                 Spacer(Modifier.width(16.dp))
                 ThemeOption(
                     label = "Light",
-                    caption = "Umber on paper",
                     optionIsDark = false,
                     selected = !dark,
                     onClick = { onPreview(false); Haptics.confirm(context) },
@@ -130,7 +130,6 @@ fun ThemeChoiceScreen(
 @Composable
 private fun ThemeOption(
     label: String,
-    caption: String,
     optionIsDark: Boolean,
     selected: Boolean,
     onClick: () -> Unit,
@@ -156,6 +155,9 @@ private fun ThemeOption(
                 .clickable(onClick = onClick)
         ) {
             MiniApp(
+                // The mark belongs to the theme being previewed, not to the live one.
+                mark = if (optionIsDark) CorlangBrandDark else CorlangBrandLight,
+                markCore = if (optionIsDark) CorlangCoreDark else CorlangCoreLight,
                 background = scheme.background,
                 surface = scheme.surface,
                 onSurface = scheme.onSurface,
@@ -173,12 +175,6 @@ private fun ThemeOption(
             style = MaterialTheme.typography.titleMedium,
             fontWeight = if (selected) FontWeight.Bold else FontWeight.Normal
         )
-        Text(
-            caption,
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            textAlign = TextAlign.Center
-        )
     }
 }
 
@@ -189,6 +185,8 @@ private fun ThemeOption(
  */
 @Composable
 private fun MiniApp(
+    mark: Color,
+    markCore: Color,
     background: Color,
     surface: Color,
     onSurface: Color,
@@ -211,10 +209,10 @@ private fun MiniApp(
                 Modifier
                     .size(12.dp)
                     .clip(CircleShape)
-                    .background(CorlangBrand),
+                    .background(mark),
                 contentAlignment = Alignment.Center
             ) {
-                Box(Modifier.size(4.dp).clip(CircleShape).background(CorlangCore))
+                Box(Modifier.size(4.dp).clip(CircleShape).background(markCore))
             }
             Spacer(Modifier.width(6.dp))
             Bar(width = 0.55f, height = 7.dp, color = onSurface)

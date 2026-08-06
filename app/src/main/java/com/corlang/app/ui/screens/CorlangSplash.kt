@@ -58,13 +58,11 @@ import kotlin.math.roundToInt
  */
 
 /*
- * The mark's two colors are BRAND and never change: the ring and the molten core are the app
- * icon, and an icon that repaints itself per theme is no longer a mark. The ground and the
- * lettering do follow the chosen theme (see the composable below) — ink or paper — so a light
- * learner is not shown a dark loader before a light app.
+ * Ground, lettering AND the mark all follow the chosen theme. The mark's colours come from
+ * CorlangLogo so the loader and the app can never disagree about what the brand looks like:
+ * blue in the dark theme, walnut in the light one, where that blue went soft enough on beige to
+ * need a keyline it should not have needed.
  */
-private val SplashBrand = Color(0xFF2F7FAE)   // ring
-private val SplashCore = Color(0xFFC8402C)    // molten core
 
 /*
  * The loader's ground and lettering per theme. These are LITERALS, not colorScheme roles: this
@@ -74,8 +72,8 @@ private val SplashCore = Color(0xFFC8402C)    // molten core
  */
 private val SplashBgDark = Color(0xFF0F1620)
 private val SplashBgLight = Color(0xFFF6F0E6)
-private val SplashInkDark = Color(0xFFF4EFE6)   // warm off-white letters on ink
-private val SplashInkLight = Color(0xFF2B2118)  // umber letters on paper
+private val SplashInkDark = Color(0xFFF4EFE6)   // warm off-white letters, dark theme
+private val SplashInkLight = Color(0xFF2B2118)  // umber letters, light theme
 
 private fun cl(x: Float): Float = x.coerceIn(0f, 1f)
 
@@ -138,6 +136,9 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
     val dark = com.corlang.app.ui.theme.CorlangColors.isDark
     val splashBg = if (dark) SplashBgDark else SplashBgLight
     val splashInk = if (dark) SplashInkDark else SplashInkLight
+    // Read here, in composable scope: the Canvas below is a DrawScope, which cannot call them.
+    val markRing = com.corlang.app.ui.components.CorlangBrand
+    val markCore = com.corlang.app.ui.components.CorlangCore
     val progress = remember { Animatable(0f) }   // ring fill (follows real load, smoothed)
     val resolve = remember { Animatable(0f) }     // 0..1 settle -> letters -> tagline, plays once
     val stageAlpha = remember { Animatable(0f) }  // fade in when measured, fade out on handover
@@ -232,18 +233,18 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
                         // (counter-rotates) into the icon's final -52deg angle.
                         val sweepIn = -52f - (1f - eo(p)) * 210f
                         rotate(degrees = sweepIn + 52f, pivot = c) {
-                            drawMarkArc(SplashBrand, c, radius = 33f / 100f * w, stroke = stroke,
+                            drawMarkArc(markRing, c, radius = 33f / 100f * w, stroke = stroke,
                                 startDeg = -52f, sweepDeg = 229.2f * p)
                         }
 
                         // Inner arc: anchored at its right end (-14deg), reveals leftward
                         // (counter-clockwise) onto the icon's inner arc.
-                        drawMarkArc(SplashBrand, c, radius = 21f / 100f * w, stroke = stroke,
+                        drawMarkArc(markRing, c, radius = 21f / 100f * w, stroke = stroke,
                             startDeg = -14f, sweepDeg = -218.3f * p)
 
                         // Core: hidden until ~80%, then pops in with an overshoot.
                         val cp = eob(cl((p - 0.8f) / 0.2f))
-                        if (cp > 0f) drawCircle(SplashCore, radius = 9f / 100f * w * cp, center = c)
+                        if (cp > 0f) drawCircle(markCore, radius = 9f / 100f * w * cp, center = c)
                     }
                 }
                 SplashLetter("r", 1, resolve, rise, splashInk)

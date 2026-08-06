@@ -1,6 +1,6 @@
 {
-  "versionCode": 145,
-  "versionName": "0.25.0",
-  "notes": "The microphone in dialogues now works, and works on every device. Pronunciation is judged on sounds rather than exact words, so a dropped accent, a merged word or one wrong ending no longer reads as a mistake, and all three of the recogniser's guesses are considered instead of only the first. It tries to work offline before reaching for the network. And when a device simply cannot understand the language, which is common for Croatian and European Portuguese, the button stops pretending: it records you instead, so you can play your attempt straight after the model line and hear the difference yourself.",
+  "versionCode": 146,
+  "versionName": "0.26.0",
+  "notes": "The Progress page is rebuilt. It opens with your course and how far through it you are, then how many words you know and your streak, then a month calendar you can step back through to see exactly which days you studied, and finally how much review each of the next seven days is holding. Today is always shown as pending rather than missed, and the month reads '4 of 6 days' rather than '4 of 31', so a month in progress is never counted against you. In the light theme the logo is now walnut and terracotta instead of blue, which was too pale on the beige background to hold its shape, and the light palette is finalised.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
