@@ -34,6 +34,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
+import androidx.compose.ui.draw.alpha
 import kotlinx.coroutines.flow.first
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -195,7 +196,26 @@ private fun LanguagePage(container: AppContainer, lang: String, onSelect: (Strin
     val started = days?.let { d -> all.filter { (d[it.code] ?: 0) > 0 || it.code == lang } }
     val fresh = started?.let { s -> all.filterNot { it in s } }
 
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
+    /*
+     * The WHOLE page fades in once the read lands, rather than the heading painting immediately
+     * and the lists snapping in underneath it a frame later. Withholding the lists stopped a
+     * language appearing in the wrong group, but it left the pop: the page arrived in two
+     * pieces. One short fade covers the gap, and because it is driven by the data rather than by
+     * a timer, it is exactly as long as the wait actually is.
+     */
+    val ready = days != null
+    val fade by androidx.compose.animation.core.animateFloatAsState(
+        targetValue = if (ready) 1f else 0f,
+        animationSpec = if (com.corlang.app.ui.theme.rememberReducedMotion())
+            androidx.compose.animation.core.snap()
+        else androidx.compose.animation.core.tween(durationMillis = 220),
+        label = "languagePageFade"
+    )
+
+    Column(
+        Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
+            .alpha(fade)
+    ) {
         Text("Your progress is kept separately for each language, so switching never loses anything.",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
