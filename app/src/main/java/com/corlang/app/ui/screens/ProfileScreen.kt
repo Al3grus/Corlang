@@ -33,6 +33,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
+import kotlinx.coroutines.flow.first
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
@@ -164,38 +166,99 @@ private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -
     }
 }
 
-/** Choose the language you're learning — the ONLY place to switch (top bar no longer picks). */
+/**
+ * Choose the language you're learning — the ONLY place to switch (top bar no longer picks).
+ *
+ * Split in two, because these are different decisions wearing the same shape: RESUMING a course
+ * you have days banked in, and STARTING one you have never opened. A single flat list made a
+ * six-course build read as six equal options every time, and buried the one or two the learner
+ * actually studies among four they have never touched.
+ */
 @Composable
 private fun LanguagePage(container: AppContainer, lang: String, onSelect: (String) -> Unit) {
+    val all = remember { container.content.allMeta() }
+    // A course counts as started once a day is banked or the learner has been moved off day 1
+    // (placement does that without completing anything). Read per language and remembered as one
+    // map, so the two lists below cannot disagree about where a course belongs.
+    val startedDays by produceState(initialValue = emptyMap<String, Int>(), all) {
+        value = all.associate { m ->
+            val done = container.progress.completedDayCount(m.code).first()
+            val day = container.progress.progress(m.code).first()?.currentDay ?: 1
+            m.code to if (done > 0 || day > 1) maxOf(day, 1) else 0
+        }
+    }
+    val started = all.filter { (startedDays[it.code] ?: 0) > 0 || it.code == lang }
+    val fresh = all.filterNot { it in started }
+
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
-        Text("Which language are you learning? Your progress is kept separately for each.",
+        Text("Your progress is kept separately for each language, so switching never loses anything.",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 12.dp))
-        container.content.allMeta().forEach { m ->
-            val chosen = m.code == lang
-            Surface(
-                shape = RoundedCornerShape(14.dp),
-                color = if (chosen) MaterialTheme.colorScheme.secondaryContainer
-                        else MaterialTheme.colorScheme.surface,
-                border = BorderStroke(
-                    if (chosen) 2.dp else 1.dp,
-                    if (chosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant
-                ),
-                modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp).clickable { onSelect(m.code) }
-            ) {
-                Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Text(m.flagEmoji, style = MaterialTheme.typography.headlineSmall)
-                    Column(Modifier.weight(1f).padding(start = 14.dp)) {
-                        Text(m.name, style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.SemiBold)
-                        Text(m.nativeName, style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                    if (chosen) Text("✓", color = MaterialTheme.colorScheme.primary,
-                        style = MaterialTheme.typography.titleMedium)
-                }
+
+        if (started.isNotEmpty()) {
+            LanguageGroupHeading("Your courses")
+            started.forEach { m ->
+                LanguageRow(
+                    meta = m,
+                    chosen = m.code == lang,
+                    // The current language can be here without a day banked yet (it was just
+                    // picked in onboarding), so say "Ready to start" rather than claiming a day.
+                    subtitle = (startedDays[m.code] ?: 0).let {
+                        if (it > 0) "${m.nativeName} · Lesson $it" else m.nativeName
+                    },
+                    onSelect = onSelect
+                )
             }
+        }
+        if (fresh.isNotEmpty()) {
+            LanguageGroupHeading("Not started yet")
+            fresh.forEach { m ->
+                LanguageRow(meta = m, chosen = false, subtitle = m.nativeName, onSelect = onSelect)
+            }
+        }
+    }
+}
+
+@Composable
+private fun LanguageGroupHeading(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.labelLarge,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        fontWeight = FontWeight.SemiBold,
+        modifier = Modifier.padding(top = 14.dp, bottom = 4.dp)
+    )
+}
+
+@Composable
+private fun LanguageRow(
+    meta: com.corlang.app.data.model.LanguageMeta,
+    chosen: Boolean,
+    subtitle: String,
+    onSelect: (String) -> Unit
+) {
+    Surface(
+        shape = RoundedCornerShape(14.dp),
+        color = if (chosen) MaterialTheme.colorScheme.secondaryContainer
+                else MaterialTheme.colorScheme.surface,
+        border = BorderStroke(
+            if (chosen) 2.dp else 1.dp,
+            if (chosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant
+        ),
+        modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp)
+            .clickable { onSelect(meta.code) }
+    ) {
+        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Text(meta.flagEmoji, style = MaterialTheme.typography.headlineSmall)
+            Column(Modifier.weight(1f).padding(start = 14.dp)) {
+                Text(meta.name, style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold)
+                Text(subtitle, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            if (chosen) Text("✓", color = MaterialTheme.colorScheme.primary,
+                style = MaterialTheme.typography.titleMedium)
         }
     }
 }
