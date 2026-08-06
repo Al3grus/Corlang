@@ -251,6 +251,13 @@ data class VocabPack(
 
 @Serializable
 data class VocabWord(
+    /**
+     * Earliest lesson this WORD may be introduced at, overriding its pack's [VocabPack.fromDay]
+     * (0 = follow the pack). Needed because the sets that most need holding back, the months and
+     * the weekdays, sit inside big core packs in most courses: gating the pack would delay the
+     * numbers and greetings around them, which are exactly the words a beginner should get first.
+     */
+    val fromDay: Int = 0,
     val id: String,              // stable key used by the SRS review table, NEVER rename
     val hr: String,              // target-language side (named for the primary language)
     val en: String,              // English gloss

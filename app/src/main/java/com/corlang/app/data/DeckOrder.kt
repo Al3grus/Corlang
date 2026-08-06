@@ -32,42 +32,50 @@ object DeckOrder {
      * order is a pure function of the content and cannot drift between runs.
      */
     fun ordered(packs: List<VocabPack>, perLesson: Int): List<VocabWord> {
-        // Fast path: no pack is gated, so this is exactly the authored deck.
-        if (packs.none { it.fromDay > 0 }) return packs.flatMap { it.words }
+        // Fast path: nothing is gated, so this is exactly the authored deck.
+        if (packs.none { p -> p.fromDay > 0 || p.words.any { it.fromDay > 0 } }) {
+            return packs.flatMap { it.words }
+        }
 
-        val open = ArrayDeque<VocabWord>()
-        // Held packs stay separate, each with the slot it opens at, so a pack gated to day 10
-        // is not stuck behind one gated to day 25 that happens to be authored before it.
-        val held = mutableListOf<Pair<Int, ArrayDeque<VocabWord>>>()
-        packs.forEach { pack ->
-            if (pack.fromDay > 0) {
-                held += (pack.fromDay - 1) * perLesson to ArrayDeque(pack.words)
+        // A word's own gate wins over its pack's, so a closed set can be held back without
+        // dragging the rest of a core pack with it.
+        val authored = packs.flatMap { pack ->
+            pack.words.map { it to (if (it.fromDay > 0) it.fromDay else pack.fromDay) }
+        }
+
+        val out = ArrayList<VocabWord>(authored.size)
+        // Words whose gate had not opened when the walk reached them, in authored order.
+        val waiting = mutableListOf<Pair<VocabWord, Int>>()
+
+        /** Emit anything whose gate has now opened, earliest-authored first. */
+        fun release() {
+            while (true) {
+                val i = waiting.indexOfFirst { slotOf(it.second, perLesson) <= out.size }
+                if (i < 0) return
+                out += waiting.removeAt(i).first
+            }
+        }
+
+        // The deck is walked in AUTHORED order and a gate only ever defers: it is a floor, not a
+        // summons. Pinning a word to its gate would drag words FORWARD too, which is how a first
+        // attempt moved French janvier from lesson 87 up to lesson 16 while trying to hold the
+        // months back. Nothing gated may appear early; nothing else may be displaced by it.
+        authored.forEach { (word, gate) ->
+            if (slotOf(gate, perLesson) <= out.size) {
+                out += word
+                release()
             } else {
-                pack.words.forEach { open.addLast(it) }
+                waiting += word to gate
             }
         }
-
-        val total = open.size + held.sumOf { it.second.size }
-        val out = ArrayList<VocabWord>(total)
-        while (out.size < total) {
-            // Anything whose slot has arrived goes now, earliest gate first.
-            val due = held.withIndex()
-                .filter { it.value.second.isNotEmpty() && it.value.first <= out.size }
-                .minByOrNull { it.value.first }
-            if (due != null) {
-                out += due.value.second.removeFirst()
-                continue
-            }
-            if (open.isNotEmpty()) {
-                out += open.removeFirst()
-                continue
-            }
-            // Only held words remain and none is due yet: the deck has run out of filler, so
-            // release the next one rather than leaving the learner with nothing. A little early
-            // beats an empty lesson.
-            held.filter { it.second.isNotEmpty() }.minByOrNull { it.first }
-                ?.let { out += it.second.removeFirst() }
-        }
+        // The deck ran out before some gates opened: release the stragglers rather than losing
+        // them. A little early beats a word the learner never sees.
+        release()
+        waiting.forEach { out += it.first }
         return out
     }
+
+    /** First deck slot lesson [fromDay] draws from; 0 means "not gated". */
+    private fun slotOf(fromDay: Int, perLesson: Int): Int =
+        if (fromDay > 0) (fromDay - 1) * perLesson else 0
 }

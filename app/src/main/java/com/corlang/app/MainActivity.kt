@@ -165,7 +165,6 @@ private fun CorlangApp(container: AppContainer) {
     var prevLang by rememberSaveable { mutableStateOf<String?>(null) }
     LaunchedEffect(lang) {
         container.tts.setLanguage(lang)
-        container.speech.setLanguage(lang)
         // Switching language returns to the Today dashboard, not a half-done lesson of the old one.
         if (prevLang != null && prevLang != lang) inLesson = false
         prevLang = lang
