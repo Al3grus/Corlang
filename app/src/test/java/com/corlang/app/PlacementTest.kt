@@ -140,13 +140,21 @@ class PlacementTest {
     // ---- length ----
 
     @Test fun `the test stays a short sitting at any ladder size`() {
-        // Four probes settle a 9 to 13 band ladder, so the worst case is four full bands. That
-        // is the price of the harder pass rule, and it is only the worst case: a band stops the
-        // moment its outcome is decided, so three right in a row ends it at three.
-        assertEquals(16, Placement.maxItems(9))
-        assertEquals(16, Placement.maxItems(13))
-        assertTrue("no ladder we ship may run long", Placement.maxItems(13) <= 16)
-        // A course still authored at three items per band keeps the old, shorter worst case.
+        // Binary search is why the ladders could be made dense: the number of PROBES grows with
+        // the log of the band count, so doubling the rungs costs one more probe, not double the
+        // questions. That is the whole reason a 30-lesson gap was never worth keeping.
+        assertEquals("13 bands is four probes", 16, Placement.maxItems(13))
+        assertEquals("18 bands is five, not nine", 20, Placement.maxItems(18))
+        assertTrue("no ladder we ship may run long", Placement.maxItems(18) <= 20)
+        // And it is only the worst case: a band stops the moment its outcome is decided, so
+        // three right in a row ends that band at three items rather than four.
         assertEquals(12, Placement.maxItems(9, itemsPerBand = 3))
+    }
+
+    @Test fun `doubling the ladder costs one probe, not double the questions`() {
+        val small = Placement.maxItems(9)
+        val doubled = Placement.maxItems(18)
+        assertTrue("a doubled ladder must not double the sitting", doubled < small * 2)
+        assertEquals("exactly one more probe", Placement.ITEMS_PER_BAND, doubled - small)
     }
 }
