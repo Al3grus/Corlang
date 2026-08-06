@@ -35,7 +35,6 @@ import com.corlang.app.data.model.DayActivity
 import com.corlang.app.data.model.Question
 import com.corlang.app.data.model.QuestionType
 import com.corlang.app.ui.Haptics
-import com.corlang.app.ui.components.SpeakCheck
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.theme.CorlangColors
 
@@ -411,10 +410,9 @@ fun DialogueActivity(container: AppContainer, activity: DayActivity, onDone: () 
                         }
                         SpeakerButton(tts = container.tts, text = line.hr)
                     }
-                    // The learner's own lines can be practised aloud with pronunciation feedback.
-                    if (you) {
-                        SpeakCheck(container = container, target = line.hr)
-                    }
+                    // The learner's own lines used to carry a mic here: first pronunciation
+                    // scoring, then record-and-compare. Both are gone. The speaker button above
+                    // gives the model reading, which is the part that was always reliable.
                 }
             }
         }

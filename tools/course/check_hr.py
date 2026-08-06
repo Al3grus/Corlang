@@ -131,13 +131,75 @@ def _unwrap(obj):
     return obj
 
 
+def _is_day_shaped(days):
+    """A LIST is not enough: exams.json is a bare list of exam specs, and treating it as days
+    made check_batch report every mock exam as a lesson missing ten required keys. A day has
+    activities."""
+    return (isinstance(days, list) and len(days) > 0 and isinstance(days[0], dict)
+            and "activities" in days[0])
+
+
+def _generic_distractors(data):
+    """Wrong MCQ options anywhere in a non-day-shaped file: printing the wrong form is how you
+    teach against it, so the same exemption lessons get applies here."""
+    out = set()
+
+    def rec(x):
+        if isinstance(x, dict):
+            if x.get("type") == "MCQ":
+                ans = x.get("answer")
+                for opt in x.get("options", []):
+                    if opt != ans:
+                        out.add(opt)
+            for v in x.values():
+                rec(v)
+        elif isinstance(x, list):
+            for v in x:
+                rec(v)
+
+    rec(data)
+    return out
+
+
+def check_generic_croatian(label, data):
+    """The same Serbian-drift checks over a file that has no days.
+
+    K14 again, and this was the last language carrying it: check_hr only ever ran the DAY
+    validator, so it printed SKIPPED for 28 of hr's 29 non-plan files. The entire 3,440-word
+    deck, grammar.json, the cheatsheet, quizzes, exams, placement and levels have never been
+    checked for Serbianisms by this tool. Same KEY-scoping as the day path (K16): only
+    target-language surfaces, never the English commentary, which legitimately names a Serbian
+    form in order to reject it.
+    """
+    wrong = _generic_distractors(data)
+    errs = []
+    for s in hr_strings_of(data):
+        if s in wrong:
+            continue
+        if DA_PRESENT.search(s):
+            errs.append(f"{label}: Serbian 'da + present' after a modal in {s[:70]!r}, "
+                        f"Croatian uses the infinitive")
+        if DA_LI.search(s):
+            errs.append(f"{label}: Serbian 'da li' question in {s[:70]!r}, "
+                        f"Croatian uses -li or 'je li'")
+        m = EKAVIAN.search(s)
+        if m:
+            errs.append(f"{label}: ekavian form {m.group(0)!r} in {s[:60]!r}, "
+                        f"Croatian is ijekavian")
+        m = SERBIAN_LEX.search(s)
+        if m:
+            errs.append(f"{label}: Serbian lexis {m.group(0)!r} in {s[:60]!r}, "
+                        f"use the Croatian word")
+    return errs
+
+
 def check_croatian(path):
     errs = []
     try:
         days = _unwrap(json.load(io.open(path, encoding="utf-8")))
     except Exception:
         return []
-    if not isinstance(days, list):
+    if not _is_day_shaped(days):
         return []
 
     for di, day in enumerate(days):
@@ -171,14 +233,18 @@ if __name__ == "__main__":
             print(f"MISSING {path}")
             bad += 1
             continue
-        days = _unwrap(json.load(io.open(path, encoding="utf-8")))
-        if not isinstance(days, list):
-            print(f"{os.path.basename(path):<16} SKIPPED (not a day array or {{title,days}})")
-            continue
-        errs = check_batch.check_file(path) + check_croatian(path)
-        n = len(days)
+        raw = json.load(io.open(path, encoding="utf-8"))
+        days = _unwrap(raw)
+        if _is_day_shaped(days):
+            errs = check_batch.check_file(path) + check_croatian(path)
+            n = len(days)
+            label = f"{n:>3} days"
+        else:
+            errs = check_generic_croatian(os.path.basename(path), raw)
+            n = 0
+            label = "generic file"
         total += n
-        print(f"{os.path.basename(path):<16} {n:>3} days  "
+        print(f"{os.path.basename(path):<24} {label:<12} "
               f"{'OK ' if not errs else str(len(errs)) + ' PROBLEMS'}")
         for e in errs[:30]:
             print(f"    - {e}")
