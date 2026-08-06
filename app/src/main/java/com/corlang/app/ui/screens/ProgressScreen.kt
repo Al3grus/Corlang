@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -379,6 +380,9 @@ private fun DayCellBox(cell: com.corlang.app.data.MonthHistory.DayCell, modifier
     }
 }
 
+/** The shared height every day's bar is drawn inside, so no day can be taller than another. */
+private val BAR_TRACK = 52.dp
+
 /**
  * What review is about to ask of you, for the next seven days. Bars are scaled to the largest
  * value in the window rather than to a fixed ceiling, so a quiet week reads as quiet instead of
@@ -407,31 +411,44 @@ private fun ReviewLoadCard(reviews: List<com.corlang.app.data.db.WordReview>) {
         Text("Review load ahead", style = MaterialTheme.typography.titleSmall,
             fontWeight = FontWeight.SemiBold)
         Spacer(Modifier.height(12.dp))
+        // Every day gets the SAME structure and the same 48dp track; only the fill inside it
+        // varies. The row used to be a fixed 72dp with the bar sized directly, so on a busy day
+        // the bar plus its two labels came to more than 72dp and the column was squeezed: the
+        // day with the most reviews, the one worth seeing, was the one that shrank. Nothing here
+        // has a fixed outer height now, so the card grows with the type scale instead.
         Row(
-            Modifier.fillMaxWidth().height(72.dp),
+            Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.Bottom
         ) {
             load.forEachIndexed { i, count ->
                 Column(
                     Modifier.weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Bottom
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text("$count", style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 1)
                     Box(
-                        Modifier
-                            .fillMaxWidth()
-                            // A day with nothing due still shows a sliver, so the row reads as
-                            // seven days rather than four days and a gap.
-                            .height((4 + 44f * count / peak).dp)
-                            .clip(RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
-                            .background(MaterialTheme.colorScheme.primary)
-                            .semantics { contentDescription = "$count due" }
-                    )
+                        Modifier.fillMaxWidth().height(BAR_TRACK).padding(top = 4.dp),
+                        contentAlignment = Alignment.BottomCenter
+                    ) {
+                        Box(
+                            Modifier
+                                .fillMaxWidth()
+                                // A day with nothing due still shows a sliver, so the row reads
+                                // as seven days rather than four days and a gap.
+                                .fillMaxHeight(
+                                    ((count.toFloat() / peak) * 0.9f + 0.1f).coerceIn(0.08f, 1f)
+                                )
+                                .clip(RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
+                                .background(MaterialTheme.colorScheme.primary)
+                                .semantics { contentDescription = "$count due" }
+                        )
+                    }
                     Text(labels[i], style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 1)
                 }
             }
         }
