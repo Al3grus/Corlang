@@ -33,15 +33,39 @@ class SpeechInput(private val context: Context) {
     }
 
     /**
-     * Starts listening in the active language. [onListening] fires true when the mic opens and
-     * false when it closes; [onResult] delivers the best transcript; [onError] a readable message.
+     * Starts listening in the active language.
+     *
+     * [onListening] fires true when the mic opens and false when it closes; [onResult] delivers
+     * EVERY hypothesis the recogniser offers, best first (it is asked for three, and for a
+     * non-native speaker the second is often the closer match, so the caller scores them all);
+     * [onError] a readable message, with [unusableLanguage] true when the failure is the language
+     * itself rather than this attempt. That distinction matters: a caller can retry a misheard
+     * phrase, but it must stop offering recognition altogether for a language the device cannot
+     * transcribe, instead of blaming the learner's pronunciation for it.
+     *
+     * Offline first. The rest of the app works without a connection, so recognition tries the
+     * on-device path and only falls back to the networked recogniser if the device says it
+     * cannot serve the language locally.
      */
     fun listen(
         onListening: (Boolean) -> Unit,
-        onResult: (String) -> Unit,
-        onError: (String) -> Unit
+        onResult: (List<String>) -> Unit,
+        onError: (message: String, unusableLanguage: Boolean) -> Unit
+    ) {
+        start(preferOffline = true, onListening, onResult, onError)
+    }
+
+    private fun start(
+        preferOffline: Boolean,
+        onListening: (Boolean) -> Unit,
+        onResult: (List<String>) -> Unit,
+        onError: (String, Boolean) -> Unit
     ) {
         cancel()
+        if (!isAvailable()) {
+            onError("Speech recognition isn't available on this device.", true)
+            return
+        }
         val sr = SpeechRecognizer.createSpeechRecognizer(context)
         recognizer = sr
         activeOnListening = onListening
@@ -51,6 +75,7 @@ class SpeechInput(private val context: Context) {
             putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, langTag)
             putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, false)
             putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3)
+            putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, preferOffline)
             putExtra("android.speech.extra.EXTRA_ADDITIONAL_LANGUAGES", arrayOf(langTag))
         }
         sr.setRecognitionListener(object : RecognitionListener {
@@ -66,20 +91,46 @@ class SpeechInput(private val context: Context) {
                 onListening(false)
                 val heard = results
                     ?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                    ?.firstOrNull { it.isNotBlank() }
+                    ?.filter { it.isNotBlank() }
                     .orEmpty()
-                if (heard.isBlank()) onError("Didn't catch that. Try again.") else onResult(heard)
+                if (heard.isEmpty()) onError("Didn't catch that. Try again.", false)
+                else onResult(heard)
                 cleanup()
             }
 
             override fun onError(error: Int) {
-                onListening(false)
-                onError(messageFor(error))
                 cleanup()
+                // The offline attempt failing on the language or the network is not a verdict on
+                // the learner: retry once online before deciding the language is unusable.
+                if (preferOffline && error in RETRY_ONLINE) {
+                    start(preferOffline = false, onListening, onResult, onError)
+                    return
+                }
+                onListening(false)
+                onError(messageFor(error), error in LANGUAGE_UNUSABLE)
             }
         })
         runCatching { sr.startListening(intent) }
-            .onFailure { onError("Speech recognition unavailable on this device."); cleanup() }
+            .onFailure {
+                onError("Speech recognition isn't available on this device.", true)
+                cleanup()
+            }
+    }
+
+    private companion object {
+        /** Offline could not serve this; the networked recogniser still might. */
+        val RETRY_ONLINE = setOf(
+            SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED,
+            SpeechRecognizer.ERROR_LANGUAGE_UNAVAILABLE,
+            SpeechRecognizer.ERROR_SERVER,
+            SpeechRecognizer.ERROR_CANNOT_CHECK_SUPPORT,
+        )
+
+        /** Nothing the learner does will make this attempt work: stop offering recognition. */
+        val LANGUAGE_UNUSABLE = setOf(
+            SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED,
+            SpeechRecognizer.ERROR_LANGUAGE_UNAVAILABLE,
+        )
     }
 
     fun cancel() {
