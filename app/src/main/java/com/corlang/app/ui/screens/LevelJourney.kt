@@ -238,7 +238,13 @@ fun LevelJourney(
             // Checkpoints at the tail of the level's path, in the order you take them:
             // level quiz → exam readiness check → mock exam flag. All unlock together once
             // every lesson in the level is done; each taps through to its own screen.
-            val levelDone = stones.isNotEmpty() && stones.all { it.day in completedSet }
+            // ...or once placement has put the learner PAST the level entirely. A learner placed
+            // at B1 was told to skip A1 and A2, so gating those levels' quiz and mock exam behind
+            // lessons the app itself said not to do locked them out of the very assessments they
+            // were placed high enough to sit. Placing past a level counts as clearing it.
+            val placedPast = stones.isNotEmpty() && targetDay > stones.maxOf { it.day }
+            val levelDone = stones.isNotEmpty() &&
+                (stones.all { it.day in completedSet } || placedPast)
             if (stones.isNotEmpty()) {
                 if (selectedLevel in quizLevelIds) {
                     CheckpointConnector(levelDone)

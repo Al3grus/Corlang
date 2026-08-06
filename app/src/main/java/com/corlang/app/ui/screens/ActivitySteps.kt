@@ -207,23 +207,22 @@ fun ExerciseActivity(
         }
 
         when (q.type) {
+            // OptionRow, shared with quizzes and mock exams: a lesson's answer rows used to be a
+            // local copy that signalled everything through the border color alone.
             QuestionType.MCQ -> displayOptions.forEach { option ->
                 val isChosen = selectedOption == option
-                val border = when {
-                    !checked && isChosen -> MaterialTheme.colorScheme.primary
-                    checked && option == q.answer -> feedback.correct
-                    checked && isChosen -> feedback.wrong
-                    else -> MaterialTheme.colorScheme.outline
+                val state = when {
+                    !checked && isChosen -> com.corlang.app.ui.components.OptionState.SELECTED
+                    checked && option == q.answer -> com.corlang.app.ui.components.OptionState.CORRECT
+                    checked && isChosen -> com.corlang.app.ui.components.OptionState.WRONG
+                    else -> com.corlang.app.ui.components.OptionState.DEFAULT
                 }
-                Surface(
-                    shape = RoundedCornerShape(10.dp),
-                    color = MaterialTheme.colorScheme.surface,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 4.dp)
-                        .border(2.dp, border, RoundedCornerShape(10.dp))
-                        .clickable(enabled = !checked) { selectedOption = option }
-                ) { Text(option, modifier = Modifier.padding(12.dp)) }
+                com.corlang.app.ui.components.OptionRow(
+                    text = option,
+                    state = state,
+                    enabled = !checked,
+                    onClick = { selectedOption = option }
+                )
             }
 
             QuestionType.FILL -> OutlinedTextField(

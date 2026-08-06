@@ -88,10 +88,40 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
     val placeLevel = placement.first
     val placeDay = placement.second
 
+    // Cleared the hardest band the test has. The ladder cannot measure any higher, so saying
+    // "you're placed at B1, lesson N" would report a ceiling as if it were a reading: the test
+    // ran out of questions, it did not find this learner's level. Told plainly instead.
+    val atCeiling = finished && search.placedIndex == bands.lastIndex && bands.isNotEmpty()
+
     if (finished) {
         Column(
             modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp)
         ) {
+            if (atCeiling) {
+                Text("You're at the top of this course", style = MaterialTheme.typography.titleMedium)
+                Text(
+                    "$placeLevel · Lesson $placeDay",
+                    style = MaterialTheme.typography.displaySmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(vertical = 12.dp)
+                )
+                Text(
+                    "You answered everything this test can ask, so it has placed you at its " +
+                        "highest point. Your real level may well be higher: the test stops here " +
+                        "because the course does.",
+                    style = MaterialTheme.typography.bodyMedium
+                )
+                Text(
+                    "The lessons from here on are still worth having, but the quizzes and the " +
+                        "mock exams are probably what you came for. Every level you have been " +
+                        "placed past is unlocked, so you can go straight to them from the level " +
+                        "map, and word review will keep any gaps honest.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 10.dp)
+                )
+            } else {
             Text("You're placed at", style = MaterialTheme.typography.titleMedium)
             Text(
                 "$placeLevel · Lesson $placeDay",
@@ -123,6 +153,7 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 10.dp)
                 )
+            }
             }
             Button(
                 onClick = {
@@ -206,20 +237,16 @@ fun PlacementScreen(container: AppContainer, lang: String, onDone: () -> Unit) {
         // a stale shuffle.
         val shown = remember(probeIndex, itemInBand) { q.options.shuffled() }
         shown.forEach { option ->
-            val isChosen = chosen == option
-            Surface(
-                shape = RoundedCornerShape(10.dp),
-                color = MaterialTheme.colorScheme.surface,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 9.dp)
-                    .border(
-                        2.dp,
-                        if (isChosen) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline,
-                        RoundedCornerShape(10.dp)
-                    )
-                    .clickable { chosen = option }
-            ) { Text(option, modifier = Modifier.padding(16.dp)) }
+            // OptionRow, the same answer row quizzes and mock exams use, rather than a local
+            // copy: this screen's own version marked the chosen answer with a border color only,
+            // which became invisible in the light theme. Selection is one component's job.
+            com.corlang.app.ui.components.OptionRow(
+                text = option,
+                state = if (chosen == option) com.corlang.app.ui.components.OptionState.SELECTED
+                else com.corlang.app.ui.components.OptionState.DEFAULT,
+                enabled = true,
+                onClick = { chosen = option }
+            )
         }
 
         Button(
