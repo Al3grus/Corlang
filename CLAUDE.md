@@ -2,7 +2,7 @@
 
 Android/Kotlin + Compose language-learning app. A **fixed app skeleton** renders **per-language JSON content**. The whole design goal: content grows without touching code. These rules exist to keep that true. Deeper playbook (model choice, workflow, token efficiency): **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
 
-Current: v0.33.0 (versionCode 158). Live courses: `hr fr de it pt es`. See `MEMORY.md` (auto-memory) for the live resume point.
+Current: v0.34.0 (versionCode 159). Live courses: `hr fr de it pt es`. See `MEMORY.md` (auto-memory) for the live resume point.
 
 ---
 
@@ -56,7 +56,7 @@ A `PostToolUse` hook (`.claude/settings.json` → `tools/hooks/validate_content_
 export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
 ./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain
 ```
-Flavors (`distribution` dimension): `sideload` (default, in-app updater) and `play` (updater compiled out; AAB via `:app:bundlePlayRelease`). `versionCode`/`versionName` live in `app/build.gradle.kts` (currently 158 / 0.33.0). Room migrations required for any DB schema change (`data/db/AppDatabase`).
+Flavors (`distribution` dimension): `sideload` (default, in-app updater) and `play` (updater compiled out; AAB via `:app:bundlePlayRelease`). `versionCode`/`versionName` live in `app/build.gradle.kts` (currently 159 / 0.34.0). Room migrations required for any DB schema change (`data/db/AppDatabase`).
 
 **Release flow:** bump `versionCode`+`versionName` → build → `cp app/build/outputs/apk/sideload/debug/app-sideload-debug.apk releases/corlang.apk` → update `releases/version.json` (versionCode MUST match the built APK) → commit + push. The in-app updater reads `raw.githubusercontent.com/.../releases/version.json`, so the repo must stay **public** (verified no secrets committed).
 

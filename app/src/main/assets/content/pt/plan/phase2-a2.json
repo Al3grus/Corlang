@@ -2293,6 +2293,71 @@
      ]
     },
     {
+     "type": "EXERCISE",
+     "title": "Formas: perfeito e imperfeito",
+     "intro": "Type the past form the sentence needs.",
+     "questions": [
+      {
+       "type": "FILL",
+       "prompt": "Perfeito drill, fazer: 'Ontem eu ___ o jantar.'",
+       "difficulty": 5,
+       "answer": "fiz",
+       "explanation": "Fazer is irregular in the perfeito: eu fiz."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Perfeito drill, ir: 'No sábado nós ___ à praia.'",
+       "difficulty": 5,
+       "answer": "fomos",
+       "explanation": "Ir and ser share the perfeito: nós fomos."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Perfeito drill, ter: 'Ela ___ uma ideia excelente.'",
+       "difficulty": 5,
+       "answer": "teve",
+       "explanation": "Ter is irregular: ela teve."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Imperfeito drill, ser: 'Quando eu ___ pequeno, vivia no Porto.'",
+       "difficulty": 4,
+       "answer": "era",
+       "explanation": "Habitual past states take the imperfeito: eu era."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "'O telefone tocou enquanto eu ___.' Which form fits?",
+       "difficulty": 5,
+       "options": [
+        "dormia",
+        "dormi",
+        "durmo",
+        "dormirei"
+       ],
+       "answer": "dormia",
+       "explanation": "The background action takes the imperfeito; the interruption takes the perfeito."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which sentence places the pronoun the European way?",
+       "difficulty": 5,
+       "options": [
+        "Vi-o ontem.",
+        "O vi ontem.",
+        "Vi ele ontem.",
+        "Eu o vi ontem."
+       ],
+       "answer": "Vi-o ontem.",
+       "explanation": "In an affirmative main clause the clitic follows the verb with a hyphen: vi-o."
+      }
+     ],
+     "sources": [
+      "referencial-camoes",
+      "qecr"
+     ]
+    },
+    {
      "type": "DIALOGUE",
      "title": "Como foi o teu fim de semana?",
      "intro": "The classic Monday conversation. Play 'Me' and combine both past tenses and a pronoun or two.",
@@ -4607,6 +4672,80 @@
        "difficulty": 6,
        "answer": "Reservei um quarto duplo com pequeno-almoço incluído.",
        "explanation": "'I booked a double room with breakfast included.' is 'Reservei um quarto duplo com pequeno-almoço incluído.'"
+      }
+     ],
+     "sources": [
+      "referencial-camoes",
+      "qecr"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Formas: imperativo",
+     "intro": "Type the command form the sentence needs.",
+     "questions": [
+      {
+       "type": "FILL",
+       "prompt": "Imperativo drill, falar, tu: '___ mais devagar, por favor.'",
+       "difficulty": 4,
+       "answer": "Fala",
+       "explanation": "The tu imperative is the ele form of the present: fala.",
+       "accepted": [
+        "fala"
+       ]
+      },
+      {
+       "type": "FILL",
+       "prompt": "Imperativo drill, fazer, você: '___ o favor de esperar.'",
+       "difficulty": 5,
+       "answer": "Faça",
+       "explanation": "The você imperative comes from the conjuntivo: faça.",
+       "accepted": [
+        "faça"
+       ]
+      },
+      {
+       "type": "FILL",
+       "prompt": "Negative command, falar, tu: 'Não ___ tão alto.'",
+       "difficulty": 6,
+       "answer": "fales",
+       "explanation": "Negative commands use the conjuntivo even for tu: não fales."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which is the correct polite command for 'come in'?",
+       "difficulty": 5,
+       "options": [
+        "Entre, por favor.",
+        "Entra, por favor.",
+        "Entrar, por favor.",
+        "Entras, por favor."
+       ],
+       "answer": "Entre, por favor.",
+       "explanation": "For você the command is the conjuntivo form: entre."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Imperativo drill, dizer, tu: '___-me a verdade.'",
+       "difficulty": 5,
+       "answer": "Diz",
+       "explanation": "Dizer has the irregular tu imperative diz.",
+       "accepted": [
+        "diz"
+       ]
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Where does the pronoun go in an affirmative command?",
+       "difficulty": 5,
+       "options": [
+        "Dá-me o livro.",
+        "Me dá o livro.",
+        "Dá o livro me.",
+        "Me o livro dá."
+       ],
+       "answer": "Dá-me o livro.",
+       "explanation": "Affirmative commands take the clitic after the verb: dá-me."
       }
      ],
      "sources": [
