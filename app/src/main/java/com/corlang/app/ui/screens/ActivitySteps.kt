@@ -224,7 +224,8 @@ fun ExerciseActivity(
                 )
             }
 
-            QuestionType.FILL -> OutlinedTextField(
+            // TRANSLATE shares the FILL text field: same input, different grading.
+            QuestionType.FILL, QuestionType.TRANSLATE -> OutlinedTextField(
                 value = fillText,
                 onValueChange = { if (!checked) fillText = it },
                 label = { Text("Write your answer") },
@@ -315,6 +316,7 @@ fun ExerciseActivity(
                     val correct = when (q.type) {
                         QuestionType.MCQ -> selectedOption?.let { Grading.gradeMcq(q, it) } ?: false
                         QuestionType.FILL -> Grading.gradeFill(q, fillText)
+                        QuestionType.TRANSLATE -> Grading.gradeTranslate(q, fillText)
                         QuestionType.REORDER -> Grading.gradeReorder(q, reorderAssembled.toList())
                         else -> false
                     }
@@ -349,7 +351,7 @@ fun ExerciseActivity(
             },
             enabled = checked || when (q.type) {
                 QuestionType.MCQ -> selectedOption != null
-                QuestionType.FILL -> fillText.isNotBlank()
+                QuestionType.FILL, QuestionType.TRANSLATE -> fillText.isNotBlank()
                 QuestionType.REORDER -> reorderAssembled.isNotEmpty()
                 else -> true
             },

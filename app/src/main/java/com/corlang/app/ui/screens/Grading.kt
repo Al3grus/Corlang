@@ -43,6 +43,18 @@ object Grading {
     }
 
     /**
+     * True if a typed full-sentence translation matches the answer or an accepted variant.
+     * Lenient on diacritics and punctuation, unlike [gradeFill]: the unit under test is the
+     * SENTENCE (word choice and order), and a learner who produced the right sentence with one
+     * missing accent has done the thing this question exists to practise. FILL and exam mode
+     * keep the strict bar for the per-word discipline.
+     */
+    fun gradeTranslate(q: Question, input: String): Boolean {
+        val target = (listOf(q.answer) + q.accepted).map { normalize(it) }
+        return normalize(input) in target
+    }
+
+    /**
      * True if [chosen] is the correct MCQ option. EXACT comparison, deliberately: options are
      * tapped, not typed, so [chosen] is always a canonical option string — and many MCQs exist
      * precisely to teach diacritics or capitalization ("š" vs "s", "engleski" vs "Engleski").
@@ -259,6 +271,7 @@ object Grading {
     fun isCorrect(q: Question, response: String): Boolean = when (q.type) {
         QuestionType.MCQ -> gradeMcq(q, response)
         QuestionType.FILL -> gradeFill(q, response)
+        QuestionType.TRANSLATE -> gradeTranslate(q, response)
         else -> false // MATCH/REORDER use their dedicated graders
     }
 }

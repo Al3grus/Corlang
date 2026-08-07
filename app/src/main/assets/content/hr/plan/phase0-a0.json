@@ -822,6 +822,13 @@
        ],
        "answer": "Ja sam iz Amerike.",
        "explanation": "Ja sam + iz Amerike (memorized chunk, Amerika changes to Amerike after iz)."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Type the Croatian for: 'He is Croatian. She is Croatian.'",
+       "difficulty": 5,
+       "answer": "On je Hrvat. Ona je Hrvatica.",
+       "explanation": "'He is Croatian. She is Croatian.' is 'On je Hrvat. Ona je Hrvatica.'"
       }
      ],
      "sources": [
@@ -1677,6 +1684,13 @@
        ],
        "explanation": "Ona nije ovdje. and because the ending shows the subject, Nije ovdje. alone is also perfectly natural.",
        "strictDiacritics": true
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Put this into Croatian: 'they are'",
+       "difficulty": 5,
+       "answer": "oni / one su",
+       "explanation": "'they are' is 'oni / one su'"
       }
      ],
      "sources": [
@@ -2595,6 +2609,13 @@
        ],
        "explanation": "The audio says 'Imam brata i sestru.', which means 'I have a brother and a sister.'",
        "audioText": "Imam brata i sestru."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Say it in Croatian, in writing: 'This is my family.'",
+       "difficulty": 5,
+       "answer": "Ovo je moja obitelj.",
+       "explanation": "'This is my family.' is 'Ovo je moja obitelj.'"
       }
      ],
      "sources": [
@@ -2805,6 +2826,13 @@
        ],
        "explanation": "kavu is kava wearing its object ending. To find a word in the dictionary, restore the nominative: kava.",
        "strictDiacritics": true
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Put this into Croatian: 'The woman drinks coffee.'",
+       "difficulty": 4,
+       "answer": "Žena pije kavu.",
+       "explanation": "'The woman drinks coffee.' is 'Žena pije kavu.'"
       }
      ],
      "sources": [
@@ -3436,6 +3464,13 @@
        ],
        "explanation": "The audio says 'Je li ovo tvoj mobitel?', which means 'Is this your phone?'",
        "audioText": "Je li ovo tvoj mobitel?"
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Write it in Croatian: 'No, I don't speak.'",
+       "difficulty": 4,
+       "answer": "Ne, ne govorim.",
+       "explanation": "'No, I don't speak.' is 'Ne, ne govorim.'"
       }
      ],
      "sources": [
@@ -3989,6 +4024,13 @@
        ],
        "explanation": "The audio says 'Koliko košta? Deset eura.', which means 'How much does it cost? Ten euros.'",
        "audioText": "Koliko košta? Deset eura."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Put this into Croatian: 'Thanks and goodbye!'",
+       "difficulty": 4,
+       "answer": "Hvala i doviđenja!",
+       "explanation": "'Thanks and goodbye!' is 'Hvala i doviđenja!'"
       }
      ],
      "sources": [
@@ -4196,6 +4238,13 @@
        ],
        "explanation": "The audio says 'Ovo je moja knjiga.', which means 'This is my book.'",
        "audioText": "Ovo je moja knjiga."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Type the Croatian for: 'Is that your bag?'",
+       "difficulty": 4,
+       "answer": "Je li to tvoja torba?",
+       "explanation": "'Is that your bag?' is 'Je li to tvoja torba?'"
       }
      ],
      "sources": [
@@ -4382,6 +4431,13 @@
        ],
        "answer": "To košta sto pedeset eura",
        "explanation": "To košta + the number: sto pedeset, then eura for the currency."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Write it in Croatian: 'two hundred, three hundred, five hundred'",
+       "difficulty": 4,
+       "answer": "dvjesto, tristo, petsto",
+       "explanation": "'two hundred, three hundred, five hundred' is 'dvjesto, tristo, petsto'"
       }
      ],
      "sources": [

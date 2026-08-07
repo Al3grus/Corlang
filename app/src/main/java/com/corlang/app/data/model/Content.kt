@@ -169,7 +169,17 @@ enum class QuestionType {
     @SerialName("MCQ") MCQ,
     @SerialName("FILL") FILL,
     @SerialName("MATCH") MATCH,
-    @SerialName("REORDER") REORDER
+    @SerialName("REORDER") REORDER,
+
+    /**
+     * Full-sentence production: an English prompt, the learner TYPES the target-language
+     * sentence. The course was recognition-heavy (MCQ and one-word FILL); the exams both
+     * courses aim at demand written production, and this is the smallest unit that trains it.
+     * Graded like FILL (answer + accepted variants) but diacritic-LENIENT, see gradeTranslate:
+     * a whole sentence on a phone keyboard is hard enough without failing on one accent, and
+     * the per-word diacritic discipline is already trained by FILL and the exam mode.
+     */
+    @SerialName("TRANSLATE") TRANSLATE
 }
 
 @Serializable
