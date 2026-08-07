@@ -149,6 +149,17 @@
        "difficulty": 4,
        "answer": "beberam",
        "explanation": "'Eles' with an -ER verb takes -eram: beberam."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Ontem falei com a minha avó ao ___.'",
+       "difficulty": 4,
+       "answer": "telefone",
+       "accepted": [
+        "telefone"
+       ],
+       "explanation": "The audio says 'Ontem falei com a minha avó ao telefone.', which means 'Yesterday I spoke with my grandmother on the phone.'",
+       "audioText": "Ontem falei com a minha avó ao telefone."
       }
      ],
      "sources": [
@@ -371,6 +382,17 @@
         "amigos"
        ],
        "explanation": "Time expression first, then the irregular verb: No domingo fomos à praia com os amigos."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Ontem fui ao ___.'",
+       "difficulty": 4,
+       "answer": "mercado",
+       "accepted": [
+        "mercado"
+       ],
+       "explanation": "The audio says 'Ontem fui ao mercado.', which means 'Yesterday I went to the market.'",
+       "audioText": "Ontem fui ao mercado."
       }
      ],
      "sources": [
@@ -591,6 +613,17 @@
        ],
        "answer": "li",
        "explanation": "A completed event in a sequence takes the pretérito perfeito: li (eu, ler)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Ontem à noite ___ fora.'",
+       "difficulty": 4,
+       "answer": "jantei",
+       "accepted": [
+        "jantei"
+       ],
+       "explanation": "The audio says 'Ontem à noite jantei fora.', which means 'Last night I ate out.'",
+       "audioText": "Ontem à noite jantei fora."
       }
      ],
      "sources": [
@@ -804,6 +837,17 @@
        ],
        "answer": "-ia, -ias, -ia, -íamos, -iam",
        "explanation": "-ER and -IR verbs share the -ia endings; -ava belongs to -AR verbs; the third set is the pretérito perfeito."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Antigamente ___ numa aldeia.'",
+       "difficulty": 5,
+       "answer": "morava",
+       "accepted": [
+        "morava"
+       ],
+       "explanation": "The audio says 'Antigamente morava numa aldeia.', which means 'In the old days I lived in a village.'",
+       "audioText": "Antigamente morava numa aldeia."
       }
      ],
      "sources": [
@@ -1016,6 +1060,17 @@
        ],
        "answer": "Ontem fui ao cinema e vi um filme.",
        "explanation": "Two completed events yesterday: fui and vi, both pretérito perfeito."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Estava a ___ quando saí de casa.'",
+       "difficulty": 5,
+       "answer": "chover",
+       "accepted": [
+        "chover"
+       ],
+       "explanation": "The audio says 'Estava a chover quando saí de casa.', which means 'It was raining when I left the house.'",
+       "audioText": "Estava a chover quando saí de casa."
       }
      ],
      "sources": [
@@ -1231,6 +1286,17 @@
        "difficulty": 5,
        "answer": "íamos",
        "explanation": "'Ir' in the imperfeito is regular from the -IR pattern: íamos."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Em criança, ___ passar as férias na praia.'",
+       "difficulty": 5,
+       "answer": "costumava",
+       "accepted": [
+        "costumava"
+       ],
+       "explanation": "The audio says 'Em criança, costumava passar as férias na praia.', which means 'As a child, I used to spend the holidays at the beach.'",
+       "audioText": "Em criança, costumava passar as férias na praia."
       }
      ],
      "sources": [
@@ -1446,6 +1512,17 @@
        ],
        "answer": "o",
        "explanation": "'Faço' ends in a vowel, so the plain pronoun attaches: faço-o."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Vejo-a ___ os dias no café.'",
+       "difficulty": 5,
+       "answer": "todos",
+       "accepted": [
+        "todos"
+       ],
+       "explanation": "The audio says 'Vejo-a todos os dias no café.', which means 'I see her every day at the café.'",
+       "audioText": "Vejo-a todos os dias no café."
       }
      ],
      "sources": [
@@ -1663,6 +1740,17 @@
         "conta"
        ],
        "explanation": "Affirmative sentence → ênclise: trouxe-nos."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Dou-lhe o livro ___.'",
+       "difficulty": 5,
+       "answer": "amanhã",
+       "accepted": [
+        "amanhã"
+       ],
+       "explanation": "The audio says 'Dou-lhe o livro amanhã.', which means 'I'll give him/her the book tomorrow.'",
+       "audioText": "Dou-lhe o livro amanhã."
       }
      ],
      "sources": [
@@ -1885,6 +1973,17 @@
         "história"
        ],
        "explanation": "Question word → próclise: Quem te contou...?"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Não te vejo ___.'",
+       "difficulty": 5,
+       "answer": "amanhã",
+       "accepted": [
+        "amanhã"
+       ],
+       "explanation": "The audio says 'Não te vejo amanhã.', which means 'I won't see you tomorrow.'",
+       "audioText": "Não te vejo amanhã."
       }
      ],
      "sources": [
@@ -2105,6 +2204,17 @@
         "chover"
        ],
        "explanation": "Event (fiquei, perfeito) + background (estava a chover, imperfeito)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Ontem fui ao ___ e depois jantei com amigos.'",
+       "difficulty": 5,
+       "answer": "ginásio",
+       "accepted": [
+        "ginásio"
+       ],
+       "explanation": "The audio says 'Ontem fui ao ginásio e depois jantei com amigos.', which means 'Yesterday I went to the gym and then had dinner with friends.'",
+       "audioText": "Ontem fui ao ginásio e depois jantei com amigos."
       }
      ],
      "sources": [
@@ -2311,6 +2421,17 @@
         "segunda-feira"
        ],
        "explanation": "Polite 'queria' + infinitive + object + time expression at the end."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Queria marcar uma ___ para amanhã, por favor.'",
+       "difficulty": 4,
+       "answer": "consulta",
+       "accepted": [
+        "consulta"
+       ],
+       "explanation": "The audio says 'Queria marcar uma consulta para amanhã, por favor.', which means 'I'd like to book an appointment for tomorrow, please.'",
+       "audioText": "Queria marcar uma consulta para amanhã, por favor."
       }
      ],
      "sources": [
@@ -2514,6 +2635,17 @@
         "noite"
        ],
        "explanation": "'Ter dores de + body area' + 'desde' for the starting point of the pain."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'a cabeça, o pescoço, a ___'",
+       "difficulty": 3,
+       "answer": "garganta",
+       "accepted": [
+        "garganta"
+       ],
+       "explanation": "The audio says 'a cabeça, o pescoço, a garganta', which means 'the head, the neck, the throat'",
+       "audioText": "a cabeça, o pescoço, a garganta"
       }
      ],
      "sources": [
@@ -2719,6 +2851,17 @@
         "horas"
        ],
        "explanation": "Formal imperative 'tome' + quantity + the interval pattern 'de oito em oito horas'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Podia dar-me ___ coisa para a tosse?'",
+       "difficulty": 4,
+       "answer": "alguma",
+       "accepted": [
+        "alguma"
+       ],
+       "explanation": "The audio says 'Podia dar-me alguma coisa para a tosse?', which means 'Could you give me something for the cough?'",
+       "audioText": "Podia dar-me alguma coisa para a tosse?"
       }
      ],
      "sources": [
@@ -2928,6 +3071,17 @@
         "passaporte"
        ],
        "explanation": "In a negative command the pronoun goes before the verb: não te esqueças."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Vamos de ___ ao Algarve em agosto.'",
+       "difficulty": 3,
+       "answer": "férias",
+       "accepted": [
+        "férias"
+       ],
+       "explanation": "The audio says 'Vamos de férias ao Algarve em agosto.', which means 'We're going on holiday to the Algarve in August.'",
+       "audioText": "Vamos de férias ao Algarve em agosto."
       }
      ],
      "sources": [
@@ -3129,6 +3283,17 @@
         "preço"
        ],
        "explanation": "Yes/no questions keep normal word order in Portuguese, only intonation changes."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Tenho uma ___ em nome de Silva.'",
+       "difficulty": 3,
+       "answer": "reserva",
+       "accepted": [
+        "reserva"
+       ],
+       "explanation": "The audio says 'Tenho uma reserva em nome de Silva.', which means 'I have a reservation under the name Silva.'",
+       "audioText": "Tenho uma reserva em nome de Silva."
       }
      ],
      "sources": [
@@ -3357,6 +3522,17 @@
         "hora"
        ],
        "explanation": "Subject + estar + atrasado + duration of the delay."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'A que horas parte o ___ comboio para Coimbra?'",
+       "difficulty": 4,
+       "answer": "próximo",
+       "accepted": [
+        "próximo"
+       ],
+       "explanation": "The audio says 'A que horas parte o próximo comboio para Coimbra?', which means 'What time does the next train to Coimbra leave?'",
+       "audioText": "A que horas parte o próximo comboio para Coimbra?"
       }
      ],
      "sources": [
@@ -3580,6 +3756,17 @@
         "autoestrada"
        ],
        "explanation": "'Ter de' + infinitive for obligation; 'antes de' + infinitive for sequence."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Tirei a carta de ___ aos dezoito anos.'",
+       "difficulty": 4,
+       "answer": "condução",
+       "accepted": [
+        "condução"
+       ],
+       "explanation": "The audio says 'Tirei a carta de condução aos dezoito anos.', which means 'I got my driving licence at eighteen.'",
+       "audioText": "Tirei a carta de condução aos dezoito anos."
       }
      ],
      "sources": [
@@ -3794,6 +3981,17 @@
         "jantar"
        ],
        "explanation": "Negative command: não + switched form (comas) + object + time phrase."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Fala mais ___, por favor!'",
+       "difficulty": 4,
+       "answer": "devagar",
+       "accepted": [
+        "devagar"
+       ],
+       "explanation": "The audio says 'Fala mais devagar, por favor!', which means 'Speak more slowly, please! (to a friend)'",
+       "audioText": "Fala mais devagar, por favor!"
       }
      ],
      "sources": [
@@ -4019,6 +4217,17 @@
         "frente"
        ],
        "explanation": "Two chained commands: vira à direita + landmark, then segue em frente."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Desculpe, como se vai para a estação de ___?'",
+       "difficulty": 4,
+       "answer": "comboios",
+       "accepted": [
+        "comboios"
+       ],
+       "explanation": "The audio says 'Desculpe, como se vai para a estação de comboios?', which means 'Excuse me, how do you get to the train station?'",
+       "audioText": "Desculpe, como se vai para a estação de comboios?"
       }
      ],
      "sources": [
@@ -4254,6 +4463,17 @@
         "horas"
        ],
        "explanation": "Formal imperative + object + the dosage interval 'de oito em oito horas'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Queria marcar uma ___ porque me dói muito a cabeça.'",
+       "difficulty": 5,
+       "answer": "consulta",
+       "accepted": [
+        "consulta"
+       ],
+       "explanation": "The audio says 'Queria marcar uma consulta porque me dói muito a cabeça.', which means 'I'd like to book an appointment because my head hurts a lot.'",
+       "audioText": "Queria marcar uma consulta porque me dói muito a cabeça."
       }
      ],
      "sources": [
@@ -4476,6 +4696,17 @@
         "roupa"
        ],
        "explanation": "A typical chore-splitting sentence: subject + verb for each person, joined by 'e'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Depois do ___, eu lavo a loiça.'",
+       "difficulty": 4,
+       "answer": "jantar",
+       "accepted": [
+        "jantar"
+       ],
+       "explanation": "The audio says 'Depois do jantar, eu lavo a loiça.', which means 'After dinner, I wash the dishes.'",
+       "audioText": "Depois do jantar, eu lavo a loiça."
       }
      ],
      "sources": [
@@ -4672,6 +4903,17 @@
         "hoje"
        ],
        "explanation": "'Ter de + infinitive' expresses obligation: we have to call a technician today."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'A ___ de lavar roupa avariou ontem à noite.'",
+       "difficulty": 4,
+       "answer": "máquina",
+       "accepted": [
+        "máquina"
+       ],
+       "explanation": "The audio says 'A máquina de lavar roupa avariou ontem à noite.', which means 'The washing machine broke down last night.'",
+       "audioText": "A máquina de lavar roupa avariou ontem à noite."
       }
      ],
      "sources": [
@@ -4868,6 +5110,17 @@
         "amanhã"
        ],
        "explanation": "'Gostava de + infinitive' is the polite pt-PT way to make a request."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Vi um ___ de um T2 perto do metro.'",
+       "difficulty": 4,
+       "answer": "anúncio",
+       "accepted": [
+        "anúncio"
+       ],
+       "explanation": "The audio says 'Vi um anúncio de um T2 perto do metro.', which means 'I saw an ad for a two-bedroom flat near the metro.'",
+       "audioText": "Vi um anúncio de um T2 perto do metro."
       }
      ],
      "sources": [
@@ -5066,6 +5319,17 @@
         "Porto"
        ],
        "explanation": "'Grande' has the irregular comparative 'maior': bigger than."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Este ___ é mais caro do que o outro.'",
+       "difficulty": 4,
+       "answer": "apartamento",
+       "accepted": [
+        "apartamento"
+       ],
+       "explanation": "The audio says 'Este apartamento é mais caro do que o outro.', which means 'This flat is more expensive than the other one.'",
+       "audioText": "Este apartamento é mais caro do que o outro."
       }
      ],
      "sources": [
@@ -5268,6 +5532,17 @@
         "país"
        ],
        "explanation": "Relative superlative: a ponte mais bonita do país = the most beautiful bridge in the country."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Este é o café mais ___ da cidade.'",
+       "difficulty": 4,
+       "answer": "famoso",
+       "accepted": [
+        "famoso"
+       ],
+       "explanation": "The audio says 'Este é o café mais famoso da cidade.', which means 'This is the most famous café in the city.'",
+       "audioText": "Este é o café mais famoso da cidade."
       }
      ],
      "sources": [
@@ -5468,6 +5743,17 @@
         "semana"
        ],
        "explanation": "Frequency goes at the end: duas vezes por semana = twice a week."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Pratico ___ três vezes por semana.'",
+       "difficulty": 4,
+       "answer": "desporto",
+       "accepted": [
+        "desporto"
+       ],
+       "explanation": "The audio says 'Pratico desporto três vezes por semana.', which means 'I do sport three times a week.'",
+       "audioText": "Pratico desporto três vezes por semana."
       }
      ],
      "sources": [
@@ -5666,6 +5952,17 @@
         "agora"
        ],
        "explanation": "'Dar um mergulho' = to take a dip; 'vamos + infinitive' makes the suggestion."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Não te ___ da toalha e do chapéu de sol.'",
+       "difficulty": 4,
+       "answer": "esqueças",
+       "accepted": [
+        "esqueças"
+       ],
+       "explanation": "The audio says 'Não te esqueças da toalha e do chapéu de sol.', which means 'Don't forget the towel and the beach umbrella.'",
+       "audioText": "Não te esqueças da toalha e do chapéu de sol."
       }
      ],
      "sources": [
@@ -5864,6 +6161,17 @@
         "rua"
        ],
        "explanation": "Time expression first, then the shared June tradition: eating sardines in the street."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Comemos ___ assadas e bebemos sangria na rua.'",
+       "difficulty": 4,
+       "answer": "sardinhas",
+       "accepted": [
+        "sardinhas"
+       ],
+       "explanation": "The audio says 'Comemos sardinhas assadas e bebemos sangria na rua.', which means 'We eat grilled sardines and drink sangria in the street.'",
+       "audioText": "Comemos sardinhas assadas e bebemos sangria na rua."
       }
      ],
      "sources": [
@@ -6040,6 +6348,17 @@
         "com a mãe"
        ],
        "explanation": "Estar comes right after the subject and the infinitive follows the preposition a."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Não posso falar agora, estou a ___.'",
+       "difficulty": 5,
+       "answer": "jantar",
+       "accepted": [
+        "jantar"
+       ],
+       "explanation": "The audio says 'Não posso falar agora, estou a jantar.', which means 'I can't talk now, I'm having dinner.'",
+       "audioText": "Não posso falar agora, estou a jantar."
       }
      ],
      "sources": [
@@ -6233,6 +6552,17 @@
         "fechada"
        ],
        "explanation": "Sentence adverbs in -mente usually come first, followed by a comma."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Ela fala ___, mas percebe-se tudo.'",
+       "difficulty": 5,
+       "answer": "rapidamente",
+       "accepted": [
+        "rapidamente"
+       ],
+       "explanation": "The audio says 'Ela fala rapidamente, mas percebe-se tudo.', which means 'She speaks quickly, but you can understand everything.'",
+       "audioText": "Ela fala rapidamente, mas percebe-se tudo."
       }
      ],
      "sources": [
@@ -6420,6 +6750,17 @@
         "aqui perto"
        ],
        "explanation": "Nenhuma is feminine to agree with farmácia, and não is kept because the negative word follows the verb."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Não ___ ninguém nesta cidade.'",
+       "difficulty": 5,
+       "answer": "conheço",
+       "accepted": [
+        "conheço"
+       ],
+       "explanation": "The audio says 'Não conheço ninguém nesta cidade.', which means 'I don't know anyone in this city.'",
+       "audioText": "Não conheço ninguém nesta cidade."
       }
      ],
      "sources": [
@@ -6605,6 +6946,17 @@
         "o senhorio"
        ],
        "explanation": "Ainda comes before não, and both come before the verb."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Já ___? Já, obrigado.'",
+       "difficulty": 5,
+       "answer": "almoçaste",
+       "accepted": [
+        "almoçaste"
+       ],
+       "explanation": "The audio says 'Já almoçaste? Já, obrigado.', which means 'Have you had lunch yet? Yes, already, thanks.'",
+       "audioText": "Já almoçaste? Já, obrigado."
       }
      ],
      "sources": [
@@ -6793,6 +7145,17 @@
         "dois anos"
        ],
        "explanation": "Portuguese uses the present tense with há for a situation that still holds."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Moro em Lisboa ___ 2019.'",
+       "difficulty": 5,
+       "answer": "desde",
+       "accepted": [
+        "desde"
+       ],
+       "explanation": "The audio says 'Moro em Lisboa desde 2019.', which means 'I have lived in Lisbon since 2019.'",
+       "audioText": "Moro em Lisboa desde 2019."
       }
      ],
      "sources": [
@@ -6984,6 +7347,17 @@
         "sair?"
        ],
        "explanation": "Alguma coisa follows the verb it is the object of, and antes de is followed by the infinitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Alguém ___ à porta.'",
+       "difficulty": 5,
+       "answer": "bateu",
+       "accepted": [
+        "bateu"
+       ],
+       "explanation": "The audio says 'Alguém bateu à porta.', which means 'Someone knocked at the door.'",
+       "audioText": "Alguém bateu à porta."
       }
      ],
      "sources": [
@@ -7169,6 +7543,17 @@
         "o médico"
        ],
        "explanation": "Acabar goes in the past, then de, then the infinitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Comecei a aprender ___ no ano passado.'",
+       "difficulty": 5,
+       "answer": "português",
+       "accepted": [
+        "português"
+       ],
+       "explanation": "The audio says 'Comecei a aprender português no ano passado.', which means 'I started learning Portuguese last year.'",
+       "audioText": "Comecei a aprender português no ano passado."
       }
      ],
      "sources": [
@@ -7357,6 +7742,17 @@
         "para hoje à noite"
        ],
        "explanation": "Ter is conjugated for nós, then de, then the infinitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Tenho de ir ao ___ antes das três.'",
+       "difficulty": 5,
+       "answer": "banco",
+       "accepted": [
+        "banco"
+       ],
+       "explanation": "The audio says 'Tenho de ir ao banco antes das três.', which means 'I have to go to the bank before three.'",
+       "audioText": "Tenho de ir ao banco antes das três."
       }
      ],
      "sources": [
@@ -7540,6 +7936,17 @@
         "teu?"
        ],
        "explanation": "After ser the possessive stands alone with no article and agrees with casaco."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Este é o meu ___ e aquele é o teu.'",
+       "difficulty": 5,
+       "answer": "telemóvel",
+       "accepted": [
+        "telemóvel"
+       ],
+       "explanation": "The audio says 'Este é o meu telemóvel e aquele é o teu.', which means 'This is my mobile and that one is yours.'",
+       "audioText": "Este é o meu telemóvel e aquele é o teu."
       }
      ],
      "sources": [
@@ -7730,6 +8137,17 @@
         "no sábado"
        ],
        "explanation": "Com plus nós gives the single word connosco, placed after the infinitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Isto é ___ ti.'",
+       "difficulty": 5,
+       "answer": "para",
+       "accepted": [
+        "para"
+       ],
+       "explanation": "The audio says 'Isto é para ti.', which means 'This is for you.'",
+       "audioText": "Isto é para ti."
       }
      ],
      "sources": [
@@ -7918,6 +8336,17 @@
         "e meia"
        ],
        "explanation": "Às introduces the hour, and e meia follows the number."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'São três e meia da ___.'",
+       "difficulty": 5,
+       "answer": "tarde",
+       "accepted": [
+        "tarde"
+       ],
+       "explanation": "The audio says 'São três e meia da tarde.', which means 'It's half past three in the afternoon.'",
+       "audioText": "São três e meia da tarde."
       }
      ],
      "sources": [
@@ -8103,6 +8532,17 @@
         "para Espanha?"
        ],
        "explanation": "Quanto custa is followed directly by the infinitive of the action."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Queria ___ cem euros, por favor.'",
+       "difficulty": 5,
+       "answer": "levantar",
+       "accepted": [
+        "levantar"
+       ],
+       "explanation": "The audio says 'Queria levantar cem euros, por favor.', which means 'I'd like to withdraw a hundred euros, please.'",
+       "audioText": "Queria levantar cem euros, por favor."
       }
      ],
      "sources": [
@@ -8286,6 +8726,17 @@
         "ontem"
        ],
        "explanation": "Entregar in the pretérito perfeito gives entregou for the third person singular."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Encomendei um casaco na semana ___.'",
+       "difficulty": 5,
+       "answer": "passada",
+       "accepted": [
+        "passada"
+       ],
+       "explanation": "The audio says 'Encomendei um casaco na semana passada.', which means 'I ordered a coat last week.'",
+       "audioText": "Encomendei um casaco na semana passada."
       }
      ],
      "sources": [
@@ -8480,6 +8931,17 @@
         "sábado"
        ],
        "explanation": "Convido-te keeps the pronoun attached after the verb, and no sábado gives the day."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Olá, Rita! Tudo bem ___?'",
+       "difficulty": 5,
+       "answer": "contigo",
+       "accepted": [
+        "contigo"
+       ],
+       "explanation": "The audio says 'Olá, Rita! Tudo bem contigo?', which means 'Hi Rita! How are things with you?'",
+       "audioText": "Olá, Rita! Tudo bem contigo?"
       }
      ],
      "sources": [
@@ -8662,6 +9124,17 @@
         "centro"
        ],
        "explanation": "Encontrámos loses its final s before the pronoun nos, giving encontrámo-nos."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Primeiro, ___ tarde e tomei o pequeno-almoço com calma.'",
+       "difficulty": 5,
+       "answer": "acordei",
+       "accepted": [
+        "acordei"
+       ],
+       "explanation": "The audio says 'Primeiro, acordei tarde e tomei o pequeno-almoço com calma.', which means 'First, I woke up late and had breakfast slowly.'",
+       "audioText": "Primeiro, acordei tarde e tomei o pequeno-almoço com calma."
       }
      ],
      "sources": [
@@ -8854,6 +9327,17 @@
         "cafés"
        ],
        "explanation": "Ser describes the character of the place and há introduces what exists in it."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'O meu bairro fica perto do centro, mas é ___ calmo.'",
+       "difficulty": 5,
+       "answer": "bastante",
+       "accepted": [
+        "bastante"
+       ],
+       "explanation": "The audio says 'O meu bairro fica perto do centro, mas é bastante calmo.', which means 'My neighbourhood is near the centre, but it is quite quiet.'",
+       "audioText": "O meu bairro fica perto do centro, mas é bastante calmo."
       }
      ],
      "sources": [
@@ -9033,6 +9517,17 @@
         "séries"
        ],
        "explanation": "Muito before an adjective is invariable, and the adjective longos agrees with filmes."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Adoro música ao vivo, porque o ___ é muito melhor.'",
+       "difficulty": 5,
+       "answer": "ambiente",
+       "accepted": [
+        "ambiente"
+       ],
+       "explanation": "The audio says 'Adoro música ao vivo, porque o ambiente é muito melhor.', which means 'I love live music, because the atmosphere is much better.'",
+       "audioText": "Adoro música ao vivo, porque o ambiente é muito melhor."
       }
      ],
      "sources": [
@@ -9213,6 +9708,17 @@
         "hoje"
        ],
        "explanation": "Devias carries the advice and the second verb stays in the infinitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Que ___! Lamento muito.'",
+       "difficulty": 5,
+       "answer": "chatice",
+       "accepted": [
+        "chatice"
+       ],
+       "explanation": "The audio says 'Que chatice! Lamento muito.', which means 'What a nuisance! I am really sorry.'",
+       "audioText": "Que chatice! Lamento muito."
       }
      ],
      "sources": [
@@ -9398,6 +9904,17 @@
         "querer"
        ],
        "explanation": "Sem querer is a fixed phrase and stays at the end of the sentence."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'O meu telemóvel está sem bateria, tens um ___?'",
+       "difficulty": 5,
+       "answer": "carregador",
+       "accepted": [
+        "carregador"
+       ],
+       "explanation": "The audio says 'O meu telemóvel está sem bateria, tens um carregador?', which means 'My phone has no battery left, do you have a charger?'",
+       "audioText": "O meu telemóvel está sem bateria, tens um carregador?"
       }
      ],
      "sources": [
@@ -9596,6 +10113,17 @@
         "meia"
        ],
        "explanation": "Das nove e meia comes from de plus as, giving the time of the screening."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Apetece-te ir ao ___ hoje à noite?'",
+       "difficulty": 6,
+       "answer": "cinema",
+       "accepted": [
+        "cinema"
+       ],
+       "explanation": "The audio says 'Apetece-te ir ao cinema hoje à noite?', which means 'Do you feel like going to the cinema tonight?'",
+       "audioText": "Apetece-te ir ao cinema hoje à noite?"
       }
      ],
      "sources": [
@@ -9778,6 +10306,17 @@
         "ontem"
        ],
        "explanation": "Na comes from em plus a, because lavandaria is feminine."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Queria cortar o cabelo, mas só um ___.'",
+       "difficulty": 5,
+       "answer": "bocadinho",
+       "accepted": [
+        "bocadinho"
+       ],
+       "explanation": "The audio says 'Queria cortar o cabelo, mas só um bocadinho.', which means 'I would like a haircut, but just a little bit.'",
+       "audioText": "Queria cortar o cabelo, mas só um bocadinho."
       }
      ],
      "sources": [
@@ -9965,6 +10504,17 @@
         "hoje?"
        ],
        "explanation": "The colour follows the noun in Portuguese, so preto comes after guarda-chuva."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Perdi a ___ algures entre o comboio e a estação.'",
+       "difficulty": 5,
+       "answer": "carteira",
+       "accepted": [
+        "carteira"
+       ],
+       "explanation": "The audio says 'Perdi a carteira algures entre o comboio e a estação.', which means 'I lost my wallet somewhere between the train and the station.'",
+       "audioText": "Perdi a carteira algures entre o comboio e a estação."
       }
      ],
      "sources": [
@@ -10152,6 +10702,17 @@
         "energia"
        ],
        "explanation": "An infinitive can act as the subject of the sentence, so the verb poupa stays singular."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'As ___ de plástico deitam-se no ecoponto amarelo.'",
+       "difficulty": 5,
+       "answer": "embalagens",
+       "accepted": [
+        "embalagens"
+       ],
+       "explanation": "The audio says 'As embalagens de plástico deitam-se no ecoponto amarelo.', which means 'Plastic packaging is thrown into the yellow container.'",
+       "audioText": "As embalagens de plástico deitam-se no ecoponto amarelo."
       }
      ],
      "sources": [
@@ -10345,6 +10906,17 @@
         "tempo"
        ],
        "explanation": "Barato is regular, so it takes mais, while menos tempo gives the drawback."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Este ___ é tão caro como o outro, mas dura mais.'",
+       "difficulty": 6,
+       "answer": "telemóvel",
+       "accepted": [
+        "telemóvel"
+       ],
+       "explanation": "The audio says 'Este telemóvel é tão caro como o outro, mas dura mais.', which means 'This phone is as expensive as the other one, but it lasts longer.'",
+       "audioText": "Este telemóvel é tão caro como o outro, mas dura mais."
       }
      ],
      "sources": [
@@ -10532,6 +11104,17 @@
         "anos"
        ],
        "explanation": "The verb stays in the present because the situation is still true, and há introduces the duration."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Não me ___ da morada dela.'",
+       "difficulty": 6,
+       "answer": "lembro",
+       "accepted": [
+        "lembro"
+       ],
+       "explanation": "The audio says 'Não me lembro da morada dela.', which means 'I do not remember her address.'",
+       "audioText": "Não me lembro da morada dela."
       }
      ],
      "sources": [
@@ -10721,6 +11304,17 @@
         "receita."
        ],
        "explanation": "The skill of cooking takes saber, while familiarity with a specific recipe takes conhecer."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Sei falar um pouco de ___.'",
+       "difficulty": 5,
+       "answer": "espanhol",
+       "accepted": [
+        "espanhol"
+       ],
+       "explanation": "The audio says 'Sei falar um pouco de espanhol.', which means 'I know how to speak a bit of Spanish.'",
+       "audioText": "Sei falar um pouco de espanhol."
       }
      ],
      "sources": [
@@ -10910,6 +11504,17 @@
         "amanhã."
        ],
        "explanation": "Carrying something away from the speaker's current place, towards another location, uses levar."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Vou ao ___ depois do almoço.'",
+       "difficulty": 5,
+       "answer": "mercado",
+       "accepted": [
+        "mercado"
+       ],
+       "explanation": "The audio says 'Vou ao mercado depois do almoço.', which means 'I'm going to the market after lunch.'",
+       "audioText": "Vou ao mercado depois do almoço."
       }
      ],
      "sources": [
@@ -11099,6 +11704,17 @@
         "aqui."
        ],
        "explanation": "Tanta agrees with the feminine noun gente in both the exclamation and the full sentence."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Há ___ gente na praia hoje!'",
+       "difficulty": 5,
+       "answer": "tanta",
+       "accepted": [
+        "tanta"
+       ],
+       "explanation": "The audio says 'Há tanta gente na praia hoje!', which means 'There are so many people at the beach today!'",
+       "audioText": "Há tanta gente na praia hoje!"
       }
      ],
      "sources": [
@@ -11288,6 +11904,17 @@
         "por mim?"
        ],
        "explanation": "Fazer uma pergunta is the fixed expression for asking a question."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Faço anos no dia dez de ___.'",
+       "difficulty": 5,
+       "answer": "outubro",
+       "accepted": [
+        "outubro"
+       ],
+       "explanation": "The audio says 'Faço anos no dia dez de outubro.', which means 'My birthday is on the tenth of October.'",
+       "audioText": "Faço anos no dia dez de outubro."
       }
      ],
      "sources": [
@@ -11483,6 +12110,17 @@
         "mar."
        ],
        "explanation": "Hei de + infinitivo expresses a firm long-term intention in the first person."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Hei de ___ os meus avós este verão.'",
+       "difficulty": 5,
+       "answer": "visitar",
+       "accepted": [
+        "visitar"
+       ],
+       "explanation": "The audio says 'Hei de visitar os meus avós este verão.', which means 'I will definitely visit my grandparents this summer.'",
+       "audioText": "Hei de visitar os meus avós este verão."
       }
      ],
      "sources": [
@@ -11670,6 +12308,17 @@
         "ultimamente."
        ],
        "explanation": "Andar a + infinitivo expresses an ongoing habit or preoccupation over recent time."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Ando a estudar ___ ao fim de semana.'",
+       "difficulty": 5,
+       "answer": "espanhol",
+       "accepted": [
+        "espanhol"
+       ],
+       "explanation": "The audio says 'Ando a estudar espanhol ao fim de semana.', which means 'I've been studying Spanish on weekends lately.'",
+       "audioText": "Ando a estudar espanhol ao fim de semana."
       }
      ],
      "sources": [
@@ -11863,6 +12512,17 @@
         "passado."
        ],
        "explanation": "De + aquele = daquele, used for something distant in time from both speakers."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Neste ___ não posso falar.'",
+       "difficulty": 5,
+       "answer": "momento",
+       "accepted": [
+        "momento"
+       ],
+       "explanation": "The audio says 'Neste momento não posso falar.', which means 'Right now I can't talk.'",
+       "audioText": "Neste momento não posso falar."
       }
      ],
      "sources": [
@@ -12056,6 +12716,17 @@
         "casa?"
        ],
        "explanation": "É que follows the question phrase a que horas, before the subject and verb."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Onde é que ___ agora?'",
+       "difficulty": 4,
+       "answer": "moras",
+       "accepted": [
+        "moras"
+       ],
+       "explanation": "The audio says 'Onde é que moras agora?', which means 'Where do you live now?'",
+       "audioText": "Onde é que moras agora?"
       }
      ],
      "sources": [
@@ -12245,6 +12916,17 @@
         "casa."
        ],
        "explanation": "Como introduces the cause at the start of the sentence, followed by the consequence."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Não fui ___ porque estava doente.'",
+       "difficulty": 4,
+       "answer": "trabalhar",
+       "accepted": [
+        "trabalhar"
+       ],
+       "explanation": "The audio says 'Não fui trabalhar porque estava doente.', which means 'I didn't go to work because I was sick.'",
+       "audioText": "Não fui trabalhar porque estava doente."
       }
      ],
      "sources": [
@@ -12437,6 +13119,17 @@
         "amanhã."
        ],
        "explanation": "Ter de + infinitivo expresses a work obligation with a deadline."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Começo a ___ às nove e saio às cinco e meia.'",
+       "difficulty": 4,
+       "answer": "trabalhar",
+       "accepted": [
+        "trabalhar"
+       ],
+       "explanation": "The audio says 'Começo a trabalhar às nove e saio às cinco e meia.', which means 'I start work at nine and leave at half past five.'",
+       "audioText": "Começo a trabalhar às nove e saio às cinco e meia."
       }
      ],
      "sources": [
@@ -12628,6 +13321,17 @@
         "semestre?"
        ],
        "explanation": "Qual é o horário is the natural way to ask about a class timetable."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Inscrevi-me num curso de ___ no mês passado.'",
+       "difficulty": 4,
+       "answer": "português",
+       "accepted": [
+        "português"
+       ],
+       "explanation": "The audio says 'Inscrevi-me num curso de português no mês passado.', which means 'I enrolled in a Portuguese course last month.'",
+       "audioText": "Inscrevi-me num curso de português no mês passado."
       }
      ],
      "sources": [
@@ -12817,6 +13521,17 @@
         "cor?"
        ],
        "explanation": "Noutra cor is the natural phrase for asking about another colour of an item."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Posso provar este ___, por favor?'",
+       "difficulty": 4,
+       "answer": "vestido",
+       "accepted": [
+        "vestido"
+       ],
+       "explanation": "The audio says 'Posso provar este vestido, por favor?', which means 'Can I try on this dress, please?'",
+       "audioText": "Posso provar este vestido, por favor?"
       }
      ],
      "sources": [
@@ -13004,6 +13719,17 @@
         "bem."
        ],
        "explanation": "Junta and mistura are the informal imperative forms used in recipe instructions."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Primeiro, corta a cebola em pedaços ___.'",
+       "difficulty": 5,
+       "answer": "pequenos",
+       "accepted": [
+        "pequenos"
+       ],
+       "explanation": "The audio says 'Primeiro, corta a cebola em pedaços pequenos.', which means 'First, cut the onion into small pieces.'",
+       "audioText": "Primeiro, corta a cebola em pedaços pequenos."
       }
      ],
      "sources": [
@@ -13195,6 +13921,17 @@
         "urgência."
        ],
        "explanation": "Alguém caiu reports the emergency event, followed by the urgent need for help."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Houve um acidente, ___ de uma ambulância.'",
+       "difficulty": 5,
+       "answer": "precisamos",
+       "accepted": [
+        "precisamos"
+       ],
+       "explanation": "The audio says 'Houve um acidente, precisamos de uma ambulância.', which means 'There's been an accident, we need an ambulance.'",
+       "audioText": "Houve um acidente, precisamos de uma ambulância."
       }
      ],
      "sources": [
@@ -13390,6 +14127,17 @@
         "assinar."
        ],
        "explanation": "Preencha is the formal imperative for fill in, followed by the reminder to sign."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Escreva o seu nome ___ no primeiro campo.'",
+       "difficulty": 4,
+       "answer": "completo",
+       "accepted": [
+        "completo"
+       ],
+       "explanation": "The audio says 'Escreva o seu nome completo no primeiro campo.', which means 'Write your full name in the first field.'",
+       "audioText": "Escreva o seu nome completo no primeiro campo."
       }
      ],
      "sources": [
@@ -13606,6 +14354,17 @@
         "bairro"
        ],
        "explanation": "Time phrase + perfeito simples of 'ir' (fomos) + destination with 'à'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Antes de sair, ___ a casa e estendi a roupa.'",
+       "difficulty": 5,
+       "answer": "aspirei",
+       "accepted": [
+        "aspirei"
+       ],
+       "explanation": "The audio says 'Antes de sair, aspirei a casa e estendi a roupa.', which means 'Before going out, I vacuumed the house and hung out the laundry.'",
+       "audioText": "Antes de sair, aspirei a casa e estendi a roupa."
       }
      ],
      "sources": [
@@ -13829,6 +14588,17 @@
         "noite"
        ],
        "explanation": "'Até às + time' expresses closing time, a key pattern for reading opening hours."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'AVISO: O ___ está avariado. Pedimos desculpa pelo incómodo.'",
+       "difficulty": 5,
+       "answer": "elevador",
+       "accepted": [
+        "elevador"
+       ],
+       "explanation": "The audio says 'AVISO: O elevador está avariado. Pedimos desculpa pelo incómodo.', which means 'NOTICE: The lift is out of order. We apologise for the inconvenience.'",
+       "audioText": "AVISO: O elevador está avariado. Pedimos desculpa pelo incómodo."
       }
      ],
      "sources": [
