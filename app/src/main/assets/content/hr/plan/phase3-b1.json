@@ -776,6 +776,17 @@
        ],
        "answer": "upisati se / ispisati se",
        "explanation": "u- 'in' vs. iz- 'out': to enrol vs. to withdraw. The others are near-synonyms or aspect pairs, not opposites."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Pisao sam mail ___ jutro. / Napisao sam mail prije ručka.'",
+       "difficulty": 5,
+       "answer": "cijelo",
+       "accepted": [
+        "cijelo"
+       ],
+       "explanation": "The audio says 'Pisao sam mail cijelo jutro. / Napisao sam mail prije ručka.', which means 'I was writing the email all morning. / I finished the email before lunch.'",
+       "audioText": "Pisao sam mail cijelo jutro. / Napisao sam mail prije ručka."
       }
      ],
      "sources": [
@@ -1286,6 +1297,17 @@
        ],
        "answer": "Kritičan prema našoj ovisnosti o brzini, ali s praktičnim savjetom.",
        "explanation": "The tone is critical of our addiction to speed yet constructive, it ends with a doable suggestion, not a rejection of technology."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Nekad smo se ___ pismima, a danas očekujemo odgovor u sekundi.'",
+       "difficulty": 6,
+       "answer": "dopisivali",
+       "accepted": [
+        "dopisivali"
+       ],
+       "explanation": "The audio says 'Nekad smo se dopisivali pismima, a danas očekujemo odgovor u sekundi.', which means 'We used to correspond by letters; today we expect a reply in a second.'",
+       "audioText": "Nekad smo se dopisivali pismima, a danas očekujemo odgovor u sekundi."
       }
      ],
      "sources": [
@@ -1558,6 +1580,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "pisati → imperative piši (iotation s → š). Piši mi uskoro! = Write to me soon!"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Kako si? Nadam se da si ___.'",
+       "difficulty": 5,
+       "answer": "dobro",
+       "accepted": [
+        "dobro"
+       ],
+       "explanation": "The audio says 'Kako si? Nadam se da si dobro.', which means 'How are you? I hope you're well.'",
+       "audioText": "Kako si? Nadam se da si dobro."
       }
      ],
      "sources": [
@@ -2103,6 +2136,17 @@
        ],
        "answer": "Šef nadgleda cijeli projekt.",
        "explanation": "nad- 'over' → nadgledati = to supervise/oversee. ugleda = catches sight of, izgleda = appears, razgleda = sightsees, all wrong here."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Izgleda da će ___ kiša.'",
+       "difficulty": 5,
+       "answer": "padati",
+       "accepted": [
+        "padati"
+       ],
+       "explanation": "The audio says 'Izgleda da će padati kiša.', which means 'It looks like it's going to rain.'",
+       "audioText": "Izgleda da će padati kiša."
       }
      ],
      "sources": [
@@ -2355,6 +2399,17 @@
        ],
        "answer": "postanem, postaneš, postane, postanemo, postanete, postanu",
        "explanation": "Perfective postati → postanem…postanu (-anem type). The set postajem…postaju is the imperfective postajati."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Večeras ___ doma i gledam film.'",
+       "difficulty": 4,
+       "answer": "ostanem",
+       "accepted": [
+        "ostanem"
+       ],
+       "explanation": "The audio says 'Večeras ostanem doma i gledam film.', which means 'Tonight I'll stay home and watch a film.'",
+       "audioText": "Večeras ostanem doma i gledam film."
       }
      ],
      "sources": [
@@ -2951,6 +3006,17 @@
        ],
        "answer": "Kad stignem kući, sjednem i legnem na kauč.",
        "explanation": "All three perfective presents are correct: stignem, sjednem, legnem. The distractors mix in the wrong stems (sjedim, ležim, stižem, sjestem)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Kad dođem kući, ___ i odmorim se.'",
+       "difficulty": 5,
+       "answer": "sjednem",
+       "accepted": [
+        "sjednem"
+       ],
+       "explanation": "The audio says 'Kad dođem kući, sjednem i odmorim se.', which means 'When I get home, I sit down and rest.'",
+       "audioText": "Kad dođem kući, sjednem i odmorim se."
       }
      ],
      "sources": [
@@ -3521,6 +3587,17 @@
        ],
        "answer": "Smatram da su prednosti veće od nedostataka.",
        "explanation": "Plural subject prednosti to plural verb su; comparison with od + genitive plural: nedostataka (from nedostatak)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Po mojem mišljenju, ___ je uvelike poboljšala naš život.'",
+       "difficulty": 5,
+       "answer": "tehnologija",
+       "accepted": [
+        "tehnologija"
+       ],
+       "explanation": "The audio says 'Po mojem mišljenju, tehnologija je uvelike poboljšala naš život.', which means 'In my opinion, technology has greatly improved our lives.'",
+       "audioText": "Po mojem mišljenju, tehnologija je uvelike poboljšala naš život."
       }
      ],
      "sources": [
@@ -3801,6 +3878,17 @@
        ],
        "answer": "Katić je izumio mehaničku olovku i patentirao nalivpero.",
        "explanation": "Accusative object mehaničku olovku, masculine participles izumio / patentirao agreeing with Katić."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Potpisao sam ugovor i zapisao datum u ___.'",
+       "difficulty": 5,
+       "answer": "kalendar",
+       "accepted": [
+        "kalendar"
+       ],
+       "explanation": "The audio says 'Potpisao sam ugovor i zapisao datum u kalendar.', which means 'I signed the contract and noted the date in the calendar.'",
+       "audioText": "Potpisao sam ugovor i zapisao datum u kalendar."
       }
      ],
      "sources": [
@@ -4071,6 +4159,17 @@
        ],
        "answer": "Prvo razmislim o problemu, a onda smislim rješenje.",
        "explanation": "razmisliti O + locative (a matter to weigh), smisliti + accusative (a solution to produce). The distractors swap the two patterns."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Misliti i ___ nisu ista stvar.'",
+       "difficulty": 5,
+       "answer": "govoriti",
+       "accepted": [
+        "govoriti"
+       ],
+       "explanation": "The audio says 'Misliti i govoriti nisu ista stvar.', which means 'To think and to speak are not the same thing.'",
+       "audioText": "Misliti i govoriti nisu ista stvar."
       }
      ],
      "sources": [
@@ -4347,6 +4446,17 @@
        ],
        "answer": "Riba je pečena, kruh je pečen, a meso je pečeno.",
        "explanation": "The participle agrees like an adjective: feminine riba to pečena, masculine kruh to pečen, neuter meso to pečeno."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'napisati to napisan; ___ to pročitan; prodati to prodan'",
+       "difficulty": 5,
+       "answer": "pročitati",
+       "accepted": [
+        "pročitati"
+       ],
+       "explanation": "The audio says 'napisati to napisan; pročitati to pročitan; prodati to prodan', which means 'to write to written; to read to read (through); to sell to sold'",
+       "audioText": "napisati to napisan; pročitati to pročitan; prodati to prodan"
       }
      ],
      "sources": [
@@ -4897,6 +5007,17 @@
        ],
        "answer": "U galeriji je otvorena izložba djela poznatog slikara.",
        "explanation": "Feminine izložba to otvorena; djela + genitive poznatog slikara ('the works of a famous painter')."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Volim umjetnost, osobito ___ i glazbu.'",
+       "difficulty": 5,
+       "answer": "slikarstvo",
+       "accepted": [
+        "slikarstvo"
+       ],
+       "explanation": "The audio says 'Volim umjetnost, osobito slikarstvo i glazbu.', which means 'I love art, especially painting and music.'",
+       "audioText": "Volim umjetnost, osobito slikarstvo i glazbu."
       }
      ],
      "sources": [
@@ -5169,6 +5290,17 @@
        ],
        "answer": "Film je snimljen prošle godine i temelji se na istinitoj priči.",
        "explanation": "Masculine film to snimljen; temeljiti se na + locative: na istinitoj priči (from istinita priča)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Nedavno sam ___ odličan film.'",
+       "difficulty": 5,
+       "answer": "pogledao",
+       "accepted": [
+        "pogledao"
+       ],
+       "explanation": "The audio says 'Nedavno sam pogledao odličan film.', which means 'I recently watched an excellent film.'",
+       "audioText": "Nedavno sam pogledao odličan film."
       }
      ],
      "sources": [
@@ -5451,6 +5583,17 @@
        ],
        "answer": "U prvom planu su dvije žene koje razgovaraju, a u pozadini se vidi more.",
        "explanation": "Locative u prvom planu; dvije žene (feminine paucal); singular se vidi more (the sea, one thing)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Na slici se vidi ___ u parku.'",
+       "difficulty": 5,
+       "answer": "obitelj",
+       "accepted": [
+        "obitelj"
+       ],
+       "explanation": "The audio says 'Na slici se vidi obitelj u parku.', which means 'In the picture you can see a family in a park.'",
+       "audioText": "Na slici se vidi obitelj u parku."
       }
      ],
      "sources": [
@@ -6011,6 +6154,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "The habitual sense needs the imperfective zarađivati → zarađuješ (d → đ), not the perfective zaradiš."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'raditi → ___, radiš, radi'",
+       "difficulty": 5,
+       "answer": "radim",
+       "accepted": [
+        "radim"
+       ],
+       "explanation": "The audio says 'raditi → radim, radiš, radi', which means 'to work / to do (impf.) → I work…'",
+       "audioText": "raditi → radim, radiš, radi"
       }
      ],
      "sources": [
@@ -6279,6 +6433,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "na + locative; natjecanje → natjecanju. The reflexive se disappears in the verbal noun."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Verbal nouns are neuter and decline ___.'",
+       "difficulty": 5,
+       "answer": "regularly",
+       "accepted": [
+        "regularly"
+       ],
+       "explanation": "The audio says 'Verbal nouns are neuter and decline regularly.', which means 'bez učenja, u putovanju, sa znanjem'",
+       "audioText": "Verbal nouns are neuter and decline regularly."
       }
      ],
      "sources": [
@@ -6562,6 +6727,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "ispunjavati → ispunjavam = I meet / fulfil; Smatram da ispunjavam sve uvjete = I believe I meet all the requirements."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'prijaviti se na ___'",
+       "difficulty": 5,
+       "answer": "natječaj",
+       "accepted": [
+        "natječaj"
+       ],
+       "explanation": "The audio says 'prijaviti se na natječaj', which means 'to apply for a vacancy'",
+       "audioText": "prijaviti se na natječaj"
       }
      ],
      "sources": [
@@ -6838,6 +7014,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "The relative pronoun agrees with posao (m.) and takes the locative after u: u kojem (also u kojemu)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Rođen sam 1988. ___ u Zagrebu.'",
+       "difficulty": 5,
+       "answer": "godine",
+       "accepted": [
+        "godine"
+       ],
+       "explanation": "The audio says 'Rođen sam 1988. godine u Zagrebu.', which means 'I was born in 1988 in Zagreb.'",
+       "audioText": "Rođen sam 1988. godine u Zagrebu."
       }
      ],
      "sources": [
@@ -7391,6 +7578,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "'children of that age' = djeca te dobi; dob → genitive dobi (i-declension, like the locative)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: '-ju vs -i: ___ decides'",
+       "difficulty": 5,
+       "answer": "adjective",
+       "accepted": [
+        "adjective"
+       ],
+       "explanation": "The audio says '-ju vs -i: adjective decides', which means 'form depends on a modifier'",
+       "audioText": "-ju vs -i: adjective decides"
       }
      ],
      "sources": [
@@ -8005,6 +8203,17 @@
        ],
        "answer": "no dictionary and no pausing the audio",
        "explanation": "Simulate the real thing: bez rječnika, bez pauziranja; the audio plays twice and you don't stop it."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'zvati → ___, zoveš, zove'",
+       "difficulty": 5,
+       "answer": "zovem",
+       "accepted": [
+        "zovem"
+       ],
+       "explanation": "The audio says 'zvati → zovem, zoveš, zove', which means 'to call → I call…'",
+       "audioText": "zvati → zovem, zoveš, zove"
       }
      ],
      "sources": [
@@ -8571,6 +8780,17 @@
        ],
        "answer": "dvoje djece",
        "explanation": "Children and mixed-gender groups take the collective numeral dvoje + genitive: dvoje djece. dva/dvije are for uniform masculine/feminine sets."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'U ___ idem u Split. (NE: u travanj)'",
+       "difficulty": 5,
+       "answer": "travnju",
+       "accepted": [
+        "travnju"
+       ],
+       "explanation": "The audio says 'U travnju idem u Split. (NE: u travanj)', which means 'In April I'm going to Split.'",
+       "audioText": "U travnju idem u Split. (NE: u travanj)"
       }
      ],
      "sources": [
@@ -8904,6 +9124,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "Mislim da… / Smatram da… = I think / consider that…, the standard B1 opinion opener."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'divlje ___ i biljke'",
+       "difficulty": 5,
+       "answer": "životinje",
+       "accepted": [
+        "životinje"
+       ],
+       "explanation": "The audio says 'divlje životinje i biljke', which means 'wild animals and plants'",
+       "audioText": "divlje životinje i biljke"
       }
      ],
      "sources": [
@@ -9177,6 +9408,17 @@
        ],
        "answer": "Zabranjen",
        "explanation": "Here the participle agrees with a real noun, masculine ulaz: Zabranjen je ulaz. The neuter Zabranjeno is only for the infinitive pattern."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Ovdje se ne ___.'",
+       "difficulty": 5,
+       "answer": "parkira",
+       "accepted": [
+        "parkira"
+       ],
+       "explanation": "The audio says 'Ovdje se ne parkira.', which means 'No parking here.'",
+       "audioText": "Ovdje se ne parkira."
       }
      ],
      "sources": [
@@ -9699,6 +9941,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "Impersonal treba + infinitive: Treba čuvati more."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'U ___ parku se ne smije bacati smeće.'",
+       "difficulty": 5,
+       "answer": "nacionalnom",
+       "accepted": [
+        "nacionalnom"
+       ],
+       "explanation": "The audio says 'U nacionalnom parku se ne smije bacati smeće.', which means 'In the national park you must not throw rubbish.'",
+       "audioText": "U nacionalnom parku se ne smije bacati smeće."
       }
      ],
      "sources": [
@@ -10259,6 +10512,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "prijati agrees with the subject čaj: Topli čaj mi prija = the warm tea agrees with me."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Vrti mi se (u ___).'",
+       "difficulty": 6,
+       "answer": "glavi",
+       "accepted": [
+        "glavi"
+       ],
+       "explanation": "The audio says 'Vrti mi se (u glavi).', which means 'I'm dizzy.'",
+       "audioText": "Vrti mi se (u glavi)."
       }
      ],
      "sources": [
@@ -10591,6 +10855,17 @@
        ],
        "answer": "Zdravlje se gradi svakodnevnom, uravnoteženom prehranom.",
        "explanation": "'Zdravlje se… gradi za stolom.' The message is that health comes from everyday, balanced eating and moderation."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Sve više stručnjaka upozorava da su naše ___ navike sve lošije.'",
+       "difficulty": 5,
+       "answer": "prehrambene",
+       "accepted": [
+        "prehrambene"
+       ],
+       "explanation": "The audio says 'Sve više stručnjaka upozorava da su naše prehrambene navike sve lošije.', which means 'More and more experts warn that our eating habits are getting worse.'",
+       "audioText": "Sve više stručnjaka upozorava da su naše prehrambene navike sve lošije."
       }
      ],
      "sources": [
@@ -10853,6 +11128,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "nekoliko + genitive plural: nekoliko puta = a few times. put → puta in this counting use."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: '(travanj) → U travnju počinje ___ sezona.'",
+       "difficulty": 5,
+       "answer": "proljetna",
+       "accepted": [
+        "proljetna"
+       ],
+       "explanation": "The audio says '(travanj) → U travnju počinje proljetna sezona.', which means '(April) → The spring season begins in April.'",
+       "audioText": "(travanj) → U travnju počinje proljetna sezona."
       }
      ],
      "sources": [
@@ -11118,6 +11404,17 @@
        ],
        "answer": "ručak",
        "explanation": "In Croatia lunch (ručak) is traditionally the main meal, eaten in the afternoon, unlike the big evening dinner common elsewhere."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'paziti na (___ / liniju)'",
+       "difficulty": 5,
+       "answer": "prehranu",
+       "accepted": [
+        "prehranu"
+       ],
+       "explanation": "The audio says 'paziti na (prehranu / liniju)', which means 'to watch (one's diet / figure)'",
+       "audioText": "paziti na (prehranu / liniju)"
       }
      ],
      "sources": [
@@ -11400,6 +11697,17 @@
        ],
        "answer": "Zaključno, važno nam je što jedemo jer smo ono što jedemo.",
        "explanation": "važno (neuter, impersonal) + nam (dative) + je is the correct experiencer frame. nas (accusative), biti (infinitive) and važan (masculine) are all wrong here."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Mislim da smo ono što ___.'",
+       "difficulty": 5,
+       "answer": "jedemo",
+       "accepted": [
+        "jedemo"
+       ],
+       "explanation": "The audio says 'Mislim da smo ono što jedemo.', which means 'I think we are what we eat.'",
+       "audioText": "Mislim da smo ono što jedemo."
       }
      ],
      "sources": [
@@ -11674,6 +11982,17 @@
        ],
        "answer": "najvažnije",
        "explanation": "The impersonal experiencer uses the neuter: Meni je najvažnije da... The other forms are wrong gender or non-existent."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Sviđa mi se ova juha od ___.'",
+       "difficulty": 4,
+       "answer": "povrća",
+       "accepted": [
+        "povrća"
+       ],
+       "explanation": "The audio says 'Sviđa mi se ova juha od povrća.', which means 'I like this vegetable soup.'",
+       "audioText": "Sviđa mi se ova juha od povrća."
       }
      ],
      "sources": [
@@ -12245,6 +12564,17 @@
        ],
        "answer": "Da imam više novca, više bih putovao.",
        "explanation": "Unreal condition da + present pairs with a conditional main clause (bih putovao). Mixing da/ako/kad with a future or bare present breaks the pattern."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Ako bude lijepo ___, ići ćemo na izlet.'",
+       "difficulty": 5,
+       "answer": "vrijeme",
+       "accepted": [
+        "vrijeme"
+       ],
+       "explanation": "The audio says 'Ako bude lijepo vrijeme, ići ćemo na izlet.', which means 'If the weather is nice, we'll go on a trip.'",
+       "audioText": "Ako bude lijepo vrijeme, ići ćemo na izlet."
       }
      ],
      "sources": [
@@ -13086,6 +13416,17 @@
        ],
        "answer": "Kako to misliš? Možeš li pojasniti?",
        "explanation": "Kako to misliš? + Možeš li pojasniti? asks the other person to clarify, keeping the conversation open."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Potpuno se ___ s tobom.'",
+       "difficulty": 4,
+       "answer": "slažem",
+       "accepted": [
+        "slažem"
+       ],
+       "explanation": "The audio says 'Potpuno se slažem s tobom.', which means 'I completely agree with you.'",
+       "audioText": "Potpuno se slažem s tobom."
       }
      ],
      "sources": [
@@ -13370,6 +13711,17 @@
        ],
        "answer": "Bio sam toliko oduševljen da sam zaboravio snimati.",
        "explanation": "toliko... da + perfekt (da sam zaboravio) states the actual result. The present, conditional and infinitive versions don't fit a completed past event."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Draga Ana, kako si? Nadam se da si ___.'",
+       "difficulty": 5,
+       "answer": "dobro",
+       "accepted": [
+        "dobro"
+       ],
+       "explanation": "The audio says 'Draga Ana, kako si? Nadam se da si dobro.', which means 'Dear Ana, how are you? I hope you're well.'",
+       "audioText": "Draga Ana, kako si? Nadam se da si dobro."
       }
      ],
      "sources": [
@@ -13639,6 +13991,17 @@
        ],
        "answer": "Da mogu promijeniti jednu stvar, smanjio bih nepravdu.",
        "explanation": "Unreal present: da + present (mogu) pairs with a conditional result (smanjio bih). The other conjunctions or a future break the pattern."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Da naša ___ igra bolje, sigurno bi pobijedila.'",
+       "difficulty": 4,
+       "answer": "reprezentacija",
+       "accepted": [
+        "reprezentacija"
+       ],
+       "explanation": "The audio says 'Da naša reprezentacija igra bolje, sigurno bi pobijedila.', which means 'If our national team played better, it would surely win.'",
+       "audioText": "Da naša reprezentacija igra bolje, sigurno bi pobijedila."
       }
      ],
      "sources": [
@@ -14193,6 +14556,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "granje is a neuter -je collective (like more): instrumental granjem. među granjem = among the branches."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Djeca su se ___ u parku.'",
+       "difficulty": 5,
+       "answer": "igrala",
+       "accepted": [
+        "igrala"
+       ],
+       "explanation": "The audio says 'Djeca su se igrala u parku.', which means 'The children were playing in the park.'",
+       "audioText": "Djeca su se igrala u parku."
       }
      ],
      "sources": [
@@ -14473,6 +14847,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "izgovor has two senses: pronunciation AND excuse. Tražiti izgovor = to look for an excuse."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'razgovarati (s kim, o ___)'",
+       "difficulty": 5,
+       "answer": "čemu",
+       "accepted": [
+        "čemu"
+       ],
+       "explanation": "The audio says 'razgovarati (s kim, o čemu)', which means 'to converse, have a conversation'",
+       "audioText": "razgovarati (s kim, o čemu)"
       }
      ],
      "sources": [
@@ -14750,6 +15135,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "mladost is feminine i-declension: locative mladosti. U mladosti = in my youth."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Smatram da se mladi danas prerano ___.'",
+       "difficulty": 5,
+       "answer": "osamostale",
+       "accepted": [
+        "osamostale"
+       ],
+       "explanation": "The audio says 'Smatram da se mladi danas prerano osamostale.', which means 'I think young people become independent too early today.'",
+       "audioText": "Smatram da se mladi danas prerano osamostale."
       }
      ],
      "sources": [
@@ -15316,6 +15712,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "braća takes a PLURAL verb: Braća su živjeli zajedno. The participle is masculine plural živjeli."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Za razliku od mojih ___, ja…'",
+       "difficulty": 5,
+       "answer": "roditelja",
+       "accepted": [
+        "roditelja"
+       ],
+       "explanation": "The audio says 'Za razliku od mojih roditelja, ja…', which means 'Unlike my parents, I…'",
+       "audioText": "Za razliku od mojih roditelja, ja…"
       }
      ],
      "sources": [
@@ -15584,6 +15991,17 @@
        ],
        "answer": "Braća su visoka.",
        "explanation": "braća takes a plural verb (su) and a neuter plural adjective (visoka): Braća su visoka."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Braća su mi došla u ___.'",
+       "difficulty": 4,
+       "answer": "posjet",
+       "accepted": [
+        "posjet"
+       ],
+       "explanation": "The audio says 'Braća su mi došla u posjet.', which means 'My brothers came to visit me.'",
+       "audioText": "Braća su mi došla u posjet."
       }
      ],
      "sources": [
@@ -15861,6 +16279,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "The habitual sense needs the imperfective dopuštati → dopuštaju (t → št), not the perfective dopuste."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'dopustiti (___ što / da)'",
+       "difficulty": 5,
+       "answer": "komu",
+       "accepted": [
+        "komu"
+       ],
+       "explanation": "The audio says 'dopustiti (komu što / da)', which means 'to allow, permit'",
+       "audioText": "dopustiti (komu što / da)"
       }
      ],
      "sources": [
@@ -16135,6 +16564,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "vrata is plural-only, so the verb is plural: Vrata se otvaraju automatski = the doors open automatically."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Ovdje se govori ___.'",
+       "difficulty": 5,
+       "answer": "hrvatski",
+       "accepted": [
+        "hrvatski"
+       ],
+       "explanation": "The audio says 'Ovdje se govori hrvatski.', which means 'Croatian is spoken here.'",
+       "audioText": "Ovdje se govori hrvatski."
       }
      ],
      "sources": [
@@ -16409,6 +16849,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "sastaviti (sa- = together) = to put together: sastavili smo plan = we put together a plan."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Predstavljam vam ___ ženu.'",
+       "difficulty": 5,
+       "answer": "svoju",
+       "accepted": [
+        "svoju"
+       ],
+       "explanation": "The audio says 'Predstavljam vam svoju ženu.', which means 'Let me introduce my wife to you.'",
+       "audioText": "Predstavljam vam svoju ženu."
       }
      ],
      "sources": [
@@ -16685,6 +17136,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "budući da = since / because. budući is the frozen verbal adverb of biti, now a conjunction."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Only from ___ verbs.'",
+       "difficulty": 5,
+       "answer": "imperfective",
+       "accepted": [
+        "imperfective"
+       ],
+       "explanation": "The audio says 'Only from imperfective verbs.', which means 'no perfective present verbal adverb'",
+       "audioText": "Only from imperfective verbs."
       }
      ],
      "sources": [
@@ -17023,6 +17485,17 @@
        ],
        "answer": "prema",
        "explanation": "predrasude prema + dative: prema manjinama. prema governs the dative and means 'toward'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Ne bih se u ___ složio.'",
+       "difficulty": 5,
+       "answer": "potpunosti",
+       "accepted": [
+        "potpunosti"
+       ],
+       "explanation": "The audio says 'Ne bih se u potpunosti složio.', which means 'I wouldn't fully agree.'",
+       "audioText": "Ne bih se u potpunosti složio."
       }
      ],
      "sources": [
@@ -17365,6 +17838,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "Zaključno = in conclusion, opens the closing sentence. Na kraju is an accepted alternative in speech."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: '…nije ___…, nego i…'",
+       "difficulty": 5,
+       "answer": "samo",
+       "accepted": [
+        "samo"
+       ],
+       "explanation": "The audio says '…nije samo…, nego i…', which means '…is not only…, but also…'",
+       "audioText": "…nije samo…, nego i…"
       }
      ],
      "sources": [
@@ -17637,6 +18121,17 @@
        ],
        "answer": "predao",
        "explanation": "predati = to hand over / submit to an authority (predati upravi). prodati = to sell; izdati = to publish/betray; zadati = to assign."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Svatko treba dobiti ___ da pokaže što zna.'",
+       "difficulty": 5,
+       "answer": "priliku",
+       "accepted": [
+        "priliku"
+       ],
+       "explanation": "The audio says 'Svatko treba dobiti priliku da pokaže što zna.', which means 'Everyone should get a chance to show what they know.'",
+       "audioText": "Svatko treba dobiti priliku da pokaže što zna."
       }
      ],
      "sources": [
@@ -17968,6 +18463,17 @@
        ],
        "answer": "otvorena",
        "explanation": "vrata is a neuter plural (pluralia tantum), so the participle is otvorena: Vrata su otvorena."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'pukao sam od ___'",
+       "difficulty": 5,
+       "answer": "smijeha",
+       "accepted": [
+        "smijeha"
+       ],
+       "explanation": "The audio says 'pukao sam od smijeha', which means 'I burst out laughing'",
+       "audioText": "pukao sam od smijeha"
       }
      ],
      "sources": [
@@ -18240,6 +18746,17 @@
        ],
        "answer": "stigla",
        "explanation": "The collective braća takes a neuter plural participle: Braća su stigla. Same pattern as djeca su došla."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Ako budeš ___, položit ćeš ispit.'",
+       "difficulty": 5,
+       "answer": "vježbao",
+       "accepted": [
+        "vježbao"
+       ],
+       "explanation": "The audio says 'Ako budeš vježbao, položit ćeš ispit.', which means 'If you practise, you'll pass the exam.'",
+       "audioText": "Ako budeš vježbao, položit ćeš ispit."
       }
      ],
      "sources": [
@@ -18420,6 +18937,17 @@
         "Hrvatsku"
        ],
        "explanation": "The purpose is expressed with 'da' plus the present 'putujem', and 'u' with the accusative 'Hrvatsku' marks movement towards a place."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Ustajem ranije da ___ na vlak.'",
+       "difficulty": 6,
+       "answer": "stignem",
+       "accepted": [
+        "stignem"
+       ],
+       "explanation": "The audio says 'Ustajem ranije da stignem na vlak.', which means 'I get up earlier to catch the train.'",
+       "audioText": "Ustajem ranije da stignem na vlak."
       }
      ],
      "sources": [
@@ -18608,6 +19136,17 @@
         "kući"
        ],
        "explanation": "The time clause with 'čim' comes first and keeps the present tense; 'kući' is the fixed adverbial form meaning 'homewards'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Kad ___ kući, javit ću ti se.'",
+       "difficulty": 6,
+       "answer": "stignem",
+       "accepted": [
+        "stignem"
+       ],
+       "explanation": "The audio says 'Kad stignem kući, javit ću ti se.', which means 'When I get home, I will let you know.'",
+       "audioText": "Kad stignem kući, javit ću ti se."
       }
      ],
      "sources": [
@@ -18787,6 +19326,17 @@
         "Zagrebu"
        ],
        "explanation": "The reason clause with 'jer' follows the main clause, and 'u' with the locative 'Zagrebu' marks location."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Ne ___ van jer pada kiša.'",
+       "difficulty": 6,
+       "answer": "idem",
+       "accepted": [
+        "idem"
+       ],
+       "explanation": "The audio says 'Ne idem van jer pada kiša.', which means 'I am not going out because it is raining.'",
+       "audioText": "Ne idem van jer pada kiša."
       }
      ],
      "sources": [
@@ -18964,6 +19514,17 @@
         "odlazimo"
        ],
        "explanation": "The intensifier 'tako' stands directly before the adjective, and the result clause with 'da' comes last."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Padala je jaka kiša, tako da smo ___ kod kuće.'",
+       "difficulty": 6,
+       "answer": "ostali",
+       "accepted": [
+        "ostali"
+       ],
+       "explanation": "The audio says 'Padala je jaka kiša, tako da smo ostali kod kuće.', which means 'It was raining heavily, so we stayed at home.'",
+       "audioText": "Padala je jaka kiša, tako da smo ostali kod kuće."
       }
      ],
      "sources": [
@@ -19149,6 +19710,17 @@
         "dan"
        ],
        "explanation": "The concessive clause with 'iako' comes first, and 'puno' takes the genitive 'vremena'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Iako je ___ kiša, otišli smo na izlet.'",
+       "difficulty": 7,
+       "answer": "padala",
+       "accepted": [
+        "padala"
+       ],
+       "explanation": "The audio says 'Iako je padala kiša, otišli smo na izlet.', which means 'Although it was raining, we went on the trip.'",
+       "audioText": "Iako je padala kiša, otišli smo na izlet."
       }
      ],
      "sources": [
@@ -19324,6 +19896,17 @@
         "vremena"
        ],
        "explanation": "The reported clause is introduced by 'da' and keeps the present tense; 'nemati' governs the genitive 'vremena'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Rekao je da je ___.'",
+       "difficulty": 6,
+       "answer": "umoran",
+       "accepted": [
+        "umoran"
+       ],
+       "explanation": "The audio says 'Rekao je da je umoran.', which means 'He said he was tired.'",
+       "audioText": "Rekao je da je umoran."
       }
      ],
      "sources": [
@@ -19507,6 +20090,17 @@
         "vremena"
        ],
        "explanation": "The reported question keeps 'li' directly after the verb 'imamo', and 'imati' governs the genitive 'vremena'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Pitao me imam li ___.'",
+       "difficulty": 7,
+       "answer": "vremena",
+       "accepted": [
+        "vremena"
+       ],
+       "explanation": "The audio says 'Pitao me imam li vremena.', which means 'He asked me whether I had time.'",
+       "audioText": "Pitao me imam li vremena."
       }
      ],
      "sources": [
@@ -19697,6 +20291,17 @@
         "sestre"
        ],
        "explanation": "'Brat' is masculine so it takes 'dva', and both nouns appear in the dual form used after two, three and four."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Kupio sam dva ___ i dvije boce vode.'",
+       "difficulty": 6,
+       "answer": "kruha",
+       "accepted": [
+        "kruha"
+       ],
+       "explanation": "The audio says 'Kupio sam dva kruha i dvije boce vode.', which means 'I bought two loaves of bread and two bottles of water.'",
+       "audioText": "Kupio sam dva kruha i dvije boce vode."
       }
      ],
      "sources": [
@@ -19875,6 +20480,17 @@
         "roditelje"
        ],
        "explanation": "The adverbial phrase opens the sentence and is followed by the main clause; 'čuti' gives the form 'čuvši'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Došavši kući, odmah je ___ večeru.'",
+       "difficulty": 7,
+       "answer": "skuhao",
+       "accepted": [
+        "skuhao"
+       ],
+       "explanation": "The audio says 'Došavši kući, odmah je skuhao večeru.', which means 'Having got home, he immediately cooked dinner.'",
+       "audioText": "Došavši kući, odmah je skuhao večeru."
       }
      ],
      "sources": [
@@ -20062,6 +20678,17 @@
         "auto"
        ],
        "explanation": "The neutral order starts with the subject, the clitic 'je' follows it in second position, and the time adverb comes before the participle."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Marko je sinoć gledao ___.'",
+       "difficulty": 7,
+       "answer": "utakmicu",
+       "accepted": [
+        "utakmicu"
+       ],
+       "explanation": "The audio says 'Marko je sinoć gledao utakmicu.', which means 'Marko watched the match last night.'",
+       "audioText": "Marko je sinoć gledao utakmicu."
       }
      ],
      "sources": [
@@ -20771,6 +21398,17 @@
        ],
        "answer": "ulica u Varaždinu i novinarska nagrada",
        "explanation": "'jedna ulica u Varaždinu nosi njezino ime, a svake se godine dodjeljuje ugledna novinarska nagrada koja se zove po njoj.'"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Strategija: prvo ___ imena, datume i mjesta.'",
+       "difficulty": 5,
+       "answer": "pronađi",
+       "accepted": [
+        "pronađi"
+       ],
+       "explanation": "The audio says 'Strategija: prvo pronađi imena, datume i mjesta.', which means 'Strategy: first locate names, dates and places.'",
+       "audioText": "Strategija: prvo pronađi imena, datume i mjesta."
       }
      ],
      "sources": [
@@ -21019,6 +21657,17 @@
        ],
        "answer": "srcu",
        "explanation": "Location after 'u' → locative: u srcu. srcem is the instrumental, srca the genitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Prvo ___ padež, pa onda oblik.'",
+       "difficulty": 5,
+       "answer": "odredi",
+       "accepted": [
+        "odredi"
+       ],
+       "explanation": "The audio says 'Prvo odredi padež, pa onda oblik.', which means 'First decide the case, then the form.'",
+       "audioText": "Prvo odredi padež, pa onda oblik."
       }
      ],
      "sources": [
@@ -21307,6 +21956,17 @@
        "answer": "najbolji",
        "strictDiacritics": true,
        "explanation": "'the best film' → superlative adjective agreeing with film (masculine): najbolji. najbolje is the adverb."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'radit ću (NE '___ ću')'",
+       "difficulty": 5,
+       "answer": "raditi",
+       "accepted": [
+        "raditi"
+       ],
+       "explanation": "The audio says 'radit ću (NE 'raditi ću')', which means 'I will work'",
+       "audioText": "radit ću (NE 'raditi ću')"
       }
      ],
      "sources": [
@@ -21596,6 +22256,17 @@
        ],
        "answer": "Molim vas, opišite osobu koju ste vidjeli.",
        "explanation": "You DESCRIBE a person: opisati. potpisati = sign, prepisati = copy, zapisati = note down, none takes 'a person' as object here."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Cijeli sam ___ napisao za jedan sat.'",
+       "difficulty": 5,
+       "answer": "izvještaj",
+       "accepted": [
+        "izvještaj"
+       ],
+       "explanation": "The audio says 'Cijeli sam izvještaj napisao za jedan sat.', which means 'I wrote the whole report in one hour.'",
+       "audioText": "Cijeli sam izvještaj napisao za jedan sat."
       }
      ],
      "sources": [
@@ -21911,6 +22582,17 @@
        ],
        "answer": "Vjerojatno razgovaraju o planovima za vikend.",
        "explanation": "razgovarati o + locative plural: o planovima. o planova/planove (genitive/accusative) and na planovima are wrong here."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Na slici vidim mladu ___ u parku.'",
+       "difficulty": 5,
+       "answer": "obitelj",
+       "accepted": [
+        "obitelj"
+       ],
+       "explanation": "The audio says 'Na slici vidim mladu obitelj u parku.', which means 'In the picture I see a young family in a park.'",
+       "audioText": "Na slici vidim mladu obitelj u parku."
       }
      ],
      "sources": [
@@ -22218,6 +22900,17 @@
        ],
        "answer": "Tražim posao u kojem mogu koristiti svoje znanje.",
        "explanation": "u + locative of koji → u kojem; then mogu + infinitive koristiti. u koji (acc.) / u kojega and koristim break the pattern."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Zovem se Ivan i rođen sam 1988. ___ u Francuskoj.'",
+       "difficulty": 5,
+       "answer": "godine",
+       "accepted": [
+        "godine"
+       ],
+       "explanation": "The audio says 'Zovem se Ivan i rođen sam 1988. godine u Francuskoj.', which means 'My name is Ivan and I was born in 1988 in France.'",
+       "audioText": "Zovem se Ivan i rođen sam 1988. godine u Francuskoj."
       }
      ],
      "sources": [
@@ -22494,6 +23187,17 @@
        ],
        "answer": "Oprostite, htio sam reći nešto drugo.",
        "explanation": "Male speaker: htio sam (not feminine htjela, not 2nd-person si) + infinitive reći (not the participle rekao)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Dobar dan, ___ mi je. Ja sam Ivan.'",
+       "difficulty": 4,
+       "answer": "drago",
+       "accepted": [
+        "drago"
+       ],
+       "explanation": "The audio says 'Dobar dan, drago mi je. Ja sam Ivan.', which means 'Good afternoon, pleased to meet you. I'm Ivan.'",
+       "audioText": "Dobar dan, drago mi je. Ja sam Ivan."
       }
      ],
      "sources": [
@@ -23032,6 +23736,17 @@
        ],
        "answer": "Jučer sam pročitao cijelu knjigu i svidjela mi se.",
        "explanation": "Completed whole → pročitao (perfective, masculine); sviđati se + dative → svidjela mi se (not accusative 'me se')."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Padež: 'Idem u kino.' (___ smjera), 'Bio sam u kinu.' (lokativ mjesta).'",
+       "difficulty": 4,
+       "answer": "akuzativ",
+       "accepted": [
+        "akuzativ"
+       ],
+       "explanation": "The audio says 'Padež: 'Idem u kino.' (akuzativ smjera), 'Bio sam u kinu.' (lokativ mjesta).', which means 'Case: 'I'm going to the cinema' (accusative of direction), 'I was at the cinema' (locative of place).'",
+       "audioText": "Padež: 'Idem u kino.' (akuzativ smjera), 'Bio sam u kinu.' (lokativ mjesta)."
       }
      ],
      "sources": [
@@ -23581,6 +24296,17 @@
        ],
        "explanation": "početkom + genitive → rujan → rujna (fleeting a drops). The frame word početkom forces the genitive.",
        "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Prvo ___, pa tekst: znaš što tražiš prije nego počneš čitati.'",
+       "difficulty": 5,
+       "answer": "pitanja",
+       "accepted": [
+        "pitanja"
+       ],
+       "explanation": "The audio says 'Prvo pitanja, pa tekst: znaš što tražiš prije nego počneš čitati.', which means 'Questions first, then the text: know what you're hunting before you read.'",
+       "audioText": "Prvo pitanja, pa tekst: znaš što tražiš prije nego počneš čitati."
       }
      ],
      "sources": [
@@ -23857,6 +24583,17 @@
         "gradu"
        ],
        "explanation": "Comparative adverb Ljepše + je + infinitive; na moru / u gradu = locative; nego marks the comparison."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Hrvatska ima oko četiri milijuna ___.'",
+       "difficulty": 5,
+       "answer": "stanovnika",
+       "accepted": [
+        "stanovnika"
+       ],
+       "explanation": "The audio says 'Hrvatska ima oko četiri milijuna stanovnika.', which means 'Croatia has about four million inhabitants.'",
+       "audioText": "Hrvatska ima oko četiri milijuna stanovnika."
       }
      ],
      "sources": [
@@ -24144,6 +24881,17 @@
        ],
        "answer": "Studirao sam informatiku i diplomirao prije osam godina.",
        "explanation": "Both participles masculine (studirao, diplomirao) for a male candidate; prije osam godina = genitive plural after the number."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Opis slike: ___ vrijeme. 'Na slici vidim… Djeca se igraju…''",
+       "difficulty": 5,
+       "answer": "sadašnje",
+       "accepted": [
+        "sadašnje"
+       ],
+       "explanation": "The audio says 'Opis slike: sadašnje vrijeme. 'Na slici vidim… Djeca se igraju…'', which means 'Picture description: present tense. 'In the picture I see… The children are playing…''",
+       "audioText": "Opis slike: sadašnje vrijeme. 'Na slici vidim… Djeca se igraju…'"
       }
      ],
      "sources": [
@@ -24454,6 +25202,17 @@
        ],
        "answer": "Volim ga jer zvuči lijepo; na primjer, uživam u pjesmama Olivera Dragojevića.",
        "explanation": "Only 'Volim ga jer zvuči lijepo...' gives statement + reason + example, three sentences of content, exactly what examiners reward."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Slažem se s tim, i to ___ što…'",
+       "difficulty": 5,
+       "answer": "zato",
+       "accepted": [
+        "zato"
+       ],
+       "explanation": "The audio says 'Slažem se s tim, i to zato što…', which means 'I agree with that, and that's because…'",
+       "audioText": "Slažem se s tim, i to zato što…"
       }
      ],
      "sources": [
@@ -25019,6 +25778,17 @@
        ],
        "answer": "which detail is absent from the text",
        "explanation": "ne spominje se = is not mentioned. Scan each option against the text; the answer is the one you cannot find."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'istinito / lažno (točno / ___)'",
+       "difficulty": 4,
+       "answer": "netočno",
+       "accepted": [
+        "netočno"
+       ],
+       "explanation": "The audio says 'istinito / lažno (točno / netočno)', which means 'true / false'",
+       "audioText": "istinito / lažno (točno / netočno)"
       }
      ],
      "sources": [
@@ -25313,6 +26083,17 @@
        ],
        "answer": "Kad bih imao vremena, putovao bih",
        "explanation": "kad bih + participle (imao) in the if-clause; putovao bih in the main clause. Both halves carry bih."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'pet ___, šest ljudi'",
+       "difficulty": 5,
+       "answer": "godina",
+       "accepted": [
+        "godina"
+       ],
+       "explanation": "The audio says 'pet godina, šest ljudi', which means 'five years, six people'",
+       "audioText": "pet godina, šest ljudi"
       }
      ],
      "sources": [
@@ -25900,6 +26681,17 @@
        ],
        "answer": "Jučer sam joj ga kupio",
        "explanation": "After Jučer: aux sam → dative joj → accusative ga → participle kupio. The aux sam precedes the pronoun clitics (only 'je' goes last)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'usporediti s ___ ispitom'",
+       "difficulty": 5,
+       "answer": "prošlim",
+       "accepted": [
+        "prošlim"
+       ],
+       "explanation": "The audio says 'usporediti s prošlim ispitom', which means 'to compare with the previous test'",
+       "audioText": "usporediti s prošlim ispitom"
       }
      ],
      "sources": [
@@ -26177,6 +26969,17 @@
        ],
        "answer": "Jesi li im ga već pročitao",
        "explanation": "li after Jesi, then dative im → accusative ga, the adverb već, and the participle: Jesi li im ga već pročitao?"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Slušanje: broj čuješ ___, zapiši ga odmah.'",
+       "difficulty": 5,
+       "answer": "jednom",
+       "accepted": [
+        "jednom"
+       ],
+       "explanation": "The audio says 'Slušanje: broj čuješ jednom, zapiši ga odmah.', which means 'Listening: you hear the number once, write it down at once.'",
+       "audioText": "Slušanje: broj čuješ jednom, zapiši ga odmah."
       }
      ],
      "sources": [
@@ -26455,6 +27258,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "Pass 2 of proofreading catches the diacritics: Zavrsio → Završio, skolu → školu."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'opis (dana, doma, ___)'",
+       "difficulty": 4,
+       "answer": "slike",
+       "accepted": [
+        "slike"
+       ],
+       "explanation": "The audio says 'opis (dana, doma, slike)', which means 'a description (of a day, a home, a picture)'",
+       "audioText": "opis (dana, doma, slike)"
       }
      ],
      "sources": [
@@ -26727,6 +27541,17 @@
        ],
        "answer": "draft, count sentences, proofread",
        "explanation": "Draft the text, count to 7-8 sentences, then two proofreading passes (endings/cases, then diacritics)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Kako da to ___…'",
+       "difficulty": 4,
+       "answer": "kažem",
+       "accepted": [
+        "kažem"
+       ],
+       "explanation": "The audio says 'Kako da to kažem…', which means 'How should I put this…'",
+       "audioText": "Kako da to kažem…"
       }
      ],
      "sources": [
@@ -27002,6 +27827,17 @@
        ],
        "answer": "Kad položim ispit, proslavit ću s obitelji",
        "explanation": "Kad + present položim (a future time clause), then futur I proslavit ću + s obitelji (instrumental). Two hundred and forty days, well earned."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Mogu voditi pravi ___ o poznatim temama.'",
+       "difficulty": 4,
+       "answer": "razgovor",
+       "accepted": [
+        "razgovor"
+       ],
+       "explanation": "The audio says 'Mogu voditi pravi razgovor o poznatim temama.', which means 'I can hold a real conversation on familiar topics.'",
+       "audioText": "Mogu voditi pravi razgovor o poznatim temama."
       }
      ],
      "sources": [
@@ -27187,6 +28023,17 @@
         "kuće"
        ],
        "explanation": "Djeca se igraju skrivača iza kuće. se sits in second position; the game stands in the genitive (skrivača), and iza also takes the genitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Djeca se igraju ___ u dvorištu.'",
+       "difficulty": 6,
+       "answer": "skrivača",
+       "accepted": [
+        "skrivača"
+       ],
+       "explanation": "The audio says 'Djeca se igraju skrivača u dvorištu.', which means 'The children are playing hide-and-seek in the yard.'",
+       "audioText": "Djeca se igraju skrivača u dvorištu."
       }
      ],
      "sources": [
@@ -27367,6 +28214,17 @@
         "medicinu"
        ],
        "explanation": "To je žena čiji sin studira medicinu. čiji agrees with sin (masculine), even though the owner is a woman."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Kolega s kojim dijelim ured danas je ___.'",
+       "difficulty": 6,
+       "answer": "bolestan",
+       "accepted": [
+        "bolestan"
+       ],
+       "explanation": "The audio says 'Kolega s kojim dijelim ured danas je bolestan.', which means 'The colleague I share an office with is ill today.'",
+       "audioText": "Kolega s kojim dijelim ured danas je bolestan."
       }
      ],
      "sources": [
@@ -27541,6 +28399,17 @@
         "vrijeme"
        ],
        "explanation": "Počnimo sastanak na vrijeme. početi -> počnimo, the mi-imperative."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Hajdemo na kavu poslije ___.'",
+       "difficulty": 5,
+       "answer": "predavanja",
+       "accepted": [
+        "predavanja"
+       ],
+       "explanation": "The audio says 'Hajdemo na kavu poslije predavanja.', which means 'Let's go for a coffee after the lecture.'",
+       "audioText": "Hajdemo na kavu poslije predavanja."
       }
      ],
      "sources": [
@@ -27719,6 +28588,17 @@
         "lipnja"
        ],
        "explanation": "Moja je sestra rođena drugog lipnja. The enclitic je slips into second position, splitting moja and sestra; the date is genitive."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Koji je danas datum? Danas je prvi ___.'",
+       "difficulty": 6,
+       "answer": "ožujka",
+       "accepted": [
+        "ožujka"
+       ],
+       "explanation": "The audio says 'Koji je danas datum? Danas je prvi ožujka.', which means 'What is the date today? Today is the first of March.'",
+       "audioText": "Koji je danas datum? Danas je prvi ožujka."
       }
      ],
      "sources": [
@@ -27899,6 +28779,17 @@
         "koncert"
        ],
        "explanation": "Nas dvoje imamo pet ulaznica za koncert. pet + genitive plural ulaznica; nas dvoje takes a plural verb when it is the subject."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Na tečaju je petnaest ___ iz šest zemalja.'",
+       "difficulty": 6,
+       "answer": "studenata",
+       "accepted": [
+        "studenata"
+       ],
+       "explanation": "The audio says 'Na tečaju je petnaest studenata iz šest zemalja.', which means 'There are fifteen students from six countries on the course.'",
+       "audioText": "Na tečaju je petnaest studenata iz šest zemalja."
       }
      ],
      "sources": [
@@ -28073,6 +28964,17 @@
         "hrvatski"
        ],
        "explanation": "Ovdje se govori hrvatski. The se-passive with se in second position."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'U Dalmaciji se ___ kasno.'",
+       "difficulty": 6,
+       "answer": "večera",
+       "accepted": [
+        "večera"
+       ],
+       "explanation": "The audio says 'U Dalmaciji se večera kasno.', which means 'In Dalmatia, dinner is eaten late.'",
+       "audioText": "U Dalmaciji se večera kasno."
       }
      ],
      "sources": [
@@ -28250,6 +29152,17 @@
         "slušateljima"
        ],
        "explanation": "Pjevačica je zahvalila slušateljima. zahvaliti takes the dative: slušateljima."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Voditelj emisije predstavio je ___ gosta.'",
+       "difficulty": 5,
+       "answer": "večerašnjeg",
+       "accepted": [
+        "večerašnjeg"
+       ],
+       "explanation": "The audio says 'Voditelj emisije predstavio je večerašnjeg gosta.', which means 'The host of the show introduced tonight's guest.'",
+       "audioText": "Voditelj emisije predstavio je večerašnjeg gosta."
       }
      ],
      "sources": [
@@ -28424,6 +29337,17 @@
         "kućicu"
        ],
        "explanation": "Djevojčica je crtala kućicu. Two diminutives: djevojčica from djevojka, kućica from kuća."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Iznajmili smo malu ___ uz more.'",
+       "difficulty": 6,
+       "answer": "kućicu",
+       "accepted": [
+        "kućicu"
+       ],
+       "explanation": "The audio says 'Iznajmili smo malu kućicu uz more.', which means 'We rented a little house by the sea.'",
+       "audioText": "Iznajmili smo malu kućicu uz more."
       }
      ],
      "sources": [
@@ -28608,6 +29532,17 @@
         "priču"
        ],
        "explanation": "Baka nam je ispričala zanimljivu priču. The dative clitic nam comes before je, and the whole chain sits in second position."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Dok smo putovali, baka nam je pričala o svom ___.'",
+       "difficulty": 6,
+       "answer": "djetinjstvu",
+       "accepted": [
+        "djetinjstvu"
+       ],
+       "explanation": "The audio says 'Dok smo putovali, baka nam je pričala o svom djetinjstvu.', which means 'While we were travelling, grandma was telling us about her childhood.'",
+       "audioText": "Dok smo putovali, baka nam je pričala o svom djetinjstvu."
       }
      ],
      "sources": [
@@ -28782,6 +29717,17 @@
         "pjevali"
        ],
        "explanation": "Navečer bismo zajedno pjevali. The auxiliary bismo takes second position, like every enclitic."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Ljeti ___ svaki dan išli na plažu.'",
+       "difficulty": 6,
+       "answer": "bismo",
+       "accepted": [
+        "bismo"
+       ],
+       "explanation": "The audio says 'Ljeti bismo svaki dan išli na plažu.', which means 'In the summer we would go to the beach every day.'",
+       "audioText": "Ljeti bismo svaki dan išli na plažu."
       }
      ],
      "sources": [
@@ -28958,6 +29904,17 @@
         "ugovor"
        ],
        "explanation": "Poštovana gospođo, šaljem Vam ugovor. Vocative gospođo opens the letter; the formal Vam is capitalized."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Poštovani gospodine Horvat, javljam Vam se u vezi s ___.'",
+       "difficulty": 6,
+       "answer": "natječajem",
+       "accepted": [
+        "natječajem"
+       ],
+       "explanation": "The audio says 'Poštovani gospodine Horvat, javljam Vam se u vezi s natječajem.', which means 'Dear Mr Horvat, I am writing to you regarding the job posting.'",
+       "audioText": "Poštovani gospodine Horvat, javljam Vam se u vezi s natječajem."
       }
      ],
      "sources": [
@@ -29138,6 +30095,17 @@
         "pokazao"
        ],
        "explanation": "Znam da joj ga je jučer pokazao. Dative joj, accusative ga, and je last: the full textbook chain."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Rekao je da će mi ga sutra ___.'",
+       "difficulty": 7,
+       "answer": "vratiti",
+       "accepted": [
+        "vratiti"
+       ],
+       "explanation": "The audio says 'Rekao je da će mi ga sutra vratiti.', which means 'He said he would give it back to me tomorrow.'",
+       "audioText": "Rekao je da će mi ga sutra vratiti."
       }
      ],
      "sources": [
@@ -29317,6 +30285,17 @@
         "rezervaciju"
        ],
        "explanation": "Želio bih otkazati svoju rezervaciju. Polite conditional plus svoju, because the reservation belongs to the subject."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Želio bih ___ putovanje za dvije osobe.'",
+       "difficulty": 6,
+       "answer": "rezervirati",
+       "accepted": [
+        "rezervirati"
+       ],
+       "explanation": "The audio says 'Želio bih rezervirati putovanje za dvije osobe.', which means 'I would like to book a trip for two people.'",
+       "audioText": "Želio bih rezervirati putovanje za dvije osobe."
       }
      ],
      "sources": [
@@ -29503,6 +30482,17 @@
         "škole"
        ],
        "explanation": "Nedostaju mi prijatelji iz škole. prijatelji is the subject, so the verb is plural: nedostaju."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Žao mi je što nisam mogla doći na ___.'",
+       "difficulty": 6,
+       "answer": "proslavu",
+       "accepted": [
+        "proslavu"
+       ],
+       "explanation": "The audio says 'Žao mi je što nisam mogla doći na proslavu.', which means 'I am sorry I could not come to the celebration.'",
+       "audioText": "Žao mi je što nisam mogla doći na proslavu."
       }
      ],
      "sources": [
@@ -29680,6 +30670,17 @@
         "gradu"
        ],
        "explanation": "Željeti takes the infinitive promijeniti; the indefinite pronoun nešto is its object, and u + locative gives the place."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Mislim da je ___ važno jer čovjek najviše nauči kad pomaže drugima.'",
+       "difficulty": 6,
+       "answer": "volontiranje",
+       "accepted": [
+        "volontiranje"
+       ],
+       "explanation": "The audio says 'Mislim da je volontiranje važno jer čovjek najviše nauči kad pomaže drugima.', which means 'I think volunteering is important because a person learns the most when helping others.'",
+       "audioText": "Mislim da je volontiranje važno jer čovjek najviše nauči kad pomaže drugima."
       }
      ],
      "sources": [
@@ -30744,6 +31745,17 @@
         "novca"
        ],
        "explanation": "Željeti takes the infinitive uštedjeti; malo is followed by the genitive novca, and svaki mjesec gives the time."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Najveći nam je trošak najam stana, pa ___ uštedjeti na svemu ostalome.'",
+       "difficulty": 6,
+       "answer": "pokušavamo",
+       "accepted": [
+        "pokušavamo"
+       ],
+       "explanation": "The audio says 'Najveći nam je trošak najam stana, pa pokušavamo uštedjeti na svemu ostalome.', which means 'Our biggest expense is the flat rent, so we try to save on everything else.'",
+       "audioText": "Najveći nam je trošak najam stana, pa pokušavamo uštedjeti na svemu ostalome."
       }
      ],
      "sources": [
@@ -30922,6 +31934,17 @@
         "utakmici"
        ],
        "explanation": "The clitic je sits in second position; pobijediti is intransitive here, so the game appears as 'na utakmici' in the locative."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Volim sport u kojem se ___ ekipa, a ne samo jedan igrač.'",
+       "difficulty": 6,
+       "answer": "cijeni",
+       "accepted": [
+        "cijeni"
+       ],
+       "explanation": "The audio says 'Volim sport u kojem se cijeni ekipa, a ne samo jedan igrač.', which means 'I like the kind of sport where the team is valued, not just a single player.'",
+       "audioText": "Volim sport u kojem se cijeni ekipa, a ne samo jedan igrač."
       }
      ],
      "sources": [
@@ -31102,6 +32125,17 @@
         "osam"
        ],
        "explanation": "Here da is the conjunction 'that' after čuo sam; the clause keeps normal order, with emisija as its subject."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Ta emisija traje već deset godina i još uvijek ima najviše ___.'",
+       "difficulty": 6,
+       "answer": "gledatelja",
+       "accepted": [
+        "gledatelja"
+       ],
+       "explanation": "The audio says 'Ta emisija traje već deset godina i još uvijek ima najviše gledatelja.', which means 'That show has been running for ten years and still has the most viewers.'",
+       "audioText": "Ta emisija traje već deset godina i još uvijek ima najviše gledatelja."
       }
      ],
      "sources": [
@@ -31278,6 +32312,17 @@
         "kćer"
        ],
        "explanation": "Ponosan biti na takes the accusative; kći becomes kćer, and svoju agrees with it."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Kad sam shvatio da su svi dobro, osjetio sam veliko ___.'",
+       "difficulty": 6,
+       "answer": "olakšanje",
+       "accepted": [
+        "olakšanje"
+       ],
+       "explanation": "The audio says 'Kad sam shvatio da su svi dobro, osjetio sam veliko olakšanje.', which means 'When I realized everyone was fine, I felt great relief.'",
+       "audioText": "Kad sam shvatio da su svi dobro, osjetio sam veliko olakšanje."
       }
      ],
      "sources": [
@@ -31456,6 +32501,17 @@
         "sve"
        ],
        "explanation": "Morati takes the infinitive biti; isti (the same) agrees with the masculine zakon, and za sve gives 'for everyone'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Zakon ___ za sve jednako, barem bi tako trebalo biti.'",
+       "difficulty": 6,
+       "answer": "vrijedi",
+       "accepted": [
+        "vrijedi"
+       ],
+       "explanation": "The audio says 'Zakon vrijedi za sve jednako, barem bi tako trebalo biti.', which means 'The law applies to everyone equally, at least that's how it should be.'",
+       "audioText": "Zakon vrijedi za sve jednako, barem bi tako trebalo biti."
       }
      ],
      "sources": [
@@ -31632,6 +32688,17 @@
         "susjedima"
        ],
        "explanation": "Odnos is the accusative object of imamo; 'with the neighbours' is sa plus the instrumental plural susjedima."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Dobar odnos sa ___ vrijedi više od visoke ograde.'",
+       "difficulty": 6,
+       "answer": "susjedima",
+       "accepted": [
+        "susjedima"
+       ],
+       "explanation": "The audio says 'Dobar odnos sa susjedima vrijedi više od visoke ograde.', which means 'A good relationship with the neighbours is worth more than a high fence.'",
+       "audioText": "Dobar odnos sa susjedima vrijedi više od visoke ograde."
       }
      ],
      "sources": [
@@ -31812,6 +32879,17 @@
         "čudno"
        ],
        "explanation": "The clitic se comes early in the sentence; dogodilo agrees with the neuter nešto, and čudno describes it."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Ako projekt ne ___ do roka, izgubit ćemo klijenta.'",
+       "difficulty": 6,
+       "answer": "završimo",
+       "accepted": [
+        "završimo"
+       ],
+       "explanation": "The audio says 'Ako projekt ne završimo do roka, izgubit ćemo klijenta.', which means 'If we don't finish the project by the deadline, we'll lose the client.'",
+       "audioText": "Ako projekt ne završimo do roka, izgubit ćemo klijenta."
       }
      ],
      "sources": [
@@ -31988,6 +33066,17 @@
         "prve"
        ],
        "explanation": "Položiti is perfective; the idiom 'iz prve' means on the first attempt."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Položio sam ispit iz prve, iako sam ___ da ću pasti.'",
+       "difficulty": 6,
+       "answer": "mislio",
+       "accepted": [
+        "mislio"
+       ],
+       "explanation": "The audio says 'Položio sam ispit iz prve, iako sam mislio da ću pasti.', which means 'I passed the exam on the first try, even though I thought I'd fail.'",
+       "audioText": "Položio sam ispit iz prve, iako sam mislio da ću pasti."
       }
      ],
      "sources": [
@@ -32164,6 +33253,17 @@
         "rješenje"
        ],
        "explanation": "The auxiliary su plus pronašli forms the perfect; novo rješenje is the neuter accusative object."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Novo ___ pokazuje da kratke šetnje poboljšavaju pamćenje.'",
+       "difficulty": 6,
+       "answer": "istraživanje",
+       "accepted": [
+        "istraživanje"
+       ],
+       "explanation": "The audio says 'Novo istraživanje pokazuje da kratke šetnje poboljšavaju pamćenje.', which means 'New research shows that short walks improve memory.'",
+       "audioText": "Novo istraživanje pokazuje da kratke šetnje poboljšavaju pamćenje."
       }
      ],
      "sources": [
@@ -32340,6 +33440,17 @@
         "kazalištu"
        ],
        "explanation": "Being present somewhere takes u plus the locative, u kazalištu, with the clitic smo in second position."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Sinoć smo bili u ___ na predstavi koja me nasmijala do suza.'",
+       "difficulty": 5,
+       "answer": "kazalištu",
+       "accepted": [
+        "kazalištu"
+       ],
+       "explanation": "The audio says 'Sinoć smo bili u kazalištu na predstavi koja me nasmijala do suza.', which means 'Last night we were at the theatre at a performance that made me laugh to tears.'",
+       "audioText": "Sinoć smo bili u kazalištu na predstavi koja me nasmijala do suza."
       }
      ],
      "sources": [
@@ -32522,6 +33633,17 @@
         "godina"
        ],
        "explanation": "The clitic je takes second position right after Ovaj; star agrees with spomenik, and 'više od sto godina' gives the age."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Ovaj je ___ podignut u čast ljudima koji su poginuli u ratu.'",
+       "difficulty": 6,
+       "answer": "spomenik",
+       "accepted": [
+        "spomenik"
+       ],
+       "explanation": "The audio says 'Ovaj je spomenik podignut u čast ljudima koji su poginuli u ratu.', which means 'This monument was raised in honour of the people who died in the war.'",
+       "audioText": "Ovaj je spomenik podignut u čast ljudima koji su poginuli u ratu."
       }
      ],
      "sources": [
@@ -32698,6 +33820,17 @@
         "sata"
        ],
        "explanation": "The clitic je stands second; kasnio is the past of kasniti, and 'pola sata' takes the genitive sata."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Na granici su nam ___ putovnice, ali sve je prošlo brzo.'",
+       "difficulty": 6,
+       "answer": "pregledali",
+       "accepted": [
+        "pregledali"
+       ],
+       "explanation": "The audio says 'Na granici su nam pregledali putovnice, ali sve je prošlo brzo.', which means 'At the border they checked our passports, but it all went quickly.'",
+       "audioText": "Na granici su nam pregledali putovnice, ali sve je prošlo brzo."
       }
      ],
      "sources": [
@@ -32880,6 +34013,17 @@
         "godina"
        ],
        "explanation": "'To be married' is 'biti u braku' with the locative; the duration 'trideset godina' takes the genitive plural."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Njezin dečko je jučer prvi put došao na ___ ručak.'",
+       "difficulty": 6,
+       "answer": "obiteljski",
+       "accepted": [
+        "obiteljski"
+       ],
+       "explanation": "The audio says 'Njezin dečko je jučer prvi put došao na obiteljski ručak.', which means 'Her boyfriend came to the family lunch for the first time yesterday.'",
+       "audioText": "Njezin dečko je jučer prvi put došao na obiteljski ručak."
       }
      ],
      "sources": [
@@ -33056,6 +34200,17 @@
         "godina"
        ],
        "explanation": "The idiom 'sto godina' means 'for ages'; the reflexive se follows the negated auxiliary nismo."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Ma daj, ti nikada nisi stigao na ___, a sad si prvi.'",
+       "difficulty": 5,
+       "answer": "vrijeme",
+       "accepted": [
+        "vrijeme"
+       ],
+       "explanation": "The audio says 'Ma daj, ti nikada nisi stigao na vrijeme, a sad si prvi.', which means 'Oh come on, you were never on time, and now you're first.'",
+       "audioText": "Ma daj, ti nikada nisi stigao na vrijeme, a sad si prvi."
       }
      ],
      "sources": [
@@ -33232,6 +34387,17 @@
         "običaje"
        ],
        "explanation": "Svaki kraj is the subject; svoje refers back to it, and običaje is the accusative plural object."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Nedjeljom baka ide na misu, a djed je čeka pred ___.'",
+       "difficulty": 6,
+       "answer": "crkvom",
+       "accepted": [
+        "crkvom"
+       ],
+       "explanation": "The audio says 'Nedjeljom baka ide na misu, a djed je čeka pred crkvom.', which means 'On Sundays grandma goes to mass, and grandpa waits for her in front of the church.'",
+       "audioText": "Nedjeljom baka ide na misu, a djed je čeka pred crkvom."
       }
      ],
      "sources": [
@@ -33406,6 +34572,17 @@
         "jutro"
        ],
        "explanation": "Novine is the accusative object, plural in form; 'svako jutro' gives the habitual time."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Otkad čitam novine na ___, mnogo brže shvaćam vijesti.'",
+       "difficulty": 6,
+       "answer": "hrvatskom",
+       "accepted": [
+        "hrvatskom"
+       ],
+       "explanation": "The audio says 'Otkad čitam novine na hrvatskom, mnogo brže shvaćam vijesti.', which means 'Since I read the newspaper in Croatian, I grasp the news much faster.'",
+       "audioText": "Otkad čitam novine na hrvatskom, mnogo brže shvaćam vijesti."
       }
      ],
      "sources": [
@@ -33579,6 +34756,17 @@
        ],
        "answer": "trgu",
        "explanation": "After na for a static location Croatian uses the locative; glavni trg becomes na glavnom trgu."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Poštovani ___, vlak za Rijeku kasni deset minuta.'",
+       "difficulty": 6,
+       "answer": "putnici",
+       "accepted": [
+        "putnici"
+       ],
+       "explanation": "The audio says 'Poštovani putnici, vlak za Rijeku kasni deset minuta.', which means 'Dear passengers, the train to Rijeka is ten minutes late.'",
+       "audioText": "Poštovani putnici, vlak za Rijeku kasni deset minuta."
       }
      ],
      "sources": [
@@ -33752,6 +34940,17 @@
        ],
        "answer": "šeta",
        "explanation": "A regular, repeated habit takes the imperfective present šeta; the perfective prošeta would mean one completed walk."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Posao volim, ali mi je najteže rano ___ zimi.'",
+       "difficulty": 6,
+       "answer": "ustajati",
+       "accepted": [
+        "ustajati"
+       ],
+       "explanation": "The audio says 'Posao volim, ali mi je najteže rano ustajati zimi.', which means 'I love the job, but the hardest thing for me is getting up early in winter.'",
+       "audioText": "Posao volim, ali mi je najteže rano ustajati zimi."
       }
      ],
      "sources": [
@@ -33929,6 +35128,17 @@
         "tobom"
        ],
        "explanation": "Slagati se s + instrumental; the clitic se follows the verb and s tobom closes the phrase."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Ivan: Ovaj stan mi je predobar da bismo ga ___.'",
+       "difficulty": 7,
+       "answer": "propustili",
+       "accepted": [
+        "propustili"
+       ],
+       "explanation": "The audio says 'Ivan: Ovaj stan mi je predobar da bismo ga propustili.', which means 'Ivan: This flat is too good for us to miss.'",
+       "audioText": "Ivan: Ovaj stan mi je predobar da bismo ga propustili."
       }
      ],
      "sources": [
@@ -34108,6 +35318,17 @@
        ],
        "answer": "tisuću devetsto osamdesete godine",
        "explanation": "Croatian dates the year in the genitive: osamdesete godine, only the last element is ordinal."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Ana Kovač rođena je tisuću devetsto ___ godine u Splitu.'",
+       "difficulty": 7,
+       "answer": "osamdesete",
+       "accepted": [
+        "osamdesete"
+       ],
+       "explanation": "The audio says 'Ana Kovač rođena je tisuću devetsto osamdesete godine u Splitu.', which means 'Ana Kovac was born in nineteen eighty in Split.'",
+       "audioText": "Ana Kovač rođena je tisuću devetsto osamdesete godine u Splitu."
       }
      ],
      "sources": [
@@ -34286,6 +35507,17 @@
         "promjenu"
        ],
        "explanation": "Srecom opens with the author's positive stance; sve više + genitive plural ljudi is 'more and more people'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Smatram da bi gradovi trebali imati više zelenih ___.'",
+       "difficulty": 7,
+       "answer": "površina",
+       "accepted": [
+        "površina"
+       ],
+       "explanation": "The audio says 'Smatram da bi gradovi trebali imati više zelenih površina.', which means 'I believe that cities should have more green spaces.'",
+       "audioText": "Smatram da bi gradovi trebali imati više zelenih površina."
       }
      ],
      "sources": [
@@ -34468,6 +35700,17 @@
        ],
        "answer": "stolu, the locative",
        "explanation": "For where something is (not motion to), na takes the locative: na stolu."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Ne mogu ___ jutro bez ___ (kava).'",
+       "difficulty": 7,
+       "answer": "zamisliti",
+       "accepted": [
+        "zamisliti"
+       ],
+       "explanation": "The audio says 'Ne mogu zamisliti jutro bez ___ (kava).', which means 'I can't imagine a morning without coffee.'",
+       "audioText": "Ne mogu zamisliti jutro bez ___ (kava)."
       }
      ],
      "sources": [
@@ -34645,6 +35888,17 @@
         "ljetu"
        ],
        "explanation": "Radovati se governs the dative, so ljeto becomes ljetu."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Bez dobre ___ nema uspjeha. (___)'",
+       "difficulty": 7,
+       "answer": "priprema",
+       "accepted": [
+        "priprema"
+       ],
+       "explanation": "The audio says 'Bez dobre ___ nema uspjeha. (priprema)', which means 'Without good preparation there is no success.'",
+       "audioText": "Bez dobre ___ nema uspjeha. (priprema)"
       }
      ],
      "sources": [
@@ -34829,6 +36083,17 @@
         "telefon"
        ],
        "explanation": "The background pisao is imperfective; the single interrupting event zazvonio is perfective."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Cijelo jutro sam čitao, ali nisam ___ knjigu.'",
+       "difficulty": 7,
+       "answer": "pročitao",
+       "accepted": [
+        "pročitao"
+       ],
+       "explanation": "The audio says 'Cijelo jutro sam čitao, ali nisam pročitao knjigu.', which means 'I read all morning, but I didn't finish the book.'",
+       "audioText": "Cijelo jutro sam čitao, ali nisam pročitao knjigu."
       }
      ],
      "sources": [
@@ -35001,6 +36266,17 @@
         "golubove"
        ],
        "explanation": "Hraniti takes the accusative object golubove; the present tense shows the ongoing action."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Na slici vidim mali trg u ___ grada.'",
+       "difficulty": 6,
+       "answer": "središtu",
+       "accepted": [
+        "središtu"
+       ],
+       "explanation": "The audio says 'Na slici vidim mali trg u središtu grada.', which means 'In the picture I see a small square in the city centre.'",
+       "audioText": "Na slici vidim mali trg u središtu grada."
       }
      ],
      "sources": [
@@ -35180,6 +36456,17 @@
         "odgovoru"
        ],
        "explanation": "Zahvaljivati takes the dative person vam and na plus the locative odgovoru."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Poštovani, ___ vam se zbog oglasa za stan.'",
+       "difficulty": 7,
+       "answer": "obraćam",
+       "accepted": [
+        "obraćam"
+       ],
+       "explanation": "The audio says 'Poštovani, obraćam vam se zbog oglasa za stan.', which means 'Dear Sir or Madam, I am writing to you about the flat advertisement.'",
+       "audioText": "Poštovani, obraćam vam se zbog oglasa za stan."
       }
      ],
      "sources": [
@@ -35359,6 +36646,17 @@
         "putovanju"
        ],
        "explanation": "The conditional govorio bih softens the opener; o putovanju uses the locative after o."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Danas bih govorio o ___ života u malom gradu.'",
+       "difficulty": 7,
+       "answer": "prednostima",
+       "accepted": [
+        "prednostima"
+       ],
+       "explanation": "The audio says 'Danas bih govorio o prednostima života u malom gradu.', which means 'Today I'd like to speak about the advantages of life in a small town.'",
+       "audioText": "Danas bih govorio o prednostima života u malom gradu."
       }
      ],
      "sources": [
@@ -35536,6 +36834,17 @@
         "proći"
        ],
        "explanation": "The modal mora is followed by the infinitive proci, standard Croatian for must."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Na probnom ispitu najviše sam ___ u slušanju.'",
+       "difficulty": 7,
+       "answer": "pogriješio",
+       "accepted": [
+        "pogriješio"
+       ],
+       "explanation": "The audio says 'Na probnom ispitu najviše sam pogriješio u slušanju.', which means 'In the practice exam I made the most mistakes in listening.'",
+       "audioText": "Na probnom ispitu najviše sam pogriješio u slušanju."
       }
      ],
      "sources": [
@@ -35710,6 +37019,17 @@
         "pomogli"
        ],
        "explanation": "Pomoci governs the dative, so the helped party is the clitic nam."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Prošli tjedan ___ smo se u novi stan.'",
+       "difficulty": 6,
+       "answer": "preselili",
+       "accepted": [
+        "preselili"
+       ],
+       "explanation": "The audio says 'Prošli tjedan preselili smo se u novi stan.', which means 'Last week we moved into a new flat.'",
+       "audioText": "Prošli tjedan preselili smo se u novi stan."
       }
      ],
      "sources": [
@@ -35891,6 +37211,17 @@
         "telefon"
        ],
        "explanation": "The frame razgovarali is imperfective; the sudden zazvonio is perfective."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Sinoć smo ___ u kafiću kad je počela svirati glazba.'",
+       "difficulty": 7,
+       "answer": "sjedili",
+       "accepted": [
+        "sjedili"
+       ],
+       "explanation": "The audio says 'Sinoć smo sjedili u kafiću kad je počela svirati glazba.', which means 'Last night we were sitting in a cafe when the music started.'",
+       "audioText": "Sinoć smo sjedili u kafiću kad je počela svirati glazba."
       }
      ],
      "sources": [
@@ -36068,6 +37399,17 @@
         "posudila"
        ],
        "explanation": "After the fronted object Knjigu the cluster runs sam then joj, then the participle."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Vratio sam mu ga ___.'",
+       "difficulty": 7,
+       "answer": "jutros",
+       "accepted": [
+        "jutros"
+       ],
+       "explanation": "The audio says 'Vratio sam mu ga jutros.', which means 'I returned it to him this morning.'",
+       "audioText": "Vratio sam mu ga jutros."
       }
      ],
      "sources": [
@@ -36247,6 +37589,17 @@
         "tečaj"
        ],
        "explanation": "Ici has the present idem; poslije takes the genitive posla."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Svako jutro pišem popis ___ za taj dan.'",
+       "difficulty": 7,
+       "answer": "obveza",
+       "accepted": [
+        "obveza"
+       ],
+       "explanation": "The audio says 'Svako jutro pišem popis obveza za taj dan.', which means 'Every morning I write a list of tasks for that day.'",
+       "audioText": "Svako jutro pišem popis obveza za taj dan."
       }
      ],
      "sources": [
@@ -36430,6 +37783,17 @@
         "brinuo"
        ],
        "explanation": "The negated conditional keeps ne before the auxiliary bih, then the reflexive se and participle."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Kad bih imao više ___, učio bih još jedan jezik.'",
+       "difficulty": 7,
+       "answer": "vremena",
+       "accepted": [
+        "vremena"
+       ],
+       "explanation": "The audio says 'Kad bih imao više vremena, učio bih još jedan jezik.', which means 'If I had more time, I would learn another language.'",
+       "audioText": "Kad bih imao više vremena, učio bih još jedan jezik."
       }
      ],
      "sources": [
@@ -36607,6 +37971,17 @@
         "odluka"
        ],
        "explanation": "Najbolja is the irregular superlative of dobar and agrees with the feminine odluka."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Ovaj stan je veći i ___ od prošloga.'",
+       "difficulty": 6,
+       "answer": "svjetliji",
+       "accepted": [
+        "svjetliji"
+       ],
+       "explanation": "The audio says 'Ovaj stan je veći i svjetliji od prošloga.', which means 'This flat is bigger and brighter than the previous one.'",
+       "audioText": "Ovaj stan je veći i svjetliji od prošloga."
       }
      ],
      "sources": [
@@ -36783,6 +38158,17 @@
         "istinu"
        ],
        "explanation": "Vjerovati governs the dative, so koji becomes the plural dative kojima."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'To je ___ koja mi je pomogla oko selidbe.'",
+       "difficulty": 7,
+       "answer": "kolegica",
+       "accepted": [
+        "kolegica"
+       ],
+       "explanation": "The audio says 'To je kolegica koja mi je pomogla oko selidbe.', which means 'That's the colleague who helped me with the move.'",
+       "audioText": "To je kolegica koja mi je pomogla oko selidbe."
       }
      ],
      "sources": [
@@ -36959,6 +38345,17 @@
         "Njemačke"
        ],
        "explanation": "Iz takes the genitive of origin, so Njemacka becomes Njemacke."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Kupila sam ___ jabuka i litru mlijeka.'",
+       "difficulty": 6,
+       "answer": "kilogram",
+       "accepted": [
+        "kilogram"
+       ],
+       "explanation": "The audio says 'Kupila sam kilogram jabuka i litru mlijeka.', which means 'I bought a kilo of apples and a litre of milk.'",
+       "audioText": "Kupila sam kilogram jabuka i litru mlijeka."
       }
      ],
      "sources": [
@@ -37136,6 +38533,17 @@
         "me"
        ],
        "explanation": "After cim the perfective present stignes carries future meaning, and nazovi is the imperative."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Ovaj ___ ćemo obići stari grad.'",
+       "difficulty": 7,
+       "answer": "vikend",
+       "accepted": [
+        "vikend"
+       ],
+       "explanation": "The audio says 'Ovaj vikend ćemo obići stari grad.', which means 'This weekend we'll tour the old town.'",
+       "audioText": "Ovaj vikend ćemo obići stari grad."
       }
      ],
      "sources": [
@@ -37310,6 +38718,17 @@
         "jaja"
        ],
        "explanation": "Pomijesaj is the ti-imperative; the objects brasno and jaja stand in the accusative."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Prvo zagrij pećnicu na dvjesto ___.'",
+       "difficulty": 6,
+       "answer": "stupnjeva",
+       "accepted": [
+        "stupnjeva"
+       ],
+       "explanation": "The audio says 'Prvo zagrij pećnicu na dvjesto stupnjeva.', which means 'First heat the oven to two hundred degrees.'",
+       "audioText": "Prvo zagrij pećnicu na dvjesto stupnjeva."
       }
      ],
      "sources": [
@@ -37484,6 +38903,17 @@
         "tobom"
        ],
        "explanation": "Slagati se s takes the instrumental, so with you is s tobom."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Mislim da je ovaj film predug, iako je lijepo ___.'",
+       "difficulty": 6,
+       "answer": "snimljen",
+       "accepted": [
+        "snimljen"
+       ],
+       "explanation": "The audio says 'Mislim da je ovaj film predug, iako je lijepo snimljen.', which means 'I think this film is too long, although it's beautifully shot.'",
+       "audioText": "Mislim da je ovaj film predug, iako je lijepo snimljen."
       }
      ],
      "sources": [
@@ -37660,6 +39090,17 @@
         "zakasniti"
        ],
        "explanation": "The report keeps the futur ce zakasniti and links to Rekao je with da."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Rekao je da će ___ pola sata.'",
+       "difficulty": 7,
+       "answer": "zakasniti",
+       "accepted": [
+        "zakasniti"
+       ],
+       "explanation": "The audio says 'Rekao je da će zakasniti pola sata.', which means 'He said he'd be half an hour late.'",
+       "audioText": "Rekao je da će zakasniti pola sata."
       }
      ],
      "sources": [
@@ -37837,6 +39278,17 @@
         "razglednicu"
        ],
        "explanation": "The futur prvi Poslat cemo carries the dative clitic mu and the accusative object razglednicu."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Putovali smo prema jugu kad nam se ___ auto.'",
+       "difficulty": 7,
+       "answer": "pokvario",
+       "accepted": [
+        "pokvario"
+       ],
+       "explanation": "The audio says 'Putovali smo prema jugu kad nam se pokvario auto.', which means 'We were driving south when our car broke down.'",
+       "audioText": "Putovali smo prema jugu kad nam se pokvario auto."
       }
      ],
      "sources": [
@@ -38026,6 +39478,17 @@
         "zdravija"
        ],
        "explanation": "Mislim da opens the opinion, then the clause je domaća hrana zdravija."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Mislim da je domaća hrana ___ od gotove.'",
+       "difficulty": 6,
+       "answer": "zdravija",
+       "accepted": [
+        "zdravija"
+       ],
+       "explanation": "The audio says 'Mislim da je domaća hrana zdravija od gotove.', which means 'I think home-made food is healthier than ready-made.'",
+       "audioText": "Mislim da je domaća hrana zdravija od gotove."
       }
      ],
      "sources": [
@@ -38221,6 +39684,17 @@
         "grada"
        ],
        "explanation": "Two locative phrases with u stack up: u stanu and u središtu, closed by the genitive grada."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Živim u stanu u ___ grada.'",
+       "difficulty": 6,
+       "answer": "središtu",
+       "accepted": [
+        "središtu"
+       ],
+       "explanation": "The audio says 'Živim u stanu u središtu grada.', which means 'I live in a flat in the city centre.'",
+       "audioText": "Živim u stanu u središtu grada."
       }
      ],
      "sources": [
@@ -38411,6 +39885,17 @@
         "toplo"
        ],
        "explanation": "The time adverb Ljeti opens, then the impersonal je vrlo toplo."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Najviše volim proljeće jer je priroda tada ___.'",
+       "difficulty": 6,
+       "answer": "najljepša",
+       "accepted": [
+        "najljepša"
+       ],
+       "explanation": "The audio says 'Najviše volim proljeće jer je priroda tada najljepša.', which means 'I love spring most because nature is most beautiful then.'",
+       "audioText": "Najviše volim proljeće jer je priroda tada najljepša."
       }
      ],
      "sources": [
@@ -38603,6 +40088,17 @@
         "funkcioniram"
        ],
        "explanation": "Bez governs the genitive pametnog telefona, then teško funkcioniram completes the clause."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Bez pametnog telefona teško ___.'",
+       "difficulty": 6,
+       "answer": "funkcioniram",
+       "accepted": [
+        "funkcioniram"
+       ],
+       "explanation": "The audio says 'Bez pametnog telefona teško funkcioniram.', which means 'Without a smartphone I can hardly function.'",
+       "audioText": "Bez pametnog telefona teško funkcioniram."
       }
      ],
      "sources": [
@@ -38797,6 +40293,17 @@
         "automobila"
        ],
        "explanation": "The comparative brži takes od and the genitive automobila."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'U gradu je javni prijevoz brži od ___.'",
+       "difficulty": 6,
+       "answer": "automobila",
+       "accepted": [
+        "automobila"
+       ],
+       "explanation": "The audio says 'U gradu je javni prijevoz brži od automobila.', which means 'In the city public transport is faster than a car.'",
+       "audioText": "U gradu je javni prijevoz brži od automobila."
       }
      ],
      "sources": [
@@ -38989,6 +40496,17 @@
         "stresa"
        ],
        "explanation": "Previše governs the genitive rada, and dovodi do takes the genitive stresa."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Type the word you hear: 'Nakon posla volim ___ slobodno vrijeme za sport.'",
+       "difficulty": 6,
+       "answer": "iskoristiti",
+       "accepted": [
+        "iskoristiti"
+       ],
+       "explanation": "The audio says 'Nakon posla volim iskoristiti slobodno vrijeme za sport.', which means 'After work I like to use my free time for sport.'",
+       "audioText": "Nakon posla volim iskoristiti slobodno vrijeme za sport."
       }
      ],
      "sources": [
@@ -39183,6 +40701,17 @@
         "mijenjaju"
        ],
        "explanation": "The subject Neki običaji takes the reflexive se, and s vremenom uses the instrumental."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Kad idemo u goste, običaj je ___ poklon.'",
+       "difficulty": 6,
+       "answer": "donijeti",
+       "accepted": [
+        "donijeti"
+       ],
+       "explanation": "The audio says 'Kad idemo u goste, običaj je donijeti poklon.', which means 'When we visit someone, it is customary to bring a gift.'",
+       "audioText": "Kad idemo u goste, običaj je donijeti poklon."
       }
      ],
      "sources": [
@@ -39377,6 +40906,17 @@
         "korakom"
        ],
        "explanation": "The subject Svaki veliki cilj is followed by počinje and the instrumental malim korakom."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Nadam se da ću za pet godina imati ___ posao.'",
+       "difficulty": 6,
+       "answer": "stabilan",
+       "accepted": [
+        "stabilan"
+       ],
+       "explanation": "The audio says 'Nadam se da ću za pet godina imati stabilan posao.', which means 'I hope in five years I'll have a stable job.'",
+       "audioText": "Nadam se da ću za pet godina imati stabilan posao."
       }
      ],
      "sources": [
@@ -39569,6 +41109,17 @@
         "lijevo"
        ],
        "explanation": "Two imperatives join with pa: Idite ravno, then skrenite lijevo."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Oprostite, kako da dođem do glavnog ___?'",
+       "difficulty": 6,
+       "answer": "kolodvora",
+       "accepted": [
+        "kolodvora"
+       ],
+       "explanation": "The audio says 'Oprostite, kako da dođem do glavnog kolodvora?', which means 'Excuse me, how do I get to the main station?'",
+       "audioText": "Oprostite, kako da dođem do glavnog kolodvora?"
       }
      ],
      "sources": [
@@ -39761,6 +41312,17 @@
         "gramatike"
        ],
        "explanation": "The comparative važniji takes od and the genitive gramatike."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Mislim da je razgovor važniji od ___.'",
+       "difficulty": 6,
+       "answer": "gramatike",
+       "accepted": [
+        "gramatike"
+       ],
+       "explanation": "The audio says 'Mislim da je razgovor važniji od gramatike.', which means 'I think conversation is more important than grammar.'",
+       "audioText": "Mislim da je razgovor važniji od gramatike."
       }
      ],
      "sources": [

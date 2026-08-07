@@ -544,6 +544,17 @@
        ],
        "answer": "Dobro sam, hvala. A ti?",
        "explanation": "Dobro sam = I'm fine. A ti? bounces the question back informally; formally you'd say A vi?"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Dobro sam, ___. A ti?'",
+       "difficulty": 4,
+       "answer": "hvala",
+       "accepted": [
+        "hvala"
+       ],
+       "explanation": "The audio says 'Dobro sam, hvala. A ti?', which means 'I'm fine, thanks. And you? (informal)'",
+       "audioText": "Dobro sam, hvala. A ti?"
       }
      ],
      "sources": [
@@ -1379,6 +1390,17 @@
        ],
        "answer": "The verb ending already shows who the subject is",
        "explanation": "The -m in učim can only mean 'I', so ja is redundant. Keep the pronoun only for emphasis or contrast: JA učim, a ti ne."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and complete the sentence: 'Ja sam ___, a ti?'",
+       "difficulty": 3,
+       "answer": "dobro",
+       "accepted": [
+        "dobro"
+       ],
+       "explanation": "The audio says 'Ja sam dobro, a ti?', which means 'I'M fine, and you?'",
+       "audioText": "Ja sam dobro, a ti?"
       }
      ],
      "sources": [
@@ -2562,6 +2584,17 @@
        ],
        "explanation": "brat→brata and sestra→sestru because they are objects of imam, the accusative pattern you'll properly learn on lesson 11.",
        "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Imam brata i ___.'",
+       "difficulty": 4,
+       "answer": "sestru",
+       "accepted": [
+        "sestru"
+       ],
+       "explanation": "The audio says 'Imam brata i sestru.', which means 'I have a brother and a sister.'",
+       "audioText": "Imam brata i sestru."
       }
      ],
      "sources": [
@@ -3392,6 +3425,17 @@
        ],
        "answer": "Ne, ne radim.",
        "explanation": "First 'Ne,' answers the question; then 'ne radim' negates the verb. Croatian happily doubles the ne."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Je li ovo tvoj ___?'",
+       "difficulty": 3,
+       "answer": "mobitel",
+       "accepted": [
+        "mobitel"
+       ],
+       "explanation": "The audio says 'Je li ovo tvoj mobitel?', which means 'Is this your phone?'",
+       "audioText": "Je li ovo tvoj mobitel?"
       }
      ],
      "sources": [
@@ -3646,6 +3690,17 @@
        ],
        "answer": "What are you doing?",
        "explanation": "što = what, radiš = you do/are doing. A very common conversation opener."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Gdje je WC, ___ vas?'",
+       "difficulty": 2,
+       "answer": "molim",
+       "accepted": [
+        "molim"
+       ],
+       "explanation": "The audio says 'Gdje je WC, molim vas?', which means 'Where is the toilet, please?'",
+       "audioText": "Gdje je WC, molim vas?"
       }
      ],
      "sources": [
@@ -3923,6 +3978,17 @@
        ],
        "strictDiacritics": true,
        "explanation": "ne + govorim, negation goes directly before the verb, same pattern as ne razumijem."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Koliko ___? Deset eura.'",
+       "difficulty": 3,
+       "answer": "košta",
+       "accepted": [
+        "košta"
+       ],
+       "explanation": "The audio says 'Koliko košta? Deset eura.', which means 'How much does it cost? Ten euros.'",
+       "audioText": "Koliko košta? Deset eura."
       }
      ],
      "sources": [
@@ -4119,6 +4185,17 @@
        ],
        "answer": "Ovo je moja kuća",
        "explanation": "Ovo starts the sentence, then the verb je, then moja kuća with the possessive before the noun."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Ovo je moja ___.'",
+       "difficulty": 3,
+       "answer": "knjiga",
+       "accepted": [
+        "knjiga"
+       ],
+       "explanation": "The audio says 'Ovo je moja knjiga.', which means 'This is my book.'",
+       "audioText": "Ovo je moja knjiga."
       }
      ],
      "sources": [
