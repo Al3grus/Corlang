@@ -139,6 +139,18 @@ def check_file_obj(days):
                         ptok, otok = set(norm(p)), set(norm(" ".join(ordered)))
                         if otok and len(ptok & otok) >= 0.7 * len(otok):
                             errs.append(f"{tag}/REORDER: prompt leaks the answer: {p[:60]}")
+                    elif qt == "TRANSLATE":
+                        # Full-sentence production: an English prompt, the learner types the
+                        # target sentence. Same leak rule as REORDER, since the prompt is the
+                        # gloss of its own answer: sharing WORDS with the answer is the nature
+                        # of a cognate-rich pair, but near-total overlap means the prompt IS
+                        # the answer and there is nothing left to produce.
+                        ans = q.get("answer", "")
+                        if not ans or len(ans.split()) < 2:
+                            errs.append(f"{tag}/TRANSLATE: answer must be a sentence: {p[:50]}")
+                        ptok, atok = set(norm(p)), set(norm(ans))
+                        if atok and len(ptok & atok) >= 0.7 * len(atok):
+                            errs.append(f"{tag}/TRANSLATE: prompt leaks the answer: {p[:60]}")
                     else:
                         errs.append(f"{tag}: bad question type {qt!r}")
 

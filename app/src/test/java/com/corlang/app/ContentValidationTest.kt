@@ -229,6 +229,9 @@ class ContentValidationTest {
                                 q.options.sorted(), q.ordered.sorted())
                         QuestionType.MATCH ->
                             assertTrue("$lang/${quiz.id}: MATCH without pairs", q.pairs.isNotEmpty())
+                        QuestionType.TRANSLATE ->
+                            assertTrue("$lang/${quiz.id}: TRANSLATE answer must be a sentence",
+                                q.answer.trim().split(" ").size >= 2)
                     }
                     assertTrue("$lang/${quiz.id}: question missing explanation", q.explanation.isNotBlank())
                 }

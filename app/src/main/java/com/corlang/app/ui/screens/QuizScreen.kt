@@ -184,7 +184,7 @@ private fun QuizRunner(
                 }
             }
 
-            QuestionType.FILL -> {
+            QuestionType.FILL, QuestionType.TRANSLATE -> {
                 OutlinedTextField(
                     value = fillText,
                     onValueChange = { if (!checked) fillText = it },
@@ -327,6 +327,7 @@ private fun QuizRunner(
                     val correct = when (q.type) {
                         QuestionType.MCQ -> selectedOption?.let { Grading.gradeMcq(q, it) } ?: false
                         QuestionType.FILL -> Grading.gradeFill(q, fillText)
+                        QuestionType.TRANSLATE -> Grading.gradeTranslate(q, fillText)
                         QuestionType.REORDER -> Grading.gradeReorder(q, reorderAssembled.toList())
                         QuestionType.MATCH -> Grading.gradeMatch(q, matchMapping.toMap())
                     }
@@ -347,7 +348,7 @@ private fun QuizRunner(
             },
             enabled = checked || when (q.type) {
                 QuestionType.MCQ -> selectedOption != null
-                QuestionType.FILL -> fillText.isNotBlank()
+                QuestionType.FILL, QuestionType.TRANSLATE -> fillText.isNotBlank()
                 QuestionType.REORDER -> reorderAssembled.isNotEmpty()
                 QuestionType.MATCH -> matchMapping.size == q.pairs.size
             },
