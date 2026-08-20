@@ -334,9 +334,22 @@ fun SessionPlayer(
     // from "none left for today", and unavoidable at the faster paces, so the UI names it.
     val deckFinished = allWords.drop(deckStart).none { it.id !in seenIds }
     val deckLanguageName = remember(lang) { container.content.meta(lang).name }
-    // One lesson serves at most perLesson new words, even when a placement jump unlocked a large
-    // backlog — it drains one lesson-sized block at a time, never a 300-card dump.
-    val newBlock = minOf(unlockedNew, perLesson)
+    /*
+     * One lesson serves at most perLesson new words, even when a placement jump unlocked a large
+     * backlog — it drains one lesson-sized block at a time, never a 300-card dump.
+     *
+     * The +1 is the catch-up. The deck is sized at exactly lessons x perLesson with no slack
+     * (Croatian: 3440 words, 344 lessons), so unlock and serve rates were identical and a
+     * learner who ever fell behind stayed behind for the rest of the course: the shortfall could
+     * not be recovered by lessons (rate-matched) or by the Words tab (review-only), and the
+     * deck's tail was simply never introduced. A learner 22 words behind at lesson 17 reached
+     * lesson 344 having never met the last 12 words on their path, while the screen still told
+     * them more were "coming in later lessons".
+     *
+     * Skipping is gone, so no new backlog can form; this repairs the ones already on devices,
+     * invisibly, one extra word at a time rather than as a lump the learner would feel.
+     */
+    val newBlock = minOf(unlockedNew, if (unlockedNew > perLesson) perLesson + 1 else perLesson)
     val reviewPending = minOf(dueNow, maxReviews)
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
@@ -578,14 +591,16 @@ fun SessionPlayer(
                                 modifier = Modifier.padding(top = 8.dp)
                             )
                         }
-                        if (s.kind == StepKind.WORDS) {
+                        // Deliberately no counts here. The old line read "10 new words this
+                        // lesson (22 more unlocked, coming in later lessons)", which was both
+                        // noise and untrue: unlock and serve rates are identical (10 a lesson
+                        // against a deck sized at exactly lessons x 10), so a backlog never
+                        // arrives in a later lesson, and on the FINAL lesson the same sentence
+                        // still promised words that no lesson would ever teach. The learner's
+                        // job here is not arithmetic, it is the block in front of them.
+                        if (s.kind == StepKind.WORDS && stepDone(s)) {
                             Text(
-                                when {
-                                    stepDone(s) -> "New words done ✓"
-                                    unlockedNew > newBlock ->
-                                        "$newBlock new words this lesson (${unlockedNew - newBlock} more unlocked, coming in later lessons)."
-                                    else -> "$newBlock new word${if (newBlock == 1) "" else "s"} to learn."
-                                },
+                                "New words done ✓",
                                 style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.SemiBold,
                                 modifier = Modifier.padding(top = 8.dp)
@@ -724,17 +739,21 @@ fun SessionPlayer(
                             Button(
                                 onClick = {
                                     startWordBlock("words", isReview = false) {
+                                        // perLesson sets the UNLOCK window (uptoDay x perLesson);
+                                        // newBlock is how many of them this lesson serves, which
+                                        // is one more than the pace while a backlog is draining.
                                         container.words.unlockedNewWords(lang, day.day, perLesson)
-                                            .take(perLesson)
+                                            .take(newBlock)
                                     }
                                 },
                                 modifier = Modifier.fillMaxWidth()
-                            ) { Text("Learn $newBlock new word${if (newBlock == 1) "" else "s"}") }
-                            // Skip only moves past the step for now; it must NOT mark it done.
-                            OutlinedButton(
-                                onClick = advanceFrom,
-                                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                            ) { Text("Skip for now →") }
+                            ) { Text("Learn new words") }
+                            // No skip. New words are not optional: the course is built on spaced
+                            // retrieval, and a lesson that introduces nothing breaks the schedule
+                            // the rest of the course depends on. Skipping was also the only way a
+                            // learner could fall behind the deck, and the deck has no slack to
+                            // give (3440 words against 344 lessons at 10 a lesson), so every
+                            // skipped block cost words that no later lesson could hand back.
                         } else {
                             // The deck is finite, and at 15 or 20 words a lesson it is spent
                             // well before lesson 250. Say so plainly instead of showing a bare
@@ -769,10 +788,9 @@ fun SessionPlayer(
                                 },
                                 modifier = Modifier.fillMaxWidth()
                             ) { Text("Review $reviewPending card${if (reviewPending == 1) "" else "s"}") }
-                            OutlinedButton(
-                                onClick = advanceFrom,
-                                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                            ) { Text("Skip for now →") }
+                            // No skip here either. The review block IS the retention system;
+                            // its size is already the learner's own dial (Settings, reviews per
+                            // day), so the choice they get is how much, not whether.
                         } else {
                             Button(onClick = markNext, modifier = Modifier.fillMaxWidth()) {
                                 Text("Next →")
