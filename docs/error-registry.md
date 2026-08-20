@@ -393,8 +393,23 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    LEARN items are whole monologue sentences, past the 40-character recall limit, so almost
    nothing survived into the wrap-up. They were given short producible phrases from their own
    material. `gatedLevels` now holds A0 and A1; `proctor.py` clean at 344 lessons.
-   **Queued: hr A2 (96 days), B1 (171 days)**, to be drained level by level, widening
-   `gatedLevels` as each lands.
+   **hr A2 (days 78-173) CLOSED 2026-08-20** — 324 findings to zero. A2 is where the
+   transformation table is the dominant lesson shape, so most of it went through one generic
+   pass (an "L -> R" row becomes the ask R with L in the note), and the interesting work was
+   the residue it could not read: paradigms in one row, case lists ("ime -> imena, imenu,
+   imenom"), three-step comparative chains, aspect pairs, and tick/cross mistake rows. 111
+   titles into English. Six thin days (97, 131, 147, 161, 167, 171) got authored phrases, the
+   same monologue-length cause as A1. Six more typed questions were unanswerable (C21) and are
+   fixed. `gatedLevels` now holds A0, A1 and A2.
+   **Two self-inflicted lessons worth recording.** (1) The first generic pass took the LAST
+   arrow-separated part of each side, which silently dropped a gloss on rows carrying TWO
+   arrows ("lak -> laksi, mek -> meksi"); caught by reading the output rather than the exit
+   code, fixed by restoring the file from git and rewriting the pass to handle multi-pair and
+   parallel-list shapes explicitly. A bulk transform must be shaped to the data, not the other
+   way round. (2) A repair script matched questions by `answer` text without checking `type`,
+   and corrupted an MCQ into having an answer that was not among its options. `check_batch.py`
+   caught it immediately. **Match on the field you mean AND the type you mean.**
+   **Queued: hr B1 (171 days)**, the last level, then the full-course audit.
    **fr/pt are NOT in this sweep and must not be pulled into it** — the standing scope lock is
    one course at a time (hr, then pt, then fr), and the gates are hr-scoped so those courses
    cannot fail the build meanwhile. Their measured backlog is recorded for when their turn
