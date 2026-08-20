@@ -1,6 +1,6 @@
 {
-  "versionCode": 165,
-  "versionName": "0.40.0",
-  "notes": "Croatian is finished. B1, lessons 174 to 344, gets the same pass A0, A1 and A2 already had, and the whole course now ends every lesson with a wrap-up that asks for one clear thing you can actually type. Two things were badly wrong at this level. The wrap-up refused any answer longer than 40 characters, which is fine for A0 words but throws away almost everything B1 teaches: 88 of 171 lessons had quietly stopped testing you and were replaying their exercise instead. And the exam-prep lessons had their study checklists stored as Croatian content, so the app was asking you to type your own revision notes back from memory. Sentences are now accepted, and graded without punishing a missing accent the way a single word still does. 387 titles are in English. All four levels are now held by the build gates, so none of this can come back.",
+  "versionCode": 166,
+  "versionName": "0.41.0",
+  "notes": "Three counters on one screen is two too many. A lesson now shows one progress figure per progress bar, and always directly above the bar it belongs to: the lesson counter above the lesson bar, the question counter above the question bar. The loose 'Step 4 of 8' line under the lesson bar is gone, and the question count no longer shares a line with the question itself. The CEFR ladder has been removed from the bottom of Progress; it was reference material, and the level you are on is already the third figure at the top of that screen. Words known and day streak are centred in their tiles. Under the hood: 22 vocabulary packs are now held back until the lesson that teaches them, so a themed block of words no longer arrives as flashcards long before anything explains it.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
