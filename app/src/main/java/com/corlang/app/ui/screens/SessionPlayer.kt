@@ -217,14 +217,16 @@ fun buildSessionSteps(
             wrapupRecallPhrases(day).size >= 4 -> steps += SessionStep(
                 id = "wrapup", kind = StepKind.WRAPUP,
                 title = "Wrap-up: recall today's phrases from memory",
-                detail = "No peeking. Produce the $languageName for each phrase you learned today.",
+                detail = "No peeking. You'll see an English phrase from today's lesson; " +
+                    "write it in $languageName, one word or phrase per answer.",
                 phase = "5 · Wrap-up"
             )
             // Fallback for long-sentence days: a quick retest of today's exercise (still real content).
             exerciseIndex >= 0 -> steps += SessionStep(
                 id = "wrapup", kind = StepKind.EXERCISE,
                 title = "Wrap-up: quick retest",
-                detail = "", phase = "5 · Wrap-up", activityIndex = exerciseIndex
+                detail = "One more pass over today's practice, from memory this time.",
+                phase = "5 · Wrap-up", activityIndex = exerciseIndex
             )
             // Last resort (bare days only): the plan's text review items.
             else -> day.reviewBlock.items.forEachIndexed { i, r ->

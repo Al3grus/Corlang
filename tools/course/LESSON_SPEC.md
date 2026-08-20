@@ -35,15 +35,29 @@ Do not create any other file. Do not modify repo files.
 ```json
 {
   "type": "LEARN",
-  "title": "<short title in the TARGET language>",
+  "title": "<short title in ENGLISH>",
   "intro": "2 to 3 sentences in ENGLISH explaining the rule/pattern plainly.",
   "items": [
-    { "hr": "<sentence in the TARGET language>", "en": "<English translation>",
-      "note": "<optional short English/target note, e.g. 'partir -> que je parte'>" }
+    { "hr": "<ONE word or ONE phrase in the TARGET language, exactly what the learner should produce>",
+      "en": "<English gloss, specific enough to have exactly one right answer>",
+      "note": "<optional short English note: the rule, the source form, an example>" }
   ],
   "sources": ["<SOURCES GIVEN TO YOU>"]
 }
 ```
+
+**These items become the lesson's closing test.** The app builds the wrap-up by asking the
+learner to TYPE the `hr` for each `en` (`Drills.kt`, `wrapupRecallPhrases`) — so every item is
+a question whether you wrote it as one or not. Two consequences, both non-negotiable:
+
+- `hr` is ONE producible thing. Never a relation between two forms (`kava -> kavu`), never a
+  list (`dvjesto, tristo, petsto`), never a letter plus an example (`c, caj`). When a rule is
+  about a transformation, the item is the RESULT and the source form goes in `note`:
+  `{"hr": "kavu", "en": "coffee, as the object of a verb", "note": "From kava. Feminine -a
+  becomes -u: Pijem kavu."}`
+- `en` must identify one answer and must not contain the answer. Two items glossed the same way
+  in one day is an unanswerable question, and a gloss that spells its own answer (including
+  phonetically, "man / person (CHOH-vyek)") is a leak.
 
 NOTE the legacy key name: the target-language text field is called `"hr"` in EVERY language
 (French and Portuguese included). Using `"fr"` or `"pt"` fails the strict parser.
@@ -105,11 +119,23 @@ REORDER: `options` and `ordered` hold the SAME tokens; `ordered` is the correct 
 6. **Correct spelling and diacritics** in the target language, always. Typed answers are
    graded strictly: é and è are different answers.
 7. **Learner-facing position words say "lesson", never "day N"**. Avoid "day 3" phrasing.
-8. **English for instructional text** (objective, paretoFocus, drills, reviewBlock, intro,
-   explanation, `en` fields). Target language for `hr` fields, titles of activities, and
-   dialogue lines.
+8. **English for everything the learner reads ABOUT the lesson**: objective, paretoFocus,
+   drills, reviewBlock, intro, explanation, `en` fields, **and every title** (the day's and
+   every activity's). Target language for `hr` fields and dialogue lines only. A title may
+   NAME target-language material, as the example it is about, after a colon or in brackets:
+   `Big numbers: sto, tisuca, milijun`, `At the market (Na trznici)`. It may not BE
+   target-language: `Veliki brojevi: sto, tisuca, milijun` shipped, and a learner on lesson 16
+   cannot read the one thing that tells them what the lesson is.
+   *(This rule previously said the opposite for activity titles, which is where 472 Croatian
+   titles came from. Registry C23.)*
 9. Do not mention CEFR level codes inside learner-facing sentences unless the topic is
    explicitly about exam preparation.
+10. **Every typed answer must be typable on a phone keyboard.** No arrows, no `=`, no `+`, no
+   guillemets, in any `hr` field, any FILL/TRANSLATE `answer`, or any `accepted` variant. The
+   grader compares against the authored string and strips only ordinary punctuation, so one
+   arrow makes the item unanswerable by anyone. Registry C21.
+11. **Give the day at least 6 producible LEARN items** across its LEARN activities. Below 4 the
+   app cannot build a wrap-up at all and silently replays the exercise instead. Registry C24.
 
 ## Quality bar
 

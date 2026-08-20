@@ -10,6 +10,10 @@ import com.corlang.app.data.model.ResourceList
 import com.corlang.app.data.model.StudyPlan
 import com.corlang.app.data.model.VocabPack
 import com.corlang.app.data.model.VocabSet
+import com.corlang.app.ui.screens.Grading
+import com.corlang.app.ui.screens.PAIR_SYMBOLS
+import com.corlang.app.ui.screens.recallCandidates
+import com.corlang.app.ui.screens.wrapupRecallPhrases
 import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -1279,5 +1283,168 @@ class ContentValidationTest {
             Regex("\"versionCode\"\\s*:\\s*$code\\b").containsMatchIn(versionJson))
         assertTrue("version.json versionName != gradle versionName $name",
             "\"$name\"" in versionJson)
+    }
+
+    // ---------- The wrap-up: the day's closing from-memory recall ----------
+    //
+    // Registry C21-C24. The wrap-up is GENERATED from the day's LEARN items
+    // (Drills.kt:wrapupRecallPhrases), so a table row authored for the teaching screen becomes a
+    // typing test unless the content forbids the shape. These four gates are the forbidding.
+    //
+    // SCOPE: hr only, deliberately. Portuguese and French carry the same defect classes and are
+    // under a scope lock until Croatian is finished; widening each gate is tracked as an open
+    // sweep in docs/error-registry.md. Do not "helpfully" run these over allLangs.
+
+    private val wrapupLangs = listOf("hr")
+
+    /**
+     * The CEFR levels declared clean. Widened one level at a time as the authoring pass lands,
+     * so the gates hold every day already fixed without the whole 344-day course having to be
+     * finished in one go. The target state is all four; docs/error-registry.md carries the
+     * remaining levels as an open sweep.
+     */
+    private val gatedLevels = setOf("A0")
+
+    private fun gatedDays(lang: String) = loadPlan(lang).days.filter { it.level in gatedLevels }
+
+    /**
+     * A typed answer must be typable. An arrow or an equation in the expected text is a RELATION
+     * between two forms, not something a learner can produce: Grading.normalize strips only
+     * ordinary punctuation, so the symbol survives into the comparison and the answer can never
+     * match. Field report: a day 11 wrap-up scored 0/8 against linguistically perfect answers
+     * because every expected string looked like "kava → kavu".
+     *
+     * Covers both surfaces the same class hides in: the typed question types, and the LEARN
+     * items the wrap-up recruits.
+     */
+    @Test
+    fun `typed answers are typable`() {
+        val offenders = mutableListOf<String>()
+        wrapupLangs.forEach { lang ->
+            gatedDays(lang).forEach { day ->
+                day.activities.forEach { act ->
+                    act.questions
+                        .filter { it.type == QuestionType.FILL || it.type == QuestionType.TRANSLATE }
+                        .forEach { q ->
+                            (listOf(q.answer) + q.accepted).forEach { a ->
+                                PAIR_SYMBOLS.filter { it in a }.forEach {
+                                    offenders += "$lang day ${day.day} ${q.type} answer '$a' contains '$it'"
+                                }
+                            }
+                        }
+                }
+                // Candidates, not the filtered list: the app drops these, the content must not
+                // contain them. Measured after the filter this assertion could never fail.
+                recallCandidates(day).forEach { item ->
+                    PAIR_SYMBOLS.filter { it in item.hr || it in item.en }.forEach {
+                        offenders += "$lang day ${day.day} wrap-up item '${item.hr}' / '${item.en}' contains '$it'"
+                    }
+                }
+            }
+        }
+        assertTrue(
+            "untypable symbols in typed answers (${offenders.size}):\n" +
+                offenders.joinToString("\n").take(4000),
+            offenders.isEmpty()
+        )
+    }
+
+    /**
+     * Two wrap-up rows glossed identically ask one English question with two different right
+     * answers. Whichever the learner writes, one of them is marked wrong, and nothing on screen
+     * says which was wanted.
+     */
+    @Test
+    fun `wrap-up prompts are unambiguous`() {
+        val offenders = mutableListOf<String>()
+        wrapupLangs.forEach { lang ->
+            gatedDays(lang).forEach { day ->
+                recallCandidates(day).take(WRAPUP_ASKED)
+                    .groupBy { Grading.normalize(it.en, strict = true) }
+                    .filter { it.value.size > 1 }
+                    .forEach { (prompt, items) ->
+                        offenders += "$lang day ${day.day}: '$prompt' -> " +
+                            items.joinToString(" | ") { it.hr }
+                    }
+            }
+        }
+        assertTrue("ambiguous wrap-up prompts:\n" + offenders.joinToString("\n"), offenders.isEmpty())
+    }
+
+    /**
+     * Every lesson ends with a real from-memory recall of what it just taught. Below the
+     * [WRAPUP_MIN] the session builder silently replays the day's exercise instead, which
+     * retests recognition the learner just did rather than production they have not.
+     */
+    @Test
+    fun `every day has a real wrap-up`() {
+        val offenders = mutableListOf<String>()
+        wrapupLangs.forEach { lang ->
+            gatedDays(lang).forEach { day ->
+                val n = wrapupRecallPhrases(day).size
+                if (n < WRAPUP_MIN) offenders += "$lang day ${day.day} (${day.level}): $n recallable"
+            }
+        }
+        assertTrue(
+            "days with no real wrap-up (${offenders.size}):\n" +
+                offenders.joinToString("\n").take(4000),
+            offenders.isEmpty()
+        )
+    }
+
+    /**
+     * Learner-facing titles are English. The target language is welcome INSIDE one, as the
+     * example it names ("Big numbers: sto, tisuca, milijun", "At the market (Na trznici)"), but
+     * the head of the title, the part that tells the learner what this lesson is, must be
+     * readable by someone who does not speak the language yet. Day 16 shipped as
+     * "Veliki brojevi: sto, tisuca, milijun".
+     *
+     * Partial automation, and honestly so: this catches the diacritic and function-word classes,
+     * not every Croatian phrase ("Veliki brojevi" carries neither). The authoring pass is the
+     * real check; this holds the line against regression. See registry C23.
+     */
+    @Test
+    fun `learner-facing titles are english`() {
+        val offenders = mutableListOf<String>()
+        wrapupLangs.forEach { lang ->
+            fun check(where: String, title: String) {
+                // The head: everything before the first ':' or '(' introduces an example.
+                val head = title.substringBefore(':').substringBefore('(').trim()
+                val words = head.lowercase().split(Regex("[^\\p{L}]+")).filter { it.isNotBlank() }
+                val hits = HR_TITLE_MARKERS.filter { it in words } +
+                    HR_LETTERS.filter { it in head.lowercase() }.map { "'$it'" }
+                if (hits.isNotEmpty()) offenders += "$lang $where: '$title' -> ${hits.joinToString()}"
+            }
+            gatedDays(lang).forEach { day ->
+                check("day ${day.day} title", day.title)
+                day.activities.forEach { check("day ${day.day} ${it.type}", it.title) }
+            }
+        }
+        assertTrue(
+            "target-language titles (${offenders.size}):\n" +
+                offenders.joinToString("\n").take(4000),
+            offenders.isEmpty()
+        )
+    }
+
+    private companion object {
+        /** Mirrors WrapupRecall's .take(8): the items a learner is actually asked. */
+        const val WRAPUP_ASKED = 8
+
+        /** Mirrors SessionPlayer's threshold for building a recall wrap-up at all. */
+        const val WRAPUP_MIN = 4
+
+        /** Letters no other language in the course uses, so their presence is decisive. */
+        val HR_LETTERS = listOf("č", "ć", "đ", "š", "ž")
+
+        /**
+         * Croatian function words frequent enough in titles to be a reliable tell, and absent
+         * (or harmless) as English words. "i" and "u" are excluded: too collidey with English.
+         */
+        val HR_TITLE_MARKERS = listOf(
+            "je", "su", "se", "sam", "si", "smo", "ste", "na", "za", "od", "iz",
+            "sto", "kako", "koliko", "kada", "gdje", "tko", "zasto", "moj", "tvoj", "nas",
+            "vas", "njegov", "brojevi", "glagoli", "rijeci", "vjezba", "ponavljanje"
+        )
     }
 }
