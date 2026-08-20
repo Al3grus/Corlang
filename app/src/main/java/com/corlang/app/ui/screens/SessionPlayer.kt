@@ -496,15 +496,13 @@ fun SessionPlayer(
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
+        // One counter per progress bar, and it sits ABOVE the bar it describes (the row above).
+        // There used to be a second "Step 3 of 8" line under this bar, and a third counter inside
+        // the exercise, so a learner mid-question could see three different fractions at once.
         LinearProgressIndicator(
             progress = { animatedProgress },
             drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
-        )
-        Text(
-            "Step ${index + 1} of ${steps.size}",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
         // The step card + its inline drill + actions slide as a unit so moving to the next step

@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -266,15 +267,21 @@ fun StatTile(value: String, label: String, modifier: Modifier = Modifier) {
         contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
         modifier = modifier
     ) {
-        Column(modifier = Modifier.padding(Space.md)) {
+        // Centred: these tiles sit in a row of equal weights, so left-aligned text left the
+        // number floating against one edge of a box far wider than it.
+        Column(
+            modifier = Modifier.fillMaxWidth().padding(Space.md),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Text(
                 value,
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Center
             )
-            Text(label, style = MaterialTheme.typography.labelSmall)
+            Text(label, style = MaterialTheme.typography.labelSmall, textAlign = TextAlign.Center)
         }
     }
 }

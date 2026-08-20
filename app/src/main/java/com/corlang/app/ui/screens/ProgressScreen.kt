@@ -18,8 +18,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.ExpandLess
-import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -42,15 +40,15 @@ import com.corlang.app.AppContainer
 import com.corlang.app.data.MonthHistory.DayState
 import com.corlang.app.data.isLearned
 import com.corlang.app.data.isMastered
-import com.corlang.app.ui.components.Bullet
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.StatTile
 import com.corlang.app.ui.theme.Radius
 
 /**
  * Progress, organised into bands so it leads with identity and progress instead of a wall:
- *   You (name), Progress (streak/days/level + vocab stats), Course milestones, and the CEFR
- *   ladder (collapsed by default since it's browse-when-you-want material). Quizzes, exam
+ *   You (name), Progress (streak/days/level + vocab stats), Course milestones and a month of
+ *   history. The CEFR ladder used to close this screen and no longer does: it is reference
+ *   material, and the level you are on is already the third stat at the top. Quizzes, exam
  *   readiness, and mock exams live on the journey as end-of-level checkpoints.
  */
 @Composable
@@ -59,7 +57,6 @@ fun ProgressScreen(
     lang: String
 ) {
     val meta = remember(lang) { container.content.meta(lang) }
-    val levels = remember(lang) { container.content.levels(lang).levels }
 
     val progress by container.progress.progress(lang).collectAsState(initial = null)
     val rawDaysDone by container.progress.completedDayCount(lang)
@@ -170,38 +167,9 @@ fun ProgressScreen(
         // (Quizzes, exam readiness, and mock exams live on the journey as end-of-level
         // checkpoints — see LevelJourney; no Assessment section here.)
 
-        // ---- Level map ---- (where you are on the CEFR ladder; reference library is in Profile)
-        Spacer(Modifier.height(22.dp))
-        SectionTitle("Your level")
-
-        CollapsibleCard("CEFR ladder & milestones") {
-            levels.forEach { level ->
-                val isCurrent = level.id == currentLevel
-                Surface(
-                    shape = RoundedCornerShape(Radius.md),
-                    color = if (isCurrent) MaterialTheme.colorScheme.primaryContainer
-                            else MaterialTheme.colorScheme.surfaceVariant,
-                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
-                ) {
-                    Column(modifier = Modifier.padding(14.dp)) {
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            Text(level.id, fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.primary,
-                                style = MaterialTheme.typography.titleMedium)
-                            Text(level.title, fontWeight = FontWeight.SemiBold,
-                                style = MaterialTheme.typography.titleMedium)
-                            if (isCurrent) Text("• you are here",
-                                color = MaterialTheme.colorScheme.primary,
-                                style = MaterialTheme.typography.labelMedium)
-                        }
-                        Text("Milestone: ${level.milestone}",
-                            style = MaterialTheme.typography.bodyMedium,
-                            modifier = Modifier.padding(top = 4.dp))
-                        level.canDo.forEach { Bullet(it) }
-                    }
-                }
-            }
-        }
+        // The CEFR ladder used to sit here as a collapsed card. It was reference material, not
+        // progress: the level you are on is already the third stat at the top of this screen, and
+        // the ladder itself belongs with the rest of the reference library on Profile.
 
         Spacer(Modifier.height(24.dp))
     }
@@ -371,40 +339,6 @@ private fun DayCellBox(cell: com.corlang.app.data.MonthHistory.DayCell, modifier
         cell.day?.let {
             Text("$it", style = MaterialTheme.typography.labelSmall,
                 fontWeight = FontWeight.SemiBold, color = ink)
-        }
-    }
-}
-
-/**
- * A section that opens on tap — used for the long "Reference" material so Profile leads with
- * identity and progress instead of a wall. Bordered surface to match the app's card style;
- * collapsed by default.
- */
-@Composable
-private fun CollapsibleCard(title: String, content: @Composable () -> Unit) {
-    var expanded by rememberSaveable(title) { mutableStateOf(false) }
-    Surface(
-        shape = RoundedCornerShape(Radius.md),
-        color = MaterialTheme.colorScheme.surface,
-        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-        modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp)
-    ) {
-        Column(modifier = Modifier.padding(14.dp)) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.fillMaxWidth().clickable { expanded = !expanded }
-            ) {
-                Text(title, style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.SemiBold, modifier = Modifier.weight(1f))
-                Icon(
-                    if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
-                    contentDescription = if (expanded) "Collapse" else "Expand"
-                )
-            }
-            if (expanded) {
-                Spacer(Modifier.height(8.dp))
-                content()
-            }
         }
     }
 }

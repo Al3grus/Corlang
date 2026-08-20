@@ -181,23 +181,36 @@ fun ExerciseActivity(
     Column(modifier = Modifier.fillMaxWidth()) {
         // Tripled air on both sides: this bar sits between the step card above and the question
         // below, and at the old 6dp it read as glued to both.
-        LinearProgressIndicator(
-            progress = { solved.toFloat() / total },
-            drawStopIndicator = {},
-            modifier = Modifier.fillMaxWidth().padding(top = 24.dp, bottom = 18.dp)
-        )
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        // The counter belongs to THIS bar, so it sits directly above it, the same way the session
+        // counter sits above the session bar. It used to share a line with the question, which put
+        // a third fraction on screen next to the two in the session header.
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
+        ) {
             Text(
-                q.prompt,
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.SemiBold,
+                "Questions",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.weight(1f)
             )
             Text(
                 "$solved/$total" + if (queue.size > 1) "  ·  ${queue.size} left" else "",
-                style = MaterialTheme.typography.bodySmall
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
+        LinearProgressIndicator(
+            progress = { solved.toFloat() / total },
+            drawStopIndicator = {},
+            modifier = Modifier.fillMaxWidth().padding(top = 6.dp, bottom = 18.dp)
+        )
+        Text(
+            q.prompt,
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier.fillMaxWidth()
+        )
         q.audioText?.let { audio ->
             Row(verticalAlignment = Alignment.CenterVertically) {
                 SpeakerButton(tts = container.tts, text = audio, rate = 0.9f)
