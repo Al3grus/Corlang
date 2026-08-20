@@ -96,12 +96,11 @@ fun ProgressScreen(
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
     ) {
+        // The headline carries the bottom padding the removed subtitle used to provide, so the
+        // course card does not ride up against it.
         Text("Progress",
-            style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-        Text("Kept on this device. Nothing here is compared with anyone else.",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(top = 2.dp, bottom = 12.dp))
+            style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 14.dp))
 
         // ---- 1. Course card: where you are in this course, in one line ----
         ProgressCard {
