@@ -28,6 +28,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Alignment
@@ -129,18 +130,20 @@ fun TalkScreen(container: AppContainer, lang: String) {
     }
 
     // Transcript for display + as the API history (same list; roles map directly).
-    // Seeded with a NATIVE-AUTHORED greeting: an in-language few-shot anchor is one of the
-    // strongest measured levers against wrong-language/variety drift (arXiv 2406.20052), it
-    // pins the variety before the model generates a single word, and the first exchange
-    // costs no API call.
+    //
+    // It starts EMPTY. A native-authored greeting used to be message zero, so opening the tab
+    // always dropped a bubble hard against the top bar before the learner had chosen anything.
+    // That greeting still goes out as a hidden anchor in every request (see send): an
+    // in-language few-shot anchor is one of the strongest measured levers against
+    // wrong-language/variety drift (arXiv 2406.20052) and it pins the variety before the model
+    // generates a word. Hiding it costs nothing, because it was never an API call.
     //
     // State lives in the app-scoped ChatStore, NOT in remember: a tab switch (or the
     // Teach↔Tutor crossfade) disposes this composable, and remember-held state wiped the
     // conversation and dropped in-flight, already-billed replies. Requests launch on
     // container.appScope for the same reason — the reply lands even if the user has left.
-    val convo = container.chat.conversation(lang) {
-        ChatMessage("assistant", seedGreeting(lang))
-    }
+    var chatEpoch by rememberSaveable(lang) { mutableStateOf(0) }
+    val convo = remember(lang, chatEpoch) { container.chat.conversation(lang) }
     val messages: SnapshotStateList<ChatMessage> = convo.messages
     var input by convo::draft
     var sending by convo::sending
@@ -148,9 +151,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
     val listState = rememberLazyListState()
 
     // A conversation in progress locks the top-bar language picker — the transcript is
-    // in-memory only and a language switch would wipe it. The seed greeting alone (size 1,
-    // no learner turn yet) doesn't lock.
-    if (messages.size > 1 || sending) {
+    // in-memory only and a language switch would wipe it. An empty screen doesn't lock.
+    if (messages.isNotEmpty() || sending) {
         com.corlang.app.ui.Engagement.Report()
     }
 
@@ -173,10 +175,16 @@ fun TalkScreen(container: AppContainer, lang: String) {
             // CEFR-level adherence measurably DRIFT as conversations grow (alignment drift;
             // pt-PT→pt-BR reversion over turns), and a short window also caps cost. The
             // trim drops whole exchanges so user/assistant alternation stays valid.
-            val all = messages.toList()
-            var tail = all.drop(1).takeLast(12)   // after the seed: u,a,u,a…
+            //
+            // The opener and the greeting are BOTH synthetic: neither is in `messages`, so the
+            // screen stays blank until the learner speaks, while the model still sees an
+            // in-language assistant turn before it generates anything.
+            var tail = messages.toList().takeLast(12)
             if (tail.firstOrNull()?.role == "assistant") tail = tail.drop(1)
-            val payload = listOf(ChatMessage("user", seedOpener(lang)), all.first()) + tail
+            val payload = listOf(
+                ChatMessage("user", seedOpener(lang)),
+                ChatMessage("assistant", seedGreeting(lang))
+            ) + tail
             val result = container.ai.complete(
                 system = system,
                 messages = payload,
@@ -214,29 +222,24 @@ fun TalkScreen(container: AppContainer, lang: String) {
                     onSpeak = { container.tts.speak(stripGloss(msg.content)) }
                 )
             }
-            // Starters BELOW the seed greeting, until the learner's first message. (The old
-            // messages.isEmpty() condition went dead when the seed greeting arrived — the
-            // list is never empty now, so the starters had silently vanished.)
-            if (messages.size <= 1 && !sending) {
+            // The opening screen: nothing has been said yet, so this IS the screen until the
+            // learner picks a starter or types.
+            if (messages.isEmpty() && !sending) {
                 item {
                     Column(
                         Modifier.fillMaxWidth().padding(top = 8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         // English-help toggle, up front: a beginner shouldn't be stranded when the
-                        // tutor speaks only the target language.
+                        // tutor speaks only the target language. One line only — the explanatory
+                        // second line made the first thing on an empty screen a wall of text.
                         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                            Column(Modifier.weight(1f)) {
-                                Text(
-                                    "Explain in English when I'm stuck",
-                                    style = MaterialTheme.typography.bodyMedium
-                                )
-                                Text(
-                                    "New words get a quick English translation. Turn off to stay in $languageName.",
-                                    style = MaterialTheme.typography.labelSmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
+                            Text(
+                                "Explain in English",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.weight(1f)
+                            )
                             androidx.compose.material3.Switch(
                                 checked = englishHelp,
                                 onCheckedChange = { on ->
@@ -250,7 +253,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
                             "How would you like to practise? ($level)",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.padding(top = 4.dp)
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                            modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
                         )
                         // Clear English labels (an A0 could not read the old target-language
                         // starters); the tutor replies in $languageName using the progress context.
@@ -262,12 +266,20 @@ fun TalkScreen(container: AppContainer, lang: String) {
                                     horizontal = 16.dp, vertical = 10.dp
                                 )
                             ) {
-                                Column(Modifier.fillMaxWidth()) {
-                                    Text(mode.label, fontWeight = FontWeight.SemiBold)
+                                Column(
+                                    Modifier.fillMaxWidth(),
+                                    horizontalAlignment = Alignment.CenterHorizontally
+                                ) {
+                                    Text(
+                                        mode.label,
+                                        fontWeight = FontWeight.SemiBold,
+                                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                                    )
                                     Text(
                                         mode.desc,
                                         style = MaterialTheme.typography.labelSmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
                                     )
                                 }
                             }
@@ -275,7 +287,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
                         Text(
                             "…or just type a message below.",
                             style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
                         )
                     }
                 }
@@ -302,6 +315,21 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 color = MaterialTheme.colorScheme.error,
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
             )
+        }
+
+        // End the conversation. A chat outlives this screen on purpose (a tab switch must not
+        // drop an in-flight, already-billed reply), which also meant the only way to start a
+        // fresh one was to kill the app. Bumping the epoch re-reads a brand new conversation.
+        if (messages.isNotEmpty() && !sending) {
+            androidx.compose.material3.TextButton(
+                onClick = {
+                    container.chat.reset(lang)
+                    chatEpoch++
+                },
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp)
+            ) {
+                Text("End chat and start a new one")
+            }
         }
 
         Row(
@@ -567,8 +595,19 @@ private fun tutorSystemPrompt(
     // Toggled by the learner (pre-chat). English is ALWAYS allowed on request either way; this
     // only controls how PROACTIVELY the tutor glosses/explains in English.
     val englishRule = if (englishHelp)
-        "- The student wants English help: add a brief English gloss in parentheses after any word " +
-            "or phrase they likely don't know yet, and explain grammar in English whenever it helps."
+        // English LEADS. The old rule kept the whole reply in the target language and only
+        // glossed the new word, which assumes the student can already follow a full message in
+        // it. A learner who turns this on is telling you they cannot.
+        "- ENGLISH-LED MODE. Assume the student cannot yet follow a full message in " +
+            "$languageName. Write to them in ENGLISH: say what you mean, and what you are asking, " +
+            "in English first.\n" +
+            "- Give the $languageName they need as SHORT quoted material inside that English: the " +
+            "phrase to say, the word to learn, the question to answer. Immediately explain each " +
+            "piece in English, including what it means literally and why the form is what it is.\n" +
+            "- Ask your follow-up question in English, and tell them in English what you want them " +
+            "to reply in $languageName. Never send a reply that is entirely in $languageName.\n" +
+            "- Keep the $languageName itself correct and level-appropriate; the English is the " +
+            "scaffolding around it, not a translation bolted on at the end."
     else
         "- The student prefers to stay in $languageName: keep English to a minimum, a short gloss " +
             "only for a genuinely new word, and switch to English only if they explicitly ask."

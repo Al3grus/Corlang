@@ -28,6 +28,10 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -40,6 +44,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -65,6 +70,7 @@ import com.corlang.app.speech.TtsManager
 import com.corlang.app.ui.Haptics
 import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
+import com.corlang.app.ui.theme.Radius
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.components.StatTile
@@ -366,55 +372,102 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
         SectionTitle("Packs")
         Text(
-            "Tap a pack you've started to review its words any time.",
+            "Tap a pack to review its words any time.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 4.dp)
         )
-        // Only packs up to the level you've reached — A0 shows A0, A2 shows A0+A1+A2. An
-        // unknown/unordered level index (-1) is kept visible rather than hidden.
-        val currentIdx = levelOrder.indexOf(currentLevel)
-        val shownPacks = remember(vocab, currentLevel, levelOrder) {
-            vocab.packs.filter {
-                val i = levelOrder.indexOf(it.level)
-                i < 0 || currentIdx < 0 || i <= currentIdx
-            }
+        /*
+         * Only packs the learner has actually STARTED, grouped by level and collapsible.
+         *
+         * It used to list every pack up to the current level, including the ones the course had
+         * not reached yet, so an A1 learner scrolled past a screen of "0 / 20 started" cards that
+         * did nothing when tapped to find the pack they are on. Deck position decides when a word
+         * is introduced (WordsRepository.unlockedNewWords), so "has a word you have met" IS the
+         * unlocked test, and it needs no separate bookkeeping.
+         */
+        val byLevel = remember(vocab, seenIds, levelOrder) {
+            vocab.packs
+                .map { pack -> pack to pack.words.count { it.id in seenIds } }
+                .filter { (_, seen) -> seen > 0 }
+                .groupBy { (pack, _) -> pack.level }
+                .toList()
+                .sortedBy { (level, _) ->
+                    levelOrder.indexOf(level).let { if (it < 0) Int.MAX_VALUE else it }
+                }
         }
-        shownPacks.forEach { pack ->
-            val startedIds = pack.words.map { it.id }.filter { it in seenIds }
-            val seen = startedIds.size
-            val canReview = seen > 0
-            InfoCard {
+        // Your own level opens; the levels behind you stay folded, which is the whole point of
+        // the grouping. Not saved across process death on purpose: reopening the tab should put
+        // you back at your level rather than wherever you last poked around.
+        val expandedLevels = remember { mutableStateMapOf<String, Boolean>() }
+        byLevel.forEach { (level, entries) ->
+            val open = expandedLevels[level] ?: (level == currentLevel)
+            Surface(
+                shape = RoundedCornerShape(Radius.md),
+                color = MaterialTheme.colorScheme.surfaceVariant,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 10.dp)
+                    .clickable { expandedLevels[level] = !open }
+            ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .then(
-                            if (canReview) Modifier.clickable { startPackReview(startedIds) }
-                            else Modifier
-                        )
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 10.dp)
                 ) {
-                    Column(Modifier.weight(1f)) {
-                        Text(pack.title, style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.SemiBold)
-                        Text(
-                            "${pack.level} · $seen / ${pack.words.size} started",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    }
                     Text(
-                        if (canReview) "↻ review" else "",
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.primary,
-                        fontWeight = FontWeight.Bold
+                        level,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    Text(
+                        if (entries.size == 1) "  1 pack" else "  ${entries.size} packs",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.weight(1f)
+                    )
+                    Icon(
+                        if (open) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+                        contentDescription = if (open) "Collapse $level" else "Expand $level"
                     )
                 }
-                LinearProgressIndicator(
-                    progress = { if (pack.words.isEmpty()) 0f else seen.toFloat() / pack.words.size },
-                    drawStopIndicator = {},
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                )
+            }
+            if (!open) return@forEach
+            entries.forEach { (pack, seen) ->
+                // Every pack listed here has been started, so the review affordance is
+                // unconditional and the level is already the header above it.
+                val startedIds = pack.words.map { it.id }.filter { it in seenIds }
+                InfoCard {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { startPackReview(startedIds) }
+                    ) {
+                        Column(Modifier.weight(1f)) {
+                            Text(pack.title, style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold)
+                            Text(
+                                "$seen / ${pack.words.size} started",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.primary
+                            )
+                        }
+                        Text(
+                            "↻ review",
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.primary,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    LinearProgressIndicator(
+                        progress = {
+                            if (pack.words.isEmpty()) 0f else seen.toFloat() / pack.words.size
+                        },
+                        drawStopIndicator = {},
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                    )
+                }
             }
         }
         Spacer(Modifier.height(24.dp))

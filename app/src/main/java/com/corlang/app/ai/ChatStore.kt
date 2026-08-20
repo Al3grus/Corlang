@@ -20,8 +20,15 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
  */
 class ChatStore {
 
-    class Conversation internal constructor(seed: ChatMessage) {
-        val messages: SnapshotStateList<ChatMessage> = mutableStateListOf(seed)
+    /**
+     * A conversation starts EMPTY. The tutor used to open with a seeded greeting, which meant
+     * the screen was never blank: opening the Tutor tab dropped a message hard against the top
+     * bar before the learner had chosen anything. The greeting still exists, but as a hidden
+     * anchor in the request payload (see TalkScreen.send) rather than as a message on screen,
+     * so it keeps pinning the language variety without speaking first.
+     */
+    class Conversation internal constructor() {
+        val messages: SnapshotStateList<ChatMessage> = mutableStateListOf()
         var draft by mutableStateOf("")
         var sending by mutableStateOf(false)
         var error by mutableStateOf<String?>(null)
@@ -29,7 +36,16 @@ class ChatStore {
 
     private val conversations = mutableMapOf<String, Conversation>()
 
-    /** The (lazily created) conversation for [lang]; [seed] authors the native greeting. */
-    fun conversation(lang: String, seed: () -> ChatMessage): Conversation =
-        conversations.getOrPut(lang) { Conversation(seed()) }
+    /** The (lazily created) conversation for [lang]. */
+    fun conversation(lang: String): Conversation =
+        conversations.getOrPut(lang) { Conversation() }
+
+    /**
+     * Throw the transcript away and start fresh. A chat outlives the screen by design, so
+     * without this the only way to end one was to kill the app. An in-flight reply is left to
+     * land in the discarded conversation and is simply dropped.
+     */
+    fun reset(lang: String) {
+        conversations.remove(lang)
+    }
 }
