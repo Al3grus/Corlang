@@ -48,6 +48,9 @@ PAIR_SYMBOLS = ["→", "←", "↔", "⇒", "=", "+", "«", "»",
 MIN_ITEMS = 4
 ASKED = 8
 
+# Mirrors Drills.RECALL_MAX_CHARS: long enough for a B1 sentence, short of a paragraph.
+RECALL_MAX_CHARS = 80
+
 # Letters no other course language uses, so their presence in a title is decisive.
 HR_LETTERS = "čćđšž"
 
@@ -89,7 +92,7 @@ def recall_candidates(day):
                 hr, en = hr.split(" — ")[0].strip(), en.split(" — ")[0].strip()
             if normalize(hr, True) in normalize(en, True):
                 continue
-            if not (2 <= len(hr) <= 40):
+            if not (2 <= len(hr) <= RECALL_MAX_CHARS):
                 continue
             out.append((hr, en))
     seen, ded = set(), []

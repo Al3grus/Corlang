@@ -162,11 +162,25 @@ object Grading {
         }
     }
 
+    /**
+     * A recall target long enough to be a SENTENCE rather than a word or a set phrase. The
+     * distinction decides how diacritics are graded, for the reason [gradeTranslate] already
+     * documents: on a single word the accent IS the thing being learned, while on a whole
+     * sentence the unit under test is the wording, and failing an otherwise perfect sentence
+     * over one missing hook punishes the learner for their keyboard. B1 lessons teach in
+     * sentences, so without this the wrap-up would hold them to a stricter bar than the
+     * TRANSLATE questions that exist to train exactly that skill.
+     */
+    private fun isSentenceTarget(answer: String): Boolean =
+        answer.length > 40 && " " in answer.trim()
+
     /** True if the typed [input] matches any accepted variant of the recall [answer].
-     *  Strict diacritics (exam-grade), slash-insensitive ("on/ona je" == "on / ona je").
+     *  Strict diacritics on words and short phrases (exam-grade), lenient once the target is a
+     *  full sentence ([isSentenceTarget]). Slash-insensitive ("on/ona je" == "on / ona je").
      *  With [en] and [lang], pro-drop pronoun variants are also accepted (see above). */
     fun gradeRecall(answer: String, input: String, en: String = "", lang: String = ""): Boolean {
-        fun canon(s: String) = normalize(s.replace("/", " "), strict = true)
+        val strict = !isSentenceTarget(answer)
+        fun canon(s: String) = normalize(s.replace("/", " "), strict = strict)
         val c = canon(input)
         val base = recallVariants(answer)
         if (base.any { canon(it) == c }) return true

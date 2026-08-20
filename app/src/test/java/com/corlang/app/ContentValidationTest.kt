@@ -1303,7 +1303,7 @@ class ContentValidationTest {
      * finished in one go. The target state is all four; docs/error-registry.md carries the
      * remaining levels as an open sweep.
      */
-    private val gatedLevels = setOf("A0", "A1", "A2")
+    private val gatedLevels = setOf("A0", "A1", "A2", "B1")
 
     private fun gatedDays(lang: String) = loadPlan(lang).days.filter { it.level in gatedLevels }
 
