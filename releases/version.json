@@ -1,6 +1,6 @@
 {
-  "versionCode": 160,
-  "versionName": "0.35.0",
-  "notes": "Focus release. Corlang now offers three courses: Croatian, French and Portuguese. German, Italian and Spanish are hidden while the three focus courses are taken all the way to production quality; nothing was deleted, and any progress you had in them is kept for when they come back. If a hidden course was still sending you daily reminders, it stops now.",
+  "versionCode": 161,
+  "versionName": "0.36.0",
+  "notes": "The Croatian wrap-up is fixed. Every lesson now ends by asking you for one word or one phrase, in clear English, and every answer is something you can actually type: the old lesson 11 expected 'kava > kavu', arrow included, and marked all eight answers wrong without it. Lesson 1 asks you for the words, not the letters. Every A0 lesson title is in English again. The wrap-up screen now says which language to answer in and that accents count. Four new build gates make all of this impossible to reintroduce, and the same pass over A1, A2 and B1 is next.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

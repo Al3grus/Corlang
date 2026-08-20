@@ -213,11 +213,29 @@ data class RecallResume(val answered: Int, val correctCount: Int)
  * - Answer-leak guard: an item whose gloss contains its own answer ("ão" glossed as "nasal
  *   diphthong 'ão'") would print the answer inside the prompt — dropped.
  * - We also drop ellipsis stubs ("Zovem se…") and anything too long to reproduce fairly.
+ * - [PAIR_SYMBOLS] guard: a transformation row ("kava → kavu") is a table, not a phrase. It
+ *   asks the learner to type a symbol no phone keyboard offers, and Grading.normalize does not
+ *   strip it, so the whole item was ungradable (field report: a day 11 wrap-up scored 0/8 for
+ *   answers that were linguistically perfect). This is a BACKSTOP: the content gate forbids the
+ *   shape outright, so in a clean course nothing reaches it.
+ * - Prompt uniqueness: two rows glossed identically ask the same English question with two
+ *   different right answers, which cannot be answered by anyone. First one wins.
  *
  * Shared with the session builder so it only inserts a recall wrap-up when there's enough
  * to test.
  */
 fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
+    recallCandidates(day)
+        .filterNot { item -> PAIR_SYMBOLS.any { it in item.hr || it in item.en } }
+        .distinctBy { Grading.normalize(it.en, strict = true) }
+
+/**
+ * Everything a day OFFERS the wrap-up, before the two guards that hide authoring defects.
+ * Split out so the content gate can see what the guards are covering up: measured against
+ * [wrapupRecallPhrases] the defects are invisible (they have already been dropped), and a gate
+ * that can never fail is worse than no gate at all (registry §V).
+ */
+fun recallCandidates(day: StudyDay): List<LearnItem> =
     day.activities
         .filter { it.type == ActivityKind.LEARN }
         .flatMap { it.items }
@@ -239,6 +257,14 @@ fun wrapupRecallPhrases(day: StudyDay): List<LearnItem> =
         .filter { it.hr.length in 2..40 && it.en.isNotBlank() }
         .distinctBy { it.hr.lowercase() }
         .toList()
+
+/**
+ * Characters that turn a LEARN row into a table rather than a producible phrase: an arrow or an
+ * equation is a RELATION between two forms, and asking a learner to type the relation is asking
+ * for something their keyboard cannot produce and their mouth would never say. Kept in one place
+ * so the app filter and the content gate (`typedAnswersAreTypable`) can never drift apart.
+ */
+val PAIR_SYMBOLS = listOf("→", "←", "↔", "⇒", "=", "+", "«", "»", "–", "—")
 
 /** Shared EN -> HR typed-recall runner used by both the deck recall drill and the day wrap-up. */
 @Composable
@@ -296,10 +322,19 @@ private fun RecallRunner(
             Text(it, style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
+        // The ask, spelled out on every item. "Write your answer" alone left learners guessing
+        // which language to answer in and whether accents mattered (field report), and the
+        // instruction has to sit next to the field, not only in the step header they scrolled past.
+        Text(
+            "Write it in $languageName. Spelling and accents count.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 6.dp)
+        )
         OutlinedTextField(
             value = input,
             onValueChange = { if (!checked) input = it },
-            label = { Text("Write your answer") },
+            label = { Text("Your answer in $languageName") },
             enabled = !checked,
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
         )
