@@ -2,7 +2,7 @@
 
 Android/Kotlin + Compose language-learning app. A **fixed app skeleton** renders **per-language JSON content**. The whole design goal: content grows without touching code. These rules exist to keep that true. Deeper playbook (model choice, workflow, token efficiency): **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
 
-Current: v0.43.0 (versionCode 169). Live courses: `hr fr pt` — `de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`) until the three focus courses are production-proven. Unhide = re-add the code to that manifest. See `MEMORY.md` (auto-memory) for the live resume point.
+Current: v0.44.0 (versionCode 170). Live courses: `hr fr pt` — `de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`) until the three focus courses are production-proven. Unhide = re-add the code to that manifest. See `MEMORY.md` (auto-memory) for the live resume point.
 
 ---
 
@@ -56,7 +56,7 @@ A `PostToolUse` hook (`.claude/settings.json` → `tools/hooks/validate_content_
 export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
 ./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain
 ```
-Flavors (`distribution` dimension): `sideload` (default, in-app updater) and `play` (updater compiled out; AAB via `:app:bundlePlayRelease`). `versionCode`/`versionName` live in `app/build.gradle.kts` (currently 169 / 0.43.0). Room migrations required for any DB schema change (`data/db/AppDatabase`).
+Flavors (`distribution` dimension): `sideload` (default, in-app updater) and `play` (updater compiled out; AAB via `:app:bundlePlayRelease`). `versionCode`/`versionName` live in `app/build.gradle.kts` (currently 170 / 0.44.0). Room migrations required for any DB schema change (`data/db/AppDatabase`).
 
 **Release flow:** bump `versionCode`+`versionName` → build → `cp app/build/outputs/apk/sideload/debug/app-sideload-debug.apk releases/corlang.apk` → update `releases/version.json` (versionCode MUST match the built APK) → commit + push. The in-app updater reads `raw.githubusercontent.com/.../releases/version.json`, so the repo must stay **public** (verified no secrets committed).
 
