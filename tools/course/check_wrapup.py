@@ -56,6 +56,7 @@ HR_LETTERS = "čćđšž"
 HR_TITLE_MARKERS = {
     "je", "su", "se", "sam", "si", "smo", "ste", "na", "za", "od", "iz", "li",
     "sto", "kako", "koliko", "kada", "gdje", "tko", "zasto", "moj", "tvoj", "nas", "vas",
+    "njegov", "njezin", "svoj", "ili",
     "brojevi", "glagoli", "rijeci", "vjezba", "ponavljanje", "pitanja", "mnozina",
 }
 
@@ -115,10 +116,6 @@ def check_day(day, lang):
         # The gloss belongs on the English side, or in the note.
         if "(" in hr or ")" in hr or "·" in hr:
             errs.append(f"{where}: gloss inside the answer {hr!r}, move it to the prompt or note")
-        # One ask, one answer. "dvjesto, tristo, petsto" is three answers wearing one prompt.
-        # A real sentence also carries commas ("Ne, ne govorim."), so the tell is that EVERY
-        # comma-separated part is a bare word and the whole thing is not punctuated as a
-        # sentence.
         # A real sentence carries commas too ("Ne, ne govorim."), and it ends like a sentence.
         # A bare comma-separated run that does not ("u gradu, na poslu, u skoli") is three
         # answers wearing one prompt, and the grader accepts only all three, typed in order.

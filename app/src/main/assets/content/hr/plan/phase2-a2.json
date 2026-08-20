@@ -32,55 +32,124 @@
      "intro": "Welcome to A2! First rule of the new level: country names are capitalized (Njemačka), but language names are ALWAYS lowercase (njemački). The language is really an adjective, the same -ski family you'll dissect tomorrow. Say each pair aloud: country, then language.",
      "items": [
       {
-       "hr": "Hrvatska, hrvatski",
-       "en": "Croatia, Croatian",
+       "hr": "Hrvatska",
+       "en": "Croatia",
        "note": "Country capitalized, language lowercase. Always."
       },
       {
-       "hr": "Engleska, engleski",
-       "en": "England, English",
+       "hr": "hrvatski",
+       "en": "Croatian",
+       "note": "Country capitalized, language lowercase. Always."
+      },
+      {
+       "hr": "Engleska",
+       "en": "England",
        "note": "You say 'govorim engleski' even if you're American, the language is engleski."
       },
       {
-       "hr": "Njemačka, njemački",
-       "en": "Germany, German"
+       "hr": "engleski",
+       "en": "English",
+       "note": "You say 'govorim engleski' even if you're American, the language is engleski."
       },
       {
-       "hr": "Francuska, francuski",
-       "en": "France, French"
+       "hr": "Njemačka",
+       "en": "Germany",
+       "note": null
       },
       {
-       "hr": "Španjolska, španjolski",
-       "en": "Spain, Spanish"
+       "hr": "njemački",
+       "en": "German",
+       "note": null
       },
       {
-       "hr": "Italija, talijanski",
-       "en": "Italy, Italian",
+       "hr": "Francuska",
+       "en": "France",
+       "note": null
+      },
+      {
+       "hr": "francuski",
+       "en": "French",
+       "note": null
+      },
+      {
+       "hr": "Španjolska",
+       "en": "Spain",
+       "note": null
+      },
+      {
+       "hr": "španjolski",
+       "en": "Spanish",
+       "note": null
+      },
+      {
+       "hr": "Italija",
+       "en": "Italy",
        "note": "Watch out: the language is talijanski, not 'italijanski'."
       },
       {
-       "hr": "Portugal, portugalski",
-       "en": "Portugal, Portuguese"
+       "hr": "talijanski",
+       "en": "Italian",
+       "note": "Watch out: the language is talijanski, not 'italijanski'."
       },
       {
-       "hr": "Rusija, ruski",
-       "en": "Russia, Russian"
+       "hr": "Portugal",
+       "en": "Portugal",
+       "note": null
       },
       {
-       "hr": "Poljska, poljski",
-       "en": "Poland, Polish"
+       "hr": "portugalski",
+       "en": "Portuguese",
+       "note": null
       },
       {
-       "hr": "Grčka, grčki",
-       "en": "Greece, Greek"
+       "hr": "Rusija",
+       "en": "Russia",
+       "note": null
       },
       {
-       "hr": "Kina, kineski",
-       "en": "China, Chinese"
+       "hr": "ruski",
+       "en": "Russian",
+       "note": null
       },
       {
-       "hr": "Japan, japanski",
-       "en": "Japan, Japanese"
+       "hr": "Poljska",
+       "en": "Poland",
+       "note": null
+      },
+      {
+       "hr": "poljski",
+       "en": "Polish",
+       "note": null
+      },
+      {
+       "hr": "Grčka",
+       "en": "Greece",
+       "note": null
+      },
+      {
+       "hr": "grčki",
+       "en": "Greek",
+       "note": null
+      },
+      {
+       "hr": "Kina",
+       "en": "China",
+       "note": null
+      },
+      {
+       "hr": "kineski",
+       "en": "Chinese",
+       "note": null
+      },
+      {
+       "hr": "Japan",
+       "en": "Japan",
+       "note": null
+      },
+      {
+       "hr": "japanski",
+       "en": "Japanese",
+       "note": null
       }
      ],
      "sources": [
@@ -136,8 +205,14 @@
        "note": "After 5 and up: genitive plural, pet jezika, not 'pet jezici'."
       },
       {
-       "hr": "strani jezik, strani jezici",
-       "en": "foreign language, foreign languages"
+       "hr": "strani jezik",
+       "en": "foreign language",
+       "note": null
+      },
+      {
+       "hr": "strani jezici",
+       "en": "foreign languages",
+       "note": null
       }
      ],
      "sources": [
@@ -282,7 +357,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Koje jezike govoriš?",
+     "title": "Which languages do you speak? (Koje jezike govoriš?)",
      "intro": "A first-meeting exchange about languages, built entirely from today's sentences. Read it aloud, then swap in your own languages.",
      "lines": [
       {
@@ -362,61 +437,64 @@
      "intro": "One suffix family turns any place into an adjective. Base rule: stem + -ski (Split → splitski). But the final consonant reacts: k, c or č + ski fuses into -čki (Amerika → američki), and g or h + ski fuses into -ški (Prag → praški). These adjectives are always lowercase and never form comparatives.",
      "items": [
       {
-       "hr": "Hrvatska → hrvatski",
-       "en": "Croatia → Croatian",
-       "note": "Drop -ska, add -ski to the stem hrvat-."
+       "hr": "hrvatski",
+       "en": "Croatian",
+       "note": "From Hrvatska. Drop -ska, add -ski to the stem hrvat-."
       },
       {
-       "hr": "Engleska → engleski",
-       "en": "England → English"
+       "hr": "engleski",
+       "en": "English",
+       "note": "From Engleska."
       },
       {
-       "hr": "Francuska → francuski",
-       "en": "France → French"
+       "hr": "francuski",
+       "en": "French",
+       "note": "From Francuska."
       },
       {
-       "hr": "Split → splitski",
-       "en": "Split → of Split",
-       "note": "Plain consonant + -ski: no change."
+       "hr": "splitski",
+       "en": "of Split",
+       "note": "From Split. Plain consonant + -ski: no change."
       },
       {
-       "hr": "Zagreb → zagrebački",
-       "en": "Zagreb → of Zagreb",
-       "note": "Some places take -ački: zagrebački kolodvor (Zagreb station)."
+       "hr": "zagrebački",
+       "en": "of Zagreb",
+       "note": "From Zagreb. Some places take -ački: zagrebački kolodvor (Zagreb station)."
       },
       {
-       "hr": "Amerika → američki",
-       "en": "America → American",
-       "note": "k + ski → čki. Same in: Njemačka → njemački."
+       "hr": "američki",
+       "en": "American",
+       "note": "From Amerika. k + ski → čki. Same in: Njemačka → njemački."
       },
       {
-       "hr": "Rijeka → riječki",
-       "en": "Rijeka → of Rijeka",
-       "note": "k → č again, plus the vowel shifts: rijeČki."
+       "hr": "riječki",
+       "en": "of Rijeka",
+       "note": "From Rijeka. k → č again, plus the vowel shifts: rijeČki."
       },
       {
-       "hr": "Grčka → grčki",
-       "en": "Greece → Greek"
+       "hr": "grčki",
+       "en": "Greek",
+       "note": "From Grčka."
       },
       {
-       "hr": "Prag → praški",
-       "en": "Prague → of Prague",
-       "note": "g + ski → ški: praŠki."
+       "hr": "praški",
+       "en": "of Prague",
+       "note": "From Prag. g + ski → ški: praŠki."
       },
       {
-       "hr": "grad → gradski",
-       "en": "city → urban / city-",
-       "note": "The suffix works on common nouns too: gradski trg = city square."
+       "hr": "gradski",
+       "en": "urban / city-",
+       "note": "From grad. The suffix works on common nouns too: gradski trg = city square."
       },
       {
-       "hr": "more → morski",
-       "en": "sea → maritime / sea-",
-       "note": "morski pas = shark (literally 'sea dog')."
+       "hr": "morski",
+       "en": "maritime / sea-",
+       "note": "From more. morski pas = shark (literally 'sea dog')."
       },
       {
-       "hr": "turist → turistička agencija",
-       "en": "tourist → travel agency",
-       "note": "t + ski can become -čki/-čka via c: turistički."
+       "hr": "turistička agencija",
+       "en": "travel agency",
+       "note": "From turist. t + ski can become -čki/-čka via c: turistički."
       }
      ],
      "sources": [
@@ -611,7 +689,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Talijanska kava ili hrvatska?",
+     "title": "Italian coffee or Croatian? (Talijanska kava ili hrvatska?)",
      "intro": "A quick chat about tastes, built from today's origin adjectives. Read it aloud, agreement and all.",
      "lines": [
       {
@@ -691,62 +769,64 @@
      "intro": "Croatian turns a person into an adjective to show possession: brat → bratov (brother's). Three endings cover everything: masculine owner + hard consonant → -ov; masculine owner + soft consonant (č, ć, š, ž, j, lj, nj) → -ev; any owner whose name ends in -a → -in. Croatian strongly prefers 'bratov auto' over 'auto od brata'.",
      "items": [
       {
-       "hr": "brat → bratov",
-       "en": "brother → brother's",
-       "note": "Hard consonant → -ov: bratov auto."
+       "hr": "bratov",
+       "en": "brother's",
+       "note": "From brat. Hard consonant → -ov: bratov auto."
       },
       {
-       "hr": "Marko → Markov",
-       "en": "Marko → Marko's",
-       "note": "Drop the final -o, add -ov."
+       "hr": "Markov",
+       "en": "Marko's",
+       "note": "From Marko. Drop the final -o, add -ov."
       },
       {
-       "hr": "Ivan → Ivanov",
-       "en": "Ivan → Ivan's"
+       "hr": "Ivanov",
+       "en": "Ivan's",
+       "note": "From Ivan."
       },
       {
-       "hr": "muž → mužev",
-       "en": "husband → husband's",
-       "note": "ž is a soft consonant → -ev, not -ov."
+       "hr": "mužev",
+       "en": "husband's",
+       "note": "From muž. ž is a soft consonant → -ev, not -ov."
       },
       {
-       "hr": "prijatelj → prijateljev",
-       "en": "friend → friend's",
-       "note": "lj is soft → -ev."
+       "hr": "prijateljev",
+       "en": "friend's",
+       "note": "From prijatelj. lj is soft → -ev."
       },
       {
-       "hr": "otac → očev",
-       "en": "father → father's",
-       "note": "Double change: the fleeting a drops (otac → otc-) and c softens to č → očev."
+       "hr": "očev",
+       "en": "father's",
+       "note": "From otac. Double change: the fleeting a drops (otac → otc-) and c softens to č → očev."
       },
       {
-       "hr": "sestra → sestrin",
-       "en": "sister → sister's",
-       "note": "Owner in -a → -in."
+       "hr": "sestrin",
+       "en": "sister's",
+       "note": "From sestra. Owner in -a → -in."
       },
       {
-       "hr": "Ana → Anin",
-       "en": "Ana → Ana's"
+       "hr": "Anin",
+       "en": "Ana's",
+       "note": "From Ana."
       },
       {
-       "hr": "žena → ženin",
-       "en": "wife → wife's",
-       "note": "ženina knjiga = my wife's book."
+       "hr": "ženin",
+       "en": "wife's",
+       "note": "From žena. ženina knjiga = my wife's book."
       },
       {
-       "hr": "majka → majčin",
-       "en": "mother → mother's",
-       "note": "k softens to č before -in: majčin, never 'majkin'."
+       "hr": "majčin",
+       "en": "mother's",
+       "note": "From majka. k softens to č before -in: majčin, never 'majkin'."
       },
       {
-       "hr": "baka → bakin",
-       "en": "grandma → grandma's",
-       "note": "But baka stays bakin, the k→č change is word-by-word; learn majčin as the exception you'll hear most."
+       "hr": "bakin",
+       "en": "grandma's",
+       "note": "From baka. But baka stays bakin, the k→č change is word-by-word; learn majčin as the exception you'll hear most."
       },
       {
-       "hr": "tata → tatin",
-       "en": "dad → dad's",
-       "note": "tata is masculine but ends in -a, so it takes -in: tatin auto."
+       "hr": "tatin",
+       "en": "dad's",
+       "note": "From tata. tata is masculine but ends in -a, so it takes -in: tatin auto."
       }
      ],
      "sources": [
@@ -792,8 +872,13 @@
        "note": "Inanimate masculine accusative = nominative, so bratov doesn't change here."
       },
       {
-       "hr": "bratov auto, NE 'auto od brata'",
-       "en": "brother's car, NOT 'car of brother'",
+       "hr": "bratov auto",
+       "en": "brother's car",
+       "note": "The od-construction sounds clumsy; natives reach for the possessive adjective."
+      },
+      {
+       "hr": "NE 'auto od brata'",
+       "en": "NOT 'car of brother'",
        "note": "The od-construction sounds clumsy; natives reach for the possessive adjective."
       }
      ],
@@ -929,7 +1014,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Bratov auto, ženina knjiga",
+     "title": "Whose car, whose book (Bratov auto, ženina knjiga)",
      "intro": "Guess who owns what, using today's possessive adjectives. Read it aloud, then invent two more of your own.",
      "lines": [
       {
@@ -1009,42 +1094,44 @@
      "intro": "A1 taught you noun endings; A2 makes everything in the phrase agree. In the accusative singular: feminine, every word takes -u (tu lijepu ženu); masculine animate, demonstrative and adjective take -og (or -eg after a soft consonant) and the noun takes -a (tog dobrog čovjeka); masculine inanimate and neuter, nothing changes. Watch each transformation.",
      "items": [
       {
-       "hr": "taj dobar čovjek → tog dobrog čovjeka",
-       "en": "that good man → (I see) that good man",
-       "note": "Animate masculine: -og + -og + -a. Note dobar → dobrog: the fleeting a drops."
+       "hr": "tog dobrog čovjeka",
+       "en": "that good man, as the object of a verb",
+       "note": "From taj dobar čovjek. Animate masculine: -og + -og + -a. Note dobar → dobrog: the fleeting a drops."
       },
       {
-       "hr": "ovaj novi kolega → ovog novog kolegu",
-       "en": "this new colleague → (I see) this new colleague",
-       "note": "kolega is masculine but declines like an a-noun: adjectives masculine (-og), noun takes -u!"
+       "hr": "ovog novog kolegu",
+       "en": "this new colleague, as the object of a verb",
+       "note": "From ovaj novi kolega. kolega is masculine but declines like an a-noun: adjectives masculine (-og), noun takes -u!"
       },
       {
-       "hr": "moj stari auto → moj stari auto",
-       "en": "my old car → (I see) my old car",
-       "note": "Inanimate masculine: accusative = nominative. Nothing changes."
+       "hr": "moj stari auto",
+       "en": "my old car, as the object of a verb",
+       "note": "From moj stari auto. Inanimate masculine: accusative = nominative. Nothing changes."
       },
       {
-       "hr": "naš novi učitelj → našeg novog učitelja",
-       "en": "our new teacher → (I see) our new teacher",
-       "note": "After a soft consonant (š) the ending is -eg: našEg, but novOg."
+       "hr": "našeg novog učitelja",
+       "en": "our new teacher, as the object of a verb",
+       "note": "From naš novi učitelj. After a soft consonant (š) the ending is -eg: našEg, but novOg."
       },
       {
-       "hr": "ta lijepa žena → tu lijepu ženu",
-       "en": "that beautiful woman → (I see) that beautiful woman",
-       "note": "Feminine: -u across the board."
+       "hr": "tu lijepu ženu",
+       "en": "that beautiful woman, as the object of a verb",
+       "note": "From ta lijepa žena. Feminine: -u across the board."
       },
       {
-       "hr": "ova nova knjiga → ovu novu knjigu",
-       "en": "this new book → (I read) this new book"
+       "hr": "ovu novu knjigu",
+       "en": "this new book, as the object of a verb",
+       "note": "From ova nova knjiga."
       },
       {
-       "hr": "moja dobra prijateljica → moju dobru prijateljicu",
-       "en": "my good friend (f.) → (I see) my good friend"
+       "hr": "moju dobru prijateljicu",
+       "en": "my good friend, as the object of a verb",
+       "note": "From moja dobra prijateljica."
       },
       {
-       "hr": "to malo dijete → to malo dijete",
-       "en": "that small child → (I see) that small child",
-       "note": "Neuter: accusative = nominative, even for living beings."
+       "hr": "to malo dijete",
+       "en": "that small child, as the object of a verb",
+       "note": "From to malo dijete. Neuter: accusative = nominative, even for living beings."
       }
      ],
      "sources": [
@@ -1251,7 +1338,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Vidim tog dobrog čovjeka",
+     "title": "I see that good man (Vidim tog dobrog čovjeka)",
      "intro": "Whole accusative phrases in a natural exchange. Read it aloud and feel every word in the phrase agree.",
      "lines": [
       {
@@ -1307,7 +1394,7 @@
    "week": 12,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "svoj, 'one's own'",
+   "title": "Saying whose it is: svoj",
    "objective": "Use the reflexive-possessive svoj when the owner is the subject.",
    "paretoFocus": "'Volim svoj posao' vs 'Volim njegov posao' changes the meaning entirely. svoj is obligatory in Croatian and has no English equivalent, drill it early.",
    "resources": [],
@@ -1327,7 +1414,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "svoj, one's own",
+     "title": "The word for your own: svoj",
      "intro": "svoj points back to the subject of the sentence. Whenever the possessor and the subject are the same person, Croatian demands svoj, no exceptions, in any person: Čitam svoju knjigu, On vozi svoj auto. Using moj/njegov instead either sounds foreign or changes the meaning completely. svoj declines exactly like moj.",
      "items": [
       {
@@ -1386,7 +1473,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "svoj or not svoj?",
+     "title": "When to use it and when not: svoj",
      "intro": "One question decides everything: is the owner the subject of the verb? Yes → svoj. No → moj/tvoj/njegov/njezin.",
      "questions": [
       {
@@ -1519,7 +1606,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Svoj ili njegov?",
+     "title": "His own or his? (Svoj ili njegov?)",
      "intro": "Quick-fire questions about who owns what, every answer needs svoj because the subject is always the owner. Read it aloud.",
      "lines": [
       {
@@ -1873,9 +1960,14 @@
        "note": "Lesson 61: languages lowercase, straight after the verb."
       },
       {
-       "hr": "Njemačka (njemački; Francuska) francuski",
-       "en": "Germany (German; France) French",
-       "note": "Lesson 61: country capitalized, language not."
+       "hr": "njemački",
+       "en": "German (the language)",
+       "note": "The language is the same word as the adjective, written lower case."
+      },
+      {
+       "hr": "francuski",
+       "en": "French (the language)",
+       "note": "Likewise: francuski, engleski, talijanski."
       },
       {
        "hr": "Volim španjolsku glazbu.",
@@ -2185,7 +2277,7 @@
    "week": 13,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Kad će taj vikend? making plans",
+   "title": "Making plans: Kad će taj vikend?",
    "objective": "Talk about upcoming weekend plans with futur I and time phrases.",
    "paretoFocus": "Weekend plans are the small talk you'll actually have every Friday; the theme recycles futur I while new grammar loads underneath.",
    "resources": [
@@ -2244,8 +2336,13 @@
        "note": "ići u kino = go to the movies."
       },
       {
-       "hr": "plan, planovi",
-       "en": "plan, plans",
+       "hr": "plan",
+       "en": "plan",
+       "note": "Imaš li planove za vikend? = Do you have plans for the weekend?"
+      },
+      {
+       "hr": "planovi",
+       "en": "plans",
        "note": "Imaš li planove za vikend? = Do you have plans for the weekend?"
       },
       {
@@ -2308,9 +2405,9 @@
        "note": "Negative future: neću, nećeš, neće... written as one word."
       },
       {
-       "hr": "Ja ću ići. = Ići ću.",
-       "en": "I will go. (both correct)",
-       "note": "But never 'Ću ići', the clitic can't open a sentence."
+       "hr": "Ići ću.",
+       "en": "I will go. (with the verb first)",
+       "note": "Ja ću ići. is equally correct. Both keep the clitic ću in second position."
       }
      ],
      "sources": [
@@ -2535,42 +2632,52 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "me, te, ga, je, the object pronoun pairs",
+     "title": "The object pronoun pairs: me, te, ga, je",
      "intro": "Every accusative pronoun has two forms: a stressed one (mene, tebe, njega) and a short clitic (me, te, ga). The clitic is the default (natives use it 95% of the time) and it always sits in second position. The stressed form appears after prepositions, for contrast, and as a stand-alone answer.",
      "items": [
       {
-       "hr": "ja → mene / me",
-       "en": "me (stressed / clitic)"
+       "hr": "mene / me",
+       "en": "me (stressed / clitic)",
+       "note": "From ja."
       },
       {
-       "hr": "ti → tebe / te",
-       "en": "you (stressed / clitic)"
+       "hr": "tebe / te",
+       "en": "you (stressed / clitic)",
+       "note": "From ti."
       },
       {
-       "hr": "on, ono → njega / ga",
-       "en": "him, it (stressed / clitic)"
+       "hr": "njega / ga",
+       "en": "him, it (stressed / clitic)",
+       "note": "From on, ono."
       },
       {
-       "hr": "ona → nju / ju (je)",
-       "en": "her (stressed / clitic)",
-       "note": "The everyday clitic is je; use ju when it would bump into the auxiliary je: Vidio JU JE jučer."
+       "hr": "nju / ju",
+       "en": "her (the stressed form, then the short one)",
+       "note": "From ona. The clitic ju becomes je when another clitic follows."
       },
       {
-       "hr": "mi → nas",
+       "hr": "nas",
        "en": "us",
-       "note": "Same letters stressed and clitic, only the stress differs in speech."
+       "note": "From mi. Same letters stressed and clitic, only the stress differs in speech."
       },
       {
-       "hr": "vi → vas",
-       "en": "you (plural/formal)"
+       "hr": "vas",
+       "en": "you (plural/formal)",
+       "note": "From vi."
       },
       {
-       "hr": "oni, one → njih / ih",
-       "en": "them (stressed / clitic)"
+       "hr": "njih / ih",
+       "en": "them (stressed / clitic)",
+       "note": "From oni, one."
       },
       {
-       "hr": "za mene, kod njega",
-       "en": "for me, at his place",
+       "hr": "za mene",
+       "en": "for me",
+       "note": "After a preposition: ALWAYS the stressed form. 'za me' is impossible in standard speech."
+      },
+      {
+       "hr": "kod njega",
+       "en": "at his place",
        "note": "After a preposition: ALWAYS the stressed form. 'za me' is impossible in standard speech."
       },
       {
@@ -2777,7 +2884,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Čekaš li me?",
+     "title": "Are you waiting for me? (Čekaš li me?)",
      "intro": "A quick exchange built entirely from today's clitic pronouns. Read it aloud, then swap in real names.",
      "lines": [
       {
@@ -3106,7 +3213,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Jesi li mu ga dao?",
+     "title": "Did you give it to him? (Jesi li mu ga dao?)",
      "intro": "Practice the clitic chain in a natural back-and-forth between friends. Read it aloud, listening for the fixed order.",
      "lines": [
       {
@@ -3186,64 +3293,64 @@
      "intro": "A new family of verbs joins your present tense today, and they all take the regular -em endings. Verbs in -nuti conjugate with -nem (krenuti → krenem), and doći with its whole family gives -đem (dođem, nađem, uđem). These are the key motion and event verbs of everyday plans, learn the 1st person singular and the rest of the paradigm follows automatically.",
      "items": [
       {
-       "hr": "krenuti → krenem",
-       "en": "to set off → I set off",
-       "note": "Full paradigm: krenem, kreneš, krene, krenemo, krenete, krenu. Kad krenemo ranije, ne žurimo. (When we set off earlier, we don't hurry.)"
+       "hr": "krenem",
+       "en": "I set off",
+       "note": "From krenuti. Full paradigm: krenem, kreneš, krene, krenemo, krenete, krenu. Kad krenemo ranije, ne žurimo. (When we set off earlier, we don't hurry.)"
       },
       {
-       "hr": "doći → dođem",
-       "en": "to come, to arrive → I come",
-       "note": "dođem, dođeš, dođe, dođemo, dođete, dođu. Dođem po tebe u osam. (I'll come pick you up at eight.)"
+       "hr": "dođem",
+       "en": "I come",
+       "note": "From doći. dođem, dođeš, dođe, dođemo, dođete, dođu. Dođem po tebe u osam. (I'll come pick you up at eight.)"
       },
       {
-       "hr": "stići → stignem",
-       "en": "to arrive, to make it → I arrive",
-       "note": "stignem, stigneš… stignu. Javi mi se kad stigneš. (Let me know when you arrive.)"
+       "hr": "stignem",
+       "en": "I arrive",
+       "note": "From stići. stignem, stigneš… stignu. Javi mi se kad stigneš. (Let me know when you arrive.)"
       },
       {
-       "hr": "poći → pođem",
-       "en": "to set out → I set out",
-       "note": "pođem, pođeš… pođu. Ako pođemo sada, stižemo na vrijeme. (If we set out now, we arrive on time.)"
+       "hr": "pođem",
+       "en": "I set out",
+       "note": "From poći. pođem, pođeš… pođu. Ako pođemo sada, stižemo na vrijeme. (If we set out now, we arrive on time.)"
       },
       {
-       "hr": "otići → odem",
-       "en": "to leave, to go away → I leave",
-       "note": "Irregular stem: odem, odeš, ode, odemo, odete, odu. Moram otići prije šest. (I have to leave before six.)"
+       "hr": "odem",
+       "en": "I leave",
+       "note": "From otići. Irregular stem: odem, odeš, ode, odemo, odete, odu. Moram otići prije šest. (I have to leave before six.)"
       },
       {
-       "hr": "izaći → izađem",
-       "en": "to go out → I go out",
-       "note": "izađem… izađu. Kad izađem s posla, nazvat ću te. (When I get out of work, I'll call you.)"
+       "hr": "izađem",
+       "en": "I go out",
+       "note": "From izaći. izađem… izađu. Kad izađem s posla, nazvat ću te. (When I get out of work, I'll call you.)"
       },
       {
-       "hr": "ući → uđem",
-       "en": "to enter → I enter",
-       "note": "uđem… uđu. Imperative: Uđi, vrata su otvorena! (Come in, the door is open!)"
+       "hr": "uđem",
+       "en": "I enter",
+       "note": "From ući. uđem… uđu. Imperative: Uđi, vrata su otvorena! (Come in, the door is open!)"
       },
       {
-       "hr": "naći → nađem",
-       "en": "to find → I find",
-       "note": "nađem… nađu. With se it means to meet up: Nađemo se u pet? (Shall we meet at five?), the perfective present is normal in arrangements."
+       "hr": "nađem",
+       "en": "I find",
+       "note": "From naći. nađem… nađu. With se it means to meet up: Nađemo se u pet? (Shall we meet at five?), the perfective present is normal in arrangements."
       },
       {
-       "hr": "skrenuti → skrenem",
-       "en": "to turn (left/right) → I turn",
-       "note": "skrenem… skrenu. Skreni desno kod pekare. (Turn right at the bakery.)"
+       "hr": "skrenem",
+       "en": "I turn",
+       "note": "From skrenuti. skrenem… skrenu. Skreni desno kod pekare. (Turn right at the bakery.)"
       },
       {
-       "hr": "skinuti → skinem",
-       "en": "to take off; to download → I take off",
-       "note": "skinem… skinu. Skinem jaknu čim uđem u stan. (I take my jacket off as soon as I enter the flat.)"
+       "hr": "skinem",
+       "en": "I take off",
+       "note": "From skinuti. skinem… skinu. Skinem jaknu čim uđem u stan. (I take my jacket off as soon as I enter the flat.)"
       },
       {
-       "hr": "dignuti (dići) → dignem",
-       "en": "to lift, to raise → I lift",
-       "note": "dignem… dignu. With se, colloquially 'get up': Ujutro se teško dignem iz kreveta."
+       "hr": "dignem",
+       "en": "I lift",
+       "note": "From dignuti (dići). dignem… dignu. With se, colloquially 'get up': Ujutro se teško dignem iz kreveta."
       },
       {
-       "hr": "početi → počnem",
-       "en": "to begin → I begin",
-       "note": "Not a -nuti verb, but the same -nem pattern: počnem, počneš… počnu. Čim počne kiša, idemo unutra. (As soon as the rain starts, we go inside.)"
+       "hr": "počnem",
+       "en": "I begin",
+       "note": "From početi. Not a -nuti verb, but the same -nem pattern: počnem, počneš… počnu. Čim počne kiša, idemo unutra. (As soon as the rain starts, we go inside.)"
       }
      ],
      "sources": [
@@ -3253,7 +3360,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "krenem, dođem, stignem in action",
+     "title": "Verbs of motion in action: krenem, dođem, stignem",
      "intro": "Conjugate the new class and keep your clitic order intact while you do it.",
      "questions": [
       {
@@ -3366,10 +3473,10 @@
       },
       {
        "type": "TRANSLATE",
-       "prompt": "Write it in Croatian: 'to lift, to raise → I lift'",
+       "prompt": "Write it in Croatian: 'I raise my hand.'",
        "difficulty": 4,
-       "answer": "dignuti (dići) → dignem",
-       "explanation": "'to lift, to raise → I lift' is 'dignuti (dići) → dignem'"
+       "answer": "Dignem ruku.",
+       "explanation": "'I raise my hand.' is 'Dignem ruku.' The infinitive is dignuti, also written dići."
       }
      ],
      "sources": [
@@ -3673,7 +3780,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Roštilj u subotu, sending the invitations",
+     "title": "Sending the invitations: Roštilj u subotu",
      "intro": "You and your wife are planning a Saturday barbecue and inviting friends. Read your lines ('Me') aloud, one friend accepts, one declines, and every phrase is from today's lesson.",
      "lines": [
       {
@@ -3985,7 +4092,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Roštilj kod nas u subotu",
+     "title": "A barbecue at ours on Saturday (Roštilj kod nas u subotu)",
      "intro": "The written message from today's lesson, played out as a spoken invitation. Read it aloud.",
      "lines": [
       {
@@ -4078,9 +4185,24 @@
        "note": "ćemo → se: auxiliary before the reflexive clitic."
       },
       {
-       "hr": "mene/me, tebe/te, njega/ga, nju/je",
-       "en": "me, you, him, her, stressed/clitic accusative pairs",
-       "note": "The short (clitic) forms are what natives use 95% of the time; also: nas, vas, njih/ih."
+       "hr": "mene / me",
+       "en": "me, as an object",
+       "note": "Stressed mene, then the short clitic me."
+      },
+      {
+       "hr": "tebe / te",
+       "en": "you, as an object",
+       "note": "Stressed tebe, then te."
+      },
+      {
+       "hr": "njega / ga",
+       "en": "him, as an object",
+       "note": "Stressed njega, then ga."
+      },
+      {
+       "hr": "nju / je",
+       "en": "her, as an object",
+       "note": "Stressed nju, then je."
       },
       {
        "hr": "Vidiš li me? Vidim te.",
@@ -4321,7 +4443,7 @@
    "week": 14,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Kvaliteta života, how you live",
+   "title": "How you live: kvaliteta života",
    "objective": "Describe your home, neighbourhood and daily habits.",
    "paretoFocus": "Quality-of-life vocabulary (stan, kvart, navike, slobodno vrijeme) powers the conversations natives most like to have, comparing how people live.",
    "resources": [
@@ -4343,7 +4465,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Kvaliteta života, home, neighbourhood, habits",
+     "title": "Home, neighbourhood, habits: kvaliteta života",
      "intro": "Quality-of-life vocabulary powers the conversations natives most like to have: how people live, what their neighbourhood is like, which habits they love. These fourteen words are the core kit, each comes with a sentence you can reuse about your own life.",
      "items": [
       {
@@ -4556,7 +4678,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kakav je tvoj kvart?",
+     "title": "What is your neighbourhood like? (Kakav je tvoj kvart?)",
      "intro": "Chatting about home life with today's new vocabulary. Read it aloud.",
      "lines": [
       {
@@ -4636,59 +4758,59 @@
      "intro": "You already put nouns in the locative; now the whole phrase agrees. Masculine and neuter modifiers take -om(e) (u tom velikom gradu), soft stems take -em (na trećem katu, u našem dvorištu), and feminine takes -oj (u našoj novoj kući). Bonus: these adjective endings are identical in the dative, so you're learning two cases at once.",
      "items": [
       {
-       "hr": "taj veliki grad → u tom velikom gradu",
-       "en": "that big city → in that big city",
-       "note": "Masculine locative: both modifiers take -om."
+       "hr": "u tom velikom gradu",
+       "en": "in that big city",
+       "note": "From taj veliki grad. Masculine locative: both modifiers take -om."
       },
       {
-       "hr": "moj mali stan → u mom malom stanu",
-       "en": "my small flat → in my small flat",
-       "note": "moj → mom (also mome/mojem). Živim u mom malom stanu."
+       "hr": "u mom malom stanu",
+       "en": "in my small flat",
+       "note": "From moj mali stan. moj → mom (also mome/mojem). Živim u mom malom stanu."
       },
       {
-       "hr": "naša nova kuća → u našoj novoj kući",
-       "en": "our new house → in our new house",
-       "note": "Feminine: modifiers take -oj, the noun takes -i."
+       "hr": "u našoj novoj kući",
+       "en": "in our new house",
+       "note": "From naša nova kuća. Feminine: modifiers take -oj, the noun takes -i."
       },
       {
-       "hr": "svoja soba → u svojoj sobi",
-       "en": "one's own room → in one's own room",
-       "note": "svoj declines like moj: Radim u svojoj sobi. (I work in my own room.)"
+       "hr": "u svojoj sobi",
+       "en": "in one's own room",
+       "note": "From svoja soba. svoj declines like moj: Radim u svojoj sobi. (I work in my own room.)"
       },
       {
-       "hr": "ovaj tihi kvart → u ovom tihom kvartu",
-       "en": "this quiet neighbourhood → in this quiet neighbourhood",
-       "note": "ovaj → ovom, tihi → tihom."
+       "hr": "u ovom tihom kvartu",
+       "en": "in this quiet neighbourhood",
+       "note": "From ovaj tihi kvart. ovaj → ovom, tihi → tihom."
       },
       {
-       "hr": "to lijepo selo → u tom lijepom selu",
-       "en": "that pretty village → in that pretty village",
-       "note": "Neuter takes the same -om endings as masculine."
+       "hr": "u tom lijepom selu",
+       "en": "in that pretty village",
+       "note": "From to lijepo selo. Neuter takes the same -om endings as masculine."
       },
       {
-       "hr": "treći kat → na trećem katu",
-       "en": "third floor → on the third floor",
-       "note": "Soft stem ć → -em: trećem, not trećom. Stan je na trećem katu."
+       "hr": "na trećem katu",
+       "en": "on the third floor",
+       "note": "From treći kat. Soft stem ć → -em: trećem, not trećom. Stan je na trećem katu."
       },
       {
-       "hr": "naše veliko dvorište → u našem velikom dvorištu",
-       "en": "our big yard → in our big yard",
-       "note": "naš is a soft stem too: našem."
+       "hr": "u našem velikom dvorištu",
+       "en": "in our big yard",
+       "note": "From naše veliko dvorište. naš is a soft stem too: našem."
       },
       {
-       "hr": "jedna mala kuhinja → u jednoj maloj kuhinji",
-       "en": "one small kitchen → in one small kitchen",
-       "note": "Feminine chain: jednoj maloj kuhinji."
+       "hr": "u jednoj maloj kuhinji",
+       "en": "in one small kitchen",
+       "note": "From jedna mala kuhinja. Feminine chain: jednoj maloj kuhinji."
       },
       {
-       "hr": "tvoj stari kvart → u tvom starom kvartu",
-       "en": "your old neighbourhood → in your old neighbourhood",
-       "note": "tvoj → tvom, stari → starom."
+       "hr": "u tvom starom kvartu",
+       "en": "in your old neighbourhood",
+       "note": "From tvoj stari kvart. tvoj → tvom, stari → starom."
       },
       {
-       "hr": "glavni trg → na glavnom trgu",
-       "en": "the main square → on the main square",
-       "note": "Squares and open spaces take na: na glavnom trgu."
+       "hr": "na glavnom trgu",
+       "en": "on the main square",
+       "note": "From glavni trg. Squares and open spaces take na: na glavnom trgu."
       }
      ],
      "sources": [
@@ -4835,10 +4957,10 @@
       },
       {
        "type": "TRANSLATE",
-       "prompt": "Say it in Croatian, in writing: 'the main square → on the main square'",
+       "prompt": "Say it in Croatian, in writing: 'I am waiting on the main square.'",
        "difficulty": 5,
-       "answer": "glavni trg → na glavnom trgu",
-       "explanation": "'the main square → on the main square' is 'glavni trg → na glavnom trgu'"
+       "answer": "Čekam na glavnom trgu.",
+       "explanation": "'I am waiting on the main square.' is 'Cekam na glavnom trgu.' The whole phrase goes into the locative after na."
       }
      ],
      "sources": [
@@ -4848,7 +4970,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Gdje živiš?",
+     "title": "Where do you live? (Gdje živiš?)",
      "intro": "Full locative phrases in a natural conversation about where you live and where you go. Read it aloud.",
      "lines": [
       {
@@ -5127,7 +5249,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Naš stan, naš kvart, a home conversation",
+     "title": "A conversation about home: Naš stan, naš kvart",
      "intro": "An evening chat with your wife about your flat, your neighbourhood, and where each of you grew up. Her lines use feminine past forms (odrasla, živjela), a perfect model of participle agreement.",
      "lines": [
       {
@@ -5408,7 +5530,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Što radiš?",
+     "title": "What are you doing? (Što radiš?)",
      "intro": "Process or completed result? A quick exchange that puts today's aspect pairs to work. Read it aloud.",
      "lines": [
       {
@@ -5697,7 +5819,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Dok sam pisao pismo",
+     "title": "While I was writing the letter (Dok sam pisao pismo)",
      "intro": "Background versus event, told as a real exchange, straight from today's example sentences. Read it aloud.",
      "lines": [
       {
@@ -5825,6 +5947,31 @@
        "hr": "Ukratko, moj život je dobar i miran.",
        "en": "In short, my life is good and peaceful.",
        "note": "Ukratko = in short, the perfect closer for any talk."
+      },
+      {
+       "hr": "Živim u mirnom kvartu.",
+       "en": "I live in a quiet neighbourhood.",
+       "note": "Locative after u."
+      },
+      {
+       "hr": "Sve mi je u blizini.",
+       "en": "Everything is close by.",
+       "note": "u blizini = nearby, a fixed phrase."
+      },
+      {
+       "hr": "Šetam svaki dan.",
+       "en": "I walk every day.",
+       "note": "svaki dan takes the accusative."
+      },
+      {
+       "hr": "Smeta mi buka.",
+       "en": "The noise bothers me.",
+       "note": "smetati takes the dative: smeta mi."
+      },
+      {
+       "hr": "Život mi je dobar.",
+       "en": "My life is good.",
+       "note": "The dative mi does the work of a possessive."
       }
      ],
      "sources": [
@@ -5834,7 +5981,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "Kvaliteta života, the integrated check",
+     "title": "The integrated check: kvaliteta života",
      "intro": "One exercise, the whole week: listen to people describing their lives, then produce the locative phrases, dative constructions and aspect choices yourself.",
      "questions": [
       {
@@ -5974,7 +6121,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Ispričat ću ti kako živim",
+     "title": "Let me tell you how I live (Ispričat ću ti kako živim)",
      "intro": "The scaffolded talk delivered as a real conversation. Read your lines aloud, then swap in your own life.",
      "lines": [
       {
@@ -6336,7 +6483,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Aspect after ću, moram, volim",
+     "title": "Aspect after a helper verb: ću, moram, volim",
      "intro": "Futur I and modal verbs don't remove the aspect decision, they sharpen it. Perfective infinitive = you'll get it done; imperfective = you'll spend time on it or do it habitually. Ten patterns cover almost everything.",
      "items": [
       {
@@ -6544,7 +6691,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Sutra ću napisati izvještaj",
+     "title": "Tomorrow I will write the report (Sutra ću napisati izvještaj)",
      "intro": "Two flatmates sort out who is doing what before the guests arrive, some things already decided, others still just a plan.",
      "lines": [
       {
@@ -6626,14 +6773,19 @@
      "intro": "Module 2 closes today. From now on, learn every verb as a pair, one meaning, two viewpoints. First eight: the verbs of an ordinary day. Read each pair aloud: imperfective, then perfective.",
      "items": [
       {
-       "hr": "Pišem poruku. → Napisao sam poruku.",
-       "en": "I am writing a message. → I wrote the message.",
-       "note": "pisati / napisati: be writing / finish writing."
+       "hr": "Pišem poruku.",
+       "en": "I am writing a message.",
+       "note": "Imperfective: the action in progress."
       },
       {
-       "hr": "Čitam roman. → Pročitao sam ga za tri dana.",
-       "en": "I am reading a novel. → I read it in three days.",
-       "note": "čitati / pročitati: be reading / read through."
+       "hr": "Napisao sam poruku.",
+       "en": "I wrote the message.",
+       "note": "From Pišem poruku.. pisati / napisati: be writing / finish writing."
+      },
+      {
+       "hr": "Pročitao sam ga za tri dana.",
+       "en": "I read it in three days.",
+       "note": "From Čitam roman.. čitati / pročitati: be reading / read through."
       },
       {
        "hr": "piti / popiti",
@@ -6641,29 +6793,44 @@
        "note": "Pijem kavu. → Popio sam kavu i krenuo."
       },
       {
-       "hr": "Jedem polako. → Pojeo sam sve.",
-       "en": "I eat slowly. → I ate everything.",
-       "note": "jesti / pojesti: be eating / eat up."
+       "hr": "Jedem polako.",
+       "en": "I eat slowly.",
+       "note": "How the eating goes, so imperfective."
       },
       {
-       "hr": "Kupujem kruh svaki dan. → Jučer sam kupio i vino.",
-       "en": "I buy bread every day. → Yesterday I bought wine too.",
-       "note": "kupovati / kupiti: buy regularly / buy once."
+       "hr": "Pojeo sam sve.",
+       "en": "I ate everything.",
+       "note": "From Jedem polako.. jesti / pojesti: be eating / eat up."
       },
       {
-       "hr": "Gledam film. → Pogledaj ovo!",
-       "en": "I am watching a film. → Take a look at this!",
-       "note": "gledati / pogledati: be watching / take a look."
+       "hr": "Jučer sam kupio i vino.",
+       "en": "Yesterday I bought wine too.",
+       "note": "From Kupujem kruh svaki dan.. kupovati / kupiti: buy regularly / buy once."
       },
       {
-       "hr": "Učim hrvatski. → Naučio sam padeže.",
-       "en": "I am studying Croatian. → I have learned the cases.",
-       "note": "učiti / naučiti: the process / the mastered result."
+       "hr": "Gledam film.",
+       "en": "I am watching a film.",
+       "note": "In progress."
       },
       {
-       "hr": "Račune plaćam online. → Platio sam večeru.",
-       "en": "I pay my bills online. → I paid for dinner.",
-       "note": "plaćati / platiti: pay regularly / pay once."
+       "hr": "Pogledaj ovo!",
+       "en": "Take a look at this!",
+       "note": "From Gledam film.. gledati / pogledati: be watching / take a look."
+      },
+      {
+       "hr": "Učim hrvatski.",
+       "en": "I am studying Croatian.",
+       "note": "The process."
+      },
+      {
+       "hr": "Naučio sam padeže.",
+       "en": "I have learned the cases.",
+       "note": "From Učim hrvatski.. učiti / naučiti: the process / the mastered result."
+      },
+      {
+       "hr": "Platio sam večeru.",
+       "en": "I paid for dinner.",
+       "note": "From Račune plaćam online.. plaćati / platiti: pay regularly / pay once."
       }
      ],
      "sources": [
@@ -6687,9 +6854,9 @@
        "note": "Uzimam tramvaj svaki dan. → Uzeo sam taksi."
       },
       {
-       "hr": "Film počinje u osam. → Film je već počeo!",
-       "en": "The film starts at eight. → The film has already started!",
-       "note": "počinjati / početi: be starting / start once."
+       "hr": "Film je već počeo!",
+       "en": "The film has already started!",
+       "note": "From Film počinje u osam.. počinjati / početi: be starting / start once."
       },
       {
        "hr": "završavati / završiti",
@@ -6702,9 +6869,14 @@
        "note": "Viđamo se svaki tjedan. → Jučer sam ga vidio u gradu."
       },
       {
-       "hr": "Dolazim! → Doći ću za pet minuta.",
-       "en": "I am coming! → I will arrive in five minutes.",
-       "note": "dolaziti / doći: come repeatedly / arrive once."
+       "hr": "Dolazim!",
+       "en": "I am coming!",
+       "note": "Right now, so imperfective."
+      },
+      {
+       "hr": "Doći ću za pet minuta.",
+       "en": "I will arrive in five minutes.",
+       "note": "From Dolazim!. dolaziti / doći: come repeatedly / arrive once."
       },
       {
        "hr": "slati / poslati",
@@ -6863,10 +7035,10 @@
       },
       {
        "type": "TRANSLATE",
-       "prompt": "Write it in Croatian: 'I am coming! → I will arrive in five minutes.'",
+       "prompt": "Write it in Croatian: 'I will arrive in five minutes.'",
        "difficulty": 6,
-       "answer": "Dolazim! → Doći ću za pet minuta.",
-       "explanation": "'I am coming! → I will arrive in five minutes.' is 'Dolazim! → Doći ću za pet minuta.'"
+       "answer": "Doći ću za pet minuta.",
+       "explanation": "'I will arrive in five minutes.' is 'Doci cu za pet minuta.' Verbs in -ci keep the full infinitive before the clitic."
       }
      ],
      "sources": [
@@ -6876,7 +7048,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Dolazim za pet minuta",
+     "title": "I am coming in five minutes (Dolazim za pet minuta)",
      "intro": "Habit versus single event, using today's second batch of aspect pairs. Read it aloud.",
      "lines": [
       {
@@ -6932,7 +7104,7 @@
    "week": 15,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Planovi, želje, mogućnosti",
+   "title": "Plans, wishes and possibilities: planovi, želje, mogućnosti",
    "objective": "Talk about plans, wishes and possibilities with verb + infinitive patterns.",
    "paretoFocus": "planirati/željeti/namjeravati/moći + infinitive is a tiny pattern with huge range, everything you intend, hope or can do fits in it.",
    "resources": [],
@@ -6952,7 +7124,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Planovi, želje, mogućnosti, verb + infinitive",
+     "title": "A verb plus the infinitive: planovi, želje, mogućnosti",
      "intro": "One small pattern, huge range: planirati, namjeravati, željeti, uspjeti, pokušavati + infinitive covers everything you intend, hope or manage to do. Watch the aspect of every infinitive you attach.",
      "items": [
       {
@@ -7150,7 +7322,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Planovi za ovu godinu",
+     "title": "Plans for this year (Planovi za ovu godinu)",
      "intro": "Plans, intentions and hopes, straight from today's verb + infinitive pattern. Read it aloud.",
      "lines": [
       {
@@ -7990,7 +8162,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kad bih imao više vremena",
+     "title": "If I had more time (Kad bih imao više vremena)",
      "intro": "Wishes and unreal conditions, straight from today's kad bih pattern. Read it aloud.",
      "lines": [
       {
@@ -8342,14 +8514,14 @@
      "intro": "The recipient side of your sentences gets its full endings: masculine/neuter adjectives take -om(u/e), feminine -oj, exactly the endings you already know from the locative. Same forms, new job.",
      "items": [
       {
-       "hr": "moja dobra prijateljica → Pišem mojoj dobroj prijateljici.",
-       "en": "my good friend (f.) → I'm writing to my good friend.",
-       "note": "Feminine dative: -oj on adjective and possessive, -i on the noun."
+       "hr": "Pišem mojoj dobroj prijateljici.",
+       "en": "I'm writing to my good friend.",
+       "note": "From moja dobra prijateljica. Feminine dative: -oj on adjective and possessive, -i on the noun."
       },
       {
-       "hr": "taj stari čovjek → Dajem tom starom čovjeku novine.",
-       "en": "that old man → I give that old man the newspaper.",
-       "note": "Masculine dative: taj → tom, stari → starom, čovjek → čovjeku."
+       "hr": "Dajem tom starom čovjeku novine.",
+       "en": "I give that old man the newspaper.",
+       "note": "From taj stari čovjek. Masculine dative: taj → tom, stari → starom, čovjek → čovjeku."
       },
       {
        "hr": "Pomažem svojoj mlađoj sestri.",
@@ -8382,9 +8554,9 @@
        "note": "Superlatives decline like any adjective: najbolji → najboljem (soft stem, -em)."
       },
       {
-       "hr": "u tom velikom gradu, tom velikom gradu",
-       "en": "in that big city (locative), to that big city (dative)",
-       "note": "For adjectives, demonstratives and possessives, dative and locative endings are identical."
+       "hr": "tom velikom gradu",
+       "en": "to that big city",
+       "note": "Dative. The locative looks identical but always follows a preposition: u tom velikom gradu."
       },
       {
        "hr": "Čestitao sam svojoj dragoj ženi na novom poslu.",
@@ -8543,7 +8715,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kome pišeš?",
+     "title": "Who are you writing to? (Kome pišeš?)",
      "intro": "Full dative phrases about giving and helping people. Read it aloud.",
      "lines": [
       {
@@ -8599,7 +8771,7 @@
    "week": 16,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Dative verbs & svoj in the dative",
+   "title": "Dative verbs, and the possessive in the dative: svoj",
    "objective": "Use the common dative-governing verbs with correct phrases.",
    "paretoFocus": "A short verb list (pomoći, javiti se, vjerovati, sviđati se, čestitati) triggers the dative constantly, knowing the list means never guessing the case.",
    "resources": [],
@@ -8833,7 +9005,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Sviđa mi se tvoj stan",
+     "title": "I like your flat (Sviđa mi se tvoj stan)",
      "intro": "Today's dative-governing verbs at work, especially the flipped ones. Read it aloud.",
      "lines": [
       {
@@ -8889,7 +9061,7 @@
    "week": 16,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Što bi bilo kad bi…, hypothetical day",
+   "title": "What would happen if: Što bi bilo kad bi…",
    "objective": "Sustain hypothetical talk combining conditional, dative and aspect.",
    "paretoFocus": "Free hypothetical conversation is where the conditional stops being a paradigm and becomes an instinct.",
    "resources": [],
@@ -9125,7 +9297,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Što bi bilo kad bi…, dream out loud",
+     "title": "Dreaming out loud: Što bi bilo kad bi…",
      "intro": "A whole conversation held together by the conditional. Read your lines aloud, then swap roles, you'll need her feminine participles (radila, dobila) when you ask the questions.",
      "lines": [
       {
@@ -9268,44 +9440,44 @@
      "intro": "Before you read your text to your partner, hunt these errors yourself. Each item shows the classic wrong version and the fix, exactly the checklist a Croatian teacher runs through learner writing.",
      "items": [
       {
-       "hr": "✗ Ja bi došao → ✓ Ja bih došao",
-       "en": "I would come",
-       "note": "First person needs bih. 'Ja bi' is the single most common conditional slip."
+       "hr": "Ja bih došao.",
+       "en": "I would come. (male speaker)",
+       "note": "Not: Ja bi došao. The first person singular is bih, never bi."
       },
       {
-       "hr": "✗ Mi bi putovali → ✓ Mi bismo putovali",
-       "en": "we would travel",
-       "note": "bismo for mi, biste for vi, the exam favourites."
+       "hr": "Mi bismo putovali.",
+       "en": "We would travel.",
+       "note": "Not: Mi bi putovali. The we-form is bismo."
       },
       {
-       "hr": "✗ Pomažem moje roditelje → ✓ Pomažem svojim roditeljima",
+       "hr": "Pomažem svojim roditeljima.",
        "en": "I help my parents",
-       "note": "Two fixes at once: pomagati takes the dative, and subject = owner → svoj."
+       "note": "From ✗ Pomažem moje roditelje. Two fixes at once: pomagati takes the dative, and subject = owner → svoj."
       },
       {
-       "hr": "✗ Bih htio kavu → ✓ Htio bih kavu",
-       "en": "I would like a coffee",
-       "note": "bih is a clitic, it can never stand first in the sentence."
+       "hr": "Htio bih kavu.",
+       "en": "I would like a coffee.",
+       "note": "Not: Bih htio kavu. bih is a clitic, so it cannot open the sentence."
       },
       {
-       "hr": "✗ Sutra ću da radim → ✓ Sutra ću raditi",
-       "en": "Tomorrow I will work",
-       "note": "Croatian futur I takes the infinitive; 'da + present' here is Serbian, not Croatian."
+       "hr": "Sutra ću ići na posao.",
+       "en": "Tomorrow I will go to work.",
+       "note": "Not: Sutra ću da radim. Croatian uses the infinitive after the future helper, not da plus the present."
       },
       {
-       "hr": "✗ Kupit ću poklon mojoj ženi → ✓ Kupit ću poklon svojoj ženi",
+       "hr": "Kupit ću poklon svojoj ženi.",
        "en": "I'll buy my (own) wife a present",
-       "note": "The subject owns → svoj beats moj every time."
+       "note": "From ✗ Kupit ću poklon mojoj ženi. The subject owns → svoj beats moj every time."
       },
       {
-       "hr": "✗ Javit ću se ti sutra → ✓ Javit ću ti se sutra",
-       "en": "I'll get in touch with you tomorrow",
-       "note": "Clitic order: ću (aux) → ti (dative) → se."
+       "hr": "Javit ću ti se u ponedjeljak.",
+       "en": "I will get in touch with you on Monday.",
+       "note": "From ✗ Javit ću se ti sutra. Clitic order: ću (aux) → ti (dative) → se."
       },
       {
-       "hr": "✗ Kad bih ću imati vremena… → ✓ Kad budem imao vremena… / Kad bih imao vremena…",
+       "hr": "Kad budem imao vremena… / Kad bih imao vremena….",
        "en": "when / if I have time",
-       "note": "Pick one mood: futur II for a real future plan, conditional for a daydream, never both at once."
+       "note": "From ✗ Kad bih ću imati vremena…. Pick one mood: futur II for a real future plan, conditional for a daydream, never both at once."
       }
      ],
      "sources": [
@@ -9333,7 +9505,7 @@
       },
       {
        "type": "MCQ",
-       "prompt": "A real plan for tomorrow, which sentence is correct?",
+       "prompt": "Which one is correct Croatian for 'Tomorrow I will work'?",
        "difficulty": 2,
        "options": [
         "Sutra ću raditi.",
@@ -9342,7 +9514,7 @@
         "Sutra radit ću."
        ],
        "answer": "Sutra ću raditi.",
-       "explanation": "Plan → futur I: ću + infinitive. With Sutra first, ću must come second, 'Sutra radit ću' breaks the clitic rule, and 'ću da radim' isn't Croatian."
+       "explanation": "'Sutra cu raditi.' The future helper takes the INFINITIVE. 'Sutra cu da radim' is the Serbian pattern, 'Sutra bih raditi' mixes in the conditional, and 'Sutra radit cu' puts the clitic in third position."
       },
       {
        "type": "MCQ",
@@ -9448,10 +9620,10 @@
       },
       {
        "type": "TRANSLATE",
-       "prompt": "Say it in Croatian, in writing: 'Tomorrow I will work'",
+       "prompt": "Say it in Croatian, in writing: 'Tomorrow I will go to work.'",
        "difficulty": 5,
-       "answer": "✗ Sutra ću da radim → ✓ Sutra ću raditi",
-       "explanation": "'Tomorrow I will work' is '✗ Sutra ću da radim → ✓ Sutra ću raditi'"
+       "answer": "Sutra ću ići na posao.",
+       "explanation": "'Tomorrow I will go to work.' is 'Sutra cu ici na posao.' Croatian uses the infinitive after the future helper, never da plus the present."
       }
      ],
      "sources": [
@@ -9461,7 +9633,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Ispričaj mi svoje planove",
+     "title": "Tell me your plans (Ispričaj mi svoje planove)",
      "intro": "The model text turned into a real conversation: futur I for plans, the conditional for wishes, the dative for the people involved. Read it aloud.",
      "lines": [
       {
@@ -9539,7 +9711,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Na kolodvoru, 14 transport words",
+     "title": "Fourteen transport words: na kolodvoru",
      "intro": "The station vocabulary that runs every trip in Croatia. Learn these fourteen and you can read any departures board and survive any ticket window. Watch two old friends inside the list: the fleeting a (polazak → polaska) and sibilarization (putnik → putnici).",
      "items": [
       {
@@ -9588,8 +9760,18 @@
        "note": "From povratak (return), the cheaper way to travel twice."
       },
       {
-       "hr": "vlak, autobus, tramvaj",
-       "en": "train, bus, tram",
+       "hr": "vlak",
+       "en": "train",
+       "note": "Your three everyday vehicles, all masculine."
+      },
+      {
+       "hr": "autobus",
+       "en": "bus",
+       "note": "Your three everyday vehicles, all masculine."
+      },
+      {
+       "hr": "tramvaj",
+       "en": "tram",
        "note": "Your three everyday vehicles, all masculine."
       },
       {
@@ -9620,7 +9802,7 @@
     },
     {
      "type": "LEARN",
-     "title": "Tramvajem, autom, pješice, how do you get around?",
+     "title": "How do you get around: tramvajem, autom, pješice",
      "intro": "Means of transport go in the instrumental with NO preposition: tramvajem, vlakom, autom. (English says 'by tram'; Croatian just declines.) The one exception: pješice (on foot) is an adverb, no case at all. Then come the three timetable questions you'll actually ask.",
      "items": [
       {
@@ -9833,7 +10015,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kojim prijevozom ideš?",
+     "title": "How are you travelling? (Kojim prijevozom ideš?)",
      "intro": "A quick exchange about commuting and planning tomorrow's train trip, instrumental of means and a timetable question in the wild.",
      "lines": [
       {
@@ -9909,68 +10091,73 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "The pišem class: -ati verbs that change their skin",
+     "title": "Verbs that change their stem: the pišem class",
      "intro": "A whole family of -ati verbs refuses the -am pattern: their present softens the final stem consonant (s→š, z→ž, k→č, g→ž, h→š) and takes -em endings. Once you know the ja-form, the whole paradigm follows. These are not rare verbs, pisati, kazati and slati are some of the most frequent words in the language.",
      "items": [
       {
-       "hr": "pisati → pišem, pišeš, piše, pišemo, pišete, pišu",
-       "en": "to write → I write…",
-       "note": "s → š. The model verb of the class."
+       "hr": "pišem",
+       "en": "I write",
+       "note": "From pisati, whose stem changes: pišem, pišeš, piše, pišemo, pišete, pišu."
       },
       {
-       "hr": "kazati → kažem, kažeš, kaže, kažemo, kažete, kažu",
-       "en": "to say → I say…",
-       "note": "z → ž. Kako se kaže…? = How do you say…?"
+       "hr": "kažem",
+       "en": "I say",
+       "note": "From kazati: kažem, kažeš, kaže, kažemo, kažete, kažu."
       },
       {
-       "hr": "slati → šaljem, šalješ, šalje, šaljemo, šaljete, šalju",
-       "en": "to send → I send…",
-       "note": "The wildest change in the class: sl- → šalj-. Just memorize šaljem."
+       "hr": "šaljem, šalješ, šalje, šaljemo, šaljete, šalju",
+       "en": "I send…",
+       "note": "From slati. The wildest change in the class: sl- → šalj-. Just memorize šaljem."
       },
       {
-       "hr": "plakati → plačem, plačeš, plače… plaču",
-       "en": "to cry → I cry…",
-       "note": "k → č."
+       "hr": "plačem, plačeš, plače… plaču",
+       "en": "I cry…",
+       "note": "From plakati. k → č."
       },
       {
-       "hr": "skakati → skačem",
-       "en": "to jump → I jump",
-       "note": "k → č again."
+       "hr": "skačem",
+       "en": "I jump",
+       "note": "From skakati. k → č again."
       },
       {
-       "hr": "vikati → vičem",
-       "en": "to shout → I shout",
-       "note": "k → č, the third of the k-verbs."
+       "hr": "vičem",
+       "en": "I shout",
+       "note": "From vikati. k → č, the third of the k-verbs."
       },
       {
-       "hr": "lagati → lažem",
-       "en": "to lie (tell untruths) → I lie",
-       "note": "g → ž."
+       "hr": "lažem",
+       "en": "I lie",
+       "note": "From lagati. g → ž."
       },
       {
-       "hr": "mahati → mašem",
-       "en": "to wave → I wave",
-       "note": "h → š."
+       "hr": "mašem",
+       "en": "I wave",
+       "note": "From mahati. h → š."
       },
       {
-       "hr": "disati → dišem",
-       "en": "to breathe → I breathe",
-       "note": "s → š, like pisati."
+       "hr": "dišem",
+       "en": "I breathe",
+       "note": "From disati. s → š, like pisati."
       },
       {
-       "hr": "pokazati → pokažem",
-       "en": "to show → I show",
-       "note": "A prefix doesn't change the class: pokazati works exactly like kazati."
+       "hr": "pokažem",
+       "en": "I show",
+       "note": "From pokazati. A prefix doesn't change the class: pokazati works exactly like kazati."
       },
       {
-       "hr": "Contrast: gledati → gledam",
-       "en": "to watch → I watch",
-       "note": "Most -ati verbs are still regular -am. This class must be learned verb by verb, the dictionary always gives you the ja-form."
+       "hr": "gledam",
+       "en": "I watch",
+       "note": "Contrast with the verbs above: gledati keeps its stem, no consonant change."
       },
       {
-       "hr": "Past is tame: pisati → pisao/pisala; slati → slao/slala",
-       "en": "wrote; sent",
-       "note": "The participle comes from the infinitive stem, so no consonant change in the perfekt."
+       "hr": "pisao/pisala",
+       "en": "wrote",
+       "note": "From Past is tame: pisati. The participle comes from the infinitive stem, so no consonant change in the perfekt."
+      },
+      {
+       "hr": "slao/slala",
+       "en": "sent",
+       "note": "From slati. The participle comes from the infinitive stem, so no consonant change in the perfekt."
       }
      ],
      "sources": [
@@ -10038,7 +10225,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "pišem, kažem, šaljem drill",
+     "title": "Stem-changing verbs: pišem, kažem, šaljem",
      "intro": "Conjugate the class cold, spot the impostor, then produce full sentences about writing and sending.",
      "questions": [
       {
@@ -10185,7 +10372,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Pišem baki poruku",
+     "title": "Writing grandma a message (Pišem baki poruku)",
      "intro": "A quiet evening at home: writing, sending photos and the neighbourhood noise, all running on the pišem/kažem class.",
      "lines": [
       {
@@ -10303,14 +10490,39 @@
        "note": "Lesson 93: the timetable question, s + genitive, za + accusative."
       },
       {
-       "hr": "povratna karta, red vožnje, kašnjenje, presjedanje",
-       "en": "return ticket, timetable, delay, transfer",
+       "hr": "povratna karta",
+       "en": "return ticket",
        "note": "Lesson 93: the four station words you can't travel without."
       },
       {
-       "hr": "pisati → pišem, slati → šaljem, kazati → kažem",
-       "en": "write, send, say",
-       "note": "Lesson 94: the consonant-softening -em class."
+       "hr": "red vožnje",
+       "en": "timetable",
+       "note": "Lesson 93: the four station words you can't travel without."
+      },
+      {
+       "hr": "kašnjenje",
+       "en": "delay",
+       "note": "Lesson 93: the four station words you can't travel without."
+      },
+      {
+       "hr": "presjedanje",
+       "en": "transfer",
+       "note": "Lesson 93: the four station words you can't travel without."
+      },
+      {
+       "hr": "pišem",
+       "en": "write",
+       "note": "From pisati. Lesson 94: the consonant-softening -em class."
+      },
+      {
+       "hr": "šaljem",
+       "en": "send",
+       "note": "From slati. Lesson 94: the consonant-softening -em class."
+      },
+      {
+       "hr": "kažem",
+       "en": "say",
+       "note": "From kazati. Lesson 94: the consonant-softening -em class."
       },
       {
        "hr": "Šalji mi poruke svaki dan!",
@@ -10537,7 +10749,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kako se voziš, i što bi promijenio?",
+     "title": "How do you travel, and what would you change? (Kako se voziš?)",
      "intro": "The week 13 spoken checkpoint: your commute in the instrumental, then city fixes in the conditional. Read it aloud, then improvise your real answers to her questions.",
      "lines": [
       {
@@ -10880,7 +11092,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kašnjenje na kolodvoru",
+     "title": "A delay at the station (Kašnjenje na kolodvoru)",
      "intro": "A delay changes the plan: catching the announcement, the platform switch and the transfer, all live at the station.",
      "lines": [
       {
@@ -10960,14 +11172,24 @@
      "intro": "Communication verbs come in pairs: the imperfective for the process or habit, the perfective for one completed contact. English hides this ('he called' vs 'he was calling'); Croatian builds it into the verb. Learn each pair as one unit, imperfective / perfective.",
      "items": [
       {
-       "hr": "zvati / nazvati, zovem / nazovem",
-       "en": "to be calling / to call (once)",
-       "note": "Zvao me cijeli dan. (kept calling) vs Nazvao me u osam. (one call)"
+       "hr": "zovem",
+       "en": "I am calling",
+       "note": "Imperfective zvati: the action in progress."
       },
       {
-       "hr": "slati / poslati, šaljem / pošaljem",
-       "en": "to be sending / to send (off)",
-       "note": "Yesterday's šaljem class + the prefix po- = the perfective."
+       "hr": "nazovem",
+       "en": "I call, once",
+       "note": "Perfective nazvati: the completed act."
+      },
+      {
+       "hr": "šaljem",
+       "en": "I am sending",
+       "note": "Imperfective slati: the action in progress."
+      },
+      {
+       "hr": "pošaljem",
+       "en": "I send off",
+       "note": "Perfective poslati: the completed act."
       },
       {
        "hr": "javljati se / javiti se, javljam se / javim se",
@@ -10980,12 +11202,23 @@
        "note": "odgovoriti na poruku = to answer a message (na + A)."
       },
       {
-       "hr": "pisati / napisati, pišem / napišem",
-       "en": "to be writing / to write (and finish)"
+       "hr": "pišem",
+       "en": "I am writing",
+       "note": "Imperfective pisati: the action in progress."
       },
       {
-       "hr": "dobivati / dobiti, dobivam / dobijem",
-       "en": "to be getting / to get, receive",
+       "hr": "napišem",
+       "en": "I write it and finish",
+       "note": "Perfective napisati: the completed act."
+      },
+      {
+       "hr": "dobivati / dobiti",
+       "en": "to be getting / to get",
+       "note": "Dobivam puno mailova. (constantly) vs Dobio sam tvoj mail. (that one)"
+      },
+      {
+       "hr": "dobivam / dobijem",
+       "en": "receive",
        "note": "Dobivam puno mailova. (constantly) vs Dobio sam tvoj mail. (that one)"
       },
       {
@@ -11240,7 +11473,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Zašto se nisi javio?",
+     "title": "Why did you not get in touch? (Zašto se nisi javio?)",
      "intro": "A small domestic reproach turns into an aspect-pair drill: calling, sending, answering, the exact contrast between process and completed contact.",
      "lines": [
       {
@@ -11354,8 +11587,14 @@
        "note": "Pekara je odmah iza ugla. iza + genitive."
       },
       {
-       "hr": "prva ulica lijevo, druga ulica desno",
-       "en": "first street on the left, second street on the right"
+       "hr": "prva ulica lijevo",
+       "en": "first street on the left",
+       "note": null
+      },
+      {
+       "hr": "druga ulica desno",
+       "en": "second street on the right",
+       "note": null
       },
       {
        "hr": "Prijeđite ulicu.",
@@ -11577,7 +11816,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kako doći do kolodvora?",
+     "title": "How do I get to the station? (Kako doći do kolodvora?)",
      "intro": "A stranger asks the way to the station: a full chain of directions, landmarks and cases in real time.",
      "lines": [
       {
@@ -11889,7 +12128,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Pošalji mi ih",
+     "title": "Send them to me (Pošalji mi ih)",
      "intro": "Photos from the seaside, chased through every clitic slot: dative before accusative, and never a syllable out of place.",
      "lines": [
       {
@@ -11967,33 +12206,58 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "The ići family: one base, four precise perfectives",
+     "title": "One base, four precise perfectives: the ići family",
      "intro": "Lesson 100! The perfect emblem of how far you've come: the imperfective base ići (go) plus a fleet of perfectives that pin down the exact moment, krenuti (set off), otići (leave), doći (arrive/come), stići (make it). Learn the present stems and participles, then narrate the trip below.",
      "items": [
       {
-       "hr": "ići → idem; išao, išla",
-       "en": "to go (be going) → I go; went",
-       "note": "The imperfective base: the journey itself, the process."
+       "hr": "idem",
+       "en": "I go",
+       "note": "Present of ići."
       },
       {
-       "hr": "krenuti → krenem; krenuo, krenula",
-       "en": "to set off → I set off; set off",
-       "note": "The -nuti class: krenem, kreneš… krenu."
+       "hr": "išao / išla",
+       "en": "went (male / female speaker)",
+       "note": "Past participle of ići."
       },
       {
-       "hr": "otići → odem; otišao, otišla",
-       "en": "to leave, go away → I leave; left",
-       "note": "Present odem, but the participle keeps the t: otišao."
+       "hr": "krenem",
+       "en": "I set off",
+       "note": "Present of krenuti."
       },
       {
-       "hr": "doći → dođem; došao, došla",
-       "en": "to come, arrive → I come; came",
-       "note": "The đ family: dođem, dođeš… dođu."
+       "hr": "krenuo / krenula",
+       "en": "set off (male / female speaker)",
+       "note": "Past participle of krenuti."
       },
       {
-       "hr": "stići → stignem; stigao, stigla",
-       "en": "to make it, arrive (in time) → I arrive; arrived",
-       "note": "stignem, the -nem present; stigao/stigla in the perfekt."
+       "hr": "odem",
+       "en": "I leave",
+       "note": "Present of otići."
+      },
+      {
+       "hr": "otišao / otišla",
+       "en": "left (male / female speaker)",
+       "note": "Past participle of otići."
+      },
+      {
+       "hr": "dođem",
+       "en": "I come, I arrive",
+       "note": "Present of doći."
+      },
+      {
+       "hr": "došao / došla",
+       "en": "came (male / female speaker)",
+       "note": "Past participle of doći."
+      },
+      {
+       "hr": "stignem",
+       "en": "I arrive in time",
+       "note": "Present of stići."
+      },
+      {
+       "hr": "stigao / stigla",
+       "en": "arrived (male / female speaker)",
+       "note": "Past participle of stići."
       },
       {
        "hr": "Krenuo sam od kuće u osam.",
@@ -12260,9 +12524,14 @@
      "intro": "Today you write real formal Croatian: a complaint or inquiry about a late bus, a lost package or a wrong charge. The register is built from a small set of fixed blocks, a formal opener, obraćam Vam se, precise facts in the past tense, one polite conditional, and the standard sign-off. Note that in formal writing Vi, Vam and Vaš are capitalized throughout.",
      "items": [
       {
-       "hr": "Poštovani gospodine, / Poštovana gospođo,",
-       "en": "Dear Sir, / Dear Madam,",
+       "hr": "Poštovani gospodine",
+       "en": "Dear Sir",
        "note": "The formal opener. If you don't know the person, plain 'Poštovani,' works for any addressee."
+      },
+      {
+       "hr": "Poštovana gospođo",
+       "en": "Dear Madam",
+       "note": "The formal opening of a letter to a woman."
       },
       {
        "hr": "Obraćam Vam se u vezi s kašnjenjem autobusa.",
@@ -12472,7 +12741,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Pritužba telefonom",
+     "title": "A complaint by phone (Pritužba telefonom)",
      "intro": "A formal complaint call, one register up from ordinary chat: Vi-forms, precise facts and one polite conditional request.",
      "lines": [
       {
@@ -13078,7 +13347,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Ispričaj mi cijelo putovanje",
+     "title": "Tell me about the whole trip (Ispričaj mi cijelo putovanje)",
      "intro": "Your wife plays coach: she asks you to narrate your journey out loud from start to finish. Read your lines ('Me') with the signposts in place, she checks your aspect as you go.",
      "lines": [
       {
@@ -13183,8 +13452,13 @@
        "note": "do + genitive = by (a deadline). nazvati = to call (perfective)."
       },
       {
-       "hr": "Ako je hitno, javite se na broj 091…",
-       "en": "If it's urgent, call the number 091…",
+       "hr": "Ako je hitno",
+       "en": "If it's urgent",
+       "note": "hitno = urgent; javiti se na broj = to call a number."
+      },
+      {
+       "hr": "javite se na broj 091…",
+       "en": "call the number 091…",
        "note": "hitno = urgent; javiti se na broj = to call a number."
       },
       {
@@ -13213,8 +13487,23 @@
        "note": "How messages often end, futur I with the clitics ću vas in second position."
       },
       {
-       "hr": "tko, što, kada, gdje",
-       "en": "who, what, when, where",
+       "hr": "tko",
+       "en": "who",
+       "note": "Your listening checklist. One pass of the audio, four facts on paper, that's the whole drill."
+      },
+      {
+       "hr": "što",
+       "en": "what",
+       "note": "Your listening checklist. One pass of the audio, four facts on paper, that's the whole drill."
+      },
+      {
+       "hr": "kada",
+       "en": "when",
+       "note": "Your listening checklist. One pass of the audio, four facts on paper, that's the whole drill."
+      },
+      {
+       "hr": "gdje",
+       "en": "where",
        "note": "Your listening checklist. One pass of the audio, four facts on paper, that's the whole drill."
       }
      ],
@@ -13355,7 +13644,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Poruka od zubara",
+     "title": "A message from the dentist (Poruka od zubara)",
      "intro": "A voicemail changes the schedule: catching who, what, when, where from a phone message, then a station announcement too.",
      "lines": [
       {
@@ -13670,7 +13959,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Pola puta prijeđeno",
+     "title": "Halfway there (Pola puta prijeđeno)",
      "intro": "Two study partners compare notes after the milestone review, quizzing each other on the ten recap sentences.",
      "lines": [
       {
@@ -13726,7 +14015,7 @@
    "week": 18,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Odnosi, izgled, budućnost, describing people",
+   "title": "Describing people: odnosi, izgled, budućnost",
    "objective": "Describe people's appearance and character in detail.",
    "paretoFocus": "izgled i karakter vocabulary (visok, plavokos, duhovit, strpljiv) is the raw material for every story that involves a person, which is most stories.",
    "resources": [
@@ -13968,7 +14257,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kakav je tvoj novi kolega?",
+     "title": "What is your new colleague like? (Kakav je tvoj novi kolega?)",
      "intro": "Describing a new colleague, looks first, then character, full adjective agreement throughout.",
      "lines": [
       {
@@ -14044,63 +14333,73 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Stariji, mlađi, ljepši, the comparative",
+     "title": "The comparative: stariji, mlađi, ljepši",
      "intro": "Three suffixes cover every Croatian comparative. The default is -iji (stariji); short adjectives take -ji, which fuses with the final consonant (mlad → mlađi); and exactly three adjectives take -ši. Add four irregulars and you can compare anything. 'Than' is od + genitive or nego.",
      "items": [
       {
-       "hr": "star → stariji",
-       "en": "old → older",
-       "note": "-iji is the default suffix and your safest guess: stariji, noviji, jeftiniji."
+       "hr": "stariji",
+       "en": "older",
+       "note": "From star. -iji is the default suffix and your safest guess: stariji, noviji, jeftiniji."
       },
       {
-       "hr": "pametan → pametniji",
-       "en": "smart → smarter",
-       "note": "The fleeting a drops before -iji: pametan → pametn-iji."
+       "hr": "pametniji",
+       "en": "smarter",
+       "note": "From pametan. The fleeting a drops before -iji: pametan → pametn-iji."
       },
       {
-       "hr": "mlad → mlađi",
-       "en": "young → younger",
-       "note": "-ji fuses with the consonant (iotation): d + j → đ."
+       "hr": "mlađi",
+       "en": "younger",
+       "note": "From mlad. -ji fuses with the consonant (iotation): d + j → đ."
       },
       {
-       "hr": "jak → jači",
-       "en": "strong → stronger",
-       "note": "k + j → č. Likewise: drag → draži (g + j → ž)."
+       "hr": "jači",
+       "en": "stronger",
+       "note": "From jak. k + j → č. Likewise: drag → draži (g + j → ž)."
       },
       {
-       "hr": "skup → skuplji",
-       "en": "expensive → more expensive",
-       "note": "p + j → plj. Same with b, m, v: grub → grublji."
+       "hr": "skuplji",
+       "en": "more expensive",
+       "note": "From skup. p + j → plj. Same with b, m, v: grub → grublji."
       },
       {
-       "hr": "tih → tiši",
-       "en": "quiet → quieter",
-       "note": "h + j → š: tiši, suši."
+       "hr": "tiši",
+       "en": "quieter",
+       "note": "From tih. h + j → š: tiši, suši."
       },
       {
-       "hr": "lijep → ljepši",
-       "en": "beautiful → more beautiful",
-       "note": "One of only THREE adjectives in -ši. Watch the spelling: ije shortens to je."
+       "hr": "ljepši",
+       "en": "more beautiful",
+       "note": "From lijep. One of only THREE adjectives in -ši. Watch the spelling: ije shortens to je."
       },
       {
-       "hr": "lak → lakši, mek → mekši",
-       "en": "easy → easier, soft → softer",
-       "note": "The other two -ši adjectives. That's the complete list: ljepši, lakši, mekši."
+       "hr": "lakši",
+       "en": "easier",
+       "note": "From lak. The other two -ši adjectives. That's the complete list: ljepši, lakši, mekši."
       },
       {
-       "hr": "dobar → bolji",
-       "en": "good → better",
-       "note": "Irregular no. 1, memorize all four as a set."
+       "hr": "mekši",
+       "en": "softer",
+       "note": "From mek. The other two -ši adjectives. That's the complete list: ljepši, lakši, mekši."
       },
       {
-       "hr": "loš → gori",
-       "en": "bad → worse",
-       "note": "gori is the classic irregular comparative; lošiji also exists as a regular form, drill gori here since it's what you'll hear most."
+       "hr": "bolji",
+       "en": "better",
+       "note": "From dobar. Irregular no. 1, memorize all four as a set."
       },
       {
-       "hr": "velik → veći, malen → manji",
-       "en": "big → bigger, small → smaller",
-       "note": "Irregulars no. 3 and 4. The full set: bolji, gori, veći, manji."
+       "hr": "gori",
+       "en": "worse",
+       "note": "From loš. gori is the classic irregular comparative; lošiji also exists as a regular form, drill gori here since it's what you'll hear most."
+      },
+      {
+       "hr": "veći",
+       "en": "bigger",
+       "note": "From velik. Irregulars no. 3 and 4. The full set: bolji, gori, veći, manji."
+      },
+      {
+       "hr": "manji",
+       "en": "smaller",
+       "note": "From malen. Irregulars no. 3 and 4. The full set: bolji, gori, veći, manji."
       },
       {
        "hr": "Marko je viši od Ivana.",
@@ -14272,7 +14571,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Moj stan je manji, ali jeftiniji",
+     "title": "My flat is smaller but cheaper (Moj stan je manji, ali jeftiniji)",
      "intro": "Comparing the new flat, a sibling, and cooking skills, three comparatives in one relaxed chat.",
      "lines": [
       {
@@ -14352,9 +14651,9 @@
      "intro": "The superlative is mechanical: naj- + comparative, always (najstariji, najljepši, najbolji). The real news today is that comparatives and superlatives decline like definite adjectives, so it's sa starijim bratom and vidio sam najboljeg prijatelja. Your case system stays on even when opinions get superlative.",
      "items": [
       {
-       "hr": "naj- + comparative = superlative",
-       "en": "the naj- rule",
-       "note": "No exceptions: stariji → najstariji, ljepši → najljepši, bolji → najbolji."
+       "hr": "najbolji",
+       "en": "the best",
+       "note": "The superlative rule: naj- joined to the comparative, written as one word. bolji becomes najbolji, stariji becomes najstariji."
       },
       {
        "hr": "najbolji prijatelj",
@@ -14372,8 +14671,23 @@
        "note": "naj- + comparative; superlatives love a frame like u gradu or na svijetu."
       },
       {
-       "hr": "stariji, starijeg, starijem, starijim",
-       "en": "older: N, G/A, D/L, I",
+       "hr": "stariji",
+       "en": "older: N",
+       "note": "Comparatives decline like definite adjectives, the case endings you already know."
+      },
+      {
+       "hr": "starijeg",
+       "en": "G/A",
+       "note": "Comparatives decline like definite adjectives, the case endings you already know."
+      },
+      {
+       "hr": "starijem",
+       "en": "D/L",
+       "note": "Comparatives decline like definite adjectives, the case endings you already know."
+      },
+      {
+       "hr": "starijim",
+       "en": "I",
        "note": "Comparatives decline like definite adjectives, the case endings you already know."
       },
       {
@@ -14558,7 +14872,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Moj najbolji prijatelj",
+     "title": "My best friend (Moj najbolji prijatelj)",
      "intro": "Superlatives declined through the cases, in a chat about your best friend back home.",
      "lines": [
       {
@@ -14921,18 +15235,28 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Brže, bolje, najviše, comparing how",
+     "title": "Comparing how something is done: brže, bolje, najviše",
      "intro": "Adverbs compare with the neuter comparative form: brzo → brže, dobro → bolje. The irregulars mirror the adjectives you learned this week (bolje, gore, više, manje), and naj- again makes the superlative. Add što + comparative for 'as … as possible' and your comparing toolkit is complete.",
      "items": [
       {
-       "hr": "brzo → brže → najbrže",
-       "en": "fast → faster → fastest",
-       "note": "The adverb comparative is the neuter comparative form: brže."
+       "hr": "brže",
+       "en": "faster",
+       "note": "From brzo."
       },
       {
-       "hr": "sporo → sporije → najsporije",
-       "en": "slowly → more slowly → most slowly",
-       "note": "Regular -ije, like the adjective sporiji."
+       "hr": "najbrže",
+       "en": "fastest",
+       "note": "From brzo."
+      },
+      {
+       "hr": "sporije",
+       "en": "more slowly",
+       "note": "From sporo."
+      },
+      {
+       "hr": "najsporije",
+       "en": "most slowly",
+       "note": "From sporo."
       },
       {
        "hr": "Govorim bolje nego prije.",
@@ -14940,29 +15264,54 @@
        "note": "dobro → bolje → najbolje, mirroring dobar → bolji."
       },
       {
-       "hr": "loše → gore → najgore",
-       "en": "badly → worse → worst",
-       "note": "Mirrors loš → gori. Danas se osjećam gore. (I feel worse today.)"
+       "hr": "gore",
+       "en": "worse",
+       "note": "From loše."
       },
       {
-       "hr": "mnogo → više → najviše",
-       "en": "much → more → most",
-       "note": "više also builds quantity: više posla = more work (+ genitive)."
+       "hr": "najgore",
+       "en": "worst",
+       "note": "From loše."
       },
       {
-       "hr": "malo → manje → najmanje",
-       "en": "little → less → least",
-       "note": "manje kave = less coffee. The pair to više."
+       "hr": "više",
+       "en": "more",
+       "note": "From mnogo."
       },
       {
-       "hr": "često → češće → najčešće",
-       "en": "often → more often → most often",
-       "note": "st + j → šć in disguise: često → češće."
+       "hr": "najviše",
+       "en": "most",
+       "note": "From mnogo."
       },
       {
-       "hr": "rano → ranije; kasno → kasnije",
-       "en": "early → earlier; late → later",
-       "note": "Everyday planning words: Dođi ranije! Krenimo kasnije!"
+       "hr": "manje",
+       "en": "less",
+       "note": "From malo."
+      },
+      {
+       "hr": "najmanje",
+       "en": "least",
+       "note": "From malo."
+      },
+      {
+       "hr": "češće",
+       "en": "more often",
+       "note": "From često."
+      },
+      {
+       "hr": "najčešće",
+       "en": "most often",
+       "note": "From često."
+      },
+      {
+       "hr": "ranije",
+       "en": "earlier",
+       "note": "From rano. Everyday planning words: Dođi ranije! Krenimo kasnije!"
+      },
+      {
+       "hr": "kasnije",
+       "en": "later",
+       "note": "From kasno. Everyday planning words: Dođi ranije! Krenimo kasnije!"
       },
       {
        "hr": "Ona govori hrvatski bolje od mene.",
@@ -15129,7 +15478,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Tko vozi brže?",
+     "title": "Who drives faster? (Tko vozi brže?)",
      "intro": "A friendly comparison of speed, safety and skill, all riding on the adverb comparatives.",
      "lines": [
       {
@@ -15434,7 +15783,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Što je najvažnije u vezi?",
+     "title": "What matters most in a relationship? (Što je najvažnije u vezi?)",
      "intro": "An opinion chat about relationships, trust, honesty and the small argument you had this week.",
      "lines": [
       {
@@ -15514,13 +15863,33 @@
      "intro": "Futur II never stands alone, it lives inside kad/ako/dok clauses about the future, while the main clause keeps futur I. Learn the six forms of budem and the habitat together.",
      "items": [
       {
-       "hr": "budem, budeš, bude",
-       "en": "I, you, he/she (future auxiliary)",
+       "hr": "budem",
+       "en": "I",
        "note": "The perfective present of biti. It only appears in dependent clauses, never as a standalone future."
       },
       {
-       "hr": "budemo, budete, budu",
-       "en": "we, you (pl.), they (future auxiliary)",
+       "hr": "budeš",
+       "en": "you",
+       "note": "The perfective present of biti. It only appears in dependent clauses, never as a standalone future."
+      },
+      {
+       "hr": "bude",
+       "en": "he/she (future auxiliary)",
+       "note": "The perfective present of biti. It only appears in dependent clauses, never as a standalone future."
+      },
+      {
+       "hr": "budemo",
+       "en": "we",
+       "note": "Add the past participle after it: budemo radili, budete čekali, budu učili."
+      },
+      {
+       "hr": "budete",
+       "en": "you (pl.)",
+       "note": "Add the past participle after it: budemo radili, budete čekali, budu učili."
+      },
+      {
+       "hr": "budu",
+       "en": "they (future auxiliary)",
        "note": "Add the past participle after it: budemo radili, budete čekali, budu učili."
       },
       {
@@ -15842,9 +16211,14 @@
        "note": "Two parallel future actions: dok + futur II sets the background."
       },
       {
-       "hr": "Kad stignem, nazvat ću te. (NE: kad ću stići)",
-       "en": "When I arrive, I'll call you.",
+       "hr": "Kad stignem",
+       "en": "When I arrive",
        "note": "The English trap: 'when I WILL arrive' must lose its will in Croatian. Perfective stići → stignem."
+      },
+      {
+       "hr": "Nazvat ću te kad stignem.",
+       "en": "I will call you when I arrive.",
+       "note": "After kad the future is expressed with the PRESENT: kad stignem, never 'kad ću stići'."
       },
       {
        "hr": "Ako bude gužve, doći ćemo kasnije.",
@@ -16021,7 +16395,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kad, ako ili dok?",
+     "title": "When, if or while? (Kad, ako ili dok?)",
      "intro": "Planning dinner around three little conjunctions: certainty, condition and duration, all with the future kept out of the clause.",
      "lines": [
       {
@@ -16097,7 +16471,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "O budućnosti, building your two-minute talk",
+     "title": "Building your two-minute talk: o budućnosti",
      "intro": "Ten sentences that assemble into a fluent talk about your future: next year, in five years, in retirement. Steal them, swap in your real plans, and note the two futur II clauses and the conditional wish.",
      "items": [
       {
@@ -16149,6 +16523,31 @@
        "hr": "Dok budem učio hrvatski, trebat ću tvoju podršku.",
        "en": "While I'm learning Croatian, I'll need your support.",
        "note": "dok + futur II, plus yesterday's podrška in the accusative: tvoju podršku."
+      },
+      {
+       "hr": "Kupit ćemo veći stan.",
+       "en": "We will buy a bigger flat.",
+       "note": "Future I: kupit plus ćemo."
+      },
+      {
+       "hr": "Putovat ćemo češće.",
+       "en": "We will travel more often.",
+       "note": "češće is the comparative adverb."
+      },
+      {
+       "hr": "Naći ću bolji posao.",
+       "en": "I will find a better job.",
+       "note": "Verbs in -ći keep the full infinitive."
+      },
+      {
+       "hr": "Ostat ćemo u Zagrebu.",
+       "en": "We will stay in Zagreb.",
+       "note": "Locative for staying put."
+      },
+      {
+       "hr": "Nikad se ne zna.",
+       "en": "You never know.",
+       "note": "Impersonal se, with the double negation Croatian needs."
       }
      ],
      "sources": [
@@ -16344,7 +16743,7 @@
    "week": 19,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Tko radi, ne boji se gladi, the world of work",
+   "title": "The world of work: Tko radi, ne boji se gladi",
    "objective": "Command core work vocabulary: jobs, workplace, applying.",
    "paretoFocus": "Work is the number-one adult conversation topic. posao, plaća, radno vrijeme, životopis, razgovor za posao, this lexicon pays rent forever.",
    "resources": [
@@ -16366,7 +16765,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Tko radi, ne boji se gladi, the world of work",
+     "title": "Work vocabulary: Tko radi, ne boji se gladi",
      "intro": "Fourteen work words in real sentences: the office, the pay, the CV, the interview. This lexicon pays rent forever, read each line aloud and swap in your own job.",
      "items": [
       {
@@ -16582,7 +16981,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kakav je tvoj radni dan?",
+     "title": "What is your working day like? (Kakav je tvoj radni dan?)",
      "intro": "The daily shop talk: shifts, a meeting with the boss, the CV you sent out and tomorrow's interview.",
      "lines": [
       {
@@ -16708,9 +17107,19 @@
        "note": "Week recap in one line: futur II (budem gledao) + sve + comparative (lakši)."
       },
       {
-       "hr": "dobro → bolje, loše → gore, mnogo → više",
-       "en": "well → better, badly → worse, much → more",
-       "note": "The three irregular comparative adverbs from this block, recite them cold."
+       "hr": "bolje",
+       "en": "better",
+       "note": "From dobro. The three irregular comparative adverbs from this block, recite them cold."
+      },
+      {
+       "hr": "gore",
+       "en": "worse",
+       "note": "From loše. The three irregular comparative adverbs from this block, recite them cold."
+      },
+      {
+       "hr": "više",
+       "en": "more",
+       "note": "From mnogo. The three irregular comparative adverbs from this block, recite them cold."
       }
      ],
      "sources": [
@@ -16836,10 +17245,10 @@
       },
       {
        "type": "TRANSLATE",
-       "prompt": "Say it in Croatian, in writing: 'well → better, badly → worse, much → more'",
+       "prompt": "Say it in Croatian, in writing: 'Today I feel better.'",
        "difficulty": 6,
-       "answer": "dobro → bolje, loše → gore, mnogo → više",
-       "explanation": "'well → better, badly → worse, much → more' is 'dobro → bolje, loše → gore, mnogo → više'"
+       "answer": "Danas se osjećam bolje.",
+       "explanation": "'Today I feel better.' is 'Danas se osjecam bolje.' The adverb compares as dobro, bolje, najbolje."
       }
      ],
      "sources": [
@@ -16925,7 +17334,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Razgovor za posao, the interview script",
+     "title": "The interview script: razgovor za posao",
      "intro": "Formal register, vi-forms throughout, one polite conditional. These eleven lines are the skeleton of every Croatian job interview, learn both sides, you'll play both roles.",
      "items": [
       {
@@ -17210,14 +17619,14 @@
      "intro": "Not just the noun, the adjective, the demonstrative and the possessive all slide into the genitive with it: taj novi kolega → tog novog kolege. Bonus paradigm: čuti → čujem, the -jem class.",
      "items": [
       {
-       "hr": "taj novi kolega → tog novog kolege",
-       "en": "that new colleague → of that new colleague",
-       "note": "Every word declines: taj → tog, novi → novog, kolega → kolege (a-declension masculine!)."
+       "hr": "tog novog kolege",
+       "en": "of that new colleague",
+       "note": "From taj novi kolega. Every word declines: taj → tog, novi → novog, kolega → kolege (a-declension masculine!)."
       },
       {
-       "hr": "moj novi šef → mog novog šefa",
-       "en": "my new boss → of my new boss",
-       "note": "moj → mog(a), novi → novog(a), šef → šefa. The longer forms moga/novoga are equally correct."
+       "hr": "mog novog šefa",
+       "en": "of my new boss",
+       "note": "From moj novi šef. moj → mog(a), novi → novog(a), šef → šefa. The longer forms moga/novoga are equally correct."
       },
       {
        "hr": "To je ured mog novog šefa.",
@@ -17225,24 +17634,24 @@
        "note": "Your review-block sentence, the whole possessor phrase sits in the genitive after ured."
       },
       {
-       "hr": "ta mlada žena → te mlade žene",
-       "en": "that young woman → of that young woman",
-       "note": "Feminine genitive singular: everything ends in -e: te mlade žene."
+       "hr": "te mlade žene",
+       "en": "of that young woman",
+       "note": "From ta mlada žena. Feminine genitive singular: everything ends in -e: te mlade žene."
       },
       {
-       "hr": "ovo veliko selo → ovog velikog sela",
-       "en": "this big village → of this big village",
-       "note": "Neuter patterns with masculine: -og + -og + -a."
+       "hr": "ovog velikog sela",
+       "en": "of this big village",
+       "note": "From ovo veliko selo. Neuter patterns with masculine: -og + -og + -a."
       },
       {
-       "hr": "dobar prijatelj → dobrog prijatelja",
-       "en": "a good friend → of a good friend",
-       "note": "Fleeting a! dobar loses its a before the ending: dobrog, not dobarog."
+       "hr": "dobrog prijatelja",
+       "en": "of a good friend",
+       "note": "From dobar prijatelj. Fleeting a! dobar loses its a before the ending: dobrog, not dobarog."
       },
       {
-       "hr": "moja starija sestra → moje starije sestre",
-       "en": "my older sister → of my older sister",
-       "note": "Comparatives decline too: starija → starije."
+       "hr": "moje starije sestre",
+       "en": "of my older sister",
+       "note": "From moja starija sestra. Comparatives decline too: starija → starije."
       },
       {
        "hr": "Nema mog novog kolege danas.",
@@ -17255,13 +17664,48 @@
        "note": "blizu + genitive; svog because the subject (ja) is the owner."
       },
       {
-       "hr": "čuti: čujem, čuješ, čuje, čujemo, čujete, čuju",
-       "en": "to hear: I hear, you hear, he/she hears, we hear, you (pl.) hear, they hear",
+       "hr": "čuti: čujem",
+       "en": "to hear: I hear",
        "note": "The -jem class: infinitive in -ti, present stem in čuj-."
       },
       {
-       "hr": "piti: pijem, piješ, pije…",
-       "en": "to drink: I drink, you drink, he/she drinks…",
+       "hr": "čuješ",
+       "en": "you hear",
+       "note": "The -jem class: infinitive in -ti, present stem in čuj-."
+      },
+      {
+       "hr": "čuje",
+       "en": "he/she hears",
+       "note": "The -jem class: infinitive in -ti, present stem in čuj-."
+      },
+      {
+       "hr": "čujemo",
+       "en": "we hear",
+       "note": "The -jem class: infinitive in -ti, present stem in čuj-."
+      },
+      {
+       "hr": "čujete",
+       "en": "you (pl.) hear",
+       "note": "The -jem class: infinitive in -ti, present stem in čuj-."
+      },
+      {
+       "hr": "čuju",
+       "en": "they hear",
+       "note": "The -jem class: infinitive in -ti, present stem in čuj-."
+      },
+      {
+       "hr": "piti: pijem",
+       "en": "to drink: I drink",
+       "note": "Same pattern as čuti: pij- + em. Also: obuti → obujem."
+      },
+      {
+       "hr": "piješ",
+       "en": "you drink",
+       "note": "Same pattern as čuti: pij- + em. Also: obuti → obujem."
+      },
+      {
+       "hr": "pije…",
+       "en": "he/she drinks…",
        "note": "Same pattern as čuti: pij- + em. Also: obuti → obujem."
       },
       {
@@ -17429,7 +17873,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Ured mog novog šefa",
+     "title": "The office of my new boss (Ured mog novog šefa)",
      "intro": "Full-phrase genitive around the office, plus čuti and piti conjugated in real chat.",
      "lines": [
       {
@@ -17539,13 +17983,23 @@
        "note": "Genitive plural: naši susjedi → naših susjeda."
       },
       {
-       "hr": "bratov auto, Ivanov stan",
-       "en": "brother's car, Ivan's flat",
+       "hr": "bratov auto",
+       "en": "brother's car",
        "note": "Possessive adjective in -ov/-ev for a single, unmodified masculine owner."
       },
       {
-       "hr": "Anin mobitel, sestrin stan",
-       "en": "Ana's mobile, sister's flat",
+       "hr": "Ivanov stan",
+       "en": "Ivan's flat",
+       "note": "Possessive adjective in -ov/-ev for a single, unmodified masculine owner."
+      },
+      {
+       "hr": "Anin mobitel",
+       "en": "Ana's mobile",
+       "note": "-in for feminine owners: Ana → Anin, sestra → sestrin."
+      },
+      {
+       "hr": "sestrin stan",
+       "en": "sister's flat",
        "note": "-in for feminine owners: Ana → Anin, sestra → sestrin."
       },
       {
@@ -17719,7 +18173,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Čije je ovo?",
+     "title": "Whose is this? (Čije je ovo?)",
      "intro": "Sorting out ownership around the apartment: a genitive chain and a possessive adjective, side by side.",
      "lines": [
       {
@@ -18017,7 +18471,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Prošlog tjedna i sljedećeg mjeseca",
+     "title": "Last week and next month (Prošlog tjedna i sljedećeg mjeseca)",
      "intro": "Timestamping a real week and a real plan, no prepositions needed, only the temporal genitive.",
      "lines": [
       {
@@ -18095,7 +18549,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Čaša hladne vode, genitive of quantity and description",
+     "title": "The genitive of quantity and description: čaša hladne vode",
      "intro": "The genitive's third act. After quantities (a glass of, a kilo of, a lot of) and inside descriptions (a man of good will), Croatian reaches for the genitive, adjective and noun together. Learn these phrases as chunks and the endings will start placing themselves. At the end, all three genitive uses line up for a recap.",
      "items": [
       {
@@ -18149,14 +18603,24 @@
        "note": "vedar → vedrog: the fleeting a disappears before the ending."
       },
       {
-       "hr": "osjećaj sreće, miris mora, zvuk valova",
-       "en": "a feeling of happiness, the smell of the sea, the sound of the waves",
+       "hr": "osjećaj sreće",
+       "en": "a feeling of happiness",
        "note": "The explanatory genitive also names what something consists of or refers to."
       },
       {
-       "hr": "Prošle godine (auto moga brata) čaša hladne vode",
-       "en": "Last year (my brother's car) a glass of cold water",
-       "note": "The three genitive uses in one line: time, possession, description/quantity. Say all three aloud."
+       "hr": "miris mora",
+       "en": "the smell of the sea",
+       "note": "The explanatory genitive also names what something consists of or refers to."
+      },
+      {
+       "hr": "zvuk valova",
+       "en": "the sound of the waves",
+       "note": "The explanatory genitive also names what something consists of or refers to."
+      },
+      {
+       "hr": "Prošle godine vozio sam auto svoga brata.",
+       "en": "Last year I drove the car that belongs to my brother.",
+       "note": "Possession by the genitive: auto svoga brata."
       }
      ],
      "sources": [
@@ -18310,7 +18774,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Šalica jake kave, molim",
+     "title": "A cup of strong coffee, please (Šalica jake kave, molim)",
      "intro": "A kitchen exchange that runs entirely on the genitive of quantity and description, coffee, bread, wine and a compliment.",
      "lines": [
       {
@@ -18388,13 +18852,18 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Javljam se na natječaj, the job application",
+     "title": "The job application: javljam se na natječaj",
      "intro": "Formal Croatian with immediate real-world value. These are the fixed phrases of every application letter (openers, body lines, closers) plus the mini-CV vocabulary. Notice how the letter quietly audits everything: genitives of quantity (pet godina iskustva), temporal genitives (prošle godine), svoj, and the capital-V Vi of written courtesy.",
      "items": [
       {
-       "hr": "Poštovani, / Poštovana gospođo,",
-       "en": "Dear Sir/Madam, (to a man or unknown / to a woman)",
+       "hr": "Poštovani",
+       "en": "Dear Sir/Madam",
        "note": "The only correct opener for a formal letter. Never 'Dragi' in an application."
+      },
+      {
+       "hr": "S poštovanjem",
+       "en": "Yours sincerely",
+       "note": "How a formal application signs off, under your full name."
       },
       {
        "hr": "Javljam se na natječaj za radno mjesto konobara.",
@@ -18402,8 +18871,13 @@
        "note": "The key sentence: javiti se na natječaj + za radno mjesto + genitive of the job."
       },
       {
-       "hr": "natječaj, oglas",
-       "en": "job competition/opening, advertisement",
+       "hr": "natječaj",
+       "en": "job competition/opening",
+       "note": "Vidio sam Vaš oglas… = I saw your ad…, capital V for written politeness."
+      },
+      {
+       "hr": "oglas",
+       "en": "advertisement",
        "note": "Vidio sam Vaš oglas… = I saw your ad…, capital V for written politeness."
       },
       {
@@ -18452,8 +18926,18 @@
        "note": "The only closer you need. s + instrumental: poštovanje → s poštovanjem."
       },
       {
-       "hr": "životopis: obrazovanje, radno iskustvo, vještine",
-       "en": "CV: education, work experience, skills",
+       "hr": "životopis: obrazovanje",
+       "en": "CV: education",
+       "note": "The three section headings of your six-line CV."
+      },
+      {
+       "hr": "radno iskustvo",
+       "en": "work experience",
+       "note": "The three section headings of your six-line CV."
+      },
+      {
+       "hr": "vještine",
+       "en": "skills",
        "note": "The three section headings of your six-line CV."
       }
      ],
@@ -18605,7 +19089,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Poziv poslije natječaja",
+     "title": "A call after the application (Poziv poslije natječaja)",
      "intro": "A formal follow-up call about the job application: Vi-forms, the CV in the attachment, and the polite closing.",
      "lines": [
       {
@@ -18917,7 +19401,7 @@
    "week": 21,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Sjećanja, childhood memories",
+   "title": "Childhood memories: sjećanja",
    "objective": "Open the memories theme: childhood vocabulary and first recollections.",
    "paretoFocus": "djetinjstvo, uspomena, sjećati se, memories are the A2 storytelling theme, and everything you know about past aspect finally gets a stage.",
    "resources": [
@@ -18939,7 +19423,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Sjećanja, the childhood word kit",
+     "title": "The childhood word kit: sjećanja",
      "intro": "The memories theme opens here. Twelve-plus words for talking about childhood, and one crucial rection hiding among them: sjećati se takes the GENITIVE. Čega se sjećaš? What do you remember? Every answer this week will start from that question.",
      "items": [
       {
@@ -18953,9 +19437,9 @@
        "note": "najljepša uspomena = the loveliest memory. Also a physical memento."
       },
       {
-       "hr": "sjećati se + genitiv",
+       "hr": "sjećati se",
        "en": "to remember",
-       "note": "The key rection: Sjećam se svog prvog bicikla, genitive, not accusative!"
+       "note": "Takes the genitive: Sjećam se tog dana. (I remember that day.)"
       },
       {
        "hr": "sjećanje",
@@ -19159,7 +19643,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Sjećaš li se djetinjstva?",
+     "title": "Do you remember your childhood? (Sjećaš li se djetinjstva?)",
      "intro": "Trading childhood memories, grandma's garden, hide-and-seek and a favourite old toy, sjećati se and igrati se in full genitive flight.",
      "lines": [
       {
@@ -19235,7 +19719,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Najprije, zatim, na kraju, the story skeleton",
+     "title": "The story skeleton: najprije, zatim, na kraju",
      "intro": "Five sequencers turn loose sentences into a story: najprije opens it, zatim and potom push it forward, kasnije jumps ahead, and na kraju closes it. Add timestamps in the temporal genitive (jednog ljeta, svakog jutra) and you have the full narrative skeleton. The last four items walk through a model story, the same shape your 8-sentence memory should take today.",
      "items": [
       {
@@ -19269,8 +19753,18 @@
        "note": "prije and nakon take the genitive: toga. Handy for jumping around the timeline."
       },
       {
-       "hr": "jednog ljeta, svakog jutra, prošle godine",
-       "en": "one summer, every morning, last year",
+       "hr": "jednog ljeta",
+       "en": "one summer",
+       "note": "The temporal genitive timestamps, no preposition, straight into the story."
+      },
+      {
+       "hr": "svakog jutra",
+       "en": "every morning",
+       "note": "The temporal genitive timestamps, no preposition, straight into the story."
+      },
+      {
+       "hr": "prošle godine",
+       "en": "last year",
        "note": "The temporal genitive timestamps, no preposition, straight into the story."
       },
       {
@@ -19512,7 +20006,7 @@
    "week": 21,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Kad sam bio dijete…",
+   "title": "When I was a child: Kad sam bio dijete…",
    "objective": "Narrate habitual past (imperfective) against one-time events (perfective).",
    "paretoFocus": "'Kad sam bio dijete, svakog ljeta smo išli na more. Jedne godine naučio sam plivati.', habitual vs punctual is aspect's finest distinction, mastered through memories.",
    "resources": [],
@@ -19532,7 +20026,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Kad sam bio dijete…, habitual vs one-time",
+     "title": "Habitual against one-time: Kad sam bio dijete…",
      "intro": "Aspect's finest distinction, staged as memories. Habits and repeated summers take the imperfective (išli smo, budio sam se, pekla je); single events that happened once take the perfective (naučio sam, probudio sam se, ispekla je). Learn the pairs, then the signal words that give the choice away.",
      "items": [
       {
@@ -19586,19 +20080,19 @@
        "note": "pogledati (perfective): do kraja = to the end, completion made explicit."
       },
       {
-       "hr": "svaki dan, često, obično, uvijek → nesvršeni",
-       "en": "every day, often, usually, always → imperfective",
-       "note": "These signal words announce a habit, reach for the imperfective."
+       "hr": "nesvršeni",
+       "en": "imperfective",
+       "note": "From svaki dan, često, obično, uvijek. These signal words announce a habit, reach for the imperfective."
       },
       {
-       "hr": "jednom, jedne godine, odjednom → svršeni",
-       "en": "once, one year, suddenly → perfective",
-       "note": "These pin one moment to the timeline, reach for the perfective."
+       "hr": "odjednom",
+       "en": "suddenly, all at once",
+       "note": "One of the time words that pull a story into the perfective, alongside jednom and jedne godine."
       },
       {
-       "hr": "dijete → djeteta",
-       "en": "child → of the child",
-       "note": "A teaser: dijete grows a -t- in the genitive. The full shape-shifter pattern comes tomorrow."
+       "hr": "djeteta",
+       "en": "of the child",
+       "note": "From dijete. A teaser: dijete grows a -t- in the genitive. The full shape-shifter pattern comes tomorrow."
       }
      ],
      "sources": [
@@ -19736,10 +20230,10 @@
       },
       {
        "type": "TRANSLATE",
-       "prompt": "Type the Croatian for: 'once, one year, suddenly → perfective'",
+       "prompt": "Type the Croatian for: 'Suddenly it started raining.'",
        "difficulty": 5,
-       "answer": "jednom, jedne godine, odjednom → svršeni",
-       "explanation": "'once, one year, suddenly → perfective' is 'jednom, jedne godine, odjednom → svršeni'"
+       "answer": "Odjednom je počela kiša.",
+       "explanation": "'Suddenly it started raining.' is 'Odjednom je pocela kisa.' odjednom pulls the sentence into the perfective."
       }
      ],
      "sources": [
@@ -19749,7 +20243,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Uspomene iz djetinjstva",
+     "title": "Memories from childhood (Uspomene iz djetinjstva)",
      "intro": "Habit against event, played out as a childhood interview: svako ljeto against jedne godine, često against jednom.",
      "lines": [
       {
@@ -19829,9 +20323,19 @@
      "intro": "A tiny class of very frequent neuter nouns grows a syllable the moment it leaves the nominative: ime → imena, vrijeme → vremena, dijete → djeteta. Learn the singular of all three, the trick plural of dijete (djeca!), and the everyday sentences these nouns live in. Module 6 closes today, 60 units down.",
      "items": [
       {
-       "hr": "ime → imena, imenu, imenom",
-       "en": "name → of the name, to the name, with the name",
-       "note": "The stem grows -(e)n-: imen-. G imena, D/L imenu, I imenom."
+       "hr": "imena",
+       "en": "of the name",
+       "note": "From ime. The stem grows -(e)n-: imen-. G imena, D/L imenu, I imenom."
+      },
+      {
+       "hr": "imenu",
+       "en": "to the name",
+       "note": "From ime. The stem grows -(e)n-: imen-. G imena, D/L imenu, I imenom."
+      },
+      {
+       "hr": "imenom",
+       "en": "with the name",
+       "note": "From ime. The stem grows -(e)n-: imen-. G imena, D/L imenu, I imenom."
       },
       {
        "hr": "Kako se piše vaše ime i prezime?",
@@ -19844,9 +20348,19 @@
        "note": "nema + genitive: imena. The extension appears the moment the case changes."
       },
       {
-       "hr": "vrijeme → vremena, vremenu, vremenom",
-       "en": "time/weather → of time, to time, with time",
-       "note": "Watch the ije shrink to e in every extended form: vrEmena, not 'vrijemena'."
+       "hr": "vremena",
+       "en": "of time",
+       "note": "From vrijeme. Watch the ije shrink to e in every extended form: vrEmena, not 'vrijemena'."
+      },
+      {
+       "hr": "vremenu",
+       "en": "to time",
+       "note": "From vrijeme. Watch the ije shrink to e in every extended form: vrEmena, not 'vrijemena'."
+      },
+      {
+       "hr": "vremenom",
+       "en": "with time",
+       "note": "From vrijeme. Watch the ije shrink to e in every extended form: vrEmena, not 'vrijemena'."
       },
       {
        "hr": "Nemam vremena.",
@@ -19859,9 +20373,19 @@
        "note": "koliko + genitive, quantity genitive meets the stem extension."
       },
       {
-       "hr": "dijete → djeteta, djetetu, djetetom",
-       "en": "child → of the child, to the child, with the child",
-       "note": "The -(e)t- extension: djetet-. Same ije → je shortening: dIJEte → dJEteta."
+       "hr": "djeteta",
+       "en": "of the child",
+       "note": "From dijete. The -(e)t- extension: djetet-. Same ije → je shortening: dIJEte → dJEteta."
+      },
+      {
+       "hr": "djetetu",
+       "en": "to the child",
+       "note": "From dijete. The -(e)t- extension: djetet-. Same ije → je shortening: dIJEte → dJEteta."
+      },
+      {
+       "hr": "djetetom",
+       "en": "with the child",
+       "note": "From dijete. The -(e)t- extension: djetet-. Same ije → je shortening: dIJEte → dJEteta."
       },
       {
        "hr": "Kako je ime tvog djeteta?",
@@ -19879,9 +20403,14 @@
        "note": "djeca looks singular but takes a plural verb: djeca SE IGRAJU."
       },
       {
-       "hr": "rame → ramena; tele → teleta",
-       "en": "shoulder → shoulders; calf → of the calf",
-       "note": "The rest of the little family: rame goes the -(e)n- way, tele the -(e)t- way like dijete."
+       "hr": "ramena",
+       "en": "shoulders",
+       "note": "From rame. The rest of the little family: rame goes the -(e)n- way, tele the -(e)t- way like dijete."
+      },
+      {
+       "hr": "teleta",
+       "en": "of the calf",
+       "note": "From tele. The rest of the little family: rame goes the -(e)n- way, tele the -(e)t- way like dijete."
       },
       {
        "hr": "S vremenom sve postaje lakše.",
@@ -20172,8 +20701,18 @@
        "note": "njezina → njezinom, possessives take the same -om as adjectives here."
       },
       {
-       "hr": "sa mnom, s tobom, s njom",
-       "en": "with me, with you, with her",
+       "hr": "sa mnom",
+       "en": "with me",
+       "note": "The pronoun instrumentals, and the fixed exception sa mnom (never 's mnom')."
+      },
+      {
+       "hr": "s tobom",
+       "en": "with you",
+       "note": "The pronoun instrumentals, and the fixed exception sa mnom (never 's mnom')."
+      },
+      {
+       "hr": "s njom",
+       "en": "with her",
        "note": "The pronoun instrumentals, and the fixed exception sa mnom (never 's mnom')."
       }
      ],
@@ -20323,7 +20862,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kako putuješ i s kim",
+     "title": "How you travel and who with (Kako putuješ i s kim)",
      "intro": "The whole instrumental phrase in action: means of transport bare, company with s/sa, full agreement on every word.",
      "lines": [
       {
@@ -20450,8 +20989,18 @@
        "note": "A closing option: full instrumental phrase + o + locative plural (o tim ljetima)."
       },
       {
-       "hr": "Checklist: 2× vremenski genitiv, 2× instrumental, oba vida",
-       "en": "Checklist: 2 temporal genitives, 2 instrumental phrases, both aspects",
+       "hr": "Checklist: 2× vremenski genitiv",
+       "en": "Checklist: 2 temporal genitives",
+       "note": "Before reading to your partner, tick each requirement in your own text."
+      },
+      {
+       "hr": "2× instrumental",
+       "en": "2 instrumental phrases",
+       "note": "Before reading to your partner, tick each requirement in your own text."
+      },
+      {
+       "hr": "oba vida",
+       "en": "both aspects",
        "note": "Before reading to your partner, tick each requirement in your own text."
       }
      ],
@@ -20592,7 +21141,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Čitanje uspomene, reading it to her",
+     "title": "Reading the memory aloud (Čitanje uspomene)",
      "intro": "The final drill of the day, staged: you read your memory text aloud, she ticks off the requirements, and catches the one slip you didn't see. Read your lines with feeling; the text deserves it.",
      "lines": [
       {
@@ -20685,9 +21234,9 @@
      "intro": "The whole week compressed into ten sentences, one per pattern. Read each aloud and name the grammar it carries before peeking at the note. If all ten come back instantly, you're ready for the three-minute story.",
      "items": [
       {
-       "hr": "Prošle godine (auto moga brata) čaša hladne vode.",
-       "en": "Last year (my brother's car) a glass of cold water.",
-       "note": "The three genitive uses: time, possession, quantity/description. Say them as a mantra."
+       "hr": "Ovo je auto moje sestre.",
+       "en": "This is the car that belongs to my sister.",
+       "note": "Possession by the genitive: moja sestra becomes moje sestre."
       },
       {
        "hr": "Popio sam šalicu jake kave i pojeo komad domaćeg kruha.",
@@ -20695,9 +21244,9 @@
        "note": "Quantity genitives in the wild, plus two perfective verbs for two finished snacks."
       },
       {
-       "hr": "najprije → zatim → potom → kasnije → na kraju",
-       "en": "first → then → after that → later → in the end",
-       "note": "The five sequencers, cold. This is your story skeleton."
+       "hr": "Najprije, zatim, potom, kasnije, na kraju.",
+       "en": "First, then, after that, later, in the end.",
+       "note": "The five connectors that hold a told story together."
       },
       {
        "hr": "Kad sam bio mali, svake nedjelje smo ručali kod bake.",
@@ -20710,9 +21259,9 @@
        "note": "One-time event: perfective kupili + temporal genitive jednog ljeta."
       },
       {
-       "hr": "ime → imena, vrijeme → vremena, dijete → djeteta",
-       "en": "name, time, child, and their genitives",
-       "note": "The shape-shifters. If these three come out clean, the pattern is banked."
+       "hr": "Nemam imena ni vremena.",
+       "en": "I have neither a name nor time.",
+       "note": "The -en- nouns in the genitive: ime becomes imena, vrijeme becomes vremena, dijete becomes djeteta."
       },
       {
        "hr": "Djeca se igraju u parku, a ja nemam vremena.",
@@ -20733,6 +21282,31 @@
        "hr": "Čega se najradije sjećaš? Sjećam se mirisa bakina kruha.",
        "en": "What do you remember most fondly? I remember the smell of grandma's bread.",
        "note": "sjećati se + genitive, twice over: mirisa (čega?) bakina kruha (čijeg?)."
+      },
+      {
+       "hr": "zdjela tople juhe",
+       "en": "a bowl of warm soup",
+       "note": "Quantity plus the genitive: topla juha becomes tople juhe."
+      },
+      {
+       "hr": "litra svježeg mlijeka",
+       "en": "a litre of fresh milk",
+       "note": "svježe mlijeko becomes svježeg mlijeka."
+      },
+      {
+       "hr": "kilogram zelenih jabuka",
+       "en": "a kilo of green apples",
+       "note": "Plural genitive after a quantity: zelene jabuke becomes zelenih jabuka."
+      },
+      {
+       "hr": "Nemam vremena.",
+       "en": "I have no time.",
+       "note": "nemati takes the genitive: vrijeme becomes vremena."
+      },
+      {
+       "hr": "Sjećam se mirisa.",
+       "en": "I remember the smell.",
+       "note": "sjećati se takes the genitive."
       }
      ],
      "sources": [
@@ -20989,7 +21563,7 @@
    "week": 22,
    "phase": "Phase 3: A1 → A2",
    "level": "A2",
-   "title": "Ime je znak, names & customs",
+   "title": "Names and customs: Ime je znak",
    "objective": "Talk about names, nicknames and Croatian naming customs.",
    "paretoFocus": "imendan, nadimak, prezime, names open culture: why half of Croatia celebrates name days and what surnames in -ić actually mean.",
    "resources": [
@@ -21011,7 +21585,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Ime je znak: names, name days and godparents",
+     "title": "Names, name days and godparents: Ime je znak",
      "intro": "Names open Croatian culture: half the country celebrates name days, surnames in -ić hide little family histories, and every name has a story. Today's words let you ask about names, explain your own, and understand why your wife's family calendar is full of saints.",
      "items": [
       {
@@ -21215,7 +21789,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Pitanja o imenu",
+     "title": "Questions about a name (Pitanja o imenu)",
      "intro": "Names, name days, godparents and meanings, the name-day vocabulary put to work in one quick exchange.",
      "lines": [
       {
@@ -21295,9 +21869,19 @@
      "intro": "Modern Croatian is full of loanwords such as taksi, hobi, intervju, auto and finale, and they all decline as masculine nouns with tiny, learnable adjustments: nouns in -i insert a -j-, the rest just add the endings. Learn the pattern once and these words behave forever.",
      "items": [
       {
-       "hr": "taksi → taksija, taksiju, taksijem",
-       "en": "taxi → of / to / by taxi",
-       "note": "Nouns in -i insert -j- before every ending."
+       "hr": "taksija",
+       "en": "of a taxi",
+       "note": "From taksi."
+      },
+      {
+       "hr": "taksiju",
+       "en": "to a taxi",
+       "note": "From taksi."
+      },
+      {
+       "hr": "taksijem",
+       "en": "by taxi",
+       "note": "From taksi."
       },
       {
        "hr": "Idem na aerodrom taksijem.",
@@ -21310,9 +21894,9 @@
        "note": "nema + genitive: taksija."
       },
       {
-       "hr": "hobi → hobija",
-       "en": "hobby → of a hobby",
-       "note": "Same -j- insertion: hobija, hobiju, hobijem."
+       "hr": "hobija",
+       "en": "of a hobby",
+       "note": "From hobi. Same -j- insertion: hobija, hobiju, hobijem."
       },
       {
        "hr": "Imaš li kakav hobi?",
@@ -21325,9 +21909,14 @@
        "note": "Plural hobiji; za + A: za hobije."
       },
       {
-       "hr": "intervju → intervjua, intervjuu",
-       "en": "interview → of / in an interview",
-       "note": "Nouns in -u simply add the endings: intervjua, intervjuu, intervjuom."
+       "hr": "intervjua",
+       "en": "of an interview",
+       "note": "From intervju."
+      },
+      {
+       "hr": "intervjuu",
+       "en": "in an interview",
+       "note": "From intervju."
       },
       {
        "hr": "Dao je dugi intervju za radio.",
@@ -21335,9 +21924,19 @@
        "note": "za + A. Radio itself declines tomorrow: radija."
       },
       {
-       "hr": "auto → auta, autu, autom",
-       "en": "car → of / to / by car",
-       "note": "auto is masculine although it ends in -o: moj auto, G sg. auta."
+       "hr": "auta",
+       "en": "of a car",
+       "note": "From auto."
+      },
+      {
+       "hr": "autu",
+       "en": "to a car",
+       "note": "From auto."
+      },
+      {
+       "hr": "autom",
+       "en": "by car",
+       "note": "From auto."
       },
       {
        "hr": "Auto je na servisu, pa idem tramvajem.",
@@ -21345,9 +21944,9 @@
        "note": "na servisu = at the garage; pa = so."
       },
       {
-       "hr": "finale → finala",
-       "en": "final (match) → of the final",
-       "note": "Nouns in -e take the endings on the full form: finala, finalu."
+       "hr": "finala",
+       "en": "of the final",
+       "note": "From finale. Nouns in -e take the endings on the full form: finala, finalu."
       },
       {
        "hr": "Tko igra u finalu?",
@@ -21575,9 +22174,19 @@
      "intro": "Nouns and names ending in -io insert a -j- in every case except the nominative: radio → radija, Mario → Marija, studio → studija. It's a tiny rule with constant payoff, Croatian media words and half the men on the Dalmatian coast follow it.",
      "items": [
       {
-       "hr": "radio → radija, radiju, radijem",
-       "en": "radio → of / on / with the radio",
-       "note": "The -j- appears everywhere except the nominative."
+       "hr": "radija",
+       "en": "of the radio",
+       "note": "From radio."
+      },
+      {
+       "hr": "radiju",
+       "en": "on the radio",
+       "note": "From radio."
+      },
+      {
+       "hr": "radijem",
+       "en": "with the radio",
+       "note": "From radio."
       },
       {
        "hr": "Slušam vijesti na radiju.",
@@ -21590,14 +22199,29 @@
        "note": "čuti → čuo (m. sg. participle)."
       },
       {
-       "hr": "studio → studija, u studiju",
-       "en": "studio → of / in the studio",
-       "note": "Snimamo u studiju. We're recording in the studio."
+       "hr": "studija",
+       "en": "of the studio",
+       "note": "From studio."
       },
       {
-       "hr": "Mario → Marija, Mariju, s Marijem",
-       "en": "Mario → of / to / with Mario",
-       "note": "Names in -io follow exactly the same rule."
+       "hr": "u studiju",
+       "en": "in the studio",
+       "note": "From studio."
+      },
+      {
+       "hr": "Marija",
+       "en": "of Mario",
+       "note": "From Mario."
+      },
+      {
+       "hr": "Mariju",
+       "en": "to Mario",
+       "note": "From Mario."
+      },
+      {
+       "hr": "s Marijem",
+       "en": "with Mario",
+       "note": "From Mario."
       },
       {
        "hr": "Razgovarao sam s Marijem o poslu.",
@@ -21857,9 +22481,9 @@
      "intro": "Today's verbs live in the kitchen: peći (to bake/roast), jesti (to eat) and their friends. They are consonant-stem verbs with regular -em endings but surprising corners (oni peku, ja mogu) and after today very few present tenses can catch you off guard.",
      "items": [
       {
-       "hr": "peći → pečem, pečeš, peče",
-       "en": "to bake / roast → I bake…",
-       "note": "Consonant-stem verb. Watch the 3rd plural: oni peku!"
+       "hr": "pečem",
+       "en": "I bake, I roast",
+       "note": "From peći: pečem, pečeš, peče, pečemo, pečete, peku."
       },
       {
        "hr": "Pečem kruh svaku subotu.",
@@ -21877,9 +22501,9 @@
        "note": "3rd pl. peku, the č becomes k again."
       },
       {
-       "hr": "jesti → jedem, jedeš, jede",
-       "en": "to eat → I eat…",
-       "note": "The -sti → -dem class; 3rd pl. jedu."
+       "hr": "jedem",
+       "en": "I eat",
+       "note": "From jesti: jedem, jedeš, jede, jedemo, jedete, jedu."
       },
       {
        "hr": "Što jedeš za doručak?",
@@ -21892,9 +22516,9 @@
        "note": "nedjeljom, instrumental for a repeated day: 'on Sundays'."
       },
       {
-       "hr": "moći → mogu, možeš, može… mogu",
-       "en": "can → I can…",
-       "note": "1st sg. and 3rd pl. are both mogu; everything in between has ž."
+       "hr": "mogu, možeš, može… mogu",
+       "en": "I can…",
+       "note": "From moći. 1st sg. and 3rd pl. are both mogu; everything in between has ž."
       },
       {
        "hr": "Ne mogu jesti ljuto.",
@@ -21902,9 +22526,9 @@
        "note": "Modal + infinitive; ljuto = spicy (also 'angry')."
       },
       {
-       "hr": "sjesti → sjednem",
-       "en": "to sit down → I sit down",
-       "note": "The -sti → -dnem class; perfective, so it mostly appears in commands and futures."
+       "hr": "sjednem",
+       "en": "I sit down",
+       "note": "From sjesti. The -sti → -dnem class; perfective, so it mostly appears in commands and futures."
       },
       {
        "hr": "Sjednite, ručak je gotov!",
@@ -21924,7 +22548,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "pečem, jedem, mogu, no surprises left",
+     "title": "No surprises left: pečem, jedem, mogu",
      "intro": "Conjugate the kitchen verbs cold: the tricky third plurals, the mogu/možeš split and the sjesti imperative.",
      "questions": [
       {
@@ -22060,7 +22684,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Ručak kod bake",
+     "title": "Lunch with grandma (Ručak kod bake)",
      "intro": "pečem, jedem, mogu and sjednite around grandma's lunch table, the kitchen-table verbs put to work.",
      "lines": [
       {
@@ -22140,9 +22764,9 @@
      "intro": "Verbs in -vati lose the va in the present: davati → dajem, prodavati → prodajem, poznavati → poznajem. And dio (part) (the last irregular noun on your A2 list) swaps -io for -ijel- before every ending: dijela, dijelu, dijelovi. After today, your A2 grammar inventory is complete.",
      "items": [
       {
-       "hr": "davati → dajem, daješ, daje",
-       "en": "to give (impf.) → I give…",
-       "note": "-vati → -jem: the va disappears in the present. 3rd pl. daju."
+       "hr": "dajem",
+       "en": "I give",
+       "note": "From davati: dajem, daješ, daje, dajemo, dajete, daju."
       },
       {
        "hr": "Dajem psu ostatke ručka.",
@@ -22150,9 +22774,9 @@
        "note": "Dative psu + accusative ostatke."
       },
       {
-       "hr": "prodavati → prodajem",
-       "en": "to sell (impf.) → I sell",
-       "note": "Same pattern: prodajem, prodaješ… prodaju."
+       "hr": "prodajem",
+       "en": "I sell",
+       "note": "From prodavati. Same pattern: prodajem, prodaješ… prodaju."
       },
       {
        "hr": "Susjedi prodaju stan.",
@@ -22160,19 +22784,34 @@
        "note": "3rd pl. prodaju, looks like the noun prodaja, but it's a verb here."
       },
       {
-       "hr": "poznavati → poznajem",
-       "en": "to know (a person) → I know",
-       "note": "Poznajem ga godinama. I've known him for years."
+       "hr": "poznajem",
+       "en": "I know",
+       "note": "From poznavati. Poznajem ga godinama. I've known him for years."
       },
       {
-       "hr": "dati → dam; prodati → prodam",
-       "en": "to give / to sell (perfective)",
-       "note": "The perfective partners keep -am: dam, prodam. Prodali smo auto. We sold the car."
+       "hr": "dam",
+       "en": "I give, once",
+       "note": "Perfective dati, against the imperfective davati."
       },
       {
-       "hr": "dio → dijela, dijelu, dijelom",
-       "en": "part → of / to / with a part",
-       "note": "The -io becomes -ijel- before endings, exactly like posao → posla."
+       "hr": "prodam",
+       "en": "I sell, once",
+       "note": "Perfective prodati, against prodavati."
+      },
+      {
+       "hr": "dijela",
+       "en": "of a part",
+       "note": "From dio."
+      },
+      {
+       "hr": "dijelu",
+       "en": "to a part",
+       "note": "From dio."
+      },
+      {
+       "hr": "dijelom",
+       "en": "with a part",
+       "note": "From dio."
       },
       {
        "hr": "Veći dio dana radim.",
@@ -22918,7 +23557,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Večernji razgovor: imena u tvojoj obitelji",
+     "title": "An evening conversation: imena u tvojoj obitelji",
      "intro": "Tonight you hold the microphone: you interview your wife about the names in her family. Read your lines ('Me') aloud, they are exactly today's questions and reactions, deployed live.",
      "lines": [
       {
@@ -23209,7 +23848,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Priča o iseljeništvu",
+     "title": "A story about emigration (Priča o iseljeništvu)",
      "intro": "A family's migration story told with today's words: iseljenik, domovina, državljanstvo, korijeni.",
      "lines": [
       {
@@ -23285,7 +23924,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Kaže se: the impersonal toolkit",
+     "title": "The impersonal toolkit: kaže se",
      "intro": "Croatian talks about 'people in general' and inner states without a subject: Kaže se… (one says), Ovdje se ne puši (no smoking), Hladno mi je (I'm cold). These patterns are indispensable and utterly unlike English, collect them today as fixed templates.",
      "items": [
       {
@@ -23511,7 +24150,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Kako se to kaže?",
+     "title": "How do you say that? (Kako se to kaže?)",
      "intro": "Impersonal templates in the wild: kaže se, dosadno mi je, hladno mi je, ne smije se, treba, žao mi je.",
      "lines": [
       {
@@ -23793,7 +24432,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Dva svijeta za jednim stolom",
+     "title": "Two worlds at one table (Dva svijeta za jednim stolom)",
      "intro": "Over dinner, your wife asks the classic question, and you compare your two worlds using today's frames: impersonals, comparatives and the diplomatic finish. Read your lines ('Me') aloud.",
      "lines": [
       {
@@ -23868,7 +24507,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Čitamo vijesti, the news-reading toolkit",
+     "title": "The news-reading toolkit: čitamo vijesti",
      "intro": "Thirteen phrases that unlock short news items: the nouns of headlines, the verbs of reporting, and the who-what-where-when-how-many frame you'll apply to three real news items today.",
      "items": [
       {
@@ -24092,7 +24731,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Jesi li čuo najnoviju vijest?",
+     "title": "Have you heard the latest news? (Jesi li čuo najnoviju vijest?)",
      "intro": "The news-reading toolkit deployed: a headline, a report, the who-what-where-how-many frame.",
      "lines": [
       {
@@ -24509,8 +25148,8 @@
       },
       {
        "hr": "Voli te tvoj unuk Marko.",
-       "en": "Your grandson Marko loves you. (= Love, your grandson Marko)",
-       "note": "The intimate closing: Voli te + who you are to them. For friends: Grli te (hugs you), Ljubi te (kisses you)."
+       "en": "Your grandson Marko loves you. (how a letter signs off)",
+       "note": "The Croatian equivalent of 'Love, your grandson Marko'."
       },
       {
        "hr": "P. S. Šaljem ti i nekoliko fotografija.",
@@ -24677,7 +25316,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Pišem pismo baki",
+     "title": "Writing a letter to grandma (Pišem pismo baki)",
      "intro": "The letter skeleton assembled out loud before it goes on paper: opening, news, a question, a warm closing.",
      "lines": [
       {
@@ -24756,7 +25395,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Kod nas i kod vas, comparing worlds",
+     "title": "Comparing two worlds: kod nas i kod vas",
      "intro": "Tonight's 20-minute conversation is Croatia vs the world: food, customs, this week's news. These ten frames let you compare fairly, disagree politely and say what you miss.",
      "items": [
       {
@@ -24808,6 +25447,31 @@
        "hr": "Što se tebi čini, gdje se bolje živi?",
        "en": "What do you think, where is life better?",
        "note": "The question to hand the topic back: impersonal se + comparative adverb bolje. Ask it tonight and just listen."
+      },
+      {
+       "hr": "Navike su različite.",
+       "en": "Habits are different.",
+       "note": "Plural agreement across the whole phrase."
+      },
+      {
+       "hr": "Nedostaje mi hrana.",
+       "en": "I miss the food.",
+       "note": "Literally: the food is lacking TO ME. The dative carries the person."
+      },
+      {
+       "hr": "za razliku od Hrvatske",
+       "en": "unlike Croatia",
+       "note": "za razliku od plus the genitive."
+      },
+      {
+       "hr": "s druge strane",
+       "en": "on the other hand",
+       "note": "Pairs with s jedne strane."
+      },
+      {
+       "hr": "Gdje se bolje živi?",
+       "en": "Where is life better?",
+       "note": "Impersonal se plus the comparative adverb."
       }
      ],
      "sources": [
@@ -25075,13 +25739,23 @@
        "note": "Instrumental: -im + -im + -em. sa (not s) before svojim, easier to pronounce before s-."
       },
       {
-       "hr": "taksi: genitiv taksija, instrumental taksijem",
-       "en": "taxi: genitive taksija, instrumental taksijem",
+       "hr": "taksi: genitiv taksija",
+       "en": "taxi: genitive taksija",
        "note": "Foreign nouns in -i insert a -j- before every ending: taksija, taksiju, taksijem. Same with žiri (jury)."
       },
       {
-       "hr": "ime: genitiv imena, množina imena",
-       "en": "name: genitive imena, plural imena",
+       "hr": "instrumental taksijem",
+       "en": "instrumental taksijem",
+       "note": "Foreign nouns in -i insert a -j- before every ending: taksija, taksiju, taksijem. Same with žiri (jury)."
+      },
+      {
+       "hr": "ime: genitiv imena",
+       "en": "name: genitive imena",
+       "note": "Stem extension -en-: ime → imena, imenu… Same family: vrijeme → vremena, rame → ramena."
+      },
+      {
+       "hr": "množina imena",
+       "en": "plural imena",
        "note": "Stem extension -en-: ime → imena, imenu… Same family: vrijeme → vremena, rame → ramena."
       },
       {
@@ -25090,18 +25764,33 @@
        "note": "Stem extension -et- in the singular; the plural is the collective djeca, which declines like a feminine singular: G djece, D djeci."
       },
       {
-       "hr": "dio: genitiv dijela, lokativ dijelu",
-       "en": "part: genitive dijela, locative dijelu",
+       "hr": "dio: genitiv dijela",
+       "en": "part: genitive dijela",
        "note": "The o was an l once, it comes back in the oblique cases: dio → dijela, dijelu, dijelom."
       },
       {
-       "hr": "riječ: genitiv riječi, instrumental riječju",
-       "en": "word: genitive riječi, instrumental riječju",
+       "hr": "lokativ dijelu",
+       "en": "locative dijelu",
+       "note": "The o was an l once, it comes back in the oblique cases: dio → dijela, dijelu, dijelom."
+      },
+      {
+       "hr": "riječ: genitiv riječi",
+       "en": "word: genitive riječi",
        "note": "The feminine i-declension: almost everything is -i, with the special instrumental riječju (or riječi)."
       },
       {
-       "hr": "kolega: genitiv kolege, dativ kolegi",
-       "en": "colleague: genitive kolege, dative kolegi",
+       "hr": "instrumental riječju",
+       "en": "instrumental riječju",
+       "note": "The feminine i-declension: almost everything is -i, with the special instrumental riječju (or riječi)."
+      },
+      {
+       "hr": "kolega: genitiv kolege",
+       "en": "colleague: genitive kolege",
+       "note": "Masculine in meaning, a-declension in form: kolege, kolegi, kolegu, but adjectives stay masculine: moj kolega."
+      },
+      {
+       "hr": "dativ kolegi",
+       "en": "dative kolegi",
        "note": "Masculine in meaning, a-declension in form: kolege, kolegi, kolegu, but adjectives stay masculine: moj kolega."
       },
       {
@@ -25278,7 +25967,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Moj najbolji prijatelj",
+     "title": "My best friend (Moj najbolji prijatelj)",
      "intro": "One phrase, every case: 'moj najbolji prijatelj' declined through a normal conversation about a normal friendship.",
      "lines": [
       {
@@ -25587,7 +26276,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Jesi li mu ga dao?",
+     "title": "Did you give it to him? (Jesi li mu ga dao?)",
      "intro": "The clitic chain and the aspect switch at conversation speed, exactly today's two hardest systems in one exchange.",
      "lines": [
       {
@@ -25667,8 +26356,33 @@
      "intro": "The expressive block in one sweep: the conditional and its four jobs, futur II after kad/ako/dok, and the comparatives, including the irregular five and how they decline.",
      "items": [
       {
-       "hr": "kondicional: ja bih, ti bi, on bi, mi bismo, vi biste, oni bi",
-       "en": "conditional: I would, you would, he would, we would, you (pl.) would, they would",
+       "hr": "kondicional: ja bih",
+       "en": "conditional: I would",
+       "note": "The auxiliary paradigm. In speech everything blurs to bi, but writing keeps bih, bismo, biste."
+      },
+      {
+       "hr": "ti bi",
+       "en": "you would",
+       "note": "The auxiliary paradigm. In speech everything blurs to bi, but writing keeps bih, bismo, biste."
+      },
+      {
+       "hr": "on bi",
+       "en": "he would",
+       "note": "The auxiliary paradigm. In speech everything blurs to bi, but writing keeps bih, bismo, biste."
+      },
+      {
+       "hr": "mi bismo",
+       "en": "we would",
+       "note": "The auxiliary paradigm. In speech everything blurs to bi, but writing keeps bih, bismo, biste."
+      },
+      {
+       "hr": "vi biste",
+       "en": "you (pl.) would",
+       "note": "The auxiliary paradigm. In speech everything blurs to bi, but writing keeps bih, bismo, biste."
+      },
+      {
+       "hr": "oni bi",
+       "en": "they would",
        "note": "The auxiliary paradigm. In speech everything blurs to bi, but writing keeps bih, bismo, biste."
       },
       {
@@ -25707,14 +26421,29 @@
        "note": "dok + futur II for a future background action. The trio is complete: kad, ako, dok."
       },
       {
-       "hr": "dobar → bolji → najbolji; loš → gori → najgori",
-       "en": "good → better → best; bad → worse → worst",
-       "note": "Irregular pair number one. naj- + comparative always gives the superlative."
+       "hr": "najbolji",
+       "en": "the best",
+       "note": "From dobar."
       },
       {
-       "hr": "velik → veći; malen → manji; dug → dulji",
-       "en": "big → bigger; small → smaller; long → longer",
-       "note": "The other irregulars worth owning. dulji has a twin duži, both are standard."
+       "hr": "najgori",
+       "en": "the worst",
+       "note": "From loš."
+      },
+      {
+       "hr": "veći",
+       "en": "bigger",
+       "note": "From velik. The other irregulars worth owning. dulji has a twin duži, both are standard."
+      },
+      {
+       "hr": "manji",
+       "en": "smaller",
+       "note": "From malen. The other irregulars worth owning. dulji has a twin duži, both are standard."
+      },
+      {
+       "hr": "dulji",
+       "en": "longer",
+       "note": "From dug. The other irregulars worth owning. dulji has a twin duži, both are standard."
       },
       {
        "hr": "Ovo je bolji plan od prošlog.",
@@ -26198,7 +26927,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Vježba pred ispit",
+     "title": "Practice before the exam (Vježba pred ispit)",
      "intro": "Survival phrases in a mock exam: buying time, hedging, asking for repetition, structuring an answer, and landing it on purpose.",
      "lines": [
       {
@@ -26553,7 +27282,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "A2, potvrđeno, your can-dos and the B1 plan",
+     "title": "Your can-dos and the B1 plan: A2 potvrđeno",
      "intro": "Milestone day. First, the official can-dos in your own Croatian, read each one aloud and honestly tick it. Then the vocabulary of the next phase, because the plan you write today is the B1 you get.",
      "items": [
       {
@@ -26615,6 +27344,31 @@
        "hr": "Sto pedeset dana kasnije: putovanje se nastavlja.",
        "en": "A hundred and fifty days later: the journey continues.",
        "note": "nastaviti se = to continue. The last note of the phase, and the first note of the next one."
+      },
+      {
+       "hr": "Mogu platiti račun.",
+       "en": "I can pay the bill.",
+       "note": "moći plus the infinitive."
+      },
+      {
+       "hr": "Mogu opisati svoj stan.",
+       "en": "I can describe my flat.",
+       "note": "svoj refers back to the subject."
+      },
+      {
+       "hr": "Mogu se žaliti u trgovini.",
+       "en": "I can complain in a shop.",
+       "note": "žaliti se, a reflexive verb."
+      },
+      {
+       "hr": "Mogu pratiti vijesti.",
+       "en": "I can follow the news.",
+       "note": "vijesti is plural in Croatian."
+      },
+      {
+       "hr": "Putovanje se nastavlja.",
+       "en": "The journey continues.",
+       "note": "Reflexive nastavljati se."
       }
      ],
      "sources": [
@@ -26896,7 +27650,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "Vježba: zabrane",
+     "title": "Practice: zabrane",
      "intro": "Practise building prohibitions with the right person and the right infinitive.",
      "questions": [
       {
@@ -26983,7 +27737,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Čuvanje stana",
+     "title": "Looking after a flat (Čuvanje stana)",
      "intro": "Play 'Me'. A friend is leaving on a trip and gives you instructions for the flat; both of you use nemoj forms for what NOT to do.",
      "lines": [
       {
@@ -27033,7 +27787,7 @@
    ]
   },
   {
-   "title": "Čovjek koji, knjiga koju",
+   "title": "Relative clauses: čovjek koji, knjiga koju",
    "objective": "Describe people and things with the relative pronoun koji in the nominative and accusative.",
    "paretoFocus": "Almost every Croatian sentence longer than ten words contains koji; until you control it you cannot read a newspaper paragraph or describe anyone precisely.",
    "drills": [
@@ -27088,7 +27842,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "Vježba: koji i koju",
+     "title": "Practice: koji and koju",
      "intro": "Choose the form of koji by asking: what is its job inside the relative clause?",
      "questions": [
       {
@@ -27177,7 +27931,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Tko je tko na zabavi",
+     "title": "Who is who at the party (Tko je tko na zabavi)",
      "intro": "Play 'Me'. At a party you identify people for each other using koji, koja and kojeg.",
      "lines": [
       {
@@ -27227,7 +27981,7 @@
    ]
   },
   {
-   "title": "Koliko? Mnogo, nekoliko, malo",
+   "title": "How much and how many: mnogo, nekoliko, malo",
    "objective": "Use quantity words (mnogo, nekoliko, malo, dosta, toliko, posto, otprilike) with the genitive plural, and form the genitive plural itself.",
    "paretoFocus": "Croatian counts everything through the genitive; prices, crowds, statistics and shopping are all impossible to say without mnogo/nekoliko plus the right plural ending.",
    "drills": [
@@ -27246,7 +28000,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Količine i genitiv množine",
+     "title": "Quantities and the genitive plural: količine i genitiv množine",
      "intro": "Quantity words such as malo, dosta, mnogo, toliko, otprilike, posto and nekoliko are followed by the genitive plural (or genitive singular for mass nouns like sira, vremena). Most nouns take -a in the genitive plural, sometimes with an inserted a inside a consonant cluster (pismo becomes pisama); a smaller group takes -i (mjeseci, ljudi).",
      "items": [
       {
@@ -27282,7 +28036,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "Vježba: genitiv množine",
+     "title": "Practice: the genitive plural",
      "intro": "Practise choosing the right genitive plural after quantity words.",
      "questions": [
       {
@@ -27373,7 +28127,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Na tržnici",
+     "title": "At the market (Na tržnici)",
      "intro": "Play 'Me'. You are shopping at the market; quantities and genitive forms carry the whole conversation.",
      "lines": [
       {
@@ -27452,7 +28206,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Gradske službe i hitni slučajevi",
+     "title": "City services and emergencies: gradske službe i hitni slučajevi",
      "intro": "Errand and emergency language runs on a few verbs (poslati, podignuti, prijaviti, nazvati) and the places pošta, banka, ljekarna, policija and hitna pomoć. Note the cases: na poštu (motion), u banci (location), prijaviti nešto policiji (dative).",
      "items": [
       {
@@ -27479,6 +28233,31 @@
        "hr": "Ljekarna je otvorena do dvadeset sati.",
        "en": "The pharmacy is open until eight p.m.",
        "note": "ljekarna is the standard Croatian word for pharmacy."
+      },
+      {
+       "hr": "na pošti",
+       "en": "at the post office",
+       "note": "Locative of pošta, after na."
+      },
+      {
+       "hr": "u banci",
+       "en": "at the bank",
+       "note": "Locative of banka: k becomes c before -i."
+      },
+      {
+       "hr": "bankomat",
+       "en": "a cash machine",
+       "note": "Dižem novac na bankomatu."
+      },
+      {
+       "hr": "Zovite policiju!",
+       "en": "Call the police!",
+       "note": "Formal imperative plus the accusative."
+      },
+      {
+       "hr": "ljekarna",
+       "en": "a pharmacy",
+       "note": "Careful: ljekarna is the chemist, knjižara is the bookshop."
       }
      ],
      "sources": [
@@ -27488,7 +28267,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "Vježba: hitni slučajevi",
+     "title": "Practice: emergencies",
      "intro": "Practise the errand verbs, their cases, and the emergency phrases.",
      "questions": [
       {
@@ -27575,7 +28354,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Prijava krađe",
+     "title": "Reporting a theft (Prijava krađe)",
      "intro": "Play 'Me'. You report a stolen wallet at a police station: what happened, where, what was inside, and the form to fill in.",
      "lines": [
       {
@@ -27635,7 +28414,7 @@
    ]
   },
   {
-   "title": "Kod liječnika II",
+   "title": "Visiting the doctor II (Kod liječnika II)",
    "objective": "Describe symptoms that began recently and follow a doctor's instructions.",
    "paretoFocus": "Being able to say what hurts, since when, and to understand dosage instructions is a survival skill the moment you get sick abroad.",
    "drills": [
@@ -27654,7 +28433,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Kod liječnika",
+     "title": "Visiting the doctor (Kod liječnika)",
      "intro": "To describe pain Croatian uses Boli me plus the accusative of the body part. The doctor gives advice with trebate plus the infinitive, and you collect medicine u ljekarni.",
      "items": [
       {
@@ -27869,7 +28648,7 @@
    "activities": [
     {
      "type": "LEARN",
-     "title": "Kupujem i uspoređujem",
+     "title": "Buying and comparing (Kupujem i uspoređujem)",
      "intro": "In the shop you compare prices with the comparative plus od and the genitive. Prices today are in euros, and you pay karticom or in cash.",
      "items": [
       {
@@ -27905,7 +28684,7 @@
     },
     {
      "type": "EXERCISE",
-     "title": "Cijene i plaćanje",
+     "title": "Prices and paying (Cijene i plaćanje)",
      "intro": "Practise comparisons, prices and paying at the till.",
      "questions": [
       {
@@ -28000,7 +28779,7 @@
     },
     {
      "type": "DIALOGUE",
-     "title": "Na blagajni",
+     "title": "At the till (Na blagajni)",
      "intro": "Play 'Me'. You are buying a jacket, comparing and paying; use prices, a discount and the receipt.",
      "lines": [
       {
