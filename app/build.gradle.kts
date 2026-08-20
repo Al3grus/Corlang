@@ -34,8 +34,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 162
-        versionName = "0.37.0"
+        versionCode = 163
+        versionName = "0.38.0"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -158,4 +158,19 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
 
     testImplementation("junit:junit:4.13.2")
+}
+
+/*
+ * ContentValidationTest is the content quality gate, and it reads the REAL asset JSON straight
+ * off disk by relative path rather than through the test classpath. Gradle therefore could not
+ * see the content as an input: editing a lesson and re-running the build reported BUILD
+ * SUCCESSFUL in two seconds without executing a single assertion, because nothing on the
+ * declared inputs had changed. A green build that never ran the gate is worse than a red one.
+ *
+ * Declaring the content directory as an input makes any lesson edit re-run the gate.
+ */
+tasks.withType<Test>().configureEach {
+    inputs.dir("src/main/assets/content")
+        .withPathSensitivity(PathSensitivity.RELATIVE)
+        .withPropertyName("courseContent")
 }

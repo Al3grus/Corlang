@@ -264,7 +264,7 @@ fun recallCandidates(day: StudyDay): List<LearnItem> =
  * for something their keyboard cannot produce and their mouth would never say. Kept in one place
  * so the app filter and the content gate (`typedAnswersAreTypable`) can never drift apart.
  */
-val PAIR_SYMBOLS = listOf("→", "←", "↔", "⇒", "=", "+", "«", "»", "–", "—")
+val PAIR_SYMBOLS = listOf("→", "←", "↔", "⇒", "=", "+", "«", "»", "–", "—", "✓", "✗")
 
 /** Shared EN -> HR typed-recall runner used by both the deck recall drill and the day wrap-up. */
 @Composable

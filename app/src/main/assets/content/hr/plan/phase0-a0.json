@@ -1696,8 +1696,12 @@
        "type": "TRANSLATE",
        "prompt": "Put this into Croatian: 'they are'",
        "difficulty": 5,
-       "answer": "oni / one su",
-       "explanation": "'they are' is 'oni / one su'"
+       "answer": "oni su",
+       "explanation": "'they are' is 'oni su' for a group with any man in it, 'one su' for an all-female group.",
+       "accepted": [
+        "one su",
+        "oni / one su"
+       ]
       }
      ],
      "sources": [
