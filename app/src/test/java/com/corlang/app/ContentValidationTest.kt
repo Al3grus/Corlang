@@ -1285,6 +1285,68 @@ class ContentValidationTest {
             "\"$name\"" in versionJson)
     }
 
+    /**
+     * A themed block of vocabulary may not reach the learner long before the lesson that teaches
+     * it. Croatian taught all twelve months as flashcards at lesson 8, sixteen lessons before
+     * "Days, months & schedules" at lesson 25: nobody learns siječanj cold from a card, they meet
+     * it, fail it, and it returns until the lesson finally explains what it was.
+     *
+     * `VocabPack.fromDay` is the fix and `DeckOrder.ordered` applies it. This gate exists because
+     * the mechanism was built, used on two packs, and then drifted: twenty more packs had grown
+     * the same gap unnoticed, the worst by 125 lessons.
+     *
+     * Measured through DeckOrder itself, never through raw authored position — an already-gated
+     * pack is already correct, and measuring it raw reports it as broken.
+     *
+     * A gate never pushes a pack past its own level: an A1 pack whose theme lesson lands in B1
+     * would starve A1 of common words, which is worse than the drift. Those cases are a PLAN
+     * observation (no lesson at that level covers the theme) and are recorded in the registry,
+     * not failed here.
+     */
+    @Test
+    fun `themed vocabulary packs are not introduced long before their lesson`() {
+        val levelEnd = mapOf("A0" to 16, "A1" to 77, "A2" to 173, "B1" to 344)
+        val offenders = mutableListOf<String>()
+        wrapupLangs.forEach { lang ->
+            val packs = loadVocabPacks(lang)
+            val deck = com.corlang.app.data.DeckOrder.ordered(packs, WORDS_PER_LESSON)
+            val wordToPack = packs.flatMap { p -> p.words.map { it.id to p.id } }.toMap()
+            val introOf = mutableMapOf<String, Int>()
+            deck.forEachIndexed { i, w ->
+                wordToPack[w.id]?.let { introOf.putIfAbsent(it, i / WORDS_PER_LESSON + 1) }
+            }
+            val lessonWords = loadPlan(lang).days.associate { day ->
+                day.day to buildSet {
+                    day.activities.forEach { a ->
+                        a.items.forEach { addAll(tokens(it.hr)) }
+                        a.lines.forEach { addAll(tokens(it.hr)) }
+                        addAll(tokens(a.title))
+                    }
+                }
+            }
+            packs.forEach { p ->
+                val words = p.words.map { it.hr.lowercase() }
+                val theme = lessonWords.keys.sorted().firstOrNull { d ->
+                    words.count { w -> w.split(" ").all { it in lessonWords.getValue(d) } } >= 3
+                } ?: return@forEach
+                val intro = introOf[p.id] ?: return@forEach
+                val target = minOf(theme, levelEnd[p.level] ?: theme)
+                if (target - intro >= MAX_PACK_EARLY) {
+                    offenders += "$lang pack '${p.id}' (${p.level}) introduced at lesson $intro, " +
+                        "taught at lesson $theme (+${theme - intro}); set fromDay = $target"
+                }
+            }
+        }
+        assertTrue(
+            "themed packs arriving before their lesson (${offenders.size}):\n" +
+                offenders.joinToString("\n").take(4000),
+            offenders.isEmpty()
+        )
+    }
+
+    private fun tokens(s: String): List<String> =
+        Regex("[\\p{L}]+").findAll(s.lowercase()).map { it.value }.toList()
+
     // ---------- The wrap-up: the day's closing from-memory recall ----------
     //
     // Registry C21-C24. The wrap-up is GENERATED from the day's LEARN items
@@ -1461,6 +1523,12 @@ class ContentValidationTest {
     }
 
     private companion object {
+        /** Mirrors Fsrs.NEW_WORDS_PER_DAY: the deck slots one lesson consumes. */
+        const val WORDS_PER_LESSON = 10
+
+        /** A themed pack this many lessons ahead of its own lesson is a scheduling accident. */
+        const val MAX_PACK_EARLY = 15
+
         /** Mirrors WrapupRecall's .take(8): the items a learner is actually asked. */
         const val WRAPUP_ASKED = 8
 
