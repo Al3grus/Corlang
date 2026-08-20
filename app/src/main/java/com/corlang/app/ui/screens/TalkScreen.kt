@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.ime
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -38,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.ai.AiClient
 import com.corlang.app.ai.ChatMessage
+import com.corlang.app.ai.ReplyGuard
 import kotlinx.coroutines.launch
 
 /**
@@ -156,8 +159,15 @@ fun TalkScreen(container: AppContainer, lang: String) {
         com.corlang.app.ui.Engagement.Report()
     }
 
+    // Declared before send(): send() hides it, and a local fun cannot see a val
+    // introduced after it.
+    val keyboard = androidx.compose.ui.platform.LocalSoftwareKeyboardController.current
+
     fun send(text: String) {
         if (text.isBlank() || sending) return
+        // Put the keyboard away: the message is gone, so the composer has nothing left to type
+        // into, and leaving it up hides the reply the learner is waiting for.
+        keyboard?.hide()
         messages.add(ChatMessage("user", text.trim()))
         input = ""
         sending = true
@@ -194,10 +204,43 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 maxTokens = if (lang == "hr") 2048 else 1024,
                 subToken = subToken
             )
+            /*
+             * Nothing reaches the learner unvetted. A reply once arrived carrying a Russian word
+             * and the model narrating its own recovery ("wait, let me stay in croatian properly"),
+             * which is not something a prompt can promise never to produce. ReplyGuard inspects
+             * the actual output; a rejected reply is retried ONCE with the failure named, and if
+             * the retry also fails the learner gets an honest error rather than the bad text.
+             * The discarded attempt is still billed, which is the right trade against showing it.
+             */
+            var vetted = result.mapCatching { reply ->
+                when (val v = ReplyGuard.inspect(reply, lang)) {
+                    is ReplyGuard.Verdict.Ok -> reply
+                    is ReplyGuard.Verdict.Reject -> throw GuardRejection(v.reason)
+                }
+            }
+            (vetted.exceptionOrNull() as? GuardRejection)?.let { rejected ->
+                vetted = container.ai.complete(
+                    system = system + ReplyGuard.retryNudge(rejected.reason, languageName),
+                    messages = payload,
+                    model = if (lang == "hr") AiClient.FEEDBACK_MODEL else AiClient.DEFAULT_MODEL,
+                    maxTokens = if (lang == "hr") 2048 else 1024,
+                    subToken = subToken
+                ).mapCatching { reply ->
+                    when (val v = ReplyGuard.inspect(reply, lang)) {
+                        is ReplyGuard.Verdict.Ok -> reply
+                        is ReplyGuard.Verdict.Reject -> throw GuardRejection(v.reason)
+                    }
+                }
+            }
             sending = false
-            result.fold(
+            vetted.fold(
                 onSuccess = { messages.add(ChatMessage("assistant", it)) },
-                onFailure = { error = it.message ?: "Something went wrong." }
+                onFailure = {
+                    error = if (it is GuardRejection)
+                        "The tutor slipped mid-sentence, so that reply was thrown away. " +
+                            "Send it again."
+                    else it.message ?: "Something went wrong."
+                }
             )
         }
     }
@@ -208,12 +251,26 @@ fun TalkScreen(container: AppContainer, lang: String) {
         if (count > 0) listState.animateScrollToItem(count - 1)
     }
 
+    // The keyboard shortens the list, so the newest message slides out of view under it and the
+    // learner has to scroll back to read what they are answering. Following the IME height keeps
+    // the end of the conversation pinned as the keyboard opens and closes.
+    val imeBottom = androidx.compose.foundation.layout.WindowInsets.ime
+        .getBottom(androidx.compose.ui.platform.LocalDensity.current)
+    LaunchedEffect(imeBottom) {
+        val count = messages.size + if (sending) 1 else 0
+        if (count > 0) listState.animateScrollToItem(count - 1)
+    }
+
     // imePadding: with edge-to-edge on, the keyboard would otherwise cover the composer row
     // entirely — the user typed blind on the one screen where typing is the whole point.
     Column(modifier = Modifier.fillMaxSize().imePadding()) {
         LazyColumn(
             state = listState,
             modifier = Modifier.weight(1f).fillMaxWidth().padding(horizontal = 12.dp),
+            // Top air so the first bubble does not sit hard against the top bar.
+            contentPadding = androidx.compose.foundation.layout.PaddingValues(
+                top = 12.dp, bottom = 8.dp
+            ),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             itemsIndexed(messages) { _, msg ->
@@ -234,9 +291,11 @@ fun TalkScreen(container: AppContainer, lang: String) {
                         // English-help toggle, up front: a beginner shouldn't be stranded when the
                         // tutor speaks only the target language. One line only — the explanatory
                         // second line made the first thing on an empty screen a wall of text.
+                        // "Teach me in English", not "Explain": with it on the tutor TEACHES in
+                        // English rather than glossing the odd word.
                         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                             Text(
-                                "Explain in English",
+                                "Teach me in English",
                                 style = MaterialTheme.typography.bodyMedium,
                                 modifier = Modifier.weight(1f)
                             )
@@ -443,15 +502,23 @@ private fun tutorModes(): List<TutorMode> = listOf(
 private fun buildTutorContext(container: AppContainer, lang: String, currentDay: Int): String {
     val day = container.content.plan(lang).days.firstOrNull { it.day == currentDay }
     val perDay = com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
-    val recent = container.words.allWords(lang)
-        .take(currentDay.coerceAtLeast(1) * perDay)
-        .takeLast(15)
-        .joinToString(", ") { "${it.hr} (${it.en})" }
+    // Everything the course has introduced so far. Deck position IS the introduction schedule
+    // (WordsRepository.unlockedNewWords), so this window is exactly what the student has met.
+    val met = container.words.allWords(lang).take(currentDay.coerceAtLeast(1) * perDay)
+    // The tutor needs the BOUNDARY, not the whole list: a full deck runs to thousands of words
+    // and the worker caps the request. The newest words are the ones being consolidated, so they
+    // are the ones worth naming; the count tells the model how small the world is.
+    val recent = met.takeLast(TUTOR_CONTEXT_WORDS).joinToString(", ") { "${it.hr} (${it.en})" }
     return buildString {
         if (day != null) append("- Current lesson: \"${day.title}\", ${day.objective}\n")
-        if (recent.isNotBlank()) append("- Words recently learned: $recent")
+        append("- Vocabulary the student has met so far: about ${met.size} words, the first " +
+            "${met.size} of this course. Assume ANY word past that is unknown to them.\n")
+        if (recent.isNotBlank()) append("- Their most recent words (lean on these): $recent")
     }.trim()
 }
+
+/** How many recent words to name for the tutor. Enough to anchor, small enough for the cap. */
+private const val TUTOR_CONTEXT_WORDS = 45
 
 /** Per-language composer hint ("write in <language>" in that language). */
 private fun composerHint(lang: String): String = when (lang) {
@@ -606,11 +673,23 @@ private fun tutorSystemPrompt(
             "piece in English, including what it means literally and why the form is what it is.\n" +
             "- Ask your follow-up question in English, and tell them in English what you want them " +
             "to reply in $languageName. Never send a reply that is entirely in $languageName.\n" +
+            "- NEVER WRITE THE ANSWER YOU ARE ASKING FOR. When you want them to produce something, " +
+            "say what it should MEAN in English and stop there. Write \"how would you say 'I like " +
+            "coffee'?\" and never \"how would you answer this? type 'volim kavu'\". Quoting the " +
+            "$languageName they are meant to produce turns the exercise into copying. This applies " +
+            "to every prompt you give, including examples: show a DIFFERENT phrase if you need to " +
+            "demonstrate the pattern.\n" +
             "- Keep the $languageName itself correct and level-appropriate; the English is the " +
             "scaffolding around it, not a translation bolted on at the end."
     else
-        "- The student prefers to stay in $languageName: keep English to a minimum, a short gloss " +
-            "only for a genuinely new word, and switch to English only if they explicitly ask."
+        "- The student prefers to stay in $languageName, so the burden is on you to stay inside " +
+            "what they can read. Build your sentences from words they have already met (see their " +
+            "progress below) plus obvious international words. Keep sentences short and simple.\n" +
+            "- If a word outside that vocabulary is genuinely unavoidable, choose the most common " +
+            "option and put a two or three word English gloss in parentheses straight after it. " +
+            "Never send a paragraph of unknown vocabulary: the student cannot ask about a word " +
+            "they cannot even parse.\n" +
+            "- Switch to English fully only if they explicitly ask."
     // Progress context appended AFTER trimIndent so it isn't re-indented; blank for a new learner.
     val contextBlock = if (lessonContext.isBlank()) "" else
         "\n\nWhat this student is working on right now (use it to tailor the session, especially if " +
@@ -640,3 +719,6 @@ private fun tutorSystemPrompt(
       in a chat bubble.
     """.trimIndent() + contextBlock
 }
+
+/** A reply that failed [ReplyGuard]; carried as a failure so the retry can name it. */
+private class GuardRejection(val reason: String) : Exception(reason)

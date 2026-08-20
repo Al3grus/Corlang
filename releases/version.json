@@ -1,6 +1,6 @@
 {
-  "versionCode": 168,
-  "versionName": "0.42.0",
-  "notes": "The tutor now waits for you. It opens on a blank screen with the practice options centred, and says nothing until you pick one or type. There is a button to end a chat and start a fresh one, so a conversation no longer follows you around until you kill the app. The English switch is now just 'Explain in English', and it does much more than before: with it on, the tutor writes TO you in English and gives you the Croatian as short pieces it then explains, instead of sending a full Croatian message and translating one word of it. The Review tab groups packs by level and folds them, opening on the level you are actually on, and it now lists only the packs you have started rather than every pack the level contains.",
+  "versionCode": 169,
+  "versionName": "0.43.0",
+  "notes": "Every tutor reply is now inspected before you see it. One arrived with a Russian word in it and the tutor talking to itself about switching back to Croatian; that reply is now thrown away and asked for again, and if the second attempt is also bad you get an honest message instead of nonsense. The chat follows the keyboard so the last message stays visible, the keyboard closes when you send, and the first message no longer sits against the top bar. The switch is now 'Teach me in English', and with it on the tutor will never hand you the answer it is asking you to write. With it off, it is told exactly how many words you have met so far and to stay inside them, so switching it off early no longer buries you.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
