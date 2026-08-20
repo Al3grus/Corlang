@@ -28,10 +28,6 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LinearProgressIndicator
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ExpandLess
-import androidx.compose.material.icons.filled.ExpandMore
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -44,7 +40,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -70,7 +65,6 @@ import com.corlang.app.speech.TtsManager
 import com.corlang.app.ui.Haptics
 import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
-import com.corlang.app.ui.theme.Radius
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.components.StatTile
@@ -122,7 +116,6 @@ fun WordsScreen(container: AppContainer, lang: String) {
     val planLevels = remember(lang) { container.content.plan(lang).days.map { it.level }.distinct() }
     val storedLevel = progress?.currentLevel ?: planLevels.first()
     val currentLevel = if (storedLevel in planLevels) storedLevel else planLevels.first()
-    val levelOrder = remember(lang) { container.content.levels(lang).levels.map { it.id } }
 
     var refreshKey by remember(lang) { mutableIntStateOf(0) }
     val queue = remember(lang) { mutableStateListOf<SessionCard>() }
@@ -372,102 +365,70 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
         SectionTitle("Packs")
         Text(
-            "Tap a pack to review its words any time.",
+            "Newest first. Tap a pack to review its words any time.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = 4.dp)
         )
         /*
-         * Only packs the learner has actually STARTED, grouped by level and collapsible.
+         * Only packs the learner has actually STARTED, newest first.
          *
-         * It used to list every pack up to the current level, including the ones the course had
-         * not reached yet, so an A1 learner scrolled past a screen of "0 / 20 started" cards that
-         * did nothing when tapped to find the pack they are on. Deck position decides when a word
-         * is introduced (WordsRepository.unlockedNewWords), so "has a word you have met" IS the
-         * unlocked test, and it needs no separate bookkeeping.
+         * Two earlier shapes were wrong. It first listed every pack up to the current level,
+         * so an A1 learner scrolled past a screen of "0 / 20 started" cards that did nothing
+         * when tapped. Then it grouped them into collapsible CEFR sections, which fixed the
+         * scrolling but leaned on a label that does not describe the learner's experience: a
+         * pack's level says where a word was authored, not when it is met, and lessons 1 to 16
+         * serve 72 words out of A1-tagged packs.
+         *
+         * Introduction order is the thing that matches what the learner actually did, so the
+         * list is simply inverted: what you met most recently sits at the top. allWords is
+         * already the real gated deck order (DeckOrder.ordered), so a pack's introduction point
+         * is just the position of its first word in it.
          */
-        val byLevel = remember(vocab, seenIds, levelOrder) {
+        val startedPacks = remember(vocab, seenIds, allWords) {
+            val introOf = HashMap<String, Int>()
+            val packOfWord = vocab.packs.flatMap { p -> p.words.map { it.id to p.id } }.toMap()
+            allWords.forEachIndexed { i, w ->
+                packOfWord[w.id]?.let { introOf.putIfAbsent(it, i) }
+            }
             vocab.packs
-                .map { pack -> pack to pack.words.count { it.id in seenIds } }
-                .filter { (_, seen) -> seen > 0 }
-                .groupBy { (pack, _) -> pack.level }
-                .toList()
-                .sortedBy { (level, _) ->
-                    levelOrder.indexOf(level).let { if (it < 0) Int.MAX_VALUE else it }
-                }
+                .map { pack -> Triple(pack, pack.words.count { it.id in seenIds }, introOf[pack.id] ?: -1) }
+                .filter { (_, seen, _) -> seen > 0 }
+                .sortedByDescending { (_, _, intro) -> intro }
         }
-        // Your own level opens; the levels behind you stay folded, which is the whole point of
-        // the grouping. Not saved across process death on purpose: reopening the tab should put
-        // you back at your level rather than wherever you last poked around.
-        val expandedLevels = remember { mutableStateMapOf<String, Boolean>() }
-        byLevel.forEach { (level, entries) ->
-            val open = expandedLevels[level] ?: (level == currentLevel)
-            Surface(
-                shape = RoundedCornerShape(Radius.md),
-                color = MaterialTheme.colorScheme.surfaceVariant,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 10.dp)
-                    .clickable { expandedLevels[level] = !open }
-            ) {
+        startedPacks.forEach { (pack, seen, _) ->
+            // Every pack listed here has been started, so the review affordance is unconditional.
+            val startedIds = pack.words.map { it.id }.filter { it in seenIds }
+            InfoCard {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 14.dp, vertical = 10.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { startPackReview(startedIds) }
                 ) {
-                    Text(
-                        level,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Text(
-                        if (entries.size == 1) "  1 pack" else "  ${entries.size} packs",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.weight(1f)
-                    )
-                    Icon(
-                        if (open) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
-                        contentDescription = if (open) "Collapse $level" else "Expand $level"
-                    )
-                }
-            }
-            if (!open) return@forEach
-            entries.forEach { (pack, seen) ->
-                // Every pack listed here has been started, so the review affordance is
-                // unconditional and the level is already the header above it.
-                val startedIds = pack.words.map { it.id }.filter { it in seenIds }
-                InfoCard {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { startPackReview(startedIds) }
-                    ) {
-                        Column(Modifier.weight(1f)) {
-                            Text(pack.title, style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.SemiBold)
-                            Text(
-                                "$seen / ${pack.words.size} started",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.primary
-                            )
-                        }
+                    Column(Modifier.weight(1f)) {
+                        Text(pack.title, style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold)
                         Text(
-                            "↻ review",
-                            style = MaterialTheme.typography.labelMedium,
-                            color = MaterialTheme.colorScheme.primary,
-                            fontWeight = FontWeight.Bold
+                            "${pack.level} · $seen / ${pack.words.size} started",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.primary
                         )
                     }
-                    LinearProgressIndicator(
-                        progress = {
-                            if (pack.words.isEmpty()) 0f else seen.toFloat() / pack.words.size
-                        },
-                        drawStopIndicator = {},
-                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                    Text(
+                        "↻ review",
+                        style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                        fontWeight = FontWeight.Bold
                     )
                 }
+                LinearProgressIndicator(
+                    progress = {
+                        if (pack.words.isEmpty()) 0f else seen.toFloat() / pack.words.size
+                    },
+                    drawStopIndicator = {},
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                )
             }
         }
         Spacer(Modifier.height(24.dp))
