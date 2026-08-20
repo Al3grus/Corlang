@@ -254,7 +254,13 @@ fun recallCandidates(day: StudyDay): List<LearnItem> =
             Grading.normalize(it.en, strict = true)
                 .contains(Grading.normalize(it.hr, strict = true))
         }
-        .filter { it.hr.length in 2..40 && it.en.isNotBlank() }
+        // 80, not 40. The cap exists so a learner is never asked to retype a paragraph, but
+        // 40 was set when the wrap-up was designed around A0 vocabulary, and B1 teaches in
+        // SENTENCES: at 40 characters, 88 of 171 B1 lessons offered fewer than four producible
+        // items and silently fell back to replaying their exercise. A0 gains nothing from the
+        // change (its items are all short), A1 and A2 gain real sentences they already teach.
+        // Sentence-length targets are graded diacritic-leniently, see Grading.isSentenceTarget.
+        .filter { it.hr.length in 2..RECALL_MAX_CHARS && it.en.isNotBlank() }
         .distinctBy { it.hr.lowercase() }
         .toList()
 
@@ -264,6 +270,8 @@ fun recallCandidates(day: StudyDay): List<LearnItem> =
  * for something their keyboard cannot produce and their mouth would never say. Kept in one place
  * so the app filter and the content gate (`typedAnswersAreTypable`) can never drift apart.
  */
+const val RECALL_MAX_CHARS = 80
+
 val PAIR_SYMBOLS = listOf("→", "←", "↔", "⇒", "=", "+", "«", "»", "–", "—", "✓", "✗")
 
 /** Shared EN -> HR typed-recall runner used by both the deck recall drill and the day wrap-up. */
