@@ -60,9 +60,15 @@ class ReminderWorker(
         val ctx = applicationContext
         val prefs = LanguagePrefs(ctx)
         val selected = prefs.selectedLanguage.first()
+        val content = ContentRepository(ctx)
         // Only nag about languages the user opted into (Settings → Study reminder).
         // No explicit choice yet = follow the selected language, the pre-existing behavior.
-        val chosen = prefs.reminderLanguages.first() ?: setOf(selected)
+        // Intersected with the SHIPPED languages: a course that has since been hidden from
+        // content/_index.json is still in this stored set, and would otherwise keep sending
+        // daily nudges for a course the app no longer opens.
+        val chosen = (prefs.reminderLanguages.first() ?: setOf(selected))
+            .filter { it in content.availableLanguages }.toSet()
+        if (chosen.isEmpty()) return Result.success()
         val dao = AppDatabase.get(ctx).progressDao()
         val today = LocalDate.now().toEpochDay()
 
@@ -83,7 +89,7 @@ class ReminderWorker(
             freezes = progress?.streakFreezes ?: 0,
             today = today
         )
-        val meta = ContentRepository(ctx).meta(lang)
+        val meta = content.meta(lang)
         val languageName = meta.name
         // The learner's name, when they gave one, is what makes the nudge feel addressed to a
         // person rather than broadcast. Appended to the in-language title so the greeting still
