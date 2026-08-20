@@ -38,7 +38,11 @@ ROOT = os.path.join("app", "src", "main", "assets", "content")
 
 # Mirrors Drills.kt PAIR_SYMBOLS. A relation between two forms is a table row, not a phrase.
 PAIR_SYMBOLS = ["→", "←", "↔", "⇒", "=", "+", "«", "»",
-                "–", "—"]
+                "–", "—",
+                # A right/wrong contrast row ("V Jucer sam radio. X Jucer radio sam") teaches
+                # well and is impossible to type. The correct half is the ask; the mistake
+                # belongs in the note.
+                "✓", "✗"]
 
 # Mirrors SessionPlayer: below this a day has no real wrap-up, and Drills.WrapupRecall.take(8).
 MIN_ITEMS = 4
@@ -105,12 +109,21 @@ def check_day(day, lang):
         for sym in PAIR_SYMBOLS:
             if sym in hr or sym in en:
                 errs.append(f"{where}: untypable '{sym}' in {hr!r} / {en!r}")
+        # A parenthesis is fine in the English prompt, where it disambiguates. In the TARGET
+        # it is part of the expected string: Grading.normalize strips only .,!?;:'" so
+        # "Radila sam. (zena)" cannot be matched unless the learner types the brackets too.
+        # The gloss belongs on the English side, or in the note.
+        if "(" in hr or ")" in hr or "·" in hr:
+            errs.append(f"{where}: gloss inside the answer {hr!r}, move it to the prompt or note")
         # One ask, one answer. "dvjesto, tristo, petsto" is three answers wearing one prompt.
         # A real sentence also carries commas ("Ne, ne govorim."), so the tell is that EVERY
         # comma-separated part is a bare word and the whole thing is not punctuated as a
         # sentence.
+        # A real sentence carries commas too ("Ne, ne govorim."), and it ends like a sentence.
+        # A bare comma-separated run that does not ("u gradu, na poslu, u skoli") is three
+        # answers wearing one prompt, and the grader accepts only all three, typed in order.
         parts = [p.strip() for p in hr.split(",")]
-        if len(parts) > 1 and all(p and " " not in p for p in parts) and hr.rstrip()[-1] not in ".?!":
+        if len(parts) > 1 and all(parts) and hr.rstrip()[-1] not in ".?!":
             errs.append(f"{where}: multi-answer ask {hr!r} / {en!r}, split it")
 
     prompts = {}

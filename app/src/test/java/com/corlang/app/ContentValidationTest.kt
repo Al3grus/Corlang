@@ -1303,7 +1303,7 @@ class ContentValidationTest {
      * finished in one go. The target state is all four; docs/error-registry.md carries the
      * remaining levels as an open sweep.
      */
-    private val gatedLevels = setOf("A0")
+    private val gatedLevels = setOf("A0", "A1")
 
     private fun gatedDays(lang: String) = loadPlan(lang).days.filter { it.level in gatedLevels }
 
@@ -1339,6 +1339,12 @@ class ContentValidationTest {
                     PAIR_SYMBOLS.filter { it in item.hr || it in item.en }.forEach {
                         offenders += "$lang day ${day.day} wrap-up item '${item.hr}' / '${item.en}' contains '$it'"
                     }
+                    // Brackets belong on the English side, where they disambiguate. Inside the
+                    // target they are part of the expected string, and normalize does not strip
+                    // them: "Radila sam. (zena)" could only be matched by typing the brackets.
+                    if (item.hr.any { it in "()·" }) {
+                        offenders += "$lang day ${day.day} wrap-up answer '${item.hr}' carries a gloss"
+                    }
                 }
             }
         }
@@ -1369,6 +1375,33 @@ class ContentValidationTest {
             }
         }
         assertTrue("ambiguous wrap-up prompts:\n" + offenders.joinToString("\n"), offenders.isEmpty())
+    }
+
+    /**
+     * One ask, one answer. "dvjesto, tristo, petsto" glossed "two hundred, three hundred, five
+     * hundred" is three answers wearing one prompt, and the grader accepts only all three typed
+     * in order. A real sentence carries commas too, and is told apart by ending like one.
+     */
+    @Test
+    fun `wrap-up asks are single answers`() {
+        val offenders = mutableListOf<String>()
+        wrapupLangs.forEach { lang ->
+            gatedDays(lang).forEach { day ->
+                recallCandidates(day).forEach { item ->
+                    val parts = item.hr.split(",").map { it.trim() }
+                    if (parts.size > 1 && parts.all { it.isNotEmpty() } &&
+                        item.hr.trimEnd().last() !in ".?!".toSet()
+                    ) {
+                        offenders += "$lang day ${day.day}: '${item.hr}' / '${item.en}'"
+                    }
+                }
+            }
+        }
+        assertTrue(
+            "wrap-up asks with several answers (${offenders.size}):\n" +
+                offenders.joinToString("\n").take(4000),
+            offenders.isEmpty()
+        )
     }
 
     /**
