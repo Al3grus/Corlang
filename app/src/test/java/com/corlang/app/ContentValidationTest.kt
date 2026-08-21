@@ -1197,6 +1197,34 @@ class ContentValidationTest {
     }
 
     /**
+     * Every deck word carries an example sentence. Two features read it: WordsScreen prints it
+     * under the word and speaks it, and DrillGen.clozeFor blanks it to build a drill. A word
+     * without one is a bare headword and an English gloss, and it silently generates no drill.
+     *
+     * Croatian shipped 303 A0 words with no example at all, the whole of 00-a0-core.json, which
+     * is the first 303 slots of the deck and therefore the first weeks of every learner's queue,
+     * while all five other courses were already at 100%. Nothing caught it because nothing ever
+     * looked. tools/course/check_deck_examples.py is the fast offline version of this gate and
+     * carries the rest of the rules (cloze ambiguity, duplicate sentences); this is the one that
+     * fails the build.
+     */
+    @Test
+    fun `every deck word carries an example sentence`() {
+        allLangs.forEach { lang ->
+            val bare = loadVocabPacks(lang).flatMap { it.words }.filter { w ->
+                val ex = w.example
+                ex == null || ex.target.isBlank() || ex.gloss.isBlank()
+            }
+            assertTrue(
+                "$lang: ${bare.size} deck words have no example sentence, " +
+                    "so their card shows nothing and DrillGen builds no cloze: " +
+                    bare.take(10).joinToString { it.id },
+                bare.isEmpty()
+            )
+        }
+    }
+
+    /**
      * A gated vocab pack must be held back WITHOUT costing the deck a word. The SRS deck is
      * sized against the course (10 a lesson, and a floor test depends on it), so if gating ever
      * dropped or duplicated a word the course would quietly run short of vocabulary near the end,
