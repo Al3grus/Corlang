@@ -45,11 +45,13 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TimePicker
 import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -85,6 +87,14 @@ fun SettingsScreen(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
+    // Accordion: one card open at a time. Held for the whole screen rather than per card,
+    // because "only one" is a fact about the screen, not about any one card. Provided through a
+    // CompositionLocal so SettingsCard keeps its two-argument call shape at all ten sites,
+    // including the one nested inside UpdatesSection, which has no path to a hoisted parameter.
+    // rememberSaveable: which card you had open survives rotation, like the scroll position.
+    val openCard = rememberSaveable { mutableStateOf<String?>(null) }
+
+    CompositionLocalProvider(LocalOpenSettingsCard provides openCard) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -551,21 +561,32 @@ fun SettingsScreen(
         }
         Spacer(Modifier.height(24.dp))
     }
+    }
 }
 
 /**
  * One settings card in the same visual language as the Profile tab's menu rows: a bordered
  * surface, a primary-tinted icon, a semibold title. Collapsed by default, tap the header to
- * expand: eight cards of controls open at once read as clutter, and a visit usually touches
- * one of them.
+ * expand: ten cards of controls open at once read as clutter, and a visit usually touches one of
+ * them. Opening a card CLOSES whichever was open, so the screen never grows a second scroll's
+ * worth of expanded controls; the state lives in [LocalOpenSettingsCard].
  */
+/** Which settings card is open, or null when they are all closed. See [SettingsCard]. */
+private val LocalOpenSettingsCard =
+    androidx.compose.runtime.staticCompositionLocalOf<androidx.compose.runtime.MutableState<String?>> {
+        error("SettingsCard must be used inside SettingsScreen")
+    }
+
 @Composable
 private fun SettingsCard(
     icon: androidx.compose.ui.graphics.vector.ImageVector,
     title: String,
     content: @Composable () -> Unit
 ) {
-    var expanded by remember { mutableStateOf(false) }
+    val openCard = LocalOpenSettingsCard.current
+    // The title is the identity. They are unique on this screen, and the one built from a name
+    // ("Croatian voice") only changes with the language, which closes the card anyway.
+    val expanded = openCard.value == title
     androidx.compose.material3.Surface(
         shape = androidx.compose.foundation.shape.RoundedCornerShape(14.dp),
         color = MaterialTheme.colorScheme.surface,
@@ -577,7 +598,7 @@ private fun SettingsCard(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { expanded = !expanded }
+                    .clickable { openCard.value = if (expanded) null else title }
             ) {
                 androidx.compose.material3.Icon(
                     icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary
