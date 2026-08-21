@@ -38,6 +38,13 @@ you have written off your device:
    No progress or review data is ever attached. If you never use the AI feature, no such request
    is ever made.
 
+   **What that endpoint keeps.** Not your messages: it passes them on, returns the reply, and
+   stores none of the content. What it does keep is what it needs to stop abuse and bound costs,
+   which is a daily message counter held against your IP address and against your subscription
+   token, both expiring after two days, and a yes-or-no record of whether your subscription is
+   active, cached for at most six hours. Nothing there is used to build a profile of you, and
+   none of it is linked to your learning data, which never leaves your phone at all.
+
 Nothing else about your use of the app is transmitted. Corlang does not phone home, and it does
 not check for updates: on Google Play, updates are delivered by the Play Store itself.
 

@@ -60,13 +60,10 @@ Everything else on the critical path is browser work in Play Console.
    - Ads: no ads.
    - Content rating questionnaire (educational → Everyone/PEGI 3).
    - Target audience: 13+.
-   - Data safety: learning data is local-only (deletion = uninstall), BUT declare the AI
-     tutor's data flow: user-typed chat text + profile name transmitted off-device to our
-     endpoint/Anthropic when the optional AI feature is used. Google counts transmitted-off-
-     device as "collected", and the ephemeral-processing exemption likely does not apply.
-     Declaring "no data collected" flat-out is a misdeclaration risk (app removal), and
-     PRIVACY.md now documents this flow explicitly. Category: "Other in-app messages",
-     purpose app functionality, not shared for ads, optional.
+   - Data safety: **answers are drafted field by field in `docs/play-data-safety.md`** — three
+     declared types (Personal info/Name, Messages/Other in-app messages, Financial info/Purchase
+     history), the reason each of the others is NOT declared, and the four overview answers.
+     Verified against the built manifest and the dependency list rather than from memory.
    - Privacy policy URL: `https://raw.githubusercontent.com/Al3grus/Corlang/main/PRIVACY.md`.
 3. **(browser + assets)** Main store listing. Copy is drafted in `road-to-play.md`. Needs the
    assets from Track C (icon, feature graphic, screenshots).
