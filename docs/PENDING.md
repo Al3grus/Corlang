@@ -1,10 +1,30 @@
 # Corlang — Master pending checklist
 
-Single source of truth for everything left to do, as of **2026-07-19**. Pick items one by one.
+Single source of truth for everything left to do, as of **2026-08-21**. Pick items one by one.
 Deep detail lives in: `road-to-play.md` (Play steps + store copy), `server-ai.md` (subscription
 verification setup), `monetization-roadmap.md` (pricing + product IDs), `PRE-LAUNCH-TODO.md`
 (content/QA log). Legend: **(browser)** = Play Console / Google Cloud, you do it · **(me)** =
 ask Claude to do it · **(you, phone)** = on-device.
+
+---
+
+## 📍 Where this actually stands (2026-08-21)
+
+**Content is finished and machine-clean for both live courses.** hr and pt each pass every gate
+there is: `check_wrapup` (344/0 and 240/0), `check_hr`/`check_pt`, `check_batch`,
+`check_deck_examples`, `check_deck_sync`, `proctor`, and the 175-test Kotlin suite. fr, de, it and
+es are authored but HIDDEN from `content/_index.json` and are not part of this launch.
+
+**The Play AAB builds, signed, from the current source**: `./gradlew :app:bundlePlayRelease` →
+`app/build/outputs/bundle/playRelease/app-play-release.aab` (v0.47.2, versionCode 176). Verified
+on that artifact: signed, ships only hr and pt, carries `com.android.vending.BILLING`, and does
+NOT carry `REQUEST_INSTALL_PACKAGES` (the self-updater is compiled out of the play flavor, which
+Play requires). `corlang.devPremium=true` in local.properties is sideload-only and cannot reach
+it: the play flavor hardcodes `DEV_PREMIUM=false`. **Rebuild it right before uploading** so the
+versionCode is fresh.
+
+**Exactly one thing blocks the store listing, and only you can do it: the screenshots.**
+Everything else on the critical path is browser work in Play Console.
 
 ---
 
@@ -21,8 +41,8 @@ ask Claude to do it · **(you, phone)** = on-device.
 - **Server-side Play subscription verification** coded + deployed (v0.20.33), **dormant** until
   the `PLAY_SERVICE_ACCOUNT` secret is added (see Track B).
 - Pricing research done (deep-research, 23 verified claims) + plan written.
-- Play AAB built: `app/build/outputs/bundle/playRelease/app-play-release.aab` (v0.20.81, vc 134,
-  rebuilt 2026-07-19 — always rebuild this right before uploading, step A5).
+- Play AAB built: `app/build/outputs/bundle/playRelease/app-play-release.aab` (rebuilt
+  2026-08-21 at v0.47.2 / vc 176 — always rebuild right before uploading, step A5).
 - Gated-preview sideload APK (DEV_PREMIUM=false) built + sent to you.
 - **2026-07-19 (vc 120-134)**: all three courses at 250 lessons + full checkpoint set
   (quiz/readiness/mock per level), decks >=2500 words, adaptive 3-item-band placement,
@@ -65,8 +85,12 @@ ask Claude to do it · **(you, phone)** = on-device.
 8. **(you, phone)** Install from the Play opt-in link with a license-tester account → **see the
    real payment popups**, buy A2 → unlock, subscribe → Learn tab appears. First real end-to-end
    billing test.
-9. **(browser)** Start **Closed testing** with **≥12 testers for ≥14 consecutive days** — the
-   production-eligibility clock for new personal dev accounts. Run in parallel with everything.
+9. **(browser)** Start **Closed testing** with **≥12 testers opted in for ≥14 consecutive days**
+   — the production-eligibility clock for personal accounts created after 2023-11-13. Re-verified
+   against Play Console Help on 2026-08-21 (it was 20 testers until Google cut it to 12 in
+   December 2024, so check the Console rather than any blog if the number looks different).
+   **This is the long pole: start it the day Internal testing works, and run it in parallel with
+   everything else.** The 14 days are continuous, and testers leaving resets your standing.
 
 ---
 
@@ -94,13 +118,18 @@ All assets live in `docs/store-assets/` — see the README there.
    Orbit Core geometry as the launcher icon, so store and phone match.
 2. ✅ **Feature graphic** 1024×500 — `docs/store-assets/feature-graphic-1024x500.png`.
    Both are reproducible via `docs/store-assets/make_assets.py` (Pillow).
-3. ⬜ **Phone screenshots** ×4–8 **(you, phone)** — shot list + Play's size rules in
-   `docs/store-assets/README.md`; drop PNGs in `docs/store-assets/screenshots/`.
-   Then **(me)**: verify dimensions + draft the listing captions.
+3. ⬜ **Phone screenshots** ×4–8 **(you, phone)** — **THE ONE BLOCKER ON THE LISTING.** Shot list
+   and Play's size rules are in `docs/store-assets/README.md`; drop the PNGs into
+   `docs/store-assets/screenshots/` (the folder does not exist yet, just create it). Shoot on your
+   own device, which has real streak and progress data: a fresh install's empty states sell
+   nothing. Then **(me)**: check dimensions and draft the per-screenshot captions.
 
 ---
 
 ## 🗣️ TRACK D — Content quality (native-speaker review; parallel, non-blocking)
+
+**Only hr and pt matter for this launch** — fr, de, it and es are hidden, so their review docs can
+wait until they are unhidden. Nothing here blocks Internal or Closed testing.
 
 1. Croatian native review (friend) — `docs/review/hr-content-review.html`.
 2. Portuguese native review (sister) — `docs/review/pt-content-review.html`.
@@ -149,13 +178,14 @@ All assets live in `docs/store-assets/` — see the README there.
 | corlang.app domain + proton email | ✅ have | optional website (Track F) |
 
 ## Key facts the next session needs
-- Latest release: **v0.20.81 / versionCode 134**. Play AAB path above (same version).
+- Latest release: **v0.47.2 / versionCode 176**. Live courses: **hr and pt only**.
 - Worker: `https://corlang-ai-proxy.ricardo-infante.workers.dev`; secrets `ANTHROPIC_API_KEY`,
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
 - Package name: `com.corlang.app`. Product IDs: `corlang_ai_premium` (base plans `monthly`,
   only), `unlock_a2`, `unlock_b1`, `unlock_b2`, `unlock_all` (bundle €16.99).
-- **`local.properties` is currently `devPremium=false`** (for your gated preview). The committed
-  public sideload release is still devPremium=true (friends keep AI). Decide per future release.
-- Build: no gradlew; JBR at Android Studio + gradle 8.14.5 in `~/.gradle/wrapper/dists`.
+- **`local.properties` is currently `devPremium=true`**, which affects the SIDELOAD build only
+  (friends keep AI). The play flavor hardcodes `DEV_PREMIUM=false`, so no Play build can ship
+  free Premium by accident.
+- Build: `./gradlew` IS in the repo; JAVA_HOME = Android Studio's JBR (JDK 21).
   Prices are NOT in code — they come from Play Console, so changing them never needs a rebuild.
