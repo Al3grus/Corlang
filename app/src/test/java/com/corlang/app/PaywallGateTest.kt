@@ -2,98 +2,371 @@ package com.corlang.app
 
 import com.corlang.app.billing.BillingManager
 import com.corlang.app.billing.PremiumManager
+import com.corlang.app.data.Fsrs
+import com.corlang.app.data.WordsRepository
+import com.corlang.app.data.model.LanguageMeta
+import com.corlang.app.data.model.StudyDay
+import com.corlang.app.data.model.StudyPlan
+import kotlinx.serialization.json.Json
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.io.File
 
 /**
- * The paywall boundary, pinned.
+ * The paywall boundary, pinned against the REAL shipped courses.
  *
- * These are pure-function tests on purpose. The gate itself is two lines, but it sits at the one
- * place where a mistake is silently expensive in both directions: too tight and a paying learner
- * is locked out of what they bought, too loose and the course is given away. Neither shows up in
- * a build log.
+ * These are pure-function tests over the actual plan and meta files rather than synthetic
+ * ladders, because the interesting cases come from the shapes the courses really have: Croatian
+ * owns an A0 that the free window covers exactly, Portuguese has no A0 at all and its window
+ * falls inside A1. A synthetic fixture would agree with itself and prove nothing.
+ *
+ * The gate is a handful of lines, but it sits where a mistake is silently expensive in both
+ * directions — too tight and a paying learner is locked out of what they bought, too loose and
+ * the course is given away — and neither shows up in a build log.
  */
 class PaywallGateTest {
 
-    // ---- The free window is absolute, not relative to the learner ----
+    private val json = Json { ignoreUnknownKeys = true; isLenient = false }
 
-    /**
-     * The regression this suite exists for. Placement drops an advanced learner deep into the
-     * course, and `TodayScreen` takes `maxOf(currentDay, lastCompleted + 1)` as their day. A
-     * window counted from that start would hand out 15 free lessons of a paid level; counted
-     * from lesson 1, the very first lesson they see is already behind the paywall.
-     */
+    private val contentRoot: File by lazy {
+        listOf("src/main/assets/content", "app/src/main/assets/content")
+            .map { File(it) }
+            .firstOrNull { it.isDirectory }
+            ?: error("content assets directory not found from ${File(".").absolutePath}")
+    }
+
+    private fun meta(lang: String): LanguageMeta =
+        json.decodeFromString(File(contentRoot, "$lang/meta.json").readText(Charsets.UTF_8))
+
+    private fun days(lang: String): List<StudyDay> {
+        val dir = File(contentRoot, "$lang/plan")
+        val index = json.decodeFromString<List<String>>(
+            File(dir, "_index.json").readText(Charsets.UTF_8)
+        )
+        return index.flatMap {
+            json.decodeFromString<StudyPlan>(File(dir, it).readText(Charsets.UTF_8)).days
+        }.sortedBy { it.day }
+    }
+
+    /** The levels a course charges for, in course order — exactly what AppContainer supplies. */
+    private fun paidLevels(lang: String): List<String> {
+        val free = meta(lang).freeLessons
+        return days(lang).filter { it.day > free }.map { it.level }.distinct()
+    }
+
+    /** What one purchase of [level] leaves this learner holding, as entitlement keys. */
+    private fun buy(lang: String, level: String): Set<String> =
+        PremiumManager.levelsThrough(paidLevels(lang), level)
+            .map { PremiumManager.key(lang, it) }.toSet()
+
+    private fun locked(lang: String, day: Int, owned: Set<String>): Boolean {
+        val d = days(lang).first { it.day == day }
+        return PremiumManager.dayLocked(lang, d.level, d.day, meta(lang).freeLessons, owned)
+    }
+
+    private fun lastDayOf(lang: String, level: String) =
+        days(lang).filter { it.level == level }.maxOf { it.day }
+
+    private fun firstDayOf(lang: String, level: String) =
+        days(lang).filter { it.level == level }.minOf { it.day }
+
+    // ================= The free window =================
+
     @Test
-    fun `placement deep in the course does not carry the free window with it`() {
-        val placedAt = 150
-        (placedAt until placedAt + 15).forEach { day ->
+    fun `a new learner gets exactly the free window and then meets the paywall`() {
+        listOf("hr", "pt").forEach { lang ->
+            val free = meta(lang).freeLessons
+            (1..free).forEach {
+                assertFalse("$lang lesson $it should be free", locked(lang, it, emptySet()))
+            }
             assertTrue(
-                "lesson $day is inside a paid level and must stay locked after placement",
-                PremiumManager.dayLocked("hr", "A2", day, freeLessons = 16, unlocked = emptySet())
+                "$lang lesson ${free + 1} should be the first paid lesson",
+                locked(lang, free + 1, emptySet())
             )
         }
     }
 
     @Test
-    fun `the window ends exactly on its last free lesson`() {
-        assertFalse(PremiumManager.dayLocked("hr", "A0", 16, 16, emptySet()))
-        assertTrue(PremiumManager.dayLocked("hr", "A1", 17, 16, emptySet()))
-    }
+    fun `Croatian gives away all of A0 and Portuguese part of A1`() {
+        // The asymmetry the per-language window exists for. If either of these flips, the
+        // window has drifted off the boundary it was chosen to sit on.
+        assertEquals(16, meta("hr").freeLessons)
+        assertEquals(lastDayOf("hr", "A0"), meta("hr").freeLessons)
+        assertEquals(listOf("A1", "A2", "B1"), paidLevels("hr"))
 
-    @Test
-    fun `a course whose window falls inside a level still sells that level's remainder`() {
-        // Portuguese: no A0, so the cut lands mid-A1 and lessons 16..45 are the A1 product.
-        assertFalse(PremiumManager.dayLocked("pt", "A1", 15, 15, emptySet()))
-        assertTrue(PremiumManager.dayLocked("pt", "A1", 16, 15, emptySet()))
-        assertFalse(
-            PremiumManager.dayLocked("pt", "A1", 16, 15, setOf(PremiumManager.key("pt", "A1")))
-        )
-    }
-
-    // ---- Unlocks do not cross languages ----
-
-    @Test
-    fun `buying a level in one course does not unlock it in another`() {
-        val boughtCroatianA2 = setOf(PremiumManager.key("hr", "A2"))
-        assertFalse(PremiumManager.dayLocked("hr", "A2", 200, 16, boughtCroatianA2))
-        assertTrue(
-            "Portuguese A2 must stay locked: unlocks are per language",
-            PremiumManager.dayLocked("pt", "A2", 200, 15, boughtCroatianA2)
-        )
-    }
-
-    // ---- Product ids round-trip ----
-
-    @Test
-    fun `product ids parse back to the language and level that made them`() {
-        listOf("hr" to "A1", "hr" to "A2", "pt" to "B1").forEach { (lang, level) ->
-            val id = BillingManager.levelProduct(lang, level)
-            assertEquals("unlock_${lang}_${level.lowercase()}", id)
-            val (parsedLang, parsedLevel) = BillingManager.parseUnlock(id)!!
-            assertEquals(lang, parsedLang)
-            assertEquals(level, parsedLevel.uppercase())
-        }
-        val bundle = BillingManager.bundleProduct("pt")
-        assertEquals("unlock_pt_all", bundle)
-        assertEquals("pt" to BillingManager.ALL, BillingManager.parseUnlock(bundle))
+        assertEquals(15, meta("pt").freeLessons)
+        assertTrue("pt has no A0 at all", days("pt").none { it.level == "A0" })
+        assertTrue("pt free window must fall inside A1", lastDayOf("pt", "A1") > 15)
+        assertEquals(listOf("A1", "A2", "B1"), paidLevels("pt"))
     }
 
     /**
-     * Anything that is not one of ours must parse to null rather than to a guess. The
-     * subscription id shares no shape with the unlocks, but a future product might, and
-     * "grant whatever the middle segment says" would be an entitlement bug.
+     * The regression this suite exists for. Placement drops an advanced learner deep into the
+     * course, and `TodayScreen` takes `maxOf(currentDay, lastCompleted + 1)` as their day. A
+     * window counted from that start would hand out free lessons of a paid level.
      */
     @Test
-    fun `foreign product ids grant nothing`() {
+    fun `placement deep in the course does not carry the free window with it`() {
+        val placedAt = firstDayOf("hr", "A2") + 20
+        (placedAt until placedAt + meta("hr").freeLessons).forEach { day ->
+            assertTrue(
+                "hr lesson $day must stay locked after placement",
+                locked("hr", day, emptySet())
+            )
+        }
+    }
+
+    // ================= Cumulative unlocks =================
+
+    /**
+     * The scenario asked for directly: land in A2, buy A2, and A1 comes with it. It has to,
+     * because the deck introduces vocabulary in course order — an A2 learner's daily reviews
+     * are full of A1 words whether or not they own the A1 lessons those words came from.
+     */
+    @Test
+    fun `buying A2 unlocks A1 as well`() {
+        listOf("hr", "pt").forEach { lang ->
+            val owned = buy(lang, "A2")
+            assertFalse(
+                "$lang A1 must open when A2 is bought",
+                locked(lang, lastDayOf(lang, "A1"), owned)
+            )
+            assertFalse(
+                "$lang A2 must open when A2 is bought",
+                locked(lang, lastDayOf(lang, "A2"), owned)
+            )
+            assertTrue(
+                "$lang B1 must stay closed: it is above what was bought",
+                locked(lang, firstDayOf(lang, "B1"), owned)
+            )
+        }
+    }
+
+    @Test
+    fun `buying a level opens every lesson in it, including the ones already skipped past`() {
+        // "Placed at A1 lesson 30, bought A1" — they paid for the level, so the half they were
+        // placed over is theirs too, not just the half in front of them.
+        listOf("hr", "pt").forEach { lang ->
+            val owned = buy(lang, "A1")
+            days(lang).filter { it.level == "A1" }.forEach {
+                assertFalse("$lang A1 lesson ${it.day} must open", locked(lang, it.day, owned))
+            }
+        }
+    }
+
+    @Test
+    fun `the top level's product is the whole course`() {
+        listOf("hr", "pt").forEach { lang ->
+            val top = paidLevels(lang).last()
+            val owned = buy(lang, top)
+            days(lang).forEach {
+                assertFalse(
+                    "$lang lesson ${it.day} must open with the top-level purchase",
+                    locked(lang, it.day, owned)
+                )
+            }
+        }
+    }
+
+    @Test
+    fun `an unknown level grants only itself rather than inventing an order`() {
+        assertEquals(setOf("C2"), PremiumManager.levelsThrough(listOf("A1", "A2", "B1"), "C2"))
+        assertEquals(setOf("A1"), PremiumManager.levelsThrough(emptyList(), "A1"))
+    }
+
+    // ================= Unlocks do not cross languages =================
+
+    @Test
+    fun `buying a course in one language does not unlock the other`() {
+        val boughtCroatian = buy("hr", "B1")
+        assertFalse(locked("hr", days("hr").last().day, boughtCroatian))
+        assertTrue(
+            "Portuguese must stay locked: unlocks are per language",
+            locked("pt", firstDayOf("pt", "A2"), boughtCroatian)
+        )
+    }
+
+    // ================= Level assessments =================
+
+    /**
+     * `LevelJourney` treats "placement put you past this level" as clearing it, so its quiz,
+     * readiness check and full mock exam unlock. That predates the paywall, and on its own it
+     * made the free placement test a bypass: a learner placed at B1 was past A1 and A2, which
+     * handed them both levels' assessments for nothing. The exam gate is the last lesson of the
+     * level, because sitting the A1 exam means owning all of A1.
+     */
+    @Test
+    fun `a level's exam stays locked until the level is paid for`() {
+        listOf("hr", "pt").forEach { lang ->
+            val free = meta(lang).freeLessons
+            fun levelLocked(level: String, owned: Set<String>) = PremiumManager.dayLocked(
+                lang, level, lastDayOf(lang, level), free, owned
+            )
+            assertTrue("$lang A1 exam must be locked while unpaid", levelLocked("A1", emptySet()))
+            assertTrue("$lang A2 exam must be locked while unpaid", levelLocked("A2", emptySet()))
+            assertFalse("$lang A1 exam opens with A1", levelLocked("A1", buy(lang, "A1")))
+            assertTrue("$lang A2 exam still shut with only A1", levelLocked("A2", buy(lang, "A1")))
+            assertFalse("$lang A2 exam opens with A2", levelLocked("A2", buy(lang, "A2")))
+        }
+        // Croatian's A0 is entirely inside the free window, so its exam is free — that is the
+        // whole point of landing the window on a level boundary.
+        assertFalse(
+            "hr A0 exam must be free",
+            PremiumManager.dayLocked("hr", "A0", lastDayOf("hr", "A0"), 16, emptySet())
+        )
+    }
+
+    // ================= How far the course goes for this learner =================
+
+    @Test
+    fun `accessibleThroughDay walks the prefix and stops at the first locked lesson`() {
+        listOf("hr", "pt").forEach { lang ->
+            val d = days(lang)
+            val free = meta(lang).freeLessons
+            assertEquals(
+                free,
+                PremiumManager.accessibleThroughDay(d, lang, free, emptySet())
+            )
+            assertEquals(
+                lastDayOf(lang, "A1"),
+                PremiumManager.accessibleThroughDay(d, lang, free, buy(lang, "A1"))
+            )
+            assertEquals(
+                d.last().day,
+                PremiumManager.accessibleThroughDay(d, lang, free, buy(lang, paidLevels(lang).last()))
+            )
+        }
+    }
+
+    // ================= The placement review seed =================
+
+    /**
+     * Placement queues the 60 lessons before its own point into Review. At 10 new words a lesson
+     * that is 600 deck words, the test is free and offered during onboarding — so without a
+     * ceiling, answering well was a way to collect most of a paid course's vocabulary for
+     * nothing. The seed may not reach past the last lesson the learner can open.
+     */
+    @Test
+    fun `the placement seed cannot reach past what the learner has paid for`() {
+        val lang = "hr"
+        val free = meta(lang).freeLessons
+        val placedAt = firstDayOf(lang, "B1") + 40
+        val (from, until) = WordsRepository.prePlacementRange(placedAt)
+        assertTrue("the seed window must be non-trivial to test", until - from > 500)
+
+        fun ceilingFor(owned: Set<String>) =
+            PremiumManager.accessibleThroughDay(days(lang), lang, free, owned) *
+                Fsrs.NEW_WORDS_PER_DAY
+
+        // Free: the accessible deck stops far below the seed window, so nothing may be queued.
+        assertTrue(
+            "a free learner placed at B1 must be seeded nothing",
+            minOf(until, ceilingFor(emptySet())) <= from
+        )
+        // Bought only A1: still nowhere near a B1 placement's run-up.
+        assertTrue(
+            "an A1 buyer placed at B1 must still be seeded nothing",
+            minOf(until, ceilingFor(buy(lang, "A1"))) <= from
+        )
+        // Bought the course: the full window, unclamped.
+        assertTrue(
+            "the whole-course buyer gets the real seed window",
+            minOf(until, ceilingFor(buy(lang, paidLevels(lang).last()))) == until
+        )
+    }
+
+    @Test
+    fun `topping the seed up after a purchase leaves no unseeded gap`() {
+        // `from` is measured BACK from the window's end, so a ceiling that slid the start as
+        // well would leave a learner who was seeded once while free and again after buying with
+        // an unseeded band in the middle. The clamp must therefore only ever lower `until`, and
+        // successive seeds must be nested ranges sharing one start.
+        val placedAt = 300
+        val (from, until) = WordsRepository.prePlacementRange(placedAt)
+        val ceilings = listOf(0, 200, 2_000, Int.MAX_VALUE)
+        val bands = ceilings.map { from until minOf(until, it).coerceAtLeast(from) }
+
+        bands.zipWithNext().forEach { (narrow, wide) ->
+            assertEquals("every seed starts at the same deck index", from, narrow.first)
+            assertTrue(
+                "a later, wider seed must contain the earlier one",
+                wide.first == narrow.first && wide.last >= narrow.last
+            )
+        }
+        assertTrue("the widest band is the unclamped window", bands.last().last == until - 1)
+    }
+
+    // ================= Product ids =================
+
+    @Test
+    fun `product ids round-trip, and there is one per paid level`() {
+        listOf("hr", "pt").forEach { lang ->
+            paidLevels(lang).forEach { level ->
+                val id = BillingManager.levelProduct(lang, level)
+                assertEquals("unlock_${lang}_${level.lowercase()}", id)
+                val (parsedLang, parsedLevel) = BillingManager.parseUnlock(id)!!
+                assertEquals(lang, parsedLang)
+                assertEquals(level, parsedLevel.uppercase())
+            }
+        }
+    }
+
+    @Test
+    fun `no product is offered for a level with no lessons`() {
+        // `levels.json` declares B2 and C1 for Croatian; the PLAN is the only thing that says
+        // whether lessons exist. Selling `unlock_hr_b2` would have charged for nothing.
+        listOf("hr", "pt").forEach { lang ->
+            assertFalse(
+                "$lang must not sell B2",
+                paidLevels(lang).contains("B2")
+            )
+            paidLevels(lang).forEach { level ->
+                assertTrue(
+                    "$lang $level must have lessons behind it",
+                    days(lang).any { it.level == level }
+                )
+            }
+        }
+    }
+
+    /**
+     * Anything that is not one of ours must parse to null rather than to a guess. The retired
+     * global ids matter most: an install that still holds one must not be re-granted under the
+     * new scheme, and "grant whatever the middle segment says" would be an entitlement bug.
+     */
+    @Test
+    fun `foreign product ids do not parse as unlocks`() {
         listOf(
             BillingManager.SUB_PREMIUM,
-            "unlock_all",            // the old global bundle, retired in v0.49.0
-            "unlock_a2",             // the old global level product
+            "unlock_all",            // the retired global bundle: two segments, not three
+            "unlock_a2",             // the retired global level product
             "unlock_hr_a2_extra",
+            "unlock",
             "",
         ).forEach { assertNull("'$it' must not parse as an unlock", BillingManager.parseUnlock(it)) }
+    }
+
+    /**
+     * `unlock_hr_all` was a real product id one revision ago, and it still has the three-segment
+     * shape the parser accepts — so it parses, and the safety has to come from the GRANT rather
+     * than the parse. "all" is not a level of any course, so it expands to itself and unlocks no
+     * lesson. This is the test that would catch someone "helpfully" making levelsThrough fall
+     * back to the whole ladder for an unrecognised name.
+     */
+    @Test
+    fun `the retired bundle id parses but unlocks nothing`() {
+        val (lang, what) = BillingManager.parseUnlock("unlock_hr_all")!!
+        assertEquals("hr", lang)
+        val granted = PremiumManager.levelsThrough(paidLevels(lang), what.uppercase())
+            .map { PremiumManager.key(lang, it) }.toSet()
+        days("hr").filter { it.day > meta("hr").freeLessons }.forEach {
+            assertTrue(
+                "hr lesson ${it.day} must stay locked for a retired bundle id",
+                locked("hr", it.day, granted)
+            )
+        }
     }
 }

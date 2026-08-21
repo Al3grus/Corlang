@@ -165,6 +165,35 @@ fun TodayScreen(
             com.corlang.app.billing.PremiumManager.dayLocked(
                 lang, d.level, d.day, freeLessons, unlockedLevels
             )
+
+    // A level's ASSESSMENTS are gated on its last lesson, not its first: sitting the A1 exam
+    // means owning all of A1. For a course whose free window falls inside a level (Portuguese
+    // A1) that is the difference between the exam being free and being sold with the level.
+    val levelLastDay = remember(plan) {
+        plan.days.groupBy { it.level }.mapValues { e -> e.value.maxOf { it.day } }
+    }
+    fun levelLocked(level: String) =
+        !com.corlang.app.BuildConfig.DEV_PREMIUM &&
+            com.corlang.app.billing.PremiumManager.dayLocked(
+                lang, level, levelLastDay[level] ?: 0, freeLessons, unlockedLevels
+            )
+
+    // Placement seeds the run-up to its own point into Review, which is vocabulary the learner
+    // may not have paid for. The seeder is idempotent and only ever moves its upper bound, so
+    // re-running it whenever entitlement changes tops the seed up without leaving gaps: nothing
+    // while the course is locked, the real window once it is bought.
+    val placementDay by container.languagePrefs.placementDay(lang).collectAsState(initial = 0)
+    LaunchedEffect(lang, placementDay, unlockedLevels) {
+        if (placementDay <= 0) return@LaunchedEffect
+        val through = if (com.corlang.app.BuildConfig.DEV_PREMIUM) plan.days.size
+        else com.corlang.app.billing.PremiumManager.accessibleThroughDay(
+            plan.days, lang, freeLessons, unlockedLevels
+        )
+        container.words.seedPrePlacementForReview(
+            lang, placementDay,
+            maxDeckIndex = through * com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
+        )
+    }
     val dayLocked = lockedFor(day)
 
     // Guided session mode. inLesson is hoisted to the app scaffold so a bottom-nav tap (any tab,
@@ -464,6 +493,7 @@ fun TodayScreen(
             readinessLevelIds = readinessLevelIds,
             examLevelIds = examLevelIds,
             quizDoneLevelIds = quizDoneLevelIds,
+            levelLocked = ::levelLocked,
             onOpenQuiz = { level -> onNavigate("quiz/$level") },
             onOpenReadiness = { level -> onNavigate("readiness/$level") },
             onOpenExam = { level -> onNavigate("exam/$level") },

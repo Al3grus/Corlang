@@ -20,10 +20,11 @@ The AAB is already built & verified: `app/build/outputs/bundle/playRelease/app-p
 6. [ ] Complete the required forms when prompted: **content rating** questionnaire,
        **data safety** (collects nothing, shares nothing, all data on-device),
        **privacy policy URL** (GitHub PRIVACY.md raw link is fine for testing).
-6a.[ ] **Create the 9 billing products** (Monetize tab) — exact IDs + prices in
+6a.[ ] **Create the 7 billing products** (Monetize tab) — exact IDs + prices in
        `docs/monetization-roadmap.md` (`corlang_ai_premium` sub, monthly only + 7-day
-       trial; then `unlock_<lang>_a1/a2/b1/all` for `hr` and `pt`). The app already reads
-       their live prices; the paywall shows "unavailable" until they exist.
+       trial; then `unlock_<lang>_a1/a2/b1` for `hr` and `pt`). Unlocks are cumulative, so
+       the B1 product is the whole course. The app already reads their live prices; the
+       paywall shows "unavailable" until they exist.
 6b.[ ] **License testers** (Setup → License testing) = your + friends' emails, so they
        can buy every product with auto-refunded transactions and exercise the full
        paywall → purchase → unlock flow during closed testing.

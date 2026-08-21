@@ -64,6 +64,12 @@ fun LevelJourney(
     readinessLevelIds: Set<String> = emptySet(),
     examLevelIds: Set<String> = emptySet(),
     quizDoneLevelIds: Set<String> = emptySet(),
+    /**
+     * True when a level's assessments are behind the paywall. Separate from "not reached
+     * yet" because the two have different answers and different remedies: one is fixed by
+     * studying, the other by buying.
+     */
+    levelLocked: (String) -> Boolean = { false },
     onOpenQuiz: (String) -> Unit = {},
     onOpenReadiness: (String) -> Unit = {},
     onOpenExam: (String) -> Unit = {},
@@ -89,7 +95,9 @@ fun LevelJourney(
                 val level = entry.key
                 val days = entry.value
                 val minDay = days.minOf { it.day }
-                val reached = minDay <= targetDay
+                // "Reached" now means reachable: far enough along AND paid for. A chip the
+                // learner cannot open should not look like one they can.
+                val reached = minDay <= targetDay && !levelLocked(level)
                 val allDone = days.all { it.day in completedSet }
                 val selected = level == selectedLevel
                 Surface(
@@ -242,9 +250,16 @@ fun LevelJourney(
             // at B1 was told to skip A1 and A2, so gating those levels' quiz and mock exam behind
             // lessons the app itself said not to do locked them out of the very assessments they
             // were placed high enough to sit. Placing past a level counts as clearing it.
+            //
+            // But PROGRESS is not the only gate. `placedPast` made the free placement test a
+            // paywall bypass: a learner placed at B1 was "past" A1 and A2, which handed them
+            // both levels' quizzes, readiness checks and full mock exams without a purchase.
+            // Payment is checked separately and last, because it is the one condition studying
+            // cannot satisfy.
             val placedPast = stones.isNotEmpty() && targetDay > stones.maxOf { it.day }
             val levelDone = stones.isNotEmpty() &&
-                (stones.all { it.day in completedSet } || placedPast)
+                (stones.all { it.day in completedSet } || placedPast) &&
+                !levelLocked(selectedLevel)
             if (stones.isNotEmpty()) {
                 if (selectedLevel in quizLevelIds) {
                     CheckpointConnector(levelDone)

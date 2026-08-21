@@ -18,6 +18,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -60,6 +61,24 @@ fun PlacementScreen(
     com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
     val test = remember(lang) { container.content.placement(lang) }
+    val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
+    // How far into the deck this install may legitimately seed. The run-up to a placement is
+    // review material for a level the learner is about to study; until they own that level there
+    // is nothing legitimate to check them on, so the ceiling is the last lesson they can open.
+    // It rises the moment they buy, and TodayScreen re-runs the seeder then.
+    //
+    // Hoisted to the top of the composable rather than kept beside the copy it feeds: the
+    // confirm button that does the seeding sits outside that branch, and both must read the
+    // same number or the screen would promise one thing and queue another.
+    val seedCeiling = remember(lang, unlockedLevels) {
+        if (com.corlang.app.BuildConfig.DEV_PREMIUM) Int.MAX_VALUE
+        else com.corlang.app.billing.PremiumManager.accessibleThroughDay(
+            container.content.plan(lang).days,
+            lang,
+            container.content.meta(lang).freeLessons,
+            unlockedLevels
+        ) * com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY
+    }
     if (test == null) {
         Column(
             Modifier.fillMaxSize().padding(24.dp),
@@ -193,9 +212,9 @@ fun PlacementScreen(
             // A short test cannot prove you know every word it skipped, so the run-up to your
             // placement is queued for REVIEW, not retaught. Anything you have forgotten shows up
             // as a failed card and returns to normal scheduling.
-            val seedCount = remember(placeDay) {
+            val seedCount = remember(placeDay, seedCeiling) {
                 val (from, until) = WordsRepository.prePlacementRange(placeDay)
-                until - from
+                (minOf(until, seedCeiling) - from).coerceAtLeast(0)
             }
             if (seedCount > 0) {
                 Text(
@@ -228,7 +247,13 @@ fun PlacementScreen(
                         // queued for review, so a mis-placement surfaces as failed cards instead
                         // of silent gaps. Anchored at the placement point, so it can never touch
                         // words the learner has not reached yet.
-                        container.words.seedPrePlacementForReview(lang, placeDay)
+                        // Clamped to what this install can actually open. Placement is free and
+                        // offered at onboarding, so an unclamped seed let anyone who answered
+                        // well enough collect 600 deck words without paying for the level that
+                        // teaches them. TodayScreen tops it up the moment the course is bought.
+                        container.words.seedPrePlacementForReview(
+                            lang, placeDay, maxDeckIndex = seedCeiling
+                        )
                         onDone()
                     }
                 },

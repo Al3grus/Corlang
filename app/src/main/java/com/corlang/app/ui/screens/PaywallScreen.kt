@@ -46,11 +46,15 @@ private fun Context.activity(): Activity? {
  *    bundle when it would not make the learner pay twice (see below).
  *  - [levelId] null      → the AI Premium subscription (monthly only + 7-day trial).
  *
- * Unlocks are per language and ADDITIVE: buying A2 grants A2 of this course, nothing else. That
- * avoids the upgrade trap of cumulative tiers — Play has no upgrade pricing for one-time
- * products, so "A2 includes A1" would make anyone who bought A1 first pay for it twice. The cost
- * of additive is the reverse: someone who owns a level could still buy the bundle and overpay
- * for what they already have, so the bundle is offered ONLY to a learner who owns none of it.
+ * Unlocks are per language and CUMULATIVE: buying A2 grants A1 as well, so the top level's
+ * product is also the whole-course bundle. A course is a ladder and owning a rung without the
+ * ones below it is incoherent — the deck introduces words in course order, so an A2 learner's
+ * reviews are full of A1 vocabulary either way.
+ *
+ * The cost is Play's missing upgrade pricing for one-time products: someone who buys A1 and
+ * later the whole course pays for A1 twice. That is why every tier this course sells is shown
+ * at the FIRST paywall a learner meets, rather than revealed one rung at a time — the choice to
+ * climb has to be an informed one, made once.
  *
  * Prices are read LIVE from Play (BillingManager.prices); if a product isn't resolved yet
  * (Play Console products not created, or billing still connecting) its button is disabled with a
@@ -66,11 +70,10 @@ fun PaywallScreen(
     val ctx = LocalContext.current
     val activity = ctx.activity()
     val prices by container.billing.prices.collectAsState()
-    val owned by container.premium.unlockedLevels.collectAsState(initial = emptySet())
     val meta = remember(lang) { container.content.meta(lang) }
     // The levels this course charges for, in course order, so `.last()` names the finish line.
     val paidLevels = remember(lang) {
-        container.content.plan(lang).days
+        container.content.plan(lang).days.sortedBy { it.day }
             .filter { it.day > meta.freeLessons }.map { it.level }.distinct()
     }
 
@@ -82,40 +85,43 @@ fun PaywallScreen(
             Text("Unlock ${meta.name} $levelId", style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold)
             Text(
-                "The first ${meta.freeLessons} lessons are free. Unlock $levelId to keep going: " +
-                    "its lessons, words, quizzes and the end-of-level exam. One payment, yours " +
-                    "for good, and it stays if you reinstall.",
+                "The first ${meta.freeLessons} lessons are free, and they stay free wherever the " +
+                    "placement test put you. Unlock $levelId to keep going: its lessons, words, " +
+                    "quizzes and the end-of-level exam. One payment, yours for good, and it " +
+                    "comes back if you reinstall.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
+            val top = paidLevels.lastOrNull()
             val single = if (levelId in paidLevels) {
                 BillingManager.levelProduct(lang, levelId)
             } else null
-            // Owning any level rules the bundle out: additive pricing means it would re-charge
-            // for what is already paid for, and Play would happily take the money.
-            val ownsSome = paidLevels.any {
-                com.corlang.app.billing.PremiumManager.key(lang, it) in owned
-            }
+            val below = paidLevels.takeWhile { it != levelId }
             if (single != null) {
                 PurchaseCard(
                     title = "Unlock $levelId",
+                    subtitle = if (below.isEmpty()) null else
+                        "Includes ${below.joinToString(" and ")}, so the lessons behind you stay " +
+                            "open to review.",
                     price = prices[single],
                     primary = true,
                     onBuy = { activity?.let { container.billing.purchaseLevel(it, single) } }
                 )
             }
-            if (!ownsSome) {
-                val top = paidLevels.lastOrNull()
+            // The top level's product IS the bundle. Offered alongside the single level even to
+            // someone who already owns a lower one, because with cumulative tiers it is the only
+            // way up — hiding it would strand them.
+            if (top != null && top != levelId) {
                 PurchaseCard(
                     title = "The whole ${meta.name} course",
-                    subtitle = if (top != null) {
-                        "Best value: every level through $top, one payment."
-                    } else "Best value: one payment.",
-                    price = prices[BillingManager.bundleProduct(lang)],
+                    subtitle = "Best value: every level through $top, one payment.",
+                    price = prices[BillingManager.levelProduct(lang, top)],
                     primary = single == null,
                     onBuy = {
                         activity?.let {
-                            container.billing.purchaseLevel(it, BillingManager.bundleProduct(lang))
+                            container.billing.purchaseLevel(
+                                it, BillingManager.levelProduct(lang, top)
+                            )
                         }
                     }
                 )

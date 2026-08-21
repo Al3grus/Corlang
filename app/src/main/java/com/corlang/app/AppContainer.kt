@@ -49,7 +49,10 @@ class AppContainer(context: Context) {
             // to know a course's shape -- and a new language gets its products for free.
             paidLevels = { lang ->
                 val free = content.meta(lang).freeLessons
-                content.plan(lang).days.filter { it.day > free }.map { it.level }.toSet()
+                // distinct() over day-ordered lessons keeps COURSE order, which is what makes a
+                // purchase cumulative. A Set here would have silently randomised the ladder.
+                content.plan(lang).days.sortedBy { it.day }
+                    .filter { it.day > free }.map { it.level }.distinct()
             },
         )
     val tts: TtsManager = TtsManager(context)

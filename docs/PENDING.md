@@ -75,9 +75,10 @@ Everything else on the critical path is browser work in Play Console.
    - Subscription `corlang_ai_premium`: ONE base plan `monthly` €9.99 with the **7-day
      free-trial offer** on it. **No annual plan** (decided 2026-07-18: AI models/costs can
      shift within a year; monthly keeps repricing freedom). The app requests only `monthly`.
-   - Managed products, **eight, four per language**: `unlock_hr_a1` €4.99 · `unlock_hr_a2` €9.99 · `unlock_hr_b1` €14.99 ·
-     `unlock_hr_all` €24.99, and the same four for `pt`. **No `unlock_*_b2`** — neither
-     course has a B2 lesson.
+   - Managed products, **six, three per language**: `unlock_hr_a1` €4.99 · `unlock_hr_a2`
+     €12.99 · `unlock_hr_b1` €24.99, and the same three for `pt`. Each grants its level and
+     everything below it, so the B1 product is the whole course and there is no `_all`.
+     **No `unlock_*_b2`** — neither course has a B2 lesson.
    - Activate all; accept Google's regional prices.
 5. **(browser)** Upload the AAB to **Internal testing** (live in minutes, billing works).
 6. **(browser)** License testing (Setup → License testing): add your + testers' Gmail addresses
@@ -213,9 +214,10 @@ wrong the moment production goes live, so they are listed here rather than trust
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
 - Package name: `com.corlang.app`. Product IDs: `corlang_ai_premium` (base plan `monthly`
-  only) plus `unlock_<lang>_<level>` and `unlock_<lang>_all` for each live course — the app
-  derives these from content, so the full list is whatever `BillingManager.levelProductIds`
-  builds. Prices in `docs/monetization-roadmap.md`.
+  only) plus one `unlock_<lang>_<level>` per paid level of each live course — the app derives
+  these from content, so the full list is whatever `BillingManager.levelProductIds` builds.
+  Unlocks are cumulative, so the top level's id is the whole-course bundle and there is no
+  `_all`. Prices in `docs/monetization-roadmap.md`.
 - **`local.properties` is currently `devPremium=true`**, which affects the SIDELOAD build only
   (friends keep AI). The play flavor hardcodes `DEV_PREMIUM=false`, so no Play build can ship
   free Premium by accident.

@@ -39,6 +39,31 @@ official exam asks for.
   and full mock exams in the real exam format.
 - **Profile** — languages, settings, backup and restore.
 
+## What it costs
+
+**The start of every course is free.** The first 16 lessons of Croatian and the first 15 of
+Portuguese, with their words, reviews and exercises — no account, no sign-in, no payment, no
+trial that expires. That is long enough for the spaced repetition to come back round and show
+you whether it works, which is the only claim worth making.
+
+After that a course is a one-time purchase. **Each unlock includes every level below it**, so
+nothing you have already studied ever closes behind you, and the top one is simply the whole
+course.
+
+| Unlock | Croatian | European Portuguese |
+|---|---|---|
+| through **A1** | €4.99 | €4.99 |
+| through **A2** | €12.99 | €12.99 |
+| **the whole course**, to B1 | €24.99 | €24.99 |
+
+Prices are per language and set for your region by Google Play. There is no subscription for the
+course and no recurring charge — the lessons are a fixed thing you buy once and keep, including
+after a reinstall.
+
+The **Tutor** is the one exception: it talks to a language model, which costs money every time
+you use it, so it is a separate subscription at €9.99 a month with a 7-day free trial. Everything
+else in the app works without it.
+
 ## Status
 
 In testing on Google Play, not publicly available yet.

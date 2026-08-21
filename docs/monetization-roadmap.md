@@ -32,6 +32,13 @@ forever, Premium = AI" note in `docs/server-ai.md`.
    in every course. With two live courses that meant a single payment handed over 584 lessons,
    and almost nobody studies both, so it was a discount for a case that does not happen.
 
+   **Unlocks are cumulative.** Buying A2 grants A1 as well, so the top level's product IS the
+   whole-course bundle and there is no separate `_all`. A course is a ladder and owning a rung
+   without the ones beneath it is a state that should not exist: the deck introduces vocabulary
+   in course order, so an A2 learner's daily reviews are full of A1 words either way; placement
+   queues the run-up to their level for review; and a mis-placed learner is told to go back and
+   fill the gaps. All three are incoherent if the lessons below them are locked.
+
 These are orthogonal: someone can buy B1 without Premium (no AI), or subscribe to Premium
 (AI) while still on the free A1 course. Entitlement layer (`PremiumManager`) currently models
 only axis 1; axis 2 needs its own per-level entitlement store.
@@ -71,24 +78,34 @@ adjust down ~25-35% — this matters because the Croatian citizenship market IS 
 Google's cut is **~15%** (10% service + 5% billing under the June 2026 EEA rules; ~10% if we
 ever add external billing), so assume **~85% net**.
 
-### FREE forever (the whole A0+A1 course)
-Lessons, SRS words, quizzes, and the A1 end-of-level exam. No ads. This is the funnel — the
-first paywall is at A1→A2, after the learner has felt the product work.
+### FREE forever (the start of each course)
+The first `meta.json` → `freeLessons` lessons, their SRS words, and every screen type the app
+has. This is the funnel — the first paywall lands after the learner has felt spaced repetition
+actually work, which takes a week and a half of daily lessons and cannot be demonstrated in
+three days.
+
+> Superseded 2026-08-21. The original rule here was "the whole A0+A1 course is free", which gave
+> Croatian away 77 lessons deep and gave Portuguese nothing at all, since pt has no A0. See the
+> free-window design at the top of this file.
 
 ### One-time level unlocks (managed products — content has ZERO recurring cost → lifetime access)
-| Product | Price | Note |
-|---|---|---|
-| **A2 unlock** | **€4.99** | first paid step, low-friction |
-| **B1 unlock** | **€7.99** | the exam level: NN citizenship (B1), DELF/CAPLE B1 — highest willingness-to-pay |
-| **B2 unlock** | **€7.99** | DELF/CAPLE B2 (research: DELF B1 & B2 are priced *identically* — don't tier B2 above B1) |
-| **Full course bundle (A2+B1+B2)** | **€16.99** | ~20% off à-la-carte (€20.97); the "unlock everything" hero. This IS the lifetime-content option. |
+Current ids and prices are the six-product table below. The pricing RESEARCH that set the shape
+is kept here because the anchors still hold, but the numbers in it are historical:
 
-Anchors: DELF one-time prep courses run **€59** (PrepMyFuture, Alliance Française); official
-citizenship-exam apps sell at **£5.99 + a content-unlock IAP**. Our per-level prices sit well
-below full-course anchors, matching the "small one-time purchase" design. Citizenship takers
-already pay €50-150 for the test itself, so B1 at €7.99 is trivially cheap for that segment —
-a future **"Exam Prep Pack"** (B1 + intensive mocks + AI-examiner credits) at ~€19.99 is a
-lever to revisit once the base funnel is proven; NOT in v1.
+| Historical product | Price | Note |
+|---|---|---|
+| A2 unlock | €4.99 | first paid step, low-friction |
+| B1 unlock | €7.99 | the exam level: NN citizenship (B1), CAPLE B1 — highest willingness-to-pay |
+| B2 unlock | €7.99 | never created: neither live course has a B2 lesson |
+| Full course bundle | €16.99 | replaced by the cumulative top-level product |
+
+Anchors, which are what still matter: exam prep courses run **€59** (PrepMyFuture, Alliance
+Française) and in-person courses several hundred; official citizenship-exam apps sell at
+**£5.99 + a content-unlock IAP**. Citizenship takers already pay €50-150 for the test itself,
+so a whole course at €24.99 is cheap for that segment — which is why the ladder was raised from
+the €4.99/€7.99 research prices when the products were finally created. A future **"Exam Prep
+Pack"** (intensive mocks + AI-examiner credits) is a lever to revisit once the base funnel is
+proven; NOT in v1.
 
 ### AI subscription — "Corlang Premium" (auto-renewing; unlocks the Learn tab: tutor chat + exam-writing feedback + teach-back review)
 | Plan | Price | Effective | Note |
@@ -135,16 +152,16 @@ language.** The ids are derived from content by `BillingManager.levelProductIds`
 course generates its ids automatically — but Play Console will not, and an id with no product
 behind it shows as "unavailable" in the paywall.
 
-| Product | Grants | Price |
-|---|---|---|
-| `unlock_hr_a1` | Croatian A1 (61 lessons) | **€4.99** |
-| `unlock_hr_a2` | Croatian A2 (96) | **€9.99** |
-| `unlock_hr_b1` | Croatian B1 (171) | **€14.99** |
-| `unlock_hr_all` | the whole Croatian course to B1 | **€24.99** |
-| `unlock_pt_a1` | Portuguese A1 past the free 15 (30 lessons) | **€4.99** |
-| `unlock_pt_a2` | Portuguese A2 (70) | **€9.99** |
-| `unlock_pt_b1` | Portuguese B1 (125) | **€14.99** |
-| `unlock_pt_all` | the whole Portuguese course to B1 | **€24.99** |
+**Six products, three per language.** Each grants its level and everything below it.
+
+| Product | Grants | Lessons opened | Price |
+|---|---|---|---|
+| `unlock_hr_a1` | Croatian through A1 | 61 | **€4.99** |
+| `unlock_hr_a2` | Croatian through A2 | 157 | **€12.99** |
+| `unlock_hr_b1` | the whole Croatian course | 328 | **€24.99** |
+| `unlock_pt_a1` | Portuguese through A1 | 30 | **€4.99** |
+| `unlock_pt_a2` | Portuguese through A2 | 100 | **€12.99** |
+| `unlock_pt_b1` | the whole Portuguese course | 225 | **€24.99** |
 
 **No `unlock_*_b2`.** Neither live course has a single B2 lesson — Croatian ends at B1 (344
 lessons), Portuguese at B1 (240). The old global `unlock_b2` would have charged €7.99 for
@@ -153,16 +170,20 @@ plausible; the *plan* is the only thing that says whether lessons exist.
 
 **Why these numbers.** The buyer in Portugal or Croatia is usually working toward a certificate,
 and the alternative is a language school at a few hundred euros — so the ladder is anchored
-against that, not against a free casual-learning app. A1 stays deliberately small (it is the
-first paid step, taken while still deciding); A2 and B1 carry the price because they are the
-levels a certificate actually needs. À-la-carte to B1 is €29.97, so the bundle at €24.99 saves
-about 17%.
+against that, not against a free casual-learning app. A1 stays deliberately small: it is the
+first paid step, taken while still deciding. A2 and B1 carry the price because they are the
+levels a certificate actually needs.
 
-**Unlocks are ADDITIVE, not cumulative** — buying A2 grants A2, nothing below it. Cumulative
-tiers ("A2 includes A1") would be the natural reading of a linear course, but Play has no upgrade
-pricing for one-time products, so anyone who bought A1 first would pay for it twice. The cost of
-additive is the mirror image: a learner who owns a level could still buy the bundle and overpay,
-so `PaywallScreen` offers the bundle **only** to someone who owns none of that course's levels.
+**The one real cost of cumulative tiers** is that Play has no upgrade pricing for one-time
+products. A learner who buys A1 at €4.99 and later the whole course at €24.99 pays €29.98 —
+€4.99 more than going straight there. Nothing in the Play API can refund that difference, so it
+is handled by disclosure instead: `PaywallScreen` shows the single level AND the whole course
+side by side at the **first** paywall a learner meets, rather than revealing the ladder one rung
+at a time. The choice to climb has to be an informed one, made once.
+
+Do not "fix" this by making a lower purchase grant nothing above it — that was the additive
+design, and it produced the incoherent state where a learner owns A2 lessons but not the A1
+lessons whose vocabulary fills their review queue every morning.
 
 Accept Google's suggested **regional prices** for each. Set them as the tax-inclusive charm
 prices above; Google handles EU VAT. The 30-msg/day per-subscriber cap is enforced in the
@@ -172,12 +193,14 @@ worker (keyed on the Play sub token the app sends), so the flat price stays safe
 Closed-testing **license testers** (Play Console → Settings → License testing) can buy every
 product above with auto-refunded/never-charged transactions — so the full purchase flow
 (paywall → Play sheet → entitlement unlock → worker `/v1/verify`) gets real coverage before
-production. Create all 9 products (8 unlocks + the monthly-only subscription) in Play Console
+production. Create all 7 products (6 unlocks + the monthly-only subscription) in Play Console
 when the billing build lands mid-testing-window.
 
-Test the two boundaries specifically, because neither is visible in a build log: a learner
-**placed deep** by the placement test must hit the paywall on their very first lesson, and a
-Croatian unlock must leave the same level **locked in Portuguese**.
+`PaywallGateTest` already pins the boundaries offline, against the real course files: the free
+window, cumulative grants, cross-language isolation, the exam gate, the placement seed ceiling
+and the retired product ids. What still needs a human on a device is the part no unit test can
+reach — that Play's purchase sheet, the acknowledge call and the restore-on-reinstall path all
+land the entitlement where `PremiumManager` expects it.
 
 ## What is already true in the app (v0.20.27)
 
