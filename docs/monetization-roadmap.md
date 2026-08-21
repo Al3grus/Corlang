@@ -10,9 +10,27 @@ forever, Premium = AI" note in `docs/server-ai.md`.
    word "Premium" refers to in the app. **Shipped (UI): v0.20.27** — Learn appears in the nav
    only when entitled; Get Premium lives in Profile. Backend billing still pending (Play).
 
-2. **One-time level unlocks.** A0/A1 are **free** (the whole course through A1, including that
-   level's quizzes and its end-of-level exam). A2, B1, B2 each cost a **small fixed one-time
-   amount** to unlock. NOT a subscription. **Not built yet — needs Play Billing.**
+2. **One-time level unlocks, per language.** The first `meta.json` → `freeLessons` lessons of a
+   course are **free**; every level past them costs a one-time amount to unlock. NOT a
+   subscription. **Shipped v0.49.0.**
+
+   Three things about the boundary, all of which were wrong in the first design:
+
+   - **The free window is a lesson count, not a CEFR level.** It was "A0 and A1 are free", which
+     gave Croatian away 77 lessons deep and gave Portuguese *nothing* — pt has no A0 at all, so
+     an A0-only rule would have put a paywall on its lesson 1.
+   - **It is per-language data**, so an author lands the cut on a level boundary. Croatian sets
+     16 and gives away exactly A0; Portuguese sets 15, which falls inside A1, and the A1 product
+     sells the remaining 30 lessons. A flat constant left Croatian with one orphaned A0 lesson
+     that no product on the store could unlock.
+   - **It is an absolute day index.** Placement writes a start day and `TodayScreen` takes
+     `maxOf(currentDay, lastCompleted + 1)`, so "the next 15 lessons" would have handed a learner
+     placed at lesson 150 a free run through 150-164 of a level they never bought. Pinned by
+     `PaywallGateTest`.
+
+   **Unlocks do not cross languages.** They were global until v0.49.0: one `unlock_a2` opened A2
+   in every course. With two live courses that meant a single payment handed over 584 lessons,
+   and almost nobody studies both, so it was a discount for a case that does not happen.
 
 These are orthogonal: someone can buy B1 without Premium (no AI), or subscribe to Premium
 (AI) while still on the free A1 course. Entitlement layer (`PremiumManager`) currently models
@@ -31,8 +49,8 @@ Implications to design when building:
   rather than reached from Progress. Quizzes similarly become part of the level's lessons.
 - Once done, retire the `PRACTICE` nav route and the "Practice: quizzes & mock exam" button
   in Progress. Until then, Practice stays reachable from Progress so nothing is lost.
-- Level-locked days: days beyond the free A1 boundary show a "unlock A2" paywall (axis 2)
-  instead of the lesson, until purchased.
+- Level-locked days: days beyond the free window show that level's paywall (axis 2) instead of
+  the lesson, until purchased.
 
 ## Build order when we pick this up
 
@@ -112,11 +130,39 @@ these products in Play Console → Monetize. Until they exist the paywall shows 
   **7-day free trial** phase. Google requires trials of 3d-3y, once per user.
 - No annual base plan (see the decision above). The app requests only `monthly`.
 
-**One-time unlocks** — Monetize → In-app products (managed products):
-- `unlock_a2` — **€4.99**
-- `unlock_b1` — **€7.99**
-- `unlock_b2` — **€7.99**
-- `unlock_all` — **€16.99**  (bundle → grants A2+B1+B2, ~20% off à-la-carte; the app maps it to all three)
+**One-time unlocks** — Monetize → In-app products (managed products). **Eight products, four per
+language.** The ids are derived from content by `BillingManager.levelProductIds`, so adding a
+course generates its ids automatically — but Play Console will not, and an id with no product
+behind it shows as "unavailable" in the paywall.
+
+| Product | Grants | Price |
+|---|---|---|
+| `unlock_hr_a1` | Croatian A1 (61 lessons) | **€4.99** |
+| `unlock_hr_a2` | Croatian A2 (96) | **€9.99** |
+| `unlock_hr_b1` | Croatian B1 (171) | **€14.99** |
+| `unlock_hr_all` | the whole Croatian course to B1 | **€24.99** |
+| `unlock_pt_a1` | Portuguese A1 past the free 15 (30 lessons) | **€4.99** |
+| `unlock_pt_a2` | Portuguese A2 (70) | **€9.99** |
+| `unlock_pt_b1` | Portuguese B1 (125) | **€14.99** |
+| `unlock_pt_all` | the whole Portuguese course to B1 | **€24.99** |
+
+**No `unlock_*_b2`.** Neither live course has a single B2 lesson — Croatian ends at B1 (344
+lessons), Portuguese at B1 (240). The old global `unlock_b2` would have charged €7.99 for
+nothing. `levels.json` declares B2 and C1 for Croatian, which is what made the product look
+plausible; the *plan* is the only thing that says whether lessons exist.
+
+**Why these numbers.** The buyer in Portugal or Croatia is usually working toward a certificate,
+and the alternative is a language school at a few hundred euros — so the ladder is anchored
+against that, not against a free casual-learning app. A1 stays deliberately small (it is the
+first paid step, taken while still deciding); A2 and B1 carry the price because they are the
+levels a certificate actually needs. À-la-carte to B1 is €29.97, so the bundle at €24.99 saves
+about 17%.
+
+**Unlocks are ADDITIVE, not cumulative** — buying A2 grants A2, nothing below it. Cumulative
+tiers ("A2 includes A1") would be the natural reading of a linear course, but Play has no upgrade
+pricing for one-time products, so anyone who bought A1 first would pay for it twice. The cost of
+additive is the mirror image: a learner who owns a level could still buy the bundle and overpay,
+so `PaywallScreen` offers the bundle **only** to someone who owns none of that course's levels.
 
 Accept Google's suggested **regional prices** for each. Set them as the tax-inclusive charm
 prices above; Google handles EU VAT. The 30-msg/day per-subscriber cap is enforced in the
@@ -126,8 +172,12 @@ worker (keyed on the Play sub token the app sends), so the flat price stays safe
 Closed-testing **license testers** (Play Console → Settings → License testing) can buy every
 product above with auto-refunded/never-charged transactions — so the full purchase flow
 (paywall → Play sheet → entitlement unlock → worker `/v1/verify`) gets real coverage before
-production. Create all 5 products (3 level unlocks + bundle + the monthly-only subscription)
-in Play Console when the billing build lands mid-testing-window.
+production. Create all 9 products (8 unlocks + the monthly-only subscription) in Play Console
+when the billing build lands mid-testing-window.
+
+Test the two boundaries specifically, because neither is visible in a build log: a learner
+**placed deep** by the placement test must hit the paywall on their very first lesson, and a
+Croatian unlock must leave the same level **locked in Portuguese**.
 
 ## What is already true in the app (v0.20.27)
 

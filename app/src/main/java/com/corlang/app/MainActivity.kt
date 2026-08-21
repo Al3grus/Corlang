@@ -597,7 +597,10 @@ private fun CorlangApp(container: AppContainer) {
                     color = MaterialTheme.colorScheme.background,
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    PaywallScreen(container, levelId = paywallLevel, onClose = { showPaywall = false })
+                    PaywallScreen(
+                        container, lang = lang, levelId = paywallLevel,
+                        onClose = { showPaywall = false }
+                    )
                 }
             }
         }

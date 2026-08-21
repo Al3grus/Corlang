@@ -149,13 +149,22 @@ fun TodayScreen(
 
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
 
-    // One-time level gate: A0/A1 are free; A2+ need a purchase (or DEV_PREMIUM). A locked day's
-    // action opens the paywall instead of the lesson. emptySet initial is fine — the load gate
-    // below holds the first frame, and a paid level resolves within it.
+    // One-time level gate: this course's first `freeLessons` lessons are free, and every level
+    // beyond them needs a purchase for THIS language (or DEV_PREMIUM). A locked day's action
+    // opens the paywall instead of the lesson. emptySet initial is fine — the load gate below
+    // holds the first frame, and a paid level resolves within it.
+    //
+    // The window is measured on `d.day`, the lesson's own number in the course, NOT on how far
+    // the learner has come. Placement writes a start day and `targetDay` above takes the max of
+    // it, so "the next 15 lessons" would give someone placed at lesson 150 a free run through
+    // 150-164 of a level they never bought.
     val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
+    val freeLessons = remember(lang) { container.content.meta(lang).freeLessons }
     fun lockedFor(d: com.corlang.app.data.model.StudyDay) =
         !com.corlang.app.BuildConfig.DEV_PREMIUM &&
-            d.level !in container.premium.freeLevels && d.level !in unlockedLevels
+            com.corlang.app.billing.PremiumManager.dayLocked(
+                lang, d.level, d.day, freeLessons, unlockedLevels
+            )
     val dayLocked = lockedFor(day)
 
     // Guided session mode. inLesson is hoisted to the app scaffold so a bottom-nav tap (any tab,
