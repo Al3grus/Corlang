@@ -156,6 +156,24 @@ wait until they are unhidden. Nothing here blocks Internal or Closed testing.
 
 ---
 
+## 🚀 ON THE DAY YOU GO LIVE (do not let these rot)
+
+The app and the site both currently SAY they are not public. Both are true today and both become
+wrong the moment production goes live, so they are listed here rather than trusted to memory.
+
+1. **The landing page still says "in testing on Google Play and is not publicly available yet".**
+   It is in `tools/site/build_site.py`, marked with a `LAUNCH SWITCH` comment. Replace that note
+   with the Play link, re-run `python tools/site/build_site.py`, redeploy. Editing `site/*.html`
+   by hand does nothing: those files are generated.
+2. **README "Status" section** says the same thing. Update it too.
+3. **Play Console privacy policy URL** → change from the raw GitHub link to
+   `https://corlang.app/privacy/` once the site is deployed.
+4. **Then, and only then, the repo can go private** — the raw GitHub privacy URL is the last
+   thing depending on it (the self-updater that also depended on it was removed in v0.48.0).
+   `releases/` becomes deletable at the same time: nothing reads `version.json` any more.
+
+---
+
 ## 🔮 TRACK F — Future / optional (not launch blockers)
 
 1. **Voice tutor** — on-device STT/TTS → Claude text (≈ free on top of current cost; the app

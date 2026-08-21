@@ -164,14 +164,14 @@ def build():
     os.makedirs(os.path.join(OUT, 'privacy'), exist_ok=True)
 
     landing = """
-<h1>Learn the core of a language, one short session a day.</h1>
+<h1>Learn a European language properly, one short session a day.</h1>
 <p class="lede">Corlang teaches the part of a language that actually carries a conversation, on a
 daily method built from how memory works: retrieval practice and spaced repetition, in sessions
-short enough to keep.</p>
+short enough to keep. Croatian and European Portuguese are available today.</p>
 
 <div class="cards">
-  <div class="card"><h3>Two courses</h3><p>Croatian and European Portuguese, each a full
-    day-by-day path from first words to B1.</p></div>
+  <div class="card"><h3>Croatian and Portuguese</h3><p>A full day-by-day path from first words to
+    B1, and European Portuguese throughout rather than Brazilian.</p></div>
   <div class="card"><h3>Built on retrieval</h3><p>You produce the language from memory rather
     than recognising it, and every word comes back on its own schedule.</p></div>
   <div class="card"><h3>Aimed at the real exam</h3><p>Each course follows its official
@@ -186,6 +186,8 @@ produce rather than pick, a dialogue, and a closing recall of what you just lear
 vocabulary is due for review that day, and nothing more.</p>
 
 <h2>Where to get it</h2>
+<!-- LAUNCH SWITCH: replace this whole note with the Play link on the day the app goes public.
+     Tracked in docs/PENDING.md under "On the day you go live". -->
 <p class="note">Corlang is in testing on Google Play and is not publicly available yet. If you
 would like to try it, write to <a href="mailto:support@corlang.app">support@corlang.app</a>.</p>
 """
