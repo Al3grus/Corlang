@@ -39,8 +39,12 @@ import unicodedata
 
 ROOT = os.path.join("app", "src", "main", "assets", "content")
 
-# Mirrors Drills.RECALL_MAX_CHARS / check_wrapup.
-MAX_CHARS = 80
+# NOT the wrap-up's typed-recall cap, which is 80 because a learner has to TYPE that string.
+# Nothing types a deck example: WordsScreen reads it aloud, and DrillGen's cloze answer is picked
+# from options. So the limit here is only against a sentence so long it stops being an example,
+# and trimming good B1/B2 sentences to satisfy a borrowed number would be the S17 mistake of
+# deleting content to make a figure look right.
+MAX_CHARS = 100
 # Mirrors check_wrapup.PAIR_SYMBOLS plus brackets, which Grading.normalize does not strip.
 BANNED = ["→", "←", "↔", "⇒", "=", "«", "»", "–", "—", "✓", "✗", "(", ")", "·", "…"]
 
