@@ -41,7 +41,17 @@ class AppContainer(context: Context) {
     val chat: com.corlang.app.ai.ChatStore = com.corlang.app.ai.ChatStore()
     val premium: PremiumManager = PremiumManager(languagePrefs)
     val billing: com.corlang.app.billing.BillingManager =
-        com.corlang.app.billing.BillingManager(context, premium, appScope)
+        com.corlang.app.billing.BillingManager(
+            context, premium, appScope,
+            languages = content.availableLanguages,
+            // The levels a course actually charges for: those holding at least one lesson past
+            // its free window. Derived here, where content lives, so BillingManager never needs
+            // to know a course's shape -- and a new language gets its products for free.
+            paidLevels = { lang ->
+                val free = content.meta(lang).freeLessons
+                content.plan(lang).days.filter { it.day > free }.map { it.level }.toSet()
+            },
+        )
     val tts: TtsManager = TtsManager(context)
     val updater: Updater = Updater(context)
 }

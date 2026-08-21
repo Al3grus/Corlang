@@ -1139,6 +1139,44 @@ class ContentValidationTest {
         }
     }
 
+    /**
+     * The free window is what a learner gets before any payment, and it is the only trial this
+     * app has: there is no account, so nothing else can hand out a sample. Three ways it can be
+     * authored wrong, all of which reach the store silently:
+     *
+     *  - **Too short to sell anything.** Spaced repetition only proves itself once reviews start
+     *    coming back, which takes about a week and a half of daily lessons. A window under 10 is
+     *    a paywall pretending to be a trial.
+     *  - **An orphan remainder.** If the window ends one lesson short of a level boundary, that
+     *    level's product sells a single lesson. Croatian is exactly this shape (A0 is 16), which
+     *    is why the window is per-language data: it can land ON the boundary. A remainder must
+     *    be nothing at all, or a real product.
+     *  - **The whole course free.** A window at or past the last day leaves nothing to buy.
+     */
+    @Test
+    fun `free lesson window leaves a sellable course`() {
+        allLangs.forEach { lang ->
+            val meta = strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
+            val free = meta.freeLessons
+            val days = loadPlan(lang).days.sortedBy { it.day }
+            assertTrue("$lang freeLessons=$free is too short to show the method works (min 10)",
+                free >= 10)
+            assertTrue("$lang freeLessons=$free leaves no lesson to sell (course is ${days.size})",
+                free < days.size)
+
+            // The level the window ends inside, and what is left of it to charge for.
+            val straddled = days.firstOrNull { it.day == free }?.level
+            if (straddled != null) {
+                val remaining = days.count { it.level == straddled && it.day > free }
+                assertTrue(
+                    "$lang freeLessons=$free orphans $remaining lesson(s) of $straddled: land the " +
+                        "window on the level boundary, or leave at least 10 lessons to sell",
+                    remaining == 0 || remaining >= 10
+                )
+            }
+        }
+    }
+
     @Test
     fun `speech tag present in every language meta`() {
         allLangs.forEach { lang ->

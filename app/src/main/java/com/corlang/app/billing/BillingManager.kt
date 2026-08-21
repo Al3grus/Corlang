@@ -29,7 +29,11 @@ import kotlinx.coroutines.launch
  *  - SUB  `corlang_ai_premium`  ONE base plan `monthly` (+ 7-day trial offer). Deliberately no
  *    annual: AI models and costs can shift within a year, and a sold annual locks 12 months of
  *    service at old economics. Monthly keeps repricing freedom.
- *  - INAPP `unlock_a2` `unlock_b1` `unlock_b2` (per-level) and `unlock_all` (bundle → all three)
+ *  - INAPP, per language: `unlock_<lang>_<level>` for every level a course sells, plus
+ *    `unlock_<lang>_all` for that course's bundle. The ids are DERIVED from content (see
+ *    [levelProductIds]), so adding a language needs no edit here — only the matching products
+ *    created in Play Console. There is deliberately no `unlock_*_b2`: neither live course has a
+ *    single B2 lesson, and a product that grants nothing is a refund request waiting to happen.
  *
  * SECURITY NOTE: entitlement here is granted on the client after Play's local signature check.
  * That is fine for closed testing (license testers) but before PUBLIC launch the worker must
@@ -40,27 +44,52 @@ class BillingManager(
     context: Context,
     private val premium: PremiumManager,
     private val scope: CoroutineScope,
+    /** Every language with a course, in manifest order. */
+    private val languages: List<String>,
+    /**
+     * The levels of [lang] that a learner must PAY for: those with at least one lesson past that
+     * course's free window. Supplied by AppContainer from ContentRepository so this class stays
+     * language-agnostic — it never learns that Croatian has an A0 and Portuguese does not.
+     */
+    private val paidLevels: (String) -> Set<String>,
 ) {
     companion object {
         const val SUB_PREMIUM = "corlang_ai_premium"
         const val BASE_MONTHLY = "monthly"
 
-        const val UNLOCK_A2 = "unlock_a2"
-        const val UNLOCK_B1 = "unlock_b1"
-        const val UNLOCK_B2 = "unlock_b2"
-        const val UNLOCK_ALL = "unlock_all"
-        val LEVEL_PRODUCTS = listOf(UNLOCK_A2, UNLOCK_B1, UNLOCK_B2, UNLOCK_ALL)
+        /** Marks the bundle rather than a single level: `unlock_hr_all`. */
+        const val ALL = "all"
 
-        /** Which CEFR levels a purchased product id grants. */
-        fun levelsFor(productId: String): Set<String> = when (productId) {
-            UNLOCK_A2 -> setOf("A2")
-            UNLOCK_B1 -> setOf("B1")
-            UNLOCK_B2 -> setOf("B2")
-            UNLOCK_ALL -> setOf("A2", "B1", "B2")
-            else -> emptySet()
+        /** `unlock_hr_a2`. Lowercase because Play product ids may not contain capitals. */
+        fun levelProduct(lang: String, levelId: String) = "unlock_${lang}_${levelId.lowercase()}"
+
+        /** `unlock_hr_all` — every paid level of one course, at a discount. */
+        fun bundleProduct(lang: String) = "unlock_${lang}_$ALL"
+
+        /**
+         * Split a product id back into (language, level-or-"all"), or null if it is not one of
+         * ours. Exactly three segments: neither a language code nor a CEFR id contains an
+         * underscore, so a longer id is something we did not create and is ignored rather than
+         * guessed at.
+         */
+        fun parseUnlock(productId: String): Pair<String, String>? {
+            val parts = productId.split("_")
+            return if (parts.size == 3 && parts[0] == "unlock") parts[1] to parts[2] else null
         }
 
         private const val TAG = "BillingManager"
+    }
+
+    /**
+     * Every one-time product this build could sell, derived from the shipped courses.
+     *
+     * `lazy` on purpose: building it parses each course's plan, and AppContainer is constructed
+     * on the main thread. Billing connects asynchronously, so the first read happens off it.
+     */
+    private val levelProductIds: List<String> by lazy {
+        languages.flatMap { lang ->
+            paidLevels(lang).map { levelProduct(lang, it) } + bundleProduct(lang)
+        }
     }
 
     // productId (subs) / "productId:basePlanId" (subs base plans) / productId (inapp) → formatted price.
@@ -120,7 +149,7 @@ class BillingManager(
         }
 
         val inappParams = QueryProductDetailsParams.newBuilder().setProductList(
-            LEVEL_PRODUCTS.map {
+            levelProductIds.map {
                 QueryProductDetailsParams.Product.newBuilder()
                     .setProductId(it).setProductType(ProductType.INAPP).build()
             }
@@ -148,7 +177,7 @@ class BillingManager(
         launch(activity, pd, offer.offerToken)
     }
 
-    /** Launch a one-time level-unlock purchase (UNLOCK_A2 / _B1 / _B2 / _ALL). */
+    /** Launch a one-time unlock purchase (a [levelProduct] or a [bundleProduct] id). */
     fun purchaseLevel(activity: Activity, productId: String) {
         val pd = inappDetails.value[productId] ?: return
         launch(activity, pd, null)
@@ -201,8 +230,16 @@ class BillingManager(
                 SUB_PREMIUM in purchase.products ->
                     premium.grantSubscription(purchase.purchaseToken)
                 else -> {
-                    val levels = purchase.products.flatMap { levelsFor(it) }.toSet()
-                    if (levels.isNotEmpty()) premium.grantLevels(levels)
+                    // Grant per language. A bundle expands to that course's paid levels AS THEY
+                    // ARE NOW, rather than to a wildcard: if a course later grows a B2, the
+                    // learner who bought "the full course to B1" is not silently handed it, and
+                    // we can sell it. Restores re-run this, so an expansion is not retroactive.
+                    purchase.products.forEach { id ->
+                        val (lang, what) = parseUnlock(id) ?: return@forEach
+                        val levels =
+                            if (what == ALL) paidLevels(lang) else setOf(what.uppercase())
+                        if (levels.isNotEmpty()) premium.grantLevels(lang, levels)
+                    }
                 }
             }
             if (!purchase.isAcknowledged) acknowledge(purchase)

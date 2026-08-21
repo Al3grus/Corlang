@@ -298,12 +298,13 @@ class LanguagePrefs(private val context: Context) {
         }
     }
 
-    // ----- Level unlocks (one-time IAP; global across languages) -----
+    // ----- Level unlocks (one-time IAP; PER LANGUAGE) -----
 
-    // A0/A1 are free forever; A2/B1/B2 are unlocked by a one-time purchase (or the bundle).
-    // Stored as a comma-joined set of CEFR level ids. Global, not per-language, by design:
-    // buying A2 unlocks A2 in every course. Written by the Billing connector after a verified
-    // purchase; the bundle grants all three at once.
+    // The first `meta.json` -> freeLessons lessons of a course are free; every level beyond that
+    // is unlocked by a one-time purchase (or that course's bundle). Stored as a comma-joined set
+    // of "<lang>:<LEVEL>" keys -- per-language since v0.49.0, because a global unlock meant one
+    // payment opened the same level in every course. Written by the Billing connector after a
+    // verified purchase. Neither part ever contains a comma, so the join is unambiguous.
     private val unlockedLevelsKey = stringPreferencesKey("unlocked_levels")
 
     val unlockedLevels: Flow<Set<String>> =

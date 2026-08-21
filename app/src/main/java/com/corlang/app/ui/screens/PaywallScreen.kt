@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -41,8 +42,15 @@ private fun Context.activity(): Activity? {
 
 /**
  * The purchase surface. Two modes:
- *  - [levelId] non-null → one-time unlock for that CEFR level, plus the "unlock everything" bundle.
+ *  - [levelId] non-null → the one-time unlock for that CEFR level of [lang], and that course's
+ *    bundle when it would not make the learner pay twice (see below).
  *  - [levelId] null      → the AI Premium subscription (monthly only + 7-day trial).
+ *
+ * Unlocks are per language and ADDITIVE: buying A2 grants A2 of this course, nothing else. That
+ * avoids the upgrade trap of cumulative tiers — Play has no upgrade pricing for one-time
+ * products, so "A2 includes A1" would make anyone who bought A1 first pay for it twice. The cost
+ * of additive is the reverse: someone who owns a level could still buy the bundle and overpay
+ * for what they already have, so the bundle is offered ONLY to a learner who owns none of it.
  *
  * Prices are read LIVE from Play (BillingManager.prices); if a product isn't resolved yet
  * (Play Console products not created, or billing still connecting) its button is disabled with a
@@ -51,31 +59,42 @@ private fun Context.activity(): Activity? {
 @Composable
 fun PaywallScreen(
     container: AppContainer,
+    lang: String,
     levelId: String?,
     onClose: () -> Unit,
 ) {
     val ctx = LocalContext.current
     val activity = ctx.activity()
     val prices by container.billing.prices.collectAsState()
+    val owned by container.premium.unlockedLevels.collectAsState(initial = emptySet())
+    val meta = remember(lang) { container.content.meta(lang) }
+    // The levels this course charges for, in course order, so `.last()` names the finish line.
+    val paidLevels = remember(lang) {
+        container.content.plan(lang).days
+            .filter { it.day > meta.freeLessons }.map { it.level }.distinct()
+    }
 
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
         if (levelId != null) {
-            Text("Unlock level $levelId", style = MaterialTheme.typography.headlineSmall,
+            Text("Unlock ${meta.name} $levelId", style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold)
             Text(
-                "A0 and A1 are free forever. Unlock $levelId to continue your course: lessons, " +
-                    "words, quizzes, and the end-of-level exam. One-time purchase, yours for good.",
+                "The first ${meta.freeLessons} lessons are free. Unlock $levelId to keep going: " +
+                    "its lessons, words, quizzes and the end-of-level exam. One payment, yours " +
+                    "for good, and it stays if you reinstall.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
-            val single = when (levelId) {
-                "A2" -> BillingManager.UNLOCK_A2
-                "B1" -> BillingManager.UNLOCK_B1
-                "B2" -> BillingManager.UNLOCK_B2
-                else -> null
+            val single = if (levelId in paidLevels) {
+                BillingManager.levelProduct(lang, levelId)
+            } else null
+            // Owning any level rules the bundle out: additive pricing means it would re-charge
+            // for what is already paid for, and Play would happily take the money.
+            val ownsSome = paidLevels.any {
+                com.corlang.app.billing.PremiumManager.key(lang, it) in owned
             }
             if (single != null) {
                 PurchaseCard(
@@ -85,13 +104,22 @@ fun PaywallScreen(
                     onBuy = { activity?.let { container.billing.purchaseLevel(it, single) } }
                 )
             }
-            PurchaseCard(
-                title = "Unlock everything (A2 + B1 + B2)",
-                subtitle = "Best value: the whole course, one payment.",
-                price = prices[BillingManager.UNLOCK_ALL],
-                primary = single == null,
-                onBuy = { activity?.let { container.billing.purchaseLevel(it, BillingManager.UNLOCK_ALL) } }
-            )
+            if (!ownsSome) {
+                val top = paidLevels.lastOrNull()
+                PurchaseCard(
+                    title = "The whole ${meta.name} course",
+                    subtitle = if (top != null) {
+                        "Best value: every level through $top, one payment."
+                    } else "Best value: one payment.",
+                    price = prices[BillingManager.bundleProduct(lang)],
+                    primary = single == null,
+                    onBuy = {
+                        activity?.let {
+                            container.billing.purchaseLevel(it, BillingManager.bundleProduct(lang))
+                        }
+                    }
+                )
+            }
         } else {
             Text("Corlang Premium", style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold)

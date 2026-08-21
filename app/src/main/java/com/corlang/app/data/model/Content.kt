@@ -23,7 +23,16 @@ data class LanguageMeta(
     val speechTag: String? = null,          // BCP-47 for TTS + recognizer, e.g. "pt-PT"
     val reminderTitle: String? = null,      // bare daily-reminder title (no learner name)
     val reminderTitleNamed: String? = null, // addressed form, with the {name} placeholder
-    val reminderProverb: String? = null     // little-by-little proverb line
+    val reminderProverb: String? = null,    // little-by-little proverb line
+    /**
+     * How many lessons are playable without a purchase, counted from lesson 1.
+     *
+     * Per-language because courses do not share a shape: Croatian's A0 is 16 lessons, so 16
+     * puts the cut exactly on a level boundary and leaves no orphan lesson that no product
+     * sells; Portuguese has no A0 at all, so its cut falls inside A1 and the A1 product sells
+     * the remaining 30. A single hardcoded number could not do both.
+     */
+    val freeLessons: Int = 15
 )
 
 // ---------- Cheatsheet (the 5-minute review page) ----------

@@ -56,7 +56,10 @@ Everything else on the critical path is browser work in Play Console.
 
 1. **(browser)** Create the app in Play Console (name "Corlang", App, Free).
 2. **(browser)** "Set up your app" tasks — all required before any release:
-   - App access: all functionality available without special access (no login).
+   - App access: **restricted** — no login exists, but the course is payment-gated past the
+     free window, so a reviewer needs promo codes. Exact wording in `docs/road-to-play.md`
+     §2. Promo codes need the products created AND a build uploaded first, so this task
+     closes after the Internal-testing upload, not before.
    - Ads: no ads.
    - Content rating questionnaire (educational → Everyone/PEGI 3).
    - Target audience: 13+.
@@ -72,8 +75,9 @@ Everything else on the critical path is browser work in Play Console.
    - Subscription `corlang_ai_premium`: ONE base plan `monthly` €9.99 with the **7-day
      free-trial offer** on it. **No annual plan** (decided 2026-07-18: AI models/costs can
      shift within a year; monthly keeps repricing freedom). The app requests only `monthly`.
-   - Managed products: `unlock_a2` €4.99, `unlock_b1` €7.99, `unlock_b2` €7.99, `unlock_all`
-     €16.99 (~20% off à-la-carte).
+   - Managed products, **eight, four per language**: `unlock_hr_a1` €4.99 · `unlock_hr_a2` €9.99 · `unlock_hr_b1` €14.99 ·
+     `unlock_hr_all` €24.99, and the same four for `pt`. **No `unlock_*_b2`** — neither
+     course has a B2 lesson.
    - Activate all; accept Google's regional prices.
 5. **(browser)** Upload the AAB to **Internal testing** (live in minutes, billing works).
 6. **(browser)** License testing (Setup → License testing): add your + testers' Gmail addresses
@@ -208,8 +212,10 @@ wrong the moment production goes live, so they are listed here rather than trust
 - Worker: `https://corlang-ai-proxy.ricardo-infante.workers.dev`; secrets `ANTHROPIC_API_KEY`,
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
-- Package name: `com.corlang.app`. Product IDs: `corlang_ai_premium` (base plans `monthly`,
-  only), `unlock_a2`, `unlock_b1`, `unlock_b2`, `unlock_all` (bundle €16.99).
+- Package name: `com.corlang.app`. Product IDs: `corlang_ai_premium` (base plan `monthly`
+  only) plus `unlock_<lang>_<level>` and `unlock_<lang>_all` for each live course — the app
+  derives these from content, so the full list is whatever `BillingManager.levelProductIds`
+  builds. Prices in `docs/monetization-roadmap.md`.
 - **`local.properties` is currently `devPremium=true`**, which affects the SIDELOAD build only
   (friends keep AI). The play flavor hardcodes `DEV_PREMIUM=false`, so no Play build can ship
   free Premium by accident.

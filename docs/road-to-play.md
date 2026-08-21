@@ -41,7 +41,19 @@ Play Console → All apps → **Create app**. Name "Corlang", default language, 
 **Free**. Accept the declarations.
 
 ### 2. "Set up your app" dashboard tasks **(browser)** — all required before any release
-- **App access**: "All functionality is available without special access" (no login).
+- **App access**: **"All or some functionality is restricted."** Not the no-login answer —
+  there is no sign-in, but most of the course is behind a one-time purchase, and a reviewer who
+  cannot reach it cannot rate it. Add one instruction with **no** credentials:
+
+  > Corlang has no account system and no sign-in, so no username or password is needed.
+  > Installing gives immediate access to the first 15 lessons of Croatian (all of level A0) and
+  > the first 15 of Portuguese, together with their vocabulary reviews, exercises and progress
+  > screens. That covers every screen type in the app. The remaining levels are unlocked by
+  > one-time in-app purchases. To review the paid content, please use the promo codes below.
+
+  Then attach promo codes (Monetize → Promo codes, one per product). **Promo codes cannot be
+  created until the products exist AND a build containing them has been uploaded to a track**,
+  so this task is finished after step 5, not before it.
 - **Ads**: contains no ads.
 - **Content rating**: fill the questionnaire (educational, no objectionable content → Everyone/PEGI 3).
 - **Target audience**: 13+ (avoids the strict children's-policy requirements).
@@ -63,8 +75,11 @@ Review, the journey, the tutor). Category **Education**. Contact email support@c
 ### 4. Create the billing products **(browser)** — Monetize tab; IDs must match EXACTLY
 - **Subscriptions → create `corlang_ai_premium`**:
   - base plan `monthly`, auto-renewing, **€9.99/month**; add an **Offer** on it = **7-day free trial** phase. No annual plan (AI economics may shift within a year).
-  - **In-app products (managed) → create**: `unlock_a2` €4.99 · `unlock_b1` €7.99 ·
-  `unlock_b2` €7.99 · `unlock_all` €16.99. **Activate** each; accept Google's regional prices.
+  - **In-app products (managed) → create eight**, four per language:
+  `unlock_hr_a1` €4.99 · `unlock_hr_a2` €9.99 · `unlock_hr_b1` €14.99 · `unlock_hr_all` €24.99,
+  and `unlock_pt_a1` · `unlock_pt_a2` · `unlock_pt_b1` · `unlock_pt_all` at the same prices.
+  **Activate** each; accept Google's regional prices. **Do not create an `unlock_*_b2`** —
+  neither course has a B2 lesson, so it would sell nothing.
 
 ### 5. Upload the AAB to **Internal testing** first **(browser)**
 Internal testing = live in minutes, no review wait, up to 100 testers, **billing works**.
@@ -102,36 +117,40 @@ same ≥12 testers, roll out the same AAB, and let the clock run **in parallel**
 
 ## Store listing copy (draft — edit freely)
 
-**App name:** Corlang — Croatian, Portuguese & French
+**App name:** Corlang — Learn Croatian & Portuguese
+
+> Croatian and Portuguese ONLY. French, German, Italian and Spanish are authored but hidden
+> (absent from `content/_index.json`), so naming them here would advertise something the
+> installed app does not contain. Add a language to this copy on the release that unhides it.
 
 **Short description (≤80 chars):**
-Learn Croatian, European Portuguese or French with a real day-by-day plan.
+Learn Croatian or European Portuguese with a real day-by-day plan.
 
 **Full description (≤4000 chars):**
-Corlang is a focused, no-nonsense way to actually learn Croatian, European Portuguese, or
-French — built around a structured day-by-day plan that takes you from absolute beginner (A0)
-to upper-intermediate (B2), the level real exams and real life ask for.
+Corlang is a focused, no-nonsense way to actually learn Croatian or European Portuguese — built
+around a structured day-by-day plan that takes you from the beginning to B1, the level real
+exams and real life ask for.
 
 Every day is one guided lesson: new words, short exercises, and spaced-repetition review that
-brings vocabulary back exactly when you're about to forget it. No endless stre­ak-baiting, no
+brings vocabulary back exactly when you're about to forget it. No endless streak-baiting, no
 cartoon detours — just steady, measurable progress toward a level you can use.
 
 What's inside:
-• A complete A0→B2 course, one lesson a day, with clear objectives.
+• A complete course to B1, one lesson a day, with clear objectives.
 • Spaced-repetition flashcards (FSRS) so words actually stick.
 • Quizzes and full mock exams modelled on the official tests (Croatian residency/citizenship,
-  DELF for French, CAPLE for Portuguese).
+  CAPLE for Portuguese).
 • A progress journey you can see, and a daily streak to keep the habit.
 • The whole course works offline. Your data stays on your device, no account, no tracking.
   (Only the optional AI tutor needs a connection.)
 
-Free forever: the entire A0 and A1 course, all its words, quizzes and the A1 exam.
-Optional upgrades: unlock A2, B1 and B2 as one-time purchases, and subscribe to Corlang Premium
-for an AI tutor that chats with you in your language, reviews your exam writing, and checks your
-explanations, all graded for your target level.
+Free to start: the first lessons of each course, with their words and reviews, no account and
+no payment. After that, unlock a level at a time or the whole course to B1 as a one-time
+purchase. Corlang Premium is a separate optional subscription for an AI tutor that chats with
+you in your language, reviews your exam writing, and checks your explanations, all graded for
+your target level.
 
 Croatian isn't on the big apps. European Portuguese gets treated as an afterthought. Corlang
-takes both — and French — seriously, with exam-focused content and correct, native-quality
-language.
+takes both seriously, with exam-focused content and correct, native-quality language.
 
 **Contact email:** support@corlang.app
