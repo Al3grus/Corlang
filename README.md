@@ -44,21 +44,6 @@ official exam asks for.
 In testing on Google Play, not publicly available yet. Everything below is for anyone reading the
 source.
 
-## How it is built
-
-Android, Kotlin, Jetpack Compose. A **fixed app skeleton renders per-language JSON content**: a
-course is data, so growing one or adding another needs no code change. Content lives in
-`app/src/main/assets/content/<lang>/`, the schema is `data/model/Content.kt`, and a suite of
-offline validators in `tools/course/` plus 175 unit tests guard it.
-
-```bash
-export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
-./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest
-```
-
-Two build flavors: `sideload` (a directly installed APK) and `play` (the Play bundle, via
-`:app:bundlePlayRelease`). Neither ships a self-updater.
-
 ## License
 
 Personal learning project. Content made for educational use.
