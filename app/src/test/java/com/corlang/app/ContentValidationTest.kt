@@ -1371,9 +1371,16 @@ class ContentValidationTest {
      */
     @Test
     fun `themed vocabulary packs are not introduced long before their lesson`() {
-        val levelEnd = mapOf("A0" to 16, "A1" to 77, "A2" to 173, "B1" to 344)
         val offenders = mutableListOf<String>()
         wrapupLangs.forEach { lang ->
+            // Derived from THIS course, not hardcoded. The map here was Croatian's
+            // (A0 16, A1 77, A2 173, B1 344) while the loop ran over hr AND pt, so every
+            // Portuguese pack was measured against a ceiling roughly twice its real one:
+            // pt A1 ends at day 45, not 77. It never produced a false failure, which is exactly
+            // why it survived, but a per-language number written once and reused for all
+            // languages is the same skeleton violation in a test that it would be in the app.
+            val levelEnd = loadPlan(lang).days
+                .groupBy { it.level }.mapValues { e -> e.value.maxOf { it.day } }
             val packs = loadVocabPacks(lang)
             val deck = com.corlang.app.data.DeckOrder.ordered(packs, WORDS_PER_LESSON)
             val wordToPack = packs.flatMap { p -> p.words.map { it.id to p.id } }.toMap()

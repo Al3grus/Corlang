@@ -20,9 +20,18 @@ forever, Premium = AI" note in `docs/server-ai.md`.
      gave Croatian away 77 lessons deep and gave Portuguese *nothing* — pt has no A0 at all, so
      an A0-only rule would have put a paywall on its lesson 1.
    - **It is per-language data**, so an author lands the cut on a level boundary. Croatian sets
-     16 and gives away exactly A0; Portuguese sets 15, which falls inside A1, and the A1 product
-     sells the remaining 30 lessons. A flat constant left Croatian with one orphaned A0 lesson
+     16 and gives away exactly A0; Portuguese sets 10, which falls inside A1, and the A1 product
+     sells the remaining 35 lessons. A flat constant left Croatian with one orphaned A0 lesson
      that no product on the store could unlock.
+
+     The two windows are different sizes but give away a comparable **share**: 4.7% of the
+     Croatian course, 4.2% of the Portuguese one. Share is the number to hold steady, not the
+     lesson count, and `PaywallGateTest` pins it at 6%.
+
+     Portuguese cannot simply relabel its first lessons into an A0 to make the two courses match
+     in shape. `docs/language-standard.md` sets a floor of 45 lessons for pt A1, and that floor
+     is a claim about how much teaching reaching A1 takes, not a bookkeeping total, so an A0
+     there has to be authored on top of the 240. See the debt in `docs/PENDING.md`.
    - **It is an absolute day index.** Placement writes a start day and `TodayScreen` takes
      `maxOf(currentDay, lastCompleted + 1)`, so "the next 15 lessons" would have handed a learner
      placed at lesson 150 a free run through 150-164 of a level they never bought. Pinned by
