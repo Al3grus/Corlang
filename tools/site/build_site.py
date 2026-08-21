@@ -1,15 +1,20 @@
 # -*- coding: utf-8 -*-
 """Build the corlang.app static site into site/.
 
-The privacy page is GENERATED FROM PRIVACY.md rather than written twice. Google re-checks the
-privacy policy URL after publishing, and the app's own repo copy is what gets edited, so two
-hand-maintained copies is a promise to drift. One source, one truth.
-
     python tools/site/build_site.py
     npx wrangler pages deploy site --project-name corlang --branch main --commit-dirty=true
 
 Live at https://corlang.app/ (Cloudflare Pages project `corlang`). site/ is GENERATED: editing
 those files by hand is throwing work away, because the next build overwrites them.
+
+Two things here are deliberate and easy to undo by accident:
+
+1. The privacy page is GENERATED FROM PRIVACY.md rather than written twice. Google re-checks the
+   privacy policy URL after publishing, and the repo copy is the one that gets edited, so two
+   hand-maintained copies is a promise to drift.
+2. The fonts are SELF-HOSTED in site/fonts/. A page whose pitch is "no tracking" must not ask
+   every visitor's browser to announce itself to Google Fonts. Both files are the latin variable
+   subsets, 70KB together.
 """
 import io
 import os
@@ -19,61 +24,164 @@ import html
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT = os.path.join(ROOT, 'site')
 
-# The app's own light palette, so the site and the product look like one thing.
+# ---------------------------------------------------------------------------------------------
+# Design direction
+#
+# The page has one job: make the METHOD legible in five seconds, because the method is the only
+# thing here a classroom cannot do. So the signature element is the review interval itself, drawn
+# to scale: a word returning after 1, 3, 7, 21, 60 days, with the gaps visibly widening. That
+# widening IS spaced repetition, it is the actual mechanism in the app (FSRS), and it is the one
+# graphic no competitor's landing page leads with.
+#
+# Palette is cool paper and ink rather than the warm cream every AI-designed page arrives at.
+# Cool suits a page about memory research, and it lets the brand's two fixed colours do specific
+# jobs: the blue carries structure, and the red core appears ONLY on the word being recalled.
+#
+# Type is Space Grotesk (display, eyebrows, the interval numerals: technical with real character
+# in the a, g and G) over Inter (body). Two families, no more.
+# ---------------------------------------------------------------------------------------------
+
 CSS = """
+@font-face{font-family:'Space Grotesk';src:url('/fonts/spacegrotesk.woff2') format('woff2');
+  font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'InterVar';src:url('/fonts/inter.woff2') format('woff2');
+  font-weight:100 900;font-style:normal;font-display:swap}
+
 :root{
-  --bg:#F6F0E6; --surface:#FFFBF3; --ink:#2B2118; --muted:#6B5B48;
-  --outline:#D8CDBA; --accent:#2f7fae; --flame:#c8402c;
+  --paper:#FBFBFD;      /* cool paper, not cream */
+  --raise:#FFFFFF;
+  --ink:#131A22;
+  --muted:#5C6B7A;
+  --line:#E3E8EE;
+  --blue:#2f7fae;       /* brand, from the logo */
+  --deep:#123B57;
+  --core:#c8402c;       /* brand core, used only for the word being recalled */
+  --display:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --body:'InterVar',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#14171A; --surface:#1C2126; --ink:#ECE6DC; --muted:#A2988A;
-    --outline:#2E353C; --accent:#63A8D6; --flame:#c8402c;
-  }
-}
+
 *{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased;
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px}
+a{color:var(--blue)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+/* ---- header ---- */
+.top{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+.mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.mark svg{width:32px;height:32px;flex:none}
+.mark b{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.02em}
+.top nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:22px}
+.top nav a:hover{color:var(--ink)}
+
+/* ---- hero ---- */
+.hero{padding:76px 0 30px;max-width:760px}
+.eyebrow{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--blue);margin:0 0 22px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,7.4vw,74px);line-height:1.02;
+  letter-spacing:-.035em;margin:0 0 24px}
+h1 .soft{color:var(--muted)}
+.lede{font-size:20px;line-height:1.55;color:var(--muted);margin:0;max-width:600px}
+.actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:38px 0 0}
+.cta{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;
+  font-size:16px;padding:15px 28px;border-radius:10px}
+.cta:hover{background:var(--deep)}
+.avail{font-size:14px;color:var(--muted)}
+
+/* ---- the loop: four steps, then the interval ruler ---- */
+.section{padding:88px 0;border-top:1px solid var(--line);margin-top:78px}
+.section-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 40px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.4vw,36px);
+  letter-spacing:-.025em;margin:0}
+.section-head p{margin:0;color:var(--muted);font-size:16px}
+
+.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 0 8px}
+.step{position:relative;padding:0 26px 0 0}
+.step:last-child{padding-right:0}
+.step .n{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.14em;
+  color:var(--blue);display:block;margin:0 0 12px}
+.step h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;
+  margin:0 0 8px}
+.step p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+/* the arrow between steps: drawn, not a character, so it lines up with the type */
+.step:not(:last-child)::after{content:"";position:absolute;top:5px;right:12px;width:9px;height:9px;
+  border-top:1.5px solid var(--line);border-right:1.5px solid var(--line);transform:rotate(45deg)}
+
+.ruler{margin:54px 0 0;border:1px solid var(--line);border-radius:14px;background:var(--raise);
+  padding:30px 30px 22px}
+.ruler-cap{font-size:15px;color:var(--muted);margin:0 0 26px;max-width:640px}
+/* Margins, not padding: an absolutely positioned child resolves its % against the PADDING box,
+   so padding would not keep the 0% and 100% labels off the edges. */
+.track{position:relative;height:72px;margin:0 52px}
+.track .line{position:absolute;left:-18px;right:0;top:35px;height:1px;background:var(--line)}
+.origin{position:absolute;left:-18px;top:26px}
+.origin::before{content:"";display:block;width:2px;height:18px;background:var(--core);
+  border-radius:1px}
+.origin span{position:absolute;top:24px;left:50%;transform:translateX(-50%);
+  font-family:var(--display);font-weight:500;font-size:12.5px;color:var(--core);white-space:nowrap}
+.tick{position:absolute;top:0;transform:translateX(-50%);text-align:center}
+.tick .dot{width:11px;height:11px;border-radius:50%;background:var(--blue);margin:30px auto 0}
+.tick .lab{font-family:var(--display);font-weight:500;font-size:12.5px;color:var(--muted);
+  margin-top:9px;white-space:nowrap}
+.gap{position:absolute;top:14px;transform:translateX(-50%);font-family:var(--display);
+  font-size:11px;letter-spacing:.06em;color:#9AA7B4;white-space:nowrap}
+
+/* ---- plain claims ---- */
+.claims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0}
+.claim{border-top:2px solid var(--ink);padding-top:16px}
+.claim h3{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 6px;
+  letter-spacing:-.01em}
+.claim p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+
+/* ---- footer ---- */
+footer{border-top:1px solid var(--line);margin-top:78px;padding:34px 0 56px;font-size:14px;
+  color:var(--muted);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--muted);text-decoration:none;margin-right:20px}
+footer a:hover{color:var(--ink)}
+
+/* ---- the privacy document ---- */
+article{max-width:680px;padding:26px 0 0}
+article h1{font-size:clamp(32px,5vw,44px);margin-bottom:18px}
+article h2{margin:44px 0 12px}
+article p,article li{font-size:16.5px;color:#2A343F}
+article ul,article ol{padding-left:22px}
+article li{margin-bottom:7px}
+article code{background:var(--raise);border:1px solid var(--line);border-radius:5px;
+  padding:1px 5px;font-size:14px}
+
+@media (max-width:760px){
+  .track{margin:0 34px;height:78px}
+  .tick .lab,.origin span{font-size:11.5px}
+  .gap{font-size:10px}
+  .ruler{padding:24px 18px 18px}
+  .loop{grid-template-columns:1fr 1fr;gap:30px 0}
+  .step:nth-child(2)::after{display:none}
+  .claims{grid-template-columns:1fr;gap:18px}
+  .hero{padding-top:48px}
+  .section{padding:60px 0;margin-top:52px}
 }
-.wrap{max-width:720px;margin:0 auto;padding:0 24px}
-header{padding:64px 0 8px}
-.mark{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-.mark svg{width:40px;height:40px;flex:none}
-/* LOGO_USAGE.md: the wordmark is Helvetica. */
-.mark b{font-size:27px;letter-spacing:-0.02em;font-weight:600;
-        font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
-.cta{display:inline-block;background:var(--accent);color:#fff;font-weight:600;
-     padding:14px 26px;border-radius:999px;margin:40px 0 12px}
-.sub{color:var(--muted);font-size:15px;margin:0}
-h1{font-size:clamp(30px,6vw,44px);line-height:1.15;letter-spacing:-0.03em;margin:36px 0 12px}
-.lede{font-size:19px;color:var(--muted);margin:0 0 32px}
-h2{font-size:20px;letter-spacing:-0.01em;margin:40px 0 10px}
-h3{font-size:17px;margin:28px 0 8px}
-p,li{color:var(--ink)}
-a{color:var(--accent)}
-.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:28px 0}
-.card{background:var(--surface);border:1px solid var(--outline);border-radius:14px;padding:18px}
-.card h3{margin:0 0 6px;font-size:16px}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.note{background:var(--surface);border:1px solid var(--outline);border-radius:14px;
-      padding:16px 18px;color:var(--muted);font-size:15px}
-footer{margin:64px 0 48px;padding-top:24px;border-top:1px solid var(--outline);
-       color:var(--muted);font-size:14px}
-footer a{margin-right:18px}
-article h1{margin-top:24px}
-article ul{padding-left:22px}
-article code{background:var(--surface);border:1px solid var(--outline);
-             border-radius:5px;padding:1px 5px;font-size:14px}
-.eff{color:var(--muted);font-size:15px}
+@media (max-width:430px){
+  .loop{grid-template-columns:1fr}
+  .step::after{display:none!important}
+  .step{padding-right:0}
+}
+
+/* One orchestrated moment: the ruler ticks in left to right, so the eye reads the widening gaps
+   in the order they happen. Nothing else on the page moves. */
+@media (prefers-reduced-motion:no-preference){
+  .tick{opacity:0;animation:pop .5s cubic-bezier(.2,.7,.3,1) forwards}
+  .gap{opacity:0;animation:pop .5s ease forwards}
+  @keyframes pop{from{opacity:0;transform:translateX(-50%) translateY(6px)}
+                 to{opacity:1;transform:translateX(-50%) translateY(0)}}
+}
 """
 
-# The real Orbit Core mark, copied from
+# The real Orbit Core mark, from
 # "Corlang language learning logo/design_handoff_corlang_loader/logo-orbit-core.svg".
-# Two BROKEN rings (the dash arrays and rotations are the mark, not decoration) around a solid
-# core. LOGO_USAGE.md: brand #2f7fae, core #c8402c, and both keep their colour on dark, so they
-# are hard-coded here rather than themed to the page palette.
+# Two BROKEN rings around a solid core; the dash arrays and rotations ARE the mark. LOGO_USAGE.md
+# fixes brand #2f7fae and core #c8402c, including on dark, so they are not themed.
 LOGO = """<svg viewBox="0 0 100 100" aria-hidden="true">
   <circle cx="50" cy="50" r="33" fill="none" stroke="#2f7fae" stroke-width="6"
           stroke-linecap="round" stroke-dasharray="132 76" transform="rotate(-52 50 50)"/>
@@ -83,7 +191,7 @@ LOGO = """<svg viewBox="0 0 100 100" aria-hidden="true">
 </svg>"""
 
 
-def page(title, description, body, canonical):
+def page(title, description, body, canonical, wide=True):
     return f"""<!doctype html>
 <html lang="en-GB">
 <head>
@@ -92,21 +200,28 @@ def page(title, description, body, canonical):
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(description)}">
 <link rel="canonical" href="{canonical}">
+<meta name="theme-color" content="#FBFBFD">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(description)}">
 <meta property="og:type" content="website">
+<meta property="og:url" content="{canonical}">
+<link rel="preload" href="/fonts/spacegrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>{CSS}</style>
 </head>
 <body>
 <div class="wrap">
-<header>
-  <a class="mark" href="/">{LOGO}<b>Corlang</b></a>
-</header>
+  <header class="top">
+    <a class="mark" href="/">{LOGO}<b>Corlang</b></a>
+    <nav><a href="/privacy/">Privacy</a><a href="mailto:support@corlang.app">Contact</a></nav>
+  </header>
 {body}
-<footer>
-  <a href="/">Home</a><a href="/privacy/">Privacy</a><a href="mailto:support@corlang.app">Contact</a>
-  <div style="margin-top:10px">Corlang &middot; core + language</div>
-</footer>
+  <footer>
+    <div><a href="/">Home</a><a href="/privacy/">Privacy</a><a
+      href="mailto:support@corlang.app">Contact</a></div>
+    <div>Corlang &middot; core + language</div>
+  </footer>
 </div>
 </body>
 </html>
@@ -114,15 +229,15 @@ def page(title, description, body, canonical):
 
 
 def md_to_html(md):
-    """Enough Markdown for PRIVACY.md: headings, bullets, ordered items, bold, code, links."""
+    """Enough Markdown for PRIVACY.md: headings, bullets, ordered items, bold, italics, code,
+    links. Verified after every build by diffing headings and list counts against the source."""
     def inline(t):
         t = html.escape(t)
         t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
-        # single-asterisk italics, AFTER bold so the bold pass has consumed its pairs
+        # single-asterisk italics AFTER bold, so the bold pass has consumed its pairs
         t = re.sub(r'(?<!\*)\*([^*\n]+?)\*(?!\*)', r'<em>\1</em>', t)
         t = re.sub(r'`(.+?)`', r'<code>\1</code>', t)
         t = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', t)
-        # bare URLs and emails, after escaping so we do not re-link inside an existing tag
         t = re.sub(r'(?<!["\'>])(https?://[^\s<)]+)', r'<a href="\1">\1</a>', t)
         t = re.sub(r'(?<![">:])\b([\w.+-]+@[\w-]+\.[\w.]+)\b', r'<a href="mailto:\1">\1</a>', t)
         return t
@@ -151,8 +266,7 @@ def md_to_html(md):
         if h:
             flush_para()
             flush_list()
-            level = len(h.group(1))
-            out.append(f'<h{level}>{inline(h.group(2))}</h{level}>')
+            out.append(f'<h{len(h.group(1))}>{inline(h.group(2))}</h{len(h.group(1))}>')
             continue
         b = re.match(r'^[-*]\s+(.*)$', stripped)
         o = re.match(r'^(\d+)\.\s+(.*)$', stripped)
@@ -166,7 +280,6 @@ def md_to_html(md):
             out.append('<li>' + inline((b or o).group(1 if b else 2)) + '</li>')
             continue
         if list_kind and line.startswith(('  ', '\t')):
-            # continuation of the current bullet
             out[-1] = out[-1][:-len('</li>')] + ' ' + inline(stripped) + '</li>'
             continue
         para.append(stripped)
@@ -175,54 +288,119 @@ def md_to_html(md):
     return '\n'.join(out)
 
 
+# The interval ladder, drawn to scale on a sqrt axis: real day numbers, compressed enough that
+# two months still fits beside one day. These are the app's own early intervals, not invented.
+#
+# The ladder starts at the FIRST REVIEW, not at the lesson. Including day 0 put the biggest
+# visual gap between "learned" and "1 day" (12.9% against the next gap's 9.5%), so the picture
+# said the gaps SHRINK and then grow, which is the opposite of the caption beside it. The lesson
+# is drawn as an origin rule instead: clearly where the ladder starts, not a rung on it.
+INTERVALS = [(1, "1 day", "+2 days"), (3, "3 days", "+4 days"), (7, "1 week", "+2 weeks"),
+             (21, "3 weeks", "+5 weeks"), (60, "2 months", "")]
+
+
+def ruler():
+    span = INTERVALS[-1][0] ** 0.5
+    ticks, gaps = [], []
+    for i, (day, label, delta) in enumerate(INTERVALS):
+        x = (day ** 0.5) / span * 100
+        delay = f'animation-delay:{0.11 * i + .2:.2f}s'
+        ticks.append(f'<div class="tick" style="left:{x:.2f}%;{delay}">'
+                     f'<div class="dot"></div><div class="lab">{label}</div></div>')
+        if delta:
+            nxt = (INTERVALS[i + 1][0] ** 0.5) / span * 100
+            gaps.append(
+                f'<div class="gap" style="left:{(x + nxt) / 2:.2f}%;{delay}">{delta}</div>')
+    return ('<div class="track"><div class="line"></div>'
+            '<div class="origin"><span>you learn it</span></div>'
+            + ''.join(gaps) + ''.join(ticks) + '</div>')
+
+
 def build():
     os.makedirs(os.path.join(OUT, 'privacy'), exist_ok=True)
 
-    landing = """
-<h1>Learn a language without rearranging your life.</h1>
-<p class="lede">No classroom, no commute, no hundreds of euros before you can say a word. Ten to
-fifteen minutes a day, wherever you happen to be. Croatian and Portuguese.</p>
+    landing = f"""
+  <section class="hero">
+    <p class="eyebrow">Spaced repetition &middot; 10 minutes a day</p>
+    <h1>Learn a language.<br><span class="soft">Remember it.</span></h1>
+    <p class="lede">Short daily lessons built on how memory actually works, so the word you
+    learn on Monday is still there in a month. No classroom, no commute, and no hundreds of
+    euros before you can say a word.</p>
+    <div class="actions">
+      <a class="cta" href="mailto:support@corlang.app?subject=Corlang%20test%20invite">Ask for a
+      test invite</a>
+      <span class="avail">Coming soon to Google Play &middot; Croatian and Portuguese
+      available</span>
+    </div>
+  </section>
 
-<div class="cards">
-  <div class="card"><h3>Wherever you are</h3><p>On the bus, in a queue, ten minutes before
-    bed.</p></div>
-  <div class="card"><h3>Short enough to keep</h3><p>One lesson a day, small enough to survive a
-    busy week.</p></div>
-  <div class="card"><h3>It stays with you</h3><p>Each word comes back right before you would
-    forget it, the way memory research says it should.</p></div>
-  <div class="card"><h3>All the way to B1</h3><p>A full path from your first words to the
-    official exam.</p></div>
-</div>
+  <section class="section">
+    <div class="section-head">
+      <h2>How a word actually sticks</h2>
+      <p>The same loop, every word, for as long as it takes.</p>
+    </div>
+    <div class="loop">
+      <div class="step"><span class="n">01</span><h3>Meet it</h3>
+        <p>A new word arrives inside a lesson, in a sentence you would really say.</p></div>
+      <div class="step"><span class="n">02</span><h3>Use it</h3>
+        <p>You write it and say it, rather than picking it out of four options.</p></div>
+      <div class="step"><span class="n">03</span><h3>Recall it</h3>
+        <p>The lesson ends by asking for it again, from memory, with no prompt.</p></div>
+      <div class="step"><span class="n">04</span><h3>Meet it again</h3>
+        <p>It comes back days later, and the gap grows every time you get it right.</p></div>
+    </div>
 
-<!-- LAUNCH SWITCH: replace this whole block with the Play button on the day the app goes
-     public. Tracked in docs/PENDING.md under "On the day you go live". -->
-<p class="cta">Coming soon to Google Play</p>
-<p class="sub">Want in early? <a href="mailto:support@corlang.app">Ask for a test invite.</a></p>
+    <div class="ruler">
+      <p class="ruler-cap">That last step is the whole method. A word you answer correctly is
+      scheduled further and further out, always just before you would have forgotten it. Fewer
+      reviews, better recall.</p>
+      {ruler()}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>What you get, and what you give up</h2>
+    </div>
+    <div class="claims">
+      <div class="claim"><h3>A finish line</h3>
+        <p>A fixed course from your first words to the official B1 exam, in its real format.
+        Not an endless feed.</p></div>
+      <div class="claim"><h3>Nothing to sign up for</h3>
+        <p>No account, no ads, no tracking. Your progress stays on your phone, and you can
+        export it whenever you like.</p></div>
+      <div class="claim"><h3>Ten minutes</h3>
+        <p>One lesson and its reviews. On the bus, in a queue, before bed.</p></div>
+    </div>
+  </section>
 """
+
     io.open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n').write(
-        page("Corlang — learn Croatian and Portuguese",
-             "Short daily lessons in Croatian and Portuguese, from your first words to B1. "
-             "No account, no ads.",
+        page("Corlang — learn a language, remember it",
+             "Short daily lessons built on spaced repetition, from your first words to the "
+             "official B1 exam. No account, no ads, no tracking.",
              landing, "https://corlang.app/"))
 
     md = io.open(os.path.join(ROOT, 'PRIVACY.md'), encoding='utf-8').read()
-    body = '<article>' + md_to_html(md) + '</article>'
-    io.open(os.path.join(OUT, 'privacy', 'index.html'), 'w', encoding='utf-8', newline='\n').write(
+    io.open(os.path.join(OUT, 'privacy', 'index.html'), 'w', encoding='utf-8',
+            newline='\n').write(
         page("Privacy Policy — Corlang",
              "Corlang has no account, no analytics and no tracking. What it stores, where, and "
              "the one case in which anything leaves your device.",
-             body, "https://corlang.app/privacy/"))
+             '<article>' + md_to_html(md) + '</article>', "https://corlang.app/privacy/"))
 
-    # Long-lived caching would strand a policy edit behind a CDN cache, and this is a document
-    # Google re-reads. HTML revalidates every time; nothing here is big enough for it to matter.
-    # `/*.html` was the rule here and it never matched anything anyone visits: the pages are
-    # served at `/` and `/privacy/`, not `/index.html`, so both fell through to default edge
-    # caching and a redeploy kept serving the old page. Caught by fetching the live site after a
-    # deploy and finding the previous headline still there. `/*` matches every path.
+    io.open(os.path.join(OUT, 'favicon.svg'), 'w', encoding='utf-8', newline='\n').write(
+        LOGO.replace(' aria-hidden="true"', ' xmlns="http://www.w3.org/2000/svg"'))
+
+    # `/*.html` was the rule here once and it matched nothing anyone visits: the pages are served
+    # at `/` and `/privacy/`, never `/index.html`, so both fell through to default edge caching
+    # and a redeploy kept serving the previous page. `/*` matches every path. Fonts are
+    # content-hashed by nothing, so they get a short cache and revalidate.
     io.open(os.path.join(OUT, '_headers'), 'w', encoding='utf-8', newline='\n').write(
         "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n"
-        "  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n")
-    print('built site/index.html and site/privacy/index.html')
+        "  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n"
+        "\n/fonts/*\n  Cache-Control: public, max-age=604800\n")
+    print('built site/index.html, site/privacy/index.html, favicon, _headers')
 
 
 if __name__ == '__main__':
