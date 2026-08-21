@@ -264,6 +264,75 @@ fun TalkScreen(container: AppContainer, lang: String) {
     // imePadding: with edge-to-edge on, the keyboard would otherwise cover the composer row
     // entirely — the user typed blind on the one screen where typing is the whole point.
     Column(modifier = Modifier.fillMaxSize().imePadding()) {
+        // The opening screen: nothing has been said yet, so this IS the screen until the learner
+        // picks a starter or types. It lives OUTSIDE the LazyColumn on purpose — as a list item
+        // it hung off the top edge, leaving the choices stranded under the title bar with the
+        // whole screen empty below them. Centred in the free space, the starters read as the
+        // point of the screen. verticalScroll + Arrangement.Center centres while it fits and
+        // scrolls when it does not (small screen, large font).
+        if (messages.isEmpty() && !sending) {
+            Column(
+                Modifier
+                    .weight(1f)
+                    .fillMaxWidth()
+                    .verticalScroll(rememberScrollState())
+                    .padding(horizontal = 16.dp, vertical = 12.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                TutorEnglishHelpToggle(
+                    checked = englishHelp,
+                    languageName = languageName,
+                    onCheckedChange = { on ->
+                        container.appScope.launch {
+                            container.languagePrefs.setTutorEnglishHelp(lang, on)
+                        }
+                    }
+                )
+                Text(
+                    "How would you like to practise? ($level)",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth().padding(top = 24.dp, bottom = 12.dp)
+                )
+                // Clear English labels (an A0 could not read the old target-language
+                // starters); the tutor replies in $languageName using the progress context.
+                tutorModes().forEach { mode ->
+                    OutlinedButton(
+                        onClick = { send(mode.kickoff) },
+                        modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
+                        contentPadding = androidx.compose.foundation.layout.PaddingValues(
+                            horizontal = 16.dp, vertical = 10.dp
+                        )
+                    ) {
+                        Column(
+                            Modifier.fillMaxWidth(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                mode.label,
+                                fontWeight = FontWeight.SemiBold,
+                                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                            )
+                            Text(
+                                mode.desc,
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                            )
+                        }
+                    }
+                }
+                Text(
+                    "…or just type a message below.",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+            }
+        } else {
         LazyColumn(
             state = listState,
             modifier = Modifier.weight(1f).fillMaxWidth().padding(horizontal = 12.dp),
@@ -279,79 +348,6 @@ fun TalkScreen(container: AppContainer, lang: String) {
                     onSpeak = { container.tts.speak(stripGloss(msg.content)) }
                 )
             }
-            // The opening screen: nothing has been said yet, so this IS the screen until the
-            // learner picks a starter or types.
-            if (messages.isEmpty() && !sending) {
-                item {
-                    Column(
-                        Modifier.fillMaxWidth().padding(top = 8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        // English-help toggle, up front: a beginner shouldn't be stranded when the
-                        // tutor speaks only the target language. One line only — the explanatory
-                        // second line made the first thing on an empty screen a wall of text.
-                        // "Teach me in English", not "Explain": with it on the tutor TEACHES in
-                        // English rather than glossing the odd word.
-                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                            Text(
-                                "Teach me in English",
-                                style = MaterialTheme.typography.bodyMedium,
-                                modifier = Modifier.weight(1f)
-                            )
-                            androidx.compose.material3.Switch(
-                                checked = englishHelp,
-                                onCheckedChange = { on ->
-                                    container.appScope.launch {
-                                        container.languagePrefs.setTutorEnglishHelp(lang, on)
-                                    }
-                                }
-                            )
-                        }
-                        Text(
-                            "How would you like to practise? ($level)",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                            modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
-                        )
-                        // Clear English labels (an A0 could not read the old target-language
-                        // starters); the tutor replies in $languageName using the progress context.
-                        tutorModes().forEach { mode ->
-                            OutlinedButton(
-                                onClick = { send(mode.kickoff) },
-                                modifier = Modifier.fillMaxWidth(),
-                                contentPadding = androidx.compose.foundation.layout.PaddingValues(
-                                    horizontal = 16.dp, vertical = 10.dp
-                                )
-                            ) {
-                                Column(
-                                    Modifier.fillMaxWidth(),
-                                    horizontalAlignment = Alignment.CenterHorizontally
-                                ) {
-                                    Text(
-                                        mode.label,
-                                        fontWeight = FontWeight.SemiBold,
-                                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
-                                    )
-                                    Text(
-                                        mode.desc,
-                                        style = MaterialTheme.typography.labelSmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
-                                    )
-                                }
-                            }
-                        }
-                        Text(
-                            "…or just type a message below.",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
-                        )
-                    }
-                }
-            }
             if (sending) {
                 item {
                     Row(
@@ -365,6 +361,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
                     }
                 }
             }
+        }
         }
 
         error?.let {
@@ -402,7 +399,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 // last 12 messages are resent each turn), multiplying its token cost by up
                 // to 12. The worker's body cap is the wall; this is the fence.
                 onValueChange = { input = it.take(TUTOR_INPUT_MAX) },
-                placeholder = { Text(composerHint(lang)) },
+                placeholder = { Text(composerHint(lang, languageName, englishHelp)) },
                 supportingText = if (input.length >= TUTOR_INPUT_MAX * 9 / 10) {
                     { Text("${input.length}/$TUTOR_INPUT_MAX") }
                 } else null,
@@ -413,6 +410,53 @@ fun TalkScreen(container: AppContainer, lang: String) {
             Button(onClick = { send(input) }, enabled = input.isNotBlank() && !sending) {
                 Text("Send")
             }
+        }
+    }
+}
+
+/**
+ * The "Teach me in English" switch on the opening screen.
+ *
+ * It used to be a bare Row on the same flat background as the starters directly below it, so the
+ * label read as a heading for them and the switch looked like it belonged to whatever text sat
+ * nearest. Its own tinted, rounded surface — plus a line saying what it does — makes it one
+ * self-contained control instead of loose text with a switch beside it. The whole card is the
+ * tap target, so the label works as well as the switch.
+ */
+@Composable
+private fun TutorEnglishHelpToggle(
+    checked: Boolean,
+    languageName: String,
+    onCheckedChange: (Boolean) -> Unit
+) {
+    Surface(
+        color = MaterialTheme.colorScheme.surfaceVariant,
+        contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+        shape = RoundedCornerShape(14.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onCheckedChange(!checked) }
+    ) {
+        Row(
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(Modifier.weight(1f).padding(end = 12.dp)) {
+                Text(
+                    "Teach me in English",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(
+                    if (checked) "The tutor explains in English and gives you $languageName to use."
+                    else "The tutor speaks $languageName. Turn this on if you get stuck.",
+                    style = MaterialTheme.typography.labelSmall
+                )
+            }
+            androidx.compose.material3.Switch(
+                checked = checked,
+                onCheckedChange = onCheckedChange
+            )
         }
     }
 }
@@ -520,8 +564,16 @@ private fun buildTutorContext(container: AppContainer, lang: String, currentDay:
 /** How many recent words to name for the tutor. Enough to anchor, small enough for the cap. */
 private const val TUTOR_CONTEXT_WORDS = 45
 
+/**
+ * Composer hint. With "Teach me in English" ON the learner is being taught in English, and a
+ * hint written in the target language is the one instruction they cannot read — so it is given
+ * in English, naming the language they are meant to answer in. OFF, it stays in-language.
+ */
+private fun composerHint(lang: String, languageName: String, englishHelp: Boolean): String =
+    if (englishHelp) "Write something in $languageName…" else inLanguageHint(lang)
+
 /** Per-language composer hint ("write in <language>" in that language). */
-private fun composerHint(lang: String): String = when (lang) {
+private fun inLanguageHint(lang: String): String = when (lang) {
     "hr" -> "Piši na hrvatskom…"
     "pt" -> "Escreve em português…"
     "fr" -> "Écris en français…"
