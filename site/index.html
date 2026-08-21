@@ -165,6 +165,18 @@ dialog::backdrop{background:rgba(14,20,26,.46);backdrop-filter:blur(2px)}
 .msg.bad{color:var(--core)}
 .msg.good{color:var(--blue)}
 
+.addr{display:flex;align-items:center;gap:10px;margin:0 0 4px;
+  border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:12px 14px}
+.addr code{flex:1;font-family:var(--body);font-size:16px;background:none;border:none;padding:0;
+  color:var(--ink);word-break:break-all}
+.addr button{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:8px;
+  border:1px solid var(--line);background:var(--raise);color:var(--ink);cursor:pointer;flex:none}
+.addr button:hover{border-color:var(--blue);color:var(--blue)}
+.linkish{background:none;border:none;padding:0;font:inherit;color:var(--muted);cursor:pointer;
+  text-decoration:none}
+.linkish:hover{color:var(--ink)}
+
+
 /* ---- footer ---- */
 footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 48px;font-size:14px;
   color:var(--muted);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -264,7 +276,8 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
           stroke-linecap="round" stroke-dasharray="80 52" transform="rotate(128 50 50)"/>
   <circle cx="50" cy="50" r="9" fill="#c8402c"/>
 </svg><b>Corlang</b></a>
-    <nav><a href="/privacy/">Privacy</a><a href="mailto:support@corlang.app">Contact</a></nav>
+    <nav><a href="/privacy/">Privacy</a><a href="mailto:support@corlang.app"
+      data-contact>Contact</a></nav>
   </header>
 
   <section class="hero">
@@ -294,13 +307,13 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       <p>The same loop, every word, for as long as it takes.</p>
     </div>
     <div class="loop">
-      <div class="step"><span class="n">01</span><h3>Meet it</h3>
+      <div class="step"><span class="n">01</span><h3>Learn it</h3>
         <p>A new word arrives inside a lesson, in a sentence you would really say.</p></div>
       <div class="step"><span class="n">02</span><h3>Use it</h3>
-        <p>You write it and say it, rather than picking it out of four options.</p></div>
+        <p>You write it, say it and practise it.</p></div>
       <div class="step"><span class="n">03</span><h3>Recall it</h3>
         <p>The lesson ends by asking for it again, from memory, with no prompt.</p></div>
-      <div class="step"><span class="n">04</span><h3>Meet it again</h3>
+      <div class="step"><span class="n">04</span><h3>Review it again</h3>
         <p>It comes back days later, and the gap grows every time you get it right.</p></div>
     </div>
 
@@ -357,9 +370,26 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
     </form>
   </dialog>
 
+  <dialog id="contact">
+    <form class="dlg" method="dialog">
+      <h3>Get in touch</h3>
+      <p>Questions, bugs, or an invite that never arrived. A real person reads these.</p>
+      <div class="addr">
+        <code id="contact-addr">support@corlang.app</code>
+        <button type="button" id="contact-copy">Copy</button>
+      </div>
+      <p class="msg" id="contact-msg" role="status" aria-live="polite"></p>
+      <div class="dlg-row">
+        <a class="cta" style="flex:1;text-align:center"
+           href="mailto:support@corlang.app">Open in mail app</a>
+        <button value="close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
   <footer>
     <div><a href="/">Home</a><a href="/privacy/">Privacy</a><a
-      href="mailto:support@corlang.app">Contact</a></div>
+      href="mailto:support@corlang.app" data-contact>Contact</a></div>
     <div>Corlang</div>
   </footer>
 </div>
@@ -388,6 +418,55 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.loop, .track, .claims, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
+})();
+
+/* Contact dialog. No form and no endpoint: it shows the address, copies it, and offers a
+   mailto for people who do have a mail client. A contact FORM would mean storing message bodies,
+   a second thing to disclose in the privacy policy, and a place for spam to accumulate that
+   somebody has to actually watch. */
+(function(){
+  var dlg = document.getElementById('contact');
+  if (!dlg || !dlg.showModal) return;
+  var copy = document.getElementById('contact-copy');
+  var msg = document.getElementById('contact-msg');
+  var addr = 'support@corlang.app';
+
+  document.querySelectorAll('[data-contact]').forEach(function(b){
+    b.addEventListener('click', function(e){
+      /* The trigger is a real mailto: link, so it works with JS off. Here we take it over and
+         show the dialog instead, which does not hijack the browser into a mail client. */
+      e.preventDefault();
+      msg.textContent = '';
+      msg.className = 'msg';
+      copy.textContent = 'Copy';
+      dlg.showModal();
+    });
+  });
+
+  copy.addEventListener('click', function(){
+    function done(){
+      copy.textContent = 'Copied';
+      msg.className = 'msg good';
+      msg.textContent = 'Address copied to your clipboard.';
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(addr).then(done, select);
+    } else {
+      select();
+    }
+    /* Fallback: select the text so a manual copy is one keystroke, rather than failing silently
+       on http or in a browser without the clipboard API. */
+    function select(){
+      var node = document.getElementById('contact-addr');
+      var r = document.createRange();
+      r.selectNodeContents(node);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+      msg.className = 'msg';
+      msg.textContent = 'Selected. Press Ctrl+C or Cmd+C to copy.';
+    }
+  });
 })();
 
 /* Invite dialog. Posts to /api/invite, which stores the address in Cloudflare KV.
