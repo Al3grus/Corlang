@@ -101,6 +101,27 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .gap{position:absolute;top:14px;transform:translateX(-50%);font-family:var(--display);
   font-size:11px;letter-spacing:.06em;color:#9AA7B4;white-space:nowrap}
 
+/* ---- the app itself ----
+   Three phones, the middle one raised, on a band that separates them from the page. A horizontal
+   scroller below 760px rather than a stack: three portrait phones stacked is a very long page,
+   and swiping a row of screens is the gesture people already use in a store listing. */
+.shots{margin:0;background:linear-gradient(180deg,#F4F6F9,#EEF1F5);border:1px solid var(--line);
+  border-radius:18px;padding:44px 0 48px;overflow:hidden}
+.shots-row{display:flex;gap:26px;justify-content:center;align-items:flex-end;padding:0 34px}
+.phone{flex:0 0 236px;border-radius:26px;background:var(--raise);padding:7px;
+  border:1px solid #DDE3EA;box-shadow:0 18px 40px -18px rgba(19,26,34,.28)}
+.phone:nth-child(2){transform:translateY(-24px)}
+.phone img{display:block;width:100%;height:auto;border-radius:20px}
+.shots-cap{text-align:center;color:var(--muted);font-size:14.5px;margin:30px 34px 0}
+
+@media (max-width:760px){
+  .shots{border-radius:16px;padding:34px 0 38px}
+  .shots-row{overflow-x:auto;justify-content:flex-start;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;padding:0 22px 8px}
+  .phone{flex:0 0 210px;scroll-snap-align:center}
+  .phone:nth-child(2){transform:none}
+}
+
 /* ---- plain claims ---- */
 .claims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0}
 .claim{border-top:2px solid var(--ink);padding-top:16px}

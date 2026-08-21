@@ -131,6 +131,27 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .gap{position:absolute;top:14px;transform:translateX(-50%);font-family:var(--display);
   font-size:11px;letter-spacing:.06em;color:#9AA7B4;white-space:nowrap}
 
+/* ---- the app itself ----
+   Three phones, the middle one raised, on a band that separates them from the page. A horizontal
+   scroller below 760px rather than a stack: three portrait phones stacked is a very long page,
+   and swiping a row of screens is the gesture people already use in a store listing. */
+.shots{margin:0;background:linear-gradient(180deg,#F4F6F9,#EEF1F5);border:1px solid var(--line);
+  border-radius:18px;padding:44px 0 48px;overflow:hidden}
+.shots-row{display:flex;gap:26px;justify-content:center;align-items:flex-end;padding:0 34px}
+.phone{flex:0 0 236px;border-radius:26px;background:var(--raise);padding:7px;
+  border:1px solid #DDE3EA;box-shadow:0 18px 40px -18px rgba(19,26,34,.28)}
+.phone:nth-child(2){transform:translateY(-24px)}
+.phone img{display:block;width:100%;height:auto;border-radius:20px}
+.shots-cap{text-align:center;color:var(--muted);font-size:14.5px;margin:30px 34px 0}
+
+@media (max-width:760px){
+  .shots{border-radius:16px;padding:34px 0 38px}
+  .shots-row{overflow-x:auto;justify-content:flex-start;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;padding:0 22px 8px}
+  .phone{flex:0 0 210px;scroll-snap-align:center}
+  .phone:nth-child(2){transform:none}
+}
+
 /* ---- plain claims ---- */
 .claims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0}
 .claim{border-top:2px solid var(--ink);padding-top:16px}
@@ -389,8 +410,45 @@ def ruler():
             + ''.join(gaps) + ''.join(ticks) + '</div>')
 
 
+# The three the site shows. All LIGHT captures, because the page is light: a dark phone on cool
+# paper reads as a foreign object. They are also three different answers to "what is this?" —
+# the course, the exam it aims at, and the tutor.
+SHOWCASE = [
+    ('light-theme-learn-tab.jpeg', 'The Learn tab, showing the day lesson and the path through the course'),
+    ('light-theme-mock-exam-2.jpeg', 'A mock exam writing task in the official format'),
+    ('light-theme-ai-tutor.jpeg', 'The AI tutor correcting a sentence in Portuguese'),
+]
+
+
+def shots():
+    """Resize the captures for the web. 720px wide is 2x the size they are shown at, so they stay
+    crisp on a phone, and JPEG q80 keeps each one under ~60KB."""
+    from PIL import Image
+    src = os.path.join(ROOT, 'docs', 'store-assets', 'screenshots')
+    dst = os.path.join(OUT, 'shots')
+    os.makedirs(dst, exist_ok=True)
+    out = []
+    for name, alt in SHOWCASE:
+        p = os.path.join(src, name)
+        if not os.path.isfile(p):
+            print('  missing screenshot %s, skipping' % name)
+            continue
+        im = Image.open(p).convert('RGB')
+        w = 720
+        im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
+        stem = os.path.splitext(name)[0].replace('light-theme-', '') + '.jpg'
+        im.save(os.path.join(dst, stem), 'JPEG', quality=80, optimize=True, progressive=True)
+        out.append((stem, alt, im.width, im.height))
+    return out
+
+
 def build():
     os.makedirs(os.path.join(OUT, 'privacy'), exist_ok=True)
+
+    SHOTS_HTML = "\n".join(
+        f'        <div class="phone"><img src="/shots/{f}" alt="{html.escape(alt)}" '
+        f'width="{w}" height="{h}" loading="lazy" decoding="async"></div>'
+        for f, alt, w, h in shots())
 
     landing = f"""
   <section class="hero">
@@ -428,6 +486,19 @@ def build():
       scheduled further and further out, always just before you would have forgotten it. Fewer
       reviews, better recall.</p>
       {ruler()}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>This is the whole app</h2>
+      <p>No dashboards to configure. A lesson, your reviews, and a tutor if you want one.</p>
+    </div>
+    <div class="shots rise">
+      <div class="shots-row">
+{SHOTS_HTML}
+      </div>
+      <p class="shots-cap">Shown in the light theme. There is a dark one too.</p>
     </div>
   </section>
 
