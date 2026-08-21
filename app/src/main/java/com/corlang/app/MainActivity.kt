@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.Box
@@ -144,6 +146,24 @@ private fun CorlangApp(container: AppContainer) {
     // Settings lives OUTSIDE the nav graph: pushing it onto a tab's back stack gets it
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
     var showSettings by rememberSaveable { mutableStateOf(false) }
+    /**
+     * Whether the NEXT navigation skips the tab crossfade. Every navigation sets it, rather than
+     * one setting it and something else resetting it: a reset would have to land between the tap
+     * and the moment AnimatedContent latches its transition spec, and that ordering is not ours
+     * to depend on.
+     *
+     * True for exactly one case: the navigation that happens as an overlay closes.
+     *
+     * Field report: tapping Review from inside Settings showed Settings, then the Profile tab
+     * for a moment, then Review. Closing the overlay and navigating are one recomposition, so the
+     * frame after the tap has the overlay gone and the base layer still on the route you came
+     * FROM, and the 150ms crossfade then plays that old tab out in full. Fading the overlay
+     * instead would not have helped: the wrong tab is underneath either way.
+     *
+     * So the switch underneath the overlay is instant, and the overlay coming away IS the
+     * transition. Deliberately not saveable: it describes one navigation, not a screen state.
+     */
+    var skipTabAnim by remember { mutableStateOf(false) }
     // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
     var showPlacement by rememberSaveable { mutableStateOf(false) }
     // Paywall overlay: open flag + mode. paywallLevel null = Premium subscription; else the CEFR
@@ -319,6 +339,7 @@ private fun CorlangApp(container: AppContainer) {
                         onClick = {
                             scope.launch { container.languagePrefs.markPlacementHandled(pl) }
                             newLangPrompt = null
+                            skipTabAnim = false
                             // Lesson 1 means the lesson itself, so land the learner on it, not back on
                             // the Profile page they switched languages from.
                             navController.navigate(Dest.TODAY.route) {
@@ -351,6 +372,9 @@ private fun CorlangApp(container: AppContainer) {
                             // moves while the overlay stays on screen (looks frozen). The paywall
                             // was missing from this list: Get Premium then any tab tap navigated
                             // underneath while the opaque paywall stayed up.
+                            // Only a handoff FROM an overlay skips the fade; an ordinary
+                            // tab-to-tab tap keeps it.
+                            skipTabAnim = showSettings || showPlacement || showPaywall
                             showSettings = false
                             showPlacement = false
                             showPaywall = false
@@ -399,10 +423,10 @@ private fun CorlangApp(container: AppContainer) {
         NavHost(
             navController = navController,
             startDestination = Dest.TODAY.route,
-            enterTransition = { fadeIn(tabFade) },
-            exitTransition = { fadeOut(tabFade) },
-            popEnterTransition = { fadeIn(tabFade) },
-            popExitTransition = { fadeOut(tabFade) }
+            enterTransition = { if (skipTabAnim) EnterTransition.None else fadeIn(tabFade) },
+            exitTransition = { if (skipTabAnim) ExitTransition.None else fadeOut(tabFade) },
+            popEnterTransition = { if (skipTabAnim) EnterTransition.None else fadeIn(tabFade) },
+            popExitTransition = { if (skipTabAnim) ExitTransition.None else fadeOut(tabFade) }
         ) {
             // Tab switches share ONE uniform fade (below), so every tab — Review included —
             // animates identically. The old per-screen Crossfade(lang) wrappers are gone: they
@@ -424,6 +448,7 @@ private fun CorlangApp(container: AppContainer) {
                     inLesson = inLesson,
                     onInLessonChange = { inLesson = it },
                     onNavigate = { route ->
+                        skipTabAnim = false
                         navController.navigate(route) {
                             popUpTo(Dest.TODAY.route) { saveState = true }
                             launchSingleTop = true
@@ -443,21 +468,21 @@ private fun CorlangApp(container: AppContainer) {
                 LevelQuizScreen(
                     container, lang,
                     levelId = entry.arguments?.getString("level") ?: "",
-                    onExit = { navController.popBackStack() }
+                    onExit = { skipTabAnim = false; navController.popBackStack() }
                 )
             }
             composable("readiness/{level}") { entry ->
                 ReadinessScreen(
                     container, lang,
                     levelId = entry.arguments?.getString("level") ?: "",
-                    onExit = { navController.popBackStack() }
+                    onExit = { skipTabAnim = false; navController.popBackStack() }
                 )
             }
             composable("exam/{level}") { entry ->
                 ExamScreen(
                     container, lang,
                     levelId = entry.arguments?.getString("level") ?: "",
-                    onExit = { navController.popBackStack() }
+                    onExit = { skipTabAnim = false; navController.popBackStack() }
                 )
             }
             composable(Dest.PROFILE.route) {
@@ -517,6 +542,8 @@ private fun CorlangApp(container: AppContainer) {
                             // Land on the Today dashboard of the chosen course (the one with the
                             // most remaining progress, or the freshly reset course itself).
                             appState.selectLanguage(landOn)
+                            // Same handoff: this navigates as Settings closes.
+                            skipTabAnim = true
                             showSettings = false
                             inLesson = false
                             navController.navigate(Dest.TODAY.route) {

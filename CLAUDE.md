@@ -2,7 +2,7 @@
 
 Android/Kotlin + Compose language-learning app. A **fixed app skeleton** renders **per-language JSON content**. The whole design goal: content grows without touching code. These rules exist to keep that true. Deeper playbook (model choice, workflow, token efficiency): **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
 
-Current: v0.47.0 (versionCode 174). Live courses: `hr pt` — `fr de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`) until the live courses are production-proven. Unhide = re-add the code to that manifest. See `MEMORY.md` (auto-memory) for the live resume point.
+Current: v0.47.1 (versionCode 175). Live courses: `hr pt` — `fr de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`) until the live courses are production-proven. Unhide = re-add the code to that manifest. See `MEMORY.md` (auto-memory) for the live resume point.
 
 ---
 
