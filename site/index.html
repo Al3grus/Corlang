@@ -112,9 +112,24 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .ruler{margin:38px 0 0;border:1px solid var(--line);border-radius:14px;background:var(--raise);
   padding:30px 30px 22px}
 .ruler-cap{font-size:15px;color:var(--muted);margin:0 0 26px;max-width:640px}
+/* The ruler is drawn TO SCALE, so its labels sit at fixed percentages and cannot reflow. Below
+   about 547px they start overlapping (measured: "2 months" against "3 weeks" goes first), and a
+   phone gives the track roughly 216px. Rather than shrink the type into illegibility or drop the
+   annotations that carry the point, the track keeps its floor and the container scrolls.
+
+   Only the TRACK scrolls, not the caption above it, which should stay put and readable.
+
+   660px, not the 547 the maths gives. That figure is what the TRACK needs; the track also sits
+   inside side margins the min-width does not cover, and those margins differ by breakpoint. 560
+   left "1 day" and "3 days" 5px short, and 620 still failed in the narrow band where the floor
+   has kicked in but the wider desktop margins are still applied. 660 clears both. */
+.track-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.track-scroll::-webkit-scrollbar{height:6px}
+.track-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
 /* Margins, not padding: an absolutely positioned child resolves its % against the PADDING box,
    so padding would not keep the 0% and 100% labels off the edges. */
-.track{position:relative;height:72px;margin:0 52px}
+.track{position:relative;height:72px;margin:0 52px;min-width:660px}
 .track .line{position:absolute;left:-18px;right:0;top:35px;height:1px;background:var(--line)}
 .origin{position:absolute;left:-18px;top:26px}
 .origin::before{content:"";display:block;width:2px;height:18px;background:var(--core);
@@ -245,7 +260,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .hero-shots .ph.front{right:4%;top:52px}
 }
 @media (max-width:760px){
-  .track{margin:0 34px;height:78px}
+  .track{margin:0 30px;height:78px}
   .tick .lab,.origin span{font-size:11.5px}
   .gap{font-size:10px}
   .ruler{padding:24px 18px 18px}
@@ -367,7 +382,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       <p class="ruler-cap">That last step is the whole method. A word you answer correctly is
       scheduled further and further out, always just before you would have forgotten it. Fewer
       reviews, better recall.</p>
-      <div class="track"><div class="line"></div><div class="origin"><span>you learn it</span></div><div class="gap" style="left:17.64%;transition-delay:0.12s">+2 days</div><div class="gap" style="left:28.26%;transition-delay:0.21s">+4 days</div><div class="gap" style="left:46.66%;transition-delay:0.30s">+2 weeks</div><div class="gap" style="left:79.58%;transition-delay:0.39s">+5 weeks</div><div class="tick" style="left:12.91%;transition-delay:0.12s"><div class="dot"></div><div class="lab">1 day</div></div><div class="tick" style="left:22.36%;transition-delay:0.21s"><div class="dot"></div><div class="lab">3 days</div></div><div class="tick" style="left:34.16%;transition-delay:0.30s"><div class="dot"></div><div class="lab">1 week</div></div><div class="tick" style="left:59.16%;transition-delay:0.39s"><div class="dot"></div><div class="lab">3 weeks</div></div><div class="tick" style="left:100.00%;transition-delay:0.48s"><div class="dot"></div><div class="lab">2 months</div></div></div>
+      <div class="track-scroll"><div class="track"><div class="line"></div><div class="origin"><span>you learn it</span></div><div class="gap" style="left:17.64%;transition-delay:0.12s">+2 days</div><div class="gap" style="left:28.26%;transition-delay:0.21s">+4 days</div><div class="gap" style="left:46.66%;transition-delay:0.30s">+2 weeks</div><div class="gap" style="left:79.58%;transition-delay:0.39s">+5 weeks</div><div class="tick" style="left:12.91%;transition-delay:0.12s"><div class="dot"></div><div class="lab">1 day</div></div><div class="tick" style="left:22.36%;transition-delay:0.21s"><div class="dot"></div><div class="lab">3 days</div></div><div class="tick" style="left:34.16%;transition-delay:0.30s"><div class="dot"></div><div class="lab">1 week</div></div><div class="tick" style="left:59.16%;transition-delay:0.39s"><div class="dot"></div><div class="lab">3 weeks</div></div><div class="tick" style="left:100.00%;transition-delay:0.48s"><div class="dot"></div><div class="lab">2 months</div></div></div></div>
     </div>
   </section>
 
