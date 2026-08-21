@@ -52,41 +52,46 @@ Everything else on the critical path is browser work in Play Console.
 
 ---
 
-## 🟡 CONTENT DEBT — Portuguese has no A0 onramp
+## ✅ DECIDED 2026-08-22 — Portuguese does not get an A0, and this is not a gap
 
-`docs/language-standard.md` allots Spanish/Italian/Portuguese an A0 of **0 to 15 lessons**,
-"added only where the language needs it". Portuguese shipped with **0**, so its course starts
-at A1 and the free window is a lesson COUNT that falls inside A1, while Croatian's window is a
-whole level. Both give away a comparable share (4.7% vs 4.2%), so nothing is broken, but the
-two courses have different shapes for no reason a learner would recognise.
+Investigated properly and closed. **Do not reopen without reading this first**, because the
+idea is attractive and the reasons it fails are all one level down.
 
-European Portuguese arguably needs the onramp more than most: nasal vowels, vowel reduction,
-the sh-like final -s and lh/nh are exactly the "scripts and sounds" the rule exists for, and
-day 1 already spends a whole lesson on them.
+`docs/language-standard.md` allows Spanish/Italian/Portuguese an A0 of **0 to 15 lessons**,
+"added only where the language needs it". Portuguese chose 0. Croatian has 16 because you
+cannot read a word of Croatian until you know 30 letters and eight digraphs, which is an
+alphabet to teach. Portuguese uses letters the learner already has and needs sound *rules*,
+which is a smaller job. The asymmetry is the standard working, not drifting.
 
-**This is authoring, not relabelling.** pt A1's floor is 45 lessons and the course sits exactly
-on it, so moving ten lessons down into an A0 drops A1 to 35 and
-`everyCourseMeetsTheWeightedLessonFloor` fails — correctly. An A0 must be written on top,
-taking the course from 240 to about 250.
+Three findings, each of which independently sinks the idea:
 
-Scope when picked up (a normal Gold Book batch, Sonnet-appropriate):
-- ~10 A0 lessons before the current day 1, covering sounds, greetings, introductions, ser/estar,
-  numbers, gender and articles. Today's A1 days 1 to 10 are the model for what belongs there,
-  and cover this ground already, so the new lessons must teach it more slowly rather than
-  duplicate it: `proctor.py` will flag cross-lesson repetition if they do not.
-- Deck words appended (never inserted) and the plan renumbered, which shifts every later day.
-  Word ids are frozen SRS keys, so the deck order must not be disturbed.
-- An A0 level quiz. **A draft of one is already written** and covers the ten topics one question
-  each: `docs/drafts/pt-a0-quiz.json`. A0 is quiz-only, no readiness milestone and no mock exam
-  (`everyPlanLevelEndsInQuizReadinessAndMockExam`).
-- pt placement bands with `startDay` inside A0 relabelled from A1 to A0.
-- `pt/meta.json` → `freeLessons` set to A0's last day, and the free tier becomes "level A0" in
-  both courses.
-- `pt/levels.json` **already carries a full A0 entry** (title, milestone, canDo) that nothing
-  currently uses. It is dead data until this lands.
+1. **pt days 1 to 10 already ARE the A0.** Sounds, greetings, introductions, ser/estar, numbers,
+   gender and articles, family, -AR verbs, -ER/-IR verbs, questions. Lined up against Croatian's
+   A0 they cover the same ground in the same order. Portuguese has an onramp; it is labelled A1.
 
-Not a launch blocker: product ids are unchanged either way, since A0 would be free and
-`paidLevels` stays `[A1, A2, B1]`.
+2. **The deck is built to match them, and word ids are the words themselves** (`olá` → id `olá`).
+   Every number 0 to 20, every personal pronoun, every demonstrative and most survival phrases
+   an A0 would teach already sit in the first hundred deck positions. A new A0 vocabulary pack
+   would duplicate frozen SRS ids; teaching those words in a new A0 *and* in the existing days 1
+   to 10 is the cross-lesson repetition `proctor.py` exists to catch.
+
+3. **Relabelling drops A1 to 35, under its floor of 45, and the floor is a quality rule.** It
+   says reaching A1 in Portuguese takes 45 lessons of teaching.
+   `everyCourseMeetsTheWeightedLessonFloor` fails the relabel, correctly. Restoring the floor
+   means authoring 10 more A1 lessons, but A1's 45 topics are already a complete syllabus, so
+   those 10 would be padding invented to satisfy a number. That is precisely what the standard
+   warns against: "a VOLUME rule wearing the costume of a quality rule".
+
+**What is true instead.** The free tier is a lesson COUNT in Portuguese and a LEVEL in Croatian,
+and both give away a comparable share of their course: 4.7% and 4.2%. Share is the invariant,
+pinned by `PaywallGateTest`. A learner meets the paywall after ten lessons either way; the only
+thing an A0 would change is the label on a chip.
+
+**One real leftover.** `pt/levels.json` carries a full A0 entry (title, milestone, canDo) that
+nothing uses, and by the no-dead-data rule it should either drive something or go. It is
+harmless today because no plan day has that level, so nothing renders it. Left in place
+deliberately: if Portuguese ever grows an onramp the entry is the spec for it, and this section
+is the reason it is still there.
 
 ## 🔴 TRACK A — Get to Play testers (critical path, in order)
 
