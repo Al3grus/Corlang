@@ -2,10 +2,13 @@ package com.corlang.app.ui.components
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -27,7 +30,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.draw.drawBehind
@@ -38,6 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.corlang.app.ui.theme.rememberReducedMotion
+import kotlinx.coroutines.launch
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.random.Random
@@ -78,12 +84,32 @@ private fun unlitFlame(dark: Boolean): Pair<Color, Color> =
 
 /**
  * The streak flame. [lit] = today's lesson is done (grey otherwise, like chess.com's
- * gray-until-you-play streak). Gently flickers when lit, unless animations are disabled.
+ * gray-until-you-play streak).
+ *
+ * Two motions, because the two places this appears want different things. On Today it is an ICON
+ * sitting on screen all day, so it barely moves: one slow oscillator, and none at all until the
+ * day is banked. In the completion celebration it IS the reward, so it gets [energetic].
  */
 @Composable
-fun StreakFlame(streak: Int, lit: Boolean, size: Dp, modifier: Modifier = Modifier) {
+fun StreakFlame(
+    streak: Int,
+    lit: Boolean,
+    size: Dp,
+    modifier: Modifier = Modifier,
+    energetic: Boolean = false
+) {
     val reduced = rememberReducedMotion()
-    val flicker = if (lit && !reduced) {
+    val dark = com.corlang.app.ui.theme.CorlangColors.isDark
+    val (body, core) = if (lit) flameTier(streak, dark) else unlitFlame(dark)
+    // The branch is fixed per call site, so each one keeps a stable composition.
+    if (energetic) EnergeticFlame(body, core, size, modifier, still = reduced)
+    else CalmFlame(body, core, size, modifier, animate = lit && !reduced)
+}
+
+/** Today's icon: one slow flicker that narrows the flame and sways the tip. Symmetric on purpose. */
+@Composable
+private fun CalmFlame(body: Color, core: Color, size: Dp, modifier: Modifier, animate: Boolean) {
+    val flicker = if (animate) {
         val transition = rememberInfiniteTransition(label = "flame")
         transition.animateFloat(
             initialValue = 0f, targetValue = 1f,
@@ -94,44 +120,174 @@ fun StreakFlame(streak: Int, lit: Boolean, size: Dp, modifier: Modifier = Modifi
         ).value
     } else 0f
 
-    val dark = com.corlang.app.ui.theme.CorlangColors.isDark
-    val (body, core) = if (lit) flameTier(streak, dark) else unlitFlame(dark)
     Box(
         modifier
             .size(size)
             .drawBehind {
-                // Flicker narrows the flame slightly and sways the tip.
-                val squeeze = 1f - flicker * 0.06f
-                val sway = (flicker - 0.5f) * this.size.width * 0.05f
-                drawFlame(body, core, squeeze, sway)
+                val w = this.size.width
+                val h = this.size.height
+                val half = w * 0.42f * (1f - flicker * 0.06f)
+                val sway = (flicker - 0.5f) * w * 0.05f
+                drawPath(
+                    flamePath(w / 2f, h * 0.04f, h * 0.96f, half, half, sway, 0.62f, 0.62f),
+                    body
+                )
+                drawPath(
+                    flamePath(
+                        w / 2f, h * 0.42f, h * 0.90f, half * 0.52f, half * 0.52f,
+                        sway * 0.4f, 0.62f, 0.62f
+                    ),
+                    core
+                )
             }
     )
 }
 
-/** Teardrop flame with an inner core, drawn relative to the DrawScope size. */
-private fun DrawScope.drawFlame(body: Color, core: Color, squeeze: Float, sway: Float) {
-    val w = size.width
-    val h = size.height
+/**
+ * The celebration flame.
+ *
+ * The first version of this was a lean-and-squeeze on ONE oscillator, and rendering it frame by
+ * frame showed why that never looks like fire: the silhouette is dominated by a fat symmetric
+ * base that never changes, so only the tip appears to move and the whole thing reads as a static
+ * teardrop being nudged. Fire is asymmetric. So the two sides of the flame are driven
+ * INDEPENDENTLY here: left and right each have their own width and their own shoulder height, on
+ * oscillators with no shared period, which makes the body writhe rather than lean. The tip
+ * stretches on a fast one (flames lick), and the inner core carries a third set again, so it
+ * moves inside the body instead of with it.
+ *
+ * On top of that it IGNITES rather than appearing: a spring from 55% with overshoot plus a
+ * white-hot flare decaying over 700ms, so the flare-up is the first thing the eye catches.
+ *
+ * There are no sparks, and that is a decision rather than an omission. Three versions were
+ * rendered frame by frame (rising above the tip, rising through the body, and tiny near-white
+ * ones): at this size they read as grit inside the flame or as a wisp of smoke above it, never
+ * as embers. The body motion is what makes it look alive; the specks only added noise.
+ *
+ * [still] is reduced-motion: the same flame, drawn once, at rest.
+ */
+@Composable
+private fun EnergeticFlame(body: Color, core: Color, size: Dp, modifier: Modifier, still: Boolean) {
+    val ignite = remember { Animatable(if (still) 1f else 0.55f) }
+    val flare = remember { Animatable(if (still) 0f else 1f) }
+    LaunchedEffect(still) {
+        if (still) return@LaunchedEffect
+        launch { ignite.animateTo(1f, spring(dampingRatio = 0.42f, stiffness = Spring.StiffnessLow)) }
+        flare.animateTo(0f, tween(700, easing = FastOutSlowInEasing))
+    }
 
-    fun flamePath(cx: Float, top: Float, bottom: Float, halfWidth: Float, tipSway: Float) =
-        Path().apply {
-            moveTo(cx + tipSway, top)                       // tip
-            cubicTo(
-                cx + halfWidth * 0.55f, top + (bottom - top) * 0.32f,
-                cx + halfWidth, top + (bottom - top) * 0.62f,
-                cx + halfWidth * 0.72f, bottom - (bottom - top) * 0.12f
-            )
-            quadraticTo(cx, bottom + (bottom - top) * 0.06f, cx - halfWidth * 0.72f, bottom - (bottom - top) * 0.12f)
-            cubicTo(
-                cx - halfWidth, top + (bottom - top) * 0.62f,
-                cx - halfWidth * 0.55f, top + (bottom - top) * 0.32f,
-                cx + tipSway, top
-            )
-            close()
-        }
+    val transition = rememberInfiniteTransition(label = "flame")
 
-    drawPath(flamePath(w / 2f, h * 0.04f, h * 0.96f, w * 0.42f * squeeze, sway), body)
-    drawPath(flamePath(w / 2f, h * 0.42f, h * 0.90f, w * 0.22f * squeeze, sway * 0.4f), core)
+    @Composable
+    fun wave(period: Int, label: String): Float =
+        if (still) 0.5f else transition.animateFloat(
+            initialValue = 0f, targetValue = 1f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(period, easing = LinearEasing), repeatMode = RepeatMode.Reverse
+            ),
+            label = label
+        ).value
+
+    val widthR = wave(610, "widthR")
+    val widthL = wave(970, "widthL")
+    val shoulderR = wave(1270, "shoulderR")
+    val shoulderL = wave(830, "shoulderL")
+    val lick = wave(290, "lick")
+    val lean = wave(730, "lean")
+    val heart = wave(890, "heart")
+    val heartWidth = wave(430, "heartWidth")
+    val breath = wave(1470, "breath")
+    val flareNow = flare.value
+    // White-hot at the moment of ignition, settling into the streak tier colors.
+    val hotBody = lerp(body, Color.White, 0.45f * flareNow)
+    val hotCore = lerp(core, Color.White, 0.70f * flareNow)
+
+    Box(
+        modifier
+            .size(size)
+            .drawBehind {
+                val w = this.size.width
+                val h = this.size.height
+                val cx = w / 2f
+                val scale = ignite.value
+
+                // Inset from the box so the glow has room and the flame can lick upward.
+                val bottom = h * 0.90f
+                val restTop = h * 0.20f
+                val top = bottom - (bottom - restTop) * scale * (0.90f + lick * 0.16f)
+                val base = w * 0.25f * scale
+                val halfR = base * (0.86f + widthR * 0.30f)
+                val halfL = base * (0.86f + widthL * 0.30f)
+                val glowAt = Offset(cx, bottom - (bottom - top) * 0.38f)
+
+                drawCircle(
+                    brush = Brush.radialGradient(
+                        colors = listOf(
+                            hotBody.copy(alpha = 0.34f + breath * 0.16f + flareNow * 0.34f),
+                            Color.Transparent
+                        ),
+                        center = glowAt,
+                        radius = w * 0.48f
+                    ),
+                    radius = w * 0.48f,
+                    center = glowAt
+                )
+                drawPath(
+                    flamePath(
+                        cx = cx, top = top, bottom = bottom,
+                        halfL = halfL, halfR = halfR,
+                        tipSway = (lean - 0.5f) * w * 0.15f,
+                        // One side bulges high while the other bulges low: that is the writhe.
+                        shoulderL = 0.48f + shoulderL * 0.26f,
+                        shoulderR = 0.48f + shoulderR * 0.26f
+                    ),
+                    hotBody
+                )
+                val span = bottom - top
+                val coreHalf = base * 0.46f * (0.80f + heartWidth * 0.36f)
+                drawPath(
+                    flamePath(
+                        cx = cx,
+                        top = top + span * (0.30f + heart * 0.16f),
+                        bottom = bottom - span * 0.07f,
+                        halfL = coreHalf, halfR = coreHalf,
+                        tipSway = (heart - 0.5f) * w * 0.09f,
+                        shoulderL = 0.55f, shoulderR = 0.55f
+                    ),
+                    hotCore
+                )
+            }
+    )
+}
+
+/**
+ * One flame outline. The two sides take SEPARATE half-widths and shoulder heights so a caller
+ * can make it asymmetric; passing the same value for both gives the old symmetric teardrop.
+ * [shoulderL] / [shoulderR] are where each side reaches its widest, as a fraction of the height.
+ */
+private fun flamePath(
+    cx: Float,
+    top: Float,
+    bottom: Float,
+    halfL: Float,
+    halfR: Float,
+    tipSway: Float,
+    shoulderL: Float,
+    shoulderR: Float
+) = Path().apply {
+    val span = bottom - top
+    moveTo(cx + tipSway, top)                                   // tip
+    cubicTo(
+        cx + halfR * 0.52f, top + span * shoulderR * 0.52f,
+        cx + halfR, top + span * shoulderR,
+        cx + halfR * 0.70f, bottom - span * 0.12f
+    )
+    quadraticTo(cx, bottom + span * 0.06f, cx - halfL * 0.70f, bottom - span * 0.12f)
+    cubicTo(
+        cx - halfL, top + span * shoulderL,
+        cx - halfL * 0.52f, top + span * shoulderL * 0.52f,
+        cx + tipSway, top
+    )
+    close()
 }
 
 private data class Particle(
@@ -240,7 +396,9 @@ fun CelebrationOverlay(
                     .padding(32.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                StreakFlame(streak = streak, lit = true, size = 96.dp)
+                // Bigger than the Today icon, and energetic: the flame is the reward here,
+                // and the extra box is the headroom its sparks and glow are drawn into.
+                StreakFlame(streak = streak, lit = true, size = 132.dp, energetic = true)
                 Spacer(Modifier.height(20.dp))
                 Text(
                     "Lesson $dayNumber complete!",

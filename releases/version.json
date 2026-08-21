@@ -1,6 +1,6 @@
 {
-  "versionCode": 172,
-  "versionName": "0.45.1",
-  "notes": "The tutor no longer hands you the answer. Asked to produce a sentence, it had started naming the words to build it from (\"try saying this using 'ne radim' and 'trazim posao'\"), which turns the exercise into copying. Its instructions had forbidden that all along, so the fix is not another instruction: every reply is now checked for it before it reaches you, and a reply that hands over the answer is thrown away and asked for again. The rule also applies now when you are practising without English help, where it had never been stated at all.",
+  "versionCode": 173,
+  "versionName": "0.46.0",
+  "notes": "The flame you get for finishing a lesson now actually burns. It ignites white-hot and settles into your streak colour, and its two sides move independently, so it writhes instead of sitting there being nudged. And the daily reminder no longer disappears just because you opened the app. Opening it re-anchored the reminder to tomorrow, which quietly cancelled the nudge you were still owed for today; if the time has passed and the lesson is not done, you now get it anyway. It also knows the difference between a lesson you have not started and one you left half finished, and asks you to continue rather than to start.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
