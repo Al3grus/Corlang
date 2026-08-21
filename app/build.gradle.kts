@@ -34,8 +34,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 176
-        versionName = "0.47.2"
+        versionCode = 177
+        versionName = "0.48.0"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -44,16 +44,21 @@ android {
         buildConfigField("boolean", "DEV_PREMIUM", "false")
     }
 
-    // Two distribution channels that must stay apart: `sideload` (GitHub releases/ + the in-app
-    // self-updater) and `play` (Google Play, which FORBIDS self-updating apps). The play flavor
-    // compiles the updater out via ENABLE_UPDATER and ships no REQUEST_INSTALL_PACKAGES
-    // permission / FileProvider (both live in src/sideload/AndroidManifest.xml).
+    // Two distribution channels: `sideload` (a directly installed APK, and the DEV_PREMIUM test
+    // unlock) and `play` (Google Play). Neither ships the self-updater any more, so no build
+    // asks for REQUEST_INSTALL_PACKAGES; the flavor dimension now earns its place on DEV_PREMIUM
+    // alone, which must never reach a Play build.
     flavorDimensions += "distribution"
     productFlavors {
         create("sideload") {
             dimension = "distribution"
             isDefault = true
-            buildConfigField("boolean", "ENABLE_UPDATER", "true")
+            // The self-updater is OFF in both flavors as of v0.48.0. It existed to get builds to
+            // friends over GitHub before Play; distribution is Play now, and nobody but the
+            // developer is on a sideload build. `Updater` itself stays (the About card reads
+            // installedVersionName from it), and flipping this back to "true" plus restoring
+            // src/sideload/AndroidManifest.xml is the whole way back.
+            buildConfigField("boolean", "ENABLE_UPDATER", "false")
             // Pre-billing test unlock (corlang.devPremium=true in local.properties): grants
             // Premium so the AI can be exercised. SIDELOAD ONLY — the play flavor keeps the
             // default false and can never ship a free-Premium build by accident.
