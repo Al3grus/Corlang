@@ -72,7 +72,21 @@ App name, short + full description (below), **app icon 512×512 PNG**, **feature
 1024×500 PNG**, **≥2 phone screenshots** (grab 4–8 from the app: Today, a lesson exercise,
 Review, the journey, the tutor). Category **Education**. Contact email support@corlang.app.
 
+> **Order matters, and it is the reverse of what it looks like.** Play will not let you create
+> in-app products until a build that includes the Play Billing Library has been **published to a
+> track** — internal testing counts. So do step 5 (upload the AAB) BEFORE step 4. The Monetize
+> tab's in-app products page stays inert until that upload exists.
+>
+> Confirmed against
+> [Getting ready](https://developer.android.com/google/play/billing/getting-ready): "you should
+> build and publish your app, creating your app and then publishing to any track, including the
+> internal test track."
+
 ### 4. Create the billing products **(browser)** — Monetize tab; IDs must match EXACTLY
+**Do this AFTER the upload in step 5.** Product IDs cannot be changed or reused once created, so
+copy them character for character — a typo means creating a second product and abandoning the
+first forever.
+
 - **Subscriptions → create `corlang_ai_premium`**:
   - base plan `monthly`, auto-renewing, **€9.99/month**; add an **Offer** on it = **7-day free trial** phase. No annual plan (AI economics may shift within a year).
   - **In-app products (managed) → create six**, three per language:
