@@ -41,7 +41,7 @@ official exam asks for.
 
 ## What it costs
 
-**The start of every course is free.** The first 16 lessons of Croatian and the first 15 of
+**The start of every course is free.** The first 16 lessons of Croatian and the first 10 of
 Portuguese, with their words, reviews and exercises — no account, no sign-in, no payment, no
 trial that expires. That is long enough for the spaced repetition to come back round and show
 you whether it works, which is the only claim worth making.

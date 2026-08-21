@@ -89,18 +89,47 @@ class PaywallGateTest {
         }
     }
 
+    /**
+     * The two courses give away the same SHARE of themselves, by different means, and that is
+     * the invariant worth pinning rather than either raw number.
+     *
+     * Croatian has an A0 onramp, so its window sits exactly on that level's boundary and the
+     * free tier is a whole level. Portuguese has no A0 — `docs/language-standard.md` allows one
+     * of 0 to 15 lessons and the course shipped with 0 — so its window falls inside A1 and the
+     * A1 product sells the rest.
+     *
+     * Portuguese cannot simply relabel its first lessons into an A0: the same standard sets a
+     * floor of 45 lessons for pt A1, and that is a claim about how much teaching reaching A1
+     * takes, not a bookkeeping total. An A0 there has to be authored on top. Until it is, the
+     * window is a count. `everyCourseMeetsTheWeightedLessonFloor` is what enforces this.
+     */
     @Test
-    fun `Croatian gives away all of A0 and Portuguese part of A1`() {
-        // The asymmetry the per-language window exists for. If either of these flips, the
-        // window has drifted off the boundary it was chosen to sit on.
+    fun `both courses give away a comparable share, by different means`() {
+        // Croatian: the window IS level A0.
         assertEquals(16, meta("hr").freeLessons)
         assertEquals(lastDayOf("hr", "A0"), meta("hr").freeLessons)
         assertEquals(listOf("A1", "A2", "B1"), paidLevels("hr"))
 
-        assertEquals(15, meta("pt").freeLessons)
-        assertTrue("pt has no A0 at all", days("pt").none { it.level == "A0" })
-        assertTrue("pt free window must fall inside A1", lastDayOf("pt", "A1") > 15)
+        // Portuguese: no A0 exists, so the window falls inside A1.
+        assertEquals(10, meta("pt").freeLessons)
+        assertTrue("pt has no A0 yet", days("pt").none { it.level == "A0" })
+        assertTrue("pt free window must fall inside A1", lastDayOf("pt", "A1") > 10)
         assertEquals(listOf("A1", "A2", "B1"), paidLevels("pt"))
+
+        // Narrowing the window must never be a way to shrink a level below its floor: the floor
+        // counts the lessons a level TEACHES, free or paid. If this drifts, someone has confused
+        // "what we give away" with "what the level contains".
+        assertEquals(45, days("pt").count { it.level == "A1" })
+        assertEquals(61, days("hr").count { it.level == "A1" })
+
+        listOf("hr" to 0.06, "pt" to 0.06).forEach { (lang, ceiling) ->
+            val share = meta(lang).freeLessons.toDouble() / days(lang).size
+            assertTrue(
+                "$lang gives away ${"%.1f".format(share * 100)}% of its course, over the " +
+                    "${"%.0f".format(ceiling * 100)}% the two courses are held to",
+                share <= ceiling
+            )
+        }
     }
 
     /**

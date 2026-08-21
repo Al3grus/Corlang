@@ -52,6 +52,42 @@ Everything else on the critical path is browser work in Play Console.
 
 ---
 
+## 🟡 CONTENT DEBT — Portuguese has no A0 onramp
+
+`docs/language-standard.md` allots Spanish/Italian/Portuguese an A0 of **0 to 15 lessons**,
+"added only where the language needs it". Portuguese shipped with **0**, so its course starts
+at A1 and the free window is a lesson COUNT that falls inside A1, while Croatian's window is a
+whole level. Both give away a comparable share (4.7% vs 4.2%), so nothing is broken, but the
+two courses have different shapes for no reason a learner would recognise.
+
+European Portuguese arguably needs the onramp more than most: nasal vowels, vowel reduction,
+the sh-like final -s and lh/nh are exactly the "scripts and sounds" the rule exists for, and
+day 1 already spends a whole lesson on them.
+
+**This is authoring, not relabelling.** pt A1's floor is 45 lessons and the course sits exactly
+on it, so moving ten lessons down into an A0 drops A1 to 35 and
+`everyCourseMeetsTheWeightedLessonFloor` fails — correctly. An A0 must be written on top,
+taking the course from 240 to about 250.
+
+Scope when picked up (a normal Gold Book batch, Sonnet-appropriate):
+- ~10 A0 lessons before the current day 1, covering sounds, greetings, introductions, ser/estar,
+  numbers, gender and articles. Today's A1 days 1 to 10 are the model for what belongs there,
+  and cover this ground already, so the new lessons must teach it more slowly rather than
+  duplicate it: `proctor.py` will flag cross-lesson repetition if they do not.
+- Deck words appended (never inserted) and the plan renumbered, which shifts every later day.
+  Word ids are frozen SRS keys, so the deck order must not be disturbed.
+- An A0 level quiz. **A draft of one is already written** and covers the ten topics one question
+  each: `docs/drafts/pt-a0-quiz.json`. A0 is quiz-only, no readiness milestone and no mock exam
+  (`everyPlanLevelEndsInQuizReadinessAndMockExam`).
+- pt placement bands with `startDay` inside A0 relabelled from A1 to A0.
+- `pt/meta.json` → `freeLessons` set to A0's last day, and the free tier becomes "level A0" in
+  both courses.
+- `pt/levels.json` **already carries a full A0 entry** (title, milestone, canDo) that nothing
+  currently uses. It is dead data until this lands.
+
+Not a launch blocker: product ids are unchanged either way, since A0 would be free and
+`paidLevels` stays `[A1, A2, B1]`.
+
 ## 🔴 TRACK A — Get to Play testers (critical path, in order)
 
 1. **(browser)** Create the app in Play Console (name "Corlang", App, Free).
