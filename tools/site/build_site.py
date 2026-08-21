@@ -236,53 +236,51 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 }
 
 /* ---- motion ----------------------------------------------------------------------------
-   Two ideas only. On load, the hero settles in one short sequence. On scroll, each group
-   reveals once as it arrives, and the ruler plays left to right so the eye reads the widening
-   gaps in the order they actually happen.
+   ONE mechanism: a transition from a resting state to an arrived state, switched by an `.in`
+   class. Nothing here uses @keyframes.
 
-   Everything is opacity and transform, which the compositor handles without touching layout.
-   Under prefers-reduced-motion NOTHING below applies, and because the resting state of every
-   animated element is defined here rather than in the base rules, a reduced-motion visitor
-   simply gets the finished page. */
+   The first version mixed the two, transitions on containers and forwards-filling animations on
+   their children, and it flickered on scroll. An animation with `forwards` holds the last frame
+   rather than truly settling, so any repaint of that element (a lazy image decoding beside it, a
+   scroll that promotes a new compositor layer) can show a frame of the pre-animation state. Two
+   systems also meant two sources of truth for what "finished" looks like.
+
+   Slower and shorter than before: 720ms over 10px rather than 550ms over 14px. Movement you
+   notice is movement that interrupts.
+
+   Under prefers-reduced-motion NOTHING here applies. Every resting state lives inside this
+   query, so a visitor with it on, or with JS off, gets the finished page rather than a blank one. */
 @media (prefers-reduced-motion:no-preference){
-  .rise{opacity:0;transform:translateY(14px);
-    transition:opacity .62s cubic-bezier(.22,.68,.3,1),transform .62s cubic-bezier(.22,.68,.3,1)}
-  .rise.in{opacity:1;transform:none}
+  .rise,.loop .step,.claims .claim,.tick,.gap,.origin{
+    transition:opacity .72s cubic-bezier(.16,.7,.3,1),transform .72s cubic-bezier(.16,.7,.3,1)}
 
-  /* hero, on load: eyebrow, headline, lede, actions, one after another */
+  .rise{opacity:0;transform:translateY(10px)}
+  .rise.in{opacity:1;transform:none}
   .hero .rise{transition-delay:var(--d,0s)}
 
-  /* the loop steps stagger across, the way you would read them */
-  .loop.in .step{opacity:0;transform:translateY(12px);
-    animation:rise .55s cubic-bezier(.22,.68,.3,1) forwards}
-  .loop.in .step:nth-child(1){animation-delay:.02s}
-  .loop.in .step:nth-child(2){animation-delay:.10s}
-  .loop.in .step:nth-child(3){animation-delay:.18s}
-  .loop.in .step:nth-child(4){animation-delay:.26s}
-  @keyframes rise{to{opacity:1;transform:none}}
+  /* Children rest and arrive on the SAME property pair as their container, differing only in
+     delay, so a group settles as one movement instead of four. */
+  .loop .step,.claims .claim{opacity:0;transform:translateY(10px)}
+  .loop.in .step,.claims.in .claim{opacity:1;transform:none}
+  .loop .step:nth-child(2),.claims .claim:nth-child(2){transition-delay:.08s}
+  .loop .step:nth-child(3),.claims .claim:nth-child(3){transition-delay:.16s}
+  .loop .step:nth-child(4){transition-delay:.24s}
 
-  /* the arrows draw themselves in after the step they follow */
-  .loop.in .step::after{opacity:0;animation:fade .4s ease forwards;animation-delay:.34s}
-  @keyframes fade{to{opacity:1}}
+  /* The arrows are ::after on the steps, so they inherit the step's opacity and need no rule of
+     their own. That is one fewer thing that can be caught mid-animation. */
 
-  /* the ruler: dots and gap labels, left to right, only once it is on screen */
-  .tick,.gap{opacity:0}
-  .track.in .tick{animation:pop .5s cubic-bezier(.2,.7,.3,1) forwards}
-  .track.in .gap{animation:pop .5s ease forwards}
-  .track.in .origin{animation:fade .4s ease forwards}
-  @keyframes pop{from{opacity:0;transform:translateX(-50%) translateY(7px)}
-                 to{opacity:1;transform:translateX(-50%) translateY(0)}}
-
-  .claims.in .claim{opacity:0;animation:rise .5s cubic-bezier(.22,.68,.3,1) forwards}
-  .claims.in .claim:nth-child(2){animation-delay:.08s}
-  .claims.in .claim:nth-child(3){animation-delay:.16s}
+  /* Ticks carry translateX(-50%) as POSITIONING, so both states must keep it: dropping it in one
+     of them slides every label half its width across the ruler. */
+  .tick,.gap{opacity:0;transform:translateX(-50%) translateY(8px)}
+  .track.in .tick,.track.in .gap{opacity:1;transform:translateX(-50%)}
+  .origin{opacity:0}
+  .track.in .origin{opacity:1}
 
   /* micro-interactions: small, and only where something is actually interactive */
-  .cta{transition:background .18s ease,transform .18s ease}
+  .cta{transition:background .2s ease,transform .2s ease}
   .cta:active{transform:translateY(1px)}
-  .step h3,.tick .dot{transition:color .2s ease,transform .2s ease}
+  .step .n{transition:color .25s ease}
   .step:hover .n{color:var(--core)}
-  .step .n{transition:color .2s ease}
 }
 """
 
@@ -321,7 +319,7 @@ SCRIPT = """<script>
       e.target.classList.add('in');
       io.unobserve(e.target);
     });
-  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.loop, .track, .claims, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
 })();
@@ -442,7 +440,7 @@ def page(title, description, body, canonical, wide=True):
   <footer>
     <div><a href="/">Home</a><a href="/privacy/">Privacy</a><a
       href="mailto:support@corlang.app">Contact</a></div>
-    <div>Corlang &middot; core + language</div>
+    <div>Corlang</div>
   </footer>
 </div>
 {SCRIPT}</body>
@@ -526,7 +524,7 @@ def ruler():
     ticks, gaps = [], []
     for i, (day, label, delta) in enumerate(INTERVALS):
         x = (day ** 0.5) / span * 100
-        delay = f'animation-delay:{0.11 * i + .2:.2f}s'
+        delay = f'transition-delay:{0.09 * i + .12:.2f}s'
         ticks.append(f'<div class="tick" style="left:{x:.2f}%;{delay}">'
                      f'<div class="dot"></div><div class="lab">{label}</div></div>')
         if delta:
@@ -662,17 +660,16 @@ def build():
   <section class="section">
     <div class="section-head">
       <h2>Three things that make it different</h2>
-      <p>The rest is just a language course.</p>
     </div>
     <div class="claims">
-      <div class="claim"><h3>A finish line</h3>
-        <p>A fixed course from your first words to the official B1 exam, in its real format.
-        Not an endless feed.</p></div>
       <div class="claim"><h3>Nothing to sign up for</h3>
         <p>No account, no ads, no tracking. Your progress stays on your phone, and you can
         export it whenever you like.</p></div>
       <div class="claim"><h3>Ten minutes</h3>
         <p>One lesson and its reviews. On the bus, in a queue, before bed.</p></div>
+      <div class="claim"><h3>A finish line</h3>
+        <p>A fixed course from your first words to the official B1 exam, in its real format.
+        Not an endless feed.</p></div>
     </div>
   </section>
 """
