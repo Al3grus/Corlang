@@ -414,14 +414,40 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    and corrupted an MCQ into having an answer that was not among its options. `check_batch.py`
    caught it immediately. **Match on the field you mean AND the type you mean.**
    **hr B1 (days 174-344) CLOSED 2026-08-20, and with it the whole Croatian course** — 631 findings to zero. B1 held the two structural discoveries: S22 (the 40-character recall cap, which alone accounted for 88 thin days) and C27 (56 exam-strategy rows stored as Croatian LEARN items). The rest was the familiar taxonomy at scale: 143 rows through the generic reshape, 387 titles into English, 11 argument days given the building blocks their 80-to-120-character opinions are made of, and 8 more typed questions that could not be answered. Raising the cap surfaced 15 defects in A0/A1/A2 that the old cap had been hiding, all fixed. **`gatedLevels` now holds all four levels, so no Croatian lesson can regress.** Course-wide verification: `check_wrapup.py hr` 344 days / 0, `check_hr.py` and `check_batch.py` 0 on all four phase files, `proctor.py` 0 problems, full Kotlin suite green. **Croatian is done. Portuguese is next, on the user's word, and its defect list is already measured; French after it.**
-   **fr/pt are NOT in this sweep and must not be pulled into it** — the standing scope lock is
-   one course at a time (hr, then pt, then fr), and the gates are hr-scoped so those courses
-   cannot fail the build meanwhile. Their measured backlog is recorded for when their turn
-   comes: pt 8 untypable wrap-up items + 5 broken TRANSLATE answers + 155 thin days; fr 2
-   untypable + 317 thin days.
-12. **S23 deck-example backlog outside hr (measured 2026-08-21, NOT swept)**: every other course is
-   at 100% coverage, so the Kotlin gate passes everywhere, but `check_deck_examples.py` reports
-   fr 22, pt 27, de 16, it 4, es 4 problems — cloze ties and two cards sharing one sentence. Same
-   scope lock as item 11: hr only, so these wait for their course's turn. Run
-   `python tools/course/check_deck_examples.py <lang>` to re-measure; the INFO lines (a card whose
-   sentence the plan also teaches) are advisory by design and are not part of that count.
+   **pt CLOSED 2026-08-21, and with it the second course.** 115 wrap-up problems over 33 of its
+   240 days, which is a sixth of what Croatian carried: 59 untypable (rule notation like
+   `do = de + o` written inside the taught text, plus arrow transformation rows), 42 comma lists
+   (whole verb paradigms and number runs in one row), 10 thin days and 4 glosses inside the
+   answer. Same reshape as hr every time: the ask becomes the one thing the learner should
+   produce, the rule or paradigm moves to `note`. Six B1 days were thin for the S22 reason (every
+   teaching sentence past the 80-character cap) and were given short producible phrases rather
+   than having the long ones cut. 4 TRANSLATE answers carried the same broken rows, invisible to
+   `check_wrapup.py` (it reads LEARN items only) and caught by the Kotlin gate. **proctor caught
+   two cross-lesson duplicates my own reshapes introduced** — the standing "re-proctor AFTER
+   reassembly" rule earning its place again. `wrapupLangs` now holds hr and pt.
+   **fr is NOT in this sweep and must not be pulled into it** — hidden from the manifest
+   2026-08-21 at the user's request, to be re-added later. Measured backlog for when its turn
+   comes: 2 untypable wrap-up items + 317 thin days.
+12. **S23 deck-example backlog (measured 2026-08-21)**: every course is at 100% coverage, so the
+   Kotlin gate passes everywhere. `check_deck_examples.py` additionally reported fr 22, pt 27,
+   de 16, it 4, es 4 cloze/duplicate problems. **pt CLOSED the same day**: 1 cloze tie, 11 cards
+   sharing a sentence with another card, and 2 packs arriving 32 and 53 lessons before the lesson
+   that teaches their theme (`fromDay` set, `check_deck_sync` clean). **15 of pt's 27 were the
+   checker's fault, not the content's**: MAX_CHARS had been borrowed from the wrap-up's typed
+   recall limit of 80, but nothing types a deck example (WordsScreen speaks it, and DrillGen's
+   cloze answer is chosen from options), so trimming fifteen good B1/B2 sentences would have been
+   the S17 mistake of deleting content to make a number look right. The cap is now 100 and exists
+   only against a sentence so long it stops being an example. fr, de, it and es wait for their
+   own turn. The INFO lines (a card whose sentence the plan also teaches) are advisory by design.
+
+13. **K28, a word list applied outside the language it was written for (2026-08-21, FIXED)**: the
+   Kotlin title gate ran Croatian's `HR_TITLE_MARKERS` over Portuguese and reported 56 offenders,
+   which looked like a small tidy-up. It was an accident of overlap — "na" and "se" are words in
+   both languages — and the real number was **756 of 964 pt titles**, because the Croatian list
+   could not see a Portuguese title that contained no Croatian word. Same shape as K16. The gate
+   now picks its marker set by language, and the Portuguese one deliberately EXCLUDES "do", "as",
+   "no", "se", "para", "eu", "os" and "um", which are ordinary English words ("Do you agree?",
+   "Saying no"), with an allowlist for café, an English word that carries an accent. Adding real
+   Portuguese markers immediately found 26 more titles the first pass had missed. **The lesson is
+   the same one K16 taught: a word list is part of a language, not a general-purpose filter, and
+   a checker borrowed across languages reports whatever the two happen to share.**

@@ -1381,11 +1381,15 @@ class ContentValidationTest {
     // (Drills.kt:wrapupRecallPhrases), so a table row authored for the teaching screen becomes a
     // typing test unless the content forbids the shape. These four gates are the forbidding.
     //
-    // SCOPE: hr only, deliberately. Portuguese and French carry the same defect classes and are
-    // under a scope lock until Croatian is finished; widening each gate is tracked as an open
-    // sweep in docs/error-registry.md. Do not "helpfully" run these over allLangs.
+    // SCOPE: the courses that have HAD the pass, not every course on disk. hr closed 2026-08-20,
+    // pt closed 2026-08-21 (115 problems over 33 of its 240 days: paradigms in one row, table
+    // rows written with arrows, rule notation like "do = de + o" inside the taught text, and six
+    // B1 days whose own teaching sentences all sat past the recall cap). fr, de, it and es carry
+    // the same classes untouched and are hidden from content/_index.json; widening to them is
+    // tracked as an open sweep in docs/error-registry.md. Do not "helpfully" run these over
+    // allLangs before the authoring pass for that course has actually landed.
 
-    private val wrapupLangs = listOf("hr")
+    private val wrapupLangs = listOf("hr", "pt")
 
     /**
      * The CEFR levels declared clean. Widened one level at a time as the authoring pass lands,
@@ -1533,9 +1537,15 @@ class ContentValidationTest {
             fun check(where: String, title: String) {
                 // The head: everything before the first ':' or '(' introduces an example.
                 val head = title.substringBefore(':').substringBefore('(').trim()
-                val words = head.lowercase().split(Regex("[^\\p{L}]+")).filter { it.isNotBlank() }
-                val hits = HR_TITLE_MARKERS.filter { it in words } +
-                    HR_LETTERS.filter { it in head.lowercase() }.map { "'$it'" }
+                val words = head.lowercase().split(Regex("[^\\p{L}]+"))
+                    .filter { it.isNotBlank() && it !in PT_TITLE_ALLOW }
+                val bare = words.joinToString(" ")
+                val (markers, letters) = when (lang) {
+                    "pt" -> PT_TITLE_MARKERS to PT_LETTERS
+                    else -> HR_TITLE_MARKERS to HR_LETTERS
+                }
+                val hits = markers.filter { it in words } +
+                    letters.filter { it in bare }.map { "'$it'" }
                 if (hits.isNotEmpty()) offenders += "$lang $where: '$title' -> ${hits.joinToString()}"
             }
             gatedDays(lang).forEach { day ->
@@ -1575,5 +1585,28 @@ class ContentValidationTest {
             "sto", "kako", "koliko", "kada", "gdje", "tko", "zasto", "moj", "tvoj", "nas",
             "vas", "njegov", "brojevi", "glagoli", "rijeci", "vjezba", "ponavljanje"
         )
+
+        /**
+         * Portuguese function words that are NOT also English or a common English borrowing.
+         * "do", "as", "no", "se", "para", "eu", "os" and "um" are deliberately absent: they are
+         * ordinary English words ("Do you agree?", "As soon as I arrived", "Saying no"), and a
+         * marker that fires on those turns the gate into noise nobody reruns.
+         */
+        val PT_TITLE_MARKERS = listOf(
+            "uma", "dos", "das", "nas", "aos", "pelo", "pela", "nosso", "nossa", "meu", "minha",
+            "teu", "tua", "seu", "sua", "quem", "qual", "quais", "onde", "quando", "porque",
+            "porquê", "sobre", "entre", "sem", "depois", "antes", "hoje", "ontem", "amanhã",
+            "muito", "mais", "menos", "tudo", "nada", "isto", "isso", "aquilo", "vamos", "falar",
+            "fazer", "dizer", "pedir", "escrever", "verbos", "frases", "palavras", "revisão"
+        )
+
+        /**
+         * Portuguese-only letters. The accented vowels alone are not decisive, because English
+         * borrows several words whole: café is the one this course actually uses, and it is a
+         * dictionary English word, not a lapse.
+         */
+        val PT_LETTERS = listOf("ã", "õ", "ç")
+
+        val PT_TITLE_ALLOW = listOf("café", "cafés")
     }
 }
