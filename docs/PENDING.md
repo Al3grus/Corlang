@@ -218,3 +218,32 @@ wrong the moment production goes live, so they are listed here rather than trust
   free Premium by accident.
 - Build: `./gradlew` IS in the repo; JAVA_HOME = Android Studio's JBR (JDK 21).
   Prices are NOT in code — they come from Play Console, so changing them never needs a rebuild.
+
+---
+
+## 📬 Where the test-invite emails go
+
+The landing page's "Ask for a test invite" dialog posts to `/api/invite`
+(`functions/api/invite.js`, a Cloudflare Pages Function). Addresses are stored in a Cloudflare
+**KV namespace** on your own account, and nowhere else. No third-party form service is involved.
+
+- Namespace: **`corlang_invites`**, id `8126fcfb51954368a9ba136df17fb5af`
+- Bound to the Pages project `corlang` (production) as **`INVITES`** — declared in the root
+  `wrangler.toml`, so a redeploy keeps it.
+- One key per address, `invite:<email>`, holding `{email, at, country}`. A repeat submission
+  overwrites rather than piling up.
+- Rate-limit keys `rate:<ip>` also live there and expire after an hour.
+
+Read the list:
+
+```bash
+npx wrangler kv key list --namespace-id 8126fcfb51954368a9ba136df17fb5af --remote
+npx wrangler kv key get  --namespace-id 8126fcfb51954368a9ba136df17fb5af --remote "invite:someone@example.com"
+```
+
+**`--remote` is not optional.** Wrangler v4 reads LOCAL storage by default, so without it every
+command returns empty and looks exactly like a broken endpoint — including `delete`, which will
+cheerfully report success while leaving the real key in place.
+
+Disclosed in `PRIVACY.md` under "The website": what is stored, why, that it goes nowhere else,
+and that asking gets it deleted. If you ever switch this off, remove that section too.

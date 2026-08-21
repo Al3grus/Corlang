@@ -164,7 +164,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 }
 
 /* ---- plain claims ---- */
-.claims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0}
+.claims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:44px 0 0}
 .claim{border-top:2px solid var(--ink);padding-top:16px}
 .claim h3{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 6px;
   letter-spacing:-.01em}
@@ -225,7 +225,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .ruler{padding:24px 18px 18px}
   .loop{grid-template-columns:1fr 1fr;gap:30px 0}
   .step:nth-child(2)::after{display:none}
-  .claims{grid-template-columns:1fr;gap:18px}
+  .claims{grid-template-columns:1fr;gap:18px;margin-top:32px}
   .hero{padding-top:48px}
   .section{padding:40px 0 0;margin-top:34px}
 }
@@ -654,12 +654,6 @@ def build():
 {SHOTS_HTML}
       </div>
       <p class="shots-cap">Shown in the light theme. There is a dark one too.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-head">
-      <h2>Three things that make it different</h2>
     </div>
     <div class="claims">
       <div class="claim"><h3>Nothing to sign up for</h3>
