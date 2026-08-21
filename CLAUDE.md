@@ -2,7 +2,7 @@
 
 Android/Kotlin + Compose language-learning app. A **fixed app skeleton** renders **per-language JSON content**. The whole design goal: content grows without touching code. These rules exist to keep that true. Deeper playbook (model choice, workflow, token efficiency): **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
 
-Current: v0.44.0 (versionCode 170). Live courses: `hr fr pt` — `de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`) until the three focus courses are production-proven. Unhide = re-add the code to that manifest. See `MEMORY.md` (auto-memory) for the live resume point.
+Current: v0.45.0 (versionCode 171). Live courses: `hr fr pt` — `de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`) until the three focus courses are production-proven. Unhide = re-add the code to that manifest. See `MEMORY.md` (auto-memory) for the live resume point.
 
 ---
 
@@ -40,6 +40,8 @@ Offline validators in `tools/course/` — run before content reaches the app:
 - `check_batch.py` — shared pre-merge invariants (bans external URLs, em/en dashes, etc.).
 - `check_hr.py` / `check_de.py` / `check_it.py` — per-language drift checks (Serbianisms; Austrian/Swiss regionalisms; Italian accents/register). New defect classes get a new check — see `docs/error-registry.md` (error found once = check run forever).
 - `build_language.py` — assembles authored batches into the `_index.json` + phase/pack layout.
+- `check_deck_examples.py` — deck flashcards: every word has an example sentence, no two cards share one,
+  and the cloze `DrillGen` builds from it blanks an unambiguous token.
 - `proctor.py` — course-wide audit (cross-lesson repetition, answer leakage, boilerplate). Run on the assembled build before shipping.
 - `fix_resources.py` — repoint lesson `resources` to names that exist in `resources.json`.
 
