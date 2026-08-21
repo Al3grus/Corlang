@@ -132,7 +132,8 @@ class BillingManager(
         ).build()
         client.queryProductDetailsAsync(subParams) { result, details ->
             if (result.responseCode != BillingClient.BillingResponseCode.OK) return@queryProductDetailsAsync
-            val pd = details.firstOrNull() ?: return@queryProductDetailsAsync
+            logUnfetched(details.unfetchedProductList)
+            val pd = details.productDetailsList.firstOrNull() ?: return@queryProductDetailsAsync
             subDetails.value = pd
             val next = _prices.value.toMutableMap()
             pd.subscriptionOfferDetails?.forEach { offer ->
@@ -150,14 +151,33 @@ class BillingManager(
         ).build()
         client.queryProductDetailsAsync(inappParams) { result, details ->
             if (result.responseCode != BillingClient.BillingResponseCode.OK) return@queryProductDetailsAsync
+            logUnfetched(details.unfetchedProductList)
             val map = inappDetails.value.toMutableMap()
             val next = _prices.value.toMutableMap()
-            details.forEach { pd ->
+            details.productDetailsList.forEach { pd ->
                 map[pd.productId] = pd
                 pd.oneTimePurchaseOfferDetails?.let { next[pd.productId] = it.formattedPrice }
             }
             inappDetails.value = map
             _prices.value = next
+        }
+    }
+
+    /**
+     * Name the products Play could not return, and why.
+     *
+     * Billing 8 is the first version to report this: before it, a product that does not exist in
+     * Play Console was simply absent from the response, and the only symptom was a paywall card
+     * reading "Price unavailable" with nothing anywhere saying which id was wrong. Since the ids
+     * are DERIVED from content ([levelProductIds]), the usual cause is a product that was never
+     * created in the Console, or created under a typo'd id — and both look identical from the
+     * app. This turns a silent mismatch into one grep of logcat.
+     */
+    private fun logUnfetched(unfetched: List<com.android.billingclient.api.UnfetchedProduct>) {
+        if (unfetched.isEmpty()) return
+        unfetched.forEach {
+            Log.w(TAG, "Play returned no details for '${it.productId}' (status ${it.statusCode}). " +
+                "Check it exists and is ACTIVE in Play Console under exactly this id.")
         }
     }
 

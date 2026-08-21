@@ -34,8 +34,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 179
-        versionName = "0.50.0"
+        versionCode = 180
+        versionName = "0.51.0"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -158,7 +158,18 @@ dependencies {
     ksp("androidx.room:room-compiler:2.6.1")
 
     // Google Play Billing — subscriptions (AI Premium) + one-time level unlocks.
-    implementation("com.android.billingclient:billing-ktx:7.1.1")
+    // Play Billing 8, pinned at 8.0.0 deliberately.
+    //
+    // Google stops accepting v7 for new apps and updates on 2026-08-31, so 7.1.1 would have
+    // shipped an app that could not be updated nine days later -- mid closed-test. v8 is
+    // accepted until 2027-08-31.
+    //
+    // Not 8.2.1+ or 9.x: their metadata is built with Kotlin 2.2/2.3 and this project is on
+    // 2.0, so they fail to compile with "incompatible version of Kotlin". Moving up means a
+    // toolchain upgrade (Kotlin + the Compose compiler together), which is its own change and
+    // not one to make on the way to a store upload. Revisit when the toolchain moves; the
+    // deadline for that is 2027-08-31.
+    implementation("com.android.billingclient:billing-ktx:8.0.0")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
 
