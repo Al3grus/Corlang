@@ -46,8 +46,8 @@ Play Console → All apps → **Create app**. Name "Corlang", default language, 
   cannot reach it cannot rate it. Add one instruction with **no** credentials:
 
   > Corlang has no account system and no sign-in, so no username or password is needed.
-  > Installing gives immediate access to the first 16 lessons of Croatian (all of level A0) and
-  > the first 10 of Portuguese, together with their vocabulary reviews, exercises and progress
+  > Installing gives immediate access to the whole of level A0 in both courses, 16 lessons in
+  > Croatian and 10 in Portuguese, together with their vocabulary reviews, exercises and progress
   > screens. That covers every screen type in the app. The remaining levels are unlocked by
   > one-time in-app purchases. To review the paid content, please use the promo codes below.
 

@@ -1,906 +1,966 @@
 {
- "title": "Find your starting point",
- "intro": "A short European Portuguese check that gets harder as it goes, so we can start you in the right place. It takes about two minutes and you can retake it any time.",
- "questions": [
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "'Eu ___ portuguesa.' (I am Portuguese)",
-   "options": [
-    "sou",
-    "és",
-    "é",
-    "são"
-   ],
-   "answer": "sou",
-   "explanation": "With eu, the verb ser is sou."
-  },
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "How do you say 'good morning'?",
-   "options": [
-    "Bom dia",
-    "Boa tarde",
-    "Boa noite",
-    "Até logo"
-   ],
-   "answer": "Bom dia",
-   "explanation": "Bom dia is used before lunchtime; boa tarde and boa noite come later in the day."
-  },
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "Someone thanks you. What do you reply?",
-   "options": [
-    "De nada",
-    "Por favor",
-    "Com licença",
-    "Boa sorte"
-   ],
-   "answer": "De nada",
-   "explanation": "De nada is the standard reply to thanks, like 'you're welcome'."
-  },
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "'Tu ___ estudante?' (ser)",
-   "options": [
-    "és",
-    "é",
-    "sou",
-    "são"
-   ],
-   "answer": "és",
-   "explanation": "Tu takes és; é is for ele/ela and você."
-  },
-  {
-   "level": "A1",
-   "startDay": 6,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'A sopa ___ fria hoje.' (the soup is cold today, a temporary state)",
-   "options": [
-    "está",
-    "é",
-    "era",
-    "ser"
-   ],
-   "answer": "está",
-   "explanation": "A temporary state takes estar, while a permanent quality takes ser."
-  },
-  {
-   "level": "A1",
-   "startDay": 6,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "How do you say 'it's half past three'?",
-   "options": [
-    "São três e meia.",
-    "É três e meia.",
-    "São três e metade.",
-    "Está três e meia."
-   ],
-   "answer": "São três e meia.",
-   "explanation": "Hours from two onwards take the plural são, and half past is e meia."
-  },
-  {
-   "level": "A1",
-   "startDay": 6,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'___ problema é difícil.' (this word looks feminine but is not)",
-   "options": [
-    "O",
-    "A",
-    "As",
-    "Uma"
-   ],
-   "answer": "O",
-   "explanation": "Problema is masculine despite the final a, so it takes o."
-  },
-  {
-   "level": "A1",
-   "startDay": 6,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'___ água está fria.'",
-   "options": [
-    "A",
-    "O",
-    "As",
-    "Um"
-   ],
-   "answer": "A",
-   "explanation": "Água is feminine, so it takes a."
-  },
-  {
-   "level": "A1",
-   "startDay": 12,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "Present tense: 'A loja ___ às nove da manhã.' (abrir)",
-   "options": [
-    "abre",
-    "abrem",
-    "abro",
-    "abrir"
-   ],
-   "answer": "abre",
-   "explanation": "An -IR verb with a singular subject takes the ending -e: abre."
-  },
-  {
-   "level": "A1",
-   "startDay": 12,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "In a café in Portugal you want a small black espresso. What do you order?",
-   "options": [
-    "Um café",
-    "Um galão",
-    "Uma meia de leite",
-    "Um chá"
-   ],
-   "answer": "Um café",
-   "explanation": "Um café is the small espresso; galão and meia de leite are milky coffees."
-  },
-  {
-   "level": "A1",
-   "startDay": 12,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "'___ é que tu moras?' (asking about the place)",
-   "options": [
-    "Onde",
-    "Quando",
-    "Como",
-    "Quem"
-   ],
-   "answer": "Onde",
-   "explanation": "Onde asks about place; quando asks about time."
-  },
-  {
-   "level": "A1",
-   "startDay": 12,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "'Nós ___ em Lisboa.' (viver)",
-   "options": [
-    "vivemos",
-    "vivem",
-    "vives",
-    "vivo"
-   ],
-   "answer": "vivemos",
-   "explanation": "Nós takes the -mos ending: vivemos."
-  },
-  {
-   "level": "A1",
-   "startDay": 30,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "'Este é ___ carro.' (my car)",
-   "options": [
-    "o meu",
-    "meu",
-    "a minha",
-    "os meus"
-   ],
-   "answer": "o meu",
-   "explanation": "European Portuguese keeps the article before the possessive: o meu carro."
-  },
-  {
-   "level": "A1",
-   "startDay": 30,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "'___ aqui é o meu bilhete.' (this thing, next to me)",
-   "options": [
-    "Isto",
-    "Isso",
-    "Aquilo",
-    "Esse"
-   ],
-   "answer": "Isto",
-   "explanation": "Isto is what is near the speaker; isso is near the listener and aquilo is far from both."
-  },
-  {
-   "level": "A1",
-   "startDay": 30,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "O plural de 'o hotel' é ___.",
-   "options": [
-    "os hotéis",
-    "os hoteles",
-    "os hotel",
-    "as hotéis"
-   ],
-   "answer": "os hotéis",
-   "explanation": "Nouns ending in -l drop it and take -is: hotel becomes hotéis."
-  },
-  {
-   "level": "A1",
-   "startDay": 30,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "Falando com um senhor mais velho que não conhece, diz:",
-   "options": [
-    "O senhor precisa de ajuda?",
-    "Tu precisas de ajuda?",
-    "Vocês precisam de ajuda?",
-    "Nós precisamos de ajuda?"
-   ],
-   "answer": "O senhor precisa de ajuda?",
-   "explanation": "O senhor is the respectful form for a man you do not know; tu is for friends and family."
-  },
-  {
-   "level": "A2",
-   "startDay": 46,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "Completed past: 'Ontem eu ___ um filme.' (ver)",
-   "options": [
-    "vi",
-    "via",
-    "vejo",
-    "verei"
-   ],
-   "answer": "vi",
-   "explanation": "One finished event in the past takes the pretérito perfeito simples: vi."
-  },
-  {
-   "level": "A2",
-   "startDay": 46,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "Completed past: 'Ontem eu ___ uma carta à minha mãe.' (escrever)",
-   "options": [
-    "escrevi",
-    "escrevo",
-    "escrevia",
-    "escreverei"
-   ],
-   "answer": "escrevi",
-   "explanation": "Regular -er preterite, eu form: escrevi (falei, comi, abri follow the same pattern)."
-  },
-  {
-   "level": "A2",
-   "startDay": 46,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "You have finished eating in a restaurant and want to pay. What do you ask for?",
-   "options": [
-    "A conta, se faz favor.",
-    "A ementa, se faz favor.",
-    "O troco, se faz favor.",
-    "A gorjeta, se faz favor."
-   ],
-   "answer": "A conta, se faz favor.",
-   "explanation": "A conta is the bill; a ementa is the menu and a gorjeta is the tip."
-  },
-  {
-   "level": "A2",
-   "startDay": 46,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "Completed past: 'Ontem ele ___ ao cinema.' (ir)",
-   "options": [
-    "foi",
-    "foste",
-    "fui",
-    "ia"
-   ],
-   "answer": "foi",
-   "explanation": "Ir is irregular in the pretérito perfeito: ele foi."
-  },
-  {
-   "level": "A2",
-   "startDay": 52,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "Past habit: 'Quando era pequeno, ___ à bola todos os dias.' (jogar)",
-   "options": [
-    "jogava",
-    "joguei",
-    "jogo",
-    "jogarei"
-   ],
-   "answer": "jogava",
-   "explanation": "A repeated habit in the past takes the imperfeito: jogava."
-  },
-  {
-   "level": "A2",
-   "startDay": 52,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "Which sentence is correct for 'They told me nothing'?",
-   "options": [
-    "Não me disseram nada.",
-    "Não disseram-me nada.",
-    "Nunca disseram-me nada.",
-    "Não disseram nada-me."
-   ],
-   "answer": "Não me disseram nada.",
-   "explanation": "A negative word pulls the pronoun in front of the verb: não me disseram."
-  },
-  {
-   "level": "A2",
-   "startDay": 52,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "Replace the object in 'Comprei o bilhete.' with a pronoun.",
-   "options": [
-    "Comprei-o.",
-    "O comprei.",
-    "Comprei ele.",
-    "Comprei-lo."
-   ],
-   "answer": "Comprei-o.",
-   "explanation": "The direct object pronoun o attaches after the verb with a hyphen: comprei-o (Pronomes de complemento direto)."
-  },
-  {
-   "level": "A2",
-   "startDay": 52,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "'Enquanto eu ___, o telefone tocou.' (dormir)",
-   "options": [
-    "dormia",
-    "dormi",
-    "dormira",
-    "durmo"
-   ],
-   "answer": "dormia",
-   "explanation": "The imperfeito describes what was going on when another action interrupted it."
-  },
-  {
-   "level": "A2",
-   "startDay": 59,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "'Fazer a mala' means:",
-   "options": [
-    "To pack the suitcase",
-    "To lose the suitcase",
-    "To buy a suitcase",
-    "To weigh the suitcase"
-   ],
-   "answer": "To pack the suitcase",
-   "explanation": "'Fazer a mala' is the fixed expression for packing before a trip."
-  },
-  {
-   "level": "A2",
-   "startDay": 59,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "'Comprei um bilhete de ida e volta.' What does 'ida e volta' mean?",
-   "options": [
-    "Return (there and back)",
-    "One-way only",
-    "Business class",
-    "Group discount"
-   ],
-   "answer": "Return (there and back)",
-   "explanation": "'Ida e volta' means a return ticket; 'só ida' would be one-way."
-  },
-  {
-   "level": "A2",
-   "startDay": 59,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "Which word means 'bus' in Portugal?",
-   "options": [
-    "autocarro",
-    "ónibus",
-    "carrinha",
-    "elétrico"
-   ],
-   "answer": "autocarro",
-   "explanation": "Portugal uses autocarro; ónibus is Brazilian and elétrico is the tram."
-  },
-  {
-   "level": "A2",
-   "startDay": 59,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "'Perdi o comboio' means:",
-   "options": [
-    "I missed the train",
-    "I lost my ticket",
-    "I left the station",
-    "I took the wrong train"
-   ],
-   "answer": "I missed the train",
-   "explanation": "Perder o comboio is to miss it; comboio is the Portuguese word for train."
-  },
-  {
-   "level": "A2",
-   "startDay": 80,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "'Ela está ___ estudar.' (she is studying right now)",
-   "options": [
-    "a",
-    "de",
-    "em",
-    "para"
-   ],
-   "answer": "a",
-   "explanation": "European Portuguese uses estar a plus the infinitive for an action in progress."
-  },
-  {
-   "level": "A2",
-   "startDay": 80,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "'Não vi ___ na rua.' (nobody)",
-   "options": [
-    "ninguém",
-    "nada",
-    "nunca",
-    "nenhum"
-   ],
-   "answer": "ninguém",
-   "explanation": "Ninguém is for people; nada is for things."
-  },
-  {
-   "level": "A2",
-   "startDay": 80,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "O advérbio formado a partir de 'rápido' é ___.",
-   "options": [
-    "rapidamente",
-    "rápidamente",
-    "rapidmente",
-    "rapidomente"
-   ],
-   "answer": "rapidamente",
-   "explanation": "The adverb is built on the feminine form plus -mente, and it loses the accent."
-  },
-  {
-   "level": "A2",
-   "startDay": 80,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "'___ não terminei o trabalho.' (not yet)",
-   "options": [
-    "Ainda",
-    "Já",
-    "Nunca",
-    "Sempre"
-   ],
-   "answer": "Ainda",
-   "explanation": "Ainda não is not yet; já would mean it is already done."
-  },
-  {
-   "level": "A2",
-   "startDay": 105,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "'___ o João há muitos anos.' (I have known him for years)",
-   "options": [
-    "Conheço",
-    "Sei",
-    "Conhecido",
-    "Soube"
-   ],
-   "answer": "Conheço",
-   "explanation": "Conhecer is for people and places; saber is for facts and skills."
-  },
-  {
-   "level": "A2",
-   "startDay": 105,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "'Está ___ frio hoje!'",
-   "options": [
-    "tão",
-    "tanto",
-    "tal",
-    "quanto"
-   ],
-   "answer": "tão",
-   "explanation": "Tão intensifies an adjective; tanto goes with a noun or a verb."
-  },
-  {
-   "level": "A2",
-   "startDay": 105,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "'Ele ___ a estudar alemão há dois meses.' (has been studying, and still is)",
-   "options": [
-    "anda",
-    "vai",
-    "volta",
-    "acaba"
-   ],
-   "answer": "anda",
-   "explanation": "Andar a plus the infinitive describes something continuing over a period."
-  },
-  {
-   "level": "A2",
-   "startDay": 105,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "'Podes ___ o livro quando vieres?' (bring it here to me)",
-   "options": [
-    "trazer",
-    "levar",
-    "ir",
-    "vir"
-   ],
-   "answer": "trazer",
-   "explanation": "Trazer moves something towards the speaker; levar moves it away."
-  },
-  {
-   "level": "B1",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "'Quero que tu ___ cedo.' (vir)",
-   "options": [
-    "venhas",
-    "vens",
-    "vieres",
-    "vieste"
-   ],
-   "answer": "venhas",
-   "explanation": "Querer que triggers the presente do conjuntivo: que tu venhas."
-  },
-  {
-   "level": "B1",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "'Ele prometeu que ___ o dinheiro na sexta.' (devolver, standard written form)",
-   "options": [
-    "devolveria",
-    "devolverá",
-    "devolvesse",
-    "devolveu"
-   ],
-   "answer": "devolveria",
-   "explanation": "A future seen from a past moment takes the condicional: devolveria."
-  },
-  {
-   "level": "B1",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "How do you politely ask an older stranger in a shop if she wants a bag?",
-   "options": [
-    "A senhora quer um saco?",
-    "Tu queres um saco?",
-    "Você quer um saco?",
-    "Vocês querem um saco?"
-   ],
-   "answer": "A senhora quer um saco?",
-   "explanation": "European Portuguese prefers o senhor or a senhora with strangers, not tu or você."
-  },
-  {
-   "level": "B1",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "'Quando cheguei, ele já ___ saído.' (ter)",
-   "options": [
-    "tinha",
-    "tenha",
-    "teve",
-    "tivesse"
-   ],
-   "answer": "tinha",
-   "explanation": "The mais-que-perfeito composto uses the imperfeito of ter: tinha saído."
-  },
-  {
-   "level": "B1",
-   "startDay": 136,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "'Procuro alguém que ___ falar alemão.' (saber, the person may not exist)",
-   "options": [
-    "saiba",
-    "sabe",
-    "soubesse",
-    "souber"
-   ],
-   "answer": "saiba",
-   "explanation": "A relative clause about an unidentified person takes the conjuntivo: saiba."
-  },
-  {
-   "level": "B1",
-   "startDay": 136,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "He asked: 'Tens tempo?' Report it: 'Ele perguntou-me ___ eu tinha tempo.'",
-   "options": [
-    "se",
-    "que",
-    "o que",
-    "qual"
-   ],
-   "answer": "se",
-   "explanation": "A reported yes or no question is introduced by se."
-  },
-  {
-   "level": "B1",
-   "startDay": 136,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "'O autor ___ livro li é português.' (whose)",
-   "options": [
-    "cujo",
-    "que",
-    "quem",
-    "onde"
-   ],
-   "answer": "cujo",
-   "explanation": "Cujo means whose and agrees with the thing possessed, here livro."
-  },
-  {
-   "level": "B1",
-   "startDay": 136,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "'É importante que tu ___ a verdade.' (dizer)",
-   "options": [
-    "digas",
-    "dizes",
-    "dirás",
-    "disseste"
-   ],
-   "answer": "digas",
-   "explanation": "Impersonal expressions like é importante que take the present subjunctive."
-  },
-  {
-   "level": "B1",
-   "startDay": 151,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "Combine the pronouns me and o: 'He gave me the book.'",
-   "options": [
-    "Ele deu-mo.",
-    "Ele deu-me-o.",
-    "Ele deu-lo-me.",
-    "Ele deu-me ele."
-   ],
-   "answer": "Ele deu-mo.",
-   "explanation": "Me plus o contract into mo, so the verb takes deu-mo."
-  },
-  {
-   "level": "B1",
-   "startDay": 151,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "A sign in an estate agent's window meaning 'houses for sale'.",
-   "options": [
-    "Vendem-se casas.",
-    "Se vendem casas.",
-    "Vende-se casas.",
-    "São vendidas casas."
-   ],
-   "answer": "Vendem-se casas.",
-   "explanation": "In the passive with se the verb agrees with the plural noun and the pronoun follows it."
-  },
-  {
-   "level": "B1",
-   "startDay": 151,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "'Ela insistiu ___ pagar a conta.'",
-   "options": [
-    "em",
-    "de",
-    "a",
-    "por"
-   ],
-   "answer": "em",
-   "explanation": "Insistir governs the preposition em before an infinitive."
-  },
-  {
-   "level": "B1",
-   "startDay": 151,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "'Vou ___ amanhã.' (telefonar + lhe)",
-   "options": [
-    "telefonar-lhe",
-    "telefonar-o",
-    "telefoná-lo",
-    "telefonar-se"
-   ],
-   "answer": "telefonar-lhe",
-   "explanation": "Telefonar takes an indirect object, so the clitic is lhe and it attaches to the infinitive."
-  },
-  {
-   "level": "B1",
-   "startDay": 168,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "'Ele disse que ___ no dia seguinte.' (that he would arrive the next day)",
-   "options": [
-    "chegaria",
-    "chegará",
-    "chegava",
-    "chegue"
-   ],
-   "answer": "chegaria",
-   "explanation": "A future promise reported in the past becomes the conditional."
-  },
-  {
-   "level": "B1",
-   "startDay": 168,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "'É a cidade ___ vivi durante dez anos.'",
-   "options": [
-    "onde",
-    "que",
-    "cuja",
-    "qual"
-   ],
-   "answer": "onde",
-   "explanation": "Onde refers back to a place; que would need a preposition here."
-  },
-  {
-   "level": "B1",
-   "startDay": 168,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "'Se eu ___ tempo, ajudava-te.' (if I had time)",
-   "options": [
-    "tivesse",
-    "tenho",
-    "tiver",
-    "tinha"
-   ],
-   "answer": "tivesse",
-   "explanation": "An unreal condition takes the imperfect subjunctive tivesse."
-  },
-  {
-   "level": "B1",
-   "startDay": 168,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "'Já ___ o formulário quando ele chegou.' (I had already filled it in)",
-   "options": [
-    "tinha preenchido",
-    "preenchi",
-    "preenchia",
-    "tenho preenchido"
-   ],
-   "answer": "tinha preenchido",
-   "explanation": "An action finished before another past action takes the mais-que-perfeito composto."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "'É provável que ele ___ amanhã.'",
-   "options": [
-    "venha",
-    "vem",
-    "virá",
-    "vinha"
-   ],
-   "answer": "venha",
-   "explanation": "É provável que expresses uncertainty, so it takes the present subjunctive venha."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "'Acho que ele ___ razão.'",
-   "options": [
-    "tem",
-    "tenha",
-    "tivesse",
-    "teria"
-   ],
-   "answer": "tem",
-   "explanation": "Affirmative achar que states an opinion as fact, so the indicative tem follows."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "'Podes escolher ___ um destes livros.'",
-   "options": [
-    "qualquer",
-    "ambos",
-    "cada",
-    "nenhum"
-   ],
-   "answer": "qualquer",
-   "explanation": "Qualquer um means any one of them; ambos means both and cada needs a noun after it."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "'Talvez ___ melhor esperar.' (ser)",
-   "options": [
-    "seja",
-    "é",
-    "será",
-    "fosse"
-   ],
-   "answer": "seja",
-   "explanation": "Talvez expresses doubt and takes the present subjunctive seja."
-  },
-  {
-   "level": "B1",
-   "startDay": 215,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "'A empresa ___ trabalho fica no Porto.'",
-   "options": [
-    "para a qual",
-    "que",
-    "cuja",
-    "a quem"
-   ],
-   "answer": "para a qual",
-   "explanation": "Trabalhar para requires the preposition, and after it the relative takes the form para a qual."
-  },
-  {
-   "level": "B1",
-   "startDay": 215,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "'___ muito nesta empresa.' (trabalhar, meaning people work a lot here)",
-   "options": [
-    "Trabalha-se",
-    "Se trabalha",
-    "Trabalham-se",
-    "É trabalhado"
-   ],
-   "answer": "Trabalha-se",
-   "explanation": "The impersonal se keeps the verb singular and follows it: trabalha-se."
-  },
-  {
-   "level": "B1",
-   "startDay": 215,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "O documento que garante uma indemnização em caso de acidente é ___.",
-   "options": [
-    "a apólice de seguro",
-    "a fatura",
-    "o recibo",
-    "o extrato bancário"
-   ],
-   "answer": "a apólice de seguro",
-   "explanation": "A apólice is the insurance policy; the others are a bill, a receipt and a bank statement."
-  },
-  {
-   "level": "B1",
-   "startDay": 215,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "'Assinei o contrato de ___ da casa por um ano.'",
-   "options": [
-    "arrendamento",
-    "empréstimo",
-    "seguro",
-    "imposto"
-   ],
-   "answer": "arrendamento",
-   "explanation": "A rental contract is a contrato de arrendamento; the others are a loan, insurance and tax."
-  }
- ]
+  "title": "Find your starting point",
+  "intro": "A short European Portuguese check that gets harder as it goes, so we can start you in the right place. It takes about two minutes and you can retake it any time.",
+  "questions": [
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "You want an espresso in a Lisbon cafe. You ask for:",
+      "options": [
+        "um café",
+        "uma água",
+        "um saco",
+        "uma conta"
+      ],
+      "answer": "um café",
+      "explanation": "Um café is an espresso in Portugal. Uma bica is the Lisbon word for it."
+    },
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "'Se faz favor' means:",
+      "options": [
+        "please",
+        "thank you",
+        "sorry",
+        "goodbye"
+      ],
+      "answer": "please",
+      "explanation": "Se faz favor is the everyday Portuguese please, heard more than por favor."
+    },
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "Somebody tells you 'Vire à direita'. You:",
+      "options": [
+        "turn right",
+        "turn left",
+        "go straight on",
+        "go back"
+      ],
+      "answer": "turn right",
+      "explanation": "À direita is on the right; à esquerda is on the left."
+    },
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "A woman thanks somebody. She says:",
+      "options": [
+        "obrigada",
+        "obrigado",
+        "obrigados",
+        "obrigade"
+      ],
+      "answer": "obrigada",
+      "explanation": "The word agrees with the speaker, so a woman says obrigada."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "'Eu ___ portuguesa.' (I am Portuguese)",
+      "options": [
+        "sou",
+        "és",
+        "é",
+        "são"
+      ],
+      "answer": "sou",
+      "explanation": "With eu, the verb ser is sou."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "How do you say 'good morning'?",
+      "options": [
+        "Bom dia",
+        "Boa tarde",
+        "Boa noite",
+        "Até logo"
+      ],
+      "answer": "Bom dia",
+      "explanation": "Bom dia is used before lunchtime; boa tarde and boa noite come later in the day."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "Someone thanks you. What do you reply?",
+      "options": [
+        "De nada",
+        "Por favor",
+        "Com licença",
+        "Boa sorte"
+      ],
+      "answer": "De nada",
+      "explanation": "De nada is the standard reply to thanks, like 'you're welcome'."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "'Tu ___ estudante?' (ser)",
+      "options": [
+        "és",
+        "é",
+        "sou",
+        "são"
+      ],
+      "answer": "és",
+      "explanation": "Tu takes és; é is for ele/ela and você."
+    },
+    {
+      "level": "A1",
+      "startDay": 16,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "'A sopa ___ fria hoje.' (the soup is cold today, a temporary state)",
+      "options": [
+        "está",
+        "é",
+        "era",
+        "ser"
+      ],
+      "answer": "está",
+      "explanation": "A temporary state takes estar, while a permanent quality takes ser."
+    },
+    {
+      "level": "A1",
+      "startDay": 16,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "How do you say 'it's half past three'?",
+      "options": [
+        "São três e meia.",
+        "É três e meia.",
+        "São três e metade.",
+        "Está três e meia."
+      ],
+      "answer": "São três e meia.",
+      "explanation": "Hours from two onwards take the plural são, and half past is e meia."
+    },
+    {
+      "level": "A1",
+      "startDay": 16,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "'___ problema é difícil.' (this word looks feminine but is not)",
+      "options": [
+        "O",
+        "A",
+        "As",
+        "Uma"
+      ],
+      "answer": "O",
+      "explanation": "Problema is masculine despite the final a, so it takes o."
+    },
+    {
+      "level": "A1",
+      "startDay": 16,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "'___ água está fria.'",
+      "options": [
+        "A",
+        "O",
+        "As",
+        "Um"
+      ],
+      "answer": "A",
+      "explanation": "Água is feminine, so it takes a."
+    },
+    {
+      "level": "A1",
+      "startDay": 22,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "Present tense: 'A loja ___ às nove da manhã.' (abrir)",
+      "options": [
+        "abre",
+        "abrem",
+        "abro",
+        "abrir"
+      ],
+      "answer": "abre",
+      "explanation": "An -IR verb with a singular subject takes the ending -e: abre."
+    },
+    {
+      "level": "A1",
+      "startDay": 22,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "In a café in Portugal you want a small black espresso. What do you order?",
+      "options": [
+        "Um café",
+        "Um galão",
+        "Uma meia de leite",
+        "Um chá"
+      ],
+      "answer": "Um café",
+      "explanation": "Um café is the small espresso; galão and meia de leite are milky coffees."
+    },
+    {
+      "level": "A1",
+      "startDay": 22,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "'___ é que tu moras?' (asking about the place)",
+      "options": [
+        "Onde",
+        "Quando",
+        "Como",
+        "Quem"
+      ],
+      "answer": "Onde",
+      "explanation": "Onde asks about place; quando asks about time."
+    },
+    {
+      "level": "A1",
+      "startDay": 22,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "'Nós ___ em Lisboa.' (viver)",
+      "options": [
+        "vivemos",
+        "vivem",
+        "vives",
+        "vivo"
+      ],
+      "answer": "vivemos",
+      "explanation": "Nós takes the -mos ending: vivemos."
+    },
+    {
+      "level": "A1",
+      "startDay": 40,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "'Este é ___ carro.' (my car)",
+      "options": [
+        "o meu",
+        "meu",
+        "a minha",
+        "os meus"
+      ],
+      "answer": "o meu",
+      "explanation": "European Portuguese keeps the article before the possessive: o meu carro."
+    },
+    {
+      "level": "A1",
+      "startDay": 40,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "'___ aqui é o meu bilhete.' (this thing, next to me)",
+      "options": [
+        "Isto",
+        "Isso",
+        "Aquilo",
+        "Esse"
+      ],
+      "answer": "Isto",
+      "explanation": "Isto is what is near the speaker; isso is near the listener and aquilo is far from both."
+    },
+    {
+      "level": "A1",
+      "startDay": 40,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "O plural de 'o hotel' é ___.",
+      "options": [
+        "os hotéis",
+        "os hoteles",
+        "os hotel",
+        "as hotéis"
+      ],
+      "answer": "os hotéis",
+      "explanation": "Nouns ending in -l drop it and take -is: hotel becomes hotéis."
+    },
+    {
+      "level": "A1",
+      "startDay": 40,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "Falando com um senhor mais velho que não conhece, diz:",
+      "options": [
+        "O senhor precisa de ajuda?",
+        "Tu precisas de ajuda?",
+        "Vocês precisam de ajuda?",
+        "Nós precisamos de ajuda?"
+      ],
+      "answer": "O senhor precisa de ajuda?",
+      "explanation": "O senhor is the respectful form for a man you do not know; tu is for friends and family."
+    },
+    {
+      "level": "A2",
+      "startDay": 56,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Completed past: 'Ontem eu ___ um filme.' (ver)",
+      "options": [
+        "vi",
+        "via",
+        "vejo",
+        "verei"
+      ],
+      "answer": "vi",
+      "explanation": "One finished event in the past takes the pretérito perfeito simples: vi."
+    },
+    {
+      "level": "A2",
+      "startDay": 56,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Completed past: 'Ontem eu ___ uma carta à minha mãe.' (escrever)",
+      "options": [
+        "escrevi",
+        "escrevo",
+        "escrevia",
+        "escreverei"
+      ],
+      "answer": "escrevi",
+      "explanation": "Regular -er preterite, eu form: escrevi (falei, comi, abri follow the same pattern)."
+    },
+    {
+      "level": "A2",
+      "startDay": 56,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "You have finished eating in a restaurant and want to pay. What do you ask for?",
+      "options": [
+        "A conta, se faz favor.",
+        "A ementa, se faz favor.",
+        "O troco, se faz favor.",
+        "A gorjeta, se faz favor."
+      ],
+      "answer": "A conta, se faz favor.",
+      "explanation": "A conta is the bill; a ementa is the menu and a gorjeta is the tip."
+    },
+    {
+      "level": "A2",
+      "startDay": 56,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Completed past: 'Ontem ele ___ ao cinema.' (ir)",
+      "options": [
+        "foi",
+        "foste",
+        "fui",
+        "ia"
+      ],
+      "answer": "foi",
+      "explanation": "Ir is irregular in the pretérito perfeito: ele foi."
+    },
+    {
+      "level": "A2",
+      "startDay": 62,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "Past habit: 'Quando era pequeno, ___ à bola todos os dias.' (jogar)",
+      "options": [
+        "jogava",
+        "joguei",
+        "jogo",
+        "jogarei"
+      ],
+      "answer": "jogava",
+      "explanation": "A repeated habit in the past takes the imperfeito: jogava."
+    },
+    {
+      "level": "A2",
+      "startDay": 62,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "Which sentence is correct for 'They told me nothing'?",
+      "options": [
+        "Não me disseram nada.",
+        "Não disseram-me nada.",
+        "Nunca disseram-me nada.",
+        "Não disseram nada-me."
+      ],
+      "answer": "Não me disseram nada.",
+      "explanation": "A negative word pulls the pronoun in front of the verb: não me disseram."
+    },
+    {
+      "level": "A2",
+      "startDay": 62,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "Replace the object in 'Comprei o bilhete.' with a pronoun.",
+      "options": [
+        "Comprei-o.",
+        "O comprei.",
+        "Comprei ele.",
+        "Comprei-lo."
+      ],
+      "answer": "Comprei-o.",
+      "explanation": "The direct object pronoun o attaches after the verb with a hyphen: comprei-o (Pronomes de complemento direto)."
+    },
+    {
+      "level": "A2",
+      "startDay": 62,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "'Enquanto eu ___, o telefone tocou.' (dormir)",
+      "options": [
+        "dormia",
+        "dormi",
+        "dormira",
+        "durmo"
+      ],
+      "answer": "dormia",
+      "explanation": "The imperfeito describes what was going on when another action interrupted it."
+    },
+    {
+      "level": "A2",
+      "startDay": 69,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "'Fazer a mala' means:",
+      "options": [
+        "To pack the suitcase",
+        "To lose the suitcase",
+        "To buy a suitcase",
+        "To weigh the suitcase"
+      ],
+      "answer": "To pack the suitcase",
+      "explanation": "'Fazer a mala' is the fixed expression for packing before a trip."
+    },
+    {
+      "level": "A2",
+      "startDay": 69,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "'Comprei um bilhete de ida e volta.' What does 'ida e volta' mean?",
+      "options": [
+        "Return (there and back)",
+        "One-way only",
+        "Business class",
+        "Group discount"
+      ],
+      "answer": "Return (there and back)",
+      "explanation": "'Ida e volta' means a return ticket; 'só ida' would be one-way."
+    },
+    {
+      "level": "A2",
+      "startDay": 69,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "Which word means 'bus' in Portugal?",
+      "options": [
+        "autocarro",
+        "ónibus",
+        "carrinha",
+        "elétrico"
+      ],
+      "answer": "autocarro",
+      "explanation": "Portugal uses autocarro; ónibus is Brazilian and elétrico is the tram."
+    },
+    {
+      "level": "A2",
+      "startDay": 69,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "'Perdi o comboio' means:",
+      "options": [
+        "I missed the train",
+        "I lost my ticket",
+        "I left the station",
+        "I took the wrong train"
+      ],
+      "answer": "I missed the train",
+      "explanation": "Perder o comboio is to miss it; comboio is the Portuguese word for train."
+    },
+    {
+      "level": "A2",
+      "startDay": 90,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "'Ela está ___ estudar.' (she is studying right now)",
+      "options": [
+        "a",
+        "de",
+        "em",
+        "para"
+      ],
+      "answer": "a",
+      "explanation": "European Portuguese uses estar a plus the infinitive for an action in progress."
+    },
+    {
+      "level": "A2",
+      "startDay": 90,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "'Não vi ___ na rua.' (nobody)",
+      "options": [
+        "ninguém",
+        "nada",
+        "nunca",
+        "nenhum"
+      ],
+      "answer": "ninguém",
+      "explanation": "Ninguém is for people; nada is for things."
+    },
+    {
+      "level": "A2",
+      "startDay": 90,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "O advérbio formado a partir de 'rápido' é ___.",
+      "options": [
+        "rapidamente",
+        "rápidamente",
+        "rapidmente",
+        "rapidomente"
+      ],
+      "answer": "rapidamente",
+      "explanation": "The adverb is built on the feminine form plus -mente, and it loses the accent."
+    },
+    {
+      "level": "A2",
+      "startDay": 90,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "'___ não terminei o trabalho.' (not yet)",
+      "options": [
+        "Ainda",
+        "Já",
+        "Nunca",
+        "Sempre"
+      ],
+      "answer": "Ainda",
+      "explanation": "Ainda não is not yet; já would mean it is already done."
+    },
+    {
+      "level": "A2",
+      "startDay": 115,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "'___ o João há muitos anos.' (I have known him for years)",
+      "options": [
+        "Conheço",
+        "Sei",
+        "Conhecido",
+        "Soube"
+      ],
+      "answer": "Conheço",
+      "explanation": "Conhecer is for people and places; saber is for facts and skills."
+    },
+    {
+      "level": "A2",
+      "startDay": 115,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "'Está ___ frio hoje!'",
+      "options": [
+        "tão",
+        "tanto",
+        "tal",
+        "quanto"
+      ],
+      "answer": "tão",
+      "explanation": "Tão intensifies an adjective; tanto goes with a noun or a verb."
+    },
+    {
+      "level": "A2",
+      "startDay": 115,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "'Ele ___ a estudar alemão há dois meses.' (has been studying, and still is)",
+      "options": [
+        "anda",
+        "vai",
+        "volta",
+        "acaba"
+      ],
+      "answer": "anda",
+      "explanation": "Andar a plus the infinitive describes something continuing over a period."
+    },
+    {
+      "level": "A2",
+      "startDay": 115,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "'Podes ___ o livro quando vieres?' (bring it here to me)",
+      "options": [
+        "trazer",
+        "levar",
+        "ir",
+        "vir"
+      ],
+      "answer": "trazer",
+      "explanation": "Trazer moves something towards the speaker; levar moves it away."
+    },
+    {
+      "level": "B1",
+      "startDay": 135,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "'Quero que tu ___ cedo.' (vir)",
+      "options": [
+        "venhas",
+        "vens",
+        "vieres",
+        "vieste"
+      ],
+      "answer": "venhas",
+      "explanation": "Querer que triggers the presente do conjuntivo: que tu venhas."
+    },
+    {
+      "level": "B1",
+      "startDay": 135,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "'Ele prometeu que ___ o dinheiro na sexta.' (devolver, standard written form)",
+      "options": [
+        "devolveria",
+        "devolverá",
+        "devolvesse",
+        "devolveu"
+      ],
+      "answer": "devolveria",
+      "explanation": "A future seen from a past moment takes the condicional: devolveria."
+    },
+    {
+      "level": "B1",
+      "startDay": 135,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "How do you politely ask an older stranger in a shop if she wants a bag?",
+      "options": [
+        "A senhora quer um saco?",
+        "Tu queres um saco?",
+        "Você quer um saco?",
+        "Vocês querem um saco?"
+      ],
+      "answer": "A senhora quer um saco?",
+      "explanation": "European Portuguese prefers o senhor or a senhora with strangers, not tu or você."
+    },
+    {
+      "level": "B1",
+      "startDay": 135,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "'Quando cheguei, ele já ___ saído.' (ter)",
+      "options": [
+        "tinha",
+        "tenha",
+        "teve",
+        "tivesse"
+      ],
+      "answer": "tinha",
+      "explanation": "The mais-que-perfeito composto uses the imperfeito of ter: tinha saído."
+    },
+    {
+      "level": "B1",
+      "startDay": 146,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "'Procuro alguém que ___ falar alemão.' (saber, the person may not exist)",
+      "options": [
+        "saiba",
+        "sabe",
+        "soubesse",
+        "souber"
+      ],
+      "answer": "saiba",
+      "explanation": "A relative clause about an unidentified person takes the conjuntivo: saiba."
+    },
+    {
+      "level": "B1",
+      "startDay": 146,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "He asked: 'Tens tempo?' Report it: 'Ele perguntou-me ___ eu tinha tempo.'",
+      "options": [
+        "se",
+        "que",
+        "o que",
+        "qual"
+      ],
+      "answer": "se",
+      "explanation": "A reported yes or no question is introduced by se."
+    },
+    {
+      "level": "B1",
+      "startDay": 146,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "'O autor ___ livro li é português.' (whose)",
+      "options": [
+        "cujo",
+        "que",
+        "quem",
+        "onde"
+      ],
+      "answer": "cujo",
+      "explanation": "Cujo means whose and agrees with the thing possessed, here livro."
+    },
+    {
+      "level": "B1",
+      "startDay": 146,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "'É importante que tu ___ a verdade.' (dizer)",
+      "options": [
+        "digas",
+        "dizes",
+        "dirás",
+        "disseste"
+      ],
+      "answer": "digas",
+      "explanation": "Impersonal expressions like é importante que take the present subjunctive."
+    },
+    {
+      "level": "B1",
+      "startDay": 161,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "Combine the pronouns me and o: 'He gave me the book.'",
+      "options": [
+        "Ele deu-mo.",
+        "Ele deu-me-o.",
+        "Ele deu-lo-me.",
+        "Ele deu-me ele."
+      ],
+      "answer": "Ele deu-mo.",
+      "explanation": "Me plus o contract into mo, so the verb takes deu-mo."
+    },
+    {
+      "level": "B1",
+      "startDay": 161,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "A sign in an estate agent's window meaning 'houses for sale'.",
+      "options": [
+        "Vendem-se casas.",
+        "Se vendem casas.",
+        "Vende-se casas.",
+        "São vendidas casas."
+      ],
+      "answer": "Vendem-se casas.",
+      "explanation": "In the passive with se the verb agrees with the plural noun and the pronoun follows it."
+    },
+    {
+      "level": "B1",
+      "startDay": 161,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "'Ela insistiu ___ pagar a conta.'",
+      "options": [
+        "em",
+        "de",
+        "a",
+        "por"
+      ],
+      "answer": "em",
+      "explanation": "Insistir governs the preposition em before an infinitive."
+    },
+    {
+      "level": "B1",
+      "startDay": 161,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "'Vou ___ amanhã.' (telefonar + lhe)",
+      "options": [
+        "telefonar-lhe",
+        "telefonar-o",
+        "telefoná-lo",
+        "telefonar-se"
+      ],
+      "answer": "telefonar-lhe",
+      "explanation": "Telefonar takes an indirect object, so the clitic is lhe and it attaches to the infinitive."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "'Ele disse que ___ no dia seguinte.' (that he would arrive the next day)",
+      "options": [
+        "chegaria",
+        "chegará",
+        "chegava",
+        "chegue"
+      ],
+      "answer": "chegaria",
+      "explanation": "A future promise reported in the past becomes the conditional."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "'É a cidade ___ vivi durante dez anos.'",
+      "options": [
+        "onde",
+        "que",
+        "cuja",
+        "qual"
+      ],
+      "answer": "onde",
+      "explanation": "Onde refers back to a place; que would need a preposition here."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "'Se eu ___ tempo, ajudava-te.' (if I had time)",
+      "options": [
+        "tivesse",
+        "tenho",
+        "tiver",
+        "tinha"
+      ],
+      "answer": "tivesse",
+      "explanation": "An unreal condition takes the imperfect subjunctive tivesse."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "'Já ___ o formulário quando ele chegou.' (I had already filled it in)",
+      "options": [
+        "tinha preenchido",
+        "preenchi",
+        "preenchia",
+        "tenho preenchido"
+      ],
+      "answer": "tinha preenchido",
+      "explanation": "An action finished before another past action takes the mais-que-perfeito composto."
+    },
+    {
+      "level": "B1",
+      "startDay": 195,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "'É provável que ele ___ amanhã.'",
+      "options": [
+        "venha",
+        "vem",
+        "virá",
+        "vinha"
+      ],
+      "answer": "venha",
+      "explanation": "É provável que expresses uncertainty, so it takes the present subjunctive venha."
+    },
+    {
+      "level": "B1",
+      "startDay": 195,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "'Acho que ele ___ razão.'",
+      "options": [
+        "tem",
+        "tenha",
+        "tivesse",
+        "teria"
+      ],
+      "answer": "tem",
+      "explanation": "Affirmative achar que states an opinion as fact, so the indicative tem follows."
+    },
+    {
+      "level": "B1",
+      "startDay": 195,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "'Podes escolher ___ um destes livros.'",
+      "options": [
+        "qualquer",
+        "ambos",
+        "cada",
+        "nenhum"
+      ],
+      "answer": "qualquer",
+      "explanation": "Qualquer um means any one of them; ambos means both and cada needs a noun after it."
+    },
+    {
+      "level": "B1",
+      "startDay": 195,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "'Talvez ___ melhor esperar.' (ser)",
+      "options": [
+        "seja",
+        "é",
+        "será",
+        "fosse"
+      ],
+      "answer": "seja",
+      "explanation": "Talvez expresses doubt and takes the present subjunctive seja."
+    },
+    {
+      "level": "B1",
+      "startDay": 225,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "'A empresa ___ trabalho fica no Porto.'",
+      "options": [
+        "para a qual",
+        "que",
+        "cuja",
+        "a quem"
+      ],
+      "answer": "para a qual",
+      "explanation": "Trabalhar para requires the preposition, and after it the relative takes the form para a qual."
+    },
+    {
+      "level": "B1",
+      "startDay": 225,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "'___ muito nesta empresa.' (trabalhar, meaning people work a lot here)",
+      "options": [
+        "Trabalha-se",
+        "Se trabalha",
+        "Trabalham-se",
+        "É trabalhado"
+      ],
+      "answer": "Trabalha-se",
+      "explanation": "The impersonal se keeps the verb singular and follows it: trabalha-se."
+    },
+    {
+      "level": "B1",
+      "startDay": 225,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "O documento que garante uma indemnização em caso de acidente é ___.",
+      "options": [
+        "a apólice de seguro",
+        "a fatura",
+        "o recibo",
+        "o extrato bancário"
+      ],
+      "answer": "a apólice de seguro",
+      "explanation": "A apólice is the insurance policy; the others are a bill, a receipt and a bank statement."
+    },
+    {
+      "level": "B1",
+      "startDay": 225,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "'Assinei o contrato de ___ da casa por um ano.'",
+      "options": [
+        "arrendamento",
+        "empréstimo",
+        "seguro",
+        "imposto"
+      ],
+      "answer": "arrendamento",
+      "explanation": "A rental contract is a contrato de arrendamento; the others are a loan, insurance and tax."
+    }
+  ]
 }

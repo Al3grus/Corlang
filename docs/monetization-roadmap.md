@@ -17,21 +17,21 @@ forever, Premium = AI" note in `docs/server-ai.md`.
    Three things about the boundary, all of which were wrong in the first design:
 
    - **The free window is a lesson count, not a CEFR level.** It was "A0 and A1 are free", which
-     gave Croatian away 77 lessons deep and gave Portuguese *nothing* — pt has no A0 at all, so
-     an A0-only rule would have put a paywall on its lesson 1.
+     gave Croatian away 77 lessons deep and gave Portuguese *nothing*, because pt had no A0 at
+     the time, so an A0-only rule would have put a paywall on its lesson 1. Portuguese has since
+     been given one (2026-08-22), which is why the rule now lands on a level in both courses.
    - **It is per-language data**, so an author lands the cut on a level boundary. Croatian sets
-     16 and gives away exactly A0; Portuguese sets 10, which falls inside A1, and the A1 product
-     sells the remaining 35 lessons. A flat constant left Croatian with one orphaned A0 lesson
-     that no product on the store could unlock.
+     16 and gives away exactly A0; Portuguese sets 10, which is also exactly its A0 since that
+     level was authored on 2026-08-22. A flat constant left Croatian with one orphaned A0 lesson
+     that no product on the store could unlock, which is why the number is per-language.
 
-     The two windows are different sizes but give away a comparable **share**: 4.7% of the
-     Croatian course, 4.2% of the Portuguese one. Share is the number to hold steady, not the
-     lesson count, and `PaywallGateTest` pins it at 6%.
+     **In both courses the free tier is now the whole A0 level**, and both give away a comparable
+     share: 4.7% of the Croatian course, 4.0% of the Portuguese one. Share is the number to hold
+     steady, not the lesson count, and `PaywallGateTest` pins it at 6%.
 
-     Portuguese cannot simply relabel its first lessons into an A0 to make the two courses match
-     in shape. `docs/language-standard.md` sets a floor of 45 lessons for pt A1, and that floor
-     is a claim about how much teaching reaching A1 takes, not a bookkeeping total, so an A0
-     there has to be authored on top of the 240. See the debt in `docs/PENDING.md`.
+     The onramps are different sizes on purpose, and Portuguese's was ADDED rather than carved
+     out of A1: see `docs/language-standard.md` on the two kinds of A0, and why relabelling is a
+     floor violation rather than a shortcut.
    - **It is an absolute day index.** Placement writes a start day and `TodayScreen` takes
      `maxOf(currentDay, lastCompleted + 1)`, so "the next 15 lessons" would have handed a learner
      placed at lesson 150 a free run through 150-164 of a level they never bought. Pinned by
@@ -94,8 +94,8 @@ actually work, which takes a week and a half of daily lessons and cannot be demo
 three days.
 
 > Superseded 2026-08-21. The original rule here was "the whole A0+A1 course is free", which gave
-> Croatian away 77 lessons deep and gave Portuguese nothing at all, since pt has no A0. See the
-> free-window design at the top of this file.
+> Croatian away 77 lessons deep and gave Portuguese nothing at all, since pt had no A0 then.
+> See the free-window design at the top of this file.
 
 ### One-time level unlocks (managed products — content has ZERO recurring cost → lifetime access)
 Current ids and prices are the six-product table below. The pricing RESEARCH that set the shape
