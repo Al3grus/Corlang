@@ -1,6 +1,6 @@
 {
-  "versionCode": 179,
-  "versionName": "0.50.0",
-  "notes": "Unlocking a level now unlocks everything below it, so buying A2 opens A1 too and the top level is simply the whole course. A course is a ladder and owning a rung without the ones under it made no sense: your daily reviews are full of the earlier level's words either way. Two ways the paywall leaked are closed. Taking the free placement test and landing deep no longer unlocks the quizzes and mock exams of every level it skipped, and it no longer drops six hundred words of a paid course into your reviews; both now wait until you own the level. Prices are per language: through A1, through A2, or the whole course to B1.",
+  "versionCode": 180,
+  "versionName": "0.51.0",
+  "notes": "Play Billing moves from version 7 to version 8. Google stops accepting version 7 for new apps and updates on 31 August 2026, so shipping on it would have meant an app that could not be updated a week later. Version 8 also reports which products the store could not return and why, so a product missing or mistyped in Play Console now says so in the log instead of showing a silent \"price unavailable\".",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
