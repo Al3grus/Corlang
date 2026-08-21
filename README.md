@@ -61,7 +61,7 @@ course and no recurring charge — the lessons are a fixed thing you buy once an
 after a reinstall.
 
 The **Tutor** is the one exception: it talks to a language model, which costs money every time
-you use it, so it is a separate subscription at €9.99 a month with a 7-day free trial. Everything
+you use it, so it is a separate subscription at €9.99 a month with a 3-day free trial. Everything
 else in the app works without it.
 
 ## Status

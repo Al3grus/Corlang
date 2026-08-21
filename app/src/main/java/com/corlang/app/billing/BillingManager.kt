@@ -26,7 +26,7 @@ import kotlinx.coroutines.launch
  * process (created in AppContainer); an Activity is passed only at purchase time.
  *
  * Products (create these in Play Console — see docs/monetization-roadmap.md):
- *  - SUB  `corlang_ai_premium`  ONE base plan `monthly` (+ 7-day trial offer). Deliberately no
+ *  - SUB  `corlang_ai_premium`  ONE base plan `monthly` (+ 3-day trial offer). Deliberately no
  *    annual: AI models and costs can shift within a year, and a sold annual locks 12 months of
  *    service at old economics. Monthly keeps repricing freedom.
  *  - INAPP, per language: `unlock_<lang>_<level>`, one per level a course sells. Each grants

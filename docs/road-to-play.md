@@ -88,7 +88,7 @@ copy them character for character — a typo means creating a second product and
 first forever.
 
 - **Subscriptions → create `corlang_ai_premium`**:
-  - base plan `monthly`, auto-renewing, **€9.99/month**; add an **Offer** on it = **7-day free trial** phase. No annual plan (AI economics may shift within a year).
+  - base plan `monthly`, auto-renewing, **€9.99/month**; add an **Offer** on it = **3-day free trial** phase (Google's minimum length; a trial spends real tokens, so it is set at the floor). No annual plan (AI economics may shift within a year).
   - **In-app products (managed) → create six**, three per language:
   `unlock_hr_a1` €4.99 · `unlock_hr_a2` €12.99 · `unlock_hr_b1` €24.99, and `unlock_pt_a1` ·
   `unlock_pt_a2` · `unlock_pt_b1` at the same prices. Each unlock is **cumulative** — it grants
@@ -113,7 +113,7 @@ On the Internal testing track → **Testers** → create an email list → add t
 ### 8. TEST the real billing **(you, on your phone)**
 Install Corlang **from the Play opt-in link** with a license-tester Google account. Now:
 - A2+ day → paywall shows **real prices** and the **real Play payment sheet** → buy → level unlocks.
-- Profile → Get Premium → See plans → subscribe (7-day trial) → **Learn tab appears**, AI works.
+- Profile → Get Premium → See plans → subscribe (3-day trial) → **Learn tab appears**, AI works.
 - This is where you "see how the payment popups look."
 
 ### 9. Start the Closed-testing 14-day clock **(browser)** — for PRODUCTION eligibility

@@ -111,7 +111,7 @@ proven; NOT in v1.
 | Plan | Price | Effective | Note |
 |---|---|---|---|
 | **Monthly** | **€9.99** | — | education-app median; well under Ling €16.99 & Duolingo Max €14.99 |
-| **7-day free trial** | — | once per user | on the monthly plan. Google requires 3d-3y; niche-language norm (Ling ships a 7-day trial) |
+| **3-day free trial** | — | once per user | on the monthly plan. Google's floor is 3 days, so this is the shortest it can legally be. Shortened from 7 on 2026-08-22: unlike the course, every trial message costs real Anthropic tokens, and a 7-day window is long enough to get the value and leave. At the 30-msg/day cap a 7-day trial can burn ~210 messages before a single euro arrives; 3 days caps that at ~90. |
 
 **No annual plan** — decided 2026-07-18. AI models and per-message costs can shift within a
 year; a sold annual locks 12 months of service at old economics, and Play sub price increases
@@ -144,7 +144,7 @@ these products in Play Console → Monetize. Until they exist the paywall shows 
 
 **Subscription** — Monetize → Subscriptions → create `corlang_ai_premium`:
 - ONE base plan `monthly` — auto-renewing, **€9.99/month**. Add an **Offer** on it: a
-  **7-day free trial** phase. Google requires trials of 3d-3y, once per user.
+  **3-day free trial** phase. Google's minimum is 3 days, so this is the floor.
 - No annual base plan (see the decision above). The app requests only `monthly`.
 
 **One-time unlocks** — Monetize → In-app products (managed products). **Eight products, four per

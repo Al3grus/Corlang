@@ -44,7 +44,7 @@ private fun Context.activity(): Activity? {
  * The purchase surface. Two modes:
  *  - [levelId] non-null → the one-time unlock for that CEFR level of [lang], and that course's
  *    bundle when it would not make the learner pay twice (see below).
- *  - [levelId] null      → the AI Premium subscription (monthly only + 7-day trial).
+ *  - [levelId] null      → the AI Premium subscription (monthly only + 3-day trial).
  *
  * Unlocks are per language and CUMULATIVE: buying A2 grants A1 as well, so the top level's
  * product is also the whole-course bundle. A course is a ladder and owning a rung without the
@@ -142,7 +142,7 @@ fun PaywallScreen(
             // Play-policy material.
             PurchaseCard(
                 title = "Monthly",
-                subtitle = "Starts with a 7-day free trial.",
+                subtitle = "Starts with a 3-day free trial.",
                 footnote = "Fair use: up to 30 AI messages a day.",
                 price = prices["${BillingManager.SUB_PREMIUM}:${BillingManager.BASE_MONTHLY}"],
                 priceSuffix = "/month",

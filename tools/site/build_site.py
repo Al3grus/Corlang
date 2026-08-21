@@ -210,27 +210,6 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   letter-spacing:-.01em}
 .claim p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 
-/* ---- pricing ----
-   Three tiers on one row, reading left to right as the ladder they are. The cards are hairline
-   boxes rather than the coloured "plan" blocks a pricing page usually reaches for: the whole
-   site is quiet, and one loud table would look imported from somewhere else.
-
-   The last tier carries the emphasis because it is the honest recommendation — the levels are
-   cumulative, so anyone actually heading for the exam is buying it in the end, and pretending
-   otherwise to make a cheap tier look generous would be the cocky version of this page. */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0 0}
-.tier{border:1px solid var(--line);border-radius:14px;background:var(--raise);padding:22px 20px;
-  display:flex;flex-direction:column;gap:8px}
-.tier.best{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
-.tier .lvl{font-size:12.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;
-  color:var(--muted)}
-.tier.best .lvl{color:var(--blue)}
-.tier .amt{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em;
-  line-height:1.1;margin:2px 0 0}
-.tier p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55}
-.free-note{margin:0 0 4px;font-size:17px;line-height:1.6;max-width:640px}
-.price-foot{margin:26px 0 0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:660px}
-
 /* ---- invite dialog ----
    A native <dialog>: it traps focus, closes on Escape and returns focus on its own, which a div
    pretending to be a modal does not. */
@@ -299,7 +278,6 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .loop{grid-template-columns:1fr 1fr;gap:30px 0}
   .step:nth-child(2)::after{display:none}
   .claims{grid-template-columns:1fr;gap:18px;margin-top:32px}
-  .tiers{grid-template-columns:1fr;gap:14px}
   .hero{padding-top:48px}
   .section{padding:40px 0 0;margin-top:34px}
 }
@@ -325,7 +303,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
    Under prefers-reduced-motion NOTHING here applies. Every resting state lives inside this
    query, so a visitor with it on, or with JS off, gets the finished page rather than a blank one. */
 @media (prefers-reduced-motion:no-preference){
-  .rise,.loop .step,.claims .claim,.tiers .tier,.tick,.gap,.origin{
+  .rise,.loop .step,.claims .claim,.tick,.gap,.origin{
     transition:opacity .72s cubic-bezier(.16,.7,.3,1),transform .72s cubic-bezier(.16,.7,.3,1)}
 
   .rise{opacity:0;transform:translateY(10px)}
@@ -334,12 +312,10 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 
   /* Children rest and arrive on the SAME property pair as their container, differing only in
      delay, so a group settles as one movement instead of four. */
-  .loop .step,.claims .claim,.tiers .tier{opacity:0;transform:translateY(10px)}
-  .loop.in .step,.claims.in .claim,.tiers.in .tier{opacity:1;transform:none}
-  .loop .step:nth-child(2),.claims .claim:nth-child(2),
-  .tiers .tier:nth-child(2){transition-delay:.08s}
-  .loop .step:nth-child(3),.claims .claim:nth-child(3),
-  .tiers .tier:nth-child(3){transition-delay:.16s}
+  .loop .step,.claims .claim{opacity:0;transform:translateY(10px)}
+  .loop.in .step,.claims.in .claim{opacity:1;transform:none}
+  .loop .step:nth-child(2),.claims .claim:nth-child(2){transition-delay:.08s}
+  .loop .step:nth-child(3),.claims .claim:nth-child(3){transition-delay:.16s}
   .loop .step:nth-child(4){transition-delay:.24s}
 
   /* The arrows are ::after on the steps, so they inherit the step's opacity and need no rule of
@@ -417,7 +393,7 @@ SCRIPT = """<script>
       io.unobserve(e.target);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.loop, .track, .claims, .tiers, .shots, .section .rise')
+  document.querySelectorAll('.loop, .track, .claims, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
 })();
 
@@ -835,36 +811,6 @@ def build():
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>What it costs</h2>
-      <p>Buy the course once. No subscription for the lessons.</p>
-    </div>
-    <p class="free-note rise">The start of every course is free: the first 16 lessons of Croatian
-      and 15 of Portuguese, with their words and reviews. Long enough for the reviews to come
-      back round, which is the only way to tell whether any of this works.</p>
-    <div class="tiers">
-      <div class="tier">
-        <span class="lvl">Through A1</span>
-        <p class="amt">&euro;4.99</p>
-        <p>The first paid step, for getting your footing.</p>
-      </div>
-      <div class="tier">
-        <span class="lvl">Through A2</span>
-        <p class="amt">&euro;12.99</p>
-        <p>Where the language starts carrying you through an ordinary day.</p>
-      </div>
-      <div class="tier best">
-        <span class="lvl">The whole course</span>
-        <p class="amt">&euro;24.99</p>
-        <p>Every level to B1 and its exams. One payment, kept for good.</p>
-      </div>
-    </div>
-    <p class="price-foot rise">Prices are per language and shown in yours by Google Play. Each
-      unlock includes the levels below it, so nothing you have already studied closes behind you.
-      The AI tutor is the one thing that costs money every time it is used, so it is separate:
-      &euro;9.99 a month, with a week free, and the rest of the app works without it.</p>
-  </section>
 """
 
     io.open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n').write(
