@@ -309,6 +309,27 @@ LOGO = """<svg viewBox="0 0 100 100" aria-hidden="true">
 </svg>"""
 
 
+HEAD_SCRIPT = """<script>
+/* A RELOAD starts at the top. Browsers restore the old scroll position on reload, which on a
+   page with reveal animations means arriving mid-page with everything already settled, looking
+   like the top of the page simply failed to render.
+
+   Scoped to reloads on purpose: setting scrollRestoration to manual unconditionally would also
+   break BACK from the privacy page, which should return you exactly where you left. Runs in the
+   head, before the browser gets a chance to restore. */
+(function(){
+  try{
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    var reloaded = nav ? nav.type === 'reload'
+      : (performance.navigation && performance.navigation.type === 1);
+    if (!reloaded) return;
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', function(){ window.scrollTo(0, 0); });
+  }catch(e){}
+})();
+</script>"""
+
+
 SCRIPT = """<script>
 /* Reveal-on-arrive. Guarded three ways so the page is never left invisible: reduced-motion
    returns early, a browser without IntersectionObserver returns early, and every element is
@@ -469,6 +490,7 @@ def page(title, description, body, canonical, wide=True):
 <link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+{HEAD_SCRIPT}
 <style>{CSS}</style>
 </head>
 <body>
@@ -502,7 +524,7 @@ def page(title, description, body, canonical, wide=True):
   <dialog id="contact">
     <form class="dlg" method="dialog">
       <h3>Get in touch</h3>
-      <p>Questions, bugs, or an invite that never arrived. A real person reads these.</p>
+      <p>Questions, bugs, or an invite that never arrived.</p>
       <div class="addr">
         <code id="contact-addr">support@corlang.app</code>
         <button type="button" id="contact-copy">Copy</button>
