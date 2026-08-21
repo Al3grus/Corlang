@@ -1,39 +1,64 @@
 # Corlang
 
-**Study-based language learning app to prepare for citizenship, job proficiency and official European language exams.**
+**A study-based app for learning a European language properly — for citizenship, for work, or for
+the official exam.** Croatian and European Portuguese are available today.
 
-Corlang teaches a language properly. Not with points, leagues, or games, but with a proven study
-method and a day-by-day course that takes you from zero to a real, official language exam.
+Corlang is not a game. There are no points, no leagues and no mascot. It is a day-by-day course
+built on how memory actually works, and it takes you from your first words to the level the
+official exam asks for.
 
-The first language is **Croatian**, with a complete course from beginner to the official B1 exam.
-More languages are planned.
+## Languages
+
+| Language | Course | Aimed at |
+|---|---|---|
+| **Croatian** | 344 lessons, A0 → B1 | the official B1 exam for citizenship |
+| **European Portuguese** | 240 lessons, A1 → B1 | CIPLE and DEPLE |
+
+European Portuguese throughout, not Brazilian: *comboio*, *pequeno-almoço*, *estou a fazer*.
 
 ## What makes it different
 
-- **Study, not games.** The daily flow is built on how people actually learn and remember:
-  regular practice, spaced out over time, instead of streaks-for-the-sake-of-streaks and rewards.
-- **Aimed at the real exam.** Everything builds toward passing the official language exam, in its
-  real format.
-- **Trustworthy content.** The lessons follow the official curriculum and exam standards for the
-  language you're learning.
-- **Yours, offline.** No accounts, no ads. Your progress stays on your phone.
+- **Study, not games.** Every session asks you to *produce* the language from memory rather than
+  recognise it, and the words you have met come back on a schedule tuned to just before you would
+  forget them.
+- **Aimed at the real exam.** Each course follows the official curriculum for its language and
+  the mock exams mirror the real paper's format.
+- **Finite and finishable.** A fixed number of lessons with an end, not an endless feed.
+- **Yours, offline.** No account, no sign-in, no ads, no analytics, no tracking. Your progress
+  lives on your phone and nowhere else. See [PRIVACY.md](PRIVACY.md).
 
 ## What's inside
 
-- **Lesson:** your guided course, one day at a time. Each day is a complete lesson with things to
-  read and listen to, exercises to practise, and short conversations to say out loud. You move
-  through the days in order, so nothing gets skipped.
-- **Words:** flashcards for the core vocabulary, on a smart schedule that brings words back just
-  before you'd forget them. With audio.
-- **Quiz:** practice quizzes and full mock exams in the real exam format.
-- **Learn:** a reference you can dip into any time, with a cheatsheet, the full grammar, and a
-  "teach it back" exercise to check you really understand.
-- **Progress:** your streak, your level, your vocabulary, and a map of the whole journey.
+- **Learn** — your course, one day at a time. Each day is one complete lesson: a few new words, a
+  teaching block, exercises that make you produce rather than pick, a dialogue, and a closing
+  recall of everything it just taught you.
+- **Review** — spaced-repetition flashcards for the whole vocabulary, with audio. Words become
+  *learned* when you still recall them a week later, and *mastered* at three weeks.
+- **Tutor** — an AI conversation partner in the language you are learning, which corrects you as
+  you go. Premium.
+- **Progress** — your streak, your level, a month calendar of what you actually did, and quizzes
+  and full mock exams in the real exam format.
+- **Profile** — languages, settings, backup and restore.
 
-## Updates
+## Status
 
-The app checks for a newer version when it opens and can update itself, with no reinstalling by
-hand.
+In testing on Google Play, not publicly available yet. Everything below is for anyone reading the
+source.
+
+## How it is built
+
+Android, Kotlin, Jetpack Compose. A **fixed app skeleton renders per-language JSON content**: a
+course is data, so growing one or adding another needs no code change. Content lives in
+`app/src/main/assets/content/<lang>/`, the schema is `data/model/Content.kt`, and a suite of
+offline validators in `tools/course/` plus 175 unit tests guard it.
+
+```bash
+export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
+./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest
+```
+
+Two build flavors: `sideload` (a directly installed APK) and `play` (the Play bundle, via
+`:app:bundlePlayRelease`). Neither ships a self-updater.
 
 ## License
 
