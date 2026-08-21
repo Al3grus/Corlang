@@ -25,24 +25,42 @@ OUT = os.path.join(ROOT, 'docs', 'store-assets', 'play')
 FONT = os.path.join(ROOT, 'tools', 'store', 'fonts', 'Manrope.ttf')
 
 W, H = 1080, 1920                 # Play's standard phone portrait
-BG_TOP = (14, 19, 24)
-BG_BOTTOM = (20, 30, 40)
-INK = (240, 244, 248)
-MUTED = (150, 165, 180)
 BLUE = (47, 127, 174)             # brand
 CORE = (200, 64, 44)              # brand core
 
-# Order matters: Play shows the first few largest, and these are ordered by what actually sells
-# the product rather than by where they sit in the app.
+# Two backgrounds, chosen per screenshot by measuring the capture rather than by a flag that has
+# to be kept in sync. A light phone on a dark ground (or the reverse) reads as a mistake, and the
+# app genuinely ships both themes, so the listing alternates and shows that.
+THEMES = {
+    'dark':  dict(top=(14, 19, 24), bottom=(20, 30, 40), ink=(240, 244, 248),
+                  muted=(150, 165, 180), bezel=(26, 33, 41), edge=(58, 72, 86),
+                  glow=(30, 92, 130), glow2=(47, 127, 174), g1=0.30, g2=0.12),
+    # the APP's light theme, warm paper, not the website's cool one: this frames the app
+    'light': dict(top=(253, 250, 245), bottom=(240, 232, 220), ink=(43, 33, 24),
+                  muted=(122, 105, 86), bezel=(255, 253, 249), edge=(214, 202, 186),
+                  glow=(226, 212, 194), glow2=(214, 196, 172), g1=0.55, g2=0.30),
+}
+
+# Order matters: Play shows the first few largest, and these are ordered by what sells rather
+# than by where the screen sits in the app. Themes alternate on purpose.
 SHOTS = [
-    ('learn-tab.jpeg',   'One lesson a day.',        'Ten minutes, then you are done.'),
-    ('lesson-4.jpeg',    'Write it from memory.',    'Every lesson ends with no prompts.'),
-    ('flashcard.jpeg',   'Words come back.',         'Right before you would forget them.'),
-    ('lesson-1.jpeg',    'Real sentences.',          'Every word with audio and its forms.'),
-    ('lesson-2.jpeg',    'Type it, do not guess.',   'Production, not multiple choice.'),
-    ('ai-tutor.jpeg',    'A tutor that corrects.',   'Chat in the language, get it fixed.'),
-    ('progress-tab.jpeg', 'Watch it add up.',        'Streak, words learned, the whole path.'),
+    ('learn-tab.jpeg',                'One lesson a day.',      'Ten minutes, then you are done.'),
+    ('lesson-4.jpeg',                 'Write it from memory.',  'Every lesson ends with no prompts.'),
+    ('light-theme-review-tab.jpeg',   'Every word has a date.', 'Reviews arrive the day you need them.'),
+    ('flashcard.jpeg',                'One card at a time.',    'Say how it went. That sets the next date.'),
+    ('light-theme-mock-exam-2.jpeg',  'Built for the real exam.', 'Mock papers in the official format.'),
+    ('ai-tutor.jpeg',                 'A tutor that corrects.', 'Chat in the language, get it fixed.'),
+    ('light-theme-languages.jpeg',    'Two languages.',         'Croatian and Portuguese, kept separate.'),
+    ('progress-tab.jpeg',             'Watch it add up.',       'Streak, words learned, the whole path.'),
 ]
+
+
+def theme_for(im):
+    """Pick the palette from the capture itself: mean luma over a small sample."""
+    small = im.convert('RGB').resize((16, 32))
+    px = list(small.get_flattened_data()) if hasattr(small, 'get_flattened_data') else list(small.getdata())
+    luma = sum(sum(p) / 3 for p in px) / len(px)
+    return THEMES['light'] if luma > 128 else THEMES['dark']
 
 
 def font(size, weight=800):
@@ -98,8 +116,9 @@ def wrap(draw, text, f, max_w):
 
 def compose(src_name, headline, sub, index):
     shot = Image.open(os.path.join(SRC, src_name)).convert('RGB')
+    th = theme_for(shot)
 
-    canvas = gradient(W, H, BG_TOP, BG_BOTTOM)
+    canvas = gradient(W, H, th['top'], th['bottom'])
 
     # Geometry is driven by the HEIGHT available under the caption, not by a fixed width. Fixing
     # the width put the bottom of the device 150px past the canvas, which reads as a rendering
@@ -114,8 +133,8 @@ def compose(src_name, headline, sub, index):
     px = (W - phone_w) // 2
     py = top + bez
 
-    glow(canvas, W // 2, py + phone_h // 3, 520, (30, 92, 130), 0.30)
-    glow(canvas, W // 2, py - 80, 300, (47, 127, 174), 0.12)
+    glow(canvas, W // 2, py + phone_h // 3, 520, th['glow'], th['g1'])
+    glow(canvas, W // 2, py - 80, 300, th['glow2'], th['g2'])
 
     d = ImageDraw.Draw(canvas)
 
@@ -125,11 +144,11 @@ def compose(src_name, headline, sub, index):
     lines = wrap(d, headline, f_head, W - 160)
     y = 150
     for ln in lines:
-        d.text((W // 2, y), ln, font=f_head, fill=INK, anchor='ma')
+        d.text((W // 2, y), ln, font=f_head, fill=th['ink'], anchor='ma')
         y += 74
     y += 6
     for ln in wrap(d, sub, f_sub, W - 200):
-        d.text((W // 2, y), ln, font=f_sub, fill=MUTED, anchor='ma')
+        d.text((W // 2, y), ln, font=f_sub, fill=th['muted'], anchor='ma')
         y += 40
 
     # a short brand rule under the caption, in the core red: the one warm mark on the image
@@ -138,7 +157,7 @@ def compose(src_name, headline, sub, index):
     # device: a bezel, then the untouched capture inside it
     radius = 46
     frame = [px - bez, py - bez, px + phone_w + bez, py + phone_h + bez]
-    d.rounded_rectangle(frame, radius + bez, fill=(26, 33, 41), outline=(58, 72, 86), width=2)
+    d.rounded_rectangle(frame, radius + bez, fill=th['bezel'], outline=th['edge'], width=2)
     inner = rounded(shot.resize((phone_w, phone_h), Image.LANCZOS), radius)
     canvas.paste(inner, (px, py), inner)
 
@@ -152,6 +171,13 @@ def compose(src_name, headline, sub, index):
 def main():
     if not os.path.isfile(FONT):
         raise SystemExit('missing %s' % FONT)
+    # Wipe first. Renaming or reordering SHOTS leaves the previous run's files behind, and a
+    # stale 07-progress-tab.png sitting beside the new 08 is exactly the sort of thing that gets
+    # uploaded by accident.
+    if os.path.isdir(OUT):
+        for f in os.listdir(OUT):
+            if f.endswith('.png'):
+                os.remove(os.path.join(OUT, f))
     made = []
     for i, (src, head, sub) in enumerate(SHOTS, 1):
         p = os.path.join(SRC, src)

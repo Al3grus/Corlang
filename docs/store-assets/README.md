@@ -50,11 +50,21 @@ upload order, and Play shows the first few largest.
 The background is the app's DARK theme, not the website's light one, because these captures are
 dark and a dark UI floating on pale paper reads as a mistake.
 
-### Still worth capturing
+### The set, and what is still weak
 
-1. **Review tab (the hub, not a card)** — the to-review / started / mastered row with the pack
-   list. The set currently shows one flashcard but never the system behind it.
-2. **A quiz or mock exam** — the listing claims a path to the official exam, and nothing in the
-   images shows one.
-3. **Profile with both languages** — every shot is Croatian, so nothing proves Portuguese exists.
-4. *(optional)* **The light theme** — all eight are dark; some people choose on that alone.
+Eight images, alternating dark and light, because the app ships both and the store row is more
+interesting for it. The background palette is chosen per image by MEASURING the capture, so a
+light screenshot never lands on a dark ground.
+
+Two captures are honest but sell poorly, and both are fixed by using the app rather than by
+editing anything:
+
+1. **`learn-tab.jpeg`** (image 01, the first one anyone sees) shows a 2-day streak, 0% for today
+   and "1 / 61 lessons done".
+2. **`light-theme-review-tab.jpeg`** (image 03) shows 600 started but **0 learned and 0
+   mastered**, on a Portuguese profile that jumped ahead. The caption was rewritten to stop it
+   arguing with the zeroes underneath it, but the real fix is to shoot the Review tab on the
+   Croatian profile, where 159 words are already learned.
+
+Also: `ai-tutor.jpeg` has the profile name "Rick" in the tutor's reply. Not a privacy problem,
+and it does show the tutor addressing you by name, but re-shoot it if you would rather not.

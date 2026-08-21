@@ -101,6 +101,27 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .gap{position:absolute;top:14px;transform:translateX(-50%);font-family:var(--display);
   font-size:11px;letter-spacing:.06em;color:#9AA7B4;white-space:nowrap}
 
+/* ---- the app itself ----
+   Three phones, the middle one raised, on a band that separates them from the page. A horizontal
+   scroller below 760px rather than a stack: three portrait phones stacked is a very long page,
+   and swiping a row of screens is the gesture people already use in a store listing. */
+.shots{margin:0;background:linear-gradient(180deg,#F4F6F9,#EEF1F5);border:1px solid var(--line);
+  border-radius:18px;padding:44px 0 48px;overflow:hidden}
+.shots-row{display:flex;gap:26px;justify-content:center;align-items:flex-end;padding:0 34px}
+.phone{flex:0 0 236px;border-radius:26px;background:var(--raise);padding:7px;
+  border:1px solid #DDE3EA;box-shadow:0 18px 40px -18px rgba(19,26,34,.28)}
+.phone:nth-child(2){transform:translateY(-24px)}
+.phone img{display:block;width:100%;height:auto;border-radius:20px}
+.shots-cap{text-align:center;color:var(--muted);font-size:14.5px;margin:30px 34px 0}
+
+@media (max-width:760px){
+  .shots{border-radius:16px;padding:34px 0 38px}
+  .shots-row{overflow-x:auto;justify-content:flex-start;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;padding:0 22px 8px}
+  .phone{flex:0 0 210px;scroll-snap-align:center}
+  .phone:nth-child(2){transform:none}
+}
+
 /* ---- plain claims ---- */
 .claims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0}
 .claim{border-top:2px solid var(--ink);padding-top:16px}
@@ -240,6 +261,21 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       scheduled further and further out, always just before you would have forgotten it. Fewer
       reviews, better recall.</p>
       <div class="track"><div class="line"></div><div class="origin"><span>you learn it</span></div><div class="gap" style="left:17.64%;animation-delay:0.20s">+2 days</div><div class="gap" style="left:28.26%;animation-delay:0.31s">+4 days</div><div class="gap" style="left:46.66%;animation-delay:0.42s">+2 weeks</div><div class="gap" style="left:79.58%;animation-delay:0.53s">+5 weeks</div><div class="tick" style="left:12.91%;animation-delay:0.20s"><div class="dot"></div><div class="lab">1 day</div></div><div class="tick" style="left:22.36%;animation-delay:0.31s"><div class="dot"></div><div class="lab">3 days</div></div><div class="tick" style="left:34.16%;animation-delay:0.42s"><div class="dot"></div><div class="lab">1 week</div></div><div class="tick" style="left:59.16%;animation-delay:0.53s"><div class="dot"></div><div class="lab">3 weeks</div></div><div class="tick" style="left:100.00%;animation-delay:0.64s"><div class="dot"></div><div class="lab">2 months</div></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>This is the whole app</h2>
+      <p>No dashboards to configure. A lesson, your reviews, and a tutor if you want one.</p>
+    </div>
+    <div class="shots rise">
+      <div class="shots-row">
+        <div class="phone"><img src="/shots/learn-tab.jpg" alt="The Learn tab, showing the day lesson and the path through the course" width="720" height="1436" loading="lazy" decoding="async"></div>
+        <div class="phone"><img src="/shots/mock-exam-2.jpg" alt="A mock exam writing task in the official format" width="720" height="1440" loading="lazy" decoding="async"></div>
+        <div class="phone"><img src="/shots/ai-tutor.jpg" alt="The AI tutor correcting a sentence in Portuguese" width="720" height="1444" loading="lazy" decoding="async"></div>
+      </div>
+      <p class="shots-cap">Shown in the light theme. There is a dark one too.</p>
     </div>
   </section>
 
