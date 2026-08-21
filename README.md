@@ -24,7 +24,7 @@ official exam asks for.
   the mock exams mirror the real paper's format.
 - **Finite and finishable.** A fixed number of lessons with an end, not an endless feed.
 - **Yours, offline.** No account, no sign-in, no ads, no analytics, no tracking. Your progress
-  lives on your phone and nowhere else. See [PRIVACY.md](PRIVACY.md).
+  lives on your phone and nowhere else. See [PRIVACY POLICY]((https://www.corlang.app/privacy/)).
 
 ## What's inside
 
