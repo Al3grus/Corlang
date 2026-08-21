@@ -1,6 +1,6 @@
 # Corlang — Privacy Policy
 
-**Effective date:** 2026-07-18
+**Effective date:** 2026-08-21
 
 Corlang is built to be **private by design**. It has no account, no sign-in, no advertising,
 no analytics, and no third-party tracking of any kind. This policy explains, plainly, what that
@@ -27,23 +27,24 @@ We never upload any of this. There is no Corlang user database.
 
 ## When Corlang uses the network
 
-Corlang works fully offline for learning. It makes network requests only in these cases:
+Corlang works fully offline for learning. There is exactly one case in which it sends anything
+you have written off your device:
 
-1. **Update check.** On launch, the app fetches a small `version.json` file (and, if you choose
-   to update, the app package) from the project's public GitHub repository over HTTPS. This is an
-   ordinary file download. No personal data is sent; as with any web request, the server you
-   download from can see standard request metadata such as your IP address.
-2. **Optional AI practice (Premium).** If you use the AI tutor / AI writing feedback, the text you
-   submit is sent through Corlang's managed endpoint to the AI provider (Anthropic) to generate a
-   reply. What is sent: the text you type, the name from your profile (so the tutor can address
-   you; any nickname works), and, for subscribers, your Google Play subscription token so the
-   server can confirm an active subscription and apply the daily fair-use limit. No progress or
-   review data is ever attached. If you never use the AI feature, no such request is ever made.
-3. **Speech and audio.** Pronunciation playback and speech input use your device's built-in
-   Android text-to-speech and speech-recognition services. Speech recognition may be processed by
-   your device's speech provider (e.g. Google) according to your device settings — this happens
-   outside Corlang and is governed by that provider's own policy. Corlang does not record, store,
-   or transmit your audio itself.
+1. **Optional AI practice (Premium).** If you use the AI tutor or AI writing feedback, the text
+   you submit is sent through Corlang's managed endpoint to the AI provider (Anthropic) to
+   generate a reply. What is sent: the text you type, the name from your profile (so the tutor
+   can address you; any nickname works), and, for subscribers, your Google Play subscription
+   token so the server can confirm an active subscription and apply the daily fair-use limit.
+   No progress or review data is ever attached. If you never use the AI feature, no such request
+   is ever made.
+
+Nothing else about your use of the app is transmitted. Corlang does not phone home, and it does
+not check for updates: on Google Play, updates are delivered by the Play Store itself.
+
+## Speech
+
+Pronunciation playback uses your device's built-in Android text-to-speech service. Corlang has no
+microphone permission, does not record audio, and has no speech-recognition feature.
 
 ## Backups
 
@@ -53,8 +54,16 @@ created automatically and are never sent anywhere.
 
 ## Permissions
 
-- **Internet** — used only for the update check and the optional AI feature described above.
-- **Microphone / record audio** — used only when you actively use speech-input exercises.
+Corlang requests only these, and each is used for one thing:
+
+- **Internet** — the optional AI feature described above, and nothing else.
+- **Notifications** — your daily study reminder, if you turn it on.
+- **Run at startup** — so that reminder survives a reboot. It schedules a reminder and does
+  nothing else.
+- **Vibration** — haptic feedback on answers, which you can switch off in Settings.
+- **Billing** — Google Play in-app purchases, handled entirely by Google Play.
+
+Corlang requests **no** microphone, camera, contacts, location, or storage permission.
 
 ## Children
 
@@ -64,7 +73,7 @@ it collects no personal information from anyone.
 ## Changes to this policy
 
 If this policy changes, the effective date above will be updated and the revised policy published
-in this repository.
+at **https://corlang.app/privacy/**.
 
 ## Contact
 

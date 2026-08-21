@@ -1,6 +1,6 @@
 {
-  "versionCode": 176,
-  "versionName": "0.47.2",
-  "notes": "The flicker leaving Settings is gone for good: Settings now stays on screen until the tab you tapped has actually drawn underneath it, instead of closing first and leaving the old tab showing for a frame. References is hidden from Profile for now. And the word counts are no longer three numbers that seem to disagree: started, learned and mastered are the same words counted at three depths, the Words tab now says so in a line under the tiles, and Progress calls its figure 'words learned' because that is exactly the number the Words tab means.",
+  "versionCode": 177,
+  "versionName": "0.48.0",
+  "notes": "The app no longer updates itself. Distribution is Google Play from here, so the in-app updater is switched off in every build and the permission it needed to install packages is gone with it. The privacy policy has been corrected to match the app as it actually is: it still described an update check that no longer happens and a microphone permission the app has not had for weeks.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

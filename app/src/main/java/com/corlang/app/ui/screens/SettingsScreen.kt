@@ -624,9 +624,10 @@ private fun SettingsCard(
 }
 
 /**
- * The self-updater card (check → download → hand to the system installer). Compiled into every
- * build but only reachable in the sideload flavor (BuildConfig.ENABLE_UPDATER) — the Play flavor
- * updates through the store and carries no install permission.
+ * The self-updater card (check, download, hand to the system installer). UNREACHABLE since
+ * v0.48.0: ENABLE_UPDATER is false in both flavors, so this composes in no build. Kept, with its
+ * call site behind that flag, because the sideload channel is a decision rather than a deletion
+ * and one flag brings it back.
  */
 @Composable
 private fun UpdatesSection(container: AppContainer) {
