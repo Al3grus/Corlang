@@ -12,12 +12,12 @@
 <style>
 :root{
   --bg:#F6F0E6; --surface:#FFFBF3; --ink:#2B2118; --muted:#6B5B48;
-  --outline:#D8CDBA; --accent:#2A6183; --flame:#B86A44;
+  --outline:#D8CDBA; --accent:#2f7fae; --flame:#c8402c;
 }
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#14171A; --surface:#1C2126; --ink:#ECE6DC; --muted:#A2988A;
-    --outline:#2E353C; --accent:#7FB2E4; --flame:#EF9A6A;
+    --outline:#2E353C; --accent:#63A8D6; --flame:#c8402c;
   }
 }
 *{box-sizing:border-box}
@@ -29,8 +29,13 @@ body{
 .wrap{max-width:720px;margin:0 auto;padding:0 24px}
 header{padding:64px 0 8px}
 .mark{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-.mark svg{width:44px;height:44px;flex:none}
-.mark b{font-size:26px;letter-spacing:-0.02em}
+.mark svg{width:40px;height:40px;flex:none}
+/* LOGO_USAGE.md: the wordmark is Helvetica. */
+.mark b{font-size:27px;letter-spacing:-0.02em;font-weight:600;
+        font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.cta{display:inline-block;background:var(--accent);color:#fff;font-weight:600;
+     padding:14px 26px;border-radius:999px;margin:40px 0 12px}
+.sub{color:var(--muted);font-size:15px;margin:0}
 h1{font-size:clamp(30px,6vw,44px);line-height:1.15;letter-spacing:-0.03em;margin:36px 0 12px}
 .lede{font-size:19px;color:var(--muted);margin:0 0 32px}
 h2{font-size:20px;letter-spacing:-0.01em;margin:40px 0 10px}
@@ -56,10 +61,12 @@ article code{background:var(--surface);border:1px solid var(--outline);
 <body>
 <div class="wrap">
 <header>
-  <a class="mark" href="/"><svg viewBox="0 0 48 48" aria-hidden="true">
-  <circle cx="24" cy="24" r="21" fill="none" stroke="var(--outline)" stroke-width="2"/>
-  <ellipse cx="24" cy="24" rx="21" ry="8.5" fill="none" stroke="var(--accent)" stroke-width="2"/>
-  <circle cx="24" cy="24" r="7" fill="var(--flame)"/>
+  <a class="mark" href="/"><svg viewBox="0 0 100 100" aria-hidden="true">
+  <circle cx="50" cy="50" r="33" fill="none" stroke="#2f7fae" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="132 76" transform="rotate(-52 50 50)"/>
+  <circle cx="50" cy="50" r="21" fill="none" stroke="#2f7fae" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="80 52" transform="rotate(128 50 50)"/>
+  <circle cx="50" cy="50" r="9" fill="#c8402c"/>
 </svg><b>Corlang</b></a>
 </header>
 <article><h1>Corlang — Privacy Policy</h1>

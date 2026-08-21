@@ -23,12 +23,12 @@ OUT = os.path.join(ROOT, 'site')
 CSS = """
 :root{
   --bg:#F6F0E6; --surface:#FFFBF3; --ink:#2B2118; --muted:#6B5B48;
-  --outline:#D8CDBA; --accent:#2A6183; --flame:#B86A44;
+  --outline:#D8CDBA; --accent:#2f7fae; --flame:#c8402c;
 }
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#14171A; --surface:#1C2126; --ink:#ECE6DC; --muted:#A2988A;
-    --outline:#2E353C; --accent:#7FB2E4; --flame:#EF9A6A;
+    --outline:#2E353C; --accent:#63A8D6; --flame:#c8402c;
   }
 }
 *{box-sizing:border-box}
@@ -40,8 +40,13 @@ body{
 .wrap{max-width:720px;margin:0 auto;padding:0 24px}
 header{padding:64px 0 8px}
 .mark{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-.mark svg{width:44px;height:44px;flex:none}
-.mark b{font-size:26px;letter-spacing:-0.02em}
+.mark svg{width:40px;height:40px;flex:none}
+/* LOGO_USAGE.md: the wordmark is Helvetica. */
+.mark b{font-size:27px;letter-spacing:-0.02em;font-weight:600;
+        font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.cta{display:inline-block;background:var(--accent);color:#fff;font-weight:600;
+     padding:14px 26px;border-radius:999px;margin:40px 0 12px}
+.sub{color:var(--muted);font-size:15px;margin:0}
 h1{font-size:clamp(30px,6vw,44px);line-height:1.15;letter-spacing:-0.03em;margin:36px 0 12px}
 .lede{font-size:19px;color:var(--muted);margin:0 0 32px}
 h2{font-size:20px;letter-spacing:-0.01em;margin:40px 0 10px}
@@ -64,11 +69,17 @@ article code{background:var(--surface);border:1px solid var(--outline);
 .eff{color:var(--muted);font-size:15px}
 """
 
-# The Orbit Core mark: the same rings-and-core geometry as the launcher icon.
-LOGO = """<svg viewBox="0 0 48 48" aria-hidden="true">
-  <circle cx="24" cy="24" r="21" fill="none" stroke="var(--outline)" stroke-width="2"/>
-  <ellipse cx="24" cy="24" rx="21" ry="8.5" fill="none" stroke="var(--accent)" stroke-width="2"/>
-  <circle cx="24" cy="24" r="7" fill="var(--flame)"/>
+# The real Orbit Core mark, copied from
+# "Corlang language learning logo/design_handoff_corlang_loader/logo-orbit-core.svg".
+# Two BROKEN rings (the dash arrays and rotations are the mark, not decoration) around a solid
+# core. LOGO_USAGE.md: brand #2f7fae, core #c8402c, and both keep their colour on dark, so they
+# are hard-coded here rather than themed to the page palette.
+LOGO = """<svg viewBox="0 0 100 100" aria-hidden="true">
+  <circle cx="50" cy="50" r="33" fill="none" stroke="#2f7fae" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="132 76" transform="rotate(-52 50 50)"/>
+  <circle cx="50" cy="50" r="21" fill="none" stroke="#2f7fae" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="80 52" transform="rotate(128 50 50)"/>
+  <circle cx="50" cy="50" r="9" fill="#c8402c"/>
 </svg>"""
 
 
@@ -168,37 +179,30 @@ def build():
     os.makedirs(os.path.join(OUT, 'privacy'), exist_ok=True)
 
     landing = """
-<h1>Learn a European language properly, one short session a day.</h1>
-<p class="lede">Corlang teaches the part of a language that actually carries a conversation, on a
-daily method built from how memory works: retrieval practice and spaced repetition, in sessions
-short enough to keep. Croatian and European Portuguese are available today.</p>
+<h1>Ten minutes a day is enough.</h1>
+<p class="lede">Short lessons in Croatian and Portuguese that fit into a real day, and stay with
+you afterwards.</p>
 
 <div class="cards">
-  <div class="card"><h3>Croatian and Portuguese</h3><p>A full day-by-day path from first words to
-    B1, and European Portuguese throughout rather than Brazilian.</p></div>
-  <div class="card"><h3>Built on retrieval</h3><p>You produce the language from memory rather
-    than recognising it, and every word comes back on its own schedule.</p></div>
-  <div class="card"><h3>Aimed at the real exam</h3><p>Each course follows its official
-    curriculum and mirrors the format of the exam it prepares you for.</p></div>
-  <div class="card"><h3>Private by design</h3><p>No account, no sign-in, no analytics, no
-    tracking. Your learning data stays on your device.</p></div>
+  <div class="card"><h3>Little and often</h3><p>A lesson takes about ten minutes. Do it on the
+    bus.</p></div>
+  <div class="card"><h3>Words that stick</h3><p>Every word comes back just before you would
+    forget it.</p></div>
+  <div class="card"><h3>All the way to B1</h3><p>A full path from your first words to the
+    official exam.</p></div>
+  <div class="card"><h3>Yours alone</h3><p>No account, no ads. Your progress stays on your
+    phone.</p></div>
 </div>
 
-<h2>What a day looks like</h2>
-<p>One guided lesson: a handful of new words, a short teaching block, exercises that make you
-produce rather than pick, a dialogue, and a closing recall of what you just learned. Then whatever
-vocabulary is due for review that day, and nothing more.</p>
-
-<h2>Where to get it</h2>
-<!-- LAUNCH SWITCH: replace this whole note with the Play link on the day the app goes public.
-     Tracked in docs/PENDING.md under "On the day you go live". -->
-<p class="note">Corlang is in testing on Google Play and is not publicly available yet. If you
-would like to try it, write to <a href="mailto:support@corlang.app">support@corlang.app</a>.</p>
+<!-- LAUNCH SWITCH: replace this whole block with the Play button on the day the app goes
+     public. Tracked in docs/PENDING.md under "On the day you go live". -->
+<p class="cta">Coming soon to Google Play</p>
+<p class="sub">Want in early? <a href="mailto:support@corlang.app">Ask for a test invite.</a></p>
 """
     io.open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n').write(
-        page("Corlang — learn the core of a language",
-             "A daily language course built on retrieval practice and spaced repetition. "
-             "Croatian and European Portuguese, to B1. Private by design.",
+        page("Corlang — learn Croatian and Portuguese",
+             "Short daily lessons in Croatian and Portuguese, from your first words to B1. "
+             "No account, no ads.",
              landing, "https://corlang.app/"))
 
     md = io.open(os.path.join(ROOT, 'PRIVACY.md'), encoding='utf-8').read()
