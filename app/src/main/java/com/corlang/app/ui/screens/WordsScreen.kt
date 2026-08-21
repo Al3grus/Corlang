@@ -292,6 +292,7 @@ fun WordsScreen(container: AppContainer, lang: String) {
 
     val seenIds = remember(reviews) { reviews.map { it.wordId }.toSet() }
     val mastered = remember(reviews) { reviews.count { it.isMastered } }
+    val learned = remember(reviews) { reviews.count { it.isLearned } }
     val vocab = remember(lang) { container.content.vocab(lang) }
     val ringProgress = when {
         !queueLoaded -> 0f
@@ -330,6 +331,20 @@ fun WordsScreen(container: AppContainer, lang: String) {
             StatTile("${seenIds.size}", "started", Modifier.weight(1f))
             StatTile("$mastered", "mastered", Modifier.weight(1f))
         }
+        // The totals are NESTED, not separate piles, and reading them as separate piles is the
+        // confusion this line exists to stop: every mastered word is also learned, and every
+        // learned word is also started. "to review" is the only one asking a different question,
+        // namely what is due today. The learned figure is named here rather than given a fourth
+        // tile, because four labels across a phone wraps "to review" onto two lines and leaves
+        // the row ragged.
+        Text(
+            "Of the ${seenIds.size} words you have started, $learned are learned (you still " +
+                "recall them a week later) and $mastered mastered (three weeks). Only the due " +
+                "ones are waiting for you today.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(top = 8.dp)
+        )
 
         if (celebration && queue.isEmpty()) {
             Surface(

@@ -143,7 +143,10 @@ fun ProgressScreen(
         Spacer(Modifier.height(12.dp))
         Row(modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            StatTile("$wordsLearned", "words known", Modifier.weight(1f))
+            // "learned", not "known": it is the SAME count the Words tab shows under that name
+            // (stability >= Fsrs.LEARNED_STABILITY), and two names for one number is what made
+            // the three figures look like they disagreed.
+            StatTile("$wordsLearned", "words learned", Modifier.weight(1f))
             StatTile("$streak", "day streak", Modifier.weight(1f))
         }
 
