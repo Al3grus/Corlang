@@ -69,13 +69,30 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
 
   | Language | FSI | Mult | Target | A0 | A1 | A2 | B1 | B2 | Total |
   |---|---|---|---|---|---|---|---|---|---|
-  | Spanish, Italian, Portuguese | 600 | 1.00 | B1 | 0 to 15 | 45 | 70 | 125 | – | **240** |
+  | Spanish, Italian, Portuguese | 600 | 1.00 | B1 | 0 to 15 | 45 | 70 | 125 | – | **240 to 255** |
   | German | 750 | 1.12 | B1 | 15 | 50 | 80 | 140 | – | **285** |
   | French | 750 | 1.12 | B2 | – | 50 | 80 | 140 | 125 | **395** |
   | Croatian | 1100 | 1.35 | B1 | 15 | 60 | 95 | 170 | – | **340** |
 
-  A0 is an onramp for scripts and sounds, added only where the language needs it, and carries no
-  floor of its own.
+  A0 is an onramp, added only where the language needs it, and carries no floor of its own.
+  There are two kinds, and which one a language gets depends on what actually blocks a beginner:
+
+  - **A script and sound onramp**, where the language cannot be read until something is taught
+    first. Croatian is this: 30 letters and eight digraphs, 16 lessons.
+  - **A survival onramp**, where the language can be read on sight and what a beginner lacks is
+    the handful of transactions that fill a day. Portuguese is this: ordering, paying, asking the
+    way, asking for help, 10 lessons taught as whole chunks rather than as grammar.
+
+  **An A0 is ADDED, never carved out of A1.** Relabelling A1's opening lessons is the tempting
+  shortcut and it is wrong: the A1 floor is a claim about how much teaching reaching A1 takes,
+  so a course that moves ten lessons down is claiming to deliver A1 in 35.
+  `everyCourseMeetsTheWeightedLessonFloor` enforces this, and caught exactly that attempt on
+  2026-08-22. Portuguese therefore runs to 250 lessons, not 240.
+
+  Thematic overlap between a survival A0 and the A1 lessons covering the same places is expected
+  and is how a spiral syllabus works: A0 teaches "a conta, se faz favor" as an unanalysed chunk,
+  A1 teaches the verbs that build it. What must NOT overlap is the taught strings themselves,
+  which is what `proctor.py` measures.
 
 - **[AUTO] The target level is the one the country's law requires, and never higher.** Corlang
   exists for exam preparation with legal stakes, so the finish line is set by the requirement,

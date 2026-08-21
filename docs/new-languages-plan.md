@@ -154,7 +154,7 @@ catch, build, release, push. **The language goes live in this phase and only thi
 | L.0 research and provenance | done | done | **done 2026-07-29** |
 | L.1 skeleton, identity, code wiring | done | done | **done 2026-07-29** |
 | L.2 vocabulary deck | done, 2913 words | done, 2836 words | **done, 2852 words (trim to 2500 deferred to after L.5, see registry P14)** |
-| L.3 A0 and A1 lessons | done, 65 lessons | done, 47 lessons | **in progress, no A0, A1 45** |
+| L.3 A0 and A1 lessons | done, 65 lessons | done, 47 lessons | **done, A0 10 + A1 45** |
 | L.4 A2 lessons | done, 80 lessons | done, 72 lessons | |
 | L.5 B1 lessons | done, 140 lessons | done, 126 lessons | |
 | L.6 assessment set | done | done | |

@@ -12,7 +12,7 @@ official exam asks for.
 | Language | Course | Aimed at |
 |---|---|---|
 | **Croatian** | 344 lessons, A0 → B1 | the official B1 exam for citizenship |
-| **European Portuguese** | 240 lessons, A1 → B1 | CIPLE and DEPLE |
+| **European Portuguese** | 250 lessons, A0 → B1 | CIPLE and DEPLE |
 
 
 ## What makes it different
@@ -41,8 +41,8 @@ official exam asks for.
 
 ## What it costs
 
-**The start of every course is free.** The first 16 lessons of Croatian and the first 10 of
-Portuguese, with their words, reviews and exercises — no account, no sign-in, no payment, no
+**The whole first level is free.** All 16 lessons of Croatian A0 and all 10 of Portuguese A0,
+with their words, reviews and exercises — no account, no sign-in, no payment, no
 trial that expires. That is long enough for the spaced repetition to come back round and show
 you whether it works, which is the only claim worth making.
 
