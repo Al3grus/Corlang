@@ -92,9 +92,25 @@ class WordsRepository(
         lang: String,
         placedDay: Int,
         lessons: Int = REVIEW_SEED_LESSONS,
-        today: Long = todayEpochDay()
+        today: Long = todayEpochDay(),
+        /**
+         * Hard ceiling on the deck index this may seed, so the run-up to a placement can never
+         * hand over vocabulary the learner has not paid for.
+         *
+         * Without it, placement was a paywall bypass: the test is free and offered at
+         * onboarding, the window is 60 lessons wide, and at 10 new words a lesson that is 600
+         * deck words dropped straight into Review for anyone who answered well enough to be
+         * placed deep. Callers pass `accessibleThroughDay * NEW_WORDS_PER_DAY`, the same
+         * expression [unlockedNewWords] uses, so the two agree by construction.
+         *
+         * Only the UPPER bound moves. Sliding `from` as well would leave gaps: a learner seeded
+         * once while free and again after buying would end up with an unseeded band in the
+         * middle, since the window's start is measured back from its end.
+         */
+        maxDeckIndex: Int = Int.MAX_VALUE,
     ): Int {
-        val (from, until) = prePlacementRange(placedDay, lessons)
+        val (from, rawUntil) = prePlacementRange(placedDay, lessons)
+        val until = rawUntil.coerceAtMost(maxDeckIndex.coerceAtLeast(0))
         if (until <= from) return 0
         val deck = allWords(lang)
         val seen = dao.wordReviewsOnce(lang).map { it.wordId }.toSet()

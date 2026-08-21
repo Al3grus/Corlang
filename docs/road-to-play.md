@@ -75,11 +75,12 @@ Review, the journey, the tutor). Category **Education**. Contact email support@c
 ### 4. Create the billing products **(browser)** — Monetize tab; IDs must match EXACTLY
 - **Subscriptions → create `corlang_ai_premium`**:
   - base plan `monthly`, auto-renewing, **€9.99/month**; add an **Offer** on it = **7-day free trial** phase. No annual plan (AI economics may shift within a year).
-  - **In-app products (managed) → create eight**, four per language:
-  `unlock_hr_a1` €4.99 · `unlock_hr_a2` €9.99 · `unlock_hr_b1` €14.99 · `unlock_hr_all` €24.99,
-  and `unlock_pt_a1` · `unlock_pt_a2` · `unlock_pt_b1` · `unlock_pt_all` at the same prices.
-  **Activate** each; accept Google's regional prices. **Do not create an `unlock_*_b2`** —
-  neither course has a B2 lesson, so it would sell nothing.
+  - **In-app products (managed) → create six**, three per language:
+  `unlock_hr_a1` €4.99 · `unlock_hr_a2` €12.99 · `unlock_hr_b1` €24.99, and `unlock_pt_a1` ·
+  `unlock_pt_a2` · `unlock_pt_b1` at the same prices. Each unlock is **cumulative** — it grants
+  its level and every level below it — so the B1 product is the whole course and there is no
+  separate bundle. **Activate** each; accept Google's regional prices. **Do not create an
+  `unlock_*_b2`** — neither course has a B2 lesson, so it would sell nothing.
 
 ### 5. Upload the AAB to **Internal testing** first **(browser)**
 Internal testing = live in minutes, no review wait, up to 100 testers, **billing works**.
@@ -146,9 +147,10 @@ What's inside:
 
 Free to start: the first lessons of each course, with their words and reviews, no account and
 no payment. After that, unlock a level at a time or the whole course to B1 as a one-time
-purchase. Corlang Premium is a separate optional subscription for an AI tutor that chats with
-you in your language, reviews your exam writing, and checks your explanations, all graded for
-your target level.
+purchase — every unlock includes the levels below it, so nothing you have already studied ever
+closes. Corlang Premium is a separate optional subscription for an AI tutor that chats with you
+in your language, reviews your exam writing, and checks your explanations, all graded for your
+target level.
 
 Croatian isn't on the big apps. European Portuguese gets treated as an afterthought. Corlang
 takes both seriously, with exam-focused content and correct, native-quality language.

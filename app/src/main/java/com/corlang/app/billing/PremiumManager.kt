@@ -64,6 +64,41 @@ class PremiumManager(private val prefs: LanguagePrefs) {
             freeLessons: Int,
             unlocked: Set<String>,
         ): Boolean = day > freeLessons && key(lang, levelId) !in unlocked
+
+        /**
+         * Every level up to and including [levelId], in course order — what one purchase grants.
+         *
+         * Unlocks are CUMULATIVE. A course is a ladder, so owning A2 but not A1 is a state that
+         * should not exist: the learner's reviews are full of A1 words by construction (the deck
+         * introduces in course order), placement explicitly queues the run-up to their level for
+         * review, and a mis-placed learner is told to go back and fill the gaps. Selling a rung
+         * without the ladder beneath it makes all three incoherent.
+         *
+         * A level the course does not list grants only itself: the product named it, so honour
+         * that, but never invent an order for it.
+         */
+        fun levelsThrough(order: List<String>, levelId: String): Set<String> {
+            val i = order.indexOf(levelId)
+            return if (i < 0) setOf(levelId) else order.take(i + 1).toSet()
+        }
+
+        /**
+         * The last lesson the learner can open, walking from day 1 and stopping at the first
+         * locked one.
+         *
+         * Deliberately a PREFIX rather than "every unlocked day": it answers "how far does this
+         * course go for this learner", which is what the placement seed needs, and cumulative
+         * unlocks make the accessible set a prefix anyway. Returns 0 when even day 1 is locked,
+         * which cannot happen today but keeps callers total.
+         */
+        fun accessibleThroughDay(
+            days: List<com.corlang.app.data.model.StudyDay>,
+            lang: String,
+            freeLessons: Int,
+            unlocked: Set<String>,
+        ): Int = days.sortedBy { it.day }
+            .takeWhile { !dayLocked(lang, it.level, it.day, freeLessons, unlocked) }
+            .lastOrNull()?.day ?: 0
     }
 
     // ---- Axis 1: AI subscription ----
@@ -89,7 +124,7 @@ class PremiumManager(private val prefs: LanguagePrefs) {
     /** Levels the learner has bought, as `"<lang>:<LEVEL>"` keys. */
     val unlockedLevels: Flow<Set<String>> = prefs.unlockedLevels
 
-    /** Adds [levels] of [lang] to the purchased set (union; the bundle passes the whole course). */
+    /** Adds [levels] of [lang] to the purchased set (union; a purchase passes its whole ladder). */
     suspend fun grantLevels(lang: String, levels: Set<String>) {
         val current = prefs.unlockedLevels.first()
         prefs.setUnlockedLevels(current + levels.map { key(lang, it) })

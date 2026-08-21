@@ -29,8 +29,9 @@ import kotlinx.coroutines.launch
  *  - SUB  `corlang_ai_premium`  ONE base plan `monthly` (+ 7-day trial offer). Deliberately no
  *    annual: AI models and costs can shift within a year, and a sold annual locks 12 months of
  *    service at old economics. Monthly keeps repricing freedom.
- *  - INAPP, per language: `unlock_<lang>_<level>` for every level a course sells, plus
- *    `unlock_<lang>_all` for that course's bundle. The ids are DERIVED from content (see
+ *  - INAPP, per language: `unlock_<lang>_<level>`, one per level a course sells. Each grants
+ *    that level AND every level below it, so the TOP level's product IS the whole-course bundle
+ *    and no separate `_all` product is needed. The ids are DERIVED from content (see
  *    [levelProductIds]), so adding a language needs no edit here — only the matching products
  *    created in Play Console. There is deliberately no `unlock_*_b2`: neither live course has a
  *    single B2 lesson, and a product that grants nothing is a refund request waiting to happen.
@@ -47,24 +48,19 @@ class BillingManager(
     /** Every language with a course, in manifest order. */
     private val languages: List<String>,
     /**
-     * The levels of [lang] that a learner must PAY for: those with at least one lesson past that
-     * course's free window. Supplied by AppContainer from ContentRepository so this class stays
-     * language-agnostic — it never learns that Croatian has an A0 and Portuguese does not.
+     * The levels of [lang] that a learner must PAY for, **in course order**: those with at least
+     * one lesson past that course's free window. The order is load-bearing — it is what makes a
+     * purchase cumulative. Supplied by AppContainer from ContentRepository so this class stays
+     * language-agnostic; it never learns that Croatian has an A0 and Portuguese does not.
      */
-    private val paidLevels: (String) -> Set<String>,
+    private val paidLevels: (String) -> List<String>,
 ) {
     companion object {
         const val SUB_PREMIUM = "corlang_ai_premium"
         const val BASE_MONTHLY = "monthly"
 
-        /** Marks the bundle rather than a single level: `unlock_hr_all`. */
-        const val ALL = "all"
-
         /** `unlock_hr_a2`. Lowercase because Play product ids may not contain capitals. */
         fun levelProduct(lang: String, levelId: String) = "unlock_${lang}_${levelId.lowercase()}"
-
-        /** `unlock_hr_all` — every paid level of one course, at a discount. */
-        fun bundleProduct(lang: String) = "unlock_${lang}_$ALL"
 
         /**
          * Split a product id back into (language, level-or-"all"), or null if it is not one of
@@ -87,9 +83,7 @@ class BillingManager(
      * on the main thread. Billing connects asynchronously, so the first read happens off it.
      */
     private val levelProductIds: List<String> by lazy {
-        languages.flatMap { lang ->
-            paidLevels(lang).map { levelProduct(lang, it) } + bundleProduct(lang)
-        }
+        languages.flatMap { lang -> paidLevels(lang).map { levelProduct(lang, it) } }
     }
 
     // productId (subs) / "productId:basePlanId" (subs base plans) / productId (inapp) → formatted price.
@@ -230,14 +224,15 @@ class BillingManager(
                 SUB_PREMIUM in purchase.products ->
                     premium.grantSubscription(purchase.purchaseToken)
                 else -> {
-                    // Grant per language. A bundle expands to that course's paid levels AS THEY
-                    // ARE NOW, rather than to a wildcard: if a course later grows a B2, the
-                    // learner who bought "the full course to B1" is not silently handed it, and
-                    // we can sell it. Restores re-run this, so an expansion is not retroactive.
+                    // Grant per language, and CUMULATIVELY: a purchase opens its level and every
+                    // level below it. Expanded against the course AS IT IS NOW rather than to a
+                    // wildcard, so a course that later grows a B2 is not silently handed to
+                    // someone who bought "through B1" — and restores re-run this, which means
+                    // the expansion is not retroactive either.
                     purchase.products.forEach { id ->
                         val (lang, what) = parseUnlock(id) ?: return@forEach
                         val levels =
-                            if (what == ALL) paidLevels(lang) else setOf(what.uppercase())
+                            PremiumManager.levelsThrough(paidLevels(lang), what.uppercase())
                         if (levels.isNotEmpty()) premium.grantLevels(lang, levels)
                     }
                 }
