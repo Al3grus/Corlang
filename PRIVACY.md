@@ -41,6 +41,15 @@ you have written off your device:
 Nothing else about your use of the app is transmitted. Corlang does not phone home, and it does
 not check for updates: on Google Play, updates are delivered by the Play Store itself.
 
+## The website
+
+If you ask for a test invite at **https://corlang.app/**, the email address you type is stored so
+we can send you a Google Play test link, along with the date and the two-letter country code your
+connection reports. It is used for that and nothing else: no newsletter, no analytics profile, and
+it is never passed to anyone. Ask at the address below and it is deleted.
+
+The site itself sets no cookies, runs no analytics, and loads no third-party scripts or fonts.
+
 ## Speech
 
 Pronunciation playback uses your device's built-in Android text-to-speech service. Corlang has no

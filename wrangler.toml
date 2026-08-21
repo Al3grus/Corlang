@@ -1,0 +1,16 @@
+# Cloudflare Pages config for the corlang.app site.
+#
+# `functions/` sits OUTSIDE `site/` on purpose: anything inside the output directory is uploaded
+# as a static asset, so a function in there would be served as readable JavaScript at its own URL
+# instead of running.
+#
+# The AI proxy has its own unrelated config in server/ai-proxy/wrangler.toml.
+name = "corlang"
+pages_build_output_dir = "site"
+compatibility_date = "2026-01-01"
+
+# Invite requests from the landing page. Read them with:
+#   npx wrangler kv key list --namespace-id 8126fcfb51954368a9ba136df17fb5af
+[[kv_namespaces]]
+binding = "INVITES"
+id = "8126fcfb51954368a9ba136df17fb5af"
