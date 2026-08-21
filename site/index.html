@@ -11,12 +11,12 @@
 <meta property="og:description" content="Short daily lessons built on spaced repetition, from your first words to the official B1 exam. No account, no ads, no tracking.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://corlang.app/">
-<link rel="preload" href="/fonts/spacegrotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
-@font-face{font-family:'Space Grotesk';src:url('/fonts/spacegrotesk.woff2') format('woff2');
-  font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Manrope';src:url('/fonts/manrope.woff2') format('woff2');
+  font-weight:400 800;font-style:normal;font-display:swap}
 @font-face{font-family:'InterVar';src:url('/fonts/inter.woff2') format('woff2');
   font-weight:100 900;font-style:normal;font-display:swap}
 
@@ -29,7 +29,7 @@
   --blue:#2f7fae;       /* brand, from the logo */
   --deep:#123B57;
   --core:#c8402c;       /* brand core, used only for the word being recalled */
-  --display:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --display:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --body:'InterVar',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
 
@@ -45,7 +45,7 @@ a{color:var(--blue)}
 .top{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
 .mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
 .mark svg{width:32px;height:32px;flex:none}
-.mark b{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.02em}
+.mark b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.03em}
 .top nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:22px}
 .top nav a:hover{color:var(--ink)}
 
@@ -53,8 +53,8 @@ a{color:var(--blue)}
 .hero{padding:76px 0 30px;max-width:760px}
 .eyebrow{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--blue);margin:0 0 22px}
-h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,7.4vw,74px);line-height:1.02;
-  letter-spacing:-.035em;margin:0 0 24px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,7vw,70px);line-height:1.05;
+  letter-spacing:-.04em;margin:0 0 24px}
 h1 .soft{color:var(--muted)}
 .lede{font-size:20px;line-height:1.55;color:var(--muted);margin:0;max-width:600px}
 .actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:38px 0 0}
@@ -66,8 +66,8 @@ h1 .soft{color:var(--muted)}
 /* ---- the loop: four steps, then the interval ruler ---- */
 .section{padding:88px 0;border-top:1px solid var(--line);margin-top:78px}
 .section-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 40px}
-h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.4vw,36px);
-  letter-spacing:-.025em;margin:0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
+  letter-spacing:-.03em;margin:0}
 .section-head p{margin:0;color:var(--muted);font-size:16px}
 
 .loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 0 8px}
@@ -141,13 +141,54 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .step{padding-right:0}
 }
 
-/* One orchestrated moment: the ruler ticks in left to right, so the eye reads the widening gaps
-   in the order they happen. Nothing else on the page moves. */
+/* ---- motion ----------------------------------------------------------------------------
+   Two ideas only. On load, the hero settles in one short sequence. On scroll, each group
+   reveals once as it arrives, and the ruler plays left to right so the eye reads the widening
+   gaps in the order they actually happen.
+
+   Everything is opacity and transform, which the compositor handles without touching layout.
+   Under prefers-reduced-motion NOTHING below applies, and because the resting state of every
+   animated element is defined here rather than in the base rules, a reduced-motion visitor
+   simply gets the finished page. */
 @media (prefers-reduced-motion:no-preference){
-  .tick{opacity:0;animation:pop .5s cubic-bezier(.2,.7,.3,1) forwards}
-  .gap{opacity:0;animation:pop .5s ease forwards}
-  @keyframes pop{from{opacity:0;transform:translateX(-50%) translateY(6px)}
+  .rise{opacity:0;transform:translateY(14px);
+    transition:opacity .62s cubic-bezier(.22,.68,.3,1),transform .62s cubic-bezier(.22,.68,.3,1)}
+  .rise.in{opacity:1;transform:none}
+
+  /* hero, on load: eyebrow, headline, lede, actions, one after another */
+  .hero .rise{transition-delay:var(--d,0s)}
+
+  /* the loop steps stagger across, the way you would read them */
+  .loop.in .step{opacity:0;transform:translateY(12px);
+    animation:rise .55s cubic-bezier(.22,.68,.3,1) forwards}
+  .loop.in .step:nth-child(1){animation-delay:.02s}
+  .loop.in .step:nth-child(2){animation-delay:.10s}
+  .loop.in .step:nth-child(3){animation-delay:.18s}
+  .loop.in .step:nth-child(4){animation-delay:.26s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* the arrows draw themselves in after the step they follow */
+  .loop.in .step::after{opacity:0;animation:fade .4s ease forwards;animation-delay:.34s}
+  @keyframes fade{to{opacity:1}}
+
+  /* the ruler: dots and gap labels, left to right, only once it is on screen */
+  .tick,.gap{opacity:0}
+  .track.in .tick{animation:pop .5s cubic-bezier(.2,.7,.3,1) forwards}
+  .track.in .gap{animation:pop .5s ease forwards}
+  .track.in .origin{animation:fade .4s ease forwards}
+  @keyframes pop{from{opacity:0;transform:translateX(-50%) translateY(7px)}
                  to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+  .claims.in .claim{opacity:0;animation:rise .5s cubic-bezier(.22,.68,.3,1) forwards}
+  .claims.in .claim:nth-child(2){animation-delay:.08s}
+  .claims.in .claim:nth-child(3){animation-delay:.16s}
+
+  /* micro-interactions: small, and only where something is actually interactive */
+  .cta{transition:background .18s ease,transform .18s ease}
+  .cta:active{transform:translateY(1px)}
+  .step h3,.tick .dot{transition:color .2s ease,transform .2s ease}
+  .step:hover .n{color:var(--core)}
+  .step .n{transition:color .2s ease}
 }
 </style>
 </head>
@@ -165,12 +206,12 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   </header>
 
   <section class="hero">
-    <p class="eyebrow">Spaced repetition &middot; 10 minutes a day</p>
-    <h1>Learn a language.<br><span class="soft">Remember it.</span></h1>
-    <p class="lede">Short daily lessons built on how memory actually works, so the word you
+    <p class="eyebrow rise">Spaced repetition &middot; 10 minutes a day</p>
+    <h1 class="rise">Learn a language.<br><span class="soft">Remember it.</span></h1>
+    <p class="lede rise">Short daily lessons built on how memory actually works, so the word you
     learn on Monday is still there in a month. No classroom, no commute, and no hundreds of
     euros before you can say a word.</p>
-    <div class="actions">
+    <div class="actions rise">
       <a class="cta" href="mailto:support@corlang.app?subject=Corlang%20test%20invite">Ask for a
       test invite</a>
       <span class="avail">Coming soon to Google Play &middot; Croatian and Portuguese
@@ -224,5 +265,31 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
     <div>Corlang &middot; core + language</div>
   </footer>
 </div>
-</body>
+<script>
+/* Reveal-on-arrive. Guarded three ways so the page is never left invisible: reduced-motion
+   returns early, a browser without IntersectionObserver returns early, and every element is
+   marked visible the moment it has played once. The CSS resting state is inside the
+   prefers-reduced-motion query, so if this script never runs at all the page still renders
+   finished rather than blank. */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var hero = document.querySelectorAll('.hero .rise');
+  for (var i = 0; i < hero.length; i++) {
+    hero[i].style.setProperty('--d', (0.06 * i + 0.05).toFixed(2) + 's');
+  }
+  requestAnimationFrame(function(){
+    for (var j = 0; j < hero.length; j++) hero[j].classList.add('in');
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.loop, .track, .claims, .section .rise')
+    .forEach(function(el){ io.observe(el); });
+})();
+</script></body>
 </html>
