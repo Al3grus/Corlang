@@ -32,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -164,6 +165,18 @@ private fun CorlangApp(container: AppContainer) {
      * transition. Deliberately not saveable: it describes one navigation, not a screen state.
      */
     var skipTabAnim by remember { mutableStateOf(false) }
+    /**
+     * The route an overlay is handing off to, or null. The overlay STAYS UP until the NavHost is
+     * actually showing it.
+     *
+     * Skipping the crossfade cut the flash from 150ms to a frame, and a frame was still visible
+     * from Settings (the heaviest overlay to tear down, and the one still reported). Closing the
+     * overlay in the same recomposition as the navigate always leaves that gap: the overlay is
+     * gone as soon as the flag flips, and the NavHost cannot have drawn the destination yet.
+     * So the overlay is not dismissed by the tap at all. It stays up for the frames the NavHost
+     * needs to put the destination underneath it, and only then comes away.
+     */
+    var overlayHandoffTo by remember { mutableStateOf<String?>(null) }
     // Placement is also an overlay (same reasoning): it must not live on a tab's back stack.
     var showPlacement by rememberSaveable { mutableStateOf(false) }
     // Paywall overlay: open flag + mode. paywallLevel null = Premium subscription; else the CEFR
@@ -374,10 +387,16 @@ private fun CorlangApp(container: AppContainer) {
                             // underneath while the opaque paywall stayed up.
                             // Only a handoff FROM an overlay skips the fade; an ordinary
                             // tab-to-tab tap keeps it.
-                            skipTabAnim = showSettings || showPlacement || showPaywall
-                            showSettings = false
-                            showPlacement = false
-                            showPaywall = false
+                            val overlayUp = showSettings || showPlacement || showPaywall
+                            skipTabAnim = overlayUp
+                            if (overlayUp && currentRoute != dest.route) {
+                                // Keep it on screen; it comes down on arrival, below.
+                                overlayHandoffTo = dest.route
+                            } else {
+                                showSettings = false
+                                showPlacement = false
+                                showPaywall = false
+                            }
                             if (dest.route == Dest.PROFILE.route) profileTabTick++
                             // Any tab tap (including Today itself) exits an open lesson back to the
                             // dashboard — the same as "Exit (saved)". Progress is saved per step.
@@ -404,6 +423,23 @@ private fun CorlangApp(container: AppContainer) {
         // across all destinations. Pairs with each screen's own load-gate so the incoming tab
         // fades in already-populated rather than mid-load.
         val tabFade = tween<Float>(durationMillis = 150)
+        // The overlay comes away once the destination has had frames to compose and draw.
+        //
+        // Deliberately counted in FRAMES rather than waiting for currentRoute to equal the route
+        // we asked for. That match is not guaranteed: the tab navigations restore saved state, so
+        // tapping a tab whose stack was left inside a quiz restores THAT route, and an overlay
+        // waiting for an arrival that never comes would strand the learner in Settings with no
+        // way out but system back. Stranding someone is far worse than a frame of the wrong tab,
+        // so this always runs and always finishes.
+        LaunchedEffect(overlayHandoffTo) {
+            if (overlayHandoffTo == null) return@LaunchedEffect
+            withFrameNanos {}
+            withFrameNanos {}
+            showSettings = false
+            showPlacement = false
+            showPaywall = false
+            overlayHandoffTo = null
+        }
         // The NavHost is the BASE layer and always composes; overlays draw on top of it.
         // It must never be skipped: NavHost is the only thing that calls setGraph(), so an
         // early-return overlay (placement opening straight out of onboarding) left the

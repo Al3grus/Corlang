@@ -111,8 +111,11 @@ fun ProfileScreen(
             MenuRow(Icons.Outlined.WorkspacePremium, "Get Premium",
                 if (entitled) "Active ✓ · AI tutor unlocked" else "Unlock the AI tutor (Learn tab)",
                 onClick = { page = "premium" })
-            MenuRow(Icons.AutoMirrored.Outlined.MenuBook, "References",
-                "Cheatsheet, grammar, best resources", onClick = { page = "references" })
+            // References is HIDDEN, not removed: the page and its "references" branch above are
+            // intact and one line brings the entrance back. Same pattern as a hidden language,
+            // which stays in the repo and only leaves content/_index.json.
+            // MenuRow(Icons.AutoMirrored.Outlined.MenuBook, "References",
+            //     "Cheatsheet, grammar, best resources", onClick = { page = "references" })
         }
     } }
 }
