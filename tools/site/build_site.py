@@ -5,7 +5,11 @@ The privacy page is GENERATED FROM PRIVACY.md rather than written twice. Google 
 privacy policy URL after publishing, and the app's own repo copy is what gets edited, so two
 hand-maintained copies is a promise to drift. One source, one truth.
 
-    python tools/site/build_site.py      # writes site/index.html and site/privacy/index.html
+    python tools/site/build_site.py
+    npx wrangler pages deploy site --project-name corlang --branch main --commit-dirty=true
+
+Live at https://corlang.app/ (Cloudflare Pages project `corlang`). site/ is GENERATED: editing
+those files by hand is throwing work away, because the next build overwrites them.
 """
 import io
 import os

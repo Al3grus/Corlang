@@ -163,11 +163,33 @@ wrong the moment production goes live, so they are listed here rather than trust
 
 1. **The landing page still says "in testing on Google Play and is not publicly available yet".**
    It is in `tools/site/build_site.py`, marked with a `LAUNCH SWITCH` comment. Replace that note
-   with the Play link, re-run `python tools/site/build_site.py`, redeploy. Editing `site/*.html`
-   by hand does nothing: those files are generated.
+   with the Play link, then:
+   ```bash
+   python tools/site/build_site.py
+   npx wrangler pages deploy site --project-name corlang --branch main --commit-dirty=true
+   ```
+   Editing `site/*.html` by hand does nothing: those files are generated and overwritten.
 2. **README "Status" section** says the same thing. Update it too.
-3. **Play Console privacy policy URL** → change from the raw GitHub link to
-   `https://corlang.app/privacy/` once the site is deployed.
+3. **Play Console privacy policy URL** → use `https://corlang.app/privacy/` once the DNS below
+   is in place; until then the working URL is `https://corlang.pages.dev/privacy/`. Either way,
+   stop using the raw GitHub link: it is the last thing keeping the repo public.
+
+   **⚠️ ONE MANUAL DNS STEP OUTSTANDING.** The Pages project is deployed and both custom domains
+   are attached, but they sit at `status=pending` because the zone has no CNAME for them (it
+   carries only the email-routing MX/TXT records). The certificate uses HTTP validation, so it
+   cannot issue until DNS resolves to Pages. Neither wrangler's OAuth grant (`zone:read`) nor the
+   account API token can write DNS records, so this one is yours:
+
+   Cloudflare dashboard → **corlang.app → DNS → Records → Add record**, twice:
+
+   | Type | Name | Target | Proxy |
+   |---|---|---|---|
+   | CNAME | `@` | `corlang.pages.dev` | Proxied (orange) |
+   | CNAME | `www` | `corlang.pages.dev` | Proxied (orange) |
+
+   The apex CNAME is fine: Cloudflare flattens it. The certificate issues within a few minutes
+   after that and both domains flip to `active`. It does not disturb the MX records, so email
+   routing on the domain keeps working.
 4. **Then, and only then, the repo can go private** — the raw GitHub privacy URL is the last
    thing depending on it (the self-updater that also depended on it was removed in v0.48.0).
    `releases/` becomes deletable at the same time: nothing reads `version.json` any more.
