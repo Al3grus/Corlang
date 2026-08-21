@@ -81,6 +81,8 @@ Everything else on the critical path is browser work in Play Console.
      **No `unlock_*_b2`** — neither course has a B2 lesson.
    - Activate all; accept Google's regional prices.
 5. **(browser)** Upload the AAB to **Internal testing** (live in minutes, billing works).
+   **This comes BEFORE step 4**: Play does not enable the in-app products page until a build
+   containing the Billing Library is published to a track.
 6. **(browser)** License testing (Setup → License testing): add your + testers' Gmail addresses
    so their purchases are free / auto-refunded.
 7. **(browser)** Add testers + share the opt-in link.
