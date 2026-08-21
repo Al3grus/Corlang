@@ -72,8 +72,8 @@ Everything else on the critical path is browser work in Play Console.
    assets from Track C (icon, feature graphic, screenshots).
 4. **(browser)** Create the 4 billing products — **IDs must match exactly** (in `road-to-play.md`
    / `monetization-roadmap.md`):
-   - Subscription `corlang_ai_premium`: ONE base plan `monthly` €9.99 with the **7-day
-     free-trial offer** on it. **No annual plan** (decided 2026-07-18: AI models/costs can
+   - Subscription `corlang_ai_premium`: ONE base plan `monthly` €9.99 with the **3-day
+     free-trial offer** on it (Google's minimum; the trial spends real tokens). **No annual plan** (decided 2026-07-18: AI models/costs can
      shift within a year; monthly keeps repricing freedom). The app requests only `monthly`.
    - Managed products, **six, three per language**: `unlock_hr_a1` €4.99 · `unlock_hr_a2`
      €12.99 · `unlock_hr_b1` €24.99, and the same three for `pt`. Each grants its level and

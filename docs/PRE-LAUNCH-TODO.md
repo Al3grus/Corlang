@@ -21,7 +21,7 @@ The AAB is already built & verified: `app/build/outputs/bundle/playRelease/app-p
        **data safety** (collects nothing, shares nothing, all data on-device),
        **privacy policy URL** (GitHub PRIVACY.md raw link is fine for testing).
 6a.[ ] **Create the 7 billing products** (Monetize tab) — exact IDs + prices in
-       `docs/monetization-roadmap.md` (`corlang_ai_premium` sub, monthly only + 7-day
+       `docs/monetization-roadmap.md` (`corlang_ai_premium` sub, monthly only + 3-day
        trial; then `unlock_<lang>_a1/a2/b1` for `hr` and `pt`). Unlocks are cumulative, so
        the B1 product is the whole course. The app already reads their live prices; the
        paywall shows "unavailable" until they exist.
