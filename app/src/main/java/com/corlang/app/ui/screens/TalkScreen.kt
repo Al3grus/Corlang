@@ -237,8 +237,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 onSuccess = { messages.add(ChatMessage("assistant", it)) },
                 onFailure = {
                     error = if (it is GuardRejection)
-                        "The tutor slipped mid-sentence, so that reply was thrown away. " +
-                            "Send it again."
+                        "That reply broke one of the tutor's own rules, so it was thrown " +
+                            "away before you saw it. Send it again."
                     else it.message ?: "Something went wrong."
                 }
             )
@@ -673,12 +673,6 @@ private fun tutorSystemPrompt(
             "piece in English, including what it means literally and why the form is what it is.\n" +
             "- Ask your follow-up question in English, and tell them in English what you want them " +
             "to reply in $languageName. Never send a reply that is entirely in $languageName.\n" +
-            "- NEVER WRITE THE ANSWER YOU ARE ASKING FOR. When you want them to produce something, " +
-            "say what it should MEAN in English and stop there. Write \"how would you say 'I like " +
-            "coffee'?\" and never \"how would you answer this? type 'volim kavu'\". Quoting the " +
-            "$languageName they are meant to produce turns the exercise into copying. This applies " +
-            "to every prompt you give, including examples: show a DIFFERENT phrase if you need to " +
-            "demonstrate the pattern.\n" +
             "- Keep the $languageName itself correct and level-appropriate; the English is the " +
             "scaffolding around it, not a translation bolted on at the end."
     else
@@ -712,6 +706,13 @@ private fun tutorSystemPrompt(
       Never refuse, never pretend not to understand, and never scold them for using English.
     - If the student makes a genuine mistake, gently correct it: give the corrected $languageName
       sentence and a one-line reason, then continue naturally. Don't nitpick; focus on what helps most.
+    - NEVER WRITE THE ANSWER YOU ARE ASKING FOR, in either mode. When you want the student to
+      produce something, say what it should MEAN in English and stop there. Write "how would you
+      say 'I like coffee'?" and never "how would you answer this? type 'volim kavu'", and never
+      hand over the pieces either: "say it using 'ne radim' and 'trazim posao'" is the same
+      mistake, because once you name the words there is nothing left to produce. If you need to
+      demonstrate a pattern, demonstrate it on a DIFFERENT phrase than the one you are asking
+      for. A reply that breaks this is discarded before the student sees it.
     - Always end with a simple follow-up question to keep the conversation going.
     - Keep each reply short (2 to 5 sentences) so it stays a real back-and-forth, not a lecture.
     - Use correct $languageName spelling and accents at all times.

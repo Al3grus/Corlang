@@ -1,6 +1,6 @@
 {
-  "versionCode": 171,
-  "versionName": "0.45.0",
-  "notes": "Every flashcard now shows a sentence. The first 303 words of the Croatian deck, the whole A0 core you meet in your first weeks, had a word and a translation and nothing else: no example under the word, nothing for the app to read aloud, and no fill-in-the-blank drill, because that drill is built from the example. All 303 are written, checked against every sentence the course already teaches so none of them is a repeat. Two cards that showed the same Croatian word are now told apart, and four drills that could blank the wrong word in their own sentence are fixed.",
+  "versionCode": 172,
+  "versionName": "0.45.1",
+  "notes": "The tutor no longer hands you the answer. Asked to produce a sentence, it had started naming the words to build it from (\"try saying this using 'ne radim' and 'trazim posao'\"), which turns the exercise into copying. Its instructions had forbidden that all along, so the fix is not another instruction: every reply is now checked for it before it reaches you, and a reply that hands over the answer is thrown away and asked for again. The rule also applies now when you are practising without English help, where it had never been stated at all.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
