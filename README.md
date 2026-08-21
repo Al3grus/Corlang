@@ -14,7 +14,6 @@ official exam asks for.
 | **Croatian** | 344 lessons, A0 → B1 | the official B1 exam for citizenship |
 | **European Portuguese** | 240 lessons, A1 → B1 | CIPLE and DEPLE |
 
-European Portuguese throughout, not Brazilian: *comboio*, *pequeno-almoço*, *estou a fazer*.
 
 ## What makes it different
 
