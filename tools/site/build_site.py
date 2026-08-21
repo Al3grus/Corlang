@@ -80,7 +80,18 @@ a{color:var(--blue)}
 .top nav a:hover{color:var(--ink)}
 
 /* ---- hero ---- */
-.hero{padding:76px 0 30px;max-width:760px}
+.hero{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:center;
+  padding:62px 0 26px}
+.hero-copy{max-width:600px}
+/* Two phones, one of each theme, because "there is a dark one too" lands better shown than
+   said. Slight rotation and overlap so they read as a pair rather than two loose rectangles. */
+.hero-shots{position:relative;height:430px}
+.hero-shots .ph{position:absolute;width:196px;border-radius:22px;padding:6px;
+  border:1px solid #DCE2E9;background:var(--raise);
+  box-shadow:0 22px 46px -20px rgba(19,26,34,.34)}
+.hero-shots .ph img{display:block;width:100%;height:auto;border-radius:17px}
+.hero-shots .ph.back{left:0;top:6px;transform:rotate(-5deg)}
+.hero-shots .ph.front{right:0;top:64px;transform:rotate(4deg)}
 .eyebrow{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--blue);margin:0 0 22px}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,7vw,70px);line-height:1.05;
@@ -94,8 +105,8 @@ h1 .soft{color:var(--muted)}
 .avail{font-size:14px;color:var(--muted)}
 
 /* ---- the loop: four steps, then the interval ruler ---- */
-.section{padding:88px 0;border-top:1px solid var(--line);margin-top:78px}
-.section-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 40px}
+.section{padding:54px 0 0;border-top:1px solid var(--line);margin-top:46px}
+.section-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 30px}
 h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   letter-spacing:-.03em;margin:0}
 .section-head p{margin:0;color:var(--muted);font-size:16px}
@@ -112,7 +123,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .step:not(:last-child)::after{content:"";position:absolute;top:5px;right:12px;width:9px;height:9px;
   border-top:1.5px solid var(--line);border-right:1.5px solid var(--line);transform:rotate(45deg)}
 
-.ruler{margin:54px 0 0;border:1px solid var(--line);border-radius:14px;background:var(--raise);
+.ruler{margin:38px 0 0;border:1px solid var(--line);border-radius:14px;background:var(--raise);
   padding:30px 30px 22px}
 .ruler-cap{font-size:15px;color:var(--muted);margin:0 0 26px;max-width:640px}
 /* Margins, not padding: an absolutely positioned child resolves its % against the PADDING box,
@@ -159,8 +170,33 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   letter-spacing:-.01em}
 .claim p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 
+/* ---- invite dialog ----
+   A native <dialog>: it traps focus, closes on Escape and returns focus on its own, which a div
+   pretending to be a modal does not. */
+dialog{border:none;border-radius:18px;padding:0;max-width:430px;width:calc(100% - 40px);
+  background:var(--raise);color:var(--ink);box-shadow:0 30px 70px -24px rgba(19,26,34,.42)}
+dialog::backdrop{background:rgba(14,20,26,.46);backdrop-filter:blur(2px)}
+.dlg{padding:30px 30px 26px}
+.dlg h3{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.025em;
+  margin:0 0 8px}
+.dlg p{margin:0 0 20px;color:var(--muted);font-size:15px}
+.dlg label{display:block;font-size:13px;color:var(--muted);margin:0 0 7px}
+.dlg input[type=email]{width:100%;font:inherit;font-size:16px;padding:13px 14px;
+  border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+.dlg input[type=email]:focus{outline:none;border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(47,127,174,.18)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.dlg-row{display:flex;gap:10px;margin-top:18px}
+.dlg-row button{font:inherit;font-weight:600;font-size:15px;padding:12px 20px;border-radius:10px;
+  border:1px solid var(--line);background:var(--raise);color:var(--ink);cursor:pointer}
+.dlg-row button.go{background:var(--ink);border-color:var(--ink);color:#fff;flex:1}
+.dlg-row button.go:disabled{opacity:.55;cursor:default}
+.msg{margin:14px 0 0;font-size:14.5px;min-height:20px}
+.msg.bad{color:var(--core)}
+.msg.good{color:var(--blue)}
+
 /* ---- footer ---- */
-footer{border-top:1px solid var(--line);margin-top:78px;padding:34px 0 56px;font-size:14px;
+footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 48px;font-size:14px;
   color:var(--muted);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{color:var(--muted);text-decoration:none;margin-right:20px}
 footer a:hover{color:var(--ink)}
@@ -175,6 +211,13 @@ article li{margin-bottom:7px}
 article code{background:var(--raise);border:1px solid var(--line);border-radius:5px;
   padding:1px 5px;font-size:14px}
 
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:26px;padding-top:44px}
+  .hero-shots{height:340px;max-width:420px;margin:0 auto;width:100%}
+  .hero-shots .ph{width:172px}
+  .hero-shots .ph.back{left:4%}
+  .hero-shots .ph.front{right:4%;top:52px}
+}
 @media (max-width:760px){
   .track{margin:0 34px;height:78px}
   .tick .lab,.origin span{font-size:11.5px}
@@ -184,7 +227,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .step:nth-child(2)::after{display:none}
   .claims{grid-template-columns:1fr;gap:18px}
   .hero{padding-top:48px}
-  .section{padding:60px 0;margin-top:52px}
+  .section{padding:40px 0 0;margin-top:34px}
 }
 @media (max-width:430px){
   .loop{grid-template-columns:1fr}
@@ -279,8 +322,73 @@ SCRIPT = """<script>
       io.unobserve(e.target);
     });
   }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.loop, .track, .claims, .section .rise')
+  document.querySelectorAll('.loop, .track, .claims, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
+})();
+
+/* Invite dialog. Posts to /api/invite, which stores the address in Cloudflare KV.
+   Progressive: the button does nothing without JS, so the mailto link stays in the footer as the
+   way to reach a person either way. */
+(function(){
+  var dlg = document.getElementById('invite');
+  var form = dlg && dlg.querySelector('form');
+  var msg = document.getElementById('invite-msg');
+  var send = document.getElementById('invite-send');
+  var email = document.getElementById('invite-email');
+  if (!dlg || !form || !dlg.showModal) return;
+
+  document.querySelectorAll('[data-invite]').forEach(function(b){
+    b.addEventListener('click', function(){
+      msg.textContent = '';
+      msg.className = 'msg';
+      send.disabled = false;
+      send.textContent = 'Send';
+      dlg.showModal();
+    });
+  });
+
+  form.addEventListener('submit', function(e){
+    /* method="dialog" closes on any button. Only intercept the send button, so Close still
+       closes and Escape still works. */
+    if (dlg.returnValue === 'cancel') return;
+    var pressed = e.submitter && e.submitter.value;
+    if (pressed !== 'send') return;
+    e.preventDefault();
+    if (!email.checkValidity()) { email.reportValidity(); return; }
+
+    send.disabled = true;
+    send.textContent = 'Sending';
+    msg.className = 'msg';
+    msg.textContent = '';
+
+    fetch('/api/invite', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        email: email.value,
+        website: form.querySelector('[name=website]').value
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){
+      return { ok: r.ok && j.ok, error: j.error };
+    }); }).then(function(res){
+      if (res.ok) {
+        msg.className = 'msg good';
+        msg.textContent = 'Thanks. You are on the list.';
+        send.textContent = 'Done';
+        setTimeout(function(){ dlg.close(); }, 1400);
+      } else {
+        msg.className = 'msg bad';
+        msg.textContent = res.error || 'That did not go through. Try again in a moment.';
+        send.disabled = false;
+        send.textContent = 'Send';
+      }
+    }).catch(function(){
+      msg.className = 'msg bad';
+      msg.textContent = 'No connection. Try again in a moment.';
+      send.disabled = false;
+      send.textContent = 'Send';
+    });
+  });
 })();
 </script>"""
 
@@ -311,6 +419,26 @@ def page(title, description, body, canonical, wide=True):
     <nav><a href="/privacy/">Privacy</a><a href="mailto:support@corlang.app">Contact</a></nav>
   </header>
 {body}
+  <dialog id="invite">
+    <form class="dlg" method="dialog">
+      <h3>Ask for a test invite</h3>
+      <p>Leave your email and you will get a Play test link when the next round opens. Nothing
+      else is sent, and the address is used for this only.</p>
+      <label for="invite-email">Email address</label>
+      <input id="invite-email" name="email" type="email" required autocomplete="email"
+             placeholder="you@example.com" inputmode="email">
+      <div class="hp" aria-hidden="true">
+        <label for="invite-website">Leave this empty</label>
+        <input id="invite-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="msg" id="invite-msg" role="status" aria-live="polite"></p>
+      <div class="dlg-row">
+        <button class="go" value="send" id="invite-send">Send</button>
+        <button value="cancel" formnovalidate>Close</button>
+      </div>
+    </form>
+  </dialog>
+
   <footer>
     <div><a href="/">Home</a><a href="/privacy/">Privacy</a><a
       href="mailto:support@corlang.app">Contact</a></div>
@@ -413,8 +541,15 @@ def ruler():
 # The three the site shows. All LIGHT captures, because the page is light: a dark phone on cool
 # paper reads as a foreign object. They are also three different answers to "what is this?" —
 # the course, the exam it aims at, and the tutor.
+# The hero pair: one screen in each theme, so "there is a dark one too" is shown rather than
+# claimed. Different screens from the showcase below, so nothing repeats down the page.
+HERO = [
+    ('flashcard.jpeg', 'hero-dark.jpg'),
+    ('light-theme-learn-tab.jpeg', 'hero-light.jpg'),
+]
+
 SHOWCASE = [
-    ('light-theme-learn-tab.jpeg', 'The Learn tab, showing the day lesson and the path through the course'),
+    ('light-theme-review-tab.jpeg', 'The Review tab, with words due today and the packs behind them'),
     ('light-theme-mock-exam-2.jpeg', 'A mock exam writing task in the official format'),
     ('light-theme-ai-tutor.jpeg', 'The AI tutor correcting a sentence in Portuguese'),
 ]
@@ -428,6 +563,18 @@ def shots():
     dst = os.path.join(OUT, 'shots')
     os.makedirs(dst, exist_ok=True)
     out = []
+    hero = {}
+    for name, stem in HERO:
+        q = os.path.join(src, name)
+        if not os.path.isfile(q):
+            print('  missing hero shot %s' % name)
+            continue
+        im = Image.open(q).convert('RGB')
+        w = 720
+        im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
+        im.save(os.path.join(dst, stem), 'JPEG', quality=80, optimize=True, progressive=True)
+        hero[stem] = (im.width, im.height)
+        print('  hero %s  %dx%d' % (stem, im.width, im.height))
     for name, alt in SHOWCASE:
         p = os.path.join(src, name)
         if not os.path.isfile(p):
@@ -439,29 +586,39 @@ def shots():
         stem = os.path.splitext(name)[0].replace('light-theme-', '') + '.jpg'
         im.save(os.path.join(dst, stem), 'JPEG', quality=80, optimize=True, progressive=True)
         out.append((stem, alt, im.width, im.height))
-    return out
+    return out, hero
 
 
 def build():
     os.makedirs(os.path.join(OUT, 'privacy'), exist_ok=True)
 
+    shot_list, hero = shots()
+    hd, hdh = hero.get('hero-dark.jpg', (720, 1467))
+    hl, hlh = hero.get('hero-light.jpg', (720, 1436))
     SHOTS_HTML = "\n".join(
         f'        <div class="phone"><img src="/shots/{f}" alt="{html.escape(alt)}" '
         f'width="{w}" height="{h}" loading="lazy" decoding="async"></div>'
-        for f, alt, w, h in shots())
+        for f, alt, w, h in shot_list)
 
     landing = f"""
   <section class="hero">
-    <p class="eyebrow rise">Spaced repetition &middot; 10 minutes a day</p>
-    <h1 class="rise">Learn a language.<br><span class="soft">Remember it.</span></h1>
-    <p class="lede rise">Short daily lessons built on how memory actually works, so the word you
-    learn on Monday is still there in a month. No classroom, no commute, and no hundreds of
-    euros before you can say a word.</p>
-    <div class="actions rise">
-      <a class="cta" href="mailto:support@corlang.app?subject=Corlang%20test%20invite">Ask for a
-      test invite</a>
-      <span class="avail">Coming soon to Google Play &middot; Croatian and Portuguese
-      available</span>
+    <div class="hero-copy">
+      <p class="eyebrow rise">Spaced repetition &middot; 10 minutes a day</p>
+      <h1 class="rise">Learn a language.<br><span class="soft">Remember it.</span></h1>
+      <p class="lede rise">Short daily lessons built on how memory actually works, so the word
+      you learn on Monday is still there in a month. No classroom, no commute, and no hundreds
+      of euros before you can say a word.</p>
+      <div class="actions rise">
+        <button class="cta" type="button" data-invite>Ask for a test invite</button>
+        <span class="avail">Coming soon to Google Play &middot; Croatian and Portuguese
+        available</span>
+      </div>
+    </div>
+    <div class="hero-shots rise">
+      <div class="ph back"><img src="/shots/hero-dark.jpg" alt="A Corlang flashcard in the dark
+        theme" width="{hd}" height="{hdh}" fetchpriority="high" decoding="async"></div>
+      <div class="ph front"><img src="/shots/hero-light.jpg" alt="The Corlang Learn tab in the
+        light theme" width="{hl}" height="{hlh}" fetchpriority="high" decoding="async"></div>
     </div>
   </section>
 
@@ -504,7 +661,8 @@ def build():
 
   <section class="section">
     <div class="section-head">
-      <h2>What you get, and what you give up</h2>
+      <h2>Three things that make it different</h2>
+      <p>The rest is just a language course.</p>
     </div>
     <div class="claims">
       <div class="claim"><h3>A finish line</h3>
