@@ -13,6 +13,8 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.work.CoroutineWorker
 import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
@@ -45,6 +47,46 @@ internal object ReminderCopy {
 
     fun proverb(meta: com.corlang.app.data.model.LanguageMeta): String =
         meta.reminderProverb ?: "A little today is all it takes."
+
+    /**
+     * The notification body. Pure, so the wording is unit-testable without a device.
+     *
+     * Two axes: whether a streak is at stake, and whether today's lesson was already STARTED.
+     * The variants rotate by day of year so a reminder that arrives every evening does not
+     * become invisible through repetition.
+     */
+    fun body(
+        languageName: String,
+        streak: Int,
+        startedToday: Boolean,
+        proverb: String,
+        dayOfYear: Int
+    ): String {
+        val variants = when {
+            startedToday && streak > 0 -> listOf(
+                "You started today's lesson. Finish it and your $streak-day streak is banked.",
+                "Today's lesson is open and waiting. $streak days on the line.",
+                "A few minutes left on today's $languageName lesson, and the streak holds."
+            )
+            startedToday -> listOf(
+                "You started today's lesson. Pick it up where you left off.",
+                "Today's $languageName lesson is half done. Finish it and day 1 is on the board.",
+                "You are already in today's lesson, there is not much left of it."
+            )
+            streak > 0 -> listOf(
+                "Your $streak-day streak is on the line, today's lesson banks it.",
+                "One guided lesson = streak safe. $streak days and counting.",
+                "$streak days of $languageName so far. Don't let today be the gap.",
+                "Finishing today's lesson beats starting over. Streak: $streak days."
+            )
+            else -> listOf(
+                "A few minutes of $languageName today beats an hour next week. Start today's lesson.",
+                "Day 1 of a streak starts with one guided lesson.",
+                proverb
+            )
+        }
+        return variants[dayOfYear.mod(variants.size)]
+    }
 }
 
 /**
@@ -71,6 +113,8 @@ class ReminderWorker(
         if (chosen.isEmpty()) return Result.success()
         val dao = AppDatabase.get(ctx).progressDao()
         val today = LocalDate.now().toEpochDay()
+        // The periodic worker and the catch-up can both come due on the same evening.
+        if (prefs.lastReminderDay.first() == today) return Result.success()
 
         // Selected language first so the nudge matches what the app opens to; then the rest.
         val candidates = (listOf(selected).filter { it in chosen } + (chosen - selected).sorted())
@@ -96,20 +140,20 @@ class ReminderWorker(
         // opens in the language being learned: "Vrijeme je za hrvatski, Ricardo! 🇭🇷".
         val who = prefs.profile.first().name.trim()
         val title = ReminderCopy.title(meta, who)
-        val littleByLittle = ReminderCopy.proverb(meta)
-        // Rotate copy so the reminder doesn't become invisible through repetition.
-        val variants = if (streak > 0) listOf(
-            "Your $streak-day streak is on the line, today's lesson banks it.",
-            "One guided lesson = streak safe. $streak days and counting.",
-            "$streak days of $languageName so far. Don't let today be the gap.",
-            "Finishing today's lesson beats starting over. Streak: $streak days."
-        ) else listOf(
-            "A few minutes of $languageName today beats an hour next week. Start today's lesson.",
-            "Day 1 of a streak starts with one guided lesson.",
-            littleByLittle
+        // Started today but did not finish: the lesson introduces its new words early and the
+        // word step cannot be skipped, so a word introduced today is proof the lesson was
+        // opened. That turns the nudge from "start" into "finish what you started", which is a
+        // much smaller thing to ask of someone at the end of a day.
+        val startedToday = dao.introducedTodayCount(lang, today) > 0
+        val text = ReminderCopy.body(
+            languageName = languageName,
+            streak = streak,
+            startedToday = startedToday,
+            proverb = ReminderCopy.proverb(meta),
+            dayOfYear = LocalDate.now().dayOfYear
         )
-        val text = variants[(LocalDate.now().dayOfYear % variants.size)]
         postNotification(ctx, title, text)
+        prefs.setLastReminderDay(today)
         return Result.success()
     }
 
@@ -149,9 +193,46 @@ class ReminderWorker(
     }
 }
 
+/**
+ * How long to wait before a CATCH-UP nudge, or null when none is owed.
+ *
+ * The bug this exists for: [ReminderScheduler.schedule] is called on every app start to fight
+ * WorkManager drift, and it always anchors to the NEXT occurrence of the reminder time. Periodic
+ * work is not punctual (Doze batches it), so opening the app at 19:30 while the 19:00 run was
+ * still pending re-anchored that pending run to tomorrow and the nudge was never posted. Opening
+ * the app was silently cancelling the reminder for the day, which is the opposite of what opening
+ * the app should mean when the lesson is not done.
+ *
+ * So when the slot has already passed, a one-shot catch-up is queued instead. It waits
+ * [CATCH_UP_DELAY_MIN] minutes rather than firing at once, because the learner is holding the
+ * phone right now and a notification for the app they are looking at is noise; the worker
+ * re-checks completion when it runs, so studying in the meantime makes it a silent no-op.
+ *
+ * Nothing is queued more than [CATCH_UP_WINDOW_H] hours past the chosen time: a nudge that late
+ * is stale, and the worst version of this feature is one that wakes someone near midnight.
+ */
+internal fun catchUpDelay(
+    now: LocalDateTime,
+    hour: Int,
+    minute: Int,
+    delayMinutes: Long = CATCH_UP_DELAY_MIN,
+    windowHours: Long = CATCH_UP_WINDOW_H
+): Duration? {
+    val slot = now.toLocalDate().atTime(LocalTime.of(hour, minute))
+    if (now.isBefore(slot)) return null              // the periodic run is still ahead of us
+    val deadline = slot.plusHours(windowHours)
+    if (!now.isBefore(deadline)) return null         // too late to be worth posting
+    val fire = minOf(now.plusMinutes(delayMinutes), deadline)
+    return Duration.between(now, fire)
+}
+
+internal const val CATCH_UP_DELAY_MIN = 45L
+internal const val CATCH_UP_WINDOW_H = 3L
+
 object ReminderScheduler {
 
     private const val WORK_NAME = "corlang-daily-reminder"
+    private const val CATCH_UP_NAME = "corlang-reminder-catch-up"
 
     /** Schedules (or reschedules) the daily reminder at the user's chosen time. */
     fun schedule(context: Context, hour: Int = 19, minute: Int = 0) {
@@ -166,9 +247,21 @@ object ReminderScheduler {
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(
             WORK_NAME, ExistingPeriodicWorkPolicy.UPDATE, request
         )
+
+        // Re-anchoring above moved any run still owed for today onto tomorrow. Hand it back.
+        catchUpDelay(now, hour, minute)?.let { delay ->
+            WorkManager.getInstance(context).enqueueUniqueWork(
+                CATCH_UP_NAME,
+                ExistingWorkPolicy.REPLACE,
+                OneTimeWorkRequestBuilder<ReminderWorker>()
+                    .setInitialDelay(delay.toMinutes(), TimeUnit.MINUTES)
+                    .build()
+            )
+        }
     }
 
     fun cancel(context: Context) {
         WorkManager.getInstance(context).cancelUniqueWork(WORK_NAME)
+        WorkManager.getInstance(context).cancelUniqueWork(CATCH_UP_NAME)
     }
 }

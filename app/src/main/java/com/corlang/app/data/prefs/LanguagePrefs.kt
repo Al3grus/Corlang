@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -58,6 +59,20 @@ class LanguagePrefs(private val context: Context) {
 
     suspend fun setReminderLanguages(langs: Set<String>) {
         context.dataStore.edit { it[reminderLanguagesKey] = langs }
+    }
+
+    private val lastReminderDayKey = longPreferencesKey("last_reminder_epoch_day")
+
+    /**
+     * Epoch day of the last posted reminder. Two things can post one now (the daily periodic
+     * worker and the catch-up enqueued when the app is opened after the reminder time), and the
+     * learner should still only ever be nudged once a day.
+     */
+    val lastReminderDay: Flow<Long> =
+        context.dataStore.data.map { it[lastReminderDayKey] ?: 0L }
+
+    suspend fun setLastReminderDay(epochDay: Long) {
+        context.dataStore.edit { it[lastReminderDayKey] = epochDay }
     }
 
     private val reminderHourKey = intPreferencesKey("reminder_hour")
