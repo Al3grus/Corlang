@@ -179,19 +179,19 @@ def build():
     os.makedirs(os.path.join(OUT, 'privacy'), exist_ok=True)
 
     landing = """
-<h1>Ten minutes a day is enough.</h1>
-<p class="lede">Short lessons in Croatian and Portuguese that fit into a real day, and stay with
-you afterwards.</p>
+<h1>Learn a language without rearranging your life.</h1>
+<p class="lede">No classroom, no commute, no hundreds of euros before you can say a word. Ten to
+fifteen minutes a day, wherever you happen to be. Croatian and Portuguese.</p>
 
 <div class="cards">
-  <div class="card"><h3>Little and often</h3><p>A lesson takes about ten minutes. Do it on the
-    bus.</p></div>
-  <div class="card"><h3>Words that stick</h3><p>Every word comes back just before you would
-    forget it.</p></div>
+  <div class="card"><h3>Wherever you are</h3><p>On the bus, in a queue, ten minutes before
+    bed.</p></div>
+  <div class="card"><h3>Short enough to keep</h3><p>One lesson a day, small enough to survive a
+    busy week.</p></div>
+  <div class="card"><h3>It stays with you</h3><p>Each word comes back right before you would
+    forget it, the way memory research says it should.</p></div>
   <div class="card"><h3>All the way to B1</h3><p>A full path from your first words to the
     official exam.</p></div>
-  <div class="card"><h3>Yours alone</h3><p>No account, no ads. Your progress stays on your
-    phone.</p></div>
 </div>
 
 <!-- LAUNCH SWITCH: replace this whole block with the Play button on the day the app goes
@@ -215,9 +215,13 @@ you afterwards.</p>
 
     # Long-lived caching would strand a policy edit behind a CDN cache, and this is a document
     # Google re-reads. HTML revalidates every time; nothing here is big enough for it to matter.
+    # `/*.html` was the rule here and it never matched anything anyone visits: the pages are
+    # served at `/` and `/privacy/`, not `/index.html`, so both fell through to default edge
+    # caching and a redeploy kept serving the old page. Caught by fetching the live site after a
+    # deploy and finding the previous headline still there. `/*` matches every path.
     io.open(os.path.join(OUT, '_headers'), 'w', encoding='utf-8', newline='\n').write(
         "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n"
-        "  X-Frame-Options: DENY\n\n/*.html\n  Cache-Control: public, max-age=0, must-revalidate\n")
+        "  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n")
     print('built site/index.html and site/privacy/index.html')
 
 
