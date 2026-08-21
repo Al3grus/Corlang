@@ -41,8 +41,7 @@ official exam asks for.
 
 ## Status
 
-In testing on Google Play, not publicly available yet. Everything below is for anyone reading the
-source.
+In testing on Google Play, not publicly available yet.
 
 ## License
 
