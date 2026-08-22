@@ -1,532 +1,537 @@
 {
- "quizzes": [
-  {
-   "id": "hr-a0",
-   "levelId": "A0",
-   "title": "A0, Survival Croatian",
-   "questions": [
+  "quizzes": [
     {
-     "type": "MCQ",
-     "difficulty": 1,
-     "prompt": "How do you say 'Good day' in Croatian?",
-     "options": [
-      "Dobar dan",
-      "Laku noć",
-      "Doviđenja",
-      "Hvala"
-     ],
-     "answer": "Dobar dan",
-     "explanation": "'Dobar dan' = good day (the standard daytime greeting). 'Laku noć' = good night, 'Doviđenja' = goodbye, 'Hvala' = thank you."
+      "id": "hr-a0",
+      "levelId": "A0",
+      "title": "A0, Survival Croatian",
+      "questions": [
+        {
+          "type": "MCQ",
+          "difficulty": 1,
+          "prompt": "How do you say 'Good day' in Croatian?",
+          "options": [
+            "Dobar dan",
+            "Laku noć",
+            "Doviđenja",
+            "Hvala"
+          ],
+          "answer": "Dobar dan",
+          "explanation": "'Dobar dan' = good day (the standard daytime greeting). 'Laku noć' = good night, 'Doviđenja' = goodbye, 'Hvala' = thank you."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 2,
+          "prompt": "Which word means 'thank you'?",
+          "options": [
+            "Molim",
+            "Hvala",
+            "Oprostite",
+            "Bok"
+          ],
+          "answer": "Hvala",
+          "explanation": "'Hvala' = thank you. 'Molim' = please/you're welcome, 'Oprostite' = excuse me, 'Bok' = hi/bye."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 3,
+          "prompt": "The letter 'š' is pronounced like...",
+          "options": [
+            "s in 'sun'",
+            "sh in 'ship'",
+            "ch in 'cheese'",
+            "z in 'zoo'"
+          ],
+          "answer": "sh in 'ship'",
+          "explanation": "Croatian is phonetic: š = 'sh', č/ć = 'ch', ž = 'zh', j = 'y'. 'škola' = SHKOH-lah (school)."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 4,
+          "prompt": "Complete the introduction: 'Ja ___ Marko.' (I am Marko)",
+          "answer": "sam",
+          "accepted": [],
+          "explanation": "biti short forms: ja sam, ti si, on je... With 'ja' it's 'sam'. 'Ja sam Marko' = I am Marko."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 5,
+          "prompt": "Which word means 1000?",
+          "options": [
+            "tisuća",
+            "sto",
+            "milijun",
+            "dvjesto"
+          ],
+          "answer": "tisuća",
+          "explanation": "sto is 100, tisuća is 1000, milijun is a million."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 6,
+          "prompt": "Write the number 'three' in Croatian.",
+          "answer": "tri",
+          "accepted": [],
+          "explanation": "0-5: nula, jedan, dva, tri, četiri, pet. 'Tri' = three."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 7,
+          "prompt": "Choose the negative of 'je' (is): 'Ona ___ ovdje.' (She is NOT here)",
+          "options": [
+            "ne je",
+            "nije",
+            "nisam",
+            "nisu"
+          ],
+          "answer": "nije",
+          "explanation": "biti has one-word negatives: nisam, nisi, nije, nismo, niste, nisu. For 'ona' (she) it's 'nije'."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 8,
+          "prompt": "You point at something far away and say:",
+          "options": [
+            "ono",
+            "ovo",
+            "to",
+            "tko"
+          ],
+          "answer": "ono",
+          "explanation": "ovo is this here, to is that near you, ono is that over there."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 9,
+          "prompt": "Croatian has no articles. So 'kuća' can mean...",
+          "options": [
+            "only 'house'",
+            "only 'the house'",
+            "a house / the house / house",
+            "houses"
+          ],
+          "answer": "a house / the house / house",
+          "explanation": "There is no 'a' or 'the' in Croatian. Context tells you which English article fits. 'kuća' = (a/the) house."
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 10,
+          "prompt": "Order the words: 'I speak a little Croatian.'",
+          "options": [
+            "Govorim",
+            "malo",
+            "hrvatski"
+          ],
+          "ordered": [
+            "Govorim",
+            "malo",
+            "hrvatski"
+          ],
+          "answer": "Govorim malo hrvatski",
+          "explanation": "The verb 'govorim' already means 'I speak' (no pronoun needed). 'malo' = a little, 'hrvatski' = Croatian."
+        }
+      ]
     },
     {
-     "type": "MCQ",
-     "difficulty": 2,
-     "prompt": "Which word means 'thank you'?",
-     "options": [
-      "Molim",
-      "Hvala",
-      "Oprostite",
-      "Bok"
-     ],
-     "answer": "Hvala",
-     "explanation": "'Hvala' = thank you. 'Molim' = please/you're welcome, 'Oprostite' = excuse me, 'Bok' = hi/bye."
+      "id": "hr-a1",
+      "levelId": "A1",
+      "title": "A1, Everyday Croatian",
+      "questions": [
+        {
+          "type": "FILL",
+          "difficulty": 1,
+          "prompt": "Conjugate imati (to have) for 'ja': 'Ja ___ brata.' (I have a brother)",
+          "answer": "imam",
+          "accepted": [],
+          "explanation": "imati: imam, imaš, ima, imamo, imate, imaju. With 'ja' → 'imam'."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 2,
+          "prompt": "Put 'kava' (coffee, feminine) into the accusative: 'Pijem ___.' (I drink coffee)",
+          "options": [
+            "kava",
+            "kavu",
+            "kave",
+            "kavom"
+          ],
+          "answer": "kavu",
+          "explanation": "Feminine -a nouns change to -u in the accusative (the object). 'Pijem kavu' = I drink coffee."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 3,
+          "prompt": "Make a yes/no question: 'Govoriš engleski' → ?",
+          "options": [
+            "Govoriš li engleski?",
+            "Li govoriš engleski?",
+            "Engleski govoriš?",
+            "Govoriš engleski li?"
+          ],
+          "answer": "Govoriš li engleski?",
+          "explanation": "Add 'li' right after the verb to form a yes/no question: 'Govoriš li engleski?' = Do you speak English?"
+        },
+        {
+          "type": "FILL",
+          "difficulty": 4,
+          "prompt": "Negate the verb: 'Ja ___ razumijem.' (I do NOT understand)",
+          "answer": "ne",
+          "accepted": [],
+          "explanation": "Regular verbs negate with 'ne' before the verb: 'Ne razumijem' = I don't understand. (biti is the exception with nisam etc.)"
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 5,
+          "prompt": "Choose the future tense: 'Sutra ___ raditi.' (Tomorrow I will work)",
+          "options": [
+            "sam",
+            "ću",
+            "bih",
+            "imam"
+          ],
+          "answer": "ću",
+          "explanation": "Future = short htjeti (ću, ćeš, će...) + infinitive. 'Ja ću raditi' / 'Radit ću' = I will work."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 6,
+          "prompt": "Past tense, male speaker: 'Jučer ___ radio.' (Yesterday I worked)",
+          "answer": "sam",
+          "accepted": [],
+          "explanation": "Perfekt = short biti (sam, si, je...) + participle. 'Radio sam' = I worked (man). A woman says 'Radila sam'."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 7,
+          "prompt": "Which past participle is correct for a FEMALE speaker saying 'I worked'?",
+          "options": [
+            "radio",
+            "radila",
+            "radili",
+            "raditi"
+          ],
+          "answer": "radila",
+          "explanation": "The participle agrees with gender: -o (m), -la (f), -lo (n), -li/-le (pl). A woman says 'radila sam'."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 8,
+          "prompt": "Genitive: 'a glass of water', complete 'čaša ___.' (voda → genitive)",
+          "answer": "vode",
+          "accepted": [],
+          "explanation": "Feminine -a → -e in the genitive. 'čaša vode' = a glass of water. Genitive expresses 'of'."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 9,
+          "prompt": "Aspect: which verb means a COMPLETED action ('to drink up')?",
+          "options": [
+            "piti",
+            "popiti",
+            "pijem",
+            "piće"
+          ],
+          "answer": "popiti",
+          "explanation": "piti (imperfective) = to be drinking / drink habitually; popiti (perfective, with prefix po-) = to drink up completely."
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 10,
+          "prompt": "Order the words: 'The woman drinks coffee.' (use the correct cases)",
+          "options": [
+            "Žena",
+            "pije",
+            "kavu"
+          ],
+          "ordered": [
+            "Žena",
+            "pije",
+            "kavu"
+          ],
+          "answer": "Žena pije kavu",
+          "explanation": "'Žena' stays nominative (the subject), 'kavu' is accusative (the object), 'pije' = drinks. Word order is flexible, but this is the neutral order."
+        }
+      ]
     },
     {
-     "type": "MCQ",
-     "difficulty": 3,
-     "prompt": "The letter 'š' is pronounced like...",
-     "options": [
-      "s in 'sun'",
-      "sh in 'ship'",
-      "ch in 'cheese'",
-      "z in 'zoo'"
-     ],
-     "answer": "sh in 'ship'",
-     "explanation": "Croatian is phonetic: š = 'sh', č/ć = 'ch', ž = 'zh', j = 'y'. 'škola' = SHKOH-lah (school)."
+      "id": "hr-a2",
+      "levelId": "A2",
+      "title": "A2, Cases, aspect & tenses",
+      "questions": [
+        {
+          "type": "MCQ",
+          "difficulty": 1,
+          "prompt": "Genitive of possession: 'This is the friend ___.' (of my brother, brat → genitive)",
+          "options": [
+            "brata",
+            "brat",
+            "bratu",
+            "bratom"
+          ],
+          "answer": "brata",
+          "explanation": "Masculine nouns add -a in the genitive: brat → brata. The genitive expresses 'of' / possession: 'prijatelj moga brata'."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 2,
+          "prompt": "Locative (location): 'I live in the city.' Complete: 'Živim u ___.' (grad → locative)",
+          "answer": "gradu",
+          "accepted": [],
+          "explanation": "After 'u/na' meaning a static location, use the locative: grad → gradu. 'Živim u gradu' = I live in the city."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 3,
+          "prompt": "Which verb is PERFECTIVE (a single completed action)?",
+          "options": [
+            "pisati",
+            "napisati",
+            "pišem",
+            "pisanje"
+          ],
+          "answer": "napisati",
+          "explanation": "napisati (with prefix na-) is perfective = to write and finish. pisati is imperfective = to be writing / write habitually."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 4,
+          "prompt": "Past tense, female speaker: 'Jučer sam ___ u školi.' (was, biti participle, feminine)",
+          "answer": "bila",
+          "accepted": [],
+          "explanation": "The past participle agrees with gender: bio (m), bila (f), bilo (n). A woman says 'bila sam' = I was."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 5,
+          "prompt": "Dative (to whom): 'I'm giving the book to my friend.' 'Dajem knjigu ___.' (prijatelj → dative)",
+          "options": [
+            "prijatelju",
+            "prijatelja",
+            "prijatelj",
+            "prijateljem"
+          ],
+          "answer": "prijatelju",
+          "explanation": "The dative marks the recipient ('to/for'): prijatelj → prijatelju. 'Dajem knjigu prijatelju' = I give the book to my friend."
+        },
+        {
+          "type": "MATCH",
+          "difficulty": 6,
+          "prompt": "Match each case to what it marks.",
+          "pairs": [
+            {
+              "left": "nominative",
+              "right": "the subject"
+            },
+            {
+              "left": "accusative",
+              "right": "the direct object"
+            },
+            {
+              "left": "genitive",
+              "right": "possession / 'of'"
+            },
+            {
+              "left": "dative",
+              "right": "the recipient / 'to'"
+            }
+          ],
+          "explanation": "Each case marks a role: nominative = subject, accusative = direct object, genitive = of/possession, dative = recipient. Endings change to show the role."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 7,
+          "prompt": "Future tense: 'Tomorrow I will study.' Choose: 'Sutra ___ učiti.'",
+          "options": [
+            "ću",
+            "sam",
+            "bih",
+            "imam"
+          ],
+          "answer": "ću",
+          "explanation": "Future = short htjeti (ću, ćeš, će...) + infinitive: 'Ja ću učiti' / 'Učit ću'."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 8,
+          "prompt": "Instrumental ('with'): 'I travel with a friend.' 'Putujem s ___.' (prijatelj → instrumental)",
+          "answer": "prijateljem",
+          "accepted": [],
+          "explanation": "The instrumental marks 'with' / means: prijatelj → prijateljem (masculine -em after a soft consonant). 's prijateljem' = with a friend."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 9,
+          "prompt": "Comparative: 'Croatia is ___ than Slovenia.' (bigger, velik)",
+          "options": [
+            "veći",
+            "velik",
+            "najveći",
+            "više"
+          ],
+          "answer": "veći",
+          "explanation": "Comparative of velik is irregular: veći (bigger). najveći is the superlative (biggest). Use 'nego/od' for 'than'."
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 10,
+          "prompt": "Order the words: 'Yesterday I drank coffee in a café.' (past + accusative + locative)",
+          "options": [
+            "Jučer",
+            "sam",
+            "pio",
+            "kavu",
+            "u",
+            "kafiću"
+          ],
+          "ordered": [
+            "Jučer",
+            "sam",
+            "pio",
+            "kavu",
+            "u",
+            "kafiću"
+          ],
+          "answer": "Jučer sam pio kavu u kafiću",
+          "explanation": "Past = 'sam pio' (male). 'kavu' is accusative (object), 'kafiću' is locative (location after 'u'). Three systems working together."
+        }
+      ]
     },
     {
-     "type": "FILL",
-     "difficulty": 4,
-     "prompt": "Complete the introduction: 'Ja ___ Marko.' (I am Marko)",
-     "answer": "sam",
-     "accepted": [],
-     "explanation": "biti short forms: ja sam, ti si, on je... With 'ja' it's 'sam'. 'Ja sam Marko' = I am Marko."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 5,
-     "prompt": "What gender is 'žena' (woman)?",
-     "options": [
-      "masculine",
-      "feminine",
-      "neuter",
-      "no gender"
-     ],
-     "answer": "feminine",
-     "explanation": "Nouns ending in -a are usually feminine. Consonant endings → masculine; -o/-e → neuter."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 6,
-     "prompt": "Write the number 'three' in Croatian.",
-     "answer": "tri",
-     "accepted": [],
-     "explanation": "0-5: nula, jedan, dva, tri, četiri, pet. 'Tri' = three."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 7,
-     "prompt": "Choose the negative of 'je' (is): 'Ona ___ ovdje.' (She is NOT here)",
-     "options": [
-      "ne je",
-      "nije",
-      "nisam",
-      "nisu"
-     ],
-     "answer": "nije",
-     "explanation": "biti has one-word negatives: nisam, nisi, nije, nismo, niste, nisu. For 'ona' (she) it's 'nije'."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 8,
-     "prompt": "Conjugate raditi (to work) for 'ja': 'Ja ___.'",
-     "answer": "radim",
-     "accepted": [],
-     "explanation": "Present endings: -m, -š, (none), -mo, -te, -e/ju. raditi → radim, radiš, radi, radimo, radite, rade."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 9,
-     "prompt": "Croatian has no articles. So 'kuća' can mean...",
-     "options": [
-      "only 'house'",
-      "only 'the house'",
-      "a house / the house / house",
-      "houses"
-     ],
-     "answer": "a house / the house / house",
-     "explanation": "There is no 'a' or 'the' in Croatian. Context tells you which English article fits. 'kuća' = (a/the) house."
-    },
-    {
-     "type": "REORDER",
-     "difficulty": 10,
-     "prompt": "Order the words: 'I speak a little Croatian.'",
-     "options": [
-      "Govorim",
-      "malo",
-      "hrvatski"
-     ],
-     "ordered": [
-      "Govorim",
-      "malo",
-      "hrvatski"
-     ],
-     "answer": "Govorim malo hrvatski",
-     "explanation": "The verb 'govorim' already means 'I speak' (no pronoun needed). 'malo' = a little, 'hrvatski' = Croatian."
+      "id": "hr-b1",
+      "levelId": "B1",
+      "title": "B1, Full cases, conditional & nuance",
+      "questions": [
+        {
+          "type": "MCQ",
+          "difficulty": 1,
+          "prompt": "Conditional ('would'): 'I would like a coffee.' Choose: 'Ja ___ kavu.'",
+          "options": [
+            "bih htio",
+            "ću htjeti",
+            "sam htio",
+            "hoću"
+          ],
+          "answer": "bih htio",
+          "explanation": "The conditional = aorist of biti (bih, bi, bi, bismo, biste, bi) + participle. 'Htio bih kavu' = I would like a coffee (polite)."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 2,
+          "prompt": "Vocative (addressing): call out to Marko. 'Hej, ___!'",
+          "answer": "Marko",
+          "accepted": [],
+          "explanation": "Many masculine names like Marko keep the same form in the vocative, but most masculine nouns change: prijatelj → prijatelju! The vocative is only for addressing someone."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 3,
+          "prompt": "Which case after the preposition 'iz' (out of)? 'Dolazim iz ___.' (grad)",
+          "options": [
+            "grada (genitive)",
+            "grad (nominative)",
+            "gradu (locative)",
+            "gradom (instrumental)"
+          ],
+          "answer": "grada (genitive)",
+          "explanation": "'iz' (from/out of) always takes the genitive: iz grada = out of the city. Many prepositions govern a fixed case."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 4,
+          "prompt": "Plural accusative: 'I see the children.' 'Vidim ___.' (djeca → accusative)",
+          "answer": "djecu",
+          "accepted": [],
+          "explanation": "'djeca' (children) is a collective noun behaving like a feminine singular: accusative djecu. 'Vidim djecu' = I see the children."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 5,
+          "prompt": "Aspect choice: 'I read (and finished) the book yesterday.' Pick the verb.",
+          "options": [
+            "pročitao sam",
+            "čitao sam",
+            "čitam",
+            "čitat ću"
+          ],
+          "answer": "pročitao sam",
+          "explanation": "A completed, whole action takes the perfective: pročitati → pročitao sam. 'čitao sam' (imperfective) means 'I was reading / used to read'."
+        },
+        {
+          "type": "MATCH",
+          "difficulty": 6,
+          "prompt": "Match each preposition to the case it governs.",
+          "pairs": [
+            {
+              "left": "iz (from)",
+              "right": "genitive"
+            },
+            {
+              "left": "u (into, motion)",
+              "right": "accusative"
+            },
+            {
+              "left": "u (in, location)",
+              "right": "locative"
+            },
+            {
+              "left": "s (with)",
+              "right": "instrumental"
+            }
+          ],
+          "explanation": "Prepositions govern specific cases, and some (like 'u') take different cases for motion (accusative) vs location (locative). This is central to B1 accuracy."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 7,
+          "prompt": "Dative plural: 'I'm helping my friends.' 'Pomažem ___.' (prijatelji → dative)",
+          "answer": "prijateljima",
+          "accepted": [],
+          "explanation": "The dative plural ending is -ima for masculine/feminine: prijatelji → prijateljima. The verb 'pomagati' takes the dative."
+        },
+        {
+          "type": "MCQ",
+          "difficulty": 8,
+          "prompt": "Conditional 'if' sentence: 'If I had money, I would travel.' The 'would travel' part is...",
+          "options": [
+            "putovao bih",
+            "putujem",
+            "putovat ću",
+            "putovao sam"
+          ],
+          "answer": "putovao bih",
+          "explanation": "Hypothetical result uses the conditional: 'Da imam novca, putovao bih.' (bih + participle)."
+        },
+        {
+          "type": "FILL",
+          "difficulty": 9,
+          "prompt": "Comparative + 'than': 'Zagreb is bigger than Split.' 'Zagreb je veći ___ Splita.'",
+          "answer": "od",
+          "accepted": [],
+          "explanation": "After a comparative, 'than' + genitive = 'od': 'veći od Splita'. ('nego' also means 'than' but pairs with the nominative 'Split', not the genitive used here.)"
+        },
+        {
+          "type": "REORDER",
+          "difficulty": 10,
+          "prompt": "Order the words: 'I told my friend that I would come.' (dative + conditional)",
+          "options": [
+            "Rekao",
+            "sam",
+            "prijatelju",
+            "da",
+            "ću",
+            "doći"
+          ],
+          "ordered": [
+            "Rekao",
+            "sam",
+            "prijatelju",
+            "da",
+            "ću",
+            "doći"
+          ],
+          "answer": "Rekao sam prijatelju da ću doći",
+          "explanation": "'prijatelju' is dative (told TO my friend); 'da ću doći' = that I will come. Croatian often uses the future where English uses 'would' in reported speech."
+        }
+      ]
     }
-   ]
-  },
-  {
-   "id": "hr-a1",
-   "levelId": "A1",
-   "title": "A1, Everyday Croatian",
-   "questions": [
-    {
-     "type": "FILL",
-     "difficulty": 1,
-     "prompt": "Conjugate imati (to have) for 'ja': 'Ja ___ brata.' (I have a brother)",
-     "answer": "imam",
-     "accepted": [],
-     "explanation": "imati: imam, imaš, ima, imamo, imate, imaju. With 'ja' → 'imam'."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 2,
-     "prompt": "Put 'kava' (coffee, feminine) into the accusative: 'Pijem ___.' (I drink coffee)",
-     "options": [
-      "kava",
-      "kavu",
-      "kave",
-      "kavom"
-     ],
-     "answer": "kavu",
-     "explanation": "Feminine -a nouns change to -u in the accusative (the object). 'Pijem kavu' = I drink coffee."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 3,
-     "prompt": "Make a yes/no question: 'Govoriš engleski' → ?",
-     "options": [
-      "Govoriš li engleski?",
-      "Li govoriš engleski?",
-      "Engleski govoriš?",
-      "Govoriš engleski li?"
-     ],
-     "answer": "Govoriš li engleski?",
-     "explanation": "Add 'li' right after the verb to form a yes/no question: 'Govoriš li engleski?' = Do you speak English?"
-    },
-    {
-     "type": "FILL",
-     "difficulty": 4,
-     "prompt": "Negate the verb: 'Ja ___ razumijem.' (I do NOT understand)",
-     "answer": "ne",
-     "accepted": [],
-     "explanation": "Regular verbs negate with 'ne' before the verb: 'Ne razumijem' = I don't understand. (biti is the exception with nisam etc.)"
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 5,
-     "prompt": "Choose the future tense: 'Sutra ___ raditi.' (Tomorrow I will work)",
-     "options": [
-      "sam",
-      "ću",
-      "bih",
-      "imam"
-     ],
-     "answer": "ću",
-     "explanation": "Future = short htjeti (ću, ćeš, će...) + infinitive. 'Ja ću raditi' / 'Radit ću' = I will work."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 6,
-     "prompt": "Past tense, male speaker: 'Jučer ___ radio.' (Yesterday I worked)",
-     "answer": "sam",
-     "accepted": [],
-     "explanation": "Perfekt = short biti (sam, si, je...) + participle. 'Radio sam' = I worked (man). A woman says 'Radila sam'."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 7,
-     "prompt": "Which past participle is correct for a FEMALE speaker saying 'I worked'?",
-     "options": [
-      "radio",
-      "radila",
-      "radili",
-      "raditi"
-     ],
-     "answer": "radila",
-     "explanation": "The participle agrees with gender: -o (m), -la (f), -lo (n), -li/-le (pl). A woman says 'radila sam'."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 8,
-     "prompt": "Genitive: 'a glass of water', complete 'čaša ___.' (voda → genitive)",
-     "answer": "vode",
-     "accepted": [],
-     "explanation": "Feminine -a → -e in the genitive. 'čaša vode' = a glass of water. Genitive expresses 'of'."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 9,
-     "prompt": "Aspect: which verb means a COMPLETED action ('to drink up')?",
-     "options": [
-      "piti",
-      "popiti",
-      "pijem",
-      "piće"
-     ],
-     "answer": "popiti",
-     "explanation": "piti (imperfective) = to be drinking / drink habitually; popiti (perfective, with prefix po-) = to drink up completely."
-    },
-    {
-     "type": "REORDER",
-     "difficulty": 10,
-     "prompt": "Order the words: 'The woman drinks coffee.' (use the correct cases)",
-     "options": [
-      "Žena",
-      "pije",
-      "kavu"
-     ],
-     "ordered": [
-      "Žena",
-      "pije",
-      "kavu"
-     ],
-     "answer": "Žena pije kavu",
-     "explanation": "'Žena' stays nominative (the subject), 'kavu' is accusative (the object), 'pije' = drinks. Word order is flexible, but this is the neutral order."
-    }
-   ]
-  },
-  {
-   "id": "hr-a2",
-   "levelId": "A2",
-   "title": "A2, Cases, aspect & tenses",
-   "questions": [
-    {
-     "type": "MCQ",
-     "difficulty": 1,
-     "prompt": "Genitive of possession: 'This is the friend ___.' (of my brother, brat → genitive)",
-     "options": [
-      "brata",
-      "brat",
-      "bratu",
-      "bratom"
-     ],
-     "answer": "brata",
-     "explanation": "Masculine nouns add -a in the genitive: brat → brata. The genitive expresses 'of' / possession: 'prijatelj moga brata'."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 2,
-     "prompt": "Locative (location): 'I live in the city.' Complete: 'Živim u ___.' (grad → locative)",
-     "answer": "gradu",
-     "accepted": [],
-     "explanation": "After 'u/na' meaning a static location, use the locative: grad → gradu. 'Živim u gradu' = I live in the city."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 3,
-     "prompt": "Which verb is PERFECTIVE (a single completed action)?",
-     "options": [
-      "pisati",
-      "napisati",
-      "pišem",
-      "pisanje"
-     ],
-     "answer": "napisati",
-     "explanation": "napisati (with prefix na-) is perfective = to write and finish. pisati is imperfective = to be writing / write habitually."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 4,
-     "prompt": "Past tense, female speaker: 'Jučer sam ___ u školi.' (was, biti participle, feminine)",
-     "answer": "bila",
-     "accepted": [],
-     "explanation": "The past participle agrees with gender: bio (m), bila (f), bilo (n). A woman says 'bila sam' = I was."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 5,
-     "prompt": "Dative (to whom): 'I'm giving the book to my friend.' 'Dajem knjigu ___.' (prijatelj → dative)",
-     "options": [
-      "prijatelju",
-      "prijatelja",
-      "prijatelj",
-      "prijateljem"
-     ],
-     "answer": "prijatelju",
-     "explanation": "The dative marks the recipient ('to/for'): prijatelj → prijatelju. 'Dajem knjigu prijatelju' = I give the book to my friend."
-    },
-    {
-     "type": "MATCH",
-     "difficulty": 6,
-     "prompt": "Match each case to what it marks.",
-     "pairs": [
-      {
-       "left": "nominative",
-       "right": "the subject"
-      },
-      {
-       "left": "accusative",
-       "right": "the direct object"
-      },
-      {
-       "left": "genitive",
-       "right": "possession / 'of'"
-      },
-      {
-       "left": "dative",
-       "right": "the recipient / 'to'"
-      }
-     ],
-     "explanation": "Each case marks a role: nominative = subject, accusative = direct object, genitive = of/possession, dative = recipient. Endings change to show the role."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 7,
-     "prompt": "Future tense: 'Tomorrow I will study.' Choose: 'Sutra ___ učiti.'",
-     "options": [
-      "ću",
-      "sam",
-      "bih",
-      "imam"
-     ],
-     "answer": "ću",
-     "explanation": "Future = short htjeti (ću, ćeš, će...) + infinitive: 'Ja ću učiti' / 'Učit ću'."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 8,
-     "prompt": "Instrumental ('with'): 'I travel with a friend.' 'Putujem s ___.' (prijatelj → instrumental)",
-     "answer": "prijateljem",
-     "accepted": [],
-     "explanation": "The instrumental marks 'with' / means: prijatelj → prijateljem (masculine -em after a soft consonant). 's prijateljem' = with a friend."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 9,
-     "prompt": "Comparative: 'Croatia is ___ than Slovenia.' (bigger, velik)",
-     "options": [
-      "veći",
-      "velik",
-      "najveći",
-      "više"
-     ],
-     "answer": "veći",
-     "explanation": "Comparative of velik is irregular: veći (bigger). najveći is the superlative (biggest). Use 'nego/od' for 'than'."
-    },
-    {
-     "type": "REORDER",
-     "difficulty": 10,
-     "prompt": "Order the words: 'Yesterday I drank coffee in a café.' (past + accusative + locative)",
-     "options": [
-      "Jučer",
-      "sam",
-      "pio",
-      "kavu",
-      "u",
-      "kafiću"
-     ],
-     "ordered": [
-      "Jučer",
-      "sam",
-      "pio",
-      "kavu",
-      "u",
-      "kafiću"
-     ],
-     "answer": "Jučer sam pio kavu u kafiću",
-     "explanation": "Past = 'sam pio' (male). 'kavu' is accusative (object), 'kafiću' is locative (location after 'u'). Three systems working together."
-    }
-   ]
-  },
-  {
-   "id": "hr-b1",
-   "levelId": "B1",
-   "title": "B1, Full cases, conditional & nuance",
-   "questions": [
-    {
-     "type": "MCQ",
-     "difficulty": 1,
-     "prompt": "Conditional ('would'): 'I would like a coffee.' Choose: 'Ja ___ kavu.'",
-     "options": [
-      "bih htio",
-      "ću htjeti",
-      "sam htio",
-      "hoću"
-     ],
-     "answer": "bih htio",
-     "explanation": "The conditional = aorist of biti (bih, bi, bi, bismo, biste, bi) + participle. 'Htio bih kavu' = I would like a coffee (polite)."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 2,
-     "prompt": "Vocative (addressing): call out to Marko. 'Hej, ___!'",
-     "answer": "Marko",
-     "accepted": [],
-     "explanation": "Many masculine names like Marko keep the same form in the vocative, but most masculine nouns change: prijatelj → prijatelju! The vocative is only for addressing someone."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 3,
-     "prompt": "Which case after the preposition 'iz' (out of)? 'Dolazim iz ___.' (grad)",
-     "options": [
-      "grada (genitive)",
-      "grad (nominative)",
-      "gradu (locative)",
-      "gradom (instrumental)"
-     ],
-     "answer": "grada (genitive)",
-     "explanation": "'iz' (from/out of) always takes the genitive: iz grada = out of the city. Many prepositions govern a fixed case."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 4,
-     "prompt": "Plural accusative: 'I see the children.' 'Vidim ___.' (djeca → accusative)",
-     "answer": "djecu",
-     "accepted": [],
-     "explanation": "'djeca' (children) is a collective noun behaving like a feminine singular: accusative djecu. 'Vidim djecu' = I see the children."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 5,
-     "prompt": "Aspect choice: 'I read (and finished) the book yesterday.' Pick the verb.",
-     "options": [
-      "pročitao sam",
-      "čitao sam",
-      "čitam",
-      "čitat ću"
-     ],
-     "answer": "pročitao sam",
-     "explanation": "A completed, whole action takes the perfective: pročitati → pročitao sam. 'čitao sam' (imperfective) means 'I was reading / used to read'."
-    },
-    {
-     "type": "MATCH",
-     "difficulty": 6,
-     "prompt": "Match each preposition to the case it governs.",
-     "pairs": [
-      {
-       "left": "iz (from)",
-       "right": "genitive"
-      },
-      {
-       "left": "u (into, motion)",
-       "right": "accusative"
-      },
-      {
-       "left": "u (in, location)",
-       "right": "locative"
-      },
-      {
-       "left": "s (with)",
-       "right": "instrumental"
-      }
-     ],
-     "explanation": "Prepositions govern specific cases, and some (like 'u') take different cases for motion (accusative) vs location (locative). This is central to B1 accuracy."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 7,
-     "prompt": "Dative plural: 'I'm helping my friends.' 'Pomažem ___.' (prijatelji → dative)",
-     "answer": "prijateljima",
-     "accepted": [],
-     "explanation": "The dative plural ending is -ima for masculine/feminine: prijatelji → prijateljima. The verb 'pomagati' takes the dative."
-    },
-    {
-     "type": "MCQ",
-     "difficulty": 8,
-     "prompt": "Conditional 'if' sentence: 'If I had money, I would travel.' The 'would travel' part is...",
-     "options": [
-      "putovao bih",
-      "putujem",
-      "putovat ću",
-      "putovao sam"
-     ],
-     "answer": "putovao bih",
-     "explanation": "Hypothetical result uses the conditional: 'Da imam novca, putovao bih.' (bih + participle)."
-    },
-    {
-     "type": "FILL",
-     "difficulty": 9,
-     "prompt": "Comparative + 'than': 'Zagreb is bigger than Split.' 'Zagreb je veći ___ Splita.'",
-     "answer": "od",
-     "accepted": [],
-     "explanation": "After a comparative, 'than' + genitive = 'od': 'veći od Splita'. ('nego' also means 'than' but pairs with the nominative 'Split', not the genitive used here.)"
-    },
-    {
-     "type": "REORDER",
-     "difficulty": 10,
-     "prompt": "Order the words: 'I told my friend that I would come.' (dative + conditional)",
-     "options": [
-      "Rekao",
-      "sam",
-      "prijatelju",
-      "da",
-      "ću",
-      "doći"
-     ],
-     "ordered": [
-      "Rekao",
-      "sam",
-      "prijatelju",
-      "da",
-      "ću",
-      "doći"
-     ],
-     "answer": "Rekao sam prijatelju da ću doći",
-     "explanation": "'prijatelju' is dative (told TO my friend); 'da ću doći' = that I will come. Croatian often uses the future where English uses 'would' in reported speech."
-    }
-   ]
-  }
- ]
+  ]
 }

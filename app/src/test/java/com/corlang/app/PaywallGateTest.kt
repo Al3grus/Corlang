@@ -93,20 +93,21 @@ class PaywallGateTest {
      * In BOTH courses the free tier is exactly level A0, and nothing below a level's floor was
      * borrowed to make that true.
      *
-     * Portuguese got its A0 by authoring ten lessons ON TOP of the course, not by relabelling
-     * A1's first ten. The distinction is the whole point: `docs/language-standard.md` sets a
-     * floor of 45 lessons for pt A1, and that floor is a claim about how much teaching reaching
-     * A1 takes, not a bookkeeping total. Relabelling would leave A1 claiming to deliver A1 in 35.
-     * The two assertions on A1 size below are what would catch someone "simplifying" it that way
-     * later; `everyCourseMeetsTheWeightedLessonFloor` is the other half of that guard.
+     * A0 is the BASICS in both: letters and sounds, greetings, introductions, numbers, yes and
+     * no, question words. Not a phrasebook. A transactional sentence taught whole is heavy
+     * however simply it is framed, because the learner owns none of the words in it, so the
+     * pieces come first and the transactions are assembled from them in A1.
      *
-     * The onramps are different sizes on purpose. Croatian's is 16 because Croatian cannot be
-     * read until you know 30 letters and eight digraphs. Portuguese can be read on sight, so its
-     * onramp teaches survival transactions instead and needs fewer lessons to do it.
+     * Neither course grew to get this. Both already contained their own basics; the basics were
+     * simply not the part being given away. Croatian moved six pure-grammar lessons up into A1
+     * and Portuguese swapped its foundation block with the survival block that had been sitting
+     * in front of it. The level-size assertions below are the guard: if a later change tries to
+     * make A0 bigger by borrowing from A1 rather than by adding, A1 shrinks and these fail,
+     * which is exactly what `everyCourseMeetsTheWeightedLessonFloor` refused once already.
      */
     @Test
     fun `in both courses the free tier is exactly level A0`() {
-        listOf("hr" to 16, "pt" to 10).forEach { (lang, expected) ->
+        listOf("hr" to 10, "pt" to 10).forEach { (lang, expected) ->
             assertEquals("$lang free window", expected, meta(lang).freeLessons)
             assertEquals(
                 "$lang free window must land exactly on the end of A0",
@@ -125,8 +126,11 @@ class PaywallGateTest {
         assertEquals(45, days("pt").count { it.level == "A1" })
         assertEquals(70, days("pt").count { it.level == "A2" })
         assertEquals(125, days("pt").count { it.level == "B1" })
-        assertEquals(61, days("hr").count { it.level == "A1" })
+        assertEquals(67, days("hr").count { it.level == "A1" })
+        assertEquals(96, days("hr").count { it.level == "A2" })
+        assertEquals(171, days("hr").count { it.level == "B1" })
         assertEquals(250, days("pt").size)
+        assertEquals(344, days("hr").size)
 
         listOf("hr", "pt").forEach { lang ->
             val share = meta(lang).freeLessons.toDouble() / days(lang).size
