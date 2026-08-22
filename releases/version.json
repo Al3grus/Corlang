@@ -1,6 +1,6 @@
 {
-  "versionCode": 189,
-  "versionName": "0.55.0",
-  "notes": "The tutor now shows how many messages you have left for the day, quietly, above the conversation. When they run out it says so and tells you they come back tomorrow, instead of letting you type a message that would only be refused. The number comes from the server that enforces the limit, so it is the real one.",
+  "versionCode": 190,
+  "versionName": "0.56.0",
+  "notes": "The tutor now stays a tutor. Ask it for the price of bitcoin or today's headlines and it says it cannot help with that and carries straight on with the lesson, without spending one of your daily messages on the question. The daily allowance is thirty for everyone now, shown centred above the conversation, and it was mistakenly showing three hundred on sideload builds.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
