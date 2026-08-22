@@ -1,6 +1,6 @@
 {
-  "versionCode": 183,
-  "versionName": "0.53.1",
-  "notes": "Tutor opening screen, cleaned up. The three ways to start a session now sit in the middle of the screen instead of hanging off the top, so it is obvious they are the point of the screen. The \"Teach me in English\" switch has its own panel and a line saying what it does, so it no longer reads as a heading for the buttons under it, and tapping anywhere on that panel flips it. With it on, the message box now asks you in English to write something in the language you are studying, instead of asking in the one language you cannot yet read.",
+  "versionCode": 184,
+  "versionName": "0.53.2",
+  "notes": "The in-app updater is back. Directly installed builds can check for a new version and install it from Settings again, instead of only being replaceable by hand. If Android has not yet been told Corlang may install an app, the card now says so and takes you to the one setting that allows it, rather than failing silently. The release notes for the waiting version are shown before you install it. The Google Play build is unaffected and still updates through the store. The privacy policy link in Settings now opens corlang.app/privacy instead of a raw file on GitHub.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

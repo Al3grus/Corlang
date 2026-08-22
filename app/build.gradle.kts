@@ -34,8 +34,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 183
-        versionName = "0.53.1"
+        versionCode = 184
+        versionName = "0.53.2"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -44,21 +44,21 @@ android {
         buildConfigField("boolean", "DEV_PREMIUM", "false")
     }
 
-    // Two distribution channels: `sideload` (a directly installed APK, and the DEV_PREMIUM test
-    // unlock) and `play` (Google Play). Neither ships the self-updater any more, so no build
-    // asks for REQUEST_INSTALL_PACKAGES; the flavor dimension now earns its place on DEV_PREMIUM
-    // alone, which must never reach a Play build.
+    // Two distribution channels that must stay apart: `sideload` (a directly installed APK, the
+    // in-app self-updater, and the DEV_PREMIUM test unlock) and `play` (Google Play, which
+    // FORBIDS self-updating apps). The play flavor compiles the updater out via ENABLE_UPDATER
+    // and merges no REQUEST_INSTALL_PACKAGES / FileProvider — both live in
+    // src/sideload/AndroidManifest.xml, which the play flavor never sees.
     flavorDimensions += "distribution"
     productFlavors {
         create("sideload") {
             dimension = "distribution"
             isDefault = true
-            // The self-updater is OFF in both flavors as of v0.48.0. It existed to get builds to
-            // friends over GitHub before Play; distribution is Play now, and nobody but the
-            // developer is on a sideload build. `Updater` itself stays (the About card reads
-            // installedVersionName from it), and flipping this back to "true" plus restoring
-            // src/sideload/AndroidManifest.xml is the whole way back.
-            buildConfigField("boolean", "ENABLE_UPDATER", "false")
+            // ON for sideload. It was switched off in v0.48.0 on the assumption that Play was
+            // the only channel from then on; it is not yet, and a sideload build with no updater
+            // is a build that can only be replaced by hand. Play never sees this: the play
+            // flavor below keeps it false and merges none of the sideload manifest.
+            buildConfigField("boolean", "ENABLE_UPDATER", "true")
             // Pre-billing test unlock (corlang.devPremium=true in local.properties): grants
             // Premium so the AI can be exercised. SIDELOAD ONLY — the play flavor keeps the
             // default false and can never ship a free-Premium build by accident.
