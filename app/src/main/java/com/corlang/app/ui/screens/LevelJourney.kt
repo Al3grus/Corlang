@@ -81,7 +81,14 @@ fun LevelJourney(
     val currentLevel = remember(targetDay, plan) {
         plan.days.firstOrNull { it.day == targetDay }?.level ?: levelGroups.first().key
     }
-    var selectedLevel by rememberSaveable(currentLevel) { mutableStateOf(currentLevel) }
+    // The chips follow the lesson being VIEWED, not the one you are up to. Browsing back to
+    // lesson 9 from lesson 19 crosses a level boundary, and keying this on targetDay left the
+    // A1 chip selected while the card showed an A0 lesson, so the stone for it was not even in
+    // the row. Tapping a chip still overrides, until the viewed lesson changes level again.
+    val viewedLevel = remember(viewedDay, plan) {
+        plan.days.firstOrNull { it.day == viewedDay }?.level ?: currentLevel
+    }
+    var selectedLevel by rememberSaveable(viewedLevel) { mutableStateOf(viewedLevel) }
 
     Column {
         SectionTitle("Your journey")
@@ -153,8 +160,11 @@ fun LevelJourney(
         // Snap to centre the first time we land on a level (so a language switch fades in already
         // centred, no visible slide); animate only for later shifts, e.g. finishing a day.
         val positioned = remember(selectedLevel) { mutableStateOf(false) }
-        LaunchedEffect(targetDay, selectedLevel, stones.size) {
-            val idx = stones.indexOfFirst { it.day == targetDay }
+        // Centre on what the card is showing. This used to centre on targetDay, so leaving a
+        // revisited lesson scrolled the path back to today while the card stayed on the older
+        // lesson, and the two disagreed about where the learner was.
+        LaunchedEffect(viewedDay, selectedLevel, stones.size) {
+            val idx = stones.indexOfFirst { it.day == viewedDay }
             if (idx >= 0) {
                 val stridePx = with(density) { 52.dp.toPx() }      // ~40dp node + 12dp connector
                 val startPadPx = with(density) { 8.dp.toPx() }
