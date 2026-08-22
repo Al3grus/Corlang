@@ -196,8 +196,27 @@ exam gate, the placement-seed ceiling, retired product ids).
      email, and grant **View financial data, orders, and cancellation survey responses**. That
      is the permission `purchases.subscriptionsv2.get` needs, which is the call the worker
      makes.
-   - `cd server/ai-proxy && npx wrangler secret put PLAY_SERVICE_ACCOUNT`, paste the whole JSON
-     at the hidden prompt. Nothing is committed; the file should be deleted afterwards.
+   - Load the key as a secret. **`wrangler secret put` will not work here:** its hidden prompt
+     reads ONE line and a service-account file is multi-line, so the paste is truncated. Use
+     `secret bulk`, which takes a file and means the key is never pasted into a terminal at all.
+
+     From `server/ai-proxy`, with the downloaded key at `KEYPATH`:
+
+     ```
+     python -c "import json,sys,io; raw=io.open(sys.argv[1],encoding='utf-8').read(); io.open('secrets.json','w',encoding='utf-8').write(json.dumps({'PLAY_SERVICE_ACCOUNT': raw}))" KEYPATH
+     npx wrangler secret bulk secrets.json
+     del secrets.json
+     ```
+
+     The wrapper stores the whole file as ONE JSON string, so the `
+` escapes inside
+     `private_key` survive: the worker's `JSON.parse` then hands `importKey` a key with real
+     newlines, which is what it needs. Verified by round-tripping a dummy key of the same shape.
+     Delete `secrets.json` AND the downloaded key afterwards; neither is gitignored by name.
+
+     **Do not set a placeholder value to "test the plumbing".** The worker turns subscription
+     verification ON the moment this secret exists, so a dummy key means every real subscriber
+     gets a 403.
    - Verify: a forged sub token must 403, a real subscriber must 200. Grants can take a little
      while to propagate, so a 401 on the first attempt is worth one retry before debugging.
 

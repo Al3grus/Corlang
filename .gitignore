@@ -23,3 +23,11 @@ Thumbs.db
 # Release APKs are shipped via the repo (private) for phone-side downloads
 !releases/*.apk
 .wrangler/
+
+# Credentials that must never be committed. GitHub push protection caught a Google Cloud
+# service-account key here on 2026-08-22, swept in by a `git add -A`; the commit was local only
+# and was removed. Patterns, not one filename, because the next key will be named something else.
+Google Cloud/
+*service*account*.json
+*-*.json.key
+gha-creds-*.json
