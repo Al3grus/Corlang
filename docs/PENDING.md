@@ -52,78 +52,40 @@ Everything else on the critical path is browser work in Play Console.
 
 ---
 
-## ✅ DONE 2026-08-22 — Portuguese has an A0, authored on top
+## ✅ DONE 2026-08-22 — A0 is the basics, ten lessons, in both courses
 
-Shipped. Recorded because the route here was not the obvious one and the obvious one is a trap.
+Three passes to get here, and the last one was the cheap one. Recorded because the two wrong
+turns are both attractive.
 
-**The trap.** Portuguese days 1 to 10 already read like an A0 (sounds, greetings, introductions,
-ser/estar, numbers, gender, family, verbs, questions), so relabelling them looks free. It is not:
-pt A1's floor is 45 lessons and that floor is a claim about how much teaching reaching A1 takes,
-not a bookkeeping total. Relabelling leaves A1 claiming to deliver A1 in 35, and
-`everyCourseMeetsTheWeightedLessonFloor` fails it. Correctly.
+**Wrong turn one: relabelling.** Moving A1's opening lessons down into A0 leaves A1 below its
+floor, and the floor is a quality claim rather than a total.
+`everyCourseMeetsTheWeightedLessonFloor` refused it.
 
-**What was built instead.** Ten NEW lessons before day 1, a survival onramp rather than a second
-grammar onramp: arriving, the cafe, paying, directions, transport, eating out, shopping, repair
-phrases, emergencies, checkpoint. Whole chunks, no conjugation tables. Every paid level kept
-every lesson it was authored with, so the course is now **A0 10, A1 45, A2 70, B1 125 = 250**.
+**Wrong turn two: a phrasebook.** The next attempt authored survival transactions for A0, ten
+for Portuguese and seven for Croatian. They read well and they were wrong for the level: a
+learner parroting "Zadržite ostatak" or "Tem troco de vinte euros?" owns no word in either
+sentence, and the numbers inside them had never been taught. A0 has to hand over the pieces.
 
-Why survival rather than phonics: Croatian needs 16 lessons of A0 because Croatian cannot be
-read until you know 30 letters and eight digraphs. Portuguese can be read on sight. What a
-beginner here lacks is the six transactions that fill a day, and that is also the content most
-likely to make somebody keep the app.
+**What shipped.** A0 is now letters, greetings, introductions, numbers, yes and no, question
+words, this and that, in both courses, ten lessons each. Neither course grew:
 
-**The deck was not touched.** Word ids are the words themselves, and the first hundred deck
-entries are already the greetings and courtesy set, which is exactly what an A0 learner should
-meet in Review. A new A0 vocabulary pack would have duplicated frozen SRS ids for no gain, and
-inserting one would have moved every later word's introduction point.
+- **Croatian** moved six pure-grammar lessons up into A1 (genders, pronouns, verb endings,
+  family vocabulary, nominative, accusative). A0 10, A1 67, A2 96, B1 171, still 344.
+- **Portuguese** swapped its two opening blocks: the foundation came down into A0, and the
+  survival lessons written in the previous pass went up to open A1, where they now reinforce
+  grammar the learner has actually met. A0 10, A1 45, A2 70, B1 125, still 250.
 
-**What this cost elsewhere:** every old day renumbered +10 (weeks recomputed), placement bands
-shifted +10 with a new A0 band added, an A0 level quiz written, and the `levels.json` A0 entry
-(which had been authored long ago and used by nothing) finally drives something.
+Everything from Croatian lesson 17 and Portuguese lesson 21 kept its number, so no placement
+band above those points moved.
 
-Guards added while building, worth keeping in mind for the next course:
-- The generator asserts every new taught string is unique against all 3241 existing ones, and
-  against the other A0 days. It caught 8 real collisions on the first run.
-- Learner-facing titles are English by rule, including activity titles.
-- A placement band is one ability probe, so all four of its items share a difficulty.
-- A quiz prompt may not restate a lesson's own exercise prompt, or it tests the quiz.
+**The constraint that forced the cheap answer, worth remembering:** the deck floor is
+`deck >= lessons x 10`, and Croatian sits exactly on it at 3440 words for 344 lessons. Zero
+spare. Portuguese had 68 words of slack, which is the only reason its earlier A0 could be
+authored on top at all. Croatian cannot gain one lesson without ten more words.
 
-## 🟡 BLOCKED — Croatian A0 survival rework, waiting on 70 deck words
-
-Diagnosed, authored, and stopped one step short. **The lessons are written**:
-`docs/drafts/hr-a0-survival-lessons.json`, seven of them, checked collision-free against all
-6636 taught strings already in the Croatian course.
-
-**Why it is worth doing.** Croatian's free level spends eleven of sixteen lessons on grammar
-paradigms, and its objectives say "recognise", "know", "understand" where Portuguese A0 now says
-"you will order and pay". Paying first appears on day 69, tickets and buses on day 24,
-restaurants on day 22, all behind the paywall. A learner who finishes the entire free Croatian
-course can recite the accusative and cannot buy a coffee. A0 is the only part of the course
-anyone sees before paying, so this is the conversion surface.
-
-**The plan, which works.** Keep the alphabet, greetings and the milestone check; move the
-thirteen grammar lessons UP into A1, where cases and conjugation belong by any CEFR reading and
-where a growing level can never break a floor; add the seven survival lessons. That gives
-A0 10, A1 74, A2 96, B1 171 = 351, matching Portuguese's ten-lesson A0.
-
-**The blocker, exactly.** `everyDeckCoversTheWholeCourse` requires deck >= lessons x 10, and
-Croatian sits at **3440 words for 344 lessons: zero headroom**. Portuguese had 68 spare words,
-which is the only reason its A0 landed without touching the deck. Seven more lessons need
-**70 more Croatian words**, each with the unique, cloze-safe example `check_deck_examples.py`
-demands.
-
-**The open question is WHERE those words go**, and it is a real decision, not a detail:
-
-- *Front of the deck*, as an A0 survival pack. Pedagogically right, and it also fixes three
-  pack-alignment offenders the shift otherwise creates (`adjectives` +17, `personality-emotions`
-  +17, `time-frequency` +16 against a limit of 15). But it contradicts "top-up packs are
-  APPENDED, never inserted" and moves every existing word's introduction point back by seven
-  lessons. No id is renamed or removed, so no SRS history is orphaned.
-- *End of the deck*, honouring the rule. Then the survival words are introduced around lesson
-  344, which is absurd for "trajekt", the 70 words have to be B1-level instead, and the three
-  offending packs each need a `fromDay` set.
-
-`fromDay` cannot resolve this: it only ever DELAYS a pack, never advances one.
+The seven Croatian survival lessons drafted on the way are deleted rather than parked. They
+would have to go into A1, which Croatian cannot grow into, and a draft nothing can consume is
+dead data. They are in the history of this commit if the deck ever gains room.
 
 ## 🔴 TRACK A — Get to Play testers (critical path, in order)
 

@@ -74,25 +74,25 @@ A language is a folder `app/src/main/assets/content/<code>/` containing:
   | French | 750 | 1.12 | B2 | – | 50 | 80 | 140 | 125 | **395** |
   | Croatian | 1100 | 1.35 | B1 | 15 | 60 | 95 | 170 | – | **340** |
 
-  A0 is an onramp, added only where the language needs it, and carries no floor of its own.
-  There are two kinds, and which one a language gets depends on what actually blocks a beginner:
+  **A0 is exactly ten lessons in every course, and it is the BASICS.** Letters and how to read
+  them, greetings across the day, introductions, numbers, yes and no, question words, this and
+  that. Nothing else. It is also the only part of the course anyone sees before paying, so it is
+  the buying decision as well as the onramp.
 
-  - **A script and sound onramp**, where the language cannot be read until something is taught
-    first. Croatian is this: 30 letters and eight digraphs, 16 lessons.
-  - **A survival onramp**, where the language can be read on sight and what a beginner lacks is
-    the handful of transactions that fill a day. Portuguese is this: ordering, paying, asking the
-    way, asking for help, 10 lessons taught as whole chunks rather than as grammar.
+  **A0 is not a phrasebook.** A transactional sentence taught whole is heavy however simply it
+  is framed, because the learner owns none of the words inside it. "Zadržite ostatak" and "Tem
+  troco de vinte euros?" were both drafted into an A0 on 2026-08-22 and both cut: the numbers in
+  them had never been taught. Hand over the pieces in A0, assemble the transactions in A1.
 
-  **An A0 is ADDED, never carved out of A1.** Relabelling A1's opening lessons is the tempting
-  shortcut and it is wrong: the A1 floor is a claim about how much teaching reaching A1 takes,
-  so a course that moves ten lessons down is claiming to deliver A1 in 35.
-  `everyCourseMeetsTheWeightedLessonFloor` enforces this, and caught exactly that attempt on
-  2026-08-22. Portuguese therefore runs to 250 lessons, not 240.
+  **An A0 is never carved out of A1's lesson count.** The A1 floor is a claim about how much
+  teaching reaching A1 takes, not a bookkeeping total, so moving ten lessons down leaves A1
+  claiming to deliver A1 in 35. `everyCourseMeetsTheWeightedLessonFloor` enforces it and refused
+  exactly that attempt. Either add lessons on top, or SWAP: Portuguese moved its foundation block
+  down into A0 and its survival block up to open A1, which left every level the size it was.
 
-  Thematic overlap between a survival A0 and the A1 lessons covering the same places is expected
-  and is how a spiral syllabus works: A0 teaches "a conta, se faz favor" as an unanalysed chunk,
-  A1 teaches the verbs that build it. What must NOT overlap is the taught strings themselves,
-  which is what `proctor.py` measures.
+  Check the deck before growing a course at all. The floor is deck >= lessons x 10, and Croatian
+  sits exactly on it (3440 words, 344 lessons, zero spare), so Croatian cannot gain a single
+  lesson without 10 more words.
 
 - **[AUTO] The target level is the one the country's law requires, and never higher.** Corlang
   exists for exam preparation with legal stakes, so the finish line is set by the requirement,

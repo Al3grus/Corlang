@@ -21,12 +21,13 @@ forever, Premium = AI" note in `docs/server-ai.md`.
      the time, so an A0-only rule would have put a paywall on its lesson 1. Portuguese has since
      been given one (2026-08-22), which is why the rule now lands on a level in both courses.
    - **It is per-language data**, so an author lands the cut on a level boundary. Croatian sets
-     16 and gives away exactly A0; Portuguese sets 10, which is also exactly its A0 since that
-     level was authored on 2026-08-22. A flat constant left Croatian with one orphaned A0 lesson
-     that no product on the store could unlock, which is why the number is per-language.
+     10 and Portuguese sets 10, which in both cases is exactly level A0. The field stays
+     per-language because a course whose A0 were a different size would need a different number,
+     and because a flat constant once left Croatian with an orphaned A0 lesson no product could
+     unlock.
 
-     **In both courses the free tier is now the whole A0 level**, and both give away a comparable
-     share: 4.7% of the Croatian course, 4.0% of the Portuguese one. Share is the number to hold
+     **In both courses the free tier is the whole A0 level**, ten lessons of basics: letters,
+     greetings, numbers, yes and no. Croatian gives away 2.9% of its course, Portuguese 4.0%. Share is the number to hold
      steady, not the lesson count, and `PaywallGateTest` pins it at 6%.
 
      The onramps are different sizes on purpose, and Portuguese's was ADDED rather than carved

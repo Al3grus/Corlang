@@ -41,8 +41,9 @@ official exam asks for.
 
 ## What it costs
 
-**The whole first level is free.** All 16 lessons of Croatian A0 and all 10 of Portuguese A0,
-with their words, reviews and exercises — no account, no sign-in, no payment, no
+**The whole first level is free.** All ten lessons of level A0 in either course, the letters,
+the greetings, the numbers and the words you need before anything else, with their reviews and
+exercises — no account, no sign-in, no payment, no
 trial that expires. That is long enough for the spaced repetition to come back round and show
 you whether it works, which is the only claim worth making.
 
