@@ -195,6 +195,20 @@ fun PlacementScreen(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 10.dp)
                 )
+                // Deliberately a mail link rather than a field to type an address into. Corlang
+                // collects nothing, has no account and no way to send mail, so an in-app capture
+                // would be an address stored with nothing able to read it, a new "Email address"
+                // entry on the Play data-safety form, and a flat contradiction of the sentence
+                // two screens earlier promising no data collection. Writing to a real inbox
+                // costs the learner one tap and costs the app nothing.
+                Text(
+                    "If you want to hear when material above this level exists, write to " +
+                        "support@corlang.app and say which language. That is a person reading a " +
+                        "mailbox, not a list you are signed up to.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 12.dp)
+                )
             } else {
             Text("You're placed at", style = MaterialTheme.typography.titleMedium)
             Text(
