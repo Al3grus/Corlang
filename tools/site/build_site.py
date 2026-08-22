@@ -20,8 +20,11 @@ import io
 import os
 import re
 import html
+import json
+import shutil
 
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(HERE))
 OUT = os.path.join(ROOT, 'site')
 
 # ---------------------------------------------------------------------------------------------
@@ -229,6 +232,27 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .method .row:last-child{border-bottom:0}
 .lede + .lede{margin-top:15px}
 
+/* ---- languages ----
+   Real SVG flags, not emoji. A regional-indicator pair renders as a flag on Android, iOS and
+   macOS and as the two bare letters "HR" on Windows, which has no flag glyphs at all, so an
+   emoji here would have been broken for a large share of the people this page is for. The two
+   files are public-domain Wikimedia SVGs with a viewBox added so they scale.
+
+   The hairline border and the 3:2 box keep both flags the same visual size even though their
+   official ratios differ (Croatia is 2:1, Portugal 3:2); object-fit does the rest without
+   distorting either. */
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;
+  margin:30px 0 0}
+.lang{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);
+  border-radius:14px;background:var(--raise)}
+.lang img{width:54px;height:36px;object-fit:cover;border-radius:4px;flex:none;
+  border:1px solid rgba(19,26,34,.14);background:var(--paper)}
+.lang h3{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;
+  margin:0 0 3px;line-height:1.2}
+.lang .native{color:var(--muted);font-size:14px;display:block;margin:0 0 6px}
+.lang .meta{color:var(--muted);font-size:14px;margin:0;line-height:1.5}
+.langs-note{margin:22px 0 0;color:var(--muted);font-size:15px;line-height:1.6;max-width:64ch}
+
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
    correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,
@@ -348,7 +372,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
    Under prefers-reduced-motion NOTHING here applies. Every resting state lives inside this
    query, so a visitor with it on, or with JS off, gets the finished page rather than a blank one. */
 @media (prefers-reduced-motion:no-preference){
-  .rise,.loop .step,.claims .claim,.method .row,.tick,.gap,.origin{
+  .rise,.loop .step,.claims .claim,.method .row,.langs .lang,.tick,.gap,.origin{
     transition:opacity .72s cubic-bezier(.16,.7,.3,1),transform .72s cubic-bezier(.16,.7,.3,1)}
 
   .rise{opacity:0;transform:translateY(10px)}
@@ -357,10 +381,10 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 
   /* Children rest and arrive on the SAME property pair as their container, differing only in
      delay, so a group settles as one movement instead of four. */
-  .loop .step,.claims .claim,.method .row{opacity:0;transform:translateY(10px)}
-  .loop.in .step,.claims.in .claim,.method.in .row{opacity:1;transform:none}
+  .loop .step,.claims .claim,.method .row,.langs .lang{opacity:0;transform:translateY(10px)}
+  .loop.in .step,.claims.in .claim,.method.in .row,.langs.in .lang{opacity:1;transform:none}
   .loop .step:nth-child(2),.claims .claim:nth-child(2),
-  .method .row:nth-child(2){transition-delay:.08s}
+  .method .row:nth-child(2),.langs .lang:nth-child(2){transition-delay:.08s}
   .loop .step:nth-child(3),.claims .claim:nth-child(3),
   .method .row:nth-child(3){transition-delay:.16s}
   .method .row:nth-child(4){transition-delay:.24s}
@@ -443,7 +467,7 @@ SCRIPT = """<script>
       io.unobserve(e.target);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.loop, .track, .claims, .method, .shots, .section .rise')
+  document.querySelectorAll('.loop, .track, .claims, .method, .langs, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
 })();
 
@@ -652,6 +676,41 @@ def page(title, description, body, canonical, wide=True):
 {SCRIPT}</body>
 </html>
 """
+
+
+def live_languages():
+    """
+    The courses that are actually live, read from the app's own content manifest.
+
+    Generated rather than typed, because a hand-written list on a marketing page is a promise
+    that rots: French, German, Italian and Spanish are all authored and sitting in the repo
+    behind a hidden flag, and the day one of them is switched on this section should say so
+    without anybody remembering to come back here.
+    """
+    croot = os.path.join(ROOT, 'app', 'src', 'main', 'assets', 'content')
+    codes = json.load(io.open(os.path.join(croot, '_index.json'), encoding='utf-8'))
+    out = []
+    for code in codes:
+        meta = json.load(io.open(os.path.join(croot, code, 'meta.json'), encoding='utf-8'))
+        days = []
+        pdir = os.path.join(croot, code, 'plan')
+        for f in json.load(io.open(os.path.join(pdir, '_index.json'), encoding='utf-8')):
+            days += json.load(io.open(os.path.join(pdir, f), encoding='utf-8'))['days']
+        days.sort(key=lambda d: d['day'])
+        levels = []
+        for d in days:
+            if d['level'] not in levels:
+                levels.append(d['level'])
+        out.append({
+            'code': code,
+            'name': meta['name'],
+            'native': meta.get('nativeName', ''),
+            'lessons': len(days),
+            'first': levels[0],
+            'last': levels[-1],
+            'free': meta.get('freeLessons', 0),
+        })
+    return out
 
 
 def md_to_html(md):
@@ -927,6 +986,19 @@ def build():
 
   <section class="section">
     <div class="section-head">
+      <h2>Available now</h2>
+      <p>Two complete courses. More are written and waiting their turn.</p>
+    </div>
+    <div class="langs">
+{{LANG_CARDS}}
+    </div>
+    <p class="langs-note rise">French, German, Italian and Spanish are already written. They go
+    live one at a time, once the course ahead of them has been proven by real learners rather
+    than by us.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
       <h2>Questions</h2>
       <p>The ones people actually ask.</p>
     </div>
@@ -982,6 +1054,22 @@ def build():
 
 """
 
+    # Flags: copied verbatim, so the only place they exist is tools/site/flags.
+    flags_dst = os.path.join(OUT, 'flags')
+    os.makedirs(flags_dst, exist_ok=True)
+    for fn in sorted(os.listdir(os.path.join(HERE, 'flags'))):
+        shutil.copyfile(os.path.join(HERE, 'flags', fn), os.path.join(flags_dst, fn))
+
+    lang_cards = "\n".join(
+        '      <div class="lang">'
+        '<img src="/flags/{code}.svg" width="54" height="36" alt="" '
+        'loading="lazy" decoding="async">'
+        '<div><h3>{name}</h3><span class="native">{native}</span>'
+        '<p class="meta">{lessons} lessons, {first} to {last}<br>'
+        'First {free} free</p></div></div>'.format(**L)
+        for L in live_languages())
+    landing = landing.replace('{LANG_CARDS}', lang_cards)
+
     io.open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n').write(
         page("Corlang — learn a language, remember it",
              "Short daily lessons built on spaced repetition, from your first words to the "
@@ -1015,7 +1103,8 @@ def build():
     io.open(os.path.join(OUT, '_headers'), 'w', encoding='utf-8', newline='\n').write(
         "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n"
         "  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n"
-        "\n/fonts/*\n  Cache-Control: public, max-age=604800\n")
+        "\n/fonts/*\n  Cache-Control: public, max-age=604800\n"
+        "\n/flags/*\n  Cache-Control: public, max-age=604800\n")
     print('built site/index.html, site/privacy/index.html, site/terms/index.html, '
           'favicon, _headers')
 
