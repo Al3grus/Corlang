@@ -498,9 +498,12 @@ private fun TutorEnglishHelpToggle(
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.SemiBold
                 )
+                // Just the consequence of the switch, nothing else. The longer versions
+                // explained the mode and advised when to use it, which is two more things to
+                // read than the line needs to carry when the switch is right beside it.
                 Text(
-                    if (checked) "The tutor explains in English and gives you $languageName to use."
-                    else "The tutor speaks $languageName. Turn this on if you get stuck.",
+                    if (checked) "The tutor speaks English"
+                    else "The tutor speaks $languageName",
                     style = MaterialTheme.typography.labelSmall
                 )
             }
