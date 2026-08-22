@@ -19,14 +19,14 @@ one so a future change can be checked against it.
 
 | Question | Answer | Why |
 |---|---|---|
-| Does your app collect or share any of the required user data types? | **Yes** | The AI tutor transmits typed text, the profile name, and a purchase token. |
+| Does your app collect or share any of the required user data types? | **Yes** | The AI tutor transmits typed text, the profile name, a progress snapshot, and a purchase token. |
 | Is all of the user data collected by your app encrypted in transit? | **Yes** | App → Cloudflare Worker is HTTPS; Worker → Anthropic is HTTPS; billing is handled by Google Play. |
 | Do you provide a way for users to request that their data be deleted? | **Yes** | `support@corlang.app`. In-app data is removed by uninstalling or by Settings → Reset progress; the endpoint's counters expire on their own within two days. |
 | Does your app have an account creation feature? | **No** | There is no account, no sign-in, no user database. So the account-deletion URL requirement does not apply. |
 
 ---
 
-## 2. Data types — declare exactly these three
+## 2. Data types — declare exactly these four
 
 ### Personal info → **Name**
 - **Collected:** Yes · **Shared:** No
@@ -58,6 +58,24 @@ one so a future change can be checked against it.
   (`rl:<day>:sub:<token>`, 2-day TTL) and a cached yes/no verdict (`play:verdict:<token>`, at most
   6 hours). That is storage, so it is declared.
 
+### App activity → **App interactions**
+- **Collected:** Yes · **Shared:** No
+- **Processed ephemerally:** No
+- **Required or optional:** *Optional* (only if the learner uses the AI tutor)
+- **Purpose:** App functionality
+- **Evidence:** `buildTutorContext` (`TalkScreen.kt`) puts a progress snapshot into every tutor
+  request: the current lesson's title and objective, how many words the learner has met, and
+  their most recent words. The model needs it to stay inside vocabulary the learner actually
+  knows, which is the single biggest lever on the tutor being usable at all.
+- **Added 2026-08-22, after the first three were drafted.** The original draft declared Name,
+  Messages and Purchase history and missed this, because the snapshot is assembled inside the
+  system prompt rather than being an obvious separate field. It is still user data about
+  in-app behaviour leaving the device, which is what Google's definition turns on. Declaring it
+  costs a line on the store listing; NOT declaring it is a misdeclaration, which is an
+  app-removal risk rather than a correction request.
+- **Not ephemeral**, for the same reason as the chat text: Anthropic is in the path, and
+  ephemeral means memory-only for the life of the request.
+
 ---
 
 ## 3. Do NOT declare these, and the reason for each
@@ -69,7 +87,8 @@ one so a future change can be checked against it.
 | Photos, Videos, Audio files, Music | No camera or microphone permission. The mic was removed entirely, and there is no `RECORD_AUDIO` in the manifest and no speech-recognition code. |
 | Files and docs | Backup export/import uses the system file picker (SAF). The app receives only the one file the user chooses, and never browses storage. |
 | Contacts, Calendar | Not requested. |
-| App activity (searches, viewed content), App info and performance, Crash logs, Diagnostics | **No analytics or crash SDK of any kind is linked.** The only non-AndroidX dependency is Play Billing. Play's own Android vitals is Google's collection, not the developer's, and is not declared here. |
+| App activity: **Searches**, **Installed apps**, **Other user-generated content**, **Other actions** | Only **App interactions** is declared, and only because of the tutor's progress snapshot. Nothing searches, nothing enumerates installed apps, and the learner's typed text is declared under Messages rather than twice. |
+| App info and performance, Crash logs, Diagnostics | **No analytics or crash SDK of any kind is linked.** The only non-AndroidX dependency is Play Billing. Play's own Android vitals is Google's collection, not the developer's, and is not declared here. |
 | Web browsing history | The app has no browser. |
 | Device or other IDs | No advertising ID, Android ID, IMEI or MAC address is read. The endpoint does use the **IP address** as a rate-limit key for two days, but IP is not one of Play's declarable types, and it is used only for abuse prevention. It *is* disclosed in the privacy policy. |
 
