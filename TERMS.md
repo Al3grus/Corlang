@@ -88,6 +88,16 @@ limit liability for anything that cannot lawfully be limited.
 These terms will change as the app does. The date at the top says when they last did. Material
 changes will be noted in the app's release notes rather than slipped in quietly.
 
+## Which law applies
+
+Corlang is operated from **Belgium**. These terms are governed by Belgian law, and the courts of
+**Brussels** have jurisdiction over any dispute arising from them.
+
+That does not take anything away from you. If you live elsewhere in the European Union, the
+mandatory consumer protections of your own country still apply and still come first, including
+any statutory right to cancel or to a refund. Nothing in these terms can override them, and
+nothing here is meant to try.
+
 ## Contact
 
 Questions about any of this: **support@corlang.app**.

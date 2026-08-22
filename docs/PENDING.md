@@ -95,10 +95,9 @@ level, one-time per-language unlocks, a monthly AI subscription, Google Play han
 payment and refund, the tutor's daily allowance, and that Corlang prepares for official exams
 without awarding anything.
 
-**It has no governing-law clause, on purpose.** Guessing a jurisdiction would be worse than
-leaving it out, and it needs the operator's actual country. Add it before public launch. The
-clause preserving statutory consumer rights is already there and is the one that matters most in
-the EU.
+**Governing law added 2026-08-22:** Belgian law, courts of Brussels, with the mandatory consumer
+protections of the user's own EU country preserved above them. The operator is established in
+Belgium. What remains is the controller identity, which has its own entry below.
 
 Written as plain English, not by a lawyer. It is a reasonable and honest starting point for a
 one-person app in testing; it is worth a professional read once real revenue is arriving.
@@ -180,13 +179,31 @@ exam gate, the placement-seed ceiling, retired product ids).
 
 ## 🔐 TRACK B — Security hardening (before PUBLIC production; NOT needed for testers)
 
-1. **(browser + 1 CLI)** Google Cloud **service account** for subscription verification — the
-   4 steps in `server-ai.md` → "Play subscription verification":
-   - Enable Google Play Android Developer API in the linked Cloud project.
-   - Create service account `corlang-play-verifier`, download JSON key.
-   - Grant its email "View financial data / app info" in Play Console → Users and permissions.
-   - `cd server/ai-proxy && wrangler secret put PLAY_SERVICE_ACCOUNT` (paste JSON at hidden prompt).
-   - Verify: invalid sub token → 403, real subscriber → 200. (Turns the dormant worker code ON.)
+1. **(browser + 1 CLI)** Google Cloud **service account** for subscription verification. The
+   worker code is written and dormant: it wakes the moment `PLAY_SERVICE_ACCOUNT` exists.
+
+   Verified against Google's docs 2026-08-22, and one step in the old version of this list is
+   gone: **you no longer link the developer account to a Cloud project.** The docs say so
+   explicitly. Create the project, create the account in it, and grant that account access in
+   Play Console; no linking anywhere.
+
+   - Google Cloud Console, **new project** (any name; it exists only to own the account).
+   - **APIs and Services**, enable **Google Play Android Developer API**.
+   - **IAM and Admin**, **Service Accounts**, **Create service account**. No Cloud IAM role is
+     needed: the only permission that matters is the Play Console one below.
+   - On the account, **Keys**, **Add key**, **Create new key**, **JSON**. It downloads once.
+   - Play Console, **Users and permissions**, **Invite new users**, paste the service account's
+     email, and grant **View financial data, orders, and cancellation survey responses**. That
+     is the permission `purchases.subscriptionsv2.get` needs, which is the call the worker
+     makes.
+   - `cd server/ai-proxy && npx wrangler secret put PLAY_SERVICE_ACCOUNT`, paste the whole JSON
+     at the hidden prompt. Nothing is committed; the file should be deleted afterwards.
+   - Verify: a forged sub token must 403, a real subscriber must 200. Grants can take a little
+     while to propagate, so a 401 on the first attempt is worth one retry before debugging.
+
+   Until this exists, entitlement is granted client-side after Play's local signature check.
+   That is fine for closed testing with license testers and is NOT fine for public launch.
+
 2. ✅ **Anthropic spend alert + limits set** (2026-07-18); auto-reload confirmed off is the
    guard that bounds worst-case token abuse to the prepaid balance.
 3. **(browser, optional)** Cloudflare WAF rate-limit rule on the worker route (belt-and-suspenders
@@ -245,6 +262,25 @@ wait until they are unhidden. Nothing here blocks Internal or Closed testing.
 4. Confirm the paywall/purchase/unlock flow on the Internal track (overlaps Track A step 8).
 
 ---
+
+## 🇪🇺 GDPR — the operator is established in Belgium (confirmed 2026-08-22)
+
+That makes Corlang an EU data controller, and two things follow that are not yet done. Neither
+blocks closed testing; both should be settled before public launch.
+
+1. **The privacy policy does not identify the controller.** GDPR Article 13 requires the
+   controller's identity and contact details. The policy gives `support@corlang.app` and nothing
+   else. It needs the operator's real name, and an address, which is a decision to make
+   deliberately rather than something to be guessed at: a personal Play account publishes a
+   personal address on the listing unless a business address is used instead.
+2. **Play requires a trader address** for developers in the EU, shown publicly on the store
+   listing. Same decision, same time.
+
+Neither is a wording problem I can fix alone, which is why this sits here rather than being
+quietly written into PRIVACY.md.
+
+Terms of service already handle the law question: Belgian law, courts of Brussels, with the
+mandatory consumer protections of the user's own country preserved above them.
 
 ## 🚀 ON THE DAY YOU GO LIVE (do not let these rot)
 
