@@ -8,7 +8,9 @@ means.
 
 ## The short version
 
-Your learning data never leaves your device unless *you* choose to move it. We do not collect,
+Corlang never sends your learning data anywhere. Android's own backup may copy it to your
+Google Drive so it comes back when you reinstall, which is described under Backups below and is
+yours to switch off. We do not collect,
 transmit, sell, or share personal information — because we do not have an account system or any
 server that stores your data.
 
@@ -67,9 +69,22 @@ microphone permission, does not record audio, and has no speech-recognition feat
 
 ## Backups
 
-Backup and restore is entirely manual and local. When you export a backup, Corlang writes a file
-to a location **you** pick; when you import, it reads a file **you** select. Backups are never
-created automatically and are never sent anywhere.
+There are two, and only one of them is ours.
+
+**Corlang's own export is manual and local.** When you export a backup, Corlang writes a file to
+a location **you** pick; when you import, it reads a file **you** select. It never happens on its
+own and the file goes nowhere except where you put it.
+
+**Android's backup is automatic, and it is the reason your progress returns after a reinstall.**
+Corlang allows Android's standard Auto Backup, which copies the app's private data, your lessons,
+your review schedule and your profile, to **your own Google Drive**. It is a platform feature:
+Google runs it, it is tied to your Google account, it does not count against your Drive storage,
+and **we cannot see it or reach it**. It is what makes a new phone pick up where the old one left
+off, which matters here because Corlang has no account to restore from instead.
+
+If you would rather it did not happen, turn it off in Android: **Settings, Google, Backup**, or
+per app under your Google account's backup settings. Deleting the app's backup from Drive is done
+the same way. After that, an uninstall really is the end of that data, ours included.
 
 ## Permissions
 

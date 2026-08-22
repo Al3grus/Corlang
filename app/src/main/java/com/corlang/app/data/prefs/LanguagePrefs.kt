@@ -144,8 +144,14 @@ class LanguagePrefs(private val context: Context) {
     private val themeDarkKey = booleanPreferencesKey("theme_dark")
 
     /**
-     * UNSET until the learner answers the first-run picker; DARK/LIGHT after. Not backed up:
-     * like haptics, this is how this device should look, not part of the learner's progress.
+     * UNSET until the learner answers the first-run picker; DARK/LIGHT after.
+     *
+     * This used to claim it was "not backed up", which was never true: it lives in the same
+     * corlang_prefs DataStore file that backup_rules.xml includes wholesale, and Auto Backup
+     * cannot exclude one key inside a file. Excluding it would mean a second DataStore for
+     * device-look settings, which is not worth a migration for one boolean. The mirror in
+     * `corlang_launch` SharedPreferences genuinely is outside the backup, since the rules name
+     * only `datastore/` and `corlang.db`.
      */
     val themeMode: Flow<ThemeMode> = context.dataStore.data.map {
         when (it[themeDarkKey]) {

@@ -84,6 +84,19 @@ to honour.
 
 ---
 
+## 4b. Android Auto Backup is NOT a declaration
+
+The app allows Android's Auto Backup (`allowBackup="true"`, with `backup_rules.xml` and
+`data_extraction_rules.xml` naming `corlang.db` and `datastore/`), so a reinstall restores the
+learner's lessons and profile from **their own** Google Drive.
+
+**This does not add anything to this form.** Auto Backup is a platform feature operated by Google
+between the user and their own account; the developer never receives, stores or can reach the
+data, and Google's Data safety guidance does not treat it as developer collection. What it DID
+require was fixing the privacy policy, which claimed backups were "never created automatically
+and are never sent anywhere" while this was switched on. Corrected 2026-08-22 after a field
+report: a clean uninstall, reinstall and fresh APK still restored the learner's name.
+
 ## 5. Keep this true
 
 If any of the following changes, this form has to be revisited **before** the next release:
