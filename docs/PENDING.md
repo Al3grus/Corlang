@@ -102,11 +102,15 @@ dead data. They are in the history of this commit if the deck ever gains room.
      declared types (Personal info/Name, Messages/Other in-app messages, Financial info/Purchase
      history), the reason each of the others is NOT declared, and the four overview answers.
      Verified against the built manifest and the dependency list rather than from memory.
-   - Privacy policy URL: `https://raw.githubusercontent.com/Al3grus/Corlang/main/PRIVACY.md`.
-3. **(browser + assets)** Main store listing. Copy is drafted in `road-to-play.md`. Needs the
-   assets from Track C (icon, feature graphic, screenshots).
-4. **(browser)** Create the 4 billing products — **IDs must match exactly** (in `road-to-play.md`
-   / `monetization-roadmap.md`):
+   - Privacy policy URL: **`https://corlang.app/privacy/`** (live, generated from PRIVACY.md
+     by `tools/site/build_site.py`). The old GitHub raw link still works but the site is the
+     one to give Play, since the repo may go private.
+3. **(browser + assets)** Main store listing. Copy is drafted in `road-to-play.md` and names
+   **Croatian and Portuguese only** (French is authored but hidden). Needs the assets from
+   Track C; 8 framed screenshots are already built by `tools/store/make_store_shots.py`.
+4. **(browser)** Create the **7** billing products, and only AFTER step 5: Play does not enable
+   the in-app products page until a build containing the Billing Library is published to a
+   track. **IDs must match exactly** (in `road-to-play.md` / `monetization-roadmap.md`):
    - Subscription `corlang_ai_premium`: ONE base plan `monthly` €9.99 with the **3-day
      free-trial offer** on it (Google's minimum; the trial spends real tokens). **No annual plan** (decided 2026-07-18: AI models/costs can
      shift within a year; monthly keeps repricing freedom). The app requests only `monthly`.
