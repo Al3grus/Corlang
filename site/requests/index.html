@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request a language — Corlang</title>
+<meta name="description" content="Tell us which language you want Corlang to build next, and how far you need to get.">
+<link rel="canonical" href="https://corlang.app/requests/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#FBFBFD">
+<meta property="og:title" content="Request a language — Corlang">
+<meta property="og:description" content="Tell us which language you want Corlang to build next, and how far you need to get.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://corlang.app/requests/">
+<link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>
+/* A RELOAD starts at the top. Browsers restore the old scroll position on reload, which on a
+   page with reveal animations means arriving mid-page with everything already settled, looking
+   like the top of the page simply failed to render.
+
+   Scoped to reloads on purpose: setting scrollRestoration to manual unconditionally would also
+   break BACK from the privacy page, which should return you exactly where you left. Runs in the
+   head, before the browser gets a chance to restore. */
+(function(){
+  try{
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    var reloaded = nav ? nav.type === 'reload'
+      : (performance.navigation && performance.navigation.type === 1);
+    if (!reloaded) return;
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', function(){ window.scrollTo(0, 0); });
+  }catch(e){}
+})();
+</script>
+<style>
+@font-face{font-family:'Manrope';src:url('/fonts/manrope.woff2') format('woff2');
+  font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:'InterVar';src:url('/fonts/inter.woff2') format('woff2');
+  font-weight:100 900;font-style:normal;font-display:swap}
+
+:root{
+  --paper:#FBFBFD;      /* cool paper, not cream */
+  --raise:#FFFFFF;
+  --ink:#131A22;
+  --muted:#5C6B7A;
+  --line:#E3E8EE;
+  --blue:#2f7fae;       /* brand, from the logo */
+  --deep:#123B57;
+  --core:#c8402c;       /* brand core, used only for the word being recalled */
+  --display:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --body:'InterVar',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px}
+a{color:var(--blue)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+/* ---- header ---- */
+.top{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+.mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.mark svg{width:32px;height:32px;flex:none}
+.mark b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.03em}
+.top nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:22px}
+.top nav a:hover{color:var(--ink)}
+
+/* ---- hero ---- */
+.hero{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:center;
+  padding:62px 0 26px}
+.hero-copy{max-width:600px}
+/* Two phones, one of each theme, because "there is a dark one too" lands better shown than
+   said. Slight rotation and overlap so they read as a pair rather than two loose rectangles. */
+.hero-shots{position:relative;height:430px}
+.hero-shots .ph{position:absolute;width:196px;--r:26px;--bez:7px}
+.hero-shots .ph.back{left:0;top:6px;transform:rotate(-5deg)}
+.hero-shots .ph.front{right:0;top:64px;transform:rotate(4deg)}
+.eyebrow{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--blue);margin:0 0 22px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,7vw,70px);line-height:1.05;
+  letter-spacing:-.04em;margin:0 0 24px}
+h1 .soft{color:var(--muted)}
+.lede{font-size:20px;line-height:1.55;color:var(--muted);margin:0;max-width:600px}
+.actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:38px 0 0}
+.cta{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;
+  font-size:16px;padding:15px 28px;border-radius:10px}
+.cta:hover{background:var(--deep)}
+.avail{font-size:14px;color:var(--muted)}
+
+/* ---- the loop: four steps, then the interval ruler ---- */
+.section{padding:54px 0 0;border-top:1px solid var(--line);margin-top:46px}
+.section-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 30px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
+  letter-spacing:-.03em;margin:0}
+.section-head p{margin:0;color:var(--muted);font-size:16px}
+
+.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 0 8px}
+.step{position:relative;padding:0 26px 0 0}
+.step:last-child{padding-right:0}
+.step .n{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.14em;
+  color:var(--blue);display:block;margin:0 0 12px}
+.step h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;
+  margin:0 0 8px}
+.step p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+/* the arrow between steps: drawn, not a character, so it lines up with the type */
+.step:not(:last-child)::after{content:"";position:absolute;top:5px;right:12px;width:9px;height:9px;
+  border-top:1.5px solid var(--line);border-right:1.5px solid var(--line);transform:rotate(45deg)}
+
+.ruler{margin:38px 0 0;border:1px solid var(--line);border-radius:14px;background:var(--raise);
+  padding:30px 30px 22px}
+.ruler-cap{font-size:15px;color:var(--muted);margin:0 0 26px;max-width:640px}
+/* The ruler is drawn TO SCALE, so its labels sit at fixed percentages and cannot reflow. Below
+   about 547px they start overlapping (measured: "2 months" against "3 weeks" goes first), and a
+   phone gives the track roughly 216px. Rather than shrink the type into illegibility or drop the
+   annotations that carry the point, the track keeps its floor and the container scrolls.
+
+   Only the TRACK scrolls, not the caption above it, which should stay put and readable.
+
+   660px, not the 547 the maths gives. That figure is what the TRACK needs; the track also sits
+   inside side margins the min-width does not cover, and those margins differ by breakpoint. 560
+   left "1 day" and "3 days" 5px short, and 620 still failed in the narrow band where the floor
+   has kicked in but the wider desktop margins are still applied. 660 clears both. */
+.track-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.track-scroll::-webkit-scrollbar{height:6px}
+.track-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+/* Margins, not padding: an absolutely positioned child resolves its % against the PADDING box,
+   so padding would not keep the 0% and 100% labels off the edges. */
+.track{position:relative;height:72px;margin:0 52px;min-width:660px}
+.track .line{position:absolute;left:-18px;right:0;top:35px;height:1px;background:var(--line)}
+.origin{position:absolute;left:-18px;top:26px}
+.origin::before{content:"";display:block;width:2px;height:18px;background:var(--core);
+  border-radius:1px}
+.origin span{position:absolute;top:24px;left:50%;transform:translateX(-50%);
+  font-family:var(--display);font-weight:500;font-size:12.5px;color:var(--core);white-space:nowrap}
+.tick{position:absolute;top:0;transform:translateX(-50%);text-align:center}
+.tick .dot{width:11px;height:11px;border-radius:50%;background:var(--blue);margin:30px auto 0}
+.tick .lab{font-family:var(--display);font-weight:500;font-size:12.5px;color:var(--muted);
+  margin-top:9px;white-space:nowrap}
+.gap{position:absolute;top:14px;transform:translateX(-50%);font-family:var(--display);
+  font-size:11px;letter-spacing:.06em;color:#9AA7B4;white-space:nowrap}
+
+/* ---- the app itself ----
+   Three phones, the middle one raised, on a band that separates them from the page. A horizontal
+   scroller below 760px rather than a stack: three portrait phones stacked is a very long page,
+   and swiping a row of screens is the gesture people already use in a store listing. */
+
+/* ---- device shell ----
+   A real handset silhouette rather than a white card: a dark body, a hairline rail catching
+   light along the top edge, a hole-punch camera, and the two side buttons every phone has. The
+   buttons are what sell it at a glance; a plain rounded rectangle reads as a card no matter how
+   good the shadow is.
+
+   --r and --bez drive everything, so one number changes the whole frame and the screen radius
+   follows automatically. The screen radius MUST be the outer radius minus the bezel, or the
+   corners look nested wrong at any size. */
+.device{--r:30px;--bez:9px;position:relative;border-radius:var(--r);padding:var(--bez);
+  background:linear-gradient(158deg,#39414B 0%,#1C2229 38%,#12161B 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.09),
+    inset 0 1px 0 rgba(255,255,255,.20),
+    0 26px 52px -22px rgba(15,22,30,.46),
+    0 3px 10px rgba(15,22,30,.14)}
+.device .screen{position:relative;border-radius:calc(var(--r) - var(--bez));overflow:hidden;
+  background:#0C1014;line-height:0}
+.device .screen img{display:block;width:100%;height:auto}
+/* hole-punch camera, centred: the app bar puts its logo on the left, so nothing is covered */
+.device .screen::after{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);
+  width:7px;height:7px;border-radius:50%;background:#05070A;
+  box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+/* power button, right */
+.device::after{content:"";position:absolute;right:-2px;top:23%;width:2.5px;height:44px;
+  border-radius:0 2px 2px 0;background:linear-gradient(#39414B,#1A1F26)}
+/* volume rocker, left */
+.device::before{content:"";position:absolute;left:-2px;top:17%;width:2.5px;height:70px;
+  border-radius:2px 0 0 2px;background:linear-gradient(#39414B,#1A1F26)}
+.shots{margin:0;background:linear-gradient(180deg,#F4F6F9,#EEF1F5);border:1px solid var(--line);
+  border-radius:18px;padding:44px 0 48px;overflow:hidden}
+.shots-row{display:flex;gap:26px;justify-content:center;align-items:flex-end;padding:0 34px}
+.phone{flex:0 0 236px;--r:28px;--bez:8px}
+.phone:nth-child(2){transform:translateY(-24px)}
+.shots-cap{text-align:center;color:var(--muted);font-size:14.5px;margin:30px 34px 0}
+
+@media (max-width:760px){
+  .shots{border-radius:16px;padding:34px 0 38px}
+  .shots-row{overflow-x:auto;justify-content:flex-start;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;padding:0 22px 8px}
+  .phone{flex:0 0 210px;scroll-snap-align:center;--r:25px;--bez:7px}
+  .phone:nth-child(2){transform:none}
+}
+
+/* ---- plain claims ---- */
+.claims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:44px 0 0}
+.claim{border-top:2px solid var(--ink);padding-top:16px}
+.claim h3{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 6px;
+  letter-spacing:-.01em}
+.claim p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+
+/* ---- the method ----
+   A hairline list rather than another card grid: the page already has a numbered row (the loop)
+   and a three-across block (the claims), and a third variation on "boxes in a row" would read as
+   filler. Term on the left, argument on the right, which is the shape of the thing being said.
+
+   The left column is allowed to shrink but never past the point where a two-word heading wraps
+   awkwardly, hence minmax rather than a fraction. */
+.method{margin:32px 0 0;border-top:1px solid var(--line)}
+.method .row{display:grid;grid-template-columns:minmax(190px,.85fr) 2fr;gap:14px 30px;
+  padding:24px 0;border-bottom:1px solid var(--line)}
+.method .term{display:flex;align-items:baseline;gap:10px}
+.method .n{font-family:var(--mono,var(--body));font-size:12px;font-weight:700;letter-spacing:.14em;
+  color:var(--blue);flex:none}
+.method h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;
+  margin:0;line-height:1.25}
+.method p{margin:0;color:var(--muted);font-size:16px;line-height:1.62}
+.method .row:last-child{border-bottom:0}
+.lede + .lede{margin-top:15px}
+
+/* ---- languages ----
+   Real SVG flags, not emoji. A regional-indicator pair renders as a flag on Android, iOS and
+   macOS and as the two bare letters "HR" on Windows, which has no flag glyphs at all, so an
+   emoji here would have been broken for a large share of the people this page is for. The two
+   files are public-domain Wikimedia SVGs with a viewBox added so they scale.
+
+   The hairline border and the 3:2 box keep both flags the same visual size even though their
+   official ratios differ (Croatia is 2:1, Portugal 3:2); object-fit does the rest without
+   distorting either. */
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;
+  margin:30px 0 0}
+.lang{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);
+  border-radius:14px;background:var(--raise)}
+.lang img{width:54px;height:36px;object-fit:cover;border-radius:4px;flex:none;
+  border:1px solid rgba(19,26,34,.14);background:var(--paper)}
+.lang h3{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;
+  margin:0 0 3px;line-height:1.2}
+.lang .native{color:var(--muted);font-size:14px;display:block;margin:0}
+
+/* ---- request form ----
+   Only on /requests/, which nothing links to. Native selects rather than a custom dropdown: they
+   are keyboard and screen-reader correct for free, and on a phone they open the platform picker
+   the visitor already knows. */
+.reqform{margin:26px 0 0;max-width:520px}
+.reqform label{display:block;font-size:14.5px;font-weight:600;margin:0 0 6px}
+.reqform select,.reqform input{width:100%;box-sizing:border-box;font:inherit;font-size:16px;
+  padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:var(--raise);
+  color:var(--ink);margin:0 0 18px}
+.reqform select:focus,.reqform input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.reqform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.reqform button{font:inherit;font-weight:600;font-size:16px;padding:13px 22px;border:0;
+  border-radius:10px;background:var(--ink);color:#fff;cursor:pointer}
+.reqform button:disabled{opacity:.55;cursor:default}
+.req-note{margin:18px 0 0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:60ch}
+
+/* ---- FAQ ----
+   Native <details>, so it works with JavaScript off, is keyboard operable and is announced
+   correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,
+   which is the whole accordion behaviour with no script at all.
+
+   The marker is a chevron DRAWN with two borders, pointing down when closed and rotating to
+   point up when open. It was briefly a plus swapped for a minus through content:"\2212",
+   which reached the page as the digit 2: that escape sat inside an ordinary Python string,
+   where \221 is octal, so the CSS received a control character and a "2". Drawing it leaves
+   nothing for a generator to mangle, and no font has to have the glyph. */
+.faq{margin:30px 0 0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;position:relative;
+  font-family:var(--display);font-weight:600;font-size:17.5px;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:7px;top:50%;width:8px;height:8px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);
+  transition:transform .24s cubic-bezier(.16,.7,.3,1),border-color .24s ease}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg);
+  border-color:var(--blue)}
+.faq summary:hover{color:var(--blue)}
+.faq summary:hover::after{border-color:var(--blue)}
+.faq p{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.62;max-width:70ch}
+
+/* ---- invite dialog ----
+   A native <dialog>: it traps focus, closes on Escape and returns focus on its own, which a div
+   pretending to be a modal does not. */
+dialog{border:none;border-radius:18px;padding:0;max-width:430px;width:calc(100% - 40px);
+  background:var(--raise);color:var(--ink);box-shadow:0 30px 70px -24px rgba(19,26,34,.42)}
+dialog::backdrop{background:rgba(14,20,26,.46);backdrop-filter:blur(2px)}
+.dlg{padding:30px 30px 26px}
+.dlg h3{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.025em;
+  margin:0 0 8px}
+.dlg p{margin:0 0 20px;color:var(--muted);font-size:15px}
+.dlg label{display:block;font-size:13px;color:var(--muted);margin:0 0 7px}
+.dlg input[type=email]{width:100%;font:inherit;font-size:16px;padding:13px 14px;
+  border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+.dlg input[type=email]:focus{outline:none;border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(47,127,174,.18)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.dlg-row{display:flex;gap:10px;margin-top:18px}
+.dlg-row button{font:inherit;font-weight:600;font-size:15px;padding:12px 20px;border-radius:10px;
+  border:1px solid var(--line);background:var(--raise);color:var(--ink);cursor:pointer}
+.dlg-row button.go{background:var(--ink);border-color:var(--ink);color:#fff;flex:1}
+.dlg-row button.go:disabled{opacity:.55;cursor:default}
+.msg{margin:14px 0 0;font-size:14.5px;min-height:20px}
+.msg.bad{color:var(--core)}
+.msg.good{color:var(--blue)}
+
+.addr{display:flex;align-items:center;gap:10px;margin:0 0 4px;
+  border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:12px 14px}
+.addr code{flex:1;font-family:var(--body);font-size:16px;background:none;border:none;padding:0;
+  color:var(--ink);word-break:break-all}
+.addr button{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;border-radius:8px;
+  border:1px solid var(--line);background:var(--raise);color:var(--ink);cursor:pointer;flex:none}
+.addr button:hover{border-color:var(--blue);color:var(--blue)}
+.linkish{background:none;border:none;padding:0;font:inherit;color:var(--muted);cursor:pointer;
+  text-decoration:none}
+.linkish:hover{color:var(--ink)}
+
+
+/* ---- footer ---- */
+footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 48px;font-size:14px;
+  color:var(--muted);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--muted);text-decoration:none;margin-right:20px}
+footer a:hover{color:var(--ink)}
+
+/* ---- the privacy document ---- */
+article{max-width:680px;padding:26px 0 0}
+article h1{font-size:clamp(32px,5vw,44px);margin-bottom:18px}
+article h2{margin:44px 0 12px}
+article p,article li{font-size:16.5px;color:#2A343F}
+article ul,article ol{padding-left:22px}
+article li{margin-bottom:7px}
+article code{background:var(--raise);border:1px solid var(--line);border-radius:5px;
+  padding:1px 5px;font-size:14px}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:26px;padding-top:44px}
+  .hero-shots{height:340px;max-width:420px;margin:0 auto;width:100%}
+  .hero-shots .ph{width:172px;--r:23px;--bez:6px}
+  .hero-shots .ph.back{left:4%}
+  .hero-shots .ph.front{right:4%;top:52px}
+}
+@media (max-width:760px){
+  .track{margin:0 30px;height:78px}
+  .tick .lab,.origin span{font-size:11.5px}
+  .gap{font-size:10px}
+  .ruler{padding:24px 18px 18px}
+  .loop{grid-template-columns:1fr 1fr;gap:30px 0}
+  .step:nth-child(2)::after{display:none}
+  .claims{grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .method .row{grid-template-columns:1fr;gap:7px;padding:20px 0}
+  .hero{padding-top:48px}
+  .section{padding:40px 0 0;margin-top:34px}
+}
+@media (max-width:430px){
+  .loop{grid-template-columns:1fr}
+  .step::after{display:none!important}
+  .step{padding-right:0}
+}
+
+/* ---- motion ----------------------------------------------------------------------------
+   ONE mechanism: a transition from a resting state to an arrived state, switched by an `.in`
+   class. Nothing here uses @keyframes.
+
+   The first version mixed the two, transitions on containers and forwards-filling animations on
+   their children, and it flickered on scroll. An animation with `forwards` holds the last frame
+   rather than truly settling, so any repaint of that element (a lazy image decoding beside it, a
+   scroll that promotes a new compositor layer) can show a frame of the pre-animation state. Two
+   systems also meant two sources of truth for what "finished" looks like.
+
+   Slower and shorter than before: 720ms over 10px rather than 550ms over 14px. Movement you
+   notice is movement that interrupts.
+
+   Under prefers-reduced-motion NOTHING here applies. Every resting state lives inside this
+   query, so a visitor with it on, or with JS off, gets the finished page rather than a blank one. */
+@media (prefers-reduced-motion:no-preference){
+  .rise,.loop .step,.claims .claim,.method .row,.langs .lang,.tick,.gap,.origin{
+    transition:opacity .72s cubic-bezier(.16,.7,.3,1),transform .72s cubic-bezier(.16,.7,.3,1)}
+
+  .rise{opacity:0;transform:translateY(10px)}
+  .rise.in{opacity:1;transform:none}
+  .hero .rise{transition-delay:var(--d,0s)}
+
+  /* Children rest and arrive on the SAME property pair as their container, differing only in
+     delay, so a group settles as one movement instead of four. */
+  .loop .step,.claims .claim,.method .row,.langs .lang{opacity:0;transform:translateY(10px)}
+  .loop.in .step,.claims.in .claim,.method.in .row,.langs.in .lang{opacity:1;transform:none}
+  .loop .step:nth-child(2),.claims .claim:nth-child(2),
+  .method .row:nth-child(2),.langs .lang:nth-child(2){transition-delay:.08s}
+  .loop .step:nth-child(3),.claims .claim:nth-child(3),
+  .method .row:nth-child(3){transition-delay:.16s}
+  .method .row:nth-child(4){transition-delay:.24s}
+  .method .row:nth-child(5){transition-delay:.32s}
+  .method .row:nth-child(6){transition-delay:.40s}
+  .loop .step:nth-child(4){transition-delay:.24s}
+
+  /* The arrows are ::after on the steps, so they inherit the step's opacity and need no rule of
+     their own. That is one fewer thing that can be caught mid-animation. */
+
+  /* Ticks carry translateX(-50%) as POSITIONING, so both states must keep it: dropping it in one
+     of them slides every label half its width across the ruler. */
+  .tick,.gap{opacity:0;transform:translateX(-50%) translateY(8px)}
+  .track.in .tick,.track.in .gap{opacity:1;transform:translateX(-50%)}
+  .origin{opacity:0}
+  .track.in .origin{opacity:1}
+
+  /* micro-interactions: small, and only where something is actually interactive */
+  .cta{transition:background .2s ease,transform .2s ease}
+  .cta:active{transform:translateY(1px)}
+  .step .n{transition:color .25s ease}
+  .step:hover .n{color:var(--core)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="/"><svg viewBox="0 0 100 100" aria-hidden="true">
+  <circle cx="50" cy="50" r="33" fill="none" stroke="#2f7fae" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="132 76" transform="rotate(-52 50 50)"/>
+  <circle cx="50" cy="50" r="21" fill="none" stroke="#2f7fae" stroke-width="6"
+          stroke-linecap="round" stroke-dasharray="80 52" transform="rotate(128 50 50)"/>
+  <circle cx="50" cy="50" r="9" fill="#c8402c"/>
+</svg><b>Corlang</b></a>
+    <nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a
+      href="mailto:support@corlang.app" data-contact>Contact</a></nav>
+  </header>
+  <section class="hero" style="grid-template-columns:1fr">
+    <div class="hero-copy">
+      <p class="eyebrow">Requests</p>
+      <h1>Which language next?</h1>
+      <p class="lede">Corlang adds one course at a time, and which one comes next is decided by
+      what people ask for. Tell us what you want and how far you need to get.</p>
+
+      <form class="reqform" id="reqform" novalidate>
+        <label for="req-language">Language</label>
+        <select id="req-language" name="language" required>
+        <option value="croatian">Croatian</option>
+        <option value="portuguese">Portuguese</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+        <option value="italian">Italian</option>
+        <option value="spanish">Spanish</option>
+        <option value="dutch">Dutch</option>
+        <option value="polish">Polish</option>
+        <option value="greek">Greek</option>
+        <option value="czech">Czech</option>
+        <option value="swedish">Swedish</option>
+        <option value="danish">Danish</option>
+        <option value="norwegian">Norwegian</option>
+        <option value="finnish">Finnish</option>
+        <option value="romanian">Romanian</option>
+        <option value="hungarian">Hungarian</option>
+        <option value="bulgarian">Bulgarian</option>
+        <option value="slovak">Slovak</option>
+        <option value="slovenian">Slovenian</option>
+        <option value="serbian">Serbian</option>
+        <option value="ukrainian">Ukrainian</option>
+        <option value="turkish">Turkish</option>
+        <option value="irish">Irish</option>
+        <option value="catalan">Catalan</option>
+        <option value="other">Another language</option>
+        </select>
+
+        <div id="req-other-wrap" hidden>
+          <label for="req-other">Which language?</label>
+          <input id="req-other" name="other" type="text" maxlength="40" autocomplete="off">
+        </div>
+
+        <label for="req-level">How far do you need to get?</label>
+        <select id="req-level" name="level" required>
+        <option value="A1">A1</option>
+        <option value="A2">A2</option>
+        <option value="B1">B1</option>
+        <option value="B2">B2</option>
+        <option value="C1">C1</option>
+        </select>
+
+        <label for="req-email">Your email</label>
+        <input id="req-email" name="email" type="email" required autocomplete="email"
+               placeholder="you@example.com">
+
+        <div class="hp" aria-hidden="true">
+          <label for="req-website">Leave this empty</label>
+          <input id="req-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" id="req-send">Send request</button>
+        <p class="msg" id="req-msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="req-note">Your address is stored so we can tell you when that course exists, and
+      for nothing else. No newsletter, no sharing, no other use. Ask us to delete it at any time
+      at support@corlang.app. See the <a href="/privacy/">privacy policy</a>.</p>
+    </div>
+  </section>
+<script>
+/* The "Another language" text box only exists once it is needed. */
+(function(){
+  var f = document.getElementById('reqform');
+  if (!f) return;
+  var lang = document.getElementById('req-language');
+  var wrap = document.getElementById('req-other-wrap');
+  var other = document.getElementById('req-other');
+  var msg = document.getElementById('req-msg');
+  var send = document.getElementById('req-send');
+
+  function sync(){
+    var isOther = lang.value === 'other';
+    wrap.hidden = !isOther;
+    other.required = isOther;
+  }
+  lang.addEventListener('change', sync);
+  sync();
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.className = 'msg';
+    msg.textContent = '';
+    send.disabled = true;
+    fetch('/api/request', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        language: lang.value,
+        other: other.value,
+        level: document.getElementById('req-level').value,
+        email: document.getElementById('req-email').value,
+        website: document.getElementById('req-website').value
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(d){
+        if (d && d.ok) {
+          msg.className = 'msg good';
+          msg.textContent = 'Noted. We will write when that course exists.';
+          f.reset(); sync();
+        } else {
+          msg.className = 'msg';
+          msg.textContent = (d && d.error) || 'That did not send. Try again shortly.';
+        }
+      })
+      .catch(function(){
+        msg.className = 'msg';
+        msg.textContent = 'That did not send. Check your connection.';
+      })
+      .then(function(){ send.disabled = false; });
+  });
+})();
+</script>
+  <dialog id="invite">
+    <form class="dlg" method="dialog">
+      <h3>Ask for a test invite</h3>
+      <p>Leave your email and you will get a Play test link when the next round opens. Nothing
+      else is sent, and the address is used for this only.</p>
+      <label for="invite-email">Email address</label>
+      <input id="invite-email" name="email" type="email" required autocomplete="email"
+             placeholder="you@example.com" inputmode="email">
+      <div class="hp" aria-hidden="true">
+        <label for="invite-website">Leave this empty</label>
+        <input id="invite-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="msg" id="invite-msg" role="status" aria-live="polite"></p>
+      <div class="dlg-row">
+        <button class="go" value="send" id="invite-send">Send</button>
+        <button value="cancel" formnovalidate>Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="contact">
+    <form class="dlg" method="dialog">
+      <h3>Get in touch</h3>
+      <p>Questions, bugs, or an invite that never arrived.</p>
+      <div class="addr">
+        <code id="contact-addr">support@corlang.app</code>
+        <button type="button" id="contact-copy">Copy</button>
+      </div>
+      <p class="msg" id="contact-msg" role="status" aria-live="polite"></p>
+      <div class="dlg-row">
+        <a class="cta" style="flex:1;text-align:center"
+           href="mailto:support@corlang.app">Open in mail app</a>
+        <button value="close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer>
+    <div><a href="/">Home</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a
+      href="mailto:support@corlang.app" data-contact>Contact</a></div>
+    <div>Corlang</div>
+  </footer>
+</div>
+<script>
+/* Reveal-on-arrive. Guarded three ways so the page is never left invisible: reduced-motion
+   returns early, a browser without IntersectionObserver returns early, and every element is
+   marked visible the moment it has played once. The CSS resting state is inside the
+   prefers-reduced-motion query, so if this script never runs at all the page still renders
+   finished rather than blank. */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var hero = document.querySelectorAll('.hero .rise');
+  for (var i = 0; i < hero.length; i++) {
+    hero[i].style.setProperty('--d', (0.06 * i + 0.05).toFixed(2) + 's');
+  }
+  requestAnimationFrame(function(){
+    for (var j = 0; j < hero.length; j++) hero[j].classList.add('in');
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.loop, .track, .claims, .method, .langs, .shots, .section .rise')
+    .forEach(function(el){ io.observe(el); });
+})();
+
+/* FAQ: one answer open at a time.
+   Modern browsers do this from the `name` attribute alone. This is the fallback for one that
+   does not: where `name` is honoured the loop finds nothing still open and does nothing. */
+(function(){
+  var items = document.querySelectorAll('.faq details');
+  if (!items.length) return;
+  if ('name' in document.createElement('details')) return;   // handled natively
+  items.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if (!d.open) return;
+      items.forEach(function(o){ if (o !== d) o.open = false; });
+    });
+  });
+})();
+
+/* Contact dialog. No form and no endpoint: it shows the address, copies it, and offers a
+   mailto for people who do have a mail client. A contact FORM would mean storing message bodies,
+   a second thing to disclose in the privacy policy, and a place for spam to accumulate that
+   somebody has to actually watch. */
+(function(){
+  var dlg = document.getElementById('contact');
+  if (!dlg || !dlg.showModal) return;
+  var copy = document.getElementById('contact-copy');
+  var msg = document.getElementById('contact-msg');
+  var addr = 'support@corlang.app';
+
+  document.querySelectorAll('[data-contact]').forEach(function(b){
+    b.addEventListener('click', function(e){
+      /* The trigger is a real mailto: link, so it works with JS off. Here we take it over and
+         show the dialog instead, which does not hijack the browser into a mail client. */
+      e.preventDefault();
+      msg.textContent = '';
+      msg.className = 'msg';
+      copy.textContent = 'Copy';
+      dlg.showModal();
+    });
+  });
+
+  copy.addEventListener('click', function(){
+    function done(){
+      copy.textContent = 'Copied';
+      msg.className = 'msg good';
+      msg.textContent = 'Address copied to your clipboard.';
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(addr).then(done, select);
+    } else {
+      select();
+    }
+    /* Fallback: select the text so a manual copy is one keystroke, rather than failing silently
+       on http or in a browser without the clipboard API. */
+    function select(){
+      var node = document.getElementById('contact-addr');
+      var r = document.createRange();
+      r.selectNodeContents(node);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+      msg.className = 'msg';
+      msg.textContent = 'Selected. Press Ctrl+C or Cmd+C to copy.';
+    }
+  });
+})();
+
+/* Invite dialog. Posts to /api/invite, which stores the address in Cloudflare KV.
+   Progressive: the button does nothing without JS, so the mailto link stays in the footer as the
+   way to reach a person either way. */
+(function(){
+  var dlg = document.getElementById('invite');
+  var form = dlg && dlg.querySelector('form');
+  var msg = document.getElementById('invite-msg');
+  var send = document.getElementById('invite-send');
+  var email = document.getElementById('invite-email');
+  if (!dlg || !form || !dlg.showModal) return;
+
+  document.querySelectorAll('[data-invite]').forEach(function(b){
+    b.addEventListener('click', function(){
+      msg.textContent = '';
+      msg.className = 'msg';
+      send.disabled = false;
+      send.textContent = 'Send';
+      dlg.showModal();
+    });
+  });
+
+  form.addEventListener('submit', function(e){
+    /* method="dialog" closes on any button. Only intercept the send button, so Close still
+       closes and Escape still works. */
+    if (dlg.returnValue === 'cancel') return;
+    var pressed = e.submitter && e.submitter.value;
+    if (pressed !== 'send') return;
+    e.preventDefault();
+    if (!email.checkValidity()) { email.reportValidity(); return; }
+
+    send.disabled = true;
+    send.textContent = 'Sending';
+    msg.className = 'msg';
+    msg.textContent = '';
+
+    fetch('/api/invite', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        email: email.value,
+        website: form.querySelector('[name=website]').value
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){
+      return { ok: r.ok && j.ok, error: j.error };
+    }); }).then(function(res){
+      if (res.ok) {
+        msg.className = 'msg good';
+        msg.textContent = 'Thanks. You are on the list.';
+        send.textContent = 'Done';
+        setTimeout(function(){ dlg.close(); }, 1400);
+      } else {
+        msg.className = 'msg bad';
+        msg.textContent = res.error || 'That did not go through. Try again in a moment.';
+        send.disabled = false;
+        send.textContent = 'Send';
+      }
+    }).catch(function(){
+      msg.className = 'msg bad';
+      msg.textContent = 'No connection. Try again in a moment.';
+      send.disabled = false;
+      send.textContent = 'Send';
+    });
+  });
+})();
+</script></body>
+</html>

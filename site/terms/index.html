@@ -237,6 +237,22 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   margin:0 0 3px;line-height:1.2}
 .lang .native{color:var(--muted);font-size:14px;display:block;margin:0}
 
+/* ---- request form ----
+   Only on /requests/, which nothing links to. Native selects rather than a custom dropdown: they
+   are keyboard and screen-reader correct for free, and on a phone they open the platform picker
+   the visitor already knows. */
+.reqform{margin:26px 0 0;max-width:520px}
+.reqform label{display:block;font-size:14.5px;font-weight:600;margin:0 0 6px}
+.reqform select,.reqform input{width:100%;box-sizing:border-box;font:inherit;font-size:16px;
+  padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:var(--raise);
+  color:var(--ink);margin:0 0 18px}
+.reqform select:focus,.reqform input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.reqform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.reqform button{font:inherit;font-weight:600;font-size:16px;padding:13px 22px;border:0;
+  border-radius:10px;background:var(--ink);color:#fff;cursor:pointer}
+.reqform button:disabled{opacity:.55;cursor:default}
+.req-note{margin:18px 0 0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:60ch}
+
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
    correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,

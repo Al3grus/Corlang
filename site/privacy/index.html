@@ -237,6 +237,22 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   margin:0 0 3px;line-height:1.2}
 .lang .native{color:var(--muted);font-size:14px;display:block;margin:0}
 
+/* ---- request form ----
+   Only on /requests/, which nothing links to. Native selects rather than a custom dropdown: they
+   are keyboard and screen-reader correct for free, and on a phone they open the platform picker
+   the visitor already knows. */
+.reqform{margin:26px 0 0;max-width:520px}
+.reqform label{display:block;font-size:14.5px;font-weight:600;margin:0 0 6px}
+.reqform select,.reqform input{width:100%;box-sizing:border-box;font:inherit;font-size:16px;
+  padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:var(--raise);
+  color:var(--ink);margin:0 0 18px}
+.reqform select:focus,.reqform input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.reqform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.reqform button{font:inherit;font-weight:600;font-size:16px;padding:13px 22px;border:0;
+  border-radius:10px;background:var(--ink);color:#fff;cursor:pointer}
+.reqform button:disabled{opacity:.55;cursor:default}
+.req-note{margin:18px 0 0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:60ch}
+
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
    correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,
@@ -432,6 +448,8 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 <p>Nothing else about your use of the app is transmitted. Corlang does not phone home. The version you install from Google Play never checks for updates either, because the Play Store delivers them; the developer&#x27;s own directly-installed builds do have a manual &quot;Check for updates&quot; button in Settings, which fetches a version file from the project&#x27;s public GitHub repository when you tap it, and sends nothing about you when it does.</p>
 <h2>The website</h2>
 <p>If you ask for a test invite at <strong>https://corlang.app/</strong>, the email address you type is stored so we can send you a Google Play test link, along with the date and the two-letter country code your connection reports. It is used for that and nothing else: no newsletter, no analytics profile, and it is never passed to anyone. Ask at the address below and it is deleted.</p>
+<p>If you ask for a language at <strong>https://corlang.app/requests/</strong>, the language, the level you need and your email address are stored together, plus the date and country code, so we can tell you when that course exists. That page is not linked from anywhere and is not indexed: you reach it from the app or because somebody sent it to you. Same terms as above, deleted on request.</p>
+<p><strong>The app itself never asks for your address.</strong> The link in Profile opens that page in your browser, and nothing is sent from the app.</p>
 <p>The site itself sets no cookies, runs no analytics, and loads no third-party scripts or fonts.</p>
 <h2>Speech</h2>
 <p>Pronunciation playback uses your device&#x27;s built-in Android text-to-speech service. Corlang has no microphone permission, does not record audio, and has no speech-recognition feature.</p>

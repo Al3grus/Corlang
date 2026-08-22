@@ -60,6 +60,14 @@ we can send you a Google Play test link, along with the date and the two-letter 
 connection reports. It is used for that and nothing else: no newsletter, no analytics profile, and
 it is never passed to anyone. Ask at the address below and it is deleted.
 
+If you ask for a language at **https://corlang.app/requests/**, the language, the level you
+need and your email address are stored together, plus the date and country code, so we can tell
+you when that course exists. That page is not linked from anywhere and is not indexed: you reach
+it from the app or because somebody sent it to you. Same terms as above, deleted on request.
+
+**The app itself never asks for your address.** The link in Profile opens that page in your
+browser, and nothing is sent from the app.
+
 The site itself sets no cookies, runs no analytics, and loads no third-party scripts or fonts.
 
 ## Speech

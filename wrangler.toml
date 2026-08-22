@@ -14,3 +14,10 @@ compatibility_date = "2026-01-01"
 [[kv_namespaces]]
 binding = "INVITES"
 id = "8126fcfb51954368a9ba136df17fb5af"
+
+# Language requests from /requests/, which is unlinked and noindexed so it is reached
+# deliberately rather than flooded. Read them with:
+#   npx wrangler kv key list --namespace-id f50b424a885f41d18d93978d31fec609 --remote
+[[kv_namespaces]]
+binding = "REQUESTS"
+id = "f50b424a885f41d18d93978d31fec609"
