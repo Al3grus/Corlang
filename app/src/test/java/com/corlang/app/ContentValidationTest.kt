@@ -1140,6 +1140,72 @@ class ContentValidationTest {
     }
 
     /**
+     * Same wiring class again, for the launch screen's rotating subtitle. Two ways it goes
+     * wrong, and the second is the one that actually shipped:
+     *
+     *  - **A live course with no tagline** drops out of the rotation silently. The splash falls
+     *    back to English alone, which looks deliberate, so nothing ever reports it.
+     *  - **A tagline written in English** defeats the point. The subtitle exists to say the
+     *    brand promise in the language you are learning; "Language at the core" is already in
+     *    the rotation once, from Kotlin, and a course repeating it adds nothing.
+     *
+     * The rotation was a hardcoded Kotlin list until v0.53.4 and named four languages nobody
+     * could study. Sourcing it from meta.json is what makes it impossible for a hidden course
+     * to appear there, and this is what makes a visible one impossible to forget.
+     */
+    @Test
+    fun `launch tagline present in every language meta`() {
+        allLangs.forEach { lang ->
+            val meta = strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
+            val tagline = meta.tagline
+            assertTrue(
+                "$lang meta.json missing tagline: the launch screen rotates through these, and " +
+                    "a language without one is silently absent from it.",
+                !tagline.isNullOrBlank()
+            )
+            assertTrue(
+                "$lang tagline is the English line. It must be the brand promise IN $lang - " +
+                    "English is already in the rotation on its own.",
+                !tagline!!.equals("Language at the core", ignoreCase = true)
+            )
+        }
+    }
+
+    /**
+     * The rotation may only name courses a learner can actually start. `_index.json` is that
+     * list, and `allMeta()` (which the splash reads) is derived from it, so a hidden language
+     * cannot leak in by construction - this pins the construction itself, since the whole
+     * defect was a second, hand-maintained list drifting away from the manifest.
+     */
+    @Test
+    fun `launch taglines come only from languages in the manifest`() {
+        val manifest = strictJson.decodeFromString<List<String>>(File(contentRoot, "_index.json").readText(Charsets.UTF_8))
+        val hidden = allLangs.filterNot { it in manifest }
+        val splash = File(
+            listOf(
+                "src/main/java/com/corlang/app/ui/screens/CorlangSplash.kt",
+                "app/src/main/java/com/corlang/app/ui/screens/CorlangSplash.kt"
+            ).first { File(it).exists() }
+        ).readText()
+
+        for (lang in hidden) {
+            val meta = strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
+            val tagline = meta.tagline ?: continue
+            assertTrue(
+                "CorlangSplash.kt contains $lang's tagline (\"$tagline\") as a literal, but $lang " +
+                    "is not in content/_index.json. The launch screen would advertise a course " +
+                    "nobody can start. Taglines belong in meta.json only.",
+                !splash.contains(tagline)
+            )
+        }
+        assertTrue(
+            "CorlangSplash.kt must read taglines from meta (container.content.allMeta()), not " +
+                "from a hardcoded list.",
+            splash.contains("allMeta()")
+        )
+    }
+
+    /**
      * The free window is what a learner gets before any payment, and it is the only trial this
      * app has: there is no account, so nothing else can hand out a sample. Three ways it can be
      * authored wrong, all of which reach the store silently:
