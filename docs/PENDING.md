@@ -105,6 +105,38 @@ one-person app in testing; it is worth a professional read once real revenue is 
 Play Console has a field for a terms URL alongside the privacy one: use
 `https://corlang.app/terms/`.
 
+## ‼️ BLOCKING BEFORE CLOSED TESTING — the App access attestation is not yet true
+
+App access was answered **Yes** (the app is payment-restricted) and saved on 2026-08-22 with the
+box ticked that says *"Sign-in details in this declaration provide full access to all the features
+and content within this app, including premium or paid content."* Play would not save the section
+without it.
+
+**That claim is currently false.** The sign-in details carry no promo codes, because codes need
+products and products need a published build. Internal testing is not reviewed the way closed
+testing and production are, so nothing breaks today. Before starting closed testing it must be
+made true, and the form says plainly what happens otherwise: updates blocked, or removal.
+
+To close it: create the products, generate **three** codes (unlocks are cumulative, so the B1
+product is the whole course), and replace the text in App access with:
+
+```
+No accounts and no sign-in exist, so there is no username or password.
+
+Installing gives immediate access to level A0 in both courses, ten lessons each: teaching blocks,
+exercises, dialogues, vocabulary review, the level quiz and every progress screen. That covers
+every screen type in the app.
+
+Paid content is the later course levels (one-time purchases) and the AI tutor tab (subscription).
+Redeem in the Play Store to unlock everything:
+Croatian: <code>
+Portuguese: <code>
+AI tutor: <code>
+```
+
+Codes needed: `unlock_hr_b1`, `unlock_pt_b1`, `corlang_ai_premium`. Username and password stay
+empty; the app genuinely has neither.
+
 ## 🔴 TRACK A — Get to Play testers (do these in this order)
 
 **The order matters and is not the obvious one:** Play does not enable the in-app products page
