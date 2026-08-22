@@ -1012,8 +1012,7 @@ def build():
       <p class="lede rise">Prepare for work, citizenship or an official exam.</p>
       <div class="actions rise">
         <button class="cta" type="button" data-invite>Ask for a test invite</button>
-        <span class="avail">Coming soon to Google Play &middot; Croatian and Portuguese
-        available</span>
+        <span class="avail">Coming soon to Google Play</span>
       </div>
     </div>
     <div class="hero-shots rise">
