@@ -31,3 +31,7 @@ Google Cloud/
 *service*account*.json
 *-*.json.key
 gha-creds-*.json
+
+# Generated store assets and bytecode; the canonical PNGs live beside the generator.
+docs/store-assets/out/
+__pycache__/
