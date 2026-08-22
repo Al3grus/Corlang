@@ -1027,6 +1027,15 @@ def build():
 
   <section class="section">
     <div class="section-head">
+      <h2>Available now</h2>
+    </div>
+    <div class="langs">
+{{LANG_CARDS}}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
       <h2>Inside every lesson</h2>
       <p>Ten minutes, six steps, the same order every day.</p>
     </div>
@@ -1119,14 +1128,6 @@ def build():
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>Available now</h2>
-    </div>
-    <div class="langs">
-{{LANG_CARDS}}
-    </div>
-  </section>
 
   <section class="section">
     <div class="section-head">
