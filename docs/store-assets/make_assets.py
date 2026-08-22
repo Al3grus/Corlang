@@ -75,25 +75,49 @@ def _mask_from(g):
 
 # --------------------------------------------------------- feature graphic
 def feature(path):
+    """
+    The mark and the wordmark, centred, on the brand ground.
+
+    It used to carry two strap lines: "Croatian, Portuguese, French" and "A0 to B2, one lesson a
+    day, works offline". Both had gone stale. French is authored but hidden from
+    content/_index.json, so the graphic advertised a course the store could not deliver, and
+    neither shipped course runs past B1. A feature graphic is also the asset Play crops and
+    overlays its own text on, so small type near an edge is the first thing lost. A centred
+    lockup survives that; a strap line does not.
+
+    Centred by MEASURING, not by predicting. The first attempt computed the position from
+    `72 * unit` and a textbbox taken at one anchor while drawing at another, and produced a mark
+    low-left with the word floating high-right. Drawing both onto a transparent layer and asking
+    Pillow for the real bounding box removes every assumption about font metrics and mark
+    geometry at once.
+    """
     W, H = 1024 * SS, 500 * SS
+
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(layer)
+
+    unit = (H * 0.52) / 72.0
+    f_word = ImageFont.truetype(FONT_BOLD, int(132 * SS))
+
+    # Somewhere roughly right; the exact spot does not matter, it gets re-centred below.
+    probe_cx, probe_cy = W * 0.30, H * 0.5
+    draw_mark(ld, probe_cx, probe_cy, unit)
+    mark_box = layer.getbbox()
+
+    gap = 54 * SS
+    ld.text((mark_box[2] + gap, probe_cy), "Corlang", font=f_word, fill=TEXT, anchor="lm")
+
+    box = layer.getbbox()
+    dx = int(round((W - (box[2] - box[0])) / 2 - box[0]))
+    dy = int(round((H - (box[3] - box[1])) / 2 - box[1]))
+
     img = Image.new("RGB", (W, H), BG)
-    mark_cx, mark_cy = W * 0.215, H * 0.5
-    img = ImageChops.screen(img, glow((W, H), mark_cx, mark_cy, H * 0.46, RING, 0.22))
-    d = ImageDraw.Draw(img)
-
-    unit = (H * 0.62) / 72.0
-    draw_mark(d, mark_cx, mark_cy, unit)
-
-    f_word = ImageFont.truetype(FONT_BOLD, int(104 * SS))
-    f_tag = ImageFont.truetype(FONT_LIGHT, int(38 * SS))
-    f_sub = ImageFont.truetype(FONT_REG, int(30 * SS))
-
-    x = W * 0.38
-    d.text((x, H * 0.30), "Corlang", font=f_word, fill=TEXT, anchor="ls")
-    d.text((x + 4 * SS, H * 0.30 + 52 * SS), "Croatian · Portuguese · French",
-           font=f_tag, fill=TEXT, anchor="ls")
-    d.text((x + 4 * SS, H * 0.30 + 106 * SS), "A0 → B2 · one lesson a day · works offline",
-           font=f_sub, fill=MUTED, anchor="ls")
+    img = ImageChops.screen(
+        img, glow((W, H), (mark_box[0] + mark_box[2]) / 2 + dx, H * 0.5, H * 0.44, RING, 0.20))
+    img.paste(layer.transform((W, H), Image.AFFINE, (1, 0, -dx, 0, 1, -dy),
+                              resample=Image.NEAREST),
+              (0, 0), layer.transform((W, H), Image.AFFINE, (1, 0, -dx, 0, 1, -dy),
+                                      resample=Image.NEAREST))
 
     img.resize((1024, 500), Image.LANCZOS).save(path)
     print("wrote", path)
