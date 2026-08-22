@@ -68,8 +68,25 @@ def main(path):
     print("purchases call  :", r.status_code)
 
     if r.status_code in (400, 404, 410):
-        print("\nALL GOOD. The token was rejected because it is fake, which is the point: the")
-        print("call was authorised, so the account can read real purchases.")
+        # A 404 has two meanings and they are worth separating: the purchase TOKEN was not
+        # found, which is what a deliberately fake one should produce and is the result we
+        # want, or the APPLICATION was not found, which is what you get before the app
+        # exists in Play Console. Both are 404. Only Google's message tells them apart, so
+        # print it rather than declaring victory over both.
+        body = r.text.lower()
+        print("")
+        print("Authorised: the request was accepted and answered, not refused.")
+        if "application" in body and "not found" in body:
+            print("")
+            print("BUT the APP was not found, which is expected before it exists in Play")
+            print("Console. That leaves the PERMISSION half unproven: the key and the API",
+                  "are confirmed,")
+            print("but whether this account may read purchases is not. Re-run once the app",
+                  "exists.")
+            print("Google said:", r.text[:200])
+            return 0
+        print("The fake purchase token was rejected, which is the point: this account can")
+        print("read real purchases.")
         return 0
     if r.status_code in (401, 403):
         print("\nNOT AUTHORISED.", r.text[:200])
