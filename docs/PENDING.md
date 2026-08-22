@@ -106,55 +106,77 @@ one-person app in testing; it is worth a professional read once real revenue is 
 Play Console has a field for a terms URL alongside the privacy one: use
 `https://corlang.app/terms/`.
 
-## 🔴 TRACK A — Get to Play testers (critical path, in order)
+## 🔴 TRACK A — Get to Play testers (do these in this order)
 
-1. **(browser)** Create the app in Play Console (name "Corlang", App, Free).
-2. **(browser)** "Set up your app" tasks — all required before any release:
-   - App access: **restricted** — no login exists, but the course is payment-gated past the
-     free window, so a reviewer needs promo codes. Exact wording in `docs/road-to-play.md`
-     §2. Promo codes need the products created AND a build uploaded first, so this task
-     closes after the Internal-testing upload, not before.
-   - Ads: no ads.
-   - Content rating questionnaire (educational → Everyone/PEGI 3).
-   - Target audience: 13+.
-   - Data safety: **answers are drafted field by field in `docs/play-data-safety.md`** — three
-     declared types (Personal info/Name, Messages/Other in-app messages, Financial info/Purchase
-     history), the reason each of the others is NOT declared, and the four overview answers.
-     Verified against the built manifest and the dependency list rather than from memory.
-   - Privacy policy URL: **`https://corlang.app/privacy/`** (live, generated from PRIVACY.md
-     by `tools/site/build_site.py`). The old GitHub raw link still works but the site is the
-     one to give Play, since the repo may go private.
-3. **(browser + assets)** Main store listing. Copy is drafted in `road-to-play.md` and names
-   **Croatian and Portuguese only** (French is authored but hidden). Needs the assets from
-   Track C; 8 framed screenshots are already built by `tools/store/make_store_shots.py`.
-4. **(browser)** Create the **7** billing products, and only AFTER step 5: Play does not enable
-   the in-app products page until a build containing the Billing Library is published to a
-   track. **IDs must match exactly** (in `road-to-play.md` / `monetization-roadmap.md`):
-   - Subscription `corlang_ai_premium`: ONE base plan `monthly` €9.99 with the **3-day
-     free-trial offer** on it (Google's minimum; the trial spends real tokens). **No annual plan** (decided 2026-07-18: AI models/costs can
-     shift within a year; monthly keeps repricing freedom). The app requests only `monthly`.
-   - Managed products, **six, three per language**: `unlock_hr_a1` €4.99 · `unlock_hr_a2`
-     €12.99 · `unlock_hr_b1` €24.99, and the same three for `pt`. Each grants its level and
-     everything below it, so the B1 product is the whole course and there is no `_all`.
-     **No `unlock_*_b2`** — neither course has a B2 lesson.
-   - Activate all; accept Google's regional prices.
-5. **(browser)** Upload the AAB to **Internal testing** (live in minutes, billing works).
-   **This comes BEFORE step 4**: Play does not enable the in-app products page until a build
-   containing the Billing Library is published to a track.
-6. **(browser)** License testing (Setup → License testing): add your + testers' Gmail addresses
-   so their purchases are free / auto-refunded.
-7. **(browser)** Add testers + share the opt-in link.
-8. **(you, phone)** Install from the Play opt-in link with a license-tester account → **see the
-   real payment popups**, buy A2 → unlock, subscribe → Learn tab appears. First real end-to-end
-   billing test.
-9. **(browser)** Start **Closed testing** with **≥12 testers opted in for ≥14 consecutive days**
-   — the production-eligibility clock for personal accounts created after 2023-11-13. Re-verified
-   against Play Console Help on 2026-08-21 (it was 20 testers until Google cut it to 12 in
-   December 2024, so check the Console rather than any blog if the number looks different).
-   **This is the long pole: start it the day Internal testing works, and run it in parallel with
-   everything else.** The 14 days are continuous, and testers leaving resets your standing.
+**The order matters and is not the obvious one:** Play does not enable the in-app products page
+until a build containing the Play Billing Library is published to a track, and promo codes need
+the products to exist. So it is upload, then products, then codes, then App access. Verified
+against Play Console Help 2026-08-22.
 
----
+State verified 2026-08-22: everything below that is not a browser step is DONE.
+
+- App: **v0.56.1, versionCode 191**. Build with
+  `./gradlew :app:bundlePlayRelease` (JAVA_HOME = Android Studio JBR); the artefact lands at
+  `app/build/outputs/bundle/playRelease/app-play-release.aab`. Confirmed signed, with
+  `DEV_PREMIUM=false` and `ENABLE_UPDATER=false`, so no store build can ship the developer
+  unlock.
+- Listing assets, all present and spec-checked: `docs/store-assets/play-icon-512.png` (512x512),
+  `feature-graphic-1024x500.png` (1024x500), and eight framed screenshots at 1080x1920 in
+  `docs/store-assets/play/`.
+- Listing copy: drafted in `road-to-play.md`, naming **Croatian and Portuguese only**.
+- Privacy policy: `https://corlang.app/privacy/` (live).
+- Terms of service: `https://corlang.app/terms/` (live). See the terms entry above for the one
+  clause still missing.
+- Data safety answers: drafted field by field in `docs/play-data-safety.md`, derived from the
+  built manifest and dependency list rather than from memory.
+
+1. **Create the app** in Play Console: name "Corlang", type App, Free.
+
+2. **Main store listing.** Copy from `road-to-play.md`, assets from `docs/store-assets/`.
+   Category Education, contact `support@corlang.app`.
+
+3. **App content, everything except App access.** Ads: none. Content rating questionnaire:
+   educational, no objectionable content, so Everyone / PEGI 3. Target audience: 13+. Data
+   safety: follow `docs/play-data-safety.md` exactly. Privacy policy URL as above.
+
+4. **Upload the AAB to Internal testing.** Live in minutes, no review wait, up to 100 testers,
+   and billing works. This is what unlocks step 5.
+
+5. **Create the seven products.** IDs are case-sensitive and can never be changed or reused once
+   created, so copy them character for character.
+
+   | Product | Type | Price |
+   |---|---|---|
+   | `corlang_ai_premium` | subscription, one base plan `monthly`, with a **3-day** free-trial offer | EUR 9.99/month |
+   | `unlock_hr_a1` | one-time | EUR 4.99 |
+   | `unlock_hr_a2` | one-time | EUR 12.99 |
+   | `unlock_hr_b1` | one-time | EUR 24.99 |
+   | `unlock_pt_a1` | one-time | EUR 4.99 |
+   | `unlock_pt_a2` | one-time | EUR 12.99 |
+   | `unlock_pt_b1` | one-time | EUR 24.99 |
+
+   Unlocks are **cumulative**, so the B1 product is the whole course and there is deliberately no
+   `_all`. There is no `_b2` either: neither course has a B2 lesson. Activate each and accept
+   Google's regional prices. No annual plan (decided 2026-07-18: AI costs can shift within a
+   year, and a sold annual locks twelve months of service at old economics).
+
+6. **Generate promo codes** (Monetize, Promo codes), one per product, for the reviewer.
+
+7. **App access: restricted.** There is no login, but the course is payment-gated, and a reviewer
+   who cannot reach the paid content cannot rate it. Paste the wording from
+   `docs/road-to-play.md` §2 and attach the codes from step 6.
+
+8. **License testers** (Setup, License testing): your own and your testers' Google accounts, so
+   every product can be bought with auto-refunded transactions and the whole
+   paywall -> purchase -> unlock path gets exercised for real.
+
+9. **Closed testing.** 12 testers, 14 continuous days, which is the production-eligibility
+   requirement for a personal account created after 2023-11-13.
+
+**Test on a device, because no unit test can:** that Play's purchase sheet, the acknowledge call
+and restore-after-reinstall all land entitlement where `PremiumManager` expects it. `PaywallGateTest`
+already pins everything offline (free window, cumulative grants, cross-language isolation, the
+exam gate, the placement-seed ceiling, retired product ids).
 
 ## 🔐 TRACK B — Security hardening (before PUBLIC production; NOT needed for testers)
 
