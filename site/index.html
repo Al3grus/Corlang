@@ -215,21 +215,32 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .method h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;
   margin:0;line-height:1.25}
 .method p{margin:0;color:var(--muted);font-size:16px;line-height:1.62}
+.method .row:last-child{border-bottom:0}
 .lede + .lede{margin-top:15px}
 
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
-   correctly by a screen reader without a line of ARIA. The marker is replaced with a plus that
-   becomes a minus, because the default triangle sits differently in every browser. */
+   correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,
+   which is the whole accordion behaviour with no script at all.
+
+   The marker is a plus that ROTATES into a cross. It began as a plus swapped for a minus via
+   content:"\2212", which shipped to the page as the digit 2: that escape sat inside an
+   ordinary Python string, where \221 is an OCTAL escape, so the CSS received one control
+   character and a "2". Rotating needs no escape, cannot be mangled by whatever generates this
+   file, and animates, which is what an opening panel should look like. */
 .faq{margin:30px 0 0;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
 .faq summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;position:relative;
   font-family:var(--display);font-weight:600;font-size:17.5px;letter-spacing:-.01em}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);
-  font-size:19px;font-weight:400;color:var(--muted);line-height:1}
-.faq details[open] summary::after{content:"2"}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;
+  transform:translateY(-50%) rotate(0deg);
+  font-size:21px;font-weight:400;color:var(--muted);line-height:1;
+  transition:transform .22s cubic-bezier(.16,.7,.3,1),color .22s ease}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg);color:var(--blue)}
 .faq summary:hover{color:var(--blue)}
+.faq summary:hover::after{color:var(--blue)}
 .faq p{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.62;max-width:70ch}
 
 /* ---- invite dialog ----
@@ -406,14 +417,14 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   <section class="section">
     <div class="section-head">
       <h2>Inside every lesson</h2>
-      <p>Ten minutes, six steps, the same order every day. The order is the point.</p>
+      <p>Ten minutes, six steps, the same order every day.</p>
     </div>
     <div class="method">
       <div class="row">
         <div class="term"><span class="n">01</span><h3>New words</h3></div>
-        <p>A small set of new words, met on their own before anything else uses them. Meeting
-        them first means the rest of the lesson is recognition rather than decoding, and they
-        enter your review schedule the same day.</p>
+        <p>A small set of new words, introduced on their own before anything else uses them.
+        Introducing them first means the rest of the lesson is recognition rather than decoding,
+        and they enter your review schedule the same day.</p>
       </div>
       <div class="row">
         <div class="term"><span class="n">02</span><h3>Input</h3></div>
@@ -423,9 +434,10 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       </div>
       <div class="row">
         <div class="term"><span class="n">03</span><h3>Practice</h3></div>
-        <p>Exercises on exactly what was just taught, including typing the right form instead of
-        choosing it. Producing an answer is what fixes it; picking one from four mostly tests
-        whether you can spot it.</p>
+        <p>Exercises on exactly what was just taught: quick multiple choice to check you
+        followed it, then drills where you type the form yourself. The typed ones are the ones
+        that stick, because producing an answer is harder than recognising one, and that
+        difficulty is what does the work.</p>
       </div>
       <div class="row">
         <div class="term"><span class="n">04</span><h3>Output</h3></div>
@@ -504,47 +516,47 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       <p>The ones people actually ask.</p>
     </div>
     <div class="faq">
-      <details>
+      <details name="faq">
         <summary>Which languages can I learn?</summary>
         <p>Croatian and European Portuguese, both complete courses from the first word to the
         official B1 exam. More European languages are written and waiting; they go live once the
         first two are proven in real use rather than all at once.</p>
       </details>
-      <details>
+      <details name="faq">
         <summary>Is it free?</summary>
         <p>The first level of each course is free permanently, not as a trial that expires. After
         that a course is a one-time purchase, and what you buy stays bought. The AI tutor is a
         separate monthly subscription, and everything else works without it.</p>
       </details>
-      <details>
+      <details name="faq">
         <summary>Do I need an account?</summary>
         <p>No. There is no sign-up and no password, and your progress stays on your phone. The
         catch is that it stays on your phone, so export a backup from Profile before you change
         device.</p>
       </details>
-      <details>
+      <details name="faq">
         <summary>Does it work offline?</summary>
         <p>The whole course does: lessons, reviews, quizzes and the mock exams. Only the AI tutor
         needs a connection, because it is talking to a language model.</p>
       </details>
-      <details>
+      <details name="faq">
         <summary>How long is a lesson?</summary>
         <p>About ten minutes, and it is the same ten minutes every day. That is deliberate: a
         session you can finish on a bus is a session you will still be doing in March.</p>
       </details>
-      <details>
+      <details name="faq">
         <summary>Will it get me through the official exam?</summary>
         <p>It is built for it. Each course follows the syllabus the real exam is written from,
         and the mock exams copy its format and marking. What it cannot do is award anything: only
         the official examining body can do that.</p>
       </details>
-      <details>
+      <details name="faq">
         <summary>What does the AI tutor do?</summary>
         <p>It is a patient conversation partner in the language you are learning: it corrects
         you, explains why, and keeps to your level. It has a daily message allowance, shown in
         the app, and it will decline anything that is not language learning.</p>
       </details>
-      <details>
+      <details name="faq">
         <summary>Am I being tracked?</summary>
         <p>No. No analytics, no advertising, no third-party trackers, nothing sold. The
         <a href="/privacy/">privacy policy</a> lists the one case in which anything leaves your
@@ -622,6 +634,21 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.loop, .track, .claims, .method, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
+})();
+
+/* FAQ: one answer open at a time.
+   Modern browsers do this from the `name` attribute alone. This is the fallback for one that
+   does not: where `name` is honoured the loop finds nothing still open and does nothing. */
+(function(){
+  var items = document.querySelectorAll('.faq details');
+  if (!items.length) return;
+  if ('name' in document.createElement('details')) return;   // handled natively
+  items.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if (!d.open) return;
+      items.forEach(function(o){ if (o !== d) o.open = false; });
+    });
+  });
 })();
 
 /* Contact dialog. No form and no endpoint: it shows the address, copies it, and offers a
