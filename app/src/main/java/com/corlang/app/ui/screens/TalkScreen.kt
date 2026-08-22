@@ -171,6 +171,19 @@ fun TalkScreen(container: AppContainer, lang: String) {
         if (text.isBlank() || sending) return
         // Nothing left today: say so instead of spending a round trip to be refused.
         if (quota?.remaining == 0) { limitReached = true; return }
+        // Asking for live world information (a price, the news) is answered here, for free. The
+        // tutor used to answer these honestly and well, which was still a paid round trip and an
+        // invitation to try again. The refusal is added to the transcript like any other turn, so
+        // it also appears in the history the model sees next time and reinforces the boundary.
+        if (com.corlang.app.ai.OffTopicGuard.isOffTopic(text)) {
+            keyboard?.hide()
+            messages.add(ChatMessage("user", text.trim()))
+            messages.add(ChatMessage("assistant",
+                com.corlang.app.ai.OffTopicGuard.refusal(languageName)))
+            input = ""
+            error = null
+            return
+        }
         // Put the keyboard away: the message is gone, so the composer has nothing left to type
         // into, and leaving it up hides the reply the learner is waiting for.
         keyboard?.hide()
@@ -298,7 +311,7 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 style = MaterialTheme.typography.labelSmall,
                 color = if (q.remaining == 0) MaterialTheme.colorScheme.error
                         else MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = androidx.compose.ui.text.style.TextAlign.End,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
                 modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
             )
         }
@@ -751,6 +764,19 @@ private fun tutorSystemPrompt(
 ): String {
     // Toggled by the learner (pre-chat). English is ALWAYS allowed on request either way; this
     // only controls how PROACTIVELY the tutor glosses/explains in English.
+    // Second line, behind OffTopicGuard. What gets past the guard is by definition something
+    // it could not be confident about, so the instruction is about LENGTH as much as refusal:
+    // the honest answer the tutor already gave ("I don't have that data, so I won't guess") was
+    // correct and three times longer than it needed to be.
+    val scopeRule =
+        "- You are a language tutor and nothing else. If the student asks for real-world " +
+            "information you cannot know or verify (news, prices, live events, sports results, " +
+            "anything current), or asks you to search the web, write code, or act as a general " +
+            "assistant, reply with ONE short sentence saying you cannot help with that, then " +
+            "immediately continue the lesson with a question. Never guess, never explain at " +
+            "length why you cannot, and never apologise more than once. If they ask again, give " +
+            "the same short answer again."
+
     val englishRule = if (englishHelp)
         // English LEADS. The old rule kept the whole reply in the target language and only
         // glossed the new word, which assumes the student can already follow a full message in
@@ -791,9 +817,11 @@ private fun tutorSystemPrompt(
     ${varietyRules(lang)}
     $englishRule
     - Converse mainly in $languageName, kept at or slightly below level $level. Use short, natural sentences.
-    - The student may ask you anything in ENGLISH at any time (what a word means, why a form is used,
-      how to say something). Answer directly and briefly IN ENGLISH, then return to $languageName.
-      Never refuse, never pretend not to understand, and never scold them for using English.
+    - The student may ask you anything ABOUT THE LANGUAGE in ENGLISH at any time (what a word
+      means, why a form is used, how to say something). Answer directly and briefly IN ENGLISH,
+      then return to $languageName. Never refuse a question about the language, never pretend not
+      to understand, and never scold them for using English.
+    $scopeRule
     - If the student makes a genuine mistake, gently correct it: give the corrected $languageName
       sentence and a one-line reason, then continue naturally. Don't nitpick; focus on what helps most.
     - NEVER WRITE THE ANSWER YOU ARE ASKING FOR, in either mode. When you want the student to

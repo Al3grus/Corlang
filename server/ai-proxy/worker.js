@@ -48,7 +48,8 @@ const MAX_BODY_BYTES = 30_000;
 // prepaid balance even against a botnet spreading over IPs.
 const DAILY_LIMIT_PER_IP = 300;
 const DAILY_LIMIT_GLOBAL = 3000;
-// Per-subscriber daily message cap, keyed on the Play subscription token (x-corlang-sub).
+// The tutor's daily message cap. Applied to EVERY caller: keyed on the Play subscription token
+// (x-corlang-sub) when one is presented, on the IP otherwise.
 // This is the cost guardrail that makes the flat-price subscription safe: at 30/day a
 // cap-maxing Croatian user costs ~€3.3/mo (measured €0.0036/msg), comfortably under the
 // monthly plan's net revenue. DISCLOSED on the paywall ("fair use: up to 30 AI messages a
@@ -107,17 +108,22 @@ async function checkRateLimit(request, env) {
     const ipN = parseInt(ipCount ?? "0", 10);
     const gN = parseInt(globalCount ?? "0", 10);
     const sN = parseInt(subCount ?? "0", 10);
-    // Which cap actually binds this caller: a real Play subscriber is bounded by the
-    // per-subscriber cap, and a sideload build (no sub token) by the per-IP one. Reporting the
-    // BINDING cap is what lets the tutor show a number that is true for whoever is asking,
-    // rather than one that is only true for subscribers.
-    const limit = subKey ? DAILY_LIMIT_PER_SUB : DAILY_LIMIT_PER_IP;
+    // The product rule is DAILY_LIMIT_PER_SUB tutor messages a day and it applies to EVERY
+    // caller, not only to subscribers. It keys on the Play subscription token when there is one
+    // and on the IP otherwise, so a sideload build is held to the same allowance a paying
+    // subscriber gets. Before this, a no-token caller fell through to the 300 abuse backstop and
+    // was effectively given ten times the paid allowance, which is backwards, and it made the
+    // tutor's counter read "297 of 300" on the one build anybody was testing with.
+    //
+    // DAILY_LIMIT_PER_IP and DAILY_LIMIT_GLOBAL stay as abuse backstops. The IP one still binds
+    // where it should: several subscribers behind one address can exceed 30 between them.
+    const limit = DAILY_LIMIT_PER_SUB;
     const used = subKey ? sN : ipN;
     if (ipN >= DAILY_LIMIT_PER_IP || gN >= DAILY_LIMIT_GLOBAL) {
       return { ok: false, reason: "ip/global", limit, remaining: 0 };
     }
-    if (subKey && sN >= DAILY_LIMIT_PER_SUB) {
-      return { ok: false, reason: "sub", limit, remaining: 0 };
+    if (used >= limit) {
+      return { ok: false, reason: "caller", limit, remaining: 0 };
     }
     // Two-day TTL: today's keys expire on their own, no cleanup job needed.
     await Promise.all([
@@ -263,7 +269,7 @@ export default {
 
     const rate = await checkRateLimit(request, env);
     if (!rate.ok) {
-      const msg = rate.reason === "sub"
+      const msg = rate.reason === "caller"
         ? "You've reached today's message limit. It resets tomorrow."
         : "Daily limit reached. Try again tomorrow.";
       return json(429, { error: { message: msg } }, quotaHeaders(rate));
