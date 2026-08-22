@@ -1,0 +1,1311 @@
+{
+  "title": "Survival Croatian (draft A0, blocked on deck size)",
+  "days": [
+    {
+      "day": 3,
+      "week": 1,
+      "phase": "Phase 1: A0 → A1",
+      "level": "A0",
+      "title": "One coffee, please",
+      "objective": "You will order and drink coffee like a local, which in Croatia is a social institution rather than a transaction.",
+      "paretoFocus": "Croatians go na kavu the way other countries go for a drink, and it can last two hours. Ordering is four words and buys you a seat at the most Croatian thing there is.",
+      "resources": [
+        "Words tab (built-in daily flashcards)",
+        "Conversation practice (partner or tutor)"
+      ],
+      "drills": [
+        "Order your own real coffee out loud in Croatian before you drink it.",
+        "Say the size answer both ways without looking: veliku, malu.",
+        "Run the whole exchange from greeting to thanks."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "How do you order one coffee?",
+          "What is being asked with veliku ili malu?",
+          "How do you say you want it to take away?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "At the counter",
+          "intro": "Whole phrases. The endings inside them are explained in A1; for now say them as they are.",
+          "items": [
+            {
+              "hr": "Jednu kavu, molim.",
+              "en": "One coffee, please.",
+              "note": "Kavu is kava with an accusative ending, baked in. You will meet the rule in A1."
+            },
+            {
+              "hr": "Kavu s mlijekom, molim.",
+              "en": "A coffee with milk, please."
+            },
+            {
+              "hr": "Jedan čaj, molim.",
+              "en": "One tea, please."
+            },
+            {
+              "hr": "Veliku ili malu?",
+              "en": "Large or small?",
+              "note": "You will be asked this. Answer veliku or malu."
+            },
+            {
+              "hr": "Za ovdje, hvala.",
+              "en": "For here, thanks."
+            },
+            {
+              "hr": "Za ponijeti.",
+              "en": "To take away."
+            },
+            {
+              "hr": "Još jednu, molim.",
+              "en": "One more, please."
+            },
+            {
+              "hr": "Bilo je odlično.",
+              "en": "It was excellent."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Ordering",
+          "intro": "One phrase gets you what you want.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "You want your coffee to take away. You say:",
+              "difficulty": 1,
+              "options": [
+                "Za ponijeti.",
+                "Za ovdje, hvala.",
+                "Još jednu, molim.",
+                "Veliku ili malu?"
+              ],
+              "answer": "Za ponijeti.",
+              "explanation": "Za ponijeti is takeaway; za ovdje means you are staying."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "The barista asks 'Veliku ili malu?'. They want to know:",
+              "difficulty": 2,
+              "options": [
+                "what size",
+                "whether you are staying",
+                "whether you want milk",
+                "how you will pay"
+              ],
+              "answer": "what size",
+              "explanation": "Velika is large, mala is small, both in the accusative to match kavu."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Going na kavu in Croatia usually means:",
+              "difficulty": 2,
+              "options": [
+                "sitting and talking for a long time",
+                "a quick espresso standing up",
+                "coffee at home",
+                "a coffee to take away"
+              ],
+              "answer": "sitting and talking for a long time",
+              "explanation": "The coffee is the excuse. Nobody will hurry you out."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You want a second one. You say:",
+              "difficulty": 3,
+              "options": [
+                "Još jednu, molim.",
+                "Jedan čaj, molim.",
+                "Za ovdje, hvala.",
+                "Bilo je odlično."
+              ],
+              "answer": "Još jednu, molim.",
+              "explanation": "Još jednu is one more, agreeing with kavu even when the word is left out."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "In the kavana",
+          "intro": "Coffee in Zagreb. Read both parts aloud, then only the Me lines.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Dobar dan! Što želite?",
+              "en": "Good day! What would you like?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Jednu kavu, molim.",
+              "en": "One coffee, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Veliku ili malu?",
+              "en": "Large or small?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Veliku, molim. Za ovdje, hvala.",
+              "en": "Large, please. For here, thanks."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Odmah stiže.",
+              "en": "Coming right up."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Kavu s mlijekom, molim.",
+              "en": "A coffee with milk, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Naravno. Izvolite.",
+              "en": "Of course. Here you are."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Hvala. Bilo je odlično.",
+              "en": "Thank you. It was excellent."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "week": 1,
+      "phase": "Phase 1: A0 → A1",
+      "level": "A0",
+      "title": "Paying",
+      "objective": "You will pay by card or cash, ask for a receipt and understand the total.",
+      "paretoFocus": "Croatia has used the euro since 2023 and cards are accepted almost everywhere, but markets, ferries and small konobas are still cash, which is exactly where you will be.",
+      "resources": [
+        "Words tab (built-in daily flashcards)",
+        "Conversation practice (partner or tutor)"
+      ],
+      "drills": [
+        "Say both ways of paying out loud without looking.",
+        "Ask for the total and for a receipt, one after the other.",
+        "Practise the cash-only surprise: hear it, and answer in Croatian."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "How do you ask to pay by card?",
+          "What currency does Croatia use?",
+          "How do you ask for the total?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "At the till",
+          "intro": "The four phrases that finish every transaction.",
+          "items": [
+            {
+              "hr": "Mogu li platiti karticom?",
+              "en": "Can I pay by card?"
+            },
+            {
+              "hr": "Plaćam gotovinom.",
+              "en": "I am paying cash."
+            },
+            {
+              "hr": "Molim vas račun.",
+              "en": "The bill, please."
+            },
+            {
+              "hr": "Koliko je ukupno?",
+              "en": "How much is it altogether?"
+            },
+            {
+              "hr": "Imate li sitno?",
+              "en": "Do you have small change?"
+            },
+            {
+              "hr": "Zadržite ostatak.",
+              "en": "Keep the change."
+            },
+            {
+              "hr": "Možete li mi dati potvrdu?",
+              "en": "Could you give me a receipt?"
+            },
+            {
+              "hr": "Nemam sitno, oprostite.",
+              "en": "I have no small change, sorry."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Settling up",
+          "intro": "Pick what actually gets said.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Croatia's currency since 2023 is:",
+              "difficulty": 1,
+              "options": [
+                "the euro",
+                "the kuna",
+                "the dinar",
+                "the forint"
+              ],
+              "answer": "the euro",
+              "explanation": "The kuna was replaced on 1 January 2023. Old prices are still quoted in it sometimes, in the same way as old money anywhere."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You want to pay with your card. You ask:",
+              "difficulty": 1,
+              "options": [
+                "Mogu li platiti karticom?",
+                "Plaćam gotovinom.",
+                "Molim vas račun.",
+                "Imate li sitno?"
+              ],
+              "answer": "Mogu li platiti karticom?",
+              "explanation": "Karticom is the instrumental of kartica, the case used for by what means."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Where should you still expect cash only?",
+              "difficulty": 3,
+              "options": [
+                "markets, ferries and small konobas",
+                "supermarkets",
+                "hotels",
+                "petrol stations"
+              ],
+              "answer": "markets, ferries and small konobas",
+              "explanation": "Carry some notes. The places worth going to are the ones least likely to take a card."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'Zadržite ostatak' tells the waiter:",
+              "difficulty": 3,
+              "options": [
+                "keep the change",
+                "bring the bill",
+                "I will pay cash",
+                "I need a receipt"
+              ],
+              "answer": "keep the change",
+              "explanation": "Tipping is modest here, and rounding up is normal rather than a percentage."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "The bill",
+          "intro": "Paying at the end of a meal. Read it twice.",
+          "lines": [
+            {
+              "speaker": "Me",
+              "hr": "Molim vas račun.",
+              "en": "The bill, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Odmah. Bilo je sve u redu?",
+              "en": "Right away. Was everything all right?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Da, hvala. Koliko je ukupno?",
+              "en": "Yes, thank you. How much is it altogether?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Dvadeset i dva eura.",
+              "en": "Twenty-two euros."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Mogu li platiti karticom?",
+              "en": "Can I pay by card?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Nažalost, samo gotovina.",
+              "en": "Unfortunately, cash only."
+            },
+            {
+              "speaker": "Me",
+              "hr": "U redu. Plaćam gotovinom.",
+              "en": "All right. I am paying cash."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Hvala vam lijepa!",
+              "en": "Thank you very much!"
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "week": 2,
+      "phase": "Phase 1: A0 → A1",
+      "level": "A0",
+      "title": "Asking the way",
+      "objective": "You will ask where something is and understand the four answers you will get back.",
+      "paretoFocus": "Old towns here are stone mazes with no signage, and the answer is always one of four words. Understanding the reply matters more than asking well.",
+      "resources": [
+        "Words tab (built-in daily flashcards)",
+        "Conversation practice (partner or tutor)"
+      ],
+      "drills": [
+        "Ask where three real places are, out loud.",
+        "Say the three directions from memory: left, right, straight.",
+        "Give somebody directions to your own door in Croatian."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "How do you ask where the station is?",
+          "What does ravno mean?",
+          "How would a woman say she is lost?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Finding things",
+          "intro": "Ask, then understand. The second half is what phrasebooks skip.",
+          "items": [
+            {
+              "hr": "Gdje je kolodvor?",
+              "en": "Where is the station?",
+              "note": "Swap the last word for anywhere: plaža, ljekarna, tržnica."
+            },
+            {
+              "hr": "Skrenite lijevo.",
+              "en": "Turn left."
+            },
+            {
+              "hr": "Skrenite desno.",
+              "en": "Turn right."
+            },
+            {
+              "hr": "Samo ravno.",
+              "en": "Go straight on."
+            },
+            {
+              "hr": "Je li daleko?",
+              "en": "Is it far?"
+            },
+            {
+              "hr": "Pet minuta pješice.",
+              "en": "Five minutes on foot."
+            },
+            {
+              "hr": "Izgubio sam se.",
+              "en": "I am lost.",
+              "note": "A woman says izgubila sam se."
+            },
+            {
+              "hr": "Možete li mi pokazati na karti?",
+              "en": "Could you show me on the map?"
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Following the answer",
+          "intro": "Match what you hear to what you do.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "Somebody says 'Samo ravno'. You:",
+              "difficulty": 1,
+              "options": [
+                "keep going straight",
+                "turn left",
+                "turn right",
+                "go back"
+              ],
+              "answer": "keep going straight",
+              "explanation": "Ravno is straight ahead."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You want to know whether to walk. You ask:",
+              "difficulty": 2,
+              "options": [
+                "Je li daleko?",
+                "Gdje je kolodvor?",
+                "Skrenite lijevo.",
+                "Izgubio sam se."
+              ],
+              "answer": "Je li daleko?",
+              "explanation": "The answer usually comes back as minutes rather than distance."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "A woman says she is lost:",
+              "difficulty": 3,
+              "options": [
+                "Izgubila sam se.",
+                "Izgubio sam se.",
+                "Je li daleko?",
+                "Samo ravno."
+              ],
+              "answer": "Izgubila sam se.",
+              "explanation": "Past forms agree with the speaker, so a woman says izgubila."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'Pet minuta pješice' means:",
+              "difficulty": 2,
+              "options": [
+                "five minutes on foot",
+                "five stops away",
+                "five euros by taxi",
+                "the fifth street"
+              ],
+              "answer": "five minutes on foot",
+              "explanation": "Pješice is on foot."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "To the station",
+          "intro": "Asking a passer-by. Read both parts, then only Me.",
+          "lines": [
+            {
+              "speaker": "Me",
+              "hr": "Oprostite, gdje je kolodvor?",
+              "en": "Excuse me, where is the station?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Samo ravno, pa skrenite desno.",
+              "en": "Go straight on, then turn right."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Je li daleko?",
+              "en": "Is it far?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Nije. Pet minuta pješice.",
+              "en": "It is not. Five minutes on foot."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Možete li mi pokazati na karti?",
+              "en": "Could you show me on the map?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Naravno. Evo, ovdje.",
+              "en": "Of course. Here, right here."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Hvala vam. Izgubio sam se.",
+              "en": "Thank you. I was lost."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Nema problema. Sretno!",
+              "en": "No problem. Good luck!"
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "week": 2,
+      "phase": "Phase 1: A0 → A1",
+      "level": "A0",
+      "title": "Buses, trams and ferries",
+      "objective": "You will buy a ticket, check you are on the right service and understand the departure time.",
+      "paretoFocus": "The Croatian coast runs on ferries and the cities on trams, and neither waits. Three phrases keep you moving.",
+      "resources": [
+        "Words tab (built-in daily flashcards)",
+        "Conversation practice (partner or tutor)"
+      ],
+      "drills": [
+        "Buy a ticket out loud to a place you actually want to visit.",
+        "Ask the departure time and the journey length, one after the other.",
+        "Say the difference between kolodvor and stanica without looking."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "How do you ask for a return ticket?",
+          "What is a trajekt?",
+          "How do you check a tram goes where you want?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Getting around",
+          "intro": "Buying and boarding, on land and water.",
+          "items": [
+            {
+              "hr": "Jednu kartu za Split, molim.",
+              "en": "One ticket to Split, please."
+            },
+            {
+              "hr": "Povratnu kartu, molim.",
+              "en": "A return ticket, please.",
+              "note": "U jednom smjeru is one way."
+            },
+            {
+              "hr": "Kada polazi trajekt?",
+              "en": "When does the ferry leave?",
+              "note": "Trajekt is the word you will need most on the coast."
+            },
+            {
+              "hr": "Ide li ovaj tramvaj do centra?",
+              "en": "Does this tram go to the centre?"
+            },
+            {
+              "hr": "Gdje je stanica?",
+              "en": "Where is the stop?"
+            },
+            {
+              "hr": "Izlazim na sljedećoj.",
+              "en": "I am getting off at the next one."
+            },
+            {
+              "hr": "Jesam li propustio trajekt?",
+              "en": "Have I missed the ferry?"
+            },
+            {
+              "hr": "Koliko traje put?",
+              "en": "How long does the journey take?"
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "At the window",
+          "intro": "One phrase per situation.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "You want to come back too. You ask for:",
+              "difficulty": 2,
+              "options": [
+                "Povratnu kartu, molim.",
+                "Jednu kartu za Split, molim.",
+                "Gdje je stanica?",
+                "Koliko traje put?"
+              ],
+              "answer": "Povratnu kartu, molim.",
+              "explanation": "Povratna is a return. U jednom smjeru is one way."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Trajekt is:",
+              "difficulty": 1,
+              "options": [
+                "a ferry",
+                "a tram",
+                "a bus",
+                "a taxi"
+              ],
+              "answer": "a ferry",
+              "explanation": "The islands are reached by trajekt, and in summer they fill up early."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You are unsure the tram is right. You ask:",
+              "difficulty": 2,
+              "options": [
+                "Ide li ovaj tramvaj do centra?",
+                "Kada polazi trajekt?",
+                "Izlazim na sljedećoj.",
+                "Povratnu kartu, molim."
+              ],
+              "answer": "Ide li ovaj tramvaj do centra?",
+              "explanation": "Li turns a statement into a yes or no question, right after the verb."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "'Izlazim na sljedećoj' tells people you:",
+              "difficulty": 3,
+              "options": [
+                "are getting off at the next stop",
+                "have lost your ticket",
+                "want a return",
+                "are going to the last stop"
+              ],
+              "answer": "are getting off at the next stop",
+              "explanation": "Useful on a full tram where the door is a long way off."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Buying a ticket",
+          "intro": "At the ferry terminal. Read both parts, then only Me.",
+          "lines": [
+            {
+              "speaker": "Me",
+              "hr": "Dobar dan. Trebam kartu za Split.",
+              "en": "Good day. One ticket to Split, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "U jednom smjeru?",
+              "en": "One way?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Povratnu kartu, molim.",
+              "en": "A return ticket, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Trideset i pet eura.",
+              "en": "Thirty-five euros."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Kada polazi trajekt?",
+              "en": "When does the ferry leave?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "U šesnaest sati, s trećeg veza.",
+              "en": "At sixteen hundred, from berth three."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Koliko traje put?",
+              "en": "How long does the journey take?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Oko dva sata.",
+              "en": "About two hours."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "week": 2,
+      "phase": "Phase 1: A0 → A1",
+      "level": "A0",
+      "title": "In the konoba",
+      "objective": "You will get a table, order, say what you do not eat and finish well.",
+      "paretoFocus": "A konoba is where the food actually is, and menus there are often only in Croatian. Five phrases open the whole meal.",
+      "resources": [
+        "Words tab (built-in daily flashcards)",
+        "Conversation practice (partner or tutor)"
+      ],
+      "drills": [
+        "Order a whole meal out loud, from the door to the bill.",
+        "Say precisely one thing you never eat, in one Croatian sentence.",
+        "Ask for a recommendation and accept it, in Croatian."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "What is a konoba?",
+          "How do you ask for a recommendation?",
+          "How do you say you do not eat meat?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "At the table",
+          "intro": "Door to bill, in eight phrases.",
+          "items": [
+            {
+              "hr": "Stol za dvoje, molim.",
+              "en": "A table for two, please."
+            },
+            {
+              "hr": "Jelovnik, molim.",
+              "en": "The menu, please."
+            },
+            {
+              "hr": "Što preporučujete?",
+              "en": "What do you recommend?",
+              "note": "The single most useful question in a konoba. The answer is usually right."
+            },
+            {
+              "hr": "Ja sam vegetarijanac.",
+              "en": "I am vegetarian.",
+              "note": "A woman says ja sam vegetarijanka."
+            },
+            {
+              "hr": "Ne jedem meso.",
+              "en": "I do not eat meat."
+            },
+            {
+              "hr": "Još vode, molim.",
+              "en": "More water, please."
+            },
+            {
+              "hr": "Bilo je jako ukusno.",
+              "en": "It was very tasty."
+            },
+            {
+              "hr": "Možemo li platiti zajedno?",
+              "en": "Can we pay together?"
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "Ordering well",
+          "intro": "The phrase that avoids the misunderstanding.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A konoba is:",
+              "difficulty": 1,
+              "options": [
+                "a traditional tavern",
+                "a fast-food place",
+                "a nightclub",
+                "a bakery"
+              ],
+              "answer": "a traditional tavern",
+              "explanation": "Family run, usually small, and where the cooking is worth the trip."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You eat fish but not meat. You say:",
+              "difficulty": 2,
+              "options": [
+                "Ne jedem meso.",
+                "Ja sam vegetarijanac.",
+                "Bilo je jako ukusno.",
+                "Što preporučujete?"
+              ],
+              "answer": "Ne jedem meso.",
+              "explanation": "Saying vegetarijanac would rule out the fish you actually want."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which question most reliably gets you the best dish?",
+              "difficulty": 3,
+              "options": [
+                "Što preporučujete?",
+                "Jelovnik, molim.",
+                "Još vode, molim.",
+                "Stol za dvoje, molim."
+              ],
+              "answer": "Što preporučujete?",
+              "explanation": "In a konoba the day's catch often is not on the printed menu at all."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You want one bill for the table. You ask:",
+              "difficulty": 3,
+              "options": [
+                "Možemo li platiti zajedno?",
+                "Još vode, molim.",
+                "Jelovnik, molim.",
+                "Ne jedem meso."
+              ],
+              "answer": "Možemo li platiti zajedno?",
+              "explanation": "Zajedno is together. Splitting is posebno, and small places would rather not."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Dinner",
+          "intro": "An evening in a konoba. Read it twice.",
+          "lines": [
+            {
+              "speaker": "Me",
+              "hr": "Dobra večer. Stol za dvoje, molim.",
+              "en": "Good evening. A table for two, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Izvolite, ovdje kraj prozora.",
+              "en": "Here you are, here by the window."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Jelovnik, molim.",
+              "en": "The menu, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Evo. Danas imamo svježu ribu.",
+              "en": "Here. Today we have fresh fish."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Što preporučujete?",
+              "en": "What do you recommend?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Lignje na žaru. Vrlo su dobre.",
+              "en": "Grilled squid. They are very good."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Ne jedem meso, pa to je savršeno.",
+              "en": "I do not eat meat, so that is perfect."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Odličan izbor.",
+              "en": "Excellent choice."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "week": 2,
+      "phase": "Phase 1: A0 → A1",
+      "level": "A0",
+      "title": "When you do not understand",
+      "objective": "You will keep a conversation going when you have lost it, which decides whether you improve or give up.",
+      "paretoFocus": "Croatians will switch to English the moment you hesitate. These six phrases are how you keep them speaking Croatian to you.",
+      "resources": [
+        "Words tab (built-in daily flashcards)",
+        "Conversation practice (partner or tutor)"
+      ],
+      "drills": [
+        "Say all six repair phrases without looking.",
+        "Point at five things and ask how each is said in Croatian.",
+        "Use još učim in a real conversation today."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "How do you ask somebody to slow down?",
+          "How do you ask what a word means?",
+          "Which sentence keeps people speaking Croatian to you?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "Buying time",
+          "intro": "Repair phrases. Worth more than the next hundred words of vocabulary.",
+          "items": [
+            {
+              "hr": "Ne razumijem vas.",
+              "en": "I do not understand you."
+            },
+            {
+              "hr": "Ponovite, molim vas.",
+              "en": "Could you repeat that?"
+            },
+            {
+              "hr": "Molim vas, sporije.",
+              "en": "More slowly, please."
+            },
+            {
+              "hr": "Kako se zove ovo na hrvatskom?",
+              "en": "How do you say that in Croatian?"
+            },
+            {
+              "hr": "Što znači ta riječ?",
+              "en": "What does that word mean?"
+            },
+            {
+              "hr": "Napišite mi to, molim vas.",
+              "en": "Could you write that down?"
+            },
+            {
+              "hr": "Razumijem malo.",
+              "en": "I understand a little."
+            },
+            {
+              "hr": "Još učim.",
+              "en": "I am still learning.",
+              "note": "This one sentence usually makes people slow down instead of switching."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "When you get stuck",
+          "intro": "Pick the phrase that restarts the conversation.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "They spoke too fast. You say:",
+              "difficulty": 1,
+              "options": [
+                "Molim vas, sporije.",
+                "Što znači ta riječ?",
+                "Još učim.",
+                "Napišite mi to, molim vas."
+              ],
+              "answer": "Molim vas, sporije.",
+              "explanation": "It asks for pace, not for a translation, so the conversation stays in Croatian."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You point at something you cannot name. You ask:",
+              "difficulty": 2,
+              "options": [
+                "Kako se zove ovo na hrvatskom?",
+                "Ne razumijem vas.",
+                "Razumijem malo.",
+                "Ponovite, molim vas."
+              ],
+              "answer": "Kako se zove ovo na hrvatskom?",
+              "explanation": "It turns anything in front of you into a free vocabulary lesson."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Which sentence most reliably keeps somebody speaking Croatian to you?",
+              "difficulty": 3,
+              "options": [
+                "Još učim.",
+                "Ne razumijem vas.",
+                "Razumijem malo.",
+                "Ponovite, molim vas."
+              ],
+              "answer": "Još učim.",
+              "explanation": "It explains the pauses and invites patience rather than a switch to English."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "Why does asking to slow down beat asking for English?",
+              "difficulty": 4,
+              "options": [
+                "you keep the practice and they keep the patience",
+                "it is more grammatically correct",
+                "English is rarely spoken here",
+                "it is considered rude to ask for English"
+              ],
+              "answer": "you keep the practice and they keep the patience",
+              "explanation": "Most people here speak good English and will use it the moment you look stuck."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "Lost in the answer",
+          "intro": "Somebody answers faster than you can follow. Read it twice.",
+          "lines": [
+            {
+              "speaker": "Partner",
+              "hr": "Autobus vam kreće s drugog perona, ali danas kasni.",
+              "en": "Your bus leaves from platform two, but today it is late."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Oprostite. Ne razumijem vas.",
+              "en": "Sorry. I do not understand you."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Drugi peron. Autobus kasni.",
+              "en": "Platform two. The bus is late."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Molim vas, sporije.",
+              "en": "More slowly, please."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Dru-gi pe-ron. Ka-sni.",
+              "en": "Plat-form two. It is late."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Razumijem malo. Napišite mi to, molim vas.",
+              "en": "I understand a little. Could you write that down?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Evo, ovdje.",
+              "en": "Here, right here."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Hvala. Još učim.",
+              "en": "Thank you. I am still learning."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "week": 3,
+      "phase": "Phase 1: A0 → A1",
+      "level": "A0",
+      "title": "Getting help",
+      "objective": "You will ask for help, find a pharmacy and say what is wrong.",
+      "paretoFocus": "The phrases you hope never to need, which is why they have to be automatic rather than looked up on a phone you may not be holding.",
+      "resources": [
+        "Words tab (built-in daily flashcards)",
+        "Conversation practice (partner or tutor)"
+      ],
+      "drills": [
+        "Say the emergency number out loud in Croatian.",
+        "Say all four help phrases without looking.",
+        "Find your nearest ljekarna and ask the way to it in Croatian."
+      ],
+      "reviewBlock": {
+        "minutes": 15,
+        "items": [
+          "What number do you call in an emergency?",
+          "What is a ljekarna?",
+          "How do you say you do not feel well?"
+        ]
+      },
+      "activities": [
+        {
+          "type": "LEARN",
+          "title": "If something goes wrong",
+          "intro": "Say each one out loud now, so it is there later.",
+          "items": [
+            {
+              "hr": "Trebam pomoć.",
+              "en": "I need help."
+            },
+            {
+              "hr": "Gdje je ljekarna?",
+              "en": "Where is the pharmacy?"
+            },
+            {
+              "hr": "Trebam liječnika.",
+              "en": "I need a doctor."
+            },
+            {
+              "hr": "Zovite hitnu pomoć.",
+              "en": "Call an ambulance."
+            },
+            {
+              "hr": "Nije mi dobro.",
+              "en": "I do not feel well."
+            },
+            {
+              "hr": "Izgubio sam putovnicu.",
+              "en": "I have lost my passport.",
+              "note": "A woman says izgubila sam putovnicu."
+            },
+            {
+              "hr": "Nazovite sto dvanaest.",
+              "en": "Call one one two.",
+              "note": "112 reaches every emergency service across the European Union."
+            },
+            {
+              "hr": "Gdje je toalet?",
+              "en": "Where is the toilet?"
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "EXERCISE",
+          "title": "In an emergency",
+          "intro": "One phrase per emergency.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "The emergency number in Croatia is:",
+              "difficulty": 1,
+              "options": [
+                "112",
+                "911",
+                "999",
+                "94"
+              ],
+              "answer": "112",
+              "explanation": "112 works across the European Union and reaches all three services."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "You feel unwell in a shop. You say:",
+              "difficulty": 2,
+              "options": [
+                "Nije mi dobro.",
+                "Trebam pomoć.",
+                "Gdje je toalet?",
+                "Izgubio sam putovnicu."
+              ],
+              "answer": "Nije mi dobro.",
+              "explanation": "It is the ordinary way to say it and will get you a chair and water."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "A ljekarna is:",
+              "difficulty": 1,
+              "options": [
+                "a pharmacy",
+                "a hospital",
+                "a doctor's surgery",
+                "a police station"
+              ],
+              "answer": "a pharmacy",
+              "explanation": "The pharmacist is the usual first stop for anything minor, as across Europe."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "A woman says she has lost her passport:",
+              "difficulty": 3,
+              "options": [
+                "Izgubila sam putovnicu.",
+                "Izgubio sam putovnicu.",
+                "Trebam liječnika.",
+                "Zovite hitnu pomoć."
+              ],
+              "answer": "Izgubila sam putovnicu.",
+              "explanation": "The past form agrees with the speaker, so a woman says izgubila."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        },
+        {
+          "type": "DIALOGUE",
+          "title": "At the pharmacy",
+          "intro": "You are unwell and go in. Read both parts, then only Me.",
+          "lines": [
+            {
+              "speaker": "Me",
+              "hr": "Dobar dan. Nije mi dobro.",
+              "en": "Good day. I do not feel well."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Što vam je?",
+              "en": "What is wrong?"
+            },
+            {
+              "speaker": "Me",
+              "hr": "Trebam pomoć.",
+              "en": "I need help."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Sjednite ovdje, molim.",
+              "en": "Sit down here, please."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Trebam liječnika.",
+              "en": "I need a doctor."
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Ordinacija je preko puta.",
+              "en": "The surgery is across the road."
+            },
+            {
+              "speaker": "Me",
+              "hr": "Hvala. Gdje je toalet?",
+              "en": "Thank you. Where is the toilet?"
+            },
+            {
+              "speaker": "Partner",
+              "hr": "Straga, lijevo.",
+              "en": "At the back, on the left."
+            }
+          ],
+          "sources": [
+            "croaticum-syllabus",
+            "cefr-grid"
+          ]
+        }
+      ]
+    }
+  ]
+}
