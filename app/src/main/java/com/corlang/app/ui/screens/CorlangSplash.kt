@@ -116,19 +116,29 @@ private fun preloadSteps(container: AppContainer, lang: String): List<suspend ()
 )
 
 /**
- * The brand promise, "language at the core", rotating through the languages Corlang speaks
- * (and intends to speak) - one per app launch, Croatian first and canonical. A quiet statement
- * that this is a multi-language platform. Curated human phrasings, never generated.
+ * The brand promise in English. Always in the rotation and not a course tagline: English is the
+ * language the app speaks TO the learner, so it promises nothing about what they can study.
  */
-private val TAGLINES = listOf(
-    "Jezik u srži",            // Croatian (canonical)
-    "Language at the core",    // English
-    "Au cœur de la langue",    // French
-    "No coração da língua",    // Portuguese (European)
-    "Sprache im Kern",         // German
-    "El idioma, en su esencia",// Spanish
-    "La lingua nel cuore",     // Italian
-)
+private const val ENGLISH_TAGLINE = "Language at the core"
+
+/**
+ * The launch subtitle, one per app launch: the brand promise in each language Corlang teaches,
+ * plus [ENGLISH_TAGLINE]. Read from `meta.tagline` over `availableLanguages`, which is
+ * `content/_index.json` - so it names ONLY courses a learner can actually start today, and a
+ * language added to that manifest joins the rotation with no code change.
+ *
+ * It was a hardcoded Kotlin list until v0.53.4, and so it advertised French, German, Spanish
+ * and Italian for months while all four were hidden: the one screen every learner sees was
+ * promising six courses against two that existed. Order follows the manifest, which keeps
+ * Croatian first and canonical.
+ *
+ * Falls back to English alone if a course carries no tagline, so a half-wired language shows
+ * one honest line rather than a blank subtitle. `ContentValidationTest` is what stops that
+ * fallback from ever shipping.
+ */
+private fun taglines(container: AppContainer): List<String> =
+    (container.content.allMeta().mapNotNull { it.tagline?.takeIf(String::isNotBlank) } +
+        ENGLISH_TAGLINE)
 
 @Composable
 fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
@@ -163,13 +173,18 @@ fun CorlangSplash(container: AppContainer, onReady: () -> Unit) {
         }
     }
 
-    // Tagline of the launch: Croatian on first open, then one language per launch.
-    var tagline by remember { mutableStateOf(TAGLINES.first()) }
+    // Tagline of the launch: Croatian on first open, then one language per launch. Seeded with
+    // English and replaced below, before the subtitle is anywhere near visible - it only fades
+    // in at 82% of the resolve animation, seconds after this composes.
+    var tagline by remember { mutableStateOf(ENGLISH_TAGLINE) }
 
     // Real preload -> 100% -> resolve the wordmark -> reveal the app.
     LaunchedEffect(Unit) {
         val launches = container.languagePrefs.launchCount.first()
-        tagline = TAGLINES[launches % TAGLINES.size]
+        // Off the main thread: this parses every live meta.json, and the first frame of the
+        // launch screen is the one frame that must not wait on the asset parser.
+        val lines = withContext(Dispatchers.Default) { taglines(container) }
+        tagline = lines[launches % lines.size]
         container.languagePrefs.bumpLaunchCount()
 
         val lang = container.languagePrefs.selectedLanguage.first()

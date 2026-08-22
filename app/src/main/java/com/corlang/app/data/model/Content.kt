@@ -25,6 +25,15 @@ data class LanguageMeta(
     val reminderTitleNamed: String? = null, // addressed form, with the {name} placeholder
     val reminderProverb: String? = null,    // little-by-little proverb line
     /**
+     * The brand promise in THIS language, for the launch screen's rotating subtitle
+     * ("Jezik u srzi", "No coracao da lingua"). It lives here rather than in a Kotlin list
+     * because the splash may only ever name languages a learner can actually start: the list
+     * used to be hardcoded and advertised French, German, Spanish and Italian for months
+     * before any of them was reachable. Sourced from `_index.json`, so a hidden course cannot
+     * leak into it and unhiding one needs no code change.
+     */
+    val tagline: String? = null,
+    /**
      * How many lessons are playable without a purchase, counted from lesson 1.
      *
      * Per-language because courses do not share a shape: Croatian's A0 is 16 lessons, so 16
