@@ -251,31 +251,31 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   margin:0 0 3px;line-height:1.2}
 .lang .native{color:var(--muted);font-size:14px;display:block;margin:0 0 6px}
 .lang .meta{color:var(--muted);font-size:14px;margin:0;line-height:1.5}
-.langs-note{margin:22px 0 0;color:var(--muted);font-size:15px;line-height:1.6;max-width:64ch}
 
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
    correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,
    which is the whole accordion behaviour with no script at all.
 
-   The marker is a plus that ROTATES into a cross. It began as a plus swapped for a minus via
-   content:"\\2212", which shipped to the page as the digit 2: that escape sat inside an
-   ordinary Python string, where \\221 is an OCTAL escape, so the CSS received one control
-   character and a "2". Rotating needs no escape, cannot be mangled by whatever generates this
-   file, and animates, which is what an opening panel should look like. */
+   The marker is a chevron DRAWN with two borders, pointing down when closed and rotating to
+   point up when open. It was briefly a plus swapped for a minus through content:"\\2212",
+   which reached the page as the digit 2: that escape sat inside an ordinary Python string,
+   where \\221 is octal, so the CSS received a control character and a "2". Drawing it leaves
+   nothing for a generator to mangle, and no font has to have the glyph. */
 .faq{margin:30px 0 0;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
 .faq details:last-child{border-bottom:0}
 .faq summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;position:relative;
   font-family:var(--display);font-weight:600;font-size:17.5px;letter-spacing:-.01em}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:4px;top:50%;
-  transform:translateY(-50%) rotate(0deg);
-  font-size:21px;font-weight:400;color:var(--muted);line-height:1;
-  transition:transform .22s cubic-bezier(.16,.7,.3,1),color .22s ease}
-.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg);color:var(--blue)}
+.faq summary::after{content:"";position:absolute;right:7px;top:50%;width:8px;height:8px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);
+  transition:transform .24s cubic-bezier(.16,.7,.3,1),border-color .24s ease}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg);
+  border-color:var(--blue)}
 .faq summary:hover{color:var(--blue)}
-.faq summary:hover::after{color:var(--blue)}
+.faq summary:hover::after{border-color:var(--blue)}
 .faq p{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.62;max-width:70ch}
 
 /* ---- invite dialog ----
@@ -708,7 +708,6 @@ def live_languages():
             'lessons': len(days),
             'first': levels[0],
             'last': levels[-1],
-            'free': meta.get('freeLessons', 0),
         })
     return out
 
@@ -987,20 +986,15 @@ def build():
   <section class="section">
     <div class="section-head">
       <h2>Available now</h2>
-      <p>Two complete courses. More are written and waiting their turn.</p>
     </div>
     <div class="langs">
 {{LANG_CARDS}}
     </div>
-    <p class="langs-note rise">French, German, Italian and Spanish are already written. They go
-    live one at a time, once the course ahead of them has been proven by real learners rather
-    than by us.</p>
   </section>
 
   <section class="section">
     <div class="section-head">
       <h2>Questions</h2>
-      <p>The ones people actually ask.</p>
     </div>
     <div class="faq">
       <details name="faq">
@@ -1065,8 +1059,7 @@ def build():
         '<img src="/flags/{code}.svg" width="54" height="36" alt="" '
         'loading="lazy" decoding="async">'
         '<div><h3>{name}</h3><span class="native">{native}</span>'
-        '<p class="meta">{lessons} lessons, {first} to {last}<br>'
-        'First {free} free</p></div></div>'.format(**L)
+        '<p class="meta">{lessons} lessons, {first} to {last}</p></div></div>'.format(**L)
         for L in live_languages())
     landing = landing.replace('{LANG_CARDS}', lang_cards)
 
