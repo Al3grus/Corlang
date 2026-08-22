@@ -153,6 +153,10 @@ fun TalkScreen(container: AppContainer, lang: String) {
     var error by convo::error
     val listState = rememberLazyListState()
 
+    // The daily allowance, straight from the worker that enforces it.
+    val quota by container.ai.quota.collectAsState()
+    var limitReached by rememberSaveable { mutableStateOf(false) }
+
     // A conversation in progress locks the top-bar language picker — the transcript is
     // in-memory only and a language switch would wipe it. An empty screen doesn't lock.
     if (messages.isNotEmpty() || sending) {
@@ -165,6 +169,8 @@ fun TalkScreen(container: AppContainer, lang: String) {
 
     fun send(text: String) {
         if (text.isBlank() || sending) return
+        // Nothing left today: say so instead of spending a round trip to be refused.
+        if (quota?.remaining == 0) { limitReached = true; return }
         // Put the keyboard away: the message is gone, so the composer has nothing left to type
         // into, and leaving it up hides the reply the learner is waiting for.
         keyboard?.hide()
@@ -263,7 +269,39 @@ fun TalkScreen(container: AppContainer, lang: String) {
 
     // imePadding: with edge-to-edge on, the keyboard would otherwise cover the composer row
     // entirely — the user typed blind on the one screen where typing is the whole point.
+    if (limitReached) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { limitReached = false },
+            title = { Text("That is today's tutor time") },
+            text = {
+                Text(
+                    "You have used all ${quota?.limit ?: 0} tutor messages for today. They come " +
+                        "back tomorrow. Everything else in the app keeps working in the meantime."
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = { limitReached = false }) {
+                    Text("Got it")
+                }
+            }
+        )
+    }
+
     Column(modifier = Modifier.fillMaxSize().imePadding()) {
+        // Deliberately plain text rather than a chip or a progress bar: it is a fact the learner
+        // may want, not a scoreboard, and a conversation is the wrong place to put a countdown
+        // in front of somebody. It only raises its voice at the end, when it is actionable.
+        quota?.let { q ->
+            Text(
+                if (q.remaining == 0) "No tutor messages left today"
+                else "${q.remaining} of ${q.limit} messages left today",
+                style = MaterialTheme.typography.labelSmall,
+                color = if (q.remaining == 0) MaterialTheme.colorScheme.error
+                        else MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = androidx.compose.ui.text.style.TextAlign.End,
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp)
+            )
+        }
         // The opening screen: nothing has been said yet, so this IS the screen until the learner
         // picks a starter or types. It lives OUTSIDE the LazyColumn on purpose — as a list item
         // it hung off the top edge, leaving the choices stranded under the title bar with the
@@ -570,7 +608,7 @@ private const val TUTOR_CONTEXT_WORDS = 45
  * in English, naming the language they are meant to answer in. OFF, it stays in-language.
  */
 private fun composerHint(lang: String, languageName: String, englishHelp: Boolean): String =
-    if (englishHelp) "Write something in $languageName…" else inLanguageHint(lang)
+    if (englishHelp) "Chat with Tutor…" else inLanguageHint(lang)
 
 /** Per-language composer hint ("write in <language>" in that language). */
 private fun inLanguageHint(lang: String): String = when (lang) {
@@ -580,7 +618,7 @@ private fun inLanguageHint(lang: String): String = when (lang) {
     "de" -> "Schreib auf Deutsch…"
     "it" -> "Scrivi in italiano…"
     "es" -> "Escribe en español…"
-    else -> "Write in your learning language…"
+    else -> "Chat with Tutor…"
 }
 
 /** Removes "(English gloss)" parentheticals so the Croatian voice doesn't read English aloud. */
