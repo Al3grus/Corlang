@@ -199,6 +199,21 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   letter-spacing:-.01em}
 .claim p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 
+/* ---- the method ----
+   A hairline list rather than another card grid: the page already has a numbered row (the loop)
+   and a three-across block (the claims), and a third variation on "boxes in a row" would read as
+   filler. Term on the left, argument on the right, which is the shape of the thing being said.
+
+   The left column is allowed to shrink but never past the point where a two-word heading wraps
+   awkwardly, hence minmax rather than a fraction. */
+.method{margin:32px 0 0;border-top:1px solid var(--line)}
+.method .row{display:grid;grid-template-columns:minmax(190px,.85fr) 2fr;gap:14px 30px;
+  padding:24px 0;border-bottom:1px solid var(--line)}
+.method h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;
+  margin:0;line-height:1.25}
+.method p{margin:0;color:var(--muted);font-size:16px;line-height:1.62}
+.lede + .lede{margin-top:15px}
+
 /* ---- invite dialog ----
    A native <dialog>: it traps focus, closes on Escape and returns focus on its own, which a div
    pretending to be a modal does not. */
@@ -267,6 +282,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .loop{grid-template-columns:1fr 1fr;gap:30px 0}
   .step:nth-child(2)::after{display:none}
   .claims{grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .method .row{grid-template-columns:1fr;gap:7px;padding:20px 0}
   .hero{padding-top:48px}
   .section{padding:40px 0 0;margin-top:34px}
 }
@@ -292,7 +308,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
    Under prefers-reduced-motion NOTHING here applies. Every resting state lives inside this
    query, so a visitor with it on, or with JS off, gets the finished page rather than a blank one. */
 @media (prefers-reduced-motion:no-preference){
-  .rise,.loop .step,.claims .claim,.tick,.gap,.origin{
+  .rise,.loop .step,.claims .claim,.method .row,.tick,.gap,.origin{
     transition:opacity .72s cubic-bezier(.16,.7,.3,1),transform .72s cubic-bezier(.16,.7,.3,1)}
 
   .rise{opacity:0;transform:translateY(10px)}
@@ -301,10 +317,12 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 
   /* Children rest and arrive on the SAME property pair as their container, differing only in
      delay, so a group settles as one movement instead of four. */
-  .loop .step,.claims .claim{opacity:0;transform:translateY(10px)}
-  .loop.in .step,.claims.in .claim{opacity:1;transform:none}
-  .loop .step:nth-child(2),.claims .claim:nth-child(2){transition-delay:.08s}
-  .loop .step:nth-child(3),.claims .claim:nth-child(3){transition-delay:.16s}
+  .loop .step,.claims .claim,.method .row{opacity:0;transform:translateY(10px)}
+  .loop.in .step,.claims.in .claim,.method.in .row{opacity:1;transform:none}
+  .loop .step:nth-child(2),.claims .claim:nth-child(2),
+  .method .row:nth-child(2){transition-delay:.08s}
+  .loop .step:nth-child(3),.claims .claim:nth-child(3),
+  .method .row:nth-child(3){transition-delay:.16s}
   .loop .step:nth-child(4){transition-delay:.24s}
 
   /* The arrows are ::after on the steps, so they inherit the step's opacity and need no rule of
@@ -449,7 +467,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       io.unobserve(e.target);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.loop, .track, .claims, .shots, .section .rise')
+  document.querySelectorAll('.loop, .track, .claims, .method, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
 })();
 

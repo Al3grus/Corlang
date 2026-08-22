@@ -210,6 +210,21 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   letter-spacing:-.01em}
 .claim p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 
+/* ---- the method ----
+   A hairline list rather than another card grid: the page already has a numbered row (the loop)
+   and a three-across block (the claims), and a third variation on "boxes in a row" would read as
+   filler. Term on the left, argument on the right, which is the shape of the thing being said.
+
+   The left column is allowed to shrink but never past the point where a two-word heading wraps
+   awkwardly, hence minmax rather than a fraction. */
+.method{margin:32px 0 0;border-top:1px solid var(--line)}
+.method .row{display:grid;grid-template-columns:minmax(190px,.85fr) 2fr;gap:14px 30px;
+  padding:24px 0;border-bottom:1px solid var(--line)}
+.method h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;
+  margin:0;line-height:1.25}
+.method p{margin:0;color:var(--muted);font-size:16px;line-height:1.62}
+.lede + .lede{margin-top:15px}
+
 /* ---- invite dialog ----
    A native <dialog>: it traps focus, closes on Escape and returns focus on its own, which a div
    pretending to be a modal does not. */
@@ -278,6 +293,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .loop{grid-template-columns:1fr 1fr;gap:30px 0}
   .step:nth-child(2)::after{display:none}
   .claims{grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .method .row{grid-template-columns:1fr;gap:7px;padding:20px 0}
   .hero{padding-top:48px}
   .section{padding:40px 0 0;margin-top:34px}
 }
@@ -303,7 +319,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
    Under prefers-reduced-motion NOTHING here applies. Every resting state lives inside this
    query, so a visitor with it on, or with JS off, gets the finished page rather than a blank one. */
 @media (prefers-reduced-motion:no-preference){
-  .rise,.loop .step,.claims .claim,.tick,.gap,.origin{
+  .rise,.loop .step,.claims .claim,.method .row,.tick,.gap,.origin{
     transition:opacity .72s cubic-bezier(.16,.7,.3,1),transform .72s cubic-bezier(.16,.7,.3,1)}
 
   .rise{opacity:0;transform:translateY(10px)}
@@ -312,10 +328,12 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 
   /* Children rest and arrive on the SAME property pair as their container, differing only in
      delay, so a group settles as one movement instead of four. */
-  .loop .step,.claims .claim{opacity:0;transform:translateY(10px)}
-  .loop.in .step,.claims.in .claim{opacity:1;transform:none}
-  .loop .step:nth-child(2),.claims .claim:nth-child(2){transition-delay:.08s}
-  .loop .step:nth-child(3),.claims .claim:nth-child(3){transition-delay:.16s}
+  .loop .step,.claims .claim,.method .row{opacity:0;transform:translateY(10px)}
+  .loop.in .step,.claims.in .claim,.method.in .row{opacity:1;transform:none}
+  .loop .step:nth-child(2),.claims .claim:nth-child(2),
+  .method .row:nth-child(2){transition-delay:.08s}
+  .loop .step:nth-child(3),.claims .claim:nth-child(3),
+  .method .row:nth-child(3){transition-delay:.16s}
   .loop .step:nth-child(4){transition-delay:.24s}
 
   /* The arrows are ::after on the steps, so they inherit the step's opacity and need no rule of
@@ -393,7 +411,7 @@ SCRIPT = """<script>
       io.unobserve(e.target);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.loop, .track, .claims, .shots, .section .rise')
+  document.querySelectorAll('.loop, .track, .claims, .method, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
 })();
 
@@ -744,10 +762,11 @@ def build():
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow rise">Spaced repetition &middot; 10 minutes a day</p>
-      <h1 class="rise">Learn a language.<br><span class="soft">Remember it.</span></h1>
-      <p class="lede rise">Short daily lessons built on how memory actually works, so the word
-      you learn on Monday is still there in a month. No classroom, no commute, and no hundreds
-      of euros before you can say a word.</p>
+      <h1 class="rise">Learn a language.<br><span class="soft">The proven way.</span></h1>
+      <p class="lede rise">Corlang is the app that actually makes you learn a language. Short
+      daily lessons built on how memory works, so the word you learn today is still there in a
+      month.</p>
+      <p class="lede rise">No classroom, no commute. Learn anywhere, anytime.</p>
       <div class="actions rise">
         <button class="cta" type="button" data-invite>Ask for a test invite</button>
         <span class="avail">Coming soon to Google Play &middot; Croatian and Portuguese
@@ -761,6 +780,36 @@ def build():
       <div class="ph front device"><div class="screen"><img src="/shots/hero-light.jpg"
         alt="The Corlang Learn tab in the light theme" width="{hl}" height="{hlh}"
         fetchpriority="high" decoding="async"></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Why this works</h2>
+      <p>Two things decide whether a word stays in your head. The third decides whether you
+      finish.</p>
+    </div>
+    <div class="method">
+      <div class="row">
+        <h3>Recall, not review</h3>
+        <p>Reading a word again feels like learning and mostly is not. What moves a word into
+        memory is being asked to produce it with nothing to copy from. So every lesson ends by
+        asking for the day's words from an empty page, and you write them and say them rather
+        than picking them out of four options.</p>
+      </div>
+      <div class="row">
+        <h3>Spacing beats cramming</h3>
+        <p>The same hour spread across three weeks is worth far more than the same hour in one
+        evening, and the best moment to see a word again is just before you would have forgotten
+        it. Corlang schedules every word separately and adapts to you: the ones you know get out
+        of your way, the ones you do not keep coming back.</p>
+      </div>
+      <div class="row">
+        <h3>A course, not a feed</h3>
+        <p>A fixed number of lessons with a last one, following the syllabus the official exams
+        are written from. You can see the finish from the first day, and finishing means
+        something.</p>
+      </div>
     </div>
   </section>
 
