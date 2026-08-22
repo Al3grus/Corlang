@@ -220,10 +220,28 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .method{margin:32px 0 0;border-top:1px solid var(--line)}
 .method .row{display:grid;grid-template-columns:minmax(190px,.85fr) 2fr;gap:14px 30px;
   padding:24px 0;border-bottom:1px solid var(--line)}
+.method .term{display:flex;align-items:baseline;gap:10px}
+.method .n{font-family:var(--mono,var(--body));font-size:12px;font-weight:700;letter-spacing:.14em;
+  color:var(--blue);flex:none}
 .method h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.015em;
   margin:0;line-height:1.25}
 .method p{margin:0;color:var(--muted);font-size:16px;line-height:1.62}
 .lede + .lede{margin-top:15px}
+
+/* ---- FAQ ----
+   Native <details>, so it works with JavaScript off, is keyboard operable and is announced
+   correctly by a screen reader without a line of ARIA. The marker is replaced with a plus that
+   becomes a minus, because the default triangle sits differently in every browser. */
+.faq{margin:30px 0 0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;position:relative;
+  font-family:var(--display);font-weight:600;font-size:17.5px;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  font-size:19px;font-weight:400;color:var(--muted);line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq summary:hover{color:var(--blue)}
+.faq p{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.62;max-width:70ch}
 
 /* ---- invite dialog ----
    A native <dialog>: it traps focus, closes on Escape and returns focus on its own, which a div
@@ -334,6 +352,9 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   .method .row:nth-child(2){transition-delay:.08s}
   .loop .step:nth-child(3),.claims .claim:nth-child(3),
   .method .row:nth-child(3){transition-delay:.16s}
+  .method .row:nth-child(4){transition-delay:.24s}
+  .method .row:nth-child(5){transition-delay:.32s}
+  .method .row:nth-child(6){transition-delay:.40s}
   .loop .step:nth-child(4){transition-delay:.24s}
 
   /* The arrows are ::after on the steps, so they inherit the step's opacity and need no rule of
@@ -555,8 +576,8 @@ def page(title, description, body, canonical, wide=True):
 <div class="wrap">
   <header class="top">
     <a class="mark" href="/">{LOGO}<b>Corlang</b></a>
-    <nav><a href="/privacy/">Privacy</a><a href="mailto:support@corlang.app"
-      data-contact>Contact</a></nav>
+    <nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a
+      href="mailto:support@corlang.app" data-contact>Contact</a></nav>
   </header>
 {body}
   <dialog id="invite">
@@ -597,7 +618,7 @@ def page(title, description, body, canonical, wide=True):
   </dialog>
 
   <footer>
-    <div><a href="/">Home</a><a href="/privacy/">Privacy</a><a
+    <div><a href="/">Home</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a
       href="mailto:support@corlang.app" data-contact>Contact</a></div>
     <div>Corlang</div>
   </footer>
@@ -786,30 +807,45 @@ def build():
 
   <section class="section">
     <div class="section-head">
-      <h2>Why this works</h2>
-      <p>Two things decide whether a word stays in your head. The third decides whether you
-      finish.</p>
+      <h2>Inside every lesson</h2>
+      <p>Ten minutes, six steps, the same order every day. The order is the point.</p>
     </div>
     <div class="method">
       <div class="row">
-        <h3>Recall, not review</h3>
-        <p>Reading a word again feels like learning and mostly is not. What moves a word into
-        memory is being asked to produce it with nothing to copy from. So every lesson ends by
-        asking for the day's words from an empty page, and you write them and say them rather
-        than picking them out of four options.</p>
+        <div class="term"><span class="n">01</span><h3>New words</h3></div>
+        <p>A small set of new words, met on their own before anything else uses them. Meeting
+        them first means the rest of the lesson is recognition rather than decoding, and they
+        enter your review schedule the same day.</p>
       </div>
       <div class="row">
-        <h3>Spacing beats cramming</h3>
-        <p>The same hour spread across three weeks is worth far more than the same hour in one
-        evening, and the best moment to see a word again is just before you would have forgotten
-        it. Corlang schedules every word separately and adapts to you: the ones you know get out
-        of your way, the ones you do not keep coming back.</p>
+        <div class="term"><span class="n">02</span><h3>Input</h3></div>
+        <p>A short teaching block: the pattern of the day, shown in sentences you would really
+        say. Deliberately small, because a page of new material is a page you will not
+        remember tomorrow.</p>
       </div>
       <div class="row">
-        <h3>A course, not a feed</h3>
-        <p>A fixed number of lessons with a last one, following the syllabus the official exams
-        are written from. You can see the finish from the first day, and finishing means
-        something.</p>
+        <div class="term"><span class="n">03</span><h3>Practice</h3></div>
+        <p>Exercises on exactly what was just taught, including typing the right form instead of
+        choosing it. Producing an answer is what fixes it; picking one from four mostly tests
+        whether you can spot it.</p>
+      </div>
+      <div class="row">
+        <div class="term"><span class="n">04</span><h3>Output</h3></div>
+        <p>A dialogue where you take one side and say your lines out loud. This is the first
+        point where you are making the language rather than answering questions about it, and
+        it is the step most courses leave out.</p>
+      </div>
+      <div class="row">
+        <div class="term"><span class="n">05</span><h3>Wrap-up</h3></div>
+        <p>The lesson ends by asking for the day's phrases back from an empty page, with nothing
+        to copy. It is the most valuable minute in the ten: retrieving something is the act that
+        tells your memory to keep it.</p>
+      </div>
+      <div class="row">
+        <div class="term"><span class="n">06</span><h3>Review</h3></div>
+        <p>Last, a pass over words falling due from earlier lessons, scheduled one word at a
+        time. Then the day is done and the streak moves, which is the part that gets you back
+        tomorrow.</p>
       </div>
     </div>
   </section>
@@ -817,7 +853,8 @@ def build():
   <section class="section">
     <div class="section-head">
       <h2>How a word actually sticks</h2>
-      <p>The same loop, every word, for as long as it takes.</p>
+      <p>That is one lesson. This is what happens to a single word afterwards, in your daily
+      flashcards, for as long as it takes.</p>
     </div>
     <div class="loop">
       <div class="step"><span class="n">01</span><h3>Learn it</h3>
@@ -861,6 +898,61 @@ def build():
     </div>
   </section>
 
+  <section class="section">
+    <div class="section-head">
+      <h2>Questions</h2>
+      <p>The ones people actually ask.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Which languages can I learn?</summary>
+        <p>Croatian and European Portuguese, both complete courses from the first word to the
+        official B1 exam. More European languages are written and waiting; they go live once the
+        first two are proven in real use rather than all at once.</p>
+      </details>
+      <details>
+        <summary>Is it free?</summary>
+        <p>The first level of each course is free permanently, not as a trial that expires. After
+        that a course is a one-time purchase, and what you buy stays bought. The AI tutor is a
+        separate monthly subscription, and everything else works without it.</p>
+      </details>
+      <details>
+        <summary>Do I need an account?</summary>
+        <p>No. There is no sign-up and no password, and your progress stays on your phone. The
+        catch is that it stays on your phone, so export a backup from Profile before you change
+        device.</p>
+      </details>
+      <details>
+        <summary>Does it work offline?</summary>
+        <p>The whole course does: lessons, reviews, quizzes and the mock exams. Only the AI tutor
+        needs a connection, because it is talking to a language model.</p>
+      </details>
+      <details>
+        <summary>How long is a lesson?</summary>
+        <p>About ten minutes, and it is the same ten minutes every day. That is deliberate: a
+        session you can finish on a bus is a session you will still be doing in March.</p>
+      </details>
+      <details>
+        <summary>Will it get me through the official exam?</summary>
+        <p>It is built for it. Each course follows the syllabus the real exam is written from,
+        and the mock exams copy its format and marking. What it cannot do is award anything: only
+        the official examining body can do that.</p>
+      </details>
+      <details>
+        <summary>What does the AI tutor do?</summary>
+        <p>It is a patient conversation partner in the language you are learning: it corrects
+        you, explains why, and keeps to your level. It has a daily message allowance, shown in
+        the app, and it will decline anything that is not language learning.</p>
+      </details>
+      <details>
+        <summary>Am I being tracked?</summary>
+        <p>No. No analytics, no advertising, no third-party trackers, nothing sold. The
+        <a href="/privacy/">privacy policy</a> lists the one case in which anything leaves your
+        device at all.</p>
+      </details>
+    </div>
+  </section>
+
 """
 
     io.open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n').write(
@@ -868,6 +960,15 @@ def build():
              "Short daily lessons built on spaced repetition, from your first words to the "
              "official B1 exam. No account, no ads, no tracking.",
              landing, "https://corlang.app/"))
+
+    os.makedirs(os.path.join(OUT, 'terms'), exist_ok=True)
+    terms_md = io.open(os.path.join(ROOT, 'TERMS.md'), encoding='utf-8').read()
+    io.open(os.path.join(OUT, 'terms', 'index.html'), 'w', encoding='utf-8',
+            newline='\n').write(
+        page("Terms of Service — Corlang",
+             "What you are buying, who handles the payment, what the AI tutor is and is not, "
+             "and what Corlang does not promise.",
+             '<article>' + md_to_html(terms_md) + '</article>', "https://corlang.app/terms/"))
 
     md = io.open(os.path.join(ROOT, 'PRIVACY.md'), encoding='utf-8').read()
     io.open(os.path.join(OUT, 'privacy', 'index.html'), 'w', encoding='utf-8',
@@ -888,7 +989,8 @@ def build():
         "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n"
         "  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n"
         "\n/fonts/*\n  Cache-Control: public, max-age=604800\n")
-    print('built site/index.html, site/privacy/index.html, favicon, _headers')
+    print('built site/index.html, site/privacy/index.html, site/terms/index.html, '
+          'favicon, _headers')
 
 
 if __name__ == '__main__':

@@ -87,6 +87,25 @@ The seven Croatian survival lessons drafted on the way are deleted rather than p
 would have to go into A1, which Croatian cannot grow into, and a draft nothing can consume is
 dead data. They are in the history of this commit if the deck ever gains room.
 
+## 🟡 TERMS OF SERVICE — live, with one clause deliberately missing
+
+`TERMS.md` is the source and `https://corlang.app/terms/` is generated from it, the same way the
+privacy page is generated from `PRIVACY.md`. It describes the app as it actually is: free first
+level, one-time per-language unlocks, a monthly AI subscription, Google Play handling every
+payment and refund, the tutor's daily allowance, and that Corlang prepares for official exams
+without awarding anything.
+
+**It has no governing-law clause, on purpose.** Guessing a jurisdiction would be worse than
+leaving it out, and it needs the operator's actual country. Add it before public launch. The
+clause preserving statutory consumer rights is already there and is the one that matters most in
+the EU.
+
+Written as plain English, not by a lawyer. It is a reasonable and honest starting point for a
+one-person app in testing; it is worth a professional read once real revenue is arriving.
+
+Play Console has a field for a terms URL alongside the privacy one: use
+`https://corlang.app/terms/`.
+
 ## 🔴 TRACK A — Get to Play testers (critical path, in order)
 
 1. **(browser)** Create the app in Play Console (name "Corlang", App, Free).
