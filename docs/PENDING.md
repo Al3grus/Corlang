@@ -88,6 +88,43 @@ Guards added while building, worth keeping in mind for the next course:
 - A placement band is one ability probe, so all four of its items share a difficulty.
 - A quiz prompt may not restate a lesson's own exercise prompt, or it tests the quiz.
 
+## 🟡 BLOCKED — Croatian A0 survival rework, waiting on 70 deck words
+
+Diagnosed, authored, and stopped one step short. **The lessons are written**:
+`docs/drafts/hr-a0-survival-lessons.json`, seven of them, checked collision-free against all
+6636 taught strings already in the Croatian course.
+
+**Why it is worth doing.** Croatian's free level spends eleven of sixteen lessons on grammar
+paradigms, and its objectives say "recognise", "know", "understand" where Portuguese A0 now says
+"you will order and pay". Paying first appears on day 69, tickets and buses on day 24,
+restaurants on day 22, all behind the paywall. A learner who finishes the entire free Croatian
+course can recite the accusative and cannot buy a coffee. A0 is the only part of the course
+anyone sees before paying, so this is the conversion surface.
+
+**The plan, which works.** Keep the alphabet, greetings and the milestone check; move the
+thirteen grammar lessons UP into A1, where cases and conjugation belong by any CEFR reading and
+where a growing level can never break a floor; add the seven survival lessons. That gives
+A0 10, A1 74, A2 96, B1 171 = 351, matching Portuguese's ten-lesson A0.
+
+**The blocker, exactly.** `everyDeckCoversTheWholeCourse` requires deck >= lessons x 10, and
+Croatian sits at **3440 words for 344 lessons: zero headroom**. Portuguese had 68 spare words,
+which is the only reason its A0 landed without touching the deck. Seven more lessons need
+**70 more Croatian words**, each with the unique, cloze-safe example `check_deck_examples.py`
+demands.
+
+**The open question is WHERE those words go**, and it is a real decision, not a detail:
+
+- *Front of the deck*, as an A0 survival pack. Pedagogically right, and it also fixes three
+  pack-alignment offenders the shift otherwise creates (`adjectives` +17, `personality-emotions`
+  +17, `time-frequency` +16 against a limit of 15). But it contradicts "top-up packs are
+  APPENDED, never inserted" and moves every existing word's introduction point back by seven
+  lessons. No id is renamed or removed, so no SRS history is orphaned.
+- *End of the deck*, honouring the rule. Then the survival words are introduced around lesson
+  344, which is absurd for "trajekt", the 70 words have to be B1-level instead, and the three
+  offending packs each need a `fromDay` set.
+
+`fromDay` cannot resolve this: it only ever DELAYS a pack, never advances one.
+
 ## 🔴 TRACK A — Get to Play testers (critical path, in order)
 
 1. **(browser)** Create the app in Play Console (name "Corlang", App, Free).
