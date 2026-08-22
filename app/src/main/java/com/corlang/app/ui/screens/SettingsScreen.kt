@@ -556,7 +556,7 @@ fun SettingsScreen(
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier
                     .padding(top = 8.dp)
-                    .clickable { privacyUri.openUri("https://github.com/Al3grus/Corlang/blob/main/PRIVACY.md") }
+                    .clickable { privacyUri.openUri("https://corlang.app/privacy") }
             )
         }
         Spacer(Modifier.height(24.dp))
@@ -624,18 +624,36 @@ private fun SettingsCard(
 }
 
 /**
- * The self-updater card (check, download, hand to the system installer). UNREACHABLE since
- * v0.48.0: ENABLE_UPDATER is false in both flavors, so this composes in no build. Kept, with its
- * call site behind that flag, because the sideload channel is a decision rather than a deletion
- * and one flag brings it back.
+ * The self-updater card (check, download, hand to the system installer). Compiled into every
+ * build but only reachable in the sideload flavor (BuildConfig.ENABLE_UPDATER) - the Play flavor
+ * updates through the store and merges no install permission.
+ *
+ * Dormant between v0.48.0 and v0.53.2, when the plan was that Play would be the only channel. It
+ * is not yet, and a sideload build without this can only be replaced by hand.
  */
 @Composable
 private fun UpdatesSection(container: AppContainer) {
     val scope = rememberCoroutineScope()
+    val context = LocalContext.current
     var checkState by remember { mutableStateOf("") }
     var updateInfo by remember { mutableStateOf<com.corlang.app.update.ReleaseInfo?>(null) }
     var dl by remember { mutableStateOf(false) }
     var pct by remember { mutableStateOf(0) }
+
+    // REQUEST_INSTALL_PACKAGES in the manifest is only half of it: since API 26 the user must
+    // ALSO have allowed this app, specifically, to install unknown apps. Without that the
+    // handoff to the system installer dead-ends differently on every OEM (a bare "blocked"
+    // toast on some), which reads as a broken update. Checked before the download starts, with
+    // a button to the one settings page that grants it.
+    var needsInstallPermission by remember { mutableStateOf(false) }
+    fun canInstall(): Boolean = context.packageManager.canRequestPackageInstalls()
+
+    // The flag is granted out-of-process, so returning from that page is the only moment this
+    // screen can learn the block is gone.
+    val installPermLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { needsInstallPermission = !canInstall() }
+
     SettingsCard(Icons.Outlined.SystemUpdate, "App updates") {
         Text(
             "Installed: v${container.updater.installedVersionName()}",
@@ -653,16 +671,49 @@ private fun UpdatesSection(container: AppContainer) {
                 color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(bottom = 6.dp))
         }
         val info = updateInfo
-        if (info != null) {
+        // What actually changed, straight from the release manifest. It was already being
+        // fetched and dropped, and a bare version number says nothing about whether you want it.
+        if (info != null && info.notes.isNotBlank()) {
+            Text(
+                info.notes,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+        }
+        if (needsInstallPermission) {
+            Text(
+                "Android needs your permission before Corlang can install an app. Allow it once " +
+                    "and the update continues.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+            Button(
+                onClick = {
+                    installPermLauncher.launch(
+                        android.content.Intent(
+                            android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
+                            android.net.Uri.parse("package:" + context.packageName)
+                        )
+                    )
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) { Text("Allow installing updates") }
+        } else if (info != null) {
             Button(
                 enabled = !dl,
                 onClick = {
-                    dl = true
-                    scope.launch {
-                        val apk = container.updater.downloadApk(info) { pct = it }
-                        dl = false
-                        if (apk != null) container.updater.installApk(apk)
-                        else checkState = "Download failed, try again."
+                    if (!canInstall()) {
+                        needsInstallPermission = true
+                    } else {
+                        dl = true
+                        scope.launch {
+                            val apk = container.updater.downloadApk(info) { pct = it }
+                            dl = false
+                            if (apk != null) container.updater.installApk(apk)
+                            else checkState = "Download failed, try again."
+                        }
                     }
                 },
                 modifier = Modifier.fillMaxWidth()

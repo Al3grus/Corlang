@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Sideload flavor additions. EMPTY on purpose since v0.48.0: this file used to carry
-     REQUEST_INSTALL_PACKAGES and a FileProvider for the in-app self-updater, which is now off in
-     every flavor (see ENABLE_UPDATER in app/build.gradle.kts). A permission whose feature is
-     compiled out is a permission nobody can justify, so it is gone rather than dormant.
+<!-- Sideload-only manifest additions: everything the in-app self-updater needs. The Play flavor
+     merges NONE of this — Play forbids self-updating apps, and REQUEST_INSTALL_PACKAGES alone
+     draws review scrutiny. Keep this file and ENABLE_UPDATER (app/build.gradle.kts) in step:
+     the permission exists only because the sideload flavor compiles the updater in. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-     The file itself stays so the flavor keeps a manifest to merge, and so restoring the updater
-     is a revert of one commit rather than an archaeology exercise. -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application>
+        <!-- Shares the downloaded update APK with the system installer. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

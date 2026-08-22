@@ -45,8 +45,11 @@ you have written off your device:
    active, cached for at most six hours. Nothing there is used to build a profile of you, and
    none of it is linked to your learning data, which never leaves your phone at all.
 
-Nothing else about your use of the app is transmitted. Corlang does not phone home, and it does
-not check for updates: on Google Play, updates are delivered by the Play Store itself.
+Nothing else about your use of the app is transmitted. Corlang does not phone home. The version
+you install from Google Play never checks for updates either, because the Play Store delivers
+them; the developer's own directly-installed builds do have a manual "Check for updates" button
+in Settings, which fetches a version file from the project's public GitHub repository when you
+tap it, and sends nothing about you when it does.
 
 ## The website
 
