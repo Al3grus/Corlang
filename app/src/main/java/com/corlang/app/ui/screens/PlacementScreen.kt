@@ -321,7 +321,7 @@ fun PlacementScreen(
             drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 24.dp)
         )
-        Text("Question ${asked + 1} of about $maxItems",
+        Text("Question ${asked + 1} of $maxItems",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         Text(q.prompt, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold,

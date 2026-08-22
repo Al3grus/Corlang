@@ -1,786 +1,846 @@
 {
- "title": "Where should you start?",
- "intro": "A short Croatian check that gets harder as it goes, so we can start you on the right day of the course. It takes about two minutes and you can retake it any time.",
- "questions": [
-  {
-   "level": "A0",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "'Ja ___ Ana.' (I am Ana)",
-   "options": [
-    "sam",
-    "si",
-    "je",
-    "su"
-   ],
-   "answer": "sam",
-   "explanation": "The verb biti in the first person singular is sam: ja sam, ti si, on je."
-  },
-  {
-   "level": "A0",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "How do you greet someone in the morning?",
-   "options": [
-    "Dobro jutro",
-    "Dobra večer",
-    "Laku noć",
-    "Doviđenja"
-   ],
-   "answer": "Dobro jutro",
-   "explanation": "Dobro jutro is the morning greeting; the others mean good evening, good night and goodbye."
-  },
-  {
-   "level": "A0",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "Which Croatian letter sounds like the 'ch' in 'church'?",
-   "options": [
-    "č",
-    "c",
-    "š",
-    "ž"
-   ],
-   "answer": "č",
-   "explanation": "č is the ch sound, while c is pronounced ts, š is sh and ž is like the s in 'measure'."
-  },
-  {
-   "level": "A0",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "How do you say goodbye when leaving?",
-   "options": [
-    "Doviđenja",
-    "Dobar dan",
-    "Molim",
-    "Hvala"
-   ],
-   "answer": "Doviđenja",
-   "explanation": "Doviđenja is the standard goodbye; the others are a greeting, please and thank you."
-  },
-  {
-   "level": "A1",
-   "startDay": 25,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'Mi ___ iz Hrvatske.' (We are from Croatia)",
-   "options": [
-    "smo",
-    "ste",
-    "su",
-    "sam"
-   ],
-   "answer": "smo",
-   "explanation": "The first person plural of biti is smo."
-  },
-  {
-   "level": "A1",
-   "startDay": 25,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "What does 'Nemam pojma' mean?",
-   "options": [
-    "I have no idea",
-    "I have no time",
-    "I have no money",
-    "I have no plan"
-   ],
-   "answer": "I have no idea",
-   "explanation": "'Nemam pojma' is a common everyday phrase meaning 'I have no idea' (literally 'I don't have a notion')."
-  },
-  {
-   "level": "A1",
-   "startDay": 25,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "Which word means 1000 in standard Croatian?",
-   "options": [
-    "tisuća",
-    "hiljada",
-    "stotina",
-    "milijun"
-   ],
-   "answer": "tisuća",
-   "explanation": "Croatian uses tisuća for 1000; stotina is a hundred and milijun is a million."
-  },
-  {
-   "level": "A1",
-   "startDay": 25,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "'On ___ hrvatski.' (He is learning Croatian: učiti)",
-   "options": [
-    "uči",
-    "učim",
-    "učiš",
-    "uče"
-   ],
-   "answer": "uči",
-   "explanation": "On takes the third person singular uči."
-  },
-  {
-   "level": "A1",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "'Čitam ___.' (I am reading a book: knjiga)",
-   "options": [
-    "knjigu",
-    "knjiga",
-    "knjige",
-    "knjigom"
-   ],
-   "answer": "knjigu",
-   "explanation": "A feminine noun in -a takes -u as a direct object in the accusative."
-  },
-  {
-   "level": "A1",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "'___ stanuješ?' (Where do you live?)",
-   "options": [
-    "Gdje",
-    "Kamo",
-    "Kada",
-    "Tko"
-   ],
-   "answer": "Gdje",
-   "explanation": "Gdje asks about location, while kamo asks about direction of movement."
-  },
-  {
-   "level": "A1",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "Which day comes right after utorak?",
-   "options": [
-    "srijeda",
-    "sreda",
-    "četvrtak",
-    "ponedjeljak"
-   ],
-   "answer": "srijeda",
-   "explanation": "Wednesday is srijeda in Croatian; the form sreda belongs to the ekavian variant."
-  },
-  {
-   "level": "A1",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "'Živim ___ Zagrebu.' (I live in Zagreb)",
-   "options": [
-    "u",
-    "na",
-    "iz",
-    "do"
-   ],
-   "answer": "u",
-   "explanation": "Cities take u with the locative for where you live."
-  },
-  {
-   "level": "A1",
-   "startDay": 75,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "'___ ovamo!' (Come here, to a friend)",
-   "options": [
-    "Dođi",
-    "Dođite",
-    "Doći",
-    "Dolaziš"
-   ],
-   "answer": "Dođi",
-   "explanation": "Dođi is the informal imperative; dođite is its plural or polite form."
-  },
-  {
-   "level": "A1",
-   "startDay": 75,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "Množina imenice 'ključ' je ___.",
-   "options": [
-    "ključevi",
-    "ključi",
-    "ključove",
-    "ključa"
-   ],
-   "answer": "ključevi",
-   "explanation": "Short masculine nouns take the long plural in -evi after a soft consonant."
-  },
-  {
-   "level": "A1",
-   "startDay": 75,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "'___ nije došao.' (Nobody came)",
-   "options": [
-    "Nitko",
-    "Netko",
-    "Ništa",
-    "Nešto"
-   ],
-   "answer": "Nitko",
-   "explanation": "Nitko is nobody, for people; ništa is nothing, for things."
-  },
-  {
-   "level": "A1",
-   "startDay": 75,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "'Kako se ___?' (What is your name, literally how do you call yourself)",
-   "options": [
-    "zoveš",
-    "zovem",
-    "zove",
-    "zovemo"
-   ],
-   "answer": "zoveš",
-   "explanation": "The reflexive zvati se in the second person singular is zoveš se."
-  },
-  {
-   "level": "A2",
-   "startDay": 95,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "A woman says 'Yesterday I was at the cinema.' 'Jučer sam ___ u kinu.'",
-   "options": [
-    "bila",
-    "bio",
-    "bilo",
-    "bile"
-   ],
-   "answer": "bila",
-   "explanation": "The past participle agrees with the speaker, so a female speaker says bila."
-  },
-  {
-   "level": "A2",
-   "startDay": 95,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "Someone says 'Ne mogu doći na zabavu.' and you reply 'Šteta!' What does 'Šteta!' mean here?",
-   "options": [
-    "What a pity!",
-    "No problem!",
-    "Congratulations!",
-    "Well done!"
-   ],
-   "answer": "What a pity!",
-   "explanation": "'Šteta!' is a common reaction meaning 'What a pity/shame!', recognising it in context tests meaning, not just form."
-  },
-  {
-   "level": "A2",
-   "startDay": 95,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "'Sinoć sam bio ___ koncertu.' (at a concert)",
-   "options": [
-    "na",
-    "u",
-    "za",
-    "do"
-   ],
-   "answer": "na",
-   "explanation": "Events such as a concert take na with the locative, not u."
-  },
-  {
-   "level": "A2",
-   "startDay": 95,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "'Nemam ___.' (I have no time: vrijeme)",
-   "options": [
-    "vremena",
-    "vrijeme",
-    "vremenu",
-    "vremenom"
-   ],
-   "answer": "vremena",
-   "explanation": "After a negated verb the object goes into the genitive: vremena."
-  },
-  {
-   "level": "A2",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "'Sutra ___ raditi.' (Tomorrow I will work)",
-   "options": [
-    "ću",
-    "sam",
-    "bih",
-    "imam"
-   ],
-   "answer": "ću",
-   "explanation": "The future is formed with ću, ćeš, će plus the infinitive."
-  },
-  {
-   "level": "A2",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "What does 'Baš me briga' mean?",
-   "options": [
-    "I really don't care",
-    "I'm really worried",
-    "I really like it",
-    "I really need it"
-   ],
-   "answer": "I really don't care",
-   "explanation": "'Baš me briga' is a common colloquial phrase meaning 'I really don't care', a meaning item rather than a pure morphology check."
-  },
-  {
-   "level": "A2",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "What is the comparative of 'dobar' (good)?",
-   "options": [
-    "bolji",
-    "dobriji",
-    "najbolji",
-    "dobrji"
-   ],
-   "answer": "bolji",
-   "explanation": "Dobar has the irregular comparative bolji; najbolji is the superlative."
-  },
-  {
-   "level": "A2",
-   "startDay": 125,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "'Moram ___ ranije.' (I have to get up earlier: ustati)",
-   "options": [
-    "ustati",
-    "ustanem",
-    "ustajem",
-    "ustao"
-   ],
-   "answer": "ustati",
-   "explanation": "Morati is followed by the infinitive."
-  },
-  {
-   "level": "A2",
-   "startDay": 155,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "'___ se sviđa ovaj film.' (I like this film)",
-   "options": [
-    "Meni",
-    "Mene",
-    "Mnome",
-    "Ja"
-   ],
-   "answer": "Meni",
-   "explanation": "Sviđati se takes the dative of the person who likes something."
-  },
-  {
-   "level": "A2",
-   "startDay": 155,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "'Marko voli ___ posao.' (Marko loves his own job)",
-   "options": [
-    "svoj",
-    "njegov",
-    "njezin",
-    "svojim"
-   ],
-   "answer": "svoj",
-   "explanation": "When the possessor is the subject of the sentence, Croatian uses svoj."
-  },
-  {
-   "level": "A2",
-   "startDay": 155,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "'Idem u kazalište ___ prijateljem.' (with a friend)",
-   "options": [
-    "s",
-    "na",
-    "od",
-    "za"
-   ],
-   "answer": "s",
-   "explanation": "Accompaniment is expressed with s plus the instrumental."
-  },
-  {
-   "level": "A2",
-   "startDay": 155,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "'Rođen sam ___ svibnja.' (on the fifth of May)",
-   "options": [
-    "petog",
-    "peti",
-    "petom",
-    "pet"
-   ],
-   "answer": "petog",
-   "explanation": "Dates take the genitive: petog svibnja."
-  },
-  {
-   "level": "B1",
-   "startDay": 178,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "'___ se brinuti!' (Don't worry, to a friend)",
-   "options": [
-    "Nemoj",
-    "Nemojte",
-    "Ne",
-    "Nije"
-   ],
-   "answer": "Nemoj",
-   "explanation": "Nemoj plus the infinitive is the informal negative imperative; nemojte is its plural or formal form."
-  },
-  {
-   "level": "B1",
-   "startDay": 178,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "'Imam mnogo ___.' (many friends: prijatelj)",
-   "options": [
-    "prijatelja",
-    "prijatelji",
-    "prijateljima",
-    "prijatelje"
-   ],
-   "answer": "prijatelja",
-   "explanation": "Quantity words like mnogo take the genitive plural."
-  },
-  {
-   "level": "B1",
-   "startDay": 178,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "'Jučer sam ___ pismo.' (I wrote the whole letter)",
-   "options": [
-    "napisao",
-    "pisao",
-    "pišem",
-    "napišem"
-   ],
-   "answer": "napisao",
-   "explanation": "The perfective napisati says the letter was finished; pisao would leave it open."
-  },
-  {
-   "level": "B1",
-   "startDay": 178,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "'To je knjiga ___ sam kupio.' (which I bought)",
-   "options": [
-    "koju",
-    "koji",
-    "kojoj",
-    "koje"
-   ],
-   "answer": "koju",
-   "explanation": "The relative is the object of kupiti, so it takes the feminine accusative koju."
-  },
-  {
-   "level": "B1",
-   "startDay": 200,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "'Svako jutro, dok doručkujem, ___ novine.' (Every morning, while I have breakfast, I read the paper)",
-   "options": [
-    "čitam",
-    "pročitam",
-    "čitat ću",
-    "pročitao sam"
-   ],
-   "answer": "čitam",
-   "explanation": "A repeated habitual action takes the imperfective verb čitati."
-  },
-  {
-   "level": "B1",
-   "startDay": 200,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "'To je čovjek ___ sam vidio jučer.' (the man whom I saw yesterday)",
-   "options": [
-    "kojeg",
-    "koji",
-    "kojem",
-    "kojim"
-   ],
-   "answer": "kojeg",
-   "explanation": "The relative pronoun is the object of vidjeti, so an animate masculine takes the accusative kojeg."
-  },
-  {
-   "level": "B1",
-   "startDay": 200,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "Which is the more formal, polite way to ask 'Can you help me?'",
-   "options": [
-    "Možete li mi pomoći?",
-    "Možeš li mi pomoć?",
-    "Daj mi pomoć.",
-    "Pomozi mi, ej."
-   ],
-   "answer": "Možete li mi pomoći?",
-   "explanation": "The polite/formal register uses the vi-form (Možete li...); this probes register choice rather than case morphology."
-  },
-  {
-   "level": "B1",
-   "startDay": 200,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "'Ne znam ___ je to.' (whose is this)",
-   "options": [
-    "čije",
-    "koje",
-    "kome",
-    "što"
-   ],
-   "answer": "čije",
-   "explanation": "Čije asks whose and agrees with the thing owned."
-  },
-  {
-   "level": "B1",
-   "startDay": 228,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "'Da imam više vremena, ___ više.' (I would read more)",
-   "options": [
-    "čitao bih",
-    "čitam",
-    "čitat ću",
-    "da čitam"
-   ],
-   "answer": "čitao bih",
-   "explanation": "An unreal condition takes the conditional: the participle plus bih."
-  },
-  {
-   "level": "B1",
-   "startDay": 228,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "Koji je zbirni oblik imenice 'brat'?",
-   "options": [
-    "braća",
-    "bratovi",
-    "brati",
-    "bratove"
-   ],
-   "answer": "braća",
-   "explanation": "Braća is the collective form and takes a singular feminine verb."
-  },
-  {
-   "level": "B1",
-   "startDay": 228,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "'Moram ___ ovaj članak do sutra.' (finish reading it)",
-   "options": [
-    "pročitati",
-    "čitati",
-    "pročitam",
-    "čitam"
-   ],
-   "answer": "pročitati",
-   "explanation": "Morati takes the infinitive, and the perfective pročitati says the reading is completed."
-  },
-  {
-   "level": "B1",
-   "startDay": 228,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "Što znače 'vijesti'?",
-   "options": [
-    "The news",
-    "The weather",
-    "The market",
-    "The meeting"
-   ],
-   "answer": "The news",
-   "explanation": "Vijesti is the news; it is a plural-only noun in Croatian."
-  },
-  {
-   "level": "B1",
-   "startDay": 255,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "'Trgovina je ___ nedjeljom.' (The shop is closed on Sundays)",
-   "options": [
-    "zatvorena",
-    "zatvoriti",
-    "zatvara",
-    "zatvorenje"
-   ],
-   "answer": "zatvorena",
-   "explanation": "The passive participle agrees with the feminine noun trgovina."
-  },
-  {
-   "level": "B1",
-   "startDay": 255,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "Which connector best continues: 'Volio bih doći na zabavu, ___ moram raditi.' (I'd love to come to the party, ___ I have to work)",
-   "options": [
-    "ali",
-    "i",
-    "ili",
-    "pa"
-   ],
-   "answer": "ali",
-   "explanation": "'ali' (but) signals the contrast between wanting to come and having to work, a discourse-connector/usage choice rather than pure morphology."
-  },
-  {
-   "level": "B1",
-   "startDay": 255,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "'Da imam vremena, pomogao ___ ti.' (If I had time, I would help you)",
-   "options": [
-    "bih",
-    "ću",
-    "sam",
-    "bi"
-   ],
-   "answer": "bih",
-   "explanation": "The conditional in the first person singular is bih, placed right after the participle."
-  },
-  {
-   "level": "B1",
-   "startDay": 255,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "'Došao sam ___ ti pomognem.' (I came in order to help you)",
-   "options": [
-    "da",
-    "kako",
-    "jer",
-    "ako"
-   ],
-   "answer": "da",
-   "explanation": "A purpose clause is da plus the present tense."
-  },
-  {
-   "level": "B1",
-   "startDay": 283,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "'To je pisac ___ knjigu čitam.' (whose book I am reading)",
-   "options": [
-    "čiju",
-    "čiji",
-    "čije",
-    "koji"
-   ],
-   "answer": "čiju",
-   "explanation": "Čiji agrees with the thing owned, so a feminine accusative knjigu takes čiju."
-  },
-  {
-   "level": "B1",
-   "startDay": 283,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "'___ da je to istina.' (It is said that)",
-   "options": [
-    "Kaže se",
-    "Kaže",
-    "Govori",
-    "Rekao"
-   ],
-   "answer": "Kaže se",
-   "explanation": "The impersonal se construction leaves the speaker unnamed."
-  },
-  {
-   "level": "B1",
-   "startDay": 283,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "'U sobi je ___.' (five students, men)",
-   "options": [
-    "pet studenata",
-    "pet studenti",
-    "petero student",
-    "pet studentima"
-   ],
-   "answer": "pet studenata",
-   "explanation": "Numbers from five up take the genitive plural."
-  },
-  {
-   "level": "B1",
-   "startDay": 283,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "Umanjenica imenice 'kuća' je ___.",
-   "options": [
-    "kućica",
-    "kućerina",
-    "kućni",
-    "kućama"
-   ],
-   "answer": "kućica",
-   "explanation": "Kućica is the diminutive; kućerina is the augmentative, a big ugly house."
-  },
-  {
-   "level": "B1",
-   "startDay": 310,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "Which sentence has the correct word order for 'She gave it to me'?",
-   "options": [
-    "Dala mi ga je.",
-    "Dala je mi ga.",
-    "Mi ga je dala.",
-    "Je mi ga dala."
-   ],
-   "answer": "Dala mi ga je.",
-   "explanation": "Clitics cluster in second position in the order dative, accusative, then the auxiliary je last."
-  },
-  {
-   "level": "B1",
-   "startDay": 310,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "'Rekao je da ___ sutra.' (He said he would come tomorrow)",
-   "options": [
-    "će doći",
-    "bi došao",
-    "dođe",
-    "je došao"
-   ],
-   "answer": "će doći",
-   "explanation": "Croatian keeps the tense of the original words in reported speech, so the future stays future."
-  },
-  {
-   "level": "B1",
-   "startDay": 310,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "How do you say 'I don't know whether he is coming'?",
-   "options": [
-    "Ne znam dolazi li.",
-    "Ne znam da li dolazi.",
-    "Ne znam jeli dolazi.",
-    "Ne znam li dolazi."
-   ],
-   "answer": "Ne znam dolazi li.",
-   "explanation": "An indirect yes or no question puts the verb first with the particle li after it."
-  },
-  {
-   "level": "B1",
-   "startDay": 310,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "'___ ulicom, sreo sam prijatelja.' (Walking down the street, I met a friend)",
-   "options": [
-    "Hodajući",
-    "Hodao",
-    "Hodati",
-    "Hodam"
-   ],
-   "answer": "Hodajući",
-   "explanation": "The verbal adverb hodajući expresses an action happening at the same time."
-  }
- ]
+  "title": "Where should you start?",
+  "intro": "A short Croatian check that adapts to you. It starts in the middle rather than at the beginning, so the first question may look hard or easy: answer it wrong and the next one is easier, right and the next is harder. About two minutes, and you can retake it any time.",
+  "questions": [
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "'Ja ___ Ana.' (I am Ana)",
+      "options": [
+        "sam",
+        "si",
+        "je",
+        "su"
+      ],
+      "answer": "sam",
+      "explanation": "The verb biti in the first person singular is sam: ja sam, ti si, on je."
+    },
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "How do you greet someone in the morning?",
+      "options": [
+        "Dobro jutro",
+        "Dobra večer",
+        "Laku noć",
+        "Doviđenja"
+      ],
+      "answer": "Dobro jutro",
+      "explanation": "Dobro jutro is the morning greeting; the others mean good evening, good night and goodbye."
+    },
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "Which Croatian letter sounds like the 'ch' in 'church'?",
+      "options": [
+        "č",
+        "c",
+        "š",
+        "ž"
+      ],
+      "answer": "č",
+      "explanation": "č is the ch sound, while c is pronounced ts, š is sh and ž is like the s in 'measure'."
+    },
+    {
+      "level": "A0",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "How do you say goodbye when leaving?",
+      "options": [
+        "Doviđenja",
+        "Dobar dan",
+        "Molim",
+        "Hvala"
+      ],
+      "answer": "Doviđenja",
+      "explanation": "Doviđenja is the standard goodbye; the others are a greeting, please and thank you."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "What gender is 'mlijeko' (milk)?",
+      "options": [
+        "neuter",
+        "masculine",
+        "feminine",
+        "Croatian has no genders"
+      ],
+      "answer": "neuter",
+      "explanation": "Nouns ending in -o are almost always neuter."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Which pronoun means 'we'?",
+      "options": [
+        "mi",
+        "vi",
+        "oni",
+        "ti"
+      ],
+      "answer": "mi",
+      "explanation": "mi is we; vi is you (plural or formal); oni is they; ti is you (informal)."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "'Ja ___ kavu.' (I drink coffee: piti)",
+      "options": [
+        "pijem",
+        "piješ",
+        "pije",
+        "pijemo"
+      ],
+      "answer": "pijem",
+      "explanation": "The ja form of a present-tense verb ends in -m: pijem."
+    },
+    {
+      "level": "A1",
+      "startDay": 11,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "'Vidim ___.' (I see the woman: žena)",
+      "options": [
+        "ženu",
+        "žena",
+        "ženi",
+        "ženom"
+      ],
+      "answer": "ženu",
+      "explanation": "A direct object takes the accusative, and feminine -a becomes -u."
+    },
+    {
+      "level": "A1",
+      "startDay": 25,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "'Mi ___ iz Hrvatske.' (We are from Croatia)",
+      "options": [
+        "smo",
+        "ste",
+        "su",
+        "sam"
+      ],
+      "answer": "smo",
+      "explanation": "The first person plural of biti is smo."
+    },
+    {
+      "level": "A1",
+      "startDay": 25,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "What does 'Nemam pojma' mean?",
+      "options": [
+        "I have no idea",
+        "I have no time",
+        "I have no money",
+        "I have no plan"
+      ],
+      "answer": "I have no idea",
+      "explanation": "'Nemam pojma' is a common everyday phrase meaning 'I have no idea' (literally 'I don't have a notion')."
+    },
+    {
+      "level": "A1",
+      "startDay": 25,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Which word means 1000 in standard Croatian?",
+      "options": [
+        "tisuća",
+        "hiljada",
+        "stotina",
+        "milijun"
+      ],
+      "answer": "tisuća",
+      "explanation": "Croatian uses tisuća for 1000; stotina is a hundred and milijun is a million."
+    },
+    {
+      "level": "A1",
+      "startDay": 25,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "'On ___ hrvatski.' (He is learning Croatian: učiti)",
+      "options": [
+        "uči",
+        "učim",
+        "učiš",
+        "uče"
+      ],
+      "answer": "uči",
+      "explanation": "On takes the third person singular uči."
+    },
+    {
+      "level": "A1",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "'Čitam ___.' (I am reading a book: knjiga)",
+      "options": [
+        "knjigu",
+        "knjiga",
+        "knjige",
+        "knjigom"
+      ],
+      "answer": "knjigu",
+      "explanation": "A feminine noun in -a takes -u as a direct object in the accusative."
+    },
+    {
+      "level": "A1",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "'___ stanuješ?' (Where do you live?)",
+      "options": [
+        "Gdje",
+        "Kamo",
+        "Kada",
+        "Tko"
+      ],
+      "answer": "Gdje",
+      "explanation": "Gdje asks about location, while kamo asks about direction of movement."
+    },
+    {
+      "level": "A1",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "Which day comes right after utorak?",
+      "options": [
+        "srijeda",
+        "sreda",
+        "četvrtak",
+        "ponedjeljak"
+      ],
+      "answer": "srijeda",
+      "explanation": "Wednesday is srijeda in Croatian; the form sreda belongs to the ekavian variant."
+    },
+    {
+      "level": "A1",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "'Živim ___ Zagrebu.' (I live in Zagreb)",
+      "options": [
+        "u",
+        "na",
+        "iz",
+        "do"
+      ],
+      "answer": "u",
+      "explanation": "Cities take u with the locative for where you live."
+    },
+    {
+      "level": "A1",
+      "startDay": 75,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "'___ ovamo!' (Come here, to a friend)",
+      "options": [
+        "Dođi",
+        "Dođite",
+        "Doći",
+        "Dolaziš"
+      ],
+      "answer": "Dođi",
+      "explanation": "Dođi is the informal imperative; dođite is its plural or polite form."
+    },
+    {
+      "level": "A1",
+      "startDay": 75,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "The plural of 'ključ' (key) is ___.",
+      "options": [
+        "ključevi",
+        "ključi",
+        "ključove",
+        "ključa"
+      ],
+      "answer": "ključevi",
+      "explanation": "Short masculine nouns take the long plural in -evi after a soft consonant."
+    },
+    {
+      "level": "A1",
+      "startDay": 75,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "'___ nije došao.' (Nobody came)",
+      "options": [
+        "Nitko",
+        "Netko",
+        "Ništa",
+        "Nešto"
+      ],
+      "answer": "Nitko",
+      "explanation": "Nitko is nobody, for people; ništa is nothing, for things."
+    },
+    {
+      "level": "A1",
+      "startDay": 75,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "'Kako se ___?' (What is your name, literally how do you call yourself)",
+      "options": [
+        "zoveš",
+        "zovem",
+        "zove",
+        "zovemo"
+      ],
+      "answer": "zoveš",
+      "explanation": "The reflexive zvati se in the second person singular is zoveš se."
+    },
+    {
+      "level": "A2",
+      "startDay": 95,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "A woman says 'Yesterday I was at the cinema.' 'Jučer sam ___ u kinu.'",
+      "options": [
+        "bila",
+        "bio",
+        "bilo",
+        "bile"
+      ],
+      "answer": "bila",
+      "explanation": "The past participle agrees with the speaker, so a female speaker says bila."
+    },
+    {
+      "level": "A2",
+      "startDay": 95,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Someone says 'Ne mogu doći na zabavu.' and you reply 'Šteta!' What does 'Šteta!' mean here?",
+      "options": [
+        "What a pity!",
+        "No problem!",
+        "Congratulations!",
+        "Well done!"
+      ],
+      "answer": "What a pity!",
+      "explanation": "'Šteta!' is a common reaction meaning 'What a pity/shame!', recognising it in context tests meaning, not just form."
+    },
+    {
+      "level": "A2",
+      "startDay": 95,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "'Sinoć sam bio ___ koncertu.' (at a concert)",
+      "options": [
+        "na",
+        "u",
+        "za",
+        "do"
+      ],
+      "answer": "na",
+      "explanation": "Events such as a concert take na with the locative, not u."
+    },
+    {
+      "level": "A2",
+      "startDay": 95,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "'Nemam ___.' (I have no time: vrijeme)",
+      "options": [
+        "vremena",
+        "vrijeme",
+        "vremenu",
+        "vremenom"
+      ],
+      "answer": "vremena",
+      "explanation": "After a negated verb the object goes into the genitive: vremena."
+    },
+    {
+      "level": "A2",
+      "startDay": 125,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "'Sutra ___ raditi.' (Tomorrow I will work)",
+      "options": [
+        "ću",
+        "sam",
+        "bih",
+        "imam"
+      ],
+      "answer": "ću",
+      "explanation": "The future is formed with ću, ćeš, će plus the infinitive."
+    },
+    {
+      "level": "A2",
+      "startDay": 125,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "What does 'Baš me briga' mean?",
+      "options": [
+        "I really don't care",
+        "I'm really worried",
+        "I really like it",
+        "I really need it"
+      ],
+      "answer": "I really don't care",
+      "explanation": "'Baš me briga' is a common colloquial phrase meaning 'I really don't care', a meaning item rather than a pure morphology check."
+    },
+    {
+      "level": "A2",
+      "startDay": 125,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "What is the comparative of 'dobar' (good)?",
+      "options": [
+        "bolji",
+        "dobriji",
+        "najbolji",
+        "dobrji"
+      ],
+      "answer": "bolji",
+      "explanation": "Dobar has the irregular comparative bolji; najbolji is the superlative."
+    },
+    {
+      "level": "A2",
+      "startDay": 125,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "'Moram ___ ranije.' (I have to get up earlier: ustati)",
+      "options": [
+        "ustati",
+        "ustanem",
+        "ustajem",
+        "ustao"
+      ],
+      "answer": "ustati",
+      "explanation": "Morati is followed by the infinitive."
+    },
+    {
+      "level": "A2",
+      "startDay": 155,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "'___ se sviđa ovaj film.' (I like this film)",
+      "options": [
+        "Meni",
+        "Mene",
+        "Mnome",
+        "Ja"
+      ],
+      "answer": "Meni",
+      "explanation": "Sviđati se takes the dative of the person who likes something."
+    },
+    {
+      "level": "A2",
+      "startDay": 155,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "'Marko voli ___ posao.' (Marko loves his own job)",
+      "options": [
+        "svoj",
+        "njegov",
+        "njezin",
+        "svojim"
+      ],
+      "answer": "svoj",
+      "explanation": "When the possessor is the subject of the sentence, Croatian uses svoj."
+    },
+    {
+      "level": "A2",
+      "startDay": 155,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "'Idem u kazalište ___ prijateljem.' (with a friend)",
+      "options": [
+        "s",
+        "na",
+        "od",
+        "za"
+      ],
+      "answer": "s",
+      "explanation": "Accompaniment is expressed with s plus the instrumental."
+    },
+    {
+      "level": "A2",
+      "startDay": 155,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "'Rođen sam ___ svibnja.' (on the fifth of May)",
+      "options": [
+        "petog",
+        "peti",
+        "petom",
+        "pet"
+      ],
+      "answer": "petog",
+      "explanation": "Dates take the genitive: petog svibnja."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "'___ se brinuti!' (Don't worry, to a friend)",
+      "options": [
+        "Nemoj",
+        "Nemojte",
+        "Ne",
+        "Nije"
+      ],
+      "answer": "Nemoj",
+      "explanation": "Nemoj plus the infinitive is the informal negative imperative; nemojte is its plural or formal form."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "'Imam mnogo ___.' (many friends: prijatelj)",
+      "options": [
+        "prijatelja",
+        "prijatelji",
+        "prijateljima",
+        "prijatelje"
+      ],
+      "answer": "prijatelja",
+      "explanation": "Quantity words like mnogo take the genitive plural."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "'Jučer sam ___ pismo.' (I wrote the whole letter)",
+      "options": [
+        "napisao",
+        "pisao",
+        "pišem",
+        "napišem"
+      ],
+      "answer": "napisao",
+      "explanation": "The perfective napisati says the letter was finished; pisao would leave it open."
+    },
+    {
+      "level": "B1",
+      "startDay": 178,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "'To je knjiga ___ sam kupio.' (which I bought)",
+      "options": [
+        "koju",
+        "koji",
+        "kojoj",
+        "koje"
+      ],
+      "answer": "koju",
+      "explanation": "The relative is the object of kupiti, so it takes the feminine accusative koju."
+    },
+    {
+      "level": "B1",
+      "startDay": 200,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "'Svako jutro, dok doručkujem, ___ novine.' (Every morning, while I have breakfast, I read the paper)",
+      "options": [
+        "čitam",
+        "pročitam",
+        "čitat ću",
+        "pročitao sam"
+      ],
+      "answer": "čitam",
+      "explanation": "A repeated habitual action takes the imperfective verb čitati."
+    },
+    {
+      "level": "B1",
+      "startDay": 200,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "'To je čovjek ___ sam vidio jučer.' (the man whom I saw yesterday)",
+      "options": [
+        "kojeg",
+        "koji",
+        "kojem",
+        "kojim"
+      ],
+      "answer": "kojeg",
+      "explanation": "The relative pronoun is the object of vidjeti, so an animate masculine takes the accusative kojeg."
+    },
+    {
+      "level": "B1",
+      "startDay": 200,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "Which is the more formal, polite way to ask 'Can you help me?'",
+      "options": [
+        "Možete li mi pomoći?",
+        "Možeš li mi pomoć?",
+        "Daj mi pomoć.",
+        "Pomozi mi, ej."
+      ],
+      "answer": "Možete li mi pomoći?",
+      "explanation": "The polite/formal register uses the vi-form (Možete li...); this probes register choice rather than case morphology."
+    },
+    {
+      "level": "B1",
+      "startDay": 200,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "'Ne znam ___ je to.' (whose is this)",
+      "options": [
+        "čije",
+        "koje",
+        "kome",
+        "što"
+      ],
+      "answer": "čije",
+      "explanation": "Čije asks whose and agrees with the thing owned."
+    },
+    {
+      "level": "B1",
+      "startDay": 228,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "'Da imam više vremena, ___ više.' (I would read more)",
+      "options": [
+        "čitao bih",
+        "čitam",
+        "čitat ću",
+        "da čitam"
+      ],
+      "answer": "čitao bih",
+      "explanation": "An unreal condition takes the conditional: the participle plus bih."
+    },
+    {
+      "level": "B1",
+      "startDay": 228,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "What is the collective form of 'brat' (brother)?",
+      "options": [
+        "braća",
+        "bratovi",
+        "brati",
+        "bratove"
+      ],
+      "answer": "braća",
+      "explanation": "Braća is the collective form and takes a singular feminine verb."
+    },
+    {
+      "level": "B1",
+      "startDay": 228,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "'Moram ___ ovaj članak do sutra.' (finish reading it)",
+      "options": [
+        "pročitati",
+        "čitati",
+        "pročitam",
+        "čitam"
+      ],
+      "answer": "pročitati",
+      "explanation": "Morati takes the infinitive, and the perfective pročitati says the reading is completed."
+    },
+    {
+      "level": "B1",
+      "startDay": 228,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "What does 'vijesti' mean?",
+      "options": [
+        "The news",
+        "The weather",
+        "The market",
+        "The meeting"
+      ],
+      "answer": "The news",
+      "explanation": "Vijesti is the news; it is a plural-only noun in Croatian."
+    },
+    {
+      "level": "B1",
+      "startDay": 255,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "'Trgovina je ___ nedjeljom.' (The shop is closed on Sundays)",
+      "options": [
+        "zatvorena",
+        "zatvoriti",
+        "zatvara",
+        "zatvorenje"
+      ],
+      "answer": "zatvorena",
+      "explanation": "The passive participle agrees with the feminine noun trgovina."
+    },
+    {
+      "level": "B1",
+      "startDay": 255,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "Which connector best continues: 'Volio bih doći na zabavu, ___ moram raditi.' (I'd love to come to the party, ___ I have to work)",
+      "options": [
+        "ali",
+        "i",
+        "ili",
+        "pa"
+      ],
+      "answer": "ali",
+      "explanation": "'ali' (but) signals the contrast between wanting to come and having to work, a discourse-connector/usage choice rather than pure morphology."
+    },
+    {
+      "level": "B1",
+      "startDay": 255,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "'Da imam vremena, pomogao ___ ti.' (If I had time, I would help you)",
+      "options": [
+        "bih",
+        "ću",
+        "sam",
+        "bi"
+      ],
+      "answer": "bih",
+      "explanation": "The conditional in the first person singular is bih, placed right after the participle."
+    },
+    {
+      "level": "B1",
+      "startDay": 255,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "'Došao sam ___ ti pomognem.' (I came in order to help you)",
+      "options": [
+        "da",
+        "kako",
+        "jer",
+        "ako"
+      ],
+      "answer": "da",
+      "explanation": "A purpose clause is da plus the present tense."
+    },
+    {
+      "level": "B1",
+      "startDay": 283,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "'To je pisac ___ knjigu čitam.' (whose book I am reading)",
+      "options": [
+        "čiju",
+        "čiji",
+        "čije",
+        "koji"
+      ],
+      "answer": "čiju",
+      "explanation": "Čiji agrees with the thing owned, so a feminine accusative knjigu takes čiju."
+    },
+    {
+      "level": "B1",
+      "startDay": 283,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "'___ da je to istina.' (It is said that)",
+      "options": [
+        "Kaže se",
+        "Kaže",
+        "Govori",
+        "Rekao"
+      ],
+      "answer": "Kaže se",
+      "explanation": "The impersonal se construction leaves the speaker unnamed."
+    },
+    {
+      "level": "B1",
+      "startDay": 283,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "'U sobi je ___.' (five students, men)",
+      "options": [
+        "pet studenata",
+        "pet studenti",
+        "petero student",
+        "pet studentima"
+      ],
+      "answer": "pet studenata",
+      "explanation": "Numbers from five up take the genitive plural."
+    },
+    {
+      "level": "B1",
+      "startDay": 283,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "The diminutive of 'kuća' (house) is ___.",
+      "options": [
+        "kućica",
+        "kućerina",
+        "kućni",
+        "kućama"
+      ],
+      "answer": "kućica",
+      "explanation": "Kućica is the diminutive; kućerina is the augmentative, a big ugly house."
+    },
+    {
+      "level": "B1",
+      "startDay": 310,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "Which sentence has the correct word order for 'She gave it to me'?",
+      "options": [
+        "Dala mi ga je.",
+        "Dala je mi ga.",
+        "Mi ga je dala.",
+        "Je mi ga dala."
+      ],
+      "answer": "Dala mi ga je.",
+      "explanation": "Clitics cluster in second position in the order dative, accusative, then the auxiliary je last."
+    },
+    {
+      "level": "B1",
+      "startDay": 310,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "'Rekao je da ___ sutra.' (He said he would come tomorrow)",
+      "options": [
+        "će doći",
+        "bi došao",
+        "dođe",
+        "je došao"
+      ],
+      "answer": "će doći",
+      "explanation": "Croatian keeps the tense of the original words in reported speech, so the future stays future."
+    },
+    {
+      "level": "B1",
+      "startDay": 310,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "How do you say 'I don't know whether he is coming'?",
+      "options": [
+        "Ne znam dolazi li.",
+        "Ne znam da li dolazi.",
+        "Ne znam jeli dolazi.",
+        "Ne znam li dolazi."
+      ],
+      "answer": "Ne znam dolazi li.",
+      "explanation": "An indirect yes or no question puts the verb first with the particle li after it."
+    },
+    {
+      "level": "B1",
+      "startDay": 310,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "'___ ulicom, sreo sam prijatelja.' (Walking down the street, I met a friend)",
+      "options": [
+        "Hodajući",
+        "Hodao",
+        "Hodati",
+        "Hodam"
+      ],
+      "answer": "Hodajući",
+      "explanation": "The verbal adverb hodajući expresses an action happening at the same time."
+    }
+  ]
 }
