@@ -249,8 +249,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   border:1px solid rgba(19,26,34,.14);background:var(--paper)}
 .lang h3{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;
   margin:0 0 3px;line-height:1.2}
-.lang .native{color:var(--muted);font-size:14px;display:block;margin:0 0 6px}
-.lang .meta{color:var(--muted);font-size:14px;margin:0;line-height:1.5}
+.lang .native{color:var(--muted);font-size:14px;display:block;margin:0}
 
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
@@ -692,22 +691,10 @@ def live_languages():
     out = []
     for code in codes:
         meta = json.load(io.open(os.path.join(croot, code, 'meta.json'), encoding='utf-8'))
-        days = []
-        pdir = os.path.join(croot, code, 'plan')
-        for f in json.load(io.open(os.path.join(pdir, '_index.json'), encoding='utf-8')):
-            days += json.load(io.open(os.path.join(pdir, f), encoding='utf-8'))['days']
-        days.sort(key=lambda d: d['day'])
-        levels = []
-        for d in days:
-            if d['level'] not in levels:
-                levels.append(d['level'])
         out.append({
             'code': code,
             'name': meta['name'],
             'native': meta.get('nativeName', ''),
-            'lessons': len(days),
-            'first': levels[0],
-            'last': levels[-1],
         })
     return out
 
@@ -1058,8 +1045,7 @@ def build():
         '      <div class="lang">'
         '<img src="/flags/{code}.svg" width="54" height="36" alt="" '
         'loading="lazy" decoding="async">'
-        '<div><h3>{name}</h3><span class="native">{native}</span>'
-        '<p class="meta">{lessons} lessons, {first} to {last}</p></div></div>'.format(**L)
+        '<div><h3>{name}</h3><span class="native">{native}</span></div></div>'.format(**L)
         for L in live_languages())
     landing = landing.replace('{LANG_CARDS}', lang_cards)
 
