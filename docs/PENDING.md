@@ -202,11 +202,17 @@ All assets live in `docs/store-assets/` — see the README there.
    Orbit Core geometry as the launcher icon, so store and phone match.
 2. ✅ **Feature graphic** 1024×500 — `docs/store-assets/feature-graphic-1024x500.png`.
    Both are reproducible via `docs/store-assets/make_assets.py` (Pillow).
-3. ⬜ **Phone screenshots** ×4–8 **(you, phone)** — **THE ONE BLOCKER ON THE LISTING.** Shot list
-   and Play's size rules are in `docs/store-assets/README.md`; drop the PNGs into
-   `docs/store-assets/screenshots/` (the folder does not exist yet, just create it). Shoot on your
-   own device, which has real streak and progress data: a fresh install's empty states sell
-   nothing. Then **(me)**: check dimensions and draft the per-screenshot captions.
+3. ✅ **Phone screenshots** — eight framed 1080x1920 PNGs in `docs/store-assets/play/`, built by
+   `tools/store/make_store_shots.py` from the raw captures in `docs/store-assets/screenshots/`,
+   mixing dark and light. Dimensions checked against Play's rules 2026-08-22.
+
+   One quality note rather than a blocker: two of the captures were taken on a nearly empty
+   install, so `01-learn-tab` shows a 2-day streak on lesson 1 of 61, and
+   `03-light-theme-review-tab` shows 0 learned and 0 mastered. They are honest and they sell
+   nothing. Re-shoot those two on a device with real progress and re-run the script; everything
+   else about the listing is ready either way.
+
+   Note the lesson counts in `01` are also pre-v0.54.0, from before A0 became ten lessons.
 
 ---
 
