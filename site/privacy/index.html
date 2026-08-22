@@ -218,6 +218,27 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .method .row:last-child{border-bottom:0}
 .lede + .lede{margin-top:15px}
 
+/* ---- languages ----
+   Real SVG flags, not emoji. A regional-indicator pair renders as a flag on Android, iOS and
+   macOS and as the two bare letters "HR" on Windows, which has no flag glyphs at all, so an
+   emoji here would have been broken for a large share of the people this page is for. The two
+   files are public-domain Wikimedia SVGs with a viewBox added so they scale.
+
+   The hairline border and the 3:2 box keep both flags the same visual size even though their
+   official ratios differ (Croatia is 2:1, Portugal 3:2); object-fit does the rest without
+   distorting either. */
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;
+  margin:30px 0 0}
+.lang{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);
+  border-radius:14px;background:var(--raise)}
+.lang img{width:54px;height:36px;object-fit:cover;border-radius:4px;flex:none;
+  border:1px solid rgba(19,26,34,.14);background:var(--paper)}
+.lang h3{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;
+  margin:0 0 3px;line-height:1.2}
+.lang .native{color:var(--muted);font-size:14px;display:block;margin:0 0 6px}
+.lang .meta{color:var(--muted);font-size:14px;margin:0;line-height:1.5}
+.langs-note{margin:22px 0 0;color:var(--muted);font-size:15px;line-height:1.6;max-width:64ch}
+
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
    correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,
@@ -337,7 +358,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
    Under prefers-reduced-motion NOTHING here applies. Every resting state lives inside this
    query, so a visitor with it on, or with JS off, gets the finished page rather than a blank one. */
 @media (prefers-reduced-motion:no-preference){
-  .rise,.loop .step,.claims .claim,.method .row,.tick,.gap,.origin{
+  .rise,.loop .step,.claims .claim,.method .row,.langs .lang,.tick,.gap,.origin{
     transition:opacity .72s cubic-bezier(.16,.7,.3,1),transform .72s cubic-bezier(.16,.7,.3,1)}
 
   .rise{opacity:0;transform:translateY(10px)}
@@ -346,10 +367,10 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 
   /* Children rest and arrive on the SAME property pair as their container, differing only in
      delay, so a group settles as one movement instead of four. */
-  .loop .step,.claims .claim,.method .row{opacity:0;transform:translateY(10px)}
-  .loop.in .step,.claims.in .claim,.method.in .row{opacity:1;transform:none}
+  .loop .step,.claims .claim,.method .row,.langs .lang{opacity:0;transform:translateY(10px)}
+  .loop.in .step,.claims.in .claim,.method.in .row,.langs.in .lang{opacity:1;transform:none}
   .loop .step:nth-child(2),.claims .claim:nth-child(2),
-  .method .row:nth-child(2){transition-delay:.08s}
+  .method .row:nth-child(2),.langs .lang:nth-child(2){transition-delay:.08s}
   .loop .step:nth-child(3),.claims .claim:nth-child(3),
   .method .row:nth-child(3){transition-delay:.16s}
   .method .row:nth-child(4){transition-delay:.24s}
@@ -499,7 +520,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       io.unobserve(e.target);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.loop, .track, .claims, .method, .shots, .section .rise')
+  document.querySelectorAll('.loop, .track, .claims, .method, .langs, .shots, .section .rise')
     .forEach(function(el){ io.observe(el); });
 })();
 
