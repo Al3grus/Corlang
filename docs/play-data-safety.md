@@ -51,7 +51,11 @@ one so a future change can be checked against it.
 ### Financial info → **Purchase history**
 - **Collected:** Yes · **Shared:** No
 - **Processed ephemerally:** No
-- **Required or optional:** *Required* (for subscribers using the AI tutor)
+- **Required or optional:** *Optional*, i.e. "users can choose". Changed from *Required*
+  on 2026-08-22 for accuracy and consistency: all four declared types are collected ONLY
+  if the learner subscribes to and uses the AI tutor, and every lesson, review, quiz and
+  exam works without any of it. Marking this one required would imply a user cannot avoid
+  it while using the app, which is false for almost everyone who installs.
 - **Purposes:** App functionality, **and** Fraud prevention, security and compliance
 - **Evidence:** the Play subscription token is sent with tutor requests so the worker can confirm
   an active subscription, and it forms part of two short-lived KV keys — a daily message counter
