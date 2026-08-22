@@ -198,6 +198,16 @@ class ProgressRepository(private val dao: ProgressDao) {
 
     // ----- Plan-day task checklist -----
 
+    /**
+     * Forget one lesson's step marks so it can be played again from the first step.
+     *
+     * Deliberately does NOT touch the completed-days table: replaying lesson 9 must not un-tick
+     * it on the journey, break the streak, or move the learner backwards. `advancePosition`
+     * already refuses to regress, so the only thing standing between a finished lesson and a
+     * fresh run is these marks.
+     */
+    suspend fun resetDayTasks(lang: String, day: Int) = dao.clearDayTaskChecksForDay(lang, day)
+
     fun dayTaskChecks(lang: String, day: Int): Flow<List<DayTaskCheck>> =
         dao.dayTaskChecks(lang, day)
 

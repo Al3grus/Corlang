@@ -69,6 +69,37 @@ import kotlinx.coroutines.launch
 
 enum class StepKind { INFO, TASK, WORDS, REVIEW, GENDER, CLOZE, RECALL, LEARN, EXERCISE, DIALOGUE, WRAPUP, COMPLETE }
 
+/**
+ * Where a session opens, and whether the lesson's step marks should be wiped first.
+ *
+ * [done] is `stepDone` evaluated over [kinds], in the same order. Returns the step index to open
+ * at, and `replay = true` when the lesson was already finished.
+ *
+ * Pure, because both halves of this have been wrong in the field and neither is visible in a
+ * build log:
+ *
+ *  - Resuming used to pick "the first step that is not done", and on a FINISHED lesson that is
+ *    the COMPLETE step, so revisiting lesson 9 from lesson 19 opened straight onto the
+ *    congratulations screen with nothing to do but leave.
+ *  - Jumping at all is wrong before the underlying flows have emitted, which once landed a
+ *    learner past a review step that still had twelve cards due. The caller still guards that;
+ *    this function only decides, given settled data.
+ */
+fun sessionOpensAt(
+    kinds: List<StepKind>,
+    done: List<Boolean>,
+    hasChecks: Boolean,
+): Pair<Int, Boolean> {
+    require(kinds.size == done.size) { "kinds and done must line up" }
+    val actionable = kinds.indices.filter {
+        kinds[it] != StepKind.INFO && kinds[it] != StepKind.COMPLETE
+    }
+    if (actionable.isNotEmpty() && actionable.all { done[it] }) return 0 to true
+    if (!hasChecks) return 0 to false
+    val firstOpen = kinds.indices.firstOrNull { kinds[it] != StepKind.INFO && !done[it] } ?: -1
+    return (if (firstOpen > 0) firstOpen else 0) to false
+}
+
 data class SessionStep(
     val id: String,
     val kind: StepKind,
@@ -379,10 +410,15 @@ fun SessionPlayer(
         return   // one blank frame < wrong-step flash
     }
     if (!resumed) {
-        if (checks.isNotEmpty()) {
-            val firstOpen = steps.indexOfFirst { it.kind != StepKind.INFO && !stepDone(it) }
-            if (firstOpen > 0) index = firstOpen
-        }
+        // A FINISHED lesson replays; only a half-done one resumes. Revisiting a lesson is for
+        // doing it again, so its marks are cleared and it opens at step one. The lesson stays
+        // completed on the journey: this clears step marks only, never the completed-days
+        // record, and `advancePosition` already refuses to move the learner backwards.
+        val (openAt, replay) = sessionOpensAt(
+            steps.map { it.kind }, steps.map { stepDone(it) }, checks.isNotEmpty()
+        )
+        if (replay) scope.launch { container.progress.resetDayTasks(lang, day.day) }
+        index = openAt
         resumed = true   // latch unconditionally: the jump must never fire mid-session
     }
 

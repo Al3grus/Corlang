@@ -176,6 +176,10 @@ interface ProgressDao {
     @Query("DELETE FROM exam_section_attempt WHERE langCode = :lang") suspend fun clearExamAttemptsFor(lang: String)
     @Query("DELETE FROM can_do_check WHERE langCode = :lang") suspend fun clearCanDoChecksFor(lang: String)
     @Query("DELETE FROM day_task_check WHERE langCode = :lang") suspend fun clearDayTaskChecksFor(lang: String)
+
+    /** One lesson's step marks, for replaying a finished lesson from the beginning. */
+    @Query("DELETE FROM day_task_check WHERE langCode = :lang AND day = :day")
+    suspend fun clearDayTaskChecksForDay(lang: String, day: Int)
     @Query("DELETE FROM missed_question WHERE langCode = :lang") suspend fun clearMissedQuestionsFor(lang: String)
 
     // ----- Mistake bank -----
