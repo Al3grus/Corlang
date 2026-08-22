@@ -107,11 +107,17 @@ async function checkRateLimit(request, env) {
     const ipN = parseInt(ipCount ?? "0", 10);
     const gN = parseInt(globalCount ?? "0", 10);
     const sN = parseInt(subCount ?? "0", 10);
+    // Which cap actually binds this caller: a real Play subscriber is bounded by the
+    // per-subscriber cap, and a sideload build (no sub token) by the per-IP one. Reporting the
+    // BINDING cap is what lets the tutor show a number that is true for whoever is asking,
+    // rather than one that is only true for subscribers.
+    const limit = subKey ? DAILY_LIMIT_PER_SUB : DAILY_LIMIT_PER_IP;
+    const used = subKey ? sN : ipN;
     if (ipN >= DAILY_LIMIT_PER_IP || gN >= DAILY_LIMIT_GLOBAL) {
-      return { ok: false, reason: "ip/global" };
+      return { ok: false, reason: "ip/global", limit, remaining: 0 };
     }
     if (subKey && sN >= DAILY_LIMIT_PER_SUB) {
-      return { ok: false, reason: "sub" };
+      return { ok: false, reason: "sub", limit, remaining: 0 };
     }
     // Two-day TTL: today's keys expire on their own, no cleanup job needed.
     await Promise.all([
@@ -120,10 +126,26 @@ async function checkRateLimit(request, env) {
       subKey ? env.RATE_KV.put(subKey, String(sN + 1), { expirationTtl: 172800 })
              : Promise.resolve(),
     ]);
-    return { ok: true };
+    return { ok: true, limit, remaining: Math.max(0, limit - used - 1) };
   } catch {
-    return { ok: true }; // KV hiccup: serve the user, don't 500 the tutor
+    // KV hiccup: serve the user, don't 500 the tutor. No counter either, because a number we
+    // cannot stand behind is worse than none.
+    return { ok: true };
   }
+}
+
+/**
+ * Headers that carry the daily allowance back to the app.
+ *
+ * Omitted entirely when the worker does not know (no KV, or a KV error), so the client shows
+ * nothing rather than a made-up figure.
+ */
+function quotaHeaders(rate) {
+  if (!rate || typeof rate.remaining !== "number") return {};
+  return {
+    "x-corlang-remaining": String(rate.remaining),
+    "x-corlang-limit": String(rate.limit),
+  };
 }
 
 // ---- Play subscription verification ----
@@ -244,7 +266,7 @@ export default {
       const msg = rate.reason === "sub"
         ? "You've reached today's message limit. It resets tomorrow."
         : "Daily limit reached. Try again tomorrow.";
-      return json(429, { error: { message: msg } });
+      return json(429, { error: { message: msg } }, quotaHeaders(rate));
     }
 
     const raw = await request.text();
@@ -287,17 +309,18 @@ export default {
       body: JSON.stringify(body),
     });
 
-    // Pass the Anthropic response through verbatim; the app already parses this shape.
+    // Pass the Anthropic response through verbatim; the app already parses this shape. The
+    // quota headers ride alongside it, so the tutor's counter costs no extra round trip.
     return new Response(upstream.body, {
       status: upstream.status,
-      headers: { "content-type": "application/json" },
+      headers: { "content-type": "application/json", ...quotaHeaders(rate) },
     });
   },
 };
 
-function json(status, obj) {
+function json(status, obj, extraHeaders) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", ...(extraHeaders || {}) },
   });
 }

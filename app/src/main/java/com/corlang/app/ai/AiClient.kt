@@ -11,6 +11,9 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
 import java.io.BufferedReader
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -32,6 +35,22 @@ class AiClient {
 
     private val json = Json { ignoreUnknownKeys = true }
 
+    /** What the worker says is left of today's allowance, and the cap it is measured against. */
+    data class Quota(val remaining: Int, val limit: Int)
+
+    private val _quota = MutableStateFlow<Quota?>(null)
+
+    /**
+     * The daily allowance, as last reported by the worker.
+     *
+     * Null until a call has been made, and null forever if the worker does not report it (an
+     * older deploy, or a KV error at its end). The tutor shows nothing in that case rather than
+     * a guess: the cap is enforced server-side, so a locally counted number would drift the
+     * moment the learner reinstalled or used a second device, and a counter that lies about the
+     * one thing it exists to say is worse than no counter.
+     */
+    val quota: StateFlow<Quota?> = _quota.asStateFlow()
+
     /**
      * Sends a conversation and returns the assistant's text reply.
      *
@@ -50,9 +69,10 @@ class AiClient {
         // interactive chat (verified: no variety-quality loss). Sonnet 5 accepts "disabled";
         // never send this to a Fable-family model (it 400s there).
         disableThinking: Boolean = false,
-        // The active Play subscription token. The worker keys the 40-msg/day per-subscriber cap
-        // on it (no user accounts needed — the token is the identity). Null on DEV_PREMIUM /
-        // sideload, where the worker falls back to its per-IP daily limit.
+        // The active Play subscription token. The worker keys its per-subscriber daily cap on
+        // it (no user accounts needed — the token is the identity). Null on DEV_PREMIUM /
+        // sideload, where the worker falls back to its per-IP daily limit. The cap is 30 a day
+        // for a subscriber; this comment claimed 40 for months while the worker enforced 30.
         subToken: String? = null
     ): Result<String> = withContext(Dispatchers.IO) {
         // Server-side only: the proxy holds the key (server/ai-proxy); the app sends the
@@ -105,6 +125,12 @@ class AiClient {
             conn.outputStream.use { it.write(body.toByteArray(Charsets.UTF_8)) }
 
             val code = conn.responseCode
+            // Read before the body: these ride on every response, including the 429 that says
+            // the allowance is gone, so the counter is right even on the call that exhausts it.
+            conn.getHeaderField("x-corlang-remaining")?.toIntOrNull()?.let { left ->
+                val cap = conn.getHeaderField("x-corlang-limit")?.toIntOrNull()
+                _quota.value = Quota(left, cap ?: left)
+            }
             val stream = if (code in 200..299) conn.inputStream else conn.errorStream
             val text = stream?.bufferedReader()?.use(BufferedReader::readText) ?: ""
 
@@ -148,7 +174,9 @@ class AiClient {
 
     private fun friendlyError(code: Int, message: String?): String = when (code) {
         401, 403 -> "AI access was refused. Check your Premium status and try again."
-        429 -> "Rate limit reached. Wait a moment and try again."
+        // The worker distinguishes "slow down" from "that is all for today" in its message;
+        // flattening both into one string lost the only useful half.
+        429 -> message ?: "Rate limit reached. Wait a moment and try again."
         in 500..599 -> "The AI service is temporarily unavailable. Try again shortly."
         else -> message ?: "Request failed (HTTP $code)."
     }

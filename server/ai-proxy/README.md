@@ -33,3 +33,20 @@ stops being used automatically.
 
 Replace the shared-token check in `authorize()` with per-user Play purchase verification.
 The full checklist is in `docs/server-ai.md`.
+
+## Daily-allowance headers
+
+Every response the worker produces carries the caller's remaining allowance, so the tutor can
+show a counter without a second round trip:
+
+- `x-corlang-remaining` — messages left today, after this one is counted.
+- `x-corlang-limit` — the cap it is measured against.
+
+The cap reported is the one that actually **binds this caller**: `DAILY_LIMIT_PER_SUB` (30) when
+a `x-corlang-sub` token is presented, and `DAILY_LIMIT_PER_IP` (300) otherwise, which is the
+sideload/DEV_PREMIUM case. Both headers ride on the 429 too, with `remaining: 0`, so the app
+knows the difference between "slow down" and "that is all for today".
+
+They are **omitted entirely** when the worker cannot say (no KV binding, or a KV error). The app
+shows no counter in that case rather than a guessed one, so an older deploy simply means no
+counter instead of a wrong one.
