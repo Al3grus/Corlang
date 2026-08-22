@@ -251,6 +251,22 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
   margin:0 0 3px;line-height:1.2}
 .lang .native{color:var(--muted);font-size:14px;display:block;margin:0}
 
+/* ---- request form ----
+   Only on /requests/, which nothing links to. Native selects rather than a custom dropdown: they
+   are keyboard and screen-reader correct for free, and on a phone they open the platform picker
+   the visitor already knows. */
+.reqform{margin:26px 0 0;max-width:520px}
+.reqform label{display:block;font-size:14.5px;font-weight:600;margin:0 0 6px}
+.reqform select,.reqform input{width:100%;box-sizing:border-box;font:inherit;font-size:16px;
+  padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:var(--raise);
+  color:var(--ink);margin:0 0 18px}
+.reqform select:focus,.reqform input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.reqform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.reqform button{font:inherit;font-weight:600;font-size:16px;padding:13px 22px;border:0;
+  border-radius:10px;background:var(--ink);color:#fff;cursor:pointer}
+.reqform button:disabled{opacity:.55;cursor:default}
+.req-note{margin:18px 0 0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:60ch}
+
 /* ---- FAQ ----
    Native <details>, so it works with JavaScript off, is keyboard operable and is announced
    correctly by a screen reader without a line of ARIA. `name` makes them mutually exclusive,
@@ -601,7 +617,16 @@ SCRIPT = """<script>
 </script>"""
 
 
-def page(title, description, body, canonical, wide=True):
+ROBOTS_NOINDEX = """
+<meta name="robots" content="noindex,nofollow">"""
+
+
+def page(title, description, body, canonical, wide=True, noindex=False):
+    # Unlinked is not the same as unfindable: without this, a crawler that meets the URL
+    # anywhere would index a page built to be reached deliberately.
+    # Unlinked is not the same as unfindable: without this, a crawler that meets the URL
+    # anywhere would index a page built to be reached deliberately.
+    robots_tag = ROBOTS_NOINDEX if noindex else ""
     return f"""<!doctype html>
 <html lang="en-GB">
 <head>
@@ -609,7 +634,7 @@ def page(title, description, body, canonical, wide=True):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(description)}">
-<link rel="canonical" href="{canonical}">
+<link rel="canonical" href="{canonical}">{robots_tag}
 <meta name="theme-color" content="#FBFBFD">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(description)}">
@@ -697,6 +722,132 @@ def live_languages():
             'native': meta.get('nativeName', ''),
         })
     return out
+
+
+REQUEST_BODY = '''  <section class="hero" style="grid-template-columns:1fr">
+    <div class="hero-copy">
+      <p class="eyebrow">Requests</p>
+      <h1>Which language next?</h1>
+      <p class="lede">Corlang adds one course at a time, and which one comes next is decided by
+      what people ask for. Tell us what you want and how far you need to get.</p>
+
+      <form class="reqform" id="reqform" novalidate>
+        <label for="req-language">Language</label>
+        <select id="req-language" name="language" required>
+        <option value="croatian">Croatian</option>
+        <option value="portuguese">Portuguese</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+        <option value="italian">Italian</option>
+        <option value="spanish">Spanish</option>
+        <option value="dutch">Dutch</option>
+        <option value="polish">Polish</option>
+        <option value="greek">Greek</option>
+        <option value="czech">Czech</option>
+        <option value="swedish">Swedish</option>
+        <option value="danish">Danish</option>
+        <option value="norwegian">Norwegian</option>
+        <option value="finnish">Finnish</option>
+        <option value="romanian">Romanian</option>
+        <option value="hungarian">Hungarian</option>
+        <option value="bulgarian">Bulgarian</option>
+        <option value="slovak">Slovak</option>
+        <option value="slovenian">Slovenian</option>
+        <option value="serbian">Serbian</option>
+        <option value="ukrainian">Ukrainian</option>
+        <option value="turkish">Turkish</option>
+        <option value="irish">Irish</option>
+        <option value="catalan">Catalan</option>
+        <option value="other">Another language</option>
+        </select>
+
+        <div id="req-other-wrap" hidden>
+          <label for="req-other">Which language?</label>
+          <input id="req-other" name="other" type="text" maxlength="40" autocomplete="off">
+        </div>
+
+        <label for="req-level">How far do you need to get?</label>
+        <select id="req-level" name="level" required>
+        <option value="A1">A1</option>
+        <option value="A2">A2</option>
+        <option value="B1">B1</option>
+        <option value="B2">B2</option>
+        <option value="C1">C1</option>
+        </select>
+
+        <label for="req-email">Your email</label>
+        <input id="req-email" name="email" type="email" required autocomplete="email"
+               placeholder="you@example.com">
+
+        <div class="hp" aria-hidden="true">
+          <label for="req-website">Leave this empty</label>
+          <input id="req-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" id="req-send">Send request</button>
+        <p class="msg" id="req-msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="req-note">Your address is stored so we can tell you when that course exists, and
+      for nothing else. No newsletter, no sharing, no other use. Ask us to delete it at any time
+      at support@corlang.app. See the <a href="/privacy/">privacy policy</a>.</p>
+    </div>
+  </section>
+'''
+
+REQUEST_SCRIPT = '''<script>
+/* The "Another language" text box only exists once it is needed. */
+(function(){
+  var f = document.getElementById('reqform');
+  if (!f) return;
+  var lang = document.getElementById('req-language');
+  var wrap = document.getElementById('req-other-wrap');
+  var other = document.getElementById('req-other');
+  var msg = document.getElementById('req-msg');
+  var send = document.getElementById('req-send');
+
+  function sync(){
+    var isOther = lang.value === 'other';
+    wrap.hidden = !isOther;
+    other.required = isOther;
+  }
+  lang.addEventListener('change', sync);
+  sync();
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.className = 'msg';
+    msg.textContent = '';
+    send.disabled = true;
+    fetch('/api/request', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        language: lang.value,
+        other: other.value,
+        level: document.getElementById('req-level').value,
+        email: document.getElementById('req-email').value,
+        website: document.getElementById('req-website').value
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(d){
+        if (d && d.ok) {
+          msg.className = 'msg good';
+          msg.textContent = 'Noted. We will write when that course exists.';
+          f.reset(); sync();
+        } else {
+          msg.className = 'msg';
+          msg.textContent = (d && d.error) || 'That did not send. Try again shortly.';
+        }
+      })
+      .catch(function(){
+        msg.className = 'msg';
+        msg.textContent = 'That did not send. Check your connection.';
+      })
+      .then(function(){ send.disabled = false; });
+  });
+})();
+</script>'''
 
 
 def md_to_html(md):
@@ -1056,6 +1207,13 @@ def build():
              "official B1 exam. No account, no ads, no tracking.",
              landing, "https://corlang.app/"))
 
+    os.makedirs(os.path.join(OUT, 'requests'), exist_ok=True)
+    io.open(os.path.join(OUT, 'requests', 'index.html'), 'w', encoding='utf-8',
+            newline='\n').write(
+        page("Request a language — Corlang",
+             "Tell us which language you want Corlang to build next, and how far you need to get.",
+             REQUEST_BODY + REQUEST_SCRIPT, "https://corlang.app/requests/", noindex=True))
+
     os.makedirs(os.path.join(OUT, 'terms'), exist_ok=True)
     terms_md = io.open(os.path.join(ROOT, 'TERMS.md'), encoding='utf-8').read()
     io.open(os.path.join(OUT, 'terms', 'index.html'), 'w', encoding='utf-8',
@@ -1085,8 +1243,7 @@ def build():
         "  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n"
         "\n/fonts/*\n  Cache-Control: public, max-age=604800\n"
         "\n/flags/*\n  Cache-Control: public, max-age=604800\n")
-    print('built site/index.html, site/privacy/index.html, site/terms/index.html, '
-          'favicon, _headers')
+    print('built site/index.html, /privacy/, /terms/, /requests/, favicon, _headers')
 
 
 if __name__ == '__main__':
