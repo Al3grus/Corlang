@@ -153,6 +153,24 @@ abstract class AppDatabase : RoomDatabase() {
                 AppDatabase::class.java,
                 "corlang.db"
             ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7)
+                // TRUNCATE, not Room's default (WAL), because THIS DATABASE IS BACKED UP BY FILE
+                // NAME. res/xml/backup_rules.xml and data_extraction_rules.xml both name exactly
+                // one file, "corlang.db". Under WAL, a commit lands in the sibling corlang.db-wal
+                // and only reaches corlang.db at a checkpoint, so Auto Backup captured a database
+                // missing every write since the last checkpoint. Restoring it gave the learner
+                // their profile back (DataStore is one atomic file and restored intact) and their
+                // lessons at day 1. Field-reported on a real uninstall/reinstall, v0.53.2.
+                //
+                // Backing up the -wal alongside is NOT the fix: the two files are copied at
+                // different instants, so the pair can restore inconsistent. TRUNCATE keeps every
+                // committed row inside corlang.db itself, which is the file the rules promise.
+                // The cost is concurrent-writer throughput this app has no use for: one learner,
+                // a few rows per answer. Existing WAL installs checkpoint and drop the -wal on
+                // the first open after this change, so the upgrade path needs nothing.
+                //
+                // If this ever goes back to WAL, the backup rules and BackupOnRestoreTest must
+                // change with it.
+                .setJournalMode(RoomDatabase.JournalMode.TRUNCATE)
                 .build().also { instance = it }
         }
     }
