@@ -217,8 +217,17 @@ exam gate, the placement-seed ceiling, retired product ids).
      **Do not set a placeholder value to "test the plumbing".** The worker turns subscription
      verification ON the moment this secret exists, so a dummy key means every real subscriber
      gets a 403.
-   - Verify: a forged sub token must 403, a real subscriber must 200. Grants can take a little
-     while to propagate, so a 401 on the first attempt is worth one retry before debugging.
+   - **Verify with `server/ai-proxy/check-play-access.py`**, because you cannot tell from
+     outside whether this worked: `verifySubscription` FAILS OPEN. A signing failure, a disabled
+     API and a missing Play Console permission all end in `return true`, so a broken setup does
+     not error anywhere, it silently stops checking entitlement and lets everyone through. The
+     fail-open is deliberate (a Google outage must not lock out paying users) and it is exactly
+     what makes a silent misconfiguration possible.
+
+     `python check-play-access.py "<path to key>"` mints a token the way the worker does and
+     calls the same endpoint with a deliberately invalid purchase token. A 400/404/410 back
+     means authorised and working; 401/403 means the Play Console grant is missing or has not
+     propagated; an OAuth failure means the key or the API enablement.
 
    Until this exists, entitlement is granted client-side after Play's local signature check.
    That is fine for closed testing with license testers and is NOT fine for public launch.
