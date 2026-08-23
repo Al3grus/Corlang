@@ -58,7 +58,7 @@ Duolingo has no Croatian course and is not building one. That is the whole oppor
 
 | | Corlang | The field |
 |---|---|---|
-| Payment | Once, per course, €4.99 / €12.99 / €24.99 cumulative | Subscription everywhere: Ling $14.99/mo ($149.99 lifetime), Babbel $15.99/mo ($599 lifetime), Mondly $89.99 lifetime, Busuu $6–15/mo |
+| Payment | Once, per course, €9.99 / €19.99 / €34.99 cumulative | Subscription everywhere: Ling $14.99/mo ($149.99 lifetime), Babbel $15.99/mo ($599 lifetime), Mondly $89.99 lifetime, Busuu $6–15/mo |
 | Data collected | None. No account exists | Accounts, email, analytics, ad IDs |
 | Advertising | None | Duolingo ~8% of revenue from ads; most free tiers carry them |
 | Structure | CEFR A0–B1, quizzes + readiness + mock exams | Themed packs and streaks; CEFR mapping usually loose or absent |
@@ -78,8 +78,8 @@ Duolingo has no Croatian course and is not building one. That is the whole oppor
 ## Settled decisions — do not relitigate without new evidence
 
 **No advertising** (2026-08-24). European Android rewarded video is about $5.00 eCPM, so one ad
-per lesson at one lesson a day earns **€0.14 per user per month**. Matching a single €24.99 sale
-would take roughly 5,000 ad views, about thirteen years from one learner. Reaching €100/month
+per lesson at one lesson a day earns **€0.14 per user per month**. Matching a single €34.99 sale
+would take roughly 7,000 ad views, about nineteen years from one learner. Reaching €100/month
 needs ~20,000 impressions a day. The cost is a GDPR consent dialog, an advertising identifier on
 the Play data-safety form, a third-party SDK in the APK, and the deletion of two of our four
 differentiators — to buy pennies. Duolingo takes only ~8% of revenue from ads and does it at

@@ -90,7 +90,7 @@ first forever.
 - **Subscriptions → create `corlang_ai_premium`**:
   - base plan `monthly`, auto-renewing, **€9.99/month**; add an **Offer** on it = **3-day free trial** phase (Google's minimum length; a trial spends real tokens, so it is set at the floor). No annual plan (AI economics may shift within a year).
   - **In-app products (managed) → create six**, three per language:
-  `unlock_hr_a1` €4.99 · `unlock_hr_a2` €12.99 · `unlock_hr_b1` €24.99, and `unlock_pt_a1` ·
+  `unlock_hr_a1` €9.99 · `unlock_hr_a2` €19.99 · `unlock_hr_b1` €34.99, and `unlock_pt_a1` ·
   `unlock_pt_a2` · `unlock_pt_b1` at the same prices. Each unlock is **cumulative** — it grants
   its level and every level below it — so the B1 product is the whole course and there is no
   separate bundle. **Activate** each; accept Google's regional prices. **Do not create an

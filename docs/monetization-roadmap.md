@@ -117,6 +117,35 @@ the €4.99/€7.99 research prices when the products were finally created. A fu
 Pack"** (intensive mocks + AI-examiner credits) is a lever to revisit once the base funnel is
 proven; NOT in v1.
 
+#### Raised to €9.99 / €19.99 / €34.99 (2026-08-24, before any product existed)
+
+The market check that prompted it: every one-time comparable is dearer. FunEasyLearn sells one
+language for **$49.99** lifetime, Mondly all 41 for **$89.99**, Ling all 60+ for **$149.99**.
+Babbel's lifetime is **$599**. A 344-lesson CEFR course at €24.99 was the cheapest one-time
+option in the market, and the segment (citizenship and exam candidates already paying €50-150
+for the test) does not read €24.99 as a bargain so much as a hobby-app price.
+
+Three properties of the new ladder, kept deliberately:
+
+- **Per-lesson cost falls at every step up**, which it did not before. Croatian: €0.149 (A1),
+  €0.123 (A2), €0.105 (whole course). Portuguese: €0.222, €0.174, €0.146. This is what makes the
+  paywall's "Best value" badge a checkable claim rather than a slogan, and it is the constraint
+  to preserve if these numbers ever move again.
+- **The climb is punitive and disclosed.** Rung by rung costs €64.97 against €34.99 outright;
+  A1-then-course costs €44.98. The paywall says so in plain words, because Play has no upgrade
+  pricing for one-time products and this is the only honest way to sell a ladder.
+- **The bottom rung is no longer an exit.** €4.99 let a price-sensitive buyer take 67 lessons and
+  never return; €9.99 against €34.99 makes stopping there the expensive choice.
+
+Net per sale, at Play's post-2026-06-30 fees (10% service + 5% billing in the EEA = 15%) and
+21% Belgian VAT, which Play collects: €34.99 → €28.92 ex-VAT → **€24.58 net**, against €17.56
+at €24.99. That is +40% per sale, so the raise loses money only if conversion falls by more
+than 28.6%.
+
+**This is reversible and cheap to revisit.** Play price changes on one-time products apply to
+new purchases only; nobody who already bought is affected, so nothing here is load-bearing the
+way a product id is. The trigger to look again is real conversion data, not another opinion.
+
 ### AI subscription — "Corlang Premium" (auto-renewing; unlocks the Learn tab: tutor chat + exam-writing feedback + teach-back review)
 | Plan | Price | Effective | Note |
 |---|---|---|---|
@@ -166,12 +195,12 @@ behind it shows as "unavailable" in the paywall.
 
 | Product | Grants | Paid lessons opened | Price |
 |---|---|---|---|
-| `unlock_hr_a1` | Croatian through A1 | 67 | **€4.99** |
-| `unlock_hr_a2` | Croatian through A2 | 163 | **€12.99** |
-| `unlock_hr_b1` | the whole Croatian course | 334 | **€24.99** |
-| `unlock_pt_a1` | Portuguese through A1 | 45 | **€4.99** |
-| `unlock_pt_a2` | Portuguese through A2 | 115 | **€12.99** |
-| `unlock_pt_b1` | the whole Portuguese course | 240 | **€24.99** |
+| `unlock_hr_a1` | Croatian through A1 | 67 | **€9.99** |
+| `unlock_hr_a2` | Croatian through A2 | 163 | **€19.99** |
+| `unlock_hr_b1` | the whole Croatian course | 334 | **€34.99** |
+| `unlock_pt_a1` | Portuguese through A1 | 45 | **€9.99** |
+| `unlock_pt_a2` | Portuguese through A2 | 115 | **€19.99** |
+| `unlock_pt_b1` | the whole Portuguese course | 240 | **€34.99** |
 
 **No `unlock_*_b2`.** Neither live course has a single B2 lesson — Croatian ends at B1 (344
 lessons), Portuguese at B1 (250). The old global `unlock_b2` would have charged €7.99 for
@@ -185,8 +214,8 @@ first paid step, taken while still deciding. A2 and B1 carry the price because t
 levels a certificate actually needs.
 
 **The one real cost of cumulative tiers** is that Play has no upgrade pricing for one-time
-products. A learner who buys A1 at €4.99 and later the whole course at €24.99 pays €29.98 —
-€4.99 more than going straight there. Nothing in the Play API can refund that difference, so it
+products. A learner who buys A1 at €9.99 and later the whole course at €34.99 pays €44.98 —
+€9.99 more than going straight there. Nothing in the Play API can refund that difference, so it
 is handled by disclosure instead: `PaywallScreen` shows the single level AND the whole course
 side by side at the **first** paywall a learner meets, rather than revealing the ladder one rung
 at a time. The choice to climb has to be an informed one, made once.

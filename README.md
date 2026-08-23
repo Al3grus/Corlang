@@ -52,9 +52,9 @@ course.
 
 | Unlock | Pricing | 
 |---|---|---|
-| through **A1** | €4.99 | 
-| through **A2** | €12.99 | 
-| **the whole course**, to B1 | €24.99 | 
+| through **A1** | €9.99 | 
+| through **A2** | €19.99 | 
+| **the whole course**, to B1 | €34.99 | 
 
 Prices are per language and set for your region by Google Play. There is no subscription for the
 course and no recurring charge — the lessons are a fixed thing you buy once and keep, including
