@@ -1,5 +1,5 @@
 /**
- * POST /api/invite  { email, website }  ->  { ok: true }
+ * POST /api/invite  { email, device, website }  ->  { ok: true }
  *
  * Stores an address so the tester can be invited to the Play closed test. A Cloudflare Pages
  * Function rather than a form service, for the same reason the fonts are self-hosted: a page
@@ -48,6 +48,22 @@ export async function onRequestPost({ request, env }) {
   // Honeypot: pretend it worked.
   if (typeof data.website === 'string' && data.website.trim() !== '') {
     return json({ ok: true });
+  }
+
+  // The dialog asks which phone the visitor uses and only shows the form to Android, so an
+  // iPhone answer never gets this far and anything but 'android' here is a hand-crafted POST.
+  // Rejected rather than stored: there is no iOS build, so the address could never be acted on,
+  // and an invite list nobody can be invited from is the dead data this project keeps out.
+  //
+  // Missing defaults to 'android' rather than failing. A visitor holding a cached copy of the
+  // page from before the question existed posts without the field, and turning them away would
+  // be punishing them for our deploy timing.
+  const device = String(data.device || 'android').trim().toLowerCase();
+  if (device !== 'android') {
+    return json(
+      { ok: false, error: 'Corlang is an Android app. There is nothing to test on iPhone yet.' },
+      400
+    );
   }
 
   const email = String(data.email || '').trim().toLowerCase();
