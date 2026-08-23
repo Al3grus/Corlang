@@ -527,7 +527,14 @@ private fun CorlangApp(container: AppContainer) {
                     resetTick = profileTabTick,
                     onSelectLanguage = appState::selectLanguage,
                     onOpenSettings = { showSettings = true },
-                    onGetPremium = { paywallLevel = null; showPaywall = true }
+                    onGetPremium = { paywallLevel = null; showPaywall = true },
+                    // Any paid level opens the shelf: PaywallScreen shows every tier of the
+                    // course, so this names the top one only to be unambiguous about which
+                    // course is being offered.
+                    onUnlockCourse = {
+                        paywallLevel = container.content.plan(lang).days.lastOrNull()?.level
+                        if (paywallLevel != null) showPaywall = true
+                    }
                 )
             }
         }
