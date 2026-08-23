@@ -155,7 +155,7 @@ against Play Console Help 2026-08-22.
 
 State verified 2026-08-22: everything below that is not a browser step is DONE.
 
-- App: **v0.56.1, versionCode 191**. Build with
+- App: **v0.59.0, versionCode 194**. Build with
   `./gradlew :app:bundlePlayRelease` (JAVA_HOME = Android Studio JBR); the artefact lands at
   `app/build/outputs/bundle/playRelease/app-play-release.aab`. Confirmed signed, with
   `DEV_PREMIUM=false` and `ENABLE_UPDATER=false`, so no store build can ship the developer
@@ -402,7 +402,7 @@ wrong the moment production goes live, so they are listed here rather than trust
 | corlang.app domain + proton email | ✅ have | optional website (Track F) |
 
 ## Key facts the next session needs
-- Latest release: **v0.47.2 / versionCode 176**. Live courses: **hr and pt only**.
+- Latest release: **v0.59.0 / versionCode 194**. Live courses: **hr and pt only**.
 - Worker: `https://corlang-ai-proxy.ricardo-infante.workers.dev`; secrets `ANTHROPIC_API_KEY`,
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
