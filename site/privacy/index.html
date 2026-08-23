@@ -490,7 +490,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
 <p><strong>What that endpoint keeps.</strong> Not your messages: it passes them on, returns the reply, and stores none of the content. What it does keep is what it needs to stop abuse and bound costs, which is a daily message counter held against your IP address and against your subscription token, both expiring after two days, and a yes-or-no record of whether your subscription is active, cached for at most six hours. Nothing there is used to build a profile of you, and none of it is linked to your learning data, which never leaves your phone at all.</p>
 <p>Nothing else about your use of the app is transmitted. Corlang does not phone home. The version you install from Google Play never checks for updates either, because the Play Store delivers them; the developer&#x27;s own directly-installed builds do have a manual &quot;Check for updates&quot; button in Settings, which fetches a version file from the project&#x27;s public GitHub repository when you tap it, and sends nothing about you when it does.</p>
 <h2>The website</h2>
-<p>If you ask for a test invite at <strong>https://corlang.app/</strong>, the email address you type is stored so we can send you a Google Play test link, along with the date and the two-letter country code your connection reports. It is used for that and nothing else: no newsletter, no analytics profile, and it is never passed to anyone. Ask at the address below and it is deleted.</p>
+<p>If you ask for a test invite at <strong>https://corlang.app/</strong>, the email address you type is stored so we can send you a test link, along with whether you said Android or iPhone, the date, and the two-letter country code your connection reports. The phone answer is kept so the Android addresses can be sent a Play test link and the iPhone ones are only contacted if an iPhone version is ever built. It is used for that and nothing else: no newsletter, no analytics profile, and it is never passed to anyone. Ask at the address below and it is deleted.</p>
 <p>If you ask for a language at <strong>https://corlang.app/requests/</strong>, the language, the level you need and your email address are stored together, plus the date and country code, so we can tell you when that course exists. That page is not linked from anywhere and is not indexed: you reach it from the app or because somebody sent it to you. Same terms as above, deleted on request.</p>
 <p><strong>The app itself never asks for your address.</strong> The link in Profile opens that page in your browser, and nothing is sent from the app.</p>
 <p>The site itself sets no cookies, runs no analytics, and loads no third-party scripts or fonts.</p>
@@ -520,7 +520,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   <dialog id="invite">
     <form class="dlg" method="dialog">
       <h3>Ask for a test invite</h3>
-      <p>Leave your email and you will get a Play test link when the next round opens. Nothing
+      <p>Leave your email and you will get a test link when the next round opens. Nothing
       else is sent, and the address is used for this only.</p>
       <fieldset class="pick">
         <legend>Which phone do you use?</legend>
@@ -529,13 +529,14 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
           <label><input type="radio" name="device" value="ios"><span>iPhone</span></label>
         </div>
       </fieldset>
-      <div id="invite-android" hidden>
+      <p id="invite-ios" hidden>Corlang is an Android app today, and there is no iPhone
+      version yet. Leave your address anyway and you will be the first to hear if that
+      changes.</p>
+      <div id="invite-email-box" hidden>
         <label for="invite-email">Email address</label>
         <input id="invite-email" name="email" type="email" autocomplete="email"
                placeholder="you@example.com" inputmode="email">
       </div>
-      <p id="invite-ios" hidden>Corlang is an Android app. There is no iPhone version and none
-      planned, so there is nothing for you to test yet. Sorry.</p>
       <div class="hp" aria-hidden="true">
         <label for="invite-website">Leave this empty</label>
         <input id="invite-website" name="website" type="text" tabindex="-1" autocomplete="off">
@@ -671,7 +672,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   var msg = document.getElementById('invite-msg');
   var send = document.getElementById('invite-send');
   var email = document.getElementById('invite-email');
-  var androidBox = document.getElementById('invite-android');
+  var emailBox = document.getElementById('invite-email-box');
   var iosBox = document.getElementById('invite-ios');
   if (!dlg || !form || !dlg.showModal) return;
 
@@ -680,17 +681,18 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
     return c && c.value;
   }
 
-  /* One place decides what is on screen, so the three states cannot drift apart: nothing chosen
-     (just the question), Android (the form), iPhone (the reason there is nothing to join).
+  /* One place decides what is on screen, so the states cannot drift apart: nothing chosen is
+     just the question, either answer opens the same form, and iPhone adds the line about there
+     being no build yet.
 
      `required` is toggled rather than left on the input, because a hidden control that is
      required makes the browser refuse to submit while having nothing it can focus to say so. */
   function sync(){
     var d = device();
-    androidBox.hidden = d !== 'android';
+    emailBox.hidden = !d;
     iosBox.hidden = d !== 'ios';
-    send.hidden = d !== 'android';
-    email.required = d === 'android';
+    send.hidden = !d;
+    email.required = !!d;
   }
 
   form.querySelectorAll('[name=device]').forEach(function(r){
@@ -716,7 +718,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
     var pressed = e.submitter && e.submitter.value;
     if (pressed !== 'send') return;
     e.preventDefault();
-    if (device() !== 'android') return;
+    if (!device()) return;
     if (!email.checkValidity()) { email.reportValidity(); return; }
 
     send.disabled = true;
@@ -729,7 +731,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         email: email.value,
-        device: 'android',
+        device: device(),
         website: form.querySelector('[name=website]').value
       })
     }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){
