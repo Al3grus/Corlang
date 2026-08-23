@@ -157,24 +157,24 @@ these products in Play Console → Monetize. Until they exist the paywall shows 
   **3-day free trial** phase. Google's minimum is 3 days, so this is the floor.
 - No annual base plan (see the decision above). The app requests only `monthly`.
 
-**One-time unlocks** — Monetize → In-app products (managed products). **Eight products, four per
+**One-time unlocks** — Monetize → In-app products (managed products). **Six products, three per
 language.** The ids are derived from content by `BillingManager.levelProductIds`, so adding a
 course generates its ids automatically — but Play Console will not, and an id with no product
 behind it shows as "unavailable" in the paywall.
 
 **Six products, three per language.** Each grants its level and everything below it.
 
-| Product | Grants | Lessons opened | Price |
+| Product | Grants | Paid lessons opened | Price |
 |---|---|---|---|
-| `unlock_hr_a1` | Croatian through A1 | 61 | **€4.99** |
-| `unlock_hr_a2` | Croatian through A2 | 157 | **€12.99** |
-| `unlock_hr_b1` | the whole Croatian course | 328 | **€24.99** |
-| `unlock_pt_a1` | Portuguese through A1 | 30 | **€4.99** |
-| `unlock_pt_a2` | Portuguese through A2 | 100 | **€12.99** |
-| `unlock_pt_b1` | the whole Portuguese course | 225 | **€24.99** |
+| `unlock_hr_a1` | Croatian through A1 | 67 | **€4.99** |
+| `unlock_hr_a2` | Croatian through A2 | 163 | **€12.99** |
+| `unlock_hr_b1` | the whole Croatian course | 334 | **€24.99** |
+| `unlock_pt_a1` | Portuguese through A1 | 45 | **€4.99** |
+| `unlock_pt_a2` | Portuguese through A2 | 115 | **€12.99** |
+| `unlock_pt_b1` | the whole Portuguese course | 240 | **€24.99** |
 
 **No `unlock_*_b2`.** Neither live course has a single B2 lesson — Croatian ends at B1 (344
-lessons), Portuguese at B1 (240). The old global `unlock_b2` would have charged €7.99 for
+lessons), Portuguese at B1 (250). The old global `unlock_b2` would have charged €7.99 for
 nothing. `levels.json` declares B2 and C1 for Croatian, which is what made the product look
 plausible; the *plan* is the only thing that says whether lessons exist.
 

@@ -46,12 +46,13 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.billing.PremiumManager
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import kotlinx.coroutines.launch
 
 /**
- * Profile = the app's control panel: four uniform rows — Settings, Language, Get Premium,
+ * Profile = the app's control panel: four uniform rows — Settings, Language, Premium & unlocks,
  * References. Progress-related stats live on the separate Progress tab; this tab is where you
  * change how the app works, not where you check how you're doing.
  */
@@ -62,7 +63,9 @@ fun ProfileScreen(
     resetTick: Int = 0,
     onSelectLanguage: (String) -> Unit,
     onOpenSettings: () -> Unit,
-    onGetPremium: () -> Unit = {}
+    onGetPremium: () -> Unit = {},
+    /** Opens the level paywall (the course tiers), as opposed to the AI subscription. */
+    onUnlockCourse: () -> Unit = {}
 ) {
     // Sub-page routing within the tab (null = the menu). A short crossfade smooths the
     // menu↔sub-page transitions (matching the app's tab fade, not a slow one).
@@ -83,8 +86,8 @@ fun ProfileScreen(
             // Choosing a language returns to the Profile menu (like closing Settings does).
             LanguagePage(container, lang) { code -> onSelectLanguage(code); page = null }
         }
-        "premium" -> SubPage("Corlang Premium", onBack = { page = null }) {
-            PremiumPage(container, onGetPremium)
+        "premium" -> SubPage("Premium & unlocks", onBack = { page = null }) {
+            PremiumPage(container, lang, onGetPremium, onUnlockCourse)
         }
         "references" -> SubPage("References", onBack = { page = null }) {
             ReferencesPage(container, lang)
@@ -109,8 +112,21 @@ fun ProfileScreen(
                 "Reminder, study pace, voice, backup", onClick = onOpenSettings)
             MenuRow(Icons.Outlined.Language, "Language",
                 "${meta.flagEmoji} ${meta.name} · tap to switch", onClick = { page = "language" })
-            MenuRow(Icons.Outlined.WorkspacePremium, "Get Premium",
-                if (entitled) "Active ✓ · AI tutor unlocked" else "Unlock the AI tutor (Learn tab)",
+            // Names BOTH things that can be bought. The row used to say "Get Premium" and speak
+            // only of the AI tutor, which left the course unlocks with no home in the app at
+            // all: the only way to reach them was to walk into a locked lesson.
+            val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
+            val courseOwned = remember(lang, unlockedLevels) {
+                val top = container.content.plan(lang).days.lastOrNull()?.level
+                top != null && PremiumManager.key(lang, top) in unlockedLevels
+            }
+            MenuRow(Icons.Outlined.WorkspacePremium, "Premium & unlocks",
+                when {
+                    courseOwned && entitled -> "Course and AI tutor · all yours ✓"
+                    courseOwned -> "${meta.name} course owned ✓ · AI tutor available"
+                    entitled -> "AI tutor active ✓ · unlock the full course"
+                    else -> "Unlock the course, or the AI tutor"
+                },
                 onClick = { page = "premium" })
             // Opens the browser, and that is the whole point: the page it lands on asks for an
             // email address and the app does not. Keeping the form on the web keeps "no accounts,
@@ -312,17 +328,72 @@ private fun LanguageRow(
     }
 }
 
-/** Premium = the AI-tutor subscription: what it unlocks and its current state. */
+/**
+ * The two things Corlang sells, on one page, because a learner wondering what they have to pay
+ * for should not have to discover the answer by hitting a wall.
+ *
+ *  - The COURSE: one-time, per language, cumulative levels. Bought outright, never rented.
+ *  - The AI TUTOR: a monthly subscription, the only recurring charge in the app.
+ */
 @Composable
-private fun PremiumPage(container: AppContainer, onGetPremium: () -> Unit) {
+private fun PremiumPage(
+    container: AppContainer,
+    lang: String,
+    onGetPremium: () -> Unit,
+    onUnlockCourse: () -> Unit,
+) {
     val entitled by container.premium.entitled.collectAsState(initial = false)
+    val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
+    val meta = remember(lang) { container.content.meta(lang) }
+    // Which rung of this course the learner owns, if any. Cumulative, so the highest one owned
+    // is the whole story: naming it is what turns "did my purchase work?" into a visible answer.
+    val ownedTop = remember(lang, unlockedLevels) {
+        container.content.plan(lang).days.map { it.level }.distinct()
+            .lastOrNull { PremiumManager.key(lang, it) in unlockedLevels }
+    }
+    val courseTop = remember(lang) { container.content.plan(lang).days.lastOrNull()?.level }
+    val courseComplete = ownedTop != null && ownedTop == courseTop
+
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
         InfoCard {
-            Text(if (entitled) "Premium is active ✓" else "Corlang Premium",
+            Text(
+                when {
+                    courseComplete -> "You own the whole ${meta.name} course ✓"
+                    ownedTop != null -> "${meta.name}: you own through $ownedTop ✓"
+                    else -> "The ${meta.name} course"
+                },
+                style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
+                color = if (ownedTop != null) MaterialTheme.colorScheme.primary
+                        else MaterialTheme.colorScheme.onSurface)
+            Text(
+                when {
+                    courseComplete ->
+                        "Every lesson, word, quiz and exam in this course is yours. One payment, " +
+                            "no subscription, and it comes back if you reinstall."
+                    ownedTop != null ->
+                        "The levels above $ownedTop are still locked. Each unlock includes the " +
+                            "ones beneath it, so nothing you have paid for is ever lost."
+                    else ->
+                        "The first ${meta.freeLessons} lessons are free. The levels above them are " +
+                            "one-time unlocks: bought, not rented, and restored on any device."
+                },
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(top = 6.dp))
+        }
+        if (!courseComplete) {
+            Spacer(Modifier.height(12.dp))
+            androidx.compose.material3.Button(
+                onClick = onUnlockCourse, modifier = Modifier.fillMaxWidth()
+            ) { Text(if (ownedTop != null) "See the remaining levels" else "See the course options") }
+        }
+
+        Spacer(Modifier.height(20.dp))
+        InfoCard {
+            Text(if (entitled) "AI tutor is active ✓" else "AI tutor",
                 style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
                 color = if (entitled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
             Text(
-                "A subscription that unlocks the Learn tab's AI:",
+                "A separate monthly subscription that unlocks the Learn tab's AI:",
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(top = 6.dp))
             listOf(
@@ -333,15 +404,18 @@ private fun PremiumPage(container: AppContainer, onGetPremium: () -> Unit) {
                 Text("•  $it", style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = 4.dp))
             }
+            // Was: "The whole course ... stays free", which stopped being true the moment levels
+            // became paid. Naming exactly what is free keeps this honest as pricing moves.
             Text(
                 if (entitled) "Enjoy! The Learn tab is in your bottom bar."
-                else "The whole course, spaced-repetition review and progress tracking stay free.",
+                else "Lessons you own, spaced-repetition review and progress tracking need no " +
+                    "subscription. The AI is the only thing this one buys.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 10.dp))
         }
         if (!entitled) {
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(12.dp))
             androidx.compose.material3.Button(
                 onClick = onGetPremium, modifier = Modifier.fillMaxWidth()
             ) { Text("See plans") }
