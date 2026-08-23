@@ -293,6 +293,31 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
 .faq summary:hover::after{border-color:var(--blue)}
 .faq p{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.62;max-width:70ch}
 
+/* The panel slides rather than snapping.
+   ::details-content is the only handle on a <details> panel that does not mean wrapping the
+   content in a div and reimplementing the disclosure in JavaScript. Two pieces make it work:
+
+   - `interpolate-size: allow-keywords` lets block-size animate from 0 to AUTO. Without it the
+     only options are a fixed height, which cuts long answers off, or a max-height guess, which
+     makes short answers appear to pause before they finish opening.
+   - `content-visibility` is a discrete property, so it flips instantly and would yank the
+     content away the moment a panel starts closing. `allow-discrete` holds it visible for the
+     whole transition, which is the difference between a close that slides and one that
+     vanishes mid-slide.
+
+   Inside the reduced-motion guard like every other movement on this page. A visitor who asks
+   for stillness gets the instant open the browser does natively, and so does any browser
+   without ::details-content, which is exactly the behaviour this replaces. Nothing to fall
+   back FROM. */
+@media (prefers-reduced-motion:no-preference){
+  :root{interpolate-size:allow-keywords}
+  .faq details::details-content{
+    block-size:0;overflow:hidden;opacity:0;
+    transition:block-size .32s cubic-bezier(.16,.7,.3,1),opacity .24s ease,
+               content-visibility .32s allow-discrete}
+  .faq details[open]::details-content{block-size:auto;opacity:1}
+}
+
 /* ---- invite dialog ----
    A native <dialog>: it traps focus, closes on Escape and returns focus on its own, which a div
    pretending to be a modal does not. */
