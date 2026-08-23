@@ -188,12 +188,12 @@ State verified 2026-08-22: everything below that is not a browser step is DONE.
    | Product | Type | Price |
    |---|---|---|
    | `corlang_ai_premium` | subscription, one base plan `monthly`, with a **3-day** free-trial offer | EUR 9.99/month |
-   | `unlock_hr_a1` | one-time | EUR 4.99 |
-   | `unlock_hr_a2` | one-time | EUR 12.99 |
-   | `unlock_hr_b1` | one-time | EUR 24.99 |
-   | `unlock_pt_a1` | one-time | EUR 4.99 |
-   | `unlock_pt_a2` | one-time | EUR 12.99 |
-   | `unlock_pt_b1` | one-time | EUR 24.99 |
+   | `unlock_hr_a1` | one-time | EUR 9.99 |
+   | `unlock_hr_a2` | one-time | EUR 19.99 |
+   | `unlock_hr_b1` | one-time | EUR 34.99 |
+   | `unlock_pt_a1` | one-time | EUR 9.99 |
+   | `unlock_pt_a2` | one-time | EUR 19.99 |
+   | `unlock_pt_b1` | one-time | EUR 34.99 |
 
    Unlocks are **cumulative**, so the B1 product is the whole course and there is deliberately no
    `_all`. There is no `_b2` either: neither course has a B2 lesson. Activate each and accept
