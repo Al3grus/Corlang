@@ -1222,9 +1222,11 @@ def build():
       </details>
       <details name="faq">
         <summary>Is it free?</summary>
-        <p>The first level of each course is free permanently, not as a trial that expires. After
-        that a course is a one-time purchase, and what you buy stays bought. The AI tutor is a
-        separate monthly subscription, and everything else works without it.</p>
+        <p>The first level of each course is free permanently, not as a trial that expires.
+        After that each level from A1 to B1 is bought on its own, and every unlock includes the
+        levels below it, so buying B1 unlocks the whole course at once. These are one-time
+        purchases and what you buy stays bought. The AI tutor is the only subscription, and
+        everything else works without it.</p>
       </details>
       <details name="faq">
         <summary>Do I need an account?</summary>
@@ -1241,7 +1243,7 @@ def build():
       <details name="faq">
         <summary>How long is a lesson?</summary>
         <p>About ten minutes, and it is the same ten minutes every day. That is deliberate: a
-        session you can finish on a bus is a session you will still be doing in March.</p>
+        session you can finish anywhere is a lesson you will still be doing months from now.</p>
       </details>
       <details name="faq">
         <summary>Will it get me through the official exam?</summary>
@@ -1257,7 +1259,8 @@ def build():
       </details>
       <details name="faq">
         <summary>Am I being tracked?</summary>
-        <p>No. No analytics, no advertising, no third-party trackers, nothing sold. The
+        <p>No. No analytics, no advertising, no third-party trackers, and nothing
+        about you is ever sold. The
         <a href="/privacy/">privacy policy</a> lists the one case in which anything leaves your
         device at all.</p>
       </details>
