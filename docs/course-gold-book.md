@@ -59,7 +59,12 @@ not by being plausible.
   of the FSI hour ratio, every figure rounded to the nearest 5). The floors are enforced
   per-language in `ContentValidationTest.levelFloor`; a new language must add its row or the
   gate fails it by name.
-- A0 onramp only where the sound system or script needs one (German yes, Italian no).
+- A0 onramp in EVERY course, exactly ten lessons, and it is the basics: letters and how to
+  read them, greetings, introductions, numbers, yes/no, question words, this/that. It is
+  also the free window (`meta.json` -> `freeLessons`), so it is the buying decision, not
+  just the onramp. Rules and the reasoning: `docs/language-standard.md`. This line used to
+  read "only where the sound system or script needs one (German yes, Italian no)", which
+  the 2026-08-22 decision replaced.
 - Deck size = lessons × 10 (the SRS pace) and that is a CEILING as well as a floor: the SRS
   unlocks `deck[0 .. lesson * 10]`, so every word past that index is unreachable and dead.
   A deck at capacity can only gain a word by losing one, which makes late vocabulary work a

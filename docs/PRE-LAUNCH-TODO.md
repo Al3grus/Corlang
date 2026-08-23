@@ -1,5 +1,10 @@
 # Corlang — Pre-launch checklist
 
+> **SUPERSEDED — do not work from this file.**
+> `docs/PENDING.md` is the live launch checklist and `docs/runbook.md` holds the commands.
+> This file is kept for the record: it dates from 2026-07-18, at versionCode 85, and parts of it are wrong now
+> (it lists a French native review as a launch blocker, and French is hidden from `content/_index.json` and out of scope). Read it as history, not as a to-do list.
+
 Things to close before a public launch, so nothing gets forgotten. Grouped by area.
 (Design/UX and the core app are done; this is the last mile.)
 

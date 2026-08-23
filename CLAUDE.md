@@ -20,7 +20,7 @@ Current: v0.48.0 (versionCode 177). Live courses: `hr pt` — `fr de it es` are 
 The registry, TTS locale, and reminder copy are **data-driven** (fixed 2026-07-25). To add a language:
 1. Add the content folder `app/src/main/assets/content/<code>/` (`meta.json`, `levels.json`, `plan/`, `vocab/`, …). — data
 2. Register the code (in display order) in `app/src/main/assets/content/_index.json`. — data
-3. Fill the wiring fields in that language's `meta.json`: `speechTag` (BCP-47, e.g. `"pt-PT"`), `reminderTitle`, `reminderTitleNamed` (must contain the `{name}` placeholder), `reminderProverb`. — data
+3. Fill the wiring fields in that language's `meta.json`: `speechTag` (BCP-47, e.g. `"pt-PT"`), `reminderTitle`, `reminderTitleNamed` (must contain the `{name}` placeholder), `reminderProverb`, and `freeLessons` (the free window; must equal the last day of A0, which is 10). — data
 
 `ContentValidationTest` fails the build if the manifest entry or any wiring field is missing, so a half-wired language can't ship. **No Kotlin edit is required** for the above.
 
@@ -96,3 +96,4 @@ Phrase each as a one-line recommendation with the exact command, not a question.
 - **Subagents for research** (sourcing, audits, sweeps) to keep the main context lean; report the conclusion, not file dumps.
 - **`/clear` between unrelated tasks** to reset context.
 - Open threads and per-course status live in `MEMORY.md` and `docs/PENDING.md` — check them at session start.
+- **Every command in one place:** `docs/runbook.md` — build/test (and why `BUILD SUCCESSFUL` can mean the tests never ran), validators, release, site deploy, worker deploy and secrets, and the `wrangler kv` incantations for reading the invite and language-request lists.

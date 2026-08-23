@@ -1,5 +1,10 @@
 # Launch plan: from solo testing to Google Play
 
+> **SUPERSEDED — do not work from this file.**
+> `docs/PENDING.md` is the live launch checklist and `docs/runbook.md` holds the commands.
+> This file is kept for the record: it dates from before the Play Console work began, and parts of it are wrong now
+> (its phases were written when going public was still a decision rather than a sequence of console forms). Read it as history, not as a to-do list.
+
 The ordered checklist for going public. Order matters: the in-app updater depends on the repo
 being PUBLIC (raw.githubusercontent URLs), and the AI proxy secrets must never sit in a public
 repo, so the steps below are sequenced to never break the running setup.
