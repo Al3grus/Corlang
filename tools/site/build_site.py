@@ -243,7 +243,8 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,34px);
    distorting either. */
 .langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;
   margin:30px 0 0}
-.lang{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);
+.lang{display:flex;align-items:center;justify-content:center;text-align:center;gap:16px;
+  padding:18px 20px;border:1px solid var(--line);
   border-radius:14px;background:var(--raise)}
 .lang img{width:54px;height:36px;object-fit:cover;border-radius:4px;flex:none;
   border:1px solid rgba(19,26,34,.14);background:var(--paper)}
@@ -334,6 +335,22 @@ dialog::backdrop{background:rgba(14,20,26,.46);backdrop-filter:blur(2px)}
 .dlg input[type=email]:focus{outline:none;border-color:var(--blue);
   box-shadow:0 0 0 3px rgba(47,127,174,.18)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Which phone, asked before the address. Real radios in a real fieldset, moved off-screen and
+   drawn as two pills: a radiogroup is what this IS, and rebuilding one out of buttons would mean
+   reimplementing arrow-key roving and the checked state that screen readers already announce.
+   The pill is the adjacent span, so `input:checked + span` and `input:focus-visible + span`
+   style it without :has(). */
+.pick{border:0;padding:0;margin:0 0 18px;min-width:0}
+.pick legend{padding:0;font-size:13px;color:var(--muted);margin:0 0 7px}
+.pick .opts{display:flex;gap:10px}
+.pick label{flex:1;margin:0}
+.pick input{position:absolute;opacity:0;width:1px;height:1px}
+.pick span{display:block;text-align:center;font:inherit;font-size:15px;font-weight:600;
+  padding:12px 10px;border:1px solid var(--line);border-radius:10px;background:var(--paper);
+  color:var(--ink);cursor:pointer}
+.pick input:checked+span{border-color:var(--ink);background:var(--ink);color:#fff}
+.pick input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
 .dlg-row{display:flex;gap:10px;margin-top:18px}
 .dlg-row button{font:inherit;font-weight:600;font-size:15px;padding:12px 20px;border-radius:10px;
   border:1px solid var(--line);background:var(--raise);color:var(--ink);cursor:pointer}
@@ -584,7 +601,31 @@ SCRIPT = """<script>
   var msg = document.getElementById('invite-msg');
   var send = document.getElementById('invite-send');
   var email = document.getElementById('invite-email');
+  var androidBox = document.getElementById('invite-android');
+  var iosBox = document.getElementById('invite-ios');
   if (!dlg || !form || !dlg.showModal) return;
+
+  function device(){
+    var c = form.querySelector('[name=device]:checked');
+    return c && c.value;
+  }
+
+  /* One place decides what is on screen, so the three states cannot drift apart: nothing chosen
+     (just the question), Android (the form), iPhone (the reason there is nothing to join).
+
+     `required` is toggled rather than left on the input, because a hidden control that is
+     required makes the browser refuse to submit while having nothing it can focus to say so. */
+  function sync(){
+    var d = device();
+    androidBox.hidden = d !== 'android';
+    iosBox.hidden = d !== 'ios';
+    send.hidden = d !== 'android';
+    email.required = d === 'android';
+  }
+
+  form.querySelectorAll('[name=device]').forEach(function(r){
+    r.addEventListener('change', sync);
+  });
 
   document.querySelectorAll('[data-invite]').forEach(function(b){
     b.addEventListener('click', function(){
@@ -592,6 +633,8 @@ SCRIPT = """<script>
       msg.className = 'msg';
       send.disabled = false;
       send.textContent = 'Send';
+      form.querySelectorAll('[name=device]').forEach(function(r){ r.checked = false; });
+      sync();
       dlg.showModal();
     });
   });
@@ -603,6 +646,7 @@ SCRIPT = """<script>
     var pressed = e.submitter && e.submitter.value;
     if (pressed !== 'send') return;
     e.preventDefault();
+    if (device() !== 'android') return;
     if (!email.checkValidity()) { email.reportValidity(); return; }
 
     send.disabled = true;
@@ -615,6 +659,7 @@ SCRIPT = """<script>
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         email: email.value,
+        device: 'android',
         website: form.querySelector('[name=website]').value
       })
     }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){
@@ -684,9 +729,20 @@ def page(title, description, body, canonical, wide=True, noindex=False):
       <h3>Ask for a test invite</h3>
       <p>Leave your email and you will get a Play test link when the next round opens. Nothing
       else is sent, and the address is used for this only.</p>
-      <label for="invite-email">Email address</label>
-      <input id="invite-email" name="email" type="email" required autocomplete="email"
-             placeholder="you@example.com" inputmode="email">
+      <fieldset class="pick">
+        <legend>Which phone do you use?</legend>
+        <div class="opts">
+          <label><input type="radio" name="device" value="android"><span>Android</span></label>
+          <label><input type="radio" name="device" value="ios"><span>iPhone</span></label>
+        </div>
+      </fieldset>
+      <div id="invite-android" hidden>
+        <label for="invite-email">Email address</label>
+        <input id="invite-email" name="email" type="email" autocomplete="email"
+               placeholder="you@example.com" inputmode="email">
+      </div>
+      <p id="invite-ios" hidden>Corlang is an Android app. There is no iPhone version and none
+      planned, so there is nothing for you to test yet. Sorry.</p>
       <div class="hp" aria-hidden="true">
         <label for="invite-website">Leave this empty</label>
         <input id="invite-website" name="website" type="text" tabindex="-1" autocomplete="off">
@@ -1161,9 +1217,8 @@ def build():
     <div class="faq">
       <details name="faq">
         <summary>Which languages can I learn?</summary>
-        <p>Croatian and European Portuguese, both complete courses from the first word to the
-        official B1 exam. More European languages are written and waiting; they go live once the
-        first two are proven in real use rather than all at once.</p>
+        <p>At the moment only Croatian and European Portuguese are available. More languages
+        are planned for the future.</p>
       </details>
       <details name="faq">
         <summary>Is it free?</summary>
