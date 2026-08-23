@@ -1225,9 +1225,8 @@ def build():
         <summary>Is it free?</summary>
         <p>The first level of each course is free permanently, not as a trial that expires.
         After that each level from A1 to B1 is bought on its own, and every unlock includes the
-        levels below it, so buying B1 unlocks the whole course at once. These are one-time
-        purchases and what you buy stays bought. The AI tutor is the only subscription, and
-        everything else works without it.</p>
+        levels below it, so buying B1 unlocks the whole course at once. The AI tutor is the
+        only subscription; everything else is a one-time payment.</p>
       </details>
       <details name="faq">
         <summary>Do I need an account?</summary>
