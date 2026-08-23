@@ -1,14 +1,20 @@
 /**
  * POST /api/invite  { email, device, website }  ->  { ok: true }
  *
- * Stores an address so the tester can be invited to the Play closed test. A Cloudflare Pages
+ * Stores an address so the tester can be invited to the Play closed test, or, for iPhone,
+ * so there is a record of who to tell if an iOS build ever happens. A Cloudflare Pages
  * Function rather than a form service, for the same reason the fonts are self-hosted: a page
  * that says "no tracking" should not hand a visitor's address to a third party on the way in.
  *
- * The addresses live in the INVITES KV namespace, one key per address, so a repeat submission
- * overwrites rather than piling up. Read them with:
+ * The addresses live in the INVITES KV namespace, keyed `invite:<device>:<email>`, so a repeat
+ * submission overwrites rather than piling up and either list can be pulled on its own. Read
+ * them with:
  *
  *     npx wrangler kv key list --namespace-id 8126fcfb51954368a9ba136df17fb5af --remote
+ *     npx wrangler kv key list --namespace-id 8126fcfb51954368a9ba136df17fb5af --remote  *       --prefix invite:ios:
+ *
+ * One key predates the device question and is bare `invite:<email>`. It is Android: it was left
+ * by the only person who used the form before iPhone was an option.
  *
  * The --remote matters. Wrangler v4 reads LOCAL storage by default, so without it the list comes
  * back empty and looks exactly like a broken endpoint.
@@ -50,20 +56,16 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: true });
   }
 
-  // The dialog asks which phone the visitor uses and only shows the form to Android, so an
-  // iPhone answer never gets this far and anything but 'android' here is a hand-crafted POST.
-  // Rejected rather than stored: there is no iOS build, so the address could never be acted on,
-  // and an invite list nobody can be invited from is the dead data this project keeps out.
+  // Which phone, so the two lists can be pulled apart later. Both are stored: Android gets a
+  // Play test link now, and iPhone is a standing record of how much demand an iOS build would
+  // have, which is the only honest way to decide whether to write one.
   //
   // Missing defaults to 'android' rather than failing. A visitor holding a cached copy of the
   // page from before the question existed posts without the field, and turning them away would
   // be punishing them for our deploy timing.
   const device = String(data.device || 'android').trim().toLowerCase();
-  if (device !== 'android') {
-    return json(
-      { ok: false, error: 'Corlang is an Android app. There is nothing to test on iPhone yet.' },
-      400
-    );
+  if (device !== 'android' && device !== 'ios') {
+    return json({ ok: false, error: 'Pick Android or iPhone.' }, 400);
   }
 
   const email = String(data.email || '').trim().toLowerCase();
@@ -84,9 +86,10 @@ export async function onRequestPost({ request, env }) {
   }
 
   await env.INVITES.put(
-    `invite:${email}`,
+    `invite:${device}:${email}`,
     JSON.stringify({
       email,
+      device,
       at: new Date().toISOString(),
       country: request.headers.get('cf-ipcountry') || null,
     })

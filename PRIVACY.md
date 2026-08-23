@@ -56,8 +56,10 @@ tap it, and sends nothing about you when it does.
 ## The website
 
 If you ask for a test invite at **https://corlang.app/**, the email address you type is stored so
-we can send you a Google Play test link, along with the date and the two-letter country code your
-connection reports. It is used for that and nothing else: no newsletter, no analytics profile, and
+we can send you a test link, along with whether you said Android or iPhone, the date, and the
+two-letter country code your connection reports. The phone answer is kept so the Android
+addresses can be sent a Play test link and the iPhone ones are only contacted if an iPhone
+version is ever built. It is used for that and nothing else: no newsletter, no analytics profile, and
 it is never passed to anyone. Ask at the address below and it is deleted.
 
 If you ask for a language at **https://corlang.app/requests/**, the language, the level you

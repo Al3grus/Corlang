@@ -512,7 +512,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   <dialog id="invite">
     <form class="dlg" method="dialog">
       <h3>Ask for a test invite</h3>
-      <p>Leave your email and you will get a Play test link when the next round opens. Nothing
+      <p>Leave your email and you will get a test link when the next round opens. Nothing
       else is sent, and the address is used for this only.</p>
       <fieldset class="pick">
         <legend>Which phone do you use?</legend>
@@ -521,13 +521,14 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
           <label><input type="radio" name="device" value="ios"><span>iPhone</span></label>
         </div>
       </fieldset>
-      <div id="invite-android" hidden>
+      <p id="invite-ios" hidden>Corlang is an Android app today, and there is no iPhone
+      version yet. Leave your address anyway and you will be the first to hear if that
+      changes.</p>
+      <div id="invite-email-box" hidden>
         <label for="invite-email">Email address</label>
         <input id="invite-email" name="email" type="email" autocomplete="email"
                placeholder="you@example.com" inputmode="email">
       </div>
-      <p id="invite-ios" hidden>Corlang is an Android app. There is no iPhone version and none
-      planned, so there is nothing for you to test yet. Sorry.</p>
       <div class="hp" aria-hidden="true">
         <label for="invite-website">Leave this empty</label>
         <input id="invite-website" name="website" type="text" tabindex="-1" autocomplete="off">
@@ -663,7 +664,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
   var msg = document.getElementById('invite-msg');
   var send = document.getElementById('invite-send');
   var email = document.getElementById('invite-email');
-  var androidBox = document.getElementById('invite-android');
+  var emailBox = document.getElementById('invite-email-box');
   var iosBox = document.getElementById('invite-ios');
   if (!dlg || !form || !dlg.showModal) return;
 
@@ -672,17 +673,18 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
     return c && c.value;
   }
 
-  /* One place decides what is on screen, so the three states cannot drift apart: nothing chosen
-     (just the question), Android (the form), iPhone (the reason there is nothing to join).
+  /* One place decides what is on screen, so the states cannot drift apart: nothing chosen is
+     just the question, either answer opens the same form, and iPhone adds the line about there
+     being no build yet.
 
      `required` is toggled rather than left on the input, because a hidden control that is
      required makes the browser refuse to submit while having nothing it can focus to say so. */
   function sync(){
     var d = device();
-    androidBox.hidden = d !== 'android';
+    emailBox.hidden = !d;
     iosBox.hidden = d !== 'ios';
-    send.hidden = d !== 'android';
-    email.required = d === 'android';
+    send.hidden = !d;
+    email.required = !!d;
   }
 
   form.querySelectorAll('[name=device]').forEach(function(r){
@@ -708,7 +710,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
     var pressed = e.submitter && e.submitter.value;
     if (pressed !== 'send') return;
     e.preventDefault();
-    if (device() !== 'android') return;
+    if (!device()) return;
     if (!email.checkValidity()) { email.reportValidity(); return; }
 
     send.disabled = true;
@@ -721,7 +723,7 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         email: email.value,
-        device: 'android',
+        device: device(),
         website: form.querySelector('[name=website]').value
       })
     }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){
