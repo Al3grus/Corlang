@@ -1,9 +1,10 @@
 # Corlang — Master pending checklist
 
-Single source of truth for everything left to do, as of **2026-08-21**. Pick items one by one.
+Single source of truth for everything left to do, as of **2026-08-23**. Pick items one by one.
 Deep detail lives in: `road-to-play.md` (Play steps + store copy), `server-ai.md` (subscription
-verification setup), `monetization-roadmap.md` (pricing + product IDs), `PRE-LAUNCH-TODO.md`
-(content/QA log). Legend: **(browser)** = Play Console / Google Cloud, you do it · **(me)** =
+verification setup), `monetization-roadmap.md` (pricing + product IDs), `runbook.md` (every
+command: build, validators, deploys, reading the KV sign-up lists), `PRE-LAUNCH-TODO.md`
+(historical content/QA log, superseded). Legend: **(browser)** = Play Console / Google Cloud, you do it · **(me)** =
 ask Claude to do it · **(you, phone)** = on-device.
 
 ---
@@ -16,15 +17,23 @@ there is: `check_wrapup` (344/0 and 240/0), `check_hr`/`check_pt`, `check_batch`
 es are authored but HIDDEN from `content/_index.json` and are not part of this launch.
 
 **The Play AAB builds, signed, from the current source**: `./gradlew :app:bundlePlayRelease` →
-`app/build/outputs/bundle/playRelease/app-play-release.aab` (v0.47.2, versionCode 176). Verified
+`app/build/outputs/bundle/playRelease/app-play-release.aab` (current source is v0.59.0,
+versionCode 194). Verified
 on that artifact: signed, ships only hr and pt, carries `com.android.vending.BILLING`, and does
 NOT carry `REQUEST_INSTALL_PACKAGES` (the self-updater is compiled out of the play flavor, which
 Play requires). `corlang.devPremium=true` in local.properties is sideload-only and cannot reach
 it: the play flavor hardcodes `DEV_PREMIUM=false`. **Rebuild it right before uploading** so the
 versionCode is fresh.
 
-**Exactly one thing blocks the store listing, and only you can do it: the screenshots.**
-Everything else on the critical path is browser work in Play Console.
+**Nothing on the critical path is waiting on authoring or code.** The eight framed
+screenshots exist and are spec-checked, both graphics are current, and the listing copy is
+written. Everything left before testers is browser work in Play Console, plus the one attestation
+below that must be made true before closed testing starts.
+
+**Store listing, in progress 2026-08-23:** app name, short description, full description, both
+graphics, screenshots, category (Education), tags, contact details and the AI asset declaration
+("Don't label" — every asset is either a Pillow-drawn logo or a real device capture, no
+generative model in the path).
 
 ---
 
