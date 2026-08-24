@@ -26,6 +26,54 @@ val localProps = Properties().apply {
 val proxyBaseUrl: String = localProps.getProperty("corlang.proxyBaseUrl") ?: ""
 val proxyAuthToken: String = localProps.getProperty("corlang.proxyAuthToken") ?: ""
 
+/*
+ * Only the live courses reach the APK/AAB.
+ *
+ * `content/_index.json` is the single authority on which courses the app offers; everything not
+ * in it is authored-but-hidden and unreachable in the app. Those folders were still being
+ * packaged: the v0.65.0 bundle carried French, German, Italian and Spanish, about 12.8 MB of a
+ * 21 MB assets folder, for a build that offers Croatian and Portuguese.
+ *
+ * Driven BY the manifest rather than by a hardcoded list, so the skeleton/content contract holds:
+ * re-adding a code to _index.json ships that course again with no edit here. And the unit tests
+ * are unaffected - ContentValidationTest reads src/main/assets directly, so a hidden course stays
+ * fully validated even while it stays out of the bundle.
+ */
+val contentDir = file("src/main/assets/content")
+val liveLanguages: Set<String> = run {
+    val index = File(contentDir, "_index.json")
+    if (!index.exists()) emptySet()
+    // Any quoted token naming a real course folder. Robust against the manifest being a bare
+    // array or an object with a "languages" key, without pulling in a JSON parser.
+    else Regex("\"([^\"]+)\"").findAll(index.readText())
+        .map { it.groupValues[1] }
+        .filter { File(contentDir, it).isDirectory }
+        .toSet()
+}
+
+val hiddenLanguages: List<String> =
+    (contentDir.listFiles()?.filter { it.isDirectory }?.map { it.name } ?: emptyList())
+        .filterNot { it in liveLanguages }
+        .sorted()
+
+if (liveLanguages.isEmpty()) {
+    error(
+        "content/_index.json named no course that exists on disk. Refusing to build an app with " +
+            "no content rather than shipping an empty assets folder."
+    )
+}
+logger.lifecycle(
+    "Corlang assets: shipping ${liveLanguages.sorted()}" +
+        if (hiddenLanguages.isEmpty()) "" else ", withholding $hiddenLanguages"
+)
+
+val stageLiveAssets = tasks.register<Sync>("stageLiveAssets") {
+    description = "Copies assets minus the courses hidden from content/_index.json."
+    from("src/main/assets")
+    into(layout.buildDirectory.dir("generated/liveAssets"))
+    hiddenLanguages.forEach { exclude("content/$it/**") }
+}
+
 android {
     namespace = "com.corlang.app"
     compileSdk = 35
@@ -34,8 +82,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 200
-        versionName = "0.65.0"
+        versionCode = 201
+        versionName = "0.66.0"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -122,7 +170,15 @@ android {
     packaging {
         resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" }
     }
+
+    // Ship the courses the app OFFERS, not every course in the repo. See stageLiveAssets below:
+    // assets come from a staged copy with the hidden languages left out, so the bundle stops
+    // carrying four courses no learner can reach.
+    sourceSets.getByName("main") {
+        assets.setSrcDirs(listOf(stageLiveAssets))
+    }
 }
+
 
 // Room writes one JSON per schema version here; the directory is COMMITTED so migrations can
 // be regression-tested and a released schema is never lost (post-launch a botched migration
