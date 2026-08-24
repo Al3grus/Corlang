@@ -470,7 +470,7 @@ private fun ReviewTutorialOverlay(onDismiss: () -> Unit) {
                 Text("Easy →  ·  you knew it instantly (it won't return for a while)")
                 Text(
                     "Tap a button, or swipe the card in that arrow's direction. Rating honestly " +
-                        "is what makes the spacing work.",
+                        "is what makes the spacing method work.",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )

@@ -337,9 +337,8 @@ private fun CorlangApp(container: AppContainer) {
                 // of huddling in the dialog's bottom-right corner.
                 androidx.compose.foundation.layout.Column {
                     Text(
-                        "Take a quick placement test so $name starts at the right level? It's " +
-                            "about two minutes. Your profile carries over, no need to set " +
-                            "anything up again."
+                        "Take a quick placement test so $name starts at the right level? " +
+                            "It will take about two minutes."
                     )
                     Button(
                         onClick = {
