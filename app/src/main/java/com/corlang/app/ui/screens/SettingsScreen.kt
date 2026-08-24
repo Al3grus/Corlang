@@ -520,7 +520,7 @@ fun SettingsScreen(
         }
 
         // ----- About -----
-        // (No Premium card here: Profile -> Get Premium is its one home.)
+        // (No Premium card here: Profile -> Course & tutor is its one home.)
         SettingsCard(Icons.Outlined.Info, "About") {
             com.corlang.app.ui.components.CorlangLogo(
                 variant = com.corlang.app.ui.components.LogoVariant.LOCKUP,

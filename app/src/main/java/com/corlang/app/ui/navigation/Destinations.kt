@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
  * mode is hidden, so the "Tutor" tab is now just the AI tutor.
  *
  * Quizzes, exam readiness, and mock exams are NOT tabs: they're end-of-level checkpoints on
- * the journey (the Learn tab), registered as the argumented routes quiz/{level}, readiness/{level},
+ * the journey (the Learn-labelled TODAY tab), registered as the argumented routes quiz/{level}, readiness/{level},
  * exam/{level} in the NavHost.
  */
 enum class Dest(val route: String, val label: String, val icon: ImageVector) {
@@ -32,7 +32,7 @@ enum class Dest(val route: String, val label: String, val icon: ImageVector) {
     companion object {
         /**
          * The bottom bar. Learn is AI-only and Premium-gated, so it appears ONLY when
-         * [premium] is unlocked (Get Premium lives in Profile).
+         * [premium] is unlocked (Profile -> Course & tutor is where it is bought).
          */
         fun bar(premium: Boolean): List<Dest> =
             if (premium) listOf(TODAY, WORDS, LEARN, PROGRESS, PROFILE)
