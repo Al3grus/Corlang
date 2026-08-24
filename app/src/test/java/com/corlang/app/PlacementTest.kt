@@ -94,6 +94,34 @@ class PlacementTest {
         assertEquals("B1" to 151, Placement.result(bands, s))
     }
 
+    @Test fun `clearing the top band lands on the course's last lesson, not the band anchor`() {
+        // The bug this pins: the top band is authored short of the end (Portuguese anchors it at
+        // 225 of 250, Croatian at 310 of 344), so a learner who answered every question was told
+        // "you're at the top of this course" and then placed 25 lessons short of it.
+        val bands = Placement.bandsOf(ladder("A0" to 1, "A1" to 15, "A2" to 61, "B1" to 225))
+        var s = Placement.start(bands.size)
+        while (!s.finished) s = Placement.advance(s, s.probe!!, cleared = true)
+        assertEquals("B1" to 250, Placement.result(bands, s, courseEnd = "B1" to 250))
+    }
+
+    @Test fun `the course end only applies to the top band`() {
+        // A learner who stopped at A2 must land on A2's anchor. Handing the end of the course to
+        // someone who failed B1 would be the same bug pointing the other way.
+        val bands = Placement.bandsOf(ladder("A0" to 1, "A1" to 15, "A2" to 61, "B1" to 225))
+        var s = Placement.start(bands.size)
+        while (!s.finished) s = Placement.advance(s, s.probe!!, cleared = s.probe!! <= 2)
+        assertEquals("A2" to 61, Placement.result(bands, s, courseEnd = "B1" to 250))
+    }
+
+    @Test fun `the course end never drags a placement backwards`() {
+        // maxOf-style guard: a course whose last lesson sat below the top anchor must not demote
+        // the learner who cleared everything.
+        val bands = Placement.bandsOf(ladder("A0" to 1, "A1" to 15, "A2" to 61, "B1" to 225))
+        var s = Placement.start(bands.size)
+        while (!s.finished) s = Placement.advance(s, s.probe!!, cleared = true)
+        assertEquals("B1" to 225, Placement.result(bands, s, courseEnd = "B1" to 200))
+    }
+
     @Test fun `failing every band places at the course start`() {
         val bands = Placement.bandsOf(ladder("A0" to 1, "A1" to 15, "A2" to 61, "B1" to 151))
         var s = Placement.start(bands.size)

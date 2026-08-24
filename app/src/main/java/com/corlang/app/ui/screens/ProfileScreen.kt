@@ -131,22 +131,11 @@ fun ProfileScreen(
                     else -> "Unlock the course, or the tutor"
                 },
                 onClick = { page = "premium" })
-            // Opens the browser, and that is the whole point: the page it lands on asks for an
-            // email address and the app does not. Keeping the form on the web keeps "no accounts,
-            // no data collection" literally true of the app, and keeps "Email address" off the
-            // Play data-safety declaration. The page is unlinked and noindexed, so this row and a
-            // direct link are the only ways anybody reaches it.
-            MenuRow(Icons.Outlined.Language, "Request a language",
-                "Tell us which course to build next", onClick = {
-                    runCatching {
-                        context.startActivity(
-                            android.content.Intent(
-                                android.content.Intent.ACTION_VIEW,
-                                android.net.Uri.parse("https://corlang.app/requests/")
-                            )
-                        )
-                    }
-                })
+            // No "Request a language" row here. Asking everyone which course to build next
+            // invites the answer from people who have not finished the one they have; the
+            // question is worth asking of exactly one person, the learner who topped out the
+            // placement test and has genuinely run out of course. It lives on that screen
+            // (PlacementScreen, the at-ceiling branch) and nowhere else.
             // References is HIDDEN, not removed: the page and its "references" branch above are
             // intact and one line brings the entrance back. Same pattern as a hidden language,
             // which stays in the repo and only leaves content/_index.json.

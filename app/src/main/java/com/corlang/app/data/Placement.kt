@@ -84,11 +84,31 @@ object Placement {
     /**
      * Where the learner lands. Falls back to the easiest band's own anchor when nothing was
      * cleared, which is the course's first lesson rather than a hardcoded day 1.
+     *
+     * [courseEnd] is the course's FINAL lesson as (level, day), and it exists for one case: the
+     * top band being cleared. A band anchor answers "you cleared this much, so start here", which
+     * is right in the middle of the ladder and wrong at the end of it. The top band is authored
+     * some way short of the last lesson (Portuguese anchors it at 225 of 250, Croatian at 310 of
+     * 344), so a learner who answered every question the test has was told "you're at the top of
+     * this course" and then placed twenty-five lessons short of it, with material they had just
+     * demonstrated still ahead of them. Clearing the top band means the test ran out of
+     * questions, not that the learner ran out of course: they belong at the end.
+     *
+     * Only ever moves the placement FORWARD (`maxOf`), so a course whose last lesson somehow sat
+     * below the top band's anchor could not drag a learner backwards.
      */
-    fun result(bands: List<Band>, state: Search): Pair<String, Int> {
+    fun result(
+        bands: List<Band>,
+        state: Search,
+        courseEnd: Pair<String, Int>? = null,
+    ): Pair<String, Int> {
         val i = state.placedIndex
-        return if (i >= 0) bands[i].level to bands[i].startDay
-        else (bands.firstOrNull()?.level ?: "A0") to 1
+        if (i < 0) return (bands.firstOrNull()?.level ?: "A0") to 1
+        val band = bands[i]
+        if (i == bands.lastIndex && courseEnd != null && courseEnd.second > band.startDay) {
+            return courseEnd
+        }
+        return band.level to band.startDay
     }
 
     /**
