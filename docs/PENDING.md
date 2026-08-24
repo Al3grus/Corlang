@@ -17,17 +17,16 @@ there is: `check_wrapup` (344/0 and 240/0), `check_hr`/`check_pt`, `check_batch`
 es are authored but HIDDEN from `content/_index.json` and are not part of this launch.
 
 **The Play AAB builds, signed, from the current source**: `./gradlew :app:bundlePlayRelease` →
-`app/build/outputs/bundle/playRelease/app-play-release.aab` (current source is v0.65.0,
-versionCode 200). Verified on that artifact 2026-08-25: signed, carries
+`app/build/outputs/bundle/playRelease/app-play-release.aab` (current source is v0.66.0,
+versionCode 201). Verified on that artifact 2026-08-25: signed, carries
 `com.android.vending.BILLING`, and does NOT carry `REQUEST_INSTALL_PACKAGES` (the self-updater is
 compiled out of the play flavor, which Play requires).
 
-**It offers only hr and pt, but it CONTAINS all six courses.** `content/_index.json` lists two, so
-two are selectable and the other four are unreachable; their JSON still ships, about 12.8 MB of
-the 21 MB assets folder. Not a launch blocker and not a disclosure problem, but the old wording
-here said "ships only hr and pt", which is false about the artifact and would be the wrong thing
-to rely on. Excluding hidden courses from the bundle is a build change worth making before
-production, not before testers. `corlang.devPremium=true` in local.properties is sideload-only and cannot reach
+**It contains only hr and pt** (fixed in v0.66.0). The bundle used to carry all six courses,
+about 12.8 MB of content no learner could reach, because `content/_index.json` decided what was
+OFFERED while the packager took everything on disk. `stageLiveAssets` in `app/build.gradle.kts`
+now derives the shipped set from that same manifest, so re-adding a code there ships its course
+again with no build edit. The AAB went from 17.8 MB to 14.8 MB. `corlang.devPremium=true` in local.properties is sideload-only and cannot reach
 it: the play flavor hardcodes `DEV_PREMIUM=false`. **Rebuild it right before uploading** so the
 versionCode is fresh.
 
@@ -161,7 +160,7 @@ against Play Console Help 2026-08-22.
 
 State verified 2026-08-22: everything below that is not a browser step is DONE.
 
-- App: **v0.65.0, versionCode 200**. Build with
+- App: **v0.66.0, versionCode 201**. Build with
   `./gradlew :app:bundlePlayRelease` (JAVA_HOME = Android Studio JBR); the artefact lands at
   `app/build/outputs/bundle/playRelease/app-play-release.aab`. Confirmed signed, with
   `DEV_PREMIUM=false` and `ENABLE_UPDATER=false`, so no store build can ship the developer
@@ -408,7 +407,7 @@ wrong the moment production goes live, so they are listed here rather than trust
 | corlang.app domain + proton email | ✅ have | optional website (Track F) |
 
 ## Key facts the next session needs
-- Latest release: **v0.65.0 / versionCode 200**. Live courses: **hr and pt only**.
+- Latest release: **v0.66.0 / versionCode 201**. Live courses: **hr and pt only**.
 - Worker: `https://corlang-ai-proxy.ricardo-infante.workers.dev`; secrets `ANTHROPIC_API_KEY`,
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
