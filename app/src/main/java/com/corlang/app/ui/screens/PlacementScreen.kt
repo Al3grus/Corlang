@@ -24,6 +24,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -127,6 +128,10 @@ fun PlacementScreen(
     var asked by remember(lang) { mutableIntStateOf(0) }
     var chosen by remember(lang) { mutableStateOf<String?>(null) }
     var finished by remember(lang) { mutableStateOf(false) }
+    // The explanation used to sit above question one, so the first thing a learner met was a
+    // paragraph about how the test adapts and, directly under it, a question already counting
+    // against them. It is a gate now: read, then start deliberately.
+    var started by rememberSaveable(lang) { mutableStateOf(false) }
 
     // The course's final lesson, so clearing the TOP band lands on it rather than on that band's
     // anchor (which is authored short of the end). See Placement.result.
@@ -147,7 +152,7 @@ fun PlacementScreen(
     var confirmLeave by remember(lang) { mutableStateOf(false) }
     // Only while the test is running: once the result is on screen there is nothing to lose, and
     // that screen has its own Cancel.
-    androidx.activity.compose.BackHandler(enabled = !finished) { confirmLeave = true }
+    androidx.activity.compose.BackHandler(enabled = started && !finished) { confirmLeave = true }
     if (confirmLeave) {
         androidx.compose.material3.AlertDialog(
             onDismissRequest = { confirmLeave = false },
@@ -251,8 +256,8 @@ fun PlacementScreen(
                 modifier = Modifier.padding(vertical = 12.dp)
             )
             Text(
-                "Your lessons will start here. Earlier lessons stay available to review any time, and " +
-                    "you can retake this test from Settings.",
+                "Your lessons will start here, and earlier lessons stay available to review any " +
+                    "time.",
                 style = MaterialTheme.typography.bodyMedium
             )
             // A short test cannot prove you know every word it skipped, so the run-up to your
@@ -300,6 +305,10 @@ fun PlacementScreen(
                         container.words.seedPrePlacementForReview(
                             lang, placeDay, maxDeckIndex = seedCeiling
                         )
+                        // Settled, and only now. The flag retires the one-time offer, so it is
+                        // written where a placement actually exists rather than where one was
+                        // merely intended: an app killed mid-test is offered the test again.
+                        container.languagePrefs.markPlacementHandled(lang)
                         onDone()
                     }
                 },
@@ -342,15 +351,38 @@ fun PlacementScreen(
         chosen = null
     }
 
-    Column(
-        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
-    ) {
-        if (asked == 0) {
-            Text(test.title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+    if (!started) {
+        Column(
+            modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp)
+        ) {
+            Text(test.title, style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold)
             Text(test.intro, style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(vertical = 18.dp))
+            Text(
+                "About $maxItems questions at most, and fewer if the test settles early. " +
+                    "Answer as well as you can and skip nothing: this only decides where you " +
+                    "begin, and getting it wrong in either direction costs you time later.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Button(
+                onClick = { started = true },
+                modifier = Modifier.fillMaxWidth().padding(top = 28.dp)
+            ) { Text("Start placement") }
+            OutlinedButton(
+                onClick = onAbandon,
+                modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
+            ) { Text("Not now") }
+            Spacer(Modifier.height(16.dp))
         }
+        return
+    }
+
+    Column(
+        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
+    ) {
         // Progress against the worst case: the bar only ever moves forward, and the count is
         // "about" because a band that settles in two items saves the third.
         LinearProgressIndicator(
