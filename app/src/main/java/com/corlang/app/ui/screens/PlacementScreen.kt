@@ -70,6 +70,15 @@ fun PlacementScreen(
     // Hoisted to the top of the composable rather than kept beside the copy it feeds: the
     // confirm button that does the seeding sits outside that branch, and both must read the
     // same number or the screen would promise one thing and queue another.
+    val context = androidx.compose.ui.platform.LocalContext.current
+    // Does this install own the course outright? Decides whether the top-of-course screen may
+    // say "every lesson is open" - see the copy there.
+    val ownsWholeCourse = remember(lang, unlockedLevels) {
+        com.corlang.app.BuildConfig.DEV_PREMIUM ||
+            container.content.plan(lang).days.lastOrNull()?.level?.let {
+                com.corlang.app.billing.PremiumManager.key(lang, it) in unlockedLevels
+            } == true
+    }
     val seedCeiling = remember(lang, unlockedLevels) {
         if (com.corlang.app.BuildConfig.DEV_PREMIUM) Int.MAX_VALUE
         else com.corlang.app.billing.PremiumManager.accessibleThroughDay(
@@ -119,8 +128,13 @@ fun PlacementScreen(
     var chosen by remember(lang) { mutableStateOf<String?>(null) }
     var finished by remember(lang) { mutableStateOf(false) }
 
+    // The course's final lesson, so clearing the TOP band lands on it rather than on that band's
+    // anchor (which is authored short of the end). See Placement.result.
+    val courseEnd = remember(lang) {
+        container.content.plan(lang).days.maxByOrNull { it.day }?.let { it.level to it.day }
+    }
     // Where the search currently says the learner belongs.
-    val placement = remember(search, bands) { Placement.result(bands, search) }
+    val placement = remember(search, bands, courseEnd) { Placement.result(bands, search, courseEnd) }
     val placeLevel = placement.first
     val placeDay = placement.second
 
@@ -172,43 +186,61 @@ fun PlacementScreen(
             modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp)
         ) {
             if (atCeiling) {
-                Text("You're at the top of this course", style = MaterialTheme.typography.titleMedium)
+                // No "LEVEL · Lesson N" hero here, unlike the ordinary result. A number is the
+                // answer to "where do I start?", and this learner's answer is "nowhere, you are
+                // past it all" - printing a lesson number invited them to read a ceiling as a
+                // reading, which is the one thing this branch exists to avoid.
                 Text(
-                    "$placeLevel · Lesson $placeDay",
+                    "You're at the top of this course",
                     style = MaterialTheme.typography.displaySmall,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(vertical = 12.dp)
+                    modifier = Modifier.padding(bottom = 14.dp)
                 )
                 Text(
-                    "You answered everything this test can ask, so it has placed you at its " +
-                        "highest point. Your real level may well be higher: the test stops here " +
+                    "You answered everything this test can ask, so it has placed you at the " +
+                        "final lesson. Your real level may well be higher: the test stops here " +
                         "because the course does.",
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
-                    "The lessons from here on are still worth having, but the quizzes and the " +
-                        "mock exams are probably what you came for. Every level you have been " +
-                        "placed past is unlocked, so you can go straight to them from the level " +
-                        "map, and word review will keep any gaps honest.",
+                    // Positional, not financial. Placement moves where the learner stands; it
+                    // buys nothing. Saying "every lesson is unlocked" to someone on the free
+                    // window would be flatly false, so what is open depends on what they own.
+                    if (ownsWholeCourse)
+                        "Every lesson and quiz in the course is open to you now, to practise and " +
+                            "review in any order. The mock exams are probably what you came for, " +
+                            "and word review will keep any gaps honest."
+                    else
+                        "Nothing in the course is ahead of you any more: every lesson you own is " +
+                            "open to practise and review in any order. Levels you have not " +
+                            "unlocked stay locked, because a placement test measures where you " +
+                            "are, it does not buy the course.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 10.dp)
                 )
-                // Deliberately a mail link rather than a field to type an address into. Corlang
-                // collects nothing, has no account and no way to send mail, so an in-app capture
-                // would be an address stored with nothing able to read it, a new "Email address"
-                // entry on the Play data-safety form, and a flat contradiction of the sentence
-                // two screens earlier promising no data collection. Writing to a real inbox
-                // costs the learner one tap and costs the app nothing.
                 Text(
-                    "If you want to hear when material above this level exists, write to " +
-                        "support@corlang.app and say which language. That is a person reading a " +
-                        "mailbox, not a list you are signed up to.",
+                    "Want to go further than this course goes? Ask for the level you need and " +
+                        "we will email you when it exists. The form opens in your browser, " +
+                        "because it asks for an address and this app does not.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 12.dp)
                 )
+                OutlinedButton(
+                    onClick = {
+                        runCatching {
+                            context.startActivity(
+                                android.content.Intent(
+                                    android.content.Intent.ACTION_VIEW,
+                                    android.net.Uri.parse("https://corlang.app/requests/")
+                                )
+                            )
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth().padding(top = 12.dp)
+                ) { Text("Request a language or level") }
             } else {
             Text("You're placed at", style = MaterialTheme.typography.titleMedium)
             Text(
@@ -272,7 +304,12 @@ fun PlacementScreen(
                     }
                 },
                 modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
-            ) { Text("Start at $placeLevel · Lesson $placeDay") }
+            ) {
+                Text(
+                    if (atCeiling) "Open the course at its last lesson"
+                    else "Start at $placeLevel · Lesson $placeDay"
+                )
+            }
             OutlinedButton(onClick = onDone, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
                 Text("Cancel")
             }

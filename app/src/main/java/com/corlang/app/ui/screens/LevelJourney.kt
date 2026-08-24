@@ -266,7 +266,16 @@ fun LevelJourney(
             // both levels' quizzes, readiness checks and full mock exams without a purchase.
             // Payment is checked separately and last, because it is the one condition studying
             // cannot satisfy.
-            val placedPast = stones.isNotEmpty() && targetDay > stones.maxOf { it.day }
+            //
+            // The `>` is strict on purpose for every level but the last, where it cannot be
+            // satisfied at all: nothing lies beyond the final lesson, so a learner whom the
+            // placement test placed AT the end of the course was never "past" B1 and its mock
+            // exam stayed shut. That is the one assessment a topped-out learner came for, and
+            // the screen was telling them so while locking it. Standing on the course's final
+            // lesson counts as past everything; the paywall check below is unaffected.
+            val lastPlanDay = plan.days.maxOfOrNull { it.day } ?: 0
+            val placedPast = stones.isNotEmpty() &&
+                (targetDay > stones.maxOf { it.day } || targetDay >= lastPlanDay)
             val levelDone = stones.isNotEmpty() &&
                 (stones.all { it.day in completedSet } || placedPast) &&
                 !levelLocked(selectedLevel)
