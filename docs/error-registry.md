@@ -452,3 +452,27 @@ V9/V10 if the deck carries articles. Every V-row is a candidate check for every 
    Portuguese markers immediately found 26 more titles the first pass had missed. **The lesson is
    the same one K16 taught: a word list is part of a language, not a general-purpose filter, and
    a checker borrowed across languages reports whatever the two happen to share.**
+
+14. **P1, the placement test was never validated by anything (2026-08-24, FIXED)**: `proctor.py`
+   audits lessons and quizzes and had never opened `placement.json`, which is the highest-stakes
+   content in a course and the least looked at — it runs ONCE, decides where a learner starts,
+   and has no retake. Two defect classes were sitting in shipped courses. **LEAKAGE**: Croatian
+   A2/125 asked `'Moram ___ ranije.' (I have to get up earlier: ustati)` with `ustati` as the
+   answer and three conjugated forms as distractors, so the gloss printed the answer and anyone
+   reaching that band cleared it knowing no Croatian. **NO STATED TASK**: Portuguese had thirteen
+   bare-blank prompts, eight genuinely ambiguous — `'Ela insistiu ___ pagar a conta.'` with four
+   prepositions does not tell a learner whether the question is about the preposition, the verb
+   or the register, so it demotes people who know the material. Both fixed; `check_placement.py`
+   runs forever.
+
+   **The checker's first rule was wrong and is worth recording.** "The answer must not appear in
+   the prompt" flagged 22 questions, 20 of them false: a German relative pronoun legitimately
+   repeats the article (`'Das ist die Kollegin, ___ das Projekt leitet.'` → `die`), and an
+   Italian "which form of X" question legitimately names X. The real defect class is narrower —
+   **a parenthetical HINT naming the answer** — because a gloss is the one place the word can
+   only be a giveaway. Same lesson as K16 and K28: a rule that fires on everything hides the
+   thing it was written to find.
+
+   It defaults to the LIVE courses from `content/_index.json` and checks a hidden one only when
+   named, so an unfinished course cannot fail a gate it was never meant to pass, and is checked
+   the moment it is unhidden.

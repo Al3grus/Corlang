@@ -297,8 +297,11 @@ private fun CorlangApp(container: AppContainer) {
     // new-language prompt is dismissed by accident, we revert to this instead of stranding them
     // in the just-picked language at day 1.
     var lastSettledLang by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(lang, handledLangs) {
+    LaunchedEffect(lang, handledLangs, showPlacement) {
         val handled = handledLangs ?: return@LaunchedEffect
+        // Never stack the offer under the test itself: the flag is now written on completion,
+        // so while the test is open this language is legitimately still "unhandled".
+        if (showPlacement) return@LaunchedEffect
         if (lang in handled) { lastSettledLang = lang; newLangPrompt = null; return@LaunchedEffect }
         val completions = container.progress.completedDays(lang).first()
         val revs = container.words.reviews(lang).first()
@@ -340,7 +343,10 @@ private fun CorlangApp(container: AppContainer) {
                     )
                     Button(
                         onClick = {
-                            scope.launch { container.languagePrefs.markPlacementHandled(pl) }
+                            // Deliberately NOT marked handled here: opening the test settles
+                            // nothing. PlacementScreen marks it once a placement commits, so a
+                            // process death mid-test leaves the offer standing instead of
+                            // silently retiring it and stranding the learner on lesson 1.
                             newLangPrompt = null
                             showPlacement = true
                         },
@@ -557,10 +563,9 @@ private fun CorlangApp(container: AppContainer) {
                         onAbandon = {
                             showPlacement = false
                             scope.launch {
-                                // The prompt marked this language handled when it opened the
-                                // test. Nothing was placed, so re-arm it: otherwise abandoning
-                                // once means never being offered placement for this language
-                                // again, and there is no retake anywhere else.
+                                // Belt and braces. Nothing marks this language handled until a
+                                // placement commits, so this is normally a no-op; it stays for
+                                // an install carrying the flag from a build that set it early.
                                 container.languagePrefs.unmarkPlacementHandled(lang)
                                 if (backTo != null) container.languagePrefs.setLanguage(backTo)
                             }

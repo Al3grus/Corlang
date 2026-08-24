@@ -149,9 +149,12 @@ fun OnboardingScreen(
             )
             container.languagePrefs.setMaxReviewsPerDay(goal)
             container.languagePrefs.setLanguage(learnLang)
-            // Mark this course handled BEFORE onboarding-done flips, so MainActivity's
-            // new-language prompt never fires for the language just set up here.
-            container.languagePrefs.markPlacementHandled(learnLang)
+            // Handled means SETTLED, and it is only settled here if the learner declined the
+            // test: choosing to take it settles nothing until it is finished. Marking it on the
+            // way in is what stranded anyone whose app died mid-test - the flag survived, the
+            // test did not, and placement was never offered again, leaving them on lesson 1
+            // with no way back to it. PlacementScreen marks it when a placement commits.
+            if (!thenPlacement) container.languagePrefs.markPlacementHandled(learnLang)
             container.languagePrefs.setOnboardingDone(true)
             onFinish(thenPlacement)
         }
