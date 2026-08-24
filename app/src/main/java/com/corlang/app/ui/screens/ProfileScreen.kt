@@ -116,18 +116,24 @@ fun ProfileScreen(
             // only of the AI tutor, which left the course unlocks with no home in the app at
             // all: the only way to reach them was to walk into a locked lesson.
             val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
-            val courseOwned = remember(lang, unlockedLevels) {
-                val top = container.content.plan(lang).days.lastOrNull()?.level
-                top != null && PremiumManager.key(lang, top) in unlockedLevels
-            }
+            val owned = remember(lang, unlockedLevels) { courseOwnership(container, lang, unlockedLevels) }
             // Names the two things sold, so the label never goes stale: the subtitle carries
             // the state. "Full access" was the alternative and is subtly wrong in the commonest
             // paying state - owning the course is not full access, the tutor is sold separately.
+            //
+            // Six states, because the two purchases are independent and the course has a middle
+            // ground: a learner can own through A1 or A2 without owning the course. Collapsing
+            // that middle into "owned" would tell somebody with one level of four that they had
+            // the course, which is the sentence they would quote in a refund request.
             MenuRow(Icons.Outlined.WorkspacePremium, "Course & tutor",
                 when {
-                    courseOwned && entitled -> "Course and tutor · all yours ✓"
-                    courseOwned -> "${meta.name} course owned ✓ · tutor available"
-                    entitled -> "Tutor active ✓ · unlock the full course"
+                    owned.isWholeCourse && entitled -> "Course and tutor · full access ✓"
+                    owned.isWholeCourse -> "Full ${meta.name} course owned ✓ · tutor available"
+                    owned.top != null && entitled ->
+                        "${meta.name} course (${owned.top}) owned ✓ · tutor active ✓"
+                    owned.top != null ->
+                        "${meta.name} course (${owned.top}) owned ✓ · tutor available"
+                    entitled -> "Tutor active ✓ · unlock the course"
                     else -> "Unlock the course, or the tutor"
                 },
                 onClick = { page = "premium" })
@@ -143,6 +149,29 @@ fun ProfileScreen(
             //     "Cheatsheet, grammar, best resources", onClick = { page = "references" })
         }
     } }
+}
+
+/**
+ * What this install owns of one course.
+ *
+ * [top] is the HIGHEST level owned, or null for none. Unlocks are cumulative, so the highest one
+ * is the whole story: owning A2 means owning A1 too, and there is no state where a rung is owned
+ * without the ones below it. [isWholeCourse] is that level being the course's last, which is the
+ * only case that may be described as owning the course.
+ */
+private data class CourseOwnership(val top: String?, val isWholeCourse: Boolean)
+
+private fun courseOwnership(
+    container: AppContainer,
+    lang: String,
+    unlocked: Set<String>,
+): CourseOwnership {
+    // sortedBy(day) because "the last level" must mean the course's final level, not whichever
+    // one happens to sit last in the loaded plan files. Same ordering the paywall derives its
+    // tiers from, so the two agree about which product is the whole course.
+    val levels = container.content.plan(lang).days.sortedBy { it.day }.map { it.level }.distinct()
+    val top = levels.lastOrNull { PremiumManager.key(lang, it) in unlocked }
+    return CourseOwnership(top, top != null && top == levels.lastOrNull())
 }
 
 /** One uniform Profile menu row: icon · title/subtitle · chevron. */
@@ -337,14 +366,11 @@ private fun PremiumPage(
     val entitled by container.premium.entitled.collectAsState(initial = false)
     val unlockedLevels by container.premium.unlockedLevels.collectAsState(initial = emptySet())
     val meta = remember(lang) { container.content.meta(lang) }
-    // Which rung of this course the learner owns, if any. Cumulative, so the highest one owned
-    // is the whole story: naming it is what turns "did my purchase work?" into a visible answer.
-    val ownedTop = remember(lang, unlockedLevels) {
-        container.content.plan(lang).days.map { it.level }.distinct()
-            .lastOrNull { PremiumManager.key(lang, it) in unlockedLevels }
-    }
-    val courseTop = remember(lang) { container.content.plan(lang).days.lastOrNull()?.level }
-    val courseComplete = ownedTop != null && ownedTop == courseTop
+    // Same source of truth as the menu row that leads here, so the two can never disagree about
+    // what the learner owns.
+    val owned = remember(lang, unlockedLevels) { courseOwnership(container, lang, unlockedLevels) }
+    val ownedTop = owned.top
+    val courseComplete = owned.isWholeCourse
 
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
         InfoCard {
