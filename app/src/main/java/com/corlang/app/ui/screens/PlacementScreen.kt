@@ -163,7 +163,7 @@ fun PlacementScreen(
                         "Your answers so far will be lost and nothing will be placed. " +
                             "You'll go back to $returnTo."
                     else
-                        "Your answers so far will be lost and nothing will be placed. " +
+                        "Your answers so far will be lost and you won't be placed. " +
                             "You'll be asked again how you want to start this language."
                 )
             },
@@ -205,7 +205,7 @@ fun PlacementScreen(
                 Text(
                     "You answered everything this test can ask, so it has placed you at the " +
                         "final lesson. Your real level may well be higher: the test stops here " +
-                        "because the course does.",
+                        "because the course also does.",
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
@@ -227,8 +227,7 @@ fun PlacementScreen(
                 )
                 Text(
                     "Want to go further than this course goes? Ask for the level you need and " +
-                        "we will email you when it exists. The form opens in your browser, " +
-                        "because it asks for an address and this app does not.",
+                        "we will email you when it exists.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 12.dp)
@@ -273,7 +272,7 @@ fun PlacementScreen(
                         "about $seedCount of them, are added to your reviews so nothing slips " +
                         "through the cracks. They arrive a few a day, hardest first, never more " +
                         "than half your daily review limit. Anything you already know you will " +
-                        "pass once and rarely see again.",
+                        "review once and rarely see again.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 10.dp)
@@ -361,8 +360,8 @@ fun PlacementScreen(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(vertical = 18.dp))
             Text(
-                "About $maxItems questions at most, and fewer if the test settles early. " +
-                    "Answer as well as you can and skip nothing: this only decides where you " +
+                "Around $maxItems questions at most, and fewer if the test settles early. " +
+                    "Answer as well as you can without guessing: this only decides where you " +
                     "begin, and getting it wrong in either direction costs you time later.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant

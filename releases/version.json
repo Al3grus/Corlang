@@ -1,6 +1,6 @@
 {
-  "versionCode": 199,
-  "versionName": "0.64.0",
-  "notes": "Closing the app during the placement test no longer strands you on lesson 1: the test is offered again next time, because it now counts as done when a placement is actually saved rather than when the test opens. The explanation is its own screen with a Start button instead of a paragraph sitting on top of question one, and it no longer promises a retake that does not exist. Eight Portuguese questions now say what they are asking, and one Croatian question stopped printing its own answer in the hint.",
+  "versionCode": 200,
+  "versionName": "0.65.0",
+  "notes": "Onboarding and placement wording, rewritten. The welcome page drops its opening claim and lets the next page make the same argument concretely, How it works names the six steps a lesson actually has and says review runs at the end of it, and the placement explanation now tells you not to guess, which is the one instruction that changes where you land.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

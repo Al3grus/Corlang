@@ -11,7 +11,7 @@ Blocks marked **(content)** live in per-language JSON and must be edited for eve
 separately — the same block is listed once per language. Everything else is one string shared by
 all courses.
 
-Verified against the app at v0.64.0 / versionCode 199.
+Verified against the app at v0.65.0 / versionCode 200.
 
 ---
 
@@ -25,11 +25,6 @@ SOURCE: `ui/screens/OnboardingScreen.kt` STEP_WELCOME
 Title:
 ```
 Welcome!
-```
-
-Body:
-```
-Corlang is built on how people actually learn a language: structured study, deliberate repetition, and retention methods with real evidence behind them.
 ```
 
 Button:
@@ -52,17 +47,17 @@ How it works
 
 Paragraph 1:
 ```
-One lesson a day, about ten minutes. A few new words, a short teaching block, exercises, a dialogue you say out loud, and a wrap-up that asks for the day's phrases back from memory with nothing to copy from.
+Ten minutes, six steps, the same order every day. A few new words, a short teaching block, exercises, a dialogue you say out loud, and a wrap-up that asks for that lesson's phrases back from memory.
 ```
 
 Paragraph 2:
 ```
-Then those words come back. Each one is scheduled on its own and returns just before you would have forgotten it, so what you learn today is still there in a month.
+At the end of the lesson, the words you have already learned in previous days come back. Each one is scheduled on its own and returns just before you would have forgotten it, so what you learn today is still there in a month.
 ```
 
 Paragraph 3:
 ```
-Quizzes and full mock exams in the official format as you reach them, and an optional AI tutor for conversation practice and written feedback.
+Quizzes and full mock exams in the official format per level, and an optional AI tutor for conversation practice and written feedback.
 ```
 
 Paragraph 4 (smaller, muted):
@@ -160,7 +155,7 @@ Daily review limit
 
 Subtitle:
 ```
-Every lesson teaches 10 new words. Older words then come back to keep them fresh: how many of those do you want each day? You can change this any time in Settings.
+Every lesson teaches 10 new words. Older words get reviewed to keep them fresh: how many of those do you want each day? You can change this any time in Settings.
 ```
 
 ---
@@ -183,7 +178,7 @@ I'm new, start me at Lesson 1
 
 Option B:
 ```
-I know some, take the 2-minute placement test
+I know some, take the placement test
 ```
 
 Button:
@@ -196,18 +191,18 @@ Start learning →
 ## 8. Switching to a course you have never studied
 
 A dialog, not a screen. Appears when you pick a language with no progress in it — including
-straight after onboarding if you chose the placement test there. `Portuguese` is the course name.
+straight after onboarding if you chose the placement test there. `$langName` is the course name.
 
 SOURCE: `MainActivity.kt` — new-language prompt
 
 Title:
 ```
-Start Portuguese
+Start $langName
 ```
 
 Body:
 ```
-Take a quick placement test so Portuguese starts at the right level? It's about two minutes. Your profile carries over, no need to set anything up again.
+Take a quick placement test so $langName starts at the right level? It will take about two minutes.
 ```
 
 Buttons:
@@ -224,25 +219,17 @@ Read this, then start deliberately. Nothing is asked until "Start placement" is 
 
 ### 9a. Title and explanation **(content — per language)**
 
-SOURCE: `assets/content/pt/placement.json` → `title`, `intro`
+SOURCE: `assets/content/pt/placement.json` and `assets/content/hr/placement.json` → `intro`
+(one shared text since the rewrite; each course keeps its own title, "Find your starting point" and "Where should you start?")
 
 ```
 Find your starting point
 ```
 
 ```
-A short check that adapts to you. It starts in the middle rather than at the beginning, so the first question may look hard or easy: answer it wrong and the next one is easier, right and the next is harder. About two minutes. It runs once, when you start a course, so answer as carefully as you can: there is no retake, and the only way back to lesson one is resetting the course in Settings.
+A short check that adapts to you. It starts in the middle rather than at the beginning, so the first question may seem hard or easy: answer it wrong and the next one is easier, get it right and the next question is harder. You can only take this assessment once when you start a course, so answer as carefully as you can: there is no retake, and the only way back to lesson one is resetting the course in Settings. If you don't know an answer, don't try to guess it, or you might end up in the wrong place.
 ```
 
-SOURCE: `assets/content/hr/placement.json` → `title`, `intro`
-
-```
-Where should you start?
-```
-
-```
-A short Croatian check that adapts to you. It starts in the middle rather than at the beginning, so the first question may look hard or easy: answer it wrong and the next one is easier, right and the next is harder. About two minutes. It runs once, when you start a course, so answer as carefully as you can: there is no retake, and the only way back to lesson one is resetting the course in Settings.
-```
 
 ### 9b. Shared second paragraph and buttons
 
@@ -251,7 +238,7 @@ A short Croatian check that adapts to you. It starts in the middle rather than a
 SOURCE: `ui/screens/PlacementScreen.kt` — the `!started` gate
 
 ```
-About 20 questions at most, and fewer if the test settles early. Answer as well as you can and skip nothing: this only decides where you begin, and getting it wrong in either direction costs you time later.
+Around 20 questions at most, and fewer if the test settles early. Answer as well as you can without guessing: this only decides where you begin, and getting it wrong in either direction costs you time later.
 ```
 
 Buttons:
@@ -293,7 +280,7 @@ Leave the placement test?
 
 Body, when there is no course to fall back to:
 ```
-Your answers so far will be lost and nothing will be placed. You'll be asked again how you want to start this language.
+Your answers so far will be lost and you won't be placed. You'll be asked again how you want to start this language.
 ```
 
 Body, when there is one (`$returnTo` is that course's name):
@@ -332,7 +319,7 @@ Your lessons will start here, and earlier lessons stay available to review any t
 
 Extra paragraph, only when words are queued for review. `about 600` is a runtime count:
 ```
-Because this test is short, the words from the lessons just before here, about 600 of them, are added to your reviews so nothing slips through the cracks. They arrive a few a day, hardest first, never more than half your daily review limit. Anything you already know you will pass once and rarely see again.
+Because this test is short, the words from the lessons just before here, about 600 of them, are added to your reviews so nothing slips through the cracks. They arrive a few a day, hardest first, never more than half your daily review limit. Anything you already know you will review once and rarely see again.
 ```
 
 Buttons:
@@ -356,7 +343,7 @@ You're at the top of this course
 
 Paragraph 1:
 ```
-You answered everything this test can ask, so it has placed you at the final lesson. Your real level may well be higher: the test stops here because the course does.
+You answered everything this test can ask, so it has placed you at the final lesson. Your real level may well be higher: the test stops here because the course also does.
 ```
 
 Paragraph 2, shown when the learner owns the whole course:
@@ -371,7 +358,7 @@ Nothing in the course is ahead of you any more: every lesson you own is open to 
 
 Paragraph 3:
 ```
-Want to go further than this course goes? Ask for the level you need and we will email you when it exists. The form opens in your browser, because it asks for an address and this app does not.
+Want to go further than this course goes? Ask for the level you need and we will email you when it exists.
 ```
 
 Buttons:
@@ -408,7 +395,7 @@ Easy →  ·  you knew it instantly (it won't return for a while)
 
 Closing line:
 ```
-Tap a button, or swipe the card in that arrow's direction. Rating honestly is what makes the spacing work.
+Tap a button, or swipe the card in that arrow's direction. Rating honestly is what makes the spacing method work.
 ```
 
 Button:

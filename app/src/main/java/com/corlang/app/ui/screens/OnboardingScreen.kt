@@ -247,8 +247,10 @@ fun OnboardingScreen(
         ) { animatedStep ->
         when (animatedStep) {
             // ---- Welcome: what this app is, before it asks for anything ----
-            // Just "Welcome!": the lockup above already reads Corlang, and the thesis sentence
-            // names it again. Naming it in the greeting too put it three times in five words.
+            // Just "Welcome!" and the lockup, with no body at all. The thesis sentence that
+            // used to sit here said what the app believes; the very next page says what the
+            // learner will actually do, which is the same argument made concretely. Keeping
+            // both meant asserting the method before showing it.
             STEP_WELCOME -> StepFrame(
                 gap = GAP_INTRO,
                 title = "Welcome!",
@@ -259,13 +261,7 @@ fun OnboardingScreen(
                         Text("Get started →")
                     }
                 }
-            ) {
-                Text(
-                    "Corlang is built on how people actually learn a language: structured study, " +
-                        "deliberate repetition, and retention methods with real evidence behind them.",
-                    style = MaterialTheme.typography.bodyLarge
-                )
-            }
+            ) {}
 
             // ---- How it works: the substance, one page before anything is asked ----
             STEP_HOW -> StepFrame(
@@ -285,15 +281,16 @@ fun OnboardingScreen(
                 // read was a ladder of letters and numbers they have no feel for yet. The levels
                 // are on the course screens, where they mean something.
                 Text(
-                    "One lesson a day, about ten minutes. A few new words, a short teaching " +
-                        "block, exercises, a dialogue you say out loud, and a wrap-up that asks " +
-                        "for the day's phrases back from memory with nothing to copy from.",
+                    "Ten minutes, six steps, the same order every day. A few new words, a " +
+                        "short teaching block, exercises, a dialogue you say out loud, and a " +
+                        "wrap-up that asks for that lesson's phrases back from memory.",
                     style = MaterialTheme.typography.bodyLarge
                 )
                 Text(
-                    "Then those words come back. Each one is scheduled on its own and returns " +
-                        "just before you would have forgotten it, so what you learn today is " +
-                        "still there in a month.",
+                    "At the end of the lesson, the words you have already learned in previous " +
+                        "days come back. Each one is scheduled on its own and returns just " +
+                        "before you would have forgotten it, so what you learn today is still " +
+                        "there in a month.",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
@@ -301,8 +298,8 @@ fun OnboardingScreen(
                 // not exist at every level in every course, so the stronger claim would be false.
                 // The format really is the official one.
                 Text(
-                    "Quizzes and full mock exams in the official format as you reach them, and " +
-                        "an optional AI tutor for conversation practice and written feedback.",
+                    "Quizzes and full mock exams in the official format per level, and an " +
+                        "optional AI tutor for conversation practice and written feedback.",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
@@ -422,8 +419,8 @@ fun OnboardingScreen(
                 // review on top of that each day", which packs a relative clause, a question and
                 // a qualifier into one breath and reads as a riddle.
                 subtitle = "Every lesson teaches " +
-                    "${com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY} new words. Older words then " +
-                    "come back to keep them fresh: how many of those do you want each day? " +
+                    "${com.corlang.app.data.Fsrs.NEW_WORDS_PER_DAY} new words. Older words get " +
+                    "reviewed to keep them fresh: how many of those do you want each day? " +
                     "You can change this any time in Settings.",
                 actions = {
                     // In edit mode this is the last step, so it saves; the level question only
@@ -481,7 +478,7 @@ fun OnboardingScreen(
             ) {
                 listOf(
                     false to "I'm new, start me at Lesson 1",
-                    true to "I know some, take the 2-minute placement test"
+                    true to "I know some, take the placement test"
                 ).forEach { (wants, label) ->
                     // Same shared row as every other choice in the app; a border-only selection
                     // here was invisible once the light theme's primary and outline both went
