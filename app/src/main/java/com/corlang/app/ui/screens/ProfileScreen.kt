@@ -52,7 +52,7 @@ import com.corlang.app.ui.components.SectionTitle
 import kotlinx.coroutines.launch
 
 /**
- * Profile = the app's control panel: four uniform rows — Settings, Language, Premium & unlocks,
+ * Profile = the app's control panel: four uniform rows — Settings, Language, Course & tutor,
  * References. Progress-related stats live on the separate Progress tab; this tab is where you
  * change how the app works, not where you check how you're doing.
  */
@@ -86,7 +86,7 @@ fun ProfileScreen(
             // Choosing a language returns to the Profile menu (like closing Settings does).
             LanguagePage(container, lang) { code -> onSelectLanguage(code); page = null }
         }
-        "premium" -> SubPage("Premium & unlocks", onBack = { page = null }) {
+        "premium" -> SubPage("Course & tutor", onBack = { page = null }) {
             PremiumPage(container, lang, onGetPremium, onUnlockCourse)
         }
         "references" -> SubPage("References", onBack = { page = null }) {
@@ -120,12 +120,15 @@ fun ProfileScreen(
                 val top = container.content.plan(lang).days.lastOrNull()?.level
                 top != null && PremiumManager.key(lang, top) in unlockedLevels
             }
-            MenuRow(Icons.Outlined.WorkspacePremium, "Premium & unlocks",
+            // Names the two things sold, so the label never goes stale: the subtitle carries
+            // the state. "Full access" was the alternative and is subtly wrong in the commonest
+            // paying state - owning the course is not full access, the tutor is sold separately.
+            MenuRow(Icons.Outlined.WorkspacePremium, "Course & tutor",
                 when {
-                    courseOwned && entitled -> "Course and AI tutor · all yours ✓"
-                    courseOwned -> "${meta.name} course owned ✓ · AI tutor available"
-                    entitled -> "AI tutor active ✓ · unlock the full course"
-                    else -> "Unlock the course, or the AI tutor"
+                    courseOwned && entitled -> "Course and tutor · all yours ✓"
+                    courseOwned -> "${meta.name} course owned ✓ · tutor available"
+                    entitled -> "Tutor active ✓ · unlock the full course"
+                    else -> "Unlock the course, or the tutor"
                 },
                 onClick = { page = "premium" })
             // Opens the browser, and that is the whole point: the page it lands on asks for an
@@ -389,17 +392,17 @@ private fun PremiumPage(
 
         Spacer(Modifier.height(20.dp))
         InfoCard {
-            Text(if (entitled) "AI tutor is active ✓" else "AI tutor",
+            Text(if (entitled) "Tutor is active ✓" else "Tutor",
                 style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
                 color = if (entitled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
             Text(
-                "A separate monthly subscription that unlocks the Learn tab's AI:",
+                "A separate monthly subscription that unlocks the Tutor tab:",
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(top = 6.dp))
             listOf(
-                "AI tutor: chat in your language at your level",
-                "AI review of your teach-back explanations",
-                "AI examiner feedback on your exam writing",
+                "Chat in your language, at your level",
+                "Review of your teach-back explanations",
+                "Examiner feedback on your exam writing",
             ).forEach {
                 Text("•  $it", style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = 4.dp))
@@ -407,7 +410,7 @@ private fun PremiumPage(
             // Was: "The whole course ... stays free", which stopped being true the moment levels
             // became paid. Naming exactly what is free keeps this honest as pricing moves.
             Text(
-                if (entitled) "Enjoy! The Learn tab is in your bottom bar."
+                if (entitled) "Enjoy! The Tutor tab is in your bottom bar."
                 else "Lessons you own, spaced-repetition review and progress tracking need no " +
                     "subscription. The AI is the only thing this one buys.",
                 style = MaterialTheme.typography.bodySmall,

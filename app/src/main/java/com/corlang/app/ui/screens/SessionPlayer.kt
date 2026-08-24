@@ -841,7 +841,7 @@ fun SessionPlayer(
                                 Text(
                                     when {
                                         route.startsWith("quiz/") -> "Open the level quiz"
-                                        route == Dest.LEARN.route -> "Open Learn tab"
+                                        route == Dest.LEARN.route -> "Open Tutor tab"
                                         else -> "Open Review"
                                     }
                                 )

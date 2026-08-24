@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.map
 
 /**
  * Single source of truth for what this install has paid for. Two independent axes:
- *  1. [entitled] — the AI subscription ("Premium"): unlocks the Learn tab (tutor + feedback).
+ *  1. [entitled] — the AI subscription: unlocks the Tutor tab (the LEARN route: chat + feedback).
  *  2. [unlockedLevels] / [key] — one-time level unlocks, PER LANGUAGE.
  *
  * ## What is free
