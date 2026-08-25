@@ -294,7 +294,12 @@ fun TodayScreen(
         //
         // The greeting moves through the day, so the page is never identical two visits running.
         // A learner who skipped the name field just gets the bare greeting.
-        Column {
+        Column(
+            // Its own breathing room, on top of the page rhythm: the header is the only block
+            // with nothing but air around it, and it was reading as squeezed between the app bar
+            // above and the lesson card below. 12 up and 10 down buys ~30dp on each side.
+            Modifier.padding(top = 12.dp, bottom = 10.dp)
+        ) {
             val hour = java.time.LocalTime.now().hour
             val who = profile?.name?.trim().orEmpty()
             // Course first, as an overline. The lesson card below is built the same way — a
