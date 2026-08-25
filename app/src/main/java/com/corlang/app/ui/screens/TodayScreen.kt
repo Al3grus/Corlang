@@ -284,10 +284,13 @@ fun TodayScreen(
             .padding(horizontal = 16.dp, vertical = 20.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        // A page header, not a card: who is here and where they are in the course. It replaces
-        // nothing the hero used to do — the hero talked about the streak, which now lives on the
-        // app bar — and it earns its line by answering the one question Learn stopped answering
-        // when the hero and the top-bar flag both went: which course am I in, and how far along?
+        // A page header, not a card: who is here, and which course this is.
+        //
+        // It names the course and NOTHING else on purpose. It first read "Day 31 of your
+        // Croatian plan", which restated the two things directly below it — the card's own
+        // action says "Start Lesson 31", and the journey stones are numbered by day under a
+        // "A1 · 7 / 24 lessons done" caption. The course is the one thing Learn stopped naming
+        // when the hero card went and the top bar dropped its flag.
         //
         // The greeting moves through the day, so the page is never identical two visits running.
         // A learner who skipped the name field just gets the bare greeting.
@@ -309,7 +312,7 @@ fun TodayScreen(
                 fontWeight = FontWeight.Bold
             )
             Text(
-                "${meta.flagEmoji} Day $targetDay of your ${meta.name} plan",
+                "${meta.flagEmoji} ${meta.name}",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 4.dp)
