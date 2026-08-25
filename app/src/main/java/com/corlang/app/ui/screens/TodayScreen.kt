@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -47,6 +48,15 @@ import kotlinx.coroutines.launch
  * streak and the next action, and "Start lesson" hands over to the guided SessionPlayer,
  * which walks through every task of the day step by step. No loose checklists, the app leads.
  */
+/**
+ * Text that occupies exactly its glyphs: no leading above the first line or below the last. Used
+ * where a text block sits in a measured gap and the gap has to LOOK like the number it is.
+ */
+private val tightLines = androidx.compose.ui.text.style.LineHeightStyle(
+    alignment = androidx.compose.ui.text.style.LineHeightStyle.Alignment.Center,
+    trim = androidx.compose.ui.text.style.LineHeightStyle.Trim.Both
+)
+
 @Composable
 fun TodayScreen(
     container: AppContainer,
@@ -307,9 +317,14 @@ fun TodayScreen(
             // small label line above a bold title — so the page reads as one rhythm repeated
             // rather than two blocks organised opposite ways. It also puts the flag first
             // thing top-left, which is where the app bar used to carry the course identity.
+            // trim = Both on both lines. A text box carries leading above and below its glyphs,
+            // so three EQUAL layout gaps do not look equal: the gap between two text lines gets
+            // both their leadings added to it, while the gaps to the app bar above and the card
+            // below get only one. Trimming the leading makes the box hug the glyphs, so 24.dp of
+            // layout is 24.dp of visible air in all three places.
             Text(
                 "${meta.flagEmoji} ${meta.name}",
-                style = MaterialTheme.typography.labelLarge,
+                style = MaterialTheme.typography.labelLarge.copy(lineHeightStyle = tightLines),
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Text(
@@ -323,7 +338,7 @@ fun TodayScreen(
                     )
                     if (who.isNotEmpty()) append(", $who")
                 },
-                style = MaterialTheme.typography.headlineSmall,
+                style = MaterialTheme.typography.headlineSmall.copy(lineHeightStyle = tightLines),
                 fontWeight = FontWeight.Bold
             )
         }
@@ -391,25 +406,23 @@ fun TodayScreen(
                 modifier = Modifier.padding(20.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                // Heading and ring share the top row: the ring is TODAY's goal, so it appears
-                // only on today's lesson card. Browsing back to an old lesson hides it rather
-                // than implying that revisiting day 4 moves today's goal.
-                Row(verticalAlignment = Alignment.Top) {
-                    Column(Modifier.weight(1f)) {
-                        Text(
-                            "${d.phase} · Week ${d.week} · ${d.level}",
-                            style = MaterialTheme.typography.labelLarge,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                        Text(
-                            d.title,
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold,
-                            // 8, not 2: the card's own 12dp spacing does not reach inside this
-                            // column, so the level label and the lesson title were touching.
-                            modifier = Modifier.padding(top = 8.dp)
-                        )
-                    }
+                // The level label and the ring share a row, centred on each other. The row is
+                // pinned to the ring's height whether or not the ring is drawn, so browsing to a
+                // day that has no ring does not change where the title sits.
+                //
+                // The ring is TODAY's goal, so it appears only on today's lesson card: browsing
+                // back to an old lesson hides it rather than implying that revisiting day 4
+                // moves today's goal.
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.heightIn(min = 44.dp)
+                ) {
+                    Text(
+                        "${d.phase} · Week ${d.week} · ${d.level}",
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.weight(1f)
+                    )
                     if (d.day == targetDay) {
                         GoalRing(
                             progress = ringProgress,
@@ -420,6 +433,15 @@ fun TodayScreen(
                         )
                     }
                 }
+                // Its own line, full width, so a long title is no longer squeezed into a column
+                // beside the ring. The label centres in a 44dp row, which leaves ~12dp of that
+                // row below the label text; with the card's 12dp between children that puts 24
+                // of visible air between the two titles.
+                Text(
+                    d.title,
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
+                )
                 SectionTitle("In this lesson you will")
                 // bodyLarge + a 2-line cap keeps the card compact on standard phones (the full
                 // objective is repeated inside the lesson itself, so a trim here loses nothing).
