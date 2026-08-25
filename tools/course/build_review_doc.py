@@ -5,10 +5,13 @@ Build the native-speaker review workbook for one course.
     python tools/course/build_review_doc.py hr
     python tools/course/build_review_doc.py hr --out docs/review/croatian.html
 
-Supersedes docs/review/generate_review_docs.py (Aug 2026), which produced a static
-printable page covering vocabulary, grammar, cheatsheet, quizzes and dialogues but
-neither the lesson learn-items nor the ~3,200 exercise questions, and had no way for
-a reviewer to record a verdict that could be read back in.
+Replaced docs/review/generate_review_docs.py (Aug 2026, deleted), which produced a
+static printable page covering vocabulary, grammar, cheatsheet, quizzes and dialogues
+but neither the lesson learn-items nor the ~3,200 exercise questions, and had no way
+for a reviewer to record a verdict that could be read back in.
+
+Build a workbook when a reviewer is lined up, not before: it is a snapshot of content
+that keeps moving, and a stale one in the repo eventually gets handed to somebody.
 
 The output is ONE self-contained HTML file. It embeds the course's JSON and renders
 it in the browser, which is why a 5MB course does not become a 40MB document: the

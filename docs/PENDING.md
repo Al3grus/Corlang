@@ -312,18 +312,28 @@ All assets live in `docs/store-assets/` — see the README there.
 **Only hr and pt matter for this launch** — fr, de, it and es are hidden, so their review docs can
 wait until they are unhidden. Nothing here blocks Internal or Closed testing.
 
-1. Croatian native review (friend) — `docs/review/hr-content-review.html`.
-2. Portuguese native review (sister) — `docs/review/pt-content-review.html`.
-3. French native review (friend) — `docs/review/fr-content-review.html`.
-4. German native review (reviewer found) — `docs/review/de-content-review.html`.
-5. Italian native review — **(browser) find a reviewer, none assigned yet** —
-   `docs/review/it-content-review.html`.
-   **Docs regenerated 2026-08-03 against current content (all 5 shipped courses, dialogue
-   scripts now included as a 5th section — previously only vocab/grammar/cheatsheet/quizzes
-   were covered, so ~300+ machine-authored lesson dialogues had never surfaced to a
-   reviewer). Reviewer-facing instructions + reporting format: `docs/review/REVIEWER-INSTRUCTIONS.md`.**
-6. **(me)** Fold returned corrections into the JSON; tests + ai-variety-eval re-verify.
-7. **(you, phone)** TTS pronunciation spot-check per language.
+Reviewers now get a **workbook**, built per course on demand:
+
+```bash
+python tools/course/build_review_doc.py hr    # -> docs/review/hr-review-workbook.html
+```
+
+One self-contained HTML file holding the WHOLE course — every word, explanation, dialogue line
+and exercise question with its answer key, in teaching order — with per-item Wrong / Awkward /
+Unsure flags and a correction box, and an export that comes back as JSON keyed by content path.
+Nothing is ticked by default: silence means fine, and a per-section "reviewed" mark tracks
+coverage. See `docs/review/README.md` for the id scheme and how to apply what returns.
+
+The August 2026 `*-content-review.html` set was deleted on 2026-08-25: static, no way to record
+a verdict, and it covered neither the lesson learn-items nor the ~3,200 exercise questions.
+Build a fresh workbook when a reviewer is actually lined up — it takes one command and is always
+current, so there is no reason to keep stale ones in the repo.
+
+1. Croatian native review (professor) — workbook built 2026-08-25, **sent**.
+2. Portuguese native review (sister) — build `pt` when ready.
+3. French / German / Italian — hidden courses; build when they are unhidden and a reviewer exists.
+4. **(me)** Fold returned corrections into the JSON; validators + tests re-verify.
+5. **(you, phone)** TTS pronunciation spot-check per language.
 
 ---
 

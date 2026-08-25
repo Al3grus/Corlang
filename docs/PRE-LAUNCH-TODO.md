@@ -39,9 +39,11 @@ The AAB is already built & verified: `app/build/outputs/bundle/playRelease/app-p
        the old token was rotated dead).
 
 ## Content correctness (blocker)
-- [ ] **Native-speaker review — Croatian** (use `docs/review/hr-content-review.html`, print or PDF).
-- [ ] **Native-speaker review — Portuguese** (`docs/review/pt-content-review.html`).
-- [ ] **Native-speaker review — French** (`docs/review/fr-content-review.html`).
+- [ ] **Native-speaker review — Croatian** (workbook built + sent 2026-08-25; awaiting the
+      returned `.json`).
+- [ ] **Native-speaker review — Portuguese** — build it when a reviewer is lined up:
+      `python tools/course/build_review_doc.py pt`.
+- [ ] **Native-speaker review — French** — hidden course; build when unhidden.
 - [ ] Apply the corrections back into the JSON under `app/src/main/assets/content/<lang>/`.
 - [ ] Spot-check TTS pronunciation per language on a real device (names, tricky words).
 

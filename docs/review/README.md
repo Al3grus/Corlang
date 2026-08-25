@@ -17,14 +17,10 @@ fresh workbook against the corrected content.
 Any course works: `build_review_doc.py pt`, `fr`, and so on. Hidden courses build too —
 it reads the content folder, not `content/_index.json`.
 
-### Superseded
-
-`generate_review_docs.py` and the `*-content-review.html` files beside it are the August 2026
-version: a static printable page covering vocabulary, grammar, cheatsheet, quizzes and
-dialogues. It does not include the lesson learn-items or the ~3,200 exercise questions, and it
-has no way for a reviewer to record a verdict that can be read back in. **Send a teacher
-`<lang>-review-workbook.html`, not `<lang>-content-review.html`.** The old files are kept only
-because `fr`/`de`/`it`/`pt` have no workbook built yet; one command each fixes that.
+Only build a workbook when a reviewer is actually lined up, and delete it once their file is
+back and applied. A workbook is a snapshot of content that keeps moving, so a stale one in the
+repo is worse than no workbook at all: someone eventually hands a reviewer the old one. The
+August 2026 `*-content-review.html` set was deleted for exactly that reason.
 
 ## What the reviewer gets
 
