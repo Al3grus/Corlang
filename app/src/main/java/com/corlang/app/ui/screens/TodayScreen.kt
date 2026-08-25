@@ -293,7 +293,10 @@ fun TodayScreen(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 16.dp, vertical = 24.dp),
+            .padding(horizontal = 16.dp)
+            // 27 on top, not 24: see the header below. Everything else on the page is bordered,
+            // so 24 between blocks measures and reads the same.
+            .padding(top = 27.dp, bottom = 24.dp),
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         // A page header, not a card: who is here, and which course this is.
@@ -307,9 +310,15 @@ fun TodayScreen(
         // The greeting moves through the day, so the page is never identical two visits running.
         // A learner who skipped the name field just gets the bare greeting.
         Column(
-            // No padding of its own: the page's 24.dp already sits above and below it, and the
-            // same 24 goes BETWEEN its two lines, which is what makes the three gaps identical.
-            verticalArrangement = Arrangement.spacedBy(24.dp)
+            // 21 between the two lines, against 27 above the flag and 24 below the greeting —
+            // three different numbers that produce the SAME ~30dp of visible air. Equal layout
+            // gaps do not look equal here, and trimming the leading (below) only fixes half of
+            // it: a glyph box still carries the font's ascent and descent, and those scale with
+            // type size. The flag is 14sp, the greeting 24sp, and the middle gap is the only one
+            // with a font box on BOTH sides, so at a flat 24 it measured ~33 to the ends' ~27
+            // and ~30. These are Roboto's metrics; a very different system font shifts them a
+            // little, which is the normal price of spacing type by eye rather than by ruler.
+            verticalArrangement = Arrangement.spacedBy(21.dp)
         ) {
             val hour = java.time.LocalTime.now().hour
             val who = profile?.name?.trim().orEmpty()
@@ -317,11 +326,11 @@ fun TodayScreen(
             // small label line above a bold title — so the page reads as one rhythm repeated
             // rather than two blocks organised opposite ways. It also puts the flag first
             // thing top-left, which is where the app bar used to carry the course identity.
-            // trim = Both on both lines. A text box carries leading above and below its glyphs,
-            // so three EQUAL layout gaps do not look equal: the gap between two text lines gets
-            // both their leadings added to it, while the gaps to the app bar above and the card
-            // below get only one. Trimming the leading makes the box hug the glyphs, so 24.dp of
-            // layout is 24.dp of visible air in all three places.
+            // trim = Both on both lines: a text box carries leading above and below its glyphs,
+            // and the gap between two text lines gets BOTH of them while the gaps to the app bar
+            // above and the card below get one each. Trimming makes the box hug the glyphs,
+            // which removes the larger half of the discrepancy; the compensation above handles
+            // the ascent and descent that trimming cannot touch.
             Text(
                 "${meta.flagEmoji} ${meta.name}",
                 style = MaterialTheme.typography.labelLarge.copy(lineHeightStyle = tightLines),
