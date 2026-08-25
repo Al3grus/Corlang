@@ -67,6 +67,16 @@ python tools/course/fix_resources.py              # repoint lesson resources to 
 python tools/course/build_language.py             # assemble authored batches into _index.json
 ```
 
+Human review is the check no script can do. Build the workbook a native speaker marks up:
+
+```bash
+python tools/course/build_review_doc.py hr        # -> docs/review/hr-review-workbook.html
+```
+
+One self-contained HTML file holding the whole course with every answer key shown. What comes
+back is a small JSON of flags keyed by content path. See `docs/review/README.md` for the id
+scheme and how to apply the result.
+
 Also live: a `PostToolUse` hook (`tools/hooks/validate_content_json.py`) that warns the moment an
 edited `content/**/*.json` stops parsing. It catches malformed JSON only, never content defects.
 
