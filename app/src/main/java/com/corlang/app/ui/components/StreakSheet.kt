@@ -1,8 +1,14 @@
 package com.corlang.app.ui.components
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,6 +23,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -25,6 +33,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -94,7 +106,14 @@ fun StreakSheet(
     onDismiss: () -> Unit
 ) {
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
-    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
+    ModalBottomSheet(
+        onDismissRequest = onDismiss,
+        sheetState = sheetState,
+        // The scrim already cross-fades with the sheet; at Material's default alpha it is so
+        // faint on a dark background that the fade is invisible and the sheet reads as popping
+        // in over a static page. Deepening it is what makes the existing animation land.
+        scrimColor = MaterialTheme.colorScheme.scrim.copy(alpha = 0.6f)
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -129,7 +148,7 @@ fun StreakSheet(
             Spacer(Modifier.height(22.dp))
             StatsRow(freezes = freezes, longestStreak = longestStreak)
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(16.dp))
             HowItWorks()
         }
     }
@@ -244,26 +263,53 @@ private fun VerticalRule() {
     )
 }
 
-/** The rules, stated once, somewhere a learner can actually read them. */
+/**
+ * The rules, folded away. They are read once and then never again, so leaving five lines of them
+ * open every time pushed the numbers people actually came for up the screen. Collapsed by
+ * default; one tap whenever a reminder is wanted.
+ */
 @Composable
 private fun HowItWorks() {
+    var open by rememberSaveable { mutableStateOf(false) }
     val milestones = ProgressRepository.FREEZE_MILESTONES.joinToString(", ")
     val cap = ProgressRepository.MAX_FREEZES
     Column(Modifier.fillMaxWidth()) {
-        Text(
-            "How it works",
-            style = MaterialTheme.typography.titleSmall,
-            fontWeight = FontWeight.SemiBold
-        )
-        Spacer(Modifier.height(6.dp))
-        Rule("Finishing a lesson keeps the streak. Reviewing words on their own does not.")
-        Rule("A streak freeze is earned at $milestones days, $cap in all.")
-        Rule(
-            "Miss a day and a freeze covers it for you. With a full bank you can miss " +
-                "$cap days in a row before the streak ends."
-        )
-        Rule("A covered day is still a day off: it stays unticked here and on your calendar.")
-        Rule("Lose the streak and the freezes go with it. Build it up again and you earn them again.")
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(8.dp))
+                .clickable { open = !open }
+                .padding(vertical = 8.dp)
+        ) {
+            Text(
+                "How it works",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier.weight(1f)
+            )
+            Icon(
+                if (open) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown,
+                contentDescription = if (open) "Hide the rules" else "Show the rules",
+                tint = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+        AnimatedVisibility(
+            visible = open,
+            enter = expandVertically() + fadeIn(),
+            exit = shrinkVertically() + fadeOut()
+        ) {
+            Column(Modifier.fillMaxWidth().padding(bottom = 4.dp)) {
+                Rule("Finishing a lesson keeps the streak. Reviewing words on their own does not.")
+                Rule("A streak freeze is earned at $milestones days, $cap in all.")
+                Rule(
+                    "Miss a day and a freeze covers it for you. With a full bank you can miss " +
+                        "$cap days in a row before the streak ends."
+                )
+                Rule("A covered day is still a day off: it stays unticked here and on your calendar.")
+                Rule("Lose the streak and the freezes go with it. Build it up again and you earn them again.")
+            }
+        }
     }
 }
 
