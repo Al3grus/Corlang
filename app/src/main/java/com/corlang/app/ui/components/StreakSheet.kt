@@ -33,6 +33,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -40,6 +42,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -106,17 +111,39 @@ fun StreakSheet(
     onDismiss: () -> Unit
 ) {
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+
+    // Material's scrim is a straight cross-fade on "is the sheet showing": it goes fully dark
+    // and STAYS dark while you drag the sheet around, so half-dragging it down dims the page as
+    // hard as fully opening it. Tying its alpha to where the sheet actually is makes the dimming
+    // follow your finger in both directions, and the open/close animations ride the sheet's own
+    // spring instead of running on a separate clock beside it.
+    //
+    // requireOffset() is pixels from the top of the container to the top of the sheet, and it
+    // throws until the sheet has been laid out once — hence the guard and the 0 default.
+    var sheetHeightPx by remember { mutableStateOf(0f) }
+    val containerPx = with(LocalDensity.current) {
+        LocalConfiguration.current.screenHeightDp.dp.toPx()
+    }
+    val shown by remember(sheetHeightPx, containerPx) {
+        derivedStateOf {
+            if (sheetHeightPx <= 0f) return@derivedStateOf 0f
+            val offset = runCatching { sheetState.requireOffset() }.getOrNull()
+                ?: return@derivedStateOf 0f
+            ((containerPx - offset) / sheetHeightPx).coerceIn(0f, 1f)
+        }
+    }
+
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        // The scrim already cross-fades with the sheet; at Material's default alpha it is so
-        // faint on a dark background that the fade is invisible and the sheet reads as popping
-        // in over a static page. Deepening it is what makes the existing animation land.
-        scrimColor = MaterialTheme.colorScheme.scrim.copy(alpha = 0.6f)
+        // Material's default alpha is so faint on a dark background that the dimming is barely
+        // visible at all; 0.6 at full extension is what makes the movement read.
+        scrimColor = MaterialTheme.colorScheme.scrim.copy(alpha = 0.6f * shown)
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .onSizeChanged { sheetHeightPx = it.height.toFloat() }
                 .padding(horizontal = 20.dp)
                 .padding(bottom = 32.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -306,8 +333,6 @@ private fun HowItWorks() {
                     "Miss a day and a freeze covers it for you. With a full bank you can miss " +
                         "$cap days in a row before the streak ends."
                 )
-                Rule("A covered day is still a day off: it stays unticked here and on your calendar.")
-                Rule("Lose the streak and the freezes go with it. Build it up again and you earn them again.")
             }
         }
     }

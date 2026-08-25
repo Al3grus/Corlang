@@ -44,7 +44,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import com.corlang.app.data.model.StudyPlan
-import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.theme.rememberReducedMotion
 
 /**
@@ -91,7 +90,16 @@ fun LevelJourney(
     var selectedLevel by rememberSaveable(viewedLevel) { mutableStateOf(viewedLevel) }
 
     Column {
-        SectionTitle("Your journey")
+        // Its own heading rather than the shared SectionTitle, which carries 8dp of top padding
+        // for use INSIDE a card. Out here the page already supplies the gap above, and that
+        // extra 8 made the space above "Your journey" visibly wider than every other gap on
+        // the Learn tab.
+        Text(
+            "Your journey",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 4.dp)
+        )
 
         // Level selector chips.
         Row(
