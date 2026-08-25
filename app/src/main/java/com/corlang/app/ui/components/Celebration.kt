@@ -375,7 +375,7 @@ private fun milestoneLine(streak: Int): String? = when (streak) {
 fun CelebrationOverlay(
     dayNumber: Int,
     streak: Int,
-    /** True when THIS completion grew the freeze bank (7-day milestone below the cap). */
+    /** True when THIS completion grew the freeze bank (a 3/7/14/30 milestone below the cap). */
     freezeEarned: Boolean = false,
     freezes: Int = 0,
     onDone: () -> Unit
@@ -424,20 +424,16 @@ fun CelebrationOverlay(
                         modifier = Modifier.padding(top = 14.dp)
                     )
                 }
+                // Deliberately quiet: one small line under the streak, not a second headline.
+                // The day's lesson is the achievement; the freeze is a footnote to it, and the
+                // streak sheet is where anyone curious can read what it actually does.
                 if (freezeEarned) {
                     Text(
-                        "❄️ Streak freeze earned!",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.padding(top = 10.dp)
-                    )
-                    Text(
-                        "It will cover one missed day automatically." +
-                            if (freezes > 1) " You have $freezes banked." else "",
+                        "❄️ +1 freeze earned" + if (freezes > 1) " · $freezes banked" else "",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(top = 4.dp)
+                        modifier = Modifier.padding(top = 6.dp)
                     )
                 }
                 Button(

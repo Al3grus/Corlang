@@ -15,10 +15,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -85,26 +85,15 @@ fun TodayScreen(
     val completed = rawCompleted.orEmpty()
 
     val currentDay = progress?.currentDay ?: 1
-    val freezes = progress?.streakFreezes ?: 0
 
-    // Live due count for the hero ('today' computed fresh, no stale midnight state).
+    // Live due count ('today' computed fresh, no stale midnight state).
     val reviews by container.words.reviews(lang).collectAsState(initial = emptyList())
     val newPerDay by container.languagePrefs.newWordsPerDay.collectAsState(initial = 10)
     val today = WordsRepository.todayEpochDay()
 
-    // Streak decayed to right-now: a missed day (beyond a freeze) reads 0, not the stale stored
-    // value — the stored streak only self-heals on the next completion.
-    val streak = com.corlang.app.data.ProgressRepository.displayStreak(
-        streak = progress?.streak ?: 0,
-        lastStudiedEpochDay = progress?.lastStudiedEpochDay ?: 0L,
-        freezes = freezes,
-        today = today
-    )
     val dueNow = reviews.count { it.dueEpochDay <= today }
-    // Yesterday was missed and a banked freeze is the only thing holding the streak: the one
-    // moment the freeze system must speak up, because acting today is what saves the streak.
-    val freezeHolding = streak > 0 && freezes > 0 &&
-        (today - (progress?.lastStudiedEpochDay ?: 0L)) == 2L
+    // The streak itself is no longer read here: it lives on the app bar chip and, in full, in
+    // the streak sheet behind it. This screen is about the lesson.
 
     // The lesson to land on = the day AFTER your last completed one (also covers doing several
     // days at once). Robust even if the stored currentDay lags behind completions.
@@ -277,7 +266,7 @@ fun TodayScreen(
     }
 
     // ONE consistent gap between every block, and top padding == that gap, so the rhythm reads
-    // as even (streak, lesson card, journey). Sized at 16.dp — not the old 28 — so the whole
+    // as even (lesson card, journey). Sized at 16.dp — not the old 28 — so the whole
     // dashboard, journey stones included, fits a STANDARD 360dp-wide phone without scrolling.
     // On this maintainer's low-density display there was spare room that hid the overflow;
     // normal-density phones were cutting the journey mid-stone (field report 2026-07-27).
@@ -288,84 +277,14 @@ fun TodayScreen(
             .padding(horizontal = 16.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        // Hero: streak + daily goal ring + ONE unmissable next action. A quiet bordered surface
-        // rather than a loud coloured banner — the streak is a calm signal, not a trophy.
-        Surface(
-            color = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface,
-            shape = RoundedCornerShape(16.dp),
-            border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Row(
-                modifier = Modifier.padding(12.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Column(Modifier.weight(1f)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        // Grey until today's lesson banks the streak, then lit — and its
-                        // colors escalate with streak length (7/30/100 tiers).
-                        com.corlang.app.ui.components.StreakFlame(
-                            streak = streak,
-                            lit = completedToday > 0,
-                            size = 20.dp
-                        )
-                        Text(
-                            buildString {
-                                append(
-                                    if (streak > 0) " $streak-day streak"
-                                    else " Start your streak today"
-                                )
-                                if (freezes > 0) append("  ·  $freezes freeze${if (freezes > 1) "s" else ""}")
-                            },
-                            style = MaterialTheme.typography.titleSmall,
-                            fontWeight = FontWeight.SemiBold
-                        )
-                    }
-                    // Only speak up when there's something worth saying; no filler line.
-                    // The freeze line comes first: it is the one urgent state, and it is also
-                    // the only time the freeze system explains itself.
-                    val heroSubtitle = when {
-                        freezeHolding ->
-                            "You missed yesterday, a streak freeze is holding your $streak days. " +
-                                "Finish a lesson today to keep them."
-                        completedToday > 0 -> "Today's goal is done ✓. Anything more is bonus depth."
-                        dueNow > 0 -> "Starts with your $dueNow due words."
-                        else -> ""
-                    }
-                    if (heroSubtitle.isNotBlank()) {
-                        Text(
-                            heroSubtitle,
-                            style = MaterialTheme.typography.bodySmall,
-                            modifier = Modifier.padding(top = 2.dp)
-                        )
-                    }
-                    // The streak hero only ever offers REVIEW: with the day done and words due,
-                    // one button; day done and nothing due, none (new words only enter through
-                    // lessons). Starting/continuing a lesson lives on the lesson card below —
-                    // it's a lesson action, not a streak action.
-                    if (completedToday > 0 && dueNow > 0) {
-                        Button(
-                            onClick = { onNavigate(Dest.WORDS.route) },
-                            modifier = Modifier.padding(top = 10.dp)
-                        ) { Text("Review $dueNow words →") }
-                    }
-                }
-                GoalRing(
-                    progress = ringProgress,
-                    label = if (ringProgress >= 1f) "✓"
-                            else "${(ringProgress * 100).toInt()}%",
-                    size = 64.dp,
-                    modifier = Modifier.padding(start = 12.dp)
-                )
-            }
-        }
-
-        // Lesson header + objective, in the same calm bordered card as the streak hero, so the
-        // screen reads as two matching cards sitting above the open journey path.
+        // The lesson card carries the whole page now. The old streak hero above it (flame,
+        // goal ring, a rotating subtitle) was deleted: the streak moved to a tappable chip on
+        // the app bar, the ring moved INSIDE this card, and the subtitle turned out to be
+        // saying nothing worth a card — "starts with your N due words" was not even true, since
+        // a lesson opens on its NEW words. One card, one thing to do.
         //
-        // The card cross-fades between days while the hero above and the journey below stay
-        // put — browsing the journey changes only the thing the tap is about. Each animated
+        // The card cross-fades between days while the journey below stays put — browsing the
+        // journey changes only the thing the tap is about. Each animated
         // instance collects ITS OWN day's step checks (keyed per day), so the outgoing card
         // fades out with the old day's label and the incoming one fades in with the new day's
         // — no shared state to flash the wrong ticks, and no full-screen load gate needed.
@@ -418,16 +337,33 @@ fun TodayScreen(
                 modifier = Modifier.padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
-                Text(
-                    "${d.phase} · Week ${d.week} · ${d.level}",
-                    style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.primary
-                )
-                Text(
-                    d.title,
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold
-                )
+                // Heading and ring share the top row: the ring is TODAY's goal, so it appears
+                // only on today's lesson card. Browsing back to an old lesson hides it rather
+                // than implying that revisiting day 4 moves today's goal.
+                Row(verticalAlignment = Alignment.Top) {
+                    Column(Modifier.weight(1f)) {
+                        Text(
+                            "${d.phase} · Week ${d.week} · ${d.level}",
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        Text(
+                            d.title,
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(top = 2.dp)
+                        )
+                    }
+                    if (d.day == targetDay) {
+                        GoalRing(
+                            progress = ringProgress,
+                            label = if (ringProgress >= 1f) "✓"
+                                    else "${(ringProgress * 100).toInt()}%",
+                            size = 44.dp,
+                            modifier = Modifier.padding(start = 12.dp)
+                        )
+                    }
+                }
                 SectionTitle("In this lesson you will")
                 // bodyLarge + a 2-line cap keeps the card compact on standard phones (the full
                 // objective is repeated inside the lesson itself, so a trim here loses nothing).
@@ -477,6 +413,19 @@ fun TodayScreen(
                             }
                         )
                     }
+                }
+                // The CARRY-OVER review, and only that. The lesson hands the learner their due
+                // words itself, but capped at maxReviewsPerDay — so a 40-card backlog with a cap
+                // of 20 finishes the day with 20 still due, and the day is rightly complete
+                // either way (the backlog must never hold the streak hostage). This button is
+                // that remainder, offered once the day is banked. It stays hidden BEFORE the
+                // lesson on purpose: draining the queue early would land the learner on the
+                // lesson's review step with nothing left to review.
+                if (d.day == targetDay && completedToday > 0 && dueNow > 0) {
+                    TextButton(
+                        onClick = { onNavigate(Dest.WORDS.route) },
+                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
+                    ) { Text("Review $dueNow more word${if (dueNow == 1) "" else "s"} →") }
                 }
             }
         }

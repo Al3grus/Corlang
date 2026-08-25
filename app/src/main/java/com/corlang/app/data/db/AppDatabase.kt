@@ -19,7 +19,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         DayTaskCheck::class,
         MissedQuestion::class
     ],
-    version = 7,
+    version = 8,
     // Schemas are committed (app/schemas/) so migrations stay testable — after Play launch a
     // botched migration is unrecoverable, so never flip this back off.
     exportSchema = true
@@ -147,12 +147,27 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * v7 -> v8: the longest streak ever reached, per language. Seeded from the CURRENT streak
+         * rather than 0, because an existing learner's running streak is the best record we can
+         * honestly claim on upgrade day; anything less would show a 40-day veteran "0 days" as
+         * their best.
+         */
+        private val MIGRATION_7_8 = object : Migration(7, 8) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "ALTER TABLE `language_progress` ADD COLUMN `longestStreak` INTEGER NOT NULL DEFAULT 0"
+                )
+                db.execSQL("UPDATE `language_progress` SET `longestStreak` = `streak`")
+            }
+        }
+
         fun get(context: Context): AppDatabase = instance ?: synchronized(this) {
             instance ?: Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
                 "corlang.db"
-            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7)
+            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8)
                 // TRUNCATE, not Room's default (WAL), because THIS DATABASE IS BACKED UP BY FILE
                 // NAME. res/xml/backup_rules.xml and data_extraction_rules.xml both name exactly
                 // one file, "corlang.db". Under WAL, a commit lands in the sibling corlang.db-wal
