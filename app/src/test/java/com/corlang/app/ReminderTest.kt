@@ -69,11 +69,54 @@ class ReminderTest {
                 "should ask to continue: $text",
                 text.contains("started") || text.contains("left") || text.contains("waiting")
             )
-            // Some variants name the streak, others print the count. Both say what is at stake.
-            assertTrue(
-                "should still put the streak at stake: $text",
-                text.contains("streak") || text.contains("4 days")
+        }
+    }
+
+    // The reminder sells what today ADDS, never what tonight would cost. A paid course is worked
+    // through whenever the learner likes; a nightly nudge that manufactures urgency out of a
+    // streak is how an app earns itself "turn off notifications".
+    @Test
+    fun `an ordinary nudge never threatens the streak`() {
+        (0..6).forEach { d ->
+            listOf(true, false).forEach { started ->
+                val text = ReminderCopy.body("Croatian", streak = 9, startedToday = started, proverb = "p", dayOfYear = d)
+                listOf("on the line", "Don't let", "starting over", "streak safe", "at stake").forEach {
+                    assertTrue("no loss framing allowed ($it): $text", !text.contains(it))
+                }
+            }
+        }
+    }
+
+    @Test
+    fun `with no streak the copy says nothing about streaks at all`() {
+        (0..6).forEach { d ->
+            val text = ReminderCopy.body("Croatian", streak = 0, startedToday = false, proverb = "p", dayOfYear = d)
+            assertTrue("invented urgency: $text", !text.contains("streak"))
+        }
+    }
+
+    // The one genuinely time-sensitive thing the app can say: the bank is paying for missed days
+    // right now, and it is finite.
+    @Test
+    fun `a lapse under freeze says so, and says how much is left`() {
+        (0..3).forEach { d ->
+            val text = ReminderCopy.body(
+                "Croatian", streak = 12, startedToday = false, proverb = "p", dayOfYear = d,
+                freezesLeft = 2, onFreeze = true
             )
+            assertTrue("should name the freeze: $text", text.contains("freeze"))
+            assertTrue("should name what is left: $text", text.contains("2"))
+        }
+    }
+
+    @Test
+    fun `one remaining freeze reads as singular`() {
+        (0..3).forEach { d ->
+            val text = ReminderCopy.body(
+                "Croatian", streak = 12, startedToday = false, proverb = "p", dayOfYear = d,
+                freezesLeft = 1, onFreeze = true
+            )
+            assertTrue("should not say '1 freezes': $text", !text.contains("1 freezes"))
         }
     }
 

@@ -13,8 +13,17 @@ data class LanguageProgress(
     val currentDay: Int = 1,
     val streak: Int = 0,
     val lastStudiedEpochDay: Long = 0L, // epoch-day a lesson day was last COMPLETED, for streak math
-    /** Banked streak freezes (earned every 7 consecutive days, max 2, auto-spent on a missed day). */
-    val streakFreezes: Int = 0
+    /**
+     * Banked streak freezes: one earned at each of streak 3, 7, 14 and 30 (so four per run,
+     * which is also the cap), and one burned per missed day. A break wipes the bank with the
+     * streak. See [com.corlang.app.data.ProgressRepository.settle].
+     */
+    val streakFreezes: Int = 0,
+    /**
+     * The longest streak ever reached in this language. The trophy half of the streak: it only
+     * ever grows, so losing a run costs momentum but never the record.
+     */
+    val longestStreak: Int = 0
 )
 
 @Serializable

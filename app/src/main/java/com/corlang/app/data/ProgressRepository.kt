@@ -50,48 +50,71 @@ class ProgressRepository(private val dao: ProgressDao) {
     // the same story: done = today's lesson done.
 
     companion object {
-        const val MAX_FREEZES = 2
-        const val FREEZE_EVERY_DAYS = 7
+        /** Bank cap. Also the number of milestones, so a full run fills the bank exactly. */
+        const val MAX_FREEZES = 4
 
         /**
-         * Pure streak/freeze math. gap = days since last study. A banked freeze bridges exactly
-         * one missed day; a freeze is earned at every 7th consecutive day (banked, max 2).
+         * Streak lengths that each bank one freeze, once per run. Front-loaded on purpose: the
+         * days a habit is most likely to die are days 3 and 7, so that is where the safety net
+         * is handed out, not at day 30 when the learner no longer needs it.
          */
-        fun advanceStreak(gap: Long, streak: Int, freezes: Int): Pair<Int, Int> {
-            var f = freezes
-            val newStreak = when {
-                // gap <= 0, not == 0: a NEGATIVE gap (clock set back, westward timezone
-                // travel) is not a broken streak — falling through to the reset branch
-                // wiped an N-day streak for changing timezones. displayStreak already
-                // treats negative gaps as alive; the two must agree.
-                gap <= 0L -> maxOf(streak, 1)                  // already studied today
-                gap == 1L -> streak + 1                         // consecutive day
-                gap == 2L && f > 0 && streak > 0 -> {           // one missed day: spend a freeze
-                    f--
-                    streak + 1
-                }
-                else -> 1                                       // streak reset / first ever
-            }
-            if (newStreak > streak && newStreak % FREEZE_EVERY_DAYS == 0) {
-                f = minOf(MAX_FREEZES, f + 1)
-            }
-            return newStreak to f
-        }
+        val FREEZE_MILESTONES = listOf(3, 7, 14, 30)
 
         /**
-         * The streak as it should read RIGHT NOW, decayed for missed days. The stored streak is
-         * only recomputed on the next completion, so without this a broken streak keeps showing
-         * its last value (the "still 3 after skipping a day" bug). A banked freeze bridges exactly
-         * one missed day, matching [advanceStreak]. [today] and [lastStudiedEpochDay] are epoch days.
+         * The streak and bank as they stand RIGHT NOW, given the last completed day. This is the
+         * ONE piece of streak math: both the display and the next completion run through it, so
+         * the number on screen can never disagree with the number that gets written.
+         *
+         * A missed day burns one banked freeze. Four banked freezes therefore cover four missed
+         * days; the fifth ends the run, and a break wipes the bank along with the streak — you
+         * rebuild protection as you rebuild the streak, rather than being permanently unprotected
+         * after one bad week.
+         *
+         * Deliberately PURE and idempotent: nothing is persisted while a lapse is in progress, so
+         * a lapse decays correctly whether the app is opened every day or not at all. Recomputing
+         * it from the same [lastStudiedEpochDay] always gives the same answer.
+         *
+         * A negative gap (clock set back, westward timezone travel) is not a lapse.
          */
-        fun displayStreak(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Int {
-            if (streak <= 0) return 0
-            return when (today - lastStudiedEpochDay) {
-                in Long.MIN_VALUE..1L -> streak       // studied today or yesterday: still alive
-                2L -> if (freezes > 0) streak else 0  // one missed day: a freeze can bridge it
-                else -> 0                             // more missed than a freeze can cover
+        fun settle(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Pair<Int, Int> {
+            if (streak <= 0) return 0 to 0
+            val missed = today - lastStudiedEpochDay - 1
+            return when {
+                missed <= 0L -> streak to freezes          // studied today or yesterday
+                missed <= freezes -> streak to (freezes - missed).toInt()
+                else -> 0 to 0                             // more missed than the bank could cover
             }
         }
+
+        /** The streak as it should read right now, decayed for missed days. */
+        fun displayStreak(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Int =
+            settle(streak, lastStudiedEpochDay, freezes, today).first
+
+        /** The bank as it should read right now, drained by missed days. */
+        fun displayFreezes(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Int =
+            settle(streak, lastStudiedEpochDay, freezes, today).second
+
+        /**
+         * Where the streak and bank land when a lesson is completed today. Settles the lapse
+         * first (so the freezes a gap consumed are actually spent), then credits the day and
+         * pays out any milestone the new streak just crossed.
+         */
+        fun advanceStreak(
+            streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long
+        ): Pair<Int, Int> {
+            val (aliveStreak, aliveFreezes) = settle(streak, lastStudiedEpochDay, freezes, today)
+            // Already completed a day today: the streak is banked, nothing more to credit.
+            if (aliveStreak > 0 && today <= lastStudiedEpochDay) return aliveStreak to aliveFreezes
+            val newStreak = aliveStreak + 1
+            // Only a streak that GREW past a milestone pays out, so replaying day 3 of a run
+            // cannot mint a second freeze for the same milestone.
+            val earned = if (newStreak in FREEZE_MILESTONES) 1 else 0
+            return newStreak to minOf(MAX_FREEZES, aliveFreezes + earned)
+        }
+
+        /** True when completing today's lesson crosses a milestone and the bank actually grows. */
+        fun freezeEarnedBy(newStreak: Int, freezesBefore: Int): Boolean =
+            newStreak in FREEZE_MILESTONES && freezesBefore < MAX_FREEZES
 
         /**
          * Where the learner sits after completing [completedDay]. Never regresses: replaying an
@@ -136,9 +159,10 @@ class ProgressRepository(private val dao: ProgressDao) {
         val today = LocalDate.now().toEpochDay()
         val existing = dao.progressOnce(lang) ?: LanguageProgress(langCode = lang)
         val (newStreak, newFreezes) = advanceStreak(
-            gap = today - existing.lastStudiedEpochDay,
             streak = existing.streak,
-            freezes = existing.streakFreezes
+            lastStudiedEpochDay = existing.lastStudiedEpochDay,
+            freezes = existing.streakFreezes,
+            today = today
         )
         // Reviewing an EARLIER day must never drag your position backwards (the "stuck back in A0,
         // can't reach A1" bug). advancePosition guards both currentDay and currentLevel.
@@ -154,6 +178,8 @@ class ProgressRepository(private val dao: ProgressDao) {
                 // back) would make the next real day look like a 2+ day gap.
                 lastStudiedEpochDay = maxOf(today, existing.lastStudiedEpochDay),
                 streakFreezes = newFreezes,
+                // The record only ever grows: a lost run costs momentum, never the trophy.
+                longestStreak = maxOf(existing.longestStreak, newStreak),
                 currentDay = nextDay,
                 currentLevel = nextLevel
             )

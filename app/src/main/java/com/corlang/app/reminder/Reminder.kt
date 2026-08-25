@@ -51,37 +51,59 @@ internal object ReminderCopy {
     /**
      * The notification body. Pure, so the wording is unit-testable without a device.
      *
-     * Two axes: whether a streak is at stake, and whether today's lesson was already STARTED.
-     * The variants rotate by day of year so a reminder that arrives every evening does not
-     * become invisible through repetition.
+     * ONE reminder, whose wording reads the state — not two settings. A separate "remind me about
+     * my streak" switch would be a second toggle able to fire a second notification on the same
+     * evening, and the learner already said when they want to hear from us, once, in Settings.
+     *
+     * Three states, in order of how much they actually matter to the learner:
+     *  - [freezesLeft] > 0 with a lapse in progress: the bank is paying for missed days RIGHT NOW
+     *    and is finite, which is the only genuinely time-sensitive thing this app can say.
+     *  - a streak running: mentioned, lightly, as momentum rather than as a debt.
+     *  - no streak: a plain invitation, with no streak language at all. Someone who bought the
+     *    course can work through it whenever they like, and a reminder that manufactures urgency
+     *    out of nothing is how an app earns itself a long-press and "turn off notifications".
+     *
+     * Crossed with whether today's lesson was already STARTED. Variants rotate by day of year so
+     * a reminder that arrives every evening does not go invisible through repetition.
      */
     fun body(
         languageName: String,
         streak: Int,
         startedToday: Boolean,
         proverb: String,
-        dayOfYear: Int
+        dayOfYear: Int,
+        freezesLeft: Int = 0,
+        onFreeze: Boolean = false
     ): String {
+        val freezeWord = if (freezesLeft == 1) "freeze" else "freezes"
         val variants = when {
+            // A lapse the bank is currently covering. Says what is true and what runs out.
+            onFreeze && streak > 0 -> listOf(
+                "Your $streak-day streak is on a freeze, $freezesLeft $freezeWord left. " +
+                    "Today's lesson puts it back on track.",
+                "A freeze is holding your $streak days ($freezesLeft left). One lesson clears it.",
+                "$freezesLeft streak $freezeWord between you and starting over. Today's lesson is enough."
+            )
             startedToday && streak > 0 -> listOf(
-                "You started today's lesson. Finish it and your $streak-day streak is banked.",
-                "Today's lesson is open and waiting. $streak days on the line.",
-                "A few minutes left on today's $languageName lesson, and the streak holds."
+                "You started today's lesson. Finish it and day ${streak + 1} is yours.",
+                "Today's lesson is open and waiting, and it is the only thing left today.",
+                "A few minutes left on today's $languageName lesson."
             )
             startedToday -> listOf(
                 "You started today's lesson. Pick it up where you left off.",
                 "Today's $languageName lesson is half done. Finish it and day 1 is on the board.",
                 "You are already in today's lesson, there is not much left of it."
             )
+            // Momentum, not a threat: what today ADDS, never what tonight would cost.
             streak > 0 -> listOf(
-                "Your $streak-day streak is on the line, today's lesson banks it.",
-                "One guided lesson = streak safe. $streak days and counting.",
-                "$streak days of $languageName so far. Don't let today be the gap.",
-                "Finishing today's lesson beats starting over. Streak: $streak days."
+                "$streak days of $languageName so far. Today's lesson makes it ${streak + 1}.",
+                "One guided lesson, and the run reaches ${streak + 1} days.",
+                "$streak days in. Today's lesson is waiting whenever you are.",
+                proverb
             )
             else -> listOf(
-                "A few minutes of $languageName today beats an hour next week. Start today's lesson.",
-                "Day 1 of a streak starts with one guided lesson.",
+                "A few minutes of $languageName today beats an hour next week.",
+                "Today's lesson is ready when you are.",
                 proverb
             )
         }
@@ -127,12 +149,15 @@ class ReminderWorker(
         // Decayed to right-now, same as the UI: the STORED streak only updates on the next
         // completion, so after 2+ missed days the raw value still read "12-day streak on the
         // line" when the streak was already gone.
-        val streak = com.corlang.app.data.ProgressRepository.displayStreak(
+        val (streak, freezesLeft) = com.corlang.app.data.ProgressRepository.settle(
             streak = progress?.streak ?: 0,
             lastStudiedEpochDay = progress?.lastStudiedEpochDay ?: 0L,
             freezes = progress?.streakFreezes ?: 0,
             today = today
         )
+        // A lapse is being covered right now: the last completed day is further back than
+        // yesterday, and only the bank is keeping the run alive.
+        val onFreeze = streak > 0 && (today - (progress?.lastStudiedEpochDay ?: 0L)) > 1L
         val meta = content.meta(lang)
         val languageName = meta.name
         // The learner's name, when they gave one, is what makes the nudge feel addressed to a
@@ -150,7 +175,9 @@ class ReminderWorker(
             streak = streak,
             startedToday = startedToday,
             proverb = ReminderCopy.proverb(meta),
-            dayOfYear = LocalDate.now().dayOfYear
+            dayOfYear = LocalDate.now().dayOfYear,
+            freezesLeft = freezesLeft,
+            onFreeze = onFreeze
         )
         postNotification(ctx, title, text)
         prefs.setLastReminderDay(today)

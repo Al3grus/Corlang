@@ -865,12 +865,19 @@ fun SessionPlayer(
                         val completedList by container.progress.completedDays(lang)
                             .collectAsState(initial = null)
                         // Live progress, collected BEFORE the completion write so the freeze
-                        // bank can be snapshotted at tap time: comparing it with the post-write
-                        // value is what makes "freeze earned" honest (at the bank cap of 2,
-                        // a 7-day milestone earns nothing and must not claim it did).
+                        // bank can be snapshotted at tap time. The snapshot is the bank AFTER
+                        // settling any lapse the completion is about to pay for — comparing the
+                        // raw pre-write bank with the post-write one lied when a return from a
+                        // covered lapse both spent freezes and crossed a milestone (bank falls,
+                        // yet a freeze really was earned).
                         val prog by container.progress.progress(lang)
                             .collectAsState(initial = null)
                         var preFreezes by remember(day.day) { mutableStateOf(-1) }
+                        // The streak at tap time, so the overlay can tell "the write has landed"
+                        // from "still showing pre-write state". Without it, tapping complete on a
+                        // day whose CURRENT streak already sits on a milestone flashed the freeze
+                        // line for the frame before the new streak arrived.
+                        var preStreak by remember(day.day) { mutableStateOf(-1) }
                         // Revisits don't re-mark: the day is already banked, and re-completing
                         // must not re-credit the streak (completeDay is also idempotent). The
                         // !completing guard keeps THIS session's fresh completion on the
@@ -891,7 +898,15 @@ fun SessionPlayer(
                                 enabled = !completing && completedList != null,
                                 onClick = {
                                     completing = true
-                                    preFreezes = prog?.streakFreezes ?: 0
+                                    preFreezes = prog?.let {
+                                        com.corlang.app.data.ProgressRepository.settle(
+                                            streak = it.streak,
+                                            lastStudiedEpochDay = it.lastStudiedEpochDay,
+                                            freezes = it.streakFreezes,
+                                            today = com.corlang.app.data.WordsRepository.todayEpochDay()
+                                        ).second
+                                    } ?: 0
+                                    preStreak = prog?.streak ?: 0
                                     container.appScope.launch {
                                         container.progress.completeDay(lang, day.day, totalDays, day.level)
                                     }
@@ -903,13 +918,17 @@ fun SessionPlayer(
                         }
                         if (celebrate) {
                             // completeDay's write lands async; the flow recomposes the overlay
-                            // with the freshly banked streak, and the freeze line lights up the
-                            // moment the bank actually grew past its tap-time snapshot.
+                            // with the freshly banked streak, and the freeze line appears once
+                            // that new streak is a milestone the settled bank had room for.
+                            val nowStreak = prog?.streak ?: 1
                             val nowFreezes = prog?.streakFreezes ?: 0
                             com.corlang.app.ui.components.CelebrationOverlay(
                                 dayNumber = day.day,
-                                streak = prog?.streak ?: 1,
-                                freezeEarned = preFreezes in 0 until nowFreezes,
+                                streak = nowStreak,
+                                freezeEarned = preFreezes >= 0 && nowStreak != preStreak &&
+                                    com.corlang.app.data.ProgressRepository.freezeEarnedBy(
+                                        newStreak = nowStreak, freezesBefore = preFreezes
+                                    ),
                                 freezes = nowFreezes,
                                 onDone = onExit
                             )

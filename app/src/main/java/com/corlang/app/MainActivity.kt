@@ -144,6 +144,23 @@ private fun CorlangApp(container: AppContainer) {
     val currentRoute = backStack?.destination?.route ?: Dest.TODAY.route
     val scope = rememberCoroutineScope()
 
+    // The streak chip lives on the app bar, so its number is computed ONCE here and every tab
+    // shows the same figure. Settled to right-now (a lapse the bank cannot cover reads 0), because
+    // the stored streak only self-heals on the next completion.
+    val streakRow by container.progress.progress(lang).collectAsState(initial = null)
+    var showStreakSheet by rememberSaveable { mutableStateOf(false) }
+    val streakToday = com.corlang.app.data.WordsRepository.todayEpochDay()
+    // -1 while progress is still loading: the chip hides rather than flashing a placeholder 0.
+    val chipStreak = streakRow?.let {
+        com.corlang.app.data.ProgressRepository.displayStreak(
+            streak = it.streak,
+            lastStudiedEpochDay = it.lastStudiedEpochDay,
+            freezes = it.streakFreezes,
+            today = streakToday
+        )
+    } ?: -1
+    val chipLit = streakRow?.lastStudiedEpochDay == streakToday
+
     // Settings lives OUTSIDE the nav graph: pushing it onto a tab's back stack gets it
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
     var showSettings by rememberSaveable { mutableStateOf(false) }
@@ -376,8 +393,41 @@ private fun CorlangApp(container: AppContainer) {
         )
     }
 
+    // The whole freeze system explains itself here and nowhere else. Completions are collected
+    // only while the sheet is up, so the week strip costs nothing on the other 99% of frames.
+    if (showStreakSheet) {
+        val completions by container.progress.completions(lang).collectAsState(initial = emptyList())
+        val zone = java.time.ZoneId.systemDefault()
+        val studiedDays = remember(completions) {
+            completions.map {
+                java.time.Instant.ofEpochMilli(it.completedAtEpoch).atZone(zone).toLocalDate()
+            }.toSet()
+        }
+        com.corlang.app.ui.components.StreakSheet(
+            streak = maxOf(chipStreak, 0),
+            freezes = streakRow?.let {
+                com.corlang.app.data.ProgressRepository.displayFreezes(
+                    streak = it.streak,
+                    lastStudiedEpochDay = it.lastStudiedEpochDay,
+                    freezes = it.streakFreezes,
+                    today = streakToday
+                )
+            } ?: 0,
+            longestStreak = streakRow?.longestStreak ?: 0,
+            studiedDays = studiedDays,
+            today = java.time.LocalDate.now(),
+            onDismiss = { showStreakSheet = false }
+        )
+    }
+
     Scaffold(
-        topBar = { CorlangTopBar() },
+        topBar = {
+            CorlangTopBar(
+                streak = chipStreak,
+                streakLit = chipLit,
+                onStreakClick = { showStreakSheet = true }
+            )
+        },
         bottomBar = {
             // The placement test owns the screen while it runs: it's a short, ordered flow with
             // its own exit, and leaving the tabs tappable mid-test silently abandoned the test.
