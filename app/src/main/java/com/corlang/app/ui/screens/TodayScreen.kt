@@ -297,6 +297,15 @@ fun TodayScreen(
         Column {
             val hour = java.time.LocalTime.now().hour
             val who = profile?.name?.trim().orEmpty()
+            // Course first, as an overline. The lesson card below is built the same way — a
+            // small label line above a bold title — so the page reads as one rhythm repeated
+            // rather than two blocks organised opposite ways. It also puts the flag first
+            // thing top-left, which is where the app bar used to carry the course identity.
+            Text(
+                "${meta.flagEmoji} ${meta.name}",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
             Text(
                 buildString {
                     append(
@@ -309,13 +318,8 @@ fun TodayScreen(
                     if (who.isNotEmpty()) append(", $who")
                 },
                 style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                "${meta.flagEmoji} ${meta.name}",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 4.dp)
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(top = 2.dp)
             )
         }
 
