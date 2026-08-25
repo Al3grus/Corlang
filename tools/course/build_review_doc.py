@@ -597,18 +597,63 @@ var KEY = 'corlang-review-' + D.code + '-v1';
 
 /* ---------- state ---------- */
 var S = {reviewer:'', flags:{}, done:{}, levelNotes:{}};
-try { var raw = localStorage.getItem(KEY); if (raw) S = Object.assign(S, JSON.parse(raw)); } catch(e){}
+
+// Does this browser actually give a page opened from disk a working localStorage? Some do not
+// (private windows, Safari, hardened settings), and the failure is silent. Probing ONCE at
+// startup is the difference between a reviewer learning about it now and learning about it
+// after an evening of work.
+var CAN_STORE = (function(){
+  try {
+    localStorage.setItem(KEY + '-probe', '1');
+    var ok = localStorage.getItem(KEY + '-probe') === '1';
+    localStorage.removeItem(KEY + '-probe');
+    return ok;
+  } catch(e){ return false; }
+})();
+if (CAN_STORE){
+  try { var raw = localStorage.getItem(KEY); if (raw) S = Object.assign(S, JSON.parse(raw)); } catch(e){}
+}
+
+var dirty = false;  // changed since the last file export
 var saveTimer = null;
 function save(){
+  dirty = true;
+  if (!CAN_STORE){ warnNoStore(); return; }
   clearTimeout(saveTimer);
   saveTimer = setTimeout(function(){
     try {
       localStorage.setItem(KEY, JSON.stringify(S));
+      dirty = false;
       var el = document.getElementById('saved');
       el.style.opacity = 1; setTimeout(function(){ el.style.opacity = 0; }, 900);
-    } catch(e){ alert('Could not save progress in this browser. Use "Download review" often.'); }
+    } catch(e){ CAN_STORE = false; warnNoStore(); }
   }, 250);
 }
+
+// A banner, not an alert: an alert is dismissed once and forgotten, and this has to stay true
+// for the rest of the session.
+function warnNoStore(){
+  if (document.getElementById('nostore')) return;
+  var b = document.createElement('div');
+  b.id = 'nostore';
+  b.style.cssText = 'position:sticky;top:0;z-index:30;background:#b3261e;color:#fff;padding:10px 16px;' +
+    'font-size:14.5px;line-height:1.4';
+  b.innerHTML = '<b>This browser is not saving your progress automatically.</b> Your work is only ' +
+    'in this tab. Press <b>Download review</b> before you close it, and use <b>Import…</b> to load ' +
+    'that file back when you return. (Usually a private/incognito window — an ordinary window ' +
+    'normally saves fine.)';
+  document.body.insertBefore(b, document.body.firstChild);
+}
+
+// Only when storage is broken. If it works, closing the tab is genuinely safe and prompting
+// on every close would just train the reviewer to click through warnings.
+window.addEventListener('beforeunload', function(e){
+  if (CAN_STORE || !dirty) return;
+  var n = Object.keys(S.flags).length;
+  if (!n) return;
+  e.preventDefault(); e.returnValue = '';
+  return '';
+});
 
 /* ---------- index ---------- */
 var SECS = {}, ITEM_SEC = {}, SEARCH = [];
@@ -904,6 +949,7 @@ document.getElementById('exp').addEventListener('click', function(){
   var blob = new Blob([JSON.stringify(out, null, 1)], {type:'application/json'});
   var a = document.createElement('a');
   a.href = URL.createObjectURL(blob); a.download = name; a.click();
+  dirty = false;
   setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
 });
 document.getElementById('imp').addEventListener('click', function(){ document.getElementById('file').click(); });
@@ -998,10 +1044,14 @@ function INTRO(){
   '<table><tr><th>Level</th><th>Lessons</th><th>Words</th><th>Questions</th><th>Other items</th></tr>'+perLevel+'</table>'+
 
   '<h3>Saving and sending it back</h3>'+
-  '<p>Your work saves in this browser automatically as you go — you can close the tab and come back. Do keep the '+
-  'same browser and the same file. When you are done, or at the end of each session, press '+
-  '<b>Download review</b> in the top right; that gives you one small <code>.json</code> file to send back. '+
-  '<b>Import…</b> loads such a file again, so you can carry on from another computer.</p>'+
+  '<p>Your work saves in this browser automatically as you go, so you can close the tab and come back to it. '+
+  'That saving is tied to <b>this browser on this computer</b>, and to this file staying where it is — moving or '+
+  'renaming it, switching browser, or clearing your browsing data can lose it. If the browser will not save at '+
+  'all you will see a red bar at the top of this page. '+
+  'So: at the end of every session, press '+
+  '<b>Download review</b> in the top right. That gives you one small <code>.json</code> file: it is your '+
+  'backup as well as the thing you send us, and <b>Import…</b> loads it straight back so you can carry on here or '+
+  'on another computer.</p>'+
   '<div class="callout">Nothing is uploaded anywhere. This page works offline and keeps everything on your machine '+
   'until you send us the file yourself.</div>'+
 
