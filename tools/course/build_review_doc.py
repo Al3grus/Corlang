@@ -283,7 +283,14 @@ def exam_sections(lang: str) -> dict:
 
 
 def extra_sections(lang: str) -> list:
-    """Cross-level material: it is not taught at one level, so it gets its own group."""
+    """
+    Cross-level material: not taught at one level, so it gets its own group.
+
+    Deliberately NOT here: cheatsheet.json and feynman.json. Their screens
+    (CheatsheetScreen, TeachScreen) are no longer in the nav graph, so nothing a learner can
+    reach renders them, and asking a reviewer to audit content the app does not show wastes
+    their time. resources.json IS still shown, on Profile > References, so it stays.
+    """
     out = []
 
     if exists(lang, "placement.json"):
@@ -301,54 +308,6 @@ def extra_sections(lang: str) -> list:
                 "k": "quiz",
                 "ti": "Placement test",
                 "sub": f"{len(pl['questions'])} questions · decides where a new learner starts",
-                "items": items,
-            }
-        )
-
-    if exists(lang, "cheatsheet.json"):
-        ch = load(lang, "cheatsheet.json")
-        items = []
-        for si, s in enumerate(ch["sections"]):
-            items.append(
-                {
-                    "i": f"cheatsheet/{si}",
-                    "t": "c",
-                    "ti": s.get("title", ""),
-                    "bu": s.get("bullets", []),
-                    "dg": s.get("diagram") or "",
-                    "ex": [[e.get("target", ""), e.get("gloss", "")] for e in s.get("examples", [])],
-                }
-            )
-        out.append(
-            {
-                "id": "extra.cheatsheet",
-                "k": "grammar",
-                "ti": f"Cheatsheet · {ch.get('title', '')}",
-                "sub": f"{len(ch['sections'])} sections · the 5-minute review page",
-                "items": items,
-            }
-        )
-
-    if exists(lang, "feynman.json"):
-        fe = load(lang, "feynman.json")
-        items = []
-        for c in fe["concepts"]:
-            items.append(
-                {
-                    "i": f"feynman/{c['id']}",
-                    "t": "f",
-                    "ti": f"[{c.get('levelId', '')}] {c.get('title', '')}",
-                    "se": c.get("simpleExplanation", ""),
-                    "an": c.get("analogy", ""),
-                    "rp": [[r.get("point", ""), r.get("reTeach", "")] for r in c.get("rubricPoints", [])],
-                }
-            )
-        out.append(
-            {
-                "id": "extra.feynman",
-                "k": "grammar",
-                "ti": "Teach-back concepts",
-                "sub": f"{len(fe['concepts'])} concepts the learner explains back in their own words",
                 "items": items,
             }
         )

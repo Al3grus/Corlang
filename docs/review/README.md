@@ -26,8 +26,14 @@ August 2026 `*-content-review.html` set was deleted for exactly that reason.
 
 Everything the app teaches, in the order it teaches it, with every answer key visible.
 Per level: grammar reference → vocabulary packs (in SRS introduction order) → lessons in
-plan order → quiz. Then a cross-level group for the placement test, cheatsheet,
-teach-back concepts, mock exams and resources.
+plan order → quiz. Then a cross-level group for the placement test, the mock exams and the
+Profile > References resource list.
+
+The cheatsheet and the teach-back concepts are deliberately excluded: `CheatsheetScreen` and
+`TeachScreen` are no longer reachable from the nav graph, so no learner sees that content and
+reviewing it would waste a reviewer's time. Their JSON still ships in the APK, which is a
+separate problem. `resources.json` is NOT in that category — Profile still renders it, and a
+dead external link has shipped before, so it stays in the workbook.
 
 The design decision that matters: **nothing is ticked by default.** With ~15,000
 reviewable items, a workbook that asks for a verdict on each one never gets finished, so
