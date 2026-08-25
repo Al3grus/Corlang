@@ -272,17 +272,19 @@ fun TodayScreen(
         return
     }
 
-    // ONE consistent gap between every block, and top padding == that gap, so the rhythm reads
-    // as even (header, lesson card, journey). 20.dp: it was cut to 16 back when a streak hero
-    // stood above the card and the journey stones were being cut mid-stone on a standard 360dp
-    // phone (field report 2026-07-27). Deleting that hero freed far more height than the extra
-    // 4dp here spends, so the stones still fit.
+    // ONE gap value for the whole page, top padding included, and the header uses it INTERNALLY
+    // too: top bar → flag, flag → greeting, greeting → lesson card are all 24.dp, so the top of
+    // the screen reads as an even ladder rather than three arbitrary gaps.
+    //
+    // It was cut to 16 back when a streak hero stood above the card and the journey stones were
+    // being cut mid-stone on a standard 360dp phone (field report 2026-07-27). Deleting that
+    // hero freed far more height than this spends, so the stones still fit.
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 16.dp, vertical = 20.dp),
-        verticalArrangement = Arrangement.spacedBy(20.dp)
+            .padding(horizontal = 16.dp, vertical = 24.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         // A page header, not a card: who is here, and which course this is.
         //
@@ -295,10 +297,9 @@ fun TodayScreen(
         // The greeting moves through the day, so the page is never identical two visits running.
         // A learner who skipped the name field just gets the bare greeting.
         Column(
-            // Its own breathing room, on top of the page rhythm: the header is the only block
-            // with nothing but air around it, and it was reading as squeezed between the app bar
-            // above and the lesson card below. 12 up and 10 down buys ~30dp on each side.
-            Modifier.padding(top = 12.dp, bottom = 10.dp)
+            // No padding of its own: the page's 24.dp already sits above and below it, and the
+            // same 24 goes BETWEEN its two lines, which is what makes the three gaps identical.
+            verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
             val hour = java.time.LocalTime.now().hour
             val who = profile?.name?.trim().orEmpty()
@@ -323,8 +324,7 @@ fun TodayScreen(
                     if (who.isNotEmpty()) append(", $who")
                 },
                 style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(top = 2.dp)
+                fontWeight = FontWeight.Bold
             )
         }
 
@@ -405,7 +405,9 @@ fun TodayScreen(
                             d.title,
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(top = 2.dp)
+                            // 8, not 2: the card's own 12dp spacing does not reach inside this
+                            // column, so the level label and the lesson title were touching.
+                            modifier = Modifier.padding(top = 8.dp)
                         )
                     }
                     if (d.day == targetDay) {
