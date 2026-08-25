@@ -92,6 +92,11 @@ fun TodayScreen(
     val today = WordsRepository.todayEpochDay()
 
     val dueNow = reviews.count { it.dueEpochDay <= today }
+    // The page header needs the learner's name and the course they are in. Both were on screen
+    // before and both left with the hero card: the top bar carries no flag either, so nothing on
+    // Learn said WHICH course this is.
+    val profile by container.languagePrefs.profile.collectAsState(initial = null)
+    val meta = remember(lang) { container.content.meta(lang) }
     // The streak itself is no longer read here: it lives on the app bar chip and, in full, in
     // the streak sheet behind it. This screen is about the lesson.
 
@@ -260,23 +265,57 @@ fun TodayScreen(
     // tap, and blanking the whole screen for that frame destroyed LevelJourney's internal state
     // (selected level chip, scroll), which is why browsing to another level's day snapped the
     // journey straight back to the current level. The lesson card gates itself instead.
-    if (progress == null || rawCompleted == null || rawTargetChecks == null) {
+    // profile joins the gate for the same reason as the rest: without it the header paints
+    // "Good evening" for a frame and then the name pops in beside it.
+    if (progress == null || rawCompleted == null || rawTargetChecks == null || profile == null) {
         Column(Modifier.fillMaxSize()) {}
         return
     }
 
     // ONE consistent gap between every block, and top padding == that gap, so the rhythm reads
-    // as even (lesson card, journey). Sized at 16.dp — not the old 28 — so the whole
-    // dashboard, journey stones included, fits a STANDARD 360dp-wide phone without scrolling.
-    // On this maintainer's low-density display there was spare room that hid the overflow;
-    // normal-density phones were cutting the journey mid-stone (field report 2026-07-27).
+    // as even (header, lesson card, journey). 20.dp: it was cut to 16 back when a streak hero
+    // stood above the card and the journey stones were being cut mid-stone on a standard 360dp
+    // phone (field report 2026-07-27). Deleting that hero freed far more height than the extra
+    // 4dp here spends, so the stones still fit.
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(horizontal = 16.dp, vertical = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+            .padding(horizontal = 16.dp, vertical = 20.dp),
+        verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
+        // A page header, not a card: who is here and where they are in the course. It replaces
+        // nothing the hero used to do — the hero talked about the streak, which now lives on the
+        // app bar — and it earns its line by answering the one question Learn stopped answering
+        // when the hero and the top-bar flag both went: which course am I in, and how far along?
+        //
+        // The greeting moves through the day, so the page is never identical two visits running.
+        // A learner who skipped the name field just gets the bare greeting.
+        Column {
+            val hour = java.time.LocalTime.now().hour
+            val who = profile?.name?.trim().orEmpty()
+            Text(
+                buildString {
+                    append(
+                        when {
+                            hour < 12 -> "Good morning"
+                            hour < 18 -> "Good afternoon"
+                            else -> "Good evening"
+                        }
+                    )
+                    if (who.isNotEmpty()) append(", $who")
+                },
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                "${meta.flagEmoji} Day $targetDay of your ${meta.name} plan",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 4.dp)
+            )
+        }
+
         // The lesson card carries the whole page now. The old streak hero above it (flame,
         // goal ring, a rotating subtitle) was deleted: the streak moved to a tappable chip on
         // the app bar, the ring moved INSIDE this card, and the subtitle turned out to be
@@ -333,9 +372,12 @@ fun TodayScreen(
             border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
             modifier = Modifier.fillMaxWidth()
         ) {
+            // 20dp of padding and 12 between children, not 16/6: at the old values the label,
+            // title, objective and action sat on top of each other and the card read as dense
+            // rather than calm. Deleting the hero above bought the room to spend here.
             Column(
-                modifier = Modifier.padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(6.dp)
+                modifier = Modifier.padding(20.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 // Heading and ring share the top row: the ring is TODAY's goal, so it appears
                 // only on today's lesson card. Browsing back to an old lesson hides it rather
@@ -401,7 +443,7 @@ fun TodayScreen(
                         border = androidx.compose.foundation.BorderStroke(
                             1.dp, MaterialTheme.colorScheme.primary
                         ),
-                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
                     ) {
                         Text(
                             when {
@@ -424,7 +466,7 @@ fun TodayScreen(
                 if (d.day == targetDay && completedToday > 0 && dueNow > 0) {
                     TextButton(
                         onClick = { onNavigate(Dest.WORDS.route) },
-                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
+                        modifier = Modifier.fillMaxWidth()
                     ) { Text("Review $dueNow more word${if (dueNow == 1) "" else "s"} →") }
                 }
             }
