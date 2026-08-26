@@ -564,6 +564,13 @@ textarea:focus{outline:2px solid var(--accent);border-color:transparent}
 .doc p,.doc li{font-size:15.5px}
 .doc ul{padding-left:20px}
 .doc .lead{font-size:17px;color:var(--dim)}
+.foot{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:26px 0 10px;padding:16px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px}
+.foot .sp{flex:1}
+.foot .btn{padding:10px 18px}
+.doneChip{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ok);
+  background:var(--okbg);border:1px solid var(--ok);border-radius:999px;padding:2px 10px;
+  vertical-align:middle;margin-left:8px;font-weight:700}
 .doc table{border-collapse:collapse;width:100%;margin:10px 0;font-size:14.5px}
 .doc th,.doc td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
 .doc th{background:var(--bg)}
@@ -679,7 +686,9 @@ function nl(t){ return esc(t).replace(/\n/g,'<br>'); }
 /* ---------- nav ---------- */
 var current = null, filter = null;
 function buildNav(){
-  var h = ['<a class="sec" href="#intro" data-go="intro"><b>How to use this</b></a>'];
+  var h = ['<a class="sec" href="#intro" data-go="intro"><b>Instructions</b></a>',
+           '<a class="sec' + (current === 'notes' ? ' on' : '') +
+           '" href="#notes" data-go="notes"><b>Overall notes</b>' + notesCount() + '</a>'];
   D.levels.forEach(function(L){
     h.push('<div class="lvl"><b>'+esc(L.id)+' — '+esc(L.ti)+'</b>');
     var days = L.secs.filter(function(s){ return s.k === 'lesson'; });
@@ -698,6 +707,13 @@ function buildNav(){
     h.push('</div>');
   });
   document.getElementById('nav').innerHTML = h.join('');
+}
+// A count beside the tab, so the reviewer can see at a glance which levels they have already
+// written something about without opening it.
+function notesCount(){
+  var n = 0;
+  for (var k in S.levelNotes) if ((S.levelNotes[k]||'').trim()) n++;
+  return n ? ' <span class="fl" style="color:var(--ok)">('+n+')</span>' : '';
 }
 function navLink(s){
   var f = secFlags(s.id), cls = 'sec' + (S.done[s.id] ? ' done' : '') + (current === s.id ? ' on' : '');
@@ -825,20 +841,39 @@ function show(id){
   current = id;
   var main = document.getElementById('main');
   if (id === 'intro'){ main.innerHTML = INTRO(); buildNav(); window.scrollTo(0,0); return; }
+  if (id === 'notes'){ main.innerHTML = NOTES(); buildNav(); window.scrollTo(0,0); return; }
   var s = SECS[id];
   if (!s){ main.innerHTML = '<div class="doc">Section not found.</div>'; return; }
   var items = s.items;
   if (filter === 'flag') items = items.filter(function(it){ return it.i && S.flags[it.i]; });
-  var h = '<div class="sec-head"><h2>'+esc(s.ti)+'</h2><p>'+esc(s.sub||'')+'</p><div class="row">'+
-    '<label class="chk"><input type="checkbox" id="secdone"'+(S.done[s.id]?' checked':'')+'> '+
-    'I have reviewed this whole section</label>'+
-    '<button class="btn" id="prev">← Previous</button><button class="btn" id="next">Next →</button>'+
-    '</div></div>';
+  var h = '<div class="sec-head"><h2>'+esc(s.ti)+(S.done[s.id]?' <span class="doneChip">Reviewed ✓</span>':'')+
+    '</h2><p>'+esc(s.sub||'')+'</p></div>';
   h += items.map(render_item).join('');
   if (!items.length) h += '<div class="doc">Nothing flagged in this section.</div>';
+  h += footer(s);
   main.innerHTML = h;
   window.scrollTo(0,0);
   buildNav();
+}
+/**
+ * The controls live at the BOTTOM. Marking a section reviewed is something you do when you have
+ * finished reading it, and a checkbox at the top asked for that verdict before the reviewer had
+ * seen anything. The primary action also advances, because over 344 lessons "mark, then find
+ * next" is two clicks repeated three hundred times.
+ */
+function footer(s){
+  var all = flatSections(), i = all.indexOf(s.id);
+  var last = i >= all.length - 1;
+  var h = '<div class="foot">' +
+    '<button class="btn" id="prev"'+(i <= 0 ? ' disabled' : '')+'>← Previous</button><span class="sp"></span>';
+  if (S.done[s.id]){
+    h += '<button class="btn" id="undone">Reviewed ✓ — undo</button>' +
+         '<button class="btn primary" id="next"'+(last?' disabled':'')+'>Next →</button>';
+  } else {
+    h += '<button class="btn" id="next"'+(last?' disabled':'')+'>Skip for now →</button>' +
+         '<button class="btn primary" id="donenext">✓ Mark reviewed'+(last?'':' and continue')+'</button>';
+  }
+  return h + '</div>';
 }
 function flatSections(){
   var out = [];
@@ -874,6 +909,13 @@ document.addEventListener('click', function(e){
   }
   if (e.target.id === 'next') step(1);
   if (e.target.id === 'prev') step(-1);
+  if (e.target.id === 'undone'){ delete S.done[current]; refresh(); show(current); }
+  if (e.target.id === 'donenext'){
+    S.done[current] = 1;
+    var all = flatSections(), i = all.indexOf(current);
+    refresh();
+    if (i < all.length - 1) step(1); else show(current);
+  }
 });
 document.addEventListener('input', function(e){
   if (e.target.id === 'secdone'){ /* handled on change */ }
@@ -881,14 +923,9 @@ document.addEventListener('input', function(e){
   if (n && S.flags[n]){ S.flags[n].n = e.target.value; save(); }
   if (e.target.id === 'reviewer'){ S.reviewer = e.target.value; save(); }
   var ln = e.target.getAttribute && e.target.getAttribute('data-lvl');
-  if (ln){ S.levelNotes[ln] = e.target.value; save(); }
+  if (ln){ S.levelNotes[ln] = e.target.value; save(); buildNav(); }
 });
-document.addEventListener('change', function(e){
-  if (e.target.id === 'secdone'){
-    if (e.target.checked) S.done[current] = 1; else delete S.done[current];
-    refresh();
-  }
-});
+
 window.addEventListener('hashchange', function(){ show(location.hash.slice(1) || 'intro'); });
 
 document.getElementById('fFlag').addEventListener('click', function(){
@@ -1039,18 +1076,39 @@ function INTRO(){
   '<div class="callout">Nothing is uploaded anywhere. This page works offline and keeps everything on your machine '+
   'until you send us the file yourself.</div>'+
 
-  '<hr class="hrline">'+
-  '<h3>Overall notes, per level</h3>'+
-  '<p>For anything that is not about one item: gaps, progression, a topic taught too early or too late, a whole '+
-  'lesson that misses the point.</p>'+
-  D.levels.map(function(L){
-    return '<div style="margin-top:12px"><b>'+esc(L.id)+' — '+esc(L.ti)+'</b>'+
-      (L.ms ? '<div class="note">Milestone: '+esc(L.ms)+'</div>' : '')+
-      '<textarea data-lvl="'+esc(L.id)+'" placeholder="Anything about '+esc(L.id)+' as a whole…">'+
-      esc(S.levelNotes[L.id]||'')+'</textarea></div>';
-  }).join('')+
+  '<div style="margin-top:26px;text-align:center">'+
+  '<button class="btn primary" data-go="'+esc(firstSection())+'" style="padding:11px 22px">Start at Lesson 1 →</button>'+
+  '</div>'+
   '</div>';
 }
+
+/**
+ * Overall notes, on their own page. They used to sit at the foot of the instructions, which
+ * meant reaching them was: open the instructions, scroll past everything you have already read.
+ * Anything not about one specific item goes here.
+ */
+function NOTES(){
+  return '<div class="doc">'+
+  '<h1>Overall notes</h1>'+
+  '<p class="lead">For anything that is not about a single word or question: gaps, progression, '+
+  'a topic taught too early or too late, a whole lesson that misses the point, a habit you keep '+
+  'seeing across the course.</p>'+
+  '<p>These are saved with everything else and come back to us in the same file. Write as much '+
+  'or as little as you like, in English or in Croatian.</p>'+
+  D.levels.map(function(L){
+    return '<div style="margin-top:18px"><b>'+esc(L.id)+' — '+esc(L.ti)+'</b>'+
+      (L.ms ? '<div class="note">Milestone: '+esc(L.ms)+'</div>' : '')+
+      '<textarea data-lvl="'+esc(L.id)+'" style="min-height:110px" placeholder="Anything about '+
+      esc(L.id)+' as a whole…">'+esc(S.levelNotes[L.id]||'')+'</textarea></div>';
+  }).join('')+
+  '<div style="margin-top:22px"><b>The course as a whole</b>'+
+  '<textarea data-lvl="_course" style="min-height:130px" placeholder="Would you teach from this? '+
+  'What is missing? What would you throw away?">'+esc(S.levelNotes['_course']||'')+'</textarea></div>'+
+  '</div>';
+}
+
+/** The first real section, for the "Start at Lesson 1" button. */
+function firstSection(){ var a = flatSections(); return a.length ? a[0] : 'intro'; }
 
 /* ---------- boot ---------- */
 document.getElementById('brand').textContent = D.flag + ' ' + D.name + ' review · built ' + D.built;
