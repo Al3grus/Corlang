@@ -150,7 +150,7 @@ way a product id is. The trigger to look again is real conversion data, not anot
 | Plan | Price | Effective | Note |
 |---|---|---|---|
 | **Monthly** | **€9.99** | — | education-app median; well under Ling €16.99 & Duolingo Max €14.99 |
-| **3-day free trial** | — | once per user | on the monthly plan. Google's floor is 3 days, so this is the shortest it can legally be. Shortened from 7 on 2026-08-22: unlike the course, every trial message costs real Anthropic tokens, and a 7-day window is long enough to get the value and leave. At the 30-msg/day cap a 7-day trial can burn ~210 messages before a single euro arrives; 3 days caps that at ~90. |
+| ~~3-day free trial~~ | — | **REMOVED 2026-08-26 (v0.78.0)** | The trial is gone and the base plan must carry no offer. Shortened 7 to 3 days on 2026-08-22 for the reason that eventually killed it: unlike the course, every trial message costs real Anthropic tokens, so at the 30/day cap even 3 days is ~90 paid-for messages before a euro arrives, repeatable with a fresh Google account. A 3-day window also suits a daily-habit product badly, since the value shows over weeks, and a forgotten trial converts nobody while still billing someone who then asks for a refund. If conversion proves too low without one, the replacement to try is a **small lifetime allowance** (10-15 messages, no clock): it bounds cost per account, cannot be farmed by waiting, and puts the wall at the highest-intent moment there is, mid-conversation. |
 
 **No annual plan** — decided 2026-07-18. AI models and per-message costs can shift within a
 year; a sold annual locks 12 months of service at old economics, and Play sub price increases
@@ -161,13 +161,38 @@ annual at €59.99 and €99; both are superseded.
 a one-time fee can't cover perpetual calls. (Babbel can sell lifetime because its content is
 static and marginal-cost-zero; our AI is not.) Lifetime *content* exists — it's the bundle above.
 
-### Margin guardrail (measured, not estimated)
-Live-measured per message: Croatian on **Sonnet** €0.0036 (incl. thinking); pt/fr on **Haiku**
-€0.0007. The per-subscriber cap is **30 msgs/day**, enforced in the worker and DISCLOSED on
-the paywall ("fair use: up to 30 AI messages a day").
-- Worst case (hr, cap-maxed every day): 30 x 30.4 x €0.0036 ≈ **€3.28/mo** API.
-- Monthly €9.99 → roughly €6.8 net after VAT + Play fee: **profitable even at the cap**; a
-  typical 5-15 msg/day user costs well under €1.7/mo.
+### Margin guardrail
+Chat runs on **Haiku 4.5** ($1.00/M in, $5.00/M out); `FEEDBACK_MODEL` is Sonnet 5 for one-shot
+exam-writing feedback only. Per request the input is the ~1,400-token system prompt (persona and
+rules, plus the 45-word `TUTOR_CONTEXT_WORDS` window and the lesson line) and the last 12
+messages of history, ~2,500 tokens in total; `max_tokens` is 1024 client-side, 2048 at the
+worker, against a typical reply of 150-250.
+
+| Per message | Input | Output | Cost |
+|---|---|---|---|
+| Typical | 2,500 | 200 | **$0.0035** |
+| Every reply maxing the 1024 cap | 3,500 | 1,024 | **$0.0086** |
+
+The per-subscriber cap is **30 msgs/day**, enforced in the worker and DISCLOSED on the paywall.
+Over a 30-day month that is 900 messages:
+
+| Subscriber | Monthly API cost | Margin on €9.99 (~$9.17 net after Play's 15%) |
+|---|---|---|
+| Median, ~100 messages | ~$0.35 | ~96% |
+| Cap-maxed, typical replies | ~$3.15 | ~66% |
+| Cap-maxed, every reply at the cap | ~$7.74 | ~16% |
+
+**€9.99 clears even the absolute worst case.** Break-even at that worst case is ~$9.11 gross,
+about €8.44 — so there is roughly €1.55/month of headroom against a subscriber who maxes the cap
+every day for a month AND draws a full-length reply every time.
+
+This is what rules out dropping to €4.99: net would be ~$4.58, and the worst case above already
+costs $7.74. €4.99 only works with the daily cap cut to about 15.
+
+Unused lever: the system prompt is stable within a session and sits above the 1,024-token
+minimum cacheable prefix, so prompt caching would cut most of ~$1.35/month of input cost at the
+cap. Not worth the complexity at current volumes; worth revisiting if the tutor gets popular.
+
 - Backstops: the **300 req/day per-IP cap** and 3000/day global (anti-abuse) already exist.
 
 ### Revenue sanity check (set expectations honestly)
@@ -182,8 +207,9 @@ these products in Play Console → Monetize. Until they exist the paywall shows 
 (never a wrong/free price). Product IDs are case-sensitive and must match verbatim:
 
 **Subscription** — Monetize → Subscriptions → create `corlang_ai_premium`:
-- ONE base plan `monthly` — auto-renewing, **€9.99/month**. Add an **Offer** on it: a
-  **3-day free trial** phase. Google's minimum is 3 days, so this is the floor.
+- ONE base plan `monthly` — auto-renewing, **€9.99/month**, and **no offer on it**. The free
+  trial was removed in v0.78.0; creating one in Play Console would promise three days the app
+  no longer mentions.
 - No annual base plan (see the decision above). The app requests only `monthly`.
 
 **One-time unlocks** — Monetize → In-app products (managed products). **Six products, three per
