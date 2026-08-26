@@ -88,9 +88,6 @@ fun ProfileScreen(
         "premium" -> SubPage("Course & tutor", onBack = { page = null }) {
             PremiumPage(container, lang, onGetPremium, onUnlockCourse)
         }
-        "references" -> SubPage("References", onBack = { page = null }) {
-            ReferencesPage(container, lang)
-        }
         else -> Column(
             modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
         ) {
@@ -141,11 +138,6 @@ fun ProfileScreen(
             // question is worth asking of exactly one person, the learner who topped out the
             // placement test and has genuinely run out of course. It lives on that screen
             // (PlacementScreen, the at-ceiling branch) and nowhere else.
-            // References is HIDDEN, not removed: the page and its "references" branch above are
-            // intact and one line brings the entrance back. Same pattern as a hidden language,
-            // which stays in the repo and only leaves content/_index.json.
-            // MenuRow(Icons.AutoMirrored.Outlined.MenuBook, "References",
-            //     "Grammar syllabus", onClick = { page = "references" })
         }
     } }
 }
@@ -447,35 +439,3 @@ private fun PremiumPage(
     }
 }
 
-/** Reference library: the grammar syllabus and the Pareto note. */
-@Composable
-private fun ReferencesPage(container: AppContainer, lang: String) {
-    // Plain remember for the same reason as `page` above: an open document must not be
-    // restored when the learner comes back to the Profile tab later.
-    var doc by remember(lang) { mutableStateOf<String?>(null) }
-    if (doc != null) {
-        BackHandler { doc = null }
-        Column(Modifier.fillMaxSize()) {
-            IconButton(onClick = { doc = null }, modifier = Modifier.padding(start = 4.dp)) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-            }
-            Box(Modifier.weight(1f)) {
-                GrammarScreen(container, lang)
-            }
-        }
-        return
-    }
-    val meta = remember(lang) { container.content.meta(lang) }
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
-        OutlinedButton(onClick = { doc = "grammar" },
-            modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp)) {
-            Text("Grammar syllabus →")
-        }
-
-        SectionTitle("The 20% that drives 80%")
-        Text(meta.paretoSummary, style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.padding(bottom = 8.dp))
-
-        Spacer(Modifier.height(24.dp))
-    }
-}

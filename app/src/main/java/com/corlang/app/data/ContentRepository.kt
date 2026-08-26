@@ -2,7 +2,6 @@ package com.corlang.app.data
 
 import android.content.Context
 import com.corlang.app.data.model.ExamSpec
-import com.corlang.app.data.model.GrammarSyllabus
 import com.corlang.app.data.model.LanguageMeta
 import com.corlang.app.data.model.Levels
 import com.corlang.app.data.model.QuizSet
@@ -120,16 +119,6 @@ class ContentRepository(private val context: Context) {
         } as VocabSet
     }
 
-    /** Grammar syllabus, optional file; empty when a language hasn't shipped one. */
-    fun grammar(lang: String): GrammarSyllabus {
-        val key = "content/$lang/grammar(opt)"
-        @Suppress("UNCHECKED_CAST")
-        return cache.getOrPut(key) {
-            if (assetExists("content/$lang/grammar.json"))
-                json.decodeFromString<GrammarSyllabus>(readAsset("content/$lang/grammar.json"))
-            else GrammarSyllabus(levels = emptyList())
-        } as GrammarSyllabus
-    }
 
     /** Placement test, optional file; null when a language hasn't shipped one. */
     fun placement(lang: String): com.corlang.app.data.model.PlacementTest? {
