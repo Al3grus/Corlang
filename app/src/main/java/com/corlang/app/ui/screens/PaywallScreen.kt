@@ -6,6 +6,7 @@ import android.content.ContextWrapper
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -23,6 +25,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -30,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.billing.BillingManager
 import com.corlang.app.billing.PremiumManager
+import com.corlang.app.data.Fsrs
 
 /** Walk up the Context wrappers to the hosting Activity (needed by launchBillingFlow). */
 private fun Context.activity(): Activity? {
@@ -91,6 +95,43 @@ fun PaywallScreen(
             ((lastDayOf[level] ?: 0) - meta.freeLessons).coerceAtLeast(0)
         }
     }
+    val lastDayThrough = remember(lang) {
+        val days = container.content.plan(lang).days
+        val lastDayOf = days.groupBy { it.level }.mapValues { e -> e.value.maxOf { it.day } }
+        paidLevels.associateWith { lastDayOf[it] ?: 0 }
+    }
+    /**
+     * The rest of what a tier hands over, counted rather than described.
+     *
+     * "Its words, quizzes and exams" is the kind of phrase a buyer's eye slides off; a number is
+     * something they can weigh against a price, and check against the tier above on the same
+     * screen. All three are derived from the same content the app serves, so they cannot drift
+     * from what is actually delivered.
+     */
+    val wordsThrough = remember(lang) {
+        val deck = container.words.allWords(lang).size
+        val free = (meta.freeLessons * Fsrs.NEW_WORDS_PER_DAY).coerceAtMost(deck)
+        paidLevels.associateWith { level ->
+            val through = ((lastDayThrough[level] ?: 0) * Fsrs.NEW_WORDS_PER_DAY).coerceAtMost(deck)
+            (through - free).coerceAtLeast(0)
+        }
+    }
+    val quizzesThrough = remember(lang) {
+        val order = container.content.plan(lang).days.sortedBy { it.day }.map { it.level }.distinct()
+        val ids = container.content.quizzes(lang).quizzes.map { it.levelId }
+        paidLevels.associateWith { level ->
+            val cap = order.indexOf(level)
+            ids.count { order.indexOf(it) in 0..cap }
+        }
+    }
+    val examsThrough = remember(lang) {
+        val order = container.content.plan(lang).days.sortedBy { it.day }.map { it.level }.distinct()
+        val ids = container.content.exams(lang).map { it.levelId }
+        paidLevels.associateWith { level ->
+            val cap = order.indexOf(level)
+            ids.count { order.indexOf(it) in 0..cap }
+        }
+    }
 
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
@@ -100,10 +141,11 @@ fun PaywallScreen(
             val top = paidLevels.lastOrNull()
             Text("Unlock ${meta.name}", style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold)
+            // What the MODEL is, in one line, because that is the question a one-time purchase
+            // has to answer before price: am I buying this or renting it? The free window is not
+            // mentioned again — the learner has used it to get here.
             Text(
-                "The first ${meta.freeLessons} lessons are free, and they stay free wherever the " +
-                    "placement test put you. Everything above them is one payment, yours for " +
-                    "good, and it comes back if you reinstall.",
+                "One payment. Yours for good, on any device you sign in to.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -118,12 +160,11 @@ fun PaywallScreen(
                 val lessons = paidLessonsThrough[level] ?: 0
                 PurchaseCard(
                     title = if (isTop) "The whole ${meta.name} course" else "Through $level",
-                    subtitle = when {
-                        isTop -> "Every level, A0 to $level: $lessons lessons, their words, " +
-                            "quizzes and end-of-level exams."
-                        else -> "$lessons lessons, A0 to $level, with their words, quizzes and " +
-                            "the $level exam. $level is not the end of the course."
-                    },
+                    subtitle = if (isTop) "Everything the course teaches, to $level."
+                               else "$level is not the end of the course.",
+                    bullets = tierBullets(level, isTop, lessons, meta.freeLessons,
+                        lastDayThrough[level] ?: 0, wordsThrough[level] ?: 0,
+                        quizzesThrough[level] ?: 0, examsThrough[level] ?: 0),
                     // Not "most popular": nothing has sold yet, so that would be an invented
                     // claim. This one is arithmetic the learner can check against the other
                     // cards on the same screen.
@@ -145,11 +186,10 @@ fun PaywallScreen(
                 )
             }
         } else {
-            Text("Corlang Premium", style = MaterialTheme.typography.headlineSmall,
+            Text("AI tutor", style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold)
             Text(
-                "Your personal AI tutor: chat in the language, get exam-writing feedback, and " +
-                    "check your explanations, all graded for your target level. Cancel anytime.",
+                "Someone to speak ${meta.name} with, at your level, whenever you want to practise.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -160,8 +200,12 @@ fun PaywallScreen(
             // Play-policy material.
             PurchaseCard(
                 title = "Monthly",
-                subtitle = "Starts with a 3-day free trial.",
-                footnote = "Fair use: up to 30 AI messages a day.",
+                subtitle = "Free for the first 3 days.",
+                bullets = listOf(
+                    "Conversation in ${meta.name}, matched to the level you are studying",
+                    "Examiner-style feedback on your written exam answers",
+                    "Up to 30 messages a day",
+                ),
                 price = prices["${BillingManager.SUB_PREMIUM}:${BillingManager.BASE_MONTHLY}"],
                 priceSuffix = "/month",
                 primary = true,
@@ -171,17 +215,59 @@ fun PaywallScreen(
                     }
                 }
             )
+            // Says what this does NOT gate. A learner weighing a recurring charge is really
+            // asking "will the app stop working without it", and the honest answer sells better
+            // than pretending the question was not asked.
+            Text(
+                "Everything else keeps working without it: the lessons you own, your review " +
+                    "deck, your streak and your progress.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
 
         Spacer(Modifier.height(4.dp))
         OutlinedButton(onClick = onClose, modifier = Modifier.fillMaxWidth()) { Text("Not now") }
+        // Per mode, because the two products are billed nothing alike. This block used to be
+        // shared and told buyers of a ONE-TIME course unlock that "subscriptions renew until
+        // cancelled" — false on that screen, and the kind of false that earns refund requests.
         Text(
-            "Prices shown include tax and are set by Google Play for your region. " +
-                "Subscriptions renew until cancelled.",
+            if (levelId != null)
+                "A one-time purchase, not a subscription: nothing renews and there is nothing " +
+                    "to cancel. Prices include tax and are set by Google Play for your region."
+            else
+                "After the free trial this renews monthly until you cancel, which you can do " +
+                    "any time in Google Play. Prices include tax and are set by Google Play for " +
+                    "your region.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
     }
+}
+
+/**
+ * The three lines under a tier: how much course, how much vocabulary, how much assessment.
+ * Kept to three because a fourth stops being read, and in the order a learner values them.
+ */
+private fun tierBullets(
+    level: String,
+    isTop: Boolean,
+    lessons: Int,
+    freeLessons: Int,
+    lastDay: Int,
+    words: Int,
+    quizzes: Int,
+    exams: Int,
+): List<String> {
+    val range = if (lessons > 0) "$lessons lessons, ${freeLessons + 1} to $lastDay" else "No extra lessons"
+    val out = mutableListOf(if (isTop) "$range: every level, to $level" else range)
+    if (words > 0) out += "$words new words for your review deck"
+    val assess = buildList {
+        if (quizzes > 0) add("$quizzes ${if (quizzes == 1) "quiz" else "quizzes"}")
+        if (exams > 0) add("$exams mock ${if (exams == 1) "exam" else "exams"}")
+    }
+    if (assess.isNotEmpty()) out += assess.joinToString(" and ") + ", up to $level"
+    return out
 }
 
 @Composable
@@ -190,6 +276,11 @@ private fun PurchaseCard(
     price: String?,
     onBuy: () -> Unit,
     subtitle: String? = null,
+    /**
+     * What the payment actually hands over, one short line each. A list is read; the paragraph
+     * it replaced was skipped, and a buyer who cannot see what they get does not buy.
+     */
+    bullets: List<String> = emptyList(),
     /** Fine print under the subtitle, on its own line and smaller (e.g. the fair-use cap). */
     footnote: String? = null,
     priceSuffix: String = "",
@@ -227,6 +318,16 @@ private fun PurchaseCard(
             if (subtitle != null) {
                 Text(subtitle, style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            bullets.forEach { b ->
+                Row(verticalAlignment = Alignment.Top, modifier = Modifier.padding(top = 2.dp)) {
+                    Text("✓", style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = if (primary) LocalContentColor.current
+                                else MaterialTheme.colorScheme.primary)
+                    Text(b, style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.padding(start = 8.dp))
+                }
             }
             if (owned) {
                 // No price and no button: this one is paid for. Naming it out loud is the whole

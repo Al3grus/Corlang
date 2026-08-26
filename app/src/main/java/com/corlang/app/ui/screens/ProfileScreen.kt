@@ -193,6 +193,41 @@ private fun MenuRow(icon: ImageVector, title: String, subtitle: String, onClick:
 /** A titled sub-page with a back button; system back returns to the menu too.
  *  Header matches the Settings screen exactly: arrow + headlineSmall bold, 16dp above and
  *  below so the title sits centred in its band. */
+/**
+ * One product, one card: what it is, one sentence, one way in. Deliberately says nothing about
+ * price — a number with no offer around it invites a decision the learner cannot make yet, and
+ * the offer screen behind the button is where the case gets made.
+ */
+@Composable
+private fun OfferCard(
+    title: String,
+    teaser: String,
+    owned: Boolean,
+    cta: String?,
+    onClick: () -> Unit,
+) {
+    InfoCard {
+        Text(
+            title,
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Bold,
+            color = if (owned) MaterialTheme.colorScheme.primary
+                    else MaterialTheme.colorScheme.onSurface
+        )
+        Text(
+            teaser,
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.padding(top = 6.dp)
+        )
+        if (cta != null) {
+            androidx.compose.material3.Button(
+                onClick = onClick,
+                modifier = Modifier.fillMaxWidth().padding(top = 14.dp)
+            ) { Text(cta) }
+        }
+    }
+}
+
 @Composable
 private fun SubPage(title: String, onBack: () -> Unit, content: @Composable () -> Unit) {
     BackHandler(onBack = onBack)
@@ -363,72 +398,55 @@ private fun PremiumPage(
     val ownedTop = owned.top
     val courseComplete = owned.isWholeCourse
 
+    /*
+     * Two products, two identical cards: a status line, one sentence of what it is, and a button
+     * into its own offer screen.
+     *
+     * It used to be lopsided. The course card said "See the course options" and hid everything,
+     * while the tutor card spilled its whole feature list here and THEN sent you elsewhere to
+     * buy. So one product looked like a door and the other like a leaflet, the tutor's pitch was
+     * spent before the screen that has to close it, and the two read as unrelated things
+     * bolted together rather than two ways to spend money with us.
+     *
+     * The detail belongs where the price is. This screen only has to make someone want to look.
+     */
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
-        InfoCard {
-            Text(
-                when {
-                    courseComplete -> "You own the whole ${meta.name} course ✓"
-                    ownedTop != null -> "${meta.name}: you own through $ownedTop ✓"
-                    else -> "The ${meta.name} course"
-                },
-                style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
-                color = if (ownedTop != null) MaterialTheme.colorScheme.primary
-                        else MaterialTheme.colorScheme.onSurface)
-            Text(
-                when {
-                    courseComplete ->
-                        "Every lesson, word, quiz and exam in this course is yours. One payment, " +
-                            "no subscription, and it comes back if you reinstall."
-                    ownedTop != null ->
-                        "The levels above $ownedTop are still locked. Each unlock includes the " +
-                            "ones beneath it, so nothing you have paid for is ever lost."
-                    else ->
-                        "The first ${meta.freeLessons} lessons are free. The levels above them are " +
-                            "one-time unlocks: bought, not rented, and restored on any device."
-                },
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(top = 6.dp))
-        }
-        if (!courseComplete) {
-            Spacer(Modifier.height(12.dp))
-            androidx.compose.material3.Button(
-                onClick = onUnlockCourse, modifier = Modifier.fillMaxWidth()
-            ) { Text(if (ownedTop != null) "See the remaining levels" else "See the course options") }
-        }
+        OfferCard(
+            title = when {
+                courseComplete -> "You own the whole ${meta.name} course ✓"
+                ownedTop != null -> "${meta.name}: you own through $ownedTop ✓"
+                else -> "The ${meta.name} course"
+            },
+            owned = ownedTop != null,
+            teaser = when {
+                courseComplete ->
+                    "Every lesson, word, quiz and exam in this course is yours."
+                ownedTop != null ->
+                    "The levels above $ownedTop are still locked, and each unlock includes the " +
+                        "ones beneath it."
+                else ->
+                    "Every lesson to B1, the words that go with them, and the quizzes and mock " +
+                        "exams that close each level. One payment, no subscription."
+            },
+            cta = if (courseComplete) null
+                  else if (ownedTop != null) "See the remaining levels" else "See course options",
+            onClick = onUnlockCourse
+        )
 
-        Spacer(Modifier.height(20.dp))
-        InfoCard {
-            Text(if (entitled) "Tutor is active ✓" else "Tutor",
-                style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold,
-                color = if (entitled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
-            Text(
-                "A separate monthly subscription that unlocks the Tutor tab:",
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(top = 6.dp))
-            listOf(
-                "Chat in your language, at your level",
-                "Review of your teach-back explanations",
-                "Examiner feedback on your exam writing",
-            ).forEach {
-                Text("•  $it", style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 4.dp))
-            }
-            // Was: "The whole course ... stays free", which stopped being true the moment levels
-            // became paid. Naming exactly what is free keeps this honest as pricing moves.
-            Text(
-                if (entitled) "Enjoy! The Tutor tab is in your bottom bar."
-                else "Lessons you own, spaced-repetition review and progress tracking need no " +
-                    "subscription. The AI is the only thing this one buys.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 10.dp))
-        }
-        if (!entitled) {
-            Spacer(Modifier.height(12.dp))
-            androidx.compose.material3.Button(
-                onClick = onGetPremium, modifier = Modifier.fillMaxWidth()
-            ) { Text("See plans") }
-        }
+        Spacer(Modifier.height(14.dp))
+        OfferCard(
+            title = if (entitled) "AI tutor is active ✓" else "AI tutor",
+            owned = entitled,
+            teaser = if (entitled)
+                "It is in your bottom bar, under Tutor."
+            else
+                "Someone to speak ${meta.name} with at your level, and to mark your exam " +
+                    "writing like an examiner would. Monthly, free for the first 3 days.",
+            cta = if (entitled) null else "See the tutor plan",
+            onClick = onGetPremium
+        )
+
+        Spacer(Modifier.height(6.dp))
         // Restore also runs automatically on every app resume; this is the explicit affordance
         // (a reinstall / new device picks the purchase back up from the Play account).
         OutlinedButton(
