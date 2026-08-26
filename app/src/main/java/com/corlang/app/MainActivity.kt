@@ -20,6 +20,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -431,7 +432,33 @@ private fun CorlangApp(container: AppContainer) {
         bottomBar = {
             // The placement test owns the screen while it runs: it's a short, ordered flow with
             // its own exit, and leaving the tabs tappable mid-test silently abandoned the test.
-            if (!showPlacement) NavigationBar {
+            // Same ground as the top bar. Material's default for a NavigationBar is
+            // surfaceContainer, one step off the `surface` CorlangTopBar uses. On the dark theme
+            // that gap is 1.07:1 and the two bars already read as one; on the light theme it is
+            // #FFFBF3 against #F2EADC, two different beiges bracketing the page.
+            if (!showPlacement) NavigationBar(containerColor = MaterialTheme.colorScheme.surface) {
+                /*
+                 * LIGHT ONLY, and only the selected pill.
+                 *
+                 * Material's default indicator is secondaryContainer, which on the light theme
+                 * is a warm taupe sitting on a beige bar: 1.12:1, near enough invisible, so
+                 * which tab you were on had to be read from the icon weight alone. The dark
+                 * theme's pill is barely higher at 1.36:1 but a rust on near-black reads by hue
+                 * where two beiges do not, and it looks right as it is, so it keeps Material's
+                 * defaults untouched.
+                 *
+                 * Walnut takes the light pill to 7.29:1 against the bar, with a white icon on it
+                 * at 7.53 and the label matching the pill at 7.29.
+                 */
+                val navColors = if (com.corlang.app.ui.theme.CorlangColors.isDark) {
+                    NavigationBarItemDefaults.colors()
+                } else {
+                    NavigationBarItemDefaults.colors(
+                        indicatorColor = MaterialTheme.colorScheme.primary,
+                        selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                        selectedTextColor = MaterialTheme.colorScheme.primary,
+                    )
+                }
                 Dest.bar(premium).forEach { dest ->
                     NavigationBarItem(
                         selected = currentRoute == dest.route,
@@ -465,7 +492,8 @@ private fun CorlangApp(container: AppContainer) {
                             }
                         },
                         icon = { androidx.compose.material3.Icon(dest.icon, contentDescription = dest.label) },
-                        label = { androidx.compose.material3.Text(dest.label) }
+                        label = { androidx.compose.material3.Text(dest.label) },
+                        colors = navColors
                     )
                 }
             }
