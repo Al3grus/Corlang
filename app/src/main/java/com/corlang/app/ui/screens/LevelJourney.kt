@@ -370,8 +370,17 @@ private fun CheckpointConnector(levelDone: Boolean) {
 }
 
 /**
- * One end-of-level checkpoint stone. Locked (grey) until the level's lessons are done,
- * unlocked (tertiary) and tappable after, and filled primary once completed at least once
+ * One end-of-level checkpoint stone, speaking the same three states as the lesson stones:
+ * filled means take this now, ringed means taken, flat means not yet.
+ *
+ * These were the last of the ochre. An unlocked checkpoint was tertiary, which is the yellowest
+ * thing in the light palette and did not match anything left on the path after the stones were
+ * reworked. It is filled walnut now, the same as the lesson you are on, which is what it is:
+ * the next thing to do.
+ *
+ * Unlocked deliberately does NOT become the flat grey of a not-yet stone, even though that
+ * would also kill the yellow. Locked is already that grey, and two states that look identical
+ * would leave no way to see which checkpoints are open to you
  * (only the quiz tracks a done state for now).
  */
 @Composable
@@ -388,11 +397,14 @@ private fun CheckpointNode(
             .size(46.dp)
             .background(
                 when {
-                    done -> MaterialTheme.colorScheme.primary
-                    unlocked -> MaterialTheme.colorScheme.tertiary
+                    unlocked && !done -> MaterialTheme.colorScheme.primary
                     else -> MaterialTheme.colorScheme.surfaceVariant
                 },
                 CircleShape
+            )
+            .then(
+                if (done) Modifier.border(2.dp, MaterialTheme.colorScheme.primary, CircleShape)
+                else Modifier
             )
             .then(if (unlocked) Modifier.clickable { onClick() } else Modifier)
     ) {
@@ -400,8 +412,8 @@ private fun CheckpointNode(
             icon,
             contentDescription = contentDescription,
             tint = when {
-                done -> MaterialTheme.colorScheme.onPrimary
-                unlocked -> MaterialTheme.colorScheme.onTertiary
+                unlocked && !done -> MaterialTheme.colorScheme.onPrimary
+                done -> MaterialTheme.colorScheme.primary
                 else -> MaterialTheme.colorScheme.onSurfaceVariant
             },
             modifier = Modifier.size(22.dp)
