@@ -24,16 +24,26 @@ August 2026 `*-content-review.html` set was deleted for exactly that reason.
 
 ## What the reviewer gets
 
-Everything the app teaches, in the order it teaches it, with every answer key visible.
-Per level: grammar reference → vocabulary packs (in SRS introduction order) → lessons in
-plan order → quiz. Then a cross-level group for the placement test, the mock exams and the
-Profile > References resource list.
+**Organised by lesson**, in the order a learner meets them, with every answer key visible.
+Each lesson is one self-contained audit: the ten new words it adds to the deck, then its
+explanations, dialogue and exercises. The words sit inside the lesson that teaches them
+rather than in a separate pack list, so a reviewer judges a word having just read the lesson
+around it.
 
-The cheatsheet and the teach-back concepts are deliberately excluded: `CheatsheetScreen` and
-`TeachScreen` are no longer reachable from the nav graph, so no learner sees that content and
-reviewing it would waste a reviewer's time. Their JSON still ships in the APK, which is a
-separate problem. `resources.json` is NOT in that category — Profile still renders it, and a
-dead external link has shipped before, so it stays in the workbook.
+Which words belong to which lesson is computed by replicating `data/DeckOrder.kt`: deck slots
+`[(n-1)*10, n*10)` are lesson `n`'s, honouring every pack's `fromDay` gate. **If DeckOrder.kt
+changes, `deck_order()` in the generator must change with it**, or the workbook shows words
+under the wrong lesson. For Croatian it comes out exact — 3,440 words, 10 per lesson, 344
+lessons, 344 plan days, no orphans. Each word still shows its deck pack, because some defects
+are only visible across a set (one colour glossed unlike the other nine).
+
+A final group, **Not part of any lesson**, holds the grammar reference per level, the level
+quizzes, the placement test, the mock exams, the cheatsheet and the resource list.
+
+Excluded: `feynman.json`. `TeachScreen` has no caller anywhere, so no learner reaches it.
+`cheatsheet.json` and `resources.json` are NOT in that category despite also being absent from
+the nav graph — Profile renders the resource list directly and opens the cheatsheet from a
+button, so both are live.
 
 The design decision that matters: **nothing is ticked by default.** With ~15,000
 reviewable items, a workbook that asks for a verdict on each one never gets finished, so

@@ -64,8 +64,16 @@ def exists(lang: str, *parts: str) -> bool:
 # --------------------------------------------------------------------------- items
 
 
-def word_item(pack_id: str, w: dict) -> dict:
-    it = {"i": f"vocab/{pack_id}/{w['id']}", "t": "w", "hr": w.get("hr", ""), "en": w.get("en", "")}
+def word_item(pack_id: str, pack_title: str, w: dict) -> dict:
+    # The id stays keyed on the pack even though the word is now SHOWN under a lesson: it is the
+    # path back into vocab/*.json, and where a reviewer happened to read it changes nothing.
+    it = {
+        "i": f"vocab/{pack_id}/{w['id']}",
+        "t": "w",
+        "pk": pack_title,
+        "hr": w.get("hr", ""),
+        "en": w.get("en", ""),
+    }
     if w.get("pos"):
         it["p"] = w["pos"]
     if w.get("note"):
@@ -113,26 +121,62 @@ def text_item(path: str, label: str, value: str) -> dict:
 # ------------------------------------------------------------------------ sections
 
 
-def vocab_sections(lang: str) -> dict:
-    """Packs in _index order, which IS the order words reach the learner."""
-    out: dict[str, list] = {}
+PER_LESSON = 10  # Fsrs.NEW_WORDS_PER_DAY — the deck is sized to the plan at this rate
+
+
+def deck_order(lang: str) -> list:
+    """
+    The deck in introduction order, mirroring `data/DeckOrder.kt` exactly.
+
+    A pack with `fromDay = F` cannot appear before slot `(F - 1) * PER_LESSON`, the first slot
+    lesson F draws from. The walk is in AUTHORED order and a gate only ever defers: it is a
+    floor, not a summons, so nothing gated appears early and nothing else is dragged forward.
+
+    If this ever disagrees with the Kotlin, the workbook shows a word under the wrong lesson,
+    so the two must be changed together.
+    """
+    authored = []
     for fname in load(lang, "vocab", "_index.json"):
         for pack in load(lang, "vocab", fname)["packs"]:
-            level = pack.get("level", "A1")
-            items = [word_item(pack["id"], w) for w in pack["words"]]
-            out.setdefault(level, []).append(
-                {
-                    "id": f"vocab.{pack['id']}",
-                    "k": "vocab",
-                    "ti": pack.get("title", pack["id"]),
-                    "sub": f"{len(items)} words · flashcard deck · file {fname}",
-                    "items": items,
-                }
-            )
+            title = pack.get("title", pack["id"])
+            for w in pack["words"]:
+                gate = w.get("fromDay") or pack.get("fromDay", 0)
+                authored.append((w, pack["id"], title, gate))
+
+    def slot(gate: int) -> int:
+        return (gate - 1) * PER_LESSON if gate > 0 else 0
+
+    out: list = []
+    waiting: list = []
+
+    def release():
+        while True:
+            i = next((k for k, e in enumerate(waiting) if slot(e[3]) <= len(out)), None)
+            if i is None:
+                return
+            out.append(waiting.pop(i))
+
+    for entry in authored:
+        if slot(entry[3]) <= len(out):
+            out.append(entry)
+            release()
+        else:
+            waiting.append(entry)
+    release()
+    out.extend(waiting)  # deck ran out before a gate opened: early beats never seen
     return out
 
 
-def lesson_section(day: dict) -> dict:
+def words_by_lesson(lang: str) -> dict:
+    """Deck slots [(n-1)*PER, n*PER) are the words lesson n introduces."""
+    deck = deck_order(lang)
+    by_day: dict[int, list] = {}
+    for idx, (w, pack_id, pack_title, _gate) in enumerate(deck):
+        by_day.setdefault(idx // PER_LESSON + 1, []).append(word_item(pack_id, pack_title, w))
+    return by_day
+
+
+def lesson_section(day: dict, words: list) -> dict:
     n = day["day"]
     items: list[dict] = []
 
@@ -151,6 +195,14 @@ def lesson_section(day: dict) -> dict:
         framing.append((f"Review block ({rb.get('minutes', 15)} min)", "\n".join("• " + x for x in rb["items"])))
     if framing:
         items.append({"i": f"day/{n}/framing", "t": "fr", "rows": framing})
+
+    # The words this lesson puts into the learner's flashcard deck, first, because that is the
+    # order the app uses: a lesson opens on its new words. Reviewing them HERE rather than in a
+    # separate pack list is the point of the lesson-first shape — the word is checked beside the
+    # lesson that teaches it, by someone who has just read that lesson.
+    if words:
+        items.append(heading(f"NEW WORDS · the {len(words)} this lesson adds to the deck"))
+        items.extend(words)
 
     for ai, act in enumerate(day.get("activities", [])):
         kind = act.get("type", "LEARN")
@@ -180,7 +232,8 @@ def lesson_section(day: dict) -> dict:
         "k": "lesson",
         "n": n,
         "ti": f"Lesson {n}: {day.get('title', '')}",
-        "sub": f"Week {day.get('week', '')} · {day.get('phase', '')}",
+        "sub": f"Week {day.get('week', '')} · {len(words)} new words · "
+               f"{sum(len(a.get('questions', [])) for a in day.get('activities', []))} questions",
         "items": items,
     }
 
@@ -286,10 +339,13 @@ def extra_sections(lang: str) -> list:
     """
     Cross-level material: not taught at one level, so it gets its own group.
 
-    Deliberately NOT here: cheatsheet.json and feynman.json. Their screens
-    (CheatsheetScreen, TeachScreen) are no longer in the nav graph, so nothing a learner can
-    reach renders them, and asking a reviewer to audit content the app does not show wastes
-    their time. resources.json IS still shown, on Profile > References, so it stays.
+    Deliberately NOT here: feynman.json. TeachScreen has no caller anywhere in the app, so
+    nothing a learner can reach renders it, and auditing content nobody sees wastes the one
+    thing this review is short of.
+
+    cheatsheet.json and resources.json ARE both here: Profile renders the resource list
+    directly and opens CheatsheetScreen from a button, so neither is dead even though neither
+    appears in the nav graph.
     """
     out = []
 
@@ -312,6 +368,30 @@ def extra_sections(lang: str) -> list:
             }
         )
 
+    if exists(lang, "cheatsheet.json"):
+        ch = load(lang, "cheatsheet.json")
+        items = []
+        for si, sec in enumerate(ch["sections"]):
+            items.append(
+                {
+                    "i": f"cheatsheet/{si}",
+                    "t": "c",
+                    "ti": sec.get("title", ""),
+                    "bu": sec.get("bullets", []),
+                    "dg": sec.get("diagram") or "",
+                    "ex": [[e.get("target", ""), e.get("gloss", "")] for e in sec.get("examples", [])],
+                }
+            )
+        out.append(
+            {
+                "id": "extra.cheatsheet",
+                "k": "grammar",
+                "ti": f"Cheatsheet · {ch.get('title', '')}",
+                "sub": f"{len(ch['sections'])} sections · Profile > Cheatsheet",
+                "items": items,
+            }
+        )
+
     if exists(lang, "resources.json"):
         rs = load(lang, "resources.json")
         items = [
@@ -330,7 +410,8 @@ def extra_sections(lang: str) -> list:
                 "id": "extra.resources",
                 "k": "other",
                 "ti": "Recommended resources",
-                "sub": f"{len(items)} books, courses and channels the app points learners at",
+                "sub": f"{len(items)} books, courses and channels · Profile > Best resources. "
+                       f"Please say if any is not worth a learner's time, or no longer exists.",
                 "items": items,
             }
         )
@@ -347,31 +428,29 @@ def build_data(lang: str) -> dict:
 
     by_level: dict[str, list] = {}
 
-    def merge(d: dict):
-        for lvl, secs in d.items():
-            by_level.setdefault(lvl, []).extend(secs)
-
-    grammar = grammar_sections(lang)
-    vocab = vocab_sections(lang)
-    quizzes = quiz_sections(lang)
-    exams = exam_sections(lang)
-
-    # Order within a level follows how a teacher would want to read it: the rules
-    # first, then the words those rules act on, then the lessons in plan order, then
-    # whatever assesses the level.
-    merge(grammar)
-    merge(vocab)
-
+    # Levels hold LESSONS and nothing else. A lesson is the unit a teacher actually audits:
+    # its explanations, its dialogue, its exercises and the ten words it introduces, read in
+    # one sitting, in the order a learner meets them. Splitting the words back out into
+    # thematic packs meant reviewing a word in one place and the lesson that teaches it in
+    # another, hundreds of screens apart.
+    per_day_words = words_by_lesson(lang)
     lessons: dict[str, list] = {}
     for fname in load(lang, "plan", "_index.json"):
         for day in load(lang, "plan", fname)["days"]:
-            lessons.setdefault(day["level"], []).append((day["day"], lesson_section(day)))
+            lessons.setdefault(day["level"], []).append(
+                (day["day"], lesson_section(day, per_day_words.get(day["day"], [])))
+            )
     for lvl, pairs in lessons.items():
         pairs.sort(key=lambda p: p[0])
-        by_level.setdefault(lvl, []).extend(s for _, s in pairs)
+        by_level[lvl] = [s for _, s in pairs]
 
-    merge(quizzes)
-    merge(exams)
+    # Everything with no lesson to belong to, in one group at the end, each labelled by level.
+    loose: list = []
+    for src in (grammar_sections(lang), quiz_sections(lang), exam_sections(lang)):
+        for lvl in LEVEL_ORDER:
+            for sec in src.get(lvl, []):
+                sec["ti"] = f"[{lvl}] {sec['ti']}"
+                loose.append(sec)
 
     levels = []
     for lid in LEVEL_ORDER:
@@ -389,9 +468,18 @@ def build_data(lang: str) -> dict:
             }
         )
 
-    extras = extra_sections(lang)
-    if extras:
-        levels.append({"id": "EXTRA", "ti": "Across the whole course", "ms": "", "cd": [], "secs": extras})
+    loose.extend(extra_sections(lang))
+    if loose:
+        levels.append(
+            {
+                "id": "EXTRA",
+                "ti": "Not part of any lesson",
+                "ms": "Grammar reference, quizzes, the placement test, mock exams, "
+                      "the cheatsheet and the resource list.",
+                "cd": [],
+                "secs": loose,
+            }
+        )
 
     flaggable = sum(1 for l in levels for s in l["secs"] for i in s["items"] if i.get("i"))
     return {
@@ -490,6 +578,7 @@ nav a.sec .fl{color:var(--wrong);font-weight:700}
 .kind{display:inline-block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);
   border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-right:8px;vertical-align:2px}
 .note{font-size:14px;color:var(--dim);margin-top:5px}
+.pk{font-size:11.5px;color:#9a9a9a;white-space:nowrap}
 .ex{margin-top:7px;padding-left:11px;border-left:2px solid var(--line);font-size:15px}
 .h{margin:22px 0 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
   border-bottom:1px solid var(--line);padding-bottom:5px}
@@ -718,8 +807,11 @@ function render_item(it){
   var body;
   switch(it.t){
     case 'w':
+      // The deck pack is named because some defects are only visible across a SET -- one colour
+      // glossed differently from the other nine, one month capitalised. The lesson shows ten
+      // words at a time, so without this label a set is invisible.
       body = '<div class="grid"><div class="hr">'+esc(it.hr)+(it.p?' <span class="kind">'+esc(it.p)+'</span>':'')+
-             '</div><div class="en">'+esc(it.en)+'</div></div>';
+             '</div><div class="en">'+esc(it.en)+(it.pk?' <span class="pk">'+esc(it.pk)+'</span>':'')+'</div></div>';
       if (it.n) body += '<div class="note">'+nl(it.n)+'</div>';
       if (it.eh) body += '<div class="ex"><span class="hr">'+esc(it.eh)+'</span><br><span class="en">'+esc(it.eg)+'</span></div>';
       break;
@@ -990,14 +1082,16 @@ function INTRO(){
   'or a strong regional form should be flagged, even when it is perfectly understandable.</li>'+
   '</ul>'+
 
-  '<h3>Where to start</h3>'+
-  '<p>The sidebar follows the course: each level holds its grammar, then its vocabulary packs, then its lessons in '+
-  'order, then its quiz. If you have limited time, this is the order that protects a learner best:</p>'+
-  '<ol><li><b>Grammar references</b> — smallest, and a wrong rule poisons everything built on it.</li>'+
-  '<li><b>Vocabulary packs</b> — every word here goes into long-term memory drilling, so a wrong one is learned '+
-  'permanently.</li>'+
-  '<li><b>Lessons A0 → B1</b> in order.</li>'+
-  '<li><b>Quizzes, placement test and mock exams</b>.</li></ol>'+
+  '<h3>How it is organised</h3>'+
+  '<p>By lesson, in the order a learner meets them. Each lesson is one self-contained job: the ten new words it '+
+  'adds to the flashcard deck, then its explanations, its dialogue and its exercises. Read it as a learner would '+
+  'and judge it as a whole — that is why the words sit inside the lesson that teaches them rather than in a '+
+  'separate list.</p>'+
+  '<p>Simply start at Lesson 1 and work down. The numbered squares in the sidebar turn green as you tick sections '+
+  'off, so you can always find where you stopped, and <b>Not yet reviewed</b> in the toolbar jumps you there.</p>'+
+  '<p>The last group, <b>Not part of any lesson</b>, holds what no lesson contains: the grammar reference for each '+
+  'level, the level quizzes, the placement test, the mock exams, the cheatsheet and the list of outside resources '+
+  'the app recommends. Worth doing, but the lessons come first.</p>'+
 
   '<h3>How much there is</h3>'+
   '<table><tr><th>Level</th><th>Lessons</th><th>Words</th><th>Questions</th><th>Other items</th></tr>'+perLevel+'</table>'+
