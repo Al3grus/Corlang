@@ -84,10 +84,6 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,7vw,70px);lin
   letter-spacing:-.04em;margin:0 0 24px}
 h1 .soft{color:var(--muted)}
 .lede{font-size:20px;line-height:1.55;color:var(--muted);margin:0;max-width:600px}
-/* The promise, carrying the weight the supporting lines do not: full ink, a size up, and the
-   only lede that is not grey. Three identical paragraphs made the reader rank them by position
-   alone, which put the thing they actually want third. */
-.lede.goal{color:var(--ink);font-size:23px;font-weight:600;margin:0 0 4px}
 .actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:38px 0 0}
 .cta{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;
   font-size:16px;padding:15px 28px;border-radius:10px}
@@ -476,11 +472,14 @@ article code{background:var(--raise);border:1px solid var(--line);border-radius:
     <div class="hero-copy">
       <p class="eyebrow rise">10 minutes a day &middot; Spaced repetition</p>
       <h1 class="rise">Learn a language.<br><span class="soft">The proven way.</span></h1>
-      <!-- The GOAL first, and in full ink. It used to close the hero, under two paragraphs of
-           method, which sold the vehicle before naming the destination. Nobody sets out to do
-           spaced repetition; they set out to pass the exam, get the job, or take the oath. The
-           method is the reason to believe the promise, so it follows the promise. -->
-      <p class="lede goal rise">Prepare for work, citizenship or an official exam.</p>
+      <!-- The GOAL first. It used to close the hero, under two paragraphs of method, which sold
+           the vehicle before naming the destination. Nobody sets out to do spaced repetition;
+           they set out to pass the exam, get the job, or take the oath. The method is the reason
+           to believe the promise, so it follows the promise.
+           Styled exactly like the other two on purpose: position carries the emphasis here, and
+           an earlier attempt at giving it extra weight and full ink changed how the headline
+           above read against it. -->
+      <p class="lede rise">Prepare for work, citizenship or an official exam.</p>
       <p class="lede rise">Short daily lessons built on how memory works, so the word you learn
       today is still there in a month.</p>
       <p class="lede rise">No classroom, no commute. Learn anywhere, anytime.</p>
