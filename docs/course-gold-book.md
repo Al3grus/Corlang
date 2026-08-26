@@ -13,7 +13,7 @@ if every automated gate is green.
 
 The tools live in `tools/course/` (moved out of session scratchpads after nearly losing them):
 `LESSON_SPEC.md`, `PLACEMENT_SPEC.md`, `check_batch.py`, `check_de.py`, `check_it.py`,
-`build_language.py`, `fix_resources.py`, `proctor.py`, and `de_retired.txt` as the model
+`build_language.py`, `proctor.py`, and `de_retired.txt` as the model
 retire list.
 
 ---

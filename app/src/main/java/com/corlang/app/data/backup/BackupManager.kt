@@ -4,7 +4,6 @@ import com.corlang.app.data.db.CanDoCheck
 import com.corlang.app.data.db.DayCompletion
 import com.corlang.app.data.db.DayTaskCheck
 import com.corlang.app.data.db.ExamSectionAttempt
-import com.corlang.app.data.db.FeynmanAttempt
 import com.corlang.app.data.db.LanguageProgress
 import com.corlang.app.data.db.ProgressDao
 import com.corlang.app.data.db.QuizAttempt
@@ -53,7 +52,6 @@ data class BackupData(
     val completions: List<DayCompletion> = emptyList(),
     val quizAttempts: List<QuizAttempt> = emptyList(),
     val wordReviews: List<WordReview> = emptyList(),
-    val feynmanAttempts: List<FeynmanAttempt> = emptyList(),
     val examAttempts: List<ExamSectionAttempt> = emptyList(),
     val canDoChecks: List<CanDoCheck> = emptyList(),
     val dayTaskChecks: List<DayTaskCheck> = emptyList(),
@@ -86,7 +84,6 @@ class BackupManager(
             completions = dao.allCompletions(),
             quizAttempts = dao.allQuizAttempts(),
             wordReviews = dao.allWordReviews(),
-            feynmanAttempts = dao.allFeynmanAttempts(),
             examAttempts = dao.allExamAttempts(),
             canDoChecks = dao.allCanDoChecks(),
             dayTaskChecks = dao.allDayTaskChecks(),
@@ -126,7 +123,6 @@ class BackupManager(
             completions = data.completions,
             quizAttempts = data.quizAttempts,
             wordReviews = data.wordReviews,
-            feynmanAttempts = data.feynmanAttempts,
             examAttempts = data.examAttempts,
             canDoChecks = data.canDoChecks,
             dayTaskChecks = data.dayTaskChecks
@@ -150,7 +146,7 @@ class BackupManager(
             )
         )
         val rows = data.progress.size + data.completions.size + data.quizAttempts.size +
-            data.wordReviews.size + data.feynmanAttempts.size + data.examAttempts.size +
+            data.wordReviews.size + data.examAttempts.size +
             data.canDoChecks.size + data.dayTaskChecks.size
         Result.success(rows)
     } catch (e: kotlinx.coroutines.CancellationException) {

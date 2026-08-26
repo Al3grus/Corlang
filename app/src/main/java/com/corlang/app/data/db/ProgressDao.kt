@@ -87,12 +87,6 @@ interface ProgressDao {
     @Upsert
     suspend fun upsertWordReview(r: WordReview)
 
-    @Insert
-    suspend fun insertFeynmanAttempt(a: FeynmanAttempt)
-
-    @Query("SELECT * FROM feynman_attempt WHERE langCode = :lang ORDER BY doneAtEpoch DESC")
-    fun feynmanAttempts(lang: String): Flow<List<FeynmanAttempt>>
-
     // ----- Mock exam attempts -----
 
     @Insert
@@ -138,7 +132,6 @@ interface ProgressDao {
     @Query("SELECT * FROM day_completion") suspend fun allCompletions(): List<DayCompletion>
     @Query("SELECT * FROM quiz_attempt") suspend fun allQuizAttempts(): List<QuizAttempt>
     @Query("SELECT * FROM word_review") suspend fun allWordReviews(): List<WordReview>
-    @Query("SELECT * FROM feynman_attempt") suspend fun allFeynmanAttempts(): List<FeynmanAttempt>
     @Query("SELECT * FROM exam_section_attempt") suspend fun allExamAttempts(): List<ExamSectionAttempt>
     @Query("SELECT * FROM can_do_check") suspend fun allCanDoChecks(): List<CanDoCheck>
     @Query("SELECT * FROM day_task_check") suspend fun allDayTaskChecks(): List<DayTaskCheck>
@@ -147,7 +140,6 @@ interface ProgressDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllCompletions(x: List<DayCompletion>)
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllQuizAttempts(x: List<QuizAttempt>)
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllWordReviews(x: List<WordReview>)
-    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllFeynmanAttempts(x: List<FeynmanAttempt>)
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllExamAttempts(x: List<ExamSectionAttempt>)
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllCanDoChecks(x: List<CanDoCheck>)
     @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertAllDayTaskChecks(x: List<DayTaskCheck>)
@@ -159,7 +151,6 @@ interface ProgressDao {
         clearCompletionsFor(lang)
         clearQuizAttemptsFor(lang)
         clearWordReviewsFor(lang)
-        clearFeynmanAttemptsFor(lang)
         clearExamAttemptsFor(lang)
         clearCanDoChecksFor(lang)
         clearDayTaskChecksFor(lang)
@@ -172,7 +163,6 @@ interface ProgressDao {
     @Query("DELETE FROM day_completion WHERE langCode = :lang") suspend fun clearCompletionsFor(lang: String)
     @Query("DELETE FROM quiz_attempt WHERE langCode = :lang") suspend fun clearQuizAttemptsFor(lang: String)
     @Query("DELETE FROM word_review WHERE langCode = :lang") suspend fun clearWordReviewsFor(lang: String)
-    @Query("DELETE FROM feynman_attempt WHERE langCode = :lang") suspend fun clearFeynmanAttemptsFor(lang: String)
     @Query("DELETE FROM exam_section_attempt WHERE langCode = :lang") suspend fun clearExamAttemptsFor(lang: String)
     @Query("DELETE FROM can_do_check WHERE langCode = :lang") suspend fun clearCanDoChecksFor(lang: String)
     @Query("DELETE FROM day_task_check WHERE langCode = :lang") suspend fun clearDayTaskChecksFor(lang: String)
@@ -202,7 +192,6 @@ interface ProgressDao {
     @Query("DELETE FROM day_completion") suspend fun clearCompletions()
     @Query("DELETE FROM quiz_attempt") suspend fun clearQuizAttempts()
     @Query("DELETE FROM word_review") suspend fun clearWordReviews()
-    @Query("DELETE FROM feynman_attempt") suspend fun clearFeynmanAttempts()
     @Query("DELETE FROM exam_section_attempt") suspend fun clearExamAttempts()
     @Query("DELETE FROM can_do_check") suspend fun clearCanDoChecks()
     @Query("DELETE FROM day_task_check") suspend fun clearDayTaskChecks()
@@ -214,16 +203,15 @@ interface ProgressDao {
         completions: List<DayCompletion>,
         quizAttempts: List<QuizAttempt>,
         wordReviews: List<WordReview>,
-        feynmanAttempts: List<FeynmanAttempt>,
         examAttempts: List<ExamSectionAttempt>,
         canDoChecks: List<CanDoCheck>,
         dayTaskChecks: List<DayTaskCheck>
     ) {
         clearProgress(); clearCompletions(); clearQuizAttempts(); clearWordReviews()
-        clearFeynmanAttempts(); clearExamAttempts(); clearCanDoChecks(); clearDayTaskChecks()
+        clearExamAttempts(); clearCanDoChecks(); clearDayTaskChecks()
         insertAllProgress(progress); insertAllCompletions(completions)
         insertAllQuizAttempts(quizAttempts); insertAllWordReviews(wordReviews)
-        insertAllFeynmanAttempts(feynmanAttempts); insertAllExamAttempts(examAttempts)
+        insertAllExamAttempts(examAttempts)
         insertAllCanDoChecks(canDoChecks); insertAllDayTaskChecks(dayTaskChecks)
     }
 }

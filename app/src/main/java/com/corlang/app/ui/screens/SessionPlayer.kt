@@ -157,9 +157,8 @@ fun buildSessionSteps(
             // The level quiz lives on the journey as an end-of-level checkpoint; a drill that
             // mentions it deep-links straight to this day's level quiz.
             "quiz" in t || "mock exam" in t -> "quiz/${day.level}"
-            // Cheatsheet/Grammar live on the Profile tab now; Learn keeps Teach + Tutor.
-            "cheatsheet" in t || "grammar tab" in t -> Dest.PROGRESS.route
-            "feynman" in t || "teach" in t -> Dest.LEARN.route
+            // Grammar lives on the Profile tab.
+            "grammar tab" in t -> Dest.PROFILE.route
             else -> null
         }
     }

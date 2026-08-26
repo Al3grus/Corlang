@@ -94,17 +94,6 @@ data class MissedQuestion(
     val clearedEpochDay: Long? = null
 )
 
-@Serializable
-@Entity(tableName = "feynman_attempt")
-data class FeynmanAttempt(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val langCode: String,
-    val conceptId: String,
-    val selfScore: Int,   // rubric points the learner marked as covered
-    val total: Int,
-    val doneAtEpoch: Long
-)
-
 /**
  * One attempt at a mock-exam section. Scored sections (listening/reading/grammar) store
  * score/total and pass = score/total >= the section threshold; writing/speaking are

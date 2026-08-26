@@ -12,14 +12,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         LanguageProgress::class,
         DayCompletion::class,
         QuizAttempt::class,
-        FeynmanAttempt::class,
         WordReview::class,
         ExamSectionAttempt::class,
         CanDoCheck::class,
         DayTaskCheck::class,
         MissedQuestion::class
     ],
-    version = 8,
+    version = 9,
     // Schemas are committed (app/schemas/) so migrations stay testable — after Play launch a
     // botched migration is unrecoverable, so never flip this back off.
     exportSchema = true
@@ -162,12 +161,23 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * v8 -> v9: the teach-back feature is gone (TeachScreen had no caller and the concepts
+         * it read are no longer shipped), so its attempts table goes with it rather than sitting
+         * in every learner's database with nothing able to read or write it.
+         */
+        private val MIGRATION_8_9 = object : Migration(8, 9) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("DROP TABLE IF EXISTS `feynman_attempt`")
+            }
+        }
+
         fun get(context: Context): AppDatabase = instance ?: synchronized(this) {
             instance ?: Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
                 "corlang.db"
-            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8)
+            ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9)
                 // TRUNCATE, not Room's default (WAL), because THIS DATABASE IS BACKED UP BY FILE
                 // NAME. res/xml/backup_rules.xml and data_extraction_rules.xml both name exactly
                 // one file, "corlang.db". Under WAL, a commit lands in the sibling corlang.db-wal

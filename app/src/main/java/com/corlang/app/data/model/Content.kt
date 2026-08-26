@@ -44,24 +44,6 @@ data class LanguageMeta(
     val freeLessons: Int = 15
 )
 
-// ---------- Cheatsheet (the 5-minute review page) ----------
-
-@Serializable
-data class Cheatsheet(
-    val title: String,
-    val sections: List<CheatSection>
-)
-
-@Serializable
-data class CheatSection(
-    val title: String,
-    val bullets: List<String> = emptyList(),
-    /** Optional monospace "diagram": a table or text figure rendered in a mono box. */
-    val diagram: String? = null,
-    /** Worked examples: target-language phrase + English gloss. */
-    val examples: List<Example> = emptyList()
-)
-
 @Serializable
 data class Example(
     val target: String,          // "Je suis fatigué."
@@ -119,7 +101,6 @@ data class StudyDay(
     val title: String,
     val objective: String,
     val paretoFocus: String,     // why this is high-leverage
-    val resources: List<String> = emptyList(),  // resource names referenced from resources.json
     val drills: List<String> = emptyList(),
     val reviewBlock: ReviewBlock, // the 15-minute end-of-session review
     /**
@@ -224,33 +205,6 @@ data class Question(
 /** A matching pair. Named Pair2 to avoid clashing with kotlin.Pair in serialization. */
 @Serializable
 data class Pair2(val left: String, val right: String)
-
-// ---------- Feynman teach-back ----------
-
-@Serializable
-data class FeynmanSet(
-    val concepts: List<FeynmanConcept>
-)
-
-@Serializable
-data class FeynmanConcept(
-    val id: String,
-    val levelId: String,
-    val title: String,
-    val simpleExplanation: String,   // plain-English explanation
-    val analogy: String,             // a concrete analogy
-    val rubricPoints: List<RubricPoint>
-)
-
-@Serializable
-data class RubricPoint(
-    val point: String,               // the idea the learner should have covered
-    val reTeach: String,             // shown when the grader marks it missed
-    /** Paraphrase vocabulary for the offline grader: the words a learner naturally uses when
-     *  they have the idea but not the point's own phrasing ("written", "sounds" for the
-     *  phonetic point). Multi-word entries match as phrases. */
-    val keywords: List<String> = emptyList()
-)
 
 // ---------- Vocabulary (spaced-repetition deck) ----------
 
@@ -393,20 +347,4 @@ data class PlacementQuestion(
     val answer: String,
     val explanation: String = "",
     val strictDiacritics: Boolean = false
-)
-
-// ---------- Resources ----------
-
-@Serializable
-data class ResourceList(
-    val resources: List<Resource>
-)
-
-@Serializable
-data class Resource(
-    val rank: Int,                   // 1..5
-    val name: String,
-    val type: String,                // book | video | course | person | app | podcast
-    val url: String? = null,
-    val why: String                  // why it's worth your time
 )

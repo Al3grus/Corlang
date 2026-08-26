@@ -4,7 +4,6 @@ import com.corlang.app.data.db.CanDoCheck
 import com.corlang.app.data.db.DayCompletion
 import com.corlang.app.data.db.DayTaskCheck
 import com.corlang.app.data.db.ExamSectionAttempt
-import com.corlang.app.data.db.FeynmanAttempt
 import com.corlang.app.data.db.LanguageProgress
 import com.corlang.app.data.db.ProgressDao
 import com.corlang.app.data.db.QuizAttempt
@@ -29,7 +28,6 @@ class ProgressRepository(private val dao: ProgressDao) {
     fun completedDayCount(lang: String): Flow<Int> = dao.completedDayCount(lang)
     fun quizAttempts(lang: String): Flow<List<QuizAttempt>> = dao.quizAttempts(lang)
     fun bestQuizScore(lang: String, quizId: String): Flow<Int?> = dao.bestQuizScore(lang, quizId)
-    fun feynmanAttempts(lang: String): Flow<List<FeynmanAttempt>> = dao.feynmanAttempts(lang)
 
     /**
      * Erases EVERY trace of one language's progress: lessons, streak, word memory, quiz, exam,
@@ -316,12 +314,4 @@ class ProgressRepository(private val dao: ProgressDao) {
         }
     }
 
-    suspend fun recordFeynman(lang: String, conceptId: String, selfScore: Int, total: Int) {
-        dao.insertFeynmanAttempt(
-            FeynmanAttempt(
-                langCode = lang, conceptId = conceptId, selfScore = selfScore,
-                total = total, doneAtEpoch = System.currentTimeMillis()
-            )
-        )
-    }
 }

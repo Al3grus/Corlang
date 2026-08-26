@@ -18,7 +18,7 @@ Current: v0.48.0 (versionCode 177). Live courses: `hr pt` — `fr de it es` are 
 
 ### Adding a new language — now (almost) pure data
 The registry, TTS locale, and reminder copy are **data-driven** (fixed 2026-07-25). To add a language:
-1. Add the content folder `app/src/main/assets/content/<code>/` (`meta.json`, `levels.json`, `plan/`, `vocab/`, …). — data
+1. Add the content folder `app/src/main/assets/content/<code>/` (`meta.json`, `levels.json`, `plan/`, `vocab/`, `grammar.json`, `quizzes.json`, …). — data
 2. Register the code (in display order) in `app/src/main/assets/content/_index.json`. — data
 3. Fill the wiring fields in that language's `meta.json`: `speechTag` (BCP-47, e.g. `"pt-PT"`), `reminderTitle`, `reminderTitleNamed` (must contain the `{name}` placeholder), `reminderProverb`, and `freeLessons` (the free window; must equal the last day of A0, which is 10). — data
 
@@ -43,11 +43,10 @@ Offline validators in `tools/course/` — run before content reaches the app:
 - `check_deck_examples.py` — deck flashcards: every word has an example sentence, no two cards share one,
   and the cloze `DrillGen` builds from it blanks an unambiguous token.
 - `proctor.py` — course-wide audit (cross-lesson repetition, answer leakage, boilerplate). Run on the assembled build before shipping.
-- `fix_resources.py` — repoint lesson `resources` to names that exist in `resources.json`.
 
 A `PostToolUse` hook (`.claude/settings.json` → `tools/hooks/validate_content_json.py`) warns immediately if an edited `content/**/*.json` stops parsing — but it only catches malformed JSON, not content defects; the `tools/course/` validators and `proctor.py` remain the real gate.
 
-**Verify external resources are live before shipping** — a dead link has shipped before. Do not add settings/fields/questions without a consumer already wired (no dead data).
+**No external material anywhere.** `resources.json` was the one sanctioned exception (a list on Profile) and it is gone as of v0.75.0, along with the cheatsheet and teach-back features; `ContentValidationTest.content_neverSendsLearnersElsewhere` now admits no exception. Do not add settings/fields/questions without a consumer already wired (no dead data).
 
 ---
 
