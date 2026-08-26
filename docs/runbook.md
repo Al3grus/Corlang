@@ -63,7 +63,6 @@ python tools/course/check_deck_examples.py        # every card has a unique, clo
 python tools/course/check_deck_sync.py            # deck vs lessons
 python tools/course/check_wrapup.py               # lesson wrap-up shape
 python tools/course/proctor.py                    # course-wide audit; run before shipping
-python tools/course/fix_resources.py              # repoint lesson resources to real names
 python tools/course/build_language.py             # assemble authored batches into _index.json
 ```
 

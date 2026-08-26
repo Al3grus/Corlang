@@ -1,2783 +1,2765 @@
 {
-  "title": "Hrvatski do razine B1",
-  "days": [
+ "title": "Hrvatski do razine B1",
+ "days": [
+  {
+   "day": 1,
+   "week": 1,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "The Croatian alphabet",
+   "objective": "Learn all 30 letters so you can read ANY word aloud correctly.",
+   "paretoFocus": "Croatian is almost perfectly phonetic, one letter, one sound, with only a few edge cases you'll never need to worry about at this level. Master the alphabet once (especially č/ć/š/ž/dž/đ/lj/nj) and pronunciation is solved forever.",
+   "drills": [
+    "Listen to and repeat all 30 letters.",
+    "Read 15 words aloud from the cheatsheet.",
+    "Drill the 8 special letters until automatic."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Re-read today's words aloud.",
+     "Recall the sounds of č, š, ž, lj, nj.",
+     "Write 3 words containing special letters."
+    ]
+   },
+   "activities": [
     {
-      "day": 1,
-      "week": 1,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "The Croatian alphabet",
-      "objective": "Learn all 30 letters so you can read ANY word aloud correctly.",
-      "paretoFocus": "Croatian is almost perfectly phonetic, one letter, one sound, with only a few edge cases you'll never need to worry about at this level. Master the alphabet once (especially č/ć/š/ž/dž/đ/lj/nj) and pronunciation is solved forever.",
-      "resources": [],
-      "drills": [
-        "Listen to and repeat all 30 letters.",
-        "Read 15 words aloud from the cheatsheet.",
-        "Drill the 8 special letters until automatic."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Re-read today's words aloud.",
-          "Recall the sounds of č, š, ž, lj, nj.",
-          "Write 3 words containing special letters."
-        ]
+     "type": "LEARN",
+     "title": "The 8 special letters",
+     "intro": "Croatian is almost perfectly phonetic, one letter, one sound, with only a few edge cases you'll never need to worry about at this level, so pronunciation is a one-time investment that pays off for every word you ever meet. These eight letters are the only genuinely new ones. Say each letter, then its example word, out loud.",
+     "items": [
+      {
+       "hr": "čaj",
+       "en": "tea",
+       "note": "č = hard 'ch' as in cheese. Tip of the tongue curled back. Croatians hear č as the 'strong' ch."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "The 8 special letters",
-          "intro": "Croatian is almost perfectly phonetic, one letter, one sound, with only a few edge cases you'll never need to worry about at this level, so pronunciation is a one-time investment that pays off for every word you ever meet. These eight letters are the only genuinely new ones. Say each letter, then its example word, out loud.",
-          "items": [
-            {
-              "hr": "čaj",
-              "en": "tea",
-              "note": "č = hard 'ch' as in cheese. Tip of the tongue curled back. Croatians hear č as the 'strong' ch."
-            },
-            {
-              "hr": "kuća",
-              "en": "house",
-              "note": "ć = soft 'ch', tongue near the palate, like the t in 'future'. If you cannot hear the difference from č yet, do not worry, many natives barely do."
-            },
-            {
-              "hr": "škola",
-              "en": "school",
-              "note": "š = 'sh' as in shoe."
-            },
-            {
-              "hr": "žena",
-              "en": "woman",
-              "note": "ž = the s in 'pleasure'."
-            },
-            {
-              "hr": "džep",
-              "en": "pocket",
-              "note": "dž = hard 'j' as in jam. Two letters, one sound. Rare but easy."
-            },
-            {
-              "hr": "đak",
-              "en": "pupil",
-              "note": "đ = soft 'j' as in jeans. The soft partner of dž, just as ć is the soft partner of č."
-            },
-            {
-              "hr": "ljubav",
-              "en": "love",
-              "note": "lj = the 'lli' in million. One sound written with two letters."
-            },
-            {
-              "hr": "konj",
-              "en": "horse",
-              "note": "nj = the 'ny' in canyon, like Spanish ñ. One sound, two letters."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "LEARN",
-          "title": "Read these 10 words aloud",
-          "intro": "Two more letters to watch: c is ALWAYS 'ts' (as in cats), never 'k' or 's'; and j is always 'y' (as in yes). Stress never falls on the last syllable, in short words it is usually on the first. Now read each word aloud, slowly, letter by letter.",
-          "items": [
-            {
-              "hr": "hvala",
-              "en": "thank you",
-              "note": "Say it: HVAH-lah. h is a light 'kh' as in 'loch'. Pronounce both h and v."
-            },
-            {
-              "hr": "dobro",
-              "en": "good / fine",
-              "note": "Say it: DOH-broh."
-            },
-            {
-              "hr": "jutro",
-              "en": "morning",
-              "note": "Say it: YOO-troh. j = 'y', always."
-            },
-            {
-              "hr": "cipela",
-              "en": "shoe",
-              "note": "Say it: TSEE-peh-lah. c = 'ts', never 'k'."
-            },
-            {
-              "hr": "čovjek",
-              "en": "man / person",
-              "note": "Say it: CHOH-vyek."
-            },
-            {
-              "hr": "noć",
-              "en": "night",
-              "note": "Say it: nohch, soft ch."
-            },
-            {
-              "hr": "knjiga",
-              "en": "book",
-              "note": "Say it: KNYEE-gah. k + nj, pronounce both."
-            },
-            {
-              "hr": "ljeto",
-              "en": "summer",
-              "note": "Say it: LYEH-toh."
-            },
-            {
-              "hr": "džem",
-              "en": "jam",
-              "note": "Say it: jem, hard j."
-            },
-            {
-              "hr": "Hrvatska",
-              "en": "Croatia",
-              "note": "Say it: HUR-vaht-skah. The r acts as a vowel between consonants: Hr-vat-ska. Same in prst (finger) and trg (square)."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "Alphabet practice",
-          "intro": "Recognize the sounds first, then spell words yourself. Type the diacritics (č, ć, š, ž, đ) they are part of the letter, not decoration.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "Which letter sounds like 'sh' in shoe?",
-              "difficulty": 1,
-              "options": [
-                "š",
-                "č",
-                "ž",
-                "s"
-              ],
-              "answer": "š",
-              "explanation": "š = 'sh' (škola = school). ž is 'zh', č is 'ch'."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Which letter sounds like 'ny' in canyon?",
-              "difficulty": 1,
-              "options": [
-                "nj",
-                "lj",
-                "đ",
-                "n"
-              ],
-              "answer": "nj",
-              "explanation": "nj = 'ny' (konj = horse). lj is 'ly' as in million."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "How is the letter c ALWAYS pronounced in Croatian?",
-              "difficulty": 2,
-              "options": [
-                "'ts' as in cats",
-                "'k' as in cat",
-                "'s' as in city",
-                "'ch' as in chat"
-              ],
-              "answer": "'ts' as in cats",
-              "explanation": "Croatian c is always 'ts': cipela = TSEE-peh-lah. For the 'ch' sounds Croatian uses č and ć."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "The word 'ljubav' (love) starts with which sound?",
-              "difficulty": 3,
-              "options": [
-                "'lli' as in million",
-                "'l' as in love",
-                "'y' as in yes",
-                "'j' as in jam"
-              ],
-              "answer": "'lli' as in million",
-              "explanation": "lj is ONE sound written with two letters, like the 'lli' in million."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Write the single letter that sounds like the 's' in 'pleasure'.",
-              "difficulty": 4,
-              "answer": "ž",
-              "explanation": "ž = 'zh' as in pleasure: žena (woman). Without the hook, z is a plain 'z'.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Spell the Croatian word for 'tea' (starts with the hard 'ch' letter).",
-              "difficulty": 5,
-              "answer": "čaj",
-              "explanation": "čaj, č for the hard 'ch', j for the 'y' glide at the end.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Spell the Croatian word for 'school' (you heard it as SHKOH-lah).",
-              "difficulty": 6,
-              "answer": "škola",
-              "explanation": "škola, the 'sh' sound is always written š. Spelling = sound, always.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Spell the Croatian word for 'house' (KOO-chah, with the SOFT ch).",
-              "difficulty": 7,
-              "answer": "kuća",
-              "explanation": "kuća takes ć, the soft ch. čaj takes č, the hard ch. Learning which word takes which comes with exposure, but the sound rule never changes.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Where does stress NEVER fall in a Croatian word?",
-              "difficulty": 8,
-              "options": [
-                "On the last syllable",
-                "On the first syllable",
-                "On the second syllable",
-                "There is no rule"
-              ],
-              "answer": "On the last syllable",
-              "explanation": "Stress never falls on the last syllable. In short words it is usually on the first: DObro, HVAla, ŠKOla."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "Pronunciation game with your partner",
-          "intro": "Read your lines aloud slowly. Your partner listens and corrects your č/ć, š/ž, lj/nj. Swap roles afterwards if you like.",
-          "lines": [
-            {
-              "speaker": "Me",
-              "hr": "Č, čaj. Ć, kuća.",
-              "en": "Č, tea. Ć, house."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Odlično! Sada š i ž.",
-              "en": "Excellent! Now š and ž."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Š, škola. Ž, žena.",
-              "en": "Š, school. Ž, woman."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Super! Sada lj i nj.",
-              "en": "Great! Now lj and nj."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Lj, ljubav. Nj, konj.",
-              "en": "Lj, love. Nj, horse."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Bravo! Još jednom, molim.",
-              "en": "Bravo! One more time, please."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Čaj, kuća, škola, žena, ljubav, konj.",
-              "en": "Tea, house, school, woman, love, horse."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Savršeno!",
-              "en": "Perfect!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
+      {
+       "hr": "kuća",
+       "en": "house",
+       "note": "ć = soft 'ch', tongue near the palate, like the t in 'future'. If you cannot hear the difference from č yet, do not worry, many natives barely do."
+      },
+      {
+       "hr": "škola",
+       "en": "school",
+       "note": "š = 'sh' as in shoe."
+      },
+      {
+       "hr": "žena",
+       "en": "woman",
+       "note": "ž = the s in 'pleasure'."
+      },
+      {
+       "hr": "džep",
+       "en": "pocket",
+       "note": "dž = hard 'j' as in jam. Two letters, one sound. Rare but easy."
+      },
+      {
+       "hr": "đak",
+       "en": "pupil",
+       "note": "đ = soft 'j' as in jeans. The soft partner of dž, just as ć is the soft partner of č."
+      },
+      {
+       "hr": "ljubav",
+       "en": "love",
+       "note": "lj = the 'lli' in million. One sound written with two letters."
+      },
+      {
+       "hr": "konj",
+       "en": "horse",
+       "note": "nj = the 'ny' in canyon, like Spanish ñ. One sound, two letters."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
     },
     {
-      "day": 2,
-      "week": 1,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "Greetings & politeness",
-      "objective": "Open and close interactions politely.",
-      "paretoFocus": "A few fixed phrases (bok, dobar dan, hvala, molim) cover almost every first interaction.",
-      "resources": [],
-      "drills": [
-        "Learn bok / dobar dan / dobro jutro / doviđenja.",
-        "Practise hvala / molim / oprostite / da / ne.",
-        "Role-play greeting someone formally and casually."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Recall all greetings.",
-          "Re-read 5 alphabet words.",
-          "How do you say 'please' and 'thanks'?"
-        ]
+     "type": "LEARN",
+     "title": "Read these 10 words aloud",
+     "intro": "Two more letters to watch: c is ALWAYS 'ts' (as in cats), never 'k' or 's'; and j is always 'y' (as in yes). Stress never falls on the last syllable, in short words it is usually on the first. Now read each word aloud, slowly, letter by letter.",
+     "items": [
+      {
+       "hr": "hvala",
+       "en": "thank you",
+       "note": "Say it: HVAH-lah. h is a light 'kh' as in 'loch'. Pronounce both h and v."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "Greetings for every moment of the day",
-          "intro": "Croatian greetings split cleanly into informal (friends, family, your partner) and standard/formal (strangers, shops, older people). When in doubt, use the formal one, nobody is ever offended by Dobar dan.",
-          "items": [
-            {
-              "hr": "Bok!",
-              "en": "Hi! / Bye! (informal)",
-              "note": "Friends and family only. Works both when arriving and leaving."
-            },
-            {
-              "hr": "Dobro jutro!",
-              "en": "Good morning!",
-              "note": "Used until roughly 10 a.m."
-            },
-            {
-              "hr": "Dobar dan!",
-              "en": "Good day! (the standard daytime greeting)",
-              "note": "Your safe default with anyone you don't know. Note: dobAR dan but dobrO jutro, the adjective matches the noun."
-            },
-            {
-              "hr": "Dobra večer!",
-              "en": "Good evening!"
-            },
-            {
-              "hr": "Laku noć!",
-              "en": "Good night!",
-              "note": "Only when parting for the night, not a greeting."
-            },
-            {
-              "hr": "Doviđenja!",
-              "en": "Goodbye! (standard/formal)",
-              "note": "Literally 'until seeing (each other)'."
-            },
-            {
-              "hr": "Vidimo se!",
-              "en": "See you! (informal goodbye)"
-            },
-            {
-              "hr": "Kako si?",
-              "en": "How are you? (informal, one friend)"
-            },
-            {
-              "hr": "Kako ste?",
-              "en": "How are you? (formal, or to several people)"
-            },
-            {
-              "hr": "Dobro sam, hvala. A ti?",
-              "en": "I'm fine, thanks. And you? (informal)",
-              "note": "Formal version: A vi?"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "LEARN",
-          "title": "The politeness toolkit",
-          "intro": "These little words carry almost every polite interaction. Molim is the hardest worker in Croatian, it means please, you're welcome, AND 'pardon?' when you didn't hear.",
-          "items": [
-            {
-              "hr": "hvala",
-              "en": "thank you",
-              "note": "Stronger: hvala lijepa (thanks a lot)."
-            },
-            {
-              "hr": "molim",
-              "en": "please / you're welcome / pardon?",
-              "note": "Three uses: Molim! (here you go / you're welcome), Molim? (sorry, what did you say?), and please in requests."
-            },
-            {
-              "hr": "oprostite",
-              "en": "excuse me / sorry (formal)",
-              "note": "Use to get a stranger's attention or apologize. Informal: oprosti."
-            },
-            {
-              "hr": "izvolite",
-              "en": "here you are / how can I help you? (formal)",
-              "note": "What waiters and shopkeepers say to you; also said when handing something over."
-            },
-            {
-              "hr": "da",
-              "en": "yes"
-            },
-            {
-              "hr": "ne",
-              "en": "no"
-            },
-            {
-              "hr": "u redu",
-              "en": "okay / all right",
-              "note": "Literally 'in order'."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "Greetings practice",
-          "intro": "Pick or produce the right greeting for each situation. Watch the diacritics in doviđenja and večer.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "You walk into a bakery at noon. What do you say?",
-              "difficulty": 1,
-              "options": [
-                "Dobar dan!",
-                "Bok!",
-                "Laku noć!",
-                "Vidimo se!"
-              ],
-              "answer": "Dobar dan!",
-              "explanation": "Dobar dan is the standard daytime greeting with strangers. Bok is only for friends and family."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "It's 8 a.m. and you greet your neighbour. What fits best?",
-              "difficulty": 2,
-              "options": [
-                "Dobro jutro!",
-                "Dobra večer!",
-                "Laku noć!",
-                "Doviđenja!"
-              ],
-              "answer": "Dobro jutro!",
-              "explanation": "Dobro jutro is used until roughly 10 a.m.; after that switch to Dobar dan."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "When can you say 'Laku noć'?",
-              "difficulty": 3,
-              "options": [
-                "Only when parting for the night",
-                "Any time after dark, including when arriving",
-                "Only to children",
-                "As a morning greeting"
-              ],
-              "answer": "Only when parting for the night",
-              "explanation": "Laku noć is a farewell, not a greeting. Arriving in the evening you say Dobra večer."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Someone thanks you: 'Hvala!' You reply:",
-              "difficulty": 4,
-              "options": [
-                "Molim!",
-                "Oprostite!",
-                "Da!",
-                "Izvolite?"
-              ],
-              "answer": "Molim!",
-              "explanation": "Molim also means 'you're welcome'. It triples as please and 'pardon?'."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Translate: 'thank you'",
-              "difficulty": 4,
-              "answer": "hvala",
-              "accepted": [
-                "Hvala"
-              ],
-              "explanation": "hvala, pronounce both the h and the v: HVAH-lah.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "You need to stop a stranger on the street to ask something. Say 'excuse me' (formal).",
-              "difficulty": 5,
-              "answer": "oprostite",
-              "accepted": [
-                "Oprostite"
-              ],
-              "explanation": "oprostite is the formal 'excuse me / sorry'. To a friend you'd say oprosti.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Translate the formal goodbye: 'goodbye'",
-              "difficulty": 6,
-              "answer": "doviđenja",
-              "accepted": [
-                "Doviđenja",
-                "Doviđenja!"
-              ],
-              "explanation": "doviđenja, note the đ (soft j). Literally 'until seeing each other'. Informal alternative: vidimo se.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the sentence: 'Good day, how are you?' (formal)",
-              "difficulty": 7,
-              "options": [
-                "Dobar",
-                "dan,",
-                "kako",
-                "ste?"
-              ],
-              "ordered": [
-                "Dobar",
-                "dan,",
-                "kako",
-                "ste?"
-              ],
-              "answer": "Dobar dan, kako ste?",
-              "explanation": "Formal greeting + formal 'how are you' (ste, not si). This exact sentence opens most polite conversations."
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the reply: 'I'm fine, thanks. And you?' (informal)",
-              "difficulty": 8,
-              "options": [
-                "Dobro",
-                "sam,",
-                "hvala.",
-                "A",
-                "ti?"
-              ],
-              "ordered": [
-                "Dobro",
-                "sam,",
-                "hvala.",
-                "A",
-                "ti?"
-              ],
-              "answer": "Dobro sam, hvala. A ti?",
-              "explanation": "Dobro sam = I'm fine. A ti? bounces the question back informally; formally you'd say A vi?"
-            },
-            {
-              "type": "FILL",
-              "prompt": "Play the audio and complete: 'Dobro sam, ___. A ti?'",
-              "difficulty": 4,
-              "answer": "hvala",
-              "accepted": [
-                "hvala"
-              ],
-              "explanation": "The audio says 'Dobro sam, hvala. A ti?', which means 'I'm fine, thanks. And you? (informal)'",
-              "audioText": "Dobro sam, hvala. A ti?"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "Role-play: formal, then casual",
-          "intro": "Act this out with your partner. Round 1: your partner plays an older neighbour (formal). Round 2: they play themselves (casual). Notice how ste/vi becomes si/ti.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Dobar dan!",
-              "en": "Good day!"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Dobar dan! Kako ste?",
-              "en": "Good day! How are you? (formal)"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Dobro sam, hvala. A vi?",
-              "en": "I'm fine, thanks. And you?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "I ja sam dobro, hvala. Doviđenja!",
-              "en": "I'm fine too, thanks. Goodbye!"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Doviđenja!",
-              "en": "Goodbye!"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Bok! Kako si?",
-              "en": "Hi! How are you? (now casual)"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Bok! Dobro sam, hvala. A ti?",
-              "en": "Hi! I'm fine, thanks. And you?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Super! Vidimo se!",
-              "en": "Great! See you!"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Vidimo se! Bok!",
-              "en": "See you! Bye!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
+      {
+       "hr": "dobro",
+       "en": "good / fine",
+       "note": "Say it: DOH-broh."
+      },
+      {
+       "hr": "jutro",
+       "en": "morning",
+       "note": "Say it: YOO-troh. j = 'y', always."
+      },
+      {
+       "hr": "cipela",
+       "en": "shoe",
+       "note": "Say it: TSEE-peh-lah. c = 'ts', never 'k'."
+      },
+      {
+       "hr": "čovjek",
+       "en": "man / person",
+       "note": "Say it: CHOH-vyek."
+      },
+      {
+       "hr": "noć",
+       "en": "night",
+       "note": "Say it: nohch, soft ch."
+      },
+      {
+       "hr": "knjiga",
+       "en": "book",
+       "note": "Say it: KNYEE-gah. k + nj, pronounce both."
+      },
+      {
+       "hr": "ljeto",
+       "en": "summer",
+       "note": "Say it: LYEH-toh."
+      },
+      {
+       "hr": "džem",
+       "en": "jam",
+       "note": "Say it: jem, hard j."
+      },
+      {
+       "hr": "Hrvatska",
+       "en": "Croatia",
+       "note": "Say it: HUR-vaht-skah. The r acts as a vowel between consonants: Hr-vat-ska. Same in prst (finger) and trg (square)."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
     },
     {
-      "day": 3,
-      "week": 1,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "Introduce yourself",
-      "objective": "Say your name and nationality and ask the same.",
-      "paretoFocus": "'Ja sam… / Kako se zoveš?' opens any conversation. Maximum reuse for minimal effort.",
-      "resources": [],
-      "drills": [
-        "Build your intro: Ja sam… (name, nationality).",
-        "Learn Kako se zoveš? / Odakle si?",
-        "Say your intro aloud 5 times."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Give your full intro from memory.",
-          "Recall greetings.",
-          "Note 3 nationalities to re-test tomorrow."
-        ]
+     "type": "EXERCISE",
+     "title": "Alphabet practice",
+     "intro": "Recognize the sounds first, then spell words yourself. Type the diacritics (č, ć, š, ž, đ) they are part of the letter, not decoration.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which letter sounds like 'sh' in shoe?",
+       "difficulty": 1,
+       "options": [
+        "š",
+        "č",
+        "ž",
+        "s"
+       ],
+       "answer": "š",
+       "explanation": "š = 'sh' (škola = school). ž is 'zh', č is 'ch'."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "Introducing yourself",
-          "intro": "Two ways to give your name: Ja sam + name (I am...) or Zovem se + name (I'm called...). Both are equally common. Remember the informal/formal split from yesterday: zoveš/si to a friend, zovete/ste to a stranger.",
-          "items": [
-            {
-              "hr": "Ja sam Ana.",
-              "en": "I am Ana.",
-              "note": "The simplest intro: Ja sam + your name."
-            },
-            {
-              "hr": "Zovem se Ana.",
-              "en": "My name is Ana. (literally: I call myself Ana)"
-            },
-            {
-              "hr": "Kako se zoveš?",
-              "en": "What's your name? (informal)"
-            },
-            {
-              "hr": "Kako se zovete?",
-              "en": "What's your name? (formal)"
-            },
-            {
-              "hr": "Drago mi je.",
-              "en": "Nice to meet you. (literally: it is dear to me)",
-              "note": "Said while shaking hands. The standard reply is also Drago mi je."
-            },
-            {
-              "hr": "Odakle si?",
-              "en": "Where are you from? (informal)"
-            },
-            {
-              "hr": "Odakle ste?",
-              "en": "Where are you from? (formal)"
-            },
-            {
-              "hr": "Ja sam iz Amerike.",
-              "en": "I am from America.",
-              "note": "Learn 'iz Amerike' as a chunk, after iz the ending changes (Amerika → Amerike). You'll learn that pattern later; for now memorize the phrase."
-            },
-            {
-              "hr": "Ja sam Amerikanac.",
-              "en": "I am American. (man speaking)"
-            },
-            {
-              "hr": "Ja sam Amerikanka.",
-              "en": "I am American. (woman speaking)",
-              "note": "Nationalities have male/female pairs: Amerikanac/Amerikanka, Hrvat/Hrvatica."
-            },
-            {
-              "hr": "On je Hrvat. Ona je Hrvatica.",
-              "en": "He is Croatian. She is Croatian."
-            },
-            {
-              "hr": "A ti? / A vi?",
-              "en": "And you? (informal / formal)",
-              "note": "The easiest way to keep a conversation going: answer, then bounce it back."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "Introduction practice",
-          "intro": "First recognize the phrases, then produce your own intro. Use your real name where a name is needed, accepted answers use Ana as the model.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "What does 'Kako se zoveš?' mean?",
-              "difficulty": 1,
-              "options": [
-                "What's your name?",
-                "How are you?",
-                "Where are you from?",
-                "Nice to meet you"
-              ],
-              "answer": "What's your name?",
-              "explanation": "Kako se zoveš? = literally 'how do you call yourself?', the informal way to ask a name."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "You're introduced to your partner's grandmother. How do you ask HER name?",
-              "difficulty": 2,
-              "options": [
-                "Kako se zovete?",
-                "Kako se zoveš?",
-                "Kako si?",
-                "Odakle si?"
-              ],
-              "answer": "Kako se zovete?",
-              "explanation": "Older person you've just met → formal: Kako se zovete? The -te ending marks the polite vi form."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "A woman from Croatia says:",
-              "difficulty": 3,
-              "options": [
-                "Ja sam Hrvatica.",
-                "Ja sam Hrvat.",
-                "Ja sam Hrvatska.",
-                "Ja sam hrvatski."
-              ],
-              "answer": "Ja sam Hrvatica.",
-              "explanation": "Hrvatica = Croatian woman, Hrvat = Croatian man, Hrvatska = the country Croatia, hrvatski = the language."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Translate: 'Nice to meet you.'",
-              "difficulty": 4,
-              "answer": "Drago mi je.",
-              "accepted": [
-                "Drago mi je",
-                "drago mi je"
-              ],
-              "explanation": "Drago mi je, literally 'it is dear to me'. Say it while shaking hands.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Ask a new friend (informal): 'Where are you from?'",
-              "difficulty": 5,
-              "answer": "Odakle si?",
-              "accepted": [
-                "Odakle si",
-                "odakle si?"
-              ],
-              "explanation": "Odakle si? is informal; to a stranger you'd say Odakle ste?",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Say 'My name is Ana.' using zvati se.",
-              "difficulty": 6,
-              "answer": "Zovem se Ana.",
-              "accepted": [
-                "Zovem se Ana",
-                "zovem se Ana"
-              ],
-              "explanation": "Zovem se + name. The little word se always comes right after zovem here.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the question: 'What's your name?' (informal)",
-              "difficulty": 7,
-              "options": [
-                "Kako",
-                "se",
-                "zoveš?"
-              ],
-              "ordered": [
-                "Kako",
-                "se",
-                "zoveš?"
-              ],
-              "answer": "Kako se zoveš?",
-              "explanation": "Kako (how) + se zoveš (do you call yourself). The se sits in second position."
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the sentence: 'I am from America.'",
-              "difficulty": 8,
-              "options": [
-                "Ja",
-                "sam",
-                "iz",
-                "Amerike."
-              ],
-              "ordered": [
-                "Ja",
-                "sam",
-                "iz",
-                "Amerike."
-              ],
-              "answer": "Ja sam iz Amerike.",
-              "explanation": "Ja sam + iz Amerike (memorized chunk, Amerika changes to Amerike after iz)."
-            },
-            {
-              "type": "TRANSLATE",
-              "prompt": "Type the Croatian for: 'He is Croatian. She is Croatian.'",
-              "difficulty": 5,
-              "answer": "On je Hrvat. Ona je Hrvatica.",
-              "explanation": "'He is Croatian. She is Croatian.' is 'On je Hrvat. Ona je Hrvatica.'"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "Role-play: meeting someone new",
-          "intro": "Your partner plays Marko, a friend of the family you're meeting for the first time. Use your own name and nationality in place of Alex / iz Amerike. Repeat until it flows without reading.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Bok! Ja sam Marko.",
-              "en": "Hi! I am Marko."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Bok! Zovem se Alex. Drago mi je.",
-              "en": "Hi! My name is Alex. Nice to meet you."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Drago mi je. Odakle si, Alex?",
-              "en": "Nice to meet you. Where are you from, Alex?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Ja sam iz Amerike. A ti? Odakle si?",
-              "en": "I am from America. And you? Where are you from?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Ja sam iz Zagreba. Ja sam Hrvat.",
-              "en": "I am from Zagreb. I am Croatian."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Super! Učim hrvatski.",
-              "en": "Great! I'm learning Croatian."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Bravo! Vidimo se!",
-              "en": "Bravo! See you!"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Vidimo se! Bok!",
-              "en": "See you! Bye!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
+      {
+       "type": "MCQ",
+       "prompt": "Which letter sounds like 'ny' in canyon?",
+       "difficulty": 1,
+       "options": [
+        "nj",
+        "lj",
+        "đ",
+        "n"
+       ],
+       "answer": "nj",
+       "explanation": "nj = 'ny' (konj = horse). lj is 'ly' as in million."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "How is the letter c ALWAYS pronounced in Croatian?",
+       "difficulty": 2,
+       "options": [
+        "'ts' as in cats",
+        "'k' as in cat",
+        "'s' as in city",
+        "'ch' as in chat"
+       ],
+       "answer": "'ts' as in cats",
+       "explanation": "Croatian c is always 'ts': cipela = TSEE-peh-lah. For the 'ch' sounds Croatian uses č and ć."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "The word 'ljubav' (love) starts with which sound?",
+       "difficulty": 3,
+       "options": [
+        "'lli' as in million",
+        "'l' as in love",
+        "'y' as in yes",
+        "'j' as in jam"
+       ],
+       "answer": "'lli' as in million",
+       "explanation": "lj is ONE sound written with two letters, like the 'lli' in million."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the single letter that sounds like the 's' in 'pleasure'.",
+       "difficulty": 4,
+       "answer": "ž",
+       "explanation": "ž = 'zh' as in pleasure: žena (woman). Without the hook, z is a plain 'z'.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Spell the Croatian word for 'tea' (starts with the hard 'ch' letter).",
+       "difficulty": 5,
+       "answer": "čaj",
+       "explanation": "čaj, č for the hard 'ch', j for the 'y' glide at the end.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Spell the Croatian word for 'school' (you heard it as SHKOH-lah).",
+       "difficulty": 6,
+       "answer": "škola",
+       "explanation": "škola, the 'sh' sound is always written š. Spelling = sound, always.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Spell the Croatian word for 'house' (KOO-chah, with the SOFT ch).",
+       "difficulty": 7,
+       "answer": "kuća",
+       "explanation": "kuća takes ć, the soft ch. čaj takes č, the hard ch. Learning which word takes which comes with exposure, but the sound rule never changes.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Where does stress NEVER fall in a Croatian word?",
+       "difficulty": 8,
+       "options": [
+        "On the last syllable",
+        "On the first syllable",
+        "On the second syllable",
+        "There is no rule"
+       ],
+       "answer": "On the last syllable",
+       "explanation": "Stress never falls on the last syllable. In short words it is usually on the first: DObro, HVAla, ŠKOla."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
     },
     {
-      "day": 4,
-      "week": 1,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "biti (to be), present",
-      "objective": "Use the short and negative forms of 'to be'.",
-      "paretoFocus": "biti is the most common verb and the helper for the past tense later. The short forms (sam, si, je…) appear in nearly every sentence.",
-      "resources": [],
-      "drills": [
-        "Learn sam, si, je, smo, ste, su.",
-        "Learn the negatives: nisam, nisi, nije…",
-        "Make 5 sentences: Ja sam…, Ona je…, Mi smo…"
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Recite biti (short + negative).",
-          "Say 'She is not here'.",
-          "Review pronouns."
-        ]
+     "type": "DIALOGUE",
+     "title": "Pronunciation game with your partner",
+     "intro": "Read your lines aloud slowly. Your partner listens and corrects your č/ć, š/ž, lj/nj. Swap roles afterwards if you like.",
+     "lines": [
+      {
+       "speaker": "Me",
+       "hr": "Č, čaj. Ć, kuća.",
+       "en": "Č, tea. Ć, house."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "biti (to be): the short forms",
-          "intro": "biti is the most common Croatian verb and appears in nearly every sentence. In normal speech you use the SHORT forms: sam, si, je, smo, ste, su. One rule: a short form can never be the FIRST word of a sentence, say 'Ja sam Ana' or 'Ana sam', never 'Sam Ana'.",
-          "items": [
-            {
-              "hr": "ja sam",
-              "en": "I am",
-              "note": "Ja sam umoran. = I am tired. (man speaking; a woman says umorna)"
-            },
-            {
-              "hr": "ti si",
-              "en": "you are (informal)",
-              "note": "Ti si student. = You are a student."
-            },
-            {
-              "hr": "on / ona je",
-              "en": "he / she is",
-              "note": "Ona je učiteljica. = She is a teacher."
-            },
-            {
-              "hr": "mi smo",
-              "en": "we are",
-              "note": "Mi smo prijatelji. = We are friends."
-            },
-            {
-              "hr": "vi ste",
-              "en": "you are (plural/formal)",
-              "note": "Vi ste iz Zagreba? = You are from Zagreb?"
-            },
-            {
-              "hr": "oni / one su",
-              "en": "they are",
-              "note": "Oni su ovdje. = They are here."
-            },
-            {
-              "hr": "Student sam.",
-              "en": "I am a student. (pronoun dropped)",
-              "note": "With ja dropped, sam moves to second position, it can never stand first."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "LEARN",
-          "title": "biti: the negative forms",
-          "intro": "The negative of biti is a single word, ne + the form fuse together: nisam, nisi, nije... Unlike the short forms, negatives CAN start a sentence: Nisam umoran.",
-          "items": [
-            {
-              "hr": "nisam",
-              "en": "I am not",
-              "note": "Nisam iz Zagreba. = I'm not from Zagreb."
-            },
-            {
-              "hr": "nisi",
-              "en": "you are not (informal)"
-            },
-            {
-              "hr": "nije",
-              "en": "he/she/it is not",
-              "note": "Ona nije ovdje. = She is not here."
-            },
-            {
-              "hr": "nismo",
-              "en": "we are not"
-            },
-            {
-              "hr": "niste",
-              "en": "you are not (plural/formal)"
-            },
-            {
-              "hr": "nisu",
-              "en": "they are not",
-              "note": "Oni nisu studenti. = They are not students."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "biti practice",
-          "intro": "Fill in the right form of biti (positive and negative) then build full sentences.",
-          "questions": [
-            {
-              "type": "FILL",
-              "prompt": "Ja ___ student. (I am a student.)",
-              "difficulty": 1,
-              "answer": "sam",
-              "explanation": "ja → sam. The short form used in normal sentences.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Ti ___ moj prijatelj. (You are my friend.)",
-              "difficulty": 2,
-              "answer": "si",
-              "explanation": "ti → si.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Mi ___ iz Amerike. (We are from America.)",
-              "difficulty": 3,
-              "options": [
-                "smo",
-                "ste",
-                "su",
-                "sam"
-              ],
-              "answer": "smo",
-              "explanation": "mi → smo. (vi → ste, oni → su.)"
-            },
-            {
-              "type": "FILL",
-              "prompt": "Oni ___ ovdje. (They are here.)",
-              "difficulty": 3,
-              "answer": "su",
-              "explanation": "oni → su, the third-person plural short form.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Make it negative: 'Ja sam umoran' → 'Ja ___ umoran.' (I am NOT tired.)",
-              "difficulty": 4,
-              "answer": "nisam",
-              "explanation": "ne + sam fuse into one word: nisam.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Which sentence is correct?",
-              "difficulty": 5,
-              "options": [
-                "Ja sam student.",
-                "Sam student.",
-                "Sam ja student.",
-                "Student ja sam."
-              ],
-              "answer": "Ja sam student.",
-              "explanation": "The short form sam can never be the FIRST word. Ja sam student. and Student sam. are both fine; Sam student. is impossible."
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build: 'She is not here.'",
-              "difficulty": 6,
-              "options": [
-                "Ona",
-                "nije",
-                "ovdje."
-              ],
-              "ordered": [
-                "Ona",
-                "nije",
-                "ovdje."
-              ],
-              "answer": "Ona nije ovdje.",
-              "explanation": "ona → nije (negative of je). Negative forms are free to stand anywhere, even first: Nije ovdje."
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build: 'We are friends.'",
-              "difficulty": 7,
-              "options": [
-                "Mi",
-                "smo",
-                "prijatelji."
-              ],
-              "ordered": [
-                "Mi",
-                "smo",
-                "prijatelji."
-              ],
-              "answer": "Mi smo prijatelji.",
-              "explanation": "mi → smo; prijatelj takes the plural -i: prijatelji."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Translate the whole sentence: 'She is not here.'",
-              "difficulty": 8,
-              "answer": "Ona nije ovdje.",
-              "accepted": [
-                "Ona nije ovdje",
-                "Nije ovdje.",
-                "Nije ovdje"
-              ],
-              "explanation": "Ona nije ovdje. and because the ending shows the subject, Nije ovdje. alone is also perfectly natural.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "TRANSLATE",
-              "prompt": "Put this into Croatian: 'they are'",
-              "difficulty": 5,
-              "answer": "oni su",
-              "explanation": "'they are' is 'oni su' for a group with any man in it, 'one su' for an all-female group.",
-              "accepted": [
-                "one su",
-                "oni / one su"
-              ]
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "I am tired, and you? (Umoran sam, a ti?)",
-          "intro": "Two friends check in with each other using biti's short forms and their fused negatives, sam, si, je, smo, su, nisam.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Bok! Kako si?",
-              "en": "Hi! How are you?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Nisam dobro. Umoran sam.",
-              "en": "I'm not well. I'm tired."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Ja sam dobro, hvala.",
-              "en": "I'm fine, thanks."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Ti si učiteljica.",
-              "en": "You are a teacher."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Da, ja sam učiteljica. On je student.",
-              "en": "Yes, I am a teacher. He is a student."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Mi smo prijatelji.",
-              "en": "We are friends."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Da! Oni su ovdje.",
-              "en": "Yes! They are here."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Super! Vidimo se!",
-              "en": "Great! See you!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
-    },
-    {
-      "day": 5,
-      "week": 1,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "Numbers 0-20",
-      "objective": "Count to twenty and use the numbers in prices and times.",
-      "paretoFocus": "Weekly consolidation locks in gains; numbers are pure daily utility for prices, time and quantities.",
-      "resources": [
-        "Words tab (built-in daily flashcards)"
-      ],
-      "drills": [
-        "Count 0-20 aloud twice.",
-        "Clear your due words in the Words tab.",
-        "Free-talk 2 minutes about yourself."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Self-introduce + describe yourself with biti.",
-          "Count 0-20 without looking.",
-          "Recall greetings & politeness."
-        ]
+      {
+       "speaker": "Partner",
+       "hr": "Odlično! Sada š i ž.",
+       "en": "Excellent! Now š and ž."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "Numbers 0-10",
-          "intro": "Numbers are pure daily utility, prices, times, quantities. Read each one aloud twice. Every letter is pronounced exactly as you learned on lesson 1.",
-          "items": [
-            {
-              "hr": "nula",
-              "en": "0, zero"
-            },
-            {
-              "hr": "jedan",
-              "en": "1, one"
-            },
-            {
-              "hr": "dva",
-              "en": "2, two"
-            },
-            {
-              "hr": "tri",
-              "en": "3, three"
-            },
-            {
-              "hr": "četiri",
-              "en": "4, four",
-              "note": "Starts with č, CHEH-tee-ree."
-            },
-            {
-              "hr": "pet",
-              "en": "5, five"
-            },
-            {
-              "hr": "šest",
-              "en": "6, six",
-              "note": "š = 'sh': shest."
-            },
-            {
-              "hr": "sedam",
-              "en": "7, seven"
-            },
-            {
-              "hr": "osam",
-              "en": "8, eight"
-            },
-            {
-              "hr": "devet",
-              "en": "9, nine"
-            },
-            {
-              "hr": "deset",
-              "en": "10, ten"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "LEARN",
-          "title": "Numbers 11-20",
-          "intro": "11-19 follow one pattern: a squeezed form of the digit + -naest (jedan → jedanaest). Spot the digit inside each teen and you've learned them all at once.",
-          "items": [
-            {
-              "hr": "jedanaest",
-              "en": "11, eleven",
-              "note": "jedan squeezed together with naest."
-            },
-            {
-              "hr": "dvanaest",
-              "en": "12, twelve",
-              "note": "dva with naest."
-            },
-            {
-              "hr": "trinaest",
-              "en": "13, thirteen"
-            },
-            {
-              "hr": "četrnaest",
-              "en": "14, fourteen",
-              "note": "četiri squeezes to četr-."
-            },
-            {
-              "hr": "petnaest",
-              "en": "15, fifteen"
-            },
-            {
-              "hr": "šesnaest",
-              "en": "16, sixteen",
-              "note": "šest drops its t: šes-naest."
-            },
-            {
-              "hr": "sedamnaest",
-              "en": "17, seventeen"
-            },
-            {
-              "hr": "osamnaest",
-              "en": "18, eighteen"
-            },
-            {
-              "hr": "devetnaest",
-              "en": "19, nineteen"
-            },
-            {
-              "hr": "dvadeset",
-              "en": "20, twenty",
-              "note": "dva with deset, literally two tens. The tens all work this way: trideset 30, četrdeset 40..."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "Numbers + week 1 review",
-          "intro": "Numbers first, then a sweep back through the whole week: greetings, introductions, genders, biti.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "What number is 'osam'?",
-              "difficulty": 1,
-              "options": [
-                "8",
-                "7",
-                "6",
-                "18"
-              ],
-              "answer": "8",
-              "explanation": "osam = 8. (sedam = 7, osamnaest = 18.)"
-            },
-            {
-              "type": "FILL",
-              "prompt": "Write the number 5 in Croatian.",
-              "difficulty": 2,
-              "answer": "pet",
-              "accepted": [
-                "Pet"
-              ],
-              "explanation": "pet = 5. petnaest = 15.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Which is 17?",
-              "difficulty": 3,
-              "options": [
-                "sedamnaest",
-                "sedam",
-                "sedamdeset",
-                "šesnaest"
-              ],
-              "answer": "sedamnaest",
-              "explanation": "sedam (7) + naest = sedamnaest (17). sedamdeset is 70."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Write the number 14 in Croatian.",
-              "difficulty": 4,
-              "answer": "četrnaest",
-              "accepted": [
-                "Četrnaest"
-              ],
-              "explanation": "četiri squeezes to četr- before -naest: četrnaest. Don't forget the č.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "FILL",
-              "prompt": "Write the number 20 in Croatian.",
-              "difficulty": 5,
-              "answer": "dvadeset",
-              "accepted": [
-                "Dvadeset"
-              ],
-              "explanation": "dva + deset = 'two tens' = dvadeset.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "MCQ",
-              "prompt": "REVIEW: You meet your partner's boss for the first time at 2 p.m. You say:",
-              "difficulty": 5,
-              "options": [
-                "Dobar dan! Drago mi je.",
-                "Bok! Kako si?",
-                "Laku noć!",
-                "Vidimo se!"
-              ],
-              "answer": "Dobar dan! Drago mi je.",
-              "explanation": "Formal situation, daytime → Dobar dan, plus Drago mi je when being introduced. Bok and ti-forms are for friends."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "REVIEW: What gender is 'selo' (village)?",
-              "difficulty": 6,
-              "options": [
-                "neuter",
-                "feminine",
-                "masculine",
-                "feminine, like 'škola'"
-              ],
-              "answer": "neuter",
-              "explanation": "Ends in -o → neuter, like mlijeko and jutro."
-            },
-            {
-              "type": "FILL",
-              "prompt": "REVIEW: Vi ___ iz Hrvatske? (You are from Croatia? formal)",
-              "difficulty": 7,
-              "answer": "ste",
-              "explanation": "vi → ste. The whole biti row: sam, si, je, smo, ste, su.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "REORDER",
-              "prompt": "REVIEW: Build your one-line introduction: 'Good day, I am Ana.'",
-              "difficulty": 8,
-              "options": [
-                "Dobar",
-                "dan,",
-                "ja",
-                "sam",
-                "Ana."
-              ],
-              "ordered": [
-                "Dobar",
-                "dan,",
-                "ja",
-                "sam",
-                "Ana."
-              ],
-              "answer": "Dobar dan, ja sam Ana.",
-              "explanation": "Greeting + Ja sam + name: everything from lessons 2 and 3 in one breath."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "Free talk: about yourself, plus a numbers game",
-          "intro": "The week 1 victory lap. Act it out with your partner, use your own name and nationality. In the numbers round, your partner can invent new sums; answer in Croatian.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Bok! Kako si?",
-              "en": "Hi! How are you?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Dobro sam, hvala. A ti?",
-              "en": "I'm fine, thanks. And you?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Super! Tko si ti? Reci mi!",
-              "en": "Great! Who are you? Tell me!"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Ja sam Alex. Amerikanac sam i učim hrvatski.",
-              "en": "I am Alex. I'm American and I'm learning Croatian. (woman: Amerikanka sam)"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Bravo! Sada brojevi. Koliko je dva plus tri?",
-              "en": "Bravo! Now numbers. How much is two plus three?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Pet!",
-              "en": "Five!"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "A deset plus deset?",
-              "en": "And ten plus ten?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Dvadeset!",
-              "en": "Twenty!"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Savršeno! Laku noć!",
-              "en": "Perfect! Good night!"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Laku noć! Vidimo se sutra!",
-              "en": "Good night! See you tomorrow!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
-    },
-    {
-      "day": 6,
-      "week": 1,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "Negation & yes/no questions",
-      "objective": "Make sentences negative and ask yes/no questions with 'li'.",
-      "paretoFocus": "Negation (ne + verb) and the 'li' question double your range and let you start real exchanges.",
-      "resources": [],
-      "drills": [
-        "Negate 5 sentences with 'ne'.",
-        "Form 'Govoriš li engleski?'-style questions.",
-        "Turn three statements into questions using the 'verb + li' pattern."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Ask 'Do you speak English?'",
-          "Say 'I don't understand' (Ne razumijem).",
-          "Review accusative."
-        ]
+      {
+       "speaker": "Me",
+       "hr": "Š, škola. Ž, žena.",
+       "en": "Š, school. Ž, woman."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "Saying no and asking yes/no questions",
-          "intro": "Negation is beautifully simple: put 'ne' directly before the verb. imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.) For yes/no questions, put 'li' right after the verb: Govoriš li engleski? Master these patterns and your range doubles.",
-          "items": [
-            {
-              "hr": "Ne govorim.",
-              "en": "I don't speak.",
-              "note": "ne + verb, always directly before the verb."
-            },
-            {
-              "hr": "Ne razumijem.",
-              "en": "I don't understand.",
-              "note": "Your most useful survival sentence."
-            },
-            {
-              "hr": "Ne radim danas.",
-              "en": "I'm not working today.",
-              "note": ""
-            },
-            {
-              "hr": "Ne pijem pivo.",
-              "en": "I don't drink beer.",
-              "note": "ne + verb + accusative object."
-            },
-            {
-              "hr": "Nemam auto.",
-              "en": "I don't have a car.",
-              "note": "imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.)"
-            },
-            {
-              "hr": "Nisam umoran.",
-              "en": "I am not tired. (male speaker)",
-              "note": "biti also has fused negatives: nisam, nisi, nije… (lesson 6 review)"
-            },
-            {
-              "hr": "Govoriš li engleski?",
-              "en": "Do you speak English?",
-              "note": "Yes/no question: verb + li + rest."
-            },
-            {
-              "hr": "Radiš li danas?",
-              "en": "Are you working today?",
-              "note": ""
-            },
-            {
-              "hr": "Pijete li kavu?",
-              "en": "Do you (formal) drink coffee?",
-              "note": "vi-form for strangers and groups."
-            },
-            {
-              "hr": "Razumiješ li?",
-              "en": "Do you understand?",
-              "note": ""
-            },
-            {
-              "hr": "Je li ovo tvoj mobitel?",
-              "en": "Is this your phone?",
-              "note": "Standard Croatian yes/no questions use 'verb + li' or 'je li'. The 'da li' form is Serbian and avoided in the Croatian standard."
-            },
-            {
-              "hr": "Ne, ne govorim.",
-              "en": "No, I don't speak.",
-              "note": "Answering negatively doubles the ne: 'Ne,' (no) + 'ne govorim' (I don't speak)."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "Negate it, question it",
-          "intro": "Practise 'ne' + verb, the fused 'nemam', and building li-questions.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "Make it negative: 'Govorim engleski.'",
-              "difficulty": 2,
-              "options": [
-                "Ne govorim engleski.",
-                "Negovorim engleski.",
-                "Govorim ne engleski.",
-                "Ni govorim engleski."
-              ],
-              "answer": "Ne govorim engleski.",
-              "explanation": "ne stands directly before the verb, as a separate word."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Say 'I don't understand.'",
-              "difficulty": 2,
-              "answer": "Ne razumijem",
-              "accepted": [
-                "Ne razumijem",
-                "Ne razumijem.",
-                "ne razumijem",
-                "Ja ne razumijem"
-              ],
-              "strictDiacritics": true,
-              "explanation": "ne + razumijem. The single most useful phrase for a learner."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "What is the negative of 'imam' (I have)?",
-              "difficulty": 3,
-              "options": [
-                "ne imam",
-                "nemam",
-                "nisam",
-                "neimam"
-              ],
-              "answer": "nemam",
-              "explanation": "imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.)"
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the question: 'Do you speak English?'",
-              "difficulty": 3,
-              "options": [
-                "li",
-                "engleski",
-                "Govoriš"
-              ],
-              "ordered": [
-                "Govoriš",
-                "li",
-                "engleski"
-              ],
-              "answer": "Govoriš li engleski",
-              "explanation": "Yes/no question = verb first, then li, then the rest."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Where does 'li' go in a yes/no question?",
-              "difficulty": 3,
-              "options": [
-                "Li govoriš hrvatski?",
-                "Govoriš li hrvatski?",
-                "Govoriš hrvatski li?",
-                "Da li govoriš hrvatski?"
-              ],
-              "answer": "Govoriš li hrvatski?",
-              "explanation": "li always comes immediately after the verb, never first, never last."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Ask a friend 'Do you drink coffee?' (piti, informal)",
-              "difficulty": 4,
-              "answer": "Piješ li kavu?",
-              "accepted": [
-                "Piješ li kavu?",
-                "Piješ li kavu",
-                "piješ li kavu"
-              ],
-              "strictDiacritics": true,
-              "explanation": "piješ (you drink) + li + kavu (accusative object)."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Which is the standard Croatian yes/no question?",
-              "difficulty": 4,
-              "options": [
-                "Govoriš li engleski?",
-                "Da li govoriš engleski?",
-                "Ti govoriš engleski.",
-                "Govoriš engleski ne?"
-              ],
-              "answer": "Govoriš li engleski?",
-              "explanation": "Standard Croatian forms yes/no questions with 'verb + li' (Govoriš li...?) or 'je li'. The 'da li' form is Serbian and is avoided in the Croatian standard."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Answer 'Radiš li danas?' with NO:",
-              "difficulty": 4,
-              "options": [
-                "Ne, ne radim.",
-                "Ne, radim.",
-                "Da, ne radim.",
-                "Ne radim, da."
-              ],
-              "answer": "Ne, ne radim.",
-              "explanation": "First 'Ne,' answers the question; then 'ne radim' negates the verb. Croatian happily doubles the ne."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Listen, then type the missing word: 'Je li ovo tvoj ___?'",
-              "difficulty": 3,
-              "answer": "mobitel",
-              "accepted": [
-                "mobitel"
-              ],
-              "explanation": "The audio says 'Je li ovo tvoj mobitel?', which means 'Is this your phone?'",
-              "audioText": "Je li ovo tvoj mobitel?"
-            },
-            {
-              "type": "TRANSLATE",
-              "prompt": "Write it in Croatian: 'No, I don't speak.'",
-              "difficulty": 4,
-              "answer": "Ne, ne govorim.",
-              "explanation": "'No, I don't speak.' is 'Ne, ne govorim.'"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "Do you understand? (Razumiješ li?)",
-          "intro": "A quick check-in built entirely from li-questions and their negative answers.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Govoriš li engleski?",
-              "en": "Do you speak English?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Ne, ne govorim. Govorim hrvatski.",
-              "en": "No, I don't. I speak Croatian."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Razumiješ li?",
-              "en": "Do you understand?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Ne razumijem.",
-              "en": "I don't understand."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Radiš li danas?",
-              "en": "Are you working today?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Ne radim danas.",
-              "en": "I'm not working today."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Je li ovo tvoj mobitel?",
-              "en": "Is this your phone?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Da, ovo je moj mobitel.",
-              "en": "Yes, this is my phone."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
-    },
-    {
-      "day": 7,
-      "week": 1,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "Question words",
-      "objective": "Use tko, što, gdje, kada, zašto, kako, koliko.",
-      "paretoFocus": "Seven question words open every information-seeking sentence.",
-      "resources": [],
-      "drills": [
-        "Learn all 7 question words.",
-        "Ask: Gdje…? Kada…? Koliko…?",
-        "Build 7 questions, one per word."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Recall all 7 question words.",
-          "Ask 'Where is the station?' (Gdje je kolodvor?)",
-          "Review li-questions."
-        ]
+      {
+       "speaker": "Partner",
+       "hr": "Super! Sada lj i nj.",
+       "en": "Great! Now lj and nj."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "The seven question words (+ two bonus ones)",
-          "intro": "Seven little words open every information question in Croatian: tko and što ask about people and things, gdje and kada pin down place and time, zašto asks for reasons, kako for manner, and koliko for amount. Learn each one inside a real question you will actually ask.",
-          "items": [
-            {
-              "hr": "tko",
-              "en": "who",
-              "note": "Tko je to? Who is that?"
-            },
-            {
-              "hr": "što",
-              "en": "what",
-              "note": "Što radiš? What are you doing?"
-            },
-            {
-              "hr": "gdje",
-              "en": "where",
-              "note": "Gdje je kolodvor? Where is the station?"
-            },
-            {
-              "hr": "kada",
-              "en": "when",
-              "note": "Kada radiš? When do you work? (also shortened: kad)"
-            },
-            {
-              "hr": "zašto",
-              "en": "why",
-              "note": "Zašto učiš hrvatski? Why are you learning Croatian?"
-            },
-            {
-              "hr": "kako",
-              "en": "how",
-              "note": "Kako si? How are you?"
-            },
-            {
-              "hr": "koliko",
-              "en": "how much / how many",
-              "note": "Koliko košta? How much does it cost?"
-            },
-            {
-              "hr": "odakle",
-              "en": "from where",
-              "note": "Bonus: Odakle si? Where are you from?"
-            },
-            {
-              "hr": "Kako se zoveš?",
-              "en": "What is your name? (literally: how do you call yourself)",
-              "note": "Croatian asks 'how', not 'what', for names."
-            },
-            {
-              "hr": "Gdje je WC, molim vas?",
-              "en": "Where is the toilet, please?",
-              "note": "Survival question number one when travelling."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "Ask the right question",
-          "intro": "Match each situation to the right question word and build full questions.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "Which word means 'where'?",
-              "difficulty": 1,
-              "options": [
-                "gdje",
-                "kada",
-                "zašto",
-                "tko"
-              ],
-              "answer": "gdje",
-              "explanation": "gdje = where. Gdje je kolodvor? Where is the station?"
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Complete: ___ košta kava? (How much does the coffee cost?)",
-              "difficulty": 2,
-              "options": [
-                "Koliko",
-                "Kako",
-                "Kada",
-                "Gdje"
-              ],
-              "answer": "Koliko",
-              "explanation": "koliko = how much/how many. Don't mix it up with kako (how)."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Complete: ___ se zoveš? (What's your name?)",
-              "difficulty": 2,
-              "answer": "Kako",
-              "accepted": [
-                "Kako",
-                "kako"
-              ],
-              "strictDiacritics": true,
-              "explanation": "Croatian literally asks 'HOW do you call yourself': Kako se zoveš?"
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Complete: ___ je to? To je Marko. (…is that? That's Marko.)",
-              "difficulty": 3,
-              "options": [
-                "Tko",
-                "Što",
-                "Gdje",
-                "Koliko"
-              ],
-              "answer": "Tko",
-              "explanation": "The answer is a person, so the question word is tko (who). For things you would use što (what)."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Ask 'Where is the station?': ___ je kolodvor?",
-              "difficulty": 3,
-              "answer": "Gdje",
-              "accepted": [
-                "Gdje",
-                "gdje"
-              ],
-              "strictDiacritics": true,
-              "explanation": "gdje = where. Gdje je kolodvor?"
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Which word means 'why'?",
-              "difficulty": 2,
-              "options": [
-                "zašto",
-                "zato",
-                "kako",
-                "kada"
-              ],
-              "answer": "zašto",
-              "explanation": "zašto = why. Careful: zato = 'that's why / because of that', the answer, not the question!"
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the question: 'How much does the beer cost?'",
-              "difficulty": 3,
-              "options": [
-                "pivo",
-                "Koliko",
-                "košta"
-              ],
-              "ordered": [
-                "Koliko",
-                "košta",
-                "pivo"
-              ],
-              "answer": "Koliko košta pivo",
-              "explanation": "Question word first: Koliko košta pivo?"
-            },
-            {
-              "type": "MCQ",
-              "prompt": "What does 'Što radiš?' mean?",
-              "difficulty": 3,
-              "options": [
-                "What are you doing?",
-                "Where are you working?",
-                "Why are you working?",
-                "Who are you?"
-              ],
-              "answer": "What are you doing?",
-              "explanation": "što = what, radiš = you do/are doing. A very common conversation opener."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Listen and fill in the word you hear: 'Gdje je WC, ___ vas?'",
-              "difficulty": 2,
-              "answer": "molim",
-              "accepted": [
-                "molim"
-              ],
-              "explanation": "The audio says 'Gdje je WC, molim vas?', which means 'Where is the toilet, please?'",
-              "audioText": "Gdje je WC, molim vas?"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "Seven questions (Sedam pitanja)",
-          "intro": "Two friends catch up using several of the new question words, gdje, zašto and koliko all get a real answer.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Bok! Kako si?",
-              "en": "Hi! How are you?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Dobro sam, hvala. Odakle si?",
-              "en": "I'm fine, thanks. Where are you from?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Ja sam iz Zagreba. Zašto učiš hrvatski?",
-              "en": "I am from Zagreb. Why are you learning Croatian?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Volim Hrvatsku! Gdje je kolodvor?",
-              "en": "I love Croatia! Where is the station?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Kolodvor je ovdje.",
-              "en": "The station is here."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Hvala! Koliko košta kava?",
-              "en": "Thanks! How much does the coffee cost?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Kava košta pet.",
-              "en": "The coffee costs five."
-            },
-            {
-              "speaker": "Me",
-              "hr": "Super, hvala! Doviđenja!",
-              "en": "Great, thanks! Goodbye!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
-    },
-    {
-      "title": "This, that, and that over there",
-      "objective": "Point at things near and far and ask what they are using ovo, to and ono.",
-      "paretoFocus": "Pointing words let you shop, ask and identify anything before you know its name, so they multiply every noun you learn.",
-      "drills": [
-        "Point at five objects around you and say Ovo je... for each one.",
-        "Ask Što je ovo? about something close and Što je ono? about something far away.",
-        "Ask one yes/no question with Je li to...? about an object in the room."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Say 'This is my book' and 'That over there is our house'.",
-          "Ask 'What is this?' in Croatian.",
-          "Ask 'Is that your bag?' as a yes/no question."
-        ]
+      {
+       "speaker": "Me",
+       "hr": "Lj, ljubav. Nj, konj.",
+       "en": "Lj, love. Nj, horse."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "Pointing at things: ovo, to, ono",
-          "intro": "Croatian has three pointing words for three distances: ovo for something near me, to for something near you, and ono for something far from both of us. With Što je...? you can ask what anything is.",
-          "items": [
-            {
-              "hr": "Što je ovo?",
-              "en": "What is this?",
-              "note": "ovo = this, near me"
-            },
-            {
-              "hr": "Ovo je moja knjiga.",
-              "en": "This is my book."
-            },
-            {
-              "hr": "To je tvoj mobitel.",
-              "en": "That is your mobile phone.",
-              "note": "to = that, near you"
-            },
-            {
-              "hr": "Ono je naša kuća.",
-              "en": "That over there is our house.",
-              "note": "ono = that, far from both of us"
-            },
-            {
-              "hr": "Je li to tvoja torba?",
-              "en": "Is that your bag?",
-              "note": "yes/no question: Je li...?"
-            },
-            {
-              "hr": "Tko je ovo?",
-              "en": "Who is this?",
-              "note": "For people ask tko, not što."
-            },
-            {
-              "hr": "Ovo je moj prijatelj.",
-              "en": "This is my friend.",
-              "note": "How you introduce someone standing next to you: ovo, never on."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "Point and say (Pokaži i reci)",
-          "intro": "Choose the right pointing word for each distance and build simple questions about objects.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "You are pointing at a building far away from both of you. Complete: ___ je hotel.",
-              "difficulty": 2,
-              "options": [
-                "Ono",
-                "Ovo",
-                "Tko",
-                "Gdje"
-              ],
-              "answer": "Ono",
-              "explanation": "ono points at something far from both speakers; ovo is only for things near you, the speaker."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Ask what the object in your hand is: ___ je ovo?",
-              "difficulty": 2,
-              "answer": "Što",
-              "accepted": [
-                "Što",
-                "što"
-              ],
-              "explanation": "Što je ovo? is the basic question for identifying things. Što means what.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Choose the correct yes/no question for 'Is this a museum?'",
-              "difficulty": 3,
-              "options": [
-                "Je li ovo muzej?",
-                "Da li ovo muzej?",
-                "Ovo je muzej.",
-                "Ovo muzej je?"
-              ],
-              "answer": "Je li ovo muzej?",
-              "explanation": "Standard Croatian yes/no questions use Je li...? A question opening with 'da li' is not standard Croatian (that pattern is Serbian), and it's also missing the verb je."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Your friend is holding a jacket. Complete: ___ je tvoja jakna. (that, near the listener)",
-              "difficulty": 3,
-              "answer": "To",
-              "accepted": [
-                "To",
-                "to"
-              ],
-              "explanation": "For something near the person you are speaking with, Croatian uses to.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the Croatian for: 'This is my house.'",
-              "difficulty": 3,
-              "options": [
-                "je",
-                "Ovo",
-                "kuća",
-                "moja"
-              ],
-              "ordered": [
-                "Ovo",
-                "je",
-                "moja",
-                "kuća"
-              ],
-              "answer": "Ovo je moja kuća",
-              "explanation": "Ovo starts the sentence, then the verb je, then moja kuća with the possessive before the noun."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Listen closely and fill the gap: 'Ovo je moja ___.'",
-              "difficulty": 3,
-              "answer": "knjiga",
-              "accepted": [
-                "knjiga"
-              ],
-              "explanation": "The audio says 'Ovo je moja knjiga.', which means 'This is my book.'",
-              "audioText": "Ovo je moja knjiga."
-            },
-            {
-              "type": "TRANSLATE",
-              "prompt": "Type the Croatian for: 'Is that your bag?'",
-              "difficulty": 4,
-              "answer": "Je li to tvoja torba?",
-              "explanation": "'Is that your bag?' is 'Je li to tvoja torba?'"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "In the new flat (U novom stanu)",
-          "intro": "Play 'Me'. You are showing a friend around your new apartment and pointing at things with ovo, to and ono.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Što je ovo?",
-              "en": "What is this?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "To je moj radni stol.",
-              "en": "That is my desk."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "A ono? Je li ono tvoja soba?",
-              "en": "And that over there? Is that your room?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Da, ono je moja soba.",
-              "en": "Yes, that over there is my room."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Ovo je lijepa slika!",
-              "en": "This is a beautiful picture!"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Hvala! To je poklon od bake.",
-              "en": "Thank you! It is a present from my grandma."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ],
-      "day": 8,
-      "week": 2,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "resources": [
-        "Conversation practice (partner or tutor)",
-        "Words tab (built-in daily flashcards)"
-      ]
-    },
-    {
-      "title": "Big numbers: sto, tisuća, milijun",
-      "objective": "Understand and say prices and other amounts above one hundred with sto, tisuća and milijun.",
-      "paretoFocus": "Rents, salaries and prices all live above one hundred; without these three words you cannot handle money in Croatia.",
-      "drills": [
-        "Count aloud by hundreds: sto, dvjesto, tristo... up to devetsto.",
-        "Say three realistic prices in euros, for a coffee, a phone and a holiday.",
-        "Say how many people live in a big city, using milijun."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Say the Croatian words for one hundred, one thousand and one million.",
-          "Say 'It costs two hundred euros'.",
-          "Ask 'How much does it cost?'"
-        ]
+      {
+       "speaker": "Partner",
+       "hr": "Bravo! Još jednom, molim.",
+       "en": "Bravo! One more time, please."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "Hundreds, thousands, millions",
-          "intro": "Croatian builds hundreds by stacking sto: dvjesto, tristo, četiristo. A thousand is tisuća and a million is milijun; after a verb like košta you will hear the form tisuću.",
-          "items": [
-            {
-              "hr": "sto",
-              "en": "one hundred",
-              "note": "Sto eura. A hundred euros."
-            },
-            {
-              "hr": "dvjesto",
-              "en": "two hundred",
-              "note": "Hundreds are written as one word: dvjesto, tristo, četiristo, petsto..."
-            },
-            {
-              "hr": "tristo",
-              "en": "three hundred",
-              "note": "tri and sto, run together."
-            },
-            {
-              "hr": "petsto",
-              "en": "five hundred",
-              "note": "pet and sto, run together."
-            },
-            {
-              "hr": "tisuća",
-              "en": "a thousand",
-              "note": "To košta tisuću eura. It costs a thousand euros."
-            },
-            {
-              "hr": "milijun",
-              "en": "a million",
-              "note": "milijun ljudi = a million people"
-            },
-            {
-              "hr": "Koliko košta?",
-              "en": "How much does it cost?",
-              "note": "Answer: Košta sto pedeset eura."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "How much does it cost? (Koliko košta?)",
-          "intro": "Practise the words for hundreds, thousands and millions in real prices.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "Choose the standard Croatian word for 'a thousand'.",
-              "difficulty": 2,
-              "options": [
-                "tisuća",
-                "hiljada",
-                "tisuću",
-                "tisuće"
-              ],
-              "answer": "tisuća",
-              "explanation": "hiljada is the Serbian word for a thousand; standard Croatian uses tisuća. tisuću and tisuće are real forms of tisuća, but not its basic form."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Write the number 100 as a Croatian word.",
-              "difficulty": 2,
-              "answer": "sto",
-              "accepted": [
-                "sto",
-                "Sto"
-              ],
-              "explanation": "100 = sto. It combines into dvjesto, tristo and so on.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Complete: U zagrebačkoj regiji živi oko ___ ljudi. (a million)",
-              "difficulty": 3,
-              "options": [
-                "milijun",
-                "milion",
-                "milijuna",
-                "milijuni"
-              ],
-              "answer": "milijun",
-              "explanation": "Standard Croatian is milijun, with j; the spelling without it is not standard Croatian. milijuna would follow a number like dva."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Complete the price of the trip: Putovanje košta dvije ___ eura. (thousand)",
-              "difficulty": 3,
-              "answer": "tisuće",
-              "accepted": [
-                "tisuće"
-              ],
-              "explanation": "After dvije, the noun tisuća takes the form tisuće: dvije tisuće eura.",
-              "strictDiacritics": true
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the Croatian for: 'It costs a hundred and fifty euros.'",
-              "difficulty": 3,
-              "options": [
-                "eura",
-                "To",
-                "pedeset",
-                "košta",
-                "sto"
-              ],
-              "ordered": [
-                "To",
-                "košta",
-                "sto",
-                "pedeset",
-                "eura"
-              ],
-              "answer": "To košta sto pedeset eura",
-              "explanation": "To košta + the number: sto pedeset, then eura for the currency."
-            },
-            {
-              "type": "TRANSLATE",
-              "prompt": "Write it in Croatian: 'two hundred, three hundred, five hundred'",
-              "difficulty": 4,
-              "answer": "dvjesto, tristo, petsto",
-              "explanation": "'two hundred, three hundred, five hundred' is 'dvjesto, tristo, petsto'"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "In the electronics shop (U trgovini tehnike)",
-          "intro": "Play 'Me'. You are asking about prices in an electronics shop, using numbers above one hundred.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Dobar dan! Trebate li pomoć?",
-              "en": "Good afternoon! Do you need help?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Da. Koliko košta ovaj mobitel?",
-              "en": "Yes. How much does this mobile phone cost?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Dvjesto pedeset eura.",
-              "en": "Two hundred and fifty euros."
-            },
-            {
-              "speaker": "Me",
-              "hr": "A koliko košta ono računalo?",
-              "en": "And how much does that computer over there cost?"
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Tisuću sto eura.",
-              "en": "One thousand one hundred euros."
-            },
-            {
-              "speaker": "Me",
-              "hr": "To je puno novca. Hvala lijepa!",
-              "en": "That is a lot of money. Thank you very much!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ],
-      "day": 9,
-      "week": 2,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "resources": [
-        "Conversation practice (partner or tutor)",
-        "Words tab (built-in daily flashcards)"
-      ]
-    },
-    {
-      "day": 10,
-      "week": 2,
-      "phase": "Phase 1: A0 → A1",
-      "level": "A0",
-      "title": "A0 milestone check",
-      "objective": "Prove you can read Croatian aloud, greet, introduce yourself, count and ask a simple question.",
-      "paretoFocus": "Milestone checks turn scattered knowledge into real capability and reveal exactly what to review.",
-      "resources": [],
-      "drills": [
-        "Take the A0 quiz in the app.",
-        "Read a short paragraph aloud cold.",
-        "Do a 3-minute self-introduction."
-      ],
-      "reviewBlock": {
-        "minutes": 15,
-        "items": [
-          "Complete the A0 Feynman: 'The Croatian alphabet'.",
-          "Re-test weak vocabulary.",
-          "Celebrate, you've reached A0!"
-        ]
+      {
+       "speaker": "Me",
+       "hr": "Čaj, kuća, škola, žena, ljubav, konj.",
+       "en": "Tea, house, school, woman, love, horse."
       },
-      "activities": [
-        {
-          "type": "LEARN",
-          "title": "Your A0 toolkit, everything in one place",
-          "intro": "Milestone day! These ten lines pack together everything from lessons 1-13: greetings, introducing yourself, biti, verbs, the accusative, negation and questions. If you can produce all ten from memory, you have reached A0.",
-          "items": [
-            {
-              "hr": "Dobar dan! Ja sam Alex.",
-              "en": "Good day! I am Alex.",
-              "note": "Greeting + biti (lesson 2 + 6)."
-            },
-            {
-              "hr": "Zovem se Alex. Drago mi je.",
-              "en": "My name is Alex. Nice to meet you.",
-              "note": "The polite full introduction (lesson 3)."
-            },
-            {
-              "hr": "Odakle si? Ja sam iz Amerike.",
-              "en": "Where are you from? I am from America.",
-              "note": "'iz + place' = from. Fixed phrase for now."
-            },
-            {
-              "hr": "Govorim malo hrvatski.",
-              "en": "I speak a little Croatian.",
-              "note": "Present tense endings (lesson 8)."
-            },
-            {
-              "hr": "Oprostite, ne razumijem.",
-              "en": "Sorry, I don't understand.",
-              "note": "Politeness + negation (lesson 12)."
-            },
-            {
-              "hr": "Molim?",
-              "en": "Pardon? / Sorry, say that again?",
-              "note": "One magic word when you miss something."
-            },
-            {
-              "hr": "Koliko košta? Deset eura.",
-              "en": "How much does it cost? Ten euros.",
-              "note": "Question word + numbers (lessons 7 + 13)."
-            },
-            {
-              "hr": "Pijem kavu, a on pije pivo.",
-              "en": "I drink coffee, and he drinks beer.",
-              "note": "Nominative subject + accusative object in action (lessons 10-11)."
-            },
-            {
-              "hr": "Govoriš li hrvatski?",
-              "en": "Do you speak Croatian?",
-              "note": "li-question (lesson 12)."
-            },
-            {
-              "hr": "Hvala i doviđenja!",
-              "en": "Thanks and goodbye!",
-              "note": "Closing any interaction politely (lesson 2)."
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "EXERCISE",
-          "title": "A0 milestone quiz",
-          "intro": "A mixed check across everything so far: greetings, biti, genders, verbs, accusative, negation and questions. Aim for at least 8 out of 10.",
-          "questions": [
-            {
-              "type": "MCQ",
-              "prompt": "How do you say 'thank you'?",
-              "difficulty": 1,
-              "options": [
-                "hvala",
-                "molim",
-                "oprostite",
-                "izvolite"
-              ],
-              "answer": "hvala",
-              "explanation": "hvala = thanks; molim = please / you're welcome."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Complete: Ja ___ student. (I am a student.)",
-              "difficulty": 2,
-              "answer": "sam",
-              "accepted": [
-                "sam"
-              ],
-              "strictDiacritics": true,
-              "explanation": "Short form of biti: ja sam, ti si, on je…"
-            },
-            {
-              "type": "MCQ",
-              "prompt": "What gender is 'kava'?",
-              "difficulty": 2,
-              "options": [
-                "feminine",
-                "masculine",
-                "neuter",
-                "masculine, like 'stol'"
-              ],
-              "answer": "feminine",
-              "explanation": "Nouns in -a are (almost always) feminine: kava, žena, škola."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Conjugate: Mi ___ hrvatski. (govoriti, we speak)",
-              "difficulty": 3,
-              "answer": "govorimo",
-              "accepted": [
-                "govorimo"
-              ],
-              "strictDiacritics": true,
-              "explanation": "mi-form ends in -mo: govorimo."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "How do you say 'She is not here'?",
-              "difficulty": 3,
-              "options": [
-                "Ona nije ovdje.",
-                "Ona ne je ovdje.",
-                "Ona nisam ovdje.",
-                "Ona je ne ovdje."
-              ],
-              "answer": "Ona nije ovdje.",
-              "explanation": "biti has fused negatives: nije = is not. 'ne je' does not exist."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Complete with the object form: Pijem ___ . (kava)",
-              "difficulty": 3,
-              "answer": "kavu",
-              "accepted": [
-                "kavu"
-              ],
-              "strictDiacritics": true,
-              "explanation": "Accusative of kava is kavu, feminine -a → -u."
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Which number is 'petnaest'?",
-              "difficulty": 3,
-              "options": [
-                "5",
-                "15",
-                "50",
-                "25"
-              ],
-              "answer": "15",
-              "explanation": "pet = 5, petnaest = 15, pedeset = 50. The -naest numbers are the teens."
-            },
-            {
-              "type": "REORDER",
-              "prompt": "Build the question: 'What is your name?'",
-              "difficulty": 4,
-              "options": [
-                "se",
-                "Kako",
-                "zoveš"
-              ],
-              "ordered": [
-                "Kako",
-                "se",
-                "zoveš"
-              ],
-              "answer": "Kako se zoveš",
-              "explanation": "Kako se zoveš? literally 'How do you call yourself?'"
-            },
-            {
-              "type": "MCQ",
-              "prompt": "Ask 'Do you speak English?'",
-              "difficulty": 4,
-              "options": [
-                "Govoriš li engleski?",
-                "Li govoriš engleski?",
-                "Govoriš engleski?",
-                "Zašto govoriš engleski?"
-              ],
-              "answer": "Govoriš li engleski?",
-              "explanation": "Yes/no question: verb + li. (Without li it can work in speech, but the li-form is the one to master.)"
-            },
-            {
-              "type": "FILL",
-              "prompt": "Say 'I don't speak Croatian.'",
-              "difficulty": 4,
-              "answer": "Ne govorim hrvatski",
-              "accepted": [
-                "Ne govorim hrvatski",
-                "Ne govorim hrvatski.",
-                "ne govorim hrvatski",
-                "Ja ne govorim hrvatski"
-              ],
-              "strictDiacritics": true,
-              "explanation": "ne + govorim, negation goes directly before the verb, same pattern as ne razumijem."
-            },
-            {
-              "type": "FILL",
-              "prompt": "Play the audio and complete: 'Koliko ___? Deset eura.'",
-              "difficulty": 3,
-              "answer": "košta",
-              "accepted": [
-                "košta"
-              ],
-              "explanation": "The audio says 'Koliko košta? Deset eura.', which means 'How much does it cost? Ten euros.'",
-              "audioText": "Koliko košta? Deset eura."
-            },
-            {
-              "type": "TRANSLATE",
-              "prompt": "Put this into Croatian: 'Thanks and goodbye!'",
-              "difficulty": 4,
-              "answer": "Hvala i doviđenja!",
-              "explanation": "'Thanks and goodbye!' is 'Hvala i doviđenja!'"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        },
-        {
-          "type": "DIALOGUE",
-          "title": "Milestone conversation: meeting Ivana",
-          "intro": "Your first full conversation in Croatian, a real exchange using only what you've learned in the first two weeks. Read your lines ('Vi') aloud; better yet, cover the English and check yourself.",
-          "lines": [
-            {
-              "speaker": "Partner",
-              "hr": "Dobar dan! Ja sam Ivana. Kako se zovete?",
-              "en": "Good day! I am Ivana. What is your name? (formal)"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Dobar dan! Zovem se Alex. Drago mi je.",
-              "en": "Good day! My name is Alex. Nice to meet you."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Drago mi je. Odakle ste?",
-              "en": "Nice to meet you. Where are you from?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Ja sam iz Amerike. Sada živim u Zagrebu.",
-              "en": "I am from America. Now I live in Zagreb."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Govorite li hrvatski?",
-              "en": "Do you speak Croatian?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Govorim malo hrvatski. Učim svaki dan.",
-              "en": "I speak a little Croatian. I study every day."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Odlično! Pijete li kavu?",
-              "en": "Excellent! Do you drink coffee?"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Da, volim kavu. Pijem kavu svaki dan.",
-              "en": "Yes, I love coffee. I drink coffee every day."
-            },
-            {
-              "speaker": "Partner",
-              "hr": "Super! Doviđenja, Alex!",
-              "en": "Great! Goodbye, Alex!"
-            },
-            {
-              "speaker": "Me",
-              "hr": "Doviđenja, Ivana! Hvala!",
-              "en": "Goodbye, Ivana! Thanks!"
-            }
-          ],
-          "sources": [
-            "asoo",
-            "croaticum-syllabus"
-          ]
-        }
-      ]
+      {
+       "speaker": "Partner",
+       "hr": "Savršeno!",
+       "en": "Perfect!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "day": 2,
+   "week": 1,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "Greetings & politeness",
+   "objective": "Open and close interactions politely.",
+   "paretoFocus": "A few fixed phrases (bok, dobar dan, hvala, molim) cover almost every first interaction.",
+   "drills": [
+    "Learn bok / dobar dan / dobro jutro / doviđenja.",
+    "Practise hvala / molim / oprostite / da / ne.",
+    "Role-play greeting someone formally and casually."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Recall all greetings.",
+     "Re-read 5 alphabet words.",
+     "How do you say 'please' and 'thanks'?"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Greetings for every moment of the day",
+     "intro": "Croatian greetings split cleanly into informal (friends, family, your partner) and standard/formal (strangers, shops, older people). When in doubt, use the formal one, nobody is ever offended by Dobar dan.",
+     "items": [
+      {
+       "hr": "Bok!",
+       "en": "Hi! / Bye! (informal)",
+       "note": "Friends and family only. Works both when arriving and leaving."
+      },
+      {
+       "hr": "Dobro jutro!",
+       "en": "Good morning!",
+       "note": "Used until roughly 10 a.m."
+      },
+      {
+       "hr": "Dobar dan!",
+       "en": "Good day! (the standard daytime greeting)",
+       "note": "Your safe default with anyone you don't know. Note: dobAR dan but dobrO jutro, the adjective matches the noun."
+      },
+      {
+       "hr": "Dobra večer!",
+       "en": "Good evening!"
+      },
+      {
+       "hr": "Laku noć!",
+       "en": "Good night!",
+       "note": "Only when parting for the night, not a greeting."
+      },
+      {
+       "hr": "Doviđenja!",
+       "en": "Goodbye! (standard/formal)",
+       "note": "Literally 'until seeing (each other)'."
+      },
+      {
+       "hr": "Vidimo se!",
+       "en": "See you! (informal goodbye)"
+      },
+      {
+       "hr": "Kako si?",
+       "en": "How are you? (informal, one friend)"
+      },
+      {
+       "hr": "Kako ste?",
+       "en": "How are you? (formal, or to several people)"
+      },
+      {
+       "hr": "Dobro sam, hvala. A ti?",
+       "en": "I'm fine, thanks. And you? (informal)",
+       "note": "Formal version: A vi?"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "LEARN",
+     "title": "The politeness toolkit",
+     "intro": "These little words carry almost every polite interaction. Molim is the hardest worker in Croatian, it means please, you're welcome, AND 'pardon?' when you didn't hear.",
+     "items": [
+      {
+       "hr": "hvala",
+       "en": "thank you",
+       "note": "Stronger: hvala lijepa (thanks a lot)."
+      },
+      {
+       "hr": "molim",
+       "en": "please / you're welcome / pardon?",
+       "note": "Three uses: Molim! (here you go / you're welcome), Molim? (sorry, what did you say?), and please in requests."
+      },
+      {
+       "hr": "oprostite",
+       "en": "excuse me / sorry (formal)",
+       "note": "Use to get a stranger's attention or apologize. Informal: oprosti."
+      },
+      {
+       "hr": "izvolite",
+       "en": "here you are / how can I help you? (formal)",
+       "note": "What waiters and shopkeepers say to you; also said when handing something over."
+      },
+      {
+       "hr": "da",
+       "en": "yes"
+      },
+      {
+       "hr": "ne",
+       "en": "no"
+      },
+      {
+       "hr": "u redu",
+       "en": "okay / all right",
+       "note": "Literally 'in order'."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Greetings practice",
+     "intro": "Pick or produce the right greeting for each situation. Watch the diacritics in doviđenja and večer.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "You walk into a bakery at noon. What do you say?",
+       "difficulty": 1,
+       "options": [
+        "Dobar dan!",
+        "Bok!",
+        "Laku noć!",
+        "Vidimo se!"
+       ],
+       "answer": "Dobar dan!",
+       "explanation": "Dobar dan is the standard daytime greeting with strangers. Bok is only for friends and family."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "It's 8 a.m. and you greet your neighbour. What fits best?",
+       "difficulty": 2,
+       "options": [
+        "Dobro jutro!",
+        "Dobra večer!",
+        "Laku noć!",
+        "Doviđenja!"
+       ],
+       "answer": "Dobro jutro!",
+       "explanation": "Dobro jutro is used until roughly 10 a.m.; after that switch to Dobar dan."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "When can you say 'Laku noć'?",
+       "difficulty": 3,
+       "options": [
+        "Only when parting for the night",
+        "Any time after dark, including when arriving",
+        "Only to children",
+        "As a morning greeting"
+       ],
+       "answer": "Only when parting for the night",
+       "explanation": "Laku noć is a farewell, not a greeting. Arriving in the evening you say Dobra večer."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Someone thanks you: 'Hvala!' You reply:",
+       "difficulty": 4,
+       "options": [
+        "Molim!",
+        "Oprostite!",
+        "Da!",
+        "Izvolite?"
+       ],
+       "answer": "Molim!",
+       "explanation": "Molim also means 'you're welcome'. It triples as please and 'pardon?'."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Translate: 'thank you'",
+       "difficulty": 4,
+       "answer": "hvala",
+       "accepted": [
+        "Hvala"
+       ],
+       "explanation": "hvala, pronounce both the h and the v: HVAH-lah.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "You need to stop a stranger on the street to ask something. Say 'excuse me' (formal).",
+       "difficulty": 5,
+       "answer": "oprostite",
+       "accepted": [
+        "Oprostite"
+       ],
+       "explanation": "oprostite is the formal 'excuse me / sorry'. To a friend you'd say oprosti.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Translate the formal goodbye: 'goodbye'",
+       "difficulty": 6,
+       "answer": "doviđenja",
+       "accepted": [
+        "Doviđenja",
+        "Doviđenja!"
+       ],
+       "explanation": "doviđenja, note the đ (soft j). Literally 'until seeing each other'. Informal alternative: vidimo se.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the sentence: 'Good day, how are you?' (formal)",
+       "difficulty": 7,
+       "options": [
+        "Dobar",
+        "dan,",
+        "kako",
+        "ste?"
+       ],
+       "ordered": [
+        "Dobar",
+        "dan,",
+        "kako",
+        "ste?"
+       ],
+       "answer": "Dobar dan, kako ste?",
+       "explanation": "Formal greeting + formal 'how are you' (ste, not si). This exact sentence opens most polite conversations."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the reply: 'I'm fine, thanks. And you?' (informal)",
+       "difficulty": 8,
+       "options": [
+        "Dobro",
+        "sam,",
+        "hvala.",
+        "A",
+        "ti?"
+       ],
+       "ordered": [
+        "Dobro",
+        "sam,",
+        "hvala.",
+        "A",
+        "ti?"
+       ],
+       "answer": "Dobro sam, hvala. A ti?",
+       "explanation": "Dobro sam = I'm fine. A ti? bounces the question back informally; formally you'd say A vi?"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Dobro sam, ___. A ti?'",
+       "difficulty": 4,
+       "answer": "hvala",
+       "accepted": [
+        "hvala"
+       ],
+       "explanation": "The audio says 'Dobro sam, hvala. A ti?', which means 'I'm fine, thanks. And you? (informal)'",
+       "audioText": "Dobro sam, hvala. A ti?"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Role-play: formal, then casual",
+     "intro": "Act this out with your partner. Round 1: your partner plays an older neighbour (formal). Round 2: they play themselves (casual). Notice how ste/vi becomes si/ti.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Dobar dan!",
+       "en": "Good day!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dobar dan! Kako ste?",
+       "en": "Good day! How are you? (formal)"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Dobro sam, hvala. A vi?",
+       "en": "I'm fine, thanks. And you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "I ja sam dobro, hvala. Doviđenja!",
+       "en": "I'm fine too, thanks. Goodbye!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Doviđenja!",
+       "en": "Goodbye!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you? (now casual)"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Bok! Dobro sam, hvala. A ti?",
+       "en": "Hi! I'm fine, thanks. And you?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Super! Vidimo se!",
+       "en": "Great! See you!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Vidimo se! Bok!",
+       "en": "See you! Bye!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ]
+  },
+  {
+   "day": 3,
+   "week": 1,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "Introduce yourself",
+   "objective": "Say your name and nationality and ask the same.",
+   "paretoFocus": "'Ja sam… / Kako se zoveš?' opens any conversation. Maximum reuse for minimal effort.",
+   "drills": [
+    "Build your intro: Ja sam… (name, nationality).",
+    "Learn Kako se zoveš? / Odakle si?",
+    "Say your intro aloud 5 times."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Give your full intro from memory.",
+     "Recall greetings.",
+     "Note 3 nationalities to re-test tomorrow."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Introducing yourself",
+     "intro": "Two ways to give your name: Ja sam + name (I am...) or Zovem se + name (I'm called...). Both are equally common. Remember the informal/formal split from yesterday: zoveš/si to a friend, zovete/ste to a stranger.",
+     "items": [
+      {
+       "hr": "Ja sam Ana.",
+       "en": "I am Ana.",
+       "note": "The simplest intro: Ja sam + your name."
+      },
+      {
+       "hr": "Zovem se Ana.",
+       "en": "My name is Ana. (literally: I call myself Ana)"
+      },
+      {
+       "hr": "Kako se zoveš?",
+       "en": "What's your name? (informal)"
+      },
+      {
+       "hr": "Kako se zovete?",
+       "en": "What's your name? (formal)"
+      },
+      {
+       "hr": "Drago mi je.",
+       "en": "Nice to meet you. (literally: it is dear to me)",
+       "note": "Said while shaking hands. The standard reply is also Drago mi je."
+      },
+      {
+       "hr": "Odakle si?",
+       "en": "Where are you from? (informal)"
+      },
+      {
+       "hr": "Odakle ste?",
+       "en": "Where are you from? (formal)"
+      },
+      {
+       "hr": "Ja sam iz Amerike.",
+       "en": "I am from America.",
+       "note": "Learn 'iz Amerike' as a chunk, after iz the ending changes (Amerika → Amerike). You'll learn that pattern later; for now memorize the phrase."
+      },
+      {
+       "hr": "Ja sam Amerikanac.",
+       "en": "I am American. (man speaking)"
+      },
+      {
+       "hr": "Ja sam Amerikanka.",
+       "en": "I am American. (woman speaking)",
+       "note": "Nationalities have male/female pairs: Amerikanac/Amerikanka, Hrvat/Hrvatica."
+      },
+      {
+       "hr": "On je Hrvat. Ona je Hrvatica.",
+       "en": "He is Croatian. She is Croatian."
+      },
+      {
+       "hr": "A ti? / A vi?",
+       "en": "And you? (informal / formal)",
+       "note": "The easiest way to keep a conversation going: answer, then bounce it back."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Introduction practice",
+     "intro": "First recognize the phrases, then produce your own intro. Use your real name where a name is needed, accepted answers use Ana as the model.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "What does 'Kako se zoveš?' mean?",
+       "difficulty": 1,
+       "options": [
+        "What's your name?",
+        "How are you?",
+        "Where are you from?",
+        "Nice to meet you"
+       ],
+       "answer": "What's your name?",
+       "explanation": "Kako se zoveš? = literally 'how do you call yourself?', the informal way to ask a name."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "You're introduced to your partner's grandmother. How do you ask HER name?",
+       "difficulty": 2,
+       "options": [
+        "Kako se zovete?",
+        "Kako se zoveš?",
+        "Kako si?",
+        "Odakle si?"
+       ],
+       "answer": "Kako se zovete?",
+       "explanation": "Older person you've just met → formal: Kako se zovete? The -te ending marks the polite vi form."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "A woman from Croatia says:",
+       "difficulty": 3,
+       "options": [
+        "Ja sam Hrvatica.",
+        "Ja sam Hrvat.",
+        "Ja sam Hrvatska.",
+        "Ja sam hrvatski."
+       ],
+       "answer": "Ja sam Hrvatica.",
+       "explanation": "Hrvatica = Croatian woman, Hrvat = Croatian man, Hrvatska = the country Croatia, hrvatski = the language."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Translate: 'Nice to meet you.'",
+       "difficulty": 4,
+       "answer": "Drago mi je.",
+       "accepted": [
+        "Drago mi je",
+        "drago mi je"
+       ],
+       "explanation": "Drago mi je, literally 'it is dear to me'. Say it while shaking hands.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Ask a new friend (informal): 'Where are you from?'",
+       "difficulty": 5,
+       "answer": "Odakle si?",
+       "accepted": [
+        "Odakle si",
+        "odakle si?"
+       ],
+       "explanation": "Odakle si? is informal; to a stranger you'd say Odakle ste?",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Say 'My name is Ana.' using zvati se.",
+       "difficulty": 6,
+       "answer": "Zovem se Ana.",
+       "accepted": [
+        "Zovem se Ana",
+        "zovem se Ana"
+       ],
+       "explanation": "Zovem se + name. The little word se always comes right after zovem here.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the question: 'What's your name?' (informal)",
+       "difficulty": 7,
+       "options": [
+        "Kako",
+        "se",
+        "zoveš?"
+       ],
+       "ordered": [
+        "Kako",
+        "se",
+        "zoveš?"
+       ],
+       "answer": "Kako se zoveš?",
+       "explanation": "Kako (how) + se zoveš (do you call yourself). The se sits in second position."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the sentence: 'I am from America.'",
+       "difficulty": 8,
+       "options": [
+        "Ja",
+        "sam",
+        "iz",
+        "Amerike."
+       ],
+       "ordered": [
+        "Ja",
+        "sam",
+        "iz",
+        "Amerike."
+       ],
+       "answer": "Ja sam iz Amerike.",
+       "explanation": "Ja sam + iz Amerike (memorized chunk, Amerika changes to Amerike after iz)."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Type the Croatian for: 'He is Croatian. She is Croatian.'",
+       "difficulty": 5,
+       "answer": "On je Hrvat. Ona je Hrvatica.",
+       "explanation": "'He is Croatian. She is Croatian.' is 'On je Hrvat. Ona je Hrvatica.'"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Role-play: meeting someone new",
+     "intro": "Your partner plays Marko, a friend of the family you're meeting for the first time. Use your own name and nationality in place of Alex / iz Amerike. Repeat until it flows without reading.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Ja sam Marko.",
+       "en": "Hi! I am Marko."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Bok! Zovem se Alex. Drago mi je.",
+       "en": "Hi! My name is Alex. Nice to meet you."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Drago mi je. Odakle si, Alex?",
+       "en": "Nice to meet you. Where are you from, Alex?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja sam iz Amerike. A ti? Odakle si?",
+       "en": "I am from America. And you? Where are you from?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja sam iz Zagreba. Ja sam Hrvat.",
+       "en": "I am from Zagreb. I am Croatian."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Super! Učim hrvatski.",
+       "en": "Great! I'm learning Croatian."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Bravo! Vidimo se!",
+       "en": "Bravo! See you!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Vidimo se! Bok!",
+       "en": "See you! Bye!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ]
+  },
+  {
+   "day": 4,
+   "week": 1,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "biti (to be), present",
+   "objective": "Use the short and negative forms of 'to be'.",
+   "paretoFocus": "biti is the most common verb and the helper for the past tense later. The short forms (sam, si, je…) appear in nearly every sentence.",
+   "drills": [
+    "Learn sam, si, je, smo, ste, su.",
+    "Learn the negatives: nisam, nisi, nije…",
+    "Make 5 sentences: Ja sam…, Ona je…, Mi smo…"
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Recite biti (short + negative).",
+     "Say 'She is not here'.",
+     "Review pronouns."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "biti (to be): the short forms",
+     "intro": "biti is the most common Croatian verb and appears in nearly every sentence. In normal speech you use the SHORT forms: sam, si, je, smo, ste, su. One rule: a short form can never be the FIRST word of a sentence, say 'Ja sam Ana' or 'Ana sam', never 'Sam Ana'.",
+     "items": [
+      {
+       "hr": "ja sam",
+       "en": "I am",
+       "note": "Ja sam umoran. = I am tired. (man speaking; a woman says umorna)"
+      },
+      {
+       "hr": "ti si",
+       "en": "you are (informal)",
+       "note": "Ti si student. = You are a student."
+      },
+      {
+       "hr": "on / ona je",
+       "en": "he / she is",
+       "note": "Ona je učiteljica. = She is a teacher."
+      },
+      {
+       "hr": "mi smo",
+       "en": "we are",
+       "note": "Mi smo prijatelji. = We are friends."
+      },
+      {
+       "hr": "vi ste",
+       "en": "you are (plural/formal)",
+       "note": "Vi ste iz Zagreba? = You are from Zagreb?"
+      },
+      {
+       "hr": "oni / one su",
+       "en": "they are",
+       "note": "Oni su ovdje. = They are here."
+      },
+      {
+       "hr": "Student sam.",
+       "en": "I am a student. (pronoun dropped)",
+       "note": "With ja dropped, sam moves to second position, it can never stand first."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "LEARN",
+     "title": "biti: the negative forms",
+     "intro": "The negative of biti is a single word, ne + the form fuse together: nisam, nisi, nije... Unlike the short forms, negatives CAN start a sentence: Nisam umoran.",
+     "items": [
+      {
+       "hr": "nisam",
+       "en": "I am not",
+       "note": "Nisam iz Zagreba. = I'm not from Zagreb."
+      },
+      {
+       "hr": "nisi",
+       "en": "you are not (informal)"
+      },
+      {
+       "hr": "nije",
+       "en": "he/she/it is not",
+       "note": "Ona nije ovdje. = She is not here."
+      },
+      {
+       "hr": "nismo",
+       "en": "we are not"
+      },
+      {
+       "hr": "niste",
+       "en": "you are not (plural/formal)"
+      },
+      {
+       "hr": "nisu",
+       "en": "they are not",
+       "note": "Oni nisu studenti. = They are not students."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "biti practice",
+     "intro": "Fill in the right form of biti (positive and negative) then build full sentences.",
+     "questions": [
+      {
+       "type": "FILL",
+       "prompt": "Ja ___ student. (I am a student.)",
+       "difficulty": 1,
+       "answer": "sam",
+       "explanation": "ja → sam. The short form used in normal sentences.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Ti ___ moj prijatelj. (You are my friend.)",
+       "difficulty": 2,
+       "answer": "si",
+       "explanation": "ti → si.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Mi ___ iz Amerike. (We are from America.)",
+       "difficulty": 3,
+       "options": [
+        "smo",
+        "ste",
+        "su",
+        "sam"
+       ],
+       "answer": "smo",
+       "explanation": "mi → smo. (vi → ste, oni → su.)"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Oni ___ ovdje. (They are here.)",
+       "difficulty": 3,
+       "answer": "su",
+       "explanation": "oni → su, the third-person plural short form.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Make it negative: 'Ja sam umoran' → 'Ja ___ umoran.' (I am NOT tired.)",
+       "difficulty": 4,
+       "answer": "nisam",
+       "explanation": "ne + sam fuse into one word: nisam.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which sentence is correct?",
+       "difficulty": 5,
+       "options": [
+        "Ja sam student.",
+        "Sam student.",
+        "Sam ja student.",
+        "Student ja sam."
+       ],
+       "answer": "Ja sam student.",
+       "explanation": "The short form sam can never be the FIRST word. Ja sam student. and Student sam. are both fine; Sam student. is impossible."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build: 'She is not here.'",
+       "difficulty": 6,
+       "options": [
+        "Ona",
+        "nije",
+        "ovdje."
+       ],
+       "ordered": [
+        "Ona",
+        "nije",
+        "ovdje."
+       ],
+       "answer": "Ona nije ovdje.",
+       "explanation": "ona → nije (negative of je). Negative forms are free to stand anywhere, even first: Nije ovdje."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build: 'We are friends.'",
+       "difficulty": 7,
+       "options": [
+        "Mi",
+        "smo",
+        "prijatelji."
+       ],
+       "ordered": [
+        "Mi",
+        "smo",
+        "prijatelji."
+       ],
+       "answer": "Mi smo prijatelji.",
+       "explanation": "mi → smo; prijatelj takes the plural -i: prijatelji."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Translate the whole sentence: 'She is not here.'",
+       "difficulty": 8,
+       "answer": "Ona nije ovdje.",
+       "accepted": [
+        "Ona nije ovdje",
+        "Nije ovdje.",
+        "Nije ovdje"
+       ],
+       "explanation": "Ona nije ovdje. and because the ending shows the subject, Nije ovdje. alone is also perfectly natural.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Put this into Croatian: 'they are'",
+       "difficulty": 5,
+       "answer": "oni su",
+       "explanation": "'they are' is 'oni su' for a group with any man in it, 'one su' for an all-female group.",
+       "accepted": [
+        "one su",
+        "oni / one su"
+       ]
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "I am tired, and you? (Umoran sam, a ti?)",
+     "intro": "Two friends check in with each other using biti's short forms and their fused negatives, sam, si, je, smo, su, nisam.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Nisam dobro. Umoran sam.",
+       "en": "I'm not well. I'm tired."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja sam dobro, hvala.",
+       "en": "I'm fine, thanks."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ti si učiteljica.",
+       "en": "You are a teacher."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Da, ja sam učiteljica. On je student.",
+       "en": "Yes, I am a teacher. He is a student."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Mi smo prijatelji.",
+       "en": "We are friends."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Da! Oni su ovdje.",
+       "en": "Yes! They are here."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Super! Vidimo se!",
+       "en": "Great! See you!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ]
+  },
+  {
+   "day": 5,
+   "week": 1,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "Numbers 0-20",
+   "objective": "Count to twenty and use the numbers in prices and times.",
+   "paretoFocus": "Weekly consolidation locks in gains; numbers are pure daily utility for prices, time and quantities.",
+   "drills": [
+    "Count 0-20 aloud twice.",
+    "Clear your due words in the Words tab.",
+    "Free-talk 2 minutes about yourself."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Self-introduce + describe yourself with biti.",
+     "Count 0-20 without looking.",
+     "Recall greetings & politeness."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Numbers 0-10",
+     "intro": "Numbers are pure daily utility, prices, times, quantities. Read each one aloud twice. Every letter is pronounced exactly as you learned on lesson 1.",
+     "items": [
+      {
+       "hr": "nula",
+       "en": "0, zero"
+      },
+      {
+       "hr": "jedan",
+       "en": "1, one"
+      },
+      {
+       "hr": "dva",
+       "en": "2, two"
+      },
+      {
+       "hr": "tri",
+       "en": "3, three"
+      },
+      {
+       "hr": "četiri",
+       "en": "4, four",
+       "note": "Starts with č, CHEH-tee-ree."
+      },
+      {
+       "hr": "pet",
+       "en": "5, five"
+      },
+      {
+       "hr": "šest",
+       "en": "6, six",
+       "note": "š = 'sh': shest."
+      },
+      {
+       "hr": "sedam",
+       "en": "7, seven"
+      },
+      {
+       "hr": "osam",
+       "en": "8, eight"
+      },
+      {
+       "hr": "devet",
+       "en": "9, nine"
+      },
+      {
+       "hr": "deset",
+       "en": "10, ten"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "LEARN",
+     "title": "Numbers 11-20",
+     "intro": "11-19 follow one pattern: a squeezed form of the digit + -naest (jedan → jedanaest). Spot the digit inside each teen and you've learned them all at once.",
+     "items": [
+      {
+       "hr": "jedanaest",
+       "en": "11, eleven",
+       "note": "jedan squeezed together with naest."
+      },
+      {
+       "hr": "dvanaest",
+       "en": "12, twelve",
+       "note": "dva with naest."
+      },
+      {
+       "hr": "trinaest",
+       "en": "13, thirteen"
+      },
+      {
+       "hr": "četrnaest",
+       "en": "14, fourteen",
+       "note": "četiri squeezes to četr-."
+      },
+      {
+       "hr": "petnaest",
+       "en": "15, fifteen"
+      },
+      {
+       "hr": "šesnaest",
+       "en": "16, sixteen",
+       "note": "šest drops its t: šes-naest."
+      },
+      {
+       "hr": "sedamnaest",
+       "en": "17, seventeen"
+      },
+      {
+       "hr": "osamnaest",
+       "en": "18, eighteen"
+      },
+      {
+       "hr": "devetnaest",
+       "en": "19, nineteen"
+      },
+      {
+       "hr": "dvadeset",
+       "en": "20, twenty",
+       "note": "dva with deset, literally two tens. The tens all work this way: trideset 30, četrdeset 40..."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Numbers + week 1 review",
+     "intro": "Numbers first, then a sweep back through the whole week: greetings, introductions, genders, biti.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "What number is 'osam'?",
+       "difficulty": 1,
+       "options": [
+        "8",
+        "7",
+        "6",
+        "18"
+       ],
+       "answer": "8",
+       "explanation": "osam = 8. (sedam = 7, osamnaest = 18.)"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the number 5 in Croatian.",
+       "difficulty": 2,
+       "answer": "pet",
+       "accepted": [
+        "Pet"
+       ],
+       "explanation": "pet = 5. petnaest = 15.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which is 17?",
+       "difficulty": 3,
+       "options": [
+        "sedamnaest",
+        "sedam",
+        "sedamdeset",
+        "šesnaest"
+       ],
+       "answer": "sedamnaest",
+       "explanation": "sedam (7) + naest = sedamnaest (17). sedamdeset is 70."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the number 14 in Croatian.",
+       "difficulty": 4,
+       "answer": "četrnaest",
+       "accepted": [
+        "Četrnaest"
+       ],
+       "explanation": "četiri squeezes to četr- before -naest: četrnaest. Don't forget the č.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the number 20 in Croatian.",
+       "difficulty": 5,
+       "answer": "dvadeset",
+       "accepted": [
+        "Dvadeset"
+       ],
+       "explanation": "dva + deset = 'two tens' = dvadeset.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "MCQ",
+       "prompt": "REVIEW: You meet your partner's boss for the first time at 2 p.m. You say:",
+       "difficulty": 5,
+       "options": [
+        "Dobar dan! Drago mi je.",
+        "Bok! Kako si?",
+        "Laku noć!",
+        "Vidimo se!"
+       ],
+       "answer": "Dobar dan! Drago mi je.",
+       "explanation": "Formal situation, daytime → Dobar dan, plus Drago mi je when being introduced. Bok and ti-forms are for friends."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "REVIEW: What gender is 'selo' (village)?",
+       "difficulty": 6,
+       "options": [
+        "neuter",
+        "feminine",
+        "masculine",
+        "feminine, like 'škola'"
+       ],
+       "answer": "neuter",
+       "explanation": "Ends in -o → neuter, like mlijeko and jutro."
+      },
+      {
+       "type": "FILL",
+       "prompt": "REVIEW: Vi ___ iz Hrvatske? (You are from Croatia? formal)",
+       "difficulty": 7,
+       "answer": "ste",
+       "explanation": "vi → ste. The whole biti row: sam, si, je, smo, ste, su.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "REORDER",
+       "prompt": "REVIEW: Build your one-line introduction: 'Good day, I am Ana.'",
+       "difficulty": 8,
+       "options": [
+        "Dobar",
+        "dan,",
+        "ja",
+        "sam",
+        "Ana."
+       ],
+       "ordered": [
+        "Dobar",
+        "dan,",
+        "ja",
+        "sam",
+        "Ana."
+       ],
+       "answer": "Dobar dan, ja sam Ana.",
+       "explanation": "Greeting + Ja sam + name: everything from lessons 2 and 3 in one breath."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Free talk: about yourself, plus a numbers game",
+     "intro": "The week 1 victory lap. Act it out with your partner, use your own name and nationality. In the numbers round, your partner can invent new sums; answer in Croatian.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dobro sam, hvala. A ti?",
+       "en": "I'm fine, thanks. And you?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Super! Tko si ti? Reci mi!",
+       "en": "Great! Who are you? Tell me!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja sam Alex. Amerikanac sam i učim hrvatski.",
+       "en": "I am Alex. I'm American and I'm learning Croatian. (woman: Amerikanka sam)"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Bravo! Sada brojevi. Koliko je dva plus tri?",
+       "en": "Bravo! Now numbers. How much is two plus three?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Pet!",
+       "en": "Five!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "A deset plus deset?",
+       "en": "And ten plus ten?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dvadeset!",
+       "en": "Twenty!"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Savršeno! Laku noć!",
+       "en": "Perfect! Good night!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Laku noć! Vidimo se sutra!",
+       "en": "Good night! See you tomorrow!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ]
+  },
+  {
+   "day": 6,
+   "week": 1,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "Negation & yes/no questions",
+   "objective": "Make sentences negative and ask yes/no questions with 'li'.",
+   "paretoFocus": "Negation (ne + verb) and the 'li' question double your range and let you start real exchanges.",
+   "drills": [
+    "Negate 5 sentences with 'ne'.",
+    "Form 'Govoriš li engleski?'-style questions.",
+    "Turn three statements into questions using the 'verb + li' pattern."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Ask 'Do you speak English?'",
+     "Say 'I don't understand' (Ne razumijem).",
+     "Review accusative."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Saying no and asking yes/no questions",
+     "intro": "Negation is beautifully simple: put 'ne' directly before the verb. imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.) For yes/no questions, put 'li' right after the verb: Govoriš li engleski? Master these patterns and your range doubles.",
+     "items": [
+      {
+       "hr": "Ne govorim.",
+       "en": "I don't speak.",
+       "note": "ne + verb, always directly before the verb."
+      },
+      {
+       "hr": "Ne razumijem.",
+       "en": "I don't understand.",
+       "note": "Your most useful survival sentence."
+      },
+      {
+       "hr": "Ne radim danas.",
+       "en": "I'm not working today.",
+       "note": ""
+      },
+      {
+       "hr": "Ne pijem pivo.",
+       "en": "I don't drink beer.",
+       "note": "ne + verb + accusative object."
+      },
+      {
+       "hr": "Nemam auto.",
+       "en": "I don't have a car.",
+       "note": "imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.)"
+      },
+      {
+       "hr": "Nisam umoran.",
+       "en": "I am not tired. (male speaker)",
+       "note": "biti also has fused negatives: nisam, nisi, nije… (lesson 6 review)"
+      },
+      {
+       "hr": "Govoriš li engleski?",
+       "en": "Do you speak English?",
+       "note": "Yes/no question: verb + li + rest."
+      },
+      {
+       "hr": "Radiš li danas?",
+       "en": "Are you working today?",
+       "note": ""
+      },
+      {
+       "hr": "Pijete li kavu?",
+       "en": "Do you (formal) drink coffee?",
+       "note": "vi-form for strangers and groups."
+      },
+      {
+       "hr": "Razumiješ li?",
+       "en": "Do you understand?",
+       "note": ""
+      },
+      {
+       "hr": "Je li ovo tvoj mobitel?",
+       "en": "Is this your phone?",
+       "note": "Standard Croatian yes/no questions use 'verb + li' or 'je li'. The 'da li' form is Serbian and avoided in the Croatian standard."
+      },
+      {
+       "hr": "Ne, ne govorim.",
+       "en": "No, I don't speak.",
+       "note": "Answering negatively doubles the ne: 'Ne,' (no) + 'ne govorim' (I don't speak)."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Negate it, question it",
+     "intro": "Practise 'ne' + verb, the fused 'nemam', and building li-questions.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Make it negative: 'Govorim engleski.'",
+       "difficulty": 2,
+       "options": [
+        "Ne govorim engleski.",
+        "Negovorim engleski.",
+        "Govorim ne engleski.",
+        "Ni govorim engleski."
+       ],
+       "answer": "Ne govorim engleski.",
+       "explanation": "ne stands directly before the verb, as a separate word."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Say 'I don't understand.'",
+       "difficulty": 2,
+       "answer": "Ne razumijem",
+       "accepted": [
+        "Ne razumijem",
+        "Ne razumijem.",
+        "ne razumijem",
+        "Ja ne razumijem"
+       ],
+       "strictDiacritics": true,
+       "explanation": "ne + razumijem. The single most useful phrase for a learner."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "What is the negative of 'imam' (I have)?",
+       "difficulty": 3,
+       "options": [
+        "ne imam",
+        "nemam",
+        "nisam",
+        "neimam"
+       ],
+       "answer": "nemam",
+       "explanation": "imati and biti both fuse with ne into one word: nemam, nisam. (One more verb, htjeti, does the same later: neću.)"
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the question: 'Do you speak English?'",
+       "difficulty": 3,
+       "options": [
+        "li",
+        "engleski",
+        "Govoriš"
+       ],
+       "ordered": [
+        "Govoriš",
+        "li",
+        "engleski"
+       ],
+       "answer": "Govoriš li engleski",
+       "explanation": "Yes/no question = verb first, then li, then the rest."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Where does 'li' go in a yes/no question?",
+       "difficulty": 3,
+       "options": [
+        "Li govoriš hrvatski?",
+        "Govoriš li hrvatski?",
+        "Govoriš hrvatski li?",
+        "Da li govoriš hrvatski?"
+       ],
+       "answer": "Govoriš li hrvatski?",
+       "explanation": "li always comes immediately after the verb, never first, never last."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Ask a friend 'Do you drink coffee?' (piti, informal)",
+       "difficulty": 4,
+       "answer": "Piješ li kavu?",
+       "accepted": [
+        "Piješ li kavu?",
+        "Piješ li kavu",
+        "piješ li kavu"
+       ],
+       "strictDiacritics": true,
+       "explanation": "piješ (you drink) + li + kavu (accusative object)."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which is the standard Croatian yes/no question?",
+       "difficulty": 4,
+       "options": [
+        "Govoriš li engleski?",
+        "Da li govoriš engleski?",
+        "Ti govoriš engleski.",
+        "Govoriš engleski ne?"
+       ],
+       "answer": "Govoriš li engleski?",
+       "explanation": "Standard Croatian forms yes/no questions with 'verb + li' (Govoriš li...?) or 'je li'. The 'da li' form is Serbian and is avoided in the Croatian standard."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Answer 'Radiš li danas?' with NO:",
+       "difficulty": 4,
+       "options": [
+        "Ne, ne radim.",
+        "Ne, radim.",
+        "Da, ne radim.",
+        "Ne radim, da."
+       ],
+       "answer": "Ne, ne radim.",
+       "explanation": "First 'Ne,' answers the question; then 'ne radim' negates the verb. Croatian happily doubles the ne."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen, then type the missing word: 'Je li ovo tvoj ___?'",
+       "difficulty": 3,
+       "answer": "mobitel",
+       "accepted": [
+        "mobitel"
+       ],
+       "explanation": "The audio says 'Je li ovo tvoj mobitel?', which means 'Is this your phone?'",
+       "audioText": "Je li ovo tvoj mobitel?"
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Write it in Croatian: 'No, I don't speak.'",
+       "difficulty": 4,
+       "answer": "Ne, ne govorim.",
+       "explanation": "'No, I don't speak.' is 'Ne, ne govorim.'"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Do you understand? (Razumiješ li?)",
+     "intro": "A quick check-in built entirely from li-questions and their negative answers.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Govoriš li engleski?",
+       "en": "Do you speak English?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ne, ne govorim. Govorim hrvatski.",
+       "en": "No, I don't. I speak Croatian."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Razumiješ li?",
+       "en": "Do you understand?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ne razumijem.",
+       "en": "I don't understand."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Radiš li danas?",
+       "en": "Are you working today?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ne radim danas.",
+       "en": "I'm not working today."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Je li ovo tvoj mobitel?",
+       "en": "Is this your phone?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da, ovo je moj mobitel.",
+       "en": "Yes, this is my phone."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ]
+  },
+  {
+   "day": 7,
+   "week": 1,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "Question words",
+   "objective": "Use tko, što, gdje, kada, zašto, kako, koliko.",
+   "paretoFocus": "Seven question words open every information-seeking sentence.",
+   "drills": [
+    "Learn all 7 question words.",
+    "Ask: Gdje…? Kada…? Koliko…?",
+    "Build 7 questions, one per word."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Recall all 7 question words.",
+     "Ask 'Where is the station?' (Gdje je kolodvor?)",
+     "Review li-questions."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "The seven question words (+ two bonus ones)",
+     "intro": "Seven little words open every information question in Croatian: tko and što ask about people and things, gdje and kada pin down place and time, zašto asks for reasons, kako for manner, and koliko for amount. Learn each one inside a real question you will actually ask.",
+     "items": [
+      {
+       "hr": "tko",
+       "en": "who",
+       "note": "Tko je to? Who is that?"
+      },
+      {
+       "hr": "što",
+       "en": "what",
+       "note": "Što radiš? What are you doing?"
+      },
+      {
+       "hr": "gdje",
+       "en": "where",
+       "note": "Gdje je kolodvor? Where is the station?"
+      },
+      {
+       "hr": "kada",
+       "en": "when",
+       "note": "Kada radiš? When do you work? (also shortened: kad)"
+      },
+      {
+       "hr": "zašto",
+       "en": "why",
+       "note": "Zašto učiš hrvatski? Why are you learning Croatian?"
+      },
+      {
+       "hr": "kako",
+       "en": "how",
+       "note": "Kako si? How are you?"
+      },
+      {
+       "hr": "koliko",
+       "en": "how much / how many",
+       "note": "Koliko košta? How much does it cost?"
+      },
+      {
+       "hr": "odakle",
+       "en": "from where",
+       "note": "Bonus: Odakle si? Where are you from?"
+      },
+      {
+       "hr": "Kako se zoveš?",
+       "en": "What is your name? (literally: how do you call yourself)",
+       "note": "Croatian asks 'how', not 'what', for names."
+      },
+      {
+       "hr": "Gdje je WC, molim vas?",
+       "en": "Where is the toilet, please?",
+       "note": "Survival question number one when travelling."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Ask the right question",
+     "intro": "Match each situation to the right question word and build full questions.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Which word means 'where'?",
+       "difficulty": 1,
+       "options": [
+        "gdje",
+        "kada",
+        "zašto",
+        "tko"
+       ],
+       "answer": "gdje",
+       "explanation": "gdje = where. Gdje je kolodvor? Where is the station?"
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Complete: ___ košta kava? (How much does the coffee cost?)",
+       "difficulty": 2,
+       "options": [
+        "Koliko",
+        "Kako",
+        "Kada",
+        "Gdje"
+       ],
+       "answer": "Koliko",
+       "explanation": "koliko = how much/how many. Don't mix it up with kako (how)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete: ___ se zoveš? (What's your name?)",
+       "difficulty": 2,
+       "answer": "Kako",
+       "accepted": [
+        "Kako",
+        "kako"
+       ],
+       "strictDiacritics": true,
+       "explanation": "Croatian literally asks 'HOW do you call yourself': Kako se zoveš?"
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Complete: ___ je to? To je Marko. (…is that? That's Marko.)",
+       "difficulty": 3,
+       "options": [
+        "Tko",
+        "Što",
+        "Gdje",
+        "Koliko"
+       ],
+       "answer": "Tko",
+       "explanation": "The answer is a person, so the question word is tko (who). For things you would use što (what)."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Ask 'Where is the station?': ___ je kolodvor?",
+       "difficulty": 3,
+       "answer": "Gdje",
+       "accepted": [
+        "Gdje",
+        "gdje"
+       ],
+       "strictDiacritics": true,
+       "explanation": "gdje = where. Gdje je kolodvor?"
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which word means 'why'?",
+       "difficulty": 2,
+       "options": [
+        "zašto",
+        "zato",
+        "kako",
+        "kada"
+       ],
+       "answer": "zašto",
+       "explanation": "zašto = why. Careful: zato = 'that's why / because of that', the answer, not the question!"
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the question: 'How much does the beer cost?'",
+       "difficulty": 3,
+       "options": [
+        "pivo",
+        "Koliko",
+        "košta"
+       ],
+       "ordered": [
+        "Koliko",
+        "košta",
+        "pivo"
+       ],
+       "answer": "Koliko košta pivo",
+       "explanation": "Question word first: Koliko košta pivo?"
+      },
+      {
+       "type": "MCQ",
+       "prompt": "What does 'Što radiš?' mean?",
+       "difficulty": 3,
+       "options": [
+        "What are you doing?",
+        "Where are you working?",
+        "Why are you working?",
+        "Who are you?"
+       ],
+       "answer": "What are you doing?",
+       "explanation": "što = what, radiš = you do/are doing. A very common conversation opener."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen and fill in the word you hear: 'Gdje je WC, ___ vas?'",
+       "difficulty": 2,
+       "answer": "molim",
+       "accepted": [
+        "molim"
+       ],
+       "explanation": "The audio says 'Gdje je WC, molim vas?', which means 'Where is the toilet, please?'",
+       "audioText": "Gdje je WC, molim vas?"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Seven questions (Sedam pitanja)",
+     "intro": "Two friends catch up using several of the new question words, gdje, zašto and koliko all get a real answer.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Bok! Kako si?",
+       "en": "Hi! How are you?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dobro sam, hvala. Odakle si?",
+       "en": "I'm fine, thanks. Where are you from?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ja sam iz Zagreba. Zašto učiš hrvatski?",
+       "en": "I am from Zagreb. Why are you learning Croatian?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Volim Hrvatsku! Gdje je kolodvor?",
+       "en": "I love Croatia! Where is the station?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Kolodvor je ovdje.",
+       "en": "The station is here."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Hvala! Koliko košta kava?",
+       "en": "Thanks! How much does the coffee cost?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Kava košta pet.",
+       "en": "The coffee costs five."
+      },
+      {
+       "speaker": "Me",
+       "hr": "Super, hvala! Doviđenja!",
+       "en": "Great, thanks! Goodbye!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "This, that, and that over there",
+   "objective": "Point at things near and far and ask what they are using ovo, to and ono.",
+   "paretoFocus": "Pointing words let you shop, ask and identify anything before you know its name, so they multiply every noun you learn.",
+   "drills": [
+    "Point at five objects around you and say Ovo je... for each one.",
+    "Ask Što je ovo? about something close and Što je ono? about something far away.",
+    "Ask one yes/no question with Je li to...? about an object in the room."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Say 'This is my book' and 'That over there is our house'.",
+     "Ask 'What is this?' in Croatian.",
+     "Ask 'Is that your bag?' as a yes/no question."
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Pointing at things: ovo, to, ono",
+     "intro": "Croatian has three pointing words for three distances: ovo for something near me, to for something near you, and ono for something far from both of us. With Što je...? you can ask what anything is.",
+     "items": [
+      {
+       "hr": "Što je ovo?",
+       "en": "What is this?",
+       "note": "ovo = this, near me"
+      },
+      {
+       "hr": "Ovo je moja knjiga.",
+       "en": "This is my book."
+      },
+      {
+       "hr": "To je tvoj mobitel.",
+       "en": "That is your mobile phone.",
+       "note": "to = that, near you"
+      },
+      {
+       "hr": "Ono je naša kuća.",
+       "en": "That over there is our house.",
+       "note": "ono = that, far from both of us"
+      },
+      {
+       "hr": "Je li to tvoja torba?",
+       "en": "Is that your bag?",
+       "note": "yes/no question: Je li...?"
+      },
+      {
+       "hr": "Tko je ovo?",
+       "en": "Who is this?",
+       "note": "For people ask tko, not što."
+      },
+      {
+       "hr": "Ovo je moj prijatelj.",
+       "en": "This is my friend.",
+       "note": "How you introduce someone standing next to you: ovo, never on."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "Point and say (Pokaži i reci)",
+     "intro": "Choose the right pointing word for each distance and build simple questions about objects.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "You are pointing at a building far away from both of you. Complete: ___ je hotel.",
+       "difficulty": 2,
+       "options": [
+        "Ono",
+        "Ovo",
+        "Tko",
+        "Gdje"
+       ],
+       "answer": "Ono",
+       "explanation": "ono points at something far from both speakers; ovo is only for things near you, the speaker."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Ask what the object in your hand is: ___ je ovo?",
+       "difficulty": 2,
+       "answer": "Što",
+       "accepted": [
+        "Što",
+        "što"
+       ],
+       "explanation": "Što je ovo? is the basic question for identifying things. Što means what.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Choose the correct yes/no question for 'Is this a museum?'",
+       "difficulty": 3,
+       "options": [
+        "Je li ovo muzej?",
+        "Da li ovo muzej?",
+        "Ovo je muzej.",
+        "Ovo muzej je?"
+       ],
+       "answer": "Je li ovo muzej?",
+       "explanation": "Standard Croatian yes/no questions use Je li...? A question opening with 'da li' is not standard Croatian (that pattern is Serbian), and it's also missing the verb je."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Your friend is holding a jacket. Complete: ___ je tvoja jakna. (that, near the listener)",
+       "difficulty": 3,
+       "answer": "To",
+       "accepted": [
+        "To",
+        "to"
+       ],
+       "explanation": "For something near the person you are speaking with, Croatian uses to.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the Croatian for: 'This is my house.'",
+       "difficulty": 3,
+       "options": [
+        "je",
+        "Ovo",
+        "kuća",
+        "moja"
+       ],
+       "ordered": [
+        "Ovo",
+        "je",
+        "moja",
+        "kuća"
+       ],
+       "answer": "Ovo je moja kuća",
+       "explanation": "Ovo starts the sentence, then the verb je, then moja kuća with the possessive before the noun."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Listen closely and fill the gap: 'Ovo je moja ___.'",
+       "difficulty": 3,
+       "answer": "knjiga",
+       "accepted": [
+        "knjiga"
+       ],
+       "explanation": "The audio says 'Ovo je moja knjiga.', which means 'This is my book.'",
+       "audioText": "Ovo je moja knjiga."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Type the Croatian for: 'Is that your bag?'",
+       "difficulty": 4,
+       "answer": "Je li to tvoja torba?",
+       "explanation": "'Is that your bag?' is 'Je li to tvoja torba?'"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "In the new flat (U novom stanu)",
+     "intro": "Play 'Me'. You are showing a friend around your new apartment and pointing at things with ovo, to and ono.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Što je ovo?",
+       "en": "What is this?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "To je moj radni stol.",
+       "en": "That is my desk."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "A ono? Je li ono tvoja soba?",
+       "en": "And that over there? Is that your room?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da, ono je moja soba.",
+       "en": "Yes, that over there is my room."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Ovo je lijepa slika!",
+       "en": "This is a beautiful picture!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Hvala! To je poklon od bake.",
+       "en": "Thank you! It is a present from my grandma."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ],
+   "day": 8,
+   "week": 2,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0"
+  },
+  {
+   "title": "Big numbers: sto, tisuća, milijun",
+   "objective": "Understand and say prices and other amounts above one hundred with sto, tisuća and milijun.",
+   "paretoFocus": "Rents, salaries and prices all live above one hundred; without these three words you cannot handle money in Croatia.",
+   "drills": [
+    "Count aloud by hundreds: sto, dvjesto, tristo... up to devetsto.",
+    "Say three realistic prices in euros, for a coffee, a phone and a holiday.",
+    "Say how many people live in a big city, using milijun."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Say the Croatian words for one hundred, one thousand and one million.",
+     "Say 'It costs two hundred euros'.",
+     "Ask 'How much does it cost?'"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Hundreds, thousands, millions",
+     "intro": "Croatian builds hundreds by stacking sto: dvjesto, tristo, četiristo. A thousand is tisuća and a million is milijun; after a verb like košta you will hear the form tisuću.",
+     "items": [
+      {
+       "hr": "sto",
+       "en": "one hundred",
+       "note": "Sto eura. A hundred euros."
+      },
+      {
+       "hr": "dvjesto",
+       "en": "two hundred",
+       "note": "Hundreds are written as one word: dvjesto, tristo, četiristo, petsto..."
+      },
+      {
+       "hr": "tristo",
+       "en": "three hundred",
+       "note": "tri and sto, run together."
+      },
+      {
+       "hr": "petsto",
+       "en": "five hundred",
+       "note": "pet and sto, run together."
+      },
+      {
+       "hr": "tisuća",
+       "en": "a thousand",
+       "note": "To košta tisuću eura. It costs a thousand euros."
+      },
+      {
+       "hr": "milijun",
+       "en": "a million",
+       "note": "milijun ljudi = a million people"
+      },
+      {
+       "hr": "Koliko košta?",
+       "en": "How much does it cost?",
+       "note": "Answer: Košta sto pedeset eura."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "How much does it cost? (Koliko košta?)",
+     "intro": "Practise the words for hundreds, thousands and millions in real prices.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "Choose the standard Croatian word for 'a thousand'.",
+       "difficulty": 2,
+       "options": [
+        "tisuća",
+        "hiljada",
+        "tisuću",
+        "tisuće"
+       ],
+       "answer": "tisuća",
+       "explanation": "hiljada is the Serbian word for a thousand; standard Croatian uses tisuća. tisuću and tisuće are real forms of tisuća, but not its basic form."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Write the number 100 as a Croatian word.",
+       "difficulty": 2,
+       "answer": "sto",
+       "accepted": [
+        "sto",
+        "Sto"
+       ],
+       "explanation": "100 = sto. It combines into dvjesto, tristo and so on.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Complete: U zagrebačkoj regiji živi oko ___ ljudi. (a million)",
+       "difficulty": 3,
+       "options": [
+        "milijun",
+        "milion",
+        "milijuna",
+        "milijuni"
+       ],
+       "answer": "milijun",
+       "explanation": "Standard Croatian is milijun, with j; the spelling without it is not standard Croatian. milijuna would follow a number like dva."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete the price of the trip: Putovanje košta dvije ___ eura. (thousand)",
+       "difficulty": 3,
+       "answer": "tisuće",
+       "accepted": [
+        "tisuće"
+       ],
+       "explanation": "After dvije, the noun tisuća takes the form tisuće: dvije tisuće eura.",
+       "strictDiacritics": true
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the Croatian for: 'It costs a hundred and fifty euros.'",
+       "difficulty": 3,
+       "options": [
+        "eura",
+        "To",
+        "pedeset",
+        "košta",
+        "sto"
+       ],
+       "ordered": [
+        "To",
+        "košta",
+        "sto",
+        "pedeset",
+        "eura"
+       ],
+       "answer": "To košta sto pedeset eura",
+       "explanation": "To košta + the number: sto pedeset, then eura for the currency."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Write it in Croatian: 'two hundred, three hundred, five hundred'",
+       "difficulty": 4,
+       "answer": "dvjesto, tristo, petsto",
+       "explanation": "'two hundred, three hundred, five hundred' is 'dvjesto, tristo, petsto'"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "In the electronics shop (U trgovini tehnike)",
+     "intro": "Play 'Me'. You are asking about prices in an electronics shop, using numbers above one hundred.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Dobar dan! Trebate li pomoć?",
+       "en": "Good afternoon! Do you need help?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da. Koliko košta ovaj mobitel?",
+       "en": "Yes. How much does this mobile phone cost?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Dvjesto pedeset eura.",
+       "en": "Two hundred and fifty euros."
+      },
+      {
+       "speaker": "Me",
+       "hr": "A koliko košta ono računalo?",
+       "en": "And how much does that computer over there cost?"
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Tisuću sto eura.",
+       "en": "One thousand one hundred euros."
+      },
+      {
+       "speaker": "Me",
+       "hr": "To je puno novca. Hvala lijepa!",
+       "en": "That is a lot of money. Thank you very much!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ],
+   "day": 9,
+   "week": 2,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0"
+  },
+  {
+   "day": 10,
+   "week": 2,
+   "phase": "Phase 1: A0 → A1",
+   "level": "A0",
+   "title": "A0 milestone check",
+   "objective": "Prove you can read Croatian aloud, greet, introduce yourself, count and ask a simple question.",
+   "paretoFocus": "Milestone checks turn scattered knowledge into real capability and reveal exactly what to review.",
+   "drills": [
+    "Take the A0 quiz in the app.",
+    "Read a short paragraph aloud cold.",
+    "Do a 3-minute self-introduction."
+   ],
+   "reviewBlock": {
+    "minutes": 15,
+    "items": [
+     "Complete the A0 Feynman: 'The Croatian alphabet'.",
+     "Re-test weak vocabulary.",
+     "Celebrate, you've reached A0!"
+    ]
+   },
+   "activities": [
+    {
+     "type": "LEARN",
+     "title": "Your A0 toolkit, everything in one place",
+     "intro": "Milestone day! These ten lines pack together everything from lessons 1-13: greetings, introducing yourself, biti, verbs, the accusative, negation and questions. If you can produce all ten from memory, you have reached A0.",
+     "items": [
+      {
+       "hr": "Dobar dan! Ja sam Alex.",
+       "en": "Good day! I am Alex.",
+       "note": "Greeting + biti (lesson 2 + 6)."
+      },
+      {
+       "hr": "Zovem se Alex. Drago mi je.",
+       "en": "My name is Alex. Nice to meet you.",
+       "note": "The polite full introduction (lesson 3)."
+      },
+      {
+       "hr": "Odakle si? Ja sam iz Amerike.",
+       "en": "Where are you from? I am from America.",
+       "note": "'iz + place' = from. Fixed phrase for now."
+      },
+      {
+       "hr": "Govorim malo hrvatski.",
+       "en": "I speak a little Croatian.",
+       "note": "Present tense endings (lesson 8)."
+      },
+      {
+       "hr": "Oprostite, ne razumijem.",
+       "en": "Sorry, I don't understand.",
+       "note": "Politeness + negation (lesson 12)."
+      },
+      {
+       "hr": "Molim?",
+       "en": "Pardon? / Sorry, say that again?",
+       "note": "One magic word when you miss something."
+      },
+      {
+       "hr": "Koliko košta? Deset eura.",
+       "en": "How much does it cost? Ten euros.",
+       "note": "Question word + numbers (lessons 7 + 13)."
+      },
+      {
+       "hr": "Pijem kavu, a on pije pivo.",
+       "en": "I drink coffee, and he drinks beer.",
+       "note": "Nominative subject + accusative object in action (lessons 10-11)."
+      },
+      {
+       "hr": "Govoriš li hrvatski?",
+       "en": "Do you speak Croatian?",
+       "note": "li-question (lesson 12)."
+      },
+      {
+       "hr": "Hvala i doviđenja!",
+       "en": "Thanks and goodbye!",
+       "note": "Closing any interaction politely (lesson 2)."
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "EXERCISE",
+     "title": "A0 milestone quiz",
+     "intro": "A mixed check across everything so far: greetings, biti, genders, verbs, accusative, negation and questions. Aim for at least 8 out of 10.",
+     "questions": [
+      {
+       "type": "MCQ",
+       "prompt": "How do you say 'thank you'?",
+       "difficulty": 1,
+       "options": [
+        "hvala",
+        "molim",
+        "oprostite",
+        "izvolite"
+       ],
+       "answer": "hvala",
+       "explanation": "hvala = thanks; molim = please / you're welcome."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete: Ja ___ student. (I am a student.)",
+       "difficulty": 2,
+       "answer": "sam",
+       "accepted": [
+        "sam"
+       ],
+       "strictDiacritics": true,
+       "explanation": "Short form of biti: ja sam, ti si, on je…"
+      },
+      {
+       "type": "MCQ",
+       "prompt": "What gender is 'kava'?",
+       "difficulty": 2,
+       "options": [
+        "feminine",
+        "masculine",
+        "neuter",
+        "masculine, like 'stol'"
+       ],
+       "answer": "feminine",
+       "explanation": "Nouns in -a are (almost always) feminine: kava, žena, škola."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Conjugate: Mi ___ hrvatski. (govoriti, we speak)",
+       "difficulty": 3,
+       "answer": "govorimo",
+       "accepted": [
+        "govorimo"
+       ],
+       "strictDiacritics": true,
+       "explanation": "mi-form ends in -mo: govorimo."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "How do you say 'She is not here'?",
+       "difficulty": 3,
+       "options": [
+        "Ona nije ovdje.",
+        "Ona ne je ovdje.",
+        "Ona nisam ovdje.",
+        "Ona je ne ovdje."
+       ],
+       "answer": "Ona nije ovdje.",
+       "explanation": "biti has fused negatives: nije = is not. 'ne je' does not exist."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Complete with the object form: Pijem ___ . (kava)",
+       "difficulty": 3,
+       "answer": "kavu",
+       "accepted": [
+        "kavu"
+       ],
+       "strictDiacritics": true,
+       "explanation": "Accusative of kava is kavu, feminine -a → -u."
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Which number is 'petnaest'?",
+       "difficulty": 3,
+       "options": [
+        "5",
+        "15",
+        "50",
+        "25"
+       ],
+       "answer": "15",
+       "explanation": "pet = 5, petnaest = 15, pedeset = 50. The -naest numbers are the teens."
+      },
+      {
+       "type": "REORDER",
+       "prompt": "Build the question: 'What is your name?'",
+       "difficulty": 4,
+       "options": [
+        "se",
+        "Kako",
+        "zoveš"
+       ],
+       "ordered": [
+        "Kako",
+        "se",
+        "zoveš"
+       ],
+       "answer": "Kako se zoveš",
+       "explanation": "Kako se zoveš? literally 'How do you call yourself?'"
+      },
+      {
+       "type": "MCQ",
+       "prompt": "Ask 'Do you speak English?'",
+       "difficulty": 4,
+       "options": [
+        "Govoriš li engleski?",
+        "Li govoriš engleski?",
+        "Govoriš engleski?",
+        "Zašto govoriš engleski?"
+       ],
+       "answer": "Govoriš li engleski?",
+       "explanation": "Yes/no question: verb + li. (Without li it can work in speech, but the li-form is the one to master.)"
+      },
+      {
+       "type": "FILL",
+       "prompt": "Say 'I don't speak Croatian.'",
+       "difficulty": 4,
+       "answer": "Ne govorim hrvatski",
+       "accepted": [
+        "Ne govorim hrvatski",
+        "Ne govorim hrvatski.",
+        "ne govorim hrvatski",
+        "Ja ne govorim hrvatski"
+       ],
+       "strictDiacritics": true,
+       "explanation": "ne + govorim, negation goes directly before the verb, same pattern as ne razumijem."
+      },
+      {
+       "type": "FILL",
+       "prompt": "Play the audio and complete: 'Koliko ___? Deset eura.'",
+       "difficulty": 3,
+       "answer": "košta",
+       "accepted": [
+        "košta"
+       ],
+       "explanation": "The audio says 'Koliko košta? Deset eura.', which means 'How much does it cost? Ten euros.'",
+       "audioText": "Koliko košta? Deset eura."
+      },
+      {
+       "type": "TRANSLATE",
+       "prompt": "Put this into Croatian: 'Thanks and goodbye!'",
+       "difficulty": 4,
+       "answer": "Hvala i doviđenja!",
+       "explanation": "'Thanks and goodbye!' is 'Hvala i doviđenja!'"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    },
+    {
+     "type": "DIALOGUE",
+     "title": "Milestone conversation: meeting Ivana",
+     "intro": "Your first full conversation in Croatian, a real exchange using only what you've learned in the first two weeks. Read your lines ('Vi') aloud; better yet, cover the English and check yourself.",
+     "lines": [
+      {
+       "speaker": "Partner",
+       "hr": "Dobar dan! Ja sam Ivana. Kako se zovete?",
+       "en": "Good day! I am Ivana. What is your name? (formal)"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Dobar dan! Zovem se Alex. Drago mi je.",
+       "en": "Good day! My name is Alex. Nice to meet you."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Drago mi je. Odakle ste?",
+       "en": "Nice to meet you. Where are you from?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Ja sam iz Amerike. Sada živim u Zagrebu.",
+       "en": "I am from America. Now I live in Zagreb."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Govorite li hrvatski?",
+       "en": "Do you speak Croatian?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Govorim malo hrvatski. Učim svaki dan.",
+       "en": "I speak a little Croatian. I study every day."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Odlično! Pijete li kavu?",
+       "en": "Excellent! Do you drink coffee?"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Da, volim kavu. Pijem kavu svaki dan.",
+       "en": "Yes, I love coffee. I drink coffee every day."
+      },
+      {
+       "speaker": "Partner",
+       "hr": "Super! Doviđenja, Alex!",
+       "en": "Great! Goodbye, Alex!"
+      },
+      {
+       "speaker": "Me",
+       "hr": "Doviđenja, Ivana! Hvala!",
+       "en": "Goodbye, Ivana! Thanks!"
+      }
+     ],
+     "sources": [
+      "asoo",
+      "croaticum-syllabus"
+     ]
+    }
+   ]
+  }
+ ]
 }

@@ -105,11 +105,8 @@ private fun eob(x: Float): Float {
 private fun preloadSteps(container: AppContainer, lang: String): List<suspend () -> Unit> = listOf(
     { container.content.meta(lang) },
     { container.content.levels(lang) },
-    { container.content.cheatsheet(lang) },
     { container.content.grammar(lang) },
-    { container.content.feynman(lang) },
     { container.content.quizzes(lang) },
-    { container.content.resources(lang) },
     { container.content.exams(lang) },
     { container.content.plan(lang) },
     { container.content.vocab(lang) },

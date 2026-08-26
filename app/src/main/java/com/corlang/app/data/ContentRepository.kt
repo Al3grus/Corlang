@@ -1,14 +1,11 @@
 package com.corlang.app.data
 
 import android.content.Context
-import com.corlang.app.data.model.Cheatsheet
 import com.corlang.app.data.model.ExamSpec
-import com.corlang.app.data.model.FeynmanSet
 import com.corlang.app.data.model.GrammarSyllabus
 import com.corlang.app.data.model.LanguageMeta
 import com.corlang.app.data.model.Levels
 import com.corlang.app.data.model.QuizSet
-import com.corlang.app.data.model.ResourceList
 import com.corlang.app.data.model.StudyPlan
 import com.corlang.app.data.model.VocabSet
 import kotlinx.serialization.builtins.ListSerializer
@@ -88,11 +85,8 @@ class ContentRepository(private val context: Context) {
 
     fun meta(lang: String): LanguageMeta = load(lang, "meta.json")
     fun allMeta(): List<LanguageMeta> = availableLanguages.map { meta(it) }
-    fun cheatsheet(lang: String): Cheatsheet = load(lang, "cheatsheet.json")
     fun levels(lang: String): Levels = load(lang, "levels.json")
     fun quizzes(lang: String): QuizSet = load(lang, "quizzes.json")
-    fun feynman(lang: String): FeynmanSet = load(lang, "feynman.json")
-    fun resources(lang: String): ResourceList = load(lang, "resources.json")
 
     /** Plan: merged from content/<lang>/plan/ (phase files) or the single plan.json. */
     fun plan(lang: String): StudyPlan {

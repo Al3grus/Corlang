@@ -42,7 +42,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
@@ -146,7 +145,7 @@ fun ProfileScreen(
             // intact and one line brings the entrance back. Same pattern as a hidden language,
             // which stays in the repo and only leaves content/_index.json.
             // MenuRow(Icons.AutoMirrored.Outlined.MenuBook, "References",
-            //     "Cheatsheet, grammar, best resources", onClick = { page = "references" })
+            //     "Grammar syllabus", onClick = { page = "references" })
         }
     } }
 }
@@ -448,7 +447,7 @@ private fun PremiumPage(
     }
 }
 
-/** Reference library: cheatsheet, grammar, the Pareto note, and curated external resources. */
+/** Reference library: the grammar syllabus and the Pareto note. */
 @Composable
 private fun ReferencesPage(container: AppContainer, lang: String) {
     // Plain remember for the same reason as `page` above: an open document must not be
@@ -461,23 +460,15 @@ private fun ReferencesPage(container: AppContainer, lang: String) {
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
             }
             Box(Modifier.weight(1f)) {
-                if (doc == "cheatsheet") CheatsheetScreen(container, lang)
-                else GrammarScreen(container, lang)
+                GrammarScreen(container, lang)
             }
         }
         return
     }
     val meta = remember(lang) { container.content.meta(lang) }
-    val resources = remember(lang) {
-        container.content.resources(lang).resources.sortedBy { it.rank }
-    }
-    val uriHandler = LocalUriHandler.current
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)) {
-        OutlinedButton(onClick = { doc = "cheatsheet" }, modifier = Modifier.fillMaxWidth()) {
-            Text("Cheatsheet: the language on one page →")
-        }
         OutlinedButton(onClick = { doc = "grammar" },
-            modifier = Modifier.fillMaxWidth().padding(top = 6.dp, bottom = 10.dp)) {
+            modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp)) {
             Text("Grammar syllabus →")
         }
 
@@ -485,29 +476,6 @@ private fun ReferencesPage(container: AppContainer, lang: String) {
         Text(meta.paretoSummary, style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.padding(bottom = 8.dp))
 
-        SectionTitle("Best resources to learn ${meta.name}")
-        resources.forEach { r ->
-            Surface(
-                shape = RoundedCornerShape(12.dp),
-                color = MaterialTheme.colorScheme.surfaceVariant,
-                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
-                    .clickable(enabled = r.url != null) { r.url?.let { uriHandler.openUri(it) } }
-            ) {
-                Column(Modifier.padding(14.dp)) {
-                    Text("${r.rank}. ${r.name}", style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold)
-                    Text(
-                        r.type.replaceFirstChar { it.uppercase() } + (r.url?.let { url ->
-                            " · " + url.removePrefix("https://").removePrefix("http://")
-                                .substringBefore('/') + " ↗"
-                        } ?: ""),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.primary)
-                    Text(r.why, style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.padding(top = 4.dp))
-                }
-            }
-        }
         Spacer(Modifier.height(24.dp))
     }
 }

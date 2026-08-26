@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
  * because it read as a button: a lone icon in the top-right corner is where every app puts an
  * action, so people tapped it and nothing happened. The streak chip now holds that corner and it
  * IS an action — it opens the streak sheet — so the corner finally does what it looks like it does.
- * The language is still named (next to its flag) on Profile, Progress and the cheatsheet.
+ * The language is still named (next to its flag) on Profile and Progress.
  *
  * [streak] < 0 hides the chip entirely (progress not loaded yet), so the bar never flashes a
  * placeholder "0" before the real number arrives.

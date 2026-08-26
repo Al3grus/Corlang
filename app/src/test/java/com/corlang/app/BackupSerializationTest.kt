@@ -6,7 +6,6 @@ import com.corlang.app.data.db.CanDoCheck
 import com.corlang.app.data.db.DayCompletion
 import com.corlang.app.data.db.DayTaskCheck
 import com.corlang.app.data.db.ExamSectionAttempt
-import com.corlang.app.data.db.FeynmanAttempt
 import com.corlang.app.data.db.LanguageProgress
 import com.corlang.app.data.db.QuizAttempt
 import com.corlang.app.data.db.WordReview
@@ -32,7 +31,6 @@ class BackupSerializationTest {
             quizAttempts = listOf(QuizAttempt(1, "hr", "a1-q1", 8, 10, 300L)),
             wordReviews = listOf(WordReview("hr", "kava-coffee", box = 3, dueEpochDay = 19_810L,
                 introducedEpochDay = 19_700L, lapses = 1)),
-            feynmanAttempts = listOf(FeynmanAttempt(1, "hr", "cases", 3, 4, 400L)),
             examAttempts = listOf(ExamSectionAttempt(1, "hr", "hr-b1-mock", "citanje", 12, 15, true, 500L)),
             canDoChecks = listOf(CanDoCheck("hr", "A2", "0-1", 600L)),
             dayTaskChecks = listOf(DayTaskCheck("hr", 5, "drill-0", 700L)),

@@ -1,12 +1,9 @@
 package com.corlang.app
 
-import com.corlang.app.data.model.Cheatsheet
-import com.corlang.app.data.model.FeynmanSet
 import com.corlang.app.data.model.LanguageMeta
 import com.corlang.app.data.model.Levels
 import com.corlang.app.data.model.QuestionType
 import com.corlang.app.data.model.QuizSet
-import com.corlang.app.data.model.ResourceList
 import com.corlang.app.data.model.StudyPlan
 import com.corlang.app.data.model.VocabPack
 import com.corlang.app.data.model.VocabSet
@@ -132,11 +129,8 @@ class ContentValidationTest {
     fun `all languages parse strictly`() {
         for (lang in allLangs) {
             strictJson.decodeFromString<LanguageMeta>(read(lang, "meta.json"))
-            strictJson.decodeFromString<Cheatsheet>(read(lang, "cheatsheet.json"))
             strictJson.decodeFromString<Levels>(read(lang, "levels.json"))
             strictJson.decodeFromString<QuizSet>(read(lang, "quizzes.json"))
-            strictJson.decodeFromString<FeynmanSet>(read(lang, "feynman.json"))
-            strictJson.decodeFromString<ResourceList>(read(lang, "resources.json"))
             // Optional files, but when present they must strict-parse too — a wrong question key
             // in exams.json (e.g. "kind" vs "type") must fail the build, not crash at runtime.
             if (exists(lang, "exams.json"))
@@ -190,22 +184,6 @@ class ContentValidationTest {
             assertTrue("day ${d.day}: blank level/phase/title",
                 d.level.isNotBlank() && d.phase.isNotBlank() && d.title.isNotBlank())
             assertTrue("day ${d.day}: week must be positive", d.week >= 1)
-        }
-    }
-
-    @Test
-    fun `plan resource references exist in resources json`() {
-        for (lang in allLangs) {
-            val resourceNames = strictJson
-                .decodeFromString<ResourceList>(read(lang, "resources.json"))
-                .resources.map { it.name }.toSet()
-            // In-app references (like the Words tab) are allowed; external ones must resolve.
-            val allowed = resourceNames + setOf("Words tab (built-in daily flashcards)")
-            loadPlan(lang).days.forEach { d ->
-                d.resources.forEach { r ->
-                    assertTrue("$lang day ${d.day} references unknown resource: $r", r in allowed)
-                }
-            }
         }
     }
 
@@ -825,8 +803,9 @@ class ContentValidationTest {
 
     // ---- App-only content + wording invariants (docs/language-standard.md section 7) ----
 
-    /** Every learner-visible string in every content file, minus provenance `sources` arrays
-     *  and resources.json (the ONE sanctioned home for external material, on Profile). */
+    /** Every learner-visible string in every content file, minus provenance `sources` arrays.
+     *  resources.json used to be excluded as the one sanctioned home for external material; it
+     *  no longer exists, so there is no longer anywhere external material is allowed. */
     private fun learnerStrings(lang: String): List<Pair<String, String>> {
         val out = mutableListOf<Pair<String, String>>()
         fun walk(el: kotlinx.serialization.json.JsonElement, file: String) {
@@ -841,7 +820,7 @@ class ContentValidationTest {
         }
         File(contentRoot, lang).walkTopDown()
             .filter { it.isFile && it.extension == "json" }
-            .filter { it.name != "resources.json" && it.name != "_index.json" }
+            .filter { it.name != "_index.json" }
             .forEach { f ->
                 walk(Json.parseToJsonElement(f.readText(Charsets.UTF_8)), "$lang/${f.name}")
             }
@@ -850,10 +829,12 @@ class ContentValidationTest {
 
     /**
      * Lessons NEVER send the learner to study elsewhere: no URLs, no course sites, no named
-     * institutions, no sign-in instructions, no competitor apps. External material lives only
-     * in resources.json (Profile > References). Mirrors SessionPlayer's runtime isExternal
-     * filter, but at the content gate so it can't even be authored. (Named-media immersion
-     * habits like watching the news are allowed; course/site/app references are not.)
+     * institutions, no sign-in instructions, no competitor apps. There is no longer any
+     * exception: resources.json, which used to be the one sanctioned home for external
+     * material, has been removed along with the Profile section that showed it. Mirrors
+     * SessionPlayer's runtime isExternal filter, but at the content gate so it cannot even be
+     * authored. (Named-media immersion habits like watching the news are allowed; course, site
+     * and app references are not.)
      */
     @Test
     fun content_neverSendsLearnersElsewhere() {

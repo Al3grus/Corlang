@@ -99,20 +99,6 @@ def build_plan(build_dir, title, lesson_files, retired=frozenset()):
     if ranked != sorted(ranked):
         die(f"levels out of ladder order: {seen_order}")
 
-    # Every lesson's `resources` string must name a real entry in resources.json. Lesson batches
-    # and resources.json are authored in parallel, so the names drift whenever a URL fails live
-    # verification and its entry is renamed or dropped. German shipped that mismatch all the way
-    # to the real Kotlin gates; catching it here costs nothing.
-    res_path = os.path.join(build_dir, "resources.json")
-    if os.path.exists(res_path):
-        valid = {x["name"] for x in read_json(res_path)["resources"]}
-        # The Kotlin gate allowlists in-app references that have no resources.json entry.
-        valid.add("Words tab (built-in daily flashcards)")
-        unknown = {r for d in days for r in d.get("resources", [])} - valid
-        if unknown:
-            die("lessons reference resources absent from resources.json: "
-                + ", ".join(sorted(unknown)))
-
     for i, d in enumerate(days, start=1):
         d["day"] = i
         d["week"] = math.ceil(i / 7)
