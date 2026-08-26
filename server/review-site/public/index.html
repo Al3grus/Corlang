@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corlang course review</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1a1a1a;--dim:#5f6368;--line:#dfdcd6;--accent:#0b4f8a}
+@media (prefers-color-scheme:dark){:root{--bg:#14161a;--card:#1c1f24;--ink:#e8e6e3;--dim:#9aa0a6;--line:#31363d;--accent:#7fb2e4}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+  background:var(--bg);color:var(--ink);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:520px;width:100%}
+h1{font-size:24px;margin:0 0 6px}
+p{color:var(--dim);margin:0 0 22px}
+a.course{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+a.course:hover{border-color:var(--accent)}
+a.course .flag{font-size:28px;line-height:1}
+a.course b{display:block;font-size:17px}
+a.course span{color:var(--dim);font-size:14px}
+.note{font-size:14px;color:var(--dim);margin-top:20px}
+code{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Corlang course review</h1>
+  <p>Pick the course you are reviewing.</p>
+  <div id="list"></div>
+  <p class="note" id="note"></p>
+</div>
+<script>
+// The token travels in the link, so it has to be carried through to whichever course is picked.
+// Arriving here without one is not an error worth a scary message: the workbooks are readable
+// by anyone, it is only SAVING that needs the token.
+var k = null;
+try { k = new URLSearchParams(location.search).get('k'); } catch(e){}
+var q = k ? '?k=' + encodeURIComponent(k) : '';
+var courses = [
+  {code:'hr', flag:'\u{1F1ED}\u{1F1F7}', name:'Croatian', sub:'352 sections · A0 to B1'},
+  {code:'pt', flag:'\u{1F1F5}\u{1F1F9}', name:'Portuguese', sub:'259 sections · A0 to B1'}
+];
+document.getElementById('list').innerHTML = courses.map(function(c){
+  return '<a class="course" href="/' + c.code + '/' + q + '">' +
+    '<span class="flag">' + c.flag + '</span>' +
+    '<span><b>' + c.name + '</b><span>' + c.sub + '</span></span></a>';
+}).join('');
+document.getElementById('note').textContent = k
+  ? 'Your progress saves automatically in whichever course you open. The two are kept separately, so you can review both.'
+  : 'Opened without a personal link, so nothing here will save. Ask for your own link if you are reviewing.';
+</script>
+</body>
+</html>

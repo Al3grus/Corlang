@@ -361,6 +361,15 @@ def build_data(lang: str) -> dict:
     # another, hundreds of screens apart.
     per_day_words = words_by_lesson(lang)
     lessons: dict[str, list] = {}
+    plan_days = {
+        d["day"] for fname in load(lang, "plan", "_index.json") for d in load(lang, "plan", fname)["days"]
+    }
+    # Deck slots past the last lesson. The app introduces new words as `take(day * perLesson)`,
+    # so a deck longer than the plan can carry leaves a tail no learner ever reaches. Croatian
+    # comes out exact; Portuguese has 2,568 words against 250 lessons and strands the last 68.
+    # They are shown, in their own clearly-labelled section, because a reviewer's time should not
+    # go on words nobody will see, but silently dropping them would hide a real content bug.
+    orphan_words = [w for day, ws in per_day_words.items() if day not in plan_days for w in ws]
     for fname in load(lang, "plan", "_index.json"):
         for day in load(lang, "plan", fname)["days"]:
             lessons.setdefault(day["level"], []).append(
@@ -396,6 +405,27 @@ def build_data(lang: str) -> dict:
                 "ms": raw.get("milestone", ""),
                 "cd": raw.get("canDo", []),
                 "secs": secs,
+            }
+        )
+
+    if orphan_words:
+        levels.append(
+            {
+                "id": "ORPHAN",
+                "ti": "Words no lesson introduces",
+                "ms": f"The deck holds {len(orphan_words)} words past the end of the plan, so the "
+                      f"app never introduces them. Worth a look, but they reach nobody as things "
+                      f"stand — review these last, or not at all.",
+                "cd": [],
+                "secs": [
+                    {
+                        "id": "orphans",
+                        "k": "vocab",
+                        "ti": "Words the plan never reaches",
+                        "sub": f"{len(orphan_words)} words sitting past the last lesson in the deck",
+                        "items": orphan_words,
+                    }
+                ],
             }
         )
 
@@ -607,13 +637,19 @@ var SYNC = (function(){
 })();
 var pushTimer = null, pushing = false, pushFailed = false;
 
+// The course is part of the address, not just the token: one reviewer with one link doing both
+// courses must not have each overwrite the other.
+function syncUrl(){
+  return '/api/review?k=' + encodeURIComponent(SYNC) + '&c=' + encodeURIComponent(D.code);
+}
+
 function serverPush(){
   if (!SYNC) return;
   clearTimeout(pushTimer);
   pushTimer = setTimeout(function(){
     if (pushing) { serverPush(); return; }
     pushing = true;
-    fetch('/api/review?k=' + encodeURIComponent(SYNC), {
+    fetch(syncUrl(), {
       method: 'PUT',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify(S)
@@ -1156,7 +1192,7 @@ refresh();
 // adopted when it actually carries more work than the local copy, so a failed first save can
 // never wipe an afternoon.
 if (SYNC){
-  fetch('/api/review?k=' + encodeURIComponent(SYNC))
+  fetch(syncUrl())
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(remote){
       if (!remote || !remote.flags) return;
@@ -1194,6 +1230,10 @@ def main() -> int:
 
     print(f"{out}  ({len(html)/1024/1024:.1f} MB)")
     print(f"  {data['total']:,} flaggable items across {sum(len(l['secs']) for l in data['levels'])} sections")
+    orphan = next((l for l in data["levels"] if l["id"] == "ORPHAN"), None)
+    if orphan:
+        n = len(orphan["secs"][0]["items"])
+        print(f"  WARNING: {n} deck words sit past the last lesson and are never introduced")
     for l in data["levels"]:
         n = sum(1 for s in l["secs"] for i in s["items"] if i.get("i"))
         print(f"  {l['id']:<6} {len(l['secs']):>4} sections  {n:>6,} items")

@@ -1,8 +1,12 @@
 /**
  * Review state store for the hosted workbook (Cloudflare Pages Function).
  *
- *   GET  /api/review?k=<token>   -> the saved state, or {} if nothing saved yet
- *   PUT  /api/review?k=<token>   -> replaces the saved state
+ *   GET  /api/review?k=<token>&c=<course>   -> the saved state, or {} if nothing saved yet
+ *   PUT  /api/review?k=<token>&c=<course>   -> replaces the saved state
+ *
+ * The course is part of the key, not just the token. One person reviewing both Croatian and
+ * Portuguese with the same link would otherwise have each course overwrite the other, and the
+ * loss would be silent.
  *
  * The token is the whole access model, and that is a deliberate choice rather than an oversight.
  * One named reviewer holds one long random link; there are no accounts to build, nothing to
@@ -15,7 +19,7 @@
  * what lets two people review the same course without colliding.
  *
  * Bindings (see wrangler.toml):
- *   REVIEW_KV       KV namespace holding one entry per reviewer
+ *   REVIEW_KV       KV namespace holding one entry per reviewer per course
  *   REVIEW_TOKENS   secret, e.g. "ana:8f3c...,marko:1b7e..."
  */
 
@@ -56,11 +60,13 @@ export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const who = reviewerFor(env, url.searchParams.get("k"));
+  const course = (url.searchParams.get("c") || "").trim();
 
   if (!who) return json({ error: "unknown or missing token" }, 403);
+  if (!/^[a-z]{2,5}$/.test(course)) return json({ error: "missing or malformed course" }, 400);
   if (!env.REVIEW_KV) return json({ error: "REVIEW_KV binding missing" }, 500);
 
-  const key = `review:${who}`;
+  const key = `review:${course}:${who}`;
 
   if (request.method === "GET") {
     const saved = await env.REVIEW_KV.get(key);
@@ -82,6 +88,7 @@ export async function onRequest(context) {
     // the only way to tell "they stopped for the night" from "they stopped three weeks ago".
     body.savedAt = new Date().toISOString();
     body.reviewerKey = who;
+    body.course = course;
     await env.REVIEW_KV.put(key, JSON.stringify(body));
     return json({ ok: true, savedAt: body.savedAt });
   }
