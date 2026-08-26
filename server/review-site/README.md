@@ -1,8 +1,14 @@
 # corlang-review — the hosted review workbook
 
-Cloudflare Pages project serving the native-speaker workbook at
+Cloudflare Pages project serving the native-speaker workbooks at
 **https://corlang-review.pages.dev**, with per-reviewer progress saved server-side so it can be
 watched while the review is happening rather than waited for at the end.
+
+| | |
+|---|---|
+| `/` | course chooser, carries the token through |
+| `/hr/` | Croatian, 352 sections |
+| `/pt/` | Portuguese, 259 sections |
 
 The same HTML works three ways, which is the point: opened from disk it is a local file, opened
 at the bare URL it saves only in the browser, and opened with `?k=<token>` it mirrors every save
@@ -13,7 +19,9 @@ to KV. A reviewer whose link stops working can still be emailed the file and car
 Send them the link with their token:
 
 ```
-https://corlang-review.pages.dev/?k=<their-token>
+https://corlang-review.pages.dev/?k=<their-token>        both courses, they pick
+https://corlang-review.pages.dev/hr/?k=<their-token>     straight into Croatian
+https://corlang-review.pages.dev/pt/?k=<their-token>     straight into Portuguese
 ```
 
 That link is the whole access model. One named reviewer, one long random link: no accounts to
@@ -24,8 +32,12 @@ overwritten by a passer-by.
 ## Watching their progress
 
 ```bash
-npx wrangler kv key get review:<name> --namespace-id 8c5dcd3be8d84707958c0c8a6b9a9881 --remote
+npx wrangler kv key get review:hr:ana --namespace-id 8c5dcd3be8d84707958c0c8a6b9a9881 --remote
 ```
+
+Keys are `review:<course>:<name>`. The course belongs in the key because one person reviewing
+both courses on one link would otherwise have each overwrite the other, and the loss would be
+silent.
 
 Every save is stamped server-side with `savedAt`, which is how you tell "stopped for the night"
 from "stopped three weeks ago". A reviewer's own clock is not evidence of when work landed.
@@ -36,7 +48,8 @@ with saved work.
 ## Redeploying after content changes
 
 ```bash
-python tools/course/build_review_doc.py hr --out server/review-site/public/index.html
+python tools/course/build_review_doc.py hr --out server/review-site/public/hr/index.html
+python tools/course/build_review_doc.py pt --out server/review-site/public/pt/index.html
 cd server/review-site
 npx wrangler pages deploy public --project-name corlang-review --branch main --commit-dirty=true
 ```
@@ -44,7 +57,8 @@ npx wrangler pages deploy public --project-name corlang-review --branch main --c
 Saved progress is keyed by content path, not by position, so a redeploy does not invalidate work
 already done. A flag on a word whose id has not changed still points at that word.
 
-`public/` is gitignored: it is a 3.3 MB build artifact and belongs in the deploy, not in history.
+`public/<lang>/` is gitignored: 3.3 MB and 2 MB of build artifact belong in the deploy, not in
+history. `public/index.html`, the chooser, is hand-written and committed.
 
 ## Adding a second reviewer
 
@@ -78,6 +92,7 @@ npx wrangler kv namespace delete --namespace-id 8c5dcd3be8d84707958c0c8a6b9a9881
 |---|---|
 | `wrangler.toml` | project config and the `REVIEW_KV` binding |
 | `functions/api/review.js` | `GET`/`PUT /api/review?k=…`, token check, KV read/write |
-| `public/index.html` | the workbook (generated, gitignored) |
-| KV namespace | `8c5dcd3be8d84707958c0c8a6b9a9881`, one `review:<name>` entry per reviewer |
+| `public/<lang>/index.html` | the workbooks (generated, gitignored) |
+| `public/index.html` | course chooser (committed, tiny) |
+| KV namespace | `8c5dcd3be8d84707958c0c8a6b9a9881`, one `review:<course>:<name>` per reviewer |
 | secret | `REVIEW_TOKENS`, comma-separated `name:token` pairs |

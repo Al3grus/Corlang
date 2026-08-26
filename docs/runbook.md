@@ -79,15 +79,16 @@ scheme and how to apply the result.
 Hosted, so progress can be watched instead of waited for — https://corlang-review.pages.dev :
 
 ```bash
-python tools/course/build_review_doc.py hr --out server/review-site/public/index.html
+python tools/course/build_review_doc.py hr --out server/review-site/public/hr/index.html
+python tools/course/build_review_doc.py pt --out server/review-site/public/pt/index.html
 cd server/review-site
 npx wrangler pages deploy public --project-name corlang-review --branch main --commit-dirty=true
 
-# what a reviewer has done so far
-npx wrangler kv key get review:ana --namespace-id 8c5dcd3be8d84707958c0c8a6b9a9881 --remote
+# what a reviewer has done so far (keys are review:<course>:<name>)
+npx wrangler kv key get review:hr:ana --namespace-id 8c5dcd3be8d84707958c0c8a6b9a9881 --remote
 ```
 
-Reviewers get `https://corlang-review.pages.dev/?k=<token>`. Full detail, including adding a
+Reviewers get `https://corlang-review.pages.dev/?k=<token>` and pick a course, or go straight in at `/hr/?k=` or `/pt/?k=`. Full detail, including adding a
 second reviewer and taking the site down afterwards: `server/review-site/README.md`.
 
 Also live: a `PostToolUse` hook (`tools/hooks/validate_content_json.py`) that warns the moment an
