@@ -129,18 +129,30 @@ class WordsRepository(
         // could drain it and real reviews were crowded out for weeks (session-review finding).
         val cap = prefs.maxReviewsPerDay.first()
         val perDay = (cap / 2).coerceAtLeast(REVIEW_SEED_MIN_PER_DAY)
-        words.reversed().forEachIndexed { i, w ->
+        /*
+         * Built as a list and written ONCE.
+         *
+         * This used to call upsertWordReview per word, and each Room upsert outside a
+         * transaction is its own transaction, which on SQLite means its own disk sync. The
+         * window is 60 lessons wide, so placing at lesson 55 with the course owned wrote 540 of
+         * them back to back while the confirm button waited: a few seconds on a mid-range phone,
+         * with nothing on screen to say why. One transaction for the whole batch instead.
+         *
+         * REPLACE rather than upsert is safe here and identical in effect: the primary key is
+         * (langCode, wordId), a natural key with no autoincrement to churn, and `words` is
+         * already filtered to ids with no existing review.
+         */
+        val rows = words.reversed().mapIndexed { i, w ->
             // A fresh card: the first grading runs the normal first-review path, so a
             // half-remembered word gets a short interval and a solid one a long jump.
-            dao.upsertWordReview(
-                WordReview(
-                    langCode = lang,
-                    wordId = w.id,
-                    introducedEpochDay = today,
-                    dueEpochDay = today + (i / perDay)
-                )
+            WordReview(
+                langCode = lang,
+                wordId = w.id,
+                introducedEpochDay = today,
+                dueEpochDay = today + (i / perDay)
             )
         }
+        dao.insertAllWordReviews(rows)
         return words.size
     }
 

@@ -279,8 +279,15 @@ fun PlacementScreen(
                 )
             }
             }
+            // Latched for the duration of the commit. Four writes run before this screen closes,
+            // one of them seeding hundreds of review cards, and a second tap would run the whole
+            // sequence again. It also gives the button something to say while it works, so a
+            // pause reads as progress rather than as a dead tap.
+            var committing by rememberSaveable { mutableStateOf(false) }
             Button(
+                enabled = !committing,
                 onClick = {
+                    committing = true
                     // Close only AFTER the write commits — calling onDone() first would remove
                     // this screen and cancel the scope before setPlacement ever runs (leaving
                     // you on Day 1).
@@ -314,8 +321,11 @@ fun PlacementScreen(
                 modifier = Modifier.fillMaxWidth().padding(top = 24.dp)
             ) {
                 Text(
-                    if (atCeiling) "Open the course at its last lesson"
-                    else "Start at $placeLevel · Lesson $placeDay"
+                    when {
+                        committing -> "Setting up your reviews…"
+                        atCeiling -> "Open the course at its last lesson"
+                        else -> "Start at $placeLevel · Lesson $placeDay"
+                    }
                 )
             }
             OutlinedButton(onClick = onDone, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
