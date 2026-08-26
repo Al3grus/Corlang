@@ -580,9 +580,6 @@ class ContentValidationTest {
         if (exists("fr", "exams.json")) {
             assertTrue("fr exams.json must cite sources", read("fr", "exams.json").contains("\"sources\""))
         }
-        if (exists("fr", "grammar.json")) {
-            assertTrue("fr grammar.json must cite sources", read("fr", "grammar.json").contains("\"sources\""))
-        }
     }
 
     // ---------- Portuguese (pt), guarded so each check activates as content lands ----------
@@ -671,9 +668,6 @@ class ContentValidationTest {
         }
         if (exists("pt", "exams.json")) {
             assertTrue("pt exams.json must cite sources", read("pt", "exams.json").contains("\"sources\""))
-        }
-        if (exists("pt", "grammar.json")) {
-            assertTrue("pt grammar.json must cite sources", read("pt", "grammar.json").contains("\"sources\""))
         }
     }
 
@@ -782,12 +776,8 @@ class ContentValidationTest {
 
     @Test
     fun `new content files carry provenance`() {
-        // grammar.json / exams.json and split vocab dirs are the "validated era" formats:
+        // exams.json and split vocab dirs are the "validated era" formats:
         // once they exist they must cite sources.
-        if (exists("hr", "grammar.json")) {
-            val text = read("hr", "grammar.json")
-            assertTrue("grammar.json must cite sources", text.contains("\"sources\""))
-        }
         if (exists("hr", "exams.json")) {
             val text = read("hr", "exams.json")
             assertTrue("exams.json must cite sources", text.contains("\"sources\""))

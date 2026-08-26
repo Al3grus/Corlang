@@ -248,32 +248,6 @@ data class VocabWord(
     val example: Example? = null // example sentence (target + gloss); spoken via TTS
 )
 
-// ---------- Grammar syllabus (per-level reference, source-anchored) ----------
-
-@Serializable
-data class GrammarSyllabus(
-    val levels: List<GrammarLevel>
-)
-
-@Serializable
-data class GrammarLevel(
-    val levelId: String,             // "A1", "A2", "B1"
-    val intro: String = "",          // what this level's grammar unlocks
-    val topics: List<GrammarTopic>,
-    val sources: List<String> = emptyList()
-)
-
-@Serializable
-data class GrammarTopic(
-    val id: String,
-    val title: String,
-    val summary: String,             // plain-English explanation
-    /** Reference tables rendered as monospace diagrams (same as CheatSection.diagram). */
-    val tables: List<String> = emptyList(),
-    val examples: List<Example> = emptyList(),
-    val sources: List<String> = emptyList()
-)
-
 // ---------- Exam specs (mock exam mirroring NN 100/2021 / Croaticum format) ----------
 
 @Serializable

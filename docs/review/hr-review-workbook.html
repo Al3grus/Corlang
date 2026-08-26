@@ -5,10 +5,29 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Croatian course review</title>
 <style>
+/* Light is the default because this is a reading document and most people read long text in
+   it. Dark is a real second palette, not an inversion: the flag colours are re-pitched so a
+   flagged card still reads as flagged against a dark card, and the Croatian blue lifts to
+   something legible on ink rather than staying a navy that disappears. */
 :root{
   --bg:#f6f5f2; --card:#fff; --ink:#1a1a1a; --dim:#5f6368; --line:#dfdcd6;
   --hr:#0b4f8a; --ok:#0f7b3f; --okbg:#e6f4ec; --wrong:#b3261e; --wrongbg:#fdeceb;
   --awk:#a15c00; --awkbg:#fdf1e0; --uns:#5b4a9e; --unsbg:#efeafb; --accent:#0b4f8a;
+  --shadow:rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161a; --card:#1c1f24; --ink:#e8e6e3; --dim:#9aa0a6; --line:#31363d;
+    --hr:#7fb2e4; --ok:#5cc98c; --okbg:#16301f; --wrong:#ef8f88; --wrongbg:#3a1c1a;
+    --awk:#e0a850; --awkbg:#33260f; --uns:#b0a2ee; --unsbg:#241f38; --accent:#7fb2e4;
+    --shadow:rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161a; --card:#1c1f24; --ink:#e8e6e3; --dim:#9aa0a6; --line:#31363d;
+  --hr:#7fb2e4; --ok:#5cc98c; --okbg:#16301f; --wrong:#ef8f88; --wrongbg:#3a1c1a;
+  --awk:#e0a850; --awkbg:#33260f; --uns:#b0a2ee; --unsbg:#241f38; --accent:#7fb2e4;
+  --shadow:rgba(0,0,0,.4);
 }
 *{box-sizing:border-box}
 body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -55,6 +74,7 @@ nav a.sec .fl{color:var(--wrong);font-weight:700}
 .days a.done{background:var(--okbg);border-color:var(--ok);color:var(--ok);font-weight:700}
 .days a.flag{background:var(--wrongbg);border-color:var(--wrong);color:var(--wrong);font-weight:700}
 .days a.on{outline:2px solid var(--accent)}
+.v.on-wrong,.v.on-awkward,.v.on-unsure{color:#14161a}
 
 /* ---- sections ---- */
 .sec-head{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
@@ -77,7 +97,7 @@ nav a.sec .fl{color:var(--wrong);font-weight:700}
 .kind{display:inline-block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);
   border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-right:8px;vertical-align:2px}
 .note{font-size:14px;color:var(--dim);margin-top:5px}
-.pk{font-size:11.5px;color:#9a9a9a;white-space:nowrap}
+.pk{font-size:11.5px;color:var(--dim);opacity:.75;white-space:nowrap}
 .ex{margin-top:7px;padding-left:11px;border-left:2px solid var(--line);font-size:15px}
 .h{margin:22px 0 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
   border-bottom:1px solid var(--line);padding-bottom:5px}
@@ -97,7 +117,7 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:
 .v.on-wrong{background:var(--wrong);border-color:var(--wrong);color:#fff}
 .v.on-awkward{background:var(--awk);border-color:var(--awk);color:#fff}
 .v.on-unsure{background:var(--uns);border-color:var(--uns);color:#fff}
-.ctl .id{font-size:11px;color:#9a9a9a;font-family:ui-monospace,Menlo,Consolas,monospace;margin-left:auto}
+.ctl .id{font-size:11px;color:var(--dim);opacity:.7;font-family:ui-monospace,Menlo,Consolas,monospace;margin-left:auto}
 textarea{width:100%;margin-top:8px;border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit;
   font-size:14.5px;resize:vertical;min-height:60px;background:var(--card)}
 textarea:focus{outline:2px solid var(--accent);border-color:transparent}
@@ -133,6 +153,7 @@ textarea:focus{outline:2px solid var(--accent);border-color:transparent}
   <span class="stat" id="counts"></span>
   <span class="bar"><i id="prog"></i></span>
   <span id="saved">saved</span>
+  <button class="btn" id="theme" title="Switch between light and dark">Dark</button>
   <button class="btn primary" id="exp">Save my work</button>
 </header>
 
@@ -506,7 +527,28 @@ document.getElementById('q').addEventListener('keydown', function(e){
   }, 60);
 });
 
-/* ---------- export / import ---------- */
+/* ---------- theme ---------- */
+// Three states, like any well-behaved page: follow the system, or override it either way. The
+// choice is remembered separately from the review data, so clearing one does not disturb the
+// other, and a browser that refuses storage entirely still gets a working toggle for the session.
+var THEME_KEY = 'corlang-review-theme';
+function applyTheme(t){
+  if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  else document.documentElement.removeAttribute('data-theme');
+  var dark = t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.getElementById('theme').textContent = dark ? 'Light' : 'Dark';
+}
+var theme = null;
+try { theme = localStorage.getItem(THEME_KEY); } catch(e){}
+applyTheme(theme);
+document.getElementById('theme').addEventListener('click', function(){
+  var dark = theme === 'dark' || (theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+  theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem(THEME_KEY, theme); } catch(e){}
+  applyTheme(theme);
+});
+
+/* ---------- export ---------- */
 document.getElementById('exp').addEventListener('click', function(){
   var flags = [];
   for (var id in S.flags){
