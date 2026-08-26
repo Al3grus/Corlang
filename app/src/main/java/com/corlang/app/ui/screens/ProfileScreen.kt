@@ -441,7 +441,7 @@ private fun PremiumPage(
                 "It is in your bottom bar, under Tutor."
             else
                 "Someone to speak ${meta.name} with at your level, and to mark your exam " +
-                    "writing like an examiner would. Monthly, free for the first 3 days.",
+                    "writing like an examiner would. Monthly, cancel any time.",
             cta = if (entitled) null else "See the tutor plan",
             onClick = onGetPremium
         )

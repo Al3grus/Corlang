@@ -98,6 +98,10 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,7vw,70px);lin
   letter-spacing:-.04em;margin:0 0 24px}
 h1 .soft{color:var(--muted)}
 .lede{font-size:20px;line-height:1.55;color:var(--muted);margin:0;max-width:600px}
+/* The promise, carrying the weight the supporting lines do not: full ink, a size up, and the
+   only lede that is not grey. Three identical paragraphs made the reader rank them by position
+   alone, which put the thing they actually want third. */
+.lede.goal{color:var(--ink);font-size:23px;font-weight:600;margin:0 0 4px}
 .actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:38px 0 0}
 .cta{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;
   font-size:16px;padding:15px 28px;border-radius:10px}
@@ -1088,12 +1092,16 @@ def build():
     landing = f"""
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow rise">Spaced repetition &middot; 10 minutes a day</p>
+      <p class="eyebrow rise">10 minutes a day &middot; Spaced repetition</p>
       <h1 class="rise">Learn a language.<br><span class="soft">The proven way.</span></h1>
+      <!-- The GOAL first, and in full ink. It used to close the hero, under two paragraphs of
+           method, which sold the vehicle before naming the destination. Nobody sets out to do
+           spaced repetition; they set out to pass the exam, get the job, or take the oath. The
+           method is the reason to believe the promise, so it follows the promise. -->
+      <p class="lede goal rise">Prepare for work, citizenship or an official exam.</p>
       <p class="lede rise">Short daily lessons built on how memory works, so the word you learn
       today is still there in a month.</p>
       <p class="lede rise">No classroom, no commute. Learn anywhere, anytime.</p>
-      <p class="lede rise">Prepare for work, citizenship or an official exam.</p>
       <div class="actions rise">
         <button class="cta" type="button" data-invite>Ask for a test invite</button>
         <span class="avail">Coming soon to Google Play</span>
@@ -1290,8 +1298,12 @@ def build():
 
     io.open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8', newline='\n').write(
         page("Corlang — learn a language, remember it",
-             "Short daily lessons built on spaced repetition, from your first words to the "
-             "official B1 exam. No account, no ads, no tracking.",
+             # Goal first here too, and this is the version that matters most: it is the search
+             # snippet and the link preview, read before anyone has decided to visit at all.
+             # Kept under ~160 characters so Google shows the whole thing rather than cutting it
+             # mid-promise.
+             "Prepare for work, citizenship or an official exam. Short daily lessons built on "
+             "spaced repetition, from your first words to B1. No account, no ads, no tracking.",
              landing, "https://corlang.app/"))
 
     os.makedirs(os.path.join(OUT, 'requests'), exist_ok=True)
