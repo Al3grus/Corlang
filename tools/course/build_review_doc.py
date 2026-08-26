@@ -656,16 +656,20 @@ function serverPush(){
     }).then(function(r){
       pushing = false;
       pushFailed = !r.ok;
-      syncBadge(r.ok ? 'saved to the server' : 'server refused the save');
+      syncBadge(r.ok ? 'saved' : 'not saved', r.ok
+        ? 'Saved to the server. You can close this tab.'
+        : 'The server refused the save. Press "Download a copy" so you have your work.');
     }).catch(function(){
       pushing = false; pushFailed = true;
-      syncBadge('offline, saved in this browser');
+      syncBadge('offline', 'No connection. Your work is safe in this browser and goes up when you are back online.');
     });
   }, 2500);
 }
-function syncBadge(text){
+// Short, because it shares a row with the toolbar. The colour and the tooltip carry the detail.
+function syncBadge(text, detail){
   var el = document.getElementById('saved');
   el.textContent = text;
+  el.title = detail || '';
   el.style.color = pushFailed ? 'var(--awk)' : 'var(--ok)';
   el.style.opacity = 1;
   setTimeout(function(){ el.style.opacity = 0; }, 1600);
@@ -1145,6 +1149,8 @@ function INTRO(){
       '<p>At the end of every session press <b>Save my work</b> in the top right and send us the '+
       'file it gives you.</p>')+
 
+  '<p class="note" style="margin-top:22px">This workbook was built from the course as it stood on '+
+  esc(D.built)+'. If we fix something you flag, you may be sent a fresh one.</p>'+
   '<div style="margin-top:26px;text-align:center">'+
   '<button class="btn primary" data-go="'+esc(firstSection())+'" style="padding:11px 22px">Start at Lesson 1 →</button>'+
   '</div>'+
@@ -1180,7 +1186,14 @@ function NOTES(){
 function firstSection(){ var a = flatSections(); return a.length ? a[0] : 'intro'; }
 
 /* ---------- boot ---------- */
-document.getElementById('brand').textContent = D.flag + ' ' + D.name + ' review · built ' + D.built;
+// Just the course. The build date used to sit here and was the widest thing in the bar after
+// the search box, which pushed the save button onto a second row the moment the sync badge
+// appeared. It is still on the brand's tooltip, on the instructions page, and inside every
+// exported file as workbookBuilt, which is the copy that actually matters when a returned
+// review has to be matched to the content it was written against.
+var brandEl = document.getElementById('brand');
+brandEl.textContent = D.flag + ' ' + D.name + ' review';
+brandEl.title = 'Workbook built ' + D.built;
 // Hosted, the file is an optional keepsake rather than the deliverable, and the label should not
 // imply the reviewer still has to send us something.
 if (SYNC) document.getElementById('exp').textContent = 'Download a copy';
