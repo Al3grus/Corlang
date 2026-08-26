@@ -49,7 +49,7 @@ private fun Context.activity(): Activity? {
  * The purchase surface. Two modes:
  *  - [levelId] non-null → the one-time unlock for that CEFR level of [lang], and that course's
  *    bundle when it would not make the learner pay twice (see below).
- *  - [levelId] null      → the AI Premium subscription (monthly only + 3-day trial).
+ *  - [levelId] null      → the AI tutor subscription (monthly, no trial).
  *
  * Unlocks are per language and CUMULATIVE: buying A2 grants A1 as well, so the top level's
  * product is also the whole-course bundle. A course is a ladder and owning a rung without the
@@ -195,12 +195,20 @@ fun PaywallScreen(
             )
             // Monthly ONLY, deliberately: AI models and costs can shift within a year, and a
             // sold annual locks us into serving 12 months at 2026 economics. Monthly keeps
-            // repricing freedom on both sides. The fair-use cap is disclosed HERE, before
-            // purchase — an undisclosed hard stop on a paid AI tutor is refund-request and
-            // Play-policy material.
+            // repricing freedom on both sides.
+            //
+            // NO free trial, also deliberately. Every tutor message costs us real inference, so
+            // unlike a normal software trial this one is not free to serve: three days at the
+            // 30-a-day cap is up to 90 paid-for messages from an account that may never convert,
+            // and repeatable with a new Google account. A three-day window is a bad fit for a
+            // daily-habit product anyway — its value shows over weeks, and a forgotten trial
+            // converts nobody while still billing someone who then asks for a refund.
+            //
+            // The fair-use cap is disclosed HERE, before purchase: an undisclosed hard stop on a
+            // paid AI tutor is refund-request and Play-policy material.
             PurchaseCard(
                 title = "Monthly",
-                subtitle = "Free for the first 3 days.",
+                subtitle = "Cancel any time.",
                 bullets = listOf(
                     "Conversation in ${meta.name}, matched to the level you are studying",
                     "Examiner-style feedback on your written exam answers",
@@ -236,9 +244,8 @@ fun PaywallScreen(
                 "A one-time purchase, not a subscription: nothing renews and there is nothing " +
                     "to cancel. Prices include tax and are set by Google Play for your region."
             else
-                "After the free trial this renews monthly until you cancel, which you can do " +
-                    "any time in Google Play. Prices include tax and are set by Google Play for " +
-                    "your region.",
+                "Renews monthly until you cancel, which you can do any time in Google Play. " +
+                    "Prices include tax and are set by Google Play for your region.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
