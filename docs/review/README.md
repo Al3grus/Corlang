@@ -24,26 +24,34 @@ August 2026 `*-content-review.html` set was deleted for exactly that reason.
 
 ## What the reviewer gets
 
-**Organised by lesson**, in the order a learner meets them, with every answer key visible.
-Each lesson is one self-contained audit: the ten new words it adds to the deck, then its
-explanations, dialogue and exercises. The words sit inside the lesson that teaches them
-rather than in a separate pack list, so a reviewer judges a word having just read the lesson
-around it.
+**Organised by lesson, in the order the app plays it.** The layout mirrors
+`buildSessionSteps` in `SessionPlayer.kt`, which is the only thing that decides what a
+learner actually meets:
+
+```
+intro          title + objective + "Why this matters"
+1 Recall       the new words this lesson introduces
+2 Input        every LEARN activity
+3 Practice     every EXERCISE activity
+4 Output       every DIALOGUE activity
+```
+
+Note the phase sort: the app groups **all** LEARN before **all** EXERCISE before **all**
+DIALOGUE, regardless of the order they sit in the JSON. Presenting them in authored order
+would have a reviewer checking a sequence no learner ever sees. A level then ends with its
+quiz, its mock exam and its grammar reference, because that is where the app puts them, and
+the placement test comes first because it is offered before Lesson 1.
+
+`drills` and `reviewBlock` are excluded: `buildSessionSteps` only falls back to them when a
+day has no activities at all, and every day in every shipped course has activities, so no
+learner ever sees them. Nothing else is added and nothing else is left out.
 
 Which words belong to which lesson is computed by replicating `data/DeckOrder.kt`: deck slots
 `[(n-1)*10, n*10)` are lesson `n`'s, honouring every pack's `fromDay` gate. **If DeckOrder.kt
-changes, `deck_order()` in the generator must change with it**, or the workbook shows words
-under the wrong lesson. For Croatian it comes out exact — 3,440 words, 10 per lesson, 344
+or buildSessionSteps changes, the generator must change with it**, or the workbook stops
+matching the app. For Croatian the deck comes out exact — 3,440 words, 10 per lesson, 344
 lessons, 344 plan days, no orphans. Each word still shows its deck pack, because some defects
 are only visible across a set (one colour glossed unlike the other nine).
-
-A final group, **Not part of any lesson**, holds the grammar reference per level, the level
-quizzes, the placement test, the mock exams, the cheatsheet and the resource list.
-
-Excluded: `feynman.json`. `TeachScreen` has no caller anywhere, so no learner reaches it.
-`cheatsheet.json` and `resources.json` are NOT in that category despite also being absent from
-the nav graph — Profile renders the resource list directly and opens the cheatsheet from a
-button, so both are live.
 
 The design decision that matters: **nothing is ticked by default.** With ~15,000
 reviewable items, a workbook that asks for a verdict on each one never gets finished, so
