@@ -38,9 +38,15 @@ intro          title + objective + "Why this matters"
 
 Note the phase sort: the app groups **all** LEARN before **all** EXERCISE before **all**
 DIALOGUE, regardless of the order they sit in the JSON. Presenting them in authored order
-would have a reviewer checking a sequence no learner ever sees. A level then ends with its
-quiz, its mock exam and its grammar reference, because that is where the app puts them, and
-the placement test comes first because it is offered before Lesson 1.
+would have a reviewer checking a sequence no learner ever sees. A level runs lessons first,
+then its quiz, then its mock exam last — nobody starts a level by being tested on it — and
+the placement test opens the workbook because it is offered before Lesson 1. The sidebar
+lists sections in that same order; listing the non-lessons first put the quiz above Lesson 1
+and read as "start here".
+
+The grammar syllabus is excluded. It is still in the app, behind a Profile button, but it is
+reference material rather than something the course serves in sequence, and this workbook
+follows the sequence.
 
 `drills` and `reviewBlock` are excluded: `buildSessionSteps` only falls back to them when a
 day has no activities at all, and every day in every shipped course has activities, so no

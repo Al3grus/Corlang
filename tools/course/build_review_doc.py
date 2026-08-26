@@ -253,37 +253,6 @@ def lesson_section(day: dict, words: list) -> dict:
     }
 
 
-def grammar_sections(lang: str) -> dict:
-    if not exists(lang, "grammar.json"):
-        return {}
-    out: dict[str, list] = {}
-    for lvl in load(lang, "grammar.json")["levels"]:
-        items: list[dict] = []
-        if lvl.get("intro"):
-            items.append(text_item(f"grammar/{lvl['levelId']}/intro", "Level intro", lvl["intro"]))
-        for t in lvl["topics"]:
-            items.append(
-                {
-                    "i": f"grammar/{lvl['levelId']}/{t['id']}",
-                    "t": "g",
-                    "ti": t.get("title", ""),
-                    "su": t.get("summary", ""),
-                    "tb": t.get("tables", []),
-                    "ex": [[e.get("target", ""), e.get("gloss", "")] for e in t.get("examples", [])],
-                }
-            )
-        out.setdefault(lvl["levelId"], []).append(
-            {
-                "id": f"grammar.{lvl['levelId']}",
-                "k": "grammar",
-                "ti": f"Grammar reference · {lvl['levelId']}",
-                "sub": f"{len(lvl['topics'])} topics, with tables and examples",
-                "items": items,
-            }
-        )
-    return out
-
-
 def quiz_sections(lang: str) -> dict:
     if not exists(lang, "quizzes.json"):
         return {}
@@ -401,19 +370,18 @@ def build_data(lang: str) -> dict:
         pairs.sort(key=lambda p: p[0])
         by_level[lvl] = [s for _, s in pairs]
 
-    # A level's quiz and mock exam are what the app serves AFTER its last lesson (the journey
-    # puts them at the end of the level), so they sit there rather than in a group of their own.
+    # A level's quiz and then its mock exam are what the app serves AFTER its last lesson: the
+    # journey puts both at the end of the level, and nobody starts a level by being tested on it.
+    # The exam goes last because it is the final thing a level asks for.
+    #
+    # The grammar syllabus is NOT here. It is still in the app, as reference material behind a
+    # Profile button, but it is not something the course serves in sequence, and this workbook
+    # follows the sequence.
     quizzes = quiz_sections(lang)
     exams = exam_sections(lang)
     for lvl in list(by_level):
         by_level[lvl].extend(quizzes.get(lvl, []))
         by_level[lvl].extend(exams.get(lvl, []))
-
-    # The grammar syllabus is reference material on Profile, not part of any lesson, so it goes
-    # at the end of its level rather than interrupting the run of lessons.
-    grammar = grammar_sections(lang)
-    for lvl in list(by_level):
-        by_level[lvl].extend(grammar.get(lvl, []))
 
     levels = []
     for lid in LEVEL_ORDER:
@@ -691,19 +659,28 @@ function buildNav(){
            '" href="#notes" data-go="notes"><b>Overall notes</b>' + notesCount() + '</a>'];
   D.levels.forEach(function(L){
     h.push('<div class="lvl"><b>'+esc(L.id)+' — '+esc(L.ti)+'</b>');
-    var days = L.secs.filter(function(s){ return s.k === 'lesson'; });
-    L.secs.filter(function(s){ return s.k !== 'lesson'; }).forEach(function(s){
-      h.push(navLink(s));
-    });
-    if (days.length){
+    // In the SECTIONS' OWN ORDER. Listing the non-lessons first was quicker to write and put
+    // the level quiz and the mock exam above Lesson 1 in the sidebar, which reads as "start
+    // here" — the exact opposite of when the course serves them. Consecutive lessons collapse
+    // into a grid of numbered squares; anything else prints as a row where it actually falls.
+    var run = [];
+    function flushDays(){
+      if (!run.length) return;
       h.push('<div class="days">');
-      days.forEach(function(s){
+      run.forEach(function(s){
         var cls = S.done[s.id] ? 'done' : (secFlags(s.id) ? 'flag' : '');
         if (current === s.id) cls += ' on';
         h.push('<a class="'+cls+'" href="#'+s.id+'" data-go="'+s.id+'" title="'+esc(s.ti)+'">'+s.n+'</a>');
       });
       h.push('</div>');
+      run = [];
     }
+    L.secs.forEach(function(s){
+      if (s.k === 'lesson'){ run.push(s); return; }
+      flushDays();
+      h.push(navLink(s));
+    });
+    flushDays();
     h.push('</div>');
   });
   document.getElementById('nav').innerHTML = h.join('');
