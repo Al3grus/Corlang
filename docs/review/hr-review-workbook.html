@@ -662,16 +662,16 @@ function INTRO(){
   '<tr><td><b>? Unsure</b></td><td>It looks off, or it depends on context. Also for "this belongs '+
   'at a different level" and "something important is missing here".</td></tr>'+
   '</table>'+
-  '<p>Whichever you pick, a box opens underneath. <b>Please write what it should say instead.</b> '+
-  'A correction we can paste in is worth ten flags without one.</p>'+
+  '<p>Whichever you pick, a box opens underneath. <b>Please write what it should say instead.</b></p>'+
 
   '<h3>What you are looking at</h3>'+
   '<p>One lesson per page, in the order a learner meets them: the new words it introduces, then '+
   'its teaching, its exercises and its dialogue. Each level ends with its quiz and mock exam, and '+
   'the placement test comes first. Start at Lesson 1 and work down; the squares in the sidebar '+
   'turn green behind you, and <b>Not yet reviewed</b> jumps to where you stopped.</p>'+
-  '<p>Anything that is not about one specific item — gaps, progression, a lesson that misses the '+
-  'point — goes on the <b>Overall notes</b> page.</p>'+
+  '<p>Some problems have no single word or question to flag: something important the course never '+
+  'teaches, a lesson that jumps too far from the one before it, a topic that arrives much too '+
+  'early or too late. Write those on the <b>Overall notes</b> page instead.</p>'+
 
   '<h3>Saving</h3>'+
   (SYNC
@@ -700,9 +700,9 @@ function INTRO(){
 function NOTES(){
   return '<div class="doc">'+
   '<h1>Overall notes</h1>'+
-  '<p class="lead">For anything that is not about a single word or question: gaps, progression, '+
-  'a topic taught too early or too late, a whole lesson that misses the point, a habit you keep '+
-  'seeing across the course.</p>'+
+  '<p class="lead">For problems with no single word or question to flag: something important the '+
+  'course never teaches, a lesson that jumps too far from the one before it, a topic that arrives '+
+  'much too early or too late, or a habit you keep noticing across many lessons.</p>'+
   '<p>These are saved with everything else and come back to us in the same file. Write as much '+
   'or as little as you like, in English or in Croatian.</p>'+
   D.levels.map(function(L){
