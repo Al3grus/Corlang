@@ -102,7 +102,7 @@ h1 .soft{color:var(--muted)}
 .cta{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;
   font-size:16px;padding:15px 28px;border-radius:10px}
 .cta:hover{background:var(--deep)}
-.avail{font-size:14px;color:var(--muted)}
+.avail{font-size:14px;color:var(--muted);line-height:1.5}
 
 /* ---- the loop: four steps, then the interval ruler ---- */
 .section{padding:54px 0 0;border-top:1px solid var(--line);margin-top:46px}
@@ -1089,7 +1089,7 @@ def build():
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow rise">10 minutes a day &middot; Spaced repetition</p>
-      <h1 class="rise">Learn a language.<br><span class="soft">The proven way.</span></h1>
+      <h1 class="rise">Learn a language<br><span class="soft">The proven way</span></h1>
       <!-- The GOAL first. It used to close the hero, under two paragraphs of method, which sold
            the vehicle before naming the destination. Nobody sets out to do spaced repetition;
            they set out to pass the exam, get the job, or take the oath. The method is the reason
@@ -1103,7 +1103,12 @@ def build():
       <p class="lede rise">No classroom, no commute. Learn anywhere, anytime.</p>
       <div class="actions rise">
         <button class="cta" type="button" data-invite>Ask for a test invite</button>
-        <span class="avail">Coming soon to Google Play</span>
+        <!-- Beside the button, not in the hero copy. "No account" is an objection remover and a
+             friction claim rather than a reason to want the thing, so it earns its place at the
+             moment someone decides to act, where it reads as "you can just start". A fourth
+             paragraph up top would only dilute a hero that was cut down to promise-then-support.
+             The full version lives in the claims block further down. -->
+        <span class="avail">Coming soon to Google Play<br>No account, no ads, no tracking</span>
       </div>
     </div>
     <div class="hero-shots rise">
