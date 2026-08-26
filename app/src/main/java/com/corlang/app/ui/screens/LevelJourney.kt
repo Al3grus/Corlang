@@ -205,15 +205,35 @@ fun LevelJourney(
                 val current = d.day == targetDay
                 val viewed = d.day == viewedDay
                 val locked = d.day > targetDay && !done
+                /*
+                 * Filled means HERE, ringed means done, flat means not yet.
+                 *
+                 * The three states used to be told apart by fill alone, and the light palette
+                 * cannot do that: done (primary walnut) and current (tertiary ochre) are 12
+                 * degrees of hue and 1.17:1 apart, which is invisible as two circles side by
+                 * side. Brightening one only moved the problem, because anything pale enough to
+                 * separate from walnut lands on the pale sand the unstarted stones use.
+                 *
+                 * So the separation is shape now, not hue. It also puts the emphasis the right
+                 * way round: a finished lesson should recede and the one you are on should
+                 * dominate, where before the completed stones were the loudest thing on screen.
+                 */
                 val bg = when {
-                    done -> MaterialTheme.colorScheme.primary
-                    current -> MaterialTheme.colorScheme.tertiary
+                    current -> MaterialTheme.colorScheme.primary
                     else -> MaterialTheme.colorScheme.surfaceVariant
                 }
                 val fg = when {
-                    done -> MaterialTheme.colorScheme.onPrimary
-                    current -> MaterialTheme.colorScheme.onTertiary
+                    current -> MaterialTheme.colorScheme.onPrimary
+                    done -> MaterialTheme.colorScheme.primary
                     else -> MaterialTheme.colorScheme.onSurfaceVariant
+                }
+                // One ring at most. Browsing to a completed stone would otherwise draw the
+                // viewed ring and the done ring on the same circle; viewed wins, because it
+                // answers "which one am I looking at", which is the more urgent question.
+                val ring = when {
+                    viewed -> MaterialTheme.colorScheme.onSurface
+                    done && !current -> MaterialTheme.colorScheme.primary
+                    else -> null
                 }
                 Box(
                     contentAlignment = Alignment.Center,
@@ -227,7 +247,7 @@ fun LevelJourney(
                         )
                         .background(bg, CircleShape)
                         .then(
-                            if (viewed) Modifier.border(2.dp, MaterialTheme.colorScheme.onSurface, CircleShape)
+                            if (ring != null) Modifier.border(2.dp, ring, CircleShape)
                             else Modifier
                         )
                         .then(
