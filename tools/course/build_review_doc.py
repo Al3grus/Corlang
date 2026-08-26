@@ -591,6 +591,50 @@ textarea:focus{outline:2px solid var(--accent);border-color:transparent}
 var D = JSON.parse(document.getElementById('payload').textContent);
 var KEY = 'corlang-review-' + D.code + '-v1';
 
+/*
+ * Server sync, when the page is served with a ?k=<token> link.
+ *
+ * The SAME file works both ways: opened from disk, or from any URL without the token, none of
+ * this engages and the workbook behaves exactly as the local one does. That matters because the
+ * fallback has to be a file someone can still open if the site is down mid-review.
+ *
+ * localStorage stays the primary write on every keystroke; the server is a debounced mirror. A
+ * dropped connection therefore costs nothing, and the reviewer's own browser is always the
+ * fastest source of truth.
+ */
+var SYNC = (function(){
+  try { return new URLSearchParams(location.search).get('k') || null; } catch(e){ return null; }
+})();
+var pushTimer = null, pushing = false, pushFailed = false;
+
+function serverPush(){
+  if (!SYNC) return;
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(function(){
+    if (pushing) { serverPush(); return; }
+    pushing = true;
+    fetch('/api/review?k=' + encodeURIComponent(SYNC), {
+      method: 'PUT',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(S)
+    }).then(function(r){
+      pushing = false;
+      pushFailed = !r.ok;
+      syncBadge(r.ok ? 'saved to the server' : 'server refused the save');
+    }).catch(function(){
+      pushing = false; pushFailed = true;
+      syncBadge('offline, saved in this browser');
+    });
+  }, 2500);
+}
+function syncBadge(text){
+  var el = document.getElementById('saved');
+  el.textContent = text;
+  el.style.color = pushFailed ? 'var(--awk)' : 'var(--ok)';
+  el.style.opacity = 1;
+  setTimeout(function(){ el.style.opacity = 0; }, 1600);
+}
+
 /* ---------- state ---------- */
 var S = {reviewer:'', flags:{}, done:{}, levelNotes:{}};
 
@@ -614,12 +658,13 @@ var dirty = false;  // changed since the last file export
 var saveTimer = null;
 function save(){
   dirty = true;
-  if (!CAN_STORE){ warnNoStore(); return; }
+  if (!CAN_STORE){ warnNoStore(); serverPush(); return; }
   clearTimeout(saveTimer);
   saveTimer = setTimeout(function(){
     try {
       localStorage.setItem(KEY, JSON.stringify(S));
       dirty = false;
+      serverPush();
       var el = document.getElementById('saved');
       el.style.opacity = 1; setTimeout(function(){ el.style.opacity = 0; }, 900);
     } catch(e){ CAN_STORE = false; warnNoStore(); }
@@ -1133,6 +1178,25 @@ function firstSection(){ var a = flatSections(); return a.length ? a[0] : 'intro
 document.getElementById('brand').textContent = D.flag + ' ' + D.name + ' review · built ' + D.built;
 show(location.hash.slice(1) || 'intro');
 refresh();
+
+// With a token, whatever the server holds wins on open: it is the copy that survives this
+// browser being cleared or swapped, and it is what got there from this reviewer anyway. Only
+// adopted when it actually carries more work than the local copy, so a failed first save can
+// never wipe an afternoon.
+if (SYNC){
+  fetch('/api/review?k=' + encodeURIComponent(SYNC))
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(remote){
+      if (!remote || !remote.flags) return;
+      var mine = Object.keys(S.flags).length + Object.keys(S.done).length;
+      var theirs = Object.keys(remote.flags).length + Object.keys(remote.done || {}).length;
+      if (theirs <= mine) return;
+      S = Object.assign(S, remote);
+      refresh();
+      show(current || 'intro');
+    })
+    .catch(function(){});
+}
 </script>
 </body>
 </html>

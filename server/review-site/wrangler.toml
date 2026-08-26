@@ -1,0 +1,17 @@
+# Cloudflare Pages project serving the native-speaker review workbook.
+#
+# Deploy:
+#   python tools/course/build_review_doc.py hr --out server/review-site/public/index.html
+#   cd server/review-site && npx wrangler pages deploy public --project-name corlang-review
+#
+# One-time setup is in README.md next to this file: create the KV namespace, paste its id
+# below, and set the REVIEW_TOKENS secret.
+name = "corlang-review"
+pages_build_output_dir = "public"
+compatibility_date = "2026-01-01"
+
+# One entry per reviewer, keyed by the name in REVIEW_TOKENS.
+#   npx wrangler kv namespace create REVIEW_KV
+[[kv_namespaces]]
+binding = "REVIEW_KV"
+id = "8c5dcd3be8d84707958c0c8a6b9a9881"

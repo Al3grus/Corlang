@@ -9,7 +9,11 @@ python tools/course/build_review_doc.py hr
 # → docs/review/hr-review-workbook.html
 ```
 
-One self-contained HTML file, no network, no dependencies. It embeds the course JSON and
+Hosted at **https://corlang-review.pages.dev** (see `server/review-site/README.md`), and the
+same file also works opened straight from disk.
+
+One self-contained HTML file, no dependencies. It reaches the network only when opened with a
+`?k=<token>` link, and then only to mirror what it has already written locally. It embeds the course JSON and
 renders it in the browser a section at a time, which is why 5 MB of content produces a
 3.4 MB document rather than a 40 MB one. Re-run it after a round of fixes to produce a
 fresh workbook against the corrected content.
