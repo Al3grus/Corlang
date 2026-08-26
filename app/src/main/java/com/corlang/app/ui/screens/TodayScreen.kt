@@ -411,8 +411,13 @@ fun TodayScreen(
             // 20dp of padding and 12 between children, not 16/6: at the old values the label,
             // title, objective and action sat on top of each other and the card read as dense
             // rather than calm. Deleting the hero above bought the room to spend here.
+            //
+            // The bottom is 32, not 20, so the card looks evenly padded. The first row is pinned
+            // to the goal ring's 44dp and centres a ~20dp label inside it, which puts ~12dp of
+            // empty row above that label on top of the 20dp of padding. Measured, the two ends
+            // were equal; seen, the top had half again as much air as the bottom.
             Column(
-                modifier = Modifier.padding(20.dp),
+                modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 32.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 // The level label and the ring share a row, centred on each other. The row is

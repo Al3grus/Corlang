@@ -22,14 +22,14 @@ import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 
 /*
- * Corlang palette, "Adriatic": a calm, muted sea-blue (primary) that reads as trust and quiet
- * rather than candy-bright; terracotta roof-tile (secondary) as the warm counterpoint; warm
- * sand (tertiary). Every Material role is specified in BOTH schemes so no default (purple) role
+ * Corlang palette, "Adriatic": in the DARK scheme, a calm, muted sea-blue (primary) that reads
+ * as trust and quiet rather than candy-bright; terracotta roof-tile (secondary) as the warm
+ * counterpoint; warm sand (tertiary). Every Material role is specified in BOTH schemes so no default (purple) role
  * can leak into the UI, and so no screen can accidentally depend on one theme's fallbacks.
  *
  * Two themes, one brand. They are called the DARK THEME and the LIGHT THEME, nothing else:
  *  - dark:  muted sea-blue on deep navy. The original, and still the default.
- *  - light: warm beige surfaces, dark umber text, and a walnut primary, with terracotta and
+ *  - light: warm beige surfaces, dark umber text, and a walnut primary, with plum-brown and
  *           ochre as the accents. Entirely warm: no blue anywhere in the UI. It is a
  *           warm-neutral theme, NOT an inverted grey one, and not the dark theme's blue
  *           dropped onto beige.
@@ -82,8 +82,8 @@ private val DarkColors = darkColorScheme(
  * The light theme. Fully warm, with NO blue in it — the dark theme's primary was carried over at
  * first and read as a cold spot dropped onto beige: the one element that did not belong to the
  * page it sat on. The primary is now walnut brown, so buttons, selection
- * and focus all come from the same earth family as the surfaces, with terracotta and ochre as the
- * warm accents beside it. The blue survives only in the brand mark, which is fixed in both themes
+ * and focus all come from the same earth family as the surfaces, with plum-brown and ochre as
+ * the warm accents beside it. The blue survives only in the brand mark, which is fixed in both themes
  * and reads as a mark rather than as UI.
  *
  * Backgrounds are beige rather than white, outlines brown rather than grey, body text dark umber.
@@ -94,10 +94,16 @@ private val LightColors = lightColorScheme(
     onPrimary = Color(0xFFFFFFFF),
     primaryContainer = Color(0xFFEADCC6),
     onPrimaryContainer = Color(0xFF2A1D0C),
-    secondary = Color(0xFF9A4A31),
+    // Plum-brown, not terracotta. The old pair (#9A4A31 on #F7DCD0) carried a rose cast that
+    // read as pink wherever secondaryContainer lands: journey level chips, the selected quiz
+    // option, chat bubbles, the chosen-language row. Pushing the red toward brown keeps the
+    // earth family the whole palette is built on and takes the pink out of it, and the darker
+    // pair also lifts contrast (white on it 8.18:1, text on the chip 12.29:1, against 6.18 and
+    // 11.08 before).
+    secondary = Color(0xFF6E4536),
     onSecondary = Color(0xFFFFFFFF),
-    secondaryContainer = Color(0xFFF7DCD0),
-    onSecondaryContainer = Color(0xFF4A1B0C),
+    secondaryContainer = Color(0xFFEBDCD2),
+    onSecondaryContainer = Color(0xFF2F1A12),
     tertiary = Color(0xFF785A12),
     onTertiary = Color(0xFFFFFFFF),
     tertiaryContainer = Color(0xFFF1E2B4),

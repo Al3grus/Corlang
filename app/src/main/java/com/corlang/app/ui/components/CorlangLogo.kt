@@ -52,7 +52,11 @@ enum class LogoVariant {
  * The mark's two colors, per theme.
  *
  * On ink the mark is the brand's own blue ring and molten core. On paper it is walnut and
- * terracotta, the light theme's own primary and secondary. This is a deliberate departure from
+ * terracotta: the walnut is still the light theme's primary, but the terracotta core is now the
+ * mark's own colour rather than the theme's secondary, which moved to plum-brown when the light
+ * accents were de-pinked. The core is deliberately the more vivid of the two in both themes, and
+ * dulling it to match a UI role would cost the mark the heat it is named for. This is a
+ * deliberate departure from
  * "a logo never changes colour": the Adriatic blue is a LIGHT blue, chosen to glow on a dark
  * navy, and on beige it goes soft enough that the ring needs a keyline to hold its shape at all.
  * A mark that has to be outlined to be seen is the wrong colour for that ground. The shape, which
