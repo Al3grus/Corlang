@@ -63,8 +63,19 @@ Three verdicts — **✗ Wrong**, **≈ Awkward**, **? Unsure** — each opening
 for the correction. The correction is the part that can be acted on; a flag without one
 still needs a conversation.
 
-Progress autosaves to `localStorage`. **Download review** produces a small JSON file;
-**Import…** loads one back, so a review can move between machines or sessions.
+Two standing pages sit above the course in the sidebar: **Instructions**, and **Overall
+notes** — a page of free-text boxes, one per level plus one for the course as a whole, for
+anything that is not about a single item. The notes used to live at the foot of the
+instructions, which meant reaching them was "open the instructions and scroll past
+everything you have already read".
+
+Each section ends with its own footer: **← Previous**, **Skip for now →**, and **✓ Mark
+reviewed and continue**, which marks and advances in one click. Nothing at the top asks for
+a verdict before the reviewer has read anything; a "Reviewed ✓" chip in the heading shows
+the state, and the footer offers the undo.
+
+Progress autosaves to `localStorage`. **Save my work** produces the small JSON file that is
+both the reviewer's backup and the thing they send back.
 
 ## Applying what comes back
 
