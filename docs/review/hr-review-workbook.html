@@ -634,88 +634,57 @@ document.getElementById('exp').addEventListener('click', function(){
 });
 /* ---------- intro ---------- */
 function INTRO(){
-  var perLevel = D.levels.map(function(L){
-    var words = 0, qs = 0, lessons = 0, other = 0;
-    L.secs.forEach(function(s){
-      if (s.k === 'lesson') lessons++;
-      s.items.forEach(function(it){
-        if (it.t === 'w') words++;
-        else if (it.t === 'q') qs++;
-        else if (it.i) other++;
-      });
-    });
-    return '<tr><td><b>'+esc(L.id)+'</b><br><span class="en">'+esc(L.ti)+'</span></td><td>'+lessons+
-           '</td><td>'+words+'</td><td>'+qs+'</td><td>'+other+'</td></tr>';
-  }).join('');
   return '<div class="doc">'+
   '<h1>'+esc(D.flag)+' '+esc(D.name)+' course — native-speaker review</h1>'+
-  '<p class="lead">Everything the app teaches, in the order it teaches it, with every answer key shown. '+
-  'Your job is to find what is wrong.</p>'+
-  '<p style="font-size:15px" class="en"><i>Hvala što pregledavate ovaj tečaj. Ovdje je sav sadržaj naše aplikacije za '+
+  '<p class="lead">Everything the app teaches, in the order it teaches it, with every answer '+
+  'shown. Your job is to find what is wrong.</p>'+
+  '<p class="en"><i>Hvala što pregledavate ovaj tečaj. Ovdje je sav sadržaj naše aplikacije za '+
   'učenje hrvatskoga. Označite sve što je pogrešno ili neprirodno.</i></p>'+
-  '<div class="callout"><b>Your name</b> (goes into the file you send back)<br>'+
-  '<input id="reviewer" style="margin-top:6px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;'+
-  'min-width:260px;font:inherit" value="'+esc(S.reviewer)+'" placeholder="e.g. Ana Horvat"></div>'+
+
+  '<div class="callout"><b>Your name</b><br>'+
+  '<input id="reviewer" style="margin-top:6px;padding:8px 10px;border:1px solid var(--line);'+
+  'border-radius:8px;min-width:260px;font:inherit;background:var(--card);color:var(--ink)" value="'+
+  esc(S.reviewer)+'" placeholder="e.g. Ana Horvat"></div>'+
 
   '<h3>The one rule</h3>'+
-  '<p><b>Do not mark what is correct.</b> There are '+D.total.toLocaleString()+' items here, and ticking them all '+
-  'would take weeks. Leave anything that is fine completely untouched. Only flag what needs to change. '+
-  'When you finish a section, tick <i>“I have reviewed this whole section”</i> at the top of it — that is how we '+
-  'know the difference between “checked and fine” and “not looked at yet”.</p>'+
+  '<p><b>Do not mark what is correct.</b> There are '+D.total.toLocaleString()+' items here, so '+
+  'leave anything that is fine completely untouched and flag only what needs to change. When you '+
+  'reach the end of a lesson, press <b>Mark reviewed and continue</b>.</p>'+
 
   '<h3>The three flags</h3>'+
   '<table><tr><th>Flag</th><th>Use it when</th></tr>'+
-  '<tr><td><b>✗ Wrong</b></td><td>It is incorrect and would teach a learner something false. Bad spelling or '+
-  'missing diacritic, wrong gender or aspect, wrong translation, a grammar rule stated incorrectly, an answer key '+
-  'that is not actually the right answer, a “wrong” option that is in fact also correct.</td></tr>'+
-  '<tr><td><b>≈ Awkward</b></td><td>Not wrong, but no Croatian speaker would say it that way. Unnatural word order, '+
-  'a stilted or translated-sounding sentence, the wrong register (too formal, too slangy), a regionalism or a '+
-  'Serbianism where standard Croatian is meant, a word that is technically right but not the one people use.</td></tr>'+
-  '<tr><td><b>? Unsure</b></td><td>Something looks off but you would want to check it, or it depends on context. '+
-  'Also for “this belongs at a different level”, or “this is fine but something important is missing here”.</td></tr>'+
+  '<tr><td><b>✗ Wrong</b></td><td>It would teach a learner something false: a misspelling or '+
+  'missing diacritic, the wrong gender or aspect, a wrong translation, a rule stated incorrectly, '+
+  'an answer key that is not actually the right answer, a "wrong" option that is also correct.</td></tr>'+
+  '<tr><td><b>≈ Awkward</b></td><td>Not wrong, but no Croatian would say it that way: unnatural '+
+  'word order, the wrong register, or <b>a regionalism or Serbianism where standard Croatian is '+
+  'meant</b>. That last one matters to us more than anything else here.</td></tr>'+
+  '<tr><td><b>? Unsure</b></td><td>It looks off, or it depends on context. Also for "this belongs '+
+  'at a different level" and "something important is missing here".</td></tr>'+
   '</table>'+
-  '<p>Whichever you pick, a box opens underneath. <b>Please write what it should say instead.</b> A correction we can '+
-  'paste in is worth ten flags without one.</p>'+
+  '<p>Whichever you pick, a box opens underneath. <b>Please write what it should say instead.</b> '+
+  'A correction we can paste in is worth ten flags without one.</p>'+
 
-  '<h3>What to look for</h3>'+
-  '<ul>'+
-  '<li><b>Words.</b> Spelling and diacritics (č ć dž đ š ž), the English meaning, the part of speech and gender or '+
-  'aspect shown next to it, and the note. Then the example sentence: is it grammatical, natural, and does its '+
-  'English match?</li>'+
-  '<li><b>Grammar explanations and tables.</b> Endings in the tables are the highest-risk thing in the whole course — '+
-  'one wrong cell teaches a wrong case for months.</li>'+
-  '<li><b>Questions.</b> The correct answer is marked in green. Check that it really is correct, that none of the '+
-  'other options is <i>also</i> correct, that the question can only be read one way, and that the explanation '+
-  'underneath is true.</li>'+
-  '<li><b>Dialogues.</b> Would people really say this? Is ti/vi consistent and appropriate? Is it the register a '+
-  'learner should copy?</li>'+
-  '<li><b>Standard Croatian.</b> This matters to us more than anything else. Anything that reads as Serbian, Bosnian, '+
-  'or a strong regional form should be flagged, even when it is perfectly understandable.</li>'+
-  '</ul>'+
+  '<h3>What you are looking at</h3>'+
+  '<p>One lesson per page, in the order a learner meets them: the new words it introduces, then '+
+  'its teaching, its exercises and its dialogue. Each level ends with its quiz and mock exam, and '+
+  'the placement test comes first. Start at Lesson 1 and work down; the squares in the sidebar '+
+  'turn green behind you, and <b>Not yet reviewed</b> jumps to where you stopped.</p>'+
+  '<p>Anything that is not about one specific item — gaps, progression, a lesson that misses the '+
+  'point — goes on the <b>Overall notes</b> page.</p>'+
 
-  '<h3>How it is organised</h3>'+
-  '<p>By lesson, in the order a learner meets them. Each lesson is one self-contained job: read it as a learner '+
-  'would and judge it as a whole. The words it introduces sit inside it rather than in a separate list, because '+
-  'that is where the app introduces them.</p>'+
-  '<p>Simply start at Lesson 1 and work down. The numbered squares in the sidebar turn green as you tick sections '+
-  'off, so you can always find where you stopped, and <b>Not yet reviewed</b> in the toolbar jumps you there.</p>'+
-  '<p>Nothing has been added and nothing left out: this is what the app serves, in the order it serves it. Each '+
-  'lesson opens the way a learner sees it — the intro, then the ten new words, then the teaching, then the '+
-  'exercises, then the dialogue. A level ends with its quiz and mock exam, and the grammar reference for that '+
-  'level, because that is where the app puts them. The placement test comes first because it is offered before '+
-  'Lesson 1.</p>'+
-
-  '<h3>How much there is</h3>'+
-  '<table><tr><th>Level</th><th>Lessons</th><th>Words</th><th>Questions</th><th>Other items</th></tr>'+perLevel+'</table>'+
-
-  '<h3>Saving and sending it back</h3>'+
-  '<p>Your work saves in this browser as you go, so you can close the tab and come back to it. That saving is '+
-  'tied to <b>this browser on this computer</b>, and to this file staying where it is; if the browser refuses to '+
-  'save at all, a red bar appears at the top of this page.</p>'+
-  '<p>At the end of every session press <b>Save my work</b> in the top right. It gives you one small file — that '+
-  'is what you send us, and it is your backup if anything happens to the browser.</p>'+
-  '<div class="callout">Nothing is uploaded anywhere. This page works offline and keeps everything on your machine '+
-  'until you send us the file yourself.</div>'+
+  '<h3>Saving</h3>'+
+  (SYNC
+    ? '<p><b>Everything saves by itself as you work.</b> Close the tab whenever you like and come '+
+      'back to this same link; your work will be here, and we can already see it, so there is '+
+      'nothing to send us.</p>'+
+      '<div class="callout">If your internet drops, keep going — your work is kept in this '+
+      'browser and goes up as soon as you are back online.</div>'
+    : '<p>Your work saves in this browser as you go, so you can close the tab and come back. '+
+      'That is tied to this browser on this computer; if it refuses to save at all, a red bar '+
+      'appears at the top of this page.</p>'+
+      '<p>At the end of every session press <b>Save my work</b> in the top right and send us the '+
+      'file it gives you.</p>')+
 
   '<div style="margin-top:26px;text-align:center">'+
   '<button class="btn primary" data-go="'+esc(firstSection())+'" style="padding:11px 22px">Start at Lesson 1 →</button>'+
@@ -753,6 +722,9 @@ function firstSection(){ var a = flatSections(); return a.length ? a[0] : 'intro
 
 /* ---------- boot ---------- */
 document.getElementById('brand').textContent = D.flag + ' ' + D.name + ' review · built ' + D.built;
+// Hosted, the file is an optional keepsake rather than the deliverable, and the label should not
+// imply the reviewer still has to send us something.
+if (SYNC) document.getElementById('exp').textContent = 'Download a copy';
 show(location.hash.slice(1) || 'intro');
 refresh();
 
