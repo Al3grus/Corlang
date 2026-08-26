@@ -177,63 +177,78 @@ def words_by_lesson(lang: str) -> dict:
 
 
 def lesson_section(day: dict, words: list) -> dict:
+    """
+    One lesson, in the order the app plays it.
+
+    Mirrors `buildSessionSteps` in ui/screens/SessionPlayer.kt, which is the only thing that
+    decides what a learner actually meets:
+
+        intro (title + objective + "Why this matters")
+        1 Recall  — the new words this lesson introduces
+        2 Input   — every LEARN activity
+        3 Practice— every EXERCISE activity
+        4 Output  — every DIALOGUE activity
+        5 Wrap-up — recall of today's phrases, built from the LEARN items above
+
+    Note the phase sort: the app groups ALL LEARN before ALL EXERCISE before ALL DIALOGUE,
+    regardless of the order they sit in the JSON. Showing them in authored order would have the
+    reviewer checking a sequence no learner ever sees.
+
+    `drills` and `reviewBlock` are NOT here. buildSessionSteps only falls back to them when a day
+    has no activities at all, and every day in every shipped course has activities, so they
+    never reach a learner.
+    """
     n = day["day"]
     items: list[dict] = []
 
-    # The English framing gets ONE flag between the four fields. A reviewer auditing
-    # Croatian should not have to pass judgement on four blurbs per day, 344 times,
-    # but they must still be able to see and challenge them.
-    framing = []
-    if day.get("objective"):
-        framing.append(("Objective", day["objective"]))
+    # The intro step, exactly as the app composes it.
+    intro = day.get("objective", "")
     if day.get("paretoFocus"):
-        framing.append(("Why this matters", day["paretoFocus"]))
-    if day.get("drills"):
-        framing.append(("Drills", "\n".join("• " + d for d in day["drills"])))
-    rb = day.get("reviewBlock") or {}
-    if rb.get("items"):
-        framing.append((f"Review block ({rb.get('minutes', 15)} min)", "\n".join("• " + x for x in rb["items"])))
-    if framing:
-        items.append({"i": f"day/{n}/framing", "t": "fr", "rows": framing})
+        intro += chr(10) + chr(10) + "Why this matters: " + day["paretoFocus"]
+    if intro.strip():
+        items.append(text_item(f"day/{n}/intro", "Lesson intro (shown first)", intro))
 
-    # The words this lesson puts into the learner's flashcard deck, first, because that is the
-    # order the app uses: a lesson opens on its new words. Reviewing them HERE rather than in a
-    # separate pack list is the point of the lesson-first shape — the word is checked beside the
-    # lesson that teaches it, by someone who has just read that lesson.
     if words:
-        items.append(heading(f"NEW WORDS · the {len(words)} this lesson adds to the deck"))
+        items.append(heading(f"1 · RECALL — the {len(words)} new words this lesson introduces"))
         items.extend(words)
 
-    for ai, act in enumerate(day.get("activities", [])):
-        kind = act.get("type", "LEARN")
-        items.append(heading(f"{kind} · {act.get('title', '')}"))
-        if act.get("intro"):
-            items.append(text_item(f"day/{n}/act{ai}/intro", "Explanation", act["intro"]))
-        for j, li in enumerate(act.get("items", [])):
-            it = {"i": f"day/{n}/act{ai}/item{j}", "t": "l", "hr": li.get("hr", ""), "en": li.get("en", "")}
-            if li.get("note"):
-                it["n"] = li["note"]
-            items.append(it)
-        for j, ln in enumerate(act.get("lines", [])):
-            items.append(
-                {
-                    "i": f"day/{n}/act{ai}/line{j}",
-                    "t": "d",
-                    "s": ln.get("speaker", ""),
-                    "hr": ln.get("hr", ""),
-                    "en": ln.get("en", ""),
-                }
-            )
-        for j, q in enumerate(act.get("questions", [])):
-            items.append(question_item(f"day/{n}/act{ai}/q{j}", q))
+    # Phase order, stable within a phase, matching the Kotlin sort.
+    phases = [
+        ("LEARN", "2 · INPUT"),
+        ("EXERCISE", "3 · PRACTICE"),
+        ("DIALOGUE", "4 · OUTPUT"),
+    ]
+    acts = list(enumerate(day.get("activities", [])))
+    for kind, label in phases:
+        for ai, act in [(i, a) for i, a in acts if a.get("type") == kind]:
+            items.append(heading(f"{label} · {act.get('title', '')}"))
+            if act.get("intro"):
+                items.append(text_item(f"day/{n}/act{ai}/intro", "Explanation", act["intro"]))
+            for j, li in enumerate(act.get("items", [])):
+                it = {"i": f"day/{n}/act{ai}/item{j}", "t": "l", "hr": li.get("hr", ""), "en": li.get("en", "")}
+                if li.get("note"):
+                    it["n"] = li["note"]
+                items.append(it)
+            for j, q in enumerate(act.get("questions", [])):
+                items.append(question_item(f"day/{n}/act{ai}/q{j}", q))
+            for j, ln in enumerate(act.get("lines", [])):
+                items.append(
+                    {
+                        "i": f"day/{n}/act{ai}/line{j}",
+                        "t": "d",
+                        "s": ln.get("speaker", ""),
+                        "hr": ln.get("hr", ""),
+                        "en": ln.get("en", ""),
+                    }
+                )
 
+    n_q = sum(len(a.get("questions", [])) for a in day.get("activities", []))
     return {
         "id": f"day.{n}",
         "k": "lesson",
         "n": n,
         "ti": f"Lesson {n}: {day.get('title', '')}",
-        "sub": f"Week {day.get('week', '')} · {len(words)} new words · "
-               f"{sum(len(a.get('questions', [])) for a in day.get('activities', []))} questions",
+        "sub": f"Week {day.get('week', '')} · {len(words)} new words · {n_q} questions",
         "items": items,
     }
 
@@ -335,88 +350,30 @@ def exam_sections(lang: str) -> dict:
     return out
 
 
-def extra_sections(lang: str) -> list:
+def placement_section(lang: str) -> list:
     """
-    Cross-level material: not taught at one level, so it gets its own group.
-
-    Deliberately NOT here: feynman.json. TeachScreen has no caller anywhere in the app, so
-    nothing a learner can reach renders it, and auditing content nobody sees wastes the one
-    thing this review is short of.
-
-    cheatsheet.json and resources.json ARE both here: Profile renders the resource list
-    directly and opens CheatsheetScreen from a button, so neither is dead even though neither
-    appears in the nav graph.
+    The placement test: the only thing a learner meets BEFORE lesson 1, so it goes first.
     """
-    out = []
-
-    if exists(lang, "placement.json"):
-        pl = load(lang, "placement.json")
-        items = []
-        if pl.get("intro"):
-            items.append(text_item("placement/intro", "Intro", pl["intro"]))
-        for j, q in enumerate(pl["questions"]):
-            it = question_item(f"placement/q{j}", q)
-            it["pr"] = f"[{q.get('level', '')}] {it['pr']}"
-            items.append(it)
-        out.append(
-            {
-                "id": "extra.placement",
-                "k": "quiz",
-                "ti": "Placement test",
-                "sub": f"{len(pl['questions'])} questions · decides where a new learner starts",
-                "items": items,
-            }
-        )
-
-    if exists(lang, "cheatsheet.json"):
-        ch = load(lang, "cheatsheet.json")
-        items = []
-        for si, sec in enumerate(ch["sections"]):
-            items.append(
-                {
-                    "i": f"cheatsheet/{si}",
-                    "t": "c",
-                    "ti": sec.get("title", ""),
-                    "bu": sec.get("bullets", []),
-                    "dg": sec.get("diagram") or "",
-                    "ex": [[e.get("target", ""), e.get("gloss", "")] for e in sec.get("examples", [])],
-                }
-            )
-        out.append(
-            {
-                "id": "extra.cheatsheet",
-                "k": "grammar",
-                "ti": f"Cheatsheet · {ch.get('title', '')}",
-                "sub": f"{len(ch['sections'])} sections · Profile > Cheatsheet",
-                "items": items,
-            }
-        )
-
-    if exists(lang, "resources.json"):
-        rs = load(lang, "resources.json")
-        items = [
-            {
-                "i": f"resource/{r['name']}",
-                "t": "r",
-                "n": r.get("name", ""),
-                "ty": r.get("type", ""),
-                "u": r.get("url") or "",
-                "w": r.get("why", ""),
-            }
-            for r in rs["resources"]
-        ]
-        out.append(
-            {
-                "id": "extra.resources",
-                "k": "other",
-                "ti": "Recommended resources",
-                "sub": f"{len(items)} books, courses and channels · Profile > Best resources. "
-                       f"Please say if any is not worth a learner's time, or no longer exists.",
-                "items": items,
-            }
-        )
-
-    return out
+    if not exists(lang, "placement.json"):
+        return []
+    pl = load(lang, "placement.json")
+    items = []
+    if pl.get("intro"):
+        items.append(text_item("placement/intro", "Intro", pl["intro"]))
+    for j, q in enumerate(pl["questions"]):
+        it = question_item(f"placement/q{j}", q)
+        it["pr"] = f"[{q.get('level', '')}] {it['pr']}"
+        items.append(it)
+    return [
+        {
+            "id": "placement",
+            "k": "quiz",
+            "ti": "Placement test",
+            "sub": f"{len(pl['questions'])} questions · offered at sign-up, before Lesson 1, "
+                   f"to decide where a learner starts",
+            "items": items,
+        }
+    ]
 
 
 # ---------------------------------------------------------------------------- build
@@ -444,13 +401,19 @@ def build_data(lang: str) -> dict:
         pairs.sort(key=lambda p: p[0])
         by_level[lvl] = [s for _, s in pairs]
 
-    # Everything with no lesson to belong to, in one group at the end, each labelled by level.
-    loose: list = []
-    for src in (grammar_sections(lang), quiz_sections(lang), exam_sections(lang)):
-        for lvl in LEVEL_ORDER:
-            for sec in src.get(lvl, []):
-                sec["ti"] = f"[{lvl}] {sec['ti']}"
-                loose.append(sec)
+    # A level's quiz and mock exam are what the app serves AFTER its last lesson (the journey
+    # puts them at the end of the level), so they sit there rather than in a group of their own.
+    quizzes = quiz_sections(lang)
+    exams = exam_sections(lang)
+    for lvl in list(by_level):
+        by_level[lvl].extend(quizzes.get(lvl, []))
+        by_level[lvl].extend(exams.get(lvl, []))
+
+    # The grammar syllabus is reference material on Profile, not part of any lesson, so it goes
+    # at the end of its level rather than interrupting the run of lessons.
+    grammar = grammar_sections(lang)
+    for lvl in list(by_level):
+        by_level[lvl].extend(grammar.get(lvl, []))
 
     levels = []
     for lid in LEVEL_ORDER:
@@ -468,18 +431,9 @@ def build_data(lang: str) -> dict:
             }
         )
 
-    loose.extend(extra_sections(lang))
-    if loose:
-        levels.append(
-            {
-                "id": "EXTRA",
-                "ti": "Not part of any lesson",
-                "ms": "Grammar reference, quizzes, the placement test, mock exams, "
-                      "the cheatsheet and the resource list.",
-                "cd": [],
-                "secs": loose,
-            }
-        )
+    pl = placement_section(lang)
+    if pl:
+        levels.insert(0, {"id": "START", "ti": "Before Lesson 1", "ms": "", "cd": [], "secs": pl})
 
     flaggable = sum(1 for l in levels for s in l["secs"] for i in s["items"] if i.get("i"))
     return {
@@ -627,8 +581,7 @@ textarea:focus{outline:2px solid var(--accent);border-color:transparent}
   <span class="stat" id="counts"></span>
   <span class="bar"><i id="prog"></i></span>
   <span id="saved">saved</span>
-  <button class="btn" id="imp">Import…</button>
-  <button class="btn primary" id="exp">Download review</button>
+  <button class="btn primary" id="exp">Save my work</button>
 </header>
 
 <div class="wrap">
@@ -636,7 +589,6 @@ textarea:focus{outline:2px solid var(--accent);border-color:transparent}
   <main id="main"></main>
 </div>
 
-<input type="file" id="file" accept=".json" hidden>
 <script id="payload" type="application/json">__DATA__</script>
 <script>
 "use strict";
@@ -687,9 +639,8 @@ function warnNoStore(){
   b.style.cssText = 'position:sticky;top:0;z-index:30;background:#b3261e;color:#fff;padding:10px 16px;' +
     'font-size:14.5px;line-height:1.4';
   b.innerHTML = '<b>This browser is not saving your progress automatically.</b> Your work is only ' +
-    'in this tab. Press <b>Download review</b> before you close it, and use <b>Import…</b> to load ' +
-    'that file back when you return. (Usually a private/incognito window — an ordinary window ' +
-    'normally saves fine.)';
+    'in this tab, and closing it will lose it. Press <b>Save my work</b> before you close, and send ' +
+    'us that file. (Usually a private/incognito window — an ordinary window normally saves fine.)';
   document.body.insertBefore(b, document.body.firstChild);
 }
 
@@ -1003,24 +954,6 @@ document.getElementById('exp').addEventListener('click', function(){
   dirty = false;
   setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
 });
-document.getElementById('imp').addEventListener('click', function(){ document.getElementById('file').click(); });
-document.getElementById('file').addEventListener('change', function(e){
-  var f = e.target.files[0]; if (!f) return;
-  var r = new FileReader();
-  r.onload = function(){
-    try {
-      var d = JSON.parse(r.result);
-      S.reviewer = d.reviewer || S.reviewer;
-      S.levelNotes = d.levelNotes || {};
-      S.done = {}; (d.sectionsReviewed||[]).forEach(function(x){ S.done[x] = 1; });
-      S.flags = {}; (d.flags||[]).forEach(function(x){ S.flags[x.id] = {v:x.verdict, n:x.correction||''}; });
-      refresh(); show(current || 'intro');
-      alert('Loaded ' + (d.flags||[]).length + ' flags and ' + (d.sectionsReviewed||[]).length + ' reviewed sections.');
-    } catch(err){ alert('That file could not be read: ' + err.message); }
-  };
-  r.readAsText(f);
-});
-
 /* ---------- intro ---------- */
 function INTRO(){
   var perLevel = D.levels.map(function(L){
@@ -1083,28 +1016,26 @@ function INTRO(){
   '</ul>'+
 
   '<h3>How it is organised</h3>'+
-  '<p>By lesson, in the order a learner meets them. Each lesson is one self-contained job: the ten new words it '+
-  'adds to the flashcard deck, then its explanations, its dialogue and its exercises. Read it as a learner would '+
-  'and judge it as a whole — that is why the words sit inside the lesson that teaches them rather than in a '+
-  'separate list.</p>'+
+  '<p>By lesson, in the order a learner meets them. Each lesson is one self-contained job: read it as a learner '+
+  'would and judge it as a whole. The words it introduces sit inside it rather than in a separate list, because '+
+  'that is where the app introduces them.</p>'+
   '<p>Simply start at Lesson 1 and work down. The numbered squares in the sidebar turn green as you tick sections '+
   'off, so you can always find where you stopped, and <b>Not yet reviewed</b> in the toolbar jumps you there.</p>'+
-  '<p>The last group, <b>Not part of any lesson</b>, holds what no lesson contains: the grammar reference for each '+
-  'level, the level quizzes, the placement test, the mock exams, the cheatsheet and the list of outside resources '+
-  'the app recommends. Worth doing, but the lessons come first.</p>'+
+  '<p>Nothing has been added and nothing left out: this is what the app serves, in the order it serves it. Each '+
+  'lesson opens the way a learner sees it — the intro, then the ten new words, then the teaching, then the '+
+  'exercises, then the dialogue. A level ends with its quiz and mock exam, and the grammar reference for that '+
+  'level, because that is where the app puts them. The placement test comes first because it is offered before '+
+  'Lesson 1.</p>'+
 
   '<h3>How much there is</h3>'+
   '<table><tr><th>Level</th><th>Lessons</th><th>Words</th><th>Questions</th><th>Other items</th></tr>'+perLevel+'</table>'+
 
   '<h3>Saving and sending it back</h3>'+
-  '<p>Your work saves in this browser automatically as you go, so you can close the tab and come back to it. '+
-  'That saving is tied to <b>this browser on this computer</b>, and to this file staying where it is — moving or '+
-  'renaming it, switching browser, or clearing your browsing data can lose it. If the browser will not save at '+
-  'all you will see a red bar at the top of this page. '+
-  'So: at the end of every session, press '+
-  '<b>Download review</b> in the top right. That gives you one small <code>.json</code> file: it is your '+
-  'backup as well as the thing you send us, and <b>Import…</b> loads it straight back so you can carry on here or '+
-  'on another computer.</p>'+
+  '<p>Your work saves in this browser as you go, so you can close the tab and come back to it. That saving is '+
+  'tied to <b>this browser on this computer</b>, and to this file staying where it is; if the browser refuses to '+
+  'save at all, a red bar appears at the top of this page.</p>'+
+  '<p>At the end of every session press <b>Save my work</b> in the top right. It gives you one small file — that '+
+  'is what you send us, and it is your backup if anything happens to the browser.</p>'+
   '<div class="callout">Nothing is uploaded anywhere. This page works offline and keeps everything on your machine '+
   'until you send us the file yourself.</div>'+
 
