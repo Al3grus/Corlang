@@ -332,14 +332,20 @@ def placement_section(lang: str) -> list:
     for j, q in enumerate(pl["questions"]):
         it = question_item(f"placement/q{j}", q)
         it["pr"] = f"[{q.get('level', '')}] {it['pr']}"
+        # The explanation goes nowhere. PlacementScreen never reads it: the test tracks
+        # correctness only to pick the next band and deliberately never tells the learner
+        # whether they were right, which is what a placement test should do. Reviewing text no
+        # learner will ever see is time taken from text they will.
+        it.pop("ex", None)
         items.append(it)
     return [
         {
             "id": "placement",
             "k": "quiz",
             "ti": "Placement test",
-            "sub": f"{len(pl['questions'])} questions · offered at sign-up, before Lesson 1, "
-                   f"to decide where a learner starts",
+            "sub": f"{len(pl['questions'])} questions · offered at sign-up, before Lesson 1, to "
+                   f"decide where a learner starts. The learner is never told whether they were "
+                   f"right, so there is nothing here but the questions and their answers.",
             "items": items,
         }
     ]
