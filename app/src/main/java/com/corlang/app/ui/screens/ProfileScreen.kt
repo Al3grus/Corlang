@@ -104,8 +104,12 @@ fun ProfileScreen(
             val meta = remember(lang) { container.content.meta(lang) }
             val context = androidx.compose.ui.platform.LocalContext.current
 
+            // Names cards that are ALWAYS in Settings. "Voice" was in this list and is not: that
+            // card only appears when text-to-speech is missing or unavailable, so on a healthy
+            // phone the row advertised a setting that was not there when you arrived. The names
+            // match the card titles, so the row predicts what you will actually find.
             MenuRow(Icons.Outlined.Settings, "Settings",
-                "Reminder, study pace, voice, backup", onClick = onOpenSettings)
+                "Reminder, review limit, appearance, backup", onClick = onOpenSettings)
             MenuRow(Icons.Outlined.Language, "Language",
                 "${meta.flagEmoji} ${meta.name} · tap to switch", onClick = { page = "language" })
             // Names BOTH things that can be bought. The row used to say "Get Premium" and speak
