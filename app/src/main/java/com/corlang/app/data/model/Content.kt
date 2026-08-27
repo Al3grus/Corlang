@@ -319,6 +319,9 @@ data class PlacementQuestion(
     val prompt: String,
     val options: List<String>,
     val answer: String,
-    val explanation: String = "",
+    // No `explanation` here, unlike Question. A placement never tells the learner whether they
+    // were right: it tracks correctness only to choose the next band, and teaching mid-test
+    // would turn a measurement into a lesson. The field existed and was authored 368 times
+    // across six courses without one of them ever reaching a screen.
     val strictDiacritics: Boolean = false
 )

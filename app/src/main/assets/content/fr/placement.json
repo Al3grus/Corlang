@@ -1,1086 +1,1014 @@
 {
- "title": "Where should you start?",
- "intro": "This short check finds the right starting point in the French course by asking a few questions that get harder as you go. It takes about two minutes, and you can retake it any time.",
- "questions": [
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "Complete: 'Je ___ Marie.' (I am Marie)",
-   "options": [
-    "suis",
-    "es",
-    "est",
-    "ai"
-   ],
-   "answer": "suis",
-   "explanation": "With je, the verb être takes the form suis."
-  },
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "How do you say 'good evening'?",
-   "options": [
-    "Bonsoir",
-    "Bonjour",
-    "Bonne nuit",
-    "Salut"
-   ],
-   "answer": "Bonsoir",
-   "explanation": "Bonsoir greets someone in the evening, while bonne nuit is said only when leaving to sleep."
-  },
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "You are introduced to someone for the first time. What do you say?",
-   "options": [
-    "Enchanté",
-    "Merci beaucoup",
-    "À demain",
-    "Pardon"
-   ],
-   "answer": "Enchanté",
-   "explanation": "Enchanté is the standard reply when meeting someone for the first time."
-  },
-  {
-   "level": "A1",
-   "startDay": 1,
-   "type": "MCQ",
-   "difficulty": 1,
-   "prompt": "Complete: 'Tu ___ français ?' (être)",
-   "options": [
-    "es",
-    "est",
-    "suis",
-    "êtes"
-   ],
-   "answer": "es",
-   "explanation": "Tu takes es."
-  },
-  {
-   "level": "A1",
-   "startDay": 18,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "Complete: 'Nous ___ deux enfants.' (we have)",
-   "options": [
-    "avons",
-    "sommes",
-    "avez",
-    "ont"
-   ],
-   "answer": "avons",
-   "explanation": "The verb avoir with nous is avons."
-  },
-  {
-   "level": "A1",
-   "startDay": 18,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "Complete: '___ table est grande.'",
-   "options": [
-    "La",
-    "Le",
-    "Les",
-    "Un"
-   ],
-   "answer": "La",
-   "explanation": "Table is feminine and singular, so it takes la."
-  },
-  {
-   "level": "A1",
-   "startDay": 18,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "Which number is 'quatre-vingts'?",
-   "options": [
-    "80",
-    "60",
-    "90",
-    "40"
-   ],
-   "answer": "80",
-   "explanation": "Quatre-vingts means four twenties, so 80."
-  },
-  {
-   "level": "A1",
-   "startDay": 18,
-   "type": "MCQ",
-   "difficulty": 2,
-   "prompt": "Complete: 'J'ai ___ chien.' (a dog)",
-   "options": [
-    "un",
-    "une",
-    "le",
-    "des"
-   ],
-   "answer": "un",
-   "explanation": "Chien is masculine singular, so the indefinite article is un."
-  },
-  {
-   "level": "A1",
-   "startDay": 35,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "Complete: 'Nous ___ au cinéma ce soir.' (we are going)",
-   "options": [
-    "allons",
-    "allez",
-    "vas",
-    "sommes"
-   ],
-   "answer": "allons",
-   "explanation": "The verb aller with nous is allons."
-  },
-  {
-   "level": "A1",
-   "startDay": 35,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "Complete the negative: 'Je n'ai ___ voiture.' (I do not have a car)",
-   "options": [
-    "pas de",
-    "pas une",
-    "pas la",
-    "pas des"
-   ],
-   "answer": "pas de",
-   "explanation": "After a negation, the indefinite article becomes de."
-  },
-  {
-   "level": "A1",
-   "startDay": 35,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "How do you say the time 14:30 in French?",
-   "options": [
-    "quatorze heures trente",
-    "quatorze heures et quart",
-    "quatre heures trente",
-    "deux heures trente du matin"
-   ],
-   "answer": "quatorze heures trente",
-   "explanation": "The 24 hour clock gives quatorze heures for 14, plus trente for the minutes."
-  },
-  {
-   "level": "A1",
-   "startDay": 35,
-   "type": "MCQ",
-   "difficulty": 3,
-   "prompt": "Complete: 'Je ___ à Paris.' (habiter)",
-   "options": [
-    "habite",
-    "habites",
-    "habitent",
-    "habiter"
-   ],
-   "answer": "habite",
-   "explanation": "Je takes the -e ending: j'habite."
-  },
-  {
-   "level": "A2",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "Complete: 'Elle ___ allée à Paris.' (she went)",
-   "options": [
-    "est",
-    "a",
-    "avait",
-    "était"
-   ],
-   "answer": "est",
-   "explanation": "Aller forms its passé composé with être, and the participle agrees: elle est allée."
-  },
-  {
-   "level": "A2",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "Complete: 'Avant, nous ___ à la campagne.' (we used to live)",
-   "options": [
-    "habitions",
-    "avons habité",
-    "habitons",
-    "habiterons"
-   ],
-   "answer": "habitions",
-   "explanation": "A repeated or ongoing past situation takes the imparfait."
-  },
-  {
-   "level": "A2",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "In a bakery, which is the polite way to ask for a baguette?",
-   "options": [
-    "Je voudrais une baguette, s'il vous plaît.",
-    "Je veux une baguette.",
-    "Donnez une baguette.",
-    "J'ai une baguette, s'il vous plaît."
-   ],
-   "answer": "Je voudrais une baguette, s'il vous plaît.",
-   "explanation": "Je voudrais softens the request, while je veux sounds blunt in a shop."
-  },
-  {
-   "level": "A2",
-   "startDay": 55,
-   "type": "MCQ",
-   "difficulty": 4,
-   "prompt": "Complete: 'J'ai ___ mes clés.' (perdre)",
-   "options": [
-    "perdu",
-    "perdre",
-    "perdi",
-    "perdue"
-   ],
-   "answer": "perdu",
-   "explanation": "Perdre has the past participle perdu, and it does not agree with a following object."
-  },
-  {
-   "level": "A2",
-   "startDay": 82,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "Complete: 'Tu as téléphoné à ton frère ? Oui, je ___ ai téléphoné.'",
-   "options": [
-    "lui",
-    "l'",
-    "le",
-    "leur"
-   ],
-   "answer": "lui",
-   "explanation": "Téléphoner à takes an indirect object, so a single person is lui."
-  },
-  {
-   "level": "A2",
-   "startDay": 82,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "What does 'faire la queue' mean?",
-   "options": [
-    "To wait in line",
-    "To cook a meal",
-    "To take a nap",
-    "To go for a walk"
-   ],
-   "answer": "To wait in line",
-   "explanation": "Faire la queue means to line up and wait your turn."
-  },
-  {
-   "level": "A2",
-   "startDay": 82,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "Complete the futur simple: 'L'année prochaine, nous ___ en Espagne.' (we will go)",
-   "options": [
-    "irons",
-    "allons",
-    "irions",
-    "allions"
-   ],
-   "answer": "irons",
-   "explanation": "The futur simple of aller with nous is irons."
-  },
-  {
-   "level": "A2",
-   "startDay": 82,
-   "type": "MCQ",
-   "difficulty": 5,
-   "prompt": "Complete: 'Tu as vu le film ? Oui, je ___ ai vu.'",
-   "options": [
-    "l'",
-    "lui",
-    "le",
-    "y"
-   ],
-   "answer": "l'",
-   "explanation": "Le film is a direct object, so the pronoun is le, elided to l' before ai."
-  },
-  {
-   "level": "A2",
-   "startDay": 110,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "Complete: 'Ce livre est ___ intéressant que l'autre.' (less interesting)",
-   "options": [
-    "moins",
-    "moindre",
-    "peu",
-    "pire"
-   ],
-   "answer": "moins",
-   "explanation": "The comparative of inferiority is moins plus adjective plus que."
-  },
-  {
-   "level": "A2",
-   "startDay": 110,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "Complete: 'La femme ___ parle est ma voisine.'",
-   "options": [
-    "qui",
-    "que",
-    "dont",
-    "où"
-   ],
-   "answer": "qui",
-   "explanation": "The relative pronoun is the subject of parle, so it is qui."
-  },
-  {
-   "level": "A2",
-   "startDay": 110,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "What does 'faire la grasse matinée' mean?",
-   "options": [
-    "To sleep in late",
-    "To go grocery shopping",
-    "To take a quick shower",
-    "To eat a big breakfast"
-   ],
-   "answer": "To sleep in late",
-   "explanation": "Faire la grasse matinée means to sleep in or have a lie-in."
-  },
-  {
-   "level": "A2",
-   "startDay": 110,
-   "type": "MCQ",
-   "difficulty": 6,
-   "prompt": "Complete: 'Le livre ___ j'ai acheté est intéressant.'",
-   "options": [
-    "que",
-    "qui",
-    "dont",
-    "où"
-   ],
-   "answer": "que",
-   "explanation": "The relative is the direct object of acheter, so it is que."
-  },
-  {
-   "level": "B1",
-   "startDay": 140,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "Complete: 'Je ne pense pas qu'il ___ raison.'",
-   "options": [
-    "ait",
-    "a",
-    "aura",
-    "avait"
-   ],
-   "answer": "ait",
-   "explanation": "Penser in the negative expresses doubt and triggers the subjunctive."
-  },
-  {
-   "level": "B1",
-   "startDay": 140,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "Complete: 'Si nous ___ plus de temps, nous resterions une semaine.'",
-   "options": [
-    "avions",
-    "avons",
-    "aurions",
-    "aurons"
-   ],
-   "answer": "avions",
-   "explanation": "With a conditionnel in the main clause, si takes the imparfait."
-  },
-  {
-   "level": "B1",
-   "startDay": 140,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "Which sentence is correct?",
-   "options": [
-    "J'espère qu'il viendra.",
-    "J'espère qu'il vienne.",
-    "Je veux qu'il viendra.",
-    "Il faut qu'il vient."
-   ],
-   "answer": "J'espère qu'il viendra.",
-   "explanation": "Espérer takes the indicative, unlike vouloir and il faut which take the subjunctive."
-  },
-  {
-   "level": "B1",
-   "startDay": 140,
-   "type": "MCQ",
-   "difficulty": 7,
-   "prompt": "Complete: 'Il faut que tu ___ à l'heure.' (être)",
-   "options": [
-    "sois",
-    "es",
-    "seras",
-    "soit"
-   ],
-   "answer": "sois",
-   "explanation": "Il faut que takes the subjunctive: que tu sois."
-  },
-  {
-   "level": "B1",
-   "startDay": 162,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "Complete: 'Le stylo ___ j'écris est cassé.' (with which)",
-   "options": [
-    "avec lequel",
-    "duquel",
-    "auquel",
-    "lequel"
-   ],
-   "answer": "avec lequel",
-   "explanation": "écrire avec keeps its preposition in front of the compound relative."
-  },
-  {
-   "level": "B1",
-   "startDay": 162,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "Complete: 'Tu me donnes le livre ? Oui, je ___ donne.'",
-   "options": [
-    "te le",
-    "le te",
-    "me le",
-    "te lui"
-   ],
-   "answer": "te le",
-   "explanation": "With two pronouns the indirect te comes before the direct le."
-  },
-  {
-   "level": "B1",
-   "startDay": 162,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "Complete: 'Les lettres que j'ai ___.' (écrire)",
-   "options": [
-    "écrites",
-    "écrit",
-    "écrite",
-    "écrits"
-   ],
-   "answer": "écrites",
-   "explanation": "With avoir the participle agrees with a direct object placed before it."
-  },
-  {
-   "level": "B1",
-   "startDay": 162,
-   "type": "MCQ",
-   "difficulty": 8,
-   "prompt": "Complete: '___ la grève, les trains sont annulés.' (because of)",
-   "options": [
-    "À cause de",
-    "Grâce à",
-    "Puisque",
-    "Car"
-   ],
-   "answer": "À cause de",
-   "explanation": "À cause de introduces an unwelcome cause and takes a noun; grâce à is for a welcome one."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "Complete: 'Le jour ___ je suis arrivé, il pleuvait.'",
-   "options": [
-    "où",
-    "dont",
-    "que",
-    "quand"
-   ],
-   "answer": "où",
-   "explanation": "After an expression of time such as le jour, the relative pronoun is où."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "Complete: 'Quand je suis arrivé, il ___ déjà parti.'",
-   "options": [
-    "était",
-    "avait",
-    "est",
-    "a"
-   ],
-   "answer": "était",
-   "explanation": "Partir uses être, so the plus que parfait is il était parti."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "What does the expression 'avoir le cafard' mean?",
-   "options": [
-    "To feel down or blue",
-    "To be in a hurry",
-    "To be very hungry",
-    "To be pleasantly surprised"
-   ],
-   "answer": "To feel down or blue",
-   "explanation": "Avoir le cafard is an idiom for feeling low or melancholic."
-  },
-  {
-   "level": "B1",
-   "startDay": 185,
-   "type": "MCQ",
-   "difficulty": 9,
-   "prompt": "Complete: 'C'est le livre ___ je t'ai parlé.'",
-   "options": [
-    "dont",
-    "que",
-    "qui",
-    "où"
-   ],
-   "answer": "dont",
-   "explanation": "Parler de means the relative carries the de: dont."
-  },
-  {
-   "level": "B1",
-   "startDay": 210,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "Complete: 'Tu penses à ton examen ? Oui, j'___ pense.'",
-   "options": [
-    "y",
-    "en",
-    "le",
-    "lui"
-   ],
-   "answer": "y",
-   "explanation": "penser à is replaced by y; en would stand for de."
-  },
-  {
-   "level": "B1",
-   "startDay": 210,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "Complete: 'Je veux qu'il ___ attention.' (faire)",
-   "options": [
-    "fasse",
-    "fait",
-    "ferait",
-    "faisait"
-   ],
-   "answer": "fasse",
-   "explanation": "vouloir que takes the subjunctive, and faire is irregular: fasse."
-  },
-  {
-   "level": "B1",
-   "startDay": 210,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "Quel est l'adverbe formé sur 'patient' ?",
-   "options": [
-    "patiemment",
-    "patientment",
-    "patiement",
-    "patientement"
-   ],
-   "answer": "patiemment",
-   "explanation": "Adjectives in -ent give adverbs in -emment."
-  },
-  {
-   "level": "B1",
-   "startDay": 210,
-   "type": "MCQ",
-   "difficulty": 10,
-   "prompt": "Complete: 'La lettre ___ envoyée hier.'",
-   "options": [
-    "a été",
-    "est",
-    "était",
-    "sera"
-   ],
-   "answer": "a été",
-   "explanation": "A passive in the passé composé is avoir plus été plus the participle."
-  },
-  {
-   "level": "B1",
-   "startDay": 235,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "Complete: 'Je te préviens ___ tu saches la vérité.' (so that you know)",
-   "options": [
-    "pour que",
-    "pour",
-    "afin de",
-    "parce que"
-   ],
-   "answer": "pour que",
-   "explanation": "A purpose clause with its own subject needs pour que plus the subjunctive."
-  },
-  {
-   "level": "B1",
-   "startDay": 235,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "What is the difference between 'un ancien professeur' and 'un professeur ancien'?",
-   "options": [
-    "The first means a former teacher, the second means an elderly teacher",
-    "They mean exactly the same thing",
-    "The first is feminine, the second is masculine",
-    "The first is a question, the second is a statement"
-   ],
-   "answer": "The first means a former teacher, the second means an elderly teacher",
-   "explanation": "Ancien changes meaning depending on position: before the noun it means former, after the noun it means old or elderly."
-  },
-  {
-   "level": "B1",
-   "startDay": 235,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "Complete: 'Si tu m'avais prévenu, je ___ t'aider.' (I could have helped you)",
-   "options": [
-    "aurais pu",
-    "avais pu",
-    "aurai pu",
-    "ai pu"
-   ],
-   "answer": "aurais pu",
-   "explanation": "An unreal past hypothesis pairs the plus que parfait with the conditionnel passé."
-  },
-  {
-   "level": "B1",
-   "startDay": 235,
-   "type": "MCQ",
-   "difficulty": 11,
-   "prompt": "Complete: 'Bien qu'il ___ fatigué, il continue.'",
-   "options": [
-    "soit",
-    "est",
-    "était",
-    "sera"
-   ],
-   "answer": "soit",
-   "explanation": "Bien que always takes the subjunctive."
-  },
-  {
-   "level": "B1",
-   "startDay": 257,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "Dans une lettre formelle à un inconnu, comment commencer ?",
-   "options": [
-    "Madame, Monsieur,",
-    "Cher ami,",
-    "Salut,",
-    "Bonjour à tous,"
-   ],
-   "answer": "Madame, Monsieur,",
-   "explanation": "Madame, Monsieur is the formula when the reader's name is unknown."
-  },
-  {
-   "level": "B1",
-   "startDay": 257,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "Où fait-on 'le plein' ?",
-   "options": [
-    "à la station-service",
-    "à la banque",
-    "à la mairie",
-    "à la boulangerie"
-   ],
-   "answer": "à la station-service",
-   "explanation": "Faire le plein is filling the tank."
-  },
-  {
-   "level": "B1",
-   "startDay": 257,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "Complete: 'Il n'y a personne ___ puisse m'aider.'",
-   "options": [
-    "qui",
-    "que",
-    "dont",
-    "lequel"
-   ],
-   "answer": "qui",
-   "explanation": "The relative is the subject of puisse, so it is qui, and the negative antecedent brings the subjunctive."
-  },
-  {
-   "level": "B1",
-   "startDay": 257,
-   "type": "MCQ",
-   "difficulty": 12,
-   "prompt": "Complete: 'Je m'attends ___ ce qu'il refuse.'",
-   "options": [
-    "à",
-    "de",
-    "sur",
-    "pour"
-   ],
-   "answer": "à",
-   "explanation": "s'attendre is fixed with à."
-  },
-  {
-   "level": "B2",
-   "startDay": 280,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "Complete: 'Quoiqu'il ___ de son mieux, il échoue toujours.'",
-   "options": [
-    "fasse",
-    "fait",
-    "fera",
-    "faisait"
-   ],
-   "answer": "fasse",
-   "explanation": "Quoique introduces a concession and is always followed by the subjunctive."
-  },
-  {
-   "level": "B2",
-   "startDay": 280,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "What does the expression 's'en falloir de peu' mean, as in 'il s'en est fallu de peu'?",
-   "options": [
-    "It was a close call",
-    "It happened often",
-    "It was completely unexpected",
-    "It cost a great deal of money"
-   ],
-   "answer": "It was a close call",
-   "explanation": "S'en falloir de peu describes something that narrowly happened or was narrowly avoided."
-  },
-  {
-   "level": "B2",
-   "startDay": 280,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "Which sentence is written in the most formal, literary register?",
-   "options": [
-    "Nonobstant les obstacles, le projet a abouti.",
-    "Malgré les problèmes, ça a marché.",
-    "En dépit des soucis, on a réussi.",
-    "Même si c'était dur, on y est arrivé."
-   ],
-   "answer": "Nonobstant les obstacles, le projet a abouti.",
-   "explanation": "Nonobstant is a formal, literary synonym for malgré, marking this option as the most formal register."
-  },
-  {
-   "level": "B2",
-   "startDay": 280,
-   "type": "MCQ",
-   "difficulty": 13,
-   "prompt": "Complete: '___ le mauvais temps, la cérémonie a eu lieu.' (despite)",
-   "options": [
-    "Malgré",
-    "Bien que",
-    "Quoique",
-    "Même si"
-   ],
-   "answer": "Malgré",
-   "explanation": "Malgré takes a noun; the others introduce a clause with a verb."
-  },
-  {
-   "level": "B2",
-   "startDay": 315,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "Complete: '___ me dérange, c'est le bruit.'",
-   "options": [
-    "Ce qui",
-    "Ce que",
-    "Ce dont",
-    "Celui qui"
-   ],
-   "answer": "Ce qui",
-   "explanation": "In this emphatic structure the pronoun is the subject of dérange, so it is ce qui."
-  },
-  {
-   "level": "B2",
-   "startDay": 315,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "Complete: 'Il n'avait presque pas révisé ; ___, il a réussi l'examen.'",
-   "options": [
-    "toutefois",
-    "ainsi",
-    "donc",
-    "en effet"
-   ],
-   "answer": "toutefois",
-   "explanation": "The second clause contradicts what the first leads you to expect, which calls for a concessive connector."
-  },
-  {
-   "level": "B2",
-   "startDay": 315,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "Which is the most formal way to say 'I don't know'?",
-   "options": [
-    "Je l'ignore.",
-    "Je sais pas.",
-    "J'en sais rien.",
-    "Aucune idée."
-   ],
-   "answer": "Je l'ignore.",
-   "explanation": "Ignorer belongs to formal register, while the others are spoken or elliptical."
-  },
-  {
-   "level": "B2",
-   "startDay": 315,
-   "type": "MCQ",
-   "difficulty": 14,
-   "prompt": "Complete: '___ le dossier, il a signé.' (having read the file)",
-   "options": [
-    "Ayant lu",
-    "En lisant",
-    "Lisant",
-    "Avoir lu"
-   ],
-   "answer": "Ayant lu",
-   "explanation": "The past participle construction ayant lu marks an action completed before the main verb."
-  },
-  {
-   "level": "B2",
-   "startDay": 337,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "Complete: 'Je regrette qu'il ___ parti si tôt.'",
-   "options": [
-    "soit",
-    "est",
-    "était",
-    "sera"
-   ],
-   "answer": "soit",
-   "explanation": "regretter que takes the subjunctive, and partir forms it with être."
-  },
-  {
-   "level": "B2",
-   "startDay": 337,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "Complete: '___ des efforts fournis, le résultat reste décevant.' (in spite of)",
-   "options": [
-    "En dépit",
-    "Bien que",
-    "Quoique",
-    "Pourtant"
-   ],
-   "answer": "En dépit",
-   "explanation": "En dépit de takes a noun; bien que and quoique need a clause with a verb."
-  },
-  {
-   "level": "B2",
-   "startDay": 337,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "Quel verbe correspond au nom 'l'accroissement' ?",
-   "options": [
-    "accroître",
-    "accroiter",
-    "accroissir",
-    "accrocher"
-   ],
-   "answer": "accroître",
-   "explanation": "L'accroissement comes from accroître, to increase."
-  },
-  {
-   "level": "B2",
-   "startDay": 337,
-   "type": "MCQ",
-   "difficulty": 15,
-   "prompt": "Dans un texte argumentatif, la thèse est ___.",
-   "options": [
-    "l'opinion défendue par l'auteur",
-    "un exemple précis",
-    "une objection au raisonnement",
-    "la conclusion du texte"
-   ],
-   "answer": "l'opinion défendue par l'auteur",
-   "explanation": "The thèse is the position the writer sets out to defend."
-  },
-  {
-   "level": "B2",
-   "startDay": 355,
-   "type": "MCQ",
-   "difficulty": 16,
-   "prompt": "Complete: 'Dans cette affaire, il s'agit ___ un simple malentendu.'",
-   "options": [
-    "d'",
-    "de",
-    "à",
-    "en"
-   ],
-   "answer": "d'",
-   "explanation": "The impersonal turn is il s'agit de, and de elides before a vowel."
-  },
-  {
-   "level": "B2",
-   "startDay": 355,
-   "type": "MCQ",
-   "difficulty": 16,
-   "prompt": "Which noun corresponds to the verb 'découvrir'?",
-   "options": [
-    "la découverte",
-    "le découvert",
-    "la découvrance",
-    "le découvrement"
-   ],
-   "answer": "la découverte",
-   "explanation": "La découverte is the derived noun, while le découvert means a bank overdraft."
-  },
-  {
-   "level": "B2",
-   "startDay": 355,
-   "type": "MCQ",
-   "difficulty": 16,
-   "prompt": "What does the idiom 'poser un lapin à quelqu'un' mean?",
-   "options": [
-    "To fail to show up for a meeting",
-    "To give someone a small gift",
-    "To ask someone a tricky question",
-    "To leave a place very quickly"
-   ],
-   "answer": "To fail to show up for a meeting",
-   "explanation": "The idiom means standing someone up after arranging to meet them."
-  },
-  {
-   "level": "B2",
-   "startDay": 355,
-   "type": "MCQ",
-   "difficulty": 16,
-   "prompt": "Quel est le nom correspondant au verbe 'accueillir' ?",
-   "options": [
-    "l'accueil",
-    "l'accueillement",
-    "l'accueillage",
-    "la cueillette"
-   ],
-   "answer": "l'accueil",
-   "explanation": "The noun is l'accueil; la cueillette belongs to cueillir, to pick."
-  },
-  {
-   "level": "B2",
-   "startDay": 377,
-   "type": "MCQ",
-   "difficulty": 17,
-   "prompt": "Complete: 'Il est essentiel que chacun ___ sa part.' (faire)",
-   "options": [
-    "fasse",
-    "fait",
-    "fera",
-    "faisait"
-   ],
-   "answer": "fasse",
-   "explanation": "Il est essentiel que takes the subjunctive."
-  },
-  {
-   "level": "B2",
-   "startDay": 377,
-   "type": "MCQ",
-   "difficulty": 17,
-   "prompt": "Complete: 'Ce rapport, ___ les conclusions sont contestées, sera republié.'",
-   "options": [
-    "dont",
-    "duquel",
-    "que",
-    "où"
-   ],
-   "answer": "dont",
-   "explanation": "les conclusions du rapport becomes dont, which carries the de."
-  },
-  {
-   "level": "B2",
-   "startDay": 377,
-   "type": "MCQ",
-   "difficulty": 17,
-   "prompt": "Quel est le nom correspondant au verbe 'aggraver' ?",
-   "options": [
-    "l'aggravation",
-    "l'aggravement",
-    "l'aggravance",
-    "l'agrafage"
-   ],
-   "answer": "l'aggravation",
-   "explanation": "The noun is l'aggravation, a worsening."
-  },
-  {
-   "level": "B2",
-   "startDay": 377,
-   "type": "MCQ",
-   "difficulty": 17,
-   "prompt": "Complete: '___ que les mesures soient coûteuses, elles restent nécessaires.'",
-   "options": [
-    "Bien",
-    "Même",
-    "Alors",
-    "Tandis"
-   ],
-   "answer": "Bien",
-   "explanation": "Bien que introduces a concession and takes the subjunctive."
-  },
-  {
-   "level": "B2",
-   "startDay": 400,
-   "type": "MCQ",
-   "difficulty": 18,
-   "prompt": "In 'Il partit sans se retourner', which tense is the verb in?",
-   "options": [
-    "Passé simple",
-    "Imparfait",
-    "Conditionnel passé",
-    "Subjonctif imparfait"
-   ],
-   "answer": "Passé simple",
-   "explanation": "Partit is the third person form of the narrative tense used in written French."
-  },
-  {
-   "level": "B2",
-   "startDay": 400,
-   "type": "MCQ",
-   "difficulty": 18,
-   "prompt": "Complete: '___ soient les difficultés, nous continuerons.' (whatever the difficulties may be)",
-   "options": [
-    "Quelles que",
-    "Quels que",
-    "Quelque",
-    "Quoi que"
-   ],
-   "answer": "Quelles que",
-   "explanation": "Quel que agrees with the noun that follows, and difficultés is feminine plural."
-  },
-  {
-   "level": "B2",
-   "startDay": 400,
-   "type": "MCQ",
-   "difficulty": 18,
-   "prompt": "In 'Je crains qu'il ne soit trop tard', what is the role of 'ne'?",
-   "options": [
-    "It is expletive and carries no negative meaning",
-    "It makes the sentence negative",
-    "It is a formal replacement for pas",
-    "It marks the sentence as a question"
-   ],
-   "answer": "It is expletive and carries no negative meaning",
-   "explanation": "After verbs of fearing, this ne is stylistic and the speaker does fear it is too late."
-  },
-  {
-   "level": "B2",
-   "startDay": 400,
-   "type": "MCQ",
-   "difficulty": 18,
-   "prompt": "In 'Il fallait qu'il vînt', what form is 'vînt' ?",
-   "options": [
-    "Subjonctif imparfait",
-    "Passé simple",
-    "Conditionnel passé",
-    "Subjonctif présent"
-   ],
-   "answer": "Subjonctif imparfait",
-   "explanation": "Vînt here is the imperfect subjunctive, a literary form, written with a circumflex."
-  }
- ]
+  "title": "Where should you start?",
+  "intro": "This short check finds the right starting point in the French course by asking a few questions that get harder as you go. It takes about two minutes, and you can retake it any time.",
+  "questions": [
+    {
+      "level": "A1",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "Complete: 'Je ___ Marie.' (I am Marie)",
+      "options": [
+        "suis",
+        "es",
+        "est",
+        "ai"
+      ],
+      "answer": "suis"
+    },
+    {
+      "level": "A1",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "How do you say 'good evening'?",
+      "options": [
+        "Bonsoir",
+        "Bonjour",
+        "Bonne nuit",
+        "Salut"
+      ],
+      "answer": "Bonsoir"
+    },
+    {
+      "level": "A1",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "You are introduced to someone for the first time. What do you say?",
+      "options": [
+        "Enchanté",
+        "Merci beaucoup",
+        "À demain",
+        "Pardon"
+      ],
+      "answer": "Enchanté"
+    },
+    {
+      "level": "A1",
+      "startDay": 1,
+      "type": "MCQ",
+      "difficulty": 1,
+      "prompt": "Complete: 'Tu ___ français ?' (être)",
+      "options": [
+        "es",
+        "est",
+        "suis",
+        "êtes"
+      ],
+      "answer": "es"
+    },
+    {
+      "level": "A1",
+      "startDay": 18,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Complete: 'Nous ___ deux enfants.' (we have)",
+      "options": [
+        "avons",
+        "sommes",
+        "avez",
+        "ont"
+      ],
+      "answer": "avons"
+    },
+    {
+      "level": "A1",
+      "startDay": 18,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Complete: '___ table est grande.'",
+      "options": [
+        "La",
+        "Le",
+        "Les",
+        "Un"
+      ],
+      "answer": "La"
+    },
+    {
+      "level": "A1",
+      "startDay": 18,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Which number is 'quatre-vingts'?",
+      "options": [
+        "80",
+        "60",
+        "90",
+        "40"
+      ],
+      "answer": "80"
+    },
+    {
+      "level": "A1",
+      "startDay": 18,
+      "type": "MCQ",
+      "difficulty": 2,
+      "prompt": "Complete: 'J'ai ___ chien.' (a dog)",
+      "options": [
+        "un",
+        "une",
+        "le",
+        "des"
+      ],
+      "answer": "un"
+    },
+    {
+      "level": "A1",
+      "startDay": 35,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "Complete: 'Nous ___ au cinéma ce soir.' (we are going)",
+      "options": [
+        "allons",
+        "allez",
+        "vas",
+        "sommes"
+      ],
+      "answer": "allons"
+    },
+    {
+      "level": "A1",
+      "startDay": 35,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "Complete the negative: 'Je n'ai ___ voiture.' (I do not have a car)",
+      "options": [
+        "pas de",
+        "pas une",
+        "pas la",
+        "pas des"
+      ],
+      "answer": "pas de"
+    },
+    {
+      "level": "A1",
+      "startDay": 35,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "How do you say the time 14:30 in French?",
+      "options": [
+        "quatorze heures trente",
+        "quatorze heures et quart",
+        "quatre heures trente",
+        "deux heures trente du matin"
+      ],
+      "answer": "quatorze heures trente"
+    },
+    {
+      "level": "A1",
+      "startDay": 35,
+      "type": "MCQ",
+      "difficulty": 3,
+      "prompt": "Complete: 'Je ___ à Paris.' (habiter)",
+      "options": [
+        "habite",
+        "habites",
+        "habitent",
+        "habiter"
+      ],
+      "answer": "habite"
+    },
+    {
+      "level": "A2",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "Complete: 'Elle ___ allée à Paris.' (she went)",
+      "options": [
+        "est",
+        "a",
+        "avait",
+        "était"
+      ],
+      "answer": "est"
+    },
+    {
+      "level": "A2",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "Complete: 'Avant, nous ___ à la campagne.' (we used to live)",
+      "options": [
+        "habitions",
+        "avons habité",
+        "habitons",
+        "habiterons"
+      ],
+      "answer": "habitions"
+    },
+    {
+      "level": "A2",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "In a bakery, which is the polite way to ask for a baguette?",
+      "options": [
+        "Je voudrais une baguette, s'il vous plaît.",
+        "Je veux une baguette.",
+        "Donnez une baguette.",
+        "J'ai une baguette, s'il vous plaît."
+      ],
+      "answer": "Je voudrais une baguette, s'il vous plaît."
+    },
+    {
+      "level": "A2",
+      "startDay": 55,
+      "type": "MCQ",
+      "difficulty": 4,
+      "prompt": "Complete: 'J'ai ___ mes clés.' (perdre)",
+      "options": [
+        "perdu",
+        "perdre",
+        "perdi",
+        "perdue"
+      ],
+      "answer": "perdu"
+    },
+    {
+      "level": "A2",
+      "startDay": 82,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Complete: 'Tu as téléphoné à ton frère ? Oui, je ___ ai téléphoné.'",
+      "options": [
+        "lui",
+        "l'",
+        "le",
+        "leur"
+      ],
+      "answer": "lui"
+    },
+    {
+      "level": "A2",
+      "startDay": 82,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "What does 'faire la queue' mean?",
+      "options": [
+        "To wait in line",
+        "To cook a meal",
+        "To take a nap",
+        "To go for a walk"
+      ],
+      "answer": "To wait in line"
+    },
+    {
+      "level": "A2",
+      "startDay": 82,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Complete the futur simple: 'L'année prochaine, nous ___ en Espagne.' (we will go)",
+      "options": [
+        "irons",
+        "allons",
+        "irions",
+        "allions"
+      ],
+      "answer": "irons"
+    },
+    {
+      "level": "A2",
+      "startDay": 82,
+      "type": "MCQ",
+      "difficulty": 5,
+      "prompt": "Complete: 'Tu as vu le film ? Oui, je ___ ai vu.'",
+      "options": [
+        "l'",
+        "lui",
+        "le",
+        "y"
+      ],
+      "answer": "l'"
+    },
+    {
+      "level": "A2",
+      "startDay": 110,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "Complete: 'Ce livre est ___ intéressant que l'autre.' (less interesting)",
+      "options": [
+        "moins",
+        "moindre",
+        "peu",
+        "pire"
+      ],
+      "answer": "moins"
+    },
+    {
+      "level": "A2",
+      "startDay": 110,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "Complete: 'La femme ___ parle est ma voisine.'",
+      "options": [
+        "qui",
+        "que",
+        "dont",
+        "où"
+      ],
+      "answer": "qui"
+    },
+    {
+      "level": "A2",
+      "startDay": 110,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "What does 'faire la grasse matinée' mean?",
+      "options": [
+        "To sleep in late",
+        "To go grocery shopping",
+        "To take a quick shower",
+        "To eat a big breakfast"
+      ],
+      "answer": "To sleep in late"
+    },
+    {
+      "level": "A2",
+      "startDay": 110,
+      "type": "MCQ",
+      "difficulty": 6,
+      "prompt": "Complete: 'Le livre ___ j'ai acheté est intéressant.'",
+      "options": [
+        "que",
+        "qui",
+        "dont",
+        "où"
+      ],
+      "answer": "que"
+    },
+    {
+      "level": "B1",
+      "startDay": 140,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "Complete: 'Je ne pense pas qu'il ___ raison.'",
+      "options": [
+        "ait",
+        "a",
+        "aura",
+        "avait"
+      ],
+      "answer": "ait"
+    },
+    {
+      "level": "B1",
+      "startDay": 140,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "Complete: 'Si nous ___ plus de temps, nous resterions une semaine.'",
+      "options": [
+        "avions",
+        "avons",
+        "aurions",
+        "aurons"
+      ],
+      "answer": "avions"
+    },
+    {
+      "level": "B1",
+      "startDay": 140,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "Which sentence is correct?",
+      "options": [
+        "J'espère qu'il viendra.",
+        "J'espère qu'il vienne.",
+        "Je veux qu'il viendra.",
+        "Il faut qu'il vient."
+      ],
+      "answer": "J'espère qu'il viendra."
+    },
+    {
+      "level": "B1",
+      "startDay": 140,
+      "type": "MCQ",
+      "difficulty": 7,
+      "prompt": "Complete: 'Il faut que tu ___ à l'heure.' (être)",
+      "options": [
+        "sois",
+        "es",
+        "seras",
+        "soit"
+      ],
+      "answer": "sois"
+    },
+    {
+      "level": "B1",
+      "startDay": 162,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "Complete: 'Le stylo ___ j'écris est cassé.' (with which)",
+      "options": [
+        "avec lequel",
+        "duquel",
+        "auquel",
+        "lequel"
+      ],
+      "answer": "avec lequel"
+    },
+    {
+      "level": "B1",
+      "startDay": 162,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "Complete: 'Tu me donnes le livre ? Oui, je ___ donne.'",
+      "options": [
+        "te le",
+        "le te",
+        "me le",
+        "te lui"
+      ],
+      "answer": "te le"
+    },
+    {
+      "level": "B1",
+      "startDay": 162,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "Complete: 'Les lettres que j'ai ___.' (écrire)",
+      "options": [
+        "écrites",
+        "écrit",
+        "écrite",
+        "écrits"
+      ],
+      "answer": "écrites"
+    },
+    {
+      "level": "B1",
+      "startDay": 162,
+      "type": "MCQ",
+      "difficulty": 8,
+      "prompt": "Complete: '___ la grève, les trains sont annulés.' (because of)",
+      "options": [
+        "À cause de",
+        "Grâce à",
+        "Puisque",
+        "Car"
+      ],
+      "answer": "À cause de"
+    },
+    {
+      "level": "B1",
+      "startDay": 185,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "Complete: 'Le jour ___ je suis arrivé, il pleuvait.'",
+      "options": [
+        "où",
+        "dont",
+        "que",
+        "quand"
+      ],
+      "answer": "où"
+    },
+    {
+      "level": "B1",
+      "startDay": 185,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "Complete: 'Quand je suis arrivé, il ___ déjà parti.'",
+      "options": [
+        "était",
+        "avait",
+        "est",
+        "a"
+      ],
+      "answer": "était"
+    },
+    {
+      "level": "B1",
+      "startDay": 185,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "What does the expression 'avoir le cafard' mean?",
+      "options": [
+        "To feel down or blue",
+        "To be in a hurry",
+        "To be very hungry",
+        "To be pleasantly surprised"
+      ],
+      "answer": "To feel down or blue"
+    },
+    {
+      "level": "B1",
+      "startDay": 185,
+      "type": "MCQ",
+      "difficulty": 9,
+      "prompt": "Complete: 'C'est le livre ___ je t'ai parlé.'",
+      "options": [
+        "dont",
+        "que",
+        "qui",
+        "où"
+      ],
+      "answer": "dont"
+    },
+    {
+      "level": "B1",
+      "startDay": 210,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "Complete: 'Tu penses à ton examen ? Oui, j'___ pense.'",
+      "options": [
+        "y",
+        "en",
+        "le",
+        "lui"
+      ],
+      "answer": "y"
+    },
+    {
+      "level": "B1",
+      "startDay": 210,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "Complete: 'Je veux qu'il ___ attention.' (faire)",
+      "options": [
+        "fasse",
+        "fait",
+        "ferait",
+        "faisait"
+      ],
+      "answer": "fasse"
+    },
+    {
+      "level": "B1",
+      "startDay": 210,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "Quel est l'adverbe formé sur 'patient' ?",
+      "options": [
+        "patiemment",
+        "patientment",
+        "patiement",
+        "patientement"
+      ],
+      "answer": "patiemment"
+    },
+    {
+      "level": "B1",
+      "startDay": 210,
+      "type": "MCQ",
+      "difficulty": 10,
+      "prompt": "Complete: 'La lettre ___ envoyée hier.'",
+      "options": [
+        "a été",
+        "est",
+        "était",
+        "sera"
+      ],
+      "answer": "a été"
+    },
+    {
+      "level": "B1",
+      "startDay": 235,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "Complete: 'Je te préviens ___ tu saches la vérité.' (so that you know)",
+      "options": [
+        "pour que",
+        "pour",
+        "afin de",
+        "parce que"
+      ],
+      "answer": "pour que"
+    },
+    {
+      "level": "B1",
+      "startDay": 235,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "What is the difference between 'un ancien professeur' and 'un professeur ancien'?",
+      "options": [
+        "The first means a former teacher, the second means an elderly teacher",
+        "They mean exactly the same thing",
+        "The first is feminine, the second is masculine",
+        "The first is a question, the second is a statement"
+      ],
+      "answer": "The first means a former teacher, the second means an elderly teacher"
+    },
+    {
+      "level": "B1",
+      "startDay": 235,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "Complete: 'Si tu m'avais prévenu, je ___ t'aider.' (I could have helped you)",
+      "options": [
+        "aurais pu",
+        "avais pu",
+        "aurai pu",
+        "ai pu"
+      ],
+      "answer": "aurais pu"
+    },
+    {
+      "level": "B1",
+      "startDay": 235,
+      "type": "MCQ",
+      "difficulty": 11,
+      "prompt": "Complete: 'Bien qu'il ___ fatigué, il continue.'",
+      "options": [
+        "soit",
+        "est",
+        "était",
+        "sera"
+      ],
+      "answer": "soit"
+    },
+    {
+      "level": "B1",
+      "startDay": 257,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "Dans une lettre formelle à un inconnu, comment commencer ?",
+      "options": [
+        "Madame, Monsieur,",
+        "Cher ami,",
+        "Salut,",
+        "Bonjour à tous,"
+      ],
+      "answer": "Madame, Monsieur,"
+    },
+    {
+      "level": "B1",
+      "startDay": 257,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "Où fait-on 'le plein' ?",
+      "options": [
+        "à la station-service",
+        "à la banque",
+        "à la mairie",
+        "à la boulangerie"
+      ],
+      "answer": "à la station-service"
+    },
+    {
+      "level": "B1",
+      "startDay": 257,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "Complete: 'Il n'y a personne ___ puisse m'aider.'",
+      "options": [
+        "qui",
+        "que",
+        "dont",
+        "lequel"
+      ],
+      "answer": "qui"
+    },
+    {
+      "level": "B1",
+      "startDay": 257,
+      "type": "MCQ",
+      "difficulty": 12,
+      "prompt": "Complete: 'Je m'attends ___ ce qu'il refuse.'",
+      "options": [
+        "à",
+        "de",
+        "sur",
+        "pour"
+      ],
+      "answer": "à"
+    },
+    {
+      "level": "B2",
+      "startDay": 280,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "Complete: 'Quoiqu'il ___ de son mieux, il échoue toujours.'",
+      "options": [
+        "fasse",
+        "fait",
+        "fera",
+        "faisait"
+      ],
+      "answer": "fasse"
+    },
+    {
+      "level": "B2",
+      "startDay": 280,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "What does the expression 's'en falloir de peu' mean, as in 'il s'en est fallu de peu'?",
+      "options": [
+        "It was a close call",
+        "It happened often",
+        "It was completely unexpected",
+        "It cost a great deal of money"
+      ],
+      "answer": "It was a close call"
+    },
+    {
+      "level": "B2",
+      "startDay": 280,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "Which sentence is written in the most formal, literary register?",
+      "options": [
+        "Nonobstant les obstacles, le projet a abouti.",
+        "Malgré les problèmes, ça a marché.",
+        "En dépit des soucis, on a réussi.",
+        "Même si c'était dur, on y est arrivé."
+      ],
+      "answer": "Nonobstant les obstacles, le projet a abouti."
+    },
+    {
+      "level": "B2",
+      "startDay": 280,
+      "type": "MCQ",
+      "difficulty": 13,
+      "prompt": "Complete: '___ le mauvais temps, la cérémonie a eu lieu.' (despite)",
+      "options": [
+        "Malgré",
+        "Bien que",
+        "Quoique",
+        "Même si"
+      ],
+      "answer": "Malgré"
+    },
+    {
+      "level": "B2",
+      "startDay": 315,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "Complete: '___ me dérange, c'est le bruit.'",
+      "options": [
+        "Ce qui",
+        "Ce que",
+        "Ce dont",
+        "Celui qui"
+      ],
+      "answer": "Ce qui"
+    },
+    {
+      "level": "B2",
+      "startDay": 315,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "Complete: 'Il n'avait presque pas révisé ; ___, il a réussi l'examen.'",
+      "options": [
+        "toutefois",
+        "ainsi",
+        "donc",
+        "en effet"
+      ],
+      "answer": "toutefois"
+    },
+    {
+      "level": "B2",
+      "startDay": 315,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "Which is the most formal way to say 'I don't know'?",
+      "options": [
+        "Je l'ignore.",
+        "Je sais pas.",
+        "J'en sais rien.",
+        "Aucune idée."
+      ],
+      "answer": "Je l'ignore."
+    },
+    {
+      "level": "B2",
+      "startDay": 315,
+      "type": "MCQ",
+      "difficulty": 14,
+      "prompt": "Complete: '___ le dossier, il a signé.' (having read the file)",
+      "options": [
+        "Ayant lu",
+        "En lisant",
+        "Lisant",
+        "Avoir lu"
+      ],
+      "answer": "Ayant lu"
+    },
+    {
+      "level": "B2",
+      "startDay": 337,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "Complete: 'Je regrette qu'il ___ parti si tôt.'",
+      "options": [
+        "soit",
+        "est",
+        "était",
+        "sera"
+      ],
+      "answer": "soit"
+    },
+    {
+      "level": "B2",
+      "startDay": 337,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "Complete: '___ des efforts fournis, le résultat reste décevant.' (in spite of)",
+      "options": [
+        "En dépit",
+        "Bien que",
+        "Quoique",
+        "Pourtant"
+      ],
+      "answer": "En dépit"
+    },
+    {
+      "level": "B2",
+      "startDay": 337,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "Quel verbe correspond au nom 'l'accroissement' ?",
+      "options": [
+        "accroître",
+        "accroiter",
+        "accroissir",
+        "accrocher"
+      ],
+      "answer": "accroître"
+    },
+    {
+      "level": "B2",
+      "startDay": 337,
+      "type": "MCQ",
+      "difficulty": 15,
+      "prompt": "Dans un texte argumentatif, la thèse est ___.",
+      "options": [
+        "l'opinion défendue par l'auteur",
+        "un exemple précis",
+        "une objection au raisonnement",
+        "la conclusion du texte"
+      ],
+      "answer": "l'opinion défendue par l'auteur"
+    },
+    {
+      "level": "B2",
+      "startDay": 355,
+      "type": "MCQ",
+      "difficulty": 16,
+      "prompt": "Complete: 'Dans cette affaire, il s'agit ___ un simple malentendu.'",
+      "options": [
+        "d'",
+        "de",
+        "à",
+        "en"
+      ],
+      "answer": "d'"
+    },
+    {
+      "level": "B2",
+      "startDay": 355,
+      "type": "MCQ",
+      "difficulty": 16,
+      "prompt": "Which noun corresponds to the verb 'découvrir'?",
+      "options": [
+        "la découverte",
+        "le découvert",
+        "la découvrance",
+        "le découvrement"
+      ],
+      "answer": "la découverte"
+    },
+    {
+      "level": "B2",
+      "startDay": 355,
+      "type": "MCQ",
+      "difficulty": 16,
+      "prompt": "What does the idiom 'poser un lapin à quelqu'un' mean?",
+      "options": [
+        "To fail to show up for a meeting",
+        "To give someone a small gift",
+        "To ask someone a tricky question",
+        "To leave a place very quickly"
+      ],
+      "answer": "To fail to show up for a meeting"
+    },
+    {
+      "level": "B2",
+      "startDay": 355,
+      "type": "MCQ",
+      "difficulty": 16,
+      "prompt": "Quel est le nom correspondant au verbe 'accueillir' ?",
+      "options": [
+        "l'accueil",
+        "l'accueillement",
+        "l'accueillage",
+        "la cueillette"
+      ],
+      "answer": "l'accueil"
+    },
+    {
+      "level": "B2",
+      "startDay": 377,
+      "type": "MCQ",
+      "difficulty": 17,
+      "prompt": "Complete: 'Il est essentiel que chacun ___ sa part.' (faire)",
+      "options": [
+        "fasse",
+        "fait",
+        "fera",
+        "faisait"
+      ],
+      "answer": "fasse"
+    },
+    {
+      "level": "B2",
+      "startDay": 377,
+      "type": "MCQ",
+      "difficulty": 17,
+      "prompt": "Complete: 'Ce rapport, ___ les conclusions sont contestées, sera republié.'",
+      "options": [
+        "dont",
+        "duquel",
+        "que",
+        "où"
+      ],
+      "answer": "dont"
+    },
+    {
+      "level": "B2",
+      "startDay": 377,
+      "type": "MCQ",
+      "difficulty": 17,
+      "prompt": "Quel est le nom correspondant au verbe 'aggraver' ?",
+      "options": [
+        "l'aggravation",
+        "l'aggravement",
+        "l'aggravance",
+        "l'agrafage"
+      ],
+      "answer": "l'aggravation"
+    },
+    {
+      "level": "B2",
+      "startDay": 377,
+      "type": "MCQ",
+      "difficulty": 17,
+      "prompt": "Complete: '___ que les mesures soient coûteuses, elles restent nécessaires.'",
+      "options": [
+        "Bien",
+        "Même",
+        "Alors",
+        "Tandis"
+      ],
+      "answer": "Bien"
+    },
+    {
+      "level": "B2",
+      "startDay": 400,
+      "type": "MCQ",
+      "difficulty": 18,
+      "prompt": "In 'Il partit sans se retourner', which tense is the verb in?",
+      "options": [
+        "Passé simple",
+        "Imparfait",
+        "Conditionnel passé",
+        "Subjonctif imparfait"
+      ],
+      "answer": "Passé simple"
+    },
+    {
+      "level": "B2",
+      "startDay": 400,
+      "type": "MCQ",
+      "difficulty": 18,
+      "prompt": "Complete: '___ soient les difficultés, nous continuerons.' (whatever the difficulties may be)",
+      "options": [
+        "Quelles que",
+        "Quels que",
+        "Quelque",
+        "Quoi que"
+      ],
+      "answer": "Quelles que"
+    },
+    {
+      "level": "B2",
+      "startDay": 400,
+      "type": "MCQ",
+      "difficulty": 18,
+      "prompt": "In 'Je crains qu'il ne soit trop tard', what is the role of 'ne'?",
+      "options": [
+        "It is expletive and carries no negative meaning",
+        "It makes the sentence negative",
+        "It is a formal replacement for pas",
+        "It marks the sentence as a question"
+      ],
+      "answer": "It is expletive and carries no negative meaning"
+    },
+    {
+      "level": "B2",
+      "startDay": 400,
+      "type": "MCQ",
+      "difficulty": 18,
+      "prompt": "In 'Il fallait qu'il vînt', what form is 'vînt' ?",
+      "options": [
+        "Subjonctif imparfait",
+        "Passé simple",
+        "Conditionnel passé",
+        "Subjonctif présent"
+      ],
+      "answer": "Subjonctif imparfait"
+    }
+  ]
 }
