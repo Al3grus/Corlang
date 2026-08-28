@@ -161,6 +161,21 @@ waiting costs nothing.
 **While away:** gather **12 testers** (Google account emails). That is the only input that cannot be
 produced from this machine, and closed testing cannot start without it.
 
+**How the parked time is being spent** (stated 2026-08-28): authoring and auditing more language
+content, sending courses to native speakers for review (Track D), and **walking the full 344-lesson
+Croatian course personally, as a learner, over the coming year**.
+
+That last one is worth treating as real work rather than as practice, because it closes two things
+this list has been unable to close from a build machine:
+
+- It **is Track E** (QA on a real device). The app has not been opened on hardware for several
+  releases. A learner walking A0 to B1 exercises every step type, the streak across midnights, the
+  review queue, the checkpoints and the mock exams, in the only way that counts.
+- It finds the defect class no validator can reach: content that parses, passes `proctor.py` and
+  still teaches badly. Per `docs/error-registry.md`, **every defect found this way becomes a new
+  check in `tools/course/`** — found once, checked forever. A defect fixed in one lesson and not
+  turned into a check will come back in the next course.
+
 **When back, in order:**
 
 1. Upload the play AAB to **Internal testing**. Rebuild it first if `versionCode` has moved -
