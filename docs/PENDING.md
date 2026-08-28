@@ -165,24 +165,56 @@ The Internal-testing artefact exists and is verified. It has NOT been uploaded y
   one command (`./gradlew :app:bundlePlayRelease`, JAVA_HOME = Android Studio JBR). Any further
   versionCode bump makes this file stale — rebuild rather than upload it.
 
-## ‼️ DECIDE BEFORE FINISHING THE MERCHANT PROFILE — the country is permanent
+## ‼️ DO NOT SUBMIT THE PAYMENTS PROFILE YET — the country is permanent
 
-Raised 2026-08-28, while the Google payments profile was half-filled and a Portuguese company was
-under consideration.
+Decided 2026-08-28, after working through the entity options properly.
 
 **A payments profile's country can never be changed** (Google payments centre help, verified
-2026-08-28). Correcting it means a new payments profile, which in practice means a new developer
-account, its own $25 fee, and a Play app transfer using the transaction IDs of both profiles.
+2026-08-28). Correcting it means a new payments profile, a new developer account with its own $25
+fee, and a Play app transfer using the transaction IDs of both profiles. Everything else on this
+list is reversible or transferable. This is the one irreversible click.
 
-Everything else on this list is reversible or transferable: the listing, the AAB, the tracks, even
-the app itself. The payments country is the one irreversible click, and it is the one currently in
-front of us. So the entity question — personal/Belgium now versus a Portuguese Lda — has to be
-answered before that profile is submitted, not after.
+The residence question is genuinely open — the next job could be in Belgium or in Croatia — so the
+form stays unsubmitted until that is known. Nothing is lost by waiting: testing does not need it.
 
-Note also that registering a company in Portugal while managing it from Belgium or Croatia does not
-by itself move where it is taxed: tax treaties resolve residence by **place of effective
-management**, and a one-person company is managed wherever that person works. That is an
-accountant's question, not a Play question, and it is not settled by the registration address.
+### What was ruled out, and why, so it is not re-opened
+
+- **A Portuguese Lda.** Cheap to incorporate (EUR 360, no notary, versus EUR 2,000-3,000 and a
+  mandatory notary for a Belgian BV) and a better tax rate (19%, 15% on the first EUR 50k, versus
+  25%). It fails on the thing that actually matters: under EU Regulation 883/2004 social security
+  follows **where you work**, not where the company is registered, so a Belgian resident running a
+  Portuguese company still owes Belgian self-employed contributions - and Belgium can additionally
+  claim the company is tax-resident here by place of effective management. Two countries'
+  compliance, one country's tax. It only becomes the right answer on actual relocation.
+- **A Belgian BV.** Hides the name on the listing, which is the one thing a sole trader cannot do,
+  but costs roughly EUR 4,000-6,000/yr all in: notary, mandatory accountant, the annual
+  vennootschapsbijdrage (EUR 409.30 in 2026, small balance sheet), and director social security at
+  a minimum of EUR 890.42/quarter - payable even at zero profit, because a director is
+  irrebuttably presumed self-employed. Disproportionate for a pre-revenue app.
+- **Springplank naar zelfstandige** (self-employed side activity while keeping unemployment
+  benefits, up to 12 months). Ruled out 2026-08-28: only about two months of benefit entitlement
+  remain, so the 12-month window would expire into main-occupation status and the full
+  EUR 890.42/quarter.
+
+### The decided path
+
+Register as **zelfstandige in bijberoep once a job is in place**: KBO registration EUR 111.50
+(2026, regulated, includes the 604A VAT filing), VAT exemption under the EUR 25,000 turnover
+threshold so there are no periodic returns, social contributions of **EUR 0** while net taxable
+income stays under EUR 1,922.16, and a domiciliation address at EUR 30-100/month to keep a home
+address off the store listing. Roughly EUR 500-1,500 in year one. The trade-off accepted knowingly:
+a sole trader's full legal name appears on the listing, in Play and in the KBO register alike.
+Revisit the company only if revenue reaches roughly EUR 15-20k/yr.
+
+### What this changes about the order of work
+
+**Registration is triggered by taking money, and that is entirely under our control.** Internal and
+closed testing sell nothing, so they need no KBO number, no trader status and no merchant profile.
+
+So the two clocks run in parallel rather than in series: upload and run **closed testing (12
+testers, 14 continuous days) during the job hunt**, and do the registration, the merchant profile,
+the seven products, the promo codes and App access after the job starts. By the time earning is
+legally possible, Play's slow gate is already behind us.
 
 ## 🔴 TRACK A — Get to Play testers (do these in this order)
 
