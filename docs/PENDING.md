@@ -151,6 +151,39 @@ AI tutor: <code>
 Codes needed: `unlock_hr_b1`, `unlock_pt_b1`, `corlang_ai_premium`. Username and password stay
 empty; the app genuinely has neither.
 
+## 📦 BUILT AND PENDING UPLOAD — v0.85.0 / versionCode 220 (2026-08-28)
+
+The Internal-testing artefact exists and is verified. It has NOT been uploaded yet.
+
+- Path: `app/build/outputs/bundle/playRelease/app-play-release.aab`
+- 14,811,489 bytes, sha256 starts `58f66e6a43a16f79`, built 2026-08-28 10:52
+- Verified on this exact file: signed (`META-INF/CORLANG.RSA`), carries
+  `com.android.vending.BILLING`, does **not** carry `REQUEST_INSTALL_PACKAGES` (the self-updater
+  is compiled out of the play flavor, which Play requires), and ships `assets/content/hr/` and
+  `assets/content/pt/` only.
+- It lives under `build/`, which is git-ignored, so `./gradlew clean` deletes it. Rebuilding is
+  one command (`./gradlew :app:bundlePlayRelease`, JAVA_HOME = Android Studio JBR). Any further
+  versionCode bump makes this file stale — rebuild rather than upload it.
+
+## ‼️ DECIDE BEFORE FINISHING THE MERCHANT PROFILE — the country is permanent
+
+Raised 2026-08-28, while the Google payments profile was half-filled and a Portuguese company was
+under consideration.
+
+**A payments profile's country can never be changed** (Google payments centre help, verified
+2026-08-28). Correcting it means a new payments profile, which in practice means a new developer
+account, its own $25 fee, and a Play app transfer using the transaction IDs of both profiles.
+
+Everything else on this list is reversible or transferable: the listing, the AAB, the tracks, even
+the app itself. The payments country is the one irreversible click, and it is the one currently in
+front of us. So the entity question — personal/Belgium now versus a Portuguese Lda — has to be
+answered before that profile is submitted, not after.
+
+Note also that registering a company in Portugal while managing it from Belgium or Croatia does not
+by itself move where it is taxed: tax treaties resolve residence by **place of effective
+management**, and a one-person company is managed wherever that person works. That is an
+accountant's question, not a Play question, and it is not settled by the registration address.
+
 ## 🔴 TRACK A — Get to Play testers (do these in this order)
 
 **The order matters and is not the obvious one:** Play does not enable the in-app products page
@@ -417,7 +450,8 @@ wrong the moment production goes live, so they are listed here rather than trust
 | corlang.app domain + proton email | ✅ have | optional website (Track F) |
 
 ## Key facts the next session needs
-- Latest release: **v0.66.0 / versionCode 201**. Live courses: **hr and pt only**.
+- Latest release: **v0.85.0 / versionCode 220**. Live courses: **hr and pt only**.
+  The play AAB for that versionCode is built and verified — see "BUILT AND PENDING UPLOAD" above.
 - Worker: `https://corlang-ai-proxy.ricardo-infante.workers.dev`; secrets `ANTHROPIC_API_KEY`,
   `APP_AUTH_TOKEN` (rotated), KV `RATE_KV` id `7869cfd96a8f4851905855404e6d4df0`; add
   `PLAY_SERVICE_ACCOUNT` in Track B.
