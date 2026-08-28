@@ -151,6 +151,33 @@ AI tutor: <code>
 Codes needed: `unlock_hr_b1`, `unlock_pt_b1`, `corlang_ai_premium`. Username and password stay
 empty; the app genuinely has neither.
 
+## ▶️ RETURNING AFTER A BREAK — START HERE (written 2026-08-28)
+
+The project is parked deliberately, not stalled. Nothing is half-finished in the code: the content
+is done, the tests are green, and the artefact to upload is built and verified. What it is waiting
+on is a job, because that is what makes monetising legal, and the plan below is arranged so the
+waiting costs nothing.
+
+**While away:** gather **12 testers** (Google account emails). That is the only input that cannot be
+produced from this machine, and closed testing cannot start without it.
+
+**When back, in order:**
+
+1. Upload the play AAB to **Internal testing**. Rebuild it first if `versionCode` has moved -
+   see "BUILT AND PENDING UPLOAD" below.
+2. Finish the **main store listing** and **App content** - copy and assets in
+   `docs/road-to-play.md` and `docs/store-assets/`, data safety field by field in
+   `docs/play-data-safety.md`.
+3. Start **closed testing** with the 12 testers. **14 continuous days**, and it sells nothing, so it
+   needs no registration, no trader status and no merchant profile. This is the slow gate; start it
+   as early as possible.
+4. **Do not submit the payments profile.** Its country can never be changed. See the entity
+   section below.
+5. Only once a job is in place and the bijberoep registration is done: merchant profile, the seven
+   products, promo codes, App access, production.
+
+Everything up to and including step 3 can be done today, with no legal status of any kind.
+
 ## 📦 BUILT AND PENDING UPLOAD — v0.85.0 / versionCode 220 (2026-08-28)
 
 The Internal-testing artefact exists and is verified. It has NOT been uploaded yet.
@@ -205,6 +232,34 @@ income stays under EUR 1,922.16, and a domiciliation address at EUR 30-100/month
 address off the store listing. Roughly EUR 500-1,500 in year one. The trade-off accepted knowingly:
 a sole trader's full legal name appears on the listing, in Play and in the KBO register alike.
 Revisit the company only if revenue reaches roughly EUR 15-20k/yr.
+
+### Considered and declined 2026-08-28: publishing under a spouse's Croatian obrt
+
+The idea was to register the app under a partner's obrt, opened for a psychology practice, given a
+planned move to Croatia in about a year. It does not work, for reasons worth keeping written down.
+
+- **An obrt is not a company.** It is a sole proprietorship with no separate legal personality and
+  unlimited personal liability. "Under her obrt" means she personally becomes the app's publisher:
+  her full legal name and address on the listing, her income, her tax, her liability. It does not
+  hide a name, it swaps whose name is shown - and it hands ownership of the app and its Play account
+  to someone else.
+- **The paušal cap is shared.** Flat-rate status ends at **EUR 60,000 gross a year across the whole
+  obrt**, and crossing it also forces VAT registration. App revenue would eat the headroom of her
+  practice and could cost her the flat-rate regime. That is this project's risk landing on her
+  business.
+- **Mixing a regulated practice with a consumer app is bad structuring** regardless of tax: the app
+  carries GDPR duties, refunds, consumer disputes and an AI tutor, all attaching to the same natural
+  person who holds a therapy practice.
+- The only genuine upside - that her obrt contributions (EUR 290.98/month in 2026, basis EUR 797.20)
+  are already being paid, so the app adds none - does not come close to paying for the above.
+
+**The better version of the same instinct:** a Croatian obrt in *his own* name after the move.
+Registration has been **free since 1 September 2021**, with the decision issued in **1-3 business
+days**, and the flat-rate regime is favourable. Since monetising is gated on employment anyway, and
+the payments profile's country is permanent, the cleanest sequence may simply be to run the
+unmonetised testing now and create the payments profile once, in Croatia, on arrival. A Croatian
+d.o.o. is what would hide the name - far cheaper than a Belgian BV, and worth re-pricing at the
+move rather than now.
 
 ### What this changes about the order of work
 
