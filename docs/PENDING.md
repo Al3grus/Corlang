@@ -261,6 +261,41 @@ unmonetised testing now and create the payments profile once, in Croatia, on arr
 d.o.o. is what would hide the name - far cheaper than a Belgian BV, and worth re-pricing at the
 move rather than now.
 
+### Belgium first, or wait for Croatia? — decided 2026-08-28: wait
+
+Registering in Belgium and migrating later is possible but buys little. A Belgian payments profile
+cannot be re-countried, so the move would mean a new payments profile, a new developer account with
+its own $25 fee, and a Play app transfer. What that friction buys is perhaps six to nine months of
+monetised operation, in a market where only 17.2% of apps ever reach $1,000/month.
+
+The asymmetry decides it: if the app earns little, the migration was taken on for nothing; if it
+earns a lot, the fee and the transfer form are trivial against the revenue. Waiting is never badly
+wrong. Waiting also lands on the *better* structure rather than a worse one — a Croatian obrt is
+free and issued in 1-3 days, while Belgian bijberoep costs EUR 111.50 plus a domiciliation contract
+at EUR 30-100/month and exists only to bridge a period with little expected revenue.
+
+Not binding: the choice only takes effect when the payments profile is created. If a Belgian job
+lands early and closed testing shows real traction, it can still be reversed with better information.
+
+**The milestone is residence, not citizenship.** Croatian citizenship through marriage runs
+temporary residence (1-2 years, renewable), then roughly 3-4 years of uninterrupted residence within
+the marriage, then permanent residence, then naturalisation — three to five years out, and far too
+late to plan around. Residence arrives with the move and is what permits both an obrt and a Croatian
+payments profile. Which route applies depends on nationality, and that is unresolved here: an
+EU/EEA citizen registers locally after 90 days and can open an obrt almost immediately, while a
+non-EU national needs residence on another basis first (family reunification with a Croatian spouse)
+because an obrt cannot be the first step into the country. Worth confirming before the move, not
+after. The "income of at least 1.5x the average net salary" figure that appears in this area applies
+to residency obtained *through* a business, not to registering one while resident on family grounds.
+
+### Option recorded, not chosen: launch free during the wait
+
+Production could be reached free during the wait — a genuinely non-monetised app is not a trader
+under the DSA, so no name or address is published — with the paywall added from Croatia. It buys
+users, ratings and real feedback in otherwise dead time. Costs: opening the gate means changing
+`freeLessons` and the validation test that pins it to the last day of A0, and early users lose access
+when the gate later comes back. Do not declare non-trader while actually monetising.
+
 ### What this changes about the order of work
 
 **Registration is triggered by taking money, and that is entirely under our control.** Internal and
