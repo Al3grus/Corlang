@@ -33,8 +33,14 @@ it** — Play doesn't recognise the install. So:
 
 ### 0. Already done
 Play Console account + identity ✓ · keystore ✓ · worker deployed with rate limits + sub cap +
-verification-ready ✓ · AAB built ✓ (`app/build/outputs/bundle/playRelease/app-play-release.aab`,
-v0.20.33, versionCode 86).
+verification-ready ✓ · the play AAB builds signed from source ✓
+(`app/build/outputs/bundle/playRelease/app-play-release.aab`).
+
+**No version is pinned here on purpose.** It drifts the moment `versionCode` moves, and an
+uploaded bundle whose code is already taken is rejected. Read the current pair from
+`app/build.gradle.kts` and rebuild right before uploading: the artefact lives under `build/`,
+which is gitignored, so `./gradlew clean` deletes it. `tools/play/launch-wizard.sh` checks this
+for you and refuses a stale file.
 
 ### 1. Create the app **(browser)**
 Play Console → All apps → **Create app**. Name "Corlang", default language, type **App**,
@@ -54,6 +60,10 @@ Play Console → All apps → **Create app**. Name "Corlang", default language, 
   Then attach promo codes (Monetize → Promo codes, one per product). **Promo codes cannot be
   created until the products exist AND a build containing them has been uploaded to a track**,
   so this task is finished after step 5, not before it.
+
+  **The wording above is the draft; the shipped one is in `docs/PENDING.md`** under "BLOCKING
+  BEFORE CLOSED TESTING", together with the reason this section is currently attested untrue.
+  Edit it there, not here.
 - **Ads**: contains no ads.
 - **Content rating**: fill the questionnaire (educational, no objectionable content → Everyone/PEGI 3).
 - **Target audience**: 13+ (avoids the strict children's-policy requirements).
@@ -63,8 +73,11 @@ Play Console → All apps → **Create app**. Name "Corlang", default language, 
   as "collected"; declaring "no data collected" flat-out is a misdeclaration risk. Category
   "Other in-app messages", purpose app functionality, not shared for ads, optional. Matches
   PRIVACY.md.
-- **Privacy policy**: paste the PRIVACY.md raw URL
-  (`https://raw.githubusercontent.com/Al3grus/Corlang/main/PRIVACY.md`).
+- **Privacy policy**: `https://corlang.app/privacy/` (generated from `PRIVACY.md`).
+  Not the raw GitHub URL that used to be here: it renders as source, and it breaks the moment
+  the repo is renamed or made private.
+- **Terms**: `https://corlang.app/terms/` (generated from `TERMS.md`). Play has a field for it
+  beside the privacy one.
 - Government/financial/health features: No.
 
 ### 3. Main store listing **(browser)** — copy is drafted below
