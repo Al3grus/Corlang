@@ -278,8 +278,9 @@ private fun CorlangApp(container: AppContainer) {
         return
     }
 
-    // Re-anchor the daily reminder to the next 19:00 on every app start, WorkManager's
-    // periodic work drifts with Doze deferrals and would otherwise wander off schedule.
+    // Re-arm the daily alarm on every app start. Alarms do not survive a force-stop (and the
+    // boot receiver only covers reboots), so opening the app is the other moment we know the
+    // schedule is intact. It also hands back a nudge the phone slept through, via the catch-up.
     val context = LocalContext.current
     LaunchedEffect(Unit) {
         if (container.languagePrefs.reminderEnabled.first()) {

@@ -1,21 +1,20 @@
 package com.corlang.app.reminder
 
 import android.Manifest
+import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
+import android.provider.Settings
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.work.CoroutineWorker
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.ExistingWorkPolicy
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.corlang.app.MainActivity
@@ -27,7 +26,7 @@ import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
-import java.util.concurrent.TimeUnit
+import java.time.ZoneId
 
 /**
  * Per-language reminder copy is DATA, read from each language's `meta.json` (reminderTitle,
@@ -112,38 +111,42 @@ internal object ReminderCopy {
 }
 
 /**
- * Daily study reminder. A periodic worker fires around [REMINDER_HOUR]; if nothing
- * has been studied that day it posts a nudge with the current streak at stake.
+ * Posts the daily nudge, when one is actually owed.
+ *
+ * Pulled out of the old worker so the exact alarm ([ReminderScheduler]) and the legacy
+ * [ReminderWorker] shim share one implementation and one dedupe guard.
  */
-class ReminderWorker(
-    context: Context,
-    params: WorkerParameters
-) : CoroutineWorker(context, params) {
+internal object ReminderNotifier {
 
-    override suspend fun doWork(): Result {
-        val ctx = applicationContext
+    const val CHANNEL_ID = "daily_reminder"
+    const val NOTIFICATION_ID = 1001
+
+    suspend fun postIfDue(ctx: Context) {
         val prefs = LanguagePrefs(ctx)
+        // An alarm armed before the learner turned the reminder off (or a stale one that
+        // survived an upgrade) must not post. The switch is the authority, not the alarm.
+        if (!prefs.reminderEnabled.first()) return
         val selected = prefs.selectedLanguage.first()
         val content = ContentRepository(ctx)
-        // Only nag about languages the user opted into (Settings → Study reminder).
+        // Only nag about languages the user opted into (Settings -> Study reminder).
         // No explicit choice yet = follow the selected language, the pre-existing behavior.
         // Intersected with the SHIPPED languages: a course that has since been hidden from
         // content/_index.json is still in this stored set, and would otherwise keep sending
         // daily nudges for a course the app no longer opens.
         val chosen = (prefs.reminderLanguages.first() ?: setOf(selected))
             .filter { it in content.availableLanguages }.toSet()
-        if (chosen.isEmpty()) return Result.success()
+        if (chosen.isEmpty()) return
         val dao = AppDatabase.get(ctx).progressDao()
         val today = LocalDate.now().toEpochDay()
-        // The periodic worker and the catch-up can both come due on the same evening.
-        if (prefs.lastReminderDay.first() == today) return Result.success()
+        // The daily alarm and the catch-up can both come due on the same evening.
+        if (prefs.lastReminderDay.first() == today) return
 
         // Selected language first so the nudge matches what the app opens to; then the rest.
         val candidates = (listOf(selected).filter { it in chosen } + (chosen - selected).sorted())
         // A day's lesson banks the streak; languages already studied today need no nag.
         val lang = candidates.firstOrNull {
             dao.progressOnce(it)?.lastStudiedEpochDay != today
-        } ?: return Result.success()
+        } ?: return
 
         val progress = dao.progressOnce(lang)
         // Decayed to right-now, same as the UI: the STORED streak only updates on the next
@@ -162,7 +165,7 @@ class ReminderWorker(
         val languageName = meta.name
         // The learner's name, when they gave one, is what makes the nudge feel addressed to a
         // person rather than broadcast. Appended to the in-language title so the greeting still
-        // opens in the language being learned: "Vrijeme je za hrvatski, Ricardo! 🇭🇷".
+        // opens in the language being learned: "Vrijeme je za hrvatski, Ricardo!".
         val who = prefs.profile.first().name.trim()
         val title = ReminderCopy.title(meta, who)
         // Started today but did not finish: the lesson introduces its new words early and the
@@ -181,7 +184,6 @@ class ReminderWorker(
         )
         postNotification(ctx, title, text)
         prefs.setLastReminderDay(today)
-        return Result.success()
     }
 
     private fun postNotification(ctx: Context, title: String, text: String) {
@@ -213,27 +215,45 @@ class ReminderWorker(
             .build()
         NotificationManagerCompat.from(ctx).notify(NOTIFICATION_ID, notification)
     }
+}
 
-    companion object {
-        const val CHANNEL_ID = "daily_reminder"
-        const val NOTIFICATION_ID = 1001
+/**
+ * Legacy entry point, kept only so periodic work enqueued by builds up to v0.85.0 still does
+ * the right thing on the one occasion it runs before [ReminderScheduler] cancels it. New
+ * scheduling never goes through WorkManager: it is deferrable by design, and Doze batched the
+ * daily run more than an hour past the learner's chosen time.
+ */
+class ReminderWorker(
+    context: Context,
+    params: WorkerParameters
+) : CoroutineWorker(context, params) {
+    override suspend fun doWork(): Result {
+        ReminderNotifier.postIfDue(applicationContext)
+        return Result.success()
     }
+}
+
+/**
+ * The wall-clock instant the daily alarm should next fire: today at the chosen time if that is
+ * still ahead of us, otherwise tomorrow. Pure, so the arithmetic is testable without a device.
+ */
+internal fun nextTrigger(now: LocalDateTime, hour: Int, minute: Int): LocalDateTime {
+    val today = now.toLocalDate().atTime(LocalTime.of(hour, minute))
+    return if (today.isAfter(now)) today else today.plusDays(1)
 }
 
 /**
  * How long to wait before a CATCH-UP nudge, or null when none is owed.
  *
- * The bug this exists for: [ReminderScheduler.schedule] is called on every app start to fight
- * WorkManager drift, and it always anchors to the NEXT occurrence of the reminder time. Periodic
- * work is not punctual (Doze batches it), so opening the app at 19:30 while the 19:00 run was
- * still pending re-anchored that pending run to tomorrow and the nudge was never posted. Opening
- * the app was silently cancelling the reminder for the day, which is the opposite of what opening
- * the app should mean when the lesson is not done.
+ * An exact alarm is punctual, but it is not indestructible: alarms are dropped when the device
+ * is off (the boot receiver can only re-arm the NEXT one), a learner who declined the
+ * "Alarms & reminders" permission gets an inexact alarm that Doze may slide past, and a
+ * force-stop clears every alarm the app holds. So opening the app after the chosen time, with
+ * today's nudge never posted, still queues one.
  *
- * So when the slot has already passed, a one-shot catch-up is queued instead. It waits
- * [CATCH_UP_DELAY_MIN] minutes rather than firing at once, because the learner is holding the
- * phone right now and a notification for the app they are looking at is noise; the worker
- * re-checks completion when it runs, so studying in the meantime makes it a silent no-op.
+ * It waits [CATCH_UP_DELAY_MIN] minutes rather than firing at once, because the learner is
+ * holding the phone right now and a notification for the app they are looking at is noise; the
+ * check re-runs when it fires, so studying in the meantime makes it a silent no-op.
  *
  * Nothing is queued more than [CATCH_UP_WINDOW_H] hours past the chosen time: a nudge that late
  * is stale, and the worst version of this feature is one that wakes someone near midnight.
@@ -246,49 +266,122 @@ internal fun catchUpDelay(
     windowHours: Long = CATCH_UP_WINDOW_H
 ): Duration? {
     val slot = now.toLocalDate().atTime(LocalTime.of(hour, minute))
-    if (now.isBefore(slot)) return null              // the periodic run is still ahead of us
+    if (now.isBefore(slot)) return null              // the daily alarm is still ahead of us
     val deadline = slot.plusHours(windowHours)
     if (!now.isBefore(deadline)) return null         // too late to be worth posting
     val fire = minOf(now.plusMinutes(delayMinutes), deadline)
     return Duration.between(now, fire)
 }
 
+/** The alarm intent actions, shared with [ReminderReceiver], which is their only other reader. */
+internal const val ACTION_REMINDER_DAILY = "com.corlang.app.reminder.DAILY"
+internal const val ACTION_REMINDER_CATCH_UP = "com.corlang.app.reminder.CATCH_UP"
+
 internal const val CATCH_UP_DELAY_MIN = 45L
 internal const val CATCH_UP_WINDOW_H = 3L
 
+/**
+ * Arms the daily reminder as an EXACT alarm.
+ *
+ * Field report 2026-08-29: a reminder set for 10:00 arrived at 11:38. It was periodic
+ * WorkManager work, which the platform is free to batch and defer - "roughly daily" is the
+ * strongest promise that API makes, and Doze on a phone in a pocket routinely turns that into
+ * an hour and a half. A time the learner typed is not a hint, so the schedule moved to
+ * AlarmManager's exact, allow-while-idle alarms, which fire at the minute even in Doze.
+ *
+ * Exactness needs the user's consent from API 31 (and is NOT pre-granted from API 34), so the
+ * scheduler degrades rather than fails: without the permission the same alarm is armed
+ * inexactly, which is late but never silent. Settings asks for it at the moment the learner
+ * turns the reminder on ([canBeExact] / [exactAlarmSettingsIntent]).
+ */
 object ReminderScheduler {
 
-    private const val WORK_NAME = "corlang-daily-reminder"
-    private const val CATCH_UP_NAME = "corlang-reminder-catch-up"
+    private const val REQ_DAILY = 4101
+    private const val REQ_CATCH_UP = 4102
+    // Unique names of the periodic work older builds enqueued. Cancelled on every schedule so
+    // an upgraded install stops getting the drifting nudge as well as the punctual one.
+    private const val LEGACY_WORK = "corlang-daily-reminder"
+    private const val LEGACY_CATCH_UP_WORK = "corlang-reminder-catch-up"
 
-    /** Schedules (or reschedules) the daily reminder at the user's chosen time. */
-    fun schedule(context: Context, hour: Int = 19, minute: Int = 0) {
+    /**
+     * Schedules (or reschedules) the daily reminder at the user's chosen time.
+     *
+     * [withCatchUp] is false only when the alarm itself has just fired: re-arming for tomorrow
+     * at 10:00:00 would otherwise look exactly like the app being opened at 10:00:00, and queue
+     * a catch-up for a nudge that was posted a second ago.
+     */
+    fun schedule(context: Context, hour: Int = 19, minute: Int = 0, withCatchUp: Boolean = true) {
+        val ctx = context.applicationContext
+        cancelLegacyWork(ctx)
         val now = LocalDateTime.now()
-        var next = now.toLocalDate().atTime(LocalTime.of(hour, minute))
-        if (!next.isAfter(now)) next = next.plusDays(1)
-        val initialDelay = Duration.between(now, next)
+        armAt(ctx, REQ_DAILY, ACTION_REMINDER_DAILY, epochMillis(nextTrigger(now, hour, minute)))
 
-        val request = PeriodicWorkRequestBuilder<ReminderWorker>(24, TimeUnit.HOURS)
-            .setInitialDelay(initialDelay.toMinutes(), TimeUnit.MINUTES)
-            .build()
-        WorkManager.getInstance(context).enqueueUniquePeriodicWork(
-            WORK_NAME, ExistingPeriodicWorkPolicy.UPDATE, request
-        )
-
-        // Re-anchoring above moved any run still owed for today onto tomorrow. Hand it back.
-        catchUpDelay(now, hour, minute)?.let { delay ->
-            WorkManager.getInstance(context).enqueueUniqueWork(
-                CATCH_UP_NAME,
-                ExistingWorkPolicy.REPLACE,
-                OneTimeWorkRequestBuilder<ReminderWorker>()
-                    .setInitialDelay(delay.toMinutes(), TimeUnit.MINUTES)
-                    .build()
-            )
+        val catchUp = if (withCatchUp) catchUpDelay(now, hour, minute) else null
+        if (catchUp != null) {
+            armAt(ctx, REQ_CATCH_UP, ACTION_REMINDER_CATCH_UP, epochMillis(now.plus(catchUp)))
+        } else {
+            disarm(ctx, REQ_CATCH_UP, ACTION_REMINDER_CATCH_UP)
         }
     }
 
     fun cancel(context: Context) {
-        WorkManager.getInstance(context).cancelUniqueWork(WORK_NAME)
-        WorkManager.getInstance(context).cancelUniqueWork(CATCH_UP_NAME)
+        val ctx = context.applicationContext
+        disarm(ctx, REQ_DAILY, ACTION_REMINDER_DAILY)
+        disarm(ctx, REQ_CATCH_UP, ACTION_REMINDER_CATCH_UP)
+        cancelLegacyWork(ctx)
     }
+
+    /**
+     * Whether the platform will let us fire at the exact minute. True below API 31, where every
+     * alarm was exact; from API 31 it is a user-grantable permission, and from API 34 apps that
+     * are not clocks or calendars start without it.
+     */
+    fun canBeExact(context: Context): Boolean {
+        if (Build.VERSION.SDK_INT < 31) return true
+        val am = context.getSystemService(AlarmManager::class.java) ?: return false
+        return am.canScheduleExactAlarms()
+    }
+
+    /** The system screen where "Alarms & reminders" is granted, or null below API 31. */
+    fun exactAlarmSettingsIntent(context: Context): Intent? {
+        if (Build.VERSION.SDK_INT < 31) return null
+        return Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM)
+            .setData(Uri.fromParts("package", context.packageName, null))
+    }
+
+    private fun armAt(ctx: Context, req: Int, action: String, atMillis: Long) {
+        val am = ctx.getSystemService(AlarmManager::class.java) ?: return
+        val pi = pending(ctx, req, action, PendingIntent.FLAG_UPDATE_CURRENT) ?: return
+        try {
+            if (canBeExact(ctx)) am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, atMillis, pi)
+            else am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, atMillis, pi)
+        } catch (e: SecurityException) {
+            // The permission can be revoked between the check and the call. Late beats absent.
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, atMillis, pi)
+        }
+    }
+
+    private fun disarm(ctx: Context, req: Int, action: String) {
+        val pi = pending(ctx, req, action, PendingIntent.FLAG_NO_CREATE) ?: return
+        ctx.getSystemService(AlarmManager::class.java)?.cancel(pi)
+        pi.cancel()
+    }
+
+    private fun pending(ctx: Context, req: Int, action: String, flags: Int): PendingIntent? =
+        PendingIntent.getBroadcast(
+            ctx, req,
+            Intent(ctx, ReminderReceiver::class.java).setAction(action),
+            flags or PendingIntent.FLAG_IMMUTABLE
+        )
+
+    private fun cancelLegacyWork(ctx: Context) {
+        runCatching {
+            val wm = WorkManager.getInstance(ctx)
+            wm.cancelUniqueWork(LEGACY_WORK)
+            wm.cancelUniqueWork(LEGACY_CATCH_UP_WORK)
+        }
+    }
+
+    private fun epochMillis(at: LocalDateTime): Long =
+        at.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 }

@@ -2,6 +2,7 @@ package com.corlang.app
 
 import com.corlang.app.reminder.ReminderCopy
 import com.corlang.app.reminder.catchUpDelay
+import com.corlang.app.reminder.nextTrigger
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
@@ -13,14 +14,40 @@ import java.time.LocalDateTime
  * The reminder's two decisions, both pure so they can be tested without a device or WorkManager.
  *
  * Field report 2026-08-21: "the reminder is not firing if I already opened the app that day".
- * It was not the opening as such: `schedule()` runs on every app start to fight WorkManager
- * drift, and it anchors to the NEXT occurrence of the reminder time. Open the app after that
- * time while the (Doze-deferred) run is still pending, and the pending run gets moved to
- * tomorrow. [catchUpDelay] is what hands that day back.
+ * It was not the opening as such: `schedule()` runs on every app start, and it anchors to the
+ * NEXT occurrence of the reminder time. Open the app after that time while the (then
+ * Doze-deferred) run was still pending, and the pending run got moved to tomorrow.
+ * [catchUpDelay] is what hands that day back.
+ *
+ * Field report 2026-08-29: "I set it to 10:00 and it came at 11:38". That one was the schedule
+ * itself - periodic WorkManager work, which the platform batches - and the fix is an exact
+ * alarm anchored on [nextTrigger].
  */
 class ReminderTest {
 
     private fun at(hour: Int, minute: Int) = LocalDateTime.of(2026, 8, 21, hour, minute)
+
+    // ---------- when the daily alarm is armed for ----------
+
+    @Test
+    fun `the alarm is armed for today while the time is still ahead`() {
+        assertEquals(at(10, 0), nextTrigger(at(9, 59), 10, 0))
+        assertEquals(at(23, 30), nextTrigger(at(0, 1), 23, 30))
+    }
+
+    @Test
+    fun `the chosen minute is carried, not rounded to the hour`() {
+        assertEquals(at(10, 38), nextTrigger(at(6, 0), 10, 38))
+    }
+
+    @Test
+    fun `at or past the time the alarm is armed for tomorrow`() {
+        // Exactly on the minute counts as past: this is the re-arm the alarm itself triggers
+        // when it fires, and arming for the instant that just fired would loop.
+        assertEquals(at(10, 0).plusDays(1), nextTrigger(at(10, 0), 10, 0))
+        assertEquals(at(10, 0).plusDays(1), nextTrigger(at(10, 1), 10, 0))
+        assertEquals(at(10, 0).plusDays(1), nextTrigger(at(23, 59), 10, 0))
+    }
 
     // ---------- catch-up scheduling ----------
 
