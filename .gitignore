@@ -35,3 +35,7 @@ gha-creds-*.json
 # Generated store assets and bytecode; the canonical PNGs live beside the generator.
 docs/store-assets/out/
 __pycache__/
+
+# Wizard-captured Play launch state (tester opt-in URLs, dates). Never commit:
+# the repo is public and this file follows a procedure that handles tester emails.
+.play-launch.env
