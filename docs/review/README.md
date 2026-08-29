@@ -125,7 +125,7 @@ The returned file looks like this:
 | `grammar/<level>/<topicId>` | a grammar topic |
 | `quiz/<quizId>/q<j>` · `placement/q<j>` | assessment questions |
 | `exam/<examId>/<sectionId>/{q,passage,prompt}<j>` | mock-exam parts |
-| `cheatsheet/<i>` · `feynman/<id>` · `resource/<name>` | the rest |
+| ~~`cheatsheet/<i>` · `feynman/<id>` · `resource/<name>`~~ | gone: the cheatsheet, the Feynman teach-back and resources.json were all removed at v0.75.0, and the builder emits none of these |
 
 **Never rename a vocab `id` when applying a fix.** It is the learner's SRS key
 (`Content.kt`), and renaming resets their review history. Correct `hr`, `en`, `pos`,

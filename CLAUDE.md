@@ -46,6 +46,8 @@ Offline validators in `tools/course/` — run before content reaches the app:
 
 `ls tools/course/` is the full list; the entries above are the ones whose filename does not explain them.
 
+**Content and its review move together.** A language with a review workbook (`docs/review/<lang>-review-workbook.html`, mirrored at `server/review-site/public/<lang>/`) has someone auditing it. Change that language's content and the workbook is stale in the same instant: the reviewer then reads lessons that no longer exist and flags defects already fixed. Rebuild and redeploy it in the SAME commit as the content change (`docs/runbook.md` section 2 has the three commands). `check_review_sync.py` fails when they diverge, and skips any language with no workbook, so not having one stays a valid choice.
+
 A `PostToolUse` hook (`.claude/settings.json` → `tools/hooks/validate_content_json.py`) warns immediately if an edited `content/**/*.json` stops parsing — but it only catches malformed JSON, not content defects; the `tools/course/` validators and `proctor.py` remain the real gate.
 
 **No external material anywhere.** `resources.json` was the one sanctioned exception (a list on Profile) and it is gone as of v0.75.0, along with the cheatsheet and teach-back features; `ContentValidationTest.content_neverSendsLearnersElsewhere` now admits no exception. Do not add settings/fields/questions without a consumer already wired (no dead data).
