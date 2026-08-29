@@ -289,7 +289,13 @@ def check_portuguese(path):
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     total, bad = 0, 0
-    for path in sys.argv[1:]:
+    # No arguments means the whole shipped course. Reporting "0 days total, 0 problems"
+    # and exiting 0 because nobody passed a file is a green light that checked nothing.
+    paths = sys.argv[1:] or check_batch.course_files("pt")
+    if not paths:
+        print("nothing to check: pass batch files, or restore app/src/main/assets/content/pt/")
+        sys.exit(2)
+    for path in paths:
         if not os.path.exists(path):
             print(f"MISSING {path}")
             bad += 1
