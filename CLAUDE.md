@@ -96,3 +96,19 @@ Phrase each as a one-line recommendation with the exact command, not a question.
 - **`/clear` between unrelated tasks** to reset context.
 - Open threads and per-course status live in `MEMORY.md` and `docs/PENDING.md` — check them at session start.
 - **Every command in one place:** `docs/runbook.md` — build/test (and why `BUILD SUCCESSFUL` can mean the tests never ran), validators, release, site deploy, worker deploy and secrets, and the `wrangler kv` incantations for reading the invite and language-request lists.
+
+---
+
+## Agent skills
+
+### Issue tracker
+
+Local markdown — issues and specs live as files under `.scratch/<feature>/`, not in GitHub Issues. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default roles (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), recorded as a `Status:` line in each issue file. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context — one `CONTEXT.md` plus `docs/adr/` at the repo root. See `docs/agents/domain.md`.
