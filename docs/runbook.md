@@ -65,6 +65,7 @@ python tools/course/check_wrapup.py               # lesson wrap-up shape
 python tools/course/proctor.py                    # course-wide audit; run before shipping
 python tools/course/build_language.py             # assemble authored batches into _index.json
 python tools/course/check_tools.py                # the check that checks the checkers
+python tools/course/check_review_sync.py           # workbooks still match the course
 ```
 
 `check_<code>.py` with no arguments means **the whole shipped course**; pass files to check an
@@ -73,7 +74,9 @@ exiting 0, so this very command was a pass that had examined nothing (registry K
 K13 behind it). `check_tools.py` now fails if any tool can exit 0 without examining anything, so
 read the day count: `344 days total` is a run, `0 days total` is not.
 
-Human review is the check no script can do. Build the workbook a native speaker marks up:
+Human review is the check no script can do. Build the workbook a native speaker marks up.
+**Rebuild and redeploy it in the same commit as any content change to that language** - a
+reviewer on a stale workbook audits lessons that no longer exist (registry C30):
 
 ```bash
 python tools/course/build_review_doc.py hr        # -> docs/review/hr-review-workbook.html
