@@ -22,8 +22,31 @@ EXTERNAL = re.compile(
     r"youtube|netflix|\btv5\b|instagram|facebook|tiktok",
     re.IGNORECASE)
 DAY_N = re.compile(r"\b[Dd]ays?\s+\d")
+# "resources" is deliberately absent: the resources feature was removed at v0.75.0 and
+# ContentValidationTest.content_neverSendsLearnersElsewhere now admits no exception, so a day
+# carrying one would be the defect. Requiring it failed every day in every course.
 REQUIRED = {"title", "objective", "paretoFocus", "drills", "reviewBlock", "activities",
-            "day", "week", "phase", "level", "resources"}
+            "day", "week", "phase", "level"}
+
+
+def course_files(code):
+    """Every JSON file of a shipped course, for a checker invoked with no arguments.
+
+    The checkers used to read "no arguments" as "no files": they printed "0 days total,
+    0 problems" and exited 0, a pass that had examined nothing. That is what let a stale
+    REQUIRED key sit unnoticed in every day of every course, and it made the runbook's
+    documented command a no-op. Returning the real course makes that command mean what
+    the runbook says it means.
+    """
+    root = os.path.normpath(os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "..", "..", "app", "src", "main", "assets", "content", code))
+    if not os.path.isdir(root):
+        return []
+    out = []
+    for base, _dirs, names in os.walk(root):
+        out += [os.path.join(base, n) for n in names if n.endswith(".json")]
+    return sorted(out)
 
 
 def norm(s):
@@ -167,6 +190,11 @@ def check_file_obj(days):
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     total, bad = 0, 0
+    # A pre-merge checker takes the files being merged, so there is no course to fall back
+    # on. Exiting 0 with nothing to check would be a green light that checked nothing.
+    if not sys.argv[1:]:
+        print("usage: python check_batch.py <files...>")
+        sys.exit(2)
     for path in sys.argv[1:]:
         if not os.path.exists(path):
             print(f"MISSING {path}")
