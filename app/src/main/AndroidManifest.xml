@@ -4,6 +4,15 @@
     <!-- REQUEST_INSTALL_PACKAGES (self-updater) lives in src/sideload/AndroidManifest.xml only:
          the Play flavor must never carry it (Play forbids self-updating apps). -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- The daily reminder is an exact alarm, not deferrable background work: a learner who
+         asks to be nudged at 10:00 means 10:00. WorkManager's periodic work is batched by Doze
+         and drifted by 90+ minutes in the field. SCHEDULE_EXACT_ALARM is user-grantable (and,
+         from API 34, NOT pre-granted) - ReminderScheduler falls back to an inexact alarm when
+         the learner declines, so the feature degrades rather than breaks. USE_EXACT_ALARM is
+         deliberately NOT declared: Play restricts it to alarm-clock/calendar apps. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- Alarms do not survive a reboot; the receiver re-arms them. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -32,5 +41,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Fires the reminder itself, and re-arms the alarm after boot, an app update, or a
+             clock/timezone change (an alarm armed for 10:00 local is a fixed instant; moving
+             the clock without re-arming would fire it at the wrong wall time). -->
+        <receiver
+            android:name=".reminder.ReminderReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

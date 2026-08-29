@@ -1,7 +1,10 @@
 package com.corlang.app.ui.screens
 
 import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
+import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
@@ -56,6 +59,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
@@ -121,15 +125,46 @@ fun SettingsScreen(
         val time by container.languagePrefs.reminderTime.collectAsState(initial = 19 to 0)
         var showPicker by remember { mutableStateOf(false) }
 
+        // Punctuality is a permission, not a setting: from Android 12 an app may only fire an
+        // alarm at an exact minute with "Alarms & reminders" granted, and from Android 14 an app
+        // that is not a clock or a calendar starts WITHOUT it. Without it the nudge still
+        // arrives, just batched by Doze, which is how a 10:00 reminder used to land at 11:38.
+        var exactAllowed by remember { mutableStateOf(ReminderScheduler.canBeExact(context)) }
+        var askExact by remember { mutableStateOf(false) }
+        var notificationsBlocked by remember { mutableStateOf(false) }
+
         fun apply(on: Boolean) {
             scope.launch { container.languagePrefs.setReminderEnabled(on) }
             if (on) ReminderScheduler.schedule(context, time.first, time.second)
             else ReminderScheduler.cancel(context)
         }
 
+        // Returning from the system screen is the only reliable moment to re-read the answer.
+        val exactLauncher = rememberLauncherForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+            exactAllowed = ReminderScheduler.canBeExact(context)
+            // Re-arm: an alarm already armed inexactly stays inexact until it is set again.
+            if (exactAllowed) ReminderScheduler.schedule(context, time.first, time.second)
+        }
+
+        fun openExactSettings() {
+            ReminderScheduler.exactAlarmSettingsIntent(context)?.let { exactLauncher.launch(it) }
+        }
+
+        /** Notifications first, then punctuality. The reminder turns on either way. */
+        fun enableWithPunctuality() {
+            exactAllowed = ReminderScheduler.canBeExact(context)
+            apply(true)
+            if (!exactAllowed) askExact = true
+        }
+
         val permissionLauncher = rememberLauncherForActivityResult(
             ActivityResultContracts.RequestPermission()
-        ) { granted -> if (granted) apply(true) }
+        ) { granted ->
+            notificationsBlocked = !granted
+            if (granted) enableWithPunctuality()
+        }
 
         SettingsCard(Icons.Outlined.Alarm, "Study reminder") {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -152,13 +187,55 @@ fun SettingsScreen(
                 Switch(
                     checked = enabled,
                     onCheckedChange = { on ->
-                        if (on && Build.VERSION.SDK_INT >= 33) {
-                            permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-                        } else {
-                            apply(on)
+                        val needsAsk = Build.VERSION.SDK_INT >= 33 &&
+                            ContextCompat.checkSelfPermission(
+                                context, Manifest.permission.POST_NOTIFICATIONS
+                            ) != PackageManager.PERMISSION_GRANTED
+                        when {
+                            !on -> apply(false)
+                            // Launching the request when it is already granted shows no dialog
+                            // and calls straight back, but it also swallows a permanent denial
+                            // silently. Checking first is what lets us say so on screen.
+                            needsAsk -> permissionLauncher
+                                .launch(Manifest.permission.POST_NOTIFICATIONS)
+                            else -> {
+                                notificationsBlocked = false
+                                enableWithPunctuality()
+                            }
                         }
                     }
                 )
+            }
+
+            if (notificationsBlocked) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    "Android is blocking Corlang's notifications, so no reminder can arrive. " +
+                        "Turn them back on in the system settings.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error
+                )
+                OutlinedButton(onClick = {
+                    context.startActivity(
+                        Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                            .putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
+                    )
+                }) { Text("Open notification settings") }
+            }
+
+            if (enabled && !exactAllowed) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    ("Reminders will arrive late. Android only lets an app fire at the exact " +
+                        "minute with \u0022Alarms & reminders\u0022 allowed; without it your " +
+                        "%d:%02d nudge is batched with the phone's other background work and " +
+                        "can slip an hour or more.").format(time.first, time.second),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error
+                )
+                OutlinedButton(onClick = { openExactSettings() }) {
+                    Text("Allow exact reminders")
+                }
             }
 
             if (enabled) {
@@ -199,6 +276,31 @@ fun SettingsScreen(
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
+        }
+
+        if (askExact) {
+            AlertDialog(
+                onDismissRequest = { askExact = false },
+                title = { Text("Let Corlang remind you on the minute") },
+                text = {
+                    Text(
+                        ("Android holds ordinary app reminders back and delivers them in " +
+                            "batches to save battery, which can push a %d:%02d reminder well " +
+                            "past the hour. Allowing \u0022Alarms & reminders\u0022 lets " +
+                            "Corlang fire exactly when you asked. It is used for nothing else.")
+                            .format(time.first, time.second)
+                    )
+                },
+                confirmButton = {
+                    Button(onClick = {
+                        askExact = false
+                        openExactSettings()
+                    }) { Text("Allow") }
+                },
+                dismissButton = {
+                    OutlinedButton(onClick = { askExact = false }) { Text("Not now") }
+                }
+            )
         }
 
         if (showPicker) {
