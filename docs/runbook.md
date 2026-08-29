@@ -234,6 +234,25 @@ should be). Read its verdict line; two different 404s mean two different things.
 
 ---
 
+## 6b. Play Console launch (guided)
+
+The browser-only path to testers is a wizard rather than a checklist, because the ordering is
+not obvious and one click on it is irreversible:
+
+```bash
+bash tools/play/launch-wizard.sh
+```
+
+Ten stages: artefact preflight (it refuses a stale AAB, and offers the rebuild), the store
+listing, App content, data safety, the App access attestation, upload to Internal testing, the
+on-device pass, then the closed-testing clock. It **hard-blocks stage 9** while the App access
+attestation is untrue, and closes with what must not be done yet (the payments profile, the
+products, `PLAY_SERVICE_ACCOUNT`). Values it captures land in `.play-launch.env`, which is
+gitignored: the repo is public and this procedure handles testers' email addresses.
+
+Sources of truth it walks you through: `docs/PENDING.md` (Track A/B), `docs/road-to-play.md`
+(listing copy), `docs/play-data-safety.md` (field by field).
+
 ## 7. Store assets
 
 ```bash
