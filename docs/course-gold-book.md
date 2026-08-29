@@ -11,10 +11,12 @@ language exams, taught to the level the law of that country actually requires. E
 below serves that promise. A course that merely resembles a language course is a failure even
 if every automated gate is green.
 
-The tools live in `tools/course/` (moved out of session scratchpads after nearly losing them):
-`LESSON_SPEC.md`, `PLACEMENT_SPEC.md`, `check_batch.py`, `check_de.py`, `check_it.py`,
-`build_language.py`, `proctor.py`, and `de_retired.txt` as the model
-retire list.
+The tools live in `tools/course/` (moved out of session scratchpads after nearly losing them).
+`ls` it for the current set rather than trusting a list here: the per-language checks are
+`check_<code>.py`, one per course, and a new defect class adds a new one. The pieces whose
+filename does not explain them: `LESSON_SPEC.md` and `PLACEMENT_SPEC.md` are the authoring
+specs, `build_language.py` assembles authored batches into the shipped layout, `proctor.py` is
+the course-wide audit, and `de_retired.txt` is the model retire list.
 
 ---
 

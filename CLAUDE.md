@@ -1,8 +1,8 @@
 # Corlang — operating rules
 
-Android/Kotlin + Compose language-learning app. A **fixed app skeleton** renders **per-language JSON content**. The whole design goal: content grows without touching code. These rules exist to keep that true. Deeper playbook (model choice, workflow, token efficiency): **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
+Android/Kotlin + Compose language-learning app. A **fixed app skeleton** renders **per-language JSON content**. The whole design goal: content grows without touching code. These rules exist to keep that true. Deeper playbook (workflow, token efficiency): **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
 
-Current: v0.48.0 (versionCode 177). Live courses: `hr pt` — `fr de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`) until the live courses are production-proven. Unhide = re-add the code to that manifest. See `MEMORY.md` (auto-memory) for the live resume point.
+Live courses: `hr pt` — `fr de it es` are authored and still in the repo but HIDDEN (absent from `content/_index.json`, which is the authoritative list). Unhide = re-add the code to that manifest.
 
 ---
 
@@ -13,7 +13,7 @@ Current: v0.48.0 (versionCode 177). Live courses: `hr pt` — `fr de it es` are 
 - **Content** = JSON under `app/src/main/assets/content/<lang>/`. Grow a course by adding pack files and listing them in the relevant `_index.json`. Never edit Kotlin to add lessons/words/quizzes.
 - **Schema** = `app/src/main/java/com/corlang/app/data/model/Content.kt` (`@Serializable` data classes; parser uses `ignoreUnknownKeys = true`). Only ever *add optional fields* here — never repurpose or remove one.
 - **Loader** = `app/src/main/java/com/corlang/app/data/ContentRepository.kt`. Language-agnostic; never add `when(lang)` here.
-- **Vocab `id`s are permanent SRS keys** (`Content.kt:239` — "NEVER rename"). Renaming one resets a learner's spaced-repetition history. Add new ids; never rename shipped ones.
+- **Vocab `id`s are permanent SRS keys** (`Vocab.id` in `Content.kt` — "NEVER rename"). Renaming one resets a learner's spaced-repetition history. Add new ids; never rename shipped ones.
 - **`_index.json` order is authoritative.** For `vocab/`, that order *is* the SRS introduction order — not filename order.
 
 ### Adding a new language — now (almost) pure data
@@ -38,11 +38,13 @@ Follow `docs/course-gold-book.md` (the HOW) against `docs/language-standard.md` 
 
 Offline validators in `tools/course/` — run before content reaches the app:
 - `check_batch.py` — shared pre-merge invariants (bans external URLs, em/en dashes, etc.).
-- `check_hr.py` / `check_de.py` / `check_it.py` — per-language drift checks (Serbianisms; Austrian/Swiss regionalisms; Italian accents/register). New defect classes get a new check — see `docs/error-registry.md` (error found once = check run forever).
+- `check_<code>.py` — one per course, catching that language's drift (Serbianisms in `hr`; Austrian/Swiss regionalisms in `de`; accents and register in `it`). A new defect class gets a new check — see `docs/error-registry.md` (error found once = check run forever).
 - `build_language.py` — assembles authored batches into the `_index.json` + phase/pack layout.
 - `check_deck_examples.py` — deck flashcards: every word has an example sentence, no two cards share one,
   and the cloze `DrillGen` builds from it blanks an unambiguous token.
 - `proctor.py` — course-wide audit (cross-lesson repetition, answer leakage, boilerplate). Run on the assembled build before shipping.
+
+`ls tools/course/` is the full list; the entries above are the ones whose filename does not explain them.
 
 A `PostToolUse` hook (`.claude/settings.json` → `tools/hooks/validate_content_json.py`) warns immediately if an edited `content/**/*.json` stops parsing — but it only catches malformed JSON, not content defects; the `tools/course/` validators and `proctor.py` remain the real gate.
 
@@ -57,7 +59,7 @@ A `PostToolUse` hook (`.claude/settings.json` → `tools/hooks/validate_content_
 export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
 ./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain
 ```
-Flavors (`distribution` dimension): `sideload` (default, in-app updater) and `play` (updater compiled out; AAB via `:app:bundlePlayRelease`). `versionCode`/`versionName` live in `app/build.gradle.kts` (currently 170 / 0.44.0). Room migrations required for any DB schema change (`data/db/AppDatabase`).
+Flavors (`distribution` dimension): `sideload` (default, in-app updater) and `play` (updater compiled out; AAB via `:app:bundlePlayRelease`). `versionCode`/`versionName` live in `app/build.gradle.kts`. **Read the pair there before every bump** — no doc caches them, because a cached version is wrong by the next release. Room migrations required for any DB schema change (`data/db/AppDatabase`).
 
 **Release flow:** bump `versionCode`+`versionName` → build → `cp app/build/outputs/apk/sideload/debug/app-sideload-debug.apk releases/corlang.apk` → update `releases/version.json` (versionCode MUST match the built APK) → commit + push. The in-app updater reads `raw.githubusercontent.com/.../releases/version.json`, so the repo must stay **public** (verified no secrets committed).
 
@@ -76,10 +78,9 @@ At the **start of each task**, state the recommended model and ask the user to `
 | Hardest reasoning: final content/linguistic audits, thorny architecture, deep debugging | **Fable 5** | Most capable; reserve for it (highest cost). |
 | Trivial mechanical passes: running validators, renames, formatting, simple search/summarize subagents | **Haiku 4.5** | Cheapest/fastest. |
 
-Default working model is the **latest Opus**. Escalate to Fable 5 only when a task is genuinely at the edge of difficulty; drop to Sonnet 5 for volume content and Haiku 4.5 for mechanical work. (If Opus 5 and Fable 5 are both offered and a task is at the absolute limit, prefer whichever the picker marks as most capable — currently Fable 5 in the published catalog; re-check when Opus 5 lands.)
+Default working model is the **latest Opus**. Escalate to Fable 5 only when a task is genuinely at the edge of difficulty; drop to Sonnet 5 for volume content and Haiku 4.5 for mechanical work. If both Opus 5 and Fable 5 are offered and the task is at the absolute limit, take Fable 5.
 
 ### Session signals — Claude must say these out loud, unprompted
-Don't wait to be asked. Proactively tell the user when to act:
 - **Switch model:** at the start of every task/phase — "This is bulk content authoring → `/model` to Sonnet 5" — and again whenever the phase changes (content → code, or normal → hard audit).
 - **`/clear`:** when the next task is unrelated to the current context (e.g. finishing a Croatian batch before touching the worker), say "We're switching topics — run `/clear` first to reset context," ideally *with the exact first prompt to paste into the fresh session*.
 - **New session via `/loop`:** when the work is a long, repetitive grind (e.g. authoring N lesson batches to floor), propose the concrete command, e.g. ``/loop /model sonnet then author the next batch to spec and run check_batch.py`` — and note it needs the session left open.
@@ -91,9 +92,7 @@ Phrase each as a one-line recommendation with the exact command, not a question.
 ## Working style
 
 - **Full spec up front.** State goal + success criteria + a verification check in the first ask (run a validator / build / test), so I self-check instead of you being the loop.
-- **Plan mode** for uncertain or large changes before editing.
 - **Subagents for research** (sourcing, audits, sweeps) to keep the main context lean; report the conclusion, not file dumps.
-- **`/clear` between unrelated tasks** to reset context.
 - Open threads and per-course status live in `MEMORY.md` and `docs/PENDING.md` — check them at session start.
 - **Every command in one place:** `docs/runbook.md` — build/test (and why `BUILD SUCCESSFUL` can mean the tests never ran), validators, release, site deploy, worker deploy and secrets, and the `wrangler kv` incantations for reading the invite and language-request lists.
 
