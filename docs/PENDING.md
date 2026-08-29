@@ -193,12 +193,29 @@ this list has been unable to close from a build machine:
 
 Everything up to and including step 3 can be done today, with no legal status of any kind.
 
-## 📦 BUILT AND PENDING UPLOAD — v0.85.0 / versionCode 220 (2026-08-28)
+## 📦 BUILT AND PENDING UPLOAD — rebuilt 2026-08-30, and the old one was NOT what it looked like
+
+**The AAB built on 2026-08-28 shipped stale content and would have been uploaded as verified.**
+It carried 10 content files the source tree had already changed: the whole Portuguese plan
+(A0, A1, A2, B1), the Portuguese placement test, and Croatian A2 and B1. Cause in registry C29:
+`assets.setSrcDirs(listOf(stageLiveAssets))` registered the staged directory without depending
+on the task that fills it, so the asset merge kept reporting UP-TO-DATE over a five-day-old
+copy. Every test and every validator stayed green throughout, because all of them read
+`src/main/assets` and none of them ever opened an artefact.
+
+Both artefacts have been rebuilt and checked. **Before any upload, run:**
+
+```bash
+python tools/release/check_packaged_content.py app/build/outputs/bundle/playRelease/app-play-release.aab
+```
+
+`tools/play/launch-wizard.sh` runs it for you in stage 1 and stops if it fails.
 
 The Internal-testing artefact exists and is verified. It has NOT been uploaded yet.
 
 - Path: `app/build/outputs/bundle/playRelease/app-play-release.aab`
-- 14,811,489 bytes, sha256 starts `58f66e6a43a16f79`, built 2026-08-28 10:52
+- Rebuilt 2026-08-30 from v0.86.2 / versionCode 223. The 2026-08-28 file (14,811,489 bytes,
+  sha256 `58f66e6a43a16f79`) is the one that carried stale content: do not use it.
 - Verified on this exact file: signed (`META-INF/CORLANG.RSA`), carries
   `com.android.vending.BILLING`, does **not** carry `REQUEST_INSTALL_PACKAGES` (the self-updater
   is compiled out of the play flavor, which Play requires), and ships `assets/content/hr/` and

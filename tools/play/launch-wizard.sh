@@ -245,6 +245,17 @@ if [[ -f "$AAB" ]] && command -v unzip >/dev/null 2>&1; then
   fi
   if unzip -l "$AAB" | grep -q 'META-INF/.*\.RSA'; then say "signed."; else warn "no signature block found."; fi
 fi
+say ""
+say "Does the bundle carry the CONTENT that is in the source tree?"
+if [[ -f "$AAB" ]] && python "$REPO_ROOT/tools/release/check_packaged_content.py" "$AAB"; then
+  say "content matches source."
+else
+  warn "STOP: this bundle ships content the source tree has already changed."
+  warn "Rebuild it. Green tests do not catch this: they read src/main/assets, while the"
+  warn "bundle carries a staged copy. The AAB built on 2026-08-28 had 10 stale files,"
+  warn "the whole Portuguese plan among them. Registry C29."
+  SKIPPED+=("rebuild the AAB: its packaged content was stale")
+fi
 note "the permission checks (BILLING present, REQUEST_INSTALL_PACKAGES absent) hold for the"
 note "play flavor by construction: it compiles the in-app updater out. See docs/PENDING.md."
 write_env AAB_VERSION_CODE "$DECLARED_VC"

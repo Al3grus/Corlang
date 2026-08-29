@@ -21,6 +21,12 @@ EXTERNAL = re.compile(
     r"sign in at|sign up at|log in at|\bduolingo\b|\bmemrise\b|\banki\b|"
     r"youtube|netflix|\btv5\b|instagram|facebook|tiktok",
     re.IGNORECASE)
+# Features the app no longer has. Naming one sends the learner looking for a screen that
+# is not there, which is worse than saying nothing. The cheatsheet and the Feynman teach-back
+# went at v0.75.0 and left 17 references behind, one of them a lesson title. Registry C28.
+REMOVED_FEATURE = re.compile(
+    r"cheat[ -]?sheet|teach[ -]?back|teach (?:it|them|this|that) back|one[ -]page summary",
+    re.IGNORECASE)
 DAY_N = re.compile(r"\b[Dd]ays?\s+\d")
 # "resources" is deliberately absent: the resources feature was removed at v0.75.0 and
 # ContentValidationTest.content_neverSendsLearnersElsewhere now admits no exception, so a day
@@ -182,6 +188,8 @@ def check_file_obj(days):
                 errs.append(f"{tag}{where}: em/en dash in {s[:60]!r}")
             if EXTERNAL.search(s):
                 errs.append(f"{tag}{where}: external reference in {s[:60]!r}")
+            if REMOVED_FEATURE.search(s):
+                errs.append(f"{tag}{where}: names a removed feature in {s[:60]!r}")
             if DAY_N.search(s):
                 errs.append(f"{tag}{where}: 'day N' phrasing in {s[:60]!r}")
     return errs
