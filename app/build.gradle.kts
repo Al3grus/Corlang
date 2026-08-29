@@ -82,8 +82,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 222
-        versionName = "0.86.1"
+        versionCode = 223
+        versionName = "0.86.2"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -175,8 +175,16 @@ android {
     // assets come from a staged copy with the hidden languages left out, so the bundle stops
     // carrying four courses no learner can reach.
     sourceSets.getByName("main") {
-        assets.setSrcDirs(listOf(stageLiveAssets))
+        // .map { } on the task provider is what carries the dependency: handing setSrcDirs the
+        // task, or the bare path, registers a DIRECTORY and nothing more. stageLiveAssets then
+        // never entered the task graph, the asset merge found the directory unchanged, reported
+        // UP-TO-DATE, and every APK built between 2026-08-25 and 2026-08-30 shipped a five-day-old
+        // copy of the courses while the source tree, all six checkers and 235 tests stayed green.
+        // The Play AAB waiting to be uploaded had 10 stale files, the whole Portuguese plan among
+        // them. Registry C29; tools/release/check_packaged_content.py is the standing check.
+        assets.setSrcDirs(listOf(stageLiveAssets.map { it.destinationDir }))
     }
+
 }
 
 

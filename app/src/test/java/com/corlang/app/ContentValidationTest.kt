@@ -846,6 +846,54 @@ class ContentValidationTest {
     }
 
     /**
+     * Nothing the learner reads may name a feature the app no longer has. The cheatsheet and
+     * the Feynman teach-back went at v0.75.0, and 17 references outlived them: Croatian lesson
+     * 59 was still titled "Full cheatsheet review", four other A1 days told the learner to read
+     * words aloud from the cheatsheet or self-correct against it, and QuizScreen told anyone
+     * scoring 50-69% to "redo this quiz after the cheatsheet". Every one of those sends a
+     * learner looking for a screen that is not there, which is worse than saying nothing.
+     *
+     * Kotlin comments are exempt on purpose: the migration note in AppDatabase and the deletion
+     * note in LearnScreen are the record of WHY the feature went, and deleting that record to
+     * satisfy a grep would lose the more valuable thing.
+     */
+    @Test
+    fun content_namesNoRemovedFeature() {
+        val removed = Regex(
+            "cheat[ -]?sheet|teach[ -]?back|teach (?:it|them|this|that) back|one[ -]page summary",
+            RegexOption.IGNORE_CASE
+        )
+        val offenders = mutableListOf<String>()
+
+        allLangs.forEach { lang ->
+            learnerStrings(lang)
+                .filter { (_, str) -> removed.containsMatchIn(str) }
+                .forEach { (f, str) -> offenders += "  $f: ${str.take(120)}" }
+        }
+
+        val srcRoot = listOf("src/main/java", "app/src/main/java")
+            .map { File(it) }.firstOrNull { it.isDirectory }
+            ?: error("source root not found from ${File(".").absolutePath}")
+        val literal = Regex("\"((?:[^\"\\\\]|\\\\.)*)\"")
+        srcRoot.walkTopDown().filter { it.extension == "kt" }.forEach { file ->
+            file.readLines(Charsets.UTF_8).forEachIndexed { i, line ->
+                val t = line.trim()
+                if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*")) return@forEachIndexed
+                literal.findAll(line).forEach { m ->
+                    if (removed.containsMatchIn(m.groupValues[1])) {
+                        offenders += "  ${file.name}:${i + 1}: ${m.groupValues[1].take(120)}"
+                    }
+                }
+            }
+        }
+
+        assertTrue(
+            "learner-visible copy naming a removed feature:" + "\n" + offenders.joinToString("\n"),
+            offenders.isEmpty()
+        )
+    }
+
+    /**
      * Course positions are "lesson N", never "day N": learners do not necessarily study daily,
      * and the app's UI says Lesson everywhere. Calendar durations ("30 days", "7-day streak")
      * put the number first and never match; target languages say dan/dia/jour.

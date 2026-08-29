@@ -119,11 +119,15 @@ export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
 # 4. ship the APK
 cp app/build/outputs/apk/sideload/debug/app-sideload-debug.apk releases/corlang.apk
 
-# 5. update releases/version.json -- versionCode MUST equal the built APK's
-# 6. RE-READ both to assert they agree:
+# 5. CHECK THE ARTEFACT CARRIES THE CONTENT. Green tests do not prove this: every test and
+#    every validator reads src/main/assets, while the APK carries a staged copy. That copy went
+#    five days stale in Aug 2026 and nobody could see it (registry C29).
+python tools/release/check_packaged_content.py releases/corlang.apk
+# 6. update releases/version.json -- versionCode MUST equal the built APK's
+# 7. RE-READ both to assert they agree:
 grep versionCode app/build.gradle.kts releases/version.json
 
-# 7. commit + push (the repo must stay public: the in-app updater fetches
+# 8. commit + push (the repo must stay public: the in-app updater fetches
 #    raw.githubusercontent.com/.../releases/version.json)
 ```
 

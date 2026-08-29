@@ -389,7 +389,7 @@ private fun QuizSummary(quiz: Quiz, score: Int, onExit: () -> Unit) {
             when {
                 pct >= 90 -> "Excellent, you've got this cold."
                 pct >= 70 -> "Solid. Review the ones you missed and move on."
-                pct >= 50 -> "Getting there. Redo this quiz after the cheatsheet."
+                pct >= 50 -> "Getting there. Re-read the lessons behind your misses, then redo this quiz."
                 else -> "Worth re-studying this level before continuing."
             },
             style = MaterialTheme.typography.bodyLarge
