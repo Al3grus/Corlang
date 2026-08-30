@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableIntStateOf
 
 /**
  * App-wide "the learner is mid-something" signal: a lesson step, a word-review card, a quiz,
- * an exam section, a placement test, a teach-back, a tutor chat. While engaged, the top-bar
+ * an exam section, a placement test, a tutor chat. While engaged, the top-bar
  * language picker locks (it still shows the current language) — switching languages would
  * tear the session's state down and lose partial work.
  *
