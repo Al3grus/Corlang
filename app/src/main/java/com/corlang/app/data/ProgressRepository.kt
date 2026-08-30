@@ -30,9 +30,11 @@ class ProgressRepository(private val dao: ProgressDao) {
     fun bestQuizScore(lang: String, quizId: String): Flow<Int?> = dao.bestQuizScore(lang, quizId)
 
     /**
-     * Erases EVERY trace of one language's progress: lessons, streak, word memory, quiz, exam,
-     * teach-back and can-do records. Transactional and irreversible; the caller owns the
-     * confirmation dialog and the preference cleanup (placement offsets, session snapshots).
+     * Erases EVERY trace of one language's progress. The eight tables ProgressDao.resetLanguage
+     * clears: progress, day completions, quiz attempts, word reviews, exam attempts, can-do
+     * checks, day-task checks and missed questions. Transactional and irreversible; the caller
+     * owns the confirmation dialog and the preference cleanup (placement offsets, session
+     * snapshots).
      */
     suspend fun resetLanguage(lang: String) = dao.resetLanguage(lang)
 
