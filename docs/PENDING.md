@@ -22,14 +22,22 @@ versionCode 201). Verified on that artifact 2026-08-25: signed, carries
 `com.android.vending.BILLING`, and does NOT carry `REQUEST_INSTALL_PACKAGES` (the self-updater is
 compiled out of the play flavor, which Play requires).
 
-**Signing, settled 2026-08-31 (v0.88.0).** `corlang-release.jks` is the **upload key** for Play
-and, from v0.88.0, also the key on the sideload APK. Every sideload release before that shipped
-`app-sideload-debug.apk`, signed with Android's shared debug key (registry C31) - it installed
-fine and nothing ever checked. Two consequences that outlive the fix: **(a)** a sideload user on
-v0.87.3 or earlier cannot update in place, they must back up in Settings, uninstall, install,
-restore; **(b)** for Android developer verification (deadline **2026-09-30**), `com.corlang.app`
-needs the sideload certificate registered as an ADDITIONAL signing key alongside the Play one -
-SHA-256 `E0:6A:36:9B:A0:F0:91:E4:C1:E7:46:91:FF:84:FF:73:A4:0E:CB:39:5B:33:91:83:81:80:38:BC:32:83:55:39`.
+**Signing, settled 2026-08-31 (v0.88.1).** `corlang-release-be.jks` (`CN=Corlang, O=Corlang,
+C=BE`, RSA 4096, valid to 2054) signs the sideload APK and the Play upload. It replaced a
+`C=PT` key of the same shape on 2026-08-31 because Belgium is where a release would come from;
+a certificate DN cannot be edited, so the country change meant a new keypair. The old key is
+ARCHIVED as `corlang-release-pt-retired-2026-07-16.jks` and must never be deleted: if Play
+already holds its certificate as the upload key for `com.corlang.app`, only that key can sign a
+bundle until Google resets it. `check_apk_signature.py` therefore accepts either key on an AAB
+and only the shipping key on an APK.
+
+Every sideload release before v0.88.0 shipped `app-sideload-debug.apk`, signed with Android's
+shared debug key (registry C31) - it installed fine and nothing ever checked. Two consequences
+that outlive the fix: **(a)** a sideload user on v0.87.3 or earlier cannot update in place, they
+must back up in Settings, uninstall, install, restore; **(b)** for Android developer verification
+(deadline **2026-09-30**), `com.corlang.app` needs the sideload certificate registered as an
+ADDITIONAL signing key alongside the Play one - SHA-256
+`1A:D8:7D:86:E2:5E:8B:AB:7A:FB:30:01:4F:33:27:7C:C5:3B:43:87:B5:A1:D0:BD:4E:63:BD:68:57:12:85:24`.
 Play re-signs uploads with its own app signing key, so the two certificates differ by design.
 
 **It contains only hr and pt** (fixed in v0.66.0). The bundle used to carry all six courses,

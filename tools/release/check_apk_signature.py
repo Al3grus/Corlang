@@ -21,10 +21,23 @@ import re
 import subprocess
 import sys
 
-# The Corlang release certificate (corlang-release.jks, alias `corlang`, CN=Corlang O=Corlang
-# C=PT). A certificate fingerprint is public by construction - it ships inside every APK - so it
-# belongs in the repo. The KEYSTORE never does.
-EXPECTED = "e06a369ba0f091e4c1e74691ff84ff73a40ecb395b339183818038bc32835539"
+# A certificate fingerprint is public by construction - it ships inside every APK - so it belongs
+# in the repo. The KEYSTORE never does.
+#
+# SHIPPING is the key a learner's phone sees on a sideload install, and the one registered with
+# Google for developer verification. It is the only key this repo may sign an APK with.
+SHIPPING = ("1ad87d86e25e8bab7afb30014f33277cc53b4387b5a1d0bd4e63bd6857128524",
+            "corlang-release-be.jks, CN=Corlang O=Corlang C=BE")
+
+# Retired, but not dead. Play re-signs every upload with its OWN app signing key, so a bundle's
+# signature proves only "this upload is from Corlang" and never reaches a phone. If Play already
+# recorded the 2026-07-16 PT certificate as the upload key for com.corlang.app, that key must keep
+# signing bundles until Google resets it, and failing the AAB over it would be wrong. So bundles
+# accept either key; an APK accepts only SHIPPING.
+RETIRED_UPLOAD = {
+    "e06a369ba0f091e4c1e74691ff84ff73a40ecb395b339183818038bc32835539":
+        "the retired 2026-07-16 upload key (CN=Corlang O=Corlang C=PT)",
+}
 
 # What we shipped by mistake for 229 releases. Named so the failure message can say so.
 ANDROID_DEBUG_CN = "CN=Android Debug"
@@ -119,18 +132,26 @@ def main(argv):
     if not os.path.exists(path):
         fail("no such artefact: %s" % path)
 
-    fps, dns = certs_of_aab(path) if path.endswith(".aab") else certs_of_apk(path)
+    is_bundle = path.endswith(".aab")
+    fps, dns = certs_of_aab(path) if is_bundle else certs_of_apk(path)
+
+    accepted = {SHIPPING[0]: SHIPPING[1]}
+    if is_bundle:
+        accepted.update(RETIRED_UPLOAD)
 
     for fp, dn in zip(fps, dns + [""] * len(fps)):
-        if norm(fp) == EXPECTED:
+        if norm(fp) in accepted:
             print("OK  %s" % os.path.basename(path))
-            print("    signed by the Corlang release key (%s)" % (dn.strip() or "CN=Corlang"))
+            print("    signed by %s" % accepted[norm(fp)])
+            if norm(fp) != SHIPPING[0]:
+                print("    NOTE: a retired key, accepted only because Play re-signs uploads.")
+                print("          An APK signed with it would FAIL this check.")
             return 0
 
     got = ", ".join(norm(f)[:16] + "..." for f in fps)
     debug = any(ANDROID_DEBUG_CN in d for d in dns)
-    msg = "%s is NOT signed by the Corlang release key.\n" % os.path.basename(path)
-    msg += "    expected SHA-256 %s...\n" % EXPECTED[:16]
+    msg = "%s is NOT signed by a Corlang key.\n" % os.path.basename(path)
+    msg += "    expected SHA-256 %s...\n" % SHIPPING[0][:16]
     msg += "    found            %s\n" % got
     for d in dns:
         msg += "    subject          %s\n" % d.strip()

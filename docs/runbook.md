@@ -19,7 +19,7 @@ export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"     # Android Stu
 # the gate: build + every unit test (debug = DEVELOPMENT ONLY, signed with the shared debug key)
 ./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain
 
-# what actually ships: the sideload APK, signed with corlang-release.jks
+# what actually ships: the sideload APK, signed with corlang-release-be.jks
 ./gradlew :app:assembleSideloadRelease --console=plain
 
 # the Play artifact (AAB, updater compiled out)
@@ -280,10 +280,16 @@ python tools/release/check_packaged_content.py app/build/outputs/bundle/playRele
 python tools/release/check_apk_signature.py   app/build/outputs/bundle/playRelease/app-play-release.aab
 ```
 
-`corlang-release.jks` is the **upload key**: Play re-signs the app with its own app signing key, so
-what learners install from Play carries a different certificate from the sideload APK. Both belong
-to `com.corlang.app`, which is why Android developer verification wants BOTH registered - the Play
-key automatically, the sideload key added by hand as an additional key.
+`corlang-release-be.jks` signs both the sideload APK and the Play upload. Play then RE-SIGNS the
+upload with its own app signing key, so what a learner installs from Play carries a different
+certificate from the sideload APK. Both belong to `com.corlang.app`, which is why Android developer
+verification wants BOTH registered - the Play key automatically, the sideload key added by hand as
+an additional key, SHA-256 `1A:D8:7D:86:E2:5E:8B:AB:7A:FB:30:01:4F:33:27:7C:C5:3B:43:87:B5:A1:D0:BD:4E:63:BD:68:57:12:85:24`.
+
+The retired `corlang-release-pt-retired-2026-07-16.jks` (`C=PT`) is kept, not deleted. If Play had
+already recorded its certificate as the upload key, only that key can sign a bundle until Google
+resets it - so `check_apk_signature.py` accepts either key on an AAB (Play re-signs, that signature
+never reaches a phone) and only the shipping key on an APK.
 
 Ten stages: artefact preflight (it refuses a stale AAB, and offers the rebuild), the store
 listing, App content, data safety, the App access attestation, upload to Internal testing, the
