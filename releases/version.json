@@ -1,6 +1,6 @@
 {
-  "versionCode": 229,
-  "versionName": "0.87.3",
-  "notes": "Tidier revisit screen: every choice is now the same width as \"Review lesson words\", which has dropped its word count, and the run of buttons sits in the middle of the space under the lesson title rather than stacked at the top of it.",
+  "versionCode": 230,
+  "versionName": "0.88.0",
+  "notes": "Corlang is now signed with its own release key. Every build before this one was signed with Android's shared debug key, which names no developer and cannot be registered with Google. Because the signature changes, Android will refuse to install this build on top of the old app. Do this once, in order: Settings > Backup & restore > Back up (save the file somewhere outside the app), uninstall Corlang, install this APK, then Settings > Backup & restore > Restore. Your streak, learned words and lesson progress come back with it. Updates after this one are ordinary again.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

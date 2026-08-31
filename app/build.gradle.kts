@@ -82,8 +82,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 229
-        versionName = "0.87.3"
+        versionCode = 230
+        versionName = "0.88.0"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
@@ -138,10 +138,13 @@ android {
 
     buildTypes {
         debug {
+            // Debug is now a DEVELOPMENT build only: nothing shipped comes from here. It is
+            // signed with the shared ~/.android/debug.keystore, so it can never be a release
+            // artefact (see the release buildType below).
+            //
             // Opt-in ONLY: `-PtestId` installs debug builds under com.corlang.app.test so a test
             // build sits side-by-side with the real (differently-signed) install without touching
-            // it. Normal builds (no flag) keep the shipping applicationId, so the sideload-debug
-            // release channel is unaffected.
+            // it. Normal builds (no flag) keep the shipping applicationId.
             if (project.hasProperty("testId")) applicationIdSuffix = ".test"
         }
         release {
@@ -150,6 +153,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // BOTH shipping channels are release builds: the sideload APK
+            // (assembleSideloadRelease) and the Play AAB (bundlePlayRelease). A fresh clone with
+            // no keystore.properties still CONFIGURES - the guard below is what stops an unsigned
+            // artefact being mistaken for a shippable one.
             if (keystorePropsFile.exists()) {
                 signingConfig = signingConfigs.getByName("release")
             }
@@ -187,6 +194,34 @@ android {
 
 }
 
+
+/*
+ * A release artefact must be signed by OUR key, or not exist.
+ *
+ * Until v0.88.0 the sideload channel shipped `assembleSideloadDebug`, so releases/corlang.apk was
+ * signed with the shared ~/.android/debug.keystore - `CN=Android Debug`, the key every Android
+ * developer on earth holds. It installed fine, so nothing ever complained. But that key names
+ * nobody: it cannot be registered for Android developer verification (the Sep 30 2026 deadline
+ * for installs on certified devices), and any other app can claim the same signature.
+ *
+ * Both channels are release builds now. Without keystore.properties a release build is silently
+ * UNSIGNED - it configures and compiles, and only fails at install time on the phone. Fail at the
+ * task graph instead, so a fresh clone can still build and test everything else.
+ */
+gradle.taskGraph.whenReady {
+    val packagingRelease = allTasks.any {
+        it.project == project &&
+            Regex("^(package|bundle).*Release").containsMatchIn(it.name)
+    }
+    if (packagingRelease && !keystorePropsFile.exists()) {
+        error(
+            "Refusing to build an UNSIGNED release artefact: keystore.properties is missing. " +
+                "Copy keystore.properties.example and point it at the release keystore. " +
+                "For a build you only want to run locally, use the debug variant " +
+                "(:app:assembleSideloadDebug)."
+        )
+    }
+}
 
 // Room writes one JSON per schema version here; the directory is COMMITTED so migrations can
 // be regression-tested and a released schema is never lost (post-launch a botched migration

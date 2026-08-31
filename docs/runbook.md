@@ -16,12 +16,21 @@ Commands here are run from the repo root unless stated. Shell is Git Bash.
 ```bash
 export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"     # Android Studio JBR = JDK 21
 
-# the gate: build + every unit test
+# the gate: build + every unit test (debug = DEVELOPMENT ONLY, signed with the shared debug key)
 ./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain
+
+# what actually ships: the sideload APK, signed with corlang-release.jks
+./gradlew :app:assembleSideloadRelease --console=plain
 
 # the Play artifact (AAB, updater compiled out)
 ./gradlew :app:bundlePlayRelease --console=plain
 ```
+
+> **Never ship a debug build.** Until v0.88.0 the release channel copied `app-sideload-debug.apk`,
+> so 229 releases went out signed `CN=Android Debug` - the key in `~/.android/debug.keystore` that
+> every Android developer holds, which identifies nobody and cannot be registered for Android
+> developer verification (registry C31). Release builds need the gitignored `keystore.properties`;
+> without it a release packaging task now FAILS rather than emitting an unsigned APK.
 
 > **`BUILD SUCCESSFUL` is not proof the tests ran.** Gradle reports `UP-TO-DATE` and skips them
 > when no *task input* changed, and `releases/version.json` is not an input to any task. That is
@@ -115,17 +124,22 @@ Full rules in `CLAUDE.md`. The ordering below is not optional.
 grep -n "versionCode\|versionName" app/build.gradle.kts
 
 # 2. edit app/build.gradle.kts -> bump versionCode AND versionName
-# 3. build
+# 3. build (RELEASE, not debug: the debug key cannot be registered with Google -- registry C31)
 export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
-./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain
+./gradlew :app:assembleSideloadRelease :app:testSideloadDebugUnitTest --console=plain
 
 # 4. ship the APK
-cp app/build/outputs/apk/sideload/debug/app-sideload-debug.apk releases/corlang.apk
+cp app/build/outputs/apk/sideload/release/app-sideload-release.apk releases/corlang.apk
 
 # 5. CHECK THE ARTEFACT CARRIES THE CONTENT. Green tests do not prove this: every test and
 #    every validator reads src/main/assets, while the APK carries a staged copy. That copy went
 #    five days stale in Aug 2026 and nobody could see it (registry C29).
 python tools/release/check_packaged_content.py releases/corlang.apk
+
+# 5b. CHECK IT IS SIGNED BY US. Nothing else looks: an APK is valid however it is signed, and
+#     229 releases went out on Android's shared debug key before anyone opened one (registry C31).
+python tools/release/check_apk_signature.py releases/corlang.apk
+
 # 6. update releases/version.json -- versionCode MUST equal the built APK's
 # 7. RE-READ both to assert they agree:
 grep versionCode app/build.gradle.kts releases/version.json
@@ -256,6 +270,20 @@ not obvious and one click on it is irreversible:
 ```bash
 bash tools/play/launch-wizard.sh
 ```
+
+Before any upload, check the artefact you are about to hand Google:
+
+```bash
+export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
+./gradlew :app:bundlePlayRelease --console=plain
+python tools/release/check_packaged_content.py app/build/outputs/bundle/playRelease/app-play-release.aab
+python tools/release/check_apk_signature.py   app/build/outputs/bundle/playRelease/app-play-release.aab
+```
+
+`corlang-release.jks` is the **upload key**: Play re-signs the app with its own app signing key, so
+what learners install from Play carries a different certificate from the sideload APK. Both belong
+to `com.corlang.app`, which is why Android developer verification wants BOTH registered - the Play
+key automatically, the sideload key added by hand as an additional key.
 
 Ten stages: artefact preflight (it refuses a stale AAB, and offers the rebuild), the store
 listing, App content, data safety, the App access attestation, upload to Internal testing, the
