@@ -5,6 +5,7 @@ import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -59,9 +60,6 @@ private val tightLines = androidx.compose.ui.text.style.LineHeightStyle(
 
 /** [TodayScreen]'s revisit state: the chooser is up, nothing picked yet. */
 private const val REVISIT_CHOOSING = -1
-
-/** [TodayScreen]'s revisit state: run the whole lesson again, in the ordinary player. */
-private const val REVISIT_WHOLE = -2
 
 @Composable
 fun TodayScreen(
@@ -239,29 +237,34 @@ fun TodayScreen(
                 container = container,
                 lang = lang,
                 day = day,
-                onPickWhole = { revisitPick = REVISIT_WHOLE },
                 onPickSection = { revisitPick = it },
                 onExit = { onInLessonChange(false) }
             )
             return
         }
         // A section replay: opens at that step, marks nothing, and leaves back to the chooser so
-        // the next part is one tap away. "The whole lesson again" is the ordinary player.
+        // the next part is one tap away.
         val replayAt = revisitPick.takeIf { revisiting && it >= 0 }
         androidx.activity.compose.BackHandler {
             if (replayAt != null) revisitPick = REVISIT_CHOOSING else onInLessonChange(false)
         }
-        SessionPlayer(
-            container = container,
-            lang = lang,
-            day = day,
-            totalDays = plan.days.size,
-            onNavigate = onNavigate,
-            onExit = {
-                if (replayAt != null) revisitPick = REVISIT_CHOOSING else onInLessonChange(false)
-            },
-            startAt = replayAt
-        )
+        // BoxWithConstraints purely to measure: the player scrolls, so inside it the available
+        // height is unknowable, and the wrap-up needs it to centre its question on the screen.
+        BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+            SessionPlayer(
+                container = container,
+                lang = lang,
+                day = day,
+                totalDays = plan.days.size,
+                onNavigate = onNavigate,
+                onExit = {
+                    if (replayAt != null) revisitPick = REVISIT_CHOOSING
+                    else onInLessonChange(false)
+                },
+                startAt = replayAt,
+                viewportHeight = maxHeight
+            )
+        }
         return
     }
 

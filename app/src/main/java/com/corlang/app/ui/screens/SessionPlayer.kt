@@ -48,6 +48,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.Fsrs
@@ -103,6 +104,15 @@ fun sessionOpensAt(
     val firstOpen = kinds.indices.firstOrNull { kinds[it] != StepKind.INFO && !done[it] } ?: -1
     return (if (firstOpen > 0) firstOpen else 0) to false
 }
+
+/**
+ * Everything the player draws around the wrap-up's question block, added up: 16 of page padding,
+ * ~20 for the header row, ~20 for the progress bar and its padding, ~76 for the collapsed Wrap-up
+ * bar with its margins, ~28 for the counter line, and ~84 for the Back/Exit row and the spacer
+ * under it. An estimate by construction - it is measured against the shipped composition above,
+ * and being a few dp out only moves the centred block by half of that.
+ */
+private val WRAPUP_CHROME = 244.dp
 
 data class SessionStep(
     val id: String,
@@ -309,7 +319,13 @@ fun SessionPlayer(
      * no streak - because the lesson it replays is already complete and redoing part of it must not
      * move today's ring. Null = the ordinary guided lesson, which resumes and marks as it goes.
      */
-    startAt: Int? = null
+    startAt: Int? = null,
+    /**
+     * How tall the player's own area is, measured by the caller (the scaffold's content box). Used
+     * only to centre the wrap-up's question block in the room left below its counter; 0 = unknown,
+     * and the wrap-up lays out from the top as it always did.
+     */
+    viewportHeight: Dp = 0.dp
 ) {
     // One flag derived from one parameter, so a replay cannot get out of step with where it opened.
     val practice = startAt != null
@@ -456,6 +472,18 @@ fun SessionPlayer(
         targetValue = if (wrapupTyping) 0.4f else 1f,
         label = "session-chrome"
     )
+    /*
+     * The room the wrap-up has for its question block, so it can sit in the middle of the screen
+     * instead of stacking under the counter with the bottom half empty. The player's own height
+     * less what is drawn around the block: the page padding, the header row, the progress bar, the
+     * collapsed Wrap-up bar and the counter line above it, and the Back/Exit row below it.
+     *
+     * Zero while the keyboard is up. There is no dead space to centre in then, and a taller block
+     * would only push the field down behind the keyboard.
+     */
+    val wrapupFill =
+        if (viewportHeight <= 0.dp || WindowInsets.isImeVisible) 0.dp
+        else (viewportHeight - WRAPUP_CHROME).coerceAtLeast(0.dp)
 
     val doneCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE && stepDone(it) }
     val actionCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
@@ -801,6 +829,7 @@ fun SessionPlayer(
                     StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
                     StepKind.WRAPUP -> WrapupRecall(
                         container, lang, day,
+                        fillBelowCounter = wrapupFill,
                         // Same persistence scheme as EXERCISE, per ITEM rather than per answer:
                         // "<stepId>::q<i>" = cleared, "<stepId>::w<i>#<n>" = the n-th miss on i.
                         // A missed item is re-queued now, so a bare count of answers no longer
