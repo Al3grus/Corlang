@@ -1,13 +1,20 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -19,11 +26,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -176,7 +186,9 @@ fun WrapupRecall(
     lang: String,
     day: StudyDay,
     loadResume: (suspend () -> RecallResume)? = null,
-    onAnswered: (index: Int, correct: Boolean) -> Unit = { _, _ -> },
+    started: Boolean = true,
+    onStart: () -> Unit = {},
+    onAnswered: (index: Int, correct: Boolean, attempt: Int) -> Unit = { _, _, _ -> },
     onFinished: () -> Unit
 ) {
     val items = remember(day.day) {
@@ -193,13 +205,76 @@ fun WrapupRecall(
         "Recalling today's phrases from memory is what makes them stick.",
         onFinished,
         loadResume = loadResume,
-        onAnswered = onAnswered
+        onAnswered = onAnswered,
+        started = started,
+        onStart = onStart,
+        centered = true
     )
 }
 
-/** What an interrupted wrap-up left behind. Items run strictly in order with no re-queue, so a
- *  count of answered items plus the number answered correctly restores the exact position. */
-data class RecallResume(val answered: Int, val correctCount: Int)
+/**
+ * Misses allowed on one recall item before it is set down for the session.
+ *
+ * A typed recall graded on spelling and diacritics is not an MCQ: there is no "eventually you
+ * tap the right one". Without a ceiling, one item a learner cannot produce (or one authoring
+ * defect) would hold the whole lesson hostage, since the step no longer ends until the queue
+ * empties. Three tries, then it goes, and the final score says so.
+ */
+const val RECALL_MAX_MISSES = 3
+
+/**
+ * What an interrupted recall left behind, per item: which items are already cleared and how
+ * many times each was missed.
+ *
+ * It used to be a pair of counts ("answered", "of which right"), which worked only because
+ * items ran strictly in order and never came back. Re-queuing breaks that the same way it broke
+ * the exercise step (see ExerciseActivity's resume note): after one miss, position is no longer
+ * a function of how many answers you gave.
+ */
+data class RecallResume(
+    val cleared: Set<Int> = emptySet(),
+    val misses: Map<Int, Int> = emptyMap()
+) {
+    /** Items given up on: [RECALL_MAX_MISSES] tries each, so they do not return this session. */
+    val dropped: Set<Int> get() = misses.filterValues { it >= RECALL_MAX_MISSES }.keys - cleared
+
+    val missedAny: Boolean get() = misses.isNotEmpty()
+
+    /** The items still owed, in their original order. */
+    fun queue(total: Int): List<Int> = (0 until total).filter { it !in cleared && it !in dropped }
+}
+
+/**
+ * Where a just-answered item goes next.
+ *
+ * A cleared item leaves. A missed one goes to the BACK of what is left, so it returns with the
+ * whole rest of the queue between the two tries - an immediate retry would only test copying the
+ * answer still on screen. On its [RECALL_MAX_MISSES]-th miss it leaves too, unanswered.
+ */
+fun nextRecallQueue(queue: List<Int>, correct: Boolean, missesForItem: Int): List<Int> {
+    if (queue.isEmpty()) return queue
+    val head = queue.first()
+    val rest = queue.drop(1)
+    return if (correct || missesForItem >= RECALL_MAX_MISSES) rest else rest + head
+}
+
+/**
+ * Per-item recall state read back from a day's persisted task checks.
+ *
+ * `<step>::q<i>` = item i cleared; `<step>::w<i>#<n>` = the n-th miss on item i. Builds before
+ * 0.86.4 wrote a bare `<step>::w<i>` for a miss, which reads here as exactly one miss — the
+ * right answer for a learner who upgrades mid-lesson.
+ */
+fun recallResumeFrom(ids: List<String>, stepId: String): RecallResume {
+    val cleared = ids.filter { it.startsWith("$stepId::q") }
+        .mapNotNull { it.removePrefix("$stepId::q").toIntOrNull() }
+        .toSet()
+    val misses = ids.filter { it.startsWith("$stepId::w") }
+        .mapNotNull { it.removePrefix("$stepId::w").substringBefore('#').toIntOrNull() }
+        .groupingBy { it }
+        .eachCount()
+    return RecallResume(cleared, misses)
+}
 
 /**
  * The clean, typable phrases from a day's LEARN activities, used to build the wrap-up recall.
@@ -274,7 +349,16 @@ const val RECALL_MAX_CHARS = 80
 
 val PAIR_SYMBOLS = listOf("→", "←", "↔", "⇒", "=", "+", "«", "»", "–", "—", "✓", "✗")
 
-/** Shared EN -> HR typed-recall runner used by both the deck recall drill and the day wrap-up. */
+/**
+ * Shared EN -> HR typed-recall runner used by both the deck recall drill and the day wrap-up.
+ *
+ * A missed item is not a dead end. The same prompt returns at the END of the queue — never as an
+ * immediate retry, which would only test copying the answer still on screen — and keeps coming
+ * back until it is produced correctly. That is the whole point of a wrap-up: the items you can
+ * already say are not the ones worth repeating. After [RECALL_MAX_MISSES] tries an item is set
+ * down for the session, which is why the final score can read less than the total.
+ */
+@OptIn(ExperimentalLayoutApi::class, ExperimentalFoundationApi::class)
 @Composable
 private fun RecallRunner(
     container: AppContainer,
@@ -286,49 +370,118 @@ private fun RecallRunner(
     /** Persisted resume for deterministic item lists (the wrap-up). Null = always start fresh
      *  (the deck drill draws random items, so a saved position would be meaningless). */
     loadResume: (suspend () -> RecallResume)? = null,
-    onAnswered: (index: Int, correct: Boolean) -> Unit = { _, _ -> }
+    /** `attempt` is which try this was on that item: 1 on the first miss, 3 on the last. */
+    onAnswered: (index: Int, correct: Boolean, attempt: Int) -> Unit = { _, _, _ -> },
+    /** Wrap-up only: the step card above stands as an intro panel until Start is tapped. */
+    started: Boolean = true,
+    onStart: () -> Unit = {},
+    /** Wrap-up only: prompt, field and verdict centred, with the counter above them. */
+    centered: Boolean = false
 ) {
     val context = LocalContext.current
 
     // Gate on the async resume load exactly like ExerciseActivity, so the first frame never
     // flashes question one before jumping to the saved position.
     var resume by remember(items) {
-        mutableStateOf(if (loadResume == null) RecallResume(0, 0) else null)
+        mutableStateOf(if (loadResume == null) RecallResume() else null)
     }
     LaunchedEffect(items) { if (loadResume != null) resume = loadResume() }
     val resumed = resume ?: return
 
-    var qIndex by remember(resumed) { mutableIntStateOf(resumed.answered.coerceIn(0, items.size)) }
-    var score by remember(resumed) { mutableIntStateOf(resumed.correctCount.coerceAtMost(items.size)) }
+    // A wrap-up already under way skips its own intro: it was read before the learner walked away.
+    LaunchedEffect(resumed) {
+        if (resumed.cleared.isNotEmpty() || resumed.missedAny) onStart()
+    }
+
+    // Live queue of remaining item INDICES (identity survives re-queuing), mirroring the exercise
+    // step. A miss re-appends; the third miss drops the item instead.
+    val queue = remember(resumed) {
+        mutableStateListOf<Int>().apply { addAll(resumed.queue(items.size)) }
+    }
+    val misses = remember(resumed) {
+        mutableStateMapOf<Int, Int>().apply { putAll(resumed.misses) }
+    }
+    var solved by remember(resumed) {
+        mutableIntStateOf(resumed.cleared.count { it in items.indices })
+    }
+    var missedAny by remember(resumed) { mutableStateOf(resumed.missedAny) }
     var input by remember(resumed) { mutableStateOf("") }
     var checked by remember(resumed) { mutableStateOf(false) }
     var correct by remember(resumed) { mutableStateOf(false) }
-    var finished by remember(resumed) { mutableStateOf(resumed.answered >= items.size && items.isNotEmpty()) }
+    var finished by remember(resumed) {
+        mutableStateOf(items.isNotEmpty() && resumed.queue(items.size).isEmpty())
+    }
     val feedback = CorlangColors.feedback
 
     if (items.isEmpty()) {
         Button(onClick = onFinished, modifier = Modifier.fillMaxWidth()) { Text("Next →") }
         return
     }
-    if (finished) {
-        DrillResult(score, items.size, resultLine, onFinished)
+    // The intro panel is the step card above; this is the only thing under it until Start.
+    if (!started) {
+        Button(onClick = onStart, modifier = Modifier.fillMaxWidth()) { Text("Start recall →") }
+        return
+    }
+    if (finished || queue.isEmpty()) {
+        DrillResult(solved, items.size, resultLine, onFinished, missedAny = missedAny)
         return
     }
 
-    val item = items[qIndex.coerceIn(0, items.lastIndex)]
-    Column(modifier = Modifier.fillMaxWidth()) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+    val idx = queue.first()
+    val item = items[idx]
+    /** True once this item has used its last try: it leaves the queue rather than returning. */
+    val setDown = (misses[idx] ?: 0) >= RECALL_MAX_MISSES
+
+    // While the keyboard is up the chrome steps back, so the eye stays on the prompt and the
+    // field: everything else on screen is context the learner has already read.
+    val imeVisible = WindowInsets.isImeVisible
+    val chromeAlpha by animateFloatAsState(
+        targetValue = if (centered && imeVisible) 0.4f else 1f,
+        label = "recall-chrome"
+    )
+    // imePadding on the session column stops the keyboard COVERING the field; it does not scroll
+    // the field to where it can be seen. This does.
+    val bring = remember { BringIntoViewRequester() }
+    LaunchedEffect(imeVisible, idx) { if (imeVisible) bring.bringIntoView() }
+
+    val counter = "$solved/${items.size}" +
+        if (queue.size > 1) "  ·  ${queue.size} left" else ""
+
+    Column(
+        horizontalAlignment = if (centered) Alignment.CenterHorizontally else Alignment.Start,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        if (centered) {
+            Text(
+                counter,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.alpha(chromeAlpha).padding(bottom = 12.dp)
+            )
             Text(
                 item.en,
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.SemiBold,
-                modifier = Modifier.weight(1f)
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
             )
-            Text("${qIndex + 1}/${items.size}", style = MaterialTheme.typography.bodySmall)
+        } else {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    item.en,
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(counter, style = MaterialTheme.typography.bodySmall)
+            }
         }
         item.posHint?.let {
-            Text(it, style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(
+                it, style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = if (centered) TextAlign.Center else TextAlign.Start
+            )
         }
         // The ask, spelled out on every item. "Write your answer" alone left learners guessing
         // which language to answer in and whether accents mattered (field report), and the
@@ -337,61 +490,102 @@ private fun RecallRunner(
             "Write it in $languageName. Spelling and accents count.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = if (centered) TextAlign.Center else TextAlign.Start,
             modifier = Modifier.padding(top = 6.dp)
         )
-        OutlinedTextField(
-            value = input,
-            onValueChange = { if (!checked) input = it },
-            label = { Text("Your answer in $languageName") },
-            enabled = !checked,
-            modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
-        )
-        if (checked) {
-            Surface(
-                shape = RoundedCornerShape(10.dp),
-                color = if (correct) feedback.correctContainer else feedback.wrongContainer,
-                contentColor = if (correct) feedback.onCorrectContainer else feedback.onWrongContainer,
+        Column(modifier = Modifier.fillMaxWidth().bringIntoViewRequester(bring)) {
+            OutlinedTextField(
+                value = input,
+                onValueChange = { if (!checked) input = it },
+                label = { Text("Your answer in $languageName") },
+                enabled = !checked,
+                modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
+            )
+            if (checked) {
+                Surface(
+                    shape = RoundedCornerShape(10.dp),
+                    color = if (correct) feedback.correctContainer else feedback.wrongContainer,
+                    contentColor = if (correct) feedback.onCorrectContainer else feedback.onWrongContainer,
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                ) {
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        // Text only in the verdict — no speaker on answer reveals (field feedback).
+                        Text(
+                            if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
+                            fontWeight = FontWeight.Bold
+                        )
+                        // Say what happens next out loud, or a re-queued item looks like the app
+                        // repeating itself and a set-down item looks like the app losing it.
+                        if (!correct) {
+                            Text(
+                                if (setDown) "Three tries — setting this one aside for today."
+                                else "This one comes back before the end.",
+                                style = MaterialTheme.typography.bodySmall,
+                                modifier = Modifier.padding(top = 4.dp)
+                            )
+                        }
+                    }
+                }
+            }
+            Button(
+                onClick = {
+                    if (!checked) {
+                        // Slash-aware ("on / ona je" accepts either) and pro-drop-aware: the
+                        // English gloss licenses the subject pronoun, so "ja radim" == "radim".
+                        correct = Grading.gradeRecall(item.answerHr, input, en = item.en, lang = langCode)
+                        if (correct) {
+                            solved++
+                            Haptics.confirm(context)
+                            onAnswered(idx, true, (misses[idx] ?: 0) + 1)
+                        } else {
+                            val attempt = (misses[idx] ?: 0) + 1
+                            misses[idx] = attempt
+                            missedAny = true
+                            Haptics.reject(context)
+                            onAnswered(idx, false, attempt)
+                        }
+                        checked = true
+                    } else {
+                        val next = nextRecallQueue(queue, correct, misses[idx] ?: 0)
+                        queue.clear(); queue.addAll(next)
+                        input = ""; checked = false; correct = false
+                        if (queue.isEmpty()) finished = true
+                    }
+                },
+                enabled = checked || input.isNotBlank(),
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
             ) {
-                // Text only in the verdict — no speaker on answer reveals (field feedback).
                 Text(
-                    if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(10.dp)
+                    when {
+                        !checked -> "Check"
+                        nextRecallQueue(queue, correct, misses[idx] ?: 0).isEmpty() -> "See result"
+                        else -> "Next →"
+                    }
                 )
             }
-        }
-        Button(
-            onClick = {
-                if (!checked) {
-                    // Slash-aware ("on / ona je" accepts either) and pro-drop-aware: the
-                    // English gloss licenses the subject pronoun, so "ja radim" == "radim".
-                    correct = Grading.gradeRecall(item.answerHr, input, en = item.en, lang = langCode)
-                    if (correct) { score++; Haptics.confirm(context) } else Haptics.reject(context)
-                    onAnswered(qIndex, correct)
-                    checked = true
-                } else if (qIndex + 1 >= items.size) {
-                    finished = true
-                } else {
-                    qIndex++; input = ""; checked = false; correct = false
-                }
-            },
-            enabled = checked || input.isNotBlank(),
-            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-        ) {
-            Text(
-                when {
-                    !checked -> "Check"
-                    qIndex + 1 >= items.size -> "See result"
-                    else -> "Next →"
-                }
-            )
         }
     }
 }
 
 @Composable
-private fun DrillResult(score: Int, total: Int, line: String, onFinished: () -> Unit) {
+private fun DrillResult(
+    score: Int,
+    total: Int,
+    line: String,
+    onFinished: () -> Unit,
+    /** Re-queuing drills (the recall runner) only: names which of the three ends this was.
+     *  Null for the one-pass drills, which have no story beyond their score. */
+    missedAny: Boolean? = null
+) {
+    // Three ends, three different things to say. One "well done" over a score the learner can see
+    // is lower than the total reads as the app not having noticed.
+    val verdict = missedAny?.let {
+        when {
+            score >= total && !it -> "Perfect, first try on every phrase."
+            score >= total -> "All correct now, the ones you missed came back until you nailed them."
+            else -> "The ones you set aside after three tries are the ones to look at tomorrow."
+        }
+    }
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxWidth()) {
         Text(
             "$score / $total",
@@ -399,7 +593,23 @@ private fun DrillResult(score: Int, total: Int, line: String, onFinished: () -> 
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(vertical = 8.dp)
         )
-        Text(line, style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center)
+        verdict?.let {
+            Text(
+                it,
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.SemiBold,
+                textAlign = TextAlign.Center
+            )
+        }
+        Text(
+            line,
+            style = if (verdict == null) MaterialTheme.typography.bodyMedium
+                    else MaterialTheme.typography.bodySmall,
+            color = if (verdict == null) MaterialTheme.colorScheme.onSurface
+                    else MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(top = 4.dp)
+        )
         Button(onClick = onFinished, modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
             Text("Done, next step →")
         }
