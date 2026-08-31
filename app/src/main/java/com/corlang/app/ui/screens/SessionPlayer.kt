@@ -11,13 +11,16 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -41,6 +44,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -290,6 +294,7 @@ fun buildSessionSteps(
     return steps
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun SessionPlayer(
     container: AppContainer,
@@ -419,6 +424,19 @@ fun SessionPlayer(
         resumed = true   // latch unconditionally: the jump must never fire mid-session
     }
 
+    // The wrap-up opens as an instruction panel and collapses to a one-word bar the moment the
+    // learner starts: the rules are worth reading once, not worth half the screen for eight
+    // questions. Reset per day; a resumed wrap-up starts itself (see RecallRunner).
+    var wrapupStarted by rememberSaveable(day.day) { mutableStateOf(false) }
+    // With the keyboard up on a wrap-up question, the session chrome steps back so the prompt and
+    // the field are what the eye lands on.
+    val wrapupTyping = wrapupStarted && WindowInsets.isImeVisible &&
+        steps.getOrNull(index)?.kind == StepKind.WRAPUP
+    val chromeAlpha by androidx.compose.animation.core.animateFloatAsState(
+        targetValue = if (wrapupTyping) 0.4f else 1f,
+        label = "session-chrome"
+    )
+
     val doneCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE && stepDone(it) }
     val actionCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
     val reducedMotion = rememberReducedMotion()
@@ -516,7 +534,10 @@ fun SessionPlayer(
             .imePadding()
             .padding(16.dp)
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.alpha(chromeAlpha)
+        ) {
             Text(
                 "Lesson ${day.day}",
                 style = MaterialTheme.typography.labelLarge,
@@ -535,7 +556,7 @@ fun SessionPlayer(
         LinearProgressIndicator(
             progress = { animatedProgress },
             drawStopIndicator = {},
-            modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
+            modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp).alpha(chromeAlpha)
         )
 
         // The step card + its inline drill + actions slide as a unit so moving to the next step
@@ -574,7 +595,11 @@ fun SessionPlayer(
             val activity = day.activities.getOrNull(s.activityIndex)
 
             Column(modifier = Modifier.fillMaxWidth()) {
-                // The step card.
+                // The step card. A wrap-up under way keeps only its name: the instructions it
+                // carries (no peeking, you will see an English phrase...) are a briefing, and a
+                // briefing that stays on screen for the whole exercise is just less room for the
+                // exercise. Collapsed, it is a title bar over centred questions.
+                val collapsed = s.kind == StepKind.WRAPUP && wrapupStarted
                 Surface(
                     shape = RoundedCornerShape(16.dp),
                     color = MaterialTheme.colorScheme.primaryContainer,
@@ -584,8 +609,17 @@ fun SessionPlayer(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 12.dp)
+                        .alpha(if (collapsed) chromeAlpha else 1f)
                 ) {
-                    Column(modifier = Modifier.padding(20.dp)) {
+                    if (collapsed) {
+                        Text(
+                            "Wrap-up",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.fillMaxWidth().padding(vertical = 14.dp)
+                        )
+                    } else Column(modifier = Modifier.padding(20.dp)) {
                         Text(
                             buildString {
                                 append(
@@ -734,21 +768,22 @@ fun SessionPlayer(
                     StepKind.DIALOGUE -> activity?.let { DialogueActivity(container, it, onDrillDone) }
                     StepKind.WRAPUP -> WrapupRecall(
                         container, lang, day,
-                        // Same persistence scheme as EXERCISE: "<stepId>::q<i>" = answered
-                        // right, "<stepId>::w<i>" = answered wrong. Items run in a fixed
-                        // order, so the counts restore the exact position on resume.
+                        // Same persistence scheme as EXERCISE, per ITEM rather than per answer:
+                        // "<stepId>::q<i>" = cleared, "<stepId>::w<i>#<n>" = the n-th miss on i.
+                        // A missed item is re-queued now, so a bare count of answers no longer
+                        // says where the learner is - only which items are still owed does.
                         loadResume = {
                             val ids = container.progress.dayTaskChecks(lang, day.day).first()
                                 .map { it.itemId }
-                            val right = ids.count { it.startsWith("${s.id}::q") }
-                            val wrong = ids.count { it.startsWith("${s.id}::w") }
-                            RecallResume(answered = right + wrong, correctCount = right)
+                            recallResumeFrom(ids, s.id)
                         },
-                        onAnswered = { i, ok ->
+                        started = wrapupStarted,
+                        onStart = { wrapupStarted = true },
+                        onAnswered = { i, ok, attempt ->
                             container.appScope.launch {
                                 container.progress.setDayTask(
                                     lang, day.day,
-                                    if (ok) "${s.id}::q$i" else "${s.id}::w$i",
+                                    if (ok) "${s.id}::q$i" else "${s.id}::w$i#$attempt",
                                     true
                                 )
                             }
