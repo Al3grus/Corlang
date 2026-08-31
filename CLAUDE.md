@@ -59,11 +59,14 @@ A `PostToolUse` hook (`.claude/settings.json` → `tools/hooks/validate_content_
 `gradlew` + wrapper jar are present. Build/test from CLI (Android Studio JBR = JDK 21):
 ```bash
 export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
-./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain
+./gradlew :app:assembleSideloadDebug :app:testSideloadDebugUnitTest --console=plain   # development
+./gradlew :app:assembleSideloadRelease --console=plain                                # what ships
 ```
 Flavors (`distribution` dimension): `sideload` (default, in-app updater) and `play` (updater compiled out; AAB via `:app:bundlePlayRelease`). `versionCode`/`versionName` live in `app/build.gradle.kts`. **Read the pair there before every bump** — no doc caches them, because a cached version is wrong by the next release. Room migrations required for any DB schema change (`data/db/AppDatabase`).
 
-**Release flow:** bump `versionCode`+`versionName` → build → `cp app/build/outputs/apk/sideload/debug/app-sideload-debug.apk releases/corlang.apk` → update `releases/version.json` (versionCode MUST match the built APK) → commit + push. The in-app updater reads `raw.githubusercontent.com/.../releases/version.json`, so the repo must stay **public** (verified no secrets committed).
+**Both shipping channels are RELEASE builds, signed with `corlang-release.jks` via the gitignored `keystore.properties`.** Debug is for development only: it is signed with the shared `~/.android/debug.keystore` (`CN=Android Debug`), which names no developer and cannot be registered for Android developer verification. Every release up to v0.87.3 shipped that key (registry C31); `tools/release/check_apk_signature.py` now stands between it and `releases/`, and a Gradle guard refuses to package a release with no keystore rather than emitting an unsigned APK.
+
+**Release flow:** bump `versionCode`+`versionName` → `./gradlew :app:assembleSideloadRelease` → `cp app/build/outputs/apk/sideload/release/app-sideload-release.apk releases/corlang.apk` → `python tools/release/check_apk_signature.py releases/corlang.apk` + `check_packaged_content.py` → update `releases/version.json` (versionCode MUST match the built APK) → commit + push. The in-app updater reads `raw.githubusercontent.com/.../releases/version.json`, so the repo must stay **public** (verified no secrets committed).
 
 **AI proxy:** `server/ai-proxy/worker.js` (Cloudflare Worker) keeps the Anthropic key out of the APK. Config in `wrangler.toml`; secrets set via CLI. Worker changes need a `wrangler deploy` (not in the APK). Client wiring: `ai/AiConfig.kt`.
 

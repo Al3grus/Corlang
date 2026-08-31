@@ -243,7 +243,16 @@ if [[ -f "$AAB" ]] && command -v unzip >/dev/null 2>&1; then
   else
     warn "expected hr and pt only - check content/_index.json and stageLiveAssets."
   fi
-  if unzip -l "$AAB" | grep -q 'META-INF/.*\.RSA'; then say "signed."; else warn "no signature block found."; fi
+fi
+say ""
+say "Is it signed by OUR key? (a signature block proves only that SOMETHING signed it - 229
+sideload releases carried Android's shared debug key and every presence check passed)"
+if [[ -f "$AAB" ]] && JAVA_HOME="$JBR" python "$REPO_ROOT/tools/release/check_apk_signature.py" "$AAB"; then
+  say "signed by the Corlang release key."
+else
+  warn "the bundle is NOT signed by the Corlang upload key - Play will reject it, or worse accept"
+  warn "a key you cannot reproduce. Check keystore.properties before uploading anything."
+  SKIPPED+=("the play AAB is not signed by the Corlang upload key")
 fi
 say ""
 say "Does the bundle carry the CONTENT that is in the source tree?"
