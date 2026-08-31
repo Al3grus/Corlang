@@ -2,12 +2,15 @@ package com.corlang.app.ui.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -118,8 +121,9 @@ fun LessonRevisit(
     val steps = remember(lang, day.day) { buildSessionSteps(day, languageName) }
     val sections = remember(steps) { revisitSections(steps) }
 
-    // The lesson's own block of the deck. Null until loaded so the button never flashes a wrong
-    // count, and re-read after a pass so the count on it stays true.
+    // The lesson's own block of the deck: whether there is anything to review decides whether the
+    // button exists at all. Null until loaded, so the run never flashes a button it then withdraws,
+    // and re-read after a pass in case the block emptied under it.
     val perLesson by container.languagePrefs.newWordsPerDay
         .collectAsState(initial = Fsrs.NEW_WORDS_PER_DAY)
     var lessonCards by remember(lang, day.day) { mutableStateOf<List<SessionCard>?>(null) }
@@ -171,7 +175,6 @@ fun LessonRevisit(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
@@ -188,48 +191,66 @@ fun LessonRevisit(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        // The choices, centred as one run of identical buttons. Exit sits below a deliberate gap
-        // and is filled rather than outlined: it is the way OUT of this screen, not another part
-        // of the lesson, and at the end of a list of look-alikes that has to be visible at a glance.
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+        // The choices sit in the middle of whatever room the header leaves, as one column of
+        // equal-width buttons: IntrinsicSize.Max sizes the column to its widest label and every
+        // button fills it, so a five-letter "Learn" is the same button as "Review lesson words"
+        // rather than a stub beside it.
+        //
+        // Exit is below a deliberate gap and filled rather than outlined: it is the way OUT of this
+        // screen, not another part of the lesson, and at the end of a run of look-alikes that has
+        // to be visible at a glance.
+        //
+        // The inner scroll is insurance, not layout: a day whose steps run long still reaches its
+        // last button on a short screen, and while everything fits it never engages.
+        Box(
+            contentAlignment = Alignment.Center,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 4.dp)
+                .weight(1f)
         ) {
-            // The flashcards lead, because that is how the lesson itself opens. Offered only when
-            // this lesson actually introduced words the learner has met: a placement start can
-            // leave an early lesson's block behind entirely.
-            if (!cards.isNullOrEmpty()) {
-                RevisitButton("Review lesson words (${cards.size})") {
-                    scope.launch {
-                        val fresh = container.words.lessonWords(lang, day.day, perLesson)
-                        if (fresh.isEmpty()) return@launch
-                        queue.clear(); queue.addAll(fresh.shuffled())
-                        wordsTotal = fresh.size; wordsDone = 0; served = 0
-                        inWords = true
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.verticalScroll(rememberScrollState())
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                    modifier = Modifier.width(IntrinsicSize.Max)
+                ) {
+                    // The flashcards lead, because that is how the lesson itself opens. Offered
+                    // only when this lesson actually introduced words the learner has met: a
+                    // placement start can leave an early lesson's block behind entirely.
+                    if (!cards.isNullOrEmpty()) {
+                        RevisitButton("Review lesson words") {
+                            scope.launch {
+                                val fresh = container.words.lessonWords(lang, day.day, perLesson)
+                                if (fresh.isEmpty()) return@launch
+                                queue.clear(); queue.addAll(fresh.shuffled())
+                                wordsTotal = fresh.size; wordsDone = 0; served = 0
+                                inWords = true
+                            }
+                        }
                     }
+
+                    sections.forEachIndexed { n, stepIndex ->
+                        RevisitButton(labels[n]) { onPickSection(stepIndex) }
+                    }
+
+                    Spacer(Modifier.height(10.dp))   // with the 10 above: twice the run's gap
+                    Button(onClick = onExit, modifier = Modifier.fillMaxWidth()) { Text("Exit") }
                 }
             }
-
-            sections.forEachIndexed { n, stepIndex ->
-                RevisitButton(labels[n]) { onPickSection(stepIndex) }
-            }
-
-            Spacer(Modifier.height(10.dp))   // with the 10 above it: twice the gap of the run
-            Button(onClick = onExit) { Text("Exit") }
         }
-        Spacer(Modifier.height(24.dp))
     }
 }
 
-/** One choice on the revisit screen: the app's outlined action, sized to its own label. */
+/** One choice on the revisit screen: the app's outlined action, filling the run's shared width. */
 @Composable
 private fun RevisitButton(label: String, onClick: () -> Unit) {
     OutlinedButton(
         onClick = onClick,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
-    ) { Text(label) }
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
+        modifier = Modifier.fillMaxWidth()
+    ) { Text(label, maxLines = 1) }
 }
 
