@@ -4,6 +4,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.relocation.BringIntoViewRequester
@@ -37,6 +39,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.DrillGen
@@ -189,6 +192,13 @@ fun WrapupRecall(
     started: Boolean = true,
     onStart: () -> Unit = {},
     onAnswered: (index: Int, correct: Boolean, attempt: Int) -> Unit = { _, _, _ -> },
+    /**
+     * Height to give the question block below the counter, so it sits in the MIDDLE of the room
+     * the step has left rather than jammed under the bar with dead space beneath it. Only the
+     * caller knows that room (it depends on the screen the player is drawn in), so it is passed
+     * in; 0 = lay the block out at its own size, directly under the counter.
+     */
+    fillBelowCounter: Dp = 0.dp,
     onFinished: () -> Unit
 ) {
     val items = remember(day.day) {
@@ -208,7 +218,8 @@ fun WrapupRecall(
         onAnswered = onAnswered,
         started = started,
         onStart = onStart,
-        centered = true
+        centered = true,
+        fillBelowCounter = fillBelowCounter
     )
 }
 
@@ -376,7 +387,9 @@ private fun RecallRunner(
     started: Boolean = true,
     onStart: () -> Unit = {},
     /** Wrap-up only: prompt, field and verdict centred, with the counter above them. */
-    centered: Boolean = false
+    centered: Boolean = false,
+    /** Wrap-up only: see [WrapupRecall]. Vertically centres everything under the counter. */
+    fillBelowCounter: Dp = 0.dp
 ) {
     val context = LocalContext.current
 
@@ -451,6 +464,10 @@ private fun RecallRunner(
         horizontalAlignment = if (centered) Alignment.CenterHorizontally else Alignment.Start,
         modifier = Modifier.fillMaxWidth()
     ) {
+        // The counter keeps its place right under the step bar. Everything below it - the prompt,
+        // the field and the verdict - goes in a box that takes whatever room the step was given
+        // and centres the work inside it, rather than stacking from the top and leaving the
+        // bottom half of the screen empty.
         if (centered) {
             Text(
                 counter,
@@ -458,110 +475,128 @@ private fun RecallRunner(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.alpha(chromeAlpha).padding(bottom = 12.dp)
             )
-            Text(
-                item.en,
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.SemiBold,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-            )
-        } else {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(
-                    item.en,
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier.weight(1f)
+        }
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .then(
+                    if (fillBelowCounter > 0.dp) Modifier.heightIn(min = fillBelowCounter)
+                    else Modifier
                 )
-                Text(counter, style = MaterialTheme.typography.bodySmall)
-            }
-        }
-        item.posHint?.let {
-            Text(
-                it, style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                textAlign = if (centered) TextAlign.Center else TextAlign.Start
-            )
-        }
-        // The ask, spelled out on every item. "Write your answer" alone left learners guessing
-        // which language to answer in and whether accents mattered (field report), and the
-        // instruction has to sit next to the field, not only in the step header they scrolled past.
-        Text(
-            "Write it in $languageName. Spelling and accents count.",
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            textAlign = if (centered) TextAlign.Center else TextAlign.Start,
-            modifier = Modifier.padding(top = 6.dp)
-        )
-        Column(modifier = Modifier.fillMaxWidth().bringIntoViewRequester(bring)) {
-            OutlinedTextField(
-                value = input,
-                onValueChange = { if (!checked) input = it },
-                label = { Text("Your answer in $languageName") },
-                enabled = !checked,
-                modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
-            )
-            if (checked) {
-                Surface(
-                    shape = RoundedCornerShape(10.dp),
-                    color = if (correct) feedback.correctContainer else feedback.wrongContainer,
-                    contentColor = if (correct) feedback.onCorrectContainer else feedback.onWrongContainer,
-                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                ) {
-                    Column(modifier = Modifier.padding(10.dp)) {
-                        // Text only in the verdict — no speaker on answer reveals (field feedback).
+        ) {
+            Column(
+                horizontalAlignment =
+                    if (centered) Alignment.CenterHorizontally else Alignment.Start,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                if (centered) {
+                    Text(
+                        item.en,
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.SemiBold,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                } else {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
-                            fontWeight = FontWeight.Bold
+                            item.en,
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.SemiBold,
+                            modifier = Modifier.weight(1f)
                         )
-                        // Say what happens next out loud, or a re-queued item looks like the app
-                        // repeating itself and a set-down item looks like the app losing it.
-                        if (!correct) {
-                            Text(
-                                if (setDown) "Three tries — setting this one aside for today."
-                                else "This one comes back before the end.",
-                                style = MaterialTheme.typography.bodySmall,
-                                modifier = Modifier.padding(top = 4.dp)
-                            )
-                        }
+                        Text(counter, style = MaterialTheme.typography.bodySmall)
                     }
                 }
-            }
-            Button(
-                onClick = {
-                    if (!checked) {
-                        // Slash-aware ("on / ona je" accepts either) and pro-drop-aware: the
-                        // English gloss licenses the subject pronoun, so "ja radim" == "radim".
-                        correct = Grading.gradeRecall(item.answerHr, input, en = item.en, lang = langCode)
-                        if (correct) {
-                            solved++
-                            Haptics.confirm(context)
-                            onAnswered(idx, true, (misses[idx] ?: 0) + 1)
-                        } else {
-                            val attempt = (misses[idx] ?: 0) + 1
-                            misses[idx] = attempt
-                            missedAny = true
-                            Haptics.reject(context)
-                            onAnswered(idx, false, attempt)
-                        }
-                        checked = true
-                    } else {
-                        val next = nextRecallQueue(queue, correct, misses[idx] ?: 0)
-                        queue.clear(); queue.addAll(next)
-                        input = ""; checked = false; correct = false
-                        if (queue.isEmpty()) finished = true
-                    }
-                },
-                enabled = checked || input.isNotBlank(),
-                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-            ) {
+                item.posHint?.let {
+                    Text(
+                        it, style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = if (centered) TextAlign.Center else TextAlign.Start
+                    )
+                }
+                // The ask, spelled out on every item. "Write your answer" alone left learners guessing
+                // which language to answer in and whether accents mattered (field report), and the
+                // instruction has to sit next to the field, not only in the step header they scrolled past.
                 Text(
-                    when {
-                        !checked -> "Check"
-                        nextRecallQueue(queue, correct, misses[idx] ?: 0).isEmpty() -> "See result"
-                        else -> "Next →"
-                    }
+                    "Write it in $languageName. Spelling and accents count.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    textAlign = if (centered) TextAlign.Center else TextAlign.Start,
+                    modifier = Modifier.padding(top = 6.dp)
                 )
+                Column(modifier = Modifier.fillMaxWidth().bringIntoViewRequester(bring)) {
+                    OutlinedTextField(
+                        value = input,
+                        onValueChange = { if (!checked) input = it },
+                        label = { Text("Your answer in $languageName") },
+                        enabled = !checked,
+                        modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
+                    )
+                    if (checked) {
+                        Surface(
+                            shape = RoundedCornerShape(10.dp),
+                            color = if (correct) feedback.correctContainer else feedback.wrongContainer,
+                            contentColor = if (correct) feedback.onCorrectContainer else feedback.onWrongContainer,
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        ) {
+                            Column(modifier = Modifier.padding(10.dp)) {
+                                // Text only in the verdict — no speaker on answer reveals (field feedback).
+                                Text(
+                                    if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
+                                    fontWeight = FontWeight.Bold
+                                )
+                                // Say what happens next out loud, or a re-queued item looks like the app
+                                // repeating itself and a set-down item looks like the app losing it.
+                                if (!correct) {
+                                    Text(
+                                        if (setDown) "Three tries — setting this one aside for today."
+                                        else "This one comes back before the end.",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        modifier = Modifier.padding(top = 4.dp)
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    Button(
+                        onClick = {
+                            if (!checked) {
+                                // Slash-aware ("on / ona je" accepts either) and pro-drop-aware: the
+                                // English gloss licenses the subject pronoun, so "ja radim" == "radim".
+                                correct = Grading.gradeRecall(item.answerHr, input, en = item.en, lang = langCode)
+                                if (correct) {
+                                    solved++
+                                    Haptics.confirm(context)
+                                    onAnswered(idx, true, (misses[idx] ?: 0) + 1)
+                                } else {
+                                    val attempt = (misses[idx] ?: 0) + 1
+                                    misses[idx] = attempt
+                                    missedAny = true
+                                    Haptics.reject(context)
+                                    onAnswered(idx, false, attempt)
+                                }
+                                checked = true
+                            } else {
+                                val next = nextRecallQueue(queue, correct, misses[idx] ?: 0)
+                                queue.clear(); queue.addAll(next)
+                                input = ""; checked = false; correct = false
+                                if (queue.isEmpty()) finished = true
+                            }
+                        },
+                        enabled = checked || input.isNotBlank(),
+                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                    ) {
+                        Text(
+                            when {
+                                !checked -> "Check"
+                                nextRecallQueue(queue, correct, misses[idx] ?: 0).isEmpty() -> "See result"
+                                else -> "Next →"
+                            }
+                        )
+                    }
+                }
             }
         }
     }

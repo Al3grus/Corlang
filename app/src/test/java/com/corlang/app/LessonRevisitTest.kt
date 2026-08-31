@@ -6,6 +6,7 @@ import com.corlang.app.data.WordsRepository
 import com.corlang.app.data.db.WordReview
 import com.corlang.app.ui.screens.SessionStep
 import com.corlang.app.ui.screens.StepKind
+import com.corlang.app.ui.screens.revisitLabels
 import com.corlang.app.ui.screens.revisitSections
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
@@ -28,26 +29,44 @@ class LessonRevisitTest {
 
     // ---------------- sections ----------------
 
+    /** A typical lesson, in the order buildSessionSteps emits. */
+    private val LESSON = listOf(
+        step(StepKind.INFO, "intro"),
+        step(StepKind.WORDS, "words"),
+        step(StepKind.LEARN, "activity-0"),
+        step(StepKind.EXERCISE, "activity-1"),
+        step(StepKind.EXERCISE, "activity-2"),
+        step(StepKind.DIALOGUE, "activity-3"),
+        step(StepKind.WRAPUP, "wrapup"),
+        step(StepKind.REVIEW, "review"),
+        step(StepKind.COMPLETE, "complete")
+    )
+
     @Test
-    fun `sections are every step but the intro and the finish`() {
-        val steps = listOf(
-            step(StepKind.INFO, "intro"),
-            step(StepKind.WORDS, "words"),
-            step(StepKind.LEARN, "activity-0"),
-            step(StepKind.EXERCISE, "activity-1"),
-            step(StepKind.WRAPUP, "wrapup"),
-            step(StepKind.REVIEW, "review"),
-            step(StepKind.COMPLETE, "complete")
-        )
+    fun `sections are the teaching parts, not the scaffolding around them`() {
         // Indices into the ORIGINAL list: they are what the player is asked to open at, so a
-        // filtered-and-renumbered list would jump to the wrong step.
-        assertEquals(listOf(1, 2, 3, 4, 5), revisitSections(steps))
+        // filtered-and-renumbered list would jump to the wrong step. The intro, the finish, the
+        // new-words step (its words are the flashcard button) and the due-words review are out.
+        assertEquals(listOf(2, 3, 4, 5, 6), revisitSections(LESSON))
     }
 
     @Test
     fun `a lesson with nothing to redo offers no sections`() {
-        val steps = listOf(step(StepKind.INFO, "intro"), step(StepKind.COMPLETE, "complete"))
+        val steps = listOf(
+            step(StepKind.INFO, "intro"),
+            step(StepKind.WORDS, "words"),
+            step(StepKind.COMPLETE, "complete")
+        )
         assertTrue(revisitSections(steps).isEmpty())
+    }
+
+    @Test
+    fun `a repeated kind is numbered, a single one is not`() {
+        val sections = revisitSections(LESSON)
+        assertEquals(
+            listOf("Learn", "Exercise 1", "Exercise 2", "Dialogue", "Wrap-Up"),
+            revisitLabels(LESSON, sections)
+        )
     }
 
     // ---------------- which words are the lesson's ----------------
