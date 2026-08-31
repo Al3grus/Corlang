@@ -302,8 +302,17 @@ fun SessionPlayer(
     day: StudyDay,
     totalDays: Int,
     onNavigate: (String) -> Unit,
-    onExit: () -> Unit
+    onExit: () -> Unit,
+    /**
+     * Open at this step and REPLAY rather than resume: the revisit chooser's "jump to a section"
+     * (see [LessonRevisit]). A replay writes nothing about the day - no step checks, no completion,
+     * no streak - because the lesson it replays is already complete and redoing part of it must not
+     * move today's ring. Null = the ordinary guided lesson, which resumes and marks as it goes.
+     */
+    startAt: Int? = null
 ) {
+    // One flag derived from one parameter, so a replay cannot get out of step with where it opened.
+    val practice = startAt != null
     // A lesson in progress locks the top-bar language picker (switching would tear it down).
     com.corlang.app.ui.Engagement.Report()
     val scope = rememberCoroutineScope()
@@ -315,7 +324,11 @@ fun SessionPlayer(
     var repairQuestions by remember(lang, day.day) {
         androidx.compose.runtime.mutableStateOf<List<com.corlang.app.data.model.Question>?>(null)
     }
-    LaunchedEffect(lang, day.day) { repairQuestions = container.progress.dueMistakes(lang, 3) }
+    // Not in a replay: the repair step is the DAY's business (three questions banked from earlier
+    // lessons), and splicing it in would also shift the very step indices the chooser just offered.
+    LaunchedEffect(lang, day.day) {
+        if (!practice) repairQuestions = container.progress.dueMistakes(lang, 3)
+    }
 
     val steps = remember(lang, day.day, repairQuestions?.size) {
         val base = buildSessionSteps(day, container.content.meta(lang).name)
@@ -336,7 +349,10 @@ fun SessionPlayer(
     val rawChecks by container.progress.dayTaskChecks(lang, day.day)
         .collectAsState(initial = null)
     val checks = rawChecks.orEmpty()
-    val doneIds = checks.map { it.itemId }.toSet()
+    // A replay shows every step live. The stored marks are the lesson's FINISHED state, and a
+    // section replay neither reads them (an exercise would open with all its questions solved) nor
+    // writes them.
+    val doneIds = if (practice) emptySet() else checks.map { it.itemId }.toSet()
 
     // The NEW-words step = this lesson's unlocked words (deck order, first day.day * perLesson) not
     // yet introduced. The REVIEW step = due cards, capped so they can't pile up (overflow → Words
@@ -394,9 +410,11 @@ fun SessionPlayer(
         else -> s.id in doneIds
     }
 
-    // Start at the first unfinished step (resume).
-    var index by rememberSaveable(day.day) {
-        mutableIntStateOf(0)
+    // Start at the first unfinished step (resume), or at the section a replay picked. Keyed on
+    // startAt as well as the day: picking section 3, backing out, then picking section 5 must open
+    // at 5, and a key of the day alone would hand back the remembered 3.
+    var index by rememberSaveable(day.day, startAt) {
+        mutableIntStateOf(startAt ?: 0)
     }
     // On first composition per day, jump past finished steps. Gated on EVERY flow stepDone()
     // reads (checks, reviews, perLesson, deckStart) having actually emitted — not just being
@@ -405,7 +423,9 @@ fun SessionPlayer(
     // and land past a review step with cards still due; (b) latching `resumed` only when
     // checks were non-empty left the jump armed on a fresh day — the first check written
     // mid-session (e.g. after skipping the words step) then yanked the user backwards.
-    var resumed by rememberSaveable(day.day) { mutableStateOf(false) }
+    // Pre-latched in a replay: the chooser already decided where this opens, and the resume jump
+    // must not second-guess it (on a finished lesson it would reset the marks and go back to 0).
+    var resumed by rememberSaveable(day.day, startAt) { mutableStateOf(practice) }
     if (!resumed && (rawChecks == null || rawReviews == null ||
             rawPerLesson == null || rawDeckStart == null)
     ) {
@@ -427,7 +447,7 @@ fun SessionPlayer(
     // The wrap-up opens as an instruction panel and collapses to a one-word bar the moment the
     // learner starts: the rules are worth reading once, not worth half the screen for eight
     // questions. Reset per day; a resumed wrap-up starts itself (see RecallRunner).
-    var wrapupStarted by rememberSaveable(day.day) { mutableStateOf(false) }
+    var wrapupStarted by rememberSaveable(day.day, startAt) { mutableStateOf(false) }
     // With the keyboard up on a wrap-up question, the session chrome steps back so the prompt and
     // the field are what the eye lands on.
     val wrapupTyping = wrapupStarted && WindowInsets.isImeVisible &&
@@ -453,8 +473,13 @@ fun SessionPlayer(
         doneIds.count { it.startsWith("${cs.id}::q") || it.startsWith("${cs.id}::x") }
             .coerceAtMost(total).toFloat() / total
     }
-    val sessionProgress = if (actionCount == 0) 0f
-        else ((doneCount + currentPartial) / actionCount).coerceIn(0f, 1f)
+    val sessionProgress = when {
+        // A replay has no marks to count, so its bar measures the only thing it knows: how far
+        // through the lesson the learner has walked since they jumped in.
+        practice -> if (steps.size <= 1) 1f else index.toFloat() / (steps.size - 1)
+        actionCount == 0 -> 0f
+        else -> ((doneCount + currentPartial) / actionCount).coerceIn(0f, 1f)
+    }
     val animatedProgress by androidx.compose.animation.core.animateFloatAsState(
         targetValue = sessionProgress,
         animationSpec = if (reducedMotion) androidx.compose.animation.core.snap()
@@ -472,9 +497,23 @@ fun SessionPlayer(
     var wordStepId by remember(day.day) { mutableStateOf("words") }
     var wordIsReview by remember(day.day) { mutableStateOf(false) }
 
+    /**
+     * Records one step check. THE only writer of day marks in this screen, and a no-op during a
+     * replay: the lesson a replay walks is already complete, so redoing part of it must leave the
+     * day's marks, ring and streak exactly as they were. What a replay DOES still persist is
+     * learning state rather than day state: word grades (under the once-a-day rule in
+     * WordsRepository.practiceReview) and the mistake bank, which should keep catching wrong
+     * answers whenever they are given.
+     *
+     * App-scoped: persists even if the player is closed the same instant.
+     */
+    fun mark(itemId: String) {
+        if (practice) return
+        container.appScope.launch { container.progress.setDayTask(lang, day.day, itemId, true) }
+    }
+
     fun markStepDoneAndAdvance(stepId: String) {
-        // App-scoped: persists even if the player is closed the same instant.
-        container.appScope.launch { container.progress.setDayTask(lang, day.day, stepId, true) }
+        mark(stepId)
         if (index < steps.lastIndex) index++
     }
 
@@ -539,13 +578,14 @@ fun SessionPlayer(
             modifier = Modifier.alpha(chromeAlpha)
         ) {
             Text(
-                "Lesson ${day.day}",
+                if (practice) "Lesson ${day.day} · replay" else "Lesson ${day.day}",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.weight(1f)
             )
             Text(
-                "$doneCount / $actionCount done",
+                if (practice) "step ${index + 1} of ${steps.size}"
+                else "$doneCount / $actionCount done",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -582,13 +622,13 @@ fun SessionPlayer(
                 if (index == i && index < steps.lastIndex) index++
             }
             val onDrillDone: () -> Unit = {
-                container.appScope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
+                mark(s.id)
                 advanceFrom()
             }
             val markNext: () -> Unit = {
                 if (s.kind != StepKind.INFO && s.kind != StepKind.COMPLETE) {
                     Haptics.confirm(context)
-                    container.appScope.launch { container.progress.setDayTask(lang, day.day, s.id, true) }
+                    mark(s.id)
                 }
                 advanceFrom()
             }
@@ -644,7 +684,10 @@ fun SessionPlayer(
                             color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f)
                         )
                         Text(
-                            s.title,
+                            // "Lesson 9 done" would be a lie at the end of a replay: it was
+                            // already done, and this run banked nothing.
+                            if (practice && s.kind == StepKind.COMPLETE) "End of the replay"
+                            else s.title,
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(top = 4.dp)
@@ -701,7 +744,8 @@ fun SessionPlayer(
                                 questions = repairs
                             ),
                             loadResumeState = {
-                                val ids = container.progress.dayTaskChecks(lang, day.day).first()
+                                val ids = if (practice) emptyList()
+                                else container.progress.dayTaskChecks(lang, day.day).first()
                                     .map { it.itemId }
                                 val qPrefix = "${s.id}::q"
                                 ExerciseResume(
@@ -711,11 +755,7 @@ fun SessionPlayer(
                                     missedAny = "${s.id}::missed" in ids
                                 )
                             },
-                            onSolved = { i ->
-                                container.appScope.launch {
-                                    container.progress.setDayTask(lang, day.day, "${s.id}::q$i", true)
-                                }
-                            },
+                            onSolved = { i -> mark("${s.id}::q$i") },
                             // Right answer retires the banked question; wrong answer re-banks
                             // it with a bumped count, so it returns in a later session.
                             onQuestionCleared = { q ->
@@ -734,7 +774,8 @@ fun SessionPlayer(
                             // Legacy count-style "<stepId>::x<n>" checks (pre-0.20.12) map to "the
                             // first n questions" — the best a bare count can say.
                             loadResumeState = {
-                                val ids = container.progress.dayTaskChecks(lang, day.day).first()
+                                val ids = if (practice) emptyList()
+                                else container.progress.dayTaskChecks(lang, day.day).first()
                                     .map { it.itemId }
                                 val qPrefix = "${s.id}::q"
                                 val solved = ids.filter { it.startsWith(qPrefix) }
@@ -746,16 +787,8 @@ fun SessionPlayer(
                                     missedAny = "${s.id}::missed" in ids
                                 )
                             },
-                            onSolved = { i ->
-                                container.appScope.launch {
-                                    container.progress.setDayTask(lang, day.day, "${s.id}::q$i", true)
-                                }
-                            },
-                            onMissed = {
-                                container.appScope.launch {
-                                    container.progress.setDayTask(lang, day.day, "${s.id}::missed", true)
-                                }
-                            },
+                            onSolved = { i -> mark("${s.id}::q$i") },
+                            onMissed = { mark("${s.id}::missed") },
                             onQuestionCleared = { q ->
                                 container.appScope.launch { container.progress.clearMistake(lang, q) }
                             },
@@ -773,20 +806,15 @@ fun SessionPlayer(
                         // A missed item is re-queued now, so a bare count of answers no longer
                         // says where the learner is - only which items are still owed does.
                         loadResume = {
-                            val ids = container.progress.dayTaskChecks(lang, day.day).first()
+                            val ids = if (practice) emptyList()
+                            else container.progress.dayTaskChecks(lang, day.day).first()
                                 .map { it.itemId }
                             recallResumeFrom(ids, s.id)
                         },
                         started = wrapupStarted,
                         onStart = { wrapupStarted = true },
                         onAnswered = { i, ok, attempt ->
-                            container.appScope.launch {
-                                container.progress.setDayTask(
-                                    lang, day.day,
-                                    if (ok) "${s.id}::q$i" else "${s.id}::w$i#$attempt",
-                                    true
-                                )
-                            }
+                            mark(if (ok) "${s.id}::q$i" else "${s.id}::w$i#$attempt")
                         },
                         onFinished = onDrillDone
                     )
@@ -888,7 +916,19 @@ fun SessionPlayer(
                     StepKind.GENDER, StepKind.CLOZE, StepKind.RECALL, StepKind.WRAPUP,
                     StepKind.LEARN, StepKind.EXERCISE, StepKind.DIALOGUE -> { /* content drives completion */ }
 
-                    StepKind.COMPLETE -> {
+                    // A replay ends where the lesson ends, but with nothing to bank: it never
+                    // reaches the completion write, the streak, or the celebration overlay.
+                    StepKind.COMPLETE -> if (practice) {
+                        Text(
+                            "That is the end of Lesson ${day.day}. Nothing was re-marked: it was " +
+                                "already complete, and your streak and today's goal are untouched.",
+                            style = MaterialTheme.typography.bodyMedium,
+                            modifier = Modifier.padding(bottom = 8.dp)
+                        )
+                        Button(onClick = onExit, modifier = Modifier.fillMaxWidth()) {
+                            Text("Back to the sections →")
+                        }
+                    } else {
                         // App-scoped so exiting the player can't cancel the write mid-flight
                         // (a composition-scoped launch here silently lost day completions).
                         // completing guards a double-tap from inserting the day twice.
@@ -980,7 +1020,7 @@ fun SessionPlayer(
                 modifier = Modifier.weight(1f)
             ) { Text("← Back") }
             OutlinedButton(onClick = onExit, modifier = Modifier.weight(1f)) {
-                Text("Exit (saved)")
+                Text(if (practice) "Back to sections" else "Exit (saved)")
             }
         }
         Spacer(Modifier.height(24.dp))

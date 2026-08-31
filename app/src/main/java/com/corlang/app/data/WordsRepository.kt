@@ -61,6 +61,47 @@ class WordsRepository(
             .map { SessionCard(it, null) }
     }
 
+    /**
+     * The words one lesson introduced, for a revisit's "review this lesson's words" pass.
+     *
+     * A lesson's own block of the deck is `[(day-1) * perLesson, day * perLesson)` — the slice
+     * lesson [day] is the first to unlock — clipped to the placement offset, exactly like
+     * [unlockedNewWords] measures its window. Only words the learner has ACTUALLY met are
+     * returned (a stored review exists): revisiting an old lesson is practice, and practice must
+     * never introduce vocabulary. That also keeps the deck's introduction order intact, which is
+     * the SRS's spine.
+     *
+     * Empty is a normal answer (a lesson entirely below a placement start, or one whose block was
+     * never introduced); the caller hides the button rather than offering an empty pass.
+     */
+    suspend fun lessonWords(
+        lang: String,
+        day: Int,
+        perLesson: Int = Fsrs.NEW_WORDS_PER_DAY
+    ): List<SessionCard> {
+        val deck = allWords(lang)
+        val range = lessonDeckRange(day, perLesson, prefs.wordDeckStart(lang).first(), deck.size)
+        if (range.isEmpty()) return emptyList()
+        val reviewsById = dao.wordReviewsOnce(lang).associateBy { it.wordId }
+        return deck.slice(range).mapNotNull { w -> reviewsById[w.id]?.let { SessionCard(w, it) } }
+    }
+
+    /**
+     * Persists one grading from a REVISIT practice pass. Returns the updated state, or null when
+     * nothing was written (see [practiceReview]).
+     */
+    suspend fun gradePractice(
+        lang: String,
+        wordId: String,
+        grade: SrsGrade,
+        today: Long = todayEpochDay()
+    ): WordReview? {
+        val existing = dao.wordReviewOnce(lang, wordId) ?: return null
+        val updated = practiceReview(existing, grade, today) ?: return null
+        dao.upsertWordReview(updated)
+        return updated
+    }
+
     /** Rebuilds session cards from a persisted list of word ids (gym-proof resume). */
     suspend fun sessionFromIds(lang: String, ids: List<String>): List<SessionCard> {
         val wordsById = allWords(lang).associateBy { it.id }
@@ -172,6 +213,33 @@ class WordsRepository(
 
     companion object {
         fun todayEpochDay(): Long = LocalDate.now().toEpochDay()
+
+        /**
+         * The deck slice lesson [day] introduces: `[(day-1) * perLesson, day * perLesson)`, never
+         * reaching below a placement's [deckStart] or past the end of the deck. Pure, so the rule
+         * a revisit reviews by is unit-testable.
+         */
+        fun lessonDeckRange(day: Int, perLesson: Int, deckStart: Int, deckSize: Int): IntRange {
+            if (day < 1 || perLesson < 1 || deckSize <= 0) return IntRange.EMPTY
+            val from = maxOf((day - 1) * perLesson, deckStart.coerceAtLeast(0))
+                .coerceAtMost(deckSize)
+            val until = (day * perLesson).coerceAtMost(deckSize)
+            return from until until
+        }
+
+        /**
+         * One grading of a revisited lesson's words. Returns the new state, or null when the pass
+         * must not touch the schedule.
+         *
+         * A card counts ONCE A DAY. Redoing lesson 9 an hour after finishing it is rehearsal, not
+         * retrieval after a delay, and feeding it to FSRS would push the interval out on a memory
+         * that was never tested — the learner would be scheduling by how often they tapped, not by
+         * what they remember. Come back on a later day and the same pass is a real review: it
+         * grades normally, stretching a right answer further out and pulling a wrong one back in.
+         */
+        fun practiceReview(review: WordReview, grade: SrsGrade, today: Long): WordReview? =
+            if (review.reps > 0 && review.lastReviewEpochDay >= today) null
+            else Fsrs.review(review, grade, today)
 
         /**
          * How many lessons' worth of vocabulary a placement queues for review.
