@@ -1,6 +1,6 @@
 {
-  "versionCode": 230,
-  "versionName": "0.88.0",
-  "notes": "Corlang is now signed with its own release key. Every build before this one was signed with Android's shared debug key, which names no developer and cannot be registered with Google. Because the signature changes, Android will refuse to install this build on top of the old app. Do this once, in order: Settings > Backup & restore > Back up (save the file somewhere outside the app), uninstall Corlang, install this APK, then Settings > Backup & restore > Restore. Your streak, learned words and lesson progress come back with it. Updates after this one are ordinary again.",
+  "versionCode": 231,
+  "versionName": "0.88.1",
+  "notes": "Corlang is now signed with its own release key. Every build before 0.88.x was signed with Android's shared debug key, which names no developer and cannot be registered with Google. Because the signature changes, Android will refuse to install this build on top of an older one. Do this once, in order: Settings > Backup & restore > Back up (save the file somewhere outside the app), uninstall Corlang, install this APK, then Settings > Backup & restore > Restore. Your streak, learned words and lesson progress come back with it. Updates after this one are ordinary again.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
