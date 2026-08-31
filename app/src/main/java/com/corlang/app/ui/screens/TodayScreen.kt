@@ -57,6 +57,12 @@ private val tightLines = androidx.compose.ui.text.style.LineHeightStyle(
     trim = androidx.compose.ui.text.style.LineHeightStyle.Trim.Both
 )
 
+/** [TodayScreen]'s revisit state: the chooser is up, nothing picked yet. */
+private const val REVISIT_CHOOSING = -1
+
+/** [TodayScreen]'s revisit state: run the whole lesson again, in the ordinary player. */
+private const val REVISIT_WHOLE = -2
+
 @Composable
 fun TodayScreen(
     container: AppContainer,
@@ -151,6 +157,13 @@ fun TodayScreen(
         }
     }
 
+    // Which part of a completed lesson the learner chose to redo: REVISIT_CHOOSING while the
+    // chooser is up, REVISIT_WHOLE for a full replay, otherwise the step index to open at. Reset on
+    // leaving the lesson, so the next tap on "Revisit" lands on the chooser again rather than
+    // repeating the last pick.
+    var revisitPick by rememberSaveable(lang, viewedDay) { mutableStateOf(REVISIT_CHOOSING) }
+    LaunchedEffect(inLesson) { if (!inLesson) revisitPick = REVISIT_CHOOSING }
+
     val day = plan.days.firstOrNull { it.day == viewedDay } ?: plan.days.first()
 
     // One-time level gate: this course's first `freeLessons` lessons are free, and every level
@@ -203,16 +216,51 @@ fun TodayScreen(
     // Guided session mode. inLesson is hoisted to the app scaffold so a bottom-nav tap (any tab,
     // including Today) exits the lesson back to the dashboard — progress is saved per step, so a
     // "Continue" resumes exactly where it left off.
+    //
+    // A COMPLETED lesson opens on the revisit chooser instead of straight into the player: revisits
+    // are for redoing one part, and reaching part four used to mean tapping through parts one to
+    // three. What the learner picked there lives here, because the chooser and the player it hands
+    // over to are two screens of the same visit.
     if (inLesson) {
-        // System back leaves the player (progress is persisted per step), not the app.
-        androidx.activity.compose.BackHandler { onInLessonChange(false) }
+        // Whether this lesson is finished decides WHICH screen opens, so it has to be known before
+        // either paints. Reading a still-loading empty list as "not completed" would drop a revisit
+        // into the ordinary player for a frame — and that player, on a finished lesson, clears its
+        // step marks on the way past. One blank frame instead. (The page's own load gate is below,
+        // after this branch, because it must not blank a lesson in progress.)
+        if (rawCompleted == null) {
+            Column(Modifier.fillMaxSize()) {}
+            return
+        }
+        val revisiting = completed.contains(day.day)
+        if (revisiting && revisitPick == REVISIT_CHOOSING) {
+            // System back leaves the lesson; there is nothing in progress to lose.
+            androidx.activity.compose.BackHandler { onInLessonChange(false) }
+            LessonRevisit(
+                container = container,
+                lang = lang,
+                day = day,
+                onPickWhole = { revisitPick = REVISIT_WHOLE },
+                onPickSection = { revisitPick = it },
+                onExit = { onInLessonChange(false) }
+            )
+            return
+        }
+        // A section replay: opens at that step, marks nothing, and leaves back to the chooser so
+        // the next part is one tap away. "The whole lesson again" is the ordinary player.
+        val replayAt = revisitPick.takeIf { revisiting && it >= 0 }
+        androidx.activity.compose.BackHandler {
+            if (replayAt != null) revisitPick = REVISIT_CHOOSING else onInLessonChange(false)
+        }
         SessionPlayer(
             container = container,
             lang = lang,
             day = day,
             totalDays = plan.days.size,
             onNavigate = onNavigate,
-            onExit = { onInLessonChange(false) }
+            onExit = {
+                if (replayAt != null) revisitPick = REVISIT_CHOOSING else onInLessonChange(false)
+            },
+            startAt = replayAt
         )
         return
     }
