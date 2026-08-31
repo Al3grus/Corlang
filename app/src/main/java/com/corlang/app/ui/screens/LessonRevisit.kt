@@ -1,7 +1,6 @@
 package com.corlang.app.ui.screens
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -10,10 +9,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -25,10 +24,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.Fsrs
@@ -120,7 +119,7 @@ fun LessonRevisit(
     val sections = remember(steps) { revisitSections(steps) }
 
     // The lesson's own block of the deck. Null until loaded so the button never flashes a wrong
-    // count, and re-read after a pass so the "counts today" line below it stays true.
+    // count, and re-read after a pass so the count on it stays true.
     val perLesson by container.languagePrefs.newWordsPerDay
         .collectAsState(initial = Fsrs.NEW_WORDS_PER_DAY)
     var lessonCards by remember(lang, day.day) { mutableStateOf<List<SessionCard>?>(null) }
@@ -167,13 +166,6 @@ fun LessonRevisit(
     }
 
     val cards = lessonCards
-    val today = WordsRepository.todayEpochDay()
-    // How many of this lesson's words a pass would actually reschedule right now. Anything already
-    // reviewed today rides along for the practice but leaves the schedule alone.
-    val countsToday = cards.orEmpty().count { c ->
-        val r = c.review
-        r != null && (r.reps == 0 || r.lastReviewEpochDay < today)
-    }
     val labels = remember(steps, sections) { revisitLabels(steps, sections) }
 
     Column(
@@ -190,83 +182,54 @@ fun LessonRevisit(
         )
         Text(day.title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         Text(
-            "Select the part you want. It runs on to the end of the lesson from there, and none of " +
-                "it re-marks anything: the lesson stays complete, and your streak and today's goal " +
-                "are untouched.",
-            style = com.corlang.app.ui.theme.CorlangType.reading,
+            "Select the part you want. It runs on to the end of the lesson from there, and nothing " +
+                "here re-marks the lesson.",
+            style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        // The flashcards lead, because that is how the lesson itself opens. Offered only when this
-        // lesson actually introduced words the learner has met: a placement start can leave an
-        // early lesson's block behind entirely.
-        if (!cards.isNullOrEmpty()) {
-            RevisitButton("Review lesson words (${cards.size})") {
-                scope.launch {
-                    val fresh = container.words.lessonWords(lang, day.day, perLesson)
-                    if (fresh.isEmpty()) return@launch
-                    queue.clear(); queue.addAll(fresh.shuffled())
-                    wordsTotal = fresh.size; wordsDone = 0; served = 0
-                    inWords = true
+        // The choices, centred as one run of identical buttons. Exit sits below a deliberate gap
+        // and is filled rather than outlined: it is the way OUT of this screen, not another part
+        // of the lesson, and at the end of a list of look-alikes that has to be visible at a glance.
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 4.dp)
+        ) {
+            // The flashcards lead, because that is how the lesson itself opens. Offered only when
+            // this lesson actually introduced words the learner has met: a placement start can
+            // leave an early lesson's block behind entirely.
+            if (!cards.isNullOrEmpty()) {
+                RevisitButton("Review lesson words (${cards.size})") {
+                    scope.launch {
+                        val fresh = container.words.lessonWords(lang, day.day, perLesson)
+                        if (fresh.isEmpty()) return@launch
+                        queue.clear(); queue.addAll(fresh.shuffled())
+                        wordsTotal = fresh.size; wordsDone = 0; served = 0
+                        inWords = true
+                    }
                 }
             }
-        }
 
-        sections.forEachIndexed { n, stepIndex ->
-            RevisitButton(labels[n]) { onPickSection(stepIndex) }
-        }
+            sections.forEachIndexed { n, stepIndex ->
+                RevisitButton(labels[n]) { onPickSection(stepIndex) }
+            }
 
-        // Under the whole run rather than under the word button, so the choices read as one column
-        // of boxes. It answers the question the word button raises: does this count?
-        if (!cards.isNullOrEmpty()) {
-            Text(
-                when {
-                    countsToday == 0 ->
-                        "The words were reviewed already today, so another pass is free practice: " +
-                            "it will not move their schedule. Tomorrow it counts."
-                    countsToday == cards.size ->
-                        "The words count as a real review: answer well and they space out further, " +
-                            "miss one and it comes back sooner."
-                    else ->
-                        "$countsToday of the ${cards.size} words count towards spacing today; the " +
-                            "rest were reviewed already and ride along as practice."
-                },
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(top = 4.dp)
-            )
+            Spacer(Modifier.height(10.dp))   // with the 10 above it: twice the gap of the run
+            Button(onClick = onExit) { Text("Exit") }
         }
-
-        RevisitButton("Exit", modifier = Modifier.padding(top = 8.dp), onClick = onExit)
         Spacer(Modifier.height(24.dp))
     }
 }
 
-/** One choice on the revisit screen: a bordered box with its label centred, nothing else. */
+/** One choice on the revisit screen: the app's outlined action, sized to its own label. */
 @Composable
-private fun RevisitButton(
-    label: String,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit
-) {
-    Surface(
-        shape = RoundedCornerShape(12.dp),
-        color = MaterialTheme.colorScheme.surface,
-        contentColor = MaterialTheme.colorScheme.onSurface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-        modifier = modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-    ) {
-        Text(
-            label,
-            style = MaterialTheme.typography.bodyLarge,
-            fontWeight = FontWeight.SemiBold,
-            textAlign = TextAlign.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 18.dp, horizontal = 12.dp)
-        )
-    }
+private fun RevisitButton(label: String, onClick: () -> Unit) {
+    OutlinedButton(
+        onClick = onClick,
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
+    ) { Text(label) }
 }
 
