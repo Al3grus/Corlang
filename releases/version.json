@@ -1,6 +1,6 @@
 {
-  "versionCode": 246,
-  "versionName": "0.90.12",
-  "notes": "Opening a section from the lesson review no longer pops. The exercise waited on a resume load before drawing anything, and a replay has nothing to resume, so the counter, the progress bar and the question landed a frame after the card above them. Same for the wrap-up's Start button.",
+  "versionCode": 247,
+  "versionName": "0.90.13",
+  "notes": "The lesson card now reshapes instead of being swapped. Browsing the journey used to cross-fade two whole cards laid out at their own heights, so the action button and the card's bottom edge dissolved from one position to the other while the box slid underneath them. Each part of the card now animates its own height: Start, Continue and Revisit slide into place, and the bottom of the box glides open or shut.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
