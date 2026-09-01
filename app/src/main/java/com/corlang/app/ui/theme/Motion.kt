@@ -57,19 +57,17 @@ object Motion {
 
     /**
      * A RUN of things that arrive together - a column of choices, a list that has just loaded.
+     * Each one fades for [CASCADE_FADE_MS], starting [CASCADE_STEP_MS] after the one above it.
      *
-     * Each one fades for [CASCADE_FADE_MS] and starts [CASCADE_STEP_MS] after the one above it,
-     * which is half its own fade: the overlap is what carries the direction, top to bottom. Any
-     * less overlap and the run lands as a single block with a smear on it; any more and it stops
-     * being one movement down the column and becomes a queue of separate fades to wait through.
-     *
-     * Half the ordinary fade, not the whole one. A run is many small arrivals rather than one
-     * thing changing, and the eye is following the LAST of them: at full length the tail of a run
-     * of six was still coming in three quarters of a second after the screen landed, which is a
-     * screen you have to wait for rather than one that assembles as you look at it.
+     * These two are separate knobs and the mistake is to tie them together. Shortening the fade
+     * to shorten the run is what makes a cascade look cheap: a hundred milliseconds is six frames,
+     * which the eye reads as things appearing one after another rather than as things fading in.
+     * The fade stays the app's ordinary fade, long enough to actually see, and the RUN is kept
+     * short by the step instead - a quarter of a fade, so four of them are on their way at any
+     * moment and the column arrives as one wave rather than as a queue of separate arrivals.
      */
-    const val CASCADE_FADE_MS = FADE_IN_MS / 2
-    const val CASCADE_STEP_MS = CASCADE_FADE_MS / 2
+    const val CASCADE_FADE_MS = FADE_IN_MS
+    const val CASCADE_STEP_MS = FADE_IN_MS / 4
 
     fun enter(reduced: Boolean): EnterTransition =
         if (reduced) EnterTransition.None
