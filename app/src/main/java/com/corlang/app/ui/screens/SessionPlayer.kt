@@ -1000,9 +1000,10 @@ fun SessionPlayer(
                                 intro = "One more try at what got away earlier.",
                                 questions = repairs
                             ),
-                            loadResumeState = {
-                                val ids = if (practice) emptyList()
-                                else container.progress.dayTaskChecks(lang, day.day).first()
+                            // A replay resumes nothing, so it passes no loader at all and
+                            // the exercise paints with the step card above it.
+                            loadResumeState = if (practice) null else suspend {
+                                val ids = container.progress.dayTaskChecks(lang, day.day).first()
                                     .map { it.itemId }
                                 val qPrefix = "${s.id}::q"
                                 ExerciseResume(
@@ -1030,9 +1031,9 @@ fun SessionPlayer(
                             // ("<stepId>::q<i>") + whether any answer was missed ("<stepId>::missed").
                             // Legacy count-style "<stepId>::x<n>" checks (pre-0.20.12) map to "the
                             // first n questions" — the best a bare count can say.
-                            loadResumeState = {
-                                val ids = if (practice) emptyList()
-                                else container.progress.dayTaskChecks(lang, day.day).first()
+                            // Null in a replay: see the mistakes step above.
+                            loadResumeState = if (practice) null else suspend {
+                                val ids = container.progress.dayTaskChecks(lang, day.day).first()
                                     .map { it.itemId }
                                 val qPrefix = "${s.id}::q"
                                 val solved = ids.filter { it.startsWith(qPrefix) }
@@ -1066,9 +1067,10 @@ fun SessionPlayer(
                         // "<stepId>::q<i>" = cleared, "<stepId>::w<i>#<n>" = the n-th miss on i.
                         // A missed item is re-queued now, so a bare count of answers no longer
                         // says where the learner is - only which items are still owed does.
-                        loadResume = {
-                            val ids = if (practice) emptyList()
-                            else container.progress.dayTaskChecks(lang, day.day).first()
+                        // Null in a replay, like the exercise above: no loader, no gate, and
+                        // the Start button arrives with the panel rather than a frame after it.
+                        loadResume = if (practice) null else suspend {
+                            val ids = container.progress.dayTaskChecks(lang, day.day).first()
                                 .map { it.itemId }
                             recallResumeFrom(ids, s.id)
                         },
