@@ -23,6 +23,56 @@ data class LearnerProfile(
 )
 
 /**
+ * What counts as a name.
+ *
+ * The field used to accept anything non-blank, so "." was a valid name and the app then said
+ * "Good morning, ." every morning and put it in the daily notification. The name is written into
+ * sentences the learner reads - the greeting, the reminder, the tutor addressing them - so the
+ * one thing it must have is a letter.
+ *
+ * **Why a letter and not a letter count.** The obvious rule, "at least two characters", rejects
+ * real names: single-character given names are ordinary in Chinese and Korean, and plenty of
+ * people go by one initial. Rejecting a real person's actual name to keep out a full stop is the
+ * worse error of the two, so the floor is ONE letter and the rule is about what the characters
+ * ARE, not how many there are.
+ *
+ * **Why not letters only.** Anne-Marie, O'Brien and Jan Willem are names. A hyphen, an apostrophe
+ * and a space are parts of names, not punctuation to strip - so they are allowed BETWEEN letters
+ * and nowhere else, which still leaves "." and "..." and "-" with nothing to stand on.
+ *
+ * [MAX_LENGTH] is about the notification, not about the person: the reminder reads
+ * "Vrijeme je za hrvatski, <name>!" on one line of a system notification.
+ */
+object LearnerName {
+    const val MAX_LENGTH = 24
+
+    /** Letters plus the joiners that appear INSIDE names. `’` is the apostrophe phone keyboards give. */
+    private const val JOINERS = " -'’"
+
+    /** Trim, and collapse runs of whitespace, so "  Anne   Marie " saves as "Anne Marie". */
+    fun clean(raw: String): String = raw.trim().replace(Regex("\\s+"), " ")
+
+    /**
+     * A learner-facing reason the name is unusable, or null when it is fine. Blank is null too:
+     * an empty field is not yet an error, it is just not finished.
+     */
+    fun problem(raw: String): String? {
+        val name = clean(raw)
+        if (name.isEmpty()) return null
+        if (name.length > MAX_LENGTH) return "That's longer than $MAX_LENGTH characters."
+        if (name.any { it.isDigit() }) return "Names here are letters only, without numbers."
+        if (name.any { !it.isLetter() && it !in JOINERS }) return "Please use letters only."
+        if (name.none { it.isLetter() }) return "Please use at least one letter."
+        // A joiner at either end is the "." case wearing a different hat: "-Ana", "Ana ".
+        if (name.first() in JOINERS || name.last() in JOINERS) return "Please start and end with a letter."
+        return null
+    }
+
+    /** Ready to save: something was typed, and nothing is wrong with it. */
+    fun isValid(raw: String): Boolean = clean(raw).isNotEmpty() && problem(raw) == null
+}
+
+/**
  * The learner's appearance choice. [UNSET] is a real state, not a missing value: it means the
  * question has never been asked, which is exactly what makes the first-run theme picker appear.
  * Once answered it is only ever LIGHT or DARK — Corlang never follows the system setting.

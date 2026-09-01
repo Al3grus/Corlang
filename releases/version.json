@@ -1,6 +1,6 @@
 {
-  "versionCode": 231,
-  "versionName": "0.88.1",
-  "notes": "Corlang is now signed with its own release key. Every build before 0.88.x was signed with Android's shared debug key, which names no developer and cannot be registered with Google. Because the signature changes, Android will refuse to install this build on top of an older one. Do this once, in order: Settings > Backup & restore > Back up (save the file somewhere outside the app), uninstall Corlang, install this APK, then Settings > Backup & restore > Restore. Your streak, learned words and lesson progress come back with it. Updates after this one are ordinary again.",
+  "versionCode": 232,
+  "versionName": "0.89.0",
+  "notes": "The welcome page is now just the three words, centred, with the logo removed. The page that follows no longer promises full mock exams in the official format at every level: mocks exist at A1, A2 and B1, their writing and speaking sections are not scored, and the listening passages are read by the device voice, so they are described as modelled on the official ones. The name field now needs a letter in it, so a name like \".\" can no longer end up in your morning greeting; hyphens, apostrophes and spaces are still welcome, and a one-letter name is still a name.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
