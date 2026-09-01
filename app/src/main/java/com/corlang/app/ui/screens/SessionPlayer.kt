@@ -81,6 +81,8 @@ import com.corlang.app.ui.navigation.Dest
 import com.corlang.app.ui.theme.CorlangColors
 import com.corlang.app.ui.theme.Motion
 import com.corlang.app.ui.theme.rememberReducedMotion
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -160,6 +162,15 @@ private const val WRAPUP_INTRO_OUT = 0.65f
  * and the middle one is a blank blue slab. One short word can afford to be early.
  */
 private const val WRAPUP_TITLE_IN = 0.70f
+
+/**
+ * Fraction of the collapse at which the lesson's own content starts arriving, and how long it
+ * then takes. It overlaps the tail of the collapse on purpose - waiting for the panel to stop
+ * would put a hole between the two halves of one gesture - but it outlives it by half a second,
+ * so the questions rise into a screen that has already come to rest rather than racing it there.
+ */
+private const val WRAPUP_CONTENT_IN = 0.80f
+private const val WRAPUP_CONTENT_MS = 500
 
 /** Opacity of the intro text, and of the Start button below it, at a given point in the collapse. */
 private fun wrapupIntroAlpha(collapse: Float): Float =
@@ -609,6 +620,12 @@ fun SessionPlayer(
     val wrapupCollapse = remember(day.day, startAt) {
         Animatable(if (wrapupStarted) 1f else 0f)
     }
+    /** The second half of that gesture: see [WRAPUP_CONTENT_IN]. */
+    val wrapupContent = remember(day.day, startAt) {
+        Animatable(if (wrapupStarted) 1f else 0f)
+    }
+    /** Held so a skip can cancel the collapse mid-flight instead of racing it to the end. */
+    var wrapupRun by remember(day.day, startAt) { mutableStateOf<Job?>(null) }
     // With the keyboard up on a wrap-up question, the session chrome steps back so the prompt and
     // the field are what the eye lands on.
     val wrapupTyping = wrapupStarted && WindowInsets.isImeVisible &&
@@ -811,11 +828,16 @@ fun SessionPlayer(
             // any tap during the collapse ends it. The Start button is a descendant and still
             // gets the event first; this only catches taps that land nowhere in particular.
             val collapsing = s.kind == StepKind.WRAPUP && wrapupStarted &&
-                wrapupCollapse.value < 1f
+                (wrapupCollapse.value < 1f || wrapupContent.value < 1f)
             Column(
                 modifier = Modifier.fillMaxWidth().then(
                     if (collapsing) Modifier.pointerInput(Unit) {
-                        detectTapGestures { scope.launch { wrapupCollapse.snapTo(1f) } }
+                        detectTapGestures {
+                            wrapupRun?.cancel()
+                            scope.launch {
+                                wrapupCollapse.snapTo(1f); wrapupContent.snapTo(1f)
+                            }
+                        }
                     } else Modifier
                 )
             ) {
@@ -995,17 +1017,21 @@ fun SessionPlayer(
                                 .map { it.itemId }
                             recallResumeFrom(ids, s.id)
                         },
-                        // Not wrapupStarted: the shrink is what MAKES the room this block asks
-                        // for (WRAPUP_CHROME budgets for the collapsed bar), so a block laid out
-                        // before the panel lands measures itself against a screen still moving.
-                        started = collapse >= 1f,
+                        // The block is composed from the tap, not from the landing: it is what
+                        // the region under the panel GROWS INTO, and it can only be grown into
+                        // if it has been laid out and measured. It is held at contentAlpha 0
+                        // until the room for it exists.
+                        started = wrapupStarted,
                         startAlpha = wrapupIntroAlpha(collapse),
+                        collapse = collapse,
+                        contentAlpha = wrapupContent.value,
                         onStart = { animated ->
                             if (!wrapupStarted) {
                                 wrapupStarted = true
-                                scope.launch {
-                                    if (!animated || reducedMotion) wrapupCollapse.snapTo(1f)
-                                    else {
+                                wrapupRun = scope.launch {
+                                    if (!animated || reducedMotion) {
+                                        wrapupCollapse.snapTo(1f); wrapupContent.snapTo(1f)
+                                    } else {
                                         val spec = tween<Float>(
                                             WRAPUP_COLLAPSE_MS, easing = FastOutSlowInEasing
                                         )
@@ -1018,12 +1044,22 @@ fun SessionPlayer(
                                                 tween(WRAPUP_COLLAPSE_MS, easing = FastOutSlowInEasing)
                                             )
                                         }
+                                        launch {
+                                            delay((WRAPUP_COLLAPSE_MS * WRAPUP_CONTENT_IN).toLong())
+                                            wrapupContent.animateTo(
+                                                1f, tween(WRAPUP_CONTENT_MS, easing = FastOutSlowInEasing)
+                                            )
+                                        }
                                         wrapupCollapse.animateTo(1f, spec)
                                     }
                                 }
-                            } else if (wrapupCollapse.value < 1f) {
-                                // Second tap on a Start button that is already fading: a skip.
-                                scope.launch { wrapupCollapse.snapTo(1f) }
+                            } else if (wrapupCollapse.value < 1f || wrapupContent.value < 1f) {
+                                // A tap on a Start button that is already fading, or anywhere in
+                                // the region below it: end the gesture rather than replay it.
+                                wrapupRun?.cancel()
+                                scope.launch {
+                                    wrapupCollapse.snapTo(1f); wrapupContent.snapTo(1f)
+                                }
                             }
                         },
                         onAnswered = { i, ok, attempt ->
