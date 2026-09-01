@@ -55,20 +55,6 @@ object Motion {
     const val SCREEN_FADE_OUT_MS = FADE_OUT_MS * 2
     const val SCREEN_FADE_IN_MS = FADE_IN_MS * 2
 
-    /**
-     * A RUN of things that arrive together - a column of choices, a list that has just loaded.
-     * Each one fades for [CASCADE_FADE_MS], starting [CASCADE_STEP_MS] after the one above it.
-     *
-     * These two are separate knobs and the mistake is to tie them together. Shortening the fade
-     * to shorten the run is what makes a cascade look cheap: a hundred milliseconds is six frames,
-     * which the eye reads as things appearing one after another rather than as things fading in.
-     * The fade stays the app's ordinary fade, long enough to actually see, and the RUN is kept
-     * short by the step instead - a quarter of a fade, so four of them are on their way at any
-     * moment and the column arrives as one wave rather than as a queue of separate arrivals.
-     */
-    const val CASCADE_FADE_MS = FADE_IN_MS
-    const val CASCADE_STEP_MS = FADE_IN_MS / 4
-
     fun enter(reduced: Boolean): EnterTransition =
         if (reduced) EnterTransition.None
         else fadeIn(tween(SCREEN_FADE_IN_MS, delayMillis = SCREEN_FADE_OUT_MS))
@@ -101,17 +87,10 @@ object Motion {
  * copy of itself - and keeping a text field alive across a content change costs the keyboard.
  */
 @Composable
-fun rememberAppearAlpha(
-    key: Any? = Unit,
-    durationMillis: Int = Motion.FADE_IN_MS,
-    /** Held transparent this long first - a run's place in its own cascade. See CASCADE_STEP_MS. */
-    delayMillis: Int = 0
-): Float {
+fun rememberAppearAlpha(key: Any? = Unit, durationMillis: Int = Motion.FADE_IN_MS): Float {
     val reduced = rememberReducedMotion()
-    val alpha = remember(key, reduced, delayMillis) { Animatable(if (reduced) 1f else 0f) }
-    LaunchedEffect(key, reduced, delayMillis) {
-        if (!reduced) alpha.animateTo(1f, tween(durationMillis, delayMillis = delayMillis))
-    }
+    val alpha = remember(key, reduced) { Animatable(if (reduced) 1f else 0f) }
+    LaunchedEffect(key, reduced) { if (!reduced) alpha.animateTo(1f, tween(durationMillis)) }
     return alpha.value
 }
 

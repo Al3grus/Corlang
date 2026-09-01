@@ -215,29 +215,34 @@ fun LessonRevisit(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.verticalScroll(rememberScrollState())
             ) {
+                /*
+                 * The choices arrive together, on the app's screen-change fade: opening this
+                 * chooser IS a screen change, and it has no business inventing motion of its own
+                 * for it. They were staggered top to bottom for three versions and it never
+                 * looked like anything but a list being dealt out - the order the buttons arrive
+                 * in is not information, and paying attention for it is not what the screen is
+                 * for. One fade, everything at once, the same length as a tab.
+                 *
+                 * It waits for the word block to load. The run fades in as ONE thing, so it has
+                 * to be all there before it starts: the flashcard button appearing at the top a
+                 * frame later, already opaque, is the pop this fade exists to avoid.
+                 */
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(10.dp),
-                    modifier = Modifier.width(IntrinsicSize.Max)
+                    modifier = Modifier
+                        .width(IntrinsicSize.Max)
+                        .alpha(
+                            if (cards == null) 0f
+                            else rememberAppearAlpha(durationMillis = Motion.SCREEN_FADE_IN_MS)
+                        )
                 ) {
-                    /*
-                     * The run arrives as one movement down the column: each choice starts fading
-                     * in when the one above it is half way there (Motion.CASCADE_STEP_MS), so the
-                     * screen reads top to bottom - here is the lesson, here are its parts, here is
-                     * the way out - instead of a block of look-alike buttons appearing at once.
-                     *
-                     * It waits for the word block to load, and this is the only reason the whole
-                     * run does. A cascade has to know how many things are in it and in what order
-                     * before it starts; starting without the flashcard button and inserting it at
-                     * the top a frame later would restart the run from a different first item.
-                     */
                     if (cards != null) {
-                        val hasWords = cards.isNotEmpty()
                         // The flashcards lead, because that is how the lesson itself opens. Offered
                         // only when this lesson actually introduced words the learner has met: a
                         // placement start can leave an early lesson's block behind entirely.
-                        if (hasWords) {
-                            RevisitButton("Review lesson words", order = 0) {
+                        if (cards.isNotEmpty()) {
+                            RevisitButton("Review lesson words") {
                                 scope.launch {
                                     val fresh =
                                         container.words.lessonWords(lang, day.day, perLesson)
@@ -249,20 +254,12 @@ fun LessonRevisit(
                             }
                         }
 
-                        val firstSection = if (hasWords) 1 else 0
                         sections.forEachIndexed { n, stepIndex ->
-                            RevisitButton(labels[n], order = firstSection + n) {
-                                onPickSection(stepIndex)
-                            }
+                            RevisitButton(labels[n]) { onPickSection(stepIndex) }
                         }
 
                         Spacer(Modifier.height(10.dp))   // with the 10 above: twice the run's gap
-                        Button(
-                            onClick = onExit,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .alpha(cascadeAlpha(firstSection + sections.size))
-                        ) { Text("Exit") }
+                        Button(onClick = onExit, modifier = Modifier.fillMaxWidth()) { Text("Exit") }
                     }
                 }
             }
@@ -270,32 +267,13 @@ fun LessonRevisit(
     }
 }
 
-/**
- * One choice on the revisit screen: the app's outlined action, filling the run's shared width.
- *
- * [order] is its place in the cascade, counted from the top of the column.
- */
+/** One choice on the revisit screen: the app's outlined action, filling the run's shared width. */
 @Composable
-private fun RevisitButton(label: String, order: Int, onClick: () -> Unit) {
+private fun RevisitButton(label: String, onClick: () -> Unit) {
     OutlinedButton(
         onClick = onClick,
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
-        modifier = Modifier.fillMaxWidth().alpha(cascadeAlpha(order))
+        modifier = Modifier.fillMaxWidth()
     ) { Text(label, maxLines = 1) }
 }
-
-/**
- * Opacity of the [order]-th thing in a run that arrives top to bottom.
- *
- * The run starts one step IN, rather than with its first item at no delay at all. At zero the
- * first choice began arriving in the same frame as the screen carrying it, so it read as having
- * been there all along and the cascade appeared to start at its second item - the one thing in
- * the run that was not animated was the one the eye lands on first.
- */
-@Composable
-private fun cascadeAlpha(order: Int): Float =
-    rememberAppearAlpha(
-        durationMillis = Motion.CASCADE_FADE_MS,
-        delayMillis = (order + 1) * Motion.CASCADE_STEP_MS
-    )
 

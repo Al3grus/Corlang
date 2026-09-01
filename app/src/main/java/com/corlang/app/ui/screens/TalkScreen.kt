@@ -322,6 +322,21 @@ fun TalkScreen(container: AppContainer, lang: String) {
         // point of the screen. verticalScroll + Arrangement.Center centres while it fits and
         // scrolls when it does not (small screen, large font).
         if (messages.isEmpty() && !sending) {
+            // ABOVE the centred block, not inside it. This is a setting for the conversation
+            // about to happen, not one of the ways to start it, and centred with the starters it
+            // sat in the middle of the screen reading as the first item in the list of choices.
+            // Pinned to the top it is what it is: the state the tutor will run in, stated once,
+            // out of the way of the question the rest of the screen is asking.
+            TutorEnglishHelpToggle(
+                checked = englishHelp,
+                languageName = languageName,
+                onCheckedChange = { on ->
+                    container.appScope.launch {
+                        container.languagePrefs.setTutorEnglishHelp(lang, on)
+                    }
+                },
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
+            )
             Column(
                 Modifier
                     .weight(1f)
@@ -331,21 +346,12 @@ fun TalkScreen(container: AppContainer, lang: String) {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                TutorEnglishHelpToggle(
-                    checked = englishHelp,
-                    languageName = languageName,
-                    onCheckedChange = { on ->
-                        container.appScope.launch {
-                            container.languagePrefs.setTutorEnglishHelp(lang, on)
-                        }
-                    }
-                )
                 Text(
                     "How would you like to practise? ($level)",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = androidx.compose.ui.text.style.TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth().padding(top = 24.dp, bottom = 12.dp)
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp)
                 )
                 // Clear English labels (an A0 could not read the old target-language
                 // starters); the tutor replies in $languageName using the progress context.
@@ -478,13 +484,14 @@ fun TalkScreen(container: AppContainer, lang: String) {
 private fun TutorEnglishHelpToggle(
     checked: Boolean,
     languageName: String,
-    onCheckedChange: (Boolean) -> Unit
+    onCheckedChange: (Boolean) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Surface(
         color = MaterialTheme.colorScheme.surfaceVariant,
         contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
         shape = RoundedCornerShape(14.dp),
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clickable { onCheckedChange(!checked) }
     ) {
