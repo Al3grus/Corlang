@@ -152,7 +152,8 @@ fun PaywallScreen(
             // Every tier at once, cheapest first, rather than one rung at a time. Unlocks are
             // cumulative and Play has no upgrade pricing for one-time products, so a learner who
             // climbs pays for each rung again. The only way that is a fair deal is if the whole
-            // ladder was on screen when they chose — hence the shelf, and the note under it.
+            // ladder was on screen when they chose — hence the shelf, with what each tier
+            // includes stated on the card itself.
             paidLevels.forEach { level ->
                 val product = BillingManager.levelProduct(lang, level)
                 val owned = PremiumManager.key(lang, level) in unlockedLevels
@@ -173,16 +174,6 @@ fun PaywallScreen(
                     primary = isTop,
                     owned = owned,
                     onBuy = { activity?.let { container.billing.purchaseLevel(it, product) } }
-                )
-            }
-            if (top != null) {
-                Text(
-                    "Each unlock includes the levels beneath it, so nothing you own is ever lost. " +
-                        "But they are separate payments and Google Play cannot discount the next " +
-                        "one: buying $top now costs less than buying the levels below it first " +
-                        "and $top afterwards.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         } else {
@@ -223,32 +214,18 @@ fun PaywallScreen(
                     }
                 }
             )
-            // Says what this does NOT gate. A learner weighing a recurring charge is really
-            // asking "will the app stop working without it", and the honest answer sells better
-            // than pretending the question was not asked.
-            Text(
-                "Everything else keeps working without it: the lessons you own, your review " +
-                    "deck, your streak and your progress.",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
         }
 
         Spacer(Modifier.height(4.dp))
-        OutlinedButton(onClick = onClose, modifier = Modifier.fillMaxWidth()) { Text("Not now") }
-        // Per mode, because the two products are billed nothing alike. This block used to be
-        // shared and told buyers of a ONE-TIME course unlock that "subscriptions renew until
-        // cancelled" — false on that screen, and the kind of false that earns refund requests.
+        // The only line the cards do not already carry. Everything a tier includes, and the
+        // one-time-vs-monthly wording, lives inside the card the learner is reading; repeating
+        // it in a paragraph under the shelf only pushed the exit button off the screen.
         Text(
-            if (levelId != null)
-                "A one-time purchase, not a subscription: nothing renews and there is nothing " +
-                    "to cancel. Prices include tax and are set by Google Play for your region."
-            else
-                "Renews monthly until you cancel, which you can do any time in Google Play. " +
-                    "Prices include tax and are set by Google Play for your region.",
+            "Prices include tax and are set by Google Play for your region.",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
+        OutlinedButton(onClick = onClose, modifier = Modifier.fillMaxWidth()) { Text("Not now") }
     }
 }
 
