@@ -51,9 +51,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
+import com.corlang.app.data.prefs.LearnerName
 import com.corlang.app.data.prefs.LearnerProfile
-import com.corlang.app.ui.components.CorlangLogo
-import com.corlang.app.ui.components.LogoVariant
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -140,7 +139,7 @@ fun OnboardingScreen(
                 // learner who re-runs onboarding ends up with nothing stored rather than a
                 // stale answer to a question the app no longer asks.
                 LearnerProfile(
-                    name = name.trim(),
+                    name = LearnerName.clean(name),
                     gender = gender,
                     from = "",
                     livesIn = "",
@@ -247,15 +246,16 @@ fun OnboardingScreen(
         ) { animatedStep ->
         when (animatedStep) {
             // ---- Welcome: what this app is, before it asks for anything ----
-            // Just "Welcome!" and the lockup, with no body at all. The thesis sentence that
-            // used to sit here said what the app believes; the very next page says what the
-            // learner will actually do, which is the same argument made concretely. Keeping
-            // both meant asserting the method before showing it.
+            // The greeting IS the page: three words stacked one per line, centred, and nothing
+            // else. The lockup used to sit above it, which said the name twice - once as a mark
+            // and again in the title - so the mark went and the words carry it. No body either:
+            // the thesis sentence that used to be here said what the app believes, while the
+            // very next page says what the learner will actually do, which is the same argument
+            // made concretely. Keeping both meant asserting the method before showing it.
             STEP_WELCOME -> StepFrame(
                 gap = GAP_INTRO,
-                title = "Welcome!",
+                title = "Welcome\nto\nCorlang!",
                 centered = true,
-                header = { CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp) },
                 actions = {
                     Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
                         Text("Get started →")
@@ -294,11 +294,17 @@ fun OnboardingScreen(
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
                 )
-                // "mock exams in the official format" and not "one after every level": mocks do
-                // not exist at every level in every course, so the stronger claim would be false.
-                // The format really is the official one.
+                // Three claims came out of this sentence, each of them false in a different way.
+                // "per level": mocks exist at A1, A2 and B1 only, so a learner on day 1 (A0) or
+                // heading past B1 is promised one that is not there. "full": the WRITING and
+                // SPEAKING sections carry no scored items - they are there for shape, not for
+                // marking. "in the official format": the structure and section names really are
+                // taken from the official papers, but the listening passages are read by the
+                // device voice rather than being the exam's own audio, and an honest sentence
+                // cannot call that the official format. "Modelled on" is the true claim, and it
+                // is still a good one.
                 Text(
-                    "Quizzes and full mock exams in the official format per level, and an " +
+                    "Quizzes as you go, mock exams modelled on the official ones, and an " +
                         "optional AI tutor for conversation practice and written feedback.",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(top = 14.dp)
@@ -373,16 +379,21 @@ fun OnboardingScreen(
                 actions = {
                     Button(
                         onClick = { go(+1) },
-                        enabled = name.isNotBlank(),
+                        enabled = LearnerName.isValid(name),
                         modifier = Modifier.fillMaxWidth()
                     ) { Text("Next →") }
                 }
             ) {
+                // Say what is wrong while they are still typing, rather than leaving Next dead
+                // with no explanation. Blank is not an error - it is just not finished yet.
+                val nameProblem = LearnerName.problem(name)
                 OutlinedTextField(
                     value = name,
                     onValueChange = { name = it },
                     label = { Text("Your name") },
                     singleLine = true,
+                    isError = nameProblem != null,
+                    supportingText = nameProblem?.let { { Text(it) } },
                     modifier = Modifier.fillMaxWidth()
                 )
             }
