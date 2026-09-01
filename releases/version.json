@@ -1,6 +1,6 @@
 {
-  "versionCode": 240,
-  "versionName": "0.90.6",
-  "notes": "The wrap-up keeps the keyboard. Checking an answer used to lock the field, and every way of locking a text field also ends its input session, so the keyboard left and came back for all eight items. The answer is still uneditable once graded; the field just no longer says so by going away. And the revisit chooser's run is twice as quick and now starts with its first button: at no delay at all, the top choice arrived in the same frame as the screen and read as having been there all along, so the one thing the eye lands on first was the one thing that never animated.",
+  "versionCode": 241,
+  "versionName": "0.90.7",
+  "notes": "Putting the keyboard away in the wrap-up brought the screen back in two parts: the header and the progress bar returned with the keyboard, and the \"0/8 · 8 left\" counter a moment later, on a clock of its own. It was the last thing still animating off whether the keyboard is visible rather than off where the keyboard actually is. One clock now, so the screen comes back all at once.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

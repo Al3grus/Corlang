@@ -1059,6 +1059,9 @@ fun SessionPlayer(
                     StepKind.WRAPUP -> WrapupRecall(
                         container, lang, day,
                         fillBelowCounter = wrapupFill,
+                        // The counter over the question is session furniture like the header and
+                        // the progress bar, and steps back on the same clock as both.
+                        chromeAlpha = chromeAlpha,
                         // Same persistence scheme as EXERCISE, per ITEM rather than per answer:
                         // "<stepId>::q<i>" = cleared, "<stepId>::w<i>#<n>" = the n-th miss on i.
                         // A missed item is re-queued now, so a bare count of answers no longer
