@@ -1,6 +1,6 @@
 {
-  "versionCode": 247,
-  "versionName": "0.90.13",
-  "notes": "The lesson card now reshapes instead of being swapped. Browsing the journey used to cross-fade two whole cards laid out at their own heights, so the action button and the card's bottom edge dissolved from one position to the other while the box slid underneath them. Each part of the card now animates its own height: Start, Continue and Revisit slide into place, and the bottom of the box glides open or shut.",
+  "versionCode": 248,
+  "versionName": "0.90.14",
+  "notes": "A lesson with no words due no longer stops at an empty review step. It used to end with a screen that said \"Review done\" over a Next button, one tap between the wrap-up and the finish that asked nothing. When nothing is due, the wrap-up now runs straight into marking the lesson complete; when cards are due, the review step is exactly where it was.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
