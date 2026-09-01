@@ -56,16 +56,20 @@ object Motion {
     const val SCREEN_FADE_IN_MS = FADE_IN_MS * 2
 
     /**
-     * The gap between one thing arriving and the next, for a RUN of things that arrive together:
-     * a column of choices, a list that has just loaded. Half a fade, so each one starts while the
-     * one above it is still coming in.
+     * A RUN of things that arrive together - a column of choices, a list that has just loaded.
      *
-     * Half is the whole point. Any less and the run lands as a single block with a smear on it;
-     * any more and it stops being one movement down the column and becomes a queue of separate
-     * fades the eye has to wait through. At half, the overlap carries the direction - top to
-     * bottom - which is the only thing the stagger is there to say.
+     * Each one fades for [CASCADE_FADE_MS] and starts [CASCADE_STEP_MS] after the one above it,
+     * which is half its own fade: the overlap is what carries the direction, top to bottom. Any
+     * less overlap and the run lands as a single block with a smear on it; any more and it stops
+     * being one movement down the column and becomes a queue of separate fades to wait through.
+     *
+     * Half the ordinary fade, not the whole one. A run is many small arrivals rather than one
+     * thing changing, and the eye is following the LAST of them: at full length the tail of a run
+     * of six was still coming in three quarters of a second after the screen landed, which is a
+     * screen you have to wait for rather than one that assembles as you look at it.
      */
-    const val CASCADE_STEP_MS = FADE_IN_MS / 2
+    const val CASCADE_FADE_MS = FADE_IN_MS / 2
+    const val CASCADE_STEP_MS = CASCADE_FADE_MS / 2
 
     fun enter(reduced: Boolean): EnterTransition =
         if (reduced) EnterTransition.None

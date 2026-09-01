@@ -284,8 +284,18 @@ private fun RevisitButton(label: String, order: Int, onClick: () -> Unit) {
     ) { Text(label, maxLines = 1) }
 }
 
-/** Opacity of the [order]-th thing in a run that arrives top to bottom. */
+/**
+ * Opacity of the [order]-th thing in a run that arrives top to bottom.
+ *
+ * The run starts one step IN, rather than with its first item at no delay at all. At zero the
+ * first choice began arriving in the same frame as the screen carrying it, so it read as having
+ * been there all along and the cascade appeared to start at its second item - the one thing in
+ * the run that was not animated was the one the eye lands on first.
+ */
 @Composable
 private fun cascadeAlpha(order: Int): Float =
-    rememberAppearAlpha(delayMillis = order * Motion.CASCADE_STEP_MS)
+    rememberAppearAlpha(
+        durationMillis = Motion.CASCADE_FADE_MS,
+        delayMillis = (order + 1) * Motion.CASCADE_STEP_MS
+    )
 
