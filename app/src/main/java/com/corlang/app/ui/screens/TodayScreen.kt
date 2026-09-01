@@ -1,8 +1,16 @@
 package com.corlang.app.ui.screens
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ContentTransform
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandHorizontally
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkHorizontally
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -42,6 +50,8 @@ import com.corlang.app.ui.components.GoalRing
 import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.navigation.Dest
+import com.corlang.app.ui.theme.Motion
+import com.corlang.app.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.launch
 import androidx.compose.ui.draw.alpha
 
@@ -61,6 +71,69 @@ private val tightLines = androidx.compose.ui.text.style.LineHeightStyle(
 
 /** [TodayScreen]'s revisit state: the chooser is up, nothing picked yet. */
 private const val REVISIT_CHOOSING = -1
+
+/**
+ * Everything the lesson card draws for one day, resolved into one value.
+ *
+ * Held as a unit deliberately. The card's slots animate independently, so a card assembled from
+ * live reads would start each slot's transition on its own schedule as the day's data trickled
+ * in — the title moving on the tap, the action label a frame or two later when Room answered.
+ * One value means one moment where the card changes, and every slot moves together.
+ */
+private data class LessonCardState(
+    val day: Int,
+    val level: String,
+    val breadcrumb: String,
+    val title: String,
+    val objective: String,
+    /** Today's goal ring belongs to today's card only. */
+    val showRing: Boolean,
+    /** Ahead of the lesson you are up to: the action is replaced by the locked banner. */
+    val locked: Boolean,
+    /** Behind the paywall: the action opens the paywall instead of the lesson. */
+    val levelLocked: Boolean,
+    val actionLabel: String
+)
+
+/**
+ * One slot of the lesson card changing what it holds: the app's fade-through, over a spring on
+ * the slot's OWN height.
+ *
+ * The height is the point. A slot that simply swapped its contents would leave everything below
+ * it to teleport — the action button jumping a line's worth of objective, the card's bottom
+ * border landing somewhere new between two frames. Animating each slot's height instead carries
+ * the rest of the card with it, so the button slides into its new position and the border
+ * follows the button.
+ *
+ * Clipped, so a slot still growing never paints over the one beneath it, and bounce-free
+ * ([Motion.snappy]) because a text box that overshoots its height reads as a wobble.
+ */
+private fun cardSlot(reduced: Boolean): ContentTransform =
+    if (reduced) {
+        ContentTransform(EnterTransition.None, ExitTransition.None, sizeTransform = null)
+    } else {
+        ContentTransform(
+            targetContentEnter = fadeIn(tween(Motion.FADE_IN_MS, delayMillis = Motion.FADE_OUT_MS)),
+            initialContentExit = fadeOut(tween(Motion.FADE_OUT_MS)),
+            sizeTransform = SizeTransform(clip = true) { _, _ -> Motion.snappy() }
+        )
+    }
+
+/**
+ * [cardSlot] for text swapped INSIDE something that stays put — the action button's label. The
+ * button never moves, so there is no height to carry anything: only the label's width animates,
+ * and unclipped, so a label wider than the one it replaces is not briefly cut off on its way in.
+ */
+private fun labelSwap(reduced: Boolean): ContentTransform =
+    if (reduced) {
+        ContentTransform(EnterTransition.None, ExitTransition.None, sizeTransform = null)
+    } else {
+        ContentTransform(
+            targetContentEnter = fadeIn(tween(Motion.FADE_IN_MS, delayMillis = Motion.FADE_OUT_MS)),
+            initialContentExit = fadeOut(tween(Motion.FADE_OUT_MS)),
+            sizeTransform = SizeTransform(clip = false) { _, _ -> Motion.snappy() }
+        )
+    }
 
 @Composable
 fun TodayScreen(
@@ -425,33 +498,29 @@ fun TodayScreen(
         // saying nothing worth a card — "starts with your N due words" was not even true, since
         // a lesson opens on its NEW words. One card, one thing to do.
         //
-        // The card cross-fades between days while the journey below stays put — browsing the
-        // journey changes only the thing the tap is about. Each animated
-        // instance collects ITS OWN day's step checks (keyed per day), so the outgoing card
-        // fades out with the old day's label and the incoming one fades in with the new day's
-        // — no shared state to flash the wrong ticks, and no full-screen load gate needed.
-        androidx.compose.animation.AnimatedContent(
-            targetState = day,
-            transitionSpec = {
-                // The explicit SizeTransform is the half that keeps the JOURNEY smooth: two
-                // days' cards differ in height (objective length, locked banner vs button), and
-                // without an animated size the container snaps to the new height, jolting
-                // everything below. With it, the card glides and the journey rides along.
-                ContentTransform(
-                    targetContentEnter = androidx.compose.animation.fadeIn(tween(220)),
-                    initialContentExit = androidx.compose.animation.fadeOut(tween(120)),
-                    sizeTransform = SizeTransform(clip = false) { _, _ -> tween(250) }
-                )
-            },
-            label = "lessonCard"
-        ) { d ->
-        val cardChecks by androidx.compose.runtime.key(d.day) {
-            container.progress.dayTaskChecks(lang, d.day).collectAsState(initial = null)
+        // ONE card that reshapes, never a card that gets replaced. It used to be an
+        // AnimatedContent wrapped around the whole Surface, and that is what made browsing the
+        // journey feel abrupt: two days' cards were laid out at their OWN heights and
+        // cross-faded, so the bottom border and the action button never TRAVELLED between the
+        // two positions — they dissolved from one place to the other while the container height
+        // slid underneath them, which is why the border cut across the button mid-transition.
+        //
+        // Now the Surface stays put and each SLOT inside it — breadcrumb, title, objective,
+        // action — cross-fades its own text over a spring-animated height of its own. Anything
+        // below a slot that grew or shrank is carried to its new position by that spring, so
+        // the action button slides into place, and the bottom of the card glides open or shut
+        // instead of jumping. The journey below rides the same springs, since the card is just
+        // a taller or shorter child of the page column.
+        val reducedMotion = rememberReducedMotion()
+        // Seeded from the target day's checks, which the page gate above already waited for. An
+        // unseeded null first frame reads as "not started", so the card would paint "Start
+        // Lesson 31 →" and then cross-fade it straight back out the moment Room answered.
+        val cardChecks by androidx.compose.runtime.key(day.day) {
+            container.progress.dayTaskChecks(lang, day.day)
+                .collectAsState(initial = if (day.day == targetDay) rawTargetChecks else null)
         }
         val doneIds = cardChecks.orEmpty().map { it.itemId }.toSet()
-        val cardSteps = remember(lang, d.day) {
-            buildSessionSteps(d, container.content.meta(lang).name)
-        }
+        val cardSteps = remember(lang, day.day) { buildSessionSteps(day, meta.name) }
         val actionSteps = cardSteps.filter { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
         // "Started" = you actually completed a step of THIS lesson (a persisted check), so
         // opening the lesson or a shared-word state never turns "Start" into "Continue".
@@ -466,8 +535,42 @@ fun TodayScreen(
                 else -> s.id in doneIds
             }
         }
-        val dDone = completed.contains(d.day)
-        val dLocked = lockedFor(d)
+        val dayLevelLocked = lockedFor(day)
+        val liveCard = LessonCardState(
+            day = day.day,
+            level = day.level,
+            breadcrumb = "${day.phase} · Week ${day.week} · ${day.level}",
+            title = day.title,
+            objective = day.objective,
+            showRing = day.day == targetDay,
+            // Days ahead of the one you're up to stay locked.
+            locked = day.day > targetDay,
+            levelLocked = dayLevelLocked,
+            actionLabel = when {
+                day.day > targetDay -> "Locked, finish Lesson $targetDay first. No skipping ahead."
+                dayLevelLocked -> "🔒 Unlock ${day.level} to continue"
+                completed.contains(day.day) -> "Revisit Lesson ${day.day} ✓"
+                lessonStarted -> "Continue Lesson ${day.day} ($stepsDone/${actionSteps.size} steps)"
+                day.day == targetDay -> "Start Lesson ${day.day} →"
+                else -> "Open Lesson ${day.day} →"
+            }
+        )
+        // Room answers a journey tap a frame or two after it lands, and the card is only worth
+        // animating if it changes ONCE per tap. Published live, a tap would fade in a lesson
+        // labelled "Open Lesson 12 →" from the empty gap and fade it straight back out for
+        // "Continue Lesson 12 (2/5 steps)" — two transitions for one tap, the second undoing
+        // the first. So the card holds the previous lesson until the new day's checks land.
+        // Keyed on cardChecks as well as the state: a day whose checks arrive EMPTY produces
+        // the same state it already had from the null gap, and on the state alone the hold
+        // would never lift.
+        var shownCard by remember { mutableStateOf(liveCard) }
+        LaunchedEffect(liveCard, cardChecks) { if (cardChecks != null) shownCard = liveCard }
+        val card = shownCard
+        // Held so the carry-over label does not read "0 more words" for the 90ms it spends
+        // fading out — the count that hides the button is the same count the button prints.
+        var lastDue by remember { mutableStateOf(dueNow) }
+        LaunchedEffect(dueNow) { if (dueNow > 0) lastDue = dueNow }
+
         Surface(
             color = MaterialTheme.colorScheme.surface,
             contentColor = MaterialTheme.colorScheme.onSurface,
@@ -490,21 +593,34 @@ fun TodayScreen(
                 // The level label and the ring share a row, centred on each other. The row is
                 // pinned to the ring's height whether or not the ring is drawn, so browsing to a
                 // day that has no ring does not change where the title sits.
-                //
-                // The ring is TODAY's goal, so it appears only on today's lesson card: browsing
-                // back to an old lesson hides it rather than implying that revisiting day 4
-                // moves today's goal.
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.heightIn(min = 44.dp)
                 ) {
-                    Text(
-                        "${d.phase} · Week ${d.week} · ${d.level}",
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.weight(1f)
-                    )
-                    if (d.day == targetDay) {
+                    AnimatedContent(
+                        targetState = card.breadcrumb,
+                        transitionSpec = { cardSlot(reducedMotion) },
+                        modifier = Modifier.weight(1f),
+                        label = "lessonBreadcrumb"
+                    ) { text ->
+                        Text(
+                            text,
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                    // The ring is TODAY's goal, so it appears only on today's lesson card:
+                    // browsing back to an old lesson hides it rather than implying that
+                    // revisiting day 4 moves today's goal. It shrinks out sideways rather than
+                    // blinking off, so the label beside it widens into the space it leaves.
+                    AnimatedVisibility(
+                        visible = card.showRing,
+                        enter = if (reducedMotion) EnterTransition.None else
+                            fadeIn(tween(Motion.FADE_IN_MS, delayMillis = Motion.FADE_OUT_MS)) +
+                                expandHorizontally(Motion.snappy()),
+                        exit = if (reducedMotion) ExitTransition.None else
+                            fadeOut(tween(Motion.FADE_OUT_MS)) + shrinkHorizontally(Motion.snappy())
+                    ) {
                         GoalRing(
                             progress = ringProgress,
                             label = if (ringProgress >= 1f) "✓"
@@ -518,59 +634,86 @@ fun TodayScreen(
                 // beside the ring. The label centres in a 44dp row, which leaves ~12dp of that
                 // row below the label text; with the card's 12dp between children that puts 24
                 // of visible air between the two titles.
-                Text(
-                    d.title,
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold
-                )
+                AnimatedContent(
+                    targetState = card.title,
+                    transitionSpec = { cardSlot(reducedMotion) },
+                    label = "lessonTitle"
+                ) { text ->
+                    Text(
+                        text,
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
                 SectionTitle("In this lesson you will")
                 // bodyLarge + a 2-line cap keeps the card compact on standard phones (the full
                 // objective is repeated inside the lesson itself, so a trim here loses nothing).
-                Text(
-                    d.objective,
-                    style = MaterialTheme.typography.bodyLarge,
-                    maxLines = 2,
-                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
-                )
+                // The cap is also what makes this slot worth animating: one day's objective
+                // wraps to two lines and the next day's to one, and that single line of
+                // difference is the distance everything below it has to travel.
+                AnimatedContent(
+                    targetState = card.objective,
+                    transitionSpec = { cardSlot(reducedMotion) },
+                    label = "lessonObjective"
+                ) { text ->
+                    Text(
+                        text,
+                        style = MaterialTheme.typography.bodyLarge,
+                        maxLines = 2,
+                        overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
+                    )
+                }
 
                 // The lesson action lives HERE, with the lesson it acts on — never on the
-                // streak hero. Days ahead of the one you're up to stay locked.
-                if (d.day > targetDay) {
-                    Surface(
-                        color = MaterialTheme.colorScheme.surfaceVariant,
-                        contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                        shape = RoundedCornerShape(12.dp),
-                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                    ) {
-                        Text(
-                            "Locked, finish Lesson $targetDay first. No skipping ahead.",
-                            style = MaterialTheme.typography.titleSmall,
-                            fontWeight = FontWeight.SemiBold,
-                            modifier = Modifier.padding(16.dp)
-                        )
-                    }
-                } else {
-                    // Outlined, not filled: a quiet bordered action that matches the card's
-                    // calm style instead of a full-color block.
-                    OutlinedButton(
-                        // Locked level → paywall; otherwise open the guided lesson.
-                        onClick = {
-                            if (dLocked) onOpenPaywall(d.level) else onInLessonChange(true)
-                        },
-                        border = androidx.compose.foundation.BorderStroke(
-                            1.dp, MaterialTheme.colorScheme.primary
-                        ),
-                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
-                    ) {
-                        Text(
-                            when {
-                                dLocked -> "🔒 Unlock ${d.level} to continue"
-                                dDone -> "Revisit Lesson ${d.day} ✓"
-                                lessonStarted -> "Continue Lesson ${d.day} ($stepsDone/${actionSteps.size} steps)"
-                                d.day == targetDay -> "Start Lesson ${d.day} →"
-                                else -> "Open Lesson ${d.day} →"
-                            }
-                        )
+                // streak hero. The locked banner is not a separate branch of the card but the
+                // same slot holding something else: the two are different heights, and
+                // animating between them is what keeps the bottom of the card from jumping
+                // when you browse from a lesson you can open to one you cannot.
+                AnimatedContent(
+                    targetState = card.locked,
+                    transitionSpec = { cardSlot(reducedMotion) },
+                    modifier = Modifier.fillMaxWidth(),
+                    label = "lessonAction"
+                ) { locked ->
+                    if (locked) {
+                        Surface(
+                            color = MaterialTheme.colorScheme.surfaceVariant,
+                            contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        ) {
+                            Text(
+                                card.actionLabel,
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold,
+                                modifier = Modifier.padding(16.dp)
+                            )
+                        }
+                    } else {
+                        // Outlined, not filled: a quiet bordered action that matches the card's
+                        // calm style instead of a full-color block.
+                        OutlinedButton(
+                            // Locked level → paywall; otherwise open the guided lesson.
+                            onClick = {
+                                if (card.levelLocked) onOpenPaywall(card.level)
+                                else onInLessonChange(true)
+                            },
+                            border = androidx.compose.foundation.BorderStroke(
+                                1.dp, MaterialTheme.colorScheme.primary
+                            ),
+                            modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
+                        ) {
+                            // The label changes far more often than the button does — start,
+                            // continue, revisit, unlock — so it cross-fades INSIDE a button that
+                            // stays exactly where it is. Only its width animates, and unclipped,
+                            // so a long label is never briefly truncated on its way in.
+                            AnimatedContent(
+                                targetState = card.actionLabel,
+                                transitionSpec = { labelSwap(reducedMotion) },
+                                contentAlignment = Alignment.Center,
+                                label = "lessonActionLabel"
+                            ) { text -> Text(text) }
+                        }
                     }
                 }
                 // The CARRY-OVER review, and only that. The lesson hands the learner their due
@@ -580,14 +723,21 @@ fun TodayScreen(
                 // that remainder, offered once the day is banked. It stays hidden BEFORE the
                 // lesson on purpose: draining the queue early would land the learner on the
                 // lesson's review step with nothing left to review.
-                if (d.day == targetDay && completedToday > 0 && dueNow > 0) {
+                //
+                // It grows in under the action rather than appearing at full height: this is
+                // the one thing that changes the card's height while the learner is looking at
+                // it, and it arrives the moment a lesson is banked.
+                AnimatedVisibility(
+                    visible = card.day == targetDay && completedToday > 0 && dueNow > 0,
+                    enter = Motion.revealEnter(reducedMotion),
+                    exit = Motion.revealExit(reducedMotion)
+                ) {
                     TextButton(
                         onClick = { onNavigate(Dest.WORDS.route) },
                         modifier = Modifier.fillMaxWidth()
-                    ) { Text("Review $dueNow more word${if (dueNow == 1) "" else "s"} →") }
+                    ) { Text("Review $lastDue more word${if (lastDue == 1) "" else "s"} →") }
                 }
             }
-        }
         }
 
         // The stepping-stones map: scroll your level's lessons, jump to any you've reached,
