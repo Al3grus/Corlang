@@ -644,16 +644,22 @@ private fun RecallRunner(
                     modifier = Modifier.padding(top = 6.dp)
                 )
                 Column(modifier = Modifier.fillMaxWidth().bringIntoViewRequester(bring)) {
-                    // readOnly, not disabled: disabling a focused field drops the focus, and
-                    // dropping the focus takes the keyboard down with it. Between Check and the
-                    // next question the keyboard would then animate away and straight back for
-                    // every single item. It is locked either way - onValueChange refuses input
-                    // once checked - the difference is only that the field keeps its focus.
+                    /*
+                     * Neither disabled nor readOnly once the answer is checked, and that is the
+                     * whole point: both of them end the field's input session, which takes the
+                     * keyboard down with it. Eight items then meant watching the keyboard leave
+                     * and come back eight times, and on the wrap-up - which is typed straight
+                     * through - that is most of what you would see it do.
+                     *
+                     * The lock is onValueChange refusing everything while `checked`, which is the
+                     * only lock that matters: the answer cannot be edited after it has been
+                     * graded. The verdict panel below says the item is over; the field does not
+                     * need to go grey to repeat it.
+                     */
                     OutlinedTextField(
                         value = input,
                         onValueChange = { if (!checked) input = it },
                         label = { Text("Your answer in $languageName") },
-                        readOnly = checked,
                         modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
                     )
                     androidx.compose.animation.AnimatedVisibility(

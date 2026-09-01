@@ -1,6 +1,6 @@
 {
-  "versionCode": 239,
-  "versionName": "0.90.5",
-  "notes": "Screen changes take twice as long, which is to say you can now see them. Switching tabs, opening Settings or the paywall, and stepping into Language or Course & tutor from Profile all fade through at the same doubled length, so moving around the app reads as movement rather than as a blink between two states. The Profile sub-pages were a simultaneous crossfade, the one shape the rest of the app avoids: both screens painted at once means the old one lingers over the new. They now leave before the next one arrives, like everything else.",
+  "versionCode": 240,
+  "versionName": "0.90.6",
+  "notes": "The wrap-up keeps the keyboard. Checking an answer used to lock the field, and every way of locking a text field also ends its input session, so the keyboard left and came back for all eight items. The answer is still uneditable once graded; the field just no longer says so by going away. And the revisit chooser's run is twice as quick and now starts with its first button: at no delay at all, the top choice arrived in the same frame as the screen and read as having been there all along, so the one thing the eye lands on first was the one thing that never animated.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
