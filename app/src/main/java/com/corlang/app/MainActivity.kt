@@ -4,11 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -68,6 +65,7 @@ import com.corlang.app.ui.screens.SettingsScreen
 import com.corlang.app.ui.screens.TodayScreen
 import com.corlang.app.ui.screens.WordsScreen
 import com.corlang.app.ui.theme.CorlangThemeSwap
+import androidx.compose.ui.draw.alpha
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -500,13 +498,21 @@ private fun CorlangApp(container: AppContainer) {
             }
         }
     ) { innerPadding ->
-        // One snappy fade for every tab switch. Kept short on purpose: a long crossfade keeps the
-        // OUTGOING tab painted while the incoming one is still populating its flows, so you'd see
-        // e.g. Today linger for a beat before Review resolves. 150ms is long enough to read as a
-        // soft fade (not a hard cut) but short enough that the old tab never lingers. Uniform
-        // across all destinations. Pairs with each screen's own load-gate so the incoming tab
-        // fades in already-populated rather than mid-load.
-        val tabFade = tween<Float>(durationMillis = 150)
+        // One fade-through for every tab switch. The bars never move - the top bar and the
+        // bottom nav are identical on every tab - so the whole change is carried by the page
+        // between them leaving and the next one arriving.
+        //
+        // Sequential, not a crossfade: the outgoing tab is gone (90ms) before the incoming one
+        // starts (210ms). The old 150ms simultaneous crossfade had to stay that short precisely
+        // because both tabs were painted at once - long enough to see was long enough to watch
+        // Today linger over a Review tab still resolving its flows - and 150ms with the outgoing
+        // tab up for all of it reads as a cut, which is what it looked like.
+        //
+        // Pairs with each screen's load gate, which now fades its content in on arrival
+        // (rememberAppearAlpha) instead of snapping it on. The gate was the other half of the
+        // instant feeling: the tab transition played over a blank page and the content popped in
+        // after it had already finished.
+        val reducedMotion = com.corlang.app.ui.theme.rememberReducedMotion()
         // The overlay comes away once the destination has had frames to compose and draw.
         //
         // Deliberately counted in FRAMES rather than waiting for currentRoute to equal the route
@@ -543,10 +549,22 @@ private fun CorlangApp(container: AppContainer) {
         NavHost(
             navController = navController,
             startDestination = Dest.TODAY.route,
-            enterTransition = { if (skipTabAnim) EnterTransition.None else fadeIn(tabFade) },
-            exitTransition = { if (skipTabAnim) ExitTransition.None else fadeOut(tabFade) },
-            popEnterTransition = { if (skipTabAnim) EnterTransition.None else fadeIn(tabFade) },
-            popExitTransition = { if (skipTabAnim) ExitTransition.None else fadeOut(tabFade) }
+            enterTransition = {
+                if (skipTabAnim) EnterTransition.None
+                else com.corlang.app.ui.theme.Motion.enter(reducedMotion)
+            },
+            exitTransition = {
+                if (skipTabAnim) ExitTransition.None
+                else com.corlang.app.ui.theme.Motion.exit(reducedMotion)
+            },
+            popEnterTransition = {
+                if (skipTabAnim) EnterTransition.None
+                else com.corlang.app.ui.theme.Motion.enter(reducedMotion)
+            },
+            popExitTransition = {
+                if (skipTabAnim) ExitTransition.None
+                else com.corlang.app.ui.theme.Motion.exit(reducedMotion)
+            }
         ) {
             // Tab switches share ONE uniform fade (below), so every tab — Review included —
             // animates identically. The old per-screen Crossfade(lang) wrappers are gone: they
@@ -631,7 +649,13 @@ private fun CorlangApp(container: AppContainer) {
                 androidx.activity.compose.BackHandler { showPlacement = false }
                 Surface(
                     color = MaterialTheme.colorScheme.background,
-                    modifier = Modifier.fillMaxSize()
+                    // Fades UP over the tab it covers, so opening a full-screen overlay is a
+                    // move rather than a cut. No exit fade: an overlay coming down hands off to
+                    // a page that is already composed underneath, and the frame-counted handoff
+                    // above depends on it going away the moment it is told to.
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .alpha(com.corlang.app.ui.theme.rememberAppearAlpha())
                 ) {
                     // Where "Leave" lands them: the course they were actually studying, if any.
                     val backTo = lastSettledLang?.takeIf { it != lang }
@@ -658,7 +682,13 @@ private fun CorlangApp(container: AppContainer) {
                 androidx.activity.compose.BackHandler { showSettings = false }
                 Surface(
                     color = MaterialTheme.colorScheme.background,
-                    modifier = Modifier.fillMaxSize()
+                    // Fades UP over the tab it covers, so opening a full-screen overlay is a
+                    // move rather than a cut. No exit fade: an overlay coming down hands off to
+                    // a page that is already composed underneath, and the frame-counted handoff
+                    // above depends on it going away the moment it is told to.
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .alpha(com.corlang.app.ui.theme.rememberAppearAlpha())
                 ) {
                     SettingsScreen(
                         container,
@@ -685,7 +715,13 @@ private fun CorlangApp(container: AppContainer) {
                 androidx.activity.compose.BackHandler { showPaywall = false }
                 Surface(
                     color = MaterialTheme.colorScheme.background,
-                    modifier = Modifier.fillMaxSize()
+                    // Fades UP over the tab it covers, so opening a full-screen overlay is a
+                    // move rather than a cut. No exit fade: an overlay coming down hands off to
+                    // a page that is already composed underneath, and the frame-counted handoff
+                    // above depends on it going away the moment it is told to.
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .alpha(com.corlang.app.ui.theme.rememberAppearAlpha())
                 ) {
                     PaywallScreen(
                         container, lang = lang, levelId = paywallLevel,

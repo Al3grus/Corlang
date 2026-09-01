@@ -43,6 +43,7 @@ import com.corlang.app.ui.components.InfoCard
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.navigation.Dest
 import kotlinx.coroutines.launch
+import androidx.compose.ui.draw.alpha
 
 /**
  * The Lesson tab = one button. It lands on the day after your last completed one, shows the
@@ -340,9 +341,14 @@ fun TodayScreen(
     // It was cut to 16 back when a streak hero stood above the card and the journey stones were
     // being cut mid-stone on a standard 360dp phone (field report 2026-07-27). Deleting that
     // hero freed far more height than this spends, so the stones still fit.
+    // The gate above holds the first paint until every flow has emitted; without this the page
+    // then SNAPS in at full opacity, which is most of what made arriving on this tab feel abrupt
+    // - the tab's own fade had already played out over a blank screen. One fade on arrival.
+    val pageAlpha = com.corlang.app.ui.theme.rememberAppearAlpha()
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .alpha(pageAlpha)
             .verticalScroll(rememberScrollState())
             .padding(horizontal = 16.dp)
             // 27 on top, not 24: see the header below. Everything else on the page is bordered,

@@ -47,6 +47,7 @@ import com.corlang.app.ui.components.OptionRow
 import com.corlang.app.ui.components.OptionState
 import com.corlang.app.ui.theme.CorlangColors
 import kotlinx.coroutines.launch
+import androidx.compose.ui.draw.alpha
 
 /**
  * End-of-level quiz checkpoint, opened from the journey: runs the level's quiz directly.
@@ -134,6 +135,15 @@ private fun QuizRunner(
 
     val q = questions[index]
 
+    // The bar walks to the next question instead of jumping, the same as the lesson player's.
+    val animatedProgress by androidx.compose.animation.core.animateFloatAsState(
+        targetValue = (index + 1f) / questions.size,
+        animationSpec = com.corlang.app.ui.theme.Motion.snappy(),
+        label = "quiz-progress"
+    )
+    val questionAlpha = com.corlang.app.ui.theme.rememberAppearAlpha(index)
+    val reducedMotion = com.corlang.app.ui.theme.rememberReducedMotion()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -147,7 +157,7 @@ private fun QuizRunner(
             color = MaterialTheme.colorScheme.primary
         )
         LinearProgressIndicator(
-            progress = { (index + 1f) / questions.size },
+            progress = { animatedProgress },
             drawStopIndicator = {},
             modifier = Modifier
                 .fillMaxWidth()
@@ -159,6 +169,10 @@ private fun QuizRunner(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
+        // The question fades in where the last one stood. The chrome above it (title, bar,
+        // counter) and the buttons below it hold still, so only the part that actually changed
+        // moves - the same rule the tab bars follow while the page between them changes.
+        Column(modifier = Modifier.fillMaxWidth().alpha(questionAlpha)) {
         InfoCard {
             Text(q.prompt, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
         }
@@ -291,9 +305,15 @@ private fun QuizRunner(
                 }
             }
         }
+        }
 
-        // Feedback after checking.
-        if (checked) {
+        // Feedback after checking. It opens under the question rather than arriving at full
+        // height, which used to shove the action button down the screen between two frames.
+        androidx.compose.animation.AnimatedVisibility(
+            visible = checked,
+            enter = com.corlang.app.ui.theme.Motion.revealEnter(reducedMotion),
+            exit = com.corlang.app.ui.theme.Motion.revealExit(reducedMotion)
+        ) {
             val feedback = CorlangColors.feedback
             Surface(
                 shape = RoundedCornerShape(10.dp),
