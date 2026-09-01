@@ -230,7 +230,17 @@ fun TodayScreen(
             Column(Modifier.fillMaxSize()) {}
             return
         }
-        val revisiting = completed.contains(day.day)
+        /*
+         * What kind of visit this is, decided ONCE when the lesson opens and not read live.
+         *
+         * "Mark lesson complete" writes the day into `completed` the moment it is tapped, and a
+         * live read flipped this visit to a revisit while the celebration was still on screen:
+         * the overlay was swapped after a frame for the section chooser, which is the screen for
+         * a lesson you have ALREADY done. The learner finished a lesson and was shown the menu
+         * for redoing it. Same class of bug as viewedDay above, one layer along - what a visit is
+         * was settled when it opened, and the completion it ends with cannot rewrite it.
+         */
+        val revisiting = remember(day.day, inLesson) { completed.contains(day.day) }
         if (revisiting && revisitPick == REVISIT_CHOOSING) {
             // System back leaves the lesson; there is nothing in progress to lose.
             androidx.activity.compose.BackHandler { onInLessonChange(false) }

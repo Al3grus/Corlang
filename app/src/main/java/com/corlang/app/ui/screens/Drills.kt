@@ -258,6 +258,22 @@ fun WrapupRecall(
 const val RECALL_MAX_MISSES = 3
 
 /**
+ * What the recall's verdict panel is saying, held apart from the live question.
+ *
+ * The panel animates out, and the frame that STARTS that exit is the same frame the next item
+ * arrives in: read the live state there and a correct answer's green panel repaints red, with the
+ * next item's answer inside it, for as long as the exit lasts (field report: tapping Next after a
+ * right answer flashed the wrong-answer box). So the check writes this once and nothing clears it
+ * - it is the record of the answer that has just left, not of the question now on screen.
+ */
+private data class RecallVerdict(
+    val correct: Boolean,
+    val answer: String,
+    /** Whether that answer was the item's last try, so the panel can say the item is going. */
+    val setDown: Boolean
+)
+
+/**
  * What an interrupted recall left behind, per item: which items are already cleared and how
  * many times each was missed.
  *
@@ -468,6 +484,7 @@ private fun RecallRunner(
     var input by remember(resumed) { mutableStateOf("") }
     var checked by remember(resumed) { mutableStateOf(false) }
     var correct by remember(resumed) { mutableStateOf(false) }
+    var verdict by remember(resumed) { mutableStateOf<RecallVerdict?>(null) }
     var finished by remember(resumed) {
         mutableStateOf(items.isNotEmpty() && resumed.queue(items.size).isEmpty())
     }
@@ -501,8 +518,6 @@ private fun RecallRunner(
 
     val idx = queue.first()
     val item = items[idx]
-    /** True once this item has used its last try: it leaves the queue rather than returning. */
-    val setDown = (misses[idx] ?: 0) >= RECALL_MAX_MISSES
 
     // The prompt fades in on every new item. Keyed on the queue as well as the index: a missed
     // item comes back later at the same index, and that return is a new prompt like any other.
@@ -629,11 +644,16 @@ private fun RecallRunner(
                     modifier = Modifier.padding(top = 6.dp)
                 )
                 Column(modifier = Modifier.fillMaxWidth().bringIntoViewRequester(bring)) {
+                    // readOnly, not disabled: disabling a focused field drops the focus, and
+                    // dropping the focus takes the keyboard down with it. Between Check and the
+                    // next question the keyboard would then animate away and straight back for
+                    // every single item. It is locked either way - onValueChange refuses input
+                    // once checked - the difference is only that the field keeps its focus.
                     OutlinedTextField(
                         value = input,
                         onValueChange = { if (!checked) input = it },
                         label = { Text("Your answer in $languageName") },
-                        enabled = !checked,
+                        readOnly = checked,
                         modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
                     )
                     androidx.compose.animation.AnimatedVisibility(
@@ -641,23 +661,27 @@ private fun RecallRunner(
                         enter = com.corlang.app.ui.theme.Motion.revealEnter(reducedMotion),
                         exit = com.corlang.app.ui.theme.Motion.revealExit(reducedMotion)
                     ) {
+                        val shown = verdict
                         Surface(
                             shape = RoundedCornerShape(10.dp),
-                            color = if (correct) feedback.correctContainer else feedback.wrongContainer,
-                            contentColor = if (correct) feedback.onCorrectContainer else feedback.onWrongContainer,
+                            color = if (shown?.correct == true) feedback.correctContainer
+                                    else feedback.wrongContainer,
+                            contentColor = if (shown?.correct == true) feedback.onCorrectContainer
+                                           else feedback.onWrongContainer,
                             modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                         ) {
                             Column(modifier = Modifier.padding(10.dp)) {
                                 // Text only in the verdict — no speaker on answer reveals (field feedback).
                                 Text(
-                                    if (correct) "✅ ${item.answerHr}" else "❌ ${item.answerHr}",
+                                    (if (shown?.correct == true) "✅ " else "❌ ") +
+                                        (shown?.answer ?: ""),
                                     fontWeight = FontWeight.Bold
                                 )
                                 // Say what happens next out loud, or a re-queued item looks like the app
                                 // repeating itself and a set-down item looks like the app losing it.
-                                if (!correct) {
+                                if (shown != null && !shown.correct) {
                                     Text(
-                                        if (setDown) "Three tries — setting this one aside for today."
+                                        if (shown.setDown) "Three tries — setting this one aside for today."
                                         else "This one comes back before the end.",
                                         style = MaterialTheme.typography.bodySmall,
                                         modifier = Modifier.padding(top = 4.dp)
@@ -674,12 +698,16 @@ private fun RecallRunner(
                                 correct = Grading.gradeRecall(item.answerHr, input, en = item.en, lang = langCode)
                                 if (correct) {
                                     solved++
+                                    verdict = RecallVerdict(true, item.answerHr, false)
                                     Haptics.confirm(context)
                                     onAnswered(idx, true, (misses[idx] ?: 0) + 1)
                                 } else {
                                     val attempt = (misses[idx] ?: 0) + 1
                                     misses[idx] = attempt
                                     missedAny = true
+                                    verdict = RecallVerdict(
+                                        false, item.answerHr, attempt >= RECALL_MAX_MISSES
+                                    )
                                     Haptics.reject(context)
                                     onAnswered(idx, false, attempt)
                                 }
@@ -687,6 +715,8 @@ private fun RecallRunner(
                             } else {
                                 val next = nextRecallQueue(queue, correct, misses[idx] ?: 0)
                                 queue.clear(); queue.addAll(next)
+                                // `verdict` is deliberately NOT cleared: the panel is on its way
+                                // out and has to keep the words and the colour it went in with.
                                 input = ""; checked = false; correct = false
                                 if (queue.isEmpty()) finished = true
                             }

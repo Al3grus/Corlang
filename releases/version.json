@@ -1,6 +1,6 @@
 {
-  "versionCode": 236,
-  "versionName": "0.90.2",
-  "notes": "The wrap-up panel collapsed beautifully and then everything under it jumped. The Back buttons now travel down to their final place on the panel's own clock instead of arriving there on the last frame, and the questions no longer snap in behind them: they start fading up at 80% of the collapse and take another half second to arrive, so the lesson rises into a screen that has already come to rest. A tap anywhere still ends the whole thing at once.",
+  "versionCode": 237,
+  "versionName": "0.90.3",
+  "notes": "The wrap-up now behaves while you type into it. The keyboard no longer throws the question up the screen the frame it opens: everything that moves for the keyboard moves at the keyboard's own speed, and only as far as it has to. The Back and Exit buttons step out of the way instead of parking under your thumb mid-answer, a tap anywhere puts the keyboard away, and Check no longer drops it and raises it again for every single item. Getting an answer right and tapping Next flashed the red wrong-answer box on the way out; it now leaves as itself. And finishing a lesson stands on the celebration and returns you to Learn, instead of blinking past it into the menu for redoing the lesson you just did.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
