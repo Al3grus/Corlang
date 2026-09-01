@@ -1,6 +1,6 @@
 {
-  "versionCode": 245,
-  "versionName": "0.90.11",
-  "notes": "The purchase screen stops explaining itself twice. What a tier includes was already on its own card, so the paragraphs above and below \"Not now\" are gone; only the line about Play setting the price stays, now above the button.",
+  "versionCode": 246,
+  "versionName": "0.90.12",
+  "notes": "Opening a section from the lesson review no longer pops. The exercise waited on a resume load before drawing anything, and a replay has nothing to resume, so the counter, the progress bar and the question landed a frame after the card above them. Same for the wrap-up's Start button.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

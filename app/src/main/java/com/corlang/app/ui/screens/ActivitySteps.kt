@@ -108,7 +108,11 @@ data class ExerciseResume(val solvedIndices: Set<Int>, val missedAny: Boolean)
 fun ExerciseActivity(
     container: AppContainer,
     activity: DayActivity,
-    loadResumeState: suspend () -> ExerciseResume = { ExerciseResume(emptySet(), false) },
+    /** What an interrupted run of this step left behind, read from the day's checks. Null =
+     *  there is nothing to resume (a replay marks nothing, so it always starts fresh), and the
+     *  block then paints WITH the step card instead of waiting a frame for a load whose only
+     *  possible answer is the empty state. */
+    loadResumeState: (suspend () -> ExerciseResume)? = null,
     onSolved: (questionIndex: Int) -> Unit = {},
     onMissed: () -> Unit = {},
     // Mistake bank hooks: the QUESTION that was answered, right or wrong, so a wrong answer
@@ -124,8 +128,12 @@ fun ExerciseActivity(
     // count — a count broke when a missed question was re-queued: "drop the first N" then
     // silently dropped the miss, and the step ended claiming "first try on every one").
     // Gated on the async load so the first frame doesn't momentarily start from question one.
-    var resume by remember(activity.title) { mutableStateOf<ExerciseResume?>(null) }
-    LaunchedEffect(activity.title) { resume = loadResumeState() }
+    // Only when there IS a load: with nothing to resume the gate bought nothing and cost a frame,
+    // which is exactly one pop of the counter, the bar and the question arriving after the card.
+    var resume by remember(activity.title) {
+        mutableStateOf(if (loadResumeState == null) ExerciseResume(emptySet(), false) else null)
+    }
+    LaunchedEffect(activity.title) { if (loadResumeState != null) resume = loadResumeState() }
     val resumed = resume ?: return
     val resumeIdx = remember(activity.title) {
         resumed.solvedIndices.filter { it in activity.questions.indices }.toSet()
