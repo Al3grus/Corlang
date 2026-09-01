@@ -53,6 +53,8 @@ import androidx.compose.ui.unit.dp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.prefs.LearnerName
 import com.corlang.app.data.prefs.LearnerProfile
+import com.corlang.app.ui.components.CorlangLogo
+import com.corlang.app.ui.components.LogoVariant
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -246,16 +248,21 @@ fun OnboardingScreen(
         ) { animatedStep ->
         when (animatedStep) {
             // ---- Welcome: what this app is, before it asks for anything ----
-            // The greeting IS the page: three words stacked one per line, centred, and nothing
-            // else. The lockup used to sit above it, which said the name twice - once as a mark
-            // and again in the title - so the mark went and the words carry it. No body either:
-            // the thesis sentence that used to be here said what the app believes, while the
-            // very next page says what the learner will actually do, which is the same argument
-            // made concretely. Keeping both meant asserting the method before showing it.
+            // Just "Welcome!" and the lockup, with no body at all. The thesis sentence that
+            // used to sit here said what the app believes; the very next page says what the
+            // learner will actually do, which is the same argument made concretely. Keeping
+            // both meant asserting the method before showing it.
+            //
+            // Tried and rejected (v0.89.0, reverted in v0.89.1): the lockup removed and the
+            // title stacked one word per line, "Welcome / to / Corlang!". On the reasoning that
+            // the mark and the title both say the name, so one of them is redundant. Seen on a
+            // phone it is not - the mark is the app introducing itself and the stacked words
+            // read as a column of text with nothing holding them up. The lockup stays.
             STEP_WELCOME -> StepFrame(
                 gap = GAP_INTRO,
-                title = "Welcome\nto\nCorlang!",
+                title = "Welcome!",
                 centered = true,
+                header = { CorlangLogo(variant = LogoVariant.LOCKUP, size = 44.dp) },
                 actions = {
                     Button(onClick = { go(+1) }, modifier = Modifier.fillMaxWidth()) {
                         Text("Get started →")
