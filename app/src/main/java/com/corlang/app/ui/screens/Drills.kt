@@ -4,6 +4,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -36,11 +37,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.layout
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.util.lerp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.DrillGen
 import com.corlang.app.data.WordsRepository
@@ -202,8 +208,10 @@ fun WrapupRecall(
     loadResume: (suspend () -> RecallResume)? = null,
     started: Boolean = true,
     onStart: (animated: Boolean) -> Unit = {},
-    /** Opacity of the Start button while the intro panel above it collapses. See [RecallRunner]. */
+    /** The start-the-wrap-up gesture, as passed straight to [RecallRunner]: see there for all three. */
     startAlpha: Float = 1f,
+    collapse: Float = 1f,
+    contentAlpha: Float = 1f,
     onAnswered: (index: Int, correct: Boolean, attempt: Int) -> Unit = { _, _, _ -> },
     /**
      * Height to give the question block below the counter, so it sits in the MIDDLE of the room
@@ -232,6 +240,8 @@ fun WrapupRecall(
         started = started,
         onStart = onStart,
         startAlpha = startAlpha,
+        collapse = collapse,
+        contentAlpha = contentAlpha,
         centered = true,
         fillBelowCounter = fillBelowCounter
     )
@@ -411,6 +421,18 @@ private fun RecallRunner(
      * goes with it, rather than blinking out while the panel is still travelling.
      */
     startAlpha: Float = 1f,
+    /**
+     * Wrap-up only: how far through that collapse we are, 0 to 1. The region between the panel
+     * and the session's Back row travels with it - from the height the Start button needed to
+     * the height the question block needs - so the buttons below slide to their final place
+     * rather than being teleported there on the last frame.
+     */
+    collapse: Float = 1f,
+    /**
+     * Wrap-up only: opacity of the question block. It arrives AFTER the room for it does, on its
+     * own slower clock, so the lesson fades up into a screen that has already stopped moving.
+     */
+    contentAlpha: Float = 1f,
     /** Wrap-up only: prompt, field and verdict centred, with the counter above them. */
     centered: Boolean = false,
     /** Wrap-up only: see [WrapupRecall]. Vertically centres everything under the counter. */
@@ -451,6 +473,12 @@ private fun RecallRunner(
     }
     val feedback = CorlangColors.feedback
 
+    // Wrap-up only, and deliberately declared ABOVE the start gate below: the two states of the
+    // region under the panel are composed in different branches, and the height of the one on
+    // its way out has to survive being replaced by the one on its way in.
+    var buttonH by remember { mutableIntStateOf(0) }
+    var blockH by remember { mutableIntStateOf(0) }
+
     if (items.isEmpty()) {
         Button(onClick = onFinished, modifier = Modifier.fillMaxWidth()) { Text("Next →") }
         return
@@ -459,7 +487,10 @@ private fun RecallRunner(
     if (!started) {
         Button(
             onClick = { onStart(true) },
-            modifier = Modifier.fillMaxWidth().alpha(startAlpha)
+            modifier = Modifier
+                .fillMaxWidth()
+                .onSizeChanged { buttonH = it.height }
+                .alpha(startAlpha)
         ) { Text("Start recall →") }
         return
     }
@@ -493,15 +524,44 @@ private fun RecallRunner(
     val counter = "$solved/${items.size}" +
         if (queue.size > 1) "  ·  ${queue.size} left" else ""
 
-    // Wrap-up only. The whole question block arrives where the intro panel used to be, and only
-    // once that panel has finished collapsing - the shrink is what MAKES the room, so a block
-    // that appears before the room exists lays itself out against a screen that is still moving.
-    // Remembered from the moment this branch is first reached, which is the moment start latched.
-    val blockAlpha = if (centered) com.corlang.app.ui.theme.rememberAppearAlpha(Unit) else 1f
+    /*
+     * Wrap-up only: the region between the collapsing panel and the session's Back row.
+     *
+     * It travels from the height the Start button needed to the height the question block needs,
+     * on the panel's own clock, so everything BELOW it - Back, Back to sections - slides to its
+     * final place instead of being teleported there the frame the panel lands. Both ends are
+     * measured rather than assumed: the button's while it was the only thing here, the block's
+     * from its real layout (which is why the block is measured at full size and then clipped,
+     * not laid out small and stretched).
+     *
+     * Zero means "no override": before the gesture there is nothing to travel between, and after
+     * it the block simply is its own height.
+     */
+    val regionH = when {
+        !centered || collapse >= 1f -> 0
+        blockH > 0 -> lerp(buttonH, blockH, collapse.coerceIn(0f, 1f))
+        else -> buttonH
+    }
 
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .then(
+                if (regionH > 0) Modifier
+                    .layout { measurable, constraints ->
+                        val p = measurable.measure(constraints)
+                        layout(p.width, regionH) { p.place(0, 0) }
+                    }
+                    .clipToBounds()
+                else Modifier
+            )
+    ) {
     Column(
         horizontalAlignment = if (centered) Alignment.CenterHorizontally else Alignment.Start,
-        modifier = Modifier.fillMaxWidth().alpha(blockAlpha)
+        modifier = Modifier
+            .fillMaxWidth()
+            .onSizeChanged { blockH = it.height }
+            .alpha(contentAlpha)
     ) {
         // The counter keeps its place right under the step bar. Everything below it - the prompt,
         // the field and the verdict - goes in a box that takes whatever room the step was given
@@ -644,6 +704,29 @@ private fun RecallRunner(
                     }
                 }
             }
+        }
+    }
+        // The Start button on its way out, over the question block on its way in. They never
+        // overlap in sight - the button is gone by 65% of the collapse and the block only starts
+        // arriving at 80% - but they share this one region, so neither one's departure nor the
+        // other's arrival moves anything else on the screen.
+        if (centered && startAlpha > 0f) {
+            Button(
+                onClick = { onStart(true) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.TopCenter)
+                    .alpha(startAlpha)
+            ) { Text("Start recall →") }
+        }
+        // Until the block is all the way here, a tap in this region ends the gesture rather than
+        // landing on a text field that is still fading in and cannot be read yet.
+        if (centered && contentAlpha < 1f) {
+            Box(
+                modifier = Modifier
+                    .matchParentSize()
+                    .pointerInput(Unit) { detectTapGestures { onStart(true) } }
+            )
         }
     }
 }

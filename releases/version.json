@@ -1,6 +1,6 @@
 {
-  "versionCode": 235,
-  "versionName": "0.90.1",
-  "notes": "Starting the wrap-up used to delete the instructions between two frames. Now the panel collapses: its bottom edge climbs to where the title bar sits, dissolving the instructions and the Start button as it passes over them, and \"Wrap-up\" arrives just before it lands. The questions fade in once the panel has made room for them. Tap anywhere to skip straight to the end of it, and it is instant if you have animations turned off system-wide.",
+  "versionCode": 236,
+  "versionName": "0.90.2",
+  "notes": "The wrap-up panel collapsed beautifully and then everything under it jumped. The Back buttons now travel down to their final place on the panel's own clock instead of arriving there on the last frame, and the questions no longer snap in behind them: they start fading up at 80% of the collapse and take another half second to arrive, so the lesson rises into a screen that has already come to rest. A tap anywhere still ends the whole thing at once.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
