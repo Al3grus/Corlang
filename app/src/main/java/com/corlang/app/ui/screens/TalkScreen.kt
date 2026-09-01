@@ -335,7 +335,9 @@ fun TalkScreen(container: AppContainer, lang: String) {
                         container.languagePrefs.setTutorEnglishHelp(lang, on)
                     }
                 },
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
+                // The same 16 from the top bar as it keeps from the sides of the screen: it is
+                // the first thing on the page, so the page's margin is what should be around it.
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp)
             )
             Column(
                 Modifier

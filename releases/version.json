@@ -1,6 +1,6 @@
 {
-  "versionCode": 243,
-  "versionName": "0.90.9",
-  "notes": "The revisit chooser's buttons stop being dealt out one at a time. They arrive together on the same fade a tab change uses, because opening the chooser is a screen change and had no business inventing motion of its own for it. And on the tutor's opening screen, \"Teach me in English\" moves to the top: it is the state the tutor will run in, not one of the ways to start a conversation, and centred with the starters it read as the first item in the list of choices.",
+  "versionCode": 244,
+  "versionName": "0.90.10",
+  "notes": "The tutor's \"Teach me in English\" box now sits the same 16 from the top bar as it does from the sides of the screen. It is the first thing on the page, so the page's own margin is what belongs around it.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
