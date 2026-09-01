@@ -461,6 +461,21 @@ fun buildSessionSteps(
     return steps
 }
 
+/**
+ * The steps a session actually runs, given whether this day has any cards due.
+ *
+ * With nothing due, the review step is dropped rather than shown: it rendered "Review done ✓"
+ * over a Next button, one tap between the wrap-up and the finish that asked nothing and taught
+ * nothing. The step earns its place only when there are cards behind it, so the wrap-up runs
+ * straight into "Lesson N done".
+ *
+ * Dropping the last-but-one step shifts no index the revisit chooser hands back as `startAt`:
+ * every section it offers sits before the review (see [revisitSections]), and only the completion
+ * moves up one.
+ */
+fun sessionSteps(base: List<SessionStep>, reviewDue: Boolean): List<SessionStep> =
+    if (reviewDue) base else base.filterNot { it.kind == StepKind.REVIEW }
+
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun SessionPlayer(
@@ -503,7 +518,7 @@ fun SessionPlayer(
         if (!practice) repairQuestions = container.progress.dueMistakes(lang, 3)
     }
 
-    val steps = remember(lang, day.day, repairQuestions?.size) {
+    val baseSteps = remember(lang, day.day, repairQuestions?.size) {
         val base = buildSessionSteps(day, container.content.meta(lang).name)
         val repairs = repairQuestions
         if (repairs.isNullOrEmpty()) base else {
@@ -573,6 +588,23 @@ fun SessionPlayer(
      */
     val newBlock = minOf(unlockedNew, if (unlockedNew > perLesson) perLesson + 1 else perLesson)
     val reviewPending = minOf(dueNow, maxReviews)
+
+    /*
+     * Whether this session carries a review step at all - see [sessionSteps].
+     *
+     * LATCHED at the first frame that has real data, never read live. Finishing the pass takes
+     * reviewPending to 0, and a live read would delete the step out from under the block that
+     * just finished it, moving the very index that block is about to advance. Nothing can put a
+     * card back into today's queue mid-session either (an FSRS interval is at least a day, and
+     * words introduced today are scheduled forward), so the first honest answer stays the right
+     * one until the session ends.
+     */
+    var reviewDue by remember(lang, day.day, startAt) { mutableStateOf<Boolean?>(null) }
+    if (reviewDue == null && rawReviews != null && rawMaxReviews != null) {
+        reviewDue = reviewPending > 0
+    }
+    // Not-yet-known keeps the step: a list that only ever loses it cannot strand an index.
+    val steps = remember(baseSteps, reviewDue) { sessionSteps(baseSteps, reviewDue != false) }
 
     fun stepDone(s: SessionStep): Boolean = when (s.kind) {
         // Done when nothing is waiting OR this day's block was completed. The check is written

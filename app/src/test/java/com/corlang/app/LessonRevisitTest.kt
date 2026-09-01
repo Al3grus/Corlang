@@ -8,6 +8,7 @@ import com.corlang.app.ui.screens.SessionStep
 import com.corlang.app.ui.screens.StepKind
 import com.corlang.app.ui.screens.revisitLabels
 import com.corlang.app.ui.screens.revisitSections
+import com.corlang.app.ui.screens.sessionSteps
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
@@ -48,6 +49,33 @@ class LessonRevisitTest {
         // filtered-and-renumbered list would jump to the wrong step. The intro, the finish, the
         // new-words step (its words are the flashcard button) and the due-words review are out.
         assertEquals(listOf(2, 3, 4, 5, 6), revisitSections(LESSON))
+    }
+
+    // ---------------- the empty review step ----------------
+
+    @Test
+    fun `nothing due drops the review step so the wrap-up runs into the finish`() {
+        val run = sessionSteps(LESSON, reviewDue = false)
+        assertTrue("an empty review step is not a step", run.none { it.kind == StepKind.REVIEW })
+        assertEquals(StepKind.WRAPUP, run[run.lastIndex - 1].kind)
+        assertEquals(StepKind.COMPLETE, run.last().kind)
+    }
+
+    @Test
+    fun `cards due keep the review step exactly where it was`() {
+        assertEquals(LESSON, sessionSteps(LESSON, reviewDue = true))
+    }
+
+    /**
+     * The reason dropping it is safe: the chooser hands the player an index into the UNfiltered
+     * list, and every section it offers sits before the review step.
+     */
+    @Test
+    fun `dropping the review step shifts no section the revisit chooser offers`() {
+        val run = sessionSteps(LESSON, reviewDue = false)
+        revisitSections(LESSON).forEach { i ->
+            assertEquals("section $i must still be the same step", LESSON[i], run[i])
+        }
     }
 
     @Test
