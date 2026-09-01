@@ -857,9 +857,13 @@ fun SessionPlayer(
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.weight(1f)
             )
+            // Just the fraction. "3 / 7 done" and "step 3 of 8" spelled out what the bar
+            // directly below already says, in the corner of a screen whose job is the one step
+            // in front of the learner. The number that survives is the one the bar cannot give
+            // exactly - how many steps, and which of them this is.
             Text(
-                if (practice) "step ${index + 1} of ${steps.size}"
-                else "$doneCount / $actionCount done",
+                if (practice) "${index + 1}/${steps.size}"
+                else "$doneCount/$actionCount",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
