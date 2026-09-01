@@ -45,6 +45,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import com.corlang.app.data.model.StudyPlan
 import com.corlang.app.ui.theme.rememberReducedMotion
+import androidx.compose.ui.draw.alpha
 
 /**
  * A scrollable "stepping stones" map of the plan, grouped by CEFR level. Shows the days of a
@@ -151,6 +152,10 @@ fun LevelJourney(
 
         // Soft breathing pulse on the current day node — draws the eye to "you are here".
         val reduced = rememberReducedMotion()
+        // Tapping another level chip swapped the whole path in one frame. The stones and the
+        // caption under them fade in on every change of level instead; the chips themselves stay
+        // put, so the row you tapped is the one fixed thing while its contents change.
+        val levelAlpha = com.corlang.app.ui.theme.rememberAppearAlpha(selectedLevel)
         val infinite = rememberInfiniteTransition(label = "journey")
         val pulseAnim by infinite.animateFloat(
             initialValue = 1f,
@@ -196,6 +201,7 @@ fun LevelJourney(
             // expand without being clipped by the scroll container's edges — otherwise day 1,
             // flush against the left edge, gets its left side cut off as it breathes.
             modifier = Modifier
+                .alpha(levelAlpha)
                 .horizontalScroll(journeyScroll)
                 .padding(horizontal = 8.dp, vertical = 6.dp),
             verticalAlignment = Alignment.CenterVertically
@@ -350,7 +356,7 @@ fun LevelJourney(
                 (if (lockedHint) "  ·  complete to unlock exam" else ""),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(top = 6.dp)
+            modifier = Modifier.alpha(levelAlpha).padding(top = 6.dp)
         )
     }
 }

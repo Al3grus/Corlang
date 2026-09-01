@@ -1,15 +1,24 @@
 package com.corlang.app.ui.theme
 
 import android.provider.Settings
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FiniteAnimationSpec
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 
 /**
- * The app's shared motion vocabulary. One place so every screen animates with the same physics —
+ * The app's shared motion vocabulary. One place so every screen animates with the same physics -
  * motion here is functional (things respond to touch, transitions carry direction), never
  * decorative. All specs are spring-based so interrupted animations retarget naturally.
  */
@@ -21,12 +30,63 @@ object Motion {
     /** Crisp, bounce-free spring for UI transitions (steps, tabs). */
     fun <T> snappy(): FiniteAnimationSpec<T> =
         spring(dampingRatio = 1f, stiffness = Spring.StiffnessMedium)
+
+    /**
+     * Fade-through: the app's one answer to "the thing in this frame was replaced".
+     *
+     * The two halves are SEQUENTIAL, not a cross-dissolve - the outgoing content is gone before
+     * the incoming content starts. That ordering is the whole trick. A simultaneous crossfade
+     * has to be kept very short (both versions are painted at once, so the old one visibly
+     * lingers over a screen that has already moved on), and anything short enough to avoid that
+     * is too short to read as motion: it lands as a cut. Nothing overlaps here, so the fade can
+     * be long enough to actually see.
+     */
+    const val FADE_OUT_MS = 90
+    const val FADE_IN_MS = 210
+
+    fun enter(reduced: Boolean): EnterTransition =
+        if (reduced) EnterTransition.None
+        else fadeIn(tween(FADE_IN_MS, delayMillis = FADE_OUT_MS))
+
+    fun exit(reduced: Boolean): ExitTransition =
+        if (reduced) ExitTransition.None else fadeOut(tween(FADE_OUT_MS))
+
+    /**
+     * For something that OPENS UNDER what is already on screen and pushes it down: an answer
+     * verdict under a question, a hint under a field. It grows into place rather than shoving
+     * the button below it a card's height down between one frame and the next.
+     */
+    fun revealEnter(reduced: Boolean): EnterTransition =
+        if (reduced) EnterTransition.None
+        else fadeIn(tween(FADE_IN_MS)) + expandVertically(tween(FADE_IN_MS))
+
+    fun revealExit(reduced: Boolean): ExitTransition =
+        if (reduced) ExitTransition.None
+        else fadeOut(tween(FADE_OUT_MS)) + shrinkVertically(tween(FADE_OUT_MS))
 }
 
 /**
- * True when the user has disabled animations system-wide (Developer options / accessibility →
+ * Alpha for content that appears where there was nothing: a screen coming out of its load gate,
+ * the next question, the next word. Starts transparent and settles opaque the first time each
+ * [key] is seen, so replaced content reads as a fade rather than a hard swap.
+ *
+ * Deliberately NOT an AnimatedContent. The outgoing content here is never worth keeping alive
+ * through a transition - by the time the key changes it has already been reset (a checked
+ * question whose verdict was just cleared), so a crossfade would dissolve to a half-blanked
+ * copy of itself - and keeping a text field alive across a content change costs the keyboard.
+ */
+@Composable
+fun rememberAppearAlpha(key: Any? = Unit, durationMillis: Int = Motion.FADE_IN_MS): Float {
+    val reduced = rememberReducedMotion()
+    val alpha = remember(key, reduced) { Animatable(if (reduced) 1f else 0f) }
+    LaunchedEffect(key, reduced) { if (!reduced) alpha.animateTo(1f, tween(durationMillis)) }
+    return alpha.value
+}
+
+/**
+ * True when the user has disabled animations system-wide (Developer options / accessibility ->
  * animator duration scale 0). Callers collapse their transitions to instant so we respect the
- * OS-level preference and never induce motion sickness. Read once — the scale rarely changes
+ * OS-level preference and never induce motion sickness. Read once - the scale rarely changes
  * mid-session and reading it live would need a settings observer for no real benefit.
  */
 @Composable

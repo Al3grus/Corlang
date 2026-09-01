@@ -55,6 +55,7 @@ import com.corlang.app.ui.components.OptionState
 import com.corlang.app.ui.components.SpeakerButton
 import com.corlang.app.ui.theme.CorlangColors
 import kotlinx.coroutines.launch
+import androidx.compose.ui.draw.alpha
 
 /** The official pass rule (NN 100/2021), pure and unit-testable. */
 object ExamRules {
@@ -364,6 +365,15 @@ private fun ScoredSectionRunner(
 
     val q = questions[index]
 
+    // Same motion as the level quiz: the bar walks, the question fades in, the verdict opens.
+    val animatedProgress by androidx.compose.animation.core.animateFloatAsState(
+        targetValue = (index + 1f) / questions.size,
+        animationSpec = com.corlang.app.ui.theme.Motion.snappy(),
+        label = "exam-progress"
+    )
+    val questionAlpha = com.corlang.app.ui.theme.rememberAppearAlpha(index)
+    val reducedMotion = com.corlang.app.ui.theme.rememberReducedMotion()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -373,7 +383,7 @@ private fun ScoredSectionRunner(
     ) {
         Text(section.title, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
         LinearProgressIndicator(
-            progress = { (index + 1f) / questions.size },
+            progress = { animatedProgress },
             drawStopIndicator = {},
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
         )
@@ -400,6 +410,7 @@ private fun ScoredSectionRunner(
             }
         }
 
+        Column(modifier = Modifier.fillMaxWidth().alpha(questionAlpha)) {
         InfoCard {
             // Listening item: play button instead of transcript.
             q.audioText?.let { audio ->
@@ -439,8 +450,13 @@ private fun ScoredSectionRunner(
                 modifier = Modifier.fillMaxWidth()
             )
         }
+        }
 
-        if (checked) {
+        androidx.compose.animation.AnimatedVisibility(
+            visible = checked,
+            enter = com.corlang.app.ui.theme.Motion.revealEnter(reducedMotion),
+            exit = com.corlang.app.ui.theme.Motion.revealExit(reducedMotion)
+        ) {
             Surface(
                 shape = RoundedCornerShape(10.dp),
                 color = if (lastCorrect) feedback.correctContainer else feedback.wrongContainer,

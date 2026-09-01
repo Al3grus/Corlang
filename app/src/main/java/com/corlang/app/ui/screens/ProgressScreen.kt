@@ -43,6 +43,7 @@ import com.corlang.app.data.isMastered
 import com.corlang.app.ui.components.SectionTitle
 import com.corlang.app.ui.components.StatTile
 import com.corlang.app.ui.theme.Radius
+import androidx.compose.ui.draw.alpha
 
 /**
  * Progress, organised into bands so it leads with identity and progress instead of a wall:
@@ -93,8 +94,15 @@ fun ProgressScreen(
     val wordsLearned = reviews.count { it.isLearned }
     val wordsMastered = reviews.count { it.isMastered }
 
+    // Same as Today: the load gate above blanks the tab until Room emits, so the content has to
+    // fade in when it lands or the tab transition is spent on an empty screen.
+    val pageAlpha = com.corlang.app.ui.theme.rememberAppearAlpha()
     Column(
-        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
+        modifier = Modifier
+            .fillMaxSize()
+            .alpha(pageAlpha)
+            .verticalScroll(rememberScrollState())
+            .padding(16.dp)
     ) {
         // The headline carries the bottom padding the removed subtitle used to provide, so the
         // course card does not ride up against it.

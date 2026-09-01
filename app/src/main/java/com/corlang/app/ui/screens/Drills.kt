@@ -105,7 +105,10 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
     }
 
     val item = items[qIndex.coerceIn(0, items.lastIndex)]
-    Column(modifier = Modifier.fillMaxWidth()) {
+    // The next sentence fades in rather than replacing this one between two frames.
+    val itemAlpha = com.corlang.app.ui.theme.rememberAppearAlpha(qIndex)
+    val reducedMotion = com.corlang.app.ui.theme.rememberReducedMotion()
+    Column(modifier = Modifier.fillMaxWidth().alpha(itemAlpha)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 item.sentence,
@@ -143,7 +146,14 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
                     }
             ) { Text(option, modifier = Modifier.padding(12.dp)) }
         }
-        if (chosen != null) {
+        androidx.compose.animation.AnimatedVisibility(
+            visible = chosen != null,
+            enter = com.corlang.app.ui.theme.Motion.revealEnter(reducedMotion),
+            exit = com.corlang.app.ui.theme.Motion.revealExit(reducedMotion)
+        ) {
+        // AnimatedVisibility stacks its children in a box, so the reveal and the button that
+        // follows it need a column of their own.
+        Column(modifier = Modifier.fillMaxWidth()) {
             // Text only in the verdict — no speaker on answer reveals (field feedback).
             Text(
                 item.sentence.replace("___", item.answer),
@@ -158,6 +168,7 @@ fun ClozeDrill(container: AppContainer, lang: String, onFinished: () -> Unit) {
                 },
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
             ) { Text(if (qIndex + 1 >= items.size) "See result" else "Next →") }
+        }
         }
     }
 }
@@ -445,6 +456,11 @@ private fun RecallRunner(
     /** True once this item has used its last try: it leaves the queue rather than returning. */
     val setDown = (misses[idx] ?: 0) >= RECALL_MAX_MISSES
 
+    // The prompt fades in on every new item. Keyed on the queue as well as the index: a missed
+    // item comes back later at the same index, and that return is a new prompt like any other.
+    val itemAlpha = com.corlang.app.ui.theme.rememberAppearAlpha(idx to queue.size)
+    val reducedMotion = com.corlang.app.ui.theme.rememberReducedMotion()
+
     // While the keyboard is up the chrome steps back, so the eye stays on the prompt and the
     // field: everything else on screen is context the learner has already read.
     val imeVisible = WindowInsets.isImeVisible
@@ -496,10 +512,13 @@ private fun RecallRunner(
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.SemiBold,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.fillMaxWidth().alpha(itemAlpha)
                     )
                 } else {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.alpha(itemAlpha)
+                    ) {
                         Text(
                             item.en,
                             style = MaterialTheme.typography.titleLarge,
@@ -534,7 +553,11 @@ private fun RecallRunner(
                         enabled = !checked,
                         modifier = Modifier.fillMaxWidth().padding(top = 6.dp)
                     )
-                    if (checked) {
+                    androidx.compose.animation.AnimatedVisibility(
+                        visible = checked,
+                        enter = com.corlang.app.ui.theme.Motion.revealEnter(reducedMotion),
+                        exit = com.corlang.app.ui.theme.Motion.revealExit(reducedMotion)
+                    ) {
                         Surface(
                             shape = RoundedCornerShape(10.dp),
                             color = if (correct) feedback.correctContainer else feedback.wrongContainer,
