@@ -1,6 +1,5 @@
 package com.corlang.app.ui.screens
 
-import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -220,6 +219,12 @@ fun WrapupRecall(
      * in; 0 = lay the block out at its own size, directly under the counter.
      */
     fillBelowCounter: Dp = 0.dp,
+    /**
+     * Opacity of the session's own furniture while the keyboard is up, computed by the caller off
+     * the keyboard's animated inset. The counter above the question is part of that furniture and
+     * has to dim and return WITH the rest of it - see [RecallRunner].
+     */
+    chromeAlpha: Float = 1f,
     onFinished: () -> Unit
 ) {
     val items = remember(day.day) {
@@ -243,7 +248,8 @@ fun WrapupRecall(
         collapse = collapse,
         contentAlpha = contentAlpha,
         centered = true,
-        fillBelowCounter = fillBelowCounter
+        fillBelowCounter = fillBelowCounter,
+        chromeAlpha = chromeAlpha
     )
 }
 
@@ -452,7 +458,18 @@ private fun RecallRunner(
     /** Wrap-up only: prompt, field and verdict centred, with the counter above them. */
     centered: Boolean = false,
     /** Wrap-up only: see [WrapupRecall]. Vertically centres everything under the counter. */
-    fillBelowCounter: Dp = 0.dp
+    fillBelowCounter: Dp = 0.dp,
+    /**
+     * Wrap-up only: opacity of the counter while the keyboard is up, so the eye stays on the
+     * prompt and the field - everything else on screen is context already read.
+     *
+     * Passed in, and deliberately not animated here. This used to be its own animateFloatAsState
+     * off isImeVisible, which is a boolean that flips at the START of the keyboard's animation,
+     * while the rest of the session's furniture rides the keyboard's live inset. Putting the
+     * keyboard away therefore brought the header and the progress bar back with the keyboard and
+     * the counter back afterwards, on its own spring: one line arriving late to its own screen.
+     */
+    chromeAlpha: Float = 1f
 ) {
     val context = LocalContext.current
 
@@ -527,10 +544,6 @@ private fun RecallRunner(
     // While the keyboard is up the chrome steps back, so the eye stays on the prompt and the
     // field: everything else on screen is context the learner has already read.
     val imeVisible = WindowInsets.isImeVisible
-    val chromeAlpha by animateFloatAsState(
-        targetValue = if (centered && imeVisible) 0.4f else 1f,
-        label = "recall-chrome"
-    )
     // imePadding on the session column stops the keyboard COVERING the field; it does not scroll
     // the field to where it can be seen. This does.
     val bring = remember { BringIntoViewRequester() }
