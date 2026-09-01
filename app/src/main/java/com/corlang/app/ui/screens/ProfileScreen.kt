@@ -66,8 +66,12 @@ fun ProfileScreen(
     /** Opens the level paywall (the course tiers), as opposed to the AI subscription. */
     onUnlockCourse: () -> Unit = {}
 ) {
-    // Sub-page routing within the tab (null = the menu). A short crossfade smooths the
-    // menu↔sub-page transitions (matching the app's tab fade, not a slow one).
+    // Sub-page routing within the tab (null = the menu). Menu to sub-page is a screen change
+    // like any other, so it spends the app's fade-through at the same length a tab change does:
+    // stepping into Language from this menu and stepping from Learn to Review are the same move
+    // and have no business looking different. It was a simultaneous Crossfade, which is the one
+    // shape this vocabulary does not use - both screens painted at once means the old one lingers
+    // over the new, which is why the fade-through is sequential (see Motion).
     // Plain remember, NOT rememberSaveable: the NavHost saves/restores each tab's saveable
     // state across switches, so a saveable page re-opened the sub-page (Premium, References)
     // when you came BACK to Profile from another tab. Leaving the tab should reset to the
@@ -76,9 +80,18 @@ fun ProfileScreen(
     // A Profile tab tap closes whatever sub-page is open, landing back on the menu.
     LaunchedEffect(resetTick) { if (resetTick > 0) page = null }
 
-    androidx.compose.animation.Crossfade(
+    val reducedMotion = com.corlang.app.ui.theme.rememberReducedMotion()
+    androidx.compose.animation.AnimatedContent(
         targetState = page,
-        animationSpec = androidx.compose.animation.core.tween(durationMillis = 260),
+        transitionSpec = {
+            androidx.compose.animation.ContentTransform(
+                targetContentEnter = com.corlang.app.ui.theme.Motion.enter(reducedMotion),
+                initialContentExit = com.corlang.app.ui.theme.Motion.exit(reducedMotion),
+                // The pages are all full-screen: there is no box to grow or shrink between them,
+                // and letting one animate would only wobble the page during the fade.
+                sizeTransform = null
+            )
+        },
         label = "profile-page"
     ) { p -> when (p) {
         "language" -> SubPage("Language", onBack = { page = null }) {

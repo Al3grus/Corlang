@@ -650,12 +650,18 @@ private fun CorlangApp(container: AppContainer) {
                 Surface(
                     color = MaterialTheme.colorScheme.background,
                     // Fades UP over the tab it covers, so opening a full-screen overlay is a
-                    // move rather than a cut. No exit fade: an overlay coming down hands off to
-                    // a page that is already composed underneath, and the frame-counted handoff
-                    // above depends on it going away the moment it is told to.
+                    // move rather than a cut, and at the same length as a tab change: opening
+                    // Settings and switching tabs are the same size of move. No exit fade: an
+                    // overlay coming down hands off to a page that is already composed
+                    // underneath, and the frame-counted handoff above depends on it going away
+                    // the moment it is told to.
                     modifier = Modifier
                         .fillMaxSize()
-                        .alpha(com.corlang.app.ui.theme.rememberAppearAlpha())
+                        .alpha(
+                            com.corlang.app.ui.theme.rememberAppearAlpha(
+                                durationMillis = com.corlang.app.ui.theme.Motion.SCREEN_FADE_IN_MS
+                            )
+                        )
                 ) {
                     // Where "Leave" lands them: the course they were actually studying, if any.
                     val backTo = lastSettledLang?.takeIf { it != lang }
@@ -683,12 +689,18 @@ private fun CorlangApp(container: AppContainer) {
                 Surface(
                     color = MaterialTheme.colorScheme.background,
                     // Fades UP over the tab it covers, so opening a full-screen overlay is a
-                    // move rather than a cut. No exit fade: an overlay coming down hands off to
-                    // a page that is already composed underneath, and the frame-counted handoff
-                    // above depends on it going away the moment it is told to.
+                    // move rather than a cut, and at the same length as a tab change: opening
+                    // Settings and switching tabs are the same size of move. No exit fade: an
+                    // overlay coming down hands off to a page that is already composed
+                    // underneath, and the frame-counted handoff above depends on it going away
+                    // the moment it is told to.
                     modifier = Modifier
                         .fillMaxSize()
-                        .alpha(com.corlang.app.ui.theme.rememberAppearAlpha())
+                        .alpha(
+                            com.corlang.app.ui.theme.rememberAppearAlpha(
+                                durationMillis = com.corlang.app.ui.theme.Motion.SCREEN_FADE_IN_MS
+                            )
+                        )
                 ) {
                     SettingsScreen(
                         container,
@@ -716,12 +728,18 @@ private fun CorlangApp(container: AppContainer) {
                 Surface(
                     color = MaterialTheme.colorScheme.background,
                     // Fades UP over the tab it covers, so opening a full-screen overlay is a
-                    // move rather than a cut. No exit fade: an overlay coming down hands off to
-                    // a page that is already composed underneath, and the frame-counted handoff
-                    // above depends on it going away the moment it is told to.
+                    // move rather than a cut, and at the same length as a tab change: opening
+                    // Settings and switching tabs are the same size of move. No exit fade: an
+                    // overlay coming down hands off to a page that is already composed
+                    // underneath, and the frame-counted handoff above depends on it going away
+                    // the moment it is told to.
                     modifier = Modifier
                         .fillMaxSize()
-                        .alpha(com.corlang.app.ui.theme.rememberAppearAlpha())
+                        .alpha(
+                            com.corlang.app.ui.theme.rememberAppearAlpha(
+                                durationMillis = com.corlang.app.ui.theme.Motion.SCREEN_FADE_IN_MS
+                            )
+                        )
                 ) {
                     PaywallScreen(
                         container, lang = lang, levelId = paywallLevel,
