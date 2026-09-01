@@ -1,6 +1,6 @@
 {
-  "versionCode": 237,
-  "versionName": "0.90.3",
-  "notes": "The wrap-up now behaves while you type into it. The keyboard no longer throws the question up the screen the frame it opens: everything that moves for the keyboard moves at the keyboard's own speed, and only as far as it has to. The Back and Exit buttons step out of the way instead of parking under your thumb mid-answer, a tap anywhere puts the keyboard away, and Check no longer drops it and raises it again for every single item. Getting an answer right and tapping Next flashed the red wrong-answer box on the way out; it now leaves as itself. And finishing a lesson stands on the celebration and returns you to Learn, instead of blinking past it into the menu for redoing the lesson you just did.",
+  "versionCode": 238,
+  "versionName": "0.90.4",
+  "notes": "Opening a finished lesson used to drop a block of look-alike buttons on screen at once. The choices now arrive top to bottom, each starting to fade in while the one above it is still coming, so the screen reads as what it is: here is the lesson, here are its parts, here is the way out. The run waits for the flashcard button to know whether it exists, rather than restarting a beat later with a new first item.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }

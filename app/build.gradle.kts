@@ -82,8 +82,8 @@ android {
         applicationId = "com.corlang.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 237
-        versionName = "0.90.3"
+        versionCode = 238
+        versionName = "0.90.4"
         vectorDrawables { useSupportLibrary = true }
 
         buildConfigField("String", "CORLANG_PROXY_BASE_URL", "\"$proxyBaseUrl\"")
