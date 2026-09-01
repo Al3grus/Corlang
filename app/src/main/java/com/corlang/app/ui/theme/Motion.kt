@@ -44,6 +44,18 @@ object Motion {
     const val FADE_OUT_MS = 90
     const val FADE_IN_MS = 210
 
+    /**
+     * The gap between one thing arriving and the next, for a RUN of things that arrive together:
+     * a column of choices, a list that has just loaded. Half a fade, so each one starts while the
+     * one above it is still coming in.
+     *
+     * Half is the whole point. Any less and the run lands as a single block with a smear on it;
+     * any more and it stops being one movement down the column and becomes a queue of separate
+     * fades the eye has to wait through. At half, the overlap carries the direction - top to
+     * bottom - which is the only thing the stagger is there to say.
+     */
+    const val CASCADE_STEP_MS = FADE_IN_MS / 2
+
     fun enter(reduced: Boolean): EnterTransition =
         if (reduced) EnterTransition.None
         else fadeIn(tween(FADE_IN_MS, delayMillis = FADE_OUT_MS))
@@ -76,10 +88,17 @@ object Motion {
  * copy of itself - and keeping a text field alive across a content change costs the keyboard.
  */
 @Composable
-fun rememberAppearAlpha(key: Any? = Unit, durationMillis: Int = Motion.FADE_IN_MS): Float {
+fun rememberAppearAlpha(
+    key: Any? = Unit,
+    durationMillis: Int = Motion.FADE_IN_MS,
+    /** Held transparent this long first - a run's place in its own cascade. See CASCADE_STEP_MS. */
+    delayMillis: Int = 0
+): Float {
     val reduced = rememberReducedMotion()
-    val alpha = remember(key, reduced) { Animatable(if (reduced) 1f else 0f) }
-    LaunchedEffect(key, reduced) { if (!reduced) alpha.animateTo(1f, tween(durationMillis)) }
+    val alpha = remember(key, reduced, delayMillis) { Animatable(if (reduced) 1f else 0f) }
+    LaunchedEffect(key, reduced, delayMillis) {
+        if (!reduced) alpha.animateTo(1f, tween(durationMillis, delayMillis = delayMillis))
+    }
     return alpha.value
 }
 

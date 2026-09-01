@@ -29,6 +29,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -39,6 +40,8 @@ import com.corlang.app.data.SrsGrade
 import com.corlang.app.data.WordsRepository
 import com.corlang.app.data.model.StudyDay
 import com.corlang.app.ui.Haptics
+import com.corlang.app.ui.theme.Motion
+import com.corlang.app.ui.theme.rememberAppearAlpha
 import kotlinx.coroutines.launch
 
 /**
@@ -217,40 +220,72 @@ fun LessonRevisit(
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                     modifier = Modifier.width(IntrinsicSize.Max)
                 ) {
-                    // The flashcards lead, because that is how the lesson itself opens. Offered
-                    // only when this lesson actually introduced words the learner has met: a
-                    // placement start can leave an early lesson's block behind entirely.
-                    if (!cards.isNullOrEmpty()) {
-                        RevisitButton("Review lesson words") {
-                            scope.launch {
-                                val fresh = container.words.lessonWords(lang, day.day, perLesson)
-                                if (fresh.isEmpty()) return@launch
-                                queue.clear(); queue.addAll(fresh.shuffled())
-                                wordsTotal = fresh.size; wordsDone = 0; served = 0
-                                inWords = true
+                    /*
+                     * The run arrives as one movement down the column: each choice starts fading
+                     * in when the one above it is half way there (Motion.CASCADE_STEP_MS), so the
+                     * screen reads top to bottom - here is the lesson, here are its parts, here is
+                     * the way out - instead of a block of look-alike buttons appearing at once.
+                     *
+                     * It waits for the word block to load, and this is the only reason the whole
+                     * run does. A cascade has to know how many things are in it and in what order
+                     * before it starts; starting without the flashcard button and inserting it at
+                     * the top a frame later would restart the run from a different first item.
+                     */
+                    if (cards != null) {
+                        val hasWords = cards.isNotEmpty()
+                        // The flashcards lead, because that is how the lesson itself opens. Offered
+                        // only when this lesson actually introduced words the learner has met: a
+                        // placement start can leave an early lesson's block behind entirely.
+                        if (hasWords) {
+                            RevisitButton("Review lesson words", order = 0) {
+                                scope.launch {
+                                    val fresh =
+                                        container.words.lessonWords(lang, day.day, perLesson)
+                                    if (fresh.isEmpty()) return@launch
+                                    queue.clear(); queue.addAll(fresh.shuffled())
+                                    wordsTotal = fresh.size; wordsDone = 0; served = 0
+                                    inWords = true
+                                }
                             }
                         }
-                    }
 
-                    sections.forEachIndexed { n, stepIndex ->
-                        RevisitButton(labels[n]) { onPickSection(stepIndex) }
-                    }
+                        val firstSection = if (hasWords) 1 else 0
+                        sections.forEachIndexed { n, stepIndex ->
+                            RevisitButton(labels[n], order = firstSection + n) {
+                                onPickSection(stepIndex)
+                            }
+                        }
 
-                    Spacer(Modifier.height(10.dp))   // with the 10 above: twice the run's gap
-                    Button(onClick = onExit, modifier = Modifier.fillMaxWidth()) { Text("Exit") }
+                        Spacer(Modifier.height(10.dp))   // with the 10 above: twice the run's gap
+                        Button(
+                            onClick = onExit,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .alpha(cascadeAlpha(firstSection + sections.size))
+                        ) { Text("Exit") }
+                    }
                 }
             }
         }
     }
 }
 
-/** One choice on the revisit screen: the app's outlined action, filling the run's shared width. */
+/**
+ * One choice on the revisit screen: the app's outlined action, filling the run's shared width.
+ *
+ * [order] is its place in the cascade, counted from the top of the column.
+ */
 @Composable
-private fun RevisitButton(label: String, onClick: () -> Unit) {
+private fun RevisitButton(label: String, order: Int, onClick: () -> Unit) {
     OutlinedButton(
         onClick = onClick,
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary),
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().alpha(cascadeAlpha(order))
     ) { Text(label, maxLines = 1) }
 }
+
+/** Opacity of the [order]-th thing in a run that arrives top to bottom. */
+@Composable
+private fun cascadeAlpha(order: Int): Float =
+    rememberAppearAlpha(delayMillis = order * Motion.CASCADE_STEP_MS)
 
