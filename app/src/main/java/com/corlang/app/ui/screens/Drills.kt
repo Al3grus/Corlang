@@ -201,7 +201,9 @@ fun WrapupRecall(
     day: StudyDay,
     loadResume: (suspend () -> RecallResume)? = null,
     started: Boolean = true,
-    onStart: () -> Unit = {},
+    onStart: (animated: Boolean) -> Unit = {},
+    /** Opacity of the Start button while the intro panel above it collapses. See [RecallRunner]. */
+    startAlpha: Float = 1f,
     onAnswered: (index: Int, correct: Boolean, attempt: Int) -> Unit = { _, _, _ -> },
     /**
      * Height to give the question block below the counter, so it sits in the MIDDLE of the room
@@ -229,6 +231,7 @@ fun WrapupRecall(
         onAnswered = onAnswered,
         started = started,
         onStart = onStart,
+        startAlpha = startAlpha,
         centered = true,
         fillBelowCounter = fillBelowCounter
     )
@@ -396,7 +399,18 @@ private fun RecallRunner(
     onAnswered: (index: Int, correct: Boolean, attempt: Int) -> Unit = { _, _, _ -> },
     /** Wrap-up only: the step card above stands as an intro panel until Start is tapped. */
     started: Boolean = true,
-    onStart: () -> Unit = {},
+    /**
+     * Wrap-up only. `animated` is false when the start was not a tap - a wrap-up already under way
+     * announces itself the moment it composes, and a panel that collapses on its own, before the
+     * learner has touched anything, reads as a glitch rather than as a response.
+     */
+    onStart: (animated: Boolean) -> Unit = {},
+    /**
+     * Wrap-up only: opacity of the Start button. The intro panel above it does not vanish, it is
+     * eaten from below over most of a second; the button sits under the same rising edge and
+     * goes with it, rather than blinking out while the panel is still travelling.
+     */
+    startAlpha: Float = 1f,
     /** Wrap-up only: prompt, field and verdict centred, with the counter above them. */
     centered: Boolean = false,
     /** Wrap-up only: see [WrapupRecall]. Vertically centres everything under the counter. */
@@ -414,7 +428,7 @@ private fun RecallRunner(
 
     // A wrap-up already under way skips its own intro: it was read before the learner walked away.
     LaunchedEffect(resumed) {
-        if (resumed.cleared.isNotEmpty() || resumed.missedAny) onStart()
+        if (resumed.cleared.isNotEmpty() || resumed.missedAny) onStart(false)
     }
 
     // Live queue of remaining item INDICES (identity survives re-queuing), mirroring the exercise
@@ -443,7 +457,10 @@ private fun RecallRunner(
     }
     // The intro panel is the step card above; this is the only thing under it until Start.
     if (!started) {
-        Button(onClick = onStart, modifier = Modifier.fillMaxWidth()) { Text("Start recall →") }
+        Button(
+            onClick = { onStart(true) },
+            modifier = Modifier.fillMaxWidth().alpha(startAlpha)
+        ) { Text("Start recall →") }
         return
     }
     if (finished || queue.isEmpty()) {
@@ -476,9 +493,15 @@ private fun RecallRunner(
     val counter = "$solved/${items.size}" +
         if (queue.size > 1) "  ·  ${queue.size} left" else ""
 
+    // Wrap-up only. The whole question block arrives where the intro panel used to be, and only
+    // once that panel has finished collapsing - the shrink is what MAKES the room, so a block
+    // that appears before the room exists lays itself out against a screen that is still moving.
+    // Remembered from the moment this branch is first reached, which is the moment start latched.
+    val blockAlpha = if (centered) com.corlang.app.ui.theme.rememberAppearAlpha(Unit) else 1f
+
     Column(
         horizontalAlignment = if (centered) Alignment.CenterHorizontally else Alignment.Start,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().alpha(blockAlpha)
     ) {
         // The counter keeps its place right under the step bar. Everything below it - the prompt,
         // the field and the verdict - goes in a box that takes whatever room the step was given

@@ -1,15 +1,20 @@
 package com.corlang.app.ui.screens
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.snap
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
@@ -45,11 +50,25 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.CompositingStrategy
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.layout
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.util.lerp
 import com.corlang.app.AppContainer
 import com.corlang.app.data.Fsrs
 import com.corlang.app.data.SessionCard
@@ -113,6 +132,119 @@ fun sessionOpensAt(
  * and being a few dp out only moves the centred block by half of that.
  */
 private val WRAPUP_CHROME = 244.dp
+
+/**
+ * How long the wrap-up's intro panel takes to be eaten down to its title bar.
+ *
+ * Long for a tap response - Material puts a container transform at 300-500ms - and deliberately
+ * so: this is not a control changing state, it is the door closing on the instructions and opening
+ * on the hardest block of the lesson, and the soft edge doing the eating is not legible at 350ms.
+ * The cost of the ceremony is paid back by making it skippable: a tap anywhere lands it at once,
+ * so the learner who has seen it sixty times never waits for it.
+ */
+private const val WRAPUP_COLLAPSE_MS = 1000
+
+/**
+ * The soft edge the collapsing panel drags behind its rising bottom. Content within this much of
+ * that edge is already part-transparent, so the panel dissolves what it passes over instead of
+ * guillotining it - which is what a plain shrinking Surface gives you, since it clips its content.
+ */
+private val WRAPUP_EAT_BAND = 32.dp
+
+/** Fraction of the collapse by which the intro text (and the Start button under it) has gone. */
+private const val WRAPUP_INTRO_OUT = 0.65f
+
+/**
+ * Fraction of the collapse at which "Wrap-up" starts arriving. Before the bar lands, not after:
+ * a container that empties, travels, stops, and only then fills is three beats for one gesture,
+ * and the middle one is a blank blue slab. One short word can afford to be early.
+ */
+private const val WRAPUP_TITLE_IN = 0.70f
+
+/** Opacity of the intro text, and of the Start button below it, at a given point in the collapse. */
+private fun wrapupIntroAlpha(collapse: Float): Float =
+    1f - (collapse / WRAPUP_INTRO_OUT).coerceIn(0f, 1f)
+
+/**
+ * The wrap-up step's card, drawn anywhere between its two states.
+ *
+ * [collapse] 0 is the full instruction panel; 1 is the one-word title bar. In between the card's
+ * BOTTOM edge travels up while its top stays put, and the intro dissolves into that edge over
+ * [WRAPUP_EAT_BAND], so the panel reads as eating its own contents rather than as a box that got
+ * shorter. Everything else in the gesture - the Start button below, the scroll - hangs off the
+ * same [collapse], which is why it is passed in rather than animated here.
+ *
+ * Both heights are MEASURED, not assumed: the intro's depends on the day's text and the bar's on
+ * the learner's font scale, and a hardcoded 76dp would be wrong for somebody on every lesson.
+ */
+@Composable
+private fun WrapupStepCard(
+    collapse: Float,
+    intro: @Composable () -> Unit
+) {
+    var introH by remember { mutableIntStateOf(0) }
+    var barH by remember { mutableIntStateOf(0) }
+    val bandPx = with(LocalDensity.current) { WRAPUP_EAT_BAND.toPx() }
+
+    // Until BOTH states have been measured the card is simply its intro. Lerping towards a barH
+    // that is still zero is how you get a card that flashes to nothing on its first frame.
+    val measured = introH > 0 && barH > 0
+    val height = if (measured) lerp(introH, barH, collapse.coerceIn(0f, 1f)) else introH
+    val introAlpha = wrapupIntroAlpha(collapse)
+    val titleAlpha = ((collapse - WRAPUP_TITLE_IN) / (1f - WRAPUP_TITLE_IN)).coerceIn(0f, 1f)
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .layout { measurable, constraints ->
+                val placeable = measurable.measure(constraints)
+                val h = if (measured) height else placeable.height
+                // Placed at the top, so the edge that moves is the bottom one.
+                layout(placeable.width, h.coerceAtLeast(0)) { placeable.place(0, 0) }
+            }
+            .clipToBounds()
+    ) {
+        Box(
+            modifier = Modifier
+                .onSizeChanged { introH = it.height }
+                .graphicsLayer {
+                    alpha = introAlpha
+                    // DstIn has to have something to punch through: without an offscreen layer
+                    // the mask would erase whatever was already painted behind this card.
+                    compositingStrategy = CompositingStrategy.Offscreen
+                }
+                .drawWithContent {
+                    drawContent()
+                    if (!measured || collapse <= 0f || introAlpha <= 0f) return@drawWithContent
+                    val edge = height.toFloat()
+                    val top = (edge - bandPx).coerceAtLeast(0f)
+                    if (edge <= top) return@drawWithContent
+                    drawRect(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(Color.Black, Color.Transparent),
+                            startY = top,
+                            endY = edge
+                        ),
+                        topLeft = Offset(0f, top),
+                        size = Size(size.width, edge - top),
+                        blendMode = BlendMode.DstIn
+                    )
+                }
+        ) { intro() }
+
+        Text(
+            "Wrap-up",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .onSizeChanged { barH = it.height }
+                .alpha(titleAlpha)
+                .padding(vertical = 14.dp)
+        )
+    }
+}
 
 data class SessionStep(
     val id: String,
@@ -464,6 +596,19 @@ fun SessionPlayer(
     // learner starts: the rules are worth reading once, not worth half the screen for eight
     // questions. Reset per day; a resumed wrap-up starts itself (see RecallRunner).
     var wrapupStarted by rememberSaveable(day.day, startAt) { mutableStateOf(false) }
+    /*
+     * One clock for the whole start-the-wrap-up gesture: the panel's height, the soft edge eating
+     * its way up through the instructions, the Start button fading under that edge, and the
+     * scroll. They have to be the SAME animation or the edge and what it is eating drift apart -
+     * which is also why this is a tween and not the house spring. A spring has no duration to
+     * hang a gradient off.
+     *
+     * Starts at 1 when the wrap-up is already under way (process death restores wrapupStarted,
+     * which is saveable, but not this): coming back must land on the bar, not replay the collapse.
+     */
+    val wrapupCollapse = remember(day.day, startAt) {
+        Animatable(if (wrapupStarted) 1f else 0f)
+    }
     // With the keyboard up on a wrap-up question, the session chrome steps back so the prompt and
     // the field are what the eye lands on.
     val wrapupTyping = wrapupStarted && WindowInsets.isImeVisible &&
@@ -662,12 +807,25 @@ fun SessionPlayer(
             }
             val activity = day.activities.getOrNull(s.activityIndex)
 
-            Column(modifier = Modifier.fillMaxWidth()) {
+            // A second of ceremony is a gift the first time and a toll booth the sixtieth, so
+            // any tap during the collapse ends it. The Start button is a descendant and still
+            // gets the event first; this only catches taps that land nowhere in particular.
+            val collapsing = s.kind == StepKind.WRAPUP && wrapupStarted &&
+                wrapupCollapse.value < 1f
+            Column(
+                modifier = Modifier.fillMaxWidth().then(
+                    if (collapsing) Modifier.pointerInput(Unit) {
+                        detectTapGestures { scope.launch { wrapupCollapse.snapTo(1f) } }
+                    } else Modifier
+                )
+            ) {
                 // The step card. A wrap-up under way keeps only its name: the instructions it
                 // carries (no peeking, you will see an English phrase...) are a briefing, and a
                 // briefing that stays on screen for the whole exercise is just less room for the
                 // exercise. Collapsed, it is a title bar over centred questions.
-                val collapsed = s.kind == StepKind.WRAPUP && wrapupStarted
+                val isWrapup = s.kind == StepKind.WRAPUP
+                val collapse = if (isWrapup && wrapupStarted) wrapupCollapse.value else 0f
+                val collapsed = isWrapup && collapse >= 1f
                 Surface(
                     shape = RoundedCornerShape(16.dp),
                     color = MaterialTheme.colorScheme.primaryContainer,
@@ -679,15 +837,10 @@ fun SessionPlayer(
                         .padding(vertical = 12.dp)
                         .alpha(if (collapsed) chromeAlpha else 1f)
                 ) {
-                    if (collapsed) {
-                        Text(
-                            "Wrap-up",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.fillMaxWidth().padding(vertical = 14.dp)
-                        )
-                    } else Column(modifier = Modifier.padding(20.dp)) {
+                    // Every step draws this panel; only the wrap-up ever takes it away again,
+                    // and it does that by eating it rather than by cutting to the bar.
+                    val introPanel: @Composable () -> Unit = {
+                      Column(modifier = Modifier.padding(20.dp)) {
                         Text(
                             buildString {
                                 append(
@@ -752,7 +905,9 @@ fun SessionPlayer(
                                 modifier = Modifier.padding(top = 8.dp)
                             )
                         }
+                      }
                     }
+                    if (isWrapup) WrapupStepCard(collapse) { introPanel() } else introPanel()
                 }
 
                 // Inline drills drive their own completion.
@@ -840,8 +995,37 @@ fun SessionPlayer(
                                 .map { it.itemId }
                             recallResumeFrom(ids, s.id)
                         },
-                        started = wrapupStarted,
-                        onStart = { wrapupStarted = true },
+                        // Not wrapupStarted: the shrink is what MAKES the room this block asks
+                        // for (WRAPUP_CHROME budgets for the collapsed bar), so a block laid out
+                        // before the panel lands measures itself against a screen still moving.
+                        started = collapse >= 1f,
+                        startAlpha = wrapupIntroAlpha(collapse),
+                        onStart = { animated ->
+                            if (!wrapupStarted) {
+                                wrapupStarted = true
+                                scope.launch {
+                                    if (!animated || reducedMotion) wrapupCollapse.snapTo(1f)
+                                    else {
+                                        val spec = tween<Float>(
+                                            WRAPUP_COLLAPSE_MS, easing = FastOutSlowInEasing
+                                        )
+                                        // Same clock, so the panel always lands where the layout
+                                        // below assumes it landed - even if the learner had
+                                        // scrolled the Start button up to reach it.
+                                        launch {
+                                            stepScroll.animateScrollTo(
+                                                0,
+                                                tween(WRAPUP_COLLAPSE_MS, easing = FastOutSlowInEasing)
+                                            )
+                                        }
+                                        wrapupCollapse.animateTo(1f, spec)
+                                    }
+                                }
+                            } else if (wrapupCollapse.value < 1f) {
+                                // Second tap on a Start button that is already fading: a skip.
+                                scope.launch { wrapupCollapse.snapTo(1f) }
+                            }
+                        },
                         onAnswered = { i, ok, attempt ->
                             mark(if (ok) "${s.id}::q$i" else "${s.id}::w$i#$attempt")
                         },
