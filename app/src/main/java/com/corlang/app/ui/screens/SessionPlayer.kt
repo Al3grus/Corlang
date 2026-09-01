@@ -24,8 +24,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.ime
+import androidx.compose.foundation.layout.imeAnimationSource
+import androidx.compose.foundation.layout.imeAnimationTarget
 import androidx.compose.foundation.layout.imePadding
-import androidx.compose.foundation.layout.isImeVisible
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -60,9 +62,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.findRootCoordinates
 import androidx.compose.ui.layout.layout
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -85,6 +91,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 
 /**
  * The guided daily session: the app walks you through today's work one step at a time.
@@ -134,6 +141,13 @@ fun sessionOpensAt(
  * and being a few dp out only moves the centred block by half of that.
  */
 private val WRAPUP_CHROME = 244.dp
+
+/**
+ * The part of [WRAPUP_CHROME] that leaves while the wrap-up is being typed into: the Back/Exit
+ * row and the spacer under it. Handed back to the question block in step with the row's own
+ * departure, so the block does not lurch the moment the row goes.
+ */
+private val WRAPUP_BACK_ROW = 84.dp
 
 /**
  * How long the wrap-up's intro panel takes to be eaten down to its title bar.
@@ -626,26 +640,53 @@ fun SessionPlayer(
     }
     /** Held so a skip can cancel the collapse mid-flight instead of racing it to the end. */
     var wrapupRun by remember(day.day, startAt) { mutableStateOf<Job?>(null) }
-    // With the keyboard up on a wrap-up question, the session chrome steps back so the prompt and
-    // the field are what the eye lands on.
-    val wrapupTyping = wrapupStarted && WindowInsets.isImeVisible &&
-        steps.getOrNull(index)?.kind == StepKind.WRAPUP
-    val chromeAlpha by androidx.compose.animation.core.animateFloatAsState(
-        targetValue = if (wrapupTyping) 0.4f else 1f,
-        label = "session-chrome"
+    /*
+     * How far the keyboard reaches INTO the player's own area. Not the raw ime inset: the tab bar
+     * and the nav bar below this screen are already spent (MainActivity consumes the scaffold's
+     * insets, and every imePadding here is net of them), so the raw inset overstates the overlap by
+     * their height. That height is theirs, not ours, so it is measured rather than assumed.
+     */
+    var bottomGapPx by remember { mutableIntStateOf(0) }
+    val density = LocalDensity.current
+    fun imeOverlap(inset: Int) = (inset - bottomGapPx).coerceAtLeast(0)
+    val imeOverlapPx = imeOverlap(WindowInsets.ime.getBottom(density))
+    val imeSpanPx = maxOf(
+        imeOverlapPx,
+        imeOverlap(WindowInsets.imeAnimationTarget.getBottom(density)),
+        imeOverlap(WindowInsets.imeAnimationSource.getBottom(density))
     )
+    /*
+     * The keyboard's own clock: 0 with it away, 1 with it fully up, and every value between read
+     * live off the system's animated inset (imeAnimationSource and imeAnimationTarget are the two
+     * ends that animation is travelling between). Everything on this screen that reacts to the
+     * keyboard hangs off THIS rather than off its own animateFloatAsState - the screen has to
+     * travel with the keyboard, and a second clock for one gesture is what threw the question
+     * block up the screen the frame the keyboard appeared. Zero outside a started wrap-up: no
+     * other step moves for the keyboard.
+     */
+    val wrapupKeyboard =
+        if (wrapupStarted && steps.getOrNull(index)?.kind == StepKind.WRAPUP && imeSpanPx > 0)
+            imeOverlapPx.toFloat() / imeSpanPx
+        else 0f
+    // With the keyboard up on a wrap-up question, the session chrome steps back so the prompt and
+    // the field are what the eye lands on. On the keyboard's clock, like everything else here.
+    val chromeAlpha = 1f - 0.6f * wrapupKeyboard
     /*
      * The room the wrap-up has for its question block, so it can sit in the middle of the screen
      * instead of stacking under the counter with the bottom half empty. The player's own height
      * less what is drawn around the block: the page padding, the header row, the progress bar, the
      * collapsed Wrap-up bar and the counter line above it, and the Back/Exit row below it.
      *
-     * Zero while the keyboard is up. There is no dead space to centre in then, and a taller block
-     * would only push the field down behind the keyboard.
+     * The keyboard takes its overlap out of this and the departing Back/Exit row hands its own
+     * height back, both continuously, so the block settles into the room left ABOVE the keyboard
+     * at the keyboard's own speed - and, where the keyboard was never going to reach it, barely
+     * moves at all. This used to be zeroed outright the frame the keyboard opened, which threw
+     * the question the learner was mid-way through reading up the screen in one frame.
      */
     val wrapupFill =
-        if (viewportHeight <= 0.dp || WindowInsets.isImeVisible) 0.dp
-        else (viewportHeight - WRAPUP_CHROME).coerceAtLeast(0.dp)
+        if (viewportHeight <= 0.dp) 0.dp
+        else (viewportHeight - WRAPUP_CHROME + WRAPUP_BACK_ROW * wrapupKeyboard -
+            with(density) { imeOverlapPx.toDp() }).coerceAtLeast(0.dp)
 
     val doneCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE && stepDone(it) }
     val actionCount = steps.count { it.kind != StepKind.INFO && it.kind != StepKind.COMPLETE }
@@ -754,10 +795,21 @@ fun SessionPlayer(
     // mid-content and had to be scrolled UP to see its own title.
     val stepScroll = rememberScrollState()
     LaunchedEffect(index, inWords) { stepScroll.scrollTo(0) }
+    val focus = LocalFocusManager.current
     Column(
         modifier = Modifier
             .fillMaxSize()
+            // What sits between this screen's bottom edge and the window's - the tab bar and the
+            // nav bar - which is the part of the keyboard's inset that never reaches us.
+            .onGloballyPositioned { c ->
+                bottomGapPx = (c.findRootCoordinates().size.height -
+                    (c.positionInRoot().y + c.size.height)).toInt().coerceAtLeast(0)
+            }
             .verticalScroll(stepScroll)
+            // A tap on anything that is not itself a control puts the keyboard away. The wrap-up
+            // types into a field in the middle of the screen with no Done key in sight, and
+            // system back was the only other way to be rid of it.
+            .pointerInput(Unit) { detectTapGestures { focus.clearFocus() } }
             // imePadding: the recall/cloze/FILL drills type into fields below the step card —
             // without it the keyboard covers them and they can't even be scrolled into view.
             .imePadding()
@@ -1259,20 +1311,48 @@ fun SessionPlayer(
             }
         }
 
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            OutlinedButton(
-                onClick = { if (index > 0) index-- },
-                enabled = index > 0,
-                modifier = Modifier.weight(1f)
-            ) { Text("← Back") }
-            OutlinedButton(onClick = onExit, modifier = Modifier.weight(1f)) {
-                Text(if (practice) "Back to sections" else "Exit (saved)")
+        /*
+         * The two ways out of the lesson - and they leave while the wrap-up is being typed into.
+         * With the keyboard up this row is pushed to sit directly under the answer field, which
+         * puts an exit under the thumb at the one moment the learner is mid-answer, and it is of
+         * no use to them there. It goes on the keyboard's clock and is eaten from below, like the
+         * wrap-up's intro panel before it, so nothing above it moves while it goes.
+         */
+        val exitsShown = 1f - wrapupKeyboard
+        if (exitsShown > 0f) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .alpha(exitsShown)
+                    .then(
+                        if (exitsShown < 1f) Modifier
+                            .layout { measurable, constraints ->
+                                val p = measurable.measure(constraints)
+                                val h = (p.height * exitsShown).roundToInt()
+                                layout(p.width, h) { p.place(0, 0) }
+                            }
+                            .clipToBounds()
+                        else Modifier
+                    )
+            ) {
+                Column(modifier = Modifier.fillMaxWidth()) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        OutlinedButton(
+                            onClick = { if (index > 0) index-- },
+                            enabled = index > 0,
+                            modifier = Modifier.weight(1f)
+                        ) { Text("← Back") }
+                        OutlinedButton(onClick = onExit, modifier = Modifier.weight(1f)) {
+                            Text(if (practice) "Back to sections" else "Exit (saved)")
+                        }
+                    }
+                    Spacer(Modifier.height(24.dp))
+                }
             }
         }
-        Spacer(Modifier.height(24.dp))
     }
 }
 
