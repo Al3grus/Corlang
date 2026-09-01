@@ -45,6 +45,17 @@ object Motion {
     const val FADE_IN_MS = 210
 
     /**
+     * The same fade-through at WHOLE-SCREEN scale: a tab replacing a tab, and anything that opens
+     * over one (Settings, the paywall, a Profile sub-page). Twice the in-place figures above,
+     * because it is twice the journey. A verdict opening under a question is one detail changing
+     * and wants to be over quickly; a whole screen being replaced is the app going somewhere, and
+     * at the shorter timing that read as a blink between two states rather than as a move between
+     * them. Every screen change in the app is spent from these two, so they all move alike.
+     */
+    const val SCREEN_FADE_OUT_MS = FADE_OUT_MS * 2
+    const val SCREEN_FADE_IN_MS = FADE_IN_MS * 2
+
+    /**
      * The gap between one thing arriving and the next, for a RUN of things that arrive together:
      * a column of choices, a list that has just loaded. Half a fade, so each one starts while the
      * one above it is still coming in.
@@ -58,10 +69,10 @@ object Motion {
 
     fun enter(reduced: Boolean): EnterTransition =
         if (reduced) EnterTransition.None
-        else fadeIn(tween(FADE_IN_MS, delayMillis = FADE_OUT_MS))
+        else fadeIn(tween(SCREEN_FADE_IN_MS, delayMillis = SCREEN_FADE_OUT_MS))
 
     fun exit(reduced: Boolean): ExitTransition =
-        if (reduced) ExitTransition.None else fadeOut(tween(FADE_OUT_MS))
+        if (reduced) ExitTransition.None else fadeOut(tween(SCREEN_FADE_OUT_MS))
 
     /**
      * For something that OPENS UNDER what is already on screen and pushes it down: an answer

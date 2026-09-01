@@ -1,6 +1,6 @@
 {
-  "versionCode": 238,
-  "versionName": "0.90.4",
-  "notes": "Opening a finished lesson used to drop a block of look-alike buttons on screen at once. The choices now arrive top to bottom, each starting to fade in while the one above it is still coming, so the screen reads as what it is: here is the lesson, here are its parts, here is the way out. The run waits for the flashcard button to know whether it exists, rather than restarting a beat later with a new first item.",
+  "versionCode": 239,
+  "versionName": "0.90.5",
+  "notes": "Screen changes take twice as long, which is to say you can now see them. Switching tabs, opening Settings or the paywall, and stepping into Language or Course & tutor from Profile all fade through at the same doubled length, so moving around the app reads as movement rather than as a blink between two states. The Profile sub-pages were a simultaneous crossfade, the one shape the rest of the app avoids: both screens painted at once means the old one lingers over the new. They now leave before the next one arrives, like everything else.",
   "apkUrl": "https://raw.githubusercontent.com/Al3grus/Corlang/main/releases/corlang.apk"
 }
