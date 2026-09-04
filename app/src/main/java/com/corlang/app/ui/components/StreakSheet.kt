@@ -71,10 +71,14 @@ import java.util.Locale
  *
  * A lone icon in that corner used to read as a button and do nothing (see [CorlangTopBar]); this
  * one genuinely is a button, which is what makes it safe to put back there.
+ *
+ * [frozen] swaps the flame for a snowflake: the grey flame means "today is still open", and it
+ * used to stand in for "a freeze is holding your streak" as well, which is the one state the
+ * learner would actually want to be told about.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun StreakChip(streak: Int, lit: Boolean, onClick: () -> Unit) {
+fun StreakChip(streak: Int, lit: Boolean, frozen: Boolean, onClick: () -> Unit) {
     Surface(
         color = Color.Transparent,
         shape = RoundedCornerShape(20.dp),
@@ -85,7 +89,8 @@ fun StreakChip(streak: Int, lit: Boolean, onClick: () -> Unit) {
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
         ) {
-            StreakFlame(streak = streak, lit = lit, size = 20.dp)
+            if (frozen) StreakFrozen(size = 20.dp)
+            else StreakFlame(streak = streak, lit = lit, size = 20.dp)
             Text(
                 "$streak",
                 style = MaterialTheme.typography.titleMedium,
@@ -97,13 +102,16 @@ fun StreakChip(streak: Int, lit: Boolean, onClick: () -> Unit) {
 }
 
 /**
- * The full panel. [studiedDays] is every date a lesson was completed (the same set the month
+ * The full panel. [frozen] is a run currently held by a spent freeze — the hero icon becomes the
+ * same snowflake the top-bar chip shows, so the two never tell different stories. [studiedDays] is
+ * every date a lesson was completed (the same set the month
  * calendar on Progress draws from); the strip shows the learner's current week.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun StreakSheet(
     streak: Int,
+    frozen: Boolean,
     freezes: Int,
     longestStreak: Int,
     studiedDays: Set<LocalDate>,
@@ -156,7 +164,9 @@ fun StreakSheet(
             )
 
             Spacer(Modifier.height(20.dp))
-            StreakFlame(streak = streak, lit = studiedDays.contains(today), size = 88.dp)
+            if (frozen) StreakFrozen(size = 88.dp)
+            else StreakFlame(streak = streak, lit = studiedDays.contains(today), size = 88.dp)
+
             Spacer(Modifier.height(10.dp))
             Text(
                 "$streak",
@@ -164,9 +174,10 @@ fun StreakSheet(
                 fontWeight = FontWeight.Bold
             )
             Text(
-                "day streak",
+                if (frozen) "day streak, held by a freeze" else "day streak",
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center
             )
 
             Spacer(Modifier.height(22.dp))

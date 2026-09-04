@@ -22,6 +22,9 @@ import androidx.compose.ui.unit.dp
  * IS an action — it opens the streak sheet — so the corner finally does what it looks like it does.
  * The language is still named (next to its flag) on Profile and Progress.
  *
+ * [streakFrozen] draws a snowflake instead of the unlit flame, so a run a freeze is currently
+ * paying for looks different from a day simply not started yet.
+ *
  * [streak] < 0 hides the chip entirely (progress not loaded yet), so the bar never flashes a
  * placeholder "0" before the real number arrives.
  */
@@ -30,6 +33,7 @@ import androidx.compose.ui.unit.dp
 fun CorlangTopBar(
     streak: Int = -1,
     streakLit: Boolean = false,
+    streakFrozen: Boolean = false,
     onStreakClick: () -> Unit = {}
 ) {
     // Dark-only app: the bar sits on surface so it stays quiet against the ink background.
@@ -53,7 +57,12 @@ fun CorlangTopBar(
         },
         actions = {
             if (streak >= 0) {
-                StreakChip(streak = streak, lit = streakLit, onClick = onStreakClick)
+                StreakChip(
+                    streak = streak,
+                    lit = streakLit,
+                    frozen = streakFrozen,
+                    onClick = onStreakClick
+                )
             }
         },
         colors = TopAppBarDefaults.topAppBarColors(

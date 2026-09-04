@@ -6,6 +6,7 @@ import com.corlang.app.data.ProgressRepository.Companion.advanceStreak
 import com.corlang.app.data.ProgressRepository.Companion.displayFreezes
 import com.corlang.app.data.ProgressRepository.Companion.displayStreak
 import com.corlang.app.data.ProgressRepository.Companion.freezeEarnedBy
+import com.corlang.app.data.ProgressRepository.Companion.freezeHeld
 import com.corlang.app.data.ProgressRepository.Companion.settle
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -188,5 +189,37 @@ class StreakTest {
         assertFalse(freezeEarnedBy(newStreak = 4, freezesBefore = 0))
         assertFalse("at the cap a milestone must not claim a payout",
             freezeEarnedBy(newStreak = 30, freezesBefore = MAX_FREEZES))
+    }
+
+    // ----- the top-bar chip: grey flame vs. snowflake -----
+
+    /**
+     * The chip has three states and they must not blur into two: a lit flame (today is banked), a
+     * grey flame (today is still open), and a snowflake (a day was missed and the bank paid for
+     * it). Before [freezeHeld] existed the last two drew the same grey flame, so the one event
+     * worth telling the learner about — a freeze being spent — was invisible.
+     */
+    @Test
+    fun `freezeHeld is true only while the bank is covering a missed day`() {
+        val today = 20_000L
+        assertFalse("studied today: the flame is lit, nothing is held",
+            freezeHeld(streak = 6, lastStudiedEpochDay = today, freezes = 2, today = today))
+        assertFalse("studied yesterday: today is merely still open",
+            freezeHeld(streak = 6, lastStudiedEpochDay = today - 1, freezes = 2, today = today))
+        assertTrue("one missed day paid for by the bank",
+            freezeHeld(streak = 6, lastStudiedEpochDay = today - 2, freezes = 2, today = today))
+        assertTrue("two missed days, exactly covered",
+            freezeHeld(streak = 6, lastStudiedEpochDay = today - 3, freezes = 2, today = today))
+        assertFalse("a lapse past the bank: there is no streak left to hold",
+            freezeHeld(streak = 6, lastStudiedEpochDay = today - 4, freezes = 2, today = today))
+        assertFalse("no streak, no freeze holding it",
+            freezeHeld(streak = 0, lastStudiedEpochDay = today - 2, freezes = 2, today = today))
+    }
+
+    /** A clock set back (or westward travel) is not a lapse, so it must not read as frozen. */
+    @Test
+    fun `freezeHeld is false when the clock runs backwards`() {
+        val today = 20_000L
+        assertFalse(freezeHeld(streak = 6, lastStudiedEpochDay = today + 3, freezes = 2, today = today))
     }
 }
