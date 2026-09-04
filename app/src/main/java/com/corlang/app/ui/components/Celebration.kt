@@ -32,6 +32,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.rotate
@@ -44,6 +45,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.corlang.app.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.launch
+import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.random.Random
@@ -81,6 +83,60 @@ private fun flameTier(streak: Int, dark: Boolean): Pair<Color, Color> = when {
 private fun unlitFlame(dark: Boolean): Pair<Color, Color> =
     if (dark) Color(0xFF5A646D) to Color(0xFF7A848D)
     else Color(0xFFAEA595) to Color(0xFFC7BFB0)
+
+/**
+ * Ice colors for a held streak: arms, core. Two sets for the same reason [flameTier] has two —
+ * the dark pair is bright enough to glow on ink, the light pair is pitched darker so the flake
+ * keeps an edge on paper.
+ */
+private fun frostTier(dark: Boolean): Pair<Color, Color> =
+    if (dark) Color(0xFF6FC9F0) to Color(0xFFDFF5FF)
+    else Color(0xFF2C7FA6) to Color(0xFF5FB4CE)
+
+/**
+ * The streak while a freeze is holding it: a snowflake standing where the flame would.
+ *
+ * "You have not studied yet today" and "you missed a day and the bank paid for it" are two
+ * different states that used to draw the same grey flame, so the one thing worth knowing — that
+ * a freeze was just spent to keep the run alive — was invisible. The flake says it without a
+ * word, and it goes back to being a flame the moment today's lesson lands.
+ *
+ * Drawn shape-first like the flame, and for the same reason: it has to hold at 20.dp in the top
+ * bar and at 88.dp in the streak sheet, and it owns its own colors rather than borrowing a
+ * Material role. Still on purpose — a frozen streak is a pause, not an event.
+ */
+@Composable
+fun StreakFrozen(size: Dp, modifier: Modifier = Modifier) {
+    val dark = com.corlang.app.ui.theme.CorlangColors.isDark
+    val (arms, core) = frostTier(dark)
+    Box(
+        modifier
+            .size(size)
+            .drawBehind {
+                val c = Offset(this.size.width / 2f, this.size.height / 2f)
+                val r = minOf(this.size.width, this.size.height) * 0.46f
+                val stroke = r * 0.155f
+                // Six arms, each with two pairs of branches: the branches are what makes it read
+                // as a snowflake instead of an asterisk once it is 20dp wide.
+                repeat(6) { i ->
+                    val a = (i * PI / 3f).toFloat()
+                    val dir = Offset(cos(a), sin(a))
+                    drawLine(arms, c, c + dir * r, stroke, StrokeCap.Round)
+                    listOf(0.48f to 0.30f, 0.76f to 0.20f).forEach { (at, len) ->
+                        val base = c + dir * (r * at)
+                        listOf(-1f, 1f).forEach { side ->
+                            val b = a + side * 0.9f
+                            drawLine(
+                                arms, base, base + Offset(cos(b), sin(b)) * (r * len),
+                                stroke * 0.72f, StrokeCap.Round
+                            )
+                        }
+                    }
+                }
+                drawCircle(core, radius = r * 0.17f, center = c)
+            }
+    )
+}
 
 /**
  * The streak flame. [lit] = today's lesson is done (grey otherwise, like chess.com's

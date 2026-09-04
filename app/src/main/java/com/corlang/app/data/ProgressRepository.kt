@@ -90,6 +90,19 @@ class ProgressRepository(private val dao: ProgressDao) {
         fun displayStreak(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Int =
             settle(streak, lastStudiedEpochDay, freezes, today).first
 
+        /**
+         * True when the run is only still alive because the bank paid for a missed day — i.e. a
+         * freeze is currently holding the streak. Derived from the same [settle], so it can never
+         * disagree with the number beside it.
+         *
+         * Studied today or yesterday is not a held streak (nothing was spent yet), and a lapse
+         * too long for the bank is not one either (there is no streak left to hold).
+         */
+        fun freezeHeld(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Boolean {
+            val missed = today - lastStudiedEpochDay - 1
+            return missed > 0L && settle(streak, lastStudiedEpochDay, freezes, today).first > 0
+        }
+
         /** The bank as it should read right now, drained by missed days. */
         fun displayFreezes(streak: Int, lastStudiedEpochDay: Long, freezes: Int, today: Long): Int =
             settle(streak, lastStudiedEpochDay, freezes, today).second

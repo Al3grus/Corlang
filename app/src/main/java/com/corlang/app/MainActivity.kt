@@ -159,6 +159,16 @@ private fun CorlangApp(container: AppContainer) {
         )
     } ?: -1
     val chipLit = streakRow?.lastStudiedEpochDay == streakToday
+    // A missed day the bank paid for: the chip shows a snowflake rather than the same grey flame
+    // that means "today not started", so a spent freeze is visible without opening the sheet.
+    val chipFrozen = streakRow?.let {
+        com.corlang.app.data.ProgressRepository.freezeHeld(
+            streak = it.streak,
+            lastStudiedEpochDay = it.lastStudiedEpochDay,
+            freezes = it.streakFreezes,
+            today = streakToday
+        )
+    } ?: false
 
     // Settings lives OUTSIDE the nav graph: pushing it onto a tab's back stack gets it
     // saved/restored with the tab (the "stuck in settings" bug). An overlay can't be.
@@ -405,6 +415,7 @@ private fun CorlangApp(container: AppContainer) {
         }
         com.corlang.app.ui.components.StreakSheet(
             streak = maxOf(chipStreak, 0),
+            frozen = chipFrozen,
             freezes = streakRow?.let {
                 com.corlang.app.data.ProgressRepository.displayFreezes(
                     streak = it.streak,
@@ -425,6 +436,7 @@ private fun CorlangApp(container: AppContainer) {
             CorlangTopBar(
                 streak = chipStreak,
                 streakLit = chipLit,
+                streakFrozen = chipFrozen,
                 onStreakClick = { showStreakSheet = true }
             )
         },
